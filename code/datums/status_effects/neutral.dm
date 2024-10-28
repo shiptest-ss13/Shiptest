@@ -275,3 +275,29 @@
 /atom/movable/screen/alert/status_effect/surrender/Click(location, control, params)
 	. = ..()
 	owner.emote("surrender")
+
+/datum/status_effect/rooted
+	id = "rooted"
+	alert_type = /atom/movable/screen/alert/status_effect/rooted
+
+/datum/status_effect/rooted/on_apply()
+	. = ..()
+	ADD_TRAIT(owner,TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
+	ADD_TRAIT(owner,TRAIT_PUSHIMMUNE, TRAIT_STATUS_EFFECT(id))
+	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "root", /datum/mood_event/root)
+
+/datum/status_effect/rooted/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner,TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
+	REMOVE_TRAIT(owner,TRAIT_PUSHIMMUNE, TRAIT_STATUS_EFFECT(id))
+
+/atom/movable/screen/alert/status_effect/rooted
+	name = "Rooted"
+	desc = "You're currently rooted into the ground and can't move. Click here to start digging yourself out."
+	icon_state = "dig_out"
+
+/atom/movable/screen/alert/status_effect/rooted/Click(location, control, params)
+	. = ..()
+	to_chat(owner, span_notice("You begin digging yourself free."))
+	SEND_SIGNAL(owner,COMSIG_DIGOUT)
+

@@ -96,7 +96,7 @@
 	if(islizard(user))
 		return 'sound/voice/lizard/squeal.ogg' //This is from Bay
 
-/datum/emote/living/carbon/human/tailthump //lizard
+/datum/emote/living/carbon/human/tailthump //lizard + vox
 	key = "thump"
 	key_third_person = "thumps their tail"
 	message = "thumps their tail!"
@@ -106,7 +106,7 @@
 /datum/emote/living/carbon/human/tailthump/get_sound(mob/living/user)
 	if(!ishuman(user))
 		return
-	if(islizard(user))
+	if(!isnull(user.getorgan(/obj/item/organ/tail)) || (isvox(user)))
 		return 'sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
 
 /datum/emote/living/carbon/human/weh //lizard
@@ -239,7 +239,8 @@
 	message_param = "beeps at %t."
 
 /datum/emote/living/carbon/human/robot_tongue/beep/run_emote(mob/user, params)
-	if(..())
+	. = ..()
+	if(.)
 		playsound(user.loc, 'sound/machines/twobeep.ogg', 50)
 
 /datum/emote/living/carbon/human/robot_tongue/buzz
@@ -249,7 +250,8 @@
 	message_param = "buzzes at %t."
 
 /datum/emote/living/carbon/human/robot_tongue/buzz/run_emote(mob/user, params)
-	if(..())
+	. = ..()
+	if(.)
 		playsound(user.loc, 'sound/machines/buzz-sigh.ogg', 50)
 
 /datum/emote/living/carbon/human/robot_tongue/buzz2
@@ -257,7 +259,8 @@
 	message = "buzzes twice."
 
 /datum/emote/living/carbon/human/robot_tongue/buzz2/run_emote(mob/user, params)
-	if(..())
+	. = ..()
+	if(.)
 		playsound(user.loc, 'sound/machines/buzz-two.ogg', 50)
 
 /datum/emote/living/carbon/human/robot_tongue/chime
@@ -266,8 +269,19 @@
 	message = "chimes."
 
 /datum/emote/living/carbon/human/robot_tongue/chime/run_emote(mob/user, params)
-	if(..())
+	. = ..()
+	if(.)
 		playsound(user.loc, 'sound/machines/chime.ogg', 50)
+
+/datum/emote/living/carbon/human/robot_tongue/no
+	key = "no"
+	key_third_person = "no"
+	message = "emits an negative blip."
+
+/datum/emote/living/carbon/human/robot_tongue/no/run_emote(mob/user, params)
+	. = ..()
+	if(.)
+		playsound(user.loc, 'sound/machines/synth_no.ogg', 50)
 
 /datum/emote/living/carbon/human/robot_tongue/ping
 	key = "ping"
@@ -276,31 +290,72 @@
 	message_param = "pings at %t."
 
 /datum/emote/living/carbon/human/robot_tongue/ping/run_emote(mob/user, params)
-	if(..())
+	. = ..()
+	if(.)
 		playsound(user.loc, 'sound/machines/ping.ogg', 50)
 
-// Clown Robotic Tongue ONLY. Henk.
+/datum/emote/living/carbon/human/robot_tongue/warn
+	key = "warn"
+	key_third_person = "warn"
+	message = "blares an alarm!"
 
-/datum/emote/living/carbon/human/robot_tongue/clown/can_run_emote(mob/user, status_check = TRUE , intentional)
-	if(!..())
-		return FALSE
-	if(user.mind.assigned_role == "Clown")
-		return TRUE
+/datum/emote/living/carbon/human/robot_tongue/warn/run_emote(mob/user, params)
+	. = ..()
+	if(.)
+		playsound(user.loc, 'sound/machines/warning-buzzer.ogg', 50)
 
-/datum/emote/living/carbon/human/robot_tongue/clown/honk
-	key = "honk"
-	key_third_person = "honks"
-	message = "honks."
+/datum/emote/living/carbon/human/robot_tongue/yes
+	key = "yes"
+	key_third_person = "yes"
+	message = "emits an affirmative blip."
 
-/datum/emote/living/carbon/human/robot_tongue/clown/honk/run_emote(mob/user, params)
-	if(..())
-		playsound(user.loc, 'sound/items/bikehorn.ogg', 50)
+/datum/emote/living/carbon/human/robot_tongue/yes/run_emote(mob/user, params)
+	. = ..()
+	if(.)
+		playsound(user.loc, 'sound/machines/synth_yes.ogg', 50)
 
-/datum/emote/living/carbon/human/robot_tongue/clown/sad
+// the following emote were originally clown-locked and synthetic exclusive
+// since clowns have been removed I see no reason to let it collect dust
+
+/datum/emote/living/carbon/human/robot_tongue/sad
 	key = "sad"
 	key_third_person = "plays a sad trombone..."
 	message = "plays a sad trombone..."
 
-/datum/emote/living/carbon/human/robot_tongue/clown/sad/run_emote(mob/user, params)
-	if(..())
+/datum/emote/living/carbon/human/robot_tongue/sad/run_emote(mob/user, params)
+	. = ..()
+	if(.)
 		playsound(user.loc, 'sound/misc/sadtrombone.ogg', 50)
+
+//kepi (plus one vox i guess)
+
+/datum/emote/living/carbon/human/kepiclick
+	key = "click"
+	key_third_person = "clicks"
+	message = "clicks."
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/carbon/human/kepiclick/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(iskepori(user) || (isvox(user)))
+		return 'sound/voice/kepori/kepiclick.ogg' //https://freesound.org/people/Ambiabstract/sounds/584212/
+
+/datum/emote/living/carbon/human/kepiwhistle
+	key = "whistle"
+	key_third_person = "whistles"
+	message = "whistles!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/kepiwhistle/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(iskepori(user))
+		return 'sound/voice/kepori/kepiwhistle.ogg' //https://freesound.org/people/Andreas.Mustola/sounds/338277/
+
+/datum/emote/living/carbon/human/kepiwoop // i have yet to find a woop sound that doesnt suck i will do it later
+	key = "woop"
+	key_third_person = "woops"
+	message = "woops!"
+	emote_type = EMOTE_AUDIBLE

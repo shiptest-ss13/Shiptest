@@ -6,23 +6,13 @@
 	base_icon_state = "cult_wall"
 	smoothing_flags = SMOOTH_BITMASK
 	canSmoothWith = null
-	sheet_type = /obj/item/stack/sheet/runed_metal
+	sheet_type = /obj/item/stack/sheet/mineral/hidden/hellstone
 	sheet_amount = 1
-	girder_type = /obj/structure/girder/cult
+	max_integrity = 600
 
 /turf/closed/wall/mineral/cult/Initialize(mapload, inherited_virtual_z)
 	new /obj/effect/temp_visual/cult/turf(src)
 	. = ..()
-
-/turf/closed/wall/mineral/cult/Exited(atom/movable/AM, atom/newloc)
-	. = ..()
-	if(istype(AM, /mob/living/simple_animal/hostile/construct/harvester)) //harvesters can go through cult walls, dragging something with
-		var/mob/living/simple_animal/hostile/construct/harvester/H = AM
-		var/atom/movable/stored_pulling = H.pulling
-		if(stored_pulling)
-			stored_pulling.setDir(get_dir(stored_pulling.loc, newloc))
-			stored_pulling.forceMove(src)
-			H.start_pulling(stored_pulling, supress_message = TRUE)
 
 /turf/closed/wall/mineral/cult/artificer
 	name = "runed stone wall"
@@ -47,8 +37,9 @@
 	smoothing_flags = SMOOTH_BITMASK
 	canSmoothWith = null
 	hardness = 35
-	slicing_duration = 150 //welding through the ice+metal
+	breakdown_duration = 40
 	bullet_sizzle = TRUE
+	burn_mod = 2
 
 /turf/closed/wall/rust
 	name = "rusted wall"
@@ -58,14 +49,12 @@
 	base_icon_state = "rusty_wall"
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 45
+	max_integrity = 300
+	min_dam = 5
 
 /turf/closed/wall/rust/yesdiag
 	icon_state = "rusty_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-
-/turf/closed/wall/rust/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 
 /turf/closed/wall/r_wall/rust
 	name = "rusted reinforced wall"
@@ -75,6 +64,8 @@
 	base_icon_state = "rusty_reinforced_wall"
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 15
+	integrity = 1000
+	min_dam = 5
 
 /turf/closed/wall/r_wall/rust/yesdiag
 	icon_state = "rusty_reinforced_wall-255"

@@ -1,0 +1,647 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"ac" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"ae" = (
+/obj/structure/table/chem,
+/obj/structure/sink/chem{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"af" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
+"ah" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
+/obj/machinery/holopad/emergency/medical,
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"aj" = (
+/obj/machinery/power/shuttle/engine/electric/premium{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
+"ak" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/shrink_ccw{
+	dir = 1;
+	pixel_y = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/corner,
+/obj/machinery/power/terminal,
+/obj/effect/landmark/ert_shuttle_spawn,
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"al" = (
+/obj/structure/table/chem,
+/obj/item/reagent_containers/glass/bottle/bicaridine{
+	pixel_x = 7;
+	pixel_y = 14
+	},
+/obj/item/reagent_containers/glass/bottle/antitoxin{
+	pixel_x = -4;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/glass/bottle/kelotane{
+	pixel_x = 4;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/glass/bottle/dexalin{
+	pixel_x = -3;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_x = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"bz" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "runner_top_holo"
+	},
+/obj/machinery/door/poddoor{
+	id = "runner_top_door"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"bG" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/shrink_cw{
+	dir = 1
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/corner{
+	dir = 8
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = -12;
+	id = "runner_sub_holo"
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/button/door{
+	pixel_y = -21;
+	pixel_x = -1;
+	id = "runner_sub_door";
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"bY" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"co" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"cF" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/shrink_ccw,
+/obj/effect/turf_decal/trimline/opaque/bar/filled/corner{
+	dir = 1
+	},
+/obj/structure/closet/emcloset/wall/directional/east,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/effect/landmark/ert_shuttle_spawn,
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 20;
+	pixel_x = -12;
+	id = "runner_top_holo"
+	},
+/obj/machinery/button/door{
+	pixel_y = 21;
+	pixel_x = -1;
+	id = "runner_top_door"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"dB" = (
+/obj/machinery/door/poddoor{
+	id = "runner_sub_door"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "runner_sub_holo"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"fa" = (
+/obj/machinery/computer/crew/syndie{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"fQ" = (
+/obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"gi" = (
+/obj/item/storage/backpack/duffelbag/med/surgery{
+	pixel_x = -2;
+	pixel_y = 9
+	},
+/obj/structure/table/chem,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"gs" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"gA" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"hB" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"hJ" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"iR" = (
+/obj/machinery/stasis,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"ku" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"kM" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"lp" = (
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	dir = 4;
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/obj/item/radio/intercom/table{
+	dir = 4;
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	pixel_x = -9;
+	dir = 8;
+	pixel_y = 8;
+	id = "runner_bridge"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"mN" = (
+/obj/docking_port/mobile{
+	dir = 2;
+	name = "trauma team shuttle";
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "runner_sub_door"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "runner_sub_holo"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"nP" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"rR" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "runner_bridge"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"sl" = (
+/obj/machinery/door/poddoor{
+	id = "runner_top_door"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "runner_top_holo"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"te" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
+"wg" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"zS" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"DP" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 6
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"DW" = (
+/obj/machinery/power/shuttle/engine/electric/premium{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/turf/open/floor/engine/hull,
+/area/ship/external)
+"Or" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/warning,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"Pq" = (
+/turf/template_noop,
+/area/template_noop)
+"PD" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Rz" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 5
+	},
+/obj/effect/landmark/ert_shuttle_spawn,
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = 13
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"RO" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"SE" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/warning{
+	dir = 4
+	},
+/obj/effect/landmark/ert_shuttle_brief_spawn,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"Wx" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"ZN" = (
+/obj/machinery/stasis,
+/obj/item/tank/internals/anesthetic{
+	pixel_x = -6;
+	pixel_y = 3
+	},
+/obj/item/tank/internals/anesthetic{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/item/clothing/mask/breath/medical{
+	pixel_y = -4;
+	pixel_x = 7
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"ZV" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/shrink_cw,
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/corner{
+	dir = 4
+	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/effect/landmark/ert_shuttle_spawn,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+
+(1,1,1) = {"
+Pq
+Pq
+PD
+PD
+PD
+PD
+PD
+Pq
+Pq
+"}
+(2,1,1) = {"
+DW
+PD
+PD
+gi
+ae
+al
+PD
+PD
+aj
+"}
+(3,1,1) = {"
+af
+aa
+ZV
+Wx
+bY
+RO
+ak
+gs
+te
+"}
+(4,1,1) = {"
+bz
+fQ
+co
+gA
+SE
+ku
+zS
+Or
+dB
+"}
+(5,1,1) = {"
+sl
+fQ
+nP
+ZN
+kM
+iR
+zS
+Or
+mN
+"}
+(6,1,1) = {"
+PD
+PD
+cF
+hJ
+ac
+hB
+bG
+PD
+PD
+"}
+(7,1,1) = {"
+Pq
+PD
+PD
+Rz
+ah
+DP
+PD
+PD
+Pq
+"}
+(8,1,1) = {"
+Pq
+Pq
+PD
+wg
+lp
+fa
+PD
+Pq
+Pq
+"}
+(9,1,1) = {"
+Pq
+Pq
+PD
+rR
+rR
+rR
+PD
+Pq
+Pq
+"}

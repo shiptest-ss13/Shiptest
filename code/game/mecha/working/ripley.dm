@@ -107,7 +107,7 @@
 	light_range = 7
 	light_power = 1
 	wreckage = /obj/structure/mecha_wreckage/ripley/deathripley
-	step_energy_drain = 0
+	base_step_energy_drain = 0
 	enclosed = TRUE
 	enter_delay = 40
 	silicon_icon_state = null
@@ -166,13 +166,13 @@
 	var/obj/item/mecha_parts/mecha_equipment/mining_scanner/scanner = new
 	scanner.attach(src)
 
-/obj/mecha/working/ripley/cmm
-	desc = "An APLU utility mech, refitted with a lightweight pressurized cockpit and more powerful servos by the CMM. While it preserves the Mk. I's speed, the overdriven motors tend to strain its power supply."
-	name = "\improper CMM APLU Mk-IV \"Rogue\""
-	icon_state = "cmmripley"
-	base_icon_state = "cmmripley"
-	step_energy_drain = 15 //overdriven servos are less efficient
-	wreckage = /obj/structure/mecha_wreckage/ripley/cmm
+/obj/mecha/working/ripley/clip
+	desc = "An APLU utility exosuit, refitted with a lightweight pressurized cockpit and more powerful servos by the CLIP. While it preserves the Mk. I's speed, the overdriven motors tend to strain its power supply."
+	name = "\improper CLIP APLU Mk-IV \"Rogue\""
+	icon_state = "clipripley"
+	base_icon_state = "clipripley"
+	base_step_energy_drain = 20 //overdriven servos are less efficient
+	wreckage = /obj/structure/mecha_wreckage/ripley/clip
 	enclosed = TRUE
 	enter_delay = 20 //slower than a mk. I, faster than the armored Ripleys
 	silicon_icon_state = null

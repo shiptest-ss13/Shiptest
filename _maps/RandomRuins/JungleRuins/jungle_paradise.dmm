@@ -165,7 +165,7 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/overmap_encounter/planetoid/cave/explored)
 "bh" = (
-/obj/item/clothing/under/rank/civilian/cookjorts,
+/obj/item/clothing/under/shorts/cookjorts,
 /turf/closed/mineral/random/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "bj" = (
@@ -685,7 +685,7 @@
 /turf/open/floor/plating/grass/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "ei" = (
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "el" = (
@@ -798,7 +798,7 @@
 /area/ruin/jungle/paradise/construction)
 "eY" = (
 /obj/structure/table/reinforced,
-/obj/item/kitchen/knife/butcher,
+/obj/item/melee/knife/butcher,
 /obj/item/clothing/gloves/butchering,
 /turf/open/floor/pod/dark,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -989,7 +989,7 @@
 /obj/structure/bed{
 	icon_state = "dirty_mattress"
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
 	color = "#A47449";
@@ -1446,7 +1446,7 @@
 	dir = 4;
 	layer = 3.9
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/cable/yellow{
 	icon_state = "1-9"
 	},
@@ -1465,19 +1465,19 @@
 	pixel_x = 9
 	},
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = -3;
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/glass/beaker{
 	pixel_x = -2
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
 	pixel_x = -8;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	desc = "Salt. From space oceans, presumably. A staple of modern medicine.";
 	pixel_x = -8;
 	pixel_y = 12
@@ -1711,7 +1711,7 @@
 /turf/open/floor/mineral/titanium/white,
 /area/overmap_encounter/planetoid/cave/explored)
 "kk" = (
-/obj/machinery/computer/communications{
+/obj/structure/frame/computer{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/blue,
@@ -2879,10 +2879,7 @@
 /obj/structure/railing{
 	layer = 3.9
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 4;
 	pixel_y = 5
 	},
@@ -3207,7 +3204,7 @@
 /obj/structure/bed{
 	icon_state = "dirty_mattress"
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/cable/yellow{
 	icon_state = "0-5"
 	},
@@ -3331,10 +3328,6 @@
 	pixel_x = 21
 	},
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/grass/jungle/b{
-	icon_state = "rock3";
-	pixel_y = 9
-	},
 /turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "uk" = (
@@ -4351,11 +4344,11 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/three_course_meal,
-/obj/effect/spawner/lootdrop/three_course_meal,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/three_course_meal,
+/obj/effect/spawner/random/food_or_drink/three_course_meal,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "AT" = (
@@ -5188,7 +5181,7 @@
 	pixel_x = 7;
 	pixel_y = 6
 	},
-/obj/structure/fireaxecabinet{
+/obj/structure/cabinet/fireaxe{
 	pixel_y = 28
 	},
 /turf/open/floor/mineral/titanium,
@@ -5388,7 +5381,7 @@
 "Ih" = (
 /obj/structure/table/wood,
 /obj/machinery/light/directional/south,
-/obj/item/reagent_containers/food/snacks/breadslice/moldy{
+/obj/item/food/breadslice/moldy{
 	pixel_x = -8
 	},
 /obj/item/reagent_containers/food/snacks/grown/berries/poison{
@@ -5771,9 +5764,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-6"
 	},
-/obj/effect/spawner/lootdrop/three_course_meal,
-/obj/effect/spawner/lootdrop/three_course_meal,
-/obj/effect/spawner/lootdrop/three_course_meal,
+/obj/effect/spawner/random/food_or_drink/three_course_meal,
+/obj/effect/spawner/random/food_or_drink/three_course_meal,
+/obj/effect/spawner/random/food_or_drink/three_course_meal,
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab,
@@ -5806,7 +5799,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Lv" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/tcomms{
+/obj/item/book/manual/wiki/construction{
 	pixel_x = -7;
 	pixel_y = 4
 	},
@@ -6380,10 +6373,6 @@
 /obj/item/radio/intercom/directional/south{
 	name = "Station Intercom (General)"
 	},
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_x = -4;
-	pixel_y = 4
-	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/overmap_encounter/planetoid/cave/explored)
 "OC" = (
@@ -6485,7 +6474,7 @@
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "Pe" = (
-/obj/effect/mob_spawn/human/miner/old,
+/obj/effect/mob_spawn/human/miner,
 /obj/effect/decal/cleanable/vomit/old{
 	pixel_x = 13;
 	pixel_y = 6
@@ -7196,7 +7185,7 @@
 /obj/structure/bed{
 	icon_state = "dirty_mattress"
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/paradise/dorms)
 "UC" = (
@@ -7422,7 +7411,7 @@
 	},
 /area/overmap_encounter/planetoid/cave/explored)
 "VV" = (
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "VW" = (
@@ -7520,7 +7509,7 @@
 	},
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
 /obj/effect/decal/cleanable/vomit/old,
-/obj/item/reagent_containers/food/snacks/breadslice/moldy{
+/obj/item/food/breadslice/moldy{
 	pixel_x = -4;
 	pixel_y = 16
 	},

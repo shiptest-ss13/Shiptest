@@ -92,6 +92,15 @@ export const ShuttleManipulatorStatus = (props, context) => {
                   })
                 }
               />
+              <Button
+                content="BLIST"
+                key={shuttle.id}
+                onClick={() =>
+                  act('blist', {
+                    id: shuttle.id,
+                  })
+                }
+              />
             </Table.Cell>
             <Table.Cell>{shuttle.name}</Table.Cell>
             <Table.Cell>{shuttle.type}</Table.Cell>

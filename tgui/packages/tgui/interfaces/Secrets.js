@@ -376,33 +376,6 @@ const FunTab = (props, context) => {
         </Flex.Item>
       </Flex>
       <Flex
-        mb={1}
-        grow={1}
-        direction="row"
-        height="100%"
-        align="stretch"
-        justify="space-between"
-      >
-        <Flex.Item grow={1}>
-          <Button
-            icon="hammer"
-            lineHeight={lineHeightNormal}
-            fluid
-            content="Egalitarian Station"
-            onClick={() => act('eagles')}
-          />
-        </Flex.Item>
-        <Flex.Item grow={1} ml={0.5}>
-          <Button
-            icon="dollar-sign"
-            lineHeight={lineHeightNormal}
-            fluid
-            content="Anarcho-Capitalist Station"
-            onClick={() => act('ancap')}
-          />
-        </Flex.Item>
-      </Flex>
-      <Flex
         grow={1}
         direction="row"
         height="100%"

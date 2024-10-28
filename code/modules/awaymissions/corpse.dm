@@ -6,7 +6,7 @@
 	name = "Mob Spawner"
 	density = TRUE
 	anchored = TRUE
-	icon = 'icons/effects/mapping_helpers.dmi' // These aren't *really* mapping helpers but it fits the most with it's common usage (to help place corpses in maps)
+	icon = 'icons/effects/mapping/mapping_helpers.dmi' // These aren't *really* mapping helpers but it fits the most with it's common usage (to help place corpses in maps)
 	icon_state = "mobspawner" // So it shows up in the map editor
 	var/mob_type = null
 	var/mob_name = ""
@@ -30,8 +30,10 @@
 	var/mob_color //Change the mob's color
 	var/assignedrole
 	var/show_flavour = TRUE
-	var/banType = ROLE_LAVALAND
+	var/ban_type = ROLE_LAVALAND
 	var/ghost_usable = TRUE
+	/// Weakref to the mob this spawner created - just if you needed to do something with it.
+	var/datum/weakref/spawned_mob_ref
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/effect/mob_spawn/attack_ghost(mob/user)
@@ -40,7 +42,7 @@
 	if(!uses)
 		to_chat(user, "<span class='warning'>This spawner is out of charges!</span>")
 		return
-	if(is_banned_from(user.key, banType))
+	if(is_banned_from(user.key, ban_type))
 		to_chat(user, "<span class='warning'>You are jobanned!</span>")
 		return
 	if(!allow_spawn(user))
@@ -59,11 +61,11 @@
 	if(instant || (roundstart && (mapload || (SSticker && SSticker.current_state > GAME_STATE_SETTING_UP))))
 		INVOKE_ASYNC(src, PROC_REF(create))
 	else if(ghost_usable)
-		GLOB.poi_list |= src
+		SSpoints_of_interest.make_point_of_interest(src)
 		LAZYADD(GLOB.mob_spawners[name], src)
 
 /obj/effect/mob_spawn/Destroy()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	var/list/spawners = GLOB.mob_spawners[name]
 	LAZYREMOVE(spawners, src)
 	if(!LAZYLEN(spawners))
@@ -128,6 +130,7 @@
 		MM.name = M.real_name
 	if(uses > 0)
 		uses--
+	spawned_mob_ref = WEAKREF(M)
 	if(!permanent && !uses)
 		qdel(src)
 	return M
@@ -135,6 +138,7 @@
 // Base version - place these on maps/templates.
 /obj/effect/mob_spawn/human
 	mob_type = /mob/living/carbon/human
+	icon_state = "corpsehuman"
 	//Human specific stuff.
 	var/mob_species = null		//Set to make them a mutant race such as lizard or skeleton. Uses the datum typepath instead of the ID.
 	var/datum/outfit/outfit = /datum/outfit	//If this is a path, it will be instanced in Initialize()
@@ -220,7 +224,8 @@
 			if(istype(C))
 				C.sensor_mode = NO_SENSORS
 
-	var/obj/item/card/id/W = H.wear_id
+
+	var/obj/item/card/id/W = H.get_idcard()
 	if(W)
 		if(H.age)
 			W.registered_age = H.age
@@ -307,6 +312,9 @@
 	outfit = /datum/outfit/job/assistant
 	icon_state = "corpsegreytider"
 
+/obj/effect/mob_spawn/human/corpse/assistant/husked
+	husk = TRUE
+
 /obj/effect/mob_spawn/human/corpse/assistant/beesease_infection
 	disease = /datum/disease/beesease
 
@@ -319,19 +327,17 @@
 /obj/effect/mob_spawn/human/corpse/cargo_tech
 	name = "Cargo Tech"
 	outfit = /datum/outfit/job/cargo_tech
-	icon_state = "corpsecargotech"
 
 /obj/effect/mob_spawn/human/cook
 	name = "Cook"
 	outfit = /datum/outfit/job/cook
-	icon_state = "corpsecook"
 
+/obj/effect/mob_spawn/human/cook/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/doctor
 	name = "Doctor"
 	outfit = /datum/outfit/job/doctor
-	icon_state = "corpsedoctor"
-
 
 /obj/effect/mob_spawn/human/doctor/alive
 	death = FALSE
@@ -353,35 +359,19 @@
 
 /obj/effect/mob_spawn/human/engineer
 	name = "Engineer"
-	outfit = /datum/outfit/job/engineer/gloved
-	icon_state = "corpseengineer"
-
-/obj/effect/mob_spawn/human/engineer/rig
-	outfit = /datum/outfit/job/engineer/gloved/rig
+	outfit = /datum/outfit/job/engineer
 
 /obj/effect/mob_spawn/human/clown
 	name = "Clown"
 	outfit = /datum/outfit/job/clown
-	icon_state = "corpseclown"
 
 /obj/effect/mob_spawn/human/scientist
 	name = "Scientist"
 	outfit = /datum/outfit/job/scientist
-	icon_state = "corpsescientist"
 
 /obj/effect/mob_spawn/human/miner
 	name = "Shaft Miner"
 	outfit = /datum/outfit/job/miner
-	icon_state = "corpseminer"
-
-/obj/effect/mob_spawn/human/miner/rig
-	outfit = /datum/outfit/job/miner/equipped/hardsuit
-
-/obj/effect/mob_spawn/human/miner/explorer
-	outfit = /datum/outfit/job/miner/equipped
-
-/obj/effect/mob_spawn/human/miner/old
-	outfit = /datum/outfit/job/miner/old
 
 /obj/effect/mob_spawn/human/plasmaman
 	mob_species = /datum/species/plasmaman
@@ -390,6 +380,9 @@
 /obj/effect/mob_spawn/human/botanist
 	outfit = /datum/outfit/job/botanist
 	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/botanist/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/sec
 	outfit = /datum/outfit/job/security
@@ -408,6 +401,9 @@
 	id_job = "Bartender"
 	id_access_list = list(ACCESS_BAR)
 	outfit = /datum/outfit/spacebartender
+
+/obj/effect/mob_spawn/human/bartender/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/bartender/alive
 	death = FALSE
@@ -433,7 +429,7 @@
 /datum/outfit/spacebartender/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 
-	var/obj/item/card/id/W = H.wear_id
+	var/obj/item/card/id/W = H.get_idcard()
 	if(H.age < AGE_MINOR)
 		W.registered_age = AGE_MINOR
 		to_chat(H, "<span class='notice'>You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!</span>")
@@ -514,22 +510,10 @@
 
 
 /obj/effect/mob_spawn/human/nanotrasensoldier
-	name = "\improper Nanotrasen Private Security Officer"
+	name = "\improper Nanotrasen LP Security Specialist"
 	id_job = "Private Security Force"
 	id_access_list = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE, ACCESS_SECURITY, ACCESS_MECH_SECURITY)
-	outfit = /datum/outfit/nanotrasensoldiercorpse
-
-/datum/outfit/nanotrasensoldiercorpse
-	name = "NT Private Security Officer Corpse"
-	uniform = /obj/item/clothing/under/rank/security/officer
-	suit = /obj/item/clothing/suit/armor/vest
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	head = /obj/item/clothing/head/helmet/swat/nanotrasen
-	back = /obj/item/storage/backpack/security
-	id = /obj/item/card/id
-
+	outfit = /datum/outfit/job/nanotrasen/security/lp
 
 /obj/effect/mob_spawn/human/commander/alive
 	death = FALSE

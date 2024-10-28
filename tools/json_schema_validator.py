@@ -23,4 +23,7 @@ for file in sys.argv[2:]:
             print(exception)
             status = 1
 
+if status == 0:
+    print("All ship config files are valid")
+
 exit(status)

@@ -96,9 +96,6 @@
 		var/power_produced = powernet ? power / power_loss : power
 		add_avail(power_produced*input_power_multiplier)
 		flick("coilhit", src)
-		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_ENG)
-		if(D)
-			D.adjust_money(min(power_produced, 1))
 		if(istype(linked_techweb) && (zap_flags & ZAP_GIVES_RESEARCH) && can_generate_research)
 			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 3)) // x4 coils = 12 points a shock for RND, if they even bothered to link the server.
 		addtimer(CALLBACK(src, PROC_REF(reset_shocked)), 10)
@@ -135,9 +132,6 @@
 		var/power_produced = powernet ? power / power_loss : power
 		add_avail(power_produced*input_power_multiplier)
 		flick("rpcoilhit", src)
-		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_ENG)
-		if(D)
-			D.adjust_money(min(power_produced, 12))
 		if(istype(linked_techweb) && (zap_flags & ZAP_GIVES_RESEARCH))
 			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 25)) // x4 coils = 100 points per shock, which is a good reward for building a research tesla or electrical storm harvest ship
 		addtimer(CALLBACK(src, PROC_REF(reset_shocked)), 10)

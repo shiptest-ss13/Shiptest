@@ -89,7 +89,7 @@
 	},
 /area/overmap_encounter/planetoid/sand/explored)
 "eq" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
+/mob/living/simple_animal/hostile/human/hermit/survivor,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
@@ -115,7 +115,7 @@
 /area/ruin)
 "fb" = (
 /obj/structure/flora/ash/cap_shroom,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
@@ -157,7 +157,7 @@
 /area/ruin)
 "fO" = (
 /obj/structure/chair/plastic,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	faction = list("adobe")
 	},
 /turf/open/floor/plating/asteroid/whitesands{
@@ -213,7 +213,7 @@
 /turf/open/floor/plating,
 /area/ruin)
 "ii" = (
-/obj/item/ammo_box/aac_300blk_stripper,
+/obj/item/ammo_box/a762_stripper,
 /turf/open/floor/wood,
 /area/ruin)
 "iK" = (
@@ -223,7 +223,7 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "iL" = (
 /obj/structure/statue/snow/snowman,
-/obj/item/kitchen/knife/shiv/carrot,
+/obj/item/melee/knife/shiv/carrot,
 /turf/open/floor/plating/asteroid/snow/lit/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "iQ" = (
@@ -269,7 +269,7 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "ko" = (
 /obj/structure/closet/crate/bin,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/item/chair/stool/bar,
 /turf/open/floor/wood,
 /area/ruin)
@@ -290,7 +290,7 @@
 	},
 /area/overmap_encounter/planetoid/sand/explored)
 "kO" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
@@ -360,7 +360,7 @@
 	},
 /area/overmap_encounter/planetoid/sand/explored)
 "nx" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 4;
 	faction = list("adobe")
 	},
@@ -400,7 +400,6 @@
 /area/ruin)
 "nZ" = (
 /obj/structure/table,
-/obj/item/clothing/glasses/meson/gar,
 /turf/open/floor/concrete,
 /area/ruin)
 "ox" = (
@@ -425,7 +424,7 @@
 "oB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	faction = list("saloon");
 	name = "Whitesands Bartender"
 	},
@@ -592,7 +591,7 @@
 /turf/open/floor/concrete,
 /area/ruin)
 "we" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
+/mob/living/simple_animal/hostile/human/hermit/survivor,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
@@ -652,7 +651,7 @@
 /turf/open/floor/wood,
 /area/ruin)
 "yZ" = (
-/obj/item/spear,
+/obj/item/melee/spear,
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
@@ -678,14 +677,14 @@
 	},
 /area/overmap_encounter/planetoid/sand/explored)
 "zB" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1;
 	faction = list("adobe")
 	},
 /turf/open/floor/concrete,
 /area/ruin)
 "AC" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger{
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger{
 	dir = 4;
 	faction = list("adobe")
 	},
@@ -700,11 +699,11 @@
 /area/ruin)
 "AI" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin)
 "AR" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter,
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
@@ -744,7 +743,7 @@
 /area/ruin)
 "Df" = (
 /obj/structure/table,
-/obj/item/gun/ballistic/rifle/boltaction/polymer,
+/obj/item/gun/ballistic/rifle/polymer,
 /turf/open/floor/concrete,
 /area/ruin)
 "Di" = (
@@ -782,14 +781,14 @@
 /area/ruin)
 "Ed" = (
 /obj/item/chair/stool/bar,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1;
 	faction = list("saloon")
 	},
 /turf/open/floor/wood,
 /area/ruin)
 "Ef" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	dir = 4;
 	faction = list("adobe")
 	},
@@ -882,7 +881,7 @@
 "Hn" = (
 /obj/structure/closet/secure_closet/hydroponics,
 /obj/item/circuitboard/machine/plantgenes,
-/obj/item/gun/ballistic/rifle/boltaction/polymer,
+/obj/item/gun/ballistic/rifle/polymer,
 /turf/open/floor/wood,
 /area/ruin)
 "HP" = (
@@ -916,14 +915,14 @@
 /turf/open/floor/wood,
 /area/ruin)
 "HX" = (
-/obj/effect/spawner/lootdrop/armory_contraband/metastation,
+/obj/effect/spawner/random/exotic/armory,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/sand/explored)
 "Ig" = (
 /obj/structure/table,
-/obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/item/gun/ballistic/automatic/pistol/candor,
 /turf/open/floor/concrete,
 /area/ruin)
 "Io" = (
@@ -939,7 +938,7 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 4;
 	faction = list("adobe")
 	},
@@ -965,7 +964,7 @@
 	},
 /area/overmap_encounter/planetoid/sand/explored)
 "JE" = (
-/obj/effect/spawner/lootdrop/tool_engie_sydnie,
+/obj/effect/spawner/random/engineering/tool/sydnie,
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
@@ -995,8 +994,8 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "KJ" = (
 /obj/structure/table,
-/obj/item/gun/ballistic/automatic/smg/aks74u,
-/obj/item/ammo_box/magazine/aks74u,
+/obj/item/gun/ballistic/automatic/smg/skm_carbine,
+/obj/item/ammo_box/magazine/skm_545_39,
 /turf/open/floor/concrete,
 /area/ruin)
 "Ld" = (
@@ -1066,7 +1065,7 @@
 /turf/open/floor/wood,
 /area/ruin)
 "Ok" = (
-/turf/open/acid/whitesands,
+/turf/open/water/acid/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "Ov" = (
 /obj/item/clothing/head/cowboy{
@@ -1165,7 +1164,7 @@
 	},
 /area/overmap_encounter/planetoid/sand/explored)
 "SV" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
@@ -1184,12 +1183,12 @@
 /area/ruin)
 "Tl" = (
 /obj/structure/table,
-/obj/item/ammo_box/aac_300blk_stripper,
-/obj/item/ammo_box/aac_300blk_stripper,
+/obj/item/ammo_box/a762_stripper,
+/obj/item/ammo_box/a762_stripper,
 /turf/open/floor/concrete,
 /area/ruin)
 "TH" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
 	faction = list("adobe")
 	},
 /turf/open/floor/concrete,
@@ -1200,7 +1199,7 @@
 /area/ruin)
 "UT" = (
 /obj/structure/chair/stool/bar,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 1;
 	faction = list("saloon")
 	},
@@ -1209,7 +1208,7 @@
 "Vq" = (
 /obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 8;
 	faction = list("saloon")
 	},
@@ -1253,7 +1252,7 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "Ws" = (
 /obj/structure/chair/stool/bar,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+/mob/living/simple_animal/hostile/human/hermit/survivor{
 	dir = 8;
 	faction = list("saloon")
 	},
@@ -1274,7 +1273,7 @@
 /area/ruin)
 "Xa" = (
 /obj/structure/closet/crate/bin,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/wood,
 /area/ruin)
 "Xb" = (
@@ -1302,7 +1301,7 @@
 "XP" = (
 /obj/structure/table,
 /obj/item/trash/can,
-/obj/item/ammo_box/c45/surplus,
+/obj/item/storage/box/ammo/c45_surplus,
 /turf/open/floor/concrete,
 /area/ruin)
 "XS" = (

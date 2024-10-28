@@ -28,7 +28,6 @@
 #define LEGCUFF_LAYER 5
 #define HANDS_LAYER 4
 #define BODY_FRONT_LAYER 3
-#define HALO_LAYER 2 //blood cult ascended halo, because there's currently no better solution for adding/removing
 #define FIRE_LAYER 1 //If you're on fire
 #define TOTAL_LAYERS 31 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
 
@@ -149,12 +148,8 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 //subtypesof(), typesof() without the parent path
 #define subtypesof(typepath) (typesof(typepath) - typepath)
 
-/// Takes a datum as input, returns its ref string, or a cached version of it
-/// This allows us to cache \ref creation, which ensures it'll only ever happen once per datum, saving string tree time
-/// It is slightly less optimal then a []'d datum, but the cost is massively outweighed by the potential savings
-/// It will only work for datums mind, for datum reasons
-/// : because of the embedded typecheck
-#define text_ref(datum) (isdatum(datum) ? (datum:cached_ref ||= "\ref[datum]") : ("\ref[datum]"))
+/// Takes a datum as input, returns its ref string
+#define text_ref(datum) ref(datum)
 
 //Gets the turf this atom inhabits
 #define get_turf(A) (get_step(A, 0))
@@ -281,12 +276,6 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 #define NUKE_SYNDICATE_BASE 3
 #define STATION_DESTROYED_NUKE 4
 #define STATION_EVACUATED 5
-#define BLOB_WIN 8
-#define BLOB_NUKE 9
-#define BLOB_DESTROYED 10
-#define CULT_ESCAPE 11
-#define CULT_FAILURE 12
-#define CULT_SUMMON 13
 #define NUKE_MISS 14
 #define OPERATIVES_KILLED 15
 #define OPERATIVE_SKIRMISH 16
@@ -346,15 +335,6 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 #define SYRINGE_DRAW 0
 #define SYRINGE_INJECT 1
 
-//gold slime core spawning
-#define NO_SPAWN 0
-#define HOSTILE_SPAWN 1
-#define FRIENDLY_SPAWN 2
-
-//slime core activation type
-#define SLIME_ACTIVATE_MINOR 1
-#define SLIME_ACTIVATE_MAJOR 2
-
 #define LUMINESCENT_DEFAULT_GLOW 2
 
 #define RIDING_OFFSET_ALL "ALL"
@@ -385,7 +365,6 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 #define TELEPORT_CHANNEL_QUANTUM "quantum" //Quantum-based teleportation, requires both sender and receiver, but is free from normal disruption
 #define TELEPORT_CHANNEL_WORMHOLE "wormhole"	//Wormhole teleportation, is not disrupted by bluespace fluctuations but tends to be very random or unsafe
 #define TELEPORT_CHANNEL_MAGIC "magic" //Magic teleportation, does whatever it wants (unless there's antimagic)
-#define TELEPORT_CHANNEL_CULT "cult" //Cult teleportation, does whatever it wants (unless there's holiness)
 #define TELEPORT_CHANNEL_FREE "free" //Anything else
 
 //Run the world with this parameter to enable a single run though of the game setup and tear down process with unit tests in between
@@ -449,11 +428,6 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 #define FALL_NO_MESSAGE (1<<1) //Used to suppress the "[A] falls through [old_turf]" messages where it'd make little sense at all, like going downstairs.
 #define FALL_STOP_INTERCEPTING (1<<2) //Used in situations where halting the whole "intercept" loop would be better, like supermatter dusting (and thus deleting) the atom.
 
-//Religion
-
-#define HOLY_ROLE_PRIEST 1 //default priestly role
-#define HOLY_ROLE_HIGHPRIEST 2 //the one who designates the religion
-
 #define ALIGNMENT_GOOD "good"
 #define ALIGNMENT_NEUT "neutral"
 #define ALIGNMENT_EVIL "evil"
@@ -470,7 +444,10 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 /// Possible value of [/atom/movable/buckle_lying]. If set to a different (positive-or-zero) value than this, the buckling thing will force a lying angle on the buckled.
 #define NO_BUCKLE_LYING -1
 
-#define STATION_HOLODECK (1<<0)
-#define CUSTOM_HOLODECK_ONE (1<<1)
-#define CUSTOM_HOLODECK_TWO (1<<2)
-#define HOLODECK_DEBUG (1<<3)//you should never see this
+#define ROUND_END_NOT_DELAYED 0
+#define ROUND_END_DELAYED 1
+#define ROUND_END_TGS 2
+
+/// A null statement to guard against EmptyBlock lint without necessitating the use of pass()
+/// Used to avoid proc-call overhead. But use sparingly. Probably pointless in most places.
+#define EMPTY_BLOCK_GUARD ;

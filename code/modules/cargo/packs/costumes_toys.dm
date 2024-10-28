@@ -73,7 +73,7 @@
 	var/the_toy
 	for(var/i in 1 to 5)
 		if(prob(50))
-			the_toy = pickweight(GLOB.arcade_prize_pool)
+			the_toy = pick_weight(GLOB.arcade_prize_pool)
 		else
 			the_toy = pick(subtypesof(/obj/item/toy/plush))
 		new the_toy(C)
@@ -88,17 +88,10 @@
 	cost = 1000
 	contains = list(/obj/item/clothing/head/snowman,
 					/obj/item/clothing/suit/snowman,
-					/obj/item/clothing/head/chicken,
-					/obj/item/clothing/suit/chickensuit,
 					/obj/item/clothing/mask/gas/monkeymask,
-					/obj/item/clothing/suit/monkeysuit,
 					/obj/item/clothing/head/cardborg,
 					/obj/item/clothing/suit/cardborg,
-					/obj/item/clothing/head/xenos,
-					/obj/item/clothing/suit/xenos,
-					/obj/item/clothing/suit/hooded/ian_costume,
-					/obj/item/clothing/suit/hooded/carp_costume,
-					/obj/item/clothing/suit/hooded/bee_costume)
+					/obj/item/clothing/suit/hooded/carp_costume)
 	crate_name = "original costume crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
@@ -110,32 +103,21 @@
 
 /datum/supply_pack/costumes_toys/mafia/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 4)
-		new /obj/effect/spawner/lootdrop/mafia_outfit(C)
+		new /obj/effect/spawner/random/clothing/mafia_outfit(C)
 		new /obj/item/virgin_mary(C)
 		if(prob(30)) //Not all mafioso have mustaches, some people also find this item annoying.
 			new /obj/item/clothing/mask/fakemoustache/italian(C)
 	if(prob(10)) //A little extra sugar every now and then to shake things up.
-		new	/obj/item/switchblade(C)
+		new	/obj/item/melee/knife/switchblade(C)
 
 /datum/supply_pack/costumes_toys/mech_suits
-	name = "Mech Pilot's Suit Crate"
+	name = "Exosuit Pilot's Suit Crate"
 	desc = "Suits for piloting big robots. Contains all three colors!"
 	cost = 1500 //state-of-the-art technology doesn't come cheap
 	contains = list(/obj/item/clothing/under/costume/mech_suit,
 					/obj/item/clothing/under/costume/mech_suit/white,
 					/obj/item/clothing/under/costume/mech_suit/blue)
-	crate_name = "mech pilot's suit crate"
-	crate_type = /obj/structure/closet/crate/wooden
-
-/datum/supply_pack/costumes_toys/wizard
-	name = "Wizard Costume Crate"
-	desc = "Pretend to join the Wizard Federation with this full wizard outfit! As required by interstellar law, the seller reminds potential buyers that the Wizard Federation is not real and cannot hurt you."
-	cost = 2000
-	contains = list(/obj/item/staff,
-					/obj/item/clothing/suit/wizrobe/fake,
-					/obj/item/clothing/shoes/sandal,
-					/obj/item/clothing/head/wizard/fake)
-	crate_name = "wizard costume crate"
+	crate_name = "exosuit pilot's suit crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
 /datum/supply_pack/costumes_toys/formalwear
@@ -154,7 +136,6 @@
 					/obj/item/clothing/neck/tie/blue,
 					/obj/item/clothing/neck/tie/red,
 					/obj/item/clothing/neck/tie/black,
-					/obj/item/clothing/head/bowler,
 					/obj/item/clothing/head/fedora,
 					/obj/item/clothing/head/flatcap,
 					/obj/item/clothing/head/beret,
@@ -170,6 +151,7 @@
 					/obj/item/lipstick/random)
 	crate_name = "formalwear crate"
 	crate_type = /obj/structure/closet/crate/wooden
+	faction = FACTION_SOLGOV
 
 // this is technically armor but you aren't buying it for that. it's a joke pack so it goes here
 /datum/supply_pack/costumes_toys/justiceinbound
@@ -185,7 +167,6 @@
 	desc = "Flaunt your status with three unique, highly-collectable hats!"
 	cost = 20000
 	contains = list(/obj/item/clothing/head/collectable/chef,
-					/obj/item/clothing/head/collectable/paper,
 					/obj/item/clothing/head/collectable/tophat,
 					/obj/item/clothing/head/collectable/captain,
 					/obj/item/clothing/head/collectable/beret,
@@ -193,18 +174,11 @@
 					/obj/item/clothing/head/collectable/flatcap,
 					/obj/item/clothing/head/collectable/pirate,
 					/obj/item/clothing/head/collectable/kitty,
-					/obj/item/clothing/head/collectable/rabbitears,
 					/obj/item/clothing/head/collectable/wizard,
 					/obj/item/clothing/head/collectable/hardhat,
-					/obj/item/clothing/head/collectable/HoS,
-					/obj/item/clothing/head/collectable/HoP,
 					/obj/item/clothing/head/collectable/thunderdome,
 					/obj/item/clothing/head/collectable/swat,
-					/obj/item/clothing/head/collectable/slime,
-					/obj/item/clothing/head/collectable/police,
-					/obj/item/clothing/head/collectable/slime,
-					/obj/item/clothing/head/collectable/xenom,
-					/obj/item/clothing/head/collectable/petehat)
+					/obj/item/clothing/head/collectable/police)
 	crate_name = "collectable hats crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
@@ -213,3 +187,21 @@
 	for(var/i in 1 to 3)
 		var/item = pick_n_take(L)
 		new item(C)
+
+/datum/supply_pack/costumes_toys/rilena_merch
+	name = "RILENA Merchandise Crate"
+	desc = "A crate full of all the RILENA merch you could ever want. Except the offbrand stuff. That's not in here."
+	cost = 1000 //lots of loot
+	contains = list(/obj/item/toy/figure/tali,
+					/obj/item/toy/plush/rilena,
+					/obj/item/toy/plush/tali,
+					/obj/item/toy/plush/sharai,
+					/obj/item/toy/plush/xader,
+					/obj/item/toy/plush/mora,
+					/obj/item/poster/random_rilena,
+					/obj/item/poster/random_rilena,
+					/obj/item/poster/random_rilena,
+					/obj/item/clothing/suit/hooded/hoodie/rilena,
+					/obj/item/clothing/under/dress/rilena,
+					/obj/item/gun/energy/buster)
+	crate_name = "collectable merchandise crate"

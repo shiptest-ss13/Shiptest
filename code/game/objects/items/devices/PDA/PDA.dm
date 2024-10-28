@@ -229,9 +229,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if(id)
 					dat += text("ID: <A href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]   <a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</a><br><br>")
 
-				dat += "[worldtime2text()]<br>" //:[world.time / 100 % 6][world.time / 100 % 10]"
-				dat += "[time2text(world.realtime, "MMM DD")] 504 FS"
-				dat += "<br><br>"
+				dat += "[station_time_timestamp()]<br>"
+				dat += "[sector_datestamp()]<br>"
+				dat += "<br>"
 				dat += "<h4>General Functions</h4>"
 				dat += "<ul>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=1'>[PDAIMG(notes)] Notekeeper</a></li>"
@@ -326,8 +326,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 			if(6)
 				dat += "<h4>[PDAIMG(mail)] ExperTrak® Skill Tracker V4.26.2</h4>"
-				dat += "<i>Thank you for choosing ExperTrak® brand software! ExperTrak® inc. is proud to be a NanoTrasen employee expertise and effectiveness department subsidary!</i>"
-				dat += "<br><br>This software is designed to track and monitor your skill development as a NanoTrasen employee. Your job performance across different fields has been quantified and categorized below.<br>"
+				dat += "<i>Thank you for choosing ExperTrak® brand software! ExperTrak® inc. is proud to be a Nanotrasen employee expertise and effectiveness department subsidary!</i>"
+				dat += "<br><br>This software is designed to track and monitor your skill development as a Nanotrasen employee. Your job performance across different fields has been quantified and categorized below.<br>"
 				var/datum/mind/targetmind = user.mind
 				for (var/type in GLOB.skill_types)
 					var/datum/skill/S = GetSkillRef(type)
@@ -410,7 +410,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 //BASIC FUNCTIONS===================================
 
 			if("Refresh")//Refresh, goes to the end of the proc.
-
+				EMPTY_BLOCK_GUARD
 			if("Return")//Return
 				if(mode<=9)
 					mode = 0

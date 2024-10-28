@@ -1,6 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Colossus-class Armored Frigate",
+	"faction": "/datum/faction/inteq",
 	"prefix": "IRMV",
 	"description": "The mainstay of Inteq’s mercenary fleet, the Colossus is a professionally-militarized freighter like most of Inteq’s ships, and is designed to operate independently for some time, serving IRMG’s interests and providing vital mercenary services wherever they are needed. Key features include a secure and well-stocked armory and ample crew space, as well as a spacious cargo bay, which crews often refurbish into additional recreational or training space.",
 	"tags": [
@@ -18,30 +19,30 @@
 	"limit": 1,
 	"job_slots": {
 		"Vanguard": {
-			"outfit": "/datum/outfit/job/captain/inteq/naked",
+			"outfit": "/datum/outfit/job/inteq/captain/empty",
 			"officer": true,
 			"slots": 1
 		},
 		"Master At Arms": {
-			"outfit": "/datum/outfit/job/warden/inteq",
+			"outfit": "/datum/outfit/job/inteq/warden",
 			"officer": true,
 			"slots": 1
 		},
 		"Artificer": {
-			"outfit": "/datum/outfit/job/engineer/inteq",
+			"outfit": "/datum/outfit/job/inteq/engineer",
 			"slots": 1
 		},
 		"Corpsman": {
-			"outfit": "/datum/outfit/job/paramedic/inteq",
+			"outfit": "/datum/outfit/job/inteq/paramedic",
 			"slots": 1
 		},
 		"Enforcer": {
-			"outfit": "/datum/outfit/job/security/inteq",
+			"outfit": "/datum/outfit/job/inteq/security",
 			"slots": 3
 		},
 		"Recruit": {
-			"outfit": "/datum/outfit/job/assistant/inteq",
-			"slots": 5
+			"outfit": "/datum/outfit/job/inteq/assistant",
+			"slots": 2
 		}
 	},
 	"enabled": true

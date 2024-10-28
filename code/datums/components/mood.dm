@@ -27,6 +27,7 @@
 	RegisterSignal(parent, COMSIG_JOB_RECEIVED, PROC_REF(register_job_signals))
 
 	var/mob/living/owner = parent
+	owner.become_area_sensitive(MOOD_COMPONENT_TRAIT)
 	if(owner.hud_used)
 		modify_hud()
 		var/datum/hud/hud = owner.hud_used
@@ -35,6 +36,9 @@
 /datum/component/mood/Destroy()
 	STOP_PROCESSING(SSmood, src)
 	unmodify_hud()
+
+	var/mob/living/owner = parent
+	owner.lose_area_sensitivity(MOOD_COMPONENT_TRAIT)
 	return ..()
 
 /datum/component/mood/proc/register_job_signals(datum/source, job)
@@ -85,7 +89,7 @@
 	if(mood_events.len)
 		for(var/i in mood_events)
 			var/datum/mood_event/event = mood_events[i]
-			msg += event.description
+			msg += "[event.description]\n" // now we dont have to put \n in every moodlet description
 	else
 		msg += "<span class='nicegreen'>I don't have much of a reaction to anything right now.</span>\n"
 	to_chat(user, examine_block(msg))
@@ -317,17 +321,12 @@
 
 /datum/component/mood/proc/HandleNutrition()
 	var/mob/living/L = parent
-	if(isethereal(L))
+	if(iselzuose(L))
 		HandleCharge(L)
 	if(HAS_TRAIT(L, TRAIT_NOHUNGER))
 		return FALSE //no mood events for nutrition
 	switch(L.nutrition)
-		if(NUTRITION_LEVEL_FULL to INFINITY)
-			if (!HAS_TRAIT(L, TRAIT_VORACIOUS))
-				add_event(null, "nutrition", /datum/mood_event/fat)
-			else
-				add_event(null, "nutrition", /datum/mood_event/wellfed) // round and full
-		if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
+		if(NUTRITION_LEVEL_WELL_FED to INFINITY)
 			add_event(null, "nutrition", /datum/mood_event/wellfed)
 		if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
 			add_event(null, "nutrition", /datum/mood_event/fed)
@@ -339,19 +338,19 @@
 			add_event(null, "nutrition", /datum/mood_event/starving)
 
 /datum/component/mood/proc/HandleCharge(mob/living/carbon/human/H)
-	var/datum/species/ethereal/E = H.dna.species
+	var/datum/species/elzuose/E = H.dna.species
 	switch(E.get_charge(H))
-		if(ETHEREAL_CHARGE_NONE to ETHEREAL_CHARGE_LOWPOWER)
+		if(ELZUOSE_CHARGE_NONE to ELZUOSE_CHARGE_LOWPOWER)
 			add_event(null, "charge", /datum/mood_event/decharged)
-		if(ETHEREAL_CHARGE_LOWPOWER to ETHEREAL_CHARGE_NORMAL)
+		if(ELZUOSE_CHARGE_LOWPOWER to ELZUOSE_CHARGE_NORMAL)
 			add_event(null, "charge", /datum/mood_event/lowpower)
-		if(ETHEREAL_CHARGE_NORMAL to ETHEREAL_CHARGE_ALMOSTFULL)
+		if(ELZUOSE_CHARGE_NORMAL to ELZUOSE_CHARGE_ALMOSTFULL)
 			clear_event(null, "charge")
-		if(ETHEREAL_CHARGE_ALMOSTFULL to ETHEREAL_CHARGE_FULL)
+		if(ELZUOSE_CHARGE_ALMOSTFULL to ELZUOSE_CHARGE_FULL)
 			add_event(null, "charge", /datum/mood_event/charged)
-		if(ETHEREAL_CHARGE_FULL to ETHEREAL_CHARGE_OVERLOAD)
+		if(ELZUOSE_CHARGE_FULL to ELZUOSE_CHARGE_OVERLOAD)
 			add_event(null, "charge", /datum/mood_event/overcharged)
-		if(ETHEREAL_CHARGE_OVERLOAD to ETHEREAL_CHARGE_DANGEROUS)
+		if(ELZUOSE_CHARGE_OVERLOAD to ELZUOSE_CHARGE_DANGEROUS)
 			add_event(null, "charge", /datum/mood_event/supercharged)
 
 /datum/component/mood/proc/check_area_mood(datum/source, area/A)

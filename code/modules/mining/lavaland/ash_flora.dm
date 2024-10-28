@@ -419,7 +419,7 @@
 /obj/item/seeds/lavaland/puce/attackby(obj/item/item, mob/user, params)
 	. = ..()
 	//anyone intending to add more garnishes using this method should componentize this
-	if(!istype(item, /obj/item/kitchen/knife))
+	if(!istype(item, /obj/item/melee/knife))
 		return
 	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
 	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")
@@ -432,14 +432,6 @@
 		user.put_in_hands(result)
 	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")
 
-//CRAFTING
-
-/datum/crafting_recipe/mushroom_bowl
-	name = "Mushroom Bowl"
-	result = /obj/item/reagent_containers/glass/bowl/mushroom_bowl
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings = 5)
-	time = 30
-	category = CAT_PRIMAL
 
 /obj/item/reagent_containers/food/snacks/customizable/salad/ashsalad
 	desc = "Very ashy."
@@ -458,18 +450,7 @@
 	desc = "A bowl made out of mushrooms. Not food, though it might have contained some at some point."
 	icon = 'icons/obj/lavaland/ash_flora.dmi'
 	icon_state = "mushroom_bowl"
-
-/obj/item/reagent_containers/glass/bowl/mushroom_bowl/update_overlays()
-	. = ..()
-	if(reagents && reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/obj/lavaland/ash_flora.dmi', "fullbowl")
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
-		. += filling
-
-/obj/item/reagent_containers/glass/bowl/mushroom_bowl/update_icon_state()
-	if(!reagents || !reagents.total_volume)
-		icon_state = "mushroom_bowl"
-	return ..()
+	fill_icon = 'icons/obj/lavaland/ash_flora.dmi'
 
 /obj/item/reagent_containers/glass/bowl/mushroom_bowl/attackby(obj/item/I,mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/food/snacks))
@@ -527,7 +508,7 @@
 	icon_state = "garden"
 	harvested_name = "lush garden"
 	harvested_desc = "In the soil and shade, something softly grew. It seems some industrious scavenger already passed by."
-	harvest = /obj/effect/spawner/lootdrop/garden
+	harvest = /obj/effect/spawner/random/food_or_drink/garden
 	harvest_amount_high = 1
 	harvest_amount_low = 1
 	harvest_message_low = "You discover something nestled away in the growing bough."
@@ -546,7 +527,7 @@
 	icon_state = "gardenarid"
 	harvested_name = "sandy garden"
 	harvested_desc = "Beneath a bluff of soft silicate, a sheltered grove slumbered. Some desert wanderer seems to have picked it clean."
-	harvest = /obj/effect/spawner/lootdrop/garden/arid
+	harvest = /obj/effect/spawner/random/food_or_drink/garden/arid
 	harvest_amount_high = 1
 	harvest_amount_low = 1
 	harvest_message_low = "You brush sand away from a verdant prize, nestled in the leaves."
@@ -559,7 +540,7 @@
 	icon_state = "gardencold"
 	harvested_name = "chilly garden"
 	harvested_desc = "A delicate layer of frost covers hardy brush. Someone came with the blizzard, and left with any prize this might contain."
-	harvest = /obj/effect/spawner/lootdrop/garden/cold
+	harvest = /obj/effect/spawner/random/food_or_drink/garden/cold
 	harvest_amount_high = 1
 	harvest_amount_low = 1
 	harvest_message_low = "You unearth a snow-covered treat."
@@ -572,7 +553,7 @@
 	icon_state = "gardensick"
 	harvested_name = "sickly garden"
 	harvested_desc = "Polluted water wells up from the cracked earth, where it once fed a patch of something curious. Now only wilted leaves remain."
-	harvest = /obj/effect/spawner/lootdrop/garden/sick
+	harvest = /obj/effect/spawner/random/food_or_drink/garden/sick
 	harvest_amount_high = 1
 	harvest_amount_low = 1
 	harvest_message_low = "You pry something odd from the poisoned soil."
@@ -586,123 +567,12 @@
 	icon_state = "seaweed"
 	harvested_name = "seaweed patch"
 	harvested_desc = "A patch of seaweed, floating on the surface of the water. It seems someone has already searched through this"
-	harvest = /obj/effect/spawner/lootdrop/garden/seaweed
+	harvest = /obj/effect/spawner/random/food_or_drink/garden/seaweed
 	harvest_amount_high = 1
 	harvest_amount_low = 1
 	harvest_message_low = "You discover some edible weeds within the patch."
 	harvest_message_med = "You discover some edible weeds within the patch."
 	harvest_message_high = "You discover some edible weeds within the patch."
-
-/obj/effect/spawner/lootdrop/garden
-	name = "lush garden seeder"
-	lootcount = 3
-	var/list/plant = list(
-			/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 1,
-			/obj/item/reagent_containers/food/snacks/grown/berries/death/stealth = 2,
-			/obj/item/reagent_containers/food/snacks/grown/citrus/orange_3d = 1,
-			/obj/item/reagent_containers/food/snacks/grown/trumpet = 1,
-			/obj/item/reagent_containers/food/snacks/grown/bungofruit = 1,
-			/obj/item/seeds/random = 1,
-			/obj/item/grown/log/bamboo = 2,
-			/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 2,
-			/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth = 5,
-			/obj/item/reagent_containers/food/snacks/grown/citrus/lemon = 2,
-			/obj/item/reagent_containers/food/snacks/grown/citrus/lime = 2,
-			/obj/item/reagent_containers/food/snacks/grown/vanillapod = 2,
-			/obj/item/reagent_containers/food/snacks/grown/moonflower = 2,
-			/obj/item/reagent_containers/food/snacks/grown/cocoapod = 2,
-			/obj/item/reagent_containers/food/snacks/grown/pineapple = 2,
-			/obj/item/reagent_containers/food/snacks/grown/poppy/lily = 2,
-			/obj/item/reagent_containers/food/snacks/grown/poppy/geranium = 2,
-			/obj/item/reagent_containers/food/snacks/grown/sugarcane = 2,
-			/obj/item/reagent_containers/food/snacks/grown/tea = 2,
-			/obj/item/reagent_containers/food/snacks/grown/tobacco = 2,
-			/obj/item/reagent_containers/food/snacks/grown/watermelon = 4,
-			/obj/item/grown/sunflower = 4,
-			/obj/item/reagent_containers/food/snacks/grown/banana = 4,
-			/obj/item/reagent_containers/food/snacks/grown/apple = 4,
-			/obj/item/reagent_containers/food/snacks/grown/berries = 5,
-			/obj/item/reagent_containers/food/snacks/grown/cherries = 4,
-			/obj/item/reagent_containers/food/snacks/grown/citrus/orange = 4,
-			/obj/item/reagent_containers/food/snacks/grown/garlic = 4,
-			/obj/item/reagent_containers/food/snacks/grown/grapes = 4,
-			/obj/item/reagent_containers/food/snacks/grown/grass = 5,
-			/obj/item/reagent_containers/food/snacks/grown/pumpkin = 4,
-			/obj/item/reagent_containers/food/snacks/grown/rainbow_flower = 4,
-			/obj/item/reagent_containers/food/snacks/grown/wheat = 4,
-			/obj/item/reagent_containers/food/snacks/grown/parsnip = 4,
-			/obj/item/reagent_containers/food/snacks/grown/peas = 4,
-			/obj/item/reagent_containers/food/snacks/grown/rice = 4,
-			/obj/item/reagent_containers/food/snacks/grown/soybeans = 4,
-			/obj/item/reagent_containers/food/snacks/grown/tomato = 4,
-			/obj/item/reagent_containers/food/snacks/grown/cabbage = 4,
-			/obj/item/reagent_containers/food/snacks/grown/onion = 4,
-			/obj/item/reagent_containers/food/snacks/grown/carrot = 4)
-
-/obj/effect/spawner/lootdrop/garden/Initialize(mapload)
-	loot = plant
-	. = ..()
-
-/obj/effect/spawner/lootdrop/garden/arid
-	name = "arid garden seeder"
-	plant = list(
-			/obj/item/reagent_containers/food/snacks/grown/ghost_chili = 1,
-			/obj/item/reagent_containers/food/snacks/grown/nettle = 1,
-			/obj/item/grown/cotton/durathread = 1,
-			/obj/item/seeds/random = 1,
-			/obj/item/reagent_containers/food/snacks/grown/redbeet = 1,
-			/obj/item/reagent_containers/food/snacks/grown/aloe = 2,
-			/obj/item/grown/cotton = 2,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/angel = 2,
-			/obj/item/reagent_containers/food/snacks/grown/chili = 2,
-			/obj/item/reagent_containers/food/snacks/grown/whitebeet = 5,
-			/obj/item/reagent_containers/food/snacks/grown/potato = 4,
-			/obj/item/reagent_containers/food/snacks/grown/potato/sweet = 4,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle = 4,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet = 4,
-			/obj/item/reagent_containers/food/snacks/grown/corn = 4)
-
-/obj/effect/spawner/lootdrop/garden/cold
-	name = "frigid garden seeder"
-	plant = list(
-			/obj/item/reagent_containers/food/snacks/grown/bluecherries = 1,
-			/obj/item/reagent_containers/food/snacks/grown/galaxythistle = 1,
-			/obj/item/reagent_containers/food/snacks/grown/berries/death/stealth = 1,
-			/obj/item/seeds/random = 1,
-			/obj/item/reagent_containers/food/snacks/grown/poppy = 2,
-			/obj/item/reagent_containers/food/snacks/grown/tomato/blue = 2,
-			/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth = 2,
-			/obj/item/reagent_containers/food/snacks/grown/berries = 4,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle = 4,
-			/obj/item/reagent_containers/food/snacks/grown/oat = 4,
-			/obj/item/reagent_containers/food/snacks/grown/grapes/green = 4,
-			/obj/item/reagent_containers/food/snacks/grown/grass = 4,
-			/obj/item/reagent_containers/food/snacks/grown/harebell = 5,
-			/obj/item/seeds/starthistle = 5)
-
-/obj/effect/spawner/lootdrop/garden/sick
-	name = "sickly garden seeder"
-	plant = list(
-			/obj/item/reagent_containers/food/snacks/grown/cannabis/rainbow = 1,
-			/obj/item/reagent_containers/food/snacks/grown/cannabis/death = 1,
-			/obj/item/seeds/replicapod = 1,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/angel = 1,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap = 2,
-			/obj/item/seeds/tower/steel = 2,
-			/obj/item/reagent_containers/food/snacks/grown/cannabis = 2,
-			/obj/item/seeds/random = 2,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/jupitercup = 2,
-			/obj/item/reagent_containers/food/snacks/grown/cherrybulbs = 4,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/amanita = 4,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap = 4,
-			/obj/item/reagent_containers/food/snacks/grown/mushroom/reishi = 4,
-			/obj/item/reagent_containers/food/snacks/grown/berries/glow = 4)
-
-/obj/effect/spawner/lootdrop/garden/seaweed
-	name = "seaweed patch seeder"
-	plant = list(
-			/obj/item/reagent_containers/food/snacks/grown/seaweed = 1
-			)
 
 /obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth //careful eating from random jungle bushes
 	seed = /obj/item/seeds/berry/poison

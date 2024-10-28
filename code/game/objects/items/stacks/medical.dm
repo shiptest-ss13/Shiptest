@@ -31,17 +31,17 @@
 		return
 	if(target == user)
 		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
-		if(!do_mob(user, target, self_delay, extra_checks=CALLBACK(target, /mob/living/proc/can_inject, user, TRUE)))
-			return
 		if(!silent)
 			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying \the [src] on yourself...</span>")
+		if(!do_after(user, self_delay, target, extra_checks=CALLBACK(target, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+			return
 
 	else if(other_delay)
 		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
-		if(!do_mob(user, target, other_delay, extra_checks=CALLBACK(target, /mob/living/proc/can_inject, user, TRUE)))
-			return
 		if(!silent)
 			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [target].</span>", "<span class='notice'>You begin applying \the [src] on [target]...</span>")
+		if(!do_after(user, other_delay, target, extra_checks=CALLBACK(target, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+			return
 
 
 	if(heal(target, user))
@@ -117,9 +117,6 @@
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 10)
 
 /obj/item/stack/medical/bruise_pack/heal(mob/living/target, mob/user)
-	if(target.stat == DEAD)
-		to_chat(user, "<span class='warning'>[target] is dead! You can not help [target.p_them()].</span>")
-		return
 	if(isanimal(target))
 		var/mob/living/simple_animal/critter = target
 		if (!(critter.healable))
@@ -137,12 +134,13 @@
 
 /obj/item/stack/medical/gauze
 	name = "medical gauze"
-	desc = "A roll of elastic cloth that is extremely effective at stopping bleeding, but does not heal wounds."
+	desc = "A roll of elastic cloth that is extremely effective at stopping bleeding and slowly heals wounds."
 	gender = PLURAL
 	singular_name = "medical gauze"
 	icon_state = "gauze"
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
-	var/stop_bleeding = 1800
+	var/bleed_reduction = 0.02
+	var/lifespan = 150
 	self_delay = 20
 	max_amount = 12
 	grind_results = list(/datum/reagent/cellulose = 2)
@@ -152,13 +150,16 @@
 	amount = 12
 
 /obj/item/stack/medical/gauze/heal(mob/living/target, mob/user)
-	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
-		if(!H.bleedsuppress && H.bleed_rate) //so you can't stack bleed suppression
-			H.suppress_bloodloss(stop_bleeding)
-			to_chat(user, "<span class='notice'>You stop the bleeding of [target]!</span>")
+	if(iscarbon(target))
+		var/mob/living/carbon/C = target
+		var/obj/item/bodypart/BP = C.get_bodypart(check_zone(user.zone_selected))
+		if(!BP)
+			to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]!"))
+			return
+		if(BP.can_bandage(user))
+			BP.apply_bandage(bleed_reduction, lifespan, name)
+			user.visible_message(span_notice("[user] wraps [C]'s [parse_zone(BP.body_zone)] with [src]."), span_notice("You wrap [C]'s [parse_zone(check_zone(user.zone_selected))] with [src]."), span_hear("You hear ruffling cloth."))
 			return TRUE
-	to_chat(user, "<span class='warning'>You can not use \the [src] on [target]!</span>")
 
 /obj/item/stack/medical/gauze/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER || I.get_sharpness())
@@ -178,8 +179,8 @@
 /obj/item/stack/medical/gauze/improvised
 	name = "improvised gauze"
 	singular_name = "improvised gauze"
-	desc = "A roll of cloth roughly cut from something that can stop bleeding, but does not heal wounds."
-	stop_bleeding = 900
+	desc = "A roll of cloth roughly cut from something that can stop bleeding and slowly heal wounds."
+	bleed_reduction = 0.005
 
 /obj/item/stack/medical/gauze/cyborg
 	custom_materials = null
@@ -200,9 +201,6 @@
 	grind_results = list(/datum/reagent/medicine/silver_sulfadiazine = 10)
 
 /obj/item/stack/medical/ointment/heal(mob/living/target, mob/user)
-	if(target.stat == DEAD)
-		to_chat(user, "<span class='warning'>[target] is dead! You can not help [target.p_them()].</span>")
-		return
 	if(iscarbon(target))
 		return heal_carbon(target, user, 0, heal_burn)
 	to_chat(user, "<span class='warning'>You can't heal [target] with the \the [src]!</span>")
@@ -230,9 +228,6 @@
 
 /obj/item/stack/medical/suture/heal(mob/living/target, mob/user)
 	. = ..()
-	if(target.stat == DEAD)
-		to_chat(user, "<span class='warning'>[target] is dead! You can not help [target.p_them()].</span>")
-		return
 	if(iscarbon(target))
 		return heal_carbon(target, user, heal_brute, 0)
 	if(isanimal(target))
@@ -277,9 +272,6 @@
 
 /obj/item/stack/medical/mesh/heal(mob/living/target, mob/user)
 	. = ..()
-	if(target.stat == DEAD)
-		to_chat(user, "<span class='warning'>[target] is dead! You can not help [target.p_them()].</span>")
-		return
 	if(iscarbon(target))
 		return heal_carbon(target, user, 0, heal_burn)
 	to_chat(user, "<span class='warning'>You can't heal [target] with the \the [src]!</span>")
@@ -343,9 +335,6 @@
 
 /obj/item/stack/medical/aloe/heal(mob/living/target, mob/user)
 	. = ..()
-	if(target.stat == DEAD)
-		to_chat(user, "<span class='warning'>[target] is dead! You can not help [target.p_them()].</span>")
-		return FALSE
 	if(iscarbon(target))
 		return heal_carbon(target, user, heal, heal)
 	if(isanimal(target))
@@ -378,7 +367,7 @@
 	desc = "Used to secure limbs following a fracture."
 	gender = PLURAL
 	singular_name = "splint"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "splint"
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	self_delay = 40

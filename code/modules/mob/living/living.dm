@@ -9,6 +9,7 @@
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
+	SSpoints_of_interest.make_point_of_interest(src)
 	if(speed)
 		update_living_varspeed()
 
@@ -52,6 +53,7 @@
 		S.removeSoulsharer(src) //If a sharer is destroy()'d, they are simply removed
 	sharedSoullinks = null
 
+	QDEL_LIST(surgeries)
 	QDEL_LIST(abilities) // so that the actions are deleted, which will clear refs to owner
 	QDEL_LIST(roundstart_quirks)
 	return ..()
@@ -92,6 +94,11 @@
 
 //Called when we bump onto a mob
 /mob/living/proc/MobBump(mob/M)
+	//No bumping/swapping/pushing others if you are on walk intent
+	if(m_intent == MOVE_INTENT_WALK)
+		return TRUE
+
+	SEND_SIGNAL(src, COMSIG_LIVING_MOB_BUMP, M)
 	//Even if we don't push/swap places, we "touched" them, so spread fire
 	spreadFire(M)
 
@@ -477,7 +484,9 @@
 			if(!silent)
 				to_chat(src, "<span class='notice'>You will now lay down as soon as you are able to.</span>")
 		else
-			if(!silent)
+			if(!silent && m_intent == MOVE_INTENT_WALK)
+				to_chat(src, "<span class='notice'>You gently lay down.</span>")
+			else if(!silent)
 				to_chat(src, "<span class='notice'>You lay down.</span>")
 			set_lying_down()
 	else
@@ -502,7 +511,7 @@
 
 /mob/living/proc/get_up(instant = FALSE)
 	set waitfor = FALSE
-	if(!instant && !do_mob(src, src, 2 SECONDS, uninterruptible = TRUE, extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob/living, rest_checks_callback))))
+	if(!instant && !do_after(src, 1 SECONDS, src, timed_action_flags = (IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM), extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob/living, rest_checks_callback)), interaction_key = DOAFTER_SOURCE_GETTING_UP))
 		return
 	if(resting || body_position == STANDING_UP || HAS_TRAIT(src, TRAIT_FLOORED))
 		return
@@ -815,7 +824,7 @@
 						TH.transfer_mob_blood_dna(src)
 
 /mob/living/carbon/human/makeTrail(turf/T)
-	if((NOBLOOD in dna.species.species_traits) || !bleed_rate || bleedsuppress)
+	if((NOBLOOD in dna.species.species_traits) || bleedsuppress || !LAZYLEN(get_bleeding_parts(TRUE)))
 		return
 	..()
 
@@ -826,7 +835,7 @@
 		return pick("trails_1", "trails_2")
 
 /mob/living/experience_pressure_difference(pressure_difference, direction, pressure_resistance_prob_delta = 0)
-	if(buckled)
+	if(buckled || mob_negates_gravity())
 		return
 	if(client && client.move_delay >= world.time + world.tick_lag*2)
 		pressure_resistance_prob_delta -= 30
@@ -972,7 +981,7 @@
 					"<span class='userdanger'>[src] tries to remove your [what.name].</span>", null, null, src)
 	to_chat(src, "<span class='danger'>You try to remove [who]'s [what.name]...</span>")
 	what.add_fingerprint(src)
-	if(do_mob(src, who, what.strip_delay))
+	if(do_after(src, what.strip_delay, who, interaction_key = what))
 		if(what && Adjacent(who))
 			if(islist(where))
 				var/list/L = where
@@ -1019,7 +1028,7 @@
 				who.visible_message("<span class='notice'>[src] tries to put [what] on [who].</span>", \
 							"<span class='notice'>[src] tries to put [what] on you.</span>", null, null, src)
 		to_chat(src, "<span class='notice'>You try to put [what] on [who]...</span>")
-		if(do_mob(src, who, what.equip_delay_other))
+		if(do_after(src, what.equip_delay_other, who))
 			if(what && Adjacent(who) && what.mob_can_equip(who, src, final_where, TRUE, TRUE))
 				if(temporarilyRemoveItemFromInventory(what))
 					if(where_list)
@@ -1126,33 +1135,6 @@
 /mob/living/carbon/alien/update_stamina()
 	return
 
-/mob/living/proc/owns_soul()
-	if(mind)
-		return mind.soulOwner == mind
-	return TRUE
-
-/mob/living/proc/return_soul()
-	hellbound = 0
-	if(mind)
-		var/datum/antagonist/devil/devilInfo = mind.soulOwner.has_antag_datum(/datum/antagonist/devil)
-		if(devilInfo)//Not sure how this could be null, but let's just try anyway.
-			devilInfo.remove_soul(mind)
-		mind.soulOwner = mind
-
-/mob/living/proc/has_bane(banetype)
-	var/datum/antagonist/devil/devilInfo = is_devil(src)
-	return devilInfo && banetype == devilInfo.bane
-
-/mob/living/proc/check_weakness(obj/item/weapon, mob/living/attacker)
-	if(mind && mind.has_antag_datum(/datum/antagonist/devil))
-		return check_devil_bane_multiplier(weapon, attacker)
-	return 1 //This is not a boolean, it's the multiplier for the damage the weapon does.
-
-/mob/living/proc/check_acedia()
-	if(mind && mind.has_objective(/datum/objective/sintouched/acedia))
-		return TRUE
-	return FALSE
-
 /mob/living/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
 	stop_pulling()
 	. = ..()
@@ -1167,13 +1149,6 @@
 		mind.transfer_to(new_mob)
 	else
 		new_mob.key = key
-
-	for(var/para in hasparasites())
-		var/mob/living/simple_animal/hostile/guardian/G = para
-		G.summoner = new_mob
-		G.Recall()
-		to_chat(G, "<span class='holoparasite'>Your summoner has changed form!</span>")
-
 /mob/living/rad_act(amount)
 	. = ..()
 
@@ -1413,6 +1388,32 @@
 /mob/living/proc/isLivingSSD()
 	if(player_logged && stat != DEAD)
 		return TRUE
+
+// The above code is kept to prevent old SSD behavior from breaking, while the code below is dedicated to the SSD Indicator
+
+GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicator.dmi', "default0", RUNECHAT_PLANE))
+
+/mob/living
+	var/ssd_indicator = FALSE
+	var/lastclienttime = 0
+
+/mob/living/proc/set_ssd_indicator(state)
+	if(state == ssd_indicator)
+		return
+	ssd_indicator = state
+	if(ssd_indicator && stat != DEAD)
+		add_overlay(GLOB.ssd_indicator_overlay)
+	else
+		cut_overlay(GLOB.ssd_indicator_overlay)
+
+/mob/living/Login()
+	. = ..()
+	set_ssd_indicator(FALSE)
+
+/mob/living/Logout()
+	. = ..()
+	lastclienttime = world.time
+	set_ssd_indicator(TRUE)
 
 /mob/living/vv_get_header()
 	. = ..()
@@ -1788,12 +1789,15 @@
 
 
 /// Changes the value of the [living/body_position] variable.
-/mob/living/proc/set_body_position(new_value)
+/mob/living/proc/set_body_position(new_value, fall_sound_played)
 	if(body_position == new_value)
 		return
 	. = body_position
 	body_position = new_value
 	if(new_value == LYING_DOWN) // From standing to lying down.
+		if(has_gravity() && m_intent != MOVE_INTENT_WALK)
+			playsound(src, "bodyfall", 50, TRUE) // Will play the falling sound if not walking
+			fall_sound_played = TRUE
 		on_lying_down()
 	else // From lying down to standing up.
 		on_standing_up()

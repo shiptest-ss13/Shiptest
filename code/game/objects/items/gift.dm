@@ -47,8 +47,7 @@ GLOBAL_LIST_EMPTY(possible_gifts)
 	I.add_fingerprint(M)
 
 /obj/item/a_gift/proc/get_gift_type()
-	var/gift_type_list = list(/obj/item/sord,
-		/obj/item/storage/wallet,
+	var/gift_type_list = list(/obj/item/storage/wallet,
 		/obj/item/storage/photo_album,
 		/obj/item/storage/box/snappops,
 		/obj/item/storage/crayons,
@@ -62,12 +61,11 @@ GLOBAL_LIST_EMPTY(possible_gifts)
 		/obj/item/grown/corncob,
 		/obj/item/poster/random_contraband,
 		/obj/item/poster/random_official,
-		/obj/item/book/manual/wiki/barman_recipes,
+		/obj/item/book/manual/wiki/drinks,
 		/obj/item/book/manual/chef_recipes,
 		/obj/item/bikehorn,
 		/obj/item/toy/beach_ball,
 		/obj/item/toy/beach_ball/holoball,
-		/obj/item/banhammer,
 		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus,
 		/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
 		/obj/item/paicard,
@@ -76,10 +74,6 @@ GLOBAL_LIST_EMPTY(possible_gifts)
 		/obj/item/storage/belt/utility/full,
 		/obj/item/clothing/neck/tie/horrible,
 		/obj/item/clothing/suit/jacket/leather,
-		/obj/item/clothing/suit/jacket/leather/overcoat,
-		/obj/item/clothing/suit/poncho,
-		/obj/item/clothing/suit/poncho/green,
-		/obj/item/clothing/suit/poncho/red,
 		/obj/item/clothing/suit/snowman,
 		/obj/item/clothing/head/snowman,
 		/obj/item/stack/sheet/mineral/coal)

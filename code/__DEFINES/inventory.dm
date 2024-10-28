@@ -1,19 +1,5 @@
 /*ALL DEFINES RELATED TO INVENTORY OBJECTS, MANAGEMENT, ETC, GO HERE*/
 
-//ITEM INVENTORY WEIGHT, FOR w_class
-/// Usually items smaller then a human hand, (e.g. playing cards, lighter, scalpel, coins/holochips)
-#define WEIGHT_CLASS_TINY 1
-/// Pockets can hold small and tiny items, (e.g. flashlight, multitool, grenades, GPS device)
-#define WEIGHT_CLASS_SMALL 2
-/// Standard backpacks can carry tiny, small & normal items, (e.g. fire extinguisher, stun baton, gas mask, metal sheets)
-#define WEIGHT_CLASS_NORMAL 3
-/// Items that can be weilded or equipped but not stored in an inventory, (e.g. defibrillator, backpack, space suits)
-#define WEIGHT_CLASS_BULKY 4
-/// Usually represents objects that require two hands to operate, (e.g. shotgun, two-handed melee weapons)
-#define WEIGHT_CLASS_HUGE 5
-/// Essentially means it cannot be picked up or placed in an inventory, (e.g. mech parts, safe)
-#define WEIGHT_CLASS_GIGANTIC 6
-
 //Inventory depth: limits how many nested storage items you can access directly.
 //1: stuff in mob, 2: stuff in backpack, 3: stuff in box in backpack, etc
 #define INVENTORY_DEPTH 3
@@ -52,13 +38,15 @@
 #define HIDESUITSTORAGE (1<<1)
 #define HIDEJUMPSUIT (1<<2)	//these first four are only used in exterior suits
 #define HIDESHOES (1<<3)
-#define HIDEMASK (1<<4)	//these last six are only used in masks and headgear.
-#define HIDEEARS (1<<5)	// (ears means headsets and such)
-#define HIDEEYES (1<<6)	// Whether eyes and glasses are hidden
-#define HIDEFACE (1<<7)	// Whether we appear as unknown.
+#define HIDEMASK (1<<4)		//these last six are only used in masks and headgear.
+#define HIDEEARS (1<<5)		// (ears means headsets and such)
+#define HIDEEYES (1<<6)		// Whether eyes and glasses are hidden
+#define HIDEFACE (1<<7)		// Whether we appear as unknown.
 #define HIDEHAIR (1<<8)
 #define HIDEFACIALHAIR (1<<9)
 #define HIDENECK (1<<10)
+#define HIDEHORNS (1<<11) 	// Used for hiding Sarathi horns.
+#define HIDESNOUT (1<<11)
 
 //bitflags for clothing coverage - also used for limbs
 #define HEAD (1<<0)
@@ -92,8 +80,11 @@
 #define NO_VARIATION (1<<0)
 #define DIGITIGRADE_VARIATION (1<<1)
 #define DIGITIGRADE_VARIATION_NO_NEW_ICON (1<<2)
-#define VOX_VARIATION (1<<3)
-#define KEPORI_VARIATION (1<<4)
+#define DIGITIGRADE_VARIATION_SAME_ICON_FILE (1<<3) //intended for use with factional icon files for organization purposes, otherwise use either above. Ex of naming: a state called "nameof_thing" can be named "nameof_thing_digi"
+#define SNOUTED_VARIATION (1<<4) //Ex of naming: a state called "nameof_thing" can be named "nameof_thing_snouted"
+#define SNOUTED_SMALL_VARIATION (1<<5) //For Elzuose snouts
+#define VOX_VARIATION (1<<6)
+#define KEPORI_VARIATION (1<<7)
 
 #define NOT_DIGITIGRADE 0
 #define FULL_DIGITIGRADE 1
@@ -159,7 +150,8 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/gun/ballistic,
 	/obj/item/gun/energy,
 	/obj/item/gun/grenadelauncher,
-	/obj/item/kitchen/knife/combat,
+	/obj/item/flamethrower,
+	/obj/item/melee/knife/combat,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
 	/obj/item/reagent_containers/spray/pepper,
@@ -184,5 +176,4 @@ GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 	/obj/item/tank/internals/plasmaman,
 	/obj/item/toy)))
 
-//WS Port - Internals checker
 #define GET_INTERNAL_SLOTS(C) list(C.head, C.wear_mask)

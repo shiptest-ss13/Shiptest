@@ -140,8 +140,8 @@
 	playsound(src, 'sound/items/bikehorn.ogg', 50, TRUE)
 
 /obj/item/card/id
-	name = "identification card"
-	desc = "A card used to provide ID and determine access across the station."
+	name = "access card"
+	desc = "These cards provide access to different sections of a ship."
 	icon_state = "id"
 	item_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
@@ -149,39 +149,41 @@
 	slot_flags = ITEM_SLOT_ID
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	var/mining_points = 0 //For redeeming at mining equipment vendors
 	var/list/access = list()
 	var/list/ship_access = list()
 	var/registered_name = null // The name registered_name on the card
 	var/assignment = null
 	var/access_txt // mapping aid
-	var/datum/bank_account/registered_account
-	var/obj/machinery/paystand/my_store
+	//var/datum/bank_account/registered_account
 	var/uses_overlays = TRUE
 	var/icon/cached_flat_icon
-	var/registered_age = 13 // default age for ss13 players
+	var/registered_age = 18 // default age for ss13 players
 	var/job_icon
+	var/faction_icon
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
 	if(mapload && access_txt)
 		access = text2access(access_txt)
+		SEND_SIGNAL(src, COSMIG_ACCESS_UPDATED)
 	update_label()
+	update_appearance()
 	RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, PROC_REF(update_in_wallet))
-
-/obj/item/card/id/Destroy()
-	if (registered_account)
-		registered_account.bank_cards -= src
-	if (my_store && my_store.my_card == src)
-		my_store.my_card = null
-	return ..()
 
 /obj/item/card/id/attack_self(mob/user)
 	if(Adjacent(user))
-		var/minor
-		if(registered_name && registered_age && registered_age < AGE_MINOR)
-			minor = " <b>(MINOR)</b>"
-		user.visible_message("<span class='notice'>[user] shows you: [icon2html(src, viewers(user))] [src.name][minor].</span>", "<span class='notice'>You show \the [src.name][minor].</span>")
+		var/id_message = "\the [initial(name)] "
+		var/list/id_info = list()
+		if(assignment)
+			id_info += "JOB: [assignment]"
+		if(registered_name)
+			id_info += "NAME: [registered_name]"
+		if(id_info)
+			id_message += id_info.Join(", ")
+		var/self_message = span_notice("You show [id_message]")
+		var/other_message = span_notice("[user] shows you: [icon2html(src, viewers(user))] [id_message]")
+
+		user.visible_message(other_message, self_message)
 	add_fingerprint(user)
 
 /obj/item/card/id/vv_edit_var(var_name, var_value)
@@ -191,171 +193,29 @@
 			if(NAMEOF(src, assignment),NAMEOF(src, registered_name),NAMEOF(src, registered_age))
 				update_label()
 
-/obj/item/card/id/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/holochip))
-		insert_money(W, user)
-		return
-	else if(istype(W, /obj/item/spacecash/bundle))
-		insert_money(W, user, TRUE)
-		return
-	else if(istype(W, /obj/item/coin))
-		insert_money(W, user, TRUE)
-		return
-	else if(istype(W, /obj/item/storage/bag/money))
-		var/obj/item/storage/bag/money/money_bag = W
-		var/list/money_contained = money_bag.contents
-
-		var/money_added = mass_insert_money(money_contained, user)
-
-		if (money_added)
-			to_chat(user, "<span class='notice'>You stuff the contents into the card! They disappear in a puff of bluespace smoke, adding [money_added] worth of credits to the linked account.</span>")
-		return
-	else
-		return ..()
-
-/obj/item/card/id/proc/insert_money(obj/item/I, mob/user, physical_currency)
-	var/cash_money = I.get_item_credit_value()
-	if(!cash_money)
-		to_chat(user, "<span class='warning'>[I] doesn't seem to be worth anything!</span>")
-		return
-
-	if(!registered_account)
-		to_chat(user, "<span class='warning'>[src] doesn't have a linked account to deposit [I] into!</span>")
-		return
-
-	registered_account.adjust_money(cash_money)
-	SSblackbox.record_feedback("amount", "credits_inserted", cash_money)
-	log_econ("[cash_money] credits were inserted into [src] owned by [src.registered_name]")
-	if(physical_currency)
-		to_chat(user, "<span class='notice'>You stuff [I] into [src]. It disappears in a small puff of bluespace smoke, adding [cash_money] credits to the linked account.</span>")
-	else
-		to_chat(user, "<span class='notice'>You insert [I] into [src], adding [cash_money] credits to the linked account.</span>")
-
-	to_chat(user, "<span class='notice'>The linked account now reports a balance of [registered_account.account_balance] cr.</span>")
-	qdel(I)
-
-/obj/item/card/id/proc/mass_insert_money(list/money, mob/user)
-	if (!money || !money.len)
-		return FALSE
-
-	var/total = 0
-
-	for (var/obj/item/physical_money in money)
-		var/cash_money = physical_money.get_item_credit_value()
-
-		total += cash_money
-
-		registered_account.adjust_money(cash_money)
-	SSblackbox.record_feedback("amount", "credits_inserted", total)
-	log_econ("[total] credits were inserted into [src] owned by [src.registered_name]")
-	QDEL_LIST(money)
-
-	return total
-
-/obj/item/card/id/proc/alt_click_can_use_id(mob/living/user)
-	if(!isliving(user))
-		return
-	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		return
-
-	return TRUE
-
-// Returns true if new account was set.
-/obj/item/card/id/proc/set_new_account(mob/living/user)
-	. = FALSE
-	var/datum/bank_account/old_account = registered_account
-
-	var/new_bank_id = input(user, "Enter your account ID number.", "Account Reclamation", 111111) as num | null
-
-	if (isnull(new_bank_id))
-		return
-
-	if(!alt_click_can_use_id(user))
-		return
-	if(!new_bank_id || new_bank_id < 111111 || new_bank_id > 999999)
-		to_chat(user, "<span class='warning'>The account ID number needs to be between 111111 and 999999.</span>")
-		return
-	if (registered_account && registered_account.account_id == new_bank_id)
-		to_chat(user, "<span class='warning'>The account ID was already assigned to this card.</span>")
-		return
-
-	for(var/A in SSeconomy.bank_accounts)
-		var/datum/bank_account/B = A
-		if(B.account_id == new_bank_id)
-			if (old_account)
-				old_account.bank_cards -= src
-
-			B.bank_cards += src
-			registered_account = B
-			to_chat(user, "<span class='notice'>The provided account has been linked to this ID card.</span>")
-
-			return TRUE
-
-	to_chat(user, "<span class='warning'>The account ID number provided is invalid.</span>")
-	return
-
-/obj/item/card/id/AltClick(mob/living/user)
-	if(!alt_click_can_use_id(user))
-		return
-
-	if(!registered_account)
-		set_new_account(user)
-		return
-
-	if (world.time < registered_account.withdrawDelay)
-		registered_account.bank_card_talk("<span class='warning'>ERROR: UNABLE TO LOGIN DUE TO SCHEDULED MAINTENANCE. MAINTENANCE IS SCHEDULED TO COMPLETE IN [(registered_account.withdrawDelay - world.time)/10] SECONDS.</span>", TRUE)
-		return
-
-	var/amount_to_remove =  FLOOR(input(user, "How much do you want to withdraw? Current Balance: [registered_account.account_balance]", "Withdraw Funds", 5) as num|null, 1)
-
-	if(!amount_to_remove || amount_to_remove < 0)
-		return
-	if(!alt_click_can_use_id(user))
-		return
-	if(registered_account.adjust_money(-amount_to_remove))
-		var/obj/item/holochip/holochip = new (user.drop_location(), amount_to_remove)
-		user.put_in_hands(holochip)
-		to_chat(user, "<span class='notice'>You withdraw [amount_to_remove] credits into a holochip.</span>")
-		SSblackbox.record_feedback("amount", "credits_removed", amount_to_remove)
-		log_econ("[amount_to_remove] credits were removed from [src] owned by [src.registered_name]")
-		return
-	else
-		if (registered_account.frozen)
-			registered_account.bank_card_talk("<span class='warning'>ERROR: The linked account is frozen! Contact your department head.</span>", TRUE)
-		else
-			var/difference = amount_to_remove - registered_account.account_balance
-			registered_account.bank_card_talk("<span class='warning'>ERROR: The linked account requires [difference] more credit\s to perform that withdrawal.</span>", TRUE)
-
 /obj/item/card/id/examine(mob/user)
 	. = ..()
-	if(registered_account)
-		. += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
-		if(registered_account.frozen)
-			. += "<span class='warning'>The linked account is frozen, and cannot be withdrawn from or deposited into!</span>"
-	. += "<span class='notice'><i>There's more information below, you can look again to take a closer look...</i></span>"
-
-/obj/item/card/id/examine_more(mob/user)
-	var/list/msg = list("<span class='notice'><i>You examine [src] closer, and note the following...</i></span>")
-
+	. += "<br>CARD INFO:"
+	if(registered_name)
+		. += "<B>NAME:</B>"
+		. += "[registered_name]"
 	if(registered_age)
-		msg += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
-	if(mining_points)
-		msg += "There's [mining_points] mining equipment redemption point\s loaded onto this card."
+		. += "<B>AGE:</B>"
+		. += "[registered_age] years old [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 	if(length(ship_access))
+		. += "<B>SHIP ACCESS:</B>"
+
+		var/list/ship_factions = list()
+		for(var/datum/overmap/ship/controlled/ship in ship_access)
+			var/faction = ship.get_faction()
+			if(!(faction in ship_factions))
+				ship_factions += faction
+		. += "<B>[ship_factions.Join(", ")]</B>"
+
 		var/list/ship_names = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
 			ship_names += ship.name
-		msg += "The card has access to the following ships: [ship_names.Join(", ")]"
-	if(registered_account)
-		msg += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
-		msg += "<span class='info'>Alt-Click the ID to pull money from the linked account in the form of holochips.</span>"
-		msg += "<span class='info'>You can insert credits into the linked account by pressing holochips, cash, or coins against the ID.</span>"
-		if(registered_account.account_holder == user.real_name)
-			msg += "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.</span>"
-	else
-		msg += "<span class='info'>There is no registered account linked to this card. Alt-Click to add one.</span>"
-
-	return msg
+		. += "[ship_names.Join(", ")]"
 
 /obj/item/card/id/GetAccess()
 	return access
@@ -400,11 +260,13 @@
 /obj/item/card/id/proc/add_ship_access(datum/overmap/ship/controlled/ship)
 	if (ship)
 		ship_access += ship
+		SEND_SIGNAL(src, COSMIG_ACCESS_UPDATED)
 
 // Removes the referenced ship from the card
 /obj/item/card/id/proc/remove_ship_access(datum/overmap/ship/controlled/ship)
 	if (ship)
 		ship_access -= ship
+		SEND_SIGNAL(src, COSMIG_ACCESS_UPDATED)
 
 // Finds the referenced ship in the list
 /obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship)
@@ -414,17 +276,14 @@
 /*
 Usage:
 update_label()
-	Sets the id name to whatever registered_name and assignment is
+	Sets the id name to whatever the assignment is
 */
 
 /obj/item/card/id/proc/update_label()
-	var/blank = !registered_name
-	name = "[blank ? initial(name) : "[registered_name]'s ID Card"][(!assignment) ? "" : " ([assignment])"]"
-	update_appearance()
+	name = "[(istype(src, /obj/item/card/id/syndicate)) ? "[initial(name)]" : "access card"][(!assignment) ? "" : " ([assignment])"]"
 
 /obj/item/card/id/silver
-	name = "silver identification card"
-	desc = "A silver card which shows honour and dedication."
+	desc = "A silver-colored card, usually given to higher-ranking officials in ships and stations."
 	icon_state = "silver"
 	item_state = "silver_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
@@ -435,14 +294,8 @@ update_label()
 	registered_name = "Emergency Command Hologram"
 	access = list(ACCESS_CHANGE_IDS)
 
-/obj/item/card/id/silver/reaper
-	access = list(ACCESS_MAINT_TUNNELS)
-	assignment = "Reaper"
-	registered_name = "Thirteen"
-
 /obj/item/card/id/gold
-	name = "gold identification card"
-	desc = "A golden card which shows power and might."
+	desc = "A golden-colored card, usually given to those at the top of the hierarchy in a ship."
 	icon_state = "gold"
 	item_state = "gold_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
@@ -480,7 +333,7 @@ update_label()
 			else
 				return ..()
 
-		var/popup_input = alert(user, "Choose Action", "Agent ID", "Show", "Forge/Reset", "Change Account ID")
+		var/popup_input = alert(user, "Choose Action", "Agent ID", "Show", "Forge/Reset")
 		if(user.incapacitated())
 			return
 		if(popup_input == "Forge/Reset" && !forged)
@@ -510,28 +363,16 @@ update_label()
 			to_chat(user, "<span class='notice'>You successfully forge the ID card.</span>")
 			log_game("[key_name(user)] has forged \the [initial(name)] with name \"[registered_name]\" and occupation \"[assignment]\".")
 
-			// First time use automatically sets the account id to the user.
-			if (first_use && !registered_account)
-				if(ishuman(user))
-					var/mob/living/carbon/human/accountowner = user
-
-					for(var/bank_account in SSeconomy.bank_accounts)
-						var/datum/bank_account/account = bank_account
-						if(account.account_id == accountowner.account_id)
-							account.bank_cards += src
-							registered_account = account
-							to_chat(user, "<span class='notice'>Your account number has been automatically assigned.</span>")
 			return
 		else if (popup_input == "Forge/Reset" && forged)
 			registered_name = initial(registered_name)
 			assignment = initial(assignment)
+			faction_icon = initial(faction_icon)
+			job_icon = initial(job_icon)
 			log_game("[key_name(user)] has reset \the [initial(name)] named \"[src]\" to default.")
 			update_label()
 			forged = FALSE
 			to_chat(user, "<span class='notice'>You successfully reset the ID card.</span>")
-			return
-		else if (popup_input == "Change Account ID")
-			set_new_account(user)
 			return
 	return ..()
 
@@ -543,14 +384,10 @@ update_label()
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
 
 /obj/item/card/id/syndicate_command
-	name = "syndicate ID card"
-	desc = "An ID straight from the Syndicate."
-	registered_name = "Syndicate"
-	assignment = "Syndicate Overlord"
+	desc = "An access card widely utilized by Coalition splinters in the frontier."
 	icon_state = "syndie"
 	access = list(ACCESS_SYNDICATE)
 	uses_overlays = FALSE
-	registered_age = null
 
 /obj/item/card/id/syndicate_command/crew_id
 	assignment = "Operative"
@@ -580,15 +417,12 @@ update_label()
 /obj/item/card/id/patient //Aegis ID
 	assignment = "Long Term Patient"
 	uses_overlays = FALSE
-	access = list(ACCESS_SYNDICATE)
 
 /obj/item/card/id/captains_spare
-	desc = "The spare ID of the High Lord himself."
 	icon_state = "gold"
 	item_state = "gold_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
-	registered_name = "Captain"
 	assignment = "Captain"
 	registered_age = null
 
@@ -607,11 +441,9 @@ update_label()
 		..()
 
 /obj/item/card/id/centcom
-	name = "\improper CentCom ID"
-	desc = "An ID straight from Central Command."
+	name = "\improper Nanotrasen Central Command access card"
+	desc = "An access card sourced from Nanotrasen's Central Command."
 	icon_state = "centcom"
-	registered_name = "Central Command"
-	assignment = "Central Command"
 	uses_overlays = FALSE
 	registered_age = null
 
@@ -626,8 +458,6 @@ update_label()
 	name = "\improper CentCom ID"
 	desc = "An ERT ID card."
 	icon_state = "ert_commander"
-	registered_name = "Emergency Response Team Commander"
-	assignment = "Emergency Response Team Commander"
 	uses_overlays = FALSE
 	registered_age = null
 
@@ -636,8 +466,6 @@ update_label()
 	. = ..()
 
 /obj/item/card/id/ert/security
-	registered_name = "Security Response Officer"
-	assignment = "Security Response Officer"
 	icon_state = "ert_security"
 
 /obj/item/card/id/ert/security/Initialize()
@@ -645,8 +473,6 @@ update_label()
 	. = ..()
 
 /obj/item/card/id/ert/engineer
-	registered_name = "Engineering Response Officer"
-	assignment = "Engineering Response Officer"
 	icon_state = "ert_engineer"
 
 /obj/item/card/id/ert/engineer/Initialize()
@@ -654,8 +480,6 @@ update_label()
 	. = ..()
 
 /obj/item/card/id/ert/medical
-	registered_name = "Medical Response Officer"
-	assignment = "Medical Response Officer"
 	icon_state = "ert_medic"
 
 /obj/item/card/id/ert/medical/Initialize()
@@ -663,8 +487,6 @@ update_label()
 	. = ..()
 
 /obj/item/card/id/ert/chaplain
-	registered_name = "Religious Response Officer"
-	assignment = "Religious Response Officer"
 	icon_state = "ert_chaplain"
 
 /obj/item/card/id/ert/chaplain/Initialize()
@@ -672,8 +494,6 @@ update_label()
 	. = ..()
 
 /obj/item/card/id/ert/janitor
-	registered_name = "Janitorial Response Officer"
-	assignment = "Janitorial Response Officer"
 	icon_state = "ert_janitor"
 
 /obj/item/card/id/ert/janitor/Initialize()
@@ -681,8 +501,6 @@ update_label()
 	. = ..()
 
 /obj/item/card/id/ert/clown
-	registered_name = "Entertainment Response Officer"
-	assignment = "Entertainment Response Officer"
 	icon_state = "ert_clown"
 
 /obj/item/card/id/ert/clown/Initialize()
@@ -690,12 +508,10 @@ update_label()
 	. = ..()
 
 /obj/item/card/id/ert/deathsquad
-	name = "\improper Death Squad ID"
-	desc = "A Death Squad ID card."
+	desc = "An access card colored in black and red."
 	icon_state = "deathsquad" //NO NO SIR DEATH SQUADS ARENT A PART OF NANOTRASEN AT ALL
-	registered_name = "Death Commando"
-	assignment = "Death Commando"
 	uses_overlays = FALSE
+	job_icon = "deathsquad"
 
 /obj/item/card/id/debug
 	name = "\improper Debug ID"
@@ -706,7 +522,6 @@ update_label()
 
 /obj/item/card/id/debug/Initialize()
 	access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()
-	registered_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	. = ..()
 
 /obj/item/card/id/prisoner
@@ -760,11 +575,6 @@ update_label()
 	registered_name = "Prisoner #13-007"
 	icon_state = "prisoner_007"
 
-/obj/item/card/id/mining
-	name = "mining ID"
-	access = list(ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MAILSORTING, ACCESS_MINERAL_STOREROOM)
-	custom_price = 250
-
 /obj/item/card/id/away
 	name = "\proper a perfectly generic identification card"
 	desc = "A perfectly generic identification card. Looks like it could use some flavor."
@@ -782,120 +592,30 @@ update_label()
 	name = "Officer ID"
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_AWAY_SEC)
 
-/obj/item/card/id/away/old
-	name = "\proper a perfectly generic identification card"
-	desc = "A perfectly generic identification card. Looks like it could use some flavor."
-
-/obj/item/card/id/away/old/sec
-	name = "Charlie Station Security Officer's ID card"
-	desc = "A faded Charlie Station ID card. You can make out the rank \"Security Officer\"."
-	assignment = "Charlie Station Security Officer"
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_SEC)
-
-/obj/item/card/id/away/old/sci
-	name = "Charlie Station Scientist's ID card"
-	desc = "A faded Charlie Station ID card. You can make out the rank \"Scientist\"."
-	assignment = "Charlie Station Scientist"
-	access = list(ACCESS_AWAY_GENERAL)
-
-/obj/item/card/id/away/old/eng
-	name = "Charlie Station Engineer's ID card"
-	desc = "A faded Charlie Station ID card. You can make out the rank \"Station Engineer\"."
-	assignment = "Charlie Station Engineer"
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_ENGINE)
-
-/obj/item/card/id/away/old/cap
-	name = "Charlie Station Captain's ID card"
-	desc = "A faded Charlie Station ID card. You can make out the rank \"Captain\"."
-	assignment = "Charlie Station Captain"
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_ENGINE, ACCESS_AWAY_SEC)
-
-/obj/item/card/id/away/old/apc
-	name = "APC Access ID"
-	desc = "A special ID card that allows access to APC terminals."
-	access = list(ACCESS_ENGINE_EQUIP)
-
 /obj/item/card/id/away/deep_storage //deepstorage.dmm space ruin
 	name = "bunker access ID"
 
 /obj/item/card/id/solgov
-	name = "\improper SolGov ID"
-	desc = "A SolGov ID with no proper access to speak of."
+	name = "\improper SolGov keycard"
+	desc = "A SolGov keycard with no proper access to speak of."
 	assignment = "Officer"
 	icon_state = "solgov"
 	uses_overlays = FALSE
 
 /obj/item/card/id/solgov/commander
-	name = "\improper SolGov ID"
-	desc = "A SolGov ID with no proper access to speak of. This one indicates a Commander."
+	name = "\improper SolGov commander keycard"
+	desc = "A SolGov keycard with no proper access to speak of. This one indicates a Commander."
 	assignment = "Commander"
 
-/obj/item/card/id/away/slime //We're ranchin, baby! //It's slimin time
-	name = "\improper Slime Lab access card"
-	desc = "An ID card with access to the Slime Lab"
-	assignment = "Slime Research Staff"
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_XENOBIOLOGY)
-	registered_name = "Slime Researcher"
-	icon_state = "id"
-
-/obj/item/card/id/departmental_budget
-	name = "departmental card (FUCK)"
-	desc = "Provides access to the departmental budget."
-	icon_state = "budgetcard"
+/obj/item/card/id/suns
+	name = "\improper SUNS keycard"
+	desc = "A keycard belonging to the Student-Union Association of Naturalistic Sciences."
+	assignment = "Student"
+	icon_state = "suns"
 	uses_overlays = FALSE
-	var/department_ID = ACCOUNT_CIV
-	var/department_name = ACCOUNT_CIV_NAME
-	registered_age = null
 
-/obj/item/card/id/departmental_budget/Initialize()
-	. = ..()
-	var/datum/bank_account/B = SSeconomy.get_dep_account(department_ID)
-	if(B)
-		registered_account = B
-		if(!B.bank_cards.Find(src))
-			B.bank_cards += src
-		name = "departmental card ([department_name])"
-		desc = "Provides access to the [department_name]."
-	SSeconomy.dep_cards += src
-
-/obj/item/card/id/departmental_budget/Destroy()
-	SSeconomy.dep_cards -= src
-	return ..()
-
-/obj/item/card/id/departmental_budget/update_label()
-	return
-
-/obj/item/card/id/departmental_budget/civ
-	department_ID = ACCOUNT_CIV
-	department_name = ACCOUNT_CIV_NAME
-	icon_state = "civ_budget"
-
-/obj/item/card/id/departmental_budget/eng
-	department_ID = ACCOUNT_ENG
-	department_name = ACCOUNT_ENG_NAME
-	icon_state = "eng_budget"
-
-/obj/item/card/id/departmental_budget/sci
-	department_ID = ACCOUNT_SCI
-	department_name = ACCOUNT_SCI_NAME
-	icon_state = "sci_budget"
-
-/obj/item/card/id/departmental_budget/med
-	department_ID = ACCOUNT_MED
-	department_name = ACCOUNT_MED_NAME
-	icon_state = "med_budget"
-
-/obj/item/card/id/departmental_budget/srv
-	department_ID = ACCOUNT_SRV
-	department_name = ACCOUNT_SRV_NAME
-	icon_state = "srv_budget"
-
-/obj/item/card/id/departmental_budget/car
-	department_ID = ACCOUNT_CAR
-	department_name = ACCOUNT_CAR_NAME
-	icon_state = "car_budget" //saving up for a new tesla
-
-/obj/item/card/id/departmental_budget/sec
-	department_ID = ACCOUNT_SEC
-	department_name = ACCOUNT_SEC_NAME
-	icon_state = "sec_budget"
+/obj/item/card/id/suns/command
+	name = "\improper SUNS command keycard"
+	desc = "A keycard belonging to the Student-Union Association of Naturalistic Sciences. This one has a gold stripe, indicating a command member."
+	assignment = "Academic Staff"
+	icon_state = "sunscommand"

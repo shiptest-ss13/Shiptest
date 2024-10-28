@@ -38,7 +38,7 @@
 	. = ..()
 	if(should_squeak)
 		AddComponent(/datum/component/squeak, squeak_override)
-	AddElement(/datum/element/bed_tuckable, 6, -5, 90)
+	AddElement(/datum/element/bed_tuckable, 6, -5, 90, FALSE, FALSE)
 
 	//have we decided if Pinocchio goes in the blue or pink aisle yet?
 	if(gender == NEUTER)
@@ -653,7 +653,7 @@
 
 /obj/item/toy/plush/moth/punished
 	name = "punished moth plushie"
-	desc = "An adorable mothperson plushy. It's a sad bug... that's quite sad actualy."
+	desc = "An adorable mothperson plushy. It's a sad bug... that's quite sad actually."
 	icon_state = "moffplush_punished"
 
 /obj/item/toy/plush/moth/firewatch
@@ -771,6 +771,46 @@
 	item_state = "blahaj"
 	lefthand_file = 'icons/mob/inhands/misc/plushes_lefthand.dmi' //todo: sort the god damn plushie inhands
 	righthand_file = 'icons/mob/inhands/misc/plushes_righthand.dmi'
+
+/obj/item/toy/plush/rilena
+	name = "Ri plushie"
+	desc = "A plush of the protagonist of the popular combination video game series and webcomic RILENA."// Makes the iconic hurt sound from the game!" //sadly does not :pensive:
+	icon_state = "rilenaplush_ri"
+	attack_verb = list("blasted", "shot", "shmupped")
+	//squeak_override = list('sound/voice/ //kepori lack a voice :(
+	gender = FEMALE
+
+/obj/item/toy/plush/tali
+	name = "T4L1 plushie"
+	desc = "A surprisingly soft plushie of a recurring miniboss from the popular combination video game series and webcomic RILENA. The cannon arm does not function."
+	icon_state = "rilenaplush_t4l1"
+	attack_verb = list("blasted", "shot", "cannoned")
+	gender = FEMALE
+
+/obj/item/toy/plush/sharai
+	name = "Sharai plushie"
+	desc = "A plushie of the four winged kepori boss from the popular combination video game series and webcomic RILENA."
+	icon_state = "rilenaplush_sharai"
+	attack_verb = list("blasted", "shot", "radial bursted")
+	gender = FEMALE
+
+/obj/item/toy/plush/xader
+	name = "Xader plushie"
+	desc = "A plushie of the recurring transdimensional transgender shopkeep from the popular webseries RILENA."
+	icon_state = "rilenaplush_xader"
+	gender = FEMALE
+
+/obj/item/toy/plush/mora
+	name = "Mora plushie"
+	desc = "A plushie of Mora from the popular webseries RILENA."
+	icon_state = "rilenaplush_mora"
+	gender = FEMALE
+
+/obj/item/toy/plush/kari
+	name = "knockoff RILENA plushie"
+	desc = "A plushie of a FBP Kepori. The tag calls it 'Kari' and claims it to be from 'RAYALA: RUNNING FROM EVIL'. The cannon arm does not function."
+	icon_state = "fbplush"
+	gender = FEMALE
 
 /obj/item/toy/plush/among
 	name = "amoung pequeño"

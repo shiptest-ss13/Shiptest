@@ -8,19 +8,18 @@
 	density = TRUE
 	var/rad_power = 100
 	var/rad_range = 1 // !Range mod = rad dropoff speed
-	var/rad_delay = 20
-	var/rad_prob = 30
-	var/_pulse = 0 // Holds the world.time interval in process
+	COOLDOWN_DECLARE(pulse_cooldown)
+	var/rad_delay = 2 SECONDS
 
 /obj/structure/radioactive/Initialize()
 	START_PROCESSING(SSobj, src)
 	. = ..()
 
 /obj/structure/radioactive/process()
-	if(world.time > _pulse)
-		if(prob(rad_prob))
+	for(var/mob/living/L in range(5, src))
+		if(L.client)
 			Nuke()
-		_pulse = world.time + rad_delay
+			break
 	..()
 
 /obj/structure/radioactive/bullet_act(obj/projectile/P)
@@ -50,6 +49,10 @@
 		Nuke()
 
 /obj/structure/radioactive/proc/Nuke(atom/movable/AM)
+	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
+		return
+
+	COOLDOWN_START(src, pulse_cooldown, rad_delay)
 	radiation_pulse(src, rad_power, rad_range)
 
 /obj/structure/radioactive/waste
@@ -59,7 +62,7 @@
 	anchored = TRUE
 	rad_power = 150
 	rad_range = 0.8
-	rad_prob = 50
+	rad_delay = 1 SECONDS
 
 /obj/structure/radioactive/stack
 	name = "stack of nuclear waste"
@@ -67,7 +70,7 @@
 	icon_state = "barrel_3"
 	anchored = TRUE
 	rad_power = 300
-	rad_prob = 50
+	rad_delay = 1 SECONDS
 
 /obj/structure/radioactive/supermatter
 	name = "decayed supermatter crystal"
@@ -76,5 +79,4 @@
 	anchored = TRUE
 	rad_power = 1200
 	rad_range = 0.2
-	rad_delay = 20
-	rad_prob = 60
+	rad_delay = 0.5 SECONDS

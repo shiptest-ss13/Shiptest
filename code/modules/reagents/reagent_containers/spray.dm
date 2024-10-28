@@ -2,7 +2,7 @@
 	name = "spray bottle"
 	desc = "A spray bottle, with an unscrewable top."
 	icon = 'icons/obj/janitor.dmi'
-	icon_state = "sprayer_large"
+	icon_state = "sprayer"
 	item_state = "cleaner"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
@@ -162,7 +162,7 @@
 /obj/item/reagent_containers/spray/cleaner
 	name = "space cleaner"
 	desc = "BLAM!-brand non-foaming space cleaner!"
-	icon_state = "cleaner"
+	icon_state = "sprayer"
 	volume = 100
 	list_reagents = list(/datum/reagent/space_cleaner = 100)
 	amount_per_transfer_from_this = 2
@@ -180,7 +180,7 @@
 /obj/item/reagent_containers/spray/pepper
 	name = "pepperspray"
 	desc = "Manufactured by UhangInc, used to blind and down an opponent quickly."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "pepperspray"
 	item_state = "pepperspray"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -212,16 +212,6 @@
 
 /obj/item/reagent_containers/spray/waterflower/attack_self(mob/user) //Don't allow changing how much the flower sprays
 	return
-
-///Subtype used for the lavaland clown ruin.
-/obj/item/reagent_containers/spray/waterflower/superlube
-	name = "clown flower"
-	desc = "A delightly devilish flower... you got a feeling where this is going."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "clownflower"
-	amount_per_transfer_from_this = 3  // WS edit - superlube fix
-	volume = 30
-	list_reagents = list(/datum/reagent/lube/superlube = 30)
 
 /obj/item/reagent_containers/spray/waterflower/cyborg
 	reagent_flags = NONE
@@ -270,8 +260,8 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "chemsprayer"
 	item_state = "chemsprayer"
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	throwforce = 0
 	w_class = WEIGHT_CLASS_NORMAL
 	stream_mode = 1
@@ -308,8 +298,8 @@
 	desc = "A utility used to spray large amounts of cleaning reagents in a given area. It regenerates space cleaner by itself but it's unable to be fueled by normal means."
 	icon_state = "chemsprayer_janitor"
 	item_state = "chemsprayer_janitor"
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	reagent_flags = NONE
 	list_reagents = list(/datum/reagent/space_cleaner = 1000)
 	volume = 1000
@@ -345,26 +335,9 @@
 	volume = 100
 	list_reagents = list(/datum/reagent/toxin/plantbgone = 100)
 
-/obj/item/reagent_containers/spray/syndicate
-	name = "suspicious spray bottle"
-	desc = "A spray bottle, with a high performance plastic nozzle. The color scheme makes you feel slightly uneasy."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "sprayer_sus_8"
-	item_state = "sprayer_sus"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	spray_range = 4
-	stream_range = 2
-	volume = 100
-	custom_premium_price = 900
-
-/obj/item/reagent_containers/spray/syndicate/Initialize()
-	. = ..()
-	icon_state = pick("sprayer_sus_1", "sprayer_sus_2", "sprayer_sus_3", "sprayer_sus_4", "sprayer_sus_5","sprayer_sus_6", "sprayer_sus_7", "sprayer_sus_8")
-
 /obj/item/reagent_containers/spray/medical
 	name = "medical spray bottle"
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/medicine.dmi'
 	icon_state = "sprayer_med_red"
 	item_state = "sprayer_med_red"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
@@ -388,13 +361,3 @@
 		if("sprayer_med_blue")
 			item_state = "sprayer_med_blue"
 	M.update_inv_hands()
-
-/*WS Begin - No Cobby
-
-/obj/item/reagent_containers/spray/hercuri
-	name = "medical spray (hercuri)"
-	desc = "A medical spray bottle.This one contains hercuri, a medicine used to negate the effects of dangerous high-temperature environments. Careful not to freeze the patient!"
-	icon_state = "sprayer_large"
-	list_reagents = list(/datum/reagent/medicine/c2/hercuri = 100)
-
-WS End */

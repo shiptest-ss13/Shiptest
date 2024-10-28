@@ -79,6 +79,14 @@
 				return
 	return ..()
 
+/obj/structure/barricade/wooden/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, 2 SECONDS, volume=0))
+		to_chat(user, "<span class='warning'>You cut apart [src].</span>")
+		deconstruct()
+		return TRUE
 
 /obj/structure/barricade/wooden/crude
 	name = "crude plank barricade"
@@ -110,6 +118,24 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_SANDBAGS)
 	canSmoothWith = list(SMOOTH_GROUP_SANDBAGS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SECURITY_BARRICADE)
+
+/obj/structure/barricade/sandbags/MouseDrop(over_object, src_location, over_location)
+	. = ..()
+	if(over_object == usr && Adjacent(usr))
+		if(src.flags_1 & NODECONSTRUCT_1)
+			return
+		if(!usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
+			return
+		usr.visible_message(span_notice("[usr] begins pulling apart \the [src.name]..."), span_notice("You begin pulling apart \the [src.name]..."))
+		if(do_after(usr, 30, usr))
+			deconstruct()
+
+/obj/structure/barricade/sandbags/make_debris()
+	new /obj/item/stack/sheet/mineral/sandbags(get_turf(src), 1)
+
+/obj/structure/barricade/sandbags/examine(mob/user)
+	. = ..()
+	. += span_notice("You could probably <b>pull</b> the [src.name] by dragging it onto yourself.")
 
 /obj/structure/barricade/security
 	name = "security barrier"

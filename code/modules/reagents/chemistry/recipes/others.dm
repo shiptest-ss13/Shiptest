@@ -56,7 +56,7 @@
 /datum/chemical_reaction/adamantinesolidification/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/stack/sheet/mineral/adamantine(location)
+		new /obj/item/stack/sheet/mineral/hidden/hellstone(location)
 
 /datum/chemical_reaction/silversolidification
 	required_reagents = list(/datum/reagent/silver = 20, /datum/reagent/consumable/frostoil = 5, /datum/reagent/carbon = 10)
@@ -148,12 +148,6 @@
 	results = list(/datum/reagent/nitrous_oxide = 5)
 	required_reagents = list(/datum/reagent/ammonia = 2, /datum/reagent/nitrogen = 1, /datum/reagent/oxygen = 2)
 	required_temp = 525
-
-//Technically a mutation toxin
-/datum/chemical_reaction/mulligan
-	results = list(/datum/reagent/mulligan = 1)
-	required_reagents = list(/datum/reagent/mutationtoxin/jelly = 1, /datum/reagent/toxin/mutagen = 1)
-
 
 ////////////////////////////////// VIROLOGY //////////////////////////////////////////
 
@@ -441,18 +435,6 @@
 	results = list(/datum/reagent/colorful_reagent = 5)
 	required_reagents = list(/datum/reagent/stable_plasma = 1, /datum/reagent/uranium/radium = 1, /datum/reagent/drug/space_drugs = 1, /datum/reagent/medicine/cryoxadone = 1, /datum/reagent/consumable/triple_citrus = 1)
 
-/datum/chemical_reaction/life
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/blood = 1)
-
-/datum/chemical_reaction/life/on_reaction(datum/reagents/holder, created_volume)
-	chemical_mob_spawn(holder, rand(1, round(created_volume, 1)), "Life (hostile)") //defaults to HOSTILE_SPAWN
-
-/datum/chemical_reaction/life_friendly
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/consumable/sugar = 1)
-
-/datum/chemical_reaction/life_friendly/on_reaction(datum/reagents/holder, created_volume)
-	chemical_mob_spawn(holder, rand(1, round(created_volume, 1)), "Life (friendly)", FRIENDLY_SPAWN)
-
 /datum/chemical_reaction/corgium
 	required_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/colorful_reagent = 1, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/blood = 1)
 	required_temp = 374
@@ -566,14 +548,6 @@
 	required_container = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom
 	mix_message = "The mushroom's insides bubble and pop and it becomes very limp."
 
-/datum/chemical_reaction/slime_extractification
-	required_reagents = list(/datum/reagent/toxin/slimejelly = 30, /datum/reagent/consumable/frostoil = 5, /datum/reagent/toxin/plasma = 5)
-	mix_message = "The mixture condenses into a ball."
-
-/datum/chemical_reaction/slime_extractification/on_reaction(datum/reagents/holder, created_volume)
-	var/location = get_turf(holder.my_atom)
-	new /obj/item/slime_extract/grey(location)
-
 /datum/chemical_reaction/metalgen_imprint
 	required_reagents = list(/datum/reagent/metalgen = 1, /datum/reagent/liquid_dark_matter = 1)
 	results = list(/datum/reagent/metalgen = 1)
@@ -625,6 +599,10 @@
 	required_reagents = list(/datum/reagent/carbon = 2, /datum/reagent/hydrogen = 2, /datum/reagent/oxygen = 2, /datum/reagent/water = 1)
 	required_temp = 400
 	mix_message = "The mixture boils off a grey vapor..."//The water boils off, leaving the cement
+
+/datum/chemical_reaction/quick_concrete
+	results = list(/datum/reagent/concrete = 5)
+	required_reagents = list(/datum/reagent/concrete_mix = 5, /datum/reagent/water = 5)
 
 /datum/chemical_reaction/hexement
 	results = list(/datum/reagent/cement/hexement = 1)

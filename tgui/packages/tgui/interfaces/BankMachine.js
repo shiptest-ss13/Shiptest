@@ -4,11 +4,11 @@ import { Window } from '../layouts';
 
 export const BankMachine = (props, context) => {
   const { act, data } = useBackend(context);
-  const { current_balance, siphoning, station_name } = data;
+  const { current_balance, siphoning, ship_name } = data;
   return (
     <Window width={335} height={160}>
       <Window.Content>
-        <Section title={station_name + ' Vault'}>
+        <Section title={ship_name + ' Vault'}>
           <LabeledList>
             <LabeledList.Item
               label="Current Balance"

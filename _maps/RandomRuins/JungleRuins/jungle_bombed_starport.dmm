@@ -457,7 +457,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel/stairs/medium{
+/turf/open/floor/plasteel/stairs/mid{
 	dir = 4
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -509,7 +509,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "dI" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/turf/open/floor/plasteel/stairs/medium{
+/turf/open/floor/plasteel/stairs/mid{
 	dir = 1
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -544,7 +544,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "dZ" = (
 /obj/structure/table/wood,
-/obj/item/book/manual/wiki/engineering_guide,
+/obj/item/book/manual/wiki/engineering,
 /obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/wood,
 /area/ruin/jungle/starport)
@@ -811,10 +811,10 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "fJ" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "fL" = (
@@ -1132,7 +1132,7 @@
 "hZ" = (
 /obj/structure/spider/stickyweb,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/turf/open/floor/plasteel/stairs/medium,
+/turf/open/floor/plasteel/stairs/mid,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ib" = (
 /obj/item/stack/sheet/metal,
@@ -1640,19 +1640,6 @@
 	icon_state = "plastitanium_dam2"
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
-"lD" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/overmap_encounter/planetoid/jungle/explored)
 "lG" = (
 /obj/effect/decal/cleanable/ash/large,
 /obj/structure/flora/rock/pile,
@@ -1772,7 +1759,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel/stairs/medium{
+/turf/open/floor/plasteel/stairs/mid{
 	dir = 8
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -1952,7 +1939,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "nI" = (
 /obj/structure/table/wood,
-/obj/item/book/manual/wiki/toxins,
+/obj/item/book/manual/wiki/chemistry,
 /obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
@@ -2712,7 +2699,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "sK" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/starport)
 "sN" = (
@@ -2745,7 +2732,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "te" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/stairs/medium{
+/turf/open/floor/plasteel/stairs/mid{
 	dir = 4
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -2769,7 +2756,7 @@
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "to" = (
-/obj/structure/chair/comfy/brown,
+/obj/structure/chair/comfy/orange/directional/south,
 /turf/open/floor/wood,
 /area/ruin/jungle/starport)
 "tp" = (
@@ -3042,7 +3029,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "vd" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/turf/open/floor/plasteel/stairs/medium,
+/turf/open/floor/plasteel/stairs/mid,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ve" = (
 /obj/structure/railing{
@@ -3491,7 +3478,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/stairs/medium,
+/turf/open/floor/plasteel/stairs/mid,
 /area/overmap_encounter/planetoid/jungle/explored)
 "xT" = (
 /obj/structure/table/reinforced,
@@ -4130,10 +4117,10 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "Co" = (
 /obj/structure/closet,
-/obj/item/clothing/under/syndicate/aclfgrunt,
-/obj/item/clothing/under/syndicate/aclfgrunt,
-/obj/item/clothing/under/syndicate/aclfgrunt,
-/obj/item/clothing/under/syndicate/aclfgrunt,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
@@ -5395,7 +5382,7 @@
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "Kx" = (
-/obj/item/clothing/under/syndicate/aclfgrunt,
+/obj/item/clothing/under/syndicate/ngr,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -5624,11 +5611,11 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "LM" = (
 /obj/structure/closet,
-/obj/item/clothing/suit/aclf,
-/obj/item/clothing/under/syndicate/aclf,
-/obj/item/gun/ballistic/automatic/pistol,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/clothing/suit/armor/ngr/captain,
+/obj/item/clothing/under/syndicate/ngr/officer,
+/obj/item/gun/ballistic/automatic/pistol/ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /turf/open/floor/wood{
 	icon_state = "wood-broken2"
 	},
@@ -5800,9 +5787,9 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "Nh" = (
 /obj/structure/filingcabinet,
-/obj/item/gun/ballistic/automatic/pistol,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/gun/ballistic/automatic/pistol/ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/tower)
 "Nj" = (
@@ -7208,7 +7195,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
 "WR" = (
-/obj/machinery/computer/communications{
+/obj/structure/frame/computer{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -7308,8 +7295,8 @@
 "XC" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/vomit/old,
-/obj/item/clothing/under/syndicate/aclf,
-/obj/item/clothing/suit/aclf,
+/obj/item/clothing/under/syndicate/ngr/officer,
+/obj/item/clothing/suit/armor/ngr/captain,
 /obj/item/clothing/shoes/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/tower)
@@ -7682,20 +7669,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
-	},
-/area/overmap_encounter/planetoid/jungle/explored)
-"ZY" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/turf/open/floor/concrete/reinforced{
-	light_range = 2
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
 
@@ -10110,7 +10083,7 @@ Al
 Al
 Al
 pU
-ZY
+Is
 pU
 pU
 pU
@@ -11650,7 +11623,7 @@ Nb
 ce
 ir
 kv
-lD
+Mg
 MU
 ce
 xf

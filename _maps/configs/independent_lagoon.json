@@ -1,7 +1,8 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Lagoon-class Cruise Ship",
-	"prefix": "ISV",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
 	"description": "An unusual sight in the relatively impoverished Frontier, the Lagoon-class is a large pleasure vessel dedicated to transporting its passengers to any number of exotic locales. Lagoons found on the Frontier tend to contain crews and passengers of a particularly daring – or foolhardy – character, willing to pay out the nose for a tour of some of the most dangerous regions in known space. Accordingly, Lagoons in these regions typically include a small but respectably equipped security contingent to protect (and, when necessary, rein in) the passengers, and come with a surprisingly powerful thermo-electric generator to move the ship’s prodigious bulk across vast expanses of space.",
 	"tags": [
 		"RP Focus",
@@ -13,56 +14,57 @@
 	],
 	"map_short_name": "Lagoon-class",
 	"map_path": "_maps/shuttles/independent/independent_lagoon.dmm",
+	"unique_ship_access": false,
 	"starting_funds": 3000,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/captain",
+			"outfit": "/datum/outfit/job/independent/captain",
 			"slots": 1
 		},
 		"Cruise Director": {
-			"outfit": "/datum/outfit/job/head_of_personnel",
+			"outfit": "/datum/outfit/job/independent/hop",
 			"slots": 1
 		},
 		"Security Officer": {
-			"outfit": "/datum/outfit/job/security",
+			"outfit": "/datum/outfit/job/independent/security",
 			"slots": 2
 		},
 		"Medical Doctor": {
-			"outfit": "/datum/outfit/job/doctor",
+			"outfit": "/datum/outfit/job/independent/doctor",
 			"slots": 1
 		},
 		"Ship Engineer": {
-			"outfit": "/datum/outfit/job/atmos",
+			"outfit": "/datum/outfit/job/independent/atmos",
 			"slots": 1
 		},
 		"Bartender": {
-			"outfit": "/datum/outfit/job/bartender",
+			"outfit": "/datum/outfit/job/independent/bartender",
 			"slots": 1
 		},
 		"Cook": {
-			"outfit": "/datum/outfit/job/cook",
+			"outfit": "/datum/outfit/job/independent/cook",
 			"slots": 1
 		},
 		"Botanist": {
-			"outfit": "/datum/outfit/job/botanist",
+			"outfit": "/datum/outfit/job/independent/botanist",
 			"slots": 1
 		},
 		"Curator": {
-			"outfit": "/datum/outfit/job/curator",
+			"outfit": "/datum/outfit/job/independent/curator",
 			"slots": 1
 		},
 		"Chaplain": {
-			"outfit": "/datum/outfit/job/chaplain",
+			"outfit": "/datum/outfit/job/independent/chaplain",
 			"slots": 1
 		},
 		"Janitor": {
-			"outfit": "/datum/outfit/job/janitor",
+			"outfit": "/datum/outfit/job/independent/janitor",
 			"slots": 1
 		},
 		"Passenger": {
-			"outfit": "/datum/outfit/job/assistant/corporate",
+			"outfit": "/datum/outfit/job/independent/assistant/fancy",
 			"slots": 10
 		}
 	},
-	"enabled": true
+	"enabled": false
 }

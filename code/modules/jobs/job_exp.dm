@@ -45,6 +45,7 @@ GLOBAL_PROTECT(exp_to_update)
 		return FALSE
 	if(CONFIG_GET(flag/use_exp_restrictions_admin_bypass) && check_rights_for(src, R_ADMIN))
 		return FALSE // if admin exemption is enabled, and client is an admin, let them through
+	return TRUE
 
 /client/proc/get_exp_living(pure_numeric = FALSE)
 	if(!prefs.exp)

@@ -23,22 +23,22 @@
 standards:
     - exactly: [0, "mangled characters", '[\u0000\uFFFF\uFFFD]']
     - exactly: [8, "escapes", '\\\\(red|blue|green|black|b|i[^mc])']
-    - exactly: [9, "Del()s", '\WDel\(']
+    - exactly: [8, "Del()s", '\WDel\(']
 
     - exactly: [1, "/atom text paths", '"/atom']
     - exactly: [1, "/area text paths", '"/area']
-    - exactly: [17, "/datum text paths", '"/datum']
+    - exactly: [16, "/datum text paths", '"/datum']
     - exactly: [4, "/mob text paths", '"/mob']
-    - exactly: [49, "/obj text paths", '"/obj']
+    - exactly: [33, "/obj text paths", '"/obj']
     - exactly: [0, "/turf text paths", '"/turf']
-    - exactly: [117, "text2path uses", "text2path"]
+    - exactly: [114, "text2path uses", "text2path"]
 
     - exactly: [18, "world<< uses", 'world[ \t]*<<']
     - exactly: [0, "world.log<< uses", 'world.log[ \t]*<<']
 
     - exactly:
           [
-              295,
+              262,
               "non-bitwise << uses",
               '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)',
           ]
@@ -52,12 +52,12 @@ standards:
               '\(([\t ]+([^)"\n\\]*)|([^("\n]+)[\t ]+)\)',
           ]
 
-    - exactly: [2, "Old-style proc references", '\.proc/(\w+)']
+    - exactly: [1, "Old-style proc references", '\.proc/(\w+)']
     - exactly: [0, "Old-style typed proc references", '([\w/]+?)/?\.proc/(\w+)']
 
     - no_more:
           [
-              34,
+              32,
               "indentions inside defines",
               '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))',
           ]

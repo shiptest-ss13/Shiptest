@@ -90,6 +90,15 @@ window "mainwindow"
 		background-color = #272727
 		is-visible = false
 		saved-params = ""
+	elem "commandbar_spy"
+		type = BROWSER
+		is-default = false
+		pos = 0,0
+		size = 200x200
+		anchor1 = -1,-1
+		anchor2 = -1,-1
+		is-visible = false
+		saved-params = ""
 
 window "mapwindow"
 	elem "mapwindow"
@@ -147,72 +156,72 @@ window "infowindow"
 		left = "statwindow"
 		right = "outputwindow"
 		is-vert = false
-	elem "discord"
-		type = BUTTON
-		pos = 192,5
-		size = 88x20
-		anchor1 = 30,0
-		anchor2 = 44,0
-		font-family = "Verdana"
-		text-color = #ffffff
-		background-color = #40628a
-		saved-params = "is-checked"
-		text = "Join Discord"
-		command = "discord"
 	elem "changelog"
 		type = BUTTON
 		pos = 8,5
-		size = 80x20
+		size = 88x20
 		anchor1 = 1,0
 		anchor2 = 14,0
 		font-family = "Verdana"
 		text-color = #ffffff
 		background-color = #40628a
 		saved-params = "is-checked"
-		text = "Changelog"
+		text = "Changes"
 		command = "changelog"
 	elem "rules"
 		type = BUTTON
-		pos = 96,5
-		size = 88x20
+		pos = 104,5
+		size = 80x20
 		anchor1 = 15,0
-		anchor2 = 29,0
+		anchor2 = 28,0
 		font-family = "Verdana"
 		text-color = #ffffff
 		background-color = #40628a
 		saved-params = "is-checked"
 		text = "Rules"
 		command = "rules"
+	elem "discord"
+		type = BUTTON
+		pos = 192,5
+		size = 80x20
+		anchor1 = 29,0
+		anchor2 = 37,0
+		font-family = "Verdana"
+		text-color = #ffffff
+		background-color = #40628a
+		saved-params = "is-checked"
+		text = "Discord"
+		command = "discord"
 	elem "wiki"
 		type = BUTTON
-		pos = 288,5
+		pos = 280,5
 		size = 80x20
-		anchor1 = 45,0
-		anchor2 = 58,0
+		anchor1 = 38,0
+		anchor2 = 51,0
 		font-family = "Verdana"
 		text-color = #ffffff
 		background-color = #40628a
 		saved-params = "is-checked"
 		text = "Wiki"
 		command = "wiki"
-	elem "forum"
+	elem "lore"
 		type = BUTTON
-		pos = 376,5
+		pos = 368,5
 		size = 80x20
-		anchor1 = 59,0
-		anchor2 = 71,0
+		anchor1 = 52,0
+		anchor2 = 65,0
 		font-family = "Verdana"
 		text-color = #ffffff
 		background-color = #40628a
 		saved-params = "is-checked"
-		text = "Forum"
-		command = "forum"
+		text = "Lore"
+		command = "lore"
 	elem "github"
 		type = BUTTON
-		pos = 464,5
+		pos = 456,5
 		size = 80x20
-		anchor1 = 73,0
-		anchor2 = 85,0
+		anchor1 = 66,0
+		anchor2 = 79,0
 		font-family = "Verdana"
 		text-color = #ffffff
 		background-color = #40628a
@@ -221,10 +230,10 @@ window "infowindow"
 		command = "github"
 	elem "report-issue"
 		type = BUTTON
-		pos = 552,5
+		pos = 544,5
 		size = 80x20
-		anchor1 = 86,0
-		anchor2 = 99,0
+		anchor1 = 80,0
+		anchor2 = 93,0
 		font-family = "Verdana"
 		font-size = 8
 		text-color = #ffffff

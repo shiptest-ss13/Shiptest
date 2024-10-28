@@ -10,9 +10,15 @@ on:
       minor:
         required: false
         type: string
+      arg:
+        required: false
+        default: ALL_TESTS
+        type: string
+
 jobs:
   run_integration_tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     services:
       mysql:
         image: mysql:latest
@@ -23,12 +29,45 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v3
-      - name: Setup cache
+
+      - name: Setup BYOND cache
         id: cache-byond
         uses: actions/cache@v3
         with:
           path: ~/BYOND
-          key: ${{ runner.os }}-byond-cache-${{ hashFiles('Dockerfile') }}
+          key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
+
+      - name: Install BYOND
+        if: steps.cache-byond.outputs.cache-hit != 'true'
+        run: bash tools/ci/install_byond.sh
+
+      - name: Install runtime dependencies
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt update || true
+          sudo apt install -o APT::Immediate-Configure=false libssl-dev:i386
+
+      - name: Setup dependencies cache
+        id: cache-deps
+        uses: actions/cache@v3
+        with:
+          path: ~/.byond/bin
+          key: ${{ runner.os }}-deps-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
+
+      - name: Install build dependencies
+        if: steps.cache-deps.outputs.cache-hit != 'true'
+        run: |
+          sudo apt install -o APT::Immediate-Configure=false libgcc-s1:i386 g++-multilib zlib1g-dev:i386
+          rustup target add i686-unknown-linux-gnu
+
+      - name: Build auxmos
+        if: steps.cache-deps.outputs.cache-hit != 'true'
+        run: bash tools/ci/build_auxmos.sh
+
+      - name: Build rust-g
+        if: steps.cache-deps.outputs.cache-hit != 'true'
+        run: bash tools/ci/build_rust_g.sh
+
       - name: Setup database
         run: |
           sudo systemctl start mysql
@@ -36,25 +75,17 @@ jobs:
           mysql -u root -proot tg_ci < SQL/tgstation_schema.sql
           mysql -u root -proot -e 'CREATE DATABASE tg_ci_prefixed;'
           mysql -u root -proot tg_ci_prefixed < SQL/tgstation_schema_prefixed.sql
-      - name: Install rust-g
-        run: |
-          sudo dpkg --add-architecture i386
-          sudo apt update || true
-          sudo apt install -o APT::Immediate-Configure=false libssl-dev:i386
-          bash tools/ci/install_rust_g.sh
-      - name: Install auxmos
-        run: |
-          bash tools/ci/install_auxmos.sh
+
       - name: Configure version
         if: ${{ inputs.major }}
         run: |
           echo "BYOND_MAJOR=${{ inputs.major }}" >> $GITHUB_ENV
           echo "BYOND_MINOR=${{ inputs.minor }}" >> $GITHUB_ENV
+
       - name: Compile Tests
         run: |
-          bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
-          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
+          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS -D${{ inputs.arg }}
       - name: Run Tests
         run: |
           source $HOME/BYOND/byond/bin/byondsetup

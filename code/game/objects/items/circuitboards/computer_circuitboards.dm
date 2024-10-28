@@ -180,11 +180,6 @@
 	icon_state = "generic"
 	build_path = /obj/machinery/computer/arcade/orion_trail
 
-/obj/item/circuitboard/computer/holodeck// Not going to let people get this, but it's just here for future
-	name = "Holodeck Control (Computer Board)"
-	icon_state = "generic"
-	build_path = /obj/machinery/computer/holodeck
-
 /obj/item/circuitboard/computer/libraryconsole
 	name = "Library Visitor Console (Computer Board)"
 	build_path = /obj/machinery/computer/libraryconsole
@@ -277,7 +272,7 @@
 	build_path = /obj/machinery/computer/launchpad
 
 /obj/item/circuitboard/computer/mech_bay_power_console
-	name = "Mech Bay Power Control Console (Computer Board)"
+	name = "Exosuit Bay Power Control Console (Computer Board)"
 	icon_state = "science"
 	build_path = /obj/machinery/computer/mech_bay_power_console
 
@@ -319,11 +314,6 @@
 	name = "Teleporter (Computer Board)"
 	icon_state = "science"
 	build_path = /obj/machinery/computer/teleporter
-
-/obj/item/circuitboard/computer/xenobiology
-	name = "circuit board (Xenobiology Console)"
-	icon_state = "science"
-	build_path = /obj/machinery/computer/camera_advanced/xenobio
 
 //Security
 
@@ -367,7 +357,7 @@
 	build_path = /obj/machinery/computer/bounty
 
 /obj/item/circuitboard/computer/cargo
-	name = "Supply Console (Computer Board)"
+	name = "Outpost Comms Console (Computer Board)"
 	icon_state = "supply"
 	build_path = /obj/machinery/computer/cargo
 	var/contraband = FALSE
@@ -385,16 +375,6 @@
 		contraband = TRUE
 		obj_flags |= EMAGGED
 		to_chat(user, "<span class='notice'>You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband.</span>")
-
-/obj/item/circuitboard/computer/cargo/express
-	name = "Outpost Comms Console (Computer Board)"
-	build_path = /obj/machinery/computer/cargo/express
-
-/obj/item/circuitboard/computer/cargo/express/multitool_act(mob/living/user)
-	return
-
-/obj/item/circuitboard/computer/cargo/express/emag_act(mob/living/user)
-	return
 
 /obj/item/circuitboard/computer/mining
 	name = "Outpost Status Display (Computer Board)"

@@ -46,6 +46,20 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Test Room"
 	icon_state = "storage"
 
+/area/hyperspace
+	icon_state = "space"
+	requires_power = TRUE
+	always_unpowered = TRUE
+	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	power_light = FALSE
+	power_equip = FALSE
+	power_environ = FALSE
+	area_flags = UNIQUE_AREA | CAVES_ALLOWED | MOB_SPAWN_ALLOWED
+	outdoors = TRUE
+	ambientsounds = SPACE
+	flags_1 = CAN_BE_DIRTY_1
+	sound_environment = SOUND_AREA_SPACE
+
 //EXTRA
 
 /area/asteroid
@@ -68,9 +82,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	has_gravity = STANDARD_GRAVITY
 	always_unpowered = FALSE
-	area_flags = VALID_TERRITORY | BLOBS_ALLOWED // Loading the same shuttle map at a different time will produce distinct area instances.
+	area_flags = VALID_TERRITORY // Loading the same shuttle map at a different time will produce distinct area instances.
 	icon_state = "shuttle"
 	flags_1 = CAN_BE_DIRTY_1
 	lighting_colour_tube = "#fff0dd"
@@ -172,9 +185,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/dorm/dormfive
 	name = "Dormitory 5"
 
+/area/ship/crew/dorm/captain
+	name = "Captain's Quarters"
+
 /area/ship/crew/toilet
 	name = "Restroom"
 	icon_state = "toilet"
+
+/area/ship/crew/toilet/two
+	name = "Restroom 2"
+
+/area/ship/crew/toilet/three
+	name = "Restroom 3"
 
 /area/ship/crew/canteen
 	name = "Canteen"
@@ -199,6 +221,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Chapel Office"
 	icon_state = "chapeloffice"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
 /area/ship/crew/library
 	name = "Library"
 	icon_state = "library"
@@ -220,6 +243,13 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Office"
 	icon_state = "vacant_office"
 	sound_environment = SOUND_AREA_WOODFLOOR
+
+/area/ship/crew/office/lobby
+	name = "Lobby"
+
+/area/ship/crew/ccommons
+	name = "Commons"
+	icon_state = "vacant_office"
 
 /area/ship/crew/janitor
 	name = "Custodial Closet"
@@ -244,6 +274,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Morgue"
 	icon_state = "morgue"
 	ambientsounds = SPOOKY
+
+/area/ship/medical/psych
+	name = "Psych's Office"
 
 /// Science Lab ///
 /area/ship/science
@@ -281,6 +314,15 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#ffce93"
 	lighting_colour_bulb = "#ffbc6f"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+
+/area/ship/engineering/engines
+	name = "Engines"
+
+/area/ship/engineering/engines/port
+	name = "Port Engines"
+
+/area/ship/engineering/engines/starboard
+	name = "Starboard Engines"
 
 /area/ship/engineering/atmospherics
 	name = "Atmospherics"
@@ -436,9 +478,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "storage"
 	sound_environment = SOUND_AREA_STANDARD_STATION
 
+/area/ship/storage/port
+	name = "Port Storage Bay"
+
+/area/ship/storage/starboard
+	name = "Starboard Storage Bay"
+
 /area/ship/storage/eva
 	name = "EVA Storage"
 	icon_state = "eva"
+
+/area/ship/storage/equip
+	name = "Equipment Room"
 
 /// External Areas ///
 /area/ship/external

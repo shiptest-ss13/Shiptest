@@ -10,6 +10,8 @@ All ShuttleMove procs go here
 	if(!(move_mode & MOVE_AREA) || !isshuttleturf(src))
 		return move_mode
 
+	clear_adjacencies()
+
 	return move_mode | MOVE_TURF | MOVE_CONTENTS
 
 // Called from the new turf before anything has been moved
@@ -19,6 +21,8 @@ All ShuttleMove procs go here
 	. = move_mode
 	if(!(. & MOVE_TURF))
 		return
+
+	clear_adjacencies()
 
 	for(var/atom/movable/thing as anything in contents)
 		if(ismob(thing))
@@ -109,13 +113,11 @@ All ShuttleMove procs go here
 		CRASH("A turf queued to clean up after a shuttle dock somehow didn't have enough skipovers in baseturfs. [oldT]([oldT.type]):[oldT.loc]")
 
 	if(BT_index != length(baseturfs))
-		oldT.ScrapeAway(baseturfs.len - BT_index, CHANGETURF_FORCEOP)
+		oldT.ScrapeAway(baseturfs.len - BT_index, CHANGETURF_FORCEOP|CHANGETURF_DEFER_CHANGE)
 
 	return TRUE
 
 /turf/proc/lateShuttleMove(turf/oldT)
-	blocks_air = initial(blocks_air)
-	oldT.blocks_air = initial(oldT.blocks_air)
 	AfterChange()
 	oldT.AfterChange()
 
@@ -289,6 +291,7 @@ All ShuttleMove procs go here
 
 /************************************Item move procs************************************/
 
+
 /obj/item/storage/pod/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
 	// If the pod was launched, the storage will always open. The reserved_level check
@@ -296,6 +299,11 @@ All ShuttleMove procs go here
 	// the station as it is loaded in.
 	if (oldT && !is_reserved_level(oldT))
 		unlocked = TRUE
+
+/obj/item/gun/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
+	. = ..()
+	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM))
+		discharge("is thrown around by the force of the take off")
 
 /************************************Mob move procs************************************/
 

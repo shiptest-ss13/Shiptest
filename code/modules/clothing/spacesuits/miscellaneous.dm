@@ -36,7 +36,7 @@ Contains:
 	desc = "A prototype designed to replace the ageing MK.II SWAT suit. Based on the streamlined MK.II model, the traditional ceramic and graphene plate construction was replaced with plasteel, allowing superior armor against most threats. There's room for some kind of energy projection device on the back."
 	icon_state = "deathsquad"
 	item_state = "swat_suit"
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/knife/combat)
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 60, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
@@ -50,7 +50,7 @@ Contains:
 	desc = "A tactical space suit first developed in a joint effort by the defunct IS-ERI and Nanotrasen in 20XX for military space operations. A tried and true workhorse, it is very difficult to move in but offers robust protection against all threats!"
 	icon_state = "heavy"
 	item_state = "swat_suit"
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/knife/combat)
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 100, "acid" = 100)
 	strip_delay = 120
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -60,8 +60,6 @@ Contains:
 	desc = "An armored beret commonly used by special operations officers. Uses advanced force field technology to protect the head from space."
 	icon_state = "beret_badge"
 	greyscale_colors = "#397F3F#FFCE5B"
-	dynamic_hair_suffix = "+generic"
-	dynamic_fhair_suffix = "+generic"
 	flags_inv = 0
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 60, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	strip_delay = 130
@@ -153,8 +151,6 @@ Contains:
 /obj/item/clothing/suit/space/pirate
 	name = "pirate coat"
 	desc = "Yarr."
-	icon_state = "pirate"
-	item_state = "pirate"
 	w_class = WEIGHT_CLASS_NORMAL
 	flags_inv = 0
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/transforming/energy/sword/saber/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)
@@ -285,28 +281,6 @@ Contains:
 	flash_protect = FLASH_PROTECTION_NONE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 65)
 
-/obj/item/clothing/head/helmet/space/freedom
-	name = "eagle helmet"
-	desc = "An advanced, space-proof helmet. It appears to be modeled after an old-world eagle."
-	icon_state = "griffinhat"
-	item_state = "griffinhat"
-	armor = list("melee" = 20, "bullet" = 40, "laser" = 30, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 80)
-	strip_delay = 130
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	resistance_flags = ACID_PROOF | FIRE_PROOF
-
-/obj/item/clothing/suit/space/freedom
-	name = "eagle suit"
-	desc = "An advanced, light suit, fabricated from a mixture of synthetic feathers and space-resistant material. A gun holster appears to be integrated into the suit and the wings appear to be stuck in 'freedom' mode."
-	icon_state = "freedom"
-	item_state = "freedom"
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
-	armor = list("melee" = 20, "bullet" = 40, "laser" = 30,"energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 80)
-	strip_delay = 130
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	resistance_flags = ACID_PROOF | FIRE_PROOF
-	slowdown = 0
-
 //Carpsuit, bestsuit, lovesuit
 /obj/item/clothing/head/helmet/space/hardsuit/carp
 	name = "carp helmet"
@@ -317,7 +291,7 @@ Contains:
 	light_system = NO_LIGHT_SUPPORT
 	light_range = 0 //luminosity when on
 	actions_types = list()
-	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR //facial hair will clip with the helm, this'll need a dynamic_fhair_suffix at some point.
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmet/space/hardsuit/carp/Initialize()
 	. = ..()
@@ -358,10 +332,6 @@ Contains:
 	actions_types = list()
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/suit/space/hardsuit/ert/paranormal/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_OCLOTHING)
-
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal
 	name = "paranormal response team hardsuit"
 	desc = "Powerful wards are built into this hardsuit, protecting the user from all manner of paranormal threats."
@@ -370,10 +340,6 @@ Contains:
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/suit/space/hardsuit/ert/paranormal/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE, ITEM_SLOT_OCLOTHING)
 
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
 	name = "inquisitor's hardsuit"
@@ -397,12 +363,7 @@ Contains:
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 10, "fire" = 100, "acid" = 100)
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/spear, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife, /obj/item/kinetic_crusher, /obj/item/resonator, /obj/item/melee/transforming/cleaving_saw)
-
-
-/obj/item/clothing/suit/space/hardsuit/berserker/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE, ITEM_SLOT_OCLOTHING)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/melee/spear, /obj/item/organ/regenerative_core/legion, /obj/item/kinetic_crusher, /obj/item/resonator, /obj/item/melee/transforming/cleaving_saw)
 
 /obj/item/clothing/suit/space/hardsuit/berserker/RemoveHelmet()
 	var/obj/item/clothing/head/helmet/space/hardsuit/berserker/helm = helmet
@@ -528,7 +489,7 @@ Contains:
 	desc = "A custom version of the MK.II SWAT suit, modified to look rugged and tough. Works as a space suit, if you can find a helmet."
 	icon_state = "hunter"
 	item_state = "swat_suit"
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/knife/combat)
 	armor = list("melee" = 60, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	strip_delay = 130
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -585,14 +546,3 @@ Contains:
 	icon_state = "space-inteq"
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/clothing/suit/space/scar
-	name = "Scar Suit"
-	desc = "A heavily modified eva suit, custom made for the captain of the ember."
-	icon_state = "hostile_env"
-	item_state = "hostile_env"
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	resistance_flags = FIRE_PROOF
-	slowdown = 0.5
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 25, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy, /obj/item/tank/internals)

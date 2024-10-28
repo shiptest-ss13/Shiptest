@@ -13,7 +13,7 @@ GLOBAL_VAR_INIT(ship_spawn_enabled, TRUE)
 		var/message
 		if(GLOB.ship_spawn_enabled)
 			message = "[key_name_admin(usr)] enabled player ship spawning."
-			to_chat(world, "<B>Ship Spawning is now enabled,</B>", confidential = TRUE)
+			to_chat(world, "<B>Ship Spawning is now enabled.</B>", confidential = TRUE)
 		else
 			message = "[key_name_admin(usr)] disabled player ship spawning."
 			to_chat(world, "<B>Ship Spawning is now disabled.</B>", confidential = TRUE)

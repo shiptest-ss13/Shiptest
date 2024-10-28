@@ -14,7 +14,8 @@ for file in sys.argv[1:]:
             print("JSON error in {}".format(file))
             print(exception)
             status = 1
-        else:
-            print("Valid {}".format(file))
+
+if status == 0:
+    print("All JSON files are valid JSON")
 
 exit(status)

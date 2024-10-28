@@ -1,40 +1,40 @@
-/obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, atom/fired_from)
+/obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, atom/fired_from, misfire = FALSE)
 	distro += variance
 	var/targloc = get_turf(target)
-	ready_proj(target, user, quiet, zone_override, fired_from)
+	ready_proj(target, user, quiet, zone_override, fired_from, misfire)
 	if(pellets == 1)
 		if(distro) //We have to spread a pixel-precision bullet. throw_proj was called before so angles should exist by now...
 			if(randomspread)
 				spread = round((rand() - 0.5) * distro)
 			else //Smart spread
 				spread = round(1 - 0.5) * distro
-		if(!throw_proj(target, targloc, user, params, spread))
+		if(!throw_proj(target, targloc, user, params, spread, fired_from))
 			return FALSE
 	else
 		if(isnull(BB))
 			return FALSE
 		AddComponent(/datum/component/pellet_cloud, projectile_type, pellets)
 		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, spread, zone_override, params, distro)
+	if(user)
+		if(click_cooldown_override)
+			user.changeNext_move(click_cooldown_override)
 
-	if(click_cooldown_override)
-		user.changeNext_move(click_cooldown_override)
-	else
-		user.changeNext_move(CLICK_CD_RANGE)
-
-	user.newtonian_move(get_dir(target, user))
+		user.newtonian_move(get_dir(target, user))
 	update_appearance()
 	return TRUE
 
-/obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", atom/fired_from)
+/obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", atom/fired_from, misfire = FALSE)
 	if (!BB)
 		return
 	BB.original = target
 	BB.firer = user
+	BB.misfire = misfire
 	BB.fired_from = fired_from
 	if (zone_override)
 		BB.def_zone = zone_override
 	else
-		BB.def_zone = user.zone_selected
+		if(user)
+			BB.def_zone = user.zone_selected
 	BB.suppressed = quiet
 
 	if(isgun(fired_from))
@@ -45,8 +45,12 @@
 		reagents.trans_to(BB, reagents.total_volume, transfered_by = user) //For chemical darts/bullets
 		qdel(reagents)
 
-/obj/item/ammo_casing/proc/throw_proj(atom/target, turf/targloc, mob/living/user, params, spread)
-	var/turf/curloc = get_turf(user)
+/obj/item/ammo_casing/proc/throw_proj(atom/target, turf/targloc, mob/living/user, params, spread, atom/fired_from)
+	var/turf/curloc
+	if(user)
+		curloc = get_turf(user)
+	else
+		curloc = get_turf(src)
 	if (!istype(targloc) || !istype(curloc) || !BB)
 		return FALSE
 
@@ -61,9 +65,29 @@
 		if(target) //if the target is right on our location we'll skip the travelling code in the proj's fire()
 			direct_target = target
 	if(!direct_target)
-		BB.preparePixelProjectile(target, user, params, spread)
+		if(user)
+			BB.preparePixelProjectile(target, user, params, spread)
+		else
+			BB.preparePixelProjectile(target, curloc, params, spread)
 	BB.fire(null, direct_target)
 	BB = null
+	return TRUE
+
+#define BULLET_POP_CHANCE 30
+
+/obj/item/ammo_casing/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	if(!prob(BULLET_POP_CHANCE) || !BB)
+		return
+	ready_proj()
+	BB.trajectory_ignore_forcemove = TRUE
+	BB.forceMove(get_turf(src))
+	BB.trajectory_ignore_forcemove = FALSE
+	BB.starting = get_turf(src)
+	BB.fire(rand(0,360))
+	BB = null
+	playsound(src, 'sound/weapons/gun/pistol/shot.ogg', 100, TRUE)
+	update_appearance()
 	return TRUE
 
 /obj/item/ammo_casing/proc/spread(turf/target, turf/current, distro)

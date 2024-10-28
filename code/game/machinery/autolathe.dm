@@ -5,11 +5,13 @@
 /obj/machinery/autolathe
 	name = "autolathe"
 	desc = "It produces items using metal and glass and maybe other materials, can take design disks."
+	icon = 'icons/obj/machines/autolathe.dmi'
 	icon_state = "autolathe"
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 10
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_HIGH
+	power_channel = AREA_USAGE_EQUIP
 	circuit = /obj/item/circuitboard/machine/autolathe
 	layer = BELOW_OBJ_LAYER
 
@@ -49,7 +51,7 @@
 							)
 
 /obj/machinery/autolathe/Initialize()
-	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/plastic, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium), 0, TRUE, null, null, CALLBACK(src, PROC_REF(AfterMaterialInsert)))
+	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/plastic, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium, /datum/material/hellstone), 0, TRUE, null, null, CALLBACK(src, PROC_REF(AfterMaterialInsert)))
 	. = ..()
 
 	wires = new /datum/wires/autolathe(src)
@@ -222,7 +224,7 @@
 			for(var/MAT in being_built.materials)
 				total_amount += being_built.materials[MAT]
 
-			var/power = max(active_power_usage, (total_amount)*multiplier/5) //Change this to use all materials
+			var/power = max(active_power_usage, total_amount) //Change this to use all materials
 
 			var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 
@@ -251,6 +253,7 @@
 				use_power(power)
 				icon_state = "autolathe_n"
 				var/time = is_stack ? 32 : (32 * coeff * multiplier) ** 0.8
+				set_active_power()
 				addtimer(CALLBACK(src, PROC_REF(make_item), power, materials_used, custom_materials, multiplier, coeff, is_stack, usr), time)
 				. = TRUE
 			else
@@ -325,24 +328,26 @@
 	else
 		flick("autolathe_o", src) //plays metal insertion animation
 
-		use_power(min(1000, amount_inserted / 100))
+		use_power(min(active_power_usage, amount_inserted))
 
 /obj/machinery/autolathe/proc/make_item(power, list/materials_used, list/picked_materials, multiplier, coeff, is_stack, mob/user)
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	var/atom/A = drop_location()
 	use_power(power)
+	set_idle_power()
 
 	materials.use_materials(materials_used)
 
 	if(is_stack)
-		var/obj/item/stack/N = new being_built.build_path(A, multiplier, FALSE)
-		N.update_appearance()
-		N.autolathe_crafted(src)
+		var/obj/item/stack/new_item = new being_built.build_path(A, multiplier, FALSE)
+		new_item.update_appearance()
+		new_item.autolathe_crafted(src)
+		SSblackbox.record_feedback("nested tally", "item_printed", 1, list("[type]", "[new_item.type]"))
 	else
 		for(var/i=1, i<=multiplier, i++)
 			var/obj/item/new_item = new being_built.build_path(A)
 			new_item.autolathe_crafted(src)
-
+			SSblackbox.record_feedback("nested tally", "item_printed", 1, list("[type]", "[new_item.type]"))
 			if(length(picked_materials))
 				new_item.set_custom_materials(picked_materials, 1 / multiplier) //Ensure we get the non multiplied amount
 				for(var/x in picked_materials)
@@ -442,5 +447,5 @@
 
 //Called when the object is constructed by an autolathe
 //Has a reference to the autolathe so you can do !!FUN!! things with hacked lathes
-/obj/item/proc/autolathe_crafted(obj/machinery/autolathe/A)
+/obj/item/proc/autolathe_crafted(obj/machinery/autolathe/lathe)
 	return

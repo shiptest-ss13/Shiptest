@@ -1,0 +1,254 @@
+2024-03-01:
+  FalloutFalcon:
+  - tweak: you can clean microwaves with a rag
+  - refactor: microwave attackby behaviors moved into smarter procs
+  Martinpachu:
+  - rscadd: Added cell chargers to more ships.
+  - rscadd: Added a cell charger cargo pack.
+  SomeguyManperson:
+  - rscdel: The tesla, singularity, and particle generator are no longer purchasable
+      from cargo
+  Zevotech:
+  - rscdel: Removes icemoon and lavaland hermits ghostroles
+  - rscdel: Removes the whitesands Lifebringers ghostrole
+  - rscdel: Removes the Oldstation ghostrole
+  - rscdel: Removes Lab4071
+  - rscdel: Removes the ghostroles that spawn after the icemoon Ash Drake is killed
+  - bugfix: Fixes some errors pertaining to ghostroles and removed maps in the ruin
+      catalogue
+  - bugfix: Removes some ruin areas/datums pertaining to old removed ghostroles and
+      maps
+  thgvr:
+  - bugfix: Cryo wakeup message grammar fix
+2024-03-05:
+  Apogee-dev:
+  - balance: Nerfed .38's damage back down to 20
+  MarkSuckerberg:
+  - bugfix: Headpikes actually work again
+  - bugfix: Reinforced floors now don't spawn metal when decompression is experienced
+  Martinpachu:
+  - rscadd: Ammo boxes for 4.6, 8x50, Ferromagnetic slugs, pellets, lances and 8x50
+      Hollow Points!
+  - balance: Granularized ammo boxes in cargo in a similar way to guns.
+  Sadhorizon:
+  - tweak: Alternate jumpsuits for Cybersun, SUNS and NGR engineers/mechanics are
+      now GEC uniforms.
+  Skies-Of-Blue:
+  - bugfix: resolves a typo, making the server less passive when it speaks
+  - tweak: towels can now be crafted using two cloth
+  - tweak: you can now buckle to stools, just as the founding members of the SUNS
+      intended
+  SomeguyManperson:
+  - rscadd: ancient goliaths, crystal fauna (aside from legion), elites and megafauna
+      now have boosted dissection outputs
+  - rscdel: human corpses, podpeople, jellypeople and animal corpses can no longer
+      be dissected. What did you expect to find, an extra pair of lungs?
+  Timberpoes:
+  - bugfix: Papercode has been significantly improved and trivially filled paper forms
+      should no longer lag or crash players' game clients.
+  meemofcourse:
+  - code_imp: ERT antag datums are now sorted into factional files
+  - admin: ERTs can have limited special roles
+  thgvr:
+  - bugfix: Fishing shouldn't fail constantly anymore
+  - bugfix: Fish on the floor will die again
+2024-03-06:
+  Apogee-dev:
+  - rscdel: Removed the Caravan
+2024-03-07:
+  Martinpachu:
+  - rscadd: Survival knives to every inteq ship.
+  PositiveEntropy:
+  - imageadd: Tables have been completely cleaned up and polished into new iterations!
+2024-03-08:
+  Martinpachu:
+  - rscadd: The SSG-04, GAL and EBR can now use their scopes!
+2024-03-10:
+  MarkSuckerberg:
+  - tweak: Makes the basics ingredients crate less barren and useless.
+  - rscadd: Advanced cooking crate, for buying the condiments you only need a little
+      bit of.
+  - rscadd: Standard meat crate, when you don't want to buy the weird exotic meat
+      crate.
+  - rscadd: Grains crate, for when you want to make a lot of flour for cooking
+  - rscadd: Bread crate, for when you're lazy and want bread for recipes. Or to eat.
+      I don't care.
+  Martinpachu:
+  - rscadd: More and appropriate ammo to the Elder-class.
+  - bugfix: Fixed a few oversights with 8x50 ammo boxes.
+  Skies-Of-Blue:
+  - bugfix: silicons have had their language software patched, now capable of understanding
+      rachnidian and calcic at the cost of no longer being able to speak it
+  Skrem7:
+  - bugfix: Sauna decon oversight has been fixed
+  retlaw34:
+  - rscadd: Gunslinger quirk! Lets you fling around a revolver like an old western!
+      Good luck shooting anything newer, though.
+  - rscadd: Double action revolvers have safeties now!
+  - tweak: Many revolver tweaks
+  - balance: Shadow and Ashhand are gate loaded now, and as such take longer to load.
+  - bugfix: Non-speedloaders now load revolvers slowly again.
+  'ryerice, meemofcourse ':
+  - rscadd: redraws military webbing and camo fatigues, gives webbings recolor options
+  - rscadd: combat boots and gloves have been given happier colors
+  - rscadd: A ton of things related to the confederated league have been resprited
+      and added
+  - rscdel: Corvus and Asclepius
+  - tweak: CLIP ERTs have been adjusted to be consistent
+2024-03-13:
+  Sadhorizon:
+  - tweak: E-cigarettes and e-cigars can now be turned on with tablets and APCs.
+  Skies-Of-Blue:
+  - rscadd: creates close_hatch, a step that mirrors open_hatch in prosthetic surgeries
+      for the sake of consistency. Why you leaving that hatch open?? The final step
+      before screwing to finish surgery. This affects implant removal, ipc revival,
+      mechanical brain surgery, and prosthesis organ manipulation
+  - rscadd: creates manipulate_organs/mechanic, a step that swaps the necessary implements
+      in synthetic surgery. Use a crowbar instead of a hemostat to remove any organs
+      on an augmented limb!
+  - tweak: 'changes implant removal surgery to reflect the above. The new tool order
+      is as follows: screwdriver, hand, wrench, crowbar, wrench, hand, screwdriver'
+  - tweak: 'changes the (unused) ipc revival surgery to reflect the above. The new
+      tool order is as follows: screwdriver, hand, multitool, inducer, hand, screwdriver'
+  - tweak: 'changes mechanical brain surgery to reflect the above. The new tool order
+      is as follows: screwdriver, hand, multitool, hemostat, hand, screwdriver'
+  - tweak: 'changes prosthesis organ manipulation to reflect the above. The new tool
+      order is as follows: screwdriver, hand, wrench (if head/chest), multitool, crowbar,
+      wrench (if head/chest), hand, screwdriver'
+  - rscadd: 'creates the Detach Prosthesis surgery, a less violent alternative to
+      Amputation. This allows for prosthesis users to remove their own limbs, for
+      the purposes of maintenance or just plain comfort! The tool order is as follows:
+      screwdriver, hand, multitool, wrench, crowbar/wrench/hand (so you can flavor
+      how you remove the limb)'
+  - tweak: 'changes the Prosthetic Replacement surgery, renaming it to Limb Grafting
+      surgery. The steps remain the same, but the name needed some retooling, as the
+      procedure is much more surgically involved than its new sibling:'
+  - rscadd: 'creates Prosthesis Attachment surgery, a less surgically involved version
+      of the Limb Grafting surgery. This allows for people with prostheses to re-attach
+      the limb they took off with Prosthesis Removal! The tool order is as follows:
+      wrench, multitool, plug in prosthesis, hand, screwdriver'
+  - rscdel: removes the chainsaw and synthetic arm blade from being viable prostheses.
+      Left the code intact in case someone wants to do something similar in-future
+  - tweak: blind characters can now use various scanners, bringing the frontier up
+      to accessibility standards across the galaxy
+  - tweak: crewmen have learned the secrets of being polite. While walking, you will
+      no longer shove or swap places with your crew mates. Be certain to walk around
+      your ship outside of emergencies!
+  - rscadd: a pAI's master can now clear the pAI's zeroth law
+  - bugfix: pAIs are now able to fully utilize installed encryption keys through their
+      integrated transceiver's menu when they have the encryption key software upgrade
+  - bugfix: binary encryption keys work in pAIs that have downloaded the encryption
+      key software
+  ZephyrTFA:
+  - balance: Only admins can open job slots
+  - bugfix: Cryoing correctly opens a job slot
+  - code_imp: Refactored ShipOwner into tsx
+  meemofcourse:
+  - tweak: Faxes on most ships no longer have access to all admin faxes
+  - tweak: Modified the pixel size of signatures in paper to 15px
+  mozi_h, DrDiasyl aka DrTuxedo#0931, GoldenAlpharex:
+  - rscadd: Clipboards have a snazzy new look.
+  - refactor: 'Gave clipboards some purpose in life: Edit, rename and sort to your
+      hearts'' desire! Insert a pen by just clicking it in. Rapidly pick up paper
+      by clicking on it with the clipboard.'
+  - rscadd: Folders have a snazzy new look. (Check out those colours!)
+  - refactor: Split and cleaned up folder code.
+  - refactor: Tidied up folder UI code
+  - bugfix: Paper that's on a clipboard doesn't need to be poked to realise that its
+      appearance has changed and to properly display it on a clipboard.
+  - bugfix: You finally figured that using a stamp on a clipboard was more important
+      than using the pen that's currently attached to it. Congratulations!
+  - code_imp: Added support for preventing a pen from being removed from a clipboard.
+  - rscadd: Added 'biscuit' cards! They can contain documents and can only be accessed
+      by cracking them open, you can't close them back. Nanotrasen now stores spare
+      ID safe codes in them.
+  - rscadd: Placed paper cutters around the station. They're in Bridge, HoP office,
+      Warden office, and Cargo.
+  - rscadd: Now you can order paper cutters at cargo.
+  - bugfix: Now the paper slip is actually paper.
+  - imageadd: The paper slips sprite was slightly tweaked to have text lay more logically,
+      added the corporate paper slip.
+  thgvr:
+  - rscadd: PAIs can wipe themselves again
+2024-03-14:
+  Spooky:
+  - tweak: Assorted resprites.
+  - imageadd: 'A bunch of re-done sprites for various objects. Notably: Sofas, filing
+      cabinets, reagent tanks.'
+2024-03-15:
+  cuddleandtea:
+  - rscadd: volume setting for play local sound
+2024-03-16:
+  Martinpachu:
+  - spellcheck: Fixes some cargo descriptions.
+  Sadhorizon:
+  - bugfix: Cybersun cap no longer defaults to black cap's sprite.
+  Skies-Of-Blue:
+  - rscadd: silicons across the sector have added two new noises to their lexicon,
+      try them out with *yes and *no!
+  - tweak: silicons across the sector have also overridden their clown inhibitors,
+      allowing them to play a bummer trombone with *sad
+  - tweak: borgs have leaked the secrets of *warn to their integrated positronic counterparts
+  - rscdel: due to wide reaching protest, silicons across the galaxy have decided
+      to give up their ability to *honk in respect for the lives lost during the ICW
+  - soundadd: several new roundend audio clips, as well as a new roundstart clip
+  - sounddel: all of the old roundend audio clips, as well as the old roundstart clip
+  - rscdel: soul
+  meemofcourse:
+  - code_imp: ID cards' update_label proc no longer calls update_appearance. Please
+      report any issues that may involve ID cards not updating overlays.
+  - code_imp: Outfits now have an id_assignment field. If a job has an id, and an
+      id_assignment, it will automatically apply.
+2024-03-17:
+  GenericDM:
+  - bugfix: pine trees now correctly show all possible sprite variations
+2024-03-22:
+  MarkSuckerberg:
+  - server: 515 is required to run shiptest now.
+2024-03-23:
+  Zevotech:
+  - rscadd: Remapped the Meta-class and changed its faction to NT
+2024-03-26:
+  Gristlebee:
+  - bugfix: speedloaders and en-bloc clips not being able to hold other ammo types
+      of the same caliber
+  - bugfix: 45-70 ammo holders descriptions changed to reflect that they're ammo boxes
+      and hold 12 rounds
+  meemofcourse:
+  - bugfix: Dual sabers should no longer be invisible
+2024-03-27:
+  PositiveEntropy:
+  - bugfix: The 4.6x30mm ammunition box is no longer invisible.
+  SomeguyManperson:
+  - tweak: radiation structures/effects only irradiate their surroundings if near
+      a player
+2024-03-28:
+  Apogee-dev:
+  - tweak: Made the Riggs-class sloop nicer to live in
+  - balance: Removed RnD and ORM from the Riggs
+  FalloutFalcon:
+  - bugfix: extra > in carbon examine
+  - code_imp: various missing icon unit tests
+  - bugfix: to many sprites to name
+  MarkSuckerberg:
+  - tweak: Medical kiosks no longer charge for their service
+  - admin: The economy subsystem now tracks how much money is currently in-round
+  - admin: Adds feedback for the movement of money
+  - rscdel: FULLY removes departmental budgets
+  - rscdel: Removes security record citations
+  PositiveEntropy:
+  - imageadd: Inteq helmets no longer have in-built goggles.
+  retlaw34:
+  - rscadd: adds PGF Sergeant clothing!
+  - rscadd: PGF Captain now has a new cloak design!
+  - balance: PGF armor now has similar stats to bulletproof armor!
+2024-03-29:
+  Gristlebee:
+  - bugfix: 38 Surplus ammo should be printable in the autolathe.
+  - bugfix: 38 speedloader damage blurb is accurate to it's new stats.
+2024-03-31:
+  Gristlebee:
+  - tweak: Geysers can now be plunged with a normal plunger.
+  - tweak: Schmiedeberg's reinforced plunger replaced with a normal plunger
+  - rscdel: Reinforced plungers
+  - imagedel: Reinforced plunger sprites

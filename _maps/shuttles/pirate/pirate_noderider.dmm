@@ -170,11 +170,8 @@
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 4;
-	dwidth = 5;
-	height = 29;
 	name = "stormrider";
 	port_direction = 2;
-	width = 19;
 	preferred_direction = 4
 	},
 /turf/open/floor/plating/airless,
@@ -297,10 +294,7 @@
 /obj/item/storage/box/handcuffs,
 /obj/item/storage/box/handcuffs,
 /obj/item/storage/box/handcuffs,
-/obj/structure/closet/wall/red{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/wall/red/directional/east,
 /obj/item/storage/backpack/duffelbag/syndie/c4,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -347,10 +341,11 @@
 /area/ship/crew)
 "et" = (
 /obj/machinery/porta_turret/ship{
-	dir = 5
+	dir = 5;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/security/armory)
 "ev" = (
 /obj/machinery/power/rtg,
 /obj/structure/cable{
@@ -416,6 +411,12 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/caution,
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = null
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "fD" = (
@@ -435,9 +436,7 @@
 	id = "noderiders";
 	name = "cargo airshield"
 	},
-/obj/machinery/computer/crew{
-	icon_state = "computer-right"
-	},
+/obj/machinery/computer/crew,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "fG" = (
@@ -580,10 +579,11 @@
 /area/ship/crew)
 "iH" = (
 /obj/machinery/porta_turret/ship{
-	dir = 9
+	dir = 9;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "iJ" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -967,6 +967,13 @@
 /obj/item/pickaxe/drill,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"oX" = (
+/obj/machinery/porta_turret/ship{
+	dir = 4;
+	id = "jupiter_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security/armory)
 "pi" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1024,8 +1031,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "qh" = (
-/obj/structure/closet/wall/red{
-	pixel_y = 28;
+/obj/structure/closet/wall/red/directional/north{
 	name = "weapons locker"
 	},
 /obj/item/gun/energy/e_gun/smg,
@@ -1040,7 +1046,7 @@
 /obj/item/gun/energy/laser/iot,
 /obj/item/gun/energy/laser/iot,
 /obj/item/gun/energy/e_gun/smg,
-/obj/item/gun/energy/lasercannon/unrestricted,
+/obj/item/gun/energy/lasercannon,
 /obj/item/melee/baton/loaded,
 /obj/item/melee/baton/loaded,
 /turf/open/floor/plasteel/tech,
@@ -1191,10 +1197,8 @@
 /obj/structure/sign/poster/contraband/cybersun_borg{
 	pixel_y = 32
 	},
-/obj/structure/closet/wall/white{
-	dir = 4;
-	name = "First Aid";
-	pixel_x = -28
+/obj/structure/closet/wall/white/directional/west{
+	name = "First Aid"
 	},
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/item/storage/toolbox/mechanical,
@@ -1294,8 +1298,7 @@
 /turf/closed/wall/r_wall/syndicate,
 /area/ship/maintenance/central)
 "tF" = (
-/obj/structure/closet/wall/red{
-	pixel_y = 28;
+/obj/structure/closet/wall/red/directional/north{
 	name = "armor locker"
 	},
 /obj/item/clothing/suit/armor/riot,
@@ -1480,9 +1483,7 @@
 /area/ship/external)
 "xl" = (
 /obj/structure/table,
-/obj/structure/closet/wall/red{
-	pixel_x = -28;
-	dir = 4;
+/obj/structure/closet/wall/red/directional/west{
 	name = "captain's locker"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -1576,9 +1577,7 @@
 	pixel_y = 25
 	},
 /obj/machinery/firealarm/directional/west,
-/obj/machinery/computer/communications{
-	icon_state = "computer-left"
-	},
+/obj/structure/frame/computer,
 /obj/machinery/light/small/built/directional/north{
 	pixel_x = 16
 	},
@@ -1606,6 +1605,13 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/central)
+"yH" = (
+/obj/machinery/porta_turret/ship{
+	dir = 4;
+	id = "jupiter_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "yI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1743,7 +1749,8 @@
 /area/ship/engineering)
 "Az" = (
 /obj/machinery/porta_turret/ship{
-	dir = 6
+	dir = 6;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -2542,9 +2549,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/central)
 "MJ" = (
-/obj/structure/closet/wall{
-	dir = 1;
-	pixel_y = -28;
+/obj/structure/closet/wall/directional/south{
 	name = "node uniforms"
 	},
 /obj/item/clothing/under/utility,
@@ -2590,10 +2595,11 @@
 /area/ship/maintenance/central)
 "MX" = (
 /obj/machinery/porta_turret/ship{
-	dir = 1
+	dir = 1;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/central)
 "MZ" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -2874,10 +2880,11 @@
 /area/ship/cargo)
 "RE" = (
 /obj/machinery/porta_turret/ship{
-	dir = 4
+	dir = 4;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/crew)
 "RI" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2901,10 +2908,11 @@
 /area/ship/engineering)
 "Ss" = (
 /obj/machinery/porta_turret/ship{
-	dir = 10
+	dir = 10;
+	id = "jupiter_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/engineering)
 "SP" = (
 /obj/machinery/power/shieldwallgen/anchored,
 /obj/structure/cable,
@@ -2967,15 +2975,16 @@
 /obj/structure/railing/corner{
 	layer = 3.1
 	},
-/obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = null
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 8
+	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -2993,9 +3002,12 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "VC" = (
-/obj/machinery/porta_turret/ship,
+/obj/machinery/porta_turret/ship{
+	dir = 2;
+	id = "jupiter_grid"
+	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/central)
 "VF" = (
 /obj/machinery/ai_slipper,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -4113,7 +4125,7 @@ qc
 Th
 Kc
 by
-RE
+oX
 by
 oJ
 Ne
@@ -4203,7 +4215,7 @@ by
 by
 by
 by
-RE
+yH
 by
 by
 by

@@ -29,24 +29,22 @@
 /datum/outfit/syndicate/clownop
 	name = "Clown Operative - Basic"
 	uniform = /obj/item/clothing/under/syndicate
-	shoes = /obj/item/clothing/shoes/clown_shoes/combat
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	gloves = /obj/item/clothing/gloves/combat
-	back = /obj/item/storage/backpack/clown
 	ears = /obj/item/radio/headset/syndicate/alt
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
 	r_pocket = /obj/item/bikehorn
 	id = /obj/item/card/id/syndicate
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
-		/obj/item/kitchen/knife/combat/survival,
+		/obj/item/melee/knife/survival,
 		/obj/item/dnainjector/clumsymut, //in case you want to be clumsy for the memes
-		/obj/item/storage/box/syndie_kit/clownpins, //for any guns that you get your grubby little clown op mitts on
 		/obj/item/reagent_containers/spray/waterflower/lube)
 	implants = list(/obj/item/implant/sad_trombone)
 
 	uplink_type = /obj/item/uplink/clownop
 
 /datum/outfit/syndicate/clownop/no_crystals
+	name = "Clown Operative - No Crystals"
 	tc = 0
 
 /datum/outfit/syndicate/clownop/leader

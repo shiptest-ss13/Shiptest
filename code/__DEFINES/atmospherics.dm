@@ -33,6 +33,10 @@
 /// Amount of air to take a from a tile
 #define BREATH_PERCENTAGE (BREATH_VOLUME/CELL_VOLUME)
 
+/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery. This is applied each tick, so long as the mob is alive.
+#define BODYTEMP_AUTORECOVERY_DIVISOR 28
+/// The natural temperature for a body
+#define BODYTEMP_NORMAL 310.15
 
 //EXCITED GROUPS
 /// number of FULL air controller ticks before an excited group breaks down (averages gas contents across turfs)
@@ -185,6 +189,10 @@
 /// just check density
 #define ATMOS_PASS_DENSITY -2
 
+// Adjacency flags
+#define ATMOS_ADJACENT_ANY (1<<0)
+#define ATMOS_ADJACENT_FIRELOCK (1<<1)
+
 #define CANATMOSPASS(A, O) (A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : (A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass))
 #define CANVERTICALATMOSPASS(A, O) (A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : (A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical))
 
@@ -192,7 +200,7 @@
 /// the default air mix that open turfs spawn
 #define OPENTURF_DEFAULT_ATMOS "o2=22;n2=82;TEMP=293.15"
 #define OPENTURF_LOW_PRESSURE "o2=14;n2=30;TEMP=293.15"
-/// -193,15°C telecommunications. also used for xenobiology slime killrooms
+/// -193,15°C telecommunications. good fluff for comms areas
 #define TCOMMS_ATMOS "n2=100;TEMP=80"
 /// space
 #define AIRLESS_ATMOS "TEMP=2.7"
@@ -210,8 +218,10 @@
 #define ATMOS_TANK_PLASMA "plasma=70000;TEMP=293.15"
 #define ATMOS_TANK_O2 "o2=100000;TEMP=293.15"
 #define ATMOS_TANK_N2 "n2=100000;TEMP=293.15"
+#define ATMOS_TANK_HYDROGEN "h2=100000;TEMP=293.15"
 #define ATMOS_TANK_AIRMIX "o2=2644;n2=10580;TEMP=293.15"
 #define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
+#define ATMOS_TANK_HYDROGEN_FUEL "o2=33000;h2=66000;TEMP=293.15"
 
 //PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
@@ -271,6 +281,8 @@
 #define ATMOS_GAS_MONITOR_WASTE_ENGINE "engine-waste_out"
 #define ATMOS_GAS_MONITOR_WASTE_ATMOS "atmos-waste_out"
 
+#define GAS_MONITOR_SENSOR_EXTERNAL "GAS_MONITOR_SENSOR_EXTERNAL"
+
 //AIRLOCK CONTROLLER TAGS
 
 //RnD toxins burn chamber
@@ -291,16 +303,6 @@
 #define INCINERATOR_ATMOS_AIRLOCK_CONTROLLER "atmos_incinerator_airlock_controller"
 #define INCINERATOR_ATMOS_AIRLOCK_INTERIOR "atmos_incinerator_airlock_interior"
 #define INCINERATOR_ATMOS_AIRLOCK_EXTERIOR "atmos_incinerator_airlock_exterior"
-
-//Syndicate lavaland base incinerator (lavaland_surface_syndicate_base1.dmm)
-#define INCINERATOR_SYNDICATELAVA_IGNITER "syndicatelava_igniter"
-#define INCINERATOR_SYNDICATELAVA_MAINVENT "syndicatelava_mainvent"
-#define INCINERATOR_SYNDICATELAVA_AUXVENT "syndicatelava_auxvent"
-#define INCINERATOR_SYNDICATELAVA_DP_VENTPUMP "syndicatelava_airlock_pump"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_SENSOR "syndicatelava_airlock_sensor"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_CONTROLLER "syndicatelava_airlock_controller"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_INTERIOR "syndicatelava_airlock_interior"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_EXTERIOR "syndicatelava_airlock_exterior"
 
 //MULTIPIPES
 //IF YOU EVER CHANGE THESE CHANGE SPRITES TO MATCH.
@@ -334,9 +336,19 @@
 #define GAS_STIMULUM "stim"
 #define GAS_PLUOXIUM "pluox"
 #define GAS_FREON "freon"
+#define GAS_HYDROGEN "h2"
+#define GAS_CHLORINE "cl2"
+#define GAS_HYDROGEN_CHLORIDE "hcl"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)
+
+// Flag for update_air_ref()
+#define AIR_REF_CLOSED_TURF -1
+#define AIR_REF_SPACE_TURF 0
+
+#define AIR_REF_PLANETARY_TURF (1<<0) //SIMULATION_DIFFUSE 0b1
+#define AIR_REF_OPEN_TURF (1<<1) //SIMULATION_ALL 0b10
 
 //HELPERS
 #define PIPING_LAYER_SHIFT(T, PipingLayer) \
@@ -374,3 +386,5 @@ GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
 	"yellow" = rgb(255,198,0)
 )))
 
+#define IMMUNE_ATMOS_REQS list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+#define NORMAL_ATMOS_REQS list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)

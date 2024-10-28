@@ -28,6 +28,13 @@
 #define BLOOD_VOLUME_BAD 224
 #define BLOOD_VOLUME_SURVIVE 122
 
+// Bloodloss
+#define BLOOD_LOSS_MAXIMUM 30
+#define BLOOD_LOSS_DAMAGE_MAXIMUM 2
+#define BLOOD_LOSS_DAMAGE_BASE 0.013
+#define BLOOD_CAUTERIZATION_RATIO 10
+#define BLOOD_CAUTERIZATION_DAMAGE_RATIO 300
+
 //Sizes of mobs, used by mob/living/var/mob_size
 #define MOB_SIZE_TINY 0
 #define MOB_SIZE_SMALL 1
@@ -69,14 +76,13 @@
 #define MONKEY_BODYPART "monkey"
 #define ALIEN_BODYPART "alien"
 #define LARVA_BODYPART "larva"
-#define DEVIL_BODYPART "devil"
 
 //Defines for Species IDs
 #define SPECIES_ABDUCTOR "abductor"
 #define SPECIES_ANDROID "android"
 #define SPECIES_CORPORATE "corporate"
 #define SPECIES_DULLAHAN "dullahan"
-#define SPECIES_ETHEREAL "ethereal"
+#define SPECIES_ELZUOSE "elzuose"
 #define SPECIES_FLYPERSON "fly"
 #define SPECIES_HUMAN "human"
 #define SPECIES_IPC "ipc"
@@ -84,13 +90,11 @@
 #define SPECIES_SLIMEPERSON "slime_person"
 #define SPECIES_LUMINESCENT "luminescent"
 #define SPECIES_STARGAZER "stargazer"
-#define SPECIES_LIZARD "lizard"
+#define SPECIES_SARATHI "sarathi"
 #define SPECIES_ASHWALKER "ashwalker"
 #define SPECIES_KOBOLD "kobold"
-#define SPECIES_GOLEM "golem"
 #define SPECIES_MONKEY "monkey"
 #define SPECIES_MOTH "moth"
-#define SPECIES_MUSH "mush"
 #define SPECIES_PLASMAMAN "plasmaman"
 #define SPECIES_POD "pod"
 #define SPECIES_SHADOW "shadow"
@@ -119,7 +123,7 @@
 //Species bitflags for sprite sheets. If this somehow ever gets above 23 we have larger problems.
 #define FLAG_HUMAN (1<<0)
 #define FLAG_IPC (1<<1)
-#define FLAG_ETHEREAL (1<<2)
+#define FLAG_ELZUOSE (1<<2)
 #define FLAG_PLASMAMAN (1<<3)
 #define FLAG_MOTH (1<<4)
 #define FLAG_LIZARD (1<<5)
@@ -130,10 +134,12 @@
 #define BODYTYPE_ORGANIC (1<<0)
 #define BODYTYPE_ROBOTIC (1<<1)
 #define BODYTYPE_HUMANOID (1<<2) //Everything
-#define BODYTYPE_BOXHEAD (1<<3) //TV Head
-#define BODYTYPE_DIGITIGRADE (1<<4) //Cancer
-#define BODYTYPE_KEPORI (1<<5) //Just Kepori
-#define BODYTYPE_VOX (1<<6) //Big Vox
+#define BODYTYPE_SNOUT (1<<3) //Snouts
+#define BODYTYPE_SNOUT_SMALL (1<<4) //Elzuose snouts
+#define BODYTYPE_BOXHEAD (1<<5) //TV Head
+#define BODYTYPE_DIGITIGRADE (1<<6) //Lizard legs
+#define BODYTYPE_KEPORI (1<<7) //Just Kepori
+#define BODYTYPE_VOX (1<<8) //Big Vox
 
 // Health/damage defines
 #define MAX_LIVING_HEALTH 100
@@ -226,7 +232,6 @@
 #define SANITY_INSANE 0
 
 //Nutrition levels for humans
-#define NUTRITION_LEVEL_FAT 600
 #define NUTRITION_LEVEL_FULL 550
 #define NUTRITION_LEVEL_WELL_FED 450
 #define NUTRITION_LEVEL_FED 350
@@ -247,14 +252,14 @@
 
 //Charge levels for Ethereals
 //WS Begin -- Ethereal Charge Scaling
-#define ETHEREAL_CHARGE_SCALING_MULTIPLIER 20
-#define ETHEREAL_CHARGE_NONE (0 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define ETHEREAL_CHARGE_LOWPOWER (20 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define ETHEREAL_CHARGE_NORMAL (50 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define ETHEREAL_CHARGE_ALMOSTFULL (75 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define ETHEREAL_CHARGE_FULL (100 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define ETHEREAL_CHARGE_OVERLOAD (125 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define ETHEREAL_CHARGE_DANGEROUS (150 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_SCALING_MULTIPLIER 20
+#define ELZUOSE_CHARGE_NONE (0 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_LOWPOWER (20 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_NORMAL (50 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_ALMOSTFULL (75 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_FULL (100 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_OVERLOAD (125 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_DANGEROUS (150 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 //WS End
 
 //Slime evolution threshold. Controls how fast slimes can split/grow
@@ -338,7 +343,7 @@
 #define SHADOW_SPECIES_LIGHT_THRESHOLD 0.2
 
 //MINOR TWEAKS/MISC
-#define AGE_MIN 17 //youngest a character can be
+#define AGE_MIN 18 //youngest a character can be
 #define AGE_MAX 85 //oldest a character can be
 #define AGE_MINOR 20 //legal age of space drinking and smoking
 #define WIZARD_AGE_MIN 30 //youngest a wizard can be
@@ -348,7 +353,7 @@
 #define DOOR_CRUSH_DAMAGE 15 //the amount of damage that airlocks deal when they crush you
 
 #define HUNGER_FACTOR 0.1 //factor at which mob nutrition decreases
-#define ETHEREAL_CHARGE_FACTOR (0.05 * ETHEREAL_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
+#define ELZUOSE_CHARGE_FACTOR (0.05 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
 #define REAGENTS_METABOLISM 0.4 //How many units of reagent are consumed per tick, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4) // By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
 
@@ -392,13 +397,15 @@
 #define RACE_SWAP (1<<3)
 //ERT spawn template (avoid races that don't function without correct gear)
 #define ERT_SPAWN (1<<4)
-//xenobio black crossbreed
-#define SLIME_EXTRACT (1<<5)
 //Wabbacjack staff projectiles
-#define WABBAJACK (1<<6)
+#define WABBAJACK (1<<5)
 
 #define SLEEP_CHECK_DEATH(X) sleep(X); if(QDELETED(src) || stat == DEAD) return;
-#define INTERACTING_WITH(X, Y) (Y in X.do_afters)
+
+#define DOING_INTERACTION(user, interaction_key) (LAZYACCESS(user.do_afters, interaction_key))
+#define DOING_INTERACTION_LIMIT(user, interaction_key, max_interaction_count) ((LAZYACCESS(user.do_afters, interaction_key) || 0) >= max_interaction_count)
+#define DOING_INTERACTION_WITH_TARGET(user, target) (LAZYACCESS(user.do_afters, target))
+#define DOING_INTERACTION_WITH_TARGET_LIMIT(user, target, max_interaction_count) ((LAZYACCESS(user.do_afters, target) || 0) >= max_interaction_count)
 
 /// If you examine the same atom twice in this timeframe, we call examine_more() instead of examine()
 #define EXAMINE_MORE_TIME 1 SECONDS
@@ -406,9 +413,6 @@
 #define EYE_CONTACT_RANGE 5
 
 #define SILENCE_RANGED_MESSAGE (1<<0)
-
-///Swarmer flags
-#define SWARMER_LIGHT_ON (1<<0)
 
 /// Returns whether or not the given mob can succumb
 #define CAN_SUCCUMB(target) (HAS_TRAIT(target, TRAIT_CRITICAL_CONDITION) && !HAS_TRAIT(target, TRAIT_NODEATH))

@@ -68,17 +68,6 @@ const TARGET_SPECIES_LIST = [
   },
 ];
 
-const TARGET_NUTRITION_LIST = [
-  {
-    name: 'Starving',
-    value: 150,
-  },
-  {
-    name: 'Obese',
-    value: 600,
-  },
-];
-
 export const ScannerGate = (props, context) => {
   const { act, data } = useBackend(context);
   return (
@@ -117,10 +106,6 @@ const SCANNER_GATE_ROUTES = {
   Species: {
     title: 'Scanner Mode: Species',
     component: () => ScannerGateSpecies,
-  },
-  Nutrition: {
-    title: 'Scanner Mode: Nutrition',
-    component: () => ScannerGateNutrition,
   },
   Nanites: {
     title: 'Scanner Mode: Nanites',
@@ -176,10 +161,6 @@ const ScannerGateOff = (props, context) => {
         <Button
           content="Species"
           onClick={() => act('set_mode', { new_mode: 'Species' })}
-        />
-        <Button
-          content="Nutrition"
-          onClick={() => act('set_mode', { new_mode: 'Nutrition' })}
         />
         <Button
           content="Nanites"
@@ -283,37 +264,6 @@ const ScannerGateSpecies = (props, context) => {
             onClick={() =>
               act('set_target_species', {
                 new_species: species.value,
-              })
-            }
-          />
-        ))}
-      </Box>
-      <ScannerGateMode />
-    </>
-  );
-};
-
-const ScannerGateNutrition = (props, context) => {
-  const { act, data } = useBackend(context);
-  const { reverse, target_nutrition } = data;
-  const nutrition = TARGET_NUTRITION_LIST.find((nutrition) => {
-    return nutrition.value === target_nutrition;
-  });
-  return (
-    <>
-      <Box mb={2}>
-        Trigger if the person scanned {reverse ? 'does not have' : 'has'} the{' '}
-        {nutrition.name} nutrition level.
-      </Box>
-      <Box mb={2}>
-        {TARGET_NUTRITION_LIST.map((nutrition) => (
-          <Button.Checkbox
-            key={nutrition.name}
-            checked={nutrition.value === target_nutrition}
-            content={nutrition.name}
-            onClick={() =>
-              act('set_target_nutrition', {
-                new_nutrition: nutrition.name,
               })
             }
           />

@@ -102,9 +102,9 @@
 
 /datum/config_entry/flag/allow_admin_asaycolor //Allows admins with relevant permissions to have a personalized asay color
 
-/datum/config_entry/flag/allow_vote_restart	// allow votes to restart
+/datum/config_entry/flag/allow_vote_restart	// allow player votes to restart
 
-/datum/config_entry/flag/allow_vote_mode	// allow votes to change mode
+/datum/config_entry/flag/allow_vote_transfer	// allow player votes to initiate a transfer
 
 /datum/config_entry/flag/auth_only // server can only be used for authentication
 
@@ -120,7 +120,9 @@
 	integer = FALSE
 	min_val = 0
 
-//WS Begin - Autotranfer vote
+/// If disabled, no-voters will automatically have their votes added to certain vote options
+/// (For eample: restart votes will default to "no restart", map votes will default to their preferred map / default map)
+/datum/config_entry/flag/default_no_vote
 
 /datum/config_entry/number/vote_autotransfer_initial //length of time before the first autotransfer vote is called (deciseconds, default 2 hours)
 	config_entry_value = 72000
@@ -132,9 +134,6 @@
 	integer = FALSE
 	min_val = 0
 
-//WS End
-
-/datum/config_entry/flag/default_no_vote	// vote does not default to nochange/norestart
 
 /datum/config_entry/flag/no_dead_vote	// dead people can't vote
 
@@ -236,8 +235,8 @@
 /datum/config_entry/string/wikiurl
 	config_entry_value = "https://shiptest.net/wiki/"
 
-/datum/config_entry/string/forumurl
-	config_entry_value = "https://shiptest.net/discord"
+/datum/config_entry/string/loreurl
+	config_entry_value = "https://shiptest.net/wiki/Lore_Primer"
 
 /datum/config_entry/string/rulesurl
 	config_entry_value = "https://shiptest.net/wiki/Rules"

@@ -4,7 +4,7 @@
 			Please anchor the attached sensor array to your ship and fly it through the storms.\
 			It must be powered to collect the data. "
 	value = 3000 // base value, before adding bonus for number of things to fly through
-	duration = 30 MINUTES
+	duration = 60 MINUTES
 	weight = 8
 
 	var/datum/overmap/objective_type = /datum/overmap/event/electric
@@ -106,7 +106,7 @@
 	density = FALSE
 	anchored = FALSE
 	use_power = NO_POWER_USE
-	idle_power_usage = 400
+	idle_power_usage = IDLE_DRAW_MEDIUM
 	processing_flags = START_PROCESSING_MANUALLY
 
 /obj/machinery/mission_scanner/wrench_act(mob/living/user, obj/item/I)
@@ -122,14 +122,14 @@
 	if(anchorvalue)
 		set_is_operational(TRUE)
 		START_PROCESSING(SSmachines, src)
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 	else
 		set_is_operational(FALSE)
 		STOP_PROCESSING(SSmachines, src)
 		use_power = NO_POWER_USE
 	power_change() // calls update_appearance(), makes sure we're powered
 
-/obj/machinery/mission_scanner/update_icon_state()
+/obj/machinery/mission_scanner/update_appearance(updates)
 	. = ..()
 	if(is_operational)
 		icon_state = "scanner_power"

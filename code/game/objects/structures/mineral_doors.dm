@@ -94,7 +94,7 @@
 	density = FALSE
 	door_opened = TRUE
 	layer = OPEN_DOOR_LAYER
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_appearance()
 	isSwitchingStates = FALSE
 
@@ -115,7 +115,7 @@
 	set_opacity(TRUE)
 	door_opened = FALSE
 	layer = initial(layer)
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_appearance()
 	isSwitchingStates = FALSE
 
@@ -336,7 +336,7 @@
 
 	if((user.a_intent != INTENT_HARM) && istype(I, /obj/item/paper) && (obj_integrity < max_integrity))
 		user.visible_message("<span class='notice'>[user] starts to patch the holes in [src].</span>", "<span class='notice'>You start patching some of the holes in [src]!</span>")
-		if(do_after(user, 20, TRUE, src))
+		if(do_after(user, 20, src))
 			obj_integrity = min(obj_integrity+4,max_integrity)
 			qdel(I)
 			user.visible_message("<span class='notice'>[user] patches some of the holes in [src].</span>", "<span class='notice'>You patch some of the holes in [src]!</span>")

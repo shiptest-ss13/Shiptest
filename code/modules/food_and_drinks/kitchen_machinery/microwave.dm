@@ -8,8 +8,8 @@
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	circuit = /obj/item/circuitboard/machine/microwave
 	pass_flags = PASSTABLE
 	light_color = LIGHT_COLOR_YELLOW
@@ -125,43 +125,11 @@
 		return TRUE
 
 	if(broken > 0)
-		if(broken == 2 && O.tool_behaviour == TOOL_WIRECUTTER) // If it's broken and they're using a screwdriver
-			user.visible_message("<span class='notice'>[user] starts to fix part of \the [src].</span>", "<span class='notice'>You start to fix part of \the [src]...</span>")
-			if(O.use_tool(src, user, 20))
-				user.visible_message("<span class='notice'>[user] fixes part of \the [src].</span>", "<span class='notice'>You fix part of \the [src].</span>")
-				broken = 1 // Fix it a bit
-		else if(broken == 1 && O.tool_behaviour == TOOL_WELDER) // If it's broken and they're doing the wrench
-			user.visible_message("<span class='notice'>[user] starts to fix part of \the [src].</span>", "<span class='notice'>You start to fix part of \the [src]...</span>")
-			if(O.use_tool(src, user, 20))
-				user.visible_message("<span class='notice'>[user] fixes \the [src].</span>", "<span class='notice'>You fix \the [src].</span>")
-				broken = 0
-				update_appearance()
-				return FALSE //to use some fuel
-		else
-			to_chat(user, "<span class='warning'>It's broken!</span>")
-			return TRUE
+		to_chat(user, "<span class='warning'>It's broken!</span>")
+		return TRUE
+
+	if(istype(O, /obj/item/reagent_containers/spray) || istype(O, /obj/item/soap) || istype(O, /obj/item/reagent_containers/glass/rag))
 		return
-
-	if(istype(O, /obj/item/reagent_containers/spray))
-		var/obj/item/reagent_containers/spray/clean_spray = O
-		if(clean_spray.reagents.has_reagent(/datum/reagent/space_cleaner, clean_spray.amount_per_transfer_from_this))
-			clean_spray.reagents.remove_reagent(/datum/reagent/space_cleaner, clean_spray.amount_per_transfer_from_this,1)
-			playsound(loc, 'sound/effects/spray3.ogg', 50, TRUE, -6)
-			user.visible_message("<span class='notice'>[user] cleans \the [src].</span>", "<span class='notice'>You clean \the [src].</span>")
-			dirty = 0
-			update_appearance()
-		else
-			to_chat(user, "<span class='warning'>You need more space cleaner!</span>")
-		return TRUE
-
-	if(istype(O, /obj/item/soap))
-		var/obj/item/soap/P = O
-		user.visible_message("<span class='notice'>[user] starts to clean \the [src].</span>", "<span class='notice'>You start to clean \the [src]...</span>")
-		if(do_after(user, P.cleanspeed, target = src))
-			user.visible_message("<span class='notice'>[user] cleans \the [src].</span>", "<span class='notice'>You clean \the [src].</span>")
-			dirty = 0
-			update_appearance()
-		return TRUE
 
 	if(dirty == 100) // The microwave is all dirty so can't be used!
 		to_chat(user, "<span class='warning'>\The [src] is dirty!</span>")
@@ -194,6 +162,33 @@
 		return
 
 	..()
+
+/obj/machinery/microwave/welder_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(broken == 1)
+		user.visible_message("<span class='notice'>[user] starts to fix part of \the [src].</span>", "<span class='notice'>You start to fix part of \the [src]...</span>")
+		if(I.use_tool(src, user, 20))
+			user.visible_message("<span class='notice'>[user] fixes \the [src].</span>", "<span class='notice'>You fix \the [src].</span>")
+			broken = 0
+			update_appearance()
+			return TRUE
+
+/obj/machinery/microwave/wirecutter_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(broken == 2)
+		user.visible_message("<span class='notice'>[user] starts to fix part of \the [src].</span>", "<span class='notice'>You start to fix part of \the [src]...</span>")
+		if(I.use_tool(src, user, 20))
+			user.visible_message("<span class='notice'>[user] fixes part of \the [src].</span>", "<span class='notice'>You fix part of \the [src].</span>")
+			broken = 1
+			update_appearance()
+			return TRUE
+
+/obj/machinery/microwave/wash(clean_types)
+	. = ..()
+	if(dirty)
+		dirty = 0
+		update_appearance()
+		return TRUE
 
 /obj/machinery/microwave/AltClick(mob/user)
 	if(user.canUseTopic(src, !issilicon(usr)))
@@ -280,6 +275,7 @@
 
 /obj/machinery/microwave/proc/start()
 	wzhzhzh()
+	set_active_power()
 	loop(MICROWAVE_NORMAL, 10)
 
 /obj/machinery/microwave/proc/start_can_fail()
@@ -308,11 +304,11 @@
 				pre_success()
 		return
 	time--
-	use_power(500)
 	addtimer(CALLBACK(src, PROC_REF(loop), type, time, wait), wait)
 
 /obj/machinery/microwave/proc/loop_finish()
 	operating = FALSE
+	set_idle_power()
 
 	var/metal = 0
 	for(var/obj/item/O in ingredients)
@@ -335,6 +331,7 @@
 /obj/machinery/microwave/proc/pre_fail()
 	broken = 2
 	operating = FALSE
+	set_idle_power()
 	spark()
 	after_finish_loop()
 
@@ -343,6 +340,7 @@
 
 /obj/machinery/microwave/proc/muck_finish()
 	visible_message("<span class='warning'>\The [src] gets covered in muck!</span>")
+	set_idle_power()
 
 	dirty = 100
 	dirty_anim_playing = FALSE
@@ -364,9 +362,10 @@
 	name = "flameless ration heater"
 	desc = "A magnisium based ration heater. It can be used to heat up entrees and other food items. reaches the same temperature as a microwave with half the volume."
 	icon = 'icons/obj/food/ration.dmi'
-	icon_state = "ration_package"
+	icon_state = "ration_heater"
 	grind_results = list(/datum/reagent/iron = 10, /datum/reagent/water = 10, /datum/reagent/consumable/sodiumchloride = 5)
 	heat = 3800
+	w_class = WEIGHT_CLASS_SMALL
 	var/obj/item/tocook = null
 	var/mutable_appearance/ration_overlay
 	var/uses = 3
@@ -386,6 +385,12 @@
 			target.visible_message("<span class='notice'>\The [target] rapidly begins cooking...</span>")
 			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
 			moveToNullspace()
+
+
+/obj/item/ration_heater/get_temperature()
+	if(!uses)
+		return 0
+	. = ..()
 
 /obj/item/ration_heater/proc/clear_cooking(datum/source)
 	SIGNAL_HANDLER

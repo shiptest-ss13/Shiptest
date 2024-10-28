@@ -3,7 +3,7 @@
 	description = "Hooligans have boarded CentCom! Ship riot shotguns quick, or things are going to get dirty."
 	reward = 5000
 	required_count = 2
-	wanted_types = list(/obj/item/gun/ballistic/shotgun/riot)
+	wanted_types = list(/obj/item/gun/ballistic/shotgun/hellfire)
 
 /datum/bounty/item/security/recharger
 	name = "Rechargers"

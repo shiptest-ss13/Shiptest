@@ -14,6 +14,7 @@
 /datum/mission/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	container = spawn_bound(container_type, accept_loc, VARSET_CALLBACK(src, container, null))
+	container.name += " ([capitalize(objective_type.name)])"
 
 /datum/mission/acquire/Destroy()
 	container = null
@@ -72,7 +73,7 @@
 	name = "Diamond needed (urgent!!)"
 	weight = 3
 	value = 700
-	duration = 20 MINUTES
+	duration = 40 MINUTES
 	dur_mod_range = 0.2
 	container_type = /obj/item/storage/box/true_love
 	objective_type = /obj/item/stack/sheet/mineral/diamond
@@ -115,7 +116,7 @@ Acquire: Anomaly
 	name = "Anomaly core requested"
 	weight = 8
 	value = 3000
-	duration = 40 MINUTES
+	duration = 80 MINUTES
 	dur_mod_range = 0.2
 	container_type = /obj/item/storage/box/anomaly
 	objective_type = /obj/item/assembly/signaler/anomaly
@@ -149,7 +150,7 @@ Acquire: Anomaly
 	desc = "I require a live goliath for research purposes. Trap one within the given \
 			Lifeform Containment Unit and return it to me and you will be paid handsomely."
 	value = 1500
-	duration = 30 MINUTES
+	duration = 60 MINUTES
 	weight = 6
 	container_type = /obj/structure/closet/mob_capture
 	objective_type = /mob/living/simple_animal/hostile/asteroid/goliath
@@ -179,14 +180,6 @@ Acquire: Anomaly
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
 
-/datum/mission/acquire/creature/ice_demon
-	name = "Capture an ice demon"
-	desc = "I require a live ice demon for research purposes. Trap one within the given \
-			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1500
-	weight = 2
-	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_demon
-
 /datum/mission/acquire/creature/migo
 	name = "Capture a live mi-go"
 	desc = "I require a live mi-go for research purposes. Trap one within the given \
@@ -210,6 +203,21 @@ Acquire: Anomaly
 	value = 1450
 	weight = 1
 	objective_type = /mob/living/simple_animal/bot/firebot/rockplanet
+
+/*
+		Acquire: Landmines
+*/
+
+/datum/mission/acquire/landmine
+	name = "Defuse landmines"
+	desc = "CLIP and Gezena have assigned us to offer a bounty to turn in disarmed ordnance for future ventures. We'll pay you well, but we're not responsible for any accidents."
+	weight = 6
+	value = 1500
+	duration = 80 MINUTES
+	dur_mod_range = 0.4
+	container_type = /obj/item/storage/toolbox/bounty
+	objective_type = /obj/item/mine/pressure/explosive
+	num_wanted = 2
 
 /*
 		Acquire: Fishing

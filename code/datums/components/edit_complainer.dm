@@ -22,4 +22,4 @@
 	SIGNAL_HANDLER
 
 	var/atom/movable/master = parent
-	master.say(pick(say_lines))
+	master.visible_message(pick(say_lines))

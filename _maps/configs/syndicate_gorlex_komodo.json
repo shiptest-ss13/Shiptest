@@ -1,5 +1,6 @@
 {
-	"prefix": "SSV",
+	"faction": "/datum/faction/syndicate",
+	"prefix": "ISV",
 	"namelists": [
 		"GORLEX",
 		"NATURAL_AGGRESSIVE",
@@ -19,35 +20,36 @@
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/captain/syndicate/gorlex",
+			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
 			"officer": true,
 			"slots": 1
 		},
 		"Sergeant": {
-			"outfit": "/datum/outfit/job/hos/syndicate",
+			"outfit": "/datum/outfit/job/syndicate/hos/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Bridge Officer": {
+			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/cybersun",
 			"officer": true,
 			"slots": 1
 		},
 		"Medic": {
-			"outfit": "/datum/outfit/job/doctor/syndicate_komodo",
+			"outfit": "/datum/outfit/job/syndicate/doctor/gorlex",
 			"slots": 1
 		},
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/engineer/syndicate/gorlex",
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
 			"slots": 1
 		},
 		"Trooper": {
-			"outfit": "/datum/outfit/job/security/syndicate/gorlex",
+			"outfit": "/datum/outfit/job/syndicate/security/gorlex",
 			"slots": 3
 		},
-		"Deck assistant": {
-			"outfit": "/datum/outfit/job/assistant/syndicate/gorlex",
+		"Deck Assistant": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
 			"slots": 2
-		},
-		"Bridge officer": {
-			"outfit": "/datum/outfit/job/head_of_personnel/syndicate",
-			"slots": 1
 		}
 	},
-	"enabled": true
+	"enabled": false
 }

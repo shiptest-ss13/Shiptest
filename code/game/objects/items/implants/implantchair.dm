@@ -158,23 +158,6 @@
 		if(auto_inject && ready && ready_implants > 0)
 			implant(user,null)
 
-/obj/machinery/implantchair/genepurge
-	name = "Genetic purifier"
-	desc = "Used to purge a human genome of foreign influences."
-	special = TRUE
-	special_name = "Purge genome"
-	injection_cooldown = 0
-	replenish_cooldown = 300
-
-/obj/machinery/implantchair/genepurge/implant_action(mob/living/carbon/human/H,mob/user)
-	if(!istype(H))
-		return 0
-	H.set_species(/datum/species/human, 1)//lizards go home
-	H.purrbation_remove()//remove cats
-	H.dna.remove_all_mutations()//hulks out
-	return 1
-
-
 /obj/machinery/implantchair/brainwash
 	name = "Neural Imprinter"
 	desc = "Used to <s>indoctrinate</s> rehabilitate hardened recidivists."

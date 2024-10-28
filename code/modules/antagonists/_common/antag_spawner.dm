@@ -101,6 +101,7 @@
 	desc = "A single-use teleporter designed to quickly reinforce operatives in the field."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "locator"
+	var/nukieonly = TRUE
 	var/borg_to_spawn
 	var/locked = TRUE
 
@@ -181,6 +182,10 @@
 	name = "syndicate medical teleporter"
 	borg_to_spawn = "Medical"
 
+/obj/item/antag_spawner/nuke_ops/borg_tele/medical/unlocked // used for cybersun ERT
+	locked = FALSE
+	nukieonly = FALSE
+
 /obj/item/antag_spawner/nuke_ops/borg_tele/saboteur
 	name = "syndicate saboteur teleporter"
 
@@ -193,7 +198,7 @@
 /obj/item/antag_spawner/nuke_ops/borg_tele/spawn_antag(client/C, turf/T, kind, datum/mind/user)
 	var/mob/living/silicon/robot/R
 	var/datum/antagonist/nukeop/creator_op = user.has_antag_datum(/datum/antagonist/nukeop,TRUE)
-	if(!creator_op)
+	if(!creator_op && nukieonly)
 		return
 
 	switch(borg_to_spawn)
@@ -210,8 +215,9 @@
 	if(prob(50))
 		brainfirstname = pick(GLOB.first_names_female)
 	var/brainopslastname = pick(GLOB.last_names)
-	if(creator_op.nuke_team.syndicate_name)  //the brain inside the syndiborg has the same last name as the other ops.
-		brainopslastname = creator_op.nuke_team.syndicate_name
+	if(nukieonly)  //the brain inside the syndiborg has the same last name as the other ops.
+		if(creator_op.nuke_team.syndicate_name)
+			brainopslastname = creator_op.nuke_team.syndicate_name
 	var/brainopsname = "[brainfirstname] [brainopslastname]"
 
 	R.mmi.name = "[initial(R.mmi.name)]: [brainopsname]"
@@ -224,7 +230,8 @@
 
 	var/datum/antagonist/nukeop/new_borg = new()
 	new_borg.send_to_spawnpoint = FALSE
-	R.mind.add_antag_datum(new_borg,creator_op.nuke_team)
+	if(nukieonly)
+		R.mind.add_antag_datum(new_borg,creator_op.nuke_team)
 	R.mind.special_role = "Syndicate Cyborg"
 
 ///////////SLAUGHTER DEMON
@@ -285,7 +292,7 @@
 /obj/item/antag_spawner/syndi_borer
 	name = "syndicate brain-slug container"
 	desc = "Releases a modified cortical borer to assist the user."
-	icon = 'icons/obj/chemical.dmi' //Temporary? //The most permanent type of solution lol
+	icon = 'icons/obj/chemical/hypovial.dmi'
 	icon_state = "hypoviallarge-b"
 	var/polling = FALSE
 

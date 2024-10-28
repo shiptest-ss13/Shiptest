@@ -10,6 +10,7 @@
 	allow_dense = TRUE
 	dense_when_open = TRUE
 	climbable = TRUE
+	mouse_drag_pointer = TRUE
 	climb_time = 10 //real fast, because let's be honest stepping into or onto a crate is easy
 	delivery_icon = "deliverycrate"
 	open_sound = 'sound/machines/crate_open.ogg'
@@ -292,3 +293,21 @@
 		new /obj/item/clothing/mask/breath(src)
 	for(var/i in 1 to 3)
 		new /obj/item/tank/internals/oxygen(src)
+
+/obj/structure/closet/crate/cyborg
+	name = "Cyborg Construction Crate"
+	desc = "A crate containing the parts to build a cyborg frame."
+	icon_state = "scicrate"
+
+/obj/structure/closet/crate/cyborg/PopulateContents()
+	. = ..()
+	new /obj/item/bodypart/l_arm/robot(src)
+	new /obj/item/bodypart/r_arm/robot(src)
+	new /obj/item/bodypart/leg/left/robot(src)
+	new /obj/item/bodypart/leg/right/robot(src)
+	new /obj/item/bodypart/chest/robot(src)
+	new /obj/item/bodypart/head/robot(src)
+	new /obj/item/robot_suit(src)
+	new /obj/item/stock_parts/cell/high(src)
+	for(var/i in 1 to 2)
+		new /obj/item/assembly/flash/handheld(src)

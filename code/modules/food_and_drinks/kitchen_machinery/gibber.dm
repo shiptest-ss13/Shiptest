@@ -5,8 +5,8 @@
 	icon_state = "grinder"
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 2
-	active_power_usage = 500
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	circuit = /obj/item/circuitboard/machine/gibber
 
 	var/operating = FALSE //Is it on?
@@ -186,7 +186,7 @@
 		newmeat.name = "[sourcename] [newmeat.name]"
 		if(istype(newmeat))
 			newmeat.subjectname = sourcename
-			newmeat.reagents.add_reagent (/datum/reagent/consumable/nutriment, sourcenutriment / meat_produced) // Thehehe. Fat guys go first
+			newmeat.reagents.add_reagent (/datum/reagent/consumable/nutriment, sourcenutriment / meat_produced)
 			if(occupant_volume)
 				occupant.reagents.trans_to(newmeat, occupant_volume / meat_produced, remove_blacklisted = TRUE)
 			if(sourcejob)

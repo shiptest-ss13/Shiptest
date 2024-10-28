@@ -1,8 +1,12 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Beluga-class Transport",
-	"prefix": "ISV",
-	"namelists": ["CRUISE", "NATURAL"],
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"namelists": [
+		"CRUISE",
+		"NATURAL"
+	],
 	"map_short_name": "Beluga-class",
 	"map_path": "_maps/shuttles/independent/independent_beluga.dmm",
 	"description": "The Beluga-Class is a transport vessel for those with especially rich blood. Featuring a modest kitchen, hired Inteq security, and luxurious decoration, the Beluga is a first choice pick for many wealthy spacers trying to get from point A to B. The independent ship features several rooms for its guests and a well furnished meeting room for any corporate occassion.",
@@ -12,41 +16,40 @@
 		"Service"
 	],
 	"starting_funds": 4000,
-	"limit": 2,
-	"roundstart": true,
+	"limit": 1,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/captain",
+			"outfit": "/datum/outfit/job/independent/captain",
 			"officer": true,
 			"slots": 1
 		},
 		"First Officer": {
-			"outfit": "/datum/outfit/job/head_of_personnel/beluga",
+			"outfit": "/datum/outfit/job/independent/hop",
 			"officer": true,
 			"slots": 1
 		},
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/engineer",
+			"outfit": "/datum/outfit/job/independent/engineer",
 			"slots": 1
 		},
 		"Private Security Officer": {
-			"outfit": "/datum/outfit/job/security/inteq/beluga",
+			"outfit": "/datum/outfit/job/inteq/security/beluga",
 			"slots": 2
 		},
 		"High-Class Passenger": {
-			"outfit": "/datum/outfit/job/lawyer/passenger",
+			"outfit": "/datum/outfit/job/independent/lawyer",
 			"slots": 4
 		},
 		"Bartender": {
-			"outfit": "/datum/outfit/job/bartender",
+			"outfit": "/datum/outfit/job/independent/bartender",
 			"slots": 1
 		},
 		"Janitor": {
-			"outfit": "/datum/outfit/job/janitor",
+			"outfit": "/datum/outfit/job/independent/janitor",
 			"slots": 1
 		},
 		"Assistant": {
-			"outfit": "/datum/outfit/job/assistant",
+			"outfit": "/datum/outfit/job/independent/assistant",
 			"slots": 2
 		}
 	},

@@ -53,11 +53,6 @@
 		C.adjust_fire_stacks(6)
 		C.IgniteMob()
 
-/datum/species/vampire/check_species_weakness(obj/item/weapon, mob/living/attacker)
-	if(istype(weapon, /obj/item/nullrod/whip))
-		return 1 //Whips deal 2x damage to vampires. Vampire killer.
-	return 0
-
 /obj/item/organ/tongue/vampire
 	name = "vampire tongue"
 	actions_types = list(/datum/action/item_action/organ_action/vampire)
@@ -132,3 +127,15 @@
 	charge_max = 50
 	cooldown_min = 50
 	shapeshift_type = /mob/living/simple_animal/hostile/retaliate/bat
+
+/obj/item/organ/internal/heart/vampire/Insert(mob/living/carbon/receiver, special, drop_if_replaced)
+	. = ..()
+	RegisterSignal(receiver, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
+
+/obj/item/organ/internal/heart/vampire/Remove(mob/living/carbon/heartless, special)
+	. = ..()
+	UnregisterSignal(heartless, COMSIG_MOB_GET_STATUS_TAB_ITEMS)
+
+/obj/item/organ/internal/heart/vampire/proc/get_status_tab_item(mob/living/carbon/source, list/items)
+	SIGNAL_HANDLER
+	items += "Blood Level: [source.blood_volume]/[BLOOD_VOLUME_MAXIMUM]"

@@ -37,12 +37,8 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 
 /mob/dead/get_status_tab_items()
 	. = ..()
-	. += ""
-	. += "Game Mode: [SSticker.hide_mode ? "Secret" : "[GLOB.master_mode]"]"
-
 	if(SSticker.HasRoundStarted())
 		return
-
 	var/time_remaining = SSticker.GetTimeLeft()
 	if(time_remaining > 0)
 		. += "Time To Start: [round(time_remaining/10)]s"
@@ -100,6 +96,7 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	return
 
 /mob/dead/Destroy()
+	//Observers should no longer be duplicating themselves across virtual z so it SHOULD be fine to only check its virtual z.
 	LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
 	return ..()
 
@@ -107,7 +104,9 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	. = ..()
 	if(!client)
 		return
-	LAZYADDASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
+	var/virt_z = virtual_z()
+	if(virt_z)
+		LAZYADDASSOCLIST(SSmobs.dead_players_by_virtual_z, "[virt_z]", src)
 
 /mob/dead/Logout()
 	. = ..()

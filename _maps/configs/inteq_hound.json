@@ -1,5 +1,6 @@
 {
 	"map_name": "Hound-class Corvette",
+	"faction": "/datum/faction/inteq",
 	"prefix": "IRMV",
 	"namelists": [
 		"MYTHOLOGICAL",
@@ -17,16 +18,16 @@
 	"limit": 2,
 	"job_slots": {
 		"Vanguard": {
-			"outfit": "/datum/outfit/job/captain/inteq/naked",
+			"outfit": "/datum/outfit/job/inteq/captain/empty",
 			"officer": true,
 			"slots": 1
 		},
 		"Enforcer": {
-			"outfit": "/datum/outfit/job/security/inteq",
+			"outfit": "/datum/outfit/job/inteq/security",
 			"slots": 3
 		},
 		"Recruit": {
-			"outfit": "/datum/outfit/job/assistant/inteq",
+			"outfit": "/datum/outfit/job/inteq/assistant",
 			"slots": 3
 		}
 	},

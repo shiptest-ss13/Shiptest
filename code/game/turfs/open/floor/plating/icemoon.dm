@@ -105,6 +105,7 @@
 
 /turf/open/floor/plating/asteroid/snow/temperatre
 	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
+	baseturfs = /turf/open/floor/plating/asteroid/icerock/temperate
 
 /turf/open/floor/plating/asteroid/snow/atmosphere
 	initial_gas_mix = FROZEN_ATMOS
@@ -155,6 +156,9 @@
 	floor_variance = 0
 	icon_state = "icemoon_ground_smooth"
 	base_icon_state = "icemoon_ground_smooth"
+
+/turf/open/floor/plating/asteroid/icerock/temperate
+	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
 
 /turf/open/floor/plating/asteroid/iceberg
 	gender = PLURAL
@@ -218,4 +222,28 @@
 
 /turf/open/floor/plating/asteroid/snow/ice/burn_tile()
 	return FALSE
+
+/turf/open/floor/wood/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	slowdown = 0
+
+/turf/open/floor/wood/ebony/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	slowdown = 0
+
+/turf/open/floor/plasteel/stairs/wood/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	slowdown = 0
+
+/turf/open/floor/concrete/slab_3/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	slowdown = 0
 

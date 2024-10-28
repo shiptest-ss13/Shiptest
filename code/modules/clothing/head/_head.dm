@@ -1,22 +1,18 @@
 /obj/item/clothing/head
 	name = BODY_ZONE_HEAD
 	icon = 'icons/obj/clothing/hats.dmi'
-	icon_state = "top_hat"
+	lefthand_file = 'icons/mob/inhands/clothing/hats_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing/hats_righthand.dmi'
+	icon_state = "tophat"
 	item_state = "that"
 	body_parts_covered = HEAD
 	slot_flags = ITEM_SLOT_HEAD
 	var/blockTracking = 0 //For AI tracking
 	var/can_toggle = null
-	dynamic_hair_suffix = "+generic"
 	greyscale_icon_state = "hat"
 	greyscale_colors = list(list(16,26))
 	supports_variations = VOX_VARIATION
-
-/obj/item/clothing/head/Initialize()
-	. = ..()
-	if(ishuman(loc) && dynamic_hair_suffix)
-		var/mob/living/carbon/human/H = loc
-		H.update_hair()
+	blood_overlay_type = "helmet"
 
 ///Special throw_impact for hats to frisbee hats at people to place them on their heads/attempt to de-hat them.
 /obj/item/clothing/head/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
@@ -65,14 +61,12 @@
 
 
 /obj/item/clothing/head/worn_overlays(isinhands = FALSE)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedhelmet")
 		if(HAS_BLOOD_DNA(src))
-			var/mutable_appearance/bloody_helmet = mutable_appearance('icons/effects/blood.dmi', "helmetblood")
-			bloody_helmet.color = get_blood_dna_color(return_blood_DNA())
-			. += bloody_helmet
+			. += setup_blood_overlay()
 
 /obj/item/clothing/head/update_clothes_damaged_state(damaging = TRUE)
 	..()

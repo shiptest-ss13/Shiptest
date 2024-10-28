@@ -23,7 +23,7 @@
 
 	//spam prevention, 60 second delay
 	remove_verb(src, /client/verb/mentorhelp)
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(add_verb), src, /client/verb/mentorhelp), 1 MINUTES, TIMER_STOPPABLE)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(add_verb), src, /client/verb/mentorhelp), 1 MINUTES, TIMER_STOPPABLE)
 
 /proc/get_mentor_counts()
 	. = list("total" = 0, "afk" = 0, "present" = 0)
@@ -34,7 +34,7 @@
 		else
 			.["present"]++
 
-/proc/key_name_mentor(whom, include_link = null, include_name = 0, include_follow = 0, char_name_only = 0)
+/proc/key_name_mentor(whom, include_link = null, include_name = 0, char_name_only = 0)
 	var/mob/M
 	var/client/C
 	var/key
@@ -90,8 +90,5 @@
 			. += "</a>"
 	else
 		. += "*no key*"
-
-	if(include_follow)
-		. += " (<a href='?mentor_follow=[REF(M)]'>F</a>)"
 
 	return .

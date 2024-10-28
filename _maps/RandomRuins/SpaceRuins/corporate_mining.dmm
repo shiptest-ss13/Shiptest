@@ -462,7 +462,7 @@
 /area/ruin/space/has_grav/corporatemine/bridge)
 "kZ" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 4
 	},
@@ -579,12 +579,12 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/gibs/bubblegum,
-/obj/effect/mob_spawn/human/miner/rig,
+/obj/effect/mob_spawn/human/miner,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "ns" = (
 /obj/item/pickaxe/drill,
-/obj/effect/mob_spawn/human/miner/rig,
+/obj/effect/mob_spawn/human/miner,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "nu" = (
@@ -601,8 +601,8 @@
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "nN" = (
 /obj/structure/closet/cabinet,
-/obj/item/gun/ballistic/automatic/pistol/suppressed,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/gun/ballistic/automatic/pistol/ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/clothing/under/syndicate/donk,
 /obj/item/clothing/suit/hazardvest/donk/qm,
 /obj/item/reagent_containers/food/snacks/donkpocket,
@@ -635,13 +635,13 @@
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "ol" = (
-/obj/effect/mob_spawn/human/miner/rig,
+/obj/effect/mob_spawn/human/miner,
 /obj/item/shovel,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "ov" = (
 /obj/structure/table/wood/poker,
-/obj/effect/holodeck_effect/cards,
+/obj/item/toy/cards/deck,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
@@ -758,7 +758,7 @@
 /area/ruin/space/has_grav/corporatemine/bridge)
 "rh" = (
 /obj/effect/decal/cleanable/blood/old,
-/obj/effect/mob_spawn/human/miner/rig,
+/obj/effect/mob_spawn/human/miner,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "rk" = (
@@ -812,7 +812,7 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/materials,
+/obj/effect/spawner/random/materials,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
 "sb" = (
@@ -956,7 +956,7 @@
 /area/ruin/space)
 "xK" = (
 /obj/structure/table/wood,
-/obj/machinery/fax,
+/obj/machinery/fax/ruin,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "xT" = (
@@ -1177,7 +1177,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "Bp" = (
-/obj/effect/mob_spawn/human/miner/rig,
+/obj/effect/mob_spawn/human/miner,
 /obj/effect/decal/cleanable/blood,
 /obj/item/gun/energy/kinetic_accelerator,
 /turf/open/floor/plating/asteroid/airless,
@@ -1482,9 +1482,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/floodlight{
-	anchored = 1
-	},
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "GV" = (
@@ -1580,7 +1577,7 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "Iv" = (
-/obj/structure/spawner/mining/hivelord,
+/obj/structure/spawner/burrow/asteroid,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "IE" = (
@@ -1593,8 +1590,8 @@
 "IF" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
 "IS" = (
@@ -1613,9 +1610,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1780,7 +1774,7 @@
 "NH" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/materials,
+/obj/effect/spawner/random/materials,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
 "NO" = (
@@ -2041,10 +2035,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
-"TO" = (
-/obj/structure/spawner/mining/goliath,
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space)
 "TR" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
@@ -2229,12 +2219,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/corporatemine/hall)
-"Yo" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Solar Control"
-	},
-/turf/closed/mineral,
-/area/ruin/space)
 "Yr" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2309,7 +2293,7 @@
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "ZU" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 8
 	},
@@ -2815,7 +2799,7 @@ Al
 Al
 Al
 VM
-TO
+Iv
 Al
 Al
 Al
@@ -3195,7 +3179,7 @@ Al
 Al
 Al
 Al
-Yo
+Al
 Al
 Al
 Al

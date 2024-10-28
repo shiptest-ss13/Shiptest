@@ -1,72 +1,74 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/nt",
 	"prefix": "NTSV",
-	"namelists": ["WEAPONS"],
+	"namelists": [
+		"WEAPONS"
+	],
 	"map_name": "Heron-Class Dreadnaught",
 	"map_short_name": "Heron-class",
-	"map_path": "_maps/shuttles/shiptest/nanotrasen_heron.dmm",
+	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_heron.dmm",
 	"map_id": "nanotrasen_heron",
 	"description": "The Heron-Class is the biggest ship available to NanoTrasen's frontier forces. These vessels served as the flagship of many fleets during the war, serving as a carrier for an operative team, or a command vessel for corporate units. Captains of this vessel were known to retrofit bluespace artillery onto the hangar, and directly fire it during combat. Since the end of the war, it has been repurposed for peacekeeping missions on backline sectors. Though the age of the design is starting to show, it stands as one of the remnants of NanoTrasen's once powerful hold over the cosmos.",
 	"limit": 1,
 	"job_slots": {
 		"Fleet Captain": {
-			"outfit": "/datum/outfit/job/captain/nt/heron",
+			"outfit": "/datum/outfit/job/nanotrasen/captain/centcom",
 			"officer": true,
 			"slots": 1
 		},
 		"First Officer": {
-			"outfit": "/datum/outfit/job/head_of_personnel/nt",
+			"outfit": "/datum/outfit/job/nanotrasen/hop",
 			"officer": true,
 			"slots": 1
 		},
 		"Head of Security": {
-			"outfit": "/datum/outfit/job/hos/nanotrasen",
+			"outfit": "/datum/outfit/job/nanotrasen/hos",
 			"officer": true,
 			"slots": 1
 		},
 		"Pilot": {
-			"outfit": "/datum/outfit/job/head_of_personnel/pilot/heron",
+			"outfit": "/datum/outfit/job/nanotrasen/pilot",
 			"officer": true,
 			"slots": 1
 		},
 		"Security Officer": {
-			"outfit": "/datum/outfit/job/security/nanotrasen",
+			"outfit": "/datum/outfit/job/nanotrasen/security",
 			"slots": 1
 		},
-		"ERT Officer":{
-			"outfit": "/datum/outfit/job/security/nanotrasen/ert",
+		"ERT Officer": {
+			"outfit": "/datum/outfit/job/nanotrasen/security/ert",
 			"slots": 4
 		},
-		"ERT Medical Officer":{
-			"outfit": "/datum/outfit/job/security/nanotrasen/ert/med",
+		"ERT Medical Officer": {
+			"outfit": "/datum/outfit/job/nanotrasen/security/ert/med",
 			"slots": 1
 		},
-		"ERT Engineering Officer":{
-			"outfit": "/datum/outfit/job/security/nanotrasen/ert/engi",
+		"ERT Engineering Officer": {
+			"outfit": "/datum/outfit/job/nanotrasen/security/ert/engi",
 			"slots": 1
 		},
-		"Mech Pilot":{
-			"outfit": "/datum/outfit/job/security/nanotrasen/mech_pilot",
+		"Exosuit Pilot":{
+			"outfit": "/datum/outfit/job/nanotrasen/security/mech_pilot",
 			"slots": 1
 		},
 		"Engine Technician": {
-			"outfit": "/datum/outfit/job/engineer/nt",
+			"outfit": "/datum/outfit/job/nanotrasen/engineer",
 			"slots": 1
 		},
-		"Chief Engineer":{
-			"outfit": "/datum/outfit/job/ce/nt",
+		"Chief Engineer": {
+			"outfit": "/datum/outfit/job/nanotrasen/ce",
 			"officer": true,
 			"slots": 1
 		},
 		"Roboticist": {
-			"outfit":"/datum/outfit/job/roboticist/heron",
+			"outfit": "/datum/outfit/job/nanotrasen/roboticist",
 			"slots": 1
 		},
-		"Medical Doctor":{
-			"outfit": "/datum/outfit/job/doctor",
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/nanotrasen/doctor",
 			"slots": 1
 		},
-
 		"Atmospheric Technician": 1,
 		"Quartermaster": 1,
 		"Cargo Technician": 1,

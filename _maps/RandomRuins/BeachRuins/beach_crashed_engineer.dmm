@@ -230,7 +230,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "kH" = (
-/obj/item/book/manual/wiki/engineering_construction,
+/obj/item/book/manual/wiki/construction,
 /turf/open/floor/plating/beach/sand{
 	light_range = 2
 	},
@@ -453,7 +453,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered)
 "sB" = (
-/obj/item/book/manual/wiki/engineering_guide,
+/obj/item/book/manual/wiki/engineering,
 /turf/open/floor/plating/beach/sand{
 	light_range = 2
 	},
@@ -667,9 +667,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
 	icon_state = "2-8"
 	},
 /turf/open/floor/plating/rust,
@@ -861,7 +858,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Kl" = (
 /obj/effect/radiation,
-/obj/item/book/manual/wiki/engineering_singulo_tesla,
+/obj/item/book/manual/wiki/engineering,
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ko" = (
@@ -1235,7 +1232,7 @@
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 1
 	},
-/obj/item/fireaxe{
+/obj/item/melee/axe/fire{
 	name = "rusty fire axe"
 	},
 /turf/open/floor/engine/airless,

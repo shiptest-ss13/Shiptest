@@ -129,9 +129,9 @@
 	name = "\improper Marauder wreckage"
 	icon_state = "marauder-broken"
 
-/obj/structure/mecha_wreckage/mauler
-	name = "\improper Mauler wreckage"
-	icon_state = "mauler-broken"
+/obj/structure/mecha_wreckage/touro
+	name = "\improper Touro wreckage"
+	icon_state = "touro-broken"
 	desc = "The syndicate won't be very happy about this..."
 
 /obj/structure/mecha_wreckage/seraph
@@ -153,9 +153,9 @@
 				/obj/item/mecha_parts/part/ripley_left_leg,
 				/obj/item/mecha_parts/part/ripley_right_leg)
 
-/obj/structure/mecha_wreckage/ripley/cmm
+/obj/structure/mecha_wreckage/ripley/clip
 	name = "\improper Rogue wreckage"
-	icon_state = "cmmripley-broken"
+	icon_state = "clipripley-broken"
 
 /obj/structure/mecha_wreckage/ripley/mkii
 	name = "\improper Ripley MK-II wreckage"
@@ -200,9 +200,9 @@
 			/obj/item/mecha_parts/part/durand_left_leg,
 			/obj/item/mecha_parts/part/durand_right_leg)
 
-/obj/structure/mecha_wreckage/durand/cmm
+/obj/structure/mecha_wreckage/durand/clip
 	name = "\improper Paladin wreckage"
-	icon_state = "cmmdurand-broken"
+	icon_state = "clipdurand-broken"
 
 /obj/structure/mecha_wreckage/phazon
 	name = "\improper Phazon wreckage"

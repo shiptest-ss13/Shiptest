@@ -65,11 +65,6 @@
 		user.visible_message("<span class='notice'>[user] cuts [C]'s restraints with [src]!</span>")
 		qdel(C.handcuffed)
 		return
-	else if(istype(C) && C.has_status_effect(STATUS_EFFECT_CHOKINGSTRAND))
-		to_chat(C, "<span class='notice'>You attempt to remove the durathread strand from around your neck.</span>")
-		if(do_after(user, 15, null, C))
-			to_chat(C, "<span class='notice'>You succesfuly remove the durathread strand.</span>")
-			C.remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 	else
 		..()
 
@@ -90,10 +85,7 @@
 	random_color = FALSE
 
 /obj/item/wirecutters/syndie
-	name = "suspicious-looking wirecutters"
-	desc = "The blades of these wirecutters have suspiciously fine serrated teeth."
 	icon_state = "cutters_syndie"
-	toolspeed = 0.5
 	random_color = FALSE
 
 /obj/item/wirecutters/old

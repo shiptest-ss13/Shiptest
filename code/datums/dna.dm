@@ -358,7 +358,7 @@
 	if(icon_update)
 		update_hair()
 		update_mutations_overlay()// no lizard with human hulk overlay please.
-
+	AddComponent(/datum/component/bloodysoles/feet)
 
 /mob/proc/has_dna()
 	return
@@ -659,8 +659,6 @@
 					O.Remove(src)
 					visible_message("<span class='danger'>[src] vomits up their [O.name]!</span>", "<span class='danger'>You vomit up your [O.name]</span>") //no "vomit up your the heart"
 					O.forceMove(drop_location())
-					if(prob(20))
-						O.animate_atom_living()
 			if(9 to 10)
 				ForceContractDisease(new/datum/disease/gastrolosis())
 				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")

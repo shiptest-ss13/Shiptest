@@ -68,20 +68,6 @@
 	tastes = list("slime" = 1, "jelly" = 1)
 	foodtype = MEAT | RAW | TOXIC
 
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/golem
-	icon_state = "golemmeat"
-	desc = "Edible rocks, welcome to the future."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/iron = 3)
-	filling_color = "#A9A9A9"
-	tastes = list("rock" = 1)
-	foodtype = MEAT | RAW | GROSS
-
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/golem/adamantine
-	icon_state = "agolemmeat"
-	desc = "From the slime pen to the rune to the kitchen, science."
-	filling_color = "#66CDAA"
-	foodtype = MEAT | RAW | GROSS
-
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard
 	icon_state = "lizardmeat"
 	desc = "Delicious dino damage."
@@ -293,7 +279,7 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/gondola
 	name = "gondola meat"
 	desc = "According to legends of old, consuming raw gondola flesh grants one inner peace."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/tranquility = 5, /datum/reagent/consumable/cooking_oil = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/cooking_oil = 3)
 	tastes = list("meat" = 4, "tranquility" = 1)
 	filling_color = "#9A6750"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/gondola

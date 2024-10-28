@@ -61,8 +61,9 @@
 "bU" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/stack/sheet/mineral/gold/fifty,
 /obj/machinery/light/dim/directional/north,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/loadsamoney,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/powered)
 "cb" = (
@@ -86,10 +87,6 @@
 "cg" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/mineral/gold/twenty,
-/obj/item/circuitboard/machine/protolathe{
-	pixel_x = -7;
-	pixel_y = 4
-	},
 /obj/item/circuitboard/computer/rdconsole,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
@@ -141,7 +138,8 @@
 /area/ruin/powered)
 "dJ" = (
 /obj/structure/rack,
-/obj/item/storage/firstaid/tactical,
+/obj/item/circuitboard/machine/techfab/department/cargo,
+/obj/item/stack/sheet/mineral/diamond/five,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "dN" = (
@@ -154,6 +152,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/remains/human,
+/obj/item/clothing/neck/tie/red,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "dU" = (
@@ -225,14 +224,14 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "fq" = (
-/obj/machinery/door/keycard/stockroom,
+/obj/machinery/door/keycard/harmfactory/office,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/powered)
 "fF" = (
-/obj/machinery/door/keycard/stockroom,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/keycard/harmfactory/office,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "fJ" = (
@@ -250,21 +249,6 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
-"ga" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted/riot{
-	pixel_x = 5;
-	pixel_y = 7
-	},
-/obj/item/ammo_box/foambox/riot{
-	pixel_x = -3;
-	pixel_y = -3
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/grimy,
 /area/ruin/powered)
 "gp" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -289,7 +273,7 @@
 "gx" = (
 /obj/structure/filingcabinet/employment,
 /obj/structure/safe/floor,
-/obj/item/keycard/office,
+/obj/item/keycard/harmfactory/office,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "gz" = (
@@ -305,14 +289,14 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "gP" = (
-/obj/machinery/door/keycard/office,
+/obj/machinery/door/keycard/harmfactory/stockroom,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "hf" = (
-/obj/machinery/door/keycard/office,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/keycard/harmfactory/stockroom,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "hg" = (
@@ -372,15 +356,15 @@
 /turf/closed/wall/r_wall/rust,
 /area/ruin/powered)
 "je" = (
-/obj/machinery/door/keycard/entry,
+/obj/machinery/door/keycard/harmfactory,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "jq" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/door/keycard/entry,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/keycard/harmfactory,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "jB" = (
@@ -432,14 +416,14 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "kC" = (
-/obj/machinery/door/keycard,
+/obj/machinery/door/keycard/harmfactory/entry,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/powered)
 "kI" = (
-/obj/machinery/door/keycard,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/keycard/harmfactory/entry,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "kM" = (
@@ -449,11 +433,11 @@
 /area/ruin/powered)
 "kN" = (
 /obj/structure/rack,
-/obj/item/melee/greykingsword,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/gun/energy/plasmacutter/adv,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "kU" = (
@@ -599,10 +583,8 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "of" = (
-/obj/machinery/conveyor/auto{
-	dir = 8
-	},
-/obj/machinery/light/dim/directional/north,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/conveyor/auto,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "oh" = (
@@ -681,8 +663,8 @@
 /area/ruin/powered)
 "pi" = (
 /obj/structure/rack,
-/obj/item/construction/rcd/loaded,
 /obj/machinery/light/dim/directional/north,
+/obj/item/stack/sheet/mineral/diamond/five,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "pk" = (
@@ -734,29 +716,29 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "pP" = (
-/obj/effect/turf_decal/industrial/warning/dust{
-	dir = 1
-	},
-/obj/structure/railing/corner,
+/obj/item/toy/plush/moth,
+/obj/structure/table/greyscale,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "pU" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "qb" = (
-/obj/structure/railing{
-	dir = 10
-	},
 /obj/structure/table/greyscale,
 /obj/item/laser_pointer/blue{
 	pixel_x = 10;
 	pixel_y = 9
 	},
 /obj/item/megaphone,
+/obj/structure/railing{
+	dir = 10
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/powered)
 "qd" = (
@@ -767,18 +749,9 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "qm" = (
-/obj/structure/railing,
 /obj/structure/chair/plastic,
+/obj/structure/railing,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/powered)
-"qt" = (
-/obj/effect/turf_decal/industrial/warning/dust{
-	dir = 1
-	},
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/turf/open/floor/engine,
 /area/ruin/powered)
 "qv" = (
 /obj/structure/railing{
@@ -837,6 +810,9 @@
 /area/ruin/powered)
 "rv" = (
 /obj/machinery/recycler/deathtrap,
+/obj/machinery/conveyor/auto{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "rO" = (
@@ -880,11 +856,6 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/powered)
-"sH" = (
-/obj/structure/railing/corner,
-/mob/living/simple_animal/hostile/jungle/mook,
-/turf/open/floor/engine,
-/area/ruin/powered)
 "sK" = (
 /obj/structure/closet/secure/loot,
 /obj/machinery/light/dim/directional/east,
@@ -893,25 +864,37 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "sN" = (
-/obj/machinery/conveyor/inverted,
-/obj/structure/grille,
 /obj/structure/cable,
 /obj/machinery/light/dim/directional/north,
-/turf/open/floor/engine,
+/obj/structure/grille,
+/turf/open/floor/plating,
 /area/ruin/powered)
 "sV" = (
-/obj/structure/disposalpipe/segment{
-	dir = 6
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/structure/railing{
-	dir = 6
-	},
-/turf/open/floor/engine,
-/area/ruin/powered)
-"td" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 4
 	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/machinery/conveyor/auto,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"td" = (
+/obj/machinery/power/emitter/welded{
+	active = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable,
+/obj/machinery/light/dim/directional/north,
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/obj/machinery/conveyor/auto,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "te" = (
@@ -920,29 +903,21 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/powered)
-"tu" = (
-/obj/machinery/conveyor/auto{
-	dir = 4
-	},
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
-/turf/open/floor/engine,
-/area/ruin/powered)
 "tw" = (
-/obj/machinery/disposal/deliveryChute{
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/conveyor/auto{
 	dir = 8
 	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "tC" = (
-/obj/structure/disposalpipe/segment{
-	dir = 10
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/structure/railing{
-	dir = 10
+/obj/machinery/conveyor/auto{
+	dir = 8
 	},
 /turf/open/floor/engine,
 /area/ruin/powered)
@@ -1018,19 +993,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/ruin/powered)
-"vz" = (
-/obj/machinery/disposal/deliveryChute,
-/turf/open/floor/engine,
-/area/ruin/powered)
 "vJ" = (
-/obj/structure/disposalpipe/segment{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
 	dir = 6
 	},
-/turf/open/floor/engine,
+/turf/open/floor/plating,
 /area/ruin/powered)
 "vK" = (
-/obj/structure/disposalpipe/segment{
-	dir = 10
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/conveyor/auto{
+	dir = 1
 	},
 /turf/open/floor/engine,
 /area/ruin/powered)
@@ -1110,26 +1085,23 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "yw" = (
-/obj/machinery/power/emitter/ctf{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/turf/open/floor/engine,
+/turf/closed/wall/r_wall,
 /area/ruin/powered)
 "za" = (
-/obj/machinery/power/emitter/ctf{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/conveyor/auto{
+	dir = 1
 	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "zg" = (
-/obj/machinery/conveyor/auto{
-	dir = 1
-	},
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
+/obj/effect/turf_decal/industrial/warning/dust/corner,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "zh" = (
@@ -1205,10 +1177,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/ruin/powered)
-"Br" = (
-/obj/machinery/conveyor/inverted,
-/turf/open/floor/engine,
-/area/ruin/powered)
 "Bz" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 4
@@ -1223,27 +1191,14 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "BE" = (
-/obj/machinery/conveyor/auto{
-	dir = 1
+/obj/machinery/power/terminal{
+	dir = 4
 	},
-/obj/item/shard/plasma,
-/obj/item/shard/plasma,
-/obj/item/shard/plasma,
-/obj/item/shard/plasma,
-/obj/item/shard/plasma,
-/turf/open/floor/engine,
+/turf/closed/indestructible/reinforced,
 /area/ruin/powered)
 "BQ" = (
 /obj/structure/table/greyscale,
-/obj/item/keycard,
-/turf/open/floor/engine,
-/area/ruin/powered)
-"BR" = (
-/obj/effect/turf_decal/industrial/warning/dust{
-	dir = 8
-	},
-/obj/effect/turf_decal/number/zero,
-/obj/effect/decal/cleanable/dirt,
+/obj/item/keycard/harmfactory,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "BW" = (
@@ -1343,30 +1298,18 @@
 /obj/effect/turf_decal/industrial/warning/dust,
 /turf/open/floor/engine,
 /area/ruin/powered)
-"EB" = (
-/obj/machinery/conveyor/inverted,
-/mob/living/simple_animal/hostile/jungle/mook,
-/turf/open/floor/engine,
-/area/ruin/powered)
 "EE" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 4
 	},
 /obj/structure/sign/number/four,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "EG" = (
 /obj/structure/table/greyscale,
-/turf/open/floor/engine,
-/area/ruin/powered)
-"Fa" = (
-/obj/machinery/conveyor/auto,
-/obj/item/shard/plasma,
-/obj/item/shard/plasma,
-/obj/item/shard/plasma,
-/obj/item/shard/plasma,
-/obj/item/shard/plasma,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "Fb" = (
@@ -1458,6 +1401,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/jungle/mook,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "Gu" = (
@@ -1467,18 +1411,13 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "Gv" = (
-/obj/machinery/disposal/deliveryChute{
-	dir = 1
-	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "Gz" = (
-/obj/machinery/conveyor/auto,
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 1
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "GE" = (
@@ -1492,13 +1431,9 @@
 /obj/machinery/conveyor/auto,
 /turf/open/floor/engine,
 /area/ruin/powered)
-"GN" = (
-/obj/structure/plasticflaps,
-/turf/open/floor/engine,
-/area/ruin/powered)
 "GO" = (
 /obj/structure/table/greyscale,
-/obj/item/keycard/stockroom,
+/obj/item/keycard/harmfactory/stockroom,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "GR" = (
@@ -1540,15 +1475,18 @@
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"HL" = (
-/obj/structure/disposalpipe/segment{
-	dir = 5
-	},
-/turf/open/floor/engine,
-/area/ruin/powered)
 "HT" = (
+/obj/machinery/power/emitter/welded{
+	dir = 1;
+	active = 1
+	},
+/obj/structure/cable,
+/obj/machinery/light/dim/directional/south,
 /obj/structure/disposalpipe/segment{
 	dir = 9
+	},
+/obj/machinery/conveyor/auto{
+	dir = 1
 	},
 /turf/open/floor/engine,
 /area/ruin/powered)
@@ -1574,32 +1512,29 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "It" = (
-/obj/structure/disposalpipe/segment{
-	dir = 5
+/obj/machinery/disposal/deliveryChute{
+	dir = 8
 	},
-/obj/structure/railing{
-	dir = 5
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/conveyor/auto{
+	dir = 1
 	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "IA" = (
-/obj/machinery/conveyor/auto{
-	dir = 8
+/obj/structure/disposalpipe/segment{
+	dir = 5
 	},
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
-/obj/item/shard,
+/obj/machinery/conveyor/auto,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "IF" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 8
 	},
-/obj/structure/railing{
-	dir = 9
-	},
+/obj/effect/turf_decal/number/zero,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "IM" = (
@@ -1701,36 +1636,21 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/powered)
-"KC" = (
-/obj/effect/turf_decal/industrial/warning/dust,
-/obj/structure/railing/corner{
+"KL" = (
+/obj/structure/chair/plastic{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine,
-/area/ruin/powered)
-"KJ" = (
-/obj/effect/turf_decal/industrial/warning/dust,
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/engine,
-/area/ruin/powered)
-"KL" = (
 /obj/structure/railing{
 	dir = 9
 	},
-/obj/structure/chair/plastic{
-	dir = 4
-	},
-/turf/open/floor/plasteel/patterned/brushed,
+/turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "Lb" = (
-/obj/structure/railing{
-	dir = 5
-	},
 /obj/structure/chair/plastic{
 	dir = 8
+	},
+/obj/structure/railing{
+	dir = 5
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
@@ -1792,6 +1712,9 @@
 /obj/machinery/light/dim/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -1923,16 +1846,27 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "QK" = (
-/obj/machinery/conveyor/inverted,
-/obj/structure/grille,
-/obj/structure/cable,
-/obj/item/keycard/entry,
-/obj/machinery/light/dim/directional/north,
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/obj/item/keycard/harmfactory/entry,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "Rd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
+/area/ruin/powered)
+"RC" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/gun/ballistic/automatic/toy{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/obj/item/storage/box/ammo/foam_darts/riot,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered)
 "RM" = (
 /obj/effect/spawner/structure/window/hollow/reinforced,
@@ -2014,18 +1948,13 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "SW" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/powered)
 "Tl" = (
 /obj/machinery/light/directional/south,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
-	pixel_x = -27
-	},
+/obj/structure/closet/secure_closet/wall/directional/west,
 /obj/item/storage/firstaid/ancient,
 /obj/item/clothing/neck/stethoscope,
 /obj/item/grenade/chem_grenade/teargas{
@@ -2040,9 +1969,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered)
 "TE" = (
-/obj/structure/railing{
-	dir = 1
-	},
 /obj/structure/table/greyscale,
 /obj/item/spacecash/bundle/c1000{
 	pixel_y = 10
@@ -2052,12 +1978,13 @@
 	pixel_y = 2
 	},
 /obj/item/toy/cards/deck/kotahi,
+/obj/structure/railing{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "TM" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "TU" = (
@@ -2154,10 +2081,15 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "XU" = (
-/obj/machinery/conveyor/auto{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/machinery/light/dim/directional/south,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
 /turf/open/floor/engine,
 /area/ruin/powered)
 "XX" = (
@@ -2774,7 +2706,7 @@ GV
 aB
 aB
 bf
-bf
+BE
 bf
 hj
 jL
@@ -2824,12 +2756,12 @@ jO
 ln
 oG
 ro
-uQ
+hJ
 Op
 tR
 DI
 uW
-GN
+hJ
 ro
 JC
 Mp
@@ -2867,7 +2799,7 @@ jR
 pk
 ol
 rv
-uQ
+pP
 hJ
 AY
 DO
@@ -2910,12 +2842,12 @@ jR
 lC
 ol
 ro
-uQ
+hJ
 aQ
 xg
 Ep
 qd
-uQ
+hJ
 ro
 Jt
 LQ
@@ -3033,7 +2965,7 @@ RU
 bO
 cv
 oc
-ga
+RC
 Tl
 ko
 kU
@@ -3083,8 +3015,8 @@ lQ
 oo
 sd
 uQ
-yw
-yw
+uQ
+uQ
 uQ
 Ga
 GS
@@ -3126,10 +3058,10 @@ mc
 px
 st
 vi
-QK
-Br
-EB
-Br
+sN
+te
+te
+te
 GU
 tR
 Kj
@@ -3170,9 +3102,9 @@ pC
 sx
 vi
 sN
-Br
-Br
-Br
+QK
+te
+te
 Hs
 Ai
 Kn
@@ -3212,8 +3144,8 @@ mu
 pE
 sd
 uQ
-za
-za
+uQ
+uQ
 uQ
 Go
 HG
@@ -3296,14 +3228,14 @@ iS
 hJ
 mE
 pG
-sH
-vs
-rh
-Bz
-EE
-rh
-rh
-xg
+tR
+Ai
+tR
+tR
+Ai
+tR
+tR
+tR
 Ew
 LQ
 gv
@@ -3338,16 +3270,16 @@ aB
 aB
 hJ
 my
-pP
-sV
-vz
+pG
+tR
+tR
 zg
-BC
-BC
-te
-Gv
-It
-KC
+Bz
+EE
+GS
+tR
+tR
+Lp
 Nn
 zC
 Pa
@@ -3381,16 +3313,16 @@ aB
 bf
 hi
 mR
-pU
-td
-vJ
-vz
-BE
-BC
+pG
+tR
+hJ
 Gv
-HL
-td
-KJ
+ro
+ro
+Gv
+hJ
+tR
+Ew
 NK
 hi
 hi
@@ -3425,15 +3357,15 @@ bf
 hj
 Mq
 pU
-ro
+yw
 td
-hJ
 of
-BC
-hJ
-td
+of
 IA
-KJ
+ro
+ro
+bf
+Ew
 LT
 hi
 aB
@@ -3468,14 +3400,14 @@ bf
 hj
 no
 qb
-te
-tR
-te
+Gv
+sV
+BC
 BQ
 EG
-rO
-rO
-rO
+ro
+It
+Gv
 KL
 NP
 hi
@@ -3511,14 +3443,14 @@ je
 kC
 nq
 qm
-tu
+bf
 tw
-hJ
-ro
+tC
+vK
 XU
+za
+HT
 hJ
-tw
-BC
 TE
 GR
 hi
@@ -3553,15 +3485,15 @@ hf
 jq
 kI
 nt
-pE
-tw
-vK
-vz
-ro
-Fa
+vJ
+tR
+hJ
 Gv
-HT
-tw
+BC
+BC
+Gv
+hJ
+tR
 Lb
 IO
 hi
@@ -3596,16 +3528,16 @@ bf
 bf
 hi
 lC
-qt
-tC
-vz
-rO
-ro
-ro
-Gz
-Gv
+pG
+tR
+tR
+Ip
 IF
-JV
+Fb
+Gz
+tR
+tR
+Ew
 NK
 Ph
 hj
@@ -3640,14 +3572,14 @@ bf
 hi
 ob
 pG
-sC
-rS
-uT
-BR
-Fb
-uT
-uT
-Gu
+tR
+Ai
+tR
+Ai
+tR
+tR
+tR
+tR
 Lp
 Mr
 Pt

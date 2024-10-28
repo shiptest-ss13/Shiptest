@@ -73,7 +73,7 @@
 
 		if(prob(1))
 			manual_emote(pick("dances around.","chases its tail!"))
-			INVOKE_ASYNC(GLOBAL_PROC, PROC_REF(dance_rotate), src)
+			INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(dance_rotate), src)
 
 //Corgis and pugs are now under one dog subtype
 
@@ -88,7 +88,6 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/corgi = 3, /obj/item/stack/sheet/animalhide/corgi = 1)
 	childtype = list(/mob/living/simple_animal/pet/dog/corgi/puppy = 95, /mob/living/simple_animal/pet/dog/corgi/puppy/void = 5)
 	animal_species = /mob/living/simple_animal/pet/dog
-	gold_core_spawnable = FRIENDLY_SPAWN
 	collar_type = "corgi"
 	var/obj/item/inventory_head
 	var/obj/item/inventory_back
@@ -121,7 +120,6 @@
 	icon_living = "pug"
 	icon_dead = "pug_dead"
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/pug = 3)
-	gold_core_spawnable = FRIENDLY_SPAWN
 	collar_type = "pug"
 	held_state = "pug"
 
@@ -394,7 +392,6 @@
 	response_disarm_simple = "bop"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	gold_core_spawnable = NO_SPAWN
 	unique_pet = TRUE
 	var/age = 0
 	var/record_age = 1
@@ -480,50 +477,6 @@
 		file_data["saved_head"] = null
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
-
-/mob/living/simple_animal/pet/dog/corgi/Ian/narsie_act()
-	playsound(src, 'sound/magic/demon_dies.ogg', 75, TRUE)
-	var/mob/living/simple_animal/pet/dog/corgi/narsie/N = new(loc)
-	N.setDir(dir)
-	gib()
-
-/mob/living/simple_animal/pet/dog/corgi/narsie
-	name = "Nars-Ian"
-	desc = "Ia! Ia!"
-	icon_state = "narsian"
-	icon_living = "narsian"
-	icon_dead = "narsian_dead"
-	faction = list("neutral", "cult")
-	gold_core_spawnable = NO_SPAWN
-	nofur = TRUE
-	unique_pet = TRUE
-	held_state = "narsian"
-
-/mob/living/simple_animal/pet/dog/corgi/narsie/Life()
-	..()
-	for(var/mob/living/simple_animal/pet/P in range(1, src))
-		if(P != src && !istype(P,/mob/living/simple_animal/pet/dog/corgi/narsie))
-			visible_message("<span class='warning'>[src] devours [P]!</span>", \
-			"<span class='cult big bold'>DELICIOUS SOULS</span>")
-			playsound(src, 'sound/magic/demon_attack1.ogg', 75, TRUE)
-			narsie_act()
-			if(P.mind)
-				if(P.mind.hasSoul)
-					P.mind.hasSoul = FALSE //Nars-Ian ate your soul; you don't have one anymore
-				else
-					visible_message("<span class='cult big bold'>... Aw, someone beat me to this one.</span>")
-			P.gib()
-
-/mob/living/simple_animal/pet/dog/corgi/narsie/update_corgi_fluff()
-	..()
-	speak = list("Tari'karat-pasnar!", "IA! IA!", "BRRUUURGHGHRHR")
-	speak_emote = list("growls", "barks ominously")
-	emote_hear = list("barks echoingly!", "woofs hauntingly!", "yaps in an eldritch manner.", "mutters something unspeakable.")
-	emote_see = list("communes with the unnameable.", "ponders devouring some souls.", "shakes.")
-
-/mob/living/simple_animal/pet/dog/corgi/narsie/narsie_act()
-	adjustBruteLoss(-maxHealth)
-
 
 /mob/living/simple_animal/pet/dog/corgi/regenerate_icons()
 	..()
@@ -613,7 +566,6 @@
 	real_name = "Lisa"
 	gender = FEMALE
 	desc = "She's tearing you apart."
-	gold_core_spawnable = NO_SPAWN
 	unique_pet = TRUE
 	icon_state = "lisa"
 	icon_living = "lisa"

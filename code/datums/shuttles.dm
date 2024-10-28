@@ -17,8 +17,14 @@
 	var/short_name
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
+	/// The prefix of the ship's name.
 	var/prefix = "ISV"
-	var/unique_ship_access = FALSE
+	/// The full name of the ship's faction.
+	var/faction_name = "Independent"
+	var/faction_path = /datum/faction/independent
+	var/datum/faction/faction_datum
+	/// Whether or not players from other ships can open airlocks.
+	var/unique_ship_access = TRUE
 	/// Set by config JSON. If true, the template's ships' "default" spawn location (when bought by a player or loaded at roundstart)
 	/// will be in the middle of space, instead of at an outpost.
 	var/space_spawn = FALSE
@@ -326,12 +332,6 @@
 	category = "subshuttles"
 	starting_funds = 0
 
-
-/datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
-	file_name = "frontiersmen_gut"
-	name = "Gut Combat Freighter"
-	prefix = "ISV"
-
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
 	name = "Pill-Class Torture Device"
@@ -360,9 +360,56 @@
 	name = "Sugarcube Transport"
 	prefix = "ISV"
 
-//your subshuttle here
+//your subshuttle here //why is my subshuttle here
 /datum/map_template/shuttle/subshuttles/heron
 	file_name = "nanotrasen_falcon"
 	name = "Falcon Dropship"
 	prefix = "NTSV"
 
+/datum/map_template/shuttle/subshuttles/crux
+	file_name = "minutemen_crux"
+	name = "Crux Dropship"
+	prefix = "CMSV"
+
+/datum/map_template/shuttle/subshuttles/ancon
+	file_name = "nanotrasen_ancon"
+	name = "Nanotrasen Ancon-Class Command Ship"
+	prefix = "NTSV"
+	name_categories = list("GENERAL", "SPACE")
+
+/datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
+	file_name = "frontiersmen_gut"
+	name = "Gut Combat Freighter"
+	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/anvil
+	file_name = "inteq_anvil"
+	name = "Anvil-Class Dropship"
+	prefix = "IRMV"
+	name_categories = list("GENERAL", "SPACE")
+
+/datum/map_template/shuttle/subshuttles/runner
+	file_name = "syndicate_runner"
+	name = "Runner-Class Ambulance"
+	prefix = "CSSV"
+	name_categories = list("GENERAL", "SPACE")
+
+/datum/map_template/shuttle/subshuttles/haste
+	file_name = "inteq_haste"
+	name = "Haste-class Ambulance"
+	prefix = "IRMV"
+
+/datum/map_template/shuttle/subshuttles/nail
+	file_name = "pgf_nail"
+	name = "Nail-class Boarding Vessel"
+	prefix = "PGF"
+
+/datum/map_template/shuttle/subshuttles/tanto
+	file_name = "independent_tanto"
+	name = "Tanto-class Drop Pod"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/brawler
+	file_name = "frontiersmen_brawler"
+	name = "Brawler-class Dropship"
+	prefix = "SV"

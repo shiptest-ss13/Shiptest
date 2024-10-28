@@ -8,6 +8,7 @@
 		/datum/surgery_step/open_hatch,
 		/datum/surgery_step/prepare_electronics,
 		/datum/surgery_step/revive/ipc,
+		/datum/surgery_step/close_hatch,
 		/datum/surgery_step/mechanic_close
 	)
 	possible_locs = list(BODY_ZONE_CHEST)

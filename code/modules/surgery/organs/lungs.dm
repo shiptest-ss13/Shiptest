@@ -226,7 +226,7 @@
 		if(SA_pp > SA_para_min) // Enough to make us stunned for a bit
 			H.Unconscious(60) // 60 gives them one second to wake up and run away a bit!
 			if(SA_pp > SA_sleep_min) // Enough to make us sleep as well
-				H.Sleeping(max(H.AmountSleeping() + 40, 200))
+				H.Sleeping(200)
 		else if(SA_pp > 0.01)	// There is sleeping gas in their lungs, but only a little, so give them a bit of a warning
 			if(prob(20))
 				H.emote(pick("giggle", "laugh"))
@@ -283,6 +283,38 @@
 			H.reagents.add_reagent(/datum/reagent/freon,1)
 
 		breath.adjust_moles(GAS_FREON, -gas_breathed)
+
+	// Chlorine
+		var/chlorine_pp = PP(breath,GAS_CHLORINE)
+		if (prob(chlorine_pp))
+			to_chat(H, "<span class='alert'>Your lungs feel awful!</span>")
+		if (chlorine_pp >40)
+			H.emote("gasp")
+			H.adjustFireLoss(5)
+			if (prob(chlorine_pp/2))
+				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
+				H.silent = max(H.silent, 3)
+		else
+			H.adjustFireLoss(round(chlorine_pp/8))
+		gas_breathed = breath.get_moles(GAS_CHLORINE)
+		if (gas_breathed > gas_stimulation_min)
+			H.reagents.add_reagent(/datum/reagent/chlorine,1)
+
+		breath.adjust_moles(GAS_CHLORINE, -gas_breathed)
+	// Hydrogen Chloride
+		var/hydrogen_chloride_pp = PP(breath,GAS_HYDROGEN_CHLORIDE)
+		if (prob(hydrogen_chloride_pp))
+			to_chat(H, "<span class='alert'>Your lungs feel terrible!")
+		if (hydrogen_chloride_pp >20)
+			H.emote("gasp")
+			H.adjustFireLoss(10)
+			if (prob(hydrogen_chloride_pp/2))
+				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
+				H.silent = max(H.silent, 3)
+		else
+			H.adjustFireLoss(round(hydrogen_chloride_pp/4))
+		if (gas_breathed > gas_stimulation_min)
+			H.reagents.add_reagent(/datum/reagent/hydrogen_chloride)
 
 	// Stimulum
 		gas_breathed = PP(breath,GAS_STIMULUM)

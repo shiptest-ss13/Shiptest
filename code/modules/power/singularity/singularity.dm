@@ -38,7 +38,7 @@
 	src.energy = starting_energy
 	. = ..()
 	START_PROCESSING(SSobj, src)
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 	GLOB.singularities |= src
 	for(var/obj/machinery/power/singularity_beacon/singubeacon in GLOB.machines)
 		if(singubeacon.active)
@@ -53,7 +53,7 @@
 
 /obj/singularity/Destroy()
 	STOP_PROCESSING(SSobj, src)
-	GLOB.poi_list.Remove(src)
+	SSpoints_of_interest.remove_point_of_interest(src)
 	GLOB.singularities.Remove(src)
 	return ..()
 
@@ -95,9 +95,6 @@
 
 /obj/singularity/Process_Spacemove() //The singularity stops drifting for no man!
 	return 0
-
-/obj/singularity/blob_act(obj/structure/blob/B)
-	return
 
 /obj/singularity/attack_tk(mob/user)
 	if(iscarbon(user))
@@ -480,7 +477,7 @@
 /obj/singularity/deadchat_controlled/Initialize(mapload, starting_energy)
 	. = ..()
 	AddComponent(/datum/component/deadchat_control, DEMOCRACY_MODE, list(
-		"up" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, NORTH),
-		"down" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, SOUTH),
-		"left" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, WEST),
-		"right" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, EAST)))
+		"up" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, NORTH),
+		"down" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, SOUTH),
+		"left" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, WEST),
+		"right" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, EAST)))

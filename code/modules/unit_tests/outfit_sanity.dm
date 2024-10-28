@@ -3,7 +3,10 @@
 	/* We don't check the result of equip_to_slot_or_del because it returns false for random jumpsuits, as they delete themselves on init */ \
 	var/obj/item/outfit_item = H.get_item_by_slot(##slot_name); \
 	if (!outfit_item) { \
-		TEST_FAIL("[outfit.name]'s [#outfit_key] is invalid! Could not equip a [outfit.##outfit_key] into that slot."); \
+		if (outfit.random != TRUE) \
+			TEST_FAIL("[outfit.name]'s [#outfit_key] is invalid! Could not equip a [outfit.##outfit_key] into that slot."); \
+		else \
+			TEST_NOTICE(src, "[outfit.name]'s [#outfit_key] is invalid! Could not equip a [outfit.##outfit_key] into that slot."); \
 	} \
 }
 
@@ -19,19 +22,28 @@
 	r_hand = /obj/item/stack/sheet/glass/five
 
 /datum/unit_test/outfit_sanity/Run()
+	var/datum/outfit/prototype_outfit = /datum/outfit
+	var/prototype_name = initial(prototype_outfit.name)
 	var/mob/living/carbon/human/H = allocate(/mob/living/carbon/human)
 
+	var/list/outfit_names = list()
 	for (var/outfit_type in subtypesof(/datum/outfit))
 		// Only make one human and keep undressing it because it's much faster
 		for (var/obj/item/I in H.get_equipped_items(include_pockets = TRUE))
 			qdel(I)
 
 		var/datum/outfit/outfit = new outfit_type
+
+		var/outfit_name = outfit.name
+		if(outfit_name == prototype_name)
+			TEST_FAIL("[outfit.type]'s name is invalid! Uses default outfit name!")
+		if(outfit_name in outfit_names)
+			TEST_FAIL("Outfit name [outfit_name] is not unique: [outfit_type], [outfit_names[outfit_name]]")
+		outfit_names[outfit_name] = outfit_type
 		outfit.pre_equip(H, TRUE)
 
 		CHECK_OUTFIT_SLOT(uniform, ITEM_SLOT_ICLOTHING)
 		CHECK_OUTFIT_SLOT(suit, ITEM_SLOT_OCLOTHING)
-		CHECK_OUTFIT_SLOT(back, ITEM_SLOT_BACK)
 		CHECK_OUTFIT_SLOT(belt, ITEM_SLOT_BELT)
 		CHECK_OUTFIT_SLOT(gloves, ITEM_SLOT_GLOVES)
 		CHECK_OUTFIT_SLOT(shoes, ITEM_SLOT_FEET)
@@ -40,11 +52,11 @@
 		CHECK_OUTFIT_SLOT(neck, ITEM_SLOT_NECK)
 		CHECK_OUTFIT_SLOT(ears, ITEM_SLOT_EARS)
 		CHECK_OUTFIT_SLOT(glasses, ITEM_SLOT_EYES)
+		CHECK_OUTFIT_SLOT(back, ITEM_SLOT_BACK)
 		CHECK_OUTFIT_SLOT(id, ITEM_SLOT_ID)
-		CHECK_OUTFIT_SLOT(suit_store, ITEM_SLOT_SUITSTORE)
 		CHECK_OUTFIT_SLOT(l_pocket, ITEM_SLOT_LPOCKET)
 		CHECK_OUTFIT_SLOT(r_pocket, ITEM_SLOT_RPOCKET)
-
+		CHECK_OUTFIT_SLOT(suit_store, ITEM_SLOT_SUITSTORE)
 		if (outfit.backpack_contents || outfit.box)
 			var/list/backpack_contents = outfit.backpack_contents?.Copy()
 			if (outfit.box)
@@ -57,6 +69,10 @@
 				var/number = backpack_contents[path] || 1
 				for (var/_ in 1 to number)
 					if (!H.equip_to_slot_or_del(new path(H), ITEM_SLOT_BACKPACK, TRUE))
-						TEST_FAIL("[outfit.name]'s backpack_contents are invalid! Couldn't add [path] to backpack.")
+						if (outfit.random != TRUE)
+							TEST_FAIL("[outfit.name]'s backpack_contents are invalid! Couldn't add [path] to backpack.")
+						else
+							TEST_NOTICE(src, "[outfit.name]'s backpack_contents are invalid! Couldn't add [path] to backpack.")
+
 
 #undef CHECK_OUTFIT_SLOT

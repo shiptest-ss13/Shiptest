@@ -16,6 +16,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	RADIO_KEY_SOLGOV = RADIO_CHANNEL_SOLGOV,		//WS Edit - SolGov Rep
 	RADIO_KEY_NANOTRASEN = RADIO_CHANNEL_NANOTRASEN,
 	RADIO_KEY_MINUTEMEN = RADIO_CHANNEL_MINUTEMEN,
+	RADIO_KEY_PGF = RADIO_CHANNEL_PGF,
 	RADIO_KEY_INTEQ = RADIO_CHANNEL_INTEQ,
 	RADIO_KEY_PIRATE = RADIO_CHANNEL_PIRATE,
 
@@ -159,7 +160,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 				saymode = null
 				message_mods -= RADIO_EXTENSION
 			message_range = 1
-			src.log_talk(message, LOG_WHISPER, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
+			var/logged_message = message
 			if(stat == HARD_CRIT) //This is cheaper than checking for MODE_WHISPER_CRIT message mod
 				var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
 				// If we cut our message short, abruptly end it with a-..
@@ -167,8 +168,12 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 				message = copytext_char(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"
 				message = Ellipsis(message, 10, 1)
 				last_words = message
+				var/final_warning = alert(usr, "Your dying words will be \"[last_words]\", continue?", "Succumb", "Cancel", "Continue")
+				if(final_warning == "Cancel" || QDELETED(src))
+					return
 				message_mods[WHISPER_MODE] = MODE_WHISPER_CRIT
 				succumbed = TRUE
+			src.log_talk(logged_message, LOG_WHISPER, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
 		else
 			src.log_talk(message, LOG_SAY, forced_by=forced, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
 

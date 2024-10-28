@@ -1,272 +1,215 @@
 /obj/item/gun/ballistic/automatic/smg
-	burst_size = 1
+	show_magazine_on_sprite = TRUE
+
+	burst_size = 2
 	actions_types = list()
-	fire_delay = 1
-	spread = 4
+	fire_delay = 0.13 SECONDS
+
+	spread = 6
 	spread_unwielded = 10
 	wield_slowdown = 0.35
-	recoil_unwielded = 0.5
+	recoil_unwielded = 4
+	w_class = WEIGHT_CLASS_BULKY
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	wield_delay = 0.5 SECONDS
 
 	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
 	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
-/obj/item/gun/ballistic/automatic/smg/proto
-	name = "\improper Nanotrasen Saber SMG"
-	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
-	icon_state = "saber"
-	actions_types = list()
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-	pin = null
-	bolt_type = BOLT_TYPE_LOCKING
-	mag_display = TRUE
-
-/obj/item/gun/ballistic/automatic/smg/proto/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
-
-/obj/item/gun/ballistic/automatic/smg/proto/unrestricted
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/ballistic/automatic/smg/c20r
-	name = "\improper C-20r SMG"
-	desc = "A bullpup .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
-	icon_state = "c20r"
-	item_state = "c20r"
-	mag_type = /obj/item/ammo_box/magazine/smgm45
-	can_bayonet = TRUE
-	can_suppress = FALSE
-	knife_x_offset = 26
-	knife_y_offset = 12
-	mag_display = TRUE
-	mag_display_ammo = TRUE
-	empty_indicator = TRUE
-
-/obj/item/gun/ballistic/automatic/smg/c20r/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
-
-/obj/item/gun/ballistic/automatic/smg/c20r/unrestricted
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/ballistic/automatic/smg/c20r/Initialize()
-	. = ..()
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/smg/c20r/cobra
-	name = "\improper Cobra 20"
-	desc = "An older model of SMG manufactured by Scarborough Arms, a predecessor to the military C-20 series. Chambered in .45. "
-	can_bayonet = FALSE
-	icon_state = "cobra20"
-	item_state = "cobra20"
-
-/obj/item/gun/ballistic/automatic/smg/inteq
-	name = "\improper SkM-44(k)"
-	desc = "An extreme modification of an obsolete assault rifle, converted into a compact submachine gun by IRMG. Chambered in 10mm."
-	icon_state = "inteqsmg"
-	item_state = "inteqsmg"
-	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
-	mag_type = /obj/item/ammo_box/magazine/smgm10mm
-	can_bayonet = FALSE
-	can_flashlight = TRUE
-	flight_x_offset = 15
-	flight_y_offset = 13
-	can_suppress = TRUE
-	mag_display = TRUE
-
-/obj/item/gun/ballistic/automatic/smg/inteq/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	gunslinger_recoil_bonus = 2
+	gunslinger_spread_bonus = 16
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
 	desc = "An outdated PDW, used centuries ago by Nanotrasen security elements. Uses 4.6x30mm rounds."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "wt550"
 	item_state = "arg"
-	mag_type = /obj/item/ammo_box/magazine/wt550m9
-	fire_delay = 2
-	can_suppress = FALSE
-	burst_size = 1
+	default_ammo_type = /obj/item/ammo_box/magazine/wt550m9
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/wt550m9,
+	)
 	actions_types = list()
-	can_bayonet = TRUE
-	knife_x_offset = 25
-	knife_y_offset = 12
-	mag_display = TRUE
-	mag_display_ammo = TRUE
+	show_magazine_on_sprite = TRUE
+	show_magazine_on_sprite_ammo = TRUE
 	empty_indicator = TRUE
+	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
 
-/obj/item/gun/ballistic/automatic/smg/wt550/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
-
-/obj/item/gun/ballistic/automatic/smg/mini_uzi
-	name = "\improper Type U3 Uzi"
-	desc = "A lightweight submachine gun, for when you really want someone dead. Uses 9mm rounds."
-	icon_state = "uzi"
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	bolt_type = BOLT_TYPE_OPEN
-	mag_display = TRUE
-
-	fire_sound = 'sound/weapons/gun/smg/uzi.ogg'
-	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
-
-	load_sound = 'sound/weapons/gun/smg/uzi_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/smg/uzi_reload.ogg'
-	eject_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
-
-	spread = 4
-	spread_unwielded = 8
-	wield_slowdown = 0.25
-	wield_delay = 0.2 SECONDS
-
-/obj/item/gun/ballistic/automatic/smg/mini_uzi/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+/obj/item/gun/ballistic/automatic/smg/wt550/no_mag
+	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/automatic/smg/vector
 	name = "\improper Vector carbine"
 	desc = "A police carbine based on a pre-Night of Fire SMG design. Most of the complex workings have been removed for reliability. Chambered in 9mm."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "vector"
 	item_state = "vector"
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm //you guys remember when the autorifle was chambered in 9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/smgm9mm,
+	) //you guys remember when the autorifle was chambered in 9mm
 	bolt_type = BOLT_TYPE_LOCKING
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 
-/obj/item/gun/ballistic/automatic/smg/vector/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 
-/obj/item/gun/ballistic/automatic/smg/m90
-	name = "\improper M-90gl Carbine"
-	desc = "A three-round burst 5.56 toploading carbine, designated 'M-90gl'. Has an attached underbarrel grenade launcher which can be toggled on and off."
-	icon_state = "m90"
-	item_state = "m90"
-	mag_type = /obj/item/ammo_box/magazine/m556
-	can_suppress = FALSE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
-	var/obj/item/gun/ballistic/revolver/grenadelauncher/underbarrel
-	burst_size = 3
-	fire_delay = 2
-	pin = /obj/item/firing_pin/implant/pindicate
-	mag_display = TRUE
-	empty_indicator = TRUE
-	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
+/obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev
+	name = "HP Firestorm"
+	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .45."
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	spread = 1
-	spread_unwielded = 8
-	wield_slowdown = 0.4
-
-/obj/item/gun/ballistic/automatic/smg/m90/Initialize()
-	. = ..()
-	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher(src)
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/smg/m90/unrestricted
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/ballistic/automatic/smg/m90/unrestricted/Initialize()
-	. = ..()
-	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted(src)
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/smg/m90/afterattack(atom/target, mob/living/user, flag, params)
-	if(select == 2)
-		underbarrel.afterattack(target, user, flag, params)
-	else
-		return ..()
-
-/obj/item/gun/ballistic/automatic/smg/m90/attackby(obj/item/A, mob/user, params)
-	if(istype(A, /obj/item/ammo_casing))
-		if(istype(A, underbarrel.magazine.ammo_type))
-			underbarrel.attack_self()
-			underbarrel.attackby(A, user, params)
-	else
-		..()
-
-/obj/item/gun/ballistic/automatic/smg/m90/update_overlays()
-	. = ..()
-	switch(select)
-		if(0)
-			. += "[initial(icon_state)]_semi"
-		if(1)
-			. += "[initial(icon_state)]_burst"
-		if(2)
-			. += "[initial(icon_state)]_gren"
-
-/obj/item/gun/ballistic/automatic/smg/m90/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select = 1
-			burst_size = initial(burst_size)
-			fire_delay = initial(fire_delay)
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-		if(1)
-			select = 2
-			to_chat(user, "<span class='notice'>You switch to grenades.</span>")
-		if(2)
-			select = 0
-			burst_size = 1
-			fire_delay = 0
-			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
-	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
-	update_appearance()
-	return
-
-/obj/item/gun/ballistic/automatic/smg/thompson
-	name = "\improper Thompson"
-	desc = "A old submachinegun design. Chambered in .45."
-	icon_state = "tommygun"
-	item_state = "tommygun"
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/smgm45
-	can_suppress = FALSE
+	icon_state = "firestorm"
+	item_state = "firestorm"
+	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/c45_firestorm_mag,
+		/obj/item/ammo_box/magazine/c45_firestorm_mag/pan
+	)
+	unique_mag_sprites_for_variants = TRUE
 	burst_size = 1
 	actions_types = list()
-	fire_delay = 1
+	fire_delay = 0.13 SECONDS
 	bolt_type = BOLT_TYPE_OPEN
+	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
+	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
+
+
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	wield_slowdown = 0.4
 
-/obj/item/gun/ballistic/automatic/smg/thompson/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+/obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
+	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag/pan
 
-/obj/item/gun/ballistic/automatic/smg/thompson/drum
-	name = "\improper Chicago Typewriter"
-	desc = "A gun for good fellas. Chambered in .45."
-	mag_type = /obj/item/ammo_box/magazine/smgm45/drum
+/obj/item/gun/ballistic/automatic/smg/skm_carbine
+	name = "\improper SKM-24v"
+	desc = "The SKM-24v was a carbine modification of the SKM-24 during the Frontiersmen War. This, however, is just a shoddy imitation of that carbine, effectively an SKM-24 with a sawed down barrel and a folding wire stock. Can be fired with the stock folded, though accuracy suffers. Chambered in 4.6x30mm."
 
-/obj/item/gun/ballistic/automatic/smg/cm5
-	name = "\improper CM-5"
-	desc = "The standard issue SMG of the CMM. One of the few firearm designs that were left mostly intact from the designs found on the UNSV Lichtenstein. Chambered in 9mm."
-	icon_state = "cm5"
-	item_state = "cm5"
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	icon_state = "skm_carbine"
+	item_state = "skm_carbine"
 
-/obj/item/gun/ballistic/automatic/smg/cm5/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	fire_sound = 'sound/weapons/gun/rifle/skm_smg.ogg'
 
-/obj/item/gun/ballistic/automatic/smg/aks74u
-	name = "\improper AKS-74U"
-	desc = "A pre-FTL era carbine, known to be incredibly cheap. Its extreme fire rate make it perfect for bandits, pirates and colonists on a budget."
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
-	icon_state = "aks74u"
-	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
-	item_state = "aks74u"
+	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/aks74u
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_545_39
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/skm_545_39,
+	)
 
-/obj/item/gun/ballistic/automatic/smg/aks74u/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS) //last autofire system made the fire rate REALLY fucking fast, but because of how poor it was, it was normal speed.
+	recoil = 2
+	recoil_unwielded = 6
+
+	spread = 8
+	spread_unwielded = 14
+
+	wield_delay = 0.6 SECONDS
+	wield_slowdown = 0.35
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/foldable_stock
+	)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_STOCK = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 11,
+			"y" = 20,
+		)
+	)
+
+	default_attachments = list(/obj/item/attachment/foldable_stock)
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
+	name = "\improper SKM-44v Mongrel"
+	desc = "An SKM-44, further modified into a sub-machine gun by Inteq artificers with a new magazine well, collapsing stock, and shortened barrel. Faced with a surplus of SKM-44s and a shortage of other firearms, IRMG has made the most of their available materiel with conversions such as this. Chambered in 10mm."
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+	icon_state = "skm_inteqsmg"
+	item_state = "skm_inteqsmg"
+
+	default_ammo_type = /obj/item/ammo_box/magazine/smgm10mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/smgm10mm,
+	)
+	manufacturer = MANUFACTURER_INTEQ
+
+	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
+
+	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
+	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
+
+	spread = 7
+	spread_unwielded = 10
+
+	recoil = 0
+	recoil_unwielded = 4
+
+	wield_delay = 0.4 SECONDS
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/foldable_stock/inteq
+	)
+	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto
+	name = "\improper Nanotrasen Saber SMG"
+	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
+	icon = 'icons/obj/guns/projectile.dmi'
+	default_attachments = list(/obj/item/attachment/foldable_stock)
+	icon_state = "saber"
+	item_state = "gun"
+	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/smgm9mm,
+	)
+	bolt_type = BOLT_TYPE_LOCKING
+	show_magazine_on_sprite = TRUE
+	manufacturer = MANUFACTURER_NANOTRASEN_OLD

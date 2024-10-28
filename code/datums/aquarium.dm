@@ -77,7 +77,7 @@
 	else
 		InitializeOther()
 
-	ADD_TRAIT(parent, TRAIT_FISH_CASE_COMPATIBILE, src)
+	ADD_TRAIT(parent, TRAIT_FISH_CASE_COMPATIBILE, REF(src))
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(enter_aquarium))
 
 	//If component is added to something already in aquarium at the time initialize it properly.
@@ -134,9 +134,9 @@
 
 /datum/component/aquarium_content/PreTransfer()
 	. = ..()
-	REMOVE_TRAIT(parent, TRAIT_FISH_CASE_COMPATIBILE, src)
+	REMOVE_TRAIT(parent, TRAIT_FISH_CASE_COMPATIBILE, REF(src))
 
-/datum/component/aquarium_content/Destroy(force, silent)
+/datum/component/aquarium_content/Destroy(force)
 	if(current_aquarium)
 		remove_from_aquarium()
 	QDEL_NULL(vc_obj)

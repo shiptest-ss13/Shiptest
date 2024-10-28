@@ -34,7 +34,7 @@
 	friendly_verb_simple = "bear hug"
 
 	//Space bears aren't affected by cold.
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1500
 
@@ -90,7 +90,7 @@
 	icon_state = "combatbear"
 	icon_living = "combatbear"
 	icon_dead = "combatbear_dead"
-	faction = list("frontiersman")
+	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1, /obj/item/bear_armor = 1)
 	melee_damage_lower = 25
 	melee_damage_upper = 35
@@ -98,7 +98,6 @@
 	health = 120
 	maxHealth = 120
 	armored = TRUE
-	gold_core_spawnable = HOSTILE_SPAWN
 
 /mob/living/simple_animal/hostile/bear/cave
 	name = "brown bear"
@@ -115,7 +114,7 @@
 	name = "pile of bear armor"
 	desc = "A scattered pile of various shaped armor pieces fitted for a bear, some duct tape, and a nail filer. Crude instructions \
 		are written on the back of one of the plates. This seems like an awful idea."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "bear_armor_upgrade"
 
 /obj/item/bear_armor/afterattack(atom/target, mob/user, proximity_flag)
@@ -141,7 +140,7 @@
 	icon_living = "butterbear"
 	icon_dead = "butterbear_dead"
 	desc = "I can't believe its not a bear!"
-	faction = list("neutral", "frontiersmen")
+	faction = list("neutral", FACTION_ANTAG_FRONTIERSMEN)
 	obj_damage = 11
 	melee_damage_lower = 1
 	melee_damage_upper = 1

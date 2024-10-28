@@ -7,36 +7,38 @@
 	"tags": [
 		"Combat"
 	],
+	"faction": "/datum/faction/frontier",
 	"prefix": "ISV",
 	"namelists": [
 		"PIRATES",
 		"NATURAL_AGGRESSIVE"
 	],
+	"space_spawn": true,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/captain/pirate",
+			"outfit": "/datum/outfit/job/independent/captain/pirate",
 			"officer": true,
 			"slots": 1
 		},
 		"First Mate": {
-			"outfit": "/datum/outfit/job/head_of_personnel/pirate",
+			"outfit": "/datum/outfit/job/independent/hop/pirate",
 			"officer": true,
 			"slots": 1
 		},
 		"Buccaneer": {
-			"outfit": "/datum/outfit/job/security/pirate",
+			"outfit": "/datum/outfit/job/independent/security/pirate",
 			"slots": 2
 		},
 		"Motorman": {
-			"outfit": "/datum/outfit/job/engineer/pirate",
+			"outfit": "/datum/outfit/job/independent/engineer/pirate",
 			"slots": 1
 		},
 		"Ship's Doctor": {
-			"outfit": "/datum/outfit/job/doctor/pirate",
+			"outfit": "/datum/outfit/job/independent/doctor/pirate",
 			"slots": 1
 		},
 		"Deckhand": {
-			"outfit": "/datum/outfit/job/assistant/pirate",
+			"outfit": "/datum/outfit/job/independent/assistant/pirate",
 			"slots": 4
 		}
 	},

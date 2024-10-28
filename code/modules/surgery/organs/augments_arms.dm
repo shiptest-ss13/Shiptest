@@ -13,6 +13,10 @@
 	var/list/items_list = list()// I would use contents, but they shuffle on every activation/deactivation leading to interface inconsistencies.
 	/// You can use this var for item path, it would be converted into an item on New().
 	var/obj/item/active_item
+	/// Sound played when extending
+	var/extend_sound = 'sound/mecha/mechmove03.ogg'
+	/// Sound played when retracting
+	var/retract_sound = 'sound/mecha/mechmove03.ogg'
 
 /obj/item/organ/cyberimp/arm/Initialize()
 	. = ..()
@@ -68,18 +72,34 @@
 	to_chat(user, "<span class='notice'>You modify [src] to be installed on the [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm.</span>")
 	update_appearance()
 
+/obj/item/organ/cyberimp/arm/Insert(mob/living/carbon/M, special = FALSE, drop_if_replaced = TRUE)
+	. = ..()
+	var/side = zone == BODY_ZONE_R_ARM? RIGHT_HANDS : LEFT_HANDS
+	hand = owner.hand_bodyparts[side]
+	if(hand)
+		RegisterSignal(hand, COMSIG_ITEM_ATTACK_SELF, PROC_REF(ui_action_click)) //If the limb gets an attack-self, open the menu. Only happens when hand is empty
+		RegisterSignal(M, COMSIG_KB_MOB_DROPITEM_DOWN, PROC_REF(dropkey)) //We're nodrop, but we'll watch for the drop hotkey anyway and then stow if possible.
+
 /obj/item/organ/cyberimp/arm/Remove(mob/living/carbon/M, special = 0)
 	Retract()
+	if(hand)
+		UnregisterSignal(hand, COMSIG_ITEM_ATTACK_SELF)
+		UnregisterSignal(M, COMSIG_KB_MOB_DROPITEM_DOWN)
 	..()
 
-/obj/item/organ/cyberimp/arm/emp_act(severity)
-	. = ..()
-	if(. & EMP_PROTECT_SELF)
-		return
-	if(prob(15/severity) && owner)
-		to_chat(owner, "<span class='warning'>[src] is hit by EMP!</span>")
-		// give the owner an idea about why his implant is glitching
-		Retract()
+/**
+ * Called when the mob uses the "drop item" hotkey
+ *
+ * Items inside toolset implants have TRAIT_NODROP, but we can still use the drop item hotkey as a
+ * quick way to store implant items. In this case, we check to make sure the user has the correct arm
+ * selected, and that the item is actually owned by us, and then we'll hand off the rest to Retract()
+**/
+/obj/item/organ/cyberimp/arm/proc/dropkey(mob/living/carbon/host)
+	if(!host)
+		return //How did we even get here
+	if(hand != host.hand_bodyparts[host.active_hand_index])
+		return //wrong hand
+	Retract()
 
 /obj/item/organ/cyberimp/arm/proc/Retract()
 	if(!active_item || (active_item in src))
@@ -89,13 +109,9 @@
 		"<span class='notice'>[active_item] snaps back into your [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm.</span>",
 		"<span class='hear'>You hear a short mechanical noise.</span>")
 
-	if(istype(active_item, /obj/item/assembly/flash/armimplant))
-		var/obj/item/assembly/flash/F = active_item
-		F.set_light(0)
-
 	owner.transferItemToLoc(active_item, src, TRUE)
+	playsound(get_turf(owner), retract_sound, 50, TRUE)
 	active_item = null
-	playsound(get_turf(owner), 'sound/mecha/mechmove03.ogg', 50, TRUE)
 
 /obj/item/organ/cyberimp/arm/proc/Extend(obj/item/item)
 	if(!(item in src))
@@ -135,7 +151,7 @@
 	owner.visible_message("<span class='notice'>[owner] extends [active_item] from [owner.p_their()] [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm.</span>",
 		"<span class='notice'>You extend [active_item] from your [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm.</span>",
 		"<span class='hear'>You hear a short mechanical noise.</span>")
-	playsound(get_turf(owner), 'sound/mecha/mechmove03.ogg', 50, TRUE)
+	playsound(get_turf(owner), extend_sound, 50, TRUE)
 
 /obj/item/organ/cyberimp/arm/ui_action_click()
 	if((organ_flags & ORGAN_FAILING) || (!active_item && !contents.len))
@@ -161,6 +177,14 @@
 	else
 		Retract()
 
+/obj/item/organ/cyberimp/arm/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	if(prob(15/severity) && owner)
+		to_chat(owner, "<span class='warning'>[src] is hit by EMP!</span>")
+		// give the owner an idea about why his implant is glitching
+		Retract()
 
 /obj/item/organ/cyberimp/arm/gun/emp_act(severity)
 	. = ..()
@@ -208,11 +232,11 @@
 /obj/item/organ/cyberimp/arm/toolset/emag_act(mob/user)
 	for(var/datum/weakref/created_item in items_list)
 		var/obj/potential_knife = created_item.resolve()
-		if(istype(/obj/item/kitchen/knife/combat/cyborg, potential_knife))
+		if(istype(/obj/item/melee/knife/combat/cyborg, potential_knife))
 			return FALSE
 
 	to_chat(user, "<span class='notice'>You unlock [src]'s integrated knife!</span>")
-	items_list += WEAKREF(new /obj/item/kitchen/knife/combat/cyborg(src))
+	items_list += WEAKREF(new /obj/item/melee/knife/combat/cyborg(src))
 	return TRUE
 
 /obj/item/organ/cyberimp/arm/esword
@@ -224,7 +248,6 @@
 	name = "integrated medical beamgun"
 	desc = "A cybernetic implant that allows the user to project a healing beam from their hand."
 	items_to_create = list(/obj/item/gun/medbeam)
-
 
 /obj/item/organ/cyberimp/arm/flash
 	name = "integrated high-intensity photon projector" //Why not
@@ -277,4 +300,4 @@
 	name = "power cord implant"
 	desc = "An internal power cord hooked up to a battery. Useful if you run on volts."
 	items_to_create = list(/obj/item/apc_powercord)
-	zone = "l_arm"
+	zone = BODY_ZONE_L_ARM

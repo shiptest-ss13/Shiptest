@@ -3,6 +3,7 @@
 /**********************Mineral processing unit console**************************/
 
 /obj/machinery/mineral
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	processing_flags = START_PROCESSING_MANUALLY
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 	/// The current direction of `input_turf`, in relation to the machine.
@@ -142,7 +143,7 @@
 /obj/machinery/mineral/processing_unit/Initialize()
 	. = ..()
 	proximity_monitor = new(src, 1)
-	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/diamond, /datum/material/plasma, /datum/material/uranium, /datum/material/bananium, /datum/material/titanium, /datum/material/bluespace), INFINITY, TRUE, /obj/item/stack)
+	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/diamond, /datum/material/plasma, /datum/material/uranium, /datum/material/hellstone, /datum/material/titanium, /datum/material/bluespace), INFINITY, TRUE, /obj/item/stack)
 	stored_research = new /datum/techweb/specialized/autounlocking/smelter
 	selected_material = SSmaterials.GetMaterialRef(/datum/material/iron)
 
@@ -253,7 +254,7 @@
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	materials.use_materials(alloy.materials, amount)
 
-	generate_mineral(alloy.build_path)
+	generate_mineral(alloy.build_path, amount)
 
 /obj/machinery/mineral/processing_unit/proc/can_smelt(datum/design/D)
 	if(D.make_reagents.len)
@@ -271,8 +272,8 @@
 
 	return build_amount
 
-/obj/machinery/mineral/processing_unit/proc/generate_mineral(P)
-	var/O = new P(src)
+/obj/machinery/mineral/processing_unit/proc/generate_mineral(P, amount)
+	var/O = new P(src, amount)
 	unload_mineral(O)
 
 /obj/machinery/mineral/processing_unit/on_deconstruction()

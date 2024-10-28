@@ -126,25 +126,6 @@
 /turf/open/floor/noslip/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return
 
-/turf/open/floor/oldshuttle
-	icon = 'icons/turf/shuttleold.dmi'
-	icon_state = "floor"
-	floor_tile = /obj/item/stack/tile/plasteel
-
-/turf/open/floor/bluespace
-	slowdown = -1
-	icon_state = "bluespace"
-	desc = "Through a series of micro-teleports these tiles let people move at incredible speeds."
-	floor_tile = /obj/item/stack/tile/bluespace
-
-
-/turf/open/floor/sepia
-	slowdown = 2
-	icon_state = "sepia"
-	desc = "Time seems to flow very slowly around these tiles."
-	floor_tile = /obj/item/stack/tile/sepia
-
-
 /turf/open/floor/bronze
 	name = "bronze floor"
 	desc = "Some heavy bronze tiles."

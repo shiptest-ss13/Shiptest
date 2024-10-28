@@ -115,17 +115,14 @@
 /obj/effect/temp_visual/dir_setting/wraith
 	name = "shadow"
 	icon = 'icons/mob/mob.dmi'
-	icon_state = "phase_shift2"
+	icon_state = "revenant_idle"
 	duration = 6
 
 /obj/effect/temp_visual/dir_setting/wraith/angelic
-	icon_state = "phase_shift2_angelic"
 
 /obj/effect/temp_visual/dir_setting/wraith/out
-	icon_state = "phase_shift"
 
 /obj/effect/temp_visual/dir_setting/wraith/out/angelic
-	icon_state = "phase_shift_angelic"
 
 /obj/effect/temp_visual/dir_setting/tailsweep
 	icon_state = "tailsweep"
@@ -157,7 +154,7 @@
 	fades = TRUE
 
 /obj/effect/temp_visual/dir_setting/curse/hand
-	icon_state = "cursehand"
+	icon_state = "cursehand0"
 
 /obj/effect/temp_visual/dir_setting/space_wind
 	icon = 'icons/effects/atmospherics.dmi'
@@ -174,7 +171,7 @@
 	name = "\improper Bluespace energy wave"
 	desc = "A massive, rippling wave of bluepace energy, all rapidly exhausting itself the moment it leaves the concentrated beam of light."
 	icon = 'icons/effects/beam_splash.dmi'
-	icon_state = "beam_splash_l"
+	icon_state = "beam_splash_e"
 	layer = ABOVE_ALL_MOB_LAYER
 	pixel_y = -16
 	duration = 50
@@ -209,16 +206,6 @@
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "blspell"
 	duration = 5
-
-/obj/effect/temp_visual/guardian
-	randomdir = 0
-
-/obj/effect/temp_visual/guardian/phase
-	duration = 5
-	icon_state = "phasein"
-
-/obj/effect/temp_visual/guardian/phase/out
-	icon_state = "phaseout"
 
 /obj/effect/temp_visual/decoy
 	desc = "It's a decoy!"
@@ -349,13 +336,6 @@
 	icon_state = "explosionfast"
 	duration = 4
 
-/obj/effect/temp_visual/blob
-	name = "blob"
-	icon_state = "blob_attack"
-	alpha = 140
-	randomdir = 0
-	duration = 6
-
 /obj/effect/temp_visual/desynchronizer
 	name = "desynchronizer field"
 	icon_state = "chronofield"
@@ -471,6 +451,11 @@
 	icon_state = "bleed10"
 	duration = 12
 	shrink = FALSE
+
+/obj/effect/temp_visual/light_ash
+	icon_state = "light_ash"
+	icon = 'icons/effects/weather_effects.dmi'
+	duration = 3.2 SECONDS
 
 /obj/effect/temp_visual/warp_cube
 	duration = 5

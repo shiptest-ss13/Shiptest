@@ -62,36 +62,21 @@
 		if(1)
 			ScrapeAway(2, flags = CHANGETURF_INHERIT_AIR)
 		if(2)
-			switch(rand(1, 3))
-				if(1)
-					if(!length(baseturfs) || !ispath(baseturfs[baseturfs.len-1], /turf/open/floor))
-						ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
-						ReplaceWithLattice()
-					else
-						ScrapeAway(2, flags = CHANGETURF_INHERIT_AIR)
-					if(prob(33))
-						new /obj/item/stack/sheet/metal(src)
-				if(2)
-					ScrapeAway(2, flags = CHANGETURF_INHERIT_AIR)
-				if(3)
-					if(prob(80))
-						ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
-					else
-						break_tile()
-					hotspot_expose(1000,CELL_VOLUME)
-					if(prob(33))
-						new /obj/item/stack/sheet/metal(src)
+			if(prob(50) && broken)
+				ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
+			else
+				break_tile()
+				hotspot_expose(1000,CELL_VOLUME)
+				if(prob(33))
+					new /obj/item/stack/sheet/metal(src)
 		if(3)
-			if (prob(50))
+			if(prob(50))
 				src.break_tile()
 				src.hotspot_expose(1000,CELL_VOLUME)
 
 /turf/open/floor/is_shielded()
 	for(var/obj/structure/A in contents)
 		return 1
-
-/turf/open/floor/blob_act(obj/structure/blob/B)
-	return
 
 /turf/open/floor/update_icon()
 	. = ..()
@@ -195,11 +180,6 @@
 		else if(prob(50))
 			ReplaceWithLattice()
 
-/turf/open/floor/narsie_act(force, ignore_mobs, probability = 20)
-	. = ..()
-	if(.)
-		ChangeTurf(/turf/open/floor/engine/cult, flags = CHANGETURF_INHERIT_AIR)
-
 /turf/open/floor/acid_melt()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
@@ -281,8 +261,6 @@
 	name = "floor"
 	icon_state = "materialfloor"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	icon = 'icons/turf/floors/tiles.dmi'
-	icon_state = "tiled"
 
 /turf/open/floor/material/spawn_tile()
 	for(var/i in custom_materials)

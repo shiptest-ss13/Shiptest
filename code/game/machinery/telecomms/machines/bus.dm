@@ -14,7 +14,7 @@
 	desc = "A mighty piece of hardware used to send massive amounts of data quickly."
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 50
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	netspeed = 40
 	circuit = /obj/item/circuitboard/machine/telecomms/bus
 	var/change_frequency = 0
@@ -72,7 +72,7 @@
 	autolinkers = list("processor4", "inteq", "receiverB", "messaging")
 
 /obj/machinery/telecomms/bus/preset_five
-	id = "CMM Communications Bus"
+	id = "CLIP Communications Bus"
 	network = "tcommsat"
 	freq_listening = list(FREQ_MINUTEMEN, FREQ_COMMON)
 	autolinkers = list("processor5", "minutemen", "messaging")

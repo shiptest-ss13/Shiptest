@@ -1,5 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/nt",
 	"prefix": "NTSV",
 	"namelists": [
 		"NANOTRASEN",
@@ -19,16 +20,16 @@
 	"limit": 1,
 	"job_slots": {
 		"Warden": {
-			"outfit": "/datum/outfit/job/warden",
+			"outfit": "/datum/outfit/job/nanotrasen/warden",
 			"officer": true,
 			"slots": 1
 		},
 		"Facility Security Officer": {
-			"outfit": "/datum/outfit/job/security",
+			"outfit": "/datum/outfit/job/nanotrasen/security",
 			"slots": 2
 		},
 		"Facility Physician": {
-			"outfit": "/datum/outfit/job/brig_phys",
+			"outfit": "/datum/outfit/job/nanotrasen/brig_phys",
 			"slots": 1
 		},
 		"Patient": {

@@ -2,6 +2,7 @@
 /datum/reagent/thermite
 	name = "Thermite"
 	description = "Thermite produces an aluminothermic reaction known as a thermite reaction. Can be used to melt walls."
+	category = "Pyrotechnics"
 	reagent_state = SOLID
 	color = "#550000"
 	taste_description = "sweet tasting metal"
@@ -19,6 +20,7 @@
 /datum/reagent/nitroglycerin
 	name = "Nitroglycerin"
 	description = "Nitroglycerin is a heavy, colorless, oily, explosive liquid obtained by nitrating glycerol."
+	category = "Pyrotechnics"
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "oil"
 
@@ -37,6 +39,7 @@
 /datum/reagent/clf3
 	name = "Chlorine Trifluoride"
 	description = "Makes a temporary 3x3 fireball when it comes into existence, so be careful when mixing. ClF3 applied to a surface burns things that wouldn't otherwise burn, including typically-robust flooring, potentially exposing it to the vacuum of space."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#FFC8C8"
 	metabolization_rate = 4
@@ -82,6 +85,7 @@
 /datum/reagent/sorium
 	name = "Sorium"
 	description = "Sends everything flying from the detonation point."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#5A64C8"
 	taste_description = "air and bitterness"
@@ -89,6 +93,7 @@
 /datum/reagent/liquid_dark_matter
 	name = "Liquid Dark Matter"
 	description = "Sucks everything into the detonation point."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#210021"
 	taste_description = "compressed bitterness"
@@ -96,6 +101,7 @@
 /datum/reagent/gunpowder
 	name = "Gunpowder"
 	description = "Explodes. Violently."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#000000"
 	metabolization_rate = 0.05
@@ -120,6 +126,7 @@
 /datum/reagent/rdx
 	name = "RDX"
 	description = "Military grade explosive"
+	category = "Pyrotechnics"
 	reagent_state = SOLID
 	color = "#FFFFFF"
 	taste_description = "salt"
@@ -127,6 +134,7 @@
 /datum/reagent/tatp
 	name = "TaTP"
 	description = "Suicide grade explosive"
+	category = "Pyrotechnics"
 	reagent_state = SOLID
 	color = "#FFFFFF"
 	taste_description = "death"
@@ -134,6 +142,7 @@
 /datum/reagent/flash_powder
 	name = "Flash Powder"
 	description = "Makes a very bright flash."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#C8C8C8"
 	taste_description = "salt"
@@ -141,6 +150,7 @@
 /datum/reagent/smoke_powder
 	name = "Smoke Powder"
 	description = "Makes a large cloud of smoke that can carry reagents."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#C8C8C8"
 	taste_description = "smoke"
@@ -148,6 +158,7 @@
 /datum/reagent/sonic_powder
 	name = "Sonic Powder"
 	description = "Makes a deafening noise."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#C8C8C8"
 	taste_description = "loud noises"
@@ -155,6 +166,7 @@
 /datum/reagent/phlogiston
 	name = "Phlogiston"
 	description = "Catches you on fire and makes you ignite."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#FA00AF"
 	taste_description = "burning"
@@ -179,6 +191,7 @@
 /datum/reagent/napalm
 	name = "Napalm"
 	description = "Very flammable."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#FA00AF"
 	taste_description = "burning"
@@ -206,6 +219,7 @@
 /datum/reagent/cryostylane
 	name = "Cryostylane"
 	description = "Comes into existence at 20K. As long as there is sufficient oxygen for it to react with, Cryostylane slowly cools all other reagents in the container 0K."
+	category = "Pyrotechnics"
 	color = "#0000DC"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
@@ -227,6 +241,7 @@
 /datum/reagent/pyrosium
 	name = "Pyrosium"
 	description = "Comes into existence at 20K. As long as there is sufficient oxygen for it to react with, Pyrosium slowly heats all other reagents in the container."
+	category = "Pyrotechnics"
 	color = "#64FAC8"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
@@ -242,6 +257,7 @@
 /datum/reagent/teslium //Teslium. Causes periodic shocks, and makes shocks against the target much more effective.
 	name = "Teslium"
 	description = "An unstable, electrically-charged metallic slurry. Periodically electrocutes its victim, and makes electrocutions against them more deadly. Excessively heating teslium results in dangerous destabilization. Do not allow to come into contact with water."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#20324D" //RGB: 32, 50, 77
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
@@ -273,6 +289,7 @@
 /datum/reagent/teslium/energized_jelly
 	name = "Energized Jelly"
 	description = "Electrically-charged jelly. Boosts jellypeople's nervous system, but only shocks other lifeforms."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#CAFF43"
 	taste_description = "jelly"
@@ -282,15 +299,12 @@
 		shock_timer = 0 //immune to shocks
 		M.AdjustAllImmobility(-40)
 		M.adjustStaminaLoss(-2, 0)
-		if(isluminescent(M))
-			var/mob/living/carbon/human/H = M
-			var/datum/species/jelly/luminescent/L = H.dna.species
-			L.extract_cooldown = max(0, L.extract_cooldown - 20)
 	..()
 
 /datum/reagent/firefighting_foam
 	name = "Firefighting Foam"
 	description = "A historical fire suppressant. Originally believed to simply displace oxygen to starve fires, it actually interferes with the combustion reaction itself. Vastly superior to the cheap water-based extinguishers found on NT vessels."
+	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#A6FAFF55"
 	taste_description = "the inside of a fire extinguisher"
@@ -319,7 +333,7 @@
 	O.extinguish()
 
 /datum/reagent/firefighting_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method in list(VAPOR, TOUCH))
+	if(method in list(VAPOR, TOUCH, SMOKE))
 		M.adjust_fire_stacks(-reac_volume)
 		M.ExtinguishMob()
 	..()

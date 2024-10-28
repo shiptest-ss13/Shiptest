@@ -8,20 +8,24 @@
 	desc = "Portable Ice-cream in its own packaging."
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "icecreamsandwich"
+	w_class = WEIGHT_CLASS_TINY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/ice = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/ice = 2)
 	tastes = list("ice cream" = 1)
 	foodtype = GRAIN | DAIRY | SUGAR
+	/*food_flags = FOOD_FINGER_FOOD*/
 
 /obj/item/reagent_containers/food/snacks/strawberryicecreamsandwich
 	name = "strawberry ice cream sandwich"
 	desc = "Portable ice-cream in its own packaging of the strawberry variety."
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "strawberryicecreamsandwich"
+	w_class = WEIGHT_CLASS_TINY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/ice = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/ice = 2)
 	tastes = list("ice cream" = 2, "berry" = 2)
 	foodtype = FRUIT | DAIRY | SUGAR
+	/*food_flags = FOOD_FINGER_FOOD*/
 
 
 /obj/item/reagent_containers/food/snacks/spacefreezy
@@ -29,6 +33,7 @@
 	desc = "The best icecream in space."
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "spacefreezy"
+	w_class = WEIGHT_CLASS_TINY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/bluecherryjelly = 5, /datum/reagent/consumable/nutriment/vitamin = 4)
 	filling_color = "#87CEFA"
@@ -40,6 +45,7 @@
 	desc = "A classic dessert."
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "sundae"
+	w_class = WEIGHT_CLASS_SMALL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/banana = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
 	filling_color = "#FFFACD"
@@ -66,12 +72,14 @@
 	desc = "It's just shaved ice. Still fun to chew on."
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "flavorless_sc"
+	w_class = WEIGHT_CLASS_SMALL
 	trash = /obj/item/reagent_containers/food/drinks/sillycup //We dont eat paper cups
 	bonus_reagents = list(/datum/reagent/water = 10) //Base line will allways give water
 	list_reagents = list(/datum/reagent/water = 1) // We dont get food for water/juices
 	filling_color = "#FFFFFF" //Ice is white
 	tastes = list("ice" = 1, "water" = 1)
 	foodtype = SUGAR //We use SUGAR as a base line to act in as junkfood, other wise we use fruit
+	/*food_flags = FOOD_FINGER_FOOD*/
 
 /obj/item/reagent_containers/food/snacks/snowcones/lime
 	name = "lime snowcone"
@@ -178,7 +186,7 @@
 	name = "Space Mountain Wind snowcone"
 	desc = "Space Mountain Wind drizzled over a snowball in a paper cup."
 	icon_state = "mountainwind_sc"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/spacemountainwind = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/comet_trail = 5)
 	tastes = list("ice" = 1, "water" = 1, "mountain wind" = 5)
 
 
@@ -186,7 +194,7 @@
 	name = "pwrgame snowcone"
 	desc = "Pwrgame soda drizzled over a snowball in a paper cup."
 	icon_state = "pwrgame_sc"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/pwr_game = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/pacfuel = 5)
 	tastes = list("ice" = 1, "water" = 1, "valid" = 5, "salt" = 5, "wats" = 5)
 
 /obj/item/reagent_containers/food/snacks/snowcones/honey
@@ -262,13 +270,13 @@
 	bonus_reagents = list(/datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 3, /datum/reagent/consumable/sugar = 2)
 	overlay_state = "jumbo"
 
-/obj/item/reagent_containers/food/snacks/popsicle/nogga_black
-	name = "nogga black"
-	desc = "A salty licorice icecream recently reintroduced due to all the records of the controversy being lost to time. Those who cannot remember the past are doomed to repeat it."
+/obj/item/reagent_containers/food/snacks/popsicle/licorice
+	name = "licorice icecream"
+	desc = "A salty licorice icecream."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sodiumchloride = 1,  /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/sugar = 4)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sodiumchloride = 1,  /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/sugar = 4)
 	tastes = list("salty liquorice")
-	overlay_state = "nogga_black"
+	overlay_state = "licorice"
 
 /obj/item/reagent_containers/food/snacks/cornuto
 	name = "cornuto"

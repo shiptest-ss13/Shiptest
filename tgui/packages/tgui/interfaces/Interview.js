@@ -36,12 +36,31 @@ export const Interview = (props, context) => {
     }
   };
 
+  // Matches a complete markdown-style link, capturing the whole [...](...)
+  const link_regex = /(\[[^[]+\]\([^)]+\))/;
+  // Decomposes a markdown-style link into the link and display text
+  const link_decompose_regex = /\[([^[]+)\]\(([^)]+)\)/;
+
+  // Renders any markdown-style links within a provided body of text
+  const linkify_text = (text) => {
+    let parts = text.split(link_regex);
+    for (let i = 1; i < parts.length; i += 2) {
+      const match = link_decompose_regex.exec(parts[i]);
+      parts[i] = (
+        <a key={'link' + i} href={match[2]}>
+          {match[1]}
+        </a>
+      );
+    }
+    return parts;
+  };
+
   return (
     <Window width={500} height={600} noClose={!is_admin}>
       <Window.Content scrollable>
         {(!read_only && (
           <Section title="Welcome!">
-            <p>{welcome_message}</p>
+            <p>{linkify_text(welcome_message)}</p>
           </Section>
         )) ||
           rendered_status(status)}
@@ -87,8 +106,8 @@ export const Interview = (props, context) => {
           )}
           {questions.map(({ qidx, question, response }) => (
             <Section key={qidx} title={`Question ${qidx}`}>
-              <p>{question}</p>
-              {(read_only && (
+              <p>{linkify_text(question)}</p>
+              {((read_only || is_admin) && (
                 <BlockQuote>{response || 'No response.'}</BlockQuote>
               )) || (
                 <TextArea

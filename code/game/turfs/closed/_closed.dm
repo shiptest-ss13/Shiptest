@@ -7,8 +7,88 @@
 	rad_insulation = RAD_MEDIUM_INSULATION
 	pass_flags_self = PASSCLOSEDTURF
 
+	///lower numbers are harder. Used to determine the probability of a hulk smashing through.
+	var/hardness = 40
+	var/breakdown_duration = 20  //default time it takes for a tool to break the wall
+
+	var/attack_hitsound = 'sound/weapons/smash.ogg'
+	var/break_sound = 'sound/items/welder.ogg'
+	hitsound_type = PROJECTILE_HITSOUND_METAL
+
+	// The wall will ignore damage from weak items, depending on their
+	// force, damage type, tool behavior, and sharpness. This is the minimum
+	// amount of force that a blunt, brute item must have to damage the wall.
+	var/min_dam = 0
+	var/max_integrity = 100
+	var/integrity
+	var/brute_mod = 1
+	var/burn_mod = 1
+	// Projectiles that do extra damage to the wall
+	var/list/extra_dam_proj
+
+	var/mob_smash_flags
+	var/proj_bonus_damage_flags
+
+	var/mutable_appearance/damage_overlay
+	var/damage_visual = 'icons/effects/wall_damage.dmi'
+	var/overlay_layer = BULLET_HOLE_LAYER
+
+	var/list/dent_decals
+
 /turf/closed/Initialize(mapload, inherited_virtual_z)
 	. = ..()
+	if(integrity == null)
+		integrity = max_integrity
+
+/turf/closed/copyTurf(turf/T, copy_air, flags)
+	. = ..()
+	var/turf/closed/wall_copy = T
+	if(LAZYLEN(dent_decals))
+		wall_copy.dent_decals = dent_decals.Copy()
+		wall_copy.update_appearance()
+
+/turf/closed/update_overlays()
+	. = ..()
+	damage_overlay = null
+	var/adj_dam_pct = 1 - (integrity/(max_integrity))
+	if(adj_dam_pct < 0)
+		adj_dam_pct = 0
+	if(!damage_overlay)
+		damage_overlay = mutable_appearance(damage_visual, "cracks", overlay_layer)
+	damage_overlay.alpha = adj_dam_pct*255
+	. += damage_overlay
+	for(var/decal in dent_decals)
+		. += decal
+
+/turf/closed/proc/add_dent(denttype, x=rand(-8, 8), y=rand(-8, 8))
+	if(LAZYLEN(dent_decals) >= MAX_DENT_DECALS)
+		return
+
+	var/mutable_appearance/decal = mutable_appearance('icons/effects/effects.dmi', "", BULLET_HOLE_LAYER)
+	switch(denttype)
+		if(WALL_DENT_SHOT)
+			decal.icon_state = "bullet_hole"
+		if(WALL_DENT_HIT)
+			decal.icon_state = "impact[rand(1, 3)]"
+
+	decal.pixel_x = x
+	decal.pixel_y = y
+	LAZYADD(dent_decals, decal)
+	update_appearance()
+
+/turf/closed/examine(mob/user)
+	. = ..()
+	. += damage_hints(user)
+
+/turf/closed/proc/damage_hints(mob/user)
+	switch(integrity / max_integrity)
+		if(0.5 to 0.99)
+			return "[p_they(TRUE)] look[p_s()] slightly damaged."
+		if(0.25 to 0.5)
+			return "[p_they(TRUE)] appear[p_s()] heavily damaged."
+		if(0 to 0.25)
+			return "<span class='warning'>[p_theyre(TRUE)] falling apart!</span>"
+	return
 
 /turf/closed/AfterChange()
 	. = ..()
@@ -17,301 +97,229 @@
 /turf/closed/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	return FALSE
 
-/turf/closed/indestructible
-	name = "wall"
-	desc = "Effectively impervious to conventional methods of destruction."
-	icon = 'icons/turf/walls.dmi'
-	explosion_block = 50
+/// Damage Code
 
-/turf/closed/indestructible/TerraformTurf(path, new_baseturf, flags, defer_change = FALSE, ignore_air = FALSE)
-	return
+// negative values reduce integrity, positive values increase integrity.
+// Devastate forces a devestate, safe decon prevents it.
+/turf/closed/proc/alter_integrity(damage, mob/user, devastate = FALSE, safe_decon = FALSE)
+	integrity += damage
+	if(integrity >= max_integrity)
+		integrity = max_integrity
+	if(integrity <= 0)
+		if(safe_decon)
+			dismantle_wall(FALSE, user)
+			return FALSE
+		// if damage put us 50 points or more below 0, and not safe decon we got proper demolished
+		if(integrity <= -50)
+			dismantle_wall(TRUE, user)
+			return FALSE
+		if(devastate)
+			dismantle_wall(TRUE, user)
+			return FALSE
+		dismantle_wall(FALSE,user)
+		return FALSE
+	integrity = min(integrity, max_integrity)
+	update_stats()
+	return integrity
 
-/turf/closed/indestructible/acid_act(acidpwr, acid_volume, acid_id)
-	return 0
+/turf/closed/proc/set_integrity(amount,devastate = FALSE, mob/user)
+	integrity = amount
+	update_stats()
+	if(integrity <= 0)
+		dismantle_wall(devastate, user)
 
-/turf/closed/indestructible/Melt()
-	to_be_destroyed = FALSE
-	return src
+/turf/closed/proc/dismantle_wall(devastate = FALSE, mob/user)
+	for(var/obj/structure/sign/poster/P in src.contents) //Eject contents!
+		P.roll_and_drop(src)
 
-/turf/closed/indestructible/singularity_act()
-	return
+	ScrapeAway()
 
-/turf/closed/indestructible/oldshuttle
-	name = "strange shuttle wall"
-	icon = 'icons/turf/shuttleold.dmi'
-	icon_state = "block"
+/turf/closed/proc/update_stats()
+	update_appearance()
 
-/turf/closed/indestructible/sandstone
-	name = "sandstone wall"
-	desc = "A wall with sandstone plating. Rough."
-	icon = 'icons/turf/walls/sandstone_wall.dmi'
-	icon_state = "sandstone_wall-0"
-	base_icon_state = "sandstone_wall"
-	baseturfs = /turf/closed/indestructible/sandstone
-	smoothing_flags = SMOOTH_BITMASK
+/turf/closed/bullet_act(obj/projectile/P)
+	. = ..()
+	var/dam = get_proj_damage(P)
+	var/shooter = P.firer
+	if(!dam)
+		return
+	if(P.suppressed != SUPPRESSED_VERY)
+		visible_message("<span class='danger'>[src] is hit by \a [P]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+	if(!QDELETED(src))
+		add_dent(WALL_DENT_SHOT)
+		alter_integrity(-dam, shooter)
 
-/turf/closed/indestructible/oldshuttle/corner
-	icon_state = "corner"
+/turf/closed/proc/get_item_damage(obj/item/I, t_min = min_dam)
+	var/dam = I.force
+	if(istype(I, /obj/item/clothing/gloves/gauntlets))
+		dam = 20
+	else if(I.tool_behaviour == TOOL_MINING)
+		dam *= (4/3)
+	else
+		switch(I.damtype)
+			if(BRUTE)
+				if(I.get_sharpness())
+					dam *= 2/3
+			if(BURN)
+				dam *= burn_mod
+			else
+				return 0
+	// if dam is below t_min, then the hit has no effect
+	return (dam < t_min ? 0 : dam)
 
-/turf/closed/indestructible/splashscreen
-	name = "Space Station 13"
-	icon = 'icons/blank_title.png'
-	icon_state = ""
-	layer = SPLASHSCREEN_LAYER
-	plane = SPLASHSCREEN_PLANE
-	bullet_bounce_sound = null
+/turf/closed/proc/get_proj_damage(obj/projectile/P, t_min = min_dam)
+	var/dam = P.damage
+	if(proj_bonus_damage_flags & P.wall_damage_flags)
+		dam = P.wall_damage_override
+	else
+		switch(P.damage_type)
+			if(BRUTE)
+				dam *= brute_mod
+			if(BURN)
+				dam *= burn_mod
+			else
+				return 0
+	// if dam is below t_min, then the hit has no effect
+	return (dam < t_min ? 0 : dam)
 
-/turf/closed/indestructible/splashscreen/New()
-	SStitle.splash_turf = src
-	if(SStitle.icon)
-		icon = SStitle.icon
-	..()
+/turf/closed/ex_act(severity, target)
+	if(target == src || !density)
+		return ..()
+	switch(severity)
+		if(EXPLODE_DEVASTATE)
+			// SN src = null
+			var/turf/NT = ScrapeAway()
+			NT.contents_explosion(severity, target)
+			return
+		if(EXPLODE_HEAVY)
+			alter_integrity(rand(-500, -800))
+		if(EXPLODE_LIGHT)
+			alter_integrity(rand(-200, -700))
 
-/turf/closed/indestructible/splashscreen/vv_edit_var(var_name, var_value)
+/turf/closed/attack_paw(mob/living/user)
+	user.changeNext_move(CLICK_CD_MELEE)
+	return attack_hand(user)
+
+/turf/closed/attack_hand(mob/user)
 	. = ..()
 	if(.)
-		switch(var_name)
-			if(NAMEOF(src, icon))
-				SStitle.icon = icon
+		return
+	user.changeNext_move(CLICK_CD_MELEE)
+	to_chat(user, "<span class='notice'>You push \the [src] but nothing happens!</span>")
+	playsound(src, 'sound/weapons/genhit.ogg', 25, TRUE)
+	add_fingerprint(user)
 
-
-/turf/closed/indestructible/reinforced
-	name = "reinforced wall"
-	desc = "A huge chunk of reinforced metal used to separate rooms. Effectively impervious to conventional methods of destruction."
-	icon = 'icons/turf/walls/rwalls/reinforced_wall.dmi'
-	icon_state = "reinforced_wall-0"
-	base_icon_state = "reinforced_wall"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
-
-
-/turf/closed/indestructible/riveted
-	icon = 'icons/turf/walls/riveted.dmi'
-	icon_state = "riveted-0"
-	base_icon_state = "riveted"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS)
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
-
-/turf/closed/indestructible/riveted/supermatter
-	name = "wall"
-	desc = "A wall made out of a strange metal. The squares on it pulse in a predictable pattern."
-	icon = 'icons/turf/walls/bananium_wall.dmi'
-	icon_state = "bananium_wall-0"
-	base_icon_state = "bananium_wall"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_BANANIUM_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_BANANIUM_WALLS)
-
-/turf/closed/indestructible/riveted/supermatter/Bumped(atom/movable/AM)
-	if(isliving(AM))
-		AM.visible_message("<span class='danger'>\The [AM] slams into \the [src] inducing a resonance... [AM.p_their()] body starts to glow and burst into flames before flashing into dust!</span>",\
-		"<span class='userdanger'>You slam into \the [src] as your ears are filled with unearthly ringing. Your last thought is \"Oh, fuck.\"</span>",\
-		"<span class='hear'>You hear an unearthly noise as a wave of heat washes over you.</span>")
-	else if(isobj(AM) && !iseffect(AM))
-		AM.visible_message("<span class='danger'>\The [AM] smacks into \the [src] and rapidly flashes to ash.</span>", null,\
-		"<span class='hear'>You hear a loud crack as you are washed with a wave of heat.</span>")
-	else
+/turf/closed/attackby(obj/item/W, mob/user, params)
+	user.changeNext_move(CLICK_CD_MELEE)
+	if (!user.IsAdvancedToolUser())
+		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
 		return
 
-	playsound(get_turf(src), 'sound/effects/supermatter.ogg', 50, TRUE)
-	Consume(AM)
+	//get the user's location
+	if(!isturf(user.loc))
+		return	//can't do this stuff whilst inside objects and such
 
-/turf/closed/indestructible/riveted/supermatter/proc/Consume(atom/movable/AM)
-	if(isliving(AM))
-		var/mob/living/user = AM
-		if(user.status_flags & GODMODE)
-			return
-		message_admins("[src] has consumed [key_name_admin(user)] [ADMIN_JMP(src)].")
-		investigate_log("has consumed [key_name(user)].", INVESTIGATE_SUPERMATTER)
-		user.dust(force = TRUE)
-	else if(isobj(AM))
-		if(!iseffect(AM))
-			var/suspicion = ""
-			if(AM.fingerprintslast)
-				suspicion = "last touched by [AM.fingerprintslast]"
-				message_admins("[src] has consumed [AM], [suspicion] [ADMIN_JMP(src)].")
-			investigate_log("has consumed [AM] - [suspicion].", INVESTIGATE_SUPERMATTER)
-		qdel(AM)
+	add_fingerprint(user)
 
-/turf/closed/indestructible/syndicate
-	icon = 'icons/turf/walls/plastitanium_wall.dmi'
-	icon_state = "plastitanium_wall-0"
-	base_icon_state = "plastitanium_wall"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SYNDICATE_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_SYNDICATE_WALLS, SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
+	var/turf/T = user.loc	//get user's location for delay checks
 
-/turf/closed/indestructible/riveted/uranium
-	icon = 'icons/turf/walls/uranium_wall.dmi'
-	icon_state = "uranium_wall-0"
-	base_icon_state = "uranium_wall"
-	smoothing_flags = SMOOTH_BITMASK
+	attack_override(W,user,T)
+	return ..()
 
-/turf/closed/indestructible/riveted/plastinum
-	name = "plastinum wall"
-	desc = "A luxurious wall made out of a plasma-platinum alloy. Effectively impervious to conventional methods of destruction."
-	icon = 'icons/turf/walls/plastinum_wall.dmi'
-	icon_state = "plastinum_wall-0"
-	base_icon_state = "plastinum_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+/turf/closed/proc/attack_override(obj/item/W, mob/user, turf/loc)
+	if(!isclosedturf(src))
+		return
+	//the istype cascade has been spread among various procs for easy overriding or if we want to call something specific
+	if(try_decon(W, user, loc) || try_destroy(W, user, loc))
+		return
 
-/turf/closed/indestructible/wood
-	icon = 'icons/turf/walls/wood_wall.dmi'
-	icon_state = "wood_wall-0"
-	base_icon_state = "wood_wall"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
-
-
-/turf/closed/indestructible/alien
-	name = "alien wall"
-	desc = "A wall with alien alloy plating."
-	icon = 'icons/turf/walls/abductor_wall.dmi'
-	icon_state = "abductor_wall-0"
-	base_icon_state = "abductor_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_ABDUCTOR_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_ABDUCTOR_WALLS)
-
-
-/turf/closed/indestructible/cult
-	name = "runed metal wall"
-	desc = "A cold metal wall engraved with indecipherable symbols. Studying them causes your head to pound. Effectively impervious to conventional methods of destruction."
-	icon = 'icons/turf/walls/cult_wall.dmi'
-	icon_state = "cult_wall-0"
-	base_icon_state = "cult_wall"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS)
-
-
-/turf/closed/indestructible/abductor
-	icon_state = "alien1"
-
-/turf/closed/indestructible/opshuttle
-	icon_state = "wall3"
-
-
-/turf/closed/indestructible/fakeglass
-	name = "window"
-	icon = 'icons/obj/smooth_structures/reinforced_window.dmi'
-	icon_state = "fake_window"
-	base_icon_state = "reinforced_window"
-	opacity = FALSE
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE)
-
-/turf/closed/indestructible/fakeglass/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	underlays += mutable_appearance('icons/obj/structures.dmi', "grille") //add a grille underlay
-	underlays += mutable_appearance('icons/turf/floors.dmi', "plating") //add the plating underlay, below the grille
-
-
-/turf/closed/indestructible/opsglass
-	name = "window"
-	icon = 'icons/obj/smooth_structures/plastitanium_window.dmi'
-	icon_state = "plastitanium_window-0"
-	base_icon_state = "plastitanium_window"
-	opacity = FALSE
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM)
-
-/turf/closed/indestructible/opsglass/Initialize()
-	. = ..()
-	icon_state = null
-	underlays += mutable_appearance('icons/obj/structures.dmi', "grille")
-	underlays += mutable_appearance('icons/turf/floors.dmi', "plating")
-
-/turf/closed/indestructible/fakedoor
-	name = "CentCom Access"
-	icon = 'icons/obj/doors/airlocks/centcom/centcom.dmi'
-	icon_state = "fake_door"
-
-/turf/closed/indestructible/rock
-	name = "dense rock"
-	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
-	icon = 'icons/turf/walls/rock_wall.dmi'
-	icon_state = "rock_wall-0"
-	base_icon_state = "rock_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
-	no_connector_typecache = list(/turf/closed/mineral, /turf/closed/indestructible/rock)
-	connector_icon = 'icons/turf/connectors/smoothrocks_connector.dmi'
-	connector_icon_state = "smoothrocks_connector"
-	pixel_x = -4
-	pixel_y = -4
-
-/turf/closed/indestructible/rock/snow
-	name = "mountainside"
-	desc = "Extremely densely-packed sheets of ice and rock, forged over the years of the harsh cold."
-	icon = 'icons/turf/walls/icerock_wall.dmi'
-	icon_state = "icerock_wall-0"
-	base_icon_state = "icerock_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
-	pixel_x = -4
-	pixel_y = -4
-	bullet_sizzle = TRUE
-	bullet_bounce_sound = null
-
-/turf/closed/indestructible/paper
-	name = "thick paper wall"
-	desc = "A wall layered with impenetrable sheets of paper."
-	icon = 'icons/turf/walls.dmi'
-	icon_state = "paperwall"
-
-/turf/closed/indestructible/necropolis
-	name = "necropolis wall"
-	desc = "A seemingly impenetrable wall."
-	icon = 'icons/turf/walls.dmi'
-	icon_state = "necro"
-	explosion_block = 50
-	baseturfs = /turf/closed/indestructible/necropolis
-
-/turf/closed/indestructible/necropolis/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
-	underlay_appearance.icon = 'icons/turf/floors.dmi'
-	underlay_appearance.icon_state = "necro1"
+// catch-all for using most items on the closed turf -- attempt to smash
+/turf/closed/proc/try_destroy(obj/item/W, mob/user, turf/T)
+	var/dam = get_item_damage(W)
+	user.do_attack_animation(src)
+	if(!dam)
+		to_chat(user, "<span class='warning'>[W] isn't strong enough to damage [src]!</span>")
+		playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
+		return TRUE
+	log_combat(user, src, "attacked", W)
+	user.visible_message("<span class='danger'>[user] hits [src] with [W]!</span>", \
+				"<span class='danger'>You hit [src] with [W]!</span>", null, COMBAT_MESSAGE_RANGE)
+	switch(W.damtype)
+		if(BRUTE)
+			playsound(src,attack_hitsound, 100, TRUE)
+		if(BURN)
+			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
+	add_dent(WALL_DENT_HIT)
+	alter_integrity(-dam, user)
 	return TRUE
 
-/turf/closed/indestructible/riveted/boss
-	name = "necropolis wall"
-	desc = "A thick, seemingly indestructible stone wall."
-	icon = 'icons/turf/walls/boss_wall.dmi'
-	icon_state = "boss_wall-0"
-	base_icon_state = "boss_wall"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_BOSS_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_BOSS_WALLS)
-	explosion_block = 50
-	baseturfs = /turf/closed/indestructible/riveted/boss
+/turf/closed/proc/try_decon(obj/item/I, mob/user, turf/T)
+	var/act_duration = breakdown_duration
+	if(I.tool_behaviour == TOOL_WELDER)
+		if(!I.tool_start_check(user, amount=0))
+			return FALSE
+		to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
+		while(I.use_tool(src, user, act_duration, volume=50))
+			if(iswallturf(src))
+				to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
+				if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
+					return TRUE
+			else
+				break
 
-/turf/closed/indestructible/riveted/boss/see_through
-	opacity = FALSE
+	return FALSE
 
-/turf/closed/indestructible/riveted/boss/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
-	underlay_appearance.icon = 'icons/turf/floors.dmi'
-	underlay_appearance.icon_state = "basalt"
+/turf/closed/deconstruct_act(mob/living/user, obj/item/I)
+	var/act_duration = breakdown_duration
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
+	while(I.use_tool(src, user, act_duration, volume=100))
+		if(iswallturf(src))
+			to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
+			if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
+				return TRUE
+		else
+			break
+
+	return FALSE
+
+/turf/closed/mech_melee_attack(obj/mecha/M)
+	M.do_attack_animation(src)
+	switch(M.damtype)
+		if(BRUTE)
+			playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
+		if(TOX)
+			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
+
+
+	if(prob(hardness + M.force) && M.force > 20)
+		M.visible_message("<span class='danger'>[M.name] hits [src] with great force!</span>", \
+					"<span class='danger'>You hit [src] with incredible force!</span>", null, COMBAT_MESSAGE_RANGE)
+		dismantle_wall(TRUE)
+		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+	else
+		M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
+					"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
+		alter_integrity(M.force * 20)
+
+/turf/closed/attack_hulk(mob/living/carbon/user)
+	..()
+	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]
+	if(!arm || arm.bodypart_disabled)
+		return
+	alter_integrity(-250,user)
+	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
+				"<span class='danger'>You smash \the [src]!</span>", \
+				"<span class='hear'>You hear a booming smash!</span>")
 	return TRUE
 
-/turf/closed/indestructible/riveted/hierophant
-	name = "wall"
-	desc = "A wall made out of a strange metal. The squares on it pulse in a predictable pattern."
-	icon = 'icons/turf/walls/hierophant_wall.dmi'
-	icon_state = "wall"
-	smoothing_flags = SMOOTH_CORNERS
-	smoothing_groups = list(SMOOTH_GROUP_HIERO_WALL)
-	canSmoothWith = list(SMOOTH_GROUP_HIERO_WALL)
-
-/turf/closed/indestructible/blank
-	name = "space"
-	desc = "It's the end of the world every day, for someone."
-	icon = 'icons/turf/space.dmi'
-	icon_state = "black"
-	explosion_block = 1000 // fuck it, let's go higher
+/turf/closed/attack_animal(mob/living/simple_animal/M)
+	M.changeNext_move(CLICK_CD_MELEE)
+	M.do_attack_animation(src)
+	if((M.environment_smash & mob_smash_flags))
+		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+		alter_integrity(-400)
+		return

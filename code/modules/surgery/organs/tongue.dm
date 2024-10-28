@@ -21,7 +21,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/ratvar
 	))
 
@@ -44,15 +43,6 @@
 
 /obj/item/organ/tongue/could_speak_language(language)
 	return is_type_in_typecache(language, languages_possible)
-
-//Say_mod-Only Tongues
-/obj/item/organ/tongue/golem_base
-	name = "golem tongue"
-	say_mod = "rumbles"
-
-/obj/item/organ/tongue/golem_honk
-	name = "bananium tongue"
-	say_mod = "honks"
 
 /obj/item/organ/tongue/toma
 	name = "mutated tongue"
@@ -108,7 +98,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/buzzwords,
 		/datum/language/ratvar
 	))
@@ -245,7 +234,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/calcic,
 		/datum/language/ratvar
 	))
@@ -288,7 +276,7 @@
 
 /obj/item/organ/tongue/robot/emp_act(severity)
 	owner.apply_effect(EFFECT_STUTTER, 120)
-	owner.emote("scream")
+	owner.force_scream()
 	to_chat(owner, "<span class='warning'>Alert: Vocal cords are malfunctioning.</span>")
 
 /obj/item/organ/tongue/robot/handle_speech(datum/source, list/speech_args)
@@ -328,7 +316,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/ratvar,
 	))
 
@@ -353,7 +340,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/ratvar,
 		/datum/language/slime
 	))
@@ -378,7 +364,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/buzzwords
 	))
 
@@ -420,7 +405,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/teceti_unified
 	))
 
@@ -444,7 +428,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/vox_pidgin
 	))
 

@@ -80,7 +80,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(tgui_Topic(href_list))
 		return
 	if(href_list["reload_statbrowser"])
-		src << browse(file('html/statbrowser.html'), "window=statbrowser")
+		stat_panel.reinitialize()
 	// Log all hrefs
 	log_href("[src] (usr:[usr]\[[COORD(usr)]\]) : [hsrc ? "[hsrc] " : ""][href]")
 
@@ -91,13 +91,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			cmd_mentor_pm(M,null)
 		else
 			cmd_mentor_pm(href_list["mentor_msg"],null)
-		return
-
-	// Mentor Follow
-	if(href_list["mentor_follow"])
-		var/mob/living/M = locate(href_list["mentor_follow"])
-		if(istype(M))
-			mentor_follow(M)
 		return
 
 	//byond bug ID:2256651
@@ -113,6 +106,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(href_list["priv_msg"])
 		cmd_admin_pm(href_list["priv_msg"],null)
 		return
+
+	if(href_list["commandbar_typing"])
+		handle_commandbar_typing(href_list)
 
 	switch(href_list["_src_"])
 		if("holder")
@@ -143,7 +139,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		return
 	..()	//redirect to hsrc.Topic()
 
-///dumb workaround because byond doesnt seem to recognize the .proc/Topic() typepath for /datum/proc/Topic() from the client Topic,
+///dumb workaround because byond doesnt seem to recognize the PROC_REF(Topic()) typepath for /datum/proc/Topic() from the client Topic,
 ///so we cant queue it without this
 /client/proc/_Topic(datum/hsrc, href, list/href_list)
 	return hsrc.Topic(href, href_list)
@@ -226,11 +222,18 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	GLOB.clients += src
 	GLOB.directory[ckey] = src
 
+	// Instantiate stat panel
+	stat_panel = new(src, "statbrowser")
+	stat_panel.subscribe(src, PROC_REF(on_stat_panel_message))
+
 	// Instantiate tgui panel
-	tgui_panel = new(src)
+	tgui_panel = new(src, "browseroutput")
+
+	initialize_commandbar_spy()
 
 	GLOB.ahelp_tickets.client_login(src)
 	GLOB.interviews.client_login(src)
+	GLOB.requests.client_login(src)
 	var/connecting_admin = FALSE //because de-admined admins connecting should be treated like admins.
 	//Admin Authorisation
 	holder = GLOB.admin_datums[ckey]
@@ -345,9 +348,15 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(SSinput.initialized)
 		set_macros()
 
-	// Initialize tgui panel
-	src << browse(file('html/statbrowser.html'), "window=statbrowser")
+	// Initialize stat panel
+	stat_panel.initialize(
+		inline_html = file2text('html/statbrowser.html'),
+		inline_js = file2text('html/statbrowser.js'),
+		inline_css = file2text('html/statbrowser.css'),
+	)
 	addtimer(CALLBACK(src, PROC_REF(check_panel_loaded)), 30 SECONDS)
+
+	// Initialize tgui panel
 	tgui_panel.initialize()
 
 	if(alert_mob_dupe_login)
@@ -501,9 +510,12 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	log_access("Logout: [key_name(src)]")
 	GLOB.ahelp_tickets.client_logout(src)
 	GLOB.interviews.client_logout(src)
+	GLOB.requests.client_logout(src)
 	SSserver_maint.UpdateHubStatus()
 	if(credits)
 		QDEL_LIST(credits)
+	if(obj_window)
+		QDEL_NULL(obj_window)
 	if(holder)
 		adminGreet(1)
 		holder.owner = null
@@ -856,11 +868,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/ab = FALSE
 	var/list/modifiers = params2list(params)
 
+	var/button_clicked = LAZYACCESS(modifiers, "button")
+
 	var/dragged = LAZYACCESS(modifiers, DRAG)
-	if(dragged && !LAZYACCESS(modifiers, dragged)) //I don't know what's going on here, but I don't trust it
+	if(dragged && button_clicked != dragged)
 		return
 
-	if (object && object == middragatom && LAZYACCESS(modifiers, LEFT_CLICK))
+	if (object && object == middragatom && button_clicked == LEFT_CLICK)
 		ab = max(0, 5 SECONDS-(world.time-middragtime)*0.1)
 
 	var/mcl = CONFIG_GET(number/minute_click_limit)
@@ -909,7 +923,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	//check if the server is overloaded and if it is then queue up the click for next tick
 	//yes having it call a wrapping proc on the subsystem is fucking stupid glad we agree unfortunately byond insists its reasonable
-	if(!QDELETED(object) && TRY_QUEUE_VERB(VERB_CALLBACK(object, /atom/proc/_Click, location, control, params), VERB_OVERTIME_QUEUE_THRESHOLD, SSinput, control))
+	if(!QDELETED(object) && TRY_QUEUE_VERB(VERB_CALLBACK(object, TYPE_PROC_REF(/atom, _Click), location, control, params), VERB_OVERTIME_QUEUE_THRESHOLD, SSinput, control))
 		return
 
 	if (prefs.hotkeys)
@@ -1032,7 +1046,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		var/mob/living/M = mob
 		M.update_damage_hud()
 	if (prefs.auto_fit_viewport)
-		addtimer(CALLBACK(src,.verb/fit_viewport,10)) //Delayed to avoid wingets from Login calls.
+		addtimer(CALLBACK(src, VERB_REF(fit_viewport), 1 SECONDS)) //Delayed to avoid wingets from Login calls.
 
 /client/proc/generate_clickcatcher()
 	if(!void)
@@ -1078,14 +1092,12 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		return
 	var/list/verblist = list()
 	var/list/verbstoprocess = verbs.Copy()
-	if(mob?.client?.prefs.broadcast_login_logout)
+	if(mob)
 		verbstoprocess += mob.verbs
-		for(var/AM in mob.contents)
-			var/atom/movable/thing = AM
+		for(var/atom/movable/thing as anything in mob.contents)
 			verbstoprocess += thing.verbs
 	panel_tabs.Cut() // panel_tabs get reset in init_verbs on JS side anyway
-	for(var/thing in verbstoprocess)
-		var/procpath/verb_to_init = thing
+	for(var/procpath/verb_to_init as anything in verbstoprocess)
 		if(!verb_to_init)
 			continue
 		if(verb_to_init.hidden)
@@ -1094,10 +1106,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			continue
 		panel_tabs |= verb_to_init.category
 		verblist[++verblist.len] = list(verb_to_init.category, verb_to_init.name)
-	src << output("[url_encode(json_encode(panel_tabs))];[url_encode(json_encode(verblist))]", "statbrowser:init_verbs")
+	src.stat_panel.send_message("init_verbs", list(panel_tabs = panel_tabs, verblist = verblist))
 
 /client/proc/check_panel_loaded()
-	if(statbrowser_ready)
+	if(stat_panel.is_ready())
 		return
 	to_chat(src, "<span class='userdanger'>Statpanel failed to load, click <a href='?src=[REF(src)];reload_statbrowser=1'>here</a> to reload the panel </span>")
 
@@ -1138,3 +1150,20 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		SSambience.ambience_listening_clients[src] = world.time + 10 SECONDS //Just wait 10 seconds before the next one aight mate? cheers.
 	else
 		SSambience.ambience_listening_clients -= src
+
+/**
+ * Handles incoming messages from the stat-panel TGUI.
+ */
+/client/proc/on_stat_panel_message(type, payload)
+	switch(type)
+		if("Update-Verbs")
+			init_verbs()
+		if("Remove-Tabs")
+			panel_tabs -= payload["tab"]
+		if("Send-Tabs")
+			panel_tabs |= payload["tab"]
+		if("Reset-Tabs")
+			panel_tabs = list()
+		if("Set-Tab")
+			stat_tab = payload["tab"]
+			SSstatpanels.immediate_send_stat_data(src)

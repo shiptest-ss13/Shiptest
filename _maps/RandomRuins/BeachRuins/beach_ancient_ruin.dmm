@@ -373,12 +373,9 @@
 	name = "charge rifle"
 	},
 /obj/item/gun/energy/lasercannon{
-	pixel_y = 5;
-	pin = /obj/item/firing_pin
+	pixel_y = 5
 	},
-/obj/item/gun/energy/lasercannon{
-	pin = /obj/item/firing_pin
-	},
+/obj/item/gun/energy/lasercannon,
 /obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
@@ -609,7 +606,7 @@
 /area/ruin/beach/complex)
 "kK" = (
 /obj/structure/closet/crate/bin,
-/obj/item/reagent_containers/food/snacks/breadslice/moldy,
+/obj/item/food/breadslice/moldy,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
@@ -1147,7 +1144,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "sa" = (
-/obj/effect/spawner/lootdrop/garden/seaweed,
+/obj/effect/spawner/random/food_or_drink/garden/seaweed,
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "so" = (
@@ -1461,7 +1458,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "wV" = (
-/obj/item/kitchen/knife/hunting{
+/obj/item/melee/knife/hunting{
 	name = "machete";
 	pixel_y = 8;
 	desc = "Space vines HATE this one simple trick!"
@@ -2657,17 +2654,6 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
-"Py" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/ruin/beach/complex/wall)
 "PD" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4857,7 +4843,7 @@ lS
 lS
 lS
 Lt
-Py
+nt
 lS
 lS
 lS

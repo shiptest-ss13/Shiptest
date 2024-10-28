@@ -11,6 +11,7 @@
 	name = "Consumable"
 	taste_description = "generic food"
 	taste_mult = 4
+	category = "Food and Drink"
 	var/nutriment_factor = 1 * REAGENTS_METABOLISM
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
 
@@ -112,9 +113,9 @@
 
 /datum/reagent/consumable/cooking_oil/expose_obj(obj/O, reac_volume)
 	if(holder && holder.chem_temp >= fry_temperature)
-		if(isitem(O) && !istype(O, /obj/item/reagent_containers/food/snacks/deepfryholder))
+		if(isitem(O) && !istype(O, /obj/item/food/deepfryholder))
 			O.loc.visible_message("<span class='warning'>[O] rapidly fries as it's splashed with hot oil! Somehow.</span>")
-			var/obj/item/reagent_containers/food/snacks/deepfryholder/F = new(O.drop_location(), O)
+			var/obj/item/food/deepfryholder/F = new(O.drop_location(), O)
 			F.fry(volume)
 			F.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
 
@@ -124,19 +125,19 @@
 	var/boiling = FALSE
 	if(holder && holder.chem_temp >= fry_temperature)
 		boiling = TRUE
-	if(method != VAPOR && method != TOUCH) //Directly coats the mob, and doesn't go into their bloodstream
+	if(method != VAPOR && method != TOUCH && method != SMOKE) //Directly coats the mob, and doesn't go into their bloodstream
 		return ..()
 	if(!boiling)
 		return TRUE
 	var/oil_damage = ((holder.chem_temp / fry_temperature) * 0.33) //Damage taken per unit
-	if(method == TOUCH)
+	if(method == TOUCH || method == SMOKE)
 		oil_damage *= 1 - M.get_permeability_protection()
 	var/FryLoss = round(min(38, oil_damage * reac_volume))
 	if(!HAS_TRAIT(M, TRAIT_OIL_FRIED))
 		M.visible_message("<span class='warning'>The boiling oil sizzles as it covers [M]!</span>", \
 		"<span class='userdanger'>You're covered in boiling oil!</span>")
 		if(FryLoss)
-			M.emote("scream")
+			M.force_scream()
 		playsound(M, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 		ADD_TRAIT(M, TRAIT_OIL_FRIED, "cooking_oil_react")
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, unfry_mob)), 3)
@@ -208,30 +209,6 @@
 	taste_description = "hot peppers"
 	taste_mult = 1.5
 
-/datum/reagent/consumable/capsaicin/on_mob_life(mob/living/carbon/M)
-	var/heating = 0
-	switch(current_cycle)
-		if(1 to 15)
-			heating = 5 * TEMPERATURE_DAMAGE_COEFFICIENT
-			if(holder.has_reagent(/datum/reagent/cryostylane))
-				holder.remove_reagent(/datum/reagent/cryostylane, 5)
-			if(isslime(M))
-				heating = rand(5,20)
-		if(15 to 25)
-			heating = 10 * TEMPERATURE_DAMAGE_COEFFICIENT
-			if(isslime(M))
-				heating = rand(10,20)
-		if(25 to 35)
-			heating = 15 * TEMPERATURE_DAMAGE_COEFFICIENT
-			if(isslime(M))
-				heating = rand(15,20)
-		if(35 to INFINITY)
-			heating = 20 * TEMPERATURE_DAMAGE_COEFFICIENT
-			if(isslime(M))
-				heating = rand(20,25)
-	M.adjust_bodytemperature(heating)
-	..()
-
 /datum/reagent/consumable/frostoil
 	name = "Frost Oil"
 	description = "A special oil that noticeably chills the body. Extracted from chilly peppers and slimes."
@@ -287,14 +264,14 @@
 		return
 
 	var/mob/living/carbon/victim = M
-	if(method == TOUCH || method == VAPOR)
+	if(method == TOUCH || method == SMOKE || method == VAPOR)
 		var/pepper_proof = victim.is_pepper_proof()
 
 		//check for protection
 		//actually handle the pepperspray effects
 		if (!(pepper_proof)) // you need both eye and mouth protection
 			if(prob(5))
-				victim.emote("scream")
+				victim.force_scream()
 			victim.blur_eyes(5) // 10 seconds
 			victim.blind_eyes(3) // 6 seconds
 			victim.confused = max(M.confused, 5) // 10 seconds
@@ -325,12 +302,6 @@
 	reagent_state = SOLID
 	color = "#FFFFFF" // rgb: 255,255,255
 	taste_description = "salt"
-
-/datum/reagent/consumable/sodiumchloride/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(!istype(M))
-		return
-	if(M.has_bane(BANE_SALT))
-		M.mind.disrupt_spells(-200)
 
 /datum/reagent/consumable/sodiumchloride/expose_turf(turf/T, reac_volume) //Creates an umbra-blocking salt pile
 	if(!istype(T))
@@ -368,20 +339,14 @@
 		if(1 to 5)
 			M.Dizzy(5)
 			M.set_drugginess(30)
-			if(prob(10))
-				M.emote(pick("twitch","giggle"))
 		if(5 to 10)
 			M.Jitter(10)
 			M.Dizzy(10)
 			M.set_drugginess(35)
-			if(prob(20))
-				M.emote(pick("twitch","giggle"))
 		if (10 to INFINITY)
 			M.Jitter(20)
 			M.Dizzy(20)
 			M.set_drugginess(40)
-			if(prob(30))
-				M.emote(pick("twitch","giggle"))
 	..()
 
 /datum/reagent/consumable/garlic //NOTE: having garlic in your blood stops vampires from biting you.
@@ -561,7 +526,7 @@
 	..()
 
 /datum/reagent/consumable/honey/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(iscarbon(M) && (method in list(TOUCH, VAPOR, PATCH)))
+	if(iscarbon(M) && (method in list(TOUCH, VAPOR, PATCH, SMOKE)))
 		var/mob/living/carbon/C = M
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s
@@ -712,7 +677,7 @@
 	taste_description = "pure electricity"
 
 /datum/reagent/consumable/liquidelectricity/on_mob_life(mob/living/carbon/M)
-	if(prob(25) && !isethereal(M))
+	if(prob(25) && !iselzuose(M))
 		M.electrocute_act(rand(10,15), "Liquid Electricity in their body", 1) //lmao at the newbs who eat energy bars
 		playsound(M, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	return ..()
@@ -728,7 +693,7 @@
 		var/mob/living/carbon/C = M
 		var/obj/item/organ/stomach/ethereal/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
 		if(istype(stomach))
-			stomach.adjust_charge(reac_volume * REM * ETHEREAL_CHARGE_SCALING_MULTIPLIER)	  //WS Edit -- Ethereal Charge Scaling
+			stomach.adjust_charge(reac_volume * REM * ELZUOSE_CHARGE_SCALING_MULTIPLIER)	  //WS Edit -- Ethereal Charge Scaling
 
 /datum/reagent/consumable/astrotame
 	name = "Astrotame"
@@ -775,22 +740,6 @@
 	taste_description = "caramel"
 	reagent_state = SOLID
 
-/datum/reagent/consumable/char
-	name = "Char"
-	description = "Essence of the grill. Has strange properties when overdosed."
-	reagent_state = LIQUID
-	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#C8C8C8"
-	taste_mult = 6
-	taste_description = "smoke"
-	overdose_threshold = 15
-
-/datum/reagent/consumable/char/overdose_process(mob/living/M)
-	if(prob(25))
-		M.say(pick_list_replacements(BOOMER_FILE, "boomer"), forced = /datum/reagent/consumable/char)
-	..()
-	return
-
 /datum/reagent/consumable/bbqsauce
 	name = "BBQ Sauce"
 	description = "Sweet, smoky, savory, and gets everywhere. Perfect for grilling."
@@ -821,7 +770,7 @@
 		ingested = TRUE
 		return
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "pyre_elementum", /datum/mood_event/irritate, name)		// Applied if not eaten
-	if(method == TOUCH || method == VAPOR)
+	if(method == TOUCH || method == SMOKE || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 5)
 		return
 	..()

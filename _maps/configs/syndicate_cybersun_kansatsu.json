@@ -1,6 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"prefix": "SSV",
+	"faction": "/datum/faction/syndicate/cybersun",
+	"prefix": "CSSV",
 	"namelists": [
 		"CYBERSUN",
 		"SPACE",
@@ -15,26 +16,26 @@
 	"map_path": "_maps/shuttles/syndicate/syndicate_cybersun_kansatsu.dmm",
 	"map_id": "cybersun_kansatsu",
 	"job_slots": {
-		"Captain": {
-			"outfit": "/datum/outfit/job/captain/syndicate/cybersun",
+		"Commander": {
+			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
 			"officer": true,
 			"slots": 1
 		},
 		"Intelligence Officer": {
-			"outfit": "/datum/outfit/job/head_of_personnel/syndicate/intel",
+			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/cybersun",
 			"officer": true,
 			"slots": 1
 		},
 		"Engineer": {
-			"outfit": "/datum/outfit/job/engineer/syndicate/cybersun",
+			"outfit": "/datum/outfit/job/syndicate/engineer/cybersun",
 			"slots": 1
 		},
 		"Field Agent": {
-			"outfit": "/datum/outfit/job/miner/syndicate/cybersun",
+			"outfit": "/datum/outfit/job/syndicate/miner/cybersun",
 			"slots": 2
 		},
 		"Junior Agent": {
-			"outfit": "/datum/outfit/job/assistant/syndicate/cyberagent",
+			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun",
 			"slots": 2
 		}
 	},

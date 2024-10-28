@@ -1,0 +1,5 @@
+help: "Duplicated/overlapping pipes detected."
+/obj/machinery/atmospherics/pipe:
+  banned_neighbors:
+    /obj/machinery/atmospherics/pipe:
+      identical: true

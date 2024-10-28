@@ -50,7 +50,7 @@ Difficulty: Very Hard
 	achievement_type = /datum/award/achievement/boss/colossus_kill
 	crusher_achievement_type = /datum/award/achievement/boss/colossus_crusher
 	score_achievement_type = /datum/award/score/colussus_score
-	crusher_loot = list(/obj/structure/closet/crate/necropolis/colossus/crusher)
+	//mob_trophy = /obj/item/mob_trophy/blaster_tubes
 	loot = list(/obj/structure/closet/crate/necropolis/colossus)
 	deathmessage = "disintegrates, leaving a glowing core in its wake."
 	deathsound = 'sound/magic/demon_dies.ogg'
@@ -132,8 +132,6 @@ Difficulty: Very Hard
 		if(H.mind)
 			if(istype(H.mind.martial_art, /datum/martial_art/the_sleeping_carp))
 				. = TRUE
-		if (is_species(H, /datum/species/golem/sand))
-			. = TRUE
 
 /mob/living/simple_animal/hostile/megafauna/colossus/proc/alternating_dir_shots()
 	ranged_cooldown = world.time + 40
@@ -609,12 +607,12 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	var/ready_to_deploy = FALSE
 
 /obj/machinery/anomalous_crystal/helpers/Destroy()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	. = ..()
 
 /obj/machinery/anomalous_crystal/helpers/ActivationReaction(mob/user, method)
 	if(..() && !ready_to_deploy)
-		GLOB.poi_list |= src
+		SSpoints_of_interest.make_point_of_interest(src)
 		ready_to_deploy = TRUE
 		notify_ghosts("An anomalous crystal has been activated in [get_area(src)]! This crystal can always be used by ghosts hereafter.", enter_link = "<a href=?src=[REF(src)];ghostjoin=1>(Click to enter)</a>", ghost_sound = 'sound/effects/ghost2.ogg', source = src, action = NOTIFY_ATTACK, header = "Anomalous crystal activated")
 
@@ -661,7 +659,6 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	ventcrawler = VENTCRAWLER_ALWAYS
 	mob_size = MOB_SIZE_TINY
-	gold_core_spawnable = HOSTILE_SPAWN
 	verb_say = "warps"
 	verb_ask = "floats inquisitively"
 	verb_exclaim = "zaps"

@@ -98,7 +98,6 @@
 "dN" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general,
 /turf/open/floor/plating{
@@ -133,10 +132,6 @@
 	},
 /area/hangar)
 "eH" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/sign/poster/contraband/energy_swords{
-	pixel_y = -32
-	},
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/sign/poster/contraband/energy_swords{
 	pixel_y = -32
@@ -267,7 +262,6 @@
 "hs" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general{
 	dir = 6
@@ -352,7 +346,6 @@
 /area/hangar)
 "ka" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/general{
 	dir = 4
 	},
@@ -390,7 +383,7 @@
 	},
 /area/hangar)
 "kU" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/item/stack/sheet/mineral/wood{
 	pixel_x = -6
 	},
@@ -399,7 +392,7 @@
 	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/item/stack/sheet/mineral/wood{
 	pixel_x = -6
 	},
@@ -416,8 +409,6 @@
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general{
@@ -492,7 +483,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -849,7 +839,7 @@
 	},
 /area/hangar)
 "tH" = (
-/obj/machinery/computer/cargo/express,
+/obj/machinery/computer/cargo,
 /obj/item/toy/plush/knight{
 	pixel_y = 25;
 	pixel_x = 9
@@ -861,7 +851,6 @@
 "ug" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general{
 	dir = 4
@@ -872,7 +861,7 @@
 	},
 /area/hangar)
 "vh" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating{
 	planetary_atmos = 1
@@ -1151,7 +1140,6 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general{
@@ -1245,7 +1233,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/machinery/fax,
+/obj/machinery/fax/ruin,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
@@ -1438,7 +1426,6 @@
 "JF" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general{
 	dir = 6
@@ -1522,7 +1509,6 @@
 /area/hangar)
 "Ly" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/general,
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
@@ -1598,7 +1584,6 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general,
@@ -1693,10 +1678,8 @@
 	},
 /area/hangar)
 "QA" = (
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/light/directional/east,
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/light/directional/east,
 /obj/machinery/atmospherics/pipe/simple/general,
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
@@ -1916,7 +1899,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -2015,7 +1997,6 @@
 /obj/structure/railing{
 	layer = 3.1
 	},
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/machinery/atmospherics/pipe/simple/general,
 /turf/open/floor/plating{
@@ -2051,9 +2032,7 @@
 	},
 /area/hangar)
 "ZQ" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech{
 	planetary_atmos = 1

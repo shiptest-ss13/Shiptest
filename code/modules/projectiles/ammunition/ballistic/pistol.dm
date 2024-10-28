@@ -1,4 +1,4 @@
-// 10mm (Stechkin)
+// 10mm (Ringneck)
 
 /obj/item/ammo_casing/c10mm
 	name = "10mm bullet casing"
@@ -45,6 +45,7 @@
 	icon_state = "pistol-brass"
 	caliber = "9mm"
 	projectile_type = /obj/projectile/bullet/c9mm
+	stack_size = 15
 
 /obj/item/ammo_casing/c9mm/surplus
 	name = "9mm surplus bullet casing"
@@ -56,7 +57,7 @@
 	name = "9mm armor-piercing bullet casing"
 	desc = "A 9mm armor-piercing bullet casing."
 	bullet_skin = "ap"
-	projectile_type =/obj/projectile/bullet/c9mm/ap
+	projectile_type = /obj/projectile/bullet/c9mm/ap
 
 /obj/item/ammo_casing/c9mm/hp
 	name = "9mm hollow point bullet casing"
@@ -76,7 +77,7 @@
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c9mm/rubber
 
-// .45 (M1911 + C20r)
+// .45 (Candor + C20r)
 
 /obj/item/ammo_casing/c45
 	name = ".45 bullet casing"
@@ -84,6 +85,7 @@
 	icon_state = "pistol-steel"
 	caliber = ".45"
 	projectile_type = /obj/projectile/bullet/c45
+	stack_size = 12
 
 /obj/item/ammo_casing/c45/surplus
 	name = ".45 surplus bullet casing"
@@ -128,10 +130,11 @@
 	desc = "A .50 AE hollow point bullet casing."
 	projectile_type = /obj/projectile/bullet/a50AE/hp
 
-// .22 LR (Himehabu)
+// .22 LR (Himehabu, Pounder)
+
 /obj/item/ammo_casing/c22lr
 	name = ".22 LR bullet casing"
 	desc = "A .22 LR bullet casing."
 	projectile_type = /obj/projectile/bullet/c22lr
 	caliber = "22lr"
-
+	stack_size = 25

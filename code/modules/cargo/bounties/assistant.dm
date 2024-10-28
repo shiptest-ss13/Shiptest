@@ -15,7 +15,7 @@
 	name = "Skateboard"
 	description = "Nanotrasen has determined walking to be wasteful. Ship a skateboard to CentCom to speed operations up."
 	reward = 900 // the tony hawk
-	wanted_types = list(/obj/vehicle/ridden/scooter/skateboard, /obj/item/melee/skateboard)
+	wanted_types = list(/obj/vehicle/ridden/scooter/skateboard, /obj/item/skateboard)
 
 /datum/bounty/item/assistant/stunprod
 	name = "Stunprod"
@@ -35,7 +35,7 @@
 	description = "CentCom's security forces are going through budget cuts. You will be paid if you ship a set of spears."
 	reward = 2000
 	required_count = 5
-	wanted_types = list(/obj/item/spear)
+	wanted_types = list(/obj/item/melee/spear)
 
 /datum/bounty/item/assistant/toolbox
 	name = "Toolboxes"
@@ -139,12 +139,6 @@
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/poppy)
 	include_subtypes = FALSE
 
-/datum/bounty/item/assistant/shadyjims
-	name = "Shady Jim's"
-	description = "There's an irate officer at CentCom demanding that he receive a box of Shady Jim's cigarettes. Please ship one. He's starting to make threats."
-	reward = 500
-	wanted_types = list(/obj/item/storage/fancy/cigarettes/cigpack_shadyjims)
-
 /datum/bounty/item/assistant/potted_plants
 	name = "Potted Plants"
 	description = "Central Command is looking to commission a new BirdBoat-class station. You've been ordered to supply the potted plants."
@@ -216,12 +210,6 @@
 	reward = 4000
 	required_count = 5
 	wanted_types = list(/obj/item/toy/figure)
-
-/datum/bounty/item/assistant/tail_whip
-	name = "Nine Tails whip"
-	description = "Commander Jackson is looking for a fine addition to her exotic weapons collection. She will reward you handsomely for either a Cat or Liz o' Nine Tails."
-	reward = 4000
-	wanted_types = list(/obj/item/melee/chainofcommand/tailwhip)
 
 /datum/bounty/item/assistant/dead_mice
 	name = "Dead Mice"

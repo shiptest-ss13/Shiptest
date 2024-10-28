@@ -88,10 +88,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
-"ej" = (
-/obj/machinery/vending/mining_equipment,
-/turf/open/floor/plasteel,
-/area/ruin/powered)
 "eV" = (
 /obj/structure/closet/cardboard,
 /obj/item/paper,
@@ -99,7 +95,7 @@
 /area/ruin/powered)
 "fq" = (
 /obj/structure/table,
-/obj/item/ammo_box/n762,
+/obj/item/ammo_box/a44roum_speedloader,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/powered)
 "fJ" = (
@@ -122,13 +118,13 @@
 /area/ruin/powered)
 "gw" = (
 /obj/structure/table,
-/obj/item/ammo_box/c45,
+/obj/item/storage/box/ammo/c45,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/powered)
 "gx" = (
 /obj/structure/table,
-/obj/item/ammo_box/c9mm/rubbershot,
+/obj/item/storage/box/ammo/c9mm_rubber,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/powered)
 "gz" = (
@@ -165,12 +161,6 @@
 "hl" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/powered)
-"hL" = (
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/sniper_rounds
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered)
 "ih" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/stack/sheet/mineral/uranium/five,
@@ -205,12 +195,6 @@
 /obj/item/stock_parts/cell/gun/empty,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/powered)
-"iE" = (
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/mm712x82
-	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "jn" = (
@@ -312,12 +296,6 @@
 /obj/effect/turf_decal/corner/transparent/neutral/diagonal,
 /obj/item/modular_computer/laptop/preset,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"os" = (
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/smgm45
-	},
-/turf/open/floor/plasteel,
 /area/ruin/powered)
 "ov" = (
 /obj/effect/turf_decal/corner/transparent/neutral/diagonal,
@@ -496,9 +474,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "wf" = (
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/co9mm
-	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "wp" = (
@@ -626,9 +602,7 @@
 /area/ruin/powered)
 "BK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/mm712x82
-	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "Cl" = (
@@ -725,7 +699,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "HW" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Ie" = (
@@ -780,7 +754,7 @@
 	dir = 8
 	},
 /obj/item/paper,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
@@ -866,9 +840,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "Ta" = (
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/ebr
-	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "Tb" = (
@@ -1179,7 +1151,7 @@ Rw
 Rw
 Rw
 Ta
-iE
+wf
 wf
 GR
 tD
@@ -1238,7 +1210,7 @@ Zi
 uW
 iy
 Rt
-ej
+Rt
 GR
 "}
 (10,1,1) = {"
@@ -1529,9 +1501,9 @@ Rw
 Rw
 Rw
 Rw
-os
+wf
 BK
-hL
+wf
 GR
 tD
 tD

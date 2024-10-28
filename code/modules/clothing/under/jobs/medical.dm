@@ -11,6 +11,16 @@
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun
+	desc = "It's a jumpsuit worn by those with the experience to be a \"Medical Director\" for Cybersun. It provides minor biological protection."
+	name = "medical director's jumpsuit"
+	icon_state = "cybersun_md"
+	item_state = "w_suit"
+	icon = 'icons/obj/clothing/under/syndicate.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/syndicate.dmi'
+	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION
+
 /obj/item/clothing/under/rank/medical/chief_medical_officer/skirt
 	name = "chief medical officer's jumpskirt"
 	desc = "It's a jumpskirt worn by those with the experience to be \"Chief Medical Officer\". It provides minor biological protection."
@@ -126,7 +136,7 @@
 /obj/item/clothing/under/rank/medical/paramedic
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a dark blue cross on the chest denoting that the wearer is a trained paramedic."
 	name = "paramedic jumpsuit"
-	icon_state = "paramedic"
+	icon_state = "pmedic"
 	item_state = "w_suit"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -134,7 +144,7 @@
 /obj/item/clothing/under/rank/medical/paramedic/skirt
 	name = "paramedic jumpskirt"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a dark blue cross on the chest denoting that the wearer is a trained paramedic."
-	icon_state = "paramedic_skirt"
+	icon_state = "pmedic_skirt"
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
@@ -164,7 +174,7 @@
 	desc = "A light white gown that allows easy access to any patient who wears this."
 	icon_state = "gownwhite"
 	item_state = "gownwhite"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical/gown/green

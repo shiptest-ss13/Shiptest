@@ -2,7 +2,8 @@
 	name = "laser"
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage = 20
+	damage = 25
+	armour_penetration = -5
 	damage_type = BURN
 
 	hitsound = 'sound/weapons/gun/hit/energy_impact1.ogg'
@@ -36,6 +37,24 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/projectile/beam/laser/sharplite
+	speed = 0.4
+
+/obj/projectile/beam/laser/light
+	damage = 15
+
+/obj/projectile/beam/laser/light/sharplite
+	speed = 0.4
+
+/obj/projectile/beam/laser/eoehoma
+	damage = 25
+	armour_penetration = -10
+
+/obj/projectile/beam/laser/assault
+	icon_state = "heavylaser"
+	damage = 25
+	armour_penetration = 20
+
 /obj/projectile/beam/laser/heavylaser
 	name = "heavy laser"
 	icon_state = "heavylaser"
@@ -43,6 +62,9 @@
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser
+
+/obj/projectile/beam/laser/heavylaser/sharplite
+	speed = 0.4
 
 /obj/projectile/beam/laser/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -98,6 +120,7 @@
 	name = "disabler beam"
 	icon_state = "omnilaser"
 	damage = 30
+	armour_penetration = -20
 	damage_type = STAMINA
 	flag = "energy"
 	hitsound = 'sound/weapons/tap.ogg'
@@ -108,8 +131,14 @@
 	muzzle_type = /obj/effect/projectile/muzzle/disabler
 	impact_type = /obj/effect/projectile/impact/disabler
 
+/obj/projectile/beam/disabler/sharplite
+	speed = 0.4
+
 /obj/projectile/beam/disabler/weak
 	damage = 15
+
+/obj/projectile/beam/disabler/weak/sharplite
+	speed = 0.4
 
 /obj/projectile/beam/disabler/weak/negative_ap
 	armour_penetration = -30
@@ -121,7 +150,9 @@
 /obj/projectile/beam/pulse
 	name = "pulse"
 	icon_state = "u_laser"
-	damage = 50
+	damage = 40
+	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS | PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_WALLS
+	wall_damage_override = 200
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 	tracer_type = /obj/effect/projectile/tracer/pulse
@@ -130,15 +161,15 @@
 
 /obj/projectile/beam/pulse/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
-		if(isobj(target))
-			SSexplosions.medobj += target
-		else
-			SSexplosions.medturf += target
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
 	targets_turf.IgniteTurf(rand(8,22), "blue")
+
+/obj/projectile/beam/pulse/sharplite_turret
+	wall_damage_flags = null
+	wall_damage_override = 0
+	speed = 0.4
 
 /obj/projectile/beam/pulse/shotgun
 	damage = 40
@@ -160,7 +191,7 @@
 /obj/projectile/beam/emitter
 	name = "emitter beam"
 	icon_state = "emitter"
-	damage = 30
+	damage = 60 //osha violation waiting to happen
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
 
@@ -257,3 +288,10 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
 	impact_type = /obj/effect/projectile/impact/laser/emitter
 	impact_effect_type = null
+
+/obj/projectile/beam/emitter/hitscan/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/turf/targets_turf = target.loc
+	if(!isopenturf(targets_turf))
+		return
+	targets_turf.IgniteTurf(rand(8,22), "green")

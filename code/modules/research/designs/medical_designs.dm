@@ -80,16 +80,6 @@
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/dna_disk
-	name = "Genetic Data Disk"
-	desc = "Produce additional disks for storing genetic data."
-	id = "dna_disk"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 300, /datum/material/glass = 100, /datum/material/silver = 50)
-	build_path = /obj/item/disk/data
-	category = list("Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/piercesyringe
 	name = "Piercing Syringe"
 	desc = "A diamond-tipped syringe that pierces armor when launched at high velocity. It can hold up to 10 units."
@@ -180,16 +170,6 @@
 	materials = list(/datum/material/iron = 16000, /datum/material/glass = 8000, /datum/material/silver = 6000, /datum/material/gold = 3000)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
-/datum/design/genescanner
-	name = "Genetic Sequence Scanner"
-	desc = "A convenient hand-held scanner for quickly determining mutations and collecting the target's full genetic sequence."
-	id = "genescanner"
-	build_path = /obj/item/sequence_scanner
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 1000, /datum/material/glass = 500)
-	category = list("Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/healthanalyzer_advanced
 	name = "Advanced Health Analyzer"
@@ -415,6 +395,17 @@
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/cyberimp_joywire
+	name = "\improper Midi-Sed pleasure vivifier"
+	desc = "A widely popular (and addictive) implant produced by Miditeke-Sedari Tokoce that stimulates the brain's pleasure centers. Dramatically increases mood, but interferes with taste reception even if uninstalled."
+	id = "ci-joywire"
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 60
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/gold = 500, /datum/material/silver = 500)
+	build_path = /obj/item/organ/cyberimp/brain/joywire
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
 /datum/design/cyberimp_nutriment
 	name = "Nutriment Pump Implant"
 	desc = "This implant with synthesize and pump into your bloodstream a small amount of nutriment when you are starving."
@@ -485,7 +476,7 @@
 	desc = "Makes death amusing."
 	id = "implant_trombone"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/glass = 500, /datum/material/bananium = 500)
+	materials = list(/datum/material/glass = 500, /datum/material/hellstone = 500)
 	build_path = /obj/item/implantcase/sad_trombone
 	category = list("Medical Designs")
 

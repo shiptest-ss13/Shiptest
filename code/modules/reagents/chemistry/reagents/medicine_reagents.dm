@@ -9,6 +9,7 @@
 /datum/reagent/medicine
 	name = "Medicine"
 	taste_description = "bitterness"
+	category = "Medicine"
 
 /datum/reagent/medicine/on_mob_life(mob/living/carbon/M)
 	current_cycle++
@@ -256,10 +257,12 @@
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 		else if(M.getFireLoss())
 			M.adjustFireLoss(-reac_volume)
-			if(show_message)
+			M.force_scream()
+			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, "<span class='danger'>You feel your burns healing! It stings like hell!</span>")
-			M.emote("scream")
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			else
+				to_chat(M, span_notice("You feel your burns throbbing."))
 	..()
 
 /datum/reagent/medicine/silver_sulfadiazine/on_mob_life(mob/living/carbon/M)
@@ -310,10 +313,12 @@
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume)
-			if(show_message)
+			M.force_scream()
+			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, "<span class='danger'>You feel your bruises healing! It stings like hell!</span>")
-			M.emote("scream")
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			else
+				to_chat(M, span_notice("You feel your bruises throbbing."))
 	..()
 
 
@@ -376,6 +381,9 @@
 	color = "#6D6374"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 
+/datum/reagent/medicine/mine_salve/on_mob_metabolize(mob/living/L)
+	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
+
 /datum/reagent/medicine/mine_salve/on_mob_life(mob/living/carbon/C)
 	C.hal_screwyhud = SCREWYHUD_HEALTHY
 	C.adjustBruteLoss(-0.25*REM, 0)
@@ -402,6 +410,7 @@
 /datum/reagent/medicine/mine_salve/on_mob_end_metabolize(mob/living/M)
 	if(iscarbon(M))
 		var/mob/living/carbon/N = M
+		REMOVE_TRAIT(N, TRAIT_PAIN_RESIST, type)
 		N.hal_screwyhud = SCREWYHUD_NONE
 	..()
 
@@ -415,7 +424,7 @@
 	if(iscarbon(M))
 		if (M.stat == DEAD)
 			show_message = 0
-		if(method in list(PATCH, TOUCH))
+		if(method in list(PATCH, TOUCH, SMOKE))
 			M.adjustBruteLoss(-1.25 * reac_volume)
 			M.adjustFireLoss(-1.25 * reac_volume)
 			if(show_message)
@@ -565,6 +574,10 @@
 	reagent_state = LIQUID
 	color = "#E6FFF0"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/anti_rad/on_mob_metabolize(mob/living/L)
+	to_chat(L, span_warning("Your stomach starts to churn and cramp!"))
+	. = ..()
 
 /datum/reagent/medicine/anti_rad/on_mob_life(mob/living/carbon/M)
 	M.radiation -= M.radiation - rand(50,150)
@@ -751,9 +764,11 @@
 
 /datum/reagent/medicine/morphine/on_mob_metabolize(mob/living/L)
 	..()
+	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
 	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 
 /datum/reagent/medicine/morphine/on_mob_end_metabolize(mob/living/L)
+	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	..()
 
@@ -1090,7 +1105,7 @@
 	M.adjustBruteLoss(-2*REM, 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.bleed_rate = max(H.bleed_rate - 0.25, 0)
+		H.heal_bleeding(0.25)
 	..()
 	. = 1
 
@@ -1309,8 +1324,6 @@
 		M.adjustStaminaLoss(-3 * REM, 0)
 		M.jitteriness = min(max(0, M.jitteriness + 3), 30)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2 * REM, 150)
-		if(prob(10))
-			M.say(pick("Yeah, well, you know, that's just, like, uh, your opinion, man.", "Am I glad he's frozen in there and that we're out here, and that he's the sheriff and that we're frozen out here, and that we're in there, and I just remembered, we're out here. What I wanna know is: Where's the caveman?", "It ain't me, it ain't me...", "Make love, not war!", "Stop, hey, what's that sound? Everybody look what's going down...", "Do you believe in magic in a young girl's heart?"), forced = /datum/reagent/medicine/earthsblood)
 	M.druggy = min(max(0, M.druggy + 10), 15) //See above
 	..()
 	. = 1
@@ -1454,10 +1467,12 @@
 
 /datum/reagent/medicine/corazone/on_mob_metabolize(mob/living/M)
 	..()
+	ADD_TRAIT(M, TRAIT_PAIN_RESIST, type)
 	ADD_TRAIT(M, TRAIT_STABLEHEART, type)
 	ADD_TRAIT(M, TRAIT_STABLELIVER, type)
 
 /datum/reagent/medicine/corazone/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_PAIN_RESIST, type)
 	REMOVE_TRAIT(M, TRAIT_STABLEHEART, type)
 	REMOVE_TRAIT(M, TRAIT_STABLELIVER, type)
 
@@ -1540,7 +1555,6 @@
 				M.losebreath++
 			if(prob(20))
 				to_chat(M, "<span class='userdanger'>You have a sudden fit!</span>")
-				M.emote("moan")
 				M.Paralyze(20) // you should be in a bad spot at this point unless epipen has been used
 		if(81)
 			to_chat(M, "<span class='userdanger'>You feel too exhausted to continue!</span>") // at this point you will eventually die unless you get charcoal
@@ -1637,12 +1651,12 @@
 	if(prob(50))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			H.bleed_rate = max(H.bleed_rate - 2, 0)
+			H.heal_bleeding(2)
 	..()
 	. = 1
 
 /datum/reagent/medicine/polypyr/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if(method == TOUCH || method == SMOKE || method == VAPOR)
 		if(M && ishuman(M) && reac_volume >= 0.5)
 			var/mob/living/carbon/human/H = M
 			H.hair_color = "92f"
@@ -1750,10 +1764,12 @@
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume)
 			M.adjustFireLoss(reac_volume)
-			if(show_message)
+			M.force_scream()
+			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, "<span class='danger'>You feel your skin bubble and burn as your flesh knits itself together!</span>")
-			M.emote("scream")
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			else
+				to_chat(M, span_notice("You feel your skin shifting around unnaturally."))
 	..()
 
 /datum/reagent/medicine/converbital/on_mob_life(mob/living/carbon/M)
@@ -1785,10 +1801,12 @@
 		else if(M.getBruteLoss())
 			M.adjustFireLoss(-reac_volume)
 			M.adjustBruteLoss(reac_volume)
-			if(show_message)
-				to_chat(M, "<span class='danger'>You feel your flesh tear as your skin rapidly regenerates!</span>")
-			M.emote("scream")
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			M.force_scream()
+			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
+				to_chat(M, "<span class='danger'>You feel your skin tear as your flesh rapidly regenerates!</span>")
+				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			else
+				to_chat(M, span_notice("You feel your skin shifting around unnaturally."))
 	..()
 
 /datum/reagent/medicine/convuri/on_mob_life(mob/living/carbon/M)
@@ -1962,7 +1980,10 @@
 	..()
 
 /datum/reagent/medicine/soulus/overdose_process(mob/living/M)
-	M.ForceContractDisease(new /datum/disease/transformation/legionvirus(), FALSE, TRUE)
+	var/mob/living/carbon/C = M
+	if(!istype(C.getorganslot(ORGAN_SLOT_REGENERATIVE_CORE), /obj/item/organ/legion_skull))
+		var/obj/item/organ/legion_skull/spare_ribs = new()
+		spare_ribs.Insert(M)
 	..()
 
 /datum/reagent/medicine/soulus/on_mob_end_metabolize(mob/living/M)
@@ -2072,7 +2093,6 @@
 			bp.receive_damage(0, 0, 200)
 		else	//SUCH A LUST FOR REVENGE!!!
 			to_chat(M, "<span class='warning'>A phantom limb hurts!</span>")
-			M.say("Why are we still here, just to suffer?", forced = /datum/reagent/medicine/lavaland_extract)
 	return ..()
 
 /datum/reagent/medicine/skeletons_boon
@@ -2112,30 +2132,3 @@
 	ADD_TRAIT(M, TRAIT_ALLBREAK, TRAIT_GENERIC)
 	REMOVE_TRAIT(M, TRAIT_NOBREAK, TRAIT_GENERIC)
 	..()
-
-/datum/reagent/medicine/molten_bubbles
-	name = "Molten Bubbles"
-	description = "Refreshing softdrink made for the desert."
-	color = "#3d1916"
-	metabolization_rate = REAGENTS_METABOLISM
-	taste_description = "boiling sugar"
-
-/datum/reagent/medicine/molten_bubbles/on_mob_life(mob/living/carbon/M)
-	M.heal_bodypart_damage(1,1,0)
-	if(M.bodytemperature > M.get_body_temp_normal(apply_change=FALSE))
-		M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(apply_change=FALSE))
-	else if(M.bodytemperature < (M.get_body_temp_normal(apply_change=FALSE) + 1))
-		M.adjust_bodytemperature(10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE))
-	..()
-
-/datum/reagent/medicine/molten_bubbles/plasma
-	name = "Plasma Bubbles"
-	description = "Molten Bubbles with the refreshing taste of plasma."
-	color = "#852e63"
-	taste_description = "grape flavored cleaning solution"
-
-/datum/reagent/medicine/molten_bubbles/sand
-	name = "Sandblast Sarsaparilla"
-	description = "Extra refreshing for those long desert days."
-	color = "#af9938"
-	taste_description = "root-beer and asbestos"

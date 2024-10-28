@@ -51,7 +51,7 @@
 	item_flags = DROPDEL
 	ammo_type = list(/obj/item/ammo_casing/energy/chrono_beam)
 	can_charge = FALSE
-	fire_delay = 50
+	fire_delay = 5 SECONDS
 	var/obj/item/chrono_eraser/TED = null
 	var/obj/structure/chrono_field/field = null
 	var/turf/startpos = null
@@ -147,7 +147,7 @@
 /obj/item/ammo_casing/energy/chrono_beam
 	name = "eradication beam"
 	projectile_type = /obj/projectile/energy/chrono_beam
-	icon_state = "chronobolt"
+	icon_state = "caseless"
 	e_cost = 0
 	var/obj/item/gun/energy/chrono_gun/gun
 
@@ -284,10 +284,6 @@
 
 /obj/structure/chrono_field/ex_act()
 	return
-
-/obj/structure/chrono_field/blob_act(obj/structure/blob/B)
-	return
-
 
 #undef CHRONO_BEAM_RANGE
 #undef CHRONO_FRAME_COUNT

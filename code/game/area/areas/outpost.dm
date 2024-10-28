@@ -3,7 +3,7 @@
 /area/outpost
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
-	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | NOTELEPORT // not unique, in case multiple outposts get loaded. all derivatives should also be NOTELEPORT
+	area_flags = VALID_TERRITORY | NOTELEPORT // not unique, in case multiple outposts get loaded. all derivatives should also be NOTELEPORT
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_STANDARD_STATION
 	lighting_colour_tube = "#ffce99"
@@ -22,6 +22,9 @@
 	icon_state = "quartoffice"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 
+/area/outpost/cargo/smeltery
+	name = "Smeltery"
+	icon_state = "mining_production"
 
 /area/outpost/crew
 	name = "Crew Quarters"
@@ -67,6 +70,11 @@
 	name = "Library"
 	icon_state = "library"
 	sound_environment = SOUND_AREA_LARGE_SOFTFLOOR
+
+/area/outpost/crew/bathroom
+	name = "Bathroom"
+	icon_state = "restrooms"
+	sound_environment = SOUND_ENVIRONMENT_BATHROOM
 
 /area/outpost/crew/lounge
 	name = "Lounge"
@@ -174,13 +182,15 @@
 	name = "Armory"
 	icon_state = "armory"
 
+/area/outpost/security/checkpoint
+	name = "Security Checkpoint"
+	icon_state = "checkpoint1"
 
 /area/outpost/storage
 	name = "Storage"
 	icon_state = "storage"
 	lighting_colour_tube = "#ffce93"
 	lighting_colour_bulb = "#ffbc6f"
-
 
 /area/outpost/vacant_rooms
 	name = "Vacant Rooms"
@@ -189,6 +199,18 @@
 /area/outpost/vacant_rooms/office
 	name = "Vacant Office"
 	icon_state = "vacant_office"
+
+/area/outpost/vacant_rooms/shop
+	name = "Shop"
+	icon_state = "vacant_room"
+
+//for powered outdoors non-space areas -- uses ice planet ambience
+
+/area/outpost/exterior
+	name = "Exterior"
+	icon_state = "green"
+	sound_environment = SOUND_ENVIRONMENT_CAVE
+	ambientsounds = SPOOKY
 
 // this might be redundant with /area/space/nearstation. unsure; use with caution?
 /area/outpost/external

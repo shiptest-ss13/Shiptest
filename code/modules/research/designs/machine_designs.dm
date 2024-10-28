@@ -9,6 +9,13 @@
 	build_path = /obj/item/circuitboard/machine/smes
 	category = list ("Engineering Machinery")
 
+/datum/design/board/ssu
+	name = "Machine Design (Suit Storage Unit Board)"
+	desc = "The circuit board for a suit storage unit."
+	id = "ssu"
+	build_path = /obj/item/circuitboard/machine/suit_storage_unit
+	category = list ("Engineering Machinery")
+
 /datum/design/board/circulator
 	name = "Machine Design (Circulator Board)"
 	desc = "The circuit board for a circulator."
@@ -78,7 +85,8 @@
 	desc = "The circuit board for a space heater."
 	id = "space_heater"
 	build_path = /obj/item/circuitboard/machine/space_heater
-	category = list ("Engineering Machinery")
+	build_type = AUTOLATHE | IMPRINTER
+	category = list ("Engineering Machinery", "initial", "Equipment")
 	departmental_flags = ALL
 
 /datum/design/board/teleport_station
@@ -183,23 +191,6 @@
 	build_path = /obj/item/circuitboard/machine/reagentgrinder
 	category = list ("Medical Machinery")
 
-
-/datum/design/board/dnascanner
-	name = "Machine Design (DNA Scanner)"
-	desc = "Allows for the construction of circuit boards used to build a Cloning Scanner."
-	id = "dnascanner"
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-	build_path = /obj/item/circuitboard/machine/dnascanner
-	category = list("Medical Machinery")
-
-/datum/design/board/clonepod
-	name = "Machine Design (Cloning Pod)"
-	desc = "An electronically-lockable pod for growing organic tissue."
-	id = "clonepod"
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-	build_path = /obj/item/circuitboard/machine/clonepod
-	category = list("Medical Machinery")
-
 /datum/design/board/hypnochair
 	name = "Machine Design (Enhanced Interrogation Chamber)"
 	desc = "Allows for the construction of circuit boards used to build an Enhanced Interrogation Chamber."
@@ -248,14 +239,6 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/bepis
-	name = "Machine Design (B.E.P.I.S. Board)"
-	desc = "The circuit board for a B.E.P.I.S."
-	id = "bepis"
-	build_path = /obj/item/circuitboard/machine/bepis
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
-
 /datum/design/board/rdserver
 	name = "Machine Design (R&D Server Board)"
 	desc = "The circuit board for an R&D Server."
@@ -263,7 +246,6 @@
 	build_type = AUTOLATHE | IMPRINTER
 	build_path = /obj/item/circuitboard/machine/rdserver
 	category = list("Research Machinery", "initial", "Equipment")
-
 
 /datum/design/board/mechfab
 	name = "Machine Design (Exosuit Fabricator Board)"
@@ -350,15 +332,6 @@
 	id = "smartfridge"
 	build_path = /obj/item/circuitboard/machine/smartfridge
 	category = list ("Misc. Machinery")
-
-
-/datum/design/board/monkey_recycler
-	name = "Machine Design (Monkey Recycler Board)"
-	desc = "The circuit board for a monkey recycler."
-	id = "monkey_recycler"
-	build_path = /obj/item/circuitboard/machine/monkey_recycler
-	category = list ("Misc. Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/seed_extractor
 	name = "Machine Design (Seed Extractor Board)"
@@ -488,6 +461,14 @@
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/ship_gravity
+	name = "Machine Design (Ship Gravity Generator Board)"
+	desc = "The circuit board for a ship-sized gravity generator."
+	id = "ship_gravity"
+	build_type = AUTOLATHE | IMPRINTER
+	build_path = /obj/item/circuitboard/machine/ship_gravity
+	category = list("Misc. Machinery", "initial", "Equipment")
+
 /datum/design/board/ntnet_relay
 	name = "Machine Design (NTNet Relay Board)"
 	desc = "The circuit board for a wireless network relay."
@@ -583,15 +564,6 @@
 	build_path = /obj/item/circuitboard/machine/paystand
 	category = list ("Misc. Machinery")
 
-
-/datum/design/board/fat_sucker
-	name = "Machine Design (Lipid Extractor)"
-	desc = "The circuit board for a lipid extractor."
-	id = "fat_sucker"
-	build_path = /obj/item/circuitboard/machine/fat_sucker
-	category = list ("Misc. Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/board/stasis
 	name = "Machine Design (Lifeform Stasis Unit)"
 	desc = "The circuit board for a stasis unit."
@@ -615,13 +587,6 @@
 	build_path = /obj/item/circuitboard/machine/medipen_refiller
 	category = list ("Medical Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
-/datum/design/board/sheetifier
-	name = "Sheetifier"
-	desc = "This machine turns weird things into sheets."
-	id = "sheetifier"
-	build_path = /obj/item/circuitboard/machine/sheetifier
-	category = list ("Misc. Machinery")
 
 /datum/design/board/shieldwallgen
 	name = "Machine Design (Shield Wall Generator)"
@@ -656,6 +621,14 @@
 	category = list ("Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/shuttle/engine/fire
+	name = "Machine Design (Combustion Thruster Board)"
+	desc = "The circuit board for a combustion thruster."
+	id = "engine_fire"
+	build_path = /obj/item/circuitboard/machine/shuttle/engine/fire
+	category = list("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/board/shuttle/engine/electric
 	name = "Machine Design (Ion Thruster Board)"
 	desc = "The circuit board for an ion thruster."
@@ -686,6 +659,14 @@
 	id = "engine_heater"
 	build_path = /obj/item/circuitboard/machine/shuttle/heater
 	category = list ("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/shuttle/engine/fire_heater
+	name = "Machine Design (Combustion Engine Heater Board)"
+	desc = "The circuit board for a combustion engine heater."
+	id = "engine_fire_heater"
+	build_path = /obj/item/circuitboard/machine/shuttle/fire_heater
+	category = list("Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/shuttle/engine/smes

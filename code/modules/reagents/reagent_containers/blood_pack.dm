@@ -38,7 +38,7 @@
 
 /obj/item/reagent_containers/blood/random/Initialize()
 	icon_state = "bloodpack"
-	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L", "S")
+	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L", "E", "Coolant")
 	return ..()
 
 /obj/item/reagent_containers/blood/APlus
@@ -67,9 +67,6 @@
 
 /obj/item/reagent_containers/blood/synthetic
 	blood_type = "Coolant"
-
-/obj/item/reagent_containers/blood/squid
-	blood_type = "S"
 
 /obj/item/reagent_containers/blood/universal
 	blood_type = "U"

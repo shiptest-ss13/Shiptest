@@ -35,3 +35,4 @@
 	item_state = "m_mask"
 	permeability_coefficient = 0.01
 	equip_delay_other = 10
+

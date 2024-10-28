@@ -1,3 +1,5 @@
+#define BASE_UV_CYCLES 7
+
 // SUIT STORAGE UNIT /////////////////
 /obj/machinery/suit_storage_unit
 	name = "suit storage unit"
@@ -6,11 +8,15 @@
 	icon_state = "ssu_classic"
 	base_icon_state = "ssu_classic"
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	max_integrity = 250
+	circuit = /obj/item/circuitboard/machine/suit_storage_unit
 
 	var/obj/item/clothing/suit/space/suit = null
 	var/obj/item/clothing/head/helmet/space/helmet = null
 	var/obj/item/clothing/mask/mask = null
+	var/obj/item/mod/control/mod = null
 	var/obj/item/storage = null
 								// if you add more storage slots, update cook() to clear their radiation too.
 
@@ -22,6 +28,8 @@
 	var/mask_type = null
 	/// What type of additional item the unit starts with when spawned.
 	var/storage_type = null
+	/// What type of MOD the unit starts with when spawned.
+	var/mod_type = null
 
 	state_open = FALSE
 	/// If the SSU's doors are locked closed. Can be toggled manually via the UI, but is also locked automatically when the UV decontamination sequence is running.
@@ -40,7 +48,9 @@
 	*/
 	var/uv_super = FALSE
 	/// How many cycles remain for the decontamination sequence.
-	var/uv_cycles = 6
+	var/uv_cycles = 7
+	/// Time reduction from stock parts
+	var/lasers_bonus = 0
 	/// Cooldown for occupant breakout messages via relaymove()
 	var/message_cooldown
 	/// How long it takes to break out of the SSU.
@@ -172,6 +182,13 @@
 	helmet_type = /obj/item/clothing/head/helmet/space/pilot/random
 	mask_type = /obj/item/clothing/mask/breath
 
+/obj/machinery/suit_storage_unit/minutemen
+	suit_type = /obj/item/clothing/suit/space/hardsuit/clip_patroller
+	mask_type = /obj/item/clothing/mask/breath
+
+/obj/machinery/suit_storage_unit/minutemen/spotter
+	suit_type = /obj/item/clothing/suit/space/hardsuit/clip_spotter
+
 //End shiptest suits
 
 /obj/machinery/suit_storage_unit/open
@@ -187,14 +204,30 @@
 		helmet = new helmet_type(src)
 	if(mask_type)
 		mask = new mask_type(src)
+	if(mod_type)
+		mod = new mod_type(src)
 	if(storage_type)
 		storage = new storage_type(src)
 	update_appearance()
+
+/obj/machinery/suit_storage_unit/examine(mob/user)
+	. = ..()
+	. += span_notice("Number of UV cycles reduced by <b>[lasers_bonus]<b>.")
+	if(locked)
+		. += span_notice("The locking bolts on \the [src] are engaged, preventing it from being pried open.")
+
+/obj/machinery/suit_storage_unit/RefreshParts()
+	lasers_bonus = 0
+	for(var/obj/item/stock_parts/micro_laser/lasers in component_parts)
+		lasers_bonus += ((lasers.rating) * 0.25)
+
+	uv_cycles = BASE_UV_CYCLES - lasers_bonus
 
 /obj/machinery/suit_storage_unit/Destroy()
 	QDEL_NULL(suit)
 	QDEL_NULL(helmet)
 	QDEL_NULL(mask)
+	QDEL_NULL(mod)
 	QDEL_NULL(storage)
 	return ..()
 
@@ -205,19 +238,19 @@
 		. += "[base_icon_state]_panel"
 	if(state_open)
 		. += "[base_icon_state]_open"
-		if(suit)
+		if(suit || mod)
 			. += "[base_icon_state]_suit"
 		if(helmet)
 			. += "[base_icon_state]_helm"
 		if(storage)
 			. += "[base_icon_state]_storage"
-		if(uv && uv_super)
-			. += "[base_icon_state]_super"
 	if(!(machine_stat & BROKEN || machine_stat & NOPOWER))
 		if(state_open)
 			. += "[base_icon_state]_lights_open"
 		else
 			if(uv)
+				if(uv_super)
+					. += "[base_icon_state]_super"
 				. += "[base_icon_state]_lights_red"
 			else
 				. += "[base_icon_state]_lights_closed"
@@ -227,6 +260,8 @@
 				. += "[base_icon_state]_uvstrong"
 			else
 				. += "[base_icon_state]_uv"
+		else if(locked)
+			. += "[base_icon_state]_locked"
 		else
 			. += "[base_icon_state]_ready"
 
@@ -243,6 +278,7 @@
 	helmet = null
 	suit = null
 	mask = null
+	mod = null
 	storage = null
 	occupant = null
 
@@ -250,7 +286,15 @@
 	if(!(flags_1 & NODECONSTRUCT_1))
 		open_machine()
 		dump_contents()
-		new /obj/item/stack/sheet/metal (loc, 2)
+		on_deconstruction()
+		if(circuit)
+			circuit.forceMove(loc)
+			circuit = null
+		if(length(component_parts))
+			spawn_frame(disassembled)
+			for(var/obj/item/I in component_parts)
+				I.forceMove(loc)
+			component_parts.Cut()
 	qdel(src)
 
 /obj/machinery/suit_storage_unit/interact(mob/living/user)
@@ -261,6 +305,7 @@
 			"suit" = create_silhouette_of(/obj/item/clothing/suit/space/eva),
 			"helmet" = create_silhouette_of(/obj/item/clothing/head/helmet/space/eva),
 			"mask" = create_silhouette_of(/obj/item/clothing/mask/breath),
+			"mod" = create_silhouette_of(/obj/item/mod/control),
 			"storage" = create_silhouette_of(/obj/item/tank/internals/oxygen),
 		)
 
@@ -312,17 +357,20 @@
 				close_machine()
 		if ("disinfect")
 			if (occupant && safeties)
+				say("Alert: safeties triggered, occupant detected!")
 				return
 			else if (!helmet && !mask && !suit && !storage && !occupant)
+				to_chat(user, span_notice("There's nothing inside [src] to disinfect!"))
 				return
 			else
 				if (occupant)
 					var/mob/living/mob_occupant = occupant
-					to_chat(mob_occupant, "<span class='userdanger'>[src]'s confines grow warm, then hot, then scorching. You're being burned [!mob_occupant.stat ? "alive" : "away"]!</span>")
+					to_chat(mob_occupant, span_userdanger("[src]'s confines grow warm, then hot, then scorching. You're being burned [!mob_occupant.stat ? "alive" : "away"]!"))
 				cook()
 		if ("lock", "unlock")
 			if (!state_open)
 				locked = !locked
+				update_icon()
 		else
 			var/obj/item/item_to_dispense = vars[choice]
 			if (item_to_dispense)
@@ -364,27 +412,27 @@
 			return
 	var/mob/living/target = A
 	if(!state_open)
-		to_chat(user, "<span class='warning'>The unit's doors are shut!</span>")
+		to_chat(user, span_warning("The unit's doors are shut!"))
 		return
 	if(!is_operational)
-		to_chat(user, "<span class='warning'>The unit is not operational!</span>")
+		to_chat(user, span_warning("The unit is not operational!"))
 		return
-	if(occupant || helmet || suit || storage)
-		to_chat(user, "<span class='warning'>It's too cluttered inside to fit in!</span>")
+	if(occupant || helmet || suit || mod || storage)
+		to_chat(user, span_warning("It's too cluttered inside to fit in!"))
 		return
 
 	if(target == user)
-		user.visible_message("<span class='warning'>[user] starts squeezing into [src]!</span>", "<span class='notice'>You start working your way into [src]...</span>")
+		user.visible_message(span_warning("[user] starts squeezing into [src]!"), span_notice("You start working your way into [src]..."))
 	else
-		target.visible_message("<span class='warning'>[user] starts shoving [target] into [src]!</span>", "<span class='userdanger'>[user] starts shoving you into [src]!</span>")
+		target.visible_message(span_warning("[user] starts shoving [target] into [src]!"), span_userdanger("[user] starts shoving you into [src]!"))
 
-	if(do_mob(user, target, 30))
-		if(occupant || helmet || suit || storage)
+	if(do_after(user, 30, target))
+		if(occupant || helmet || suit || mod || storage)
 			return
 		if(target == user)
-			user.visible_message("<span class='warning'>[user] slips into [src] and closes the door behind [user.p_them()]!</span>", "<span class=notice'>You slip into [src]'s cramped space and shut its door.</span>")
+			user.visible_message(span_warning("[user] slips into [src] and closes the door behind [user.p_them()]!"), span_notice("You slip into [src]'s cramped space and shut its door."))
 		else
-			target.visible_message("<span class='warning'>[user] pushes [target] into [src] and shuts its door!</span>", "<span class='userdanger'>[user] shoves you into [src] and shuts the door!</span>")
+			target.visible_message(span_warning("[user] pushes [target] into [src] and shuts its door!"), span_userdanger("[user] shoves you into [src] and shuts the door!"))
 		close_machine(target)
 		add_fingerprint(user)
 
@@ -398,24 +446,25 @@
 */
 /obj/machinery/suit_storage_unit/proc/cook()
 	var/mob/living/mob_occupant = occupant
-	if(uv_cycles)
+	if(uv_cycles > 0)
 		uv_cycles--
 		uv = TRUE
 		locked = TRUE
 		update_appearance()
+		use_power(ACTIVE_DRAW_HIGH)
 		if(occupant)
 			if(uv_super)
 				mob_occupant.adjustFireLoss(rand(20, 36))
 			else
 				mob_occupant.adjustFireLoss(rand(10, 16))
-			mob_occupant.emote("scream")
+			mob_occupant.force_scream()
 		addtimer(CALLBACK(src, PROC_REF(cook)), 50)
 	else
-		uv_cycles = initial(uv_cycles)
+		uv_cycles = (BASE_UV_CYCLES - lasers_bonus)
 		uv = FALSE
 		locked = FALSE
 		if(uv_super)
-			visible_message("<span class='warning'>[src]'s door creaks open with a loud whining noise. A cloud of foul black smoke escapes from its chamber.</span>")
+			visible_message(span_warning("[src]'s door creaks open with a loud whining noise. A cloud of foul black smoke escapes from its chamber."))
 			playsound(src, 'sound/machines/creaking.ogg', 50, TRUE)
 			helmet = null
 			qdel(helmet)
@@ -423,16 +472,24 @@
 			qdel(suit) // Delete everything but the occupant.
 			mask = null
 			qdel(mask)
+			mod = null
+			qdel(mod)
 			storage = null
 			qdel(storage)
 			// The wires get damaged too.
 			wires.cut_all()
 		else
 			if(!occupant)
-				visible_message("<span class='notice'>[src]'s door slides open. The glowing yellow lights dim to a gentle green.</span>")
+				visible_message(span_notice("[src]'s door slides open. The glowing yellow lights dim to a gentle green."))
 			else
-				visible_message("<span class='warning'>[src]'s door slides open, barraging you with the nauseating smell of charred flesh.</span>")
+				visible_message(span_warning("[src]'s door slides open, barraging you with the nauseating smell of charred flesh."))
 				mob_occupant.radiation = 0
+				if(iscarbon(mob_occupant))
+					var/mob/living/carbon/bacon = mob_occupant
+					for(var/obj/item/bodypart/grilling as anything in bacon.get_bleeding_parts(TRUE))
+						if(!grilling.can_bandage())
+							continue
+						grilling.apply_bandage(0.005, 600, "cauterization")
 			playsound(src, 'sound/machines/airlocks/standard/close.ogg', 25, TRUE)
 			var/list/things_to_clear = list() //Done this way since using GetAllContents on the SSU itself would include circuitry and such.
 			if(suit)
@@ -444,6 +501,9 @@
 			if(mask)
 				things_to_clear += mask
 				things_to_clear += mask.GetAllContents()
+			if(mod)
+				things_to_clear += mod
+				things_to_clear += mod.GetAllContents()
 			if(storage)
 				things_to_clear += storage
 				things_to_clear += storage.GetAllContents()
@@ -469,7 +529,7 @@
 	if(locked)
 		if(message_cooldown <= world.time)
 			message_cooldown = world.time + 50
-			to_chat(user, "<span class='warning'>[src]'s door won't budge!</span>")
+			to_chat(user, span_warning("[src]'s door won't budge!"))
 		return
 	open_machine()
 	dump_contents()
@@ -481,21 +541,21 @@
 		return
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
-	user.visible_message("<span class='notice'>You see [user] kicking against the doors of [src]!</span>", \
-		"<span class='notice'>You start kicking against the doors... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
-		"<span class='hear'>You hear a thump from [src].</span>")
+	user.visible_message(span_notice("You see [user] kicking against the doors of [src]!"), \
+		span_notice("You start kicking against the doors... (this will take about [DisplayTimeText(breakout_time)].)"), \
+		span_hear("You hear a thump from [src]."))
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
-		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
-			"<span class='notice'>You successfully break out of [src]!</span>")
+		user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
+			span_notice("You successfully break out of [src]!"))
 		open_machine()
 		dump_contents()
 
 	add_fingerprint(user)
 	if(locked)
-		visible_message("<span class='notice'>You see [user] kicking against the doors of [src]!</span>", \
-			"<span class='notice'>You start kicking against the doors...</span>")
+		visible_message(span_notice("You see [user] kicking against the doors of [src]!"), \
+			span_notice("You start kicking against the doors..."))
 		addtimer(CALLBACK(src, PROC_REF(resist_open), user), 300)
 	else
 		open_machine()
@@ -503,42 +563,49 @@
 
 /obj/machinery/suit_storage_unit/proc/resist_open(mob/user)
 	if(!state_open && occupant && (user in src) && user.stat == 0) // Check they're still here.
-		visible_message("<span class='notice'>You see [user] burst out of [src]!</span>", \
-			"<span class='notice'>You escape the cramped confines of [src]!</span>")
+		visible_message(span_notice("You see [user] burst out of [src]!"), \
+			span_notice("You escape the cramped confines of [src]!"))
 		open_machine()
 
 /obj/machinery/suit_storage_unit/attackby(obj/item/I, mob/user, params)
 	if(state_open && is_operational)
 		if(istype(I, /obj/item/clothing/suit))
 			if(suit)
-				to_chat(user, "<span class='warning'>The unit already contains a suit!.</span>")
+				to_chat(user, span_warning("The unit already contains a suit!."))
 				return
 			if(!user.transferItemToLoc(I, src))
 				return
 			suit = I
 		else if(istype(I, /obj/item/clothing/head))
 			if(helmet)
-				to_chat(user, "<span class='warning'>The unit already contains a helmet!</span>")
+				to_chat(user, span_warning("The unit already contains a helmet!"))
 				return
 			if(!user.transferItemToLoc(I, src))
 				return
 			helmet = I
 		else if(istype(I, /obj/item/clothing/mask))
 			if(mask)
-				to_chat(user, "<span class='warning'>The unit already contains a mask!</span>")
+				to_chat(user, span_warning("The unit already contains a mask!"))
 				return
 			if(!user.transferItemToLoc(I, src))
 				return
 			mask = I
+		else if(istype(I, /obj/item/mod/control))
+			if(mod)
+				to_chat(user, span_warning("The unit already contains a MOD!"))
+				return
+			if(!user.transferItemToLoc(I, src))
+				return
+			mod = I
 		else
 			if(storage)
-				to_chat(user, "<span class='warning'>The auxiliary storage compartment is full!</span>")
+				to_chat(user, span_warning("The auxiliary storage compartment is full!"))
 				return
 			if(!user.transferItemToLoc(I, src))
 				return
 			storage = I
 
-		visible_message("<span class='notice'>[user] inserts [I] into [src]</span>", "<span class='notice'>You load [I] into [src].</span>")
+		visible_message(span_notice("[user] inserts [I] into [src]"), span_notice("You load [I] into [src]."))
 		update_appearance()
 		return
 
@@ -561,7 +628,7 @@
 */
 /obj/machinery/suit_storage_unit/default_deconstruction_screwdriver(mob/user, icon_state_open, icon_state_closed, obj/item/I)
 	if(!(flags_1 & NODECONSTRUCT_1) && I.tool_behaviour == TOOL_SCREWDRIVER && uv)
-		to_chat(user, "<span class='warning'>It might not be wise to fiddle with [src] while it's running...</span>")
+		to_chat(user, span_warning("It might not be wise to fiddle with [src] while it's running..."))
 		return TRUE
 	return ..()
 
@@ -570,8 +637,12 @@
 	. = !(state_open || panel_open || is_operational || locked || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message("<span class='notice'>[usr] pries open \the [src].</span>", "<span class='notice'>You pry open \the [src].</span>")
+		visible_message(span_notice("[usr] pries open \the [src]."), span_notice("You pry open \the [src]."))
 		open_machine()
+	// todo, make it not deconstruct while locked
+	if(!locked)
+		if(default_deconstruction_crowbar(I))
+			return TRUE
 
 // Mapping helper unit takes whatever lies on top of it
 /obj/machinery/suit_storage_unit/inherit/Initialize(mapload)
@@ -592,7 +663,13 @@
 		else if(istype(AM, /obj/item/clothing/mask) && !mask)
 			AM.forceMove(src)
 			mask = AM
-		else if(istype(AM, /obj/item) && !storage)
+		else if(istype(AM, /obj/item/mod/control) && !storage)
+			AM.forceMove(src)
+			mod = AM
+		else if(istype(AM, /obj/item) && !AM.anchored && !storage)
 			AM.forceMove(src)
 			storage = AM
 	update_appearance()
+
+
+#undef BASE_UV_CYCLES

@@ -40,7 +40,7 @@
 "fD" = (
 /obj/structure/bed,
 /obj/effect/decal/cleanable/blood/bubblegum,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "fQ" = (
@@ -65,12 +65,15 @@
 /turf/open/floor/carpet,
 /area/ruin/powered)
 "he" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /turf/closed/mineral/random/snow,
 /area/overmap_encounter/planetoid/cave/explored)
 "hD" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
-/turf/open/floor/engine/cult,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
 /area/ruin/powered)
 "hI" = (
 /obj/item/reagent_containers/food/drinks/beer,
@@ -98,9 +101,6 @@
 "la" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
 /obj/effect/mob_spawn/human/corpse/assistant,
-/mob/living/simple_animal/hostile/skeleton/eskimo{
-	name = "Village Hunter"
-	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "lg" = (
@@ -128,12 +128,17 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "mi" = (
 /obj/effect/decal/remains/human,
-/mob/living/simple_animal/hostile/construct/juggernaut/hostile{
-	health = 450;
-	maxHealth = 450;
-	name = "Right Hand of the Elder"
+/obj/item/flashlight/lamp/green{
+	pixel_y = 12;
+	pixel_x = 8
 	},
-/turf/open/floor/engine/cult,
+/obj/item/cigbutt/cigarbutt{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
 /area/ruin/powered)
 "mI" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -170,10 +175,8 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "pP" = (
-/obj/structure/chair/sofa/left{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/sofa/brown/right/directional/north,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "pV" = (
@@ -239,9 +242,9 @@
 /obj/item/reagent_containers/food/snacks/fishmeat/carp,
 /obj/item/reagent_containers/food/snacks/fishmeat/carp,
 /obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
+/obj/item/reagent_containers/condiment/pack/ketchup,
+/obj/item/reagent_containers/condiment/pack/ketchup,
+/obj/item/reagent_containers/condiment/pack/ketchup,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
@@ -303,9 +306,7 @@
 /turf/open/floor/carpet,
 /area/ruin/powered)
 "yb" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/left/directional/north,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "yS" = (
@@ -323,7 +324,7 @@
 "AM" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
 /obj/item/pickaxe,
-/turf/open/floor/engine/cult,
+/turf/open/floor/wood,
 /area/ruin/powered)
 "AN" = (
 /obj/structure/closet/cabinet,
@@ -331,7 +332,7 @@
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/reagent_containers/glass/bottle/venom,
 /obj/item/reagent_containers/glass/bottle/curare,
-/obj/item/kitchen/knife/combat/survival,
+/obj/item/melee/knife/survival,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
@@ -343,16 +344,15 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "Cd" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/carpet,
 /area/ruin/powered)
 "Cl" = (
-/obj/structure/sacrificealtar,
 /obj/effect/decal/cleanable/blood/old,
-/obj/item/kitchen/knife/bloodletter,
-/turf/open/floor/engine/cult,
+/obj/structure/chair/comfy/orange/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
 /area/ruin/powered)
 "Dm" = (
 /obj/structure/flora/grass/brown,
@@ -382,13 +382,12 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "EF" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
-/obj/effect/decal/remains/human,
-/mob/living/simple_animal/hostile/construct/juggernaut/hostile{
-	health = 450;
-	maxHealth = 450;
-	name = "Left Hand of the Elder"
-	},
-/turf/open/floor/engine/cult,
+/obj/structure/safe,
+/obj/item/storage/box/ammo/a12g_slug,
+/obj/item/melee/knife/combat,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
 /area/ruin/powered)
 "FR" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -438,7 +437,6 @@
 /obj/item/clothing/under/rank/cargo/miner,
 /obj/item/clothing/suit/hooded/wintercoat/miner,
 /obj/item/clothing/shoes/winterboots,
-/obj/item/card/id/mining,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -461,7 +459,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "LZ" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Nq" = (
@@ -475,28 +473,18 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "Os" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/carpet,
 /area/ruin/powered)
 "Pp" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/holofloor/wood,
 /area/ruin/powered)
 "PQ" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/mob/living/simple_animal/hostile/illusion{
-	deathmessage = "disperses into the air in a cloud of red mist, you feel slightly more at ease.";
-	desc = "You can't quite make out what you're seeing.";
-	faction = list("cult");
-	health = 500;
-	maxHealth = 500;
-	melee_damage_lower = 10;
-	melee_damage_upper = 30;
-	name = "Village Elder"
-	},
-/turf/open/floor/engine/cult,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
 /area/ruin/powered)
 "Qt" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -566,7 +554,7 @@
 "WH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed,
-/obj/item/bedsheet/cult,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Ze" = (

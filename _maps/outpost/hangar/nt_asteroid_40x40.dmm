@@ -35,9 +35,7 @@
 /turf/open/floor/plasteel/dark,
 /area/hangar)
 "cT" = (
-/obj/structure/chair/sofa/left{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/left/directional/north,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -62,7 +60,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
@@ -272,9 +270,7 @@
 	},
 /area/hangar)
 "ls" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/right/directional/north,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -1074,10 +1070,7 @@
 /area/hangar)
 "NE" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_x = 5;
-	pixel_y = 9
-	},
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
@@ -1337,7 +1330,7 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/item/stack/cable_coil/cut/yellow,
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
 	planetary_atmos = 1

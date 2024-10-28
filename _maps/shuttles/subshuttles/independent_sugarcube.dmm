@@ -56,8 +56,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "h" = (
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/trash/cheesie,
 /obj/item/trash/cheesie,
 /obj/item/trash/candy,
@@ -79,6 +79,7 @@
 	pixel_y = 23;
 	pixel_x = -13
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plating,
 /area/ship/storage)
 "j" = (
@@ -86,6 +87,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/spawner/west,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plating,
 /area/ship/storage)
 "k" = (
@@ -95,6 +97,7 @@
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
 /obj/machinery/light/directional/north,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plating,
 /area/ship/storage)
 "l" = (
@@ -107,6 +110,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plating,
 /area/ship/storage)
 "n" = (
@@ -147,6 +151,7 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plating,
 /area/ship/storage)
 "s" = (
@@ -223,13 +228,14 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plating,
 /area/ship/storage)
 "A" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard,
 /obj/item/shard,
-/obj/item/kitchen/knife/shiv,
+/obj/item/melee/knife/shiv,
 /turf/open/floor/plating,
 /area/ship/storage)
 "B" = (
@@ -253,8 +259,8 @@
 /obj/item/circuitboard/machine/autolathe,
 /obj/item/pickaxe/improvised,
 /obj/item/pickaxe/improvised,
-/obj/effect/spawner/lootdrop/glowstick,
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -274,6 +280,7 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plating,
 /area/ship/storage)
 "G" = (
@@ -283,6 +290,7 @@
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
 /obj/machinery/light/directional/south,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plating,
 /area/ship/storage)
 "H" = (
@@ -294,6 +302,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plating,
 /area/ship/storage)
 "J" = (
@@ -308,6 +317,10 @@
 "L" = (
 /turf/closed/wall,
 /area/ship/engineering)
+"T" = (
+/obj/effect/landmark/ert_shuttle_brief_spawn,
+/turf/open/floor/plating,
+/area/ship/storage)
 "Z" = (
 /turf/closed/wall/rust,
 /area/ship/engineering)
@@ -380,7 +393,7 @@ b
 d
 l
 l
-y
+T
 l
 J
 "}

@@ -20,12 +20,18 @@
 		"description": {
 			"title": "Class Description",
 			"type": "string",
-			"description": "A description of the ship class, currently only shown to admins on the shuttle manipulator, but will likely be shown to players before ship purchase in the future."
+			"description": "A description of the ship class, currently only shown to admins on the shuttle manipulator, but will likely be shown to players before ship purchase in the future.",
+			"minLength": 250
 		},
 		"tags": {
 			"title": "Ship Tags",
 			"type": "array",
 			"description": "A list of tags describing the ship's niche, converted into searchable strings."
+		},
+		"faction": {
+			"title": "Ship Faction Datum",
+			"type": [ "null", "string" ],
+			"description": "Default faction datum"
 		},
 		"prefix": {
 			"title": "Ship Default Prefix",
@@ -65,12 +71,13 @@
 					"ACLF",
 					"GEC",
 					"DONK",
-					"COLONIAL MINUTEMEN",
+					"CLIP MINUTEMEN",
 					"SAINT-ROUMAIN",
 					"INSTALLATION",
 					"SOLGOV",
 					"CMM-GOLD",
-					"CMM-BARD"
+					"CMM-BARD",
+					"PGF"
 				]
 			}
 		},
@@ -127,7 +134,7 @@
 			"description": "The amount of ships that can be spawned in by players in a round at once.",
 			"minimum": 0,
 			"maximum": 100,
-			"default": 2
+			"default": 1
 		},
 		"starting_funds":{
 			"title": "Ship Starting Funds",

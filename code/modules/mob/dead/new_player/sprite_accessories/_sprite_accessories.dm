@@ -47,23 +47,23 @@
 	return L
 
 /datum/sprite_accessory
-	var/icon					//the icon file the accessory is located in
-	var/icon_state				//the icon_state of the accessory
-	var/name					//the preview name of the accessory
-	var/gender = NEUTER			//Determines if the accessory will be skipped or included in random hair generations
-	var/gender_specific			//Something that can be worn by either gender, but looks different on each
-	var/use_static				//determines if the accessory will be skipped by color preferences
-	var/color_src = MUTCOLORS	//Currently only used by mutantparts so don't worry about hair and stuff. This is the source that this accessory will get its color from. Default is MUTCOLOR, but can also be HAIR, FACEHAIR, EYECOLOR and 0 if none.
-	var/secondary_color			//Decides if this sprite has a secondary color in use.
-	var/locked = FALSE			//Is this part locked from roundstart selection? Used for parts that apply effects
-	var/center = FALSE			//Should we center the sprite?
-	var/limbs_id				//The limbs id supplied for full-body replacing features.
-	var/image_alpha = 255		//The alpha for the accessory to use.
+	var/icon							//the icon file the accessory is located in
+	var/icon_state						//the icon_state of the accessory
+	var/name							//the preview name of the accessory
+	var/gender = NEUTER					//Determines if the accessory will be skipped or included in random hair generations
+	var/gender_specific					//Something that can be worn by either gender, but looks different on each
+	var/use_static						//determines if the accessory will be skipped by color preferences
+	var/color_src = MUTCOLORS			//Currently only used by mutantparts so don't worry about hair and stuff. This is the source that this accessory will get its color from. Default is MUTCOLOR, but can also be HAIR, FACEHAIR, EYECOLOR and 0 if none.
+	var/secondary_color					//Decides if this sprite has a secondary color in use.
+	var/locked = FALSE					//Is this part locked from roundstart selection? Used for parts that apply effects
+	var/center = FALSE					//Should we center the sprite?
+	var/limbs_id						//The limbs id supplied for full-body replacing features.
+	var/image_alpha = 255				//The alpha for the accessory to use.
 	var/dimension_x = 32
 	var/dimension_y = 32
-	var/body_zone = BODY_ZONE_CHEST	//!The body zone this accessory affects
-	var/synthetic_icon_state	//!The icon_state to use when the bodypart it's attached to is synthetic
-	var/synthetic_color_src		//!The color src to use instead of the normal src when synthetic, leave blank to use the normal src
+	var/body_zone = BODY_ZONE_CHEST		//The body zone this accessory affects
+	var/synthetic_icon_state			//The icon_state to use when the bodypart it's attached to is synthetic
+	var/synthetic_color_src				//The color src to use instead of the normal src when synthetic, leave blank to use the normal src
 
 //Squids AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA whyyyy
 /datum/sprite_accessory/squid_face

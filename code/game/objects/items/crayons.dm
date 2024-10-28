@@ -43,16 +43,15 @@
 	var/drawtype
 	var/text_buffer = ""
 
-	var/static/list/graffiti = list("amyjon","face","matt","revolution","engie","guy","end","dwarf","uboa","body","cyka","star","poseur tag","prolizard","antilizard")
+	var/static/list/graffiti = list("face","guy","end","body")
+	var/static/list/code = list("getout","empty","unsafe","camp","safepath","jackpot","dismantle")
 	var/static/list/symbols = list("danger","firedanger","electricdanger","biohazard","radiation","safe","evac","space","med","trade","shop","food","peace","like","skull","nay","heart","credit")
-	var/static/list/drawings = list("smallbrush","brush","largebrush","splatter","snake","stickman","carp","ghost","clown","taser","disk","fireaxe","toolbox","corgi","cat","toilet","blueprint","beepsky","scroll","bottle","shotgun")
-	var/static/list/oriented = list("arrow","line","thinline","shortline","body","chevron","footprint","clawprint","pawprint") // These turn to face the same way as the drawer
-	var/static/list/runes = list("rune1","rune2","rune3","rune4","rune5","rune6")
+	var/static/list/drawings = list("smallbrush","brush","splatter","snake","carp","ghost","taser","disk","fireaxe","toolbox","corgi","cat","toilet","blueprint","beepsky","scroll","bottle","shotgun")
+	var/static/list/oriented = list("arrow","line","thinline","shortline","body","chevron","footprint","clawprint","pawprint","dogo","nogo") // These turn to face the same way as the drawer
 	var/static/list/randoms = list(RANDOM_ANY, RANDOM_RUNE, RANDOM_ORIENTED,
 		RANDOM_NUMBER, RANDOM_GRAFFITI, RANDOM_LETTER, RANDOM_SYMBOL, RANDOM_PUNCTUATION, RANDOM_DRAWING)
-	var/static/list/graffiti_large_h = list("yiffhell", "secborg", "paint")
 
-	var/static/list/all_drawables = graffiti + symbols + drawings + oriented + runes + graffiti_large_h
+	var/static/list/all_drawables = graffiti + code + symbols + drawings + oriented
 
 	var/paint_mode = PAINT_NORMAL
 
@@ -176,15 +175,15 @@
 
 	. = list()
 
-	var/list/g_items = list()
+	var/list/g_items = list() //i hate tgcode
 	. += list(list("name" = "Graffiti", "items" = g_items))
 	for(var/g in graffiti)
 		g_items += list(list("item" = g))
 
-	var/list/glh_items = list()
-	. += list(list("name" = "Graffiti Large Horizontal", "items" = glh_items))
-	for(var/glh in graffiti_large_h)
-		glh_items += list(list("item" = glh))
+	var/list/c_items = list()
+	. += list(list("name" = "Code", "items" = c_items))
+	for(var/c in code)
+		c_items += list(list("item" = c))
 
 	var/list/S_items = list()
 	. += list(list("name" = "Symbols", "items" = S_items))
@@ -200,11 +199,6 @@
 	. += list(list(name = "Oriented", "items" = O_items))
 	for(var/O in oriented)
 		O_items += list(list("item" = O))
-
-	var/list/R_items = list()
-	. += list(list(name = "Runes", "items" = R_items))
-	for(var/R in runes)
-		R_items += list(list("item" = R))
 
 	var/list/rand_items = list()
 	. += list(list(name = "Random", "items" = rand_items))
@@ -241,12 +235,9 @@
 				. = TRUE
 		if("select_stencil")
 			var/stencil = params["item"]
-			if(stencil in all_drawables + randoms)
+			if(stencil in (all_drawables + randoms))
 				drawtype = stencil
 				. = TRUE
-				text_buffer = ""
-			if(stencil in graffiti_large_h)
-				paint_mode = PAINT_LARGE_HORIZONTAL
 				text_buffer = ""
 			else
 				paint_mode = PAINT_NORMAL
@@ -281,8 +272,6 @@
 	var/istagger = HAS_TRAIT(user, TRAIT_TAGGER)
 
 	var/cost = 1
-	if(paint_mode == PAINT_LARGE_HORIZONTAL)
-		cost = 5
 	if(istype(target, /obj/item/canvas))
 		cost = 0
 	if(ishuman(user))
@@ -311,8 +300,6 @@
 			drawing = pick(drawings)
 		if(RANDOM_GRAFFITI)
 			drawing = pick(graffiti)
-		if(RANDOM_RUNE)
-			drawing = pick(runes)
 		if(RANDOM_ORIENTED)
 			drawing = pick(oriented)
 		if(RANDOM_NUMBER)
@@ -333,7 +320,7 @@
 		temp = "symbol"
 	else if(drawing in drawings)
 		temp = "drawing"
-	else if(drawing in graffiti|oriented)
+	else if(drawing in (graffiti|oriented))
 		temp = "graffiti"
 
 	var/graf_rot

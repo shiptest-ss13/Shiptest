@@ -529,21 +529,24 @@
 	G.set_moles(GAS_NITRYL,1)
 	G.set_temperature(15000)
 	G.set_volume(1000)
+
 	var/result = G.react()
 	if(result != REACTING)
 		return list("success" = FALSE, "message" = "Reaction didn't go at all!")
-	if(abs(G.analyzer_results["fusion"] - 0.691869) > 0.01)
-		var/instability = G.analyzer_results["fusion"]
-		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 0.691869, is instead [instability]")
-	if(abs(G.get_moles(GAS_PLASMA) - 552.789) > 0.5)
-		var/plas = G.get_moles(GAS_PLASMA)
-		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 458.531, is instead [plas]")
-	if(abs(G.get_moles(GAS_CO2) - 411.096) > 0.5)
-		var/co2 = G.get_moles(GAS_CO2)
-		return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 505.078, is instead [co2]")
-	if(abs(G.return_temperature() - 78222) > 200) // I'm not calculating this at all just putting in the values I get when I do it now
-		var/temp = G.return_temperature()
-		return list("success" = FALSE, "message" = "Fusion is not calculating temperature correctly, should be around 112232, is instead [temp]")
+
+	var/instability	= G.analyzer_results["fusion"]
+	var/plas = G.get_moles(GAS_PLASMA)
+	var/co2 = G.get_moles(GAS_CO2)
+	var/temp = G.return_temperature()
+
+	if(abs(instability - 2.66) > 0.01)
+		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 2.66, is instead [instability]")
+	if(abs(plas - 458.241) > 0.5)
+		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 458.241, is instead [plas]")
+	if(abs(co2 - 505.369) > 0.5)
+		return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 505.369, is instead [co2]")
+	if(abs(temp - 112291) > 200) // I'm not calculating this at all just putting in the values I get when I do it now
+		return list("success" = FALSE, "message" = "Fusion is not calculating temperature correctly, should be around 112291, is instead [temp]")
 	return ..()
 
 /datum/gas_reaction/nitrousformation //formationn of n2o, esothermic, requires bz as catalyst
@@ -821,4 +824,33 @@
 		var/new_heat_capacity = air.heat_capacity()
 		if(new_heat_capacity > MINIMUM_HEAT_CAPACITY)
 			air.set_temperature(clamp((air.return_temperature()*old_heat_capacity + energy_released)/new_heat_capacity,TCMB,INFINITY))
+		return REACTING
+
+/datum/gas_reaction/hydrogen_chloride_formation
+	priority = 11
+	name = "Hydrogen Chloride formation"
+	id = "hydrogenchlorideformation"
+
+/datum/gas_reaction/hydrogen_chloride_formation/init_reqs()
+	min_requirements = list(
+		GAS_CHLORINE = 5,
+		GAS_HYDROGEN = 5,
+		"TEMP" = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
+	)
+
+/datum/gas_reaction/hydrogen_chloride_formation/react(datum/gas_mixture/air)
+	var/temperature = air.return_temperature()
+	var/old_heat_capacity = air.heat_capacity()
+	var/reaction_efficency = min((temperature/(FIRE_MINIMUM_TEMPERATURE_TO_EXIST*10)),air.get_moles(GAS_CHLORINE),air.get_moles(GAS_HYDROGEN))
+	var/energy_released = reaction_efficency*185000
+	if ((air.get_moles(GAS_CHLORINE) - reaction_efficency < 0)|| (air.get_moles(GAS_HYDROGEN) - (reaction_efficency) < 0) || energy_released <= 0) //Shouldn't produce gas from nothing.
+		return NO_REACTION
+	air.adjust_moles(GAS_HYDROGEN_CHLORIDE, reaction_efficency)
+	air.adjust_moles(GAS_HYDROGEN, -reaction_efficency)
+	air.adjust_moles(GAS_CHLORINE, -reaction_efficency)
+
+	if(energy_released > 0)
+		var/new_heat_capacity = air.heat_capacity()
+		if(new_heat_capacity > MINIMUM_HEAT_CAPACITY)
+			air.set_temperature(max(((temperature*old_heat_capacity + energy_released)/new_heat_capacity),TCMB))
 		return REACTING

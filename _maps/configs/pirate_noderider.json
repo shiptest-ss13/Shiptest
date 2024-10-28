@@ -2,6 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Jupiter-class Stormrider",
 	"map_short_name": "Jupiter-class",
+	"faction": "/datum/faction/frontier",
 	"prefix": "ISV",
 	"namelists": [
 		"INSTALLATION",
@@ -15,22 +16,23 @@
 		"Riot",
 		"Combat"
 	],
+	"space_spawn": true,
 	"job_slots": {
 		"Command Node": {
-			"outfit": "/datum/outfit/job/captain/aipirate",
+			"outfit": "/datum/outfit/job/independent/captain/pirate/jupiter",
 			"officer": true,
 			"slots": 1
 		},
 		"Assault Node": {
-			"outfit": "/datum/outfit/job/security/aipirate",
+			"outfit": "/datum/outfit/job/independent/security/pirate/jupiter",
 			"slots": 2
 		},
 		"Engineering Node": {
-			"outfit": "/datum/outfit/job/engineer/aipirate",
+			"outfit": "/datum/outfit/job/independent/engineer/pirate/jupiter",
 			"slots": 1
 		},
 		"Fodder": {
-			"outfit": "/datum/outfit/job/assistant/aipirate",
+			"outfit": "/datum/outfit/job/independent/assistant/pirate/jupiter",
 			"slots": 2
 		}
 	},

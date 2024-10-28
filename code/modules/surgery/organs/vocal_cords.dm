@@ -22,38 +22,6 @@
 /obj/item/organ/vocal_cords/proc/handle_speech(message) //actually say the message
 	owner.say(message, spans = spans, sanitize = FALSE)
 
-/obj/item/organ/adamantine_resonator
-	name = "adamantine resonator"
-	desc = "Fragments of adamantine exist in all golems, stemming from their origins as purely magical constructs. These are used to \"hear\" messages from their leaders."
-	zone = BODY_ZONE_HEAD
-	slot = ORGAN_SLOT_ADAMANTINE_RESONATOR
-	icon_state = "adamantine_resonator"
-
-/obj/item/organ/vocal_cords/adamantine
-	name = "adamantine vocal cords"
-	desc = "When adamantine resonates, it causes all nearby pieces of adamantine to resonate as well. Adamantine golems use this to broadcast messages to nearby golems."
-	actions_types = list(/datum/action/item_action/organ_action/use/adamantine_vocal_cords)
-	icon_state = "adamantine_cords"
-
-/datum/action/item_action/organ_action/use/adamantine_vocal_cords/Trigger()
-	if(!IsAvailable())
-		return
-	var/message = input(owner, "Resonate a message to all nearby golems.", "Resonate")
-	if(QDELETED(src) || QDELETED(owner) || !message)
-		return
-	owner.say(".x[message]")
-
-/obj/item/organ/vocal_cords/adamantine/handle_speech(message)
-	var/msg = "<span class='resonate'><span class='name'>[owner.real_name]</span> <span class='message'>resonates, \"[message]\"</span></span>"
-	for(var/m in GLOB.player_list)
-		if(iscarbon(m))
-			var/mob/living/carbon/C = m
-			if(C.getorganslot(ORGAN_SLOT_ADAMANTINE_RESONATOR))
-				to_chat(C, msg)
-		if(isobserver(m))
-			var/link = FOLLOW_LINK(m, owner)
-			to_chat(m, "[link] [msg]")
-
 //Colossus drop, forces the listeners to obey certain commands
 /obj/item/organ/vocal_cords/colossus
 	name = "divine vocal cords"
@@ -67,13 +35,13 @@
 
 /datum/action/item_action/organ_action/colossus
 	name = "Voice of God"
-	var/obj/item/organ/vocal_cords/colossus/cords = null
-
-/datum/action/item_action/organ_action/colossus/New()
-	..()
-	cords = target
 
 /datum/action/item_action/organ_action/colossus/IsAvailable()
+	if(!istype(target, /obj/item/organ/vocal_cords/colossus))
+		return FALSE
+
+	var/obj/item/organ/vocal_cords/colossus/cords = target
+
 	if(world.time < cords.next_command)
 		return FALSE
 	if(!owner)
@@ -90,6 +58,7 @@
 /datum/action/item_action/organ_action/colossus/Trigger()
 	. = ..()
 	if(!IsAvailable())
+		var/obj/item/organ/vocal_cords/colossus/cords = target
 		if(world.time < cords.next_command)
 			to_chat(owner, "<span class='notice'>You must wait [DisplayTimeText(cords.next_command - world.time)] before Speaking again.</span>")
 		return
@@ -131,10 +100,7 @@
 
 	var/log_message = uppertext(message)
 	if(!span_list || !span_list.len)
-		if(iscultist(user))
-			span_list = list("narsiesmall")
-		else
-			span_list = list()
+		span_list = list()
 
 	user.say(message, spans = span_list, sanitize = FALSE)
 
@@ -167,10 +133,6 @@
 		if(user.mind.assigned_role == "Mime")
 			power_multiplier *= 0.5
 
-	//Cultists are closer to their gods and are more powerful, but they'll give themselves away
-	if(iscultist(user))
-		power_multiplier *= 2
-
 	//Try to check if the speaker specified a name or a job to focus on
 	var/list/specific_listeners = list()
 	var/found_string = null
@@ -180,15 +142,8 @@
 
 	for(var/V in listeners)
 		var/mob/living/L = V
-		var/datum/antagonist/devil/devilinfo = is_devil(L)
-		if(devilinfo && findtext(message, devilinfo.truename))
-			var/start = findtext(message, devilinfo.truename)
-			listeners = list(L) //Devil names are unique.
-			power_multiplier *= 5 //if you're a devil and god himself addressed you, you fucked up
-			//Cut out the name so it doesn't trigger commands
-			message = copytext(message, 1, start) + copytext(message, start + length(devilinfo.truename))
-			break
-		else if(findtext(message, L.real_name, 1, length(L.real_name) + 1))
+
+		if(findtext(message, L.real_name, 1, length(L.real_name) + 1))
 			specific_listeners += L //focus on those with the specified name
 			//Cut out the name so it doesn't trigger commands
 			found_string = L.real_name
@@ -318,7 +273,7 @@
 	else if((findtext(message, bleed_words)))
 		cooldown = COOLDOWN_DAMAGE
 		for(var/mob/living/carbon/human/H in listeners)
-			H.bleed_rate += (5 * power_multiplier)
+			H.cause_overall_bleeding(5*power_multiplier)
 
 	//FIRE
 	else if((findtext(message, burn_words)))
@@ -363,11 +318,7 @@
 		for(var/V in listeners)
 			var/mob/living/L = V
 			var/text = ""
-			if(is_devil(L))
-				var/datum/antagonist/devil/devilinfo = is_devil(L)
-				text = devilinfo.truename
-			else
-				text = L.real_name
+			text = L.real_name
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/atom/movable, say), text), 5 * i)
 			i++
 
@@ -408,7 +359,7 @@
 		for(var/iter in 1 to 5 * power_multiplier)
 			for(var/V in listeners)
 				var/mob/living/L = V
-				addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(_step), L, direction? direction : pick(GLOB.cardinals)), 10 * (iter - 1))
+				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), L, direction? direction : pick(GLOB.cardinals)), 10 * (iter - 1))
 
 	//WALK
 	else if((findtext(message, walk_words)))
@@ -430,7 +381,7 @@
 	else if((findtext(message, helpintent_words)))
 		cooldown = COOLDOWN_MEME
 		for(var/mob/living/carbon/human/H in listeners)
-			addtimer(CALLBACK(H, /mob/verb/a_intent_change, INTENT_HELP), i * 2)
+			addtimer(CALLBACK(H, TYPE_VERB_REF(/mob, a_intent_change), INTENT_HELP), i * 2)
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, click_random_mob)), i * 2)
 			i++
 
@@ -438,7 +389,7 @@
 	else if((findtext(message, disarmintent_words)))
 		cooldown = COOLDOWN_MEME
 		for(var/mob/living/carbon/human/H in listeners)
-			addtimer(CALLBACK(H, /mob/verb/a_intent_change, INTENT_DISARM), i * 2)
+			addtimer(CALLBACK(H, TYPE_VERB_REF(/mob, a_intent_change), INTENT_DISARM), i * 2)
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, click_random_mob)), i * 2)
 			i++
 
@@ -446,7 +397,7 @@
 	else if((findtext(message, grabintent_words)))
 		cooldown = COOLDOWN_MEME
 		for(var/mob/living/carbon/human/H in listeners)
-			addtimer(CALLBACK(H, /mob/verb/a_intent_change, INTENT_GRAB), i * 2)
+			addtimer(CALLBACK(H, TYPE_VERB_REF(/mob, a_intent_change), INTENT_GRAB), i * 2)
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, click_random_mob)), i * 2)
 			i++
 
@@ -454,7 +405,7 @@
 	else if((findtext(message, harmintent_words)))
 		cooldown = COOLDOWN_MEME
 		for(var/mob/living/carbon/human/H in listeners)
-			addtimer(CALLBACK(H, /mob/verb/a_intent_change, INTENT_HARM), i * 2)
+			addtimer(CALLBACK(H, TYPE_VERB_REF(/mob, a_intent_change), INTENT_HARM), i * 2)
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, click_random_mob)), i * 2)
 			i++
 
@@ -470,14 +421,6 @@
 		for(var/V in listeners)
 			var/mob/living/L = V
 			L.emote("flip")
-
-	//SPEAK
-	else if((findtext(message, speak_words)))
-		cooldown = COOLDOWN_MEME
-		for(var/V in listeners)
-			var/mob/living/L = V
-			addtimer(CALLBACK(L, TYPE_PROC_REF(/atom/movable, say), pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage")), 5 * i)
-			i++
 
 	//GET UP
 	else if((findtext(message, getup_words)))

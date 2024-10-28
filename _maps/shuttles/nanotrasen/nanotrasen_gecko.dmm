@@ -61,13 +61,10 @@
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 2;
-	dwidth = 12;
-	height = 17;
 	launch_status = 0;
 	name = "mining ship";
 	port_direction = 8;
-	preferred_direction = 4;
-	width = 28
+	preferred_direction = 4
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/port)
@@ -133,7 +130,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
 "bh" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -249,7 +246,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "cj" = (
@@ -266,9 +263,6 @@
 	},
 /area/ship/maintenance/starboard)
 "cv" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
 /obj/machinery/igniter/incinerator_atmos,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -325,7 +319,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "cP" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -363,7 +357,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/fore)
 "dp" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -389,6 +383,7 @@
 /obj/item/clothing/under/rank/cargo/miner,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/glasses/meson,
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
 "dC" = (
@@ -429,7 +424,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
 "dZ" = (
-/obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/turf_decal/ntspaceworks_big/one{
 	dir = 4
 	},
@@ -441,7 +435,7 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
 "ej" = (
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/borderfloor,
 /obj/structure/extinguisher_cabinet/directional/west,
@@ -565,7 +559,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "eQ" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -664,7 +658,7 @@
 /area/ship/engineering/atmospherics)
 "ga" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/bounty,
 /obj/structure/window/reinforced{
 	dir = 4
@@ -682,7 +676,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "gf" = (
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -702,7 +696,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
 "gh" = (
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -718,7 +712,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -782,7 +776,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -821,7 +815,7 @@
 /area/ship/crew)
 "hA" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
 "hL" = (
@@ -913,7 +907,7 @@
 /turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
 "iJ" = (
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
 "iK" = (
@@ -937,7 +931,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -950,9 +944,9 @@
 /area/ship/bridge)
 "jc" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -1067,9 +1061,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
 "ks" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/firecloset/full,
+/obj/structure/cable,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ku" = (
@@ -1097,6 +1091,9 @@
 "kL" = (
 /obj/structure/chair/stool,
 /obj/effect/landmark/start/station_engineer,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "kM" = (
@@ -1147,13 +1144,13 @@
 /area/ship/engineering/engine)
 "lb" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/bounty,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "lE" = (
 /obj/effect/turf_decal/box/corners,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "lM" = (
@@ -1179,7 +1176,7 @@
 /area/ship/hallway/central)
 "lT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1222,7 +1219,7 @@
 /area/ship/cargo/port)
 "mb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "mm" = (
@@ -1405,7 +1402,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -1421,10 +1418,10 @@
 /obj/item/reagent_containers/food/snacks/canned/beans,
 /obj/item/reagent_containers/food/snacks/canned/beans,
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "oR" = (
@@ -1467,9 +1464,8 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo/port)
 "ph" = (
-/obj/machinery/computer/communications{
-	dir = 8;
-	icon_state = "computer-left"
+/obj/structure/frame/computer{
+	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1583,7 +1579,7 @@
 /area/ship/storage)
 "qn" = (
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -1608,7 +1604,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "qu" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -1688,12 +1684,12 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "qY" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 6
@@ -1934,7 +1930,7 @@
 /obj/structure/railing,
 /obj/machinery/computer/atmos_control/incinerator{
 	dir = 4;
-	sensors = list("gecko_burn_sensor"="Combustion    Chamber")
+	sensors = list("gecko_burn_sensor"="Combustion Chamber")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
@@ -1959,7 +1955,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
@@ -2082,7 +2078,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/light/small/directional/south,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2117,7 +2113,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "vi" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "vl" = (
@@ -2162,7 +2158,7 @@
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "vG" = (
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
@@ -2271,7 +2267,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/communications)
 "wP" = (
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
@@ -2285,6 +2281,9 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "wY" = (
@@ -2295,7 +2294,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "xd" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating,
@@ -2337,7 +2336,7 @@
 /area/ship/cargo/port)
 "xG" = (
 /obj/item/radio/intercom/directional/north,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
@@ -2398,7 +2397,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -2454,7 +2453,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plasteel/stairs,
 /area/ship/maintenance/port)
 "yG" = (
@@ -2506,6 +2505,9 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
 	dir = 9
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "zn" = (
@@ -2522,7 +2524,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "zv" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/ntspaceworks_big/six{
 	dir = 4
@@ -2635,7 +2637,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "AD" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2682,7 +2684,7 @@
 "AN" = (
 /obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
 "AW" = (
@@ -2727,7 +2729,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "BM" = (
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
 	},
@@ -2750,7 +2752,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2759,7 +2761,7 @@
 "Cc" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -2838,16 +2840,13 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "CF" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "CI" = (
 /obj/machinery/computer/helm{
 	dir = 8;
-	icon_state = "computer-middle"
+	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -3081,7 +3080,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
@@ -3346,14 +3345,14 @@
 /area/ship/bridge)
 "HK" = (
 /obj/machinery/light/directional/north,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "HN" = (
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "HT" = (
@@ -3388,13 +3387,11 @@
 	},
 /obj/item/stock_parts/cell/gun,
 /obj/item/gun/energy/laser,
-/obj/item/clothing/under/rank/command/captain/nt,
-/obj/item/clothing/head/caphat/nt,
+/obj/item/clothing/under/nanotrasen/captain/skirt,
+/obj/item/clothing/under/nanotrasen/captain,
+/obj/item/clothing/suit/armor/nanotrasen/captain,
+/obj/item/clothing/head/nanotrasen/captain/peaked,
 /obj/item/clothing/shoes/laceup,
-/obj/item/clothing/suit/toggle/lieutenant{
-	desc = "Threadbare and uncharacteristically casual for Nanotrasen. Probably rebadged surplus from some colonial militia.";
-	name = "tattered captain's jacket"
-	},
 /obj/item/clothing/glasses/sunglasses,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -3440,7 +3437,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Is" = (
@@ -3546,7 +3543,7 @@
 "Jk" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
 "Jn" = (
@@ -3571,12 +3568,18 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"JL" = (
+/obj/structure/closet/firecloset/full,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "JV" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
+/obj/machinery/fax/nanotrasen,
 /obj/structure/sign/poster/retro/random{
 	pixel_y = 32
 	},
@@ -3736,7 +3739,7 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
 	dir = 9
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "LK" = (
@@ -3768,7 +3771,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 32
@@ -3872,7 +3875,7 @@
 /area/ship/hallway/aft)
 "Nz" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "NC" = (
@@ -3941,7 +3944,7 @@
 /obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3967,7 +3970,7 @@
 /area/ship/external)
 "OZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Pc" = (
@@ -4037,6 +4040,12 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
+"Pp" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "Pr" = (
 /obj/structure/sign/warning/fire,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -4071,7 +4080,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -4104,6 +4113,7 @@
 /obj/item/clothing/under/rank/cargo/miner,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/glasses/meson,
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/starboard)
 "Qc" = (
@@ -4150,7 +4160,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "Qz" = (
@@ -4233,7 +4243,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
@@ -4275,7 +4285,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "RK" = (
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/west,
@@ -4308,7 +4318,7 @@
 "Sa" = (
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -4330,7 +4340,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "Sl" = (
@@ -4345,9 +4355,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "Sv" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
 /obj/machinery/power/generator{
 	dir = 4
 	},
@@ -4375,7 +4382,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -4394,7 +4401,7 @@
 /area/ship/cargo/port)
 "SK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
@@ -4409,7 +4416,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "SQ" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "SV" = (
@@ -4475,7 +4482,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
@@ -4520,7 +4527,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
@@ -4564,7 +4571,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
 "UC" = (
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -4635,7 +4642,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -4697,7 +4704,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "Vz" = (
@@ -4838,7 +4845,7 @@
 /area/ship/cargo/port)
 "Wo" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Wq" = (
@@ -4891,7 +4898,6 @@
 /area/ship/hallway/fore)
 "WN" = (
 /obj/machinery/atmospherics/components/binary/circulator,
-/obj/structure/disposalpipe/segment,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "WR" = (
@@ -5100,7 +5106,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/warning/electricshock{
 	pixel_y = -32
@@ -5242,9 +5248,13 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "ZS" = (
-/obj/structure/disposalpipe/trunk,
-/obj/machinery/disposal/bin,
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/button/ignition/incinerator/atmos{
+	dir = 4;
+	pixel_x = -23;
+	pixel_y = -3
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ZX" = (
@@ -5255,7 +5265,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "ZY" = (
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/starboard)
@@ -5396,7 +5406,7 @@ Bi
 Tb
 st
 Tb
-SQ
+JL
 Ug
 hu
 hu
@@ -5482,7 +5492,7 @@ FZ
 on
 on
 Fq
-on
+Pp
 lW
 Ug
 hu

@@ -31,9 +31,3 @@
 	..()
 	if(prob(0.4))
 		neck = /obj/item/clothing/neck/tie/horrible
-
-/datum/outfit/job/scientist/minutemen
-	name = "Scientist (Minutemen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	backpack = /obj/item/storage/backpack/security/cmm

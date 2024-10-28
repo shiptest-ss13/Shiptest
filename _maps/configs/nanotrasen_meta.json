@@ -1,0 +1,53 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Meta-class Freighter",
+	"faction": "/datum/faction/nt",
+	"prefix": "NTSV",
+	"map_short_name": "Meta-class",
+	"description": "The Meta-class is a medium freight vessel designed for comfort and sustainability over long journeys of delivering cargo. Most, if not all of these ships are no longer under the direct management of the Company, leaving regulation and professionalism at the behest of individual captains. They can be found running independent contracts, delivering cargo, smuggling illicit goods, and generally trying to stay afloat ever since the collapse of Nanotrasen's operations in the frontier.",
+	"tags": [
+		"Generalist",
+		"Cargo"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NANOTRASEN",
+		"HISTORICAL"
+	],
+	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_meta.dmm",
+	"starting_funds": 5000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/nanotrasen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Quartermaster": {
+			"outfit": "/datum/outfit/job/nanotrasen/quartermaster",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/nanotrasen/doctor",
+			"slots": 1
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"slots": 1
+		},
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/nanotrasen/miner",
+			"slots": 1
+		},
+		"Cargo Technician": {
+			"outfit": "/datum/outfit/job/cargo_tech",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

@@ -36,7 +36,7 @@ GLOBAL_LIST_INIT(patrons, world.file2list("[global.config.directory]/patrons.txt
 		if(!C)
 			continue
 
-		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(create_credit), C), CREDIT_SPAWN_SPEED * i + (3 * CREDIT_SPAWN_SPEED), TIMER_CLIENT_TIME)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(create_credit), C), CREDIT_SPAWN_SPEED * i + (3 * CREDIT_SPAWN_SPEED), TIMER_CLIENT_TIME)
 
 /proc/create_credit(credit)
 	new /atom/movable/screen/credit(null, credit)

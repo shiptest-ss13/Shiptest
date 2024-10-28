@@ -40,7 +40,7 @@
 		if(M != user)
 			M.visible_message("<span class='danger'>[user] attempts to feed [M] something from [src].</span>", \
 						"<span class='userdanger'>[user] attempts to feed you something from [src].</span>")
-			if(!do_mob(user, M))
+			if(!do_after(user, target = M))
 				return
 			if(!reagents || !reagents.total_volume)
 				return // The drink might be empty after the delay, such as by spam-feeding
@@ -87,7 +87,7 @@
 
 	else if(reagents.total_volume && is_drainable())
 		switch(user.a_intent)
-			if(INTENT_HELP)
+			if(INTENT_DISARM)
 				attempt_pour(target, user)
 			if(INTENT_HARM)
 				user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
@@ -118,7 +118,7 @@
 /obj/item/reagent_containers/glass/beaker
 	name = "beaker"
 	desc = "A beaker. It can hold up to 50 units."
-	icon = 'icons/obj/chemical.dmi' //Should I modularize this? Yes. Will I do it?
+	icon = 'icons/obj/chemical/beakers.dmi'
 	icon_state = "beaker"
 	item_state = "beaker"
 	custom_materials = list(/datum/material/glass=500)
@@ -213,6 +213,13 @@
 	name = "epinephrine reserve tank"
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 50)
 
+/obj/item/reagent_containers/glass/beaker/large/fuel
+	list_reagents = list(/datum/reagent/fuel = 100)
+
+/obj/item/reagent_containers/glass/beaker/large/napalm
+	list_reagents = list(/datum/reagent/napalm = 100)
+	cap_on = FALSE
+
 /obj/item/reagent_containers/glass/beaker/synthflesh
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 50)
 
@@ -293,7 +300,6 @@
 /obj/item/reagent_containers/glass/filter
 	name = "seperatory funnel"
 	desc = "A crude tool created by welding several beakers together. It would probably be useful for seperating reagents."
-	icon = 'icons/obj/chemical.dmi'
 	icon_state = "beakerfilter"
 	item_state = "beaker"
 	volume = 100

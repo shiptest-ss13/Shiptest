@@ -238,7 +238,6 @@
 /obj/item/shard{
 	icon_state = "small"
 	},
-/obj/item/construction/plumbing,
 /obj/item/wrench,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -353,11 +352,8 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "iq" = (
-/obj/machinery/chem_dispenser,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine,
 /area/ruin/powered)
 "ir" = (
 /obj/effect/decal/cleanable/dirt,
@@ -486,7 +482,7 @@
 /area/ruin/powered)
 "lM" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/quantumpad,
+/obj/machinery/ltsrbt,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "lO" = (
@@ -634,18 +630,14 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "qI" = (
-/obj/machinery/chem_dispenser,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
+/obj/effect/turf_decal/box,
+/obj/machinery/chem_heater,
+/turf/open/floor/engine,
 /area/ruin/powered)
 "qK" = (
-/obj/machinery/chem_master,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/plumbing/synthesizer,
+/turf/open/floor/plating,
 /area/ruin/powered)
 "qL" = (
 /obj/structure/rack,
@@ -681,13 +673,8 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "rH" = (
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/mining_equipment,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/plumbing/output,
+/turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "rN" = (
 /turf/open/floor/plating{
@@ -764,7 +751,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "uu" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -773,7 +760,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "uz" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -856,12 +843,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "wW" = (
-/obj/machinery/vending/boozeomat,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/neutral,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "xd" = (
@@ -888,12 +875,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "xW" = (
-/obj/machinery/chem_master,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
+/obj/machinery/plumbing/synthesizer,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "yc" = (
 /obj/structure/door_assembly/door_assembly_research{
@@ -905,13 +890,12 @@
 	},
 /area/ruin/powered)
 "yg" = (
-/obj/machinery/vending/snack/random,
-/obj/effect/turf_decal/corner/transparent/neutral{
+/obj/structure/closet/secure_closet/chemical,
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/obj/item/construction/plumbing,
+/turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "yx" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -1053,7 +1037,6 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Dt" = (
-/obj/machinery/chem_heater,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
@@ -1127,7 +1110,6 @@
 	icon_state = "small"
 	},
 /obj/item/shard,
-/obj/item/construction/plumbing,
 /obj/item/wrench,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -1180,6 +1162,13 @@
 "Jb" = (
 /turf/closed/wall,
 /area/ruin/powered)
+"Jd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/plumbing/synthesizer,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/powered)
 "Jm" = (
 /obj/machinery/light/directional/south,
 /obj/structure/cable{
@@ -1221,7 +1210,7 @@
 /area/ruin/powered)
 "KU" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -1623,12 +1612,9 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "WR" = (
-/obj/machinery/vending/cola/random,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/box,
+/obj/machinery/chem_master,
+/turf/open/floor/engine,
 /area/ruin/powered)
 "WS" = (
 /obj/structure/table,
@@ -1659,7 +1645,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "Yp" = (
-/obj/machinery/chem_heater,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
@@ -1667,13 +1652,14 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "YA" = (
-/obj/machinery/vending/medical,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/plumbing/pill_press,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"YE" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/chem_dispenser,
+/turf/open/floor/engine,
 /area/ruin/powered)
 "YH" = (
 /obj/effect/spawner/structure/window,
@@ -1846,8 +1832,8 @@ mK
 fg
 Gz
 sO
-iq
-xW
+Gz
+sO
 Yp
 Jb
 Mb
@@ -1901,7 +1887,7 @@ fO
 Go
 UH
 oH
-Bb
+Jd
 Eh
 eI
 BH
@@ -1909,7 +1895,7 @@ eI
 Tb
 UH
 oH
-oH
+YA
 UH
 Go
 Mb
@@ -1971,12 +1957,12 @@ Nb
 WE
 Db
 oH
-ad
+rH
 Dr
 az
 Ci
 Zx
-Ci
+YE
 Fd
 hK
 az
@@ -2007,7 +1993,7 @@ Te
 az
 Zt
 Fd
-Ci
+WR
 Fd
 ef
 az
@@ -2038,7 +2024,7 @@ Te
 az
 cG
 Fd
-hK
+qI
 Fd
 Ci
 az
@@ -2054,7 +2040,7 @@ WS
 KQ
 qE
 Go
-hn
+yg
 oH
 WE
 nQ
@@ -2201,9 +2187,9 @@ az
 (15,1,1) = {"
 Mb
 Jb
-rH
 sE
-YA
+sE
+sE
 OO
 OO
 uP
@@ -2232,9 +2218,9 @@ az
 (16,1,1) = {"
 Mb
 Go
-yg
 sE
-WR
+sE
+bu
 OO
 ZM
 cZ
@@ -2255,7 +2241,7 @@ np
 az
 hK
 Fd
-hK
+iq
 Fd
 hK
 az
@@ -2281,12 +2267,12 @@ Mq
 zk
 Lc
 Bb
-ir
+qK
 np
 az
 Zt
 Fd
-Ci
+iq
 Zx
 hL
 az
@@ -2317,7 +2303,7 @@ cl
 az
 pw
 Fd
-Ci
+iq
 Fd
 cM
 az
@@ -2334,7 +2320,7 @@ Go
 Go
 Go
 rN
-rN
+xW
 UH
 ad
 Nb
@@ -2405,7 +2391,7 @@ ir
 ad
 zk
 ad
-ad
+lO
 Te
 Go
 Mb
@@ -2435,8 +2421,8 @@ hX
 zQ
 UH
 vI
-qI
-qK
+vI
+vI
 Dt
 Jb
 Mb

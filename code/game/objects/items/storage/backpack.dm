@@ -16,24 +16,28 @@
 	desc = "You wear this on your back and put items into it."
 	icon_state = "backpack"
 	item_state = "backpack"
+	icon = 'icons/obj/clothing/back/backpacks.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back/backpacks.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	pickup_sound = "rustle"
 	drop_sound = "rustle"
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
 	greyscale_icon_state = "backpack"
 	greyscale_colors = list(list(13, 17), list(12, 17), list(12, 21))
-	supports_variations = VOX_VARIATION
+
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/back/backpacks_kepori.dmi'
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 21
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_items = 21
+	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
+	STR.max_volume = STORAGE_VOLUME_BACKPACK
+	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
 	STR.use_sound = 'sound/items/storage/unzip.ogg'
 
 /*
@@ -58,54 +62,14 @@
 /obj/item/storage/backpack/holding/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.allow_big_nesting = TRUE
-	STR.max_w_class = WEIGHT_CLASS_GIGANTIC
-	STR.max_combined_w_class = 35
-
-/obj/item/storage/backpack/santabag
-	name = "Santa's Gift Bag"
-	desc = "Space Santa uses this to deliver presents to all the nice children in space in Christmas! Wow, it's pretty big!"
-	icon_state = "giftbag0"
-	item_state = "giftbag"
-	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/storage/backpack/santabag/Initialize()
-	. = ..()
-	regenerate_presents()
-
-/obj/item/storage/backpack/santabag/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 60
-
-/obj/item/storage/backpack/santabag/proc/regenerate_presents()
-	addtimer(CALLBACK(src, PROC_REF(regenerate_presents)), 30 SECONDS)
-
-	var/mob/M = get(loc, /mob)
-	if(!istype(M))
-		return
-	if(M.mind && HAS_TRAIT(M.mind, TRAIT_CANNOT_OPEN_PRESENTS))
-		var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-		var/turf/floor = get_turf(src)
-		var/obj/item/I = new /obj/item/a_gift/anything(floor)
-		if(STR.can_be_inserted(I, stop_messages=TRUE))
-			STR.handle_item_insertion(I, prevent_warning=TRUE)
-		else
-			qdel(I)
-
+	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
+	STR.max_volume = STORAGE_VOLUME_BAG_OF_HOLDING
 
 /obj/item/storage/backpack/cultpack
 	name = "trophy rack"
 	desc = "It's useful for both carrying extra gear and proudly declaring your insanity."
 	icon_state = "cultpack"
 	item_state = "backpack"
-
-/obj/item/storage/backpack/clown
-	name = "Giggles von Honkerton"
-	desc = "It's a backpack made by Honk! Co."
-	icon_state = "clownpack"
-	item_state = "clownpack"
 
 /obj/item/storage/backpack/explorer
 	name = "explorer bag"
@@ -130,11 +94,6 @@
 	desc = "It's a very robust backpack."
 	icon_state = "securitypack"
 	item_state = "securitypack"
-
-/obj/item/storage/backpack/security/cmm
-	name = "cmm backpack"
-	desc = "It's a very blue backpack."
-	icon_state = "cmmpack"
 
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
@@ -221,12 +180,16 @@
 	item_state = "satchel-norm"
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
-	supports_variations = VOX_VARIATION
+
+/obj/item/storage/backpack/satchel/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_volume = STORAGE_VOLUME_BACKPACK
+	STR.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
 	desc = "It's a very fancy satchel made with fine leather."
-	icon = 'icons/obj/storage.dmi'		//WS Edit - Suitcases
 	icon_state = "satchel"
 	item_state = "satchel"
 
@@ -261,12 +224,6 @@
 	icon_state = "satchel-chem"
 	item_state = "satchel-chem"
 
-/obj/item/storage/backpack/satchel/gen
-	name = "geneticist satchel"
-	desc = "A sterile satchel with geneticist colours."
-	icon_state = "satchel-gen"
-	item_state = "satchel-gen"
-
 /obj/item/storage/backpack/satchel/tox
 	name = "scientist satchel"
 	desc = "Useful for holding research materials."
@@ -284,11 +241,6 @@
 	desc = "A robust satchel for security related needs."
 	icon_state = "satchel-sec"
 	item_state = "satchel-sec"
-
-/obj/item/storage/backpack/satchel/sec/cmm
-	name = "cmm satchel"
-	desc = "A robust satchel for anti-piracy related needs."
-	icon_state = "satchel-cmm"
 
 /obj/item/storage/backpack/satchel/explorer
 	name = "explorer satchel"
@@ -336,7 +288,6 @@
 		/obj/item/reagent_containers/food/drinks/bottle/absinthe,
 		/obj/item/clothing/under/syndicate/tacticool,
 		/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
-		/obj/item/storage/fancy/cigarettes/cigpack_shadyjims,
 		/obj/item/clothing/mask/gas/syndicate,
 		/obj/item/clothing/neck/necklace/dope,
 		/obj/item/vending_refill/donksoft)
@@ -360,8 +311,6 @@
 /obj/item/storage/backpack/messenger
 	name = "messenger bag"
 	desc = "A sturdy backpack worn over one shoulder."
-	icon = 'icons/obj/storage.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "courierbag"
 	item_state = "courierbag"
 	greyscale_icon_state = "satchel"
@@ -438,11 +387,13 @@
 	item_state = "duffel"
 	slowdown = 1
 	greyscale_colors = list(list(21, 11), list(14, 19), list(15, 16))
+	w_class = WEIGHT_CLASS_HUGE
 
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 30
+	STR.max_volume = STORAGE_VOLUME_DUFFLEBAG
+	STR.max_w_class = MAX_WEIGHT_CLASS_DUFFEL
 	LAZYINITLIST(STR.exception_hold) // This code allows you to fit one mob holder into a duffel bag
 	STR.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
 
@@ -532,7 +483,6 @@
 	desc = "A large duffel bag for holding extra tactical supplies."
 	icon_state = "duffel-syndie"
 	item_state = "duffel-syndieammo"
-	slowdown = 0
 	resistance_flags = FIRE_PROOF
 
 /obj/item/storage/backpack/duffelbag/syndie/ComponentInitialize()
@@ -585,17 +535,17 @@
 
 /obj/item/storage/backpack/duffelbag/syndie/ammo/shotgun/PopulateContents()
 	for(var/i in 1 to 6)
-		new /obj/item/ammo_box/magazine/m12g(src)
-	new /obj/item/ammo_box/magazine/m12g/slug(src)
-	new /obj/item/ammo_box/magazine/m12g/slug(src)
-	new /obj/item/ammo_box/magazine/m12g/dragon(src)
+		new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/slug(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/slug(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/dragon(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/ammo/smg
 	desc = "A large duffel bag, packed to the brim with C-20r magazines."
 
 /obj/item/storage/backpack/duffelbag/syndie/ammo/smg/PopulateContents()
 	for(var/i in 1 to 9)
-		new /obj/item/ammo_box/magazine/smgm45(src)
+		new /obj/item/ammo_box/magazine/m45_cobra(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/ammo/mech
 	desc = "A large duffel bag, packed to the brim with various exosuit ammo."
@@ -607,10 +557,10 @@
 	new /obj/item/mecha_ammo/scattershot(src)
 	new /obj/item/storage/belt/utility/syndicate(src)
 
-/obj/item/storage/backpack/duffelbag/syndie/ammo/mauler
+/obj/item/storage/backpack/duffelbag/syndie/ammo/touro
 	desc = "A large duffel bag, packed to the brim with various exosuit ammo."
 
-/obj/item/storage/backpack/duffelbag/syndie/ammo/mauler/PopulateContents()
+/obj/item/storage/backpack/duffelbag/syndie/ammo/touro/PopulateContents()
 	new /obj/item/mecha_ammo/lmg(src)
 	new /obj/item/mecha_ammo/lmg(src)
 	new /obj/item/mecha_ammo/lmg(src)
@@ -625,18 +575,18 @@
 	desc = "A large duffel bag containing a C-20r, some magazines, and a cheap looking suppressor."
 
 /obj/item/storage/backpack/duffelbag/syndie/c20rbundle/PopulateContents()
-	new /obj/item/ammo_box/magazine/smgm45(src)
-	new /obj/item/ammo_box/magazine/smgm45(src)
-	new /obj/item/gun/ballistic/automatic/smg/c20r(src)
-	new /obj/item/suppressor/specialoffer(src)
+	new /obj/item/ammo_box/magazine/m45_cobra(src)
+	new /obj/item/ammo_box/magazine/m45_cobra(src)
+	new /obj/item/gun/ballistic/automatic/smg/cobra(src)
+	new /obj/item/attachment/silencer(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle
 	desc = "A large duffel bag containing a Bulldog, some drums, and a pair of thermal imaging glasses."
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/bulldog(src)
-	new /obj/item/ammo_box/magazine/m12g(src)
-	new /obj/item/ammo_box/magazine/m12g(src)
+	new /obj/item/gun/ballistic/shotgun/automatic/bulldog(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src)
 	new /obj/item/clothing/glasses/thermal/syndi(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle
@@ -645,8 +595,8 @@
 /obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle/PopulateContents()
 	new /obj/item/clothing/shoes/magboots/syndie(src)
 	new /obj/item/storage/firstaid/tactical(src)
-	new /obj/item/gun/ballistic/automatic/hmg/l6_saw/toy(src)
-	new /obj/item/ammo_box/foambox/riot(src)
+	new /obj/item/gun/ballistic/automatic/toy(src)
+	new /obj/item/storage/box/ammo/foam_darts/riot(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/med/bioterrorbundle
 	desc = "A large duffel bag containing deadly chemicals, a handheld chem sprayer, Bioterror foam grenade, a Donksoft assault rifle, box of riot grade darts, a dart pistol, and a box of syringes."
@@ -655,9 +605,9 @@
 	new /obj/item/reagent_containers/spray/chemsprayer/bioterror(src)
 	new /obj/item/storage/box/syndie_kit/chemical(src)
 	new /obj/item/gun/syringe/syndicate(src)
-	new /obj/item/gun/ballistic/automatic/smg/c20r/toy(src)
+	new /obj/item/gun/ballistic/automatic/toy(src)
 	new /obj/item/storage/box/syringes(src)
-	new /obj/item/ammo_box/foambox/riot(src)
+	new /obj/item/storage/box/ammo/foam_darts/riot(src)
 	new /obj/item/grenade/chem_grenade/bioterrorfoam(src)
 	if(prob(5))
 		new /obj/item/reagent_containers/food/snacks/pizza/pineapple(src)
@@ -676,9 +626,9 @@
 /obj/item/storage/backpack/duffelbag/syndie/firestarter/PopulateContents()
 	new /obj/item/watertank/op(src)
 	new /obj/item/clothing/suit/space/hardsuit/syndi/elite(src)
-	new /obj/item/gun/ballistic/automatic/pistol/APS(src)
-	new /obj/item/ammo_box/magazine/pistolm9mm(src)
-	new /obj/item/ammo_box/magazine/pistolm9mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/rattlesnake(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka(src)
 	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
 	new /obj/item/grenade/syndieminibomb(src)
@@ -693,7 +643,6 @@
 /obj/item/storage/backpack/duffelbag/clown/syndie/PopulateContents()
 	new /obj/item/pda/clown(src)
 	new /obj/item/clothing/under/rank/civilian/clown(src)
-	new /obj/item/clothing/shoes/clown_shoes(src)
 	new /obj/item/clothing/mask/gas/clown_hat(src)
 	new /obj/item/bikehorn(src)
 	new /obj/item/implanter/sad_trombone(src)

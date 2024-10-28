@@ -23,6 +23,7 @@
 	H.facial_hair_color = H.hair_color
 	H.eye_color = random_eye_color()
 	H.dna.blood_type = random_blood_type()
+	H.generic_adjective = pick_species_adjective(H)
 
 	// Mutant randomizing, doesn't affect the mob appearance unless it's the specific mutant.
 	H.dna.features["mcolor"] = random_short_color()
@@ -41,6 +42,7 @@
 	H.dna.features["squid_face"] = pick(GLOB.squid_face_list)
 	H.dna.features["kepori_feathers"] = pick(GLOB.kepori_feathers_list)
 	H.dna.features["kepori_body_feathers"] = pick(GLOB.kepori_body_feathers_list)
+	H.dna.features["kepori_head_feathers"] = pick(GLOB.kepori_head_feathers_list)
 	H.dna.features["vox_head_quills"] = pick(GLOB.vox_head_quills_list)
 	H.dna.features["vox_neck_quills"] = pick(GLOB.vox_neck_quills_list)
 	H.dna.features["elzu_horns"] = pick(GLOB.elzu_horns_list)

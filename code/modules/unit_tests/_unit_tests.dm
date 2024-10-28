@@ -41,6 +41,13 @@
 /// Intended to be used in the manner of `TEST_FOCUS(/datum/unit_test/math)`
 #define TEST_FOCUS(test_path) ##test_path { focus = TRUE; }
 
+/// Logs a noticable message on GitHub, but will not mark as an error.
+/// Use this when something shouldn't happen and is of note, but shouldn't block CI.
+/// Does not mark the test as failed.
+#define TEST_NOTICE(source, message) source.log_for_test((##message), "notice", __FILE__, __LINE__)
+/// TEST_NOTICE but more important
+#define TEST_WARNING(source, message) source.log_for_test((##message), "warning", __FILE__, __LINE__)
+
 /// Constants indicating unit test completion status
 #define UNIT_TEST_PASSED 0
 #define UNIT_TEST_FAILED 1
@@ -62,6 +69,13 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
+
+#ifdef BASIC_TESTS
+
+#include "icons/inhands.dm"
+#include "icons/missing_icons.dm"
+#include "icons/spritesheets.dm"
+#include "icons/worn_icons.dm"
 #include "anchored_mobs.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
@@ -69,16 +83,15 @@
 #include "combat.dm"
 #include "component_tests.dm"
 #include "connect_loc.dm"
-#include "create_and_destroy.dm"
 #include "biome_lists.dm"
 #include "emoting.dm"
+#include "gun_sanity.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
 #include "open_air.dm"
 #include "outfit_sanity.dm"
 #include "overmap.dm"
 #include "pills.dm"
-#include "planet_gen.dm"
 #include "plantgrowth_tests.dm"
 #include "projectiles.dm"
 #include "quick_swap_sanity.dm"
@@ -90,10 +103,8 @@
 #include "reagent_names.dm"
 #include "reagent_recipe_collisions.dm"
 #include "resist.dm"
-#include "ruin_placement.dm"
 #include "say.dm"
 #include "serving_tray.dm"
-#include "ship_outpost_placement.dm"
 #include "spawn_humans.dm"
 #include "species_unique_id.dm"
 #include "species_whitelists.dm"
@@ -103,11 +114,30 @@
 #include "supply_pack.dm"
 #include "teleporters.dm"
 #include "timer_sanity.dm"
-#include "unit_test.dm"
 
 #ifdef REFERENCE_TRACKING_DEBUG //Don't try and parse this file if ref tracking isn't turned on. IE: don't parse ref tracking please mr linter
 #include "find_reference_sanity.dm"
 #endif
+
+#endif //BASIC_TESTS
+
+#ifdef CREATE_AND_DESTROY_TEST
+#include "create_and_destroy.dm"
+#endif //CREATE_AND_DESTROY_TEST
+
+#ifdef PLANET_GEN_TEST
+#include "planet_gen.dm"
+#endif //PLANET_GEN
+
+#ifdef RUIN_PLACEMENT_TEST
+#include "ruin_placement.dm"
+#endif //RUIN_PLACEMENT_TEST
+
+#ifdef SHIP_PLACEMENT_TEST
+#include "ship_outpost_placement.dm"
+#endif //SHIP_PLACEMENT_TEST
+
+#include "unit_test.dm"
 
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL

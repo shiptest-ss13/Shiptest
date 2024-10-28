@@ -248,7 +248,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "jr" = (
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
 /obj/effect/turf_decal/siding/wood{
@@ -480,13 +480,9 @@
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "uw" = (
-/obj/item/pipe_dispenser,
-/obj/structure/closet/crate,
-/obj/item/construction/plumbing,
-/obj/item/construction/rcd/arcd,
-/obj/item/stack/sheet/plasteel/fifty,
-/obj/item/construction/rcd/combat,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
 "uE" = (
@@ -636,6 +632,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
 "Ay" = (
@@ -650,13 +649,14 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "AR" = (
-/obj/machinery/door/airlock/external,
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 4
+/obj/docking_port/stationary{
+	width = 30;
+	height = 15;
+	dwidth = 15;
+	dir = 2
 	},
-/turf/open/floor/plating,
-/area/ship/engineering)
+/turf/template_noop,
+/area/space)
 "AU" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -905,7 +905,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "LK" = (
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
 /obj/effect/turf_decal/siding/wood{
@@ -955,6 +955,18 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
+"Nf" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4;
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "NN" = (
 /obj/structure/frame/computer{
 	dir = 4
@@ -974,6 +986,21 @@
 /area/ship/external)
 "Ob" = (
 /turf/closed/wall,
+/area/ship/maintenance/aft)
+"OR" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/pipe_dispenser,
+/obj/item/construction/rcd/arcd,
+/obj/item/construction/rcd/combat,
+/obj/item/construction/plumbing,
+/turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "OY" = (
 /obj/structure/cable{
@@ -1137,7 +1164,7 @@
 	},
 /obj/item/circuitboard/computer/selling_pad_control,
 /obj/item/circuitboard/machine/selling_pad,
-/obj/item/circuitboard/computer/cargo/express,
+/obj/item/circuitboard/computer/cargo,
 /obj/structure/closet/crate/engineering,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -1201,7 +1228,7 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "Yi" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/structure/closet/firecloset/full,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1278,6 +1305,7 @@ VB
 VB
 VB
 VB
+VB
 "}
 (2,1,1) = {"
 VB
@@ -1293,6 +1321,7 @@ GD
 Ob
 wH
 Ob
+VB
 VB
 VB
 VB
@@ -1316,6 +1345,7 @@ VB
 VB
 VB
 VB
+VB
 "}
 (4,1,1) = {"
 VB
@@ -1329,9 +1359,10 @@ bv
 MZ
 jI
 MW
-VA
+OR
 Ob
 Ob
+VB
 VB
 VB
 VB
@@ -1354,6 +1385,7 @@ Ob
 VB
 VB
 VB
+VB
 "}
 (6,1,1) = {"
 VB
@@ -1371,6 +1403,7 @@ nH
 nH
 nH
 nH
+VB
 VB
 VB
 "}
@@ -1392,6 +1425,7 @@ KG
 nH
 VB
 VB
+VB
 "}
 (8,1,1) = {"
 VB
@@ -1409,6 +1443,7 @@ Cc
 ZM
 eT
 nH
+VB
 VB
 VB
 "}
@@ -1430,6 +1465,7 @@ fs
 vR
 xX
 VB
+VB
 "}
 (10,1,1) = {"
 VB
@@ -1448,6 +1484,7 @@ KQ
 kW
 nH
 NX
+VB
 VB
 "}
 (11,1,1) = {"
@@ -1468,9 +1505,10 @@ IL
 Vt
 Rk
 MJ
+VB
 "}
 (12,1,1) = {"
-gl
+Nf
 Gl
 ec
 nS
@@ -1486,6 +1524,7 @@ cH
 Ls
 ZQ
 cG
+ZQ
 AR
 "}
 (13,1,1) = {"
@@ -1506,6 +1545,7 @@ UC
 Vt
 mY
 MJ
+VB
 "}
 (14,1,1) = {"
 VB
@@ -1525,6 +1565,7 @@ MJ
 MJ
 VB
 VB
+VB
 "}
 (15,1,1) = {"
 VB
@@ -1541,6 +1582,7 @@ CP
 bb
 Ul
 zy
+VB
 VB
 VB
 VB
@@ -1563,6 +1605,7 @@ zy
 VB
 VB
 VB
+VB
 "}
 (17,1,1) = {"
 VB
@@ -1582,6 +1625,7 @@ VB
 VB
 VB
 VB
+VB
 "}
 (18,1,1) = {"
 VB
@@ -1595,6 +1639,27 @@ hh
 hh
 hh
 CP
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+"}
+(19,1,1) = {"
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
 VB
 VB
 VB

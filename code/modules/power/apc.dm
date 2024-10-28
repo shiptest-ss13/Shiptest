@@ -52,7 +52,7 @@
 /// How long it takes an elzu to drain or charge APCs. Also used as a spam limiter.
 #define APC_DRAIN_TIME (7.5 SECONDS)
 /// How much power elzu gain/drain from APCs.
-#define APC_POWER_GAIN (10 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+#define APC_POWER_GAIN (10 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
 // Wires & EMPs:
 /// The wire value used to reset the APCs wires after one's EMPed.
@@ -217,8 +217,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	// this allows the APC to be embedded in a wall, yet still inside an area
 	if (building)
 		setDir(ndir)
-	tdir = dir		// to fix Vars bug
-//!!!!!!!!!!!!!! FUCK YOU SINGLE LINE OF CODE!! FUCK YOU YOU PIECE OF SHIT!!!!! setDir(SOUTH)
+	tdir = dir
+
 	switch(tdir)
 		if(NORTH)
 			if((pixel_y != initial(pixel_y)) && (pixel_y != 23))
@@ -303,7 +303,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(auto_name)
 		name = "\improper [get_area_name(area, TRUE)] APC"
 
-	update_icon()
+	update_appearance()
 
 	make_terminal()
 
@@ -342,12 +342,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(!cell) //it always peeved me that abandoned ships always had the apc lights on. this should fix it
 		icon_update_needed = FALSE
 		set_light(0)
-		return
 
-	if(cell.charge <= 0)
+	else if(cell.charge <= 0)
 		icon_update_needed = FALSE
 		set_light(0)
-		return
 	//this may need to be moved up!!
 	. = ..()
 	// And now, separately for cleanness, the lighting changing
@@ -360,12 +358,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			if(APC_FULLY_CHARGED)
 				set_light_color(LIGHT_COLOR_GREEN)
 		set_light(lon_range)
-		return
 
-	if(update_state & UPSTATE_BLUESCREEN)
+	else if(update_state & UPSTATE_BLUESCREEN)
 		set_light_color(LIGHT_COLOR_BLUE)
 		set_light(lon_range)
-		return
 
 /obj/machinery/power/apc/update_icon_state()
 	if(!update_state)
@@ -501,7 +497,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		else if (opened!=APC_COVER_REMOVED)
 			opened = APC_COVER_CLOSED
 			coverlocked = TRUE //closing cover relocks it
-			update_icon()
+			update_appearance()
 			return
 	else if (!(machine_stat & BROKEN))
 		if(coverlocked && !(machine_stat & MAINT)) // locked...
@@ -512,7 +508,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			return
 		else
 			opened = APC_COVER_OPENED
-			update_icon()
+			update_appearance()
 			return
 
 /obj/machinery/power/apc/screwdriver_act(mob/living/user, obj/item/W)
@@ -524,10 +520,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			user.visible_message("<span class='notice'>[user] removes \the [cell] from [src]!</span>", "<span class='notice'>You remove \the [cell].</span>")
 			var/turf/T = get_turf(user)
 			cell.forceMove(T)
-			cell.update_icon()
+			cell.update_appearance()
 			cell = null
 			charging = APC_NOT_CHARGING
-			update_icon()
+			update_appearance()
 			return
 		else
 			switch (has_electronics)
@@ -544,14 +540,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 				else
 					to_chat(user, "<span class='warning'>There is nothing to secure!</span>")
 					return
-			update_icon()
+			update_appearance()
 	else if(obj_flags & EMAGGED)
 		to_chat(user, "<span class='warning'>The interface is broken!</span>")
 		return
 	else
 		panel_open = !panel_open
 		to_chat(user, "<span class='notice'>The wires have been [panel_open ? "exposed" : "unexposed"].</span>")
-		update_icon()
+		update_appearance()
 
 /obj/machinery/power/apc/wirecutter_act(mob/living/user, obj/item/W)
 	. = ..()
@@ -599,7 +595,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			user.visible_message("<span class='notice'>[user.name] inserts the power cell to [src.name]!</span>",\
 				"<span class='notice'>You insert the power cell.</span>")
 			chargecount = 0
-			update_icon()
+			update_appearance()
 	else if (W.GetID())
 		togglelock(user)
 	else if (istype(W, /obj/item/stack/cable_coil) && opened)
@@ -677,7 +673,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			chargecount = 0
 			user.visible_message("<span class='notice'>[user] fabricates a weak power cell and places it into [src].</span>", \
 			"<span class='warning'>Your [P.name] whirrs with strain as you create a weak power cell and place it into [src]!</span>")
-			update_icon()
+			update_appearance()
 		else
 			to_chat(user, "<span class='warning'>[src] has both electronics and a cell.</span>")
 			return
@@ -692,7 +688,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 				to_chat(user, "<span class='notice'>You replace missing APC's cover.</span>")
 				qdel(W)
 				opened = APC_COVER_OPENED
-				update_icon()
+				update_appearance()
 			return
 		if (has_electronics)
 			to_chat(user, "<span class='warning'>You cannot repair this APC until you remove the electronics still inside!</span>")
@@ -706,7 +702,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			obj_integrity = max_integrity
 			if (opened==APC_COVER_REMOVED)
 				opened = APC_COVER_OPENED
-			update_icon()
+			update_appearance()
 	else if(istype(W, /obj/item/apc_powercord))
 		return //because we put our fancy code in the right places, and this is all in the powercord's afterattack()
 
@@ -754,7 +750,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 				chargecount = 0
 				user.visible_message("<span class='notice'>[user] fabricates a weak power cell and places it into [src].</span>", \
 				"<span class='warning'>Your [the_rcd.name] whirrs with strain as you create a weak power cell and place it into [src]!</span>")
-				update_icon()
+				update_appearance()
 				return TRUE
 			else
 				to_chat(user, "<span class='warning'>[src] has both electronics and a cell.</span>")
@@ -781,7 +777,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		if(allowed(usr) && !wires.is_cut(WIRE_IDSCAN) && !malfhack)
 			locked = !locked
 			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the APC interface.</span>")
-			update_icon()
+			update_appearance()
 			updateUsrDialog()
 		else
 			to_chat(user, "<span class='warning'>Access denied.</span>")
@@ -811,7 +807,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			opened = APC_COVER_REMOVED
 			coverlocked = FALSE
 			visible_message("<span class='warning'>The APC cover is knocked down!</span>")
-			update_icon()
+			update_appearance()
 
 /obj/machinery/power/apc/emag_act(mob/user)
 	if(!(obj_flags & EMAGGED) && !malfhack)
@@ -827,7 +823,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			obj_flags |= EMAGGED
 			locked = FALSE
 			to_chat(user, "<span class='notice'>You emag the APC interface.</span>")
-			update_icon()
+			update_appearance()
 
 
 // attack with hand - remove cell (if cover open) or interact with the APC
@@ -838,10 +834,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		return
 
 	//[REDACTED] Begin -- Ethereal Charge Scaling //Let the hubris remain but the name be forgotten
-	if(isethereal(user))
+	if(iselzuose(user))
 		var/mob/living/carbon/human/H = user
-		var/datum/species/ethereal/E = H.dna.species
-		var/charge_limit = ETHEREAL_CHARGE_DANGEROUS - APC_POWER_GAIN
+		var/datum/species/elzuose/E = H.dna.species
+		var/charge_limit = ELZUOSE_CHARGE_DANGEROUS - APC_POWER_GAIN
 		if((H.a_intent == INTENT_HARM) && (E.drain_time < world.time))
 			if(cell.charge <= (cell.maxcharge / 20)) // ethereals can't drain APCs under half charge, this is so that they are forced to look to alternative power sources if the station is running low
 				to_chat(H, "<span class='warning'>The APC's syphon safeties prevent you from draining power!</span>")
@@ -890,10 +886,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		if(cell)
 			user.visible_message("<span class='notice'>[user] removes \the [cell] from [src]!</span>", "<span class='notice'>You remove \the [cell].</span>")
 			user.put_in_hands(cell)
-			cell.update_icon()
+			cell.update_appearance()
 			src.cell = null
 			charging = APC_NOT_CHARGING
-			src.update_icon()
+			src.update_appearance()
 		return
 	if((machine_stat & MAINT) && !opened) //no board; no interface
 		return
@@ -903,6 +899,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(!ui)
 		ui = new(user, src, "Apc", name)
 		ui.open()
+
+/obj/machinery/power/apc/examine_more(mob/user)
+	ui_interact(user)
 
 /obj/machinery/power/apc/ui_data(mob/user)
 	var/list/data = list(
@@ -1027,7 +1026,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 					to_chat(usr, "<span class='warning'>The APC does not respond to the command!</span>")
 				else
 					locked = !locked
-					update_icon()
+					update_appearance()
 					. = TRUE
 		if("cover")
 			coverlocked = !coverlocked
@@ -1042,20 +1041,20 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			chargemode = !chargemode
 			if(!chargemode)
 				charging = APC_NOT_CHARGING
-				update_icon()
+				update_appearance()
 			. = TRUE
 		if("channel")
 			if(params["eqp"])
 				equipment = setsubsystem(text2num(params["eqp"]))
-				update_icon()
+				update_appearance()
 				update()
 			else if(params["lgt"])
 				lighting = setsubsystem(text2num(params["lgt"]))
-				update_icon()
+				update_appearance()
 				update()
 			else if(params["env"])
 				environ = setsubsystem(text2num(params["env"]))
-				update_icon()
+				update_appearance()
 				update()
 			. = TRUE
 		if("overload")
@@ -1076,7 +1075,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 				malfhidehack(usr) //EndWS Edit - Malf AI Rework
 		if("reboot")
 			failure_timer = 0
-			update_icon()
+			update_appearance()
 			update()
 		if("emergency_lighting")
 			emergency_lights = !emergency_lights
@@ -1094,7 +1093,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	add_hiddenprint(user)
 	log_game("[key_name(user)] turned [operating ? "on" : "off"] the [src] in [AREACOORD(src)]")
 	update()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/power/apc/proc/malfhack(mob/living/silicon/ai/malf)
 	if(!istype(malf))
@@ -1136,7 +1135,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	A.target = src
 
 	malfhackhide = 1
-	update_icon()
+	update_appearance()
 
 /obj/machinery/power/apc/proc/malfunhidehack(mob/living/silicon/ai/malf)
 	if(src.machine_stat & BROKEN)
@@ -1495,9 +1494,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	update_appearance()
 	update()
 	addtimer(CALLBACK(src, PROC_REF(reset), APC_RESET_EMP), 600)
-
-/obj/machinery/power/apc/blob_act(obj/structure/blob/B)
-	set_broken()
 
 /obj/machinery/power/apc/disconnect_terminal()
 	if(terminal)

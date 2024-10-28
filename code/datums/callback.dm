@@ -29,22 +29,21 @@
  * ### global proc while in another global proc:
  * .procname
  *
- * `CALLBACK(GLOBAL_PROC, .some_proc_here)`
+ * `CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(some_proc_here))`
  *
  * ### proc defined on current(src) object (when in a /proc/ and not an override) OR overridden at src or any of it's parents:
  * .procname
  *
- * `CALLBACK(src, .some_proc_here)`
+ * `CALLBACK(src, PROC_REF(some_proc_here))`
  *
  * ### when the above doesn't apply:
  * PROC_REF(procname)
  *
  * `CALLBACK(src, PROC_REF(some_proc_here))`
  *
+ * ### proc defined on a parent of a some type
  *
- * proc defined on a parent of a some type
- *
- * `TYPE_PROC_REF(/some/type, some_proc_here)`
+ * `CALLBACK(src, TYPE_PROC_REF(/some/type, some_proc_here))`
  *
  * Otherwise you must always provide the full typepath of the proc (/type/of/thing/proc/procname)
  */
@@ -117,12 +116,6 @@
 	if (!object)
 		return
 
-#if DM_VERSION <= 514
-	if(istext(object) && object != GLOBAL_PROC)
-		to_chat(usr, "[object] may be an external library. Calling external libraries is disallowed.", confidential = TRUE)
-		return
-#endif
-
 	var/list/calling_arguments = arguments
 	if (length(args))
 		if (length(arguments))
@@ -157,12 +150,6 @@
 
 	if (!object)
 		return
-
-#if DM_VERSION <= 514
-	if(istext(object) && object != GLOBAL_PROC)
-		to_chat(usr, "[object] may be an external library. Calling external libraries is disallowed.", confidential = TRUE)
-		return
-#endif
 
 	var/list/calling_arguments = arguments
 	if (length(args))

@@ -35,8 +35,8 @@
 /datum/component/storage/concrete/pockets/small/fedora/Initialize()
 	. = ..()
 	var/static/list/exception_cache = typecacheof(list(
-		/obj/item/katana, /obj/item/toy/katana, /obj/item/nullrod/claymore/katana,
-		/obj/item/energy_katana, /obj/item/gun/ballistic/automatic/smg/thompson/drum
+		/obj/item/toy/katana, /obj/item/melee/sword/katana,
+		/obj/item/melee/sword/energy_katana, /obj/item/gun/ballistic/automatic/smg/firestorm/pan
 		))
 	exception_hold = exception_cache
 
@@ -83,10 +83,17 @@
 /datum/component/storage/concrete/pockets/helmet/Initialize()
 	. = ..()
 	set_holdable(list(
-		/obj/item/reagent_containers/food/drinks/bottle/vodka,
-		/obj/item/reagent_containers/food/drinks/bottle/molotov,
-		/obj/item/reagent_containers/food/drinks/drinkingglass,
-		/obj/item/ammo_box/a762
+		/obj/item/clothing/glasses/cold,
+		/obj/item/clothing/glasses/heat,
+		/obj/item/clothing/glasses/welding,
+		/obj/item/clothing/glasses/thermal,
+		/obj/item/clothing/glasses/night,
+		/obj/item/clothing/glasses/hud/health/night,
+		/obj/item/clothing/glasses/hud/security/night,
+		/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+		/obj/item/clothing/glasses/sunglasses/ballistic,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_box/magazine/illestren_a850r,
 	))
 
 /datum/component/storage/concrete/pockets/holster
@@ -117,16 +124,6 @@
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_BULKY
 
-/datum/component/storage/concrete/pockets/holster/lt/Initialize()
-	original_parent = parent
-	. = ..()
-	can_hold = typecacheof(list(
-		/obj/item/gun/energy/e_gun/adv_stopping,
-		/obj/item/gun/energy/e_gun/mini,
-		/obj/item/gun/energy/disabler,
-		/obj/item/stock_parts/cell/gun
-	))
-
 /datum/component/storage/concrete/pockets/holster/nukie/Initialize()
 	original_parent = parent
 	. = ..()
@@ -147,7 +144,7 @@
 	original_parent = parent
 	. = ..()
 	can_hold = typecacheof(list(
-		/obj/item/gun/ballistic/automatic/pistol,
+		/obj/item/gun/ballistic/automatic/pistol/ringneck,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/e_gun/mini,
 		/obj/item/gun/energy/disabler,

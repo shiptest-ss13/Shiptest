@@ -1,5 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/syndicate",
 	"prefix": "SSV",
 	"namelists": [
 		"GORLEX",
@@ -17,38 +18,43 @@
 	"map_short_name": "Twinkleshine-class",
 	"map_path": "_maps/shuttles/syndicate/syndicate_twinkleshine.dmm",
 	"job_slots": {
-		"Captain": {
-			"outfit": "/datum/outfit/job/captain/syndicate/sbc",
+		"Flotilla Admiral": {
+			"outfit": "/datum/outfit/job/syndicate/captain/twink",
 			"officer": true,
 			"slots": 1
 		},
 		"Lieutenant": {
-			"outfit": "/datum/outfit/job/warden/syndicate/sbc",
+			"outfit": "/datum/outfit/job/syndicate/hos/twink",
+			"officer": true,
+			"slots": 1
+		},
+		"Redshield Officer": {
+			"outfit": "/datum/outfit/job/syndicate/hos/suns/twink",
 			"officer": true,
 			"slots": 1
 		},
 		"Medic": {
-			"outfit": "/datum/outfit/job/brig_phys/syndicate/sbc",
+			"outfit": "/datum/outfit/job/syndicate/paramedic/twink",
 			"slots": 2
 		},
 		"Engineer": {
-			"outfit": "/datum/outfit/job/engineer/syndicate/sbc",
+			"outfit": "/datum/outfit/job/syndicate/engineer/twink",
 			"slots": 2
 		},
 		"Operative": {
-			"outfit": "/datum/outfit/job/security/syndicate/sbc",
+			"outfit": "/datum/outfit/job/syndicate/security/twink",
 			"slots": 5
 		},
 		"Bartender": {
-			"outfit": "/datum/outfit/job/bartender/syndicate/sbc",
+			"outfit": "/datum/outfit/job/syndicate/bartender/twink",
 			"slots": 1
 		},
 		"Miner": {
-			"outfit": "/datum/outfit/job/miner/syndicate/sbc",
+			"outfit": "/datum/outfit/job/syndicate/miner/twink",
 			"slots": 1
 		},
 		"Deck Assistant": {
-			"outfit": "/datum/outfit/job/assistant/syndicate/sbc",
+			"outfit": "/datum/outfit/job/syndicate/assistant/twink",
 			"slots": 2
 		}
 	},

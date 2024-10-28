@@ -8,7 +8,7 @@
 	item_state = "gas_alt"
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
-	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH | PEPPERPROOF
+	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	resistance_flags = NONE
 
 /obj/item/clothing/mask/gas/atmos
@@ -80,6 +80,7 @@
 	strip_delay = 60
 
 /obj/item/clothing/mask/gas/syndicate/voicechanger
+	desc = "A close-fitting tactical mask that can be connected to an air supply. This one has an integrated voice changer."
 	var/voice_change = 1
 
 /obj/item/clothing/mask/gas/clown_hat
@@ -273,3 +274,4 @@
 	item_state = "hunter"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
+

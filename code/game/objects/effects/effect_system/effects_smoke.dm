@@ -223,9 +223,9 @@
 		for(var/atom/movable/AM in T)
 			if(AM.type == src.type)
 				continue
-			reagents.expose(AM, TOUCH, fraction)
+			reagents.expose(AM, SMOKE, fraction)
 
-		reagents.expose(T, TOUCH, fraction)
+		reagents.expose(T, SMOKE, fraction)
 		return 1
 
 /obj/effect/particle_effect/smoke/chem/smoke_mob(mob/living/carbon/M)

@@ -494,9 +494,9 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	dat += "</b>[FOURSPACES][ticket_href("Refresh", ref_src)][FOURSPACES][ticket_href("Re-Title", ref_src, "retitle")]"
 	if(state != AHELP_ACTIVE)
 		dat += "[FOURSPACES][ticket_href("Reopen", ref_src, "reopen")]"
-	dat += "<br><br>Opened at: [gameTimestamp(wtime = opened_at)] (Approx [DisplayTimeText(world.time - opened_at)] ago)"
+	dat += "<br><br>Opened at: [game_timestamp(wtime = opened_at)] (Approx [DisplayTimeText(world.time - opened_at)] ago)"
 	if(closed_at)
-		dat += "<br>Closed at: [gameTimestamp(wtime = closed_at)] (Approx [DisplayTimeText(world.time - closed_at)] ago)"
+		dat += "<br>Closed at: [game_timestamp(wtime = closed_at)] (Approx [DisplayTimeText(world.time - closed_at)] ago)"
 	dat += "<br><br>"
 	if(initiator)
 		dat += "<b>Actions:</b><br>[full_monty(ref_src)]<br>"
@@ -687,7 +687,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 /proc/send2tgs(msg,msg2)
 	msg = format_text(msg)
 	msg2 = format_text(msg2)
-	world.TgsTargetedChatBroadcast("[msg] | [msg2]", TRUE)
+	world.TgsTargetedChatBroadcast(new /datum/tgs_message_content("[msg] | [msg2]"), TRUE)
 
 /**
  * Sends a message to a set of cross-communications-enabled servers using world topic calls
@@ -735,19 +735,11 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 
 /proc/tgsadminwho()
-	var/list/message = list("Admins: ")
 	var/list/admin_keys = list()
-	for(var/adm in GLOB.admins)
-		var/client/C = adm
-		admin_keys += "[C][C.holder.fakekey ? "(Stealth)" : ""][C.is_afk() ? "(AFK)" : ""]"
+	for(var/client/admin as anything in GLOB.admins)
+		admin_keys += "[admin][admin.holder.fakekey ? "(Stealth)" : ""][admin.is_afk() ? "(AFK)" : ""]"
 
-	for(var/admin in admin_keys)
-		if(LAZYLEN(message) > 1)
-			message += ", [admin]"
-		else
-			message += "[admin]"
-
-	return jointext(message, "")
+	return jointext(admin_keys, "\n")
 
 /proc/keywords_lookup(msg,external)
 

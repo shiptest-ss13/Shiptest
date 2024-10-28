@@ -425,7 +425,7 @@ WS End*/
 		var/mob/living/carbon/carbies = M
 		if (carbies.stat == DEAD)
 			show_message = 0
-		if(method in list(PATCH, TOUCH))
+		if(method in list(PATCH, TOUCH, SMOKE))
 			var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-1.25 * reac_volume)*-1)
 			var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-1.25 * reac_volume)*-1)
 			carbies.adjustToxLoss((harmies+burnies)*0.66)
@@ -434,7 +434,7 @@ WS End*/
 			SEND_SIGNAL(carbies, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 			if(HAS_TRAIT_FROM(M, TRAIT_HUSK, "burn") && carbies.getFireLoss() < THRESHOLD_UNHUSK && (carbies.reagents.get_reagent_amount(/datum/reagent/medicine/c2/instabitaluri) + reac_volume >= 100))
 				carbies.cure_husk("burn")
-				carbies.visible_message("<span class='nicegreen'>A rubbery liquid coats [carbies]'s burns. [carbies] looks a lot healthier!") //we're avoiding using the phrases "burnt flesh" and "burnt skin" here because carbies could be a skeleton or a golem or something
+				carbies.visible_message("<span class='nicegreen'>A rubbery liquid coats [carbies]'s burns. [carbies] looks a lot healthier!") //we're avoiding using the phrases "burnt flesh" and "burnt skin" here because carbies could be a skeleton or something
 	..()
 	return TRUE
 
@@ -488,7 +488,7 @@ WS End*/
 	if(H.health <= H.crit_threshold) //certain death above this threshold
 		REMOVE_TRAIT(H, TRAIT_STABLEHEART, type) //we have to remove the stable heart before we give him heart attack
 		to_chat(H,"<span class='danger'>You feel something rupturing inside your chest!</span>")
-		H.emote("scream")
+		H.force_scream()
 		H.set_heartattack(TRUE)
 		volume = 0
 	. = ..()

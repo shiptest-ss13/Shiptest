@@ -50,8 +50,6 @@
 	owner.derpspeech = min(owner.derpspeech + 5, 25)
 	if(prob(3))
 		owner.emote("drool")
-	else if(owner.stat == CONSCIOUS && prob(3))
-		owner.say(pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage"), forced = "brain damage")
 	..()
 
 /datum/brain_trauma/mild/dumbness/on_lose()
@@ -112,6 +110,7 @@
 
 /datum/brain_trauma/mild/healthy/on_gain()
 	owner.set_screwyhud(SCREWYHUD_HEALTHY)
+	ADD_TRAIT(owner, TRAIT_ANALGESIA, type)
 	..()
 
 /datum/brain_trauma/mild/healthy/on_life()
@@ -121,6 +120,7 @@
 
 /datum/brain_trauma/mild/healthy/on_lose()
 	owner.set_screwyhud(SCREWYHUD_NONE)
+	REMOVE_TRAIT(owner, TRAIT_ANALGESIA, type)
 	..()
 
 /datum/brain_trauma/mild/muscle_weakness

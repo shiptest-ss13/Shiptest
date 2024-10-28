@@ -91,9 +91,90 @@
 	icon_state = "stamp-syndicate"
 	dye_color = DYE_SYNDICATE
 
+/obj/item/stamp/donk
+	name = "Donk! Co. rubber stamp"
+	icon_state = "stamp-donk"
+	dye_color = DYE_SYNDICATE
+
+/obj/item/stamp/cybersun
+	name = "Cybersun Virtual Solutions rubber stamp"
+	icon_state = "stamp-cybersun"
+	dye_color = DYE_SYNDICATE
+
+/obj/item/stamp/cybersun/biodynamics
+	name = "Cybersun Biodynamics rubber stamp"
+	icon_state = "stamp-biodynamics"
+	dye_color = DYE_CMO
+
+/obj/item/stamp/ngr
+	name = "New Gorlex Republic rubber stamp"
+	icon_state = "stamp-ngr"
+	dye_color = DYE_REDCOAT
+
+/obj/item/stamp/ngr/captain
+	name = "Captain's rubber stamp"
+	icon_state = "stamp-ngr_cap"
+	dye_color = DYE_QM
+
+/obj/item/stamp/ngr/foreman
+	name = "Foreman's rubber stamp"
+	icon_state = "stamp-ngr_fore"
+	dye_color = DYE_QM
+
+/obj/item/stamp/ngr/lieutenant
+	name = "Lieutenant's rubber stamp"
+	icon_state = "stamp-ngr_lieu"
+	dye_color = DYE_QM
+
+/obj/item/stamp/ngr/ensign
+	name = "Ensign's rubber stamp"
+	icon_state = "stamp-ngr_ensign"
+	dye_color = DYE_QM
+
 /obj/item/stamp/solgov
 	name = "SolGov rubber stamp"
 	icon_state = "stamp-solgov"
+
+/obj/item/stamp/inteq
+	name = "Inteq rubber stamp"
+	icon_state = "stamp-inteq"
+	dye_color = DYE_QM
+
+/obj/item/stamp/inteq/vanguard
+	name = "Vanguard's rubber stamp"
+	icon_state = "stamp-inteq_vanguard"
+
+/obj/item/stamp/inteq/maa
+	name = "Master at Arms' rubber stamp"
+	icon_state = "stamp-inteq_maa"
+
+/obj/item/stamp/inteq/artificer
+	name = "Honorable Artificer's rubber stamp"
+	icon_state = "stamp-inteq_artificer"
+
+/obj/item/stamp/inteq/corpsman
+	name = "Honorable Corpsman's rubber stamp"
+	icon_state = "stamp-inteq_corpsman"
+
+/obj/item/stamp/clip
+	name = "CLIP Minutemen rubber stamp"
+	icon_state = "stamp-cmm"
+	dye_color = DYE_FO
+
+/obj/item/stamp/clip/gold
+	name = "GOLD rubber stamp"
+	icon_state = "stamp-gold"
+	dye_color = DYE_FO
+
+/obj/item/stamp/clip/bard
+	name = "BARD rubber stamp"
+	icon_state = "stamp-bard"
+	dye_color = DYE_FO
+
+/obj/item/stamp/suns
+	name = "SUNS rubber stamp"
+	icon_state = "stamp-suns"
+	dye_color = DYE_PURPLE
 
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)

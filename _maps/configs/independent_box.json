@@ -12,22 +12,23 @@
 		"SPACE",
 		"NATURAL"
 	],
-	"prefix": "ISV",
+	"faction": "/datum/faction/independent",
+	"prefix": "IMV",
 	"job_slots": {
 		"Chief Medical Officer": {
-			"outfit": "/datum/outfit/job/cmo",
+			"outfit": "/datum/outfit/job/independent/cmo",
 			"slots": 1
 		},
 		"Medical Doctor": {
-			"outfit": "/datum/outfit/job/doctor",
+			"outfit": "/datum/outfit/job/independent/doctor",
 			"slots": 3
 		},
 		"Paramedic": {
-			"outfit": "/datum/outfit/job/paramedic",
+			"outfit": "/datum/outfit/job/independent/paramedic",
 			"slots": 2
 		},
 		"Assistant": {
-			"outfit": "/datum/outfit/job/assistant",
+			"outfit": "/datum/outfit/job/independent/assistant",
 			"slots": 3
 		}
 	},

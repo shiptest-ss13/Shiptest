@@ -60,7 +60,7 @@
 	qdel(src)
 
 /obj/structure/chair/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1))
+	if((W.tool_behaviour == TOOL_WRENCH || W.tool_behaviour == TOOL_DECONSTRUCT) && !(flags_1&NODECONSTRUCT_1))
 		W.play_tool_sound(src)
 		deconstruct()
 	else if(istype(W, /obj/item/assembly/shock_kit))
@@ -134,67 +134,6 @@
 	icon_state = "wooden_chair_wings"
 	item_chair = /obj/item/chair/wood/wings
 
-/obj/structure/chair/comfy
-	name = "comfy chair"
-	desc = "It looks comfy."
-	icon_state = "comfychair"
-	color = rgb(255,255,255)
-	resistance_flags = FLAMMABLE
-	max_integrity = 70
-	buildstackamount = 2
-	item_chair = null
-	var/mutable_appearance/armrest
-
-/obj/structure/chair/comfy/Initialize()
-	armrest = GetArmrest()
-	armrest.layer = ABOVE_MOB_LAYER
-	return ..()
-
-/obj/structure/chair/comfy/proc/GetArmrest()
-	return mutable_appearance('icons/obj/chairs.dmi', "comfychair_armrest")
-
-/obj/structure/chair/comfy/Destroy()
-	QDEL_NULL(armrest)
-	return ..()
-
-/obj/structure/chair/comfy/post_buckle_mob(mob/living/M)
-	. = ..()
-	update_armrest()
-
-/obj/structure/chair/comfy/proc/update_armrest()
-	if(has_buckled_mobs())
-		add_overlay(armrest)
-	else
-		cut_overlay(armrest)
-
-/obj/structure/chair/comfy/post_unbuckle_mob()
-	. = ..()
-	update_armrest()
-
-/obj/structure/chair/comfy/brown
-	color = rgb(255,113,0)
-
-/obj/structure/chair/comfy/beige
-	color = rgb(255,253,195)
-
-/obj/structure/chair/comfy/teal
-	color = rgb(0,255,255)
-
-/obj/structure/chair/comfy/black
-	color = rgb(167,164,153)
-
-/obj/structure/chair/comfy/lime
-	color = rgb(255,251,0)
-
-/obj/structure/chair/comfy/shuttle
-	name = "shuttle seat"
-	desc = "A comfortable, secure seat. It has a more sturdy looking buckling system, for smoother flights."
-	icon_state = "shuttle_chair"
-	buildstacktype = /obj/item/stack/sheet/mineral/titanium
-
-/obj/structure/chair/comfy/shuttle/GetArmrest()
-	return mutable_appearance('icons/obj/chairs.dmi', "shuttle_chair_armrest")
-
 /obj/structure/chair/office
 	anchored = FALSE
 	buildstackamount = 5
@@ -220,7 +159,6 @@
 	name = "stool"
 	desc = "Apply butt."
 	icon_state = "stool"
-	can_buckle = FALSE
 	buildstackamount = 1
 	item_chair = /obj/item/chair/stool
 
@@ -368,54 +306,6 @@
 	icon_state = "wooden_chair_wings_toppled"
 	origin_type = /obj/structure/chair/wood/wings
 
-/obj/structure/chair/old
-	name = "strange chair"
-	desc = "You sit in this. Either by will or force. Looks REALLY uncomfortable."
-	icon_state = "chairold"
-	item_chair = null
-
-/obj/structure/chair/comfy/shuttle/bronze
-	name = "brass chair"
-	desc = "A spinny chair made of bronze. It has little cogs for wheels!"
-	anchored = FALSE
-	icon_state = "brass_chair"
-	buildstacktype = /obj/item/stack/tile/bronze
-	buildstackamount = 1
-	item_chair = null
-	var/turns = 0
-
-/obj/structure/chair/comfy/shuttle/bronze/GetArmrest()
-	return mutable_appearance('icons/obj/chairs.dmi', "brass_chair_armrest")
-
-/obj/structure/chair/comfy/shuttle/bronze/Destroy()
-	STOP_PROCESSING(SSfastprocess, src)
-	. = ..()
-
-/obj/structure/chair/comfy/shuttle/bronze/process()
-	setDir(turn(dir,-90))
-	playsound(src, 'sound/effects/servostep.ogg', 50, FALSE)
-	turns++
-	if(turns >= 8)
-		STOP_PROCESSING(SSfastprocess, src)
-
-/obj/structure/chair/comfy/shuttle/bronze/Moved()
-	. = ..()
-	if(has_gravity())
-		playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
-
-/obj/structure/chair/comfy/shuttle/bronze/AltClick(mob/living/user)
-	turns = 0
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		return
-	if(!(datum_flags & DF_ISPROCESSING))
-		user.visible_message("<span class='notice'>[user] spins [src] around, and the last vestiges of Ratvarian technology keeps it spinning FOREVER.</span>", \
-		"<span class='notice'>Automated spinny chairs. The pinnacle of ancient Ratvarian technology.</span>")
-		START_PROCESSING(SSfastprocess, src)
-	else
-		user.visible_message("<span class='notice'>[user] stops [src]'s uncontrollable spinning.</span>", \
-		"<span class='notice'>You grab [src] and stop its wild spinning.</span>")
-		STOP_PROCESSING(SSfastprocess, src)
-
 /obj/structure/chair/mime
 	name = "invisible chair"
 	desc = "The mime needs to sit down and shut up."
@@ -447,19 +337,9 @@
 /obj/structure/chair/plastic/post_buckle_mob(mob/living/Mob)
 	Mob.pixel_y += 2
 	.=..()
-	if(iscarbon(Mob))
-		INVOKE_ASYNC(src, PROC_REF(snap_check), Mob)
 
 /obj/structure/chair/plastic/post_unbuckle_mob(mob/living/Mob)
 	Mob.pixel_y -= 2
-
-/obj/structure/chair/plastic/proc/snap_check(mob/living/carbon/Mob)
-	if (Mob.nutrition >= NUTRITION_LEVEL_FAT)
-		to_chat(Mob, "<span class='warning'>The chair begins to pop and crack, you're too heavy!</span>")
-		if(do_after(Mob, 60, 1, Mob, 0))
-			Mob.visible_message("<span class='notice'>The plastic chair snaps under [Mob]'s weight!</span>")
-			new /obj/effect/decal/cleanable/plastic(loc)
-			qdel(src)
 
 /obj/item/chair/plastic
 	name = "folding plastic chair"
@@ -475,3 +355,12 @@
 	custom_materials = list(/datum/material/plastic = 2000)
 	break_chance = 25
 	origin_type = /obj/structure/chair/plastic
+
+/obj/structure/chair/handrail
+	name = "handrail"
+	icon = 'icons/obj/structures/handrail.dmi'
+	icon_state = "handrail"
+	desc = "A safety railing with buckles to secure yourself to when floor isn't stable enough."
+	item_chair = null
+	buildstackamount = 4
+	buildstacktype = /obj/item/stack/rods

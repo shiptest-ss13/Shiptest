@@ -100,25 +100,31 @@
 /obj/item/organ/stomach/ethereal
 	name = "biological battery"
 	icon_state = "stomach-p" //Welp. At least it's more unique in functionaliy.
-	desc = "A crystal-like organ that stores the electric charge of ethereals."
-	var/crystal_charge = ETHEREAL_CHARGE_FULL
+	desc = "A crystal-like organ that stores the electric charge of elzuosa."
+	var/crystal_charge = ELZUOSE_CHARGE_FULL
 
 /obj/item/organ/stomach/ethereal/on_life()
 	..()
-	adjust_charge(-ETHEREAL_CHARGE_FACTOR)
+	adjust_charge(-ELZUOSE_CHARGE_FACTOR)
 
-/obj/item/organ/stomach/ethereal/Insert(mob/living/carbon/M, special = 0)
+/obj/item/organ/stomach/ethereal/Insert(mob/living/carbon/organ_owner, special = 0)
 	..()
-	RegisterSignal(owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
-	RegisterSignal(owner, COMSIG_LIVING_ELECTROCUTE_ACT, PROC_REF(on_electrocute))
+	RegisterSignal(organ_owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
+	RegisterSignal(organ_owner, COMSIG_LIVING_ELECTROCUTE_ACT, PROC_REF(on_electrocute))
+	RegisterSignal(organ_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
 
-/obj/item/organ/stomach/ethereal/Remove(mob/living/carbon/M, special = 0)
-	UnregisterSignal(owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
-	UnregisterSignal(owner, COMSIG_LIVING_ELECTROCUTE_ACT)
+/obj/item/organ/stomach/ethereal/Remove(mob/living/carbon/organ_owner, special = 0)
+	UnregisterSignal(organ_owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
+	UnregisterSignal(organ_owner, COMSIG_LIVING_ELECTROCUTE_ACT)
+	UnregisterSignal(organ_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS)
 	..()
+
+/obj/item/organ/stomach/ethereal/proc/get_status_tab_item(mob/living/carbon/source, list/items)
+	SIGNAL_HANDLER
+	items += "Crystal Charge: [round((crystal_charge / ELZUOSE_CHARGE_SCALING_MULTIPLIER), 0.1)]%"
 
 /obj/item/organ/stomach/ethereal/proc/charge(datum/source, amount, repairs)
-	adjust_charge((amount * ETHEREAL_CHARGE_SCALING_MULTIPLIER) / 70)      //WS Edit -- Ethereal Charge Scaling
+	adjust_charge((amount * ELZUOSE_CHARGE_SCALING_MULTIPLIER) / 70)      //WS Edit -- Ethereal Charge Scaling
 
 /obj/item/organ/stomach/ethereal/proc/on_electrocute(datum/source, shock_damage, siemens_coeff = 1, flags = NONE)
 	if(flags & SHOCK_ILLUSION)
@@ -127,7 +133,7 @@
 	to_chat(owner, "<span class='notice'>You absorb some of the shock into your body!</span>")
 
 /obj/item/organ/stomach/ethereal/proc/adjust_charge(amount)
-	crystal_charge = clamp(crystal_charge + amount, ETHEREAL_CHARGE_NONE, ETHEREAL_CHARGE_DANGEROUS)
+	crystal_charge = clamp(crystal_charge + amount, ELZUOSE_CHARGE_NONE, ELZUOSE_CHARGE_DANGEROUS)
 
 /obj/item/organ/stomach/cybernetic
 	name = "basic cybernetic stomach"

@@ -41,6 +41,9 @@
 /obj/item/storage/box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
+	STR.max_volume = STORAGE_VOLUME_CONTAINER_S
+	STR.max_w_class = WEIGHT_CLASS_SMALL
 	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 
 /obj/item/storage/box/update_overlays()
@@ -99,7 +102,7 @@
 	for(var/i in 1 to 7)
 		new /obj/item/disk/data(src)
 
-
+//guys why are my tests failing
 /obj/item/storage/box/disks_plantgene
 	name = "plant data disks box"
 	illustration = "disk_kit"
@@ -121,9 +124,15 @@
 	var/mask_type = /obj/item/clothing/mask/breath
 	var/internal_type = /obj/item/tank/internals/emergency_oxygen
 	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
+	var/radio_type = /obj/item/radio
 
 /obj/item/storage/box/survival/PopulateContents()
-	new mask_type(src)
+	if(!isnull(mask_type))
+		new mask_type(src)
+
+	if(!isnull(radio_type))
+		new radio_type(src)
+
 	if(!isnull(medipen_type))
 		new medipen_type(src)
 
@@ -131,10 +140,6 @@
 		new internal_type(src)
 	else
 		new /obj/item/tank/internals/plasmaman/belt(src)
-
-/obj/item/storage/box/survival/radio/PopulateContents()
-	..() // we want the survival stuff too.
-	new /obj/item/radio/off(src)
 
 // Mining survival box
 /obj/item/storage/box/survival/mining
@@ -148,10 +153,6 @@
 /obj/item/storage/box/survival/engineer
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 
-/obj/item/storage/box/survival/engineer/radio/PopulateContents()
-	..() // we want the regular items too.
-	new /obj/item/radio/off(src)
-
 // Syndie survival box
 /obj/item/storage/box/survival/syndie
 	mask_type = /obj/item/clothing/mask/gas/syndicate
@@ -162,13 +163,20 @@
 /obj/item/storage/box/survival/security
 	mask_type = /obj/item/clothing/mask/gas/sechailer
 
-/obj/item/storage/box/survival/security/radio/PopulateContents()
-	..() // we want the regular stuff too
-	new /obj/item/radio/off(src)
-
 // Medical survival box
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
+
+/obj/item/storage/box/survival/clip
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
+
+/obj/item/storage/box/survival/clip/balaclava
+	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
+	internal_type = /obj/item/tank/internals/emergency_oxygen/double
+
+/obj/item/storage/box/survival/frontier
+	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary
+	internal_type = /obj/item/tank/internals/emergency_oxygen //frontiersmen dont
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -450,7 +458,7 @@
 
 /obj/item/storage/box/condimentbottles/PopulateContents()
 	for(var/i in 1 to 6)
-		new /obj/item/reagent_containers/food/condiment(src)
+		new /obj/item/reagent_containers/condiment(src)
 
 /obj/item/storage/box/cups
 	name = "box of paper cups"
@@ -471,11 +479,6 @@
 /obj/item/storage/box/donkpockets/PopulateContents()
 	for(var/i in 1 to 6)
 		new donktype(src)
-
-/obj/item/storage/box/donkpockets/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/donkpocket))
 
 /obj/item/storage/box/donkpockets/donkpocketspicy
 	name = "box of spicy-flavoured donk-pockets"
@@ -514,12 +517,6 @@
 	illustration = null
 	var/cube_type = /obj/item/reagent_containers/food/snacks/monkeycube
 
-/obj/item/storage/box/monkeycubes/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 7
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/monkeycube))
-
 /obj/item/storage/box/monkeycubes/PopulateContents()
 	for(var/i in 1 to 5)
 		new cube_type(src)
@@ -533,12 +530,6 @@
 	desc = "Waffle Co. brand gorilla cubes. Do not taunt."
 	icon_state = "monkeycubebox"
 	illustration = null
-
-/obj/item/storage/box/gorillacubes/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 3
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/monkeycube))
 
 /obj/item/storage/box/gorillacubes/PopulateContents()
 	for(var/i in 1 to 3)
@@ -607,35 +598,6 @@
 	for(var/i in 1 to 6)
 		new /obj/item/cartridge/security(src)
 
-/obj/item/storage/box/firingpins
-	name = "box of standard firing pins"
-	desc = "A box full of standard firing pins, to allow newly-developed firearms to operate."
-	icon_state = "secbox"
-	illustration = "firingpin"
-
-/obj/item/storage/box/firingpins/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/firing_pin(src)
-
-/obj/item/storage/box/firingpins/paywall
-	name = "box of paywall firing pins"
-	desc = "A box full of paywall firing pins, to allow newly-developed firearms to operate behind a custom-set paywall."
-	illustration = "firingpin"
-
-/obj/item/storage/box/firingpins/paywall/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/firing_pin/paywall(src)
-
-/obj/item/storage/box/lasertagpins
-	name = "box of laser tag firing pins"
-	desc = "A box full of laser tag firing pins, to allow newly-developed firearms to require wearing brightly coloured plastic armor before being able to be used."
-	illustration = "firingpin"
-
-/obj/item/storage/box/lasertagpins/PopulateContents()
-	for(var/i in 1 to 3)
-		new /obj/item/firing_pin/tag/red(src)
-		new /obj/item/firing_pin/tag/blue(src)
-
 /obj/item/storage/box/handcuffs
 	name = "box of spare handcuffs"
 	desc = "A box full of handcuffs."
@@ -700,12 +662,6 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "spbox"
 
-/obj/item/storage/box/snappops/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.set_holdable(list(/obj/item/toy/snappop))
-	STR.max_items = 8
-
 /obj/item/storage/box/snappops/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/toy/snappop)
 
@@ -720,12 +676,6 @@
 	drop_sound = 'sound/items/handling/matchbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/matchbox_pickup.ogg'
 	custom_price = 20
-
-/obj/item/storage/box/matches/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 10
-	STR.set_holdable(list(/obj/item/match))
 
 /obj/item/storage/box/matches/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/match)
@@ -744,9 +694,10 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	foldable = /obj/item/stack/sheet/cardboard //BubbleWrap
 
-/obj/item/storage/box/lights/ComponentInitialize()
+/obj/item/storage/box/lights/ComponentInitialize()//holy oversized box. this one can stay the way it is, for now
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.storage_flags = STORAGE_FLAGS_LEGACY_DEFAULT
 	STR.max_items = 21
 	STR.set_holdable(list(/obj/item/light/tube, /obj/item/light/bulb))
 	STR.max_combined_w_class = 21
@@ -774,6 +725,13 @@
 	for(var/i in 1 to 7)
 		new /obj/item/light/bulb(src)
 
+/obj/item/storage/box/flares
+	name = "box of flares"
+	illustration = "firecracker"
+
+/obj/item/storage/box/flares/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/flashlight/flare(src)
 
 /obj/item/storage/box/deputy
 	name = "box of deputy armbands"
@@ -872,6 +830,16 @@
 /obj/item/storage/box/lethalshot/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/buckshot(src)
+
+/obj/item/storage/box/techshot
+	name = "box of unloaded shotgun tech shells"
+	desc = "A box full of unloaded tech shells, capable of producing a variety of effects once loaded."
+	icon_state = "techshot_box"
+	illustration = null
+
+/obj/item/storage/box/techshot/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun/techshell(src)
 
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
@@ -1393,10 +1361,10 @@
 		/obj/item/stack/sheet/mineral/uranium=20,\
 		/obj/item/stack/sheet/mineral/diamond=50,\
 		/obj/item/stack/sheet/bluespace_crystal=50,\
-		/obj/item/stack/sheet/mineral/bananium=50,\
+		/obj/item/stack/sheet/mineral/hidden/hellstone=50,\
 		/obj/item/stack/sheet/mineral/wood=50,\
 		/obj/item/stack/sheet/plastic/fifty=1,\
-		/obj/item/stack/sheet/runed_metal/fifty=1
+		/obj/item/stack/sheet/mineral/hidden/hellstone/fifty=1
 		)
 	generate_items_inside(items_inside,src)
 
@@ -1486,8 +1454,7 @@
 /obj/item/storage/box/gum/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/chewable/bubblegum))
-	STR.max_items = 4
+	STR.max_volume = (STORAGE_VOLUME_CONTAINER_S / 2)
 
 /obj/item/storage/box/gum/PopulateContents()
 	for(var/i in 1 to 4)
@@ -1542,3 +1509,4 @@
 		/obj/item/stack/wrapping_paper/small=1
 		)
 	generate_items_inside(items_inside,src)
+

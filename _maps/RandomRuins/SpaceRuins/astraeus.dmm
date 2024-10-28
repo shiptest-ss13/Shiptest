@@ -24,9 +24,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "au" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/carpet/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
 "aN" = (
@@ -56,8 +54,7 @@
 	},
 /area/ruin/space/has_grav/astraeus/hallway)
 "ch" = (
-/obj/structure/chair/comfy/black{
-	dir = 4;
+/obj/structure/chair/comfy/grey/directional/east{
 	name = "Captain"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -104,7 +101,7 @@
 /turf/open/space,
 /area/space/nearstation)
 "dx" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
 "dA" = (
@@ -329,7 +326,7 @@
 /turf/open/space,
 /area/space/nearstation)
 "jd" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
 "je" = (
@@ -352,7 +349,7 @@
 /obj/machinery/conveyor{
 	dir = 6
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
 "jT" = (
@@ -559,7 +556,7 @@
 /area/ruin/space/has_grav/astraeus/bridge)
 "pT" = (
 /obj/item/stack/conveyor,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
 "pU" = (
@@ -624,7 +621,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "rk" = (
@@ -678,7 +675,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
 "sL" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
 "sR" = (
@@ -734,8 +731,8 @@
 "uH" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/maintenance{
-	lootcount = 2;
+/obj/effect/spawner/random/maintenance{
+	spawn_loot_count = 2;
 	name = "2maintenance loot spawner"
 	},
 /turf/open/floor/plasteel/airless,
@@ -803,7 +800,7 @@
 /obj/machinery/conveyor{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "wl" = (
@@ -937,7 +934,7 @@
 	name = "paper - Munitions Inventory";
 	pixel_x = 7
 	},
-/obj/item/book/manual/wiki/engineering_hacking{
+/obj/item/book/manual/wiki/hacking{
 	pixel_x = -6
 	},
 /turf/open/floor/plasteel/airless,
@@ -1237,9 +1234,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
-"GV" = (
-/turf/closed/mineral/random/high_chance,
-/area/ruin/unpowered)
 "Ha" = (
 /obj/structure/disposalpipe/broken,
 /obj/effect/decal/cleanable/dirt,
@@ -1380,7 +1374,7 @@
 /obj/machinery/conveyor/inverted{
 	dir = 9
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/disposals)
 "KD" = (
@@ -1499,7 +1493,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "Ni" = (
-/obj/structure/closet/wall,
+/obj/structure/closet/wall/directional/north,
 /obj/item/circuitboard/computer/rdconsole,
 /obj/item/clothing/suit/toggle/labcoat,
 /obj/item/research_notes/loot/big,
@@ -1566,7 +1560,7 @@
 /obj/machinery/power/apc/auto_name/directional/east{
 	start_charge = 0
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "Pd" = (
@@ -1716,10 +1710,6 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/astraeus/munitions)
 "TS" = (
-/obj/item/clothing/shoes/clown_shoes{
-	pixel_x = -3;
-	pixel_y = 12
-	},
 /obj/machinery/airalarm/directional/south,
 /obj/item/storage/crayons{
 	pixel_y = -6
@@ -1727,7 +1717,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "TV" = (
-/obj/machinery/computer/communications{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
@@ -1744,7 +1734,7 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered)
 "UK" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
 "UU" = (
@@ -2039,8 +2029,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "ZT" = (
-/obj/structure/chair/comfy/black{
-	dir = 4;
+/obj/structure/chair/comfy/grey/directional/east{
 	name = "Helm"
 	},
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -2309,7 +2298,7 @@ Wy
 ac
 ac
 ac
-GV
+zq
 zq
 zq
 FB
@@ -2346,9 +2335,9 @@ ac
 ac
 ac
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 ac
 "}
@@ -2383,9 +2372,9 @@ FL
 Wy
 ac
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 ac
 "}
@@ -2420,8 +2409,8 @@ ac
 ac
 ac
 zq
-GV
-GV
+zq
+zq
 zq
 FB
 ac
@@ -2456,9 +2445,9 @@ Fb
 WQ
 ac
 ac
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 FB
 ac
@@ -2494,8 +2483,8 @@ ac
 ac
 ac
 FB
-GV
-GV
+zq
+zq
 zq
 ac
 ac
@@ -2531,8 +2520,8 @@ ac
 ac
 ac
 FB
-GV
-GV
+zq
+zq
 zq
 ac
 ac
@@ -2569,7 +2558,7 @@ ac
 ac
 lF
 ph
-GV
+zq
 FB
 ac
 ac
@@ -2606,7 +2595,7 @@ ac
 ac
 wX
 Nj
-GV
+zq
 FB
 ac
 ac
@@ -2643,7 +2632,7 @@ WQ
 ac
 ac
 Nj
-GV
+zq
 zq
 ac
 ac
@@ -3049,8 +3038,8 @@ ac
 FB
 zq
 zq
-GV
-GV
+zq
+zq
 zq
 zq
 ac
@@ -3085,9 +3074,9 @@ ac
 ac
 zq
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 zq
 ac
@@ -3122,9 +3111,9 @@ ac
 ac
 zq
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 FB
 ac
@@ -3160,7 +3149,7 @@ ac
 ac
 zq
 zq
-GV
+zq
 zq
 zq
 FB
@@ -3197,7 +3186,7 @@ ac
 ac
 zq
 zq
-GV
+zq
 zq
 FB
 ac
@@ -3260,7 +3249,7 @@ FB
 FB
 zq
 zq
-GV
+zq
 zq
 zq
 ac
@@ -3296,9 +3285,9 @@ FB
 zq
 zq
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 zq
 zq
@@ -3369,9 +3358,9 @@ VG
 FB
 zq
 zq
-GV
+zq
 FB
-GV
+zq
 FB
 FB
 FB
@@ -3404,13 +3393,13 @@ zq
 Ub
 FB
 FB
-GV
-GV
-GV
+zq
+zq
+zq
 FB
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 zq
 zq
@@ -3445,10 +3434,10 @@ zq
 zq
 FB
 FB
-GV
-GV
-GV
-GV
+zq
+zq
+zq
+zq
 zq
 zq
 zq
@@ -3476,7 +3465,7 @@ zq
 zq
 zq
 zq
-GV
+zq
 FB
 FB
 FB
@@ -3485,8 +3474,8 @@ FB
 FB
 FB
 FB
-GV
-GV
+zq
+zq
 zq
 zq
 ac
@@ -3512,17 +3501,17 @@ ac
 zq
 zq
 zq
-GV
-GV
-GV
-GV
-GV
+zq
+zq
+zq
+zq
+zq
 zq
 FB
 ra
-GV
-GV
-GV
+zq
+zq
+zq
 zq
 zq
 ac
@@ -3550,14 +3539,14 @@ ac
 zq
 zq
 zq
-GV
-GV
-GV
-GV
-GV
+zq
+zq
+zq
+zq
+zq
 FB
 FB
-GV
+zq
 zq
 zq
 ac
@@ -3700,9 +3689,9 @@ ac
 ac
 zq
 zq
-GV
-GV
-GV
+zq
+zq
+zq
 FB
 zq
 zq

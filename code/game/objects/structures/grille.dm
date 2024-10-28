@@ -221,16 +221,25 @@
 /obj/structure/grille/deconstruct(disassembled = TRUE)
 	if(!loc) //if already qdel'd somehow, we do nothing
 		return
-	if(!(flags_1&NODECONSTRUCT_1))
-		var/obj/R = new rods_type(drop_location(), rods_amount)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		var/obj/R = new rods_type(drop_location(), rods_amount) || locate(rods_type) in drop_location() // if the rods get merged, find the stack
 		transfer_fingerprints_to(R)
 		qdel(src)
 	..()
 
+/obj/structure/grille/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, 1 SECONDS, volume=100))
+		to_chat(user, "<span class='warning'>You slice [src] apart.</span>")
+		deconstruct(FALSE)
+		return TRUE
+
 /obj/structure/grille/obj_break()
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		new broken_type(src.loc)
-		var/obj/R = new rods_type(drop_location(), rods_broken)
+		var/obj/R = new rods_type(drop_location(), rods_broken) || locate(rods_type) in drop_location() // see above
 		transfer_fingerprints_to(R)
 		qdel(src)
 

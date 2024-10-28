@@ -24,10 +24,12 @@
 	// NOTE: "planetary" outposts should use baseturf specification and possibly different ztrait sun type, for both hangars and main level.
 	var/list/main_level_ztraits = list(
 		ZTRAIT_STATION = TRUE,
-		ZTRAIT_SUN_TYPE = AZIMUTH
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY
 	)
 	var/list/hangar_ztraits = list(
-		ZTRAIT_SUN_TYPE = STATIC_EXPOSED
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY
 	)
 
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
@@ -119,16 +121,14 @@
 		// fun fact: "Hutton" is in last_names
 		person_name = pick(GLOB.last_names)
 	else
-		switch(rand(1, 5))
+		switch(rand(1, 4))
 			if(1)
-				person_name = pick(GLOB.moth_last)
-			if(2)
 				person_name = pick(prob(50) ? GLOB.lizard_names_male : GLOB.lizard_names_female)
-			if(3)
+			if(2)
 				person_name = pick(GLOB.spider_last)
-			if(4)
+			if(3)
 				person_name = kepori_name()
-			if(5)
+			if(4)
 				person_name = vox_name()
 
 	return "[person_name] [pick(GLOB.station_suffixes)]"
@@ -211,13 +211,16 @@
 		)
 		return FALSE
 
+	if(src in dock_requester.blacklisted)
+		return new /datum/docking_ticket(_docking_error = "Docking request denied: [dock_requester.blacklisted[src]]")
+
 	adjust_dock_to_shuttle(h_dock, dock_requester.shuttle_port)
 	return new /datum/docking_ticket(h_dock, src, dock_requester)
 
 /datum/overmap/outpost/post_docked(datum/overmap/ship/controlled/dock_requester)
 	for(var/mob/M as anything in GLOB.player_list)
 		if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
-			M.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
+			M.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[name]</u></span><br>[station_time_timestamp("hh:mm")]")
 
 	// Instance the virtual speaker for use in radio messages. It needs an atom to trace things back to; we use the token.
 	// You might think "but wait, can't we just keep one speaker around instead of instancing it for each fucking radio message?"

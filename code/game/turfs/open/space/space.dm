@@ -40,7 +40,7 @@
 	if(!space_gas)
 		space_gas = new
 	air = space_gas
-	update_air_ref(0)
+	update_air_ref(AIR_REF_SPACE_TURF)
 	vis_contents.Cut() //removes inherited overlays
 	visibilityChanged()
 

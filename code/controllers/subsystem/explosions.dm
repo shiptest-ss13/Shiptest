@@ -140,7 +140,7 @@ SUBSYSTEM_DEF(explosions)
 		else
 			continue
 
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(wipe_color_and_text), wipe_colours), 100)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(wipe_color_and_text), wipe_colours), 100)
 
 /proc/wipe_color_and_text(list/atom/wiping)
 	for(var/i in wiping)
@@ -164,7 +164,7 @@ SUBSYSTEM_DEF(explosions)
 // 5 explosion power is a (0, 1, 3) explosion.
 // 1 explosion power is a (0, 0, 1) explosion.
 
-/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE)
+/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE, gentle = FALSE)
 	. = SSexplosions.explode(arglist(args))
 
 #define CREAK_DELAY 5 SECONDS //Time taken for the creak to play after explosion, if applicable.
@@ -177,7 +177,7 @@ SUBSYSTEM_DEF(explosions)
 #define FREQ_UPPER 40 //The upper limit for the randomly selected frequency.
 #define FREQ_LOWER 25 //The lower of the above.
 
-/datum/controller/subsystem/explosions/proc/explode(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke)
+/datum/controller/subsystem/explosions/proc/explode(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke, gentle)
 	epicenter = get_turf(epicenter)
 	if(!epicenter)
 		return
@@ -216,7 +216,7 @@ SUBSYSTEM_DEF(explosions)
 	var/y0 = epicenter.y
 	var/z0 = epicenter.virtual_z()
 	var/area/areatype = get_area(epicenter)
-	SSblackbox.record_feedback("associative", "explosion", 1, list("dev" = devastation_range, "heavy" = heavy_impact_range, "light" = light_impact_range, "flash" = flash_range, "flame" = flame_range, "orig_dev" = orig_dev_range, "orig_heavy" = orig_heavy_range, "orig_light" = orig_light_range, "x" = x0, "y" = y0, "z" = z0, "area" = areatype.type, "time" = time_stamp("YYYY-MM-DD hh:mm:ss", 1)))
+	SSblackbox.record_feedback("associative", "explosion", 1, list("dev" = devastation_range, "heavy" = heavy_impact_range, "light" = light_impact_range, "flash" = flash_range, "flame" = flame_range, "orig_dev" = orig_dev_range, "orig_heavy" = orig_heavy_range, "orig_light" = orig_light_range, "x" = x0, "y" = y0, "z" = z0, "area" = areatype.type, "time" = time_stamp(show_ds = TRUE)))
 
 	// Play sounds; we want sounds to be different depending on distance so we will manually do it ourselves.
 	// Stereo users will also hear the direction of the explosion!
@@ -550,6 +550,8 @@ SUBSYSTEM_DEF(explosions)
 			var/throw_dir = L[2]
 			var/max_range = L[3]
 			for(var/atom/movable/A in T)
+				if(QDELETED(A))
+					continue
 				if(!A.anchored && A.move_resist != INFINITY)
 					var/atom_throw_range = rand(throw_range, max_range)
 					var/turf/throw_at = get_ranged_target_turf(A, throw_dir, atom_throw_range)

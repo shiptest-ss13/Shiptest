@@ -55,18 +55,17 @@
 	req_access = list(20)
 	},
 /obj/item/storage/backpack/security,
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
-/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/syndicate/ngr/officer,
+/obj/item/clothing/suit/armor/ngr/captain,
+/obj/item/clothing/shoes/combat,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
-/obj/item/clothing/head/HoS/syndicate,
+/obj/item/clothing/head/ngr/peaked,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/gun/ballistic/revolver,
-/obj/item/ammo_box/a357/match,
-/obj/item/ammo_box/a357/match,
 /obj/item/ammo_box/a357/match,
 /obj/item/pen/edagger,
+/obj/item/storage/guncase/pistol/a357,
+/obj/item/storage/box/ammo/a357,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "bJ" = (
@@ -75,10 +74,6 @@
 	icon_state = "syndicate";
 	name = "armor locker"
 	},
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
-/obj/item/clothing/head/helmet/operator,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom/directional/west{
 	pixel_y = -5
@@ -91,6 +86,12 @@
 /obj/machinery/light/small/directional/west{
 	pixel_y = 7
 	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/clothing/suit/armor/ngr,
+/obj/item/clothing/suit/armor/ngr,
+/obj/item/clothing/head/helmet/ngr,
+/obj/item/clothing/head/helmet/ngr,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "bN" = (
@@ -176,8 +177,8 @@
 	dir = 1
 	},
 /obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -221,12 +222,12 @@
 	name = "food crate"
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -300,8 +301,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/industrial/outline,
-/obj/item/storage/box/lethalshot,
-/obj/item/ammo_box/c10mm,
+/obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/storage/box/ammo/c10mm,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "fC" = (
@@ -332,6 +333,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
+"ge" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 2;
+	id = "hyena_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/dorm)
 "gg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -491,7 +499,7 @@
 	pixel_x = 32
 	},
 /obj/effect/turf_decal/industrial/outline,
-/obj/item/gun/ballistic/shotgun/lethal,
+/obj/item/gun/ballistic/shotgun/brimstone,
 /obj/machinery/button/door{
 	dir = 1;
 	id = "wreckerarmory";
@@ -754,9 +762,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/item/stamp/qm{
-	name = "foreman's rubber stamp"
-	},
+/obj/item/stamp/ngr/foreman,
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
 	id = "hyena_cargo";
@@ -787,10 +793,12 @@
 /area/ship/bridge)
 "oF" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/documents/syndicate/mining,
-/obj/structure/filingcabinet,
+/obj/structure/filingcabinet{
+	dir = 1
+	},
 /obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/borderfloorblack,
+/obj/item/folder/documents/syndicate/ngr,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "oJ" = (
@@ -879,45 +887,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"pt" = (
-/obj/effect/turf_decal/industrial/outline,
-/obj/item/clothing/shoes/workboots/mining,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/gloves/explorer,
-/obj/item/clothing/accessory/armband/cargo,
-/obj/item/storage/belt/mining,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/head/hardhat/orange,
-/obj/item/clothing/head/soft/grey,
-/obj/machinery/light/small/directional/north,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "mining";
-	name = "wrecker's locker";
-	req_access = list(48)
-	},
-/obj/machinery/firealarm/directional/east,
-/obj/effect/turf_decal/industrial/outline,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "mining";
-	name = "wrecker's locker";
-	req_access = list(48)
-	},
-/obj/item/clothing/shoes/workboots/mining,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/gloves/explorer,
-/obj/item/clothing/accessory/armband/cargo,
-/obj/item/storage/belt/mining,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/head/hardhat/orange,
-/obj/item/clothing/head/soft/grey,
-/obj/machinery/light/small/directional/north,
-/obj/machinery/firealarm/directional/east,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage)
 "pu" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
@@ -969,7 +938,7 @@
 "pI" = (
 /obj/item/radio/intercom/wideband/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo{
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloorblack,
@@ -1036,21 +1005,21 @@
 	req_access = list(11)
 	},
 /obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/syndicate/gorlex,
 /obj/item/clothing/accessory/armband/engine,
-/obj/item/clothing/suit/hazardvest,
 /obj/item/storage/belt/utility,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/welding,
-/obj/item/clothing/head/hardhat,
-/obj/item/clothing/head/soft/yellow,
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -16;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -16
 	},
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/suit/hazardvest/ngr,
+/obj/item/clothing/head/hardhat/ngr,
+/obj/item/clothing/gloves/color/red/insulated,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "rM" = (
@@ -1067,7 +1036,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/carpet/red,
 /area/ship/crew)
@@ -1153,26 +1122,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
-"tx" = (
-/obj/effect/turf_decal/industrial/outline,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "mining";
-	name = "wrecker's locker";
-	req_access = list(48)
-	},
-/obj/item/clothing/shoes/workboots/mining,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/gloves/explorer,
-/obj/item/clothing/accessory/armband/cargo,
-/obj/item/storage/belt/mining,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/head/hardhat/orange,
-/obj/item/clothing/head/soft/grey,
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage)
 "tI" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1287,8 +1236,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -16;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
@@ -1335,8 +1284,8 @@
 /area/ship/security/armory)
 "wO" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
@@ -1348,6 +1297,18 @@
 /area/ship/crew)
 "wP" = (
 /obj/effect/turf_decal/industrial/outline,
+/obj/structure/closet/crate{
+	desc = "A rectangular steel crate containing supplies to survive a desert environment more easily.";
+	name = "desert equipment crate"
+	},
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/head/ngr/flap,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "xm" = (
@@ -1436,6 +1397,19 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"yH" = (
+/obj/effect/turf_decal/industrial/outline,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/rack,
+/obj/item/gun/energy/plasmacutter{
+	pixel_y = 10
+	},
+/obj/item/gun/energy/plasmacutter,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
 "yM" = (
 /obj/item/lighter{
 	pixel_x = -8;
@@ -1494,47 +1468,42 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "zq" = (
-/obj/structure/closet/wall/red{
-	dir = 8;
-	name = "uniform closet";
-	pixel_x = 28
+/obj/structure/closet/wall/red/directional/east{
+	name = "uniform closet"
 	},
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/head/soft/black,
-/obj/item/clothing/head/soft/black,
-/obj/item/clothing/head/soft/black,
-/obj/item/clothing/head/soft/black,
+/obj/item/tank/jetpack/suit,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/under/syndicate/ngr,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/head/ngr,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "zA" = (
@@ -1566,9 +1535,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Af" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -1651,37 +1618,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
-"Bv" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "warden";
-	name = "foreman's locker";
-	req_access = list(56)
-	},
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/suit/toggle/industrial,
-/obj/item/clothing/gloves/combat,
-/obj/item/storage/belt/utility/chief{
-	name = "\improper Foreman's toolbelt"
-	},
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/head/hardhat/white,
-/obj/item/clothing/head/beret/ce{
-	name = "foreman beret"
-	},
-/obj/item/storage/toolbox/syndicate,
-/obj/item/wrench/combat,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/gun/ballistic/automatic/pistol,
-/obj/item/clothing/accessory/holster,
-/obj/item/grenade/chem_grenade/metalfoam,
-/obj/item/card/mining_access_card,
-/obj/machinery/airalarm/directional/west,
-/obj/item/tank/jetpack/suit,
-/turf/open/floor/carpet/red,
-/area/ship/cargo/office)
 "BB" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner_techfloor_grid{
@@ -1690,21 +1626,31 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "BG" = (
-/obj/machinery/porta_turret/ship/ballistic,
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 8;
+	id = "hyena_grid"
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/storage)
+"BR" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 1;
+	id = "hyena_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/port)
 "BZ" = (
 /obj/structure/window/reinforced/tinted/frosted,
 /obj/machinery/suit_storage_unit/inherit{
 	name = "captain's suit storage unit";
 	req_access = list(20)
 	},
-/obj/item/clothing/suit/space/hardsuit/syndi,
-/obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20
 	},
+/obj/item/clothing/suit/space/hardsuit/syndi/ngr,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "Ck" = (
@@ -1765,8 +1711,8 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/machinery/light_switch{
-	pixel_y = 22;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
@@ -1865,8 +1811,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -16;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1924,13 +1870,16 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper_bin/carbon,
-/obj/item/folder/syndicate/red,
 /obj/item/pen/fountain/captain,
-/obj/item/stamp/hos{
-	name = "captain's rubber stamp"
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
+	},
+/obj/item/stamp/ngr{
+	pixel_x = 13;
+	pixel_y = 7
+	},
+/obj/item/stamp/ngr/captain{
+	pixel_x = 13
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -1949,9 +1898,7 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "Gj" = (
-/obj/structure/chair/sofa/corner{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/corner/directional/east,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -1959,9 +1906,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/light_switch{
+	dir = 4;
 	pixel_x = -20;
-	pixel_y = 12;
-	dir = 4
+	pixel_y = 12
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew)
@@ -1986,6 +1933,26 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
+"GM" = (
+/obj/effect/turf_decal/industrial/outline,
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "mining";
+	name = "wrecker's locker";
+	req_access = list(48)
+	},
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/accessory/armband/cargo,
+/obj/item/storage/belt/mining,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/welding,
+/obj/machinery/airalarm/directional/north,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/suit/hazardvest/ngr,
+/obj/item/clothing/head/hardhat/ngr,
+/obj/item/pickaxe/drill,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
 "GV" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
@@ -2250,8 +2217,9 @@
 	req_access = list(56)
 	},
 /obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
 /turf/open/floor/carpet/red,
 /area/ship/cargo/office)
 "KX" = (
@@ -2336,6 +2304,13 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
+"NA" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 2;
+	id = "hyena_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/starboard)
 "NF" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
@@ -2365,9 +2340,7 @@
 	},
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	dheight = 4;
 	dir = 8;
-	height = 18;
 	launch_status = 0;
 	name = "mining ship";
 	preferred_direction = 4
@@ -2395,6 +2368,8 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Oy" = (
@@ -2500,9 +2475,38 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Qz" = (
-/obj/machinery/porta_turret/ship/ballistic,
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 6;
+	id = "hyena_grid"
+	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/area/ship/maintenance/fore)
+"QG" = (
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "warden";
+	name = "foreman's locker";
+	req_access = list(56)
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/ngr/officer,
+/obj/item/clothing/gloves/combat,
+/obj/item/storage/belt/utility/chief{
+	name = "\improper Foreman's toolbelt"
+	},
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/welding,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/wrench/combat,
+/obj/item/clothing/accessory/holster,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/machinery/airalarm/directional/west,
+/obj/item/clothing/suit/ngr,
+/obj/item/clothing/head/hardhat/ngr/foreman,
+/obj/item/tank/jetpack/suit,
+/obj/item/storage/guncase/pistol/ringneck,
+/turf/open/floor/carpet/red,
+/area/ship/cargo/office)
 "QW" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
@@ -2550,7 +2554,7 @@
 	pixel_x = 11;
 	pixel_y = -3
 	},
-/obj/machinery/fax,
+/obj/machinery/fax/syndicate,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -2797,9 +2801,7 @@
 /area/ship/hallway/central)
 "Tq" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /obj/effect/landmark/start/assistant,
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/extinguisher_cabinet/directional/west,
@@ -2862,8 +2864,8 @@
 /obj/effect/turf_decal/trimline/opaque/red/filled/corner,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -16;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -2876,6 +2878,13 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
+"Up" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 4;
+	id = "hyena_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "UI" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2886,6 +2895,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"UN" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 1;
+	id = "hyena_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/hallway/central)
 "UX" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -3036,6 +3052,28 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/office)
+"Xv" = (
+/obj/effect/turf_decal/industrial/outline,
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/accessory/armband/cargo,
+/obj/item/storage/belt/mining,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/welding,
+/obj/machinery/light/small/directional/north,
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "mining";
+	name = "wrecker's locker";
+	req_access = list(48)
+	},
+/obj/machinery/firealarm/directional/east,
+/obj/effect/turf_decal/industrial/outline,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/suit/hazardvest/ngr,
+/obj/item/clothing/head/hardhat/ngr,
+/obj/item/pickaxe/drill,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
 "Xz" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
@@ -3051,7 +3089,7 @@
 	a_intent = "help";
 	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
 	environment_smash = 0;
-	faction = list("neutral");
+	faction = list("neutral","playerSyndicate");
 	mob_size = 2;
 	move_force = 1000;
 	move_resist = 1000;
@@ -3129,8 +3167,8 @@
 	req_access = null
 	},
 /obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 23
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
@@ -3147,24 +3185,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"Yc" = (
-/obj/effect/turf_decal/industrial/outline,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/rack,
-/obj/item/pickaxe/drill/jackhammer/old{
-	pixel_y = 10
-	},
-/obj/item/pickaxe/drill/jackhammer/old,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage)
 "Yv" = (
 /obj/machinery/nuclearbomb/beer{
 	desc = "An evidently-decommissioned nuclear warhead. Sloppy paint on the casing declares 'VICTORY OVER NANOTRASEN,' followed by a badly-smudged date of 25-something. A drink tap has been drilled directly into the metal.";
@@ -3311,7 +3334,7 @@ sE
 "}
 (2,1,1) = {"
 nn
-BG
+BR
 ir
 PL
 SP
@@ -3328,7 +3351,7 @@ sE
 nX
 dU
 pi
-BG
+NA
 "}
 (3,1,1) = {"
 nn
@@ -3384,7 +3407,7 @@ iT
 XO
 VX
 iL
-Yc
+yH
 Sm
 Sa
 sE
@@ -3423,7 +3446,7 @@ KH
 Ic
 vG
 iT
-tx
+GM
 dh
 Oy
 KX
@@ -3444,7 +3467,7 @@ uq
 La
 Gw
 iT
-pt
+Xv
 qO
 xx
 rF
@@ -3578,13 +3601,13 @@ UX
 GV
 GV
 GV
-BG
+ge
 nn
 Zb
 "}
 (15,1,1) = {"
 nn
-Qz
+UN
 cs
 cs
 XU
@@ -3598,7 +3621,7 @@ bN
 Zn
 fL
 KW
-Bv
+QG
 QW
 nn
 Zb
@@ -3836,13 +3859,13 @@ mL
 "}
 (27,1,1) = {"
 nn
-Qz
+Up
 Ap
 Jv
 oQ
 VC
 Ap
-Qz
+Up
 nn
 nn
 nn

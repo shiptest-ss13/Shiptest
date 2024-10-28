@@ -142,16 +142,14 @@ SUBSYSTEM_DEF(blackbox)
 			record_feedback("tally", "radio_usage", 1, "pirate")
 		if(FREQ_SYNDICATE)
 			record_feedback("tally", "radio_usage", 1, "syndicate")
+		if(FREQ_PGF)
+			record_feedback("tally", "radio_usage", 1, "pgf")
 		if(FREQ_CENTCOM)
 			record_feedback("tally", "radio_usage", 1, "centcom")
 		if(FREQ_SOLGOV)		//WS Edit - SolGov Rep
 			record_feedback("tally", "radio_usage", 1, "solgov")		//WS Edit - SolGov Rep
 		if(FREQ_AI_PRIVATE)
 			record_feedback("tally", "radio_usage", 1, "ai private")
-		if(FREQ_CTF_RED)
-			record_feedback("tally", "radio_usage", 1, "CTF red team")
-		if(FREQ_CTF_BLUE)
-			record_feedback("tally", "radio_usage", 1, "CTF blue team")
 		else
 			record_feedback("tally", "radio_usage", 1, "other")
 

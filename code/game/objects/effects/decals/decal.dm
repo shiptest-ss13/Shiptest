@@ -14,10 +14,6 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/effect/decal/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		qdel(src)
-
 /obj/effect/decal/proc/NeverShouldHaveComeHere(turf/T)
 	return isclosedturf(T) || isgroundlessturf(T)
 
@@ -39,8 +35,8 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/effect/turf_decal
-	icon = 'icons/turf/decals.dmi'
-	icon_state = "warningline"
+	icon = 'icons/turf/decals/decals.dmi'
+	icon_state = "warningfulltile"
 	plane = FLOOR_PLANE
 	layer = TURF_DECAL_LAYER
 	var/detail_overlay

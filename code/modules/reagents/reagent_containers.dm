@@ -1,7 +1,7 @@
 /obj/item/reagent_containers
 	name = "Container"
 	desc = "..."
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/beakers.dmi'
 	icon_state = null
 	w_class = WEIGHT_CLASS_TINY
 	var/amount_per_transfer_from_this = 5
@@ -110,7 +110,7 @@
 					amount_per_transfer_from_this = possible_transfer_amounts[i+1]
 				else
 					amount_per_transfer_from_this = possible_transfer_amounts[1]
-				balloon_alert(user, "Transferring [amount_per_transfer_from_this]u")
+				balloon_alert(user, "transferring [amount_per_transfer_from_this]u")
 				return
 
 /obj/item/reagent_containers/attack(mob/M, mob/user, def_zone)
@@ -138,6 +138,8 @@
 		reagents.remove_reagent(reag.type, reag.volume * frac)
 
 /obj/item/reagent_containers/AltClick(mob/user)
+	if(!can_interact(user))
+		return
 	. = ..()
 	if(can_have_cap)
 		if(cap_lost)
@@ -268,7 +270,7 @@
 		return
 
 	var/fill_name = fill_icon_state? fill_icon_state : icon_state
-	var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[fill_name][fill_icon_thresholds[1]]")
+	var/mutable_appearance/filling = mutable_appearance(fill_icon, "[fill_name][fill_icon_thresholds[1]]")
 
 	var/percent = round((reagents.total_volume / volume) * 100)
 	for(var/i in 1 to fill_icon_thresholds.len)

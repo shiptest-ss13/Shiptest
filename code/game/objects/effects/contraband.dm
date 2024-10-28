@@ -56,9 +56,14 @@
 	icon_state = "rolled_solgov"
 
 /obj/item/poster/random_minutemen
-	name = "random cmm poster"
-	poster_type = /obj/structure/sign/poster/minutemen/random
+	name = "random clip poster"
+	poster_type = /obj/structure/sign/poster/clip/random
 	icon_state = "rolled_legit"
+
+/obj/item/poster/random_rilena
+	name = "random rilena poster"
+	poster_type = /obj/structure/sign/poster/rilena/random
+	icon_state = "rolled_rilena"
 
 // The poster sign/structure
 
@@ -67,6 +72,7 @@
 	var/original_name
 	desc = "A large piece of space-resistant printed paper."
 	icon = 'icons/obj/contraband.dmi'
+	icon_state = "poster_ripped"
 	anchored = TRUE
 	var/ruined = FALSE
 	/// how do we want to handle the random poster pool? POSTER_SUBTYPES chooses randomly from subtypes, AKA how it was handled before
@@ -92,7 +98,7 @@
 		name = "poster - [name]"
 		desc = "A large piece of space-resistant printed paper. [desc]"
 
-	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddComponent), list(/datum/component/beauty, 300)), 0)
+	AddElement(/datum/element/beauty, 300)
 
 /obj/structure/sign/poster/proc/randomise()
 	var/obj/structure/sign/poster/selected
@@ -256,7 +262,7 @@
 
 /obj/structure/sign/poster/contraband/lusty_xenomorph
 	name = "Lusty Xenomorph"
-	desc = "A heretical poster depicting the titular star of an equally heretical book. Wow, this would be extremely offensive to anyone in the CMM."
+	desc = "A heretical poster depicting the titular star of an equally heretical book. Wow, this would be extremely offensive to anyone in CLIP."
 	icon_state = "poster_xeno" //i dont even know how to redo this one
 
 /obj/structure/sign/poster/contraband/syndicate_recruitment
@@ -381,8 +387,8 @@
 	icon_state = "poster_dday" // human sprite by quin
 
 /obj/structure/sign/poster/contraband/stechkin
-	name = "Stechkin Pistol"
-	desc = "A poster advertising the Scarborough Arms Stechkin conealable pistol. It has a silencer attached, showing off the stealth capablities, while also looking badass as all hell."
+	name = "Ringneck Pistol"
+	desc = "A poster advertising the Scarborough Arms Ringneck conealable pistol. It has a silencer attached, showing off the stealth capablities, while also looking badass as all hell."
 	icon_state = "poster_stechkin"
 
 /obj/structure/sign/poster/contraband/energy_swords
@@ -422,7 +428,7 @@
 
 /obj/structure/sign/poster/contraband/backdoor_xeno_babes_6
 	name = "Backdoor Xeno Babes 6"
-	desc = "... You don't even know where to start with this. Wow, this would be extremely offensive to anyone in the CMM."
+	desc = "... You don't even know where to start with this. Wow, this would be extremely offensive to anyone in CLIP."
 	icon_state = "poster_xeno_maid"
 
 /obj/structure/sign/poster/contraband/robustmore_drinkfoods
@@ -513,7 +519,7 @@
 /obj/structure/sign/poster/contraband/m90
 	name = "M90 SMG"
 	desc = "A poster advertising the Scarborough M90. Burst action with a grenade launcher, for some reason."
-	icon_state = "poster-bulldog"
+	icon_state = "poster-m90"
 
 /obj/structure/sign/poster/contraband/inteq_nt
 	name = "Inteq Recruitment"
@@ -716,11 +722,6 @@
 	desc = "This informational poster teaches the viewer what carbon dioxide is."
 	icon_state = "poster_co2"
 
-/obj/structure/sign/poster/official/sgt
-	name = "Sapient Trafficking Awareness"
-	desc = "A poster calling for an end to sapient trafficking. Over sixty percent of victims are jellywomen."
-	icon_state = "poster_sgt" // Maybe this will be what finally fixes it.
-
 /obj/structure/sign/poster/official/focus
 	name = "Focus! Motivational Poster"
 	desc = "\"Focus! Let your energy be pinpointed!\""
@@ -874,10 +875,10 @@
 	desc = "Terra, or Earth as it's called by inhabitants, the third planet in the Sol system. Home to the only life as humans knew it, until contact with the outside universe. This poster in particular is trying to attract tourists to Terra, listing attractions like the Grand Orrery and Neue Waldstätte."
 	icon_state = "poster-solgov-terra"
 
-/obj/structure/sign/poster/solgov/ares
-	name = "Ares"
-	desc = "Ares, fourth planet in the Sol system. While evidence suggests that Aphrodite and Ares may have once had life, Terra was the only one that kept it. This poster in particular is trying to attract tourists to Ares, listing attractions like skiing resorts and ancient robot exhibits."
-	icon_state = "poster-solgov-ares"
+/obj/structure/sign/poster/solgov/mars
+	name = "Mars"
+	desc = "Mars, fourth planet in the Sol system. While evidence suggests that Venus and Mars may have once had life, Terra was the only one that kept it. This poster in particular is trying to attract tourists to Mars, listing attractions like skiing resorts and ancient robot exhibits."
+	icon_state = "poster-solgov-mars"
 
 /obj/structure/sign/poster/solgov/luna
 	name = "Luna"
@@ -891,7 +892,7 @@
 
 /obj/structure/sign/poster/solgov/skiing
 	name = "Lo-Fly Skiing Advert"
-	desc = "An advertisement for some low-gravity skiing resort on Ares. \"Popular with SUNS groups!\""
+	desc = "An advertisement for some low-gravity skiing resort on Mars. \"Popular with SUNS groups!\""
 	icon_state = "poster-solgov-loskiing"
 
 /obj/structure/sign/poster/solgov/recyle
@@ -938,54 +939,54 @@
 	desc = "SUNS, best known for it's diverse variety of top students from various solarian universities, dealing with internal fighting via dueling with swords, and being sued by Nanotrasen for trademark infrigement on their old name \"NSV.\""
 	icon_state = "poster-solgov_suns"
 
-//CMM poster pool. This is quite limited, so don't use more than 3 random ones at once. Expect to see these on CMM ships.
+//CLIP poster pool. This is quite limited, so don't use more than 3 random ones at once. Expect to see these on CLIP ships.
 
-/obj/structure/sign/poster/minutemen
-	poster_item_name = "cmm poster"
-	poster_item_desc = "A poster that is produced within the CMM. It comes with adhesive backing, for easy pinning to any vertical surface."
+/obj/structure/sign/poster/clip
+	poster_item_name = "clip poster"
+	poster_item_desc = "A poster that is produced within CLIP. It comes with adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_legit"
 
-/obj/structure/sign/poster/minutemen/random
-	name = "random cmm poster"
-	icon_state = "random_cmm"
+/obj/structure/sign/poster/clip/random
+	name = "random clip poster"
+	icon_state = "random_clip"
 	never_random = TRUE
-	random_basetype = /obj/structure/sign/poster/minutemen
+	random_basetype = /obj/structure/sign/poster/clip
 	random_type = POSTER_SUBTYPES
 
-/obj/structure/sign/poster/minutemen/enlist
+/obj/structure/sign/poster/clip/enlist
 	name = "Enlist"
-	desc = "\"Do your part for not just the CMM, but Luna Town, Lanchester City, Serene, Star City, Ryunosuke, Lanshuka, Radinska, New Kalixcis, and all of your families! Plus, finance your future; It's a win/win to enlist in the CMM!\""
-	icon_state = "poster-cmm_enlist"
+	desc = "\"Do your part for not just CLIP, but Luna Town, Lanchester City, Serene, Star City, Ryunosuke, Lanshuka, Radinska, New Kalixcis, and all of your families! Plus, finance your future; It's a win/win to enlist in the CMM!\""
+	icon_state = "poster-clip_enlist"
 
-/obj/structure/sign/poster/minutemen/bard
-	name = "CMM BARD"
-	desc = "A poster that was made by soldiers that attemps to recruit people in the BARD depecting a \"Sargent Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Somethinng tells you that service is a lot less intresting than this."
-	icon_state = "poster-cmm_bard"
+/obj/structure/sign/poster/clip/bard
+	name = "CMM-BARD"
+	desc = "A poster made by soldiers to recruit people into the BARD, depecting a \"Sergeant Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Something tells you that service is a lot less interesting than this."
+	icon_state = "poster-clip_bard"
 
-/obj/structure/sign/poster/minutemen/gold
-	name = "CMM GOLD"
-	desc = "A poster listing job positions open in CMM GOLD and asking for applications, listing important but unintresting benifits like health insurance and such."
-	icon_state = "poster-cmm_gold"
+/obj/structure/sign/poster/clip/gold
+	name = "CLIP-GOLD"
+	desc = "A poster listing job positions open in the CLIP GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
+	icon_state = "poster-clip_gold"
 
-/obj/structure/sign/poster/minutemen/lunatown
+/obj/structure/sign/poster/clip/lunatown
 	name = "Luna-Town"
-	desc = "Luna-town, the second planet of the Kanler-332 system. The capital of the Colonial Minutemen and the Milita. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, including the capital city itself and the remains of the UNSV Lichtenstein, famous for bringing the CMM from the brink into what it is today."
-	icon_state = "poster-cmm_luna"
+	desc = "Luna-town, one of the many moons of the gas giant Maxin. The capital of the Confederated League of Independent Planets. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, including the capital city itself and the remains of the UNSV Lichtenstein, famous for bringing CLIP from the brink into what it is today."
+	icon_state = "poster-clip_luna"
 
-/obj/structure/sign/poster/minutemen/maxin
+/obj/structure/sign/poster/clip/maxin
 	name = "Maxin"
 	desc = "Maxin, the fourth planet of the Kanler-332 system. It's many moons including Lanchester City make it a popular sightseeing attraction for those enroute to Lanchester City."
-	icon_state = "poster-cmm_maxin"
+	icon_state = "poster-clip_maxin"
 
-/obj/structure/sign/poster/minutemen/lanchester
+/obj/structure/sign/poster/clip/lanchester
 	name = "Lanchester City"
-	desc = "Luna-town, one of the many moons of the gas giant Maxin. A moon well known for it's numerous, massive factories. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as crashed Frontiersmen ships and the massive entertainment industry."
-	icon_state = "poster-cmm_lanchester"
+	desc = "Lanchester City, one of the many moons of the gas giant Maxin. A moon well known for it's numerous, massive factories. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as crashed Frontiersmen ships and the massive entertainment industry."
+	icon_state = "poster-clip_lanchester"
 
-/obj/structure/sign/poster/minutemen/serene
+/obj/structure/sign/poster/clip/serene
 	name = "Serene"
 	desc = "Serene, the fifth planet of the Druja system. Covered with a thick sheet of snow, the atmosphere has been described as \"Breathable, if it weren't so darn cold.\" This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as old Frontiersmen War sites and Xenofauna war sites."
-	icon_state = "poster-cmm_serene"
+	icon_state = "poster-clip_serene"
 
 // Syndicate posters. Since syndicate are dived lorewise, this would only make sense on pre-split ships.
 /obj/structure/sign/poster/syndicate
@@ -1014,6 +1015,128 @@
 	/obj/structure/sign/poster/contraband/gec,
 	/obj/structure/sign/poster/contraband/d_day_promo,
 		)
+
+//RILENA poster pool. There are only five of these, so try not to go overboard with the random posters, okay? Expect not to see these mapped onto ships except in rolled up form, since they're supposed to be bought in the RILENA merch crate.
+
+/obj/structure/sign/poster/rilena
+	poster_item_name = "rilena poster"
+	poster_item_desc = "A poster with a vibrant purple backing, indicating it is for the popular webseries RILENA: LMR. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_rilena"
+
+/obj/structure/sign/poster/rilena/Initialize(mapload, obj/structure/sign/poster/new_poster_structure)
+	. = ..()
+	AddComponent(/datum/component/art/rilena, GOOD_ART)
+
+/obj/structure/sign/poster/rilena/random
+	name = "random rilena poster"
+	icon_state = "random_rilena"
+	never_random = TRUE
+	random_basetype = /obj/structure/sign/poster/rilena
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/rilena/rilena
+	name = "RILENA"
+	desc = "A RILENA: LMR poster featuring two of the more fan favorite characters, Ri and T4L1."
+	icon_state = "poster-rilena_rilena"
+
+/obj/structure/sign/poster/rilena/ri
+	name = "Ri"
+	desc = "A RILENA: LMR poster featuring Ri on her own."
+	icon_state = "poster-rilena_ri"
+
+/obj/structure/sign/poster/rilena/tali
+	name = "T4L1"
+	desc = "A RILENA: LMR poster featuring a fan favorite miniboss, T4L1."
+	icon_state = "poster-rilena_tali"
+
+/obj/structure/sign/poster/rilena/run
+	name = "Lenelasa Me Refi"
+	desc = "A RILENA: LMR poster featuring Ri running, a core mechanic of the series."
+	icon_state = "poster-rilena_run"
+
+/obj/structure/sign/poster/rilena/timeline
+	name = "Timeline"
+	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
+	icon_state = "poster-rilena_timeline"
+
+//PGF Mission Accomplished
+/obj/structure/sign/poster/pgf/mission_accomplished_1
+	name = "MISSION ACCOMPLISHED! 1"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-1"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_1
+	name = "Mission Accomplished Poster 1"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_1
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_2
+	name = "MISSION ACCOMPLISHED! 2"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-2"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_2
+	name = "Mission Accomplished Poster 2"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_2
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_3
+	name = "MISSION ACCOMPLISHED! 3"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-3"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_3
+	name = "Mission Accomplished Poster 3"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_3
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_4
+	name = "MISSION ACCOMPLISHED! 4"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-4"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_4
+	name = "Mission Accomplished Poster 4"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_4
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_5
+	name = "MISSION ACCOMPLISHED! 5"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-5"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_5
+	name = "Mission Accomplished Poster 5"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_5
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_6
+	name = "MISSION ACCOMPLISHED! 6"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-6"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_6
+	name = "Mission Accomplished Poster 6"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_6
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/pgf/mission_accomplished_7
+	name = "MISSION ACCOMPLISHED! 7"
+	desc = "MISSION ACCOMPLISHED SOLDIER!"
+	icon_state = "poster-mission_accomplished-7"
+	never_random = TRUE
+
+/obj/item/poster/mission_accomplished_7
+	name = "Mission Accomplished Poster 7"
+	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_7
+	icon_state = "rolled_poster"
+
 
 #undef PLACE_SPEED
 #undef POSTER_SUBTYPES

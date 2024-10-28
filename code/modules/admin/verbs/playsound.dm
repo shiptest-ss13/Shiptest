@@ -1,5 +1,5 @@
 /client/proc/play_sound(S as sound)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Play Global Sound"
 	if(!check_rights(R_SOUND))
 		return
@@ -40,18 +40,19 @@
 
 
 /client/proc/play_local_sound(S as sound)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Play Local Sound"
 	if(!check_rights(R_SOUND))
 		return
 
+	var/vol = input("Select a volume for the sound", "Play Local Sound", 50) as num
 	log_admin("[key_name(src)] played a local sound [S]")
 	message_admins("[key_name_admin(src)] played a local sound [S]")
-	playsound(get_turf(src.mob), S, 50, FALSE, FALSE)
+	playsound(get_turf(src.mob), S, vol, FALSE, FALSE)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Local Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/play_direct_mob_sound(S as sound, mob/M)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Play Direct Mob Sound"
 	if(!check_rights(R_SOUND))
 		return
@@ -66,7 +67,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Direct Mob Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/play_web_sound()
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Play Internet Sound"
 	if(!check_rights(R_SOUND))
 		return
@@ -150,7 +151,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Internet Sound")
 
 /client/proc/set_round_end_sound(S as sound)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Set Round End Sound"
 	if(!check_rights(R_SOUND))
 		return

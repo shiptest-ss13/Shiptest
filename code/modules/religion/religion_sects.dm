@@ -135,8 +135,6 @@
 	if(iscyborg(L))
 		var/mob/living/silicon/robot/R = L
 		var/charge_amt = 50
-		if(L.mind?.holy_role == HOLY_ROLE_HIGHPRIEST)
-			charge_amt *= 2
 		R.cell?.charge += charge_amt
 		R.visible_message("<span class='notice'>[user] charges [R] with the power of [GLOB.deity]!</span>")
 		to_chat(R, "<span class='boldnotice'>You are charged by the power of [GLOB.deity]!</span>")
@@ -151,7 +149,7 @@
 	var/did_we_charge = FALSE
 	var/obj/item/organ/stomach/ethereal/eth_stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 	if(istype(eth_stomach))
-		eth_stomach.adjust_charge(3 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)    //WS Edit -- Ethereal Charge Scaling
+		eth_stomach.adjust_charge(3 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)    //WS Edit -- Ethereal Charge Scaling
 		did_we_charge = TRUE
 
 	//if we're not targetting a robot part we stop early

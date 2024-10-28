@@ -45,6 +45,11 @@
 	icon_state = "cmm_cypherkey"
 	channels = list(RADIO_CHANNEL_MINUTEMEN = 1)
 
+/obj/item/encryptionkey/pgf
+	name = "pgf encryption key"
+	icon_state = "bin_cypherkey"
+	channels = list(RADIO_CHANNEL_PGF = 1)
+
 /obj/item/encryptionkey/inteq
 	name = "inteq encryption key"
 	icon_state = "irmg_cypherkey"
@@ -57,7 +62,7 @@
 
 /obj/item/encryptionkey/headset_com
 	name = "command radio encryption key"
-	icon_state = "comm_cypherkey"
+	icon_state = "com_cypherkey"
 	channels = list(RADIO_CHANNEL_COMMAND = 1)
 
 /obj/item/encryptionkey/heads/captain
@@ -82,6 +87,11 @@
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "solgov_cypherkey"
 	channels = list(RADIO_CHANNEL_SOLGOV = 1)
+
+//	/obj/item/encryptionkey/suns
+//	name = "\improper SUNS encryption key"
+//	icon_state = "suns_cypherkey"
+//	channels = list(RADIO_CHANNEL_SUNS = 1)
 
 /obj/item/encryptionkey/wideband
 	name = "wideband encryption key"

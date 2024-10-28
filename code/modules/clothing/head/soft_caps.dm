@@ -121,13 +121,11 @@
 	desc = "It's a robust baseball hat in tasteful red colour."
 	icon_state = "secsoft"
 	soft_type = "sec"
-	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 50)
-	strip_delay = 60
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/sec/brig_phys
 	name = "security medic cap"
-	icon_state = "secmedsoft"
+	icon_state = "secsoft"
 
 /obj/item/clothing/head/soft/paramedic
 	name = "paramedic cap"
@@ -137,6 +135,13 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/cybersun
+	name = "cybersun agent cap"
+	desc = "A black baseball hat emblazoned with a reflective Cybersun patch."
+	icon_state = "agentsoft"
+	soft_type = "agent"
+	dog_fashion = null
+
+/obj/item/clothing/head/soft/cybersun/medical
 	name = "cybersun medic cap"
 	desc = "A turquoise baseball hat emblazoned with a reflective cross. Typical of Cybersun Industries field medics."
 	icon_state = "cybersunsoft"
@@ -148,7 +153,6 @@
 	desc = "A rich brown utility cover with the golden shield of the IRMG on it."
 	icon_state = "inteqsoft"
 	soft_type = "inteq"
-	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 50)
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/inteq/corpsman

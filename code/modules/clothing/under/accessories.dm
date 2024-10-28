@@ -103,7 +103,7 @@
 	name = "waistcoat"
 	desc = "For some classy, murderous fun."
 	icon_state = "waistcoat"
-	item_state = "waistcoat"
+	item_state = "det_suit"
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
@@ -119,13 +119,11 @@
 	name = "syndicate maid apron"
 	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
 	icon_state = "maidapronsynd"
-	item_state = "maidapronsynd"
 
 /obj/item/clothing/accessory/maidapron/inteq
 	name = "inteq maid apron"
 	desc = "A 'tactical' apron to protect you from all sorts of spills, from dough to blood!"
 	icon_state = "inteqmaidapron"
-	item_state = "inteqmaidapron"
 
 //////////
 //Medals//
@@ -137,6 +135,7 @@
 	icon_state = "bronze"
 	custom_materials = list(/datum/material/iron=1000)
 	resistance_flags = FIRE_PROOF
+	attachment_slot = null
 	var/medaltype = "medal" //Sprite used for medalbox
 	var/commended = FALSE
 
@@ -376,64 +375,16 @@
 	for(var/i in 1 to 3)
 		new /obj/item/lipstick/random(src)
 
-////////////////
-//REAL BIG FAN//
-////////////////
-
-/obj/item/clothing/accessory/fan_clown_pin
-	name = "Clown Pin"
-	desc = "A pin to show off your appreciation for clowns and clowning"
-	icon_state = "fan_clown_pin"
-	above_suit = FALSE
-	minimize_when_attached = TRUE
-	attachment_slot = CHEST
-
-/obj/item/clothing/accessory/fan_clown_pin/on_uniform_equip(obj/item/clothing/under/U, user)
-	var/mob/living/L = user
-	if(HAS_TRAIT(L, TRAIT_FAN_CLOWN))
-		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "fan_clown_pin", /datum/mood_event/fan_clown_pin)
-
-/obj/item/clothing/accessory/fan_clown_pin/on_uniform_dropped(obj/item/clothing/under/U, user)
-	var/mob/living/L = user
-	if(HAS_TRAIT(L, TRAIT_FAN_CLOWN))
-		SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "fan_clown_pin")
-
-/obj/item/clothing/accessory/fan_mime_pin
-	name = "Mime Pin"
-	desc = "A pin to show off your appreciation for mimes and miming"
-	icon_state = "fan_mime_pin"
-	above_suit = FALSE
-	minimize_when_attached = TRUE
-	attachment_slot = CHEST
-
-/obj/item/clothing/accessory/fan_mime_pin/on_uniform_equip(obj/item/clothing/under/U, user)
-	var/mob/living/L = user
-	if(HAS_TRAIT(L, TRAIT_FAN_MIME))
-		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "fan_mime_pin", /datum/mood_event/fan_mime_pin)
-
-/obj/item/clothing/accessory/fan_mime_pin/on_uniform_dropped(obj/item/clothing/under/U, user)
-	var/mob/living/L = user
-	if(HAS_TRAIT(L, TRAIT_FAN_MIME))
-		SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "fan_mime_pin")
 
 ////////////////
 //OONGA BOONGA//
 ////////////////
 
-/obj/item/clothing/accessory/talisman
-	name = "bone talisman"
-	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
-	icon_state = "talisman"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
+/obj/item/clothing/accessory/bonearmlet
+	name = "bone armlet"
+	desc = "An armlet made out of animal bone and sinew. According to a common Frontier superstition, it brings good luck to its wearer."
+	icon_state = "bone_armlet"
 	attachment_slot = ARMS
-	above_suit = TRUE
-
-/obj/item/clothing/accessory/wolftalisman
-	name = "hunter's necklace"
-	desc = "A thick necklace woven from sinew and bits of wolfhide, adorned with a carved fang. Slaying such beasts is rumoured to elate the gods of old, and such an item proves your worth."
-	icon_state = "wolf_talisman"
-	armor = list("melee" = 15	, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 25, "acid" = 25)
-	attachment_slot = CHEST
 	above_suit = TRUE
 
 /obj/item/clothing/accessory/skullcodpiece
@@ -441,7 +392,6 @@
 	desc = "A legion skull fitted to a codpiece, intended to protect the important things in life."
 	icon_state = "skull"
 	above_suit = TRUE
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 40, "acid" = 40)
 	attachment_slot = GROIN
 
 /obj/item/clothing/accessory/skilt
@@ -450,24 +400,20 @@
 	icon_state = "skilt"
 	above_suit = TRUE
 	minimize_when_attached = FALSE
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
 	attachment_slot = GROIN
 
 /obj/item/clothing/accessory/holster
 	name = "shoulder holster"
 	desc = "A holster to carry a handgun and ammo. WARNING: Badasses only."
 	icon_state = "holster"
-	item_state = "holster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster
+	attachment_slot = null
 
 /obj/item/clothing/accessory/holster/detective
 	name = "detective's shoulder holster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/detective
 
-/obj/item/clothing/accessory/holster/lieutenant
-	name = "lieutenant's shoulder holster"
-	desc = "A modified shoulder holster designed to fit a small egun and power cells."
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/lt
+
 
 /obj/item/clothing/accessory/holster/detective/Initialize()
 	. = ..()
@@ -478,16 +424,12 @@
 /obj/item/clothing/accessory/holster/nukie
 	name = "operative holster"
 	desc = "A deep shoulder holster capable of holding almost any form of ballistic weaponry."
-	icon_state = "syndicate_holster"
-	item_state = "syndicate_holster"
 	w_class = WEIGHT_CLASS_BULKY
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/nukie
 
 /obj/item/clothing/accessory/holster/chameleon
 	name = "syndicate holster"
 	desc = "A two pouched hip holster that uses chameleon technology to disguise itself and any guns in it."
-	icon_state = "syndicate_holster"
-	item_state = "syndicate_holster"
 	var/datum/action/item_action/chameleon/change/chameleon_action
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/chameleon
 
@@ -498,6 +440,10 @@
 	chameleon_action.chameleon_type = /obj/item/clothing/accessory
 	chameleon_action.chameleon_name = "Accessory"
 	chameleon_action.initialize_disguises()
+
+/obj/item/clothing/accessory/holster/chameleon/Destroy()
+	QDEL_NULL(chameleon_action)
+	return ..()
 
 /obj/item/clothing/accessory/holster/chameleon/emp_act(severity)
 	. = ..()
@@ -515,7 +461,7 @@
 
 /obj/item/clothing/accessory/holster/marine/Initialize()
 	. = ..()
-	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 
@@ -523,3 +469,25 @@
 	name = "solgov waistcoat"
 	desc = "A standard issue waistcoat in solgov colors."
 	icon_state = "solgov_waistcoat"
+
+//////////
+//RILENA//
+//////////
+
+/obj/item/clothing/accessory/rilena_pin
+	name = "RILENA: LMR Xader pin"
+	desc = "A pin that shows your love for the webseries RILENA."
+	icon_state = "rilena_pin"
+	above_suit = FALSE
+	minimize_when_attached = TRUE
+	attachment_slot = null
+
+/obj/item/clothing/accessory/rilena_pin/on_uniform_equip(obj/item/clothing/under/U, user)
+	var/mob/living/L = user
+	if(HAS_TRAIT(L, TRAIT_FAN_RILENA))
+		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "rilena_pin", /datum/mood_event/rilena_fan)
+
+/obj/item/clothing/accessory/rilena_pin/on_uniform_dropped(obj/item/clothing/under/U, user)
+	var/mob/living/L = user
+	if(HAS_TRAIT(L, TRAIT_FAN_RILENA))
+		SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "rilena_pin")

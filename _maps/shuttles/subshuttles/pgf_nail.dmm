@@ -1,0 +1,524 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "nail_holo";
+	dir = 1
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 8;
+	id = "nail_door_blast"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"b" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"c" = (
+/turf/template_noop,
+/area/template_noop)
+"d" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "nail_window_shut"
+	},
+/obj/structure/grille,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"e" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1;
+	name = "nail supply pump"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"h" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/etherbor/left,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"i" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"l" = (
+/obj/structure/railing/corner,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"n" = (
+/obj/structure/sign/number/random,
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"o" = (
+/obj/machinery/button/shieldwallgen{
+	id = "nail_holo";
+	dir = 1;
+	pixel_x = 12;
+	pixel_y = -19
+	},
+/obj/machinery/button/door{
+	id = "nail_door_blast";
+	name = "Nail Blast Doors";
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = 4
+	},
+/obj/machinery/button/door{
+	id = "nail_window_shut";
+	name = "Nail Window Shutters";
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = -6
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -13;
+	pixel_y = -19
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/machinery/turretid/ship{
+	pixel_y = -30;
+	pixel_x = -2;
+	id = "nail_grid"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"p" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "nail_holo"
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 8;
+	id = "nail_door_blast"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"r" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/etherbor/center,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"s" = (
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"t" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"u" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/etherbor/right,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"v" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"w" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"x" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"y" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "nail_window_shut"
+	},
+/obj/structure/grille,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"z" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"A" = (
+/obj/structure/railing,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"B" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"D" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	icon_state = "0-4"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"E" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"G" = (
+/obj/structure/sign/number/random,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"H" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/directional/west,
+/obj/item/wrench,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"I" = (
+/obj/machinery/computer/helm{
+	dir = 4
+	},
+/obj/item/radio/intercom/wideband/directional/south,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"J" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 8;
+	id = "nail_door_blast"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "nail dock";
+	preferred_direction = 8;
+	port_direction = 2
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"L" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	icon_state = "0-4"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"M" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/poddoor/shutters{
+	id = "nail_window_shut"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"N" = (
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	dir = 8;
+	name = "supply pump"
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 4;
+	name = "nail exhaust pump"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"O" = (
+/obj/structure/railing,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/rack,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"R" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/closet/crate,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"S" = (
+/obj/machinery/holopad/emergency,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"T" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 8;
+	mode = 1;
+	id = "nail_grid"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/external/dark)
+"U" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"V" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"W" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"X" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/terminal,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plating,
+/area/ship/bridge)
+
+(1,1,1) = {"
+c
+W
+W
+t
+T
+c
+c
+"}
+(2,1,1) = {"
+c
+W
+H
+W
+d
+c
+c
+"}
+(3,1,1) = {"
+c
+W
+X
+l
+y
+M
+c
+"}
+(4,1,1) = {"
+c
+W
+z
+A
+I
+W
+c
+"}
+(5,1,1) = {"
+c
+W
+x
+S
+o
+W
+c
+"}
+(6,1,1) = {"
+n
+W
+U
+h
+b
+W
+t
+"}
+(7,1,1) = {"
+n
+O
+E
+r
+v
+R
+t
+"}
+(8,1,1) = {"
+n
+B
+i
+u
+e
+w
+t
+"}
+(9,1,1) = {"
+G
+D
+s
+N
+s
+L
+W
+"}
+(10,1,1) = {"
+c
+V
+p
+J
+a
+V
+c
+"}

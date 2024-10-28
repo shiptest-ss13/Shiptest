@@ -214,9 +214,8 @@
 		return TRUE
 
 	// Priority 3: use internals tank.
-	var/obj/item/tank/I = owner.internal
-	if(I && I.air_contents && I.air_contents.total_moles() >= num)
-		T.assume_air_moles(I.air_contents, num)
+	if(owner.internal?.air_contents?.total_moles() >= num)
+		T.assume_air_moles(owner.internal.air_contents, num)
 
 	toggle(silent = TRUE)
 	return FALSE

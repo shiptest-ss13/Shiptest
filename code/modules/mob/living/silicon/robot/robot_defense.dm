@@ -308,7 +308,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 		return
 	spark_system.start()
 	step_away(src, user, 15)
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(_step_away), src, get_turf(user), 15), 3)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step_away), src, get_turf(user), 15), 3)
 
 /mob/living/silicon/robot/fire_act()
 	if(!on_fire) //Silicons don't gain stacks from hotspots, but hotspots can ignite them
@@ -390,14 +390,6 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 		set_zeroth_law("Only [user.real_name] and people [user.p_they()] designate[user.p_s()] as being such are Syndicate Agents.")
 	laws.associate(src)
 	update_icons()
-
-
-/mob/living/silicon/robot/blob_act(obj/structure/blob/B)
-	if(stat != DEAD)
-		adjustBruteLoss(30)
-	else
-		gib()
-	return TRUE
 
 /mob/living/silicon/robot/ex_act(severity, target)
 	switch(severity)

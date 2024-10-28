@@ -4,6 +4,7 @@
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "intercom"
 	anchored = TRUE
+	listening = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	canhear_range = 2
 	dog_fashion = null
@@ -152,6 +153,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
 /obj/item/wallframe/intercom/table
 	icon_state = "intercom-table"
+	icon = 'icons/obj/radio.dmi'
 	result_path = /obj/item/radio/intercom/table
 	pixel_shift = 0
 
@@ -175,6 +177,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	set_frequency(FREQ_WIDEBAND)
 	freqlock = TRUE
 
+/obj/item/radio/intercom/wideband/examine_more(mob/user)
+	interact(user)
+
 /obj/item/radio/intercom/wideband/unscrewed
 	unscrewed = TRUE
 
@@ -197,5 +202,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/wideband, 26)
 
 /obj/item/wallframe/intercom/wideband/table
 	icon_state = "intercom-wideband-table"
+	icon = 'icons/obj/radio.dmi'
 	result_path = /obj/item/radio/intercom/wideband/table
 	pixel_shift = 0

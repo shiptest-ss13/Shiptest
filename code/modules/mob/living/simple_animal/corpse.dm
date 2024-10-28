@@ -46,6 +46,25 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 	id = /obj/item/card/id/syndicate
 
+/obj/effect/mob_spawn/human/corpse/syndicateramzi
+	name = "Ramzi Clique Commando"
+	id_job = "Cutthroat"
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+	outfit = /datum/outfit/syndicateramzicorpse
+
+/datum/outfit/syndicateramzicorpse
+	name = "Ramzi Clique Commando Corpse"
+	uniform = /obj/item/clothing/under/syndicate/combat
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/color/black
+	ears = /obj/item/radio/headset
+	mask = /obj/item/clothing/mask/gas/syndicate
+	back = /obj/item/tank/jetpack/oxygen
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+	id = /obj/item/card/id/syndicate_command/crew_id
+
 
 /obj/effect/mob_spawn/human/corpse/syndicatestormtrooper
 	name = "Syndicate Stormtrooper"
@@ -106,13 +125,20 @@
 
 /datum/outfit/frontier
 	name = "Frontiersman Corpse"
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	uniform = /obj/item/clothing/under/frontiersmen
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/sec/frontier
 	gloves = /obj/item/clothing/gloves/color/black
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged
 	outfit = /datum/outfit/frontier
+
+/obj/effect/mob_spawn/human/corpse/frontier/surgeon
+	outfit = /datum/outfit/job/frontiersmen/doctor/corpse
+
+/datum/outfit/job/frontiersmen/doctor/corpse
+	name = "Frontiersmen Surgeon Corpse"
+	r_pocket = null
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
 	outfit = /datum/outfit/frontier/trooper
@@ -132,11 +158,11 @@
 
 /datum/outfit/frontier/officer
 	name = "Frontiersman Officer Corpse"
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
+	uniform = /obj/item/clothing/under/frontiersmen/officer
 	suit = /obj/item/clothing/suit/armor/frontier
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset
-	head = /obj/item/clothing/head/caphat/frontier
+	head = /obj/item/clothing/head/frontier/peaked
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
 	outfit = /datum/outfit/frontier/trooper/heavy
@@ -148,9 +174,21 @@
 	back = /obj/item/minigunpack
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless
-	outfit = /datum/outfit/russiancorpse/trooper/heavy/gunless
+	outfit = /datum/outfit/frontier/trooper/heavy/gunless
 
-/datum/outfit/russiancorpse/trooper/heavy/gunless
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/flame
+	outfit = /datum/outfit/job/frontiersmen/ert/flamer/corpse
+
+/datum/outfit/job/frontiersmen/ert/flamer/corpse
+	name = "Frontiersman Flametrooper Corpse"
+	back = null
+	belt = /obj/item/storage/belt/security/military/frontiersmen
+	l_hand = null
+
+	backpack_contents = null
+
+/datum/outfit/frontier/trooper/heavy/gunless
+	name = "Frontiersman Heavy Corpse (Gunless)"
 	back = null
 
 /obj/effect/mob_spawn/human/corpse/wizard
@@ -229,18 +267,49 @@
 /obj/effect/mob_spawn/human/corpse/solgov/sonnensoldner
 	name = "SolGov Sonnensoldner"
 	id_job = "SolGov Sonnensoldner"
-	outfit = /datum/outfit/solgov/sonnensoldner
+	outfit = /datum/outfit/job/solgov/sonnensoldner
 	id_access_list = list(ACCESS_SOLGOV)
 
-/datum/outfit/solgov/sonnensoldner
-	name = "SolGov Sonnensoldner"
-	uniform = /obj/item/clothing/under/solgov
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
-	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/color/black
-	ears = /obj/item/radio/headset
-	suit_store = null
-	head = /obj/item/clothing/head/solgov/sonnensoldner
-	back = /obj/item/storage/backpack
-	id = /obj/item/card/id/solgov
-	backpack_contents = null
+//inteq
+
+/obj/effect/mob_spawn/human/corpse/inteq
+	name = "Avery Inteq"
+
+/obj/effect/mob_spawn/human/corpse/inteq/recruit
+	name = "IRMG Recruit"
+	id_job = "Recruit"
+	outfit = /datum/outfit/job/inteq/assistant
+
+/obj/effect/mob_spawn/human/corpse/inteq/medic
+	name = "IRMG Corpsman"
+	id_job = "Corpsman"
+	outfit = /datum/outfit/job/inteq/paramedic
+
+/obj/effect/mob_spawn/human/corpse/inteq/enforcer
+	name = "IRMG Enforcer"
+	id_job = "Enforcer"
+	outfit = /datum/outfit/job/inteq/security
+
+/obj/effect/mob_spawn/human/corpse/inteq/vanguard
+	name = "IRMG Vanguard"
+	id_job = "Vanguard"
+	outfit = /datum/outfit/job/inteq/captain
+
+/obj/effect/mob_spawn/human/corpse/inteq/artificer
+	name = "IRMG Artificer"
+	id_job = "Artificer"
+	outfit = /datum/outfit/job/inteq/engineer
+
+/* SRM */
+
+/obj/effect/mob_spawn/human/corpse/srm/hunter
+	name = "SRM Hunter"
+	id_job = "Hunter"
+	outfit = /datum/outfit/job/roumain/security
+	id_access_list = null
+
+/obj/effect/mob_spawn/human/corpse/srm/montagne
+	name = "SRM Montagne"
+	id_job = "Hunter Montagne"
+	outfit = /datum/outfit/job/roumain/captain
+	id_access_list = null

@@ -208,26 +208,30 @@
 			to_chat(target, "<span class='userdanger'>[user] lands an expert tackle on you, knocking you down hard and maintaining a passive grab!</span>")
 
 			user.SetKnockdown(0)
+			user.get_up(TRUE)
 			user.forceMove(get_turf(target))
 			target.adjustStaminaLoss(40)
 			target.Paralyze(5)
 			target.Knockdown(30)
 			if(ishuman(target) && ishuman(user))
 				INVOKE_ASYNC(S.dna.species, TYPE_PROC_REF(/datum/species, grab), S, T)
-				S.setGrabState(GRAB_PASSIVE)
+				if(S.pulling == T)
+					S.setGrabState(GRAB_PASSIVE)
 
 		if(5 to INFINITY) // absolutely BODIED
 			user.visible_message("<span class='warning'>[user] lands a monster tackle on [target], knocking [target.p_them()] senseless and applying an aggressive pin!</span>", "<span class='userdanger'>You land a monster tackle on [target], knocking [target.p_them()] senseless and applying an aggressive pin!</span>", target)
 			to_chat(target, "<span class='userdanger'>[user] lands a monster tackle on you, knocking you senseless and aggressively pinning you!</span>")
 
 			user.SetKnockdown(0)
+			user.get_up(TRUE)
 			user.forceMove(get_turf(target))
 			target.adjustStaminaLoss(40)
 			target.Paralyze(5)
 			target.Knockdown(30)
 			if(ishuman(target) && ishuman(user))
 				INVOKE_ASYNC(S.dna.species, TYPE_PROC_REF(/datum/species, grab), S, T)
-				S.setGrabState(GRAB_AGGRESSIVE)
+				if(S.pulling == T)
+					S.setGrabState(GRAB_AGGRESSIVE)
 
 
 	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
@@ -255,8 +259,6 @@
 		defense_mod -= 1
 	if(HAS_TRAIT(target, TRAIT_CLUMSY))
 		defense_mod -= 2
-	if(HAS_TRAIT(target, TRAIT_FAT)) // chonkers are harder to knock over
-		defense_mod += 1
 	if(HAS_TRAIT(target, TRAIT_GRABWEAKNESS))
 		defense_mod -= 2
 	if(HAS_TRAIT(target, TRAIT_DWARF))
@@ -268,11 +270,10 @@
 
 	if(ishuman(target))
 		var/mob/living/carbon/human/T = target
-		var/suit_slot = T.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 
 		if(isnull(T.wear_suit) && isnull(T.w_uniform)) // who honestly puts all of their effort into tackling a naked guy?
 			defense_mod += 2
-		if(suit_slot && (istype(suit_slot,/obj/item/clothing/suit/space/hardsuit)))
+		if(T.mob_negates_gravity())
 			defense_mod += 1
 		if(T.is_shove_knockdown_blocked()) // riot armor and such
 			defense_mod += 5
@@ -375,7 +376,7 @@
 			user.apply_damage(30, BRUTE, BODY_ZONE_HEAD)
 			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
 			playsound(user, 'sound/effects/splat.ogg', 70, TRUE)
-			user.emote("scream")
+			user.force_scream()
 			user.gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic) // oopsie indeed!
 			shake_camera(user, 7, 7)
 			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)

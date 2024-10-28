@@ -2,15 +2,39 @@
 	projectile_type = /obj/projectile/beam/laser
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/eoehoma
+	projectile_type = /obj/projectile/beam/laser/eoehoma
+	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+
+/obj/projectile/beam/laser/eoehoma/hermit // Used for the Hermits with E-11 because apparently you can only set it on projectile for simple mobs? That's fun!
+	spread = 80
+
+/obj/item/ammo_casing/energy/laser/assault
+	projectile_type = /obj/projectile/beam/laser/assault
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	delay = 2
+	e_cost = 666 //30 per upgraded cell
+
+/obj/item/ammo_casing/energy/laser/eoehoma/e50
+	projectile_type = /obj/projectile/beam/emitter/hitscan
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	e_cost = 12500
+	delay = 1 SECONDS
+
 /obj/item/ammo_casing/energy/lasergun
 	projectile_type = /obj/projectile/beam/laser
 	e_cost = 830
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/lasergun/eoehoma
+	projectile_type = /obj/projectile/beam/laser/eoehoma
+	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+
 /obj/item/ammo_casing/energy/laser/smg
 	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
 	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"
+	delay = 0.13 SECONDS
 
 /obj/item/ammo_casing/energy/lasergun/old
 	projectile_type = /obj/projectile/beam/laser
@@ -50,7 +74,7 @@
 	projectile_type = /obj/projectile/beam/pulse
 	e_cost = 2000
 	select_name = "DESTROY"
-	fire_sound = 'sound/weapons/pulse.ogg'
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 
 /obj/item/ammo_casing/energy/laser/bluetag
 	projectile_type = /obj/projectile/beam/lasertag/bluetag
@@ -126,6 +150,7 @@
 	icon_state = "omnilaser"
 	hitscan = TRUE
 	damage = 20
+	armour_penetration = -20
 	damage_type = STAMINA
 	flag = "energy"
 	hitsound = 'sound/weapons/tap.ogg'
@@ -146,6 +171,11 @@
 	impact_light_intensity = 6
 	impact_light_range = 2.5
 	impact_light_color_override = COLOR_CYAN
+
+/obj/projectile/beam/hitscan/disabler/heavy
+	damage = 30
+	armour_penetration = -10
+
 
 /obj/item/ammo_casing/energy/laser/minigun
 	select_name = "kill"

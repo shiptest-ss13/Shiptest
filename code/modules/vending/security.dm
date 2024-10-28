@@ -12,10 +12,7 @@
 		/obj/item/assembly/flash/handheld = 5,
 		/obj/item/storage/box/evidence = 6,
 		/obj/item/flashlight/seclite = 4,
-		/obj/item/ammo_box/c9mm/rubbershot = 3,
-		/obj/item/ammo_box/c9mm = 1,
-		/obj/item/stock_parts/cell/gun = 3)
-	contraband = list(
+		/obj/item/stock_parts/cell/gun = 3,
 		/obj/item/clothing/glasses/sunglasses = 2)
 	premium = list(
 		/obj/item/storage/belt/security/webbing = 5,
@@ -27,7 +24,6 @@
 	refill_canister = /obj/item/vending_refill/security
 	default_price = 650
 	extra_price = 700
-	payment_department = ACCOUNT_SEC
 
 	var/voucher_items = list(
 		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,
@@ -93,25 +89,23 @@
 	light_mask = "marine-mask"
 	req_access = list(ACCESS_SYNDICATE)
 	products = list(
-		/obj/item/screwdriver/nuke = 5,
+		/obj/item/screwdriver = 5,
 		/obj/item/restraints/handcuffs = 10,
 		/obj/item/assembly/flash/handheld = 10,
 		/obj/item/flashlight/seclite = 10,
 
 		/obj/item/storage/box/lethalshot = 6,
 		/obj/item/stock_parts/cell/gun = 5,
-		/obj/item/ammo_box/magazine/uzim9mm = 5,
+		/obj/item/ammo_box/magazine/spitter_9mm = 5,
 
 		/obj/item/grenade/c4 = 5,
 		/obj/item/grenade/frag = 5,
-		/obj/item/melee/transforming/energy/sword/saber/green = 1,
 		)
 	contraband = list()
 	premium = list()
 	voucher_items = list(
-		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/stun,
-		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/combat,
-		"Type U3 Uzi" = /obj/item/gun/ballistic/automatic/smg/mini_uzi)
+		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/hades,
+		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/m11)
 
 /obj/machinery/vending/security/marine/syndicate
 	icon_state = "syndicate-marine"
@@ -123,21 +117,20 @@
 		/obj/item/restraints/handcuffs = 3,
 		/obj/item/assembly/flash/handheld = 2,
 		/obj/item/flashlight/seclite = 2,
-		/obj/item/ammo_box/magazine/m10mm = 3,
-		/obj/item/ammo_box/magazine/smgm45 = 3,
+		/obj/item/ammo_box/magazine/m10mm_ringneck = 3,
+		/obj/item/ammo_box/magazine/m45_cobra = 3,
 		/obj/item/ammo_box/magazine/sniper_rounds = 3,
-		/obj/item/ammo_box/magazine/m556 = 2,
-		/obj/item/ammo_box/magazine/m12g = 3,
-		/obj/item/ammo_box/magazine/ebr = 5,
+		/obj/item/ammo_box/magazine/m556_42_hydra = 2,
+		/obj/item/ammo_box/magazine/m12g_bulldog/drum = 3,
+		/obj/item/ammo_box/magazine/m556_42_hydra/small = 5,
 		/obj/item/grenade/c4 = 1,
 		/obj/item/grenade/frag = 1,
-		/obj/item/melee/transforming/energy/sword/saber/red = 1,
 		)
 	voucher_items = list(
-		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/smg/m90/unrestricted,
-		"sniper rifle" = /obj/item/gun/ballistic/automatic/sniper_rifle,
-		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/c20r/unrestricted,
-		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/bulldog/unrestricted)
+		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/assault/hydra,
+		"sniper rifle" = /obj/item/gun/ballistic/automatic/marksman/taipan,
+		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/cobra,
+		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/bulldog)
 
 /obj/machinery/vending/security/marine/nanotrasen
 	icon_state = "nt-marine"
@@ -150,19 +143,21 @@
 		/obj/item/assembly/flash/handheld = 10,
 		/obj/item/flashlight/seclite = 10,
 
-		/obj/item/ammo_box/magazine/aknt = 10,
-		/obj/item/storage/box/lethalshot = 5,
+		/obj/item/screwdriver = 5,
+		/obj/item/stock_parts/cell/gun = 10,
+		/obj/item/stock_parts/cell/gun/upgraded = 5,
 
 		/obj/item/grenade/c4 = 5,
 		/obj/item/grenade/frag = 5,
 		/obj/item/grenade/flashbang = 5,
 		/obj/item/grenade/barrier = 10,
-		/obj/item/melee/transforming/energy/sword/saber/blue = 1
 		)
 
 	voucher_items = list(
-		"NT-AK" = /obj/item/gun/ballistic/automatic/assault/ak47/nt) //if im being honest, theres no point in addiing other options when this is clearly the best
-
+		"SL AL-655 Energy Rifle" = /obj/item/gun/energy/e_gun/hades,
+		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,
+		"E-TAR SMG" = /obj/item/gun/energy/e_gun/smg,
+		"E-SG 500" = /obj/item/gun/energy/e_gun/iot)
 /obj/item/gun_voucher
 	name = "security weapon voucher"
 	desc = "A token used to redeem guns from the SecTech vendor."

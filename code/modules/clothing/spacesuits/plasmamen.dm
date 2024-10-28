@@ -58,7 +58,7 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	flags_cover = HEADCOVERSMOUTH|HEADCOVERSEYES|PEPPERPROOF
+	flags_cover = HEADCOVERSMOUTH|HEADCOVERSEYES|PEPPERPROOF | SEALS_EYES
 	visor_flags_inv = HIDEEYES|HIDEFACE
 
 // WS Begin - plasmeme command helmets buff - used for RD bomb scanner
@@ -360,9 +360,3 @@
 	desc = "An envirosuit helmet made for the sanctioned plasmaman."
 	icon_state = "secmed_envirohelm"
 	item_state = "secmed_envirohelm"
-
-/obj/item/clothing/head/helmet/space/plasmaman/security/lieutenant //WS edit plasmaman customization
-	name = "lieutenants envirosuit helmet"
-	desc = "an envirosuit helmet made for the sentinel plasmaman."
-	icon_state = "lt_envirohelm"
-	item_state = "lt_envirohelm"

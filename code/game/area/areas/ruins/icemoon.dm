@@ -1,21 +1,5 @@
 // Icemoon Ruins
 
-//Buried Library
-
-/area/ruin/unpowered/buried_library
-	name = "Buried Library"
-	icon_state = "dk_yellow"
-
-//Bathhouse
-
-/area/ruin/powered/bathhouse
-	name = "Bath House"
-	icon_state = "dk_yellow"
-	mood_bonus = 10
-	mood_message = "<span class='nicegreen'>I wish I could stay here forever.</span>\n"
-
-//corporate rejects
-
 //Corporate Rejects
 
 /area/ruin/unpowered/corprejectrooms
@@ -36,28 +20,29 @@
 	name = "Hydroponics Lab"
 	icon_state = "dk_yellow"
 
-//Slimelab 2022
-
-/area/ruin/powered/slimelab
-	name = "Slime Lab"
-	icon_state = "dk_yellow"
-
-/area/ruin/powered/slimelab/slimedome
-	name = "Slime Lab Biodome"
+// Crashed Holemaker
+/area/ruin/unpowered/crashed_holemaker
+	name = "NTSV Holemaker II" // In honor of the kugelblitz shenanigan of all time
 	icon_state = "green"
 
-/area/ruin/powered/slimelab/lava
-	name = "Slime Lab Engineering"
-	icon_state = "engine"
+// Ice Lodge
 
-/area/ruin/powered/slimelab/lab
-	name = "Slime Lab Research"
-	icon_state = "red"
+/area/ruin/powered/icemoon/lodge/mainhall
+	name = "Main Hall"
+	icon_state = "bridge_hallway"
 
-/area/ruin/powered/slimelab/checkpoint
-	name = "Slimelab Reception"
+/area/ruin/powered/icemoon/lodge/cellar
+	name = "Cellar"
+	icon_state = "yellow"
+
+/area/ruin/powered/icemoon/lodge/montagne_office
+	name = "Montagne's Office"
+	icon_state = "bridge"
+
+/area/ruin/powered/icemoon/lodge/residential
+	name = "Residential Quarters"
+	icon_state = "crew_quarters"
+
+/area/ruin/powered/icemoon/lodge/gear_room
+	name = "Gear Room"
 	icon_state = "security"
-
-/area/ruin/powered/slimelab/cafe
-	name = "Slime Lab Cafe"
-	icon_state = "green"

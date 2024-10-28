@@ -43,6 +43,8 @@
 
 	vis_flags = VIS_INHERIT_PLANE //when this be added to vis_contents of something it inherit something.plane, important for visualisation of obj in openspace.
 
+	var/obj/effect/abstract/particle_holder/burning_particles
+
 	FASTDMM_PROP(\
 		pinned_vars = list("name", "dir")\
 	)
@@ -82,7 +84,9 @@
 	if(!ismachinery(src))
 		STOP_PROCESSING(SSobj, src) // TODO: Have a processing bitflag to reduce on unnecessary loops through the processing lists
 	SStgui.close_uis(src)
-	. = ..()
+	if(burning_particles)
+		QDEL_NULL(burning_particles)
+	return ..()
 
 
 /obj/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
@@ -205,6 +209,7 @@
 	ui_interact(user)
 
 /mob/proc/unset_machine()
+	SIGNAL_HANDLER
 	if(!machine)
 		return
 	UnregisterSignal(machine, COMSIG_PARENT_QDELETING)
@@ -216,6 +221,8 @@
 	return
 
 /mob/proc/set_machine(obj/O)
+	if(QDELETED(src) || QDELETED(O))
+		return
 	if(machine)
 		unset_machine()
 	machine = O
@@ -361,7 +368,7 @@
 		current_skin = pick
 	icon_state = unique_reskin[pick]
 	to_chat(M, "[src] is now skinned as '[pick].'")
-	update_icon_state()
+	update_appearance()
 
 /**
  * Checks if we are allowed to interact with a radial menu for reskins
@@ -385,7 +392,7 @@
 		return TRUE
 	return ..()
 
-/obj/proc/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
+/obj/proc/plunger_act(obj/item/plunger/P, mob/living/user)
 	return
 
 // Should move all contained objects to it's location.

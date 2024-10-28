@@ -48,3 +48,7 @@
 /obj/effect/projectile/impact/pgf
 	name = "beam impact"
 	icon_state = "impact_pgf"
+
+/obj/effect/projectile/impact/pgf/rifle
+	name = "beam impact"
+	icon_state = "impact_pgf_rifle"

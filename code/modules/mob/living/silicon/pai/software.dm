@@ -5,22 +5,108 @@
 //  - Camera jack
 
 GLOBAL_LIST_INIT(pai_faces, list(
-		"null",
-		"what",
-		"sad",
-		"off",
-		"laugh",
-		"happy",
-		"face",
-		"estatic",
-		"cat",
+		":>",
+		"=_=",
 		"angry",
-		"sunglasses",
-		"woozy",
+		"ashamed",
 		"bookworm",
+		"boykisser",
+		"cat",
+		"clueless",
+		"concerned",
+		"dread",
+		"estatic",
+		"exclaim",
+		"eye",
+		"eyewall",
+		"face",
+		"fangs",
+		"flushed",
+		"foureyes",
 		"greenjary",
+		"happy",
+		"heart",
+		"laugh",
+		"lenny",
+		"loss",
+		"mischievous",
+		"missingno",
+		"mistake",
+		"moth",
+		"moyai",
+		"neko",
+		"null",
+		"o.o",
+		"off",
+		"pleading",
+		"question",
+		"sadcat",
+		"smug",
+		"snek",
+		"spiral",
+		"sunglasses",
+		"syndisnake", //EVILLL PAI
+		"twoeyes",
+		"T_T",
+		"what",
+		"wink",
+		"woozy",
 	))
 
+// I AM A FAKE AND A FRAUD
+// in order to get radials to work, the below list utilizes an entirely new .dmi that combines the base pAI card sprite along with the two overlays.
+// if you want to add a pAI screen in future, you will need to use one of the two bases I included in aicardsradial.dmi in addition to adding the
+// screen sprite in aicards.dmi
+// I pray to god someone more talented than me can fix this hack in future
+
+GLOBAL_LIST_INIT(pai_faces_icons, list(
+		":>" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-:>"),
+		"=_=" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-=_="),
+		"angry" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-angry"),
+		"ashamed" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-ashamed"),
+		"bookworm" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-bookworm"),
+		"boykisser" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-boykisser"),
+		"cat" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-cat"),
+		"clueless" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-clueless"),
+		"concerned" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-concerned"),
+		"dread" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-dread"),
+		"estatic" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-estatic"),
+		"exclaim" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-exclaim"),
+		"eye" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-eye"),
+		"eyewall" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-eyewall"),
+		"face" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-face"),
+		"fangs" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-fangs"),
+		"flushed" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-flushed"),
+		"foureyes" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-foureyes"),
+		"greenjary" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-greenjary"),
+		"happy" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-happy"),
+		"heart" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-heart"),
+		"laugh" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-laugh"),
+		"lenny" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-lenny"),
+		"loss" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-loss"),
+		"mischievous" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-mischievous"),
+		"missingno" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-missingno"),
+		"mistake" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-mistake"),
+		"moth" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-moth"),
+		"moyai" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-moyai"),
+		"neko" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-neko"),
+		"null" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-null"),
+		"o.o" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-o.o"),
+		"off" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-off"),
+		"pleading" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-pleading"),
+		"question" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-question"),
+		"sadcat" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-sadcat"),
+		"smug" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-smug"),
+		"snek" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-snek"),
+		"spiral" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-spiral"),
+		"sunglasses" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-sunglasses"),
+		"syndisnake" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-syndisnake"), //what if cybersun was right all along actually
+		"twoeyes" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-twoeyes"),
+		"T_T" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-T_T"),
+		"what" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-what"),
+		"wink" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-wink"),
+		"woozy" = image(icon = 'icons/obj/aicardsradial.dmi', icon_state = "pai-woozy"),
+	))
 
 /mob/living/silicon/pai/var/list/available_software = list( //WS -- idk what to do about removing code so i'm just putting this note here to say, removes messanger and manifest, thet get it for free now
 															//Nightvision
@@ -172,7 +258,8 @@ GLOBAL_LIST_INIT(pai_faces, list(
 				radio.attack_self(src)
 
 			if("image") // Set pAI card display face
-				var/new_emotion = input("Select your new display image.", "Display Image", "null") in sortList(GLOB.pai_faces)
+				var/atom/anchor = get_atom_on_turf(src)
+				var/new_emotion = show_radial_menu(usr, anchor, GLOB.pai_faces_icons, radius = 40, require_near = TRUE)
 				card.set_emotion(new_emotion)
 
 			if("news")
@@ -268,6 +355,7 @@ GLOBAL_LIST_INIT(pai_faces, list(
 			if("encryptionkeys")
 				if(href_list["toggle"])
 					encryptmod = TRUE
+					radio.subspace_transmission = TRUE
 
 			if("translator")
 				if(href_list["toggle"])	//This is permanent.

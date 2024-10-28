@@ -54,10 +54,10 @@ Difficulty: Medium
 	ranged = TRUE
 	pixel_x = -32
 	base_pixel_x = -32
-	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
+	//mob_trophy = /obj/item/mob_trophy/ash_spike
 	loot = list(/obj/structure/closet/crate/necropolis/dragon)
 	butcher_results = list(/obj/item/gem/amber = 1, /obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10, /obj/item/crusher_trophy/ash_spike = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10)
 	var/swooping = NONE
 	var/player_cooldown = 0
 	var/dungeon = FALSE //if true, on death will spawn a ghost role at a lank mark and open blast doors with a certain id
@@ -179,7 +179,7 @@ Difficulty: Medium
 		var/increment = 360 / spiral_count
 		for(var/j = 1 to spiral_count)
 			var/list/turfs = line_target(j * increment + i * increment / 2, range, src)
-			INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+			INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 		SLEEP_CHECK_DEATH(25)
 	SetRecoveryTime(30)
 
@@ -250,11 +250,11 @@ Difficulty: Medium
 	var/range = 15
 	var/list/turfs = list()
 	turfs = line_target(-40, range, at)
-	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+	INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 	turfs = line_target(0, range, at)
-	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+	INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 	turfs = line_target(40, range, at)
-	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
+	INVOKE_ASYNC(src, PROC_REF(dragon_fire_line), turfs)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/line_target(offset, range, atom/at = target)
 	if(!at)
@@ -268,32 +268,9 @@ Difficulty: Medium
 		T = check
 	return (getline(src, T) - get_turf(src))
 
-/mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_line(list/turfs)
+/mob/living/simple_animal/hostile/megafauna/dragon/proc/dragon_fire_line(list/turfs)
 	SLEEP_CHECK_DEATH(0)
-	dragon_fire_line(src, turfs)
-
-//fire line keeps going even if dragon is deleted
-/proc/dragon_fire_line(source, list/turfs)
-	var/list/hit_list = list()
-	for(var/turf/T in turfs)
-		if(istype(T, /turf/closed))
-			break
-		new /obj/effect/hotspot(T)
-		T.hotspot_expose(700,50,1)
-		for(var/mob/living/L in T.contents)
-			if(L in hit_list || L == source)
-				continue
-			hit_list += L
-			L.adjustFireLoss(20)
-			to_chat(L, "<span class='userdanger'>You're hit by [source]'s fire breath!</span>")
-
-		// deals damage to mechs
-		for(var/obj/mecha/M in T.contents)
-			if(M in hit_list)
-				continue
-			hit_list += M
-			M.take_damage(45, BRUTE, "melee", 1)
-		sleep(1.5)
+	fire_line(src, turfs)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/swoop_attack(lava_arena = FALSE, atom/movable/manual_target, swoop_cooldown = 30)
 	if(stat || swooping)
@@ -387,28 +364,6 @@ Difficulty: Medium
 	SetRecoveryTime(swoop_cooldown)
 	if(!lava_success)
 		arena_escape_enrage()
-
-/obj/effect/landmark/ashdrake_ghost_spawn //spawn a random ghost role if ash drake is killed
-	name = "ash drake ghost role spawner"
-	var/picked
-
-/obj/effect/landmark/ashdrake_ghost_spawn/proc/create_roles()
-	picked = pick(1,2,3,4,5,6,7) //picks 1-7
-	switch(picked) //then picks out of 7 ghost roles to spawn
-		if(1)
-			new /obj/effect/mob_spawn/human/lost/doctor(get_turf(loc))
-		if(2)
-			new /obj/effect/mob_spawn/human/lost/centcom(get_turf(loc))
-		if(3)
-			new /obj/effect/mob_spawn/human/lost/shaftminer(get_turf(loc))
-		if(4)
-			new /obj/effect/mob_spawn/human/lost/ashwalker_heir(get_turf(loc))
-		if(5)
-			new /obj/effect/mob_spawn/human/lost/assistant(get_turf(loc))
-		if(6)
-			new /obj/effect/mob_spawn/human/lost/syndicate(get_turf(loc))
-
-	qdel(src) //no spawning people twice
 
 /mob/living/simple_animal/hostile/megafauna/dragon/ex_act(severity, target)
 	if(severity == EXPLODE_LIGHT)
@@ -605,7 +560,7 @@ Difficulty: Medium
 	mouse_opacity = MOUSE_OPACITY_ICON
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
 	loot = list()
-	crusher_loot = list()
+	mob_trophy = list()
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
 	attack_action_types = list()
 
@@ -623,8 +578,3 @@ Difficulty: Medium
 	return
 
 /mob/living/simple_animal/hostile/megafauna/dragon/icemoon
-
-/mob/living/simple_animal/hostile/megafauna/dragon/icemoon/death()
-	for(var/obj/effect/landmark/ashdrake_ghost_spawn/L in GLOB.landmarks_list)
-		L.create_roles()
-	..()

@@ -26,23 +26,3 @@
 	backpack = /obj/item/storage/backpack/botany
 	satchel = /obj/item/storage/backpack/satchel/hyd
 	courierbag = /obj/item/storage/backpack/messenger/hyd
-
-//shiptest!!!!!!!!!!
-/datum/outfit/job/botanist/syndicate/nsv
-	name = "Botanist-Chemist (NSV-M)"
-
-	uniform = /obj/item/clothing/under/syndicate
-	id = /obj/item/card/id/syndicate_command/crew_id
-	shoes = /obj/item/clothing/shoes/jackboots
-	glasses = /obj/item/clothing/glasses/science
-	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
-	suit_store = null
-
-/datum/outfit/job/botanist/pharma
-	name = "Herbalist"
-
-	ears = /obj/item/radio/headset/headset_med
-	belt = /obj/item/storage/bag/plants
-	l_pocket = /obj/item/pda/botanist
-	suit = /obj/item/clothing/suit/apron/overalls
-	uniform = /obj/item/clothing/under/utility

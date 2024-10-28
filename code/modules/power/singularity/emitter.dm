@@ -11,8 +11,8 @@
 	circuit = /obj/item/circuitboard/machine/emitter
 
 	use_power = NO_POWER_USE
-	idle_power_usage = 10
-	active_power_usage = 300
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_LOW
 
 	var/icon_state_on = "emitter_+a"
 	var/icon_state_underpowered = "emitter_+u"
@@ -28,7 +28,7 @@
 	var/allow_switch_interact = TRUE
 
 	var/projectile_type = /obj/projectile/beam/emitter/hitscan //WS - Hitscan emitters
-	var/projectile_sound = 'sound/weapons/emitter.ogg'
+	var/projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	var/datum/effect_system/spark_spread/sparks
 
 	var/obj/item/gun/energy/gun
@@ -40,20 +40,6 @@
 	var/charge = 0
 	var/last_projectile_params
 
-
-/obj/machinery/power/emitter/welded/Initialize()
-	welded = TRUE
-	return ..()
-
-/obj/machinery/power/emitter/ctf
-	name = "Energy Cannon"
-	active = TRUE
-	active_power_usage = FALSE
-	idle_power_usage = FALSE
-	locked = TRUE
-	req_access_txt = "100"
-	welded = TRUE
-	use_power = FALSE
 
 /obj/machinery/power/emitter/Initialize()
 	. = ..()
@@ -81,7 +67,7 @@
 	var/max_firedelay = 120
 	var/firedelay = 120
 	var/min_firedelay = 24
-	var/power_usage = 350
+	var/power_usage = ACTIVE_DRAW_LOW
 	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
 		max_firedelay -= 20 * L.rating
 		min_firedelay -= 4 * L.rating
@@ -133,6 +119,7 @@
 		log_game("Emitter deleted at [AREACOORD(T)]")
 		investigate_log("<font color='red'>deleted</font> at [AREACOORD(T)]", INVESTIGATE_SINGULO)
 	QDEL_NULL(sparks)
+	QDEL_NULL(wires)
 	return ..()
 
 /obj/machinery/power/emitter/update_icon_state()
@@ -371,6 +358,16 @@
 	if(user)
 		user.visible_message("<span class='warning'>[user.name] emags [src].</span>", "<span class='notice'>You short out the lock.</span>")
 
+/obj/machinery/power/emitter/welded/Initialize()
+	welded = TRUE
+	return ..()
+
+/obj/machinery/power/emitter/welded/upgraded/Initialize()
+	. = ..()
+	component_parts = list()
+	component_parts += new /obj/item/stock_parts/micro_laser/quadultra(null)
+	component_parts += new /obj/item/stock_parts/manipulator/femto(null)
+	RefreshParts()
 
 /obj/machinery/power/emitter/prototype
 	name = "Prototype Emitter"

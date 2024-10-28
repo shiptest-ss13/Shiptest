@@ -107,7 +107,7 @@
 				<li>A firesuit must be connected to the Firefighter chassis for heat shielding.</li>
 				<li>Internal armor is plasteel for additional strength.</li>
 				<li>External armor must be installed in 2 parts, totaling 10 sheets.</li>
-				<li>Completed mech is more resiliant against fire, and is a bit more durable overall</li>
+				<li>Completed exosuit is more resiliant against fire, and is a bit more durable overall</li>
 				<li>Nanotrasen is determined to the safety of its <s>investments</s> employees.</li>
 				</ol>
 				</body>
@@ -242,7 +242,7 @@
 /obj/item/book/manual/trickwines_4_brewers
 	name = "Trickwines for brewers"
 	icon_state = "book2"
-	author = "Baxter Baxter"
+	author = "Bridget Saint-Baskett"
 	title = "Trickwines for brewers"
 	dat = {"<html>
 			<head>
@@ -256,40 +256,76 @@
 			</style>
 			</head>
 			<body>
-			<h3>Trickwines for idiots</h3>
-			Okay, so you just joined the SRM and you want to make some brews! I'm tired of explaining all of this so I'm jotting it all down for you clowns.<br>
+			<h1>Trickwines for brewers</h1>
+			Okay, so you just joined the SRM and you want to make some brews! I'm tired of explaining all of this so I'm jotting it all down for the new hires.<br>
 			Trickwines almost all share the same effect. When you drink them, they provide a beneficial effect and when you toss them at someone it provides some sort of bad effect.
 			<h2> Breakaway flasks</h2>
 			Honestly, I love these things. I'm not a scientist so I cant exactly explain how it works but somehow when you fuse plasma into glass it makes it ultra sharp and makes it really good for cracking over fauna heads.<br>
 			The simplest way I have found of making them is crafting them with a chunk of glass, plasma, and a welder.<br>
-			I should note: trickwines don't seem to form without flasks. I think it's something to do with the plasma reacting with the mixture.<br>
+
+			<h2> Bacteria </h2>
+			A speical speices of bacteria native to Illestren is what allows Trickwines form.<br>
+			Now we use a special distiller that keeps just enough bacertia alive to ferment without turning the batch sour.<br>
+			Now you should still have one on board but if you dont its fine.<br>
+			It just so happens we have trees on board our ships host to the Bacteria.<br>
+			To get enough Bacteria your going to need to feed it anything that would help a plant.<br>
+			Water, Fertilizer, Ashwine are all good options.<br>
+			Soon it will drops some apples and you can grind them for the bacteria.<br>
+			Once you have enough you can fabricate it the same way you would a normal barrel.<br>
+
+			<h2> Ratios </h2>
+			A common trend among Trickwines is the ratio of 3:1:1.<br>
+			3 parts being an ethonal, the other 2 parts are often made from flora or fauna.<br>
 
 			<h2> Ashwine </h2>
-			It's kind of our trademark, and it's one of the simplest trickwines to make. The Montagnes love using this stuff in ceremonies as well so it should get you some good boy points.<br>
+			It's kind of our trademark, and it's one of the simplest trickwines to make.<br>
+			These are the most common wines used in ceremonies so we often stock ships with the moonflowers needed to make them.<br>
 			It's made with a ratio of 3:1:1 absinthe, mushroom hallucinogen, and ash respectively.<br>
 			Mushroom hallucinogens come from mushroom caps and you can ferment absinthe from moonflowers.<br>
 			Its a mild hallucinogenic but seems to have powerful cleansing effects on the devoted SRM.<br>
 			It can also really fuck someone up, causing their vision to go shaky and blurry which makes it difficult for them to fight.<br>
 
 			<h2> Icewine </h2>
-			This one helps stopping foes in their tracks. It's also got a nice taste.
+			This one helps stopping foes in their tracks. One of my favorite flavor wise.
 			Its made with 3:1:1 saké, polar bear fur, frost oil(grind chilled peppers).<br>
 			You can get polar bear fur and frost oil from grinding up polar bear hides and chilled peppers.<br>
 			It's pretty good at sealing burns and lowering your temperature quickly.<br>
 			However, it completely encases foes in ice and drops their temperature substantially.<br>
 
 			<h2> Shockwine </h2>
-			Easily my favorite, this thing is great at scorching most fauna.<br>
+			Easily my favorite for its splashed effect, this thing is great at scorching most fauna.<br>
 			Its made with vodka, calcium, and lemon juice.<br>
 			If you did not know, vodka requires enzymes instead of the normal fermenting process.<br>
 			It's a nice upper. Great if you're trying to run away.<br>
 			This one's really flashy. Expect some severe burns on your target<br>
 
-				<br>Baxter Baxter, Senior Brewer<br>
-				P.S.: please stop asking how the uranium got into those flasks.
+			<h2> Hearthwine </h2>
+			I once threw back a flask of this stuff in the heat of a really bad battle and it sealed my wounds within seconds its honestly increadible.<br>
+			It also acts like the inverse of Icewine heating you up more then a fever.<br>
+			Last time I threw it at someone though i almost burnt down the forest I was in.<br>
+			Its made out of ground up fireblossems with some nice hard cider and a bit of welding fuel with of course a ratio of 3:1:1.<br>
 
-				</body>
-				</html>"}
+			<h2> Forcewine </h2>
+			Two intresting effects from the consumption of Forcewine.<br>
+			First it seems to give you an "anti magic" effect, I have read about of tales of how it fizzled out some sort of great curse that we could best trace back to a ancient cult.<br>
+			Second is it protects the mind from cohersion and mind control.<br>
+			From my research this seems to act like nanotrasen mindshield implants.<br>
+			Would recomend for any esoteric senarios. We wont see these alot but its always smart to prepare for the worst.<br>
+			You can also use it to entrap Fauna inside of a forcefield like bubble, Gives you time to breath and prepare an attack.<br>
+			3:1:1. Tequila, Space Montain Wind, and I know its one of the most difficult things to come by but hollow water, Its that stuff you can extract from geysers<br>
+
+			<h2> Prismwine </h2>
+			Gives you a nice shiny layer of armour, fire seems to have alot harder time sticking to me when i tested it.<br>
+			Throwing it seeems to do the reverse acting like a magnifying glass to burns and lasers<br>
+			3:1:1. Good ol Gin, then add plasma and tinea luxor which is found from mushroom stems<br>
+
+			Some of these can be a bit situatinal but its always nice to have a few in your bag for emergecys.<br>
+			As a bonus, most of the other factions have no clue how to make these so you can sell them for a fair chunk of cash.<br>
+
+			<br>Bridget Saint-Baskett, Senior Brewer<br>
+
+			</body>
+			</html>"}
 
 // Wiki books that are linked to the configured wiki link.
 
@@ -332,156 +368,177 @@
 
 /obj/item/book/manual/wiki/chemistry
 	name = "Chemistry Textbook"
-	icon_state ="chemistrybook"
-	author = "Nanotrasen"
+	icon_state = "chemistrybook"
+	author = "GREMLIN"
 	title = "Chemistry Textbook"
 	page_link = "Guide_to_Chemistry"
 
-/obj/item/book/manual/wiki/engineering_construction
-	name = "Station Repairs and Construction"
-	icon_state ="bookEngineering"
-	author = "Engineering Encyclopedia"
-	title = "Station Repairs and Construction"
-	page_link = "Guide_to_Construction"
+/obj/item/book/manual/wiki/command
+	name = "Command and Delegate"
+	icon_state = "book"
+	author = "Frontier Assistance Program"
+	title = "Command and Delegate: The Entreprising Captain's Guide"
+	page_link = "Guide_to_Command"
 
-/obj/item/book/manual/wiki/engineering_guide
-	name = "Engineering Textbook"
-	icon_state ="bookEngineering2"
-	author = "Engineering Encyclopedia"
-	title = "Engineering Textbook"
+/obj/item/book/manual/wiki/piloting
+	name = "You and Helm Consoles"
+	icon_state = "book"
+	author = "Frontier Assistance Program"
+	title = "You and Helm Consoles: The Bold Helmsman's Manual"
+	page_link = "Guide_to_the_Overmap"
+
+/obj/item/book/manual/wiki/ghetto_chemistry
+	name = "Ghetto Chemistry Textbook"
+	icon_state = "chemistrybook"
+	author = "GREMLIN"
+	title = "Less Legal Chemistry Textbook"
+	page_link = "Guide_to_Ghetto_Chemistry"
+
+/obj/item/book/manual/wiki/cooking
+	name = "Cookbook"
+	desc = "It's a cookbook!"
+	icon_state = "cooked_book"
+	author = "Frontier Assistance Program"
+	title = "To Serve Man"
+	page_link = "Guide_to_Food_and_Drinks"
+
+/obj/item/book/manual/wiki/construction
+	name = "Ship Repairs and Construction"
+	icon_state = "bookEngineering"
+	author = "Frontier Assistance Program"
+	title = "Ship Repairs and Construction"
+	page_link = "Construction"
+
+/obj/item/book/manual/wiki/engineering
+	name = "Engineering Guide"
+	icon_state = "bookEngineering2"
+	author = "Frontier Assistance Program"
+	title = "The Ship Engineer's Guide to Mechanical and Electrical Engineering"
 	page_link = "Guide_to_Engineering"
 
-/obj/item/book/manual/wiki/engineering_singulo_tesla
-	name = "Singularity and Tesla for Dummies"
-	icon_state ="bookEngineeringSingularitySafety"
-	author = "Engineering Encyclopedia"
-	title = "Singularity and Tesla for Dummies"
-	page_link = "Singularity_and_Tesla_engines"
-
-/obj/item/book/manual/wiki/security_space_law
-	name = "Space Law"
-	desc = "A set of Nanotrasen guidelines for keeping law and order on their space stations."
-	icon_state = "bookSpaceLaw"
-	author = "Nanotrasen"
-	title = "Space Law"
-	page_link = "Space_Law"
-
-/obj/item/book/manual/wiki/infections
-	name = "Infections - Making your own pandemic!"
-	icon_state = "bookInfections"
-	author = "Infections Encyclopedia"
-	title = "Infections - Making your own pandemic!"
-	page_link = "Infections"
-
-/obj/item/book/manual/wiki/telescience
-	name = "Teleportation Science - Bluespace for dummies!"
-	icon_state = "book7"
-	author = "University of Bluespace"
-	title = "Teleportation Science - Bluespace for dummies!"
-	page_link = "Guide_to_telescience"
-
-/obj/item/book/manual/wiki/engineering_hacking
+/obj/item/book/manual/wiki/hacking
 	name = "Hacking"
-	icon_state ="bookHacking"
-	author = "Engineering Encyclopedia"
+	icon_state = "bookHacking"
+	author = "Frontier Assistance Program"
 	title = "Hacking"
 	page_link = "Hacking"
 
-/obj/item/book/manual/wiki/detective
-	name = "The Film Noir: Proper Procedures for Investigations"
-	icon_state ="bookDetective"
-	author = "Nanotrasen"
-	title = "The Film Noir: Proper Procedures for Investigations"
-	page_link = "Detective"
-
-/obj/item/book/manual/wiki/barman_recipes
+/obj/item/book/manual/wiki/drinks
 	name = "Barman Recipes: Mixing Drinks and Changing Lives"
 	icon_state = "barbook"
 	author = "Sir John Rose"
 	title = "Barman Recipes: Mixing Drinks and Changing Lives"
-	page_link = "Guide_to_food_and_drinks"
+	page_link = "Guide_to_Food_and_Drinks"
 
-/obj/item/book/manual/wiki/robotics_cyborgs
+/obj/item/book/manual/wiki/medicine
+	name = "Guide to Medical Aid"
+	icon_state = "book8"
+	author = "Frontier Assistance Program"
+	title = "The Crewman's Guide to Medical Aid"
+	page_link = "Guide_to_Medical"
+
+/obj/item/book/manual/wiki/surgery
+	name = "Guide to Surgery"
+	icon_state = "book4"
+	author = "Frontier Assistance Program"
+	title = "Guide to Surgery: Scalpel, Hemostat, Wristwatch"
+	page_link = "Guide_to_Surgery"
+
+/obj/item/book/manual/wiki/robotics
 	name = "Robotics for Dummies"
 	icon_state = "borgbook"
 	author = "XISC"
 	title = "Robotics for Dummies"
-	page_link = "Guide_to_robotics"
+	page_link = "Guide_to_Robotics"
 
-/obj/item/book/manual/wiki/research_and_development
-	name = "Research and Development 101"
-	icon_state = "rdbook"
-	author = "Dr. L. Ight"
-	title = "Research and Development 101"
-	page_link = "Guide_to_Research_and_Development"
+// /obj/item/book/manual/wiki/engineering_singulo_tesla
+//	name = "Singularity and Tesla for Dummies"
+//	icon_state ="bookEngineeringSingularitySafety"
+//	author = "Engineering Encyclopedia"
+//	title = "Singularity and Tesla for Dummies"
+//	page_link = "Singularity_and_Tesla_engines"
 
-/obj/item/book/manual/wiki/experimentor
-	name = "Mentoring your Experiments"
-	icon_state = "rdbook"
-	author = "Dr. H.P. Kritz"
-	title = "Mentoring your Experiments"
-	page_link = "E.X.P.E.R.I-MENTOR"
+// /obj/item/book/manual/wiki/security_space_law
+//	name = "Space Law"
+//	desc = "A set of Nanotrasen guidelines for keeping law and order on their space stations."
+//	icon_state = "bookSpaceLaw"
+//	author = "Nanotrasen"
+//	title = "Space Law"
+//	page_link = "Space_Law"
 
-/obj/item/book/manual/wiki/cooking_to_serve_man
-	name = "To Serve Man"
-	desc = "It's a cookbook!"
-	icon_state ="cooked_book"
-	author = "the Kanamitan Empire"
-	title = "To Serve Man"
-	page_link = "Guide_to_food_and_drinks"
+// /obj/item/book/manual/wiki/infections
+//	name = "Infections - Making your own pandemic!"
+//	icon_state = "bookInfections"
+//	author = "Infections Encyclopedia"
+//	title = "Infections - Making your own pandemic!"
+//	page_link = "Infections"
 
-/obj/item/book/manual/wiki/tcomms
-	name = "Subspace Telecommunications And You"
-	icon_state = "book3"
-	author = "Engineering Encyclopedia"
-	title = "Subspace Telecommunications And You"
-	page_link = "Guide_to_Telecommunications"
+// /obj/item/book/manual/wiki/telescience
+//	name = "Teleportation Science - Bluespace for dummies!"
+//	icon_state = "book7"
+//	author = "University of Bluespace"
+//	title = "Teleportation Science - Bluespace for dummies!"
+//	page_link = "Guide_to_telescience"
 
-/obj/item/book/manual/wiki/atmospherics
-	name = "Lexica Atmosia"
-	icon_state = "book5"
-	author = "the City-state of Atmosia"
-	title = "Lexica Atmosia"
-	page_link = "Guide_to_Atmospherics"
+// /obj/item/book/manual/wiki/detective
+//	name = "The Film Noir: Proper Procedures for Investigations"
+//	icon_state ="bookDetective"
+//	author = "Nanotrasen"
+//	title = "The Film Noir: Proper Procedures for Investigations"
+//	page_link = "Detective"
 
-/obj/item/book/manual/wiki/medicine
-	name = "Medical Space Compendium, Volume 638"
-	icon_state = "book8"
-	author = "Medical Journal"
-	title = "Medical Space Compendium, Volume 638"
-	page_link = "Guide_to_medicine"
+// /obj/item/book/manual/wiki/research_and_development
+// 	name = "Research and Development 101"
+//	icon_state = "rdbook"
+//	author = "Dr. L. Ight"
+//	title = "Research and Development 101"
+//	page_link = "Guide_to_Research_and_Development"
 
-/obj/item/book/manual/wiki/surgery
-	name = "Brain Surgery for Dummies"
-	icon_state = "book4"
-	author = "Dr. F. Fran"
-	title = "Brain Surgery for Dummies"
-	page_link = "Surgery"
+// /obj/item/book/manual/wiki/experimentor
+//	name = "Mentoring your Experiments"
+//	icon_state = "rdbook"
+//	author = "Dr. H.P. Kritz"
+//	title = "Mentoring your Experiments"
+//	page_link = "E.X.P.E.R.I-MENTOR"
 
-/obj/item/book/manual/wiki/grenades
-	name = "DIY Chemical Grenades"
-	icon_state = "book2"
-	author = "W. Powell"
-	title = "DIY Chemical Grenades"
-	page_link = "Grenade"
+// /obj/item/book/manual/wiki/tcomms
+//	name = "Subspace Telecommunications And You"
+//	icon_state = "book3"
+//	author = "Engineering Encyclopedia"
+//	title = "Subspace Telecommunications And You"
+//	page_link = "Guide_to_Telecommunications"
 
-/obj/item/book/manual/wiki/toxins
-	name = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
-	icon_state = "book6"
-	author = "Cuban Pete"
-	title = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
-	page_link = "Guide_to_toxins"
+// /obj/item/book/manual/wiki/atmospherics
+//	name = "Lexica Atmosia"
+//	icon_state = "book5"
+//	author = "the City-state of Atmosia"
+//	title = "Lexica Atmosia"
+//	page_link = "Guide_to_Atmospherics"
 
-/obj/item/book/manual/wiki/plumbing
-	name = "Chemical Factories Without Narcotics"
-	icon_state ="plumbingbook"
-	author = "Nanotrasen"
-	title = "Chemical Factories Without Narcotics"
-	page_link = "Guide_to_plumbing"
+// /obj/item/book/manual/wiki/grenades
+//	name = "DIY Chemical Grenades"
+//	icon_state = "book2"
+//	author = "W. Powell"
+//	title = "DIY Chemical Grenades"
+//	page_link = "Grenade"
 
-/obj/item/book/manual/wiki/medical_cloning
-	name = "Cloning techniques of the 26th century"
-	icon_state ="bookCloning"
-	author = "Medical Journal, volume 3"
-	title = "Cloning techniques of the 26th century"
-	page_link = "Guide_to_genetics#Cloning"
+// /obj/item/book/manual/wiki/toxins
+//	name = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
+//	icon_state = "book6"
+//	author = "Cuban Pete"
+//	title = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
+//	page_link = "Guide_to_toxins"
+
+// /obj/item/book/manual/wiki/plumbing
+//	name = "Chemical Factories Without Narcotics"
+//	icon_state ="plumbingbook"
+//	author = "Nanotrasen"
+//	title = "Chemical Factories Without Narcotics"
+//	page_link = "Guide_to_plumbing"
+
+// /obj/item/book/manual/wiki/medical_cloning
+//	name = "Cloning techniques of the 26th century"
+//	icon_state ="bookCloning"
+//	author = "Medical Journal, volume 3"
+//	title = "Cloning techniques of the 26th century"
+//	page_link = "Guide_to_genetics#Cloning"

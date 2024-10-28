@@ -1,6 +1,9 @@
 /datum/unit_test/ship_outpost_placement/Run()
-	for(var/mapname as anything in SSmapping.ship_purchase_list)
-		var/datum/map_template/shuttle/map = SSmapping.ship_purchase_list[mapname]
+	// checks all shuttle templates, including those
+	// disabled or intended as subshuttles
+	for(var/name as anything in SSmapping.shuttle_templates)
+		var/datum/map_template/shuttle/map = SSmapping.shuttle_templates[name]
+		log_test("Loading [map.name]")
 		try
 			// they'll spawn in empty space, and won't be docked
 			new /datum/overmap/ship/controlled(list("x" = 1, "y" = 1), map)
@@ -10,7 +13,16 @@
 	for(var/outpost_type in subtypesof(/datum/overmap/outpost))
 		var/datum/overmap/outpost/test_outpost = new outpost_type()
 
+		log_test("Testing [test_outpost.type]")
+
 		for(var/datum/overmap/ship/controlled/cur_ship as anything in SSovermap.controlled_ships)
+			log_test(" - Docking [cur_ship.source_template.name]")
+
+			// already-docked ships are ignored.
+			// this was added to stop runtimes when subshuttles, which were docked to their parent ship, attempted to dock to the outpost as part of this test.
+			// all ships which start undocked will end the loop undocked, so this shouldn't cause any ships to be wrongfully skipped.
+			if(cur_ship.docked_to)
+				continue
 			cur_ship.Dock(test_outpost, TRUE)
 
 			var/obj/docking_port/stationary/ship_dock = cur_ship.shuttle_port.docked

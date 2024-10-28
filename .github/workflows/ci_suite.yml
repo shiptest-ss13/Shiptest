@@ -3,27 +3,59 @@ on:
   push:
     branches:
       - master
+      - "project/**"
   pull_request:
     branches:
       - master
+      - "project/**"
   merge_group:
     branches:
       - master
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  run_linters:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    name: Run Linters
+  start_gate:
+    if: ( !contains(github.event.head_commit.message, '[ci skip]') )
+    name: Start Gate
     runs-on: ubuntu-latest
+    steps:
+      - name: Mandatory Empty Step
+        run: exit 0
+
+  run_linters:
+    name: Run Linters
+    needs: start_gate
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+
     steps:
       - uses: actions/checkout@v3
         with:
           ref: master
       - uses: actions/checkout@v3
+
       - name: Restore SpacemanDMM cache
+        id: cache-spacemandmm
         uses: actions/cache@v3
         with:
-          path: ~/SpacemanDMM
-          key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
+          path: ~/dreamchecker
+          key: ${{ runner.os }}-spacemandmm-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
+      - name: Build SpacemanDMM
+        run: bash tools/ci/build_spaceman_dmm.sh dreamchecker
+
+      - name: Restore BYOND cache
+        id: cache-byond
+        uses: actions/cache@v3
+        with:
+          path: ~/BYOND
+          key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
+      - name: Install BYOND
+        if: steps.cache-byond.outputs.cache-hit != 'true'
+        run: bash tools/ci/install_byond.sh
+
       - name: Restore Yarn cache
         uses: actions/cache@v3
         with:
@@ -33,88 +65,124 @@ jobs:
             ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+
       - name: Install Tools
         run: |
           pip3 install setuptools
           bash tools/ci/install_node.sh
-          bash tools/ci/install_byond.sh
-          bash tools/ci/install_spaceman_dmm.sh dreamchecker
+          cargo install ripgrep --features pcre2
           tools/bootstrap/python -c ''
-      - name: Run Linters
+
+      - name: Give Linters A Go
+        id: linter-setup
+        run: exit 0
+      - name: Run Grep Checks
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: bash tools/ci/check_grep.sh
+      - name: Run DreamChecker
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: ~/dreamchecker 2>&1 | bash tools/ci/annotate_dm.sh
+      - name: Run Map Checks
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
         run: |
-          tools/build/build --ci lint tgui-test
-          bash tools/ci/check_filedirs.sh shiptest.dme
-          bash tools/ci/check_changelogs.sh
-          bash tools/ci/check_misc.sh
-          bash tools/ci/check_grep.sh
-          tools/bootstrap/python -m dmi.test
           tools/bootstrap/python -m mapmerge2.dmm_test
-          ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
-      - name: Annotate Lints
-        uses: yogstation13/DreamAnnotate@v2
-        if: always()
-        with:
-          outputFile: output-annotations.txt
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.9"
-      - name: Run Check Regex
+          tools/bootstrap/python -m tools.maplint.source
+      - name: Run DMI Tests
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: tools/bootstrap/python -m dmi.test
+      - name: Check File Directories
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: bash tools/ci/check_filedirs.sh shiptest.dme
+      - name: Check Changelogs
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: bash tools/ci/check_changelogs.sh
+      - name: Check Miscellaneous Files
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: bash tools/ci/check_misc.sh
+      - name: Run TGUI Checks
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: tools/build/build --ci lint tgui-test
+      - name: Run Regex Checks
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
         run: |
           tools/bootstrap/python -m ci.check_regex --log-changes-only --github-actions
-      - name: Annotate Regex Matches
-        if: always()
-        run: |
           cat check_regex_output.txt
 
+      - name: Install OpenDream
+        uses: robinraju/release-downloader@v1.9
+        with:
+          repository: "OpenDreamProject/OpenDream"
+          tag: "latest"
+          fileName: "DMCompiler_linux-x64.tar.gz"
+          extract: true
+
+      - name: Run OpenDream Linter
+        run: |
+          ./DMCompiler_linux-x64/DMCompiler shiptest.dme --suppress-unimplemented --define=CIBUILDING | bash tools/ci/annotate_od.sh
+
   compile_all_maps:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Compile Maps
+    needs: start_gate
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+
     steps:
       - uses: actions/checkout@v3
-      - name: Python setup
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.9"
+
       - name: Setup cache
         id: cache-byond
         uses: actions/cache@v3
         with:
           path: ~/BYOND
-          key: ${{ runner.os }}-byond-cache-${{ hashFiles('Dockerfile') }}
+          key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
       - name: Install BYOND
         if: steps.cache-byond.outputs.cache-hit != 'true'
         run: bash tools/ci/install_byond.sh
+
       - name: Compile All Maps
         run: |
-          bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS -DFULL_INIT
 
   run_all_tests:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Integration Tests
+    needs: start_gate
+    strategy:
+      fail-fast: false
+      matrix:
+        arg:
+          [
+            "BASIC_TESTS",
+            "CREATE_AND_DESTROY_TEST",
+            "PLANET_GEN_TEST",
+            "RUIN_PLACEMENT_TEST",
+            "SHIP_PLACEMENT_TEST",
+          ]
     uses: ./.github/workflows/run_integration_tests.yml
+    with:
+      arg: ${{ matrix.arg }}
 
-#  run_alternate_tests:
-#    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-#    name: Alternate Tests
-#    strategy:
-#      fail-fast: false
-#      matrix:
-#        major: [515]
-#        minor: [1614]
-#    uses: ./.github/workflows/run_integration_tests.yml
-#    with:
-#      major: ${{ matrix.major }}
-#      minor: ${{ matrix.minor }}
+  #  run_alternate_tests:
+  #    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+  #    name: Alternate Tests
+  #    strategy:
+  #      fail-fast: false
+  #      matrix:
+  #        major: [515]
+  #        minor: [1614]
+  #    uses: ./.github/workflows/run_integration_tests.yml
+  #    with:
+  #      major: ${{ matrix.major }}
+  #      minor: ${{ matrix.minor }}
 
   test_windows:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Windows Build
+    needs: start_gate
     runs-on: windows-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
+
       - name: Restore Yarn cache
         uses: actions/cache@v3
         with:
@@ -124,16 +192,30 @@ jobs:
             ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+
       - name: Compile
         run: pwsh tools/ci/build.ps1
         env:
           DM_EXE: "C:\\byond\\bin\\dm.exe"
+
       - name: Create artifact
         run: |
           md deploy
           bash tools/deploy.sh ./deploy
+
       - name: Deploy artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deploy
           path: deploy
+
+  completion_gate: # Serves as a non-moving target for branch rulesets
+    if: always() && !cancelled()
+    name: Completion Gate
+    needs: [test_windows, compile_all_maps, run_linters, run_all_tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decide whether the needed jobs succeeded or failed
+        uses: re-actors/alls-green@release/v1
+        with:
+          jobs: ${{ toJSON(needs) }}

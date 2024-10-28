@@ -2,7 +2,7 @@
 //I'm annoyed I even have to tell you this! SPRITE FIRST, then commit.
 
 /obj/item/mecha_parts/mecha_equipment
-	name = "mecha equipment"
+	name = "exosuit equipment"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_equip"
 	force = 5

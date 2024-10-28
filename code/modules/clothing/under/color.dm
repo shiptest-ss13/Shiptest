@@ -11,10 +11,11 @@
 
 /obj/item/clothing/under/color/random
 	icon_state = "random_jumpsuit"
+	mob_overlay_state = "white" // if you somehow equip it like that
 
 /obj/item/clothing/under/color/random/Initialize()
 	..()
-	var/obj/item/clothing/under/color/C = pick(subtypesof(/obj/item/clothing/under/color) - typesof(/obj/item/clothing/under/color/jumpskirt) - /obj/item/clothing/under/color/random - /obj/item/clothing/under/color/grey/ancient - /obj/item/clothing/under/color/black/ghost)
+	var/obj/item/clothing/under/color/C = pick(subtypesof(/obj/item/clothing/under/color) - typesof(/obj/item/clothing/under/color/jumpskirt) - /obj/item/clothing/under/color/random - /obj/item/clothing/under/color/grey/ancient)
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
 		H.equip_to_slot_or_del(new C(H), ITEM_SLOT_ICLOTHING) //or else you end up with naked assistants running around everywhere...
@@ -24,6 +25,7 @@
 
 /obj/item/clothing/under/color/jumpskirt/random
 	icon_state = "random_jumpsuit"		//Skirt variant needed
+	mob_overlay_state = "white"
 
 /obj/item/clothing/under/color/jumpskirt/random/Initialize()
 	..()
@@ -45,13 +47,6 @@
 	name = "black jumpskirt"
 	icon_state = "black_skirt"
 	item_state = "bl_suit"
-
-/obj/item/clothing/under/color/black/ghost
-	item_flags = DROPDEL
-
-/obj/item/clothing/under/color/black/ghost/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, CULT_TRAIT)
 
 /obj/item/clothing/under/color/grey
 	name = "grey jumpsuit"
@@ -191,15 +186,6 @@
 	icon_state = "lightbrown_skirt"
 	item_state = "lb_suit"
 
-/obj/item/clothing/under/color/khaki
-	name = "khaki jumpsuit"
-	icon_state = "khakij"
-	item_state = "lb_suit"
-
-/obj/item/clothing/under/color/khaki/buster
-	name = "buster jumpsuit"
-	desc = "There seems to be a large stain in the left pocket. Someone must have squashed a really big twinkie."
-
 /obj/item/clothing/under/color/brown
 	name = "brown jumpsuit"
 	icon_state = "brown"
@@ -219,17 +205,3 @@
 	name = "maroon jumpskirt"
 	icon_state = "maroon_skirt"
 	item_state = "r_suit"
-
-/obj/item/clothing/under/color/rainbow
-	name = "rainbow jumpsuit"
-	desc = "A multi-colored jumpsuit!"
-	icon_state = "rainbow"
-	item_state = "rainbow"
-	can_adjust = FALSE
-
-/obj/item/clothing/under/color/jumpskirt/rainbow
-	name = "rainbow jumpskirt"
-	desc = "A multi-colored jumpskirt!"
-	icon_state = "rainbow_skirt"
-	item_state = "rainbow"
-	can_adjust = FALSE

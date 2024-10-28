@@ -35,6 +35,7 @@
 	. = ..()
 
 	GLOB.new_player_list += src
+	SSpoints_of_interest.make_point_of_interest(src)
 
 /mob/dead/new_player/Destroy()
 	GLOB.new_player_list -= src
@@ -249,8 +250,8 @@
 		observer.client.init_verbs()
 	observer.update_appearance()
 	observer.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-	deadchat_broadcast(" has observed.", "<b>[observer.real_name]</b>", follow_target = observer, turf_target = get_turf(observer), message_type = DEADCHAT_DEATHRATTLE)
 	QDEL_NULL(mind)
+	deadchat_broadcast(" has observed.", "<b>[observer.real_name]</b>", follow_target = observer, turf_target = get_turf(observer), message_type = DEADCHAT_DEATHRATTLE)
 	qdel(src)
 	return TRUE
 
@@ -319,7 +320,6 @@
 		spawn_point.join_player_here(character)
 		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 		Spl.Fade(TRUE)
-		character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
 
 		character.update_parallax_teleport()
 
@@ -329,14 +329,13 @@
 		var/mob/living/carbon/human/humanc = character
 		ship.manifest_inject(humanc, client, job)
 		GLOB.data_core.manifest_inject(humanc, client)
+		ship.add_mob_to_crew_guestbook(humanc)
 		AnnounceArrival(humanc, job.name, ship)
 		AddEmploymentContract(humanc)
 		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)
 
 		if(GLOB.summon_guns_triggered)
 			give_guns(humanc)
-		if(GLOB.summon_magic_triggered)
-			give_magic(humanc)
 		if(GLOB.curse_of_madness_triggered)
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 		if(CONFIG_GET(flag/roundstart_traits))
@@ -346,6 +345,7 @@
 
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
+	SSblackbox.record_feedback("tally", "player_joined_faction", 1, ship.get_faction())
 	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
 		minor_announce("[job.name] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
 	return TRUE
@@ -433,7 +433,7 @@
 		mind.active = FALSE //we wish to transfer the key manually
 		mind.original_character_slot_index = client.prefs.default_slot
 		mind.transfer_to(H) //won't transfer key since the mind is not active
-		mind.set_original_character(H)
+		H.mind.set_original_character(H)
 
 	H.name = real_name
 	client.init_verbs()
@@ -493,8 +493,13 @@
 /mob/dead/new_player/proc/register_for_interview()
 	// First we detain them by removing all the verbs they have on client
 	for (var/procpath/client_verb as anything in client.verbs)
-		if(!(client_verb in GLOB.client_verbs_required))
-			remove_verb(client, client_verb)
+		if(client_verb in GLOB.client_verbs_required)
+			continue
+		remove_verb(client, client_verb)
+
+	// Then remove those on their mob as well
+	for (var/procpath/verb_path as anything in verbs)
+		remove_verb(src, verb_path)
 
 	// Then we create the interview form and show it to the client
 	var/datum/interview/I = GLOB.interviews.interview_for_client(client)

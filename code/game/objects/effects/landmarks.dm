@@ -1,6 +1,6 @@
 /obj/effect/landmark
 	name = "landmark"
-	icon = 'icons/effects/landmarks_static.dmi'
+	icon = 'icons/effects/mapping/landmarks_static.dmi'
 	icon_state = "x2"
 	anchored = TRUE
 	layer = MID_LANDMARK_LAYER
@@ -45,7 +45,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	. = ..()
 	GLOB.start_landmarks_list += src
 	if(jobspawn_override)
-		LAZYADDASSOC(GLOB.jobspawn_overrides, name, src)
+		LAZYADDASSOCLIST(GLOB.jobspawn_overrides, name, src)
 	if(name != "start")
 		tag = "start*[name]"
 
@@ -187,7 +187,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/psychologist
 	name = "Psychologist"
-	icon_state = "Psychologist"
+	icon_state = "Curator"
 
 /obj/effect/landmark/start/chaplain
 	name = "Chaplain"
@@ -210,7 +210,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	return ..()
 
 /obj/effect/landmark/start/ai/secondary
-	icon = 'icons/effects/landmarks_static.dmi'
+	icon = 'icons/effects/mapping/landmarks_static.dmi'
 	icon_state = "ai_spawn"
 	primary_ai = FALSE
 	latejoin_active = FALSE
@@ -218,10 +218,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/brig_phys
 	name = "Brig Physician"
 	icon_state = "Brig Physician"
-
-/obj/effect/landmark/start/lieutenant
-	name = "SolGov Representative"		//WS Edit - SolGov Rep
-	icon_state = "SolGov Representative"		//WS Edit - SolGov Rep
 
 //Department Security spawns
 
@@ -253,7 +249,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/wizard
 	name = "wizard"
-	icon = 'icons/effects/landmarks_static.dmi'
+	icon = 'icons/effects/mapping/landmarks_static.dmi'
 	icon_state = "wiznerd_spawn"
 
 /obj/effect/landmark/start/wizard/Initialize()
@@ -263,7 +259,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/nukeop
 	name = "nukeop"
-	icon = 'icons/effects/landmarks_static.dmi'
+	icon = 'icons/effects/mapping/landmarks_static.dmi'
 	icon_state = "snukeop_spawn"
 
 /obj/effect/landmark/start/nukeop/Initialize()
@@ -273,7 +269,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/nukeop_leader
 	name = "nukeop leader"
-	icon = 'icons/effects/landmarks_static.dmi'
+	icon = 'icons/effects/mapping/landmarks_static.dmi'
 	icon_state = "snukeop_leader_spawn"
 
 /obj/effect/landmark/start/nukeop_leader/Initialize()
@@ -313,16 +309,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.xeno_spawn += loc
 	return INITIALIZE_HINT_QDEL
 
-//also blobs that have their spawn forcemoved (running out of time when picking their spawn spot), santa and respawning devils
-/obj/effect/landmark/blobstart
-	name = "blobstart"
-	icon_state = "blob_start"
-
-/obj/effect/landmark/blobstart/Initialize(mapload)
-	..()
-	GLOB.blobstart += loc
-	return INITIALIZE_HINT_QDEL
-
 //spawns sec equipment lockers depending on the number of sec officers
 /obj/effect/landmark/secequipment
 	name = "secequipment"
@@ -344,13 +330,30 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/ert_spawn
-	name = "Emergencyresponseteam"
+	name = "Emergency response team spawn"
 	icon_state = "ert_spawn"
 
 /obj/effect/landmark/ert_spawn/Initialize(mapload)
 	..()
 	GLOB.emergencyresponseteamspawn += loc
 	return INITIALIZE_HINT_QDEL
+
+/obj/effect/landmark/ert_outpost_spawn
+	name = "Emergency response team outpost spawn"
+	icon_state = "ert_spawn"
+
+/obj/effect/landmark/ert_outpost_spawn/Initialize(mapload)
+	..()
+	GLOB.emergencyresponseteam_outpostspawn += loc
+	return INITIALIZE_HINT_QDEL
+
+/obj/effect/landmark/ert_shuttle_spawn
+	name = "Emergency response team shuttle spawn"
+	icon_state = "ert_spawn"
+
+/obj/effect/landmark/ert_shuttle_brief_spawn
+	name = "Emergency response team briefing officer spawn"
+	icon_state = "ert_brief_spawn"
 
 //ninja energy nets teleport victims here
 /obj/effect/landmark/holding_facility

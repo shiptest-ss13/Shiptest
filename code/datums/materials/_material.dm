@@ -65,7 +65,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 		source.name = "[name] [source.name]"
 
 	if(beauty_modifier)
-		addtimer(CALLBACK(source, TYPE_PROC_REF(/datum, _AddComponent), list(/datum/component/beauty, beauty_modifier * amount)), 0)
+		source.AddElement(/datum/element/beauty, beauty_modifier * amount)
 
 	if(istype(source, /obj)) //objs
 		on_applied_obj(source, amount, material_flags)
@@ -78,6 +78,16 @@ Simple datum which is instanced once per type and is used for every object of sa
 ///This proc is called when a material updates an object's description
 /atom/proc/mat_update_desc(/datum/material/mat)
 	return
+
+
+/**
+ * This proc is called when the mat is found in an item that's consumed by accident. see /obj/item/proc/on_accidental_consumption.
+ * Arguments
+ * * M - person consuming the mat
+ * * S - (optional) item the mat is contained in (NOT the item with the mat itself)
+ */
+/datum/material/proc/on_accidental_mat_consumption(mob/living/carbon/M, obj/item/S)
+	return FALSE
 
 ///This proc is called when the material is added to an object specifically.
 /datum/material/proc/on_applied_obj(obj/o, amount, material_flags)
@@ -121,7 +131,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 	return
 
 ///This proc is called when the material is removed from an object.
-/datum/material/proc/on_removed(atom/source, material_flags)
+/datum/material/proc/on_removed(atom/source, amount, material_flags)
 	if(material_flags & MATERIAL_COLOR) //Prevent changing things with pre-set colors, to keep colored toolboxes their looks for example
 		if(color)
 			source.remove_atom_colour(FIXED_COLOUR_PRIORITY, color)
@@ -132,6 +142,9 @@ Simple datum which is instanced once per type and is used for every object of sa
 
 	if(material_flags & MATERIAL_ADD_PREFIX)
 		source.name = initial(source.name)
+
+	if(beauty_modifier)
+		source.RemoveElement(/datum/element/beauty, beauty_modifier * amount)
 
 	if(istype(source, /obj)) //objs
 		on_removed_obj(source, material_flags)

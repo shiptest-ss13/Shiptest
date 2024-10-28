@@ -11,6 +11,8 @@
 	density = FALSE		//Thought I couldn't fix this one easily, phew
 	// Run speed delay is multiplied with this for vehicle move delay.
 	var/delay_multiplier = 6.7
+	///Determines the typepath of what the object folds into
+	var/foldabletype = /obj/item/wheelchair
 
 /obj/vehicle/ridden/wheelchair/Initialize()
 	. = ..()
@@ -102,14 +104,44 @@
 /obj/vehicle/ridden/wheelchair/proc/can_user_rotate(mob/living/user)
 	var/mob/living/L = user
 	if(istype(L))
-		if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-			return FALSE
+		if(user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+			return TRUE
 	if(isobserver(user) && CONFIG_GET(flag/ghost_interaction))
 		return TRUE
 	return FALSE
 
-/obj/vehicle/ridden/wheelchair/the_whip/driver_move(mob/living/user, direction)
-	if(istype(user))
-		var/datum/component/riding/D = GetComponent(/datum/component/riding)
-		D.vehicle_move_delay = round(CONFIG_GET(number/movedelay/run_delay) * 6.7) / max(user.usable_hands, 1)
-	return ..()
+/obj/item/wheelchair
+	name = "wheelchair"
+	desc = "A collapsed wheelchair that can be carried around."
+	icon = 'icons/obj/vehicles.dmi'
+	icon_state = "wheelchair_folded"
+	base_icon_state = "wheelchair_folded"
+	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+	force = 8 //Force is same as a chair
+	var/unfolded_type = /obj/vehicle/ridden/wheelchair
+
+/obj/vehicle/ridden/wheelchair/MouseDrop(over_object, src_location, over_location)  //Lets you collapse wheelchair
+	. = ..()
+	if(over_object != usr || !Adjacent(usr) || !foldabletype || !ishuman(usr) || has_buckled_mobs())
+		return FALSE
+	usr.visible_message("<span class='notice'>[usr] begins to collapse [src].</span>", "<span class='notice'>You begin to collapse [src].</span>")
+	if(!do_after(usr, 3 SECONDS, target = src))
+		return FALSE
+	usr.visible_message("<span class='notice'>[usr] collapses [src].</span>", "<span class='notice'>You collapse [src].</span>")
+	var/obj/vehicle/ridden/wheelchair/wheelchair_folded = new foldabletype(get_turf(src))
+	usr.put_in_hands(wheelchair_folded)
+	qdel(src)
+
+/obj/item/wheelchair/attack_self(mob/user)  //Deploys wheelchair on in-hand use
+	deploy_wheelchair(user, user.loc)
+
+/obj/item/wheelchair/proc/deploy_wheelchair(mob/user, atom/location)
+	usr.visible_message("<span class='notice'>[usr] begins to unfold [src].</span>", "<span class='notice'>You begin to unfold [src].</span>")
+	if(!do_after(usr, 3 SECONDS, target = src))
+		return FALSE
+	usr.visible_message("<span class='notice'>[usr] deploys [src].</span>", "<span class='notice'>You deploy [src].</span>")
+	var/obj/vehicle/ridden/wheelchair/wheelchair_unfolded = new unfolded_type(location)
+	wheelchair_unfolded.add_fingerprint(user)
+	qdel(src)

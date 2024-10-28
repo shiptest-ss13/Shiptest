@@ -99,6 +99,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "al" = (
@@ -165,6 +166,7 @@
 /area/ship/storage)
 "bY" = (
 /obj/structure/chair/comfy/shuttle,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "cF" = (
@@ -258,7 +260,9 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "polengine";
 	name = "Engine Shutters"
@@ -276,7 +280,9 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "polengine"
 	},
@@ -333,6 +339,17 @@
 /obj/structure/grille,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external)
+"pk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/landmark/ert_shuttle_brief_spawn,
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
 "qn" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
@@ -391,6 +408,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "DP" = (
@@ -493,6 +511,7 @@
 "SE" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/machinery/light/small/directional/north,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "Wx" = (
@@ -572,7 +591,7 @@ gs
 Pq
 hJ
 bG
-RO
+pk
 bG
 hJ
 Pq

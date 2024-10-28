@@ -19,32 +19,59 @@ jobs:
         unset SECRET_EXISTS
         if [ -n "$ENABLER_SECRET" ]; then SECRET_EXISTS=true ; fi
         echo "SECRETS_ENABLED=$SECRET_EXISTS" >> $GITHUB_OUTPUT
+
     - name: Checkout
       if: steps.secrets_set.outputs.SECRETS_ENABLED
       uses: actions/checkout@v3
-    - name: Restore BYOND cache
+
+    - name: Setup BYOND cache
+      id: cache-byond
       if: steps.secrets_set.outputs.SECRETS_ENABLED
       uses: actions/cache@v3
       with:
         path: ~/BYOND
-        key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
-    - name: Install rust-g
+        key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
+
+    - name: Install BYOND
+      if: steps.cache-byond.outputs.cache-hit != 'true' && steps.secrets_set.outputs.SECRETS_ENABLED
+      run: bash tools/ci/install_byond.sh
+
+    - name: Install runtime dependencies
       if: steps.secrets_set.outputs.SECRETS_ENABLED
       run: |
         sudo dpkg --add-architecture i386
         sudo apt update || true
-        sudo apt install -o APT::Immediate-Configure=false libssl1.1:i386
+        sudo apt install -o APT::Immediate-configure=false libssl-dev:i386
         bash tools/ci/install_rust_g.sh
-    - name: Install auxmos
+
+    - name: Cache dependencies
       if: steps.secrets_set.outputs.SECRETS_ENABLED
+      uses: actions/cache@v3
+      with:
+        path: ~/.byond/bin
+        key: ${{ runner.os }}-deps-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
+
+    - name: Install build dependencies
+      if: steps.cache-deps.outputs.cache-hit != 'true' && steps.secrets_set.outputs.SECRETS_ENABLED
       run: |
-        bash tools/ci/install_auxmos.sh
+        sudo apt install -o APT::Immediate-Configure=false libgcc-s1:i386 g++-multilib zlib1g-dev:i386
+        rustup target add i686-unknown-linux-gnu
+
+    - name: Build auxmos
+      if: steps.cache-deps.outputs.cache-hit != 'true' && steps.secrets_set.outputs.SECRETS_ENABLED
+      run: bash tools/ci/build_auxmos.sh
+
+    - name: Build rust-g
+      if: steps.cache-deps.outputs.cache-hit != 'true' && steps.secrets_set.outputs.SECRETS_ENABLED
+      run: bash tools/ci/build_rust_g.sh
+
     - name: Compile and generate Autowiki files
       if: steps.secrets_set.outputs.SECRETS_ENABLED
       run: |
         bash tools/ci/install_byond.sh
         source $HOME/BYOND/byond/bin/byondsetup
         tools/build/build --ci autowiki
+
     - name: Run Autowiki
       if: steps.secrets_set.outputs.SECRETS_ENABLED
       env:

@@ -341,7 +341,6 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 			dat += "<h3>NTGanda(tm) Universal Printing Module</h3>"
 			dat += "What would you like to print?<BR>"
 			dat += "<A href='?src=[REF(src)];printbible=1'>\[Bible\]</A><BR>"
-			dat += "<A href='?src=[REF(src)];printposter=1'>\[Poster\]</A><BR>"
 			dat += "<A href='?src=[REF(src)];switchscreen=0'>(Return to main menu)</A><BR>"
 		if(8)
 			dat += "<h3>Accessing Forbidden Lore Vault v 1.3</h3>"
@@ -359,7 +358,6 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 	return null
 
 /obj/machinery/computer/bookmanagement/proc/print_forbidden_lore(mob/user)
-	new /obj/item/melee/cultblade/dagger(get_turf(src))
 	to_chat(user, "<span class='warning'>Your sanity barely endures the seconds spent in the vault's browsing window. The only thing to remind you of this when you stop browsing is a sinister dagger sitting on the desk. You don't even remember where it came from...</span>")
 	user.visible_message("<span class='warning'>[user] stares at the blank screen for a few moments, [user.p_their()] expression frozen in fear. When [user.p_they()] finally awaken[user.p_s()] from it, [user.p_they()] look[user.p_s()] a lot older.</span>", 2)
 
@@ -521,12 +519,6 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 				B.item_state = GLOB.bible_item_state
 				B.name = GLOB.bible_name
 				B.deity_name = GLOB.deity
-			cooldown = world.time + PRINTER_COOLDOWN
-		else
-			say("Printer currently unavailable, please wait a moment.")
-	if(href_list["printposter"])
-		if(cooldown < world.time)
-			new /obj/item/poster/random_official(src.loc)
 			cooldown = world.time + PRINTER_COOLDOWN
 		else
 			say("Printer currently unavailable, please wait a moment.")

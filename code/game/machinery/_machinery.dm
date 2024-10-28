@@ -21,7 +21,7 @@ Class Variables:
 	power_channel (num)
 		What channel to draw from when drawing power for power mode
 		Possible Values:
-			AREA_USAGE_EQUIP:0 -- Equipment Channel
+			AREA_USAGE_EQUIP:1 -- Equipment Channel
 			AREA_USAGE_LIGHT:2 -- Lighting Channel
 			AREA_USAGE_ENVIRON:3 -- Environment Channel
 
@@ -44,7 +44,7 @@ Class Procs:
 	auto_use_power()				'game/machinery/machine.dm'
 		This proc determines how power mode power is deducted by the machine.
 		'auto_use_power()' is called by the 'master_controller' game_controller every
-		tick.
+		tick. (not anymore)
 
 		Return Value:
 			return:1 -- if object is powered
@@ -102,6 +102,7 @@ Class Procs:
 		//0 = dont run the auto
 		//1 = run auto, use idle
 		//2 = run auto, use active
+	var/use_static_power = NO_POWER_USE
 	var/idle_power_usage = 0
 	var/active_power_usage = 0
 	var/power_channel = AREA_USAGE_EQUIP
@@ -151,7 +152,11 @@ Class Procs:
 
 	if(occupant_typecache)
 		occupant_typecache = typecacheof(occupant_typecache)
-
+	switch(use_power)
+		if(IDLE_POWER_USE)
+			set_idle_power()
+		if(ACTIVE_POWER_USE)
+			set_active_power()
 	return INITIALIZE_HINT_LATELOAD
 
 /// Helper proc for telling a machine to start processing with the subsystem type that is located in its `subsystem_type` var.
@@ -167,14 +172,26 @@ Class Procs:
 /obj/machinery/LateInitialize()
 	. = ..()
 	power_change()
-	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(power_change))
+	become_area_sensitive(ROUNDSTART_TRAIT)
+	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(enter_area))
+	RegisterSignal(src, COMSIG_EXIT_AREA, PROC_REF(exit_area))
+
+/obj/machinery/proc/enter_area(datum/source, area/A)
+	SIGNAL_HANDLER
+	power_change(A)
+
+/obj/machinery/proc/exit_area(datum/source, area/A)
+	SIGNAL_HANDLER
+	set_no_power(A)
 
 /obj/machinery/Destroy()
 	GLOB.machines.Remove(src)
 	end_processing()
 	dropContents()
+	lose_area_sensitivity(ROUNDSTART_TRAIT)
 	QDEL_NULL(circuit)
 	QDEL_LIST(component_parts)
+	set_no_power()
 	return ..()
 
 /obj/machinery/proc/locate_machinery()
@@ -271,8 +288,8 @@ Class Procs:
 		target.forceMove(src)
 	updateUsrDialog()
 	update_appearance()
-
-/obj/machinery/proc/auto_use_power()
+/*
+/obj/machinery/proc/auto_use_power() //obsolete, tick controller doesn't call this anymore because machines use addStaticPower now.
 	if(!powered(power_channel))
 		return 0
 	if(use_power == 1)
@@ -280,7 +297,7 @@ Class Procs:
 	else if(use_power >= 2)
 		use_power(active_power_usage,power_channel)
 	return 1
-
+*/
 
 ///Called when we want to change the value of the `is_operational` variable. Boolean.
 /obj/machinery/proc/set_is_operational(new_value)
@@ -419,6 +436,7 @@ Class Procs:
 			for(var/obj/item/I in component_parts)
 				I.forceMove(loc)
 			component_parts.Cut()
+	SEND_SIGNAL(src, COMSIG_OBJ_DECONSTRUCT, disassembled)
 	qdel(src)
 
 /**
@@ -616,6 +634,7 @@ Class Procs:
 
 //called on deconstruction before the final deletion
 /obj/machinery/proc/on_deconstruction()
+	set_no_power()
 	return
 
 /obj/machinery/proc/can_be_overridden()

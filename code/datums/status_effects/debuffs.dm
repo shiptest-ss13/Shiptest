@@ -49,6 +49,7 @@
 	. = ..()
 	if(!.)
 		return
+	owner.trip_with_gun("knockdown")
 	ADD_TRAIT(owner, TRAIT_FLOORED, TRAIT_STATUS_EFFECT(id))
 
 /datum/status_effect/incapacitating/knockdown/on_remove()
@@ -79,6 +80,7 @@
 	. = ..()
 	if(!.)
 		return
+	owner.trip_with_gun("paralyze")
 	ADD_TRAIT(owner, TRAIT_INCAPACITATED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_FLOORED, TRAIT_STATUS_EFFECT(id))
@@ -219,40 +221,6 @@
 	desc = "Your biological functions have halted. You could live forever this way, but it's pretty boring."
 	icon_state = "stasis"
 
-//GOLEM GANG
-
-//OTHER DEBUFFS
-/datum/status_effect/strandling //get it, strand as in durathread strand + strangling = strandling hahahahahahahahahahhahahaha i want to die
-	id = "strandling"
-	status_type = STATUS_EFFECT_UNIQUE
-	alert_type = /atom/movable/screen/alert/status_effect/strandling
-
-/datum/status_effect/strandling/on_apply()
-	ADD_TRAIT(owner, TRAIT_MAGIC_CHOKE, "dumbmoron")
-	return ..()
-
-/datum/status_effect/strandling/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_MAGIC_CHOKE, "dumbmoron")
-	return ..()
-
-/atom/movable/screen/alert/status_effect/strandling
-	name = "Choking strand"
-	desc = "A magical strand of Durathread is wrapped around your neck, preventing you from breathing! Click this icon to remove the strand."
-	icon_state = "his_grace"
-	alerttooltipstyle = "hisgrace"
-
-/atom/movable/screen/alert/status_effect/strandling/Click(location, control, params)
-	. = ..()
-	if(usr != owner)
-		return
-	to_chat(owner, "<span class='notice'>You attempt to remove the durathread strand from around your neck.</span>")
-	if(do_after(owner, 35, null, owner))
-		if(isliving(owner))
-			var/mob/living/L = owner
-			to_chat(owner, "<span class='notice'>You succesfuly remove the durathread strand.</span>")
-			L.remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
-
-
 /datum/status_effect/pacify/on_creation(mob/living/new_owner, set_duration)
 	if(isnum(set_duration))
 		duration = set_duration
@@ -284,19 +252,6 @@
 
 /datum/status_effect/pacify/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "status_effect")
-
-/datum/status_effect/cultghost //is a cult ghost and can't use manifest runes
-	id = "cult_ghost"
-	duration = -1
-	alert_type = null
-
-/datum/status_effect/cultghost/on_apply()
-	owner.see_invisible = SEE_INVISIBLE_OBSERVER
-	owner.see_in_dark = 2
-
-/datum/status_effect/cultghost/tick()
-	if(owner.reagents)
-		owner.reagents.del_reagent(/datum/reagent/water/holywater) //can't be deconverted
 
 /datum/status_effect/crusher_mark
 	id = "crusher_mark"
@@ -368,7 +323,8 @@
 
 /datum/status_effect/neck_slice/tick()
 	var/mob/living/carbon/human/H = owner
-	if(H.stat == DEAD || H.bleed_rate <= 8)
+	var/obj/item/bodypart/throat_in_question = H.get_bodypart(BODY_ZONE_HEAD)
+	if(H.stat == DEAD || throat_in_question?.bleeding <= 8)
 		H.remove_status_effect(/datum/status_effect/neck_slice)
 	if(prob(10))
 		H.emote(pick("gasp", "gag", "choke"))

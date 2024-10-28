@@ -22,7 +22,6 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
-	var/list/holodeck_templates = list()
 	// List mapping TYPES of outpost map templates to instances of their singletons.
 	var/list/outpost_templates = list()
 
@@ -42,6 +41,28 @@ SUBSYSTEM_DEF(mapping)
 	var/list/map_zones = list()
 	/// Translation of virtual level ID to a virtual level reference
 	var/list/virtual_z_translation = list()
+
+	/// List of z level (as number) -> plane offset of that z level
+	/// Used to maintain the plane cube
+	var/list/z_level_to_plane_offset = list()
+	/// List of z level (as number) -> The lowest plane offset in that z stack
+	var/list/z_level_to_lowest_plane_offset = list()
+	// This pair allows for easy conversion between an offset plane, and its true representation
+	// Both are in the form "input plane" -> output plane(s)
+	/// Assoc list of string plane values to their true, non offset representation
+	var/list/plane_offset_to_true
+	/// Assoc list of true string plane values to a list of all potential offset planess
+	var/list/true_to_offset_planes
+	/// Assoc list of string plane to the plane's offset value
+	var/list/plane_to_offset
+	/// List of planes that do not allow for offsetting
+	var/list/plane_offset_blacklist
+	/// List of render targets that do not allow for offsetting
+	var/list/render_offset_blacklist
+	/// List of plane masters that are of critical priority
+	var/list/critical_planes
+	/// The largest plane offset we've generated so far
+	var/max_plane_offset = 0
 
 /datum/controller/subsystem/mapping/Initialize(timeofday)
 	if(initialized)
@@ -91,13 +112,11 @@ SUBSYSTEM_DEF(mapping)
 
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
-	holodeck_templates = SSmapping.holodeck_templates
 
 	outpost_templates = SSmapping.outpost_templates
 
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
-	holodeck_templates = SSmapping.holodeck_templates
 
 	areas_in_z = SSmapping.areas_in_z
 	map_zones = SSmapping.map_zones
@@ -112,11 +131,6 @@ SUBSYSTEM_DEF(mapping)
 
 #define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
 
-/datum/controller/subsystem/mapping/proc/mapvote()
-	SSvote.initiate_vote("map", "automatic map rotation", TRUE) //WS Edit - Ghost Voting Rework
-
-/datum/controller/subsystem/mapping/proc/changemap(datum/map_template/map)
-
 /datum/controller/subsystem/mapping/proc/preloadTemplates(path = "_maps/templates/") //see master controller setup
 	var/list/filelist = flist(path)
 	for(var/map in filelist)
@@ -127,7 +141,6 @@ SUBSYSTEM_DEF(mapping)
 	preloadShuttleTemplates()
 	load_ship_templates()
 	preloadShelterTemplates()
-	preloadHolodeckTemplates()
 	preloadOutpostTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
@@ -185,20 +198,32 @@ SUBSYSTEM_DEF(mapping)
 		CHECK_LIST_EXISTS("job_slots")
 		var/datum/map_template/shuttle/S = new(data["map_path"], data["map_name"], TRUE)
 		S.file_name = data["map_path"]
-		S.category = "shiptest"
 
 		if(istext(data["map_short_name"]))
 			S.short_name = data["map_short_name"]
 		else
 			S.short_name = copytext(S.name, 1, 20)
+
 		if(istext(data["prefix"]))
 			S.prefix = data["prefix"]
+
+		if(istext(data["faction"]))
+			S.faction_path = text2path(data["faction"])
+		if(S.faction_path)
+			S.faction_datum = SSfactions.faction_path_to_datum(S.faction_path)
+			S.faction_name = S.faction_datum.name
+
+		S.category = S.faction_name
+
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
-		if ( isnum( data[ "unique_ship_access" ] && data["unique_ship_access"] ) )
+
+		if(isnum(data[ "unique_ship_access" ] && data["unique_ship_access"]))
 			S.unique_ship_access = data[ "unique_ship_access" ]
+
 		if(istext(data["description"]))
 			S.description = data["description"]
+
 		if(islist(data["tags"]))
 			S.tags = data["tags"]
 
@@ -229,8 +254,10 @@ SUBSYSTEM_DEF(mapping)
 			S.job_slots[job_slot] = slots
 		if(isnum(data["limit"]))
 			S.limit = data["limit"]
+
 		if(isnum(data["spawn_time_coeff"]))
 			S.spawn_time_coeff = data["spawn_time_coeff"]
+
 		if(isnum(data["officer_time_coeff"]))
 			S.officer_time_coeff = data["officer_time_coeff"]
 
@@ -240,8 +267,10 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
+
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S
+
 		if(isnum(data["space_spawn"]) && data["space_spawn"])
 			S.space_spawn = TRUE
 
@@ -278,16 +307,6 @@ SUBSYSTEM_DEF(mapping)
 	CHECK_TICK
 	add_new_zlevel("Quadrant Allocation Level", allocation_type = ALLOCATION_QUADRANT)
 	CHECK_TICK
-
-/datum/controller/subsystem/mapping/proc/preloadHolodeckTemplates()
-	for(var/item in subtypesof(/datum/map_template/holodeck))
-		var/datum/map_template/holodeck/holodeck_type = item
-		if(!(initial(holodeck_type.mappath)))
-			continue
-		var/datum/map_template/holodeck/holo_template = new holodeck_type()
-
-		holodeck_templates[holo_template.template_id] = holo_template
-		map_templates[holo_template.template_id] = holo_template
 
 /datum/controller/subsystem/mapping/proc/preloadOutpostTemplates()
 	for(var/datum/map_template/outpost/outpost_type as anything in subtypesof(/datum/map_template/outpost))

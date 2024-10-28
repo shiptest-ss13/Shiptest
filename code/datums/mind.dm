@@ -55,9 +55,8 @@
 	var/damnation_type = 0
 	var/datum/mind/soulOwner //who owns the soul.  Under normal circumstances, this will point to src
 	var/hasSoul = TRUE // If false, renders the character unable to sell their soul.
-	var/holy_role = NONE //is this person a chaplain or admin role allowed to use bibles, Any rank besides 'NONE' allows for this.
 
-	var/mob/living/enslaved_to //If this mind's master is another mob (i.e. adamantine golems)
+	var/mob/living/enslaved_to //If this mind's master is another mob
 	var/datum/language_holder/language_holder
 	var/unconvertable = FALSE
 	var/late_joiner = FALSE
@@ -79,6 +78,9 @@
 	/// The index for our current scar slot, so we don't have to constantly check the savefile (unlike the slots themselves, this index is independent of selected char slot, and increments whenever a valid char is joined with)
 	var/current_scar_slot_index
 
+	/// Guestbook datum, in case we actually make use of the guestbook mechanics
+	var/datum/guestbook/guestbook
+
 	///Skill multiplier, adjusts how much xp you get/loose from adjust_xp. Dont override it directly, add your reason to experience_multiplier_reasons and use that as a key to put your value in there.
 	var/experience_multiplier = 1
 	///Skill multiplier list, just slap your multiplier change onto this with the type it is coming from as key.
@@ -95,6 +97,7 @@
 	key = _key
 	soulOwner = src
 	martial_art = default_martial_art
+	guestbook = new()
 	init_known_skills()
 
 /datum/mind/Destroy()
@@ -102,6 +105,7 @@
 	if(islist(antag_datums))
 		QDEL_LIST(antag_datums)
 	QDEL_NULL(language_holder)
+	QDEL_NULL(guestbook)
 	set_current(null)
 	soulOwner = null
 	return ..()
@@ -341,12 +345,6 @@
 	remove_antag_datum(/datum/antagonist/wizard)
 	special_role = null
 
-/datum/mind/proc/remove_cultist()
-	if(src in SSticker.mode.cult)
-		SSticker.mode.remove_cultist(src, 0, 0)
-	special_role = null
-	remove_antag_equip()
-
 /datum/mind/proc/remove_antag_equip()
 	var/list/Mob_Contents = current.get_contents()
 	for(var/obj/item/I in Mob_Contents)
@@ -359,7 +357,6 @@
 	remove_traitor()
 	remove_nukeop()
 	remove_wizard()
-	remove_cultist()
 
 /datum/mind/proc/equip_traitor(employer = "The Syndicate", silent = FALSE, datum/antagonist/uplink_owner)
 	if(!current)
@@ -432,10 +429,7 @@
 //Link a new mobs mind to the creator of said mob. They will join any team they are currently on, and will only switch teams when their creator does.
 
 /datum/mind/proc/enslave_mind_to_creator(mob/living/creator)
-	if(iscultist(creator))
-		SSticker.mode.add_cultist(src)
-
-	else if(is_nuclear_operative(creator))
+	if(is_nuclear_operative(creator))
 		var/datum/antagonist/nukeop/converter = creator.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE)
 		var/datum/antagonist/nukeop/N = new()
 		N.send_to_spawnpoint = FALSE
@@ -704,14 +698,6 @@
 		assigned_role = ROLE_WIZARD
 		add_antag_datum(/datum/antagonist/wizard)
 
-
-/datum/mind/proc/make_Cultist()
-	if(!has_antag_datum(/datum/antagonist/cult,TRUE))
-		SSticker.mode.add_cultist(src,FALSE,equip=TRUE)
-		special_role = ROLE_CULTIST
-		to_chat(current, "<font color=\"purple\"><b><i>You catch a glimpse of the Realm of Nar'Sie, The Geometer of Blood. You now see how flimsy your world is, you see that it should be open to the knowledge of Nar'Sie.</b></i></font>")
-		to_chat(current, "<font color=\"purple\"><b><i>Assist your new brethren in their dark dealings. Their goal is yours, and yours is theirs. You serve the Dark One above all else. Bring It back.</b></i></font>")
-
 /datum/mind/proc/AddSpell(obj/effect/proc_holder/spell/S)
 	spell_list += S
 	S.action.Grant(current)
@@ -728,7 +714,7 @@
 		if(istype(S, spell))
 			spell_list -= S
 			qdel(S)
-	current?.client << output(null, "statbrowser:check_spells")
+	current?.client.stat_panel.send_message("check_spells")
 
 /datum/mind/proc/RemoveAllSpells()
 	for(var/obj/effect/proc_holder/S in spell_list)

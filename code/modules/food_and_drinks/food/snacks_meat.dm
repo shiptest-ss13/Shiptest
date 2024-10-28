@@ -211,6 +211,8 @@
 	filling_color = "#800000"
 	tastes = list("meat" = 1)
 	foodtype = MEAT
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/sausage
 	name = "sausage"
@@ -223,11 +225,12 @@
 	slices_num = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/salami
 	foodtype = MEAT | BREAKFAST
+	/*food_flags = FOOD_FINGER_FOOD*/
 	var/roasted = FALSE
 
 /obj/item/reagent_containers/food/snacks/sausage/Initialize()
 	. = ..()
-	eatverb = pick("bite","chew","nibble","deep throat","gobble","chomp")
+	eatverb = pick("bite","chew","nibble","gobble","chomp")
 
 /obj/item/reagent_containers/food/snacks/salami
 	name = "salami"
@@ -266,6 +269,8 @@
 	filling_color = "#CD853F"
 	tastes = list("the jungle" = 1, "bananas" = 1)
 	foodtype = MEAT | SUGAR
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_TINY
 	var/faction
 	var/spawned_mob = /mob/living/carbon/monkey
 	custom_price = 300
@@ -359,6 +364,8 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	tastes = list("\"chicken\"" = 1)
 	foodtype = MEAT
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/reagent_containers/food/snacks/nugget/Initialize()
 	. = ..()
@@ -429,14 +436,6 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	tastes = list("tofu" = 3, "metal" = 1)
 	foodtype = VEGETABLES
-
-
-/obj/item/reagent_containers/food/snacks/kebab/tail
-	name = "lizard-tail kebab"
-	desc = "Severed lizard tail on a stick."
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
-	tastes = list("meat" = 8, "metal" = 4, "scales" = 1)
-	foodtype = MEAT // NOT GORE, tastes delicious!
 
 /obj/item/reagent_containers/food/snacks/kebab/rat
 	name = "rat-kebab"

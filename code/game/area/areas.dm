@@ -13,7 +13,7 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility = INVISIBILITY_LIGHTING
 
-	var/area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA
+	var/area_flags = VALID_TERRITORY | UNIQUE_AREA
 
 	var/fire = null
 	///Whether there is an atmos alarm in this area
@@ -110,7 +110,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /proc/process_teleport_locs()
 	for(var/V in GLOB.sortedAreas)
 		var/area/AR = V
-		if(istype(AR, /area/shuttle) || AR.area_flags & NOTELEPORT)
+		if(AR.area_flags & NOTELEPORT)
 			continue
 		if(GLOB.teleportlocs[AR.name])
 			continue
@@ -575,18 +575,21 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /**
  * Call back when an atom enters an area
  *
- * Sends signals COMSIG_AREA_ENTERED and COMSIG_ENTER_AREA (to the atom)
+ * Sends signals COMSIG_AREA_ENTERED and COMSIG_ENTER_AREA (to a list of atoms)
  *
  * If the area has ambience, then it plays some ambience music to the ambience channel
  */
-/area/Entered(atom/movable/M, area/old_area)
+/area/Entered(atom/movable/arrived, area/old_area)
 	set waitfor = FALSE
-	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, M, old_area)
-	SEND_SIGNAL(M, COMSIG_ENTER_AREA, src) //The atom that enters the area
-	if(!isliving(M))
+	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, arrived, old_area)
+	if(!LAZYACCESS(arrived.important_recursive_contents, RECURSIVE_CONTENTS_AREA_SENSITIVE))
+		return
+	for(var/atom/movable/recipient as anything in arrived.important_recursive_contents[RECURSIVE_CONTENTS_AREA_SENSITIVE])
+		SEND_SIGNAL(recipient, COMSIG_ENTER_AREA, src)
+	if(!isliving(arrived))
 		return
 
-	var/mob/living/L = M
+	var/mob/living/L = arrived
 	if(!L.ckey)
 		return
 
@@ -608,11 +611,14 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /**
  * Called when an atom exits an area
  *
- * Sends signals COMSIG_AREA_EXITED and COMSIG_EXIT_AREA (to the atom)
+ * Sends signals COMSIG_AREA_EXITED and COMSIG_EXIT_AREA (to a list of atoms)
  */
 /area/Exited(atom/movable/gone, direction)
 	SEND_SIGNAL(src, COMSIG_AREA_EXITED, gone, direction)
-	SEND_SIGNAL(gone, COMSIG_EXIT_AREA, src) //The atom that exits the area
+	if(!LAZYACCESS(gone.important_recursive_contents, RECURSIVE_CONTENTS_AREA_SENSITIVE))
+		return
+	for(var/atom/movable/recipient as anything in gone.important_recursive_contents[RECURSIVE_CONTENTS_AREA_SENSITIVE])
+		SEND_SIGNAL(recipient, COMSIG_EXIT_AREA, src)
 
 
 /**
@@ -627,7 +633,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	power_environ = FALSE
 	always_unpowered = FALSE
 	area_flags &= ~VALID_TERRITORY
-	area_flags &= ~BLOBS_ALLOWED
 	addSorted()
 /**
  * Set the area size of the area

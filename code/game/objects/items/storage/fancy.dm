@@ -133,6 +133,29 @@
 	STR.max_items = 12
 	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/egg))
 
+/obj/item/storage/fancy/egg_box/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state][is_open ? "_open" : null]"
+
+/obj/item/storage/fancy/egg_box/update_overlays()
+	. = ..()
+	cut_overlays()
+	if(!is_open)
+		return
+	var/egg_count = 0
+	for(var/obj/item/reagent_containers/food/snacks/egg as anything in contents)
+		egg_count++
+		if(!egg)
+			return
+		var/image/current_huevo = image(icon = icon, icon_state = "eggbox_eggoverlay")
+		if(egg_count <= 6) //less than 6 eggs
+			current_huevo.pixel_x = (3*(egg_count-1))
+		else //if more than 6, make an extra row
+			current_huevo.pixel_x = (3*(egg_count-7)) //-7 to 'reset' it
+			current_huevo.pixel_y = -3
+		add_overlay(current_huevo)
+
+
 /*
  * Candle Box
  */
@@ -163,7 +186,7 @@
 ////////////
 /obj/item/storage/fancy/cigarettes
 	name = "\improper Space Cigarettes packet"
-	desc = "The most popular brand of cigarettes, sponsors of the Space Olympics."
+	desc = "The most popular brand of cigarettes on the Frontier."
 	icon = 'icons/obj/cigarettes.dmi'
 	base_icon_state = "cig"
 	icon_state = "cig"
@@ -273,14 +296,14 @@
 
 /obj/item/storage/fancy/cigarettes/cigpack_carp
 	name = "\improper Carp Classic packet"
-	desc = "Since 2313."
+	desc = "Since 207 FS."
 	icon_state = "carp"
 	base_icon_state = "carp"
 	spawn_type = /obj/item/clothing/mask/cigarette/carp
 
 /obj/item/storage/fancy/cigarettes/cigpack_syndicate
 	name = "cigarette packet"
-	desc = "An obscure brand of cigarettes."
+	desc = "A semi-obscure brand of cigarettes, favored by interstellar miners."
 	icon_state = "syndie"
 	base_icon_state = "syndie"
 	spawn_type = /obj/item/clothing/mask/cigarette/syndicate
@@ -306,13 +329,6 @@
 	if(prob(7))
 		spawn_type = /obj/item/clothing/mask/cigarette/candy/nicotine //uh oh!
 
-/obj/item/storage/fancy/cigarettes/cigpack_shadyjims
-	name = "\improper Shady Jim's Super Slims packet"
-	desc = "Is your weight slowing you down? Having trouble running away from gravitational singularities? Can't stop stuffing your mouth? Smoke Shady Jim's Super Slims and watch all that fat burn away. Guaranteed results!"
-	icon_state = "shadyjim"
-	base_icon_state = "shadyjim"
-	spawn_type = /obj/item/clothing/mask/cigarette/shadyjims
-
 /obj/item/storage/fancy/cigarettes/cigpack_xeno
 	name = "\improper Xeno Filtered packet"
 	desc = "Loaded with 100% pure slime. And also nicotine."
@@ -329,7 +345,7 @@
 
 /obj/item/storage/fancy/cigarettes/cigpack_mindbreaker
 	name = "\improper Leary's Delight packet"
-	desc = "Banned in over 36 galaxies."
+	desc = "Banned in over 36 Sectors."
 	icon_state = "shadyjim"
 	base_icon_state = "shadyjim"
 	spawn_type = /obj/item/clothing/mask/cigarette/rollie/mindbreaker
@@ -442,7 +458,7 @@
 
 /obj/item/storage/fancy/cigarettes/cigars/havana
 	name = "\improper premium Havanian cigar case"
-	desc = "A case of classy Havanian cigars."
+	desc = "Even after centuries of Solarian export, Havana smooth is only found in proper terran cigars."
 	icon_state = "cohibacase"
 	base_icon_state = "cohibacase"
 	spawn_type = /obj/item/clothing/mask/cigarette/cigar/havana

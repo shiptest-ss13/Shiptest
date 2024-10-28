@@ -1,6 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"prefix": "SSV",
+	"faction": "/datum/faction/syndicate/ngr",
+	"prefix": "NGRV",
 	"namelists": [
 		"GORLEX",
 		"NATURAL_AGGRESSIVE",
@@ -18,25 +19,25 @@
 	"map_path": "_maps/shuttles/syndicate/syndicate_gorlex_hyena.dmm",
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/captain/syndicate/gorlex",
+			"outfit": "/datum/outfit/job/syndicate/captain/ngr",
 			"officer": true,
 			"slots": 1
 		},
 		"Foreman": {
-			"outfit": "/datum/outfit/job/ce/syndicate/gorlex",
+			"outfit": "/datum/outfit/job/syndicate/ce/ngr",
 			"officer": true,
 			"slots": 1
 		},
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/engineer/syndicate/gorlex",
+			"outfit": "/datum/outfit/job/syndicate/engineer/ngr",
 			"slots": 1
 		},
 		"Wrecker": {
-			"outfit": "/datum/outfit/job/miner/syndicate/gorlex",
+			"outfit": "/datum/outfit/job/syndicate/miner/ngr",
 			"slots": 2
 		},
-		"Junior Agent": {
-			"outfit": "/datum/outfit/job/assistant/syndicate/gorlex",
+		"Initiate": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/ngr",
 			"slots": 2
 		}
 	},

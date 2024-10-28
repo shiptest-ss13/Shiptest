@@ -39,3 +39,127 @@
   retlaw34:
   - rscadd: redoes about 9 hairs
   - rscdel: about 3 hairs
+2023-11-11:
+  MemedHams:
+  - bugfix: bloodstains no longer steal the shape of the first item to spill blood
+  retlaw34:
+  - rscadd: Adds gun safetys
+  - balance: Tacitcal reload time adjusted from 1.2 seconds to 1 second
+2023-11-14:
+  Bjarl:
+  - rscdel: the syndicate lavaland base has been removed.
+  - code_imp: syndicate outfits have been repathed. Please report anything weird.
+  retlaw34:
+  - rscadd: Adds a lot of new pAI faces! pAIs rejoice!
+2023-11-15:
+  Bjarl:
+  - rscadd: Syndicate groups have reported new models of turrets being attached to
+      their ships.
+  - rscadd: Static Anomalies are now even WORSE. Not balance wise. Roleplay wise.
+  FalloutFalcon:
+  - rscadd: 3 new Trickwines! Prism, Hearth, and Force
+  - tweak: tweaked the old Trickwines to be slightly more balanced
+  - rscadd: srm tree and Trickwine distiller
+  - tweak: copy big mortar code to small mortar so you can chose between grinding
+      and juicing
+  - refactor: splits smoke flags for more control over chemical reactions
+  - server: Blackbox now records more info about chems
+  GenericDM:
+  - tweak: you will now be warned before succumbing when talking in hardcrit
+  thgvr:
+  - rscadd: Gas overlays should now look normal on turfs with a color var set.
+  - rscadd: Saunas, craftable with wooden planks. Uses wood for fuel, and requires
+      water splashed on the sauna.
+  - rscadd: Towels. You can use them in-hand to change it from waist, chest, or head.
+  - bugfix: PGF items now have real names and descriptions.
+2023-11-16:
+  Bjarl:
+  - bugfix: The polymodial sensor array now properly changes icon_state.
+  PositiveEntropy:
+  - bugfix: Cybersun outfits have been adjusted to be less syndicate-generalist and
+      more Cybersun.
+  - imageadd: Cybersun has received a full visual overhaul, as well as new goodies!
+2023-11-17:
+  Bjarl:
+  - balance: passive plasmasoul gas making is gone
+  - bugfix: plasmasouls no longer make infinite free lag
+  Erika Fox:
+  - rscadd: Outpost 1 has been remapped into something fathomably less ass. It's a
+      bit smaller, probably, but I'm going to call that a good thing.
+  - rscadd: random number spawner. It's good for hull numbers that shouldn't be static.
+  - imageadd: a really bad sprite for a service directions sign.
+  - rscadd: Another elevator template (coincidentally demonstrating how that system
+      works in code)
+2023-11-18:
+  Doubleumc:
+  - tweak: Bubble now consistently faces east
+  - rscadd: added Bubble subshuttle dock
+  Hibou48888:
+  - bugfix: added a sprite for strange plant fruit
+  Zevotech:
+  - rscadd: departmental RND lootdrop spawners for imprinters, protolathes and techfabs
+  - bugfix: dangerous_research.dmm now no longer has a space tile under a door and
+      a medical lathe instead of an omnilathe
+  - bugfix: whitesands_surface_camp_saloon can now spawn again after its remap into
+      a functional ruin
+  - bugfix: harmfactory.dmm's traps now work and loot has been adjusted to fit the
+      ruin better
+  - bugfix: provinggrounds.dmm now has a working SMES and power
+  - bugfix: singularity_lab fire extinguishers and a few poddoors now have correct
+      dirs
+  - rscdel: mechtransport.dmm and associated code
+  - rscdel: gasthelizards areas
+  - rscdel: nucleardump.dmm and associated code
+  - rscdel: gondolaasteroid.dmm and associated code
+  - rscdel: jungle_spider.dmm and associated code
+  - rscdel: whitesands_golem_hijack.dmm and associated code
+  - rscdel: rockplanet_clock.dmm and associated code
+  - rscdel: whitesands_surface_youreinsane.dmm and associated code
+2023-11-19:
+  Bjarl:
+  - bugfix: syndicate hoses now have the right hat
+  FalloutFalcon:
+  - bugfix: fixed shitty trickwine code (who let this guy cook)
+  - balance: buff to prismwine to make it useful
+  retlaw34, tetrazeta:
+  - rscadd: Eoehoma Firearms, a new guns manufacturer!
+  - rscadd: ERT and "Asset Protection" Hardsuits have gotten a new look!
+  - rscadd: New laser fire sounds
+  - balance: Lasers now do slightly more damage
+  - balance: Pulse rifles don't destroy walls anymore and do slightly less damage,
+      and have lost their stun mode.
+  - balance: Emitters do 60 damage and create turf fires on hitting a non-supermatter
+      object.
+  - bugfix: Various laser weapons that had broken autofire (E-TAR and the Tesla Cannon)
+      now work
+  - spellcheck: Grammar on some descriptions was corrected.
+2023-11-20:
+  thgvr:
+  - imageadd: Restored space parallax to its former whimsical glory.
+2023-11-22:
+  GenericDM:
+  - rscdel: removes deepthroat
+2023-11-23:
+  GenericDM:
+  - rscdel: removes the weird examine text for looking at a fat person while starving
+  lizardqueenlexi:
+  - rscdel: Removed the "fat" status - overeating now has no negative effects.
+  - rscdel: Removed lipoplasty surgery.
+  - rscdel: Removed the fat sucker machine.
+  - tweak: Scanner gates no longer have a "nutrition" option available.
+  thgvr:
+  - bugfix: Fixes invisible radiation medkits
+2023-11-26:
+  meemofcourse:
+  - tweak: Fancy pens now write in Adobe Garamond.
+2023-11-29:
+  GenericDM:
+  - rscdel: removes tail club
+  - rscdel: removes all flavors of tail whip
+  - rscdel: removes lizardskin clothing
+  - rscdel: removes 'Genetic Purifier'
+  - tweak: makes bunny ears desc not incredibly sexist
+  - tweak: change up wording in magic mirror gender change
+  - rscdel: removes 'genuine' cat ears
+  thgvr:
+  - bugfix: Marine armor and its subtypes will no longer break digitigrade

@@ -1,7 +1,3 @@
-
-#define MOVES_HITSCAN -1		//Not actually hitscan but close as we get without actual hitscan.
-#define MUZZLE_EFFECT_PIXEL_INCREMENT 17	//How many pixels to move the muzzle flash up so your character doesn't look like they're shitting out lasers.
-
 /obj/projectile
 	name = "projectile"
 	icon = 'icons/obj/projectiles.dmi'
@@ -28,6 +24,8 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/def_zone = ""	//Aiming at
 	var/atom/movable/firer = null//Who shot it
+	// if the projectile was the result of a misfire. For logging.
+	var/misfire = FALSE
 	var/atom/fired_from = null // the atom that the projectile was fired from (gun, turret)
 	var/suppressed = FALSE	//Attack message
 	var/yo = null
@@ -133,7 +131,7 @@
 	var/homing_offset_y = 0
 
 	var/damage = 10
-	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE are the only things that should be in here
+	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE, STAMINA are the only things that should be in here
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
 	var/flag = "bullet" //Defines what armor to use when it hits things.  Must be set to bullet, laser, energy,or bomb
 	///How much armor this projectile pierces.
@@ -143,6 +141,7 @@
 	var/decayedRange			//stores original range
 	var/reflect_range_decrease = 5			//amount of original range that falls off when reflecting, so it doesn't go forever
 	var/reflectable = NONE // Can it be reflected or not?
+
 		//Effects
 	var/stun = 0
 	var/knockdown = 0
@@ -159,6 +158,10 @@
 	var/dismemberment = 0 //The higher the number, the greater the bonus to dismembering. 0 will not dismember at all.
 	var/impact_effect_type //what type of impact effect to show when hitting something
 	var/log_override = FALSE //is this type spammed enough to not log? (KAs)
+
+	// if the projectile has the matching flags when hitting a wall, it deals it's override damage instead
+	var/wall_damage_flags = PROJECTILE_BONUS_DAMAGE_NONE
+	var/wall_damage_override = 0
 
 	///If defined, on hit we create an item of this type then call hitby() on the hit target with this, mainly used for embedding items (bullets) in targets
 	var/shrapnel_type
@@ -209,7 +212,11 @@
 		SEND_SIGNAL(fired_from, COMSIG_PROJECTILE_ON_HIT, firer, target, Angle)
 	// i know that this is probably more with wands and gun mods in mind, but it's a bit silly that the projectile on_hit signal doesn't ping the projectile itself.
 	// maybe we care what the projectile thinks! See about combining these via args some time when it's not 5AM
-	SEND_SIGNAL(src, COMSIG_PROJECTILE_SELF_ON_HIT, firer, target, Angle)
+	var/obj/item/bodypart/hit_limb
+	if(isliving(target))
+		var/mob/living/L = target
+		hit_limb = L.check_limb_hit(def_zone)
+	SEND_SIGNAL(src, COMSIG_PROJECTILE_SELF_ON_HIT, firer, target, Angle, hit_limb)
 	var/turf/target_loca = get_turf(target)
 
 	var/hitx
@@ -259,7 +266,7 @@
 			new impact_effect_type(target_loca, hitx, hity)
 
 		var/organ_hit_text = ""
-		var/limb_hit = L.check_limb_hit(def_zone)//to get the correct message info.
+		var/limb_hit = hit_limb
 		if(limb_hit)
 			organ_hit_text = " in \the [parse_zone(limb_hit)]"
 		if(suppressed==SUPPRESSED_VERY)
@@ -280,7 +287,9 @@
 		for(var/datum/reagent/R in reagents.reagent_list)
 			reagent_note += "[R.name] ([num2text(R.volume)])"
 
-	if(ismob(firer))
+	if(misfire)
+		L.log_message("has been hit by a misfired [src] from \a [fired_from] last touched by [fired_from.fingerprintslast]", LOG_ATTACK, color = "orange")
+	else if(ismob(firer))
 		log_combat(firer, L, "shot", src, reagent_note)
 	else
 		L.log_message("has been shot by [firer] with [src]", LOG_ATTACK, color="orange")
@@ -302,7 +311,7 @@
 	if(firer && HAS_TRAIT(firer, TRAIT_NICE_SHOT))
 		best_angle += NICE_SHOT_RICOCHET_BONUS
 	for(var/mob/living/L in range(ricochet_auto_aim_range, src.loc))
-		if(L.stat == DEAD || !isInSight(src, L))
+		if(L.stat == DEAD || !isInSight(src, L) || L == firer)
 			continue
 		var/our_angle = abs(closer_angle_difference(Angle, Get_Angle(src.loc, L.loc)))
 		if(our_angle < best_angle)
@@ -490,7 +499,7 @@
 		if(direct_target)
 			return TRUE
 		// If target not able to use items, move and stand - or if they're just dead, pass over.
-		if(L.stat == DEAD || (!hit_stunned_targets && HAS_TRAIT(L, TRAIT_IMMOBILIZED) && HAS_TRAIT(L, TRAIT_FLOORED) && HAS_TRAIT(L, TRAIT_HANDS_BLOCKED)))
+		if(L.stat || (!hit_stunned_targets && HAS_TRAIT(L, TRAIT_IMMOBILIZED) && HAS_TRAIT(L, TRAIT_FLOORED) && HAS_TRAIT(L, TRAIT_HANDS_BLOCKED)))
 			return FALSE
 	return TRUE
 

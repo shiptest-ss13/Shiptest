@@ -29,7 +29,6 @@
 	speak_emote = list("honks")
 	faction = list("neutral")
 	attack_same = TRUE
-	gold_core_spawnable = HOSTILE_SPAWN
 	var/random_retaliate = TRUE
 	var/icon_vomit_start = "vomit_start"
 	var/icon_vomit = "vomit"
@@ -95,7 +94,6 @@
 	response_disarm_simple = "gently push aside"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	gold_core_spawnable = NO_SPAWN
 	random_retaliate = FALSE
 	var/vomiting = FALSE
 	var/vomitCoefficient = 1
@@ -241,10 +239,10 @@
 /mob/living/simple_animal/hostile/retaliate/goose/vomit/proc/deadchat_plays_goose()
 	stop_automated_movement = TRUE
 	AddComponent(/datum/component/deadchat_control, ANARCHY_MODE, list(
-		"up" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, NORTH),
-		"down" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, SOUTH),
-		"left" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, WEST),
-		"right" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, EAST),
+		"up" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, NORTH),
+		"down" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, SOUTH),
+		"left" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, WEST),
+		"right" = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), src, EAST),
 		"vomit" = CALLBACK(src, PROC_REF(vomit_prestart), 25)), 12 SECONDS, 4 SECONDS)
 
 /datum/action/cooldown/vomit

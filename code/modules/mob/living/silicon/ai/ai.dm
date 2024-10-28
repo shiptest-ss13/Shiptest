@@ -711,7 +711,7 @@
 
 		for (var/obj/machinery/camera/C in lit_cameras)
 			C.set_light(0)
-			lit_cameras = list()
+		lit_cameras = list()
 
 		return
 
@@ -737,9 +737,15 @@
 	for (var/obj/machinery/camera/C in remove)
 		lit_cameras -= C //Removed from list before turning off the light so that it doesn't check the AI looking away.
 		C.Togglelight(0)
+		UnregisterSignal(C, COMSIG_PARENT_QDELETING, PROC_REF(camera_deleted))
 	for (var/obj/machinery/camera/C in add)
 		C.Togglelight(1)
 		lit_cameras |= C
+		RegisterSignal(C, COMSIG_PARENT_QDELETING, PROC_REF(camera_deleted))
+
+/mob/living/silicon/ai/proc/camera_deleted(obj/machinery/camera/camera)
+	SIGNAL_HANDLER
+	lit_cameras -= camera
 
 /mob/living/silicon/ai/proc/control_integrated_radio()
 	set name = "Transceiver Settings"
@@ -1057,3 +1063,4 @@
 		ghostize(1)
 
 	QDEL_NULL(src)
+

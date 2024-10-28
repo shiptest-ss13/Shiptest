@@ -82,7 +82,6 @@
 		/obj/item/grenade,
 		/obj/item/aicard,
 		/obj/item/storage/backpack/holding,
-		/obj/item/slime_extract,
 		/obj/item/onetankbomb,
 		/obj/item/transfer_valve))
 
@@ -201,7 +200,7 @@
 			use_power(750)
 			if(dotype != FAIL)
 				var/list/nodes = techweb_item_boost_check(process)
-				var/picked = pickweight(nodes)		//This should work.
+				var/picked = pick_weight(nodes)		//This should work.
 				if(linked_console)
 					linked_console.stored_research.boost_with_path(SSresearch.techweb_node_by_id(picked), process.type)
 	updateUsrDialog()
@@ -293,7 +292,7 @@
 		else if(prob(EFFECT_PROB_MEDIUM-badThingCoeff))
 			var/savedName = "[exp_on]"
 			ejectItem(TRUE)
-			var/newPath = text2path(pickweight(valid_items))
+			var/newPath = text2path(pick_weight(valid_items))
 			loaded_item = new newPath(src)
 			visible_message("<span class='warning'>[src] malfunctions, transforming [savedName] into [loaded_item]!</span>")
 			investigate_log("Experimentor has transformed [savedName] into [loaded_item]", INVESTIGATE_EXPERIMENTOR)
@@ -322,7 +321,7 @@
 			ejectItem(TRUE)
 		else if(prob(EFFECT_PROB_VERYLOW-badThingCoeff))
 			visible_message("<span class='danger'>[src]'s chemical chamber has sprung a leak!</span>")
-			chosenchem = pick(/datum/reagent/mutationtoxin/classic,/datum/reagent/nanomachines,/datum/reagent/toxin/acid)
+			chosenchem = pick(/datum/reagent/nanomachines,/datum/reagent/toxin/acid)
 			var/datum/reagents/R = new/datum/reagents(50)
 			R.my_atom = src
 			R.add_reagent(chosenchem , 50)
@@ -355,16 +354,6 @@
 			C.name = "Cup of Suspicious Liquid"
 			C.desc = "It has a large hazard symbol printed on the side in fading ink."
 			investigate_log("Experimentor has made a cup of [chosenchem] coffee.", INVESTIGATE_EXPERIMENTOR)
-		else if(prob(EFFECT_PROB_VERYLOW-badThingCoeff))
-			var/turf/start = get_turf(src)
-			var/mob/M = locate(/mob/living) in view(src, 3)
-			var/turf/MT = get_turf(M)
-			if(MT)
-				visible_message("<span class='danger'>[src] dangerously overheats, launching a flaming fuel orb!</span>")
-				investigate_log("Experimentor has launched a <font color='red'>fireball</font> at [M]!", INVESTIGATE_EXPERIMENTOR)
-				var/obj/projectile/magic/aoe/fireball/FB = new /obj/projectile/magic/aoe/fireball(start)
-				FB.preparePixelProjectile(MT, start)
-				FB.fire()
 		else if(prob(EFFECT_PROB_LOW-badThingCoeff))
 			visible_message("<span class='danger'>[src] malfunctions, melting [exp_on] and releasing a burst of flame!</span>")
 			explosion(loc, -1, 0, 0, 0, 0, flame_range = 2)

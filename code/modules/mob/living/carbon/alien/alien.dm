@@ -21,7 +21,6 @@
 	bubble_icon = "alien"
 	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/xeno
 
-	var/obj/item/card/id/wear_id = null // Fix for station bounced radios -- Skie
 	var/has_fine_manipulation = FALSE
 
 	status_flags = CANUNCONSCIOUS|CANPUSH
@@ -85,10 +84,6 @@
 
 /mob/living/carbon/alien/IsAdvancedToolUser()
 	return has_fine_manipulation
-
-/mob/living/carbon/alien/get_status_tab_items()
-	. = ..()
-	. += "Intent: [a_intent]"
 
 /mob/living/carbon/alien/getTrail()
 	if(getBruteLoss() < 200)
@@ -184,3 +179,7 @@
 /mob/living/carbon/alien/on_standing_up()
 	. = ..()
 	update_icons()
+
+/mob/living/carbon/alien/examine(mob/user)
+	. = ..()
+	. += "It's a strange creature."

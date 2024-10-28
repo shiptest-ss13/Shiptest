@@ -1,4 +1,13 @@
-// 4.6x30mm (WT-550 Automatic Rifle & NT-SVG)
+// 5.7x39mm (Asp and Sidewinder)
+
+/obj/item/ammo_casing/c57x39mm
+	name = "5.7x39mm bullet casing"
+	desc = "A 5.7x39mm bullet casing."
+	icon_state = "rifle-steel"
+	caliber = "5.7x39mm"
+	projectile_type = /obj/projectile/bullet/c57x39mm
+
+// 4.6x30mm (WT-550 Automatic Rifle & SKM-24v)
 
 /obj/item/ammo_casing/c46x30mm
 	name = "4.6x30mm bullet casing"
@@ -6,6 +15,7 @@
 	icon_state = "rifle-brass"
 	caliber = "4.6x30mm"
 	projectile_type = /obj/projectile/bullet/c46x30mm
+	stack_size = 15
 
 /obj/item/ammo_casing/c46x30mm/ap
 	name = "4.6x30mm armor-piercing bullet casing"

@@ -15,16 +15,12 @@
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
 	var/loot = rand(1,29)
 	switch(loot)
-		if(1)
+		if(1,2)
 			new /obj/item/shared_storage/red(src)
-		if(2)
-			new /obj/item/clothing/suit/space/hardsuit/cult(src)
 		if(3)
 			new /obj/item/necromantic_stone/lava(src)
-		if(4)
-			new /obj/item/katana/cursed(src)
 		if(5)
-			new /obj/item/clothing/glasses/godeye(src)
+			new /obj/item/pickaxe/diamond(src)
 		if(6)
 			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 		if(7)
@@ -47,14 +43,11 @@
 			new /obj/item/borg/upgrade/modkit/lifesteal(src)
 			new /obj/item/bedsheet/cult(src)
 		if(14)
-			new /obj/item/nullrod/scythe/talking/necro(src)
+			new /obj/item/scythe(src)
 		if(15)
 			new /obj/item/book_of_babel(src)
 		if(16)
-			if(prob(75))
-				new /obj/item/guardiancreator/miner(src)
-			else
-				new /obj/item/guardiancreator/miner/choose (src)
+			new /obj/item/ship_in_a_bottle(src)
 		if(17)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(src)
@@ -66,8 +59,6 @@
 			new /obj/item/wisp_lantern(src)
 		if(20)
 			new /obj/item/immortality_talisman(src)
-		if(21)
-			new /obj/item/gun/magic/hook(src)
 		if(22)
 			new /obj/item/voodoo(src)
 		if(23)
@@ -82,8 +73,6 @@
 			new /obj/item/gun/energy/spur(src)
 		if(28)
 			new /obj/item/clothing/suit/armor/ascetic(src)
-		if(29)
-			new /obj/item/kitchen/knife/envy(src)
 
 /obj/structure/closet/crate/necropolis/tendril/greater
 	desc = "It's watching you wearily. It seems terribly bloated."
@@ -98,10 +87,8 @@
 				new /obj/item/clothing/suit/space/hardsuit/cult(src)
 			if(3)
 				new /obj/item/necromantic_stone/lava(src)
-			if(4)
-				new /obj/item/katana/cursed(src)
 			if(5)
-				new /obj/item/clothing/glasses/godeye(src)
+				new /obj/item/pickaxe/diamond(src)
 			if(6)
 				new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 			if(7)
@@ -124,14 +111,11 @@
 				new /obj/item/borg/upgrade/modkit/lifesteal(src)
 				new /obj/item/bedsheet/cult(src)
 			if(14)
-				new /obj/item/nullrod/scythe/talking/necro(src)
+				new /obj/item/scythe(src)
 			if(15)
 				new /obj/item/book_of_babel(src)
 			if(16)
-				if(prob(75))
-					new /obj/item/guardiancreator/miner(src)
-				else
-					new /obj/item/guardiancreator/miner/choose (src)
+				new /obj/item/ship_in_a_bottle(src)
 			if(17)
 				if(prob(50))
 					new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(src)
@@ -143,8 +127,6 @@
 				new /obj/item/wisp_lantern(src)
 			if(20)
 				new /obj/item/immortality_talisman(src)
-			if(21)
-				new /obj/item/gun/magic/hook(src)
 			if(22)
 				new /obj/item/voodoo(src)
 			if(23)
@@ -159,36 +141,6 @@
 				new /obj/item/gun/energy/spur(src)
 			if(28)
 				new /obj/item/clothing/suit/armor/ascetic(src)
-			if(29)
-				new /obj/item/kitchen/knife/envy(src)
-
-//KA modkit design discs
-/obj/item/disk/design_disk/modkit_disc
-	name = "KA Mod Disk"
-	desc = "A design disc containing the design for a unique kinetic accelerator modkit. It's compatible with a research console."
-	illustration = "accel"
-	color = "#6F6F6F"
-	var/modkit_design = /datum/design/unique_modkit
-
-/obj/item/disk/design_disk/modkit_disc/Initialize()
-	. = ..()
-	blueprints[1] = new modkit_design
-
-/obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe
-	name = "Offensive Mining Explosion Mod Disk"
-	modkit_design = /datum/design/unique_modkit/offensive_turf_aoe
-
-/obj/item/disk/design_disk/modkit_disc/rapid_repeater
-	name = "Rapid Repeater Mod Disk"
-	modkit_design = /datum/design/unique_modkit/rapid_repeater
-
-/obj/item/disk/design_disk/modkit_disc/resonator_blast
-	name = "Resonator Blast Mod Disk"
-	modkit_design = /datum/design/unique_modkit/resonator_blast
-
-/obj/item/disk/design_disk/modkit_disc/bounty
-	name = "Death Syphon Mod Disk"
-	modkit_design = /datum/design/unique_modkit/bounty
 
 /datum/design/unique_modkit
 	category = list("Mining Designs", "Cyborg Upgrade Modules") //can't be normally obtained
@@ -281,30 +233,31 @@
 	activated = TRUE
 
 //Memento Mori
-/obj/item/clothing/neck/necklace/memento_mori
+/obj/item/clothing/neck/memento_mori
 	name = "Memento Mori"
 	desc = "A mysterious pendant. An inscription on it says: \"Certain death tomorrow means certain life today.\""
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "memento_mori"
+	mob_overlay_state = "crystal_talisman"
 	actions_types = list(/datum/action/item_action/hands_free/memento_mori)
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/mob/living/carbon/human/active_owner
 
-/obj/item/clothing/neck/necklace/memento_mori/item_action_slot_check(slot)
+/obj/item/clothing/neck/memento_mori/item_action_slot_check(slot)
 	return slot == ITEM_SLOT_NECK
 
-/obj/item/clothing/neck/necklace/memento_mori/dropped(mob/user)
+/obj/item/clothing/neck/memento_mori/dropped(mob/user)
 	..()
 	if(active_owner)
 		mori()
 
 //Just in case
-/obj/item/clothing/neck/necklace/memento_mori/Destroy()
+/obj/item/clothing/neck/memento_mori/Destroy()
 	if(active_owner)
 		mori()
 	return ..()
 
-/obj/item/clothing/neck/necklace/memento_mori/proc/memento(mob/living/carbon/human/user)
+/obj/item/clothing/neck/memento_mori/proc/memento(mob/living/carbon/human/user)
 	to_chat(user, "<span class='warning'>You feel your life being drained by the pendant...</span>")
 	if(do_after(user, 40, target = user))
 		to_chat(user, "<span class='notice'>Your lifeforce is now linked to the pendant! You feel like removing it would kill you, and yet you instinctively know that until then, you won't die.</span>")
@@ -314,7 +267,7 @@
 		icon_state = "memento_mori_active"
 		active_owner = user
 
-/obj/item/clothing/neck/necklace/memento_mori/proc/mori()
+/obj/item/clothing/neck/memento_mori/proc/mori()
 	icon_state = "memento_mori"
 	if(!active_owner)
 		return
@@ -329,7 +282,7 @@
 	desc = "Bind your life to the pendant."
 
 /datum/action/item_action/hands_free/memento_mori/Trigger()
-	var/obj/item/clothing/neck/necklace/memento_mori/MM = target
+	var/obj/item/clothing/neck/memento_mori/MM = target
 	if(!MM.active_owner)
 		if(ishuman(owner))
 			MM.memento(owner)
@@ -480,91 +433,6 @@
 /obj/effect/warp_cube/ex_act(severity, target)
 	return
 
-//Meat Hook
-/obj/item/gun/magic/hook
-	name = "meat hook"
-	desc = "A light hooked blade, attached by the handle to a long chain. Can be used to make quick strikes in hand, or thrown at enemies, magically dragging them to the user. <b>Get over here!</b>"
-	ammo_type = /obj/item/ammo_casing/magic/hook
-	icon_state = "hook"
-	item_state = "hook"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	fire_sound = 'sound/weapons/batonextend.ogg'
-	max_charges = 1
-	item_flags = NEEDS_PERMIT
-	force = 15
-	sharpness = IS_SHARP
-	block_chance = 5//A pittance, but might be worth something in a scuffle
-	hitsound = 'sound/weapons/chainhit.ogg'
-
-/obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
-	..()
-	user.changeNext_move(CLICK_CD_MELEE * 0.5)//quick to swing. 15 force can be quite something with this attack frequency.
-
-/obj/item/gun/magic/hook/Initialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 15, 130, 0, hitsound)
-
-/obj/item/ammo_casing/magic/hook
-	name = "hook"
-	desc = "A hook."
-	projectile_type = /obj/projectile/hook
-	caliber = "hook"
-	icon_state = "hook"
-
-/obj/projectile/hook
-	name = "hook"
-	icon_state = "hook"
-	icon = 'icons/obj/lavaland/artefacts.dmi'
-	pass_flags = PASSTABLE
-	damage = 20
-	stamina = 20
-	armour_penetration = 60
-	damage_type = BRUTE
-	hitsound = 'sound/effects/splat.ogg'
-	var/chain
-	var/knockdown_time = (0.5 SECONDS)
-
-/obj/projectile/hook/fire(setAngle)
-	if(firer)
-		chain = firer.Beam(src, icon_state = "chain", emissive = FALSE)
-	..()
-	//TODO: root the firer until the chain returns
-
-/obj/projectile/hook/on_hit(atom/target)
-	. = ..()
-	if(ismovable(target))
-		var/atom/movable/A = target
-		if(A.anchored)
-			return
-		A.visible_message("<span class='danger'>[A] is snagged by [firer]'s hook!</span>")
-		new /datum/forced_movement(A, get_turf(firer), 5, TRUE)
-		if (isliving(target))
-			var/mob/living/fresh_meat = target
-			fresh_meat.Knockdown(knockdown_time)
-			return
-		//TODO: keep the chain beamed to A
-		//TODO: needs a callback to delete the chain
-
-/obj/projectile/hook/Destroy()
-	qdel(chain)
-	return ..()
-
-//just a nerfed version of the real thing for the bounty hunters.
-/obj/item/gun/magic/hook/bounty
-	name = "hook"
-	ammo_type = /obj/item/ammo_casing/magic/hook/bounty
-
-/obj/item/gun/magic/hook/bounty/shoot_with_empty_chamber(mob/living/user)
-	to_chat(user, "<span class='warning'>The [src] isn't ready to fire yet!</span>")
-
-/obj/item/ammo_casing/magic/hook/bounty
-	projectile_type = /obj/projectile/hook/bounty
-
-/obj/projectile/hook/bounty
-	damage = 0
-	stamina = 40
-
 //Immortality Talisman: Now with state-of-the-art panic button technology
 /obj/item/immortality_talisman
 	name = "\improper Immortality Talisman"
@@ -588,10 +456,6 @@
 			var/input = stripped_input(user,"What do you wish to bellow when dragged into the abyss? (Capitalization provides best impact)", ,"", 50)
 			if(input)
 				src.warcry = input
-
-/obj/item/immortality_talisman/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE)
 
 /datum/action/item_action/hands_free/immortality
 	name = "Immortality"
@@ -667,7 +531,6 @@
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "paradox_bag"
 	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
-	mob_overlay_state = "paradoxbag"
 	slot_flags = ITEM_SLOT_BELT
 	resistance_flags = INDESTRUCTIBLE
 
@@ -752,7 +615,7 @@
 			ADD_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT)
 		playsound(C.loc, 'sound/items/poster_ripped.ogg', 50, TRUE, -1)
 		C.adjustBruteLoss(20)
-		C.emote("scream")
+		C.force_scream()
 	..()
 
 //nerfed necrostone
@@ -829,10 +692,9 @@
 	var/hat = pick(/obj/item/clothing/head/helmet/roman, /obj/item/clothing/head/helmet/roman/legionnaire)
 	H.equip_to_slot_or_del(new hat(H), ITEM_SLOT_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/costume/roman(H), ITEM_SLOT_ICLOTHING)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), ITEM_SLOT_FEET)
 	H.put_in_hands(new /obj/item/shield/riot/roman(H), TRUE)
-	H.put_in_hands(new /obj/item/claymore(H), TRUE)
-	H.equip_to_slot_or_del(new /obj/item/spear(H), ITEM_SLOT_BACK)
+	H.put_in_hands(new /obj/item/melee/sword/claymore(H), TRUE)
+	H.equip_to_slot_or_del(new /obj/item/melee/spear(H), ITEM_SLOT_BACK)
 
 //ice cube
 /obj/item/freeze_cube
@@ -861,7 +723,7 @@
 /obj/item/freeze_cube/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	icon_state = initial(icon_state)
 	var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
-	var/mob/thrown_by = thrownby
+	var/mob/thrown_by = thrownby.resolve()
 	if(ismovable(hit_atom) && !caught && (!thrown_by || thrown_by && COOLDOWN_FINISHED(src, freeze_cooldown)))
 		freeze(hit_atom)
 	if(thrown_by && !caught)
@@ -882,14 +744,45 @@
 		walk(hit_mob, 0) //stops them mid pathing even if they're stunimmune
 		hit_mob.apply_status_effect(/datum/status_effect/ice_block_talisman, 5 SECONDS)
 
+/datum/status_effect/ice_block_talisman
+	id = "ice_block_talisman"
+	duration = 40
+	status_type = STATUS_EFFECT_REFRESH
+	alert_type = /atom/movable/screen/alert/status_effect/ice_block_talisman
+	/// Stored icon overlay for the hit mob, removed when effect is removed
+	var/icon/cube
+
+/atom/movable/screen/alert/status_effect/ice_block_talisman
+	name = "Frozen Solid"
+	desc = "You're frozen inside an ice cube, and cannot move!"
+	icon_state = "frozen"
+
+/datum/status_effect/ice_block_talisman/on_apply()
+	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
+	if(!owner.stat)
+		to_chat(owner, "<span class='userdanger'>You become frozen in a cube!</span>")
+	cube = icon('icons/effects/freeze.dmi', "ice_cube")
+	var/icon/size_check = icon(owner.icon, owner.icon_state)
+	cube.Scale(size_check.Width(), size_check.Height())
+	owner.add_overlay(cube)
+	return ..()
+
+/// Blocks movement from the status effect owner
+/datum/status_effect/ice_block_talisman/proc/owner_moved()
+	return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
+
+/datum/status_effect/ice_block_talisman/on_remove()
+	if(!owner.stat)
+		to_chat(owner, "<span class='notice'>The cube melts!</span>")
+	owner.cut_overlay(cube)
+	UnregisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE)
+
 //earthquake gauntlets
 /obj/item/clothing/gloves/gauntlets
 	name = "concussive gauntlets"
 	desc = "Buried deep beneath the earth, these ancient gauntlets absorbed the tectonic power of earthquakes. "
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "concussive_gauntlets"
-	mob_overlay_icon = 'icons/mob/clothing/hands.dmi'
-	mob_overlay_state = "concussive_gauntlets"
 	toolspeed = 0.1
 	strip_delay = 40
 	equip_delay_other = 20
@@ -926,21 +819,21 @@
 	return COMPONENT_NO_ATTACK_OBJ
 
 //A version of the Cave Story refrence that a deranged scientist got their hands on. Better? Not really. Different? Definitely.
+//TODO: replace with a proper polar star and spur, not to mention a  proper sprite
 /obj/item/gun/energy/spur
 	name = "Slowpoke"
 	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotrasen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
 	icon = 'icons/obj/guns/energy.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	icon_state = "spur"
 	item_state = "spur"
-	fire_delay = 0.5 //BRATATAT! This is a cowboy's six-shooter after all.
 	selfcharge = 1
 	charge_delay = 1
 	slot_flags = ITEM_SLOT_BELT
-	fire_delay = 1
+	fire_delay = 0.1 SECONDS
 	recoil = 1
-	cell_type = /obj/item/stock_parts/cell/gun
+	default_ammo_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
 	supports_variations = VOX_VARIATION
 	var/chargesound
@@ -995,6 +888,8 @@
 	range = 20
 	damage = 30
 	damage_type = BRUTE
+	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS
+	wall_damage_override = MINERAL_WALL_INTEGRITY
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "spur_high"
 	var/skip = FALSE //this is the hackiest thing ive ever done but i dont know any other solution other than deparent the spur projectile
@@ -1056,9 +951,6 @@
 	spawn(15)
 		target.overlays -= impact
 	playsound(loc, impact_sound, 30)
-	if(istype(target,/turf/closed/mineral))
-		var/turf/closed/mineral/M = target
-		M.gets_drilled()
 	..()
 
 /obj/item/ammo_casing/energy/spur/spur
@@ -1165,7 +1057,7 @@
 			C.update_inv_wear_suit()
 
 /obj/item/clothing/suit/armor/ascetic/worn_overlays(isinhands)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER - 0.01)
 
@@ -1267,106 +1159,13 @@
 	var/loot = rand(1,4)
 	switch(loot)
 		if(1)
-			new /obj/item/melee/ghost_sword(src)
+			new /obj/item/melee/sword/claymore(src)
 		if(2)
 			new /obj/item/lava_staff(src)
 		if(3)
 			new /obj/item/book/granter/spell/sacredflame(src)
-			new /obj/item/gun/magic/wand/fireball(src)
 		if(4)
 			new /obj/item/dragons_blood(src)
-
-/obj/structure/closet/crate/necropolis/dragon/crusher
-	name = "firey dragon chest"
-
-/obj/structure/closet/crate/necropolis/dragon/crusher/PopulateContents()
-	..()
-	new /obj/item/crusher_trophy/ash_spike(src)
-
-/obj/item/melee/ghost_sword
-	name = "\improper spectral blade"
-	desc = "A rusted and dulled blade. It doesn't look like it'd do much damage. It glows weakly."
-	icon_state = "spectral"
-	item_state = "spectral"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	flags_1 = CONDUCT_1
-	sharpness = IS_SHARP
-	w_class = WEIGHT_CLASS_BULKY
-	force = 1
-	throwforce = 1
-	hitsound = 'sound/effects/ghost2.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "rended")
-	var/summon_cooldown = 0
-	var/list/mob/dead/observer/spirits
-
-/obj/item/melee/ghost_sword/Initialize()
-	. = ..()
-	spirits = list()
-	START_PROCESSING(SSobj, src)
-	GLOB.poi_list |= src
-	AddComponent(/datum/component/butchering, 150, 90)
-
-/obj/item/melee/ghost_sword/Destroy()
-	for(var/mob/dead/observer/G in spirits)
-		G.invisibility = GLOB.observer_default_invisibility
-	spirits.Cut()
-	STOP_PROCESSING(SSobj, src)
-	GLOB.poi_list -= src
-	. = ..()
-
-/obj/item/melee/ghost_sword/attack_self(mob/user)
-	if(summon_cooldown > world.time)
-		to_chat(user, "<span class='warning'>You just recently called out for aid. You don't want to annoy the spirits!</span>")
-		return
-	to_chat(user, "<span class='notice'>You call out for aid, attempting to summon spirits to your side.</span>")
-
-	notify_ghosts("[user] is raising [user.p_their()] [src], calling for your help!",
-		enter_link="<a href=?src=[REF(src)];orbit=1>(Click to help)</a>",
-		source = user, action=NOTIFY_ORBIT, ignore_key = POLL_IGNORE_SPECTRAL_BLADE, header = "Spectral blade")
-
-	summon_cooldown = world.time + 300
-
-/obj/item/melee/ghost_sword/process()
-	ghost_check()
-
-/obj/item/melee/ghost_sword/proc/ghost_check()
-	var/ghost_counter = 0
-	var/turf/T = get_turf(src)
-	var/list/contents = T.GetAllContents()
-	var/mob/dead/observer/current_spirits = list()
-	for(var/thing in contents)
-		var/atom/A = thing
-		A.transfer_observers_to(src)
-
-	for(var/i in orbiters?.orbiters)
-		if(!isobserver(i))
-			continue
-		var/mob/dead/observer/G = i
-		ghost_counter++
-		G.invisibility = 0
-		current_spirits |= G
-
-	for(var/mob/dead/observer/G in spirits - current_spirits)
-		G.invisibility = GLOB.observer_default_invisibility
-
-	spirits = current_spirits
-
-	return ghost_counter
-
-/obj/item/melee/ghost_sword/attack(mob/living/target, mob/living/carbon/human/user)
-	force = 0
-	var/ghost_counter = ghost_check()
-
-	force = clamp((ghost_counter * 4), 0, 75)
-	user.visible_message("<span class='danger'>[user] strikes with the force of [ghost_counter] vengeful spirits!</span>")
-	..()
-
-/obj/item/melee/ghost_sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	var/ghost_counter = ghost_check()
-	final_block_chance += clamp((ghost_counter * 5), 0, 75)
-	owner.visible_message("<span class='danger'>[owner] is protected by a ring of [ghost_counter] ghosts!</span>")
-	return ..()
 
 //Blood
 
@@ -1385,7 +1184,7 @@
 
 	switch(random)
 		if(1)
-			to_chat(user, "<span class='danger'>Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a freak without the cool abilities.</span>")
+			to_chat(user, "<span class='danger'>Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a dragon without the cool abilities.</span>")
 			H.dna.features = list("mcolor" = "A02720", "tail_lizard" = "Dark Tiger", "tail_human" = "None", "face_markings" = "None", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body", "legs" = "Digitigrade Legs")
 			H.eye_color = "fee5a3"
 			H.set_species(/datum/species/lizard)
@@ -1495,21 +1294,12 @@
 /obj/structure/closet/crate/necropolis/bubblegum/PopulateContents()
 	new /obj/item/clothing/suit/space/hostile_environment(src)
 	new /obj/item/clothing/head/helmet/space/hostile_environment(src)
-	var/loot = rand(1,3)
+	var/loot = rand(1,2)
 	switch(loot)
 		if(1)
 			new /obj/item/mayhem(src)
 		if(2)
 			new /obj/item/blood_contract(src)
-		if(3)
-			new /obj/item/gun/magic/staff/spellblade(src)
-
-/obj/structure/closet/crate/necropolis/bubblegum/crusher
-	name = "bloody bubblegum chest"
-
-/obj/structure/closet/crate/necropolis/bubblegum/crusher/PopulateContents()
-	..()
-	new /obj/item/crusher_trophy/demon_claws(src)
 
 /obj/item/mayhem
 	name = "mayhem in a bottle"
@@ -1519,8 +1309,8 @@
 
 /obj/item/mayhem/attack_self(mob/user)
 	for(var/mob/living/carbon/human/H in range(7,user))
-		var/obj/effect/mine/pickup/bloodbath/B = new(H)
-		INVOKE_ASYNC(B, TYPE_PROC_REF(/obj/effect/mine/pickup/bloodbath, mineEffect), H)
+		var/obj/item/mine/pressure/pickup/bloodbath/B = new(H)
+		INVOKE_ASYNC(B, TYPE_PROC_REF(/obj/item/mine/pressure/pickup/bloodbath, mine_effect), H)
 	to_chat(user, "<span class='notice'>You shatter the bottle!</span>")
 	playsound(user.loc, 'sound/effects/glassbr1.ogg', 100, TRUE)
 	message_admins("<span class='adminnotice'>[ADMIN_LOOKUPFLW(user)] has activated a bottle of mayhem!</span>")
@@ -1585,13 +1375,6 @@
 	var/random_crystal = pick(choices)
 	new random_crystal(src)
 	new /obj/item/organ/vocal_cords/colossus(src)
-
-/obj/structure/closet/crate/necropolis/colossus/crusher
-	name = "angelic colossus chest"
-
-/obj/structure/closet/crate/necropolis/colossus/crusher/PopulateContents()
-	..()
-	new /obj/item/crusher_trophy/blaster_tubes(src)
 
 //Hierophant
 /obj/item/hierophant_club
@@ -1853,11 +1636,9 @@
 	name = "puzzling chest"
 
 /obj/structure/closet/crate/necropolis/puzzle/PopulateContents()
-	var/loot = rand(1,3)
+	var/loot = rand(1,2)
 	switch(loot)
 		if(1)
-			new /obj/item/soulstone/anybody(src)
-		if(2)
 			new /obj/item/wisp_lantern(src)
-		if(3)
+		if(2)
 			new /obj/item/prisoncube(src)

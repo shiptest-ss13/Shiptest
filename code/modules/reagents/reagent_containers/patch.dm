@@ -1,7 +1,7 @@
 /obj/item/reagent_containers/pill/patch
 	name = "chemical patch"
 	desc = "A chemical patch for touch based applications."
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/medicine.dmi'
 	icon_state = "bandaid"
 	item_state = "bandaid"
 	possible_transfer_amounts = list()

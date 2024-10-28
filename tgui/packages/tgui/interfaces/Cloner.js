@@ -26,7 +26,7 @@ export const Cloner = (props, context) => {
             beakerContents={data.beakerContents}
           />
         </Section>
-        <Section title="Progess" minheight="50px">
+        <Section title="Progress" minheight="50px">
           <ProgressBar
             value={data.progress}
             content={data.progress + '%'}

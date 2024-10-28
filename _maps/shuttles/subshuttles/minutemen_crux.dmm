@@ -1,0 +1,497 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "tactical chair"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"b" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "crux_holofan"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "crux_blastdoors";
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/bridge)
+"d" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/holopad/emergency/command,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/landmark/ert_shuttle_brief_spawn,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"f" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/light/directional/south,
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"g" = (
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "crux dock";
+	preferred_direction = 8
+	},
+/obj/machinery/door/poddoor{
+	id = "crux_blastdoors";
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/bridge)
+"h" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/light/directional/north,
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"i" = (
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"k" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "crux_windows"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"m" = (
+/turf/template_noop,
+/area/template_noop)
+"o" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "crux_holofan";
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "crux_blastdoors";
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/bridge)
+"q" = (
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/machinery/power/smes/engineering,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/sign/poster/official/obey{
+	pixel_x = -32
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/bridge)
+"r" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "crux_blastdoors";
+	name = "Cargo Bay Doors";
+	pixel_y = -22;
+	pixel_x = -4;
+	dir = 1
+	},
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"u" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/machinery/airalarm/directional/north,
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"v" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"w" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
+"x" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/premium{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"y" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/caution{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"z" = (
+/turf/closed/wall/r_wall/syndicate,
+/area/ship/bridge)
+"A" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/turf_decal/steeldecal/steel_decals6,
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"B" = (
+/obj/machinery/door/window/brigdoor/southright{
+	req_one_access = list(1)
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"E" = (
+/obj/effect/turf_decal/corner/opaque/black/diagonal,
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/industrial/warning{
+	color = "#808080"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"G" = (
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/hole{
+	dir = 4
+	},
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/obj/effect/decal/cleanable/greenglow,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -21
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/bridge)
+"I" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
+/obj/structure/sign/clip{
+	pixel_y = 28
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"J" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/machinery/computer/crew{
+	dir = 8
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"L" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/obj/effect/turf_decal/corner/opaque/black/diagonal,
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"M" = (
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/button/door{
+	id = "crux_windows";
+	name = "Window Shutters";
+	pixel_y = -22;
+	pixel_x = -22;
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/bridge)
+"N" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	id = "crux_windows";
+	name = "Window Blast Doors";
+	pixel_y = 10;
+	pixel_x = -22;
+	dir = 4
+	},
+/obj/machinery/recharger{
+	pixel_x = 6
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "crux_holofan";
+	pixel_x = -21;
+	pixel_y = -3;
+	dir = 4
+	},
+/obj/item/paper_bin{
+	pixel_x = -6
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"P" = (
+/obj/effect/turf_decal/steeldecal/steel_decals9{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Q" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/stairs{
+	icon = 'icons/obj/stairs.dmi';
+	dir = 8
+	},
+/area/ship/bridge)
+"S" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/eastleft,
+/obj/machinery/door/poddoor{
+	id = "crux_windows";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"T" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"U" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
+/obj/structure/sign/clip{
+	pixel_y = -32
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"X" = (
+/obj/structure/window/reinforced,
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/structure/closet/crate,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"Y" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = -12
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 7
+	},
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+
+(1,1,1) = {"
+m
+m
+w
+x
+w
+m
+m
+"}
+(2,1,1) = {"
+m
+w
+w
+S
+w
+w
+m
+"}
+(3,1,1) = {"
+w
+w
+q
+M
+G
+w
+w
+"}
+(4,1,1) = {"
+k
+N
+a
+d
+B
+E
+w
+"}
+(5,1,1) = {"
+k
+J
+T
+Q
+X
+L
+w
+"}
+(6,1,1) = {"
+w
+w
+h
+v
+f
+w
+w
+"}
+(7,1,1) = {"
+m
+w
+A
+P
+r
+w
+m
+"}
+(8,1,1) = {"
+m
+w
+u
+i
+Y
+w
+m
+"}
+(9,1,1) = {"
+m
+w
+I
+y
+U
+w
+m
+"}
+(10,1,1) = {"
+m
+z
+b
+g
+o
+z
+m
+"}

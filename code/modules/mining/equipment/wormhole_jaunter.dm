@@ -1,7 +1,7 @@
 /**********************Jaunter**********************/
 /obj/item/wormhole_jaunter
 	name = "wormhole jaunter"
-	desc = "A single use device harnessing outdated wormhole technology, Nanotrasen has since turned its eyes to bluespace for more accurate teleportation. The wormholes it creates are unpleasant to travel through, to say the least.\nThanks to modifications provided by the Free Golems, this jaunter can be worn on the belt to provide protection from chasms."
+	desc = "A single use device harnessing outdated wormhole technology, Nanotrasen has since turned its eyes to bluespace for more accurate teleportation. The wormholes it creates are unpleasant to travel through, to say the least.\nThis jaunter has been modified to fit on your belt, providing you protection from chasms."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "Jaunter"
 	item_state = "electronic"
@@ -41,10 +41,7 @@
 
 	var/turf/targetturf = find_safe_turf()
 	if(!targetturf)
-		if(GLOB.blobstart.len > 0)
-			targetturf = get_turf(pick(GLOB.blobstart))
-		else
-			CRASH("Unable to find a blobstart landmark")
+		CRASH("Unable to find a blobstart landmark")
 	var/obj/effect/portal/jaunt_tunnel/J = new (get_turf(src), 100, null, FALSE, targetturf)
 	log_game("[user] Has jaunted to [loc_name(targetturf)].")
 	message_admins("[user] Has jaunted to [ADMIN_VERBOSEJMP(targetturf)].")

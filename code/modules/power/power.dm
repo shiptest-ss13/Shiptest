@@ -19,6 +19,7 @@
 
 /obj/machinery/power/Destroy()
 	disconnect_from_network()
+	set_no_power()
 	return ..()
 
 ///////////////////////////////
@@ -96,14 +97,47 @@
 		chan = power_channel
 	A.use_power(amount, chan)
 
-/obj/machinery/proc/addStaticPower(value, powerchannel)
-	var/area/A = get_area(src)
+/obj/machinery/proc/addStaticPower(value, powerchannel, area/A)
 	if(!A)
-		return
+		if(get_area(src))
+			A = get_area(src)
+		else
+			return
 	A.addStaticPower(value, powerchannel)
 
-/obj/machinery/proc/removeStaticPower(value, powerchannel)
-	addStaticPower(-value, powerchannel)
+/obj/machinery/proc/removeStaticPower(value, powerchannel, area/A)
+	addStaticPower(-value, powerchannel, A)
+
+/obj/machinery/proc/set_idle_power(area/A)
+	set_no_power(A)
+	if(use_power == NO_POWER_USE)
+		return
+	use_static_power = IDLE_POWER_USE
+	addStaticPower(idle_power_usage, power_channel + 3, A)
+
+/obj/machinery/proc/set_active_power(area/A)
+	set_no_power(A)
+	if(use_power == NO_POWER_USE)
+		return
+	use_static_power = ACTIVE_POWER_USE
+	addStaticPower(active_power_usage, power_channel + 3, A)
+
+/obj/machinery/proc/set_no_power(area/A)
+	switch(use_static_power)
+		if(IDLE_POWER_USE)
+			removeStaticPower(idle_power_usage, power_channel + 3, A)
+		if(ACTIVE_POWER_USE)
+			removeStaticPower(active_power_usage, power_channel + 3, A)
+	use_static_power = NO_POWER_USE
+
+/obj/machinery/proc/set_static_power(area/A)//used to set the actual draw to the value of use_static_power
+	switch(use_power)
+		if(NO_POWER_USE)
+			set_no_power(A)
+		if(IDLE_POWER_USE)
+			set_idle_power(A)
+		if(ACTIVE_POWER_USE)
+			set_active_power(A)
 
 /**
  * Called whenever the power settings of the containing area change
@@ -112,13 +146,15 @@
  *
  * Returns TRUE if the NOPOWER flag was toggled
  */
-/obj/machinery/proc/power_change()
+/obj/machinery/proc/power_change(area/A)
 	SIGNAL_HANDLER
 	SHOULD_CALL_PARENT(1)
+	set_no_power(A)
 
 	if(machine_stat & BROKEN)
 		return
 	if(powered(power_channel))
+		set_static_power(A)
 		if(machine_stat & NOPOWER)
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_RESTORED)
 			. = TRUE
@@ -341,8 +377,9 @@
 //source is an object caused electrocuting (airlock, grille, etc)
 //siemens_coeff - layman's terms, conductivity
 //dist_check - set to only shock mobs within 1 of source (vendors, airlocks, etc.)
+//drain_energy - whether the shock will drain power from the mech. Enabled by default.
 //No animations will be performed by this proc.
-/proc/electrocute_mob(mob/living/carbon/victim, power_source, obj/source, siemens_coeff = 1, dist_check = FALSE)
+/proc/electrocute_mob(mob/living/carbon/victim, power_source, obj/source, siemens_coeff = 1, dist_check = FALSE, drain_energy = TRUE)
 	if(!istype(victim) || ismecha(victim.loc))
 		return FALSE //feckin mechs are dumb
 

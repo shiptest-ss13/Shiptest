@@ -105,12 +105,21 @@
 	icon_state = "minigun_spin"
 	item_state = "minigun"
 	slowdown = 1
+
+	fire_delay = 0.1 SECONDS
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	custom_materials = null
 	weapon_weight = WEAPON_MEDIUM
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/minigun)
-	cell_type = /obj/item/stock_parts/cell/crap
+	default_ammo_type = /obj/item/stock_parts/cell/crap
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/crap,
+	)
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	can_charge = FALSE
 	var/obj/item/minigunpack/ammo_pack
@@ -121,7 +130,6 @@
 
 	ammo_pack = loc
 	AddElement(/datum/element/update_icon_blocker)
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 	return ..()
 
 /obj/item/gun/energy/minigun/Destroy()

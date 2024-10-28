@@ -170,6 +170,10 @@
 	name = "Color Test"
 	icon_state = "tv"
 
+/datum/sprite_accessory/ipc_screens/badapple
+	name = "Old Animation"
+	icon_state = "bad_apple"
+
 // Start antennas
 
 /datum/sprite_accessory/ipc_antennas
@@ -232,12 +236,72 @@
 	name = "Right Angle"
 	icon_state = "rangle"
 
+/datum/sprite_accessory/ipc_antennas/sprinter
+	name = "Sprinter Tail"
+	icon_state = "sprinter"
+
+/datum/sprite_accessory/ipc_antennas/simple
+	name = "Synth Simple"
+	icon_state = "simple_synth"
+
+/datum/sprite_accessory/ipc_antennas/short
+	name = "Synth Short"
+	icon_state = "short_synth"
+
+/datum/sprite_accessory/ipc_antennas/curled
+	name = "Synth Curled"
+	icon_state = "curled_synth"
+
+/datum/sprite_accessory/ipc_antennas/ram //remade
+	name = "Synth Ram"
+	icon_state = "ram_synth"
+
+// Start tails
+
+/datum/sprite_accessory/ipc_tail
+	icon = 'icons/mob/ipc_accessories.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/ipc_tail/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/ipc_tail/lizard
+	name = "Synthetic Sarathi"
+	icon_state = "synth"
+
+/datum/sprite_accessory/ipc_tail/lizard_big
+	name = "Synthetic Sarathi Large"
+	icon_state = "large"
+
+/datum/sprite_accessory/ipc_tail/plug
+	name = "Power Plug"
+	icon_state = "plug"
+	secondary_color = TRUE
+
+/datum/sprite_accessory/ipc_tail/cat
+	name = "Pawsitrons Cat"
+	icon_state = "cat"
+
+/datum/sprite_accessory/ipc_tail/fox
+	name = "Pawsitrons Fox"
+	icon_state = "fox"
+
+/datum/sprite_accessory/ipc_tail/fox_alt
+	name = "Pawsitrons Fox 2"
+	icon_state = "fox2"
+
 // Start chassis - the worst thing ever please rework this
 
 /datum/sprite_accessory/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
 	icon = null
 	icon_state = "who cares fuck you" // In order to pull the chassis correctly, we need AN icon_state(see line 36-39). It doesn't have to be useful, because it isn't used.
 	color_src = 0
+	var/use_eyes = FALSE //do we use normal robotic eyes? used when we dont want a screen but still want visible eyes
+	var/has_screen = TRUE //do we have a screen to toggle
+	var/has_overlay = FALSE //does this chasis have a overlay icon?
+	var/is_digi = FALSE //does this chasis use digitigrade
+	var/has_snout = FALSE
 
 /datum/sprite_accessory/ipc_chassis/mcgreyscale
 	name = "Morpheus Cyberkinetics (Custom)"
@@ -283,3 +347,27 @@
 /datum/sprite_accessory/ipc_chassis/zenghupharmaceuticals
 	name = "Zeng-Hu Pharmaceuticals"
 	limbs_id = "zhpipc"
+
+/datum/sprite_accessory/ipc_chassis/pgfmechanicsplantigrade
+	name = "PGF MECHANICS TYPE-P"
+	limbs_id = "pgfipc-p"
+	has_screen = FALSE
+	color_src = MUTCOLORS
+	has_overlay = TRUE
+	use_eyes = TRUE
+	has_snout = TRUE
+
+/datum/sprite_accessory/ipc_chassis/pgfmechanicsdigigrade
+	name = "PGF MECHANICS TYPE-D"
+	limbs_id = "pgfipc-p" //the digigrade var makes it so we use digi leg variant instead
+	has_screen = FALSE
+	color_src = MUTCOLORS
+	has_overlay = TRUE
+	use_eyes = TRUE
+	is_digi = TRUE
+	has_snout = TRUE
+
+/datum/sprite_accessory/ipc_chassis/inteqsprinter
+	name = "Inteq Mothership 'Sprinter'"
+	limbs_id = "inteqsprinter"
+	has_screen = FALSE

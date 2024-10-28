@@ -8,8 +8,9 @@
 	var/turf/target_loc //For dealing with locking on targets due to BYOND engine limitations (the mouse input only happening when mouse moves).
 	var/autofire_stat = AUTOFIRE_STAT_IDLE
 	var/mouse_parameters
-	var/autofire_shot_delay = 0.3 SECONDS //Time between individual shots.
+	var/autofire_shot_delay = 0.1 SECONDS //Time between individual shots.
 	var/mouse_status = AUTOFIRE_MOUSEUP //This seems hacky but there can be two MouseDown() without a MouseUp() in between if the user holds click and uses alt+tab, printscreen or similar.
+	var/enabled = TRUE
 
 	COOLDOWN_DECLARE(next_shot_cd)
 
@@ -19,6 +20,9 @@
 		return COMPONENT_INCOMPATIBLE
 	var/obj/item/gun = parent
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
+	RegisterSignal(parent, COMSIG_GUN_DISABLE_AUTOFIRE, PROC_REF(disable_autofire))
+	RegisterSignal(parent, COMSIG_GUN_ENABLE_AUTOFIRE, PROC_REF(enable_autofire))
+	RegisterSignal(parent, COMSIG_GUN_SET_AUTOFIRE_SPEED, PROC_REF(set_autofire_speed))
 	if(_autofire_shot_delay)
 		autofire_shot_delay = _autofire_shot_delay
 	if(autofire_stat == AUTOFIRE_STAT_IDLE && ismob(gun.loc))
@@ -101,6 +105,8 @@
 	SIGNAL_HANDLER
 	var/list/modifiers = params2list(params) //If they're shift+clicking, for example, let's not have them accidentally shoot.
 
+	if(!enabled)
+		return
 	if(LAZYACCESS(modifiers, SHIFT_CLICK))
 		return
 	if(LAZYACCESS(modifiers, CTRL_CLICK))
@@ -156,7 +162,7 @@
 
 	if(isgun(parent))
 		var/obj/item/gun/shoota = parent
-		if(!shoota.on_autofire_start(shooter)) //This is needed because the minigun has a do_after before firing and signals are async.
+		if(!shoota.on_autofire_start(shooter=shooter)) //This is needed because the minigun has a do_after before firing and signals are async.
 			stop_autofiring()
 			return
 	if(autofire_stat != AUTOFIRE_STAT_FIRING)
@@ -237,12 +243,12 @@
 
 // Gun procs.
 
-/obj/item/gun/proc/on_autofire_start(mob/living/shooter)
-	if(semicd || shooter.stat || !can_trigger_gun(shooter))
+/obj/item/gun/proc/on_autofire_start(datum/source, atom/target, mob/living/shooter, params)
+	if(current_cooldown || shooter.stat)
 		return FALSE
-	if(!can_shoot())
-		shoot_with_empty_chamber(shooter)
-		return FALSE
+	if(!can_shoot()) //we call pre_fire so bolts/slides work correctly
+		INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
+		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(shooter, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return FALSE
@@ -257,26 +263,29 @@
 
 /obj/item/gun/proc/do_autofire(datum/source, atom/target, mob/living/shooter, params)
 	SIGNAL_HANDLER
-	if(semicd || shooter.incapacitated())
+	if(current_cooldown || shooter.incapacitated())
 		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(shooter, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return NONE
-	if(!can_shoot())
-		shoot_with_empty_chamber(shooter)
+	if(!can_shoot()) //we stop if we cant shoot but also calling pre_fire so the bolt works correctly if it's a weird open bolt weapon.
+		INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
 		return NONE
 	INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
 	return COMPONENT_AUTOFIRE_SHOT_SUCCESS //All is well, we can continue shooting.
 
 
 /obj/item/gun/proc/do_autofire_shot(datum/source, atom/target, mob/living/shooter, params)
-	var/obj/item/gun/akimbo_gun = shooter.get_inactive_held_item()
-	var/bonus_spread = 0
-	if(istype(akimbo_gun) && weapon_weight < WEAPON_MEDIUM)
-		if(akimbo_gun.weapon_weight < WEAPON_MEDIUM && akimbo_gun.can_trigger_gun(shooter))
-			bonus_spread = dual_wield_spread
-			addtimer(CALLBACK(akimbo_gun, TYPE_PROC_REF(/obj/item/gun, process_fire), target, shooter, TRUE, params, null, bonus_spread), 1)
-	process_fire(target, shooter, TRUE, params, null, bonus_spread)
+	pre_fire(target, shooter, TRUE, params, null) //dual wielding is handled here
+
+/datum/component/automatic_fire/proc/disable_autofire(datum/source)
+	enabled = FALSE
+
+/datum/component/automatic_fire/proc/enable_autofire(datum/source)
+	enabled = TRUE
+
+/datum/component/automatic_fire/proc/set_autofire_speed(datum/source, newspeed)
+	autofire_shot_delay = newspeed
 
 #undef AUTOFIRE_MOUSEUP
 #undef AUTOFIRE_MOUSEDOWN

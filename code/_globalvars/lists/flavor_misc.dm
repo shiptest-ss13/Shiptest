@@ -39,12 +39,14 @@ GLOBAL_LIST_EMPTY(moth_markings_list)
 GLOBAL_LIST_EMPTY(squid_face_list)
 GLOBAL_LIST_EMPTY(ipc_screens_list)
 GLOBAL_LIST_EMPTY(ipc_antennas_list)
+GLOBAL_LIST_EMPTY(ipc_tail_list)
 GLOBAL_LIST_EMPTY(ipc_chassis_list)
 GLOBAL_LIST_INIT(ipc_brain_list, list("Posibrain", "Man-Machine Interface"))
 GLOBAL_LIST_EMPTY(spider_legs_list)
 GLOBAL_LIST_EMPTY(spider_spinneret_list)
 GLOBAL_LIST_EMPTY(kepori_feathers_list)
 GLOBAL_LIST_EMPTY(kepori_body_feathers_list)
+GLOBAL_LIST_EMPTY(kepori_head_feathers_list)
 GLOBAL_LIST_EMPTY(kepori_tail_feathers_list)
 GLOBAL_LIST_EMPTY(vox_head_quills_list)
 GLOBAL_LIST_EMPTY(vox_neck_quills_list)
@@ -188,6 +190,22 @@ GLOBAL_LIST_INIT(exowearlist, list(PREF_NOEXOWEAR, PREF_EXOWEAR, PREF_ALTEXOWEAR
 #define UPLINK_PEN "Pen" //like a real spy!
 GLOBAL_LIST_INIT(uplink_spawn_loc_list, list(UPLINK_PDA, UPLINK_RADIO, UPLINK_PEN))
 
+//favorite cigarette brand
+#define PREF_CIG_SPACE "Space Cigarettes"
+#define PREF_CIG_DROMEDARY "DromedaryCo Cigarettes"
+#define PREF_CIG_UPLIFT "Uplift Smooth Cigarettes"
+#define PREF_CIG_ROBUST "Robust Cigarettes"
+#define PREF_CIG_ROBUSTGOLD "Robust Gold Cigarettes"
+#define PREF_CIG_CARP "Carp Classic Cigarettes"
+#define PREF_CIG_MIDORI "Midori Taboko Rollies"
+#define PREF_CIGAR "Premium Cigars"
+#define PREF_CIGAR_SOLAR "Solarian Cigars"
+#define PREF_CIGAR_COHIBA "Cohiba Cigars"
+#define PREF_VAPE "Vape Pen"
+#define PREF_PIPE "Fancy Pipe"
+
+GLOBAL_LIST_INIT(valid_smoke_types, sortList(list(PREF_CIG_SPACE, PREF_CIG_DROMEDARY, PREF_CIG_UPLIFT, PREF_CIG_ROBUST, PREF_CIG_ROBUSTGOLD, PREF_CIG_CARP, PREF_CIG_MIDORI, PREF_CIGAR, PREF_CIGAR_SOLAR, PREF_CIGAR_COHIBA, PREF_VAPE, PREF_PIPE)))
+
 	//Female Uniforms
 GLOBAL_LIST_EMPTY(female_clothing_icons)
 	//Alternate species icons
@@ -229,9 +247,8 @@ GLOBAL_LIST_INIT(scarySounds, list('sound/weapons/thudswoosh.ogg','sound/weapons
 25 Toxins
 26 Dormitories
 27 Virology
-28 Xenobiology
-29 Law Office
-30 Detective's Office
+28 Law Office
+29 Detective's Office
 */
 
 //The whole system for the sorttype var is determined based on the order of this list,
@@ -247,7 +264,7 @@ GLOBAL_LIST_INIT(TAGGERLOCATIONS, list("Disposals",
 	"Robotics", "Head of Personnel's Office", "Library", "Chapel", "Theatre",
 	"Bar", "Kitchen", "Hydroponics", "Janitor Closet","Genetics",
 	"Experimentor Lab", "Toxins", "Dormitories", "Virology",
-	"Xenobiology", "Law Office","Detective's Office"))
+	, "Law Office","Detective's Office"))
 
 GLOBAL_LIST_INIT(station_prefixes, world.file2list("strings/station_prefixes.txt"))
 

@@ -1,0 +1,282 @@
+2024-02-02:
+  Martinpachu:
+  - bugfix: updated ship shotgun ammo boxes
+2024-02-03:
+  Apogee-dev:
+  - rscdel: Removed abductor tools from the wrecked analyzer loot pool
+  - rscdel: Removed lost abductor from iceplanet portal loot pool
+  Bokkiewokkie:
+  - imageadd: Added more Kepori socks
+  - imageadd: Added more Kepori shirts
+  - imageadd: Added digitigrade pride thigh-highs
+  - bugfix: Fixed Kepori arms having both left and right sprites per single arm
+  GenericDM:
+  - rscdel: mutation toxin
+  PigeonLord:
+  - rscadd: Adds more Light Switches around the shepherd
+  - rscadd: Added some farming plots in the apiary so bees can actually make honey
+  - bugfix: Fixed bees being able to open the Shepherd Apiary
+  SomeguyManperson:
+  - rscadd: If you are smoking a cigarette, you can light someone else's cigarette
+      via help intent while targeting the mouth
+  bobbahbrown, itsmeow, meemofcourse:
+  - rscadd: CentCom now has some small offices, which recieve physical faxes.
+  - rscadd: Fax machines now announce that they have received a fax over radio.
+  - rscadd: Fax machines announce important faxes VERY LOUDLY.
+  - balance: Faxes no longer require a subspace ansible crystal.
+  - code_imp: Faxes now use typepath instead of varedit.
+  - tweak: Changed how special/faction faxes work. Login is no longer required to
+      use special faxes.
+  - admin: Add Requests Manager to view all fax messages/prayers/centcom and syndicate
+      requests/and nuke code requests within a round.
+  - admin: Removed old fax manager in favor of Requests Manager, added "Send Fax Message"
+      verb to send admin faxes via a menu.
+  - bugfix: Fixed runtime when ghosts tried to view paper.
+  meemofcourse:
+  - rscadd: ACLF Syndicate Inspector ERT
+  - bugfix: Independent background icons
+  - bugfix: ERT Outfits not having access and proper names
+2024-02-04:
+  Martinpachu:
+  - rscadd: Added two flashes, a recharger, a stamp, two commanders, ammo for them
+      and a wideband to the Ranger bridge.
+  - rscdel: The Ranger's ORM.
+2024-02-05:
+  Cadunkus:
+  - spellcheck: Fixed a single typo in the description of the Corvus-class Response
+      Vessel.
+  Luftkommando:
+  - rscadd: Added new ShipTest faction specific stamps
+  Skies-Of-Blue:
+  - tweak: non-motorized wheelchairs can now be folded
+  - imageadd: a few sprites to support the above
+  meemofcourse:
+  - rscadd: Valor-Class Field Care Crusier
+  - rscadd: Haste-Class Ambulance
+2024-02-06:
+  Draggeru, Cre:
+  - rscadd: adds all of the clothing intended for SUNS, including uniforms for the
+      captain, xo, cmo, scientists, miners, engineers, and doctors
+  - rscadd: several job outfits to support future SUNS content
+  FalloutFalcon:
+  - bugfix: fixed licor popsicle overlay
+  MarkSuckerberg:
+  - bugfix: Fixes a lot of duplicated outfits and such
+  SomeguyManperson:
+  - tweak: rachnid cocoon spinning no longer spends nutrition when activated, only
+      on successful cocooning
+  retlaw34, FleetingExpertise, Apogee-dev, Valorium,:
+  - rscadd: Resprites almost every single hunter's pride weapon
+  - rscadd: Added the Vickland, SRM equivlent to the ARs except it's an battle rifle
+  - rscadd: The Illestren is now an en-bloc rifle and uses 8x50mmR. Functionally it's
+      the exact same to aquire the ammo, just with a different name
+  - rscadd: You are able to saw off many more guns than before, just be sure to actually
+      empty it before doing so!
+  - rscadd: Many Hunter's pride weapons have been renamed to something befitting the
+      lore
+  - rscadd: Break action weapons
+  - bugfix: Traubuco should work correctly again
+  - bugfix: Some broken gun onmobs should now show up
+  - tweak: guns tell you how to rack them or switching firing modes
+  - balance: smgs fire 0.02 seconds faster and now have standard pistol recoil onehanded
+  - balance: disposable guns are now less shit, they now have 10 rounds! The downside
+      is they are now chambered in 22lr, the worst caliber in the game
+  - balance: Shotguns have been nerfed to not do an insane amount of damage point
+      blank and in general
+2024-02-10:
+  Apogee-dev:
+  - rscdel: Removed the Luxembourg.
+  Martinpachu:
+  - rscadd: Ammo boxes to the outpost market.
+  - spellcheck: Changed AK mentions to SVG.
+  - tweak: Changed shotgun ammo boxes bought from the outpost to the ammo_box version.
+  - bugfix: Changed SVG mag size to 20.
+  - rscadd: IRMG Vanguard peaked caps to IRMVs.
+  Skies-Of-Blue:
+  - rscadd: new pair of prescription glasses, now available in loadouts!
+  - imageadd: new transparent sprites for all prescription glasses
+  - imageadd: new transparent sprites for all prescription HUDs
+  - imageadd: new transparent sprite for the orange sunglasses
+  Skrem7:
+  - balance: Peacekeeper visors have real armor now (especially against bullet)
+  - balance: SUNS armored coats now cover all body parts instead of just chest
+  SomeguyManperson:
+  - bugfix: bulletproof armor crates are no longer stated to carry one more armor
+      set than they actually do
+2024-02-11:
+  BarteG44:
+  - tweak: resprited the medical and utility belts
+  Couls, Kylerace, Magatsuchi, LemonInTheDark, Fikou, Mothblocks, Stylemistake, Mark Suckerberg:
+  - admin: Reduces MC tab update time, this can be adjusted with a preference in OOC
+      settings
+  GenericDM:
+  - code_imp: params var is now passed to mousedrop_t() from mousedrop()
+  Halcyon, retlaw34, thgvr:
+  - rscadd: Added the Sprinter IPC Chassis
+  - rscadd: Added the PGF MECHANICS IPC Chassis
+  - rscadd: Adds IPC tails
+  - tweak: Robotic eyes now use the synth eye sprite.
+  Luftkommando:
+  - bugfix: Fixed the accidental wall-window combination on the Talos-class burn chamber
+      view window.
+  Zevotech:
+  - rscadd: Reworked the paracelsus kitchen layout to be more user friendly and have
+      more ingredients to cook with.
+  - rscadd: Adds two bookcases and two extra shark plushies to the dorms.
+  - rscadd: Adds ship viewscreens to the paracelsus
+  - rscadd: Moves the autolathe on the paracelsus to the ghettochem room
+  - bugfix: The firearms locker on the paracelsus no longer lacks a lock to prevent
+      patients from accessing the firearms
+  - rscdel: Some vendors now have far less stock and a smaller variety of items to
+      compensate for being free and not on a station
+  - rscdel: Removed Magivend vendor
+  - rscdel: Removed Mining points cards and mining access cards
+  - rscdel: Removed Unused Pubbystation vendors
+  - rscdel: Removed eswords from marine vendors
+  - rscadd: NT marine vendor now gives energy guns for coupons and stocks energy gun
+      cells
+  - rscadd: Cafe and Soy Lattes are now available in the coffee vendor
+  - bugfix: Dutch Hot Coco is now Pearl Hot Chocolate to be lore compliant
+  meemofcourse:
+  - tweak: Changed the content and details of a few Wikibooks
+  - bugfix: Certain wikibooks not working
+  retlaw34:
+  - rscadd: SUNS's swords! Now you can duel over petty matters and potentially die,
+      just like your forefathers!
+  - rscadd: SUNS's guns! Now you can fight over serious matters and potentially die,
+      just like your syndicate comrades!
+2024-02-12:
+  Apogee-dev:
+  - tweak: Tweaked Syndicate Grunt/Captain clothing descriptions for lore compliance
+  - refactor: changed paths for ACLF Grunt and 2nd Battlegroup outfit parts
+  - bugfix: 2nd Battlegroup captain jacket can now hold firearms
+  MarkSuckerberg:
+  - admin: Ships should now be categorised by faction in the shuttle manipulator
+  meemofcourse:
+  - rscadd: Syndicate Cryopod.
+  - tweak: The Twinkleshine has gotten a facelift.
+  - tweak: The Syndicate has started assigning Flotilla Admirals and Redshield Officers
+      to Twinkleshines.
+  - tweak: Crew on the Twinkleshine now have to get their stuff from their lockers.
+  - tweak: Modified the starting text to reflect the lack of telecomms on most ships.
+  - bugfix: Access on the Twinkleshine.
+  - bugfix: Syndicate jobs should show up properly on SecHUDs.
+  - rscadd: Crux-Class Dropship
+  - rscadd: Ancon-Class Internship Ship
+  - rscadd: Runner-Class Ambulance
+  - rscadd: Anvil-Class Dropship
+  - bugfix: ERTs can now actually spawn at outposts
+  phoaly:
+  - rscadd: Added the Elder-class
+  - rscdel: Removed the Glaive-class
+  retlaw34:
+  - tweak: all CMM ships are aspawn now
+  - rscdel: Corvus-Class
+2024-02-13:
+  ryerice, thgvr:
+  - imageadd: 'New hair sprites, including: Tribun, Half-shave, Ruby, Sidecut, Very
+      Long Fringe, Long Hair 2, Gloomy, Gloomy (Long)'
+  thgvr:
+  - rscadd: PGF flag wall mount and item
+2024-02-16:
+  Apogee-dev:
+  - balance: Slightly increased damage on bolt action rifles
+  - rscdel: Removed maid outfits from loadouts and faction ships
+  FleetingExpertise:
+  - rscadd: New bone dagger sprite!
+  Martinpachu:
+  - rscadd: Adds the Cobra-20 as buyable from the outpost alongside it's magazines.
+  - spellcheck: fixes the stechkin being from the gorlex marauders and returns it
+      to it's rightful home of scaraborough arms
+  - balance: Slightly improves engineering Loss Prevention hardsuits against radiation.
+  MrMelbert, san7890, lessthnthree, ZephyrTFA, MarkSuckerberg:
+  - admin: You can now create a custom approval-type vote
+  - admin: You can now manually start a transfer vote in the vote menu
+  - config: Removes the player mode voting setting as we don't use modes
+  SomeguyManperson:
+  - tweak: missions outside of the fishing missions have had their time limits doubled
+  - rscdel: genetics is no longer researchable, designs related to genetics no longer
+      exist
+  Zevotech:
+  - bugfix: Osprey airlocks no longer have firelocks that stop them from functioning.
+  retlaw34:
+  - bugfix: fixes invisble pipe shotguns
+  thgvr:
+  - bugfix: Wigs no longer hide Sarathi horns
+  - rscdel: Removes space adaptation.
+2024-02-20:
+  meemofcourse:
+  - rscdel: Removed mentorfollow
+2024-02-21:
+  PositiveEntropy:
+  - imageadd: Inteq has now received a visual overhaul!
+2024-02-23:
+  Martinpachu:
+  - rscadd: Mini Energy Guns can now be bought at the outpost.
+  Sadhorizon:
+  - tweak: SecHud, SecHud Sunglasses and Science Hud now have less intense colors
+      after alt+clicking.
+  - tweak: Welding goggles that are not in use don't apply their effect on alt+click
+      anymore.
+  - tweak: Inteq Ballistic Hud, Science Sunglasses, Diagnostic Sunglasses and Beer
+      Goggles now get proper colors after alt+clicking.
+  bobbahbrown, Mark Suckerberg:
+  - admin: Links can now be embedded in interview questions to get players to read
+      them.
+  ryerice:
+  - rscadd: Adds a PGF sidearm
+  - rscadd: Adds a PGF Marksman rifle
+  - balance: In general, the PGF weapons have been buffed, but also re balanced somewhat
+  - bugfix: All the PGF weapons should be correctly sized now
+  thgvr:
+  - bugfix: SMGs are now too large to store in your bag
+2024-02-24:
+  ryerice, [Apogee-dev](https://github.com/Apogee-dev):
+  - rscadd: All the SVGs have been placed in a Illestren museum, somehow, instead
+      being replaced by the SKM, CLIP's former standard issue rifle!
+  - rscadd: 7.62x39mm has been renamed to 7.62x40mm CLIP
+  - rscadd: LMGs now support bipods; this is a mystery tool that will be useful later!
+  - bugfix: 7.62x40mm no longer breaks spread on the rifles it's used in
+  - rscdel: NT-SVG and AK-74 have been merged into a single gun
+  - balance: 7.62x40mm now contains eighty rounds per ammo box
+  - bugfix: 45-70 hollow point ammo boxes now no longer contains 357 for some reason
+2024-02-27:
+  Martinpachu:
+  - bugfix: Removed mention of clowns in the butcher cleaver's description.
+  - balance: Cargo gun crates are more granularized, having only one gun at a time
+      and a price reflecting that. Prices were rebalanced making automatics more expensive
+      overall.
+  - balance: Changes combat knives in cargo to survival knives and cheapens their
+      crate.
+  SomeguyManperson:
+  - rscadd: admins can now blacklist ships, preventing them from docking at a station.
+2024-02-28:
+  PositiveEntropy:
+  - imageadd: The Second Cratening has been deployed!
+2024-02-29:
+  BogCreature:
+  - rscadd: Ore veins and a drill to mine them with
+  - rscadd: Mining based missions
+  - tweak: Lowered the spawn rate of some other mob spawners like tendrils
+  - tweak: Added the ability for mob spawners to spawn mobs a distance from their
+      source
+  - balance: Cut most ore sources in half and tweaked the spawn weights
+  MemeSnorfer:
+  - rscadd: New lava canyon ruin
+  - bugfix: Gate icon updates not working
+  Zevotech:
+  - bugfix: rockplanet_nomadcrash now uses the correct areas.
+  - bugfix: rockplanet_nomadcrash now uses correctly pathed turfs that dont break
+      when spawned.
+  - bugfix: rockplanet_budgetcuts and rockplanet_miningexpedition now use their newly
+      added respective areas instead of ruin/powered.
+  meemofcourse:
+  - rscadd: Outpost Authority fax
+  - rscadd: ERT Spawns at NT Outpost
+  - tweak: Indie ERTs should now spawn with outpost access
+  - bugfix: The fake door leading to the indie outpost security's area has been removed
+  thgvr:
+  - balance: Cryo wakeup doesn't make you puke anymore
+  - rscadd: A new Sarathi facial marking, "Nose"
+  - imageadd: Sarathi ail wag animation has been improved
+  - imageadd: Sarathi legs/chest have received a sprite touchup.

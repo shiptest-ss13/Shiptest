@@ -7,17 +7,11 @@
 /proc/plasmaman_name()
 	return "[pick(GLOB.plasmaman_names)] \Roman[rand(1,99)]"
 
-/proc/moth_name()
-	return "[pick(GLOB.moth_first)] [pick(GLOB.moth_last)]"
-
 /proc/squid_name()
 	return "[pick(GLOB.squid_names)][pick("-", "", " ")][capitalize(pick(GLOB.squid_names) + pick(GLOB.squid_names))]"
 
 /proc/kepori_name()
-	var/first_syllables = list("Fa", "Fe", "Fi", "Ma", "Me", "Mi", "Na", "Ne", "Ni", "Sa", "Se", "Si", "Ta", "Te", "Ti")
-	var/second_syllables = list("fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti")
-	var/third_syllables = list("ca", "ce", "ci", "fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti")
-	return "[pick(first_syllables)][pick(second_syllables)][pick(third_syllables)]"
+	return "[pick(GLOB.kepori_names)] [pick(GLOB.kepori_names)]-[pick(GLOB.kepori_names)]"
 
 /proc/vox_name()
 	. = ""
@@ -235,42 +229,3 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 				. += "."
 			else
 				. += ", "
-
-/// List of all ship factions to their prefixes.
-GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
-	"Syndicate" = list(
-		"SEV",
-		"SSV",
-	),
-	"SolGov" = list(
-		"SGSV",
-	),
-	"Saint-Roumain Militia" = list(
-		"SRSV",
-	),
-	"Independent" = list(
-		"SV",
-		"IMV",
-		"ISV",
-	),
-	"Inteq Risk Management Group" = list(
-		"IRMV",
-	),
-	"Colonial Minutemen" = list(
-		"CMSV",
-		"CMGSV",
-	),
-	"NanoTrasen" = list(
-		"NTSV",
-	),
-))
-
-/proc/ship_prefix_to_faction(prefix)
-	for(var/faction in GLOB.ship_faction_to_prefixes)
-		if(prefix in GLOB.ship_faction_to_prefixes[faction])
-			return faction
-	var/static/list/screamed = list()
-	if(!(prefix in screamed))
-		screamed += prefix
-		stack_trace("attempted to get faction for unknown prefix [prefix]")
-	return "?!ERR!?"

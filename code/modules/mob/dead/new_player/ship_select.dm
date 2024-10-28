@@ -71,6 +71,9 @@
 				return
 
 			var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[params["name"]]
+			if(SSovermap.ship_spawning)
+				to_chat(spawnee, "<span class='danger'>A ship is currently spawning. Try again in a little while.</span>")
+				return
 			if(!SSovermap.player_ship_spawn_allowed())
 				to_chat(spawnee, "<span class='danger'>No more ships may be spawned at this time!</span>")
 				return
@@ -97,12 +100,17 @@
 				to_chat(spawnee, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 				spawnee.new_player_panel()
 				return
-			SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+			SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name)
+			SSblackbox.record_feedback("tally", "faction_ship_purchased", 1, template.faction_datum.name)
 			// Try to spawn as the first listed job in the job slots (usually captain)
 			// Playtime checks are overridden, to ensure the player gets to join the ship they spawned.
 			if(!spawnee.AttemptLateSpawn(target.job_slots[1], target, FALSE))
 				to_chat(spawnee, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
 				spawnee.new_player_panel()
+
+/datum/ship_select/ui_data(mob/user)
+	. = list()
+	.["shipSpawning"] = SSovermap.ship_spawning
 
 /datum/ship_select/ui_static_data(mob/user)
 	// tracks the number of existing ships of each template type so that their unavailability for purchase can be communicated to the user
@@ -112,6 +120,8 @@
 	.["ships"] = list()
 	.["shipSpawnAllowed"] = SSovermap.player_ship_spawn_allowed()
 	.["purchaseBanned"] = is_banned_from(user.ckey, "Ship Purchasing")
+	// if the player has a client which is not eligible for playtime restriction (for admin + player DB flag playtime exemption), they "auto meet" playtime requirements
+	.["autoMeet"] = user.client && !user.client.is_playtime_restriction_eligible()
 	.["playMin"] = user.client ? user.client.get_exp_living(TRUE) : 0
 
 	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
@@ -137,7 +147,7 @@
 
 		var/list/ship_data = list(
 			"name" = S.name,
-			"faction" = ship_prefix_to_faction(S.source_template.prefix),
+			"faction" = S.source_template.faction_name,
 			"class" = S.source_template.short_name,
 			"desc" = S.source_template.description,
 			"tags" = S.source_template.tags,
@@ -157,7 +167,7 @@
 			continue
 		var/list/ship_data = list(
 			"name" = T.name,
-			"faction" = ship_prefix_to_faction(T.prefix),
+			"faction" = T.faction_name,
 			"desc" = T.description,
 			"tags" = T.tags,
 			"crewCount" = length(T.job_slots),

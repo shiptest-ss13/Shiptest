@@ -67,7 +67,9 @@ export const ShipSelect = (props, context) => {
                     (data.purchaseBanned &&
                       'You are banned from purchasing ships.') ||
                     (!data.shipSpawnAllowed &&
-                      'No more ships may be spawned at this time.')
+                      'No more ships may be spawned at this time.') ||
+                    (data.shipSpawning &&
+                      'A ship is currently spawning. Please wait.')
                   }
                   disabled={data.purchaseBanned}
                   onClick={() => {
@@ -189,10 +191,11 @@ export const ShipSelect = (props, context) => {
                       <Button
                         content="Select"
                         tooltip={
+                          !data.autoMeet &&
                           data.playMin < job.minTime &&
                           'You do not have enough playtime to play this job.'
                         }
-                        disabled={data.playMin < job.minTime}
+                        disabled={!data.autoMeet && data.playMin < job.minTime}
                         onClick={() => {
                           act('join', {
                             ship: selectedShip.ref,
@@ -204,12 +207,7 @@ export const ShipSelect = (props, context) => {
                     <Table.Cell>{job.name}</Table.Cell>
                     <Table.Cell>{job.slots}</Table.Cell>
                     <Table.Cell>
-                      {(job.minTime > 0 &&
-                        (job.minTime.toString() +
-                          'm ' +
-                          (data.playMin < job.minTime && '(Unmet)') ||
-                          '(Met)')) ||
-                        '-'}
+                      {formatShipTime(job.minTime, data.playMin, data.autoMeet)}
                     </Table.Cell>
                   </Table.Row>
                 ))}
@@ -244,7 +242,7 @@ export const ShipSelect = (props, context) => {
                 color={
                   (!data.shipSpawnAllowed && 'average') ||
                   ((template.curNum >= template.limit ||
-                    data.playMin < template.minTime) &&
+                    (!data.autoMeet && data.playMin < template.minTime)) &&
                     'grey') ||
                   'default'
                 }
@@ -256,13 +254,17 @@ export const ShipSelect = (props, context) => {
                         'No more ships may be spawned at this time.') ||
                       (template.curNum >= template.limit &&
                         'There are too many ships of this type.') ||
-                      (data.playMin < template.minTime &&
-                        'You do not have enough playtime to buy this ship.')
+                      (!data.autoMeet &&
+                        data.playMin < template.minTime &&
+                        'You do not have enough playtime to buy this ship.') ||
+                      (data.shipSpawning &&
+                        'A ship is currently spawning. Please wait.')
                     }
                     disabled={
                       !data.shipSpawnAllowed ||
+                      data.shipSpawning ||
                       template.curNum >= template.limit ||
-                      data.playMin < template.minTime
+                      (!data.autoMeet && data.playMin < template.minTime)
                     }
                     onClick={() => {
                       act('buy', {
@@ -290,10 +292,11 @@ export const ShipSelect = (props, context) => {
                     {template.limit}
                   </LabeledList.Item>
                   <LabeledList.Item label="Min. Playtime">
-                    {template.minTime +
-                      'm ' +
-                      ((data.playMin < template.minTime && '(Unmet)') ||
-                        '(Met)')}
+                    {formatShipTime(
+                      template.minTime,
+                      data.playMin,
+                      data.autoMeet
+                    )}
                   </LabeledList.Item>
                   <LabeledList.Item label="Wiki Link">
                     <a
@@ -311,5 +314,12 @@ export const ShipSelect = (props, context) => {
         )}
       </Window.Content>
     </Window>
+  );
+};
+
+const formatShipTime = (minTime, playMin, autoMeet) => {
+  return (
+    (minTime <= 0 && '-') ||
+    minTime + 'm ' + ((!autoMeet && playMin < minTime && '(Unmet)') || '(Met)')
   );
 };

@@ -10,7 +10,6 @@
 
 /obj/item/pda/clown/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/slippery/clowning, 120, NO_SLIP_WHEN_WALKING, CALLBACK(src, PROC_REF(AfterSlip)))
 	AddComponent(/datum/component/wearertargeting/sitcomlaughter, CALLBACK(src, PROC_REF(after_sitcom_laugh)))
 
 /obj/item/pda/clown/proc/AfterSlip(mob/living/carbon/human/M)
@@ -240,7 +239,7 @@
 	default_cartridge = /obj/item/cartridge/medical
 	icon_state = "pda-brig_phys"
 
-/obj/item/pda/lieutenant
-	name = "lieutenant PDA"
-	default_cartridge = /obj/item/cartridge/hos
-	icon_state = "pda-h"
+/obj/item/pda/suns
+	name = "SUNS PDA"
+	default_cartridge = /obj/item/cartridge/medical
+	icon_state = "pda-suns"

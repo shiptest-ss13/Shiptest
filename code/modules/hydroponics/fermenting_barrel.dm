@@ -7,6 +7,7 @@
 	anchored = FALSE
 	pressure_resistance = 2 * ONE_ATMOSPHERE
 	max_integrity = 300
+	var/closed_state = "barrel"
 	var/open = FALSE
 	var/speed_multiplier = 1 //How fast it distills. Defaults to 100% (1.0). Lower is better.
 
@@ -70,14 +71,21 @@
 
 /obj/structure/fermenting_barrel/update_icon_state()
 	if(open)
-		icon_state = "barrel_open"
+		icon_state = closed_state+"_open"
 	else
-		icon_state = "barrel"
+		icon_state = closed_state
 	return ..()
 
-/datum/crafting_recipe/fermenting_barrel
-	name = "Wooden Barrel"
-	result = /obj/structure/fermenting_barrel
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 8)
-	time = 50
-	category = CAT_PRIMAL
+/obj/structure/fermenting_barrel/gunpowder
+	name = "Gunpowder Barrel"
+	desc = "A wooden barrel packed with gunpowder. You should probably keep this away from sparks or open fires."
+
+/obj/structure/fermenting_barrel/gunpowder/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/gunpowder, 200)
+
+/obj/structure/fermenting_barrel/distiller
+	name = "Distiller"
+	icon_state = "distiller"
+	closed_state = "distiller"
+	desc = "A repurposed barrel and keg host to a special culture of bacteria native to Illestren"

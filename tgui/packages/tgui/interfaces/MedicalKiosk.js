@@ -108,12 +108,12 @@ const MedicalKioskScanButton = (props, context) => {
 
 const MedicalKioskInstructions = (props, context) => {
   const { act, data } = useBackend(context);
-  const { kiosk_cost, patient_name } = data;
+  const { patient_name } = data;
   return (
     <Section minHeight="100%">
       <Box italic>
         Greetings Valued Employee! Please select a desired automatic health
-        check procedure. Diagnosis costs <b>{kiosk_cost} credits.</b>
+        check procedure.
       </Box>
       <Box mt={1}>
         <Box inline color="label" mr={1}>

@@ -1,9 +1,9 @@
 /obj/effect/anomaly/plasmasoul
 	name = "plasma soul"
 	icon_state = "plasmasoul"
-	desc = "A mysterious anomaly, it slowly leaks plasma into the world around it."
+	desc = "A plasmatic pool, small crystals growing around it, spreading into the ground."
 	density = TRUE
-	aSignal = /obj/item/assembly/signaler/anomaly/plasmasoul
+	core = /obj/item/assembly/signaler/anomaly/plasmasoul
 	effectrange = 3
 	pulse_delay = 6 SECONDS
 	var/reagent_amount = 5
@@ -15,43 +15,48 @@
 		return
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
-	for(var/mob/living/mob in range(effectrange,src))
-		if(iscarbon(mob))
-			var/mob/living/carbon/target = mob
-			target.reagents?.add_reagent(/datum/reagent/toxin/plasma, reagent_amount)
-			to_chat(mob, span_warning("Your blood feels thick.."))
-			playsound(mob, 'sound/effects/bubbles.ogg', 50)
-
-
-	if(!COOLDOWN_FINISHED(src, pulse_secondary_cooldown))
-		return
-
-	COOLDOWN_START(src, pulse_secondary_cooldown, pulse_delay*5)
-	var/turf/open/tile = get_turf(src)
-	if(istype(tile))
-		tile.atmos_spawn_air("plasma=750;TEMP=200") //free lag!
+	harm_surrounding_mobs()
 
 /obj/effect/anomaly/plasmasoul/Bumped(atom/movable/AM)
 	var/turf/open/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
-	for(var/mob/living/mob in range(effectrange,src))
-		if(iscarbon(mob))
-			var/mob/living/carbon/target = mob
-			target.reagents?.add_reagent(/datum/reagent/toxin/plasma, reagent_amount)
-			to_chat(mob, span_warning("Your blood feels thick.."))
-			playsound(mob, 'sound/effects/bubbles.ogg', 50)
+	harm_surrounding_mobs()
 	if(istype(spot))
 		spot.atmos_spawn_air("plasma=300;TEMP=200")
 
+/obj/effect/anomaly/plasmasoul/proc/harm_surrounding_mobs()
+	for(var/mob/living/carbon/human/H in range(effectrange, src))
+
+		if(!(H.dna?.species.reagent_tag & PROCESS_ORGANIC))
+			H.adjustFireLoss(20)
+			to_chat(H, span_warning("Something bubbles and hisses under your plating..."))
+			playsound(H, 'sound/items/welder.ogg', 150)
+			continue
+
+		H.reagents?.add_reagent(/datum/reagent/toxin/plasma, reagent_amount)
+		to_chat(H, span_warning("Your blood feels thick..."))
+		playsound(H, 'sound/effects/bubbles.ogg', 50)
+
 /obj/effect/anomaly/plasmasoul/detonate()
-	for(var/mob/living/Mob in range(effectrange*2,src))
-		if(iscarbon(Mob))
-			var/mob/living/carbon/carbon = Mob
-			if(carbon.run_armor_check(attack_flag = "bio") <= 40)
-				carbon.reagents?.add_reagent(/datum/reagent/toxin/plasma, reagent_amount*3)
+	for(var/mob/living/carbon/human/H in range(effectrange*2, src))
+		if(H.run_armor_check(attack_flag = "bio") <= 40)
+			continue
+
+		if(!(H.dna?.species.reagent_tag & PROCESS_ORGANIC))
+			H.adjustFireLoss(60)
+			to_chat(H, span_warning("Plasma flashes and ignites inside of your chassis!"))
+			playsound(H, 'sound/items/welder.ogg', 150)
+			continue
+
+		H.reagents?.add_reagent(/datum/reagent/toxin/plasma, reagent_amount*3)
+		to_chat(H, span_warning("Your blood thickens and bubbles in your veins!"))
+		playsound(H, 'sound/effects/bubbles.ogg', 50)
+
 	var/turf/open/tile = get_turf(src)
+
 	if(istype(tile))
 		tile.atmos_spawn_air("o2=600;plasma=3000;TEMP=2000")
-	. = ..()
+
+	return ..()
 
 /obj/effect/anomaly/plasmasoul/planetary
 	immortal = TRUE

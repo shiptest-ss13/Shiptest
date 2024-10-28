@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	// In class definition like here it should always be a single type.
 	// A list will be created in initialization that figures out the baseturf's baseturf etc.
 	// In the case of a list it is sorted from bottom layer to top.
-	// This shouldn't be modified directly, use the helper procs.
+	// This shouldn't be modified directly; use the helper procs, as many baseturf lists are shared between turfs.
 	var/list/baseturfs = /turf/baseturf_bottom
 
 	/// How hot the turf is, in kelvin
@@ -72,9 +72,6 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	/// If TRUE, radiation waves will qdelete if they step forwards into this turf, and stop propagating sideways if they encounter it.
 	/// Used to stop radiation from travelling across virtual z-levels such as transit zones and planetary encounters.
 	var/rad_fullblocker = FALSE
-
-	///the holodeck can load onto this turf if TRUE
-	var/holodeck_compatible = FALSE
 
 	hitsound_volume = 90
 
@@ -158,7 +155,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		var/turf/open/O = src
 		__auxtools_update_turf_temp_info(isspaceturf(get_z_base_turf()) && !O.planetary_atmos)
 	else
-		update_air_ref(-1)
+		update_air_ref(AIR_REF_CLOSED_TURF)
 		__auxtools_update_turf_temp_info(isspaceturf(get_z_base_turf()))
 
 	return INITIALIZE_HINT_NORMAL
@@ -388,7 +385,11 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	if(!AM.zfalling)
 		zFall(AM)
 
-// A proc in case it needs to be recreated or badmins want to change the baseturfs
+// Initializes the baseturfs list, given an optional "fake_baseturf_type".
+// If "fake_baseturf_type" is a list, then this turf's baseturfs are set to that list.
+// Otherwise, if "fake_baseturf_type" is non-null, it is used as the top of the baseturf stack.
+// If no fake_baseturf_type is passed, and the current turf's baseturfs variable is not a list,
+// baseturfs are initialized using the intial baseturfs variable as the top of the baseturf stack.
 /turf/proc/assemble_baseturfs(turf/fake_baseturf_type)
 	var/turf/current_target
 	if(fake_baseturf_type)
@@ -460,12 +461,12 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		return
 	if(length(src_object.contents()))
 		to_chat(usr, "<span class='notice'>You start dumping out the contents...</span>")
-		if(!do_after(usr,20,target=src_object.parent))
+		if(!do_after(usr, 20, target=src_object.parent))
 			return FALSE
 
 	var/list/things = src_object.contents()
 	var/datum/progressbar/progress = new(user, things.len, src)
-	while (do_after(usr, 10, TRUE, src, FALSE, CALLBACK(src_object, TYPE_PROC_REF(/datum/component/storage, mass_remove_from_storage), src, things, progress)))
+	while (do_after(usr, 10, src, TRUE, FALSE, CALLBACK(src_object, TYPE_PROC_REF(/datum/component/storage, mass_remove_from_storage), src, things, progress)))
 		stoplag(1)
 	progress.end_progress()
 
@@ -581,8 +582,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 /turf/proc/acid_melt()
 	return
 
-/turf/handle_fall(mob/faller)
-	if(has_gravity(src))
+/turf/handle_fall(mob/faller, fall_sound_played)
+	if(has_gravity(src) && !fall_sound_played)
 		playsound(src, "bodyfall", 50, TRUE)
 	faller.drop_all_held_items()
 

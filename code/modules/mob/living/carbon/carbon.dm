@@ -28,6 +28,9 @@
 	if(!held_index)
 		held_index = (active_hand_index % held_items.len)+1
 
+	if(!isnum(held_index))
+		CRASH("You passed [held_index] into swap_hand instead of a number. WTF man")
+
 	var/oindex = active_hand_index
 	active_hand_index = held_index
 	if(hud_used)
@@ -199,7 +202,7 @@
 			visible_message("<span class='danger'>[usr] tries to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name].</span>", \
 							"<span class='userdanger'>[usr] tries to [internal ? "close" : "open"] the valve on your [ITEM.name].</span>", null, null, usr)
 			to_chat(usr, "<span class='notice'>You try to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name]...</span>")
-			if(do_mob(usr, src, POCKET_STRIP_DELAY))
+			if(do_after(usr, POCKET_STRIP_DELAY, src))
 				if(internal)
 					internal = null
 					update_internals_hud_icon(0)
@@ -252,7 +255,7 @@
 			buckle_cd = O.breakouttime
 		visible_message("<span class='warning'>[src] attempts to unbuckle [p_them()]self!</span>", \
 					"<span class='notice'>You attempt to unbuckle yourself... (This will take around [round(buckle_cd/600,1)] minute\s, and you need to stay still.)</span>")
-		if(do_after(src, buckle_cd, 0, target = src))
+		if(do_after(src, buckle_cd, target = src, timed_action_flags = IGNORE_HELD_ITEM))
 			if(!buckled)
 				return
 			buckled.user_unbuckle_mob(src,src)
@@ -303,7 +306,7 @@
 	if(!cuff_break)
 		visible_message("<span class='warning'>[src] attempts to remove [I]!</span>")
 		to_chat(src, "<span class='notice'>You attempt to remove [I]... (This will take around [DisplayTimeText(breakouttime)] and you need to stand still.)</span>")
-		if(do_after(src, breakouttime, 0, target = src))
+		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM))
 			. = clear_cuffs(I, cuff_break)
 		else
 			to_chat(src, "<span class='warning'>You fail to remove [I]!</span>")
@@ -312,7 +315,7 @@
 		breakouttime = 50
 		visible_message("<span class='warning'>[src] is trying to break [I]!</span>")
 		to_chat(src, "<span class='notice'>You attempt to break [I]... (This will take around 5 seconds and you need to stand still.)</span>")
-		if(do_after(src, breakouttime, 0, target = src))
+		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM))
 			. = clear_cuffs(I, cuff_break)
 		else
 			to_chat(src, "<span class='warning'>You fail to break [I]!</span>")
@@ -383,7 +386,7 @@
 
 /mob/living/carbon/get_standard_pixel_y_offset(lying = 0)
 	if(lying)
-		return -6
+		return PIXEL_Y_OFFSET_LYING
 	else
 		return initial(pixel_y)
 
@@ -414,14 +417,6 @@
 		if(61 to 90) //throw it down to the floor
 			var/turf/target = get_turf(loc)
 			I.safe_throw_at(target,I.throw_range,I.throw_speed,src, force = move_force)
-
-/mob/living/carbon/get_status_tab_items()
-	. = ..()
-	var/obj/item/organ/alien/plasmavessel/vessel = getorgan(/obj/item/organ/alien/plasmavessel)
-	if(vessel)
-		. += "Plasma Stored: [vessel.storedPlasma]/[vessel.max_plasma]"
-	if(locate(/obj/item/assembly/health) in src)
-		. += "Health: [health]"
 
 /mob/living/carbon/get_proc_holders()
 	. = ..()
@@ -543,6 +538,7 @@
 		REMOVE_TRAIT(src, TRAIT_INCAPACITATED, STAMINA)
 		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, STAMINA)
 		REMOVE_TRAIT(src, TRAIT_FLOORED, STAMINA)
+		REMOVE_TRAIT(src, TRAIT_HANDS_BLOCKED, STAMINA)
 	else
 		return
 	update_health_hud()

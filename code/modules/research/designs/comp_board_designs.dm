@@ -38,14 +38,6 @@
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/xenobiocamera
-	name = "Computer Design (Xenobiology Console)"
-	desc = "Allows for the construction of circuit boards used to build xenobiology camera computers."
-	id = "xenobioconsole"
-	build_path = /obj/item/circuitboard/computer/xenobiology
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/board/aiupload
 	name = "Computer Design (AI Upload)"
 	desc = "Allows for the construction of circuit boards used to build an AI Upload Console."
@@ -87,22 +79,6 @@
 	build_path = /obj/item/circuitboard/computer/pandemic
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
-/datum/design/board/scan_console
-	name = "Computer Design (DNA Machine)"
-	desc = "Allows for the construction of circuit boards used to build a new DNA scanning console."
-	id = "scan_console"
-	build_path = /obj/item/circuitboard/computer/scan_consolenew
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/board/cloning
-	name = "Computer Design (Cloning Console)"
-	desc = "Used to clone people and manage DNA."
-	id = "cloning"
-	build_path = /obj/item/circuitboard/computer/cloning
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/comconsole
 	name = "Computer Design (Communications)"
@@ -199,8 +175,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/mechapower
-	name = "Computer Design (Mech Bay Power Control Console)"
-	desc = "Allows for the construction of circuit boards used to build a mech bay power control console."
+	name = "Computer Design (Exosuit) Bay Power Control Console)"
+	desc = "Allows for the construction of circuit boards used to build an exosuit bay power control console."
 	id = "mechapower"
 	build_path = /obj/item/circuitboard/computer/mech_bay_power_console
 	category = list("Computer Boards")

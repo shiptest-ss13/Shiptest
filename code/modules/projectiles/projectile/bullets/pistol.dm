@@ -16,7 +16,7 @@
 
 /obj/projectile/bullet/c9mm/hp
 	name = "9mm hollow point bullet"
-	damage = 40
+	damage = 35
 	armour_penetration = -50
 
 /obj/projectile/bullet/incendiary/c9mm
@@ -31,7 +31,7 @@
 	armour_penetration = -40
 	stamina = 30
 
-// 10mm (Stechkin & SkM-44(k))
+// 10mm (Ringneck & SkM-44(k))
 
 /obj/projectile/bullet/c10mm
 	name = "10mm bullet"
@@ -49,7 +49,7 @@
 
 /obj/projectile/bullet/c10mm/hp
 	name = "10mm hollow point bullet"
-	damage = 45
+	damage = 40
 	armour_penetration = -50
 
 /obj/projectile/bullet/incendiary/c10mm
@@ -64,7 +64,7 @@
 	stamina = 38
 	armour_penetration = -40
 
-// .45 (M1911, C20r, Thompson)
+// .45 (Candor, C20r, Thompson)
 
 /obj/projectile/bullet/c45
 	name = ".45 bullet"
@@ -82,7 +82,7 @@
 
 /obj/projectile/bullet/c45/hp
 	name = ".45 hollow point bullet"
-	damage = 45
+	damage = 40
 	armour_penetration = -50
 
 /obj/projectile/bullet/incendiary/c45

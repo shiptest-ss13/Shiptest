@@ -11,6 +11,7 @@
 #define VV_TYPE "Custom Typepath"
 #define VV_FILE "File"
 #define VV_LIST "List"
+#define VV_COLOR "Color"
 #define VV_NEW_ATOM "New Atom"
 #define VV_NEW_DATUM "New Datum"
 #define VV_NEW_TYPE "New Custom Typepath"
@@ -91,6 +92,8 @@
 #define VV_HK_AUTO_RENAME "auto_rename"
 #define VV_HK_RADIATE "radiate"
 #define VV_HK_EDIT_FILTERS "edit_filters"
+#define VV_HK_SELL "sell_item"
+#define VV_HK_EDIT_PARTICLES "edit_particles"
 
 // /obj
 #define VV_HK_OSAY "osay"

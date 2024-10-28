@@ -112,7 +112,23 @@
 		"stamp-mime" = 'icons/stamp_icons/large_stamp-mime.png',
 		"stamp-centcom" = 'icons/stamp_icons/large_stamp-centcom.png',
 		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png',
-		"stamp-solgov" = 'icons/stamp_icons/large_stamp-solgov.png'
+		"stamp-solgov" = 'icons/stamp_icons/large_stamp-solgov.png',
+		"stamp-inteq" = 'icons/stamp_icons/large_stamp-inteq.png',
+		"stamp-inteq_vanguard" = 'icons/stamp_icons/large_stamp-inteq_vanguard.png',
+		"stamp-inteq_maa" = 'icons/stamp_icons/large_stamp-inteq_maa.png',
+		"stamp-inteq_artificer" = 'icons/stamp_icons/large_stamp-inteq_artificer.png',
+		"stamp-inteq_corpsman" = 'icons/stamp_icons/large_stamp-inteq_corpsman.png',
+		"stamp-clip" = 'icons/stamp_icons/large_stamp-clip.png',
+		"stamp-bard" = 'icons/stamp_icons/large_stamp-bard.png',
+		"stamp-gold" = 'icons/stamp_icons/large_stamp-gold.png',
+		"stamp-cybersun" = 'icons/stamp_icons/large_stamp-cybersun.png',
+		"stamp-biodynamics" = 'icons/stamp_icons/large_stamp-biodynamics.png',
+		"stamp-donk" = 'icons/stamp_icons/large_stamp-donk.png',
+		"stamp-ngr" = 'icons/stamp_icons/large_stamp-ngr.png',
+		"stamp-ngr_cap" = 'icons/stamp_icons/large_stamp-ngr_captain.png',
+		"stamp-ngr_fore" = 'icons/stamp_icons/large_stamp-ngr_foreman.png',
+		"stamp-ngr_lieu" = 'icons/stamp_icons/large_stamp-ngr_lieutenant.png',
+		"stamp-ngr_ensign" = 'icons/stamp_icons/large_stamp-ngr_ensign.png'
 	)
 
 /datum/asset/simple/fuckywucky
@@ -138,15 +154,22 @@
 	)
 
 /datum/asset/simple/namespaced/fontawesome
-	legacy = TRUE
 	assets = list(
-		"fa-regular-400.eot"  = 'html/font-awesome/webfonts/fa-regular-400.eot',
-		"fa-regular-400.woff" = 'html/font-awesome/webfonts/fa-regular-400.woff',
-		"fa-solid-900.eot"    = 'html/font-awesome/webfonts/fa-solid-900.eot',
-		"fa-solid-900.woff"   = 'html/font-awesome/webfonts/fa-solid-900.woff',
-		"v4shim.css"          = 'html/font-awesome/css/v4-shims.min.css'
+		"fa-regular-400.ttf" = 'html/font-awesome/webfonts/fa-regular-400.ttf',
+		"fa-solid-900.ttf" = 'html/font-awesome/webfonts/fa-solid-900.ttf',
+		"fa-v4compatibility.ttf" = 'html/font-awesome/webfonts/fa-v4compatibility.ttf',
+		"v4shim.css" = 'html/font-awesome/css/v4-shims.min.css',
 	)
 	parents = list("font-awesome.css" = 'html/font-awesome/css/all.min.css')
+
+/datum/asset/simple/namespaced/tgfont
+	assets = list(
+		"tgfont.eot" = file("tgui/packages/tgfont/static/tgfont.eot"),
+		"tgfont.woff2" = file("tgui/packages/tgfont/static/tgfont.woff2"),
+	)
+	parents = list(
+		"tgfont.css" = file("tgui/packages/tgfont/static/tgfont.css"),
+	)
 
 /datum/asset/simple/fonts
 	assets = list(
@@ -162,8 +185,8 @@
 /datum/asset/spritesheet/chat
 	name = "chat"
 
-/datum/asset/spritesheet/chat/register()
-	InsertAll("emoji", 'icons/emoji.dmi')
+/datum/asset/spritesheet/chat/create_spritesheets()
+	InsertAll("emoji", EMOJI_SET)
 	// pre-loading all lanugage icons also helps to avoid meta
 	InsertAll("language", 'icons/misc/language.dmi')
 	// catch languages which are pulling icons from another file
@@ -173,7 +196,6 @@
 		if (icon != 'icons/misc/language.dmi')
 			var/icon_state = initial(L.icon_state)
 			Insert("language-[icon_state]", icon, icon_state=icon_state)
-	..()
 
 /datum/asset/simple/lobby
 	assets = list(
@@ -226,7 +248,6 @@
 		"hierophant" = 'icons/UI_Icons/Achievements/Boss/hierophant.png',
 		"legion" = 'icons/UI_Icons/Achievements/Boss/legion.png',
 		"miner" = 'icons/UI_Icons/Achievements/Boss/miner.png',
-		"swarmer" = 'icons/UI_Icons/Achievements/Boss/swarmer.png',
 		"tendril" = 'icons/UI_Icons/Achievements/Boss/tendril.png',
 		"featofstrength" = 'icons/UI_Icons/Achievements/Misc/featofstrength.png',
 		"helbital" = 'icons/UI_Icons/Achievements/Misc/helbital.png',

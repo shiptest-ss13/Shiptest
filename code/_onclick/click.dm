@@ -343,22 +343,19 @@
 	SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
 	var/turf/T = get_turf(src)
 	if(T && (isturf(loc) || isturf(src)) && user.TurfAdjacent(T))
-		user.listed_turf = T
-		user.client << output("[url_encode(json_encode(T.name))];", "statbrowser:create_listedturf")
+		user.set_listed_turf(T)
 
 /// Use this instead of [/mob/proc/AltClickOn] where you only want turf content listing without additional atom alt-click interaction
 /atom/proc/AltClickNoInteract(mob/user, atom/A)
 	var/turf/T = get_turf(A)
 	if(T && user.TurfAdjacent(T))
-		user.listed_turf = T
-		user.client << output("[url_encode(json_encode(T.name))];", "statbrowser:create_listedturf")
+		user.set_listed_turf(T)
 
 /mob/proc/TurfAdjacent(turf/T)
 	return T.Adjacent(src)
 
 /**
  * Control+Shift click
- * Unused except for AI
  */
 /mob/proc/CtrlShiftClickOn(atom/A)
 	A.CtrlShiftClick(src)
@@ -369,7 +366,7 @@
 	return
 
 /atom/proc/CtrlShiftClick(mob/user)
-	SEND_SIGNAL(src, COMSIG_CLICK_CTRL_SHIFT)
+	SEND_SIGNAL(src, COMSIG_CLICK_CTRL_SHIFT, user)
 	return
 
 /*

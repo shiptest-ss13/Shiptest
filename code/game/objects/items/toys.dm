@@ -187,8 +187,8 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "revolver"
 	item_state = "gun"
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
@@ -245,7 +245,7 @@
 /obj/item/toy/ammo/gun
 	name = "capgun ammo"
 	desc = "Make sure to recyle the box in an autolathe when it gets empty."
-	icon = 'icons/obj/ammo.dmi'
+	icon = 'icons/obj/ammunition/ammo.dmi'
 	icon_state = "357OLD-7"
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=10)
@@ -265,7 +265,7 @@
 /obj/item/toy/sword
 	name = "toy sword"
 	desc = "A cheap, plastic replica of an energy sword. Realistic sounds! Ages 8 and up."
-	icon = 'icons/obj/transforming_energy.dmi'
+	icon = 'icons/obj/weapon/energy.dmi'
 	icon_state = "sword"
 	item_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -348,7 +348,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/toolbox_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/toolbox_righthand.dmi'
 	var/active = FALSE
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	hitsound = 'sound/weapons/smash.ogg'
 	attack_verb = list("robusted")
 
@@ -407,7 +407,7 @@
 /obj/item/toy/katana
 	name = "replica katana"
 	desc = "Woefully underpowered in D20."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/weapon/sword.dmi'
 	icon_state = "katana"
 	item_state = "katana"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -542,32 +542,6 @@
 /obj/item/toy/talking/AI/generate_messages()
 	return list(generate_ion_law())
 
-/obj/item/toy/talking/codex_gigas
-	name = "Toy Codex Gigas"
-	desc = "A tool to help you write fictional devils!"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "demonomicon"
-	lefthand_file = 'icons/mob/inhands/misc/books_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/books_righthand.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	recharge_time = 60
-
-/obj/item/toy/talking/codex_gigas/activation_message(mob/user)
-	user.visible_message(
-		"<span class='notice'>[user] presses the button on \the [src].</span>",
-		"<span class='notice'>You press the button on \the [src].</span>",
-		"<span class='notice'>You hear a soft click.</span>")
-
-/obj/item/toy/talking/codex_gigas/generate_messages()
-	var/datum/fakeDevil/devil = new
-	var/list/messages = list()
-	messages += "Some fun facts about: [devil.truename]"
-	messages += "[GLOB.lawlorify[LORE][devil.bane]]"
-	messages += "[GLOB.lawlorify[LORE][devil.obligation]]"
-	messages += "[GLOB.lawlorify[LORE][devil.ban]]"
-	messages += "[GLOB.lawlorify[LORE][devil.banish]]"
-	return messages
-
 /obj/item/toy/talking/owl
 	name = "owl action figure"
 	desc = "An action figure modeled after 'The Owl', defender of justice."
@@ -617,7 +591,6 @@
 	icon_state = "deck_nanotrasen_full"
 	w_class = WEIGHT_CLASS_SMALL
 	var/cooldown = 0
-	var/obj/machinery/computer/holodeck/holo = null // Holodeck cards should not be infinite
 	var/list/cards = list()
 
 /obj/item/toy/cards/deck/Initialize()
@@ -649,8 +622,6 @@
 		to_chat(user, "<span class='warning'>There are no more cards to draw!</span>")
 		return
 	var/obj/item/toy/cards/singlecard/H = new/obj/item/toy/cards/singlecard(user.loc)
-	if(holo)
-		holo.spawned += H // track them leaving the holodeck
 	choice = cards[1]
 	H.cardname = choice
 	H.parentdeck = src
@@ -734,7 +705,7 @@
 	name = "hand of cards"
 	desc = "A number of cards not in a deck, customarily held in ones hand."
 	icon = 'icons/obj/toy.dmi'
-	icon_state = "none"
+	icon_state = "nothing"
 	w_class = WEIGHT_CLASS_TINY
 	var/list/currenthand = list()
 	var/choice = null
@@ -1031,7 +1002,7 @@
 			if(!M.stat && !isAI(M)) // Checks to make sure whoever's getting shaken is alive/not the AI
 				// Short delay to match up with the explosion sound
 				// Shakes player camera 2 squares for 1 second.
-				addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(shake_camera), M, 2, 1), 0.8 SECONDS)
+				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(shake_camera), M, 2, 1), 0.8 SECONDS)
 
 	else
 		to_chat(user, "<span class='alert'>Nothing happens.</span>")
@@ -1289,7 +1260,6 @@
 /obj/item/toy/figure/curator
 	name = "Curator action figure"
 	icon_state = "curator"
-	toysay = "One day while..."
 
 /obj/item/toy/figure/md
 	name = "Medical Doctor action figure"
@@ -1370,6 +1340,18 @@
 	icon_state = "vanguard"
 	toysay = "I'm too old for this shit."
 
+/obj/item/toy/figure/tali
+	name = "T4L1 action figure"
+	desc = "An action figure modeled after a recurring miniboss from the popular combination webcomic and video game RILENA. Unfortunately, the gun arm does not function."
+	icon_state = "tali"
+	toysay = "I'll take you down this time!"
+
+/obj/item/toy/figure/kari
+	name = "knockoff RILENA action figure"
+	desc = "An action figure that seems to be labeled as 'Kari' from RAYALA: RUNNING FROM EVIL. Unfortunately, the gun arm does not function."
+	icon_state = "kari"
+	toysay = "I will defeat you for good!"
+
 /obj/item/toy/dummy
 	name = "ventriloquist dummy"
 	desc = "It's a dummy, dummy."
@@ -1395,7 +1377,7 @@
 	say(message, language)
 	return NOPASS
 
-/obj/item/toy/dummy/GetVoice()
+/obj/item/toy/dummy/GetVoice(if_no_voice = "Unknown")
 	return doll_name
 
 /obj/item/toy/seashell
@@ -1410,7 +1392,7 @@
 	pixel_x = rand(-5, 5)
 	pixel_y = rand(-5, 5)
 	icon_state = "shell[rand(1,3)]"
-	color = pickweight(possible_colors)
+	color = pick_weight(possible_colors)
 	setDir(pick(GLOB.cardinals))
 
 /obj/item/toy/brokenradio

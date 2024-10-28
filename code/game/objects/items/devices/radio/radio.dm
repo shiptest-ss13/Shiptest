@@ -2,7 +2,9 @@
 	icon = 'icons/obj/radio.dmi'
 	name = "shortwave radio"
 	icon_state = "walkietalkie"
-	item_state = "walkietalkie"
+	item_state = "radio"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	desc = "A basic handheld radio that communicates with local telecommunication networks."
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
@@ -25,7 +27,7 @@
 	var/last_chatter_time // The time since we last played a radio chatter sound. (WS edit - Radio Chatter #434)
 
 	var/broadcasting = FALSE  // Whether the radio will transmit dialogue it hears nearby.
-	var/listening = TRUE  // Whether the radio is currently receiving.
+	var/listening = FALSE  // Whether the radio is currently receiving.
 	var/prison_radio = FALSE  // If true, the transmit wire starts cut.
 	var/unscrewed = FALSE  // Whether wires are accessible. Toggleable by screwdrivering.
 	var/freerange = FALSE  // If true, the radio has access to the full spectrum.
@@ -252,7 +254,7 @@
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))		//WS Edit - SolGov Rep
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))		//WS Edit - SolGov Rep
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.map_zones = list(0)  // reaches all Z-levels
@@ -433,12 +435,6 @@
 			keyslot = W
 
 		recalculateChannels()
-
-
-/obj/item/radio/off	// Station bounced radios, their only difference is spawning with the speakers off, this was made to help the lag.
-	listening = 0			// And it's nice to have a subtype too for future features.
-	dog_fashion = /datum/dog_fashion/back
-
 
 /obj/item/radio/old
 	name = "old radio"

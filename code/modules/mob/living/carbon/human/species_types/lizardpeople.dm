@@ -1,8 +1,9 @@
 /datum/species/lizard
 	// Reptilian humanoids with scaled skin and tails.
 	name = "\improper Sarathi"
-	id = SPECIES_LIZARD
+	id = SPECIES_SARATHI
 	default_color = "00FF00"
+	species_age_max = 175
 	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY,MUTCOLORS_SECONDARY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings", "legs")
@@ -11,7 +12,7 @@
 	coldmod = 1.5
 	heatmod = 0.67
 	default_features = list("mcolor" = "0F0", "tail_lizard" = "Smooth", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "body_size" = "Normal")
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -20,7 +21,6 @@
 	exotic_bloodtype = "L"
 	disliked_food = GRAIN | DAIRY | CLOTH | GROSS
 	liked_food = GORE | MEAT
-	inert_mutation = FIREBREATH
 	deathsound = 'sound/voice/lizard/deathsound.ogg'
 	wings_icons = list("Dragon")
 	species_language_holder = /datum/language_holder/lizard
@@ -48,6 +48,9 @@
 	// Lizards are coldblooded and can stand a greater temperature range than humans
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 20 // This puts lizards 10 above lavaland max heat for ash lizards.
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 10
+
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 25
+	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 3
 	loreblurb = "The Sarathi are a cold-blooded reptilian species originating from the planet Kalixcis, where they evolved alongside the Elzuosa. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 
 	ass_image = 'icons/ass/asslizard.png'
@@ -91,7 +94,7 @@
 
 /// Lizards are cold blooded and do not stabilize body temperature naturally
 /datum/species/lizard/natural_bodytemperature_stabilization(datum/gas_mixture/environment, mob/living/carbon/human/H)
-	return
+	return 0
 
 /datum/species/lizard/random_name(gender,unique,lastname)
 	if(unique)
@@ -110,7 +113,7 @@ Lizard subspecies: ASHWALKERS
 /datum/species/lizard/ashwalker
 	name = "Ash Walker"
 	id = SPECIES_ASHWALKER
-	examine_limb_id = SPECIES_LIZARD
+	examine_limb_id = SPECIES_SARATHI
 	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
@@ -121,7 +124,7 @@ Lizard subspecies: ASHWALKERS
 /datum/species/lizard/ashwalker/kobold
 	name = "Kobold"
 	id = SPECIES_KOBOLD
-	examine_limb_id = SPECIES_LIZARD
+	examine_limb_id = SPECIES_SARATHI
 	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash

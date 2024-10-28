@@ -150,7 +150,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	mapzone.parallax_movedir = travel_dir
 
-	var/area/shuttle/transit/transit_area = new()
+	var/area/hyperspace/transit_area = new()
 
 	vlevel.fill_in(transit_path, transit_area)
 
@@ -534,6 +534,32 @@ SUBSYSTEM_DEF(shuttle)
 				return
 			if(user.client)
 				user.client.debug_variables(port.current_ship)
+			return TRUE
+
+		if("blist")
+			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
+			if(!port || !port.current_ship)
+				return
+			var/datum/overmap/ship/controlled/port_ship = port.current_ship
+			var/temp_loc = input(user, "Select outpost to modify ship blacklist status for", "Get Em Outta Here") as null|anything in SSovermap.outposts
+			if(!temp_loc)
+				return
+			var/datum/overmap/outpost/please_leave = temp_loc
+			if(please_leave in port_ship.blacklisted)
+				if(tgui_alert(user, "Rescind ship blacklist?", "Maybe They Aren't So Bad", list("Yes", "No")) == "Yes")
+					port_ship.blacklisted &= ~please_leave
+					message_admins("[key_name_admin(user)] unblocked [port_ship] from [please_leave].")
+					log_admin("[key_name_admin(user)] unblocked [port_ship] from [please_leave].")
+				return TRUE
+			var/reason = input(user, "Provide a reason for blacklisting, which will be displayed on docking attempts", "Bar Them From The Pearly Gates", "Contact local law enforcement for more information.") as null|text
+			if(!reason)
+				return TRUE
+			if(please_leave in port_ship.blacklisted) //in the event two admins are blacklisting a ship at the same time
+				if(tgui_alert(user, "Ship is already blacklisted, overwrite current reason with your own?", "I call the shots here", list("Yes", "No")) != "Yes")
+					return TRUE
+			port_ship.blacklisted[please_leave] = reason
+			message_admins("[key_name_admin(user)] blacklisted [port_ship] from landing at [please_leave] with reason: [reason]")
+			log_admin("[key_name_admin(user)] blacklisted [port_ship] from landing at [please_leave] with reason: [reason]")
 			return TRUE
 
 		if("fly")

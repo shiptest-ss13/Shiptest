@@ -29,7 +29,7 @@
 	var/mob/living/simple_animal/borer/B = user.has_brain_worms()		//WS Begin - Borers
 	if(B)
 		if(B.controlling)
-			B.detatch()
+			B.detach()
 		B.leave_victim()
 		if(iscarbon(user))
 			var/mob/living/carbon/C = user

@@ -2,7 +2,7 @@
 /obj/item/bodypart/chest
 	name = BODY_ZONE_CHEST
 	desc = "It's impolite to stare at a person's chest."
-	icon_state = "human_chest"
+	icon_state = "human_chest_m"
 	max_damage = 200
 	body_zone = BODY_ZONE_CHEST
 	body_part = CHEST
@@ -42,11 +42,6 @@
 	dismemberable = 0
 	max_damage = 500
 	animal_origin = ALIEN_BODYPART
-
-/obj/item/bodypart/chest/devil
-	dismemberable = 0
-	max_damage = 5000
-	animal_origin = DEVIL_BODYPART
 
 /obj/item/bodypart/chest/larva
 	icon = 'icons/mob/animal_parts.dmi'
@@ -153,12 +148,6 @@
 	max_damage = 100
 	animal_origin = ALIEN_BODYPART
 
-/obj/item/bodypart/l_arm/devil
-	dismemberable = FALSE
-	can_be_disabled = FALSE
-	max_damage = 5000
-	animal_origin = DEVIL_BODYPART
-
 /obj/item/bodypart/r_arm
 	name = "right arm"
 	desc = "Over 87% of humans are right handed. That figure is much lower \
@@ -255,12 +244,6 @@
 	max_damage = 100
 	animal_origin = ALIEN_BODYPART
 
-/obj/item/bodypart/r_arm/devil
-	dismemberable = FALSE
-	can_be_disabled = FALSE
-	max_damage = 5000
-	animal_origin = DEVIL_BODYPART
-
 /obj/item/bodypart/leg/left
 	name = "left leg"
 	desc = "Some athletes prefer to tie their left shoelaces first for good \
@@ -345,12 +328,6 @@
 	can_be_disabled = FALSE
 	max_damage = 100
 	animal_origin = ALIEN_BODYPART
-
-/obj/item/bodypart/leg/left/devil
-	dismemberable = FALSE
-	can_be_disabled = FALSE
-	max_damage = 5000
-	animal_origin = DEVIL_BODYPART
 
 /obj/item/bodypart/leg/right
 	name = "right leg"
@@ -438,9 +415,3 @@
 	can_be_disabled = FALSE
 	max_damage = 100
 	animal_origin = ALIEN_BODYPART
-
-/obj/item/bodypart/leg/right/devil
-	dismemberable = FALSE
-	can_be_disabled = FALSE
-	max_damage = 5000
-	animal_origin = DEVIL_BODYPART
