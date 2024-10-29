@@ -32,7 +32,7 @@
 						"<span class='danger'>Your face starts burning up, but the flames are repulsed by your anti-magic protection!</span>")
 		return FALSE
 
-	var/list/masks = list(/obj/item/clothing/mask/pig/cursed, /obj/item/clothing/mask/cowmask/cursed, /obj/item/clothing/mask/horsehead/cursed)
+	var/list/masks = list(/obj/item/clothing/mask/spooky/pig, /obj/item/clothing/mask/spooky/cowmask, /obj/item/clothing/mask/spooky/horsehead)
 	var/choice = pick(masks)
 	var/obj/item/clothing/mask/magichead = new choice(get_turf(target))
 
