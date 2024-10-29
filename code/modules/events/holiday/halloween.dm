@@ -99,7 +99,7 @@
 
 /obj/item/leaves
 	name = "a pile of loose leaves"
-	icon_state = "grass-harvest"
+	icon_state = "tobacco_leaves"
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	custom_materials = list(/datum/material/wood = 50, /datum/material/biomass = 50)
 
