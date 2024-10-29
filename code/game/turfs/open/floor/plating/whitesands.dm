@@ -80,3 +80,29 @@
 /turf/open/floor/plating/asteroid/whitesands/grass/dead/lit
 	light_power = 1
 	light_range = 2
+
+/turf/open/floor/concrete/whitesands
+	initial_gas_mix = WHITESANDS_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+/turf/open/floor/concrete/reinforced/whitesands
+	initial_gas_mix = WHITESANDS_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+/turf/open/floor/concrete/pavement/whitesands
+	initial_gas_mix = WHITESANDS_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+/turf/open/floor/concrete/slab_1/whitesands
+	initial_gas_mix = WHITESANDS_ATMOS
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+/turf/open/floor/plating/whitesands
+	initial_gas_mix = WHITESANDS_ATMOS
+	light_color = COLOR_VERY_LIGHT_GRAY

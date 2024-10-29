@@ -158,7 +158,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "bR" = (
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
 "cb" = (
@@ -555,7 +555,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "gG" = (
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
@@ -918,7 +918,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "kp" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -928,7 +928,7 @@
 	},
 /area/ship/maintenance)
 "kv" = (
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
@@ -942,7 +942,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
 "la" = (
@@ -977,7 +977,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "li" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
@@ -1022,7 +1022,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "mf" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/structure/cable/yellow{
 	icon_state = "5-9"
 	},
@@ -1297,8 +1297,8 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "oK" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/trash/grille_or_waste,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
@@ -1391,7 +1391,7 @@
 /turf/closed/wall,
 /area/ship/crew/canteen)
 "qi" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "med"
@@ -1448,7 +1448,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless{
 	icon_state = "plating_rust"
@@ -1546,7 +1546,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ti" = (
-/obj/effect/spawner/lootdrop/donut,
+/obj/effect/spawner/random/food_or_drink/donut,
 /turf/open/floor/plating/airless{
 	icon_state = "plating_rust"
 	},
@@ -1577,7 +1577,7 @@
 	dir = 1
 	},
 /obj/structure/curtain/cloth,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/carpet,
 /area/ship/crew)
@@ -1936,7 +1936,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "yc" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
@@ -2051,7 +2051,7 @@
 "Ar" = (
 /obj/structure/bed,
 /obj/structure/curtain/cloth,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/carpet,
 /area/ship/crew)
 "Av" = (
@@ -2072,7 +2072,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "AG" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
 "AQ" = (
@@ -2199,7 +2199,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless{
 	icon_state = "plating_rust"
@@ -2233,7 +2233,7 @@
 	dir = 1
 	},
 /obj/structure/curtain/cloth,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/carpet,
 /area/ship/crew)
@@ -2255,7 +2255,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
 "Eb" = (
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless{
 	icon_state = "plating_rust"
@@ -2820,9 +2820,9 @@
 /area/ship/crew/canteen)
 "Lb" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/turf_decal/siding/wideplating{
 	dir = 5
 	},
@@ -2998,7 +2998,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless{
 	icon_state = "plating_rust"
@@ -3216,7 +3216,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Pb" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
@@ -3309,7 +3309,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "QM" = (
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/structure/closet/cardboard,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
@@ -3358,7 +3358,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/airless{
 	icon_state = "plating_rust"
 	},
@@ -4044,7 +4044,7 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "YU" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless{
 	icon_state = "plating_rust"

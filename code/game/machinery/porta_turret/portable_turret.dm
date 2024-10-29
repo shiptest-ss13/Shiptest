@@ -844,6 +844,10 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
 	desc = "A ballistic machine gun auto-turret."
 
+/* Colonial League turrets */
+/obj/machinery/porta_turret/ship/ballistic/clip
+	faction = list(FACTION_PLAYER_MINUTEMAN, "turret")
+
 //high rof, range, faster projectile speed
 /* 'Nanotrasen' turrets */
 
@@ -1279,7 +1283,7 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/item/gun/ballistic/get_turret_properties()
 	. = ..()
-	var/obj/item/ammo_box/mag = mag_type
+	var/obj/item/ammo_box/mag = default_ammo_type
 	var/obj/item/ammo_casing/primary_ammo = initial(mag.ammo_type)
 
 	.["base_icon_state"] = "syndie"

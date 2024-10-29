@@ -243,7 +243,7 @@
 /obj/item/gps,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/storage/belt/security/webbing,
-/obj/item/storage/pistolcase/commander,
+/obj/item/storage/guncase/pistol/commander,
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/structure/window/reinforced/tinted{
 	dir = 4
@@ -1137,7 +1137,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/firealarm/directional/east,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/plasma,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -2097,12 +2097,13 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/lp/engineer,
-/obj/item/gun/energy/plasmacutter,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 19;
 	pixel_y = -10
 	},
+/obj/item/radio/headset/alt,
+/obj/item/gear_pack/anglegrinder,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "pA" = (
@@ -3923,7 +3924,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "EP" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/central)
 "Ff" = (
@@ -4187,7 +4188,7 @@
 	pixel_x = 7;
 	pixel_y = -20
 	},
-/obj/item/storage/pistolcase/egun,
+/obj/item/storage/guncase/energy/egun,
 /obj/item/megaphone/command,
 /obj/structure/closet/secure_closet/lp/lieutenant,
 /obj/effect/turf_decal/techfloor{
@@ -4272,7 +4273,7 @@
 	id = "Ranger_Port_maint_shut";
 	req_ship_access = 1
 	},
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Ih" = (
@@ -5558,11 +5559,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/effect/spawner/lootdrop/lpaid{
+/obj/effect/spawner/random/lpaid{
 	pixel_x = 2;
 	pixel_y = -2
 	},
-/obj/effect/spawner/lootdrop/lpretrieval{
+/obj/effect/spawner/random/lpretrieval{
 	pixel_x = -10;
 	pixel_y = 10
 	},
@@ -6250,14 +6251,14 @@
 	name = "Armory";
 	req_ship_access = 1
 	},
-/obj/item/storage/pistolcase/commander,
+/obj/item/storage/guncase/pistol/commander,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/clothing/suit/armor/nanotrasen/slim,
 /obj/item/clothing/suit/armor/nanotrasen/slim,
 /obj/item/ammo_box/magazine/smgm9mm,
 /obj/item/ammo_box/magazine/smgm9mm,
 /obj/item/ammo_box/magazine/smgm9mm,
-/obj/item/storage/pistolcase,
+/obj/item/storage/guncase/pistol,
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 5
 	},
