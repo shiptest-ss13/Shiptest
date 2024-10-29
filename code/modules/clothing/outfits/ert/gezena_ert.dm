@@ -8,7 +8,7 @@
 	suit = /obj/item/clothing/suit/armor/gezena/marine
 	head = /obj/item/clothing/head/helmet/gezena
 	belt = /obj/item/storage/belt/military/gezena/bg16
-	gloves = /obj/item/clothing/gloves/gezena/marine
+	gloves = /obj/item/clothing/gloves/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena
 	suit_store = /obj/item/gun/energy/kalix/pgf
@@ -37,7 +37,7 @@
 	job_icon = "paramedic"
 
 	belt = /obj/item/storage/belt/medical/gezena/paramedic
-	gloves = /obj/item/clothing/gloves/gezena/marine
+	gloves = /obj/item/clothing/gloves/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 
 	backpack = /obj/item/storage/backpack/medic
@@ -55,9 +55,9 @@
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
 
-	suit = /obj/item/clothing/suit/armor/gezena/marinecoat
+	suit = /obj/item/clothing/suit/armor/gezena
 	head = /obj/item/clothing/head/helmet/gezena
-	gloves = /obj/item/clothing/gloves/gezena/marine
+	gloves = /obj/item/clothing/gloves/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/lead
 	suit_store = /obj/item/gun/energy/kalix/pgf/heavy
