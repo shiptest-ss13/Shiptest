@@ -1,5 +1,7 @@
+//Lore Document for Mexapix: https://hackmd.io/D-9st3kxThm93WlUY7gKig
+
 /datum/round_event_control/spooky
-	name = "2 SPOOKY! (Halloween)"
+	name = "Mexapix"
 	holidayID = HALLOWEEN
 	typepath = /datum/round_event/spooky
 	weight = -1							//forces it to be called, regardless of weight
@@ -9,13 +11,13 @@
 /datum/round_event/spooky/start()
 	..()
 	for(var/i in GLOB.human_list)
-		var/mob/living/carbon/human/H = i
-		var/obj/item/storage/backpack/b = locate() in H.contents
-		if(b)
-			new /obj/item/storage/mexapix_candy(b)
+		var/mob/living/carbon/human/human = i
+		var/obj/item/storage/backpack/backpack = locate() in human.contents
+		if(backpack)
+			new /obj/item/storage/mexapix_candy(backpack)
 
 /datum/round_event/spooky/announce(fake)
-	priority_announce(pick("RATTLE ME BONES!","THE RIDE NEVER ENDS!", "A SKELETON POPS OUT!", "SPOOKY SCARY SKELETONS!", "CREWMEMBERS BEWARE, YOU'RE IN FOR A SCARE!") , "THE CALL IS COMING FROM INSIDE THE HOUSE")
+	priority_announce("Happy Mexapix. Read up about it <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Here!</a>")
 
 //spooky foods (you can't actually make these when it's not halloween)
 /obj/item/reagent_containers/food/snacks/sugarcookie/spookyskull
@@ -43,12 +45,15 @@
 /obj/effect/spawner/random/food_or_drink/mexapix
 	spawn_loot_count = 6
 	loot = list(
-			/obj/item/reagent_containers/food/snacks/sugarcookie/spookyskull,
-			/obj/item/reagent_containers/food/snacks/sugarcookie/spookycoffin,
-			/obj/item/reagent_containers/food/snacks/candy_corn,
-			/obj/item/reagent_containers/food/snacks/candy,
-			/obj/item/reagent_containers/food/snacks/candiedapple,
-			/obj/item/reagent_containers/food/snacks/chocolatebar,
+			/obj/item/reagent_containers/food/snacks/sugarcookie/spookyskull = 1,
+			/obj/item/reagent_containers/food/snacks/sugarcookie/spookycoffin = 1,
+			/obj/item/reagent_containers/food/snacks/candy_corn = 1,
+			/obj/item/reagent_containers/food/snacks/candy = 1,
+			/obj/item/reagent_containers/food/snacks/candiedapple = 1,
+			/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+			/obj/item/reagent_containers/food/snacks/koerbalk = 10,
+			/obj/item/reagent_containers/food/snacks/brextak = 10,
+			/obj/item/reagent_containers/food/snacks/sucrika = 10,
 		)
 
 /obj/item/clothing/accessory/tooth_armlet
@@ -81,3 +86,21 @@
 /obj/item/leaves
 	name = "a pile of loose leaves"
 	w_class = BULKY
+
+
+//Drink
+/datum/reagent/consumable/ethanol/koerbalk
+	name = "koerbalk"
+	boozepwr = 10
+
+/obj/item/reagent_containers/food/drinks/bottle/koerbalk
+	name = "bottle of koerbalk"
+	list_regeants = list(/datum/reagent/consumable/ethanol/koerbalk)
+
+/obj/item/mixing_stick
+
+/obj/item/reagent_containers/food/snacks/brextak
+	name = "brextak"
+
+/obj/item/reagent_containers/food/snacks/sucrika
+	name = "sucrika"

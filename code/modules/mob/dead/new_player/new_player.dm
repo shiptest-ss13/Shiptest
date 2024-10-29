@@ -340,6 +340,12 @@
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 		if(CONFIG_GET(flag/roundstart_traits))
 			SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
+				var/mob/living/carbon/human/H = i
+		if(IS_HALLOWEEN)
+			to_chat(usr, "Happy Mexapix. Read up about it <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Here!</a>")
+			var/obj/item/storage/backpack/backpack = locate() in humanc.contents
+			if(backpack)
+				new /obj/item/storage/mexapix_candy(backpack)
 
 	GLOB.joined_player_list += character.ckey
 
