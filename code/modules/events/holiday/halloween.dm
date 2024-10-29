@@ -14,12 +14,6 @@
 		if(b)
 			new /obj/item/storage/spooky(b)
 
-	for(var/mob/living/simple_animal/pet/dog/corgi/Ian/Ian in GLOB.mob_living_list)
-		Ian.place_on_head(new /obj/item/bedsheet(Ian))
-	for(var/mob/living/simple_animal/parrot/Polly/Polly in GLOB.mob_living_list)
-		new /mob/living/simple_animal/parrot/Polly/ghost(Polly.loc)
-		qdel(Polly)
-
 /datum/round_event/spooky/announce(fake)
 	priority_announce(pick("RATTLE ME BONES!","THE RIDE NEVER ENDS!", "A SKELETON POPS OUT!", "SPOOKY SCARY SKELETONS!", "CREWMEMBERS BEWARE, YOU'RE IN FOR A SCARE!") , "THE CALL IS COMING FROM INSIDE THE HOUSE")
 
@@ -55,8 +49,3 @@
 		/obj/item/reagent_containers/food/snacks/chocolatebar,
 		/obj/item/organ/brain ) // OH GOD THIS ISN'T CANDY!
 		new type(src)
-
-/obj/item/card/emag/halloween
-	name = "hack-o'-lantern"
-	desc = "It's a pumpkin with a cryptographic sequencer sticking out."
-	icon_state = "hack_o_lantern"
