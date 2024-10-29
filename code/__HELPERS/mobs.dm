@@ -17,22 +17,6 @@
 		else
 			return "000000"
 
-#warn remove as these become irrelevant
-/proc/random_underwear(gender)
-	if(!GLOB.underwear_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list)
-	return pick(GLOB.underwear_list)
-
-/proc/random_undershirt()
-	if(!GLOB.undershirt_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/undershirt, GLOB.undershirt_list)
-	return pick(GLOB.undershirt_list)
-
-/proc/random_socks()
-	if(!GLOB.socks_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/socks, GLOB.socks_list)
-	return pick(GLOB.socks_list)
-
 #warn note that this is used for randomized prefs (via random_character); we need to be careful about features overlapping with our prefs, before we remove the former
 #warn randomization, remove
 /proc/random_features()

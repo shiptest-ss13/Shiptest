@@ -193,7 +193,7 @@
 	if(href_list["manifest"])
 		ViewManifest()
 
-	#warn this shouldn't fucking be here???? what??? surely this should be handled in Client/Topic(). need to check if this can be removed.
+	// i have zero clue why this is here
 	if(!ready && href_list["preference"])
 		if(client)
 			client.prefs.process_link(src, href_list)
@@ -409,20 +409,13 @@
 	GLOB.joined_player_list += ckey
 
 	var/frn = CONFIG_GET(flag/force_random_names)
-	var/admin_anon_names = SSticker.anonymousnames
 	if(!frn)
 		frn = is_banned_from(ckey, "Appearance")
 		if(QDELETED(src))
 			return
 	if(frn)
-		#warn these commented lines make me miserable. remove
 		var/datum/species/chosen_species = client.prefs.get_pref_data(/datum/preference/species)
 		client.prefs.random_character()
-		// client.prefs.real_name = chosen_species.random_name(gender,1)
-
-	if(admin_anon_names)//overrides random name because it achieves the same effect and is an admin enabled event tool
-		client.prefs.random_character()
-		// client.prefs.real_name = anonymous_name(src)
 
 	var/is_antag
 	if(mind in GLOB.pre_setup_antags)

@@ -77,7 +77,6 @@
 		return 9 //flyswatters deal 10x damage to moths
 	return 0
 
-#warn twice-defined
 /datum/species/space_move(mob/living/carbon/human/H)
 	. = ..()
 	if(H.loc && !isspaceturf(H.loc) && H.getorganslot(ORGAN_SLOT_WINGS) && !flying_species) //"flying_species" is exclusive to the potion of flight, which has its flying mechanics. If they want to fly they can use that instead

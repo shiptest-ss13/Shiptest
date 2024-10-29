@@ -741,7 +741,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					undershirt_overlay.color = H.undershirt_color
 				standing += undershirt_overlay
 
-		#warn would be nice if this was rectified away from digitigrade when the current uniform doesn't have a digitigrade alt
 		if(H.socks && H.num_legs >= 2 && !(NO_SOCKS in species_traits))
 			var/datum/sprite_accessory/socks/socks = GLOB.socks_list[H.socks]
 			if(socks)

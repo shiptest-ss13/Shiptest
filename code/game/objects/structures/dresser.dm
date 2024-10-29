@@ -36,7 +36,6 @@
 
 		var/choice = input(user, "Underwear, Undershirt, or Socks?", "Changing") as null|anything in list("Underwear", "Underwear Color", "Undershirt", "Undershirt Color", "Socks", "Socks Color")
 
-		#warn update to new handling for underwear colors
 		if(!Adjacent(user))
 			return
 		switch(choice)

@@ -27,8 +27,6 @@ SUBSYSTEM_DEF(ticker)
 	var/admin_delay_notice = ""				//a message to display to anyone who tries to restart the world after a delay
 	var/ready_for_reboot = FALSE			//all roundend preparation done with, all that's left is reboot
 
-	///If not set to ANON_DISABLED then people spawn with a themed anon name (see anonymousnames.dm)
-	var/anonymousnames = ANON_DISABLED
 	///Boolean to see if the game needs to set up a triumvirate ai (see tripAI.dm)
 	var/triai = FALSE
 
@@ -405,7 +403,6 @@ SUBSYSTEM_DEF(ticker)
 
 	delay_end = SSticker.delay_end
 
-	anonymousnames = SSticker.anonymousnames
 	triai = SSticker.triai
 	tipped = SSticker.tipped
 	selected_tip = SSticker.selected_tip

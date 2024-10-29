@@ -243,11 +243,6 @@
 			log_admin("[key_name(holder)] made all SMESs powered", 1)
 			message_admins("<span class='adminnotice'>[key_name_admin(holder)] made all SMESs powered</span>")
 			power_restore_quick()
-		if("anon_name")
-			if(!is_funmin)
-				return
-			holder.anon_names()
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Anonymous Names"))
 		if("guns")
 			if(!is_funmin)
 				return

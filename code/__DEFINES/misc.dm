@@ -457,12 +457,6 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 // The alpha we give to stuff under tiles, if they want it
 #define ALPHA_UNDERTILE 128
 
-// Anonymous names defines (used in the secrets panel)
-
-#define ANON_DISABLED "" //so it's falsey
-#define ANON_RANDOMNAMES "Random Default"
-#define ANON_EMPLOYEENAMES "Employees"
-
 /// Possible value of [/atom/movable/buckle_lying]. If set to a different (positive-or-zero) value than this, the buckling thing will force a lying angle on the buckled.
 #define NO_BUCKLE_LYING -1
 

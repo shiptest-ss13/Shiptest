@@ -362,13 +362,44 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 /proc/random_color()
 	return num2text(rand(0, 16777215), 6, 16)
 
-#warn wait, why doe sthis allow for dark green hair? what the fuck is natural about that?
-/proc/random_color_natural()	//For use in natural haircolors.
-	var/red = num2text(rand(0,255), 2, 16)
-	var/green = num2text(rand(0,128), 2, 16)	//Conversion to hex
-	var/blue = "00"
+/proc/random_color_natural()
+	switch(pick(
+		10;"blond",
+		10;"dark blond",
 
-	return red + green + blue
+		20;"medium brown",
+		20;"dark brown",
+
+		5;"reddish brown",
+		5;"ginger",
+
+		20;"black",
+		5;"gray",
+		5;"white"
+	))
+		if("blond")
+			return copytext(BlendRGB("#fbe7a1", "#aa8866", rand()), 2)
+
+		if("dark blond")
+			return copytext(BlendRGB("#b38b67", "#886128", rand()), 2)
+
+		if("medium brown")
+			return copytext(BlendRGB("#ac6438", "#5a3825", rand()), 2)
+		if("dark brown")
+			return copytext(BlendRGB("#23120b", "#4d2d1a", rand()), 2)
+
+		if("reddish brown")
+			return copytext(BlendRGB("#ac5639", "#75250a", rand()), 2)
+		if("ginger")
+			return copytext(BlendRGB("#f1691f", "#500a09", rand()), 2)
+
+		if("black")
+			return copytext(BlendRGB("#101010", "#202020", rand()), 2)
+		if("gray")
+			return copytext(BlendRGB("#9e9e9e", "#d2d2d2", rand()), 2)
+		if("white")
+			return copytext(BlendRGB("#FFFFFF", "#f0f0f0", rand()), 2)
+
 
 /proc/color_natural_from_seed(seed)
 	seed = md5(seed)

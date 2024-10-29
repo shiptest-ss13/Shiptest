@@ -1,7 +1,5 @@
 // Note: tails only work in humans. They use human-specific parameters and rely on human code for displaying.
 
-#warn i am going to fucking kill myself. this needs to be reworked for simplified mutant bodypart handling
-
 /obj/item/organ/tail
 	name = "tail"
 	desc = "A severed tail. What did you cut this off of?"
