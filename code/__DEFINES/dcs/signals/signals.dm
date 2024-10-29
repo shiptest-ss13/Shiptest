@@ -42,6 +42,7 @@
 #define COMSIG_COMPONENT_REMOVING "component_removing"
 /// before a datum's Destroy() is called: (force), returning a nonzero value will cancel the qdel operation
 #define COMSIG_PARENT_PREQDELETED "parent_preqdeleted"
+#define COMSIG_PREQDELETED "parent_preqdeleted"
 /// just before a datum's Destroy() is called: (force), at this point none of the other components chose to interrupt qdel and Destroy will be called
 #define COMSIG_PARENT_QDELETING "parent_qdeleting"
 /// generic topic handler (usr, href_list)
@@ -666,12 +667,6 @@
 #define COMSIG_TRY_STORAGE_QUICK_EMPTY "storage_quick_empty" //(loc) - returns bool - if loc is null it will dump at parent location.
 #define COMSIG_TRY_STORAGE_RETURN_INVENTORY "storage_return_inventory"	//(list/list_to_inject_results_into, recursively_search_inside_storages = TRUE)
 #define COMSIG_TRY_STORAGE_CAN_INSERT "storage_can_equip" //(obj/item/insertion_candidate, mob/user, silent) - returns bool
-
-// /datum/component/two_handed signals
-#define COMSIG_TWOHANDED_WIELD "twohanded_wield" //from base of datum/component/two_handed/proc/wield(mob/living/carbon/user): (/mob/user)
-	#define COMPONENT_TWOHANDED_BLOCK_WIELD 1
-#define COMSIG_TWOHANDED_UNWIELD "twohanded_unwield" //from base of datum/component/two_handed/proc/unwield(mob/living/carbon/user): (/mob/user)
-
 
 // /datum/action signals
 #define COMSIG_ACTION_TRIGGER "action_trigger" //from base of datum/action/proc/Trigger(): (datum/action)

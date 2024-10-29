@@ -47,26 +47,26 @@
 		return
 
 	if(prob(90))
-		head = pickweight(list(
+		head = pick_weight(list(
 		/obj/item/clothing/head/beret/sec/frontier = 10,
 		/obj/item/clothing/head/helmet/bulletproof/x11/frontier = 5,
 		/obj/item/reagent_containers/glass/bucket = 1))
 
 	if(prob(60))
-		suit = pickweight(list(
+		suit = pick_weight(list(
 		/obj/item/clothing/suit/armor/vest = 5,
 		/obj/item/clothing/suit/armor/vest/bulletproof/frontier = 5,
 		/obj/item/clothing/suit/armor/vest/scrap = 1))
 
 	if(prob(50))
-		mask = pickweight(list(
+		mask = pick_weight(list(
 		/obj/item/clothing/mask/gas/frontiersmen = 12,
 		/obj/item/clothing/mask/gas/sechailer/balaclava = 10,
 		/obj/item/clothing/mask/breath = 7,
 		/obj/item/clothing/mask/whistle/trench = 3))
 
 	if(prob(90))
-		back = pickweight(list(
+		back = pick_weight(list(
 		/obj/item/storage/backpack = 20,
 		/obj/item/storage/backpack/satchel = 20,
 		/obj/item/storage/backpack/messenger = 20,
@@ -76,7 +76,7 @@
 		))
 
 	if(prob(90))
-		shoes = pickweight(list(
+		shoes = pick_weight(list(
 		/obj/item/clothing/shoes/jackboots = 10,
 		/obj/item/clothing/shoes/sneakers = 5,
 		))
@@ -136,7 +136,7 @@
 				/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn,
 				/obj/item/gun/energy/e_gun/mini))
 		if("Melee")
-			r_hand = pickweight(list(
+			r_hand = pick_weight(list(
 			/obj/item/melee/knife/survival = 15,
 			/obj/item/melee/baseball_bat = 10,
 			/obj/item/roastingstick = 2,

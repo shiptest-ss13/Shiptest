@@ -34,6 +34,9 @@
 
 	bodytype = BODYTYPE_VOX
 
+	custom_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
+	damage_overlay_type = "vox"
+
 	species_chest = /obj/item/bodypart/chest/vox
 	species_head = /obj/item/bodypart/head/vox
 	species_l_arm = /obj/item/bodypart/l_arm/vox

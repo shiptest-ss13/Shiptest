@@ -80,6 +80,9 @@
 
 //Soft caps
 
+/datum/gear/hat/softcap
+	subtype_path = /datum/gear/hat/softcap
+
 /datum/gear/hat/softcap/red
 	display_name = "cap, red"
 	path = /obj/item/clothing/head/soft/red
