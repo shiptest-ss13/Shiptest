@@ -406,7 +406,10 @@
 /obj/item/gun/ballistic/automatic/pistol/deagle/ctf
 	desc = "This looks like it could really hurt in melee."
 	force = 75
-	mag_type = /obj/item/ammo_box/magazine/m50/ctf
+	default_ammo_type = /obj/item/ammo_box/magazine/m50/ctf
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m50/ctf,
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/ctf/dropped()
 	. = ..()
@@ -432,7 +435,10 @@
 	. = ..()
 
 /obj/item/gun/ballistic/automatic/laser/ctf
-	mag_type = /obj/item/ammo_box/magazine/recharge/ctf
+	default_ammo_type = /obj/item/ammo_box/magazine/recharge/ctf
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/recharge/ctf,
+	)
 	desc = "This looks like it could really hurt in melee."
 	force = 50
 
@@ -480,7 +486,10 @@
 // RED TEAM GUNS
 
 /obj/item/gun/ballistic/automatic/laser/ctf/red
-	mag_type = /obj/item/ammo_box/magazine/recharge/ctf/red
+	default_ammo_type = /obj/item/ammo_box/magazine/recharge/ctf/red
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/recharge/ctf/red,
+	)
 
 /obj/item/ammo_box/magazine/recharge/ctf/red
 	ammo_type = /obj/item/ammo_casing/caseless/laser/ctf/red
@@ -495,7 +504,10 @@
 // BLUE TEAM GUNS
 
 /obj/item/gun/ballistic/automatic/laser/ctf/blue
-	mag_type = /obj/item/ammo_box/magazine/recharge/ctf/blue
+	default_ammo_type = /obj/item/ammo_box/magazine/recharge/ctf/blue
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/recharge/ctf/blue,
+	)
 
 /obj/item/ammo_box/magazine/recharge/ctf/blue
 	ammo_type = /obj/item/ammo_casing/caseless/laser/ctf/blue
@@ -578,7 +590,6 @@
 /datum/outfit/ctf/red/post_equip(mob/living/carbon/human/H)
 	..()
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_CTF_RED)
 	R.freqlock = TRUE
 	R.independent = TRUE
 	H.dna.species.stunmod = 0
@@ -586,7 +597,6 @@
 /datum/outfit/ctf/blue/post_equip(mob/living/carbon/human/H)
 	..()
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_CTF_BLUE)
 	R.freqlock = TRUE
 	R.independent = TRUE
 	H.dna.species.stunmod = 0

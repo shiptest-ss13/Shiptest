@@ -182,6 +182,13 @@
 	helmet_type = /obj/item/clothing/head/helmet/space/pilot/random
 	mask_type = /obj/item/clothing/mask/breath
 
+/obj/machinery/suit_storage_unit/minutemen
+	suit_type = /obj/item/clothing/suit/space/hardsuit/clip_patroller
+	mask_type = /obj/item/clothing/mask/breath
+
+/obj/machinery/suit_storage_unit/minutemen/spotter
+	suit_type = /obj/item/clothing/suit/space/hardsuit/clip_spotter
+
 //End shiptest suits
 
 /obj/machinery/suit_storage_unit/open
@@ -659,7 +666,7 @@
 		else if(istype(AM, /obj/item/mod/control) && !storage)
 			AM.forceMove(src)
 			mod = AM
-		else if(istype(AM, /obj/item) && !storage)
+		else if(istype(AM, /obj/item) && !AM.anchored && !storage)
 			AM.forceMove(src)
 			storage = AM
 	update_appearance()
