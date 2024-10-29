@@ -33,7 +33,7 @@
 //spooky items
 
 /obj/item/storage/spooky
-	name = "trick-o-treat bag"
+	name = "candy bag"
 	desc = "A pumpkin-shaped bag that holds all sorts of goodies!"
 	icon = 'icons/obj/halloween_items.dmi'
 	icon_state = "treatbag"
