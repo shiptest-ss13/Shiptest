@@ -32,7 +32,6 @@
 #define PRIDE_WEEK "Pride Week"
 #define MOTH_WEEK "Moth Week"
 
-#define IS_HALLOWEEN SSevents.holidays && SSevents.holidays[HALLOWEEN]
 /*
 
 Days of the week to make it easier to reference them.

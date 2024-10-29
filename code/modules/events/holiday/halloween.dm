@@ -51,7 +51,7 @@
 			/obj/item/reagent_containers/food/snacks/candy = 1,
 			/obj/item/reagent_containers/food/snacks/candiedapple = 1,
 			/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
-			/obj/item/reagent_containers/food/snacks/koerbalk = 10,
+			/obj/item/reagent_containers/food/drinks/bottle/koerbalk = 10,
 			/obj/item/reagent_containers/food/snacks/brextak = 10,
 			/obj/item/reagent_containers/food/snacks/sucrika = 10,
 		)
@@ -67,7 +67,7 @@
 	name = "plastic tooth armlet"
 
 /datum/supply_pack/civilian/mexapix
-	name = "Mexapix supplies
+	name = "Mexapix supplies"
 	desc = "Everything needed for a mexapix celerbration"
 	cost = 300
 	contains = list(
@@ -95,7 +95,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/koerbalk
 	name = "bottle of koerbalk"
-	list_regeants = list(/datum/reagent/consumable/ethanol/koerbalk)
+	list_reagents = list(/datum/reagent/consumable/ethanol/koerbalk)
 
 /obj/item/mixing_stick
 
