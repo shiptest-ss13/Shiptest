@@ -328,6 +328,22 @@
 		for(var/obj/item/Item in O)
 			Item.extinguish()
 
+/obj/structure/foamedmetal/forcewine
+	name = "resin"
+	desc = "It's rapidly decaying!"
+	opacity = FALSE
+	icon_state = "atmos_resin"
+	alpha = 120
+	max_integrity = 10
+	var/timeleft = 50
+
+/obj/structure/foamedmetal/forcewine/Initialize(mapload, new_timeleft)
+	. = ..()
+	if(new_timeleft)
+		timeleft = new_timeleft
+	if(timeleft)
+		QDEL_IN(src, timeleft)
+
 #undef ALUMINIUM_FOAM
 #undef IRON_FOAM
 #undef RESIN_FOAM

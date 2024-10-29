@@ -735,3 +735,6 @@
 
 ///sent when the access on an id is changed/updated, ensures wallets get updated once ids generate there access
 #define COSMIG_ACCESS_UPDATED "acces_updated"
+
+///sent by carbons to check if they can reflect a projectile
+#define COMSIG_CHECK_REFLECT "check_reflect"

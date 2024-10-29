@@ -305,10 +305,10 @@
 /datum/status_effect/trickwine/debuff/force/on_apply()
 	var/turf/turf = get_turf(owner)
 	var/turf/other_turf
-	new /obj/effect/forcefield/resin(turf, duration)
+	new /obj/structure/foamedmetal/forcewine(turf, duration)
 	for(var/direction in GLOB.cardinals)
 		other_turf = get_step(turf, direction)
-		new /obj/effect/forcefield/resin(other_turf, duration)
+		new /obj/structure/foamedmetal/forcewine(other_turf, duration)
 	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine
@@ -323,14 +323,16 @@
 	buff_effect = /datum/status_effect/trickwine/buff/prism
 	debuff_effect = /datum/status_effect/trickwine/debuff/prism
 
+#define MAX_REFLECTS 3
 /datum/status_effect/trickwine/buff/prism
 	id = "prism_wine_buff"
-	trait = TRAIT_REFLECTIVE
+	var/reflect_count = MAX_REFLECTS
 
 /datum/status_effect/trickwine/buff/prism/on_apply()
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 0.5
+	RegisterSignal(owner, COMSIG_CHECK_REFLECT, PROC_REF(on_check_reflect))
 	owner.visible_message(span_warning("[owner] seems to shimmer with power!"))
 	return ..()
 
@@ -338,18 +340,32 @@
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 2
+	UnregisterSignal(owner, COMSIG_CHECK_REFLECT)
 	owner.visible_message(span_warning("[owner] has returned to normal!"))
 	..()
+
+/datum/status_effect/trickwine/buff/prism/tick()
+	. = ..()
+	if(prob(25) && reflect_count < MAX_REFLECTS)
+		adjust_charge(1)
+		to_chat(owner, span_notice("Your resin sweat builds up another layer!"))
+
+/datum/status_effect/trickwine/buff/prism/proc/adjust_charge(change)
+	reflect_count = clamp(reflect_count + change, 0, MAX_REFLECTS)
+	owner.add_filter(id, 2, drop_shadow_filter(x = 0, y = -1, size = 1 + reflect_count, color = reagent_color))
+
+/datum/status_effect/trickwine/buff/prism/proc/on_check_reflect(mob/living/carbon/human/owner, def_zone)
+	SIGNAL_HANDLER
+	if(reflect_count > 0)
+		to_chat(owner, span_notice("Your resin sweat protects you!"))
+		adjust_charge(-1)
+		return TRUE
+#undef MAX_REFLECTS
 
 /datum/status_effect/trickwine/debuff/prism
 	id = "prism_wine_debuff"
 
 /datum/status_effect/trickwine/debuff/prism/on_apply()
-	/*
-	if(istype(owner, /mob/living/simple_animal))
-		var/mob/living/simple_animal/the_animal = owner
-		the_animal.armor.modifyRating(energy = -50)
-	*/
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 2
@@ -357,13 +373,10 @@
 	return ..()
 
 /datum/status_effect/trickwine/debuff/prism/on_remove()
-	/*
-	if(istype(owner, /mob/living/simple_animal))
-		var/mob/living/simple_animal/the_animal = owner
-		the_animal.armor.modifyRating(energy = 50)
-	*/
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 0.5
 		the_human.visible_message(span_warning("[the_human] has returned to normal!"))
 	..()
+
+
