@@ -281,3 +281,4 @@
 	icon_state = "inteq_gas_mask"
 	item_state = "inteq_gas_mask"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	supports_variations = KEPORI_VARIATION
