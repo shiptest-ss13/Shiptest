@@ -60,3 +60,7 @@
 /datum/faction/independent
 	name = FACTION_INDEPENDENT
 	prefixes = list("SV", "IMV", "ISV")
+
+/datum/faction/ramzi
+	name = FACTION_RAMZI
+	prefixes = list("SV", "ISV")

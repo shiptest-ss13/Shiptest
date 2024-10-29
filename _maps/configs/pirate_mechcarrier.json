@@ -1,0 +1,26 @@
+	{
+		"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Malta-class Converted Mechcarrier",
+	"faction": "/datum/faction/ramzi",
+	"prefix": "ISV",
+	"namelists": ["BEASTS", "PIRATES", "MERCANTILE"],
+	"map_short_name": "Malta-class",
+	"map_path": "_maps/shuttles/pirate/pirate_mechcarrier.dmm",
+	"description": "A former cargo hauler redesigned as a Ramzi Clique strike craft and troop carrier, the Malta-class features a speedy dropship, a large armory and a well-appointed mech bay complete with a converted cargo mech with weaponry. This Hardline ship is well-suited to smash-and-grabs against unsuspecting vessels, as well as standing toe-to-toe with professional military and mercenary elements in sector.",
+	"tags": [
+		"Robotics",
+		"Specialist",
+		"Riot",
+		"Combat",
+		"Subshuttle"
+	],
+	"limit": 1,
+	"job_slots": {
+		"Captain":{
+			"outfit": "/datum/outfit/job/captain/pirate",
+			"officer": true,
+			"slots": 1
+		}
+	},
+	"enabled": false
+	}
