@@ -18,7 +18,6 @@
 	if(visualsOnly)
 		return
 	H.faction |= list(FACTION_PLAYER_MINUTEMAN)
-	H.grant_language(/datum/language/draconic/clip)
 /* 	if(selectable_alt_titles)
 		var/selection = input(H, "Select an alternative name for your role.", "Job Title", alt_title) as null|anything in selectable_alt_titles)
 	if(!selection)
