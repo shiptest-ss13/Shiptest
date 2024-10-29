@@ -43,7 +43,7 @@
 
 /obj/item/reagent_containers/food/snacks/candy_corn
 	name = "candy corn"
-	desc = "It's a handful of candy corn. Can be stored in a detective's hat."
+	desc = "It's a handful of candy corn. Originating from Solarian culture but also popular for the Kalixican Mexapix for its resemblese to teeth."
 	icon_state = "candy_corn"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sugar = 2)
 	filling_color = "#FF8C00"
@@ -51,14 +51,6 @@
 	foodtype = JUNKFOOD | SUGAR
 	/*food_flags = FOOD_FINGER_FOOD*/
 	w_class = WEIGHT_CLASS_TINY
-
-/obj/item/reagent_containers/food/snacks/candy_corn/prison
-	name = "desiccated candy corn"
-	desc = "If this candy corn were any harder Security would confiscate it for being a potential shiv."
-	force = 1 // the description isn't lying
-	throwforce = 1 // if someone manages to bust out of jail with candy corn god bless them
-	tastes = list("bitter wax" = 1)
-	foodtype = GROSS
 
 /obj/item/reagent_containers/food/snacks/chocolatebar
 	name = "chocolate bar"

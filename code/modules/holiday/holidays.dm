@@ -386,7 +386,7 @@
 	end_month = NOVEMBER
 
 /datum/holiday/halloween/greet()
-	return "Have a spooky Halloween and <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Mexapix!</a>"
+	return "Have a spooky Halloween! In-universe, enjoy your <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Mexapix</a> and Dia de Los Muertos."
 
 /datum/holiday/halloween/getStationPrefix()
 	return pick("Bone-Rattling","Mr. Bones' Own","2SPOOKY","Spooky","Scary","Skeletons")
