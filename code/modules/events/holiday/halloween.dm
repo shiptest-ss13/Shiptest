@@ -12,7 +12,7 @@
 		var/mob/living/carbon/human/H = i
 		var/obj/item/storage/backpack/b = locate() in H.contents
 		if(b)
-			new /obj/item/storage/spooky(b)
+			new /obj/item/storage/mexapix_candy(b)
 
 /datum/round_event/spooky/announce(fake)
 	priority_announce(pick("RATTLE ME BONES!","THE RIDE NEVER ENDS!", "A SKELETON POPS OUT!", "SPOOKY SCARY SKELETONS!", "CREWMEMBERS BEWARE, YOU'RE IN FOR A SCARE!") , "THE CALL IS COMING FROM INSIDE THE HOUSE")
@@ -30,18 +30,19 @@
 	icon = 'icons/obj/halloween_items.dmi'
 	icon_state = "coffincookie"
 
-//spooky items
+// Mexapix
+/obj/item/storage/mexapix_candy
+	name = "mexapix bag"
+	desc = "A bag with a random assorment of treats to celebrate Mexapix!"
+	icon_state = "paperbag_None_closed"
 
-/obj/item/storage/spooky
-	name = "candy bag"
-	desc = "A pumpkin-shaped bag that holds all sorts of goodies!"
-	icon = 'icons/obj/halloween_items.dmi'
-	icon_state = "treatbag"
-
-/obj/item/storage/spooky/Initialize()
+/obj/item/storage/mexapix_candy/Initialize()
 	. = ..()
-	for(var/distrobuteinbag in 0 to 5)
-		var/type = pick(
+	new /obj/effect/spawner/random/food_or_drink/mexapix(src)
+
+/obj/effect/spawner/random/food_or_drink/mexapix
+	spawn_loot_count = 6
+	loot = list(
 			/obj/item/reagent_containers/food/snacks/sugarcookie/spookyskull,
 			/obj/item/reagent_containers/food/snacks/sugarcookie/spookycoffin,
 			/obj/item/reagent_containers/food/snacks/candy_corn,
@@ -49,4 +50,34 @@
 			/obj/item/reagent_containers/food/snacks/candiedapple,
 			/obj/item/reagent_containers/food/snacks/chocolatebar,
 		)
-		new type(src)
+
+/obj/item/clothing/accessory/tooth_armlet
+	name = "tooth armlet"
+	desc = "One of the customary worn items of Mexapix are strings of teeth, made from the wearer's shedded teeth (if they are a Sarathi) or, more recently, plastic (if they are an Elzuosa) and worn on the neck or wrist."
+	icon_state = "bone_armlet"
+	attachment_slot = ARMS
+	above_suit = TRUE
+
+/obj/item/clothing/accessory/tooth_armlet/plastic
+	name = "plastic tooth armlet"
+
+/datum/supply_pack/civilian/mexapix
+	name = "Mexapix supplies
+	desc = "Everything needed for a mexapix celerbration"
+	cost = 300
+	contains = list(
+		/obj/item/clothing/accessory/tooth_armlet/plastic,
+		/obj/item/clothing/accessory/tooth_armlet/plastic,
+		/obj/item/clothing/accessory/tooth_armlet/plastic,
+		/obj/item/storage/mexapix_candy,
+		/obj/item/storage/mexapix_candy,
+		/obj/item/storage/mexapix_candy,
+	)
+
+/obj/item/bodybag/arxas
+	name = "arxas"
+	desc = "used to collect leaf"
+
+/obj/item/leaves
+	name = "a pile of loose leaves"
+	w_class = BULKY

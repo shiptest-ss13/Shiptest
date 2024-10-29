@@ -53,6 +53,7 @@
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 	var/datum/action/innate/root/rooting
+	var/particles/elzouse_leaves/leaves
 
 /datum/species/elzuose/Destroy(force)
 	if(ethereal_light)
@@ -79,6 +80,9 @@
 		if(BP.limb_id == SPECIES_ELZUOSE)
 			BP.update_limb(is_creating = TRUE)
 
+	leaves = new
+	leaves.color = _carbon.dna.features["ethcolor"]
+
 /datum/species/elzuose/on_species_loss(mob/living/carbon/human/_carbon, datum/species/new_species, pref_load)
 	UnregisterSignal(_carbon, COMSIG_ATOM_EMP_ACT)
 	UnregisterSignal(_carbon, COMSIG_DIGOUT)
@@ -86,6 +90,7 @@
 	QDEL_NULL(ethereal_light)
 	if(rooting)
 		rooting.Remove(_carbon)
+	QDEL_NULL(leaves)
 	return ..()
 
 /datum/action/innate/root

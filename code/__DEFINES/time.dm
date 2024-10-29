@@ -24,7 +24,7 @@
 #define VALENTINES "Valentine's Day"
 #define APRIL_FOOLS "April Fool's Day"
 #define EASTER "Easter"
-#define HALLOWEEN "Halloween"
+#define HALLOWEEN "Mexapix"
 #define CHRISTMAS "Christmas"
 #define FESTIVE_SEASON "Festive Season"
 #define GARBAGEDAY "Garbage Day"
