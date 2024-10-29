@@ -459,7 +459,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 
 /atom/movable/screen/alert/lowcell
 	name = "Low Charge"
-	desc = "Unit's power cell is running low. All modules will be disabled soon unless recharged."
+	desc = "Unit's power cell is running low. All modules may be disabled soon unless recharged."
 	icon_state = "lowcell"
 
 //Ethereal
