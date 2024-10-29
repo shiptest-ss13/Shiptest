@@ -9,7 +9,7 @@
 	boozepwr = 80
 	quality = DRINK_VERYGOOD
 	taste_description = "a rustic fruit, with hints of sweet yet tangy ash."
-	glass_name = "Ashwine"
+	glass_name = "Wine Of Ash"
 	glass_desc = "A traditional sacrament for members of the Saint-Roumain Militia. Believed to grant visions, seeing use both in ritual and entertainment within the Militia."
 	breakaway_flask_icon_state = "baflaskashwine"
 
@@ -34,20 +34,20 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine
-	name = "Icewine"
+	name = "Wine Of Ice"
 	description = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
 	color = "#C0F1EE"
 	boozepwr = 70
 	taste_description = "a weighty meat, undercut by a mild pepper."
-	glass_name = "Icewine"
+	glass_name = "Wine Of Ice"
 	glass_desc = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
 	breakaway_flask_icon_state = "baflaskicewine"
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjustFireLoss(-0.25)
 	if(prob(10))
 		to_chat(M, span_notice("Sweat runs down your body."))
-		M.adjustFireLoss(-0.5)
 	return ..()
 
 
