@@ -78,8 +78,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|GROIN
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/suit/armor/gezena/marine_parade
 	name = "formal army coat"
@@ -304,7 +305,7 @@
 	item_state = "marine_hardsuit"
 	hardsuit_type = "marine_hardsuit"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
-	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/gezena
 	jetpack = /obj/item/tank/jetpack/suit
 	supports_variations = DIGITIGRADE_VARIATION

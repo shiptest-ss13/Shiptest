@@ -419,7 +419,7 @@
 /obj/structure/sign/poster/contraband/pgf
 	name = "PGF Marine"
 	desc = "This poster depicts a PGF marine with a E-40. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
-	icon_state = "poster_pgf"
+	icon_state = "poster-pgf_powerarmor"
 
 /obj/structure/sign/poster/contraband/free_drone
 	name = "Free Drone"
