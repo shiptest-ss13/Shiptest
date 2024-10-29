@@ -40,13 +40,22 @@
 	spawn_loot_count = 5
 	loot = list(
 			/obj/item/reagent_containers/food/snacks/sucrika = 10,
-			/obj/effect/spawner/random/entertainment/wallet_storage = 2,
+			/obj/effect/spawner/random/entertainment/mexapix_trinkets = 2,
 			/obj/item/reagent_containers/food/snacks/sugarcookie/spookyskull = 1,
 			/obj/item/reagent_containers/food/snacks/candy_corn = 1,
 			/obj/item/reagent_containers/food/snacks/candy = 1,
 			/obj/item/reagent_containers/food/snacks/candiedapple = 1,
 			/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
 		)
+
+/obj/effect/spawner/random/entertainment/mexapix_trinkets
+	spawn_loot_count = 1
+	loot = list(
+		/obj/effect/spawner/random/entertainment/coin,
+		/obj/effect/spawner/random/entertainment/dice,
+		/obj/effect/spawner/random/entertainment/toy
+	)
+
 
 /obj/item/clothing/accessory/tooth_armlet
 	name = "tooth armlet"
@@ -95,7 +104,6 @@
 	icon_state = "grass-harvest"
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	custom_materials = list(/datum/material/wood = 50, /datum/material/biomass = 50)
-	w_class = WEIGHT_CLASS_BULKY
 
 /datum/reagent/consumable/ethanol/koerbalk
 	name = "koerbalk"
@@ -129,10 +137,10 @@
 	name = "koerbalk mixing stick"
 	icon = 'icons/obj/halloween_items.dmi'
 	icon_state = "mixstick_sugar_white"
-	mob_overlay_icon = "candyoff"
+	item_state = "lollipop_stick"
 	desc = "Encrusted in sugar."
 	list_reagents = list(/datum/reagent/consumable/sugar = 10)
-	custom_materials = list(/datum/material/wood=20)
+	custom_materials = list(/datum/material/wood = 20)
 	foodtype = SUGAR
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
