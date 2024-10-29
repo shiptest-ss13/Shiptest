@@ -18,6 +18,13 @@
 	suffix = "whitesands_surface_pubbyslopcrash.dmm"
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
 
+/datum/map_template/ruin/whitesands/cave_base
+	name = "Abandoned Cave Base"
+	id = "cave_base"
+	description = "The former home of a poor sod on observation duty. Now a cunning trap."
+	suffix = "whitesands_cave_base.dmm"
+	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/whitesands/survivors/saloon
 	name = "Hermit Saloon"
@@ -34,3 +41,9 @@
 	allow_duplicates = FALSE
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_INHOSPITABLE, RUIN_TAG_HAZARDOUS)
 
+/datum/map_template/ruin/whitesands/e11_manufactory
+	name = "E-11 Manufacturing Plant"
+	id = "ws-e11manufactory"
+	description = "An old Eoehoma Firearms manufacturing plant dedicated to assembly of the beloved-by-many E-11 rifle."
+	suffix = "whitesands_surface_e11_manufactory.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_HAZARDOUS)
