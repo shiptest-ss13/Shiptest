@@ -252,7 +252,7 @@
 
 /datum/blackmarket_item/ammo/c38hotshot
 	name = ".38 Hearth Ammo Box"
-	desc = "We got our ship cook to marinade some .38 in some hearthwine we pocketed off some hunters. It'll cook your targets to a nice well done."
+	desc = "We got our ship cook to marinade some .38 in some hearthflame we pocketed off some hunters. It'll cook your targets to a nice well done."
 	item = /obj/item/ammo_box/c38/hotshot
 
 	price_min = 300
@@ -263,7 +263,7 @@
 
 /datum/blackmarket_item/ammo/c38iceblox
 	name = ".38 Chilled Ammo Box"
-	desc = "One of our runners accidentally spilled some .38 into a fucking pristine icewine shipment. It'll freeze your targets faster than our runner froze solid outside for making a mess."
+	desc = "One of our runners accidentally spilled some .38 into a fucking pristine wine of ice shipment. It'll freeze your targets faster than our runner froze solid outside for making a mess."
 	item = /obj/item/ammo_box/c38/iceblox
 
 	price_min = 300
