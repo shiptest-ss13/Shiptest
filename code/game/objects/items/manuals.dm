@@ -240,10 +240,10 @@
 			</html>"}
 
 /obj/item/book/manual/trickwines_4_brewers
-	name = ""
+	name = "Ashen Brewing"
 	icon_state = "book2"
 	author = "Amarasatsu ke Qazawat"
-	title = ""
+	title = "Ashen Brewing"
 	dat = {"<html>
 			<head>
 			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
