@@ -7,7 +7,7 @@
 	speak_chance = 0
 	speak_emote = list("yarrs")
 	loot = list(/obj/effect/mob_spawn/human/corpse/pirate,
-			/obj/item/melee/transforming/energy/sword/saber/pirate)
+			/obj/item/melee/energy/sword/saber/pirate)
 	faction = list("pirate")
 
 /mob/living/simple_animal/hostile/human/pirate/melee

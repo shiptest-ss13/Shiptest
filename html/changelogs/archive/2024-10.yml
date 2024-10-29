@@ -360,3 +360,78 @@
   - bugfix: fixed the orbit menu search function so that names work again
   - rscadd: Added plastitanium shards
   - bugfix: fixed some artifacts in the plasma glass shard sprites
+2024-10-26:
+  FalloutFalcon:
+  - rscadd: Faction statistics are now logged to the blackbox
+  - rscdel: Removes some cruft, red and blue team radios, out date/useless database
+      logging station trash cleaned
+  MarkSuckerberg:
+  - server: qdel logs work again
+2024-10-27:
+  Anticept:
+  - refactor: Refactored moods so explicit newlines are not required in descriptions.
+      None of this changes player facing stuff.
+  'Apogeesys, Ryerice, Erikafox ':
+  - rscadd: Serene Outdoors has begun a new production run of its classics - the Model
+      17, Model 12, Model 15, and Model 11
+  - rscdel: old combat shotgun
+  Erika - porting from /tg/ mostly.:
+  - rscadd: Tape Recorders now have a radial menu when used
+  - rscadd: Tape recorders now make noises
+  - rscadd: Tape recorders now have wires (can be remotely used)
+  Erikafox:
+  - balance: Hammer RPGs should no longer annihilate you completely. Just partially.
+  - bugfix: Weapons with no bolt can no longer be racked. Use your hand on them instead
+  - rscadd: Transceivers have been picking up an intermittent radio signal coming
+      from a nearby sand world. People with too much spare time - please check it
+      out.
+  - rscadd: Satchel Charges. Exceedingly rare and decently explosive.
+  - balance: Chances are, if there was a plasma cutter on a ship, it's an angle grinder
+      now. Rejoice. Cry in terror. Whatever honestly.
+  - balance: Angle grinders can now grind blast doors. reinforced windows are now
+      less bad to grind down.
+  - balance: angle grinder packs now slow you down less
+  - balance: angle grinders now sound less Screechy
+  - balance: angle grinders can now be safely used with a Bowman headset.
+  Sadhorizon:
+  - rscadd: All the inteq ships (and the beluga inteq office) now start with a rail
+      light for every gun.
+  - tweak: Rail light crate now costs 100 credits.
+  - rscadd: Added the Scarab-class Heavy Mining Ship
+  Sun-Soaked:
+  - bugfix: cleans up 3 potentially sticky refs
+  - bugfix: limb items no longer runtime when moved or dropped
+  - bugfix: vox blood & body damage overlays.
+  - imageadd: something something fixed vox overlays countless hours of work
+  - code_imp: replaced a horrifying var reference in clothing with a weakref
+  - code_imp: the thresholds for limb damage sprites have been reduced
+  - refactor: reworks clothing blood overlay into a central proc called by clothing
+  generalthrax:
+  - balance: Reloading speed from stacks doubled
+  - balance: Increase ammo can to bulky and lets it hold 4 normal-sized ammoboxes,
+      can only hold ammo and explosives.
+  - balance: Adjusted price of .299 Eoehoma slightly, adds a second box to the cargo
+      order since its 60 instead of 120
+  - bugfix: Fixes a bunch of bullet stacks to have correct numbers
+  - bugfix: Larger handfuls (.22lr)
+  - bugfix: Mapped in ammo cans now hold their boxes
+  - bugfix: 12g beanbag now has beanbag instead of rubber + beanbag
+  - bugfix: Ammo box icons and descriptions
+  - rscdel: Removed .22lr from the blackmarket. Its in cargo already.
+  zimon9:
+  - rscadd: Added better names for some material shards
+  - rscadd: Added ability to see screens using the examine_more function
+2024-10-28:
+  Sadhorizon:
+  - rscadd: A new sand ruin - the E-11 Manufacturing Plant - and associated code.
+  - rscadd: A purple hardhat.
+2024-10-29:
+  FalloutFalcon:
+  - rscdel: Removed some ancient away mission cruft
+  - code_imp: flaky tests can now comment under its own prs.
+  FalloutFalcon, Melbert:
+  - refactor: transforming weapons are easier to add
+  MarkSuckerberg:
+  - server: Logs a few more stats for use in the Statbus at https://shiptest.net/stats
+  thgvr:
+  - imageadd: Updated world icons for knives
