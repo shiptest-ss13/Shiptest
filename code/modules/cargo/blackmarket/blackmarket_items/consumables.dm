@@ -69,19 +69,21 @@
 	desc = "The SRM keeps the recipes for their trickwines a closely guarded secret. The Hunters carrying those bottles? Less so."
 	item = /datum/reagent/consumable/ethanol/trickwine/ash_wine
 
-	price_min = 200
+	price_min = 300
 	price_max = 600
 	stock_min = 3
 	stock_max = 7
-	availability_prob = 40
+	availability_prob = 30
 
 /datum/blackmarket_item/consumable/trickwine/spawn_item(loc)
-	var/trickwine = pick(list(/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
-						/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine,
-						/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine,
-						/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine,
-						/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine,
-						/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine))
+	var/trickwine = pick(list(
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine,
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine,
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine,
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine,
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine
+	))
 	return new trickwine(loc)
 
 /datum/blackmarket_item/consumable/stimpack

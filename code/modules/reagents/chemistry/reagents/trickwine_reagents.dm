@@ -327,12 +327,14 @@
 /datum/status_effect/trickwine/buff/prism
 	id = "prism_wine_buff"
 	var/reflect_count = MAX_REFLECTS
+	var/recent_movement = FALSE
 
 /datum/status_effect/trickwine/buff/prism/on_apply()
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 0.5
 	RegisterSignal(owner, COMSIG_CHECK_REFLECT, PROC_REF(on_check_reflect))
+	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 	owner.visible_message(span_warning("[owner] seems to shimmer with power!"))
 	return ..()
 
@@ -340,15 +342,16 @@
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 2
-	UnregisterSignal(owner, COMSIG_CHECK_REFLECT)
+	UnregisterSignal(owner, list(COMSIG_CHECK_REFLECT, COMSIG_MOVABLE_MOVED))
 	owner.visible_message(span_warning("[owner] has returned to normal!"))
 	..()
 
 /datum/status_effect/trickwine/buff/prism/tick()
 	. = ..()
-	if(prob(25) && reflect_count < MAX_REFLECTS)
+	if(prob(50) && reflect_count < MAX_REFLECTS && recent_movement)
 		adjust_charge(1)
 		to_chat(owner, span_notice("Your resin sweat builds up another layer!"))
+	recent_movement = FALSE
 
 /datum/status_effect/trickwine/buff/prism/proc/adjust_charge(change)
 	reflect_count = clamp(reflect_count + change, 0, MAX_REFLECTS)
@@ -360,23 +363,27 @@
 		to_chat(owner, span_notice("Your resin sweat protects you!"))
 		adjust_charge(-1)
 		return TRUE
+
+// The idea is that its a resin made of sweat, therfore stay moving
+/datum/status_effect/trickwine/buff/prism/proc/on_move()
+	recent_movement = TRUE
 #undef MAX_REFLECTS
 
 /datum/status_effect/trickwine/debuff/prism
 	id = "prism_wine_debuff"
+	message_apply_others = " seems weakend!"
+	message_remove_others = " has returned to normal!"
 
 /datum/status_effect/trickwine/debuff/prism/on_apply()
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 2
-		the_human.visible_message(span_warning("[the_human] seems weakened!"))
 	return ..()
 
 /datum/status_effect/trickwine/debuff/prism/on_remove()
 	if(ishuman(owner))
 		var/mob/living/carbon/human/the_human = owner
 		the_human.physiology.burn_mod *= 0.5
-		the_human.visible_message(span_warning("[the_human] has returned to normal!"))
 	..()
 
 
