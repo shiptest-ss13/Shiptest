@@ -345,7 +345,7 @@
 			var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 			if(backpack)
 				new /obj/item/storage/mexapix_candy(backpack)
-				if(islizard(humanc.dna.species))
+				if(islizard(humanc))
 					new /obj/item/clothing/accessory/tooth_armlet(backpack)
 				else
 					new /obj/item/clothing/accessory/tooth_armlet/plastic(backpack)

@@ -27,12 +27,6 @@
 	icon = 'icons/obj/halloween_items.dmi'
 	icon_state = "skeletoncookie"
 
-/obj/item/reagent_containers/food/snacks/sugarcookie/spookycoffin
-	name = "coffin cookie"
-	desc = "Spooky! It's got delicious coffee flavouring!"
-	icon = 'icons/obj/halloween_items.dmi'
-	icon_state = "coffincookie"
-
 /obj/item/storage/mexapix_candy
 	name = "folded arxa"
 	desc = "A bag with a random assorment of treats to celebrate Mexapix!"
@@ -48,7 +42,6 @@
 			/obj/item/reagent_containers/food/snacks/sucrika = 10,
 			/obj/effect/spawner/random/entertainment/wallet_storage = 2,
 			/obj/item/reagent_containers/food/snacks/sugarcookie/spookyskull = 1,
-			/obj/item/reagent_containers/food/snacks/sugarcookie/spookycoffin = 1,
 			/obj/item/reagent_containers/food/snacks/candy_corn = 1,
 			/obj/item/reagent_containers/food/snacks/candy = 1,
 			/obj/item/reagent_containers/food/snacks/candiedapple = 1,
@@ -58,18 +51,29 @@
 /obj/item/clothing/accessory/tooth_armlet
 	name = "tooth armlet"
 	desc = "One of the customary worn items of Mexapix are strings of teeth, made from the wearer's shedded teeth (if they are a Sarathi) or, more recently, plastic (if they are an Elzuosa) and worn on the neck or wrist."
-	icon_state = "bone_armlet"
+	icon_state = "tooth_armlet"
+	icon = 'icons/obj/halloween_items.dmi'
 	attachment_slot = ARMS
 	above_suit = TRUE
 	var/painted_color
 
 /obj/item/clothing/accessory/tooth_armlet/Initialize()
 	. = ..()
-	painted_color = pick(list("warm colors, indicating a desire for safety from the cold", "blue and gold, signifying a desire for good financial fortune"))
-	desc += "<br>They are painted in [painted_color]"
+	painted_color = pick(list("warm colors", "blue and gold"))
+	desc += "<br>They are painted in "
+	switch(painted_color)
+		if("warm colors")
+			name = "warm painted [name]"
+			desc += "warm colors, indicating a desire for safety from the cold"
+			icon_state += "_warm"
+		if("blue and gold")
+			name = "gold and blue painted [name]"
+			desc += "blue and gold, signifying a desire for good financial fortune"
+			icon_state += "_gold"
 
 /obj/item/clothing/accessory/tooth_armlet/plastic
 	name = "plastic tooth armlet"
+	icon_state = "plastic_armlet"
 
 /datum/supply_pack/civilian/mexapix
 	name = "Mexapix supplies"
@@ -95,14 +99,14 @@
 
 /datum/reagent/consumable/ethanol/koerbalk
 	name = "koerbalk"
-	taste_description = "fermented nuts"
+	taste_description = "fermented indigenous nuts and herbs"
 	boozepwr = 5
 
 /obj/item/reagent_containers/food/drinks/bottle/koerbalk
 	name = "bottle of koerbalk"
 	desc = "A bottle of koerbalk produced by a CLIP firm."
-	icon_state = "nog2"
-	list_reagents = list(/datum/reagent/consumable/ethanol/koerbalk)
+	icon_state = "mintbottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/koerbalk = 50)
 	var/mixing_sticks_left = 5
 
 /obj/item/reagent_containers/food/drinks/bottle/koerbalk/examine(mob/user)
@@ -115,13 +119,17 @@
 	if(isliving(user) && in_range(src, user))
 		if(mixing_sticks_left > 0)
 			mixing_sticks_left--
-			to_chat(user, "You pull off a suger encrusted stick from the side of [src]")
-			new /obj/item/reagent_containers/food/snacks/chewable/mixing_stick(loc)
+			to_chat(user, "You pull off a suger encrusted stick from the side of [src].")
+			var/turf/local_turf = get_turf(src)
+			var/obj/item/reagent_containers/food/snacks/chewable/mixing_stick/pulled_stick = new(local_turf)
+			if(!user.put_in_hands(pulled_stick))
+				to_chat(user, "You fumble as [pulled_stick] falls to the ground.")
 
 /obj/item/reagent_containers/food/snacks/chewable/mixing_stick
 	name = "koerbalk mixing stick"
-	icon = 'icons/obj/food/frozen_treats.dmi'
-	icon_state = "popsicle_stick"
+	icon = 'icons/obj/halloween_items.dmi'
+	icon_state = "mixstick_sugar_white"
+	mob_overlay_icon = "candyoff"
 	desc = "Encrusted in sugar."
 	list_reagents = list(/datum/reagent/consumable/sugar = 10)
 	custom_materials = list(/datum/material/wood=20)
@@ -148,6 +156,6 @@
 	icon = 'icons/obj/halloween_items.dmi'
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 2)
 	filling_color = "#FF8C00"
-	tastes = list("candy corn" = 1)
+	tastes = list("nuts" = 1, "dried fruits" = 1)
 	foodtype = FRUIT | SUGAR
 	w_class = WEIGHT_CLASS_TINY
