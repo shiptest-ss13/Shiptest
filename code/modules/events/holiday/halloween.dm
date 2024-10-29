@@ -49,13 +49,11 @@
 		)
 
 /obj/effect/spawner/random/entertainment/mexapix_trinkets
-	spawn_loot_count = 1
 	loot = list(
 		/obj/effect/spawner/random/entertainment/coin,
 		/obj/effect/spawner/random/entertainment/dice,
 		/obj/effect/spawner/random/entertainment/toy
 	)
-
 
 /obj/item/clothing/accessory/tooth_armlet
 	name = "tooth armlet"
@@ -145,17 +143,71 @@
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 
+/datum/crafting_recipe/food/brextak
+	name = "Brextak"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meat = 5,
+		/obj/item/reagent_containers/food/snacks/grown = 5,
+		/datum/reagent/consumable/ethanol/wine = 10
+	)
+	result = /obj/item/reagent_containers/food/brextak_uncooked
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/brextak_big
+	name = "Communal Brextak"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meat = 20,
+		/obj/item/reagent_containers/food/snacks/grown = 20,
+		/datum/reagent/consumable/ethanol/wine = 40
+	)
+	result = /obj/item/reagent_containers/food/brextak_uncooked/big
+	subcategory = CAT_MEAT
+
 /obj/item/reagent_containers/food/snacks/brextak
 	name = "brextak"
 	desc = "A slow-roasted dish prepared with red meat, wine and various root vegetables in a ceramic dish over low heat for several hours."
-	icon_state = "fishandchips"
+	icon_state = "shepherds_pie"
+	icon = 'icons/obj/halloween_items.dmi'
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 5)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 50)
+	slice_path = /obj/item/reagent_containers/food/snacks/brextak/slice
+	slices_num = 5
 	filling_color = "#FA8072"
 	tastes = list("mexapix" = 1)
 	foodtype = MEAT | VEGETABLES | ALCOHOL
+	resistance_flags = FIRE_PROOF
+
+/obj/item/reagent_containers/food/brextak_uncooked
+	name = "uncooked brextak"
+	icon_state = "shepherds_pie"
+	icon = 'icons/obj/halloween_items.dmi'
+	list_reagents = list()
+	foodtype = RAW
+	var/obj/item/cooked_type = /obj/item/reagent_containers/food/snacks/brextak
+
+/obj/item/reagent_containers/food/brextak_uncooked/burn()
+	visible_message(span_notice("[src] finishes cooking!"))
+	new cooked_type(loc)
+	qdel(src)
 
 /obj/item/reagent_containers/food/snacks/brextak/big
+	name = "communal brextak"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 150)
+	slices_num = 20
+	w_class = WEIGHT_CLASS_BULKY
+	bitesize = 20
+	volume = 200
+
+/obj/item/reagent_containers/food/brextak_uncooked/big
+	name = "uncooked communal brextak"
+	cooked_type = /obj/item/reagent_containers/food/snacks/brextak/big
+
+/obj/item/reagent_containers/food/snacks/brextak/slice
+	name = "slice of brextak"
+	icon_state = "shepherds_pie_slice"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
+	slice_path = null
+	resistance_flags = NONE
 
 /obj/item/reagent_containers/food/snacks/sucrika
 	name = "sucrika"
@@ -167,3 +219,20 @@
 	tastes = list("nuts" = 1, "dried fruits" = 1)
 	foodtype = FRUIT | SUGAR
 	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/storage/box/ingredients/one_large_brextak
+	theme_name = "wildcard"
+
+/obj/item/storage/box/ingredients/one_large_brextak/PopulateContents()
+	for(var/i in 1 to 20)
+		var/randomFood = pick(
+			/obj/item/reagent_containers/food/snacks/grown/chili,
+			/obj/item/reagent_containers/food/snacks/grown/tomato,
+			/obj/item/reagent_containers/food/snacks/grown/carrot)
+		new randomFood(src)
+	for(var/i in 1 to 20)
+		var/randomFood = pick(
+			/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
+			/obj/item/reagent_containers/food/snacks/meat/slab/bear)
+		new randomFood(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/wine(src)
