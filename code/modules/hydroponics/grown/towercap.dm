@@ -210,7 +210,7 @@
 		if(fuel_amount)
 			to_chat(user, span_notice("You begin adding the [W] as fuel."))
 			if(do_after(user, 3 SECONDS, src))
-				adjust_fuel(fuel_amount * SECONDS)
+				adjust_fuel(fuel_amount SECONDS)
 				qdel(W)
 				return
 	if(grill)
