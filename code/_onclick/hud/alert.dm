@@ -459,14 +459,14 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 
 /atom/movable/screen/alert/lowcell
 	name = "Low Charge"
-	desc = "Unit's power cell is running low."
+	desc = "Unit's power cell is running low. All modules will be disabled soon unless recharged."
 	icon_state = "lowcell"
 
 //Ethereal
 
 /atom/movable/screen/alert/etherealcharge
 	name = "Low Blood Charge"
-	desc = "Your blood's electric charge is running low, find a source of charge for your blood. Use a recharging station, or eat some Elzuosa-friendly food."
+	desc = "Your blood's electric charge is running low, find a source of charge for your blood. Use a recharging station, or eat some Elzuose-friendly food."
 	icon_state = "etherealcharge"
 
 /atom/movable/screen/alert/ethereal_overcharge
