@@ -17,13 +17,13 @@
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
 
-	var/particle_emitter = /obj/effect/particle_emitter/lava
+	var/obj/effect/particle_emitter = /obj/effect/particle_emitter/lava
 	/// Whether the lava has been dug with hellstone found successfully
 	var/is_mined = FALSE
 
 /turf/open/lava/Initialize(mapload)
 	. = ..()
-	particle_emitter = new /obj/effect/particle_emitter/lava(src)
+	particle_emitter = new particle_emitter(src)
 	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_LAVALAND_LAVA)
 
 /turf/open/lava/Destroy()
@@ -219,14 +219,6 @@
 
 /turf/open/lava/smooth/airless
 	initial_gas_mix = AIRLESS_ATMOS
-
-/obj/effect/particle_holder
-	name = ""
-	anchored = TRUE
-	mouse_opacity = 0
-
-/obj/effect/particle_emitter/Initialize(mapload, time)
-	. = ..()
 
 /obj/effect/particle_emitter/lava
 	particles = new/particles/embers/lava

@@ -34,7 +34,7 @@
 	icon_state = "coffincookie"
 
 /obj/item/storage/mexapix_candy
-	name = "mexapix bag"
+	name = "folded arxa"
 	desc = "A bag with a random assorment of treats to celebrate Mexapix!"
 	icon_state = "paperbag_None_closed"
 
@@ -43,15 +43,16 @@
 	new /obj/effect/spawner/random/food_or_drink/mexapix(src)
 
 /obj/effect/spawner/random/food_or_drink/mexapix
-	spawn_loot_count = 6
+	spawn_loot_count = 5
 	loot = list(
+			/obj/item/reagent_containers/food/snacks/sucrika = 10,
+			/obj/effect/spawner/random/entertainment/wallet_storage = 2,
 			/obj/item/reagent_containers/food/snacks/sugarcookie/spookyskull = 1,
 			/obj/item/reagent_containers/food/snacks/sugarcookie/spookycoffin = 1,
 			/obj/item/reagent_containers/food/snacks/candy_corn = 1,
 			/obj/item/reagent_containers/food/snacks/candy = 1,
 			/obj/item/reagent_containers/food/snacks/candiedapple = 1,
 			/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
-			/obj/item/reagent_containers/food/snacks/sucrika = 20,
 		)
 
 /obj/item/clothing/accessory/tooth_armlet
@@ -60,6 +61,12 @@
 	icon_state = "bone_armlet"
 	attachment_slot = ARMS
 	above_suit = TRUE
+	var/painted_color
+
+/obj/item/clothing/accessory/tooth_armlet/Initialize()
+	. = ..()
+	painted_color = pick(list("warm colors, indicating a desire for safety from the cold", "blue and gold, signifying a desire for good financial fortune"))
+	desc += "<br>They are painted in [painted_color]"
 
 /obj/item/clothing/accessory/tooth_armlet/plastic
 	name = "plastic tooth armlet"
@@ -79,28 +86,28 @@
 		/obj/item/reagent_containers/food/drinks/bottle/koerbalk,
 	)
 
-/obj/item/bodybag/arxas
-	name = "arxas"
-	desc = "used to collect leaf"
-
 /obj/item/leaves
 	name = "a pile of loose leaves"
+	icon_state = "grass-harvest"
+	icon = 'icons/obj/hydroponics/harvest.dmi'
+	custom_materials = list(/datum/material/wood = 50, /datum/material/biomass = 50)
 	w_class = WEIGHT_CLASS_BULKY
 
 /datum/reagent/consumable/ethanol/koerbalk
 	name = "koerbalk"
+	taste_description = "fermented nuts"
 	boozepwr = 5
 
 /obj/item/reagent_containers/food/drinks/bottle/koerbalk
 	name = "bottle of koerbalk"
-	desc = "A bottle of koerbalk produced by a CLIP subsidirary."
+	desc = "A bottle of koerbalk produced by a CLIP firm."
 	icon_state = "nog2"
 	list_reagents = list(/datum/reagent/consumable/ethanol/koerbalk)
 	var/mixing_sticks_left = 5
 
 /obj/item/reagent_containers/food/drinks/bottle/koerbalk/examine(mob/user)
 	. = ..()
-	. += "It has [mixing_sticks_left] attached to the side of the container"
+	. += "It has [mixing_sticks_left] mixing sticks attached to the side of the container"
 	. += "You can <b>Ctrl-Click</b> [src] to remove one."
 
 /obj/item/reagent_containers/food/drinks/bottle/koerbalk/CtrlClick(mob/user)
@@ -116,7 +123,9 @@
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "popsicle_stick"
 	desc = "Encrusted in sugar."
+	list_reagents = list(/datum/reagent/consumable/sugar = 10)
 	custom_materials = list(/datum/material/wood=20)
+	foodtype = SUGAR
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 
@@ -136,6 +145,7 @@
 	name = "sucrika"
 	desc = "Boiled, dryed, and candied. A mix of various fruits and nuts, which are wrapped in wax paper and eaten as snacks throughout the day as part of Mexapix"
 	icon_state = "sucrika"
+	icon = 'icons/obj/halloween_items.dmi'
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 2)
 	filling_color = "#FF8C00"
 	tastes = list("candy corn" = 1)

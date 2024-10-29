@@ -341,10 +341,14 @@
 		if(CONFIG_GET(flag/roundstart_traits))
 			SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
 		if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-			to_chat(humanc, "Happy Mexapix. Read up about it <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Here!</a>")
+			to_chat(humanc, "Happy Mexapix, you have some extra things in your backpack today. Read up about it <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Here!</a>")
 			var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 			if(backpack)
 				new /obj/item/storage/mexapix_candy(backpack)
+				if(islizard(humanc.dna.species))
+					new /obj/item/clothing/accessory/tooth_armlet(backpack)
+				else
+					new /obj/item/clothing/accessory/tooth_armlet/plastic(backpack)
 
 	GLOB.joined_player_list += character.ckey
 

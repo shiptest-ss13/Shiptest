@@ -14,4 +14,4 @@
 	gravity = list(0, -0.9)
 
 /particles/droplets/blood
-	spawning = 0.2
+

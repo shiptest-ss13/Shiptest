@@ -29,9 +29,6 @@
 	rarity = 20
 	research = PLANT_RESEARCH_TIER_3
 
-
-
-
 /obj/item/grown/log
 	seed = /obj/item/seeds/tower
 	name = "tower-cap log"
@@ -156,6 +153,7 @@
 	anchored = TRUE
 	buckle_lying = 0
 	pass_flags_self = PASSTABLE | LETPASSTHROW
+	var/fuel = 0
 	var/burning = 0
 	var/burn_icon = "bonfire_on_fire" //for a softer more burning embers icon, use "bonfire_warm"
 	var/grill = FALSE
@@ -177,6 +175,9 @@
 
 /obj/structure/bonfire/dense
 	density = TRUE
+
+/obj/structure/bonfire/prelit
+	fuel = 10 MINUTES
 
 /obj/structure/bonfire/prelit/Initialize()
 	. = ..()
@@ -204,6 +205,14 @@
 				return ..()
 	if(W.get_temperature())
 		StartBurning()
+	if(length(W.custom_materials))
+		var/fuel_amount = W.custom_materials[SSmaterials.GetMaterialRef(/datum/material/wood)]
+		if(fuel_amount)
+			to_chat(user, span_notice("You begin adding the [W] as fuel."))
+			if(do_after(user, 3 SECONDS, src))
+				adjust_fuel(fuel_amount)
+				qdel(W)
+				return
 	if(grill)
 		if(user.a_intent != INTENT_HARM && !(W.item_flags & ABSTRACT))
 			if(user.temporarilyRemoveItemFromInventory(W))
@@ -217,7 +226,6 @@
 				W.pixel_y = W.base_pixel_y + clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
 		else
 			return ..()
-
 
 /obj/structure/bonfire/attack_hand(mob/user)
 	. = ..()
@@ -244,8 +252,18 @@
 				return TRUE
 	return FALSE
 
+/obj/structure/bonfire/proc/check_fuel()
+	if(fuel <= 0)
+		return FALSE
+
+/obj/structure/bonfire/proc/adjust_fuel(fuel_amount)
+	fuel = clamp(fuel_amount, 0, 30 MINUTES)
+	if(!check_fuel())
+		if(burning)
+			extinguish()
+
 /obj/structure/bonfire/proc/StartBurning()
-	if(!burning && CheckOxygen())
+	if(!burning && CheckOxygen() && check_fuel())
 		icon_state = burn_icon
 		burning = TRUE
 		set_light(6)
@@ -295,6 +313,7 @@
 		Burn()
 	else
 		Cook()
+	adjust_fuel(-1 SECONDS)
 
 /obj/structure/bonfire/extinguish()
 	if(burning)
