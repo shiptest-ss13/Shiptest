@@ -205,12 +205,16 @@ There are several things that need to be remembered:
 
 	//Bloody hands begin
 	if(!gloves && blood_in_hands && (num_hands > 0))
-		var/mutable_appearance/bloody_overlay = mutable_appearance('icons/effects/blood.dmi', "bloodyhands", -GLOVES_LAYER)
+		var/overlay_file = 'icons/effects/blood.dmi'
+		var/custom_overlay_icon = dna.species.custom_overlay_icon
+		if(custom_overlay_icon)
+			overlay_file = custom_overlay_icon
+		var/mutable_appearance/bloody_overlay = mutable_appearance(overlay_file, "handsblood", -GLOVES_LAYER)
 		if(num_hands < 2)
 			if(has_left_hand(FALSE))
-				bloody_overlay.icon_state = "bloodyhands_left"
+				bloody_overlay.icon_state = "handsblood_left"
 			else if(has_right_hand(FALSE))
-				bloody_overlay.icon_state = "bloodyhands_right"
+				bloody_overlay.icon_state = "handsblood_right"
 		var/list/blood_dna = return_blood_DNA()
 		if(length(blood_dna))
 			bloody_overlay.color = get_blood_dna_color(return_blood_DNA())

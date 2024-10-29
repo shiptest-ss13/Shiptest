@@ -16,6 +16,7 @@
 	permeability_coefficient = 0.5
 	slowdown = SHOES_SLOWDOWN
 	strip_delay = 1 SECONDS
+	blood_overlay_type = "shoe"
 
 	var/offset = 0
 	var/equipped_before_drop = FALSE
@@ -34,10 +35,7 @@
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedshoe")
 		if(HAS_BLOOD_DNA(src))
-			var/mutable_appearance/bloody_shoes
-			bloody_shoes = mutable_appearance('icons/effects/blood.dmi', "shoeblood")
-			bloody_shoes.color = get_blood_dna_color(return_blood_DNA())
-			. += bloody_shoes
+			. += setup_blood_overlay()
 
 /obj/item/clothing/shoes/examine(mob/user)
 	. = ..()
