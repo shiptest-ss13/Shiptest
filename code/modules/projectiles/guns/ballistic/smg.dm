@@ -209,6 +209,10 @@
 	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/smgm9mm,
+		/obj/item/ammo_box/magazine/smgm9mm/ap,
+		/obj/item/ammo_box/magazine/smgm9mm/inc,
+		/obj/item/ammo_box/magazine/smgm9mm/rubber,
+
 	)
 	bolt_type = BOLT_TYPE_LOCKING
 	show_magazine_on_sprite = TRUE
