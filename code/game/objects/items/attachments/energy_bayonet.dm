@@ -27,7 +27,7 @@
 	wield_delay = 0.2 SECONDS
 
 /obj/item/attachment/energy_bayonet/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
-	if(user.a_intent == INTENT_HARM && user.CanReach(target, src, TRUE) && toggled != 0 )
+	if(user.a_intent == INTENT_HARM && user.CanReach(target, src, TRUE) && toggled != 0)
 		melee_attack_chain(user, target, params)
 		return COMPONENT_NO_ATTACK
 
