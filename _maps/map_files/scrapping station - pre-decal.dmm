@@ -63,7 +63,10 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/space)
 "bk" = (
-/turf/open/floor/pod/dark,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "bx" = (
 /obj/structure/table/reinforced,
@@ -300,6 +303,12 @@
 /obj/item/stack/rods,
 /turf/open/floor/plating,
 /area/space)
+"gC" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "gH" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -316,14 +325,14 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "hc" = (
-/obj/structure/railing/corner,
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "hj" = (
-/obj/structure/stairs/north,
-/obj/structure/railing{
-	dir = 4
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -337,9 +346,10 @@
 /turf/open/floor/plasteel/tech,
 /area/space)
 "hF" = (
-/obj/structure/railing,
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "hH" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
@@ -407,14 +417,6 @@
 /obj/item/clothing/head/hardhat/red,
 /obj/item/reagent_containers/food/drinks/coffee,
 /turf/open/floor/plasteel/dark,
-/area/space)
-"iH" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled,
-/obj/effect/turf_decal/industrial/outline/blue,
-/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "iU" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -905,13 +907,6 @@
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plating,
 /area/space)
-"rM" = (
-/obj/structure/stairs/north,
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/space)
 "rX" = (
 /obj/structure/grille/broken,
 /obj/item/stack/rods,
@@ -1234,6 +1229,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"xK" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled,
+/obj/effect/turf_decal/industrial/outline/blue,
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "xU" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 8
@@ -1266,11 +1269,7 @@
 /turf/open/floor/plating,
 /area/space)
 "yG" = (
-/obj/machinery/door/airlock{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled,
-/obj/effect/turf_decal/industrial/outline/blue,
+/obj/structure/chair/comfy/red/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "yH" = (
@@ -1793,6 +1792,9 @@
 	pixel_y = 18;
 	pixel_x = -6
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Kn" = (
@@ -1965,7 +1967,9 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Oz" = (
-/obj/structure/stairs/north,
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "OC" = (
@@ -2053,6 +2057,14 @@
 /obj/item/stack/tile/carpet/green,
 /turf/open/floor/plasteel/sepia,
 /area/space)
+"Qz" = (
+/obj/machinery/door/airlock{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled,
+/obj/effect/turf_decal/industrial/outline/blue,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "QC" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/syndicate{
@@ -2082,13 +2094,6 @@
 "Rg" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lime,
 /turf/open/floor/plasteel/mono/dark,
-/area/space)
-"Rj" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
 /area/space)
 "Rn" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -2177,10 +2182,6 @@
 "SA" = (
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /turf/open/floor/plasteel/mono,
-/area/space)
-"SE" = (
-/obj/structure/chair/comfy/red/directional/south,
-/turf/open/floor/plasteel/dark,
 /area/space)
 "SG" = (
 /obj/effect/turf_decal/etherbor/center,
@@ -3990,14 +3991,14 @@ XX
 XX
 XX
 GM
-XX
-XX
-XX
-XX
-XX
-XX
+gC
+gC
+gC
+gC
+gC
+gC
+gC
 Nq
-jW
 jW
 jW
 vi
@@ -4068,8 +4069,8 @@ XX
 XX
 XX
 XX
+XX
 Nq
-jW
 jW
 jW
 vi
@@ -4138,9 +4139,9 @@ XX
 XX
 XX
 Nq
+Nq
 EX
 mn
-Nq
 Nq
 Nq
 Nq
@@ -4210,11 +4211,11 @@ Nq
 mn
 EX
 Nq
-bk
-hF
 XX
-hJ
-hJ
+XX
+XX
+XX
+XX
 Nq
 Qd
 Qd
@@ -4282,11 +4283,11 @@ XX
 XX
 XX
 Nq
-bk
-hF
 XX
-hJ
-hJ
+XX
+XX
+XX
+XX
 Nq
 Qd
 Qd
@@ -4354,8 +4355,8 @@ XX
 XX
 XX
 Nq
-bk
-hF
+XX
+XX
 XX
 XX
 LV
@@ -4426,8 +4427,8 @@ Nq
 Nq
 Nq
 Nq
-bk
-hF
+XX
+XX
 XX
 XX
 VK
@@ -4494,13 +4495,13 @@ XX
 XX
 Nq
 Kk
-XX
+bk
 CG
 wz
 uF
-bk
-Rj
-rM
+XX
+XX
+XX
 XX
 VK
 LX
@@ -4514,7 +4515,7 @@ Sc
 Sc
 Sc
 Sc
-yG
+Qz
 Sc
 Sc
 bB
@@ -4565,14 +4566,14 @@ Nq
 XX
 XX
 ws
-XX
+hj
 XX
 vV
 wz
 uF
-bk
-or
-Oz
+XX
+XX
+XX
 XX
 VK
 LX
@@ -4637,14 +4638,14 @@ Nq
 XX
 XX
 Nq
-KB
+hj
 XX
 CG
 wz
 uF
-bk
-hc
-hj
+XX
+XX
+XX
 XX
 VK
 LX
@@ -4709,17 +4710,17 @@ Nq
 XX
 XX
 Nq
-Nq
-xU
-Nq
-Nq
-Nq
-bk
+Oz
 hF
+hF
+hc
+uF
+XX
+XX
 XX
 XX
 VK
-Ub
+LX
 vy
 Qd
 jS
@@ -4737,8 +4738,8 @@ Sc
 Sc
 Sc
 Sc
-iH
-iH
+xK
+xK
 Sc
 Sr
 XP
@@ -4780,19 +4781,19 @@ pK
 Nq
 XX
 XX
-XX
+Nq
+Nq
+xU
+Nq
+Nq
 Nq
 XX
 XX
-AF
-Nq
-bk
-hF
 XX
 XX
-Lw
-Nq
-bd
+VK
+Ub
+vy
 Qd
 vi
 vi
@@ -4855,16 +4856,16 @@ XX
 XX
 Nq
 XX
-SE
+XX
 AF
 Nq
-bk
-hF
 XX
-hJ
-hJ
+XX
+XX
+XX
+Lw
 Nq
-Qd
+bd
 Qd
 jS
 vi
@@ -4928,13 +4929,13 @@ XX
 Nq
 XX
 XX
-AF
+yG
 Nq
-bk
-hF
 XX
-hJ
-hJ
+XX
+XX
+XX
+XX
 Nq
 Qd
 Qd
@@ -5002,11 +5003,11 @@ XX
 XX
 KB
 Nq
-EX
-YF
-Nq
-Nq
-Nq
+XX
+XX
+XX
+XX
+XX
 Nq
 Qd
 Qd
@@ -5074,12 +5075,12 @@ tq
 TY
 Nq
 Nq
-XX
-XX
-XX
 Nq
-jW
-jW
+EX
+YF
+Nq
+Nq
+Nq
 Nq
 vi
 jS
