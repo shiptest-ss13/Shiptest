@@ -43,7 +43,7 @@
 
 /obj/item/reagent_containers/food/snacks/candy_corn
 	name = "candy corn"
-	desc = "It's a handful of candy corn. Originating from Solarian culture but also popular for the Kalixican. Its used in Mexapix for its resemblese to teeth."
+	desc = "It's a handful of candy corn. Originating from Solarian culture but also popular for the Kalixcian. Its used in Mexapix for its resemblese to teeth."
 	icon_state = "candy_corn"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sugar = 2)
 	filling_color = "#FF8C00"
