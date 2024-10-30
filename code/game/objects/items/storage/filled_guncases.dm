@@ -60,6 +60,7 @@
 
 /obj/item/storage/guncase/pistol/viper
 	gun_type = /obj/item/gun/ballistic/revolver/viper/indie
+	mag_type = /obj/item/ammo_box/a357/empty
 
 /obj/item/storage/guncase/pistol/ringneck
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
