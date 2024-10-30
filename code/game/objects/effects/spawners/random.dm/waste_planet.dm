@@ -37,16 +37,16 @@
 
 /obj/effect/spawner/random/waste/radiation
 	loot = list(
-		/obj/structure/radioactive = 6,
-		/obj/structure/radioactive/stack = 6,
-		/obj/structure/radioactive/waste = 6
+		/obj/structure/hazard/radioactive = 6,
+		/obj/structure/hazard/radioactive/stack = 6,
+		/obj/structure/hazard/radioactive/waste = 6
 	)
 
 /obj/effect/spawner/random/waste/radiation/more_rads
 	loot = list(
-		/obj/structure/radioactive = 3,
-		/obj/structure/radioactive/stack = 12,
-		/obj/structure/radioactive/waste = 12
+		/obj/structure/hazard/radioactive = 3,
+		/obj/structure/hazard/radioactive/stack = 12,
+		/obj/structure/hazard/radioactive/waste = 12
 	)
 
 /obj/effect/spawner/random/waste/atmos_can
