@@ -92,7 +92,7 @@
 	name = "armory locker";
 	req_one_access_txt = "1"
 	},
-/obj/item/ammo_box/a12g,
+/obj/item/storage/box/ammo/a12g_buckshot,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/crashed_starwalker)
 "bL" = (
@@ -637,7 +637,7 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
-/obj/item/kitchen/knife{
+/obj/item/melee/knife/kitchen{
 	pixel_x = 7;
 	pixel_y = 10
 	},
@@ -721,7 +721,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-4"
 	},
-/obj/item/reagent_containers/food/snacks/breadslice/moldy{
+/obj/item/food/breadslice/moldy{
 	pixel_x = 5
 	},
 /turf/open/floor/pod,
@@ -942,7 +942,7 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/closet/crate/secure/gear,
-/obj/item/ammo_box/c10mm/surplus,
+/obj/item/storage/box/ammo/c10mm_surplus,
 /obj/item/weaponcrafting/stock,
 /obj/item/weaponcrafting/stock{
 	pixel_x = -6
@@ -2024,7 +2024,6 @@
 /turf/open/floor/engine/hull/interior,
 /area/overmap_encounter/planetoid/lava/explored)
 "Hl" = (
-/obj/structure/statue/sandstone/assistant,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = -32
@@ -2380,7 +2379,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_starwalker)
 "Mk" = (
-/obj/structure/statue/sandstone/assistant,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/light,
@@ -2417,7 +2415,7 @@
 	pixel_x = -26
 	},
 /obj/structure/spider/stickyweb,
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/pod/light,
 /area/ruin/unpowered/crashed_starwalker)
 "MO" = (
@@ -2449,7 +2447,7 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/crashed_starwalker)
 "MX" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/structure/railing{
 	dir = 4
 	},
@@ -2482,7 +2480,7 @@
 	icon_state = "gib3-old";
 	pixel_x = -6
 	},
-/obj/item/melee/transforming/energy/sword/saber/pirate/yellow{
+/obj/item/melee/energy/sword/saber/pirate/yellow{
 	pixel_x = -5;
 	pixel_y = 16
 	},
@@ -3133,7 +3131,7 @@
 /obj/structure/closet/secure_closet/freezer/kitchen/wall{
 	pixel_y = 29
 	},
-/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/condiment/rice,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/crashed_starwalker)

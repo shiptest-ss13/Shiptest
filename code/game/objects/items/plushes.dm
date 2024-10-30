@@ -38,7 +38,7 @@
 	. = ..()
 	if(should_squeak)
 		AddComponent(/datum/component/squeak, squeak_override)
-	AddElement(/datum/element/bed_tuckable, 6, -5, 90)
+	AddElement(/datum/element/bed_tuckable, 6, -5, 90, FALSE, FALSE)
 
 	//have we decided if Pinocchio goes in the blue or pink aisle yet?
 	if(gender == NEUTER)

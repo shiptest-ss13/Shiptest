@@ -36,10 +36,12 @@
 	item_state = "bluecloth"
 	blood_overlay_type = "coat"
 	togglename = "zipper"
-	body_parts_covered = CHEST
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
-	armor = list("melee" = 20, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 
 //Armored suit
 
@@ -100,6 +102,10 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = DIGITIGRADE_VARIATION
 
+/obj/item/clothing/suit/space/gezena/Initialize()
+	. = ..()
+	allowed = GLOB.security_hardsuit_allowed
+
 /obj/item/clothing/head/helmet/space/gezena
 	name = "\improper Rakalla-helm"
 	desc = "Featuring rubberized grommets fitting for any length of horn, and an internal monitor for life support."
@@ -130,6 +136,9 @@
 	desc = "The standard cap of the PGF military, in Navy colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
 	icon_state = "navalflap"
 	item_state = "bluecloth"
+	cold_protection = HEAD
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/gezena/marine
 	name = "\improper PGFMC Cap"
@@ -137,7 +146,7 @@
 	icon_state = "marinehat"
 	item_state = "marinecloth"
 
-/obj/item/clothing/head/gezena/marine/flap
+/obj/item/clothing/head/gezena/flap/marine
 	name = "\improper PGFMC Betzu-il cap"
 	desc = "The standard cap of the PGF military, in Marine Corps colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
 	icon_state = "marineflap"
@@ -149,7 +158,7 @@
 	icon_state = "squadhat"
 	item_state = "marinecloth"
 
-/obj/item/clothing/head/gezena/marine/lead/flap
+/obj/item/clothing/head/gezena/flap/marine/lead
 	name = "\improper PGFMC Commander's' Betzu-il cap"
 	desc = "The standard cap of the PGF military, in Marine Corps colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The silver markings denote it as a commander's cap."
 	icon_state = "squadflap"
@@ -161,7 +170,7 @@
 	icon_state = "medichat"
 	item_state = "whitecloth"
 
-/obj/item/clothing/head/gezena/medic/flap
+/obj/item/clothing/head/gezena/flap/medic
 	name = "\improper PGF medic Betzu-il cap"
 	desc = "The standard cap of the PGF military. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The coloring indicates the wearer as a medical officer."
 	icon_state = "medicflap"
@@ -212,7 +221,6 @@
 	name = "\improper PGFN Captain's Ihuz-irra Gloves"
 	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments. Bears the silver standard of a Gezenan captain."
 	icon_state = "captaingloves"
-	siemens_coefficient = 0
 
 //Boots
 
@@ -220,7 +228,7 @@
 	name = "\improper PGF Uhro-sez Boots"
 	desc = "The word “uhro-sez” translates to “steel-foot”, in reference to the steel toe protection provided by these boots. Standard issue to all members of all branches of the PGF military."
 	icon = 'icons/obj/clothing/faction/gezena/feet.dmi'
-	//mob_overlay_icon = 'icons/mob/clothing/faction/gezena/feet.dmi' todo: find out why digi breaks here
+	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/feet.dmi'
 	icon_state = "pgfboots"
 	item_state = "jackboots"
 
@@ -237,6 +245,20 @@
 	item_state = "bluecloth"
 	unique_reskin = null
 
+/obj/item/storage/belt/military/gezena/bg16/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun/pgf(src)
+	new /obj/item/screwdriver(src)
+
+/obj/item/storage/belt/military/gezena/engineer/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 2)
+		new /obj/item/stock_parts/cell/gun/pgf(src)
+	new /obj/item/screwdriver(src)
+	new /obj/item/grenade/c4
+	new /obj/item/grenade/c4
+
 /obj/item/storage/belt/medical/gezena
 	name = "\improper PGF Medical Iho-Usks"
 	desc = "The “iho-usks”, translating to “gear-holder”, is a lightweight harness covered in pouches, supplied to the ground troops of the PGF. This variant is designed for carrying medical supplies."
@@ -246,6 +268,17 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "medpouches"
 	item_state = "whitecloth"
+
+/obj/item/storage/belt/medical/gezena/paramedic/PopulateContents()
+	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/synthflesh(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/stack/medical/splint(src)
+	. = ..()
+
 
 //Cloaks
 
@@ -260,8 +293,8 @@
 	item_state = "blackcloth"
 
 /obj/item/clothing/neck/cloak/gezena/lead
-	name = "sergeant's Azuilhauz"
-	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as a squad commander."
+	name = "marine officer's Azuilhauz"
+	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as a squad leader."
 	icon_state = "squadcape"
 	item_state = "blackcloth"
 
@@ -278,7 +311,7 @@
 	item_state = "whitecloth"
 
 /obj/item/clothing/neck/cloak/gezena/command
-	name = "officer's Azuilhauz"
+	name = "navy officer's Azuilhauz"
 	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as an officer."
 	icon_state = "commandcape"
 	item_state = "whitecloth"

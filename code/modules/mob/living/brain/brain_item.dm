@@ -381,7 +381,8 @@
 	if(resilience)
 		actual_trauma.resilience = resilience
 	. = actual_trauma
-	SSblackbox.record_feedback("tally", "traumas", 1, actual_trauma.type)
+	if(owner?.client)
+		SSblackbox.record_feedback("tally", "traumas", 1, actual_trauma.type)
 
 //Add a random trauma of a certain subtype
 /obj/item/organ/brain/proc/gain_trauma_type(brain_trauma_type = /datum/brain_trauma, resilience, natural_gain = FALSE)

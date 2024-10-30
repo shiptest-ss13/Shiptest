@@ -24,8 +24,8 @@
 	name = "remove lower duodenum"
 	implements = list(
 		TOOL_SCALPEL = 95,
-		/obj/item/melee/transforming/energy/sword = 33,
-		/obj/item/kitchen/knife = 40,
+		/obj/item/melee/energy/sword = 33,
+		/obj/item/melee/knife = 40,
 		/obj/item/shard = 10)
 	time = 52
 	experience_given = (MEDICAL_SKILL_ORGAN_FIX*0.8) //for consistency across organ surgeries

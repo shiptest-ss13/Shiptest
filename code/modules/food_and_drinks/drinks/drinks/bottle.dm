@@ -202,10 +202,10 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/kahlua
 	name = "Keh'Lu'Tex Liqueur"
-	desc = "An adapted recipe of a caffeine-mixed liqueur originating from Reh'himl, which replaces it's original ingredient with coffee from Terra."
+	desc = "An adapted recipe of a caffeine-mixed liqueur originating from Reh'himl, which replaces its original ingredient with coffee from Terra."
 	icon_state = "kahluabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 100)
-	foodtype = VEGETABLES
+	foodtype = SUGAR | ALCOHOL //it's coffee and rum .
 
 /obj/item/reagent_containers/food/drinks/bottle/goldschlager
 	name = "Student-Union's Gold Standard"
@@ -479,7 +479,13 @@
 			break
 	if(firestarter && active)
 		hit_atom.fire_act()
-		new /obj/effect/hotspot(get_turf(hit_atom))
+		var/turf/T = get_turf(hit_atom)
+		T.IgniteTurf(30)
+		var/turf/otherT
+		for(var/direction in GLOB.cardinals)
+			otherT = get_step(T, direction)
+			otherT.IgniteTurf(30)
+			new /obj/effect/hotspot(otherT)
 	..()
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
@@ -602,7 +608,7 @@
 	desc = "Legend says something amazing happens when you collect enough of these."
 	custom_price = 100
 	custom_premium_price = 110
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "sandstar"
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/gold = 200)
@@ -618,6 +624,10 @@
 	custom_materials = list(/datum/material/wood = 800)
 	w_class = WEIGHT_CLASS_BULKY
 	var/sealed = FALSE
+	var/max_bottles = 6
+	var/list/valid_bottles = list(/obj/item/reagent_containers/food/drinks/beer,
+	/obj/item/reagent_containers/food/drinks/ale,
+	/obj/item/reagent_containers/food/drinks/bottle)
 
 /obj/item/storage/bottles/Initialize()
 	. = ..()
@@ -628,12 +638,8 @@
 	var/datum/component/storage/S = GetComponent(/datum/component/storage)
 	S.max_w_class = WEIGHT_CLASS_NORMAL
 	S.max_combined_w_class = 16
-	S.max_items = 6
-	S.set_holdable(list(
-		/obj/item/reagent_containers/food/drinks/beer,
-		/obj/item/reagent_containers/food/drinks/ale,
-		/obj/item/reagent_containers/food/drinks/bottle
-	))
+	S.max_items = max_bottles
+	S.set_holdable(valid_bottles)
 	S.locked = sealed
 
 /obj/item/storage/bottles/update_icon_state()
@@ -668,3 +674,17 @@
 /obj/item/storage/bottles/sandblast/PopulateContents()
 	for(var/i in 1 to 6)
 		new /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla(src)
+
+/obj/item/storage/bottles/moonshine
+	name = "moonshine bottle crate"
+	desc = "Holds four bottles of the strongest hooch this side of the Frontier."
+	icon_state = "hoochcrate"
+	max_bottles = 4
+	valid_bottles = list(/obj/item/reagent_containers/food/drinks/bottle/moonshine)
+
+/obj/item/storage/bottles/moonshine/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/reagent_containers/food/drinks/bottle/moonshine(src)
+
+/obj/item/storage/bottles/moonshine/sealed
+	sealed = TRUE

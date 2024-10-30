@@ -43,6 +43,8 @@
 
 	vis_flags = VIS_INHERIT_PLANE //when this be added to vis_contents of something it inherit something.plane, important for visualisation of obj in openspace.
 
+	var/obj/effect/abstract/particle_holder/burning_particles
+
 	FASTDMM_PROP(\
 		pinned_vars = list("name", "dir")\
 	)
@@ -82,7 +84,9 @@
 	if(!ismachinery(src))
 		STOP_PROCESSING(SSobj, src) // TODO: Have a processing bitflag to reduce on unnecessary loops through the processing lists
 	SStgui.close_uis(src)
-	. = ..()
+	if(burning_particles)
+		QDEL_NULL(burning_particles)
+	return ..()
 
 
 /obj/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)

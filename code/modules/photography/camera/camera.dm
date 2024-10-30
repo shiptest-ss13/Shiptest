@@ -4,7 +4,6 @@
 
 /obj/item/camera
 	name = "camera"
-	icon = 'icons/obj/items_and_weapons.dmi'
 	desc = "A polaroid camera."
 	icon_state = "camera"
 	item_state = "camera"
@@ -20,6 +19,7 @@
 	slot_flags = ITEM_SLOT_NECK
 	custom_materials = list(/datum/material/iron = 50, /datum/material/glass = 150)
 	custom_price = 120
+	supports_variations = VOX_VARIATION
 	var/flash_enabled = TRUE
 	var/state_on = "camera"
 	var/state_off = "camera_off"

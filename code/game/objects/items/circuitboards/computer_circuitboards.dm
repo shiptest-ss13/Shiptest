@@ -272,7 +272,7 @@
 	build_path = /obj/machinery/computer/launchpad
 
 /obj/item/circuitboard/computer/mech_bay_power_console
-	name = "Mech Bay Power Control Console (Computer Board)"
+	name = "Exosuit Bay Power Control Console (Computer Board)"
 	icon_state = "science"
 	build_path = /obj/machinery/computer/mech_bay_power_console
 
@@ -314,11 +314,6 @@
 	name = "Teleporter (Computer Board)"
 	icon_state = "science"
 	build_path = /obj/machinery/computer/teleporter
-
-/obj/item/circuitboard/computer/xenobiology
-	name = "circuit board (Xenobiology Console)"
-	icon_state = "science"
-	build_path = /obj/machinery/computer/camera_advanced/xenobio
 
 //Security
 

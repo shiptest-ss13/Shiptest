@@ -38,14 +38,6 @@
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/xenobiocamera
-	name = "Computer Design (Xenobiology Console)"
-	desc = "Allows for the construction of circuit boards used to build xenobiology camera computers."
-	id = "xenobioconsole"
-	build_path = /obj/item/circuitboard/computer/xenobiology
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/board/aiupload
 	name = "Computer Design (AI Upload)"
 	desc = "Allows for the construction of circuit boards used to build an AI Upload Console."
@@ -183,8 +175,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/mechapower
-	name = "Computer Design (Mech Bay Power Control Console)"
-	desc = "Allows for the construction of circuit boards used to build a mech bay power control console."
+	name = "Computer Design (Exosuit) Bay Power Control Console)"
+	desc = "Allows for the construction of circuit boards used to build an exosuit bay power control console."
 	id = "mechapower"
 	build_path = /obj/item/circuitboard/computer/mech_bay_power_console
 	category = list("Computer Boards")

@@ -100,7 +100,8 @@
 				to_chat(spawnee, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 				spawnee.new_player_panel()
 				return
-			SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+			SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name)
+			SSblackbox.record_feedback("tally", "faction_ship_purchased", 1, template.faction_datum.name)
 			// Try to spawn as the first listed job in the job slots (usually captain)
 			// Playtime checks are overridden, to ensure the player gets to join the ship they spawned.
 			if(!spawnee.AttemptLateSpawn(target.job_slots[1], target, FALSE))
@@ -166,7 +167,7 @@
 			continue
 		var/list/ship_data = list(
 			"name" = T.name,
-			"faction" = ship_prefix_to_faction(T.prefix),
+			"faction" = T.faction_name,
 			"desc" = T.description,
 			"tags" = T.tags,
 			"crewCount" = length(T.job_slots),

@@ -1,4 +1,6 @@
 /obj/item/gun/ballistic/automatic/assault
+	show_magazine_on_sprite = TRUE
+
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 	wield_delay = 0.8 SECONDS
@@ -14,23 +16,8 @@
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 	spread_unwielded = 20
 
-/obj/item/gun/ballistic/automatic/assault/calculate_recoil(mob/user, recoil_bonus = 0)
-	var/gunslinger_bonus = 2
-	var/total_recoil = recoil_bonus
-
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_recoil += gunslinger_bonus
-
-	return ..(user, total_recoil)
-
-/obj/item/gun/ballistic/automatic/assault/calculate_spread(mob/user, bonus_spread)
-	var/gunslinger_bonus = 16
-	var/total_spread = bonus_spread
-
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
-		total_spread += gunslinger_bonus
-
-	return ..(user, total_spread)
+	gunslinger_recoil_bonus = 2
+	gunslinger_spread_bonus = 16
 
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
@@ -56,7 +43,10 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	manufacturer = MANUFACTURER_IMPORT
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/skm_762_40,
+	)
 
 	spread = 1
 	wield_delay = 0.7 SECONDS
@@ -64,7 +54,7 @@
 	fire_delay = 0.2 SECONDS
 
 /obj/item/gun/ballistic/automatic/assault/skm/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/automatic/assault/skm/pirate
 	name = "\improper Chopper"
@@ -97,7 +87,10 @@
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/p16
+	default_ammo_type = /obj/item/ammo_box/magazine/p16
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/p16,
+	)
 	spread = 2
 	wield_delay = 0.5 SECONDS
 
@@ -110,9 +103,9 @@
 	eject_empty_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
 
 /obj/item/gun/ballistic/automatic/assault/p16/no_mag
-	spawnwithmagazine = FALSE
+	default_ammo_type = FALSE
 
-/obj/item/gun/ballistic/automatic/assault/p16/minutemen
+/obj/item/gun/ballistic/automatic/assault/cm82
 	name = "\improper CM-16"
 	desc = "The standard-issue rifle of CLIP and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
@@ -146,7 +139,10 @@
 
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/swiss
+	default_ammo_type = /obj/item/ammo_box/magazine/swiss
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/swiss,
+	)
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	spread = 8
 	spread_unwielded = 15
@@ -156,18 +152,21 @@
 
 /obj/item/gun/ballistic/automatic/assault/e40
 	name = "\improper E-40 Hybrid Rifle"
-	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic/laser system along with an advanced ammo counter. Once an icon for bounty hunters, age has broken most down, so these end up in collector's hands or as shoddy Frontiersmen laser SMG conversions when in their inheritted stockpiles. But if one were to find one in working condition, it would be just as formidable as back then. Chambered in .229 Eoehoma caseless, and uses energy for lasers."
+	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic/laser system along with an advanced ammo counter. Once an icon for bounty hunters, age has broken most down, so these end up in collector's hands or as shoddy Frontiersmen laser SMG conversions when in their inheritted stockpiles. But if one were to find one in working condition, it would be just as formidable as back then. Chambered in .299 Eoehoma caseless, and uses energy for lasers."
 	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
 	icon_state = "e40"
 	item_state = "e40"
-	mag_type = /obj/item/ammo_box/magazine/e40
+	default_ammo_type = /obj/item/ammo_box/magazine/e40
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/e40,
+	)
 	var/obj/item/gun/energy/laser/e40_laser_secondary/secondary
 	fire_select_icon_state_prefix = "e40_"
 
-	fire_delay = 0.18 SECONDS
+	fire_delay = 0.1 SECONDS
 	recoil_unwielded = 3
 
 	gun_firenames = list(FIREMODE_FULLAUTO = "full auto ballistic", FIREMODE_OTHER = "full auto laser")
@@ -231,17 +230,10 @@
 		return secondary.screwdriver_act(user, attack_obj,)
 	return ..()
 
-
-/obj/item/gun/ballistic/automatic/assault/e40/can_shoot()
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode != FIREMODE_OTHER)
-		return ..()
-	return secondary.can_shoot()
-
 /obj/item/gun/ballistic/automatic/assault/e40/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
 	secondary.wielded = TRUE
-	INVOKE_ASYNC(src, .proc.do_wield, user)
+	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
 
 /obj/item/gun/ballistic/automatic/assault/e40/do_wield(mob/user)
 	. = ..()
@@ -262,8 +254,8 @@
 	secondary.pre_fire(target, user, message, flag, params, zone_override, bonus_spread)
 
 
-/obj/item/gun/ballistic/automatic/powered/get_cell()
-	return cell
+/obj/item/gun/ballistic/automatic/assault/e40/get_cell()
+	return secondary.get_cell()
 
 /obj/item/gun/ballistic/automatic/assault/e40/update_overlays()
 	. = ..()
@@ -323,7 +315,10 @@
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	internal_magazine = TRUE
-	mag_type = /obj/item/ammo_box/magazine/internal/vickland
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/vickland
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/vickland,
+	)
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE

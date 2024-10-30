@@ -56,7 +56,7 @@
 	var/owner_check_timer_id
 
 	/// The ship's join mode. Controls whether players can join freely, have to apply, or can't join at all.
-	var/join_mode = SHIP_JOIN_MODE_OPEN
+	var/join_mode = SHIP_JOIN_MODE_CLOSED
 	/// Lazylist of /datum/ship_applications for this ship. Only used if join_mode == SHIP_JOIN_MODE_APPLY
 	var/list/datum/ship_application/applications
 
@@ -70,12 +70,15 @@
 	///Stations the ship has been blacklisted from landing at, associative station = reason
 	var/list/blacklisted = list()
 
+	var/datum/faction/faction_datum
+
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
 		return FALSE
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
 	log_admin("[key_name(src)] has renamed vessel '[oldname]' to '[new_name]'")
+	SSblackbox.record_feedback("text", "ship_renames", 1, new_name)
 	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
 	if(shipkey)
@@ -110,6 +113,7 @@
 
 			refresh_engines()
 		ship_account = new(name, source_template.starting_funds)
+		faction_datum = source_template.faction_datum
 
 #ifdef UNIT_TESTS
 	Rename("[source_template]", TRUE)

@@ -232,17 +232,17 @@
 /obj/item/organ/cyberimp/arm/toolset/emag_act(mob/user)
 	for(var/datum/weakref/created_item in items_list)
 		var/obj/potential_knife = created_item.resolve()
-		if(istype(/obj/item/kitchen/knife/combat/cyborg, potential_knife))
+		if(istype(/obj/item/melee/knife/combat/cyborg, potential_knife))
 			return FALSE
 
 	to_chat(user, "<span class='notice'>You unlock [src]'s integrated knife!</span>")
-	items_list += WEAKREF(new /obj/item/kitchen/knife/combat/cyborg(src))
+	items_list += WEAKREF(new /obj/item/melee/knife/combat/cyborg(src))
 	return TRUE
 
 /obj/item/organ/cyberimp/arm/esword
 	name = "arm-mounted energy blade"
 	desc = "An illegal and highly dangerous cybernetic implant that can project a deadly blade of concentrated energy."
-	items_to_create = list(/obj/item/melee/transforming/energy/blade/hardlight)
+	items_to_create = list(/obj/item/melee/energy/blade/hardlight)
 
 /obj/item/organ/cyberimp/arm/medibeam
 	name = "integrated medical beamgun"
@@ -280,7 +280,7 @@
 /obj/item/organ/cyberimp/arm/combat
 	name = "combat cybernetics implant"
 	desc = "A powerful cybernetic implant that contains combat modules built into the user's arm."
-	items_to_create = list(/obj/item/melee/transforming/energy/blade/hardlight, /obj/item/gun/medbeam, /obj/item/borg/stun, /obj/item/assembly/flash/armimplant)
+	items_to_create = list(/obj/item/melee/energy/blade/hardlight, /obj/item/gun/medbeam, /obj/item/borg/stun, /obj/item/assembly/flash/armimplant)
 
 /obj/item/organ/cyberimp/arm/combat/Initialize()
 	. = ..()

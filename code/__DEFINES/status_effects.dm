@@ -64,8 +64,6 @@
 
 #define STATUS_EFFECT_HISWRATH /datum/status_effect/his_wrath //His Wrath.
 
-#define STATUS_EFFECT_SUMMONEDGHOST /datum/status_effect/cultghost //is a cult ghost and can't use manifest runes
-
 #define STATUS_EFFECT_CRUSHERMARK /datum/status_effect/crusher_mark //if struck with a proto-kinetic crusher, takes a ton of damage
 
 #define STATUS_EFFECT_SAWBLEED /datum/status_effect/stacking/saw_bleed //if the bleed builds up enough, takes a ton of damage
@@ -98,6 +96,14 @@
 #define STATUS_EFFECT_FAKE_VIRUS /datum/status_effect/fake_virus //gives you fluff messages for cough, sneeze, headache, etc but without an actual virus
 
 #define STATUS_EFFECT_METAB_FROZEN /datum/status_effect/metab_frozen // Affected cannot process chems
+
+//Incapacitated status effect flags
+/// If the incapacitated status effect will ignore a mob in restraints (handcuffs)
+#define IGNORE_RESTRAINTS (1<<0)
+/// If the incapacitated status effect will ignore a mob in stasis (stasis beds)
+#define IGNORE_STASIS (1<<1)
+/// If the incapacitated status effect will ignore a mob being agressively grabbed
+#define IGNORE_GRAB (1<<2)
 
 /////////////
 // NEUTRAL //

@@ -15,16 +15,12 @@
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
 	var/loot = rand(1,29)
 	switch(loot)
-		if(1)
+		if(1,2)
 			new /obj/item/shared_storage/red(src)
-		if(2)
-			new /obj/item/clothing/suit/space/hardsuit/cult(src)
 		if(3)
 			new /obj/item/necromantic_stone/lava(src)
-		if(4)
-			new /obj/item/katana/cursed(src)
 		if(5)
-			new /obj/item/clothing/glasses/godeye(src)
+			new /obj/item/pickaxe/diamond(src)
 		if(6)
 			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 		if(7)
@@ -47,14 +43,11 @@
 			new /obj/item/borg/upgrade/modkit/lifesteal(src)
 			new /obj/item/bedsheet/cult(src)
 		if(14)
-			new /obj/item/nullrod/scythe/talking/necro(src)
+			new /obj/item/scythe(src)
 		if(15)
 			new /obj/item/book_of_babel(src)
 		if(16)
-			if(prob(75))
-				new /obj/item/guardiancreator/miner(src)
-			else
-				new /obj/item/guardiancreator/miner/choose (src)
+			new /obj/item/ship_in_a_bottle(src)
 		if(17)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(src)
@@ -80,8 +73,6 @@
 			new /obj/item/gun/energy/spur(src)
 		if(28)
 			new /obj/item/clothing/suit/armor/ascetic(src)
-		if(29)
-			new /obj/item/kitchen/knife/envy(src)
 
 /obj/structure/closet/crate/necropolis/tendril/greater
 	desc = "It's watching you wearily. It seems terribly bloated."
@@ -96,10 +87,8 @@
 				new /obj/item/clothing/suit/space/hardsuit/cult(src)
 			if(3)
 				new /obj/item/necromantic_stone/lava(src)
-			if(4)
-				new /obj/item/katana/cursed(src)
 			if(5)
-				new /obj/item/clothing/glasses/godeye(src)
+				new /obj/item/pickaxe/diamond(src)
 			if(6)
 				new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 			if(7)
@@ -122,14 +111,11 @@
 				new /obj/item/borg/upgrade/modkit/lifesteal(src)
 				new /obj/item/bedsheet/cult(src)
 			if(14)
-				new /obj/item/nullrod/scythe/talking/necro(src)
+				new /obj/item/scythe(src)
 			if(15)
 				new /obj/item/book_of_babel(src)
 			if(16)
-				if(prob(75))
-					new /obj/item/guardiancreator/miner(src)
-				else
-					new /obj/item/guardiancreator/miner/choose (src)
+				new /obj/item/ship_in_a_bottle(src)
 			if(17)
 				if(prob(50))
 					new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(src)
@@ -155,36 +141,6 @@
 				new /obj/item/gun/energy/spur(src)
 			if(28)
 				new /obj/item/clothing/suit/armor/ascetic(src)
-			if(29)
-				new /obj/item/kitchen/knife/envy(src)
-
-//KA modkit design discs
-/obj/item/disk/design_disk/modkit_disc
-	name = "KA Mod Disk"
-	desc = "A design disc containing the design for a unique kinetic accelerator modkit. It's compatible with a research console."
-	illustration = "accel"
-	color = "#6F6F6F"
-	var/modkit_design = /datum/design/unique_modkit
-
-/obj/item/disk/design_disk/modkit_disc/Initialize()
-	. = ..()
-	blueprints[1] = new modkit_design
-
-/obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe
-	name = "Offensive Mining Explosion Mod Disk"
-	modkit_design = /datum/design/unique_modkit/offensive_turf_aoe
-
-/obj/item/disk/design_disk/modkit_disc/rapid_repeater
-	name = "Rapid Repeater Mod Disk"
-	modkit_design = /datum/design/unique_modkit/rapid_repeater
-
-/obj/item/disk/design_disk/modkit_disc/resonator_blast
-	name = "Resonator Blast Mod Disk"
-	modkit_design = /datum/design/unique_modkit/resonator_blast
-
-/obj/item/disk/design_disk/modkit_disc/bounty
-	name = "Death Syphon Mod Disk"
-	modkit_design = /datum/design/unique_modkit/bounty
 
 /datum/design/unique_modkit
 	category = list("Mining Designs", "Cyborg Upgrade Modules") //can't be normally obtained
@@ -659,7 +615,7 @@
 			ADD_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT)
 		playsound(C.loc, 'sound/items/poster_ripped.ogg', 50, TRUE, -1)
 		C.adjustBruteLoss(20)
-		C.emote("scream")
+		C.force_scream()
 	..()
 
 //nerfed necrostone
@@ -736,10 +692,9 @@
 	var/hat = pick(/obj/item/clothing/head/helmet/roman, /obj/item/clothing/head/helmet/roman/legionnaire)
 	H.equip_to_slot_or_del(new hat(H), ITEM_SLOT_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/costume/roman(H), ITEM_SLOT_ICLOTHING)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), ITEM_SLOT_FEET)
 	H.put_in_hands(new /obj/item/shield/riot/roman(H), TRUE)
-	H.put_in_hands(new /obj/item/claymore(H), TRUE)
-	H.equip_to_slot_or_del(new /obj/item/spear(H), ITEM_SLOT_BACK)
+	H.put_in_hands(new /obj/item/melee/sword/claymore(H), TRUE)
+	H.equip_to_slot_or_del(new /obj/item/melee/spear(H), ITEM_SLOT_BACK)
 
 //ice cube
 /obj/item/freeze_cube
@@ -878,7 +833,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	fire_delay = 0.1 SECONDS
 	recoil = 1
-	cell_type = /obj/item/stock_parts/cell/gun
+	default_ammo_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
 	supports_variations = VOX_VARIATION
 	var/chargesound
@@ -933,6 +888,8 @@
 	range = 20
 	damage = 30
 	damage_type = BRUTE
+	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS
+	wall_damage_override = MINERAL_WALL_INTEGRITY
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "spur_high"
 	var/skip = FALSE //this is the hackiest thing ive ever done but i dont know any other solution other than deparent the spur projectile
@@ -994,9 +951,6 @@
 	spawn(15)
 		target.overlays -= impact
 	playsound(loc, impact_sound, 30)
-	if(istype(target,/turf/closed/mineral))
-		var/turf/closed/mineral/M = target
-		M.gets_drilled()
 	..()
 
 /obj/item/ammo_casing/energy/spur/spur
@@ -1103,98 +1057,11 @@
 			C.update_inv_wear_suit()
 
 /obj/item/clothing/suit/armor/ascetic/worn_overlays(isinhands)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER - 0.01)
 
 ///Bosses
-
-//Miniboss Miner
-
-/obj/item/melee/transforming/cleaving_saw
-	name = "cleaving saw"
-	desc = "This saw, effective at drawing the blood of beasts, transforms into a long cleaver that makes use of centrifugal force."
-	force = 12
-	force_on = 20 //force when active
-	throwforce = 20
-	throwforce_on = 20
-	icon = 'icons/obj/lavaland/artefacts.dmi'
-	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	icon_state = "cleaving_saw"
-	icon_state_on = "cleaving_saw_open"
-	slot_flags = ITEM_SLOT_BELT
-	attack_verb_off = list("attacked", "sawed", "sliced", "torn", "ripped", "diced", "cut")
-	attack_verb_on = list("cleaved", "swiped", "slashed", "chopped")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	hitsound_on = 'sound/weapons/bladeslice.ogg'
-	w_class = WEIGHT_CLASS_BULKY
-	sharpness = IS_SHARP
-	faction_bonus_force = 30
-	nemesis_factions = list("mining", "boss")
-	var/transform_cooldown
-	var/swiping = FALSE
-	var/bleed_stacks_per_hit = 3
-
-/obj/item/melee/transforming/cleaving_saw/examine(mob/user)
-	. = ..()
-	. += "<span class='notice'>It is [active ? "open, will cleave enemies in a wide arc and deal additional damage to fauna":"closed, and can be used for rapid consecutive attacks that cause fauna to bleed"].\n"+\
-	"Both modes will build up existing bleed effects, doing a burst of high damage if the bleed is built up high enough.\n"+\
-	"Transforming it immediately after an attack causes the next attack to come out faster.</span>"
-
-/obj/item/melee/transforming/cleaving_saw/transform_weapon(mob/living/user, supress_message_text)
-	if(transform_cooldown > world.time)
-		return FALSE
-	. = ..()
-	if(.)
-		transform_cooldown = world.time + (CLICK_CD_MELEE * 0.5)
-		user.changeNext_move(CLICK_CD_MELEE * 0.25)
-
-/obj/item/melee/transforming/cleaving_saw/transform_messages(mob/living/user, supress_message_text)
-	if(!supress_message_text)
-		if(active)
-			to_chat(user, "<span class='notice'>You open [src]. It will now cleave enemies in a wide arc and deal additional damage to fauna.</span>")
-		else
-			to_chat(user, "<span class='notice'>You close [src]. It will now attack rapidly and cause fauna to bleed.</span>")
-	playsound(user, 'sound/magic/clockwork/fellowship_armory.ogg', 35, TRUE, frequency = 90000 - (active * 30000))
-
-/obj/item/melee/transforming/cleaving_saw/clumsy_transform_effect(mob/living/user)
-	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-		to_chat(user, "<span class='warning'>You accidentally cut yourself with [src], like a doofus!</span>")
-		user.take_bodypart_damage(10)
-
-/obj/item/melee/transforming/cleaving_saw/melee_attack_chain(mob/user, atom/target, params)
-	..()
-	if(!active)
-		user.changeNext_move(CLICK_CD_MELEE * 0.5) //when closed, it attacks very rapidly
-
-/obj/item/melee/transforming/cleaving_saw/nemesis_effects(mob/living/user, mob/living/target)
-	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(STATUS_EFFECT_SAWBLEED)
-	if(!B)
-		target.apply_status_effect(STATUS_EFFECT_SAWBLEED,bleed_stacks_per_hit)
-	else
-		B.add_stacks(bleed_stacks_per_hit)
-
-/obj/item/melee/transforming/cleaving_saw/attack(mob/living/target, mob/living/carbon/human/user)
-	if(!active || swiping || !target.density || get_turf(target) == get_turf(user))
-		if(!active)
-			faction_bonus_force = 0
-		..()
-		if(!active)
-			faction_bonus_force = initial(faction_bonus_force)
-	else
-		var/turf/user_turf = get_turf(user)
-		var/dir_to_target = get_dir(user_turf, get_turf(target))
-		swiping = TRUE
-		var/static/list/cleaving_saw_cleave_angles = list(0, -45, 45) //so that the animation animates towards the target clicked and not towards a side target
-		for(var/i in cleaving_saw_cleave_angles)
-			var/turf/T = get_step(user_turf, turn(dir_to_target, i))
-			for(var/mob/living/L in T)
-				if(user.Adjacent(L) && L.density)
-					melee_attack_chain(user, L)
-		swiping = FALSE
 
 //Dragon
 
@@ -1205,98 +1072,13 @@
 	var/loot = rand(1,4)
 	switch(loot)
 		if(1)
-			new /obj/item/melee/ghost_sword(src)
+			new /obj/item/melee/sword/claymore(src)
 		if(2)
 			new /obj/item/lava_staff(src)
 		if(3)
 			new /obj/item/book/granter/spell/sacredflame(src)
 		if(4)
 			new /obj/item/dragons_blood(src)
-
-/obj/item/melee/ghost_sword
-	name = "\improper spectral blade"
-	desc = "A rusted and dulled blade. It doesn't look like it'd do much damage. It glows weakly."
-	icon_state = "spectral"
-	item_state = "spectral"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	flags_1 = CONDUCT_1
-	sharpness = IS_SHARP
-	w_class = WEIGHT_CLASS_BULKY
-	force = 1
-	throwforce = 1
-	hitsound = 'sound/effects/ghost2.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "rended")
-	var/summon_cooldown = 0
-	var/list/mob/dead/observer/spirits
-
-/obj/item/melee/ghost_sword/Initialize()
-	. = ..()
-	spirits = list()
-	START_PROCESSING(SSobj, src)
-	GLOB.poi_list |= src
-	AddComponent(/datum/component/butchering, 150, 90)
-
-/obj/item/melee/ghost_sword/Destroy()
-	for(var/mob/dead/observer/G in spirits)
-		G.invisibility = GLOB.observer_default_invisibility
-	spirits.Cut()
-	STOP_PROCESSING(SSobj, src)
-	GLOB.poi_list -= src
-	. = ..()
-
-/obj/item/melee/ghost_sword/attack_self(mob/user)
-	if(summon_cooldown > world.time)
-		to_chat(user, "<span class='warning'>You just recently called out for aid. You don't want to annoy the spirits!</span>")
-		return
-	to_chat(user, "<span class='notice'>You call out for aid, attempting to summon spirits to your side.</span>")
-
-	notify_ghosts("[user] is raising [user.p_their()] [src], calling for your help!",
-		enter_link="<a href=?src=[REF(src)];orbit=1>(Click to help)</a>",
-		source = user, action=NOTIFY_ORBIT, ignore_key = POLL_IGNORE_SPECTRAL_BLADE, header = "Spectral blade")
-
-	summon_cooldown = world.time + 300
-
-/obj/item/melee/ghost_sword/process()
-	ghost_check()
-
-/obj/item/melee/ghost_sword/proc/ghost_check()
-	var/ghost_counter = 0
-	var/turf/T = get_turf(src)
-	var/list/contents = T.GetAllContents()
-	var/mob/dead/observer/current_spirits = list()
-	for(var/thing in contents)
-		var/atom/A = thing
-		A.transfer_observers_to(src)
-
-	for(var/i in orbiters?.orbiters)
-		if(!isobserver(i))
-			continue
-		var/mob/dead/observer/G = i
-		ghost_counter++
-		G.invisibility = 0
-		current_spirits |= G
-
-	for(var/mob/dead/observer/G in spirits - current_spirits)
-		G.invisibility = GLOB.observer_default_invisibility
-
-	spirits = current_spirits
-
-	return ghost_counter
-
-/obj/item/melee/ghost_sword/attack(mob/living/target, mob/living/carbon/human/user)
-	force = 0
-	var/ghost_counter = ghost_check()
-
-	force = clamp((ghost_counter * 4), 0, 75)
-	user.visible_message("<span class='danger'>[user] strikes with the force of [ghost_counter] vengeful spirits!</span>")
-	..()
-
-/obj/item/melee/ghost_sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	var/ghost_counter = ghost_check()
-	final_block_chance += clamp((ghost_counter * 5), 0, 75)
-	owner.visible_message("<span class='danger'>[owner] is protected by a ring of [ghost_counter] ghosts!</span>")
-	return ..()
 
 //Blood
 
@@ -1767,11 +1549,9 @@
 	name = "puzzling chest"
 
 /obj/structure/closet/crate/necropolis/puzzle/PopulateContents()
-	var/loot = rand(1,3)
+	var/loot = rand(1,2)
 	switch(loot)
 		if(1)
-			new /obj/item/soulstone/anybody(src)
-		if(2)
 			new /obj/item/wisp_lantern(src)
-		if(3)
+		if(2)
 			new /obj/item/prisoncube(src)

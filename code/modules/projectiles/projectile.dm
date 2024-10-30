@@ -24,6 +24,8 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/def_zone = ""	//Aiming at
 	var/atom/movable/firer = null//Who shot it
+	// if the projectile was the result of a misfire. For logging.
+	var/misfire = FALSE
 	var/atom/fired_from = null // the atom that the projectile was fired from (gun, turret)
 	var/suppressed = FALSE	//Attack message
 	var/yo = null
@@ -139,6 +141,7 @@
 	var/decayedRange			//stores original range
 	var/reflect_range_decrease = 5			//amount of original range that falls off when reflecting, so it doesn't go forever
 	var/reflectable = NONE // Can it be reflected or not?
+
 		//Effects
 	var/stun = 0
 	var/knockdown = 0
@@ -155,6 +158,10 @@
 	var/dismemberment = 0 //The higher the number, the greater the bonus to dismembering. 0 will not dismember at all.
 	var/impact_effect_type //what type of impact effect to show when hitting something
 	var/log_override = FALSE //is this type spammed enough to not log? (KAs)
+
+	// if the projectile has the matching flags when hitting a wall, it deals it's override damage instead
+	var/wall_damage_flags = PROJECTILE_BONUS_DAMAGE_NONE
+	var/wall_damage_override = 0
 
 	///If defined, on hit we create an item of this type then call hitby() on the hit target with this, mainly used for embedding items (bullets) in targets
 	var/shrapnel_type
@@ -280,7 +287,9 @@
 		for(var/datum/reagent/R in reagents.reagent_list)
 			reagent_note += "[R.name] ([num2text(R.volume)])"
 
-	if(ismob(firer))
+	if(misfire)
+		L.log_message("has been hit by a misfired [src] from \a [fired_from] last touched by [fired_from.fingerprintslast]", LOG_ATTACK, color = "orange")
+	else if(ismob(firer))
 		log_combat(firer, L, "shot", src, reagent_note)
 	else
 		L.log_message("has been shot by [firer] with [src]", LOG_ATTACK, color="orange")

@@ -31,12 +31,13 @@
 	/// List of types which should always be allowed to be faxed
 	var/static/list/allowed_types = list(
 		/obj/item/paper,
-		/obj/item/photo
+		/obj/item/photo,
+		/obj/item/holochip,
 	)
 	/// List of types which should be allowed to be faxed if hacked
 	var/static/list/exotic_types = list(
 		/obj/item/reagent_containers/food/snacks/pizzaslice,
-		/obj/item/reagent_containers/food/snacks/breadslice,
+		/obj/item/food/breadslice,
 		/obj/item/reagent_containers/food/snacks/donkpocket,
 		/obj/item/reagent_containers/food/snacks/cookie,
 		/obj/item/reagent_containers/food/snacks/salami,
@@ -46,7 +47,6 @@
 		/obj/item/reagent_containers/food/snacks/pancakes,
 		/obj/item/throwing_star,
 		/obj/item/spacecash,
-		/obj/item/holochip,
 		/obj/item/card,
 		/obj/item/folder/biscuit
 	)

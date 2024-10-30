@@ -1,66 +1,3 @@
-
-//Academy Areas
-
-/area/awaymission/academy
-	name = "Academy Asteroids"
-	icon_state = "away"
-
-/area/awaymission/academy/headmaster
-	name = "Academy Fore Block"
-	icon_state = "away1"
-
-/area/awaymission/academy/classrooms
-	name = "Academy Classroom Block"
-	icon_state = "away2"
-
-/area/awaymission/academy/academyaft
-	name = "Academy Ship Aft Block"
-	icon_state = "away3"
-
-/area/awaymission/academy/academygate
-	name = "Academy Gateway"
-	icon_state = "away4"
-
-/area/awaymission/academy/academycellar
-	name = "Academy Cellar"
-	icon_state = "away4"
-
-/area/awaymission/academy/academyengine
-	name = "Academy Engine"
-	icon_state = "away4"
-
-//Academy Items
-
-/obj/item/paper/fluff/awaymissions/academy/console_maint
-	name = "Console Maintenance"
-	default_raw_text = "We're upgrading to the latest mainframes for our consoles, the shipment should be in before spring break is over!"
-
-/obj/item/paper/fluff/awaymissions/academy/class/automotive
-	name = "Automotive Repair 101"
-
-/obj/item/paper/fluff/awaymissions/academy/class/pyromancy
-	name = "Pyromancy 250"
-
-/obj/item/paper/fluff/awaymissions/academy/class/biology
-	name = "Biology Lab"
-
-/obj/item/paper/fluff/awaymissions/academy/grade/aplus
-	name = "Summoning Midterm Exam"
-	default_raw_text = "Grade: A+ Educator's Notes: Excellent form."
-
-/obj/item/paper/fluff/awaymissions/academy/grade/bminus
-	name = "Summoning Midterm Exam"
-	default_raw_text = "Grade: B- Educator's Notes: Keep applying yourself, you're showing improvement."
-
-/obj/item/paper/fluff/awaymissions/academy/grade/dminus
-	name = "Summoning Midterm Exam"
-	default_raw_text = "Grade: D- Educator's Notes: SEE ME AFTER CLASS."
-
-/obj/item/paper/fluff/awaymissions/academy/grade/failure
-	name = "Pyromancy Evaluation"
-	default_raw_text = "Current Grade: F. Educator's Notes: No improvement shown despite multiple private lessons.  Suggest additional tutelage."
-
-
 /obj/singularity/academy
 	dissipate = 0
 	move_self = 0
@@ -73,12 +10,6 @@
 	eat()
 	if(prob(1))
 		mezzer()
-
-
-/obj/item/clothing/glasses/meson/truesight
-	name = "The Lens of Truesight"
-	desc = "I can see forever!"
-	icon_state = "monocle"
 
 /obj/structure/academy_wizard_spawner
 	name = "Academy Defensive System"
@@ -151,14 +82,6 @@
 		visible_message("<span class='warning'>[src] breaks down!</span>")
 		icon_state = "forge_off"
 		STOP_PROCESSING(SSobj, src)
-
-/datum/outfit/wizard/academy
-	name = "Academy Wizard"
-	r_pocket = null
-	r_hand = null
-	suit = /obj/item/clothing/suit/wizrobe/red
-	head = /obj/item/clothing/head/wizard/red
-	backpack_contents = list(/obj/item/storage/box/survival = 1)
 
 /obj/item/dice/d20/fate
 	name = "\improper Die of Fate"
@@ -348,8 +271,6 @@
 			new /obj/item/clothing/suit/wizrobe(drop_location())
 			new /obj/item/clothing/head/wizard(drop_location())
 			new /obj/item/clothing/gloves/combat/wizard(drop_location())
-			new /obj/item/clothing/suit/wizrobe/magusblue(drop_location())
-			new /obj/item/clothing/head/wizard/magus(drop_location())
 			new /obj/item/staff(drop_location())
 			new /obj/structure/mirror/magic(drop_location())
 
@@ -357,8 +278,6 @@
 	name = "Butler"
 	uniform = /obj/item/clothing/under/suit/black_really
 	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/bowler
-	glasses = /obj/item/clothing/glasses/monocle
 	gloves = /obj/item/clothing/gloves/color/white
 
 /obj/effect/proc_holder/spell/targeted/summonmob

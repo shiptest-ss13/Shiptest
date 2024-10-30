@@ -117,9 +117,6 @@
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 10)
 
 /obj/item/stack/medical/bruise_pack/heal(mob/living/target, mob/user)
-	if(target.stat == DEAD)
-		to_chat(user, "<span class='warning'>[target] is dead! You can not help [target.p_them()].</span>")
-		return
 	if(isanimal(target))
 		var/mob/living/simple_animal/critter = target
 		if (!(critter.healable))
@@ -204,9 +201,6 @@
 	grind_results = list(/datum/reagent/medicine/silver_sulfadiazine = 10)
 
 /obj/item/stack/medical/ointment/heal(mob/living/target, mob/user)
-	if(target.stat == DEAD)
-		to_chat(user, "<span class='warning'>[target] is dead! You can not help [target.p_them()].</span>")
-		return
 	if(iscarbon(target))
 		return heal_carbon(target, user, 0, heal_burn)
 	to_chat(user, "<span class='warning'>You can't heal [target] with the \the [src]!</span>")
@@ -234,9 +228,6 @@
 
 /obj/item/stack/medical/suture/heal(mob/living/target, mob/user)
 	. = ..()
-	if(target.stat == DEAD)
-		to_chat(user, "<span class='warning'>[target] is dead! You can not help [target.p_them()].</span>")
-		return
 	if(iscarbon(target))
 		return heal_carbon(target, user, heal_brute, 0)
 	if(isanimal(target))
@@ -281,9 +272,6 @@
 
 /obj/item/stack/medical/mesh/heal(mob/living/target, mob/user)
 	. = ..()
-	if(target.stat == DEAD)
-		to_chat(user, "<span class='warning'>[target] is dead! You can not help [target.p_them()].</span>")
-		return
 	if(iscarbon(target))
 		return heal_carbon(target, user, 0, heal_burn)
 	to_chat(user, "<span class='warning'>You can't heal [target] with the \the [src]!</span>")
@@ -347,9 +335,6 @@
 
 /obj/item/stack/medical/aloe/heal(mob/living/target, mob/user)
 	. = ..()
-	if(target.stat == DEAD)
-		to_chat(user, "<span class='warning'>[target] is dead! You can not help [target.p_them()].</span>")
-		return FALSE
 	if(iscarbon(target))
 		return heal_carbon(target, user, heal, heal)
 	if(isanimal(target))
@@ -382,7 +367,7 @@
 	desc = "Used to secure limbs following a fracture."
 	gender = PLURAL
 	singular_name = "splint"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "splint"
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	self_delay = 40

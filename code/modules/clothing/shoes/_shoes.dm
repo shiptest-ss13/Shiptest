@@ -16,6 +16,7 @@
 	permeability_coefficient = 0.5
 	slowdown = SHOES_SLOWDOWN
 	strip_delay = 1 SECONDS
+	blood_overlay_type = "shoe"
 
 	var/offset = 0
 	var/equipped_before_drop = FALSE
@@ -29,15 +30,12 @@
 	var/atom/movable/screen/alert/our_alert
 
 /obj/item/clothing/shoes/worn_overlays(isinhands = FALSE)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedshoe")
 		if(HAS_BLOOD_DNA(src))
-			var/mutable_appearance/bloody_shoes
-			bloody_shoes = mutable_appearance('icons/effects/blood.dmi', "shoeblood")
-			bloody_shoes.color = get_blood_dna_color(return_blood_DNA())
-			. += bloody_shoes
+			. += setup_blood_overlay()
 
 /obj/item/clothing/shoes/examine(mob/user)
 	. = ..()
@@ -172,7 +170,7 @@
 		else // if one of us moved
 			user.visible_message("<span class='danger'>[our_guy] stamps on [user]'s hand, mid-shoelace [tied ? "knotting" : "untying"]!</span>", "<span class='userdanger'>Ow! [our_guy] stamps on your hand!</span>", list(our_guy))
 			to_chat(our_guy, "<span class='userdanger'>You stamp on [user]'s hand! What the- [user.p_they()] [user.p_were()] [tied ? "knotting" : "untying"] your shoelaces!</span>")
-			user.emote("scream")
+			user.force_scream()
 			if(istype(L))
 				var/obj/item/bodypart/ouchie = L.get_bodypart(pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
 				if(ouchie)

@@ -1,7 +1,6 @@
 GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		/obj/item/storage/box/snappops = 2,
 		/obj/item/toy/talking/AI = 2,
-		/obj/item/toy/talking/codex_gigas = 2,
 		/obj/item/clothing/under/syndicate/tacticool = 2,
 		/obj/item/toy/sword = 2,
 		/obj/item/toy/gun = 2,
@@ -17,7 +16,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		/obj/item/toy/prize/honk = 1,
 		/obj/item/toy/prize/marauder = 1,
 		/obj/item/toy/prize/seraph = 1,
-		/obj/item/toy/prize/mauler = 1,
+		/obj/item/toy/prize/touro = 1,
 		/obj/item/toy/prize/odysseus = 1,
 		/obj/item/toy/prize/phazon = 1,
 		/obj/item/toy/prize/reticence = 1,
@@ -44,7 +43,6 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		/obj/item/extendohand/acme = 1,
 		/obj/item/hot_potato/harmless/toy = 1,
 		/obj/item/card/emagfake = 1,
-		/obj/item/clothing/shoes/wheelys = 2,
 		/obj/item/clothing/shoes/kindleKicks = 2,
 		/obj/item/toy/plush/goatplushie/angry/realgoat = 2,
 		/obj/item/toy/plush/moth = 2,
@@ -74,7 +72,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		var/list/gameodds = list(/obj/item/circuitboard/computer/arcade/battle = 49,
 							/obj/item/circuitboard/computer/arcade/orion_trail = 49,
 							/obj/item/circuitboard/computer/arcade/amputation = 2)
-		var/thegame = pickweight(gameodds)
+		var/thegame = pick_weight(gameodds)
 		var/obj/item/circuitboard/CB = new thegame()
 		new CB.build_path(loc, CB)
 		return INITIALIZE_HINT_QDEL
@@ -95,9 +93,9 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 			return
 		var/prizeselect
 		if(prize_override)
-			prizeselect = pickweight(prize_override)
+			prizeselect = pick_weight(prize_override)
 		else
-			prizeselect = pickweight(GLOB.arcade_prize_pool)
+			prizeselect = pick_weight(GLOB.arcade_prize_pool)
 		var/atom/movable/the_prize = new prizeselect(get_turf(src))
 		playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
 		visible_message("<span class='notice'>[src] dispenses [the_prize]!</span>", "<span class='notice'>You hear a chime and a clunk.</span>")
@@ -120,9 +118,9 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 			num_of_prizes = rand(0,2)
 	for(var/i = num_of_prizes; i > 0; i--)
 		if(override)
-			empprize = pickweight(prize_override)
+			empprize = pick_weight(prize_override)
 		else
-			empprize = pickweight(GLOB.arcade_prize_pool)
+			empprize = pick_weight(GLOB.arcade_prize_pool)
 		new empprize(loc)
 	explosion(loc, -1, 0, 1+num_of_prizes, flame_range = 1+num_of_prizes)
 
@@ -295,7 +293,6 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 			if(obj_flags & EMAGGED)
 				new /obj/effect/spawner/newbomb/timer/syndicate(loc)
-				new /obj/item/clothing/head/collectable/petehat(loc)
 				message_admins("[ADMIN_LOOKUPFLW(usr)] has outbombed Cuban Pete and been awarded a bomb.")
 				log_game("[key_name(usr)] has outbombed Cuban Pete and been awarded a bomb.")
 				Reset()
@@ -638,7 +635,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 					event = ORION_TRAIL_COLLISION
 					event()
 				else if(prob(75-gamerSkill))
-					event = pickweight(events)
+					event = pick_weight(events)
 					if(lings_aboard)
 						if(event == ORION_TRAIL_LING || prob(55-gamerSkill))
 							event = ORION_TRAIL_LING_ATTACK

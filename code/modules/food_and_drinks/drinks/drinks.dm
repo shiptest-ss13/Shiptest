@@ -373,7 +373,7 @@
 	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
-	foodtype = GRAIN | ALCOHOL
+	foodtype = SUGAR | ALCOHOL
 	custom_price = 60
 
 /obj/item/reagent_containers/food/drinks/beer/light
@@ -593,6 +593,7 @@
 			broh.losebreath++
 			switch(broh.losebreath)
 				if(-INFINITY to 0)
+					EMPTY_BLOCK_GUARD
 				if(1 to 2)
 					if(prob(30))
 						user.visible_message("<b>[broh]</b>'s eyes water as [broh.p_they()] chug the can of [src]!")
@@ -762,7 +763,7 @@
 	desc = "If you ever wondered where air came from..."
 	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
 	icon = 'icons/obj/food/ration.dmi'
-	icon_state = "ration_package"
+	icon_state = "ration_drink"
 	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
 	in_container = TRUE
@@ -773,7 +774,7 @@
 
 /obj/item/reagent_containers/food/drinks/ration/proc/open_ration(mob/user)
 	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
-	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
+	playsound(user.loc, 'sound/items/glass_cap.ogg', 50)
 	reagents.flags |= OPENCONTAINER
 	spillable = TRUE
 

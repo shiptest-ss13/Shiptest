@@ -110,22 +110,24 @@
 			var/final_block_chance = I.block_chance - (clamp((armour_penetration-I.armour_penetration)/2,0,100)) + block_chance_modifier //So armour piercing blades can still be parried by other blades, for example
 			if(I.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 				return TRUE
+
 	if(wear_suit)
-		var/final_block_chance = wear_suit.block_chance - (clamp((armour_penetration-wear_suit.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/final_block_chance = wear_suit.block_chance - (clamp((armour_penetration - wear_suit.armour_penetration)/2,0,100)) + block_chance_modifier
 		if(wear_suit.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 			return TRUE
 	if(w_uniform)
-		var/final_block_chance = w_uniform.block_chance - (clamp((armour_penetration-w_uniform.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/final_block_chance = w_uniform.block_chance - (clamp((armour_penetration - w_uniform.armour_penetration)/2,0,100)) + block_chance_modifier
 		if(w_uniform.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 			return TRUE
 	if(wear_neck)
-		var/final_block_chance = wear_neck.block_chance - (clamp((armour_penetration-wear_neck.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/final_block_chance = wear_neck.block_chance - (clamp((armour_penetration - wear_neck.armour_penetration)/2,0,100)) + block_chance_modifier
 		if(wear_neck.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 			return TRUE
 	if(head)
-		var/final_block_chance = head.block_chance - (clamp((armour_penetration-head.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/final_block_chance = head.block_chance - (clamp((armour_penetration - head.armour_penetration)/2,0,100)) + block_chance_modifier
 		if(head.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 			return TRUE
+
 	return FALSE
 
 /mob/living/carbon/human/proc/check_block()
@@ -473,16 +475,6 @@
 				if(!max_limb_loss)
 					break
 
-
-/mob/living/carbon/human/blob_act(obj/structure/blob/B)
-	if(stat == DEAD)
-		return
-	show_message("<span class='userdanger'>The blob attacks you!</span>")
-	var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
-	apply_damage(5, BRUTE, affecting, run_armor_check(affecting, "melee"))
-
-
 ///Calculates the siemens coeff based on clothing and species, can also restart hearts.
 /mob/living/carbon/human/electrocute_act(shock_damage, source, siemens_coeff = 1, flags = NONE)
 	//If it doesnt have physiology its prob still initializing.
@@ -532,8 +524,8 @@
 	var/informed = FALSE
 	for(var/obj/item/bodypart/L as anything in bodyparts)
 		if(!IS_ORGANIC_LIMB(L))
-			if(!informed)
-				to_chat(src, "<span class='userdanger'>You feel a sharp pain as your robotic limbs overload.</span>")
+			if(!informed && !HAS_TRAIT(src, TRAIT_ANALGESIA))
+				to_chat(src, span_userdanger("You feel a sharp pain as your robotic limbs overload."))
 				informed = TRUE
 			switch(severity)
 				if(1)
@@ -665,7 +657,7 @@
 		if(affecting.name == BODY_ZONE_HEAD)
 			if(prob(min(acidpwr*acid_volume/10, 90))) //Applies disfigurement
 				affecting.receive_damage(acidity, 2*acidity)
-				emote("scream")
+				force_scream()
 				facial_hairstyle = "Shaved"
 				hairstyle = "Bald"
 				update_hair()
