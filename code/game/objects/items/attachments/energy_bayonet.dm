@@ -1,7 +1,3 @@
-#define BAYONET_OFF 0
-#define BAYONET_ON 1
-#define BAYONET_LONG 2
-
 /obj/item/attachment/energy_bayonet
 	name = "energy bayonet"
 	desc = "Stabby-Stabby"
