@@ -1083,18 +1083,6 @@
 	dir = 10
 	},
 /obj/structure/chair/bench/orange/directional/north,
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -19;
-	pixel_y = 7
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "kali_dorms_shut";
-	name = "Crew Quarters Shutters";
-	pixel_x = -20;
-	pixel_y = -3
-	},
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -3417,7 +3405,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/button/door{
+	id = "kali_dorms_shut";
+	name = "Crew Quarters Shutters";
+	pixel_x = 3;
+	pixel_y = 23
+	},
+/obj/machinery/light_switch{
+	pixel_x = -7;
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "wR" = (
@@ -5398,6 +5395,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Jg" = (
@@ -6391,7 +6389,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 7;
+	pixel_y = 22
+	},
+/obj/machinery/button/door{
+	id = "kali_mess_shut";
+	name = "Canteen Shutters";
+	pixel_x = -3;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "PU" = (
@@ -6743,19 +6750,7 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 19;
-	pixel_y = 7
-	},
-/obj/machinery/button/door{
-	dir = 8;
-	id = "kali_mess_shut";
-	name = "Canteen Shutters";
-	pixel_x = 20;
-	pixel_y = -3
-	},
-/obj/machinery/firealarm/directional/south,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Tn" = (
@@ -8348,7 +8343,7 @@ UR
 lD
 PG
 lI
-Pg
+JN
 Pg
 Kz
 Kz
