@@ -1,11 +1,12 @@
 /obj/item/clothing/under/dress
+	name = "strange broken dress"
+	desc = "Tell a coder!"
+	icon = 'icons/obj/clothing/under/dress.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/dresses/dress.dmi'
+	kepori_override_icon = 'icons/mob/clothing/under/dresses/dress_kepori.dmi'
+
 	can_adjust = FALSE
 	body_parts_covered = CHEST|GROIN
-	icon = 'icons/obj/clothing/under/dresses/dress.dmi'
-
-	mob_overlay_icon = 'icons/mob/clothing/under/dresses/dress_kepori.dmi'
-	kepori_override_icon = 
-
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/dress/sundress
@@ -45,7 +46,7 @@
 	can_adjust = TRUE
 
 /obj/item/clothing/under/dress/iko_ikssoal
-	name = "iko_ikssoal"
+	name = "iko ikssoal"
 	desc = "The “iko-ikssoal”, translating to “long-dress”, is a traditional Kalixcian garment for formal gatherings."
 	icon_state = "iko_ikssoal"
 
