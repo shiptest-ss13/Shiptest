@@ -53,9 +53,6 @@ procs used to set off effects
 /obj/structure/hazard/proc/attacked() //goes off if attacked or shot by most things.
 	return
 
-/obj/structure/hazard/proc/client_nearby() //goes off if a living creature with a client (effectively a player check) is within 5 tiles.
-	return
-
 /*
 evil 'code' that sets off the above procs. mappers beware!
 */

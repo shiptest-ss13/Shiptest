@@ -51,12 +51,6 @@
 	if(random_zap)
 		zap_on_turf()
 
-/obj/structure/hazard/electrical/client_nearby()
-	if(!COOLDOWN_FINISHED(src, cooldown))
-		return
-	COOLDOWN_START(src, cooldown, cooldown_time)
-	zap()
-
 //shoots off a tesla arc
 /obj/structure/hazard/electrical/proc/zap()
 	playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
