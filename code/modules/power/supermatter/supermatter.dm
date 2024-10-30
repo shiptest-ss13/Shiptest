@@ -29,7 +29,7 @@
 #define PLASMA_TRANSMIT_MODIFIER 4
 #define BZ_TRANSMIT_MODIFIER -2
 #define TRITIUM_TRANSMIT_MODIFIER 30 //We divide by 10, so this works out to 3
-#define PLUOXIUM_TRANSMIT_MODIFIER -5 //Should halve the power output
+#define OZONE_TRANSMIT_MODIFIER -5 //Should halve the power output
 #define H2O_TRANSMIT_MODIFIER -9
 
 #define BZ_RADIOACTIVITY_MODIFIER 5 //Improves the effect of transmit modifiers
@@ -154,7 +154,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		GAS_CO2,
 		GAS_NITROUS,
 		GAS_N2,
-		GAS_PLUOXIUM,
+		GAS_O3,
 		GAS_TRITIUM,
 		GAS_BZ,
 		GAS_FREON,
@@ -167,7 +167,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		GAS_CO2 = 0,
 		GAS_NITROUS = 0,
 		GAS_N2 = 0,
-		GAS_PLUOXIUM = 0,
+		GAS_O3 = 0,
 		GAS_TRITIUM = 0,
 		GAS_BZ = 0,
 		GAS_FREON = 0,
@@ -177,7 +177,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		GAS_O2 = OXYGEN_TRANSMIT_MODIFIER,
 		GAS_H2O = H2O_TRANSMIT_MODIFIER,
 		GAS_PLASMA = PLASMA_TRANSMIT_MODIFIER,
-		GAS_PLUOXIUM = PLUOXIUM_TRANSMIT_MODIFIER,
+		GAS_O3 = OZONE_TRANSMIT_MODIFIER,
 		GAS_TRITIUM = TRITIUM_TRANSMIT_MODIFIER,
 		GAS_BZ = BZ_TRANSMIT_MODIFIER,
 	)
@@ -188,7 +188,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		GAS_PLASMA = PLASMA_HEAT_PENALTY,
 		GAS_CO2 = CO2_HEAT_PENALTY,
 		GAS_N2 = NITROGEN_HEAT_PENALTY,
-		GAS_PLUOXIUM = PLUOXIUM_HEAT_PENALTY,
+		GAS_O3 = PLUOXIUM_HEAT_PENALTY,
 		GAS_TRITIUM = TRITIUM_HEAT_PENALTY,
 		GAS_BZ = BZ_HEAT_PENALTY,
 		GAS_FREON = FREON_HEAT_PENALTY,
@@ -196,7 +196,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	///The list of gases mapped against their heat resistance. We use it to moderate heat damage.
 	var/list/gas_resist = list(
 		GAS_NITROUS = N2O_HEAT_RESISTANCE,
-		GAS_PLUOXIUM = PLUOXIUM_HEAT_RESISTANCE,
+		GAS_O3 = PLUOXIUM_HEAT_RESISTANCE,
 	)
 	///The list of gases mapped against their powermix ratio
 	var/list/gas_powermix = list(
@@ -205,7 +205,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		GAS_PLASMA = 1,
 		GAS_CO2 = 1,
 		GAS_N2 = -1,
-		GAS_PLUOXIUM = -1,
+		GAS_O3 = -1,
 		GAS_TRITIUM = 1,
 		GAS_BZ = 1,
 		GAS_FREON = -1,
@@ -518,13 +518,13 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		var/list/resistance_mod = gases_we_care_about.Copy()
 
 		//We're concerned about pluoxium being too easy to abuse at low percents, so we make sure there's a substantial amount.
-		var/pluoxiumbonus = (gas_comp[GAS_PLUOXIUM] >= 0.15) //makes pluoxium only work at 15%+
+		var/pluoxiumbonus = (gas_comp[GAS_O3] >= 0.15) //makes pluoxium only work at 15%+
 		var/h2obonus = 1 - (gas_comp[GAS_H2O] * 0.25)//At max this value should be 0.75
 		var/freonbonus = (gas_comp[GAS_FREON] <= 0.03) //Let's just yeet power output if this shit is high
 
-		heat_mod[GAS_PLUOXIUM] = pluoxiumbonus
-		transit_mod[GAS_PLUOXIUM] = pluoxiumbonus
-		resistance_mod[GAS_PLUOXIUM] = pluoxiumbonus
+		heat_mod[GAS_O3] = pluoxiumbonus
+		transit_mod[GAS_O3] = pluoxiumbonus
+		resistance_mod[GAS_O3] = pluoxiumbonus
 
 		//No less then zero, and no greater then one, we use this to do explosions and heat to power transfer
 		//Be very careful with modifing this var by large amounts, and for the love of god do not push it past 1

@@ -2415,7 +2415,7 @@
 	pixel_x = -26
 	},
 /obj/structure/spider/stickyweb,
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/pod/light,
 /area/ruin/unpowered/crashed_starwalker)
 "MO" = (
@@ -2447,7 +2447,7 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/crashed_starwalker)
 "MX" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/structure/railing{
 	dir = 4
 	},
@@ -2480,7 +2480,7 @@
 	icon_state = "gib3-old";
 	pixel_x = -6
 	},
-/obj/item/melee/transforming/energy/sword/saber/pirate/yellow{
+/obj/item/melee/energy/sword/saber/pirate/yellow{
 	pixel_x = -5;
 	pixel_y = 16
 	},

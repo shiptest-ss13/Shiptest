@@ -10,7 +10,6 @@
 	melee_damage_upper = 15
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier,
 				/obj/item/melee/knife/survival)
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	footstep_type = FOOTSTEP_MOB_SHOE
 
@@ -20,7 +19,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier,
 				/obj/item/clothing/mask/gas/sechailer,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 
@@ -42,7 +41,7 @@
 				/obj/item/gun/ballistic/revolver/shadow,
 				/obj/item/clothing/mask/gas/sechailer,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered
@@ -67,6 +66,7 @@
 	casingtype = null
 	ranged_message = "fires the syringe gun at"
 	ranged_cooldown_time = 30
+	armor_base = /obj/item/clothing/suit/frontiersmen
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/neuter
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/surgeon)
@@ -102,7 +102,7 @@
 				/obj/item/gun/ballistic/rifle/illestren,
 				/obj/item/clothing/mask/gas/sechailer,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered
@@ -116,12 +116,11 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper
 	icon_state = "frontiersmanrangedelite"
 	icon_living = "frontiersmanrangedelite"
-	maxHealth = 170
-	health = 170
 	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/shotgun/brimstone)
+	armor_base = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
 	icon_state = "frontiersmanrangedelite_mask"
@@ -130,7 +129,7 @@
 				/obj/item/gun/ballistic/shotgun/brimstone,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered
@@ -156,6 +155,7 @@
 	projectiletype = null
 	projectilesound = 'sound/weapons/gun/flamethrower/flamethrower1.ogg'
 	casingtype = null
+	armor_base = /obj/item/clothing/suit/armor/frontier/fireproof
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/OpenFire()
 	var/turf/T = get_ranged_target_turf_direct(src, target, 4)
@@ -177,6 +177,7 @@
 	casingtype = /obj/item/ammo_casing/a762_40
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/automatic/assault/skm)
+	armor_base = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals
 	icon_state = "frontiersmanrangedak47_mask"
@@ -185,7 +186,7 @@
 				/obj/item/gun/ballistic/automatic/assault/skm,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered
@@ -204,6 +205,7 @@
 				/obj/item/gun/ballistic/rifle/illestren)
 	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
+	armor_base = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals
 	icon_state = "frontiersmanrangedmosin_mask"
@@ -212,7 +214,7 @@
 				/obj/item/gun/ballistic/rifle/illestren,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered
@@ -227,13 +229,12 @@
 	icon_state = "frontiersmanrangedminigun"
 	icon_living = "frontiersmanrangedminigun"
 	projectilesound = 'sound/weapons/laser4.ogg'
-	maxHealth = 260
-	health = 260
 	rapid = 6
 	rapid_fire_delay = 1.5
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/penetrator
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy)
+	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals
 	icon_state = "frontiersmanrangedminigun_mask"
@@ -241,7 +242,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 
@@ -257,13 +258,12 @@
 	name = "Frontiersman Officer"
 	icon_state = "frontiersmanofficer"
 	icon_living = "frontiersmanofficer"
-	maxHealth = 65
-	health = 65
 	rapid = 4
 	projectilesound = 'sound/weapons/gun/pistol/mauler.ogg'
 	casingtype = /obj/item/ammo_casing/c9mm
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer,
 				/obj/item/gun/ballistic/automatic/pistol/mauler)
+	armor_base = /obj/item/clothing/suit/armor/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
 	icon_state = "frontiersmanofficer_mask"
@@ -272,7 +272,7 @@
 				/obj/item/gun/ballistic/automatic/pistol/mauler,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals/neutered

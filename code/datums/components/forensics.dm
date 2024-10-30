@@ -190,6 +190,9 @@
 		return
 	if(!length(blood_DNA))
 		return
-	if(isitem(parent))
-		var/obj/item/I = parent
-		I.AddElement(/datum/element/decal/blood, I.icon, I.icon_state, _color = get_blood_dna_color(blood_DNA))
+	var/obj/item/parent_item = parent
+	var/icon_state_adj = parent_item.icon_state
+	if(isbodypart(parent))//betterlimbs moment
+		var/obj/item/bodypart/parent_part = parent
+		icon_state_adj = parent_part.stored_icon_state
+	parent_item.AddElement(/datum/element/decal/blood, parent_item.icon, icon_state_adj, _color = get_blood_dna_color(blood_DNA))
