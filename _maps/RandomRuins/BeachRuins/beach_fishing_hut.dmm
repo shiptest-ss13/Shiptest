@@ -7,7 +7,8 @@
 "bl" = (
 /obj/machinery/light/floor,
 /obj/machinery/porta_turret/ship/frontiersmen{
-	dir = 6
+	dir = 6;
+	faction = list("Frontiersmen","Turret")
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach)
@@ -147,7 +148,8 @@
 "hd" = (
 /obj/machinery/light/floor,
 /obj/machinery/porta_turret/ship/frontiersmen{
-	dir = 10
+	dir = 10;
+	faction = list("Frontiersmen","Turret")
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach)
@@ -265,7 +267,8 @@
 "lT" = (
 /obj/machinery/light/floor,
 /obj/machinery/porta_turret/ship/frontiersmen{
-	dir = 5
+	dir = 5;
+	faction = list("Frontiersmen","Turret")
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach)
@@ -396,7 +399,8 @@
 "pd" = (
 /obj/machinery/light/floor,
 /obj/machinery/porta_turret/ship/frontiersmen{
-	dir = 9
+	dir = 9;
+	faction = list("Frontiersmen","Turret")
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach)

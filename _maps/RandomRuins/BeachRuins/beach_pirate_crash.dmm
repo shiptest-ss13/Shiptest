@@ -1368,7 +1368,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/porta_turret/ship/frontiersmen/light{
-	dir = 10
+	dir = 10;
+	faction = list("Frontiersmen","Turret")
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash)
