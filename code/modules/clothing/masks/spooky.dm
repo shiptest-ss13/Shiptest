@@ -1,6 +1,6 @@
 /obj/item/clothing/mask/spooky
 	desc = "A spooky mask."
-	flags_inv = HIDEFACE
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	flags_cover = MASKCOVERSMOUTH
 
 /obj/item/clothing/mask/spooky/pig
@@ -96,6 +96,7 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/mask/spooky/skeleton
-	name = "skeleton mask"
-	desc = "A simple skeleton mask."
-	flags_inv = HIDEFACE
+	name = "plastic skeleton mask"
+	desc = "A simple plastic skeleton mask."
+	icon_state = "death"
+	item_state = "death"

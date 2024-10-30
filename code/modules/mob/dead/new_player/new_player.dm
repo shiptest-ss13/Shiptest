@@ -340,15 +340,8 @@
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 		if(CONFIG_GET(flag/roundstart_traits))
 			SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
-		if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-			to_chat(humanc, "Happy Mexapix, you have some extra things in your backpack today. Read up about it <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Here!</a>")
-			var/obj/item/storage/backpack/backpack = locate() in humanc.contents
-			if(backpack)
-				new /obj/item/storage/mexapix_candy(backpack)
-				if(islizard(humanc))
-					new /obj/item/clothing/accessory/tooth_armlet(backpack)
-				else
-					new /obj/item/clothing/accessory/tooth_armlet/plastic(backpack)
+
+		holiday_choices(humanc)
 
 	GLOB.joined_player_list += character.ckey
 
@@ -358,6 +351,35 @@
 	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
 		minor_announce("[job.name] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
 	return TRUE
+
+/mob/dead/new_player/proc/holiday_choices(mob/living/carbon/human/humanc)
+	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
+
+		to_chat(humanc, span_big("Happy Halloween! You can choose which holiday your character celebrates."))
+		to_chat(humanc, span_notice("Read up about Mexapix <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Here!</a><br>Dia de Los Muretos does not have lore atm!"))
+
+		var/list/choices = list()
+		choices["Kalixican Mexapix"] = icon('icons/obj/halloween_items.dmi', "tooth_armlet")
+		choices["Dia de Los Muertos"] = icon('icons/obj/clothing/masks.dmi', "death")
+		var/choice = show_radial_menu(
+			humanc,
+			humanc,
+			choices,
+		)
+		switch(choice)
+			if("Kalixican Mexapix")
+				to_chat(humanc, span_notice("You brought a arxa and armlet in your bag."))
+				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
+				if(backpack)
+					new /obj/item/storage/mexapix_candy(backpack)
+					if(islizard(humanc))
+						new /obj/item/clothing/accessory/tooth_armlet(backpack)
+					else
+						new /obj/item/clothing/accessory/tooth_armlet/plastic(backpack)
+			if("Dia de Los Muertos")
+				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
+				if(backpack)
+					new /obj/effect/spawner/random/clothing/day_of_dead(backpack)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.

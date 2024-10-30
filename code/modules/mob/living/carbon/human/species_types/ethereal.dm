@@ -85,7 +85,7 @@
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
 		if(!leaves_particle)
 			leaves_particle = new(_carbon, /particles/elzouse_leaves, PARTICLE_ATTACH_MOB)
-		leaves_particle.particles.color = _carbon.dna.features["ethcolor"]
+		leaves_particle.particles.color = default_color
 
 /datum/species/elzuose/on_species_loss(mob/living/carbon/human/_carbon, datum/species/new_species, pref_load)
 	UnregisterSignal(_carbon, COMSIG_ATOM_EMP_ACT)
@@ -193,9 +193,13 @@
 		set_ethereal_light(_human, current_color)
 		ethereal_light.set_light_on(TRUE)
 		fixed_mut_color = copytext_char(current_color, 2)
+		if(leaves_particle)
+			leaves_particle.particles.color = current_color
 	else
 		ethereal_light.set_light_on(FALSE)
 		fixed_mut_color = rgb(128,128,128)
+		if(leaves_particle)
+			leaves_particle.particles.color = rgb(128,128,128)
 
 	for(var/obj/item/bodypart/parts_to_update as anything in _human.bodyparts)
 		parts_to_update.species_color = fixed_mut_color
