@@ -9,7 +9,7 @@
 	var/random_sparks = FALSE
 	//randomly zaps mobs on turf. deadly!
 	var/random_zap = FALSE
-	// randomly emit tesla arcs. use sparingly!
+	//randomly emit tesla arcs. use sparingly!
 	var/random_tesla = FALSE
 	//how far the tesla arc reaches, still can chain off other objects.
 	var/zap_range = 4

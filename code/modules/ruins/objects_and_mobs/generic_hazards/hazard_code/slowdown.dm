@@ -26,10 +26,13 @@ slowing hazards! either requires laying down, has a chance to stick, or requires
 
 /obj/structure/hazard/slowdown/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
+	//if this hazard is dense, stop players
 	if(density)
 		return FALSE
+	//if this hazard is disabled or off, let players through
 	if(!on || disabled)
 		return TRUE
+	//stops players if sticky or overhead checks return TRUE
 	var/failed_check = FALSE
 	if(sticky)
 		failed_check += !sticky_checks(mover)
@@ -40,29 +43,38 @@ slowing hazards! either requires laying down, has a chance to stick, or requires
 	else
 		return TRUE
 
-//pretty much stolen from plastic flaps.
+//based on plastic flaps, requires crawling under
 /obj/structure/hazard/slowdown/proc/overhead_checks(atom/movable/mover)
+	//lets lasers through if not opaque
 	if(istype(mover) && (mover.pass_flags & PASSGLASS) && !opacity)
 		return TRUE
 
+	//people on beds and dense beds can't get through
 	if(istype(mover, /obj/structure/bed))
 		var/obj/structure/bed/bed_mover = mover
-		if(bed_mover.density || bed_mover.has_buckled_mobs())//if it's a bed/chair and is dense or someone is buckled, it will not pass
+		if(bed_mover.density || bed_mover.has_buckled_mobs())
 			return FALSE
 
+	//people in cardboard boxes have to wait for their delay
 	else if(istype(mover, /obj/structure/closet/cardboard))
 		var/obj/structure/closet/cardboard/cardboard_mover = mover
 		if(cardboard_mover.move_delay)
 			return FALSE
 
+	//no mechs!
 	else if(ismecha(mover))
 		return FALSE
 
-	else if(isliving(mover)) // You Shall Not Pass!
+	//actual living checks
+	else if(isliving(mover))
 		var/mob/living/living_mover = mover
-		if(isbot(mover)) //Bots understand the secrets
+
+		//bots (cleaning, medical, etc) can go under by default.
+		if(isbot(mover))
 			return TRUE
-		if(living_mover.body_position == STANDING_UP && !living_mover.ventcrawler && living_mover.mob_size != MOB_SIZE_TINY)	//If you're not laying down, or a ventcrawler or a small creature, no pass.
+
+		//laying down, being a ventcrawler, or being tiny lets you through.
+		if(living_mover.body_position == STANDING_UP && !living_mover.ventcrawler && living_mover.mob_size != MOB_SIZE_TINY)
 			return FALSE
 	return TRUE
 

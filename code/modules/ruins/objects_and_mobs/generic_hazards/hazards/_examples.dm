@@ -1,5 +1,5 @@
 //EXAMPLE HAZARDS. DON'T USE THESE ON FINSIHED MAPS!!
-
+//see hazard_info.dm for an explaination
 /*
 SLOWDOWN HAZARDS
 */
@@ -96,9 +96,9 @@ ELECTRICAL HAZARDS
 	random_max = 20 SECONDS
 
 	contact_stun = TRUE
-	stun_time = 0 //don't do stun_time if not using SHOCK_NOGLOVES
+	stun_time = 0 //requires SHOCK_NOGLOVES
 	contact_damage = 30
-	shock_flags = 0 //doesn't shock if not wearing gloves, but stuns if you get shocked.
+	shock_flags = 0 //insulated gloves protect from this shock, and this shock will stun.
 
 /*
 STEAM HAZARDS
@@ -184,7 +184,7 @@ FLOOR EXAMPLES
 	icon_state = "hazard"
 	density = TRUE //deals arms damage
 	contact_damage = TRUE //needed
-	dealt_damage = 40 //split across legs or arms.
+	dealt_damage = 40 //split across both arms.
 	damage_type = BURN
 
 /obj/structure/hazard/floor/example/toxicpit
@@ -192,7 +192,7 @@ FLOOR EXAMPLES
 	icon_state = "hazardg"
 	density = FALSE //needed
 	random_damage = TRUE //needed
-	dealt_damage = 20 //split across legs
+	dealt_damage = 20 //split across both legs
 	damage_type = BURN
 	random_min = 2 SECONDS
 	random_max = 3 SECONDS
@@ -210,7 +210,7 @@ FLOOR EXAMPLES
 
 /obj/structure/hazard/floor/example/launch
 	name = "example launch"
-	icon_state = "gravplate" //needs state-launch version
+	icon_state = "gravplate" //needs state-launch version ie "gravplate" and "gravplate-launch"
 	density = FALSE //needed
 	layer = ABOVE_NORMAL_TURF_LAYER //needed to render it on the floor
 	launcher = TRUE //needed
@@ -248,32 +248,32 @@ shutoff example
 //Toggles the state of hazards with the same ID. SET ID ON MAP USING VAREDIT AND BE UNIQUE (ie: id = crashed_starwalker_water_hazard)
 /obj/structure/hazard_shutoff/example
 	name = "example shutoff"
-	desc = "id = 1"
-	id = 1
+	desc = "id = example"
+	id = "example"
 
 //ingame working example
 /obj/structure/hazard/electrical/example/random_tesla/shutoffexample
 	name = "shutoff tesla"
-	id = 1
+	id = "example"
 	random_min = 1 SECONDS
 	random_max = 2 SECONDS
 
 //another ingame working example
 /obj/structure/hazard/electrical/electrified_water/example
-	id = 1
+	id = "example"
 
 //turns off hazards with the same ID until the resets time has passed!
 /obj/structure/hazard_shutoff/example/timed
 	name = "example timed shutoff"
-	desc = "id = 1"
-	id = 1
+	desc = "id = example"
+	id = "example"
 	resets = 3 SECONDS
 
 //only works once charged with a cable up to siphon_max
 /obj/structure/hazard_shutoff/powered/example
 	name = "example powered shutoff"
-	desc = "id = 1"
-	id = 1
+	desc = "id = example"
+	id = "example"
 	siphon_max = 1e6 //required power, in watts, needed to use this toggle.
 	toggle_power = 5e5 //can be 0
 

@@ -1,6 +1,8 @@
 /////////////
 //MAP GUIDE//
 /////////////
+// a guide of how to add subtypes of existing hazards, such as electrical/thing or atmospherics/plasma
+
 /*
 Hi there, mapper. this isn't as hard as it looks! follow these steps, and feel free to ask for help!
 
@@ -28,46 +30,32 @@ thing.dm
 
 again, feel free to ask for help! this is made to be (hopefully) easy enough for adventurous mappers to use.
 
+
 ///////////////////////////////
 //NEW HAZARD/THING TYPE GUIDE//
 ///////////////////////////////
+An explanation of the code needed to make new hazard types, such as the base type electrical and atmospheric.
+
 look at hazard/electrical for starters, its got a wide array of examples
 make a new file for this new thing
 
-do_random_effect() occurs randomly, with random_min to random_max between
+do_random_effect() repeats with a cooldown set randomly between random_min and random_max, if do_random_effect = TRUE
 
-TODO Finish later!
+contact() is sent when the hazard is entered or bumped, based on density. Ensure enter_activated is set if the hazard uses contact()
 
-TODO (GET RID OF THIS BEFORE THE PR GETS MERGED OR SO HELP ME -helmcrab 21 july 2024)
-X-Spike pits! :) done
-X-low hanging debris? have to crawl or walk through done
-X-icon stuff done
-X-electrified area, used to make water scary done
-X-fusebox for turning off hazards. Also could be a hazard :) done
-X-chem smoke types //needs testing. done
-X-make floor hazards rely less on components. Not customizable enough. Floor hazards are just going to be like that I think. done
-X-grav tiles! needs to move objects as well because itll look good and tell players 'hey this is fucked up' even more done
-X-burst pipes that emit gas? could just be More Smoke (smoke sucks ass) atmos easy peasy. done.
-x-MORE SMOKE TYPES!!! YEAH!!! (smoke really needs to be uh, differentiable I think(not my problem for now) (could wait for cl hcl to do goggles check) chem smoke good enough. done
--falling debris? not sure how to represent this ingame.
-X-acid pits
--biological hazards (foam is a good start)
--electrical makes light (probably pretty easy. I dont feel like it.)
-X-remove caltrop component and write something based on it. caltrop is janky for this use. done
--let floor hazards have seperate warnings and damage texts
--better guide on how to make these hazards, maybe on the wiki?
+requires_client_nearby and client_range are used for optimization purposes and for player reactive traps.
+If set, only mobs with clients within client_range will enable the hazard.
 
-" HC
-maybe something roughly like the medipen ruin vault
-where if you supply (or fail to supply) something with power, for enough time, it toggles the state
-"
+the disabled var is used to track if the hazard has been disabled.
+disabled hazards cannot be renabled as the code intentionally stops calling itself.
+can_be_disabled determines if the hazard can be disabled
+time_to_disable only applies if the hazard can be disabled AND if the hazard uses this time for it's disable state.
+generally, requiring another do_after with double the time of time_to_disable to remove (delete) the hazard is standard.
+disable_text is added to the examine text if can_be_disabled is true. needs to be set!
 
-IDEAS - GOING TO NEED A SPRITER OR MAKE BAD SPRITES MYSELF
-sparking wallmount (fusebox, old APC, conduit)
-X power conduits, broken/frayed/decorative (stun version, spark on step, random spark)
-X wire tangle w/ stun
-broken machines
-tesla something or other
-broken SMES/generator tesla
+the on var and id var are used with hazard shutoffs
+if a hazard is off, contact and random effects aren't sent.
+ids should only be set on maps, and are used to link shutoffs and hazards. Yes this is global, no I don't know how to do it better while keeping it simple.
 
+slowdown is used on all hazards to add slowdown to the turf the hazard is on. higher slowdown leads to slower players
 */

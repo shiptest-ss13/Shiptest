@@ -10,6 +10,6 @@
 	random_sparks = TRUE
 	random_zap = TRUE
 	contact_damage = 10
-	random_min = 3 SECONDS //should result in the whole pool pulsing at almost the same time.
+	random_min = 3 SECONDS //should result in the whole pool pulsing at the same time.
 	random_max = 3 SECONDS
 	slowdown = 0.5
