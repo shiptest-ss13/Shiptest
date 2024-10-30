@@ -381,6 +381,8 @@
 /area/space)
 "hY" = (
 /obj/machinery/door/airlock,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled,
+/obj/effect/turf_decal/industrial/outline/blue,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "hZ" = (
@@ -410,6 +412,12 @@
 /obj/item/reagent_containers/food/drinks/coffee,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"iH" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "iU" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -430,6 +438,12 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/lime/mono,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"jP" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "jR" = (
@@ -533,6 +547,8 @@
 "lh" = (
 /obj/machinery/door/airlock,
 /obj/effect/mapping_helpers/airlock/sealed,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled,
+/obj/effect/turf_decal/industrial/outline/blue,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "li" = (
@@ -696,7 +712,8 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/space)
 "oo" = (
-/obj/machinery/door/airlock/command,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled,
+/obj/effect/turf_decal/industrial/outline/blue,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "op" = (
@@ -1145,6 +1162,9 @@
 /obj/machinery/door/airlock/engineering{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/space)
 "wR" = (
@@ -1182,7 +1202,17 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
+"xs" = (
+/obj/machinery/door/airlock{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled,
+/obj/effect/turf_decal/industrial/outline/blue,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "xy" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled,
+/obj/effect/turf_decal/industrial/outline/blue,
 /obj/machinery/door/airlock/command{
 	dir = 4
 	},
@@ -1283,6 +1313,13 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/space)
+"zk" = (
+/obj/machinery/door/airlock/hatch,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "zA" = (
 /obj/structure/table/optable,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -1378,6 +1415,12 @@
 	},
 /obj/structure/closet/cabinet,
 /turf/open/floor/plasteel/sepia,
+/area/space)
+"Bm" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "By" = (
 /obj/structure/railing{
@@ -1661,6 +1704,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"Hh" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled,
+/obj/effect/turf_decal/industrial/outline/blue,
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "Hi" = (
 /obj/structure/table/reinforced,
 /obj/structure/sign/flag/gezena{
@@ -1779,6 +1830,15 @@
 "Kn" = (
 /obj/machinery/cryopod{
 	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"KA" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -1909,7 +1969,7 @@
 /obj/machinery/door/airlock{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plastic,
 /area/space)
 "NT" = (
 /obj/structure/tank_dispenser/oxygen,
@@ -2555,6 +2615,15 @@
 /area/space)
 "YR" = (
 /obj/structure/chair/bench/beige/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"YS" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "YY" = (
@@ -3730,7 +3799,7 @@ jW
 jW
 Nq
 XX
-XX
+iH
 XX
 Sd
 ls
@@ -3802,7 +3871,7 @@ Nq
 Nq
 Nq
 XX
-XX
+iH
 XX
 Sd
 ls
@@ -3874,7 +3943,7 @@ XX
 ws
 up
 OH
-XX
+iH
 XX
 Sd
 ls
@@ -3946,7 +4015,7 @@ XX
 Nq
 Iz
 oG
-XX
+iH
 XX
 XX
 XX
@@ -3962,13 +4031,13 @@ XX
 XX
 XX
 GM
-XX
-XX
-XX
-XX
-XX
-XX
-XX
+jP
+jP
+jP
+jP
+jP
+jP
+jP
 Nq
 jW
 jW
@@ -4018,7 +4087,7 @@ XX
 Sv
 Iz
 oG
-XX
+iH
 XX
 Sd
 ls
@@ -4090,7 +4159,7 @@ XX
 Sv
 Iz
 oG
-XX
+iH
 XX
 Sd
 ls
@@ -4162,7 +4231,7 @@ XX
 Sv
 Iz
 oG
-XX
+iH
 XX
 Sd
 ls
@@ -4234,7 +4303,7 @@ XX
 Sv
 Iz
 oG
-XX
+iH
 XX
 XX
 XX
@@ -4306,25 +4375,25 @@ XX
 Sv
 EE
 Zk
+YS
+Bm
 XX
+Bm
+Bm
+Bm
+Bm
+Bm
+Bm
+Bm
+Bm
+Bm
+Bm
 XX
-XX
-XX
-XX
-ws
-XX
-XX
-XX
-XX
-XX
-ws
-XX
-XX
-XX
-XX
-XX
-XX
-XX
+Bm
+KA
+Bm
+Bm
+Bm
 Nq
 XX
 XX
@@ -4379,18 +4448,18 @@ Nq
 Sv
 ui
 Nq
-mn
-mn
-Nq
-Nq
-Nq
-Nq
-Nq
+XX
 mn
 Nq
 Nq
 Nq
-EX
+Nq
+Nq
+mn
+Nq
+Nq
+Nq
+XX
 mn
 Nq
 Nq
@@ -4451,7 +4520,7 @@ Nq
 Nq
 Nq
 Nq
-XX
+iH
 XX
 Nq
 pC
@@ -4462,7 +4531,7 @@ xm
 Nq
 vs
 Nq
-XX
+iH
 XX
 Nq
 Kk
@@ -4486,7 +4555,7 @@ Sc
 Sc
 Sc
 Sc
-NB
+xs
 Sc
 Sc
 bB
@@ -4523,7 +4592,7 @@ Nq
 jW
 jW
 Nq
-XX
+iH
 XX
 Dd
 uC
@@ -4534,7 +4603,7 @@ xm
 xm
 xm
 Nq
-XX
+iH
 XX
 ws
 hj
@@ -4595,7 +4664,7 @@ Nq
 jW
 jW
 Nq
-XX
+iH
 XX
 YY
 Of
@@ -4606,7 +4675,7 @@ xm
 LE
 xm
 Nq
-XX
+iH
 XX
 Nq
 hj
@@ -4667,7 +4736,7 @@ Nq
 jW
 jW
 Nq
-XX
+iH
 XX
 Nq
 Rx
@@ -4678,7 +4747,7 @@ Rx
 Nq
 Rx
 Nq
-XX
+iH
 XX
 Nq
 Oz
@@ -4709,8 +4778,8 @@ Sc
 Sc
 Sc
 Sc
-Io
-Io
+Hh
+Hh
 Sc
 Sr
 XP
@@ -4739,7 +4808,7 @@ Nq
 jW
 jW
 Nq
-XX
+iH
 XX
 Nq
 pK
@@ -4750,7 +4819,7 @@ pK
 Nq
 pK
 Nq
-XX
+iH
 XX
 Nq
 Nq
@@ -4811,8 +4880,8 @@ Nq
 Nq
 Nq
 Nq
+iH
 XX
-XX
 Nq
 Nq
 Nq
@@ -4822,7 +4891,7 @@ Nq
 Nq
 Nq
 Nq
-XX
+iH
 XX
 XX
 Nq
@@ -4883,7 +4952,7 @@ Nq
 zA
 ZU
 Nq
-XX
+iH
 XX
 XX
 XX
@@ -4895,7 +4964,7 @@ GL
 De
 Nq
 Nq
-XX
+iH
 XX
 Nq
 XX
@@ -4955,7 +5024,7 @@ Nq
 uP
 TH
 Nq
-XX
+iH
 XX
 XX
 XX
@@ -4967,7 +5036,7 @@ GL
 Gs
 De
 Nq
-XX
+iH
 XX
 Nq
 XX
@@ -5029,7 +5098,7 @@ bW
 Nq
 Nq
 Nq
-XX
+iH
 XX
 Nq
 Gs
@@ -5039,7 +5108,7 @@ GL
 Gs
 De
 Nq
-XX
+iH
 XX
 Nq
 tq
@@ -5101,7 +5170,7 @@ XX
 XX
 XX
 zJ
-XX
+iH
 XX
 Nq
 RI
@@ -5173,7 +5242,7 @@ XX
 XX
 ZA
 gU
-XX
+iH
 XX
 Nq
 RI
@@ -5245,7 +5314,7 @@ lv
 XX
 XI
 Nq
-XX
+iH
 XX
 Nq
 Gs
@@ -5469,9 +5538,9 @@ Nq
 yu
 yu
 Nq
-XX
-XX
-ws
+jP
+jP
+zk
 XX
 XX
 XX
@@ -5536,11 +5605,11 @@ XX
 XX
 XX
 ft
-XX
-XX
-XX
-XX
-XX
+jP
+jP
+jP
+jP
+jP
 XX
 XX
 ws
