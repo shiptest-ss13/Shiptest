@@ -36,7 +36,7 @@
 /obj/machinery/computer/selling_pad_control/attackby(obj/item/I, mob/user)
 	var/value = I.get_item_credit_value()
 	if(value)
-		sell_account.adjust_money(value, "selling_pad")
+		sell_account.adjust_money(value, CREDIT_LOG_SELLING_PAD)
 		to_chat(user, "<span class='notice'>You deposit [I]. The Vessel Budget is now [sell_account.account_balance] cr.</span>")
 		qdel(I)
 		return TRUE
@@ -150,7 +150,7 @@
 			total_report.total_amount[E] += ex.total_amount[E]
 			total_report.total_value[E] += ex.total_value[E]
 
-	sell_account.adjust_money(value, "selling_pad")
+	sell_account.adjust_money(value, CREDIT_LOG_SELLING_PAD)
 
 	if(!value)
 		status_report += "Nothing"

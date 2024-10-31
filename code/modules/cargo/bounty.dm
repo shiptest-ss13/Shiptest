@@ -21,7 +21,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 // Called when the claim button is clicked. Override to provide fancy rewards.
 /datum/bounty/proc/claim(datum/bank_account/claimer_account)
 	if(can_claim() && claimer_account)
-		claimer_account.adjust_money(reward, "bounty")
+		claimer_account.adjust_money(reward, CREDIT_LOG_BOUNTY)
 		claimed = TRUE
 
 // If an item sent in the cargo shuttle can satisfy the bounty.

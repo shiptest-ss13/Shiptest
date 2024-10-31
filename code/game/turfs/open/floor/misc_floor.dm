@@ -211,6 +211,8 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
 	layer = HIGH_TURF_LAYER
+	icon_state = "grass0"
+	base_icon_state = "grass"
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 	baseturfs = /turf/open/floor/ship/dirt
 
