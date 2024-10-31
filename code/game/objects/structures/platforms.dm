@@ -95,7 +95,7 @@
 	resistance_flags = FLAMMABLE
 
 /obj/structure/platform/wood_two/corner
-	icon_state = "fwood_platform"
+	icon_state = "fwood_platform_corners"
 	density = FALSE
 	climbable = FALSE
 
