@@ -10,7 +10,7 @@
 	/// If supplied, an override question will be displayed instead of the name of the vote.
 	var/override_question
 	/// The sound effect played to everyone when this vote is initiated.
-	var/vote_sound = 'sound/misc/compiler-stage2.ogg'
+	var/vote_sound = 'sound/misc/announce_dig.ogg'
 	/// A list of default choices we have for this vote.
 	var/list/default_choices
 	/// What message do we want to pass to the player-side vote panel as a tooltip?
@@ -156,7 +156,7 @@
 
 /// Gets the winner of the vote, selecting a random choice from all choices based on their vote count.
 /datum/vote/proc/get_random_winner()
-	var/winner = pickweight(choices)
+	var/winner = pick_weight(choices)
 	return winner ? list(winner) : list()
 
 /**

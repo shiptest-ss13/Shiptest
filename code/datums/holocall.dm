@@ -227,7 +227,7 @@
 
 /obj/item/disk/holodisk
 	name = "holorecord disk"
-	desc = "Stores recorder holocalls."
+	desc = "Stores recorded holocalls."
 	random_color = FALSE
 	color = "#A7A3A6"
 	blueshift_pallete = FALSE

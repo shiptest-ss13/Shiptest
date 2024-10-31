@@ -108,6 +108,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/siemens_coeff = 1
 	///What kind of damage overlays (if any) appear on our species when wounded? If this is "", does not add an overlay.
 	var/damage_overlay_type = "human"
+	///for species with a unique body size(above 32x32), who need a custom icon file for overlays
+	var/custom_overlay_icon
 	///To use MUTCOLOR with a fixed color that's independent of the mcolor feature in DNA.
 	var/fixed_mut_color = ""
 	///Special mutation that can be found in the genepool exclusively in this species. Dont leave empty or changing species will be a headache
@@ -189,7 +191,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	///What gas does this species breathe? Used by suffocation screen alerts, most of actual gas breathing is handled by mutantlungs. See [life.dm][code/modules/mob/living/carbon/human/life.dm]
 	var/breathid = "o2"
-
 
 	//Do NOT remove by setting to null. use OR make a RESPECTIVE TRAIT (removing stomach? add the NOSTOMACH trait to your species)
 	//why does it work this way? because traits also disable the downsides of not having an organ, removing organs but not having the trait will make your species die
@@ -1809,18 +1810,26 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/plasma = environment.get_moles(GAS_PLASMA)
 	var/tritium = environment.get_moles(GAS_TRITIUM)
 	var/chlorine = environment.get_moles(GAS_CHLORINE)
+	var/ammonia = environment.get_moles(GAS_AMMONIA)
 	var/hydrogen_chloride = environment.get_moles(GAS_HYDROGEN_CHLORIDE)
-	if(chlorine <= MINIMUM_MOLS_TO_HARM && hydrogen_chloride <= MINIMUM_MOLS_TO_HARM && tritium <= MINIMUM_MOLS_TO_HARM && plasma <= MINIMUM_MOLS_TO_HARM)
+	var/sulfur_dioxide = environment.get_moles(GAS_SO2)
+	if(chlorine <= MINIMUM_MOLS_TO_HARM && hydrogen_chloride <= MINIMUM_MOLS_TO_HARM && tritium <= MINIMUM_MOLS_TO_HARM && plasma <= MINIMUM_MOLS_TO_HARM && ammonia <= MINIMUM_MOLS_TO_HARM && sulfur_dioxide <= MINIMUM_MOLS_TO_HARM)
 		return
 
 	var/eyedamage = FALSE
 	var/irritant = FALSE
 	var/burndamage = 0
-	var/lowerthreshold = 0
-	if(HAS_TRAIT(H, TRAIT_METALLIC)) //makes certain species take more damage and start taking damage at lower air amounts
-		lowerthreshold = 1
+	var/lowerthreshold = FALSE
 
-	if(plasma > (MINIMUM_MOLS_TO_HARM * 10))
+	var/feels_pain = TRUE
+	if(HAS_TRAIT(H, TRAIT_METALLIC)) //makes certain species take more damage and start taking damage at lower air amounts
+		lowerthreshold = TRUE
+
+	if(HAS_TRAIT(H, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
+		feels_pain = FALSE
+
+	if(plasma > MINIMUM_MOLS_TO_HARM)
+		burndamage += max(sqrt(ammonia) - 1 + lowerthreshold, 0)
 		eyedamage = TRUE
 		irritant = TRUE
 	if(tritium)
@@ -1833,29 +1842,41 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		irritant = TRUE
 		if(chlorine > (MINIMUM_MOLS_TO_HARM * 10))
 			eyedamage = TRUE
+	if(ammonia)
+		burndamage += max(sqrt(ammonia) - 2 + lowerthreshold, 0)
+		irritant = TRUE
+		if(ammonia > (MINIMUM_MOLS_TO_HARM * 5))
+			eyedamage = TRUE
 	if(hydrogen_chloride)
 		burndamage += max(sqrt(hydrogen_chloride) - 1 + lowerthreshold, 0)
 		eyedamage = TRUE
 		irritant = TRUE
+	if(sulfur_dioxide)
+		burndamage += max(sqrt(chlorine) - 4 + lowerthreshold, 0)
+		irritant = TRUE
+		if(sulfur_dioxide > (MINIMUM_MOLS_TO_HARM * 5))
+			eyedamage = TRUE
 
 	if(!eyedamage && !burndamage && !irritant)
 		return
 	H.apply_damage(burndamage, BURN, spread_damage = TRUE)
 	if(prob(50) && burndamage)
-		if(lowerthreshold)
-			to_chat(H, "<span class='userdanger'>You're corroding!</span>")
-		else
-			to_chat(H, "<span class='userdanger'>You're melting!</span>")
+		if(lowerthreshold && feels_pain)
+			to_chat(H, span_userdanger("You're corroding!"))
+		else if(feels_pain)
+			to_chat(H, span_userdanger("You're melting!"))
 		playsound(H, 'sound/items/welder.ogg', 30, TRUE)
 	if(!H.check_for_goggles() && eyedamage)
 		H.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
-		if(prob(50))
-			to_chat(H, "<span class='danger'>Your eyes burn!</span>")
-	if(irritant && prob(50))
+		if(prob(50) && feels_pain)
+			to_chat(H, span_danger("Your eyes burn!"))
+			H.emote("cry")
+		H.set_blurriness(10)
+	if(irritant && prob(50) && feels_pain)
 		if(lowerthreshold)
-			to_chat(H, "<span class='danger'>Your outer shell smolders!</span>")
+			to_chat(H, span_danger("Your outer shell smolders!"))
 		else
-			to_chat(H, "<span class='danger'>Your skin itches.</span>")
+			to_chat(H, span_danger("Your skin itches."))
 
 
 /// Handle the body temperature status effects for the species
