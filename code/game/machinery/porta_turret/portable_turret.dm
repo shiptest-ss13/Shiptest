@@ -1011,7 +1011,7 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/ship/pgf/heavy
 	name = "Etherbor Point-Defense System"
 	desc = "A high-powered defensive turret manufactured by Etherbor. The EPDS contains heavy energy weapons linked in tandem."
-	scan_range = 10
+	scan_range = 12
 	stun_projectile = /obj/projectile/beam/hitscan/disabler/heavy
 	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf/sniper //fwoom
@@ -1283,7 +1283,7 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/item/gun/ballistic/get_turret_properties()
 	. = ..()
-	var/obj/item/ammo_box/mag = mag_type
+	var/obj/item/ammo_box/mag = default_ammo_type
 	var/obj/item/ammo_casing/primary_ammo = initial(mag.ammo_type)
 
 	.["base_icon_state"] = "syndie"

@@ -38,3 +38,26 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 	faction = list("hermit")
+
+	///Steals the armor datum from this type of armor
+	var/obj/item/clothing/armor_base
+
+/mob/living/simple_animal/hostile/human/Initialize()
+	. = ..()
+	if(ispath(armor_base, /obj/item/clothing))
+		//sigh. if only we could get the initial() value of list vars
+		var/obj/item/clothing/instance = new armor_base()
+		armor = instance.armor
+		qdel(instance)
+
+/mob/living/simple_animal/hostile/human/vv_edit_var(var_name, var_value)
+	switch(var_name)
+		if (NAMEOF(src, armor_base))
+			if(ispath(var_value, /obj/item/clothing))
+				var/obj/item/clothing/temp = new var_value
+				armor = temp.armor
+				qdel(temp)
+				datum_flags |= DF_VAR_EDITED
+				return TRUE
+			return FALSE
+	. = ..()

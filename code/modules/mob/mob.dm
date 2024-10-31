@@ -452,8 +452,6 @@
 				else
 					client.eye = client.mob
 					client.perspective = MOB_PERSPECTIVE
-			else
-				//Do nothing
 		else
 			//Reset to common defaults: mob if on turf, otherwise current loc
 			if(isturf(loc))
