@@ -1462,15 +1462,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
 "lZ" = (
-/obj/machinery/fax{
-	pixel_y = 3
-	},
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/fax/pgf,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "md" = (
@@ -1507,6 +1505,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/machinery/fax/pgf,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
 "mG" = (
