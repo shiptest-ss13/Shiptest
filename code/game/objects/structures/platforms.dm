@@ -147,7 +147,7 @@
 	if(!(direction & dir))
 		return
 
-	if (!density)
+	if(!density)
 		return
 
 	if (leaving.throwing)
