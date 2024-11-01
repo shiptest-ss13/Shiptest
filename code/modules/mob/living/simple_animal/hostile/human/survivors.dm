@@ -247,7 +247,7 @@
 			if(prob(20))
 				new /obj/item/gun/ballistic/rifle/polymer(loc)
 			else
-				visible_message(span_warning("The hermits' weapon shatters as they impact the ground!"))
+				visible_message(span_warning("The hermit's weapon shatters as they impact the ground!"))
 
 		if("gunslinger")
 			uniform = pick_weight(list(
