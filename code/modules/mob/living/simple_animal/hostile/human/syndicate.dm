@@ -249,7 +249,7 @@
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/stormtrooper
 	name = "Ramzi Clique Executioner"
-	desc = "Ink and black glass poured into the shape of an armored commando, dripping menace with every step. Their combat shotgun follows you with lethal intent, promising a blizzard of buckshot in less than a blink.
+	desc = "Ink and black glass poured into the shape of an armored commando, dripping menace with every step. Their combat shotgun follows you with lethal intent, promising a blizzard of buckshot in less than a blink."
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
