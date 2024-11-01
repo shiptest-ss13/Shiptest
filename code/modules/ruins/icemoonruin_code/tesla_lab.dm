@@ -35,3 +35,9 @@
 		0,
 
 	)
+
+#define CHLORINATED_ATMOS "o2=22;n2=82;cl2=24;TEMP=293.15"
+
+/turf/open/floor/plasteel/dark/tesla_lab
+	initial_gas_mix = CHLORINATED_ATMOS
+
