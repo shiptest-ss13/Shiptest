@@ -73,8 +73,6 @@
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/gun/energy/kalix/pgf/heavy,
 /obj/item/gun/energy/kalix/pgf,
-/obj/item/stock_parts/cell/gun/pgf,
-/obj/item/stock_parts/cell/gun/pgf,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "aW" = (
@@ -82,6 +80,10 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark/airless,
+/area/space)
+"bc" = (
+/obj/structure/bed/dogbed,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "bd" = (
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -154,6 +156,12 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 1
 	},
+/obj/structure/fluff/paper/stack{
+	dir = 9
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "bW" = (
@@ -173,6 +181,13 @@
 "cc" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plasteel/sepia,
+/area/space)
+"cr" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/structure/salvageable/machine,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "cv" = (
 /obj/structure/salvageable/computer,
@@ -295,7 +310,7 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "ev" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -335,6 +350,16 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled,
 /obj/effect/turf_decal/industrial/outline/blue,
 /turf/open/floor/plasteel/mono/dark,
+/area/space)
+"fh" = (
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	can_be_unanchored = 1;
+	icon_state = "armory";
+	name = "armor locker";
+	req_access_txt = "1"
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/space)
 "ft" = (
 /obj/machinery/door/airlock/engineering{
@@ -402,10 +427,13 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
-/obj/item/tank/internals/oxygen,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	can_be_unanchored = 1;
+	icon_state = "sec";
+	name = "uniforms locker";
+	req_access_txt = "1"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/space)
 "fV" = (
@@ -615,6 +643,14 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"jI" = (
+/obj/effect/turf_decal/corner/opaque/lime/mono,
+/obj/structure/closet/crate,
+/obj/item/chair,
+/obj/item/chair,
+/obj/item/chair,
+/turf/open/floor/plasteel/mono,
 /area/space)
 "jM" = (
 /obj/effect/turf_decal/siding/wood{
@@ -946,15 +982,16 @@
 /area/space)
 "oa" = (
 /obj/structure/rack,
-/obj/item/pickaxe/drill/jackhammer/old{
-	pixel_y = 6
-	},
-/obj/item/pickaxe/drill/jackhammer/old{
-	pixel_y = -7
-	},
+/obj/item/storage/backpack/duffelbag/syndie/c4,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
 "of" = (
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 10
+	},
 /obj/structure/filingcabinet/double,
 /turf/open/floor/plasteel/tech,
 /area/space)
@@ -1186,6 +1223,16 @@
 	},
 /turf/open/floor/plastic,
 /area/space)
+"qV" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/reagent_containers/glass/concrete_bag,
+/obj/item/reagent_containers/food/snacks/badrecipe,
+/obj/item/reagent_containers/food/snacks/badrecipe,
+/obj/item/reagent_containers/food/snacks/badrecipe,
+/obj/item/reagent_containers/food/snacks/badrecipe,
+/obj/item/reagent_containers/food/snacks/badrecipe,
+/turf/open/floor/plasteel/freezer,
+/area/space)
 "re" = (
 /turf/open/floor/plasteel/dark/airless,
 /area/space)
@@ -1316,6 +1363,7 @@
 "tq" = (
 /obj/item/bedsheet/syndie,
 /obj/structure/bed,
+/obj/structure/curtain/cloth/grey,
 /turf/open/floor/carpet/red_gold,
 /area/space)
 "tt" = (
@@ -1452,7 +1500,7 @@
 /area/space)
 "vu" = (
 /obj/structure/grille/broken,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/space)
 "vy" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -1519,6 +1567,16 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/carpet/red_gold,
 /area/space)
+"wC" = (
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	can_be_unanchored = 1;
+	icon_state = "sec";
+	name = "uniforms locker";
+	req_access_txt = "1"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space)
 "wN" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1526,11 +1584,8 @@
 /turf/open/floor/plasteel/sepia,
 /area/space)
 "wO" = (
-/obj/structure/rack,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "wR" = (
 /obj/effect/turf_decal/etherbor/left,
@@ -1752,6 +1807,16 @@
 /obj/item/restraints/handcuffs/cable/zipties/used,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"At" = (
+/obj/structure/closet/crate/secure/gear,
+/obj/item/stock_parts/cell/gun/kalix,
+/obj/item/stock_parts/cell/gun/kalix,
+/obj/item/clothing/suit/armor/gezena/marine,
+/obj/item/clothing/suit/armor/gezena/marine,
+/obj/item/clothing/head/helmet/gezena,
+/obj/item/clothing/head/helmet/gezena,
+/turf/open/floor/plasteel/tech,
+/area/space)
 "Av" = (
 /obj/effect/turf_decal/trimline/opaque/green/filled/line{
 	dir = 8
@@ -1927,6 +1992,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/lime/corner{
 	dir = 1
 	},
+/obj/item/wrench,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Dj" = (
@@ -2067,7 +2133,7 @@
 "Fs" = (
 /obj/structure/grille,
 /obj/item/shard,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/space)
 "FK" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
@@ -2610,6 +2676,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Or" = (
+/obj/structure/salvageable/computer{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/space)
 "Ox" = (
 /obj/machinery/duct{
 	icon_state = "nduct_e_w"
@@ -2829,7 +2901,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/space)
 "RA" = (
-/obj/machinery/autolathe,
+/obj/structure/salvageable/autolathe,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "RC" = (
@@ -2850,20 +2922,25 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "RI" = (
-/obj/structure/rack,
-/turf/open/floor/mineral/plastitanium,
+/obj/structure/salvageable/machine,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "RN" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 5
 	},
-/obj/structure/closet/crate/secure/gear,
-/obj/item/clothing/suit/armor/gezena/marine,
-/obj/item/clothing/head/helmet/gezena,
-/obj/item/clothing/head/helmet/gezena,
-/obj/item/clothing/suit/armor/gezena/marine,
-/obj/item/stock_parts/cell/gun/kalix,
-/obj/item/stock_parts/cell/gun/kalix,
+/obj/structure/fluff/paper/stack{
+	dir = 5
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 9
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 10
+	},
+/obj/structure/fluff/paper{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "RQ" = (
@@ -2871,8 +2948,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "RW" = (
-/obj/machinery/power/ship_gravity,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/salvageable/machine,
 /turf/open/floor/plating,
 /area/space)
 "Sc" = (
@@ -2937,14 +3014,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/space)
 "Tg" = (
-/obj/structure/closet/crate/trashcart,
-/obj/item/reagent_containers/food/snacks/badrecipe,
-/obj/item/reagent_containers/food/snacks/badrecipe,
-/obj/item/reagent_containers/food/snacks/badrecipe,
-/obj/item/reagent_containers/food/snacks/badrecipe,
-/obj/item/reagent_containers/food/snacks/badrecipe,
-/obj/item/reagent_containers/food/snacks/badrecipe,
-/obj/item/reagent_containers/glass/concrete_bag,
+/obj/machinery/chem_master/condimaster,
 /turf/open/floor/plasteel/freezer,
 /area/space)
 "Tm" = (
@@ -3233,6 +3303,8 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/secure/gear,
+/obj/item/stock_parts/cell/gun/pgf,
+/obj/item/stock_parts/cell/gun/pgf,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "WD" = (
@@ -4622,9 +4694,9 @@ ma
 ma
 ma
 go
-en
-en
-en
+cr
+cr
+cr
 en
 en
 go
@@ -4700,8 +4772,8 @@ Ru
 Ru
 Ru
 Sc
-Ra
-Ra
+wO
+wO
 go
 go
 vi
@@ -4983,7 +5055,7 @@ qM
 MO
 PX
 Sc
-Bc
+RI
 RW
 vX
 vX
@@ -5417,8 +5489,8 @@ Sc
 Sc
 bB
 bB
-bB
-bB
+SA
+jI
 oH
 Rg
 Sc
@@ -5516,7 +5588,7 @@ jW
 jW
 Nq
 JL
-xm
+qV
 Nq
 jW
 jW
@@ -5535,7 +5607,7 @@ Nq
 WA
 xZ
 Nq
-KB
+bc
 XX
 CG
 wz
@@ -5562,7 +5634,7 @@ Sc
 bB
 bB
 bB
-bB
+SA
 UU
 xr
 Sc
@@ -5891,7 +5963,7 @@ Rm
 RH
 GL
 OW
-De
+fh
 Nq
 WA
 xZ
@@ -5963,7 +6035,7 @@ wa
 RH
 GL
 VL
-De
+wC
 Nq
 WA
 xZ
@@ -5996,7 +6068,7 @@ XP
 Sc
 Hi
 bN
-Bc
+At
 kg
 ho
 QW
@@ -6030,7 +6102,7 @@ zJ
 WA
 xZ
 Nq
-wO
+De
 Ce
 aQ
 GL
@@ -6318,7 +6390,7 @@ xB
 VK
 xZ
 Nq
-RI
+De
 Jx
 RH
 GL
@@ -6705,7 +6777,7 @@ BS
 Ai
 DE
 fw
-DE
+Js
 DE
 ew
 Sc
@@ -6776,8 +6848,8 @@ Qd
 jS
 BS
 PV
-ew
-DE
+Or
+Js
 DE
 AR
 Sc
