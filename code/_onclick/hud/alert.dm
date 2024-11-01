@@ -181,7 +181,7 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 
 /atom/movable/screen/alert/verygross
 	name = "Nauseated."
-	desc = "You're feeling uneasy as unease creeps into your throat..."
+	desc = "You're feeling discomforted as unease creeps into your throat..."
 	icon_state = "gross2"
 
 /atom/movable/screen/alert/disgusted
