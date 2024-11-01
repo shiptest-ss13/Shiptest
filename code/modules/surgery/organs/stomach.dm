@@ -82,7 +82,7 @@
 					H.vomit(20, 0, 1, 1, 1, 0)
 					H.confused += 2.5
 					H.stuttering += 1
-			if(DISGUST_LEVEL_DISGUSTED to INFINITE)
+			if(DISGUST_LEVEL_DISGUSTED to DISGUST_LEVEL_MAXEDOUT)
 				H.throw_alert("disgust", /atom/movable/screen/alert/disgusted)
 				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/disgusted)
 
