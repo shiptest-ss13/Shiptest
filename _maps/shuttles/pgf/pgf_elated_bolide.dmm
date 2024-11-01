@@ -4082,7 +4082,8 @@
 	can_be_unanchored = 1;
 	icon_state = "sec";
 	name = "uniforms locker";
-	req_access_txt = "1"
+	req_access_txt = "1";
+	storage_capacity = 40
 	},
 /obj/item/clothing/under/gezena/marine{
 	pixel_x = -7
@@ -7577,11 +7578,6 @@
 /obj/structure/closet/wall/white/directional/south,
 /obj/item/storage/ration/crayons,
 /obj/structure/table/reinforced,
-/obj/machinery/door/airlock/security{
-	dir = 2;
-	name = "Engineering Storage";
-	req_one_access_txt = "1"
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "Ve" = (
