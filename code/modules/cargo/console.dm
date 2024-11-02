@@ -171,7 +171,7 @@
 			// no giving yourself money
 			if(!charge_account || !val || val <= 0)
 				return
-			if(charge_account.adjust_money(-val))
+			if(charge_account.adjust_money(-val, CREDIT_LOG_WITHDRAW))
 				var/obj/item/holochip/cash_chip = new /obj/item/holochip(drop_location(), val)
 				if(ishuman(usr))
 					var/mob/living/carbon/human/user = usr
@@ -189,7 +189,7 @@
 			if (beacon)
 				beacon.update_status(SP_READY) //turns on the beacon's ready light
 		if("printBeacon")
-			if(charge_account?.adjust_money(-BEACON_COST))
+			if(charge_account?.adjust_money(-BEACON_COST, "cargo_beacon"))
 				cooldown = 10//a ~ten second cooldown for printing beacons to prevent spam
 				var/obj/item/supplypod_beacon/C = new /obj/item/supplypod_beacon(drop_location())
 				C.link_console(src, usr)//rather than in beacon's Initialize(), we can assign the computer to the beacon by reusing this proc)
@@ -225,7 +225,7 @@
 			// note that, because of CHECK_TICK above, we aren't sure if we can
 			// afford the pack, even though we checked earlier. luckily adjust_money
 			// returns false if the account can't afford the price
-			if(landing_turf && charge_account.adjust_money(-pack.cost))
+			if(landing_turf && charge_account.adjust_money(-pack.cost, CREDIT_LOG_CARGO))
 				var/name = "*None Provided*"
 				var/rank = "*None Provided*"
 				if(ishuman(usr))
@@ -277,7 +277,7 @@
 /obj/machinery/computer/cargo/attackby(obj/item/W, mob/living/user, params)
 	var/value = W.get_item_credit_value()
 	if(value && charge_account)
-		charge_account.adjust_money(value)
+		charge_account.adjust_money(value, CREDIT_LOG_DEPOSIT)
 		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr.</span>")
 		qdel(W)
 		return TRUE

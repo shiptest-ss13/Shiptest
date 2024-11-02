@@ -474,17 +474,56 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_mult = 0 // oderless and tasteless
 
+/datum/reagent/oxygen/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	var/obj/item/stock_parts/cell/current_cell
+	if(istype(I, /obj/item/stock_parts/cell))
+		if(!current_cell.use(1))
+			return
+		H.reagents.add_reagent(/datum/reagent/ozone, (H.reagents.remove_reagent(/datum/reagent/oxygen, 0.05*I.get_part_rating())))
+		return TRUE
+	return
+
 /datum/reagent/oxygen/expose_obj(obj/O, reac_volume)
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("o2=[reac_volume/2];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_O2]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/oxygen/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("o2=[reac_volume/2];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_O2]=[reac_volume/2];TEMP=[temp]")
 	return
+
+/datum/reagent/ozone
+	name = "Ozone"
+	description = "A pale blue gas, with a distinct smell. While it is oxygen with an extra molecule attached, it is quite dangerous."
+	reagent_state = GAS
+	metabolization_rate = REAGENTS_METABOLISM * 0.5
+	color = "#a1a1e6"
+	taste_mult = 0
+
+/datum/reagent/ozone/on_mob_life(mob/living/carbon/M)
+	if(prob(30))
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS,1*REM)
+	if(prob(40))
+		M.adjustOrganLoss(ORGAN_SLOT_HEART,2*REM)
+	. = 1
+	return ..()
+
+/datum/reagent/ozone/expose_obj(obj/exposed_object, reac_volume)
+	if((!exposed_object) || (!reac_volume))
+		return 0
+	var/temp = holder ? holder.chem_temp : T20C
+	exposed_object.atmos_spawn_air("[GAS_O3]=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/ozone/expose_turf(turf/open/exposed_turf, reac_volume)
+	if(istype(exposed_turf))
+		var/temp = holder ? holder.chem_temp : T20C
+		exposed_turf.atmos_spawn_air("[GAS_O3]=[reac_volume/2];TEMP=[temp]")
+	return
+
 
 /datum/reagent/copper
 	name = "Copper"
@@ -511,12 +550,12 @@
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("n2=[reac_volume/2];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_N2]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/nitrogen/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("n2=[reac_volume/2];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_N2]=[reac_volume/2];TEMP=[temp]")
 	return
 
 /datum/reagent/hydrogen
@@ -549,7 +588,7 @@
 	name = "Sulfur"
 	description = "A sickly yellow solid mostly known for its nasty smell. It's actually much more helpful than it looks in biochemisty."
 	reagent_state = SOLID
-	color = "#BF8C00" // rgb: 191, 140, 0
+	color = "#f0e518"
 	taste_description = "rotten eggs"
 
 /datum/reagent/carbon
@@ -599,12 +638,12 @@
 	if((!exposed_object) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	exposed_object.atmos_spawn_air("cl2=[reac_volume/2];TEMP=[temp]")
+	exposed_object.atmos_spawn_air("[GAS_CHLORINE]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/chlorine/expose_turf(turf/open/exposed_turf, reac_volume)
 	if(istype(exposed_turf))
 		var/temp = holder ? holder.chem_temp : T20C
-		exposed_turf.atmos_spawn_air("cl2=[reac_volume/2];TEMP=[temp]")
+		exposed_turf.atmos_spawn_air("[GAS_CHLORINE]=[reac_volume/2];TEMP=[temp]")
 	return
 
 /datum/reagent/hydrogen_chloride
@@ -626,12 +665,12 @@
 	if((!exposed_object) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	exposed_object.atmos_spawn_air("hcl=[reac_volume/2];TEMP=[temp]")
+	exposed_object.atmos_spawn_air("[GAS_HYDROGEN_CHLORIDE]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/hydrogen_chloride/expose_turf(turf/open/exposed_turf, reac_volume)
 	if(istype(exposed_turf))
 		var/temp = holder ? holder.chem_temp : T20C
-		exposed_turf.atmos_spawn_air("hcl=[reac_volume/2];TEMP=[temp]")
+		exposed_turf.atmos_spawn_air("[GAS_HYDROGEN_CHLORIDE]=[reac_volume/2];TEMP=[temp]")
 	return
 
 /datum/reagent/fluorine
@@ -1085,12 +1124,12 @@
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("co2=[reac_volume/5];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_CO2]=[reac_volume/5];TEMP=[temp]")
 
 /datum/reagent/carbondioxide/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("co2=[reac_volume/5];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_CO2]=[reac_volume/5];TEMP=[temp]")
 	return
 
 // This is more bad ass, and pests get hurt by the corrosive nature of it, not the plant. The new trade off is it culls stability.
@@ -1115,12 +1154,12 @@
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("n2o=[reac_volume/5];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_NITROUS]=[reac_volume/5];TEMP=[temp]")
 
 /datum/reagent/nitrous_oxide/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("n2o=[reac_volume/5];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_NITROUS]=[reac_volume/5];TEMP=[temp]")
 
 /datum/reagent/nitrous_oxide/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == VAPOR)
@@ -1135,6 +1174,80 @@
 		M.losebreath += 2
 		M.confused = min(M.confused + 2, 5)
 	..()
+
+/datum/reagent/carbon_monoxide
+	name = "Carbon Monoxide"
+	description = "A highly dangerous gas for sapients."
+	reagent_state = GAS
+	metabolization_rate = REAGENTS_METABOLISM
+	color = "#96898c"
+	var/accumulation
+
+/datum/reagent/carbon_monoxide/on_mob_life(mob/living/carbon/victim)
+	if(holder.has_reagent(/datum/reagent/oxygen))
+		holder.remove_reagent(/datum/reagent/carbon_monoxide, 2*REM)
+		accumulation = accumulation/4
+
+	accumulation += volume
+	switch(accumulation)
+		if(10 to 50)
+			to_chat(src, span_warning("You feel dizzy."))
+		if(50 to 150)
+			to_chat(victim, span_warning("[pick("Your head hurts.", "Your head pounds.")]"))
+			victim.Dizzy(5)
+		if(150 to 250)
+			to_chat(victim, span_userdanger("[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]"))
+			victim.Stun(10)
+			victim.Dizzy(5)
+			victim.confused = (accumulation/50)
+			victim.gain_trauma(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
+
+		if(250 to 350)
+			to_chat(victim, span_userdanger("[pick("What were you doing...?", "Where are you...?", "What's going on...?")]"))
+			victim.adjustStaminaLoss(3)
+
+			victim.Dizzy(5)
+			victim.confused = (accumulation/50)
+			victim.drowsyness = (accumulation/50)
+
+			victim.adjustToxLoss(accumulation/100*REM, 0)
+
+			victim.gain_trauma(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
+
+		if(350 to 1000)
+			victim.Unconscious(20 SECONDS)
+
+			victim.drowsyness += (accumulation/100)
+			victim.adjustToxLoss(accumulation/100*REM, 0)
+		if(1000 to INFINITY) //anti salt measure, if they reach this, just fucking kill them at this point
+			victim.death()
+			victim.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
+
+			qdel(src)
+			return TRUE
+	accumulation -= (metabolization_rate * victim.metabolism_efficiency)
+	if(accumulation <  0)
+		holder.remove_reagent(/datum/reagent/carbon_monoxide, volume)
+		return TRUE //to avoid a runtime
+	return ..()
+
+/datum/reagent/carbon_monoxide/expose_obj(obj/O, reac_volume)
+	if((!O) || (!reac_volume))
+		return FALSE
+	var/temp = holder ? holder.chem_temp : T20C
+	O.atmos_spawn_air("[GAS_CO]=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/carbon_monoxide/expose_turf(turf/open/T, reac_volume)
+	if(istype(T))
+		var/temp = holder ? holder.chem_temp : T20C
+		T.atmos_spawn_air("[GAS_CO]=[reac_volume/2];TEMP=[temp]")
+	return
+
+/datum/reagent/carbon_monoxide/on_mob_delete(mob/living/living_mob)
+	var/mob/living/carbon/living_carbon = living_mob
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
 
 /datum/reagent/stimulum
 	name = "Stimulum"
@@ -2506,3 +2619,29 @@
 	M.adjust_disgust(4)
 	..()
 	. = 1
+
+/datum/reagent/sulfur_dioxide
+	name = "Sulfur Dioxide"
+	description = "A transparent gas produced by geological activity and burning certain fuels."
+	reagent_state = GAS
+	color = "#f0e518"
+	taste_mult = 0 // tasteless
+
+/datum/reagent/sulfur_dioxide/on_mob_life(mob/living/carbon/M)
+	M.adjustOxyLoss(1*REM, 0)
+	if(prob(40))
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS,1*REM)
+	. = 1
+	..()
+
+/datum/reagent/sulfur_dioxide/expose_obj(obj/exposed_object, reac_volume)
+	if((!exposed_object) || (!reac_volume))
+		return 0
+	var/temp = holder ? holder.chem_temp : T20C
+	exposed_object.atmos_spawn_air("[GAS_SO2]=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/sulfur_dioxide/expose_turf(turf/open/exposed_turf, reac_volume)
+	if(istype(exposed_turf))
+		var/temp = holder ? holder.chem_temp : T20C
+		exposed_turf.atmos_spawn_air("[GAS_SO2]=[reac_volume/2];TEMP=[temp]")
+	return

@@ -215,7 +215,7 @@
 
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clip_spotter
-	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 
 	resistance_flags = null
 	slowdown = 1
@@ -383,6 +383,14 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEFACIALHAIR
 
 	supports_variations = SNOUTED_VARIATION
+
+/obj/item/clothing/mask/balaclava/combat
+	name = "combat balaclava"
+	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot!"
+	icon_state = "combat_balaclava"
+	item_state = "combat_balaclava"
+	alternate_worn_layer = BODY_LAYER
+	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
 
 //gloves
 
