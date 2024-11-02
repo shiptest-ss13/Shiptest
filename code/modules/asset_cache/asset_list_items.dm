@@ -162,30 +162,15 @@
 	)
 	parents = list("font-awesome.css" = 'html/font-awesome/css/all.min.css')
 
-/datum/asset/simple/namespaced/tgfont
-	assets = list(
-		"tgfont.eot" = file("tgui/packages/tgfont/static/tgfont.eot"),
-		"tgfont.woff2" = file("tgui/packages/tgfont/static/tgfont.woff2"),
-	)
-	parents = list(
-		"tgfont.css" = file("tgui/packages/tgfont/static/tgfont.css"),
-	)
-
 /datum/asset/simple/fonts
 	assets = list(
 		"sga.ttf" = 'html/sga.ttf'
 	)
 
-/// Override this in order to start the creation of the spritehseet.
-/// This is where all your Insert, InsertAll, etc calls should be inside.
-/datum/asset/spritesheet/proc/create_spritesheets()
-	SHOULD_CALL_PARENT(FALSE)
-	CRASH("create_spritesheets() not implemented for [type]!")
-
 /datum/asset/spritesheet/chat
 	name = "chat"
 
-/datum/asset/spritesheet/chat/create_spritesheets()
+/datum/asset/spritesheet/chat/register()
 	InsertAll("emoji", EMOJI_SET)
 	// pre-loading all lanugage icons also helps to avoid meta
 	InsertAll("language", 'icons/misc/language.dmi')
@@ -196,6 +181,7 @@
 		if (icon != 'icons/misc/language.dmi')
 			var/icon_state = initial(L.icon_state)
 			Insert("language-[icon_state]", icon, icon_state=icon_state)
+		..()
 
 /datum/asset/simple/lobby
 	assets = list(
@@ -443,8 +429,8 @@
 /datum/asset/spritesheet/fish
 	name = "fish"
 
-/datum/asset/spritesheet/fish/create_spritesheets()
-	for (var/path in subtypesof(/obj/item/fish))
+/datum/asset/spritesheet/fish/register()
+	for(var/path in subtypesof(/obj/item/fish))
 		var/obj/item/fish/fish_type = path
 		var/fish_icon = initial(fish_type.icon)
 		var/fish_icon_state = initial(fish_type.icon_state)
