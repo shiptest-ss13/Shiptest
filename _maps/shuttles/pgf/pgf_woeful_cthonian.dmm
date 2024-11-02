@@ -30,14 +30,14 @@
 	id = "cth_cap";
 	name = "shutter control"
 	},
-/obj/item/folder/blue{
-	pixel_y = -5;
-	pixel_x = -16
-	},
 /obj/item/binoculars,
 /obj/item/desk_flag/gezena{
 	pixel_y = -1;
 	pixel_x = 9
+	},
+/obj/item/folder/pgf/blue{
+	pixel_x = -14;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/bridge)
@@ -1459,6 +1459,10 @@
 	pixel_y = 4
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/item/folder/pgf/empty_sheets{
+	pixel_x = 4;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "sm" = (
@@ -3200,6 +3204,10 @@
 /obj/item/pen/fourcolor{
 	pixel_y = 6;
 	pixel_x = 5
+	},
+/obj/item/folder/pgf{
+	pixel_y = -2;
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
