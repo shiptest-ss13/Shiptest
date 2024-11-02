@@ -23,7 +23,7 @@
 	speed = BULLET_AP_SPEED
 
 /obj/projectile/bullet/c22lr/rubber
-	name = ".22LR bullet"
+	name = ".22LR rubber bullet"
 	damage = 4
 	stamina = 15
 	armour_penetration = -70

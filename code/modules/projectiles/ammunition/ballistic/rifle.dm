@@ -24,19 +24,6 @@
 	name = "8x50mmR tracker casing"
 	desc = "A 8x50mmR tracker casing."
 	projectile_type = /obj/projectile/bullet/a8_50r/trac
-	gps_tag = "*TRAC"
-
-/obj/item/ammo_casing/caseless/a8_50r/trac/examine_more(mob/user)
-	. = ..()
-	if(!in_range(src, user) || !isobserver(user))
-		. = span_warning("You try to examine [src] closer, but you're too far away.")
-		return
-	. += span_notice("A small electronic display on [src] reads [gps_tag]")
-
-/obj/item/ammo_casing/caseless/a8_50r/trac/multitool_act(mob/living/user, obj/item/I)
-	. = ..()
-	gps_tag = stripped_input(user, "Input GPS Tag", "Tagger", max_length=16)
-
 
 // 8x58mm Caseless (SSG-669C)
 
@@ -52,18 +39,6 @@
 	name = "8x58mm tracker round"
 	desc = "A 8x58mm caseless tracker round."
 	projectile_type = /obj/projectile/bullet/a858/trac
-	gps_tag = "*TRAC"
-
-/obj/item/ammo_casing/caseless/a858/trac/examine_more(mob/user)
-	. = ..()
-	if(!in_range(src, user) || !isobserver(user))
-		. = span_warning("You try to examine [src] closer, but you're too far away.")
-		return
-	. += span_notice("A small electronic display on [src] reads [tag]")
-
-/obj/item/ammo_casing/caseless/a858/trac/multitool_act(mob/living/user, obj/item/I)
-	. = ..()
-	tag = stripped_input(user, "Input GPS Tag", "Tagger", max_length=16)
 
 // .300 Magnum (Smile Rifle)
 
@@ -85,6 +60,11 @@
 	name = ".300 Magnum AP bullet casing"
 	desc = "A .300 Magnum armor piercing bullet casing."
 	bullet_skin = "ap"
+	projectile_type = /obj/projectile/bullet/a300/ap
+
+/obj/item/ammo_casing/a300/ap
+	name = ".300 Magnum Trac bullet casing"
+	desc = "A .300 Magnum Tracker casing."
 	projectile_type = /obj/projectile/bullet/a300/ap
 
 // 5.56x42mm CLIP (CM82, Hydra variants)

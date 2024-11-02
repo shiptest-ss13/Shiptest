@@ -164,8 +164,6 @@
 	. = ..()
 	if(projectile_type)
 		BB = new projectile_type(src)
-		if(gps_tag)
-			BB.gps_tag = gps_tag
 	if(auto_scatter)
 		pixel_x = base_pixel_x + rand(-10, 10)
 		pixel_y = base_pixel_y + rand(-10, 10)

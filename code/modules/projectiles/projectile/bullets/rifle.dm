@@ -73,6 +73,12 @@
 	damage = 40
 	armour_penetration = 60
 
+/obj/projectile/bullet/a300/trac
+	name = ".300 Tracker"
+	damage = 10
+	armour_penetration = 0
+	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a308
+
 //5.45x39mm (SVG-76u)
 
 /obj/projectile/bullet/a545_39
@@ -140,7 +146,6 @@
 
 /obj/projectile/bullet/a858/trac
 	name = "8x58mm tracker"
-	speed = BULLET_HV_SPEED
 	damage = 12
 	armour_penetration = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a858

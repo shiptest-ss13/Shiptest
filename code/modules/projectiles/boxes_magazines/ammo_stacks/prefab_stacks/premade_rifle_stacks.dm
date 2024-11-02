@@ -18,7 +18,7 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r/hp
 	ammo_type = /obj/item/ammo_casing/a8_50r/hp
 
-/obj/item/storage/box/ammo/a8_50r_hp
+/obj/item/storage/box/ammo/a8_50r/hp
 	name = "box of HP 8x50mm ammo"
 	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration."
 	icon_state = "8x50mmbox-hp"
@@ -34,15 +34,31 @@
 	max_ammo = 10
 
 /obj/item/storage/box/ammo/a8_50r/match
-	name = "box of 8x50mm ammo"
+	name = "box of 8x50mm match ammo"
 	desc = "A box of standard 8x50mm ammo."
 	icon_state = "8x50mmbox"
 
 /obj/item/storage/box/ammo/a8_50r/match/PopulateContents()
 	..()
 	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r = 4)
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r/match = 4)
 	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r/trac
+	ammo_type = /obj/item/ammo_casing/a8_50r/trac
+	max_ammo = 10
+
+/obj/item/storage/box/ammo/a8_50r/trac
+	name = "box of 8x50mm trac ammo"
+	desc = "A box of 8x50mm trackers."
+	icon_state = "8x50mmbox"
+
+/obj/item/storage/box/ammo/a8_50r/trac/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r/trac = 4)
+	generate_items_inside(items_inside,src)
+
 
 // 8x58mm Caseless (SSG-669C)
 
@@ -72,7 +88,7 @@
 
 /obj/item/storage/box/ammo/a300/hp
 	name = "box of .300 magnum ammo"
-	desc = "A box of standard .300 Magnum ammo."
+	desc = "A box of hollow point .300 Magnum ammo."
 	icon_state = "300box"
 
 /obj/item/storage/box/ammo/a300/hp/PopulateContents()
@@ -87,13 +103,28 @@
 
 /obj/item/storage/box/ammo/a300/ap
 	name = "box of .300 magnum ammo"
-	desc = "A box of standard .300 Magnum ammo."
+	desc = "A box of armour piercing .300 Magnum ammo."
 	icon_state = "300box"
 
 /obj/item/storage/box/ammo/a300/ap/PopulateContents()
 	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300/ap = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300/trac
+	ammo_type = /obj/item/ammo_casing/a300/trac
+	max_ammo = 5
+
+/obj/item/storage/box/ammo/a300/trac
+	name = "box of .300 trac ammo"
+	desc = "A box of standard .300 Magnum ammo."
+	icon_state = "300box"
+
+/obj/item/storage/box/ammo/a300/trac/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300/trac = 2)
 	generate_items_inside(items_inside,src)
 
 // 5.56x42mm CLIP (CM82, Hydra variants)
@@ -118,7 +149,7 @@
 	max_ammo = 15
 
 /obj/item/storage/box/ammo/a556_42/hp
-	name = "box of 5.56x42mm CLIP AP ammo"
+	name = "box of 5.56x42mm CLIP HP ammo"
 	desc = "A box of standard 5.56x42mm CLIP HP ammo."
 	icon_state = "a556_42box_big"
 
@@ -299,4 +330,18 @@
 	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a65clip = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/a65clip/trac
+	ammo_type = /obj/item/ammo_casing/a65clip/trac
+	max_ammo = 5
+
+/obj/item/storage/box/ammo/a65clip/trac
+	name = "box of 6.5x57mm CLIP tracker ammo"
+	desc = "A box of standard 6.5x57mm CLIP tracker ammo."
+
+/obj/item/storage/box/ammo/a65clip/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a65clip/trac = 2)
 	generate_items_inside(items_inside,src)
