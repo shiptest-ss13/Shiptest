@@ -110,7 +110,6 @@
 		"stamp-law" = 'icons/stamp_icons/large_stamp-law.png',
 		"stamp-chap" = 'icons/stamp_icons/large_stamp-chap.png',
 		"stamp-mime" = 'icons/stamp_icons/large_stamp-mime.png',
-		"stamp-centcom" = 'icons/stamp_icons/large_stamp-centcom.png',
 		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png',
 		"stamp-solgov" = 'icons/stamp_icons/large_stamp-solgov.png',
 		"stamp-inteq" = 'icons/stamp_icons/large_stamp-inteq.png',
@@ -128,7 +127,21 @@
 		"stamp-ngr_cap" = 'icons/stamp_icons/large_stamp-ngr_captain.png',
 		"stamp-ngr_fore" = 'icons/stamp_icons/large_stamp-ngr_foreman.png',
 		"stamp-ngr_lieu" = 'icons/stamp_icons/large_stamp-ngr_lieutenant.png',
-		"stamp-ngr_ensign" = 'icons/stamp_icons/large_stamp-ngr_ensign.png'
+		"stamp-ngr_ensign" = 'icons/stamp_icons/large_stamp-ngr_ensign.png',
+		"stamp-nt" = 'icons/stamp_icons/large_stamp-nt_generic.png',
+		"stamp-nt_cap" = 'icons/stamp_icons/large_stamp-nt_captain.png',
+		"stamp-nt_fo" = 'icons/stamp_icons/large_stamp-nt_officer.png',
+		"stamp-nt_engdir" = 'icons/stamp_icons/large_stamp-nt_eng_dir.png',
+		"stamp-nt_meddir" = 'icons/stamp_icons/large_stamp-nt_med_dir.png',
+		"stamp-nt_scidir" = 'icons/stamp_icons/large_stamp-nt_sci_dir.png',
+		"stamp-ns" = 'icons/stamp_icons/large_stamp-ns_generic.png',
+		"stamp-ns_cap" = 'icons/stamp_icons/large_stamp-ns_captain.png',
+		"stamp-ns_supdir" = 'icons/stamp_icons/large_stamp-ns_sup_dir.png',
+		"stamp-vi" = 'icons/stamp_icons/large_stamp-vi_generic.png',
+		"stamp-vi_cap" = 'icons/stamp_icons/large_stamp-vi_captain.png',
+		"stamp-vi_secdir" = 'icons/stamp_icons/large_stamp-vi_sec_dir.png',
+		"stamp-vi_lp" = 'icons/stamp_icons/large_stamp-vi_loss_prevention.png',
+		"stamp-nt_central" = 'icons/stamp_icons/large_stamp-nt_central.png'
 	)
 
 /datum/asset/simple/fuckywucky
