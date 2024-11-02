@@ -12,6 +12,11 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass/twenty,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "c" = (
@@ -32,24 +37,42 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "e" = (
+/obj/machinery/holopad/secure,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "f" = (
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "g" = (
-/obj/machinery/door/poddoor,
-/obj/machinery/power/shieldwallgen/atmos{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	preferred_direction = 4;
+	port_direction = 8;
+	dir = 2;
+	name = "haymaker"
+	},
+/obj/machinery/door/poddoor{
+	id = "h1"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 8;
+	id = "h1s"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "h" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
@@ -85,6 +108,13 @@
 	dir = 8;
 	icon_state = "computer-left"
 	},
+/obj/machinery/button/door{
+	pixel_y = 22;
+	pixel_x = -7;
+	id = "h4";
+	name = "fore window shutter"
+	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "n" = (
@@ -109,9 +139,15 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/bridge)
 "q" = (
-/obj/machinery/door/poddoor,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "h2"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 8;
+	id = "h2s"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
@@ -123,6 +159,9 @@
 	dir = 10
 	},
 /obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	dir = 8
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "s" = (
@@ -138,6 +177,7 @@
 /obj/effect/turf_decal/techfloor/orange/corner{
 	dir = 1
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "t" = (
@@ -149,6 +189,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "h3"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "u" = (
@@ -157,6 +201,13 @@
 	id = "haymaker"
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
+"v" = (
+/obj/machinery/light/directional/north,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "w" = (
 /turf/template_noop,
@@ -178,6 +229,7 @@
 /obj/effect/turf_decal/techfloor/orange/corner{
 	dir = 8
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "z" = (
@@ -195,24 +247,33 @@
 	dir = 4;
 	name = "tactical chair"
 	},
-/obj/machinery/turretid/ship{
-	pixel_y = 24;
-	id = "haymaker"
-	},
 /obj/effect/landmark/ert_shuttle_brief_spawn,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "B" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/steeldecal/steel_decals_central5,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "C" = (
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "h2"
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /obj/structure/cable,
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 4;
+	id = "h2s"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "D" = (
@@ -222,13 +283,17 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 10
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "E" = (
 /obj/structure/window/plasma/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	dir = 4
+	dir = 4;
+	id = "h4"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -270,13 +335,31 @@
 	dir = 4;
 	pixel_y = -3;
 	pixel_x = -10;
-	name = "starboard shutter"
+	name = "starboard shutter";
+	id = "h2"
 	},
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_y = 8;
 	pixel_x = -10;
-	name = "port shutter"
+	name = "port shutter";
+	id = "h1"
+	},
+/obj/machinery/turretid/ship{
+	pixel_y = 24;
+	id = "haymaker"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	pixel_y = -3;
+	pixel_x = 4;
+	id = "h2s"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	pixel_y = 8;
+	pixel_x = 4;
+	id = "h1s"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -289,6 +372,12 @@
 	},
 /obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel,
+/area/ship/bridge)
+"J" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "K" = (
 /obj/effect/turf_decal/steeldecal/steel_decals10{
@@ -327,6 +416,13 @@
 	icon_state = "0-5"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = 6;
+	pixel_x = -22;
+	name = "engine shutters";
+	id = "h3"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
 "N" = (
@@ -338,6 +434,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -352,11 +451,15 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "h3"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "P" = (
-/obj/structure/crate_shelf,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Q" = (
@@ -408,7 +511,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/rack,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "V" = (
@@ -443,6 +545,7 @@
 	dir = 6
 	},
 /obj/structure/closet/body_bag,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Y" = (
@@ -455,9 +558,12 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Z" = (
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "h1"
+	},
 /obj/machinery/power/shieldwallgen/atmos{
-	dir = 4
+	dir = 4;
+	id = "h1s"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -525,8 +631,8 @@ q
 (7,1,1) = {"
 a
 a
-f
-f
+v
+J
 f
 a
 a
