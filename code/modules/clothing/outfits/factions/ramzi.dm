@@ -30,6 +30,8 @@
 	job_icon = "assistant"
 	jobtype = /datum/job/assistant
 
+	shoes = /obj/item/clothing/shoes/workboots
+
 //Captain
 
 /datum/outfit/job/ramzi/captain
@@ -57,11 +59,16 @@
 
 	backpack_contents = list(/obj/item/clothing/mask/gas/syndicate)
 
-/datum/outfit/ramzi/operative/pilot
+/datum/outfit/ramzi/pilot
 	name = "Ramzi Clique - Pilot"
 	id_assignment = "Pilot"
 	job_icon = "securityofficer"
 	jobtype = "securityofficer"
+
+	l_pocket = /obj/item/weldingtool/mini
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
+	backpack_contents = list(/obj/item/clothing/mask/gas/syndicate)
 
 //Medical Doctor
 
