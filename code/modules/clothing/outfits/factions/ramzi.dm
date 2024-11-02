@@ -43,7 +43,7 @@
 
 	ears = /obj/item/radio/headset/pirate/alt/captain
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	head = /obj/item/clothing/head/hos/syndicate
+	head = /obj/item/clothing/head/HoS/syndicate
 
 //Security Officer
 
@@ -61,7 +61,7 @@
 
 /datum/outfit/ramzi/pilot
 	name = "Ramzi Clique - Pilot"
-	id_assignment = "Pilot"
+	id_assignment = "Shuttle Pilot"
 	job_icon = "securityofficer"
 	jobtype = /datum/job/officer
 
