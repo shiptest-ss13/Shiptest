@@ -2166,6 +2166,7 @@
 	dir = 1
 	},
 /obj/structure/crate_shelf,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "pG" = (
@@ -2204,9 +2205,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "qb" = (
-/obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/industrial/outline/blue,
 /obj/structure/reagent_dispensers/foamtank,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "qe" = (
@@ -2272,7 +2273,6 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3{
 	dir = 8
 	},
-/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "qR" = (
@@ -3659,6 +3659,7 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "AZ" = (
@@ -4774,7 +4775,6 @@
 	pixel_x = -9;
 	pixel_y = -5
 	},
-/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "JP" = (
@@ -4809,7 +4809,6 @@
 	},
 /obj/effect/decal/cleanable/plasma,
 /obj/effect/decal/cleanable/plasma,
-/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Kl" = (
@@ -6339,6 +6338,7 @@
 /obj/item/toy/plush/tali{
 	pixel_y = 14
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "VP" = (
