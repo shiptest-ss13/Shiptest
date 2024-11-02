@@ -515,3 +515,14 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	log_mapping("[src] at [x],[y] could not find a chair and guy on current turf.")
 	qdel(src)
 
+/obj/effect/mapping_helpers/turf
+	name = "turf helper"
+
+/obj/effect/mapping_helpers/turf/burnt
+	name = "turf_burner"
+	desc = "burns the everliving shit out of the turf its on."
+
+/obj/effect/mapping_helpers/turf/burnt/LateInitialize()
+	var/turf/turf = get_turf(src)
+	turf.burn_tile()
+	qdel(src)
