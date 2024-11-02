@@ -191,7 +191,7 @@
 				H.visible_message(span_notice("[user] smears [src] across [H]... malignant crystals and cancerous tendrils grow on and reinforce [H.p_them()]!</span>"))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "other"))
 			else
-				to_chat(user, span_notice("You start to apply [src] on yourself. Cancer like crystals hold you together and add something to you to keep yourself moving, but for how long?"))
+				to_chat(user, span_notice("You smear [src] across yourself. malignant crystals and cancerous tendrils grow on you, toughening and healing where they touch."))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
 			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
 			H.reagents.add_reagent(/datum/reagent/determination, 4)
