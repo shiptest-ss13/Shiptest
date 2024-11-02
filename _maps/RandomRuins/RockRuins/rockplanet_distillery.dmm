@@ -50,24 +50,24 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/glass,
 /obj/item/reagent_containers/condiment/sugar{
-	pixel_y = 13;
+	layer = 2.8;
 	pixel_x = -2;
-	layer = 2.8
+	pixel_y = 13
 	},
 /obj/item/stock_parts/micro_laser{
-	pixel_y = 16;
+	layer = 2.8;
 	pixel_x = 6;
-	layer = 2.8
+	pixel_y = 16
 	},
 /obj/machinery/reagentgrinder,
 /obj/item/stock_parts/scanning_module{
+	layer = 2.8;
 	pixel_x = -6;
-	pixel_y = 6;
-	layer = 2.8
+	pixel_y = 6
 	},
 /obj/item/reagent_containers/condiment/enzyme{
-	pixel_y = 10;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 10
 	},
 /turf/open/floor/plating/rockplanet/lit,
 /area/ruin/rockplanet/distillery)
@@ -93,6 +93,11 @@
 	},
 /turf/open/floor/pod,
 /area/ruin/rockplanet/distillery/office)
+"aS" = (
+/obj/effect/spawner/random/vending/cola,
+/obj/effect/turf_decal/spline/fancy/opaque/white,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/distillery/crew)
 "ba" = (
 /obj/structure/chair/office,
 /obj/effect/turf_decal/spline/fancy/opaque/white{
@@ -147,9 +152,9 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/crayon{
+	color = "#0094FF";
 	icon_state = "f";
-	pixel_x = 6;
-	color = "#0094FF"
+	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
@@ -171,8 +176,8 @@
 	},
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 4;
-	target_pressure = 500;
-	name = "Air to Distro"
+	name = "Air to Distro";
+	target_pressure = 500
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -196,9 +201,9 @@
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/light_switch{
+	dir = 8;
 	pixel_x = 22;
-	pixel_y = 5;
-	dir = 8
+	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -275,6 +280,14 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/pod,
 /area/ruin/rockplanet/distillery/office)
+"cu" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4;
+	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
+	widenet = 1
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/distillery/crew)
 "cw" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4
@@ -400,11 +413,6 @@
 /obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"dZ" = (
-/obj/machinery/vending/cola/random,
-/obj/effect/turf_decal/spline/fancy/opaque/white,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ruin/rockplanet/distillery/crew)
 "ed" = (
 /turf/closed/wall/rust,
 /area/ruin/rockplanet/distillery)
@@ -448,13 +456,13 @@
 /area/ruin/rockplanet/distillery/crew)
 "fl" = (
 /obj/structure/reagent_dispensers/cooking_oil{
-	name = "moonshine vat";
 	desc = "A huge metal vat with a tap on the front. Filled with moonshine.";
+	name = "moonshine vat";
 	reagent_id = /datum/reagent/consumable/ethanol/moonshine
 	},
 /obj/structure/fermenting_barrel/distiller{
-	pixel_y = -14;
-	density = 0
+	density = 0;
+	pixel_y = -14
 	},
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/distillery)
@@ -475,9 +483,9 @@
 	dir = 8;
 	id = "frontier_door";
 	name = "Door Lock";
+	normaldoorcontrol = 1;
 	pixel_x = 23;
 	pixel_y = -2;
-	normaldoorcontrol = 1;
 	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/stairs{
@@ -497,6 +505,18 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"fG" = (
+/obj/structure/closet/crate/bin,
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/maintenance/two,
+/turf/open/floor/pod,
+/area/ruin/rockplanet/distillery/office)
 "fJ" = (
 /obj/structure/catwalk/over,
 /obj/machinery/light/small/broken/directional/west,
@@ -588,15 +608,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	pixel_y = 6;
+	layer = 3.1;
 	pixel_x = 12;
-	layer = 3.1
+	pixel_y = 6
 	},
 /obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	pixel_y = 6;
+	layer = 3.1;
 	pixel_x = 6;
-	start_empty = 1;
-	layer = 3.1
+	pixel_y = 6;
+	start_empty = 1
 	},
 /obj/item/ammo_casing/c9mm,
 /obj/item/ammo_casing/c9mm,
@@ -624,12 +644,12 @@
 	pixel_y = 4
 	},
 /obj/item/electronics/firealarm{
-	pixel_y = 6;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 6
 	},
 /obj/item/reagent_containers/food/drinks/soda_cans/sol_dry{
-	pixel_y = 6;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockplanet/lit{
@@ -638,9 +658,9 @@
 /area/ruin/rockplanet/distillery)
 "gX" = (
 /obj/structure/reagent_dispensers/beerkeg{
-	reagent_id = /datum/reagent/consumable/ethanol/moonshine;
+	desc = "A keg full of liver-shredding spirits brewed by amateur bootleggers.";
 	name = "moonshine keg";
-	desc = "A keg full of liver-shredding spirits brewed by amateur bootleggers."
+	reagent_id = /datum/reagent/consumable/ethanol/moonshine
 	},
 /obj/effect/turf_decal/industrial/loading/white{
 	dir = 4
@@ -659,8 +679,8 @@
 "hq" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 12;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 12
 	},
 /obj/item/clothing/head/beret/sec/frontier{
 	pixel_x = -4
@@ -685,12 +705,12 @@
 	dir = 9
 	},
 /obj/item/reagent_containers/food/snacks/chips{
-	pixel_y = 4;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 4
 	},
 /obj/item/reagent_containers/food/drinks/beer{
-	pixel_y = 8;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 8
 	},
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
@@ -811,6 +831,15 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/crew)
+"jG" = (
+/obj/structure/curtain/cloth/grey,
+/obj/structure/bed{
+	dir = 8;
+	icon_state = "dirty_mattress"
+	},
+/obj/effect/spawner/random/bedsheet,
+/turf/open/floor/wood,
+/area/ruin/rockplanet/distillery/crew)
 "jI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/sofa/brown/corpo/right/directional/west,
@@ -848,18 +877,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/ash,
 /obj/item/cigbutt{
-	pixel_y = 3;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 3
 	},
-/turf/open/floor/wood,
-/area/ruin/rockplanet/distillery/crew)
-"kd" = (
-/obj/structure/curtain/cloth/grey,
-/obj/structure/bed{
-	dir = 8;
-	icon_state = "dirty_mattress"
-	},
-/obj/item/bedsheet/dorms,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/distillery/crew)
 "kn" = (
@@ -884,10 +904,10 @@
 /area/ruin/rockplanet/distillery/crew)
 "ky" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell{
-	name = "dead grass";
 	desc = "A sparse patch of grass without color.";
+	light_power = 1;
 	light_range = 0;
-	light_power = 1
+	name = "dead grass"
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -915,6 +935,11 @@
 /obj/item/reagent_containers/food/snacks/donkpocket/warm/pizza{
 	pixel_y = 18
 	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/distillery/crew)
+"kQ" = (
+/obj/effect/spawner/random/vending/snack,
+/obj/effect/turf_decal/spline/fancy/opaque/white,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/crew)
 "kT" = (
@@ -1051,9 +1076,9 @@
 	pixel_x = -4
 	},
 /obj/item/pushbroom{
-	pixel_y = -12;
+	layer = 3.9;
 	pixel_x = 5;
-	layer = 3.9
+	pixel_y = -12
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/wood{
@@ -1129,8 +1154,8 @@
 	pixel_y = 3
 	},
 /obj/item/stock_parts/manipulator{
-	pixel_y = 5;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
@@ -1147,10 +1172,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_y = 6;
-	pixel_x = -22;
+	id = "engi_window";
 	name = "Window Shutter";
-	id = "engi_window"
+	pixel_x = -22;
+	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/binary/volume_pump/on/layer2{
@@ -1251,12 +1276,12 @@
 /obj/structure/catwalk/over,
 /obj/structure/closet/crate/hydroponics,
 /obj/item/reagent_containers/condiment/enzyme{
-	pixel_y = 8;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/condiment/enzyme{
-	pixel_y = 8;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/condiment/enzyme{
 	pixel_y = 8
@@ -1351,8 +1376,8 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper/crumpled/muddy/fluff/distillery{
-	name = "note";
-	default_raw_text = "Scored this from an SRM ship passing through the sector. Handy if anything happens to our current still."
+	default_raw_text = "Scored this from an SRM ship passing through the sector. Handy if anything happens to our current still.";
+	name = "note"
 	},
 /turf/open/floor/plating/rockplanet/lit{
 	icon_state = "panelscorched"
@@ -1383,12 +1408,12 @@
 	dir = 5
 	},
 /obj/item/stamp{
-	pixel_y = 16;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 16
 	},
 /obj/item/stamp/denied{
-	pixel_y = 16;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 16
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-11";
@@ -1399,8 +1424,8 @@
 /area/ruin/rockplanet/distillery/office)
 "qe" = (
 /obj/structure/reagent_dispensers/water_cooler{
-	pixel_y = 6;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
@@ -1566,14 +1591,6 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
-"sm" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 4;
-	filter_types = list("co2","bz","water_vapor","miasma","freon","pluox","tritium","n20","no2","nob");
-	widenet = 1
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ruin/rockplanet/distillery/crew)
 "sx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
@@ -1610,17 +1627,6 @@
 	icon_state = "wood-broken2"
 	},
 /area/ruin/rockplanet/distillery/saloon)
-"sQ" = (
-/obj/effect/turf_decal/industrial/outline/red,
-/obj/structure/closet/crate/freezer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/turf/open/floor/plasteel/patterned/brushed/rockplanet,
-/area/ruin/rockplanet/distillery/crew)
 "tc" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -1646,12 +1652,12 @@
 	pixel_y = -1
 	},
 /obj/item/reagent_containers/glass/beaker{
-	pixel_x = -5;
-	list_reagents = list(/datum/reagent/oxygen = 50)
+	list_reagents = list(/datum/reagent/oxygen = 50);
+	pixel_x = -5
 	},
 /obj/item/reagent_containers/glass/beaker{
-	pixel_y = 12;
-	list_reagents = list(/datum/reagent/carbon = 50)
+	list_reagents = list(/datum/reagent/carbon = 50);
+	pixel_y = 12
 	},
 /obj/item/reagent_containers/syringe{
 	pixel_y = 6
@@ -1695,8 +1701,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 12;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 12
 	},
 /obj/item/newspaper{
 	pixel_x = -4;
@@ -1852,8 +1858,8 @@
 	req_one_access_txt = "10"
 	},
 /obj/structure/closet/wall/red/directional/west{
-	secure = 1;
-	locked = 1
+	locked = 1;
+	secure = 1
 	},
 /obj/item/storage/toolbox/emergency/shuttle/electric,
 /obj/item/ammo_box/a44roum_speedloader,
@@ -1884,8 +1890,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/glass,
 /obj/item/seeds/corn{
-	pixel_y = 6;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 6
 	},
 /obj/item/seeds/corn{
 	pixel_y = 6
@@ -1894,12 +1900,12 @@
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/food/snacks/grown/corn{
-	pixel_y = -2;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = -2
 	},
 /obj/item/reagent_containers/food/snacks/grown/corn{
-	pixel_y = 3;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 3
 	},
 /turf/open/floor/plating/rockplanet/lit{
 	icon_state = "panelscorched"
@@ -2033,19 +2039,19 @@
 "xc" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/paper_bin{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/item/pen{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/item/hand_labeler{
 	pixel_y = -4
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 12;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery)
@@ -2109,8 +2115,8 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/netherworld/migo{
-	name = "Dog";
-	faction = list("Frontiersmen")
+	faction = list("Frontiersmen");
+	name = "Dog"
 	},
 /obj/structure/bed/dogbed,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton,
@@ -2141,14 +2147,14 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/rack,
 /obj/item/reagent_containers/condiment/sugar{
-	pixel_y = 13;
+	layer = 2.8;
 	pixel_x = -2;
-	layer = 2.8
+	pixel_y = 13
 	},
 /obj/item/reagent_containers/condiment/sugar{
-	pixel_y = 7;
+	layer = 2.8;
 	pixel_x = -2;
-	layer = 2.8
+	pixel_y = 7
 	},
 /obj/item/wrench{
 	pixel_y = 4
@@ -2178,18 +2184,6 @@
 /obj/machinery/hydroponics/constructable,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery)
-"yL" = (
-/obj/structure/closet/crate/bin,
-/obj/effect/turf_decal/siding/white{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/turf/open/floor/pod,
-/area/ruin/rockplanet/distillery/office)
 "yO" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 9
@@ -2488,27 +2482,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
-"BT" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/sign/poster/retro/radio{
-	pixel_y = -32
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1;
-	filter_types = list("co2","bz","water_vapor","miasma","freon","pluox","tritium","n20","no2","nob");
-	widenet = 1
-	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken4"
-	},
-/area/ruin/rockplanet/distillery/crew)
 "Ch" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/table/glass,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 12;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 12
 	},
 /obj/item/clipboard{
 	pixel_x = -4;
@@ -2567,9 +2546,9 @@
 "CL" = (
 /obj/structure/fluff/glowshroom,
 /obj/machinery/button/door{
-	pixel_y = 26;
+	id = "dist_cargo";
 	name = "Cargo Door";
-	id = "dist_cargo"
+	pixel_y = 26
 	},
 /turf/open/floor/plating/rockplanet/lit,
 /area/ruin/rockplanet/distillery)
@@ -2689,8 +2668,8 @@
 	layer = 2.7
 	},
 /obj/item/reagent_containers/food/drinks/beer{
-	pixel_y = 8;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/drinks/mug/coco{
 	pixel_x = -6;
@@ -2732,13 +2711,23 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/crayon{
+	color = "#FF7742";
 	icon_state = "skull";
-	pixel_x = -16;
-	color = "#FF7742"
+	pixel_x = -16
 	},
 /obj/effect/decal/cleanable/garbage,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/distillery/crew)
+"Fe" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/structure/fluff/glowshroom,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/bin,
+/obj/effect/spawner/random/maintenance/three,
+/turf/open/floor/wood,
 /area/ruin/rockplanet/distillery/crew)
 "Fk" = (
 /obj/machinery/light/floor,
@@ -2800,12 +2789,12 @@
 "FI" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 12;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 12
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 14;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 14
 	},
 /obj/item/newspaper{
 	pixel_x = -4
@@ -2909,6 +2898,23 @@
 	},
 /turf/open/floor/plating/rockplanet/lit,
 /area/ruin/rockplanet/distillery)
+"He" = (
+/obj/structure/closet/crate/bin,
+/obj/machinery/firealarm/directional/south{
+	buildstage = 0
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-5"
+	},
+/obj/machinery/light/small/directional/west,
+/obj/effect/spawner/random/maintenance/four,
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken6"
+	},
+/area/ruin/rockplanet/distillery)
 "Hf" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -2920,26 +2926,26 @@
 /obj/effect/turf_decal/industrial/traffic,
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_y = -6;
-	pixel_x = -22;
+	id = "pod_aft";
 	name = "Aft Door";
-	id = "pod_aft"
+	pixel_x = -22;
+	pixel_y = -6
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -32;
+	id = "pod_window";
 	name = "Window Shutters";
-	id = "pod_window"
+	pixel_x = -32
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	req_one_access_txt = "10"
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_y = 6;
-	pixel_x = -22;
+	id = "pod_fore";
 	name = "Fore Door";
-	id = "pod_fore"
+	pixel_x = -22;
+	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/oil,
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals,
@@ -3029,15 +3035,6 @@
 	icon_state = "wood-broken7"
 	},
 /area/ruin/rockplanet/distillery/saloon)
-"Iz" = (
-/obj/structure/closet/crate,
-/obj/effect/turf_decal/industrial/outline/red,
-/obj/effect/spawner/lootdrop/random_computer_circuit_common,
-/obj/effect/spawner/lootdrop/maintenance/four,
-/obj/effect/spawner/lootdrop/random_machine_circuit_common,
-/obj/effect/spawner/lootdrop/random_machine_circuit_common,
-/turf/open/floor/plasteel/patterned/brushed/rockplanet,
-/area/ruin/rockplanet/distillery/crew)
 "IA" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -3098,13 +3095,13 @@
 	pixel_x = 3
 	},
 /obj/machinery/button/door{
-	name = "Armory Door Lock";
-	pixel_y = -6;
-	pixel_x = -22;
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
+	dir = 4;
 	id = "frontier_armory";
-	dir = 4
+	name = "Armory Door Lock";
+	normaldoorcontrol = 1;
+	pixel_x = -22;
+	pixel_y = -6;
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/office)
@@ -3123,6 +3120,20 @@
 	dir = 8
 	},
 /area/ruin/rockplanet/distillery/saloon)
+"JA" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
+	widenet = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/white{
+	dir = 5
+	},
+/obj/structure/closet/crate/bin,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/east,
+/obj/effect/spawner/random/maintenance/three,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/distillery/crew)
 "JC" = (
 /obj/item/chair,
 /obj/structure/railing{
@@ -3148,9 +3159,9 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "JN" = (
 /obj/structure/flora/driftlog{
-	pixel_y = -15;
+	layer = 2.8;
 	pixel_x = 9;
-	layer = 2.8
+	pixel_y = -15
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -3197,28 +3208,28 @@
 "Ka" = (
 /obj/structure/reagent_dispensers/beerkeg{
 	anchored = 1;
-	reagent_id = /datum/reagent/consumable/ethanol/moonshine;
-	name = "moonshine keg";
 	desc = "A keg full of liver-shredding spirits brewed by amateur bootleggers.";
+	layer = 2.8;
+	name = "moonshine keg";
 	pixel_x = -8;
-	layer = 2.8
+	reagent_id = /datum/reagent/consumable/ethanol/moonshine
 	},
 /obj/structure/reagent_dispensers/beerkeg{
 	anchored = 1;
-	reagent_id = /datum/reagent/consumable/ethanol/moonshine;
-	name = "moonshine keg";
 	desc = "A keg full of liver-shredding spirits brewed by amateur bootleggers.";
+	name = "moonshine keg";
 	pixel_x = 8;
-	pixel_y = -2
+	pixel_y = -2;
+	reagent_id = /datum/reagent/consumable/ethanol/moonshine
 	},
 /obj/structure/reagent_dispensers/beerkeg{
 	anchored = 1;
-	reagent_id = /datum/reagent/consumable/ethanol/moonshine;
-	name = "moonshine keg";
 	desc = "A keg full of liver-shredding spirits brewed by amateur bootleggers.";
+	layer = 3;
+	name = "moonshine keg";
 	pixel_x = -4;
 	pixel_y = 14;
-	layer = 3
+	reagent_id = /datum/reagent/consumable/ethanol/moonshine
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/spline/fancy/opaque/white{
@@ -3229,8 +3240,8 @@
 "Kf" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey{
-	pixel_y = 12;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 12
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass{
 	pixel_x = -8;
@@ -3407,23 +3418,6 @@
 /obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
-"MS" = (
-/obj/structure/closet/crate/bin,
-/obj/machinery/firealarm/directional/south{
-	buildstage = 0
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-5"
-	},
-/obj/machinery/light/small/directional/west,
-/obj/effect/spawner/lootdrop/maintenance/four,
-/turf/open/floor/wood/rockplanet{
-	icon_state = "wood-broken6"
-	},
-/area/ruin/rockplanet/distillery)
 "Nj" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -3461,8 +3455,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/cigbutt,
 /obj/item/cigbutt{
-	pixel_y = 8;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/drinks/bottle/moonshine{
 	pixel_x = -6;
@@ -3496,10 +3490,10 @@
 /area/ruin/rockplanet/distillery/crew)
 "NE" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell{
-	name = "dead grass";
 	desc = "A sparse patch of grass without color.";
+	light_power = 1;
 	light_range = 0;
-	light_power = 1
+	name = "dead grass"
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit,
@@ -3509,10 +3503,10 @@
 	dir = 1
 	},
 /obj/machinery/computer/helm{
+	desc = "No way you're getting this thing off the ground.";
 	dir = 8;
 	layer = 3.3;
-	name = "Locked Helm Console";
-	desc = "No way you're getting this thing off the ground."
+	name = "Locked Helm Console"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -3581,13 +3575,6 @@
 	icon_state = "panelscorched"
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Os" = (
-/obj/machinery/vending/snack/random{
-	tilted = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/white,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ruin/rockplanet/distillery/crew)
 "Ow" = (
 /obj/structure/railing{
 	dir = 8
@@ -3713,6 +3700,17 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"PW" = (
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/structure/closet/crate/freezer,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/turf/open/floor/plasteel/patterned/brushed/rockplanet,
+/area/ruin/rockplanet/distillery/crew)
 "PZ" = (
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
@@ -3752,6 +3750,21 @@
 "QP" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/rockplanet/distillery/engineering)
+"Rb" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/sign/poster/retro/radio{
+	pixel_y = -32
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1;
+	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
+	widenet = 1
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/rockplanet/distillery/crew)
 "Rd" = (
 /obj/structure/cable{
 	icon_state = "5-8"
@@ -3775,8 +3788,8 @@
 	pixel_y = 4
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 12;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
@@ -3813,8 +3826,8 @@
 	dir = 1
 	},
 /obj/item/trash/popcorn{
-	pixel_y = 12;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/crew)
@@ -3826,14 +3839,14 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/crayon{
+	color = "#0094FF";
 	icon_state = "k";
-	pixel_x = -5;
-	color = "#0094FF"
+	pixel_x = -5
 	},
 /obj/effect/decal/cleanable/crayon{
+	color = "#0094FF";
 	icon_state = "u";
-	pixel_x = -16;
-	color = "#0094FF"
+	pixel_x = -16
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -3931,24 +3944,24 @@
 /area/ruin/rockplanet/distillery/saloon)
 "Ss" = (
 /obj/structure/flora/driftlog{
-	pixel_y = 2;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 2
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Sx" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/reagent_containers/food/drinks/bottle/moonshine{
-	pixel_y = 6;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 6
 	},
 /obj/item/reagent_containers/food/drinks/bottle/moonshine{
-	pixel_y = 2;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 2
 	},
 /obj/item/reagent_containers/food/drinks/bottle/hooch{
-	pixel_y = -4;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = -4
 	},
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
@@ -3985,8 +3998,8 @@
 "Td" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/chem_jug{
-	pixel_y = 4;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/glass/filter{
@@ -4178,30 +4191,6 @@
 	},
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/distillery/office)
-"Vf" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/obj/structure/fluff/glowshroom,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/bin,
-/obj/effect/spawner/lootdrop/maintenance/three,
-/turf/open/floor/wood,
-/area/ruin/rockplanet/distillery/crew)
-"Vg" = (
-/obj/effect/turf_decal/spline/fancy/opaque/white{
-	dir = 5
-	},
-/obj/structure/closet/crate/bin,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	filter_types = list("co2","bz","water_vapor","miasma","freon","pluox","tritium","n20","no2","nob");
-	widenet = 1
-	},
-/obj/machinery/light/small/broken/directional/east,
-/obj/effect/spawner/lootdrop/maintenance/three,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ruin/rockplanet/distillery/crew)
 "Vj" = (
 /obj/effect/turf_decal/ntlogo,
 /obj/effect/turf_decal/spline/fancy/opaque/white{
@@ -4362,6 +4351,15 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/rust/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Xc" = (
+/obj/structure/closet/crate,
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/effect/spawner/random/circuit/computer/common,
+/obj/effect/spawner/random/maintenance/four,
+/obj/effect/spawner/random/circuit/machine/common,
+/obj/effect/spawner/random/circuit/machine/common,
+/turf/open/floor/plasteel/patterned/brushed/rockplanet,
+/area/ruin/rockplanet/distillery/crew)
 "Xf" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-6"
@@ -4398,12 +4396,12 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
+	id = "frontier_armory";
 	name = "Armory Door Lock";
-	pixel_y = 24;
-	pixel_x = 6;
 	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	id = "frontier_armory"
+	pixel_x = 6;
+	pixel_y = 24;
+	specialfunctions = 4
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
 /turf/open/floor/wood,
@@ -4441,8 +4439,8 @@
 /obj/effect/turf_decal/siding/white/corner,
 /obj/item/kirbyplants{
 	icon_state = "plant-25";
-	pixel_y = 12;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 12
 	},
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/ash,
@@ -4532,9 +4530,9 @@
 	dir = 6
 	},
 /obj/item/reagent_containers/food/snacks/deadmouse{
+	layer = 2.9;
 	pixel_x = 8;
-	pixel_y = 6;
-	layer = 2.9
+	pixel_y = 6
 	},
 /obj/structure/chair/sofa/brown/old/corner/directional/west,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
@@ -5136,7 +5134,7 @@ kO
 Rw
 zk
 tP
-sm
+cu
 RR
 wU
 ji
@@ -5226,7 +5224,7 @@ uS
 zJ
 AY
 xT
-Vg
+JA
 jF
 RR
 RR
@@ -5371,7 +5369,7 @@ aB
 tB
 eG
 sx
-kd
+jG
 RR
 Tl
 Ru
@@ -5529,7 +5527,7 @@ rH
 mq
 qu
 uU
-MS
+He
 rH
 wX
 mX
@@ -5560,7 +5558,7 @@ jM
 mk
 lE
 RR
-Iz
+Xc
 rT
 yS
 NE
@@ -5602,12 +5600,12 @@ KA
 lL
 mv
 eh
-yL
+fG
 jM
 VO
-Vf
+Fe
 zk
-sQ
+PW
 rT
 yS
 qj
@@ -5746,7 +5744,7 @@ UI
 SV
 jM
 xN
-BT
+Rb
 RR
 zk
 zk
@@ -5796,7 +5794,7 @@ LD
 Rr
 zk
 tP
-sm
+cu
 RR
 NR
 KV
@@ -5838,7 +5836,7 @@ Ja
 ql
 OV
 RR
-dZ
+aS
 Go
 Gd
 br
@@ -5885,7 +5883,7 @@ KA
 cp
 yW
 RR
-Os
+kQ
 eF
 Ef
 RR

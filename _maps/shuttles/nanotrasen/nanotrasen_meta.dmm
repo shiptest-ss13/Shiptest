@@ -240,9 +240,9 @@
 	icon_state = "crateopen";
 	opened = 1
 	},
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/gloves,
+/obj/effect/spawner/random/clothing/gloves,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "aF" = (
@@ -576,9 +576,9 @@
 	dir = 4
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/random/decoration/glowstick,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "bX" = (
@@ -667,7 +667,7 @@
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/stamp/qm{
+/obj/item/stamp/nanotrasen/ns/captain{
 	pixel_x = -6
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -807,6 +807,7 @@
 	pixel_x = 21;
 	pixel_y = 12
 	},
+/obj/item/stamp/nanotrasen/ns,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "cz" = (
@@ -2000,7 +2001,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "pF" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2172,8 +2173,8 @@
 /obj/effect/turf_decal/ntspaceworks_big/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/tool_surgery_common,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/medical/surgery_tool/common,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "uk" = (
@@ -2520,8 +2521,8 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/obj/effect/spawner/lootdrop/random_prosthetic,
+/obj/effect/spawner/random/maintenance/two,
+/obj/effect/spawner/random/medical/prosthetic,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Ai" = (
@@ -2683,8 +2684,9 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom/directional/east,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/item/extinguisher/mini,
+/obj/item/stamp/nanotrasen/ns,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "DJ" = (
@@ -2802,6 +2804,7 @@
 	},
 /obj/machinery/light/small/broken/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stamp/nanotrasen/ns,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "FR" = (
@@ -2846,7 +2849,7 @@
 	dir = 8
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/spacecash/bundle/pocketchange,
 /turf/open/floor/plasteel/dark,
@@ -3064,7 +3067,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "La" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/light/broken/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3701,11 +3704,11 @@
 "Zf" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = 7
 	},
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = -8
 	},
 /obj/machinery/button/door{
