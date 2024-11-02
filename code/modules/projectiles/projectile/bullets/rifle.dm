@@ -79,13 +79,6 @@
 	armour_penetration = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a308
 
-//5.45x39mm (SVG-76u)
-
-/obj/projectile/bullet/a545_39
-	name = "5.45x39mm bullet"
-	damage = 25
-	armour_penetration = 20
-
 //7.62x40mm CLIP (SKM Rifles)
 
 /obj/projectile/bullet/a762_40

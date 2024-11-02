@@ -115,9 +115,10 @@
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_545_39
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_46_30
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/skm_545_39,
+		/obj/item/ammo_box/magazine/skm_46_30,
+		/obj/item/ammo_box/magazine/skm_46_30/recycled,
 	)
 
 	recoil = 2

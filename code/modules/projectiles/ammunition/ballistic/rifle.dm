@@ -96,25 +96,6 @@
 	projectile_type = /obj/projectile/bullet/a556_42/rubber
 	stack_size = 15
 
-// 5.45x39mm (SKM-24v)
-
-/obj/item/ammo_casing/a545_39
-	name = "5.45x39mm bullet casing"
-	desc = "A 5.45x39mm bullet casing."
-	icon_state = "rifle-brass"
-	caliber = "5.45x39mm"
-	randomspread = TRUE
-	projectile_type = /obj/projectile/bullet/a545_39
-	stack_size = 15
-
-/obj/item/ammo_casing/a545_39/recycled
-	name = "recycled 5.45x39mm bullet casing"
-	desc = "A recycled 5.45x39mm bullet casing."
-	bullet_skin = "surplus"
-	caliber = "5.45x39mm"
-	projectile_type = /obj/projectile/bullet/a545_39
-	stack_size = 15
-
 // 7.62x40mm CLIP (SKM Rifles)
 
 /obj/item/ammo_casing/a762_40

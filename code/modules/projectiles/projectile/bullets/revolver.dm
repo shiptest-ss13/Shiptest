@@ -83,7 +83,7 @@
 
 /obj/projectile/bullet/a357
 	name = ".357 bullet"
-	damage = 30 //shiptest nerf
+	damage = 30
 
 /obj/projectile/bullet/a357/match
 	name = ".357 match bullet"
