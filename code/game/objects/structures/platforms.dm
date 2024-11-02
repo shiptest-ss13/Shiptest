@@ -120,7 +120,7 @@
 	. = ..()
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
-	if (I.use_tool(src, user, 3 SECONDS, volume=0))
+	if(I.use_tool(src, user, 3 SECONDS, volume=0))
 		to_chat(user, span_warning("You cut apart the platform."))
 		deconstruct()
 		return TRUE
