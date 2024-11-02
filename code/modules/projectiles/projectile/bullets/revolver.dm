@@ -125,7 +125,7 @@
 	name = ".45-70 hollow point bullet"
 	damage = 55
 	armour_penetration = -50
-	sped = BULLET_HP_SPEED
+	speed = BULLET_HP_SPEED
 
 /obj/projectile/bullet/a4570/explosive //for extra oof
 	name = ".45-70 explosive bullet"
