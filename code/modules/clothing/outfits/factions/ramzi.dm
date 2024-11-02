@@ -61,11 +61,8 @@
 
 //Pilot
 
-/datum/outfit/ramzi/pilot
+/datum/outfit/ramzi/operative/pilot
 	name = "Ramzi Clique - Pilot"
-
-	id_assignment = "Pilot"
-	job_icon = "securityofficer"
 
 	l_pocket = /obj/item/weldingtool/mini
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
