@@ -94,7 +94,7 @@
 
 /obj/projectile/bullet/a357
 	name = ".357 bullet"
-	damage = 30 //shiptest nerf
+	damage = 30
 
 // admin only really, for ocelot memes
 /obj/projectile/bullet/a357/match

@@ -71,6 +71,15 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
 
+/datum/outfit/job/gezena/security/sapper
+	name = "PGF - Marine Pioneer"
+	id_assignment = "Marine Pioneer"
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
+
 /datum/outfit/job/gezena/hos
 	name = "PGF - Marine Sergeant"
 	id_assignment = "Sergeant"

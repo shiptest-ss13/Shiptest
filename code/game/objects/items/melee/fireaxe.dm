@@ -17,10 +17,10 @@
 /obj/item/melee/axe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
-	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=24, icon_wielded="[base_icon_state]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=24, icon_wielded="[base_icon_state]_w")
 
-/obj/item/fireaxe/update_icon_state()
-	icon_state = "[base_icon_state]0"
+/obj/item/melee/axe/update_icon_state()
+	icon_state = "[base_icon_state]"
 	return ..()
 
 /obj/item/melee/axe/afterattack(atom/A, mob/user, proximity)
@@ -35,13 +35,13 @@
 /obj/item/melee/axe/fire  // DEM AXES MAN, marker -Agouri
 	name = "fire axe"
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
-	icon_state = "fireaxe0"
+	icon_state = "fireaxe"
 	base_icon_state = "fireaxe"
 
 /obj/item/melee/axe/bone  // Blatant imitation of the fireaxe, but made out of bone.
 	name = "bone axe"
 	desc = "A large, vicious axe crafted out of several sharpened bone plates and crudely tied together. Made of monsters, by killing monsters, for killing monsters."
-	icon_state = "bone_axe0"
+	icon_state = "bone_axe"
 	base_icon_state = "bone_axe"
 
 /obj/item/melee/axe/scrap
@@ -51,4 +51,4 @@
 
 /obj/item/melee/axe/scrap/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=22, icon_wielded="[base_icon_state]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=22, icon_wielded="[base_icon_state]_w")

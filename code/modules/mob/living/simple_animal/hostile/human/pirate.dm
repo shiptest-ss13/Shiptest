@@ -7,7 +7,7 @@
 	speak_chance = 0
 	speak_emote = list("yarrs")
 	loot = list(/obj/effect/mob_spawn/human/corpse/pirate,
-			/obj/item/melee/transforming/energy/sword/saber/pirate)
+			/obj/item/melee/energy/sword/saber/pirate)
 	faction = list("pirate")
 
 /mob/living/simple_animal/hostile/human/pirate/melee
@@ -33,6 +33,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	speed = 1
+	armor_base = /obj/item/clothing/suit/space
 
 /mob/living/simple_animal/hostile/human/pirate/melee/space/Initialize()
 	. = ..()
@@ -73,6 +74,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	speed = 1
+	armor_base = /obj/item/clothing/suit/space
 
 /mob/living/simple_animal/hostile/human/pirate/ranged/space/Initialize()
 	. = ..()

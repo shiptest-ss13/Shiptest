@@ -2103,6 +2103,9 @@
 /obj/structure/dresser{
 	dir = 1
 	},
+/obj/item/reagent_containers/food/drinks/beaglemug{
+	pixel_y = 8
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "vW" = (
@@ -3749,11 +3752,11 @@
 /obj/structure/closet/secure_closet/freezer/fridge/open{
 	populate = 0
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,

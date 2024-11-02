@@ -153,9 +153,9 @@ Behavior that's still missing from this component that original food items had t
 	SIGNAL_HANDLER
 
 	if(!(food_flags & FOOD_IN_CONTAINER))
-		switch (bitecount)
-			if (0)
-				return
+		switch(bitecount)
+			if(0)
+				EMPTY_BLOCK_GUARD
 			if(1)
 				examine_list += "[parent] was bitten by someone!"
 			if(2,3)

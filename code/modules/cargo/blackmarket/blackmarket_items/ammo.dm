@@ -25,17 +25,6 @@
 	stock_max = 10
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/himehabu_box
-	name = ".22 LR Ammo Box"
-	desc = "A 75 round ammo box of .22 LR. Trust me, you'll need every shot."
-	item = /obj/item/storage/box/ammo/c22lr
-
-	price_min = 100
-	price_max = 300
-	stock_min = 6
-	stock_max = 10
-	availability_prob = 0
-
 /datum/blackmarket_item/ammo/a357_box
 	name = ".357 Ammo Box"
 	desc = "A 50 round ammo box of .357."
@@ -124,7 +113,7 @@
 /datum/blackmarket_item/ammo/carbine_mag
 	name = "SKM-24v Magazine"
 	desc = "A 30 round magazine of 4.6x30mm for the SKM-24v. A hermit classic."
-	item = /obj/item/ammo_box/magazine/skm_545_39
+	item = /obj/item/ammo_box/magazine/skm_46_30
 
 	price_min = 500
 	price_max = 1000
