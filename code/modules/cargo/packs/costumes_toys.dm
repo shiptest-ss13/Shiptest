@@ -84,7 +84,7 @@
 
 /datum/supply_pack/costumes_toys/costume_original
 	name = "Original Costume Crate"
-	desc = "Reenact Shakespearean plays with this assortment of outfits. Contains eight different costumes!"
+	desc = "Reenact Solarian plays with this assortment of outfits. Contains eight different costumes!"
 	cost = 1000
 	contains = list(/obj/item/clothing/head/snowman,
 					/obj/item/clothing/suit/snowman,

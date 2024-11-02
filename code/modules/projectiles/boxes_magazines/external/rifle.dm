@@ -22,7 +22,7 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[round(ammo_count(),5)]"
 
-/obj/item/ammo_box/magazine/skm_545_39
+/obj/item/ammo_box/magazine/skm_46_30
 	name = "subcaliber assault rifle magazine (4.6x30mm)"
 	desc = "A slightly-curved, 30-round magazine for the SKM-24v. These rounds do okay damage with average performance against armor"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
@@ -31,6 +31,9 @@
 	base_icon_state = "skmcarbine_mag"
 	icon_state = "skmcarbine_mag-1"
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/skm_46_30/recycled
+	ammo_type = /obj/item/ammo_casing/c46x30mm/recycled
 
 /obj/item/ammo_box/magazine/skm_762_40
 	name = "assault rifle magazine (7.62x40mm CLIP)"
