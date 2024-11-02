@@ -49,6 +49,8 @@
 /obj/item/reagent_containers/food/snacks/grown/tobacco,
 /obj/item/reagent_containers/food/snacks/grown/tobacco,
 /obj/item/reagent_containers/food/snacks/grown/tobacco,
+/obj/item/clothing/head/HoS/syndicate,
+/obj/item/clothing/head/HoS/beret/syndicate,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "aQ" = (
@@ -968,7 +970,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "iO" = (
 /obj/structure/cable/yellow{
@@ -995,46 +997,12 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "jd" = (
-/obj/structure/closet/wall/white/med{
-	name = "medical locker";
-	dir = 8;
-	pixel_x = -28
+/obj/structure/toilet{
+	dir = 1
 	},
-/obj/item/roller{
-	pixel_x = -8
-	},
-/obj/item/healthanalyzer{
-	pixel_x = -4;
-	pixel_y = 8
-	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/item/reagent_containers/syringe/contraband/fentanyl,
-/obj/item/reagent_containers/syringe/contraband{
-	pixel_x = 5
-	},
-/obj/item/storage/firstaid{
-	pixel_x = 4;
-	pixel_y = 8
-	},
-/obj/item/storage/firstaid/medical{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/stack/medical/splint/ghetto{
-	pixel_x = 2;
-	pixel_y = -6
-	},
-/obj/item/storage/pill_bottle/happy{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/item/clothing/head/frontier,
+/obj/structure/curtain,
 /turf/open/floor/plasteel/patterned/brushed,
-/area/ship/medical)
+/area/ship/crew/dorm)
 "je" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/techfloor{
@@ -1154,7 +1122,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "kX" = (
 /obj/structure/rack,
@@ -1256,7 +1224,7 @@
 /obj/item/storage/toolbox/syndicate,
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/head/hardhat/white,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "mf" = (
 /turf/open/floor/engine/plasma,
@@ -1274,17 +1242,14 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security/armory)
 "mB" = (
-/obj/machinery/door/firedoor/border_only{
+/obj/structure/bed/roller,
+/obj/effect/decal/cleanable/blood/old,
+/obj/machinery/light_switch{
+	pixel_x = -8;
+	pixel_y = -20;
 	dir = 1
 	},
-/obj/machinery/door/firedoor/border_only,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/medical{
-	name = "Surgery"
-	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "mL" = (
 /obj/structure/cable/yellow{
@@ -1520,6 +1485,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
+/obj/item/storage/box/syndimaid,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ps" = (
@@ -1759,12 +1725,46 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
 "rT" = (
-/obj/structure/toilet{
-	dir = 1
+/obj/structure/closet/wall/white/med{
+	name = "medical locker";
+	dir = 8;
+	pixel_x = -28
 	},
-/obj/structure/curtain,
+/obj/item/roller{
+	pixel_x = -8
+	},
+/obj/item/healthanalyzer{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/item/reagent_containers/syringe/contraband/fentanyl,
+/obj/item/reagent_containers/syringe/contraband{
+	pixel_x = 5
+	},
+/obj/item/storage/firstaid{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/item/storage/firstaid/medical{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/stack/medical/splint/ghetto{
+	pixel_x = 2;
+	pixel_y = -6
+	},
+/obj/item/storage/pill_bottle/happy{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/item/clothing/head/frontier,
 /turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/dorm)
+/area/ship/medical)
 "rX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -2248,7 +2248,7 @@
 /obj/machinery/firealarm/directional/south,
 /obj/structure/cable/yellow,
 /obj/machinery/power/ship_gravity,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "xJ" = (
 /obj/effect/turf_decal/box/corners{
@@ -2279,7 +2279,7 @@
 	dir = 4;
 	pixel_x = 8
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "xY" = (
 /obj/structure/cable/yellow{
@@ -2743,9 +2743,6 @@
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/plasteel/dark,
@@ -2874,7 +2871,7 @@
 	pixel_x = 8
 	},
 /obj/item/lighter/greyscale,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "Fd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2963,15 +2960,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Gw" = (
-/obj/structure/bed/roller,
-/obj/effect/decal/cleanable/blood/old,
-/obj/machinery/light_switch{
-	pixel_x = -8;
-	pixel_y = -20;
-	dir = 1
-	},
+/obj/structure/closet/secure_closet/brig/wall/directional/north,
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/storage/cans/sixbeer,
+/obj/item/soap/homemade,
+/obj/machinery/light/small/directional/west,
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/patterned/brushed,
-/area/ship/medical)
+/area/ship/crew/dorm)
 "Gz" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -3873,7 +3870,7 @@
 /obj/item/gear_pack/anglegrinder/energy,
 /obj/item/radio/headset/pirate/alt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "QX" = (
 /obj/effect/turf_decal/box/corners{
@@ -4466,15 +4463,18 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "XV" = (
-/obj/structure/closet/secure_closet/brig/wall/directional/north,
-/obj/item/towel,
-/obj/item/towel,
-/obj/item/storage/cans/sixbeer,
-/obj/item/soap/homemade,
-/obj/machinery/light/small/directional/west,
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/dorm)
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/medical{
+	name = "Surgery"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/medical)
 "XW" = (
 /obj/structure/closet/crate/bin,
 /obj/item/trash/pistachios{
@@ -4608,7 +4608,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 
 (1,1,1) = {"
@@ -5232,7 +5232,7 @@ ka
 qD
 Jh
 oP
-jd
+rT
 hI
 oP
 XG
@@ -5250,9 +5250,9 @@ wB
 ka
 DH
 dF
-mB
+XV
 AB
-Gw
+mB
 oP
 XG
 XG
@@ -5289,8 +5289,8 @@ SD
 GV
 rX
 oy
-XV
-rT
+Gw
+jd
 oy
 XG
 XG
