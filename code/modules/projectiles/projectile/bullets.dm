@@ -31,7 +31,3 @@
 	ricochets_max = 5 //should be enough to scare the shit out of someone
 	ricochet_chance = 30
 	ricochet_decay_damage = 0.5 //shouldnt being reliable, but deadly enough to be careful if you accidentally hit an ally
-
-	//for tracker rounds. most wont interact with this.
-	var/gps_tag
-	//i wish we had multitype inheritance

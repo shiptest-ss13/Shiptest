@@ -165,9 +165,6 @@
 
 	///If defined, on hit we create an item of this type then call hitby() on the hit target with this, mainly used for embedding items (bullets) in targets
 	var/shrapnel_type
-	///if an ammo casing has a gps_tag, our projectile is given this tag.
-	var/gps_tag
-
 
 	///If TRUE, hit mobs even if they're on the floor and not our target
 	var/hit_stunned_targets = FALSE

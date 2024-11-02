@@ -272,10 +272,10 @@
 	stock_max = 8
 	availability_prob = 50
 
-/datum/blackmarket_item/ammo/8x50match
+/datum/blackmarket_item/ammo/a8x50match
 	name = "8x50mm Match Box"
 	desc = "We found this dead guy with a recording of him going \"Watch this!\", and richoetting something before crumbling over. This is the ammo he had!"
-	contains = list(/obj/item/storage/box/ammo/a8_50r/match)
+	item = /obj/item/storage/box/ammo/a8_50r/match
 	price_min = 500
 	price_max = 1000
 	stock_min = 1
@@ -285,17 +285,17 @@
 /datum/blackmarket_item/ammo/c22rub
 	name = ".22lr Rubbers"
 	desc = "A 100 round box of .22 rubbershot from some godsforsaken frontier world. We're pretty sure the use-case is making someone think that they just pissed off a beehive"
-	contains = list(/obj/item/storage/box/ammo/c22lr/rubber)
+	item = /obj/item/storage/box/ammo/c22lr/rubber
 	price_min = 400
 	price_max = 800
 	stock_min = 1
 	stock_max = 4
 	availability_prob = 40
 
-/datum/blackmarket_item/ammo/8x58trac
+/datum/blackmarket_item/ammo/a8x58trac
 	name = "8x58mm Tracker"
 	desc = "We hot glued a GPS onto the inside of this 8x58mm shell! For the low low price of. Whatever the price is. You can have it!"
-	contains = list(/obj/item/ammo_casing/caseless/a858/trac)
+	item = /obj/item/ammo_casing/caseless/a858/trac
 	price_min = 50
 	price_max = 500
 	stock_min = 4

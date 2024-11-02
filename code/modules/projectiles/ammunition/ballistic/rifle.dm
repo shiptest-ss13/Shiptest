@@ -62,7 +62,7 @@
 	bullet_skin = "ap"
 	projectile_type = /obj/projectile/bullet/a300/ap
 
-/obj/item/ammo_casing/a300/ap
+/obj/item/ammo_casing/a300/trac
 	name = ".300 Magnum Trac bullet casing"
 	desc = "A .300 Magnum Tracker casing."
 	projectile_type = /obj/projectile/bullet/a300/ap
@@ -180,3 +180,8 @@
 	caliber = "6.5CLIP"
 	projectile_type = /obj/projectile/bullet/a65clip
 	stack_size = 5
+
+/obj/item/ammo_casing/a65clip/trac
+	name = "6.5x57mm CLIP tracker"
+	desc = "A 6.5x57mm CLIP tracker."
+	projectile_type = /obj/projectile/bullet/a65clip/trac

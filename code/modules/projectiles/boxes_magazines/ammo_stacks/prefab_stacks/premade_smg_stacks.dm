@@ -16,6 +16,33 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/ap
 	ammo_type = /obj/item/ammo_casing/c46x30mm/ap
+	max_ammo = 15
+
+/obj/item/storage/box/ammo/c46x30mm/ap
+	name = "box of 4.6x30mm AP ammo"
+	desc = "A box of standard 4.6x30mm AP ammo."
+	icon_state = "46x30mmbox"
+
+/obj/item/storage/box/ammo/c46x30mm/ap/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/ap = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/hp
+	ammo_type = /obj/item/ammo_casing/c46x30mm/hp
+	max_ammo = 15
+
+/obj/item/storage/box/ammo/c46x30mm/hp
+	name = "box of 4.6x30mm HP ammo"
+	desc = "A box of standard 4.6x30mm HP ammo."
+	icon_state = "46x30mmbox"
+
+/obj/item/storage/box/ammo/c46x30mm/ap/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/hp = 4)
+	generate_items_inside(items_inside,src)
 
 // 4.73x33mm caseless (Solar)
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c47x33mm

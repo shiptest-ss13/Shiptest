@@ -59,6 +59,9 @@
 /obj/item/shrapnel/bullet/tracker/a65clip
 	name = "6.5x57mm Tracker"
 
+/obj/item/shrapnel/bullet/tracker/a308
+	name = ".308 Tracker"
+
 /obj/projectile/bullet/shrapnel
 	name = "flying shrapnel shard"
 	damage = 10
