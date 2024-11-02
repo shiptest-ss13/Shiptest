@@ -1039,13 +1039,22 @@
 /area/ship/crew)
 "dI" = (
 /obj/structure/table,
-/obj/item/paper_bin,
-/obj/item/folder/yellow,
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/folder/yellow{
+	pixel_x = 5;
+	pixel_y = 5
+	},
 /obj/item/pen/fountain/captain,
-/obj/item/stamp/qm,
 /obj/effect/turf_decal/corner/opaque/nsorange,
 /obj/effect/turf_decal/corner/opaque/nsorange{
 	dir = 4
+	},
+/obj/item/stamp/nanotrasen/ns/captain{
+	pixel_x = -7;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1324,6 +1333,7 @@
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning,
+/obj/item/stamp/nanotrasen/ns,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "jr" = (
@@ -1413,6 +1423,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/item/stamp/nanotrasen,
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "lp" = (
