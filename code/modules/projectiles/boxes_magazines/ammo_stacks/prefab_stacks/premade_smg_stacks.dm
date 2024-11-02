@@ -17,9 +17,6 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/ap
 	ammo_type = /obj/item/ammo_casing/c46x30mm/ap
 
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/incendiary
-	ammo_type = /obj/item/ammo_casing/c46x30mm/inc
-
 // 4.73x33mm caseless (Solar)
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c47x33mm
 	ammo_type = /obj/item/ammo_casing/caseless/c47x33mm
@@ -123,7 +120,7 @@
 /obj/item/storage/box/ammo/c57x39/hp/PopulateContents()
 	..()
 	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/hp/c57x39 = 4)
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39/hp = 4)
 	generate_items_inside(items_inside,src)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39/ap

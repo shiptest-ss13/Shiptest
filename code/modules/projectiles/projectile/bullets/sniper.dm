@@ -38,8 +38,3 @@
 	dismemberment = 0 //It goes through you cleanly.
 	knockdown = 0
 	breakthings = FALSE
-
-/obj/projectile/bullet/p50/penetrator/shuttle //Nukeop Shuttle Variety
-	icon_state = "gaussstrong"
-	damage = 25
-	range = 16

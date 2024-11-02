@@ -76,7 +76,7 @@
 	name = ".38 rubber bullet casing"
 	desc = "A .38 rubber bullet casing."
 	bullet_skin = "rubber"
-	projectile_type = /obj/projectile/bullet/c38/match/bouncy
+	projectile_type = /obj/projectile/bullet/c38/bouncy
 
 /obj/item/ammo_casing/c38/dumdum
 	name = ".38 dum-dum bullet casing"

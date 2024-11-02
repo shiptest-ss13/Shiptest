@@ -32,6 +32,9 @@
 	/// If you dont want to bullets to randomly change position on spawn. For mapping.
 	var/auto_scatter = TRUE
 
+	///For tracker casings
+	var/gps_tag
+
 	///Pellets for spreadshot
 	var/pellets = 1
 	///Variance for inaccuracy fundamental to the casing
@@ -161,6 +164,8 @@
 	. = ..()
 	if(projectile_type)
 		BB = new projectile_type(src)
+		if(gps_tag)
+			BB.gps_tag = gps_tag
 	if(auto_scatter)
 		pixel_x = base_pixel_x + rand(-10, 10)
 		pixel_y = base_pixel_y + rand(-10, 10)

@@ -201,20 +201,6 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/hp = 4)
 	generate_items_inside(items_inside,src)
 
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/incendiary
-	ammo_type = /obj/item/ammo_casing/c45/inc
-
-/obj/item/storage/box/ammo/c45_incendiary
-	name = "box of incendiary .45 ammo"
-	desc = "A box of .45 incendiary ammo, designed to ignite targets at the cost of initial damage."
-	icon_state = "45box-incendiary"
-
-/obj/item/storage/box/ammo/c45_incendiary/PopulateContents()
-	..()
-	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/incendiary = 4)
-	generate_items_inside(items_inside,src)
-
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/rubber
 	ammo_type = /obj/item/ammo_casing/c45/rubber
 

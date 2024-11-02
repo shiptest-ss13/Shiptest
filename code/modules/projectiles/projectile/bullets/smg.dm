@@ -4,10 +4,23 @@
 	name = "5.7x39mm bullet"
 	damage = 20
 
+/obj/projectile/bullet/c57x39mm/hp
+	name = "5.7x39mm HP bullet"
+	damage = 30
+	armour_penetration = -20
+	speed = BULLET_HP_SPEED
+
+/obj/projectile/bullet/c57x39mm/ap
+	name = "5.7x39mm AP bullet"
+	damage = 20
+	armour_penetration = 20
+	speed = BULLET_AP_SPEED
+
 /obj/projectile/bullet/c57x39mm/rubber
 	name = "5.7x39mm rubber bullet"
 	damage = 5
 	stamina = 20
+	speed = BULLET_RUBBER_SPEED
 
 // 4.6x30mm (WT-550 Automatic Rifle & NT-SVG)
 
@@ -19,11 +32,18 @@
 	name = "4.6x30mm armor-piercing bullet"
 	damage = 15
 	armour_penetration = 40
+	speed = BULLET_AP_SPEED
 
-/obj/projectile/bullet/incendiary/c46x30mm
-	name = "4.6x30mm incendiary bullet"
-	damage = 10
-	fire_stacks = 1
+/obj/projectile/bullet/c46x30mm/hp
+	name = "4.6x30mm bullet"
+	damage = 25
+	speed = BULLET_HP_SPEED
+
+/obj/projectile/bullet/c46x30mm/rubber
+	name = "4.6x30mm bullet"
+	damage = 4
+	stamina = 20
+	speed = BULLET_RUBBER_SPEED
 
 // 4.73x33mm caseless (Solar)
 

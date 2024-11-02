@@ -48,6 +48,11 @@
 	ricochet_decay_chance = 1
 	ricochet_decay_damage = 1
 
+/obj/projectile/bullet/a8_50r/trac
+	damage = 10
+	armour_penetration = 0
+	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a8_50r
+
 // .300 Magnum
 
 /obj/projectile/bullet/a300
@@ -138,7 +143,7 @@
 	speed = BULLET_HV_SPEED
 	damage = 12
 	armour_penetration = 0
-	shrapnel_type =
+	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a858
 
 // .299 Eoehoma Caseless (E-40)
 
@@ -151,7 +156,7 @@
 
 /obj/projectile/bullet/a65clip
 	name = "6.5x57mm CLIP bullet"
-	speed = 0.3
+	speed = BULLET_SNIPER_SPEED
 	stamina = 10
 	damage = 40
 	armour_penetration = 50
@@ -160,6 +165,12 @@
 	light_system = MOVABLE_LIGHT
 	light_color = COLOR_SOFT_RED
 	light_range = 2
+
+/obj/projectile/bullet/a65clip/trac
+	damage = 10
+	armour_penetration = 0
+	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a65clip
+
 
 /obj/projectile/bullet/a65clip/rubber //"rubber"
 	name = "6.5x57mm CLIP rubber bullet"

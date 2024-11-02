@@ -10,10 +10,6 @@
 /obj/item/ammo_box/magazine/m45/empty
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/m45/inc
-	name = "pistol magazine (.45 incendiary)"
-	desc = "An 8-round single-stack magazine for the Candor pistol. These incendiary rounds deal mediocre damage, but leave flaming trails which set targets ablaze."
-	ammo_type = /obj/item/ammo_casing/c45/inc
 
 /obj/item/ammo_box/magazine/m45/hp
 	name = "pistol magazine (.45 HP)"
@@ -56,11 +52,6 @@
 	else
 		icon_state = "[base_icon_state]-0"
 
-
-/obj/item/ammo_box/magazine/co9mm/inc
-	name = "pistol magazine (9mm incendiary)"
-	desc = "A 10-round double-stack magazine for standard-issue 9mm pistols. These incendiary rounds deal pitiful damage, but leave flaming trails which set targets ablaze."
-	ammo_type = /obj/item/ammo_casing/c9mm/inc
 
 /obj/item/ammo_box/magazine/co9mm/hp
 	name = "pistol magazine (9mm HP)"

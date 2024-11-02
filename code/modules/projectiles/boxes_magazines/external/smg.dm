@@ -21,13 +21,6 @@
 	base_icon_state = "46x30mmtA"
 	ammo_type = /obj/item/ammo_casing/c46x30mm/ap
 
-/obj/item/ammo_box/magazine/wt550m9/inc
-	name = "wt550 magazine (4.6x30mm incendiary)"
-	desc = "A compact, 30-round top-loading magazine for the WT-550 Automatic Rifle. These incendiary rounds deal pitiful damage, but leave flaming trails which set targets ablaze."
-	icon_state = "46x30mmtI-30"
-	base_icon_state = "46x30mmtI"
-	ammo_type = /obj/item/ammo_casing/c46x30mm/inc
-
 /obj/item/ammo_box/magazine/smgm9mm
 	name = "SMG magazine (9mm)"
 	desc = "A 30-round magazine for 9mm submachine guns. These rounds do okay damage, but struggle against armor."
@@ -45,11 +38,6 @@
 	name = "SMG magazine (9mm AP)"
 	desc = "A 30-round magazine for 9mm submachine guns. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
-
-/obj/item/ammo_box/magazine/smgm9mm/inc
-	name = "SMG Magazine (9mm incendiary)"
-	desc = "A 30-round magazine for 9mm submachine guns. These incendiary rounds deal pitiful damage, but leave flaming trails which set targets ablaze."
-	ammo_type = /obj/item/ammo_casing/c9mm/inc
 
 /obj/item/ammo_box/magazine/smgm9mm/rubber
 	name = "SMG Magazine (9mm rubber)"

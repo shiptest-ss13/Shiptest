@@ -19,7 +19,7 @@
 
 /obj/projectile/bullet/c38/surplus
 	damage = 15
-	speed = BULLET_SPEED_SURPLUS
+	speed = BULLET_SURPLUS_SPEED
 
 /obj/projectile/bullet/c38/match
 	name = ".38 match bullet"
@@ -43,7 +43,6 @@
 	ricochet_incidence_leeway = 70
 	ricochet_chance = 130
 	ricochet_decay_damage = 0.8
-	shrapnel_type = NONE
 
 /obj/projectile/bullet/c38/dumdum
 	name = ".38 dum-dum bullet"
@@ -56,7 +55,7 @@
 	name = ".38 tracker"
 	damage = 10
 	ricochets_max = 0
-	shrapnel_type = /obj/item/shrapnel/bullet/c38/tracker
+	shrapnel_type = /obj/item/shrapnel/bullet/tracker/c38
 
 /obj/projectile/bullet/c38/hotshot //similar to incendiary bullets, but do not leave a flaming trail
 	name = ".38 hearth bullet"
@@ -122,7 +121,7 @@
 
 /obj/projectile/bullet/a4570/hp
 	name = ".45-70 hollow point bullet"
-	damage = 55 //it's ALMOST the pre-nerf .357 with less armor pen
+	damage = 55
 	armour_penetration = -50
 
 /obj/projectile/bullet/a4570/explosive //for extra oof
@@ -133,39 +132,6 @@
 	..()
 	explosion(target, -1, 0, 1)
 	return BULLET_ACT_HIT
-
-//.22
-
-/obj/projectile/bullet/c22lr
-	name = ".22LR bullet"
-	damage = 20
-	armour_penetration = -45
-	ricochet_incidence_leeway = 20
-	ricochet_chance = 65
-
-/obj/projectile/bullet/c22lr/hp
-	name = ".22LR bullet"
-	damage = 30
-	armour_penetration = -65
-	ricochet_chance = 0
-
-/obj/projectile/bullet/c22lr/ap
-	name = ".22LR bullet"
-	damage = 15
-	armour_penetration = -25
-	ricochet_incidence_leeway = 20
-	ricochet_chance = 30
-
-/obj/projectile/bullet/c22lr/rubber
-	name = ".22LR bullet"
-	damage = 4
-	stamina = 15
-	armour_penetration = -70
-	speed = BULLET_HV_SPEED
-	ricochets_max = 8 //ding ding ding ding
-	ricochet_incidence_leeway = 70
-	ricochet_chance = 130
-	ricochet_decay_damage = 0.8
 
 // 44 Short (Roumain & Shadow)
 

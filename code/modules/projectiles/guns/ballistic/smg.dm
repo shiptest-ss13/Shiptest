@@ -210,7 +210,6 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/smgm9mm,
 		/obj/item/ammo_box/magazine/smgm9mm/ap,
-		/obj/item/ammo_box/magazine/smgm9mm/inc,
 		/obj/item/ammo_box/magazine/smgm9mm/rubber,
 
 	)
