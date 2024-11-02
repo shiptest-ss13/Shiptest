@@ -23,7 +23,7 @@
 
 //Deckhand
 
-/datum/outfit/job/ramzi/deckhand
+/datum/outfit/job/ramzi/assistant
 	name = "Ramzi Clique - Deckhand"
 
 	id_assignment = "Deckhand"
