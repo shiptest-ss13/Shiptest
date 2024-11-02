@@ -111,3 +111,45 @@
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39 = 4)
 	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39/hp
+	ammo_type = /obj/item/ammo_casing/c57x39mm/hp
+
+/obj/item/storage/box/ammo/c57x39/hp
+	name = "box of 5.7x39mm HP ammo"
+	desc = "A box of standard 5.7x39mm HP ammo."
+	icon_state = "57x39mmbox"
+
+/obj/item/storage/box/ammo/c57x39/hp/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/hp/c57x39 = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39/ap
+	ammo_type = /obj/item/ammo_casing/c57x39mm/ap
+
+/obj/item/storage/box/ammo/c57x39/ap
+	name = "box of 5.7x39mm AP ammo"
+	desc = "A box of standard 5.7x39mm AP ammo."
+	icon_state = "57x39mmbox"
+
+/obj/item/storage/box/ammo/c57x39/ap/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39/ap = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39/rubber
+	ammo_type = /obj/item/ammo_casing/c57x39mm/rubber
+
+/obj/item/storage/box/ammo/c57x39/rubber
+	name = "box of 5.7x39mm rubber ammo"
+	desc = "A box of standard 5.7x39mm rubber ammo."
+	icon_state = "57x39mmbox"
+
+/obj/item/storage/box/ammo/c57x39/rubber/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39/rubber = 4)
+	generate_items_inside(items_inside,src)

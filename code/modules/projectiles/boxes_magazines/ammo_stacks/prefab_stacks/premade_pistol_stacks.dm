@@ -56,20 +56,6 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c10mm/hp = 4)
 	generate_items_inside(items_inside,src)
 
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/c10mm/incendiary
-	ammo_type = /obj/item/ammo_casing/c10mm/inc
-
-/obj/item/storage/box/ammo/c10mm_incendiary
-	name = "box of incendiary 10mm ammo"
-	desc = "A box of 10mm incendiary ammo, designed to ignite targets at the cost of initial damage."
-	icon_state = "10mmbox-incendiary"
-
-/obj/item/storage/box/ammo/c10mm_incendiary/PopulateContents()
-	..()
-	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c10mm/incendiary = 4)
-	generate_items_inside(items_inside,src)
-
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c10mm/rubber
 	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 
@@ -141,20 +127,6 @@
 	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm/hp = 4)
-	generate_items_inside(items_inside,src)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm/incendiary
-	ammo_type = /obj/item/ammo_casing/c9mm/inc
-
-/obj/item/storage/box/ammo/c9mm_incendiary
-	name = "box of incendiary 9mm ammo"
-	desc = "A box of 9mm incendiary ammo, designed to ignite targets at the cost of initial damage."
-	icon_state = "9mmbox-incendiary"
-
-/obj/item/storage/box/ammo/c9mm_incendiary/PopulateContents()
-	..()
-	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm/incendiary = 4)
 	generate_items_inside(items_inside,src)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm/rubber
@@ -280,6 +252,51 @@
 	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/ap
+	ammo_type = /obj/item/ammo_casing/c22lr/ap
+	max_ammo = 25
+
+/obj/item/storage/box/ammo/c22lr/ap
+	name = "box of .22 LR AP ammo"
+	desc = "A box of standard .22 LR AP ammo, designed to penetrate through armor at the cost of total damage."
+	icon_state = "22lrbox"
+
+/obj/item/storage/box/ammo/c22lr/ap/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/ap = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/hp
+	ammo_type = /obj/item/ammo_casing/c22lr/hp
+	max_ammo = 25
+
+/obj/item/storage/box/ammo/c22lr/hp
+	name = "box of .22 LR HP ammo"
+	desc = "A box of standard .22 LR HP ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	icon_state = "22lrbox"
+
+/obj/item/storage/box/ammo/c22lr/hp/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/hp = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/rubber
+	ammo_type = /obj/item/ammo_casing/c22lr/rubber
+	max_ammo = 25
+
+/obj/item/storage/box/ammo/c22lr/rubber
+	name = "box of .22 LR rubber ammo"
+	desc = "A box of standard .22 LR rubber ammo."
+	icon_state = "22lrbox"
+
+/obj/item/storage/box/ammo/c22lr/rubber/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/rubber = 4)
 	generate_items_inside(items_inside,src)
 
 // .357

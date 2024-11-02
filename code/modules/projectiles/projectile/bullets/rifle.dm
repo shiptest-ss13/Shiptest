@@ -5,35 +5,68 @@
 	damage = 25
 	armour_penetration = 20
 
+/obj/projectile/bullet/a556_42/hp
+	name = "5.56x42mm CLIP bullet"
+	damage = 35
+	armour_penetration = 0
+	speed = BULLET_HP_SPEED
+
+/obj/projectile/bullet/a556_42/ap
+	name = "5.56x42mm CLIP bullet"
+	damage = 20
+	armour_penetration = 40
+	speed = BULLET_AP_SPEED
+
+/obj/projectile/bullet/a556_42/rubber
+	name = "5.56x42mm CLIP bullet"
+	damage = 5
+	stamina = 25
+	armour_penetration = 0
+	speed = BULLET_RUBBER_SPEED
+
 // 8x50mmR (Illestren Rifle)
 
 /obj/projectile/bullet/a8_50r
 	name = "8x50mmR bullet"
-	speed = 0.3
 	damage = 35
 	armour_penetration = 40
 
-/obj/projectile/bullet/a8_50rhp
-	name = "8x50mmR bullet"
-	speed = 0.3
+/obj/projectile/bullet/a8_50r/hp
 	damage = 49
 	armour_penetration = 0
+	speed = BULLET_HP_SPEED
 
-// .300 Magnum (Smile Rifle)
+/obj/projectile/bullet/a8_50r/match
+	damage = 40
+	armour_penetration = -10
+	speed = BULLET_SNIPER_SPEED
+	ricochets_max = 4
+	ricochet_chance = 80
+	ricochet_auto_aim_angle = 40
+	ricochet_auto_aim_range = 5
+	ricochet_incidence_leeway = 50
+	ricochet_decay_chance = 1
+	ricochet_decay_damage = 1
+
+// .300 Magnum
 
 /obj/projectile/bullet/a300
 	name = ".300 Magnum bullet"
-	speed = 0.3
 	damage = 45
 	stamina = 10
 	armour_penetration = 40
 
-// Bloat evil wizard stupid shit
+/obj/projectile/bullet/a300/hp
+	name = ".300 Magnum bullet"
+	speed = BULLET_HP_SPEED
+	damage = 55
+	armour_penetration = 0
 
-/obj/projectile/bullet/a762_enchanted
-	name = "enchanted 8x50mmR bullet"
-	damage = 20
-	stamina = 80
+/obj/projectile/bullet/a300/ap
+	name = ".300 Magnum bullet"
+	speed = BULLET_AP_SPEED
+	damage = 40
+	armour_penetration = 60
 
 //5.45x39mm (SVG-76u)
 
@@ -49,12 +82,22 @@
 	damage = 30
 	armour_penetration = 20
 
+/obj/projectile/bullet/a762_40/hp
+	damage = 40
+	armour_penetration = 0
+	speed = BULLET_HP_SPEED
+
+/obj/projectile/bullet/a762_40/ap
+	damage = 25
+	armour_penetration = 40
+	speed = BULLET_AP_SPEED
+
 /obj/projectile/bullet/a762_40/rubber //"rubber"
 	name = "7.62x40mm CLIP Rubber"
 	damage = 15
 	stamina = 40
-	armour_penetration = 20
-
+	armour_penetration = 0
+	speed = BULLET_RUBBER_SPEED
 
 //.308 WIN (M514 & GAL DMRs)
 
@@ -64,21 +107,38 @@
 	damage = 30
 	armour_penetration = 40
 
+/obj/projectile/bullet/a308/hp
+	damage = 40
+	armour_penetration = 10
+	speed = BULLET_HP_SPEED
+
+/obj/projectile/bullet/a308/ap
+	damage = 25
+	armour_penetration = 60
+	speed = BULLET_AP_SPEED
+
 /obj/projectile/bullet/a308/rubber //"rubber"
 	name = ".308 Rubber"
 	speed = 0.3
 	damage = 25
 	stamina = 50
 	armour_penetration = 40
+	speed = BULLET_RUBBER_SPEED
 
 // 8x58mm caseless (SG-669)
 
 /obj/projectile/bullet/a858
 	name = "8x58mm caseless bullet"
-	speed = 0.3
+	speed = BULLET_HV_SPEED
 	damage = 35
 	armour_penetration = 40
 
+/obj/projectile/bullet/a858/trac
+	name = "8x58mm tracker"
+	speed = BULLET_HV_SPEED
+	damage = 12
+	armour_penetration = 0
+	shrapnel_type =
 
 // .299 Eoehoma Caseless (E-40)
 

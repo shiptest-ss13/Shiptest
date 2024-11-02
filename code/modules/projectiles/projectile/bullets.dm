@@ -1,8 +1,18 @@
+#define BULLET_SPEED 0.3
+#define BULLET_SNIPER_SPEED 0.2
+#define BULLET_AP_SPEED 0.2
+#define BULLET_HP_SPEED 0.5
+#define BULLET_RUBBER_SPEED 0.4
+#define BULLET_HV_SPEED 0.1
+#define BULLET_SPEED_SURPLUS 0.4
+
+
+
 /obj/projectile/bullet
 	name = "bullet"
 	icon_state = "gauss"
 	damage = 60
-	speed = 0.4
+	speed = BULLET_SPEED
 	damage_type = BRUTE
 	nodamage = FALSE
 	flag = "bullet"

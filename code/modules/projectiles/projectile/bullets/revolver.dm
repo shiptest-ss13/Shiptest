@@ -8,6 +8,7 @@
 	name = ".50 AE hollow point bullet"
 	damage = 55
 	armour_penetration = -50
+	speed = BULLET_HP_SPEED
 
 // .38 (Colt Detective Special & Winchester)
 
@@ -18,10 +19,11 @@
 
 /obj/projectile/bullet/c38/surplus
 	damage = 15
+	speed = BULLET_SPEED_SURPLUS
 
 /obj/projectile/bullet/c38/match
 	name = ".38 match bullet"
-	speed = 0.3
+	speed = BULLET_AP_SPEED
 	armour_penetration = -10
 	ricochets_max = 4
 	ricochet_chance = 100
@@ -31,11 +33,11 @@
 	ricochet_decay_chance = 1
 	ricochet_decay_damage = 1
 
-/obj/projectile/bullet/c38/match/bouncy // I don't know why this is a subtype of match
+/obj/projectile/bullet/c38/bouncy
 	name = ".38 rubber bullet"
-	speed = 0.4
 	damage = 7
-	stamina = 38
+	stamina = 28
+	speed = BULLET_RUBBER_SPEED
 	armour_penetration = -60
 	ricochets_max = 6
 	ricochet_incidence_leeway = 70
@@ -51,22 +53,10 @@
 	shrapnel_type = /obj/item/shrapnel/bullet/c38/dumdum
 
 /obj/projectile/bullet/c38/trac
-	name = ".38 TRAC bullet"
+	name = ".38 tracker"
 	damage = 10
 	ricochets_max = 0
-
-/obj/projectile/bullet/c38/trac/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	var/mob/living/carbon/M = target
-	if(!istype(M))
-		return
-	var/obj/item/implant/tracking/c38/imp
-	for(var/obj/item/implant/tracking/c38/TI in M.implants) //checks if the target already contains a tracking implant
-		imp = TI
-		return
-	if(!imp)
-		imp = new /obj/item/implant/tracking/c38(M)
-		imp.implant(M)
+	shrapnel_type = /obj/item/shrapnel/bullet/c38/tracker
 
 /obj/projectile/bullet/c38/hotshot //similar to incendiary bullets, but do not leave a flaming trail
 	name = ".38 hearth bullet"
@@ -96,10 +86,9 @@
 	name = ".357 bullet"
 	damage = 30 //shiptest nerf
 
-// admin only really, for ocelot memes
 /obj/projectile/bullet/a357/match
 	name = ".357 match bullet"
-	speed = 0.3
+	speed = BULLET_HV_SPEED
 	armour_penetration = 10
 	ricochets_max = 5
 	ricochet_chance = 140
@@ -112,7 +101,7 @@
 	name = ".357 hollow point bullet"
 	damage = 45
 	armour_penetration = -50
-	ricochet_chance = 0 //mushroom on impact, no bounces
+	ricochet_chance = 0
 
 // .45-70 Gov't (Hunting Revolver)
 
@@ -145,6 +134,7 @@
 	explosion(target, -1, 0, 1)
 	return BULLET_ACT_HIT
 
+//.22
 
 /obj/projectile/bullet/c22lr
 	name = ".22LR bullet"
@@ -152,6 +142,30 @@
 	armour_penetration = -45
 	ricochet_incidence_leeway = 20
 	ricochet_chance = 65
+
+/obj/projectile/bullet/c22lr/hp
+	name = ".22LR bullet"
+	damage = 30
+	armour_penetration = -65
+	ricochet_chance = 0
+
+/obj/projectile/bullet/c22lr/ap
+	name = ".22LR bullet"
+	damage = 15
+	armour_penetration = -25
+	ricochet_incidence_leeway = 20
+	ricochet_chance = 30
+
+/obj/projectile/bullet/c22lr/rubber
+	name = ".22LR bullet"
+	damage = 4
+	stamina = 15
+	armour_penetration = -70
+	speed = BULLET_HV_SPEED
+	ricochets_max = 8 //ding ding ding ding
+	ricochet_incidence_leeway = 70
+	ricochet_chance = 130
+	ricochet_decay_damage = 0.8
 
 // 44 Short (Roumain & Shadow)
 
@@ -164,8 +178,11 @@
 	damage =  7
 	stamina = 38
 	armour_penetration = -20
+	speed = BULLET_RUBBER_SPEED
 
 /obj/projectile/bullet/a44roum/hp
 	name = ".44 roumain bullet"
 	damage =  40
 	armour_penetration = -20
+	ricochet_chance = 0
+	speed = BULLET_HP_SPEED

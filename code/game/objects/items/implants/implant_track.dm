@@ -9,17 +9,18 @@
 	///The id of the timer that's qdeleting us
 	var/timerid
 
-/obj/item/implant/tracking/c38
+/obj/item/implant/tracking/bullet
 	name = "TRAC implant"
 	desc = "A smaller tracking implant that supplies power for only a few minutes."
 	var/lifespan = 3000 //how many deciseconds does the implant last?
 	allow_teleport = FALSE
 
-/obj/item/implant/tracking/c38/Initialize()
+/obj/item/implant/tracking/bullet/Initialize()
 	. = ..()
 	timerid = QDEL_IN(src, lifespan)
+	AddComponent(/datum/component/gps/item, "*TRAC")
 
-/obj/item/implant/tracking/c38/Destroy()
+/obj/item/implant/tracking/bullet/Destroy()
 	deltimer(timerid)
 	return ..()
 

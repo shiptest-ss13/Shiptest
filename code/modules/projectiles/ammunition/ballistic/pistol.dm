@@ -138,3 +138,18 @@
 	projectile_type = /obj/projectile/bullet/c22lr
 	caliber = "22lr"
 	stack_size = 25
+
+/obj/item/ammo_casing/c22lr/hp
+	name = ".22 LR bullet HP casing"
+	desc = "A .22 LR bullet HP casing."
+	projectile_type = /obj/projectile/bullet/c22lr/hp
+
+/obj/item/ammo_casing/c22lr/ap
+	name = ".22 LR bullet casing"
+	desc = "A .22 LR bullet casing."
+	projectile_type = /obj/projectile/bullet/c22lr/ap
+
+/obj/item/ammo_casing/c22lr/rubber
+	name = ".22 LR bullet casing"
+	desc = "A .22 LR bullet casing."
+	projectile_type = /obj/projectile/bullet/c22lr/rubber
