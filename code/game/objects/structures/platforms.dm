@@ -150,13 +150,13 @@
 	if(!density)
 		return
 
-	if (leaving.throwing)
+	if(leaving.throwing)
 		return
 
-	if (leaving.movement_type & (PHASING | FLYING | FLOATING))
+	if(leaving.movement_type & (PHASING | FLYING | FLOATING))
 		return
 
-	if (leaving.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
+	if(leaving.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
 		return
 
 	leaving.Bump(src)
