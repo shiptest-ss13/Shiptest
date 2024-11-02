@@ -93,6 +93,8 @@
 				to_chat(user, span_notice("You smear [src] across your body. Malignant black tendrils start to grow around the application site, reinforcing your flesh!"))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
 			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
+			if(prob(10))
+				H.force_scream
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman)
 			qdel(src)
 
