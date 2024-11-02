@@ -10,8 +10,8 @@
 
 	faction_icon = "bg_syndicate"
 
-	backpack = /obj/item/storage/backpack/explorer
-	satchel = /obj/item/storage/backpack/satchel/explorer
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 
@@ -52,7 +52,7 @@
 
 	id_assignment = "Operative"
 	job_icon = "securityofficer"
-	jobtype = "securityofficer"
+	jobtype = /datum/job/officer
 
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
@@ -63,7 +63,7 @@
 	name = "Ramzi Clique - Pilot"
 	id_assignment = "Pilot"
 	job_icon = "securityofficer"
-	jobtype = "securityofficer"
+	jobtype = /datum/job/officer
 
 	l_pocket = /obj/item/weldingtool/mini
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
@@ -84,7 +84,6 @@
 	r_pocket = /obj/item/melee/knife/survival
 	suit = /obj/item/clothing/suit/frontiersmen
 	head = /obj/item/clothing/head/frontier
-	belt = /obj/item/storage/belt/medical/webbing/frontiersmen
 
 //Engineer
 
