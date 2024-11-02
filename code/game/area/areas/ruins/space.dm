@@ -151,8 +151,12 @@
 
 // Ramzi Scrapping Station
 /area/ruin/space/pgf_wreck
-	name = "Hallway"
+	name = "Shipwreck"
 	icon_state = "hallC"
+
+/area/ruin/space/pgf_wreck/external
+	name = "Shipwreck External"
+	icon_state = "spacecontent1"
 
 /area/ruin/space/pgf_wreck/bridge
 	name = "Bridge"
@@ -174,6 +178,10 @@
 	name = "Lower Station Hallway"
 	icon_state = "entry"
 
+/area/ruin/space/has_grav/powered/ramzi_station/starboard
+	name = "Starboard Station Hallway"
+	icon_state = "hallS"
+
 /area/ruin/space/has_grav/powered/ramzi_station/upper
 	name = "Upper Station Hallway"
 	icon_state = "hallF"
@@ -181,6 +189,10 @@
 /area/ruin/space/has_grav/powered/ramzi_station/canteen
 	name = "Station Canteen"
 	icon_state = "kitchen"
+
+/area/ruin/space/has_grav/powered/ramzi_station/dorms
+	name = "Station Dorms"
+	icon_state = "crew_quarters"
 
 /area/ruin/space/has_grav/powered/ramzi_station/cargo
 	name = "Station Cargo"
@@ -196,7 +208,7 @@
 
 /area/ruin/space/has_grav/powered/ramzi_station/hangar
 	name = "Station Hangar"
-	icon_state = "construction"
+	icon_state = "hangar"
 
 /area/ruin/space/has_grav/powered/ramzi_station/toilet
 	name = "Washroom"

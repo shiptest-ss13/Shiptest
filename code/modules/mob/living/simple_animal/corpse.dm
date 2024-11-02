@@ -313,3 +313,21 @@
 	id_job = "Hunter Montagne"
 	outfit = /datum/outfit/job/roumain/captain
 	id_access_list = null
+
+/* PGF */
+/obj/effect/mob_spawn/human/corpse/pgf
+	name = "PGF Crewmate"
+	id_job = "Crewmate"
+	mob_species = /datum/species/lizard
+	outfit = /datum/outfit/job/gezena/assistant
+	id_access_list = null
+
+/obj/effect/mob_spawn/human/corpse/pgf/marine
+	name = "PGF Marine"
+	id_job = "Marine"
+	outfit = /datum/outfit/job/gezena/security
+
+/obj/effect/mob_spawn/human/corpse/pgf/captain
+	name = "PGF Captain"
+	id_job = "Captain"
+	outfit = /datum/outfit/job/gezena/captain
