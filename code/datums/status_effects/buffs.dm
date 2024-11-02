@@ -414,6 +414,8 @@
 
 /datum/status_effect/regenerative_core/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, id)
+	to_chat(owner, span_warning("The tendrils of the regenerative core sink into your flesh, leaving dark markings where they dive."))
+	owner.adjustCloneLoss(10)
 
 /datum/status_effect/antimagic
 	id = "antimagic"
