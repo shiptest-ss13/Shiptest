@@ -61,19 +61,23 @@
 /obj/projectile/bullet/c556mm/surplus
 	name = "5.56mm HITP surplus bullet"
 	damage = 15
+	speed = BULLET_SURPLUS_SPEED
 
 /obj/projectile/bullet/c556mm/ap
 	name = "5.56mm HITP AP bullet"
 	damage = 15
 	armour_penetration = 40
+	speed = BULLET_AP_SPEED
 
 /obj/projectile/bullet/c556mm/hp
 	name = "5.56mm HITP hollow point bullet"
 	damage = 30
 	armour_penetration = -50
+	speed = BULLET_HP_SPEED
 
 /obj/projectile/bullet/c556mm/rubber
 	name = "5.56mm HITP rubber bullet"
 	damage = 5
 	stamina = 30
 	armour_penetration = -20
+	speed = BULLET_RUBBER_SPEED

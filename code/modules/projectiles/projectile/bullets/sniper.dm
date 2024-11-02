@@ -2,7 +2,7 @@
 
 /obj/projectile/bullet/p50
 	name = ".50 BMG bullet"
-	speed = 0.3
+	speed = BULLET_SNIPER_SPEED
 	damage = 70
 	knockdown = 100
 	dismemberment = 50
