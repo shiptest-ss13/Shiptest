@@ -34,7 +34,7 @@
 /obj/item/kinetic_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110) //technically it's huge and bulky, but this provides an incentive to use it
-	AddComponent(/datum/component/two_handed, unwielded_force, wielded_force)
+	AddComponent(/datum/component/two_handed, force_unwielded=unwielded_force, force_wielded=wielded_force)
 
 /obj/item/kinetic_crusher/examine(mob/living/user)
 	. = ..()
