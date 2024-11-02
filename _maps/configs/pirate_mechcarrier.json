@@ -16,11 +16,32 @@
 	],
 	"limit": 1,
 	"job_slots": {
-		"Captain":{
-			"outfit": "/datum/outfit/job/captain/pirate",
+		"Captain": {
+			"outfit": "/datum/outfit/job/ramzi/captain",
 			"officer": true,
 			"slots": 1
+		},
+		"Pilot": {
+			"outfit": "/datum/outfit/job/ramzi/operative/pilot",
+			"slots": 1
+		},
+		"Operative": {
+			"outfit": "/datum/outfit/job/ramzi/operative",
+			"slots": 3
+		},
+		"Motorman": {
+			"outfit": "/datum/outfit/job/ramzi/engineer",
+			"slots": 1
+		},
+		"Medic": {
+			"outfit": "/datum/outfit/job/ramzi/doctor",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/ramzi/deckhand",
+			"slots": 1
 		}
+
 	},
 	"enabled": false
 	}

@@ -1,0 +1,93 @@
+/datum/outfit/job/ramzi
+	name = "Ramzi Clique - Base Outfit"
+
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/pirate/alt
+	box = /obj/item/storage/box/survival
+	id = /obj/item/card/id
+
+	backpack = /obj/item/storage/backpack/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
+
+/datum/outfit/job/ramzi/post_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(visualsOnly)
+		return
+	H.faction |= list(FACTION_PLAYER_RAMZI)
+
+//Deckhand
+
+/datum/outfit/job/ramzi/deckhand
+	name = "Ramzi Clique - Deckhand"
+
+	id_assignment = "Deckhand"
+	job_icon = "assistant"
+	jobtype = /datum/job/assistant
+
+//Captain
+
+/datum/outfit/job/ramzi/captain
+	name = "Ramzi Clique - Captain"
+
+	job_icon = "captain"
+	jobtype = /datum/job/captain
+
+
+	ears = /obj/item/radio/headset/pirate/alt/captain
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
+	head = /obj/item/clothing/head/hos/syndicate
+
+//Security Officer
+
+/datum/outfit/job/ramzi/operative
+	name = "Ramzi Clique - Operative"
+
+	id_assignment = "Operative"
+	job_icon = "securityofficer"
+	jobtype = "securityofficer"
+
+	l_pocket = /obj/item/flashlight/seclite
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
+	backpack_contents = list(/obj/item/clothing/mask/gas/syndicate)
+
+/datum/outfit/ramzi/operative/pilot
+	name = "Ramzi Clique - Pilot"
+	id_assignment = "Pilot"
+	job_icon = "securityofficer"
+	jobtype = "securityofficer"
+
+//Medical Doctor
+
+/datum/outfit/job/ramzi/medic
+	name = "Ramzi Clique - Medic"
+
+	id_assignment = "Medic"
+	job_icon = "medicaldoctor"
+	jobtype = /datum/job/doctor
+
+	accessory = /obj/item/clothing/accessory/armband/med
+	glasses = /obj/item/clothing/glasses/hud/health
+	r_pocket = /obj/item/melee/knife/survival
+	suit = /obj/item/clothing/suit/frontiersmen
+	head = /obj/item/clothing/head/frontier
+	belt = /obj/item/storage/belt/medical/webbing/frontiersmen
+
+//Engineer
+
+/datum/outfit/job/ramzi/engineer
+	name = "Ramzi Clique - Motorman"
+
+	id_assignment = "Motorman"
+	job_icon = "stationengineer"
+	jobtype = /datum/job/engineer
+
+	accessory = /obj/item/clothing/accessory/armband/engine
+	shoes = /obj/item/clothing/shoes/workboots
+	head = /obj/item/clothing/head/hardhat/white
+
+	r_pocket = /obj/item/analyzer
