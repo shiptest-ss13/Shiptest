@@ -38,7 +38,7 @@
 	id = /obj/item/card/id/gold
 	head = /obj/item/clothing/head/beret/sec/hos/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
+	mask = /obj/item/clothing/mask/balaclava/inteq
 	suit = /obj/item/clothing/suit/armor/hos/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	belt = /obj/item/storage/belt/security/webbing/inteq
@@ -89,7 +89,7 @@
 	ears = /obj/item/radio/headset/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
 	head = /obj/item/clothing/head/hardhat/white
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
+	mask = /obj/item/clothing/mask/balaclava/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/yellow
@@ -140,7 +140,7 @@
 	head = /obj/item/clothing/head/helmet/inteq
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	belt = /obj/item/storage/belt/security/webbing/inteq
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
+	mask = /obj/item/clothing/mask/balaclava/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
@@ -202,7 +202,7 @@
 	head = /obj/item/clothing/head/warden/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
+	mask = /obj/item/clothing/mask/balaclava/inteq
 	belt = /obj/item/storage/belt/military/assault
 	suit = /obj/item/clothing/suit/armor/vest/security/warden/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq

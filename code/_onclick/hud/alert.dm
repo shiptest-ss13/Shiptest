@@ -449,25 +449,24 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 
 /atom/movable/screen/alert/nocell
 	name = "Missing Power Cell"
-	desc = "Unit has no power cell. No modules available until a power cell is reinstalled. Robotics may provide assistance."
+	desc = "Unit has no power cell. No modules are available until a power cell is reinstalled."
 	icon_state = "nocell"
 
 /atom/movable/screen/alert/emptycell
 	name = "Out of Power"
-	desc = "Unit's power cell has no charge remaining. No modules available until power cell is recharged. \
-Recharging stations are available in robotics, the dormitory bathrooms, and the AI satellite."
+	desc = "Unit's power cell has no charge remaining. No modules are available until power cell is recharged."
 	icon_state = "emptycell"
 
 /atom/movable/screen/alert/lowcell
 	name = "Low Charge"
-	desc = "Unit's power cell is running low. Recharging stations are available in robotics, the dormitory bathrooms, and the AI satellite."
+	desc = "Unit's power cell is running low. All modules may be disabled soon unless recharged."
 	icon_state = "lowcell"
 
 //Ethereal
 
 /atom/movable/screen/alert/etherealcharge
 	name = "Low Blood Charge"
-	desc = "Your blood's electric charge is running low, find a source of charge for your blood. Use a recharging station found in robotics or the dormitory bathrooms, or eat some Ethereal-friendly food."
+	desc = "Your blood's electric charge is running low, find a source of charge for your blood. Use a recharging station, or eat some Elzuose-friendly food."
 	icon_state = "etherealcharge"
 
 /atom/movable/screen/alert/ethereal_overcharge
@@ -478,12 +477,12 @@ Recharging stations are available in robotics, the dormitory bathrooms, and the 
 //MODsuit unique
 /atom/movable/screen/alert/nocore
 	name = "Missing Core"
-	desc = "Unit has no core. No modules available until a core is reinstalled. Robotics may provide assistance."
+	desc = "Unit has no core. No modules are available until a core is reinstalled."
 	icon_state = "no_cell"
 
 /atom/movable/screen/alert/emptycell/plasma
 	name = "Out of Power"
-	desc = "Unit's plasma core has no charge remaining. No modules available until plasma core is recharged. \
+	desc = "Unit's plasma core has no charge remaining. No modules are available until plasma core is recharged. \
 		Unit can be refilled through plasma fuel."
 
 /atom/movable/screen/alert/emptycell/plasma/update_desc()
@@ -506,8 +505,8 @@ Recharging stations are available in robotics, the dormitory bathrooms, and the 
 
 /atom/movable/screen/alert/locked
 	name = "Locked Down"
-	desc = "Unit has been remotely locked down. Usage of a Robotics Control Console like the one in the Research Director's \
-office by your AI master or any qualified human may resolve this matter. Robotics may provide further assistance if necessary."
+	desc = "Unit has been remotely locked down. Usage of a Robotics Control Console by an AI or any qualified \
+	humanoid may resolve this matter."
 	icon_state = "locked"
 
 /atom/movable/screen/alert/newlaw
