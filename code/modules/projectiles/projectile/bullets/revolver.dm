@@ -101,6 +101,7 @@
 	damage = 45
 	armour_penetration = -50
 	ricochet_chance = 0
+	speed = BULLET_HP_SPEED
 
 // .45-70 Gov't (Hunting Revolver)
 
@@ -118,11 +119,13 @@
 	ricochet_auto_aim_range = 6
 	ricochet_incidence_leeway = 80
 	ricochet_decay_chance = 1
+	speed = BULLET_HV_SPEED
 
 /obj/projectile/bullet/a4570/hp
 	name = ".45-70 hollow point bullet"
 	damage = 55
 	armour_penetration = -50
+	sped = BULLET_HP_SPEED
 
 /obj/projectile/bullet/a4570/explosive //for extra oof
 	name = ".45-70 explosive bullet"
