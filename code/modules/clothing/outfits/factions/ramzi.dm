@@ -8,6 +8,8 @@
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
 
+	faction_icon = "bg_syndicate"
+
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	duffelbag = /obj/item/storage/backpack/duffelbag
