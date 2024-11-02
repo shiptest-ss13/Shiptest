@@ -133,7 +133,7 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "bg" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -205,6 +205,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck)
 "bL" = (
@@ -224,6 +225,10 @@
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/pgf_wreck/external)
+"bO" = (
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/pgf_wreck/dorms)
 "bW" = (
 /obj/machinery/door/airlock/medical{
 	dir = 4
@@ -255,6 +260,13 @@
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck/bridge)
+"cr" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station)
 "cv" = (
 /obj/structure/salvageable/computer,
 /obj/effect/turf_decal/industrial/warning{
@@ -284,7 +296,7 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "cE" = (
 /obj/machinery/door/airlock/engineering,
 /obj/effect/mapping_helpers/airlock/sealed,
@@ -324,7 +336,12 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
+"cT" = (
+/obj/effect/turf_decal/corner/opaque/lime/mono,
+/obj/machinery/light/broken/directional/west,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/pgf_wreck/dorms)
 "da" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 10
@@ -440,7 +457,7 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "en" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/plasma/reinforced{
@@ -452,6 +469,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/sign/departments/engineering{
 	pixel_x = 32
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
@@ -531,7 +551,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
-/turf/open/floor/plasteel/dark/airless,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/stack/tile/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "fz" = (
 /obj/structure/lattice/catwalk,
@@ -554,6 +578,7 @@
 /obj/item/storage/bag/tray/cafeteria{
 	pixel_y = 6
 	},
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/pgf_wreck/dorms)
 "fL" = (
@@ -575,7 +600,7 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "fQ" = (
 /obj/structure/closet/crate/engineering,
 /obj/item/stack/sheet/glass/fifty,
@@ -659,6 +684,9 @@
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "gy" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "gz" = (
@@ -716,6 +744,9 @@
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "hj" = (
 /obj/structure/railing,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "hl" = (
@@ -731,8 +762,11 @@
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/pgf_wreck/external)
 "hu" = (
-/obj/structure/sign/warning,
-/turf/open/floor/plasteel/telecomms_floor,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/floodlight,
+/turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "hy" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -764,12 +798,22 @@
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
+"hI" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "hJ" = (
 /turf/open/floor/plasteel/mono,
 /area/ruin/space/pgf_wreck/cargo)
 "hP" = (
 /obj/structure/railing{
 	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
@@ -834,6 +878,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
+"im" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station)
 "io" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/syndicate{
@@ -847,10 +898,14 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "is" = (
 /obj/structure/rack,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
 "it" = (
@@ -894,6 +949,15 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/engineering)
+"jr" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station)
 "jt" = (
 /obj/structure/salvageable/safe_server,
 /turf/open/floor/plasteel/tech,
@@ -907,6 +971,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/lime/mono,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/dorms)
 "jA" = (
@@ -918,6 +983,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
+"jB" = (
+/obj/structure/closet/body_bag,
+/obj/effect/mob_spawn/human/corpse/pgf,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/pgf_wreck/cargo)
 "jM" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -975,7 +1046,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "ko" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
@@ -1043,6 +1114,15 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/external)
+"kV" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station)
 "kW" = (
 /obj/item/reagent_containers/glass/chem_jug/chlorine{
 	pixel_x = 6;
@@ -1059,7 +1139,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "kX" = (
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
@@ -1093,6 +1173,9 @@
 "li" = (
 /obj/machinery/power/terminal{
 	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -1145,7 +1228,7 @@
 	dir = 10
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "lD" = (
 /obj/structure/sink/kitchen{
 	dir = 4
@@ -1203,6 +1286,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
+"mM" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station)
 "mN" = (
 /obj/structure/railing{
 	dir = 6
@@ -1288,14 +1377,32 @@
 /obj/effect/turf_decal/trimline/opaque/bar/warning,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
+"nQ" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/lime{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/pgf_wreck)
 "nT" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
+"nU" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "nV" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 5
 	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
 "nX" = (
@@ -1317,7 +1424,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "oa" = (
 /obj/structure/rack,
 /obj/item/storage/backpack/duffelbag/syndie/c4,
@@ -1351,15 +1458,18 @@
 	dir = 5
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "ol" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/closet/wall/directional/west,
+/obj/structure/closet/wall/directional/west{
+	opened = 1
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
 	dir = 4
 	},
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck/dorms)
 "om" = (
@@ -1464,6 +1574,7 @@
 "pd" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/secure_data/laptop,
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/pgf_wreck/external)
 "pe" = (
@@ -1514,7 +1625,7 @@
 	dir = 10
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "pC" = (
 /obj/machinery/door/window/southleft{
 	dir = 4
@@ -1525,16 +1636,12 @@
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/space/has_grav/powered/ramzi_station/toilet)
 "pE" = (
-/obj/effect/turf_decal/borderfloorblack,
-/obj/effect/turf_decal/industrial/traffic,
-/obj/item/ammo_casing/a357{
-	projectile_type = null
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/pgf_wreck/cargo)
+/turf/open/floor/plating/airless,
+/area/ruin/space)
 "pF" = (
 /obj/machinery/washing_machine{
 	pixel_y = 3;
@@ -1544,7 +1651,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "pG" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/dark,
@@ -1640,7 +1747,7 @@
 /obj/item/storage/pill_bottle/lsd,
 /obj/item/storage/box/firecrackers,
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "qc" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
@@ -1675,6 +1782,7 @@
 /area/ruin/space/pgf_wreck/cargo)
 "qE" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2,
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plastic,
 /area/ruin/space/pgf_wreck/dorms)
 "qM" = (
@@ -1690,6 +1798,13 @@
 "re" = (
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
+"rf" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "ri" = (
 /obj/structure/table,
 /obj/item/storage/bag/tray/cafeteria,
@@ -1698,6 +1813,23 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
+"rp" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/upper)
+"rs" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "rt" = (
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/warning{
 	dir = 8
@@ -1732,7 +1864,7 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "rH" = (
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck/bridge)
@@ -1806,7 +1938,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark/airless,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/stack/tile/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "sq" = (
 /turf/closed/wall/r_wall/syndicate,
@@ -1874,7 +2013,7 @@
 /obj/item/melee/knife/switchblade,
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "sM" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/pgf_wreck)
@@ -1920,6 +2059,10 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/powered/ramzi_station/toilet)
+"to" = (
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/pgf_wreck/engineering)
 "tq" = (
 /obj/item/bedsheet/syndie,
 /obj/structure/bed,
@@ -1950,6 +2093,15 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
+"tK" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/rack,
+/obj/effect/turf_decal/corner/opaque/neutral/full,
+/obj/machinery/light/small/broken/directional/south,
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/pgf_wreck/external)
 "tL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -2003,6 +2155,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
 "uc" = (
@@ -2014,7 +2167,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/warning,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "ui" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/bag/tray/cafeteria{
@@ -2093,6 +2246,7 @@
 	},
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/pgf_wreck/external)
 "uT" = (
@@ -2118,6 +2272,13 @@
 /obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
+"vl" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "vs" = (
 /obj/machinery/shower{
 	dir = 4
@@ -2146,6 +2307,19 @@
 /obj/structure/sign/warning,
 /turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/bridge)
+"vK" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/engi)
 "vP" = (
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/item/chair{
@@ -2210,7 +2384,7 @@
 "wm" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "wp" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/space/basic,
@@ -2219,12 +2393,23 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
 	dir = 1
 	},
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/dorms)
+"wr" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/engi)
 "ws" = (
 /obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "wu" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -2245,6 +2430,11 @@
 /obj/item/megaphone/cargo,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
+"wE" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/carpet/green,
+/area/ruin/space/pgf_wreck/bridge)
 "wK" = (
 /turf/open/floor/engine/hull,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
@@ -2311,8 +2501,19 @@
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 6
 	},
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
+"xt" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 5
+	},
+/obj/effect/turf_decal/borderfloorblack,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/upper)
 "xw" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -2370,7 +2571,7 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "xH" = (
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder/constructed{
@@ -2382,6 +2583,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
+"xI" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/upper)
 "xN" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
@@ -2395,7 +2605,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "xZ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -2408,7 +2618,7 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "yl" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 8
@@ -2441,6 +2651,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
+/obj/item/stack/cable_coil/cut/red,
 /turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/dorms)
 "yG" = (
@@ -2456,7 +2667,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "yJ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2478,6 +2689,18 @@
 "yN" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
+"yZ" = (
+/obj/structure/lattice,
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/space/basic,
+/area/space)
+"zb" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station)
 "zc" = (
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
@@ -2551,6 +2774,9 @@
 /area/ruin/space/pgf_wreck/external)
 "zJ" = (
 /obj/machinery/door/airlock/medical/glass,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/med)
 "zR" = (
@@ -2563,6 +2789,9 @@
 "zW" = (
 /obj/machinery/door/airlock/mining/glass{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
@@ -2722,7 +2951,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/structure/closet/cabinet,
+/obj/structure/closet/cabinet{
+	opened = 1
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck/bridge)
 "By" = (
@@ -2770,6 +3001,7 @@
 	dir = 4
 	},
 /obj/structure/closet/body_bag,
+/obj/effect/mob_spawn/human/corpse/pgf/marine,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
 "BP" = (
@@ -2812,9 +3044,16 @@
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/dorms)
+"BX" = (
+/obj/machinery/light/directional/south,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/pgf_wreck/cargo)
 "Cb" = (
 /obj/machinery/door/airlock/engineering{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
@@ -2894,8 +3133,19 @@
 /area/ruin/space/pgf_wreck/dorms)
 "CP" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
+"CS" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/lime/mono,
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/pgf_wreck)
 "CV" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 5
@@ -2903,7 +3153,6 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "CX" = (
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
 	},
@@ -2913,8 +3162,19 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/structure/cable,
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/power/terminal,
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/engineering)
+"Db" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/engi)
 "Dd" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "splatter";
@@ -2973,6 +3233,25 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
+"DA" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/upper)
+"DC" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/industrial/traffic,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/pgf_wreck/cargo)
 "DE" = (
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/pgf_wreck/bridge)
@@ -3001,7 +3280,7 @@
 	layer = 2.030
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "DZ" = (
 /obj/item/shard,
 /turf/open/space/basic,
@@ -3049,6 +3328,13 @@
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
+"El" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/engi)
 "Eo" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -3062,12 +3348,20 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/engineering)
+"Eq" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/broken/directional/south,
+/turf/open/floor/plating,
+/area/ruin/space/pgf_wreck/external)
 "Ez" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "EE" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -3107,6 +3401,9 @@
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
+"ER" = (
+/turf/closed/wall/r_wall/syndicate,
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "EU" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -3132,6 +3429,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/pgf_wreck/engineering)
 "Fg" = (
@@ -3168,6 +3466,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
+"FP" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/pgf_wreck/bridge)
 "FS" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/airless,
@@ -3182,6 +3486,16 @@
 	},
 /turf/open/floor/plastic,
 /area/ruin/space/pgf_wreck/dorms)
+"FV" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/lime{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/pgf_wreck)
 "Gf" = (
 /obj/machinery/mineral/unloading_machine{
 	input_dir = 2;
@@ -3211,6 +3525,13 @@
 "Gs" = (
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
+"Gv" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Gz" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/mask/gas/syndicate,
@@ -3221,12 +3542,16 @@
 /area/ruin/space/has_grav/powered/ramzi_station)
 "GA" = (
 /obj/structure/safe/floor,
+/obj/item/documents,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/bridge)
 "GB" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 6
 	},
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
 "GD" = (
@@ -3245,10 +3570,22 @@
 /obj/machinery/door/airlock/mining,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station)
+"GP" = (
+/obj/item/stack/tile/plasteel/dark,
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plating/airless,
+/area/ruin/space/pgf_wreck/external)
 "GQ" = (
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station)
+"GV" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/upper)
 "GZ" = (
 /obj/structure/table,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -3260,7 +3597,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/powered/ramzi_station/med)
 "Hd" = (
-/obj/structure/closet/wall/red/directional/east,
+/obj/structure/closet/wall/red/directional/east{
+	opened = 1
+	},
 /obj/effect/turf_decal/corner/opaque/purple/bordercee{
 	dir = 8
 	},
@@ -3320,12 +3659,22 @@
 "HI" = (
 /turf/open/floor/pod,
 /area/space)
+"HT" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "Il" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/modular_computer/laptop/preset/civilian/rilena,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "Io" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -3367,7 +3716,7 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "II" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced{
@@ -3439,6 +3788,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
+"Jg" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/engi)
 "Jl" = (
 /obj/structure/chair/greyscale{
 	dir = 1
@@ -3464,7 +3820,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/warning,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "Jw" = (
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/tech/grid,
@@ -3485,6 +3841,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
+"JE" = (
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/pgf_wreck/dorms)
+"JF" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "JG" = (
 /obj/effect/turf_decal/syndicateemblem/bottom/right,
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
@@ -3577,6 +3947,27 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/pgf_wreck/dorms)
+"Kq" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/lime,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/pgf_wreck)
 "Ku" = (
 /obj/structure/railing{
 	dir = 5
@@ -3606,7 +3997,7 @@
 	dir = 6
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "KJ" = (
 /obj/machinery/door/airlock/freezer{
 	dir = 8
@@ -3631,6 +4022,9 @@
 	dir = 1
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "KQ" = (
@@ -3668,6 +4062,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
+"KY" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "KZ" = (
 /obj/effect/turf_decal/siding/thinplating/dark/end,
 /obj/effect/turf_decal/trimline/opaque/bar/warning{
@@ -3689,6 +4089,7 @@
 	dir = 8
 	},
 /obj/structure/closet/body_bag,
+/obj/effect/mob_spawn/human/corpse/pgf/captain,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
 "Ll" = (
@@ -3712,6 +4113,9 @@
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
 "Ls" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "Lu" = (
@@ -3823,6 +4227,9 @@
 /obj/structure/railing{
 	dir = 6
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Mp" = (
@@ -3861,6 +4268,11 @@
 /obj/item/bikehorn/rubberducky,
 /turf/open/floor/plastic,
 /area/ruin/space/pgf_wreck/dorms)
+"Nf" = (
+/obj/effect/turf_decal/corner/opaque/lime/half,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/pgf_wreck/bridge)
 "Nq" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/space)
@@ -3906,13 +4318,32 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/pgf_wreck)
+"NH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/pgf_wreck/dorms)
 "NK" = (
 /obj/structure/chair/plastic{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "NS" = (
 /obj/structure/table,
 /obj/item/storage/bag/tray/cafeteria{
@@ -3945,6 +4376,7 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 9
 	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
 "Of" = (
@@ -3971,6 +4403,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station)
+"Oq" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "Ox" = (
 /obj/machinery/duct{
 	icon_state = "nduct_e_w"
@@ -3984,6 +4423,13 @@
 /obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
+"OA" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station)
 "OC" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -4037,6 +4483,10 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station)
+"OQ" = (
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plating/airless,
+/area/ruin/space/pgf_wreck/external)
 "OR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -4060,6 +4510,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "Pb" = (
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/pgf_wreck)
 "Ph" = (
@@ -4094,6 +4545,9 @@
 /area/ruin/space/pgf_wreck/external)
 "PA" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "PE" = (
@@ -4208,6 +4662,13 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/engineering)
+"QR" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/engi)
 "QW" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 1
@@ -4297,6 +4758,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/layer4{
 	dir = 8
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
 "RN" = (
@@ -4319,6 +4781,7 @@
 /area/ruin/space/pgf_wreck/external)
 "RQ" = (
 /obj/structure/closet/body_bag,
+/obj/effect/mob_spawn/human/corpse/pgf/marine,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
 "RW" = (
@@ -4336,6 +4799,17 @@
 /obj/structure/chair/greyscale,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
+"Se" = (
+/obj/item/stack/tile/plasteel/dark,
+/obj/item/wallframe/apc,
+/obj/machinery/light/broken/directional/south,
+/turf/open/floor/plating/airless,
+/area/ruin/space/pgf_wreck/external)
+"Si" = (
+/obj/structure/crate_shelf,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/pgf_wreck/cargo)
 "Sk" = (
 /obj/structure/table,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -4407,6 +4881,13 @@
 "SL" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/pgf_wreck/engineering)
+"SN" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/engi)
 "SQ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
@@ -4420,6 +4901,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "SU" = (
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/pgf_wreck/dorms)
 "SW" = (
@@ -4435,7 +4917,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/closet/wall/directional/west,
+/obj/structure/closet/wall/directional/west{
+	opened = 1
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck/dorms)
 "Ta" = (
@@ -4459,6 +4943,12 @@
 "Tg" = (
 /obj/machinery/chem_master/condimaster,
 /turf/open/floor/plasteel/freezer,
+/area/ruin/space/has_grav/powered/ramzi_station/canteen)
+"Th" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "Tm" = (
 /obj/structure/chair/bench/beige/directional/east,
@@ -4498,6 +4988,9 @@
 "TA" = (
 /obj/machinery/door/airlock/engineering{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
@@ -4560,7 +5053,7 @@
 	dir = 5
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "TY" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp,
@@ -4577,10 +5070,24 @@
 /obj/machinery/power/shuttle/engine/electric,
 /turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/external)
+"Uk" = (
+/obj/machinery/light/broken/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/pgf_wreck/external)
 "Un" = (
 /obj/effect/turf_decal/corner/opaque/lime/half,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
+/obj/machinery/power/terminal,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/bridge)
+"Uo" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/upper)
 "Up" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/dark,
@@ -4625,6 +5132,16 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
+"UE" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station)
 "UG" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 5
@@ -4634,6 +5151,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
+"UJ" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "UL" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
@@ -4674,6 +5201,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
+"UX" = (
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "Va" = (
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
@@ -4688,7 +5219,7 @@
 	dir = 6
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "Vf" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
@@ -4811,7 +5342,9 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/dorms)
 "Wk" = (
-/obj/structure/closet/wall/orange/directional/north,
+/obj/structure/closet/wall/orange/directional/north{
+	opened = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/pgf_wreck/engineering)
 "Wl" = (
@@ -4823,6 +5356,9 @@
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "Wn" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "Wr" = (
@@ -4901,7 +5437,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/warning,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "WN" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating,
@@ -4915,6 +5451,9 @@
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
 "WS" = (
 /obj/structure/stairs/north,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Xe" = (
@@ -4946,7 +5485,7 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "Xi" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -4965,6 +5504,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
 	dir = 1
 	},
+/obj/item/crowbar,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "Xs" = (
@@ -5150,12 +5690,17 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/structure/closet/wall/directional/east,
+/obj/structure/closet/wall/directional/east{
+	opened = 1
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck/dorms)
 "YF" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
@@ -5173,6 +5718,7 @@
 	dir = 1
 	},
 /obj/structure/crate_shelf,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
 "YJ" = (
@@ -5197,10 +5743,13 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/structure/closet/wall/directional/east,
+/obj/structure/closet/wall/directional/east{
+	opened = 1
+	},
 /obj/machinery/atmospherics/components/unary/vent_pump/layer4{
 	dir = 8
 	},
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck/dorms)
 "YQ" = (
@@ -5222,6 +5771,9 @@
 "YT" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/powered/ramzi_station/med)
@@ -5272,7 +5824,14 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/space)
+/area/ruin/space/has_grav/powered/ramzi_station/dorms)
+"Zr" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Zs" = (
 /obj/structure/railing{
 	dir = 6
@@ -5299,6 +5858,13 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
+"ZK" = (
+/obj/structure/closet/wall/orange/directional/north{
+	opened = 1
+	},
+/obj/machinery/light/dim/directional/east,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/pgf_wreck/engineering)
 "ZL" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/corner{
 	dir = 1
@@ -5331,6 +5897,15 @@
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck)
+"ZW" = (
+/obj/machinery/door/airlock/engineering{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/engi)
 "ZY" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/bordercorner,
 /obj/item/chair{
@@ -6153,11 +6728,11 @@ jW
 jW
 jW
 jW
-Nq
-Nq
-Nq
-Nq
-Nq
+ER
+ER
+ER
+ER
+ER
 jW
 jW
 jW
@@ -6225,11 +6800,11 @@ jW
 jW
 jW
 jW
-Nq
+ER
 km
 pF
 DS
-Nq
+ER
 jW
 jW
 jW
@@ -6297,11 +6872,11 @@ jW
 jW
 jW
 jW
-Nq
+ER
 kW
 nZ
 Ez
-Nq
+ER
 jW
 jW
 jW
@@ -6369,12 +6944,12 @@ Ef
 Ef
 Ef
 Ef
-Nq
-Nq
-Nq
+ER
+ER
+ER
 xU
-Nq
-Nq
+ER
+ER
 jW
 jW
 jW
@@ -6437,17 +7012,17 @@ jW
 Ef
 Aw
 WA
-Wn
+Th
 Sd
 LG
 Jl
-Nq
+ER
 qb
 pq
 WM
 IB
-Nq
-Nq
+ER
+ER
 kQ
 kQ
 kQ
@@ -6509,17 +7084,17 @@ Ef
 Ef
 Kh
 WA
-Wn
+rf
 Sd
 NS
 Jl
-Nq
+ER
 xC
 wm
 Jt
 ee
 lB
-Nq
+ER
 ko
 PM
 OL
@@ -6550,9 +7125,9 @@ sv
 Bc
 Bc
 Bc
-gX
+Eq
 SL
-Ra
+to
 QD
 xa
 tB
@@ -6581,17 +7156,17 @@ Up
 up
 OH
 WA
-Wn
+rf
 Sd
 ls
 Jl
-Nq
+ER
 rE
 wm
 Jt
 Xe
 cA
-Nq
+ER
 cI
 cI
 cI
@@ -6653,17 +7228,17 @@ Ef
 Iz
 oG
 WA
-Wn
+rf
 at
 at
 KZ
-Nq
+ER
 cN
 wm
 Jt
 yd
 NK
-Nq
+ER
 gg
 SK
 SK
@@ -6691,7 +7266,7 @@ xk
 xk
 xk
 xk
-Bc
+Uk
 xw
 kU
 LM
@@ -6725,27 +7300,27 @@ Je
 Iz
 oG
 WA
-Wn
+rf
 Sd
 ri
 Jl
-Nq
+ER
 sL
 wm
 Jt
 Zl
 wm
-Nq
+ER
 eF
 eF
 JO
 GM
 gy
 gy
+UE
 gy
 gy
-gy
-gy
+mM
 kQ
 jW
 jW
@@ -6797,24 +7372,24 @@ EU
 Iz
 oG
 WA
-Wn
+rf
 Sd
 gw
 Jl
-Nq
+ER
 fN
 wm
 Jt
 bf
 Il
-Nq
+ER
 Mb
 IS
 oa
 kQ
 oB
 oB
-gy
+cr
 yN
 YG
 Jp
@@ -6840,7 +7415,7 @@ sM
 sM
 sM
 SL
-Wk
+ZK
 bg
 or
 CX
@@ -6869,24 +7444,24 @@ EU
 Iz
 oG
 WA
-Wn
+rf
 Sd
 gi
 Jl
-Nq
+ER
 TR
 KG
 uc
 ok
 Ve
-Nq
+ER
 kQ
 kQ
 kQ
 kQ
 kQ
 EV
-EX
+jr
 yN
 bk
 hj
@@ -6941,24 +7516,24 @@ Jz
 Iz
 oG
 WA
-Wn
-Wn
+vl
+UJ
 Wn
 Wn
 ws
-xZ
-xZ
-xZ
-xZ
-xZ
+rs
+rs
+rs
+rs
+rs
 ws
 gy
+UE
 gy
 gy
 gy
 gy
-gy
-gy
+zb
 yN
 bk
 hj
@@ -7014,18 +7589,18 @@ EE
 Zk
 ll
 bv
-Wn
+rf
 bv
 bv
-ws
+UX
 yH
 yH
 yH
 yH
 yH
-ws
+UX
 oB
-gy
+cr
 oB
 oB
 oB
@@ -7086,7 +7661,7 @@ Sv
 ui
 sq
 mn
-mn
+xI
 aU
 aU
 aU
@@ -7097,7 +7672,7 @@ aU
 aU
 aU
 EX
-EV
+kV
 jl
 jl
 jl
@@ -7158,7 +7733,7 @@ Ef
 Ef
 sq
 TI
-CP
+GV
 aU
 pC
 aU
@@ -7169,7 +7744,7 @@ aU
 vs
 aU
 fq
-gy
+cr
 jl
 Kk
 Cf
@@ -7202,7 +7777,7 @@ AL
 oH
 Rg
 sM
-Sr
+FV
 XP
 sM
 Qd
@@ -7230,7 +7805,7 @@ jW
 jW
 sq
 TI
-CP
+GV
 Dd
 uC
 xm
@@ -7241,7 +7816,7 @@ xm
 xm
 aU
 fq
-gy
+cr
 sB
 sJ
 Ka
@@ -7261,11 +7836,11 @@ vi
 jS
 jS
 AR
-PG
+cT
 vP
 JM
 Hn
-zR
+JE
 sM
 tM
 tM
@@ -7302,7 +7877,7 @@ jW
 jW
 sq
 TI
-CP
+GV
 YY
 Of
 pJ
@@ -7313,7 +7888,7 @@ LE
 xm
 aU
 fq
-gy
+cr
 jl
 sK
 XK
@@ -7339,7 +7914,7 @@ JM
 wR
 wq
 sM
-bB
+CS
 bB
 bB
 SA
@@ -7374,7 +7949,7 @@ jW
 jW
 sq
 TI
-CP
+GV
 aU
 Rx
 aU
@@ -7385,7 +7960,7 @@ aU
 Rx
 aU
 fq
-gy
+cr
 jl
 jl
 AT
@@ -7446,7 +8021,7 @@ jW
 jW
 sq
 TI
-CP
+GV
 aU
 pK
 aU
@@ -7457,8 +8032,8 @@ aU
 pK
 aU
 fq
-gy
-gy
+OA
+im
 jl
 SW
 CG
@@ -7518,7 +8093,7 @@ fV
 fV
 fV
 TI
-CP
+GV
 aU
 aU
 aU
@@ -7530,7 +8105,7 @@ aU
 aU
 bm
 YA
-gy
+cr
 jl
 Ze
 UB
@@ -7591,8 +8166,8 @@ ZU
 fV
 TI
 CP
-CP
-CP
+Uo
+DA
 xN
 Dt
 Bg
@@ -7602,7 +8177,7 @@ fU
 xN
 xN
 fq
-gy
+cr
 jv
 ig
 CG
@@ -7627,8 +8202,8 @@ Ax
 GI
 PE
 sM
-Sr
-Uu
+nQ
+Kq
 sM
 sM
 sM
@@ -7664,7 +8239,7 @@ fV
 hy
 Cc
 Lq
-CP
+GV
 xN
 Gs
 Rm
@@ -7674,7 +8249,7 @@ OW
 lk
 xN
 fq
-gy
+cr
 jl
 UG
 le
@@ -7699,7 +8274,7 @@ JM
 GI
 ns
 sM
-Sr
+FV
 Uu
 sM
 pd
@@ -7736,7 +8311,7 @@ fV
 fV
 fV
 TI
-CP
+GV
 xN
 Gs
 wa
@@ -7746,14 +8321,14 @@ VL
 Pm
 xN
 fq
-gy
+cr
 jl
 tq
 TY
 jl
 jl
 hV
-PA
+Zr
 fo
 yN
 jW
@@ -7807,8 +8382,8 @@ EH
 LZ
 YT
 zJ
-TI
-CP
+xt
+rp
 xN
 De
 Ce
@@ -7825,7 +8400,7 @@ jl
 jl
 Pu
 yn
-PA
+Zr
 fo
 yN
 jW
@@ -7880,7 +8455,7 @@ Zi
 ZA
 Tr
 TI
-CP
+GV
 xN
 II
 XZ
@@ -7890,14 +8465,14 @@ nT
 pe
 da
 nT
-Ls
+hI
 YR
 YR
 Tm
 yN
 Om
 Yw
-PA
+Zr
 kD
 yN
 jW
@@ -7910,7 +8485,7 @@ wN
 rH
 cc
 NC
-XU
+NH
 zR
 yM
 yM
@@ -7921,7 +8496,7 @@ yM
 yM
 uS
 uv
-uS
+tK
 VS
 IM
 ZY
@@ -7952,7 +8527,7 @@ sV
 XI
 fV
 mr
-CP
+GV
 xN
 Gs
 Rm
@@ -7962,14 +8537,14 @@ Mp
 SQ
 gt
 kv
-Ls
+hI
 hl
 hl
 hc
 yN
 uN
 Yw
-PA
+Zr
 Vf
 yN
 jW
@@ -7978,17 +8553,17 @@ vi
 vi
 jS
 NC
-hm
+wE
 WJ
 cb
 oo
 Wj
 zR
 yM
-Jw
-Rw
-hJ
-Au
+Si
+DC
+yJ
+OR
 YH
 yM
 yM
@@ -8024,7 +8599,7 @@ fV
 fV
 OJ
 OJ
-kR
+ZW
 xN
 Gs
 wa
@@ -8034,14 +8609,14 @@ Mp
 SS
 bz
 VG
-Ls
-Ls
-Ls
-Ls
+HT
+nU
+nU
+nU
 Cb
 PA
 PA
-PA
+Gv
 Gf
 yN
 jW
@@ -8055,14 +8630,14 @@ GA
 Qy
 NC
 XU
-zR
+bO
 yM
 Hf
 Me
 hJ
 Au
 fL
-RQ
+jB
 yM
 VS
 VS
@@ -8096,7 +8671,7 @@ KK
 QC
 xB
 nP
-gH
+QR
 xN
 De
 Jx
@@ -8106,7 +8681,7 @@ xN
 xN
 xN
 xN
-Ls
+hI
 hl
 hl
 hc
@@ -8168,7 +8743,7 @@ KK
 OF
 lv
 nP
-gH
+QR
 xN
 xN
 xN
@@ -8178,7 +8753,7 @@ xN
 Ac
 hF
 pG
-Ls
+hI
 hl
 hl
 hc
@@ -8199,19 +8774,19 @@ jX
 sh
 CV
 Ct
-Un
+Nf
 yM
 Am
-pE
-yJ
-OR
+Me
+hJ
+Au
 tE
 BO
 yM
 aW
 re
 nH
-kt
+Se
 AI
 AI
 jS
@@ -8240,7 +8815,7 @@ OJ
 cv
 kr
 UW
-gH
+QR
 ft
 hF
 hF
@@ -8248,9 +8823,9 @@ hF
 hF
 hF
 jA
-Ls
-pG
-Ls
+Oq
+KY
+JF
 sy
 sy
 tZ
@@ -8282,7 +8857,7 @@ Vo
 oi
 tL
 pk
-kt
+GP
 Pw
 wx
 AI
@@ -8310,16 +8885,16 @@ LD
 LH
 ft
 gH
-gH
-gH
-gH
+Db
+wr
+wr
 TA
 ev
-Ls
-Ls
-Ls
-Ls
-Ls
+nU
+nU
+nU
+nU
+nU
 Ls
 Ll
 Wr
@@ -8382,7 +8957,7 @@ OJ
 OJ
 OJ
 OJ
-gH
+QR
 LH
 OJ
 OJ
@@ -8414,18 +8989,18 @@ zj
 zj
 zj
 zj
-zj
+FP
 Gq
 yM
-Jw
+Si
 Rw
 hJ
 hJ
 fL
 is
-yM
+BX
 nV
-vi
+yZ
 Vx
 BM
 Js
@@ -8454,7 +9029,7 @@ jW
 jW
 jW
 OJ
-KK
+Qh
 kR
 OJ
 nI
@@ -8558,7 +9133,7 @@ BS
 PV
 sT
 tx
-DE
+tx
 wu
 yM
 qc
@@ -8571,7 +9146,7 @@ vi
 jS
 BM
 vi
-Js
+OQ
 Js
 ME
 KM
@@ -8599,11 +9174,11 @@ jW
 jW
 OJ
 lI
-li
+vK
 KO
-gH
-gH
-gH
+SN
+SN
+Jg
 OJ
 jW
 jW
@@ -8675,7 +9250,7 @@ li
 OJ
 Qt
 nY
-gH
+El
 OJ
 jW
 jW
@@ -8747,7 +9322,7 @@ OJ
 OJ
 OJ
 KS
-gH
+El
 OJ
 jW
 jW
@@ -8891,7 +9466,7 @@ jW
 jW
 jW
 OJ
-gH
+El
 OJ
 jW
 jW
@@ -9035,7 +9610,7 @@ jS
 jS
 jS
 xS
-RI
+pE
 xS
 jS
 jW
@@ -9107,7 +9682,7 @@ jS
 jS
 jS
 xS
-RI
+pE
 xS
 jS
 jS
