@@ -32,9 +32,6 @@
 	/// If you dont want to bullets to randomly change position on spawn. For mapping.
 	var/auto_scatter = TRUE
 
-	///For tracker casings
-	var/gps_tag
-
 	///Pellets for spreadshot
 	var/pellets = 1
 	///Variance for inaccuracy fundamental to the casing
