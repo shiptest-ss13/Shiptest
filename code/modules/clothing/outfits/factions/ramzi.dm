@@ -59,11 +59,13 @@
 
 	backpack_contents = list(/obj/item/clothing/mask/gas/syndicate)
 
+//Pilot
+
 /datum/outfit/ramzi/pilot
 	name = "Ramzi Clique - Pilot"
-	id_assignment = "Shuttle Pilot"
+
+	id_assignment = "Pilot"
 	job_icon = "securityofficer"
-	jobtype = /datum/job/officer
 
 	l_pocket = /obj/item/weldingtool/mini
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
