@@ -531,7 +531,6 @@
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/melee/baton/loaded,
 		/obj/item/gun/energy/disabler/cyborg,
-		/obj/item/clothing/mask/gas/sechailer/cyborg,
 		/obj/item/extinguisher/mini)
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
 	cyborg_base_icon = "sec"

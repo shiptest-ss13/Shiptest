@@ -28,13 +28,6 @@
 	icon_state = "spacepol"
 	item_state = "spacepol"
 
-/obj/item/clothing/mask/gas/sechailer/cyborg
-	name = "security hailer"
-	desc = "A set of recognizable pre-recorded messages for cyborgs to use when apprehending criminals."
-	icon = 'icons/obj/device.dmi'
-	icon_state = "taperecorder_idle"
-	mob_overlay_state = "sechailer"
-
 /obj/item/clothing/mask/gas/sechailer/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/adjust))
 		adjustmask(user)
