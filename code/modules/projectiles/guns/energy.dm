@@ -67,9 +67,7 @@
 			default_ammo_type = FALSE
 
 	if(default_ammo_type)
-		cell = new default_ammo_type(src)
-	if(spawn_no_ammo)
-		cell.use(cell.maxcharge)
+		cell = new default_ammo_type(src, spawn_no_ammo)
 	update_ammo_types()
 	recharge_newshot(TRUE)
 	if(selfcharge)

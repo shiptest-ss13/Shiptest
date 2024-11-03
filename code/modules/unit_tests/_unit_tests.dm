@@ -69,7 +69,6 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
-
 #ifdef BASIC_TESTS
 
 #include "icons/inhands.dm"
