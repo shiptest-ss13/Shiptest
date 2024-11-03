@@ -1308,10 +1308,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "kali_starboard_engine_blast"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "jN" = (
@@ -2848,10 +2844,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "sF" = (
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "kali_port_engine_blast"
-	},
 /obj/machinery/power/shuttle/engine/fire{
 	dir = 4
 	},
@@ -4525,6 +4517,10 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "kali_starboard_engine_blast"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Dq" = (
@@ -4955,10 +4951,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Gn" = (
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "kali_starboard_engine_blast"
-	},
 /obj/machinery/power/shuttle/engine/fire{
 	dir = 4
 	},
@@ -5274,10 +5266,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "kali_port_engine_blast"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Ij" = (
@@ -5449,6 +5437,10 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "kali_port_engine_blast"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -6741,6 +6733,10 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "kali_starboard_engine_blast"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Tm" = (
@@ -7199,6 +7195,10 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "kali_port_engine_blast"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
