@@ -1,30 +1,19 @@
-// .50 AE (Desert Eagle)
-
-/obj/projectile/bullet/a50AE
-	name = ".50 AE bullet"
-	damage = 40
-
-/obj/projectile/bullet/a50AE/hp
-	name = ".50 AE hollow point bullet"
-	damage = 55
-	armour_penetration = -50
-	speed = BULLET_HP_SPEED
-
 // .38 (Colt Detective Special & Winchester)
 
 /obj/projectile/bullet/c38
 	name = ".38 bullet"
 	damage = 20
 	armour_penetration = -20
+	speed = BULLET_SPEED_REVOLVER
 
 /obj/projectile/bullet/c38/surplus
 	damage = 15
-	speed = BULLET_SURPLUS_SPEED
+	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c38/match
 	name = ".38 match bullet"
-	speed = BULLET_AP_SPEED
 	armour_penetration = -10
+	speed_mod = BULLET_SPEED_AP_MOD
 	ricochets_max = 4
 	ricochet_chance = 100
 	ricochet_auto_aim_angle = 40
@@ -37,8 +26,8 @@
 	name = ".38 rubber bullet"
 	damage = 7
 	stamina = 28
-	speed = BULLET_RUBBER_SPEED
 	armour_penetration = -60
+	speed_mod = BULLET_SPEED_RUBBER_MOD
 	ricochets_max = 6
 	ricochet_incidence_leeway = 70
 	ricochet_chance = 130
@@ -85,10 +74,12 @@
 	name = ".357 bullet"
 	damage = 30
 
+	speed = BULLET_SPEED_REVOLVER
+
 /obj/projectile/bullet/a357/match
 	name = ".357 match bullet"
-	speed = BULLET_HV_SPEED
 	armour_penetration = 10
+	speed_mod = BULLET_SPEED_AP_MOD
 	ricochets_max = 5
 	ricochet_chance = 140
 	ricochet_auto_aim_angle = 50
@@ -100,32 +91,33 @@
 	name = ".357 hollow point bullet"
 	damage = 45
 	armour_penetration = -20
+	speed_mod = BULLET_SPEED_HP_MOD
 	ricochet_chance = 0
-	speed = BULLET_HP_SPEED
+
 
 // .45-70 Gov't (Hunting Revolver)
 
 /obj/projectile/bullet/a4570
 	name = ".45-70 bullet"
 	damage = 45 //crits in 3-4 taps depending on armor
+	speed = BULLET_SPEED_REVOLVER
 
 /obj/projectile/bullet/a4570/match
 	name = ".45-70 match bullet"
-	speed = 0.3
 	armour_penetration = 10
+	speed_mod = BULLET_SPEED_AP_MOD
 	ricochets_max = 5
 	ricochet_chance = 140
 	ricochet_auto_aim_angle = 50
 	ricochet_auto_aim_range = 6
 	ricochet_incidence_leeway = 80
 	ricochet_decay_chance = 1
-	speed = BULLET_HV_SPEED
 
 /obj/projectile/bullet/a4570/hp
 	name = ".45-70 hollow point bullet"
 	damage = 55
 	armour_penetration = -50
-	speed = BULLET_HP_SPEED
+	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/a4570/explosive //for extra oof
 	name = ".45-70 explosive bullet"
@@ -141,17 +133,18 @@
 /obj/projectile/bullet/a44roum
 	name = ".44 roumain bullet"
 	damage =  25
+	speed = BULLET_SPEED_REVOLVER
 
 /obj/projectile/bullet/a44roum/rubber
 	name = ".44 roumain bullet"
 	damage =  7
 	stamina = 38
 	armour_penetration = -20
-	speed = BULLET_RUBBER_SPEED
+	speed_mod = BULLET_SPEED_RUBBER_MOD
 
 /obj/projectile/bullet/a44roum/hp
 	name = ".44 roumain bullet"
 	damage =  40
 	armour_penetration = -20
 	ricochet_chance = 0
-	speed = BULLET_HP_SPEED
+	speed_mod = BULLET_SPEED_HP_MOD

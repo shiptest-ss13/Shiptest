@@ -1,16 +1,24 @@
-#define BULLET_SPEED 0.3
-#define BULLET_SNIPER_SPEED 0.2
-#define BULLET_AP_SPEED 0.2
-#define BULLET_HP_SPEED 0.5
-#define BULLET_RUBBER_SPEED 0.4
-#define BULLET_HV_SPEED 0.1
-#define BULLET_SURPLUS_SPEED 0.4
+//vibes based bullet speed
+
+#define BULLET_SPEED_SHOTGUN 0.5
+#define BULLET_SPEED_HANDGUN 0.4
+#define BULLET_SPEED_REVOLVER 0.4 //why do we have multiple defines for the same thing? future proofing.
+#define BULLET_SPEED_PDW 0.3
+#define BULLET_SPEED_RIFLE 0.3
+#define BULLET_SPEED_SNIPER 0.2
+
+//speed modifiers
+#define BULLET_SPEED_AP_MOD -0.1
+#define BULLET_SPEED_HP_MOD 0.1
+#define BULLET_SPEED_RUBBER_MOD 0.2
+#define BULLET_SPEED_HV_MOD -0.2
+#define BULLET_SPEED_SURPLUS_MOD -0.1
 
 /obj/projectile/bullet
 	name = "bullet"
 	icon_state = "gauss"
 	damage = 60
-	speed = BULLET_SPEED
+	speed = BULLET_SPEED_RIFLE
 	damage_type = BRUTE
 	nodamage = FALSE
 	flag = "bullet"

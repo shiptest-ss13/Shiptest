@@ -772,15 +772,6 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile = /obj/projectile/bullet/syndicate_turret
 	lethal_projectile = /obj/projectile/bullet/syndicate_turret
 
-/obj/machinery/porta_turret/syndicate/shuttle/target(atom/movable/target)
-	if(target)
-		setDir(get_dir(base, target))//even if you can't shoot, follow the target
-		shootAt(target)
-		addtimer(CALLBACK(src, PROC_REF(shootAt), target), 5)
-		addtimer(CALLBACK(src, PROC_REF(shootAt), target), 10)
-		addtimer(CALLBACK(src, PROC_REF(shootAt), target), 15)
-		return TRUE
-
 /obj/machinery/porta_turret/ai
 	faction = list("silicon")
 	turret_flags = TURRET_FLAG_SHOOT_CRIMINALS | TURRET_FLAG_SHOOT_ANOMALOUS | TURRET_FLAG_SHOOT_HEADS

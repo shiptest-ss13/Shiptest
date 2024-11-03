@@ -2,7 +2,7 @@
 	name = "12g shotgun slug"
 	damage = 40
 	armour_penetration = -10
-	speed = 0.5
+	speed = BULLET_SPEED_SHOTGUN
 
 /obj/projectile/bullet/slug/beanbag
 	name = "beanbag slug"
@@ -14,7 +14,7 @@
 	name = "incendiary slug"
 	damage = 25
 	armour_penetration = -10
-	speed = 0.5
+	speed = BULLET_SPEED_SHOTGUN
 
 /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
@@ -54,7 +54,7 @@
 /obj/projectile/bullet/slug/frag12
 	name = "frag12 slug"
 	damage = 25
-	paralyze = 50
+	paralyze = 20
 
 /obj/projectile/bullet/slug/frag12/on_hit(atom/target, blocked = FALSE)
 	..()
@@ -69,7 +69,7 @@
 
 	icon_state = "pellet"
 	armour_penetration = -35
-	speed = 0.5
+	speed = BULLET_SPEED_SHOTGUN
 
 /obj/projectile/bullet/pellet/buckshot
 	name = "buckshot pellet"
