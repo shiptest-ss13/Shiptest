@@ -80,7 +80,7 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(H.dna.species.id == SPECIES_IPC)
-			to_chat(user, span_notice["[src] has no effect on silicate life."])
+			to_chat(user, span_notice("[src] has no effect on silicate life."))
 			return
 		if(inert)
 			to_chat(user, span_notice("[src] has decayed past usabality."))
