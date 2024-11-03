@@ -67,7 +67,7 @@
 		owner.adjustOxyLoss(-50)
 		owner.adjustToxLoss(-50)
 		if(owner.dna.species.id != SPECIES_IPC)
-			owner.adjustCloneLoss(25) //dont abuse it or take cloneloss (organic only)
+			owner.adjustCloneLoss(20) //dont abuse it or take cloneloss (organic only)
 	qdel(src)
 
 /obj/item/organ/regenerative_core/on_life()
@@ -79,6 +79,9 @@
 /obj/item/organ/regenerative_core/proc/applyto(atom/target, mob/user)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
+		if(H.dna.species.id == SPECIES_IPC)
+			to_chat(user, span_notice["[src] has no effect on silicate life."])
+			return
 		if(inert)
 			to_chat(user, span_notice("[src] has decayed past usabality."))
 			return
@@ -93,8 +96,7 @@
 				to_chat(user, span_notice("You smear [src] across your body. Malignant black tendrils start to grow around the application site, reinforcing your flesh!"))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
 			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
-			if(prob(10))
-				H.force_scream()
+			H.force_scream()
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman)
 			qdel(src)
 
