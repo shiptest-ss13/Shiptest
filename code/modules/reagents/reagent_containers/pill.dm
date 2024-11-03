@@ -96,7 +96,7 @@
 	name = "morphine pill"
 	desc = "Commonly used to treat insomnia."
 	icon_state = "pill8"
-	list_reagents = list(/datum/reagent/medicine/morphine = 30)
+	list_reagents = list(/datum/reagent/medicine/morphine = 15)
 	rename_with_volume = TRUE
 
 /obj/item/reagent_containers/pill/stimulant

@@ -496,7 +496,7 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 
 /obj/item/ammo_box/magazine/m57_39_sidewinder
 	name = "Sidewinder magazine (5.7x39mm)"
-	desc = "A 30-round magazine for the Cobra submachine gun. These rounds do okay damage with average performance against armor."
+	desc = "A 30-round magazine for the Sidewinder submachine gun. These rounds do okay damage with average performance against armor."
 	icon_state = "sidewinder_mag-1"
 	base_icon_state = "sidewinder_mag"
 	ammo_type = /obj/item/ammo_casing/c57x39mm
