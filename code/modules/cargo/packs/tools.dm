@@ -25,7 +25,7 @@
 	contains = list(/obj/item/storage/toolbox/electrical,
 					/obj/item/storage/toolbox/mechanical,
 					/obj/item/clothing/head/welding)
-	cost = 500
+	cost = 200
 	crate_name = "toolbox crate"
 
 /datum/supply_pack/tools/engigear
@@ -42,7 +42,7 @@
 /datum/supply_pack/tools/cellcharger
 	name = "Cell Charger Crate"
 	desc = "Contains a cell charger, able to charge all sorts of power cells."
-	cost = 4000
+	cost = 2000
 	contains = list(/obj/machinery/cell_charger)
 
 
@@ -108,14 +108,6 @@
 	desc = "A compact jetpack harness for those who don't wish to be weighed down by larger traditional jetpacks."
 	cost = 1500
 	contains = list(/obj/item/tank/jetpack/oxygen/harness)
-
-/datum/supply_pack/tools/transfer_valve
-	name = "Tank Transfer Valves Crate"
-	desc = "The key ingredient for making a lot of people very angry very fast. Contains a tank transfer valve."
-	cost = 3000
-	contains = list(/obj/item/transfer_valve)
-	crate_name = "tank transfer valve crate"
-	crate_type = /obj/structure/closet/crate/secure/science
 
 /datum/supply_pack/tools/anglegrinder
 	name = "Angle Grinder"
