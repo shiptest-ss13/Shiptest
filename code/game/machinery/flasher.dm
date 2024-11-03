@@ -180,10 +180,7 @@
 
 		if (!anchored && !isinspace())
 			to_chat(user, "<span class='notice'>[src] is now secured.</span>")
-			add_overlay("[base_icon_state]-s")
-			set_anchored(TRUE)
-			power_change()
-			proximity_monitor.set_range(range)
+			turn_on()
 		else
 			to_chat(user, "<span class='notice'>[src] can now be moved.</span>")
 			cut_overlays()
@@ -193,6 +190,19 @@
 
 	else
 		return ..()
+
+/obj/machinery/flasher/portable/turn_on()
+	add_overlay("[base_icon_state]-s")
+	set_anchored(TRUE)
+	power_change()
+	proximity_monitor.set_range(range)
+
+
+/obj/machinery/flasher/portable/anchored
+
+/obj/machinery/flasher/portable/anchored/Initialize()
+	. = ..()
+	turn_on()
 
 /obj/item/wallframe/flasher
 	name = "mounted flash frame"

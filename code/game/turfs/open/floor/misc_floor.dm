@@ -9,6 +9,9 @@
 	icon_state = "rockvault"
 	floor_tile = /obj/item/stack/tile/plasteel
 
+/turf/open/floor/vault/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
 //Circuit flooring, glows a little
 /turf/open/floor/circuit
 	icon = 'icons/turf/floors.dmi'
@@ -171,6 +174,10 @@
 	base_icon_state = "tcomms"
 	icon = 'icons/turf/floors/misc.dmi'
 	color = null
+
+/turf/open/floor/plasteel/telecomms_floor/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
 
 //ship turfs
 /turf/open/floor/ship
