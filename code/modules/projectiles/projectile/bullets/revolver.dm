@@ -99,7 +99,7 @@
 /obj/projectile/bullet/a357/hp
 	name = ".357 hollow point bullet"
 	damage = 45
-	armour_penetration = -50
+	armour_penetration = -20
 	ricochet_chance = 0
 	speed = BULLET_HP_SPEED
 

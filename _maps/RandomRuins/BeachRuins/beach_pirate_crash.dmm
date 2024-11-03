@@ -1365,16 +1365,12 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light/small/directional/east,
-/obj/machinery/porta_turret/syndicate/pod{
-	desc = "A turret built with substandard parts and run down further with age. Still capable of delivering lethal lasers to the odd space carp, but not much else.";
-	dir = 8;
-	faction = list("Frontiersmen");
-	lethal_projectile = /obj/projectile/beam/weak/penetrator;
-	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg';
-	name = "laser turret"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/porta_turret/ship/frontiersmen/light{
+	dir = 10;
+	faction = list("Frontiersmen","Turret")
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash)
 "PH" = (
