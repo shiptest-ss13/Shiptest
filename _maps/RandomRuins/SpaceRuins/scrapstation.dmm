@@ -729,7 +729,7 @@
 /obj/structure/salvageable/computer{
 	dir = 8
 	},
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/telecomms_floor/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "eF" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
@@ -834,8 +834,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/floordetail/tiled,
-/obj/structure/sign/warning,
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/telecomms_floor/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "fx" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lime/corner{
@@ -3536,7 +3535,6 @@
 /turf/open/floor/engine/hull,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "vA" = (
-/obj/structure/sign/warning,
 /turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "vM" = (
@@ -4136,8 +4134,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
-/obj/structure/sign/warning,
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/telecomms_floor/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "zs" = (
 /turf/closed/wall/r_wall/syndicate,
@@ -4882,7 +4879,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "DE" = (
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/telecomms_floor/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "DG" = (
 /obj/structure/windoor_assembly{
@@ -4891,9 +4888,8 @@
 /obj/effect/turf_decal/corner/opaque/purple/bordercee{
 	dir = 4
 	},
-/obj/structure/sign/warning,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/vault,
+/turf/open/floor/vault/airless,
 /area/ruin/space/pgf_wreck/external)
 "DH" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
@@ -5301,7 +5297,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/floordetail/tiled,
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/telecomms_floor/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "Gs" = (
 /turf/open/floor/mineral/plastitanium/red,
@@ -5442,8 +5438,7 @@
 /obj/effect/turf_decal/corner/opaque/purple/bordercee{
 	dir = 8
 	},
-/obj/structure/sign/warning,
-/turf/open/floor/vault,
+/turf/open/floor/vault/airless,
 /area/ruin/space/pgf_wreck/external)
 "Hf" = (
 /obj/structure/chair/handrail,
@@ -7037,7 +7032,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "PV" = (
 /obj/structure/table/reinforced,
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/telecomms_floor/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "PX" = (
 /obj/machinery/door/window/southleft{
@@ -9047,6 +9042,12 @@
 /obj/structure/window/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
+"ZT" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/pgf_wreck/bridge)
 "ZU" = (
 /obj/structure/table/chem,
 /obj/item/storage/backpack/duffelbag/med/surgery,
@@ -11455,7 +11456,7 @@ kt
 kt
 Qd
 CL
-zj
+ZT
 zj
 zj
 zj
