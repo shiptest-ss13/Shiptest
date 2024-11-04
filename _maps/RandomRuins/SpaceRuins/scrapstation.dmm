@@ -462,12 +462,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "cJ" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "0-2"
+/obj/machinery/atmospherics/pipe/manifold/orange{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/external)
@@ -2495,7 +2492,7 @@
 /obj/structure/closet/crate/engineering,
 /obj/item/circuitboard/machine/shuttle/engine/electric,
 /obj/item/circuitboard/machine/shuttle/engine/electric,
-/obj/item/circuitboard/machine/shuttle/engine/electric,
+/obj/item/circuitboard/machine/shuttle/engine/fire,
 /turf/open/space/basic,
 /area/ruin/space)
 "po" = (
@@ -3020,6 +3017,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "sF" = (
@@ -3134,6 +3132,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
+"ta" = (
+/obj/machinery/power/shuttle/engine/fire,
+/turf/open/floor/plating/airless,
+/area/ruin/space/pgf_wreck/external)
 "tb" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /obj/structure/cable{
@@ -3409,6 +3411,19 @@
 /mob/living/simple_animal/hostile/human/syndicate/melee/space,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/dorms)
+"uw" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/orange{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/pgf_wreck/external)
 "uz" = (
 /obj/machinery/conveyor{
 	id = "sbase";
@@ -6348,6 +6363,13 @@
 "LH" = (
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
+"LI" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/pgf_wreck/external)
 "LJ" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -6481,9 +6503,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
-	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
@@ -7387,6 +7406,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/orange{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/external)
 "Rv" = (
@@ -7774,6 +7796,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "TC" = (
@@ -7806,8 +7829,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/directional/south,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "TH" = (
@@ -8534,15 +8557,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "Xi" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/orange{
+	dir = 9
 	},
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/external)
@@ -9055,6 +9075,9 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "Zy" = (
@@ -9661,7 +9684,7 @@ Az
 Az
 Az
 Uj
-Uj
+ta
 tB
 tB
 tB
@@ -9726,7 +9749,7 @@ wO
 wO
 wO
 en
-en
+LI
 tB
 tB
 tB
@@ -9788,7 +9811,7 @@ zG
 zG
 zG
 cJ
-Ru
+uw
 Ru
 Ru
 Xi
