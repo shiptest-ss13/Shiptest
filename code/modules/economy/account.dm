@@ -29,7 +29,7 @@
 /datum/bank_account/proc/has_money(amt)
 	return account_balance >= amt
 
-/datum/bank_account/proc/adjust_money(amt, reason = "cash")
+/datum/bank_account/proc/adjust_money(amt, reason = CREDIT_LOG_WITHDRAW)
 	if((amt < 0 && has_money(-amt)) || amt > 0)
 		SSblackbox.record_feedback("tally", "credits", amt, reason)
 		SSeconomy.bank_money += amt
@@ -39,10 +39,10 @@
 
 /datum/bank_account/proc/transfer_money(datum/bank_account/from, amount)
 	if(from.has_money(amount))
-		adjust_money(amount, "transfer")
+		adjust_money(amount, CREDIT_LOG_TRANSFER_IN)
 		SSblackbox.record_feedback("amount", "credits_transferred", amount)
 		log_econ("[amount] credits were transferred from [from.account_holder]'s account to [src.account_holder]")
-		from.adjust_money(-amount, "transfer_out")
+		from.adjust_money(-amount, CREDIT_LOG_TRANSFER_OUT)
 		return TRUE
 	return FALSE
 
@@ -83,4 +83,4 @@
 
 /datum/bank_account/ship/New(newname, budget)
 	account_holder = newname
-	adjust_money(budget, "starting_money")
+	adjust_money(budget, CREDIT_LOG_STARTING_MONEY)

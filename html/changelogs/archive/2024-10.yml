@@ -175,3 +175,288 @@
   rye-rice:
   - rscadd: Various sprite improvemnts
   - bugfix: Boomslang no longer fits on the belt
+2024-10-16:
+  Anticept:
+  - bugfix: blood smart-fridge selectable on smartfridge boards now when screwdrivering
+      them.
+  Apogee-dev:
+  - balance: Valor and Vaquero have combat hardsuits for their enforcers now
+  Bjarl:
+  - rscadd: NGR turrets
+  - rscadd: Flipped tables actually let you throw things over them now.
+  - rscadd: Holofans now have a small window before shutting down if they are deactivated
+      by lack of power
+  - balance: Syndicate smokes are now laced with stimulants instead of omnizine.
+  - rscdel: Holoparasites
+  - rscadd: The Frontiersmen have duct taped some turrets of their own together
+  FalloutFalcon:
+  - bugfix: ghosts cannot duplicate themselves across multiple z levels.
+  Gristlebee:
+  - bugfix: Fixes walls and an enemy spawn in the Wrecked Factory
+  Sadhorizon:
+  - bugfix: Pubby ruin can no longer randomly have acid in airlocks.
+  - tweak: Syndicate soap is now in-line with NT soap.
+  - rscdel: Syndicate tools are no longer faster. They are just reskinned normal tools
+      now.
+  - rscdel: Syndicate toolbox lost it's damage buff.
+  - rscdel: Removed Karl Marx from the game.
+  - rscdel: Removed all the job statues.
+  - rscdel: Cardborg suit, human, gondola and monkey skinsuits are no longer craftable.
+  firebudgy:
+  - bugfix: Mudskipper windows are correctly reinforced, like other ships by the same
+      manufacturer.
+  - rscadd: Active smoking pipe sprites for Vox.
+  zimon9:
+  - balance: increased amount of plasma in plasma internals cargo crate
+  - balance: rebalanced the probability of a grenade going off in one's hands
+  - bugfix: fixed fauna spawning after drill malfunctions
+2024-10-17:
+  Bjarl:
+  - rscdel: South Bronx Paradise Bar
+  Gristlebee:
+  - rscadd: Ice Lodge Ruin Map and areas
+  - rscadd: Simple Mob Frontiersmen Flametrooper and Surgeon
+  - rscadd: shoot_point_blank option for simple mobs
+  - rscadd: dragon_fire_line supports igniting tiles
+  - rscadd: broken display case, gunpowder barrel, SRM corpse spawners, chemical jug
+      spawners
+  - rscdel: Cat Butcher
+  - bugfix: Frontiersmen simplemob pathing
+  - bugfix: Fence doors spawning open when they should be closed and vice versa
+  - code_imp: scattering can be disabled with auto_scatter var for bullets, grown
+      items and nutrient bottles
+  - bugfix: Shotgun calibers and shotguns being unable to load certain rounds
+  MemeSnorfer:
+  - imageadd: Resprites colored skirts, black tango, red evening gown, sailors dress,
+      sundress, white dress, and some suitskirts.
+  - rscadd: Six pinafore variants, white colored skirt, one shoulder dress, and iko-ikssoal
+      dress.
+  PositiveEntropy:
+  - imageadd: All colored jumpsuits have been resprited!
+  - rscdel: Rainbow and khaki jumpsuits (including the buster subtype) have been removed.
+  generalthrax:
+  - bugfix: Gezena has shoes again
+  - rscdel: Gezenan captain gloves no longer have partial insulation in parity with
+      other captain gloves.
+2024-10-18:
+  DIB-DOG:
+  - rscdel: Removed extra turret that wasn't supposed to be on the ship
+  - bugfix: Moved armory flashbangs to a more secure location
+  Erikafox:
+  - rscdel: Wasteplanets no longer spawn welding fuel tanks.
+  SomeguyManperson:
+  - balance: being thrown over lava by tackling, jump boots, or with assistance now
+      fully clears the lava instead of burning you horribly and setting you on fire
+  generalthrax:
+  - bugfix: Fixed a typo in the Frontiersman softcap that made the sprite go invisible
+  meemofcourse:
+  - rscadd: Atlas-class Light Armored Crusier
+  rye-rice:
+  - rscadd: Resprites the commander and Commissioner
+2024-10-19:
+  Apogee-dev:
+  - balance: Reduced Cobra-20 magazine size to 24 rounds
+  - bugfix: removed a typo from Scarborough cargo catalog entries
+  Erikafox:
+  - rscdel: Xenobiology (minus slimes)
+  - code_imp: pre-weld and pre-sealed airlock helpers for maps.
+  FalloutFalcon:
+  - rscadd: Autolathes can now print space heater boards.
+  - bugfix: examine on ammo casings now properly hint that you can write on them
+  Gristlebee:
+  - rscadd: Bullets can have a message written on them.
+  NithaIsTired:
+  - rscadd: Adds a ton of audible emotes and visible emotes like snapping your fingers
+      or twitching
+  - rscadd: You can boop people on the nose by clicking on their mouth with help intent
+  - rscadd: Sound variation with a few emotes like snapping and clapping
+  - rscadd: Laying down now plays a sound if you aren't on walk intent
+  Orchidthederg:
+  - bugfix: fallback sprite for dust storms was set to the carp sprite for some reason.
+  - imageadd: fancy new carp, meteor, and electrical storm
+  - imagedel: old carp, meteor, and electrical storm sprites
+  Spookywastaken:
+  - imageadd: Handrails have been resprited!
+  generalthrax:
+  - balance: E40 hybrid rifle ballistic mode now shoots faster
+2024-10-20:
+  FalloutFalcon:
+  - balance: blind people can examine twice as fast
+  - code_imp: makes defines for the two primary atoms requirement lists
+2024-10-21:
+  Apogee-dev:
+  - balance: Made Komodo aspawn
+2024-10-22:
+  Imaginos, Erika:
+  - rscadd: The Pan Gezenan Federation has sent out shipments of boarding cutlasses
+      to the Frontier. Expect cool doohickeys on your friendly neighborhood PGF Vessel
+  - imageadd: 'Imaginos: PGF sord sprites'
+  - code_imp: sabres now take up less space in code
+2024-10-23:
+  Erikafox:
+  - bugfix: Hallucination Anomalies will stay on their tile now.
+  - rscadd: You can now fax credit holochips
+  - bugfix: Analgesia can no longer be taken with self-aware
+  - bugfix: Few edge cases for analgesiacs getting pain
+  FalloutFalcon:
+  - bugfix: ammo
+  - refactor: refactored ammo types to not be snowflaked when handling spawning subtyped
+      guns
+  FeenieRU:
+  - code_imp: Changing qdel() and SSgarbage procs
+  - code_imp: rewrite /Destroy(force, silent) to /Destroy(force)
+  Sun-Soaked:
+  - rscadd: Directional Mines, implemented as Claymores.
+  - rscadd: Mines now have World Icons
+  - balance: explosions now only strip to space when a tile is already damaged
+  - bugfix: Prox mines explode from slightly further away & no longer activate through
+      walls.
+  - bugfix: Multiple mines can no longer be stacked on a tile
+  - code_imp: fire_casing() can now be called by non-mobs, allowing objects to shoot
+      casings.
+  - bugfix: cleans up mine wire datums on mine deletion
+  generalthrax:
+  - rscadd: Added Stamped Steel Machetes, 5 for 500
+  meemofcourse:
+  - rscadd: A lot of ERTs and ERT remasters, including Fronties, Ramzi, PGF, NGR,
+      Indies and whatnot
+  - rscdel: Most Nanotrasen ERTs have been shelved pending assets
+  - rscdel: Smokebomb randomized descriptions
+2024-10-24:
+  Erika Fox:
+  - rscadd: An abandoned tradepost has been located in the system. Investigate nearby
+      waste worlds for more information.
+  - rscadd: preburnt flares
+  Erikafox:
+  - rscadd: Kasagi-Fischer has begun a new production run of the venerable Raleigh-class
+      Corvette. See your purchaser's manual for more information!
+  - balance: Fireaxes on the black market now cost less. Thanks Kiirv-Waha!
+  FalloutFalcon:
+  - code_imp: better pr labeling for ships and ruins
+2024-10-25:
+  Erikafox:
+  - bugfix: Newscasters can now read IDs through a wallet.
+  FalloutFalcon:
+  - refactor: refactored some mapping stuff including random spawners!
+  Gristlebee:
+  - rscadd: Vote sound changed to announce_dig.ogg
+  MemeSnorfer and Moffball:
+  - imageadd: Snouted balaclava sprites for both Sarathi and Elzuose
+  - code_imp: Elzuose snout type, for use with mask sprites
+  Sadhorizon:
+  - tweak: Medical stacks now work on corpses.
+  SomeguyManperson:
+  - balance: simple humans now have as much health as normal humans! This makes them
+      weaker!
+  - balance: simple humans now also benefit from their armor as much as normal humans!
+      This makes them stronger!
+  generalthrax:
+  - bugfix: Design disks work again
+  thgvr:
+  - balance: Removed Kepori damage modifiers.
+  - balance: Decreased Kepori move speed modifier. (They are still a bit faster than
+      average)
+  zimon9:
+  - bugfix: fixed the orbit menu search function so that names work again
+  - rscadd: Added plastitanium shards
+  - bugfix: fixed some artifacts in the plasma glass shard sprites
+2024-10-26:
+  FalloutFalcon:
+  - rscadd: Faction statistics are now logged to the blackbox
+  - rscdel: Removes some cruft, red and blue team radios, out date/useless database
+      logging station trash cleaned
+  MarkSuckerberg:
+  - server: qdel logs work again
+2024-10-27:
+  Anticept:
+  - refactor: Refactored moods so explicit newlines are not required in descriptions.
+      None of this changes player facing stuff.
+  'Apogeesys, Ryerice, Erikafox ':
+  - rscadd: Serene Outdoors has begun a new production run of its classics - the Model
+      17, Model 12, Model 15, and Model 11
+  - rscdel: old combat shotgun
+  Erika - porting from /tg/ mostly.:
+  - rscadd: Tape Recorders now have a radial menu when used
+  - rscadd: Tape recorders now make noises
+  - rscadd: Tape recorders now have wires (can be remotely used)
+  Erikafox:
+  - balance: Hammer RPGs should no longer annihilate you completely. Just partially.
+  - bugfix: Weapons with no bolt can no longer be racked. Use your hand on them instead
+  - rscadd: Transceivers have been picking up an intermittent radio signal coming
+      from a nearby sand world. People with too much spare time - please check it
+      out.
+  - rscadd: Satchel Charges. Exceedingly rare and decently explosive.
+  - balance: Chances are, if there was a plasma cutter on a ship, it's an angle grinder
+      now. Rejoice. Cry in terror. Whatever honestly.
+  - balance: Angle grinders can now grind blast doors. reinforced windows are now
+      less bad to grind down.
+  - balance: angle grinder packs now slow you down less
+  - balance: angle grinders now sound less Screechy
+  - balance: angle grinders can now be safely used with a Bowman headset.
+  Sadhorizon:
+  - rscadd: All the inteq ships (and the beluga inteq office) now start with a rail
+      light for every gun.
+  - tweak: Rail light crate now costs 100 credits.
+  - rscadd: Added the Scarab-class Heavy Mining Ship
+  Sun-Soaked:
+  - bugfix: cleans up 3 potentially sticky refs
+  - bugfix: limb items no longer runtime when moved or dropped
+  - bugfix: vox blood & body damage overlays.
+  - imageadd: something something fixed vox overlays countless hours of work
+  - code_imp: replaced a horrifying var reference in clothing with a weakref
+  - code_imp: the thresholds for limb damage sprites have been reduced
+  - refactor: reworks clothing blood overlay into a central proc called by clothing
+  generalthrax:
+  - balance: Reloading speed from stacks doubled
+  - balance: Increase ammo can to bulky and lets it hold 4 normal-sized ammoboxes,
+      can only hold ammo and explosives.
+  - balance: Adjusted price of .299 Eoehoma slightly, adds a second box to the cargo
+      order since its 60 instead of 120
+  - bugfix: Fixes a bunch of bullet stacks to have correct numbers
+  - bugfix: Larger handfuls (.22lr)
+  - bugfix: Mapped in ammo cans now hold their boxes
+  - bugfix: 12g beanbag now has beanbag instead of rubber + beanbag
+  - bugfix: Ammo box icons and descriptions
+  - rscdel: Removed .22lr from the blackmarket. Its in cargo already.
+  zimon9:
+  - rscadd: Added better names for some material shards
+  - rscadd: Added ability to see screens using the examine_more function
+2024-10-28:
+  Sadhorizon:
+  - rscadd: A new sand ruin - the E-11 Manufacturing Plant - and associated code.
+  - rscadd: A purple hardhat.
+2024-10-29:
+  FalloutFalcon:
+  - rscdel: Removed some ancient away mission cruft
+  - code_imp: flaky tests can now comment under its own prs.
+  FalloutFalcon, Melbert:
+  - refactor: transforming weapons are easier to add
+  MarkSuckerberg:
+  - server: Logs a few more stats for use in the Statbus at https://shiptest.net/stats
+  thgvr:
+  - imageadd: Updated world icons for knives
+2024-10-30:
+  Erikafox:
+  - rscadd: Some planets now have new lighting values. Please report back on if they
+      are "Pleasant"
+  rye-rice:
+  - rscadd: You can now detect certain gases from smell, most notably plasma
+  - rscadd: Adds 6 new gases, all unused at the moment
+  - rscdel: 3 gases, Pluox, Nitryl, and Stimming
+  - balance: The noble gas suppresssion threshold has been increased from 10 mols
+      to 75 mols
+  - balance: Various gases have had their enthalpy (energy released during fires)
+      adjusted, changing the behavior of gas fires slightly.
+  - balance: Plasma is a much more potent skin/eye irritant
+  - balance: Hydrogen gas is no longer visible
+  - bugfix: Freon's stage one breath effects should work now, before they were tied
+      to nitryl's amount
+  rye-rice, Jedi Toothpaste:
+  - rscadd: adds Beagle Mug
+  - rscadd: adds Beagle Mug to Atlas Class
+2024-10-31:
+  Gristlebee:
+  - rscadd: Indie Viper guncase comes with 2 speedloaders.
+  SomeguyManperson:
+  - code_imp: empty energy weapons now get emptied slightly differently, no player-facing
+      changes

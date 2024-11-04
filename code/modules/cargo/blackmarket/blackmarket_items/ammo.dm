@@ -25,17 +25,6 @@
 	stock_max = 10
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/himehabu_box
-	name = ".22 LR Ammo Box"
-	desc = "A 75 round ammo box of .22 LR. Trust me, you'll need every shot."
-	item = /obj/item/storage/box/ammo/c22lr
-
-	price_min = 100
-	price_max = 300
-	stock_min = 6
-	stock_max = 10
-	availability_prob = 0
-
 /datum/blackmarket_item/ammo/a357_box
 	name = ".357 Ammo Box"
 	desc = "A 50 round ammo box of .357."
@@ -57,15 +46,37 @@
 	stock = 6
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/c299
-	name = "Eoehoma .299 Caseless Ammo Box"
-	desc = "This ammunition for the E-40 Hybrid Rifle is probably worth more than the people you're shooting it at."
-	item = /obj/item/storage/box/ammo/c299
+/datum/blackmarket_item/ammo/cm23_mag
+	name = "CM-23 Magazines"
+	desc = "10 round 10mm magazines for use in the CM-23 pistol."
+	item = /obj/item/ammo_box/magazine/cm23
 
-	price_min = 300
-	price_max = 700
+	price_min = 150
+	price_max = 300
+	stock_min = 6
+	stock_max = 10
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cm70_mag
+	name = "CM-70 Magazines"
+	desc = "18 round 9mm magazines for use in the CM-70 pistol."
+	item = /obj/item/ammo_box/magazine/m9mm_cm70
+
+	price_min = 200
+	price_max = 300
 	stock_min = 4
 	stock_max = 8
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cm5_mag
+	name = "CM-5 Magazines"
+	desc = "30 round 9mm magazines for use in the CM-5 SMG."
+	item = /obj/item/ammo_box/magazine/cm5_9mm
+
+	price_min = 300
+	price_max = 600
+	stock_min = 2
+	stock_max = 6
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/saber_mag
@@ -135,7 +146,7 @@
 /datum/blackmarket_item/ammo/carbine_mag
 	name = "SKM-24v Magazine"
 	desc = "A 30 round magazine of 4.6x30mm for the SKM-24v. A hermit classic."
-	item = /obj/item/ammo_box/magazine/skm_545_39
+	item = /obj/item/ammo_box/magazine/skm_46_30
 
 	price_min = 500
 	price_max = 1000

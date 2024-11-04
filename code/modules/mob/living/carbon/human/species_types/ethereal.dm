@@ -17,10 +17,9 @@
 	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
 	exotic_bloodtype = "E"
-	damage_overlay_type = "" //We are too cool for regular damage overlays
 	species_age_max = 300
 	species_traits = list(DYNCOLORS, EYECOLOR, HAIR, FACEHAIR)
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
 	sexes = FALSE //no fetish content allowed

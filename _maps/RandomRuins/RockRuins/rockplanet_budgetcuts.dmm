@@ -109,7 +109,7 @@
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
 "by" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel,
@@ -214,7 +214,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "db" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
@@ -960,21 +960,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "pj" = (
 /obj/structure/table/reinforced,
-/obj/item/slime_extract/grey{
-	pixel_x = -4;
-	pixel_y = -1
-	},
-/obj/item/slime_extract/grey{
-	pixel_x = 8
-	},
-/obj/item/slime_extract/grey,
-/obj/item/slime_extract/grey,
-/obj/item/slime_extract/green{
-	pixel_x = 4;
-	pixel_y = -6
-	},
 /obj/structure/window/reinforced,
-/obj/item/slime_scanner,
 /turf/open/floor/engine,
 /area/ruin/rockplanet/nanotrasen)
 "pl" = (
@@ -1318,7 +1304,7 @@
 	pixel_x = -9;
 	pixel_y = 3
 	},
-/obj/item/stamp/hos{
+/obj/item/stamp/nanotrasen/vigilitas/security{
 	pixel_x = -9;
 	pixel_y = 9
 	},
@@ -1565,7 +1551,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
 "Ap" = (
@@ -1713,7 +1699,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Cx" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
@@ -2201,7 +2187,7 @@
 	pixel_x = 7;
 	pixel_y = 3
 	},
-/obj/item/stamp/rd{
+/obj/item/stamp/nanotrasen/science{
 	pixel_x = -6;
 	pixel_y = 12
 	},
@@ -2507,7 +2493,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "Rm" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/carpet/black,
 /area/ruin/rockplanet/nanotrasen)

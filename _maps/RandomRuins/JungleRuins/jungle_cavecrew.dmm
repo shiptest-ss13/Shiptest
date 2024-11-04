@@ -167,7 +167,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "bH" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/cloth/grey,
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/carpet/nanoweave/beige,
@@ -1028,14 +1028,10 @@
 	pixel_y = 32
 	},
 /obj/structure/closet/secure_closet/freezer/wall/directional/west,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = -8;
 	pixel_y = 5
@@ -1371,7 +1367,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
-/obj/item/gun/ballistic/shotgun/automatic/combat{
+/obj/item/gun/ballistic/shotgun/automatic/m11{
 	pixel_y = 5
 	},
 /obj/item/gun/ballistic/revolver/ashhand{
@@ -1752,9 +1748,9 @@
 	pixel_y = -5
 	},
 /obj/item/ammo_casing/a4570,
-/obj/item/ammo_box/magazine/skm_545_39,
-/obj/item/ammo_box/magazine/skm_545_39,
-/obj/item/ammo_box/magazine/skm_545_39,
+/obj/item/ammo_box/magazine/skm_46_30,
+/obj/item/ammo_box/magazine/skm_46_30,
+/obj/item/ammo_box/magazine/skm_46_30,
 /obj/item/ammo_box/magazine/illestren_a850r,
 /obj/item/ammo_box/magazine/illestren_a850r,
 /turf/open/floor/plasteel/tech,
@@ -2225,7 +2221,7 @@
 /area/ruin/jungle/cavecrew/bridge)
 "Be" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/jungle/cavecrew/dormitories)
@@ -2414,7 +2410,7 @@
 	pixel_y = -8;
 	pixel_x = 5
 	},
-/obj/item/melee/transforming/energy/sword/saber/pirate/red,
+/obj/item/melee/energy/sword/saber/pirate/red,
 /turf/open/floor/wood,
 /area/ruin/jungle/cavecrew/dormitories)
 "Dh" = (

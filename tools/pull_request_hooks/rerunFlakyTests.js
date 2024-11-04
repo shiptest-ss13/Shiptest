@@ -2,10 +2,8 @@ const LABEL = "🤖 Flaky Test Report";
 const TITLE_BOT_HEADER = "title: ";
 
 // Only check jobs that start with these.
-// Helps make sure we don't restart something like screenshot tests or linters, which are not known to be flaky.
-const CONSIDERED_JOBS = [
-	"Integration Tests",
-];
+// Helps make sure we don't restart something like linters, which are not known to be flaky.
+const CONSIDERED_JOBS = ["Integration Tests"];
 
 async function getFailedJobsForRun(github, context, workflowRunId, runAttempt) {
 	const jobs = await github.paginate(
@@ -14,14 +12,14 @@ async function getFailedJobsForRun(github, context, workflowRunId, runAttempt) {
 			owner: context.repo.owner,
 			repo: context.repo.repo,
 			run_id: workflowRunId,
-			attempt_number: runAttempt
+			attempt_number: runAttempt,
 		},
-		response => {
+		(response) => {
 			return response.data;
-		});
+		}
+	);
 
-	return jobs
-		.filter((job) => job.conclusion === "failure");
+	return jobs.filter((job) => job.conclusion === "failure");
 }
 
 export async function rerunFlakyTests({ github, context }) {
@@ -33,7 +31,7 @@ export async function rerunFlakyTests({ github, context }) {
 	);
 
 	const filteredFailingJobs = failingJobs.filter((job) => {
-		console.log(`Failing job: ${job.name}`)
+		console.log(`Failing job: ${job.name}`);
 		return CONSIDERED_JOBS.some((title) => job.name.startsWith(title));
 	});
 	if (filteredFailingJobs.length === 0) {
@@ -139,7 +137,9 @@ export function extractDetails(log) {
 	if (runtimeMatch) {
 		const runtime = runtimeMatch.groups.error.trim();
 
-		const invalidTimerMatch = runtime.match(/^Invalid timer:.+object:(?<object>[^[]+).*delegate:(?<proc>.+?), source:/);
+		const invalidTimerMatch = runtime.match(
+			/^Invalid timer:.+object:(?<object>[^[]+).*delegate:(?<proc>.+?), source:/
+		);
 		if (invalidTimerMatch) {
 			return {
 				title: `Flaky test ${failGroup}: Invalid timer: ${invalidTimerMatch.groups.proc.trim()} on ${invalidTimerMatch.groups.object.trim()}`,
@@ -153,7 +153,9 @@ export function extractDetails(log) {
 		};
 	}
 
-	const hardDelMatch = failure.headline.match(/^(?<object>\/[\w/]+) hard deleted .* times out of a total del count of/);
+	const hardDelMatch = failure.headline.match(
+		/^(?<object>\/[\w/]+) hard deleted .* times out of a total del count of/
+	);
 	if (hardDelMatch) {
 		return {
 			title: `Flaky hard delete: ${hardDelMatch.groups.object}`,
@@ -202,7 +204,9 @@ async function getExistingIssueId(graphql, context, title) {
 		}
 	);
 
-	const exactTitle = openFlakyTestIssues.find((issue) => issue.title === title);
+	const exactTitle = openFlakyTestIssues.find(
+		(issue) => issue.title === title
+	);
 	if (exactTitle !== undefined) {
 		return exactTitle.number;
 	}
@@ -229,11 +233,17 @@ function createBody({ title, failures }, runUrl) {
 	${failures
 		.map(
 			(failure) =>
-				`${failure.group}: ${failure.headline}\n\t${failure.details.join("\n")}`
+				`${failure.group}: ${
+					failure.headline
+				}\n\t${failure.details.join("\n")}`
 		)
 		.join("\n")}
 	\`\`\`
 	`.replace(/^\s*/gm, "");
+}
+
+function createComment(runUrl) {
+	return `Flaky tests were detected again in [this test run](${runUrl}).`;
 }
 
 export async function reportFlakyTests({ github, context }) {
@@ -245,7 +255,7 @@ export async function reportFlakyTests({ github, context }) {
 	);
 
 	const filteredFailingJobs = failedJobsFromLastRun.filter((job) => {
-		console.log(`Failing job: ${job.name}`)
+		console.log(`Failing job: ${job.name}`);
 		return CONSIDERED_JOBS.some((title) => job.name.startsWith(title));
 	});
 
@@ -275,8 +285,21 @@ export async function reportFlakyTests({ github, context }) {
 		);
 
 		if (existingIssueId !== undefined) {
-			// Maybe in the future, if it's helpful, update the existing issue with new links
-			console.log(`Existing issue found: #${existingIssueId}`);
+			await github.rest.issues.createComment({
+				owner: context.repo.owner,
+				repo: context.repo.repo,
+				issue_number: existingIssueId,
+				body: createComment(
+					`https://github.com/${context.repo.owner}/${
+						context.repo.repo
+					}/actions/runs/${
+						context.payload.workflow_run.id
+					}/attempts/${context.payload.workflow_run.run_attempt - 1}`
+				),
+			});
+			console.log(
+				`Existing issue found: #${existingIssueId}, updated it with a comment`
+			);
 			return;
 		}
 

@@ -56,7 +56,8 @@
 
 //BALLISTIC
 	///Compatible magazines with the gun
-	var/mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck //Removes the need for max_ammo and caliber info
+	var/default_ammo_type
+	var/allowed_ammo_types
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
 	///Do we eject the magazine upon runing out of ammo?
@@ -99,7 +100,6 @@
 //ENERGY
 	//What type of power cell this uses
 	var/obj/item/stock_parts/cell/gun/cell
-	var/cell_type = /obj/item/stock_parts/cell/gun
 	//Can it be charged in a recharger?
 	var/can_charge = TRUE
 	var/selfcharge = FALSE
@@ -107,8 +107,6 @@
 	var/charge_delay = 4
 	//whether the gun's cell drains the cyborg user's cell to recharge
 	var/use_cyborg_cell = FALSE
-	///Used for large and small cells
-	var/mag_size = MAG_SIZE_MEDIUM
 	//Time it takes to unscrew the cell
 	var/unscrewing_time = 2 SECONDS
 
@@ -262,8 +260,6 @@
 */
 	///The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED
 	var/list/valid_attachments = list()
-	///Reference to our attachment holder to prevent subtypes having to call GetComponent
-	var/datum/component/attachment_holder/attachment_holder
 	///Number of attachments that can fit on a given slot
 	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
 	///Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
@@ -290,6 +286,8 @@
 	var/safety = FALSE
 	///The wording of safety. Useful for guns that have a non-standard safety system, like a revolver
 	var/safety_wording = "safety"
+	///multiplier for this gun's misfire chances. Closer to 0 is better.
+	var/safety_multiplier = 1
 
 /*
  *  Spawn Info (Stuff that becomes useless onces the gun is spawned, mostly here for mappers)
@@ -297,13 +295,9 @@
 	///Attachments spawned on initialization. Should also be in valid attachments or it SHOULD(once i add that) fail
 	var/list/default_attachments = list()
 
-//BALLISTIC
-	///Whether the gun will spawn loaded with a magazine
-	var/spawnwithmagazine = TRUE
-
 //ENERGY
 	//set to true so the gun is given an empty cell
-	var/dead_cell = FALSE
+	var/spawn_no_ammo = FALSE
 
 // Need to sort
 	///trigger guard on the weapon. Used for hulk mutations and ashies. I honestly dont know how usefult his is, id avoid touching it
@@ -327,7 +321,7 @@
 	///This prevents gun from firing until the coodown is done, affected by lag
 	var/current_cooldown = 0
 
-/obj/item/gun/Initialize()
+/obj/item/gun/Initialize(mapload, spawn_empty)
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
@@ -339,13 +333,13 @@
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
-	attachment_holder = AddComponent(/datum/component/attachment_holder, slot_available, valid_attachments, slot_offsets, default_attachments)
+	AddComponent(/datum/component/attachment_holder, slot_available, valid_attachments, slot_offsets, default_attachments)
 	AddComponent(/datum/component/two_handed)
 
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
-	INVOKE_ASYNC(src, .proc.do_wield, user)
+	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
 
 /obj/item/gun/proc/do_wield(mob/user)
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
@@ -384,6 +378,8 @@
 		QDEL_NULL(azoom)
 	if(muzzle_flash)
 		QDEL_NULL(muzzle_flash)
+	if(magazine)
+		QDEL_NULL(magazine)
 	return ..()
 
 /obj/item/gun/handle_atom_del(atom/A)
@@ -963,7 +959,7 @@
 // for guns firing on their own without a user
 /obj/item/gun/proc/discharge(cause, seek_chance = 10)
 	var/target
-	if(!safety)
+	if(!safety && has_safety)
 		// someone is very unlucky and about to be shot
 		if(prob(seek_chance))
 			for(var/mob/living/target_mob in range(6, get_turf(src)))
@@ -991,16 +987,17 @@
 	if(ishuman(src))
 		human_holder = src
 	for(var/obj/item/gun/at_risk in get_all_contents())
-		var/chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM
+		var/chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM * at_risk.safety_multiplier)
 		if(human_holder)
 			// gun is less likely to go off in a holster
 			if(at_risk == human_holder.s_store)
-				chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW
+				chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW * at_risk.safety_multiplier)
 		if(at_risk.safety == FALSE && prob(chance_to_fire))
-			if(at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)) == TRUE)
+			var/bodyzone = pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)
+			if(at_risk.process_fire(src,src,FALSE, null, bodyzone) == TRUE)
 				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
-				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg without its safties on!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without its safeties on!"))
-				emote("scream")
+				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s [bodyzone]!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your [bodyzone]!"))
+				human_holder.force_scream()
 
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom
@@ -1008,18 +1005,21 @@
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
-	var/obj/item/gun/gun = null
 
 /datum/action/toggle_scope_zoom/Trigger()
+	if(!istype(target, /obj/item/gun) || !..())
+		return
+
+	var/obj/item/gun/gun = target
 	gun.zoom(owner, owner.dir)
 
-/datum/action/toggle_scope_zoom/IsAvailable()
-	. = ..()
-	if(!. && gun)
-		gun.zoom(owner, owner.dir, FALSE)
+/datum/action/toggle_scope_zoom/Remove(mob/user)
+	if(!istype(target, /obj/item/gun))
+		return ..()
 
-/datum/action/toggle_scope_zoom/Remove(mob/living/L)
-	gun.zoom(L, L.dir, FALSE)
+	var/obj/item/gun/gun = target
+	gun.zoom(user, user.dir, FALSE)
+
 	..()
 
 /obj/item/gun/proc/rotate(atom/thing, old_dir, new_dir)
@@ -1056,8 +1056,7 @@
 		return
 
 	if(zoomable)
-		azoom = new()
-		azoom.gun = src
+		azoom = new(src)
 
 /obj/item/gun/proc/build_firemodes()
 	if(FIREMODE_FULLAUTO in gun_firemodes)
@@ -1117,7 +1116,7 @@
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	/obj/item/gun/energy/plasmacutter,
-	/obj/item/melee/transforming/energy,
+	/obj/item/melee/energy,
 	)))
 
 ///Handles all the logic of sawing off guns,

@@ -144,6 +144,7 @@ TURF_DECAL_COLOR_HELPER(opaque/solgovblue, "#2d2a4e", 255)
 TURF_DECAL_COLOR_HELPER(opaque/solgovgold, "#eeac2e", 255)
 TURF_DECAL_COLOR_HELPER(opaque/syndiered, "#730622", 255)
 TURF_DECAL_COLOR_HELPER(opaque/inteqbrown, "#4b2a18", 255)
+TURF_DECAL_COLOR_HELPER(opaque/cybersunteal, "#4C9C9C", 255)
 
 //transparent
 TURF_DECAL_COLOR_HELPER(transparent/neutral, null, 75)
@@ -171,6 +172,7 @@ TURF_DECAL_COLOR_HELPER(transparent/solgovblue, "#2d2a4e", 140)
 TURF_DECAL_COLOR_HELPER(transparent/solgovgold, "#eeac2e", 140)
 TURF_DECAL_COLOR_HELPER(transparent/syndiered, "#730622", 140)
 TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
+TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 
 /obj/effect/turf_decal/spline/plain
 	icon_state = "spline_plain"

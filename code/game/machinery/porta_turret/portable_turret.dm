@@ -1007,11 +1007,58 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/ship/pgf/heavy
 	name = "Etherbor Point-Defense System"
 	desc = "A high-powered defensive turret manufactured by Etherbor. The EPDS contains heavy energy weapons linked in tandem."
-	scan_range = 10
+	scan_range = 12
 	stun_projectile = /obj/projectile/beam/hitscan/disabler/heavy
 	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf/sniper //fwoom
 	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+
+///CLIP Turrets
+
+//high damage low range
+
+/obj/machinery/porta_turret/ship/clip
+	name = "Clover Mintaka"
+	desc = "Clover Photonic's offering for the Confederated League's 476FS \"Defense System\" competition, the Mintaka (and its sister systems, the Alnitak and Ori) handily beat out the Lunatex \"Vigil\" line during the final round of testing, and earned a prestigous contract."
+	faction = list(FACTION_PLAYER_MINUTEMAN, "Turret")
+	stun_projectile = /obj/projectile/beam/disabler
+	stun_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+	lethal_projectile = /obj/projectile/beam/laser/assault
+	lethal_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+	icon_state = "standard_lethal"
+	base_icon_state = "standard"
+
+	scan_range = 8
+	shot_delay = 10
+	max_integrity = 200
+	integrity_failure = 0.3
+
+/obj/machinery/porta_turret/ship/clip/light
+	name = "Clover Alnitak"
+	desc = "Clover Photonic's light turret system, unveiled as part of Clover's defense line-up in the early 470s. While lacking the punch of its sister systems, it still presents a hassle to circumvent."
+	stun_projectile = /obj/projectile/beam/disabler
+	stun_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+	lethal_projectile = /obj/projectile/beam/laser/light
+	lethal_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+
+	scan_range = 6
+	shot_delay = 10
+	max_integrity = 200
+	integrity_failure = 0.4
+
+/obj/machinery/porta_turret/ship/clip/heavy
+	name = "Clover Ori"
+	desc = "Clover Photonic's heaviest entry in the Confederated League's 476FS \"Defense System\" competition, the Ori's results demolished the handily beat out the Lunatex \"Vigil Sword\" during testing, earning better marks on durability, effectiveness, and reaction rate."
+	stun_projectile = /obj/projectile/beam/disabler
+	stun_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+	lethal_projectile = /obj/projectile/beam/laser/heavylaser/assault
+	lethal_projectile_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+
+	scan_range = 10
+	shot_delay = 20
+	max_integrity = 300
+	integrity_failure = 0.3
+
 
 /// Frontiersmen Turrets
 
@@ -1279,7 +1326,7 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/item/gun/ballistic/get_turret_properties()
 	. = ..()
-	var/obj/item/ammo_box/mag = mag_type
+	var/obj/item/ammo_box/mag = default_ammo_type
 	var/obj/item/ammo_casing/primary_ammo = initial(mag.ammo_type)
 
 	.["base_icon_state"] = "syndie"

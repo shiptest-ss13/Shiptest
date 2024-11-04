@@ -36,3 +36,8 @@
 	permeability_coefficient = 0.01
 	equip_delay_other = 10
 
+/obj/item/clothing/mask/balaclava/inteq //inteq needs a faction clothing file badly but it's out of scope for this PR -apogee
+	name = "IRMG combat balaclava"
+	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot! This one is a variataion commonly used by the IRMG to protect it's members idenites."
+	icon_state = "inteq_balaclava"
+	item_state = "inteq_balaclava"
