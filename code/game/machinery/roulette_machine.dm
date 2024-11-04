@@ -235,7 +235,7 @@
 
 	var/remaining_payout = payout
 
-	my_card.registered_account.adjust_money(-payout)
+	my_card.registered_account.adjust_money(-payout, CREDIT_LOG_WITHDRAW)
 
 	for(var/cash_type in cash_values) //Loop through all bundles from most valuable to least valuable. Try to give as much of that bundle as possible until you can't anymore, then move to the next.
 		var/value = cash_values[cash_type] //Change this to use initial value once we change to the right bundle

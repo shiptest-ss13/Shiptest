@@ -45,14 +45,14 @@
 
 /datum/supply_pack/food/ration
 	name = "Ration Crate"
-	desc = "6 standerd issue rations."
+	desc = "6 standard issue rations. For your inner jarhead."
 	cost = 500
-	contains = list(/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration)
+	contains = list(/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration)
 	crate_name = "ration crate"
 	crate_type = /obj/structure/closet/crate
 
@@ -94,7 +94,7 @@
 
 /datum/supply_pack/food/ingredients_randomized
 	name = "Exotic Meat Crate"
-	desc = "The best cuts in the whole galaxy. Probably."
+	desc = "The best cuts in the whole sector. Probably."
 	cost = 500
 	contains = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime,
 					/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
@@ -117,7 +117,7 @@
 
 /datum/supply_pack/food/ingredients_randomized/meat
 	name = "Standard Meat Crate"
-	desc = "Less interesting cuts of meat, but filling nonetheless."
+	desc = "Less interesting, yet filling cuts of meat."
 	cost = 300
 	contains = list(/obj/item/reagent_containers/food/snacks/meat/slab,
 					/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
@@ -130,7 +130,7 @@
 
 /datum/supply_pack/food/ingredients_randomized/vegetables
 	name = "Vegetables Crate"
-	desc = "Grown in vats."
+	desc = "Grown in the finest hydroponic vats."
 	cost = 250
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/chili,
 					/obj/item/reagent_containers/food/snacks/grown/corn,

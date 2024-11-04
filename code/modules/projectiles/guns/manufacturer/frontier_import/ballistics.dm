@@ -9,7 +9,10 @@
 	icon_state = "mauler"
 	item_state = "hp_generic"
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/m9mm_mauler
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m9mm_mauler,
+	)
 	fire_delay = 0.06 SECONDS
 
 	gun_firemodes = list(FIREMODE_FULLAUTO)
@@ -19,6 +22,8 @@
 	spread_unwielded = 50
 	recoil = 1
 	recoil_unwielded = 4
+	safety_multiplier = 2 //this means its twice as safe right?
+
 	fire_sound = 'sound/weapons/gun/pistol/mauler.ogg'
 
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
@@ -58,7 +63,10 @@
 
 	icon_state = "spitter"
 	item_state = "spitter"
-	mag_type = /obj/item/ammo_box/magazine/spitter_9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/spitter_9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/spitter_9mm,
+	)
 	bolt_type = BOLT_TYPE_OPEN
 	weapon_weight = WEAPON_LIGHT
 	show_magazine_on_sprite = TRUE
@@ -70,6 +78,7 @@
 	wield_slowdown = 0.25
 	wield_delay = 0.2 SECONDS
 	fire_delay = 0.09 SECONDS
+	safety_multiplier = 2
 
 	fire_sound = 'sound/weapons/gun/smg/spitter.ogg'
 	rack_sound = 'sound/weapons/gun/smg/spitter_cocked.ogg'
@@ -133,7 +142,10 @@
 
 	icon_state = "pounder"
 	item_state = "pounder"
-	mag_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
+	default_ammo_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/c22lr_pounder_pan,
+	)
 	burst_size = 1
 	fire_delay = 0.05 SECONDS
 	spread = 25
@@ -155,6 +167,7 @@
 
 	manufacturer = MANUFACTURER_IMPORT
 	wield_slowdown = 0.5
+	safety_multiplier = 2
 
 /obj/item/ammo_box/magazine/c22lr_pounder_pan
 	name = "pan magazine (.22 LR)"
@@ -180,7 +193,10 @@
 
 	icon_state = "shredder"
 	item_state = "shredder"
-	mag_type = /obj/item/ammo_box/magazine/m12_shredder
+	default_ammo_type = /obj/item/ammo_box/magazine/m12_shredder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m12_shredder,
+	)
 	spread = 15
 	recoil = 2
 	recoil_unwielded = 7
@@ -241,7 +257,10 @@
 	icon_state = "rpg"
 	item_state = "rpg"
 
-	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot,
+	)
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
 	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
 	weapon_weight = WEAPON_HEAVY
@@ -252,7 +271,10 @@
 	sealed_magazine = TRUE
 	manufacturer = MANUFACTURER_IMPORT
 	slot_flags = ITEM_SLOT_BACK
+	has_safety = FALSE
+	safety = FALSE
 
+	safety_multiplier = 0
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot/Initialize()
 	. = ..()

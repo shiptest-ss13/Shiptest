@@ -24,7 +24,7 @@
 
 /datum/supply_pack/spacesuit_armor/mining_hardsuits_indie
 	name = "Mining Hardsuit Crate"
-	desc = "One independent branded mining hardsuit for when explorer suits just dont cut it."
+	desc = "One independent-manufactured mining hardsuit, for when explorer suits just dont cut it."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/independent)
 	crate_name = "mining hardsuit crate"
