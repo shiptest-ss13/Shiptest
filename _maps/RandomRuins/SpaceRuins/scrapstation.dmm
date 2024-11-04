@@ -523,6 +523,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/light/directional/east,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "db" = (
@@ -4267,6 +4268,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/med)
 "zP" = (
@@ -4328,13 +4330,16 @@
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/bridge)
 "Ak" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "Al" = (
@@ -4739,6 +4744,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "Ck" = (
@@ -4839,6 +4847,10 @@
 /obj/machinery/light/broken/directional/south,
 /turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/external)
+"CU" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/engi)
 "CV" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 5
@@ -5441,6 +5453,9 @@
 /obj/machinery/door/airlock/mining,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "GP" = (
@@ -5526,13 +5541,16 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/powered/ramzi_station/med)
 "Hl" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "Hm" = (
@@ -5603,6 +5621,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/ramzi_station/engi)
+"HX" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "HZ" = (
 /obj/structure/lattice,
@@ -6363,6 +6386,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "LV" = (
@@ -6459,6 +6483,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
@@ -7142,6 +7169,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
@@ -7898,6 +7927,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "Uj" = (
@@ -8288,6 +8318,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "Wj" = (
@@ -8327,6 +8360,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
@@ -8375,6 +8411,10 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/ruin/space)
+"WE" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/closed/wall/r_wall/syndicate,
+/area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "WF" = (
 /obj/structure/closet/secure_closet/quartermaster{
 	populate = 0;
@@ -11478,7 +11518,7 @@ OJ
 zs
 zs
 zs
-zs
+WE
 Ll
 vM
 Ds
@@ -11537,7 +11577,7 @@ gz
 kR
 OJ
 nI
-dg
+HX
 TL
 OJ
 Na
@@ -11602,7 +11642,7 @@ Qh
 dg
 OJ
 Wl
-LH
+CU
 dP
 OJ
 Na
