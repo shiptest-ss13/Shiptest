@@ -412,10 +412,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/effect/turf_decal/techfloor,
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "dI" = (
@@ -675,13 +678,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/effect/turf_decal/techfloor/corner,
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "gJ" = (
@@ -722,14 +722,14 @@
 /turf/open/floor/engine/air,
 /area/ship/engineering)
 "gW" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/brown/warning{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -1717,11 +1717,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/effect/turf_decal/techfloor,
 /obj/structure/chair/handrail{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "sa" = (
@@ -2578,8 +2578,8 @@
 /area/ship/cargo)
 "CD" = (
 /obj/machinery/light/directional/south,
-/obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "CF" = (
@@ -2961,9 +2961,6 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Ic" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -3279,12 +3276,15 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "La" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -3461,6 +3461,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -4093,9 +4096,6 @@
 "Vi" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
