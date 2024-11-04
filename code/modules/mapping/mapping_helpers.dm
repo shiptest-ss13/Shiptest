@@ -169,9 +169,7 @@
 	if(airlock.seal)
 		log_mapping("[src] at [AREACOORD(src)] tried to seal [airlock] but it's already already got a seal? What the hell!")
 	else
-		airlock.seal = new /obj/item/door_seal(src)
-
-
+		airlock.seal = new /obj/item/door_seal(airlock)
 
 /obj/effect/mapping_helpers/airlock/unres
 	name = "airlock unresctricted side helper"

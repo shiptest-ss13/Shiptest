@@ -191,7 +191,7 @@
 	else
 		return ..()
 
-/obj/machinery/flasher/portable/turn_on()
+/obj/machinery/flasher/portable/proc/turn_on()
 	add_overlay("[base_icon_state]-s")
 	set_anchored(TRUE)
 	power_change()

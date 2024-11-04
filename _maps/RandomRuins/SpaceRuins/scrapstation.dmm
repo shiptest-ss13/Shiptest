@@ -203,6 +203,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/engineering)
 "bk" = (
+/obj/structure/sign/warning/incident{
+	pixel_y = 30
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "bm" = (
@@ -275,6 +278,10 @@
 "bL" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/lime/mono,
+/obj/machinery/button/door{
+	name = "bridge shutters";
+	id = "shipbridge"
+	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "bN" = (
@@ -495,9 +502,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/powered/ramzi_station/toilet)
@@ -704,6 +708,10 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "pgf_door"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/pgf_wreck/external)
 "et" = (
@@ -744,6 +752,18 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station)
+"eH" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/stairs/mid,
+/area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "eM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -870,9 +890,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
@@ -904,11 +921,11 @@
 "fN" = (
 /obj/effect/spawner/bunk_bed,
 /obj/structure/curtain/cloth/grey,
-/obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
-	pixel_y = 33
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/obj/structure/sign/poster/contraband/eoehoma{
+	pixel_y = 31
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/space/has_grav/powered/ramzi_station/dorms)
@@ -955,6 +972,7 @@
 	dir = 5
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "gh" = (
@@ -1139,6 +1157,7 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
+/mob/living/simple_animal/hostile/human/syndicate/ranged/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "hj" = (
@@ -1377,7 +1396,6 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/suit/fire/firefighter,
 /obj/item/clothing/head/hardhat/red,
-/obj/item/reagent_containers/food/drinks/coffee,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "ix" = (
@@ -1388,7 +1406,6 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/machinery/power/terminal,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/dorms)
@@ -1446,9 +1463,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/pgf_wreck/external)
 "jv" = (
-/obj/item/clothing/neck/cloak/cap,
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/powered/ramzi_station/foreman)
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 8;
+	piping_layer = 4
+	},
+/obj/structure/sign/warning/nosmoking{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/engi)
 "jz" = (
 /obj/structure/chair{
 	dir = 8
@@ -1653,8 +1676,17 @@
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/external)
 "kV" = (
-/turf/open/floor/plasteel/dark,
-/area/template_noop)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/stairs/right,
+/area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "kW" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
@@ -1727,6 +1759,10 @@
 	icon_state = "0-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/sign/warning/electricshock{
+	pixel_x = 26;
+	pixel_y = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "lk" = (
@@ -1796,6 +1832,9 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
+	},
+/mob/living/simple_animal/hostile/human/syndicate/ranged/smg{
+	minimum_distance = 2
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/space/has_grav/powered/ramzi_station/dorms)
@@ -1909,7 +1948,9 @@
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
 "mo" = (
 /obj/structure/lattice/catwalk,
-/obj/structure/marker_beacon,
+/obj/structure/marker_beacon{
+	picked_color = "burgundy"
+	},
 /turf/open/space/basic,
 /area/ruin/space)
 "mr" = (
@@ -2009,7 +2050,6 @@
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck/dorms)
 "ne" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -2019,6 +2059,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "nf" = (
@@ -2204,6 +2248,9 @@
 "oa" = (
 /obj/structure/rack,
 /obj/item/storage/backpack/duffelbag/syndie/c4,
+/obj/structure/sign/warning/explosives{
+	pixel_x = 30
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "od" = (
@@ -2290,6 +2337,7 @@
 "os" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /obj/machinery/light/directional/south,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "ou" = (
@@ -2314,7 +2362,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/terminal,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
 "oB" = (
@@ -2980,13 +3027,13 @@
 "sB" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "sF" = (
-/obj/item/paper{
-	pixel_y = -5;
-	pixel_x = 8
-	},
+/obj/item/paper/crumpled/bloody/fluff/ruin/space/ramzistation/toilet,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/powered/ramzi_station/toilet)
 "sH" = (
@@ -3009,6 +3056,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "sK" = (
@@ -3103,7 +3153,6 @@
 	dir = 4
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/machinery/power/terminal,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
@@ -3128,6 +3177,10 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/syndicate/ranged{
+	minimum_distance = 1;
+	shoot_point_blank = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "tm" = (
@@ -3398,7 +3451,8 @@
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "uJ" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning{
@@ -3608,6 +3662,12 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/blood,
+/obj/machinery/button/door{
+	pixel_x = 2;
+	pixel_y = 22;
+	id = "canteen";
+	name = "canteen window"
+	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/dorms)
 "wa" = (
@@ -3701,7 +3761,7 @@
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -25;
-	id = "armory"
+	id = "foreman"
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
@@ -3759,6 +3819,10 @@
 	dir = 8
 	},
 /obj/structure/salvageable/machine,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "pgf_door"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/pgf_wreck/external)
 "wR" = (
@@ -4119,6 +4183,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/dorms)
+"zb" = (
+/obj/structure/marker_beacon{
+	picked_color = "burgundy"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/template_noop)
 "zc" = (
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
@@ -4139,6 +4209,12 @@
 "zs" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
+"zt" = (
+/obj/structure/marker_beacon{
+	picked_color = "burgundy"
+	},
+/turf/open/floor/engine/hull,
+/area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "zw" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -4322,9 +4398,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
@@ -4433,9 +4506,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "AO" = (
@@ -4667,6 +4737,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "Cj" = (
@@ -4975,6 +5049,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/neck/cloak/cap{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "DZ" = (
@@ -5200,9 +5277,6 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
 "FH" = (
@@ -5271,7 +5345,8 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "Gf" = (
 /obj/machinery/mineral/unloading_machine{
@@ -5505,9 +5580,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/mob/living/simple_animal/hostile/human/syndicate/ranged{
-	minimum_distance = 1;
-	shoot_point_blank = 1
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun{
+	shoot_point_blank = 1;
+	retreat_distance = null
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
@@ -5536,12 +5611,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "HO" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "HZ" = (
@@ -5640,6 +5715,9 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/item/ammo_box/magazine/m57_39_asp{
+	pixel_x = 7
+	},
 /obj/item/ammo_box/magazine/m57_39_asp,
 /obj/item/ammo_box/magazine/m57_39_asp{
 	pixel_x = -6
@@ -5648,11 +5726,15 @@
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "IL" = (
 /obj/structure/rack,
+/obj/item/ammo_box/magazine/m556_42_hydra{
+	pixel_y = 0;
+	pixel_x = 8
+	},
+/obj/machinery/light/directional/west,
 /obj/item/ammo_box/magazine/m556_42_hydra,
 /obj/item/ammo_box/magazine/m556_42_hydra{
 	pixel_x = -7
 	},
-/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "IM" = (
@@ -5747,9 +5829,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/powered/ramzi_station/med)
@@ -5927,6 +6006,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "Kb" = (
@@ -6102,6 +6184,9 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = 32
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "KZ" = (
@@ -6231,7 +6316,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "LD" = (
-/obj/machinery/atmospherics/components/unary/tank/air,
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 4;
+	piping_layer = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "LE" = (
@@ -6454,6 +6542,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
+"Mv" = (
+/obj/structure/sign/poster/contraband/syndicate{
+	pixel_x = -30
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 "Mw" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/gloves/gezena,
@@ -6533,6 +6627,10 @@
 "Na" = (
 /turf/closed/mineral/random,
 /area/ruin/space)
+"Nd" = (
+/obj/structure/sign/number/random,
+/turf/open/floor/engine/hull,
+/area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Nk" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -6784,7 +6882,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "OF" = (
 /obj/structure/salvageable/computer,
-/obj/item/paper,
+/obj/item/paper/crumpled/bloody/fluff/ruin/space/ramzistation/maintlog,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "OH" = (
@@ -7005,7 +7103,7 @@
 	dir = 8;
 	pixel_x = 25;
 	pixel_y = 6;
-	id = "pgf_door"
+	id = "hangar"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
@@ -7153,6 +7251,7 @@
 	id = "atmos1";
 	name = "interior shutters"
 	},
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "QD" = (
@@ -7666,7 +7765,6 @@
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/pgf_wreck/external)
 "Ty" = (
-/obj/structure/stairs/west,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -7676,7 +7774,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel/stairs/old{
+	dir = 8
+	},
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
 "TA" = (
 /obj/machinery/door/airlock/engineering{
@@ -7746,7 +7846,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "TO" = (
-/obj/structure/marker_beacon,
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
+	},
 /turf/open/floor/engine/hull,
 /area/ruin/space/pgf_wreck/external)
 "TQ" = (
@@ -8034,19 +8136,11 @@
 /turf/open/floor/engine/hull,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Vk" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/marker_beacon{
+	picked_color = "burgundy"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/human/syndicate/civilian,
-/turf/open/floor/plating/rust,
-/area/ruin/space/has_grav/powered/ramzi_station/hangar)
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 "Vo" = (
 /obj/effect/turf_decal/syndicateemblem/bottom/left,
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
@@ -8256,9 +8350,6 @@
 	icon_state = "0-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
@@ -8369,7 +8460,6 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "WS" = (
-/obj/structure/stairs/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -8379,7 +8469,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/stairs/left,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "WY" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -8614,7 +8704,7 @@
 	dir = 8
 	},
 /obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/pistol/asp,
+/obj/item/gun/ballistic/automatic/pistol/asp/no_mag,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "Ya" = (
@@ -8691,6 +8781,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/pgf_wreck)
 "Yw" = (
+/mob/living/simple_animal/hostile/human/syndicate/melee,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Yz" = (
@@ -8863,7 +8954,7 @@
 /obj/item/pickaxe/drill/jackhammer/old{
 	pixel_y = 31;
 	name = "old jackhammer";
-	desc = "The old fashioned solution to a stubborn wall- used heavily all over known space until the onset of sonic deconstruction technology and Rapid Construction Devices. Don't forget. -485 FS."
+	desc = "The old fashioned solution to a stubborn wall- used heavily all over known space until the onset of sonic deconstruction technology and Rapid Construction Devices. <i>Don't forget. -485 FS.</i> is carved into the side."
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
@@ -8888,6 +8979,9 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "Zi" = (
@@ -8898,14 +8992,14 @@
 	dir = 10
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "Zj" = (
-/obj/machinery/door/window/southleft{
-	dir = 1;
-	req_access = list(3)
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/window/southleft{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "Zk" = (
@@ -9631,7 +9725,7 @@ kQ
 kQ
 kQ
 kQ
-Yd
+Vk
 kt
 Fm
 Fm
@@ -9694,7 +9788,7 @@ kQ
 gN
 FX
 GQ
-Yd
+Mv
 Yd
 Yd
 Yd
@@ -9826,7 +9920,7 @@ wD
 kQ
 kQ
 kQ
-Yd
+Vk
 Yd
 kt
 kt
@@ -9850,7 +9944,7 @@ FB
 Ec
 tB
 tB
-Qd
+TO
 kt
 kt
 Fm
@@ -10089,7 +10183,7 @@ RK
 Mw
 yN
 yN
-wK
+zt
 kt
 kt
 xk
@@ -10349,7 +10443,7 @@ Vo
 hF
 sV
 vy
-wK
+Nd
 kt
 Fm
 xk
@@ -10407,14 +10501,14 @@ tg
 kz
 fR
 ia
-WS
+eH
 ab
 Km
 PL
 hF
 sV
 vy
-wK
+Nd
 kt
 Fm
 Fm
@@ -10472,14 +10566,14 @@ PM
 wz
 fR
 ia
-WS
+kV
 KQ
 UD
 JG
 hF
 sV
 vy
-wK
+Nd
 kt
 Fm
 Fm
@@ -10501,7 +10595,7 @@ Sr
 hN
 sM
 Qd
-Qd
+TO
 kt
 Fm
 "}
@@ -10726,7 +10820,7 @@ xN
 xN
 pF
 lv
-jv
+jl
 DX
 CG
 Ah
@@ -10804,7 +10898,7 @@ yN
 yN
 yN
 yN
-wK
+zt
 kt
 Fm
 Fm
@@ -10992,7 +11086,7 @@ Tm
 yN
 Om
 FQ
-Vk
+ds
 HI
 yN
 Na
@@ -11359,7 +11453,7 @@ Fm
 Na
 Na
 OJ
-LD
+jv
 Zi
 et
 gH
@@ -11584,7 +11678,7 @@ Yd
 Yd
 kt
 Fm
-Qd
+TO
 Fm
 yk
 PV
@@ -12147,9 +12241,9 @@ Fm
 Fm
 Fm
 Fm
-Fm
+zb
 OD
-Fm
+zb
 Fm
 Fm
 Fm
@@ -12549,10 +12643,10 @@ Fm
 Fm
 Fm
 Fm
-kV
-kV
-kV
-kV
+Fm
+Fm
+Fm
+Fm
 Fm
 Fm
 Fm
@@ -12614,9 +12708,9 @@ Fm
 Fm
 Fm
 Fm
-kV
 Fm
-kV
+Fm
+Fm
 Fm
 Fm
 Fm
@@ -12679,10 +12773,10 @@ Fm
 Fm
 Fm
 Fm
-kV
 Fm
-kV
-kV
+Fm
+Fm
+Fm
 Fm
 Fm
 Fm
