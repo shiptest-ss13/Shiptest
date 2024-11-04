@@ -3914,10 +3914,8 @@
 /area/ruin/space/pgf_wreck/bridge)
 "xA" = (
 /obj/structure/rack,
-/obj/effect/spawner/random/trash/decal,
-/obj/effect/spawner/random/trash/decal,
-/obj/effect/spawner/random/trash/decal,
-/obj/effect/spawner/random/trash/decal,
+/obj/effect/spawner/random/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
 "xB" = (
@@ -5066,6 +5064,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
+"Ea" = (
+/obj/structure/sign/poster/contraband/syndicate{
+	pixel_x = -30
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 "Eb" = (
 /obj/machinery/door/window/southright{
 	dir = 1
@@ -6542,12 +6546,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
-"Mv" = (
-/obj/structure/sign/poster/contraband/syndicate{
-	pixel_x = -30
-	},
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space)
 "Mw" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/gloves/gezena,
@@ -6627,10 +6625,6 @@
 "Na" = (
 /turf/closed/mineral/random,
 /area/ruin/space)
-"Nd" = (
-/obj/structure/sign/number/random,
-/turf/open/floor/engine/hull,
-/area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Nk" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -7874,6 +7868,10 @@
 /obj/item/stack/rods,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
+"TT" = (
+/obj/structure/sign/number/random,
+/turf/open/floor/engine/hull,
+/area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "TY" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp,
@@ -9788,7 +9786,7 @@ kQ
 gN
 FX
 GQ
-Mv
+Ea
 Yd
 Yd
 Yd
@@ -10443,7 +10441,7 @@ Vo
 hF
 sV
 vy
-Nd
+TT
 kt
 Fm
 xk
@@ -10508,7 +10506,7 @@ PL
 hF
 sV
 vy
-Nd
+TT
 kt
 Fm
 Fm
@@ -10573,7 +10571,7 @@ JG
 hF
 sV
 vy
-Nd
+TT
 kt
 Fm
 Fm
