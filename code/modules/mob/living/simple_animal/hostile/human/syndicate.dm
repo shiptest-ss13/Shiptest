@@ -60,10 +60,11 @@
 	icon_state = "syndicate_space_knife"
 	icon_living = "syndicate_space_knife"
 	name = "Ramzi Clique Commando"
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	projectile_deflect_chance = 50
+	projectile_deflect_chance = 0
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/space/Initialize()
@@ -75,7 +76,7 @@
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
 	name = "Ramzi Clique Stormtrooper"
-	projectile_deflect_chance = 50
+	projectile_deflect_chance = 0
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword
@@ -90,7 +91,7 @@
 	light_color = COLOR_SOFT_RED
 	status_flags = 0
 	var/obj/effect/light_emitter/red_energy_sword/sord
-	projectile_deflect_chance = 50
+	projectile_deflect_chance = 25
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/Initialize()
 	. = ..()
@@ -114,7 +115,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	projectile_deflect_chance = 50
+	projectile_deflect_chance = 25
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/Initialize()
