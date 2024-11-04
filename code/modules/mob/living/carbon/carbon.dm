@@ -836,6 +836,7 @@
 			reagents.addiction_list = list()
 	cure_all_traumas(TRAUMA_RESILIENCE_MAGIC)
 	mend_fractures()
+	adjustTrauma(-TRAUMA_MAXIMUM)
 	..()
 	// heal ears after healing traits, since ears check TRAIT_DEAF trait
 	// when healing.
