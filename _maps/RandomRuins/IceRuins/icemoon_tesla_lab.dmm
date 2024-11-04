@@ -357,6 +357,17 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"dR" = (
+/obj/structure/catwalk/over,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/platform/industrial,
+/turf/open/floor/plating/airless,
+/area/space)
 "dX" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-03";
@@ -392,6 +403,9 @@
 "ef" = (
 /obj/structure/catwalk/over,
 /obj/effect/turf_decal/techfloor/corner,
+/obj/structure/platform/industrial{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/space)
 "ey" = (
@@ -669,6 +683,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "gM" = (
@@ -744,6 +759,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/platform/industrial,
 /turf/open/floor/plating/airless,
 /area/space)
 "hL" = (
@@ -780,6 +796,7 @@
 	name = "Crawlspace"
 	},
 /obj/effect/mapping_helpers/airlock/sealed,
+/obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "iu" = (
@@ -793,6 +810,14 @@
 "iv" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_y = 8;
+	pixel_x = 3
+	},
+/obj/item/pen/fourcolor{
+	pixel_y = 10;
+	pixel_x = 3
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "iF" = (
@@ -1096,6 +1121,9 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
 	},
+/obj/structure/platform/industrial{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/space)
 "lT" = (
@@ -1221,6 +1249,9 @@
 /obj/effect/turf_decal/techfloor,
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/structure/platform/industrial{
+	dir = 1
 	},
 /turf/open/floor/plating/airless,
 /area/space)
@@ -1681,6 +1712,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"rJ" = (
+/obj/structure/catwalk/over,
+/obj/structure/platform/industrial{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/space)
 "rK" = (
 /obj/machinery/modular_computer/console/preset/engineering{
 	dir = 1
@@ -1788,6 +1826,17 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"tg" = (
+/obj/structure/catwalk/over,
+/obj/effect/turf_decal/techfloor,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/platform/industrial{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
 /area/space)
 "ti" = (
 /obj/effect/turf_decal/trimline/transparent/blue/corner,
@@ -2583,6 +2632,19 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/space)
+"zY" = (
+/obj/structure/catwalk/over,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/platform/industrial/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/space)
 "Aa" = (
 /obj/machinery/door/poddoor{
 	id = "h2"
@@ -2851,6 +2913,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
+/obj/structure/chair/office,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "BZ" = (
@@ -3065,6 +3128,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/structure/chair/office{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Fi" = (
@@ -3178,6 +3244,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"FZ" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/photocopier,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "Gb" = (
 /obj/structure/floodlight_frame,
@@ -3350,8 +3421,14 @@
 /turf/open/floor/carpet/blue,
 /area/space)
 "Hm" = (
-/obj/structure/catwalk/over,
-/turf/open/floor/plating/airless,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	layer = 2.456
+	},
+/turf/open/floor/plasteel/stairs{
+	icon = 'icons/obj/stairs.dmi';
+	dir = 4
+	},
 /area/space)
 "Hq" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -3391,6 +3468,9 @@
 "Hv" = (
 /obj/structure/catwalk/over,
 /obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/structure/platform/industrial{
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
@@ -3584,6 +3664,20 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
+/obj/structure/platform/industrial{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/space)
+"Jz" = (
+/obj/structure/catwalk/over,
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/platform/industrial/corner,
 /turf/open/floor/plating/airless,
 /area/space)
 "JF" = (
@@ -4041,6 +4135,16 @@
 /area/space)
 "OA" = (
 /turf/open/floor/plasteel/dark/tesla_lab,
+/area/space)
+"OD" = (
+/obj/structure/catwalk/over,
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/structure/platform/industrial/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
 /area/space)
 "OF" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line,
@@ -4836,6 +4940,10 @@
 /obj/effect/turf_decal/trimline/opaque/purple/line{
 	dir = 1
 	},
+/obj/structure/filingcabinet/double{
+	pixel_y = 22;
+	density = 0
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "WR" = (
@@ -4951,6 +5059,16 @@
 	dir = 9
 	},
 /turf/open/floor/concrete/pavement,
+/area/space)
+"Yw" = (
+/obj/structure/catwalk/over,
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/structure/platform/industrial/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
 /area/space)
 "YC" = (
 /obj/structure/rack,
@@ -6158,7 +6276,7 @@ KX
 Se
 KX
 Hs
-om
+Ez
 EG
 KX
 KX
@@ -6219,11 +6337,11 @@ mf
 fo
 KX
 or
-bP
+Jz
 Jx
 Hm
 lH
-FX
+zY
 om
 KX
 xF
@@ -6282,11 +6400,11 @@ XH
 MR
 SD
 dd
-Hs
+dR
 yJ
 MV
 oX
-EG
+tg
 bi
 KX
 GT
@@ -6345,11 +6463,11 @@ BW
 wY
 SD
 dd
-Hs
+dR
 MV
 kB
 MV
-EG
+tg
 bi
 KX
 xF
@@ -6471,11 +6589,11 @@ QG
 cy
 KX
 fy
-Wr
+OD
 Hv
-Hm
+rJ
 ef
-od
+Yw
 om
 KX
 xF
@@ -7332,7 +7450,7 @@ SK
 SK
 KX
 KX
-iv
+FZ
 TJ
 QL
 iv
