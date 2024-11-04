@@ -66,8 +66,7 @@
 		owner.adjustFireLoss(-100)
 		owner.adjustOxyLoss(-50)
 		owner.adjustToxLoss(-50)
-		if(owner.dna.species.id != SPECIES_IPC)
-			owner.adjustCloneLoss(10) //dont abuse it or take cloneloss (organic only)
+		owner.adjustTrauma(TRAUMA_GAIN_LEGION)
 	qdel(src)
 
 /obj/item/organ/regenerative_core/on_life()
@@ -87,12 +86,28 @@
 				to_chat(user, "<span class='notice'>[src] is useless on the dead.</span>")
 				return
 			if(H != user)
-				H.visible_message("<span class='notice'>[user] forces [H] to apply [src]... Black tendrils entangle and reinforce [H.p_them()]!</span>")
+				H.visible_message(span_notice("[user] holds [src] against [H]'s body, coaxing the regenerating tendrils from [src]..."))
+				balloon_alert(user, "Applying core...")
+				if(!do_after(user, 2 SECONDS, H)) //teamwork bonus
+					to_chat(user, span_warning("You are interrupted, and [src]'s tendrils retreat back into its form."))
+					return
+				balloon_alert(user, "Core applied!")
+				H.visible_message(span_notice("[src] explodes into a flurry of tendrils, rapidly covering and reinforcing [H]'s body."))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "other"))
 			else
-				to_chat(user, "<span class='notice'>You start to smear [src] on yourself. Disgusting tendrils hold you together and allow you to keep moving, but for how long?</span>")
+				to_chat(user, span_notice("You hold [src] against your body, coaxing the regenerating tendrils from [src]..."))
+				balloon_alert(user, "Applying core...")
+				if(!do_after(user, 4 SECONDS, src))
+					to_chat(user, span_warning("You are interrupted, and [src]'s tendrils retreat back into its form."))
+					return
+				balloon_alert(user, "Core applied!")
+				to_chat(user, span_notice("[src] explodes into a flurry of tendrils, rapidly spreading across your body. They will hold you together and allow you to keep moving, but for how long?"))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
 			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
+			if(H.getTrauma() > TRAUMA_LEGION_MALIGNANT && !istype(H.getorganslot(ORGAN_SLOT_REGENERATIVE_CORE), /obj/item/organ/legion_skull) && istype(src, /obj/item/organ/regenerative_core/legion)) //BAD NEWS you are GOING TO DIE
+				var/obj/item/organ/legion_skull/spare_ribs = new()
+				spare_ribs.Insert(H)
+				to_chat(H, span_boldwarning("As [src] is applied, you notice something moving under your skin..."))
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman) //Now THIS is a miner buff (fixed - nerf)
 			qdel(src)
 
@@ -186,13 +201,29 @@
 				to_chat(user, "<span class='notice'>[src] is useless on the dead.</span>")
 				return
 			if(H != user)
-				H.visible_message("<span class='notice'>[user] forces [H] to apply [src]... Cancer like crystals grow on and reinforce [H.p_them()]!</span>")
+				H.visible_message(span_notice("[user] holds [src] against [H]'s body, coaxing the regenerating crystals from [src]..."))
+				balloon_alert(user, "Applying core...")
+				if(!do_after(user, 2 SECONDS, H)) //teamwork bonus
+					to_chat(user, span_warning("You are interrupted, and [src]'s crystals retreat back into its form."))
+					return
+				balloon_alert(user, "Core applied!")
+				H.visible_message(span_notice("[src] explodes into a web of cancerous crystals, rapidly covering and reinforcing [H]'s body."))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "other"))
 			else
-				to_chat(user, "<span class='notice'>You start to apply [src] on yourself. Cancer like crystals hold you together and add something to you to keep yourself moving, but for how long?</span>")
-				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
+				to_chat(user, span_notice("You hold [src] against your body, coaxing the regenerating crystals from [src]..."))
+				balloon_alert(user, "Applying core...")
+				if(!do_after(user, 4 SECONDS, src))
+					to_chat(user, span_warning("You are interrupted, and [src]'s crystals retreat back into its form."))
+					return
+				balloon_alert(user, "Core applied!")
+			to_chat(user, span_notice("[src] explodes into a web of cancerous crystals across your body; invigorating you, but for how long?"))
+			SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
 			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
 			H.reagents.add_reagent(/datum/reagent/determination, 4)
+			if(H.getTrauma() > TRAUMA_LEGION_MALIGNANT && !istype(H.getorganslot(ORGAN_SLOT_REGENERATIVE_CORE), /obj/item/organ/legion_skull))
+				var/obj/item/organ/legion_skull/spare_ribs = new()
+				spare_ribs.Insert(H)
+				to_chat(H, span_boldwarning("As [src] is applied, you notice something moving under your skin..."))
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman) //Now THIS is a miner buff (fixed - nerf)
 			qdel(src)
 

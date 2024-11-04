@@ -256,6 +256,9 @@
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 		else if(M.getFireLoss())
+			var/mob/living/carbon/blorbo = M
+			for(var/obj/item/bodypart/part in blorbo.get_damaged_bodyparts(burn = TRUE))
+				part.adjust_trauma(min(part.burn_dam, reac_volume) * TRAUMA_GAIN_PATCH)
 			M.adjustFireLoss(-reac_volume)
 			M.force_scream()
 			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
@@ -312,6 +315,9 @@
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 		else if(M.getBruteLoss())
+			var/mob/living/carbon/blorbo = M
+			for(var/obj/item/bodypart/part in blorbo.get_damaged_bodyparts(brute = TRUE))
+				part.adjust_trauma(min(part.brute_dam, reac_volume) * TRAUMA_GAIN_PATCH)
 			M.adjustBruteLoss(-reac_volume)
 			M.force_scream()
 			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
@@ -425,6 +431,9 @@
 		if (M.stat == DEAD)
 			show_message = 0
 		if(method in list(PATCH, TOUCH, SMOKE))
+			var/mob/living/carbon/blorbo = M
+			for(var/obj/item/bodypart/part in blorbo.get_damaged_bodyparts(brute = TRUE, burn = TRUE))
+				part.adjust_trauma(min(part.get_damage(), reac_volume) * TRAUMA_GAIN_PATCH)
 			M.adjustBruteLoss(-1.25 * reac_volume)
 			M.adjustFireLoss(-1.25 * reac_volume)
 			if(show_message)

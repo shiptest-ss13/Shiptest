@@ -332,3 +332,18 @@
 		part_in_question.adjust_bleeding(-amount_to_take)
 		amt -= amount_to_take
 		parts -= part_in_question
+
+// Traumatize this blorbo
+/mob/living/carbon/proc/adjustTrauma(amt)
+	var/list/obj/item/bodypart/parts = get_damageable_bodyparts(BODYTYPE_ORGANIC)
+	for(var/obj/item/bodypart/part in parts)
+		part.adjust_trauma(amt)
+
+/// Gets the average trauma value of a blorbo
+/mob/living/carbon/proc/getTrauma()
+	. = 0
+	var/parts = LAZYLEN(bodyparts)
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		. += round(BP.trauma_buildup, DAMAGE_PRECISION)
+	if(parts)
+		. /= parts

@@ -61,6 +61,9 @@
 	/// Current limb bleeding, increased when the limb takes brute damage over certain thresholds, decreased through bandages and cauterization
 	var/bleeding = 0
 
+	/// Current limb trauma. Acts as an additive multiplier to incoming damage i.e. 50 trauma is 50% increase to damage
+	var/trauma_buildup = 0
+
 	/// So we know if we need to scream if this limb hits max damage
 	var/last_maxed
 	///If disabled, limb is as good as missing.
@@ -124,6 +127,10 @@
 	var/medium_burn_msg = "blistered"
 	var/heavy_burn_msg = "peeling away"
 
+	var/light_trauma_msg = "lightly scarred"
+	var/medium_trauma_msg = "scarred"
+	var/heavy_trauma_msg = "heavily scarred"
+
 	//band-aid for blood overlays & other external overlays until they get refactored
 	var/stored_icon_state
 
@@ -155,9 +162,9 @@
 /obj/item/bodypart/examine(mob/user)
 	. = ..()
 	if(brute_dam > DAMAGE_PRECISION)
-		. += "<span class='warning'>This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.</span>"
+		. += span_warning("This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.")
 	if(burn_dam > DAMAGE_PRECISION)
-		. += "<span class='warning'>This limb has [burn_dam > 30 ? "severe" : "minor"] burns.</span>"
+		. += span_warning("This limb has [burn_dam > 30 ? "severe" : "minor"] burns.")
 
 /obj/item/bodypart/attack(mob/living/carbon/C, mob/user)
 	if(ishuman(C))
@@ -207,7 +214,7 @@
 		I.forceMove(T)
 
 //Return TRUE to get whatever mob this is in to update health.
-/obj/item/bodypart/proc/on_life()
+/obj/item/bodypart/proc/on_life(delta_time)
 	SHOULD_CALL_PARENT(TRUE)
 
 	if(stamina_dam > DAMAGE_PRECISION && owner.stam_regen_start_time <= world.time)					//DO NOT update health here, it'll be done in the carbon's life.
@@ -215,6 +222,7 @@
 		. |= BODYPART_LIFE_UPDATE_HEALTH
 	if(brute_dam < DAMAGE_PRECISION && bleeding)
 		adjust_bleeding(-0.2) //slowly stop bleeding if there's no damage left
+	trauma_buildup = clamp(trauma_buildup - TRAUMA_HEAL_RATE * delta_time, 0, TRAUMA_MAXIMUM)
 
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc
@@ -229,7 +237,7 @@
 	if(required_status && !(bodytype & required_status))
 		return FALSE
 
-	var/dmg_mlt = CONFIG_GET(number/damage_multiplier) * hit_percent
+	var/dmg_mlt = CONFIG_GET(number/damage_multiplier) * hit_percent * (1 + trauma_buildup/100)
 	brute = round(max(brute * dmg_mlt, 0),DAMAGE_PRECISION)
 	burn = round(max(burn * dmg_mlt, 0),DAMAGE_PRECISION)
 	stamina = round(max(stamina * dmg_mlt, 0),DAMAGE_PRECISION)
@@ -810,3 +818,7 @@
 		receive_damage(rand(1, 3))
 		//1-3 damage every 20 tiles for every broken bodypart.
 		//A single broken bodypart will give you an average of 650 tiles to run before you get a total of 100 damage and fall into crit
+
+/// Increase or remove trauma. Trauma increases should generally come in large and uncommon bursts since it recovers slowly
+/obj/item/bodypart/proc/adjust_trauma(amt)
+	trauma_buildup = round(clamp(trauma_buildup + amt, 0, TRAUMA_MAXIMUM), DAMAGE_PRECISION)

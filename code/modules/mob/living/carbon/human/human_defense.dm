@@ -726,6 +726,7 @@
 		var/status = ""
 		var/brutedamage = LB.brute_dam
 		var/burndamage = LB.burn_dam
+		var/trauma = LB.trauma_buildup
 		if(hallucination)
 			if(prob(30))
 				brutedamage += rand(30,40)
@@ -744,8 +745,11 @@
 				status = LB.medium_brute_msg
 			if(brutedamage > (limb_max_damage*0.8))
 				status = LB.heavy_brute_msg
-			if(brutedamage > 0 && burndamage > 0)
-				status += " and "
+			if(brutedamage > 0 && (burndamage > 0 || trauma > 0))
+				if(burndamage > 0 && trauma > 0)
+					status += ", "
+				else
+					status += " and "
 
 			if(burndamage > (limb_max_damage*0.8))
 				status += LB.heavy_burn_msg
@@ -753,6 +757,17 @@
 				status += LB.medium_burn_msg
 			else if(burndamage > 0)
 				status += LB.light_burn_msg
+			if(burndamage > 0 && trauma > 0)
+				status += " and "
+
+			if(trauma)
+				switch(trauma)
+					if(TRAUMA_MAXIMUM/1.5+DAMAGE_PRECISION to TRAUMA_MAXIMUM)
+						status += LB.heavy_trauma_msg
+					if(TRAUMA_MAXIMUM/3 to TRAUMA_MAXIMUM/1.5)
+						status += LB.medium_trauma_msg
+					else
+						status += LB.light_trauma_msg
 
 			if(status == "")
 				status = "OK"

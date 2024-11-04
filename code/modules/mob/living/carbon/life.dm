@@ -1,4 +1,4 @@
-/mob/living/carbon/Life()
+/mob/living/carbon/Life(seconds)
 	set invisibility = 0
 
 	if(notransform)
@@ -33,7 +33,7 @@
 					cut_overlay(GLOB.ssd_indicator_overlay) // Prevents chronically SSD players from breaking immersion
 
 		if(stat != DEAD)
-			var/bprv = handle_bodyparts()
+			var/bprv = handle_bodyparts(seconds)
 			if(bprv & BODYPART_LIFE_UPDATE_HEALTH)
 				update_stamina() //needs to go before updatehealth to remove stamcrit
 				updatehealth()
@@ -301,12 +301,12 @@
 /mob/living/carbon/proc/handle_blood()
 	return
 
-/mob/living/carbon/proc/handle_bodyparts()
+/mob/living/carbon/proc/handle_bodyparts(seconds)
 	if(stam_regen_start_time <= world.time)
 		if(HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, STAMINA))
 			. |= BODYPART_LIFE_UPDATE_HEALTH //make sure we remove the stamcrit
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		. |= BP.on_life()
+		. |= BP.on_life(seconds)
 
 /mob/living/carbon/proc/handle_organs()
 	if(stat != DEAD)

@@ -191,6 +191,15 @@
 
 #define BRAIN_DAMAGE_INTEGRITY_MULTIPLIER 0.5
 
+//Limb Trauma Defines
+#define TRAUMA_HEAL_RATE 0.2
+#define TRAUMA_MAXIMUM 150
+#define TRAUMA_GAIN_PATCH 0.2
+#define TRAUMA_GAIN_SURGERY 10
+#define TRAUMA_GAIN_LEGION 40
+
+#define TRAUMA_LEGION_MALIGNANT TRAUMA_MAXIMUM / 1.5
+
 //Surgery Defines
 #define BIOWARE_GENERIC "generic"
 #define BIOWARE_NERVES "nerves"

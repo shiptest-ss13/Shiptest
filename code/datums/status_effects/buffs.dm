@@ -410,6 +410,9 @@
 	owner.adjustFireLoss(-25)
 	owner.remove_CC()
 	owner.bodytemperature = owner.get_body_temp_normal()
+	if(iscarbon(owner))
+		var/mob/living/carbon/blorbo = owner
+		blorbo.adjustTrauma(TRAUMA_GAIN_LEGION)
 	return TRUE
 
 /datum/status_effect/regenerative_core/on_remove()
