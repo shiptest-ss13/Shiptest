@@ -8,10 +8,10 @@
 	faction = list("mining")
 	max_integrity = 250
 	mob_types = list(
-		/mob/living/simple_animal/hostile/hivebot/wasteplanet = 40,
-		/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged = 40,
-		/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged/rapid = 10,
-		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 5,
+		/mob/living/simple_animal/hostile/hivebot = 40,
+		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
+		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 10,
+		/mob/living/simple_animal/hostile/hivebot/strong = 5,
 		/mob/living/simple_animal/hostile/hivebot/mechanic = 5
 	)
 	spawn_text = "crawls out of"
