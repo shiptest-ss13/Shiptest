@@ -199,7 +199,6 @@
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/autunite,
 		/obj/item/stack/ore/galena,
-		/obj/item/stack/ore/plasma,
 		)
 
 

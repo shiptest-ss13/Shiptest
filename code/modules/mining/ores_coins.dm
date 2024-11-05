@@ -91,7 +91,7 @@
 	icon_state = "galena"
 	item_state = "galena"
 	material_flags = MATERIAL_NO_EFFECTS
-	custom_materials = list(/datum/material/lead=9480,/datum/material/sulfur=500,/datum/material/silver=20)
+	custom_materials = list(/datum/material/lead=948,/datum/material/sulfur=50,/datum/material/silver=2)
 	refined_type = /obj/item/stack/sheet/mineral/lead
 	scan_state = "galena"
 	spreadChance = 20
