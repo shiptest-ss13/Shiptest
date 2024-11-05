@@ -55,7 +55,7 @@
 	icon_state = "s_rabbit_white"
 	icon_living = "s_rabbit_white"
 	icon_dead = "s_rabbit_white_dead"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1500
 	unsuitable_atmos_damage = 0
@@ -84,24 +84,6 @@
 	. = ..()
 	countEggs()
 
-//Bunny Suit
-/obj/item/clothing/head/bunnyhead
-	name = "Easter Bunny Head"
-	icon_state = "bunnyhead"
-	item_state = "bunnyhead"
-	desc = "Considerably more cute than 'Frank'."
-	slowdown = -1
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-
-/obj/item/clothing/suit/bunnysuit
-	name = "Easter Bunny Suit"
-	desc = "Hop Hop Hop!"
-	icon_state = "bunnysuit"
-	item_state = "bunnysuit"
-	slowdown = -1
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-
 //Bunny bag!
 /obj/item/storage/backpack/satchel/bunnysatchel
 	name = "Easter Bunny Satchel"
@@ -122,9 +104,7 @@
 	icon_state = "egg-[eggcolor]"
 
 /obj/item/reagent_containers/food/snacks/egg/proc/dispensePrize(turf/where)
-	var/won = pick(/obj/item/clothing/head/bunnyhead,
-	/obj/item/clothing/suit/bunnysuit,
-	/obj/item/storage/backpack/satchel/bunnysatchel,
+	var/won = pick(/obj/item/storage/backpack/satchel/bunnysatchel,
 	/obj/item/reagent_containers/food/snacks/grown/carrot,
 	/obj/item/toy/balloon,
 	/obj/item/toy/gun,
@@ -151,8 +131,7 @@
 	/obj/item/toy/plush/carpplushie,
 	/obj/item/toy/plush/spider,
 	/obj/item/toy/redbutton,
-	/obj/item/toy/windupToolbox,
-	/obj/item/clothing/head/collectable/rabbitears)
+	/obj/item/toy/windupToolbox)
 	new won(where)
 	new/obj/item/reagent_containers/food/snacks/chocolateegg(where)
 

@@ -35,13 +35,6 @@
 	damage = 20
 	stamina = 80
 
-//5.45x39mm (SVG-76u)
-
-/obj/projectile/bullet/a545_39
-	name = "5.45x39mm bullet"
-	damage = 25
-	armour_penetration = 20
-
 //7.62x40mm CLIP (SKM Rifles)
 
 /obj/projectile/bullet/a762_40
@@ -49,12 +42,26 @@
 	damage = 30
 	armour_penetration = 20
 
+/obj/projectile/bullet/a762_40/rubber //"rubber"
+	name = "7.62x40mm CLIP Rubber"
+	damage = 15
+	stamina = 40
+	armour_penetration = 20
+
+
 //.308 WIN (M514 & GAL DMRs)
 
 /obj/projectile/bullet/a308
 	name = ".308"
 	speed = 0.3
 	damage = 30
+	armour_penetration = 40
+
+/obj/projectile/bullet/a308/rubber //"rubber"
+	name = ".308 Rubber"
+	speed = 0.3
+	damage = 25
+	stamina = 50
 	armour_penetration = 40
 
 // 8x58mm caseless (SG-669)
@@ -86,3 +93,8 @@
 	light_system = MOVABLE_LIGHT
 	light_color = COLOR_SOFT_RED
 	light_range = 2
+
+/obj/projectile/bullet/a65clip/rubber //"rubber"
+	name = "6.5x57mm CLIP rubber bullet"
+	damage = 10
+	stamina = 40

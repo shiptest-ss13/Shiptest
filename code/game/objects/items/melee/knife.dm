@@ -1,7 +1,8 @@
 /obj/item/melee/knife
 	icon_state = "kitchenknife"
 	item_state = "kitchenknife"
-	icon = 'icons/obj/weapon/knife.dmi'
+	icon = 'icons/obj/weapon/knives/knife.dmi'
+	world_file = 'icons/obj/weapon/knives/knife_world.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/knifes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/knifes_righthand.dmi'
 	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'
@@ -19,7 +20,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	item_flags = EYE_STAB
 	tool_behaviour = TOOL_KNIFE
-
 
 /obj/item/melee/knife/ComponentInitialize()
 	. = ..()
@@ -165,6 +165,7 @@
 	flags_1 = CONDUCT_1
 	force = 3
 	w_class = WEIGHT_CLASS_SMALL
+	sharpness = IS_BLUNT
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 6
@@ -172,27 +173,19 @@
 	hitsound = 'sound/weapons/genhit.ogg'
 	attack_verb = list("stubbed", "poked")
 	resistance_flags = FIRE_PROOF
-	var/extended = 0
 
-/obj/item/melee/knife/switchblade/attack_self(mob/user)
-	extended = !extended
-	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
-	if(extended)
-		force = 20
-		w_class = WEIGHT_CLASS_NORMAL
-		throwforce = 23
-		icon_state = "switchblade_ext"
-		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-		hitsound = 'sound/weapons/bladeslice.ogg'
-		sharpness = IS_SHARP
-	else
-		force = 3
-		w_class = WEIGHT_CLASS_SMALL
-		throwforce = 5
-		icon_state = "switchblade"
-		attack_verb = list("stubbed", "poked")
-		hitsound = 'sound/weapons/genhit.ogg'
-		sharpness = IS_BLUNT
+/obj/item/melee/knife/switchblade/ComponentInitialize()
+	. = ..()
+	AddComponent( \
+		/datum/component/transforming, \
+		force_on = 20, \
+		throwforce_on = 23, \
+		throw_speed_on = 4, \
+		sharpness_on = IS_SHARP, \
+		hitsound_on = 'sound/weapons/bladeslice.ogg', \
+		w_class_on = WEIGHT_CLASS_NORMAL, \
+		attack_verb_on = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut"), \
+	)
 
 /obj/item/melee/knife/letter_opener
 	name = "letter opener"

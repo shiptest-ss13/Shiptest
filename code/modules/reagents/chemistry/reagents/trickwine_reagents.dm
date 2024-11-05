@@ -30,7 +30,7 @@
 		if(!iscarbon(M))
 			var/mob/living/simple_animal/hostile/hostile_target = M
 			var/hostile_ai_status = hostile_target.AIStatus
-			hostile_target.AIStatus = AI_OFF
+			hostile_target.toggle_ai(AI_OFF)
 			addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status),reac_volume)
 		M.Jitter(3 * reac_volume)
 		M.Dizzy(2 * reac_volume)
@@ -126,7 +126,7 @@
 		T.IgniteTurf(reac_volume)
 		new /obj/effect/hotspot(T, reac_volume * 1, FIRE_MINIMUM_TEMPERATURE_TO_EXIST + reac_volume * 10)
 		var/turf/otherT
-		for(var/direction in GLOB.cardinals)
+		for(var/direction in GLOB.alldirs)
 			otherT = get_step(T, direction)
 			otherT.IgniteTurf(reac_volume)
 			new /obj/effect/hotspot(otherT, reac_volume * 1, FIRE_MINIMUM_TEMPERATURE_TO_EXIST + reac_volume * 10)
