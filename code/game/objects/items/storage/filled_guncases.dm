@@ -74,6 +74,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/asp
 	mag_type = /obj/item/ammo_box/magazine/m57_39_asp
 
+/obj/item/storage/guncase/pistol/rattlesnake
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
+	mag_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
+
 /obj/item/storage/guncase/cobra
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	mag_type = /obj/item/ammo_box/magazine/m45_cobra

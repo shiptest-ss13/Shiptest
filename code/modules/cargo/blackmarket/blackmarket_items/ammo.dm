@@ -46,6 +46,39 @@
 	stock = 6
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/cm23_mag
+	name = "CM-23 Magazines"
+	desc = "10 round 10mm magazines for use in the CM-23 pistol."
+	item = /obj/item/ammo_box/magazine/cm23
+
+	price_min = 150
+	price_max = 300
+	stock_min = 6
+	stock_max = 10
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cm70_mag
+	name = "CM-70 Magazines"
+	desc = "18 round 9mm magazines for use in the CM-70 pistol."
+	item = /obj/item/ammo_box/magazine/m9mm_cm70
+
+	price_min = 200
+	price_max = 300
+	stock_min = 4
+	stock_max = 8
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cm5_mag
+	name = "CM-5 Magazines"
+	desc = "30 round 9mm magazines for use in the CM-5 SMG."
+	item = /obj/item/ammo_box/magazine/cm5_9mm
+
+	price_min = 300
+	price_max = 600
+	stock_min = 2
+	stock_max = 6
+	availability_prob = 0
+
 /datum/blackmarket_item/ammo/saber_mag
 	name = "Saber 9mm SMG Magazines"
 	desc = "Magazines for use in the Saber 9mm SMG. No, they don't work as swords."

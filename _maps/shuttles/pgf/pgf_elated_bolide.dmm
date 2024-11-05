@@ -1163,9 +1163,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/machinery/fax{
-	pixel_y = 7
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1175,6 +1172,9 @@
 /obj/item/folder/pgf/empty_sheets{
 	pixel_x = -2;
 	pixel_y = 5
+	},
+/obj/machinery/fax/pgf{
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
