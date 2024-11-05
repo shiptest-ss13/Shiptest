@@ -178,7 +178,7 @@
 	flora_spawn_chance = 0
 	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/effect/spawner/lootdrop/greeble/sulfurpool = 1
+		/obj/effect/spawner/random/greeble/sulfurpool = 1
 	)
 	mob_spawn_chance = 0
 
@@ -231,7 +231,7 @@
 /datum/biome/cave/sand/volcanic/acidic
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 1, /turf/open/water/whitesands = 8)
 
-/obj/effect/spawner/lootdrop/greeble/sulfurpool
+/obj/effect/spawner/random/greeble/sulfurpool
 	loot = list(
 			/obj/effect/greeble_spawner/whitesands/sulfurpool1 = 5,
 			/obj/effect/greeble_spawner/whitesands/sulfurpool2 = 5,
@@ -390,7 +390,7 @@
 	mappath = "_maps/templates/greebles/whitesands/oasis_1.dmm"
 	clear_everything = TRUE
 
-/obj/effect/spawner/lootdrop/twentypercentpucespawn
+/obj/effect/spawner/random/twentypercentpucespawn
 	name = "20% puce spawn chance"
 	icon = 'icons/obj/lavaland/ash_flora.dmi'
 	icon_state = "puce"
@@ -398,12 +398,12 @@
 			/obj/structure/flora/ash/puce = 5,
 		)
 
-/obj/effect/spawner/lootdrop/twentypercentpucespawn/Initialize(mapload)
+/obj/effect/spawner/random/twentypercentpucespawn/Initialize(mapload)
 	if(prob(20))
 		return ..()
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/spawner/lootdrop/fiftycavefern
+/obj/effect/spawner/random/fiftycavefern
 	name = "50% cave fern spawn chance"
 	icon = 'icons/obj/lavaland/ash_flora.dmi'
 	icon_state = "cavefern" //needs new sprites.
@@ -411,12 +411,12 @@
 			/obj/structure/flora/ash/fern = 5,
 		)
 
-/obj/effect/spawner/lootdrop/fiftycavefern/Initialize(mapload)
+/obj/effect/spawner/random/fiftycavefern/Initialize(mapload)
 	if(prob(50))
 		return ..()
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/spawner/lootdrop/fourtywsfauna
+/obj/effect/spawner/random/fourtywsfauna
 	name = "40% whitesands fauna spawn chance"
 	loot = list(
 			/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 15,
@@ -427,19 +427,19 @@
 	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
 	icon_state = "ws_goliath"
 
-/obj/effect/spawner/lootdrop/fourtywsfauna/Initialize(mapload)
+/obj/effect/spawner/random/fourtywsfauna/Initialize(mapload)
 	if(prob(40))
 		return ..()
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/spawner/lootdrop/seventyrock
+/obj/effect/spawner/random/seventyrock
 	name = "70% rock spawn chance"
 	icon = 'icons/obj/flora/rocks.dmi'
 	loot = list(
 			/obj/structure/flora/rock = 5,
 		)
 
-/obj/effect/spawner/lootdrop/seventyrock/Initialize(mapload)
+/obj/effect/spawner/random/seventyrock/Initialize(mapload)
 	if(prob(70))
 		return ..()
 	return INITIALIZE_HINT_QDEL
