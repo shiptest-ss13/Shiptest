@@ -339,14 +339,15 @@
 	materials.use_materials(materials_used)
 
 	if(is_stack)
-		var/obj/item/stack/N = new being_built.build_path(A, multiplier, FALSE)
-		N.update_appearance()
-		N.autolathe_crafted(src)
+		var/obj/item/stack/new_item = new being_built.build_path(A, multiplier, FALSE)
+		new_item.update_appearance()
+		new_item.autolathe_crafted(src)
+		SSblackbox.record_feedback("nested tally", "item_printed", 1, list("[type]", "[new_item.type]"))
 	else
 		for(var/i=1, i<=multiplier, i++)
 			var/obj/item/new_item = new being_built.build_path(A)
 			new_item.autolathe_crafted(src)
-
+			SSblackbox.record_feedback("nested tally", "item_printed", 1, list("[type]", "[new_item.type]"))
 			if(length(picked_materials))
 				new_item.set_custom_materials(picked_materials, 1 / multiplier) //Ensure we get the non multiplied amount
 				for(var/x in picked_materials)
@@ -446,5 +447,5 @@
 
 //Called when the object is constructed by an autolathe
 //Has a reference to the autolathe so you can do !!FUN!! things with hacked lathes
-/obj/item/proc/autolathe_crafted(obj/machinery/autolathe/A)
+/obj/item/proc/autolathe_crafted(obj/machinery/autolathe/lathe)
 	return

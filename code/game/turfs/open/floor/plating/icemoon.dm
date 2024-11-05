@@ -23,7 +23,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_SNOWED)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_SNOWED)
 	digResult = /obj/item/stack/sheet/mineral/snow
-
+	light_color = COLOR_ICEPLANET_LIGHT
 	has_footsteps = TRUE
 	footstep_icon_state = "ice"
 
@@ -52,18 +52,16 @@
 	. = ..()
 	ScrapeAway()
 
+/turf/open/floor/plating/asteroid/snow/icemoon
+	baseturfs = /turf/open/openspace/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+
+	slowdown = 0
+
 /turf/open/floor/plating/asteroid/snow/lit
 	light_range = 2
 	light_power = 1
 	baseturfs = /turf/open/floor/plating/asteroid/icerock/lit
-
-/turf/open/floor/plating/asteroid/snow/lit/whitesands
-	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
-	initial_gas_mix = WHITESANDS_ATMOS
-
-/turf/open/floor/plating/asteroid/snow/lit/rockplanet
-	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/asteroid/snow/airless
 	initial_gas_mix = AIRLESS_ATMOS
@@ -106,6 +104,7 @@
 	floor_variance = 0
 	max_icon_states = 0
 	dug = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
@@ -163,21 +162,17 @@
 	floor_variance = 100
 	max_icon_states = 3
 	dug = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
 
 /turf/open/floor/plating/asteroid/iceberg/lit
 	light_range = 2
 	light_power = 1
 
-
-/turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/openspace/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	slowdown = 0
-
 /turf/open/lava/plasma/ice_moon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	baseturfs = /turf/open/lava/plasma/ice_moon
 	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
 
 /turf/open/floor/plating/asteroid/snow/ice
 	name = "icy snow"
@@ -193,6 +188,8 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	max_icon_states = 7
+	light_color = COLOR_ICEPLANET_LIGHT
+
 
 /turf/open/floor/plating/asteroid/snow/ice/icemoon
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon

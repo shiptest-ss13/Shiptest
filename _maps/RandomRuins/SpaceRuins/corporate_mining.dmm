@@ -242,6 +242,22 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/corporatemine/hall)
+"fM" = (
+/obj/structure/closet/crate,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/effect/turf_decal/industrial/outline,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/corporatemine/hall)
+"fR" = (
+/obj/structure/bed,
+/obj/effect/spawner/random/bedsheet,
+/obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "gf" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -270,6 +286,10 @@
 	anchored = 1
 	},
 /turf/open/floor/plating,
+/area/ruin/space)
+"gV" = (
+/obj/item/stack/ore/autunite,
+/turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "gY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -439,6 +459,14 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/airless,
 /area/ruin/space)
+"jS" = (
+/obj/structure/bed,
+/obj/effect/spawner/random/bedsheet,
+/obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "jU" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/directional{
 	dir = 6
@@ -460,14 +488,6 @@
 /obj/structure/chair/office/light,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/corporatemine/bridge)
-"kZ" = (
-/obj/structure/bed,
-/obj/item/bedsheet/dorms,
-/obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/space/has_grav/corporatemine/crewquarters)
 "lb" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -730,6 +750,13 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/corporatemine/hall)
+"qO" = (
+/obj/structure/closet/crate,
+/obj/effect/turf_decal/industrial/outline,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/corporatemine/hall)
 "qS" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 1
@@ -808,13 +835,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/corporatemine/hall)
-"sa" = (
-/obj/effect/decal/cleanable/oil/slippery,
-/obj/structure/closet/crate,
-/obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/materials,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/hall)
 "sb" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/asteroid/airless,
@@ -845,14 +865,6 @@
 "tJ" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/corporatemine/bridge)
-"tR" = (
-/obj/structure/closet/crate,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/effect/turf_decal/industrial/outline,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/hall)
 "va" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
@@ -912,10 +924,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine)
-"wg" = (
-/obj/item/stack/ore/autunite,
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space)
 "wi" = (
 /obj/structure/grille,
 /obj/structure/lattice,
@@ -1153,13 +1161,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/corporatemine/hall)
-"AK" = (
-/obj/structure/closet/crate,
-/obj/item/stack/ore/rutile,
-/obj/item/stack/ore/rutile,
-/obj/effect/turf_decal/industrial/outline,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/hall)
 "Bb" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1294,6 +1295,11 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/corporatemine/hall)
+"CM" = (
+/obj/item/stack/ore/autunite,
+/obj/item/stack/ore/autunite,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 "CR" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1469,6 +1475,19 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
+"Gk" = (
+/obj/structure/closet/crate,
+/obj/item/stack/ore/rutile,
+/obj/item/stack/ore/rutile,
+/obj/effect/turf_decal/industrial/outline,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/corporatemine/hall)
+"Gm" = (
+/obj/structure/closet/crate,
+/obj/effect/turf_decal/industrial/outline,
+/obj/effect/spawner/random/materials,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/corporatemine/hall)
 "Gx" = (
 /obj/machinery/power/smes,
 /obj/structure/cable,
@@ -1587,13 +1606,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
-"IF" = (
-/obj/structure/closet/crate,
-/obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/hall)
 "IS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1770,12 +1782,6 @@
 	},
 /obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/corporatemine/hall)
-"NH" = (
-/obj/structure/closet/crate,
-/obj/effect/turf_decal/industrial/outline,
-/obj/effect/spawner/lootdrop/materials,
-/turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
 "NO" = (
 /obj/structure/table/wood,
@@ -2092,11 +2098,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/corporatemine)
-"Uz" = (
-/obj/item/stack/ore/autunite,
-/obj/item/stack/ore/autunite,
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space)
 "UA" = (
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
@@ -2204,6 +2205,13 @@
 "XH" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
+"Yc" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/structure/closet/crate,
+/obj/effect/turf_decal/industrial/outline,
+/obj/effect/spawner/random/materials,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/corporatemine/hall)
 "Yg" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/corporatemine)
@@ -2290,14 +2298,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/crewquarters)
-"ZU" = (
-/obj/structure/bed,
-/obj/item/bedsheet/dorms,
-/obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "ZW" = (
 /obj/effect/turf_decal/solarpanel,
@@ -3173,7 +3173,7 @@ VM
 VM
 VM
 VM
-Uz
+CM
 Al
 Al
 Al
@@ -3224,8 +3224,8 @@ jz
 VM
 VM
 VM
-wg
-wg
+gV
+gV
 VM
 Al
 Al
@@ -3838,7 +3838,7 @@ Al
 BA
 Uk
 vW
-ZU
+jS
 UA
 ZA
 IS
@@ -3846,8 +3846,8 @@ qF
 cX
 qm
 Ez
-NH
-tR
+Gm
+fM
 lC
 iW
 Al
@@ -3942,17 +3942,17 @@ Al
 BA
 SM
 xU
-kZ
+fR
 tF
 ce
 fw
 zz
-AK
-sa
+Gk
+Yc
 Ud
 lV
 lL
-IF
+qO
 iW
 Al
 Al
@@ -4046,7 +4046,7 @@ Al
 BA
 ea
 vW
-ZU
+jS
 tF
 WZ
 HG
@@ -4150,7 +4150,7 @@ Al
 XH
 SM
 LQ
-kZ
+fR
 tF
 EL
 je

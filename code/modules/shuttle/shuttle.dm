@@ -5,11 +5,10 @@
 
 //NORTH default dir
 /obj/docking_port
-	//invisibility = INVISIBILITY_ABSTRACT
-
-	desc = "This is only visible for debugging purposes. You don't see this in character, of course."
-	icon = 'icons/obj/device.dmi'
-	icon_state = "pinonfar"
+	desc = "Where the ships dock and undock. Ask ruinyard about this."
+	invisibility = INVISIBILITY_OBSERVER
+	icon = 'icons/effects/mapping/docking_ports.dmi'
+	icon_state = "static"
 
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 	anchored = TRUE
@@ -348,7 +347,7 @@
 
 /obj/docking_port/mobile
 	name = "shuttle"
-	icon_state = "pinonclose"
+	icon_state = "mobile"
 
 	var/area_type = SHUTTLE_DEFAULT_SHUTTLE_AREA_TYPE
 

@@ -893,7 +893,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				mutant_category = 0
 			// end generic adjective
 
-			if("wings" in pref_species.default_features && GLOB.r_wings_list.len >1)
+			if(("wings" in pref_species.default_features) && GLOB.r_wings_list.len >1)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 

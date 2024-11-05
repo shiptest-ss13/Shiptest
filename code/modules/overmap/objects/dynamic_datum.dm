@@ -139,7 +139,7 @@
 	if(!isnull(force_encounter))
 		planet = force_encounter
 	else
-		planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
+		planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 
 	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
 		planet_name = "[gen_planet_name()]"
@@ -221,7 +221,7 @@
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	var/selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
 	var/list/dynamic_encounter_values = current_overmap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE

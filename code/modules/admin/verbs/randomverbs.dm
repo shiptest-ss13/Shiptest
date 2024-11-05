@@ -854,7 +854,7 @@
 
 		switch(ruin_force)
 			if("Random")
-				//Can't use pickweight as it might be from "everything"
+				//Can't use pick_weight as it might be from "everything"
 				ruin_target = select_from[pick(select_from)]
 			else
 				var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)

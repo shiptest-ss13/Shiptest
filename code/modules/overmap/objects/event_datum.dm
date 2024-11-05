@@ -352,7 +352,7 @@
 /datum/overmap/event/anomaly/affect_ship(datum/overmap/ship/controlled/S)
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
 	var/source_object = pick(source_area.contents)
-	new /obj/effect/spawner/lootdrop/anomaly/storm(get_turf(source_object))
+	new /obj/effect/spawner/random/anomaly/storm(get_turf(source_object))
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(S.shuttle_port, 'sound/effects/bamf.ogg', 100)

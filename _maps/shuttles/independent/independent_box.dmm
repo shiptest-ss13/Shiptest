@@ -256,7 +256,7 @@
 /obj/item/vending_refill/medical,
 /obj/item/screwdriver,
 /obj/machinery/airalarm/directional/south,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "aN" = (
@@ -888,10 +888,10 @@
 /area/ship/crew)
 "cU" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_y = 3
 	},
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = -5;
 	pixel_y = 3
 	},
@@ -1334,7 +1334,7 @@
 /obj/item/circuitboard/machine/chem_master,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/stack/sheet/glass/two,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance,
 /obj/item/trash/can/food/beans,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2185,7 +2185,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "DP" = (
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/structure/closet/emcloset/anchored,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
@@ -2306,7 +2306,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-10"
 	},
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/structure/rack,
 /obj/item/areaeditor/shuttle,
 /obj/item/flashlight{
@@ -2386,7 +2386,7 @@
 /obj/structure/sign/poster/official/help_others{
 	pixel_x = -32
 	},
-/obj/effect/spawner/lootdrop/tool_surgery_adv,
+/obj/effect/spawner/random/medical/surgery_tool/adv,
 /obj/item/megaphone/command,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4

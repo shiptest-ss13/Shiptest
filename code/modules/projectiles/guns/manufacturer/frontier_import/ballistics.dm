@@ -22,6 +22,8 @@
 	spread_unwielded = 50
 	recoil = 1
 	recoil_unwielded = 4
+	safety_multiplier = 2 //this means its twice as safe right?
+
 	fire_sound = 'sound/weapons/gun/pistol/mauler.ogg'
 
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
@@ -76,6 +78,7 @@
 	wield_slowdown = 0.25
 	wield_delay = 0.2 SECONDS
 	fire_delay = 0.09 SECONDS
+	safety_multiplier = 2
 
 	fire_sound = 'sound/weapons/gun/smg/spitter.ogg'
 	rack_sound = 'sound/weapons/gun/smg/spitter_cocked.ogg'
@@ -164,6 +167,7 @@
 
 	manufacturer = MANUFACTURER_IMPORT
 	wield_slowdown = 0.5
+	safety_multiplier = 2
 
 /obj/item/ammo_box/magazine/c22lr_pounder_pan
 	name = "pan magazine (.22 LR)"
@@ -267,7 +271,10 @@
 	sealed_magazine = TRUE
 	manufacturer = MANUFACTURER_IMPORT
 	slot_flags = ITEM_SLOT_BACK
+	has_safety = FALSE
+	safety = FALSE
 
+	safety_multiplier = 0
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot/Initialize()
 	. = ..()
