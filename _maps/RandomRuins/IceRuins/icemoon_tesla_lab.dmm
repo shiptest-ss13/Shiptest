@@ -761,6 +761,12 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/wood,
 /area/space)
+"fX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/space)
 "gd" = (
 /obj/machinery/computer/crew{
 	dir = 8;
@@ -898,7 +904,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/minutemen/edge,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/space)
 "he" = (
 /obj/machinery/photocopier,
@@ -910,7 +916,8 @@
 	pixel_y = 8;
 	pixel_x = -4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "ht" = (
 /obj/effect/turf_decal/box/corners{
@@ -1013,7 +1020,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/minutemen/corner,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/space)
 "iu" = (
 /obj/effect/turf_decal/corner/transparent/blue/mono,
@@ -1309,7 +1316,8 @@
 	dir = 1;
 	pixel_y = -3
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "ky" = (
 /obj/effect/turf_decal/siding/white,
@@ -1477,6 +1485,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "me" = (
@@ -1826,7 +1835,8 @@
 /obj/machinery/fax/ruin{
 	pixel_y = 5
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "oN" = (
 /obj/effect/turf_decal/industrial/warning/cee{
@@ -1927,7 +1937,7 @@
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/space)
 "pH" = (
 /obj/structure/cable/yellow{
@@ -2104,7 +2114,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
 /area/space)
 "rC" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2268,7 +2281,8 @@
 	pixel_y = 0;
 	pixel_x = 3
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "sX" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3153,7 +3167,8 @@
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
 /area/space)
 "zp" = (
 /obj/structure/window/plasma/fulltile,
@@ -3973,7 +3988,10 @@
 	pixel_x = 1;
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood,
 /area/space)
 "FU" = (
 /obj/machinery/recycler{
@@ -4801,7 +4819,8 @@
 /obj/effect/turf_decal/minutemen/edge{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
 /area/space)
 "Ms" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -5086,7 +5105,8 @@
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
 /area/space)
 "OD" = (
 /obj/structure/catwalk/over,
@@ -5403,7 +5423,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/holopad/secure,
 /obj/effect/turf_decal/minutemen/middle,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/space)
 "QT" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -5997,7 +6017,7 @@
 /obj/effect/turf_decal/minutemen/edge{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/space)
 "VN" = (
 /obj/structure/toilet{
@@ -6092,7 +6112,8 @@
 "WI" = (
 /obj/structure/table,
 /obj/item/paper_bin,
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "WN" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -6258,7 +6279,8 @@
 	dir = 1;
 	pixel_y = -3
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "Yw" = (
 /obj/structure/catwalk/over,
@@ -6383,7 +6405,7 @@
 /obj/effect/turf_decal/minutemen/edge{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood,
 /area/space)
 "ZA" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -7580,7 +7602,7 @@ iw
 zT
 KX
 rA
-Ir
+fX
 FQ
 hs
 KX
