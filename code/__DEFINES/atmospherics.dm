@@ -338,7 +338,6 @@
 #define GAS_HYDROGEN "h2"
 #define GAS_CHLORINE "cl2"
 #define GAS_HYDROGEN_CHLORIDE "hcl"
-#define GAS_CO "co"
 
 #define GAS_SO2 "so2"
 #define GAS_ARGON "ar"

@@ -212,6 +212,8 @@
 			H.reagents.add_reagent(R, breath.get_moles(gas) * 2) // 2 represents molarity of O2, we don't have citadel molarity
 			mole_adjustments[gas] = (gas in mole_adjustments) ? mole_adjustments[gas] - breath.get_moles(gas) : -breath.get_moles(gas)
 
+	handle_smell(breath, H)
+
 	for(var/gas in mole_adjustments)
 		breath.adjust_moles(gas, mole_adjustments[gas])
 
@@ -298,6 +300,8 @@
 		if (gas_breathed > gas_stimulation_min)
 			H.reagents.add_reagent(/datum/reagent/hydrogen_chloride)
 
+		breath.adjust_moles(GAS_HYDROGEN_CHLORIDE, -gas_breathed)
+
 	// Carbon Monoxide
 		var/carbon_monoxide_pp = PP(breath,GAS_CO)
 		if (carbon_monoxide_pp > gas_stimulation_min)
@@ -328,6 +332,8 @@
 				monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 150)
 				monoxide_reagent.metabolization_rate = 10 //purges 10 per tick
 
+		breath.adjust_moles(GAS_CO, -gas_breathed)
+
 	// Sulfur Dioxide
 		var/sulfur_dioxide_pp = PP(breath,GAS_SO2)
 		if (prob(sulfur_dioxide_pp) && !HAS_TRAIT(H, TRAIT_ANALGESIA))
@@ -344,6 +350,8 @@
 		if (gas_breathed > gas_stimulation_min)
 			H.reagents.add_reagent(/datum/reagent/sulfur_dioxide,1)
 
+		breath.adjust_moles(GAS_SO2, -gas_breathed)
+
 	// Ozone
 		var/ozone_pp = PP(breath,GAS_O3)
 		if (prob(ozone_pp))
@@ -357,6 +365,8 @@
 		gas_breathed = breath.get_moles(GAS_O3)
 		if (gas_breathed > gas_stimulation_min)
 			H.reagents.add_reagent(/datum/reagent/ozone,1)
+
+		breath.adjust_moles(GAS_O3, -gas_breathed)
 
 	// Ammonia
 		var/ammonia_pp = PP(breath,GAS_AMMONIA)
@@ -379,7 +389,7 @@
 			//ammonia is actually disposed of naturally by humans, but extremely poorly by non mammals, maybe we can make it toxic ONLY to certain species (plural) sometime?
 			H.reagents.add_reagent(/datum/reagent/ammonia,1)
 
-		handle_smell(breath, H)
+		breath.adjust_moles(GAS_AMMONIA, -gas_breathed)
 
 ///handles the smell a few gases have
 /obj/item/organ/lungs/proc/handle_smell(datum/gas_mixture/breath, mob/living/carbon/human/H)
@@ -418,33 +428,6 @@
 		else if (prob(odor_pp)*20) //level 0
 			if(checked_gas.odor[1])
 				to_chat(H, checked_gas.odor[1])
-
-	// Carbon Monoxide
-		var/carbon_monoxide_pp = PP(breath,GAS_CO)
-		if (carbon_monoxide_pp > gas_stimulation_min)
-			H.reagents.add_reagent(/datum/reagent/carbon_monoxide,2)
-			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
-			if(!monoxide_reagent)
-				H.reagents.add_reagent(/datum/reagent/carbon_monoxide,2)
-			switch(carbon_monoxide_pp)
-				if (0 to 100)
-					monoxide_reagent.accumilation = min(monoxide_reagent.accumilation,50)
-				if (100 to 400)
-					monoxide_reagent.accumilation = clamp(monoxide_reagent.accumilation,50, 150)
-				if (400 to 800)
-					monoxide_reagent.accumilation = clamp(monoxide_reagent.accumilation, 150, 250)
-				if (800 to 3200)
-					monoxide_reagent.accumilation = min(monoxide_reagent.accumilation, 250)
-				if (3200 to INFINITY)
-					monoxide_reagent.accumilation = min(monoxide_reagent.accumilation, 450)
-		else
-			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
-			if(monoxide_reagent)
-				monoxide_reagent.accumilation = min(monoxide_reagent.accumilation, 150)
-				monoxide_reagent.volume = min(monoxide_reagent.volume, 20)
-
-
-		breath.adjust_moles(GAS_CO, -gas_breathed)
 
 /obj/item/organ/lungs/proc/handle_too_little_breath(mob/living/carbon/human/H = null, breath_pp = 0, safe_breath_min = 0, true_pp = 0)
 	. = 0

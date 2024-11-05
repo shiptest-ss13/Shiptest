@@ -121,7 +121,7 @@
 
 /obj/effect/greeble_spawner
 	name = "planet greeble spawner"
-	icon = 'icons/effects/landmarks_static.dmi'
+	icon = 'icons/effects/mapping/landmarks_static.dmi'
 	icon_state = "x"
 	var/datum/map_template/greeble/template
 
