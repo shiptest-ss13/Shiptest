@@ -10,8 +10,8 @@
 	health = 35
 	maxHealth = 35
 	healable = 0
-	melee_damage_lower = 2
-	melee_damage_upper = 3
+	melee_damage_lower = 4
+	melee_damage_upper = 10
 
 	attack_verb_continuous = "claws"
 	attack_verb_simple = "claw"
@@ -39,7 +39,6 @@
 	//yeah so it turns out that /simple_animal/hostile gets upset when you call say because say contains a sleep. so we have to do this on subtypes.
 	var/list/aggro_blurb = list("INFILTRATOR WITHIN AO!!", "TERMINATE HOSTILE!!", "DEFEND TERMINUS!!", "CODE 7-34!!")
 	var/aggro_blurb_chance = 10
-	var/mob_language = /datum/language/swarmer
 
 	var/alert_light
 
@@ -54,7 +53,7 @@
 	a_intent_change(INTENT_HARM)
 	update_icons()
 	if(prob(aggro_blurb_chance))
-		say("[pick(aggro_blurb)]", language = mob_language, forced = type)
+		say("[pick(aggro_blurb)]", forced = type)
 
 
 /mob/living/simple_animal/hostile/hivebot/LoseAggro()
@@ -104,8 +103,10 @@
 	maxHealth = 80
 	ranged = TRUE
 	casingtype = /obj/item/ammo_casing/mm712x82
+	melee_damage_lower = 12
+	melee_damage_upper = 20
 
-/mob/living/simple_animal/hostile/hivebot/defender
+/mob/living/simple_animal/hostile/hivebot/defender //slave to the system
 	name = "core hivebot"
 	desc = "A massive, alien tower of metal and circuitry. Eyes adorn its body, each one casting a ray of electronic light in myriad directions. Slaved to its whim is a scrapped turret mounting, angrily glancing at the world around it."
 	armor = list("melee" = 40, "bullet" = 60, "laser" = 30, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 100, "fire" = 50, "acid" = 0)
@@ -121,6 +122,9 @@
 
 	retreat_distance = 3
 	minimum_distance = 5
+
+	melee_damage_lower = 15
+	melee_damage_upper = 28
 
 /mob/living/simple_animal/hostile/hivebot/defender/Initialize(mapload)
 	. = ..()
