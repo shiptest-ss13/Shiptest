@@ -115,9 +115,10 @@
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_545_39
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_46_30
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/skm_545_39,
+		/obj/item/ammo_box/magazine/skm_46_30,
+		/obj/item/ammo_box/magazine/skm_46_30/recycled,
 	)
 
 	recoil = 2
@@ -199,17 +200,45 @@
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
 
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
 	name = "\improper Nanotrasen Saber SMG"
 	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
 	icon = 'icons/obj/guns/projectile.dmi'
-	default_attachments = list(/obj/item/attachment/foldable_stock)
 	icon_state = "saber"
 	item_state = "gun"
+
 	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/smgm9mm,
+		/obj/item/ammo_box/magazine/smgm9mm/ap,
+		/obj/item/ammo_box/magazine/smgm9mm/inc,
+		/obj/item/ammo_box/magazine/smgm9mm/rubber,
+
 	)
+
+	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
+
+	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
+	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
+
+	spread = 7
+	spread_unwielded = 10
+
+	recoil = 0
+	recoil_unwielded = 4
+
+	wield_delay = 0.4 SECONDS
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/foldable_stock
+	)
+	default_attachments = list(/obj/item/attachment/foldable_stock)
 	bolt_type = BOLT_TYPE_LOCKING
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD

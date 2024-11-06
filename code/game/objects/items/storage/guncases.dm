@@ -15,6 +15,7 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
 	pickup_sound = 'sound/items/handling/toolbox_pickup.ogg'
+	custom_materials = list(/datum/material/iron = 500)
 	var/max_items = 10
 	var/max_w_class = WEIGHT_CLASS_BULKY
 	var/gun_type
