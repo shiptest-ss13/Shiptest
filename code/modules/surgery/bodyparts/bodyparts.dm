@@ -222,7 +222,8 @@
 		. |= BODYPART_LIFE_UPDATE_HEALTH
 	if(brute_dam < DAMAGE_PRECISION && bleeding)
 		adjust_bleeding(-0.2) //slowly stop bleeding if there's no damage left
-	adjust_trauma(-TRAUMA_HEAL_RATE * delta_time)
+	if(IS_ORGANIC_LIMB(src))
+		adjust_trauma(-TRAUMA_HEAL_RATE * (owner.satiety > 80 ? 2 : 0.5) * delta_time) // 0.2 stacks of trauma reduced per second, doubled with vigorous, halved with sluggish. Eat your vegetables.
 
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc
@@ -819,6 +820,6 @@
 		//1-3 damage every 20 tiles for every broken bodypart.
 		//A single broken bodypart will give you an average of 650 tiles to run before you get a total of 100 damage and fall into crit
 
-/// Increase or remove trauma
+/// Increase or remove trauma, which is a percent boost to incoming damage
 /obj/item/bodypart/proc/adjust_trauma(amt)
 	trauma_buildup = round(clamp(trauma_buildup + amt, 0, TRAUMA_MAXIMUM), DAMAGE_PRECISION)

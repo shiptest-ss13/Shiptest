@@ -14,6 +14,7 @@
 	item_flags = NOBLUDGEON
 	var/splint_fracture = FALSE //WS Edit- Splints
 	var/failure_chance //WS Edit - Failure chance
+	var/cause_trauma = 0
 	var/self_delay = 50
 	var/other_delay = 0
 	var/repeating = FALSE
@@ -80,6 +81,7 @@
 			burn2heal *= (2-skill_mod)
 		if(affecting.heal_damage(brute2heal, burn2heal))
 			C.update_damage_overlays()
+			affecting.adjust_trauma(cause_trauma)
 		return TRUE
 
 
@@ -113,6 +115,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	var/heal_brute = 40
+	cause_trauma = 20
 	self_delay = 20
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 10)
 
@@ -197,6 +200,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	apply_sounds = 'sound/effects/ointment.ogg'
 	var/heal_burn = 40
+	cause_trauma = 20
 	self_delay = 20
 	grind_results = list(/datum/reagent/medicine/silver_sulfadiazine = 10)
 
