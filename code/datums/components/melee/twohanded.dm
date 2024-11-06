@@ -10,7 +10,7 @@
 	var/wielded = FALSE 							/// Are we holding the two handed item properly
 	var/force_multiplier = 0						/// The multiplier applied to force when wielded, does not work with force_wielded, and force_unwielded
 	var/force_wielded = null						/// The force of the item when wielded
-	var/force_unwielded = null		 				/// The force of the item when unwielded
+	var/force_unwielded = null						/// The force of the item when unwielded
 	var/wieldsound = FALSE 							/// Play sound when wielded
 	var/unwieldsound = FALSE 						/// Play sound when unwielded
 	var/attacksound = FALSE							/// Play sound on attack when wielded
