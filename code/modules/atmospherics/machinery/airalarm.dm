@@ -280,6 +280,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 
 /obj/machinery/airalarm/examine_more(mob/user)
 	ui_interact(user)
+	return ..()
 
 /obj/machinery/airalarm/ui_data(mob/user)
 	var/data = list(

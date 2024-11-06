@@ -86,7 +86,8 @@
 		..()
 
 /mob/living/simple_animal/hostile/megafauna/proc/spawn_mob_trophy()
-	loot += mob_trophy
+	if(mob_trophy)
+		loot += mob_trophy
 
 /mob/living/simple_animal/hostile/megafauna/gib()
 	if(health > 0)

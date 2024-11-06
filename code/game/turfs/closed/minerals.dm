@@ -134,9 +134,9 @@
 
 
 /turf/closed/mineral/attack_animal(mob/living/simple_animal/user)
+	..()
 	if((user.environment_smash & ENVIRONMENT_SMASH_WALLS) || (user.environment_smash & ENVIRONMENT_SMASH_RWALLS) || (user.environment_smash & ENVIRONMENT_SMASH_MINERALS))
 		gets_drilled(user)
-	..()
 
 /turf/closed/mineral/attack_alien(mob/living/carbon/alien/M)
 	balloon_alert(M, "digging...")

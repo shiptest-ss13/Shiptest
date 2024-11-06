@@ -51,7 +51,8 @@
 	return TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/spawn_mob_trophy()
-	loot += mob_trophy //we don't butcher
+	if(mob_trophy)
+		loot += mob_trophy //we don't butcher
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/death(gibbed)
 	mouse_opacity = MOUSE_OPACITY_ICON
