@@ -151,11 +151,11 @@
 
 	// update item stats and name
 	var/obj/item/parent_item = parent
-	if(!force_multiplier)
+	if(force_multiplier)
 		parent_item.force *= force_multiplier
 	else if(!isnull(force_wielded))
 		parent_item.force = force_wielded
-	if(!sharpened_increase)
+	if(sharpened_increase)
 		parent_item.force += sharpened_increase
 	parent_item.name = "[parent_item.name] (Wielded)"
 	parent_item.update_appearance()
@@ -198,7 +198,7 @@
 	var/obj/item/parent_item = parent
 	if(sharpened_increase)
 		parent_item.force -= sharpened_increase
-	if(!force_multiplier)
+	if(force_multiplier)
 		parent_item.force /= force_multiplier
 	else if(!isnull(force_unwielded))
 		parent_item.force = force_unwielded
