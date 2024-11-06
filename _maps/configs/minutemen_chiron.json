@@ -1,0 +1,40 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Chrion-class Emergency Response Vessel",
+	"prefix": "CMSV",
+	"namelists": ["GENERAL", "CLIP MINUTEMEN", "NATURAL_AGGRESSIVE"],
+	"description": "The Chiron-class is a new-ish ship purpose-built for BARD. Built from hulls designed and made, but never used, during the Frontiersmen War, and equipped with a small but powerful ambulance shuttle, these hulls find new life as Search and Rescue platforms, as well as aiding CMM-BARD in disaster relief and biohazard containment.",
+	"tags": [
+		"Combat",
+		"Medical"
+	],
+	"map_short_name": "Chiron-class",
+	"faction": "/datum/faction/clip",
+	"starting_funds": 2000,
+	"map_path": "_maps/shuttles/minutemen/minutemen_chiron.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/clip/minutemen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Corpsman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/doctor",
+			"slots": 2
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/clip/minutemen/engineer",
+			"slots": 1
+		},
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
+			"slots": 4
+		},
+		"Reservist": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/reserve",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

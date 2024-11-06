@@ -1,0 +1,361 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/turf_decal/corner/opaque/lime/three_quarters{
+	dir = 1
+	},
+/obj/structure/chair/handrail,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"b" = (
+/obj/structure/chair/handrail,
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "hermes_holofield";
+	pixel_y = 23;
+	pixel_x = -8
+	},
+/obj/machinery/button/door{
+	pixel_y = 25;
+	name = "front shutters";
+	id = "hermes_front"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"c" = (
+/obj/effect/turf_decal/corner/opaque/lime/three_quarters{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"d" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/window{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"g" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	req_ship_access = 0
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "hermes_front"
+	},
+/obj/docking_port/mobile{
+	dir = 4;
+	port_direction = 2;
+	name = "hermes dock";
+	preferred_direction = 4
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
+	id = "hermes_holofield"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"h" = (
+/obj/machinery/computer/crew,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light/small/directional/west{
+	pixel_y = -13
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"k" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"q" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	req_ship_access = 0
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "hermes_holofield"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "hermes_front"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"u" = (
+/obj/machinery/power/smes/shuttle/micro/precharged,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "hermes_side";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"y" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "tactical chair"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-1"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"B" = (
+/turf/template_noop,
+/area/space)
+"C" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "hermes_side"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"D" = (
+/obj/effect/turf_decal/corner/opaque/lime/three_quarters,
+/obj/structure/chair/handrail,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"E" = (
+/obj/machinery/computer/helm{
+	dir = 8;
+	pixel_x = 6
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = -9;
+	pixel_x = 25;
+	name = "window shutters";
+	id = "hermes_side"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"F" = (
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_y = -20;
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"G" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/bridge)
+"H" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/item/radio/intercom/wideband/directional/north{
+	pixel_x = -12
+	},
+/obj/item/radio/intercom/directional/north{
+	pixel_x = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"J" = (
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"P" = (
+/obj/machinery/power/smes/shuttle/micro/precharged,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "hermes_side";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"Q" = (
+/obj/effect/turf_decal/corner/opaque/lime/three_quarters{
+	dir = 4
+	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"S" = (
+/turf/closed/wall/r_wall/yesdiag,
+/area/ship/bridge)
+"W" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-1"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"X" = (
+/obj/machinery/stasis{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+
+(1,1,1) = {"
+B
+G
+J
+J
+G
+"}
+(2,1,1) = {"
+S
+G
+P
+u
+G
+"}
+(3,1,1) = {"
+G
+h
+W
+y
+C
+"}
+(4,1,1) = {"
+G
+H
+d
+E
+C
+"}
+(5,1,1) = {"
+G
+X
+k
+G
+S
+"}
+(6,1,1) = {"
+G
+D
+c
+G
+B
+"}
+(7,1,1) = {"
+G
+a
+Q
+G
+B
+"}
+(8,1,1) = {"
+G
+b
+F
+G
+B
+"}
+(9,1,1) = {"
+G
+q
+g
+G
+B
+"}
+(10,1,1) = {"
+B
+B
+B
+B
+B
+"}

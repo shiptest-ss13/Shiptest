@@ -413,3 +413,8 @@
 	file_name = "frontiersmen_brawler"
 	name = "Brawler-class Dropship"
 	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/hermes
+	file_name = "minutemen_hermes"
+	name = "Hermes-class Ambulance"
+	prefix = "CMSV"
