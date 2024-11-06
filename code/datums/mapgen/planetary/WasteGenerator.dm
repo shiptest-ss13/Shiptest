@@ -138,7 +138,7 @@
 
 	mob_spawn_list = list(
 		//hivebots, not too difficult
-		/mob/living/simple_animal/hostile/hivebot/strong = 70,
+		/mob/living/simple_animal/hostile/hivebot/strong = 20,
 		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
 		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 30,
 		//bots, are hostile
@@ -253,7 +253,7 @@
 		/obj/effect/spawner/minefield = 2
 	)
 	mob_spawn_list = list( //nor organics, more biased towards hivebots though
-		/mob/living/simple_animal/hostile/hivebot/strong = 80,
+		/mob/living/simple_animal/hostile/hivebot/strong = 20,
 		/mob/living/simple_animal/hostile/hivebot/ranged = 50,
 		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 50,
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
@@ -320,7 +320,7 @@
 		/obj/effect/spawner/random/anomaly/waste/cave = 1
 	)
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/hivebot/strong = 70,
+		/mob/living/simple_animal/hostile/hivebot/strong = 20,
 		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
 		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 30,
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
@@ -405,7 +405,7 @@
 		/obj/effect/spawner/minefield/manhack = 2
 	)
 	mob_spawn_list = list( //nor organics, more biased towards hivebots though
-		/mob/living/simple_animal/hostile/hivebot/strong = 80,
+		/mob/living/simple_animal/hostile/hivebot/strong = 20,
 		/mob/living/simple_animal/hostile/hivebot/ranged = 50,
 		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 50,
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
@@ -436,7 +436,8 @@
 		/mob/living/simple_animal/hostile/hivebot/strong = 20,
 		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
 		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 20,
-		/mob/living/simple_animal/hostile/hivebot = 20
+		/mob/living/simple_animal/hostile/hivebot = 20,
+		/mob/living/simple_animal/hostile/hivebot/defender = 10
 	)
 	mob_spawn_chance = 30
 	feature_spawn_list = list(
