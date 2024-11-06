@@ -420,9 +420,11 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 		return
 
 	if (length(last_whisper))
-		living_owner.dying_breath("[last_whisper]")
 		living_owner.say("#[last_whisper]")
-	living_owner.succumb(whispered = length(last_whisper) > 0)
+		//Say handles everything else for us
+		return
+
+	living_owner.succumb(FALSE)
 
 //ALIENS
 
