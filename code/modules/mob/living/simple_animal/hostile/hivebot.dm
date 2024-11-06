@@ -10,13 +10,14 @@
 	health = 35
 	maxHealth = 35
 	healable = 0
-	melee_damage_lower = 4
-	melee_damage_upper = 10
+	melee_damage_lower = 8
+	melee_damage_upper = 12
 
 	attack_verb_continuous = "claws"
 	attack_verb_simple = "claw"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	casingtype = /obj/item/ammo_casing/c10mm
+	projectilesound = 'sound/weapons/gun/pistol/shot.ogg'
 
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 100, "fire" = 50, "acid" = 0)
 
@@ -91,6 +92,7 @@
 	ranged = TRUE
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c57x39mm
+	projectilesound = 'sound/weapons/gun/smg/sidewinder.ogg'
 
 /mob/living/simple_animal/hostile/hivebot/strong
 	name = "heavy hivebot"
@@ -103,6 +105,7 @@
 	maxHealth = 80
 	ranged = TRUE
 	casingtype = /obj/item/ammo_casing/mm712x82
+	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
 	melee_damage_lower = 12
 	melee_damage_upper = 20
 
@@ -118,6 +121,7 @@
 	ranged = TRUE
 
 	casingtype = /obj/item/ammo_casing/mm712x82
+	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
 	rapid = 3
 
 	retreat_distance = 3
