@@ -194,11 +194,13 @@
 //Limb Trauma Defines
 #define TRAUMA_HEAL_RATE 0.2
 #define TRAUMA_MAXIMUM 150
-#define TRAUMA_GAIN_PATCH 0.2
-#define TRAUMA_GAIN_SURGERY 10
-#define TRAUMA_GAIN_LEGION 40
+#define TRAUMA_GAIN_PATCH 0.2 // Amount of trauma gained per point healed with a touch chemical
+#define TRAUMA_GAIN_SURGERY 10 // Amount of trauma gained per surgery step attempted without anesthetic
+#define TRAUMA_SURGERY_ANESTHETIC_MOD 0.1 //multiplier for using anesthetic to reduce the above
+#define TRAUMA_GAIN_TEND 0.3 // Amount of trauma gained per point healed with tend wounds surgery. Slightly worse than patches because it's FREE
+#define TRAUMA_GAIN_LEGION 20 //trade request: I recieve: 20 effective health. You recieve: 25 health.
 
-#define TRAUMA_LEGION_MALIGNANT 100
+#define TRAUMA_LEGION_MALIGNANT 50 //using a legion core at or above this amount of average trauma will cause an infection, which is bad for you
 
 //Surgery Defines
 #define BIOWARE_GENERIC "generic"
