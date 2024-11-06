@@ -8,7 +8,7 @@
 /datum/component/two_handed
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS 		// Only one of the component can exist on an item
 	var/wielded = FALSE 							/// Are we holding the two handed item properly
-	var/force_multiplier = 0					/// The multiplier applied to force when wielded, does not work with force_wielded, and force_unwielded
+	var/force_multiplier = 0						/// The multiplier applied to force when wielded, does not work with force_wielded, and force_unwielded
 	var/force_wielded = null						/// The force of the item when wielded
 	var/force_unwielded = null		 				/// The force of the item when unwielded
 	var/wieldsound = FALSE 							/// Play sound when wielded
