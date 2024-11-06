@@ -202,20 +202,20 @@
 				return
 			if(H != user)
 				H.visible_message(span_notice("[user] holds [src] against [H]'s body, coaxing the regenerating crystals from [src]..."))
-				balloon_alert(user, "Applying core...")
+				balloon_alert(user, "applying core...")
 				if(!do_after(user, 2 SECONDS, H)) //teamwork bonus
 					to_chat(user, span_warning("You are interrupted, and [src]'s crystals retreat back into its form."))
 					return
-				balloon_alert(user, "Core applied!")
+				balloon_alert(user, "core applied!")
 				H.visible_message(span_notice("[src] explodes into a web of cancerous crystals, rapidly covering and reinforcing [H]'s body."))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "other"))
 			else
 				to_chat(user, span_notice("You hold [src] against your body, coaxing the regenerating crystals from [src]..."))
-				balloon_alert(user, "Applying core...")
+				balloon_alert(user, "applying core...")
 				if(!do_after(user, 4 SECONDS, src))
 					to_chat(user, span_warning("You are interrupted, and [src]'s crystals retreat back into its form."))
 					return
-				balloon_alert(user, "Core applied!")
+				balloon_alert(user, "core applied!")
 			to_chat(user, span_notice("[src] explodes into a web of cancerous crystals across your body; invigorating you, but for how long?"))
 			SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
 			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
