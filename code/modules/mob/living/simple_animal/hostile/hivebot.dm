@@ -108,6 +108,7 @@
 	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
 	melee_damage_lower = 12
 	melee_damage_upper = 20
+	move_to_delay = 7
 
 /mob/living/simple_animal/hostile/hivebot/defender //slave to the system
 	name = "core hivebot"
@@ -129,6 +130,8 @@
 
 	melee_damage_lower = 15
 	melee_damage_upper = 28
+
+	move_to_delay = 15
 
 /mob/living/simple_animal/hostile/hivebot/defender/Initialize(mapload)
 	. = ..()
