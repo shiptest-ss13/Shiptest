@@ -8,13 +8,13 @@
 	projectile_type = /obj/projectile/bullet/c57x39mm
 
 /obj/item/ammo_casing/c57x39mm/ap
-	name = "5.7x39mm AP bullet casing"
+	name = "5.7x39mm armor piercing bullet casing"
 	desc = "A 5.7x39mm armour-piercing bullet casing."
 	bullet_skin = "ap"
 	projectile_type = /obj/projectile/bullet/c57x39mm/ap
 
 /obj/item/ammo_casing/c57x39mm/hp
-	name = "5.7x39mm HP bullet casing"
+	name = "5.7x39mm hollow point bullet casing"
 	desc = "A 5.7x39mm armour-piercing bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/c57x39mm/hp
@@ -22,7 +22,7 @@
 /obj/item/ammo_casing/c57x39mm/rubber
 	name = "5.7x39mm rubber bullet casing"
 	desc = "A 5.7x39mm rubber bullet casing."
-	bullet_skin = "ap"
+	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c57x39mm/rubber
 
 // 4.6x30mm (WT-550 Automatic Rifle & SKM-24v)

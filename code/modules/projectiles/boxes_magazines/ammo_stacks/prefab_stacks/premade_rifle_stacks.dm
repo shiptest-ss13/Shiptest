@@ -10,7 +10,6 @@
 	icon_state = "8x50mmbox"
 
 /obj/item/storage/box/ammo/a8_50r/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r = 4)
 	generate_items_inside(items_inside,src)
@@ -24,7 +23,6 @@
 	icon_state = "8x50mmbox-hp"
 
 /obj/item/storage/box/ammo/a8_50r_hp/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -39,7 +37,6 @@
 	icon_state = "8x50mmbox"
 
 /obj/item/storage/box/ammo/a8_50r/match/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r/match = 4)
 	generate_items_inside(items_inside,src)
@@ -54,7 +51,6 @@
 	icon_state = "8x50mmbox"
 
 /obj/item/storage/box/ammo/a8_50r/trac/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r/trac = 4)
 	generate_items_inside(items_inside,src)
@@ -77,39 +73,8 @@
 	icon_state = "300box"
 
 /obj/item/storage/box/ammo/a300/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300 = 4)
-	generate_items_inside(items_inside,src)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300/hp
-	ammo_type = /obj/item/ammo_casing/a300/hp
-	max_ammo = 5
-
-/obj/item/storage/box/ammo/a300/hp
-	name = "box of .300 magnum ammo"
-	desc = "A box of hollow point .300 Magnum ammo."
-	icon_state = "300box"
-
-/obj/item/storage/box/ammo/a300/hp/PopulateContents()
-	..()
-	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300/hp = 4)
-	generate_items_inside(items_inside,src)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300/ap
-	ammo_type = /obj/item/ammo_casing/a300/ap
-	max_ammo = 5
-
-/obj/item/storage/box/ammo/a300/ap
-	name = "box of .300 magnum ammo"
-	desc = "A box of armour piercing .300 Magnum ammo."
-	icon_state = "300box"
-
-/obj/item/storage/box/ammo/a300/ap/PopulateContents()
-	..()
-	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300/ap = 4)
 	generate_items_inside(items_inside,src)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a300/trac
@@ -122,7 +87,6 @@
 	icon_state = "300box"
 
 /obj/item/storage/box/ammo/a300/trac/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300/trac = 2)
 	generate_items_inside(items_inside,src)
@@ -139,7 +103,6 @@
 	icon_state = "a556_42box_big"
 
 /obj/item/storage/box/ammo/a556_42/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a556_42 = 4)
 	generate_items_inside(items_inside,src)
@@ -154,7 +117,6 @@
 	icon_state = "a556_42box_big"
 
 /obj/item/storage/box/ammo/a556_42/hp/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a556_42/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -169,7 +131,6 @@
 	icon_state = "a556_42box_big"
 
 /obj/item/storage/box/ammo/a556_42/ap/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a556_42/ap = 4)
 	generate_items_inside(items_inside,src)
@@ -189,7 +150,6 @@
 	icon_state = "a762_40box_big_inteq"
 
 /obj/item/storage/box/ammo/a762_40/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a762_40 = 4)
 	generate_items_inside(items_inside,src)
@@ -204,7 +164,6 @@
 	icon_state = "a762_40box_big"
 
 /obj/item/storage/box/ammo/a762_40/hp/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a762_40/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -219,7 +178,6 @@
 	icon_state = "a762_40box_big"
 
 /obj/item/storage/box/ammo/a762_40/ap/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a762_40/ap = 4)
 	generate_items_inside(items_inside,src)
@@ -234,7 +192,6 @@
 	icon_state = "a762_40box_big"
 
 /obj/item/storage/box/ammo/a762_40/rubber/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a762_40/rubber = 4)
 	generate_items_inside(items_inside,src)
@@ -254,7 +211,6 @@
 	icon_state = "a308box-HP"
 
 /obj/item/storage/box/ammo/a308/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a308 = 4)
 	generate_items_inside(items_inside,src)
@@ -269,7 +225,6 @@
 	icon_state = "a308box"
 
 /obj/item/storage/box/ammo/a308/hp/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a308/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -284,7 +239,6 @@
 	icon_state = "a308box"
 
 /obj/item/storage/box/ammo/a308/ap/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a308/ap = 4)
 	generate_items_inside(items_inside,src)
@@ -301,7 +255,6 @@
 	icon_state = "299box"
 
 /obj/item/storage/box/ammo/c299/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c299 = 4)
 	generate_items_inside(items_inside,src)
@@ -318,7 +271,6 @@
 	icon_state = "65box"
 
 /obj/item/storage/box/ammo/a65clip/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a65clip = 4)
 	generate_items_inside(items_inside,src)
@@ -332,7 +284,6 @@
 	desc = "A box of standard 6.5x57mm CLIP tracker ammo."
 
 /obj/item/storage/box/ammo/a65clip/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a65clip/trac = 2)
 	generate_items_inside(items_inside,src)

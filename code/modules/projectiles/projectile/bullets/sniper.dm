@@ -79,3 +79,18 @@
 	damage = 12
 	armour_penetration = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a858
+
+// .300 Magnum
+
+/obj/projectile/bullet/a300
+	name = ".300 Magnum bullet"
+	damage = 45
+	stamina = 10
+	armour_penetration = 40
+	speed = BULLET_SPEED_RIFLE
+
+/obj/projectile/bullet/a300/trac
+	name = ".300 Tracker"
+	damage = 10
+	armour_penetration = 0
+	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a308

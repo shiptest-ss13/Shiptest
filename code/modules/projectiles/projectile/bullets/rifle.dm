@@ -7,7 +7,7 @@
 	speed = BULLET_SPEED_RIFLE
 
 /obj/projectile/bullet/a556_42/hp
-	name = "5.56x42mm CLIP bullet"
+	name = "5.56x42mm CLIP hollow point bullet"
 	damage = 35
 	armour_penetration = 0
 	speed_mod = BULLET_SPEED_HP_MOD
@@ -34,11 +34,13 @@
 	speed = BULLET_SPEED_RIFLE
 
 /obj/projectile/bullet/a8_50r/hp
+	name = "8x50mmR hollow point bullet"
 	damage = 49
 	armour_penetration = 0
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/a8_50r/match
+	name = "8x50mmR match bullet"
 	damage = 40
 	armour_penetration = -10
 	speed_mod = BULLET_SPEED_AP_MOD
@@ -55,53 +57,28 @@
 	armour_penetration = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a8_50r
 
-// .300 Magnum
-
-/obj/projectile/bullet/a300
-	name = ".300 Magnum bullet"
-	damage = 45
-	stamina = 10
-	armour_penetration = 40
-	speed = BULLET_SPEED_RIFLE
-
-/obj/projectile/bullet/a300/hp
-	name = ".300 Magnum bullet"
-	damage = 55
-	armour_penetration = 0
-	speed_mod = BULLET_SPEED_HP_MOD
-
-/obj/projectile/bullet/a300/ap
-	name = ".300 Magnum bullet"
-	damage = 40
-	armour_penetration = 60
-	speed_mod = BULLET_SPEED_AP_MOD
-
-/obj/projectile/bullet/a300/trac
-	name = ".300 Tracker"
-	damage = 10
-	armour_penetration = 0
-	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a308
-
 //7.62x40mm CLIP (SKM Rifles)
 
 /obj/projectile/bullet/a762_40
-	name = "7.62x40mm CLIP"
+	name = "7.62x40mm CLIP bullet"
 	damage = 30
 	armour_penetration = 20
 	speed = BULLET_SPEED_RIFLE
 
 /obj/projectile/bullet/a762_40/hp
+	name = "7.62x40mm CLIP hollow point bullet"
 	damage = 40
 	armour_penetration = 0
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/a762_40/ap
+	name = "7.62x40mm CLIP armor piercing bullet"
 	damage = 25
 	armour_penetration = 40
 	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/projectile/bullet/a762_40/rubber //"rubber"
-	name = "7.62x40mm CLIP Rubber"
+	name = "7.62x40mm CLIP rubber bullet"
 	damage = 15
 	stamina = 40
 	armour_penetration = 0
@@ -110,24 +87,26 @@
 //.308 WIN (M514 & GAL DMRs)
 
 /obj/projectile/bullet/a308
-	name = ".308"
+	name = ".308 bullet"
 	speed = 0.3
 	damage = 30
 	armour_penetration = 40
 	speed = BULLET_SPEED_RIFLE
 
 /obj/projectile/bullet/a308/hp
+	name = ".308 hollow point bullet"
 	damage = 40
 	armour_penetration = 10
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/a308/ap
+	name = ".308 armor piercing bullet"
 	damage = 25
 	armour_penetration = 60
 	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/projectile/bullet/a308/rubber //"rubber"
-	name = ".308 Rubber"
+	name = ".308 rubber bullet"
 	speed = 0.3
 	damage = 25
 	stamina = 50

@@ -196,7 +196,6 @@
 	icon_state = "45box-hp"
 
 /obj/item/storage/box/ammo/c45_hp/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -210,7 +209,6 @@
 	icon_state = "45box-rubbershot"
 
 /obj/item/storage/box/ammo/c45_rubber/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/rubber = 4)
 	generate_items_inside(items_inside,src)
@@ -235,7 +233,6 @@
 	icon_state = "22lrbox"
 
 /obj/item/storage/box/ammo/c22lr/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr = 4)
 	generate_items_inside(items_inside,src)
@@ -250,7 +247,6 @@
 	icon_state = "22lrbox"
 
 /obj/item/storage/box/ammo/c22lr/ap/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/ap = 4)
 	generate_items_inside(items_inside,src)
@@ -265,7 +261,6 @@
 	icon_state = "22lrbox"
 
 /obj/item/storage/box/ammo/c22lr/hp/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -280,7 +275,6 @@
 	icon_state = "22lrbox"
 
 /obj/item/storage/box/ammo/c22lr/rubber/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/rubber = 4)
 	generate_items_inside(items_inside,src)
@@ -296,7 +290,6 @@
 	icon_state = "357box"
 
 /obj/item/storage/box/ammo/a357/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a357 = 4)
 	generate_items_inside(items_inside,src)
@@ -310,7 +303,6 @@
 	icon_state = "357box-match"
 
 /obj/item/storage/box/ammo/a357_match/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a357/match = 4)
 	generate_items_inside(items_inside,src)
@@ -324,7 +316,6 @@
 	icon_state = "357box-hp"
 
 /obj/item/storage/box/ammo/a357_hp/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a357/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -341,7 +332,6 @@
 	icon_state = "4570"
 
 /obj/item/storage/box/ammo/a4570/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a4570 = 4)
 	generate_items_inside(items_inside,src)
@@ -355,7 +345,6 @@
 	icon_state = "4570-match"
 
 /obj/item/storage/box/ammo/a4570_match/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a4570/match = 4)
 	generate_items_inside(items_inside,src)
@@ -369,7 +358,6 @@
 	icon_state = "4570-hp"
 
 /obj/item/storage/box/ammo/a4570_hp/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a4570/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -383,7 +371,6 @@
 	icon_state = "4570-explosive"
 
 /obj/item/storage/box/ammo/a4570_explosive/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a4570/explosive = 4)
 	generate_items_inside(items_inside,src)
@@ -400,7 +387,6 @@
 	icon_state = "38box"
 
 /obj/item/storage/box/ammo/c38/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c38 = 4)
 	generate_items_inside(items_inside,src)
@@ -414,7 +400,6 @@
 	icon_state = "38box-surplus"
 
 /obj/item/storage/box/ammo/c38_surplus/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/surplus = 4)
 	generate_items_inside(items_inside,src)
@@ -440,7 +425,6 @@
 	icon_state = "38hotshot"
 
 /obj/item/storage/box/ammo/c38_hotshot/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/hotshot = 4)
 	generate_items_inside(items_inside,src)
@@ -454,7 +438,6 @@
 	icon_state = "38iceblox"
 
 /obj/item/storage/box/ammo/c38_iceblox/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/iceblox = 4)
 	generate_items_inside(items_inside,src)
@@ -470,7 +453,6 @@
 	icon_state = "a44roum"
 
 /obj/item/storage/box/ammo/a44roum/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum = 4)
 	generate_items_inside(items_inside,src)
@@ -484,7 +466,6 @@
 	icon_state = "a44roum-rubber"
 
 /obj/item/storage/box/ammo/a44roum_rubber/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum/rubber = 4)
 	generate_items_inside(items_inside,src)
@@ -498,7 +479,6 @@
 	icon_state = "a44roum-hp"
 
 /obj/item/storage/box/ammo/a44roum_hp/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum/hp = 4)
 	generate_items_inside(items_inside,src)

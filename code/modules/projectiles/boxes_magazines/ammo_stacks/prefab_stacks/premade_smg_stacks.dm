@@ -9,7 +9,6 @@
 	icon_state = "46x30mmbox"
 
 /obj/item/storage/box/ammo/c46x30mm/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm = 4)
 	generate_items_inside(items_inside,src)
@@ -24,7 +23,6 @@
 	icon_state = "46x30mmbox"
 
 /obj/item/storage/box/ammo/c46x30mm/ap/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/ap = 4)
 	generate_items_inside(items_inside,src)
@@ -39,7 +37,6 @@
 	icon_state = "46x30mmbox"
 
 /obj/item/storage/box/ammo/c46x30mm/ap/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -59,7 +56,6 @@
 	icon_state = "556mmHITPbox"
 
 /obj/item/storage/box/ammo/c556mm/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c556mm = 4)
 	generate_items_inside(items_inside,src)
@@ -73,7 +69,6 @@
 	icon_state = "556mmHITPbox-surplus"
 
 /obj/item/storage/box/ammo/c556mm_surplus/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c556mm/surplus = 4)
 	generate_items_inside(items_inside,src)
@@ -87,7 +82,6 @@
 	icon_state = "556mmHITPbox-ap"
 
 /obj/item/storage/box/ammo/c556mm_ap/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c556mm/ap = 4)
 	generate_items_inside(items_inside,src)
@@ -101,7 +95,6 @@
 	icon_state = "556mmHITPbox-hp"
 
 /obj/item/storage/box/ammo/c556mm_hp/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c556mm/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -115,7 +108,6 @@
 	icon_state = "556mmHITPbox-rubbershot"
 
 /obj/item/storage/box/ammo/c556mm_rubber/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c556mm/rubbershot = 4)
 	generate_items_inside(items_inside,src)
@@ -131,7 +123,6 @@
 	icon_state = "57x39mmbox"
 
 /obj/item/storage/box/ammo/c57x39/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39 = 4)
 	generate_items_inside(items_inside,src)
@@ -145,7 +136,6 @@
 	icon_state = "57x39mmbox"
 
 /obj/item/storage/box/ammo/c57x39/hp/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -159,7 +149,6 @@
 	icon_state = "57x39mmbox"
 
 /obj/item/storage/box/ammo/c57x39/ap/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39/ap = 4)
 	generate_items_inside(items_inside,src)
@@ -173,7 +162,6 @@
 	icon_state = "57x39mmbox"
 
 /obj/item/storage/box/ammo/c57x39/rubber/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39/rubber = 4)
 	generate_items_inside(items_inside,src)

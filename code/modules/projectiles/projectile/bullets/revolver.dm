@@ -136,14 +136,14 @@
 	speed = BULLET_SPEED_REVOLVER
 
 /obj/projectile/bullet/a44roum/rubber
-	name = ".44 roumain bullet"
+	name = ".44 roumain rubber bullet"
 	damage =  7
 	stamina = 38
 	armour_penetration = -20
 	speed_mod = BULLET_SPEED_RUBBER_MOD
 
 /obj/projectile/bullet/a44roum/hp
-	name = ".44 roumain bullet"
+	name = ".44 roumain hollow point bullet"
 	damage =  40
 	armour_penetration = -20
 	ricochet_chance = 0

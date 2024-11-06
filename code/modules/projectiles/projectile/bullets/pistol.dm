@@ -16,7 +16,7 @@
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c22lr/ap
-	name = ".22LR bullet"
+	name = ".22LR armor piercing bullet"
 	damage = 14
 	armour_penetration = -25
 	ricochet_incidence_leeway = 20
