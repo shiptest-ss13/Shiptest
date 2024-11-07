@@ -1,6 +1,11 @@
-#define EMPTY_GUN_HELPER(gun_type)				\
+#define NO_MAG_GUN_HELPER(gun_type)				\
 	/obj/item/gun/ballistic/##gun_type/no_mag {	\
-		spawnwithmagazine = FALSE;				\
+		default_ammo_type = FALSE;				\
+	}
+
+#define EMPTY_GUN_HELPER(gun_type)				\
+	/obj/item/gun/ballistic/##gun_type/empty {	\
+		spawn_no_ammo = TRUE;					\
 	}
 
 ///Subtype for any kind of ballistic gun
@@ -9,7 +14,6 @@
 	desc = "Now comes in flavors like GUN. Uses 10mm ammo, for some reason."
 	name = "projectile gun"
 	w_class = WEIGHT_CLASS_NORMAL
-
 	has_safety = TRUE
 	safety = TRUE
 
@@ -36,18 +40,26 @@
 		)
 	)
 
-/obj/item/gun/ballistic/Initialize()
+/obj/item/gun/ballistic/Initialize(mapload, spawn_empty)
 	. = ..()
-	if (!spawnwithmagazine && !ispath(mag_type, /obj/item/ammo_box/magazine/internal))
+	if(spawn_empty)
+		if(internal_magazine)
+			spawn_no_ammo = TRUE
+		else
+			default_ammo_type = FALSE
+
+	if (!default_ammo_type && !internal_magazine)
 		bolt_locked = TRUE
 		update_appearance()
 		return
-	if (!magazine)
-		magazine = new mag_type(src)
-	if (!spawnwithmagazine)
-		get_ammo_list (drop_all = TRUE)
-	chamber_round()
+	if (ispath(default_ammo_type))
+		magazine = new default_ammo_type(src)
+	if (spawn_no_ammo)
+		get_ammo_list(drop_all = TRUE)
+	else
+		chamber_round()
 	update_appearance()
+
 /obj/item/gun/ballistic/update_icon_state()
 	if(current_skin)
 		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""]"
@@ -146,7 +158,7 @@
 
 ///Handles all the logic needed for magazine insertion
 /obj/item/gun/ballistic/proc/insert_magazine(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
-	if(!istype(inserted_mag, mag_type))
+	if(!(inserted_mag.type in allowed_ammo_types))
 		to_chat(user, "<span class='warning'>\The [inserted_mag] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
 	if(user.transferItemToLoc(inserted_mag, src))
@@ -208,7 +220,7 @@
 		return
 
 	if(sealed_magazine)
-		to_chat(user, span_warning("The magazine on [src] is sealed and cannot be reloaded!"))
+		to_chat(user, span_warning("The [magazine_wording] on [src] is sealed and cannot be reloaded!"))
 		return
 	if(!internal_magazine && istype(A, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = A
@@ -221,7 +233,7 @@
 				to_chat(user, "<span class='notice'>There's already a [magazine_wording] in \the [src].</span>")
 		return
 
-	if(istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box/magazine/ammo_stack))
+	if(istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box))
 		if (bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)
 			if (chambered && !chambered.BB)
 				chambered.on_eject(shooter = user)
@@ -274,30 +286,35 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/ballistic/attack_hand(mob/user)
-	if(!internal_magazine && loc == user && user.is_holding(src) && magazine)
-		eject_magazine(user)
-		return
+	if(user.is_holding(src) && loc == user)
+		if(sealed_magazine)
+			to_chat(user, span_warning("The [magazine_wording] on [src] is sealed and cannot be accessed!"))
+			return
+		if(bolt_type == BOLT_TYPE_NO_BOLT && (chambered || internal_magazine))
+			chambered = null
+			var/num_unloaded = 0
+			for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
+				CB.forceMove(drop_location())
+
+				var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+				CB.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = CB.bounce_sfx_override)
+
+				num_unloaded++
+				SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
+			if (num_unloaded)
+				to_chat(user, span_notice("You unload [num_unloaded] [cartridge_wording]\s from [src]."))
+				playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+				update_appearance()
+			else
+				to_chat(user, span_warning("[src] is empty!"))
+			return
+		if(!internal_magazine && magazine)
+			eject_magazine(user)
+			return
+		return ..()
 	return ..()
 
 /obj/item/gun/ballistic/unique_action(mob/living/user)
-	if(bolt_type == BOLT_TYPE_NO_BOLT)
-		chambered = null
-		var/num_unloaded = 0
-		for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
-			CB.forceMove(drop_location())
-
-			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
-			CB.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = CB.bounce_sfx_override)
-
-			num_unloaded++
-			SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
-		if (num_unloaded)
-			to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
-			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
-			update_appearance()
-		else
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
-		return
 	if((bolt_type == BOLT_TYPE_LOCKING || bolt_type == BOLT_TYPE_CLIP) && bolt_locked)
 		drop_bolt(user)
 		return
@@ -322,7 +339,8 @@
 		. += "It does not seem to have a round chambered."
 	if (bolt_locked)
 		. += "The [bolt_wording] is locked back and needs to be released before firing."
-	. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
+	if(bolt_type != BOLT_TYPE_NO_BOLT)
+		. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 
 ///Gets the number of bullets in the gun
 /obj/item/gun/ballistic/proc/get_ammo(countchambered = TRUE)
@@ -340,7 +358,8 @@
 		rounds.Add(chambered)
 		if(drop_all)
 			chambered = null
-	rounds.Add(magazine.ammo_list(drop_all))
+	if(magazine)
+		rounds.Add(magazine.ammo_list(drop_all))
 	return rounds
 
 /obj/item/gun/ballistic/blow_up(mob/user)

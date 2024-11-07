@@ -904,6 +904,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "mu" = (
@@ -914,7 +915,7 @@
 	req_access_txt = "20"
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/mask/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/security/webbing/inteq/alt,
@@ -1520,16 +1521,16 @@
 	dir = 1
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
@@ -1968,7 +1969,7 @@
 /area/ship/maintenance/starboard)
 "DP" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/mask/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/security/webbing/inteq/alt,
@@ -2204,7 +2205,7 @@
 /obj/item/clothing/head/helmet/swat/inteq,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/mask/balaclava/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/storage/belt/security/webbing/inteq/alt,
 /obj/item/melee/baton/loaded,
@@ -2217,6 +2218,9 @@
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
+/obj/item/attachment/rail_light,
+/obj/item/attachment/rail_light,
+/obj/item/attachment/rail_light,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "HN" = (
@@ -3075,6 +3079,7 @@
 /obj/machinery/suit_storage_unit/inherit{
 	req_access_txt = "20"
 	},
+/obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "VN" = (
@@ -3145,7 +3150,7 @@
 "Xb" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Bridge";
-	req_one_access = list(19, 3)
+	req_one_access = list(19,3)
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3217,7 +3222,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "XG" = (
@@ -3243,6 +3248,7 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "XO" = (
@@ -3252,8 +3258,8 @@
 	name = "fridge"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/item/storage/cans/sixbeer,
 /obj/item/reagent_containers/food/snacks/carneburrito,
 /obj/effect/turf_decal/corner/opaque/yellow{
