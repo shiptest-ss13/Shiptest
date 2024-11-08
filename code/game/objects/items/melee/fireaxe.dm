@@ -54,7 +54,7 @@
 	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=22, icon_wielded="[base_icon_state]_w")
 
 /*
- * Dumb Cute Comment Title - Gorlex Hammers
+Blunt
  */
 /obj/item/melee/axe/sledgehammer //add wall + structure damage later once Gristlebee's pr is merged
 	icon_state = "sledgehammer"
