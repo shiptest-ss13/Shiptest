@@ -139,9 +139,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	///Does this machine accept mining points?
 	var/mining_point_vendor = FALSE
 	///Default price of items if not overridden
-	var/default_price = 25
+	var/default_price = 5
 	///Default price of premium items if not overridden
-	var/extra_price = 50
+	var/extra_price = 20
 	///Whether our age check is currently functional
 	var/age_restrictions = TRUE
 

@@ -20,8 +20,8 @@
 		/obj/item/book/granter/crafting_recipe/cooking_sweets_101 = 2,
 		/obj/item/melee/knife/butcher = 1)
 	refill_canister = /obj/item/vending_refill/dinnerware
-	default_price = 50
-	extra_price = 250
+	default_price = 5
+	extra_price = 20
 	light_mask = "dinnerware-light-mask"
 
 /obj/item/vending_refill/dinnerware

@@ -24,8 +24,8 @@
 		/obj/item/computer_hardware/recharger/APC = 2,
 		/obj/item/paicard = 2)
 	refill_canister = /obj/item/vending_refill/modularpc
-	default_price = 150
-	extra_price = 400
+	default_price = 15
+	extra_price = 20
 
 /obj/item/vending_refill/modularpc
 	machine_name = "Deluxe Silicate Selections"

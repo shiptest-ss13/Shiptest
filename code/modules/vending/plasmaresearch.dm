@@ -12,5 +12,5 @@
 		/obj/item/assembly/prox_sensor = 6,
 		/obj/item/assembly/igniter = 6,
 		/obj/item/assembly/health = 3)
-	default_price = 400
-	extra_price = 600
+	default_price = 25
+	extra_price = 50

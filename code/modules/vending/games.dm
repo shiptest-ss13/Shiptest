@@ -18,8 +18,8 @@
 		/obj/item/skateboard/pro = 3,
 		/obj/item/skateboard/hoverboard = 1)
 	refill_canister = /obj/item/vending_refill/games
-	default_price = 50
-	extra_price = 250
+	default_price = 5
+	extra_price = 15
 	light_mask = "games-light-mask"
 
 /obj/item/vending_refill/games

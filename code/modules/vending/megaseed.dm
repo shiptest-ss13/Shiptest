@@ -54,8 +54,8 @@
 					/obj/item/seeds/random = 2)
 	premium = list(/obj/item/reagent_containers/spray/waterflower = 1)
 	refill_canister = /obj/item/vending_refill/hydroseeds
-	default_price = 50
-	extra_price = 150
+	default_price = 5
+	extra_price = 10
 
 /obj/item/vending_refill/hydroseeds
 	machine_name = "MegaSeed Servitor"
