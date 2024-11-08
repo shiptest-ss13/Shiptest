@@ -64,7 +64,7 @@ Blunt
 	force = 5
 	armour_penetration = 40
 	attack_verb = list("bashed", "smashed", "crushed", "smacked")
-	hitsound = list('sound/weapons/smash.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg')
+	hitsound = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg')
 	slot_flags = NONE
 	sharpness = IS_BLUNT
 	tool_behaviour = TOOL_MINING
@@ -77,4 +77,10 @@ Blunt
 
 /obj/item/melee/axe/sledgehammer/melee_attack_chain(mob/user, atom/target, params)
 	..()
-	user.changeNext_move(CLICK_CD_MELEE * 1.7)
+	user.changeNext_move(CLICK_CD_MELEE * 1.4)
+
+/obj/item/melee/axe/sledgehammer/attack(mob/living/target, mob/living/user)
+	. = ..()
+	var/atom/throw_target = get_edge_target_turf(target, user.dir)
+	if(!target.anchored)
+		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
