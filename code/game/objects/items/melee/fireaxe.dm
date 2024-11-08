@@ -73,7 +73,7 @@
 
 /obj/item/melee/axe/sledgehammer/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=30, icon_wielded="[base_icon_state]_w")
+	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=30)
 
 /obj/item/melee/axe/sledgehammer/melee_attack_chain(mob/user, atom/target, params)
 	..()
