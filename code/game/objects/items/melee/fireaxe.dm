@@ -52,3 +52,28 @@
 /obj/item/melee/axe/scrap/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=22, icon_wielded="[base_icon_state]_w")
+
+/*
+ * Dumb Cute Comment Title - Gorlex Hammers
+ */
+/obj/item/melee/axe/sledgehammer //add wall + structure damage later once Gristlebee's pr is merged
+	icon_state = "sledgehammer"
+	base icon_state = "sledgehammer"
+	name = "breaching sledgehammer"
+	desc = "(TODO) A large, slow hammer used by the Gorlex Marauder splinters. As powerful as a weapon as it is a shipbreaking and mining tool."
+	force = 5
+	armour_penetration = 40
+	attack_verb = list("bashed", "smashed", "crushed", "smacked")
+	hitsound = 'sound/weapons/smash.ogg'
+	sharpness = IS_BLUNT
+	tool_behaviour = TOOL_MINING
+	toolspeed = 0.5
+	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
+
+/obj/item/melee/axe/sledgehammer/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=30, icon_wielded="[base_icon_state]1")
+
+/obj/item/melee/axe/sledgehammer/melee_attack_chain(mob/user, atom/target, params)
+	..()
+	user.changeNext_move(CLICK_CD_MELEE * 1.7)
