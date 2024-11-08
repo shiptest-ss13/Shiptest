@@ -61,9 +61,9 @@
 	if(prob(50))
 		mask = pick_weight(list(
 		/obj/item/clothing/mask/gas/frontiersmen = 12,
-		/obj/item/clothing/mask/gas/sechailer/balaclava = 10,
+		/obj/item/clothing/mask/balaclava = 10,
 		/obj/item/clothing/mask/breath = 7,
-		/obj/item/clothing/mask/whistle/trench = 3))
+		/obj/item/clothing/mask/whistle = 3))
 
 	if(prob(90))
 		back = pick_weight(list(
@@ -230,7 +230,7 @@
 	name = "ERT - Frontiersman Medic (Shock Troop)"
 
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
-	mask = /obj/item/clothing/mask/gas/syndicate/ngr
+	mask = /obj/item/clothing/mask/breath/ngr
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/mauler
 	belt = /obj/item/storage/belt/medical/webbing/frontiersmen/combat
@@ -274,7 +274,7 @@
 	name = "ERT - Frontiersman Sentry (SKM-24v LMG)"
 
 	head = /obj/item/clothing/head/helmet/marine/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
+	mask = /obj/item/clothing/mask/balaclava
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	suit_store = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag
 	gloves = /obj/item/clothing/gloves/combat

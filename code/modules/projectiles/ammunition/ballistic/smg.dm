@@ -17,6 +17,14 @@
 	projectile_type = /obj/projectile/bullet/c46x30mm
 	stack_size = 15
 
+/obj/item/ammo_casing/c46x30mm/recycled
+	name = "4.6x30mm recycled bullet casing"
+	desc = "A 4.6x30mm bullet casing."
+	bullet_skin = "surplus"
+	caliber = "4.6x30mm"
+	projectile_type = /obj/projectile/bullet/c46x30mm/recycled
+	stack_size = 15
+
 /obj/item/ammo_casing/c46x30mm/ap
 	name = "4.6x30mm armor-piercing bullet casing"
 	desc = "A 4.6x30mm armor-piercing bullet casing."
