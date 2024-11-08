@@ -1,7 +1,7 @@
 /obj/machinery/porta_turret/ship/nt/light/mining_base
 	req_ship_access = FALSE
 	mode = 1
-	turret_flags = 20
+	turret_flags = TURRET_FLAG_SHOOT_ANOMALOUS
 
 /obj/machinery/porta_turret/ship/nt/light/mining_base/Initialize()
 	. = ..()

@@ -231,15 +231,15 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 6
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	id = "mining_base";
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
-	id = "nsmine"
+	id = "nsmine2"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "mining_base"
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
@@ -277,7 +277,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "nsmine"
+	id = "nsmine2"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
@@ -917,11 +917,11 @@
 /obj/effect/turf_decal/siding{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
@@ -975,7 +975,7 @@
 	pixel_y = 5;
 	pixel_x = 24;
 	name = "blast door controls";
-	id = "nsmine"
+	id = "nsmine2"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
@@ -1183,7 +1183,8 @@
 /area/ruin/rockplanet/mining_base/engineering)
 "gg" = (
 /obj/machinery/porta_turret/ship/nt/light/mining_base{
-	dir = 6
+	dir = 2;
+	id = "m1"
 	},
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_one)
@@ -1207,10 +1208,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/mining_base/armory)
 "gn" = (
-/obj/machinery/porta_turret/ship/nt/light/mining_base{
-	dir = 9
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/porta_turret/ship/nt/light/mining_base{
+	dir = 1;
+	id = "m1"
+	},
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_one)
 "go" = (
@@ -1448,6 +1450,17 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_one)
+"hK" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "hO" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/effect/turf_decal/box,
@@ -1773,6 +1786,19 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"jQ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/syndicate/melee/space/stormtrooper,
+/turf/open/floor/plasteel/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "jS" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -2010,13 +2036,13 @@
 /obj/machinery/door/poddoor{
 	id = "nsmine_two"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	id = "mining_base_two";
-	dir = 4
-	},
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "mining_base_two"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
@@ -2268,6 +2294,17 @@
 /obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/engineering)
+"mg" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "mm" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 8
@@ -2608,7 +2645,8 @@
 /obj/effect/turf_decal/box,
 /obj/effect/turf_decal/corner/opaque/nsorange/half,
 /obj/machinery/turretid{
-	pixel_x = 26
+	pixel_x = 26;
+	id = "m1"
 	},
 /turf/open/floor/plasteel/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_one)
@@ -2890,7 +2928,8 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "qf" = (
 /obj/machinery/porta_turret/ship/nt/light/mining_base{
-	dir = 1
+	dir = 1;
+	id = "m1"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/rockplanet,
@@ -3221,7 +3260,7 @@
 "sr" = (
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "rock_mine"
+	id = "rock_mine_int"
 	},
 /obj/structure/railing{
 	dir = 10
@@ -4025,7 +4064,7 @@
 "xc" = (
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "rock_mine"
+	id = "rock_mine_int"
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
@@ -4772,6 +4811,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/stormtrooper,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/engineering)
 "AX" = (
@@ -4967,15 +5007,15 @@
 	dir = 1;
 	id = "rock_mine_int"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	id = "mining_base_two";
-	dir = 8
-	},
 /obj/machinery/door/poddoor{
 	id = "nsmine"
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "mining_base_two"
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
@@ -5444,6 +5484,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "DP" = (
@@ -5576,7 +5617,7 @@
 	icon_state = "4-10"
 	},
 /obj/machinery/door/poddoor{
-	id = "nsmine"
+	id = "nsmine2"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
@@ -6434,11 +6475,11 @@
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Ki" = (
-/obj/machinery/porta_turret/ship/nt/light/mining_base{
-	dir = 10
-	},
-/turf/open/floor/pod/rockplanet,
-/area/ruin/rockplanet/mining_base/rig_one)
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Kj" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -6885,9 +6926,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/food/flour,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/rockplanet/mining_base/canteen)
@@ -7045,6 +7083,13 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/engineering)
+"NH" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "NL" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/railing,
@@ -7068,11 +7113,11 @@
 /turf/open/floor/carpet/cyan,
 /area/ruin/rockplanet/mining_base/crew)
 "NS" = (
-/obj/effect/turf_decal/trimline/opaque/vired/corner{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/line{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/mining_base/armory)
@@ -8247,6 +8292,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/rockplanet/mining_base/crew)
 "Ul" = (
@@ -8324,6 +8370,13 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
+"UO" = (
+/obj/effect/turf_decal/weather/rock{
+	dir = 9
+	},
+/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
+/turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "UV" = (
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -8781,11 +8834,11 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "nsmine"
+	id = "nsmine2"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	id = "mining_base";
-	dir = 8
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "mining_base"
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
@@ -8854,12 +8907,12 @@
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "XE" = (
-/obj/machinery/conveyor{
-	dir = 1;
-	id = "rock_mine"
-	},
 /obj/structure/railing{
 	dir = 8
+	},
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "rock_mine_int"
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
@@ -10516,7 +10569,7 @@ ub
 tB
 Ww
 Wt
-Kh
+Ki
 Et
 pd
 AF
@@ -10573,7 +10626,7 @@ wc
 Jq
 IK
 Wq
-oN
+UO
 Bu
 KI
 UV
@@ -10753,7 +10806,7 @@ nd
 Bl
 ez
 ez
-Ki
+gg
 sf
 GH
 GH
@@ -10999,7 +11052,7 @@ iv
 pi
 Lw
 ZJ
-ZJ
+jQ
 TO
 dM
 BI
@@ -11292,7 +11345,7 @@ cA
 Ww
 de
 lj
-at
+mg
 Eq
 DD
 DD
@@ -11579,7 +11632,7 @@ al
 Sw
 cA
 Ww
-Jq
+hK
 at
 Eq
 QF
@@ -12158,7 +12211,7 @@ XK
 Tv
 gX
 nJ
-Kj
+NH
 Kj
 Ql
 HK
