@@ -135,7 +135,6 @@
 	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ngr
-	lightweight = 1
 	jetpack = null
 	greyscale_colors = list("#33353a", "#d9ad82", "#8c1a34")
 
