@@ -120,13 +120,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
-"aI" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
-/turf/open/floor/plasteel/patterned/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "aJ" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
@@ -1010,13 +1003,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/mining_base/med)
-"eQ" = (
-/obj/effect/turf_decal/weather/rock{
-	dir = 9
-	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
-/turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "eV" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -1196,16 +1182,12 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/engineering)
 "gg" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
+/obj/machinery/porta_turret/ship/nt/light/mining_base{
+	dir = 2;
+	id = "m1"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
-/turf/open/floor/plasteel/patterned/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/turf/open/floor/pod/rockplanet,
+/area/ruin/rockplanet/mining_base/rig_one)
 "gi" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
 /obj/effect/turf_decal/industrial/traffic,
@@ -2233,6 +2215,13 @@
 	},
 /turf/open/floor/concrete/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"lV" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "lX" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -2462,12 +2451,6 @@
 "nr" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
-"nx" = (
-/obj/effect/turf_decal/borderfloor,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
-/turf/open/floor/plasteel/patterned/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "nA" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -2923,6 +2906,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_one)
+"qh" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "qo" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/railing{
@@ -5064,11 +5058,16 @@
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/ruin/rockplanet/mining_base)
 "BY" = (
-/obj/machinery/porta_turret/ship/nt/light/mining_base{
-	dir = 9
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
 	},
-/turf/open/floor/pod/rockplanet,
-/area/ruin/rockplanet/mining_base/rig_two)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "BZ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -5695,6 +5694,13 @@
 /obj/effect/turf_decal/borderfloor/corner,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Fi" = (
+/obj/effect/turf_decal/weather/rock{
+	dir = 9
+	},
+/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
+/turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Fj" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -6304,7 +6310,8 @@
 	},
 /obj/effect/turf_decal/box,
 /obj/machinery/turretid{
-	pixel_y = -24
+	pixel_y = -24;
+	id = "m2"
 	},
 /turf/open/floor/plasteel/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_two)
@@ -6464,12 +6471,18 @@
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Ki" = (
-/obj/machinery/porta_turret/ship/nt/light/mining_base{
-	dir = 2;
-	id = "m1"
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/turf/open/floor/pod/rockplanet,
-/area/ruin/rockplanet/mining_base/rig_one)
+/obj/effect/turf_decal/trimline/opaque/nsorange/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/syndicate/melee/space/stormtrooper,
+/turf/open/floor/plasteel/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Kj" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -7264,7 +7277,8 @@
 /area/ruin/rockplanet/mining_base/armory)
 "OR" = (
 /obj/machinery/porta_turret/ship/nt/light/mining_base{
-	dir = 4
+	dir = 4;
+	id = "m2"
 	},
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_two)
@@ -7364,17 +7378,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
-"Pw" = (
-/obj/effect/turf_decal/borderfloor,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
-/turf/open/floor/plasteel/patterned/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "PA" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -7783,19 +7786,6 @@
 	},
 /turf/open/floor/plating/rockplanet,
 /area/ruin/rockplanet/mining_base/refinery)
-"RM" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/trimline/opaque/nsorange/warning{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/nsorange/line{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/human/syndicate/melee/space/stormtrooper,
-/turf/open/floor/plasteel/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "RQ" = (
 /obj/structure/flora/rock/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
@@ -8023,7 +8013,8 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "SQ" = (
 /obj/machinery/porta_turret/ship/nt/light/mining_base{
-	dir = 8
+	dir = 8;
+	id = "m2"
 	},
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_two)
@@ -8672,10 +8663,11 @@
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Wn" = (
-/obj/machinery/porta_turret/ship/nt/light/mining_base{
-	dir = 5
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/porta_turret/ship/nt/light/mining_base{
+	dir = 4;
+	id = "m2"
+	},
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_two)
 "Wp" = (
@@ -9233,6 +9225,12 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/mining_base/office)
+"YX" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "YY" = (
 /turf/open/floor/plasteel/stairs/rockplanet/lit{
 	dir = 8
@@ -10569,7 +10567,7 @@ ub
 tB
 Ww
 Wt
-nx
+YX
 Et
 pd
 AF
@@ -10626,7 +10624,7 @@ wc
 Jq
 IK
 Wq
-eQ
+Fi
 Bu
 KI
 UV
@@ -10806,7 +10804,7 @@ nd
 Bl
 ez
 ez
-Ki
+gg
 sf
 GH
 GH
@@ -11052,7 +11050,7 @@ iv
 pi
 Lw
 ZJ
-RM
+Ki
 TO
 dM
 BI
@@ -11238,7 +11236,7 @@ wX
 JV
 ez
 ez
-Ki
+gg
 Do
 GH
 GH
@@ -11345,7 +11343,7 @@ cA
 Ww
 de
 lj
-Pw
+qh
 Eq
 DD
 DD
@@ -11632,7 +11630,7 @@ al
 Sw
 cA
 Ww
-gg
+BY
 at
 Eq
 QF
@@ -12211,7 +12209,7 @@ XK
 Tv
 gX
 nJ
-aI
+lV
 Kj
 Ql
 HK
@@ -12585,7 +12583,7 @@ hB
 hB
 GH
 jy
-BY
+SQ
 EE
 EE
 zH
