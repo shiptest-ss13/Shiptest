@@ -19,6 +19,7 @@
 	if(!ismecha(parent))
 		return COMPONENT_INCOMPATIBLE
 	var/obj/mecha/parent_mech = parent
+	// have wake up on initialize or pilot boardings
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
 	RegisterSignal(parent, COMSIG_GUN_DISABLE_AUTOFIRE, PROC_REF(disable_autofire))
 	RegisterSignal(parent, COMSIG_GUN_ENABLE_AUTOFIRE, PROC_REF(enable_autofire))
@@ -270,7 +271,6 @@
 
 
 /obj/mecha/proc/do_autofire_shot(datum/source, atom/target, mob/living/shooter, params)
-	 //dual wielding is handled here
 	 click_action(target,shooter,params)
 
 /datum/component/automatic_fire_mecha/proc/disable_autofire(datum/source)

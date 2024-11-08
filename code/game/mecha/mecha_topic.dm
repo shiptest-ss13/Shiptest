@@ -323,6 +323,7 @@
 		if(!equip || !equip.selectable)
 			return
 		selected = equip
+		// enable autofire
 		occupant_message("<span class='notice'>You switch to [equip].</span>")
 		visible_message("<span class='notice'>[src] raises [equip].</span>")
 		send_byjax(usr, "exosuit.browser", "eq_list", get_equipment_list())
