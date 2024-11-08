@@ -160,7 +160,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space/Initialize()
 	. = ..()
@@ -188,7 +188,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space/Initialize()
 	. = ..()
