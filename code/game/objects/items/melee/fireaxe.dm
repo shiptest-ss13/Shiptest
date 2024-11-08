@@ -64,12 +64,11 @@
 	force = 5
 	armour_penetration = 40
 	attack_verb = list("bashed", "smashed", "crushed", "smacked")
-	hitsound = list('sound/weapons/smash.ogg', 'sound/effect/genhit2.ogg', 'sound/effect/genhit3.ogg')
+	hitsound = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg')
 	slot_flags = NONE
 	sharpness = IS_BLUNT
-	tool_behaviour = TOOL_MINING
-	toolspeed = 0.5
-	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
+	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS | PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_WALLS
+	wall_damage_override = 200
 
 /obj/item/melee/axe/sledgehammer/ComponentInitialize()
 	. = ..()
