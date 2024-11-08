@@ -58,6 +58,7 @@
 	smooth_icon = 'icons/turf/floors/whitesands_rock.dmi'
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
+	has_footsteps = FALSE
 
 /turf/open/floor/plating/asteroid/whitesands/remove_air(amount)
 	return return_air()
