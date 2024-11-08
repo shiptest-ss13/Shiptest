@@ -28,7 +28,7 @@
 
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner/Initialize()
 	. = ..()
-	mob_species = pickweight(list(
+	mob_species = pick_weight(list(
 			/datum/species/human = 50,
 			/datum/species/lizard = 20,
 			/datum/species/ipc = 10,
