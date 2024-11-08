@@ -500,9 +500,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 /obj/effect/mapping_helpers/chair/tim_buckley/LateInitialize()
 	var/turf/turf = get_turf(src)
 	if(locate(/obj/structure/chair) in turf && locate(/mob/living/carbon) in turf)
-		var/obj/machinery/door/airlock/idiot_throne = locate(/obj/structure/chair) in turf
+		var/obj/structure/chair/idiot_throne = locate(/obj/structure/chair) in turf
 		var/mob/living/carbon/idiot = locate(/mob/living/carbon)
-		idiot_throne.buckle(idiot, TRUE)
+		idiot_throne.buckle_mob(idiot, TRUE)
 		qdel(src)
 	log_mapping("[src] at [x],[y] could not find a chair and guy on current turf.")
 	qdel(src)

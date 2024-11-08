@@ -36,10 +36,36 @@
 
 	)
 
-
-
 #define CHLORINATED_ATMOS "o2=22;n2=82;cl2=24;TEMP=293.15"
 
 /turf/open/floor/plasteel/dark/tesla_lab
 	initial_gas_mix = CHLORINATED_ATMOS
 
+/obj/item/desynchronizer/tvstatic
+	name = "\improper static synchronizer"
+	desc = "An experimental device built around the hissing core of an anomaly. It radiates fear. There is a button on the front that says 'ENGAGE', surrounded by scrawled warnings."
+	desync_effect = /obj/effect/temp_visual/phase_out
+	resync_effect = /obj/effect/temp_visual/phase_in
+
+/obj/item/desynchronizer/tvstatic/resync()
+	. = ..()
+	var/braim_bamage = (world.time - last_use) * 0.02
+	playsound(src, 'sound/effects/glassbr1.ogg', 75)
+	if(braim_bamage > 100)
+		new /obj/effect/anomaly/tvstatic(loc)
+	for(var/mob/living/carbon/human/looking in range(4, src))
+		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner)
+			continue
+		looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, braim_bamage, 200)
+
+/obj/effect/temp_visual/phase_in
+	name = "anomalous field"
+	icon_state = "phasein"
+	layer = 4
+	duration = 5
+
+/obj/effect/temp_visual/phase_out
+	name = "anomalous field"
+	icon_state = "phaseout"
+	layer = 4
+	duration = 5
