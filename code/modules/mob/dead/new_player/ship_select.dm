@@ -114,7 +114,6 @@
 					if(length(SSovermap.outposts) > 1)
 						var/datum/overmap/outpost/temp_loc = input(spawnee, "Select outpost to spawn at") as null|anything in SSovermap.outposts
 						if(!temp_loc)
-							message_admins("Invalid spawn location.")
 							return
 						selected_system = temp_loc.current_overmap
 						ship_loc = temp_loc

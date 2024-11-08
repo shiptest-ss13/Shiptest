@@ -276,6 +276,12 @@
 	// the dir the stationary port should be facing (note that it points inwards)
 	var/final_facing_dir = angle2dir(dir2angle(shuttle_true_height > shuttle_true_width ? EAST : NORTH)+dir2angle(shuttle.port_direction)+180)
 
+	var/oldloc = loc
+	var/olddir = dir
+	var/olddheight = dheight
+	var/olddwidth = dwidth
+	var/oldheight = height
+	var/oldwidth = width
 	var/list/old_corners = return_coords() // coords for "bottom left" / "top right" of dock's covered area, rotated by dock's current dir
 	var/list/new_dock_location // TBD coords of the new location
 	if(final_facing_dir == dir)
@@ -319,6 +325,17 @@
 	forceMove(locate(new_dock_location[1], new_dock_location[2], z))
 	dheight = new_dheight
 	dwidth = new_dwidth
+	// we verify if the new position is lodged in a edge turf
+	for(var/turf/closed/indestructible/edgeturf as anything in return_turfs())
+		if(!istype(edgeturf))
+			continue
+		stack_trace("Dock adjusted to fit a vessel but somehow it's bounds ended up in an edge! This doesn't seem right so resetting it back to how it was before as a failsafe!")
+		forceMove(oldloc)
+		dir = olddir
+		dheight = olddheight
+		dwidth = olddwidth
+		height = oldheight
+		width = oldwidth
 
 /obj/docking_port/stationary/transit
 	name = "transit dock"
