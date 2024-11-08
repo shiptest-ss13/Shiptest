@@ -400,9 +400,7 @@
 		/obj/effect/spawner/random/maintenance/three = 20,
 		/obj/effect/spawner/random/maintenance/four = 40,
 		/obj/effect/spawner/random/waste/salvageable = 80,
-		/obj/item/mine/proximity/spawner/manhack/live = 40,
 		/obj/effect/spawner/random/mine = 8,
-		/obj/effect/spawner/minefield/manhack = 2
 	)
 	mob_spawn_list = list( //nor organics, more biased towards hivebots though
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 80,
@@ -430,7 +428,6 @@
 		/obj/effect/spawner/random/maintenance/four = 20,
 		/obj/effect/spawner/random/waste/salvageable = 40,
 		/obj/structure/foamedmetal = 100,
-		/obj/item/mine/proximity/spawner/manhack/live = 20
 	)
 	mob_spawn_list = list( //Whoops! All hivebots!
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 80,
@@ -440,7 +437,6 @@
 	mob_spawn_chance = 30
 	feature_spawn_list = list(
 		/obj/structure/spawner/hivebot = 1,
-		/obj/effect/spawner/minefield/manhack = 2
 		)
 	feature_spawn_chance = 2 //hivebot biomes should have their dongles
 
@@ -484,4 +480,3 @@
 	flora_spawn_chance = 30
 	feature_spawn_chance = 8
 	mob_spawn_chance = 5
-
