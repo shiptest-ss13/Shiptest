@@ -65,6 +65,7 @@
 	armour_penetration = 40
 	attack_verb = list("bashed", "smashed", "crushed", "smacked")
 	hitsound = 'sound/weapons/smash.ogg'
+	slot_flags = NONE
 	sharpness = IS_BLUNT
 	tool_behaviour = TOOL_MINING
 	toolspeed = 0.5
