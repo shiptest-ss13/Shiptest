@@ -41,6 +41,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	integrity_failure = 0.5
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 	base_icon_state = "standard"
+	subsystem_type = /datum/controller/subsystem/turrets
 	/// Scan range of the turret for locating targets
 	var/scan_range = 7
 	/// For turrets inside other objects
@@ -77,7 +78,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	var/has_cover = TRUE
 	/// The cover that is covering this turret
 	var/obj/machinery/porta_turret_cover/cover = null
-	/// Ticks until next shot (1.5 ?)
+	/// Ticks until next shot (1.5 ?) If this needs to go below 5, use SSFastProcess
 	var/shot_delay = 15
 	/// Turret flags about who is turret allowed to shoot
 	var/turret_flags = TURRET_FLAG_SHOOT_CRIMINALS | TURRET_FLAG_SHOOT_ANOMALOUS
@@ -798,12 +799,13 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/porta_turret/ship
 	installation = null
-	max_integrity = 300
+	max_integrity = 200
 	always_up = 1
 	use_power = ACTIVE_POWER_USE
 	active_power_usage = ACTIVE_DRAW_MINIMAL
 	has_cover = 0
 	scan_range = 9
+	req_ship_access = TRUE
 	stun_projectile = /obj/projectile/beam/disabler
 	lethal_projectile = /obj/projectile/beam/laser
 	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
@@ -824,7 +826,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		if(!(machine_stat & BROKEN))
-			. += "<span class='notice'>Its reports that it's integrity is currently [(obj_integrity / max_integrity) * 100] percent.</span>"
+			. += "<span class='notice'>[src] reports its integrity is currently [round((obj_integrity / max_integrity) * 100)] percent.</span>"
 
 /obj/machinery/porta_turret/ship/weak
 	max_integrity = 120
@@ -849,6 +851,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	name = "Sharplite Defense Turret"
 	desc = "A cheap and effective turret designed by Sharplite and purchased and installed on most Nanotrasen Vessels."
 	faction = list(FACTION_PLAYER_NANOTRASEN, "turret")
+	max_integrity = 160
+	integrity_failure = 0.6
 	icon_state = "standard_lethal"
 	base_icon_state = "standard"
 	stun_projectile = /obj/projectile/beam/disabler/sharplite
@@ -866,20 +870,19 @@ DEFINE_BITFIELD(turret_flags, list(
 	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
 	stun_projectile_sound = 'sound/weapons/taser2.ogg'
 
-
 /obj/machinery/porta_turret/ship/nt/heavy
 	name = "Sharplite Defense Cannon"
 	desc = "A heavy laser mounting designed by Sharplite for usage on Nanotrasen vessels."
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser/sharplite
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
+	max_integrity = 250
 
 /obj/machinery/porta_turret/ship/nt/pulse
 	name = "Sharplite Pulse Cannon"
 	desc = "A pulse cannon mounting designed by Sharplite. Not sold to any purchasers and exclusively used on Nanotrasen Vessels."
 	lethal_projectile = /obj/projectile/beam/pulse/sharplite_turret
 	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-
-
+	max_integrity = 250
 
 /* Syndicate Turrets */
 
@@ -903,8 +906,43 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile_sound = 'sound/weapons/taser.ogg'
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
+	max_integrity = 300
+
+/* New Gorlex Republic Turrets */
+// Midline ballistic turrets
+
+/obj/machinery/porta_turret/ship/ngr
+	name = "Oasis Turret"
+	desc = "A turret manufactured by the New Gorlex Republic for its ships and installations. Proudly manufactured within the nation!"
+	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
+	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
+	faction = list(FACTION_NGR, FACTION_PLAYER_SYNDICATE, "turret") //player_syndicate is just to be safe
+
+/obj/machinery/porta_turret/ship/ngr/light
+	name = "Sonoran Turret"
+	desc = "A light turret manufactured by the New Gorlex Republic for its ships and installations. Proudly manufactured within the Nation, using locally produced munitions!"
+	stun_projectile = /obj/projectile/bullet/c57x39mm/rubber
+	stun_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
+	lethal_projectile = /obj/projectile/bullet/c57x39mm
+	lethal_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
+	scan_range = 7
+	shot_delay = 10
+
+/obj/machinery/porta_turret/ship/ngr/heavy
+	name = "Cliff Turret"
+	desc = "A heavy turret manufactured by the New Gorlex Republic for its ships and installations. Has a reputation of being extremely dangerous."
+	stun_projectile = /obj/projectile/bullet/a65clip/rubber
+	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	lethal_projectile = /obj/projectile/bullet/a65clip
+	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	scan_range = 14
+	shot_delay = 30
+
 
 /* Inteq Turrets */
+//slower rof, higher damage + range
 
 /obj/machinery/porta_turret/ship/inteq
 	name = "Vanguard Turret"
@@ -913,8 +951,9 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile_sound = 'sound/weapons/gun/rifle/skm.ogg'
 	lethal_projectile = /obj/projectile/bullet/a762_40
 	lethal_projectile_sound = 'sound/weapons/gun/rifle/skm.ogg'
-	scan_range = 8
+	scan_range = 9
 	shot_delay = 20
+	integrity_failure = 0.4
 	faction = list(FACTION_PLAYER_INTEQ, "turret")
 
 /obj/machinery/porta_turret/ship/inteq/light
@@ -925,7 +964,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	lethal_projectile = /obj/projectile/bullet/c10mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess //turns out if you have a shot delay below what SSmachines fires at you need to use a different subsystem
-	scan_range = 4
+	scan_range = 5
 	shot_delay = 5
 
 /obj/machinery/porta_turret/ship/inteq/heavy
@@ -944,6 +983,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	faction = list(FACTION_PLAYER_SOLCON, "turret")
 
 /* Pan Gezena Federation Turrets */
+//midline but hitscan
 
 /obj/machinery/porta_turret/ship/pgf
 	name = "Etherbor Defensive Mount"
@@ -955,6 +995,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	lethal_projectile_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 	icon_state = "standard_lethal"
 	base_icon_state = "standard"
+	max_integrity = 250
+	integrity_failure = 0.4
 
 /obj/machinery/porta_turret/ship/pgf/light
 	name = "Etherbor Deterrent System"
@@ -965,11 +1007,99 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/ship/pgf/heavy
 	name = "Etherbor Point-Defense System"
 	desc = "A high-powered defensive turret manufactured by Etherbor. The EPDS contains heavy energy weapons linked in tandem."
-	scan_range = 10
+	scan_range = 12
 	stun_projectile = /obj/projectile/beam/hitscan/disabler/heavy
 	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf/sniper //fwoom
 	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+
+///CLIP Turrets
+
+//high damage low range
+
+/obj/machinery/porta_turret/ship/clip
+	name = "Clover Mintaka"
+	desc = "Clover Photonic's offering for the Confederated League's 476FS \"Defense System\" competition, the Mintaka (and its sister systems, the Alnitak and Ori) handily beat out the Lunatex \"Vigil\" line during the final round of testing, and earned a prestigous contract."
+	faction = list(FACTION_PLAYER_MINUTEMAN, "Turret")
+	stun_projectile = /obj/projectile/beam/disabler
+	stun_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+	lethal_projectile = /obj/projectile/beam/laser/assault
+	lethal_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+	icon_state = "standard_lethal"
+	base_icon_state = "standard"
+
+	scan_range = 8
+	shot_delay = 10
+	max_integrity = 200
+	integrity_failure = 0.3
+
+/obj/machinery/porta_turret/ship/clip/light
+	name = "Clover Alnitak"
+	desc = "Clover Photonic's light turret system, unveiled as part of Clover's defense line-up in the early 470s. While lacking the punch of its sister systems, it still presents a hassle to circumvent."
+	stun_projectile = /obj/projectile/beam/disabler
+	stun_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+	lethal_projectile = /obj/projectile/beam/laser/light
+	lethal_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+
+	scan_range = 6
+	shot_delay = 10
+	max_integrity = 200
+	integrity_failure = 0.4
+
+/obj/machinery/porta_turret/ship/clip/heavy
+	name = "Clover Ori"
+	desc = "Clover Photonic's heaviest entry in the Confederated League's 476FS \"Defense System\" competition, the Ori's results demolished the handily beat out the Lunatex \"Vigil Sword\" during testing, earning better marks on durability, effectiveness, and reaction rate."
+	stun_projectile = /obj/projectile/beam/disabler
+	stun_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+	lethal_projectile = /obj/projectile/beam/laser/heavylaser/assault
+	lethal_projectile_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+
+	scan_range = 10
+	shot_delay = 20
+	max_integrity = 300
+	integrity_failure = 0.3
+
+
+/// Frontiersmen Turrets
+
+// fast and spitty
+
+/obj/machinery/porta_turret/ship/frontiersmen
+	name = "Spitter Turret"
+	desc = "A juryrigged mishmash of a 9mm SMG and targetting system. Stand clear!"
+	faction = list(FACTION_FRONTIER, "Turret")
+	subsystem_type = /datum/controller/subsystem/processing/fastprocess
+	integrity_failure = 0.6
+	max_integrity = 180
+
+	icon_state = "standard_lethal"
+	base_icon_state = "standard"
+
+	stun_projectile = /obj/projectile/bullet/c9mm
+	stun_projectile_sound = 'sound/weapons/gun/smg/spitter.ogg'
+	lethal_projectile = /obj/projectile/bullet/c9mm
+	lethal_projectile_sound = 'sound/weapons/gun/smg/spitter.ogg'
+	shot_delay = 2
+	scan_range = 6
+
+/obj/machinery/porta_turret/ship/frontiersmen/light
+	name = "Pounder Turret"
+	desc = "A low caliber SMG with an atrociously high cycle rate, frankensteined together with a targetting assembly."
+	stun_projectile = /obj/projectile/bullet/c22lr
+	stun_projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
+	lethal_projectile = /obj/projectile/bullet/c22lr
+	lethal_projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
+	shot_delay = 1
+
+/obj/machinery/porta_turret/ship/frontiersmen/heavy
+	name = "Mulcher Turret"
+	desc = "An abombination made out of the components of a Shredder and an automatic targetting system. Careful now."
+	stun_projectile = /obj/projectile/bullet/slug/beanbag
+	stun_projectile_sound = 'sound/weapons/gun/hmg/shredder.ogg'
+	lethal_projectile = /obj/projectile/bullet/slug
+	lethal_projectile_sound = 'sound/weapons/gun/hmg/shredder.ogg'
+	shot_delay = 3
+	scan_range = 8
 
 ////////////////////////
 //Turret Control Panel//
@@ -1196,7 +1326,7 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/item/gun/ballistic/get_turret_properties()
 	. = ..()
-	var/obj/item/ammo_box/mag = mag_type
+	var/obj/item/ammo_box/mag = default_ammo_type
 	var/obj/item/ammo_casing/primary_ammo = initial(mag.ammo_type)
 
 	.["base_icon_state"] = "syndie"

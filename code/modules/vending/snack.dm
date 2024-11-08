@@ -16,7 +16,7 @@
 		/obj/item/storage/box/gum = 3,
 		/obj/item/reagent_containers/food/snacks/energybar = 6,
 		/obj/item/reagent_containers/food/snacks/syndicake = 6,
-		/obj/item/reagent_containers/food/snacks/candy/bronx = 1)
+		)
 	refill_canister = /obj/item/vending_refill/snack
 	canload_access_list = list(ACCESS_KITCHEN)
 	default_price = 60
@@ -25,17 +25,6 @@
 
 /obj/item/vending_refill/snack
 	machine_name = "RobustMore DrinkFoods LLC"
-
-/obj/machinery/vending/snack/random
-	name = "\improper Random Snackies"
-	icon_state = "random_snack"
-	desc = "Uh oh!"
-
-/obj/machinery/vending/snack/random/Initialize()
-	..()
-	var/T = pick(subtypesof(/obj/machinery/vending/snack) - /obj/machinery/vending/snack/random)
-	new T(loc)
-	return INITIALIZE_HINT_QDEL
 
 /obj/machinery/vending/snack/blue
 	icon_state = "snackblue"
