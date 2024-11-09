@@ -22,7 +22,7 @@
 	var/self_delay = 30
 	var/squirt_mode = 0
 	var/squirt_amount = 5
-	custom_price = 350
+	custom_price = 35
 	unique_reskin = list(
 		"Blue" = "medigel_blue",
 		"Cyan" = "medigel_cyan",
@@ -91,7 +91,7 @@
 	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one contains synthflesh, an apex brute and burn healing agent."
 	icon_state = "synthgel"
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 60)
-	custom_price = 80
+	custom_price = 20
 
 /obj/item/reagent_containers/medigel/sterilizine
 	name = "sterilizer gel"
@@ -99,4 +99,4 @@
 	icon_state = "medigel_blue"
 	current_skin = "medigel_blue"
 	list_reagents = list(/datum/reagent/space_cleaner/sterilizine = 60)
-	custom_price = 175
+	custom_price = 10
