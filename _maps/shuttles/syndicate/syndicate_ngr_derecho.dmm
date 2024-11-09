@@ -380,10 +380,18 @@
 	pixel_x = -6
 	},
 /obj/machinery/light/dim/directional/east,
-/obj/structure/sign/warning/nosmoking/circle{
-	pixel_y = 22
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	id = "derecho_entrance_blast";
+	name = "Blast Door Control";
+	pixel_x = -4;
+	pixel_y = 23
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "derecho_entrance_holo";
+	pixel_x = 7;
+	pixel_y = 21
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo/office)
 "dX" = (
@@ -562,7 +570,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer4,
 /obj/machinery/button/door{
 	dir = 4;
-	id = "kali_atmos_shut";
+	id = "derecho_atmos_shut";
 	name = "Atmospherics Shutters";
 	pixel_x = -20;
 	pixel_y = -3
@@ -990,6 +998,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "iC" = (
@@ -1133,7 +1142,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew)
 "kg" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "ki" = (
@@ -1155,7 +1165,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external)
 "kG" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
 	id = "derecho_bridge_shut"
@@ -1163,6 +1172,8 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "kH" = (
@@ -2346,6 +2357,13 @@
 /obj/structure/tank_dispenser,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "derecho_storage_shut";
+	name = "Storage Shutters";
+	pixel_x = -3;
+	pixel_y = 20;
+	req_ship_access = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "tZ" = (
@@ -2564,7 +2582,8 @@
 /area/ship/cargo)
 "vF" = (
 /obj/machinery/conveyor{
-	dir = 5
+	dir = 5;
+	id = "derecho_belt"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2579,7 +2598,8 @@
 /area/ship/science/workshop)
 "vJ" = (
 /obj/machinery/conveyor{
-	dir = 4
+	dir = 4;
+	id = "derecho_belt"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2779,7 +2799,8 @@
 /area/ship/crew/office)
 "xD" = (
 /obj/machinery/conveyor{
-	dir = 4
+	dir = 4;
+	id = "derecho_belt"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3351,13 +3372,14 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering/electrical)
 "Ci" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "derecho_bridge_shut"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Cl" = (
@@ -3380,10 +3402,11 @@
 /area/ship/engineering/electrical)
 "Cs" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer4,
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "derecho_atmos_shut"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "CB" = (
@@ -3904,13 +3927,14 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering/electrical)
 "HX" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "derecho_office_shut"
 	},
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/crew/office)
 "Id" = (
@@ -4065,15 +4089,17 @@
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "JV" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "derecho_eng_shut"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ki" = (
 /obj/machinery/conveyor{
-	dir = 1
+	dir = 1;
+	id = "derecho_belt"
 	},
 /obj/machinery/mineral/unloading_machine{
 	input_dir = 2;
@@ -4269,10 +4295,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Ms" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/cargo/office)
 "MA" = (
@@ -4719,7 +4746,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "kali_bridge_shut";
+	id = "derecho_bridge_shut";
 	name = "Bridge Shutters";
 	pixel_x = 3;
 	pixel_y = -20
@@ -4778,6 +4805,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/melee/knife/survival,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "QD" = (
@@ -4957,10 +4985,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "SC" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "derecho_dorms_shut"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/crew)
 "SD" = (
@@ -5002,10 +5031,11 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering/atmospherics)
 "SP" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "derecho_mess_shut"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "ST" = (
@@ -5173,7 +5203,8 @@
 /area/ship/crew/cryo)
 "TG" = (
 /obj/machinery/conveyor{
-	dir = 4
+	dir = 4;
+	id = "derecho_belt"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -5231,7 +5262,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "Uh" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/crew)
 "Ui" = (
@@ -5299,6 +5330,7 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/melee/knife/survival,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "UA" = (
@@ -5425,7 +5457,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "VW" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Wg" = (
@@ -5768,14 +5800,11 @@
 /obj/item/clothing/mask/breath/ngr,
 /obj/item/clothing/mask/balaclava/ngr,
 /obj/item/megaphone,
-/obj/item/storage/guncase/pistol/inherit,
-/obj/item/gun/ballistic/revolver/viper/empty,
-/obj/item/ammo_box/a357/empty,
-/obj/item/ammo_box/a357/empty,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/item/storage/guncase/pistol/a357,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "Yq" = (
@@ -5843,6 +5872,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor_switch{
+	id = "derecho_belt"
+	},
 /turf/open/floor/pod/dark,
 /area/ship/science/workshop)
 "YR" = (
