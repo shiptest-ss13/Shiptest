@@ -173,7 +173,7 @@
 	max_ammo = 15
 
 /obj/item/storage/box/ammo/a762_40/ap
-	name = "box of 7.62x40mm CLIP HP ammo"
+	name = "box of 7.62x40mm CLIP AP ammo"
 	desc = "A box of standard 7.62x40mm CLIP HP ammo."
 	icon_state = "a762_40box_big"
 
