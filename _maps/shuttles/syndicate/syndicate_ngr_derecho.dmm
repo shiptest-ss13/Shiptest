@@ -5857,7 +5857,8 @@
 	id = "derecho_entrance_holo";
 	pixel_x = -20;
 	pixel_y = 7;
-	req_one_access = list(1, 48)
+	req_one_access = null;
+	req_ship_access = 1
 	},
 /obj/machinery/button/door{
 	dir = 4;
@@ -5865,7 +5866,8 @@
 	name = "Blast Door Control";
 	pixel_x = -21;
 	pixel_y = -4;
-	req_one_access = list(1, 48)
+	req_one_access = null;
+	req_ship_access = 1
 	},
 /turf/open/floor/pod,
 /area/ship/hallway/fore)
