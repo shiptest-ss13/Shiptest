@@ -193,7 +193,7 @@
 	cost = 350
 
 /datum/supply_pack/ammo/c57x39mm_ap
-	name = "5.7x39mm Ammo Box Crate"
+	name = "5.7x39mm Armour Piercing Ammo Box Crate"
 	desc = "Contains two 48-round 5.7x39mm box for PDWs such as the Sidewinder."
 	contains = list(
 		/obj/item/storage/box/ammo/c57x39/ap,
