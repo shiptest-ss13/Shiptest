@@ -1100,9 +1100,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "zO" = (
-/obj/effect/turf_decal/arrows{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
@@ -1593,13 +1590,11 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Pk" = (
-/obj/machinery/mineral/ore_redemption{
-	dir = 8;
-	input_dir = 8;
-	output_dir = null
-	},
-/obj/effect/turf_decal/box,
 /obj/machinery/airalarm/directional/east,
+/obj/structure/table,
+/obj/item/storage/toolbox/ammo{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Qa" = (

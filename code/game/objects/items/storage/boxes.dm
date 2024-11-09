@@ -102,6 +102,14 @@
 	for(var/i in 1 to 7)
 		new /obj/item/disk/data(src)
 
+/obj/item/storage/box/holodisc
+	name = "holodisc box"
+	illustration = "disk_kit"
+
+/obj/item/storage/box/holodisc/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/disk/holodisk(src)
+
 //guys why are my tests failing
 /obj/item/storage/box/disks_plantgene
 	name = "plant data disks box"
@@ -171,7 +179,7 @@
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
 
 /obj/item/storage/box/survival/clip/balaclava
-	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
+	mask_type = /obj/item/clothing/mask/balaclava
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
 
 /obj/item/storage/box/survival/frontier
@@ -742,6 +750,15 @@
 /obj/item/storage/box/deputy/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/clothing/accessory/armband/deputy(src)
+
+/obj/item/storage/box/smokebombs
+	name = "box of smoke grenades"
+	desc = "Used for rapidly laying cover."
+	illustration = "grenade"
+
+/obj/item/storage/box/smokebombs/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/grenade/smokebomb(src)
 
 /obj/item/storage/box/metalfoam
 	name = "box of metal foam grenades"
