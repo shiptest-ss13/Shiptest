@@ -572,9 +572,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "dw" = (
@@ -1666,15 +1663,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "kc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+)
 "kg" = (
 /obj/effect/turf_decal/box/corners,
 /obj/effect/decal/cleanable/dirt,
@@ -1898,14 +1887,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "mh" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 24
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4,
+/obj/structure/chair/handrail{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2948,11 +2935,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "rN" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = 29;
+	pixel_y = 0
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -4305,8 +4290,11 @@
 /area/ship/engineering)
 "zL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/handrail{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/layer2{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -5875,9 +5863,11 @@
 /area/ship/engineering)
 "KT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/warning/vacuum/external{
-	pixel_x = 29;
-	pixel_y = 0
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -6232,10 +6222,10 @@
 	icon_state = "6-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -8386,7 +8376,7 @@ aD
 MC
 zR
 vp
-KW
+kc
 br
 WE
 Xn
@@ -9760,7 +9750,7 @@ sw
 fK
 ff
 ef
-kc
+Fl
 Ni
 dD
 fK
@@ -9828,8 +9818,8 @@ sw
 sy
 fK
 ff
-Gq
 ff
+Gq
 fK
 qt
 sw
