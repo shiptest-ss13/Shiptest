@@ -96,9 +96,8 @@
 	icon_state = "9mmbox-surplus"
 
 /obj/item/storage/box/ammo/c9mm_surplus/PopulateContents()
-	..()
 	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm/surplus = 48)
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm/surplus = 4)
 	generate_items_inside(items_inside,src)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm_ap
