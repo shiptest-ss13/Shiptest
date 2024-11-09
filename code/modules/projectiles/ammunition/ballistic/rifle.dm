@@ -89,13 +89,13 @@
 /obj/item/ammo_casing/a762_40/ap
 	name = "7.62x40mm CLIP AP bullet casing"
 	desc = "A 7.62x40mm CLIP AP bullet casing."
-	bullet_skin = "hollow"
+	bullet_skin = "ap"
 	projectile_type = /obj/projectile/bullet/a762_40/ap
 
 /obj/item/ammo_casing/a762_40/rubber
 	name = "7.62x40mm CLIP rubber bullet casing"
 	desc = "A 7.62x40mm CLIP rubber bullet casing."
-	bullet_skin = "hollow"
+	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/a762_40/rubber
 
 //.308 (M514 EBR & CM-GAL-S)

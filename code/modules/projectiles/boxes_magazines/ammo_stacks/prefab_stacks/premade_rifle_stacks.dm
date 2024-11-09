@@ -159,8 +159,8 @@
 	max_ammo = 15
 
 /obj/item/storage/box/ammo/a762_40/hp
-	name = "box of 7.62x40mm CLIP HP ammo"
-	desc = "A box of standard 7.62x40mm CLIP HP ammo."
+	name = "box of 7.62x40mm CLIP Hollow Point ammo"
+	desc = "A box of standard 7.62x40mm CLIP Hollow Point ammo."
 	icon_state = "a762_40box_big"
 
 /obj/item/storage/box/ammo/a762_40/hp/PopulateContents()
@@ -173,8 +173,8 @@
 	max_ammo = 15
 
 /obj/item/storage/box/ammo/a762_40/ap
-	name = "box of 7.62x40mm CLIP AP ammo"
-	desc = "A box of standard 7.62x40mm CLIP HP ammo."
+	name = "box of 7.62x40mm CLIP Armour Piercing ammo"
+	desc = "A box of standard 7.62x40mm CLIP Armour Piercing ammo."
 	icon_state = "a762_40box_big"
 
 /obj/item/storage/box/ammo/a762_40/ap/PopulateContents()
