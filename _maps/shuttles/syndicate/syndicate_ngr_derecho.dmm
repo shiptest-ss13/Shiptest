@@ -5852,7 +5852,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped,
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
+	piping_layer = 4
+	},
 /obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
