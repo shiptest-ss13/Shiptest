@@ -15,7 +15,7 @@
 	obj_flags = UNIQUE_RENAME
 	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
 	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
-	custom_price = 25
+	custom_price = 10
 	can_have_cap = TRUE
 	cap_icon_state = "baflask_cap"
 	cap_on = TRUE

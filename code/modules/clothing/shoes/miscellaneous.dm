@@ -63,7 +63,7 @@
 	resistance_flags = NONE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 75)
 	can_be_bloody = FALSE
-	custom_price = 600
+	custom_price = 15
 	can_be_tied = FALSE
 	greyscale_icon_state = "boots"
 
@@ -205,7 +205,7 @@
 	icon_state = "cowboy_brown"
 	permeability_coefficient = 0.05 //these are quite tall
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-	custom_price = 60
+	custom_price = 10
 	var/list/occupants = list()
 	var/max_occupants = 4
 	can_be_tied = FALSE

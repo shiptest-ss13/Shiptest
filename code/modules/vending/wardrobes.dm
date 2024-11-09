@@ -167,7 +167,7 @@
 					)
 	contraband = list(/obj/item/organ/tongue/robot = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/robo_wardrobe
-	extra_price = 300
+	extra_price = 30
 /obj/item/vending_refill/wardrobe/robo_wardrobe
 	machine_name = "RoboDrobe"
 
@@ -470,7 +470,7 @@
 					/obj/item/storage/fancy/cigarettes = 5)
 	premium = list(/obj/item/clothing/head/flatcap = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/det_wardrobe
-	extra_price = 350
+	extra_price = 35
 
 /obj/item/vending_refill/wardrobe/det_wardrobe
 	machine_name = "DetDrobe"

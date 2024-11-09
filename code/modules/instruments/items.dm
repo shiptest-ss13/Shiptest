@@ -79,7 +79,7 @@
 	slot_flags = ITEM_SLOT_EARS | ITEM_SLOT_HEAD
 	force = 0
 	w_class = WEIGHT_CLASS_SMALL
-	custom_price = 125
+	custom_price = 15
 	instrument_range = 1
 
 /obj/item/instrument/piano_synth/headphones/ComponentInitialize()
@@ -110,7 +110,7 @@
 	slot_flags = ITEM_SLOT_EARS
 	strip_delay = 100 //air pods don't fall out
 	instrument_range = 0 //you're paying for quality here
-	custom_premium_price = 1800
+	custom_premium_price = 180
 
 /obj/item/instrument/banjo
 	name = "banjo"

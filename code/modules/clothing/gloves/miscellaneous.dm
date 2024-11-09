@@ -8,7 +8,7 @@
 	equip_delay_other = 20
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
-	custom_price = 75
+	custom_price = 5
 	undyeable = TRUE
 	clothamnt = 1
 

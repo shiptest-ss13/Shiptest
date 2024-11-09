@@ -51,7 +51,7 @@
 	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
-	custom_price = 60
+	custom_price = 10
 	greyscale_colors = list(list(16, 20), list(16, 16), list(16, 18))
 	greyscale_icon_state = "tie"
 
@@ -204,7 +204,7 @@
 	icon_state = "scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	dog_fashion = /datum/dog_fashion/head
-	custom_price = 60
+	custom_price = 10
 
 /obj/item/clothing/neck/scarf/black
 	name = "black scarf"

@@ -412,7 +412,7 @@
 	icon_state = "skateboard2"
 	item_state = "skateboard2"
 	board_item_type = /obj/vehicle/ridden/scooter/skateboard/pro
-	custom_premium_price = 500
+	custom_premium_price = 50
 
 /obj/item/skateboard/hoverboard
 	name = "hoverboard"
@@ -420,7 +420,7 @@
 	icon_state = "hoverboard_red"
 	item_state = "hoverboard_red"
 	board_item_type = /obj/vehicle/ridden/scooter/skateboard/hoverboard
-	custom_premium_price = 2015
+	custom_premium_price = 75
 
 /obj/item/skateboard/hoverboard/admin
 	name = "\improper Board Of Directors"

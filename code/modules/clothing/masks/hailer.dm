@@ -45,7 +45,7 @@
 	icon_state = "whistle"
 	item_state = "whistle"
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_NECK
-	custom_price = 150
+	custom_price = 15
 	var/blown_sound = 'sound/misc/whistle.ogg'
 	actions_types = list(/datum/action/item_action/halt)
 	COOLDOWN_DECLARE(whistle_cooldown)
