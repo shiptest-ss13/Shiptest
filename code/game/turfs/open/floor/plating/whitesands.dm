@@ -104,6 +104,7 @@
 	layer = GRASS_TURF_LAYER
 	slowdown = 0
 	light_color = COLOR_SANDPLANET_LIGHT
+	has_footsteps = FALSE
 
 /turf/open/floor/plating/asteroid/whitesands/grass/getDug()
 	. = ..()
