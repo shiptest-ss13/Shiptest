@@ -75,10 +75,6 @@ Blunt
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=30, icon_wielded="[base_icon_state]_w")
 
-/obj/item/melee/axe/sledgehammer/melee_attack_chain(mob/user, atom/target, params)
-	..()
-	user.changeNext_move(CLICK_CD_MELEE * 1.4)
-
 /obj/item/melee/axe/sledgehammer/attack(mob/living/target, mob/living/user)
 	. = ..()
 	var/atom/throw_target = get_edge_target_turf(target, user.dir)
