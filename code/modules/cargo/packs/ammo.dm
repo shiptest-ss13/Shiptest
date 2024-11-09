@@ -164,19 +164,19 @@
 
 /datum/supply_pack/ammo/c46x30mm_boxcrate
 	name = "4.6x30mm Ammo Box Crate"
-	desc = "Contains a 60-round 4.6x30mm box for PDWs such as the WT-550."
+	desc = "Contains an 80-round 4.6x30mm box for PDWs such as the WT-550."
 	contains = list(/obj/item/storage/box/ammo/c46x30mm)
 	cost = 250
 
 /datum/supply_pack/ammo/c46x30mm_ap
 	name = "4.6x30mm Armour Piercing Ammo Box Crate"
-	desc = "Contains a 60-round 4.6x30mm box for PDWs such as the WT-550."
+	desc = "Contains a 80-round 4.6x30mm armour piercing box for PDWs such as the WT-550."
 	contains = list(/obj/item/storage/box/ammo/c46x30mm/ap)
 	cost = 500
 
 /datum/supply_pack/ammo/c46x30mm_hp
 	name = "4.6x30mm Hollow Point Ammo Box Crate"
-	desc = "Contains a 60-round 4.6x30mm box for PDWs such as the WT-550."
+	desc = "Contains a 80-round 4.6x30mm hollow point box for PDWs such as the WT-550."
 	contains = list(/obj/item/storage/box/ammo/c46x30mm/hp)
 	cost = 500
 
@@ -341,13 +341,13 @@
 
 /datum/supply_pack/ammo/c8x50mm_boxcrate
 	name = "8x50mm Ammo Box Crate"
-	desc = "Contains a 30-round 8x50mm ammo box for rifles such as the Illestren."
+	desc = "Contains a 40-round 8x50mm ammo box for rifles such as the Illestren."
 	contains = list(/obj/item/storage/box/ammo/a8_50r)
 	cost = 250
 
 /datum/supply_pack/ammo/c8x50mm_boxhp_boxcrate
 	name = "8x50mm Hollow Point Crate"
-	desc = "Contains a 30-round 8x50mm ammo box loaded with hollow point ammo, great against unarmored targets."
+	desc = "Contains a 40-round 8x50mm ammo box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/a8_50r/hp)
 	cost = 500
 
@@ -368,7 +368,7 @@
 
 /datum/supply_pack/ammo/a300_trac
 	name = ".300 Trac Ammo Box Crate"
-	desc = "Contains a 10-round .300 Magnum ammo box for sniper rifles such as the HP Scout."
+	desc = "Contains a ten-round .300 TRAC ammo box for sniper rifles such as the HP Scout."
 	contains = list(/obj/item/storage/box/ammo/a300/trac)
 	cost = 600
 
@@ -406,6 +406,15 @@
 	desc = "Contains a 10-round 6.5x57mm CLIP tracker box for various sniper rifles such as the CM-F90 and the Boomslang series."
 	contains = list(/obj/item/storage/box/ammo/a65clip/trac)
 	cost = 600
+
+/* 8x58 */
+
+/datum/supply_pack/ammo/a858
+	name = "8x58mm Ammo Box Crate"
+	desc = "Contains a twenty-round 8x58 ammo box for Solarian-manufactured sniper rifles, such as the SSG-69."
+	contains = list(/obj/item/storage/box/ammo/a858)
+	cost = 400
+
 
 /* ferro pellets */
 
