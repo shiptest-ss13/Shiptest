@@ -620,7 +620,6 @@
 "eI" = (
 /obj/structure/grille,
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	name = "bolide docking port";
 	port_direction = 4;
 	preferred_direction = 4
@@ -734,9 +733,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 11;
@@ -767,9 +764,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/captain)
 "fG" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
@@ -855,9 +850,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "gf" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /obj/structure/sign/warning{
 	pixel_x = -10;
 	pixel_y = 23
@@ -894,7 +887,6 @@
 	dir = 6
 	},
 /obj/machinery/button/door{
-	dir = 2;
 	pixel_y = 21;
 	pixel_x = -12;
 	id = "bolide_engine_3";
@@ -956,9 +948,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "gP" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /obj/structure/sign/warning{
 	pixel_x = -10;
 	pixel_y = -21
@@ -1189,8 +1179,7 @@
 	pixel_y = 4
 	},
 /obj/item/desk_flag/gezena{
-	pixel_x = -12;
-	pixel_y = 0
+	pixel_x = -12
 	},
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -1320,9 +1309,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/dorm)
 "iO" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_engine_1";
 	dir = 4
@@ -1482,16 +1469,13 @@
 	pixel_x = -7
 	},
 /obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3;
-	pixel_y = 0
+	pixel_x = 3
 	},
 /obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3;
-	pixel_y = 0
+	pixel_x = 3
 	},
 /obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3;
-	pixel_y = 0
+	pixel_x = 3
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -1635,8 +1619,7 @@
 /area/ship/security/armory)
 "jB" = (
 /obj/structure/sink{
-	pixel_y = 18;
-	dir = 2
+	pixel_y = 18
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/mineral/titanium/tiled,
@@ -1743,7 +1726,6 @@
 /obj/effect/turf_decal/box,
 /obj/machinery/light/floor,
 /obj/machinery/porta_turret/ship/pgf/heavy{
-	dir = 2;
 	id = "bolide_grid"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1766,9 +1748,7 @@
 "kg" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1806,8 +1786,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "bolide_win_bridge";
-	dir = 2
+	id = "bolide_win_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/engine/hull/interior,
@@ -2125,7 +2104,6 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central4,
 /obj/machinery/button/door{
 	name = "privacy lock";
-	dir = 2;
 	pixel_y = 22;
 	pixel_x = 10;
 	id = "bol_priv2";
@@ -2199,12 +2177,12 @@
 	pixel_y = 6
 	},
 /obj/item/clipboard{
-	pixel_x = -6;
-	pixel_y = -10
+	pixel_x = -7;
+	pixel_y = -5
 	},
 /obj/item/folder/pgf/blue/bolide{
-	pixel_x = -8;
-	pixel_y = 3
+	pixel_x = -9;
+	pixel_y = 5
 	},
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/borderfloorblack{
@@ -2403,7 +2381,6 @@
 /area/ship/bridge)
 "ol" = (
 /obj/machinery/shower{
-	pixel_y = 0;
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloor{
@@ -2448,8 +2425,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters{
-	id = "bolide_win_bridge";
-	dir = 2
+	id = "bolide_win_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/engine/hull/interior,
@@ -2515,14 +2491,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 2
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/cargo)
 "pl" = (
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_engine_3";
 	dir = 4
@@ -2563,8 +2536,7 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters{
-	id = "bolide_win_bridge";
-	dir = 2
+	id = "bolide_win_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/engine/hull/interior,
@@ -2721,9 +2693,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "qW" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -2797,9 +2767,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "rB" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /obj/structure/sign/warning{
 	pixel_x = -10;
 	pixel_y = -21
@@ -3068,8 +3036,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "bolide_win_bridge";
-	dir = 2
+	id = "bolide_win_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/engine/hull/interior,
@@ -3119,7 +3086,6 @@
 	},
 /obj/machinery/button/door{
 	name = "privacy lock";
-	dir = 2;
 	pixel_y = 22;
 	pixel_x = -10;
 	id = "bol_priv3";
@@ -3254,9 +3220,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "uq" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
@@ -3557,15 +3521,13 @@
 /area/ship/medical)
 "wx" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax{
-	pixel_y = 0
-	},
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 1
 	},
+/obj/machinery/fax/indie,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
 "wy" = (
@@ -3619,9 +3581,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "xe" = (
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_engine_2";
 	dir = 4
@@ -4129,7 +4089,6 @@
 /obj/effect/turf_decal/techfloor/orange,
 /obj/machinery/light_switch{
 	pixel_x = -12;
-	dir = 2;
 	pixel_y = 21
 	},
 /turf/open/floor/plasteel/tech,
@@ -4187,16 +4146,13 @@
 	pixel_y = 9
 	},
 /obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3;
-	pixel_y = 0
+	pixel_x = 3
 	},
 /obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3;
-	pixel_y = 0
+	pixel_x = 3
 	},
 /obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3;
-	pixel_y = 0
+	pixel_x = 3
 	},
 /obj/item/storage/backpack/security{
 	pixel_y = -6
@@ -5655,7 +5611,6 @@
 /area/ship/crew/dorm)
 "Je" = (
 /obj/machinery/shower{
-	pixel_y = 0;
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloor/corner{
@@ -6029,9 +5984,7 @@
 "Lh" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -6152,9 +6105,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "LG" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /obj/structure/sign/warning{
 	pixel_x = -10;
 	pixel_y = 23
@@ -6177,8 +6128,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "bolide_win_bridge";
-	dir = 2
+	id = "bolide_win_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/engine/hull/interior,
@@ -6538,7 +6488,6 @@
 	pixel_y = 5
 	},
 /obj/item/storage/box/syringes{
-	pixel_y = 0;
 	pixel_x = -6
 	},
 /obj/machinery/light/small/directional/east,
@@ -6634,8 +6583,7 @@
 /area/ship/crew/ccommons)
 "PD" = (
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 2
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/cargo)
 "PI" = (
@@ -6828,7 +6776,6 @@
 /obj/effect/turf_decal/techfloor/orange,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/security{
-	dir = 2;
 	name = "Armory";
 	req_one_access_txt = "1"
 	},
@@ -7125,9 +7072,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -7235,9 +7180,7 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/hallway/fore)
 "Tn" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -7247,7 +7190,6 @@
 /area/ship/storage/starboard)
 "To" = (
 /obj/machinery/light_switch{
-	dir = 2;
 	pixel_x = -11;
 	pixel_y = 20
 	},
@@ -7352,8 +7294,7 @@
 	dir = 8
 	},
 /obj/item/kirbyplants{
-	icon_state = "plant-21";
-	pixel_y = 0
+	icon_state = "plant-21"
 	},
 /obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/sepia,
@@ -7620,7 +7561,6 @@
 /obj/item/storage/ration/crayons,
 /obj/structure/table/reinforced,
 /obj/machinery/door/airlock/security{
-	dir = 2;
 	name = "Engineering Storage";
 	req_one_access_txt = "1"
 	},
@@ -7823,8 +7763,7 @@
 /area/ship/engineering)
 "Ws" = (
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 2
+	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/engineering)
 "Wy" = (
@@ -7869,9 +7808,7 @@
 "WN" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_bay_win_2";
 	dir = 4
@@ -7881,9 +7818,7 @@
 "WS" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -8040,7 +7975,6 @@
 /area/ship/engineering/engines/port)
 "Yg" = (
 /obj/machinery/shower{
-	pixel_y = 0;
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloor/corner{
@@ -8287,7 +8221,6 @@
 	pixel_y = -9
 	},
 /obj/machinery/button/door{
-	dir = 2;
 	pixel_y = 21;
 	pixel_x = -12;
 	id = "bolide_engine_1";
