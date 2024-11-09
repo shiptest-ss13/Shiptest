@@ -589,6 +589,7 @@
 						log_combat(src, patient, "pretended to tend wounds on", "internal tools", "([uppertext(treatment_method)]) (EMAGGED)")
 					else
 						patient.apply_damage_type((healies*-1),treatment_method) //don't need to check treatment_method since we know by this point that they were actually damaged.
+						patient.adjustTrauma(healies * TRAUMA_GAIN_TEND)
 						log_combat(src, patient, "tended the wounds of", "internal tools", "([uppertext(treatment_method)])")
 					C.visible_message("<span class='notice'>[src] tends the wounds of [patient]!</span>", \
 						"<span class='green'>[src] tends your wounds!</span>")
