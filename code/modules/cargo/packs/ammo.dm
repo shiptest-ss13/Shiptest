@@ -366,18 +366,6 @@
 	contains = list(/obj/item/storage/box/ammo/a300)
 	cost = 400
 
-/datum/supply_pack/ammo/a300_ap
-	name = ".300 Armour Piercing Ammo Box Crate"
-	desc = "Contains a twenty-round .300 Magnum ammo box for sniper rifles such as the HP Scout."
-	contains = list(/obj/item/storage/box/ammo/a300)
-	cost = 800
-
-/datum/supply_pack/ammo/a300_hp
-	name = ".300 Hollow Point Ammo Box Crate"
-	desc = "Contains a twenty-round .300 Magnum ammo box for sniper rifles such as the HP Scout."
-	contains = list(/obj/item/storage/box/ammo/a300)
-	cost = 800
-
 /datum/supply_pack/ammo/a300_trac
 	name = ".300 Trac Ammo Box Crate"
 	desc = "Contains a 10-round .300 Magnum ammo box for sniper rifles such as the HP Scout."
