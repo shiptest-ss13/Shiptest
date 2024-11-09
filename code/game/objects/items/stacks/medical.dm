@@ -144,7 +144,7 @@
 	self_delay = 20
 	max_amount = 12
 	grind_results = list(/datum/reagent/cellulose = 2)
-	custom_price = 100
+	custom_price = 5
 
 /obj/item/stack/medical/gauze/twelve
 	amount = 12

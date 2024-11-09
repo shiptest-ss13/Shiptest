@@ -1466,7 +1466,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	illustration = null
 	foldable = null
-	custom_price = 120
+	custom_price = 5
 
 /obj/item/storage/box/gum/ComponentInitialize()
 	. = ..()
@@ -1481,7 +1481,7 @@
 	name = "nicotine gum packet"
 	desc = "Designed to help with nicotine addiction and oral fixation all at once without destroying your lungs in the process. Mint flavored!"
 	icon_state = "bubblegum_nicotine"
-	custom_premium_price = 275
+	custom_premium_price = 10
 
 /obj/item/storage/box/gum/nicotine/PopulateContents()
 	for(var/i in 1 to 4)
@@ -1491,8 +1491,8 @@
 	name = "HP+ gum packet"
 	desc = "A seemingly homemade packaging with an odd smell. It has a weird drawing of a smiling face sticking out its tongue."
 	icon_state = "bubblegum_happiness"
-	custom_price = 300
-	custom_premium_price = 300
+	custom_price = 10
+	custom_premium_price = 10
 
 /obj/item/storage/box/gum/happiness/Initialize()
 	. = ..()

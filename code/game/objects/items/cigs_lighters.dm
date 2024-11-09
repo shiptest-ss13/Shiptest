@@ -1059,4 +1059,4 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	vapecolor = "ecigar"
 	overlayname = "ecigar"
 	chem_volume = 150
-	custom_premium_price = 300
+	custom_premium_price = 10

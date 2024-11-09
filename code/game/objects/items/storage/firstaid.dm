@@ -215,7 +215,7 @@
 	icon_state = "brute"
 	item_state = "firstaid-brute"
 	damagetype_healed = BRUTE
-	custom_price = 600
+	custom_price = 20
 
 /obj/item/storage/firstaid/brute/PopulateContents()
 	if(empty)

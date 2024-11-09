@@ -46,7 +46,7 @@
 	custom_materials = list(/datum/material/plastic = 100)
 	attack_verb = list("prodded", "whiffed","scratched", "poked")
 	sharpness = IS_SHARP
-	custom_price = 50
+	custom_price = 5
 	var/break_chance = 25
 
 /obj/item/melee/knife/plastic/afterattack(mob/living/carbon/user)
@@ -85,7 +85,7 @@
 	custom_materials = list(/datum/material/iron=18000)
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
-	custom_price = 600
+	custom_price = 20
 
 /obj/item/melee/knife/hunting
 	name = "hunting knife"
