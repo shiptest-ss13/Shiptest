@@ -5,7 +5,6 @@
 	baseturfs = /turf/open/floor/plating/asteroid/basalt
 	icon = 'icons/turf/planetary/lava.dmi'
 	icon_state = "basalt"
-	icon_plating = "basalt"
 	base_icon_state = "basalt"
 	floor_variance = 15
 	digResult = /obj/item/stack/ore/glass/basalt

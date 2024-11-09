@@ -264,3 +264,8 @@
 			token.add_overlay("dir_idle")
 		if(speed)
 			token.add_overlay("speed_[clamp(round(speed,1),0,10)]")
+
+// ensures the camera always moves when the ship moves
+/datum/overmap/ship/overmap_move(new_x, new_y)
+	. = ..()
+	token.update_screen()

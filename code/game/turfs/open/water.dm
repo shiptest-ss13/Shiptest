@@ -71,6 +71,7 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
+	color = "#617B64"
 
 /turf/open/water/jungle/Initialize(mapload)
 	. = ..()

@@ -93,42 +93,22 @@
 				return
 
 			ui.close()
-			var/choice = "Random Overmap Square"
-			if(!template.space_spawn) //if space spawn is enabled in config, we don't give a choice at which outpost to spawn on
-				choice = tgui_input_list(
-						spawnee,
-						"Select a location for the new ship.",
-						"Ship Location",
-						list("Random Overmap Square", "Outpost", )
-					)
+
 			var/ship_loc
 			var/datum/overmap_star_system/selected_system //the star system we want to spawn in
 
-			switch(choice)
-				if(null)
+			if(length(SSovermap.outposts) > 1)
+				var/datum/overmap/outpost/temp_loc = input(spawnee, "Select outpost to spawn at") as null|anything in SSovermap.outposts
+				if(!temp_loc)
 					return
-				if("Random Overmap Square")
-					ship_loc = null
-					selected_system = SSovermap.default_system
-				if("Outpost")
-					if(length(SSovermap.outposts) > 1)
-						var/datum/overmap/outpost/temp_loc = input(spawnee, "Select outpost to spawn at") as null|anything in SSovermap.outposts
-						if(!temp_loc)
-							return
-						selected_system = temp_loc.current_overmap
-						ship_loc = temp_loc
-					else
-						ship_loc = SSovermap.outposts[1]
-						selected_system = SSovermap.tracked_star_systems[1]
+				selected_system = temp_loc.current_overmap
+				ship_loc = temp_loc
+			else
+				ship_loc = SSovermap.outposts[1]
+				selected_system = SSovermap.tracked_star_systems[1]
 
 			if(!selected_system)
-				if(length(SSovermap.tracked_star_systems) > 1)
-					selected_system = tgui_input_list(spawnee, "Which star system do you want to spawn it in?", "Ship Location", SSovermap.tracked_star_systems)
-				else
-					selected_system = SSovermap.tracked_star_systems[1]
-				if(!selected_system)
-					to_chat(spawnee, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
-					CRASH("Ship attemped to be bought at spawn menu, but spawning outpost was not selected! This is bad!") //if selected_system didnt get selected, we nope out, this is very bad
+				CRASH("Ship attemped to be bought at spawn menu, but spawning outpost was not selected! This is bad!") //if selected_system didnt get selected, we nope out, this is very bad
 
 			to_chat(spawnee, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
 			var/datum/overmap/ship/controlled/target = SSovermap.spawn_ship_at_start(template, ship_loc, selected_system)

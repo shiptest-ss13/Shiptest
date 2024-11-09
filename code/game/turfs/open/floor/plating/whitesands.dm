@@ -5,7 +5,6 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands
 	icon = 'icons/turf/planetary/whitesands.dmi'
 	icon_state = "sand"
-	icon_plating = "sand"
 	planetary_atmos = TRUE
 	base_icon_state = WHITESANDS_SAND_ENV
 	initial_gas_mix = WHITESANDS_ATMOS //Fallback, and used to tell the AACs that this is the exterior
@@ -75,7 +74,6 @@
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	icon_state = "whitesands_basalt0"
-	icon_plating = "whitesands_basalt0"
 	dug = TRUE
 	light_color = COLOR_SANDPLANET_LIGHT
 
@@ -89,6 +87,7 @@
 	name = "purple grass"
 	desc = "The few known flora on Whitesands are in a purplish color."
 	icon = 'icons/turf/floors/whitesands_grass.dmi' //PLACEHOLDER ICON, YELL AT LOCAL MOTH WOMAN //moth woman did not do this, it was imaginos
+	smooth_icon = 'icons/turf/floors/whitesands_grass.dmi'
 	icon_state = "ws_grass"
 	base_icon_state = "ws_grass"
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/grass/dead

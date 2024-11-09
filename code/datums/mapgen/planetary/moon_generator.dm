@@ -102,9 +102,6 @@
 /datum/biome/cave/moon
 	open_turf_types = list(/turf/open/floor/plating/asteroid/moon = 1)
 	closed_turf_types = list(/turf/closed/mineral/random/moon = 1)
-//	flora_spawn_chance = 4
-//	flora_spawn_list = list(/obj/structure/flora/rock/beach = 1, /obj/structure/flora/rock/asteroid = 6)
-
 
 //GREEBLES
 
