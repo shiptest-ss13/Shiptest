@@ -36,25 +36,25 @@
 
 /datum/supply_pack/ammo/c9mm_ammo_box
 	name = "9mm Ammo Box Crate"
-	desc = "Contains a 48-round 9mm box for pistols and SMGs such as the Commander or Saber."
+	desc = "Contains a 60-round 9mm box for pistols and SMGs such as the Commander or Saber."
 	contains = list(/obj/item/storage/box/ammo/c9mm)
 	cost = 200
 
 /datum/supply_pack/ammo/c9mmap_ammo_box
 	name = "9mm AP Ammo Box Crate"
-	desc = "Contains a 48-round 9mm box loaded with armor piercing ammo."
+	desc = "Contains a 60-round 9mm box loaded with armor piercing ammo."
 	contains = list(/obj/item/storage/box/ammo/c9mm/ap)
 	cost = 400
 
 /datum/supply_pack/ammo/c9mmhp_ammo_box
 	name = "9mm HP Ammo Box Crate"
-	desc = "Contains a 48-round 9mm box loaded with hollow point ammo, great against unarmored targets."
+	desc = "Contains a 60-round 9mm box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/c9mm_hp)
 	cost = 400
 
 /datum/supply_pack/ammo/c9mmrubber_ammo_box
 	name = "9mm Rubber Ammo Box Crate"
-	desc = "Contains a 48-round 9mm box loaded with less-than-lethal rubber rounds."
+	desc = "Contains a 60-round 9mm box loaded with less-than-lethal rubber rounds."
 	contains = list(/obj/item/storage/box/ammo/c9mm_rubber)
 	cost = 200
 
