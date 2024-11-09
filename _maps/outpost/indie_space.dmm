@@ -113,7 +113,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/plushie{
+/obj/effect/spawner/random/entertainment/plushie{
 	pixel_x = 16;
 	pixel_y = 4
 	},
@@ -270,7 +270,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/effect/spawner/lootdrop/salvage/metal,
+/obj/effect/spawner/random/salvage/metal,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/central)
 "bL" = (
@@ -287,7 +287,7 @@
 /turf/open/floor/plasteel,
 /area/outpost/hallway/port)
 "bS" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 8
 	},
@@ -346,7 +346,7 @@
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
 "ci" = (
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -481,7 +481,7 @@
 /turf/open/floor/plasteel,
 /area/outpost/vacant_rooms)
 "dl" = (
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/turf_decal/steeldecal/steel_decals7{
 	dir = 9
 	},
@@ -958,7 +958,7 @@
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms)
 "gz" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/item/radio/intercom/directional/east,
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 1
@@ -1001,7 +1001,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "gS" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "gT" = (
@@ -1078,7 +1078,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "hz" = (
@@ -1126,8 +1126,8 @@
 /area/outpost/hallway/port)
 "hK" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/salvage_laser,
-/obj/effect/spawner/lootdrop/salvage_capacitor,
+/obj/effect/spawner/random/salvage_laser,
+/obj/effect/spawner/random/salvage_capacitor,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "hM" = (
@@ -1188,7 +1188,7 @@
 /area/outpost/maintenance/central)
 "hZ" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/donut,
+/obj/effect/spawner/random/food_or_drink/donut,
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
 "ib" = (
@@ -1269,7 +1269,7 @@
 /turf/open/floor/wood,
 /area/outpost/crew/library)
 "iD" = (
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "iG" = (
@@ -1350,7 +1350,7 @@
 /area/outpost/crew/bar)
 "jn" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
@@ -1430,7 +1430,7 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "jM" = (
-/obj/effect/spawner/lootdrop/chicken,
+/obj/effect/spawner/random/chicken,
 /turf/open/floor/ship/dirt,
 /area/outpost/hallway/port)
 "jO" = (
@@ -1703,7 +1703,7 @@
 /area/outpost/maintenance/central)
 "lA" = (
 /obj/structure/flora/grass/jungle,
-/obj/effect/spawner/lootdrop/chicken,
+/obj/effect/spawner/random/chicken,
 /turf/open/floor/grass/ship/jungle,
 /area/outpost/hallway/central)
 "lB" = (
@@ -1858,7 +1858,7 @@
 /area/outpost/hallway/central)
 "mv" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
+/obj/effect/spawner/random/clothing/kittyears_or_rabbitears,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms)
@@ -2597,8 +2597,8 @@
 /area/outpost/maintenance/fore)
 "rp" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/maintenance/seven,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/maintenance/seven,
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms)
 "rr" = (
@@ -2670,7 +2670,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -2782,7 +2782,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
@@ -2988,9 +2988,9 @@
 /area/outpost/crew/library)
 "ta" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/minor/twentyfive_percent_cyborg_mask,
+/obj/effect/spawner/random/clothing/twentyfive_percent_cyborg_mask,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/gloves,
+/obj/effect/spawner/random/clothing/gloves,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/outpost/storage)
@@ -3160,7 +3160,7 @@
 /area/outpost/cargo)
 "tS" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "tT" = (
@@ -3324,7 +3324,7 @@
 /turf/open/floor/ship/dirt,
 /area/outpost/hallway/central)
 "uE" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
@@ -3791,7 +3791,7 @@
 /turf/open/floor/plasteel,
 /area/outpost/hallway/port)
 "xu" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
@@ -3884,7 +3884,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "xZ" = (
@@ -3968,7 +3968,7 @@
 /area/outpost/crew/bar)
 "yN" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms)
 "yQ" = (
@@ -4155,7 +4155,7 @@
 /turf/open/floor/plating/asteroid,
 /area/outpost/external)
 "zS" = (
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "zY" = (
@@ -4208,7 +4208,7 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/fore)
 "Am" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 8
 	},
@@ -4858,8 +4858,8 @@
 /area/outpost/hallway/port)
 "DH" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/minor/bowler_or_that,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/clothing/bowler_or_that,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/mono,
 /area/outpost/storage)
 "DI" = (
@@ -4912,7 +4912,7 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 9
 	},
-/obj/effect/spawner/lootdrop/salvage/metal,
+/obj/effect/spawner/random/salvage/metal,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/fore)
@@ -4984,7 +4984,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "ER" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "EV" = (
@@ -4995,7 +4995,7 @@
 /area/outpost/crew/bar)
 "EX" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "Fa" = (
@@ -5189,7 +5189,7 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/vacant_rooms/office)
 "Gj" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -5222,7 +5222,7 @@
 /area/outpost/external)
 "Gn" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/minor/bowler_or_that,
+/obj/effect/spawner/random/clothing/bowler_or_that,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "Gu" = (
@@ -5394,7 +5394,7 @@
 /area/outpost/hallway/central)
 "Hk" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/minor/beret_or_rabbitears,
+/obj/effect/spawner/random/clothing/beret_or_rabbitears,
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/mono,
 /area/outpost/storage)
@@ -5853,7 +5853,7 @@
 /area/outpost/cargo/office)
 "JV" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
+/obj/effect/spawner/random/clothing/pirate_or_bandana,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
@@ -6213,8 +6213,8 @@
 /turf/open/floor/wood,
 /area/outpost/crew/library)
 "LR" = (
-/obj/effect/spawner/lootdrop/tool_engie_common,
-/obj/effect/spawner/lootdrop/tool_engie_common,
+/obj/effect/spawner/random/engineering/tool/common,
+/obj/effect/spawner/random/engineering/tool/common,
 /obj/structure/rack,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
@@ -6454,7 +6454,7 @@
 /area/outpost/cargo/office)
 "No" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/donut/jelly,
+/obj/effect/spawner/random/food_or_drink/donut/jelly,
 /obj/effect/turf_decal/floordetail/tiled,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/security)
@@ -6531,7 +6531,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/snacks/grown/citrus/orange,
-/obj/effect/spawner/lootdrop/salvage_capacitor,
+/obj/effect/spawner/random/salvage_capacitor,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "NV" = (
@@ -6718,7 +6718,7 @@
 /area/outpost/crew/cryo)
 "Pw" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/vacant_rooms/office)
 "Px" = (
@@ -6914,8 +6914,8 @@
 /area/outpost/maintenance/fore)
 "Qx" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/minor/bowler_or_that,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/clothing/bowler_or_that,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/mono,
 /area/outpost/storage)
 "QA" = (
@@ -7079,7 +7079,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-6"
 	},
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 10
 	},
@@ -7166,7 +7166,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "RJ" = (
@@ -7390,8 +7390,8 @@
 /area/outpost/hallway/port)
 "SW" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms)
 "SY" = (
@@ -7400,7 +7400,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "Ta" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/oil,
 /obj/effect/turf_decal/steeldecal/steel_decals9,
 /turf/open/floor/plating,
@@ -7556,7 +7556,7 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 9
 	},
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/fore)
@@ -7608,7 +7608,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "Uq" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/hallway/port)
 "Us" = (
@@ -7618,7 +7618,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -7789,7 +7789,7 @@
 	},
 /obj/item/bedsheet/double/captain,
 /obj/effect/decal/cleanable/greenglow,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/head/papersack/smiley{
 	pixel_x = 7
@@ -7897,7 +7897,7 @@
 /turf/open/floor/carpet/green,
 /area/outpost/crew/bar)
 "Wa" = (
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/mouse/brown,
 /turf/open/floor/plating,
@@ -8004,7 +8004,7 @@
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
 "WO" = (
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "WR" = (
@@ -8029,7 +8029,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "WV" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 1
 	},
@@ -8161,7 +8161,7 @@
 /area/outpost/hallway/port)
 "XA" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/five,
+/obj/effect/spawner/random/maintenance/five,
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms)
 "XD" = (
@@ -8332,7 +8332,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
 "YC" = (
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/structure/rack,
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
 	dir = 4
@@ -8528,8 +8528,8 @@
 /area/outpost/hallway/central)
 "ZP" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/tool_surgery_common,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/medical/surgery_tool/common,
+/obj/effect/spawner/random/maintenance/four,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/vacant_rooms/office)
 "ZU" = (

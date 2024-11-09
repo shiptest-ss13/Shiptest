@@ -138,7 +138,7 @@
 		/obj/projectile/beam/disabler = 15
 	)
 
-	var/obj/projectile/picked_projectiletype = pickweight(weighted_projectile_types)
+	var/obj/projectile/picked_projectiletype = pick_weight(weighted_projectile_types)
 
 	var/obj/item/master = comp.parent
 	comp.appliedComponents += master.AddComponent(/datum/component/mirv, picked_projectiletype)

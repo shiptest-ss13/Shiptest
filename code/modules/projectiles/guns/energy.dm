@@ -3,6 +3,7 @@
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy.dmi'
 	icon_state = "laser"
+	item_state = "spur"
 
 	muzzleflash_iconstate = "muzzle_flash_laser"
 	muzzle_flash_color = COLOR_SOFT_RED
@@ -17,6 +18,14 @@
 	default_firemode = FIREMODE_SEMIAUTO
 
 	fire_select_icon_state_prefix = "laser_"
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/stock_parts/cell/gun/upgraded,
+		/obj/item/stock_parts/cell/gun/empty,
+		/obj/item/stock_parts/cell/gun/upgraded/empty,
+	)
 
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS
@@ -49,14 +58,16 @@
 /obj/item/gun/energy/get_cell()
 	return cell
 
-/obj/item/gun/energy/Initialize()
+/obj/item/gun/energy/Initialize(mapload, spawn_empty)
 	. = ..()
-	if(cell_type)
-		cell = new cell_type(src)
-	else
-		cell = new(src)
-	if(dead_cell)
-		cell.use(cell.maxcharge)
+	if(spawn_empty)
+		if(internal_magazine)
+			spawn_no_ammo = TRUE
+		else
+			default_ammo_type = FALSE
+
+	if(default_ammo_type)
+		cell = new default_ammo_type(src, spawn_no_ammo)
 	update_ammo_types()
 	recharge_newshot(TRUE)
 	if(selfcharge)
@@ -103,7 +114,7 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/energy/attack_hand(mob/user)
-	if(!internal_cell && loc == user && user.is_holding(src) && cell && tac_reloads)
+	if(!internal_magazine && loc == user && user.is_holding(src) && cell && tac_reloads)
 		eject_cell(user)
 		return
 	return ..()
@@ -114,7 +125,7 @@
 		update_appearance()
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
-	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))
+	if (!internal_magazine && (A.type in allowed_ammo_types))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
@@ -125,12 +136,6 @@
 	return ..()
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
-		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
-		return FALSE
-	if(mag_size == MAG_SIZE_LARGE && !istype(C, /obj/item/stock_parts/cell/gun/large))
-		to_chat(user, span_warning("\The [C] doesn't seem to fit into \the [src]..."))
-		return FALSE
 	if(user.transferItemToLoc(C, src))
 		cell = C
 		to_chat(user, span_notice("You load the [C] into \the [src]."))
@@ -163,7 +168,7 @@
 	update_appearance()
 
 /obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
-	if(cell && !internal_cell)
+	if(cell && !internal_magazine)
 		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
 		if(I.use_tool(src, user, unscrewing_time, volume = 100))
 			to_chat(user, span_notice("You remove the power cell."))

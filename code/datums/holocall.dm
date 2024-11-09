@@ -34,6 +34,8 @@
 
 /datum/holocall
 	var/mob/living/user	//the one that called
+	///area of the caller
+	var/area/caller_location
 	var/obj/machinery/holopad/calling_holopad	//the one that sent the call
 	var/obj/machinery/holopad/connected_holopad	//the one that answered the call (may be null)
 	var/list/dialed_holopads	//all things called, will be cleared out to just connected_holopad once answered
@@ -48,6 +50,7 @@
 /datum/holocall/New(mob/living/caller, obj/machinery/holopad/calling_pad, list/callees, elevated_access = FALSE)
 	call_start_time = world.time
 	user = caller
+	caller_location = get_area_name(caller)
 	calling_pad.outgoing_call = src
 	calling_holopad = calling_pad
 	dialed_holopads = list()
@@ -227,7 +230,7 @@
 
 /obj/item/disk/holodisk
 	name = "holorecord disk"
-	desc = "Stores recorder holocalls."
+	desc = "Stores recorded holocalls."
 	random_color = FALSE
 	color = "#A7A3A6"
 	blueshift_pallete = FALSE

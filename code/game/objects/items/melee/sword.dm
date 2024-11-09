@@ -8,12 +8,21 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
-	obj_flags = UNIQUE_RENAME
-	block_chance = 25
+	block_chance = 10
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = IS_SHARP
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
+
+/obj/item/melee/sword/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
+
+//cruft
+/obj/item/melee/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(attack_type == PROJECTILE_ATTACK)
+		final_block_chance = projectile_block_chance //Don't bring a sword to a gunfight
+	return ..()
 
 /obj/item/melee/sword/claymore
 	name = "claymore"
@@ -41,7 +50,7 @@
 /obj/item/melee/sword/scrap
 	name = "scrap sword"
 	desc = "A jagged and painful weapon only effective on targets without an armour"
-	icon_state = "machete0"
+	icon_state = "machete"
 	force = 24
 	throwforce = 10
 	armour_penetration = -35
@@ -50,7 +59,7 @@
 /obj/item/melee/sword/mass
 	name = "mass produced machete"
 	desc = "A middle ground between a machete and a short sword. A simple construction of stamped steel but its so cheap its hard to complain. Its right between being a one hand and two handed weapon"
-	icon_state = "machete0"
+	icon_state = "machete"
 	base_icon_state = "machete"
 	force = 20
 	throwforce = 15
@@ -75,8 +84,8 @@
 /obj/item/melee/sword/chainsaw
 	name = "sacred chainsaw sword"
 	desc = "Suffer not a heretic to live."
-	icon_state = "chainswordon"
-	item_state = "chainswordon"
+	icon_state = "chainsword_on"
+	item_state = "chainsword_on"
 	force = 15
 	throwforce = 10
 	armour_penetration = 25
@@ -98,10 +107,6 @@
 	attack_verb = list("slashed", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
-
-/obj/item/melee/sword/sabre/Initialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
 
 /obj/item/melee/sword/sabre/on_enter_storage(datum/component/storage/concrete/S)
 	var/obj/item/storage/belt/sabre/B = S.real_location()
@@ -132,6 +137,13 @@
 	icon_state = "suns-swordstick"
 	item_state = "suns-swordstick"
 
+/obj/item/melee/sword/sabre/pgf
+	name = "\improper boarding cutlass"
+	desc = "When beam and bullet puncture the hull, a trustworthy blade will carry you through the fight"
+	icon_state = "pgf-sabre"
+	block_chance = 30
+	force = 22
+
 /obj/item/melee/sword/sabre/suns/telescopic
 	name = "telescopic sabre"
 	desc = "A telescopic and retractable blade given to SUNS peacekeepers for easy concealment and carry. It's design makes it slightly less effective than normal sabres sadly, however it is still excelent at piercing armor."
@@ -145,50 +157,30 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("smacked", "prodded")
 
-	var/extended = FALSE
 	var/extend_sound = 'sound/weapons/batonextend.ogg'
 
-	var/on_icon_state = "suns-tsword_ext"
-	var/on_item_state = "suns-tsword_ext"
-	var/off_icon_state = "suns-tsword"
-	var/off_item_state = "suns-tsword"
+	var/on_block_chance = 40
 
-	var/force_on = 10
-	var/on_throwforce = 10
-	var/on_blockchance = 40
+/obj/item/melee/sword/sabre/suns/telescopic/ComponentInitialize()
+	. = ..()
+	AddComponent( \
+		/datum/component/transforming, \
+		force_on = 10, \
+		throwforce_on = 10, \
+		attack_verb_on = list("slashed", "cut"), \
+		w_class_on = WEIGHT_CLASS_BULKY, \
+	)
+	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
 
-	var/force_off = 0
-	var/off_throwforce = 0
-	var/off_blockchance = 0
+/obj/item/melee/sword/sabre/suns/telescopic/proc/on_transform(obj/item/source, mob/user, active)
+	SIGNAL_HANDLER
 
-	var/weight_class_on = WEIGHT_CLASS_BULKY
-
-/obj/item/melee/sword/sabre/suns/telescopic/attack_self(mob/user)
-	extended = !extended
-
-	if(extended)
-		to_chat(user, "<span class ='warning'>You extend the [src].</span>")
-		icon_state = on_icon_state
-		item_state = on_item_state
-		slot_flags = 0
-		w_class = weight_class_on
-		force = force_on
-		throwforce = on_throwforce
-		block_chance = on_blockchance
-		attack_verb = list("slashed", "cut")
+	if(active)
+		block_chance = on_block_chance
 	else
-		to_chat(user, "<span class ='notice'>You collapse the [src].</span>")
-		icon_state = off_icon_state
-		item_state = off_item_state
-		slot_flags = ITEM_SLOT_BELT
-		w_class = WEIGHT_CLASS_SMALL
-		force = force_off
-		throwforce = off_throwforce
-		block_chance = off_blockchance
-		attack_verb = list("smacked", "prodded")
-
-	playsound(get_turf(src), extend_sound, 50, TRUE)
-	add_fingerprint(user)
+		block_chance = initial(block_chance)
+	playsound(user, extend_sound, 50, TRUE)
+	return COMPONENT_NO_DEFAULT_MESSAGE
 
 /obj/item/melee/sword/supermatter
 	name = "supermatter sword"
@@ -317,7 +309,7 @@
 
 //HF blade
 /obj/item/melee/sword/vibro
-	icon_state = "hfrequency0"
+	icon_state = "hfrequency"
 	base_icon_state = "hfrequency"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'

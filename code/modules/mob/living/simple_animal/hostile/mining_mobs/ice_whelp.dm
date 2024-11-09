@@ -40,7 +40,7 @@
 /mob/living/simple_animal/hostile/asteroid/ice_whelp/OpenFire()
 	var/turf/T = get_ranged_target_turf_direct(src, target, fire_range)
 	var/list/burn_turfs = getline(src, T) - get_turf(src)
-	dragon_fire_line(src, burn_turfs)
+	fire_line(src, burn_turfs)
 
 /mob/living/simple_animal/hostile/asteroid/ice_whelp/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT

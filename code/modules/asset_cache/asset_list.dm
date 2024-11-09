@@ -124,8 +124,6 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	for(var/size_id in sizes)
 		.["[name]_[size_id].png"] = SSassets.transport.get_asset_url("[name]_[size_id].png")
 
-
-
 /datum/asset/spritesheet/proc/ensure_stripped(sizes_to_strip = sizes)
 	for(var/size_id in sizes_to_strip)
 		var/size = sizes[size_id]

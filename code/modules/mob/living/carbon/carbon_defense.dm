@@ -1,6 +1,6 @@
 /mob/living/carbon/attackby(obj/item/W, mob/user, params)
 	var/obj/item/bodypart/BP = get_bodypart(check_zone(user.zone_selected))
-	var/has_painkillers = reagents.has_reagent(/datum/reagent/medicine/morphine, needs_metabolizing = TRUE)
+	var/painless = (HAS_TRAIT(user, TRAIT_ANALGESIA) || HAS_TRAIT(user, TRAIT_PAIN_RESIST))
 	if(W.tool_behaviour == TOOL_WELDER && IS_ROBOTIC_LIMB(BP) && BP.brute_dam) //prioritize healing if we're synthetic
 		return ..()
 	if(user.a_intent != INTENT_HELP || !W.get_temperature() || !BP.can_bandage()) //this will also catch low damage synthetic welding
@@ -9,7 +9,7 @@
 	var/heal_time = 2 SECONDS
 	playsound(user, 'sound/surgery/cautery1.ogg', 20)
 	balloon_alert(user, "cauterizing...")
-	if(src == user && !has_painkillers)
+	if(src == user && !painless)
 		heal_time *= 2 //oof ouch owie
 	user.visible_message(span_nicegreen("[user] holds [W] up to [user == src ? "their" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [p_their()] bleeding..."), span_nicegreen("You hold [W] up to [user == src ? "your" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [user == src ? "your" : p_their()] bleeding..."))
 	if(do_after(user, heal_time, target = src))
@@ -399,6 +399,8 @@
 		Paralyze(60)
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
+	var/datum/component/mood/hugger_mood = M.GetComponent(/datum/component/mood)
+	var/nosound = FALSE
 	if(on_fire)
 		to_chat(M, "<span class='warning'>You can't put [p_them()] out with just your bare hands!</span>")
 		return
@@ -426,6 +428,22 @@
 			mothdust += 10;
 		if(istype(dna.species, /datum/species/moth))
 			M.mothdust += 10; // End WS edit
+
+	if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // Nose boops!
+		nosound = TRUE
+		playsound(src, 'sound/effects/boop.ogg', 50, 0)
+		if (HAS_TRAIT(M, TRAIT_FRIENDLY))
+			M.visible_message(span_notice("[M] playfully boops your nose."), span_notice("You playfully boop [src]'s nose."))
+			if (hugger_mood.sanity >= SANITY_GREAT)
+				new /obj/effect/temp_visual/heart(loc)
+				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "best_boop", /datum/mood_event/best_boop, M)
+		else
+			M.visible_message(span_notice("[M] boops [src]'s nose."), span_notice("You boop [src] on the nose."))
+		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
+			to_chat(M, span_warning("A scowl forms on [src]'s face as you daringly press your finger against [p_their()] nose."))
+			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "bad_boop", /datum/mood_event/bad_boop, M)
+
+
 	else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD) //Headpats!
 		SEND_SIGNAL(src, COMSIG_CARBON_HEADPAT, M)
 		M.visible_message("<span class='notice'>[M] gives [src] a pat on the head to make [p_them()] feel better!</span>", \
@@ -440,10 +458,35 @@
 		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
 			to_chat(M, "<span class='warning'>[src] looks visibly upset as you pat [p_them()] on the head.</span>")
 
+// Tail pulls!
+	else if((M.zone_selected == BODY_ZONE_PRECISE_GROIN) && !isnull(src.getorgan(/obj/item/organ/tail)))
+		M.visible_message(span_notice("[M] pulls on [src]'s tail!"), \
+					null, span_hear("You hear a soft patter."), DEFAULT_MESSAGE_RANGE, list(M, src))
+		to_chat(M, span_notice("You pull on [src]'s tail!"))
+		to_chat(src, span_notice("[M] pulls on your tail!"))
+
+// Rips off fake tails
+	else if((M.zone_selected == BODY_ZONE_PRECISE_GROIN) && (istype(head, /obj/item/clothing/head/kitty) || istype(head, /obj/item/clothing/head/collectable/kitty)))
+		var/obj/item/clothing/head/faketail = head
+		M.visible_message(span_danger("[M] pulls on [src]'s tail... and it rips off!"), \
+					null, span_hear("You hear a ripping sound."), DEFAULT_MESSAGE_RANGE, list(M, src))
+		to_chat(M, span_danger("You pull on [src]'s tail... and it rips off!"))
+		to_chat(src, span_userdanger("[M] pulls on your tail... and it rips off!"))
+		playsound(loc, 'sound/effects/rip1.ogg', 75, TRUE)
+		dropItemToGround(faketail)
+		M.put_in_hands(faketail)
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "rippedtail", /datum/mood_event/rippedtail)
+
 	else if(M.zone_selected == BODY_ZONE_CHEST || M.zone_selected == BODY_ZONE_PRECISE_GROIN)			//WS Edit - Adds more help emotes
 		SEND_SIGNAL(src, COMSIG_CARBON_HUGGED, M)
 		SEND_SIGNAL(M, COMSIG_CARBON_HUG, M, src)
-		M.visible_message("<span class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
+		if (M.grab_state >= GRAB_AGGRESSIVE)
+			M.visible_message(span_notice("[M] embraces [src] in a tight bear hug!"), \
+						null, span_hear("You hear the rustling of clothes."), DEFAULT_MESSAGE_RANGE, list(M, src))
+			to_chat(M, span_notice("You wrap [src] into a tight bear hug!"))
+			to_chat(src, span_notice("[M] squeezes you super tightly in a firm bear hug!"))
+		else
+			M.visible_message("<span class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
 					"<span class='notice'>You hug [src] to make [p_them()] feel better!</span>")
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
 			mothdust += 15;
@@ -455,12 +498,17 @@
 
 		// No moodlets for people who hate touches
 		if(!HAS_TRAIT(src, TRAIT_BADTOUCH))
-			if(bodytemperature > M.bodytemperature)
-				if(!HAS_TRAIT(M, TRAIT_BADTOUCH))
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/warmhug, src) // Hugger got a warm hug (Unless they hate hugs)
-				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug) // Reciver always gets a mood for being hugged
-			else
-				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/warmhug, M) // You got a warm hug
+			if (M.grab_state >= GRAB_AGGRESSIVE)
+				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/bear_hug)
+				if(bodytemperature > M.bodytemperature)
+					if(!HAS_TRAIT(M, TRAIT_BADTOUCH))
+						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/warmhug) // Hugger got a warm hug (Unless they hate hugs)
+					SEND_SIGNAL(M, "hug", /datum/mood_event/hug) // Receiver always gets a mood for being hugged
+				else
+					SEND_SIGNAL(M, "hug", /datum/mood_event/warmhug,) // You got a warm hug
+		else
+			if (M.grab_state >= GRAB_AGGRESSIVE)
+				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/bad_touch_bear_hug)
 
 		// Let people know if they hugged someone really warm or really cold
 		if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
@@ -474,7 +522,6 @@
 			to_chat(M, "<span class='warning'>It feels like [src] is freezing as you hug them.</span>")
 
 		if(HAS_TRAIT(M, TRAIT_FRIENDLY))
-			var/datum/component/mood/hugger_mood = M.GetComponent(/datum/component/mood)
 			if (hugger_mood.sanity >= SANITY_GREAT)
 				new /obj/effect/temp_visual/heart(loc)
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/besthug, M)
@@ -503,8 +550,17 @@
 	AdjustParalyzed(-60)
 	AdjustImmobilized(-60)
 	set_resting(FALSE)
+	if(!nosound)
+		playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 
-	playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
+// Shake animation
+#define SHAKE_ANIMATION_OFFSET (4)
+	if (incapacitated())
+		var/direction = prob(50) ? -1 : 1
+		animate(src, pixel_x = pixel_x + SHAKE_ANIMATION_OFFSET * direction, time = 1, easing = QUAD_EASING | EASE_OUT, flags = ANIMATION_PARALLEL)
+		animate(pixel_x = pixel_x - (SHAKE_ANIMATION_OFFSET * 2 * direction), time = 1)
+		animate(pixel_x = pixel_x + SHAKE_ANIMATION_OFFSET * direction, time = 1, easing = QUAD_EASING | EASE_IN)
+#undef SHAKE_ANIMATION_OFFSET
 
 /// Check ourselves to see if we've got any shrapnel, return true if we do. This is a much simpler version of what humans do, we only indicate we're checking ourselves if there's actually shrapnel
 /mob/living/carbon/proc/check_self_for_injuries()
