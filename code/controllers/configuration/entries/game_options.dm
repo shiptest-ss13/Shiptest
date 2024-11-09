@@ -120,11 +120,6 @@
 	min_val = 0
 	max_val = 1
 
-/datum/config_entry/number/shuttle_refuel_delay
-	config_entry_value = 12000
-	integer = FALSE
-	min_val = 0
-
 /datum/config_entry/flag/show_game_type_odds	//if set this allows players to see the odds of each roundtype on the get revision screen
 
 /datum/config_entry/keyed_list/roundstart_races	//races you can play as from the get go.
@@ -250,15 +245,6 @@
 	movedelay_type = /mob/living/simple_animal
 /////////////////////////////////////////////////
 
-/datum/config_entry/flag/virtual_reality	//Will virtual reality be loaded
-
-/datum/config_entry/flag/roundstart_away	//Will random away mission be loaded.
-
-/datum/config_entry/number/gateway_delay	//How long the gateway takes before it activates. Default is half an hour. Only matters if roundstart_away is enabled.
-	config_entry_value = 18000
-	integer = FALSE
-	min_val = 0
-
 /datum/config_entry/flag/ghost_interaction
 
 /datum/config_entry/flag/near_death_experience //If carbons can hear ghosts when unconscious and very close to death
@@ -293,31 +279,8 @@
 	config_entry_value = -1
 	min_val = -1
 
-/datum/config_entry/string/overflow_job
-	config_entry_value = "Assistant"
-
 /datum/config_entry/flag/starlight
 /datum/config_entry/flag/grey_assistants
-
-/datum/config_entry/number/lavaland_budget
-	config_entry_value = 60
-	integer = FALSE
-	min_val = 0
-
-/datum/config_entry/number/whitesands_budget
-	config_entry_value = 60
-	integer = FALSE
-	min_val = 0
-
-/datum/config_entry/number/icemoon_budget
-	config_entry_value = 90
-	integer = FALSE
-	min_val = 0
-
-/datum/config_entry/number/space_budget
-	config_entry_value = 16
-	integer = FALSE
-	min_val = 0
 
 /datum/config_entry/flag/allow_random_events	// Enables random events mid-round when set
 
@@ -352,13 +315,6 @@
 		GLOB.MAX_EX_FLASH_RANGE = config_entry_value
 		GLOB.MAX_EX_FLAME_RANGE = config_entry_value
 
-/datum/config_entry/number/emergency_shuttle_autocall_threshold
-	min_val = 0
-	max_val = 1
-	integer = FALSE
-
-/datum/config_entry/flag/ic_printing
-
 /datum/config_entry/flag/roundstart_traits
 
 /datum/config_entry/flag/randomize_shift_time
@@ -371,10 +327,6 @@
 
 /datum/config_entry/number/ratcap
 	config_entry_value = 64
-	min_val = 0
-
-/datum/config_entry/number/maxfine
-	config_entry_value = 1000
 	min_val = 0
 
 /datum/config_entry/flag/dynamic_config_enabled
