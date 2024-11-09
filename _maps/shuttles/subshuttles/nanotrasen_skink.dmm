@@ -123,13 +123,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/airlock/unres{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/airlock/unres{
-	dir = 8
+	dir = 4;
+	req_ship_access = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
