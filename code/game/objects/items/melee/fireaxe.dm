@@ -60,7 +60,7 @@ Blunt
 	icon_state = "sledgehammer"
 	base_icon_state = "sledgehammer"
 	name = "breaching sledgehammer"
-	desc = "A large, slow hammer used by the Gorlex Marauder splinters. As powerful as a weapon as it is a shipbreaking and mining tool."
+	desc = "A large hammer used by the Gorlex Marauder splinters. As powerful as a weapon as it is a shipbreaking and mining tool."
 	force = 5
 	armour_penetration = 40
 	attack_verb = list("bashed", "smashed", "crushed", "smacked")
