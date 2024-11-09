@@ -78,7 +78,7 @@
 	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_JUNGLE)
 
 /turf/open/water/beach
-	color = COLOR_CYAN
+	color = "#41a3ff"
 	light_range = 2
 	light_power = 0.80
 	light_color = LIGHT_COLOR_BLUE
@@ -91,7 +91,7 @@
 	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_BEACH)
 
 /turf/open/water/beach/deep
-	color = "#0099ff"
+	color = "#3842d6"
 	light_color = LIGHT_COLOR_DARK_BLUE
 
 /turf/open/water/tar
