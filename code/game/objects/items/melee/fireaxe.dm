@@ -69,6 +69,7 @@ Blunt
 	sharpness = IS_BLUNT
 	tool_behaviour = TOOL_MINING
 	toolspeed = 0.5
+	wall_decon_damage = MINERAL_WALL_INTEGRITY
 	usesound = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg')
 
 /obj/item/melee/axe/sledgehammer/ComponentInitialize()
