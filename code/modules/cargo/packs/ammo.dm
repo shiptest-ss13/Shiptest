@@ -174,7 +174,7 @@
 	contains = list(/obj/item/storage/box/ammo/c46x30mm/ap)
 	cost = 500
 
-/datum/supply_pack/ammo/c46x30mm_ap
+/datum/supply_pack/ammo/c46x30mm_hp
 	name = "4.6x30mm Hollow Point Ammo Box Crate"
 	desc = "Contains a 60-round 4.6x30mm box for PDWs such as the WT-550."
 	contains = list(/obj/item/storage/box/ammo/c46x30mm/hp)
