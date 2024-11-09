@@ -54,7 +54,7 @@
 			if(momsdebitcard < 1)
 				to_chat(user, "<span class='warning'>ERROR: Invalid amount designated.</span>")
 				return
-			if(vbucks.registered_account.adjust_money(-momsdebitcard, "transfer"))
+			if(vbucks.registered_account.adjust_money(-momsdebitcard, CREDIT_LOG_TRANSFER_IN))
 				purchase(vbucks.registered_account.account_holder, momsdebitcard)
 				to_chat(user, "Thanks for purchasing! The vendor has been informed.")
 				return
@@ -117,7 +117,7 @@
 		return ..()
 
 /obj/machinery/paystand/proc/purchase(buyer, price)
-	my_card.registered_account.adjust_money(price, "transfer")
+	my_card.registered_account.adjust_money(price, CREDIT_LOG_TRANSFER_IN)
 	my_card.registered_account.bank_card_talk("Purchase made at your vendor by [buyer] for [price] credits.")
 	amount_deposited = amount_deposited + price
 	if(signaler && amount_deposited >= signaler_threshold)
