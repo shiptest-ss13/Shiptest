@@ -32,6 +32,7 @@
 	recoil = -2
 	recoil_unwielded = -2
 
+	wield_slowdown = PISTOL_SLOWDOWN
 
 	valid_attachments = list(
 		/obj/item/attachment/m17_barrel,
@@ -92,10 +93,10 @@ EMPTY_GUN_HELPER(automatic/pistol/m17)
 	fire_sound = 'sound/weapons/gun/gauss/claris.ogg'
 
 	spread = 0
-	spread_unwielded = 25
+	spread_unwielded = 15
 	recoil = 0
 	recoil_unwielded = 2
-	wield_slowdown = 0.5
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 	wield_delay = 1 SECONDS
 
 	manufacturer = MANUFACTURER_SERENE
@@ -172,11 +173,13 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 
+	slot_flags = ITEM_SLOT_BACK
+
 	spread = 0
-	spread_unwielded = 40
-	recoil = 1
+	spread_unwielded = 20
+	recoil = 0.5
 	recoil_unwielded = 3
-	wield_slowdown = 0.5
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 	wield_delay = 1 SECONDS
 
 	valid_attachments = SERENE_ATTACHMENTS
@@ -236,7 +239,7 @@ EMPTY_GUN_HELPER(automatic/m15)
 	spread_unwielded = 16
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 0.4
+	wield_slowdown = SHOTGUN_SLOWDOWN
 	wield_delay = 0.65 SECONDS
 
 	casing_ejector = TRUE

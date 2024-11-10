@@ -300,37 +300,3 @@
 	default_firemode = FIREMODE_FULLAUTO
 
 	spread_unwielded = 20
-
-//techinically a battle rifle, i'm putting it here for organisation sake
-
-/obj/item/gun/ballistic/automatic/marksman/vickland //weapon designed by Apogee-dev
-	name = "\improper Vickland"
-	desc = "The pride of the Saint-Roumain Militia, the Vickland is a rare semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. It is unusual in its class for its internal rotary magazine, which must be reloaded using stripper clips. Chambered in .308."
-	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
-
-	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
-	icon_state = "vickland"
-	item_state = "vickland"
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
-	internal_magazine = TRUE
-	default_ammo_type = /obj/item/ammo_box/magazine/internal/vickland
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/internal/vickland,
-	)
-	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
-
-	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	zoomable = FALSE //no scope on it
-
-	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
-
-	fire_delay = 0.4 SECONDS
-
-	spread_unwielded = 25
-	recoil = 0
-	recoil_unwielded = 4
-	wield_slowdown = 0.75

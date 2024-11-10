@@ -21,22 +21,6 @@
 	recoil_unwielded = 4
 	wield_slowdown = 0.35
 
-// Laser rifle (rechargeable magazine) //
-
-/obj/item/gun/ballistic/automatic/laser //TODO: REMOVE
-	name = "laser rifle"
-	desc = "Though sometimes mocked for the relatively weak firepower of their energy weapons, the logistic miracle of rechargeable ammunition has given Nanotrasen a decisive edge over many a foe."
-	icon_state = "oldrifle"
-	item_state = "arg"
-	default_ammo_type = /obj/item/ammo_box/magazine/recharge
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/recharge,
-	)
-	fire_delay = 0.2 SECONDS
-	burst_size = 0
-	fire_sound = 'sound/weapons/laser.ogg'
-	casing_ejector = FALSE
-
 /obj/item/gun/ballistic/automatic/zip_pistol
 	name = "makeshift pistol"
 	desc = "A makeshift zip gun cobbled together from various scrap bits and chambered in 9mm. It's a miracle it even works."

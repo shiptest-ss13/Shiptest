@@ -7,7 +7,7 @@
 
 	spread = 6
 	spread_unwielded = 10
-	wield_slowdown = 0.35
+	wield_slowdown = SMG_SLOWDOWN
 	recoil_unwielded = 4
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -64,37 +64,6 @@
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
-
-
-/obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev
-	name = "HP Firestorm"
-	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .45."
-	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
-
-	icon_state = "firestorm"
-	item_state = "firestorm"
-	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/c45_firestorm_mag,
-		/obj/item/ammo_box/magazine/c45_firestorm_mag/pan
-	)
-	unique_mag_sprites_for_variants = TRUE
-	burst_size = 1
-	actions_types = list()
-	fire_delay = 0.13 SECONDS
-	bolt_type = BOLT_TYPE_OPEN
-	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
-	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
-
-
-	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	wield_slowdown = 0.4
-
-/obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
-	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag/pan
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	name = "\improper SKM-24v"
