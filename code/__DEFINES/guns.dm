@@ -76,6 +76,13 @@
 #define GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM 10
 #define GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH 15
 
+//aiming down sights values
+#define PISTOL_ZOOM 1
+#define SHOTGUN_ZOOM 2
+#define SMG_ZOOM 2
+#define RIFLE_ZOOM 3
+#define DMR_ZOOM 4
+
 /////////////////
 // ATTACHMENTS //
 /////////////////
