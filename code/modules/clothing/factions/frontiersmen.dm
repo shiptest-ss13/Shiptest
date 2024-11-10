@@ -41,12 +41,13 @@
 //Unarmored suits//
 ///////////////////
 
-/obj/item/clothing/suit/frontiersmen
+/obj/item/clothing/suit/frontiersmen //Ideally, the basic suit model here should be turned into a placeholder model, and this item have "smock" or "apron" added on the end.
 	name = "frontiersmen smock"
 	desc = "A basic white surgical apron worn by the Frontiersmen. It seems it could stain very easily..."
 	icon_state = "frontier_surgery"
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 //////////////////
 //Armored suits//
