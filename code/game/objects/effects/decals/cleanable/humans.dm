@@ -185,8 +185,8 @@
 	dry()
 	add_blood_DNA(list("Non-human DNA" = random_blood_type()))
 	if(move_on_init)
-		pixel_x = clamp(-16,16)
-		pixel_y = clamp(-16, 16)
+		pixel_x = rand(-16,16)
+		pixel_y = rand(-16, 16)
 
 
 /obj/effect/decal/cleanable/blood/drip/can_bloodcrawl_in()
