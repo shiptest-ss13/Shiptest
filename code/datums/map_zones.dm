@@ -637,7 +637,7 @@
 		var/ty = destination_y
 		var/turf/DT = locate(tx, ty, destination_z)
 		var/itercount = 0
-		while(DT.density || istype(DT.loc,/area/shuttle)) // Extend towards the center of the map, trying to look for a better place to arrive
+		while(DT.density) // Extend towards the center of the map, trying to look for a better place to arrive
 			if (itercount++ >= 100)
 				log_game("SPACE Z-TRANSIT ERROR: Could not find a safe place to land [arrived] within 100 iterations.")
 				break

@@ -81,11 +81,6 @@
 	icon_state = "stamp-chap"
 	dye_color = DYE_CHAP
 
-/obj/item/stamp/centcom
-	name = "CentCom rubber stamp"
-	icon_state = "stamp-centcom"
-	dye_color = DYE_CENTCOM
-
 /obj/item/stamp/syndicate
 	name = "Syndicate rubber stamp"
 	icon_state = "stamp-syndicate"
@@ -97,9 +92,39 @@
 	dye_color = DYE_SYNDICATE
 
 /obj/item/stamp/cybersun
-	name = "Cybersun rubber stamp"
+	name = "Cybersun Virtual Solutions rubber stamp"
 	icon_state = "stamp-cybersun"
 	dye_color = DYE_SYNDICATE
+
+/obj/item/stamp/cybersun/biodynamics
+	name = "Cybersun Biodynamics rubber stamp"
+	icon_state = "stamp-biodynamics"
+	dye_color = DYE_CMO
+
+/obj/item/stamp/ngr
+	name = "New Gorlex Republic rubber stamp"
+	icon_state = "stamp-ngr"
+	dye_color = DYE_REDCOAT
+
+/obj/item/stamp/ngr/captain
+	name = "Captain's rubber stamp"
+	icon_state = "stamp-ngr_cap"
+	dye_color = DYE_QM
+
+/obj/item/stamp/ngr/foreman
+	name = "Foreman's rubber stamp"
+	icon_state = "stamp-ngr_fore"
+	dye_color = DYE_QM
+
+/obj/item/stamp/ngr/lieutenant
+	name = "Lieutenant's rubber stamp"
+	icon_state = "stamp-ngr_lieu"
+	dye_color = DYE_QM
+
+/obj/item/stamp/ngr/ensign
+	name = "Ensign's rubber stamp"
+	icon_state = "stamp-ngr_ensign"
+	dye_color = DYE_QM
 
 /obj/item/stamp/solgov
 	name = "SolGov rubber stamp"
@@ -110,32 +135,33 @@
 	icon_state = "stamp-inteq"
 	dye_color = DYE_QM
 
-/obj/item/stamp/vanguard
+/obj/item/stamp/inteq/vanguard
 	name = "Vanguard's rubber stamp"
-	icon_state = "stamp-vanguard"
-	dye_color = DYE_QM
+	icon_state = "stamp-inteq_vanguard"
 
-/obj/item/stamp/maa
+/obj/item/stamp/inteq/maa
 	name = "Master at Arms' rubber stamp"
-	icon_state = "stamp-maa"
-	dye_color = DYE_QM
+	icon_state = "stamp-inteq_maa"
 
-/obj/item/stamp/artificer
-	name = "Class II Artificer's rubber stamp"
-	icon_state = "stamp-artificer"
-	dye_color = DYE_QM
+/obj/item/stamp/inteq/artificer
+	name = "Honorable Artificer's rubber stamp"
+	icon_state = "stamp-inteq_artificer"
+
+/obj/item/stamp/inteq/corpsman
+	name = "Honorable Corpsman's rubber stamp"
+	icon_state = "stamp-inteq_corpsman"
 
 /obj/item/stamp/clip
 	name = "CLIP Minutemen rubber stamp"
 	icon_state = "stamp-cmm"
 	dye_color = DYE_FO
 
-/obj/item/stamp/gold
+/obj/item/stamp/clip/gold
 	name = "GOLD rubber stamp"
 	icon_state = "stamp-gold"
 	dye_color = DYE_FO
 
-/obj/item/stamp/bard
+/obj/item/stamp/clip/bard
 	name = "BARD rubber stamp"
 	icon_state = "stamp-bard"
 	dye_color = DYE_FO
@@ -144,6 +170,67 @@
 	name = "SUNS rubber stamp"
 	icon_state = "stamp-suns"
 	dye_color = DYE_PURPLE
+
+/obj/item/stamp/nanotrasen
+	name = "Nanotrasen rubber stamp"
+	desc = "A small rubber stamp for stamping important documents."
+	icon_state = "stamp-nt"
+	dye_color = DYE_BLUE
+
+/obj/item/stamp/nanotrasen/captain
+	name = "NT Captain's rubber stamp"
+	icon_state = "stamp-nt_cap"
+
+/obj/item/stamp/nanotrasen/officer
+	name = "NT Officer's rubber stamp"
+	icon_state = "stamp-nt_fo"
+
+/obj/item/stamp/nanotrasen/engineering
+	name = "NT Engineering Director's rubber stamp"
+	icon_state = "stamp-nt_engdir"
+
+/obj/item/stamp/nanotrasen/medical
+	name = "NT Medical Director's rubber stamp"
+	icon_state = "stamp-nt_meddir"
+
+/obj/item/stamp/nanotrasen/science
+	name = "NT Science Director's rubber stamp"
+	icon_state = "stamp-nt_scidir"
+
+/obj/item/stamp/nanotrasen/ns
+	name = "N+S Logistics rubber stamp"
+	icon_state = "stamp-ns"
+	dye_color = DYE_ORANGE
+
+/obj/item/stamp/nanotrasen/ns/captain
+	name = "N+S Captain's rubber stamp"
+	icon_state = "stamp-ns_cap"
+
+/obj/item/stamp/nanotrasen/ns/supply
+	name = "N+S Supply Director's rubber stamp"
+	icon_state = "stamp-ns_supdir"
+
+/obj/item/stamp/nanotrasen/vigilitas
+	name = "Vigilitas Interstellar rubber stamp"
+	icon_state = "stamp-vi"
+	dye_color = DYE_HOS
+
+/obj/item/stamp/nanotrasen/vigilitas/captain
+	name = "VI Captain's rubber stamp"
+	icon_state = "stamp-vi_cap"
+
+/obj/item/stamp/nanotrasen/vigilitas/security
+	name = "VI Security Director's rubber stamp"
+	icon_state = "stamp-vi_secdir"
+
+/obj/item/stamp/nanotrasen/vigilitas/loss_prevention
+	name = "VI Loss Prevention rubber stamp"
+	icon_state = "stamp-vi_lp"
+
+/obj/item/stamp/nanotrasen/central
+	name = "NT Central Command rubber stamp"
+	desc = "A rubber stamp for stamping important documents." // Needed, because base nt has "small" added.
+	icon_state = "stamp-nt_central"
 
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)

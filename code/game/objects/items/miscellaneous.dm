@@ -116,11 +116,9 @@
 
 /obj/item/storage/box/hero/ghostbuster/PopulateContents()
 	new /obj/item/choice_beacon/ouija(src)
-	new /obj/item/clothing/glasses/welding/ghostbuster(src)
 	new /obj/item/storage/belt/fannypack/bustin(src)
 	new /obj/item/clothing/gloves/color/black(src)
 	new /obj/item/clothing/shoes/jackboots(src)
-	new /obj/item/clothing/under/color/khaki/buster(src)
 	new /obj/item/grenade/chem_grenade/ghostbuster(src)
 	new /obj/item/grenade/chem_grenade/ghostbuster(src)
 	new /obj/item/grenade/chem_grenade/ghostbuster(src)

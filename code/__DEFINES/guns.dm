@@ -61,6 +61,7 @@
 #define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
 #define MANUFACTURER_NANOTRASEN_OLD "an outdated Nanotrasen logo"
 #define MANUFACTURER_NANOTRASEN "the Nanotrasen logo"
+#define MANUFACTURER_VIGILITAS "the Vigilitas Interstellar logo"
 #define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
 #define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
 #define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
@@ -68,6 +69,7 @@
 #define MANUFACTURER_DONKCO "the Donk! Co. logo"
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
 #define MANUFACTURER_IMPORT "Lanchester Import Co."
+#define MANUFACTURER_SERENE "the Serene Outdoors logo"
 
 // Misfire chances if the gun's safety is off
 #define GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW 5
@@ -156,10 +158,6 @@
 #define AMMO_BOX_PER_BULLET 1
 ///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
 #define AMMO_BOX_FULL_EMPTY 2
-
-#define MAG_SIZE_SMALL 1
-#define MAG_SIZE_MEDIUM 2
-#define MAG_SIZE_LARGE 3
 
 //Projectile Reflect
 #define REFLECT_NORMAL (1<<0)

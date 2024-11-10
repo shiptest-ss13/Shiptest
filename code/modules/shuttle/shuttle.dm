@@ -5,9 +5,9 @@
 
 //NORTH default dir
 /obj/docking_port
-	invisibility = INVISIBILITY_ABSTRACT
-	icon = 'icons/obj/device.dmi'
-	icon_state = "pinonfar"
+	invisibility = INVISIBILITY_OBSERVER
+	icon = 'icons/effects/mapping/docking_ports.dmi'
+	icon_state = "static"
 
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 	anchored = TRUE
@@ -249,7 +249,7 @@
 	name = "transit dock"
 
 	var/datum/map_zone/reserved_mapzone
-	var/area/shuttle/transit/assigned_area
+	var/area/hyperspace/assigned_area
 	var/obj/docking_port/mobile/owner
 
 /obj/docking_port/stationary/transit/Initialize()
@@ -272,7 +272,7 @@
 
 /obj/docking_port/mobile
 	name = "shuttle"
-	icon_state = "pinonclose"
+	icon_state = "mobile"
 
 	var/area_type = SHUTTLE_DEFAULT_SHUTTLE_AREA_TYPE
 
@@ -409,7 +409,7 @@
 	shuttle_areas = list()
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/turf/curT as anything in all_turfs)
-		var/area/shuttle/cur_area = curT.loc
+		var/area/ship/cur_area = curT.loc
 		if(istype(cur_area, area_type))
 			turf_count++
 			shuttle_areas[cur_area] = TRUE
@@ -651,7 +651,7 @@
 			continue  // out of bounds
 		if(T0.type == T0.baseturfs)
 			continue  // indestructible
-		if(!all_shuttle_areas[T0.loc] || istype(T0.loc, /area/shuttle/transit))
+		if(!all_shuttle_areas[T0.loc] || istype(T0.loc, /area/hyperspace))
 			continue  // not part of the shuttle
 		ripple_turfs += T1
 
@@ -722,13 +722,13 @@
 	var/obj/docking_port/stationary/S0 = docked
 	if(istype(S0, /obj/docking_port/stationary/transit) && timeLeft(1) <= PARALLAX_LOOP_TIME)
 		for(var/place in shuttle_areas)
-			var/area/shuttle/shuttle_area = place
+			var/area/ship/shuttle_area = place
 			if(shuttle_area.parallax_movedir)
 				parallax_slowdown()
 
 /obj/docking_port/mobile/proc/parallax_slowdown()
 	for(var/place in shuttle_areas)
-		var/area/shuttle/shuttle_area = place
+		var/area/ship/shuttle_area = place
 		shuttle_area.parallax_movedir = FALSE
 	if(assigned_transit && assigned_transit.assigned_area)
 		assigned_transit.assigned_area.parallax_movedir = FALSE

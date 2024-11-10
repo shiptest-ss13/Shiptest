@@ -145,9 +145,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "ax" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1460,9 +1458,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "fb" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -4719,7 +4715,6 @@
 /area/ship/crew/office/lobby)
 "Sm" = (
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	name = "Salvage Ship";
 	port_direction = 2;
 	preferred_direction = 4;

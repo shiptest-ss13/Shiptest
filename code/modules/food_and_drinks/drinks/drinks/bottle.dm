@@ -479,7 +479,13 @@
 			break
 	if(firestarter && active)
 		hit_atom.fire_act()
-		new /obj/effect/hotspot(get_turf(hit_atom))
+		var/turf/T = get_turf(hit_atom)
+		T.IgniteTurf(30)
+		var/turf/otherT
+		for(var/direction in GLOB.cardinals)
+			otherT = get_step(T, direction)
+			otherT.IgniteTurf(30)
+			new /obj/effect/hotspot(otherT)
 	..()
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
