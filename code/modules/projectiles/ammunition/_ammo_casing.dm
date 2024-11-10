@@ -153,10 +153,6 @@
 	ammo_stack.update_ammo_count()
 	return ammo_stack
 
-/obj/item/ammo_casing/spent
-	name = "spent bullet casing"
-	BB = null
-
 /obj/item/ammo_casing/Initialize()
 	. = ..()
 	if(projectile_type)
@@ -216,3 +212,44 @@
 
 	else if(location.bullet_bounce_sound)
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, pick(location.bullet_bounce_sound), 20, 1), bounce_delay) //Soft / non-solid turfs that shouldn't make a sound when a shell casing is ejected over them.
+
+/obj/item/ammo_casing/spent
+	name = "spent bullet casing"
+	projectile_type = null
+	BB = null
+
+/obj/item/ammo_casing/spent/pistol_brass
+	icon_state = "pistol-brass"
+
+/obj/item/ammo_casing/spent/pistol_steel
+	icon_state = "pistol-steel"
+
+/obj/item/ammo_casing/spent/magnum_brass
+	icon_state = "magnum-brass"
+
+/obj/item/ammo_casing/spent/magnum_steel
+	icon_state = "magnum-steel"
+
+/obj/item/ammo_casing/spent/rifle_brass
+	icon_state = "rifle-brass"
+
+/obj/item/ammo_casing/spent/rifle_steel
+	icon_state = "rifle-steel"
+
+/obj/item/ammo_casing/spent/big_brass
+	icon_state = "big-brass"
+
+/obj/item/ammo_casing/spent/big_steel
+	icon_state = "big-steel" //balls
+
+/obj/item/ammo_casing/spent/slug
+	icon_state = "slug"
+
+/obj/item/ammo_casing/spent/slug/buck
+	icon_state = "buck"
+
+/obj/item/ammo_casing/spent/slug/beanbag
+	icon_state = "beanbag"
+
+/obj/item/ammo_casing/spent/slug/rubber
+	icon_state = "rubber"
