@@ -112,6 +112,13 @@
 		)
 	crate_name = "Angle Grinder"
 
+/datum/supply_pack/tools/plasmacutter
+	name = "Plasmacutter Crate"
+	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
+	cost = 2500
+	contains = list(/obj/item/gun/energy/plasmacutter)
+	crate_name = "plasmacutter crate"
+
 /*
 		Liquid tanks
 */
