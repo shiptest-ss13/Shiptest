@@ -432,13 +432,15 @@
 /obj/effect/turf_decal/corner/opaque/red/half{
 	dir = 1
 	},
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = 7;
-	pixel_y = -19
+/obj/structure/rack,
+/obj/item/tank/jetpack/carbondioxide{
+	pixel_x = -6;
+	pixel_y = 9
 	},
-/obj/item/radio/intercom/directional/south{
-	pixel_x = -7
+/obj/item/storage/toolbox/syndicate{
+	name = "syndicate toolbox";
+	pixel_x = 3;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo/office)
@@ -994,7 +996,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "iA" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "derecho_bridge_shut"
 	},
@@ -1002,6 +1003,7 @@
 	icon_state = "0-1"
 	},
 /obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "iC" = (
@@ -1685,9 +1687,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/tan/half,
-/obj/structure/reagent_dispensers/water_cooler{
-	pixel_x = -6
-	},
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -1709,7 +1708,15 @@
 	pixel_x = -20;
 	pixel_y = -3
 	},
-/obj/machinery/airalarm/directional/north,
+/obj/structure/reagent_dispensers/water_cooler{
+	pixel_x = -6
+	},
+/obj/machinery/firealarm/directional/north{
+	pixel_x = -7
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "oF" = (
@@ -1895,7 +1902,8 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Workshop";
-	req_access = list(10, 48)
+	req_access = null;
+	req_one_access = list(10, 48)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
@@ -1974,20 +1982,12 @@
 /obj/effect/turf_decal/corner/opaque/red/half{
 	dir = 1
 	},
-/obj/structure/rack,
-/obj/item/tank/jetpack/carbondioxide{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/structure/sign/poster/contraband/engis_unite{
-	pixel_y = -32
-	},
-/obj/item/storage/toolbox/syndicate{
-	name = "syndicate toolbox";
-	pixel_x = 3;
-	pixel_y = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo/office)
 "qh" = (
@@ -2833,20 +2833,20 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
 "xQ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/hatch{
 	name = "Foreman's Office";
 	normalspeed = 0;
 	req_access_txt = "56"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/office)
 "xU" = (
@@ -2892,10 +2892,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
@@ -3060,7 +3062,10 @@
 	name = "Operations"
 	},
 /obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -4219,15 +4224,16 @@
 /obj/effect/turf_decal/corner/opaque/red/half{
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/inherit{
-	name = "foreman's suit storage unit";
-	req_access = list(56)
-	},
-/obj/item/clothing/suit/space/syndicate/black/engie,
-/obj/item/clothing/head/helmet/space/syndicate/black/engie,
-/obj/item/clothing/shoes/magboots/syndie,
 /obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/directional/south{
+	pixel_x = -7
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 7;
+	pixel_y = -19
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo/office)
 "KX" = (
@@ -4451,8 +4457,14 @@
 /area/ship/hallway/central)
 "Nk" = (
 /obj/effect/turf_decal/corner/opaque/red/mono,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo/office)
@@ -4613,18 +4625,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = 7
-	},
-/obj/machinery/firealarm/directional/north{
-	pixel_x = -7
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "Pk" = (
@@ -4678,15 +4683,20 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "PH" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/corner/opaque/red/half{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/suit_storage_unit/inherit{
+	name = "foreman's suit storage unit";
+	req_access = list(56)
+	},
+/obj/item/clothing/suit/space/syndicate/black/engie,
+/obj/item/clothing/head/helmet/space/syndicate/black/engie,
+/obj/item/clothing/shoes/magboots/syndie,
+/obj/structure/sign/poster/contraband/engis_unite{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo/office)
 "PV" = (
@@ -5031,15 +5041,14 @@
 /area/ship/engineering/atmospherics)
 "SG" = (
 /obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo/office)
@@ -5487,6 +5496,7 @@
 /area/ship/crew/office)
 "VW" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Wg" = (
@@ -6694,7 +6704,7 @@ Ms
 Id
 Nk
 qf
-aZ
+xQ
 Pc
 jN
 Oj
@@ -6744,7 +6754,7 @@ Ms
 er
 SG
 PH
-xQ
+aZ
 yi
 bp
 hg
