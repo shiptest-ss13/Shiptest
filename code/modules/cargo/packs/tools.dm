@@ -107,7 +107,7 @@
 	desc = "Contains one angle grinder pack, a tool used for quick structure deconstruction and salvaging"
 	cost = 1500
 	contains = list(
-		/obj/item/gear_pack/anglegrinder
+		/obj/item/gear_pack/anglegrinder,
 		/obj/item/radio/headset/alt
 		)
 	crate_name = "Angle Grinder"
