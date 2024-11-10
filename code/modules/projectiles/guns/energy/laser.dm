@@ -228,7 +228,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
 	spread_unwielded = 5
@@ -256,7 +256,7 @@
 	manufacturer = MANUFACTURER_EOEHOMA
 
 	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.6
+	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	spread_unwielded = 20
 
 	shaded_charge = FALSE

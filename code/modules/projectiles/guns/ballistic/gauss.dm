@@ -29,6 +29,6 @@
 	spread_unwielded = 25
 	recoil = 0
 	recoil_unwielded = 4
-	wield_slowdown = 0.75
+	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
 	wield_delay = 1 SECONDS
 	fire_select_icon_state_prefix = "pellet_"

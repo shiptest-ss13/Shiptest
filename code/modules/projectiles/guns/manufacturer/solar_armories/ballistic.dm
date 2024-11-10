@@ -199,5 +199,5 @@
 	spread_unwielded = 20
 	recoil = 0
 	recoil_unwielded = 4
-	wield_slowdown = 0.5
+	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS

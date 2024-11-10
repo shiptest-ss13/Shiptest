@@ -12,11 +12,12 @@
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
+	wield_slowdown = HMG_SLOWDOWN
+
 	spread = 4
 	spread_unwielded = 80
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 3
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 20
@@ -194,7 +195,7 @@
 	recoil = 1 //identical to other LMGS
 	recoil_unwielded = 4 //same as skm
 
-	wield_slowdown = 1 //not as severe as other lmgs, but worse than the normal skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
 	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock skm
 
 	has_bipod = TRUE

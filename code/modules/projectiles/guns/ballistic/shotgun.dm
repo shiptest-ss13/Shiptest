@@ -30,7 +30,7 @@
 	default_firemode = FIREMODE_SEMIAUTO
 	fire_select_icon_state_prefix = "sg_"
 
-	wield_slowdown = 0.45
+	wield_slowdown = SHOTGUN_SLOWDOWN
 	wield_delay = 0.8 SECONDS
 
 	spread = 4
@@ -60,6 +60,8 @@
 	wield_delay = 0.65 SECONDS
 	manufacturer = MANUFACTURER_NANOTRASEN
 	semi_auto = TRUE
+
+	gunslinger_recoil_bonus = 1
 
 //Dual Feed Shotgun
 

@@ -46,7 +46,7 @@ EMPTY_GUN_HELPER(revolver/montagne)
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	gate_loaded = TRUE
 	fire_delay = 0.6 SECONDS
-	wield_slowdown = 0.5
+	wield_slowdown = HEAVY_REVOLVER_SLOWDOWN
 	spread_unwielded = 20
 	spread = 6
 	recoil = 2
@@ -265,7 +265,6 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/c45_firestorm_mag,
-		/obj/item/ammo_box/magazine/c45_firestorm_mag/pan
 	)
 	unique_mag_sprites_for_variants = TRUE
 	burst_size = 1
@@ -277,7 +276,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	wield_slowdown = 0.4
+	wield_slowdown = SMG_SLOWDOWN
 
 /obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
 	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag/pan
@@ -390,7 +389,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	. = ..()
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
-		wield_slowdown = 0.25
+		wield_slowdown = wield_slowdown-0.1
 		wield_delay = 0.3 SECONDS //OP? maybe
 
 		spread = 8
@@ -411,7 +410,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
 
-	wield_slowdown = 0.25
+	wield_slowdown = 0.15
 	wield_delay = 0.3 SECONDS //OP? maybe
 
 	spread = 8
@@ -473,7 +472,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
 	. = ..()
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
-		wield_slowdown = 0.25
+		wield_slowdown = wield_slowdown-0.1
 		wield_delay = 0.3 SECONDS //OP? maybe
 
 		spread = 18
@@ -513,7 +512,7 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 		tube.max_ammo = 5 //this makes the gun so much worse
 
 		weapon_weight = WEAPON_MEDIUM
-		wield_slowdown = 0.25
+		wield_slowdown = wield_slowdown-0.1
 		wield_delay = 0.3 SECONDS //OP? maybe
 
 		spread = 8
@@ -548,7 +547,7 @@ EMPTY_GUN_HELPER(shotgun/hellfire)
 		mob_overlay_state = item_state
 		weapon_weight = WEAPON_MEDIUM
 
-		wield_slowdown = 0.25
+		wield_slowdown = wield_slowdown-0.1
 		wield_delay = 0.2 SECONDS
 
 		spread = 4
@@ -679,7 +678,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	cartridge_wording = "bullet"
 	can_be_sawn_off = TRUE
 
-	wield_slowdown = 0.5
+	wield_slowdown = RIFLE_SLOWDOWN
 	wield_delay = 0.65 SECONDS
 
 	spread = -5
@@ -726,7 +725,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		mob_overlay_state = item_state
 		weapon_weight = WEAPON_MEDIUM
 
-		wield_slowdown = 0.25
+		wield_slowdown = wield_slowdown-0.1
 		wield_delay = 0.2 SECONDS //THE COWBOY RIFLE
 
 		spread = 4
@@ -783,7 +782,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		mob_overlay_state = item_state
 		weapon_weight = WEAPON_MEDIUM
 
-		wield_slowdown = 0.25
+		wield_slowdown = wield_slowdown-0.1
 		wield_delay = 0.2 SECONDS
 
 		spread = 4
@@ -815,7 +814,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	semi_auto = TRUE
 	can_be_sawn_off = TRUE
 	pb_knockback = 3
-	wield_slowdown = 0.7
+	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
 	spread_unwielded = 15
 	spread = 0
 	recoil = 0
@@ -829,7 +828,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	if(.)
 		item_state = "beacon_sawn"
 		mob_overlay_state = item_state
-		wield_slowdown = 0.5
+		wield_slowdown = wield_slowdown-0.1
 		wield_delay = 0.5 SECONDS
 
 		spread_unwielded = 20 //mostly the hunting revolver stats
@@ -864,7 +863,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 	item_state = "beacon_sawn"
 	mob_overlay_state = "beacon_sawn"
-	wield_slowdown = 0.5
+	wield_slowdown = 0.45
 	wield_delay = 0.5 SECONDS
 
 	spread_unwielded = 20 //mostly the hunting revolver stats
@@ -905,7 +904,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	spread_unwielded = 25
 	recoil = 0
 	recoil_unwielded = 4
-	wield_slowdown = 0.75
+	wield_slowdown = DMR_SLOWDOWN
 
 /obj/item/gun/ballistic/rifle/scout
 	name = "HP Scout"

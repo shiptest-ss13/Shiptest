@@ -96,7 +96,7 @@
 	spread_unwielded = 14
 
 	wield_delay = 0.6 SECONDS
-	wield_slowdown = 0.35
+	wield_slowdown = SMG_SLOWDOWN
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,

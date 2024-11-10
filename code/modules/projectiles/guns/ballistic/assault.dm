@@ -4,7 +4,7 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 	wield_delay = 0.8 SECONDS
-	wield_slowdown = 0.6
+	wield_slowdown = RIFLE_SLOWDOWN
 
 	fire_delay = 0.2 SECONDS
 

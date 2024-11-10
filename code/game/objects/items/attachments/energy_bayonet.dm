@@ -10,7 +10,7 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = IS_BLUNT
 	slot = ATTACHMENT_SLOT_MUZZLE
-	attach_features_flags = ATTACH_TOGGLE
+	attach_features_flags = ATTACH_TOGGLE | ATTACH_REMOVABLE_HAND
 
 	light_range = 2
 	light_power = 0.6

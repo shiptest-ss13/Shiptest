@@ -19,7 +19,7 @@
 	spread_unwielded = 13
 	recoil = 0
 	recoil_unwielded = 4
-	wield_slowdown = 0.35
+	wield_slowdown = PDW_SLOWDOWN
 
 /obj/item/gun/ballistic/automatic/zip_pistol
 	name = "makeshift pistol"
