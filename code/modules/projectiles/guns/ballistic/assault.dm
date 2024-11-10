@@ -46,8 +46,6 @@
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/skm_762_40,
-		/obj/item/ammo_box/magazine/skm_762_40/extended,
-		/obj/item/ammo_box/magazine/skm_762_40/drum,
 	)
 
 	spread = 1

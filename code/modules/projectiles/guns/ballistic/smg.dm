@@ -87,7 +87,6 @@
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_46_30
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/skm_46_30,
-		/obj/item/ammo_box/magazine/skm_46_30/recycled,
 	)
 
 	recoil = 2
@@ -179,10 +178,6 @@
 	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/smgm9mm,
-		/obj/item/ammo_box/magazine/smgm9mm/ap,
-		/obj/item/ammo_box/magazine/smgm9mm/inc,
-		/obj/item/ammo_box/magazine/smgm9mm/rubber,
-
 	)
 
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
