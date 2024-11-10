@@ -1950,7 +1950,7 @@
 
 /datum/reagent/growthserum/on_mob_life(mob/living/carbon/H)
 	var/newsize = current_size
-	newsize = 1 + (clamp(volume, 0, 30) / 100) * RESIZE_DEFAULT_SIZE
+	newsize = (1 + (clamp(volume, 0, 30) / 100)) * RESIZE_DEFAULT_SIZE
 
 	H.resize = newsize/current_size
 	current_size = newsize
