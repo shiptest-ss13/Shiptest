@@ -17,13 +17,24 @@
 /area/ship/engineering)
 "af" = (
 /obj/structure/railing,
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/tool_surgery_common,
 /obj/machinery/firealarm/directional/west{
 	pixel_y = 5
 	},
-/obj/effect/spawner/lootdrop/donut,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/structure/closet/crate/secure/exo,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/shovel,
+/obj/item/shovel,
+/obj/item/flashlight{
+	pixel_y = -6
+	},
+/obj/item/flashlight{
+	pixel_y = -6
+	},
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/mining_scanner,
+/obj/item/mining_scanner,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "ag" = (
@@ -103,7 +114,6 @@
 /obj/item/choice_beacon/music,
 /obj/item/spacecash/bundle/c10,
 /obj/structure/extinguisher_cabinet/directional/west,
-/obj/effect/spawner/lootdrop/maintenance/three,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -590,19 +600,6 @@
 /area/ship/cargo)
 "cb" = (
 /obj/effect/decal/cleanable/plastic,
-/obj/structure/closet/crate,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/shovel,
-/obj/item/shovel,
-/obj/item/flashlight{
-	pixel_y = -6
-	},
-/obj/item/flashlight{
-	pixel_y = -6
-	},
-/obj/item/mining_scanner,
-/obj/item/mining_scanner,
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/engineering)
@@ -1907,8 +1904,7 @@
 	},
 /obj/item/reagent_containers/food/snacks/hotdog,
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/item/reagent_containers/food/snacks/hotdog{
 	name = "chili dog";
 	desc = "Anything you can do, I can do worse-er!"
@@ -1979,8 +1975,8 @@
 /obj/effect/turf_decal/box/white/corners,
 /obj/structure/closet/crate/engineering,
 /obj/item/stack/sheet/mineral/plasma/ten,
-/obj/item/stack/sheet/mineral/uranium/ten,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stack/sheet/mineral/uranium/twenty,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "li" = (
@@ -2410,18 +2406,18 @@
 /obj/machinery/reagentgrinder{
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/condiment/saltshaker{
-	pixel_x = -8;
-	pixel_y = 10
-	},
-/obj/item/reagent_containers/food/condiment/peppermill{
-	pixel_x = -8;
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/item/melee/knife{
 	pixel_x = 15;
 	pixel_y = 2
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -8;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -10;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
@@ -2645,19 +2641,20 @@
 /area/ship/crew/office/lobby)
 "ti" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/condiment/ketchup{
-	pixel_y = 14;
-	pixel_x = 9
-	},
-/obj/item/reagent_containers/food/condiment/mayonnaise{
-	pixel_y = 14
-	},
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/item/storage/box/cups{
 	pixel_x = -4;
 	pixel_y = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/item/reagent_containers/condiment/mayonnaise{
+	pixel_x = 9;
+	pixel_y = 16
+	},
+/obj/item/reagent_containers/condiment/ketchup{
+	pixel_x = 9;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "tl" = (
@@ -3001,6 +2998,7 @@
 /obj/effect/turf_decal/corner/transparent/nsorange/border{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "vV" = (
@@ -3094,7 +3092,6 @@
 	},
 /obj/structure/closet/crate,
 /obj/item/spacecash/bundle/pocketchange,
-/obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "xo" = (
@@ -4272,7 +4269,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "Ns" = (
-/obj/machinery/vending/cola/random,
+/obj/machinery/vending/cola/starkist,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/office/lobby)
 "Nu" = (
@@ -4416,6 +4413,7 @@
 	pixel_y = 4
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Oq" = (
@@ -4812,7 +4810,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/office/lobby)
 "SR" = (
-/obj/machinery/vending/snack/random,
+/obj/machinery/vending/snack/orange,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hallway/central)
 "SZ" = (
@@ -4867,10 +4865,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "TM" = (
-/obj/item/reagent_containers/food/condiment/sugar{
-	pixel_x = -7;
-	pixel_y = -7
-	},
 /obj/item/toy/crayon/spraycan{
 	pixel_x = 12;
 	pixel_y = -1
@@ -4889,6 +4883,10 @@
 	},
 /obj/structure/sign/poster/contraband/mothpill{
 	pixel_x = -30
+	},
+/obj/item/reagent_containers/condiment/sugar{
+	pixel_x = -6;
+	pixel_y = -5
 	},
 /turf/open/floor/plating/foam,
 /area/ship/engineering)
@@ -5209,9 +5207,9 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/cargo/office)
 "WZ" = (
-/obj/machinery/vending/cola/random,
 /obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/vending/cola,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "Xn" = (
