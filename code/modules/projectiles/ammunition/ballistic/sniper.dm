@@ -34,6 +34,7 @@
 	name = ".300 Magnum Trac bullet casing"
 	desc = "A .300 Magnum Tracker casing."
 	projectile_type = /obj/projectile/bullet/a300/trac
+	bullet_skin = "trac"
 
 //6.5 CLIP
 
@@ -49,3 +50,4 @@
 	name = "6.5x57mm CLIP tracker"
 	desc = "A 6.5x57mm CLIP tracker."
 	projectile_type = /obj/projectile/bullet/a65clip/trac
+	bullet_skin = "trac"

@@ -23,6 +23,7 @@
 /obj/item/ammo_casing/a8_50r/trac
 	name = "8x50mmR tracker casing"
 	desc = "A 8x50mmR tracker casing."
+	bullet_skin = "trac"
 	projectile_type = /obj/projectile/bullet/a8_50r/trac
 
 // 8x58mm Caseless (SSG-669C)
@@ -119,6 +120,8 @@
 	desc = "A .308 HP bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a308/hp
+
+//.299
 
 /obj/item/ammo_casing/caseless/c299
 	name = ".299 Eoehoma caseless bullet casing"
