@@ -1810,18 +1810,26 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/plasma = environment.get_moles(GAS_PLASMA)
 	var/tritium = environment.get_moles(GAS_TRITIUM)
 	var/chlorine = environment.get_moles(GAS_CHLORINE)
+	var/ammonia = environment.get_moles(GAS_AMMONIA)
 	var/hydrogen_chloride = environment.get_moles(GAS_HYDROGEN_CHLORIDE)
-	if(chlorine <= MINIMUM_MOLS_TO_HARM && hydrogen_chloride <= MINIMUM_MOLS_TO_HARM && tritium <= MINIMUM_MOLS_TO_HARM && plasma <= MINIMUM_MOLS_TO_HARM)
+	var/sulfur_dioxide = environment.get_moles(GAS_SO2)
+	if(chlorine <= MINIMUM_MOLS_TO_HARM && hydrogen_chloride <= MINIMUM_MOLS_TO_HARM && tritium <= MINIMUM_MOLS_TO_HARM && plasma <= MINIMUM_MOLS_TO_HARM && ammonia <= MINIMUM_MOLS_TO_HARM && sulfur_dioxide <= MINIMUM_MOLS_TO_HARM)
 		return
 
 	var/eyedamage = FALSE
 	var/irritant = FALSE
 	var/burndamage = 0
-	var/lowerthreshold = 0
-	if(HAS_TRAIT(H, TRAIT_METALLIC)) //makes certain species take more damage and start taking damage at lower air amounts
-		lowerthreshold = 1
+	var/lowerthreshold = FALSE
 
-	if(plasma > (MINIMUM_MOLS_TO_HARM * 10))
+	var/feels_pain = TRUE
+	if(HAS_TRAIT(H, TRAIT_METALLIC)) //makes certain species take more damage and start taking damage at lower air amounts
+		lowerthreshold = TRUE
+
+	if(HAS_TRAIT(H, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
+		feels_pain = FALSE
+
+	if(plasma > MINIMUM_MOLS_TO_HARM)
+		burndamage += max(sqrt(ammonia) - 1 + lowerthreshold, 0)
 		eyedamage = TRUE
 		irritant = TRUE
 	if(tritium)
@@ -1834,29 +1842,41 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		irritant = TRUE
 		if(chlorine > (MINIMUM_MOLS_TO_HARM * 10))
 			eyedamage = TRUE
+	if(ammonia)
+		burndamage += max(sqrt(ammonia) - 2 + lowerthreshold, 0)
+		irritant = TRUE
+		if(ammonia > (MINIMUM_MOLS_TO_HARM * 5))
+			eyedamage = TRUE
 	if(hydrogen_chloride)
 		burndamage += max(sqrt(hydrogen_chloride) - 1 + lowerthreshold, 0)
 		eyedamage = TRUE
 		irritant = TRUE
+	if(sulfur_dioxide)
+		burndamage += max(sqrt(chlorine) - 4 + lowerthreshold, 0)
+		irritant = TRUE
+		if(sulfur_dioxide > (MINIMUM_MOLS_TO_HARM * 5))
+			eyedamage = TRUE
 
 	if(!eyedamage && !burndamage && !irritant)
 		return
 	H.apply_damage(burndamage, BURN, spread_damage = TRUE)
 	if(prob(50) && burndamage)
-		if(lowerthreshold)
-			to_chat(H, "<span class='userdanger'>You're corroding!</span>")
-		else
-			to_chat(H, "<span class='userdanger'>You're melting!</span>")
+		if(lowerthreshold && feels_pain)
+			to_chat(H, span_userdanger("You're corroding!"))
+		else if(feels_pain)
+			to_chat(H, span_userdanger("You're melting!"))
 		playsound(H, 'sound/items/welder.ogg', 30, TRUE)
 	if(!H.check_for_goggles() && eyedamage)
 		H.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
-		if(prob(50))
-			to_chat(H, "<span class='danger'>Your eyes burn!</span>")
-	if(irritant && prob(50))
+		if(prob(50) && feels_pain)
+			to_chat(H, span_danger("Your eyes burn!"))
+			H.emote("cry")
+		H.set_blurriness(10)
+	if(irritant && prob(50) && feels_pain)
 		if(lowerthreshold)
-			to_chat(H, "<span class='danger'>Your outer shell smolders!</span>")
+			to_chat(H, span_danger("Your outer shell smolders!"))
 		else
-			to_chat(H, "<span class='danger'>Your skin itches.</span>")
+			to_chat(H, span_danger("Your skin itches."))
 
 
 /// Handle the body temperature status effects for the species

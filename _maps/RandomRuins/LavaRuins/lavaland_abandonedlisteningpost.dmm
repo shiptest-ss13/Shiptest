@@ -186,9 +186,7 @@
 "dJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "dM" = (
@@ -298,9 +296,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -464,9 +460,7 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "hA" = (
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/power/terminal{
 	dir = 1
 	},
@@ -727,11 +721,11 @@
 /area/ruin/unpowered/listening_post/operations)
 "na" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax{
-	pixel_y = 7
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
+	},
+/obj/machinery/fax/ruin{
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -1763,9 +1757,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "FW" = (
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/power/smes/engineering,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
@@ -2199,9 +2191,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -2471,9 +2461,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,

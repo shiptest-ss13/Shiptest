@@ -52,7 +52,6 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
-
 	icon_state = "cm70"
 	item_state = "clip_generic"
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_cm70
@@ -88,6 +87,49 @@
 /obj/item/ammo_box/magazine/m9mm_cm70/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
+
+/obj/item/gun/ballistic/automatic/pistol/cm357
+	name = "\improper CM-357"
+	desc = "A semi-automatic magnum handgun designed specifically for BARD's megafauna removal unit, as standard handguns had proven useless as backup weapons. Its heft and power have also made it a status symbol among the few CLIP officers able to requisition one. Chambered in .357."
+	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
+
+	icon_state = "cm357"
+	item_state = "clip_generic"
+	w_class = WEIGHT_CLASS_NORMAL
+	default_ammo_type = /obj/item/ammo_box/magazine/cm357
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/cm357,
+	)
+	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
+	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	manufacturer = MANUFACTURER_MINUTEMAN
+	load_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+
+	recoil_unwielded = 4
+	recoil = 1
+
+NO_MAG_GUN_HELPER(automatic/pistol/cm357)
+
+/obj/item/ammo_box/magazine/cm357
+	name = "CM-357 pistol magazine (.357)"
+	desc = "A 7-round magazine designed for the CM-357 pistol. These rounds do good damage, but struggle against armor."
+	icon_state = "cm23_mag-1"
+	base_icon_state = "cm23_mag"
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = ".357"
+	max_ammo = 7
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/cm357/empty
+	start_empty = TRUE
 
 //########### SMGS ###########//
 /obj/item/gun/ballistic/automatic/smg/cm5

@@ -7,7 +7,7 @@
 	wallet = null
 
 	head = /obj/item/clothing/head/helmet/inteq
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
+	mask = /obj/item/clothing/mask/balaclava/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	suit = /obj/item/clothing/suit/armor/vest
@@ -119,7 +119,7 @@
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/combat
 	head = /obj/item/clothing/head/beret/sec/hos/inteq/honorable
-	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
+	mask = /obj/item/clothing/mask/balaclava/inteq
 	ears = /obj/item/radio/headset/inteq/captain
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	r_pocket = /obj/item/restraints/handcuffs

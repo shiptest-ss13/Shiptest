@@ -255,7 +255,7 @@
 			else if(mission.servant == ship)
 				if(mission.can_complete())
 					mission.turn_in()
-				else
+				else if(tgui_alert(usr, "Give up on [mission]?", src, list("Yes", "No")) == "Yes")
 					mission.give_up()
 				return TRUE
 
