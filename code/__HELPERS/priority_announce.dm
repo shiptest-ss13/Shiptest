@@ -77,5 +77,5 @@
 /proc/create_distress_beacon(datum/overmap/ship/ship)
 	if(!ship)
 		return
-	var/text = "A distress beacon has been launched by [ship.name], at local sector co-ordinates [ship.x || ship.docked_to.x]/[ship.y || ship.docked_to.y]. No further information available."
+	var/text = "A distress beacon has been launched by [ship.name], at sector '[ship.current_overmap]' co-ordinates [ship.x || ship.docked_to.x]/[ship.y || ship.docked_to.y]. No further information available."
 	priority_announce(text, null, 'sound/effects/alert.ogg', sender_override = "Outpost Distress Beacon System", zlevel = 0)

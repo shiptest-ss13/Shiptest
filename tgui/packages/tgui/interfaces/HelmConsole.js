@@ -155,6 +155,7 @@ const ShipContent = (_props, context) => {
     burnPercentage,
     speed,
     heading,
+    sector,
     eta,
     x,
     y,
@@ -188,6 +189,9 @@ const ShipContent = (_props, context) => {
             <AnimatedNumber value={x} />
             /Y
             <AnimatedNumber value={y} />
+          </LabeledList.Item>
+          <LabeledList.Item label="Sector">
+            <AnimatedNumber value={sector} />
           </LabeledList.Item>
           <LabeledList.Item label="ETA">
             <AnimatedNumber value={eta} />

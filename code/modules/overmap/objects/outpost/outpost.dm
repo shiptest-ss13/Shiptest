@@ -151,13 +151,13 @@
 		LAZYADD(missions, M)
 
 /datum/overmap/outpost/proc/populate_cargo()
-	ordernum = rand(1, 9000)
+	ordernum = rand(1, 99000)
 
-	for(var/pack in subtypesof(/datum/supply_pack))
-		var/datum/supply_pack/P = new pack()
-		if(!P.contains)
+	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
+		current_pack = new current_pack()
+		if(!current_pack.contains)
 			continue
-		supply_packs[P.type] = P
+		supply_packs += current_pack
 
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)
