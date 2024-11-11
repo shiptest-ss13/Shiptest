@@ -116,6 +116,8 @@
 /obj/item/spacecash/bundle/c10,
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/trash/botanical_waste,
+/obj/effect/spawner/random/trash/botanical_waste,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "as" = (
@@ -2181,6 +2183,12 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormtwo)
+"mO" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 6
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
 "nb" = (
 /obj/structure/chair/plastic{
 	dir = 8
@@ -2724,12 +2732,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/stairs/mid,
 /area/ship/cargo)
-"tL" = (
-/obj/machinery/porta_turret/ship/nt/light{
-	dir = 6
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
 "tS" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3124,6 +3126,9 @@
 /obj/item/flashlight/glowstick/orange,
 /obj/item/toy/crayon/orange,
 /obj/item/toy/crayon/orange,
+/obj/effect/spawner/random/trash/crushed_can,
+/obj/effect/spawner/random/trash/food_packaging,
+/obj/effect/spawner/random/trash/food_packaging,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "xo" = (
@@ -5057,6 +5062,8 @@
 /obj/item/trash/can,
 /obj/item/trash/tray,
 /obj/item/stack/tape/industrial,
+/obj/effect/spawner/random/trash/food_packaging,
+/obj/effect/spawner/random/trash/food_packaging,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "UF" = (
@@ -6079,7 +6086,7 @@ pm
 cO
 hU
 YW
-tL
+mO
 aa
 aa
 "}
@@ -6606,7 +6613,7 @@ bA
 bA
 bA
 bA
-tL
+mO
 aa
 aa
 aa
@@ -6672,7 +6679,7 @@ uk
 lH
 mp
 mp
-tL
+mO
 aa
 aa
 aa
