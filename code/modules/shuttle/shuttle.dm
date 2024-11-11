@@ -620,7 +620,7 @@
 	if(S.disable_on_owner_ship_dock && S.owner_ship.docked)
 		return SHUTTLE_TARGET_MOBILEDOCK_FORBIDS_DOCKING
 
-	for(var/turf/closed/indestructible/edgeturf as anything in S.return_turfs())
+	for(var/turf/closed/indestructible/edgeturf as anything in return_ordered_turfs(S.x, S.y, S.z, S.dir))
 		if(!istype(edgeturf))
 			continue
 		return SHUTTLE_TOUCHES_EDGE
