@@ -542,3 +542,239 @@
 //	author = "Medical Journal, volume 3"
 //	title = "Cloning techniques of the 26th century"
 //	page_link = "Guide_to_genetics#Cloning"
+
+/obj/item/book/manual/materials_and_you
+	name = "Materials and You"
+	icon_state = "matbook"
+	author = "Skyla Blessig"
+	title = "Materials and You"
+	dat = {"				<head>
+				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+				<style>
+					body{
+							margin:40px auto;
+							max-width:800px;
+							padding:0 10px;
+							font:1.2em/1.62 sans-serif;
+							color:#444
+						}
+					b{
+							color:#0f0f0f;
+						}
+						h1,h2,h3 {
+							line-height:2.2;
+							color:#0f0f0f
+						}
+						h3 {
+							line-height:1.2;
+							color:#0f0f0f
+						}
+						@media print{
+							body{
+								max-width:none
+							}
+						}
+
+				</style>
+				</head>
+				<body>
+				<center>
+				<h1>Materials and You:</h1>
+				<h2>An all in one Guide to materials for the aspiring scavenger</h2>
+				</center>
+				<h2>Introduction</h2>
+					&emsp;Everyone should be familiar with the base materials, iron, copper, and gold. These essential
+					raw materials have made space travel and living possible, and even more so with the
+					invention of the autolathe. However, nature provides you with ores which are confusing and have a mixture
+					of raw materials. This guide aims to provide an easy and simple reference for which ores correspond to each
+					material.
+
+				<br>
+				<h2>Ores</h2>
+					&emsp;<b>Note:</b> Unless told otherwise, assume all ores yield 1000 cm^2 of their respective matierals
+					<h3><font color="#87423b">Hematite</font></h3>
+						<ul>
+							<li>100% iron<br></li>
+							<li>1/2 of the usual ore yield<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Rock Worlds<br></li>
+							<li>Salty Sand Worlds<br></li>
+							<li>Ice Worlds<br></li>
+							<li>Ocean Worlds<br></li>
+							<li>Waste Disposal Worlds<br></li>
+							<li>Lunar Surfaces<br></li>
+						</ul>
+					<br>
+
+					<h3><font color="#73737b">Magnetite</font></h3>
+						<ul>
+							<li>100% iron<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Lava Worlds<br></li>
+							<li>Shrouded Worlds<br></li>
+						</ul>
+					<br>
+
+					<h3><font color="#46b89b">Malachite</font></h3>
+						<ul>
+							<li>Not to be confused with magnetite<br></li>
+							<li>100% copper<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Ice Worlds<br></li>
+							<li>Jungle Worlds<br></li>
+							<li>Ocean Worlds<br></li>
+						</ul>
+					<br>
+
+					<h3><font color="#596e67">Galena</font></h3>
+						<ul>
+							<li>95% Lead<br></li>
+							<li>4% Sulfur<br></li>
+							<li>0.2% Silver<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Lava Worlds<br></li>
+							<li>Waste Disposal Worlds<br></li>
+						</ul>
+					<br>
+
+					<h3><font color="#593441">Proustite</font></h3>
+						<ul>
+							<li>100% Silver<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Jungle Worlds<br></li>
+						</ul>
+					<br>
+
+				<h3><font color="#d2d46e">Autunite</font></h3>
+						<ul>
+							<li>100% Uranium<br></li>
+							<li>1/2 of the usual ore yield<br></li>
+							<li>Warning: Radioactive<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Waste Disposal Worlds<br></li>
+							<li>Shrouded Worlds<br></li>
+						</ul>
+					<br>
+
+				<h3><font color="#ffe88c">Gold Ore</font></h3>
+						<ul>
+							<li>100% Gold<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Jungle Worlds<br></li>
+							<li>Desert Worlds<br></li>
+						</ul>
+					<br>
+
+				<h3><font color="#ede218">Sulfur Dust</font></h3>
+						<ul>
+							<li>100% Sulfur<br></li>
+							<li>Warning: Flammable<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Lava Worlds<br></li>
+							<li>Ocean Worlds<br></li>
+							<li>Waste Disposal Worlds<br></li>
+							<li>Shrouded Worlds<br></li>
+						</ul>
+					<br>
+
+				<h3><font color="#ede218">Pyrite</font></h3>
+						<ul>
+							<li>Not to be confused with Sulfur Dust or Gold<br></li>
+							<li>49% Sulfur<br></li>
+							<li>49% Iron<br></li>
+							<li>1% Gold<br></li>
+							<li>Warning: Flammable<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Lava Worlds<br></li>
+						</ul>
+
+				<h3><font color="#7a95c4">Diamond Ore</font></h3>
+						<ul>
+							<li>Is weak structurally<br></li>
+							<li>100% Diamond<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Jungle Worlds (Note: in small amounts however is more common on jungles than anywhere else)<br></li>
+						</ul>
+
+				<h3><font color="#ab9a61">Rutile</font></h3>
+						<ul>
+							<li>90% Titanium<br></li>
+							<li>10% Iron<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Salty Sand Worlds<br></li>
+							<li>Lunar Surfaces<br></li>
+						</ul>
+					<br>
+
+				<h3><font color="#665b5b">Graphite</font></h3>
+						<ul>
+							<li>100% Carbon<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can only be found in trace amounts on most planets</b>
+
+				<h3><font color="#665b5b">Coal</font></h3>
+						<ul>
+							<li>100% Carbon<br></li>
+							<li>Warning: Flammable<br></li>
+							<li>1/5 of the usual ore yield<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Jungle Worlds<br></li>
+							<li>Desert Surfaces<br></li>
+						</ul>
+					<br>
+
+				<h3><font color="#cfb4d1">Quartzite</font></h3>
+						<ul>
+							<li>100% Quartz<br></li>
+							<li>Can be refined into Glass or Silicon<br></li>
+						</ul>
+						<br>
+						&emsp;<b>Can be found in abundance at:</b>
+						<ul>
+							<li>Ice Worlds<br></li>
+							<li>Salty Sand Worlds<br></li>
+							<li>Desert Worlds<br></li>
+							<li>Lunar Surfaces<br></li>
+						</ul>
+					<br>
+
+				</body>
+
+				</html>"}
