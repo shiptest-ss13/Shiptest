@@ -39,7 +39,9 @@
 	bolt_wording = "hammer"
 	dry_fire_sound = 'sound/weapons/gun/general/bolt_drop.ogg'
 	dry_fire_text = "snap"
+
 	wield_slowdown = 0.3
+	aimed_wield_slowdown = PISTOL_AIM_SLOWDOWN
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO

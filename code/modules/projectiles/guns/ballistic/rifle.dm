@@ -28,6 +28,9 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
+	zoom_amt = RIFLE_ZOOM
+	aimed_wield_slowdown = RIFLE_AIM_SLOWDOWN
+
 	spread = -1
 	spread_unwielded = 48
 	recoil = -3

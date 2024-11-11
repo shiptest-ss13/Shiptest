@@ -8,6 +8,8 @@
 	spread = 6
 	spread_unwielded = 10
 	wield_slowdown = 0.35
+	aimed_wield_slowdown = SMG_AIM_SLOWDOWN
+	zoom_amt = SMG_ZOOM
 	recoil_unwielded = 4
 	w_class = WEIGHT_CLASS_BULKY
 

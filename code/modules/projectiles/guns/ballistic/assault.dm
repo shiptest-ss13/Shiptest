@@ -5,6 +5,9 @@
 	default_firemode = FIREMODE_SEMIAUTO
 	wield_delay = 0.8 SECONDS
 	wield_slowdown = 0.6
+	aimed_wield_slowdown = RIFLE_AIM_SLOWDOWN
+
+	zoom = RIFLE_ZOOM
 
 	fire_delay = 0.2 SECONDS
 

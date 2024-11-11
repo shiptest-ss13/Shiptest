@@ -134,6 +134,8 @@
 	var/wielded_fully = FALSE
 	///Slowdown for wielding
 	var/wield_slowdown = 0.1
+	///slowdown for aiming whilst wielding
+	var/aimed_wield_slowdown = 0.1
 	///How long between wielding and firing in tenths of seconds
 	var/wield_delay	= 0.4 SECONDS
 	///Storing value for above
@@ -213,6 +215,7 @@
 
 	///Used if the guns recoil is lower then the min, it clamps the highest recoil
 	var/min_recoil = 0
+	///if we want a min recoil (or lack of it) whilst aiming
 	var/min_recoil_aimed = 0
 
 	var/gunslinger_recoil_bonus = 0
@@ -1042,7 +1045,7 @@
 		if((!zoomed && wielded_fully) || zoomed)
 			zoomed = !zoomed
 		else
-			to_chat(user, "<span class='danger'>You can't look down the scope without wielding [src]!</span>")
+			to_chat(user, span_danger("You can't look down the sights without wielding [src]!"))
 			zoomed = FALSE
 	else
 		zoomed = forced_zoom
@@ -1051,10 +1054,12 @@
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate))
 		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direc)
 		min_recoil = min_recoil_aimed
+		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown+aimed_wield_slowdown)
 	else
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		user.client.view_size.zoomIn()
 		min_recoil = initial(min_recoil)
+		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wi	seld_slowdown)
 	return zoomed
 
 //Proc, so that gun accessories/scopes/etc. can easily add zooming.
