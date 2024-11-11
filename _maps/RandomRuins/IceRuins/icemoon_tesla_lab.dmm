@@ -124,6 +124,11 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"aB" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line,
+/obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "aH" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 1
@@ -682,6 +687,10 @@
 /obj/structure/platform/industrial,
 /obj/machinery/door/firedoor/border_only,
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/item/chair{
+	pixel_y = 8;
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "eA" = (
@@ -766,6 +775,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/splatter,
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = -8;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "eO" = (
@@ -1213,6 +1226,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "hE" = (
@@ -1855,6 +1869,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
+"mg" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "mh" = (
 /obj/structure/flippedtable{
 	dir = 4
@@ -1900,6 +1921,9 @@
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -2464,6 +2488,11 @@
 /obj/structure/bed,
 /obj/item/bedsheet/blue,
 /turf/open/floor/carpet/blue,
+/area/space)
+"qi" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "qk" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -3234,6 +3263,9 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "uV" = (
@@ -3568,6 +3600,27 @@
 "wH" = (
 /turf/open/floor/plasteel/freezer,
 /area/space)
+"wI" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/splatter/over_window{
+	pixel_x = -29
+	},
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "bubblegumfoot"
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "wJ" = (
 /obj/item/radio/intercom/directional/west{
 	frequency = 1473
@@ -3725,6 +3778,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "xU" = (
@@ -3778,6 +3832,14 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
+/area/space)
+"ys" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "yt" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -3983,6 +4045,10 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = -8;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "zR" = (
@@ -4091,6 +4157,9 @@
 /obj/effect/mapping_helpers/turf/burnt,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Aj" = (
@@ -4399,6 +4468,16 @@
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/space)
+"BE" = (
+/obj/effect/turf_decal/trimline/transparent/blue/corner{
+	dir = 4
+	},
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "BF" = (
 /obj/machinery/door/firedoor/heavy,
 /obj/structure/cable/yellow{
@@ -4440,6 +4519,10 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = -8;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "BT" = (
@@ -5267,6 +5350,19 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/space)
+"Hc" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "He" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -5336,6 +5432,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Hs" = (
@@ -5493,6 +5590,9 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Iz" = (
@@ -6078,6 +6178,13 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"Nf" = (
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "Nh" = (
 /obj/machinery/disposal/bin,
 /obj/effect/turf_decal/trimline/opaque/purple/line{
@@ -6216,6 +6323,9 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Oi" = (
@@ -6401,12 +6511,15 @@
 /turf/open/floor/carpet/blue,
 /area/space)
 "Pb" = (
-/obj/structure/chair,
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 9
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
+	},
+/obj/item/chair{
+	pixel_y = 8;
+	pixel_x = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -6777,6 +6890,9 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Rs" = (
@@ -7191,6 +7307,12 @@
 	},
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/space)
+"TE" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
 "TF" = (
 /obj/machinery/door/firedoor/heavy,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -7275,6 +7397,10 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Ui" = (
@@ -7701,12 +7827,23 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Yn" = (
-/obj/structure/chair,
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 5
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
+	},
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = 5;
+	pixel_y = -13
+	},
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = -19;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -7903,6 +8040,10 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
+	},
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = -9;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -8285,7 +8426,7 @@ Lx
 Lx
 Lx
 KX
-yE
+TE
 vY
 JL
 jk
@@ -9298,7 +9439,7 @@ nb
 bi
 KX
 xF
-nx
+aB
 KX
 KX
 KX
@@ -9361,7 +9502,7 @@ Yw
 om
 KX
 hN
-bd
+ys
 KX
 wH
 cl
@@ -9424,7 +9565,7 @@ KX
 KX
 KX
 xF
-nx
+aB
 KX
 wH
 rG
@@ -9606,8 +9747,8 @@ KX
 aH
 Eg
 xQ
-lK
-lK
+Hc
+wI
 jY
 lK
 xl
@@ -9669,10 +9810,10 @@ KX
 qO
 ML
 HQ
-ML
-js
+mg
+BE
 yD
-ML
+mg
 iF
 IZ
 KX
@@ -9796,7 +9937,7 @@ KX
 GC
 Qo
 KX
-NY
+Nf
 jZ
 KX
 SK
@@ -10178,7 +10319,7 @@ Rp
 Bs
 Nl
 zP
-OT
+qi
 KX
 KX
 LL
