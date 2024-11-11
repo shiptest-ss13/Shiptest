@@ -105,15 +105,15 @@
 
 /datum/gear/hat/utility_black
 	display_name = "utility cover, black"
-	path = /obj/item/clothing/head/soft/utility/black
+	path = /obj/item/clothing/head/soft/utility_black
 
 /datum/gear/hat/utility_olive
 	display_name = "utility cover, olive"
-	path = /obj/item/clothing/head/soft/utility/olive
+	path = /obj/item/clothing/head/soft/utility_olive
 
 /datum/gear/hat/utility_beige
 	display_name = "utility cover, beige"
-	path = /obj/item/clothing/head/soft/utility
+	path = /obj/item/clothing/head/soft/utility_beige
 
 //Beanies
 

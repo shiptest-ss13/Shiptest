@@ -162,21 +162,21 @@
 	soft_type = "inteqmed"
 	dog_fashion = null
 
-/obj/item/clothing/head/soft/utility
+/obj/item/clothing/head/soft/utility_beige
 	name = "beige utility cover"
 	desc = "A flat beige utility cover, unbranded. Just the right color for those sandy planetoids."
 	icon_state = "patrolbeigesoft"
 	soft_type = "patrolbeige"
 	dog_fashion = null
 
-/obj/item/clothing/head/soft/utility/black
+/obj/item/clothing/head/soft/utility_black
 	name = "black utility cover"
 	desc = "A flat black utility cover, unbranded. Night Vision Goggles sold separately."
 	icon_state = "patrolblacksoft"
 	soft_type = "patrolblack"
 	dog_fashion = null
 
-/obj/item/clothing/head/soft/utility/olive
+/obj/item/clothing/head/soft/utility_olive
 	name = "miskilamao cap"
 	desc = "An olive utility cover emblazoned with the Miskilamo Shipbreaking logo. The material feels cheap."
 	icon_state = "patrololivesoft"
