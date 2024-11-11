@@ -111,6 +111,7 @@
 	dir = 1
 	},
 /obj/structure/closet/crate,
+/obj/item/stack/ore/bluespace_crystal,
 /obj/item/choice_beacon/music,
 /obj/item/spacecash/bundle/c10,
 /obj/structure/extinguisher_cabinet/directional/west,
@@ -1046,6 +1047,10 @@
 	pixel_x = 13
 	},
 /obj/machinery/light/small/directional/west,
+/obj/item/paper/paperslip/corporate{
+	pixel_x = 13;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/cargo/office)
 "di" = (
@@ -1119,7 +1124,8 @@
 	dir = 1
 	},
 /obj/machinery/camera{
-	dir = 10
+	dir = 10;
+	network = list("metacams")
 	},
 /obj/structure/sign/warning/electricshock{
 	pixel_y = -22
@@ -1179,6 +1185,13 @@
 	anchored = 1
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/item/flashlight/flare,
+/obj/item/flashlight/flare,
+/obj/item/flashlight/flare,
+/obj/machinery/camera{
+	dir = 10;
+	network = list("metacams")
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "dM" = (
@@ -1214,7 +1227,8 @@
 	pixel_x = -20
 	},
 /obj/machinery/camera{
-	dir = 5
+	dir = 5;
+	network = list("metacams")
 	},
 /obj/machinery/button/door{
 	id = "metaqmoffice";
@@ -1229,6 +1243,8 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/emcloset/anchored,
 /obj/machinery/light/small/directional/south,
+/obj/item/flashlight/flare,
+/obj/item/flashlight/flare,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "dS" = (
@@ -1286,7 +1302,8 @@
 "dX" = (
 /obj/machinery/photocopier,
 /obj/machinery/camera{
-	dir = 10
+	dir = 10;
+	network = list("metacams")
 	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/nanoweave/orange,
@@ -1298,9 +1315,8 @@
 	},
 /area/ship/engineering)
 "dZ" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 10;
-	pixel_y = 5
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 10
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -1474,19 +1490,23 @@
 "fd" = (
 /obj/structure/table/wood,
 /obj/item/clipboard{
-	pixel_x = 4;
 	pixel_y = 3
 	},
 /obj/item/stamp{
-	pixel_x = -8;
+	pixel_x = -12;
 	pixel_y = 11
 	},
 /obj/item/stamp/denied{
-	pixel_x = -8;
+	pixel_x = -12;
 	pixel_y = 5
 	},
-/obj/item/stamp/qm{
-	pixel_x = -8
+/obj/item/stamp/nanotrasen/ns/captain{
+	pixel_x = 13;
+	pixel_y = 11
+	},
+/obj/item/stamp/nanotrasen/ns/supply{
+	pixel_x = 13;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/cargo/office)
@@ -1680,9 +1700,8 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "hV" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 5;
-	pixel_y = 7
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 5
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -1766,7 +1785,8 @@
 /area/ship/cargo)
 "jk" = (
 /obj/machinery/camera{
-	dir = 5
+	dir = 5;
+	network = list("metacams")
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/line{
 	dir = 8
@@ -2161,13 +2181,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormtwo)
-"mO" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 6;
-	pixel_y = 5
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
 "nb" = (
 /obj/structure/chair/plastic{
 	dir = 8
@@ -2244,6 +2257,9 @@
 "nR" = (
 /obj/structure/table,
 /obj/machinery/light/dim/directional/east,
+/obj/item/candle{
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hallway/central)
 "oc" = (
@@ -2670,7 +2686,9 @@
 /obj/item/stack/cable_coil/red,
 /obj/item/stock_parts/cell/high/empty,
 /obj/item/stock_parts/cell,
+/obj/item/computer_hardware/network_card,
 /obj/item/circuitboard/machine/cell_charger,
+/obj/item/circuitboard/machine/printer,
 /obj/item/storage/toolbox/electrical,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -2692,9 +2710,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "tx" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 9;
-	pixel_y = 7
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 9
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -2708,9 +2725,8 @@
 /turf/open/floor/plasteel/stairs/mid,
 /area/ship/cargo)
 "tL" = (
-/obj/machinery/porta_turret/ship/weak{
-	dir = 6;
-	pixel_y = 6
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 6
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -3081,6 +3097,10 @@
 	dir = 9
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/item/stamp/nanotrasen/ns{
+	pixel_x = -8;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "xm" = (
@@ -3092,6 +3112,18 @@
 	},
 /obj/structure/closet/crate,
 /obj/item/spacecash/bundle/pocketchange,
+/obj/item/flashlight/glowstick/orange,
+/obj/item/flashlight/glowstick/orange,
+/obj/item/flashlight/glowstick/orange,
+/obj/item/flashlight/glowstick/orange,
+/obj/item/flashlight/glowstick/orange,
+/obj/item/flashlight/glowstick/orange,
+/obj/item/flashlight/glowstick/orange,
+/obj/item/flashlight/glowstick/orange,
+/obj/item/flashlight/glowstick/orange,
+/obj/item/flashlight/glowstick/orange,
+/obj/item/toy/crayon/orange,
+/obj/item/toy/crayon/orange,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "xo" = (
@@ -3136,6 +3168,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "xI" = (
@@ -3457,7 +3490,8 @@
 	},
 /obj/machinery/computer/security{
 	dir = 8;
-	icon_state = "computer-left"
+	icon_state = "computer-left";
+	network = list("metacams")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -3533,6 +3567,7 @@
 /obj/item/reagent_containers/glass/bottle/lithium,
 /obj/item/reagent_containers/glass/bottle/mannitol,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/glass/bottle/ethanol,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "DF" = (
@@ -3712,7 +3747,8 @@
 /area/ship/crew/office/lobby)
 "FX" = (
 /obj/machinery/camera{
-	dir = 8
+	dir = 8;
+	network = list("metacams")
 	},
 /obj/structure/table_frame,
 /obj/item/cigbutt/roach{
@@ -4061,6 +4097,10 @@
 	pixel_x = -11;
 	pixel_y = 9
 	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 8;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Ll" = (
@@ -4143,6 +4183,10 @@
 /obj/item/stamp/denied{
 	pixel_x = -8;
 	pixel_y = 5
+	},
+/obj/item/stamp/nanotrasen/ns{
+	pixel_x = -8;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
@@ -4334,6 +4378,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/camera{
+	dir = 8;
+	network = list("metacams")
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/office/lobby)
 "Oe" = (
@@ -5005,7 +5053,10 @@
 	pixel_y = -4
 	},
 /obj/structure/closet/crate/trashcart,
+/obj/item/stack/ore/bluespace_crystal,
 /obj/item/trash/can,
+/obj/item/trash/tray,
+/obj/item/stack/tape/industrial,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "UF" = (
@@ -5234,7 +5285,8 @@
 /area/ship/cargo/office)
 "Xq" = (
 /obj/machinery/camera{
-	dir = 8
+	dir = 8;
+	network = list("metacams")
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-06";
@@ -5329,6 +5381,10 @@
 	color = "#332521"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/item/storage/box/matches{
+	pixel_x = -4;
+	pixel_y = 4
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/cargo/office)
 "YR" = (
@@ -5349,6 +5405,7 @@
 /obj/item/clothing/under/nanotrasen/engineering,
 /obj/item/clothing/under/nanotrasen/engineering,
 /obj/item/storage/toolbox/mechanical,
+/obj/item/clothing/gloves/color/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "YW" = (
@@ -6022,7 +6079,7 @@ pm
 cO
 hU
 YW
-mO
+tL
 aa
 aa
 "}
@@ -6615,7 +6672,7 @@ uk
 lH
 mp
 mp
-mO
+tL
 aa
 aa
 aa
