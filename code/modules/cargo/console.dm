@@ -118,7 +118,7 @@
 	else if (use_beacon && !canBeacon)
 		message = "BEACON ERROR: MUST BE EXPOSED"//beacon's loc/user's loc must be a turf
 	data["message"] = message
-	if(!supply_pack_data)
+	if(outpost_docked)
 		generate_pack_data()
 	data["supplies"] = supply_pack_data
 	if (cooldown > 0)//cooldown used for printing beacons
