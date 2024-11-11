@@ -164,21 +164,21 @@
 
 /obj/item/clothing/head/soft/utility
 	name = "beige utility cover"
-	desc = "A flat beige utility cover, unbranded. Good for a wannabe mercenary, or just for fashion."
+	desc = "A flat beige utility cover, unbranded. Just the right color for those sandy planetoids."
 	icon_state = "patrolbeigesoft"
 	soft_type = "patrolbeige"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/utility/black
 	name = "black utility cover"
-	desc = "A flat black utility cover, unbranded. Good for a wannabe mercenary, or just for fashion."
+	desc = "A flat black utility cover, unbranded. Night Vision Goggles sold separately."
 	icon_state = "patrolblacksoft"
 	soft_type = "patrolblack"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/utility/olive
 	name = "miskilamao cap"
-	desc = "A utility cover emblazoned with the Miskilamo Shipbreaking logo. The material feels cheap."
+	desc = "An olive utility cover emblazoned with the Miskilamo Shipbreaking logo. The material feels cheap."
 	icon_state = "patrololivesoft"
 	soft_type = "patrololive"
 	dog_fashion = null
