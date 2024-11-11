@@ -96,10 +96,13 @@
 /obj/item/mecha_parts/mecha_equipment/proc/action(atom/target)
 	return 0
 
-/obj/item/mecha_parts/mecha_equipment/proc/start_cooldown()
+/obj/item/mecha_parts/mecha_equipment/proc/start_cooldown(cooldown_override)
 	set_ready_state(0)
 	chassis.use_power(energy_drain)
-	addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), equip_cooldown)
+	if(cooldown_override)
+		addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), cooldown_override)
+	else
+		addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), equip_cooldown)
 
 /obj/item/mecha_parts/mecha_equipment/proc/do_after_cooldown(atom/target)
 	if(!chassis)

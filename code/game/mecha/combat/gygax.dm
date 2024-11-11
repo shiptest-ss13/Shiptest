@@ -16,10 +16,6 @@
 	max_equip = 3
 	base_step_energy_drain = 8
 
-/obj/mecha/combat/gygax/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire_mecha,0.5)
-
 /obj/mecha/combat/gygax/mechturn(direction)
 	. = ..()
 	if(!strafe && !occupant.client.keys_held["Alt"])

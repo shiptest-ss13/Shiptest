@@ -70,7 +70,7 @@
 	if(!QDELETED(shooter))
 		RegisterSignal(shooter, COMSIG_MOB_LOGOUT, PROC_REF(autofire_off))
 		UnregisterSignal(shooter, COMSIG_MOB_LOGIN)
-	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING, COMSIG_ITEM_DROPPED), PROC_REF(autofire_off))
+	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING, COMSIG_MECH_EXITED), PROC_REF(autofire_off))
 	parent.RegisterSignal(src, COMSIG_AUTOFIRE_ONMOUSEDOWN, TYPE_PROC_REF(/obj/mecha, autofire_bypass_check))
 	parent.RegisterSignal(parent, COMSIG_AUTOFIRE_SHOT, TYPE_PROC_REF(/obj/mecha, do_autofire))
 
@@ -90,7 +90,7 @@
 	if(!QDELETED(shooter))
 		RegisterSignal(shooter, COMSIG_MOB_LOGIN, PROC_REF(on_client_login))
 		UnregisterSignal(shooter, COMSIG_MOB_LOGOUT)
-	UnregisterSignal(parent, list(COMSIG_PARENT_QDELETING, COMSIG_ITEM_DROPPED))
+	UnregisterSignal(parent, list(COMSIG_PARENT_QDELETING, COMSIG_MECH_EXITED))
 	shooter = null
 	parent.UnregisterSignal(parent, COMSIG_AUTOFIRE_SHOT)
 	parent.UnregisterSignal(src, COMSIG_AUTOFIRE_ONMOUSEDOWN)
@@ -118,8 +118,6 @@
 		return
 	if(source.mob.throw_mode)
 		return
-	// if(!isturf(source.mob.loc)) //No firing inside lockers and stuff.
-	// 	return
 	if(get_dist(source.mob, _target) < 2) //Adjacent clicking.
 		return
 
@@ -247,9 +245,6 @@
 /obj/mecha/proc/on_autofire_start(datum/source, atom/target, mob/living/shooter, params)
 	if(shooter.stat)
 		return FALSE
-	//  if(!equip_ready) //we call pre_fire so bolts/slides work correctly
-	//  	INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
-	//  	return NONE
 	return TRUE
 
 
@@ -263,15 +258,12 @@
 	SIGNAL_HANDLER
 	if(shooter.incapacitated())
 		return NONE
-	// if(!can_shoot()) //we stop if we cant shoot but also calling pre_fire so the bolt works correctly if it's a weird open bolt weapon.
-	// 	INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
-	// 	return NONE
 	INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
 	return COMPONENT_AUTOFIRE_SHOT_SUCCESS //All is well, we can continue shooting.
 
 
 /obj/mecha/proc/do_autofire_shot(datum/source, atom/target, mob/living/shooter, params)
-	 click_action(target,shooter,params,FALSE)
+	 click_action(target,shooter,params)
 
 /datum/component/automatic_fire_mecha/proc/disable_autofire(datum/source)
 	enabled = FALSE

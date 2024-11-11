@@ -324,14 +324,7 @@
 			return
 		selected = equip
 		// enable autofire
-		if(istype(equip,/obj/item/mecha_parts/mecha_equipment/weapon))
-			var/obj/item/mecha_parts/mecha_equipment/weapon/mech_gun = equip
-			if(mech_gun.full_auto)
-				SEND_SIGNAL(src,COMSIG_MECH_ENABLE_AUTOFIRE)
-			else
-				SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
-		else
-			SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
+		autofire_check()
 		occupant_message("<span class='notice'>You switch to [equip].</span>")
 		visible_message("<span class='notice'>[src] raises [equip].</span>")
 		send_byjax(usr, "exosuit.browser", "eq_list", get_equipment_list())
