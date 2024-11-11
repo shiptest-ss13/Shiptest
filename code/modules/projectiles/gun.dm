@@ -1059,7 +1059,7 @@
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		user.client.view_size.zoomIn()
 		min_recoil = initial(min_recoil)
-		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wi	seld_slowdown)
+		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
 	return zoomed
 
 //Proc, so that gun accessories/scopes/etc. can easily add zooming.
