@@ -26,7 +26,7 @@
 	name = "elevator_ice"
 
 /datum/map_template/outpost/elevator_rock
-	name = "elevator_rock"	
+	name = "elevator_rock"
 
 
 /*
