@@ -1,9 +1,12 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ae" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/firingrange{
+	pixel_y = 32
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken";
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "aS" = (
@@ -11,7 +14,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "aW" = (
@@ -28,21 +31,21 @@
 	pixel_y = 4
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "bv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/opaque/green/half,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "bB" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "cr" = (
@@ -51,12 +54,14 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "ct" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "cH" = (
 /obj/structure/fermenting_barrel,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "cN" = (
@@ -75,10 +80,12 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "dz" = (
 /obj/structure/table/wood/fancy/green,
-/obj/item/ammo_box/a12g{
-	pixel_y = 6
+/obj/item/storage/box/ammo/a12g_buckshot{
+	pixel_y = 5
 	},
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "eC" = (
 /obj/effect/turf_decal/siding/wood{
@@ -94,7 +101,7 @@
 "fd" = (
 /obj/structure/table/optable,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "fz" = (
@@ -118,7 +125,9 @@
 	pixel_y = 4;
 	pixel_x = -8
 	},
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "fB" = (
 /obj/structure/chair/stool/bar,
@@ -127,7 +136,7 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "fI" = (
@@ -145,12 +154,12 @@
 	},
 /area/overmap_encounter/planetoid/sand/explored)
 "fO" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/reagent_containers/food/snacks/rationpack{
-	pixel_y = 7
+/obj/structure/flora/junglebush/b,
+/obj/structure/sign/poster/official/fruit_bowl{
+	pixel_y = 32
 	},
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+/turf/open/floor/plating/grass/jungle{
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "gk" = (
@@ -160,7 +169,7 @@
 "gH" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/carpet/green{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "hg" = (
@@ -178,7 +187,7 @@
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "hr" = (
@@ -192,7 +201,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "hA" = (
@@ -203,13 +212,13 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood{
 	icon_state = "wood-broken3";
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "hO" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "hR" = (
@@ -221,7 +230,7 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/item/cultivator/rake,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "ib" = (
@@ -234,7 +243,7 @@
 	pixel_y = -13
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "is" = (
@@ -243,7 +252,7 @@
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken3";
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "iu" = (
@@ -259,7 +268,7 @@
 	pixel_y = 3
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "jy" = (
@@ -268,7 +277,7 @@
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body."
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "jU" = (
@@ -279,8 +288,11 @@
 /obj/effect/turf_decal/corner/opaque/green/half{
 	dir = 8
 	},
+/obj/structure/sign/departments/medbay/alt{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "kD" = (
@@ -289,7 +301,7 @@
 	pixel_y = -10
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "kF" = (
@@ -308,8 +320,12 @@
 	pixel_x = 9;
 	pixel_y = 15
 	},
+/obj/item/chainsaw{
+	pixel_x = -11;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "kX" = (
@@ -329,7 +345,9 @@
 /obj/item/screwdriver/old{
 	pixel_y = 20
 	},
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "mi" = (
 /obj/structure/railing/wood{
@@ -355,7 +373,7 @@
 	pixel_y = 8
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "mo" = (
@@ -398,7 +416,7 @@
 	dir = 5
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "nF" = (
@@ -423,13 +441,13 @@
 	pixel_y = 1
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "nG" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "oo" = (
@@ -441,7 +459,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "pa" = (
@@ -449,18 +467,20 @@
 	dir = 4
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "pf" = (
 /turf/open/floor/wood{
 	icon_state = "wood-broken";
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "pn" = (
 /obj/item/target,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "pu" = (
 /obj/structure/flora/rock,
@@ -473,7 +493,7 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "qm" = (
@@ -498,7 +518,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "qD" = (
@@ -529,7 +549,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/green/border,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "rw" = (
@@ -537,7 +557,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "rP" = (
@@ -545,7 +565,7 @@
 	dir = 1
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "sf" = (
@@ -557,14 +577,14 @@
 	pixel_x = 9
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "si" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "sj" = (
@@ -600,10 +620,13 @@
 /area/ruin/unpowered)
 "tY" = (
 /mob/living/simple_animal/bot/secbot/ed209/rockplanet{
-	faction = list("hermit")
+	faction = list("hermit");
+	name = "The Crimson King"
 	},
 /obj/structure/curtain/cloth/fancy,
-/turf/open/floor/carpet/red_gold,
+/turf/open/floor/carpet/red_gold{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "un" = (
 /obj/structure/flora/ash/puce,
@@ -619,7 +642,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "uv" = (
@@ -629,7 +652,7 @@
 "uG" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "vg" = (
@@ -653,7 +676,7 @@
 /obj/structure/flora/junglebush/b,
 /obj/item/reagent_containers/glass/bucket/wooden,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "vR" = (
@@ -664,7 +687,7 @@
 	},
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "wd" = (
@@ -688,14 +711,14 @@
 "wh" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "wk" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/reagent_containers/food/snacks/meat/steak/meatproduct,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "wm" = (
@@ -711,7 +734,7 @@
 	pixel_y = 17
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "wn" = (
@@ -725,7 +748,7 @@
 "xj" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "xm" = (
@@ -738,7 +761,9 @@
 	pixel_x = 5;
 	pixel_y = 9
 	},
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "xu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -747,7 +772,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "xI" = (
@@ -763,7 +788,9 @@
 	pixel_x = -10;
 	pixel_y = 17
 	},
-/turf/open/floor/plasteel/white
+/turf/open/floor/plasteel/white{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "xQ" = (
 /obj/item/clothing/neck/stethoscope,
@@ -780,7 +807,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "xV" = (
@@ -789,7 +816,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "yp" = (
@@ -797,7 +824,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "yr" = (
@@ -806,7 +833,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "zi" = (
@@ -820,7 +847,7 @@
 	name = "DANGER: DO NOT OPEN"
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "zj" = (
@@ -829,12 +856,14 @@
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken3";
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "zy" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "Al" = (
 /obj/structure/chair/wood{
@@ -842,7 +871,7 @@
 	},
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Aw" = (
@@ -881,12 +910,12 @@
 	dir = 1
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Bw" = (
 /turf/open/floor/carpet/green{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "BL" = (
@@ -896,7 +925,7 @@
 	pixel_y = -14
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "BQ" = (
@@ -907,12 +936,14 @@
 	dir = 4
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Cc" = (
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "Cl" = (
 /obj/item/candle/infinite{
@@ -939,7 +970,7 @@
 	},
 /obj/structure/table/wood/fancy/blue,
 /turf/open/floor/carpet/orange{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Cn" = (
@@ -956,7 +987,7 @@
 "CL" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "CN" = (
@@ -970,26 +1001,26 @@
 "CS" = (
 /obj/machinery/hydroponics/soil,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "CT" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Da" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "DA" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "DH" = (
@@ -999,7 +1030,7 @@
 "DX" = (
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "DY" = (
@@ -1011,12 +1042,14 @@
 "Eg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Ep" = (
 /obj/machinery/pipedispenser,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "Ex" = (
 /obj/structure/flora/tree/tall/whitesands,
@@ -1063,7 +1096,7 @@
 	pixel_x = 8
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Gc" = (
@@ -1075,7 +1108,7 @@
 	dir = 4
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Gl" = (
@@ -1087,13 +1120,13 @@
 	dir = 8
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "GK" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "GO" = (
@@ -1105,7 +1138,7 @@
 /area/ruin/unpowered)
 "GU" = (
 /turf/open/floor/carpet/orange{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Hb" = (
@@ -1119,7 +1152,7 @@
 	pixel_y = 8
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "HI" = (
@@ -1127,12 +1160,14 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "HV" = (
 /obj/item/target/alien/anchored,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "Il" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Iz" = (
@@ -1146,7 +1181,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "IZ" = (
@@ -1163,10 +1198,14 @@
 	pixel_x = 8;
 	pixel_y = 9
 	},
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "JK" = (
-/turf/open/floor/concrete/slab_4,
+/turf/open/floor/concrete/slab_4{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "JM" = (
 /obj/structure/bed,
@@ -1176,26 +1215,28 @@
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Kb" = (
 /obj/machinery/recharge_station,
-/turf/open/floor/carpet/red_gold,
+/turf/open/floor/carpet/red_gold{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "Kl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Kt" = (
 /obj/effect/turf_decal/corner/opaque/green/three_quarters,
 /obj/effect/decal/cleanable/blood/gibs/up,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Lv" = (
@@ -1205,7 +1246,7 @@
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken2";
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Ly" = (
@@ -1239,26 +1280,26 @@
 	dir = 4
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "LB" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "LC" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "LI" = (
 /turf/open/floor/wood{
 	icon_state = "wood-broken2";
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "LR" = (
@@ -1268,7 +1309,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/green/border,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Mg" = (
@@ -1276,7 +1317,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Mz" = (
@@ -1288,13 +1329,13 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "MI" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "MM" = (
@@ -1305,14 +1346,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Nt" = (
 /obj/structure/flora/junglebush/b,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "NG" = (
@@ -1320,7 +1361,7 @@
 /obj/item/gun/ballistic/rifle/polymer,
 /obj/item/gun/ballistic/automatic/zip_pistol,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "NL" = (
@@ -1347,7 +1388,7 @@
 	pixel_y = 7
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Pb" = (
@@ -1356,13 +1397,13 @@
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body."
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Pm" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Ps" = (
@@ -1371,7 +1412,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Pu" = (
@@ -1384,19 +1425,19 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Ql" = (
 /obj/structure/bonfire/prelit,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Qm" = (
 /turf/open/floor/wood{
 	icon_state = "wood-broken3";
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Rq" = (
@@ -1411,7 +1452,7 @@
 	},
 /obj/structure/table/wood/fancy/blue,
 /turf/open/floor/carpet/orange{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Sf" = (
@@ -1424,7 +1465,9 @@
 /obj/item/ammo_casing/shotgun/improvised,
 /obj/item/ammo_casing/shotgun/improvised,
 /obj/structure/closet/secure_closet,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "Sj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1433,7 +1476,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "SB" = (
@@ -1448,7 +1491,7 @@
 	pixel_x = -11
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "To" = (
@@ -1482,13 +1525,13 @@
 	},
 /obj/structure/table/wood/fancy/blue,
 /turf/open/floor/carpet/orange{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Tx" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "TA" = (
@@ -1503,7 +1546,9 @@
 "Ul" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/railing,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "Uu" = (
 /obj/structure/table/wood/reinforced,
@@ -1524,7 +1569,7 @@
 "Ux" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "UE" = (
@@ -1542,12 +1587,14 @@
 /obj/item/flashlight/lantern{
 	on = 1
 	},
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/unpowered)
 "VB" = (
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "VI" = (
@@ -1575,12 +1622,12 @@
 	pixel_y = 10
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "WH" = (
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Xq" = (
@@ -1598,7 +1645,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "XD" = (
@@ -1612,7 +1659,7 @@
 /obj/structure/table,
 /obj/machinery/recharger,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "XK" = (
@@ -1628,7 +1675,7 @@
 	pixel_y = 7
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Ya" = (
@@ -1642,13 +1689,13 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Yc" = (
 /obj/structure/table/wood/fancy/blue,
 /turf/open/floor/carpet/orange{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Yg" = (
@@ -1658,13 +1705,13 @@
 	},
 /obj/effect/turf_decal/corner/opaque/green/border,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Yh" = (
 /obj/item/shovel,
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Yk" = (
@@ -1680,7 +1727,7 @@
 "Yx" = (
 /obj/structure/mineral_door/iron,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Yy" = (
@@ -1689,19 +1736,19 @@
 	dir = 1
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "YV" = (
 /obj/structure/destructible/tribal_torch/lit,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "YX" = (
 /turf/open/floor/plating/grass/jungle{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "YZ" = (
@@ -1711,7 +1758,7 @@
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/wood{
 	icon_state = "wood-broken";
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 "Zd" = (
@@ -1736,7 +1783,7 @@
 	pixel_y = -2
 	},
 /turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
+	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/unpowered)
 
@@ -2581,7 +2628,7 @@ xI
 xI
 xI
 xI
-Tx
+fO
 YX
 YX
 wh
@@ -2677,7 +2724,7 @@ kX
 Lv
 fB
 OA
-fO
+VB
 xI
 xI
 xI
