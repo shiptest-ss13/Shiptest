@@ -19,16 +19,16 @@
 	if(!ismecha(parent))
 		return COMPONENT_INCOMPATIBLE
 	var/obj/mecha/parent_mech = parent
-	// have wake up on initialize or pilot boardings
-	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
-	RegisterSignal(parent, COMSIG_GUN_DISABLE_AUTOFIRE, PROC_REF(disable_autofire))
-	RegisterSignal(parent, COMSIG_GUN_ENABLE_AUTOFIRE, PROC_REF(enable_autofire))
-	RegisterSignal(parent, COMSIG_GUN_SET_AUTOFIRE_SPEED, PROC_REF(set_autofire_speed))
+	// have wake up on initialize or pilot boardings / maybe on equip full auto gun?
+	RegisterSignal(parent, COMSIG_MECH_ENTERED, PROC_REF(wake_up))
+	RegisterSignal(parent, COMSIG_MECH_DISABLE_AUTOFIRE, PROC_REF(disable_autofire))
+	RegisterSignal(parent, COMSIG_MECH_ENABLE_AUTOFIRE, PROC_REF(enable_autofire))
+	RegisterSignal(parent, COMSIG_MECH_SET_AUTOFIRE_SPEED, PROC_REF(set_autofire_speed))
 	if(_autofire_shot_delay)
 		autofire_shot_delay = _autofire_shot_delay
 	if(autofire_stat == AUTOFIRE_STAT_IDLE && ismob(parent_mech.occupant))
 		var/mob/user = parent_mech.occupant
-		wake_up(src, user)
+		wake_up(parent_mech, user)
 
 
 /datum/component/automatic_fire_mecha/Destroy()
@@ -42,7 +42,7 @@
 
 	process_shot()
 
-/datum/component/automatic_fire_mecha/proc/wake_up(datum/source, mob/user, slot)
+/datum/component/automatic_fire_mecha/proc/wake_up(obj/mecha/mech, mob/user)
 	SIGNAL_HANDLER
 
 	if(autofire_stat == AUTOFIRE_STAT_ALERT)
@@ -52,7 +52,7 @@
 		return
 	if(iscarbon(user))
 		var/mob/living/carbon/arizona_ranger = user
-		if(arizona_ranger.is_holding(parent))
+		if(arizona_ranger == mech.occupant)
 			autofire_on(arizona_ranger.client)
 
 
@@ -247,15 +247,15 @@
 /obj/mecha/proc/on_autofire_start(datum/source, atom/target, mob/living/shooter, params)
 	if(shooter.stat)
 		return FALSE
-	// if(!equip_ready) //we call pre_fire so bolts/slides work correctly
-	// 	INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
-	// 	return NONE
+	//  if(!equip_ready) //we call pre_fire so bolts/slides work correctly
+	//  	INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
+	//  	return NONE
 	return TRUE
 
 
 /obj/mecha/proc/autofire_bypass_check(datum/source, client/clicker, atom/target, turf/location, control, params)
 	SIGNAL_HANDLER
-	if(clicker.mob.get_active_held_item() != src)
+	if(clicker.mob != occupant)
 		return COMPONENT_AUTOFIRE_ONMOUSEDOWN_BYPASS
 
 
@@ -271,7 +271,7 @@
 
 
 /obj/mecha/proc/do_autofire_shot(datum/source, atom/target, mob/living/shooter, params)
-	 click_action(target,shooter,params)
+	 click_action(target,shooter,params,FALSE)
 
 /datum/component/automatic_fire_mecha/proc/disable_autofire(datum/source)
 	enabled = FALSE

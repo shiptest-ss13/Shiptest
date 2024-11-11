@@ -708,10 +708,18 @@
 /// generally called before temporary non-parallel animate()s on the atom (animation_duration)
 #define COMSIG_ATOM_TEMPORARY_ANIMATION_START "atom_temp_animate_start"
 
-/// send when enabling/diabling an autofire component
+/// send when enabling/diabling an autofire component for guns
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
 #define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
 #define COMSIG_GUN_SET_AUTOFIRE_SPEED "set_autofire_speed"
+
+/// send when enabling/diabling an autofire component for guns
+#define COMSIG_MECH_DISABLE_AUTOFIRE "disable_mech_autofire"
+#define COMSIG_MECH_ENABLE_AUTOFIRE "enable_mech_autofire"
+#define COMSIG_MECH_SET_AUTOFIRE_SPEED "set_mech_autofire_speed"
+
+#define COMSIG_MECH_ENTERED "mech_entered"
+#define COMSIG_MECH_EXITED "mech_exited"
 
 ///sent when guns need to notify the gun hud to update. mostly for revolvers.
 #define COMSIG_UPDATE_AMMO_HUD "update_ammo_hud"

@@ -476,7 +476,7 @@
 ////////////////////////////
 
 
-/obj/mecha/proc/click_action(atom/target,mob/user,params)
+/obj/mecha/proc/click_action(atom/target,mob/user,params, cooldown = TRUE)
 	if(!occupant || occupant != user)
 		return
 	if(!locate(/turf) in list(target,target.loc)) // Prevents inventory from being drilled
@@ -511,13 +511,13 @@
 			if(HAS_TRAIT(L, TRAIT_PACIFISM) && selected.harmful)
 				to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 				return
-			if(selected.action(target,params))
+			if(selected.action(target,params) && cooldown)
 				selected.start_cooldown()
 	else if(selected && selected.is_melee())
 		if(isliving(target) && selected.harmful && HAS_TRAIT(L, TRAIT_PACIFISM))
 			to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 			return
-		if(selected.action(target,params))
+		if(selected.action(target,params) && cooldown)
 			selected.start_cooldown()
 	else
 		if(internal_damage & MECHA_INT_CONTROL_LOST)
@@ -995,6 +995,7 @@
 		playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 		if(!internal_damage)
 			SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
+		SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
 		return TRUE
 
 /obj/mecha/proc/mmi_move_inside(obj/item/mmi/M, mob/user)

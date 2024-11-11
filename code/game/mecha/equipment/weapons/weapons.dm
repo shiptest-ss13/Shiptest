@@ -35,7 +35,7 @@
 	if (targloc == curloc)
 		return 0
 
-	set_ready_state(0)
+	//set_ready_state(0)
 	for(var/i=1 to get_shot_amount())
 		var/obj/projectile/A = new projectile(curloc)
 		A.firer = chassis.occupant
@@ -352,6 +352,7 @@
 	projectile_delay = 2
 	harmful = TRUE
 	ammo_type = "lmg"
+	full_auto = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/mounted
 	name = "\improper Mounted Heavy Machine Gun"

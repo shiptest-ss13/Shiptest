@@ -92,10 +92,18 @@
 				button_icon_state = "mech_cycle_equip_off"
 			else
 				chassis.selected = available_equipment[number+1]
-				//wenable autofire
+				//enable autofire
 				chassis.occupant_message("<span class='notice'>You switch to [chassis.selected].</span>")
 				button_icon_state = "mech_cycle_equip_on"
 			send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
+			if(istype(chassis.selected,/obj/item/mecha_parts/mecha_equipment/weapon))
+				var/obj/item/mecha_parts/mecha_equipment/weapon/mech_gun = chassis.selected
+				if(mech_gun.full_auto)
+					SEND_SIGNAL(src,COMSIG_MECH_ENABLE_AUTOFIRE)
+				else
+					SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
+			else
+				SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
 			UpdateButtonIcon()
 			return
 
