@@ -117,10 +117,7 @@
 /obj/effect/turf_decal/corner/opaque/bar/half{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "jC" = (
 /obj/structure/table/reinforced,
@@ -144,16 +141,13 @@
 	},
 /area/hangar)
 "mz" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/bar/half{
 	dir = 1
 	},
-/obj/effect/turf_decal/weather/rock{
+/obj/structure/railing{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "mR" = (
 /obj/effect/turf_decal/corner/opaque/bar/half{
@@ -183,10 +177,6 @@
 /obj/effect/turf_decal/corner/opaque/bar/half{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/weather/rock{
 	dir = 5
 	},
@@ -292,10 +282,14 @@
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "uo" = (
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/weather/rock{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "uD" = (
 /obj/effect/turf_decal/weather/rock{
@@ -304,13 +298,10 @@
 /turf/open/floor/plasteel/dark,
 /area/hangar)
 "vm" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "vR" = (
 /obj/machinery/light/floor/hangar,
@@ -432,11 +423,7 @@
 /obj/effect/turf_decal/corner/opaque/bar/half{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/binary/volume_pump{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/shutoff,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "Eo" = (
 /obj/effect/turf_decal/weather/rock,
@@ -444,6 +431,24 @@
 /area/hangar)
 "EG" = (
 /obj/effect/turf_decal/corner/opaque/bar/three_quarters{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/hangar)
+"Fv" = (
+/obj/effect/turf_decal/corner/opaque/bar/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/rock{
+	dir = 1
+	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/hangar)
+"Gh" = (
+/obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -594,10 +599,8 @@
 /obj/effect/turf_decal/corner/opaque/bar/half{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "VK" = (
 /obj/effect/landmark/outpost/elevator_machine,
@@ -614,12 +617,11 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked/lit,
 /area/hangar)
 "Xf" = (
-/obj/machinery/atmospherics/components/binary/volume_pump,
 /obj/effect/turf_decal/industrial/shutoff{
 	dir = 8
 	},
-/obj/effect/turf_decal/weather/rock{
-	dir = 8
+/obj/machinery/atmospherics/components/binary/volume_pump{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/hangar)
@@ -3961,7 +3963,7 @@ zD
 zD
 zD
 zD
-sZ
+Fv
 yy
 qx
 hT
@@ -4021,9 +4023,9 @@ if
 if
 zD
 if
-zD
+BD
 mz
-yy
+jL
 qx
 ye
 ye
@@ -4081,10 +4083,10 @@ KC
 tc
 if
 if
-BD
+if
 Xf
 iN
-BQ
+jL
 JQ
 ye
 ye
@@ -4143,9 +4145,9 @@ KC
 KC
 hC
 UL
-UL
+vm
 Vt
-yy
+BQ
 qx
 ye
 ye
@@ -4204,8 +4206,8 @@ tc
 if
 if
 jC
-UL
-vm
+Gh
+El
 rN
 wD
 ye
