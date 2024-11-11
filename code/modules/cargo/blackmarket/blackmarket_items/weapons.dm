@@ -32,6 +32,16 @@
 	stock_max = 3
 	availability_prob = 50
 
+/datum/blackmarket_item/weapon/fireaxe
+	name = "Fire Axe"
+	desc = "An incredibly sharp axe of reputable make, used by various engineers to settle arguments while hammered. Sold to us by a very friendly man in a suit."
+	item = /obj/item/melee/axe/fire
+
+	price_min = 1200
+	price_max = 2300
+	stock_max = 3
+	availability_prob = 40
+
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
 	desc = "Need a bit more... omph in your right hook? This gas operated powerfist will put you in the heavyweight."
@@ -158,6 +168,39 @@
 	price_max = 750
 	stock_max = 3
 	availability_prob = 40
+
+/datum/blackmarket_item/weapon/cm23
+	name = "CM-23 pistol"
+	desc = "The service pistol of the Confederated League. Chambered in 10mm and fresh off a crashed clipper. We made sure to scratch the ID off this time."
+
+	item = /obj/item/gun/ballistic/automatic/pistol/cm23
+	pair_item = list(/datum/blackmarket_item/ammo/cm23_mag)
+	price_min = 500
+	price_max = 1500
+	stock_max = 4
+	availability_prob = 50
+
+/datum/blackmarket_item/weapon/cm70
+	name = "CM-70 Machine Pistol"
+	desc = "One slick piece from the Confederated League. Chambered in 9mm. That officer wasn't happy to lose this but you should be safe."
+
+	item = /obj/item/gun/ballistic/automatic/pistol/cm70
+	pair_item = list(/datum/blackmarket_item/ammo/cm70_mag)
+	price_min = 900
+	price_max = 2100
+	stock_max = 2
+	availability_prob = 50
+
+/datum/blackmarket_item/weapon/cm5
+	name = "CM-5 SMG"
+	desc = "Now isn't this a good find. A whole League sub-machinegun, chambered in 9mm. We're pretty sure no one is gonna notice the pallet of these missing."
+
+	item = /obj/item/gun/ballistic/automatic/smg/cm5
+	pair_item = list(/datum/blackmarket_item/ammo/cm5_mag)
+	price_min = 1750
+	price_max = 3500
+	stock_max = 2
+	availability_prob = 30
 
 /datum/blackmarket_item/weapon/saber_smg
 	name = "Saber 9mm SMG"
@@ -351,15 +394,6 @@
 	stock_max = 2
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/fireaxe
-	name = "Fire Axe"
-	desc = "An incredibly sharp axe of reputable make, used by various engineers to settle arguments while hammered. Sold to us by a very friendly man in a suit."
-	item = /obj/item/melee/axe/fire
-
-	price_min = 1200
-	price_max = 2300
-	stock_max = 3
-	availability_prob = 40
 
 /datum/blackmarket_item/weapon/oneshot
 	name = "Hammer Launcher"

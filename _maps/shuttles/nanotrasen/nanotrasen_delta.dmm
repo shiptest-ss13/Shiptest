@@ -983,9 +983,7 @@
 	dir = 8
 	},
 /obj/machinery/power/ship_gravity,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dE" = (
@@ -1039,13 +1037,18 @@
 /area/ship/crew)
 "dI" = (
 /obj/structure/table,
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/spacecash/bundle/c1000,
 /obj/item/paper_bin{
 	pixel_x = 5;
 	pixel_y = 4
 	},
 /obj/item/folder/yellow{
 	pixel_x = 5;
-	pixel_y = 5
+	pixel_y = 7
 	},
 /obj/item/pen/fountain/captain,
 /obj/effect/turf_decal/corner/opaque/nsorange,
@@ -1123,9 +1126,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/science/robotics)
 "em" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "ev" = (
@@ -1851,9 +1852,7 @@
 	dir = 4;
 	name = "Engine Access"
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "whiteship_windows"
@@ -2068,11 +2067,11 @@
 	},
 /obj/structure/table,
 /obj/machinery/recharger,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/areaeditor/shuttle,
 /obj/machinery/turretid/ship{
 	pixel_y = -24
+	},
+/obj/machinery/fax/nanotrasen{
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2159,9 +2158,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "Bw" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -2388,9 +2385,7 @@
 	dir = 4;
 	name = "Engine Access"
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2676,9 +2671,7 @@
 	dir = 4;
 	name = "Engine Access"
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2839,9 +2832,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science/robotics)
 "TO" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -2979,9 +2970,7 @@
 	dir = 4;
 	name = "Engine Access"
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "whiteship_windows"

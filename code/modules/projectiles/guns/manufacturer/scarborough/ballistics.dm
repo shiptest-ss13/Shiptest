@@ -1,4 +1,4 @@
-#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet)
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet)
 #define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 //########### PISTOLS ###########//
@@ -158,6 +158,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	else
 		icon_state = "[base_icon_state]-0"
 
+/obj/item/ammo_box/magazine/m57_39_asp/empty
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/revolver/viper
 	name = "R-23 \"Viper\""
@@ -280,6 +282,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 /obj/item/ammo_box/magazine/m9mm_rattlesnake/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
+
+/obj/item/ammo_box/magazine/m9mm_rattlesnake/empty
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/himehabu
 	name = "PC-81 \"Himehabu\""
@@ -520,7 +525,6 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	default_ammo_type = /obj/item/ammo_box/magazine/boomslang
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/boomslang,
-		/obj/item/ammo_box/magazine/boomslang/short,
 	)
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -652,9 +656,6 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m556_42_hydra,
-		/obj/item/ammo_box/magazine/m556_42_hydra/extended,
-		/obj/item/ammo_box/magazine/m556_42_hydra/casket,
-		/obj/item/ammo_box/magazine/m556_42_hydra/small
 	)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "underbarrel grenade launcher")
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
@@ -908,12 +909,6 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m12g_bulldog,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/stun,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/slug,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/dragon,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/bioterror,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/meteor,
 	)
 	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
