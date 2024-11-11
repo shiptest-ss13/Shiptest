@@ -850,6 +850,7 @@
 "hz" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/holopad/emergency/bar,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "hB" = (
@@ -1357,6 +1358,9 @@
 	dir = 10
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
+/obj/machinery/holopad{
+	pixel_x = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "mM" = (
@@ -5131,6 +5135,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad{
+	pixel_x = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "UY" = (
