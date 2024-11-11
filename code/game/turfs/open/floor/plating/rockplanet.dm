@@ -49,7 +49,7 @@
 //this is the second time your name is mentioned here lol
 
 /turf/open/floor/plating/asteroid/rockplanet/safe
-	initial_gas_mx=ix = OPENTURF_DEFAULT_ATMOS
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit
 	light_range = 2

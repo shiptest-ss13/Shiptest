@@ -196,9 +196,9 @@
 	hangar_templates = list(
 		/datum/map_template/outpost/hangar/indie_rock_20x20,
 		/datum/map_template/outpost/hangar/indie_rock_40x20,
-		/datum/map_template/outpost/hangar/indie_rock40x40,
-		/datum/map_template/outpost/hangar/indie_rock56x20,
-		/datum/map_template/outpost/hangar/indie_rock56x40
+		/datum/map_template/outpost/hangar/indie_rock_40x40,
+		/datum/map_template/outpost/hangar/indie_rock_56x20,
+		/datum/map_template/outpost/hangar/indie_rock_56x40
 	)
 
 /datum/overmap/outpost/no_main_level // For example and adminspawn.
