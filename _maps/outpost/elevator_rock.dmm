@@ -1,0 +1,42 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/elevator_platform,
+/turf/template_noop,
+/area/template_noop)
+"f" = (
+/obj/structure/elevator_platform,
+/obj/machinery/light/floor,
+/turf/template_noop,
+/area/template_noop)
+"j" = (
+/obj/structure/elevator_platform,
+/obj/machinery/status_display/elevator{
+	pixel_y = 27
+	},
+/turf/template_noop,
+/area/template_noop)
+"V" = (
+/obj/structure/elevator_platform,
+/obj/machinery/elevator_floor_button{
+	pixel_y = 0;
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/template_noop,
+/area/template_noop)
+
+(1,1,1) = {"
+a
+V
+a
+"}
+(2,1,1) = {"
+j
+f
+a
+"}
+(3,1,1) = {"
+a
+a
+a
+"}

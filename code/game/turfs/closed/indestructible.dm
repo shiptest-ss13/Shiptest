@@ -251,6 +251,22 @@
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 
+
+/turf/closed/indestructible/rock/rockplanet
+	name = "dense hematite"
+	desc = "Extremely densely-packed rock. The iron grit rusts softly, bringing forth a crimson hue."
+	icon = 'icons/turf/walls/red_wall.dmi'
+	icon_state = "red_wall-0"
+	smooth_icon = 'icons/turf/walls/red_wall.dmi'
+	base_icon_state = "red_wall"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	pixel_x = -4
+	pixel_y = -4
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null
+
 /turf/closed/indestructible/rock/schist
 	name = "schist"
 	desc = "Extremely densely-packed layers of schist. Say it ten times fast."
