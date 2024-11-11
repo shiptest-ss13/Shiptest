@@ -105,7 +105,7 @@
 	var/obj/item/storage/box/B = ..()
 	B.name = "Bulletproof Armor Set Box"
 	B.desc = "A beat up looking box with some armor inside."
-	new /obj/item/clothing/suit/armor/vest/bulletproof/frontier(B)
+	new /obj/item/clothing/suit/armor/vest/frontier(B)
 	new /obj/item/clothing/head/helmet/bulletproof/x11/frontier(B)
 	return B
 
