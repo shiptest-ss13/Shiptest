@@ -713,7 +713,7 @@
 #define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
 #define COMSIG_GUN_SET_AUTOFIRE_SPEED "set_autofire_speed"
 
-/// send when enabling/diabling an autofire component for guns
+/// send when enabling/diabling an autofire component for mechs
 #define COMSIG_MECH_DISABLE_AUTOFIRE "disable_mech_autofire"
 #define COMSIG_MECH_ENABLE_AUTOFIRE "enable_mech_autofire"
 #define COMSIG_MECH_SET_AUTOFIRE_SPEED "set_mech_autofire_speed"

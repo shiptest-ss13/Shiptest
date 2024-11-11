@@ -56,7 +56,7 @@
 			autofire_on(arizona_ranger.client)
 
 
-// There is a gun and there is a user wielding it. The component now waits for the mouse click.
+// There is a mech and there is a user piloting it. The component now waits for the mouse click.
 /datum/component/automatic_fire_mecha/proc/autofire_on(client/usercli)
 	SIGNAL_HANDLER
 
@@ -233,7 +233,6 @@
 	else if(!in_view_range(shooter, target))
 		stop_autofiring() //Elvis has left the building.
 		return FALSE
-	//shooter.face_atom(target)
 	COOLDOWN_START(src, next_shot_cd, autofire_shot_delay)
 	if(SEND_SIGNAL(parent, COMSIG_AUTOFIRE_SHOT, target, shooter, mouse_parameters) & COMPONENT_AUTOFIRE_SHOT_SUCCESS)
 		return TRUE
