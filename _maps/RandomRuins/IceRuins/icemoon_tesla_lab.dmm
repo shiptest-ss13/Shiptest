@@ -279,6 +279,7 @@
 /area/space)
 "bT" = (
 /obj/structure/platform/industrial/corner,
+/obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "bU" = (
@@ -415,6 +416,15 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "cW" = (
@@ -442,6 +452,16 @@
 /obj/effect/mapping_helpers/turf/burnt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/tech,
+/area/space)
+"dc" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 9
+	},
+/obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "dd" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -542,6 +562,12 @@
 /obj/structure/platform/industrial,
 /turf/open/floor/plating/airless,
 /area/space)
+"dW" = (
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/concrete/slab_1,
+/area/space)
 "dX" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-03";
@@ -583,6 +609,14 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/turf/burnt,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "ec" = (
@@ -600,6 +634,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/squirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "ef" = (
@@ -619,9 +657,31 @@
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/space)
+"eu" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "ey" = (
 /obj/structure/platform/industrial,
 /obj/machinery/door/firedoor/border_only,
+/obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "eA" = (
@@ -675,6 +735,16 @@
 /area/space)
 "eH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "eI" = (
@@ -695,6 +765,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "eO" = (
@@ -779,6 +850,8 @@
 /obj/effect/turf_decal/corner_steel_grid/diagonal,
 /obj/effect/mapping_helpers/turf/burnt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "fy" = (
@@ -987,6 +1060,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "gL" = (
@@ -1035,6 +1114,13 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "gW" = (
@@ -1042,6 +1128,7 @@
 /obj/structure/platform/industrial{
 	dir = 4
 	},
+/obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "gZ" = (
@@ -1077,6 +1164,10 @@
 /obj/machinery/iv_drip/saline,
 /turf/open/floor/pod/dark,
 /area/space)
+"hw" = (
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/space)
 "hz" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -1086,6 +1177,12 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "hA" = (
@@ -1189,6 +1286,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"ib" = (
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/space)
 "ie" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -1279,6 +1380,10 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/turf/burnt,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "je" = (
@@ -1770,6 +1875,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/pavement,
 /area/space)
 "mq" = (
@@ -1781,6 +1888,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/pavement,
 /area/space)
 "mz" = (
@@ -2131,6 +2241,20 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/blood{
+	dir = 4;
+	icon_state = "gib3"
+	},
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "oB" = (
@@ -2230,6 +2354,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"pf" = (
+/obj/structure/platform/industrial,
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/space)
 "pr" = (
 /obj/effect/turf_decal/trimline/transparent/blue/corner{
 	dir = 1
@@ -2327,6 +2457,7 @@
 	id = "tl2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/space)
 "qg" = (
@@ -2429,6 +2560,7 @@
 	layer = 2.456
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "qZ" = (
@@ -2472,6 +2604,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"rw" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "rA" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -2480,6 +2624,25 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
+/area/space)
+"rB" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/platform/industrial{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/mapping_helpers/turf/burnt,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood{
+	dir = 4;
+	icon_state = "gib3"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "rC" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2534,6 +2697,12 @@
 	name = "Office"
 	},
 /obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -2642,6 +2811,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "st" = (
@@ -2694,6 +2866,9 @@
 	},
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
@@ -3010,6 +3185,14 @@
 	icon_state = "1-2"
 	},
 /obj/effect/mapping_helpers/turf/burnt,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/squirt,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/squirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "uK" = (
@@ -3048,6 +3231,9 @@
 /obj/effect/mapping_helpers/turf/burnt,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "uV" = (
@@ -3097,6 +3283,9 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 4;
 	id = "h1s"
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/space)
@@ -3279,6 +3468,9 @@
 	dir = 4;
 	id = "h1s"
 	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/space)
 "vY" = (
@@ -3327,6 +3519,11 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "wr" = (
@@ -3424,6 +3621,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "xk" = (
@@ -3534,6 +3732,11 @@
 	dir = 5;
 	pixel_y = -1
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "xW" = (
@@ -3659,7 +3862,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"yT" = (
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/space)
 "ze" = (
 /obj/effect/turf_decal/techfloor,
@@ -3735,11 +3946,24 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
 /area/space)
+"zr" = (
+/obj/effect/turf_decal/industrial/warning{
+	layer = 2.456;
+	dir = 1
+	},
+/obj/structure/poddoor_assembly,
+/turf/open/floor/plating,
+/area/space)
 "zx" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 8
 	},
 /turf/open/floor/pod/dark,
+/area/space)
+"zE" = (
+/obj/structure/platform/industrial,
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/space)
 "zN" = (
 /obj/machinery/door/firedoor/border_only,
@@ -3817,6 +4041,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/space)
 "zY" = (
@@ -3864,6 +4089,8 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/mapping_helpers/turf/burnt,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Aj" = (
@@ -3964,6 +4191,8 @@
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/industrial/warning/full,
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/slab_1,
 /area/space)
 "AK" = (
@@ -3986,6 +4215,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/structure/disposalpipe/segment{
 	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -4043,6 +4278,17 @@
 /obj/structure/closet/body_bag,
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
+/area/space)
+"Bd" = (
+/obj/effect/turf_decal/industrial/warning{
+	layer = 2.456;
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/concrete/pavement,
 /area/space)
 "Bf" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -4102,6 +4348,18 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Bu" = (
@@ -4181,6 +4439,7 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "BT" = (
@@ -4265,6 +4524,10 @@
 "CE" = (
 /turf/open/floor/engine/hull,
 /area/space)
+"CI" = (
+/obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/space)
 "CK" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -4273,6 +4536,16 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/engine/hull/interior,
+/area/space)
+"CN" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/concrete/pavement,
 /area/space)
 "CO" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -4308,6 +4581,14 @@
 	pixel_x = -8
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"Dj" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/concrete/slab_1,
 /area/space)
 "Dm" = (
 /obj/structure/cable/yellow{
@@ -4423,6 +4704,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/mapping_helpers/turf/burnt,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/squirt,
+/obj/effect/decal/cleanable/blood/squirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "DO" = (
@@ -4463,6 +4747,16 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"Ek" = (
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 5
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "Em" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet/blue,
@@ -4484,6 +4778,8 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "Et" = (
@@ -4579,6 +4875,12 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -4753,6 +5055,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "FZ" = (
@@ -4853,6 +5156,10 @@
 	dir = 5
 	},
 /obj/effect/mapping_helpers/turf/burnt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Gz" = (
@@ -5183,6 +5490,9 @@
 	pixel_x = 4;
 	pixel_y = 10
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Iz" = (
@@ -5237,6 +5547,12 @@
 "IY" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
 	},
 /turf/open/floor/wood,
 /area/space)
@@ -5323,6 +5639,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "JH" = (
@@ -5367,6 +5686,13 @@
 	dir = 8;
 	id = "h1s"
 	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/blood/squirt,
 /turf/open/floor/plating,
 /area/space)
 "JU" = (
@@ -5406,6 +5732,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Km" = (
@@ -5415,6 +5742,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 1
 	},
+/obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/space)
 "Kq" = (
@@ -5746,6 +6074,10 @@
 /obj/effect/turf_decal/industrial,
 /turf/open/floor/engine/hull,
 /area/space)
+"Nc" = (
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/concrete/slab_1,
+/area/space)
 "Nh" = (
 /obj/machinery/disposal/bin,
 /obj/effect/turf_decal/trimline/opaque/purple/line{
@@ -5755,6 +6087,10 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark/tesla_lab,
+/area/space)
+"Nl" = (
+/obj/effect/decal/cleanable/blood/splatter/over_window,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/space)
 "Nm" = (
 /obj/structure/platform/industrial,
@@ -5780,6 +6116,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Ns" = (
@@ -5870,6 +6207,16 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"Oh" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Oi" = (
 /obj/effect/turf_decal/box/corners{
@@ -5983,6 +6330,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -6134,6 +6487,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "Pr" = (
@@ -6240,6 +6596,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "PT" = (
@@ -6327,6 +6687,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/slab_1,
 /area/space)
 "QL" = (
@@ -6359,6 +6720,10 @@
 	pixel_x = 8
 	},
 /turf/open/floor/plasteel/grimy,
+/area/space)
+"QX" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "Rb" = (
 /obj/structure/toilet{
@@ -6396,6 +6761,22 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Rp" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Rs" = (
@@ -6474,6 +6855,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "RO" = (
@@ -6486,6 +6868,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -6714,6 +7102,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"ST" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/concrete/pavement,
+/area/space)
 "SX" = (
 /obj/machinery/power/smes,
 /obj/structure/cable/yellow,
@@ -6840,6 +7239,10 @@
 /obj/structure/platform/industrial{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "TW" = (
@@ -6862,6 +7265,17 @@
 	icon = 'icons/obj/stairs.dmi';
 	dir = 4
 	},
+/area/space)
+"Ue" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Ui" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -7176,8 +7590,19 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"Xj" = (
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/concrete/pavement,
+/area/space)
 "Xp" = (
 /turf/open/floor/engine/airless,
+/area/space)
+"Xr" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/effect/decal/cleanable/glass/plasma,
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/space)
 "Xu" = (
 /obj/effect/turf_decal/industrial/stand_clear,
@@ -7304,6 +7729,8 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/pavement,
 /area/space)
 "Yu" = (
@@ -7334,6 +7761,11 @@
 	pixel_x = 4
 	},
 /turf/open/floor/plastic,
+/area/space)
+"YF" = (
+/obj/structure/platform/industrial,
+/obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/space)
 "YI" = (
 /obj/structure/catwalk/over,
@@ -8693,7 +9125,7 @@ dY
 na
 eL
 FY
-Lx
+QX
 oR
 oR
 oR
@@ -8756,7 +9188,7 @@ HU
 OJ
 Gq
 qS
-Lx
+QX
 oR
 FE
 oR
@@ -9427,8 +9859,8 @@ KX
 AT
 Or
 KX
-uV
-gw
+Ue
+eu
 KX
 SK
 SK
@@ -9561,8 +9993,8 @@ KX
 KX
 uT
 ax
-cM
-aw
+hw
+zE
 Ys
 lT
 lT
@@ -9627,7 +10059,7 @@ ax
 QI
 QI
 mt
-sv
+Xj
 dm
 Lv
 dm
@@ -9679,7 +10111,7 @@ KX
 eG
 hE
 KX
-eO
+Oh
 cV
 KX
 KX
@@ -9742,9 +10174,9 @@ KX
 KX
 KX
 KX
-aH
+Rp
 Bs
-KX
+Nl
 zP
 OT
 KX
@@ -9801,21 +10233,21 @@ PP
 tZ
 fw
 Kl
-Lp
+zr
 dK
-AY
+dc
 ey
 xU
 Rn
 BR
 Nr
 eN
+Nl
 KX
 KX
-KX
-cM
-aw
-SZ
+CI
+YF
+CN
 dm
 dm
 ay
@@ -9874,11 +10306,11 @@ eb
 jd
 Pn
 vX
-NY
+Ek
 vf
-vS
-vS
-SZ
+Nc
+dW
+ST
 zX
 zj
 td
@@ -9933,14 +10365,14 @@ bT
 TU
 Es
 PR
-DL
+rB
 DL
 uJ
 JN
 ed
 eA
 pH
-pH
+Dj
 mp
 Pe
 sX
@@ -9992,19 +10424,19 @@ af
 HJ
 KX
 KX
-KX
+Nl
 Pb
 xf
 JF
-zf
+rw
 RL
 KX
 KX
 KX
 KX
-cM
-aw
-TT
+CI
+YF
+Bd
 dm
 dm
 xq
@@ -10065,7 +10497,7 @@ KX
 SK
 SK
 KX
-cM
+CI
 aw
 TT
 dm
@@ -10121,7 +10553,7 @@ KX
 KX
 KX
 KX
-KX
+Nl
 rI
 KX
 KX
@@ -10253,8 +10685,8 @@ IY
 rD
 li
 SD
-cM
-wO
+hw
+Xr
 AE
 Cm
 RZ
@@ -10316,9 +10748,9 @@ Ve
 kK
 Rs
 SD
-oR
-cM
-aw
+ib
+yT
+pf
 np
 Ea
 Ea
@@ -10380,7 +10812,7 @@ mV
 ou
 KX
 oR
-cM
+hw
 Kp
 nC
 tq

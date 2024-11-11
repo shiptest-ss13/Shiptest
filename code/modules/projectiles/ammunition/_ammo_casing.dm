@@ -246,7 +246,7 @@
 	icon_state = "slug"
 
 /obj/item/ammo_casing/spent/slug/buck
-	icon_state = "buck"
+	icon_state = "buckshot"
 
 /obj/item/ammo_casing/spent/slug/beanbag
 	icon_state = "beanbag"
