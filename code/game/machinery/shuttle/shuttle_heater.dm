@@ -360,8 +360,6 @@
 			// adds each oxidizer's power to the total oxidation max
 				if(GAS_O2)
 					oxidation_power += O2_OXIDATION_VALUE * gas_amount
-				if(GAS_NITRYL)
-					oxidation_power += NITRYL_OXIDATION_VALUE * gas_amount
 				if(GAS_NITROUS) //burning nitrous cools down the heater's main tank, just like it cools the intake on real cars.
 					oxidation_power += NITROUS_OXIDATION_VALUE * gas_amount
 					var/heat_capacity = gas_amount * NITROUS_COOLING_MULTIPIER

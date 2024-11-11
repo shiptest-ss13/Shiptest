@@ -32,11 +32,8 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 	AddElement(/datum/element/beauty, beauty)
 
-	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
-
-/obj/effect/decal/cleanable/Destroy()
-	SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
-	return ..()
+	if(!mapload)
+		SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
 /obj/effect/decal/cleanable/proc/replace_decal(obj/effect/decal/cleanable/C) // Returns true if we should give up in favor of the pre-existing decal
 	if(mergeable_decal)

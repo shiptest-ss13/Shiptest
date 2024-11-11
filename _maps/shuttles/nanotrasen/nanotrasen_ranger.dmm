@@ -138,10 +138,10 @@
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/hardsuit/ancient/lp,
-/obj/item/clothing/mask/breath,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
+/obj/item/clothing/mask/gas/vigilitas,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/storage/equip)
 "aO" = (
@@ -243,7 +243,7 @@
 /obj/item/gps,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/storage/belt/security/webbing,
-/obj/item/storage/pistolcase/commander,
+/obj/item/storage/guncase/pistol/commander,
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/structure/window/reinforced/tinted{
 	dir = 4
@@ -1137,7 +1137,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/firealarm/directional/east,
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/plasma,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1203,11 +1203,8 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/item/stamp/captain{
-	pixel_x = 7
-	},
 /obj/item/folder/blue{
-	pixel_x = 8;
+	pixel_x = -1;
 	pixel_y = 10
 	},
 /obj/effect/turf_decal/techfloor{
@@ -1220,6 +1217,9 @@
 /obj/item/pen{
 	pixel_x = -7;
 	pixel_y = -1
+	},
+/obj/item/stamp/nanotrasen/vigilitas/loss_prevention{
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1582,7 +1582,7 @@
 	name = "Ready Room";
 	req_ship_access = 1;
 	req_one_access_txt = "50,10,5,1,20";
-	req_one_access = list(50, 10, 5, 1, 20)
+	req_one_access = list(50,10,5,1,20)
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -2097,12 +2097,13 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/lp/engineer,
-/obj/item/gun/energy/plasmacutter,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 19;
 	pixel_y = -10
 	},
+/obj/item/radio/headset/alt,
+/obj/item/gear_pack/anglegrinder,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "pA" = (
@@ -2501,7 +2502,7 @@
 /obj/machinery/door/airlock/command{
 	dir = 4;
 	name = "Bridge";
-	req_one_access_txt = list(50, 10, 5, 1, 20)
+	req_one_access_txt = list(50,10,5,1,20)
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3232,9 +3233,9 @@
 	name = "Medical Specialist's Storage Unit"
 	},
 /obj/item/clothing/suit/space/hardsuit/ert/lp/med,
-/obj/item/clothing/mask/breath,
 /obj/item/tank/internals/oxygen,
 /obj/effect/turf_decal/industrial/outline/blue,
+/obj/item/clothing/mask/gas/vigilitas,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/storage/equip)
 "zc" = (
@@ -3433,15 +3434,15 @@
 	pixel_y = 6;
 	req_one_access_txt = "50,10,5,1,20";
 	req_ship_access = 1;
-	req_one_access = list(50, 10, 5, 1, 20)
+	req_one_access = list(50,10,5,1,20)
 	},
 /obj/item/clothing/suit/space/hardsuit/ert/lp/sec,
 /obj/machinery/suit_storage_unit/inherit{
 	name = "Security Specialist's Storage Unit"
 	},
-/obj/item/clothing/mask/breath,
 /obj/item/tank/internals/oxygen/red,
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/item/clothing/mask/gas/vigilitas,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/storage/equip)
 "Bg" = (
@@ -3923,7 +3924,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "EP" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/central)
 "Ff" = (
@@ -4058,8 +4059,8 @@
 	},
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/ert/lp,
-/obj/item/clothing/mask/breath,
 /obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/mask/gas/vigilitas,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "Ge" = (
@@ -4187,7 +4188,7 @@
 	pixel_x = 7;
 	pixel_y = -20
 	},
-/obj/item/storage/pistolcase/egun,
+/obj/item/storage/guncase/energy/egun,
 /obj/item/megaphone/command,
 /obj/structure/closet/secure_closet/lp/lieutenant,
 /obj/effect/turf_decal/techfloor{
@@ -4272,7 +4273,7 @@
 	id = "Ranger_Port_maint_shut";
 	req_ship_access = 1
 	},
-/obj/effect/spawner/lootdrop/waste/trash,
+/obj/effect/spawner/random/trash/decal,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Ih" = (
@@ -4721,7 +4722,7 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 8;
 	name = "Captain's Nest";
-	req_one_access_txt = list(50, 10, 5, 1, 20)
+	req_one_access_txt = list(50,10,5,1,20)
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -5558,11 +5559,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/effect/spawner/lootdrop/lpaid{
+/obj/effect/spawner/random/lpaid{
 	pixel_x = 2;
 	pixel_y = -2
 	},
-/obj/effect/spawner/lootdrop/lpretrieval{
+/obj/effect/spawner/random/lpretrieval{
 	pixel_x = -10;
 	pixel_y = 10
 	},
@@ -5887,10 +5888,10 @@
 /obj/machinery/suit_storage_unit/inherit{
 	name = "Engineering Specialist's Storage Unit"
 	},
-/obj/item/clothing/mask/breath,
 /obj/item/clothing/suit/space/hardsuit/ert/lp/engi,
 /obj/item/tank/internals/oxygen/yellow,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/clothing/mask/gas/vigilitas,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/storage/equip)
 "XA" = (
@@ -6250,14 +6251,14 @@
 	name = "Armory";
 	req_ship_access = 1
 	},
-/obj/item/storage/pistolcase/commander,
+/obj/item/storage/guncase/pistol/commander,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/clothing/suit/armor/nanotrasen/slim,
 /obj/item/clothing/suit/armor/nanotrasen/slim,
 /obj/item/ammo_box/magazine/smgm9mm,
 /obj/item/ammo_box/magazine/smgm9mm,
 /obj/item/ammo_box/magazine/smgm9mm,
-/obj/item/storage/pistolcase,
+/obj/item/storage/guncase/pistol,
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 5
 	},
@@ -6267,7 +6268,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto,
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/storage/equip)
 "ZW" = (
