@@ -64,7 +64,7 @@
 			electrocute_mob(user, get_area(src), src, 1, TRUE) //zorp
 			close()
 		to_chat(user, span_notice("You start to cut [src] apart"))
-		if (W.use_tool(src, user, 15 SECONDS, volume = 75))
+		if (W.use_tool(src, user, 10 SECONDS, volume = 75))
 			deconstruct(TRUE)
 
 /obj/machinery/door/poddoor/examine(mob/user)

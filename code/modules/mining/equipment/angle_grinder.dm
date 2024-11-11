@@ -27,9 +27,9 @@
 	hitsound = 'sound/weapons/anglegrinder.ogg'
 	usesound = 'sound/weapons/anglegrinder.ogg'
 	tool_behaviour = null // is set to TOOL_DECONSTRUCT once wielded
-	toolspeed = 1
-	wall_decon_damage = 250
-	usecost = 5
+	toolspeed = 0.6
+	wall_decon_damage = 350
+	usecost = 2.5
 	pack = /obj/item/gear_pack/anglegrinder
 	var/startsound = 'sound/weapons/chainsawhit.ogg'
 	var/adv = FALSE
@@ -127,8 +127,8 @@
 	hitsound = 'sound/weapons/blade1.ogg'
 	usesound = 'sound/weapons/blade1.ogg'
 	startsound = 'sound/weapons/saberon.ogg'
-	toolspeed = 0.7
-	usecost = 10
+	toolspeed = 0.4
+	usecost = 4
 	pack = /obj/item/gear_pack/anglegrinder/energy
 	light_system = MOVABLE_LIGHT
 	light_range = 3
