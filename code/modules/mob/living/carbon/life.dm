@@ -472,7 +472,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 	if(drunkenness)
 		drunkenness = max(drunkenness - (drunkenness * 0.04) - 0.01, 0)
-		if(drunkenness >= 15)
+		if(drunkenness >= 11)
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk)
 			jitteriness = max(jitteriness - 3, 0)
 			throw_alert("drunk", /atom/movable/screen/alert/drunk)
