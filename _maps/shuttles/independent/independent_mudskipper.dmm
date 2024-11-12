@@ -2258,10 +2258,6 @@
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor4"
 	},
-/obj/machinery/atmospherics/components/binary/pump/on/layer4{
-	name = "Air to Distro";
-	target_pressure = 1000
-	},
 /obj/machinery/atmospherics/components/binary/volume_pump/layer2{
 	dir = 1;
 	name = "Scrubbers to External"
@@ -2269,6 +2265,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/components/binary/pump/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Yu" = (
