@@ -1,0 +1,46 @@
+{
+	"faction": "/datum/faction/syndicate",
+	"prefix": "ISV",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_name": "Revenant Placeholder",
+	"map_short_name": "Revenant-class",
+	"description": "Not finished.",
+	"tags": [
+		"RP Focus",
+		"Combat",
+		"Engineering"
+	],
+	"map_path": "_maps/shuttles/syndicate/syndicate_gorlex_revenant.dmm",
+	"map_id": "syndicate_gorlex_revenant",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/job/syndicate/hos/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
+			"slots": 1
+		},
+		"Trooper": {
+			"outfit": "/datum/outfit/job/syndicate/security/gorlex",
+			"slots": 1
+		},
+		"Deck Assistant": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
