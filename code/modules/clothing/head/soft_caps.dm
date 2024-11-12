@@ -183,7 +183,7 @@
 	soft_type = "patrololive"
 	dog_fashion = null
 
-	/obj/item/clothing/head/soft/utility_navy
+/obj/item/clothing/head/soft/utility_navy
 	name = "navy utility cover"
 	desc = "A navy blue utility cover, unbranded. Perfect for Seamen on long voyages."
 	icon_state = "patrolnavysoft"
