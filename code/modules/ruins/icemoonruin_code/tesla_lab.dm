@@ -53,7 +53,7 @@
 	playsound(src, 'sound/effects/glassbr1.ogg', 75)
 	if(braim_bamage > 100)
 		new /obj/effect/anomaly/tvstatic(loc)
-	for(var/mob/living/carbon/human/looking in range(4, src))
+	for(var/mob/living/carbon/human/looking in range(4, src.loc))
 		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner)
 			continue
 		looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, braim_bamage, 200)
