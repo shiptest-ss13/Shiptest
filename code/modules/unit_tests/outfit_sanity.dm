@@ -6,7 +6,7 @@
 		if (outfit.random != TRUE) \
 			TEST_FAIL("[outfit.name]'s [#outfit_key] is invalid! Could not equip a [outfit.##outfit_key] into that slot."); \
 		else \
-			log_test("[outfit.name]'s [#outfit_key] is invalid! Could not equip a [outfit.##outfit_key] into that slot."); \
+			TEST_NOTICE(src, "[outfit.name]'s [#outfit_key] is invalid! Could not equip a [outfit.##outfit_key] into that slot."); \
 	} \
 }
 
@@ -72,7 +72,6 @@
 						if (outfit.random != TRUE)
 							TEST_FAIL("[outfit.name]'s backpack_contents are invalid! Couldn't add [path] to backpack.")
 						else
-							log_test("[outfit.name]'s backpack_contents are invalid! Couldn't add [path] to backpack.")
-
+							TEST_NOTICE(src, "[outfit.name]'s backpack_contents are invalid! Couldn't add [path] to backpack.")
 
 #undef CHECK_OUTFIT_SLOT

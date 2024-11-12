@@ -4,6 +4,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/ruin/beach)
+"bl" = (
+/obj/machinery/light/floor,
+/obj/machinery/porta_turret/ship/frontiersmen{
+	dir = 6;
+	faction = list("Frontiersmen","Turret")
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach)
 "bs" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -139,12 +147,9 @@
 /area/ruin/beach)
 "hd" = (
 /obj/machinery/light/floor,
-/obj/machinery/porta_turret/syndicate/energy{
-	active_power_usage = 0;
-	faction = list("Frontiersmen","beach");
-	idle_power_usage = 0;
-	reqpower = 0;
-	name = "Point defense anti-carp turret"
+/obj/machinery/porta_turret/ship/frontiersmen{
+	dir = 10;
+	faction = list("Frontiersmen","Turret")
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach)
@@ -259,6 +264,14 @@
 	},
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"lT" = (
+/obj/machinery/light/floor,
+/obj/machinery/porta_turret/ship/frontiersmen{
+	dir = 5;
+	faction = list("Frontiersmen","Turret")
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach)
 "lX" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
@@ -383,6 +396,14 @@
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"pd" = (
+/obj/machinery/light/floor,
+/obj/machinery/porta_turret/ship/frontiersmen{
+	dir = 9;
+	faction = list("Frontiersmen","Turret")
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach)
 "pe" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/effect/turf_decal/siding/wood{
@@ -478,6 +499,7 @@
 /obj/machinery/light/small/directional/north{
 	light_color = "#694c12"
 	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered,
 /turf/open/floor/carpet,
 /area/ruin/beach)
 "tj" = (
@@ -657,9 +679,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Bg" = (
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
-/mob/living/simple_animal/hostile/human/frontier{
-	faction = list("Frontiersmen","beach")
-	},
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plastic,
 /area/ruin/beach)
 "Bo" = (
@@ -840,9 +860,7 @@
 "GP" = (
 /obj/structure/chair/sofa/brown/right/directional/south,
 /obj/effect/decal/cleanable/cobweb,
-/mob/living/simple_animal/hostile/human/frontier{
-	faction = list("Frontiersmen","beach")
-	},
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/carpet,
 /area/ruin/beach)
 "Hb" = (
@@ -1032,9 +1050,7 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered{
-	faction = list("Frontiersmen","beach")
-	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered,
 /turf/open/floor/wood/ebony,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Os" = (
@@ -1108,9 +1124,7 @@
 /area/ruin/beach)
 "Rh" = (
 /obj/structure/chair/sofa/brown/corner/directional/south,
-/mob/living/simple_animal/hostile/human/frontier{
-	faction = list("Frontiersmen","beach")
-	},
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/carpet,
 /area/ruin/beach)
 "RE" = (
@@ -1223,9 +1237,7 @@
 	pixel_x = 4;
 	layer = 2.9
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered{
-	faction = list("Frontiersmen","beach")
-	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered,
 /turf/open/floor/wood/ebony,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Vm" = (
@@ -1305,9 +1317,7 @@
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ZJ" = (
-/mob/living/simple_animal/hostile/human/frontier{
-	faction = list("Frontiersmen","beach")
-	},
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/wood,
 /area/ruin/beach)
 "ZV" = (
@@ -1673,7 +1683,7 @@ Fr
 Fr
 Fr
 sG
-hd
+pd
 Fq
 Fr
 QQ
@@ -2260,7 +2270,7 @@ Fr
 Fr
 Fr
 sG
-hd
+lT
 Fq
 QQ
 ut
@@ -2356,7 +2366,7 @@ YL
 ID
 Fr
 sG
-hd
+bl
 Fq
 Fr
 Fr

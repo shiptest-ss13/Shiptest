@@ -27,7 +27,7 @@
 	var/real_explosion_block	//ignore this, just use explosion_block
 	var/breaksound = "shatter"
 	var/hitsound = 'sound/effects/Glasshit.ogg'
-	var/decon_time = 5 SECONDS
+	var/decon_time = 3 SECONDS
 	flags_ricochet = RICOCHET_HARD
 	ricochet_chance_mod = 0.4
 
@@ -409,7 +409,7 @@
 	glass_type = /obj/item/stack/sheet/rglass
 	rad_insulation = RAD_HEAVY_INSULATION
 	ricochet_chance_mod = 0.8
-	decon_time = 20 SECONDS
+	decon_time = 6 SECONDS
 
 //this is shitcode but all of construction is shitcode and needs a refactor, it works for now
 //If you find this like 4 years later and construction still hasn't been refactored, I'm so sorry for this
@@ -542,7 +542,7 @@
 	damage_deflection = 11		//WS Edit - Weakens R-Windows
 	explosion_block = 2
 	glass_type = /obj/item/stack/sheet/plasmarglass
-	decon_time = 25 SECONDS
+	decon_time = 15 SECONDS
 
 //entirely copypasted code
 //take this out when construction is made a component or otherwise modularized in some way
@@ -758,11 +758,20 @@
 	glass_type = /obj/item/stack/sheet/plastitaniumglass
 	glass_amount = 2
 	rad_insulation = RAD_HEAVY_INSULATION
-	decon_time = 30 SECONDS
+	decon_time = 10 SECONDS
 
 /obj/structure/window/plasma/reinforced/plastitanium/unanchored
 	anchored = FALSE
 	state = WINDOW_OUT_OF_FRAME
+
+/obj/structure/window/plasma/reinforced/plastitanium/spawnDebris(location)
+	. = list()
+	. += new /obj/item/shard/plastitanium(location)
+	. += new /obj/effect/decal/cleanable/glass/plastitanium(location)
+	if (reinf)
+		. += new /obj/item/stack/rods(location, (fulltile ? 2 : 1))
+	if (fulltile)
+		. += new /obj/item/shard/plastitanium(location)
 
 /obj/structure/window/paperframe
 	name = "paper frame"

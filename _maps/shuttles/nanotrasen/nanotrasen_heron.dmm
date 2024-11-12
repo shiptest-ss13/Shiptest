@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -807,7 +807,7 @@
 /area/ship/science/robotics)
 "dq" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
@@ -1037,7 +1037,7 @@
 /obj/item/gun/energy/e_gun/smg{
 	pixel_y = 2
 	},
-/obj/item/gun/ballistic/shotgun/automatic/combat{
+/obj/item/gun/ballistic/shotgun/automatic/m11{
 	pixel_y = -3
 	},
 /obj/structure/rack,
@@ -1547,6 +1547,10 @@
 	pixel_y = -1
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/item/stamp/nanotrasen{
+	pixel_y = 11;
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "gz" = (
@@ -1740,10 +1744,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "hn" = (
-/obj/effect/spawner/lootdrop/glowstick{
-	pixel_x = 5;
-	pixel_y = 9
-	},
+/obj/effect/spawner/random/decoration/glowstick,
 /obj/effect/decal/cleanable/plastic,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -1889,7 +1890,7 @@
 /area/ship/crew/dorm/dormtwo)
 "hM" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
@@ -2452,7 +2453,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 9
 	},
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/machinery/light/directional/west,
 /obj/machinery/light_switch{
 	pixel_y = 22;
@@ -3061,9 +3062,9 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/item/stamp/qm{
-	pixel_x = 8;
-	pixel_y = 9
+/obj/item/stamp/nanotrasen{
+	pixel_y = 9;
+	pixel_x = 8
 	},
 /obj/item/stamp{
 	pixel_x = 8;
@@ -3375,13 +3376,13 @@
 "mt" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber{
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber{
 	pixel_y = -2
 	},
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber{
 	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech,
@@ -4835,7 +4836,7 @@
 /area/ship/medical)
 "sr" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
@@ -6163,14 +6164,14 @@
 /area/ship/bridge)
 "wq" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/turf_decal/corner_techfloor_gray/diagonal{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance/five,
+/obj/effect/spawner/random/maintenance/five,
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -6916,9 +6917,9 @@
 	dir = 10
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/gloves,
-/obj/effect/spawner/lootdrop/minor/beret_or_rabbitears,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/clothing/gloves,
+/obj/effect/spawner/random/clothing/beret_or_rabbitears,
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -7722,7 +7723,7 @@
 /area/ship/crew/canteen)
 "CP" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
@@ -8902,7 +8903,7 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
-/obj/item/stamp/hos{
+/obj/item/stamp/nanotrasen/vigilitas/security{
 	pixel_y = 9;
 	pixel_x = -6
 	},
@@ -8993,7 +8994,7 @@
 /obj/effect/turf_decal/trimline/opaque/beige/filled/line{
 	dir = 10
 	},
-/obj/effect/spawner/lootdrop/salvage_50,
+/obj/effect/spawner/random/salvage/half,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -9159,11 +9160,11 @@
 	pixel_x = -6;
 	pixel_y = 4
 	},
-/obj/item/stamp/head_of_personnel{
+/obj/item/stamp/nanotrasen/officer{
 	pixel_x = -6;
 	pixel_y = 10
 	},
-/obj/item/stamp/captain{
+/obj/item/stamp/nanotrasen/captain{
 	pixel_x = -7;
 	pixel_y = 4
 	},
@@ -9188,6 +9189,10 @@
 	pixel_x = -5
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/item/stamp/nanotrasen/central{
+	pixel_x = 6;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "HP" = (
@@ -10464,7 +10469,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/official/get_your_legs{
@@ -10963,7 +10968,7 @@
 /area/ship/engineering/atmospherics)
 "OR" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -11575,8 +11580,8 @@
 	dir = 9
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -11813,7 +11818,7 @@
 /area/ship/hangar)
 "Sz" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
@@ -11889,7 +11894,7 @@
 	dir = 5
 	},
 /obj/item/toy/plush/beeplushie,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -12435,7 +12440,7 @@
 /obj/item/pen{
 	pixel_x = -6
 	},
-/obj/item/stamp/qm{
+/obj/item/stamp/nanotrasen/ns{
 	pixel_x = 6;
 	pixel_y = 9
 	},

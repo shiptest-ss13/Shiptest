@@ -15,6 +15,9 @@
 	name = "4.6x30mm bullet"
 	damage = 20
 
+/obj/projectile/bullet/c46x30mm/recycled
+	damage = 17
+
 /obj/projectile/bullet/c46x30mm/ap
 	name = "4.6x30mm armor-piercing bullet"
 	damage = 15
