@@ -115,6 +115,11 @@
 	display_name = "utility cover, beige"
 	path = /obj/item/clothing/head/soft/utility_beige
 
+/datum/gear/hat/utility_navy
+	display_name = "utility cover, navy"
+	path = /obj/item/clothing/head/soft/utility_navy
+
+
 //Beanies
 
 /datum/gear/hat/beanie
