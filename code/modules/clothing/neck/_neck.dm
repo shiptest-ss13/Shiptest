@@ -313,8 +313,8 @@
 /obj/item/clothing/neck/dogtag
 	name = "dogtag"
 	desc = "lo"
-	icon = 'icons/obj/vehicles.dmi'
-	icon_state = "shipkey"
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "dogtag"
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/dogtag/frontier
