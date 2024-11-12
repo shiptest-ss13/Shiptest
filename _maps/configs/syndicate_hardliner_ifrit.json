@@ -1,0 +1,43 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/syndicate",
+	"prefix": "ISV",
+	"map_name": "Y450-H Ifrit Class salvage clipper",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_short_name": "Ifrit-Class"
+	"description": "A heavy conversion of a Civilian shuttle turned warship by smaller Hardliner cells unable to procure more larger and dedicated warships on the scale of the Komodo-class. While not comparable to the firepower of the bluespace cannons the Komodo's fielded, they make up for that lack in speed and maneuverability, able to sneak past Vigililas patrols before they notice the sensor pings bouncing back of a weapons lock.",
+	"tags": [
+		"Salvage"
+		"Combat",
+		"Engineering",
+		"Generalist"
+	],
+	"starting_funds": 1500
+	"map_path": "_maps\shuttles\syndicate\syndicate_hardliner_ifrit",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
+			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/syndicate/miner/gorlex",
+			"slots": 2
+		},
+		"Junior Wrecker": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
