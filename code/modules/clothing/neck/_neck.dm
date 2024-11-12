@@ -316,6 +316,7 @@
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "dogtag"
 	resistance_flags = FIRE_PROOF
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/neck/dogtag/frontier
 	name = "frontiersman dogtag"
