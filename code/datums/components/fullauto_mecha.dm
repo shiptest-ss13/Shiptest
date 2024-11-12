@@ -262,7 +262,7 @@
 
 
 /obj/mecha/proc/do_autofire_shot(datum/source, atom/target, mob/living/shooter, params)
-	 click_action(target,shooter,params)
+	click_action(target,shooter,params)
 
 /datum/component/automatic_fire_mecha/proc/disable_autofire(datum/source)
 	enabled = FALSE
