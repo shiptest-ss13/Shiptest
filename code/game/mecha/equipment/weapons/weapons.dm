@@ -330,8 +330,8 @@
 		return 1
 
 /obj/item/ammo_casing/spent/mecha
-	name = "large bullet casing"
-	desc = "An oversized bullet casing designed to fired from mech mounted weapons."
+	name = "bullet casing"
+	desc = "A bullet casing designed to fired from exosuit mounted weapons."
 	projectile_type = null
 	icon_state = "rifle-brass"
 	transform = matrix(1.3, 0, 0, 0, 1.3, 0)
@@ -348,6 +348,10 @@
 	harmful = TRUE
 	ammo_type = "incendiary"
 	eject_casings = TRUE
+	casing_type = /obj/item/ammo_casing/spent/mecha/carbine
+
+/obj/item/ammo_casing/spent/mecha/carbine
+	name = "FNX-99 5.56mm Incendiary bullet"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/silenced
 	name = "\improper S.H.H. \"Quietus\" Carbine"
@@ -359,7 +363,6 @@
 	projectiles = 6
 	projectile_energy_cost = 50
 	harmful = TRUE
-	eject_casings = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot
 	name = "\improper LBX-10 \"Scattershot\" Heavy Shotgun"
@@ -379,7 +382,7 @@
 	casing_type = /obj/item/ammo_casing/spent/mecha/scattergun
 
 /obj/item/ammo_casing/spent/mecha/scattergun
-	name = "scattergun shell"
+	name = "8ga scattergun shell"
 	icon_state = "buckshot"
 	bounce_sfx_override = 'sound/weapons/gun/general/bulletcasing_shotgun_bounce.ogg'
 
@@ -398,6 +401,10 @@
 	ammo_type = "lmg"
 	full_auto = TRUE
 	eject_casings = TRUE
+	casing_type = /obj/item/ammo_casing/spent/mecha/umg
+
+/obj/item/ammo_casing/spent/mecha/umg
+	name = "UMG 7.5x50mm bullet"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/mounted
 	name = "\improper Mounted Heavy Machine Gun"
