@@ -300,7 +300,7 @@
 		clearInternalDamage(MECHA_INT_TANK_BREACH)
 		to_chat(user, span_notice("You repair the damaged gas tank."))
 		return
-	if(obj_integrity < max_integrity>)
+	if(obj_integrity < max_integrity)
 		if(!do_after(user, 20, target= src))
 			return
 		if(!W.use_tool(src, user, 0, volume=50, amount=1))
