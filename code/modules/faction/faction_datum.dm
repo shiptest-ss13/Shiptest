@@ -1,62 +1,77 @@
 /datum/faction
 	var/name
+	/// Primarly to be used for backend stuff.
+	var/short_name
 	var/parent_faction
+	/// List of prefixes that ships of this faction uses
 	var/list/prefixes
+
+/datum/faction/New()
+	if(!short_name)
+		short_name = name
 
 /datum/faction/syndicate
 	name = FACTION_SYNDICATE
 	parent_faction = /datum/faction/syndicate
-	prefixes = list("SEV", "SSV")
+	prefixes = PREFIX_SYNDICATE
 
 /datum/faction/syndicate/ngr
 	name = FACTION_NGR
-	prefixes = list("NGRV")
+	short_name = "NGR"
+	prefixes = PREFIX_NGR
 
 /datum/faction/syndicate/cybersun
 	name = FACTION_CYBERSUN
-	prefixes = list("CSSV")
+	prefixes = PREFIX_CYBERSUN
 
 /datum/faction/syndicate/suns
 	name = FACTION_SUNS
-	prefixes = list("SUNS")
+	short_name = "SUNS"
+	prefixes = PREFIX_SUNS
 
 /datum/faction/solgov
 	name = FACTION_SOLGOV
-	prefixes = list("SCSV")
+	prefixes = PREFIX_SOLGOV
 
 /datum/faction/srm
 	name = FACTION_SRM
-	prefixes = list("SRSV")
+	short_name = "SRM"
+	prefixes = PREFIX_SRM
 
 /datum/faction/inteq
 	name = FACTION_INTEQ
-	prefixes = list("IRMV")
+	short_name = "INTEQ"
+	prefixes = PREFIX_INTEQ
 
 /datum/faction/clip
 	name = FACTION_CLIP
-	prefixes = list("CMSV", "CMGSV")
+	short_name = "CLIP"
+	prefixes = PREFIX_CLIP
 
 /datum/faction/nt
 	name = FACTION_NT
+	short_name = "NT"
 	parent_faction = /datum/faction/nt
-	prefixes = list("NTSV")
+	prefixes = PREFIX_NT
 
 /datum/faction/nt/ns_logi
 	name = FACTION_NS_LOGI
-	prefixes = list("NSSV")
+	prefixes = PREFIX_NS_LOGI
 
 /datum/faction/nt/vigilitas
 	name = FACTION_VIGILITAS
-	prefixes = list("VISV")
+	prefixes = PREFIX_VIGILITAS
 
 /datum/faction/frontier
 	name = FACTION_FRONTIER
-	prefixes = list("FFV")
+	prefixes = PREFIX_FRONTIER
 
 /datum/faction/pgf
 	name = FACTION_PGF
-	prefixes = list("PGF", "PGFMC", "PGFN")
+	short_name = "PGF"
+	prefixes = PREFIX_PGF
 
 /datum/faction/independent
 	name = FACTION_INDEPENDENT
-	prefixes = list("SV", "IMV", "ISV")
+	short_name = "Indie"
+	prefixes = PREFIX_INDEPENDENT

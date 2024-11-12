@@ -247,7 +247,7 @@
 	ammo_type = /obj/item/ammo_casing/c45/rubber
 
 /obj/item/storage/box/ammo/c45_rubber
-	name = "box of incendiary .45 ammo"
+	name = "box of rubbershot .45 ammo"
 	desc = "A box of .45 rubbershot ammo, designed to disable targets without causing serious damage."
 	icon_state = "45box-rubbershot"
 
@@ -269,6 +269,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr
 	ammo_type = /obj/item/ammo_casing/c22lr
+	max_ammo = 25
 
 /obj/item/storage/box/ammo/c22lr
 	name = "box of .22 LR ammo"
@@ -388,6 +389,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c38
 	ammo_type = /obj/item/ammo_casing/c38
+	max_ammo = 15
 
 /obj/item/storage/box/ammo/c38
 	name = "box of .38 ammo"
@@ -489,8 +491,8 @@
 
 /obj/item/storage/box/ammo/a44roum_hp
 	name = "box of HP .44 roumain ammo"
-	desc = "A box of .44 roumain rubbershot ammo, designed to disable targets without causing serious damage."
-	icon_state = "a44roum-rubber"
+	desc = "A box of .44 roumain hollowpoint ammo, designed to disable targets without causing serious damage."
+	icon_state = "a44roum-hp"
 
 /obj/item/storage/box/ammo/a44roum_hp/PopulateContents()
 	..()

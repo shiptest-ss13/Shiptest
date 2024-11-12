@@ -60,7 +60,7 @@
 	else if(isgrenade(parent) || islandmine(parent) || issupplypod(parent))
 		radius = magnitude
 
-/datum/component/pellet_cloud/Destroy(force, silent)
+/datum/component/pellet_cloud/Destroy(force)
 	purple_hearts = null
 	pellets = null
 	targets_hit = null
@@ -90,7 +90,10 @@
 
 
 /datum/component/pellet_cloud/proc/create_casing_pellets(obj/item/ammo_casing/shell, atom/target, mob/living/user, fired_from, randomspread, spread, zone_override, params, distro)
-	shooter = user
+	if(user)
+		shooter = user
+	else
+		shooter = fired_from
 	var/targloc = get_turf(target)
 	if(!zone_override)
 		zone_override = shooter.zone_selected
@@ -106,8 +109,12 @@
 		RegisterSignal(shell.BB, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit))
 		RegisterSignal(shell.BB, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
 		pellets += shell.BB
-		if(!shell.throw_proj(target, targloc, shooter, params, spread))
-			return
+		if(user)
+			if(!shell.throw_proj(target, targloc, shooter, params, spread))
+				return
+		else
+			if(!shell.throw_proj(target, targloc, null, params, spread, shooter))
+				return
 		if(i != num_pellets)
 			shell.newshot()
 

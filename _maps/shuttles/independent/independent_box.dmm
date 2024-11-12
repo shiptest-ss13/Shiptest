@@ -711,7 +711,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet)
 "cG" = (
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/structure/closet/emcloset/anchored,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
@@ -968,7 +968,7 @@
 	dir = 8
 	},
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "dr" = (
@@ -1162,7 +1162,7 @@
 /obj/structure/sign/poster/official/help_others{
 	pixel_x = -32
 	},
-/obj/effect/spawner/lootdrop/tool_surgery_adv,
+/obj/effect/spawner/random/medical/surgery_tool/adv,
 /obj/item/megaphone/command,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
@@ -1269,7 +1269,6 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/storage/box/lights/bulbs,
-/obj/item/circuitboard/machine/ore_redemption,
 /obj/item/pickaxe/emergency,
 /obj/item/storage/box/lights/mixed,
 /obj/item/stack/sheet/mineral/plasma/twenty,
@@ -1421,7 +1420,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "mx" = (
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/bounty,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -1460,10 +1459,10 @@
 /area/ship/medical)
 "nA" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_y = 3
 	},
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = -5;
 	pixel_y = 3
 	},
@@ -2022,7 +2021,7 @@
 /obj/item/circuitboard/machine/chem_master,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/stack/sheet/glass/two,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/item/trash/can/food/beans,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2165,7 +2164,7 @@
 /obj/item/vending_refill/medical,
 /obj/item/screwdriver,
 /obj/machinery/airalarm/directional/south,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "Cn" = (
@@ -2808,7 +2807,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-10"
 	},
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /obj/structure/rack,
 /obj/item/areaeditor/shuttle,
 /obj/item/flashlight{

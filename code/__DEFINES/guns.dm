@@ -69,6 +69,7 @@
 #define MANUFACTURER_DONKCO "the Donk! Co. logo"
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
 #define MANUFACTURER_IMPORT "Lanchester Import Co."
+#define MANUFACTURER_SERENE "the Serene Outdoors logo"
 
 // Misfire chances if the gun's safety is off
 #define GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW 5
@@ -157,10 +158,6 @@
 #define AMMO_BOX_PER_BULLET 1
 ///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
 #define AMMO_BOX_FULL_EMPTY 2
-
-#define MAG_SIZE_SMALL 1
-#define MAG_SIZE_MEDIUM 2
-#define MAG_SIZE_LARGE 3
 
 //Projectile Reflect
 #define REFLECT_NORMAL (1<<0)

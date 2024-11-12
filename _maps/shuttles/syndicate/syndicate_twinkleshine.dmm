@@ -272,7 +272,7 @@
 "bR" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/three_quarters,
 /obj/machinery/light/directional/south,
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
@@ -358,7 +358,7 @@
 /area/ship/medical)
 "cp" = (
 /obj/structure/closet/emcloset,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /obj/item/trash/syndi_cakes,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -815,7 +815,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "eQ" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/pod/dark,
 /area/ship/engineering/atmospherics)
 "eR" = (
@@ -1809,7 +1809,7 @@
 /obj/item/codespeak_manual{
 	charges = 2
 	},
-/obj/item/storage/pistolcase/a357,
+/obj/item/storage/guncase/pistol/a357,
 /obj/item/megaphone/sec{
 	name = "syndicate megaphone"
 	},
@@ -1830,7 +1830,7 @@
 	name = "operative's locker"
 	},
 /obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
+/obj/item/clothing/head/helmet/syndie,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
@@ -2095,7 +2095,7 @@
 /area/ship/crew/canteen)
 "lZ" = (
 /obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
+/obj/item/clothing/head/helmet/syndie,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
@@ -3005,8 +3005,8 @@
 /obj/item/storage/box/ingredients/vegetarian,
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/reagent_containers/condiment/milk,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "qQ" = (
@@ -3310,7 +3310,7 @@
 	name = "operative's locker"
 	},
 /obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
+/obj/item/clothing/head/helmet/syndie,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
@@ -5820,7 +5820,7 @@
 	dir = 8
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/eight,
+/obj/effect/spawner/random/maintenance/eight,
 /obj/item/circuitboard/machine/autolathe,
 /obj/item/stock_parts/manipulator,
 /obj/item/stock_parts/matter_bin,
@@ -6329,7 +6329,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 8
 	},
@@ -7123,7 +7123,7 @@
 	name = "operative's locker"
 	},
 /obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/operator,
+/obj/item/clothing/head/helmet/syndie,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
@@ -7375,7 +7375,7 @@
 	keyslot = null
 	},
 /obj/item/storage/belt/sabre/solgov,
-/obj/item/storage/pistolcase/modelh,
+/obj/item/storage/guncase/pistol/modelh,
 /obj/item/storage/box/ammo/ferroslug,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -7487,7 +7487,7 @@
 	icon_state = "2-8"
 	},
 /obj/structure/closet/emcloset,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /obj/item/reagent_containers/food/snacks/burger/red{
 	name = "suspicious red burger";
 	desc = "A suspicious looking burger.";
@@ -8597,9 +8597,9 @@
 "Xf" = (
 /obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "Xg" = (
@@ -8865,7 +8865,7 @@
 /obj/item/megaphone/sec{
 	name = "syndicate megaphone"
 	},
-/obj/item/storage/pistolcase/ringneck,
+/obj/item/storage/guncase/pistol/ringneck,
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/radio/headset/syndicate/alt/leader,
 /obj/item/clothing/gloves/krav_maga/combatglovesplus,
