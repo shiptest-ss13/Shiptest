@@ -1,0 +1,42 @@
+{
+	"faction": "/datum/faction/syndicate",
+	"prefix": "ISV",
+	"namelists": [
+		"GORLEX",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_name": "Phantom-class Mining Courier",
+	"map_short_name": "Phantom-class",
+	"description": "A modern ship only made in the past twenty-ish years, the Phantom's sleek hull, narrow profile, and wings would make one to believe it a racer, or small yacht. Inside, however, is a sturdy layout for small-scale Hardliner mining groups, commissioned by Cybersun and built by ISF.",
+	"tags": [
+		"Mining",
+	],
+	"map_path": "_maps/shuttles/syndicate/syndicate_gorlex_phantom.dmm",
+	"map_id": "syndicate_gorlex_phantom",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
+			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/syndicate/miner/gorlex",
+			"slots": 2
+		},
+		"Operative": {
+			"outfit": "/datum/outfit/job/syndicate/security/gorlex",
+			"slots": 1
+		},
+		"Recruit": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
