@@ -539,17 +539,6 @@
 	newprofile.mob_overlay_icon_list = mob_overlay_icon_list.Copy()
 	newprofile.mob_overlay_state_list = mob_overlay_state_list.Copy() //WS EDIT - Mob Overlay State
 
-/datum/antagonist/changeling/xenobio
-	name = "Xenobio Changeling"
-	give_objectives = FALSE
-	show_in_roundend = FALSE //These are here for admin tracking purposes only
-	you_are_greet = FALSE
-
-	chem_storage = 25
-	geneticpoints = 2
-	chem_recharge_rate = 0.5
-	dna_max = 3
-
 /datum/antagonist/changeling/roundend_report()
 	var/list/parts = list()
 
@@ -582,6 +571,3 @@
 
 /datum/antagonist/changeling/antag_listing_name()
 	return ..() + "([changelingID])"
-
-/datum/antagonist/changeling/xenobio/antag_listing_name()
-	return ..() + "(Xenobio)"

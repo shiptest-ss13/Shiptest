@@ -28,9 +28,11 @@
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/beam_rifle/hitscan)
-	internal_cell = FALSE //prevents you from giving it an OP cell - WS Edit //shut up dumb nerd
-	mag_size = MAG_SIZE_LARGE
-	cell_type = "/obj/item/stock_parts/cell/gun/large"
+	internal_magazine = FALSE //prevents you from giving it an OP cell - WS Edit //shut up dumb nerd
+	default_ammo_type = /obj/item/stock_parts/cell/gun/large
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/large,
+	)
 	canMouseDown = TRUE
 	var/aiming = FALSE
 	var/aiming_time = 12
@@ -78,7 +80,10 @@
 
 /obj/item/gun/energy/beam_rifle/debug
 	delay = 0
-	cell_type = /obj/item/stock_parts/cell/infinite
+	default_ammo_type = /obj/item/stock_parts/cell/infinite
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/infinite,
+	)
 	aiming_time = 0
 	recoil = 0
 
@@ -477,7 +482,7 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		L.adjustFireLoss(impact_direct_damage)
-		L.emote("scream")
+		L.force_scream()
 
 /obj/projectile/beam/beam_rifle/proc/handle_hit(atom/target, piercing_hit = FALSE)
 	set waitfor = FALSE

@@ -20,11 +20,11 @@ GLOBAL_LIST_EMPTY(gear_datums)
 		if(G == initial(G.subtype_path))
 			continue
 
-		if(!use_name)
-			WARNING("Loadout - Missing display name: [G]")
+		if(!use_name && initial(G.path))
+			WARNING("Loadout gear [G] is missing display name")
 			continue
 		if(!initial(G.path) && use_category != "OOC") //OOC category does not contain actual items
-			WARNING("Loadout - Missing path definition: [G]")
+			WARNING("Loadout gear [G] is missing path definition")
 			continue
 
 		if(!GLOB.loadout_categories[use_category])

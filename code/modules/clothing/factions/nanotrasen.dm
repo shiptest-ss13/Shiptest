@@ -163,6 +163,7 @@
 	desc = "A thick fluid-repelling smock rendered in what is unmistakeably Nanotrasen Blue. The tag on the inside declares it property of Nanotrasen, Inc."
 	icon_state = "med_smock"
 	item_state = "bluecloth"
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/suit/nanotrasen/suitjacket
 	name = "fancy black suit jacket"
@@ -337,7 +338,7 @@
 	icon_state = "officer_peaked"
 	item_state = "bluecloth"
 
-/obj/item/clothing/head/nanotrasen/officer
+/obj/item/clothing/head/nanotrasen/officer/fedora
 	name = "officer's fedora"
 	desc = "A fedora in a violent shade of Nanotrasen Blue, with a red silk band."
 	icon_state = "officer_fedora"
@@ -389,3 +390,18 @@
 	righthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_righthand.dmi'
 	icon_state = "sash"
 	item_state = "redcloth"
+
+// Mask //
+
+/obj/item/clothing/mask/gas/vigilitas
+	name = "Vigilitas gas mask"
+	desc = "A protective gas mask designed for first response, specialist operations, and counter terrorism by Vigilitas Interstellar officers. It features a wide scratch resistant visor, ports for connecting an oxygen supply, and secure, comfortable straps."
+	icon = 'icons/obj/clothing/faction/nanotrasen/mask.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/mask.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/nanotrasen/mask_kepori.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_righthand.dmi'
+	icon_state = "vigi_gas_mask"
+	item_state = "vigi_gas_mask"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	supports_variations = KEPORI_VARIATION

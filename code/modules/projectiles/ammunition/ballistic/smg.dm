@@ -1,3 +1,12 @@
+// 5.7x39mm (Asp and Sidewinder)
+
+/obj/item/ammo_casing/c57x39mm
+	name = "5.7x39mm bullet casing"
+	desc = "A 5.7x39mm bullet casing."
+	icon_state = "rifle-steel"
+	caliber = "5.7x39mm"
+	projectile_type = /obj/projectile/bullet/c57x39mm
+
 // 4.6x30mm (WT-550 Automatic Rifle & SKM-24v)
 
 /obj/item/ammo_casing/c46x30mm
@@ -6,7 +15,15 @@
 	icon_state = "rifle-brass"
 	caliber = "4.6x30mm"
 	projectile_type = /obj/projectile/bullet/c46x30mm
-	bullet_per_box = 50
+	stack_size = 15
+
+/obj/item/ammo_casing/c46x30mm/recycled
+	name = "4.6x30mm recycled bullet casing"
+	desc = "A 4.6x30mm bullet casing."
+	bullet_skin = "surplus"
+	caliber = "4.6x30mm"
+	projectile_type = /obj/projectile/bullet/c46x30mm/recycled
+	stack_size = 15
 
 /obj/item/ammo_casing/c46x30mm/ap
 	name = "4.6x30mm armor-piercing bullet casing"
@@ -19,7 +36,6 @@
 	desc = "A 4.6x30mm incendiary bullet casing."
 	bullet_skin = "incen"
 	projectile_type = /obj/projectile/bullet/incendiary/c46x30mm
-	bullet_per_box = 50
 
 // 4.73x33mm caseless (Solar)
 
@@ -29,7 +45,6 @@
 	icon_state = "caseless"
 	caliber = "4.73x33mm caseless"
 	projectile_type = /obj/projectile/bullet/c47x33mm
-	bullet_per_box = 50
 
 // 5.56mm HITP caseless (Pistole C)
 

@@ -82,8 +82,9 @@
 #define DIGITIGRADE_VARIATION_NO_NEW_ICON (1<<2)
 #define DIGITIGRADE_VARIATION_SAME_ICON_FILE (1<<3) //intended for use with factional icon files for organization purposes, otherwise use either above. Ex of naming: a state called "nameof_thing" can be named "nameof_thing_digi"
 #define SNOUTED_VARIATION (1<<4) //Ex of naming: a state called "nameof_thing" can be named "nameof_thing_snouted"
-#define VOX_VARIATION (1<<5)
-#define KEPORI_VARIATION (1<<6)
+#define SNOUTED_SMALL_VARIATION (1<<5) //For Elzuose snouts
+#define VOX_VARIATION (1<<6)
+#define KEPORI_VARIATION (1<<7)
 
 #define NOT_DIGITIGRADE 0
 #define FULL_DIGITIGRADE 1
@@ -150,7 +151,7 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/gun/energy,
 	/obj/item/gun/grenadelauncher,
 	/obj/item/flamethrower,
-	/obj/item/kitchen/knife/combat,
+	/obj/item/melee/knife/combat,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
 	/obj/item/reagent_containers/spray/pepper,

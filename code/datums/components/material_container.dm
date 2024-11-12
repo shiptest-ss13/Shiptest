@@ -80,6 +80,9 @@
 	if(!has_space(material_amount))
 		to_chat(user, "<span class='warning'>[parent] is full. Please remove materials from [parent] in order to insert more.</span>")
 		return
+	if(I.contents.len && !istype(I, /obj/item/stack))
+		to_chat(user, span_warning("[I] has items inside of it. Please remove them before inserting it."))
+		return
 	user_insert(I, user)
 
 /// Proc used for when player inserts materials

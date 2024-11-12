@@ -488,7 +488,7 @@ WS End*/
 	if(H.health <= H.crit_threshold) //certain death above this threshold
 		REMOVE_TRAIT(H, TRAIT_STABLEHEART, type) //we have to remove the stable heart before we give him heart attack
 		to_chat(H,"<span class='danger'>You feel something rupturing inside your chest!</span>")
-		H.emote("scream")
+		H.force_scream()
 		H.set_heartattack(TRUE)
 		volume = 0
 	. = ..()

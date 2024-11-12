@@ -28,13 +28,14 @@
 //Unarmored suits//
 ///////////////////
 
-/obj/item/clothing/suit/hardliners
+/obj/item/clothing/suit/hardliners //Ideally, the basic suit model here should be turned into a placeholder model, and this item have "smock" or "apron" added on the end.
 	name = "white smock"
 	desc = "A plain-white surgical smock typically worn by both Hardliners and Cybersun staff. Even mercenaries need medical attention!"
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	icon_state = "hl_apron"
 	item_state = "whitecloth"
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/suit/hazardvest/hardliners
 	name = "blood-red hazard vest"
@@ -43,6 +44,20 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	icon_state = "hl_hazard"
 	item_state = "whitecloth"
+
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners
+	name = "hardliner winter coat"
+	desc = "A stark-white winter coat used by Marauders of the Hardliner movement, the zipper tab displaying the cracked emblem of the Gorlex Marauders."
+	icon_state = "coathl"
+	item_state = "coathl"
+	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/hardliners
+
+/obj/item/clothing/head/hooded/winterhood/security/hardliners
+	icon_state = "hood_hl"
+	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
 
 //////////////////
 //Armored suits//
@@ -114,6 +129,28 @@
 	lightweight = 1
 	jetpack = null
 
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/hl
+	name = "elite white-red hardsuit helmet"
+	desc = "An elite version of the infamous white-red Hardliner hardsuit, with improved armor and fireproofing. It is in EVA mode. Property of Gorlex Marauders."
+	alt_desc = "An elite version of the infamous white-red Hardliner hardsuit, with improved armor and fireproofing. It is in combat mode. Property of Gorlex Marauders."
+	icon_state = "hardsuit0-hlelite"
+	hardsuit_type = "hlelite"
+	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
+
+/obj/item/clothing/suit/space/hardsuit/syndi/elite/hl
+	name = "elite white-red hardsuit"
+	desc = "An elite version of the infamous white-red Hardliner hardsuit, with improved armor and fireproofing. It is in travel mode."
+	alt_desc = "An elite version of the infamous white-red Hardliner hardsuit, with improved armor and fireproofing. It is in combat mode."
+	icon_state = "hardsuit0-hlelite"
+	item_state = "hardsuit0-hlelite"
+	hardsuit_type = "hlelite"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/hl
+	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
+	lightweight = 1
+	jetpack = null
+
 /////////
 //Hats//
 ////////
@@ -179,3 +216,9 @@
 	item_state = "hl_webbing"
 	icon = 'icons/obj/clothing/faction/hardliners/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/belt.dmi'
+
+/obj/item/storage/belt/security/webbing/hardliners/sidewinder/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
+	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
+	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)

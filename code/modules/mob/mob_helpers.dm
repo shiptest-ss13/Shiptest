@@ -77,7 +77,7 @@
 	if(prob(probability))
 		zone = check_zone(zone)
 	else
-		zone = pickweight(list(BODY_ZONE_HEAD = 1, BODY_ZONE_CHEST = 1, BODY_ZONE_L_ARM = 4, BODY_ZONE_R_ARM = 4, BODY_ZONE_L_LEG = 4, BODY_ZONE_R_LEG = 4))
+		zone = pick_weight(list(BODY_ZONE_HEAD = 1, BODY_ZONE_CHEST = 1, BODY_ZONE_L_ARM = 4, BODY_ZONE_R_ARM = 4, BODY_ZONE_L_LEG = 4, BODY_ZONE_R_LEG = 4))
 	return zone
 
 ///Would this zone be above the neck
@@ -147,7 +147,7 @@
 			if(20)
 				newletter += "[newletter][newletter]"
 			else
-				// do nothing
+				EMPTY_BLOCK_GUARD
 		. += "[newletter]"
 	return sanitize(.)
 
@@ -192,7 +192,7 @@
 			if(5)
 				newletter = "glor"
 			else
-				// do nothing
+				EMPTY_BLOCK_GUARD
 		. += newletter
 	return sanitize(.)
 
@@ -379,9 +379,6 @@
 		return FALSE
 	if(M.mind && M.mind.special_role)//If they have a mind and special role, they are some type of traitor or antagonist.
 		switch(SSticker.mode.config_tag)
-			if("cult")
-				if(M.mind in SSticker.mode.cult)
-					return 2
 			if("nuclear")
 				if(M.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE))
 					return 2
