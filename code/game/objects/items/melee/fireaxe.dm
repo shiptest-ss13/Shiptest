@@ -70,7 +70,7 @@ Blunt
 	tool_behaviour = TOOL_MINING
 	toolspeed = 0.5
 	wall_decon_damage = MINERAL_WALL_INTEGRITY
-	usesound = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg')
+	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 
 /obj/item/melee/axe/sledgehammer/ComponentInitialize()
 	. = ..()
