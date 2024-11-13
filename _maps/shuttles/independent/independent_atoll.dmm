@@ -419,10 +419,27 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dT" = (
-/obj/machinery/iv_drip,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 4
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "cmo";
+	name = "medical administrator locker";
+	req_access_txt = "40"
+	},
+/obj/item/clothing/suit/longcoat/cmo,
+/obj/item/clothing/suit/toggle/labcoat/cmo,
+/obj/item/defibrillator/compact/loaded,
+/obj/item/clothing/shoes/sneakers/brown{
+	pixel_y = -12
+	},
+/obj/item/storage/belt/medical,
+/obj/item/clothing/head/beret/cmo{
+	pixel_y = 10
+	},
+/obj/item/clothing/glasses/hud/health/sunglasses{
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/storage/equip)
@@ -618,7 +635,8 @@
 "fj" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "med_secure";
-	name = "medical doctor locker"
+	name = "medical doctor locker";
+	req_access_txt = "5"
 	},
 /obj/item/clothing/neck/stethoscope,
 /obj/item/clothing/suit/longcoat,
@@ -641,7 +659,7 @@
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/item/storage/belt/medical,
 /obj/item/clothing/glasses/hud/health/prescription{
-	pixel_y = 10
+	pixel_y = 5
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
@@ -1300,6 +1318,10 @@
 	pixel_y = 5
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/item/stamp/cmo{
+	pixel_x = 4;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "lu" = (
@@ -1818,7 +1840,8 @@
 	},
 /obj/structure/closet/secure_closet{
 	icon_state = "med_secure";
-	name = "paramedic locker"
+	name = "paramedic locker";
+	req_access_txt = "5"
 	},
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/clothing/accessory/armband/medblue,
@@ -1840,15 +1863,15 @@
 /obj/item/clothing/head/soft/paramedic,
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/clothing/glasses/hud/health{
-	pixel_y = 10
-	},
-/obj/item/clothing/glasses/hud/health{
-	pixel_y = 10
-	},
 /obj/item/storage/belt/medical/paramedic,
 /obj/item/storage/belt/medical/paramedic,
 /obj/item/radio/intercom/directional/east,
+/obj/item/clothing/glasses/hud/health{
+	pixel_y = 5
+	},
+/obj/item/clothing/glasses/hud/health{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "rd" = (
@@ -2392,6 +2415,10 @@
 /obj/effect/turf_decal/corner/opaque/black/half,
 /obj/item/radio/intercom/directional/west,
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/item/toy/figure/cmo{
+	pixel_x = 8;
+	pixel_y = 17
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "wS" = (
@@ -2945,29 +2972,12 @@
 	req_access_txt = "5";
 	icon_state = "sec_wall"
 	},
-/obj/item/gun/energy/e_gun/mini/empty_cell{
-	pixel_y = 8
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/west,
+/obj/item/storage/guncase/pistol/miniegun{
+	pixel_y = 6
 	},
-/obj/item/gun/energy/e_gun/mini/empty_cell{
-	pixel_y = 3;
-	pixel_x = -1
-	},
-/obj/item/stock_parts/cell/gun/mini{
-	pixel_x = -13;
-	pixel_y = 20
-	},
-/obj/item/stock_parts/cell/gun/mini{
-	pixel_x = -13;
-	pixel_y = 15
-	},
-/obj/item/stock_parts/cell/gun/mini{
-	pixel_x = -13;
-	pixel_y = 10
-	},
-/obj/item/stock_parts/cell/gun/mini{
-	pixel_x = -13;
-	pixel_y = 5
-	},
+/obj/item/storage/guncase/pistol/miniegun,
 /obj/item/screwdriver{
 	pixel_x = 8
 	},
@@ -2975,8 +2985,6 @@
 	pixel_y = -3;
 	pixel_x = 10
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/eva)
 "Dn" = (
@@ -3913,12 +3921,6 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 10
-	},
-/obj/item/clothing/suit/longcoat/cmo{
-	pixel_x = 6
-	},
-/obj/item/clothing/suit/toggle/labcoat/cmo{
-	pixel_x = 6
 	},
 /obj/item/clothing/under/suit/green{
 	pixel_x = 6
@@ -5002,6 +5004,7 @@
 	pixel_x = -20;
 	pixel_y = -8
 	},
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/white,
 /area/ship/storage/equip)
 "Vf" = (
