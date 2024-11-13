@@ -309,7 +309,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "atoll_windows";
-	name = "window shutters";
+	name = "Window Shutters";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1339,6 +1339,11 @@
 "lw" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "atoll_bridge_windows";
+	name = "Bridge Window Shutters";
+	dir = 4
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "atoll_bridge_windows";
 	name = "Bridge Window Shutters";
@@ -2619,7 +2624,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "atoll_windows";
-	name = "window shutters";
+	name = "Window Shutters";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -4729,6 +4734,16 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/port)
+"RS" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "atoll_bridge_windows";
+	name = "Bridge Window Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "RW" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -4928,6 +4943,20 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Um" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "atoll_bridge_windows";
+	name = "Bridge Window Shutters"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "atoll_bridge_windows";
+	name = "Bridge Window Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Up" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/ccommons)
@@ -6614,10 +6643,10 @@ XT
 XT
 XT
 Mc
+RS
+RS
 lw
-lw
-lw
-Mc
+Um
 XT
 XT
 XT
