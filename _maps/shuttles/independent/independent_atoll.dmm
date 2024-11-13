@@ -3477,14 +3477,14 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock{
-	req_access_txt = "19";
-	name = "Officer Quarters"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/command{
+	req_access_txt = "19";
+	name = "Officer Quarters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/dorm/captain)
