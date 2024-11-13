@@ -422,6 +422,15 @@
 		var/obj/item/organ/O = AM
 		O.organ_flags &= ~ORGAN_FROZEN
 
+/obj/machinery/smartfridge/organ/preloaded
+	initial_contents = list(
+		/obj/item/organ/stomach = 2,
+		/obj/item/organ/lungs = 1,
+		/obj/item/organ/liver = 2,
+		/obj/item/organ/eyes = 2,
+		/obj/item/organ/heart = 2,
+		/obj/item/organ/ears = 2)
+
 // -----------------------------
 // Chemistry Medical Smartfridge
 // -----------------------------

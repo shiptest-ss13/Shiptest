@@ -123,10 +123,10 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
-/obj/machinery/smartfridge/organ{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/smartfridge/organ/preloaded{
 	pixel_x = -4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/morgue)
 "aR" = (
@@ -822,10 +822,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/morgue)
-"gr" = (
-/obj/structure/sign/number/random,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/engines/starboard)
 "gv" = (
 /obj/effect/turf_decal/box/white/corners,
 /obj/effect/turf_decal/box/white/corners{
@@ -1735,7 +1731,6 @@
 	},
 /obj/structure/closet/secure_closet/wall/directional/east{
 	icon_door = "med_wall";
-	locked = 0;
 	name = "mortuary locker";
 	req_access_txt = "5"
 	},
@@ -2517,7 +2512,6 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "wX" = (
-/obj/structure/reagent_dispensers/water_cooler,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/half{
 	dir = 8
 	},
@@ -2525,6 +2519,12 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
+/obj/structure/rack,
+/obj/item/wheelchair,
+/obj/item/wheelchair{
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "xa" = (
@@ -2665,6 +2665,10 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/aft)
+"yn" = (
+/obj/structure/sign/number/random,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering/engines/starboard)
 "yt" = (
 /obj/structure/table/wood,
 /obj/machinery/jukebox/boombox{
@@ -2800,15 +2804,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "zY" = (
-/obj/structure/table/glass,
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 8
 	},
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/south,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "Ae" = (
@@ -3296,7 +3299,9 @@
 "EY" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
-/obj/structure/curtain,
+/obj/structure/curtain{
+	opaque_closed = 1
+	},
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
 "Fd" = (
@@ -4568,7 +4573,6 @@
 	},
 /area/ship/medical)
 "Qg" = (
-/obj/structure/table/glass,
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1
 	},
@@ -4577,6 +4581,11 @@
 	dir = 1;
 	pixel_x = 8;
 	pixel_y = -20
+	},
+/obj/structure/table/glass,
+/obj/item/storage/box/rxglasses{
+	pixel_x = -4;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
@@ -5003,10 +5012,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/fore)
-"To" = (
-/obj/structure/sign/warning/docking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/engines/starboard)
 "Tt" = (
 /obj/structure/fluff/hedge,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5131,10 +5136,10 @@
 	pixel_x = -20;
 	pixel_y = -8
 	},
-/obj/machinery/iv_drip,
 /obj/structure/chair/handrail{
 	dir = 4
 	},
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/white,
 /area/ship/storage/equip)
 "Vf" = (
@@ -5146,6 +5151,10 @@
 /obj/effect/turf_decal/corner/transparent/lightgrey/diagonal,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/ccommons)
+"Vl" = (
+/obj/structure/sign/warning/docking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering/engines/starboard)
 "Vn" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -5764,7 +5773,7 @@ da
 ph
 TZ
 TZ
-gr
+yn
 XT
 XT
 "}
@@ -5786,7 +5795,7 @@ vB
 ph
 yF
 yF
-gr
+yn
 XT
 XT
 "}
@@ -5808,7 +5817,7 @@ sm
 jJ
 tK
 rO
-gr
+yn
 XT
 XT
 "}
@@ -5830,7 +5839,7 @@ MV
 hb
 dr
 Kh
-gr
+yn
 XT
 XT
 "}
@@ -5897,7 +5906,7 @@ qJ
 SE
 bW
 vI
-To
+Vl
 XT
 "}
 (10,1,1) = {"
