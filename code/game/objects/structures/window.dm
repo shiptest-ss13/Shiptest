@@ -773,6 +773,10 @@
 	if (fulltile)
 		. += new /obj/item/shard/plastitanium(location)
 
+/obj/structure/window/plasma/reinforced/plastitanium/indestructable
+    flags_1 = PREVENT_CLICK_UNDER_1 | NODECONSTRUCT_1
+    resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
 /obj/structure/window/paperframe
 	name = "paper frame"
 	desc = "A fragile separator made of thin wood and paper."

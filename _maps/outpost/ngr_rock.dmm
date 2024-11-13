@@ -73,7 +73,9 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "aw" = (
-/turf/closed/indestructible/opsglass,
+/obj/structure/window/plasma/reinforced/plastitanium/indestructable,
+/obj/structure/grille,
+/turf/open/floor/plating,
 /area/outpost/cargo)
 "aB" = (
 /obj/effect/turf_decal/corner/opaque/black/three_quarters,
@@ -256,7 +258,9 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "cG" = (
-/turf/closed/indestructible/opsglass,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium/indestructable,
+/turf/open/floor/plating,
 /area/outpost/vacant_rooms/shop)
 "cI" = (
 /obj/effect/turf_decal/hardline_big/five{
@@ -280,7 +284,7 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked,
 /area/outpost/maintenance/starboard)
 "cN" = (
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/engineering/atmospherics)
 "cT" = (
 /obj/structure/flora/rock/pile/rockplanet,
@@ -372,7 +376,9 @@
 /area/outpost/vacant_rooms/shop)
 "ee" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
-/turf/closed/indestructible/opsglass,
+/obj/structure/window/plasma/reinforced/plastitanium/indestructable,
+/obj/structure/grille,
+/turf/open/floor/plating,
 /area/outpost/engineering/atmospherics)
 "ei" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -396,7 +402,9 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/hallway/central)
 "ev" = (
-/turf/closed/indestructible/opsglass,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium/indestructable,
+/turf/open/floor/plating,
 /area/outpost/crew/cryo)
 "ew" = (
 /obj/effect/turf_decal/techfloor/orange{
@@ -475,7 +483,6 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo)
 "eW" = (
-/turf/closed/indestructible/syndicate,
 /area/outpost/cargo)
 "eX" = (
 /obj/machinery/light/dim/directional/north,
@@ -555,7 +562,7 @@
 /turf/open/floor/plating,
 /area/outpost/engineering/atmospherics)
 "fy" = (
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/crew/bar)
 "fB" = (
 /obj/structure/cable/yellow{
@@ -1143,7 +1150,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "kt" = (
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/maintenance/central)
 "ku" = (
 /obj/machinery/door/airlock/grunge{
@@ -1616,7 +1623,9 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "oG" = (
-/turf/closed/indestructible/opsglass,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium/indestructable,
+/turf/open/floor/plating,
 /area/outpost/crew/lounge)
 "oL" = (
 /obj/structure/railing{
@@ -1716,7 +1725,6 @@
 /turf/open/floor/plating,
 /area/outpost/hallway/central)
 "px" = (
-/turf/closed/indestructible/syndicate,
 /area/outpost/external)
 "pB" = (
 /obj/machinery/fax/admin/outpost{
@@ -1833,8 +1841,8 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "qL" = (
-/turf/closed/indestructible/syndicate,
-/area/outpost/crew/lounge)
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/outpost/cargo)
 "qR" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 1
@@ -2163,7 +2171,7 @@
 /turf/open/floor/plasteel/tech/airless,
 /area/outpost/engineering/atmospherics)
 "to" = (
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/crew/cryo)
 "ts" = (
 /obj/machinery/light/dim/directional/west,
@@ -2559,7 +2567,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "wJ" = (
-/obj/structure/falsewall/reinforced,
+/obj/structure/falsewall/plastitanium,
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "wM" = (
@@ -2885,7 +2893,7 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked,
 /area/outpost/maintenance/starboard)
 "zV" = (
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/vacant_rooms/shop)
 "zZ" = (
 /obj/item/radio/intercom/directional/north,
@@ -3012,7 +3020,7 @@
 /area/outpost/crew/bar)
 "AA" = (
 /obj/effect/decal/fakelattice,
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/hallway/central)
 "AB" = (
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -3358,7 +3366,9 @@
 /turf/open/floor/plating/rust,
 /area/outpost/cargo)
 "DJ" = (
-/turf/closed/indestructible/opsglass,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium/indestructable,
+/turf/open/floor/plating,
 /area/outpost/security)
 "DK" = (
 /obj/effect/turf_decal/corner/opaque/nsorange{
@@ -3443,7 +3453,7 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/outpost/maintenance/starboard)
 "ED" = (
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/security)
 "EH" = (
 /obj/structure/table/wood,
@@ -3647,11 +3657,7 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/outpost/maintenance/starboard)
 "Go" = (
-/obj/effect/turf_decal/techfloor,
-/obj/effect/turf_decal/corner/opaque/bar{
-	dir = 4
-	},
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/crew/lounge)
 "Gt" = (
 /obj/structure/bed/pod{
@@ -4057,7 +4063,9 @@
 /obj/machinery/door/poddoor/shutters/indestructible{
 	id = "sec_monitor"
 	},
-/turf/closed/indestructible/opsglass,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium/indestructable,
+/turf/open/floor/plating,
 /area/outpost/security)
 "JV" = (
 /obj/effect/turf_decal/techfloor,
@@ -4091,13 +4099,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/maintenance/central)
-"Ko" = (
-/obj/effect/turf_decal/techfloor,
-/obj/effect/turf_decal/corner/opaque/bar{
-	dir = 1
-	},
-/turf/closed/indestructible/syndicate,
-/area/outpost/crew/lounge)
 "Ku" = (
 /obj/machinery/light/dim/directional/north,
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -4190,7 +4191,7 @@
 /area/outpost/crew/bar)
 "Le" = (
 /obj/structure/extinguisher_cabinet/directional/south,
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/hallway/central)
 "Ll" = (
 /obj/structure/holosign/barrier/engineering/infinite,
@@ -4288,7 +4289,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/maintenance/central)
 "LU" = (
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/hallway/central)
 "LW" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -4345,7 +4346,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
 	},
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/crew/bar)
 "Mj" = (
 /obj/effect/turf_decal/road{
@@ -4452,7 +4453,9 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/hallway/central)
 "MV" = (
-/turf/closed/indestructible/opsglass,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium/indestructable,
+/turf/open/floor/plating,
 /area/outpost/hallway/central)
 "MW" = (
 /obj/effect/turf_decal/techfloor/orange{
@@ -4863,7 +4866,9 @@
 /turf/open/floor/engine/air,
 /area/outpost/engineering/atmospherics)
 "Rm" = (
-/turf/closed/indestructible/opsglass,
+/obj/structure/window/plasma/reinforced/plastitanium/indestructable,
+/obj/structure/grille,
+/turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "Ro" = (
 /turf/open/floor/plasteel/stairs/left{
@@ -4945,7 +4950,9 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
 /area/outpost/external)
 "RP" = (
-/turf/closed/indestructible/opsglass,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium/indestructable,
+/turf/open/floor/plating,
 /area/outpost/crew/bar)
 "RR" = (
 /obj/structure/sign/number/random{
@@ -5134,6 +5141,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
+"TU" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/outpost/external)
 "TV" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -5412,7 +5422,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "Wy" = (
-/turf/closed/indestructible/syndicate,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/maintenance/starboard)
 "Wz" = (
 /obj/effect/turf_decal/techfloor/orange{
@@ -5729,10 +5739,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
-"ZE" = (
-/obj/effect/turf_decal/techfloor,
-/turf/closed/indestructible/syndicate,
-/area/outpost/crew/lounge)
 "ZL" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
@@ -7823,13 +7829,13 @@ zV
 zV
 zV
 zV
-px
-px
-px
+TU
+TU
+TU
 Tk
-px
+TU
 Tk
-px
+TU
 Tk
 Tk
 Tk
@@ -8103,10 +8109,10 @@ ED
 ED
 ED
 FU
-px
+TU
 Tk
 Tk
-px
+TU
 Tk
 Tk
 Tk
@@ -8570,8 +8576,8 @@ to
 to
 to
 to
-qL
-qL
+Go
+Go
 HQ
 nv
 Xa
@@ -8635,12 +8641,12 @@ Em
 Em
 Em
 RN
-qL
+Go
 jp
 Vl
 qn
 sv
-qL
+Go
 eX
 nv
 Xa
@@ -8773,12 +8779,12 @@ Em
 Em
 Em
 Em
-qL
+Go
 DQ
 EH
 ln
 tj
-ZE
+Go
 Sm
 sX
 jW
@@ -8851,16 +8857,16 @@ oG
 iX
 nv
 JJ
-eW
-eW
-eW
-eW
-eW
-eW
-eW
-eW
-eW
-eW
+qL
+qL
+qL
+qL
+qL
+qL
+qL
+qL
+qL
+qL
 kt
 oC
 SE
@@ -8911,7 +8917,7 @@ cT
 Hv
 Em
 Em
-qL
+Go
 Wo
 Ic
 BG
@@ -8920,17 +8926,17 @@ oG
 PG
 HL
 yr
-eW
+qL
 xM
 fb
 BH
 Ni
 dO
 ZN
-eW
+qL
 so
 Mu
-eW
+qL
 kt
 kt
 kt
@@ -8980,29 +8986,29 @@ Em
 Hv
 Em
 Em
-qL
-qL
-qL
+Go
+Go
+Go
 lT
 nf
 oG
 iX
 nv
 dn
-eW
+qL
 AM
 rL
 Pc
 CW
 ut
 Mb
-eW
+qL
 tJ
 Jt
-eW
+qL
 Ik
 iF
-eW
+qL
 Tk
 Tk
 Tk
@@ -9054,24 +9060,24 @@ oG
 xJ
 nR
 eP
-ZE
+Go
 iX
 eF
 Hn
-eW
+qL
 qm
 CQ
 ex
 AO
 eE
 Ci
-eW
+qL
 si
 Fs
 Nq
 ua
 JI
-eW
+qL
 Tk
 Tk
 Tk
@@ -9123,24 +9129,24 @@ oG
 Cy
 ln
 fC
-Ko
+Go
 iX
 eF
 OQ
-eW
-eW
-eW
+qL
+qL
+qL
 ag
-eW
-eW
+qL
+qL
 TW
-eW
+qL
 pM
 Jt
 Nq
 xB
 VL
-eW
+qL
 Tk
 Tk
 Tk
@@ -9198,7 +9204,7 @@ eF
 Ol
 mz
 hH
-eW
+qL
 Ft
 bo
 Lz
@@ -9209,7 +9215,7 @@ Ok
 Nq
 FD
 fF
-eW
+qL
 Tk
 Tk
 Tk
@@ -9261,13 +9267,13 @@ oG
 Ak
 qU
 As
-ZE
+Go
 iX
 eF
 uS
 eW
 Gw
-eW
+qL
 SX
 On
 CW
@@ -9275,10 +9281,10 @@ On
 CW
 On
 KS
-eW
+qL
 Vp
 DI
-eW
+qL
 Tk
 Tk
 Tk
@@ -9326,17 +9332,17 @@ Em
 Em
 Em
 Em
-qL
-qL
-qL
+Go
+Go
+Go
 oG
-qL
+Go
 ei
 eF
 wh
-eW
-eW
-eW
+qL
+qL
+qL
 oN
 On
 le
@@ -9344,10 +9350,10 @@ le
 UK
 On
 KS
-eW
-eW
-eW
-eW
+qL
+qL
+qL
+qL
 Tk
 Tk
 Tk
@@ -9413,7 +9419,7 @@ gP
 gP
 aq
 Qy
-eW
+qL
 Tk
 Tk
 Tk
@@ -9482,7 +9488,7 @@ CW
 CW
 On
 Jt
-eW
+qL
 Tk
 Tk
 Tk
@@ -9541,9 +9547,9 @@ LU
 dB
 GN
 dB
-eW
+qL
 aw
-eW
+qL
 Jo
 Jz
 fk
@@ -9551,7 +9557,7 @@ fk
 fk
 Lw
 xV
-eW
+qL
 Tk
 Tk
 Tk
@@ -9610,17 +9616,17 @@ LU
 ix
 EM
 UI
-eW
+qL
 GH
-eW
-eW
-eW
+qL
+qL
+qL
 Pd
 Pd
 Pd
-eW
-eW
-eW
+qL
+qL
+qL
 Tk
 Tk
 Tk
@@ -9679,7 +9685,7 @@ LU
 sP
 sP
 sP
-eW
+qL
 Hv
 Em
 Nd
