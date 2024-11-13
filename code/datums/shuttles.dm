@@ -46,6 +46,9 @@
 
 	var/static/list/outfits
 
+	/// checks if we should NOT spawn /obj/effect/spawner/costume/test_ship_matspawn, delete this when ships have new mats mapped in
+	var/matbundle_spawned = FALSE
+
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE
 

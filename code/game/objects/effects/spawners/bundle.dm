@@ -152,8 +152,8 @@
 /obj/effect/spawner/costume/test_ship_matspawn
 	name = "roundstart mat spawn"
 	items = list(
-		/obj/item/book/manual/materials_and_you,
 		/obj/item/stack/sheet/mineral/coal/ten,
 		/obj/item/stack/sheet/mineral/silicon/five,
-		/obj/item/stack/sheet/mineral/copper/five
+		/obj/item/stack/sheet/mineral/copper/five,
+		/obj/item/book/manual/materials_and_you
 	)

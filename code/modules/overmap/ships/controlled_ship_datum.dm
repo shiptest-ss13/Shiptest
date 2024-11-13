@@ -78,7 +78,11 @@
 	///Stations the ship has been blacklisted from landing at, associative station = reason
 	var/list/blacklisted = list()
 
+	///our faction datum, used for cargo stuff
 	var/datum/faction/faction_datum
+
+	/// checks if we spawned /obj/effect/spawner/costume/test_ship_matspawn on a autolathe on the ship, if TRUE, we don't spawn another when another autolathe is spawned. Delete this var when ships have the new mats mapped
+	var/matbundle_spawned = FALSE
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
@@ -111,6 +115,7 @@
 		unique_ship_access = source_template.unique_ship_access
 		job_slots = source_template.job_slots?.Copy()
 		stationary_icon_state = creation_template.token_icon_state
+		matbundle_spawned = creation_template.matbundle_spawned
 		alter_token_appearance()
 		if(create_shuttle)
 			shuttle_port = SSshuttle.load_template(creation_template, src)
