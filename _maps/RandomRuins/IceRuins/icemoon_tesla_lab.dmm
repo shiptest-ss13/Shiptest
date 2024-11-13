@@ -60,13 +60,19 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "ah" = (
-/obj/structure/catwalk/over,
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "as" = (
@@ -157,10 +163,22 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
-"aG" = (
-/obj/item/gun/ballistic/automatic/pistol/cm23/no_mag,
-/turf/closed/mineral/random/snow,
-/area/overmap_encounter/planetoid/cave/explored)
+"aC" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/tesla_lab/lobby)
 "aH" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 1
@@ -426,8 +444,8 @@
 	pixel_x = 1
 	},
 /obj/item/paper/crumpled{
-	pixel_y = 18;
-	pixel_x = 1
+	pixel_y = 6;
+	pixel_x = -12
 	},
 /obj/item/paper/crumpled{
 	pixel_y = -8;
@@ -437,6 +455,15 @@
 	pixel_y = 8;
 	pixel_x = -8
 	},
+/obj/item/paper/crumpled{
+	pixel_y = 18;
+	pixel_x = 1
+	},
+/obj/item/paper/crumpled{
+	pixel_y = 21;
+	pixel_x = -9
+	},
+/obj/effect/decal/cleanable/food/plant_smudge,
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/dorms)
 "bY" = (
@@ -460,6 +487,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "ck" = (
@@ -489,6 +517,24 @@
 /area/ruin/icemoon/tesla_lab/lobby)
 "cn" = (
 /obj/structure/reagent_dispensers/watertank,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4;
+	color = "#75A2BB"
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1;
+	color = "#75A2BB"
+	},
+/obj/effect/turf_decal/box/corners{
+	color = "#75A2BB"
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8;
+	color = "#75A2BB"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/engineering)
 "cu" = (
@@ -511,9 +557,23 @@
 /obj/structure/chair,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/tesla_lab/lobby)
+"cG" = (
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/manifold/cyan/visible{
+	pixel_y = 0;
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/tesla_lab/engineering)
 "cM" = (
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
+"cP" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/open/floor/engine/airless,
+/area/ruin/icemoon/tesla_lab/engineering)
 "cQ" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 4
@@ -683,6 +743,7 @@
 /area/ruin/icemoon/tesla_lab/haymaker)
 "dq" = (
 /obj/structure/grille,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "dr" = (
@@ -697,9 +758,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
-"dx" = (
-/obj/effect/decal/cleanable/insectguts,
-/turf/open/floor/plating,
+"dv" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/engineering)
 "dy" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -928,6 +994,17 @@
 "ej" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/icemoon/tesla_lab/medbay)
+"em" = (
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	layer = 2.456
+	},
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "es" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4;
@@ -1116,6 +1193,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
+/obj/item/desynchronizer/tvstatic{
+	pixel_x = 7;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "eZ" = (
@@ -1203,6 +1284,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "fo" = (
+/obj/structure/filingcabinet/double/grey{
+	dir = 1
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/icemoon/tesla_lab/engineering)
 "fs" = (
@@ -1270,17 +1354,6 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
-"fA" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/airlock/grunge{
-	dir = 2;
-	name = "Crawlspace"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/icemoon/tesla_lab/engineering)
 "fB" = (
 /obj/item/storage/box/ammo/a762_40{
 	pixel_y = 3;
@@ -1328,6 +1401,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "fS" = (
@@ -1369,6 +1445,10 @@
 /obj/item/folder/blue{
 	pixel_y = 4;
 	pixel_x = -4
+	},
+/obj/item/stamp/clip{
+	pixel_x = 8;
+	pixel_y = 7
 	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/office)
@@ -1428,6 +1508,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/engineering)
 "gw" = (
@@ -1605,6 +1686,7 @@
 /obj/item/stack/ore/salvage/scrapmetal{
 	pixel_y = 6
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "hs" = (
@@ -1621,6 +1703,10 @@
 /obj/item/reagent_containers/pill/happinesspsych{
 	pixel_x = 9;
 	pixel_y = 12
+	},
+/obj/item/reagent_containers/pill/happinesspsych{
+	pixel_x = -11;
+	pixel_y = 0
 	},
 /obj/item/reagent_containers/pill/happinesspsych{
 	pixel_x = 5;
@@ -1726,6 +1812,16 @@
 /obj/structure/platform/industrial,
 /turf/open/floor/plating/airless,
 /area/ruin/icemoon/tesla_lab/engineering)
+"hJ" = (
+/obj/structure/dresser,
+/obj/structure/sign/poster/official/no_erp{
+	pixel_y = 30
+	},
+/obj/item/radio/intercom/directional/west{
+	frequency = 1473
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/icemoon/tesla_lab/dorms)
 "hL" = (
 /obj/structure/platform/industrial{
 	dir = 1
@@ -1874,6 +1970,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
+"ix" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	layer = 2.456
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "iF" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 4
@@ -1907,6 +2011,11 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/desynchronizer/tvstatic{
+	pixel_x = -6;
+	pixel_y = 3
+	},
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
 "jb" = (
@@ -1915,11 +2024,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/blood/squirt,
+/obj/effect/mapping_helpers/turf/burnt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
 "jc" = (
 /obj/structure/table,
-/obj/effect/spawner/random/trash/food_packaging,
+/obj/effect/spawner/random/trash/food_packaging{
+	pixel_y = 5;
+	pixel_x = -3
+	},
 /obj/effect/spawner/random/trash/food_packaging{
 	pixel_x = 7
 	},
@@ -1975,6 +2088,12 @@
 /obj/structure/catwalk/over,
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
@@ -2091,6 +2210,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/turf/burnt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
 "jW" = (
@@ -2217,6 +2337,13 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/airless,
+/area/ruin/icemoon/tesla_lab/engineering)
+"kp" = (
+/obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/box,
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "ks" = (
 /obj/machinery/door/firedoor/heavy/closed{
@@ -2372,6 +2499,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/icemoon/tesla_lab/medbay)
+"lb" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
+	pixel_y = 0;
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/corner,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "lc" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4;
@@ -2384,6 +2520,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/mapping_helpers/turf/burnt,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "li" = (
@@ -2438,6 +2577,10 @@
 /area/ruin/icemoon/tesla_lab/engineering)
 "lr" = (
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/icemoon/tesla_lab/turrets)
 "lv" = (
@@ -2456,6 +2599,11 @@
 	pixel_x = -5;
 	pixel_y = -10
 	},
+/obj/item/pen/fourcolor{
+	pixel_y = -10;
+	pixel_x = -6
+	},
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "lx" = (
@@ -2506,6 +2654,9 @@
 /area/ruin/icemoon/tesla_lab/central_hall)
 "lQ" = (
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "lT" = (
@@ -2549,6 +2700,9 @@
 "me" = (
 /obj/structure/fluff/paper/stack,
 /obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "mf" = (
@@ -2559,6 +2713,12 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -2620,6 +2780,9 @@
 	pixel_x = -14
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/clip{
+	pixel_y = 28
+	},
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "mt" = (
@@ -2633,6 +2796,12 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/ice/explored)
+"mw" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/box,
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating,
+/area/ruin/icemoon/tesla_lab/engineering)
 "mz" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4;
@@ -2886,6 +3055,12 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "nw" = (
@@ -2897,6 +3072,12 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
+"ny" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/icemoon/tesla_lab/lobby)
 "nC" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -2939,6 +3120,12 @@
 	},
 /obj/effect/turf_decal/industrial/warning/cee{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/engineering)
@@ -3000,6 +3187,12 @@
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
 	name = "Atmopsherics"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/engineering)
@@ -3143,11 +3336,9 @@
 /area/ruin/icemoon/tesla_lab/containment)
 "oP" = (
 /obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
-"oR" = (
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/space)
 "oW" = (
 /obj/structure/table,
 /turf/open/floor/plasteel/grimy,
@@ -3226,6 +3417,13 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
+"pq" = (
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/tesla_lab/engineering)
 "pr" = (
 /obj/effect/turf_decal/trimline/transparent/blue/corner{
 	dir = 1
@@ -3390,6 +3588,9 @@
 "qg" = (
 /obj/structure/bed,
 /obj/item/bedsheet/blue,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 5
+	},
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/office)
 "qi" = (
@@ -3433,6 +3634,14 @@
 /obj/item/reagent_containers/syringe/contraband/crank{
 	pixel_x = 6;
 	pixel_y = -8
+	},
+/obj/item/stack/medical/splint{
+	pixel_y = 9;
+	pixel_x = 5
+	},
+/obj/item/storage/backpack/duffelbag/med/surgery{
+	pixel_y = -6;
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/icemoon/tesla_lab/medbay)
@@ -3483,6 +3692,12 @@
 /obj/effect/turf_decal/industrial/warning/cee{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/engineering)
 "qD" = (
@@ -3494,6 +3709,7 @@
 	icon_state = "loadingarea_stripes";
 	dir = 2
 	},
+/obj/machinery/portable_atmospherics/canister/carbon_monoxide,
 /turf/open/floor/pod/dark,
 /area/ruin/icemoon/tesla_lab/cargo)
 "qG" = (
@@ -3583,13 +3799,16 @@
 /obj/structure/sign/warning/gasmask{
 	pixel_x = 28
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/lobby)
 "qZ" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black{
+/obj/effect/turf_decal/trimline/opaque/orange/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/opaque/orange/line{
+/obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -3662,6 +3881,12 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/cave/explored)
+"rt" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "rw" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 8
@@ -3828,6 +4053,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
+"rT" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
+	dir = 1
+	},
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "rX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -3847,6 +4082,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
+"se" = (
+/obj/structure/window/plasma/fulltile,
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2,
+/turf/open/floor/plating,
+/area/ruin/icemoon/tesla_lab/engineering)
 "sf" = (
 /obj/effect/turf_decal/trimline/transparent/blue/corner{
 	dir = 8
@@ -3910,6 +4151,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo)
+"sp" = (
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/tesla_lab/engineering)
 "st" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -3968,6 +4216,17 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/lobby)
+"sT" = (
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/tesla_lab/engineering)
 "sX" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
@@ -4082,6 +4341,12 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "tw" = (
@@ -4110,6 +4375,12 @@
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/icemoon/tesla_lab/containment)
+"tC" = (
+/obj/structure/sign/poster/contraband/kudzu{
+	pixel_y = -30
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/icemoon/tesla_lab/dorms)
 "tG" = (
 /obj/effect/turf_decal/trimline/transparent/blue/corner{
 	dir = 1
@@ -4301,6 +4572,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
 /area/ruin/icemoon/tesla_lab/cargo)
+"uv" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 8
+	},
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine/hull/interior,
+/area/ruin/icemoon/tesla_lab/engineering)
 "uw" = (
 /obj/structure/table,
 /obj/effect/turf_decal/trimline/opaque/purple/line{
@@ -4357,11 +4635,27 @@
 	pixel_y = 2
 	},
 /obj/machinery/newscaster/directional/north,
+/obj/item/radio/weather_monitor{
+	pixel_y = 7;
+	pixel_x = 14
+	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/office)
 "uD" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/icemoon/tesla_lab/cargo)
+"uE" = (
+/obj/structure/dresser,
+/obj/item/clothing/under/clip/formal{
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/clip/formal{
+	pixel_y = 4;
+	pixel_x = -6
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/icemoon/tesla_lab/dorms)
 "uH" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 8
@@ -4411,10 +4705,6 @@
 /obj/effect/decal/cleanable/blood/squirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
-"uK" = (
-/obj/structure/flora/grass/green,
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/space)
 "uO" = (
 /obj/effect/turf_decal/industrial/loading{
 	icon_state = "loadingarea_stripes";
@@ -4632,6 +4922,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/engineering)
+"vt" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ruin/icemoon/tesla_lab/engineering)
 "vu" = (
 /obj/effect/turf_decal/minutemen/edge{
 	dir = 8
@@ -4664,11 +4960,15 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/mapping_helpers/turf/burnt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
 "vF" = (
 /obj/structure/chair/bench/blue{
 	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 10
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/office)
@@ -4930,6 +5230,10 @@
 /obj/structure/chair/comfy/grey/old/alt/directional/east,
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/dorms)
+"wL" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "wO" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/effect/decal/cleanable/glass/plasma,
@@ -5060,6 +5364,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/tesla_lab/lab_halls)
+"xp" = (
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/structure/sign/clip{
+	pixel_y = 28
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "xq" = (
 /obj/machinery/light/directional/north,
 /obj/structure/cable{
@@ -5155,6 +5466,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
+"xG" = (
+/obj/structure/reagent_dispensers/fueltank,
+/obj/effect/turf_decal/box/corners{
+	dir = 1;
+	color = "#75A2BB"
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4;
+	color = "#75A2BB"
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8;
+	color = "#75A2BB"
+	},
+/obj/effect/turf_decal/box/corners{
+	color = "#75A2BB"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "xH" = (
 /obj/structure/table,
 /obj/effect/turf_decal/siding/wood{
@@ -5292,6 +5622,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/squirt,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "yz" = (
@@ -5358,9 +5689,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ruin/icemoon/tesla_lab/engineering)
-"yO" = (
-/turf/closed/mineral/random/snow,
-/area/ruin/icemoon/tesla_lab/lab_a)
 "yP" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 4
@@ -5384,6 +5712,19 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
+"yR" = (
+/obj/structure/table/wood,
+/obj/machinery/newscaster/directional/west,
+/obj/item/storage/backpack/security/clip{
+	pixel_y = 5;
+	pixel_x = 5
+	},
+/obj/item/storage/backpack/security/clip{
+	pixel_y = -3;
+	pixel_x = -5
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/icemoon/tesla_lab/dorms)
 "yT" = (
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/item/ammo_casing/spent/rifle_brass,
@@ -5785,6 +6126,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/engineering)
 "AD" = (
@@ -5848,14 +6190,20 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
+/obj/item/gun/energy/kalix/clip{
+	pixel_x = -2;
+	pixel_y = 14
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/office)
 "AS" = (
-/obj/structure/catwalk/over,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "AT" = (
@@ -5926,6 +6274,9 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/turf/burnt,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Bg" = (
@@ -6014,10 +6365,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "By" = (
@@ -6055,6 +6406,12 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/engineering)
 "BC" = (
@@ -6111,6 +6468,16 @@
 /obj/effect/decal/cleanable/blood/squirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
+"BP" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 10
+	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "BQ" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -6127,6 +6494,12 @@
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
 	name = "Engineering"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/engineering)
@@ -6163,6 +6536,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/engineering)
 "BZ" = (
@@ -6181,6 +6557,9 @@
 /obj/effect/spawner/bunk_bed,
 /obj/structure/sign/poster/rilena/random{
 	pixel_y = 30
+	},
+/obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
+	pixel_x = 28
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/dorms)
@@ -6313,6 +6692,9 @@
 /obj/item/chair,
 /obj/effect/turf_decal/trimline/opaque/mauve/warning{
 	dir = 10
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/lab_a)
@@ -6543,6 +6925,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "Ek" = (
@@ -6553,6 +6937,17 @@
 /obj/effect/decal/cleanable/blood/squirt{
 	dir = 5
 	},
+/obj/structure/closet/emcloset/wall/directional/west{
+	populate = 0
+	},
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "Em" = (
@@ -6591,6 +6986,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Ey" = (
@@ -6618,15 +7016,15 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "EB" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/trimline/opaque/orange/line{
 	dir = 9
 	},
 /obj/item/radio/intercom/directional/north{
 	frequency = 1473
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/engineering)
@@ -6727,14 +7125,31 @@
 /obj/machinery/fax/ruin{
 	pixel_y = 5
 	},
+/obj/item/radio/intercom/directional/east{
+	frequency = 1473
+	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/office)
+"Fb" = (
+/obj/machinery/atmospherics/pipe/manifold/cyan/visible{
+	pixel_y = 0;
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "Ff" = (
 /obj/structure/chair/office{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/containment)
+"Fg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plating,
+/area/ruin/icemoon/tesla_lab/engineering)
 "Fh" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -6884,6 +7299,9 @@
 "FJ" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame,
 /obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "FL" = (
@@ -7002,6 +7420,18 @@
 /obj/machinery/newscaster/directional/west,
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/dorms)
+"Gi" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/grunge{
+	dir = 2;
+	name = "Crawlspace"
+	},
+/obj/effect/mapping_helpers/airlock/welded,
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "Gk" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -7009,6 +7439,14 @@
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/cave/explored)
 "Gl" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 9
+	},
+/obj/machinery/atmospherics/components/binary/valve/digital/layer4,
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/engineering)
 "Go" = (
@@ -7024,6 +7462,20 @@
 /obj/item/mine/directional/claymore/live{
 	pixel_y = 3
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/emcloset/wall/directional/east{
+	populate = 0
+	},
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Gv" = (
@@ -7094,6 +7546,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo)
+"GB" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "GC" = (
 /obj/machinery/conveyor{
 	id = "tlb";
@@ -7266,6 +7724,12 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "Hl" = (
@@ -7342,6 +7806,12 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "HC" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
+	dir = 6
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ruin/icemoon/tesla_lab/engineering)
 "HG" = (
@@ -7351,6 +7821,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
 /area/ruin/icemoon/tesla_lab/cargo)
+"HI" = (
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/turf/burnt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/tesla_lab/dorms)
 "HJ" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
@@ -7406,6 +7886,10 @@
 /obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "floor6"
 	},
+/obj/item/clothing/under/clip/medic{
+	pixel_x = -11;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/icemoon/tesla_lab/medbay)
 "HU" = (
@@ -7417,6 +7901,9 @@
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/lobby)
 "HV" = (
@@ -7466,6 +7953,13 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/icemoon/tesla_lab/medbay)
+"HX" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "Ic" = (
 /obj/effect/turf_decal/trimline/opaque/purple/filled/warning{
 	dir = 10
@@ -7569,6 +8063,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/chem_pile,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "II" = (
@@ -7614,6 +8109,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/engineering)
+"IU" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/grunge{
+	name = "Dorm";
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock_note_placer{
+	note_info = "I swear to god if you don't clean this shit I'm gonna kill you"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/tesla_lab/dorms)
 "IY" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -7939,11 +8453,11 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Kx" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
@@ -8157,6 +8671,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
 "LB" = (
+/obj/effect/turf_decal/spline/fancy/wood/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/wood/corner,
+/obj/effect/turf_decal/spline/fancy/wood/corner{
+	dir = 4
+	},
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/office)
 "LC" = (
@@ -8192,6 +8713,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
+/obj/effect/mob_spawn/human/corpse,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "LR" = (
@@ -8213,6 +8735,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_a)
+"LY" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/turf/open/floor/engine/hull/interior,
+/area/ruin/icemoon/tesla_lab/engineering)
 "Me" = (
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/tesla_lab/lobby)
@@ -8310,6 +8836,17 @@
 /area/ruin/icemoon/tesla_lab/armory)
 "Mx" = (
 /obj/structure/dresser,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 9
+	},
+/obj/item/storage/backpack/satchel/sec/clip{
+	pixel_y = 8;
+	pixel_x = -6
+	},
+/obj/item/toy/plush/goatplushie{
+	pixel_y = 11;
+	pixel_x = 6
+	},
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/office)
 "ME" = (
@@ -8391,6 +8928,9 @@
 /obj/structure/fluff/paper/stack{
 	pixel_y = 6;
 	pixel_x = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
 	},
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
@@ -8546,6 +9086,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
 "NZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "Oa" = (
@@ -8680,11 +9221,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "Ox" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/trimline/opaque/orange/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech,
@@ -8693,6 +9234,7 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/cave/explored)
 "OA" = (
+/obj/effect/mob_spawn/human/corpse,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "OB" = (
@@ -8756,6 +9298,9 @@
 	},
 /obj/machinery/door/airlock/external,
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/lobby)
 "OR" = (
@@ -8776,8 +9321,25 @@
 "OT" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/tesla_lab/lobby)
+"OU" = (
+/obj/structure/dresser,
+/obj/item/clothing/under/clip/formal/alt{
+	pixel_y = 11;
+	pixel_x = -6
+	},
+/obj/item/clothing/under/clip/formal/alt{
+	pixel_y = 6;
+	pixel_x = 7
+	},
+/obj/item/clothing/head/beret{
+	pixel_y = 16;
+	pixel_x = 8
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/icemoon/tesla_lab/dorms)
 "OX" = (
 /obj/machinery/blackbox_recorder{
 	name = "Backup Blackbox Recorder";
@@ -8786,7 +9348,6 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/armory)
 "OY" = (
-/obj/structure/catwalk/over,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -8796,6 +9357,13 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "OZ" = (
@@ -8821,7 +9389,7 @@
 	pixel_y = 8;
 	pixel_x = -5
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "Pe" = (
@@ -8999,6 +9567,7 @@
 	},
 /obj/effect/mapping_helpers/turf/burnt,
 /obj/item/ammo_casing/spent/slug/buck,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "PH" = (
@@ -9109,6 +9678,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/containment)
+"PZ" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "Qg" = (
 /obj/effect/turf_decal/trimline/transparent/blue/corner{
 	dir = 8
@@ -9189,6 +9764,12 @@
 /obj/item/radio/intercom/directional/east{
 	frequency = 1473
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/engineering)
 "QI" = (
@@ -9242,6 +9823,9 @@
 "QX" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/airlock/external,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Rb" = (
@@ -9302,8 +9886,8 @@
 	dir = 4
 	},
 /obj/item/stack/cable_coil/cut/random,
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals,
 /obj/machinery/light/directional/north,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "Rs" = (
@@ -9340,6 +9924,12 @@
 	},
 /obj/item/radio/intercom/directional/north{
 	frequency = 1473
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
@@ -9593,8 +10183,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
+"St" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "Sv" = (
 /obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -9729,8 +10329,22 @@
 /obj/item/mine/directional/claymore/live{
 	pixel_y = 3
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
+"SN" = (
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/valve/digital/on,
+/turf/open/floor/plating,
+/area/ruin/icemoon/tesla_lab/engineering)
 "SO" = (
 /obj/structure/frame/machine,
 /obj/effect/turf_decal/box/corners{
@@ -9888,7 +10502,7 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Tt" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible,
+/obj/machinery/atmospherics/components/binary/valve/digital/on,
 /turf/open/floor/engine/hull/interior,
 /area/ruin/icemoon/tesla_lab/engineering)
 "TC" = (
@@ -9897,6 +10511,10 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
+	},
+/obj/effect/decal/cleanable/chem_pile{
+	pixel_x = -5;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
@@ -10098,6 +10716,7 @@
 /obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "floor2"
 	},
+/obj/effect/mapping_helpers/turf/burnt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
 "Uo" = (
@@ -10292,10 +10911,20 @@
 /obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plastic,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
+"VP" = (
+/obj/machinery/atmospherics/pipe/manifold/cyan/visible{
+	pixel_y = 0;
+	dir = 8
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ruin/icemoon/tesla_lab/engineering)
 "VR" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1;
 	color = "#75A2BB"
+	},
+/obj/structure/closet/crate/rations{
+	opened = 1
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/icemoon/tesla_lab/cargo)
@@ -10340,7 +10969,9 @@
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "Wf" = (
-/obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible,
+/obj/effect/turf_decal/box,
+/obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/engineering)
 "Wh" = (
@@ -10350,6 +10981,9 @@
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Wi" = (
@@ -10459,8 +11093,15 @@
 /area/ruin/icemoon/tesla_lab/central_hall)
 "WI" = (
 /obj/structure/table,
-/obj/item/paper_bin,
+/obj/item/paper_bin{
+	pixel_y = 9;
+	pixel_x = 3
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/item/pen/fourcolor{
+	pixel_y = 11;
+	pixel_x = 3
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/office_two)
 "WN" = (
@@ -10516,6 +11157,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "Xp" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/engine/airless,
 /area/ruin/icemoon/tesla_lab/engineering)
 "Xr" = (
@@ -10582,6 +11226,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/tesla_lab/lab_halls)
+"XB" = (
+/obj/structure/window/plasma/fulltile,
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/turf/open/floor/plating,
+/area/ruin/icemoon/tesla_lab/engineering)
 "XF" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
@@ -10592,6 +11242,9 @@
 	icon_state = "4-8"
 	},
 /obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -10609,10 +11262,12 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/obj/structure/catwalk/over,
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "XK" = (
@@ -10787,6 +11442,7 @@
 /obj/effect/decal/cleanable/blood/squirt{
 	dir = 5
 	},
+/obj/effect/mapping_helpers/turf/burnt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
 "YC" = (
@@ -10883,9 +11539,12 @@
 	dir = 1
 	},
 /obj/structure/table,
-/obj/item/desynchronizer/tvstatic,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
+	},
+/obj/item/stamp/clip{
+	pixel_x = -13;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
@@ -10955,8 +11614,21 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/item/ammo_casing/spent/rifle_brass,
+/obj/effect/spawner/random/trash/food_packaging{
+	pixel_y = 10;
+	pixel_x = -3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
+"Zm" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 6
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/tesla_lab/engineering)
 "Zq" = (
 /obj/structure/platform/industrial{
 	dir = 1
@@ -10975,6 +11647,13 @@
 /obj/structure/table/wood,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/wood/cee{
+	dir = 4
+	},
+/obj/item/desk_flag/trans{
+	pixel_y = 9;
+	pixel_x = 10
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/office)
@@ -11104,25 +11783,25 @@ SK
 SK
 SK
 SK
-uK
-uK
-oR
-oR
-oR
-oR
-oR
-oR
-oR
-uK
-uK
-uK
-uK
-oR
-oR
-oR
-oR
-oR
-oR
+Bi
+Bi
+Fv
+Fv
+Fv
+Fv
+Fv
+Fv
+Fv
+Bi
+Bi
+Bi
+Bi
+Fv
+Fv
+Fv
+Fv
+Fv
+Fv
 SK
 SK
 SK
@@ -11168,17 +11847,17 @@ SK
 SK
 SK
 SK
-uK
-uK
+Bi
+Bi
 SK
 SK
 SK
 SK
-uK
-uK
-uK
-uK
-uK
+Bi
+Bi
+Bi
+AA
+Bi
 SK
 SK
 SK
@@ -11361,8 +12040,8 @@ SK
 SK
 SK
 SK
-SK
-SK
+nQ
+nQ
 nQ
 nQ
 nQ
@@ -11424,15 +12103,15 @@ Sh
 Sh
 Sh
 SK
-SK
 nQ
-nQ
+Fg
 NZ
 NZ
-NZ
-NZ
-NZ
-NZ
+Gi
+Zm
+HX
+rT
+Gi
 NZ
 NZ
 NZ
@@ -11448,11 +12127,11 @@ Pj
 wJ
 Ke
 Kb
-Io
+uE
 wJ
-Ke
+yR
 Kb
-Io
+hJ
 bX
 Gh
 Kb
@@ -11488,13 +12167,13 @@ Cl
 Sh
 Sh
 nQ
-nQ
+mw
 NZ
-dx
 nQ
 nQ
-nQ
-nQ
+lb
+ix
+em
 nQ
 nQ
 dq
@@ -11517,7 +12196,7 @@ Ux
 Kb
 Cd
 os
-Ux
+tC
 Kb
 Fv
 Fv
@@ -11551,14 +12230,14 @@ eU
 IH
 eC
 nQ
-oP
+kp
 NZ
 nQ
-nQ
+St
 Gl
-Gg
-Gg
-Gg
+sp
+cG
+pq
 nQ
 nQ
 Kb
@@ -11580,7 +12259,7 @@ vr
 Kb
 Kb
 AN
-vr
+IU
 Kb
 Kb
 Fv
@@ -11616,13 +12295,13 @@ wU
 ie
 NZ
 NZ
-fA
-Gl
-Gl
+nQ
+xG
+wL
 FJ
-Tt
+uv
 HC
-Za
+se
 Xp
 Kb
 Rb
@@ -11636,7 +12315,7 @@ rL
 NY
 jV
 YB
-zf
+HI
 PT
 zf
 zf
@@ -11670,21 +12349,21 @@ SK
 SK
 SK
 Sh
-yO
+SK
 Sh
 cd
 Wd
 Ci
 re
 nQ
-NZ
+dq
 NZ
 nQ
 Wf
-Gl
-Gg
-HC
-HC
+Fb
+SN
+LY
+vt
 Za
 Cy
 Kb
@@ -11744,12 +12423,12 @@ nQ
 dq
 nQ
 cn
-Gl
-Gg
+BP
+sT
 Tt
-HC
-Za
-Xp
+VP
+XB
+cP
 Kb
 jg
 iN
@@ -11810,7 +12489,7 @@ nQ
 nQ
 Hj
 tu
-Gg
+uv
 nQ
 nQ
 Kb
@@ -11885,7 +12564,7 @@ Kb
 dE
 To
 Kb
-Io
+OU
 kG
 lU
 Kb
@@ -12127,7 +12806,7 @@ ah
 AS
 OY
 Eh
-go
+dv
 qC
 nQ
 bP
@@ -12332,7 +13011,7 @@ Av
 AX
 mU
 vP
-vP
+aC
 fk
 lf
 Bf
@@ -12343,7 +13022,7 @@ OJ
 Gq
 qS
 QX
-Fv
+rt
 FE
 Fv
 uP
@@ -12467,9 +13146,9 @@ no
 no
 rM
 lr
-Fv
-Fv
-Fv
+PZ
+PZ
+GB
 Bi
 rk
 MH
@@ -12521,7 +13200,7 @@ wH
 cl
 cl
 rM
-OT
+ny
 OT
 rM
 ju
@@ -13064,7 +13743,7 @@ nV
 pe
 Te
 AL
-aG
+SK
 uD
 uD
 uD
@@ -13399,7 +14078,7 @@ eN
 Nl
 Yt
 Yt
-CI
+xp
 YF
 CN
 dm
@@ -14122,9 +14801,9 @@ uP
 uP
 uP
 uP
-uP
-uP
-uP
+SK
+SK
+SK
 SK
 SK
 SK
