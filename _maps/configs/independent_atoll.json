@@ -1,0 +1,46 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Atoll-Class Hospital Ship",
+	"map_short_name": "Atoll-class",
+	"description": "The Atoll-class is a welcome sight in the vast expanse of the frontier, providing many sick and injured spacers and colonists a reprieve of rough frontier life. Favored by small medical companies and charity organizations, the Atoll-class excels at nursing patients back to health with its comfortable interior facilities and expansive medical stock.",
+	"tags": [
+		"Medical"
+	],
+	"map_path": "_maps/shuttles/independent/independent_atoll.dmm",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL"
+	],
+	"faction": "/datum/faction/independent",
+	"prefix": "IMV",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"slots": 1,
+			"officer": true
+		},
+		"Medical Administrator":{
+			"outfit": "/datum/outfit/job/independent/cmo",
+			"slots": 1,
+			"officer": true
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/independent/doctor",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/independent/paramedic",
+			"slots": 2
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
