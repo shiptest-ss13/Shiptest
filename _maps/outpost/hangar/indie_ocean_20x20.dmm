@@ -18,12 +18,12 @@
 	},
 /area/hangar)
 "cx" = (
-/obj/structure/platform/industrial,
-/obj/structure/platform/industrial{
+/obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plasteel/elevatorshaft,
+/obj/machinery/door/airlock/hatch,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "dD" = (
 /turf/closed/indestructible/reinforced,
@@ -97,6 +97,11 @@
 /obj/structure/platform/industrial_alt/corner{
 	dir = 5
 	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
 /turf/open/water/beach/deep,
 /area/hangar)
 "jw" = (
@@ -119,8 +124,15 @@
 	},
 /area/hangar)
 "kA" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/rust,
+/obj/structure/platform/industrial_alt{
+	dir = 4
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
 /area/hangar)
 "lt" = (
 /obj/machinery/door/poddoor/shutters/indestructible{
@@ -243,8 +255,10 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "ux" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "vA" = (
 /turf/closed/indestructible/rock,
@@ -295,6 +309,11 @@
 	dir = 4
 	},
 /obj/structure/platform/industrial_alt/corner,
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
 /turf/open/water/beach/deep,
 /area/hangar)
 "AH" = (
@@ -327,6 +346,11 @@
 /obj/structure/platform/industrial_alt,
 /obj/structure/platform/industrial_alt/corner{
 	dir = 6
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
@@ -364,6 +388,19 @@
 /obj/machinery/door/poddoor/shutters/indestructible{
 	dir = 4;
 	id = "ocean_ERT_bay"
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"FI" = (
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 10
+	},
+/obj/effect/landmark/outpost/elevator_machine,
+/obj/machinery/elevator_call_button{
+	dir = 1;
+	pixel_y = -24
 	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
@@ -413,10 +450,12 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "Lu" = (
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/structure/lattice/catwalk,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /obj/machinery/door/airlock/hatch,
-/turf/open/floor/engine,
+/obj/effect/landmark/outpost/elevator_machine,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "LB" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
@@ -466,15 +505,9 @@
 	},
 /area/hangar)
 "OS" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/structure/platform/ship,
-/obj/machinery/elevator_call_button{
-	pixel_x = -23
-	},
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/obj/effect/turf_decal/techfloor/orange,
+/turf/open/floor/plasteel,
 /area/hangar)
 "PF" = (
 /obj/effect/landmark/outpost/elevator,
@@ -489,6 +522,11 @@
 	},
 /obj/structure/platform/industrial_alt/corner{
 	dir = 10
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
@@ -509,11 +547,15 @@
 	},
 /area/hangar)
 "Ue" = (
-/obj/effect/turf_decal/techfloor{
+/obj/structure/platform/industrial_alt{
 	dir = 1
 	},
-/obj/structure/platform/ship,
-/turf/open/floor/plasteel/tech,
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
 /area/hangar)
 "UD" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -523,6 +565,17 @@
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"VB" = (
+/obj/structure/platform/industrial_alt{
+	dir = 8
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
 /area/hangar)
 "XX" = (
 /turf/open/floor/plasteel/elevatorshaft{
@@ -558,6 +611,15 @@
 	picked_color = "Teal"
 	},
 /turf/open/floor/plating/rust,
+/area/hangar)
+"Zz" = (
+/obj/structure/platform/industrial_alt,
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
 /area/hangar)
 
 (1,1,1) = {"
@@ -857,28 +919,28 @@ Le
 Le
 dD
 nC
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
 nC
 nC
 nC
 nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
 nC
 dD
 Le
@@ -1041,7 +1103,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 oz
 sH
@@ -1070,7 +1132,7 @@ oz
 sH
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -1088,7 +1150,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 oz
 sH
@@ -1117,7 +1179,7 @@ oz
 sH
 YO
 Ld
-Fa
+Ue
 Le
 Le
 Le
@@ -1135,7 +1197,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 sI
 oz
 sH
@@ -1164,7 +1226,7 @@ oz
 sH
 YO
 Ld
-Fa
+Ue
 Le
 Le
 Le
@@ -1182,7 +1244,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 sI
 oz
 sH
@@ -1211,7 +1273,7 @@ oz
 sH
 YO
 Ld
-Fa
+Ue
 Le
 Le
 Le
@@ -1229,7 +1291,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 oz
 OA
@@ -1258,7 +1320,7 @@ Tz
 HF
 YO
 Ld
-Fa
+Ue
 Le
 Le
 Le
@@ -1276,7 +1338,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 sI
 oz
 MU
@@ -1305,7 +1367,7 @@ Me
 gd
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -1323,7 +1385,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 sI
 oz
 MU
@@ -1352,7 +1414,7 @@ oz
 gd
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -1370,7 +1432,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 oz
 MU
@@ -1399,7 +1461,7 @@ oz
 gd
 YO
 Ld
-Fa
+Ue
 Le
 Le
 Le
@@ -1417,7 +1479,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 oz
 MU
@@ -1446,7 +1508,7 @@ oz
 gd
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -1464,7 +1526,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 oz
 MU
@@ -1493,7 +1555,7 @@ oz
 gd
 YO
 Ld
-Fa
+Ue
 Le
 Le
 vA
@@ -1511,7 +1573,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 oz
 MU
@@ -1540,7 +1602,7 @@ oz
 gd
 YO
 Ld
-Fa
+Ue
 Le
 Le
 vA
@@ -1558,7 +1620,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 sI
 oz
 MU
@@ -1587,7 +1649,7 @@ oz
 gd
 YO
 Ld
-Fa
+Ue
 Le
 Le
 Le
@@ -1605,7 +1667,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 oz
 MU
@@ -1634,7 +1696,7 @@ oz
 gd
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -1681,7 +1743,7 @@ oz
 gd
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -1728,7 +1790,7 @@ oz
 gd
 YO
 Ld
-Fa
+Ue
 Le
 Le
 Le
@@ -1775,7 +1837,7 @@ Me
 gd
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -1822,7 +1884,7 @@ oz
 gd
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -1869,7 +1931,7 @@ Tz
 SZ
 YO
 Ld
-Fa
+Ue
 Le
 Le
 Le
@@ -1916,7 +1978,7 @@ oz
 gd
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -1963,7 +2025,7 @@ oz
 gd
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -2010,7 +2072,7 @@ oz
 gd
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -2057,7 +2119,7 @@ NM
 gd
 YO
 sI
-Fa
+Ue
 Le
 Le
 Le
@@ -2075,7 +2137,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 oz
 Cu
@@ -2122,7 +2184,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 oz
 hF
@@ -2169,7 +2231,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 sI
 oz
 Et
@@ -2216,7 +2278,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 oz
 Et
@@ -2234,14 +2296,14 @@ Et
 Et
 Et
 dD
-vE
-vE
-vE
-vE
-vE
-vE
-vE
-vE
+kA
+kA
+kA
+kA
+kA
+kA
+kA
+kA
 vE
 dD
 Le
@@ -2263,11 +2325,11 @@ Le
 Le
 Le
 Le
-MF
+Zz
 sI
 oz
 Et
-YO
+FI
 dD
 dD
 dD
@@ -2310,7 +2372,7 @@ Le
 Le
 Le
 Le
-MF
+Zz
 sI
 yL
 yL
@@ -2357,12 +2419,12 @@ Le
 Le
 Le
 Le
-MF
+Zz
 Ld
 Et
 Et
 AH
-Ue
+OS
 Lu
 XX
 XX
@@ -2409,7 +2471,7 @@ dD
 El
 El
 El
-Ue
+OS
 Lu
 XX
 XX
@@ -2501,14 +2563,14 @@ Le
 bt
 vE
 vE
-vE
+kA
 Ag
 tG
-vW
-Le
-Le
-Le
-vW
+cx
+ux
+ux
+ux
+ki
 nC
 aU
 Le
@@ -2554,8 +2616,8 @@ dD
 cx
 ux
 ux
-kA
-cx
+ux
+ki
 dD
 Fa
 Le
@@ -2598,11 +2660,11 @@ Le
 Le
 bt
 vE
-vW
-Le
-Le
-Le
-vW
+cx
+ux
+ux
+ux
+ki
 vE
 xO
 Le
@@ -2645,11 +2707,11 @@ Le
 Le
 Le
 Le
-vW
-Le
-Le
-Le
-vW
+dD
+dD
+dD
+dD
+dD
 Le
 Le
 Le
@@ -2692,11 +2754,11 @@ Le
 Le
 Le
 Le
-vW
-Le
-Le
-Le
-vW
+cx
+ux
+ux
+ux
+ki
 Le
 Le
 Le
@@ -2739,11 +2801,11 @@ Le
 Le
 Le
 Le
-vW
-Le
-Le
-Le
-vW
+cx
+ux
+ux
+ux
+ki
 Le
 Le
 Le
@@ -2786,11 +2848,11 @@ Le
 Le
 Le
 Le
-vW
-Le
-Le
-Le
-vW
+cx
+ux
+ux
+ux
+ki
 Le
 Le
 Le

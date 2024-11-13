@@ -1,7 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "bx" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "cv" = (
 /turf/open/floor/plasteel{
@@ -41,11 +43,30 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"gA" = (
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/hangar)
 "ht" = (
 /obj/structure/platform/industrial_alt/corner{
 	dir = 1
 	},
 /turf/open/water/beach/deep,
+/area/hangar)
+"iy" = (
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 10
+	},
+/obj/effect/landmark/outpost/elevator_machine,
+/obj/machinery/elevator_call_button{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "iG" = (
 /obj/machinery/atmospherics/components/unary/hydrogen_pump{
@@ -58,12 +79,12 @@
 /turf/closed/indestructible/rock,
 /area/hangar)
 "jy" = (
-/obj/structure/platform/industrial,
-/obj/structure/platform/industrial{
+/obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plasteel/elevatorshaft,
+/obj/machinery/door/airlock/hatch,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "jA" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -127,6 +148,11 @@
 /obj/structure/platform/industrial_alt/corner{
 	dir = 5
 	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
 /turf/open/water/beach/deep,
 /area/hangar)
 "qc" = (
@@ -156,6 +182,17 @@
 "rB" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
+/area/hangar)
+"sb" = (
+/obj/structure/platform/industrial_alt/corner{
+	dir = 1
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
 /area/hangar)
 "sq" = (
 /obj/effect/landmark/outpost/hangar_dock,
@@ -197,11 +234,13 @@
 	},
 /area/hangar)
 "wK" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
+/obj/structure/platform/industrial_alt,
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
-/obj/structure/platform/ship,
-/turf/open/floor/plasteel/tech,
+/turf/open/water/beach/deep,
 /area/hangar)
 "xp" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
@@ -243,6 +282,11 @@
 /obj/structure/platform/industrial_alt{
 	dir = 4
 	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
 /turf/open/water/beach/deep,
 /area/hangar)
 "zU" = (
@@ -276,15 +320,9 @@
 	},
 /area/hangar)
 "Bo" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/structure/platform/ship,
-/obj/machinery/elevator_call_button{
-	pixel_x = -23
-	},
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/obj/effect/turf_decal/techfloor/orange,
+/turf/open/floor/plasteel,
 /area/hangar)
 "BL" = (
 /obj/structure/table/reinforced,
@@ -383,8 +421,15 @@
 	},
 /area/hangar)
 "II" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/rust,
+/obj/structure/platform/industrial_alt{
+	dir = 1
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
 /area/hangar)
 "JE" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
@@ -449,10 +494,12 @@
 	},
 /area/hangar)
 "Ng" = (
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/structure/lattice/catwalk,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /obj/machinery/door/airlock/hatch,
-/turf/open/floor/engine,
+/obj/effect/landmark/outpost/elevator_machine,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "Pn" = (
 /obj/structure/platform/industrial_alt{
@@ -461,6 +508,22 @@
 /obj/structure/platform/industrial_alt,
 /obj/structure/platform/industrial_alt/corner{
 	dir = 6
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
+/area/hangar)
+"PX" = (
+/obj/structure/platform/industrial_alt{
+	dir = 4
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
@@ -479,6 +542,11 @@
 /obj/structure/platform/industrial_alt/corner{
 	dir = 10
 	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
 /turf/open/water/beach/deep,
 /area/hangar)
 "Ue" = (
@@ -487,6 +555,17 @@
 "Uf" = (
 /obj/structure/platform/industrial_alt/corner{
 	dir = 4
+	},
+/turf/open/water/beach/deep,
+/area/hangar)
+"Uh" = (
+/obj/structure/platform/industrial_alt{
+	dir = 8
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
@@ -531,6 +610,11 @@
 	dir = 4
 	},
 /obj/structure/platform/industrial_alt/corner,
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
 /turf/open/water/beach/deep,
 /area/hangar)
 "WX" = (
@@ -845,30 +929,30 @@ mb
 mb
 mb
 xt
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
 xt
 mb
 mb
@@ -983,7 +1067,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 xt
 fc
 AI
@@ -1012,7 +1096,7 @@ fc
 AI
 JE
 xt
-Vc
+II
 mb
 mb
 mb
@@ -1030,7 +1114,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 AI
@@ -1059,7 +1143,7 @@ fc
 AI
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -1077,7 +1161,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 AI
@@ -1106,7 +1190,7 @@ fc
 AI
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -1124,7 +1208,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 AI
@@ -1153,7 +1237,7 @@ fc
 AI
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -1171,7 +1255,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 AI
@@ -1200,7 +1284,7 @@ fc
 AI
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -1218,7 +1302,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 pb
@@ -1247,7 +1331,7 @@ Me
 uZ
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -1265,7 +1349,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -1294,7 +1378,7 @@ ms
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -1312,7 +1396,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -1341,7 +1425,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -1359,7 +1443,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 jA
@@ -1388,7 +1472,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -1406,7 +1490,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 jA
@@ -1435,7 +1519,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -1453,9 +1537,9 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
-fc
+gA
 jA
 JE
 CW
@@ -1482,7 +1566,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 ja
@@ -1500,7 +1584,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 jA
@@ -1529,7 +1613,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 ja
@@ -1547,7 +1631,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -1576,7 +1660,7 @@ ms
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -1594,7 +1678,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -1623,7 +1707,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -1641,7 +1725,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -1670,7 +1754,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -1688,7 +1772,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 jA
@@ -1717,7 +1801,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -1735,7 +1819,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 jA
@@ -1764,7 +1848,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -1782,7 +1866,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -1811,7 +1895,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -1829,7 +1913,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -1858,7 +1942,7 @@ ms
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -1876,7 +1960,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -1905,7 +1989,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -1923,7 +2007,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -1952,7 +2036,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -1970,7 +2054,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 qc
@@ -1999,7 +2083,7 @@ Me
 dh
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -2017,7 +2101,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 jA
@@ -2046,7 +2130,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 ja
@@ -2064,7 +2148,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 jA
@@ -2093,7 +2177,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -2111,7 +2195,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 jA
@@ -2140,7 +2224,7 @@ ms
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -2158,7 +2242,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -2187,7 +2271,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -2205,7 +2289,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -2234,7 +2318,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -2252,7 +2336,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -2281,7 +2365,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -2299,7 +2383,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -2328,7 +2412,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 ja
 ja
@@ -2346,7 +2430,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 jA
@@ -2375,7 +2459,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 ja
@@ -2393,7 +2477,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -2422,7 +2506,7 @@ ms
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -2440,7 +2524,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -2469,7 +2553,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -2487,7 +2571,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 jA
@@ -2516,7 +2600,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -2534,7 +2618,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 jA
@@ -2563,7 +2647,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 ja
@@ -2610,7 +2694,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 ja
@@ -2657,7 +2741,7 @@ fc
 ru
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -2704,7 +2788,7 @@ ms
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -2751,7 +2835,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -2798,7 +2882,7 @@ Me
 dh
 JE
 Ue
-Vc
+II
 mb
 mb
 mb
@@ -2845,7 +2929,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -2892,7 +2976,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -2939,7 +3023,7 @@ fc
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -2986,7 +3070,7 @@ gg
 ru
 JE
 CW
-Vc
+II
 mb
 mb
 mb
@@ -3004,7 +3088,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 VD
@@ -3033,7 +3117,7 @@ Vz
 MG
 JE
 xt
-Vc
+II
 mb
 mb
 mb
@@ -3051,7 +3135,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 Vr
@@ -3098,7 +3182,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 cv
@@ -3145,7 +3229,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 fc
 cv
@@ -3163,15 +3247,15 @@ cv
 cv
 cv
 xt
-MI
-MI
-MI
-MI
-MI
-MI
-MI
-MI
-MI
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
 xt
 mb
 mb
@@ -3192,11 +3276,11 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 fc
 cv
-JE
+iy
 xt
 xt
 xt
@@ -3239,7 +3323,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 CW
 yF
 yF
@@ -3286,12 +3370,12 @@ mb
 mb
 mb
 mb
-Dz
+wK
 Ue
 cv
 cv
 dB
-wK
+Bo
 Ng
 IE
 IE
@@ -3333,12 +3417,12 @@ mb
 mb
 mb
 mb
-Dz
+wK
 xt
 Gv
 Gv
 Gv
-wK
+Bo
 Ng
 IE
 IE
@@ -3380,7 +3464,7 @@ mb
 mb
 mb
 mb
-Dz
+wK
 xt
 xt
 Ue
@@ -3427,17 +3511,17 @@ mb
 mb
 mb
 mb
-ht
-MI
-MI
-MI
+sb
+PX
+PX
+PX
 WU
 zy
-zU
-mb
-mb
-mb
-zU
+jy
+bx
+bx
+bx
+Lc
 zx
 mH
 mb
@@ -3483,8 +3567,8 @@ xt
 jy
 bx
 bx
-II
-jy
+bx
+Lc
 xt
 Vc
 mb
@@ -3527,11 +3611,11 @@ mb
 mb
 ht
 MI
-zU
-mb
-mb
-mb
-zU
+jy
+bx
+bx
+bx
+Lc
 MI
 Uf
 mb
@@ -3574,11 +3658,11 @@ mb
 mb
 mb
 mb
-zU
-mb
-mb
-mb
-zU
+xt
+xt
+xt
+xt
+xt
 mb
 mb
 mb
@@ -3621,11 +3705,11 @@ mb
 mb
 mb
 mb
-zU
-mb
-mb
-mb
-zU
+jy
+bx
+bx
+bx
+Lc
 mb
 mb
 mb
@@ -3668,11 +3752,11 @@ mb
 mb
 mb
 mb
-zU
-mb
-mb
-mb
-zU
+jy
+bx
+bx
+bx
+Lc
 mb
 mb
 mb
@@ -3715,11 +3799,11 @@ mb
 mb
 mb
 mb
-zU
-mb
-mb
-mb
-zU
+jy
+bx
+bx
+bx
+Lc
 mb
 mb
 mb

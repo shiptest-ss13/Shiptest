@@ -74,12 +74,12 @@
 	},
 /area/hangar)
 "fC" = (
-/obj/structure/platform/industrial,
-/obj/structure/platform/industrial{
+/obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plasteel/elevatorshaft,
+/obj/machinery/door/airlock/hatch,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "fQ" = (
 /obj/effect/turf_decal/techfloor{
@@ -170,11 +170,13 @@
 	},
 /area/hangar)
 "mN" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
+/obj/structure/platform/industrial_alt,
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
-/obj/structure/platform/ship,
-/turf/open/floor/plasteel/tech,
+/turf/open/water/beach/deep,
 /area/hangar)
 "mS" = (
 /turf/open/water/beach/deep,
@@ -191,25 +193,31 @@
 	},
 /area/hangar)
 "qk" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/structure/platform/ship,
-/obj/machinery/elevator_call_button{
-	pixel_x = -23
-	},
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/obj/effect/turf_decal/techfloor/orange,
+/turf/open/floor/plasteel,
 /area/hangar)
 "qG" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/rust,
+/obj/structure/platform/industrial_alt{
+	dir = 8
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
 /area/hangar)
 "qW" = (
 /obj/structure/platform/industrial_alt{
 	dir = 4
 	},
 /obj/structure/platform/industrial_alt/corner,
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
 /turf/open/water/beach/deep,
 /area/hangar)
 "rT" = (
@@ -242,6 +250,11 @@
 /obj/structure/platform/industrial_alt,
 /obj/structure/platform/industrial_alt/corner{
 	dir = 6
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
@@ -289,10 +302,12 @@
 	},
 /area/hangar)
 "zo" = (
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/structure/lattice/catwalk,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /obj/machinery/door/airlock/hatch,
-/turf/open/floor/engine,
+/obj/effect/landmark/outpost/elevator_machine,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "zq" = (
 /obj/structure/platform/industrial_alt,
@@ -301,6 +316,11 @@
 	},
 /obj/structure/platform/industrial_alt/corner{
 	dir = 10
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
@@ -378,8 +398,10 @@
 	},
 /area/hangar)
 "HC" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Iu" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -454,6 +476,17 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
+"Qv" = (
+/obj/structure/platform/industrial_alt{
+	dir = 1
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
+/area/hangar)
 "QJ" = (
 /obj/structure/platform/industrial_alt/corner{
 	dir = 4
@@ -466,6 +499,11 @@
 	},
 /obj/structure/platform/industrial_alt{
 	dir = 4
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
@@ -482,12 +520,36 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"TY" = (
+/obj/structure/platform/industrial_alt/corner{
+	dir = 1
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
+/area/hangar)
 "UD" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
 	},
 /turf/open/floor/plating{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"VB" = (
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 10
+	},
+/obj/effect/landmark/outpost/elevator_machine,
+/obj/machinery/elevator_call_button{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -516,6 +578,17 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"XS" = (
+/obj/structure/platform/industrial_alt{
+	dir = 4
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
+/area/hangar)
 "XW" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
 	dir = 9
@@ -541,6 +614,11 @@
 	},
 /obj/structure/platform/industrial_alt/corner{
 	dir = 5
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
@@ -965,50 +1043,50 @@ mS
 mS
 mS
 yh
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
+qG
 yh
 mS
 mS
@@ -1163,7 +1241,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 yh
 EW
 al
@@ -1212,7 +1290,7 @@ EW
 al
 zh
 yh
-IP
+Qv
 mS
 mS
 mS
@@ -1230,7 +1308,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 al
@@ -1279,7 +1357,7 @@ EW
 al
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -1297,7 +1375,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 al
@@ -1346,7 +1424,7 @@ EW
 al
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -1364,7 +1442,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 al
@@ -1413,7 +1491,7 @@ EW
 al
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -1431,7 +1509,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 al
@@ -1480,7 +1558,7 @@ EW
 al
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -1498,7 +1576,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 cI
@@ -1547,7 +1625,7 @@ xd
 mg
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -1565,7 +1643,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -1614,7 +1692,7 @@ bv
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -1632,7 +1710,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -1681,7 +1759,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -1699,7 +1777,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -1748,7 +1826,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -1766,7 +1844,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -1815,7 +1893,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -1833,7 +1911,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -1882,7 +1960,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 Gq
@@ -1900,7 +1978,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -1949,7 +2027,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 Gq
@@ -1967,7 +2045,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -2016,7 +2094,7 @@ bv
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -2034,7 +2112,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -2083,7 +2161,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -2101,7 +2179,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -2150,7 +2228,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -2168,7 +2246,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -2217,7 +2295,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -2235,7 +2313,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -2284,7 +2362,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -2302,7 +2380,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -2351,7 +2429,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -2369,7 +2447,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -2418,7 +2496,7 @@ bv
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -2436,7 +2514,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -2485,7 +2563,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -2503,7 +2581,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -2552,7 +2630,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -2570,7 +2648,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 av
@@ -2619,7 +2697,7 @@ xd
 Ti
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -2637,7 +2715,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -2686,7 +2764,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 Gq
@@ -2704,7 +2782,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -2753,7 +2831,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -2771,7 +2849,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -2820,7 +2898,7 @@ bv
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -2838,7 +2916,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -2887,7 +2965,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -2905,7 +2983,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -2954,7 +3032,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -2972,7 +3050,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -3021,7 +3099,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -3039,7 +3117,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -3088,7 +3166,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 Gq
 Gq
@@ -3106,7 +3184,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -3155,7 +3233,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 Gq
@@ -3173,7 +3251,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -3222,7 +3300,7 @@ bv
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -3240,7 +3318,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -3289,7 +3367,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -3307,7 +3385,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 EF
@@ -3356,7 +3434,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -3374,7 +3452,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 EF
@@ -3423,7 +3501,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 Gq
@@ -3490,7 +3568,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 Gq
@@ -3557,7 +3635,7 @@ EW
 dp
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -3624,7 +3702,7 @@ bv
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -3691,7 +3769,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -3758,7 +3836,7 @@ xd
 Ti
 zh
 kC
-IP
+Qv
 mS
 mS
 mS
@@ -3825,7 +3903,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -3892,7 +3970,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -3959,7 +4037,7 @@ EW
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -4026,7 +4104,7 @@ eM
 dp
 zh
 jC
-IP
+Qv
 mS
 mS
 mS
@@ -4044,7 +4122,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 ac
@@ -4093,7 +4171,7 @@ Mp
 UD
 zh
 yh
-IP
+Qv
 mS
 mS
 mS
@@ -4111,7 +4189,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 pi
@@ -4178,7 +4256,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 CG
@@ -4245,7 +4323,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 EW
 CG
@@ -4263,35 +4341,35 @@ CG
 CG
 CG
 yh
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
-zx
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
+XS
 yh
 mS
 mS
@@ -4312,11 +4390,11 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 EW
 CG
-zh
+VB
 yh
 yh
 yh
@@ -4379,7 +4457,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 jC
 XW
 XW
@@ -4446,12 +4524,12 @@ mS
 mS
 mS
 mS
-Fj
+mN
 kC
 CG
 CG
 KP
-mN
+qk
 zo
 Kw
 Kw
@@ -4513,12 +4591,12 @@ mS
 mS
 mS
 mS
-Fj
+mN
 yh
 qh
 qh
 qh
-mN
+qk
 zo
 Kw
 Kw
@@ -4580,7 +4658,7 @@ mS
 mS
 mS
 mS
-Fj
+mN
 yh
 yh
 kC
@@ -4647,17 +4725,17 @@ mS
 mS
 mS
 mS
-dM
-zx
-zx
-zx
+TY
+XS
+XS
+XS
 qW
 QN
-CD
-mS
-mS
-mS
-CD
+fC
+HC
+HC
+HC
+AL
 Rz
 OL
 mS
@@ -4723,8 +4801,8 @@ yh
 fC
 HC
 HC
-qG
-fC
+HC
+AL
 yh
 IP
 mS
@@ -4787,11 +4865,11 @@ mS
 mS
 dM
 zx
-CD
-mS
-mS
-mS
-CD
+fC
+HC
+HC
+HC
+AL
 zx
 QJ
 mS
@@ -4854,11 +4932,11 @@ mS
 mS
 mS
 mS
-CD
-mS
-mS
-mS
-CD
+yh
+yh
+yh
+yh
+yh
 mS
 mS
 mS
@@ -4921,11 +4999,11 @@ mS
 mS
 mS
 mS
-CD
-mS
-mS
-mS
-CD
+fC
+HC
+HC
+HC
+AL
 mS
 mS
 mS
@@ -4988,11 +5066,11 @@ mS
 mS
 mS
 mS
-CD
-mS
-mS
-mS
-CD
+fC
+HC
+HC
+HC
+AL
 mS
 mS
 mS
@@ -5055,11 +5133,11 @@ mS
 mS
 mS
 mS
-CD
-mS
-mS
-mS
-CD
+fC
+HC
+HC
+HC
+AL
 mS
 mS
 mS
