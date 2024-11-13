@@ -35,13 +35,6 @@
 	damage = 20
 	stamina = 80
 
-//5.45x39mm (SVG-76u)
-
-/obj/projectile/bullet/a545_39
-	name = "5.45x39mm bullet"
-	damage = 25
-	armour_penetration = 20
-
 //7.62x40mm CLIP (SKM Rifles)
 
 /obj/projectile/bullet/a762_40
@@ -100,3 +93,8 @@
 	light_system = MOVABLE_LIGHT
 	light_color = COLOR_SOFT_RED
 	light_range = 2
+
+/obj/projectile/bullet/a65clip/rubber //"rubber"
+	name = "6.5x57mm CLIP rubber bullet"
+	damage = 10
+	stamina = 40
