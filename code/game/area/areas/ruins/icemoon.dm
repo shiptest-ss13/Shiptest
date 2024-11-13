@@ -46,3 +46,37 @@
 /area/ruin/powered/icemoon/lodge/gear_room
 	name = "Gear Room"
 	icon_state = "security"
+
+// teslalab
+
+/area/ruin/icemoon/tesla_lab
+	name = "CLIP Lab Complex"
+	icon_state = "hallC"
+
+/area/ruin/icemoon/tesla_lab/lab_a
+	name = "Lab Zone One"
+	icon_state = "yellow"
+
+/area/ruin/icemoon/tesla_lab/containment
+	name = "Specimen Containment"
+	icon_state = "purple"
+
+/area/ruin/icemoon/tesla_lab/engineering
+	name = "Engineering"
+
+/area/ruin/icemoon/tesla_lab/cargo
+	name = "Cargo Warehouse"
+	icon_state = "storage"
+
+/area/ruin/icemoon/tesla_lab/lobby
+	name = "Lobby"
+
+/area/ruin/icemoon/tesla_lab/dorms
+	name = "Dormitories"
+	icon_state = "crew_quarters"
+
+/area/ruin/icemoon/tesla_lab/office
+	name = "Office"
+
+/area/ruin/icemoon/tesla_lab/haymaker
+	name = "Haymaker Pod"
