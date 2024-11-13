@@ -467,16 +467,16 @@
 	},
 /obj/structure/closet,
 /obj/item/crowbar/red,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
 /obj/machinery/computer/cryopod/directional/west,
 /obj/machinery/firealarm/directional/south,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
 /turf/open/floor/plating,
 /area/ship/crew/cryo)
 "ej" = (
@@ -822,6 +822,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/morgue)
+"gr" = (
+/obj/structure/sign/number/random,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering/engines/starboard)
 "gv" = (
 /obj/effect/turf_decal/box/white/corners,
 /obj/effect/turf_decal/box/white/corners{
@@ -1082,6 +1086,20 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/item/clothing/suit/space/fragile{
+	pixel_x = -10
+	},
+/obj/item/clothing/suit/space/fragile{
+	pixel_x = 10
+	},
+/obj/item/clothing/head/helmet/space/fragile{
+	pixel_y = 10;
+	pixel_x = -10
+	},
+/obj/item/clothing/head/helmet/space/fragile{
+	pixel_y = 10;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "iS" = (
@@ -1323,6 +1341,20 @@
 	icon_state = "4-8"
 	},
 /obj/structure/closet/emcloset/wall/directional/north,
+/obj/item/clothing/suit/space/fragile{
+	pixel_x = -10
+	},
+/obj/item/clothing/suit/space/fragile{
+	pixel_x = 10
+	},
+/obj/item/clothing/head/helmet/space/fragile{
+	pixel_y = 10;
+	pixel_x = -10
+	},
+/obj/item/clothing/head/helmet/space/fragile{
+	pixel_y = 10;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
 "ln" = (
@@ -1822,6 +1854,10 @@
 	pixel_y = 2
 	},
 /obj/structure/table/wood/reinforced,
+/obj/item/phone{
+	pixel_y = -2;
+	pixel_x = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office)
 "qA" = (
@@ -2801,10 +2837,6 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/port)
-"As" = (
-/obj/structure/sign/warning/docking,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/engines/starboard)
 "At" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -4136,10 +4168,6 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/port)
-"Mt" = (
-/obj/structure/sign/number/random,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/engines/starboard)
 "Mu" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
@@ -4975,6 +5003,10 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/fore)
+"To" = (
+/obj/structure/sign/warning/docking,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering/engines/starboard)
 "Tt" = (
 /obj/structure/fluff/hedge,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5732,7 +5764,7 @@ da
 ph
 TZ
 TZ
-Mt
+gr
 XT
 XT
 "}
@@ -5754,7 +5786,7 @@ vB
 ph
 yF
 yF
-Mt
+gr
 XT
 XT
 "}
@@ -5776,7 +5808,7 @@ sm
 jJ
 tK
 rO
-Mt
+gr
 XT
 XT
 "}
@@ -5798,7 +5830,7 @@ MV
 hb
 dr
 Kh
-Mt
+gr
 XT
 XT
 "}
@@ -5865,7 +5897,7 @@ qJ
 SE
 bW
 vI
-As
+To
 XT
 "}
 (10,1,1) = {"
