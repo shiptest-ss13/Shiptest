@@ -319,7 +319,8 @@
 /turf/closed/attack_animal(mob/living/simple_animal/M)
 	M.changeNext_move(CLICK_CD_MELEE)
 	M.do_attack_animation(src)
-	if((M.environment_smash & mob_smash_flags))
-		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		alter_integrity(-400)
-		return
+	if(isclosedturf(src))
+		if((M.environment_smash & mob_smash_flags))
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+			alter_integrity(-400)
+			return
