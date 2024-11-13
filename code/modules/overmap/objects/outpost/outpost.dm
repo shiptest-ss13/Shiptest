@@ -139,6 +139,17 @@
 		var/datum/mission/M = new mission_type(src)
 		LAZYADD(missions, M)
 
+/datum/overmap/outpost/proc/populate_cargo()
+	ordernum = rand(1, 99000)
+
+	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
+		current_pack = new current_pack()
+		if(current_pack.faction)
+			current_pack.faction = new current_pack.faction()
+		if(!current_pack.contains)
+			continue
+		supply_packs += current_pack
+
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)
 		CRASH("[src] ([src.type]) tried to load without a template!")

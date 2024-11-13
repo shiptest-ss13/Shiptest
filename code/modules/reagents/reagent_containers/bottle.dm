@@ -39,6 +39,11 @@
 	desc = "A small bottle of morphine."
 	list_reagents = list(/datum/reagent/medicine/morphine = 30)
 
+/obj/item/reagent_containers/glass/bottle/painkiller_booze
+	name = "'painkiller' bottle"
+	desc = "A small bottle of an unmarked substance called 'painkiller.' Will this really work?"
+	list_reagents = list(/datum/reagent/consumable/ethanol/painkiller = 30)
+
 /obj/item/reagent_containers/glass/bottle/chloralhydrate
 	name = "chloral hydrate bottle"
 	desc = "A small bottle of Choral Hydrate. Mickey's Favorite!"
