@@ -236,9 +236,10 @@
 	item_state = "helmetalt"
 	armor = list("melee" = 35, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50)
 	slowdown = 0.1
-	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
-	clothing_flags = STOPSPRESSUREDAMAGE
+	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
+	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	can_flashlight = TRUE
 	dog_fashion = null
 
