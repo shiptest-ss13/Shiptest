@@ -1590,17 +1590,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Mr" = (
-/obj/docking_port/mobile{
-	callTime = 250;
-	dir = 2;
-	launch_status = 0;
-	name = "Salvage Clipper";
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew)
 "Ms" = (
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /obj/machinery/atmospherics/components/trinary/mixer/flipped{
@@ -2112,14 +2101,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/docking_port/mobile{
-	callTime = 250;
-	dir = 2;
-	launch_status = 0;
-	name = "Salvage Clipper";
-	port_direction = 8;
-	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -2674,7 +2655,7 @@ Kr
 KT
 JK
 iY
-Mr
+iY
 pM
 pM
 pM
