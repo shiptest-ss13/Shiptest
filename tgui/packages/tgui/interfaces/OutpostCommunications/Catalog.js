@@ -115,7 +115,11 @@ export const CargoCatalog = (props, context) => {
                     <Button
                       fluid
                       tooltip={pack.desc}
-                      color={pack.discountedcost || pack.faction_locked ? "green" : "default"}
+                      color={
+                        pack.discountedcost || pack.faction_locked
+                          ? 'green'
+                          : 'default'
+                      }
                       tooltipPosition="left"
                       onClick={() =>
                         act('add', {
@@ -123,13 +127,16 @@ export const CargoCatalog = (props, context) => {
                         })
                       }
                     >
-                      {pack.discountedcost ?
-                      ' (-' + pack.discountpercent +'%) ' + pack.discountedcost:
-                      formatMoney(
-                        (self_paid && !pack.goody) || app_cost
-                          ? Math.round(pack.cost * 1.1)
-                          : pack.cost
-                      )}
+                      {pack.discountedcost
+                        ? ' (-' +
+                          pack.discountpercent +
+                          '%) ' +
+                          pack.discountedcost
+                        : formatMoney(
+                            (self_paid && !pack.goody) || app_cost
+                              ? Math.round(pack.cost * 1.1)
+                              : pack.cost
+                          )}
                       {' cr'}
                     </Button>
                   </Table.Cell>
