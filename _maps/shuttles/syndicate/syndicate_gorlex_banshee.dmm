@@ -18,8 +18,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	dir = 8;
-	id = "Ifritenginebay"
+	dir = 4;
+	id = "Bansheeenginebay"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -30,16 +30,16 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 1;
-	id = "Ifritcargofield";
+	id = "Bansheecargofield";
 	locked = 1
-	},
-/obj/machinery/door/poddoor{
-	dir = 8;
-	id = "Ifritenginebay"
 	},
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "Bansheecargodoor"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "bu" = (
@@ -63,12 +63,8 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
-	id = "Ifritcargofield";
+	id = "Bansheecargofield";
 	locked = 1
-	},
-/obj/machinery/door/poddoor{
-	dir = 8;
-	id = "Ifritenginebay"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -76,6 +72,10 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "Bansheecargodoor"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "bO" = (
@@ -120,13 +120,13 @@
 	dir = 1
 	},
 /obj/machinery/button/shieldwallgen{
-	id = "Ifritcargofield";
+	id = "Bansheecargofield";
 	dir = 2;
 	pixel_y = 19;
 	pixel_x = 1
 	},
 /obj/machinery/button/door{
-	id = "Ifritcargodoor";
+	id = "Bansheecargodoor";
 	name = "Cargo bay doors";
 	dir = 2;
 	pixel_y = 20;
@@ -195,7 +195,7 @@
 	dir = 2;
 	dwidth = 7;
 	height = 15;
-	name = "Ifrit airlock dock";
+	name = "Banshee airlock dock";
 	width = 30
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -585,7 +585,7 @@
 /obj/structure/cable,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/button/door{
-	id = "Ifritenginebay";
+	id = "Bansheeenginebay";
 	name = "Engine shutters";
 	dir = 1;
 	pixel_x = -10;
@@ -593,7 +593,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "Ifritenginewindow";
+	id = "Bansheeenginewindow";
 	name = "Exhaust window";
 	pixel_x = 9;
 	pixel_y = -20
@@ -653,7 +653,7 @@
 	pixel_x = 12
 	},
 /obj/machinery/button/door{
-	id = "Ifritprivacyshutters";
+	id = "Bansheeprivacyshutters";
 	name = "Privacy shutters";
 	dir = 1;
 	pixel_x = 1;
@@ -919,7 +919,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "Ifritenginewindow"
+	id = "Bansheeenginewindow"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1095,7 +1095,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Privacy shutters";
-	id = "Ifritprivacyshutters"
+	id = "Bansheeprivacyshutters"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
@@ -1313,7 +1313,7 @@
 "Gs" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "Ifritbridgewindows"
+	id = "Bansheebridgewindow"
 	},
 /obj/structure/grille,
 /turf/open/floor/plating,
@@ -1440,10 +1440,6 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
 	},
-/obj/machinery/door/poddoor{
-	dir = 8;
-	id = "Ifritenginebay"
-	},
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -1453,6 +1449,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "Bansheecargodoor"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Ja" = (
@@ -1491,7 +1491,7 @@
 	pixel_x = -7
 	},
 /obj/machinery/button/door{
-	id = "Ifitdormitories";
+	id = "Bansheedormwindow";
 	name = "Dormitories shutters";
 	pixel_x = -5;
 	pixel_y = -20;
@@ -1504,7 +1504,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "Ifritenginewindow"
+	id = "Bansheedormwindow"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -1965,8 +1965,8 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/door/poddoor{
-	dir = 8;
-	id = "Ifritenginebay"
+	dir = 4;
+	id = "Bansheeenginebay"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -2196,8 +2196,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	dir = 8;
-	id = "Ifritenginebay"
+	dir = 4;
+	id = "Bansheeenginebay"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -2244,7 +2244,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "Ifritbridgewindows";
+	id = "Bansheebridgewindow";
 	name = "Bridge windows";
 	pixel_x = -20;
 	pixel_y = -4
