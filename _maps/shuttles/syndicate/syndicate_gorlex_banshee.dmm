@@ -1190,6 +1190,12 @@
 /area/ship/cargo)
 "DY" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 8;
+	launch_status = 0;
+	preferred_direction = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "EG" = (
@@ -2191,11 +2197,6 @@
 	},
 /obj/machinery/light/floor,
 /obj/effect/landmark/observer_start,
-/obj/docking_port/mobile{
-	dir = 2;
-	port_direction = 8;
-	preferred_direction = 4
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Yv" = (
