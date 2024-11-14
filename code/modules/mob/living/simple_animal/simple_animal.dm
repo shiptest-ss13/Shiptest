@@ -86,7 +86,6 @@
 	///Set to 1 to allow breaking of crates,lockers,racks,tables; 2 for walls; 3 for Rwalls.
 	var/environment_smash = ENVIRONMENT_SMASH_NONE
 
-
 	///Hot simple_animal baby making vars.
 	var/list/childtype = null
 	var/next_scan_time = 0
