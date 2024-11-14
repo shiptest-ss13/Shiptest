@@ -221,7 +221,6 @@
 	name = "\improper PGFN Captain's Ihuz-irra Gloves"
 	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments. Bears the silver standard of a Gezenan captain."
 	icon_state = "captaingloves"
-	siemens_coefficient = 0.5
 
 //Boots
 
@@ -229,7 +228,7 @@
 	name = "\improper PGF Uhro-sez Boots"
 	desc = "The word “uhro-sez” translates to “steel-foot”, in reference to the steel toe protection provided by these boots. Standard issue to all members of all branches of the PGF military."
 	icon = 'icons/obj/clothing/faction/gezena/feet.dmi'
-	//mob_overlay_icon = 'icons/mob/clothing/faction/gezena/feet.dmi' todo: find out why digi breaks here
+	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/feet.dmi'
 	icon_state = "pgfboots"
 	item_state = "jackboots"
 
@@ -246,6 +245,20 @@
 	item_state = "bluecloth"
 	unique_reskin = null
 
+/obj/item/storage/belt/military/gezena/bg16/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun/pgf(src)
+	new /obj/item/screwdriver(src)
+
+/obj/item/storage/belt/military/gezena/engineer/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 2)
+		new /obj/item/stock_parts/cell/gun/pgf(src)
+	new /obj/item/screwdriver(src)
+	new /obj/item/grenade/c4
+	new /obj/item/grenade/c4
+
 /obj/item/storage/belt/medical/gezena
 	name = "\improper PGF Medical Iho-Usks"
 	desc = "The “iho-usks”, translating to “gear-holder”, is a lightweight harness covered in pouches, supplied to the ground troops of the PGF. This variant is designed for carrying medical supplies."
@@ -255,6 +268,17 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "medpouches"
 	item_state = "whitecloth"
+
+/obj/item/storage/belt/medical/gezena/paramedic/PopulateContents()
+	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/synthflesh(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/stack/medical/splint(src)
+	. = ..()
+
 
 //Cloaks
 

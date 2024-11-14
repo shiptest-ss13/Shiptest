@@ -17,12 +17,13 @@
 	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/toolbox_pickup.ogg'
 	material_flags = MATERIAL_COLOR
-	var/latches = "single_latch"
+	var/latches = null
 	var/has_latches = TRUE
 
 /obj/item/storage/toolbox/Initialize()
 	. = ..()
-	if(has_latches)
+	if(has_latches && !latches)
+		latches = "single_latch"
 		if(prob(10))
 			latches = "double_latch"
 			if(prob(1))
@@ -71,12 +72,10 @@
 	material_flags = NONE
 
 /obj/item/storage/toolbox/mechanical/PopulateContents()
-	//WS Edit - Better Tool sprites
 	if(prob(50))
 		new /obj/item/wrench(src)
 	else
 		new /obj/item/wrench/crescent(src)
-	//WS End
 	new /obj/item/screwdriver(src)
 	new /obj/item/weldingtool(src)
 	new /obj/item/crowbar(src)
@@ -158,11 +157,9 @@
 		new /obj/item/stack/cable_coil(src,MAXCOIL,pickedcolor)
 
 /obj/item/storage/toolbox/syndicate
-	name = "suspicious looking toolbox"
+	name = "black and red toolbox"
 	icon_state = "syndicate"
 	item_state = "toolbox_syndi"
-	force = 15
-	throwforce = 18
 	material_flags = NONE
 
 /obj/item/storage/toolbox/syndicate/ComponentInitialize()
@@ -172,11 +169,11 @@
 
 /obj/item/storage/toolbox/syndicate/PopulateContents()
 	new /obj/item/screwdriver/nuke(src)
-	new /obj/item/wrench/syndie(src) //WS Edit - Cool Syndie Tools
+	new /obj/item/wrench/syndie(src)
 	new /obj/item/weldingtool/largetank(src)
-	new /obj/item/crowbar/syndie(src) //WS Begin - Cool Syndie Tools
+	new /obj/item/crowbar/syndie(src)
 	new /obj/item/wirecutters/syndie(src)
-	new /obj/item/multitool/syndie(src) //WS End
+	new /obj/item/multitool/syndie(src)
 	new /obj/item/clothing/gloves/color/yellow(src)
 
 /obj/item/storage/toolbox/syndicate/empty

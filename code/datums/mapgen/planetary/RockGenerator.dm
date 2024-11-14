@@ -89,10 +89,10 @@
 		/obj/structure/vein = 60,
 		/obj/structure/elite_tumor = 40,
 		/obj/structure/vein/classtwo = 40,
-		/obj/effect/spawner/lootdrop/anomaly/rock = 10,
+		/obj/effect/spawner/random/anomaly/rock = 10,
 		/obj/structure/vein/classthree = 10,
 		/obj/effect/spawner/minefield = 2,
-		/obj/effect/spawner/lootdrop/anomaly/big = 1 //get out of here stalker
+		/obj/effect/spawner/random/anomaly/big = 1 //get out of here stalker
 	)
 
 	flora_spawn_chance = 5
@@ -162,7 +162,7 @@
 		/obj/structure/vein/classthree = 1,
 		/obj/structure/spawner/burrow/rock_plant = 4,
 		/obj/effect/spawner/minefield = 1,
-		/obj/effect/spawner/lootdrop/anomaly/rock/cave = 1,
+		/obj/effect/spawner/random/anomaly/rock/cave = 1,
 	)
 	mob_spawn_chance = 6
 	mob_spawn_list = list(
