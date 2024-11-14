@@ -13,6 +13,8 @@
 	circuit = /obj/item/circuitboard/computer/cargo
 	light_color = COLOR_BRIGHT_ORANGE
 
+	/// The ship we reside on for ease of access
+	var/datum/overmap/ship/controlled/current_ship
 	var/contraband = FALSE
 	var/self_paid = FALSE
 	var/safety_warning = "For safety reasons, the automated supply shuttle \
@@ -47,7 +49,6 @@
 		obj_flags |= EMAGGED
 	else
 		obj_flags &= ~EMAGGED
-	generate_pack_data()
 
 /obj/machinery/computer/cargo/Destroy()
 	if(beacon)
@@ -77,6 +78,9 @@
 	board.obj_flags |= EMAGGED
 	update_static_data(user)
 
+/obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	current_ship = port.current_ship
+
 /obj/machinery/computer/cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -89,17 +93,11 @@
 	var/canBeacon = beacon && (isturf(beacon.loc) || ismob(beacon.loc))//is the beacon in a valid location?
 	var/list/data = list()
 
-	// not a big fan of get_containing_shuttle
-	var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
-	var/datum/overmap/ship/controlled/ship
-	var/outpost_docked = FALSE
-	if(D)
-		ship = D.current_ship
-		outpost_docked = istype(ship.docked_to, /datum/overmap/outpost)
+	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
 
-	data["onShip"] = !isnull(ship)
-	data["numMissions"] = ship ? LAZYLEN(ship.missions) : 0
-	data["maxMissions"] = ship ? ship.max_missions : 0
+	data["onShip"] = !isnull(current_ship)
+	data["numMissions"] = current_ship ? LAZYLEN(current_ship.missions) : 0
+	data["maxMissions"] = current_ship ? current_ship.max_missions : 0
 	data["outpostDocked"] = outpost_docked
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
@@ -120,7 +118,7 @@
 	else if (use_beacon && !canBeacon)
 		message = "BEACON ERROR: MUST BE EXPOSED"//beacon's loc/user's loc must be a turf
 	data["message"] = message
-	if(!supply_pack_data)
+	if(outpost_docked)
 		generate_pack_data()
 	else
 		supply_pack_data = list()
@@ -132,11 +130,11 @@
 	data["shipMissions"] = list()
 	data["outpostMissions"] = list()
 
-	if(ship)
-		for(var/datum/mission/M as anything in ship.missions)
+	if(current_ship)
+		for(var/datum/mission/M as anything in current_ship.missions)
 			data["shipMissions"] += list(M.get_tgui_info())
 		if(outpost_docked)
-			var/datum/overmap/outpost/out = ship.docked_to
+			var/datum/overmap/outpost/out = current_ship.docked_to
 			for(var/datum/mission/M as anything in out.missions)
 				data["outpostMissions"] += list(M.get_tgui_info())
 
@@ -189,14 +187,12 @@
 				)
 					return
 
-			var/turf/landing_turf
-			if(!isnull(beacon) && use_beacon) // prioritize beacons over landing in cargobay
-				landing_turf = get_turf(beacon)
-				beacon.update_status(SP_LAUNCH)
-			else if(!use_beacon)// find a suitable supplypod landing zone in cargobay
-				var/list/empty_turfs = list()
-				if(!landingzone)
-					reconnect()
+				var/turf/landing_turf
+				if(!isnull(beacon) && use_beacon) // prioritize beacons over landing in cargobay
+					landing_turf = get_turf(beacon)
+					beacon.update_status(SP_LAUNCH)
+				else if(!use_beacon)// find a suitable supplypod landing zone in cargobay
+					var/list/empty_turfs = list()
 					if(!landingzone)
 						reconnect()
 						if(!landingzone)
@@ -279,14 +275,22 @@
 
 /obj/machinery/computer/cargo/proc/generate_pack_data()
 	supply_pack_data = list()
-	for(var/pack in SSshuttle.supply_packs)
-		var/datum/supply_pack/P = SSshuttle.supply_packs[pack]
-		if(!supply_pack_data[P.group])
-			supply_pack_data[P.group] = list(
-				"name" = P.group,
+
+	if(!current_ship.docked_to)
+		return supply_pack_data
+
+	var/datum/overmap/outpost/outpost_docked = current_ship.docked_to
+
+	if(!istype(outpost_docked))
+		return supply_pack_data
+
+	for(var/datum/supply_pack/current_pack as anything in outpost_docked.supply_packs)
+		if(!supply_pack_data[current_pack.group])
+			supply_pack_data[current_pack.group] = list(
+				"name" = current_pack.group,
 				"packs" = list()
 			)
-		if((P.hidden))
+		if((current_pack.hidden))
 			continue
 		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
 		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null

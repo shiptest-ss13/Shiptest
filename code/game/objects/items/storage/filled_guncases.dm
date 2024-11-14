@@ -52,6 +52,10 @@
 /obj/item/storage/guncase/absolution
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/absolution
 
+/obj/item/storage/guncase/firestorm
+	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
+	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+
 /* Scarbourough */
 
 /obj/item/storage/guncase/pistol/a357
@@ -85,6 +89,10 @@
 /obj/item/storage/guncase/boomslang
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
 	mag_type = /obj/item/ammo_box/magazine/boomslang/short
+
+/obj/item/storage/guncase/rattlesnake
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
+	mag_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 
 /* Etherbor */
 
@@ -148,10 +156,23 @@
 /obj/item/storage/guncase/energy/iongun
 	gun_type = /obj/item/gun/energy/ionrifle
 
+/obj/item/storage/guncase/hades
+	gun_type = /obj/item/gun/energy/e_gun/hades
+	mag_type = /obj/item/stock_parts/cell/gun
+
 /* Old NT */
+
 /obj/item/storage/guncase/wt550
 	gun_type = /obj/item/gun/ballistic/automatic/smg/wt550
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
+
+/obj/item/storage/guncase/gauss
+	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss
+	mag_type = /obj/item/ammo_box/magazine/gauss
+
+/obj/item/storage/guncase/saber
+	gun_type = /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
+	mag_type = /obj/item/ammo_box/magazine/smgm9mm
 
 /* Minutemen */
 
@@ -167,6 +188,36 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm357
 	mag_type = /obj/item/ammo_box/magazine/cm357
 
+/obj/item/storage/guncase/cm5
+	gun_type = /obj/item/gun/ballistic/automatic/smg/cm5
+	mag_type = /obj/item/ammo_box/magazine/cm5_9mm
+
+/obj/item/storage/guncase/cm82
+	gun_type = /obj/item/gun/ballistic/automatic/assault/cm82
+	mag_type = /obj/item/ammo_box/magazine/p16
+
+/obj/item/storage/guncase/cmf4
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/f4/
+	mag_type = /obj/item/ammo_box/magazine/f4_308
+
+/* Inteq */
+
+/obj/item/storage/guncase/skm_inteq
+	gun_type = /obj/item/gun/ballistic/automatic/assault/skm/inteq
+	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+
+/obj/item/storage/guncase/commissioner
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
+	mag_type = /obj/item/ammo_box/magazine/co9mm
+
+/obj/item/storage/guncase/mongrel
+	gun_type = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
+	mag_type = /obj/item/ammo_box/magazine/smgm10mm
+
+/obj/item/storage/guncase/kingsnake
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq
+	mag_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
+
 /* idk */
 
 /obj/item/storage/guncase/pistol/disposable
@@ -174,22 +225,10 @@
 	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
 	new /obj/item/gun/ballistic/automatic/pistol/disposable(src)
 
-/obj/item/storage/guncase/p16
-	gun_type = /obj/item/gun/ballistic/automatic/assault/p16
-	mag_type = /obj/item/ammo_box/magazine/p16
-
-
 /obj/item/storage/guncase/skm
 	gun_type = /obj/item/gun/ballistic/automatic/assault/skm
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40
 
-/obj/item/storage/guncase/skm_inteq
-	gun_type = /obj/item/gun/ballistic/automatic/assault/skm/inteq
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
-
-/obj/item/storage/guncase/hades
-	gun_type = /obj/item/gun/energy/e_gun/hades
-
-/obj/item/storage/guncase/firestorm
-	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
-	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+/obj/item/storage/guncase/ssg04
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/f4/inteq
+	mag_type = /obj/item/ammo_box/magazine/f4_308

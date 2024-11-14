@@ -41,6 +41,12 @@
 	var/max_missions = 15
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
+	/// List of all of the things this outpost offers
+	var/list/supply_packs = list()
+	/// our 'Order number'
+	var/ordernum = 1
+	/// Our faction of the outpost
+	var/faction
 
 /datum/overmap/outpost/Initialize(position, ...)
 	. = ..()
@@ -64,6 +70,7 @@
 	Rename(gen_outpost_name())
 
 	fill_missions()
+	populate_cargo()
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)

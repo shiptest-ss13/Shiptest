@@ -77,34 +77,6 @@
 	item_state = "skm_inteq"
 	manufacturer = MANUFACTURER_INTEQ
 
-/obj/item/gun/ballistic/automatic/assault/p16
-	name = "\improper P-16"
-	desc = "An assault rifle pattern from Sol, existing before the Night of Fire. A favorite of professional mercenaries and well-heeled pirates. Chambered in 5.56mm."
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	fire_sound = 'sound/weapons/gun/rifle/m16.ogg'
-	icon_state = "p16"
-	item_state = "p16"
-	show_magazine_on_sprite = TRUE
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	default_ammo_type = /obj/item/ammo_box/magazine/p16
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/p16,
-	)
-	spread = 2
-	wield_delay = 0.5 SECONDS
-
-	fire_delay = 0.18 SECONDS
-
-	rack_sound = 'sound/weapons/gun/rifle/m16_cocked.ogg'
-	load_sound = 'sound/weapons/gun/rifle/m16_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/rifle/m16_reload.ogg'
-	eject_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
-
-/obj/item/gun/ballistic/automatic/assault/p16/no_mag
-	default_ammo_type = FALSE
-
 /obj/item/gun/ballistic/automatic/assault/cm82
 	name = "\improper CM-16"
 	desc = "The standard-issue rifle of CLIP and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
