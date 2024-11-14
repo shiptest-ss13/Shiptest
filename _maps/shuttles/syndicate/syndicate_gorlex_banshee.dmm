@@ -1190,6 +1190,14 @@
 /area/ship/cargo)
 "DY" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/docking_port/mobile{
+	callTime = 250;
+	dir = 2;
+	launch_status = 0;
+	name = "Salvage Clipper";
+	port_direction = 8;
+	preferred_direction = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "EG" = (
