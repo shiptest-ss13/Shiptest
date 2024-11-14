@@ -2415,8 +2415,8 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "sP" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	dir = 8
+/obj/machinery/door/poddoor/ert{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/outpost/hallway/central)
@@ -3522,8 +3522,8 @@
 /turf/open/floor/plasteel,
 /area/outpost/cargo)
 "AY" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	dir = 8
+/obj/machinery/door/poddoor/ert{
+	dir = 4
 	},
 /turf/open/floor/concrete/pavement{
 	light_power = 0.6;
@@ -3827,6 +3827,10 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked,
 /area/outpost/maintenance/starboard)
+"Dx" = (
+/obj/machinery/door/poddoor/ert,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/outpost/engineering/atmospherics)
 "Dy" = (
 /obj/machinery/light/dim/directional/south,
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -3901,8 +3905,8 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/cryo)
 "DU" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	dir = 8
+/obj/machinery/door/poddoor/ert{
+	dir = 4
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/hallway/central)
@@ -6993,7 +6997,7 @@ Tk
 Tk
 Tk
 Tk
-cN
+Dx
 uR
 mu
 cN
