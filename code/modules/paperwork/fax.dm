@@ -51,7 +51,6 @@
 		/obj/item/reagent_containers/food/snacks/pancakes,
 		/obj/item/throwing_star,
 		/obj/item/card,
-
 	)
 	/// Internal radio for announcing over comms
 	var/obj/item/radio/radio
