@@ -189,6 +189,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"eu" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "eE" = (
 /obj/structure/catwalk,
 /obj/structure/marker_beacon{
@@ -222,17 +228,16 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "fz" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E";
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/east,
 /obj/item/radio/intercom/directional/south,
 /obj/structure/closet/crate/bin,
-/turf/open/floor/wood/birch,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "fA" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -402,16 +407,14 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "jr" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E"
-	},
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 19;
 	pixel_y = -7
 	},
-/turf/open/floor/wood/birch,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "kj" = (
 /obj/machinery/door/airlock/external/glass,
@@ -496,6 +499,9 @@
 	},
 /obj/machinery/cell_charger,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "lP" = (
@@ -737,11 +743,11 @@
 /area/template_noop)
 "qa" = (
 /obj/structure/chair/greyscale,
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/birch,
+/obj/effect/turf_decal/siding{
+	color = "#474747"
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "qd" = (
 /obj/structure/platform/industrial{
@@ -774,6 +780,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
+"qF" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "qM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -796,6 +808,9 @@
 "rc" = (
 /obj/machinery/portable_atmospherics/canister/hydrogen,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "rd" = (
@@ -846,13 +861,12 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew)
 "rv" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E";
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/food/egg_smudge,
-/turf/open/floor/wood/birch,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "rG" = (
 /obj/structure/rack,
@@ -878,11 +892,11 @@
 /area/ship/cargo)
 "sd" = (
 /obj/structure/chair/greyscale,
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E"
-	},
 /obj/effect/landmark/start/assistant,
-/turf/open/floor/wood/birch,
+/obj/effect/turf_decal/siding{
+	color = "#474747"
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "sY" = (
 /obj/structure/cable{
@@ -953,6 +967,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "Bansheeenginewindow"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "vQ" = (
@@ -982,6 +999,15 @@
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
+"wP" = (
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "wR" = (
 /obj/machinery/power/ship_gravity,
 /obj/structure/platform/industrial/corner{
@@ -1103,15 +1129,25 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/cargo)
 "At" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E";
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/food/flour,
-/turf/open/floor/wood/birch,
+/obj/effect/turf_decal/siding{
+	color = "#474747";
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"Bb" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 9;
+	id = "Bansheeturrets"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Bi" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1139,6 +1175,17 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"BV" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "Bansheeenginewindow"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Cd" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -1224,6 +1271,15 @@
 "DY" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"Ee" = (
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "EG" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
@@ -1509,19 +1565,22 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Jm" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E";
-	dir = 1
-	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/birch,
+/obj/effect/turf_decal/siding{
+	color = "#474747";
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "JK" = (
 /obj/structure/table/greyscale,
@@ -1580,12 +1639,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "KF" = (
-/obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 10;
-	id = "Bansheeturrets"
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew)
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "KN" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 5
@@ -1651,11 +1709,12 @@
 /area/ship/engineering)
 "Mf" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 9;
+	dir = 10;
 	id = "Bansheeturrets"
 	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
+/obj/structure/cable,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Mr" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -1672,6 +1731,9 @@
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /obj/machinery/atmospherics/components/trinary/mixer/flipped{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -1772,6 +1834,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Nu" = (
@@ -1822,6 +1890,9 @@
 	},
 /obj/machinery/atmospherics/components/binary/valve/layer2,
 /obj/effect/decal/cleanable/oil,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Ol" = (
@@ -1867,14 +1938,13 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "Pf" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E";
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/wood/birch,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Ps" = (
 /obj/structure/cable{
@@ -2048,13 +2118,11 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "SH" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/wood/birch,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "SR" = (
 /turf/open/floor/engine/hull,
@@ -2150,11 +2218,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "Vu" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood/birch,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "VD" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
@@ -2181,6 +2247,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"Wd" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "WE" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -2475,9 +2547,9 @@ pM
 pM
 pM
 SR
-ZR
-SR
-Zq
+wP
+KF
+BV
 rc
 Ms
 Nn
@@ -2485,7 +2557,7 @@ Oj
 lD
 vb
 Jd
-ze
+Ee
 SR
 pM
 pM
@@ -2500,7 +2572,7 @@ pM
 kP
 ZR
 SR
-SR
+qF
 Hs
 Zq
 Du
@@ -2510,7 +2582,7 @@ mV
 lV
 Zq
 Hs
-SR
+qF
 SR
 ze
 iG
@@ -2525,7 +2597,7 @@ SR
 kP
 SR
 SR
-SR
+qF
 Zq
 tR
 qd
@@ -2535,7 +2607,7 @@ jp
 Cd
 wR
 Zq
-SR
+qF
 SR
 SR
 iG
@@ -2548,9 +2620,9 @@ pM
 SR
 SR
 kP
-SR
-SR
-SR
+Bb
+KF
+eu
 Zq
 EG
 UH
@@ -2560,9 +2632,9 @@ XL
 gf
 CN
 Zq
-SR
-SR
-SR
+Wd
+KF
+Mf
 iG
 SR
 SR
@@ -2624,7 +2696,7 @@ pM
 SR
 kP
 ZR
-Mf
+bT
 bT
 iz
 Rz
@@ -2636,7 +2708,7 @@ sd
 NU
 iz
 iY
-KF
+iY
 ze
 iG
 SR
