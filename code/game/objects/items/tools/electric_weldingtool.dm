@@ -1,14 +1,13 @@
 /obj/item/weldingtool/electric
 	name = "electrical welding tool"
-	desc = "An experimental welding tool capable of welding functionality through the use of electricity. The flame seems almost cold."
+	desc = "A welding tool capable of welding functionality through the use of electricity."
 	icon_state = "elwelder"
 	light_power = 1
 	light_color = LIGHT_COLOR_HALOGEN
 	tool_behaviour = NONE
 	toolspeed = 0.5 //twice as fast, but doesn't require welding fuel
 	power_use_amount = POWER_CELL_USE_LOW
-	// We don't use fuel
-	change_icons = FALSE
+	change_icons = FALSE //we don't use fuel
 	var/cell_override = /obj/item/stock_parts/cell/high
 	var/powered = FALSE
 	max_fuel = 20 //uses fuel anyways like a boss
@@ -24,10 +23,12 @@
 			return
 	powered = !powered
 	playsound(src, 'sound/effects/sparks4.ogg', 100, TRUE)
+
 	if(powered)
 		to_chat(user, span_notice("You turn [src] on."))
 		switched_on()
 		return
+
 	to_chat(user, span_notice("You turn [src] off."))
 	switched_off()
 
@@ -57,6 +58,7 @@
 	if(!powered)
 		switched_off()
 		return
+
 	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
 		switched_off()
 		return

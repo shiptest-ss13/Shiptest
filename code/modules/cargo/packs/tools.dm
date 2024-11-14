@@ -42,9 +42,8 @@
 /datum/supply_pack/tools/cellcharger
 	name = "Cell Charger Crate"
 	desc = "Contains a cell charger, able to charge all sorts of power cells."
-	cost = 2000
+	cost = 1000
 	contains = list(/obj/machinery/cell_charger)
-
 
 /datum/supply_pack/tools/rped
 	name = "RPED crate"
@@ -114,7 +113,14 @@
 	desc = "Contains one angle grinder pack, a tool used for quick structure deconstruction and salvaging"
 	cost = 2000
 	contains = list(/obj/item/gear_pack/anglegrinder)
-	crate_name = "Angle Grinder"
+	crate_name = "angle grinder crate"
+
+/datum/supply_pack/tools/electric_welder
+	name = "Electric Welder"
+	desc = "Contains a single electric welder, useful for many applications. No fuel required!"
+	cost = 850
+	contains = list(/obj/item/weldingtool/electric)
+	crate_name = "electric welder crate"
 
 /*
 		Liquid tanks

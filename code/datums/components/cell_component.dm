@@ -11,11 +11,11 @@ Registers onhit signal to check if it's being slapped by a battery
 Component moves battery to equipment loc, keeps a record, and then communicates with
 the equipment and controls the behaviour of said equipment.
 
-If it's a robot, it uses the robot cell - Using certified shitcode.(this needs redone)
-
 If you are adding this to an item that is active for a period of time, register signal to COMSIG_CELL_START_USE when it would start using the cell
 and COMSIG_CELL_STOP_USE when it should stop. To handle the turning off of said item once the cell is depleted, add your code into the
 component_cell_out_of_charge/component_cell_removed proc using loc where necessary, processing is done in the component!
+
+The cells are removed from objects with the component through alt-click.
 */
 
 /datum/component/cell
@@ -65,6 +65,7 @@ component_cell_out_of_charge/component_cell_removed proc using loc where necessa
 			new_cell = new cell_override()
 		inserted_cell = new_cell
 		new_cell.forceMove(parent) //We use the parents location so things like EMP's can interact with the cell.
+
 	handle_cell_overlays()
 	return ..()
 
@@ -72,18 +73,20 @@ component_cell_out_of_charge/component_cell_removed proc using loc where necessa
 	//Component to Parent signal registries
 	RegisterSignal(parent, COMSIG_ITEM_POWER_USE, PROC_REF(simple_power_use))
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(insert_cell))
-	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT , PROC_REF(remove_cell))
+	RegisterSignal(parent, COMSIG_CLICK_ALT , PROC_REF(remove_cell))
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(examine_cell))
 
 /datum/component/cell/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_ITEM_POWER_USE)
 	UnregisterSignal(parent, COMSIG_PARENT_ATTACKBY)
-	UnregisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT)
+	UnregisterSignal(parent, COMSIG_CLICK_ALT)
 	UnregisterSignal(parent, COMSIG_PARENT_EXAMINE)
 
 /datum/component/cell/Destroy(force)
+
 	if(on_cell_removed)
 		on_cell_removed = null
+
 	if(inserted_cell)
 		QDEL_NULL(inserted_cell)
 		inserted_cell = null
@@ -130,8 +133,9 @@ component_cell_out_of_charge/component_cell_removed proc using loc where necessa
 	if(!inserted_cell)
 		examine_list += span_danger("It does not have a cell inserted!")
 	else
-		examine_list += span_notice("It has [inserted_cell] inserted. It has <b>[inserted_cell.percent()]%</b> charge left. \
-						Ctrl+Shift+Click to remove the [inserted_cell].")
+		examine_list += span_notice("It has a [inserted_cell] inserted. \
+						The cell has <b>[inserted_cell.percent()]%</b> charge remaining. \
+						<b>Alt-click</b> to remove the cell.")
 
 /// Handling of cell removal.
 /datum/component/cell/proc/remove_cell(datum/source, mob/user)
@@ -146,7 +150,7 @@ component_cell_out_of_charge/component_cell_removed proc using loc where necessa
 		return
 
 	if(inserted_cell)
-		to_chat(user, span_notice("You remove [inserted_cell] from [equipment]!"))
+		to_chat(user, span_notice("You remove [inserted_cell] from [equipment]."))
 		playsound(equipment, 'sound/weapons/magout.ogg', 40, TRUE)
 		inserted_cell.forceMove(get_turf(equipment))
 		INVOKE_ASYNC(user, TYPE_PROC_REF(/mob/living, put_in_hands), inserted_cell)
@@ -155,7 +159,7 @@ component_cell_out_of_charge/component_cell_removed proc using loc where necessa
 			on_cell_removed.Invoke()
 		handle_cell_overlays(TRUE)
 	else
-		to_chat(user, span_danger("There is no cell inserted in [equipment]!"))
+		to_chat(user, span_danger("There is no cell in [equipment]!"))
 
 /// Handling of cell insertion.
 /datum/component/cell/proc/insert_cell(datum/source, obj/item/inserting_item, mob/living/user, params)
@@ -167,10 +171,10 @@ component_cell_out_of_charge/component_cell_removed proc using loc where necessa
 		return
 
 	if(inserted_cell) //No quickswap compatibility
-		to_chat(user, span_danger("There is already a cell inserted in [equipment]!"))
+		to_chat(user, span_danger("There is already a cell in [equipment]!"))
 		return
 
-	to_chat(user, span_notice("You insert [inserting_item] into [equipment]!"))
+	to_chat(user, span_notice("You connect [inserting_item] onto [equipment]."))
 	playsound(equipment,  'sound/weapons/magin.ogg', 40, TRUE)
 	inserted_cell = inserting_item
 	inserting_item.forceMove(parent)
@@ -179,6 +183,7 @@ component_cell_out_of_charge/component_cell_removed proc using loc where necessa
 /datum/component/cell/proc/handle_cell_overlays(update_overlays)
 	if(!has_cell_overlays)
 		return
+
 	if(inserted_cell)
 		cell_overlay = mutable_appearance(equipment.icon, "[initial(equipment.icon_state)]_cell")
 		equipment.add_overlay(cell_overlay)
