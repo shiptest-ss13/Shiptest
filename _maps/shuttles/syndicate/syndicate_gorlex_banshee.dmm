@@ -237,6 +237,13 @@
 "fA" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/cryo)
+"fW" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 5;
+	id = "Bansheeturrets"
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/cargo)
 "gf" = (
 /obj/machinery/power/terminal,
 /obj/effect/turf_decal/techfloor{
@@ -508,9 +515,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "lS" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 4
-	},
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 24
 	},
@@ -674,6 +678,13 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
+"oF" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 6;
+	id = "Bansheeturrets"
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/cargo)
 "oR" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
@@ -929,12 +940,10 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "uH" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "vb" = (
@@ -1570,6 +1579,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"KF" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 10;
+	id = "Bansheeturrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew)
 "KN" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 5
@@ -1596,6 +1612,11 @@
 /obj/item/storage/box/ammo/a357,
 /obj/item/megaphone,
 /obj/item/storage/guncase/pistol/a357,
+/obj/machinery/turretid/ship{
+	pixel_y = 24;
+	pixel_x = -7;
+	id = "Bansheeturrets"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "KP" = (
@@ -1628,6 +1649,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Mf" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 9;
+	id = "Bansheeturrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
 "Mr" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -2304,6 +2332,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "Bansheeairlockwindow"
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Zq" = (
@@ -2595,7 +2624,7 @@ pM
 SR
 kP
 ZR
-bT
+Mf
 bT
 iz
 Rz
@@ -2607,7 +2636,7 @@ sd
 NU
 iz
 iY
-iY
+KF
 ze
 iG
 SR
@@ -2922,7 +2951,7 @@ pM
 pM
 pM
 pM
-Ao
+fW
 oR
 Xf
 MK
@@ -2930,7 +2959,7 @@ kF
 MA
 oR
 oR
-Ao
+oF
 MU
 pM
 pM
