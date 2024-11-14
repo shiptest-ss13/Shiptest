@@ -19,6 +19,27 @@
 	stage4 = list(span_warning("You feel something pressing against your skin!"))
 	stage5 = list(span_warning("Your skin begins to tear apart-!"))
 	new_form = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
+	COOLDOWN_DECLARE(warning_timer)
+	var/cooldown_time = 1 MINUTES
+
+/datum/disease/transformation/legionvirus/infect(mob/living/infectee, make_copy = TRUE)
+	. = ..()
+	COOLDOWN_START(src, warning_timer, cooldown_time) //theos why don't you make this NOT A DISEASE if you don't plan on using ANY disease stuff??? good question:
+
+/datum/disease/transformation/legionvirus/stage_act()
+	..()
+	if(!COOLDOWN_FINISHED(src, warning_timer))
+		return
+	COOLDOWN_START(src, warning_timer, cooldown_time)
+	switch(stage)
+		if(1)
+			to_chat(affected_mob, pick(stage1))
+		if(2)
+			to_chat(affected_mob, pick(stage2))
+		if(3)
+			to_chat(affected_mob, pick(stage3))
+		if(4)
+			to_chat(affected_mob, pick(stage4))
 
 /datum/disease/transformation/legionvirus/do_disease_transformation(mob/living/H)
 	if(stage5)

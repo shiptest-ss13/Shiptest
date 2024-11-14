@@ -46,8 +46,8 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 			log_admin("[key_name(src)] has attempted to advertise in LOOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to advertise in LOOC: [msg]")
 			return
-		if(mob.stat)
-			to_chat(src, span_danger("You cannot use LOOC while unconscious or dead."))
+		if(mob.stat == 4)
+			to_chat(src, span_danger("You cannot use LOOC while dead."))
 			return
 		if(istype(mob, /mob/dead))
 			to_chat(src, span_danger("You cannot use LOOC while ghosting."))
