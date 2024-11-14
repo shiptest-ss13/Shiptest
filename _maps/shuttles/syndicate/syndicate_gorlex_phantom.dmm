@@ -9,6 +9,15 @@
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/item/clothing/neck/stethoscope,
+/obj/item/folder/syndicate{
+	pixel_y = 3;
+	pixel_x = 8
+	},
+/obj/item/pen{
+	pixel_y = 9;
+	pixel_x = -3
+	},
+/obj/item/pen/fountain/captain,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "aA" = (
@@ -187,6 +196,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/random/trash,
+/obj/structure/sign/warning/gasmask{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "dz" = (
@@ -1114,6 +1126,9 @@
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/isf_small,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/nosmoking/burnt{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "xp" = (
@@ -1189,6 +1204,11 @@
 /area/ship/engineering)
 "yH" = (
 /obj/structure/table,
+/obj/effect/spawner/random/entertainment/cigarette_pack,
+/obj/effect/spawner/random/entertainment/cigarette_pack{
+	pixel_x = 8;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "yS" = (
@@ -1762,6 +1782,9 @@
 /obj/effect/turf_decal/corner/opaque/black/three_quarters,
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "Jf" = (
@@ -1918,6 +1941,9 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
