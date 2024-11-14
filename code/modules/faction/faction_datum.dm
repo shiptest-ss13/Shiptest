@@ -5,28 +5,10 @@
 	var/parent_faction
 	/// List of prefixes that ships of this faction uses
 	var/list/prefixes
-	/// list of factions that are "allowed" with this faction, used for factional cargo
-	var/list/allowed_factions
 
 /datum/faction/New()
 	if(!short_name)
 		short_name = name
-
-/// Easy way to check if something is "allowed", checks to see if it matches the name or faction typepath because factions are a fucking mess
-/datum/faction/proc/allowed_faction(var/value_to_check)
-	var/datum/faction/faction_to_check = value_to_check
-	//are we the same faction datum?
-	if(istype(value_to_check, src))
-		return TRUE
-	///if they are our parent faction then allow
-	if(istype(faction_to_check, parent_faction))
-		return TRUE
-	//do we have the same faction even if one is a define?
-	if(value_to_check == name)
-		return TRUE
-	if(value_to_check in allowed_factions)
-		return TRUE
-	return FALSE
 
 /datum/faction/syndicate
 	name = FACTION_SYNDICATE
@@ -93,9 +75,3 @@
 	name = FACTION_INDEPENDENT
 	short_name = "Indie"
 	prefixes = PREFIX_INDEPENDENT
-
-/datum/faction/scarborough_arms
-	name = "Scarborough Arms"
-	parent_faction = /datum/faction/syndicate
-	prefixes = PREFIX_INDEPENDENT
-	allowed_factions = list(/datum/faction/syndicate)

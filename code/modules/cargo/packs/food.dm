@@ -16,7 +16,7 @@
 					/obj/item/storage/box/donkpockets/donkpockethonk)
 	crate_name = "donk pocket crate"
 	crate_type = /obj/structure/closet/crate/freezer
-	faction = /datum/faction/syndicate
+	faction = FACTION_SYNDICATE
 
 /datum/supply_pack/food/donkpockets/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 3)

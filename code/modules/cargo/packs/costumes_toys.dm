@@ -151,7 +151,7 @@
 					/obj/item/lipstick/random)
 	crate_name = "formalwear crate"
 	crate_type = /obj/structure/closet/crate/wooden
-	faction = /datum/faction/solgov
+	faction = FACTION_SOLGOV
 
 // this is technically armor but you aren't buying it for that. it's a joke pack so it goes here
 /datum/supply_pack/costumes_toys/justiceinbound

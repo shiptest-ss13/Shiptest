@@ -1,7 +1,6 @@
 /datum/supply_pack/material
 	group = "Materials & Sheets"
-	faction = /datum/faction/nt/ns_logi
-	faction_discount = 20
+	faction = FACTION_NS_LOGI
 
 /*
 		Basic construction materials

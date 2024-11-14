@@ -171,14 +171,14 @@
 	desc = "Contains a 5.56mm magazine for the Pistole C, containing twelve rounds."
 	contains = list(/obj/item/ammo_box/magazine/pistol556mm)
 	cost = 750
-	faction = /datum/faction/solgov
+	faction = FACTION_SOLGOV
 
 /datum/supply_pack/magazine/fms_mag
 	name = "Ferromagnetic Slug Magazine Crate"
 	desc = "Contains a ferromagnetic slug magazine for the Model H pistol, containing ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/modelh)
 	cost = 750
-	faction = /datum/faction/solgov
+	faction = FACTION_SOLGOV
 
 /datum/supply_pack/magazine/gar_ammo
 	name = "GAR Ferromagnetic Lance Magazine Crate"

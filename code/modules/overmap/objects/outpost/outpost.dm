@@ -155,8 +155,6 @@
 
 	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
 		current_pack = new current_pack()
-		if(current_pack.faction)
-			current_pack.faction = new current_pack.faction()
 		if(!current_pack.contains)
 			continue
 		supply_packs += current_pack

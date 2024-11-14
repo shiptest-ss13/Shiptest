@@ -92,9 +92,7 @@
 	contains = list(/obj/item/flamethrower/full)
 	crate_name = "flamethrower crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
-
-	faction = /datum/faction/syndicate/ngr
-	faction_discount = 20
+	faction = FACTION_NGR
 
 /datum/supply_pack/sec_supply/incendiary_grenade
 	name = "Incendiary Grenade Crate"
@@ -103,8 +101,7 @@
 	contains = list(/obj/item/grenade/chem_grenade/incendiary)
 	crate_name = "incendiary grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/syndicate/ngr
-	faction_discount = 20
+	faction = FACTION_NGR
 
 /*
 		Stamina / PVP weapons (intentionally overpriced due to odd balance position of stamina weapons)

@@ -182,14 +182,3 @@
 /obj/item/storage/guncase/skm
 	gun_type = /obj/item/gun/ballistic/automatic/assault/skm
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40
-
-/obj/item/storage/guncase/skm_inteq
-	gun_type = /obj/item/gun/ballistic/automatic/assault/skm/inteq
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
-
-/obj/item/storage/guncase/hades
-	gun_type = /obj/item/gun/energy/e_gun/hades
-
-/obj/item/storage/guncase/firestorm
-	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
-	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
