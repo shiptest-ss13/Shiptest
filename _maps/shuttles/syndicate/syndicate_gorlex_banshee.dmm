@@ -190,16 +190,17 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "eE" = (
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 7;
-	height = 15;
-	width = 30
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
+/obj/effect/turf_decal/spline/fancy/transparent/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/isf_small/left{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "eK" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -708,6 +709,9 @@
 /area/ship/hallway/central)
 "pk" = (
 /obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/isf_small/right{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "pM" = (
@@ -1595,6 +1599,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Mr" = (
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 7;
+	height = 15;
+	width = 30
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "Ms" = (
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /obj/machinery/atmospherics/components/trinary/mixer/flipped{
@@ -2106,6 +2121,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/isf_small{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -2858,7 +2876,7 @@ Rt
 kj
 uH
 YZ
-eE
+Mr
 pM
 pM
 pM
@@ -2977,7 +2995,7 @@ SR
 pM
 oR
 Hu
-Km
+eE
 VO
 pk
 iU
