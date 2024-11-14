@@ -13,7 +13,7 @@
 		short_name = name
 
 /// Easy way to check if something is "allowed", checks to see if it matches the name or faction typepath because factions are a fucking mess
-/datum/faction/proc/allowed_faction(var/value_to_check)
+/datum/faction/proc/allowed_faction(value_to_check)
 	var/datum/faction/faction_to_check = value_to_check
 	//are we the same faction datum?
 	if(istype(value_to_check, src))
