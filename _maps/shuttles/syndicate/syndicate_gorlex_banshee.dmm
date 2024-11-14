@@ -112,11 +112,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"de" = (
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
 "dk" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -719,6 +714,14 @@
 "pM" = (
 /turf/template_noop,
 /area/template_noop)
+"qa" = (
+/obj/structure/chair/greyscale,
+/obj/effect/turf_decal/siding/wood{
+	color = "#D5A66E"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/birch,
+/area/ship/crew/canteen)
 "qd" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -789,6 +792,11 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
+"rq" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/landmark/start/shaft_miner,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "ru" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -839,6 +847,7 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#D5A66E"
 	},
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/wood/birch,
 /area/ship/crew/canteen)
 "sY" = (
@@ -1107,6 +1116,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/landmark/start/station_engineer,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "CC" = (
@@ -1192,18 +1202,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
-"EV" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
-/obj/effect/turf_decal/siding{
-	color = "#730622";
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/white,
-/area/ship/hallway/central)
 "Fv" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -1592,6 +1590,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Mr" = (
+/obj/docking_port/mobile{
+	callTime = 250;
+	dir = 2;
+	launch_status = 0;
+	name = "Salvage Clipper";
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew)
 "Ms" = (
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /obj/machinery/atmospherics/components/trinary/mixer/flipped{
@@ -1634,6 +1643,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
+"MU" = (
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "MY" = (
 /obj/structure/table,
 /obj/effect/turf_decal/spline/plain/opaque/syndiered{
@@ -2080,18 +2094,18 @@
 /turf/open/floor/wood/birch,
 /area/ship/crew/canteen)
 "VD" = (
-/obj/structure/catwalk,
-/obj/structure/marker_beacon{
-	picked_color = "Lime"
+/obj/effect/turf_decal/corner/opaque/syndiered/half,
+/obj/effect/turf_decal/siding{
+	color = "#730622";
+	dir = 1
 	},
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
 	},
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/hallway/central)
 "VO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -2123,6 +2137,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/landmark/start/shaft_miner,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Xg" = (
@@ -2186,6 +2201,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/floor,
+/obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Yv" = (
@@ -2225,6 +2241,7 @@
 	pixel_x = -20;
 	pixel_y = -4
 	},
+/obj/effect/landmark/start/captain,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "YN" = (
@@ -2241,14 +2258,6 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"YT" = (
-/obj/structure/chair/greyscale,
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/birch,
-/area/ship/crew/canteen)
 "YZ" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/glass,
@@ -2527,7 +2536,7 @@ Jm
 SH
 FP
 rv
-YT
+qa
 ef
 iz
 ze
@@ -2657,7 +2666,7 @@ Kr
 KT
 JK
 iY
-iY
+Mr
 pM
 pM
 pM
@@ -2682,7 +2691,7 @@ KP
 iY
 iY
 iY
-VD
+uG
 pM
 pM
 pM
@@ -2776,7 +2785,7 @@ nD
 tO
 oT
 Tc
-EV
+VD
 dG
 RH
 iT
@@ -2855,7 +2864,7 @@ Rt
 kj
 uH
 YZ
-de
+MU
 pM
 pM
 pM
@@ -2880,7 +2889,7 @@ MA
 oR
 oR
 Ao
-de
+MU
 pM
 pM
 pM
@@ -2951,7 +2960,7 @@ oR
 lP
 Km
 Yo
-pk
+rq
 Ol
 oR
 pM
