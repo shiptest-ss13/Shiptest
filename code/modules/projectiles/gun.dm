@@ -57,7 +57,10 @@
 //BALLISTIC
 	///Compatible magazines with the gun
 	var/default_ammo_type
+	///Allowed base types of magazines with the gun
 	var/allowed_ammo_types
+	///Incompatible magazines with the gun
+	var/blacklisted_ammo_types
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
 	///Do we eject the magazine upon runing out of ammo?
@@ -286,6 +289,8 @@
 	var/safety = FALSE
 	///The wording of safety. Useful for guns that have a non-standard safety system, like a revolver
 	var/safety_wording = "safety"
+	///multiplier for this gun's misfire chances. Closer to 0 is better.
+	var/safety_multiplier = 1
 
 /*
  *  Spawn Info (Stuff that becomes useless onces the gun is spawned, mostly here for mappers)
@@ -985,16 +990,17 @@
 	if(ishuman(src))
 		human_holder = src
 	for(var/obj/item/gun/at_risk in get_all_contents())
-		var/chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM
+		var/chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM * at_risk.safety_multiplier)
 		if(human_holder)
 			// gun is less likely to go off in a holster
 			if(at_risk == human_holder.s_store)
-				chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW
+				chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW * at_risk.safety_multiplier)
 		if(at_risk.safety == FALSE && prob(chance_to_fire))
-			if(at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)) == TRUE)
+			var/bodyzone = pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)
+			if(at_risk.process_fire(src,src,FALSE, null, bodyzone) == TRUE)
 				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
-				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg without its safties on!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without its safeties on!"))
-				emote("scream")
+				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s [bodyzone]!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your [bodyzone]!"))
+				human_holder.force_scream()
 
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom

@@ -67,9 +67,7 @@
 			default_ammo_type = FALSE
 
 	if(default_ammo_type)
-		cell = new default_ammo_type(src)
-	if(spawn_no_ammo)
-		cell.use(cell.maxcharge)
+		cell = new default_ammo_type(src, spawn_no_ammo)
 	update_ammo_types()
 	recharge_newshot(TRUE)
 	if(selfcharge)
@@ -127,7 +125,7 @@
 		update_appearance()
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
-	if (!internal_magazine && (A.type in allowed_ammo_types))
+	if (!internal_magazine && (A.type in (allowed_ammo_types - blacklisted_ammo_types)))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
