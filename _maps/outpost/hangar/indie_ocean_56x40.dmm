@@ -24,6 +24,17 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"ca" = (
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "cS" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
@@ -82,6 +93,18 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"hf" = (
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "hn" = (
 /obj/structure/platform/industrial_alt{
 	dir = 1
@@ -132,10 +155,6 @@
 	},
 /area/hangar)
 "nf" = (
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/obj/structure/platform/industrial_alt/corner,
 /obj/effect/forcefield/mime/advanced{
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
@@ -289,18 +308,13 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "Bm" = (
-/obj/structure/platform/industrial_alt{
-	dir = 8
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 5
 	},
-/obj/structure/platform/industrial_alt{
-	dir = 4
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "BL" = (
 /turf/closed/indestructible/rock,
@@ -326,9 +340,13 @@
 	},
 /area/hangar)
 "CC" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 5
+	},
 /obj/effect/turf_decal/techfloor/orange,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "CE" = (
 /obj/machinery/light/floor/hangar,
@@ -382,15 +400,11 @@
 	},
 /area/hangar)
 "Gr" = (
-/obj/structure/platform/industrial_alt/corner{
-	dir = 1
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "GK" = (
 /turf/open/floor/plating/rust,
@@ -430,18 +444,16 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
 "JA" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/door/airlock/hatch,
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/poddoor/shutters/indestructible,
+/turf/closed/indestructible/fakeglass,
 /area/hangar)
 "MJ" = (
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
+/obj/machinery/door/airlock/outpost{
+	dir = 4;
+	req_access = list("101");
+	name = "Tram Car Door"
 	},
+/turf/open/floor/plasteel,
 /area/hangar)
 "Po" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
@@ -484,11 +496,8 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "RT" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
+/obj/effect/landmark/outpost/elevator_machine,
 /obj/machinery/door/airlock/hatch,
-/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "SK" = (
@@ -546,10 +555,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
 "Vz" = (
-/obj/structure/platform/industrial_alt/corner{
-	dir = 1
+/obj/effect/turf_decal/corner/transparent/bottlegreen,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "VS" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -5475,7 +5484,7 @@ Ff
 ma
 FG
 wt
-hd
+eY
 vH
 vH
 vH
@@ -5540,15 +5549,15 @@ Wv
 Wv
 Ff
 ma
-bT
-bT
-bT
+FG
+wt
+TM
 CC
 JA
 mH
 mH
-ob
-DM
+mH
+JA
 Wv
 vH
 wt
@@ -5607,7 +5616,7 @@ Wv
 Wv
 Ff
 GK
-wt
+FG
 wt
 Tx
 CC
@@ -5615,7 +5624,7 @@ JA
 mH
 mH
 mH
-DM
+JA
 Wv
 vH
 wt
@@ -5673,16 +5682,16 @@ Wv
 Wv
 Wv
 Ff
-vH
-oP
-oP
-oP
+GK
+FG
+wt
+Vz
 CC
 JA
 mH
 mH
 mH
-DM
+JA
 Wv
 vH
 vH
@@ -5740,14 +5749,14 @@ Wv
 Wv
 Wv
 Ff
+ma
+FG
+wt
+hd
 vH
 vH
-GK
-GK
 vH
-vH
-vH
-vH
+MJ
 vH
 vH
 Wv
@@ -5806,16 +5815,16 @@ Wv
 Wv
 Wv
 Wv
-Gr
-Dd
-Dd
-Dd
-nf
+Ff
+GK
+FG
+wt
+TM
 Bm
 RT
-MJ
-MJ
-MJ
+mH
+mH
+ob
 DM
 nY
 RJ
@@ -5873,16 +5882,16 @@ Wv
 Wv
 Wv
 Wv
-Wv
-Wv
-Wv
-Wv
-Cm
-vH
+Ff
+GK
+FG
+wt
+Tx
+Gr
 RT
-MJ
-MJ
-MJ
+mH
+mH
+mH
 DM
 vH
 hn
@@ -5940,16 +5949,16 @@ Wv
 Wv
 Wv
 Wv
-Wv
-Wv
-Wv
-Wv
+Ff
+ma
+FG
+wt
 Vz
-sP
+Gr
 RT
-MJ
-MJ
-MJ
+mH
+mH
+mH
 DM
 sP
 RE
@@ -6007,15 +6016,15 @@ BL
 Wv
 Wv
 Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
+Ff
+ma
+FG
+wt
+eY
 vH
 vH
 vH
+MJ
 vH
 vH
 Wv
@@ -6073,18 +6082,18 @@ BL
 BL
 Wv
 Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-RT
-MJ
-MJ
-MJ
-DM
+nf
+Ff
+GK
+FG
+wt
+TM
+hf
+JA
+mH
+mH
+mH
+JA
 Wv
 Wv
 Wv
@@ -6141,17 +6150,17 @@ Wv
 Wv
 Wv
 Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-RT
-MJ
-MJ
-MJ
-DM
+Ff
+GK
+FG
+wt
+Tx
+Gr
+JA
+mH
+mH
+mH
+JA
 Wv
 Wv
 Wv
@@ -6208,17 +6217,17 @@ Wv
 Wv
 Wv
 Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-RT
-MJ
-MJ
-MJ
-DM
+Ff
+vH
+ca
+oP
+oP
+Gr
+JA
+mH
+mH
+mH
+JA
 Wv
 Wv
 Wv
@@ -6275,11 +6284,11 @@ BL
 Wv
 Wv
 Wv
-Wv
-Wv
-Wv
-Wv
-Wv
+Ff
+vH
+vH
+GK
+GK
 vH
 Xo
 Xo

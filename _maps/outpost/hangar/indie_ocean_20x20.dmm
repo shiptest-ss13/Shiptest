@@ -6,10 +6,10 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "bt" = (
-/obj/structure/platform/industrial_alt/corner{
-	dir = 1
+/obj/effect/turf_decal/corner/transparent/bottlegreen,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "bY" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters,
@@ -18,11 +18,8 @@
 	},
 /area/hangar)
 "cx" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
+/obj/effect/landmark/outpost/elevator_machine,
 /obj/machinery/door/airlock/hatch,
-/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "dD" = (
@@ -246,19 +243,21 @@
 	},
 /area/hangar)
 "tG" = (
-/obj/structure/platform/industrial_alt{
-	dir = 8
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 5
 	},
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/turf/open/water/beach/deep,
-/area/hangar)
-"ux" = (
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/elevatorshaft{
+/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"ux" = (
+/obj/machinery/door/airlock/outpost{
+	dir = 4;
+	req_access = list("101");
+	name = "Tram Car Door"
+	},
+/turf/open/floor/plasteel,
 /area/hangar)
 "vA" = (
 /turf/closed/indestructible/rock,
@@ -305,10 +304,6 @@
 	},
 /area/hangar)
 "Ag" = (
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/obj/structure/platform/industrial_alt/corner,
 /obj/effect/forcefield/mime/advanced{
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
@@ -443,6 +438,24 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"Ju" = (
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"KZ" = (
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "Ld" = (
 /turf/open/floor/plating/rust,
 /area/hangar)
@@ -450,12 +463,8 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "Lu" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/door/airlock/hatch,
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/poddoor/shutters/indestructible,
+/turf/closed/indestructible/fakeglass,
 /area/hangar)
 "LB" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
@@ -505,9 +514,13 @@
 	},
 /area/hangar)
 "OS" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 5
+	},
 /obj/effect/turf_decal/techfloor/orange,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "PF" = (
 /obj/effect/landmark/outpost/elevator,
@@ -576,6 +589,18 @@
 	timeleft = null
 	},
 /turf/open/water/beach/deep,
+/area/hangar)
+"VI" = (
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "XX" = (
 /turf/open/floor/plasteel/elevatorshaft{
@@ -2188,7 +2213,7 @@ Zz
 Ld
 oz
 hF
-Et
+bt
 El
 sG
 El
@@ -2329,7 +2354,7 @@ Zz
 sI
 oz
 Et
-FI
+YO
 dD
 dD
 dD
@@ -2374,15 +2399,15 @@ Le
 Le
 Zz
 sI
-yL
-yL
-yL
+oz
+Et
+fH
 OS
 Lu
 XX
 XX
-PF
-ki
+XX
+Lu
 Le
 dD
 Et
@@ -2421,7 +2446,7 @@ Le
 Le
 Zz
 Ld
-Et
+oz
 Et
 AH
 OS
@@ -2429,7 +2454,7 @@ Lu
 XX
 XX
 XX
-ki
+Lu
 Le
 dD
 Et
@@ -2466,17 +2491,17 @@ Le
 Le
 Le
 Le
-MF
-dD
-El
-El
-El
+Zz
+Ld
+oz
+Et
+bt
 OS
 Lu
 XX
 XX
 XX
-ki
+Lu
 Le
 dD
 dD
@@ -2513,15 +2538,15 @@ Le
 Le
 Le
 Le
-MF
+Zz
+sI
+oz
+Et
+FI
 dD
 dD
-Ld
-Ld
 dD
-dD
-dD
-dD
+ux
 dD
 dD
 Le
@@ -2560,16 +2585,16 @@ Le
 Le
 Le
 Le
-bt
-vE
-vE
-kA
-Ag
+Zz
+Ld
+oz
+Et
+fH
 tG
 cx
-ux
-ux
-ux
+XX
+XX
+PF
 ki
 nC
 aU
@@ -2607,16 +2632,16 @@ Le
 Le
 Le
 Le
-Le
-Le
-Le
-Le
-MF
-dD
+Zz
+Ld
+oz
+Et
+AH
+KZ
 cx
-ux
-ux
-ux
+XX
+XX
+XX
 ki
 dD
 Fa
@@ -2654,16 +2679,16 @@ Le
 Le
 Le
 Le
-Le
-Le
-Le
-Le
+Zz
+sI
+oz
+Et
 bt
-vE
+KZ
 cx
-ux
-ux
-ux
+XX
+XX
+XX
 ki
 vE
 xO
@@ -2701,15 +2726,15 @@ vA
 Le
 Le
 Le
-Le
-Le
-Le
-Le
-Le
-Le
+Zz
+sI
+oz
+Et
+YO
 dD
 dD
 dD
+ux
 dD
 dD
 Le
@@ -2747,18 +2772,18 @@ vA
 vA
 Le
 Le
-Le
-Le
-Le
-Le
-Le
-Le
-Le
-cx
-ux
-ux
-ux
-ki
+Ag
+Zz
+Ld
+oz
+Et
+fH
+VI
+Lu
+XX
+XX
+XX
+Lu
 Le
 Le
 Le
@@ -2795,17 +2820,17 @@ Le
 Le
 Le
 Le
-Le
-Le
-Le
-Le
-Le
-Le
-cx
-ux
-ux
-ux
-ki
+Zz
+Ld
+oz
+Et
+AH
+KZ
+Lu
+XX
+XX
+XX
+Lu
 Le
 Le
 Le
@@ -2842,17 +2867,17 @@ Le
 Le
 Le
 Le
-Le
-Le
-Le
-Le
-Le
-Le
-cx
-ux
-ux
-ux
-ki
+Zz
+dD
+Ju
+El
+El
+KZ
+Lu
+XX
+XX
+XX
+Lu
 Le
 Le
 Le
@@ -2889,11 +2914,11 @@ vA
 Le
 Le
 Le
-Le
-Le
-Le
-Le
-Le
+Zz
+dD
+dD
+Ld
+Ld
 dD
 lt
 lt

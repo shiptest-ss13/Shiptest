@@ -1,7 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "bx" = (
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/elevatorshaft{
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -50,10 +51,10 @@
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "ht" = (
-/obj/structure/platform/industrial_alt/corner{
-	dir = 1
+/obj/effect/turf_decal/corner/transparent/bottlegreen,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "iy" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
@@ -79,11 +80,8 @@
 /turf/closed/indestructible/rock,
 /area/hangar)
 "jy" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
+/obj/effect/landmark/outpost/elevator_machine,
 /obj/machinery/door/airlock/hatch,
-/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "jA" = (
@@ -184,15 +182,15 @@
 /turf/open/floor/plating/rust,
 /area/hangar)
 "sb" = (
-/obj/structure/platform/industrial_alt/corner{
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
 	dir = 1
 	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "sq" = (
 /obj/effect/landmark/outpost/hangar_dock,
@@ -230,6 +228,18 @@
 "vS" = (
 /obj/effect/landmark/outpost/elevator,
 /turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"wi" = (
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -276,18 +286,13 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "zy" = (
-/obj/structure/platform/industrial_alt{
-	dir = 8
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 5
 	},
-/obj/structure/platform/industrial_alt{
-	dir = 4
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "zU" = (
 /obj/structure/platform/industrial,
@@ -320,8 +325,20 @@
 	},
 /area/hangar)
 "Bo" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 5
+	},
 /obj/effect/turf_decal/techfloor/orange,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"BC" = (
+/obj/machinery/door/airlock/outpost{
+	dir = 4;
+	req_access = list("101");
+	name = "Tram Car Door"
+	},
 /turf/open/floor/plasteel,
 /area/hangar)
 "BL" = (
@@ -494,12 +511,8 @@
 	},
 /area/hangar)
 "Ng" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/door/airlock/hatch,
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/poddoor/shutters/indestructible,
+/turf/closed/indestructible/fakeglass,
 /area/hangar)
 "Pn" = (
 /obj/structure/platform/industrial_alt{
@@ -606,10 +619,6 @@
 	},
 /area/hangar)
 "WU" = (
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/obj/structure/platform/industrial_alt/corner,
 /obj/effect/forcefield/mime/advanced{
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
@@ -3280,7 +3289,7 @@ wK
 CW
 fc
 cv
-iy
+JE
 xt
 xt
 xt
@@ -3325,15 +3334,15 @@ mb
 mb
 wK
 CW
-yF
-yF
-yF
+fc
+cv
+yH
 Bo
 Ng
 IE
 IE
-vS
-Lc
+IE
+Ng
 mb
 xt
 cv
@@ -3372,7 +3381,7 @@ mb
 mb
 wK
 Ue
-cv
+fc
 cv
 dB
 Bo
@@ -3380,7 +3389,7 @@ Ng
 IE
 IE
 IE
-Lc
+Ng
 mb
 xt
 cv
@@ -3418,16 +3427,16 @@ mb
 mb
 mb
 wK
-xt
-Gv
-Gv
-Gv
+Ue
+fc
+cv
+ht
 Bo
 Ng
 IE
 IE
 IE
-Lc
+Ng
 mb
 xt
 xt
@@ -3465,14 +3474,14 @@ mb
 mb
 mb
 wK
+CW
+fc
+cv
+iy
 xt
 xt
-Ue
-Ue
 xt
-xt
-xt
-xt
+BC
 xt
 xt
 mb
@@ -3511,16 +3520,16 @@ mb
 mb
 mb
 mb
-sb
-PX
-PX
-PX
-WU
+wK
+Ue
+fc
+cv
+yH
 zy
 jy
-bx
-bx
-bx
+IE
+IE
+vS
 Lc
 zx
 mH
@@ -3558,16 +3567,16 @@ mb
 mb
 mb
 mb
-mb
-mb
-mb
-mb
-Dz
-xt
+wK
+Ue
+fc
+cv
+dB
+bx
 jy
-bx
-bx
-bx
+IE
+IE
+IE
 Lc
 xt
 Vc
@@ -3605,16 +3614,16 @@ mb
 mb
 mb
 mb
-mb
-mb
-mb
-mb
+wK
+CW
+fc
+cv
 ht
-MI
+bx
 jy
-bx
-bx
-bx
+IE
+IE
+IE
 Lc
 MI
 Uf
@@ -3652,15 +3661,15 @@ ja
 mb
 mb
 mb
-mb
-mb
-mb
-mb
-mb
-mb
+wK
+CW
+fc
+cv
+JE
 xt
 xt
 xt
+BC
 xt
 xt
 mb
@@ -3698,18 +3707,18 @@ ja
 ja
 mb
 mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-jy
-bx
-bx
-bx
-Lc
+WU
+wK
+Ue
+fc
+cv
+yH
+wi
+Ng
+IE
+IE
+IE
+Ng
 mb
 mb
 mb
@@ -3746,17 +3755,17 @@ mb
 mb
 mb
 mb
-mb
-mb
-mb
-mb
-mb
-mb
-jy
+wK
+Ue
+fc
+cv
+dB
 bx
-bx
-bx
-Lc
+Ng
+IE
+IE
+IE
+Ng
 mb
 mb
 mb
@@ -3793,17 +3802,17 @@ mb
 mb
 mb
 mb
-mb
-mb
-mb
-mb
-mb
-mb
-jy
+wK
+xt
+sb
+Gv
+Gv
 bx
-bx
-bx
-Lc
+Ng
+IE
+IE
+IE
+Ng
 mb
 mb
 mb
@@ -3840,11 +3849,11 @@ ja
 mb
 mb
 mb
-mb
-mb
-mb
-mb
-mb
+wK
+xt
+xt
+Ue
+Ue
 xt
 RQ
 RQ

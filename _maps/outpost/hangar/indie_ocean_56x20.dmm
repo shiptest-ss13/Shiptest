@@ -80,6 +80,18 @@
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
+"gA" = (
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "gR" = (
 /obj/structure/table/reinforced,
 /obj/structure/sign/warning/nosmoking/burnt{
@@ -137,16 +149,12 @@
 	},
 /area/hangar)
 "lc" = (
-/obj/structure/platform/industrial_alt{
-	dir = 4
+/obj/machinery/door/airlock/outpost{
+	dir = 4;
+	req_access = list("101");
+	name = "Tram Car Door"
 	},
-/obj/structure/platform/industrial_alt/corner,
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
+/turf/open/floor/plasteel,
 /area/hangar)
 "lu" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
@@ -180,8 +188,9 @@
 	},
 /area/hangar)
 "nf" = (
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/elevatorshaft{
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -237,12 +246,8 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
 "tY" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/door/airlock/hatch,
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/poddoor/shutters/indestructible,
+/turf/closed/indestructible/fakeglass,
 /area/hangar)
 "uF" = (
 /turf/closed/indestructible/reinforced,
@@ -425,10 +430,10 @@
 /turf/closed/indestructible/rock,
 /area/hangar)
 "JI" = (
-/obj/structure/platform/industrial_alt/corner{
-	dir = 1
+/obj/effect/turf_decal/corner/transparent/bottlegreen,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "Kp" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -440,11 +445,8 @@
 	},
 /area/hangar)
 "Lw" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
+/obj/effect/landmark/outpost/elevator_machine,
 /obj/machinery/door/airlock/hatch,
-/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "LJ" = (
@@ -452,9 +454,13 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "Mf" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 5
+	},
 /obj/effect/turf_decal/techfloor/orange,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "No" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
@@ -468,15 +474,15 @@
 /turf/closed/indestructible/fakeglass,
 /area/hangar)
 "Oa" = (
-/obj/structure/platform/industrial_alt/corner{
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
 	dir = 1
 	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "OH" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -492,6 +498,14 @@
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"PA" = (
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
 /area/hangar)
 "PT" = (
 /obj/effect/landmark/outpost/hangar_numbers,
@@ -539,18 +553,13 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "Sq" = (
-/obj/structure/platform/industrial_alt{
-	dir = 8
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 5
 	},
-/obj/structure/platform/industrial_alt{
-	dir = 4
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "Tw" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -4035,7 +4044,7 @@ Go
 dC
 nb
 ZG
-vP
+OM
 uF
 uF
 uF
@@ -4080,15 +4089,15 @@ QF
 QF
 Go
 dC
-lu
-lu
-lu
+nb
+ZG
+sa
 Mf
 tY
 fS
 fS
-ZB
-NQ
+fS
+tY
 QF
 uF
 ZG
@@ -4127,7 +4136,7 @@ QF
 QF
 Go
 XC
-ZG
+nb
 ZG
 PT
 Mf
@@ -4135,7 +4144,7 @@ tY
 fS
 fS
 fS
-NQ
+tY
 QF
 uF
 ZG
@@ -4173,16 +4182,16 @@ QF
 QF
 QF
 Go
-uF
-No
-No
-No
+XC
+nb
+ZG
+JI
 Mf
 tY
 fS
 fS
 fS
-NQ
+tY
 QF
 uF
 uF
@@ -4220,14 +4229,14 @@ QF
 QF
 QF
 Go
+dC
+nb
+ZG
+vP
 uF
 uF
-XC
-XC
 uF
-uF
-uF
-uF
+lc
 uF
 uF
 QF
@@ -4266,16 +4275,16 @@ QF
 QF
 QF
 QF
-Oa
-YH
-YH
-YH
-lc
+Go
+XC
+nb
+ZG
+sa
 Sq
 Lw
-nf
-nf
-nf
+fS
+fS
+ZB
 NQ
 hW
 RI
@@ -4313,16 +4322,16 @@ QF
 QF
 QF
 QF
-QF
-QF
-QF
-QF
-LJ
-uF
+Go
+XC
+nb
+ZG
+PT
+nf
 Lw
-nf
-nf
-nf
+fS
+fS
+fS
 NQ
 uF
 Qg
@@ -4360,16 +4369,16 @@ QF
 QF
 QF
 QF
-QF
-QF
-QF
-QF
+Go
+dC
+nb
+ZG
 JI
-Bb
+nf
 Lw
-nf
-nf
-nf
+fS
+fS
+fS
 NQ
 Bb
 AZ
@@ -4407,15 +4416,15 @@ Js
 QF
 QF
 QF
-QF
-QF
-QF
-QF
-QF
-QF
+Go
+dC
+nb
+ZG
+OM
 uF
 uF
 uF
+lc
 uF
 uF
 QF
@@ -4453,18 +4462,18 @@ Js
 Js
 QF
 QF
-QF
-QF
-QF
-QF
-QF
-QF
-QF
-Lw
-nf
-nf
-nf
-NQ
+PA
+Go
+XC
+nb
+ZG
+sa
+gA
+tY
+fS
+fS
+fS
+tY
 QF
 QF
 QF
@@ -4501,17 +4510,17 @@ QF
 QF
 QF
 QF
-QF
-QF
-QF
-QF
-QF
-QF
-Lw
+Go
+XC
+nb
+ZG
+PT
 nf
-nf
-nf
-NQ
+tY
+fS
+fS
+fS
+tY
 QF
 QF
 QF
@@ -4548,17 +4557,17 @@ QF
 QF
 QF
 QF
-QF
-QF
-QF
-QF
-QF
-QF
-Lw
+Go
+uF
+Oa
+No
+No
 nf
-nf
-nf
-NQ
+tY
+fS
+fS
+fS
+tY
 QF
 QF
 QF
@@ -4595,11 +4604,11 @@ Js
 QF
 QF
 QF
-QF
-QF
-QF
-QF
-QF
+Go
+uF
+uF
+XC
+XC
 uF
 bC
 bC

@@ -52,10 +52,10 @@
 	},
 /area/hangar)
 "dM" = (
-/obj/structure/platform/industrial_alt/corner{
-	dir = 1
+/obj/effect/turf_decal/corner/transparent/bottlegreen,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "ec" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
@@ -74,11 +74,8 @@
 	},
 /area/hangar)
 "fC" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
+/obj/effect/landmark/outpost/elevator_machine,
 /obj/machinery/door/airlock/hatch,
-/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "fQ" = (
@@ -181,6 +178,14 @@
 "mS" = (
 /turf/open/water/beach/deep,
 /area/hangar)
+"oL" = (
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
+/area/hangar)
 "pi" = (
 /turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
@@ -193,9 +198,13 @@
 	},
 /area/hangar)
 "qk" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 5
+	},
 /obj/effect/turf_decal/techfloor/orange,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "qG" = (
 /obj/structure/platform/industrial_alt{
@@ -209,16 +218,16 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "qW" = (
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/obj/structure/platform/industrial_alt/corner,
 /obj/effect/forcefield/mime/advanced{
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
 	},
-/turf/open/water/beach/deep,
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "rT" = (
 /obj/structure/marker_beacon{
@@ -236,6 +245,17 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
+/area/hangar)
+"uB" = (
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "vw" = (
 /obj/effect/landmark/outpost/elevator,
@@ -302,12 +322,8 @@
 	},
 /area/hangar)
 "zo" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/door/airlock/hatch,
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/poddoor/shutters/indestructible,
+/turf/closed/indestructible/fakeglass,
 /area/hangar)
 "zq" = (
 /obj/structure/platform/industrial_alt,
@@ -398,10 +414,12 @@
 	},
 /area/hangar)
 "HC" = (
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
+/obj/machinery/door/airlock/outpost{
+	dir = 4;
+	req_access = list("101");
+	name = "Tram Car Door"
 	},
+/turf/open/floor/plasteel,
 /area/hangar)
 "Iu" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -494,18 +512,13 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "QN" = (
-/obj/structure/platform/industrial_alt{
-	dir = 8
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen{
+	dir = 5
 	},
-/obj/structure/platform/industrial_alt{
-	dir = 4
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "Rz" = (
 /obj/structure/platform/industrial_alt{
@@ -521,15 +534,11 @@
 	},
 /area/hangar)
 "TY" = (
-/obj/structure/platform/industrial_alt/corner{
-	dir = 1
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
 	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "UD" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -4394,7 +4403,7 @@ mN
 jC
 EW
 CG
-VB
+zh
 yh
 yh
 yh
@@ -4459,15 +4468,15 @@ mS
 mS
 mN
 jC
-XW
-XW
-XW
+EW
+CG
+mJ
 qk
 zo
 Kw
 Kw
-vw
-AL
+Kw
+zo
 mS
 yh
 CG
@@ -4526,7 +4535,7 @@ mS
 mS
 mN
 kC
-CG
+EW
 CG
 KP
 qk
@@ -4534,7 +4543,7 @@ zo
 Kw
 Kw
 Kw
-AL
+zo
 mS
 yh
 CG
@@ -4592,16 +4601,16 @@ mS
 mS
 mS
 mN
-yh
-qh
-qh
-qh
+kC
+EW
+CG
+dM
 qk
 zo
 Kw
 Kw
 Kw
-AL
+zo
 mS
 yh
 yh
@@ -4659,14 +4668,14 @@ mS
 mS
 mS
 mN
+jC
+EW
+CG
+VB
 yh
 yh
-kC
-kC
 yh
-yh
-yh
-yh
+HC
 yh
 yh
 mS
@@ -4725,16 +4734,16 @@ mS
 mS
 mS
 mS
-TY
-XS
-XS
-XS
-qW
+mN
+kC
+EW
+CG
+mJ
 QN
 fC
-HC
-HC
-HC
+Kw
+Kw
+vw
 AL
 Rz
 OL
@@ -4792,16 +4801,16 @@ mS
 mS
 mS
 mS
-mS
-mS
-mS
-mS
-Fj
-yh
+mN
+kC
+EW
+CG
+KP
+TY
 fC
-HC
-HC
-HC
+Kw
+Kw
+Kw
 AL
 yh
 IP
@@ -4859,16 +4868,16 @@ mS
 mS
 mS
 mS
-mS
-mS
-mS
-mS
+mN
+jC
+EW
+CG
 dM
-zx
+TY
 fC
-HC
-HC
-HC
+Kw
+Kw
+Kw
 AL
 zx
 QJ
@@ -4926,15 +4935,15 @@ Gq
 mS
 mS
 mS
-mS
-mS
-mS
-mS
-mS
-mS
+mN
+jC
+EW
+CG
+zh
 yh
 yh
 yh
+HC
 yh
 yh
 mS
@@ -4992,18 +5001,18 @@ Gq
 Gq
 mS
 mS
-mS
-mS
-mS
-mS
-mS
-mS
-mS
-fC
-HC
-HC
-HC
-AL
+oL
+mN
+kC
+EW
+CG
+mJ
+qW
+zo
+Kw
+Kw
+Kw
+zo
 mS
 mS
 mS
@@ -5060,17 +5069,17 @@ mS
 mS
 mS
 mS
-mS
-mS
-mS
-mS
-mS
-mS
-fC
-HC
-HC
-HC
-AL
+mN
+kC
+EW
+CG
+KP
+TY
+zo
+Kw
+Kw
+Kw
+zo
 mS
 mS
 mS
@@ -5127,17 +5136,17 @@ mS
 mS
 mS
 mS
-mS
-mS
-mS
-mS
-mS
-mS
-fC
-HC
-HC
-HC
-AL
+mN
+yh
+uB
+qh
+qh
+TY
+zo
+Kw
+Kw
+Kw
+zo
 mS
 mS
 mS
@@ -5194,11 +5203,11 @@ Gq
 mS
 mS
 mS
-mS
-mS
-mS
-mS
-mS
+mN
+yh
+yh
+kC
+kC
 yh
 Nd
 Nd
