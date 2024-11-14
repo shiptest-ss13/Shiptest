@@ -169,6 +169,8 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 
 	bolt_type = BOLT_TYPE_LOCKING
 
+	slot_flags = ITEM_SLOT_BACK
+
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 
