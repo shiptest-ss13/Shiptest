@@ -1,4 +1,4 @@
-#define DEFAULT_SHELF_CAPACITY 2 // Default capacity of the shelf
+#define DEFAULT_SHELF_CAPACITY 3 // Default capacity of the shelf
 #define DEFAULT_SHELF_MAX_CAPACITY 4
 #define DEFAULT_SHELF_USE_DELAY 1 SECONDS // Default interaction delay of the shelf
 #define DEFAULT_SHELF_VERTICAL_OFFSET 10 // Vertical pixel offset of shelving-related things. Set to 10 by default due to this leaving more of the crate on-screen to be clicked.
