@@ -23,6 +23,9 @@
 /obj/item/storage/guncase/pistol/shadow
 	gun_type = /obj/item/gun/ballistic/revolver/shadow
 
+/obj/item/storage/guncase/pistol/ashhand
+	gun_type = /obj/item/gun/ballistic/revolver/ashhand
+
 /obj/item/storage/guncase/hellfire
 	gun_type = /obj/item/gun/ballistic/shotgun/hellfire
 
@@ -94,6 +97,22 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	mag_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 
+/obj/item/storage/guncase/bulldog
+	gun_type = /obj/item/gun/ballistic/shotgun/automatic/bulldog
+	mag_type = /obj/item/ammo_box/magazine/m12g_bulldog
+
+/obj/item/storage/guncase/sidewinder
+	gun_type = /obj/item/gun/ballistic/automatic/smg/sidewinder
+	mag_type = /obj/item/ammo_box/magazine/m57_39_sidewinder
+
+/obj/item/storage/guncase/hydra
+	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra
+	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra
+
+/obj/item/storage/guncase/sbr80
+	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
+	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
+
 /* Etherbor */
 
 /obj/item/storage/guncase/pistol/kalixpistol
@@ -103,6 +122,10 @@
 /obj/item/storage/guncase/energy/kalixrifle
 	gun_type = /obj/item/gun/energy/kalix
 	mag_type = /obj/item/stock_parts/cell/gun/kalix
+
+/obj/item/storage/guncase/energy/bg16
+	gun_type = /obj/item/gun/energy/kalix/pgf
+	mag_type = /obj/item/stock_parts/cell/gun/pgf
 
 /* Serene Outdoors Guns */
 
@@ -158,7 +181,7 @@
 
 /obj/item/storage/guncase/hades
 	gun_type = /obj/item/gun/energy/e_gun/hades
-	mag_type = /obj/item/stock_parts/cell/gun
+	mag_type = /obj/item/stock_parts/cell/gun/upgraded
 
 /* Old NT */
 
@@ -200,6 +223,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/f4/
 	mag_type = /obj/item/ammo_box/magazine/f4_308
 
+/obj/item/storage/guncase/cm15
+	gun_type = /obj/item/gun/ballistic/shotgun/cm15
+	mag_type = /obj/item/ammo_box/magazine/cm15_12g
+
 /* Inteq */
 
 /obj/item/storage/guncase/skm_inteq
@@ -214,9 +241,17 @@
 	gun_type = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
 	mag_type = /obj/item/ammo_box/magazine/smgm10mm
 
+/obj/item/storage/guncase/mastiff
+	gun_type = /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq
+	mag_type = /obj/item/ammo_box/magazine/m12g_bulldog
+
 /obj/item/storage/guncase/kingsnake
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq
 	mag_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
+
+/obj/item/storage/guncase/ssg04
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/f4/inteq
+	mag_type = /obj/item/ammo_box/magazine/f4_308
 
 /* idk */
 
@@ -228,7 +263,3 @@
 /obj/item/storage/guncase/skm
 	gun_type = /obj/item/gun/ballistic/automatic/assault/skm
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40
-
-/obj/item/storage/guncase/ssg04
-	gun_type = /obj/item/gun/ballistic/automatic/marksman/f4/inteq
-	mag_type = /obj/item/ammo_box/magazine/f4_308

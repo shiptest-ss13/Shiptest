@@ -68,6 +68,15 @@
 	contains = list(/obj/item/storage/guncase/pistol/candor)
 	faction = /datum/faction/srm
 
+/datum/supply_pack/gun/asp
+	name = "BC-81 'Asp' Crate"
+	desc = "Contains a compact armor-piercing sidearm, chambered in 5.7mm"
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/pistol/asp)
+	faction = /datum/faction/scarborough_arms
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/pepperbox
 	name = "HP Firebrand Pepperbox Revolver Crate"
 	desc = "Contains a concealable pepperbox revolver manufactured by the Saint Roumain Militia, chambered in .357."
@@ -103,6 +112,15 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/pistol/a357)
 	faction = /datum/faction/scarborough_arms
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/ashhand
+	name = "Ashhand Hunting Revolver Crate"
+	desc = "Contains a single-action .45-70 hunting revolver manufactured by Hunter's Pride for use against the biggest game."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/pistol/ashhand)
+	faction = /datum/faction/srm
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -154,6 +172,16 @@
 	contains = list(/obj/item/storage/guncase/energy/kalixrifle)
 	crate_name = "beam rifle crate"
 
+/datum/supply_pack/gun/laser/bg16
+	name = "Etherbor BG-16 Beam Rifle Crate"
+	desc = "Contains a single BG-16 Beam Rifle, a military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/energy/bg16)
+	crate_name = "beam rifle crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		Shotguns
 */
@@ -196,6 +224,36 @@
 	cost = 3000
 	crate_name = "shotgun crate"
 
+/datum/supply_pack/gun/bulldog
+	name = "Bulldog Shotgun Crate"
+	desc = "An automatic shotgun chambered in 12ga produced by Scarborough Arms for exclusive use by licensed buyers. Comes with 8-round box magazines."
+	contains = list(/obj/item/storage/guncase/bulldog)
+	cost = 4000
+	crate_name = "shotgun crate"
+	faction = /datum/faction/scarborough_arms
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/mastiff
+	name = "Mastiff Shotgun Crate"
+	desc = "An automatic shotgun modified for exclusive use by the IRMG and chambered in 12ga. Comes with 8-round box magazines."
+	contains = list(/obj/item/storage/guncase/mastiff)
+	cost = 4000
+	crate_name = "shotgun crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/cm15
+	name = "CM-15 Shotgun Crate"
+	desc = "A combat shotgun produced by Lanchester Arms Co. for the Colonial Minuteman and CMM-BARD for use in CQC operations. Chambered in 12ga and equipped with 8-round box magazines."
+	contains = list(/obj/item/storage/guncase/cm15)
+	cost = 4000
+	crate_name = "shotgun crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		SMGs
 */
@@ -209,7 +267,7 @@
 	faction = /datum/faction/scarborough_arms
 	faction_discount = 10
 
-/datum/supply_pack/gun/cobra20
+/datum/supply_pack/gun/mongrel
 	name = "SKM-44v Mongrel SMG Crate"
 	desc = "Contains a shortened variant of the SKM rechambered to 10mm and painted in the brown-and-gold of Inteq."
 	cost = 3000
@@ -271,10 +329,20 @@
 /datum/supply_pack/gun/cm5
 	name = "CM-5 SMG Crate"
 	desc = "Contains a CM-5 automatic SMG, produced proudly within Lanchester City. Colonial Minuteman issue only."
-	cost =25000
+	cost = 2500
 	contains = list(/obj/item/storage/guncase/cm5)
 	crate_name = "SMG crate"
-	faction = /datum/faction/srm
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/sidewinder
+	name = "Sidewinder SMG Crate"
+	desc = "Contains a Sidewinder PDW produced by Scarborough Arms and chambered in 5.7mm for armor-piercing capabilities."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/sidewinder)
+	crate_name = "SMG crate"
+	faction = /datum/faction/scarborough_arms
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -371,7 +439,7 @@
 
 /datum/supply_pack/gun/hades
 	name = "SL AL-655 'Hades' energy rifle"
-	desc = "Contains a high-energy, automatic  laser rifle. For NT employee use only."
+	desc = "Contains a high-energy, automatic laser rifle. For NT employee use only."
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hades)
 	crate_name = "laser crate"
@@ -379,6 +447,15 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/hydra
+	name = "SMR-80 'Hydra' Automatic Rifle Crate"
+	desc = "Contains a high-powered automatic rifle produced by Scarborough Arms and chambered in 5.56 CLIP. This one is a standard variant."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/hydra)
+	crate_name = "rifle crate"
+	faction = /datum/faction/scarborough_arms
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/gun/cm82
 	name = "CM-82 Standard Issue Rifle"
@@ -409,6 +486,17 @@
 	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
+
+/datum/supply_pack/gun/ssg04
+	name = "SBR-80 'Hydra' Designated Marksman Rifle Crate"
+	desc = "Contains a high-powered marksman rifle chambered in 5.56 CLIP and produced by Scarborough Arms. A modification of the ever-popular SMR-80 platform."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/sbr80)
+	crate_name = "dmr crate"
+	faction = /datum/faction/scarborough_arms
+	faction_discount = 0
+	faction_locked = TRUE
+
 
 /* Attachments */
 
