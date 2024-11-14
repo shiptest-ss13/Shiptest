@@ -2191,6 +2191,12 @@
 	},
 /obj/machinery/light/floor,
 /obj/effect/landmark/observer_start,
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4;
+	name = "banshee clipper"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Yv" = (
