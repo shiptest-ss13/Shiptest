@@ -191,13 +191,13 @@
 /area/ship/cargo)
 "eE" = (
 /obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
 /obj/docking_port/stationary{
 	dir = 2;
 	dwidth = 7;
 	height = 15;
 	width = 30
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "eK" = (
@@ -1189,12 +1189,6 @@
 /area/ship/cargo)
 "DY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 8;
-	launch_status = 0;
-	preferred_direction = 4
-	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "EG" = (
@@ -1449,6 +1443,12 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "Bansheecargodoor"
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 8;
+	launch_status = 0;
+	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -2833,7 +2833,7 @@ oR
 oR
 lS
 oR
-eE
+MU
 pM
 pM
 pM
@@ -2858,7 +2858,7 @@ Rt
 kj
 uH
 YZ
-MU
+eE
 pM
 pM
 pM
