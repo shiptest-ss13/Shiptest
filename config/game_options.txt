@@ -93,16 +93,10 @@ PROBABILITY TRAITORBRO 2
 PROBABILITY TRAITORCHAN 3
 PROBABILITY INTERNAL_AFFAIRS 3
 PROBABILITY NUCLEAR 2
-PROBABILITY REVOLUTION 2
-PROBABILITY CULT 2
 PROBABILITY CHANGELING 2
 PROBABILITY WIZARD 4
-PROBABILITY MONKEY 1
-PROBABILITY METEOR 0
 PROBABILITY EXTENDED 1
 PROBABILITY SECRET_EXTENDED 1
-PROBABILITY DEVIL 0
-PROBABILITY DEVIL_AGENTS 0
 PROBABILITY CLOWNOPS 2
 
 ## You probably want to keep sandbox off by default for secret and random.
@@ -120,15 +114,11 @@ CONTINUOUS TRAITORBRO
 CONTINUOUS TRAITORCHAN
 CONTINUOUS INTERNAL_AFFAIRS
 #CONTINUOUS NUCLEAR
-#CONTINUOUS REVOLUTION
-CONTINUOUS CULT
 CONTINUOUS CHANGELING
 CONTINUOUS WIZARD
-#CONTINUOUS MONKEY
 
 ##Note: do not toggle continuous off for these modes, as they have no antagonists and would thus end immediately!
 
-CONTINUOUS METEOR
 CONTINUOUS EXTENDED
 CONTINUOUS SECRET_EXTENDED
 
@@ -141,11 +131,8 @@ MIDROUND_ANTAG TRAITOR
 MIDROUND_ANTAG TRAITORCHAN
 MIDROUND_ANTAG INTERNAL_AFFAIRS
 #MIDROUND_ANTAG  NUCLEAR
-#MIDROUND_ANTAG  REVOLUTION
-MIDROUND_ANTAG CULT
 MIDROUND_ANTAG CHANGELING
 MIDROUND_ANTAG WIZARD
-#MIDROUND_ANTAG  MONKEY
 
 ## Uncomment these for overrides of the minimum / maximum number of players in a round type.
 ## If you set any of these occasionally check to see if you still need them as the modes
@@ -168,38 +155,16 @@ MIDROUND_ANTAG WIZARD
 #MIN_POP NUCLEAR 0
 #MAX_POP NUCLEAR -1
 
-#MIN_POP REVOLUTION 20
-#MAX_POP REVOLUTION -1
-
-#MIN_POP CULT 24
-#MAX_POP CULT -1
-
 #MIN_POP CHANGELING 15
 #MAX_POP CHANGELING -1
 
 #MIN_POP WIZARD 20
 #MAX_POP WIZARD -1
 
-#MIN_POP MONKEY 20
-#MAX_POP MONKEY -1
-
-#MIN_POP METEOR 0
-#MAX_POP METEOR -1
-
-#MIN_POP DEVIL 0
-#MAX_POP DEVIL -1
-
-#MIN_POP DEVIL_AGENTS 25
-#MAX_POP DEVIL_AGENTS -1
-
 ## Setting at least one mode to be playable at 0/1 players is required.
 #MIN_POP EXTENDED 0
 #MAX_POP EXTENDED -1
 
-
-
-## The amount of time it takes for the emergency shuttle to be called, from round start.
-SHUTTLE_REFUEL_DELAY 12000
 
 ## Variables calculate how number of antagonists will scale to population.
 ## Used as (Antagonists = Population / Coeff)
@@ -271,19 +236,6 @@ ALLOW_AI_MULTICAM
 ## Peacekeeper Borg ###
 ## Uncomment to prevent the peacekeeper cyborg module from being chosen
 #DISABLE_PEACEBORG
-
-## AWAY MISSIONS ###
-
-## Uncomment to load the virtual reality hub map
-#VIRTUAL_REALITY
-
-## Uncomment to load one of the missions from awaymissionconfig.txt at roundstart.
-#ROUNDSTART_AWAY
-
-## How long the delay is before the Away Mission gate opens. Default is half an hour.
-## 600 is one minute.
-GATEWAY_DELAY 18000
-
 
 ## ACCESS ###
 
@@ -465,9 +417,6 @@ ROUNDSTART_RACES jelly
 ## The amount of loadout items players are allowed to spawn with. Default 10
 MAX_LOADOUT_ITEMS 10
 
-##Overflow job. Default is assistant
-OVERFLOW_JOB Assistant
-
 ## Overflow slot cap. Set to -1 for unlimited. If limited, it will still open up if every other job is full.
 OVERFLOW_CAP -1
 
@@ -510,17 +459,6 @@ BOMBCAP 20
 ## LagHell (7, 14, 28)
 #BOMBCAP 28
 
-
-## Lavaland "Budget"
-## Lavaland ruin spawning has an imaginary budget to spend on ruins, where
-## a less lootfilled or smaller or less round effecting ruin costs less to
-## spawn, while the converse is true. Alter this number to affect the amount
-## of ruins.
-LAVALAND_BUDGET 60
-
-## Space Ruin Budged
-Space_Budget 16
-
 ## How many wirechewing rodents you want to spawn on exposed maintenane wires at the start of the round. You may wish to set this to 0 if you're testing powernets.
 
 MICE_ROUNDSTART 10
@@ -529,21 +467,12 @@ MICE_ROUNDSTART 10
 
 SMUGGLER_SATCHELS 3
 
-## If the percentage of players alive (doesn't count conversions) drops below this threshold the emergency shuttle will be forcefully called (provided it can be)
-#EMERGENCY_SHUTTLE_AUTOCALL_THRESHOLD 0.2
-
-## Determines if players are allowed to print integrated circuits, uncomment to allow.
-#IC_PRINTING
-
 ## Uncomment to allow roundstart quirk selection in the character setup menu.
 ## This used to be named traits, hence the config name, but it handles quirks, not the other kind of trait!
 ROUNDSTART_TRAITS
 
 ## Uncomment to disable human moods.
 #DISABLE_HUMAN_MOOD
-
-## Enable night shifts ##
-#ENABLE_NIGHT_SHIFTS
 
 ## Enable randomized shift start times##
 #RANDOMIZE_SHIFT_TIME
@@ -556,9 +485,6 @@ MONKEYCAP 64
 
 ## A cap on how many mice can be bred via cheese wedges
 RATCAP 64
-
-## Maximum fine for a citation
-MAXFINE 2000
 
 ## Enable the capitalist agenda on your server.
 ECONOMY
