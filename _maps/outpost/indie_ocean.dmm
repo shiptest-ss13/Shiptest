@@ -209,9 +209,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
-"bK" = (
-/turf/open/floor/plasteel,
-/area/outpost/external)
 "bO" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
@@ -273,16 +270,6 @@
 	icon_state = "panelscorched"
 	},
 /area/outpost/maintenance/port)
-"cq" = (
-/obj/effect/landmark/outpost/elevator_machine{
-	shaft = "2"
-	},
-/obj/machinery/elevator_call_button{
-	dir = 8;
-	pixel_x = 25
-	},
-/turf/open/floor/plasteel,
-/area/outpost/external)
 "ct" = (
 /obj/structure/table,
 /obj/structure/cable/yellow{
@@ -737,14 +724,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/outpost/storage)
-"gT" = (
-/obj/machinery/door/airlock/outpost{
-	dir = 4;
-	req_access = list("101");
-	name = "Tram Car Door"
-	},
-/turf/open/floor/plasteel,
-/area/outpost/external)
 "hc" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
 	dir = 5
@@ -2409,10 +2388,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/outpost/cargo)
-"uE" = (
-/obj/machinery/door/poddoor/shutters/indestructible,
-/turf/closed/indestructible/fakeglass,
-/area/outpost/external)
 "uG" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -3000,12 +2975,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/outpost/cargo/smeltery)
-"zs" = (
-/obj/effect/landmark/outpost/elevator{
-	shaft = "2"
-	},
-/turf/open/floor/plasteel/elevatorshaft,
-/area/outpost/external)
 "zu" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
 	dir = 5
@@ -3800,10 +3769,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
-"Fd" = (
-/obj/machinery/door/poddoor/shutters/indestructible,
-/turf/open/water/beach/deep,
-/area/outpost/external)
 "Fi" = (
 /obj/effect/turf_decal/corner/transparent/vired/diagonal,
 /obj/structure/extinguisher_cabinet/directional/south,
@@ -4175,9 +4140,6 @@
 	timeleft = null
 	},
 /turf/open/water/beach/deep,
-/area/outpost/external)
-"HN" = (
-/turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/external)
 "HO" = (
 /obj/structure/railing{
@@ -5037,13 +4999,6 @@
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
-	},
-/turf/open/water/beach/deep,
-/area/outpost/external)
-"OK" = (
-/obj/machinery/door/airlock/hatch,
-/obj/effect/landmark/outpost/elevator_machine{
-	shaft = "2"
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -6102,9 +6057,6 @@
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel,
 /area/outpost/cargo)
-"WH" = (
-/turf/closed/indestructible/fakeglass,
-/area/outpost/external)
 "WN" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
 	dir = 8
@@ -9380,8 +9332,8 @@ EV
 Ck
 GH
 Jq
-cQ
-GH
+EV
+EV
 EV
 EV
 EV
@@ -9482,14 +9434,14 @@ gj
 gj
 wc
 Zj
-YG
-wc
-wc
-wc
-wc
-wc
-wc
-wc
+EV
+EV
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -9584,14 +9536,14 @@ Vp
 ew
 Gv
 JZ
-qQ
-Gv
-Fd
-HN
-HN
-HN
-uE
-bK
+EV
+EV
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -9688,12 +9640,12 @@ EV
 EV
 EV
 EV
-Fd
-HN
-HN
-HN
-uE
-bK
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -9790,12 +9742,12 @@ EV
 EV
 EV
 EV
-Fd
-HN
-HN
-HN
-uE
-bK
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -9892,12 +9844,12 @@ cQ
 GH
 GH
 Jq
-wc
-wc
-gT
-wc
-wc
-wc
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -9994,12 +9946,12 @@ YG
 AJ
 CR
 Zj
-WH
-HN
-HN
-zs
-OK
-bK
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -10096,12 +10048,12 @@ YG
 pO
 oH
 Zj
-WH
-HN
-HN
-HN
-OK
-bK
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -10198,12 +10150,12 @@ YG
 yg
 gA
 Zj
-WH
-HN
-HN
-HN
-OK
-cq
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -10300,12 +10252,12 @@ qQ
 Gv
 Gv
 kR
-wc
-wc
-gT
-wc
-wc
-wc
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -10402,12 +10354,12 @@ EV
 EV
 EV
 EV
-uE
-HN
-HN
-HN
-uE
-bK
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -10504,12 +10456,12 @@ EV
 EV
 EV
 EV
-uE
-HN
-HN
-HN
-uE
-bK
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -10604,14 +10556,14 @@ Vp
 ew
 GH
 Jq
-cQ
-GH
-uE
-HN
-HN
-HN
-uE
-bK
+EV
+EV
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -10706,14 +10658,14 @@ gj
 gj
 wc
 Zj
-YG
-wc
-wc
-wc
-wc
-wc
-wc
-wc
+EV
+EV
+EV
+EV
+EV
+EV
+EV
+EV
 EV
 EV
 EV
@@ -10808,8 +10760,8 @@ EV
 Ck
 Gv
 JZ
-qQ
-Gv
+EV
+EV
 EV
 EV
 EV
