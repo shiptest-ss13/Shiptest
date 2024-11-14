@@ -190,17 +190,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "eE" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
+/obj/structure/catwalk,
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
 	},
-/obj/effect/turf_decal/spline/fancy/transparent/black{
-	dir = 1
-	},
-/obj/effect/turf_decal/isf_small/left{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/obj/docking_port/mobile,
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "eK" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -1277,6 +1273,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
+"FX" = (
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 7;
+	height = 15;
+	width = 30
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "Ga" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1448,12 +1455,6 @@
 	dir = 4;
 	id = "Bansheecargodoor"
 	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 8;
-	launch_status = 0;
-	preferred_direction = 4
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Ja" = (
@@ -1600,16 +1601,17 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Mr" = (
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 7;
-	height = 15;
-	width = 30
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
+/obj/effect/turf_decal/spline/fancy/transparent/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/isf_small/left{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "Ms" = (
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /obj/machinery/atmospherics/components/trinary/mixer/flipped{
@@ -2703,7 +2705,7 @@ KP
 iY
 iY
 iY
-uG
+eE
 pM
 pM
 pM
@@ -2876,7 +2878,7 @@ Rt
 kj
 uH
 YZ
-Mr
+FX
 pM
 pM
 pM
@@ -2995,7 +2997,7 @@ SR
 pM
 oR
 Hu
-eE
+Mr
 VO
 pk
 iU
