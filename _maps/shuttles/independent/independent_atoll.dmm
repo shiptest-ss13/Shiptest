@@ -1452,6 +1452,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office)
 "mt" = (
@@ -2560,7 +2561,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -3357,7 +3360,7 @@
 	id_tag = "atoll_lobby_airlock"
 	},
 /turf/open/floor/plasteel/white,
-/area/ship/hallway/port)
+/area/ship/crew/office/lobby)
 "Ft" = (
 /obj/structure/cable{
 	icon_state = "6-9"
@@ -4833,7 +4836,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ship/hallway/port)
+/area/ship/crew/office/lobby)
 "RN" = (
 /obj/structure/fluff/hedge/opaque,
 /obj/effect/turf_decal/siding/wood{
@@ -4931,6 +4934,23 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/east,
+/mob/living/simple_animal/hostile/retaliate/gator/steppy/iguana{
+	name = "Gesundheit";
+	desc = "Exported from Sol, this exotic reptile regards you with a careful eye. Just don't get on his cranky side."
+	},
+/obj/structure/bed/dogbed{
+	name = "Gesundheit's bed"
+	},
+/obj/item/flashlight/lamp{
+	pixel_y = 13;
+	pixel_x = -13;
+	name = "heat lamp";
+	light_color = "#FF773D";
+	desc = "A heat lamp with an adjustable mount.";
+	light_range = 2;
+	light_power = 2;
+	on = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "SS" = (
@@ -6087,7 +6107,7 @@ XT
 "}
 (18,1,1) = {"
 wS
-hE
+xE
 RJ
 Fs
 xE
