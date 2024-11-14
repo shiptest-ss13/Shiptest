@@ -19,6 +19,7 @@
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 
@@ -60,6 +61,7 @@
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
 
@@ -95,6 +97,7 @@
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pistol)
 
