@@ -194,7 +194,14 @@
 /obj/structure/marker_beacon{
 	picked_color = "Lime"
 	},
-/obj/docking_port/mobile,
+/obj/docking_port/mobile{
+	callTime = 250;
+	dir = 2;
+	launch_status = 0;
+	name = "Salvage Clipper";
+	port_direction = 8;
+	preferred_direction = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "eK" = (
@@ -239,6 +246,7 @@
 	icon_state = "0-9"
 	},
 /obj/machinery/firealarm/directional/east,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "gN" = (
@@ -365,7 +373,8 @@
 	dir = 4
 	},
 /obj/structure/railing{
-	dir = 1
+	dir = 1;
+	layer = 3.09
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -401,9 +410,11 @@
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/door/poddoor/shutters{
+	id = "Bansheeairlockwindow"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "ko" = (
@@ -789,6 +800,18 @@
 /obj/item/reagent_containers/condiment/enzyme,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
 "rq" = (
@@ -817,6 +840,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/food/egg_smudge,
 /turf/open/floor/wood/birch,
 /area/ship/crew/canteen)
 "rG" = (
@@ -1076,6 +1100,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/food/flour,
 /turf/open/floor/wood/birch,
 /area/ship/crew/canteen)
 "Bi" = (
@@ -1205,13 +1230,15 @@
 /obj/structure/platform/industrial{
 	dir = 4
 	},
-/obj/structure/railing,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/effect/turf_decal/industrial/fire/cee,
 /obj/effect/turf_decal/siding/thinplating/dark/end,
 /obj/item/clothing/suit/space/syndicate/black/green,
 /obj/item/clothing/head/helmet/space/syndicate/black/green,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/structure/railing{
+	layer = 3.09
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "FE" = (
@@ -1632,8 +1659,15 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -7;
+	pixel_x = 4;
 	pixel_y = -19
+	},
+/obj/machinery/button/door{
+	id = "Bansheeairlockwindow";
+	name = "Airlock shutters";
+	pixel_x = -5;
+	pixel_y = -20;
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -1884,7 +1918,8 @@
 	dir = 4
 	},
 /obj/structure/railing{
-	dir = 1
+	dir = 1;
+	layer = 3.09
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -2134,7 +2169,9 @@
 /obj/structure/platform/industrial{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 3.09
+	},
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
@@ -2277,6 +2314,9 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/glass,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/obj/machinery/door/poddoor/shutters{
+	id = "Bansheeairlockwindow"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Zq" = (
