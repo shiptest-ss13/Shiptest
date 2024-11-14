@@ -2106,18 +2106,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/miskilamo_big/one{
-	color = "#580818";
-	dir = 4;
-	pixel_x = -16;
-	pixel_y = 1
-	},
-/obj/effect/turf_decal/miskilamo_big/five{
-	color = "#580818";
-	dir = 4;
-	pixel_x = 16;
-	pixel_y = 1
-	},
 /obj/machinery/holopad/emergency/command{
 	pixel_y = 7
 	},
@@ -2313,7 +2301,6 @@
 "YZ" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/glass,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
 /obj/machinery/door/poddoor/shutters{
 	id = "Bansheeairlockwindow"
 	},
