@@ -175,18 +175,18 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 	icon_state = "starving"
 
 /atom/movable/screen/alert/gross
-	name = "Grossed out."
-	desc = "That was kind of gross..."
+	name = "Queasy."
+	desc = "You're starting to feel queasy.."
 	icon_state = "gross"
 
 /atom/movable/screen/alert/verygross
-	name = "Very grossed out."
-	desc = "You're not feeling very well..."
+	name = "Nauseated."
+	desc = "You're feeling discomforted as unease creeps into your throat..."
 	icon_state = "gross2"
 
 /atom/movable/screen/alert/disgusted
-	name = "DISGUSTED"
-	desc = "ABSOLUTELY DISGUSTIN'"
+	name = "Very Nauseated"
+	desc = "You can barely think against the grains of discomfort ravaging your body!"
 	icon_state = "gross3"
 
 /atom/movable/screen/alert/hot
