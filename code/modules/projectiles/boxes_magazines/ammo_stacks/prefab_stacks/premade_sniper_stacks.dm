@@ -78,7 +78,7 @@
 	name = "box of 6.5x57mm CLIP tracker ammo"
 	desc = "A box of standard 6.5x57mm CLIP tracker ammo."
 
-/obj/item/storage/box/ammo/a65clip/PopulateContents()
+/obj/item/storage/box/ammo/a65clip/trac/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a65clip/trac = 2)
 	generate_items_inside(items_inside,src)
