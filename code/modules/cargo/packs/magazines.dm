@@ -112,11 +112,17 @@
 	cost = 750
 	contains = list(/obj/item/ammo_box/magazine/m45_cobra)
 
-/datum/supply_pack/magazine/hydra_mag
-	name = "SMR-80 Magazine Crate"
-	desc = "Contains a 5.56x42mm CLIP for the SMR-80 rifle, containing 20 rounds."
+/datum/supply_pack/magazine/short_hydra_mag
+	name = "SBR-80 DMR Short Magazine Crate"
+	desc = "Contains a 5.56x42mm CLIP made specially for the SBR-80 Designated Marksman Rifle, containing 20 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra/small)
 	cost = 1000
+
+/datum/supply_pack/magazine/hydra_mag
+	name = "SMR-80 Rifle Magazine Crate"
+	desc = "Contains a 5.56x42mm CLIP for the SMR-80 assault rifle, containing 30 rounds."
+	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra)
+	cost = 1500
 
 /datum/supply_pack/magazine/boomslang_mag
 	name = "Boomslang-90 Magazine Crate"
@@ -192,6 +198,21 @@
 	contains = list(/obj/item/ammo_box/amagpellet_claris)
 	cost = 1000
 
+/* Shotguns */
+
+/datum/supply_pack/magazine/cm15
+	name = "CM-15 Magazine Crate"
+	desc = "Contains an 8-round 12ga magazine for the CM-15 Automatic Shotgun."
+	contains = list(/obj/item/ammo_box/magazine/cm15_12g)
+	cost = 1500
+
+/datum/supply_pack/magazine/bulldog
+	name = "Bulldog Magazine Crate"
+	desc = "Contains an 8-round 12ga box magazine for the Bulldog weapons platform."
+	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog)
+	cost = 1500
+
+
 /* energy weapons */
 
 /datum/supply_pack/magazine/guncell
@@ -200,6 +221,15 @@
 	contains = list(/obj/item/stock_parts/cell/gun)
 	cost = 500
 
+/datum/supply_pack/magazine/upgradedguncell
+	name = "Upgraded Weapon Cell Crate"
+	desc = "Contains an upgraded weapon cell, compatible with laser guns. For NT use only."
+	contains = list(/obj/item/stock_parts/cell/gun/upgraded)
+	cost = 1500
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
 /* etherbor */
 
 /datum/supply_pack/magazine/guncell/kalix
@@ -207,5 +237,14 @@
 	desc = "Contains an Etherbor weapon cell, compatible with Etherbor armaments with a slightly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/kalix)
 	cost = 600
+
+/datum/supply_pack/magazine/guncell/pgf
+	name = "Etherbor Cell Crate"
+	desc = "Contains a military-grade Etherbor weapon cell produced for the PGFMC, compatible with Etherbor armaments with a significantly higher capacity."
+	contains = list(/obj/item/stock_parts/cell/gun/pgf)
+	cost = 1500
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
 
 /* Expand once the energy weapons have been actually expanded upon */
