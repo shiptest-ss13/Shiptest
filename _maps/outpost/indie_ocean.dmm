@@ -2851,9 +2851,6 @@
 /turf/open/floor/plasteel,
 /area/outpost/cargo/smeltery)
 "yA" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/outpost/cargo)
@@ -5997,9 +5994,6 @@
 /turf/open/floor/plasteel,
 /area/outpost/cargo)
 "Wq" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -6242,6 +6236,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/port)
 "YN" = (
