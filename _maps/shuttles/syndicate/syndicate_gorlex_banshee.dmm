@@ -584,6 +584,7 @@
 /obj/machinery/shower{
 	dir = 4
 	},
+/obj/effect/turf_decal/techfloor/hole,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "nK" = (
@@ -820,6 +821,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/airlock_note_placer{
+	text = "Some bastard threw up all over the toilet. I'd be careful if I was you"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "tR" = (
@@ -952,6 +956,21 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/holopad/emergency/command{
+	pixel_y = 7
+	},
+/obj/effect/turf_decal/miskilamo_big/one{
+	color = "#580818";
+	dir = 4;
+	pixel_x = -16;
+	pixel_y = 1
+	},
+/obj/effect/turf_decal/miskilamo_big/five{
+	color = "#580818";
+	dir = 4;
+	pixel_x = 16;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "yE" = (
@@ -959,6 +978,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "yV" = (
