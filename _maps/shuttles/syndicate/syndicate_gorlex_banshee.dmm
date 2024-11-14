@@ -100,11 +100,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"bR" = (
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
 "bT" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -117,6 +112,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"de" = (
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "dk" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -1026,14 +1026,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
-"yW" = (
-/obj/structure/chair/greyscale,
-/obj/effect/turf_decal/siding/wood{
-	color = "#D5A66E"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/birch,
-/area/ship/crew/canteen)
 "ze" = (
 /obj/structure/marker_beacon{
 	picked_color = "Lime"
@@ -1200,6 +1192,18 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"EV" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/half,
+/obj/effect/turf_decal/siding{
+	color = "#730622";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/hallway/central)
 "Fv" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -1814,18 +1818,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"PN" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
-/obj/effect/turf_decal/siding{
-	color = "#730622";
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/white,
-/area/ship/hallway/central)
 "Qf" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 9
@@ -2093,10 +2085,8 @@
 	picked_color = "Lime"
 	},
 /obj/docking_port/mobile{
-	callTime = 250;
 	dir = 2;
 	launch_status = 0;
-	name = "Salvage Clipper";
 	port_direction = 8;
 	preferred_direction = 4
 	},
@@ -2251,6 +2241,14 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"YT" = (
+/obj/structure/chair/greyscale,
+/obj/effect/turf_decal/siding/wood{
+	color = "#D5A66E"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/birch,
+/area/ship/crew/canteen)
 "YZ" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/glass,
@@ -2529,7 +2527,7 @@ Jm
 SH
 FP
 rv
-yW
+YT
 ef
 iz
 ze
@@ -2778,7 +2776,7 @@ nD
 tO
 oT
 Tc
-PN
+EV
 dG
 RH
 iT
@@ -2857,7 +2855,7 @@ Rt
 kj
 uH
 YZ
-bR
+de
 pM
 pM
 pM
@@ -2882,7 +2880,7 @@ MA
 oR
 oR
 Ao
-bR
+de
 pM
 pM
 pM
