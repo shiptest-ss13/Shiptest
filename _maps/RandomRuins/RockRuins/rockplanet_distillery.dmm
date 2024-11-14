@@ -766,9 +766,7 @@
 /turf/open/floor/wood,
 /area/ruin/rockplanet/distillery/office)
 "ir" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/yellow,
 /obj/machinery/porta_turret/ship/weak,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/distillery/office)
@@ -798,9 +796,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/power/smes/shuttle/micro/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/micro/precharged,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pod_window"
 	},
@@ -1125,9 +1121,7 @@
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/distillery/shuttle)
 "mK" = (
-/turf/open/floor/plasteel/stairs/wood{
-	color = "#5B3E1D"
-	},
+/turf/open/floor/plasteel/stairs/wood,
 /area/ruin/rockplanet/distillery/saloon)
 "mX" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2416,9 +2410,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 9
 	},
-/obj/effect/turf_decal/trimline/opaque/neutral/filled/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/corner,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Bn" = (
@@ -2595,7 +2587,7 @@
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery)
 "CW" = (
-/obj/machinery/fax/admin/frontiersmen,
+/obj/machinery/fax/ruin,
 /obj/structure/table/wood/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
@@ -2631,9 +2623,7 @@
 /turf/open/floor/pod,
 /area/ruin/rockplanet/distillery/crew)
 "DX" = (
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/cable/yellow{
 	icon_state = "1-10"
 	},
@@ -3581,9 +3571,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable/yellow{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/yellow,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/distillery)
@@ -3657,9 +3645,7 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/engineering)
 "PI" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -4544,9 +4530,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/power/smes/shuttle/micro/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/micro/precharged,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pod_window"
 	},
