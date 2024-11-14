@@ -200,7 +200,7 @@
 /// the default air mix that open turfs spawn
 #define OPENTURF_DEFAULT_ATMOS "o2=22;n2=82;TEMP=293.15"
 #define OPENTURF_LOW_PRESSURE "o2=14;n2=30;TEMP=293.15"
-/// -193,15°C telecommunications. also used for xenobiology slime killrooms
+/// -193,15°C telecommunications. good fluff for comms areas
 #define TCOMMS_ATMOS "n2=100;TEMP=80"
 /// space
 #define AIRLESS_ATMOS "TEMP=2.7"
@@ -325,23 +325,45 @@
 // Gas defines because i hate typepaths
 #define GAS_O2 "o2"
 #define GAS_N2 "n2"
+#define GAS_CO "co"
+#define GAS_O3 "ozone"
 #define GAS_CO2 "co2"
 #define GAS_PLASMA "plasma"
 #define GAS_H2O "water_vapor"
-#define GAS_HYPERNOB "nob"
 #define GAS_NITROUS "n2o"
-#define GAS_NITRYL "no2"
 #define GAS_TRITIUM "tritium"
 #define GAS_BZ "bz"
-#define GAS_STIMULUM "stim"
-#define GAS_PLUOXIUM "pluox"
 #define GAS_FREON "freon"
 #define GAS_HYDROGEN "h2"
 #define GAS_CHLORINE "cl2"
 #define GAS_HYDROGEN_CHLORIDE "hcl"
 
+#define GAS_SO2 "so2"
+#define GAS_ARGON "ar"
+#define GAS_METHANE "methane"
+#define GAS_AMMONIA "ammonia"
+
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)
+
+// odors
+#define GAS_ODOR_CHEMICAL list(\
+	span_notice("It smells fainly like space cleaner."),\
+	span_danger("It smells like chemicals."),\
+	span_danger("There's a strong smell in the air, like chlorine."),\
+	span_userdanger("The smell burns the inside of your nose! It's unbearable!"))
+
+#define GAS_ODOR_SULFUR list(\
+	span_notice("Somebody passed gas in here."),\
+	span_danger("It smells like rotten eggs."),\
+	span_danger("There's a strong smell in the air, like something died here."),\
+	span_userdanger("The smell of chemical rot overwhelms you! It's unbearable!"))
+
+#define GAS_ODOR_SMOG list(\
+	null,\
+	span_notice("Theres a charred smell in the air."),\
+	span_danger("There's a strong smell in the air, like something's burning."),\
+	span_userdanger("The acidic smell overwhelms you! It's unbearable!"))
 
 // Flag for update_air_ref()
 #define AIR_REF_CLOSED_TURF -1
@@ -386,3 +408,5 @@ GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
 	"yellow" = rgb(255,198,0)
 )))
 
+#define IMMUNE_ATMOS_REQS list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+#define NORMAL_ATMOS_REQS list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)

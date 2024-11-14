@@ -939,26 +939,6 @@
 /obj/effect/turf_decal/siding/wideplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
-"oI" = (
-/obj/effect/turf_decal/corner/opaque/green{
-	dir = 6
-	},
-/obj/effect/turf_decal/corner/opaque/green{
-	dir = 1
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
-/obj/structure/table_frame,
-/obj/item/shard{
-	icon_state = "small";
-	pixel_x = -2;
-	pixel_y = 11
-	},
-/obj/effect/gibspawner/human,
-/obj/item/ammo_box/magazine/skm_545_39,
-/turf/open/floor/plasteel/tech,
-/area/ship/science)
 "oJ" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
@@ -1149,6 +1129,16 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
+"rX" = (
+/obj/effect/turf_decal/corner/opaque/mauve{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/opaque/mauve{
+	dir = 1
+	},
+/obj/effect/spawner/random/vending/snack,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/office)
 "sc" = (
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 6
@@ -1588,6 +1578,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
+"zU" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/grass,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Av" = (
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 5
@@ -2101,16 +2096,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
-"Ib" = (
-/obj/effect/turf_decal/corner/opaque/mauve{
-	dir = 10
-	},
-/obj/effect/turf_decal/corner/opaque/mauve{
-	dir = 1
-	},
-/obj/machinery/vending/snack/random,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/office)
 "Ie" = (
 /obj/structure/railing{
 	dir = 6
@@ -2438,11 +2423,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
-"MB" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/grass,
-/area/overmap_encounter/planetoid/jungle/explored)
 "MF" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 9
@@ -2754,6 +2734,26 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
+"QO" = (
+/obj/effect/turf_decal/corner/opaque/green{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/green{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/table_frame,
+/obj/item/shard{
+	icon_state = "small";
+	pixel_x = -2;
+	pixel_y = 11
+	},
+/obj/effect/gibspawner/human,
+/obj/item/ammo_box/magazine/skm_46_30,
+/turf/open/floor/plasteel/tech,
+/area/ship/science)
 "QY" = (
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -3646,7 +3646,7 @@ nr
 Zq
 NT
 RV
-Ib
+rX
 Zq
 ar
 kP
@@ -3939,7 +3939,7 @@ Sh
 fC
 SQ
 Cv
-MB
+zU
 jl
 Wo
 Av
@@ -4238,7 +4238,7 @@ Er
 RG
 nx
 ve
-oI
+QO
 Rm
 wQ
 Bc

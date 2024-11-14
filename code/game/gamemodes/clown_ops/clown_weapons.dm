@@ -12,60 +12,59 @@
 
 //BANANIUM SWORD
 
-/obj/item/melee/transforming/energy/sword/bananium
+/obj/item/melee/energy/sword/bananium
 	name = "bananium sword"
 	desc = "An elegant weapon, for a more civilized age."
 	force = 0
 	throwforce = 0
-	force_on = 0
-	throwforce_on = 0
+	active_force = 0
+	active_throwforce = 0
 	hitsound = null
 	attack_verb_on = list("slipped")
-	clumsy_check = FALSE
 	sharpness = IS_BLUNT
 	sword_color = "yellow"
 	heat = 0
 	light_color = COLOR_YELLOW
 	var/next_trombone_allowed = 0
 
-/obj/item/melee/transforming/energy/sword/bananium/Initialize()
+/obj/item/melee/energy/sword/bananium/Initialize()
 	. = ..()
 	adjust_slipperiness()
 
 /* Adds or removes a slippery component, depending on whether the sword
  * is active or not.
  */
-/obj/item/melee/transforming/energy/sword/proc/adjust_slipperiness()
-	if(active)
+/obj/item/melee/energy/sword/proc/adjust_slipperiness()
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		AddComponent(/datum/component/slippery, 60, GALOSHES_DONT_HELP)
 	else
 		qdel(GetComponent(/datum/component/slippery))
 
-/obj/item/melee/transforming/energy/sword/bananium/attack(mob/living/M, mob/living/user)
+/obj/item/melee/energy/sword/bananium/attack(mob/living/M, mob/living/user)
 	..()
-	if(active)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
 		slipper.Slip(src, M)
 
-/obj/item/melee/transforming/energy/sword/bananium/throw_impact(atom/hit_atom, throwingdatum)
+/obj/item/melee/energy/sword/bananium/throw_impact(atom/hit_atom, throwingdatum)
 	. = ..()
-	if(active)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
 		slipper.Slip(src, hit_atom)
 
-/obj/item/melee/transforming/energy/sword/bananium/attackby(obj/item/I, mob/living/user, params)
-	if((world.time > next_trombone_allowed) && istype(I, /obj/item/melee/transforming/energy/sword/bananium))
+/obj/item/melee/energy/sword/bananium/attackby(obj/item/I, mob/living/user, params)
+	if((world.time > next_trombone_allowed) && istype(I, /obj/item/melee/energy/sword/bananium))
 		next_trombone_allowed = world.time + 50
 		to_chat(user, "<span class='warning'>You slap the two swords together. Sadly, they do not seem to fit!</span>")
 		playsound(src, 'sound/misc/sadtrombone.ogg', 50)
 		return TRUE
 	return ..()
 
-/obj/item/melee/transforming/energy/sword/bananium/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/energy/sword/bananium/on_transform(obj/item/source, mob/user, active)
 	. = ..()
 	adjust_slipperiness()
 
-/obj/item/melee/transforming/energy/sword/bananium/ignition_effect(atom/A, mob/user)
+/obj/item/melee/energy/sword/bananium/ignition_effect(atom/A, mob/user)
 	return ""
 
 //BANANIUM SHIELD

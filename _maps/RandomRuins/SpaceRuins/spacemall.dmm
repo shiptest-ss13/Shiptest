@@ -315,15 +315,6 @@
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
-"bn" = (
-/obj/structure/table/glass,
-/obj/item/toy/talking/AI{
-	pixel_x = 20
-	},
-/obj/item/ammo_box/foambox/riot,
-/obj/item/gun/ballistic/shotgun/toy,
-/turf/open/floor/light,
-/area/ruin/space/has_grav/spacemall/shop2)
 "bo" = (
 /obj/machinery/light/small/directional/north,
 /obj/structure/spider/stickyweb,
@@ -706,11 +697,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
-"cO" = (
-/obj/effect/turf_decal/box,
-/obj/effect/spawner/lootdrop/salvage_machine,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shuttle)
 "cP" = (
 /obj/effect/decal/cleanable/blood,
 /obj/structure/window/reinforced{
@@ -1098,6 +1084,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
+"ej" = (
+/obj/structure/rack,
+/obj/effect/spawner/random/maintenance/three,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "ek" = (
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /obj/item/kirbyplants/random,
@@ -1293,22 +1284,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
-"eS" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
-"eU" = (
-/obj/structure/mirror{
-	pixel_y = -30
-	},
-/obj/structure/bed,
-/obj/item/bedsheet/dorms,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/spacemall/dorms)
 "eV" = (
 /obj/item/trash/energybar,
 /turf/open/floor/eighties,
@@ -1322,14 +1297,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
-"eX" = (
-/obj/machinery/vending/cola/random,
-/obj/effect/turf_decal/corner/transparent/green/diagonal,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/spacemall/dorms)
 "eY" = (
 /obj/effect/turf_decal/trimline/opaque/black/arrow_ccw{
 	dir = 1;
@@ -1385,24 +1352,6 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
-"fh" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/corner/transparent/solgovgold/full,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/stack/cable_coil/random/five,
-/obj/effect/spawner/lootdrop/techstorage/engineering,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/maint)
-"fi" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "fl" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/cable{
@@ -1565,6 +1514,15 @@
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
+"fP" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/corner/transparent/solgovgold/full,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stack/cable_coil/random/five,
+/obj/effect/spawner/random/techstorage/engineering,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/maint)
 "fQ" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -1610,6 +1568,14 @@
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
+"gh" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/corner/transparent/black/diagonal,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "gj" = (
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/showroomfloor{
@@ -1653,12 +1619,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
-"gu" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/turf_decal/corner/transparent/black/diagonal,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
 "gx" = (
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
 /obj/structure/chair{
@@ -1754,6 +1714,15 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
+"gP" = (
+/obj/effect/decal/cleanable/ash,
+/obj/effect/spawner/random/maintenance,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/structure/closet/crate,
+/obj/structure/railing,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/maint)
 "gQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
@@ -1812,6 +1781,15 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/dorms)
+"hb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/secure,
+/obj/effect/turf_decal/box,
+/obj/structure/railing,
+/obj/effect/spawner/random/exotic/prison_contraband,
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/maint)
 "hc" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2166,6 +2144,11 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
+"iu" = (
+/obj/effect/turf_decal/box,
+/obj/effect/spawner/random/salvage_machine,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shuttle)
 "iv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
@@ -2248,6 +2231,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop2)
+"iK" = (
+/obj/structure/bed,
+/obj/effect/spawner/random/bedsheet,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/spacemall/dorms)
 "iL" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass,
@@ -2432,15 +2420,6 @@
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
-"jm" = (
-/obj/structure/rack,
-/obj/item/ammo_box/c9mm,
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/dorms)
 "jn" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -2513,14 +2492,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
-"jD" = (
-/obj/effect/turf_decal/box,
-/obj/structure/closet/crate/secure,
-/obj/effect/spawner/lootdrop/costume,
-/obj/effect/spawner/lootdrop/costume,
-/obj/effect/spawner/lootdrop/costume,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shuttle)
 "jE" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 1
@@ -3106,14 +3077,6 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall/dorms)
-"lQ" = (
-/obj/effect/decal/cleanable/glass,
-/obj/effect/decal/cleanable/cobweb,
-/obj/effect/turf_decal/box,
-/obj/structure/closet/crate/wooden,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/maint)
 "lR" = (
 /obj/structure/table/glass,
 /obj/machinery/paystand,
@@ -3143,6 +3106,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
+"lX" = (
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/obj/structure/rack,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "mg" = (
 /obj/structure/sign/departments/security{
 	pixel_x = -31
@@ -3225,6 +3197,17 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/maint)
+"mx" = (
+/obj/structure/rack,
+/obj/item/clothing/head/hardhat/weldhat/dblue,
+/obj/item/clothing/head/hardhat/weldhat/dblue{
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/siding/wideplating/dark/end{
+	dir = 8
+	},
+/turf/open/floor/light,
+/area/ruin/space/has_grav/spacemall/shop)
 "mA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/structure/cable{
@@ -3252,12 +3235,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
-"mJ" = (
-/obj/structure/rack,
-/obj/machinery/light/small/directional/north,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "mK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
@@ -3636,11 +3613,6 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/dorms)
-"ob" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/three,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "od" = (
 /obj/effect/decal/cleanable/blood,
 /obj/structure/spider/cocoon,
@@ -4046,15 +4018,6 @@
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
-"pB" = (
-/obj/effect/decal/cleanable/ash,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/structure/closet/crate,
-/obj/structure/railing,
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/maint)
 "pC" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/open/floor/plating/grass,
@@ -4104,6 +4067,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
+"pK" = (
+/obj/structure/rack,
+/obj/structure/window/reinforced/spawner,
+/obj/effect/spawner/random/medical/beaker,
+/obj/effect/spawner/random/medical/beaker,
+/obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/item/clothing/neck/stethoscope,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/spacemall/shop2)
 "pL" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4473,6 +4445,15 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shop)
+"qE" = (
+/obj/effect/spawner/random/vending/snack,
+/obj/effect/turf_decal/corner/transparent/green/diagonal,
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/spacemall/dorms)
 "qF" = (
 /obj/structure/railing{
 	dir = 4
@@ -4494,6 +4475,15 @@
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/dorms)
+"qJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/wooden,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/effect/spawner/random/maintenance/two,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/maint)
 "qK" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -4601,6 +4591,12 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shuttle)
+"rb" = (
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/structure/rack,
+/obj/effect/spawner/random/maintenance/two,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "re" = (
 /obj/item/kirbyplants/dead,
 /turf/open/floor/plating,
@@ -4637,6 +4633,15 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
+"rp" = (
+/obj/structure/rack,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/dorms)
 "rq" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
@@ -5746,12 +5751,6 @@
 /obj/effect/decal/cleanable/molten_object/large,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
-"vp" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
 "vs" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 10
@@ -5825,6 +5824,14 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
+"vH" = (
+/obj/effect/spawner/random/vending/cola,
+/obj/effect/turf_decal/corner/transparent/green/diagonal,
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/spacemall/dorms)
 "vI" = (
 /obj/effect/turf_decal/corner/transparent/blue/half{
 	dir = 1
@@ -5863,12 +5870,6 @@
 	pixel_x = -9
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop2)
-"vS" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/beaker_loot_spawner,
-/obj/effect/turf_decal/corner/opaque/blue/diagonal,
-/turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/shop2)
 "vT" = (
 /obj/structure/cable{
@@ -6261,6 +6262,12 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/wood/walnut,
 /area/ruin/space/has_grav/spacemall/shop)
+"xA" = (
+/obj/structure/rack,
+/obj/machinery/light/small/directional/north,
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "xD" = (
 /obj/effect/turf_decal/siding{
 	dir = 8
@@ -6446,15 +6453,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
-"yj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/secure,
-/obj/effect/turf_decal/box,
-/obj/structure/railing,
-/obj/effect/spawner/lootdrop/prison_contraband,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/maint)
 "yk" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -6496,6 +6494,14 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ruin/space/has_grav/spacemall/shop2)
+"yr" = (
+/obj/structure/mirror{
+	pixel_y = -30
+	},
+/obj/structure/bed,
+/obj/effect/spawner/random/bedsheet,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/spacemall/dorms)
 "ys" = (
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /obj/machinery/firealarm/directional/north,
@@ -6519,14 +6525,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
-"yC" = (
-/obj/effect/turf_decal/box,
-/obj/structure/closet/crate/trashcart,
-/obj/item/trash/popcorn,
-/obj/item/trash/candy,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shuttle)
 "yF" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6659,16 +6657,6 @@
 /obj/item/stack/cable_coil/cut,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop2)
-"yX" = (
-/obj/effect/turf_decal/box,
-/obj/machinery/light/small/directional/south,
-/obj/structure/closet/crate/secure,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/spawner/lootdrop/maintenance/two,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shuttle)
 "yZ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -6705,6 +6693,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
+"zd" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/corner/transparent/black/diagonal,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/circuit/computer/common,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "ze" = (
 /turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
@@ -6960,15 +6957,6 @@
 	id = "clothing_shutter"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/shop)
-"Ag" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/random_computer_circuit_common,
-/obj/item/research_notes/loot,
-/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "Ah" = (
 /obj/structure/table/wood/reinforced,
@@ -7266,14 +7254,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop2)
-"Bq" = (
-/obj/effect/turf_decal/box,
-/obj/structure/closet/crate/secure,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shuttle)
 "Bu" = (
 /obj/structure/railing/wood{
 	dir = 1
@@ -7441,6 +7421,14 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
+"Cq" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/wooden,
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/maint)
 "Cs" = (
 /obj/effect/turf_decal/corner/opaque/blue/half,
 /obj/item/clothing/suit/hooded/wintercoat{
@@ -7462,16 +7450,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
-"Cu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/wooden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 10
-	},
-/obj/structure/spider/stickyweb,
-/obj/effect/spawner/lootdrop/maintenance/three,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/maint)
 "Cv" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -7629,16 +7607,6 @@
 /obj/machinery/smartfridge/food,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
-"CR" = (
-/obj/structure/bed,
-/obj/item/bedsheet/dorms,
-/obj/effect/decal/cleanable/blood,
-/obj/item/reagent_containers/food/snacks/spiderling{
-	pixel_y = 5;
-	pixel_x = 6
-	},
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/spacemall/dorms)
 "CW" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/structure/cable{
@@ -7894,17 +7862,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
-"DH" = (
-/obj/structure/rack,
-/obj/item/clothing/head/hardhat/weldhat/dblue,
-/obj/item/clothing/head/hardhat/weldhat/dblue{
-	pixel_y = 5
-	},
-/obj/effect/turf_decal/siding/wideplating/dark/end{
-	dir = 8
-	},
-/turf/open/floor/light,
-/area/ruin/space/has_grav/spacemall/shop)
 "DL" = (
 /obj/machinery/door/airlock,
 /obj/structure/cable{
@@ -8225,12 +8182,6 @@
 	},
 /turf/open/floor/eighties,
 /area/ruin/space/has_grav/spacemall/shop2)
-"EI" = (
-/obj/effect/spawner/lootdrop/glowstick,
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "EJ" = (
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
 /obj/structure/chair{
@@ -8606,6 +8557,22 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
+"Gm" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/light/small/directional/south,
+/obj/structure/closet/crate/secure,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/spawner/random/maintenance/two,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shuttle)
+"Gn" = (
+/obj/structure/rack,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/turf_decal/corner/transparent/black/diagonal,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "Go" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -8686,6 +8653,15 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/spacemall/shop2)
+"GD" = (
+/obj/structure/table/glass,
+/obj/item/toy/talking/AI{
+	pixel_x = 20
+	},
+/obj/item/storage/box/ammo/foam_darts/riot,
+/obj/item/gun/ballistic/shotgun/toy,
+/turf/open/floor/light,
+/area/ruin/space/has_grav/spacemall/shop2)
 "GE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -8695,6 +8671,14 @@
 /obj/machinery/power/floodlight,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shop2)
+"GG" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/secure,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shuttle)
 "GH" = (
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 9
@@ -8987,6 +8971,12 @@
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/eggcluster,
 /turf/open/floor/wood,
+/area/ruin/space/has_grav/spacemall/maint)
+"HI" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/obj/structure/closet/crate/wooden,
+/obj/effect/spawner/random/maintenance/three,
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
 "HJ" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
@@ -9432,11 +9422,6 @@
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
-"JE" = (
-/obj/structure/bed,
-/obj/item/bedsheet/dorms,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/spacemall/dorms)
 "JF" = (
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
 /obj/structure/table,
@@ -9562,12 +9547,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
-"Kl" = (
-/obj/effect/decal/cleanable/robot_debris/old,
-/obj/structure/closet/crate/wooden,
-/obj/effect/spawner/lootdrop/maintenance/three,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/maint)
 "Kn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -9612,6 +9591,15 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ruin/space/has_grav/spacemall/shop2)
+"KA" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/engineering/electrical,
+/obj/effect/spawner/random/techstorage,
+/obj/effect/spawner/random/techstorage,
+/obj/effect/spawner/random/stockparts,
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shuttle)
 "KB" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -9666,6 +9654,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
+"KN" = (
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/obj/structure/closet/crate,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "KO" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/structure/cable{
@@ -9992,15 +9989,6 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/dorms)
-"LS" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/random_computer_circuit_common,
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
 "LT" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10050,17 +10038,6 @@
 /obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
-"Mb" = (
-/obj/effect/decal/cleanable/greenglow,
-/obj/effect/spawner/lootdrop/random_prosthetic,
-/obj/effect/spawner/lootdrop/memeorgans,
-/obj/effect/spawner/lootdrop/memeorgans,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/closet/crate/secure,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/maint)
 "Md" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -10751,6 +10728,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
+"Ol" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/closet/crate,
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/spawner/random/maintenance/two,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "On" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
@@ -10848,6 +10838,22 @@
 	},
 /obj/structure/table,
 /turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/spacemall/dorms)
+"OM" = (
+/obj/structure/rack,
+/obj/effect/spawner/random/medical/beaker,
+/obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/spacemall/shop2)
+"ON" = (
+/obj/structure/bed,
+/obj/effect/spawner/random/bedsheet,
+/obj/effect/decal/cleanable/blood,
+/obj/item/reagent_containers/food/snacks/spiderling{
+	pixel_y = 5;
+	pixel_x = 6
+	},
+/turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/dorms)
 "OO" = (
 /obj/machinery/light/small/directional/south,
@@ -11260,12 +11266,6 @@
 	name = "bathroom floor"
 	},
 /area/ruin/space/has_grav/spacemall)
-"Qf" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/tool_engie_common,
-/obj/effect/turf_decal/corner/transparent/black/diagonal,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
 "Qh" = (
 /obj/structure/bookcase/random,
 /obj/structure/disposalpipe/segment{
@@ -11292,22 +11292,14 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
-"Qn" = (
-/obj/machinery/vending/snack/random,
-/obj/effect/turf_decal/corner/transparent/green/diagonal,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 8
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/spacemall/dorms)
-"Qo" = (
-/obj/effect/decal/cleanable/dirt,
+"Qq" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/wooden,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/structure/spider/stickyweb,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
 "Qu" = (
@@ -11678,6 +11670,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
+"RO" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/corner/transparent/black/diagonal,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/circuit/computer/common,
+/obj/item/research_notes/loot,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "RQ" = (
 /obj/effect/turf_decal/industrial/caution{
 	dir = 8;
@@ -11818,6 +11819,17 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
+"Sr" = (
+/obj/effect/decal/cleanable/greenglow,
+/obj/effect/spawner/random/medical/prosthetic,
+/obj/effect/spawner/random/medical/memeorgans,
+/obj/effect/spawner/random/medical/memeorgans,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/closet/crate/secure,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/maint)
 "Ss" = (
 /obj/structure/chair/stool/bar,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -11859,15 +11871,6 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
-"SD" = (
-/obj/structure/bed,
-/obj/item/bedsheet/dorms,
-/obj/item/toy/plush/slimeplushie{
-	pixel_y = -4;
-	pixel_x = 4
-	},
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/spacemall/dorms)
 "SF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
@@ -12131,6 +12134,14 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/ruin/space/has_grav/spacemall/maint)
+"TF" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/trashcart,
+/obj/item/trash/popcorn,
+/obj/item/trash/candy,
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shuttle)
 "TG" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 1
@@ -12210,13 +12221,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
-"TX" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/machinery/light/directional/east,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
 "TZ" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/blue/half{
@@ -12272,6 +12276,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
+"Ui" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/corner/transparent/black/diagonal,
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "Uj" = (
 /obj/structure/railing{
 	dir = 4
@@ -12283,15 +12293,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
-"Ul" = (
-/obj/effect/turf_decal/box,
-/obj/structure/closet/crate/engineering/electrical,
-/obj/effect/spawner/lootdrop/techstorage,
-/obj/effect/spawner/lootdrop/techstorage,
-/obj/effect/spawner/lootdrop/stockparts,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shuttle)
 "Um" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -12453,6 +12454,13 @@
 	name = "bathroom floor"
 	},
 /area/ruin/space/has_grav/spacemall/maint)
+"UN" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/corner/transparent/black/diagonal,
+/obj/machinery/light/directional/east,
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "UP" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/grass,
@@ -12543,6 +12551,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
+"Vi" = (
+/obj/structure/bed,
+/obj/effect/spawner/random/bedsheet,
+/obj/item/toy/plush/slimeplushie{
+	pixel_y = -4;
+	pixel_x = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/spacemall/dorms)
+"Vj" = (
+/obj/structure/rack,
+/obj/effect/spawner/random/engineering/tool/common,
+/obj/effect/turf_decal/corner/transparent/black/diagonal,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shop)
 "Vk" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/structure/cable{
@@ -12592,19 +12615,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
-"Vq" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/structure/closet/crate,
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "Vr" = (
 /obj/machinery/light/directional/east,
 /obj/structure/lattice,
@@ -12648,15 +12658,6 @@
 /obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
-"VA" = (
-/obj/structure/rack,
-/obj/structure/window/reinforced/spawner,
-/obj/effect/spawner/lootdrop/beaker_loot_spawner,
-/obj/effect/spawner/lootdrop/beaker_loot_spawner,
-/obj/effect/turf_decal/corner/opaque/blue/diagonal,
-/obj/item/clothing/neck/stethoscope,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/spacemall/shop2)
 "VD" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -12894,6 +12895,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/shop2)
+"Wv" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/secure,
+/obj/effect/spawner/random/clothing/costume,
+/obj/effect/spawner/random/clothing/costume,
+/obj/effect/spawner/random/clothing/costume,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shuttle)
 "Ww" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -13450,15 +13459,6 @@
 /obj/item/toy/plush/spider,
 /turf/open/floor/carpet/green,
 /area/ruin/space/has_grav/spacemall/maint)
-"YP" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/turf_decal/box,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "YQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -13895,22 +13895,22 @@ kb
 QZ
 yt
 BN
-JE
+iK
 yt
 BN
-JE
+iK
 yt
 BN
-JE
+iK
 yt
 BN
-JE
+iK
 yt
 BN
-JE
+iK
 yt
 wC
-CR
+ON
 bw
 Kh
 Kh
@@ -14152,8 +14152,8 @@ xI
 xI
 Wn
 yt
-eX
-Qn
+vH
+qE
 uu
 qB
 lk
@@ -14253,17 +14253,17 @@ yt
 yt
 yt
 BF
-eU
+yr
 yt
 Nk
 hV
 eK
 yt
 BN
-SD
+Vi
 yt
 BN
-JE
+iK
 bw
 Kh
 Kh
@@ -14403,7 +14403,7 @@ Vf
 zN
 yt
 BF
-eU
+yr
 yt
 Nk
 hV
@@ -14761,7 +14761,7 @@ EF
 pW
 qM
 OY
-jm
+rp
 MM
 Wj
 FC
@@ -15664,7 +15664,7 @@ sr
 pX
 Yy
 xy
-bn
+GD
 Yo
 gm
 sy
@@ -15941,8 +15941,8 @@ No
 NY
 zY
 QS
-fi
-YP
+lX
+KN
 zY
 tj
 zY
@@ -16089,7 +16089,7 @@ nX
 Sh
 gC
 Yo
-EI
+rb
 dj
 pe
 wi
@@ -16139,7 +16139,7 @@ Pq
 ki
 gC
 Yo
-ob
+ej
 zX
 uM
 qS
@@ -16189,7 +16189,7 @@ ts
 XY
 YA
 Yo
-mJ
+xA
 dK
 pe
 ry
@@ -16260,7 +16260,7 @@ UW
 Jx
 Od
 tQ
-VA
+pK
 TZ
 sw
 LG
@@ -16308,7 +16308,7 @@ zZ
 nd
 UW
 Jx
-vS
+OM
 Wr
 xp
 TZ
@@ -16385,7 +16385,7 @@ NX
 NX
 PM
 og
-Vq
+Ol
 ep
 NX
 eo
@@ -16784,7 +16784,7 @@ xN
 vT
 tu
 ID
-Bq
+GG
 VM
 TE
 LJ
@@ -16833,8 +16833,8 @@ Kh
 xN
 wF
 sb
-jD
-Ul
+Wv
+KA
 ra
 TE
 LJ
@@ -16934,7 +16934,7 @@ xN
 kO
 WH
 FL
-yX
+Gm
 uU
 Nj
 AM
@@ -16946,7 +16946,7 @@ Ca
 eb
 jE
 DU
-DH
+mx
 RG
 dO
 YG
@@ -16983,8 +16983,8 @@ Kh
 fZ
 aL
 IS
-yC
-cO
+TF
+iu
 fZ
 FM
 kj
@@ -17230,9 +17230,9 @@ Kh
 Kh
 qK
 qK
-lQ
+Cq
 ba
-yj
+hb
 ZQ
 hy
 Yo
@@ -17281,8 +17281,8 @@ Kh
 qK
 mh
 DF
-Qo
-Kl
+qJ
+HI
 TT
 On
 BV
@@ -17380,7 +17380,7 @@ Kh
 Kh
 qK
 hE
-Mb
+Sr
 EN
 nK
 eH
@@ -17393,10 +17393,10 @@ Hq
 vG
 cs
 pe
-Qf
+Vj
 qj
 tD
-gu
+Gn
 RH
 dO
 YG
@@ -17429,10 +17429,10 @@ Kh
 Kh
 Kh
 qK
-fh
-Cu
+fP
+Qq
 Zf
-pB
+gP
 dW
 Tc
 Yo
@@ -17443,10 +17443,10 @@ yQ
 CJ
 ZT
 pe
-eS
+gh
 qj
 bY
-Ag
+RO
 RH
 UW
 YG
@@ -17493,10 +17493,10 @@ dZ
 Mk
 JW
 pe
-vp
+Ui
 tD
 qj
-vp
+Ui
 RH
 UW
 kN
@@ -17594,9 +17594,9 @@ ps
 Wd
 pe
 Im
-TX
-LS
-Qf
+UN
+zd
+Vj
 pe
 PO
 Df

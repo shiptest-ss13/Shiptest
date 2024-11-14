@@ -11,17 +11,6 @@
 	stock = 1
 	availability_prob = 20
 
-/datum/blackmarket_item/tool/syndi_toolbox
-	name = "Syndicate Toolbox"
-	desc = "A set of specialized tools, built to precision perfection and certified by the GEC."
-	item = /obj/item/storage/toolbox/syndicate
-
-	price_min = 500
-	price_max = 2000
-	stock_min = 1
-	stock_max = 3
-	availability_prob = 40
-
 /datum/blackmarket_item/tool/surgery_duffel
 	name = "Cybersun Advanced Surgical Kit"
 	desc = "You might say it's morally wrong to steal. I say it's justified when it's Cybersun."
@@ -173,28 +162,19 @@
 	desc = "A lovingly handcrafted jetpack built by our salvage techs. For the frugal space explorer."
 	item = /obj/item/tank/jetpack/improvised
 
-	price_min = 500
-	price_max = 1000
+	price_min = 100
+	price_max = 500
 	stock_min = 3
 	stock_max = 6
 	availability_prob = 70
-
-/datum/blackmarket_item/tool/jet_harness
-	name = "Jet Harness"
-	desc = "A compact oxygen filled jet harness for tactical EVA insertions and extractions."
-	item = /obj/item/tank/jetpack/oxygen/harness
-
-	price_min = 1250
-	price_max = 3500
-	stock_max = 3
-	availability_prob = 30
 
 /datum/blackmarket_item/tool/jetpack_upgrade
 	name = "Hardsuit Jetpack Upgrade"
 	desc = "A modular jetpack compatible with most hardsuits. If the screws feel a bit loose, it's because the last suit it was attached to was beyond recovery."
 	item = /obj/item/tank/jetpack/suit
 
-	price_min = 1750
+	price_min = 1250
 	price_max = 3000
-	stock = 1
+	stock_min = 1
+	stock_max = 3
 	availability_prob = 25

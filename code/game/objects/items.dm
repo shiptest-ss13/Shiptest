@@ -525,8 +525,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		playsound(src, 'sound/weapons/effects/deflect.ogg', 100)
 		if(!istype(src, /obj/item/shield))
 			COOLDOWN_START(src, block_cooldown, block_cooldown_time)
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/item/proc/talk_into(mob/M, input, channel, spans, datum/language/language, list/message_mods)
 	return ITALICS | REDUCE_RANGE
@@ -1211,6 +1211,18 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /// Whether or not this item can be put into a storage item through attackby
 /obj/item/proc/attackby_storage_insert(datum/storage, atom/storage_holder, mob/user)
 	return TRUE
+
+/obj/item/proc/update_weight_class(new_w_class)
+	if(w_class == new_w_class)
+		return FALSE
+
+	var/old_w_class = w_class
+	w_class = new_w_class
+	SEND_SIGNAL(src, COMSIG_ITEM_WEIGHT_CLASS_CHANGED, old_w_class, new_w_class)
+	if(!isnull(loc))
+		SEND_SIGNAL(loc, COMSIG_ATOM_CONTENTS_WEIGHT_CLASS_CHANGED, src, old_w_class, new_w_class)
+	return TRUE
+
 /// How many different types of mats will be counted in a bite?
 #define MAX_MATS_PER_BITE 2
 
@@ -1233,7 +1245,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  */
 /obj/item/proc/on_accidental_consumption(mob/living/carbon/victim, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
 	if(get_sharpness() && force >= 5) //if we've got something sharp with a decent force (ie, not plastic)
-		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
+		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, force_scream))
 		victim.visible_message("<span class='warning'>[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!</span>", \
 							"<span class='boldwarning'>OH GOD! Was that a crunch? That didn't feel good at all!!</span>")
 

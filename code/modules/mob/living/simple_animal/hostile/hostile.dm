@@ -18,8 +18,10 @@
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
-	var/move_to_delay = 3 //delay for the automated movement.
+	///delay for the automated movement.
+	var/move_to_delay = 3
 	var/list/friends = list()
+
 	var/list/emote_taunt = list()
 	var/taunt_chance = 0
 
@@ -33,7 +35,7 @@
 	var/check_friendly_fire = FALSE // Should the ranged mob check for friendlies when shooting
 	var/retreat_distance = null //If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
 	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
-
+	var/shoot_point_blank = FALSE // If this mob will still shoot even in melee range.
 
 //These vars are related to how mobs locate and target
 	var/robust_searching = 0 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
@@ -315,7 +317,10 @@
 			Goto(target,move_to_delay,minimum_distance)
 		if(target)
 			if(isturf(target_from.loc) && target.Adjacent(target_from)) //If they're next to us, attack
-				MeleeAction()
+				if(ranged && shoot_point_blank && ranged_cooldown <= world.time)
+					OpenFire(target)
+				else
+					MeleeAction()
 			else
 				if(rapid_melee > 1 && target_distance <= melee_queue_distance)
 					MeleeAction(FALSE)
@@ -366,9 +371,10 @@
 
 /mob/living/simple_animal/hostile/proc/Aggro()
 	vision_range = aggro_vision_range
-	if(target && emote_taunt.len && prob(taunt_chance))
-		manual_emote("[pick(emote_taunt)] at [target].")
-		taunt_chance = max(taunt_chance-7,2)
+	if(target)
+		if(emote_taunt.len && prob(taunt_chance))
+			manual_emote("[pick(emote_taunt)] at [target].")
+			taunt_chance = max(taunt_chance-7,2)
 
 
 /mob/living/simple_animal/hostile/proc/LoseAggro()
@@ -698,3 +704,27 @@
 	if (length(initial(src.faction)) > 0)
 		src.faction += initial(src.faction)
 	src.faction += tag
+
+/mob/living/simple_animal/hostile/proc/fire_line(source, list/turfs, fire_source = "fire breath", ignite_turfs = FALSE, power = 4, flame_color = "red")
+	var/list/hit_list = list()
+	for(var/turf/T in turfs)
+		if(istype(T, /turf/closed))
+			break
+		new /obj/effect/hotspot(T)
+		T.hotspot_expose(700,50,1)
+		if(ignite_turfs)
+			T.IgniteTurf(power,flame_color)
+		for(var/mob/living/L in T.contents)
+			if((L in hit_list) || L == source)
+				continue
+			hit_list += L
+			L.adjustFireLoss(20)
+			to_chat(L, "<span class='userdanger'>You're hit by [source]'s [fire_source]!</span>")
+
+		// deals damage to mechs
+		for(var/obj/mecha/M in T.contents)
+			if(M in hit_list)
+				continue
+			hit_list += M
+			M.take_damage(45, BRUTE, "melee", 1)
+		sleep(1.5)

@@ -306,18 +306,6 @@
 	item_path = /obj/item/antag_spawner/contract
 	category = "Assistance"
 
-/datum/spellbook_entry/item/guardian
-	name = "Guardian Deck"
-	desc = "A deck of guardian tarot cards, capable of binding a personal guardian to your body. There are multiple types of guardian available, but all of them will transfer some amount of damage to you. \
-	It would be wise to avoid buying these with anything capable of causing you to swap bodies with others."
-	item_path = /obj/item/guardiancreator/choose/wizard
-	category = "Assistance"
-
-/datum/spellbook_entry/item/guardian/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
-	. = ..()
-	if(.)
-		new /obj/item/paper/guides/antag/guardian/wizard(get_turf(user))
-
 /datum/spellbook_entry/item/bloodbottle
 	name = "Bottle of Blood"
 	desc = "A bottle of magically infused blood, the smell of which will attract extradimensional beings when broken. Be careful though, the kinds of creatures summoned by blood magic are indiscriminate in their killing, and you yourself may become a victim."

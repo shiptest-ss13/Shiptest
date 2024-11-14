@@ -1,134 +1,3 @@
-//Snow Valley Areas//--
-
-/area/awaymission/snowdin
-	name = "Snowdin"
-	icon_state = "awaycontent1"
-	requires_power = FALSE
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
-
-/area/awaymission/snowdin/outside
-	name = "Snowdin Tundra Plains"
-	icon_state = "awaycontent25"
-
-/area/awaymission/snowdin/post
-	name = "Snowdin Outpost"
-	icon_state = "awaycontent2"
-	requires_power = TRUE
-	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
-
-/area/awaymission/snowdin/post/medbay
-	name = "Snowdin Outpost - Medbay"
-	icon_state = "awaycontent3"
-
-/area/awaymission/snowdin/post/secpost
-	name = "Snowdin Outpost - Security Checkpoint"
-	icon_state = "awaycontent4"
-
-/area/awaymission/snowdin/post/hydro
-	name = "Snowdin Outpost - Hydroponics"
-	icon_state = "awaycontent5"
-
-/area/awaymission/snowdin/post/messhall
-	name = "Snowdin Outpost - Mess Hall"
-	icon_state = "awaycontent6"
-
-/area/awaymission/snowdin/post/gateway
-	name = "Snowdin Outpost - Gateway"
-	icon_state = "awaycontent7"
-
-/area/awaymission/snowdin/post/dorm
-	name = "Snowdin Outpost - Dorms"
-	icon_state = "awaycontent8"
-
-/area/awaymission/snowdin/post/kitchen
-	name = "Snowdin Outpost - Kitchen"
-	icon_state = "awaycontent9"
-
-/area/awaymission/snowdin/post/engineering
-	name = "Snowdin Outpost - Engineering"
-	icon_state = "awaycontent10"
-
-/area/awaymission/snowdin/post/custodials
-	name = "Snowdin Outpost - Custodials"
-	icon_state = "awaycontent11"
-
-/area/awaymission/snowdin/post/research
-	name = "Snowdin Outpost - Research Area"
-	icon_state = "awaycontent12"
-
-/area/awaymission/snowdin/post/garage
-	name = "Snowdin Outpost - Garage"
-	icon_state = "awaycontent13"
-
-/area/awaymission/snowdin/post/minipost
-	name = "Snowdin Outpost - Recon Post"
-	icon_state = "awaycontent19"
-
-/area/awaymission/snowdin/post/mining_main
-	name = "Snowdin Outpost - Mining Post"
-	icon_state = "awaycontent21"
-
-/area/awaymission/snowdin/post/mining_main/mechbay
-	name = "Snowdin Outpost - Mining Post Mechbay"
-	icon_state = "awaycontent25"
-
-/area/awaymission/snowdin/post/mining_main/robotics
-	name = "Snowdin Outpost - Mining Post Robotics"
-	icon_state = "awaycontent26"
-
-/area/awaymission/snowdin/post/cavern1
-	name = "Snowdin Outpost - Cavern Outpost 1"
-	icon_state = "awaycontent27"
-
-/area/awaymission/snowdin/post/cavern2
-	name = "Snowdin Outpost - Cavern Outpost 2"
-	icon_state = "awaycontent28"
-
-/area/awaymission/snowdin/post/mining_dock
-	name = "Snowdin Outpost - Underground Mine Post"
-	icon_state = "awaycontent22"
-
-/area/awaymission/snowdin/post/broken_shuttle
-	name = "Snowdin Outpost - Broken Transit Shuttle"
-	icon_state = "awaycontent20"
-	requires_power = FALSE
-
-/area/awaymission/snowdin/igloo
-	name = "Snowdin Igloos"
-	icon_state = "awaycontent14"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-
-/area/awaymission/snowdin/cave
-	name = "Snowdin Caves"
-	icon_state = "awaycontent15"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-
-/area/awaymission/snowdin/cave/cavern
-	name = "Snowdin Depths"
-	icon_state = "awaycontent23"
-
-/area/awaymission/snowdin/cave/mountain
-	name = "Snowdin Mountains"
-	icon_state = "awaycontent24"
-
-
-/area/awaymission/snowdin/base
-	name = "Snowdin Main Base"
-	icon_state = "awaycontent16"
-	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
-	requires_power = TRUE
-
-/area/awaymission/snowdin/dungeon1
-	name = "Snowdin Depths"
-	icon_state = "awaycontent17"
-	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
-
-/area/awaymission/snowdin/sekret
-	name = "Snowdin Operations"
-	icon_state = "awaycontent18"
-	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
-	requires_power = TRUE
-
 //liquid plasma!!!!!!//
 
 /turf/open/floor/plasteel/dark/snowdin
@@ -218,14 +87,19 @@
 						PP.adjustFireLoss(25)
 						if(plasma_parts.len)
 							var/obj/item/bodypart/NB = pick(plasma_parts) //using the above-mentioned list to get a choice of limbs for dismember() to use
-							PP.emote("scream")
 							NB.limb_id = "plasmaman" //change the species_id of the limb to that of a plasmaman
 							NB.static_icon = 'icons/mob/species/plasmaman/bodyparts.dmi'
 							NB.no_update = TRUE
 							NB.change_bodypart_status()
-							PP.visible_message(
-								"<span class='warning'>[L] screams in pain as [L.p_their()] [NB] melts down to the bone!</span>",
-								"<span class='userdanger'>You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
+							PP.force_scream()
+							if(!HAS_TRAIT(PP, TRAIT_ANALGESIA))
+								PP.visible_message(
+									"<span class='warning'>[L] screams in pain as [L.p_their()] [NB] melts down to the bone!</span>",
+									"<span class='userdanger'>You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
+							else
+								PP.visible_message(
+									"<span class='warning'>[L] lets out panicked gasps as [L.p_their()] [NB] melts down to the bone!</span>",
+									"<span class='userdanger'>You gasp in shock as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
 						if(!plasma_parts.len && !robo_parts.len) //a person with no potential organic limbs left AND no robotic limbs, time to turn them into a plasmaman
 							PP.IgniteMob()
 							PP.set_species(/datum/species/plasmaman)
@@ -259,61 +133,6 @@
 	default_raw_text = {"If you're reading this: GET OUT! The mining go on here has unearthed something that was once-trapped by the layers of ice on this hell-hole. The overseer and Jouslen have gone missing. The officer is
 	keeping the rest of us on lockdown and I swear to god I keep hearing strange noises outside the walls at night. The gateway link has gone dead and without a supply of resources from Central, we're left
 	for dead here. We haven't heard anything back from the mining squad either, so I can only assume whatever the fuck they unearthed got them first before coming for us. I don't want to die here..."}
-
-/obj/item/paper/fluff/awaymissions/snowdin/saw_usage
-	name = "SAW Usage"
-	default_raw_text = "YOU SEEN IVAN, WHEN YOU HOLD SAAW LIKE PEESTOL, YOU STRONGER THAN RECOIL FOR FEAR OF HITTING FACE!"
-
-/obj/item/paper/fluff/awaymissions/snowdin/research_feed
-	name = "Research Feed"
-	default_raw_text = {"<i>A page full of graphs and other detailed information on the seismic activity of the surrounding area.</i>"}
-
-//profile of each of the old crewmembers for the outpost
-
-/obj/item/paper/fluff/awaymissions/snowdin/profile/overseer
-	name = "Personnel Record AOP#01"
-	default_raw_text = {"<b><center>Personnel Log</b></center><br><br><b>Name:</b>Caleb Reed<br><b>Age:</b>38<br><b>Gender:</b>Male<br><b>On-Site Profession:</b>Outpost Overseer<br><br><center><b>Information</b></center><br><center>Caleb Reed lead several expeditions
-	among uncharted planets in search of plasma for Nanotrasen, scouring from hot savanas to freezing arctics. Track record is fairly clean with only incidient including the loss of two researchers during the
-	expedition of <b>_______</b>, where mis-used of explosive ordinance for tunneling causes a cave-in."}
-
-/obj/item/paper/fluff/awaymissions/snowdin/profile/sec1
-	name = "Personnel Record AOP#02"
-	default_raw_text = {"<b><center>Personnel Log</b></center><br><br><b>Name:</b>James Reed<br><b>Age:</b>43<br><b>Gender:</b>Male<br><b>On-Site Profession:</b>Outpost Security<br><br><center><b>Information</b></center><br><center>James Reed has been a part
-	of Nanotrasen's security force for over 20 years, first joining in 22XX. A clean record and unwavering loyalty to the corperation through numerous deployments to various sites makes him a valuable asset to Natotrasen
-	when it comes to keeping the peace while prioritizing Nanotrasen privacy matters. "}
-
-/obj/item/paper/fluff/awaymissions/snowdin/profile/hydro1
-	name = "Personnel Record AOP#03"
-	default_raw_text = {"<b><center>Personnel Log</b></center><br><br><b>Name:</b>Katherine Esterdeen<br><b>Age:</b>27<br><b>Gender:</b>Female<br><b>On-Site Profession:</b>Outpost Botanist<br><br><center><b>Information</b></center><br><center>Katherine Esterdeen is a recent
-	graduate with a major in Botany and a PH.D in Ecology. Having a clean record and eager to work, Esterdeen seems to be the right fit for maintaining plants in the middle of nowhere."}
-
-/obj/item/paper/fluff/awaymissions/snowdin/profile/engi1
-	name = "Personnel Record AOP#04"
-	default_raw_text = {"<b><center>Personnel Log</b></center><br><br><b>Name:</b>Rachel Migro<br><b>Age:</b>35<br><b>Gender:</b>Female<br><b>On-Site Profession:</b>Outpost Engineer<br><br><center><b>Information</b></center><br><center>Recently certified to be a full-time Journeyman, Rachel has
-		been assigned various construction projects in the past 5 years. Competent and has no past infractions, should be of little concern."}
-
-/obj/item/paper/fluff/awaymissions/snowdin/profile/research1
-	name = "Personnel Record AOP#05"
-	default_raw_text = {"<b><center>Personnel Log</b></center><br><br><b>Name:</b>Jacob Ullman<br><b>Age:</b>27<br><b>Gender:</b>Male<br><b>On-Site Profession:</b>Outpost Researcher<br><br><center><b>Information</b></center><br><center>"}
-
-/obj/item/paper/fluff/awaymissions/snowdin/profile/research2
-	name = "Personnel Record AOP#06"
-	default_raw_text = {"<b><center>Personnel Log</b></center><br><br><b>Name:</b>Elizabeth Queef<br><b>Age:</b>28<br><b>Gender:</b>Female<br><b>On-Site Profession:</b>Outpost Researcher<br><br><center><b>Information</b></center><br><center>"}
-
-/obj/item/paper/fluff/awaymissions/snowdin/profile/research3
-	name = "Personnel Record AOP#07"
-	default_raw_text = {"<b><center>Personnel Log</b></center><br><br><b>Name:</b>Jouslen McGee<br><b>Age:</b>38<br><b>Gender:</b>Male<br><b>On-Site Profession:</b>Outpost Researcher<br><br><center><b>Information</b></center><br><center>"}
-
-/obj/item/paper/fluff/awaymissions/snowdin/secnotice
-	name = "Security Notice"
-	default_raw_text = {"YOu have been assigned to this Arctic Post with intention of protecting Nanotrasen assets and ensuring vital information is kept secure while the stationed crew obeys protocol. The picked
-		staff for this post have been pre-screened with no prior incidients on record, but incase of an issue you have been given a single holding cell and instructions to contact Central to terminate the
-		offending crewmember."}
-
-/obj/item/paper/fluff/awaymissions/snowdin/mining
-	name = "Assignment Notice"
-	default_raw_text = {"This cold-ass planet is the new-age equivalent of striking gold. Huge deposits of plasma and literal streams of plasma run through the caverns under all this ice and we're here to mine it all.\
-	Nanotrasen pays by the pound, so get minin' boys!"}
 
 /obj/item/paper/crumpled/ruins/snowdin/lootstructures
 	name = "scribbled note"
@@ -447,83 +266,6 @@
 	NAME Elizabeth Queef
 	SAY AAAAAAAAAAAAAAAA FUCK THAT
 	DELAY 15;"}
-
-//lootspawners//--
-
-/obj/effect/spawner/lootdrop/snowdin
-	name = "why are you using this dummy"
-	lootdoubles = 0
-	lootcount = 1
-	loot = list(/obj/item/bikehorn = 100)
-
-/obj/effect/spawner/lootdrop/snowdin/dungeonlite
-	name = "dungeon lite"
-	loot = list(/obj/item/melee/classic_baton = 11,
-				/obj/item/melee/classic_baton/telescopic = 12,
-				/obj/item/book/granter/spell/smoke = 10,
-				/obj/item/book/granter/spell/blind = 10,
-				/obj/item/storage/firstaid/regular = 45,
-				/obj/item/storage/firstaid/toxin = 35,
-				/obj/item/storage/firstaid/brute = 27,
-				/obj/item/storage/firstaid/fire = 27,
-				/obj/item/storage/toolbox/syndicate = 12,
-				/obj/item/grenade/c4 = 7,
-				/obj/item/grenade/clusterbuster/smoke = 15,
-				/obj/item/clothing/under/chameleon = 13,
-				/obj/item/clothing/shoes/chameleon/noslip = 10,
-				/obj/item/borg/upgrade/ddrill = 3,
-				/obj/item/borg/upgrade/soh = 3)
-
-/obj/effect/spawner/lootdrop/snowdin/dungeonmid
-	name = "dungeon mid"
-	loot = list(/obj/item/defibrillator/compact = 6,
-				/obj/item/storage/firstaid/tactical = 35,
-				/obj/item/shield/energy = 6,
-				/obj/item/shield/riot/tele = 12,
-				/obj/item/dnainjector/lasereyesmut = 7,
-				/obj/item/pneumatic_cannon = 15,
-				/obj/item/melee/transforming/energy/sword = 7,
-				/obj/item/book/granter/spell/knock = 15,
-				/obj/item/book/granter/spell/summonitem = 20,
-				/obj/item/book/granter/spell/forcewall = 17,
-				/obj/item/storage/backpack/holding = 12,
-				/obj/item/grenade/spawnergrenade/manhacks = 6,
-				/obj/item/grenade/spawnergrenade/spesscarp = 7,
-				/obj/item/grenade/clusterbuster/inferno = 3,
-				/obj/item/stack/sheet/mineral/diamond{amount = 15} = 10,
-				/obj/item/stack/sheet/mineral/uranium{amount = 15} = 10,
-				/obj/item/stack/sheet/mineral/plasma{amount = 15} = 10,
-				/obj/item/stack/sheet/mineral/gold{amount = 15} = 10,
-				/obj/item/book/granter/spell/barnyard = 4,
-				/obj/item/pickaxe/drill/diamonddrill = 6,
-				/obj/item/borg/upgrade/disablercooler = 7)
-
-
-/obj/effect/spawner/lootdrop/snowdin/dungeonheavy
-	name = "dungeon heavy"
-	loot = list(/obj/item/melee/axe/fire = 25,
-				/obj/item/organ/brain/alien = 17,
-				/obj/item/dualsaber = 15,
-				/obj/item/organ/heart/demon = 7,
-				/obj/item/gun/ballistic/automatic/smg/cobra = 16,
-				/obj/item/uplink/old = 2,
-				/obj/item/book/granter/spell/charge = 12,
-				/obj/item/grenade/clusterbuster/spawner_manhacks = 15,
-				/obj/item/book/granter/spell/fireball = 10,
-				/obj/item/pickaxe/drill/jackhammer = 30,
-				/obj/item/borg/upgrade/syndicate = 13,
-				/obj/item/borg/upgrade/selfrepair = 17)
-
-/obj/effect/spawner/lootdrop/snowdin/dungeonmisc
-	name = "dungeon misc"
-	lootdoubles = 2
-	lootcount = 1
-
-	loot = list(/obj/item/stack/sheet/mineral/snow{amount = 25} = 10,
-				/obj/item/toy/snowball = 15,
-				/obj/item/shovel = 10,
-				/obj/item/melee/spear = 8,
-				)
 
 //special items//--
 
