@@ -3013,14 +3013,14 @@
 /obj/machinery/elevator_call_button{
 	pixel_y = 23
 	},
-/obj/effect/landmark/outpost/elevator_machine{
-	shaft = "1"
-	},
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 4
+	},
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
@@ -4511,6 +4511,12 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/outpost/maintenance/starboard)
+"Jl" = (
+/obj/effect/landmark/outpost/elevator{
+	shaft = "1"
+	},
+/turf/closed/indestructible/rock/rockplanet,
+/area/outpost/external)
 "Jo" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -6607,9 +6613,6 @@
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
 "ZS" = (
-/obj/effect/landmark/outpost/elevator_machine{
-	shaft = "1"
-	},
 /obj/machinery/door/airlock/grunge{
 	dir = 4
 	},
@@ -6618,6 +6621,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/central)
@@ -6642,7 +6648,7 @@ Tk
 Tk
 Tk
 Tk
-Tk
+Jl
 Tk
 Tk
 Tk
