@@ -2454,7 +2454,6 @@
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/office)
 "kM" = (
-/obj/effect/mob_spawn/human/corpse,
 /obj/item/gun/ballistic/automatic/pistol/cm23{
 	pixel_x = -12
 	},
@@ -2463,6 +2462,7 @@
 	pixel_x = -5
 	},
 /obj/effect/decal/cleanable/generic,
+/obj/effect/mob_spawn/human/corpse/clip/minuteman,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/armory)
 "kO" = (
@@ -4149,6 +4149,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/mob_spawn/human/corpse/clip/vc,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo)
 "sp" = (
@@ -6148,6 +6149,11 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/slab_1,
+/area/overmap_encounter/planetoid/ice/explored)
+"AJ" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/mob_spawn/human/corpse/clip/researcher,
+/turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "AK" = (
 /obj/effect/turf_decal/industrial/caution{
@@ -8508,7 +8514,6 @@
 	pixel_y = 4;
 	pixel_x = -4
 	},
-/obj/effect/mob_spawn/human/corpse,
 /obj/effect/mapping_helpers/chair/tim_buckley,
 /obj/effect/turf_decal/trimline/opaque/purple/line{
 	dir = 8
@@ -8516,6 +8521,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/effect/mob_spawn/human/corpse/clip/minuteman,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "KJ" = (
@@ -8713,7 +8719,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
-/obj/effect/mob_spawn/human/corpse,
+/obj/effect/mob_spawn/human/corpse/clip/researcher,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "LR" = (
@@ -9234,7 +9240,7 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/cave/explored)
 "OA" = (
-/obj/effect/mob_spawn/human/corpse,
+/obj/effect/mob_spawn/human/corpse/clip/researcher,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "OB" = (
@@ -10138,6 +10144,11 @@
 "Sh" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/icemoon/tesla_lab/lab_a)
+"Si" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mob_spawn/human/corpse/clip/researcher,
+/turf/open/floor/concrete/pavement,
+/area/overmap_encounter/planetoid/ice/explored)
 "Sj" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/concrete/pavement,
@@ -13776,7 +13787,7 @@ EA
 EA
 Kq
 XF
-po
+AJ
 po
 Ua
 Fv
@@ -13898,7 +13909,7 @@ Lv
 dm
 nK
 dm
-sv
+Si
 Mt
 bI
 pO
