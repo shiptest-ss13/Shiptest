@@ -17,7 +17,7 @@ git reset --hard FETCH_HEAD
 
 rustup target add i686-unknown-linux-gnu
 
-env PKG_CONFIG_ALLOW_CROSS=1 cargo build --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks,katmos"
+env PKG_CONFIG_ALLOW_CROSS=1 cargo build --release --target=i686-unknown-linux-gnu --features "citadel_reactions,katmos"
 
 mkdir -p ~/.byond/bin
 cp target/i686-unknown-linux-gnu/release/libauxmos.so  ~/.byond/bin/libauxmos.so

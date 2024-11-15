@@ -66,6 +66,8 @@ SUBSYSTEM_DEF(air)
 	var/equalize_hard_turf_limit = 2000
 	// Whether equalization should be enabled at all.
 	var/equalize_enabled = TRUE
+	// The ratio of gas "shared" from the immutable planetary atmos mix to planetary tiles
+	var/planet_share_ratio = 0.25
 	// Whether turf-to-turf heat exchanging should be enabled.
 	var/heat_enabled = FALSE
 	// Max number of times process_turfs will share in a tick.
