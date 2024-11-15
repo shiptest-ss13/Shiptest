@@ -9,7 +9,7 @@ pushd "$HOME/auxmos"
 if [ ! -d .git ]
 then
 	git init
-	git remote add origin https://github.com/Putnam3145/auxmos.git
+	git remote add origin $AUXMOS_REPO
 fi
 
 git fetch origin --depth=1 $AUXMOS_VERSION
