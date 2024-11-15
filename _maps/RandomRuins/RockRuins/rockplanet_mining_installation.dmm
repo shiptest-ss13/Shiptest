@@ -45,12 +45,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/mining_base/med)
-"am" = (
-/obj/structure/platform{
-	dir = 10
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "ao" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2201,10 +2195,12 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/rockplanet/mining_base)
 "ly" = (
-/obj/structure/platform{
-	dir = 6
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plasteel/stairs/rockplanet/lit{
+	dir = 8
+	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "lz" = (
 /obj/effect/turf_decal/borderfloor{
@@ -3539,12 +3535,6 @@
 	},
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"tj" = (
-/obj/structure/platform{
-	dir = 9
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "tl" = (
 /obj/structure/cable{
@@ -4989,6 +4979,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/rockplanet/mining_base/crew)
+"AY" = (
+/obj/structure/platform{
+	dir = 6
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ba" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -7031,6 +7027,12 @@
 	},
 /turf/open/floor/plating/rockplanet,
 /area/ruin/rockplanet/mining_base/refinery)
+"Mk" = (
+/obj/structure/platform{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Mo" = (
 /obj/structure/table/wood,
 /obj/item/tape/random{
@@ -8949,12 +8951,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
 "Wy" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
+/obj/structure/platform{
+	dir = 9
 	},
-/turf/open/floor/plasteel/stairs/rockplanet/lit{
-	dir = 8
-	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "WA" = (
 /obj/structure/chair/office{
@@ -9336,6 +9336,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/stormtrooper,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Yx" = (
@@ -10185,7 +10186,7 @@ UZ
 Zh
 EC
 co
-am
+Mk
 de
 pT
 TJ
@@ -10261,7 +10262,7 @@ En
 co
 co
 co
-am
+Mk
 Jq
 iN
 Hp
@@ -10562,12 +10563,12 @@ ub
 ub
 ub
 ub
-ly
+AY
 bK
 Vr
 Et
 ub
-ly
+AY
 cU
 Jk
 bR
@@ -10714,8 +10715,8 @@ vi
 vi
 vi
 qp
-tj
-am
+Wy
+Mk
 Mg
 Kh
 Hp
@@ -10778,10 +10779,10 @@ YH
 co
 co
 co
-am
+Mk
 bK
 St
-tj
+Wy
 co
 co
 Ta
@@ -10934,7 +10935,7 @@ Qd
 Ww
 Ba
 Kh
-tj
+Wy
 pd
 AK
 Dt
@@ -11219,7 +11220,7 @@ tw
 oI
 ew
 xL
-ly
+AY
 rP
 pI
 Hp
@@ -11435,7 +11436,7 @@ bN
 Za
 ew
 co
-am
+Mk
 eV
 pI
 Hp
@@ -11635,7 +11636,7 @@ zK
 Tk
 cA
 En
-am
+Mk
 Jq
 at
 Eq
@@ -11653,7 +11654,7 @@ DD
 DD
 ew
 zb
-Wy
+ly
 Et
 ub
 ub
@@ -12279,11 +12280,11 @@ MU
 dP
 Et
 ub
-ly
+AY
 IC
 Et
 ub
-ly
+AY
 Jq
 at
 FH
@@ -12414,11 +12415,11 @@ RX
 Fd
 Kj
 NU
-tj
+Wy
 co
 co
 co
-am
+Mk
 cm
 nJ
 mB
@@ -12481,10 +12482,10 @@ Ce
 "}
 (39,1,1) = {"
 UV
-am
+Mk
 py
 lF
-tj
+Wy
 co
 tB
 UV
@@ -12492,7 +12493,7 @@ UV
 UV
 En
 co
-am
+Mk
 YY
 gH
 Du
@@ -13646,11 +13647,11 @@ ub
 ub
 ub
 ub
-ly
+AY
 nf
 Et
 ub
-ly
+AY
 Yl
 cI
 Hp
@@ -13857,10 +13858,10 @@ Ce
 Ce
 UV
 UV
-am
+Mk
 Db
 Pb
-tj
+Wy
 co
 co
 Jj
