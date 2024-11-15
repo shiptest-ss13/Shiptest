@@ -238,7 +238,9 @@
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/bench/red/directional/south,
+/obj/structure/chair/bench/grey/directional/south{
+	color = "#ABB0B8"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "fz" = (
@@ -730,7 +732,7 @@
 	pixel_y = 3;
 	pixel_x = -9
 	},
-/obj/item/stamp/syndicate{
+/obj/item/stamp/cybersun{
 	pixel_x = -9;
 	pixel_y = -3
 	},
@@ -1224,7 +1226,9 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/south,
-/obj/structure/chair/bench/red/directional/north,
+/obj/structure/chair/bench/grey/directional/north{
+	color = "#ABB0B8"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "ze" = (
@@ -1390,7 +1394,9 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/bench/red/directional/south,
+/obj/structure/chair/bench/grey/directional/south{
+	color = "#ABB0B8"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "Du" = (
@@ -2212,7 +2218,9 @@
 	color = "#730622";
 	dir = 1
 	},
-/obj/structure/chair/bench/red/directional/north,
+/obj/structure/chair/bench/grey/directional/north{
+	color = "#ABB0B8"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "Rz" = (
