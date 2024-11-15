@@ -108,6 +108,9 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/ammo_box))
+	can_hold_max_of_items = typecacheof(list(
+		/obj/item/gun/ballistic = 1
+	))
 
 /datum/component/storage/concrete/pockets/holster/real_location()
 	// if the component is reparented to a jumpsuit, the items still go in the protector
