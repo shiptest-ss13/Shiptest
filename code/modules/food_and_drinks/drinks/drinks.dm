@@ -305,7 +305,7 @@
 	amount_per_transfer_from_this = 10
 	fill_icon_thresholds = list(0, 10, 25, 50, 75, 80, 90)
 	isGlass = FALSE
-	custom_price = 2
+	custom_price = 8
 	can_have_cap = TRUE
 	// The 2 bottles have separate cap overlay icons because if the bottle falls over while bottle flipping the cap stays fucked on the moved overlay
 	cap_icon_state = "bottle_cap_small"
