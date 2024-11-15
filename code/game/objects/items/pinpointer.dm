@@ -91,8 +91,8 @@
 	name = "crew pinpointer"
 	desc = "A handheld tracking device that points to crew suit sensors."
 	icon_state = "pinpointer_crew"
-	custom_price = 20
-	custom_premium_price = 20
+	custom_price = 900
+	custom_premium_price = 900
 	var/has_owner = FALSE
 	var/pinpointer_owner = null
 	var/ignore_suit_sensor_level = FALSE /// Do we find people even if their suit sensors are turned off
@@ -169,7 +169,7 @@
 	name = "proximity crew pinpointer"
 	desc = "A handheld tracking device that displays its proximity to crew suit sensors."
 	icon_state = "pinpointer_crewprox"
-	custom_price = 20
+	custom_price = 300
 
 /obj/item/pinpointer/crew/prox/get_direction_icon(here, there)
 	var/size = ""

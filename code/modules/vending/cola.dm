@@ -23,7 +23,6 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy = 1,
 		/obj/item/reagent_containers/food/drinks/soda_cans/crosstalk = 1)
 	refill_canister = /obj/item/vending_refill/cola
-
 	default_price = 5
 	extra_price = 15
 

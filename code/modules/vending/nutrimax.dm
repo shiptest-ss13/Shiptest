@@ -19,8 +19,8 @@
 		/obj/item/reagent_containers/glass/bottle/ammonia = 10,
 		/obj/item/reagent_containers/glass/bottle/diethylamine = 5)
 	refill_canister = /obj/item/vending_refill/hydronutrients
-	default_price = 5
-	extra_price = 15
+	default_price = 50
+	extra_price = 150
 
 /obj/item/vending_refill/hydronutrients
 	machine_name = "NutriMax"

@@ -24,8 +24,8 @@
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/donksoft
 
-	default_price = 20
-	extra_price = 30
+	default_price = 100
+	extra_price = 300
 
 
 /obj/item/vending_refill/donksoft

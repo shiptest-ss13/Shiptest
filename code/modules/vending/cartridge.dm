@@ -15,8 +15,8 @@
 					/obj/item/cartridge/quartermaster = 10)
 	refill_canister = /obj/item/vending_refill/cart
 
-	default_price = 25
-	extra_price = 50
+	default_price = 200
+	extra_price = 300
 
 	light_mask="cart-light-mask"
 

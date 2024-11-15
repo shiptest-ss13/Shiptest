@@ -29,10 +29,8 @@
 		/obj/item/stock_parts/matter_bin = 5,
 		/obj/item/stock_parts/manipulator = 5)
 	refill_canister = /obj/item/vending_refill/engineering
-
-	default_price = 20
-	extra_price = 25
-
+	default_price = 200
+	extra_price = 400
 	light_mask = "engi-light-mask"
 
 /obj/item/vending_refill/engineering

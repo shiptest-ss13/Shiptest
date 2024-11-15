@@ -37,8 +37,8 @@
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/medical
 
-	default_price = 5
-	extra_price = 10
+	default_price = 150
+	extra_price = 400
 
 	light_mask = "med-light-mask"
 

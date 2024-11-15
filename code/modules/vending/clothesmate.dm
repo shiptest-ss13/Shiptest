@@ -118,8 +118,8 @@
 		/obj/item/clothing/suit/jacket/letterman_nanotrasen = 1,
 		/obj/item/instrument/piano_synth/headphones/spacepods = 1)
 	refill_canister = /obj/item/vending_refill/clothing
-	default_price = 20
-	extra_price = 30
+	default_price = 60
+	extra_price = 120
 	light_mask = "wardrobe-light-mask"
 	light_color = LIGHT_COLOR_ELECTRIC_GREEN
 

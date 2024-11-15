@@ -90,8 +90,8 @@
 		/obj/item/skub = 1)
 	refill_canister = /obj/item/vending_refill/autodrobe
 
-	default_price = 20
-	extra_price = 30
+	default_price = 90
+	extra_price = 180
 
 	light_mask="theater-light-mask"
 

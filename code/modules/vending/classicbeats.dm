@@ -21,7 +21,7 @@
 					/obj/item/instrument/recorder=3,
 					/obj/item/instrument/bikehorn=3)
 	refill_canister = /obj/item/vending_refill/classicbeats
-	default_price = 30
+	default_price = 100
 	extra_price = 60
 
 /obj/item/vending_refill/classicbeats

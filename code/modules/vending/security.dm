@@ -22,8 +22,8 @@
 		/obj/item/clothing/gloves/tackler = 5,
 		/obj/item/grenade/stingbang = 1)
 	refill_canister = /obj/item/vending_refill/security
-	default_price = 10
-	extra_price = 15
+	default_price = 650
+	extra_price = 700
 
 	var/voucher_items = list(
 		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,

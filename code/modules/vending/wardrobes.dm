@@ -2,10 +2,8 @@
 	icon_state = "refill_clothes"
 
 /obj/machinery/vending/wardrobe
-
-	default_price = 25
-	extra_price = 30
-
+	default_price = 200
+	extra_price = 500
 	input_display_header = "Returned Clothing"
 	light_mask = "wardrobe-light-mask"
 
@@ -167,7 +165,7 @@
 					)
 	contraband = list(/obj/item/organ/tongue/robot = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/robo_wardrobe
-	extra_price = 30
+	extra_price = 300
 /obj/item/vending_refill/wardrobe/robo_wardrobe
 	machine_name = "RoboDrobe"
 
@@ -470,7 +468,7 @@
 					/obj/item/storage/fancy/cigarettes = 5)
 	premium = list(/obj/item/clothing/head/flatcap = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/det_wardrobe
-	extra_price = 35
+	extra_price = 350
 
 /obj/item/vending_refill/wardrobe/det_wardrobe
 	machine_name = "DetDrobe"
