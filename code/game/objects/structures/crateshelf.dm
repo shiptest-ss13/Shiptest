@@ -172,7 +172,7 @@
 		var/obj/item/rack_parts/shelf/new_parts = new(loc)
 		if(capacity >= 2)
 			var/obj/item/stack/sheet/metal/new_metal = new(loc)
-			new_metal.amount((capacity-1)*2)
+			new_metal.amount = (capacity-1)*2
 			transfer_fingerprints_to(new_metal)
 		transfer_fingerprints_to(new_parts)
 	return ..()
