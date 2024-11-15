@@ -10,8 +10,8 @@
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	resistance_flags = NONE
-	custom_price = 50
-	custom_premium_price = 50
+	custom_price = 1200
+	custom_premium_price = 1200
 
 /obj/item/toy/sprayoncan
 	name = "spray-on insulation applicator"
@@ -250,14 +250,14 @@
 	desc = "These look pretty fancy."
 	icon_state = "white"
 	item_state = "lgloves"
-	custom_price = 5
+	custom_price = 200
 
 /obj/item/clothing/gloves/color/evening
 	name = "evening gloves"
 	desc = "White satin gloves that rise up to the elbows. Excessively fancy."
 	icon_state = "evening_gloves"
 	item_state = "lgloves"
-	custom_price = 15
+	custom_price = 200
 
 /obj/item/clothing/gloves/maid
 	name = "maid arm covers"

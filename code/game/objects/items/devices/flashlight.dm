@@ -1,7 +1,7 @@
 /obj/item/flashlight
 	name = "flashlight"
 	desc = "A hand-held emergency light."
-	custom_price = 10
+	custom_price = 100
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "flashlight"
 	item_state = "flashlight"
@@ -467,7 +467,7 @@
 /obj/item/flashlight/glowstick
 	name = "glowstick"
 	desc = "A military-grade glowstick."
-	custom_price = 2
+	custom_price = 50
 	w_class = WEIGHT_CLASS_SMALL
 	light_range = 4
 	light_system = MOVABLE_LIGHT

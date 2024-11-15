@@ -1,7 +1,7 @@
 /obj/item/clothing/shoes/sneakers
 	dying_key = DYE_REGISTRY_SNEAKERS
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
-	custom_price = 10
+	custom_price = 50
 
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT

@@ -7,7 +7,7 @@
 	icon_state = "scanner"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
-	custom_price = 25
+	custom_price = 1750
 	custom_premium_price = 25
 
 /obj/item/sensor_device/attack_self(mob/user)

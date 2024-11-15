@@ -74,7 +74,7 @@
 	desc = "A large, yet comfortable piece of armor, protecting you from some threats."
 	icon_state = "armor_blueshift"
 	item_state = "blueshift"
-	custom_premium_price = 50
+	custom_premium_price = 750
 
 /obj/item/clothing/suit/armor/vest/duster
 	name = "black duster"

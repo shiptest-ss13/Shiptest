@@ -52,7 +52,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 0
 	custom_materials = list(/datum/material/plastic=80)
-	custom_price = 5
+	custom_price = 50
 	var/break_chance = 25
 
 /obj/item/kitchen/fork/plastic/afterattack(mob/living/carbon/user)
@@ -72,7 +72,7 @@
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.5)
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
-	custom_price = 20
+	custom_price = 200
 
 /obj/item/kitchen/spoon/plastic
 	name = "plastic spoon"
@@ -82,5 +82,5 @@
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 0
 	custom_materials = list(/datum/material/plastic=120)
-	custom_price = 5
+	custom_price = 50
 	var/break_chance = 25

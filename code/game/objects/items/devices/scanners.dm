@@ -19,7 +19,7 @@ GENE SCANNER
 /obj/item/t_scanner
 	name = "\improper T-ray scanner"
 	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes."
-	custom_price = 5
+	custom_price = 150
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "t-ray0"
 	var/on = FALSE
@@ -98,7 +98,7 @@ GENE SCANNER
 	var/reagentmode = "reagentanalyzer"
 	var/healthmodeinhand = "analyzer"
 	var/reagentmodeinhand = "reagentanalyzer-1"
-	custom_price = 10
+	custom_price = 300
 
 /obj/item/healthanalyzer/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
@@ -426,7 +426,7 @@ GENE SCANNER
 /obj/item/analyzer
 	desc = "A hand-held environmental scanner which reports current gas levels. Alt-Click to use the built in barometer function."
 	name = "analyzer"
-	custom_price = 5
+	custom_price = 100
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "analyzer"
 	item_state = "analyzer"

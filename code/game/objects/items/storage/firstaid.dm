@@ -215,7 +215,7 @@
 	icon_state = "brute"
 	item_state = "firstaid-brute"
 	damagetype_healed = BRUTE
-	custom_price = 20
+	custom_price = 600
 
 /obj/item/storage/firstaid/brute/PopulateContents()
 	if(empty)
@@ -234,7 +234,7 @@
 	desc = "An advanced kit to help deal with advanced wounds."
 	icon_state = "radfirstaid"
 	item_state = "firstaid-rad"
-	custom_premium_price = 50
+	custom_premium_price = 1100
 
 /obj/item/storage/firstaid/advanced/PopulateContents()
 	if(empty)

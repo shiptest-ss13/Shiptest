@@ -34,8 +34,8 @@
 	icon_state = "utility"
 	item_state = "utility"
 	content_overlays = TRUE
-	custom_price = 10
-	custom_premium_price = 10
+	custom_price = 350
+	custom_premium_price = 300
 	drop_sound = 'sound/items/handling/toolbelt_drop.ogg'
 	pickup_sound =  'sound/items/handling/toolbelt_pickup.ogg'
 
@@ -345,7 +345,7 @@
 	icon_state = "explorer1"
 	item_state = "explorer1"
 	w_class = WEIGHT_CLASS_BULKY
-	custom_price = 10
+	custom_price = 400
 	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/mining/ComponentInitialize()
@@ -721,7 +721,7 @@
 	icon_state = "fannypack_leather"
 	item_state = "fannypack_leather"
 	dying_key = DYE_REGISTRY_FANNYPACK
-	custom_price = 10
+	custom_price = 100
 
 /obj/item/storage/belt/fannypack/ComponentInitialize()
 	. = ..()
