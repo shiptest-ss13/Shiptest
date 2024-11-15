@@ -1567,46 +1567,22 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "nc" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 5
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/white/end{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/door/poddoor/preopen{
+	dir = 2;
+	id = "tegus_security_lockdown"
 	},
-/obj/structure/closet/wall/red/directional/south{
-	secure = 1;
-	locked = 1;
-	name = "security equipment locker";
-	req_access = list(2)
+/obj/machinery/door/airlock/security{
+	req_access_txt = "2"
 	},
-/obj/machinery/firealarm/directional/west{
-	pixel_y = -4
-	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -20;
-	pixel_y = 8
-	},
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/nanotrasen/security,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/head/nanotrasen/cap/security,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/storage/box/handcuffs,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/storage/box/ammo/c9mm_rubber,
-/obj/item/storage/belt/security,
-/obj/item/melee/knife/survival,
-/obj/item/reagent_containers/spray/pepper,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/ship/security)
 "nf" = (
 /obj/effect/turf_decal/borderfloor{
@@ -4165,6 +4141,49 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
+"KH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/white/end{
+	dir = 8
+	},
+/obj/structure/closet/wall/red/directional/south{
+	secure = 1;
+	locked = 1;
+	name = "security equipment locker";
+	req_access = list(2)
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_y = -4
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 8
+	},
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/nanotrasen/security,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/head/nanotrasen/cap/security,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/bodybags,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/box/ammo/c9mm_rubber,
+/obj/item/storage/belt/security,
+/obj/item/melee/knife/survival,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/item/reagent_containers/spray/pepper,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "KK" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -4607,24 +4626,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
-"Oo" = (
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/door/poddoor/preopen{
-	dir = 2;
-	id = "tegus_security_lockdown"
-	},
-/obj/machinery/door/airlock/security{
-	req_access_txt = "2"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/security)
 "Oq" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -5303,9 +5304,7 @@
 /obj/structure/sign/poster/retro/lasergun_new{
 	pixel_y = -32
 	},
-/obj/machinery/power/apc/auto_name/directional/west{
-	pixel_y = -3
-	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
@@ -6850,8 +6849,8 @@ ae
 eF
 YZ
 Oj
-Oo
 nc
+KH
 CU
 CU
 CU
