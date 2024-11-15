@@ -67,14 +67,31 @@ Blunt
 	hitsound = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg')
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = IS_BLUNT
-	tool_behaviour = TOOL_MINING
 	toolspeed = 0.5
 	wall_decon_damage = MINERAL_WALL_INTEGRITY
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
+	var/wielded = FALSE
 
 /obj/item/melee/axe/sledgehammer/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=30, icon_wielded="[base_icon_state]_w")
+
+/obj/item/melee/axe/sledgehammer/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+
+/obj/item/melee/axe/sledgehammer/proc/on_wield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	tool_behaviour = TOOL_MINING
+	wielded = TRUE
+
+/obj/item/melee/axe/sledgehammer/proc/on_unwield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	tool_behaviour = null
+	wielded = FALSE
 
 /obj/item/melee/axe/sledgehammer/attack(mob/living/target, mob/living/user)
 	. = ..()
