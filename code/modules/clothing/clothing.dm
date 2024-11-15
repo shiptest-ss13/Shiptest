@@ -416,10 +416,18 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	else
-		if(attached_accessory)
-			remove_accessory(user)
+		if(attached_accessory && ispath(attached_accessory.pocket_storage_component_path) && loc == user)
+			attached_accessory.attack_hand(user)
+			return
 		else
 			rolldown()
+
+/obj/item/clothing/under/CtrlClick(mob/user)
+	if(..())
+		return 1
+	if(attached_accessory)
+		remove_accessory(user)
+
 
 /obj/item/clothing/under/verb/jumpsuit_adjust()
 	set name = "Adjust Jumpsuit Style"

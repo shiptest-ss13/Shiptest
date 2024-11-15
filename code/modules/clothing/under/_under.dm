@@ -39,6 +39,11 @@
 		if(accessory_overlay)
 			. += accessory_overlay
 
+/obj/item/clothing/under/Destroy()
+	. = ..()
+	if(attached_accessory)
+		attached_accessory.detach(src)
+
 /obj/item/clothing/under/attackby(obj/item/I, mob/user, params)
 	if((has_sensor == BROKEN_SENSORS) && istype(I, /obj/item/stack/cable_coil))
 		var/obj/item/stack/cable_coil/C = I
@@ -46,6 +51,9 @@
 		has_sensor = HAS_SENSORS
 		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] with [C].</span>")
 		return 1
+	if(attached_accessory && ispath(attached_accessory.pocket_storage_component_path) && loc == user)
+		attached_accessory.attackby(I,user)
+		return
 	if(!attach_accessory(I, user))
 		return ..()
 
@@ -180,7 +188,9 @@
 			if(SENSOR_COORDS)
 				. += "Its vital tracker and tracking beacon appear to be enabled."
 	if(attached_accessory)
-		. += "\A [attached_accessory] is attached to it."
+		. += "\A [attached_accessory] is attached to it. You could Ctrl-click on it to remove it."
+		if(attached_accessory.pocket_storage_component_path)
+			. += "You could open the storage of \the [attached_accessory] with Alt-click."
 
 /obj/item/clothing/under/rank
 	dying_key = DYE_REGISTRY_UNDER
