@@ -74,8 +74,8 @@
 	product_ads = "Drink up!;Booze is good for you!;Alcohol is everyone's best friend.;Quite delighted to serve you!;Care for a nice, cold beer?;Nothing cures you like booze!;Have a sip!;Have a drink!;Have a beer!;Beer is good for you!;Only the finest alcohol!;Best quality booze since 53 FSC!;Award-winning wine!;Maximum alcohol!;Everyone loves beer.;A toast for progress!"
 	req_access = list(ACCESS_BAR)
 	refill_canister = /obj/item/vending_refill/boozeomat
-	default_price = 60
-	extra_price = 150
+	default_price = 10
+	extra_price = 15
 	light_mask = "boozeomat-light-mask"
 
 /obj/machinery/vending/boozeomat/all_access
