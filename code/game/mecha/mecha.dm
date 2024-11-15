@@ -13,6 +13,7 @@
 	light_power = 0.8
 	light_range = 6
 	light_on = FALSE
+	var/repair_multiplier = 1 //multiply incoming repairs by this value. used to make some mechs less efficient and slower to repair.
 	var/ruin_mecha = FALSE //if the mecha starts on a ruin, don't automatically give it a tracking beacon to prevent metagaming.
 	var/can_move = 0 //time of next allowed movement
 	var/stopped = FALSE
