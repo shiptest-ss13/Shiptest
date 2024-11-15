@@ -104,8 +104,8 @@
 	minimum_pressure = HAZARD_LOW_PRESSURE + 10
 	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 1
 
-	minimum_temp = 213
-	maximum_temp = 253 //No longer always 180
+	minimum_temp = 233
+	maximum_temp = 263 //No longer always 180
 
 //Jungleplanet
 
@@ -131,7 +131,7 @@
 	maximum_pressure = 135.7 //Nonsense values
 
 	minimum_temp = T20C + 10
-	maximum_temp = T20C + 30
+	maximum_temp = T20C + 20
 
 //welcome to the beach
 

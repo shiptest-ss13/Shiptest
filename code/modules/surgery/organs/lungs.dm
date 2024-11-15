@@ -66,8 +66,8 @@
 	var/hot_message = "your face burning and a searing heat"
 	var/warm_message = "warm air"
 	var/warm_threshold = T20C+10
-	var/heat_level_1_threshold = 313
-	var/heat_level_2_threshold = 320
+	var/heat_level_1_threshold = 316
+	var/heat_level_2_threshold = 323
 	var/heat_level_3_threshold = 343
 	var/heat_level_1_damage = HEAT_GAS_DAMAGE_LEVEL_1
 	var/heat_level_2_damage = HEAT_GAS_DAMAGE_LEVEL_2
