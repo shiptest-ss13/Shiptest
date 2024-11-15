@@ -145,10 +145,10 @@
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
-/datum/supply_pack/spacesuit_armor/marine_armor
+/datum/supply_pack/spacesuit_armor/medium_marine_armor
 	name = "Medium Tactical Armor Crate"
 	desc = "One set of well-rounded medium tactical body armor. The set includes a helmet and vest."
-	cost = 1500
+	cost = 2000
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium,
 					/obj/item/clothing/head/helmet/marine)
 	crate_name = "armor crate"
