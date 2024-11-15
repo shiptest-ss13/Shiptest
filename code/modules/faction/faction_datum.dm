@@ -24,6 +24,10 @@
 	name = FACTION_CYBERSUN
 	prefixes = PREFIX_CYBERSUN
 
+/datum/faction/syndicate/hardliners
+	name = FACTION_HARDLINERS
+	prefixes = PREFIX_HARDLINERS
+
 /datum/faction/syndicate/suns
 	name = FACTION_SUNS
 	short_name = "SUNS"
