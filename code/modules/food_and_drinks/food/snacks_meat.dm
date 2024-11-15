@@ -273,7 +273,11 @@
 	w_class = WEIGHT_CLASS_TINY
 	var/faction
 	var/spawned_mob = /mob/living/carbon/monkey
+<<<<<<< Updated upstream
 	custom_price = 10
+=======
+	custom_price = 5
+>>>>>>> Stashed changes
 
 /obj/item/reagent_containers/food/snacks/monkeycube/proc/Expand()
 	var/mob/spammer = get_mob_by_key(fingerprintslast)

@@ -13,7 +13,11 @@
 	obj_flags = UNIQUE_RENAME
 	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
 	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
+<<<<<<< Updated upstream
 	custom_price = 5
+=======
+	custom_price = 2
+>>>>>>> Stashed changes
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/on_reagent_change(changetype)
 	cut_overlays()
@@ -46,7 +50,11 @@
 	obj_flags = UNIQUE_RENAME
 	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
 	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
+<<<<<<< Updated upstream
 	custom_price = 10
+=======
+	custom_price = 15
+>>>>>>> Stashed changes
 
 /obj/item/reagent_containers/food/drinks/beaglemug/on_reagent_change(changetype)
 	cut_overlays()

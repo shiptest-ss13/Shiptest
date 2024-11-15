@@ -9,7 +9,11 @@
 	desc = "This blank bottle is unyieldingly anonymous, offering no clues to its contents."
 	icon_state = "glassbottle"
 	fill_icon_thresholds = list(0, 10, 20, 30, 40, 50, 60, 70, 80, 90)
+<<<<<<< Updated upstream
 	custom_price = 10
+=======
+	custom_price = 5
+>>>>>>> Stashed changes
 	amount_per_transfer_from_this = 10
 	volume = 100
 	force = 15 //Smashing bottles over someone's head hurts.
@@ -297,7 +301,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
 	name = "orange juice"
 	desc = "Sweet and tart orange juice. Usually found fortified to make it more nutritious. Full of vitamin C!"
+<<<<<<< Updated upstream
 	custom_price = 5
+=======
+	custom_price = 10
+>>>>>>> Stashed changes
 	icon_state = "orangejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -309,7 +317,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/lemonjuice
 	name = "lemon juice"
 	desc = "Lemonade for everyone!"
+<<<<<<< Updated upstream
 	custom_price = 5
+=======
+	custom_price = 10
+>>>>>>> Stashed changes
 	icon_state = "lemonjuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -321,7 +333,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/cream
 	name = "milk cream"
 	desc = "Cream made from milk. It's thicker than milk, which hopefully prevents any mixups."
+<<<<<<< Updated upstream
 	custom_price = 5
+=======
+	custom_price = 10
+>>>>>>> Stashed changes
 	icon_state = "cream"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -333,7 +349,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/tomatojuice
 	name = "tomato juice"
 	desc = "Juice from tomatoes and salt. You'll often find some technicians soaking in this if they've been working with plasma."
+<<<<<<< Updated upstream
 	custom_price = 5
+=======
+	custom_price = 10
+>>>>>>> Stashed changes
 	icon_state = "tomatojuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -345,7 +365,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/limejuice
 	name = "lime juice"
 	desc = "Lime juice. You might want to mix something with this instead of drinking it straight..."
+<<<<<<< Updated upstream
 	custom_price = 5
+=======
+	custom_price = 10
+>>>>>>> Stashed changes
 	icon_state = "limejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -357,7 +381,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/pineapplejuice
 	name = "pineapple juice"
 	desc = "Tart, sweet juice from the tropical pineapple."
+<<<<<<< Updated upstream
 	custom_price = 5
+=======
+	custom_price = 10
+>>>>>>> Stashed changes
 	icon_state = "pineapplejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -370,7 +398,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/menthol
 	name = "menthol"
 	desc = "Tastes naturally minty, and imparts a very mild numbing sensation."
+<<<<<<< Updated upstream
 	custom_price = 5
+=======
+	custom_price = 10
+>>>>>>> Stashed changes
 	icon_state = "mentholbox"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -381,7 +413,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/grenadine
 	name = "Three-Star Grenadine"
 	desc = "A commonly seen bottle of grenadine - or sweet fruit syrup. It might even contain real cherries, as well as some blackcurrant for color."
+<<<<<<< Updated upstream
 	custom_price = 5
+=======
+	custom_price = 10
+>>>>>>> Stashed changes
 	icon_state = "grenadine"
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/grenadine = 100)
@@ -391,7 +427,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/applejack
 	name = "Mars Lightning"
 	desc = "A strong brandy originating from apples, considered the older sibling to hard cider. Mars Lightning is often partnered with anti-gravity racing companies, leading to it often being served straight or for impromptu mixes."
+<<<<<<< Updated upstream
 	custom_price = 10
+=======
+	custom_price = 15
+>>>>>>> Stashed changes
 	icon_state = "applejack_bottle"
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/ethanol/applejack = 100)
@@ -400,7 +440,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/champagne
 	name = "Treu Champagne"
 	desc = "Finely sourced from entire canton planets dedicated to faithful reproduction of pre-Night Of Fire vineyards. Typically enjoyed for celebrations and the turn of new years."
+<<<<<<< Updated upstream
 	custom_premium_price = 20
+=======
+	custom_premium_price = 25
+>>>>>>> Stashed changes
 	icon_state = "champagne_bottle"
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/ethanol/champagne = 100)

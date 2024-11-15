@@ -55,7 +55,11 @@
 	tastes = list("dried raisins" = 1)
 	foodtype = JUNKFOOD | FRUIT | SUGAR
 	/*food_flags = FOOD_FINGER_FOOD*/
+<<<<<<< Updated upstream
 	custom_price = 3
+=======
+	custom_price = 5
+>>>>>>> Stashed changes
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/no_raisin/healthy
@@ -74,7 +78,11 @@
 	filling_color = "#FFD700"
 	foodtype = JUNKFOOD | GRAIN | SUGAR
 	/*food_flags = FOOD_FINGER_FOOD*/
+<<<<<<< Updated upstream
 	custom_price = 3
+=======
+	custom_price = 5
+>>>>>>> Stashed changes
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/candy_trash
@@ -101,7 +109,11 @@
 	filling_color = "#FFD700"
 	tastes = list("cheese" = 5, "crisps" = 2)
 	foodtype = JUNKFOOD | DAIRY | SUGAR
+<<<<<<< Updated upstream
 	custom_price = 3
+=======
+	custom_price = 5
+>>>>>>> Stashed changes
 
 /obj/item/reagent_containers/food/snacks/syndicake
 	name = "syndi-cakes"
