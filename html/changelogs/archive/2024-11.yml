@@ -96,3 +96,64 @@
   - balance: red space suit armor made equivalent to sec hardsuits
   MarkSuckerberg:
   - rscadd: Added a confirmation pop up for abandoning missions.
+2024-11-09:
+  Erikafox:
+  - balance: wasteplanets no longer spawn manhacks
+  SomeguyManperson:
+  - bugfix: the kilo sawnoff shotgun is no longer the private domicile of The Void
+2024-11-10:
+  Aquidu:
+  - rscadd: Added a suit storage whitelist to the Nanotrasen, Hardliner, NGR, and
+      Frontiersmen smocks. Expands the whitelist of the surgical smock.
+  FeenieRU:
+  - imageadd: added icons for inbox donuts
+  MarkSuckerberg:
+  - config: Removes a lot of old, unused config options
+  SomeguyManperson:
+  - code_imp: weapons which can be wielded may now have a force of 0 when wielded
+      or unwielded
+2024-11-11:
+  Erikafox:
+  - balance: Crusher damage has been slightly increased across the board.
+  SomeguyManperson:
+  - bugfix: guns with magazines can no longer sometimes refuse to accept those magazines
+  - balance: etherbor military and civilian weapon cells are interchangeable between
+      military and civilian arms
+2024-11-12:
+  firebudgy:
+  - balance: Kansatsu has been removed from the player-accessible ship pool.
+2024-11-14:
+  randy10122:
+  - bugfix: fixes a typo in the .45 HP ammo crate's description
+2024-11-15:
+  Anticept:
+  - balance: growth serum now maxes out at 30% growth with 30u and has a smooth sliding
+      scale.
+  Burning02:
+  - balance: Rail lights have been brightened
+  Erikafox:
+  - balance: medium and light ngr turrets swapped ammo. mediums should be more effective
+      now.
+  - rscadd: implements thick railings from code
+  - bugfix: platform dirs
+  - imageadd: platform internal corners
+  - balance: legion cores now slowly build up cloneloss when you use them.
+  - balance: Hivebots now have some armor and real bullets. Please bring guns to waste
+      planets.
+  - code_imp: you can now looc while unconscious/in crit.
+  MarkSuckerberg:
+  - rscdel: Most fishing missions. Now only the cooking one, that takes 1-3 of any
+      fish, has been left.
+  - tweak: The fish cooking mission now pays twice as much as it used to, 500 credits
+      per fish. It's also less likely to appear as a mission.
+  Sadhorizon:
+  - rscadd: Added an inteq survival box.
+  SomeguyManperson:
+  - code_imp: legion virus stage messages now properly display themselves. instead
+      of not doing that.
+  - code_imp: legion infesting people now give them a direct chat message. Say hello
+      to your new friend! They might be sticking around your body longer than you
+      will.
+  generalthrax:
+  - balance: Ramzi mobs now use the rusted-red as a reference item instead of blood-reds
+      to have lower armour.

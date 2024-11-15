@@ -38,4 +38,4 @@
 	multiplicative_slowdown = -0.45
 
 /datum/movespeed_modifier/reagent/shock_wine
-	multiplicative_slowdown = -0.40
+	multiplicative_slowdown = -0.30

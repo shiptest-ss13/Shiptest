@@ -234,11 +234,12 @@
 	desc = "A tactical black helmet, sealed from outside hazards with a reinforced visor."
 	icon_state = "marine_command"
 	item_state = "helmetalt"
-	armor = list("melee" = 50, "bullet" = 75, "laser" = 55, "energy" = 25, "bomb" = 60, "bio" = 100, "fire" = 70, "acid" = 50)
-	slowdown = 0.3
-	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
-	clothing_flags = STOPSPRESSUREDAMAGE
+	armor = list("melee" = 35, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50)
+	slowdown = 0.1
+	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
+	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	can_flashlight = TRUE
 	dog_fashion = null
 

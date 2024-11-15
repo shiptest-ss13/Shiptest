@@ -1,9 +1,12 @@
 /datum/mission
 	var/name = "Mission"
 	var/desc = "Do something for me."
-	var/value = 1000 /// The mission's payout.
-	var/duration = 30 MINUTES /// The amount of time in which to complete the mission.
-	var/weight = 0 /// The relative probability of this mission being selected. 0-weight missions are never selected.
+	/// The mission's payout.
+	var/value = 1000
+	/// The amount of time in which to complete the mission.
+	var/duration = 30 MINUTES
+	/// The relative probability of this mission being selected. 0-weight missions are never selected.
+	var/weight = 0
 
 	/// Should mission value scale proportionally to the deviation from the mission's base duration?
 	var/dur_value_scaling = TRUE
@@ -64,12 +67,16 @@
 	return ..()
 
 /datum/mission/proc/turn_in()
+	if(QDELING(src))
+		return
 	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "succeeded"))
 	SSblackbox.record_feedback("nested tally", "mission", value, list(name, "payout"))
 	servant.ship_account.adjust_money(value, CREDIT_LOG_MISSION)
 	qdel(src)
 
 /datum/mission/proc/give_up()
+	if(QDELING(src))
+		return
 	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "abandoned"))
 	qdel(src)
 

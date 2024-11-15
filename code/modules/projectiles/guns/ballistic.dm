@@ -42,6 +42,9 @@
 
 /obj/item/gun/ballistic/Initialize(mapload, spawn_empty)
 	. = ..()
+
+	allowed_ammo_types = typecacheof(allowed_ammo_types) - blacklisted_ammo_types
+
 	if(spawn_empty)
 		if(internal_magazine)
 			spawn_no_ammo = TRUE
