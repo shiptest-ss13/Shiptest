@@ -36,7 +36,7 @@
 	desc = "A box of standard 4.6x30mm HP ammo."
 	icon_state = "46x30mmbox"
 
-/obj/item/storage/box/ammo/c46x30mm/ap/PopulateContents()
+/obj/item/storage/box/ammo/c46x30mm/hp/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/hp = 4)
 	generate_items_inside(items_inside,src)
