@@ -427,11 +427,11 @@
 	contains = list(/obj/item/storage/guncase/skm)
 	crate_name = "auto rifle crate"
 
-/datum/supply_pack/gun/skm
+/datum/supply_pack/gun/inteq_skm
 	name = "SKM-44 Rifle Crate"
 	desc = "Contains a SKM painted in the brown-and-gold of Inteq, chambered in 7.62x40mm CLIP. "
 	cost = 5000
-	contains = list(/obj/item/storage/guncase/skm)
+	contains = list(/obj/item/storage/guncase/skm_inteq)
 	crate_name = "auto rifle crate"
 	faction = /datum/faction/inteq
 	faction_discount = 0
@@ -487,7 +487,7 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/ssg04
+/datum/supply_pack/gun/sbr80
 	name = "SBR-80 'Hydra' Designated Marksman Rifle Crate"
 	desc = "Contains a high-powered marksman rifle chambered in 5.56 CLIP and produced by Scarborough Arms. A modification of the ever-popular SMR-80 platform."
 	cost = 3500
@@ -497,6 +497,15 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/vickland
+	name = "Vickland Battle Rifle"
+	desc = "Contains a high-powered semi-automatic battle rifle chambered in .308 and produced by Hunter's Pride. Fed via stripper clips with a 10 round capacity."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/vickland)
+	crate_name = "dmr crate"
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
 
 /* Attachments */
 

@@ -59,6 +59,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
 	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
 
+/obj/item/storage/guncase/vickland
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/vickland
+	mag_type = /obj/item/ammo_box/vickland_a308
+
 /* Scarbourough */
 
 /obj/item/storage/guncase/pistol/a357
