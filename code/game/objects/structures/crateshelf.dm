@@ -81,7 +81,7 @@
 				balloon_alert(user, "adding additional shelf to rack")
 				if(do_after(user, 3 SECONDS, src))
 					add_shelf(1)
-					our_sheet.use(-2)
+					our_sheet.use(2)
 					return TRUE
 				to_chat(user, span_notice("Adding a shelf to [src] requires more metal."))
 				return FALSE
