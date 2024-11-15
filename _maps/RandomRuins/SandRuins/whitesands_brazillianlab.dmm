@@ -655,11 +655,16 @@
 /obj/structure/table,
 /obj/item/weaponcrafting/receiver{
 	pixel_x = -7;
-	pixel_y = -3
+	pixel_y = -8
 	},
 /obj/item/weaponcrafting/stock{
 	pixel_x = 5;
-	pixel_y = 9
+	pixel_y = 13
+	},
+/obj/item/gun/ballistic/automatic/zip_pistol,
+/obj/item/attachment/laser_sight{
+	pixel_x = 10;
+	pixel_y = -9
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/unpowered)
@@ -688,7 +693,9 @@
 /area/ruin/unpowered)
 "xQ" = (
 /obj/item/clothing/neck/stethoscope,
-/obj/structure/closet/secure_closet/medical1,
+/obj/structure/closet/secure_closet/medical1{
+	populate = 0
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/syringe,
@@ -1154,7 +1161,7 @@
 "NG" = (
 /obj/structure/guncloset,
 /obj/item/gun/ballistic/rifle/polymer,
-/obj/item/gun/ballistic/automatic/zip_pistol,
+/obj/item/gun/ballistic/automatic/smg/skm_carbine,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "NR" = (
@@ -1239,6 +1246,9 @@
 /obj/item/ammo_casing/shotgun/improvised,
 /obj/item/ammo_casing/shotgun/improvised,
 /obj/structure/closet/secure_closet,
+/obj/item/ammo_box/magazine/skm_46_30/recycled,
+/obj/item/ammo_box/magazine/skm_46_30/recycled,
+/obj/item/attachment/rail_light,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/unpowered)
 "Sj" = (
@@ -1403,6 +1413,16 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/machinery/recharger,
+/obj/item/attachment/foldable_stock{
+	pixel_x = 9
+	},
+/obj/item/attachment/foldable_stock{
+	pixel_x = 9
+	},
+/obj/item/attachment/foldable_stock{
+	pixel_x = 9;
+	pixel_y = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "XK" = (
