@@ -406,14 +406,16 @@
 
 /datum/status_effect/regenerative_core/on_apply()
 	ADD_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, id)
-	owner.adjustBruteLoss(-25)
-	owner.adjustFireLoss(-25)
+	owner.adjustBruteLoss(-20)
+	owner.adjustFireLoss(-20)
 	owner.remove_CC()
+	owner.reagents.add_reagent(/datum/reagent/medicine/soulus=15)
 	owner.bodytemperature = owner.get_body_temp_normal()
 	return TRUE
 
 /datum/status_effect/regenerative_core/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, id)
+	to_chat(owner, span_warning("The tendrils of the regenerative core sink into your flesh, leaving dark markings where they dive."))
 
 /datum/status_effect/antimagic
 	id = "antimagic"

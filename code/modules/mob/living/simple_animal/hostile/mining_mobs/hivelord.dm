@@ -242,7 +242,8 @@
 					return //This will qdelete the legion.
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/proc/infest(mob/living/carbon/human/H)
-	visible_message(span_warning("[name] burrows into the flesh of [H]!"))
+	visible_message(span_warning("[name] burrows into [H]!"))
+	to_chat(H, span_boldwarning("You feel something digging into your body..."))
 	if(H.stat != DEAD)
 		var/obj/item/organ/legion_skull/throwyouabone = new()
 		throwyouabone.Insert(H)
