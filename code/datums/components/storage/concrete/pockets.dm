@@ -141,15 +141,4 @@
 		/obj/item/gun/ballistic/rocketlauncher))
 
 /datum/component/storage/concrete/pockets/holster/chameleon
-	max_items = 1
-
-/datum/component/storage/concrete/pockets/holster/chameleon/Initialize()
-	original_parent = parent
-	. = ..()
-	can_hold = typecacheof(list(
-		/obj/item/gun/ballistic/automatic/pistol/ringneck,
-		/obj/item/gun/ballistic/revolver,
-		/obj/item/gun/energy/e_gun/mini,
-		/obj/item/gun/energy/disabler,
-		/obj/item/gun/energy/pulse/carbine,
-		/obj/item/gun/energy/dueling))
+	max_items = 2
