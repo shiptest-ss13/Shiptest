@@ -432,7 +432,6 @@
 	name = "syndicate holster"
 	desc = "A two pouched hip holster that uses chameleon technology to disguise itself and any guns in it."
 	var/datum/action/item_action/chameleon/change/chameleon_action
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/chameleon
 
 /obj/item/clothing/accessory/holster/chameleon/Initialize()
 	. = ..()

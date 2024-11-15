@@ -139,6 +139,3 @@
 		/obj/item/gun/energy/dueling,
 		/obj/item/gun/ballistic/shotgun,
 		/obj/item/gun/ballistic/rocketlauncher))
-
-/datum/component/storage/concrete/pockets/holster/chameleon
-	max_items = 2
