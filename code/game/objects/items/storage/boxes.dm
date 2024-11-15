@@ -683,7 +683,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	drop_sound = 'sound/items/handling/matchbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/matchbox_pickup.ogg'
-	custom_price = 20
+	custom_price = 2
 
 /obj/item/storage/box/matches/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/match)

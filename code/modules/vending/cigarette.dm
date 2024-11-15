@@ -25,15 +25,9 @@
 		/obj/item/storage/fancy/cigarettes/cigars/cohiba = 1,
 		/obj/item/clothing/mask/vape/cigar = 3)
 	refill_canister = /obj/item/vending_refill/cigarette
-<<<<<<< Updated upstream
-
 	default_price = 10
-	extra_price = 25
-=======
-	default_price = 10
-	extra_price = 25
+	extra_price = 20
 	light_mask = "cigs-light-mask"
->>>>>>> Stashed changes
 
 /obj/machinery/vending/cigarette/syndicate
 	products = list(

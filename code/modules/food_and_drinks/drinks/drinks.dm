@@ -305,11 +305,7 @@
 	amount_per_transfer_from_this = 10
 	fill_icon_thresholds = list(0, 10, 25, 50, 75, 80, 90)
 	isGlass = FALSE
-<<<<<<< Updated upstream
-	custom_price = 3
-=======
 	custom_price = 2
->>>>>>> Stashed changes
 	can_have_cap = TRUE
 	// The 2 bottles have separate cap overlay icons because if the bottle falls over while bottle flipping the cap stays fucked on the moved overlay
 	cap_icon_state = "bottle_cap_small"
@@ -378,11 +374,7 @@
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
 	foodtype = SUGAR | ALCOHOL
-<<<<<<< Updated upstream
-	custom_price = 5
-=======
 	custom_price = 10
->>>>>>> Stashed changes
 
 /obj/item/reagent_containers/food/drinks/beer/light
 	name = "Carp Lite"
@@ -396,11 +388,7 @@
 	item_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
 	foodtype = GRAIN | ALCOHOL
-<<<<<<< Updated upstream
-	custom_price = 10
-=======
-	custom_price = 20
->>>>>>> Stashed changes
+	custom_price = 15
 
 /obj/item/reagent_containers/food/drinks/sillycup
 	name = "paper cup"
@@ -566,11 +554,7 @@
 	reagent_flags = NONE
 	spillable = FALSE
 	isGlass = FALSE
-<<<<<<< Updated upstream
-	custom_price = 2
-=======
 	custom_price = 5
->>>>>>> Stashed changes
 	var/pierced = FALSE
 	obj_flags = CAN_BE_HIT
 
