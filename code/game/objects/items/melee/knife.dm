@@ -161,6 +161,7 @@
 	icon_state = "switchblade"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	world_file = null
 	desc = "A sharp, concealable, spring-loaded knife."
 	flags_1 = CONDUCT_1
 	force = 3
@@ -190,6 +191,7 @@
 /obj/item/melee/knife/letter_opener
 	name = "letter opener"
 	icon = 'icons/obj/items.dmi'
+	world_file = null
 	icon_state = "letter_opener"
 	desc = "A military combat utility survival knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
