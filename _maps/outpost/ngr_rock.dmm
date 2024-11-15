@@ -3827,10 +3827,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked,
 /area/outpost/maintenance/starboard)
-"Dx" = (
-/obj/machinery/door/poddoor/ert,
-/turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/outpost/engineering/atmospherics)
 "Dy" = (
 /obj/machinery/light/dim/directional/south,
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -5233,7 +5229,7 @@
 /area/outpost/maintenance/starboard)
 "Oj" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
-	piping_layer = 2;
+	piping_layer = 4;
 	dir = 8
 	},
 /obj/effect/turf_decal/techfloor{
@@ -5469,7 +5465,7 @@
 /area/outpost/hallway/central)
 "PP" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
-	piping_layer = 2;
+	piping_layer = 4;
 	dir = 8
 	},
 /obj/effect/turf_decal/techfloor{
@@ -5931,7 +5927,7 @@
 "Uc" = (
 /obj/machinery/atmospherics/components/trinary/mixer/airmix{
 	dir = 1;
-	piping_layer = 2
+	piping_layer = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/west,
@@ -7003,7 +6999,7 @@ Tk
 Tk
 Tk
 Tk
-Dx
+cN
 uR
 mu
 cN
