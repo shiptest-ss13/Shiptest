@@ -1228,6 +1228,7 @@
 	layer = 3
 	},
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "jQ" = (
@@ -2398,6 +2399,10 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
 	},
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = -7;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "sN" = (
@@ -3469,8 +3474,6 @@
 	},
 /area/outpost/external)
 "Az" = (
-/obj/structure/bed/pod,
-/obj/item/bedsheet/brown,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
@@ -3480,6 +3483,7 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
 	},
+/obj/structure/closet/secure_closet/bar,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "AA" = (
