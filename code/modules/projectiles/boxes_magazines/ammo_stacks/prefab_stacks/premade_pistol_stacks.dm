@@ -123,7 +123,7 @@
 	desc = "A box of 9mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "9mmbox-ap"
 
-/obj/item/storage/box/ammo/c9mm_ap/PopulateContents()
+/obj/item/storage/box/ammo/c9mm/ap/PopulateContents()
 	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm_ap = 4)
