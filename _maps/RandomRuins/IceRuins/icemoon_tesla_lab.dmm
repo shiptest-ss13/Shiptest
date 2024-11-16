@@ -2579,7 +2579,9 @@
 	pixel_x = -5
 	},
 /obj/effect/decal/cleanable/generic,
-/obj/effect/mob_spawn/human/corpse/clip/minuteman,
+/obj/effect/mob_spawn/human/corpse/clip/minuteman{
+	mob_gender = FEMALE
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/armory)
 "kO" = (
