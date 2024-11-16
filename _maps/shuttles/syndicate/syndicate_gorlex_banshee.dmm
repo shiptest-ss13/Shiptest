@@ -40,6 +40,7 @@
 	dir = 4;
 	id = "Bansheecargodoor"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "bu" = (
@@ -82,12 +83,14 @@
 	dir = 4;
 	id = "Bansheecargodoor"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "bO" = (
 /obj/machinery/door/airlock/public/glass{
 	dir = 4;
-	name = "Canteen"
+	name = "Canteen";
+	req_ship_access = 1
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -255,7 +258,8 @@
 	},
 /obj/item/trash/can,
 /obj/item/trash/candy,
-/obj/effect/spawner/random/trash,
+/obj/effect/spawner/random/trash/garbage,
+/obj/effect/spawner/random/trash/garbage,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "fA" = (
@@ -292,8 +296,8 @@
 /obj/item/trash/candy,
 /obj/item/trash/popcorn,
 /obj/effect/spawner/random/trash/cigbutt,
-/obj/effect/spawner/random/trash,
-/obj/effect/spawner/random/trash,
+/obj/effect/spawner/random/trash/garbage,
+/obj/effect/spawner/random/trash/garbage,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "hC" = (
@@ -887,28 +891,18 @@
 "rd" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/storage/fancy/egg_box,
-/obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/condiment/flour,
 /obj/item/reagent_containers/condiment/flour,
 /obj/item/reagent_containers/condiment/sugar,
 /obj/item/reagent_containers/condiment/soymilk,
 /obj/item/reagent_containers/condiment/milk,
-/obj/item/reagent_containers/condiment/milk,
-/obj/item/reagent_containers/condiment/enzyme,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
 "rj" = (
@@ -933,7 +927,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/door/airlock/public/glass{
-	name = "Dormitories"
+	name = "Dormitories";
+	req_ship_access = 1
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -1072,15 +1067,11 @@
 	pixel_y = -20;
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall/directional/east{
-	icon_state = "emergency_wall"
-	},
 /obj/item/clothing/suit/space/syndicate/surplus,
 /obj/item/clothing/head/helmet/space/syndicate/surplus,
 /obj/item/tank/internals/oxygen/red,
-/obj/item/tank/internals/oxygen/red,
-/obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/mask/breath,
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "vb" = (
@@ -1093,6 +1084,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "vg" = (
@@ -1337,6 +1329,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Cd" = (
@@ -1457,7 +1450,6 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "FE" = (
-/obj/structure/closet/cabinet,
 /obj/item/clothing/under/syndicate/hardliners,
 /obj/item/clothing/under/syndicate/hardliners,
 /obj/item/clothing/shoes/jackboots{
@@ -1490,6 +1482,7 @@
 /obj/item/storage/backpack/satchel,
 /obj/item/storage/backpack/satchel,
 /obj/machinery/light/small/directional/west,
+/obj/structure/closet,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "FP" = (
@@ -1549,7 +1542,10 @@
 "Go" = (
 /obj/structure/bed/bunk,
 /obj/structure/bed/bunk/top,
-/obj/structure/curtain/cloth/fancy,
+/obj/structure/curtain/cloth/grey{
+	color = "#5c131b";
+	name = "blood-red curtains"
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "Gs" = (
@@ -1558,6 +1554,7 @@
 	id = "Bansheebridgewindow"
 	},
 /obj/structure/grille,
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Gy" = (
@@ -1699,6 +1696,7 @@
 	dir = 4;
 	id = "Bansheecargodoor"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Ja" = (
@@ -1764,6 +1762,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "Bansheedormwindow"
 	},
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/crew)
 "Km" = (
@@ -1847,8 +1846,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/door/airlock/grunge{
+/obj/machinery/door/airlock/public{
 	name = "Cryogenics";
+	req_ship_access = 1;
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -2010,14 +2010,14 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Nu" = (
-/obj/machinery/cryopod{
-	dir = 1
-	},
 /obj/machinery/computer/cryopod/directional/south,
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/cryopod/syndicate{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "NU" = (
@@ -2400,7 +2400,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/holopad/emergency/command{
+/obj/machinery/holopad/secure{
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -2602,6 +2602,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "Bansheeairlockwindow"
 	},
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Zq" = (
