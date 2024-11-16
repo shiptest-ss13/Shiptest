@@ -200,6 +200,9 @@
 	cost = 1000
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/inc)
 
+
+
+
 /* Inteq */
 
 /datum/supply_pack/magazine/mongrel_mag
