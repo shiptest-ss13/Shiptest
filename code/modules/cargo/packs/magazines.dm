@@ -200,18 +200,6 @@
 	cost = 1000
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/inc)
 
-
-
-
-/* Inteq */
-
-/datum/supply_pack/magazine/mongrel_mag
-	name = "Mongerel Magazine Crate"
-	desc = "Contains a 10mm magazine for the SKM-44v SMG, containing twenty-four rounds."
-	contains = list(/obj/item/ammo_box/magazine/smgm10mm)
-	cost = 750
-	faction = /datum/faction/inteq
-
 /* Solgov */
 
 /datum/supply_pack/magazine/mag_556mm
@@ -241,6 +229,15 @@
 	contains = list(/obj/item/ammo_box/amagpellet_claris)
 	cost = 1000
 	faction = /datum/faction/solgov
+
+/* Inteq */
+
+/datum/supply_pack/magazine/mongrel_mag
+	name = "Mongerel Magazine Crate"
+	desc = "Contains a 10mm magazine for the SKM-44v SMG, containing twenty-four rounds."
+	contains = list(/obj/item/ammo_box/magazine/smgm10mm)
+	cost = 750
+	faction = /datum/faction/inteq
 
 /* Shotguns */
 
