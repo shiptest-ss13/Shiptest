@@ -802,7 +802,7 @@
 	pixel_y = -22;
 	pixel_x = 8;
 	name = "shutter control";
-	id = "tl6"
+	id = "tl5"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
@@ -1525,7 +1525,7 @@
 	pixel_x = 8;
 	pixel_y = 7
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "fX" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2053,14 +2053,19 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
 	pixel_y = 8;
-	pixel_x = 3
+	pixel_x = -4
 	},
 /obj/item/pen/fourcolor{
 	pixel_y = 10;
-	pixel_x = 3
+	pixel_x = -4
 	},
 /obj/machinery/light/directional/east,
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/button/door{
+	pixel_x = 9;
+	dir = 8;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/containment)
 "iw" = (
@@ -2599,7 +2604,7 @@
 /area/ruin/icemoon/tesla_lab/central_hall)
 "kK" = (
 /obj/structure/chair/comfy/blue,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "kM" = (
 /obj/item/gun/ballistic/automatic/pistol/cm23{
@@ -2693,7 +2698,7 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "lo" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -3099,7 +3104,7 @@
 /obj/machinery/turretid{
 	pixel_x = 26
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "mX" = (
 /obj/effect/decal/cleanable/blood/splatter/over_window{
@@ -3435,7 +3440,7 @@
 	dir = 1;
 	id = "tls"
 	},
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "oA" = (
 /obj/structure/platform/industrial/corner{
@@ -3495,7 +3500,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/yellow,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "oL" = (
 /obj/effect/decal/cleanable/ash/large,
@@ -4187,7 +4192,7 @@
 "rD" = (
 /obj/machinery/holopad/secure,
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "rE" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line,
@@ -4918,7 +4923,7 @@
 	pixel_y = 7;
 	pixel_x = 14
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "uD" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -7240,9 +7245,9 @@
 	pixel_y = -22;
 	pixel_x = 8;
 	name = "shutter control";
-	id = "tl5"
+	id = "tl6"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "DJ" = (
 /obj/effect/turf_decal/trimline/opaque/purple/line,
@@ -7549,7 +7554,7 @@
 /obj/machinery/fax/ruin{
 	pixel_y = 5
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "Fb" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
@@ -8624,7 +8629,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "IZ" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -9389,14 +9394,10 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/icemoon/tesla_lab/containment)
 "MG" = (
-/obj/machinery/door/firedoor/window{
-	autoclose = 1
-	},
-/obj/structure/grille,
-/obj/structure/window/plasma/fulltile,
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/preopen{
 	id = "tl6"
 	},
+/obj/machinery/door/firedoor/heavy/closed,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/office)
 "MH" = (
@@ -9682,12 +9683,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo)
 "Og" = (
-/obj/structure/window/plasma/fulltile,
 /obj/structure/grille,
-/obj/machinery/door/firedoor/window,
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/preopen{
 	id = "tl6"
 	},
+/obj/machinery/door/firedoor/heavy/closed,
+/obj/structure/window/plasma/fulltile,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/office)
 "Oh" = (
@@ -10494,7 +10495,7 @@
 	pixel_y = 8;
 	pixel_x = -7
 	},
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "Rt" = (
 /obj/structure/sink{
@@ -10542,7 +10543,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/light/directional/east,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "RH" = (
@@ -10653,6 +10653,10 @@
 /obj/structure/window/plasma/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "tl7"
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/containment)
 "RS" = (
@@ -11016,7 +11020,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/airalarm/directional/west,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "SS" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line,
@@ -11482,7 +11486,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/tesla_lab/office)
 "Vf" = (
 /obj/effect/turf_decal/steeldecal/steel_decals10{
