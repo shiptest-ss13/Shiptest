@@ -158,7 +158,7 @@
 /obj/item/assembly/signaler/anomaly/pulsar
 	name = "\improper pulsar anomaly core"
 	desc = "The stabilized core of a pulsar anomaly. Electromagnetic crackles come off it."
-	grind_results = (/datum/reagent/iron = 25, /datum/reagent/uranium = 25) //lewl
+	grind_results = list(/datum/reagent/iron = 25, /datum/reagent/uranium = 25)
 
 /obj/item/assembly/signaler/anomaly/pulsar/anomaly_core_detonation()
 	visible_message(span_warning("[src] gives off one last pulse as it melts!"))
