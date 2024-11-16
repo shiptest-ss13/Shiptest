@@ -139,7 +139,7 @@
 /datum/supply_pack/spacesuit_armor/marine_armor
 	name = "Tactical Armor Crate"
 	desc = "One set of well-rounded, tactical body armor. The set includes a helmet and vest."
-	cost = 1500
+	cost = 2250
 	contains = list(/obj/item/clothing/suit/armor/vest/marine,
 					/obj/item/clothing/head/helmet/marine)
 	crate_name = "armor crate"
@@ -148,7 +148,7 @@
 /datum/supply_pack/spacesuit_armor/medium_marine_armor
 	name = "Medium Tactical Armor Crate"
 	desc = "One set of well-rounded medium tactical body armor. The set includes a helmet and vest."
-	cost = 2000
+	cost = 3750
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium,
 					/obj/item/clothing/head/helmet/marine)
 	crate_name = "armor crate"
