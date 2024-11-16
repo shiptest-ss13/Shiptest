@@ -550,6 +550,12 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/structure/closet/crate/engineering{
+	name = "Materials crate"
+	},
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass/twenty,
+/obj/item/stack/sheet/plastic/five,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "lS" = (
@@ -689,7 +695,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark/end{
 	dir = 1
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "or" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -1166,7 +1172,7 @@
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/effect/turf_decal/industrial/fire/cee,
 /obj/effect/turf_decal/siding/thinplating/dark/end,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "xS" = (
 /obj/effect/turf_decal/techfloor{
