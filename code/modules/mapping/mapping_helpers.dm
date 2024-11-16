@@ -515,6 +515,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	desc = "burns the everliving shit out of the turf its on."
 
 /obj/effect/mapping_helpers/turf/burnt/LateInitialize()
-	var/turf/turf = get_turf(src)
-	turf.burn_tile()
+	var/turf/our_turf = loc
+	our_turf.burn_tile()
 	qdel(src)
