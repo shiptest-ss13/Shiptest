@@ -61,7 +61,7 @@
 /obj/machinery/door/poddoor{
 	id = "h1"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
 	id = "h1s"
 	},
@@ -98,6 +98,9 @@
 	dir = 4
 	},
 /obj/effect/landmark/ert_shuttle_spawn,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "k" = (
@@ -145,7 +148,7 @@
 /obj/machinery/door/poddoor{
 	id = "h2"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
 	id = "h2s"
 	},
@@ -270,7 +273,7 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable,
-/obj/machinery/power/shieldwallgen/atmos{
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
 	id = "h2s"
 	},
@@ -371,6 +374,9 @@
 	dir = 4
 	},
 /obj/effect/landmark/ert_shuttle_spawn,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "J" = (
@@ -561,15 +567,15 @@
 /obj/machinery/door/poddoor{
 	id = "h1"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	dir = 4;
-	id = "h1s"
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "h1s"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)

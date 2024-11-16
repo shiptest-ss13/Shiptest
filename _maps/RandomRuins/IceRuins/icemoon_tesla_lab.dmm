@@ -797,6 +797,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -22;
+	pixel_x = 8;
+	name = "shutter control";
+	id = "tl6"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "dv" = (
@@ -995,6 +1002,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/tesla_lab/lab_halls)
 "ed" = (
@@ -1105,9 +1113,15 @@
 /obj/machinery/door/poddoor{
 	id = "tl1"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	id = "h1s"
+	id = "tls"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
@@ -1263,6 +1277,7 @@
 	pixel_y = -3;
 	pixel_x = -5
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plastic,
 /area/ruin/icemoon/tesla_lab/lab_halls)
 "fa" = (
@@ -1334,6 +1349,12 @@
 /obj/structure/filingcabinet/double/grey{
 	dir = 1
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = 9;
+	pixel_y = -21;
+	id = "tl4"
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/icemoon/tesla_lab/engineering)
 "fs" = (
@@ -1382,6 +1403,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 4
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/icemoon/tesla_lab/engineering)
 "fz" = (
@@ -2010,6 +2032,11 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/minutemen/corner,
+/obj/machinery/button/door{
+	pixel_y = 23;
+	pixel_x = 7;
+	id = "tl_rd"
+	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/office_two)
 "iu" = (
@@ -2428,6 +2455,9 @@
 	dir = 2
 	},
 /obj/structure/closet/crate/medical,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid,
 /turf/open/floor/pod/dark,
 /area/ruin/icemoon/tesla_lab/cargo)
 "kl" = (
@@ -2520,7 +2550,8 @@
 /area/ruin/icemoon/tesla_lab/medbay)
 "kB" = (
 /obj/effect/anomaly/flux/big/planetary{
-	drops_core = 0
+	drops_core = 0;
+	zap_power = 50000
 	},
 /obj/effect/turf_decal/industrial,
 /turf/open/floor/engine/hull,
@@ -3350,6 +3381,7 @@
 /obj/structure/janitorialcart,
 /obj/item/pushbroom,
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/tesla_lab/lab_halls)
 "ol" = (
@@ -3370,6 +3402,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 8
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/icemoon/tesla_lab/engineering)
 "os" = (
@@ -3400,7 +3433,7 @@
 	pixel_y = -21;
 	pixel_x = 2;
 	dir = 1;
-	id = "h1s"
+	id = "tls"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/office)
@@ -3726,6 +3759,7 @@
 /obj/item/storage/belt/utility{
 	pixel_y = -7
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/engine/hull/interior,
 /area/ruin/icemoon/tesla_lab/engineering)
 "pZ" = (
@@ -4103,6 +4137,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
+"rz" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/plastic,
+/area/ruin/icemoon/tesla_lab/dorms)
 "rA" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -4747,6 +4785,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
+"ue" = (
+/obj/structure/window/plasma/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "tl6";
+	dir = 2;
+	pixel_y = 0
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/tesla_lab/lobby)
 "ug" = (
 /obj/effect/turf_decal/trimline/opaque/mauve/warning{
 	dir = 5
@@ -5028,12 +5076,15 @@
 /obj/machinery/door/poddoor{
 	id = "tl1"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	dir = 4;
-	id = "h1s"
-	},
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "tls"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
@@ -5269,12 +5320,15 @@
 /obj/machinery/door/poddoor{
 	id = "tl1"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	dir = 4;
-	id = "h1s"
-	},
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "tls"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
@@ -5569,6 +5623,9 @@
 	},
 /obj/structure/chair/handrail{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/icemoon/tesla_lab/haymaker)
@@ -5921,6 +5978,7 @@
 /area/ruin/icemoon/tesla_lab/lab_halls)
 "yF" = (
 /obj/machinery/disposal/bin,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plastic,
 /area/ruin/icemoon/tesla_lab/dorms)
 "yH" = (
@@ -6056,6 +6114,9 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "zk" = (
@@ -6089,6 +6150,9 @@
 /obj/structure/window/plasma/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/poddoor/shutters{
+	id = "tl4"
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "zr" = (
@@ -6218,10 +6282,6 @@
 /obj/machinery/door/poddoor{
 	id = "h1"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	dir = 4;
-	id = "h1s"
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -6229,6 +6289,10 @@
 	icon_state = "0-4"
 	},
 /obj/item/ammo_casing/spent/rifle_brass,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "h1s"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "zY" = (
@@ -6252,7 +6316,7 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable,
-/obj/machinery/power/shieldwallgen/atmos{
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
 	id = "h2s"
 	},
@@ -6687,10 +6751,14 @@
 /obj/item/radio/intercom/directional/north{
 	frequency = 1473
 	},
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = -21
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/engineering)
 "BC" = (
 /obj/machinery/autolathe,
+/obj/machinery/light/directional/north,
 /turf/open/floor/engine/hull/interior,
 /area/ruin/icemoon/tesla_lab/engineering)
 "BD" = (
@@ -7152,6 +7220,13 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -22;
+	pixel_x = 8;
+	name = "shutter control";
+	id = "tl5"
+	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/office)
 "DJ" = (
@@ -7734,6 +7809,10 @@
 	},
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "h1s"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/overmap_encounter/planetoid/ice/explored)
 "Gf" = (
@@ -8744,10 +8823,6 @@
 /obj/machinery/door/poddoor{
 	id = "tl1"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	dir = 8;
-	id = "h1s"
-	},
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
@@ -8755,6 +8830,16 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/blood/squirt,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "tls"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "JU" = (
@@ -8928,14 +9013,6 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
-"KJ" = (
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	dir = 4;
-	reqpower = 0;
-	faction = list("Frontiersmen")
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/icemoon/tesla_lab/turrets)
 "KM" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech,
@@ -9300,6 +9377,11 @@
 /obj/machinery/door/firedoor/window{
 	autoclose = 1
 	},
+/obj/structure/grille,
+/obj/structure/window/plasma/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "tl6"
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/office)
 "MH" = (
@@ -9315,10 +9397,6 @@
 	},
 /obj/item/radio/intercom/directional/west{
 	frequency = 1473
-	},
-/obj/item/desynchronizer/tvstatic{
-	pixel_x = 7;
-	pixel_y = 11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
@@ -9592,6 +9670,9 @@
 /obj/structure/window/plasma/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/firedoor/window,
+/obj/machinery/door/poddoor/shutters{
+	id = "tl6"
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/office)
 "Oh" = (
@@ -9869,17 +9950,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	preferred_direction = 4;
-	port_direction = 8;
-	dir = 2;
-	name = "haymaker"
-	},
 /obj/machinery/door/poddoor{
 	id = "h1"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
 	id = "h1s"
 	},
@@ -10336,13 +10410,6 @@
 	},
 /turf/open/floor/plastic,
 /area/ruin/icemoon/tesla_lab/dorms)
-"Re" = (
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	reqpower = 0;
-	faction = list("Frontiersmen")
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/icemoon/tesla_lab/turrets)
 "Rf" = (
 /obj/structure/table,
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -10426,10 +10493,22 @@
 	},
 /turf/open/floor/plastic,
 /area/ruin/icemoon/tesla_lab/lab_halls)
+"RA" = (
+/obj/structure/window/plasma/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "tl6";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/tesla_lab/lobby)
 "RB" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/engine/hull/interior,
 /area/ruin/icemoon/tesla_lab/containment)
+"RC" = (
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/tesla_lab/turrets)
 "RF" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/asteroid/icerock/lit,
@@ -10448,6 +10527,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "RH" = (
@@ -10745,6 +10825,9 @@
 	pixel_x = -10;
 	pixel_y = 2
 	},
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/icemoon/tesla_lab/medbay)
 "SB" = (
@@ -10780,6 +10863,9 @@
 "SD" = (
 /obj/structure/window/plasma/fulltile,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "tl6"
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/lobby)
 "SG" = (
@@ -11605,7 +11691,7 @@
 /obj/machinery/door/poddoor{
 	id = "h2"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
 	id = "h2s"
 	},
@@ -12839,7 +12925,7 @@ tC
 Kb
 Fv
 Fv
-Re
+RC
 PH
 Fv
 uP
@@ -13072,7 +13158,7 @@ Kb
 jg
 iN
 eI
-Km
+rz
 Kb
 JB
 RU
@@ -14284,9 +14370,9 @@ rM
 rM
 rM
 rM
-SD
-SD
-SD
+RA
+RA
+ue
 Fv
 Fv
 Fv
@@ -14982,7 +15068,7 @@ dm
 Mt
 Rl
 cM
-YV
+RC
 PH
 Fv
 Bi
@@ -15416,7 +15502,7 @@ nW
 gZ
 cM
 PH
-KJ
+RC
 PH
 cM
 TM
