@@ -84,3 +84,8 @@
 /obj/effect/mob_spawn/human/corpse/clip/minuteman
 	name = "CLIP Minuteman Spawner"
 	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed
+
+/obj/effect/mob_spawn/human/corpse/clip/minuteman/forcefem
+	name = "CLIP Minuteman Spawner"
+	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed
+	mob_gender = FEMALE

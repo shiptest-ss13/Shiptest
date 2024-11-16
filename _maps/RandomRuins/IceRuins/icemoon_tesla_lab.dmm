@@ -777,6 +777,9 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
+/obj/effect/mob_spawn/human/corpse/clip/minuteman{
+	mob_gender = FEMALE
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
 "dm" = (
@@ -2579,9 +2582,7 @@
 	pixel_x = -5
 	},
 /obj/effect/decal/cleanable/generic,
-/obj/effect/mob_spawn/human/corpse/clip/minuteman{
-	mob_gender = FEMALE
-	},
+/obj/effect/mob_spawn/human/corpse/clip/minuteman/forcefem,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/armory)
 "kO" = (
