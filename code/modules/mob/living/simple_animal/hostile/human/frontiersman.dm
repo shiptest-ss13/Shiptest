@@ -120,7 +120,7 @@
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/shotgun/brimstone)
-	armor_base = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
 	icon_state = "frontiersmanrangedelite_mask"
@@ -177,7 +177,7 @@
 	casingtype = /obj/item/ammo_casing/a762_40
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/automatic/assault/skm)
-	armor_base = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals
 	icon_state = "frontiersmanrangedak47_mask"
@@ -205,7 +205,7 @@
 				/obj/item/gun/ballistic/rifle/illestren)
 	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
-	armor_base = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals
 	icon_state = "frontiersmanrangedmosin_mask"

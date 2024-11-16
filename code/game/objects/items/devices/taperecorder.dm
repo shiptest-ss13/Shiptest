@@ -328,6 +328,11 @@
 	var/list/timestamp = list()
 	var/ruined = 0
 
+/obj/item/tape/Initialize()
+	. = ..()
+	if(ruined)
+		add_overlay("ribbonoverlay")
+
 /obj/item/tape/fire_act(exposed_temperature, exposed_volume)
 	if(!ruined)
 		ruin()
@@ -362,3 +367,12 @@
 /obj/item/tape/random/Initialize()
 	. = ..()
 	icon_state = "tape_[pick("white", "blue", "red", "yellow", "purple")]"
+
+//How 2 set custom recorded tapes:
+//create a list of lines to populate stored_info. Each line should follow a format like "[timestamp] [speaker] [speaking verb] ["what they're saying"]"
+//create a list of timestamps. Each one should correspond to how long the recorder should wait before saying the line associated with the timestamp.
+//e.g. "[00:00] Recording started." timestamp = 0
+//"[00:15] [span_name("berry fox")] says "wow. I love eating berries so much"" timestamp = 15
+//set used capacity to how many 'seconds' used by the prerecorded message
+//optional: set max capacity to used capacity
+//optional: set ruined var (you can fix this with a pen)
