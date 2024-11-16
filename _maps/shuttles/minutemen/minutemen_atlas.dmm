@@ -990,10 +990,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"lA" = (
-/obj/machinery/porta_turret/ship/ballistic/clip,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/cargo)
 "lJ" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -1074,13 +1070,16 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/crewtwo)
 "ms" = (
-/obj/machinery/porta_turret/ship/ballistic/clip,
 /obj/docking_port/mobile{
 	dir = 2;
 	launch_status = 0;
 	port_direction = 8;
 	preferred_direction = 4;
 	name = "atlas dock"
+	},
+/obj/machinery/porta_turret/ship/clip{
+	id = "atlas";
+	dir = 9
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
@@ -2096,7 +2095,10 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "vS" = (
-/obj/machinery/porta_turret/ship/ballistic/clip,
+/obj/machinery/porta_turret/ship/clip{
+	id = "atlas";
+	dir = 10
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "vT" = (
@@ -2224,6 +2226,11 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/turretid/ship{
+	pixel_x = -28;
+	pixel_y = -3;
+	id = "atlas"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "wy" = (
@@ -2969,6 +2976,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"EO" = (
+/obj/machinery/porta_turret/ship/clip{
+	id = "atlas";
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security)
 "EP" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3123,7 +3137,10 @@
 /turf/open/floor/carpet/blue,
 /area/ship/crew/crewthree)
 "GU" = (
-/obj/machinery/porta_turret/ship/ballistic/clip,
+/obj/machinery/porta_turret/ship/clip{
+	id = "atlas";
+	dir = 6
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/crewtwo)
 "Hf" = (
@@ -3171,10 +3188,6 @@
 "HX" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
-"Ic" = (
-/obj/machinery/turretid,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
 "Ig" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -4102,7 +4115,10 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "RT" = (
-/obj/machinery/porta_turret/ship/ballistic/clip,
+/obj/machinery/porta_turret/ship/clip{
+	id = "atlas";
+	dir = 6
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
 "RU" = (
@@ -4824,7 +4840,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "XZ" = (
-/obj/machinery/porta_turret/ship/ballistic/clip,
+/obj/machinery/porta_turret/ship/clip{
+	id = "atlas";
+	dir = 5
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/crewthree)
 "Ya" = (
@@ -5443,7 +5462,7 @@ ps
 ps
 ps
 ps
-gT
+EO
 gT
 gT
 Zd
@@ -5495,7 +5514,7 @@ ps
 ps
 ps
 ps
-lA
+TE
 TE
 TE
 TE
@@ -5873,7 +5892,7 @@ LH
 uG
 ry
 LM
-Ic
+LM
 Mq
 qn
 Qw
