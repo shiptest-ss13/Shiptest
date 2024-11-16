@@ -2,20 +2,59 @@
 "a" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
-"f" = (
-/obj/machinery/power/terminal{
-	dir = 1
+"b" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/railing,
+/obj/item/radio/intercom/wideband/directional/north{
+	pixel_x = -2;
+	pixel_y = 26
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = 11
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 21;
+	pixel_x = -14;
+	id = "haste_holo"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"c" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
+	pixel_y = 7
 	},
 /obj/effect/turf_decal/techfloor{
-	dir = 1
+	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"d" = (
+/turf/closed/wall/mineral/plastitanium{
+	icon_state = "plastitanium_wall-6-d"
+	},
+/area/ship/bridge)
+"f" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"i" = (
+/turf/closed/wall/mineral/plastitanium{
+	icon_state = "plastitanium_wall-21-d"
+	},
 /area/ship/bridge)
 "s" = (
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -34,34 +73,75 @@
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
+"v" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "haste_window"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"w" = (
+/obj/machinery/computer/helm{
+	dir = 4;
+	layer = 3
+	},
+/obj/structure/railing{
+	dir = 10
+	},
+/obj/machinery/button/door{
+	pixel_x = 6;
+	pixel_y = 23;
+	id = "haste_door"
+	},
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = 23;
+	id = "haste_window";
+	name = "window shutters"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
 "B" = (
 /obj/machinery/power/smes/engineering{
 	charge = 1e+006
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-1"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"D" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 5
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"E" = (
+/obj/machinery/power/terminal{
 	dir = 1
 	},
 /obj/structure/cable/yellow{
-	icon_state = "0-5"
-	},
-/obj/effect/turf_decal/techfloor,
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
-"D" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
+	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
-/obj/structure/chair/handrail{
-	pixel_y = 7
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -79,34 +159,24 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "haste_window"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "I" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black,
-/obj/structure/rack,
-/obj/item/storage/firstaid/regular{
-	pixel_x = 4;
-	pixel_y = 2
-	},
-/obj/item/storage/firstaid/medical{
-	pixel_x = -4;
-	pixel_y = 6
-	},
-/obj/item/defibrillator/loaded{
-	pixel_x = -4
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "0-5"
-	},
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/techfloor,
-/turf/open/floor/plasteel/tech,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/stasis{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "J" = (
 /obj/structure/window/reinforced{
@@ -124,25 +194,41 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 2
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "haste_window"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "K" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "haste_window"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"M" = (
-/obj/structure/bed/roller,
-/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
-	dir = 1
+"L" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "haste_door"
 	},
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
-	icon_state = "1-4"
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/bridge)
+"M" = (
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/effect/turf_decal/techfloor,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 6
 	},
 /obj/effect/turf_decal/techfloor,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "O" = (
 /obj/machinery/power/shieldwallgen/atmos{
@@ -170,16 +256,13 @@
 /area/ship/bridge)
 "R" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
 /obj/effect/turf_decal/techfloor,
+/obj/structure/cable/yellow{
+	icon_state = "0-1"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "T" = (
@@ -192,69 +275,64 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "X" = (
-/obj/machinery/computer/helm{
-	dir = 4;
-	layer = 3
+/obj/item/storage/firstaid/regular{
+	pixel_x = 8;
+	pixel_y = 5
 	},
-/obj/structure/railing{
-	dir = 10
+/obj/item/storage/firstaid/medical{
+	pixel_x = -8;
+	pixel_y = 5
 	},
-/obj/machinery/button/shieldwallgen{
-	pixel_y = 21;
-	pixel_x = 9;
-	id = "haste_holo"
-	},
-/obj/machinery/button/door{
-	pixel_x = -2;
-	pixel_y = 23;
-	id = "haste_door"
-	},
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
-"Z" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8
-	},
-/obj/structure/railing,
-/obj/item/radio/intercom/wideband/directional/north{
-	pixel_x = -9
+/obj/effect/turf_decal/techfloor{
+	dir = 9
 	},
 /obj/structure/cable/yellow{
-	icon_state = "4-10"
+	icon_state = "2-4"
 	},
-/obj/machinery/light_switch{
-	pixel_y = 22;
-	pixel_x = 10
+/obj/structure/table,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"Z" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
-/turf/open/floor/plasteel/telecomms_floor,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 
 (1,1,1) = {"
-a
+d
 K
+v
 K
-a
+i
 "}
 (2,1,1) = {"
 a
+w
 X
 B
 a
 "}
 (3,1,1) = {"
 a
+b
 Z
 I
 a
 "}
 (4,1,1) = {"
 a
+c
 D
 M
 a
 "}
 (5,1,1) = {"
 J
+E
 f
 R
 F
@@ -262,6 +340,7 @@ F
 (6,1,1) = {"
 T
 s
+L
 O
 T
 "}
