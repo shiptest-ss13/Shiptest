@@ -148,7 +148,7 @@
 /datum/supply_pack/spacesuit_armor/medium_marine_armor
 	name = "Medium Tactical Armor Crate"
 	desc = "One set of well-rounded medium tactical body armor. The set includes a helmet and vest."
-	cost = 3750
+	cost = 3000
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium,
 					/obj/item/clothing/head/helmet/marine)
 	crate_name = "armor crate"
