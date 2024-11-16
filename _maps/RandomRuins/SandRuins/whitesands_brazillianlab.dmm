@@ -85,28 +85,34 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "fd" = (
 /obj/structure/table/optable,
+/obj/item/stack/medical/bruise_pack/herb,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
 "fz" = (
 /obj/structure/table/wood/fancy/green,
-/obj/item/ammo_casing/shotgun/improvised{
+/obj/item/ammo_casing/shotgun/dragonsbreath{
 	pixel_y = 4;
-	pixel_x = -4
+	pixel_x = -2
 	},
-/obj/item/ammo_casing/shotgun/improvised{
+/obj/item/ammo_casing/shotgun/dragonsbreath{
 	pixel_y = 4;
-	pixel_x = 4
+	pixel_x = -10
 	},
-/obj/item/ammo_casing/shotgun/improvised{
+/obj/item/ammo_casing/shotgun/dragonsbreath{
 	pixel_y = 4;
-	pixel_x = 8
+	pixel_x = -6
 	},
-/obj/item/ammo_casing/shotgun/improvised{
-	pixel_y = 4
-	},
-/obj/item/ammo_casing/shotgun/improvised{
+/obj/item/ammo_casing/shotgun/dragonsbreath{
 	pixel_y = 4;
-	pixel_x = -8
+	pixel_x = 6
+	},
+/obj/item/ammo_casing/shotgun/dragonsbreath{
+	pixel_y = 4;
+	pixel_x = 2
+	},
+/obj/item/ammo_casing/shotgun/dragonsbreath{
+	pixel_y = 4;
+	pixel_x = 10
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/unpowered)
@@ -228,6 +234,10 @@
 	pixel_x = 8;
 	pixel_y = 3
 	},
+/obj/item/cigbutt/cigarbutt{
+	pixel_x = -5;
+	pixel_y = 9
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "jy" = (
@@ -324,11 +334,16 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "mo" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
+/obj/structure/table/wood/reinforced,
+/obj/item/spacecash/bundle/c50{
+	pixel_x = 14;
+	pixel_y = 7
 	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
+/obj/item/spacecash/bundle/smallrand{
+	pixel_x = -9
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered)
 "mq" = (
 /obj/item/stack/sheet/mineral/wood/twentyfive{
 	pixel_x = 8;
@@ -367,23 +382,13 @@
 "nF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
-/obj/item/ammo_box/magazine/zip_ammo_9mm{
-	pixel_x = -5
+/obj/item/ammo_box/magazine/m45{
+	pixel_x = -4;
+	pixel_y = 6
 	},
-/obj/item/ammo_box/magazine/zip_ammo_9mm{
-	pixel_x = -9
-	},
-/obj/item/ammo_box/a762_stripper{
-	pixel_x = 9;
-	pixel_y = 13
-	},
-/obj/item/ammo_box/a762_stripper{
-	pixel_x = 9;
-	pixel_y = 7
-	},
-/obj/item/ammo_box/a762_stripper{
-	pixel_x = 9;
-	pixel_y = 1
+/obj/item/ammo_box/magazine/m45{
+	pixel_x = -10;
+	pixel_y = 6
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
@@ -435,7 +440,8 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 4
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass{
 	pixel_x = -4;
@@ -461,7 +467,8 @@
 /mob/living/simple_animal/hostile/human/hermit/survivor{
 	desc = "The greatest chef this side of the wastes.";
 	health = 150;
-	name = "Margarine"
+	name = "Margarine";
+	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -523,9 +530,10 @@
 /turf/closed/mineral/random/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "te" = (
-/obj/structure/flora/tree/cactus,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
+/obj/structure/table/wood/reinforced,
+/obj/item/spacecash/bundle/c200,
+/turf/open/floor/wood,
+/area/ruin/unpowered)
 "tf" = (
 /obj/structure/flora/ash/fern,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
@@ -655,16 +663,22 @@
 /obj/structure/table,
 /obj/item/weaponcrafting/receiver{
 	pixel_x = -7;
-	pixel_y = -8
+	pixel_y = -12
 	},
 /obj/item/weaponcrafting/stock{
 	pixel_x = 5;
 	pixel_y = 13
 	},
-/obj/item/gun/ballistic/automatic/zip_pistol,
 /obj/item/attachment/laser_sight{
 	pixel_x = 10;
 	pixel_y = -9
+	},
+/obj/item/gun/ballistic/automatic/pistol/candor/factory/no_mag{
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = -10;
+	pixel_y = 19
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/unpowered)
@@ -750,24 +764,41 @@
 	},
 /area/ruin/unpowered)
 "zy" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor,
+/mob/living/simple_animal/hostile/human/hermit/survivor{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/unpowered)
 "Al" = (
 /obj/structure/chair/wood{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Aw" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/reagent_containers/food/drinks/shaker,
-/obj/item/reagent_containers/glass/rag{
-	pixel_x = 8;
-	pixel_y = 3
+/obj/item/reagent_containers/food/drinks/shaker{
+	pixel_x = 16
 	},
 /obj/effect/turf_decal/siding/wood,
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = -2;
+	pixel_y = 3
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = -5
+	},
+/obj/item/spacecash/bundle/c5{
+	pixel_x = -8;
+	pixel_y = 9
+	},
+/obj/item/spacecash/bundle/c10{
+	pixel_x = 2;
+	pixel_y = 4
+	},
 /turf/open/floor/carpet/green,
 /area/ruin/unpowered)
 "AN" = (
@@ -880,6 +911,34 @@
 "Da" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/wood,
+/area/ruin/unpowered)
+"Dk" = (
+/obj/structure/table/wood/fancy/green,
+/obj/item/ammo_casing/shotgun/laserscatter{
+	pixel_y = 4;
+	pixel_x = 10
+	},
+/obj/item/ammo_casing/shotgun/laserscatter{
+	pixel_y = 4;
+	pixel_x = -10
+	},
+/obj/item/ammo_casing/shotgun/laserscatter{
+	pixel_y = 4;
+	pixel_x = -6
+	},
+/obj/item/ammo_casing/shotgun/laserscatter{
+	pixel_y = 4;
+	pixel_x = -2
+	},
+/obj/item/ammo_casing/shotgun/laserscatter{
+	pixel_y = 4;
+	pixel_x = 2
+	},
+/obj/item/ammo_casing/shotgun/laserscatter{
+	pixel_y = 4;
+	pixel_x = 6
+	},
+/turf/open/floor/concrete/slab_1,
 /area/ruin/unpowered)
 "DA" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
@@ -1095,7 +1154,8 @@
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/human/hermit/survivor{
-	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body."
+	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
+	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -1130,6 +1190,10 @@
 	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/unpowered)
+"Mt" = (
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Mz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1160,7 +1224,6 @@
 /area/ruin/unpowered)
 "NG" = (
 /obj/structure/guncloset,
-/obj/item/gun/ballistic/rifle/polymer,
 /obj/item/gun/ballistic/automatic/smg/skm_carbine,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
@@ -1207,6 +1270,10 @@
 /obj/structure/flora/ash/puce,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"PP" = (
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Qk" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/opaque/green/three_quarters{
@@ -1229,6 +1296,11 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"RN" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/mineral_door/iron,
+/turf/open/floor/wood,
+/area/ruin/unpowered)
 "Sd" = (
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil{
 	pixel_x = 8
@@ -1237,7 +1309,6 @@
 /turf/open/floor/carpet/orange,
 /area/ruin/unpowered)
 "Sf" = (
-/obj/item/ammo_box/magazine/zip_ammo_9mm,
 /obj/item/ammo_casing/shotgun/improvised,
 /obj/item/ammo_casing/shotgun/improvised,
 /obj/item/ammo_casing/shotgun/improvised,
@@ -1414,13 +1485,10 @@
 /obj/structure/table,
 /obj/machinery/recharger,
 /obj/item/attachment/foldable_stock{
-	pixel_x = 9
+	pixel_x = -14
 	},
 /obj/item/attachment/foldable_stock{
-	pixel_x = 9
-	},
-/obj/item/attachment/foldable_stock{
-	pixel_x = 9;
+	pixel_x = -14;
 	pixel_y = 8
 	},
 /turf/open/floor/wood,
@@ -1436,6 +1504,10 @@
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton{
 	pixel_x = 9;
 	pixel_y = 7
+	},
+/obj/item/cigbutt{
+	pixel_x = -8;
+	pixel_y = 11
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
@@ -2128,7 +2200,7 @@ mM
 kX
 kX
 kX
-lu
+kX
 hA
 lu
 TL
@@ -2159,8 +2231,8 @@ YX
 rP
 oo
 Yx
-mo
-lu
+WH
+RN
 lu
 lu
 TL
@@ -2191,8 +2263,8 @@ YX
 Yy
 WH
 Yx
-mo
-lu
+pf
+RN
 lu
 lu
 lu
@@ -2224,7 +2296,7 @@ YZ
 kX
 kX
 kX
-lu
+kX
 lu
 lu
 TL
@@ -2276,7 +2348,7 @@ MI
 xI
 xI
 xI
-fz
+Dk
 dz
 xI
 xI
@@ -2495,7 +2567,7 @@ WH
 Gt
 WH
 DY
-VB
+te
 XD
 GO
 kX
@@ -2563,7 +2635,7 @@ wk
 VS
 Aw
 kX
-lu
+Mt
 HI
 kX
 kX
@@ -2595,7 +2667,7 @@ jn
 VS
 Uu
 Rq
-lu
+xK
 HI
 lu
 lu
@@ -2623,12 +2695,12 @@ Qm
 pa
 LI
 Il
-VB
+mo
 qS
 AN
 Rq
+xK
 lu
-te
 lu
 lu
 lu
@@ -2659,7 +2731,7 @@ wk
 VS
 Ly
 Rq
-lu
+xK
 lu
 lu
 Zf
@@ -2691,7 +2763,7 @@ VX
 eC
 wd
 kX
-HI
+PP
 lu
 lu
 lu
