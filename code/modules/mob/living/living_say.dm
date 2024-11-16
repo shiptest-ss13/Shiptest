@@ -114,6 +114,13 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	var/succumbed = FALSE
 
+	if(stat == DEAD)
+		say_dead(original_message)
+		return
+
+	if(check_emote(original_message, forced))
+		return
+
 	switch(stat)
 		if(SOFT_CRIT)
 			message_mods[WHISPER_MODE] = MODE_WHISPER
@@ -134,12 +141,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 				message_mods[WHISPER_MODE] = MODE_WHISPER_CRIT
 				succumbed = TRUE
-		if(DEAD)
-			say_dead(original_message)
-			return
-
-	if(check_emote(original_message, forced))
-		return
 
 	if(client && SSlag_switch.measures[SLOWMODE_SAY] && !HAS_TRAIT(src, TRAIT_BYPASS_MEASURES) && !forced && src == usr)
 		if(!COOLDOWN_FINISHED(client, say_slowmode))
