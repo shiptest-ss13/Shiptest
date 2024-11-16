@@ -97,7 +97,7 @@
 
 /datum/supply_pack/ammo/c45hp_ammo_box
 	name = ".45 HP Ammo Box Crate"
-	desc = "Contains a 48-round 10mm box loaded with hollow point ammo, great against unarmored targets."
+	desc = "Contains a 48-round .45 box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/c45_hp)
 	cost = 500
 
