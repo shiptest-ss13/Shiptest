@@ -124,6 +124,7 @@
 	)
 	restricted_gases = list(
 		GAS_CO2=0.1,
+		GAS_H2O=1,
 	)
 	restricted_chance = 0
 
