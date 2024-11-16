@@ -2958,9 +2958,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "zv" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
 /obj/structure/guncloset{
 	req_access_txt = "2"
 	},
@@ -4142,9 +4139,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "KH" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 5
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
 	},
@@ -4182,6 +4176,9 @@
 	icon_state = "1-4"
 	},
 /obj/item/reagent_containers/spray/pepper,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "KK" = (
@@ -4520,7 +4517,6 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hangar)
 "Np" = (
-/obj/machinery/vending/coffee,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
@@ -4532,6 +4528,7 @@
 	dir = 8;
 	pixel_y = -10
 	},
+/obj/machinery/vending/cola,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "NL" = (
@@ -4880,9 +4877,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "QM" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
