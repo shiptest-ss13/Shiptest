@@ -4,6 +4,9 @@
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 	light_color = COLOR_JUNGLEPLANET_LIGHT
 
+/turf/open/floor/plating/dirt/jungle/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
+	return
+
 /turf/open/floor/plating/dirt/jungle/lit
 	baseturfs = /turf/open/floor/plating/dirt/jungle/lit
 	light_range = 2
@@ -46,6 +49,9 @@
 	baseturfs = /turf/open/floor/plating/grass/jungle
 	light_color = COLOR_JUNGLEPLANET_LIGHT
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plating/grass/jungle/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
+	return
 
 /turf/open/floor/plating/grass/jungle/lit
 	baseturfs = /turf/open/floor/plating/dirt/jungle/lit
