@@ -120,7 +120,7 @@
 	},
 /obj/structure/catwalk/over,
 /obj/structure/platform{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -922,7 +922,7 @@
 	},
 /obj/structure/catwalk/over,
 /obj/structure/platform{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -983,7 +983,7 @@
 /obj/machinery/light/directional/north,
 /obj/machinery/power/ship_gravity,
 /obj/structure/platform{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -1033,9 +1033,6 @@
 /obj/machinery/turretid/ship{
 	pixel_x = 26
 	},
-/obj/machinery/computer/cargo{
-	dir = 8
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
@@ -1046,7 +1043,12 @@
 	name = "bridge shutter control"
 	},
 /obj/structure/platform/ship_two{
-	dir = 8
+	dir = 5
+	},
+/obj/machinery/computer/cargo{
+	dir = 8;
+	layer = 3.1;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1094,10 +1096,12 @@
 	dir = 4
 	},
 /obj/machinery/computer/helm{
-	dir = 8
+	dir = 8;
+	layer = 3.1;
+	pixel_y = 5
 	},
 /obj/structure/platform/ship_two{
-	dir = 8
+	dir = 6
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1366,13 +1370,14 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	dir = 4;
-	pixel_y = 4
+	pixel_y = 0;
+	pixel_x = 1
 	},
 /obj/item/desk_flag/gezena{
 	pixel_x = 8
 	},
 /obj/structure/platform/ship_two{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -3246,7 +3251,7 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/structure/platform{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
