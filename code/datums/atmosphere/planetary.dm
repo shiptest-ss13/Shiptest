@@ -14,7 +14,6 @@
 	restricted_gases = list(
 		GAS_BZ=10,
 		GAS_PLASMA=0.1,
-		GAS_H2O=0.1,
 	)
 	restricted_chance = 50
 
@@ -43,7 +42,6 @@
 	)
 	restricted_gases = list(
 		GAS_PLASMA=0.1,
-		GAS_H2O=0.1,
 	)
 	restricted_chance = 50
 
@@ -72,9 +70,9 @@
 		GAS_N2=2
 	)
 	restricted_gases = list(
-		GAS_H2O=1,
+		GAS_O2=1,
 	)
-	restricted_chance = 10
+	restricted_chance = 0
 
 	minimum_pressure = ONE_ATMOSPHERE - 30
 	maximum_pressure = ONE_ATMOSPHERE + 100
@@ -97,7 +95,6 @@
 	)
 	restricted_gases = list(
 		GAS_PLASMA=0.1,
-		GAS_H2O=0.1,
 	)
 	restricted_chance = 50
 
@@ -123,7 +120,6 @@
 	)
 	restricted_gases = list(
 		GAS_CO2=0.1,
-		GAS_H2O=1,
 	)
 	restricted_chance = 0
 
