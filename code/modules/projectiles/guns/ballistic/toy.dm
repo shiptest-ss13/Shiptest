@@ -45,9 +45,6 @@
 
 /obj/item/gun/ballistic/automatic/toy/pistol/riot
 	default_ammo_type = /obj/item/ammo_box/magazine/toy/pistol/riot
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/toy/pistol/riot,
-	)
 
 /obj/item/gun/ballistic/automatic/toy/pistol/riot/Initialize()
 	magazine = new /obj/item/ammo_box/magazine/toy/pistol/riot(src)
