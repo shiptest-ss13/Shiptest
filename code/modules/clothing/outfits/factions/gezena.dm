@@ -22,7 +22,7 @@
 
 /datum/outfit/job/gezena/assistant/bridge
 	name = "PGF - Bridge Crew"
-	id_assignment = "Bridge Crew"
+	id_assignment = "Helmsman"
 	jobtype = /datum/job/head_of_personnel
 
 /datum/outfit/job/gezena/engineer

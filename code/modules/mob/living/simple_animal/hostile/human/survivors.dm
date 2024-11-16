@@ -9,16 +9,15 @@
 	)
 	armor_base = /obj/item/clothing/suit/hooded/survivor
 
+	speak_emote = list("breathes heavily.", "growls.", "sharply inhales.")
+	emote_hear = list("murmers.","grumbles.","whimpers.")
+
 /mob/living/simple_animal/hostile/human/hermit/survivor/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
 	..()
-	/*
-	if(prob(15))
-		new /obj/item/mob_trophy/shiny(loc)
-		visible_message("<span class='warning'>You notice a glimmering nugget of shiny metal.</span>")
-	*/
+
 
 /mob/living/simple_animal/hostile/human/hermit/survivor
 	name = "Hermit Wanderer"
@@ -61,9 +60,9 @@
 	icon_living = "survivor_gunslinger"
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 	speed = 10
-	rapid = 4
+	rapid = 3
 	rapid_fire_delay = 3
-	casingtype = /obj/item/ammo_casing/a545_39/recycled
+	casingtype = /obj/item/ammo_casing/c46x30mm/recycled
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/gunslinger,
 	)
@@ -263,7 +262,7 @@
 			if(prob(20))
 				new /obj/item/gun/ballistic/rifle/polymer(loc)
 			else
-				visible_message(span_warning("The hunter's weapon shatters as they impact the ground!"))
+				visible_message(span_warning("The hermit's weapon shatters as they impact the ground!"))
 
 		if("gunslinger")
 			uniform = pick_weight(list(
@@ -287,11 +286,11 @@
 			if(prob(30))
 				shoes = /obj/item/clothing/shoes/combat //sometimes there are nicer shoes
 			if(prob(50))
-				l_pocket = /obj/item/ammo_box/magazine/skm_545_39
+				l_pocket = /obj/item/ammo_box/magazine/skm_46_30/recycled
 			if(prob(20))
 				new /obj/item/gun/ballistic/automatic/smg/skm_carbine(loc)
 			else
-				visible_message(span_warning("The gunslinger's weapon shatters as they impact the ground!"))
+				visible_message(span_warning("The hermit's weapon shatters as they impact the ground!"))
 
 		if("e11")
 			uniform = pick_weight(list(

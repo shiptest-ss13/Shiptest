@@ -59,6 +59,8 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/atom/movable/screen/healths
 	var/atom/movable/screen/healthdoll
 	var/atom/movable/screen/internals
+
+	var/atom/movable/screen/progbar_container/use_timer
 	// subtypes can override this to force a specific UI style
 	var/ui_style
 
@@ -117,6 +119,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	QDEL_LIST(screenoverlays)
 	mymob = null
 	QDEL_NULL(screentip_text)
+	QDEL_NULL(use_timer)
 
 	return ..()
 

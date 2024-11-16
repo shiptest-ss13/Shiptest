@@ -41,7 +41,7 @@
 
 /datum/supply_pack/material/uranium20
 	name = "20 Uranium Sheets"
-	desc = "Green rock make thog puke red."
+	desc = "Twenty sheets of mildly radioactive uranium. Lead gloves for safe handling not included."
 	cost = 2000
 	contains = list(/obj/item/stack/sheet/mineral/uranium/twenty)
 	crate_name = "uranium sheets crate"
@@ -53,21 +53,21 @@
 
 /datum/supply_pack/material/titanium20
 	name = "20 Titanium Sheets"
-	desc = "Used for making big boy tanks and tools."
+	desc = "Twenty sheets of durable titanium. Great for heavy machinery."
 	cost = 3000
 	contains = list(/obj/item/stack/sheet/mineral/titanium/twenty)
 	crate_name = "titanium sheets crate"
 
 /datum/supply_pack/material/gold20
 	name = "20 Gold Sheets"
-	desc = "Shiny."
+	desc = "Twenty sheets of gold. There was a time when this would've been more expensive."
 	cost = 4000
 	contains = list(/obj/item/stack/sheet/mineral/gold/twenty)
 	crate_name = "gold sheets crate"
 
 /datum/supply_pack/material/silver20
 	name = "20 Silver Sheets"
-	desc = "Somewhat less shiny."
+	desc = "Twenty sheets of silver. How quaint."
 	cost = 3000
 	contains = list(/obj/item/stack/sheet/mineral/silver/twenty)
 	crate_name = "silver sheets crate"

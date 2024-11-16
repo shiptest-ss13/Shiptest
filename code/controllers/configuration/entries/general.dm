@@ -137,8 +137,6 @@
 
 /datum/config_entry/flag/no_dead_vote	// dead people can't vote
 
-/datum/config_entry/flag/allow_metadata	// Metadata is supported.
-
 /// Gives the ability to send players a maptext popup.
 /datum/config_entry/flag/popup_admin_pm
 
@@ -289,8 +287,6 @@
 
 /datum/config_entry/flag/kick_inactive	//force disconnect for inactive players
 
-/datum/config_entry/flag/load_jobs_from_txt
-
 /datum/config_entry/flag/forbid_singulo_possession
 
 /datum/config_entry/flag/automute_on	//enables automuting/spam prevention
@@ -321,8 +317,6 @@
 	config_entry_value = null
 	min_val = 0
 	integer = FALSE
-
-/datum/config_entry/flag/maprotation
 
 /datum/config_entry/number/auto_lag_switch_pop //Number of clients at which drastic lag mitigation measures kick in
 	config_entry_value = null
@@ -407,14 +401,6 @@
 /datum/config_entry/flag/announce_admin_logout
 
 /datum/config_entry/flag/announce_admin_login
-
-/datum/config_entry/flag/allow_map_voting
-	deprecated_by = /datum/config_entry/flag/preference_map_voting
-
-/datum/config_entry/flag/allow_map_voting/DeprecationUpdate(value)
-	return value
-
-/datum/config_entry/flag/preference_map_voting
 
 /datum/config_entry/number/client_warn_version
 	config_entry_value = null
@@ -525,35 +511,9 @@
 
 /datum/config_entry/flag/auto_profile
 
-//BeginWS Edit
-/datum/config_entry/flag/minimaps_enabled
-	config_entry_value = TRUE
-//EndWS Edit
 /datum/config_entry/string/centcom_ban_db	// URL for the CentCom Galactic Ban DB API
 
 /datum/config_entry/string/centcom_source_whitelist
-
-/datum/config_entry/number/whitesands_atmos_moles
-	config_entry_value = 103
-	integer = FALSE
-	min_val = 10
-	max_val = 200
-
-/datum/config_entry/keyed_list/whitesands_atmos_mix
-	key_mode = KEY_MODE_TEXT
-	value_mode = VALUE_MODE_NUM
-	lowercase = FALSE
-	splitter = " "
-
-
-/datum/config_entry/keyed_list/whitesands_atmos_mix/ValidateListEntry(key_name, key_value)
-	var/list/gas_types = gas_types()
-	for (var/type in gas_types)
-		var/datum/gas/T = type
-		if (initial(T.id) == key_name)
-			// even a high pressure zone will be less than 1.5x one atmos
-			return key_value > 0 && key_value < 1.5
-	return FALSE
 
 // Elasticsearch stuffs
 /datum/config_entry/flag/elasticsearch_metrics_enabled

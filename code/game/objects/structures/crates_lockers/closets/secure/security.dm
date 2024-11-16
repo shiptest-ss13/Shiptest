@@ -267,6 +267,11 @@
 	name = "Contraband Locker"
 	req_access = list(ACCESS_HEADS)
 
+/obj/structure/closet/secure_closet/armorycage
+	name = "armory locker"
+	req_access = list(ACCESS_ARMORY)
+	icon_state = "shotguncase"
+
 /obj/structure/closet/secure_closet/armory1
 	name = "armory armor locker"
 	req_access = list(ACCESS_ARMORY)
