@@ -194,11 +194,17 @@
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/ap)
 	faction = /datum/faction/nt
 
+/datum/supply_pack/magazine/incin_wt550_mag
+	name = "WT-550 Auto Rifle Incendiary Magazine Crate"
+	desc = "Contains one magazine of incendiary ammunition for the WT-550 Auto Rifle. Nanotrasen has discontinued the Depleted Uranium magazines as of recently."
+	cost = 1000
+	contains = list(/obj/item/ammo_box/magazine/wt550m9/inc)
+
 /* Inteq */
 
 /datum/supply_pack/magazine/mongrel_mag
-	name = "Himehabu Magazine Crate"
-	desc = "Contains a .22lr magazine for the Himehabu pistol, containing ten rounds."
+	name = "Mongerel Magazine Crate"
+	desc = "Contains a 10mm magazine for the SKM-44v SMG, containing twenty-four rounds."
 	contains = list(/obj/item/ammo_box/magazine/smgm10mm)
 	cost = 750
 	faction = /datum/faction/inteq
