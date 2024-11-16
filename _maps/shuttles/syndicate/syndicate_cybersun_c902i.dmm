@@ -2608,15 +2608,14 @@
 	},
 /obj/item/storage/box/ammo/c10mm_ap,
 /obj/item/storage/box/ammo/c10mm_hp,
-/obj/item/storage/box/ammo/c45,
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
 	},
-/obj/item/storage/box/ammo/c45_rubber,
 /obj/structure/chair/handrail{
 	dir = 4
 	},
+/obj/item/storage/box/ammo/c10mm_hp,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -5587,8 +5586,6 @@
 	name = "firearms locker";
 	req_access_txt = "1"
 	},
-/obj/item/storage/guncase/pistol/pc76,
-/obj/item/gun/ballistic/automatic/smg/cobra,
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 1
 	},
@@ -5598,6 +5595,10 @@
 /obj/structure/sign/poster/contraband/stechkin{
 	pixel_x = -32
 	},
+/obj/item/ammo_box/magazine/m10mm_ringneck/empty,
+/obj/item/ammo_box/magazine/m10mm_ringneck/empty,
+/obj/item/ammo_box/magazine/m10mm_ringneck/empty,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -6454,6 +6455,7 @@
 /obj/item/storage/belt/military/assault,
 /obj/item/clothing/glasses/hud/security,
 /obj/item/binoculars,
+/obj/item/storage/box/teargas,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
