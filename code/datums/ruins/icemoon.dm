@@ -44,5 +44,5 @@
 	id = "tesla_lab"
 	description = "Records show this settlement as belonging to the SRM, but no one has heard from them as of late. I wonder what happened?"
 	suffix = "icemoon_tesla_lab.dmm"
-	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
 

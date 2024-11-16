@@ -2,7 +2,8 @@
 "ab" = (
 /obj/machinery/porta_turret/ship/frontiersmen/light{
 	dir = 8;
-	reqpower = 0
+	reqpower = 0;
+	faction = list("Frontiersmen")
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/tesla_lab/turrets)
@@ -1685,6 +1686,9 @@
 /area/ruin/icemoon/tesla_lab/office_two)
 "hg" = (
 /obj/machinery/holopad/secure,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "hh" = (
@@ -2206,7 +2210,8 @@
 /area/ruin/icemoon/tesla_lab/central_hall)
 "jM" = (
 /obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0
+	reqpower = 0;
+	faction = list("Frontiersmen")
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/tesla_lab/turrets)
@@ -2370,6 +2375,10 @@
 	pixel_y = -3
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/documents,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/office_two)
 "kx" = (
@@ -4174,6 +4183,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/item/wrench{
+	pixel_y = 4;
+	pixel_x = -5
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "st" = (
@@ -4235,6 +4248,9 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/end{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
@@ -4582,6 +4598,7 @@
 	dir = 4
 	},
 /obj/structure/platform/ship_four,
+/obj/effect/spawner/random/trash/crushed_can,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "ur" = (
@@ -4819,6 +4836,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
 "vf" = (
@@ -6073,6 +6091,9 @@
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "Aj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Al" = (
@@ -6257,6 +6278,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/effect/spawner/random/trash/crushed_can,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "AU" = (
@@ -7615,6 +7637,15 @@
 	dir = 6
 	},
 /obj/machinery/light/small/directional/north,
+/obj/effect/spawner/random/trash/crushed_can,
+/obj/effect/spawner/random/trash/crushed_can{
+	pixel_y = 4;
+	pixel_x = 9
+	},
+/obj/effect/spawner/random/trash/crushed_can{
+	pixel_y = 9;
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "GD" = (
@@ -7679,6 +7710,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "GY" = (
@@ -8584,7 +8616,8 @@
 "KJ" = (
 /obj/machinery/porta_turret/ship/frontiersmen/light{
 	dir = 4;
-	reqpower = 0
+	reqpower = 0;
+	faction = list("Frontiersmen")
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/tesla_lab/turrets)
@@ -8614,6 +8647,9 @@
 "KV" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
@@ -8727,6 +8763,10 @@
 "Lx" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
@@ -8961,6 +9001,7 @@
 /obj/effect/decal/cleanable/blood/squirt{
 	dir = 1
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
 "MM" = (
@@ -9831,6 +9872,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Qz" = (
@@ -9893,6 +9937,9 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "QO" = (
@@ -9939,7 +9986,8 @@
 /area/ruin/icemoon/tesla_lab/dorms)
 "Re" = (
 /obj/machinery/porta_turret/ship/frontiersmen/light{
-	reqpower = 0
+	reqpower = 0;
+	faction = list("Frontiersmen")
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/tesla_lab/turrets)
@@ -10740,6 +10788,9 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/cargo)
 "TZ" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Ua" = (
@@ -11040,6 +11091,10 @@
 	pixel_y = 0;
 	dir = 8
 	},
+/obj/item/weldingtool/largetank{
+	pixel_y = -5;
+	pixel_x = -7
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ruin/icemoon/tesla_lab/engineering)
 "VR" = (
@@ -11229,6 +11284,10 @@
 /obj/item/pen/fourcolor{
 	pixel_y = 11;
 	pixel_x = 3
+	},
+/obj/item/desynchronizer/tvstatic{
+	pixel_x = -5;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/office_two)
@@ -11548,6 +11607,7 @@
 	pixel_y = -3
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/item/documents,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/office_two)
 "Yw" = (
@@ -11658,7 +11718,8 @@
 "YV" = (
 /obj/machinery/porta_turret/ship/frontiersmen/light{
 	dir = 2;
-	reqpower = 0
+	reqpower = 0;
+	faction = list("Frontiersmen")
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/tesla_lab/turrets)
