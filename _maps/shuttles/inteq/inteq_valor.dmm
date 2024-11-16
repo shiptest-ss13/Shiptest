@@ -2459,10 +2459,10 @@
 /obj/effect/turf_decal/box/white,
 /obj/machinery/light/directional/west,
 /obj/item/paper{
-	default_raw_text = <head><table bgcolor="gold" width="100%" height="15%" frame ="below">    <th>        <div align="left"><font size="1" color="black">        <h1>Inteq</h1> Risk Management        </font></div>    </th>    <th>        <div align="right"><font color="black">         <br>         <br>        IRMV Memo<br>        Mothership <br>        <br>    </th></table></head><br>Apologies  for the trouble, we were meant to get a chemistry machine hauled in here from the stores, after we shuffled the stasis bed onto the haste-class, but something's gone awry, terribly sorry.<br><br><table bgcolor="gold" width="100%">    <th>        <font color="black"><font size="0.25"><center><i>Have a safe and secure day <center></i></font>    </th></table>;
 	name = "IRMG Memo";
 	pixel_x = -2;
-	pixel_y = 0
+	pixel_y = 0;
+	text = <head><tablebgcolor="gold"width="100%"height="15%"frame="below"><th><divalign="left"><fontsize="1"color="black"><h1>Inteq</h1>RiskManagement</font></div></th><th><divalign="right"><fontcolor="black"><br><br>IRMVMemo<br>Mothership<br><br></th></table></head><br>Apologiesforthetrouble,weweremeanttogetachemistrymachinehauledinherefromthestores,afterweshuffledthestasisbedontothehaste-class,butsomething'sgoneawry,terriblysorry.<br><br><tablebgcolor="gold"width="100%"><th><fontcolor="black"><fontsize="0.25"><center><i>Haveasafeandsecureday<center></i></font></th></table>
 	},
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/mono/white,
