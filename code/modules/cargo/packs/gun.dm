@@ -182,6 +182,24 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/energy/disabler
+	name = "Disabler Crate"
+	desc = "One stamina-draining disabler weapon, for use in non-lethal pacification."
+	cost = 1000
+	contains = list(/obj/item/gun/energy/disabler)
+	crate_name = "disabler crate"
+	faction = /datum/faction/nt
+
+/datum/supply_pack/gun/energy/taser
+	name = "Hybrid Taser Crate"
+	desc = "Contains one disabler-taser hybrid weapon."
+	cost = 1250
+	contains = list(/obj/item/gun/energy/e_gun/advtaser)
+	crate_name = "hybrid taser crate"
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		Shotguns
 */
@@ -539,6 +557,16 @@
 	cost = 250
 	contains = list(/obj/item/attachment/bayonet)
 	crate_name = "bayonet crate"
+
+/datum/supply_pack/gun/attachment/ebayonet
+	name = "Energy Bayonet Crate"
+	desc = "Contains a single energy bayonet to be mounted on a firearm, exclusive for Scarborough Firearms."
+	cost = 500
+	contains = list(/obj/item/attachment/energy_bayonet)
+	crate_name = "bayonet crate"
+	faction = /datum/faction/scarborough_arms
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/gun/attachment/silencer
 	name = "Suppressor Crate"

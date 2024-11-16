@@ -126,38 +126,17 @@
 
 /datum/supply_pack/sec_supply/baton
 	name = "Stun Batons Crate"
-	desc = "Arm the Civil Protection Forces with three stun batons. Batteries included."
-	cost = 9000
-	contains = list(/obj/item/melee/baton/loaded,
-					/obj/item/melee/baton/loaded,
-					/obj/item/melee/baton/loaded)
+	desc = "Arm your vessel security with a stun baton. Batteries included."
+	cost = 3000
+	contains = list(/obj/item/melee/baton/loaded)
 	crate_name = "stun baton crate"
-
-/datum/supply_pack/sec_supply/disabler
-	name = "Disabler Crate"
-	desc = "Three stamina-draining disabler weapons."
-	cost = 9000
-	contains = list(/obj/item/gun/energy/disabler,
-					/obj/item/gun/energy/disabler,
-					/obj/item/gun/energy/disabler)
-	crate_name = "disabler crate"
 
 /datum/supply_pack/sec_supply/dragnet
 	name = "DRAGnet Crate"
-	desc = "Contains three \"Dynamic Rapid-Apprehension of the Guilty\" netting devices, a recent breakthrough in law enforcement prisoner management technology."
-	cost = 10000
-	contains = list(/obj/item/gun/energy/e_gun/dragnet,
-					/obj/item/gun/energy/e_gun/dragnet,
-					/obj/item/gun/energy/e_gun/dragnet)
+	desc = "Contains one \"Dynamic Rapid-Apprehension of the Guilty\" netting device, a recent breakthrough in law enforcement prisoner management technology."
+	cost = 2000
+	contains = list(/obj/item/gun/energy/e_gun/dragnet)
 	crate_name = "\improper DRAGnet crate"
-
-/datum/supply_pack/sec_supply/taser
-	name = "Hybrid Taser Crate"
-	desc = "Contains two disabler-taser hybrid weapons."
-	cost = 12000
-	contains = list(/obj/item/gun/energy/e_gun/advtaser,
-					/obj/item/gun/energy/e_gun/advtaser)
-	crate_name = "hybrid taser crate"
 
 /datum/supply_pack/sec_supply/claymore
 	name = "C-10 Claymore Crate"
