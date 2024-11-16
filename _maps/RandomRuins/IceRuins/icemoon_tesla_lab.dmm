@@ -4421,7 +4421,8 @@
 /obj/machinery/porta_turret/ship/frontiersmen/light{
 	dir = 10;
 	id = "haymaker";
-	mode = 1
+	mode = 1;
+	faction = list("Frontiersmen")
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/icemoon/tesla_lab/haymaker)
@@ -4439,6 +4440,15 @@
 /obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/office_two)
+"sF" = (
+/obj/machinery/porta_turret/ship/frontiersmen/light{
+	dir = 9;
+	id = "haymaker";
+	mode = 1;
+	faction = list("Frontiersmen")
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/icemoon/tesla_lab/haymaker)
 "sJ" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
@@ -6319,6 +6329,11 @@
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
 	id = "h2s"
+	},
+/obj/machinery/porta_turret/ship/frontiersmen/light{
+	dir = 10;
+	id = "haymaker";
+	mode = 1
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/icemoon/tesla_lab/haymaker)
@@ -10644,7 +10659,8 @@
 /obj/machinery/porta_turret/ship/frontiersmen{
 	dir = 6;
 	id = "haymaker";
-	mode = 1
+	mode = 1;
+	faction = list("Frontiersmen")
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/icemoon/tesla_lab/haymaker)
@@ -10706,7 +10722,8 @@
 /obj/machinery/porta_turret/ship/frontiersmen{
 	dir = 5;
 	id = "haymaker";
-	mode = 1
+	mode = 1;
+	faction = list("Frontiersmen")
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/icemoon/tesla_lab/haymaker)
@@ -14743,7 +14760,7 @@ rp
 In
 nN
 SZ
-AU
+sF
 dm
 zV
 oD
@@ -14806,7 +14823,7 @@ Yt
 xp
 YF
 CN
-dm
+AU
 dm
 ay
 ke
