@@ -175,6 +175,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/specialized/engineering
 	name = "Engineering Specialist's Quarters"
 
+/area/ship/crew/specialized/cargo
+	name = "Cargo Specialist's Quarters"
+
 /area/ship/crew/cryo
 	name = "Cryopod Room"
 	icon_state = "cryo"
