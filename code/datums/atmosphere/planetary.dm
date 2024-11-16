@@ -116,7 +116,6 @@
 		GAS_O2=15,
 		GAS_N2=60,
 		GAS_CO2=1,
-		GAS_H2O=1,
 	)
 	normal_gases = list(
 		GAS_O2=1,
