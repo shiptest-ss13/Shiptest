@@ -128,7 +128,7 @@
 /obj/item/assembly/signaler/anomaly/phantom/anomaly_core_detonation()
 	playsound(src,'sound/hallucinations/far_noise.ogg', 100, 0, 50, TRUE, TRUE)
 	visible_message(span_warning("[src] screams as it fades, trying to lash out!"))
-	for(var/mob/living/carbon/handsy in range(effectrange, src))
+	for(var/mob/living/carbon/handsy in range(5, src))
 		if(handsy.stat != DEAD)
 			var/grab_dir = turn(handsy.dir, pick(-90, 90, 180, 180))
 			var/turf/spawn_turf = get_ranged_target_turf(handsy, grab_dir, 8)
