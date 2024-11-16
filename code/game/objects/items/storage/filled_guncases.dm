@@ -165,6 +165,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/commander
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 
+/obj/item/storage/guncase/vector
+	gun_type = /obj/item/gun/ballistic/automatic/smg/vector
+	mag_type = /obj/item/ammo_box/magazine/smgm9mm
+
 /* Sharplite */
 
 /obj/item/storage/guncase/pistol/miniegun

@@ -267,6 +267,16 @@
 	faction = /datum/faction/scarborough_arms
 	faction_discount = 10
 
+/datum/supply_pack/gun/vector
+	name = "Vector SMG Crate"
+	desc = "Contains a Vector PDW produced by Sharplite Defense and chambered in 9mm."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/vector)
+	crate_name = "SMG crate"
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/mongrel
 	name = "SKM-44v Mongrel SMG Crate"
 	desc = "Contains a shortened variant of the SKM rechambered to 10mm and painted in the brown-and-gold of Inteq."

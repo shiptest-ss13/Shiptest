@@ -12,6 +12,16 @@
 	contains = list(/obj/item/ammo_box/magazine/co9mm)
 	cost = 500
 
+/datum/supply_pack/magazine/smgm9mm_mag
+	name = "9mm SMG Magazine Crate"
+	desc = "Contains a 9mm magazine for the Vector and Saber SMGs, containing thirty rounds."
+	contains = list(/obj/item/ammo_box/magazine/smgm9mm)
+	cost = 500
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
+
 /* Hunter's Pride */
 
 /datum/supply_pack/magazine/c38_mag
