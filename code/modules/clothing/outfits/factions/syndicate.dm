@@ -82,6 +82,11 @@
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/soft/cybersun
 
+/datum/outfit/job/syndicate/assistant/cybersun/gec
+	name = "Syndicate - Junior Agent (Cybersun / GEC)"
+
+	alt_uniform = /obj/item/clothing/under/syndicate/gec
+
 /datum/outfit/job/syndicate/assistant/twink
 	name = "Syndicate - Deck Assistant (Twinkleshine)"
 	id_assignment = "Deck Assistant"
@@ -167,7 +172,7 @@
 /datum/outfit/job/syndicate/atmos/gec
 	name = "Syndicate - Atmospheric Technician (GEC)"
 
-	uniform = /obj/item/clothing/under/syndicate/gec/atmos_tech
+	uniform = /obj/item/clothing/under/syndicate/gec
 	suit = /obj/item/clothing/suit/toggle/hazard
 	head = /obj/item/clothing/head/hardhat
 	id = /obj/item/card/id/syndicate_command/crew_id
@@ -434,12 +439,23 @@
 	name = "Syndicate - Chief Engineer (GEC)"
 
 	uniform = /obj/item/clothing/under/syndicate/gec/chief_engineer
-	suit = /obj/item/clothing/suit/toggle/hazard
-	head = /obj/item/clothing/head/hardhat/white
+	head = null
 	shoes =/obj/item/clothing/shoes/laceup
-	ears = /obj/item/radio/headset/syndicate/alt/captain
-	id = /obj/item/card/id/syndicate_command/captain_id
-	gloves = /obj/item/clothing/gloves/color/yellow
+	belt = null
+	gloves = null
+
+/datum/outfit/job/syndicate/ce/gec/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	if(istype(H.wear_id, /obj/item/storage/wallet))
+		var/obj/item/storage/wallet/W = H.wear_id
+		if(W.front_id)
+			var/obj/item/card/id/ID = W.GetID()
+			ID.access += list(ACCESS_ROBOTICS)
+	else
+		var/obj/item/card/id/W = H.wear_id
+		W.access += list(ACCESS_ROBOTICS)
 
 /datum/outfit/job/syndicate/ce/ngr
 	name = "Syndicate - Foreman (New Gorlex Republic)"
@@ -923,6 +939,18 @@
 
 	box = /obj/item/storage/box/survival/security
 
+/datum/outfit/job/syndicate/security/cybersun
+	name = "Syndicate - Security Officer (Cybersun)"
+	id_assignment = "Security Officer"
+
+	uniform = /obj/item/clothing/under/syndicate/cybersun
+	accessory = /obj/item/clothing/accessory/armband
+	belt = null
+
+	head = /obj/item/clothing/head/soft/cybersun
+	shoes = /obj/item/clothing/shoes/combat
+	l_pocket = null
+	r_pocket = null
 
 /datum/outfit/job/syndicate/security/gorlex
 	name = "Syndicate - Trooper (Hardliner)"
@@ -1188,11 +1216,14 @@
 
 /datum/outfit/job/syndicate/engineer/cybersun
 	name = "Syndicate - Engineer (Cybersun)"
+	id_assignment = "Engineer"
 
 	uniform = /obj/item/clothing/under/syndicate/cybersun/research
-	shoes = /obj/item/clothing/shoes/workboots
+	shoes = /obj/item/clothing/shoes/jackboots
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/soft/cybersun
+	belt = null
+	glasses = null
 	accessory = /obj/item/clothing/accessory/armband/engine
 
 /datum/outfit/job/syndicate/engineer/suns
@@ -1210,3 +1241,18 @@
 	satchel  = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
+
+// Roboticists
+
+/datum/outfit/job/syndicate/roboticist/cybersun
+	name = "Syndicate - Roboticist (Cybersun)"
+	id_assignment = "Engineer"
+	jobtype = /datum/job/roboticist
+	job_icon = "stationengineer"
+
+	uniform = /obj/item/clothing/under/syndicate/cybersun/research
+	alt_uniform = /obj/item/clothing/under/syndicate/gec
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/soft/cybersun
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	accessory = /obj/item/clothing/accessory/armband/engine

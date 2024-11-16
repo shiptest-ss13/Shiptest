@@ -168,21 +168,16 @@
 	icon_state = "donk_qm_vest"
 
 /obj/item/clothing/under/syndicate/gec
-	name = "GEC engineer jumpsuit"
-	desc = "A jumpsuit worn by GEC engineers. This one is worn by low ranking engineers."
+	name = "GEC member suit"
+	desc = "A red suit worn by members of the Galactic Engineer's Concordat."
 	icon_state = "gec_engineer"
 	can_adjust = FALSE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 60, "acid" = 20)
 	resistance_flags = NONE
 
-/obj/item/clothing/under/syndicate/gec/atmos_tech
-	name = "GEC atmospheric technician jumpsuit"
-	desc = "A jumpsuit worn by GEC engineers. This one is worn by atmospheric technicians."
-	icon_state = "gec_atmos"
-
 /obj/item/clothing/under/syndicate/gec/chief_engineer
-	name = "GEC chief engineer jumpsuit"
-	desc = "A jumpsuit worn by GEC engineers. This one is worn by high ranking chiefengineers."
+	name = "GEC chief engineer suit"
+	desc = "A white suit worn by GEC members elected to become Chief Engineers."
 	icon_state = "gec_ce"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 80, "acid" = 40)
 

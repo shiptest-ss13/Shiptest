@@ -1,0 +1,46 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "C Series C902i Industrial Cruiser",
+	"prefix": "CSSV",
+	"faction": "/datum/faction/syndicate/cybersun",
+	"namelists": [
+		"SPACE",
+		"CYBERSUN",
+		"NATURAL_AGGRESSIVE"
+	],
+	"map_short_name": "Model-C902i",
+	"map_path": "_maps/shuttles/syndicate/syndicate_cybersun_c902i.dmm",
+	"description": "The Kansatsu-class is a Cybersun remodel of the old Type-S SolGov Courier, rebuilt for rapid package ferrying and light surveillance operations in the Frontier. While fairly cramped, it excels at its design goals, with rapid surveys, scouting, and espionage flowing from its presence. Syndicate deployments typically include a deployment of 5, with a recommended max of 7. This is broken down into 1 captain, an intelligence officer for coordinating the field agents, an engineer, and 2 field agents. The simplicity of the hull has led to the ship becoming a widespread indicator of Syndicate interest in locations, and some models have found their way into private purchasers' hands.",
+	"tags": ["Engineering, Robotics"],
+	"limit": 1,
+	"starting_funds": 3000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
+			"officer": true,
+			"slots": 1
+		},
+		"Chief Engineer": {
+			"outfit": "/datum/outfit/job/syndicate/ce/gec",
+			"officer": true,
+			"slots": 1
+		},
+		"Electrical Engineer": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/cybersun",
+			"slots": 2
+		},
+		"Biomechanical Engineer": {
+			"outfit": "/datum/outfit/job/syndicate/roboticist/cybersun",
+			"slots": 2
+		},
+		"Corporate Security": {
+			"outfit": "/datum/outfit/job/syndicate/security/cybersun",
+			"slots": 1
+		},
+		"Engineering Intern": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun/gec",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
