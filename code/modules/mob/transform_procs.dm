@@ -374,7 +374,7 @@
 			break
 		landmark_loc += sloc.loc
 	if(!landmark_loc.len)
-		to_chat(src, "Oh god. Sorry. We can't find an unoccupied AI spawn location, so we're spawning you on top of someone.")
+		to_chat(src, "Oh god sorry we can't find an unoccupied AI spawn location, so we're spawning you on top of someone.")
 		for(var/obj/effect/landmark/start/ai/sloc in GLOB.landmarks_list)
 			landmark_loc += sloc.loc
 
