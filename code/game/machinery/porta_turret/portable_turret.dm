@@ -1082,6 +1082,9 @@ DEFINE_BITFIELD(turret_flags, list(
 	shot_delay = 2
 	scan_range = 6
 
+/obj/machinery/porta_turret/ship/frontiersmen/assess_perp(mob/living/carbon/human/perp)
+	return 10 //Syndicate turrets shoot everything not in their faction //this needs to be default behavior and im gonna refactor it soon
+
 /obj/machinery/porta_turret/ship/frontiersmen/light
 	name = "Pounder Turret"
 	desc = "A low caliber SMG with an atrociously high cycle rate, frankensteined together with a targetting assembly."
