@@ -78,7 +78,8 @@
 
 				if(prob(pukeprob))
 					H.blur_eyes(3)
-					H.manual_emote(pick("tears up!", "whimpers!", "chokes!"))
+					if(prob(25))
+						H.manual_emote(pick("tears up!", "whimpers!", "chokes!"))
 					H.vomit(20, 0, 1, 1, 1, 0)
 					H.confused += 2.5
 					H.stuttering += 1
@@ -87,8 +88,8 @@
 				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/disgusted)
 
 				//profusely vomiting.
-				H.force_scream()
-				H.vomit(40, 0, 1, 1, 1, 0)
+				if(prob(pukeprob))
+					H.vomit(40, 0, 1, 1, 1, 0)
 
 		H.adjust_disgust(-0.5 * disgust_metabolism)
 
