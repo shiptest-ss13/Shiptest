@@ -581,7 +581,7 @@
 
 /datum/reagent/medicine/anti_rad/on_mob_life(mob/living/carbon/M)
 	M.radiation -= M.radiation - rand(50,150)
-	M.adjust_disgust(3*REM)
+	M.adjust_disgust(4*REM)
 	..()
 	. = 1
 
