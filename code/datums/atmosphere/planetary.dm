@@ -24,8 +24,8 @@
 	// even worse, occasionally there would be a perma-TRITFIRE, if oxygen
 	// concentration was high enough. this caused a bunch of lag and added nothing to the game whatsoever
 	// thus, the temperatures were reduced to 70-90 C
-	minimum_temp = T20C + 40
-	maximum_temp = T20C + 70
+	minimum_temp = T20C + 20
+	maximum_temp = T20C + 50
 
 /datum/atmosphere/icemoon
 	id = ICEMOON_DEFAULT_ATMOS
