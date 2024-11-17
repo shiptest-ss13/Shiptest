@@ -106,6 +106,7 @@
 	desc = "A starched grey uniform with red arm flashes, of a type seen throughout the core worlds. The Vigilitas Interstellar logo is proudly emblazoned on the front."
 	icon_state = "security"
 	item_state = "graycloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/nanotrasen/security/director
@@ -113,6 +114,7 @@
 	desc = "A robust crimson uniform, heavily starched, with a Vigilitas logo neatly stitched onto either end of the collar. The last line of defense for Vigilitas's managerial staff."
 	icon_state = "security_director"
 	item_state = "redcloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
 	supports_variations = VOX_VARIATION
 
 //Command uniforms
@@ -239,6 +241,8 @@
 /obj/item/clothing/suit/armor/nanotrasen/slim
 	name = "slim armor vest"
 	icon_state = "armor_slim"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/nanotrasen/sec_director
 	name = "security director's overcoat"
@@ -405,5 +409,6 @@
 	righthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_righthand.dmi'
 	icon_state = "vigi_gas_mask"
 	item_state = "vigi_gas_mask"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
