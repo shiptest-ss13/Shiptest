@@ -273,7 +273,7 @@
 /datum/outfit/job/frontiersmen/ert/sentry
 	name = "ERT - Frontiersman Sentry (SKM-24v LMG)"
 
-	head = /obj/item/clothing/head/helmet/marine/frontier
+	head = /obj/item/clothing/head/helmet/frontier
 	mask = /obj/item/clothing/mask/balaclava
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	suit_store = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag
