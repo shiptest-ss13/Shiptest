@@ -13,7 +13,6 @@
 	)
 	restricted_gases = list(
 		GAS_BZ=10,
-		GAS_PLASMA=0.1,
 	)
 	restricted_chance = 50
 
@@ -41,7 +40,7 @@
 		GAS_CO2=10,
 	)
 	restricted_gases = list(
-		GAS_PLASMA=0.1,
+		GAS_CO2=0.1,
 	)
 	restricted_chance = 50
 
