@@ -525,7 +525,8 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/feet.dmi'
 	icon_state = "pgfboots"
 	item_state = "jackboots"
-	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | KEPORI_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 //Belt
 
@@ -592,6 +593,8 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "cape"
 	item_state = "blackcloth"
+	supports_variations = KEPORI_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/neck/cloak/gezena/examine_more(mob/user)
 	. = ..()
