@@ -448,3 +448,28 @@
 	if(prob(15))
 		M.adjustToxLoss(2, 0)
 	..()
+
+/datum/reagent/drug/cannabis
+	name = "Cannabis"
+	description = "A psychoactive drug from the Cannabis plant used for recreational purposes."
+	color = "#059033"
+	overdose_threshold = INFINITY
+	ph = 6
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	metabolization_rate = 0.125 * REAGENTS_METABOLISM
+
+/datum/reagent/drug/cannabis/on_mob_life(mob/living/carbon/M, delta_time)
+	M.apply_status_effect(/datum/status_effect/stoned)
+	if(DT_PROB(1, delta_time))
+		var/smoke_message = pick("You feel relaxed.","You feel calmed.","Your mouth feels dry.","You could use some water.","Your heart beats quickly.","You feel clumsy.","You crave junk food.","You notice you've been moving more slowly.")
+		to_chat(M, "<span class='notice'>[smoke_message]</span>")
+	if(DT_PROB(2, delta_time))
+		M.emote(pick("smile","laugh","giggle"))
+	M.adjust_nutrition(-1 * REM * delta_time) //munchies
+	if(DT_PROB(4, delta_time) && M.body_position == LYING_DOWN && !M.IsSleeping()) //chance to fall asleep if lying down
+		to_chat(M, span_warning("You doze off..."))
+		M.Sleeping(10 SECONDS)
+	if(DT_PROB(4, delta_time) && M.buckled && M.body_position != LYING_DOWN && !M.IsParalyzed()) //chance to be couchlocked if sitting
+		to_chat(M, span_warning("It's too comfy to move..."))
+		M.Paralyze(10 SECONDS)
+	return ..()
