@@ -105,6 +105,12 @@
 	item_state = "pgfvest"
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //the laser gun country should probably have laser armor
 
+/obj/item/clothing/suit/armor/gezena/marine/examine_more(mob/user)
+	. = ..()
+	if(!user.has_language(/datum/language/draconic))
+		return
+	. += "<span class='notice'>Translated literally, this is named 'Raksha-plating' a Kalixcian word for 'protection of the heart'.</span>"
+
 /obj/item/clothing/suit/armor/gezena/marine/navy
 	desc = "The standard issue armor vest of the PGF, being covered with a laser protective coating in exchange for minor ballistic protection. This one is in navy colors."
 	icon_state = "pgfvest_navy"
@@ -129,6 +135,12 @@
 	. = ..()
 	allowed = GLOB.security_hardsuit_allowed
 
+/obj/item/clothing/suit/space/gezena/examine_more(mob/user)
+	. = ..()
+	if(!user.has_language(/datum/language/draconic))
+		return
+	. += "<span class='notice'>Translated literally, this is named 'Rakalla-suit' a Kalixcian word for 'protection among the stars'.</span>"
+
 /obj/item/clothing/head/helmet/space/gezena
 	name = "\improper PGFN normal suit helmet"
 	desc = "A normal suit's helmet used by the PGFN. While it's not particularly great nor high quality, these traits make it possible to fit an entire vessel's crew with at least one, with a few to spare."
@@ -141,6 +153,12 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70)
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = SNOUTED_VARIATION
+
+/obj/item/clothing/head/helmet/space/gezena/examine_more(mob/user)
+	. = ..()
+	if(!user.has_language(/datum/language/draconic))
+		return
+	. += "<span class='notice'>Translated literally, this is named 'Rakalla-helm' a Kalixcian word for 'protection among the stars'.</span>"
 
 /obj/item/clothing/suit/space/gezena/flightsuit
 	name = "\improper PGFN flight suit"
@@ -394,6 +412,12 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
+/obj/item/clothing/head/gezena/flap/examine_more(mob/user)
+	. = ..()
+	if(!user.has_language(/datum/language/draconic))
+		return
+	. += "<span class='notice'>Translated literally, this is named 'Betzu-il', meaning 'sun-blocker.'</span>"
+
 /obj/item/clothing/head/gezena/flap/marine
 	name = "\improper PGFMC flap cap"
 	desc = "A flap cap used by the PGFMC in hot, arid environments. It's also quite fashionable, replicas being popular with civillians in the PGF."
@@ -434,6 +458,12 @@
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //the laser gun country should probably have laser armor
 	icon_state = "pgf_x11"
 	item_state = "marinehelm"
+
+/obj/item/clothing/head/helmet/gezena/examine_more(mob/user)
+	. = ..()
+	if(!user.has_language(/datum/language/draconic))
+		return
+	. += "<span class='notice'>Translated literally, this is named 'Raksha-helm' a Kalixcian word for 'protection of the heart'.</span>"
 
 /obj/item/clothing/head/helmet/gezena/navy
 	name = "\improper Type R-11 Helmet"
@@ -480,6 +510,12 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
+/obj/item/clothing/gloves/gezena/examine_more(mob/user)
+	. = ..()
+	if(!user.has_language(/datum/language/draconic))
+		return
+	. += "<span class='notice'>Translated literally, this is named 'ihuz-irra', meaning 'sure-grip'.</span>"
+
 //Boots
 
 /obj/item/clothing/shoes/combat/gezena
@@ -503,6 +539,12 @@
 	icon_state = "pouches"
 	item_state = "bluecloth"
 	unique_reskin = null
+
+/obj/item/storage/belt/military/gezena/examine_more(mob/user)
+	. = ..()
+	if(!user.has_language(/datum/language/draconic))
+		return
+	. += "<span class='notice'>Translated literally, this is named 'Iho-Usks', meaning 'gear-holder'.</span>"
 
 /obj/item/storage/belt/military/gezena/bg16/PopulateContents()
 	. = ..()
@@ -550,6 +592,12 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "cape"
 	item_state = "blackcloth"
+
+/obj/item/clothing/neck/cloak/gezena/examine_more(mob/user)
+	. = ..()
+	if(!user.has_language(/datum/language/draconic))
+		return
+	. += "<span class='notice'>Translated literally, 'Aziulhauz' means 'rank-cape'.</span>"
 
 /obj/item/clothing/neck/cloak/gezena/lead
 	name = "\improper sergeant's aziulhauz rank cape"

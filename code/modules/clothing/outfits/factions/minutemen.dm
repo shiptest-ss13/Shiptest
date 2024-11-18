@@ -286,7 +286,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/satchel/sec/clip
 
-	box = /obj/item/storage/box/survival/extended/balaclava
+	box = /obj/item/storage/box/survival/extended
 
 /datum/outfit/job/clip/minutemen/deckhand
 	name = "CLIP Minutemen - Deckhand"
@@ -505,7 +505,7 @@
 	jobtype = /datum/job/officer
 	job_icon = "clip_cmm2"
 	ears = /obj/item/radio/headset/alt
-	box = /obj/item/storage/box/survival/extended/balaclava
+	box = /obj/item/storage/box/survival/clip/balaclava
 	shoes = /obj/item/clothing/shoes/combat // shoos
 
 	backpack = /obj/item/storage/backpack/security/clip
