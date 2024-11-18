@@ -462,8 +462,6 @@
 	if(prob(35))
 		var/smoke_message = pick("You feel relaxed.","You feel calmed.","Your mouth feels dry.","You could use some water.","Your heart beats quickly.","You feel clumsy.","You crave junk food.","You notice you've been moving more slowly.")
 		to_chat(M, span_notice("[smoke_message]"))
-	if(prob(20))
-		M.emote(pick("smile","laugh","giggle"))
 	if(prob(10))
 		if(M.body_position == LYING_DOWN && !M.IsSleeping())
 			to_chat(M, span_warning("You doze off..."))
@@ -475,23 +473,3 @@
 		to_chat(M, span_warning("It's too comfy to move..."))
 		M.Paralyze(10 SECONDS)
 	return ..()
-
-/datum/reagent/drug/cannabis/puppygirl //the coder's poorly disguised fetish
-	name = "Puppygirl weed"
-	description = "Get ready for a trip to a dimension few experience."
-
-/datum/reagent/drug/cannabis/puppygirl/on_mob_metabolize(mob/living/L)
-	if(!L.getorgan(/obj/item/organ/ears/dog))
-		L.visible_message("Big floppy puppy ears sprout out from [L]'s head!", "Dog ears sprout from your head!")
-		var/obj/item/organ/ears/dog/new_ears = new
-		new_ears.Insert(L, drop_if_replaced = FALSE)
-	if(!L.getorgan(/obj/item/organ/tail/dog))
-		L.visible_message("A furry tail grows from [L]'s backside!", "A dog tail grows from your spine!")
-		var/obj/item/organ/tail/dog/new_tail = new
-		new_tail.Insert(L, drop_if_replaced = FALSE)
-	..()
-
-/datum/reagent/drug/cannabis/puppygirl/on_mob_life(mob/living/carbon/L)
-	. = ..()
-	if(prob(25))
-		L.manual_emote("barks!")
