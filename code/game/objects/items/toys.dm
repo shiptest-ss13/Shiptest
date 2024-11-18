@@ -1016,7 +1016,15 @@
 	desc = "A compact ball of snow. Good for throwing at people."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "snowball"
-	throwforce = 3 //pelt your enemies to death with lumps of snow
+	throwforce = 1 //pelt your enemies to death with lumps of snow
+	var/stam_dam = 6
+
+/obj/item/toy/snowball/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
+	if(ishuman(hit_atom) && !caught)//if they are a carbon and they didn't catch it
+		var/mob/living/carbon/human/dorkass = hit_atom
+		dorkass.apply_damage(stam_dam, STAMINA)
 
 /obj/item/toy/snowball/afterattack(atom/target as mob|obj|turf|area, mob/user)
 	. = ..()
