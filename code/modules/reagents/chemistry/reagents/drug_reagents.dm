@@ -454,22 +454,43 @@
 	description = "A psychoactive drug from the Cannabis plant used for recreational purposes."
 	color = "#059033"
 	overdose_threshold = INFINITY
-	ph = 6
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 
-/datum/reagent/drug/cannabis/on_mob_life(mob/living/carbon/M, delta_time)
+/datum/reagent/drug/cannabis/on_mob_life(mob/living/carbon/M)
 	M.apply_status_effect(/datum/status_effect/stoned)
-	if(DT_PROB(1, delta_time))
+	M.adjust_nutrition(-1 * REM) //munchies
+	if(prob(35))
 		var/smoke_message = pick("You feel relaxed.","You feel calmed.","Your mouth feels dry.","You could use some water.","Your heart beats quickly.","You feel clumsy.","You crave junk food.","You notice you've been moving more slowly.")
-		to_chat(M, "<span class='notice'>[smoke_message]</span>")
-	if(DT_PROB(2, delta_time))
+		to_chat(M, span_notice("[smoke_message]"))
+	if(prob(20))
 		M.emote(pick("smile","laugh","giggle"))
-	M.adjust_nutrition(-1 * REM * delta_time) //munchies
-	if(DT_PROB(4, delta_time) && M.body_position == LYING_DOWN && !M.IsSleeping()) //chance to fall asleep if lying down
-		to_chat(M, span_warning("You doze off..."))
-		M.Sleeping(10 SECONDS)
-	if(DT_PROB(4, delta_time) && M.buckled && M.body_position != LYING_DOWN && !M.IsParalyzed()) //chance to be couchlocked if sitting
+	if(prob(10))
+		if(M.body_position == LYING_DOWN && !M.IsSleeping())
+			to_chat(M, span_warning("You doze off..."))
+			M.Sleeping(10 SECONDS)
+		else
+			var/eepy_message = pick("Oh stars you're sleepy", "Your eyelids feel heavy.", "You could use a power nap.", "It'd be nice to lay down a bit....")
+			to_chat(M, span_notice("[eepy_message]"))
+	if(prob(20)) && M.buckled && M.body_position != LYING_DOWN && !M.IsParalyzed()
 		to_chat(M, span_warning("It's too comfy to move..."))
 		M.Paralyze(10 SECONDS)
 	return ..()
+
+/datum/reagent/drug/cannabis/puppygirl
+	name = "Puppygirl weed"
+	desc = "Get ready for a trip to a dimension few experience."
+
+/datum/reagent/drug/cannabis/puppygirl/on_mob_metabolize(mob/living/L)
+	if(!L.getorgan(/obj/item/organ/ears/dog))
+		visible_message("Big floppy puppy ears sprout out from [L]'s head!", "Dog ears sprout from your head!")
+		var/obj/item/organ/ears/dog/newears = new
+		newears.Insert(L, drop_if_replaced = FALSE)
+	if(!L.getorgan(/obj/item/organ/tail/dog))
+		visible_message("A furry tail grows from [L]'s backside!", "A dog tail grows from your spine!")
+	..()
+
+/datum/reagent/drug/cannabis/on_mob_life(mob/living/carbon/L)
+	. = ..()
+	if(prob(25))
+		M.manual_emote("barks!")
