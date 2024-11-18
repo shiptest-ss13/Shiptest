@@ -1017,7 +1017,7 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "snowball"
 	throwforce = 1 //pelt your enemies to death with lumps of snow
-	var/stam_dam = 6
+	var/stam_dam = 8
 
 /obj/item/toy/snowball/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
