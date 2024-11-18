@@ -126,3 +126,4 @@
 
 /obj/machinery/computer/examine_more(mob/user)
 	ui_interact(user)
+	return ..()

@@ -111,6 +111,12 @@
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
+/turf/closed/indestructible/titanium/nodiagnonal
+	icon = 'icons/turf/walls/shuttle_wall.dmi'
+	icon_state = "map-shuttle_nd"
+	base_icon_state = "shuttle_wall"
+	smoothing_flags = SMOOTH_BITMASK
+
 /turf/closed/indestructible/riveted
 	icon = 'icons/turf/walls/riveted.dmi'
 	icon_state = "riveted-0"

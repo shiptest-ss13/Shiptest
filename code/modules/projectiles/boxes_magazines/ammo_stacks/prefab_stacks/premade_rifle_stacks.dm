@@ -68,15 +68,6 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a556_42 = 4)
 	generate_items_inside(items_inside,src)
 
-// 5.45x39mm (SKM-24v)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/a545_39
-	ammo_type = /obj/item/ammo_casing/a545_39
-	max_ammo = 10
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/a545_39/recycled
-	ammo_type = /obj/item/ammo_casing/a545_39/recycled
-
 // 7.62x40mm CLIP (SKM Rifles)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a762_40

@@ -36,10 +36,7 @@
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh
 	name = "Model H"
 	desc = "A standard-issue pistol exported from the Solarian Confederation. It fires slow flesh-rending ferromagnetic slugs at a high energy cost, however they are ineffective on any armor."
-	default_ammo_type = /obj/item/ammo_box/magazine/modelh
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/modelh,
-	)
+
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
@@ -48,10 +45,16 @@
 	item_state = "model-h"
 	fire_sound = 'sound/weapons/gun/gauss/modelh.ogg'
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
+
+	default_ammo_type = /obj/item/ammo_box/magazine/modelh
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/modelh,
+	)
 	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
 	allowed_cell_types = list(
 		/obj/item/stock_parts/cell/gun/solgov,
 	)
+
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 0.6 SECONDS //pistol, but heavy caliber.
@@ -63,6 +66,11 @@
 	spread = 6
 	spread_unwielded = 12
 	fire_select_icon_state_prefix = "slug_"
+
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+	)
 
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/no_mag
 	default_ammo_type = FALSE
@@ -103,6 +111,14 @@
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	fire_select_icon_state_prefix = "pellet_"
 
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/energy_bayonet
+	)
+
+
 /obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
 	desc = "An antiquated Solarian rifle. Chambered in ferromagnetic pellets, just as the founding Solarians intended. Evidently, SUNS' founders echo the sentiment, as it appears to be painted in their colors."
 	icon_state = "claris_suns"
@@ -134,6 +150,13 @@
 	actions_types = list()
 	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
+
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/energy_bayonet
+	)
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO

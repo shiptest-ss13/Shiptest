@@ -23,7 +23,7 @@
 
 /datum/outfit/job/gezena/assistant/bridge
 	name = "PGF - Bridge Bunny"
-	id_assignment = "Bridge Bunny"
+	id_assignment = "Helmsman"
 	jobtype = /datum/job/head_of_personnel
 
 /datum/outfit/job/gezena/engineer
@@ -108,6 +108,15 @@
 	box = /obj/item/storage/box/survival/extended
 
 	backpack_contents = list(/obj/item/clothing/mask/gas/gezena=1)
+
+/datum/outfit/job/gezena/security/sapper
+	name = "PGF - Marine Pioneer"
+	id_assignment = "Marine Pioneer"
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
 
 /datum/outfit/job/gezena/hos
 	name = "PGF - Marine Sergeant"

@@ -71,14 +71,6 @@
 	name = "asteroid snow baseturf editor"
 	baseturf = /turf/open/floor/plating/asteroid/snow
 
-/obj/effect/baseturf_helper/beach/sand
-	name = "beach sand baseturf editor"
-	baseturf = /turf/open/floor/plating/beach/sand
-
-/obj/effect/baseturf_helper/beach/water
-	name = "water baseturf editor"
-	baseturf = /turf/open/floor/plating/beach/water
-
 /obj/effect/baseturf_helper/lava
 	name = "lava baseturf editor"
 	baseturf = /turf/open/lava/smooth

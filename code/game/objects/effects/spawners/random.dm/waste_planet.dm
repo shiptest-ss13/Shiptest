@@ -62,7 +62,7 @@
 /obj/effect/spawner/random/waste/atmos_can/rare
 	loot = list(
 		/obj/machinery/portable_atmospherics/canister/tritium = 3,
-		/obj/machinery/portable_atmospherics/canister/pluoxium = 3
+		/obj/machinery/portable_atmospherics/canister/methane = 3
 	)
 
 /obj/effect/spawner/random/waste/salvageable

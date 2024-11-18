@@ -63,6 +63,9 @@
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser
 
+/obj/projectile/beam/laser/heavylaser/assault
+	armour_penetration = 20
+
 /obj/projectile/beam/laser/heavylaser/sharplite
 	speed = 0.4
 
