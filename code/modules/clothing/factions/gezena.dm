@@ -109,7 +109,7 @@
 	. = ..()
 	if(!user.has_language(/datum/language/draconic))
 		return
-	. += "<span class='notice'>Translated literally, this is named 'Raksha-plating' a Kalixcian word for 'protection of the heart'.</span>"
+	. += span_notice("Translated literally, this is named 'Raksha-plating' a Kalixcian word for 'protection of the heart'.")
 
 /obj/item/clothing/suit/armor/gezena/marine/navy
 	desc = "The standard issue armor vest of the PGF, being covered with a laser protective coating in exchange for minor ballistic protection. This one is in navy colors."
@@ -139,7 +139,7 @@
 	. = ..()
 	if(!user.has_language(/datum/language/draconic))
 		return
-	. += "<span class='notice'>Translated literally, this is named 'Rakalla-suit' a Kalixcian word for 'protection among the stars'.</span>"
+	. += span_notice("Translated literally, this is named 'Rakalla-suit' a Kalixcian word for 'protection among the stars'.")
 
 /obj/item/clothing/head/helmet/space/gezena
 	name = "\improper PGFN normal suit helmet"
@@ -158,7 +158,7 @@
 	. = ..()
 	if(!user.has_language(/datum/language/draconic))
 		return
-	. += "<span class='notice'>Translated literally, this is named 'Rakalla-helm' a Kalixcian word for 'protection among the stars'.</span>"
+	. += span_notice("Translated literally, this is named 'Rakalla-helm' a Kalixcian word for 'protection among the stars'.")
 
 /obj/item/clothing/suit/space/gezena/flightsuit
 	name = "\improper PGFN flight suit"
@@ -416,7 +416,7 @@
 	. = ..()
 	if(!user.has_language(/datum/language/draconic))
 		return
-	. += "<span class='notice'>Translated literally, this is named 'Betzu-il', meaning 'sun-blocker.'</span>"
+	. += span_notice("Translated literally, this is named 'Betzu-il', meaning 'sun-blocker.'")
 
 /obj/item/clothing/head/gezena/flap/marine
 	name = "\improper PGFMC flap cap"
@@ -469,7 +469,7 @@
 	. = ..()
 	if(!user.has_language(/datum/language/draconic))
 		return
-	. += "<span class='notice'>Translated literally, this is named 'Raksha-helm' a Kalixcian word for 'protection of the heart'.</span>"
+	. += span_notice("Translated literally, this is named 'Raksha-helm' a Kalixcian word for 'protection of the heart'.")
 
 /obj/item/clothing/head/helmet/gezena/navy
 	name = "\improper Type R-11 Helmet"
@@ -499,6 +499,7 @@
 	if(prob(5))
 		easter_egg = TRUE
 
+//MY ASS. IS. HEAVY. FREEMAN! MEDIC!
 /obj/item/clothing/mask/gas/gezena/examine(mob/user)
 	. = ..()
 	if(easter_egg)
@@ -520,7 +521,7 @@
 	. = ..()
 	if(!user.has_language(/datum/language/draconic))
 		return
-	. += "<span class='notice'>Translated literally, this is named 'ihuz-irra', meaning 'sure-grip'.</span>"
+	. += span_notice("Translated literally, this is named 'ihuz-irra', meaning 'sure-grip'.")
 
 //Boots
 
@@ -551,7 +552,7 @@
 	. = ..()
 	if(!user.has_language(/datum/language/draconic))
 		return
-	. += "<span class='notice'>Translated literally, this is named 'Iho-Usks', meaning 'gear-holder'.</span>"
+	. += span_notice("Translated literally, this is named 'Iho-Usks', meaning 'gear-holder'.")
 
 /obj/item/storage/belt/military/gezena/bg16/PopulateContents()
 	. = ..()
@@ -606,7 +607,7 @@
 	. = ..()
 	if(!user.has_language(/datum/language/draconic))
 		return
-	. += "<span class='notice'>Translated literally, 'Aziulhauz' means 'rank-cape'.</span>"
+	. += span_notice("Translated literally, 'Aziulhauz' means 'rank-cape'.")
 
 /obj/item/clothing/neck/cloak/gezena/lead
 	name = "\improper sergeant's aziulhauz rank cape"
