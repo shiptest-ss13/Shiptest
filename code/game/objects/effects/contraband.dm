@@ -1065,7 +1065,12 @@
 	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
 	icon_state = "poster-rilena_timeline"
 
-//PGF Mission Accomplished
+//PGF - Mission Accomplished!!
+/obj/structure/sign/poster/pgf
+	poster_item_name = "pgf poster"
+	poster_item_desc = "This poster comes with its own automatic adhesive mechanism, for easy pinning to any vertical surface. Its patrotic themes have marked it as nice decorations on PGF vessels."
+	poster_item_icon_state = "rolled_legit"
+
 /obj/structure/sign/poster/pgf/mission_accomplished_1
 	name = "MISSION ACCOMPLISHED! 1"
 	desc = "MISSION ACCOMPLISHED SOLDIER!"
@@ -1148,6 +1153,7 @@
 	icon_state = "random_pgf"
 	never_random = TRUE
 	random_basetype = /obj/structure/sign/poster/pgf
+	random_type = POSTER_SUBTYPES
 
 /obj/structure/sign/poster/pgf/enlist_marine
 	name = "Enlist - PGFM"
