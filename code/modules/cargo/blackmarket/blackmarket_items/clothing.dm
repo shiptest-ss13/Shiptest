@@ -92,20 +92,20 @@
 	return B
 
 /datum/blackmarket_item/clothing/frontiersmen_armor_set
-	name = "X-11 Bulletproof Armor Set"
-	desc = "We got a good deal on some extra bulletproof armor from a Frontiersmen Quartermaster, and we're passing those savings onto you!"
+	name = "X-11 Armor Set"
+	desc = "We got a good deal on some extra armor from a Frontiersmen Quartermaster, and we're passing those savings onto you!"
 	item = /obj/item/storage/box
 
-	price_min = 1000
-	price_max = 1750
+	price_min = 500
+	price_max = 1250
 	stock_max = 3
 	availability_prob = 50
 
 /datum/blackmarket_item/clothing/frontiersmen_armor_set/spawn_item(loc)
 	var/obj/item/storage/box/B = ..()
-	B.name = "Bulletproof Armor Set Box"
+	B.name = "Armor Set Box"
 	B.desc = "A beat up looking box with some armor inside."
-	new /obj/item/clothing/suit/armor/vest/bulletproof/frontier(B)
+	new /obj/item/clothing/suit/armor/vest/frontier(B)
 	new /obj/item/clothing/head/helmet/bulletproof/x11/frontier(B)
 	return B
 

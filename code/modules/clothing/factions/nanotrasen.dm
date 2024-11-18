@@ -163,6 +163,7 @@
 	desc = "A thick fluid-repelling smock rendered in what is unmistakeably Nanotrasen Blue. The tag on the inside declares it property of Nanotrasen, Inc."
 	icon_state = "med_smock"
 	item_state = "bluecloth"
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/suit/nanotrasen/suitjacket
 	name = "fancy black suit jacket"

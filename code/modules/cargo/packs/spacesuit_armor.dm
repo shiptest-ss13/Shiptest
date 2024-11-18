@@ -24,7 +24,7 @@
 
 /datum/supply_pack/spacesuit_armor/mining_hardsuits_indie
 	name = "Mining Hardsuit Crate"
-	desc = "One independent branded mining hardsuit for when explorer suits just dont cut it."
+	desc = "One independent-manufactured mining hardsuit, for when explorer suits just dont cut it."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/independent)
 	crate_name = "mining hardsuit crate"
@@ -134,4 +134,22 @@
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/laserproof)
 	crate_name = "reflector vest crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+
+/datum/supply_pack/spacesuit_armor/marine_armor
+	name = "Tactical Armor Crate"
+	desc = "One set of well-rounded, tactical body armor. The set includes a helmet and vest."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/armor/vest/marine,
+					/obj/item/clothing/head/helmet/marine)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+
+/datum/supply_pack/spacesuit_armor/medium_marine_armor
+	name = "Medium Tactical Armor Crate"
+	desc = "One set of well-rounded medium tactical body armor. The set includes a helmet and vest."
+	cost = 2000
+	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium,
+					/obj/item/clothing/head/helmet/marine)
+	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma

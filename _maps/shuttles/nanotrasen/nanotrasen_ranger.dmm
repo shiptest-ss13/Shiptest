@@ -1000,9 +1000,7 @@
 /area/ship/crew/specialized/engineering)
 "hF" = (
 /obj/machinery/light/dim/directional/north,
-/obj/structure/closet/secure_closet/armorycage{
-	req_access = list(1)
-	},
+/obj/structure/closet/secure_closet/armorycage,
 /obj/effect/turf_decal/industrial/fire,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
@@ -6128,9 +6126,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Rn" = (
-/obj/structure/closet/secure_closet/armorycage{
-	req_access = list(1)
-	},
+/obj/structure/closet/secure_closet/armorycage,
 /obj/effect/turf_decal/industrial/fire,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
@@ -6173,8 +6169,6 @@
 	pixel_x = 5;
 	pixel_y = -11
 	},
-/obj/item/clothing/mask/gas/vigilitas,
-/obj/item/clothing/mask/gas/vigilitas,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "Ro" = (
