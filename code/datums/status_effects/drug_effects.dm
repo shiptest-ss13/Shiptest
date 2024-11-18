@@ -3,14 +3,15 @@
 	duration = 10 SECONDS
 	alert_type = /atom/movable/screen/alert/status_effect/stoned
 	status_type = STATUS_EFFECT_REFRESH
-	var/original_eye_color
+	var/old_sclera_color
 
 /datum/status_effect/stoned/on_apply()
 	if(!ishuman(owner))
 		CRASH("[type] status effect added to non-human owner: [owner ? owner.type : "null owner"]")
 	var/mob/living/carbon/human/human_owner = owner
+	var/old_sclera_color = human_owner.sclera_color
 	human_owner.add_movespeed_modifier(/datum/movespeed_modifier/reagent/cannabis)
-	human_owner.eye_color = COLOR_SOFT_RED
+	human_owner.sclera_color = COLOR_MOSTLY_PURE_RED
 	human_owner.update_body() //updates eye color
 	ADD_TRAIT(human_owner, TRAIT_BLOODSHOT_EYES, type)
 	ADD_TRAIT(human_owner, TRAIT_CLUMSY, type)
@@ -23,7 +24,7 @@
 		stack_trace("[type] status effect being removed from non-human owner: [owner ? owner.type : "null owner"]")
 	var/mob/living/carbon/human/human_owner = owner
 	human_owner.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cannabis)
-	human_owner.eye_color = initial(human_owner.eye_color)
+	human_owner.sclera_color = old_sclera_color
 	human_owner.update_body()
 	REMOVE_TRAIT(human_owner, TRAIT_BLOODSHOT_EYES, type)
 	REMOVE_TRAIT(human_owner, TRAIT_CLUMSY, type)

@@ -2,6 +2,10 @@
 	mood_change = 6
 	description = span_nicegreen("Woooow duudeeeeee...I'm tripping baaalls...")
 
+/datum/mood_event/stoned
+	mood_change = 6
+	description = span_nicegreen("I'm sooooo stooooooooooooned...")
+
 /datum/mood_event/smoked
 	description = span_nicegreen("I have had a smoke recently.")
 	mood_change = 1

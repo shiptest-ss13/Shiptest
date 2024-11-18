@@ -454,7 +454,6 @@
 	description = "A psychoactive drug from the Cannabis plant used for recreational purposes."
 	color = "#059033"
 	overdose_threshold = INFINITY
-	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 
 /datum/reagent/drug/cannabis/on_mob_life(mob/living/carbon/M)
@@ -472,25 +471,27 @@
 		else
 			var/eepy_message = pick("Oh stars you're sleepy", "Your eyelids feel heavy.", "You could use a power nap.", "It'd be nice to lay down a bit....")
 			to_chat(M, span_notice("[eepy_message]"))
-	if(prob(20)) && M.buckled && M.body_position != LYING_DOWN && !M.IsParalyzed()
+	if(prob(20) && M.buckled && M.body_position != LYING_DOWN && !M.IsParalyzed())
 		to_chat(M, span_warning("It's too comfy to move..."))
 		M.Paralyze(10 SECONDS)
 	return ..()
 
-/datum/reagent/drug/cannabis/puppygirl
+/datum/reagent/drug/cannabis/puppygirl //the coder's poorly disguised fetish
 	name = "Puppygirl weed"
-	desc = "Get ready for a trip to a dimension few experience."
+	description = "Get ready for a trip to a dimension few experience."
 
 /datum/reagent/drug/cannabis/puppygirl/on_mob_metabolize(mob/living/L)
 	if(!L.getorgan(/obj/item/organ/ears/dog))
-		visible_message("Big floppy puppy ears sprout out from [L]'s head!", "Dog ears sprout from your head!")
-		var/obj/item/organ/ears/dog/newears = new
-		newears.Insert(L, drop_if_replaced = FALSE)
+		L.visible_message("Big floppy puppy ears sprout out from [L]'s head!", "Dog ears sprout from your head!")
+		var/obj/item/organ/ears/dog/new_ears = new
+		new_ears.Insert(L, drop_if_replaced = FALSE)
 	if(!L.getorgan(/obj/item/organ/tail/dog))
-		visible_message("A furry tail grows from [L]'s backside!", "A dog tail grows from your spine!")
+		L.visible_message("A furry tail grows from [L]'s backside!", "A dog tail grows from your spine!")
+		var/obj/item/organ/tail/dog/new_tail = new
+		new_tail.Insert(L, drop_if_replaced = FALSE)
 	..()
 
-/datum/reagent/drug/cannabis/on_mob_life(mob/living/carbon/L)
+/datum/reagent/drug/cannabis/puppygirl/on_mob_life(mob/living/carbon/L)
 	. = ..()
 	if(prob(25))
-		M.manual_emote("barks!")
+		L.manual_emote("barks!")
