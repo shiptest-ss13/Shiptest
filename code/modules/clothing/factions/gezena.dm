@@ -436,6 +436,12 @@
 	icon_state = "medicflap"
 	item_state = "whitecloth"
 
+/obj/item/clothing/head/gezena/flap/captain
+	name = "\improper PGFN captain flap Cap"
+	desc = "A flap cap intended to be used by navy personnel for disembarking in arid environments. More often worn for style for captains rather than being seriously used for offship expeditions."
+	icon_state = "capflap"
+	item_state = "bluecloth"
+
 /obj/item/clothing/head/gezena/campaign_marinelead
 	name = "\improper PGFMC commander campaign hat"
 	desc = "A campaign hat used by PGFMC commanders. For yelling at clueless marines in style."
