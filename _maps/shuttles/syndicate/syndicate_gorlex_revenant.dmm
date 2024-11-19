@@ -106,6 +106,14 @@
 /obj/item/clothing/shoes/jackboots,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
+"bX" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/machinery/door/poddoor{
+	id = "tachyonbridge"
+	},
+/turf/open/floor/plating/ship,
+/area/ship/bridge)
 "cc" = (
 /obj/effect/turf_decal/road/line/opaque/black{
 	dir = 1
@@ -204,7 +212,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/west,
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "dw" = (
 /obj/machinery/power/terminal{
@@ -213,8 +221,12 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/starboard)
+"dA" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/ship,
+/area/ship/engineering/engines/port)
 "dC" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -352,7 +364,7 @@
 "fN" = (
 /obj/structure/window/plasma/reinforced/fulltile,
 /obj/structure/grille,
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/cargo)
 "fP" = (
 /obj/structure/cable{
@@ -388,7 +400,7 @@
 	dir = 4
 	},
 /obj/machinery/pipedispenser,
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "gq" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -434,15 +446,15 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/item/stack/sheet/mineral/uranium/twenty,
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "gV" = (
-/obj/machinery/power/smes,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plating,
+/obj/machinery/power/smes/engineering,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "ha" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -473,7 +485,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/starboard)
 "hz" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4,
@@ -500,8 +512,12 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
+"hH" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating/ship,
+/area/ship/engineering/engines/starboard)
 "ia" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering/engines/starboard)
@@ -538,7 +554,7 @@
 	piping_layer = 4;
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "ip" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
@@ -547,7 +563,8 @@
 /obj/machinery/button/shieldwallgen{
 	pixel_x = 8;
 	pixel_y = 21;
-	id = "tachyonholo"
+	id = "tachyonholo";
+	name = "Cargo Field"
 	},
 /obj/structure/closet/crate/engineering,
 /obj/item/stack/sheet/metal/twenty,
@@ -555,7 +572,8 @@
 /obj/machinery/button/door{
 	id = "tachyoncargo";
 	pixel_y = 22;
-	pixel_x = -4
+	pixel_x = -4;
+	name = "Cargo Shutters"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -567,7 +585,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/port)
 "is" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
@@ -793,11 +811,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "lK" = (
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/starboard)
 "lQ" = (
 /obj/structure/table/reinforced,
@@ -904,9 +921,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/miskilamo_big/five{
-	color = "#730622"
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "mo" = (
@@ -1001,13 +1015,13 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/port_gen/pacman/super,
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "ng" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow,
 /obj/structure/cable/yellow,
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "nh" = (
 /obj/machinery/power/apc/auto_name/directional/south,
@@ -1126,7 +1140,8 @@
 /obj/machinery/button/door{
 	id = "tachyonlock";
 	pixel_x = -22;
-	dir = 4
+	dir = 4;
+	name = "Airlock Shutters"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen)
@@ -1238,7 +1253,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "tachyonengineS"
+	},
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/starboard)
 "pg" = (
 /obj/effect/turf_decal/road/line/opaque/black{
@@ -1353,6 +1372,9 @@
 "qe" = (
 /obj/structure/tank_dispenser/oxygen,
 /obj/effect/turf_decal/box/white,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "qt" = (
@@ -1372,6 +1394,9 @@
 /area/ship/crew/cryo)
 "qN" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen)
 "rj" = (
@@ -1405,7 +1430,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/port)
 "rA" = (
 /obj/effect/turf_decal/road/line/opaque/black,
@@ -1420,6 +1445,10 @@
 	},
 /obj/machinery/door/airlock/external/glass{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "tachyonlock"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/canteen)
@@ -1446,7 +1475,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "rP" = (
 /obj/structure/cable{
@@ -1589,6 +1618,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "tD" = (
@@ -1601,7 +1631,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/port)
 "tQ" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4,
@@ -1704,7 +1734,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "tachyonengineP"
+	},
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/port)
 "vW" = (
 /obj/machinery/door/firedoor/border_only{
@@ -1727,9 +1761,6 @@
 "wc" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 6
-	},
-/obj/effect/turf_decal/miskilamo_big/one{
-	color = "#730622"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -1807,7 +1838,7 @@
 "wP" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/fulltile,
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/cargo)
 "wQ" = (
 /obj/structure/catwalk,
@@ -1874,7 +1905,7 @@
 /area/ship/crew/cryo)
 "yl" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer4,
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "yo" = (
 /obj/structure/chair/plastic,
@@ -1886,6 +1917,9 @@
 "yu" = (
 /obj/machinery/autolathe,
 /obj/effect/turf_decal/box/white,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "yW" = (
@@ -1951,7 +1985,7 @@
 "zY" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/fulltile,
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/hallway/central)
 "Aa" = (
 /obj/effect/turf_decal/road/line/opaque/black{
@@ -1975,6 +2009,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
 	dir = 4
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "Am" = (
@@ -2000,7 +2035,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "AB" = (
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "AC" = (
 /obj/structure/cable{
@@ -2158,7 +2193,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "tachyonengineS"
+	},
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/starboard)
 "Cl" = (
 /obj/structure/cable{
@@ -2192,7 +2231,7 @@
 	dir = 10
 	},
 /obj/machinery/airalarm/directional/north,
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "Cp" = (
 /obj/machinery/firealarm/directional/east,
@@ -2328,7 +2367,8 @@
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -22;
-	id = "tachyonengi"
+	id = "tachyonengi";
+	name = "Engineering Shutters"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -2374,7 +2414,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/port)
 "Ga" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -2386,7 +2426,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/starboard)
 "Gl" = (
 /obj/effect/turf_decal/road/line/opaque/black{
@@ -2431,11 +2471,14 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/port)
 "GO" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/box/white,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "GS" = (
@@ -2445,7 +2488,7 @@
 	dir = 4;
 	id = "tachyonlock"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/crew/canteen)
 "Hu" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2483,11 +2526,11 @@
 /area/ship/cargo)
 "HC" = (
 /obj/structure/table/chem,
-/obj/item/cutting_board,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/sink/chem,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "HN" = (
@@ -2596,6 +2639,12 @@
 	color = "#FFFFFF"
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/button/door{
+	id = "tachyonengineS";
+	pixel_x = -22;
+	dir = 4;
+	name = "Engine Shutters"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "Ju" = (
@@ -2727,6 +2776,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/reagent_dispensers/servingdish,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "LL" = (
@@ -2738,13 +2788,23 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"LT" = (
+/obj/structure/table/chem,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/obj/item/cutting_board,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen)
 "Mn" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "tachyonengineP"
+	},
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/port)
 "Mr" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
@@ -2835,7 +2895,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/starboard)
 "NR" = (
 /obj/machinery/airalarm/directional/north,
@@ -2915,12 +2975,18 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
 	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen)
 "Pj" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/box/white,
 /obj/machinery/light/directional/west,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Pn" = (
@@ -3035,7 +3101,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "QV" = (
 /obj/machinery/door/firedoor/border_only{
@@ -3047,7 +3113,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "QY" = (
@@ -3078,7 +3144,10 @@
 "Rm" = (
 /obj/structure/window/plasma/reinforced/fulltile,
 /obj/structure/grille,
-/turf/open/floor/plating,
+/obj/machinery/door/poddoor/preopen{
+	id = "tachyonview"
+	},
+/turf/open/floor/plating/ship,
 /area/ship/bridge)
 "Rn" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
@@ -3165,7 +3234,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/starboard)
 "SN" = (
 /obj/structure/cable{
@@ -3182,11 +3251,13 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "SV" = (
-/obj/structure/table/chem,
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
-/obj/structure/reagent_dispensers/servingdish,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/canteen)
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = "tachyonbridge"
+	},
+/turf/open/floor/plating/ship,
+/area/ship/bridge)
 "Ta" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/cargo)
@@ -3217,7 +3288,7 @@
 	dir = 4;
 	id = "tachyonbridge"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/bridge)
 "TO" = (
 /obj/structure/chair/plastic{
@@ -3240,7 +3311,13 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Uv" = (
-/turf/open/floor/plating,
+/obj/machinery/button/door{
+	id = "tachyonengineP";
+	pixel_x = -22;
+	dir = 4;
+	name = "Engine Shutters"
+	},
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/port)
 "Uz" = (
 /obj/machinery/firealarm/directional/north,
@@ -3284,7 +3361,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/starboard)
 "Va" = (
 /obj/structure/closet/secure_closet/empty/warden,
@@ -3363,7 +3440,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering/engines/port)
 "VZ" = (
 /obj/structure/cable{
@@ -3439,14 +3516,20 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 4
 	},
-/turf/open/floor/plasteel/white,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "XF" = (
 /obj/machinery/vending/cigarette,
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 4
 	},
-/turf/open/floor/plasteel/white,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "Yk" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
@@ -3465,7 +3548,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/ship,
 /area/ship/engineering)
 "YG" = (
 /obj/structure/closet/wall/red/directional/north,
@@ -3563,7 +3646,15 @@
 	},
 /obj/machinery/button/door{
 	id = "tachyonbridge";
-	pixel_y = 22
+	pixel_y = 22;
+	pixel_x = 6;
+	name = "Bridge Windows"
+	},
+/obj/machinery/button/door{
+	id = "tachyonview";
+	pixel_y = 22;
+	pixel_x = -6;
+	name = "Privacy Lock"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -3766,7 +3857,7 @@ ia
 "}
 (8,1,1) = {"
 bJ
-Uv
+dA
 FX
 ir
 vB
@@ -3788,7 +3879,7 @@ ia
 cl
 Ga
 SD
-lK
+hH
 ia
 "}
 (9,1,1) = {"
@@ -4015,7 +4106,7 @@ ur
 iz
 Tn
 tD
-SV
+Sf
 cc
 uz
 HY
@@ -4042,7 +4133,7 @@ Wq
 iz
 pA
 oz
-Sf
+LT
 uj
 pl
 wz
@@ -4328,7 +4419,7 @@ oO
 df
 wx
 KG
-fw
+SV
 ur
 "}
 (29,1,1) = {"
@@ -4355,7 +4446,7 @@ Cc
 df
 wx
 Um
-fw
+SV
 ur
 "}
 (30,1,1) = {"
@@ -4409,7 +4500,7 @@ mm
 gz
 wc
 lR
-fw
+bX
 ur
 "}
 (32,1,1) = {"
@@ -4436,7 +4527,7 @@ bd
 oq
 Gl
 jV
-fw
+SV
 ur
 "}
 (33,1,1) = {"
