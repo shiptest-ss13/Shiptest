@@ -4,7 +4,7 @@
 	icon_state = "syndicate"
 	item_state = "syndicate"
 	desc = "An advanced, lightweight space helmet made of durable composites. Almost matches integrated hardsuit helmets for protection. Almost."
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75)
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/space/syndicate
@@ -13,8 +13,11 @@
 	item_state = "space_suit_syndicate"
 	desc = "A space suit made of high-grade ballistic fabric with integrated armor plates. More compact than a normal space suit while almost matching powered hardsuits for protection. Almost."
 	w_class = WEIGHT_CLASS_NORMAL
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75)
+
+/obj/item/clothing/suit/space/syndicate/Initialize()
+	. = ..()
+	allowed = GLOB.security_hardsuit_allowed
 
 //Green syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/green
@@ -104,6 +107,7 @@
 	name = "black space helmet"
 	icon_state = "syndicate-helm-black-med"
 	item_state = "syndicate-helm-black"
+
 
 /obj/item/clothing/suit/space/syndicate/black/med
 	name = "green space suit"

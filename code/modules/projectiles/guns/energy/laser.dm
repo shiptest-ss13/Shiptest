@@ -212,10 +212,11 @@
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/laser/hitscanpistol/examine_more(mob/user)
+	. = ..()
 	if(in_range(src, user) || isobserver(user))
-		. = list("<span class='notice'>You examine [src] closer. Under the grip is a small inscription: \"NT CN SVALINN 462\".</span>")
+		. += "<span class='notice'>You examine [src] closer. Under the grip is a small inscription: \"NT CN SVALINN 462\".</span>"
 	else
-		. = list("<span class='warning'>You try to examine [src] closer, but you're too far away.</span>")
+		. += "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
 
 /obj/item/gun/energy/laser/e10
 	name = "E-10 laser pistol"
