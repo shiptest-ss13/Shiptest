@@ -388,7 +388,7 @@
 	id = "ap9mm"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000, /datum/material/uranium = 1000)
-	build_path = /obj/item/storage/box/ammo/c9mm/ap
+	build_path = /obj/item/storage/box/ammo/c9mm_ap
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
