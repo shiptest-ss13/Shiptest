@@ -263,7 +263,7 @@
 		/obj/effect/gibspawner/generic/animal
 	))
 	visible_message(span_warning("[src] erupts into a fountain of gore and viserca!"))
-	for(var/i in range(0,4))
+	for(var/i in 1 to 4)
 		new mess(src.loc)
 	..()
 
