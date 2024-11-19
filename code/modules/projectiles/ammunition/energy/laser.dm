@@ -6,7 +6,7 @@
 	projectile_type = /obj/projectile/beam/laser/slug
 	select_name = "slug"
 	delay = 0.9 SECONDS
-	fire_sound = 'sound/weapons/gun/laser/laser_slug.ogg'
+	fire_sound = 'sound/weapons/gun/laser/cs-fire.ogg'
 
 /obj/item/ammo_casing/energy/laser/eoehoma
 	projectile_type = /obj/projectile/beam/laser/eoehoma
