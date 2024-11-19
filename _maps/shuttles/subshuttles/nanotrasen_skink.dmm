@@ -177,6 +177,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "D" = (
@@ -210,7 +211,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "K" = (
