@@ -94,7 +94,7 @@
 
 /obj/projectile/bullet/a357
 	name = ".357 bullet"
-	damage = 30 //shiptest nerf
+	damage = 30
 
 // admin only really, for ocelot memes
 /obj/projectile/bullet/a357/match
@@ -111,7 +111,7 @@
 /obj/projectile/bullet/a357/hp
 	name = ".357 hollow point bullet"
 	damage = 45
-	armour_penetration = -50
+	armour_penetration = -20
 	ricochet_chance = 0 //mushroom on impact, no bounces
 
 // .45-70 Gov't (Hunting Revolver)

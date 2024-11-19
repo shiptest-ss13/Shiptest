@@ -59,6 +59,9 @@
 	base_icon_state = "techfloor"
 	floor_tile = /obj/item/stack/tile/plasteel/tech
 
+/turf/open/floor/plasteel/tech/tcomms
+	initial_gas_mix = TCOMMS_ATMOS
+
 /turf/open/floor/plasteel/tech/airless
 	initial_gas_mix = AIRLESS_ATMOS
 

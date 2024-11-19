@@ -43,7 +43,7 @@
 	l_pocket = /obj/item/pen
 	r_pocket = /obj/item/pda/heads
 
-	backpack_contents = list(/obj/item/stamp/centcom, /obj/item/paper_bin/bundlenatural, /obj/item/hand_labeler)
+	backpack_contents = list(/obj/item/stamp/nanotrasen/central, /obj/item/paper_bin/bundlenatural, /obj/item/hand_labeler)
 
 // /datum/outfit/job/nanotrasen/ert/emergency
 // 	name = "ERT - Vigilitas Emergency Response Officer"

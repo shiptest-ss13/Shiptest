@@ -52,6 +52,16 @@
 		Tools
 */
 
+/datum/supply_pack/medical/painkillers
+	name = "Painkiller Supply Crate"
+	desc = "Contains a supply of painkillers. Great for stopping headaches, feeling broken bones, and screaming people!"
+	cost = 1000
+	contains = list(
+		/obj/item/reagent_containers/glass/bottle/morphine,
+		/obj/item/reagent_containers/glass/bottle/morphine,
+		/obj/item/reagent_containers/glass/bottle/morphine,
+	)
+
 /datum/supply_pack/medical/iv_drip
 	name = "IV Drip Crate"
 	desc = "Contains a single IV drip for administering blood to patients."
@@ -138,29 +148,6 @@
 	for(var/i in 1 to 7)
 		var/item = pick(contains)
 		new item(C)
-
-/datum/supply_pack/medical/virus
-	name = "Virus Crate"
-	desc = "Contains twelve different bottles, containing several viral samples for virology research. Also includes seven beakers and syringes. Balled-up jeans not included."
-	cost = 3500
-	contains = list(/obj/item/reagent_containers/glass/bottle/flu_virion,
-					/obj/item/reagent_containers/glass/bottle/cold,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/fake_gbs,
-					/obj/item/reagent_containers/glass/bottle/magnitis,
-					/obj/item/reagent_containers/glass/bottle/pierrot_throat,
-					/obj/item/reagent_containers/glass/bottle/brainrot,
-					/obj/item/reagent_containers/glass/bottle/anxiety,
-					/obj/item/reagent_containers/glass/bottle/beesease,
-					/obj/item/storage/box/syringes,
-					/obj/item/storage/box/beakers,
-					/obj/item/reagent_containers/glass/bottle/mutagen)
-	crate_name = "virus crate"
-	crate_type = /obj/structure/closet/crate/medical
-	faction = FACTION_SUNS
 
 /datum/supply_pack/medical/salglucanister
 	name = "Heavy-Duty Saline Canister"
