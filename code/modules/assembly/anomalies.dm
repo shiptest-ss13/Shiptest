@@ -93,7 +93,7 @@
 	name = "\improper hallucination anomaly core"
 	desc = "The stabilized core of a hallucination anomaly. It's never entirely there."
 	icon_state = "hallucination_core"
-	grind_results = list(/datum/reagent/drug/space_drugs = 20) //i cannot figure out what to do with this for the life of me
+	grind_results = list(/datum/reagent/toxin/mindbreaker = 20) //LSD orb
 
 ///Heartbeat Anomaly
 /obj/item/assembly/signaler/anomaly/heartbeat
