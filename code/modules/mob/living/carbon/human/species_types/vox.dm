@@ -20,7 +20,6 @@
 	punchdamagelow = 6
 	punchdamagehigh = 12
 	mutanttongue = /obj/item/organ/tongue/vox
-	species_language_holder = /datum/language_holder/vox
 
 	bodytemp_heat_divisor = VOX_BODYTEMP_HEAT_DIVISOR
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR

@@ -17,6 +17,7 @@
 	if(visualsOnly)
 		return
 	H.faction |= list(FACTION_PLAYER_MINUTEMAN)
+	H.grant_language(/datum/language/clip_kalixcian)
 /* 	if(selectable_alt_titles)
 		var/selection = input(H, "Select an alternative name for your role.", "Job Title", alt_title) as null|anything in selectable_alt_titles)
 	if(!selection)
@@ -511,6 +512,8 @@
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
 	duffelbag = /obj/item/storage/backpack/security/clip //to-do: bug rye for clip duffles // rye. rye. give me 20 pound bag of ice //done
+
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1)
 
 /datum/outfit/job/clip/minutemen/grunt/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
