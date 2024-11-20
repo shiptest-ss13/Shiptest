@@ -76,8 +76,8 @@
 	minimum_pressure = ONE_ATMOSPHERE - 30
 	maximum_pressure = ONE_ATMOSPHERE + 100
 
-	minimum_temp = T20C + 1
-	maximum_temp = T20C + 80
+	minimum_temp = T20C - 10
+	maximum_temp = T20C + 30
 
 //sandplanet
 /datum/atmosphere/whitesands
