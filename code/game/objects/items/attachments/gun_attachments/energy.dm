@@ -29,11 +29,11 @@
 
 /obj/item/attachment/gun/energy/e_gun
 	name = "underbarrel energy gun"
-	desc = "A compact underbarrel energy gun. The reduction in size makes it less power effiecent than the standard model."
+	desc = "A compact underbarrel energy gun. The reduction in size makes it less power effiecent per shot than the standard model."
 	weapon_type = /obj/item/gun/energy/e_gun/underbarrel
 
 /obj/item/gun/energy/e_gun/underbarrel
 	name = "underbarrel energy gun"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/underbarrel, /obj/item/ammo_casing/energy/laser/underbarrel)
-	dead_cell = TRUE
+	spawn_no_ammo = TRUE
 

@@ -27,7 +27,10 @@
 	always_chambers = TRUE
 	casing_ejector = TRUE
 	gunslinger_recoil_bonus = 0
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/underbarrel
+	default_ammo_type  = /obj/item/ammo_box/magazine/internal/shot/underbarrel
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/underbarrel,
+	)
 
 /obj/item/attachment/gun/ballistic/shotgun
 	name = "underbarrel shotgun"
@@ -36,12 +39,15 @@
 
 /obj/item/attachment/gun/ballistic/launcher
 	name = "underbarrel 40mm grenade launcher"
-	desc = "A break action, single shot 40mm underbarel grenade launcher. A compact way to deliver a big boom."
+	desc = "A single shot 40mm underbarel grenade launcher. A compact way to deliver a big boom."
 	weapon_type = /obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher
 
 /obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher
 	name = "underbarrel grenade launcher"
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
-	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
+	default_ammo_type  = /obj/item/ammo_box/magazine/internal/grenadelauncher
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/grenadelauncher
+	)
 
 
