@@ -112,3 +112,95 @@
   SomeguyManperson:
   - code_imp: weapons which can be wielded may now have a force of 0 when wielded
       or unwielded
+2024-11-11:
+  Erikafox:
+  - balance: Crusher damage has been slightly increased across the board.
+  SomeguyManperson:
+  - bugfix: guns with magazines can no longer sometimes refuse to accept those magazines
+  - balance: etherbor military and civilian weapon cells are interchangeable between
+      military and civilian arms
+2024-11-12:
+  firebudgy:
+  - balance: Kansatsu has been removed from the player-accessible ship pool.
+2024-11-14:
+  randy10122:
+  - bugfix: fixes a typo in the .45 HP ammo crate's description
+2024-11-15:
+  Anticept:
+  - balance: growth serum now maxes out at 30% growth with 30u and has a smooth sliding
+      scale.
+  Burning02:
+  - balance: Rail lights have been brightened
+  Erikafox:
+  - balance: medium and light ngr turrets swapped ammo. mediums should be more effective
+      now.
+  - rscadd: implements thick railings from code
+  - bugfix: platform dirs
+  - imageadd: platform internal corners
+  - balance: legion cores now slowly build up cloneloss when you use them.
+  - balance: Hivebots now have some armor and real bullets. Please bring guns to waste
+      planets.
+  - code_imp: you can now looc while unconscious/in crit.
+  MarkSuckerberg:
+  - rscdel: Most fishing missions. Now only the cooking one, that takes 1-3 of any
+      fish, has been left.
+  - tweak: The fish cooking mission now pays twice as much as it used to, 500 credits
+      per fish. It's also less likely to appear as a mission.
+  Sadhorizon:
+  - rscadd: Added an inteq survival box.
+  SomeguyManperson:
+  - code_imp: legion virus stage messages now properly display themselves. instead
+      of not doing that.
+  - code_imp: legion infesting people now give them a direct chat message. Say hello
+      to your new friend! They might be sticking around your body longer than you
+      will.
+  generalthrax:
+  - balance: Ramzi mobs now use the rusted-red as a reference item instead of blood-reds
+      to have lower armour.
+2024-11-16:
+  Apogee-dev:
+  - balance: Massively buffed combat exosuit armor
+  - balance: Made repairing exosuits with a welder a do_after
+  - balance: Combat exosuits get less healing from repairs
+  - balance: The Paladin now has higher melee armor and lower bullet armor than the
+      Durand
+  Erikafox:
+  - rscadd: Trickwine fluff has been rewritten
+  - balance: Trickwines have been somewhat nerfed
+  - rscdel: prismwine, forcewine
+  - rscadd: N+S has reported losing contact with one of their rockplanet based mining
+      installations
+  - rscadd: You can now add shelves to crate racks
+  - rscadd: you can now buy marine armor at the outpost
+  - balance: marine armor now has different levels of protection.
+  - bugfix: marine crate path + price
+  PositiveEntropy:
+  - rscadd: Ditigrade sprites for NGR and Hardliner regular and officer jumpsuits.
+  Sadhorizon:
+  - bugfix: E-11 Manufactory ruin is no longer dark.
+  firebudgy:
+  - rscadd: New sprites for hard hats and soft caps for Vox! Flipped states and on/off
+      states included.
+  - bugfix: Black Shorts are now able to fit Vox
+  generalthrax:
+  - balance: Frontiersmen vests now count as normal armour vests and not bulletproof
+  - balance: Frontiersmen simplemobs count this for their armour values
+  - balance: Frontie armour vest in the blackmarket cost decreased
+  - bugfix: 9mm AP spawns with 9mm AP now
+2024-11-17:
+  fighterslam:
+  - rscadd: Various minor fixes & QOL adjustments to the Ranger. Major changes include
+      updating all of the Specialist quarters and a complete re-arrangement of the
+      Medical and Supply areas.
+2024-11-18:
+  Apogee-dev:
+  - rscadd: Replaced NGR Hyena with the NGR Derecho-class salvage ship
+  Erikafox:
+  - rscadd: girlfailing adjective
+  - rscadd: vomiting now removes a random amount of disgust.
+  - balance: vomiting should no longer trigger 12000 times in one minute on that one
+      person. im so sorry
+  firebudgy:
+  - rscadd: Four new hats for your blorbo customization! Find them in loadout. Sponsored
+      by Miskilamo Shipbreaking.
+  - bugfix: Vox Frontiersmen Officers finally stitched up their clothing.
