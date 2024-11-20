@@ -172,8 +172,8 @@ SUBSYSTEM_DEF(mapping)
 
 		shuttle_templates[S.file_name] = S
 
-#define CHECK_STRING_EXISTS(X) if(!istext(data[X])) { log_world("[##X] missing from json!"); continue; }
-#define CHECK_LIST_EXISTS(X) if(!islist(data[X])) { log_world("[##X] missing from json!"); continue; }
+#define CHECK_STRING_EXISTS(X) if(!istext(data[X])) { stack_trace("[##X] missing from json!"); continue; }
+#define CHECK_LIST_EXISTS(X) if(!islist(data[X])) { stack_trace("[##X] missing from json!"); continue; }
 /datum/controller/subsystem/mapping/proc/load_ship_templates()
 	maplist = list()
 	ship_purchase_list = list()
@@ -181,16 +181,16 @@ SUBSYSTEM_DEF(mapping)
 	for(var/filename in filelist)
 		var/file = file("_maps/configs/" + filename)
 		if(!file)
-			log_world("Could not open map config: [filename]")
+			stack_trace("Could not open map config: [filename]")
 			continue
 		file = file2text(file)
 		if(!file)
-			log_world("map config is not text: [filename]")
+			stack_trace("Map config is not text: [filename]")
 			continue
 
 		var/list/data = json_decode(file)
 		if(!data)
-			log_world("map config is not json: [filename]")
+			stack_trace("Map config is not json: [filename]")
 			continue
 
 		CHECK_STRING_EXISTS("map_name")
@@ -204,25 +204,33 @@ SUBSYSTEM_DEF(mapping)
 		else
 			S.short_name = copytext(S.name, 1, 20)
 
+		if(istext(data["faction"]))
+			var/type = text2path(data["faction"])
+			if(!ispath(type, /datum/faction))
+				stack_trace("Invalid faction path: [data["faction"]] on [S.name]'s config! Defaulting to Independent.")
+			else
+				S.faction = locate(type) in SSfactions.factions
+
+		if(!S.faction)
+			S.faction = locate(/datum/faction/independent) in SSfactions.factions
+
+		S.category = S.faction.name
+
 		if(istext(data["prefix"]))
 			S.prefix = data["prefix"]
-
-		if(istext(data["manufacturer"]))
+			if(istext(data["manufacturer"]))
 			S.manufacturer = data["manufacturer"]
 
-		if(istext(data["faction"]))
-			S.faction_path = text2path(data["faction"])
-		if(S.faction_path)
-			S.faction_datum = SSfactions.faction_path_to_datum(S.faction_path)
-			S.faction_name = S.faction_datum.name
-
-		S.category = S.faction_name
+		if(!(S.prefix in SSfactions.faction_prefixes))
+				stack_trace("Unknown faction prefix: [data["prefix"]] on [S.name]'s config!")
+			if(SSfactions.faction_prefixes[S.prefix] != S.faction)
+				stack_trace("Faction prefix mismatch for [S.faction.name]: [data["prefix"]] on [S.name]'s config!")
 
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
 
-		if(isnum(data[ "unique_ship_access" ] && data["unique_ship_access"]))
-			S.unique_ship_access = data[ "unique_ship_access" ]
+		if(isnum(data["unique_ship_access"] && data["unique_ship_access"]))
+			S.unique_ship_access = data["unique_ship_access"]
 
 		if(istext(data["description"]))
 			S.description = data["description"]
@@ -242,7 +250,7 @@ SUBSYSTEM_DEF(mapping)
 			else if(islist(value))
 				var/datum/outfit/job/job_outfit = text2path(value["outfit"])
 				if(isnull(job_outfit))
-					stack_trace("Invalid job outfit! [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
+					stack_trace("Invalid job outfit: [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
 					job_outfit = /datum/outfit/job/assistant
 				job_slot = new /datum/job(job, job_outfit)
 				job_slot.display_order = length(S.job_slots)
@@ -255,6 +263,7 @@ SUBSYSTEM_DEF(mapping)
 				continue
 
 			S.job_slots[job_slot] = slots
+
 		if(isnum(data["limit"]))
 			S.limit = data["limit"]
 

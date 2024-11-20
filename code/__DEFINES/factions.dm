@@ -10,7 +10,7 @@
 #define FACTION_NT "Nanotrasen"
 	#define FACTION_NS_LOGI "N+S Logistics"
 	#define FACTION_VIGILITAS "Vigilitas Interstellar"
-#define FACTION_FRONTIER "Frontiersmen Fleet"
+#define FACTION_FRONTIERSMEN "Frontiersmen Fleet"
 #define FACTION_PGF "Pan-Gezenan Federation"
 #define FACTION_INDEPENDENT "Independent"
 
@@ -26,6 +26,6 @@
 #define PREFIX_NT list("NTSV")
 	#define PREFIX_NS_LOGI list("NSSV")
 	#define PREFIX_VIGILITAS list("VISV")
-#define PREFIX_FRONTIER list("FFV")
+#define PREFIX_FRONTIERSMEN list("FFV")
 #define PREFIX_PGF list("PGF", "PGFMC", "PGFN")
 #define PREFIX_INDEPENDENT list("SV", "IMV", "ISV")
