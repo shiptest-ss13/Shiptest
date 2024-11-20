@@ -45,7 +45,7 @@
 /datum/map_template/shuttle/New(path, rename, cache)
 	if(path)
 		mappath = path
-	else
+	else if(category && file_name)
 		mappath = "_maps/shuttles/[category]/[file_name].dmm"
 	. = ..()
 

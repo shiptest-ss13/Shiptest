@@ -118,6 +118,9 @@
 
 			refresh_engines()
 		ship_account = new(name, source_template.starting_funds)
+	else
+		stack_trace("Attempted to create a controlled ship without a template!")
+		source_template = new(rename = "Overmap Object [length(SSovermap.overmap_objects)]")
 
 #ifdef UNIT_TESTS
 	Rename("[source_template]", TRUE)
