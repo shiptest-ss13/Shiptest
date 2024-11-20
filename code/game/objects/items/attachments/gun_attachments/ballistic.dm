@@ -1,6 +1,7 @@
 /obj/item/attachment/gun/ballistic
 	name = "ballistic underbarrel gun"
 	desc = "A ballistic underbarrel gun. It shoots bullets. Or something."
+	underbarrel_prefix = "bullet_"
 
 /obj/item/attachment/gun/ballistic/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I,/obj/item/ammo_casing) || istype(I, /obj/item/ammo_box))
@@ -35,11 +36,13 @@
 /obj/item/attachment/gun/ballistic/shotgun
 	name = "underbarrel shotgun"
 	desc = "A single shot underbarrel shotgun for warding off anyone who gets too close for comfort."
+	underbarrel_prefix = "sg_"
 	weapon_type = /obj/item/gun/ballistic/shotgun/underbarrel
 
 /obj/item/attachment/gun/ballistic/launcher
 	name = "underbarrel 40mm grenade launcher"
 	desc = "A single shot 40mm underbarel grenade launcher. A compact way to deliver a big boom."
+	underbarrel_prefix = "launcher_"
 	icon_state = "glauncher"
 	weapon_type = /obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher
 

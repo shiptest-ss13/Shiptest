@@ -657,7 +657,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m556_42_hydra,
 	)
-	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "underbarrel grenade launcher")
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto")
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_OTHER)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -787,11 +787,6 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	desc = "Scarborough Arms' premier modular assault rifle platform. This is the basic configuration, optimized for light weight and handiness. A very well-regarded, if expensive and rare, assault rifle. This one has an underslung grenade launcher attached. Chambered in 5.56x42mm CLIP."
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-
-	slot_available = list( //no rail slot
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_SCOPE = 1,
-	)
 	default_attachments = list(/obj/item/attachment/gun/ballistic/launcher)
 
 

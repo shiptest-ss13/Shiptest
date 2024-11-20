@@ -267,6 +267,7 @@
 	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
 	///Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
 	var/list/slot_offsets = list()
+	var/underbarrel_prefix = "" // so the action has the right icon for underbarrel gun
 
 /*
  *  Zooming
@@ -313,7 +314,7 @@
 	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
 	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
 	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
-	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire")
+	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire", FIREMODE_UNDERBARREL = "underbarrel weapon")
 	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
 	var/fire_select_icon_state_prefix = ""
 	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
@@ -1117,7 +1118,10 @@
 	var/current_firemode = our_gun.gun_firemodes[our_gun.firemode_index]
 	//tldr; if we have adjust_fire_select_icon_state_on_safety as true, we append "safety_" to the prefix, otherwise nothing.
 	var/safety_prefix = "[our_gun.adjust_fire_select_icon_state_on_safety ? "[our_gun.safety ? "safety_" : ""]" : ""]"
-	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
+	if(current_firemode == FIREMODE_UNDERBARREL)
+		button_icon_state = "[safety_prefix][our_gun.underbarrel_prefix][current_firemode]"
+	else
+		button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(

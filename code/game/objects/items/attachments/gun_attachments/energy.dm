@@ -1,6 +1,7 @@
 /obj/item/attachment/gun/energy
 	name = "underbarrel e-gun"
 	desc = "Pew pew laser beam. You probably shouldnt be seeing this."
+	underbarrel_prefix = "laser_"
 	icon_state = "energy"
 	weapon_type = /obj/item/gun/energy/e_gun
 	var/automatic_charge_overlays = TRUE
