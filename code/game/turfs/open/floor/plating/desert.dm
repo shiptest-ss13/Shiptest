@@ -21,7 +21,7 @@
 
 	has_footsteps = TRUE
 	footstep_icon_state = "desert"
-	smooth_icon = 'icons/turf/floors/moonsand.dmi'
+	smooth_icon = 'icons/turf/floors/desertsand.dmi'
 
 /turf/open/floor/plating/asteroid/sand/Initialize(mapload, inherited_virtual_z)
 	. = ..()
