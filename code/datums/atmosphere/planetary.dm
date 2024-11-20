@@ -25,7 +25,7 @@
 	// concentration was high enough. this caused a bunch of lag and added nothing to the game whatsoever
 	// thus, the temperatures were reduced to 70-90 C
 	minimum_temp = T20C + 20
-	maximum_temp = T20C + 50
+	maximum_temp = T20C + 40
 
 /datum/atmosphere/icemoon
 	id = ICEMOON_DEFAULT_ATMOS
@@ -77,7 +77,7 @@
 	maximum_pressure = ONE_ATMOSPHERE + 100
 
 	minimum_temp = T20C - 10
-	maximum_temp = T20C + 30
+	maximum_temp = T20C + 20
 
 //sandplanet
 /datum/atmosphere/whitesands
