@@ -30,7 +30,7 @@
 /datum/supply_pack/ammo/c9mmap_ammo_box
 	name = "9mm AP Ammo Box Crate"
 	desc = "Contains a 48-round 9mm box loaded with armor piercing ammo."
-	contains = list(/obj/item/storage/box/ammo/c9mm/ap)
+	contains = list(/obj/item/storage/box/ammo/c9mm_ap)
 	cost = 400
 
 /datum/supply_pack/ammo/c9mmhp_ammo_box
@@ -97,7 +97,7 @@
 
 /datum/supply_pack/ammo/c45hp_ammo_box
 	name = ".45 HP Ammo Box Crate"
-	desc = "Contains a 48-round 10mm box loaded with hollow point ammo, great against unarmored targets."
+	desc = "Contains a 48-round .45 box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/c45_hp)
 	cost = 500
 

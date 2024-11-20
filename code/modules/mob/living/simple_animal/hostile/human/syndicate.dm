@@ -33,7 +33,7 @@
 	maxbodytemp = 1000
 	speed = 1
 	loot = list(/obj/item/clothing/neck/dogtag/ramzi)
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/space/Initialize()
 	. = ..()
@@ -44,7 +44,7 @@
 	icon_state = "syndicate_stormtrooper"
 	icon_living = "syndicate_stormtrooper"
 	name = "Ramzi Clique Assault Trooper"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee //dude with a knife and no shields
 	melee_damage_lower = 15
@@ -66,7 +66,7 @@
 	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/space/Initialize()
 	. = ..()
@@ -80,7 +80,7 @@
 	maxHealth = 250
 	health = 250
 	projectile_deflect_chance = 50
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword
 	melee_damage_lower = 30
@@ -119,7 +119,7 @@
 	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/Initialize()
 	. = ..()
@@ -164,7 +164,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space/Initialize()
 	. = ..()
@@ -175,7 +175,7 @@
 	icon_state = "syndicate_stormtrooper_pistol"
 	icon_living = "syndicate_stormtrooper_pistol"
 	name = "Ramzi Clique Stormtrooper"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg
 	rapid = 2
@@ -192,7 +192,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space/Initialize()
 	. = ..()
@@ -203,7 +203,7 @@
 	icon_state = "syndicate_stormtrooper_smg"
 	icon_living = "syndicate_stormtrooper_smg"
 	name = "Ramzi Clique Stormtrooper"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun
 	rapid = 2
@@ -221,7 +221,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/Initialize()
 	. = ..()
@@ -232,7 +232,7 @@
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"
 	name = "Ramzi Clique Stormtrooper"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 ///////////////Misc////////////
 
