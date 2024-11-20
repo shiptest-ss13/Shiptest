@@ -1063,7 +1063,8 @@
 
 /obj/item/gun/proc/build_firemodes()
 	if(FIREMODE_FULLAUTO in gun_firemodes)
-		AddComponent(/datum/component/automatic_fire, fire_delay)
+		if(!GetComponent(/datum/component/automatic_fire))
+			AddComponent(/datum/component/automatic_fire, fire_delay)
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
 	for(var/datum/action/item_action/toggle_firemode/old_firemode in actions)
 		old_firemode.Destroy()
