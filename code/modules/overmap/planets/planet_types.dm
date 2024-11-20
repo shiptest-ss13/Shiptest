@@ -240,6 +240,7 @@
 
 	ruin_type = RUINTYPE_WATER // minor planets have no ruins
 	mapgen = /datum/map_generator/planet_generator/waterplanet
+	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/water/beach/deep
 	weather_controller_type = /datum/weather_controller/waterplanet
 
@@ -253,6 +254,7 @@
 
 	ruin_type = RUINTYPE_DESERT // minor planets have no ruins
 	mapgen = /datum/map_generator/planet_generator/desert
+	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
 	weather_controller_type = /datum/weather_controller/desert_yellow
 	primary_ores = list(\
@@ -272,6 +274,7 @@
 
 	//ruin_type = RUINTYPE_SHROUDED
 	mapgen = /datum/map_generator/planet_generator/shrouded
+	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/shrouded
 	weather_controller_type = /datum/weather_controller/shrouded
 
@@ -290,6 +293,7 @@
 
 	ruin_type = null // minor 'planets' have no ruins
 	mapgen = /datum/map_generator/planet_generator/moon
+	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
 	weather_controller_type = null
 
@@ -319,6 +323,7 @@
 	icon_state = "hazard"
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/test
+	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/white/lit
 	weather_controller_type = null
 	ruin_type = null
@@ -342,6 +347,7 @@
 	icon_state = "misc"
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/snowball
+	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/lit/snowball
 	weather_controller_type = /datum/weather_controller/snow_planet/severe
 	ruin_type = null
