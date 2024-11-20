@@ -18,7 +18,7 @@
 
 	///The docking port of the linked shuttle. To add a port after creating a controlled ship datum, use [/datum/overmap/ship/controlled/proc/connect_new_shuttle_port].
 	VAR_FINAL/obj/docking_port/mobile/shuttle_port
-	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
+	///The map template the shuttle was spawned from, if it was indeed created from a template.
 	var/datum/map_template/shuttle/source_template
 	///Whether objects on the ship require an ID with ship access granted
 	var/unique_ship_access = FALSE
@@ -71,22 +71,32 @@
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
+	///The ship's real name, without the prefix
+	var/real_name
+
 	///Stations the ship has been blacklisted from landing at, associative station = reason
 	var/list/blacklisted = list()
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
-	var/oldname = name
-	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
+	var/old_name = name
+	var/full_name = "[source_template.prefix] [new_name]"
+	if(!force && !COOLDOWN_FINISHED(src, rename_cooldown) || !..(full_name, force))
 		return FALSE
-	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
-	log_admin("[key_name(src)] has renamed vessel '[oldname]' to '[new_name]'")
-	SSblackbox.record_feedback("text", "ship_renames", 1, new_name)
-	shuttle_port?.name = new_name
-	ship_account.account_holder = new_name
+
+	message_admins("[key_name_admin(usr)] renamed vessel '[old_name]' to '[full_name]'")
+	log_admin("[key_name(src)] has renamed vessel '[old_name]' to '[full_name]'")
+	SSblackbox.record_feedback("text", "ship_renames", 1, full_name)
+
+	real_name = new_name
+	shuttle_port?.name = full_name
+	ship_account.account_holder = full_name
+
 	if(shipkey)
-		shipkey.name = "ship key ([new_name])"
+		shipkey.name = "ship key ([full_name])"
+
 	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
-		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
+		shuttle_area.rename_area("[full_name] [initial(shuttle_area.name)]")
+
 	for(var/datum/weakref/stupid_fax in shuttle_port?.fax_list)
 		var/obj/machinery/fax/our_fax = stupid_fax.resolve()
 		our_fax.fax_name = "[get_area_name(our_fax)] Fax Machine"
@@ -94,7 +104,8 @@
 		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
 		if(shuttle_port?.virtual_z() == null)
 			return TRUE
-		priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port?.virtual_z())
+		priority_announce("The [old_name] has been renamed to the [full_name].", "Docking Announcement", sender_override = full_name, zlevel = shuttle_port?.virtual_z())
+
 	return TRUE
 
 /**
@@ -125,7 +136,7 @@
 #ifdef UNIT_TESTS
 	Rename("[source_template]", TRUE)
 #else
-	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
+	Rename(pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories)), TRUE)
 #endif
 	SSovermap.controlled_ships += src
 
