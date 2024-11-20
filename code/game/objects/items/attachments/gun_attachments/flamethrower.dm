@@ -1,6 +1,7 @@
 /obj/item/attachment/gun/flamethrower
 	name = "underbarrel flamethrower"
 	desc = "A compact underbarrel flamethrower holding up to 20 units of fuel, enough for two sprays."
+	icon_state = "flamethrower"
 	weapon_type = null
 	var/obj/item/flamethrower/underbarrel/attached_flamethrower
 

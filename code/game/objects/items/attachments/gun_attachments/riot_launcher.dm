@@ -1,6 +1,7 @@
 /obj/item/attachment/gun/riot
 	name = "underbarrel riot grenade launcher"
 	desc = "A multipurpose underbarrel riot grenade launcher, typically issued to law enforcement. Loads any tradionally handthrown grenade. Warranty is voided should a lethal grenade be loaded."
+	icon_state = "riotlauncher"
 	weapon_type = /obj/item/gun/grenadelauncher
 
 /obj/item/attachment/gun/riot/attackby(obj/item/I, mob/living/user, params)

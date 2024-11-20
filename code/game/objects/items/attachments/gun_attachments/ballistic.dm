@@ -40,6 +40,7 @@
 /obj/item/attachment/gun/ballistic/launcher
 	name = "underbarrel 40mm grenade launcher"
 	desc = "A single shot 40mm underbarel grenade launcher. A compact way to deliver a big boom."
+	icon_state = "glauncher"
 	weapon_type = /obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher
 
 /obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher

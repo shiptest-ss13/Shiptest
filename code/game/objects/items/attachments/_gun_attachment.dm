@@ -1,13 +1,13 @@
 /obj/item/attachment/gun
 	name = "underbarrel gun"
 	desc = "A gun that goes on the underbarrel of another gun. You probably shouldn't be seeing this."
-	icon_state = "laserpointer"
+	icon_state = "gun"
 
 	attach_features_flags = ATTACH_REMOVABLE_HAND
 	pixel_shift_x = 1
 	pixel_shift_y = 4
 	wield_delay = 0.1 SECONDS
-	var/weapon_type = /obj/item/gun/ballistic/shotgun/automatic/combat
+	var/weapon_type = /obj/item/gun/ballistic/shotgun/automatic
 	var/obj/item/gun/attached_gun
 
 /obj/item/attachment/gun/Initialize()
