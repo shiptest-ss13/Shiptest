@@ -206,13 +206,13 @@ SUBSYSTEM_DEF(mapping)
 
 		if(istext(data["faction"]))
 			var/type = text2path(data["faction"])
-			if(!ispath(type, /datum/faction))
+			if(!(type in SSfactions.factions))
 				stack_trace("Invalid faction path: [data["faction"]] on [S.name]'s config! Defaulting to Independent.")
 			else
-				S.faction = locate(type) in SSfactions.factions
+				S.faction = SSfactions.factions[type]
 
 		if(!S.faction)
-			S.faction = locate(/datum/faction/independent) in SSfactions.factions
+			S.faction = SSfactions.factions[/datum/faction/independent]
 
 		S.category = S.faction.name
 
@@ -223,7 +223,7 @@ SUBSYSTEM_DEF(mapping)
 
 		if(!(S.prefix in SSfactions.faction_prefixes))
 				stack_trace("Unknown faction prefix: [data["prefix"]] on [S.name]'s config!")
-			if(SSfactions.faction_prefixes[S.prefix] != S.faction)
+			if(check_prefix && !(S.prefix in S.faction.prefixes))
 				stack_trace("Faction prefix mismatch for [S.faction.name]: [data["prefix"]] on [S.name]'s config!")
 
 		if(islist(data["namelists"]))

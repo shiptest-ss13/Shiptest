@@ -9,6 +9,8 @@
 	var/list/allowed_factions
 	/// Theme color for this faction, currently only used for the wiki
 	var/color = "#ffffff"
+	/// Whether or not this faction should be able to use prefixes that aren't their own (see: Frontiersmen using Indie prefixes)
+	var/check_prefix = TRUE
 
 /datum/faction/New()
 	if(!short_name)
@@ -100,6 +102,7 @@
 	name = FACTION_FRONTIERSMEN
 	prefixes = PREFIX_FRONTIERSMEN
 	color = "#80735D"
+	check_prefix = TRUE
 
 /datum/faction/pgf
 	name = FACTION_PGF
