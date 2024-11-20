@@ -23,10 +23,6 @@
 	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
 
-/datum/gear/suit/jacket/leather/overcoat
-	display_name = "leather overcoat"
-	path = /obj/item/clothing/suit/jacket/leather/overcoat
-
 /datum/gear/suit/jacket/leather/duster
 	display_name = "leather duster"
 	path = /obj/item/clothing/suit/jacket/leather/duster
@@ -92,6 +88,9 @@
 	path = /obj/item/clothing/suit/toggle/hazard
 
 //Suspenders
+/datum/gear/suit/suspenders
+	subtype_path = /datum/gear/suit/suspenders
+
 /datum/gear/suit/suspenders/red
 	display_name = "suspenders, red"
 	path = /obj/item/clothing/suit/toggle/suspenders
@@ -105,10 +104,6 @@
 	path = /obj/item/clothing/suit/toggle/suspenders/gray
 
 //Misc
-/datum/gear/suit/grponcho
-	display_name = "poncho, green"
-	path = /obj/item/clothing/suit/poncho/green
-
 /datum/gear/suit/overalls
 	display_name = "overalls"
 	path = /obj/item/clothing/suit/apron/overalls

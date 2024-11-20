@@ -103,7 +103,7 @@
 	name = "waistcoat"
 	desc = "For some classy, murderous fun."
 	icon_state = "waistcoat"
-	item_state = "waistcoat"
+	item_state = "det_suit"
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
@@ -119,13 +119,11 @@
 	name = "syndicate maid apron"
 	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
 	icon_state = "maidapronsynd"
-	item_state = "maidapronsynd"
 
 /obj/item/clothing/accessory/maidapron/inteq
 	name = "inteq maid apron"
 	desc = "A 'tactical' apron to protect you from all sorts of spills, from dough to blood!"
 	icon_state = "inteqmaidapron"
-	item_state = "inteqmaidapron"
 
 //////////
 //Medals//
@@ -137,6 +135,7 @@
 	icon_state = "bronze"
 	custom_materials = list(/datum/material/iron=1000)
 	resistance_flags = FIRE_PROOF
+	attachment_slot = null
 	var/medaltype = "medal" //Sprite used for medalbox
 	var/commended = FALSE
 
@@ -407,8 +406,8 @@
 	name = "shoulder holster"
 	desc = "A holster to carry a handgun and ammo. WARNING: Badasses only."
 	icon_state = "holster"
-	item_state = "holster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster
+	attachment_slot = null
 
 /obj/item/clothing/accessory/holster/detective
 	name = "detective's shoulder holster"
@@ -441,6 +440,10 @@
 	chameleon_action.chameleon_type = /obj/item/clothing/accessory
 	chameleon_action.chameleon_name = "Accessory"
 	chameleon_action.initialize_disguises()
+
+/obj/item/clothing/accessory/holster/chameleon/Destroy()
+	QDEL_NULL(chameleon_action)
+	return ..()
 
 /obj/item/clothing/accessory/holster/chameleon/emp_act(severity)
 	. = ..()
@@ -477,7 +480,7 @@
 	icon_state = "rilena_pin"
 	above_suit = FALSE
 	minimize_when_attached = TRUE
-	attachment_slot = CHEST
+	attachment_slot = null
 
 /obj/item/clothing/accessory/rilena_pin/on_uniform_equip(obj/item/clothing/under/U, user)
 	var/mob/living/L = user

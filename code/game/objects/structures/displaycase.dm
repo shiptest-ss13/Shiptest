@@ -185,6 +185,11 @@
 		user.do_attack_animation(src, ATTACK_EFFECT_KICK)
 		take_damage(2)
 
+/obj/structure/displaycase/broken
+	name = "broken display case"
+	desc = "A display case for prized possessions. Or at least it was, until someone smashed it open."
+	broken = 1
+
 /obj/structure/displaycase_chassis
 	anchored = TRUE
 	density = FALSE

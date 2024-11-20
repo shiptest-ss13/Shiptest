@@ -1,24 +1,23 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "VISV",
 	"map_name": "Ranger-class Aid Vessel",
-	"faction": "/datum/faction/nt",
-	"prefix": "NTSV",
+	"faction": "/datum/faction/nt/vigilitas",
 	"namelists": [
 		"NANOTRASEN",
 		"NATURAL_AGGRESSIVE",
 		"WEAPONS"
 	],
 	"map_short_name": "Ranger-class",
-	"description": "A Nanotrasen rescue and aid vessel. Equipped with an AI core, moderate combat gear, and equipment fit for rescue and general aid operations. Nanotrasen often deploys these ships in lieu of a proper ERT to aid their allies in the Frontier without committing their full might. The shipowner is the Lieutenant of a Loss Prevention squad, with a Commissioner to aid with operations on the ship proper.",
+	"description": "A Vigilitas Interstellar aid vessel, manufactured by NT Spaceworks. Equipped with a Nanotrasen AI core, moderate combat gear, and equipment fit for rescue and general aid operations. Vigitilas Interstellar often deploys these ships in lieu of a proper ERT to aid their allies in the Frontier without committing their full might. The shipowner is the Lieutenant of a Loss Prevention squad.",
 	"tags": [
 		"Combat",
-		"Riot",
-		"Robotics",
 		"Medical",
+		"Firefighting",
 		"Telecomms",
 		"Generalist"
 	],
-	"starting_funds": 4000,
+	"starting_funds": 6000,
 	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_ranger.dmm",
 	"limit": 1,
 	"job_slots": {
@@ -37,6 +36,10 @@
 		},
 		"LP Medical Specialist": {
 			"outfit": "/datum/outfit/job/nanotrasen/doctor/lp",
+			"slots": 1
+		},
+		"N+S Logistics Specialist": {
+			"outfit": "/datum/outfit/job/nanotrasen/quartermaster",
 			"slots": 1
 		},
 		"Intern": {

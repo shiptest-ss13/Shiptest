@@ -23,7 +23,7 @@
 	speak_emote = list("creaks")
 	taunt_chance = 30
 
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 	faction = list("mimic")
@@ -224,7 +224,7 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 		TrueGun = G
 		if(istype(G, /obj/item/gun/ballistic))
 			Pewgun = G
-			var/obj/item/ammo_box/magazine/M = Pewgun.mag_type
+			var/obj/item/ammo_box/magazine/M = Pewgun.default_ammo_type
 			casingtype = initial(M.ammo_type)
 		if(istype(G, /obj/item/gun/energy))
 			Zapgun = G
@@ -267,102 +267,5 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 	icon_state = TrueGun.icon_state
 	icon_living = TrueGun.icon_state
 
-/mob/living/simple_animal/hostile/mimic/xenobio
-	health = 210
-	maxHealth = 210
-	attack_verb_continuous = "bites"
-	attack_verb_simple = "bite"
-	speak_emote = list("clatters")
-	gold_core_spawnable = HOSTILE_SPAWN
-	var/opened = FALSE
-	var/open_sound = 'sound/machines/crate_open.ogg'
-	var/close_sound = 'sound/machines/crate_close.ogg'
-	var/max_mob_size = MOB_SIZE_HUMAN
-	var/locked = FALSE
-	var/datum/action/innate/mimic/lock/lock
-
-/mob/living/simple_animal/hostile/mimic/xenobio/Initialize()
-	. = ..()
-	lock = new
-	lock.Grant(src)
-
-/mob/living/simple_animal/hostile/mimic/xenobio/AttackingTarget()
-	if(src == target)
-		toggle_open()
-		return
-	return ..()
-
-/mob/living/simple_animal/hostile/mimic/xenobio/attack_hand(mob/living/carbon/human/M)
-	. = ..()
-	if(M.a_intent != "help")
-		return
-	toggle_open()
-
-/mob/living/simple_animal/hostile/mimic/xenobio/death()
-	var/obj/structure/closet/crate/C = new(get_turf(src))
-	// Put loot in crate
-	for(var/atom/movable/AM as anything in src)
-		AM.forceMove(C)
-	return ..()
-
-/mob/living/simple_animal/hostile/mimic/xenobio/CanAllowThrough(atom/movable/mover, border_dir)
-	. = ..()
-	if(istype(mover, /obj/structure/closet))
-		return FALSE
-
-/mob/living/simple_animal/hostile/mimic/xenobio/proc/toggle_open()
-	if(locked)
-		return
-	if(!opened)
-		density = FALSE
-		opened = TRUE
-		icon_state = "crateopen"
-		playsound(src, open_sound, 50, TRUE)
-		for(var/atom/movable/AM as anything in src)
-			AM.forceMove(loc)
-	else
-		density = TRUE
-		opened = FALSE
-		icon_state = "crate"
-		playsound(src, close_sound, 50, TRUE)
-		for(var/atom/movable/AM in get_turf(src))
-			if(insertion_allowed(AM))
-				AM.forceMove(src)
-
-/mob/living/simple_animal/hostile/mimic/xenobio/proc/insertion_allowed(atom/movable/AM)
-	if(ismob(AM))
-		if(!isliving(AM))  //Don't let ghosts and such get trapped in the beast.
-			return FALSE
-		var/mob/living/L = AM
-		if(L.anchored || L.buckled || L.incorporeal_move || L.has_buckled_mobs())
-			return FALSE
-		if(L.mob_size > MOB_SIZE_TINY) // Tiny mobs are treated as items.
-			if(L.density || L.mob_size > max_mob_size)
-				return FALSE
-		L.stop_pulling()
-
-	else if(istype(AM, /obj/structure/closet))
-		return FALSE
-	else if(isobj(AM))
-		if(AM.anchored || AM.has_buckled_mobs())
-			return FALSE
-		else if(isitem(AM) && !HAS_TRAIT(AM, TRAIT_NODROP))
-			return TRUE
-	else
-		return FALSE
-	return TRUE
-
 /datum/action/innate/mimic
 	background_icon_state = "bg_default"
-
-/datum/action/innate/mimic/lock
-	name = "Lock/Unlock"
-	desc = "Toggle preventing yourself from being opened or closed."
-
-/datum/action/innate/mimic/lock/Activate()
-	var/mob/living/simple_animal/hostile/mimic/xenobio/M = owner
-	M.locked = !M.locked
-	if(!M.locked)
-		to_chat(M, "<span class='warning'>You loosen up, allowing yourself to be opened and closed.</span>")
-	else
-		to_chat(M, "<span class='warning'>You stiffen up, preventing anyone from opening or closing you.</span>")

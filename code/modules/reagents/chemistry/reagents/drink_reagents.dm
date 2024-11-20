@@ -63,7 +63,7 @@
 	M.adjust_blindness(-1)
 	switch(current_cycle)
 		if(1 to 20)
-			//nothing
+			EMPTY_BLOCK_GUARD //nothing
 		if(21 to INFINITY)
 			if(prob(current_cycle-10))
 				M.cure_nearsighted(list(EYE_DAMAGE))

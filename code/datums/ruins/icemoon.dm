@@ -31,3 +31,11 @@
 	description = "Safety records for early Nanotrasen Spaceworks vessels were, and always have been, top of their class. Absolutely no multi-billion credit projects have been painstakingly erased from history. (Citation Needed)"
 	suffix = "icemoon_crashed_holemaker.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_SHELTER)
+
+/datum/map_template/ruin/icemoon/ice_lodge
+	name = "Ice Lodge"
+	id = "ice_lodge"
+	description = "Records show this settlement as belonging to the SRM, but no one has heard from them as of late. I wonder what happened?"
+	suffix = "icemoon_ice_lodge.dmm"
+	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+

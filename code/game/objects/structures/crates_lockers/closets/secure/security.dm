@@ -25,12 +25,10 @@
 	new /obj/item/clothing/head/caphat(src)
 	new /obj/item/clothing/head/caphat/parade(src)
 	new /obj/item/clothing/suit/armor/vest/capcarapace/captunic(src)
-	new /obj/item/clothing/head/crown/fancy(src)
 	new /obj/item/cartridge/captain(src)
 	new /obj/item/storage/box/silver_ids(src)
 	new /obj/item/radio/headset/heads/captain/alt(src)
 	new /obj/item/radio/headset/heads/captain(src)
-	new /obj/item/clothing/glasses/sunglasses/gar/supergar(src)
 	new /obj/item/clothing/gloves/color/captain(src)
 	new /obj/item/storage/belt/sabre(src)
 	new /obj/item/gun/energy/e_gun(src)
@@ -50,7 +48,6 @@
 	new /obj/item/clothing/head/beret/hop(src) //WS edit - More Berets
 	new /obj/item/clothing/under/rank/command/head_of_personnel(src) //WS Edit - Better Command Uniforms
 	new /obj/item/clothing/under/rank/command/head_of_personnel/skirt(src) //WS Edit - Better Command Uniforms
-	new /obj/item/clothing/head/hopcap(src)
 	new /obj/item/cartridge/head_of_personnel(src)
 	new /obj/item/radio/headset/heads/head_of_personnel(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
@@ -92,7 +89,6 @@
 	new /obj/item/clothing/under/rank/security/head_of_security/alt/skirt(src)
 	new /obj/item/clothing/head/HoS(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch(src)
-	new /obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars(src)
 	new /obj/item/clothing/suit/armor/vest/security/hos(src) //WS Edit - Better security jumpsuit sprites
 	new /obj/item/storage/lockbox/medal/sec(src)
 	new /obj/item/megaphone/sec(src)
@@ -135,12 +131,12 @@
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/flashlight/seclite(src)
-	new /obj/item/megaphone/sec(src) //WS edit - Small QoL Brig additions
+	new /obj/item/megaphone/sec(src)
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
-	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
-	new /obj/item/gun/ballistic/automatic/pistol/commander(src) //WS edit - free lethals
-	new /obj/item/gun_voucher //WS edit - gun gun gun gun gun gun gun
+	new /obj/item/gun/ballistic/shotgun/automatic/m11(src)
+	new /obj/item/gun/ballistic/automatic/pistol/commander(src)
+	new /obj/item/gun_voucher
 
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
@@ -259,7 +255,6 @@
 		new /obj/item/paper/fluff/jobs/security/court_judgement (src)
 	new /obj/item/pen (src)
 	new /obj/item/clothing/suit/judgerobe (src)
-	new /obj/item/clothing/head/powdered_wig (src)
 	new /obj/item/storage/briefcase(src)
 
 /obj/structure/closet/secure_closet/contraband/armory
@@ -271,6 +266,11 @@
 	anchored = TRUE
 	name = "Contraband Locker"
 	req_access = list(ACCESS_HEADS)
+
+/obj/structure/closet/secure_closet/armorycage
+	name = "armory locker"
+	req_access = list(ACCESS_ARMORY)
+	icon_state = "shotguncase"
 
 /obj/structure/closet/secure_closet/armory1
 	name = "armory armor locker"
@@ -333,10 +333,10 @@
 	..()
 	for(var/i in 1 to 3)
 		new /obj/item/storage/box/lethalshot(src)
-		new /obj/item/ammo_box/magazine/co9mm(src) //WS edit - begin - better safe than sorry
 		new /obj/item/ammo_box/magazine/co9mm(src)
 		new /obj/item/ammo_box/magazine/co9mm(src)
-		new /obj/item/ammo_box/magazine/co9mm(src) //WS edit - end
+		new /obj/item/ammo_box/magazine/co9mm(src)
+		new /obj/item/ammo_box/magazine/co9mm(src)
 
 /obj/structure/closet/secure_closet/labor_camp_security
 	name = "labor camp security locker"

@@ -188,7 +188,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
 
-	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
+	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/m11
 
 // Engineering //
 
@@ -401,6 +401,15 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	belt = /obj/item/pda
 
+// Janitor
+/datum/outfit/job/nanotrasen/janitor
+	name = "Nanotrasen - Janitor"
+	jobtype = /datum/job/janitor
+	job_icon = "janitor"
+
+	uniform = /obj/item/clothing/under/nanotrasen/janitor
+	head = /obj/item/clothing/head/nanotrasen/cap/janitor
+
 // Lawyer
 /datum/outfit/job/nanotrasen/lawyer
 	name = "Nanotrasen - Lawyer"
@@ -423,8 +432,6 @@
 	id_assignment = "Corporate Representative"
 	job_icon = "nanotrasen"
 
-	uniform = /obj/item/clothing/under/rank/command/head_of_personnel/suit
-	suit = null
 	ears = /obj/item/radio/headset/headset_cent
 	l_hand = /obj/item/clipboard
 	r_pocket = /obj/item/pen/fountain
@@ -495,7 +502,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/lp
 	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/skirt/lp
-	dcoat = /obj/item/clothing/suit/jacket
+	dcoat = /obj/item/clothing/suit/armor/nanotrasen/sec_director
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/command
 

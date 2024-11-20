@@ -173,6 +173,15 @@
 		S.connected = src
 		return S
 
+/datum/wires/proc/attach_assembly_init(obj/item/assembly/S)
+	var/obj/item/assembly/I = new S(holder.loc)
+	for(var/color in colors)
+		if(I && istype(I) && I.attachable && !is_attached(color))
+			assemblies[color] = I
+			I.forceMove(holder)
+			I.connected = src
+			return I
+
 /datum/wires/proc/detach_assembly(color)
 	var/obj/item/assembly/S = get_attached(color)
 	if(S && istype(S))

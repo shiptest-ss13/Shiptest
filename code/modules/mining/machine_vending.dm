@@ -22,7 +22,6 @@
 		/obj/item/mining_scanner = 2,
 		/obj/item/t_scanner/adv_mining_scanner = 2,
 		/obj/item/hivelordstabilizer = 3,
-		/obj/item/clothing/glasses/meson/gar = 2,
 		/obj/item/kinetic_crusher = 1,
 		/obj/item/gun/energy/kinetic_accelerator = 2,
 		/obj/item/pickaxe/silver = 1,

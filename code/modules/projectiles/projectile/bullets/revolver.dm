@@ -69,7 +69,7 @@
 		imp.implant(M)
 
 /obj/projectile/bullet/c38/hotshot //similar to incendiary bullets, but do not leave a flaming trail
-	name = ".38 hot shot bullet"
+	name = ".38 hearth bullet"
 	ricochets_max = 0
 
 /obj/projectile/bullet/c38/hotshot/on_hit(atom/target, blocked = FALSE)
@@ -80,7 +80,7 @@
 		M.IgniteMob()
 
 /obj/projectile/bullet/c38/iceblox //see /obj/projectile/temp for the original code
-	name = ".38 iceblox bullet"
+	name = ".38 chilled bullet"
 	var/temperature = 100
 	ricochets_max = 0
 
@@ -94,7 +94,7 @@
 
 /obj/projectile/bullet/a357
 	name = ".357 bullet"
-	damage = 30 //shiptest nerf
+	damage = 30
 
 // admin only really, for ocelot memes
 /obj/projectile/bullet/a357/match
@@ -111,7 +111,7 @@
 /obj/projectile/bullet/a357/hp
 	name = ".357 hollow point bullet"
 	damage = 45
-	armour_penetration = -50
+	armour_penetration = -20
 	ricochet_chance = 0 //mushroom on impact, no bounces
 
 // .45-70 Gov't (Hunting Revolver)

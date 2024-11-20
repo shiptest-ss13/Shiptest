@@ -19,7 +19,6 @@
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	gold_core_spawnable = NO_SPAWN
 	melee_damage_lower = 0.5
 	melee_damage_upper = 1
 	health = 2500

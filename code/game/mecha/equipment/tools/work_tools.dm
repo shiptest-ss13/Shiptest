@@ -491,6 +491,86 @@
 	return 1
 //WS Edit End - Readded from Smartwire Revert
 
+/obj/item/mecha_parts/mecha_equipment/salvage_saw
+	name = "109-C Salvage Saw"
+	desc = "Equipment for cutting open walls and airlocks."
+	icon_state = "mecha_saw"
+	equip_cooldown = 5
+	energy_drain = 10
+	force = 15
+	var/dam_force = 30
+	harmful = TRUE
+	tool_behaviour = TOOL_DECONSTRUCT
+	toolspeed = 0.5
+	var/datum/effect_system/spark_spread/spark_system
+
+/obj/item/mecha_parts/mecha_equipment/salvage_saw/can_attach(obj/mecha/M as obj)
+	if(..())
+		if(istype(M, /obj/mecha/working) || istype(M, /obj/mecha/combat))
+			return 1
+	return 0
+
+/obj/item/mecha_parts/mecha_equipment/salvage_saw/attach()
+	..()
+	toolspeed = 0.5
+	return
+
+/obj/item/mecha_parts/mecha_equipment/salvage_saw/detach()
+	..()
+	toolspeed = 10 //yeah sure, use a mech tool without a mech. see how far that gets you
+	return ..()
+
+/obj/item/mecha_parts/mecha_equipment/salvage_saw/action(atom/target)
+	if(!action_checks(target))
+		return
+	if(isliving(target))
+		if(chassis.occupant.a_intent == INTENT_HARM)
+			var/mob/living/M = target
+			saw_mob(M, chassis.occupant)
+		return
+	else
+		target.add_overlay(GLOB.cutting_effect)
+		if(target.deconstruct_act(chassis.occupant, src))
+			do_sparks(2, TRUE, src)
+			chassis.stopped--
+		target.cut_overlay(GLOB.cutting_effect)
+		if(!chassis.stopped)
+			occupant_message("[src] finishes cutting, allowing movement again.")
+
+/obj/item/mecha_parts/mecha_equipment/salvage_saw/tool_start_check(user, amount)
+	if(!chassis.stopped)
+		occupant_message("[src] begins cutting, locking in place!")
+	chassis.stopped++
+	return TRUE
+
+/obj/item/mecha_parts/mecha_equipment/salvage_saw/proc/saw_mob(mob/living/target, mob/user)
+	target.visible_message("<span class='danger'>[chassis] is sawing [target] with [src]!</span>", \
+						"<span class='userdanger'>[chassis] is sawing you with [src]!</span>")
+	if(!do_after_cooldown(target))
+		return
+	log_combat(user, target, "sawed", "[name]", "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
+	if(target.stat == DEAD && target.getBruteLoss() >= 400)
+		log_combat(user, target, "gibbed", name)
+		target.gib()
+	else
+		var/obj/item/bodypart/target_part = target.get_bodypart(ran_zone(BODY_ZONE_CHEST))
+		target.apply_damage(15, BRUTE, BODY_ZONE_CHEST, target.run_armor_check(target_part, "melee"))
+
+		//blood splatters
+		var/splatter_dir = get_dir(chassis, target)
+		if(isalien(target))
+			new /obj/effect/temp_visual/dir_setting/bloodsplatter/xenosplatter(target.drop_location(), splatter_dir)
+		else
+			var/splatter_color = null
+			if(iscarbon(target))
+				var/mob/living/carbon/carbon_target = target
+				splatter_color = carbon_target.dna.blood_type.color
+			new /obj/effect/temp_visual/dir_setting/bloodsplatter(target.drop_location(), splatter_dir, splatter_color)
+
+		//organs go everywhere
+		if(target_part && prob(10))
+			target_part.dismember(BRUTE)
+
 //Dunno where else to put this so shrug
 /obj/item/mecha_parts/mecha_equipment/conversion_kit
 	name = "Exosuit Conversion Kit"
@@ -575,3 +655,10 @@
 	icon_state = "clipupgrade"
 	source_mech = list(/obj/mecha/combat/durand)
 	result_mech = /obj/mecha/combat/durand/clip
+
+/obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
+	name = "IRMG Basenji Conversion Kit"
+	desc = "An IRMG-custom conversion kit for a Gygax combat exosuit, to convert it to the specialized Pyrnese breaching exosuit."
+	source_mech = list(/obj/mecha/combat/gygax,/obj/mecha/combat/gygax/dark)
+	result_mech = /obj/mecha/combat/gygax/inteq
+

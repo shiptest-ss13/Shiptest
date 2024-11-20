@@ -34,19 +34,6 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[min(ammo_count(), 8)]"
 
-/obj/item/ammo_box/magazine/co9mm
-	name = "commander pistol magazine (9mm)"
-	desc = "A 10-round double-stack magazine for Commander pistols. These rounds do okay damage, but struggle against armor."
-	icon_state = "commander_mag-10"
-	base_icon_state = "commander_mag"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
-	max_ammo = 10
-	multiple_sprites = AMMO_BOX_PER_BULLET
-
-/obj/item/ammo_box/magazine/co9mm/empty
-	start_empty = TRUE
-
 /obj/item/ammo_box/magazine/pistol556mm
 	name = "Pistole C magazine (5.56mm HITP caseless)"
 	desc = "A 12-round, double-stack magazine for the Pistole C pistol. These rounds do okay damage with average performance against armor."

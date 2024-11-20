@@ -167,16 +167,7 @@
 	if(abandoned)
 		var/outcome = rand(1,100)
 		switch(outcome)
-			if(1 to 9)
-				var/turf/here = get_turf(src)
-				for(var/turf/closed/T in range(2, src))
-					here.PlaceOnTop(T.type)
-					qdel(src)
-					return
-				here.PlaceOnTop(/turf/closed/wall)
-				qdel(src)
-				return
-			if(9 to 11)
+			if(1 to 11)
 				lights = FALSE
 				locked = TRUE
 			if(12 to 15)
@@ -185,6 +176,19 @@
 				welded = TRUE
 			if(24 to 30)
 				panel_open = TRUE
+			if(31 to 40)
+				panel_open = TRUE
+				set_electrified(MACHINE_ELECTRIFIED_PERMANENT)
+			if(41 to 50)
+				seal = new /obj/item/door_seal(src)
+				modify_max_integrity(max_integrity * AIRLOCK_SEAL_MULTIPLIER)
+			if(51 to 60)
+				new previous_airlock(loc)
+				qdel(src)
+			if(69)
+				new /obj/effect/decal/cleanable/oil/slippery(loc)
+
+
 	update_appearance()
 
 /obj/machinery/door/airlock/ComponentInitialize()
@@ -369,26 +373,6 @@
 	playsound(src, boltUp, 30, FALSE, 3, mono_adj = TRUE)
 	audible_message("<span class='hear'>You hear a click from the bottom of the door.</span>", null, 1)
 	update_appearance()
-
-/obj/machinery/door/airlock/narsie_act()
-	var/turf/T = get_turf(src)
-	var/obj/machinery/door/airlock/cult/A
-	if(GLOB.cult_narsie)
-		var/runed = prob(20)
-		if(glass)
-			if(runed)
-				A = new/obj/machinery/door/airlock/cult/glass(T)
-			else
-				A = new/obj/machinery/door/airlock/cult/unruned/glass(T)
-		else
-			if(runed)
-				A = new/obj/machinery/door/airlock/cult(T)
-			else
-				A = new/obj/machinery/door/airlock/cult/unruned(T)
-		A.name = name
-	else
-		A = new /obj/machinery/door/airlock/cult/weak(T)
-	qdel(src)
 
 /obj/machinery/door/airlock/Destroy()
 	QDEL_NULL(wires)
@@ -1238,11 +1222,26 @@
 	if(!operating)
 		if(istype(I, /obj/item/melee/axe/fire)) //being fireaxe'd
 			var/obj/item/melee/axe/fire/axe = I
-			if(axe && !axe.wielded)
+			if(axe && !HAS_TRAIT(axe, TRAIT_WIELDED))
 				to_chat(user, "<span class='warning'>You need to be wielding \the [axe] to do that!</span>")
 				return
 		INVOKE_ASYNC(src, (density ? PROC_REF(open) : PROC_REF(close)), 2)
 
+/obj/machinery/door/airlock/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	var/decon_time = 5 SECONDS
+	if(welded)
+		decon_time += 5 SECONDS
+	if(locked)
+		decon_time += 5 SECONDS
+	if(seal)
+		decon_time += 15 SECONDS
+	if (I.use_tool(src, user, decon_time, volume=100))
+		to_chat(user, "<span class='warning'>You cut open the [src].</span>")
+		deconstruct(FALSE, user)
+		return TRUE
 
 /obj/machinery/door/airlock/open(forced=0)
 	if(operating || welded || locked || seal || !wires)

@@ -365,6 +365,7 @@
 	icon_state = "ration_heater"
 	grind_results = list(/datum/reagent/iron = 10, /datum/reagent/water = 10, /datum/reagent/consumable/sodiumchloride = 5)
 	heat = 3800
+	w_class = WEIGHT_CLASS_SMALL
 	var/obj/item/tocook = null
 	var/mutable_appearance/ration_overlay
 	var/uses = 3

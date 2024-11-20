@@ -182,47 +182,6 @@
 	special()
 	screen.icon_state = "summary_malf"
 
-/datum/cinematic/cult
-	id = CINEMATIC_CULT
-
-/datum/cinematic/cult/content()
-	screen.icon_state = null
-	flick("intro_cult",screen)
-	sleep(25)
-	cinematic_sound(sound('sound/magic/enter_blood.ogg'))
-	sleep(28)
-	cinematic_sound(sound('sound/machines/terminal_off.ogg'))
-	sleep(20)
-	flick("station_corrupted",screen)
-	cinematic_sound(sound('sound/effects/ghost.ogg'))
-	sleep(70)
-	special()
-
-/datum/cinematic/cult_nuke
-	id = CINEMATIC_CULT_NUKE
-
-/datum/cinematic/cult_nuke/content()
-	flick("intro_nuke",screen)
-	sleep(35)
-	flick("station_explode_fade_red",screen)
-	cinematic_sound(sound('sound/effects/explosion_distant.ogg'))
-	special()
-	screen.icon_state = "summary_cult"
-
-/datum/cinematic/cult_fail
-	id = CINEMATIC_CULT_FAIL
-
-/datum/cinematic/cult_fail/content()
-	screen.icon_state = "station_intact"
-	sleep(20)
-	cinematic_sound(sound('sound/creatures/narsie_rises.ogg'))
-	sleep(60)
-	cinematic_sound(sound('sound/effects/explosion_distant.ogg'))
-	sleep(10)
-	cinematic_sound(sound('sound/magic/demon_dies.ogg'))
-	sleep(30)
-	special()
-
 /datum/cinematic/nuke_annihilation
 	id = CINEMATIC_ANNIHILATION
 
@@ -274,14 +233,3 @@
 	cinematic_sound(sound('sound/items/airhorn.ogg'))
 	flick("summary_selfdes",screen) //???
 	special()
-
-/* Intended usage.
-Nuke.Explosion()
-	-> Cinematic(NUKE_BOOM,world)
-	-> ActualExplosion()
-	-> Mode.OnExplosion()
-
-
-Narsie()
-	-> Cinematic(CULT,world)
-*/

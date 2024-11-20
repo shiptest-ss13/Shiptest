@@ -23,24 +23,13 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy = 1,
 		/obj/item/reagent_containers/food/drinks/soda_cans/crosstalk = 1)
 	refill_canister = /obj/item/vending_refill/cola
-	default_price = 45
-	extra_price = 200
+	default_price = 20
+	extra_price = 50
 
 
 /obj/item/vending_refill/cola
 	machine_name = "RobustMore Softdrinks"
 	icon_state = "refill_cola"
-
-/obj/machinery/vending/cola/random
-	name = "\improper Random Drinkies"
-	icon_state = "random_cola"
-	desc = "Uh oh!"
-
-/obj/machinery/vending/cola/random/Initialize()
-	..()
-	var/T = pick(subtypesof(/obj/machinery/vending/cola) - /obj/machinery/vending/cola/random)
-	new T(loc)
-	return INITIALIZE_HINT_QDEL
 
 /obj/machinery/vending/cola/blue
 	icon_state = "Cola_Machine"

@@ -761,6 +761,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	icon = 'icons/obj/abductor.dmi'
 	buildstacktype = /obj/item/stack/sheet/mineral/abductor
 	icon_state = "bed"
+	swap_lying_with_dir = FALSE
 
 /obj/structure/table_frame/abductor
 	name = "alien table frame"

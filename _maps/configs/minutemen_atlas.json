@@ -1,0 +1,50 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Atlas-class Light Armored Crusier",
+	"prefix": "CMSV",
+	"namelists": ["GENERAL", "CLIP MINUTEMEN", "NATURAL_AGGRESSIVE"],
+	"description": "The Atlas-Class is the designation for some of the oldest serving vessels in the Confederated League's military fleet. Originally the Atlantas-class, the design of the Atlantas was taken by the Colonial Militia just before the beginning of the war with the Old Frontiersmen, playing a pivotal role in multiple skirmishes. It is small in size and crew, well-rounded, and well-suited as an unexpensive hit-and-run vessel. Despite its age, the Atlas continues to serve the Confederated League for peacekeeping missions and driving off small crews of pirates from colonies.",
+	"tags": [
+		"Combat",
+		"Generalist"
+	],
+	"map_short_name": "Atlas-class",
+	"faction": "/datum/faction/clip",
+	"starting_funds": 1000,
+	"map_path": "_maps/shuttles/minutemen/minutemen_atlas.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/clip/minutemen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"First Officer": {
+			"outfit": "/datum/outfit/job/clip/first_officer",
+			"officer": true,
+			"slots": 1
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/lead",
+			"officer": true,
+			"slots": 1
+		},
+		"Corpsman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/doctor",
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/clip/minutemen/engineer",
+			"slots": 1
+		},
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
+			"slots": 4
+		},
+		"Reservist": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/reserve",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

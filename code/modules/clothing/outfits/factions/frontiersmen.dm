@@ -145,7 +145,7 @@
 	accessory = /obj/item/clothing/accessory/armband
 	uniform = /obj/item/clothing/under/frontiersmen/officer
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	suit = /obj/item/clothing/suit/armor/vest/frontier
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/combat
 	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/melee/baton/loaded=1)

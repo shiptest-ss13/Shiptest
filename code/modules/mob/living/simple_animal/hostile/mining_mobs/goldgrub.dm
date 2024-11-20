@@ -29,7 +29,6 @@
 	throw_message = "sinks in slowly, before being pushed out of "
 	deathmessage = "stops moving as green liquid oozes from the carcass!"
 	status_flags = CANPUSH
-	gold_core_spawnable = HOSTILE_SPAWN
 	search_objects = 1
 	wanted_objects = list(
 		/obj/item/stack/ore/diamond,
@@ -45,10 +44,8 @@
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/Initialize()
 	. = ..()
-	var/i = rand(1,3)
-	while(i)
+	for (var/i in 1 to rand(1, 3))
 		loot += pick(/obj/item/stack/ore/silver, /obj/item/stack/ore/gold, /obj/item/stack/ore/uranium, /obj/item/stack/ore/diamond)
-		i--
 	spit = new
 	burrow = new
 	spit.Grant(src)

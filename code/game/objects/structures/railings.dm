@@ -65,6 +65,15 @@
 		deconstruct()
 		return TRUE
 
+/obj/structure/railing/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, 3 SECONDS, volume=0))
+		to_chat(user, "<span class='warning'>You cut apart the railing.</span>")
+		deconstruct()
+		return TRUE
+
 /obj/structure/railing/deconstruct(disassembled)
 	. = ..()
 	if(!loc) //quick check if it's qdeleted already.
@@ -97,16 +106,16 @@
 	if(!(direction & dir))
 		return
 
-	if (!density)
+	if(!density)
 		return
 
-	if (leaving.throwing)
+	if(leaving.throwing)
 		return
 
-	if (leaving.movement_type & (PHASING | FLYING | FLOATING))
+	if(leaving.movement_type & (PHASING | FLYING | FLOATING))
 		return
 
-	if (leaving.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
+	if(leaving.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
 		return
 
 	leaving.Bump(src)
@@ -187,3 +196,9 @@
 	density = FALSE
 	climbable = FALSE
 	buildstackamount = 1
+
+/obj/structure/railing/thick
+	icon_state = "railing_thick"
+
+/obj/structure/railing/thick/corner
+	icon_state = "railing_thick_corner"

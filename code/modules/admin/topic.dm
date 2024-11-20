@@ -78,13 +78,6 @@
 				else
 					message_admins("[key_name_admin(usr)] tried to create changelings. Unfortunately, there were no candidates available.")
 					log_admin("[key_name(usr)] failed to create changelings.")
-			if("cult")
-				if(src.makeCult())
-					message_admins("[key_name(usr)] started a cult.")
-					log_admin("[key_name(usr)] started a cult.")
-				else
-					message_admins("[key_name_admin(usr)] tried to start a cult. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to start a cult.")
 			if("wizard")
 				message_admins("[key_name(usr)] is creating a wizard...")
 				if(src.makeWizard())
@@ -350,14 +343,6 @@
 				M.change_mob_type(/mob/living/simple_animal/parrot , null, null, delmob)
 			if("polyparrot")
 				M.change_mob_type(/mob/living/simple_animal/parrot/Polly , null, null, delmob)
-			if("constructjuggernaut")
-				M.change_mob_type(/mob/living/simple_animal/hostile/construct/juggernaut , null, null, delmob)
-			if("constructartificer")
-				M.change_mob_type(/mob/living/simple_animal/hostile/construct/artificer , null, null, delmob)
-			if("constructwraith")
-				M.change_mob_type(/mob/living/simple_animal/hostile/construct/wraith , null, null, delmob)
-			if("shade")
-				M.change_mob_type(/mob/living/simple_animal/shade , null, null, delmob)
 
 	else if(href_list["boot2"])
 		if(!check_rights(R_ADMIN))
@@ -1140,12 +1125,6 @@
 			return
 		output_ai_laws()
 
-	else if(href_list["admincheckdevilinfo"])
-		if(!check_rights(R_ADMIN))
-			return
-		var/mob/M = locate(href_list["admincheckdevilinfo"])
-		output_devil_info(M)
-
 	else if(href_list["adminmoreinfo"])
 		var/mob/M = locate(href_list["adminmoreinfo"]) in GLOB.mob_list
 		if(!ismob(M))
@@ -1217,9 +1196,9 @@
 		//milk to plasmemes and skeletons, meat to lizards, electricity bars to ethereals, cookies to everyone else
 		var/obj/item/reagent_containers/food/cookiealt = /obj/item/reagent_containers/food/snacks/cookie
 		if(isskeleton(H))
-			cookiealt = /obj/item/reagent_containers/food/condiment/milk
+			cookiealt = /obj/item/reagent_containers/condiment/milk
 		else if(isplasmaman(H))
-			cookiealt = /obj/item/reagent_containers/food/condiment/milk
+			cookiealt = /obj/item/reagent_containers/condiment/milk
 		else if(iselzuose(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
 		// WS - More fun with cookies - Start

@@ -50,7 +50,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor/orange,
 /turf/open/floor/plasteel/tech/grid,
@@ -876,7 +876,7 @@
 /area/ship/engineering)
 "fd" = (
 /obj/structure/table/wood/reinforced,
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = 5;
 	pixel_y = 5
 	},
@@ -908,7 +908,7 @@
 	pixel_x = -5;
 	pixel_y = -7
 	},
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = 6;
 	pixel_y = 11
 	},
@@ -1035,7 +1035,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1412,7 +1412,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "hZ" = (
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating,
@@ -1441,7 +1441,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2092,7 +2092,7 @@
 	dir = 6
 	},
 /obj/structure/railing,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
@@ -2117,7 +2117,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "lW" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -2314,20 +2314,6 @@
 /obj/item/reagent_containers/food/snacks/urinalcake,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
-"nb" = (
-/obj/structure/table/wood,
-/obj/structure/window/reinforced/tinted/frosted{
-	dir = 8
-	},
-/obj/structure/window/reinforced/tinted/frosted{
-	dir = 4
-	},
-/obj/item/flashlight/lamp{
-	pixel_y = 13
-	},
-/obj/item/book/codex_gigas,
-/turf/open/floor/wood,
-/area/ship/crew/dorm)
 "nh" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/dorm/dormtwo)
@@ -2344,7 +2330,7 @@
 /area/ship/security/prison)
 "nk" = (
 /obj/structure/railing,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating,
@@ -2759,12 +2745,12 @@
 /area/ship/engineering/electrical)
 "pV" = (
 /obj/structure/railing,
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "pY" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/siding/red{
 	dir = 4
 	},
@@ -2804,32 +2790,6 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
-"qe" = (
-/obj/structure/closet/secure_closet/freezer{
-	name = "Refrigerator";
-	desc = "A refrigerated cabinet for food."
-	},
-/obj/effect/turf_decal/siding/wideplating/light/end{
-	dir = 4
-	},
-/obj/item/storage/fancy/egg_box,
-/obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/soymilk,
-/obj/item/reagent_containers/food/condiment/soymilk,
-/obj/item/reagent_containers/food/condiment/soymilk,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/rice,
-/obj/item/reagent_containers/food/snacks/tofu,
-/obj/item/reagent_containers/food/snacks/tofu,
-/turf/open/floor/plasteel/mono/white,
-/area/ship/crew/canteen/kitchen)
 "qh" = (
 /obj/machinery/hydroponics/constructable{
 	pixel_y = 8
@@ -2996,7 +2956,7 @@
 /obj/structure/railing{
 	dir = 9
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3298,7 +3258,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
@@ -3361,7 +3321,7 @@
 	icon_state = "5-8"
 	},
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor/orange,
@@ -3876,27 +3836,6 @@
 /obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
-"xb" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/condiment/sugar{
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/food/condiment/rice{
-	pixel_y = 10;
-	pixel_x = 3
-	},
-/obj/item/reagent_containers/food/condiment/enzyme{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/crew/canteen/kitchen)
 "xc" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 8
@@ -4100,11 +4039,6 @@
 "ys" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/dorm)
-"yu" = (
-/obj/item/clothing/mask/gas/monkeymask,
-/obj/item/clothing/suit/monkeysuit,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "yw" = (
 /obj/effect/decal/cleanable/food/tomato_smudge,
 /obj/effect/turf_decal/siding/wood{
@@ -4461,21 +4395,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
-"AH" = (
-/obj/structure/table,
-/obj/item/toy/figure/chef,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/item/reagent_containers/food/condiment/saltshaker{
-	pixel_y = 10;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/food/condiment/peppermill{
-	pixel_x = 8;
-	pixel_y = 9
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/crew/canteen/kitchen)
 "AI" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
 	dir = 6
@@ -4568,6 +4487,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
+"Bf" = (
+/obj/structure/table/wood,
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 8
+	},
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 4
+	},
+/obj/item/flashlight/lamp{
+	pixel_y = 13
+	},
+/turf/open/floor/wood,
+/area/ship/crew/dorm)
 "Bi" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4678,7 +4610,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor/orange{
@@ -4794,7 +4726,7 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/cloth/grey,
 /obj/machinery/light_switch{
 	dir = 8;
@@ -4919,9 +4851,30 @@
 /area/ship/crew/canteen)
 "Dh" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
+"Dj" = (
+/obj/structure/table,
+/obj/item/reagent_containers/condiment/sugar{
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/condiment/rice{
+	pixel_y = 10;
+	pixel_x = 3
+	},
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/crew/canteen/kitchen)
 "Dm" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 1
@@ -5269,7 +5222,7 @@
 /obj/item/canvas/twentythreeXtwentythree,
 /obj/structure/closet/crate/trashcart,
 /obj/item/paint/anycolor,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/sprayweb,
 /turf/open/floor/plating,
@@ -5691,7 +5644,7 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/hallway/central)
 "GZ" = (
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/spawner/random/maintenance/four,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Ha" = (
@@ -5704,7 +5657,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -5799,7 +5752,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -5864,6 +5817,21 @@
 /obj/effect/turf_decal/siding/yellow,
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
+"Ie" = (
+/obj/structure/table,
+/obj/item/toy/figure/chef,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_y = 10;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 8;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/crew/canteen/kitchen)
 "Ig" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "quickpoint_shut";
@@ -6211,6 +6179,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/security)
+"Kc" = (
+/obj/item/clothing/mask/gas/monkeymask,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "Kg" = (
 /obj/effect/turf_decal/siding/red{
 	dir = 8
@@ -6462,7 +6434,7 @@
 	dir = 4
 	},
 /obj/structure/curtain/cloth/grey,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "Lt" = (
@@ -6898,7 +6870,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -7130,7 +7102,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
 "PC" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/siding/red{
 	dir = 4
 	},
@@ -7495,7 +7467,7 @@
 /obj/structure/railing{
 	dir = 6
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -7741,7 +7713,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/dorm/dormthree)
 "Ti" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/railing{
 	dir = 9
@@ -7765,7 +7737,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -8250,10 +8222,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
-"Wi" = (
-/obj/structure/statue/sandstone/assistant,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "Wj" = (
 /obj/effect/decal/cleanable/food/salt,
 /obj/effect/turf_decal/siding/wideplating/light,
@@ -8460,6 +8428,32 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm/dormfour)
+"Xf" = (
+/obj/structure/closet/secure_closet/freezer{
+	name = "Refrigerator";
+	desc = "A refrigerated cabinet for food."
+	},
+/obj/effect/turf_decal/siding/wideplating/light/end{
+	dir = 4
+	},
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/rice,
+/obj/item/reagent_containers/food/snacks/tofu,
+/obj/item/reagent_containers/food/snacks/tofu,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/crew/canteen/kitchen)
 "Xg" = (
 /obj/machinery/door/window{
 	dir = 4
@@ -8538,7 +8532,7 @@
 /area/ship/engineering/atmospherics)
 "XY" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/turf_decal/spline/plain/opaque/blue,
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
@@ -9145,7 +9139,7 @@ Mv
 Lu
 rq
 Hm
-nb
+Bf
 dJ
 VG
 oM
@@ -9551,8 +9545,8 @@ PP
 td
 VK
 Fg
-AH
-xb
+Ie
+Dj
 nR
 zq
 mU
@@ -9675,7 +9669,7 @@ pe
 Rr
 KQ
 wa
-qe
+Xf
 Ad
 gZ
 eF
@@ -10037,7 +10031,7 @@ rc
 bb
 yI
 yI
-Wi
+yI
 CP
 nK
 jY
@@ -10117,7 +10111,7 @@ rW
 bb
 yI
 yI
-Wi
+yI
 CP
 nK
 jY
@@ -10357,7 +10351,7 @@ oI
 VU
 Dy
 nh
-yu
+Kc
 nK
 jY
 jY

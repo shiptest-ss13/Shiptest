@@ -397,6 +397,49 @@
 	icon_state = "puddle"
 	resistance_flags = UNACIDABLE
 
+//***Oil well puddles.
+/obj/structure/sink/oil_well
+	name = "oil well"
+	desc = "A bubbling pool of oil.This would probably be valuable, had bluespace technology not destroyed the need for fossil fuels 200 years ago."
+	icon = 'icons/obj/watercloset.dmi'
+	icon_state = "puddle-oil"
+	dispensedreagent = /datum/reagent/fuel/oil
+
+/obj/structure/sink/oil_well/Initialize()
+	.=..()
+	create_reagents(20)
+	reagents.add_reagent(dispensedreagent, 20)
+
+/obj/structure/sink/oil_well/attack_hand(mob/M)
+	flick("puddle-oil-splash",src)
+	reagents.expose(M, TOUCH, 20) //Covers target in 20u of oil.
+	to_chat(M, "<span class='notice'>You touch the pool of oil, only to get oil all over yourself. It would be wise to wash this off with water.</span>")
+
+/obj/structure/sink/oil_well/attackby(obj/item/O, mob/user, params)
+	flick("puddle-oil-splash",src)
+	if(O.tool_behaviour == TOOL_SHOVEL && !(flags_1&NODECONSTRUCT_1)) //attempt to deconstruct the puddle with a shovel
+		to_chat(user, "You fill in the oil well with soil.")
+		O.play_tool_sound(src)
+		deconstruct()
+		return 1
+	if(istype(O, /obj/item/reagent_containers)) //Refilling bottles with oil
+		var/obj/item/reagent_containers/RG = O
+		if(RG.is_refillable())
+			if(!RG.reagents.holder_full())
+				RG.reagents.add_reagent(dispensedreagent, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
+				to_chat(user, "<span class='notice'>You fill [RG] from [src].</span>")
+				return TRUE
+			to_chat(user, "<span class='notice'>\The [RG] is full.</span>")
+			return FALSE
+	if(user.a_intent != INTENT_HARM)
+		to_chat(user, "<span class='notice'>You won't have any luck getting \the [O] out if you drop it in the oil.</span>")
+		return 1
+	else
+		return ..()
+
+/obj/structure/sink/oil_well/drop_materials()
+	new /obj/effect/decal/cleanable/oil(loc)
+
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/structure/sink/puddle/attack_hand(mob/M)
 	icon_state = "puddle-splash"

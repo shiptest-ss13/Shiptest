@@ -47,7 +47,7 @@
 		to_chat(user, "<span class='warning'>[src] doesn't have a linked account to deposit [I] into!</span>")
 		return
 
-	registered_account.adjust_money(cash_money)
+	registered_account.adjust_money(cash_money, CREDIT_LOG_DEPOSIT)
 	SSblackbox.record_feedback("amount", "credits_inserted", cash_money)
 	log_econ("[cash_money] credits were inserted into [src] owned by [src.registered_name]")
 	if(physical_currency)
@@ -69,7 +69,7 @@
 
 		total += cash_money
 
-		registered_account.adjust_money(cash_money)
+		registered_account.adjust_money(cash_money, CREDIT_LOG_DEPOSIT)
 	SSblackbox.record_feedback("amount", "credits_inserted", total)
 	log_econ("[total] credits were inserted into [src] owned by [src.registered_name]")
 	QDEL_LIST(money)
@@ -132,7 +132,7 @@
 		return
 	if(!alt_click_can_use_id(user))
 		return
-	if(registered_account.adjust_money(-amount_to_remove))
+	if(registered_account.adjust_money(-amount_to_remove, CREDIT_LOG_WITHDRAW))
 		var/obj/item/holochip/holochip = new (user.drop_location(), amount_to_remove)
 		user.put_in_hands(holochip)
 		to_chat(user, "<span class='notice'>You withdraw [amount_to_remove] credits into a holochip.</span>")

@@ -10,104 +10,61 @@
 	volume = 30
 	list_reagents = list(/datum/reagent/lube = 30)
 
-//COMBAT CLOWN SHOES
-//Clown shoes with combat stats and noslip. Of course they still squeak.
-/obj/item/clothing/shoes/clown_shoes/combat
-	name = "combat clown shoes"
-	desc = "advanced clown shoes that protect the wearer and render them nearly immune to slipping on their own peels. They also squeak at 100% capacity."
-	clothing_flags = NOSLIP
-	slowdown = SHOES_SLOWDOWN
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
-	strip_delay = 70
-	resistance_flags = NONE
-	permeability_coefficient = 0.05
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-
-//The super annoying version
-/obj/item/clothing/shoes/clown_shoes/banana_shoes/combat
-	name = "mk-honk combat shoes"
-	desc = "The culmination of years of clown combat research, these shoes leave a trail of chaos in their wake. They will slowly recharge themselves over time, or can be manually charged with bananium."
-	slowdown = SHOES_SLOWDOWN
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
-	strip_delay = 70
-	resistance_flags = NONE
-	permeability_coefficient = 0.05
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-	always_noslip = TRUE
-	var/max_recharge = 3000 //30 peels worth
-	var/recharge_rate = 34 //about 1/3 of a peel per tick
-
-/obj/item/clothing/shoes/clown_shoes/banana_shoes/combat/Initialize()
-	. = ..()
-	var/datum/component/material_container/bananium = GetComponent(/datum/component/material_container)
-	bananium.insert_amount_mat(max_recharge, /datum/material/hellstone)
-	START_PROCESSING(SSobj, src)
-
-/obj/item/clothing/shoes/clown_shoes/banana_shoes/combat/process()
-	var/datum/component/material_container/bananium = GetComponent(/datum/component/material_container)
-	var/bananium_amount = bananium.get_material_amount(/datum/material/hellstone)
-	if(bananium_amount < max_recharge)
-		bananium.insert_amount_mat(min(recharge_rate, max_recharge - bananium_amount), /datum/material/hellstone)
-
-/obj/item/clothing/shoes/clown_shoes/banana_shoes/combat/attack_self(mob/user)
-	ui_action_click(user)
-
 //BANANIUM SWORD
 
-/obj/item/melee/transforming/energy/sword/bananium
+/obj/item/melee/energy/sword/bananium
 	name = "bananium sword"
 	desc = "An elegant weapon, for a more civilized age."
 	force = 0
 	throwforce = 0
-	force_on = 0
-	throwforce_on = 0
+	active_force = 0
+	active_throwforce = 0
 	hitsound = null
 	attack_verb_on = list("slipped")
-	clumsy_check = FALSE
 	sharpness = IS_BLUNT
 	sword_color = "yellow"
 	heat = 0
 	light_color = COLOR_YELLOW
 	var/next_trombone_allowed = 0
 
-/obj/item/melee/transforming/energy/sword/bananium/Initialize()
+/obj/item/melee/energy/sword/bananium/Initialize()
 	. = ..()
 	adjust_slipperiness()
 
 /* Adds or removes a slippery component, depending on whether the sword
  * is active or not.
  */
-/obj/item/melee/transforming/energy/sword/proc/adjust_slipperiness()
-	if(active)
+/obj/item/melee/energy/sword/proc/adjust_slipperiness()
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		AddComponent(/datum/component/slippery, 60, GALOSHES_DONT_HELP)
 	else
 		qdel(GetComponent(/datum/component/slippery))
 
-/obj/item/melee/transforming/energy/sword/bananium/attack(mob/living/M, mob/living/user)
+/obj/item/melee/energy/sword/bananium/attack(mob/living/M, mob/living/user)
 	..()
-	if(active)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
 		slipper.Slip(src, M)
 
-/obj/item/melee/transforming/energy/sword/bananium/throw_impact(atom/hit_atom, throwingdatum)
+/obj/item/melee/energy/sword/bananium/throw_impact(atom/hit_atom, throwingdatum)
 	. = ..()
-	if(active)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
 		slipper.Slip(src, hit_atom)
 
-/obj/item/melee/transforming/energy/sword/bananium/attackby(obj/item/I, mob/living/user, params)
-	if((world.time > next_trombone_allowed) && istype(I, /obj/item/melee/transforming/energy/sword/bananium))
+/obj/item/melee/energy/sword/bananium/attackby(obj/item/I, mob/living/user, params)
+	if((world.time > next_trombone_allowed) && istype(I, /obj/item/melee/energy/sword/bananium))
 		next_trombone_allowed = world.time + 50
 		to_chat(user, "<span class='warning'>You slap the two swords together. Sadly, they do not seem to fit!</span>")
 		playsound(src, 'sound/misc/sadtrombone.ogg', 50)
 		return TRUE
 	return ..()
 
-/obj/item/melee/transforming/energy/sword/bananium/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/energy/sword/bananium/on_transform(obj/item/source, mob/user, active)
 	. = ..()
 	adjust_slipperiness()
 
-/obj/item/melee/transforming/energy/sword/bananium/ignition_effect(atom/A, mob/user)
+/obj/item/melee/energy/sword/bananium/ignition_effect(atom/A, mob/user)
 	return ""
 
 //BANANIUM SHIELD

@@ -79,16 +79,20 @@
 	return ..()
 
 /turf/closed/mineral/try_decon(obj/item/I, mob/user, turf/T)
+	var/act_duration = breakdown_duration
 	if(I.tool_behaviour == TOOL_MINING)
 		if(!I.tool_start_check(user, amount=0))
 			return FALSE
 
 		to_chat(user, "<span class='notice'>You begin breaking through the rock...</span>")
-		while(I.use_tool(src, user, breakdown_duration, volume=50))
+		while(I.use_tool(src, user, act_duration, volume=50))
 			if(ismineralturf(src))
 				to_chat(user, "<span class='notice'>You break through some of the stone...</span>")
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, I.type)
-				alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE)
+				if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
+					return TRUE
+			else
+				break
 
 	return FALSE
 
@@ -109,7 +113,8 @@
 			visible_message(span_warning("The ore was completely ruined!"))
 		else
 			new mineralType(src, mineralAmt)
-			SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
+			if(ishuman(user))
+				SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(give_exp)
@@ -129,9 +134,13 @@
 
 
 /turf/closed/mineral/attack_animal(mob/living/simple_animal/user)
-	if((user.environment_smash & ENVIRONMENT_SMASH_WALLS) || (user.environment_smash & ENVIRONMENT_SMASH_RWALLS) || (user.environment_smash & ENVIRONMENT_SMASH_MINERALS))
-		gets_drilled(user)
-	..()
+	if((!(user.environment_smash & ENVIRONMENT_SMASH_WALLS) || (user.environment_smash & ENVIRONMENT_SMASH_RWALLS) || (user.environment_smash & ENVIRONMENT_SMASH_MINERALS)))
+		return ..()
+
+	//This scrapes us away and turns us into a floor, so don't call parent.
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.do_attack_animation(src)
+	gets_drilled(user)
 
 /turf/closed/mineral/attack_alien(mob/living/carbon/alien/M)
 	balloon_alert(M, "digging...")
@@ -163,7 +172,6 @@
 	ScrapeAway()
 
 /turf/closed/mineral/ex_act(severity, target)
-	..()
 	switch(severity)
 		if(3)
 			if (prob(75))
@@ -173,7 +181,7 @@
 				gets_drilled(null, FALSE)
 		if(1)
 			gets_drilled(null, FALSE)
-	return
+	return ..()
 
 /turf/closed/mineral/random
 	var/list/mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4,
@@ -193,7 +201,7 @@
 
 	. = ..()
 	if (prob(mineralChance))
-		var/path = pickweight(mineralSpawnChanceList)
+		var/path = pick_weight(mineralSpawnChanceList)
 		if(ispath(path, /turf))
 			var/turf/T = ChangeTurf(path,null,CHANGETURF_IGNORE_AIR)
 

@@ -11,13 +11,6 @@
 	suffix = "reebe_arena.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 
-/datum/map_template/ruin/reebe/swarmers
-	name = "Swarmer Island"
-	id = "swarmers"
-	description = "Looks like someone has occupied Reebe in the cultists' absence."
-	suffix = "reebe_swarmers.dmm"
-	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_LIVEABLE)
-
 /datum/map_template/ruin/reebe/island
 	name = "Island Cache"
 	id = "islandcache"

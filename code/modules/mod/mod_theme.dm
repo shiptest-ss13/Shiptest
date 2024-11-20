@@ -682,7 +682,7 @@
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash,
 		/obj/item/melee/baton,
-		/obj/item/melee/transforming/energy/sword,
+		/obj/item/melee/energy/sword,
 		/obj/item/shield/energy,
 	)
 	skins = list(
@@ -733,7 +733,7 @@
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash,
 		/obj/item/melee/baton,
-		/obj/item/melee/transforming/energy/sword,
+		/obj/item/melee/energy/sword,
 		/obj/item/shield/energy,
 	)
 	skins = list(
@@ -947,7 +947,7 @@
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash,
 		/obj/item/melee/baton,
-		/obj/item/melee/transforming/energy/sword,
+		/obj/item/melee/energy/sword,
 		/obj/item/shield/energy,
 	)
 	skins = list(
