@@ -36,12 +36,16 @@
 	desc = "A cheap work shirt and black shorts, typical of cargo handlers and clerks at N+S Logistics."
 	icon_state = "supply"
 	item_state = "browncloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/nanotrasen/supply/qm
 	name = "supply director slacks"
 	desc = "Crisp slacks and a pressed brown shirt that any supply director could be proud of. N+S Logistics' compass rose logo is embossed on every button."
 	icon_state = "supply_director"
 	item_state = "browncloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/nanotrasen/supply/miner
 	name = "mining overalls"
@@ -74,12 +78,16 @@
 	desc = "A crisp white shirt with blue stripes on the arms, identifying the owner as trained Nanotrasen medical staff. The faint smell of antiseptic won't wash out."
 	icon_state = "doctor"
 	item_state = "whitecloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/nanotrasen/medical/paramedic
 	name = "paramedic uniform"
 	desc = "Tough synthetic pants and a white uniform shirt, designed to handle all manner of scrapes and splashes in the line of duty. The tag identifies this as property of Nanotrasen, Inc."
 	icon_state = "paramedic"
 	item_state = "whitecloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/nanotrasen/medical/director
 	name = "medical director's slacks"
@@ -94,12 +102,16 @@
 	desc = "A grey jumpsuit with purple sleeves and faint stains on the elbows and knees. It looks stiff and cheap, but is surprisingly comfortable."
 	icon_state = "janitor"
 	item_state = "graycloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/nanotrasen/affairs
 	name = "neatly pleated slacks"
 	desc = "Flawlessly pleated slacks and a linen shirt with the Nanotrasen logo stitched repeatedly into the cuffs and collar. It exudes an aura of quiet authority."
 	icon_state = "affairs"
 	item_state = "whitecloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/nanotrasen/security
 	name = "security slacks"
