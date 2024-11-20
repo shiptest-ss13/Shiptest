@@ -24,6 +24,7 @@
 	var/obj/item/grenade/F = grenades[1]
 	grenades -= F
 	user.put_in_hands(F)
+	playsound(src,'sound/weapons/gun/shotgun/rack.ogg',100)
 	to_chat(user, span_notice("You unload the [F] from the [src]."))
 
 
@@ -35,6 +36,7 @@
 			grenades += I
 			to_chat(user, "<span class='notice'>You put the grenade in the grenade launcher.</span>")
 			to_chat(user, "<span class='notice'>[grenades.len] / [max_grenades] Grenades.</span>")
+			playsound(src,'sound/weapons/gun/shotgun/insert_shell.ogg',100)
 		else
 			to_chat(usr, "<span class='warning'>The grenade launcher cannot hold more grenades!</span>")
 
@@ -42,6 +44,8 @@
 	return grenades.len
 
 /obj/item/gun/grenadelauncher/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	if(!can_shoot())
+		return
 	user.visible_message("<span class='danger'>[user] fired a grenade!</span>", \
 						"<span class='danger'>You fire the grenade launcher!</span>")
 	var/obj/item/grenade/F = grenades[1] //Now with less copypasta!

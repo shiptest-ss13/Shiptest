@@ -15,60 +15,6 @@
 	else
 		return ..()
 
-/obj/item/attachment/gun/energy/on_unique_action(obj/item/gun/gun, mob/user)
-	. = ..()
-	update_appearance()
-
-/obj/item/attachment/gun/energy/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
-	. = ..()
-	update_appearance()
-
-// /obj/item/attachment/gun/energy/update_icon_state()
-// 	var/obj/item/gun/energy/egun = attached_gun
-// 	if(initial(item_state))
-// 		return ..()
-// 	var/ratio = egun.get_charge_ratio()
-// 	var/new_item_state = ""
-// 	new_item_state = initial(icon_state)
-// 	if(modifystate)
-// 		var/obj/item/ammo_casing/energy/shot = egun.ammo_type[egun.select]
-// 		new_item_state += "[shot.select_name]"
-// 	new_item_state += "[ratio]"
-// 	item_state = new_item_state
-// 	return ..()
-
-/obj/item/attachment/gun/energy/update_overlays()
-	. = ..()
-	var/obj/item/gun/energy/egun = attached_gun
-	if(!automatic_charge_overlays || QDELETED(src))
-		return
-	var/overlay_icon_state = "[icon_state]_charge"
-	var/obj/item/ammo_casing/energy/shot = egun.ammo_type[egun.modifystate ? egun.select : 1]
-	var/ratio = egun.get_charge_ratio()
-	if(egun.cell)
-		. += "[icon_state]_cell"
-		if(ratio == 0)
-			. += "[icon_state]_cellempty"
-	if(ratio == 0)
-		if(egun.modifystate)
-			. += "[icon_state]_[shot.select_name]"
-		. += "[icon_state]_empty"
-	else
-		if(!egun.shaded_charge)
-			if(egun.modifystate)
-				. += "[icon_state]_[shot.select_name]"
-				overlay_icon_state += "_[shot.select_name]"
-			var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
-			for(var/i = ratio, i >= 1, i--)
-				charge_overlay.pixel_x = pixel_shift_x * (i - 1)
-				charge_overlay.pixel_y = pixel_shift_x * (i - 1)
-				. += new /mutable_appearance(charge_overlay)
-		else
-			if(egun.modifystate)
-				. += "[icon_state]_charge[ratio]_[shot.select_name]"
-			else
-				. += "[icon_state]_charge[ratio]"
-
 
 /obj/item/attachment/gun/energy/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	var/obj/item/ammo_casing/energy/shot = attached_gun.ammo_type[attached_gun.select]
