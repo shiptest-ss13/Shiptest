@@ -134,9 +134,13 @@
 
 
 /turf/closed/mineral/attack_animal(mob/living/simple_animal/user)
-	if((user.environment_smash & ENVIRONMENT_SMASH_WALLS) || (user.environment_smash & ENVIRONMENT_SMASH_RWALLS) || (user.environment_smash & ENVIRONMENT_SMASH_MINERALS))
-		gets_drilled(user)
-	..()
+	if((!(user.environment_smash & ENVIRONMENT_SMASH_WALLS) || (user.environment_smash & ENVIRONMENT_SMASH_RWALLS) || (user.environment_smash & ENVIRONMENT_SMASH_MINERALS)))
+		return ..()
+
+	//This scrapes us away and turns us into a floor, so don't call parent.
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.do_attack_animation(src)
+	gets_drilled(user)
 
 /turf/closed/mineral/attack_alien(mob/living/carbon/alien/M)
 	balloon_alert(M, "digging...")
