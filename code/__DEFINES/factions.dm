@@ -17,7 +17,7 @@
 #define PREFIX_SYNDICATE list("SEV", "SSV")
 	#define PREFIX_NGR list("NGRV")
 	#define PREFIX_CYBERSUN list("CSSV")
-	#define PREFIX_HARDLINERS list("ISV")
+	#define PREFIX_HARDLINERS list("GMV")
 	#define PREFIX_SUNS list("SUNS")
 #define PREFIX_SOLGOV list("SCSV")
 #define PREFIX_SRM list("SRSV")
