@@ -123,7 +123,7 @@
 	desc = "A box of 9mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "9mmbox-ap"
 
-/obj/item/storage/box/ammo/c9mm_ap/PopulateContents()
+/obj/item/storage/box/ammo/c9mm/ap/PopulateContents()
 	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm_ap = 4)
@@ -433,7 +433,7 @@
 
 /obj/item/storage/box/ammo/c38_hotshot
 	name = "box of .38 hearth ammo"
-	desc = "An unorthodox .38 Special cartridge infused with hearthwine. Catches the target on fire."
+	desc = "An unorthodox .38 Special cartridge infused with hearthflame. Catches the target on fire."
 	icon_state = "38hotshot"
 
 /obj/item/storage/box/ammo/c38_hotshot/PopulateContents()
@@ -447,7 +447,7 @@
 
 /obj/item/storage/box/ammo/c38_iceblox
 	name = "box of .38 chilled ammo"
-	desc = "An unorthodox .38 Special cartridge infused with icewine. Chills the target, slowing them down."
+	desc = "An unorthodox .38 Special cartridge infused with wine of ice. Chills the target, slowing them down."
 	icon_state = "38iceblox"
 
 /obj/item/storage/box/ammo/c38_iceblox/PopulateContents()

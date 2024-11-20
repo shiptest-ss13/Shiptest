@@ -171,6 +171,8 @@
 	base_icon_state = "tcomms"
 	icon = 'icons/turf/floors/misc.dmi'
 	color = null
+/turf/open/floor/plasteel/telecomms_floor/tatmos
+	initial_gas_mix = TCOMMS_ATMOS
 
 //ship turfs
 /turf/open/floor/ship

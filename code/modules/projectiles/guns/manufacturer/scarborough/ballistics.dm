@@ -525,7 +525,6 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	default_ammo_type = /obj/item/ammo_box/magazine/boomslang
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/boomslang,
-		/obj/item/ammo_box/magazine/boomslang/short,
 	)
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -657,9 +656,6 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m556_42_hydra,
-		/obj/item/ammo_box/magazine/m556_42_hydra/extended,
-		/obj/item/ammo_box/magazine/m556_42_hydra/casket,
-		/obj/item/ammo_box/magazine/m556_42_hydra/small
 	)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "underbarrel grenade launcher")
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
@@ -913,12 +909,6 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m12g_bulldog,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/stun,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/slug,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/dragon,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/bioterror,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/meteor,
 	)
 	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
@@ -979,6 +969,9 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/m12g_bulldog/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/m12g_bulldog/drum
 	name = "shotgun drum magazine (12g buckshot)"
 	desc = "A bulky 12-round drum designed for the Bulldog shotgun and it's derivatives."
@@ -989,6 +982,9 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	max_ammo = 12
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m12g_bulldog/drum/stun
 	name = "shotgun drum magazine (12g taser slugs)"

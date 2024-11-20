@@ -11,6 +11,7 @@
 	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/ngr/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/uniforms.dmi'
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/ngr/fatigues
 	name = "\improper NGR fatigues"
@@ -29,6 +30,7 @@
 	desc = "A button-up in a tasteful black with beige pants, used by officers of the New Gorlex Republic."
 	icon_state = "ngr_officer"
 	item_state = "ngr_officer"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/plasmaman/ngr
 	name = "\improper NGR phorid envirosuit"
