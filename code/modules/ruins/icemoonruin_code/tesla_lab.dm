@@ -69,10 +69,12 @@
 	desc = "An experimental device built around the hissing core of an anomaly. It radiates fear. There is a button on the front that says 'ENGAGE', surrounded by scrawled warnings."
 	desync_effect = /obj/effect/temp_visual/phase_out
 	resync_effect = /obj/effect/temp_visual/phase_in
+	max_duration = 600
+	duration = 60
 
 /obj/item/desynchronizer/tvstatic/resync()
 	. = ..()
-	var/braim_bamage = (world.time - last_use) * 0.02
+	var/braim_bamage = (world.time - last_use) * 2
 	playsound(src, 'sound/effects/glassbr1.ogg', 75)
 	if(braim_bamage > 100)
 		new /obj/effect/anomaly/tvstatic(loc)
