@@ -1556,7 +1556,10 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "gf" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
+	minimum_distance = 1;
+	shoot_point_blank = 1
+	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "gg" = (
@@ -2322,7 +2325,10 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
+	shoot_point_blank = 1;
+	minimum_distance = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "jH" = (
@@ -9276,7 +9282,10 @@
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Ln" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
+	shoot_point_blank = 1;
+	minimum_distance = 1
+	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/ice/explored)
 "Lp" = (
@@ -10170,7 +10179,10 @@
 /obj/effect/turf_decal/trimline/transparent/blue/corner{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
+	shoot_point_blank = 1;
+	minimum_distance = 1
+	},
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = 8;
 	pixel_x = 6
@@ -10304,7 +10316,10 @@
 	},
 /obj/effect/mapping_helpers/turf/burnt,
 /obj/item/ammo_casing/spent/slug/buck,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
+	shoot_point_blank = 1;
+	minimum_distance = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "PH" = (
@@ -11969,7 +11984,10 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
+	shoot_point_blank = 1;
+	minimum_distance = 1
+	},
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
