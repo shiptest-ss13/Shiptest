@@ -107,7 +107,7 @@
 /area/overmap_encounter/planetoid/ice/explored)
 "ax" = (
 /obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "ay" = (
 /obj/structure/cable{
@@ -939,7 +939,7 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "dX" = (
 /obj/item/kirbyplants{
@@ -1376,7 +1376,7 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "ft" = (
 /obj/effect/spawner/random/trash/grime,
@@ -1658,7 +1658,7 @@
 /area/ruin/icemoon/tesla_lab/medbay)
 "gI" = (
 /obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "gJ" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line,
@@ -2874,7 +2874,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "lU" = (
 /obj/structure/table/wood,
@@ -2975,7 +2975,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "mq" = (
 /obj/structure/window/reinforced,
@@ -3008,7 +3008,7 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "mw" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3253,7 +3253,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "nt" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -3358,7 +3358,7 @@
 	layer = 2.456
 	},
 /obj/item/ammo_casing/spent/pistol_brass,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "nQ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3784,7 +3784,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "pJ" = (
 /obj/effect/anomaly/tvstatic/planetary{
@@ -4178,7 +4178,8 @@
 	pixel_y = 9;
 	pixel_x = 3
 	},
-/turf/open/floor/concrete/pavement,
+/obj/machinery/light/directional/north,
+/turf/open/floor/concrete/pavement/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "rt" = (
 /obj/structure/cable/yellow{
@@ -4493,7 +4494,7 @@
 /area/ruin/icemoon/tesla_lab/containment)
 "sv" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "sw" = (
 /obj/machinery/porta_turret/ship/frontiersmen/light{
@@ -5108,7 +5109,7 @@
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "uU" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -5389,7 +5390,7 @@
 "vS" = (
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "vV" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -5976,7 +5977,7 @@
 /area/ruin/icemoon/tesla_lab/lobby)
 "ya" = (
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "yc" = (
 /obj/effect/decal/cleanable/glass,
@@ -6725,7 +6726,7 @@
 	},
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Bf" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -7080,7 +7081,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Cy" = (
 /obj/effect/turf_decal/atmos/air{
@@ -7125,7 +7126,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "CO" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -7226,7 +7227,7 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Dk" = (
 /obj/structure/disposalpipe/segment,
@@ -7432,7 +7433,7 @@
 	dir = 4;
 	layer = 2.456
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Ed" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
@@ -7948,11 +7949,7 @@
 	},
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 4;
-	id = "h1s"
-	},
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Gf" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -7993,7 +7990,8 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
-/turf/open/floor/concrete/pavement,
+/obj/machinery/light/directional/north,
+/turf/open/floor/concrete/pavement/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "Gl" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
@@ -8585,7 +8583,7 @@
 	layer = 2.456
 	},
 /obj/item/ammo_casing/spent/pistol_brass,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "Io" = (
 /obj/structure/dresser,
@@ -8691,7 +8689,7 @@
 	layer = 2.456
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "IL" = (
 /obj/structure/rack,
@@ -8826,7 +8824,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Jx" = (
 /obj/structure/catwalk/over,
@@ -9048,7 +9046,7 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Ke" = (
 /obj/structure/table/wood,
@@ -9394,7 +9392,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "LP" = (
 /obj/effect/turf_decal/trimline/opaque/purple/corner{
@@ -9510,7 +9508,7 @@
 "Mt" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Mu" = (
 /obj/structure/rack,
@@ -9642,7 +9640,7 @@
 "Nc" = (
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Nf" = (
 /obj/effect/decal/cleanable/blood/squirt{
@@ -10173,7 +10171,7 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Pj" = (
 /obj/structure/dresser,
@@ -10555,7 +10553,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "QL" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -10982,11 +10980,11 @@
 "Si" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mob_spawn/human/corpse/clip/researcher,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Sj" = (
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Sm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -11277,7 +11275,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "SX" = (
 /obj/structure/cable/yellow,
@@ -11293,7 +11291,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Te" = (
 /obj/structure/rack,
@@ -11481,7 +11479,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "TU" = (
 /obj/machinery/door/firedoor/border_only{
@@ -11725,7 +11723,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/concrete/slab_1/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "Ve" = (
 /obj/effect/turf_decal/siding/wood/corner{
@@ -12108,7 +12106,7 @@
 "Xj" = (
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Xl" = (
 /obj/structure/flora/rock/pile/icy,
@@ -12382,7 +12380,7 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Yt" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -12452,7 +12450,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "YF" = (
 /obj/structure/platform/industrial,
