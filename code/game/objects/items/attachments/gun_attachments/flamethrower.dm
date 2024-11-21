@@ -23,13 +23,13 @@
 		return ..()
 
 /obj/item/attachment/gun/flamethrower/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
-	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_OTHER)
+	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
 		log_combat(user, target, "flamethrowered", src)
 		attached_flamethrower.flame_turf(get_turf(target))
 		return COMPONENT_NO_ATTACK
 
 /obj/item/attachment/gun/flamethrower/on_unique_action(obj/item/gun/gun, mob/user)
-	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_OTHER)
+	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
 		attached_flamethrower.reagents.clear_reagents()
 
 /obj/item/attachment/gun/flamethrower/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
