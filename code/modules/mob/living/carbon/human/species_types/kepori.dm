@@ -21,12 +21,16 @@
 	// brutemod = 1.5
 	// burnmod = 1.5
 	speedmod = -0.10
-	bodytemp_normal = HUMAN_BODYTEMP_NORMAL + 25
-	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 40
-	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 20
-	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 35
-	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 22
-	bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR + 2
+
+	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 35
+	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 3
+
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 15
+	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 1
+
+	bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR - 4
+
+
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
 	var/datum/action/innate/keptackle/keptackle
