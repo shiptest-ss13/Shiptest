@@ -220,10 +220,12 @@
 	return chambered
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
-	. = ..()
+	// . = ..()
 
-	if(.)
-		return
+	// if(.)
+	// 	return
+	if(..())
+		return FALSE
 
 	if(sealed_magazine)
 		to_chat(user, span_warning("The [magazine_wording] on [src] is sealed and cannot be reloaded!"))
