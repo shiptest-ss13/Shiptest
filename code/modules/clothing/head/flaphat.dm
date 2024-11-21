@@ -1,7 +1,7 @@
 //Civilian Flap Caps
 /obj/item/clothing/head/flap
-	name = "white Betzu-il cap"
-	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is white."
+	name = "Betzu-il cap"
+	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
 	icon_state = "flapwhite"
 	cuttable = TRUE
 	clothamnt = 2
