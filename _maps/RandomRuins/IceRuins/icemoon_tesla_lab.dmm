@@ -1520,6 +1520,7 @@
 	dir = 1
 	},
 /obj/structure/table/optable,
+/obj/effect/mob_spawn/human/corpse/frontier,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "fV" = (
@@ -6711,6 +6712,7 @@
 	},
 /obj/structure/closet/body_bag,
 /obj/machinery/light/directional/east,
+/obj/effect/mob_spawn/human/corpse/frontier,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "Bd" = (
@@ -7095,6 +7097,7 @@
 	layer = 2.89
 	},
 /obj/structure/closet/body_bag,
+/obj/effect/mob_spawn/human/corpse/frontier,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "CE" = (
@@ -9688,6 +9691,10 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	dir = 8
+	},
+/obj/item/storage/box/ammo/c9mm_hp{
+	pixel_y = 8;
+	pixel_x = 3
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/haymaker)
@@ -12588,6 +12595,14 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/item/spacecash/bundle/mediumrand,
+/obj/item/spacecash/bundle/mediumrand,
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 8
+	},
+/obj/item/ammo_box/magazine/m9mm_mauler,
+/obj/item/ammo_box/magazine/m9mm_mauler,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "Zi" = (
