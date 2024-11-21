@@ -90,6 +90,8 @@
 
 	sound_active_outside = /datum/looping_sound/weather/rain/indoors
 	sound_active_inside = /datum/looping_sound/weather/rain
+	sound_weak_outside = /datum/looping_sound/weather/rain/indoors
+	sound_weak_inside = /datum/looping_sound/weather/rain
 
 	var/toxic_power = 2
 

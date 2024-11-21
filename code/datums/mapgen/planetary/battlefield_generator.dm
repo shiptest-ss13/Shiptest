@@ -121,7 +121,7 @@
 	flora_spawn_chance = 10
 
 /datum/biome/dry_seafloor/battlefield
-	open_turf_types = list(/turf/open/floor/plating/asteroid/dry_seafloor/battlefield/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/battlefield_wasteland/lit = 1)
 	mob_spawn_chance = 0
 
 /datum/biome/jungle/water/battlefield
