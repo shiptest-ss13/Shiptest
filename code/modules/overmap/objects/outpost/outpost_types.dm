@@ -160,14 +160,3 @@
 	main_template = null
 	elevator_template = /datum/map_template/outpost/elevator_test
 	// Uses "test" hangars.
-
-/*
-/datum/overmap/outpost/syndicate_test
-	token_icon_state = "syndie_station_new"
-	main_template = /datum/map_template/outpost/syndicate_test
-	elevator_template = /datum/map_template/outpost/elevator_indie
-	// Uses "default" hangars (indie_space).
-
-/datum/map_template/outpost/syndicate_test
-	name = "syndicate_test"
-*/
