@@ -176,14 +176,14 @@
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/a762_40
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
-				/obj/item/gun/ballistic/automatic/assault/skm)
+				/obj/item/gun/ballistic/automatic/assault/skm/pirate)
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals
 	icon_state = "frontiersmanrangedak47_mask"
 	icon_living = "frontiersmanrangedak47_mask"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
-				/obj/item/gun/ballistic/automatic/assault/skm,
+				/obj/item/gun/ballistic/automatic/assault/skm/pirate,
 				/obj/item/clothing/mask/gas,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 	atmos_requirements = IMMUNE_ATMOS_REQS
