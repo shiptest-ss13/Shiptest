@@ -13,6 +13,10 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/icemoon/tesla_lab/dorms)
+"ae" = (
+/obj/item/stack/sheet/mineral/sandbags,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "af" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4;
@@ -2326,10 +2330,7 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
-	shoot_point_blank = 1;
-	minimum_distance = 1
-	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered,
 /turf/open/floor/plasteel,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "jH" = (
@@ -3110,6 +3111,10 @@
 /obj/effect/decal/cleanable/blood/splatter/over_window,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/icemoon/tesla_lab/cargo)
+"mQ" = (
+/mob/living/simple_animal/hostile/human/frontier/internals,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/tesla_lab/turrets)
 "mS" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -4076,6 +4081,22 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
+"qQ" = (
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = 11;
+	pixel_x = -10;
+	name = "port shutter";
+	id = "h1"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	pixel_y = 12;
+	pixel_x = -1;
+	id = "h1s"
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/icemoon/tesla_lab/haymaker)
 "qR" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 10
@@ -6042,7 +6063,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/squirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "yz" = (
@@ -6577,7 +6598,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/engineering)
 "AD" = (
@@ -8695,18 +8716,6 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
 /obj/item/mine/directional/claymore,
-/obj/item/mine/directional/claymore{
-	pixel_x = -6;
-	pixel_y = -3
-	},
-/obj/item/mine/directional/claymore{
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/obj/item/mine/directional/claymore{
-	pixel_y = -9;
-	pixel_x = -6
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/armory)
 "IQ" = (
@@ -8825,6 +8834,10 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/concrete/pavement/icemoon/lit,
+/area/overmap_encounter/planetoid/ice/explored)
+"Jr" = (
+/obj/item/stack/sheet/mineral/sandbags,
+/turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Jx" = (
 /obj/structure/catwalk/over,
@@ -9245,6 +9258,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/medbay)
+"Ld" = (
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/template_noop)
 "Le" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 4
@@ -10135,6 +10151,15 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
+"Pd" = (
+/obj/effect/decal/cleanable/crayon{
+	color = "#FF3333";
+	icon_state = "danger";
+	pixel_y = 11;
+	pixel_x = 6
+	},
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/template_noop)
 "Pe" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -10442,6 +10467,10 @@
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
+"Qb" = (
+/obj/item/stack/sheet/mineral/sandbags,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/tesla_lab/turrets)
 "Qg" = (
 /obj/effect/turf_decal/trimline/transparent/blue/corner{
 	dir = 8
@@ -10701,7 +10730,7 @@
 	},
 /obj/item/stack/cable_coil/cut/random,
 /obj/machinery/light/directional/north,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "Rs" = (
@@ -11423,7 +11452,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
 "TH" = (
@@ -11597,7 +11626,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/anomaly/transfusion/planetary,
 /obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "floor2"
 	},
@@ -11638,6 +11666,21 @@
 "Ux" = (
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/dorms)
+"Uy" = (
+/obj/machinery/button/door{
+	dir = 2;
+	pixel_y = -10;
+	pixel_x = -10;
+	name = "starboard shutter";
+	id = "h2"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 2;
+	pixel_y = -11;
+	id = "h2s"
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/icemoon/tesla_lab/haymaker)
 "UG" = (
 /obj/effect/decal/cleanable/blood/splatter/over_window{
 	icon_state = "floor5"
@@ -12586,7 +12629,6 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/anomaly/tvstatic/planetary,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
 "Zd" = (
@@ -14246,12 +14288,12 @@ rM
 rM
 On
 Fv
-PH
-PH
 Fv
+PH
+PH
+Bi
 dU
-EW
-uP
+Pd
 uP
 uP
 uP
@@ -14309,12 +14351,12 @@ rM
 rM
 rM
 Fv
+Fv
 jM
 PH
 Fv
 Fv
-Fv
-uP
+Ld
 uP
 uP
 uP
@@ -14372,12 +14414,12 @@ SD
 Fv
 FE
 Fv
+Fv
 PH
 PH
 Fv
 Fv
 uG
-Fv
 uP
 uP
 uP
@@ -14497,8 +14539,8 @@ YA
 SD
 Fv
 Fv
-PH
-PH
+Fv
+Fv
 Fv
 Fv
 Fv
@@ -14559,11 +14601,11 @@ Me
 YA
 SD
 uG
-Fv
-YV
+PH
 PH
 Fv
-Bi
+Fv
+Fv
 Fv
 FE
 Fv
@@ -14622,11 +14664,11 @@ vV
 Mo
 SD
 Fv
-Fv
+YV
 PH
-PH
 Fv
-Bi
+Fv
+Fv
 Py
 Fv
 Fv
@@ -14685,10 +14727,10 @@ RA
 RA
 ue
 Fv
+PH
+PH
 Fv
 Fv
-vZ
-Bi
 Fv
 Fv
 Fv
@@ -14749,9 +14791,9 @@ cM
 cM
 Fv
 Fv
-Fv
+vZ
 Bi
-Py
+Fv
 Fv
 Fv
 cM
@@ -14813,9 +14855,9 @@ ur
 Kq
 XF
 AJ
-po
-Ua
 Fv
+Bi
+Py
 Fv
 cM
 xA
@@ -15255,7 +15297,7 @@ Rl
 cM
 cM
 Fv
-Fv
+Jr
 Yq
 Fv
 Fv
@@ -15306,18 +15348,18 @@ Yt
 mr
 YF
 Bd
-dm
+qQ
 dm
 xq
 qH
 Hb
 dm
-dm
+Uy
 Mt
 Rl
 TM
-PH
-PH
+RC
+RC
 Fv
 Bi
 Bi
@@ -15379,8 +15421,8 @@ dm
 Mt
 Rl
 cM
-RC
-PH
+mQ
+Qb
 Fv
 Bi
 Fv
@@ -15445,7 +15487,7 @@ cM
 PH
 PH
 Fv
-Fv
+Jr
 Fv
 uP
 uP
@@ -15812,9 +15854,9 @@ Fv
 nW
 gZ
 cM
-PH
+Qb
+mQ
 RC
-PH
 cM
 TM
 cM
@@ -15874,10 +15916,10 @@ Fv
 FE
 Fv
 Fv
-cM
-PH
-PH
-PH
+ae
+Qb
+RC
+RC
 cM
 cM
 Fv
