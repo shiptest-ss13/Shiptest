@@ -25,74 +25,74 @@
 /obj/item/clothing/head/flap/grey
 	name = "grey Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is grey."
-	icon_state = "flapwhite"
+	icon_state = "flapgrey"
 
 /obj/item/clothing/head/flap/black
 	name = "black Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is black."
-	icon_state = "flapwhite"
+	icon_state = "flapblack"
 
 /obj/item/clothing/head/flap/red
 	name = "red Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is red."
-	icon_state = "flapwhite"
+	icon_state = "flapred"
 
 /obj/item/clothing/head/flap/maroon
 	name = "maroon Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is maroon."
-	icon_state = "flapwhite"
+	icon_state = "flapmaroon"
 
 /obj/item/clothing/head/flap/orange
 	name = "orange Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is orange."
-	icon_state = "flapwhite"
+	icon_state = "flaporange"
 
 /obj/item/clothing/head/flap/yellow
 	name = "yellow Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is yellow."
-	icon_state = "flapwhite"
+	icon_state = "flapyellow"
 
 /obj/item/clothing/head/flap/green
 	name = "green Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is green."
-	icon_state = "flapwhite"
+	icon_state = "flapgreen"
 
 /obj/item/clothing/head/flap/darkgreen
 	name = "dark green Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is dark green."
-	icon_state = "flapwhite"
+	icon_state = "flapdarkgreen"
 
 /obj/item/clothing/head/flap/teal
 	name = "teal Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is teal."
-	icon_state = "flapwhite"
+	icon_state = "flapteal"
 
 /obj/item/clothing/head/flap/blue
 	name = "blue Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is blue."
-	icon_state = "flapwhite"
+	icon_state = "flapblue"
 
 /obj/item/clothing/head/flap/darkblue
 	name = "dark blue Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is dark blue."
-	icon_state = "flapwhite"
+	icon_state = "flapdarkblue"
 
 /obj/item/clothing/head/flap/purple
 	name = "purple Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is purple."
-	icon_state = "flapwhite"
+	icon_state = "flappurple"
 
 /obj/item/clothing/head/flap/pink
 	name = "pink Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is pink."
-	icon_state = "flapwhite"
+	icon_state = "flappink"
 
 /obj/item/clothing/head/flap/brown
 	name = "brown Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is brown."
-	icon_state = "flapwhite"
+	icon_state = "flapbrown"
 
 /obj/item/clothing/head/flap/lightbrown
 	name = "light brown Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is light brown."
-	icon_state = "flapwhite"
+	icon_state = "flaplightbrown"
