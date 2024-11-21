@@ -6,12 +6,17 @@
 #define JUMP_CHARGE_DELAY (7 SECONDS)
 #define JUMP_CHARGEUP_TIME (1 MINUTES)
 
+/*
+* Unfinished, for now it's nice decor for mappers.
+* * Originally I was going to move the bluespace jump behavior otnot this device, then i realized this would require a lot of remapping, so I left it on the
+*/
+
 /obj/machinery/bluespace_drive
 	name = "AU/W-class bluespace drive"
-	desc = "Amazing innovations after studying the solarian sun have now compacted the massive AU-class bluespace rooms of old into a 2 meter big machine. This in turn, vastly reduced vessel sizes... and here this amazing technology sits, gathering dust."
-	icon_screen = "navigation"
-	icon_keyboard = "tech_key"
-	circuit = /obj/item/circuitboard/computer/shuttle/helm
+	desc = "Amazing innovations after studying the solarian sun have now compacted the massive AU-class bluespace rooms of the past into barely a 2 meter big machine. This in turn, vastly reduced vessel sizes, resulitng in a new age of space travel across the cosmos... and here the miracle sits silently, gathering dust as you forgot to clean it last week."
+	icon = 'icons/obj/machines/bsdrive.dmi'
+	var/icon_screen = "bsdrive_left_screen"
+	circuit = /obj/item/circuitboard/computer/shuttle
 	light_color = LIGHT_COLOR_CYAN
 	clicksound = null
 
@@ -57,12 +62,6 @@
 	calibrating = TRUE
 	return TRUE
 
-/obj/machinery/bluespace_drive/Destroy()
-	. = ..()
-	if(current_ship)
-		current_ship.helms -= src
-		current_ship = null
-
 /obj/machinery/bluespace_drive/proc/cancel_jump()
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
 	calibrating = FALSE
@@ -90,7 +89,10 @@
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGE_DELAY, TIMER_STOPPABLE)
 
 /obj/machinery/bluespace_drive/proc/do_jump()
-	priority_announce("Bluespace Jump Initiated. Welcome to [jump_destination.name]", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
+	if(jump_destination)
+		priority_announce("Bluespace Jump Initiated. Welcome to [jump_destination.name]", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
+	else
+		priority_announce("Bluespace Jump Initiated.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
 	for(var/obj/machinery/computer/helm/currenthelm as anything in current_ship.helms)
 		SStgui.close_uis(currenthelm)
 	if(!jump_destination)
@@ -102,14 +104,15 @@
 	calibrating = FALSE
 
 /obj/machinery/bluespace_drive/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	if(current_ship && current_ship != port.current_ship)
-		current_ship.helms -= src
 	current_ship = port.current_ship
-	current_ship.ship_modules |= src[SHIPMODULE_BSDRIVE]
+	if(current_ship)
+		current_ship.ship_modules[SHIPMODULE_BSDRIVE] = src
 
 /obj/machinery/bluespace_drive/Destroy()
-	. = ..()
-
+	if(current_ship)
+		LAZYREMOVE(current_ship.ship_modules, src)
+		current_ship = null
+	return ..()
 
 /obj/machinery/bluespace_drive/proc/handle_interact()
 	if(calibrating)
@@ -134,13 +137,13 @@
 			return
 
 
-				else
-					if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
-						return
-					calibrate_jump()
-					return
+		else
+			if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+				return
+			calibrate_jump()
+			return
 
-/obj/machinery/proc/power_change(area/A)
+/obj/machinery/bluespace_drive/power_change(area/A)
 	. = ..()
 	if((machine_stat & NOPOWER))
 		if(calibrating)

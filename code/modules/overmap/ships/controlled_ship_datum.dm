@@ -1,7 +1,3 @@
-#define SHIPMODULE_BSDRIVE "bluespace_drive"
-#define SHIPMODULE_HELMCONSOLE "helm_console"
-#define SHIPMODULE_TRANSPONDER "transponder"
-
 /**
  * # Simulated overmap ship
  *

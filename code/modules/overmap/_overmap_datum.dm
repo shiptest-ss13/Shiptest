@@ -1,10 +1,3 @@
-#define INTERACTION_OVERMAP_DOCK "Dock to Specific Location"
-#define INTERACTION_OVERMAP_QUICKDOCK "Quick Dock"
-#define INTERACTION_OVERMAP_HAIL "Hail"
-#define INTERACTION_OVERMAP_INTERDICTION "Reverse Dock (Interdiction)"
-#define INTERACTION_OVERMAP_SETSIGNALSPRITE "Set Signal Appearance"
-#define INTERACTION_OVERMAP_SELECTED "ERROR" //use this to end the interaction when it calls the parrent
-
 /**
  * # Overmap objects
  *

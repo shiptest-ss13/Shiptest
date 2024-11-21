@@ -809,3 +809,11 @@
 				deconstruction_ready = 1
 	else
 		. = ..()
+
+/obj/structure/table/emptycomputer
+	name = "computer table"
+	desc = "An empty section of a control panel, perfect for putting items on."
+	icon = 'icons/obj/structures/emptycomputer.dmi'
+	smoothing_flags = null
+	smoothing_groups = null
+	canSmoothWith = null
