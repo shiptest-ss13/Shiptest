@@ -17,7 +17,7 @@
 		attached_flamethrower.toggle_igniter(user)
 
 /obj/item/attachment/gun/flamethrower/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I,/obj/item/reagent_containers/glass))
+	if(istype(I,/obj/item/reagent_containers/glass) || istype(I,/obj/item/reagent_containers/food/drinks))
 		attached_flamethrower.attackby(I,user)
 	else
 		return ..()
@@ -30,7 +30,8 @@
 
 /obj/item/attachment/gun/flamethrower/on_unique_action(obj/item/gun/gun, mob/user)
 	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
-		attached_flamethrower.reagents.clear_reagents()
+		attached_flamethrower.unique_action(user)
+		return OVERIDE_UNIQUE_ACTION
 
 /obj/item/attachment/gun/flamethrower/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	var/total_volume = 0
@@ -64,7 +65,7 @@
 	return
 
 /obj/item/flamethrower/underbarrel/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/reagent_containers/glass))
+	if(istype(W, /obj/item/reagent_containers/glass) || istype(W,/obj/item/reagent_containers/food/drinks))
 		var/obj/item/reagent_containers/glass/source = W
 		if(!source.is_refillable())
 			to_chat(user, span_danger("\The [source]'s cap is on! Take it off first."))
@@ -73,9 +74,15 @@
 			to_chat(user, span_danger("\The [beaker] is full."))
 			return
 		source.reagents.trans_to(beaker, source.amount_per_transfer_from_this, transfered_by = user)
+		playsound(user,'sound/items/glass_transfer.ogg',100)
 		to_chat(user, span_notice("You transfer [source.amount_per_transfer_from_this] units to \the [beaker]"))
 	else
 		return ..()
+
+/obj/item/flamethrower/underbarrel/unique_action(mob/living/user)
+	. = ..()
+	beaker.reagents.clear_reagents()
+	playsound(user,'sound/items/glass_splash.ogg',100)
 
 
 /obj/item/reagent_containers/glass/beaker/flamethrower_underbarrel
