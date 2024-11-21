@@ -1973,21 +1973,21 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 3)
 			if(H.stat != DEAD) // probably can store them in cold storage like this
 				H.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * H.physiology.cold_mod, BURN)
-			H.emote("shiver")
+				H.emote("shiver")
 
 		else if(body_temp < bodytemp_cold_damage_limit - 7)
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 2)
 			if(H.stat != DEAD) // when you think about it, being cold wouldnt do skin damaage if there nothing even alive?
 				H.apply_damage(COLD_DAMAGE_LEVEL_2 * coldmod * H.physiology.cold_mod, BURN)
-			if(prob(30))
-				H.emote("shiver")
+				if(prob(30))
+					H.emote("shiver")
 
 		else
 			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 1)
 			if(H.stat != DEAD) // to prevent a bug where bodies at room tempertue actually take damage from their body being cold
 				H.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * H.physiology.cold_mod, BURN)
-			if(prob(10))
-				H.emote("shiver")
+				if(prob(10))
+					H.emote("shiver")
 
 	// We are not to hot or cold, remove status and moods
 	else

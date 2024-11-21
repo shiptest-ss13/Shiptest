@@ -13,10 +13,6 @@
 	tiled_dirt = FALSE
 	baseturfs = /turf/open/floor/plating/dirt
 
-/turf/open/floor/plating/dirt/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent) //not much to slip on
-	return
-
-
 /turf/open/floor/plating/dirt/dark
 	icon_state = "greenerdirt"
 	baseturfs = /turf/open/floor/plating/dirt/dark
