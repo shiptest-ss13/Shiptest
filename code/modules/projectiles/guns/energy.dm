@@ -137,8 +137,6 @@
 			if (tac_reloads)
 				eject_cell(user, C)
 
-	//return ..()
-
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(user.transferItemToLoc(C, src))
 		cell = C

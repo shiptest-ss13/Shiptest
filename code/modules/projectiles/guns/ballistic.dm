@@ -220,10 +220,6 @@
 	return chambered
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
-	// . = ..()
-
-	// if(.)
-	// 	return
 	if(..())
 		return FALSE
 
