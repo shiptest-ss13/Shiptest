@@ -28,7 +28,8 @@
 	if(attached_gun)
 		attached_gun.safety = gun.safety
 	gun.build_firemodes()
-	gun.equipped(user)
+	if(user)
+		gun.equipped(user)
 
 /obj/item/attachment/gun/remove_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
