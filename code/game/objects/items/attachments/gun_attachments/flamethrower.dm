@@ -9,6 +9,10 @@
 	. = ..()
 	attached_flamethrower = new /obj/item/flamethrower/underbarrel(src)
 
+/obj/item/attachment/gun/flamethrower/Destroy()
+	. = ..()
+	QDEL_NULL(attached_flamethrower)
+
 /obj/item/attachment/gun/flamethrower/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	if(gun.safety == TRUE && attached_flamethrower.lit == TRUE)

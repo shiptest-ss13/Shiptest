@@ -17,6 +17,10 @@
 	if(weapon_type)
 		attached_gun = new weapon_type(src)
 
+/obj/item/attachment/gun/Destroy()
+	. = ..()
+	QDEL_NULL(attached_gun)
+
 /obj/item/attachment/gun/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	if(FIREMODE_UNDERBARREL in gun.gun_firemodes)
