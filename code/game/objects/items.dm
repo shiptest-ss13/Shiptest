@@ -342,7 +342,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/examine(mob/user) //This might be spammy. Remove?
 	. = ..()
 
-	. += "\The [name] [gender == PLURAL ? "are" : "is"] a [weightclass2text(w_class)] item."
+	. += ""[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
 
 	if(resistance_flags & INDESTRUCTIBLE)
 		. += "[src] seems extremely robust! It'll probably withstand anything that could happen to it!"
