@@ -55,7 +55,7 @@
 	tastes = list("dried raisins" = 1)
 	foodtype = JUNKFOOD | FRUIT | SUGAR
 	/*food_flags = FOOD_FINGER_FOOD*/
-	custom_price = 90
+	custom_price = 5
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/no_raisin/healthy
@@ -74,7 +74,7 @@
 	filling_color = "#FFD700"
 	foodtype = JUNKFOOD | GRAIN | SUGAR
 	/*food_flags = FOOD_FINGER_FOOD*/
-	custom_price = 30
+	custom_price = 5
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/candy_trash
@@ -101,7 +101,7 @@
 	filling_color = "#FFD700"
 	tastes = list("cheese" = 5, "crisps" = 2)
 	foodtype = JUNKFOOD | DAIRY | SUGAR
-	custom_price = 45
+	custom_price = 5
 
 /obj/item/reagent_containers/food/snacks/syndicake
 	name = "syndi-cakes"

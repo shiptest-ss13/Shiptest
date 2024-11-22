@@ -106,6 +106,9 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
  */
 /datum/request_manager/proc/fax_request(client/requester, message, additional_info)
 	request_for_client(requester, REQUEST_FAX, message, additional_info)
+	for(var/client/admin in GLOB.admins)
+		if(admin.prefs.chat_toggles & CHAT_PRAYER && admin.prefs.toggles & SOUND_PRAYERS)
+			SEND_SOUND(admin, sound('sound/misc/mail.ogg'))
 
 /**
  * Creates a request and registers the request with all necessary internal tracking lists

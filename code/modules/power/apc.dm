@@ -902,6 +902,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 
 /obj/machinery/power/apc/examine_more(mob/user)
 	ui_interact(user)
+	return ..()
 
 /obj/machinery/power/apc/ui_data(mob/user)
 	var/list/data = list(

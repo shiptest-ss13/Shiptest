@@ -32,7 +32,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/space/Initialize()
 	. = ..()
@@ -44,7 +44,7 @@
 	desc = "A silhouette of obsidian glass stalks into view, empty hands clutching into armored fists. They are unarmed, and this is nearly a fair fight."
 	icon_state = "syndicate_stormtrooper"
 	icon_living = "syndicate_stormtrooper"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee //dude with a knife and no shields
 	name = "Ramzi Clique Close Combatant"
@@ -69,7 +69,7 @@
 	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/space/Initialize()
 	. = ..()
@@ -83,7 +83,7 @@
 	icon_living = "syndicate_stormtrooper_knife"
 	name = "Ramzi Clique Stormtrooper"
 	projectile_deflect_chance = 50
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword
 	name = "Ramzi Clique Duelist"
@@ -125,7 +125,7 @@
 	maxbodytemp = 1000
 	speed = 1
 	projectile_deflect_chance = 50
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/Initialize()
 	. = ..()
@@ -143,7 +143,7 @@
 	icon_state = "syndicate_stormtrooper_sword"
 	icon_living = "syndicate_stormtrooper_sword"
 	projectile_deflect_chance = 50
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 ///////////////Guns////////////
 
@@ -174,7 +174,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/space/Initialize()
 	. = ..()
@@ -186,7 +186,7 @@
 	desc = "Obsidian armor cradles a small handgun with sculptural grace. Its snub muzzle follows you before you even think to move."
 	icon_state = "syndicate_stormtrooper_pistol"
 	icon_living = "syndicate_stormtrooper_pistol"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg
 	name = "Ramzi Clique Commando"
@@ -206,7 +206,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space/Initialize()
 	. = ..()
@@ -218,7 +218,7 @@
 	desc = "Night-black armor traces the silhouette of a soldier equaled by precious few. Their Cobra SMG tracks you perfectly, a staccato bark of .45 already in its throat."
 	icon_state = "syndicate_stormtrooper_smg"
 	icon_living = "syndicate_stormtrooper_smg"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun
 	name = "Ramzi Clique Breacher"
@@ -240,7 +240,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/Initialize()
 	. = ..()
@@ -252,7 +252,7 @@
 	desc = "Ink and black glass poured into the shape of an armored commando, dripping menace with every step. Their combat shotgun follows you with lethal intent, promising a blizzard of buckshot in less than a blink."
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 ///////////////Misc////////////
 

@@ -17,12 +17,13 @@
 	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/toolbox_pickup.ogg'
 	material_flags = MATERIAL_COLOR
-	var/latches = "single_latch"
+	var/latches = null
 	var/has_latches = TRUE
 
 /obj/item/storage/toolbox/Initialize()
 	. = ..()
-	if(has_latches)
+	if(has_latches && !latches)
+		latches = "single_latch"
 		if(prob(10))
 			latches = "double_latch"
 			if(prob(1))
@@ -71,12 +72,10 @@
 	material_flags = NONE
 
 /obj/item/storage/toolbox/mechanical/PopulateContents()
-	//WS Edit - Better Tool sprites
 	if(prob(50))
 		new /obj/item/wrench(src)
 	else
 		new /obj/item/wrench/crescent(src)
-	//WS End
 	new /obj/item/screwdriver(src)
 	new /obj/item/weldingtool(src)
 	new /obj/item/crowbar(src)

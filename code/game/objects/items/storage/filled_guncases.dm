@@ -66,6 +66,18 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
 
+/obj/item/storage/guncase/pistol/pc76
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/ringneck
+	mag_type = /obj/item/ammo_box/magazine/m10mm_ringneck
+
+/obj/item/storage/guncase/pistol/asp
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/asp
+	mag_type = /obj/item/ammo_box/magazine/m57_39_asp
+
+/obj/item/storage/guncase/pistol/rattlesnake
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
+	mag_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
+
 /obj/item/storage/guncase/cobra
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	mag_type = /obj/item/ammo_box/magazine/m45_cobra
@@ -146,6 +158,14 @@
 /obj/item/storage/guncase/pistol/cm23
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm23
 	mag_type = /obj/item/ammo_box/magazine/cm23
+
+/obj/item/storage/guncase/pistol/cm70
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm70
+	mag_type = /obj/item/ammo_box/magazine/m9mm_cm70
+
+/obj/item/storage/guncase/pistol/cm357
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm357
+	mag_type = /obj/item/ammo_box/magazine/cm357
 
 /* idk */
 
