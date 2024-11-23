@@ -182,6 +182,10 @@
 	mask_type = /obj/item/clothing/mask/balaclava
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
 
+/obj/item/storage/box/survival/inteq
+	mask_type = /obj/item/clothing/mask/balaclava/inteq
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+
 /obj/item/storage/box/survival/frontier
 	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary
 	internal_type = /obj/item/tank/internals/emergency_oxygen //frontiersmen dont
@@ -683,7 +687,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	drop_sound = 'sound/items/handling/matchbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/matchbox_pickup.ogg'
-	custom_price = 20
+	custom_price = 2
 
 /obj/item/storage/box/matches/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/match)
@@ -740,6 +744,14 @@
 /obj/item/storage/box/flares/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/flashlight/flare(src)
+
+/obj/item/storage/box/glowsticks
+	name = "box of glowsticks"
+	illustration = "sparkler"
+
+/obj/item/storage/box/glowsticks/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/effect/spawner/random/decoration/glowstick(src)
 
 /obj/item/storage/box/deputy
 	name = "box of deputy armbands"
@@ -1466,7 +1478,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	illustration = null
 	foldable = null
-	custom_price = 120
+	custom_price = 5
 
 /obj/item/storage/box/gum/ComponentInitialize()
 	. = ..()
@@ -1481,7 +1493,7 @@
 	name = "nicotine gum packet"
 	desc = "Designed to help with nicotine addiction and oral fixation all at once without destroying your lungs in the process. Mint flavored!"
 	icon_state = "bubblegum_nicotine"
-	custom_premium_price = 275
+	custom_premium_price = 10
 
 /obj/item/storage/box/gum/nicotine/PopulateContents()
 	for(var/i in 1 to 4)
@@ -1491,8 +1503,8 @@
 	name = "HP+ gum packet"
 	desc = "A seemingly homemade packaging with an odd smell. It has a weird drawing of a smiling face sticking out its tongue."
 	icon_state = "bubblegum_happiness"
-	custom_price = 300
-	custom_premium_price = 300
+	custom_price = 10
+	custom_premium_price = 10
 
 /obj/item/storage/box/gum/happiness/Initialize()
 	. = ..()

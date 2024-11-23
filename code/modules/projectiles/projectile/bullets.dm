@@ -2,7 +2,7 @@
 	name = "bullet"
 	icon_state = "gauss"
 	damage = 60
-	speed = 0.4
+	speed = BULLET_SPEED_RIFLE
 	damage_type = BRUTE
 	nodamage = FALSE
 	flag = "bullet"
