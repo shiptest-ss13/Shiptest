@@ -93,6 +93,9 @@
 	layer = 2.456
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/platform/industrial{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/containment)
 "av" = (
@@ -277,6 +280,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/directional/west,
+/obj/structure/platform/industrial{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/containment)
 "aW" = (
@@ -2099,7 +2105,9 @@
 /obj/machinery/button/door{
 	pixel_x = 9;
 	dir = 8;
-	pixel_y = -1
+	pixel_y = -1;
+	id = "tl7";
+	name = "shutter control"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/containment)
@@ -10795,6 +10803,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4;
 	layer = 2.456
+	},
+/obj/structure/platform/industrial{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/containment)

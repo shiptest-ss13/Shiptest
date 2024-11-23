@@ -37,7 +37,7 @@
 		"\[00:00\] Recording started.",
 		"\[00:03\] [span_name("scared human woman")] whispers \"My n-name is Alyssa Salata- Ident 4070591. CLIP Minutemen-\"",
 		"\[00:06\] [span_name("scared human woman")] whispers \"Its been - 4 hours since my last log entry-.\"",
-		"\[00:10\] [span_name("scared human woman")] whispers \"The radio has been dead for 3. At least. \"",
+		"\[00:10\] [span_name("scared human woman")] whispers \"The radio has been dead for 3. At least.\"",
 		"\[00:15\] [span_name("scared human woman")] whispers \"The last thing I heard was someone else holing up in - Lab one-\"",
 		"\[00:20\] [span_name("scared human woman")] whispers \"...That's on the other side of the corridor. I don't think I'd- make it-\"",
 		"\[00:23\] [span_name("scared human woman")] whispers \"The voices I keep hearing aren't |right| either. It's. They're. Barely human-\"",
@@ -74,11 +74,11 @@
 
 /obj/item/desynchronizer/tvstatic/resync()
 	. = ..()
-	var/braim_bamage = (world.time - last_use) * 2
+	var/braim_bamage = (world.time - last_use) * 1
 	playsound(src, 'sound/effects/glassbr1.ogg', 75)
 	if(braim_bamage > 100)
-		new /obj/effect/anomaly/tvstatic(loc)
-	for(var/mob/living/carbon/human/looking in range(4, src.loc))
+		new /obj/effect/anomaly/tvstatic/planetary(loc)
+	for(var/mob/living/carbon/human/looking in range(1, src.loc))
 		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner)
 			continue
 		looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, braim_bamage, 200)
