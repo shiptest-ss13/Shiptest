@@ -314,10 +314,17 @@
 	contains = list(/obj/item/attachment/gun/energy/e_gun)
 	crate_name = "underbarrel energy gun crate"
 
-/datum/supply_pack/gun/attachment/riot_launcer
-	name = "Underbarrel Riot Grenade Launcer Crate"
+/datum/supply_pack/gun/attachment/riot_launcher
+	name = "Underbarrel Riot Grenade Launcher Crate"
 	desc = "Contains a single shot underbarrel riot grenade launcher to be mounted on a firearm."
 	cost = 750
 	contains = list(/obj/item/attachment/gun/riot)
 	crate_name = "underbarrel riot grenade launcher crate"
+
+/datum/supply_pack/gun/attachment/flare
+	name = "Underbarrel Flare Gun Crate"
+	desc = "Contains a single shot underbarrel flare gun to be mounted on a firearm. One box of flares included."
+	cost = 200
+	contains = list(/obj/item/attachment/gun/flare)
+	crate_name = "underbarrel flare gun crate"
 
