@@ -344,6 +344,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/radio/weather_monitor{
+	pixel_x = 25;
+	anchored = 1;
+	name = "barometric monitor"
+	},
 /turf/open/floor/circuit/telecomms,
 /area/ship/science/ai_chamber)
 "cN" = (
@@ -463,9 +468,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/arrow_ccw,
 /obj/machinery/light/dim/directional/north,
-/turf/open/floor/plasteel/tech/techmaint{
-	color = "#a8b2b6"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "dC" = (
 /obj/effect/turf_decal/ntspaceworks_small/right,
@@ -590,9 +593,7 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 24
 	},
-/turf/open/floor/plasteel/tech/techmaint{
-	color = "#a8b2b6"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "eD" = (
 /obj/machinery/power/apc/auto_name/directional/west,
@@ -694,10 +695,10 @@
 	dir = 1
 	},
 /obj/structure/platform/industrial{
-	dir = 8
+	dir = 4
 	},
 /obj/structure/platform/industrial/corner{
-	dir = 9
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -987,6 +988,7 @@
 /obj/machinery/airalarm/directional/south,
 /obj/item/clothing/head/nanotrasen/beret/security/command,
 /obj/item/clothing/suit/armor/nanotrasen/sec_director,
+/obj/item/clothing/under/nanotrasen/security/director,
 /turf/open/floor/wood,
 /area/ship/crew/dorm/captain)
 "hz" = (
@@ -1000,7 +1002,9 @@
 /area/ship/crew/specialized/engineering)
 "hF" = (
 /obj/machinery/light/dim/directional/north,
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = list(1)
+	},
 /obj/effect/turf_decal/industrial/fire,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
@@ -1402,7 +1406,7 @@
 	},
 /obj/item/paper{
 	name = "NT Spaceworks Notice";
-	default_raw_text = "Dear engineer, please bring your attention to the advanced control mechanisms present on and around this console. There is an external lighting switch to toggle the vessel's exterior lighting, highlighted in yellow, an aiar alarm connected to this console which controls external atmospherics fittings, and the console itself, which can read external atmosphere from a main sensor affixed to the port-side hull. -NT Spaceworks"
+	default_raw_text = "Dear engineer, please bring your attention to the advanced control mechanisms present on and around this console. There is an external lighting switch to toggle the vessel's exterior lighting, highlighted in yellow, an air alarm connected to this console which controls external atmospherics fittings, and the console itself, which can read external atmosphere from a main sensor affixed to the fore of the vessel. -NT Spaceworks"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/external/dark)
@@ -2035,9 +2039,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint{
-	color = "#a8b2b6"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "oq" = (
 /obj/structure/cable/cyan{
@@ -2274,7 +2276,6 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
-/obj/machinery/air_sensor/external,
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/light/floor,
 /turf/open/floor/engine/hull,
@@ -2636,9 +2637,7 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
-/turf/open/floor/plasteel/tech/techmaint{
-	color = "#a8b2b6"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "sJ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -3432,6 +3431,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/plasma,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "yf" = (
@@ -3661,7 +3661,8 @@
 	},
 /obj/structure/filingcabinet/chestdrawer{
 	dir = 4;
-	pixel_x = -6
+	pixel_x = -6;
+	density = 0
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3774,6 +3775,9 @@
 	},
 /obj/structure/closet/cabinet,
 /obj/machinery/light/small/directional/south,
+/obj/item/clothing/head/nanotrasen/cap/security,
+/obj/item/clothing/under/nanotrasen/science,
+/obj/item/clothing/under/nanotrasen/medical/paramedic,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/specialized/medical)
 "AF" = (
@@ -4172,9 +4176,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint{
-	color = "#a8b2b6"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "CW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -4431,6 +4433,10 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/storage/ration/cheese_pizza_slice,
+/obj/item/storage/ration/pepperoni_pizza_slice,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "EE" = (
@@ -5525,6 +5531,8 @@
 	pixel_y = -10
 	},
 /obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/storage/backpack/duffelbag,
+/obj/item/storage/backpack/duffelbag,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "MR" = (
@@ -5902,6 +5910,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"Pa" = (
+/obj/structure/catwalk/over/plated_catwalk/dark{
+	name = "sensor protection plate"
+	},
+/obj/machinery/air_sensor/external,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/external/dark)
 "Pd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -5972,6 +5987,11 @@
 /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/light/small/directional/west,
+/obj/item/clothing/head/nanotrasen/cap/security,
+/obj/item/clothing/under/nanotrasen/science/robotics,
+/obj/item/clothing/under/nanotrasen/engineering,
+/obj/item/clothing/under/nanotrasen/engineering/atmos,
+/obj/item/clothing/under/nanotrasen/engineering/director,
 /turf/open/floor/wood,
 /area/ship/crew/specialized/engineering)
 "PG" = (
@@ -6040,6 +6060,8 @@
 /obj/machinery/camera/autoname{
 	dir = 6
 	},
+/obj/item/clothing/under/nanotrasen/supply,
+/obj/item/clothing/under/nanotrasen/supply/miner,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/specialized/cargo)
 "PR" = (
@@ -6126,7 +6148,9 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Rn" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = list(1)
+	},
 /obj/effect/turf_decal/industrial/fire,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
@@ -6147,14 +6171,6 @@
 	pixel_x = -1;
 	pixel_y = 9
 	},
-/obj/item/clothing/mask/gas/sechailer{
-	pixel_x = -10;
-	pixel_y = -14
-	},
-/obj/item/clothing/mask/gas/sechailer{
-	pixel_x = -1;
-	pixel_y = -14
-	},
 /obj/item/flashlight/seclite{
 	pixel_x = 5;
 	pixel_y = 4
@@ -6168,6 +6184,18 @@
 /obj/item/radio/headset/alt{
 	pixel_x = 5;
 	pixel_y = -11
+	},
+/obj/item/clothing/mask/gas/vigilitas,
+/obj/item/clothing/mask/gas/vigilitas,
+/obj/item/clothing/mask/gas/sechailer{
+	pixel_x = -1;
+	pixel_y = -14;
+	name = "half-mask respirator"
+	},
+/obj/item/clothing/mask/gas/sechailer{
+	pixel_x = -1;
+	pixel_y = -14;
+	name = "half-mask respirator"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
@@ -6200,9 +6228,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint{
-	color = "#a8b2b6"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "RM" = (
 /obj/structure/chair/sofa/brown/left/directional/west,
@@ -6893,6 +6919,7 @@
 /obj/item/clothing/shoes/sneakers/black{
 	pixel_y = -10
 	},
+/obj/item/clothing/suit/hooded/wintercoat,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "XL" = (
@@ -7203,6 +7230,8 @@
 /obj/machinery/firealarm/directional/west,
 /obj/item/clothing/head/nanotrasen/beret/security,
 /obj/item/clothing/head/nanotrasen/cap/security,
+/obj/item/clothing/under/nanotrasen/security,
+/obj/item/clothing/under/nanotrasen/security/director,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/specialized/security)
 "Zw" = (
@@ -8627,7 +8656,7 @@ zW
 zW
 zW
 zW
-wq
+Pa
 zW
 Lk
 LU
