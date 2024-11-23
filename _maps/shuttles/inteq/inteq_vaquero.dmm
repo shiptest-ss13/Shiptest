@@ -471,6 +471,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"hh" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/hallway/central)
 "hn" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -1044,6 +1056,9 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "pM" = (
@@ -1210,6 +1225,9 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
 	dir = 8
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "sS" = (
@@ -1306,18 +1324,6 @@
 	},
 /turf/template_noop,
 /area/template_noop)
-"vl" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 8
-	},
-/obj/structure/chair/handrail{
-	dir = 4
-	},
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/hallway/central)
 "vo" = (
 /obj/structure/sign/number/random{
 	pixel_y = -8
@@ -3710,7 +3716,7 @@ pM
 dO
 Zv
 jO
-vl
+hh
 Cs
 jV
 gt
