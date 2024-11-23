@@ -135,3 +135,21 @@
 	contains = list(/obj/item/clothing/suit/armor/laserproof)
 	crate_name = "reflector vest crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+
+/datum/supply_pack/spacesuit_armor/marine_armor
+	name = "Tactical Armor Crate"
+	desc = "One set of well-rounded tactical armor. While it does not protect the limbs, the vest is fairly durable. The set includes a helmet and vest."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/armor/vest/marine,
+					/obj/item/clothing/head/helmet/marine)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+
+/datum/supply_pack/spacesuit_armor/medium_marine_armor
+	name = "Medium Tactical Armor Crate"
+	desc = "One set of well-rounded medium tactical body armor. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
+	cost = 3000
+	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium,
+					/obj/item/clothing/head/helmet/marine)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma

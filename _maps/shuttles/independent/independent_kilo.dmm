@@ -661,7 +661,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/item/storage/box/ammo/a12g_rubbershot,
+/obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/gun/ballistic/shotgun/doublebarrel/presawn{
+	default_ammo_type = 0
+	},
 /obj/structure/cable/pink{
 	icon_state = "4-10"
 	},

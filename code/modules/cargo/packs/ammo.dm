@@ -19,29 +19,42 @@
 	contains = list(/obj/item/storage/box/ammo/c22lr)
 	cost = 250
 
+/datum/supply_pack/ammo/c22lr_hp
+	name = ".22 LR HP Ammo Box Crate"
+	desc = "Contains a 100-round hollow point ammo box for refilling .22 LR weapons."
+	contains = list(/obj/item/storage/box/ammo/c22lr/hp)
+	cost = 600
+
+/datum/supply_pack/ammo/c22lr_ap
+	name = ".22 LR AP Ammo Box Crate"
+	desc = "Contains a 100-round armour piercing ammo box for refilling .22 LR weapons."
+	contains = list(/obj/item/storage/box/ammo/c22lr/ap)
+	cost = 600
+
+
 /* 9mm */
 
 /datum/supply_pack/ammo/c9mm_ammo_box
 	name = "9mm Ammo Box Crate"
-	desc = "Contains a 48-round 9mm box for pistols and SMGs such as the Commander or Saber."
+	desc = "Contains a 60-round 9mm box for pistols and SMGs such as the Commander or Saber."
 	contains = list(/obj/item/storage/box/ammo/c9mm)
 	cost = 200
 
 /datum/supply_pack/ammo/c9mmap_ammo_box
 	name = "9mm AP Ammo Box Crate"
-	desc = "Contains a 48-round 9mm box loaded with armor piercing ammo."
-	contains = list(/obj/item/storage/box/ammo/c9mm/ap)
+	desc = "Contains a 60-round 9mm box loaded with armor piercing ammo."
+	contains = list(/obj/item/storage/box/ammo/c9mm_ap)
 	cost = 400
 
 /datum/supply_pack/ammo/c9mmhp_ammo_box
 	name = "9mm HP Ammo Box Crate"
-	desc = "Contains a 48-round 9mm box loaded with hollow point ammo, great against unarmored targets."
+	desc = "Contains a 60-round 9mm box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/c9mm_hp)
 	cost = 400
 
 /datum/supply_pack/ammo/c9mmrubber_ammo_box
 	name = "9mm Rubber Ammo Box Crate"
-	desc = "Contains a 48-round 9mm box loaded with less-than-lethal rubber rounds."
+	desc = "Contains a 60-round 9mm box loaded with less-than-lethal rubber rounds."
 	contains = list(/obj/item/storage/box/ammo/c9mm_rubber)
 	cost = 200
 
@@ -97,7 +110,7 @@
 
 /datum/supply_pack/ammo/c45hp_ammo_box
 	name = ".45 HP Ammo Box Crate"
-	desc = "Contains a 48-round 10mm box loaded with hollow point ammo, great against unarmored targets."
+	desc = "Contains a 48-round .45 box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/c45_hp)
 	cost = 500
 
@@ -151,18 +164,51 @@
 
 /datum/supply_pack/ammo/c46x30mm_boxcrate
 	name = "4.6x30mm Ammo Box Crate"
-	desc = "Contains a 60-round 4.6x30mm box for PDWs such as the WT-550."
+	desc = "Contains an 80-round 4.6x30mm box for PDWs such as the WT-550."
 	contains = list(/obj/item/storage/box/ammo/c46x30mm)
 	cost = 250
+
+/datum/supply_pack/ammo/c46x30mm_ap
+	name = "4.6x30mm Armour Piercing Ammo Box Crate"
+	desc = "Contains a 80-round 4.6x30mm armour piercing box for PDWs such as the WT-550."
+	contains = list(/obj/item/storage/box/ammo/c46x30mm/ap)
+	cost = 500
+
+/datum/supply_pack/ammo/c46x30mm_hp
+	name = "4.6x30mm Hollow Point Ammo Box Crate"
+	desc = "Contains a 80-round 4.6x30mm hollow point box for PDWs such as the WT-550."
+	contains = list(/obj/item/storage/box/ammo/c46x30mm/hp)
+	cost = 500
+
 
 /* 5.7x39 */
 
 /datum/supply_pack/ammo/c57x39mm_boxcrate
 	name = "5.7x39mm Ammo Box Crate"
-	desc = "Contains a 48-round 5.7x39mm box for PDWs such as the Sidewinder."
-	contains = list(/obj/item/storage/box/ammo/c57x39)
-	cost = 250
+	desc = "Contains two 48-round 5.7x39mm box for PDWs such as the Sidewinder."
+	contains = list(
+		/obj/item/storage/box/ammo/c57x39,
+		/obj/item/storage/box/ammo/c57x39,
+	)
+	cost = 350
 
+/datum/supply_pack/ammo/c57x39mm_ap
+	name = "5.7x39mm Armour Piercing Ammo Box Crate"
+	desc = "Contains two 48-round 5.7x39mm box for PDWs such as the Sidewinder."
+	contains = list(
+		/obj/item/storage/box/ammo/c57x39/ap,
+		/obj/item/storage/box/ammo/c57x39/ap,
+	)
+	cost = 700
+
+/datum/supply_pack/ammo/c57x39mm_hp
+	name = "5.7x39mm Hollow Point Ammo Box Crate"
+	desc = "Contains two 48-round 5.7x39mm Hollow Point boxes for PDWs such as the Sidewinder."
+	contains = list(
+		/obj/item/storage/box/ammo/c57x39/hp,
+		/obj/item/storage/box/ammo/c57x39/hp,
+	)
+	cost = 700
 
 /* 12 Gauge */
 
@@ -219,6 +265,20 @@
 					/obj/item/storage/box/ammo/a762_40)
 	cost = 500
 
+/datum/supply_pack/ammo/a762_ap
+	name = "7.62x40mm CLIP Armour Piercing Ammo Box Crate"
+	desc = "Contains two 60-round 7.62x40mm CLIP Armour Piercing boxes for the SKM rifles."
+	contains = list(/obj/item/storage/box/ammo/a762_40/ap,
+					/obj/item/storage/box/ammo/a762_40/ap)
+	cost = 1000
+
+/datum/supply_pack/ammo/a762_hp
+	name = "7.62x40mm CLIP Hollow Point Ammo Box Crate"
+	desc = "Contains two 60-round 7.62x40mm CLIP Hollow Point boxes for the SKM rifles."
+	contains = list(/obj/item/storage/box/ammo/a762_40/hp,
+					/obj/item/storage/box/ammo/a762_40/hp)
+	cost = 1000
+
 /* 5.56 */
 
 /datum/supply_pack/ammo/a556_ammo_box
@@ -227,6 +287,20 @@
 	contains = list(/obj/item/storage/box/ammo/a556_42,
 					/obj/item/storage/box/ammo/a556_42)
 	cost = 450
+
+/datum/supply_pack/ammo/a556_ap
+	name = "5.56x42mm CLIP Armour Piercing Ammo Box Crate"
+	desc = "Contains two 60-round 5.56x42mm CLIP Armour Piercing boxes for most newer rifles."
+	contains = list(/obj/item/storage/box/ammo/a556_42/ap,
+					/obj/item/storage/box/ammo/a556_42/ap)
+	cost = 900
+
+/datum/supply_pack/ammo/a556_hp
+	name = "5.56x42mm CLIP Hollow Point Ammo Box Crate"
+	desc = "Contains two 60-round 5.56x42mm CLIP Hollow Point boxes for most newer rifles."
+	contains = list(/obj/item/storage/box/ammo/a556_42/hp,
+					/obj/item/storage/box/ammo/a556_42/hp)
+	cost = 900
 
 /* 5.56 caseless */
 
@@ -267,15 +341,22 @@
 
 /datum/supply_pack/ammo/c8x50mm_boxcrate
 	name = "8x50mm Ammo Box Crate"
-	desc = "Contains a 30-round 8x50mm ammo box for rifles such as the Illestren."
+	desc = "Contains a 40-round 8x50mm ammo box for rifles such as the Illestren."
 	contains = list(/obj/item/storage/box/ammo/a8_50r)
 	cost = 250
 
 /datum/supply_pack/ammo/c8x50mm_boxhp_boxcrate
 	name = "8x50mm Hollow Point Crate"
-	desc = "Contains a 30-round 8x50mm ammo box loaded with hollow point ammo, great against unarmored targets."
-	contains = list(/obj/item/storage/box/ammo/a8_50r_hp)
+	desc = "Contains a 40-round 8x50mm ammo box loaded with hollow point ammo, great against unarmored targets."
+	contains = list(/obj/item/storage/box/ammo/a8_50r/hp)
 	cost = 500
+
+/datum/supply_pack/ammo/c8x50mm_tracbox
+	name = "8x50mm Tracker Crate"
+	desc = "Contains a 30-round 8x50mm ammo box loaded with tracker ammo, great for sustained hunts."
+	contains = list(/obj/item/storage/box/ammo/a8_50r/trac)
+	cost = 500
+
 
 /* .300 */
 
@@ -285,12 +366,31 @@
 	contains = list(/obj/item/storage/box/ammo/a300)
 	cost = 400
 
+/datum/supply_pack/ammo/a300_trac
+	name = ".300 Trac Ammo Box Crate"
+	desc = "Contains a ten-round .300 TRAC ammo box for sniper rifles such as the HP Scout."
+	contains = list(/obj/item/storage/box/ammo/a300/trac)
+	cost = 600
+
+
 /* .308 */
 
 /datum/supply_pack/ammo/a308_ammo_box
 	name = "308 Ammo Box Crate"
 	desc = "Contains a thirty-round .308 box for DMRs such as the SsG-04 and CM-GAL-S."
 	contains = list(/obj/item/storage/box/ammo/a308)
+	cost = 500
+
+/datum/supply_pack/ammo/a308_ap
+	name = "308 Armour Piercing Ammo Box Crate"
+	desc = "Contains a thirty-round .308 armour piercing box for DMRs such as the SsG-04 and CM-GAL-S."
+	contains = list(/obj/item/storage/box/ammo/a308/ap)
+	cost = 500
+
+/datum/supply_pack/ammo/a308_hp
+	name = "308 Hollow Point Ammo Box Crate"
+	desc = "Contains a thirty-round .308 hollow point box for DMRs such as the SsG-04 and CM-GAL-S."
+	contains = list(/obj/item/storage/box/ammo/a308/hp)
 	cost = 500
 
 /* 6.5 */
@@ -300,6 +400,21 @@
 	desc = "Contains a twenty-round 6.5x57mm CLIP ammo box for various sniper rifles such as the CM-F90 and the Boomslang series."
 	contains = list(/obj/item/storage/box/ammo/a65clip)
 	cost = 400
+
+/datum/supply_pack/ammo/a65clip_trackers
+	name = "6.5x57mm CLIP Tracker Shell Crate"
+	desc = "Contains a 10-round 6.5x57mm CLIP tracker box for various sniper rifles such as the CM-F90 and the Boomslang series."
+	contains = list(/obj/item/storage/box/ammo/a65clip/trac)
+	cost = 600
+
+/* 8x58 */
+
+/datum/supply_pack/ammo/a858
+	name = "8x58mm Ammo Box Crate"
+	desc = "Contains a twenty-round 8x58 ammo box for Solarian-manufactured sniper rifles, such as the SSG-69."
+	contains = list(/obj/item/storage/box/ammo/a858)
+	cost = 400
+
 
 /* ferro pellets */
 
