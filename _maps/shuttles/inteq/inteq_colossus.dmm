@@ -68,6 +68,9 @@
 	req_access = null
 	},
 /obj/item/radio/intercom/directional/west,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
 "bn" = (
@@ -323,6 +326,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "dS" = (
@@ -789,6 +793,9 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = 32
 	},
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
 "hQ" = (
@@ -1253,6 +1260,9 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
 "ny" = (
@@ -1507,6 +1517,9 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/item/radio/intercom/directional/west,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "qQ" = (
@@ -1647,6 +1660,9 @@
 "rS" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "rW" = (
@@ -1859,6 +1875,9 @@
 /obj/structure/closet/wall/directional/east{
 	icon_state = "emergency_wall"
 	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
 "tI" = (
@@ -1888,6 +1907,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/extinguisher_cabinet/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "tR" = (
@@ -2019,6 +2041,7 @@
 	pixel_x = 5;
 	pixel_y = 21
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "uT" = (
@@ -2143,6 +2166,9 @@
 	dir = 6
 	},
 /obj/machinery/light/directional/east,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "wm" = (
@@ -2175,6 +2201,9 @@
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -2570,6 +2599,9 @@
 	pixel_y = -5
 	},
 /obj/machinery/light/small/directional/west,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "BK" = (
@@ -2665,6 +2697,9 @@
 	id = "colossus_cargo_starboard";
 	pixel_x = -5;
 	pixel_y = -19
+	},
+/obj/structure/chair/handrail{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -2959,6 +2994,7 @@
 	pixel_x = -5;
 	pixel_y = 21
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Gl" = (
@@ -3136,6 +3172,9 @@
 	id = "colossus_cargo_starboard";
 	pixel_x = 5;
 	pixel_y = -19
+	},
+/obj/structure/chair/handrail{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -3369,6 +3408,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/structure/chair/handrail{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
@@ -4447,6 +4489,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Xc" = (
@@ -4628,6 +4671,7 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 8
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Zc" = (

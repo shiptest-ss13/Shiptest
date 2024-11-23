@@ -220,6 +220,9 @@
 	pixel_y = -20
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "dO" = (
@@ -416,6 +419,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "gt" = (
@@ -533,6 +539,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/north,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "id" = (
@@ -678,6 +685,7 @@
 	pixel_y = 22
 	},
 /obj/machinery/firealarm/directional/north,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "jB" = (
@@ -1126,6 +1134,9 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "ro" = (
@@ -1295,6 +1306,18 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"vl" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/hallway/central)
 "vo" = (
 /obj/structure/sign/number/random{
 	pixel_y = -8
@@ -1338,6 +1361,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 4
+	},
+/obj/structure/chair/handrail{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -1943,6 +1969,9 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/firealarm/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Dh" = (
@@ -2231,6 +2260,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "HS" = (
@@ -2267,6 +2297,9 @@
 	pixel_y = -32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "IX" = (
@@ -2288,6 +2321,9 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/light/directional/west,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Jc" = (
@@ -3367,6 +3403,9 @@
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Zi" = (
@@ -3671,7 +3710,7 @@ pM
 dO
 Zv
 jO
-jO
+vl
 Cs
 jV
 gt
