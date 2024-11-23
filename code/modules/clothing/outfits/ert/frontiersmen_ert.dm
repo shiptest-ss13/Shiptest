@@ -195,7 +195,7 @@
 
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer
+	mask = /obj/item/clothing/mask/breath
 	belt = /obj/item/gun/ballistic/automatic/pistol/deagle/gold // daring today aren't we
 
 	backpack = /obj/item/minigunpack

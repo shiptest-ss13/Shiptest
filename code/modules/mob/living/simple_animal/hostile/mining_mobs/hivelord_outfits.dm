@@ -445,7 +445,7 @@
 	if(prob(75))
 		head = pick(/obj/item/clothing/head/helmet/sec, /obj/item/clothing/head/helmet/blueshirt, /obj/item/clothing/head/helmet/bulletproof)
 	if(prob(75))
-		mask = /obj/item/clothing/mask/gas/sechailer
+		mask = /obj/item/clothing/mask/gas
 	if(prob(75))
 		ears = /obj/item/radio/headset/headset_sec
 	if(prob(75))

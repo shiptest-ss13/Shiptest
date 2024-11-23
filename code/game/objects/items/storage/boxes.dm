@@ -169,7 +169,7 @@
 
 // Security survival box
 /obj/item/storage/box/survival/security
-	mask_type = /obj/item/clothing/mask/gas/sechailer
+	mask_type = /obj/item/clothing/mask/gas
 
 // Medical survival box
 /obj/item/storage/box/survival/medical
