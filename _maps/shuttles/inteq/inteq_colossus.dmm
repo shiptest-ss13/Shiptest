@@ -8,6 +8,9 @@
 	dir = 4;
 	pixel_x = -20
 	},
+/obj/structure/platform/ship_three{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ai" = (
@@ -24,6 +27,9 @@
 	},
 /obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/borderfloorblack,
+/obj/structure/platform/ship_three{
+	dir = 6
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "ar" = (
@@ -111,6 +117,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/trimline/opaque/yellow/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "bJ" = (
@@ -304,13 +316,13 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "dI" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/corner{
-	dir = 1
-	},
 /obj/machinery/firealarm/directional/north,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "dS" = (
@@ -342,6 +354,9 @@
 /obj/item/clothing/ears/earmuffs,
 /obj/machinery/light/directional/north,
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/platform/ship_three{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "eg" = (
@@ -538,6 +553,7 @@
 	},
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/platform/ship_three,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "fN" = (
@@ -623,8 +639,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table,
-/obj/item/flashlight/lamp/green,
+/obj/effect/spawner/bunk_bed,
+/obj/structure/curtain/bounty,
 /turf/open/floor/carpet/black,
 /area/ship/crew)
 "gC" = (
@@ -654,8 +670,8 @@
 /area/ship/bridge)
 "gH" = (
 /obj/machinery/porta_turret/ship/inteq{
-	id = "colossus_grid";
-	dir = 4
+	dir = 4;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -802,6 +818,9 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/machinery/computer/helm/viewscreen/directional/west,
+/obj/structure/platform/ship_three{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ie" = (
@@ -915,8 +934,8 @@
 	dir = 1
 	},
 /obj/machinery/turretid/ship{
-	pixel_y = 24;
-	id = "colossus_grid"
+	id = "colossus_grid";
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -928,6 +947,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "ju" = (
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "jw" = (
@@ -1038,7 +1063,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/newscaster/security_unit/directional/north,
-/obj/machinery/rnd/server,
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/pet/dog/pug{
+	name = "Solstice"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "kV" = (
@@ -1063,6 +1091,9 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/east,
+/obj/structure/platform/ship_three{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "lr" = (
@@ -1072,6 +1103,9 @@
 /obj/structure/sink{
 	dir = 8;
 	pixel_x = 12
+	},
+/obj/structure/platform/ship_three{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -1092,13 +1126,12 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
 "lA" = (
-/mob/living/simple_animal/pet/gondola{
-	desc = "Why Inteq keeps this Gondola around is anybody's guess. Something about its peaceful demeanor still manages to put everybody at ease.";
-	name = "Solstice";
-	real_name = "Solstice"
+/obj/structure/weightmachine/weightlifter,
+/obj/structure/platform/ship_three{
+	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/office)
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "lB" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -1139,8 +1172,8 @@
 /area/ship/hallway/fore)
 "mb" = (
 /obj/machinery/porta_turret/ship/inteq/light{
-	id = "colossus_grid";
-	dir = 5
+	dir = 5;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/port)
@@ -1292,6 +1325,9 @@
 /obj/item/pickaxe/mini,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/west,
+/obj/structure/platform/ship_three{
+	dir = 10
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "on" = (
@@ -1317,6 +1353,9 @@
 	},
 /obj/structure/table,
 /obj/machinery/jukebox/boombox,
+/obj/structure/platform/ship_three{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "ot" = (
@@ -1515,6 +1554,9 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /obj/machinery/airalarm/directional/south,
+/obj/item/flashlight/lamp/green{
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "rb" = (
@@ -1553,6 +1595,9 @@
 /obj/structure/table,
 /obj/item/storage/box/cups{
 	pixel_y = 10
+	},
+/obj/structure/platform/ship_three{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -1604,12 +1649,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "rS" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/thinplating/corner{
-	dir = 8
-	},
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/trimline/opaque/yellow/line,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "rW" = (
@@ -1652,6 +1693,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/directional/north,
 /obj/machinery/computer/helm/viewscreen/directional/west,
+/obj/structure/platform/ship_three{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "sc" = (
@@ -1737,8 +1781,8 @@
 /area/ship/crew/office)
 "sT" = (
 /obj/machinery/porta_turret/ship/inteq/light{
-	id = "colossus_grid";
-	dir = 5
+	dir = 5;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew)
@@ -1831,6 +1875,9 @@
 	dir = 1
 	},
 /obj/effect/landmark/start/assistant,
+/obj/structure/platform/ship_three{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "tK" = (
@@ -2071,8 +2118,8 @@
 /area/ship/cargo)
 "vJ" = (
 /obj/machinery/porta_turret/ship/inteq{
-	id = "colossus_grid";
-	dir = 5
+	dir = 5;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/port)
@@ -2148,6 +2195,9 @@
 /obj/structure/curtain,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
+	},
+/obj/structure/platform/ship_three{
+	dir = 5
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -2290,6 +2340,7 @@
 	pixel_x = 5
 	},
 /obj/effect/turf_decal/borderfloorblack,
+/obj/structure/platform/ship_three,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "yP" = (
@@ -2443,8 +2494,8 @@
 /area/ship/maintenance/port)
 "Bi" = (
 /obj/machinery/porta_turret/ship/inteq{
-	id = "colossus_grid";
-	dir = 9
+	dir = 9;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/office)
@@ -2559,6 +2610,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom/directional/west,
 /obj/structure/reagent_dispensers/watertank,
+/obj/structure/platform/ship_three{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "BY" = (
@@ -3304,6 +3358,9 @@
 /area/ship/bridge)
 "KM" = (
 /obj/structure/closet/emcloset/wall/directional/west,
+/obj/structure/platform/ship_three{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Ld" = (
@@ -3325,8 +3382,8 @@
 /area/ship/security/armory)
 "Ll" = (
 /obj/machinery/porta_turret/ship/inteq{
-	id = "colossus_grid";
-	dir = 4
+	dir = 4;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -3557,12 +3614,13 @@
 /obj/structure/rack,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/metal/fifty,
+/obj/structure/platform/ship_three,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Oa" = (
 /obj/machinery/porta_turret/ship/inteq/light{
-	id = "colossus_grid";
-	dir = 6
+	dir = 6;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -3600,9 +3658,8 @@
 	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bed,
 /obj/structure/curtain/bounty,
-/obj/item/bedsheet/brown,
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet/black,
 /area/ship/crew)
 "Ou" = (
@@ -3635,8 +3692,8 @@
 /area/ship/maintenance/starboard)
 "OI" = (
 /obj/machinery/porta_turret/ship/inteq{
-	id = "colossus_grid";
-	dir = 6
+	dir = 6;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/starboard)
@@ -3671,6 +3728,7 @@
 /obj/machinery/autolathe,
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/platform/ship_three,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Pl" = (
@@ -3795,8 +3853,8 @@
 /area/ship/maintenance/starboard)
 "Qw" = (
 /obj/machinery/porta_turret/ship/inteq{
-	id = "colossus_grid";
-	dir = 10
+	dir = 10;
+	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/armory)
@@ -3949,8 +4007,8 @@
 /area/ship/cargo)
 "RZ" = (
 /obj/machinery/porta_turret/ship/inteq/light{
-	id = "talos_grid";
-	dir = 6
+	dir = 6;
+	id = "talos_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security)
@@ -4029,6 +4087,9 @@
 /obj/effect/landmark/start/assistant,
 /obj/structure/sign/warning/incident{
 	pixel_x = 32
+	},
+/obj/structure/platform/ship_three{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -4239,7 +4300,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 1
+	dir = 1;
+	layer = 2.04
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
@@ -4257,6 +4325,9 @@
 	dir = 8;
 	pixel_x = 20;
 	pixel_y = 11
+	},
+/obj/structure/platform/ship_three{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -4299,6 +4370,9 @@
 	},
 /obj/item/roller{
 	pixel_y = 10
+	},
+/obj/structure/platform/ship_three{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -4362,15 +4436,17 @@
 /obj/structure/table/rolling,
 /obj/machinery/light/directional/south,
 /obj/machinery/computer/helm/viewscreen/directional/east,
+/obj/structure/platform/ship_three{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "WS" = (
-/obj/structure/bed,
 /obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
 	pixel_y = -32
 	},
 /obj/structure/curtain/bounty,
-/obj/item/bedsheet/brown,
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet/black,
 /area/ship/crew)
 "Xb" = (
@@ -4487,6 +4563,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/platform/ship_three{
+	dir = 9
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "XR" = (
@@ -4503,9 +4582,13 @@
 /area/ship/crew)
 "XS" = (
 /obj/effect/spawner/random/vending/cola,
-/obj/effect/turf_decal/trimline/opaque/yellow/line,
-/obj/effect/turf_decal/siding/thinplating,
 /obj/machinery/airalarm/directional/south,
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 10
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "XV" = (
@@ -4830,7 +4913,7 @@ om
 kV
 XQ
 ah
-Ve
+lA
 hZ
 vH
 rh
@@ -5172,7 +5255,7 @@ Dq
 XJ
 vv
 aH
-lA
+jw
 tx
 xD
 va

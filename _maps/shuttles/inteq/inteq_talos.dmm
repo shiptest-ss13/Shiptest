@@ -344,6 +344,9 @@
 /obj/item/roller,
 /obj/item/roller,
 /obj/item/roller,
+/obj/structure/platform/ship_three{
+	dir = 10
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ce" = (
@@ -1173,6 +1176,9 @@
 	icon_state = "multiz_pipe";
 	name = "multi deck pipe adapter"
 	},
+/obj/structure/platform/industrial_alt{
+	dir = 6
+	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/hallway/central)
 "hK" = (
@@ -1749,7 +1755,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "lB" = (
-/obj/structure/railing,
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
@@ -1759,6 +1764,9 @@
 /obj/item/storage/bag/ore,
 /obj/item/pickaxe/mini,
 /obj/item/pickaxe/mini,
+/obj/structure/platform/ship_three{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "lC" = (
@@ -2239,6 +2247,9 @@
 	pixel_y = 32
 	},
 /obj/structure/reagent_dispensers/water_cooler,
+/obj/structure/platform/ship_three{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "om" = (
@@ -2787,6 +2798,7 @@
 /obj/item/target{
 	pixel_x = 5
 	},
+/obj/structure/platform/ship_three,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "qT" = (
@@ -3392,6 +3404,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/autolathe,
+/obj/structure/platform/ship_three{
+	dir = 9
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "uC" = (
@@ -3429,6 +3444,9 @@
 	},
 /obj/structure/table,
 /obj/item/storage/box/cups,
+/obj/structure/platform/ship_three{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "vi" = (
@@ -3600,6 +3618,9 @@
 	dir = 4
 	},
 /obj/structure/weightmachine/stacklifter,
+/obj/structure/platform/ship_three{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "wu" = (
@@ -3774,6 +3795,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/railing{
+	dir = 1
+	},
 /turf/open/floor/plasteel/stairs/right{
 	dir = 4
 	},
@@ -3915,13 +3939,12 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "yb" = (
-/obj/structure/bed,
-/obj/item/bedsheet/brown,
 /obj/structure/curtain/bounty,
 /obj/structure/sign/poster/contraband/masked_men{
 	pixel_y = -32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "yc" = (
@@ -4142,6 +4165,9 @@
 /obj/structure/weightmachine/weightlifter,
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/ship_three{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "zw" = (
@@ -4177,12 +4203,11 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "zG" = (
-/obj/item/bedsheet/brown,
-/obj/structure/bed,
 /obj/structure/curtain/bounty,
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
 	pixel_x = -32
 	},
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "zK" = (
@@ -4530,6 +4555,9 @@
 	pixel_y = 0
 	},
 /obj/item/storage/box/bodybags,
+/obj/structure/platform/ship_three{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "BY" = (
@@ -4558,8 +4586,8 @@
 /area/ship/crew)
 "Cr" = (
 /obj/machinery/porta_turret/ship/inteq/light{
-	id = "talos_grid";
-	dir = 9
+	dir = 9;
+	id = "talos_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering/communications)
@@ -4645,7 +4673,9 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/ship_three{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "CX" = (
@@ -4742,6 +4772,7 @@
 	icon_state = "1-8"
 	},
 /obj/structure/crate_shelf,
+/obj/structure/platform/ship_three,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Ds" = (
@@ -4782,6 +4813,7 @@
 /obj/item/clothing/ears/earmuffs,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/crate_shelf,
+/obj/structure/platform/ship_three,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "DO" = (
@@ -4855,8 +4887,8 @@
 /area/ship/engineering/communications)
 "ED" = (
 /obj/machinery/porta_turret/ship/inteq/light{
-	id = "talos_grid";
-	dir = 10
+	dir = 10;
+	id = "talos_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/storage)
@@ -5182,12 +5214,11 @@
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
 "GR" = (
-/obj/structure/bed,
-/obj/item/bedsheet/brown,
 /obj/structure/curtain/bounty,
 /obj/structure/sign/poster/contraband/d_day_promo{
 	pixel_x = 32
 	},
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "GU" = (
@@ -5300,8 +5331,8 @@
 /obj/item/ammo_box/magazine/m12g_bulldog,
 /obj/item/ammo_box/magazine/m12g_bulldog,
 /obj/item/storage/guncase/inherit{
-	pixel_y = 2;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 2
 	},
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
 /obj/item/ammo_box/magazine/m12g_bulldog,
@@ -5320,6 +5351,7 @@
 "HD" = (
 /obj/machinery/firealarm/directional/south,
 /obj/structure/reagent_dispensers/fueltank,
+/obj/structure/platform/ship_three,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "HI" = (
@@ -5614,6 +5646,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/ship_three,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Kd" = (
@@ -6137,6 +6170,7 @@
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/watertank,
+/obj/structure/platform/ship_three,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Nk" = (
@@ -7075,6 +7109,9 @@
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/structure/platform/ship_three{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Um" = (
@@ -7559,8 +7596,8 @@
 /area/ship/engineering)
 "Xo" = (
 /obj/machinery/turretid/ship{
-	pixel_y = 24;
-	id = "talos_grid"
+	id = "talos_grid";
+	pixel_y = 24
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
