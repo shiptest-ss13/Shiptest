@@ -260,6 +260,12 @@
 
 		paper_note.show_through_camera(usr)
 
+	if(href_list["flavor_more"])
+		var/datum/browser/popup = new(usr, "[name]'s flavor text", "[name]'s Flavor Text (expanded)", 500, 200)
+		popup.set_content(flavor_text_html)
+		popup.open()
+		return
+
 /mob/living/carbon/on_fall()
 	. = ..()
 	loc?.handle_fall(src)//it's loc so it doesn't call the mob's handle_fall which does nothing
@@ -1305,6 +1311,27 @@
 		set_lying_angle(pick(90, 270))
 	else
 		set_lying_angle(new_lying_angle)
+
+/mob/living/carbon/proc/set_flavor_text(new_text)
+	if(!new_text)
+		return
+	if(new_text == flavor_text)
+		return
+
+	flavor_text_html = parsemarkdown_basic(new_text)
+	flavor_text = new_text
+
+	if(dna)
+		dna.features["flavor_text"] = flavor_text
+
+/mob/living/carbon/verb/change_flavor_text()
+	set name = "Change Flavor Text"
+	set category = "IC"
+	set src in usr
+
+	var/new_text = stripped_multiline_input(usr, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes.", "Flavor Text", html_decode(flavor_text), MAX_FLAVOR_LEN, TRUE)
+
+	set_flavor_text(new_text)
 
 /mob/living/carbon/get_fire_overlay(stacks, on_fire)
 	var/fire_icon = "[dna?.species.fire_overlay || "human"]_[stacks > MOB_BIG_FIRE_STACK_THRESHOLD ? "big_fire" : "small_fire"]"
