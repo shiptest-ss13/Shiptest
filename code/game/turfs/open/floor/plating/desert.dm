@@ -6,6 +6,7 @@
 	icon = 'icons/turf/planetary/desert.dmi'
 	icon_state = "desert"
 	base_icon_state = "desert"
+	layer = SAND_TURF_LAYER
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND

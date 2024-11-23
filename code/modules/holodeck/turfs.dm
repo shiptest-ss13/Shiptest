@@ -95,18 +95,6 @@
 	icon_state = "asteroid[rand(0, 12)]"
 	. = ..()
 
-/turf/open/floor/holofloor/basalt
-	gender = PLURAL
-	name = "basalt"
-	icon_state = "basalt0"
-	tiled_dirt = FALSE
-
-/turf/open/floor/holofloor/basalt/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	if(prob(15))
-		icon_state = "basalt[rand(0, 12)]"
-		set_basalt_light(src)
-
 /turf/open/floor/holofloor/space
 	name = "\proper space"
 	icon = 'icons/turf/space.dmi'

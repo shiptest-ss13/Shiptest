@@ -91,13 +91,13 @@
 	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_BEACH)
 
 /turf/open/water/beach/deep
-	color = "#3842d6"
+	color = "#4566ad"
 	light_color = LIGHT_COLOR_DARK_BLUE
 
 /turf/open/water/tar
 	name = "tar pit"
 	desc = "Shallow tar. Will slow you down significantly."
-	color = "#473a3a"
+	color = "#574747"
 	light_range = 0
 	slowdown = 2
 	reagent_to_extract = /datum/reagent/asphalt

@@ -128,6 +128,10 @@
 	base_icon_state = "icemoon_ground_cracked"
 	smoothing_flags = null
 	layer = MID_TURF_LAYER
+	footstep = FOOTSTEP_CONCRETE
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/asteroid/icerock/smooth
 	floor_variance = 0
@@ -135,6 +139,10 @@
 	base_icon_state = "icemoon_ground_smooth"
 	smoothing_flags = null
 	layer = MID_TURF_LAYER
+	footstep = FOOTSTEP_CONCRETE
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/asteroid/icerock/temperate
 	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"

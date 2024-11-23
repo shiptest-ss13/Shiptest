@@ -49,7 +49,6 @@
 		translation.Translate(-19, -19)
 		transform = translation
 		icon = smooth_icon
-		icon_plating = null
 
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/proc/getDug(no_dirt)
@@ -58,7 +57,6 @@
 
 	if(no_dirt)
 		if(!postdig_icon)
-			icon_plating = "[base_icon_state]_dug"
 			icon_state = "[base_icon_state]_dug"
 		dug = TRUE
 		return
@@ -66,7 +64,6 @@
 	new digResult(src, 5)
 	if(postdig_icon_change)
 		if(!postdig_icon || smoothing_flags)
-			icon_plating = "[base_icon_state]_dug"
 			icon_state = "[base_icon_state]_dug"
 	if(has_footsteps)
 		cut_overlays()
@@ -180,7 +177,7 @@
 		if(entered_dirs & Ddir)
 			var/image/print = GLOB.bloody_footprints_cache["entered-[footstep_icon_state]-[Ddir]"]
 			if(!print)
-				print = image('icons/effects/footprints.dmi', "[footstep_icon_state]1", layer = TURF_DECAL_LAYER, dir = Ddir, pixel_x = offset, pixel_y = offset)
+				print = image('icons/effects/footprints.dmi', "[footstep_icon_state]1", layer = layer+0.01, dir = Ddir, pixel_x = offset, pixel_y = offset)
 				GLOB.bloody_footprints_cache["entered-desert-[Ddir]"] = print
 			. += print
 		if(exited_dirs & Ddir)

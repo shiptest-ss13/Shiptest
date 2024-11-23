@@ -25,3 +25,4 @@
 	if(current_ship)
 		LAZYREMOVE(current_ship.ship_modules, src)
 		current_ship = null
+	return ..()

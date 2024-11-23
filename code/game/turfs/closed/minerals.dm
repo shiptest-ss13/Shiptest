@@ -881,6 +881,20 @@
 		/obj/item/stack/ore/galena = 12, /obj/item/stack/ore/plasma = 25, /obj/item/stack/ore/magnetite = 20, /obj/item/stack/ore/rutile = 6,
 		/obj/item/stack/ore/bluespace_crystal = 10, /obj/item/stack/ore/quartzite = 5,)
 
+/turf/closed/mineral/random/waterplanet
+	environment_type = "water"
+	turf_type = /turf/open/floor/plating/asteroid/waterplanet
+	baseturfs = /turf/open/floor/plating/asteroid/waterplanet
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	defer_change = 1
+	mineralChance = 10
+	mineralSpawnChanceList = list(
+		/obj/item/stack/ore/hematite = 30, /obj/item/stack/ore/diamond = 5, /obj/item/stack/ore/proustite = 11, /obj/item/stack/ore/quartzite = 20,
+		/obj/item/stack/ore/galena = 20, /obj/item/stack/ore/plasma = 5, /obj/item/stack/ore/magnetite = 30, /obj/item/stack/ore/ice = 10,
+		/obj/item/stack/ore/gold = 2, /obj/item/stack/ore/graphite/coal = 40,
+		/obj/item/stack/ore/malachite = 10)
+
+
 /turf/closed/mineral/snowmountain/cavern/shipside
 	name = "ice cavern rock"
 	icon = 'icons/turf/mining.dmi'
