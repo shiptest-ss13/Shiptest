@@ -76,7 +76,7 @@
 	. = ..()
 	var/braim_bamage = (world.time - last_use) * 1
 	playsound(src, 'sound/effects/glassbr1.ogg', 75)
-	if(braim_bamage > 100)
+	if(braim_bamage > 120)
 		new /obj/effect/anomaly/tvstatic/planetary(loc)
 	for(var/mob/living/carbon/human/looking in range(1, src.loc))
 		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner)
