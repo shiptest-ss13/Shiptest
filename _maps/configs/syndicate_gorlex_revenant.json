@@ -7,12 +7,12 @@
 		"BEASTS",
 		"WEAPONS"
 	],
-	"map_name": "Revenant Placeholder",
+	"map_name": "Revenant-class Heavy Sloop",
 	"map_short_name": "Revenant-class",
-	"description": "Not finished.",
+	"description": "pending.",
 	"tags": [
 		"RP Focus",
-		"Combat",
+		"Salvage",
 		"Engineering"
 	],
 	"map_path": "_maps/shuttles/syndicate/syndicate_gorlex_revenant.dmm",
@@ -36,6 +36,10 @@
 		"Trooper": {
 			"outfit": "/datum/outfit/job/syndicate/security/gorlex",
 			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/syndicate/miner/gorlex",
+			"slots": 2
 		},
 		"Deck Assistant": {
 			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
