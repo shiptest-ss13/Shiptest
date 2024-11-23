@@ -1,8 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ab" = (
-/obj/structure/sign/number/four,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/storage/starboard)
 "ae" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3218,10 +3214,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
-"ts" = (
-/obj/structure/sign/number/one,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/storage/starboard)
 "tu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -4916,10 +4908,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"Ff" = (
-/obj/structure/sign/number/nine,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/storage/starboard)
 "Fh" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
@@ -6556,7 +6544,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "QS" = (
-/obj/structure/sign/number/eight,
+/obj/structure/sign/number/random{
+	pixel_y = -8
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/storage/starboard)
 "QU" = (
@@ -9125,7 +9115,7 @@ Pt
 uI
 Ng
 CJ
-Ff
+QS
 sw
 sw
 sw
@@ -9159,7 +9149,7 @@ TO
 uI
 uc
 rw
-ts
+QS
 sw
 sw
 sw
@@ -9193,7 +9183,7 @@ oS
 uI
 Wr
 pb
-ab
+QS
 sw
 sw
 sw

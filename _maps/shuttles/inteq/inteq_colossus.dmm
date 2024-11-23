@@ -1384,10 +1384,6 @@
 /obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
-"pa" = (
-/obj/structure/sign/number/nine,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
 "pd" = (
 /obj/machinery/photocopier,
 /obj/effect/turf_decal/corner/opaque/yellow,
@@ -3376,10 +3372,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
-"Le" = (
-/obj/structure/sign/number/one,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
 "Ll" = (
 /obj/machinery/porta_turret/ship/inteq{
 	dir = 4;
@@ -3802,10 +3794,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"PV" = (
-/obj/structure/sign/number/four,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
 "Qj" = (
 /obj/machinery/light_switch{
 	dir = 1;
@@ -4599,7 +4587,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/fore)
 "Yv" = (
-/obj/structure/sign/number/eight,
+/obj/structure/sign/number/random{
+	pixel_y = -8
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/armory)
 "Yx" = (
@@ -5183,7 +5173,7 @@ Sa
 Dq
 Dq
 Dq
-pa
+Yv
 "}
 (22,1,1) = {"
 XJ
@@ -5205,7 +5195,7 @@ EI
 Dq
 MQ
 qQ
-PV
+Yv
 "}
 (23,1,1) = {"
 XJ
@@ -5227,7 +5217,7 @@ VL
 Dq
 Xb
 DW
-Le
+Yv
 "}
 (24,1,1) = {"
 XJ

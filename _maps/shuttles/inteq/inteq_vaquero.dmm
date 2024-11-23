@@ -987,12 +987,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"oQ" = (
-/obj/structure/sign/number/eight{
-	pixel_y = -8
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security)
 "oX" = (
 /obj/structure/table/reinforced,
 /obj/item/lighter{
@@ -1044,12 +1038,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"pl" = (
-/obj/structure/sign/number/nine{
-	pixel_y = -8
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security)
 "pM" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
@@ -1308,7 +1296,7 @@
 /turf/template_noop,
 /area/template_noop)
 "vo" = (
-/obj/structure/sign/number/one{
+/obj/structure/sign/number/random{
 	pixel_y = -8
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3867,7 +3855,7 @@ te
 hN
 oZ
 ba
-pl
+vo
 ox
 ww
 "}
@@ -3907,7 +3895,7 @@ te
 gh
 CQ
 Bl
-oQ
+vo
 ww
 ww
 "}
