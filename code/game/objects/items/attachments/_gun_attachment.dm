@@ -45,10 +45,12 @@
 	gun.equipped(user)
 
 /obj/item/attachment/gun/on_wield(obj/item/gun/gun, mob/user, list/params)
-	attached_gun.wielded_fully = TRUE
+	if(attached_gun)
+		attached_gun.wielded_fully = TRUE
 
 /obj/item/attachment/gun/on_unwield(obj/item/gun/gun, mob/user, list/params)
-	attached_gun.on_unwield(src, user)
+	if(attached_gun)
+		attached_gun.on_unwield(src, user)
 
 /obj/item/attachment/gun/on_attacked(obj/item/gun/gun, mob/user, obj/item/attack_item)
 	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)

@@ -45,12 +45,6 @@
 	examine_list += span_notice("-You can empty the [attached_flamethrower.beaker] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
 	return examine_list
 
-/obj/item/attachment/gun/flamethrower/on_wield(obj/item/gun/gun, mob/user, list/params)
-	return FALSE
-
-/obj/item/attachment/gun/flamethrower/on_unwield(obj/item/gun/gun, mob/user, list/params)
-	return FALSE
-
 /obj/item/attachment/gun/flamethrower/on_ctrl_click(obj/item/gun/gun, mob/user)
 	. = ..()
 	attached_flamethrower.toggle_igniter(user)
