@@ -18,6 +18,10 @@
 	pixel_x = -3
 	},
 /obj/item/pen/fountain/captain,
+/obj/item/storage/secure/safe{
+	dir = 8;
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "aA" = (
@@ -28,70 +32,15 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/metal/five,
+/obj/item/stack/sheet/glass/twenty,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "bB" = (
 /obj/effect/turf_decal/corner/opaque/black/three_quarters{
 	dir = 8
-	},
-/obj/structure/closet/wall/directional/east,
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_y = 10;
-	pixel_x = -8
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_y = 10
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_y = 10;
-	pixel_x = 8
-	},
-/obj/item/clothing/under/syndicate/hardliners{
-	pixel_x = -8
-	},
-/obj/item/clothing/under/syndicate/hardliners,
-/obj/item/clothing/under/syndicate/hardliners{
-	pixel_x = 8
-	},
-/obj/item/clothing/under/syndicate/hardliners/jumpsuit{
-	pixel_y = -4;
-	pixel_x = -8
-	},
-/obj/item/clothing/under/syndicate/hardliners/jumpsuit{
-	pixel_y = -4
-	},
-/obj/item/clothing/under/syndicate/hardliners/jumpsuit{
-	pixel_y = -4;
-	pixel_x = 8
-	},
-/obj/item/clothing/suit/hardliners{
-	pixel_y = -11;
-	pixel_x = 8
-	},
-/obj/item/clothing/head/beret{
-	pixel_y = -14
-	},
-/obj/item/clothing/head/beret{
-	pixel_y = -10
-	},
-/obj/item/clothing/head/beret{
-	pixel_y = -6
-	},
-/obj/item/clothing/head/hardliners{
-	pixel_y = -10;
-	pixel_x = 8
-	},
-/obj/item/clothing/head/soft/black{
-	pixel_x = -10;
-	pixel_y = -12
-	},
-/obj/item/clothing/head/soft/black{
-	pixel_x = -10;
-	pixel_y = -8
-	},
-/obj/item/clothing/head/soft/black{
-	pixel_x = -10;
-	pixel_y = -4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/cable{
@@ -139,7 +88,7 @@
 	dir = 9
 	},
 /obj/structure/platform/industrial{
-	dir = 8
+	dir = 4
 	},
 /obj/structure/railing{
 	dir = 4
@@ -147,9 +96,8 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "cu" = (
 /obj/effect/turf_decal/industrial/outline/red,
@@ -195,10 +143,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/random/trash,
 /obj/structure/sign/warning/gasmask{
 	pixel_y = -32
 	},
+/obj/effect/spawner/random/trash/food_packaging,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "dz" = (
@@ -231,7 +179,6 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/mining_scanner,
 /obj/item/pickaxe/drill/jackhammer,
-/obj/item/wormhole_jaunter,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "eh" = (
@@ -239,9 +186,6 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
@@ -258,16 +202,69 @@
 "er" = (
 /obj/effect/turf_decal/corner/opaque/black/three_quarters,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -6
-	},
-/obj/machinery/firealarm/directional/north{
-	pixel_x = 5
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall/directional/north,
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_y = 10;
+	pixel_x = -8
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_y = 10
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_y = 10;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/syndicate/hardliners{
+	pixel_x = -8
+	},
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/under/syndicate/hardliners{
+	pixel_x = 8
+	},
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit{
+	pixel_y = -4;
+	pixel_x = -8
+	},
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit{
+	pixel_y = -4
+	},
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit{
+	pixel_y = -4;
+	pixel_x = 8
+	},
+/obj/item/clothing/suit/hardliners{
+	pixel_y = -11;
+	pixel_x = 8
+	},
+/obj/item/clothing/head/hardliners{
+	pixel_y = -10;
+	pixel_x = 8
+	},
+/obj/item/clothing/head/beret{
+	pixel_y = -14
+	},
+/obj/item/clothing/head/beret{
+	pixel_y = -10
+	},
+/obj/item/clothing/head/beret{
+	pixel_y = -6
+	},
+/obj/item/clothing/head/soft/black{
+	pixel_x = -10;
+	pixel_y = -12
+	},
+/obj/item/clothing/head/soft/black{
+	pixel_x = -10;
+	pixel_y = -8
+	},
+/obj/item/clothing/head/soft/black{
+	pixel_x = -10;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "ez" = (
@@ -505,12 +502,10 @@
 	dir = 1
 	},
 /obj/effect/spawner/bunk_bed,
-/obj/structure/curtain/cloth/fancy{
-	name = "blood-red curtains"
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
+/obj/structure/curtain/cloth,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "im" = (
@@ -534,7 +529,8 @@
 /obj/machinery/autolathe/hacked{
 	layer = 3.09
 	},
-/turf/open/floor/pod,
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "iM" = (
 /obj/machinery/power/smes/shuttle/precharged,
@@ -606,7 +602,8 @@
 /obj/structure/tank_dispenser/oxygen{
 	layer = 3.09
 	},
-/turf/open/floor/pod,
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "kk" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -660,7 +657,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
 	dir = 1
 	},
-/obj/machinery/holopad/emergency/command,
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "kW" = (
@@ -729,14 +726,12 @@
 /obj/effect/turf_decal/industrial/fire{
 	dir = 1
 	},
-/obj/structure/curtain/cloth/fancy{
-	name = "blood-red curtains"
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
 /obj/effect/spawner/bunk_bed,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/curtain/cloth,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "nj" = (
@@ -1024,7 +1019,7 @@
 /area/ship/engineering)
 "vz" = (
 /obj/structure/platform/industrial{
-	dir = 8
+	dir = 4
 	},
 /obj/structure/railing{
 	dir = 4
@@ -1039,9 +1034,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "wf" = (
 /obj/structure/cable{
@@ -1318,6 +1313,7 @@
 	name = "engine door button"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/secure/safe,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Bq" = (
@@ -1331,7 +1327,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark/end{
 	dir = 8
 	},
-/obj/structure/closet/wall/red/directional/west,
 /obj/item/clothing/under/syndicate/hardliners/officer,
 /obj/item/clothing/head/hardliners/peaked,
 /obj/item/clothing/suit/toggle/armor/vest/hardliners,
@@ -1341,6 +1336,11 @@
 /obj/machinery/firealarm/directional/north,
 /obj/item/storage/guncase/pistol/a357,
 /obj/item/storage/box/ammo/a357,
+/obj/structure/closet/secure_closet/wall/directional/west{
+	icon_state = "sec_wall";
+	name = "captain's closet";
+	req_access_txt = "20"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "BP" = (
@@ -1462,15 +1462,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/safe/floor,
-/obj/item/storage/box/syndimaid,
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 3;
-	pixel_y = 8
-	},
-/obj/item/spacecash/bundle/c1000,
-/obj/item/storage/box/rubbershot,
-/obj/item/clothing/accessory/maidapron/syndicate,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
@@ -1551,6 +1542,7 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/trash/food_packaging,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "FS" = (
@@ -1771,8 +1763,10 @@
 	dir = 4;
 	id = "phantom_smelt"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating,
+/obj/effect/spawner/random/trash/crushed_can,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Je" = (
 /obj/effect/turf_decal/corner/opaque/black/three_quarters,
@@ -1780,6 +1774,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = 32
+	},
+/obj/structure/chair/handrail{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
@@ -1861,7 +1858,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "JU" = (
 /obj/structure/platform/industrial,
@@ -1989,12 +1989,9 @@
 	pixel_y = 23
 	},
 /obj/item/radio/intercom/directional/south,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "Ln" = (
-/obj/structure/curtain/cloth/fancy{
-	name = "blood-red curtains"
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 8
 	},
@@ -2005,6 +2002,7 @@
 	dir = 9
 	},
 /obj/effect/spawner/bunk_bed,
+/obj/structure/curtain/cloth,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "Lz" = (
@@ -2041,7 +2039,7 @@
 /area/ship/engineering)
 "MX" = (
 /obj/structure/platform/industrial{
-	dir = 8
+	dir = 4
 	},
 /obj/structure/railing{
 	dir = 4
@@ -2133,6 +2131,12 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
 	dir = 8
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -6
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
@@ -2319,7 +2323,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/random/trash/food_packaging,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Tf" = (
@@ -2389,6 +2392,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "Um" = (
@@ -2452,7 +2458,7 @@
 	},
 /obj/machinery/light_switch{
 	pixel_y = 20;
-	pixel_x = 10
+	pixel_x = -12
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 8
