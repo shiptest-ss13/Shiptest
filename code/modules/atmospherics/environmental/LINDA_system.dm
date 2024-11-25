@@ -37,31 +37,40 @@
 	return FALSE
 
 /turf/proc/ImmediateCalculateAdjacentTurfs()
+	conductivity_blocked_directions = 0
+
+	if(blocks_air)
+		for(var/turf/adj_turf as anything in get_atmos_cardinal_adjacent_turfs())
+			LAZYREMOVE(adj_turf.atmos_adjacent_turfs, src)
+			adj_turf.conductivity_blocked_directions |= REVERSE_DIR(get_dir(src, adj_turf))
+			adj_turf.__update_auxtools_turf_adjacency_info()
+
+		//Clear all adjacent turfs
+		LAZYNULL(atmos_adjacent_turfs)
+		conductivity_blocked_directions = NORTH | SOUTH | EAST | WEST | UP | DOWN
+
+		__update_auxtools_turf_adjacency_info()
+		return
+
 	var/canpass = CANATMOSPASS(src, src)
 	var/canvpass = CANVERTICALATMOSPASS(src, src)
 
-	conductivity_blocked_directions = 0
-
-	var/src_contains_firelock = 1
+	var/src_has_firelock = 0
 	if(locate(/obj/machinery/door/firedoor) in src)
-		src_contains_firelock |= 2
+		src_has_firelock = 2
 
-	var/list/atmos_adjacent_turfs = list()
+	LAZYINITLIST(atmos_adjacent_turfs)
+	atmos_adjacent_turfs.Cut()
+
+	var/datum/virtual_level/zone = get_virtual_level()
+	if(!zone)
+		CRASH("ImmediateCalculateAdjacentTurfs() called on a turf with no virtual level")
 
 	for(var/direction in GLOB.cardinals_multiz)
-		var/turf/current_turf = get_step_multiz(src, direction)
-		if(!isopenturf(current_turf))
+		var/turf/current_turf = zone.get_zone_step(src, direction)
+		if(current_turf.blocks_air)
 			conductivity_blocked_directions |= direction
-
-			if(current_turf)
-				atmos_adjacent_turfs -= current_turf
-				LAZYREMOVE(current_turf.atmos_adjacent_turfs, src)
-
 			continue
-
-		var/other_contains_firelock = 1
-		if(locate(/obj/machinery/door/firedoor) in current_turf)
-			other_contains_firelock |= 2
 
 		//Conductivity Update
 		var/opp = REVERSE_DIR(direction)
@@ -77,16 +86,19 @@
 					break
 		//End Conductivity Update
 
-		if(!(blocks_air || current_turf.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(current_turf, src)) : (canpass && CANATMOSPASS(current_turf, src))))
-			atmos_adjacent_turfs[current_turf] = other_contains_firelock | src_contains_firelock
-			LAZYSET(current_turf.atmos_adjacent_turfs, src, src_contains_firelock)
+		if(((direction & (UP|DOWN)) ? (canvpass && CANVERTICALATMOSPASS(current_turf, src)) : (canpass && CANATMOSPASS(current_turf, src))))
+			var/has_firelock = src_has_firelock
+			if(!src_has_firelock && locate(/obj/machinery/door/firedoor) in current_turf)
+				has_firelock = 2
+
+			atmos_adjacent_turfs[current_turf] = has_firelock
+			LAZYSET(current_turf.atmos_adjacent_turfs, src, has_firelock)
 		else
 			atmos_adjacent_turfs -= current_turf
 			LAZYREMOVE(current_turf.atmos_adjacent_turfs, src)
 
 		current_turf.__update_auxtools_turf_adjacency_info()
 	UNSETEMPTY(atmos_adjacent_turfs)
-	src.atmos_adjacent_turfs = atmos_adjacent_turfs
 	__update_auxtools_turf_adjacency_info()
 
 /turf/proc/clear_adjacencies()
@@ -104,34 +116,76 @@
  * air with both of the related adjacent cardinal tiles
  */
 /turf/proc/GetAtmosAdjacentTurfs(alldir = FALSE)
-	var/adjacent_turfs
-	if (atmos_adjacent_turfs)
-		adjacent_turfs = atmos_adjacent_turfs.Copy()
-	else
-		adjacent_turfs = list()
+	if(!alldir)
+		return LAZYCOPY(atmos_adjacent_turfs)
 
-	if (!alldir)
-		return adjacent_turfs
+	var/list/adjacent_turfs = LAZYCOPY(atmos_adjacent_turfs)
 
-	var/turf/curloc = src
-
-	for (var/direction in GLOB.diagonals_multiz)
-		var/matchingDirections = 0
-		var/turf/S = get_step_multiz(curloc, direction)
+	for(var/dir in GLOB.diagonals)
+		var/turf/S = get_step(src, dir)
 		if(!S)
 			continue
+		adjacent_turfs += S
 
-		for (var/checkDirection in GLOB.cardinals_multiz)
-			var/turf/checkTurf = get_step(S, checkDirection)
-			if(!S.atmos_adjacent_turfs || !S.atmos_adjacent_turfs[checkTurf])
-				continue
+	//This is hot code so we're doing as little as we possibly can
+	var/datum/virtual_level/zone = get_virtual_level()
+	if(!zone)
+		return adjacent_turfs
 
-			if (adjacent_turfs[checkTurf])
-				matchingDirections++
+	var/turf/above = zone.get_above_turf(src)
+	var/turf/below = zone.get_below_turf(src)
 
-			if (matchingDirections >= 2)
-				adjacent_turfs += S
-				break
+	if(above)
+		adjacent_turfs += above
+		adjacent_turfs += above.atmos_adjacent_turfs
+	if(below)
+		adjacent_turfs += below
+		adjacent_turfs += below.atmos_adjacent_turfs
+
+	return adjacent_turfs
+
+/turf/proc/get_atmos_adjacent_turfs()
+	return LAZYCOPY(atmos_adjacent_turfs)
+
+/turf/proc/get_atmos_all_adjacent_turfs()
+	var/list/adjacent_turfs = LAZYCOPY(atmos_adjacent_turfs)
+
+	for(var/dir in GLOB.diagonals)
+		var/turf/S = get_step(src, dir)
+		if(!S)
+			continue
+		adjacent_turfs += S
+
+	var/datum/virtual_level/zone = get_virtual_level()
+	if(!zone)
+		return adjacent_turfs
+
+	var/turf/above = zone.get_above_turf(src)
+	var/turf/below = zone.get_below_turf(src)
+
+	if(above)
+		adjacent_turfs += above
+		adjacent_turfs += above.atmos_adjacent_turfs
+	if(below)
+		adjacent_turfs += below
+		adjacent_turfs += below.atmos_adjacent_turfs
+
+	return adjacent_turfs
+
+/turf/proc/get_atmos_cardinal_adjacent_turfs()
+	var/list/adjacent_turfs = LAZYCOPY(atmos_adjacent_turfs)
+
+	var/datum/virtual_level/zone = get_virtual_level()
+	if(!zone)
+		return adjacent_turfs
+
+	var/turf/above = zone.get_above_turf(src)
+	var/turf/below = zone.get_below_turf(src)
+
+	if(above)
+		adjacent_turfs += above
+	if(below)
+		adjacent_turfs += below
 
 	return adjacent_turfs
 
