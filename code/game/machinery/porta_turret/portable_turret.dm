@@ -27,17 +27,16 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret
 	name = "turret"
 	icon = 'icons/obj/turrets.dmi'
-	icon_state = "turretCover"
+	icon_state = "standard_stun"
 	layer = OBJ_LAYER
-	invisibility = INVISIBILITY_OBSERVER	//the turret is invisible if it's inside its cover
 	density = TRUE
 	desc = "A covered turret that shoots at its enemies."
-	use_power = IDLE_POWER_USE				//this turret uses and requires power
-	idle_power_usage = IDLE_DRAW_MINIMAL		//when inactive, this turret takes up constant 50 Equipment power
-	active_power_usage = ACTIVE_DRAW_LOW	//when active, this turret takes up constant 300 Equipment power
-	req_access = list(ACCESS_SECURITY) /// Only people with Security access
-	power_channel = AREA_USAGE_EQUIP	//drains power from the EQUIPMENT channel
-	max_integrity = 160		//the turret's health
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_HIGH
+	req_access = list(ACCESS_SECURITY)
+	power_channel = AREA_USAGE_EQUIP
+	max_integrity = 200
 	integrity_failure = 0.5
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 	base_icon_state = "standard"
@@ -46,11 +45,10 @@ DEFINE_BITFIELD(turret_flags, list(
 
 	/// Scan range of the turret for locating targets
 	var/scan_range = 7
-
-	/// If the turret cover is "open" and the turret is raised
-	var/raised = FALSE
-	/// If the turret is currently opening or closing its cover
-	var/raising = FALSE
+	/// List of ALL targets in range, even if they are not visible
+	var/list/datum/weakref/targets = list()
+	/// The current target of the turret, if any
+	var/datum/weakref/current_target_ref
 
 	/// If the turret's behaviour control access is locked
 	var/locked = TRUE
@@ -59,49 +57,42 @@ DEFINE_BITFIELD(turret_flags, list(
 	var/mode = TURRET_STUN
 
 	/// Stun mode projectile type
-	var/stun_projectile = null
+	var/stun_projectile = /obj/projectile/beam/disabler
 	/// Sound of stun projectile
-	var/stun_projectile_sound
+	var/stun_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
 	/// Lethal mode projectile type
-	var/lethal_projectile = null
+	var/lethal_projectile = /obj/projectile/beam/laser
 	/// Sound of lethal projectile
-	var/lethal_projectile_sound
+	var/lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
+
 	/// Power needed per shot
 	var/reqpower = 500
 
-	/// Will stay active
-	var/always_up = FALSE
-	/// Hides the cover
-	var/has_cover = TRUE
-	/// The cover that is covering this turret
-	var/obj/machinery/porta_turret_cover/cover = null
+	/// If the turret is currently manually controlled
+	var/manual_control = FALSE
 
-	/// Ticks until next shot (1.5 seconds) If this needs to go below 5, use SSFastProcess
-	var/shot_delay = 15
-	/// Turret flags about who is turret allowed to shoot
-	var/turret_flags = TURRET_FLAG_SHOOT_CRIMINALS | TURRET_FLAG_SHOOT_ANOMALOUS
+	/// Ticks until next shot If this needs to go below 5, use SSFastProcess
+	var/shot_delay = 1.5 SECONDS
+	/// Cooldown until we can shoot again
+	COOLDOWN_DECLARE(fire_cooldown)
+
 	/// Determines if the turret is on
 	var/on = TRUE
+	/// Turret flags about who is turret allowed to shoot
+	var/turret_flags = TURRET_FLAG_SHOOT_CRIMINALS | TURRET_FLAG_SHOOT_ANOMALOUS
+
 	/// Same faction mobs will never be shot at, no matter the other settings
-	var/list/faction = list("turret")
+	var/list/faction = list("neutral", "turret")
+
 	/// The spark system, used for generating... sparks?
 	var/datum/effect_system/spark_spread/spark_system
+
 	/// Linked turret control panel of the turret
-	var/obj/machinery/turretid/cp = null
+	var/obj/machinery/turretid/controller = null
+
 	/// The turret will try to shoot from a turf in that direction when in a wall
 	var/wall_turret_direction
 
-	/// If the turret is manually controlled
-	var/manual_control = FALSE
-	/// Action button holder for quitting manual control
-	var/datum/action/turret_quit/quit_action
-	/// Action button holder for switching between turret modes when manually controlling
-	var/datum/action/turret_toggle/toggle_action
-	/// Mob that is remotely controlling the turret
-	var/mob/remote_controller
-
-	/// Cooldown until we can shoot again
-	COOLDOWN_DECLARE(fire_cooldown)
 	/// For connecting to additional turrets
 	var/id = ""
 
@@ -109,10 +100,6 @@ DEFINE_BITFIELD(turret_flags, list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 		COMSIG_ATOM_EXITED = PROC_REF(on_uncrossed),
 	)
-
-	var/list/datum/weakref/targets = list()
-
-	var/datum/weakref/current_target_ref
 
 /obj/machinery/porta_turret/Initialize()
 	. = ..()
@@ -122,22 +109,10 @@ DEFINE_BITFIELD(turret_flags, list(
 	spark_system.set_up(5, 0, src)
 	spark_system.attach(src)
 
-	if(has_cover)
-		cover = new /obj/machinery/porta_turret_cover(loc)
-		cover.parent_turret = src
-		var/mutable_appearance/base = mutable_appearance('icons/obj/turrets.dmi', "basedark")
-		base.layer = NOT_HIGH_OBJ_LAYER
-		underlays += base
-	if(!has_cover)
-		INVOKE_ASYNC(src, PROC_REF(popUp))
-
 /obj/machinery/porta_turret/Destroy()
-	//deletes its own cover with it
-	if(cover)
-		QDEL_NULL(cover)
-	if(cp)
-		cp.turrets -= src
-		cp = null
+	if(controller)
+		controller.turrets -= src
+		controller = null
 	QDEL_NULL(spark_system)
 	remove_control()
 	return ..()
@@ -200,8 +175,6 @@ DEFINE_BITFIELD(turret_flags, list(
 		on = !on
 	if (current != on)
 		check_should_process()
-		if (!on)
-			popDown()
 
 /obj/machinery/porta_turret/proc/check_should_process()
 	var/functional = (on && anchored && !(machine_stat & BROKEN) && powered())
@@ -219,16 +192,13 @@ DEFINE_BITFIELD(turret_flags, list(
 		prox.set_tracked(src)
 
 /obj/machinery/porta_turret/update_icon_state()
-	if(!anchored)
-		icon_state = "turretCover"
-		return ..()
 	if(machine_stat & BROKEN)
 		icon_state = "[base_icon_state]_broken"
 		return ..()
 	if(!powered())
 		icon_state = "[base_icon_state]_unpowered"
 		return ..()
-	if(!on || !raised)
+	if(!on)
 		icon_state = "[base_icon_state]_off"
 		return ..()
 	switch(mode)
@@ -309,11 +279,6 @@ DEFINE_BITFIELD(turret_flags, list(
 			give_control(usr)
 			return TRUE
 
-/obj/machinery/porta_turret/ui_host(mob/user)
-	if(has_cover && cover)
-		return cover
-	return src
-
 /obj/machinery/porta_turret/power_change()
 	. = ..()
 	if(!anchored || (machine_stat & BROKEN) || !powered())
@@ -363,23 +328,16 @@ DEFINE_BITFIELD(turret_flags, list(
 		return
 
 
-	if((I.tool_behaviour == TOOL_WRENCH) && !on && !raised)
+	if((I.tool_behaviour == TOOL_WRENCH) && !on)
 		//This code handles moving the turret around. After all, it's a portable turret!
 		if(!anchored && !isinspace())
 			set_anchored(TRUE)
-			invisibility = INVISIBILITY_MAXIMUM
 			update_appearance(UPDATE_ICON_STATE)
 			to_chat(user, "<span class='notice'>You secure the exterior bolts on the turret.</span>")
-			if(has_cover)
-				cover = new /obj/machinery/porta_turret_cover(loc) //create a new turret. While this is handled in process(), this is to workaround a bug where the turret becomes invisible for a split second
-				cover.parent_turret = src //make the cover's parent src
 		else if(anchored)
 			set_anchored(FALSE)
 			to_chat(user, "<span class='notice'>You unsecure the exterior bolts on the turret.</span>")
 			power_change()
-			invisibility = 0
-			if(cover)
-				QDEL_NULL(cover) //deletes the cover, and the turret instance itself becomes its own cover.
 		return
 
 	if(I.tool_behaviour == TOOL_MULTITOOL && !locked)
@@ -412,7 +370,6 @@ DEFINE_BITFIELD(turret_flags, list(
 	update_appearance(UPDATE_ICON_STATE)
 	//6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
 	addtimer(CALLBACK(src, PROC_REF(toggle_on), TRUE), 6 SECONDS)
-	//turns it back on. The cover popUp() popDown() are automatically called in process(), no need to define it here
 
 /obj/machinery/porta_turret/emp_act(severity)
 	. = ..()
@@ -421,11 +378,11 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(on)
 		//if the turret is on, the EMP no matter how severe disables the turret for a while
 		//and scrambles its settings, with a slight chance of having an emag effect
-		if(prob(50))
+		if(prob(10))
 			turret_flags |= TURRET_FLAG_SHOOT_CRIMINALS
-		if(prob(50))
+		if(prob(10))
 			turret_flags |= TURRET_FLAG_AUTH_WEAPONS
-		if(prob(20))
+		if(prob(1))
 			turret_flags |= TURRET_FLAG_SHOOT_ALL // Shooting everyone is a pretty big deal, so it's least likely to get turned on
 
 		toggle_on(FALSE)
@@ -451,9 +408,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	. = ..()
 	if(.)
 		power_change()
-		invisibility = 0
 		spark_system.start()	//creates some sparks because they look cool
-		QDEL_NULL(cover)	//deletes the cover - no need keeping it there!
 
 /obj/machinery/porta_turret/process()
 	if(!on || (machine_stat & (NOPOWER|BROKEN)) || manual_control)
@@ -518,44 +473,6 @@ DEFINE_BITFIELD(turret_flags, list(
 		if(assess_perp(target_carbon) >= 4 && target(target_carbon))
 			return
 
-	if(!always_up)
-		popDown() // no valid targets, close the cover
-
-/obj/machinery/porta_turret/proc/popUp()	//pops the turret up
-	if(!anchored)
-		return
-	if(raising || raised)
-		return
-	if(machine_stat & BROKEN)
-		return
-	invisibility = 0
-	raising = TRUE
-	if(cover)
-		flick("popup", cover)
-	sleep(POPUP_ANIM_TIME)
-	raising = FALSE
-	if(cover)
-		cover.icon_state = "openTurretCover"
-	raised = 1
-	layer = MOB_LAYER
-
-/obj/machinery/porta_turret/proc/popDown()	//pops the turret down
-	if(raising || !raised)
-		return
-	if(machine_stat & BROKEN)
-		return
-	layer = OBJ_LAYER
-	raising = TRUE
-	if(cover)
-		flick("popdown", cover)
-	sleep(POPDOWN_ANIM_TIME)
-	raising = FALSE
-	if(cover)
-		cover.icon_state = "turretCover"
-	raised = FALSE
-	invisibility = 2
-	update_appearance(UPDATE_ICON_STATE)
-
 /obj/machinery/porta_turret/proc/assess_perp(mob/living/carbon/human/perp)
 	var/threatcount = 0	//the integer returned
 
@@ -594,9 +511,6 @@ DEFINE_BITFIELD(turret_flags, list(
 
 //Returns whether or not we should stop searching for targets
 /obj/machinery/porta_turret/proc/target(atom/movable/target)
-	if(!raised)
-		popUp()
-
 	if(!COOLDOWN_FINISHED(src, fire_cooldown))
 		return TRUE
 	COOLDOWN_START(src, fire_cooldown, shot_delay)

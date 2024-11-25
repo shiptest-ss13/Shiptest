@@ -1,3 +1,10 @@
+/obj/machinery/porta_turret
+	/// Action button holder for quitting manual control
+	var/datum/action/turret_quit/quit_action
+	/// Action button holder for switching between turret modes when manually controlling
+	var/datum/action/turret_toggle/toggle_action
+	/// Mob that is remotely controlling the turret
+	var/mob/remote_controller
 
 /datum/action/turret_toggle
 	name = "Toggle Mode"
@@ -34,8 +41,6 @@
 	remote_controller.reset_perspective(src)
 	remote_controller.click_intercept = src
 	manual_control = TRUE
-	always_up = TRUE
-	popUp()
 	return TRUE
 
 /obj/machinery/porta_turret/proc/remove_control(warning_message = TRUE)
@@ -48,7 +53,6 @@
 		toggle_action.Remove(remote_controller)
 		remote_controller.click_intercept = null
 		remote_controller.reset_perspective()
-	always_up = initial(always_up)
 	manual_control = FALSE
 	remote_controller = null
 	return TRUE

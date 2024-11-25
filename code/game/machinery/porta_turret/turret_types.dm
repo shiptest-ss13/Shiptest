@@ -1,9 +1,7 @@
 
 /obj/machinery/porta_turret/syndicate
 	circuit = /obj/item/circuitboard/machine/turret/ship
-	always_up = TRUE
 	use_power = NO_POWER_USE
-	has_cover = FALSE
 	scan_range = 9
 	req_access = list(ACCESS_SYNDICATE)
 	mode = TURRET_LETHAL
@@ -58,10 +56,8 @@
 /obj/machinery/porta_turret/ship
 	circuit = /obj/item/circuitboard/machine/turret/ship
 	max_integrity = 200
-	always_up = TRUE
 	use_power = ACTIVE_POWER_USE
 	active_power_usage = ACTIVE_DRAW_MINIMAL
-	has_cover = FALSE
 	scan_range = 9
 	req_ship_access = TRUE
 	stun_projectile = /obj/projectile/beam/disabler
