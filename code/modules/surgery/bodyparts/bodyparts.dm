@@ -63,9 +63,9 @@
 
 	/// Whether this limb can decay, limiting its' ability to heal
 	var/uses_integrity = FALSE
-	/// How much has this limb decayed?
+	/// How many hit points worth of integrity this limb has lost. 10 integrity = 10 HP
 	var/integrity_loss = 0
-	/// How much can this limb's integrity drop before damage can't be healed?
+	/// The amount of integrity_loss that this limb can have without any effects.
 	var/integrity_threshold = 15
 
 	/// So we know if we need to scream if this limb hits max damage
