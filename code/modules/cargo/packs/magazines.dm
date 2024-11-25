@@ -93,7 +93,7 @@
 	cost = 200
 	faction = /datum/faction/scarborough_arms
 
-/datum/supply_pack/magazine/himehabu_mag
+/datum/supply_pack/magazine/asp_mag
 	name = "Asp Magazine Crate"
 	desc = "Contains a 5.7x39mm magazine for the Asp pistol, containing 12 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m57_39_asp)
