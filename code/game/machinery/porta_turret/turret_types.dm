@@ -1,9 +1,9 @@
 
 /obj/machinery/porta_turret/syndicate
-	installation = null
-	always_up = 1
+	circuit = /obj/item/circuitboard/machine/turret/ship
+	always_up = TRUE
 	use_power = NO_POWER_USE
-	has_cover = 0
+	has_cover = FALSE
 	scan_range = 9
 	req_access = list(ACCESS_SYNDICATE)
 	mode = TURRET_LETHAL
@@ -55,20 +55,13 @@
 	stun_projectile = /obj/projectile/bullet/syndicate_turret
 	lethal_projectile = /obj/projectile/bullet/syndicate_turret
 
-/obj/machinery/porta_turret/ai
-	faction = list("silicon")
-	turret_flags = TURRET_FLAG_SHOOT_CRIMINALS | TURRET_FLAG_SHOOT_ANOMALOUS | TURRET_FLAG_SHOOT_HEADS
-
-/obj/machinery/porta_turret/ai/assess_perp(mob/living/carbon/human/perp)
-	return 10 //AI turrets shoot at everything not in their faction
-
 /obj/machinery/porta_turret/ship
-	installation = null
+	circuit = /obj/item/circuitboard/machine/turret/ship
 	max_integrity = 200
-	always_up = 1
+	always_up = TRUE
 	use_power = ACTIVE_POWER_USE
 	active_power_usage = ACTIVE_DRAW_MINIMAL
-	has_cover = 0
+	has_cover = FALSE
 	scan_range = 9
 	req_ship_access = TRUE
 	stun_projectile = /obj/projectile/beam/disabler

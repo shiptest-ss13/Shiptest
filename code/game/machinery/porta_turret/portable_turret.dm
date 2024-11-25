@@ -42,26 +42,22 @@ DEFINE_BITFIELD(turret_flags, list(
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 	base_icon_state = "standard"
 	subsystem_type = /datum/controller/subsystem/turrets
+	circuit = /obj/item/circuitboard/machine/turret
+
 	/// Scan range of the turret for locating targets
 	var/scan_range = 7
-	/// For turrets inside other objects
-	var/atom/base = null
+
 	/// If the turret cover is "open" and the turret is raised
 	var/raised = FALSE
 	/// If the turret is currently opening or closing its cover
 	var/raising = FALSE
+
 	/// If the turret's behaviour control access is locked
 	var/locked = TRUE
-	/// If the turret responds to control panels
-	var/controllock = FALSE
-	/// The type of weapon installed by default
-	var/installation = /obj/item/gun/energy/e_gun/turret
-	/// What stored gun is in the turret
-	var/obj/item/gun/stored_gun = null
-	/// The charge of the gun when retrieved from wreckage
-	var/gun_charge = 0
+
 	/// In which mode is turret in, stun or lethal
 	var/mode = TURRET_STUN
+
 	/// Stun mode projectile type
 	var/stun_projectile = null
 	/// Sound of stun projectile
@@ -72,13 +68,15 @@ DEFINE_BITFIELD(turret_flags, list(
 	var/lethal_projectile_sound
 	/// Power needed per shot
 	var/reqpower = 500
+
 	/// Will stay active
 	var/always_up = FALSE
 	/// Hides the cover
 	var/has_cover = TRUE
 	/// The cover that is covering this turret
 	var/obj/machinery/porta_turret_cover/cover = null
-	/// Ticks until next shot (1.5 ?) If this needs to go below 5, use SSFastProcess
+
+	/// Ticks until next shot (1.5 seconds) If this needs to go below 5, use SSFastProcess
 	var/shot_delay = 15
 	/// Turret flags about who is turret allowed to shoot
 	var/turret_flags = TURRET_FLAG_SHOOT_CRIMINALS | TURRET_FLAG_SHOOT_ANOMALOUS
@@ -92,6 +90,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	var/obj/machinery/turretid/cp = null
 	/// The turret will try to shoot from a turf in that direction when in a wall
 	var/wall_turret_direction
+
 	/// If the turret is manually controlled
 	var/manual_control = FALSE
 	/// Action button holder for quitting manual control
@@ -100,7 +99,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	var/datum/action/turret_toggle/toggle_action
 	/// Mob that is remotely controlling the turret
 	var/mob/remote_controller
-	//our cooldowns
+
+	/// Cooldown until we can shoot again
 	COOLDOWN_DECLARE(fire_cooldown)
 	/// For connecting to additional turrets
 	var/id = ""
@@ -116,15 +116,12 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/porta_turret/Initialize()
 	. = ..()
-	if(!base)
-		base = src
 	update_appearance()
 	//Sets up a spark system
 	spark_system = new /datum/effect_system/spark_spread
 	spark_system.set_up(5, 0, src)
 	spark_system.attach(src)
 
-	setup()
 	if(has_cover)
 		cover = new /obj/machinery/porta_turret_cover(loc)
 		cover.parent_turret = src
@@ -138,11 +135,9 @@ DEFINE_BITFIELD(turret_flags, list(
 	//deletes its own cover with it
 	if(cover)
 		QDEL_NULL(cover)
-	base = null
 	if(cp)
 		cp.turrets -= src
 		cp = null
-	QDEL_NULL(stored_gun)
 	QDEL_NULL(spark_system)
 	remove_control()
 	return ..()
@@ -164,6 +159,30 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/porta_turret/proc/on_uncrossed(atom/movable/target, atom/old_loc)
 	targets -= WEAKREF(target)
+
+/obj/machinery/porta_turret/RefreshParts()
+	var/obj/item/gun/turret_gun = locate() in component_parts
+
+	if(!turret_gun)
+		return
+
+	var/list/gun_properties = turret_gun.get_turret_properties()
+
+	//required properties
+	stun_projectile = gun_properties["stun_projectile"]
+	stun_projectile_sound = gun_properties["stun_projectile_sound"]
+	lethal_projectile = gun_properties["lethal_projectile"]
+	lethal_projectile_sound = gun_properties["lethal_projectile_sound"]
+	base_icon_state = gun_properties["base_icon_state"]
+
+	//optional properties
+	if(gun_properties["shot_delay"])
+		shot_delay = gun_properties["shot_delay"]
+	if(gun_properties["reqpower"])
+		reqpower = gun_properties["reqpower"]
+
+	update_appearance(UPDATE_ICON_STATE)
+	return gun_properties
 
 /obj/machinery/porta_turret/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[text_ref(port)][initial(id)]"
@@ -218,34 +237,6 @@ DEFINE_BITFIELD(turret_flags, list(
 		if(TURRET_LETHAL)
 			icon_state = "[base_icon_state]_lethal"
 	return ..()
-
-/obj/machinery/porta_turret/proc/setup(obj/item/gun/turret_gun)
-	if(stored_gun)
-		QDEL_NULL(stored_gun)
-
-	if(installation && !turret_gun)
-		stored_gun = new installation(src)
-	else if(turret_gun)
-		stored_gun = turret_gun
-
-	var/list/gun_properties = stored_gun.get_turret_properties()
-
-	//required properties
-	stun_projectile = gun_properties["stun_projectile"]
-	stun_projectile_sound = gun_properties["stun_projectile_sound"]
-	lethal_projectile = gun_properties["lethal_projectile"]
-	lethal_projectile_sound = gun_properties["lethal_projectile_sound"]
-	base_icon_state = gun_properties["base_icon_state"]
-
-	//optional properties
-	if(gun_properties["shot_delay"])
-		shot_delay = gun_properties["shot_delay"]
-	if(gun_properties["reqpower"])
-		reqpower = gun_properties["reqpower"]
-
-	update_appearance(UPDATE_ICON_STATE)
-	return gun_properties
-
 
 /obj/machinery/porta_turret/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -312,14 +303,15 @@ DEFINE_BITFIELD(turret_flags, list(
 		if("manual")
 			if(!issilicon(usr))
 				return
+			var/mob/living/silicon/user = usr
+			if(!user.hack_software)
+				return
 			give_control(usr)
 			return TRUE
 
 /obj/machinery/porta_turret/ui_host(mob/user)
 	if(has_cover && cover)
 		return cover
-	if(base)
-		return base
 	return src
 
 /obj/machinery/porta_turret/power_change()
@@ -336,9 +328,9 @@ DEFINE_BITFIELD(turret_flags, list(
 		to_chat(user, "<span class='notice'>You begin prying the metal coverings off...</span>")
 		if(I.use_tool(src, user, 20))
 			if(prob(70))
+				var/obj/item/gun/stored_gun = locate() in component_parts
 				if(stored_gun)
 					stored_gun.forceMove(loc)
-					stored_gun = null
 				to_chat(user, "<span class='notice'>You remove the turret and salvage some components.</span>")
 				if(prob(50))
 					new /obj/item/stack/sheet/metal(loc, rand(1,4))
@@ -415,7 +407,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	to_chat(user, "<span class='warning'>You short out [src]'s threat assessment circuits.</span>")
 	audible_message("<span class='hear'>[src] hums oddly...</span>")
 	obj_flags |= EMAGGED
-	controllock = TRUE
+	locked = TRUE
 	toggle_on(FALSE) //turns off the turret temporarily
 	update_appearance(UPDATE_ICON_STATE)
 	//6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
@@ -443,12 +435,14 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/porta_turret/take_damage(damage, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
 	. = ..()
-	if(. && obj_integrity > 0) //damage received
-		if(prob(30))
-			spark_system.start()
-		if(on && !(turret_flags & TURRET_FLAG_SHOOT_ALL_REACT) && !(obj_flags & EMAGGED))
-			turret_flags |= TURRET_FLAG_SHOOT_ALL_REACT
-			addtimer(CALLBACK(src, PROC_REF(reset_attacked)), 60)
+	if(!. || obj_integrity <= 0)
+		return
+	//damage received
+	if(prob(30))
+		spark_system.start()
+	if(on && !(turret_flags & TURRET_FLAG_SHOOT_ALL_REACT) && !(obj_flags & EMAGGED))
+		turret_flags |= TURRET_FLAG_SHOOT_ALL_REACT
+		addtimer(CALLBACK(src, PROC_REF(reset_attacked)), 60)
 
 /obj/machinery/porta_turret/proc/reset_attacked()
 	turret_flags &= ~TURRET_FLAG_SHOOT_ALL_REACT
@@ -607,11 +601,11 @@ DEFINE_BITFIELD(turret_flags, list(
 		return TRUE
 	COOLDOWN_START(src, fire_cooldown, shot_delay)
 
-	setDir(get_dir(base, target))
-
 	var/turf/our_turf = get_turf(src)
 	if(!istype(our_turf))
 		return TRUE
+
+	setDir(get_dir(our_turf, target))
 
 	//Wall turrets will try to find adjacent empty turf to shoot from to cover full arc
 	if(our_turf.density)
@@ -653,10 +647,45 @@ DEFINE_BITFIELD(turret_flags, list(
 	return TRUE
 
 /obj/machinery/porta_turret/proc/setState(on, mode, shoot_cyborgs)
-	if(controllock)
+	if(locked)
 		return
 
 	shoot_cyborgs ? (turret_flags |= TURRET_FLAG_SHOOT_BORGS) : (turret_flags &= ~TURRET_FLAG_SHOOT_BORGS)
 	toggle_on(on)
 	src.mode = mode
 	power_change()
+
+/obj/item/gun/proc/get_turret_properties()
+	. = list()
+	.["lethal_projectile"] = null
+	.["lethal_projectile_sound"] = null
+	.["stun_projectile"] = null
+	.["stun_projectile_sound"] = null
+	.["base_icon_state"] = "standard"
+
+/obj/item/gun/energy/get_turret_properties()
+	. = ..()
+
+	var/obj/item/ammo_casing/primary_ammo = ammo_type[1]
+
+	.["stun_projectile"] = initial(primary_ammo.projectile_type)
+	.["stun_projectile_sound"] = initial(primary_ammo.fire_sound)
+
+	if(ammo_type.len > 1)
+		var/obj/item/ammo_casing/secondary_ammo = ammo_type[2]
+		.["lethal_projectile"] = initial(secondary_ammo.projectile_type)
+		.["lethal_projectile_sound"] = initial(secondary_ammo.fire_sound)
+	else
+		.["lethal_projectile"] = .["stun_projectile"]
+		.["lethal_projectile_sound"] = .["stun_projectile_sound"]
+
+/obj/item/gun/ballistic/get_turret_properties()
+	. = ..()
+	var/obj/item/ammo_box/mag = default_ammo_type
+	var/obj/item/ammo_casing/primary_ammo = initial(mag.ammo_type)
+
+	.["base_icon_state"] = "syndie"
+	.["stun_projectile"] = initial(primary_ammo.projectile_type)
+	.["stun_projectile_sound"] = initial(primary_ammo.fire_sound)
+	.["lethal_projectile"] = .["stun_projectile"]
+	.["lethal_projectile_sound"] = .["stun_projectile_sound"]
