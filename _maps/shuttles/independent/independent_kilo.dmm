@@ -1545,7 +1545,9 @@
 /obj/effect/decal/cleanable/oil/streak,
 /obj/item/cigbutt,
 /obj/effect/turf_decal/corner/opaque/grey/half,
-/obj/machinery/atmospherics/components/binary/volume_pump/layer4,
+/obj/machinery/atmospherics/components/binary/volume_pump/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "KR" = (
