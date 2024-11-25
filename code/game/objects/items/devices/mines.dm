@@ -322,7 +322,7 @@
 	if(!iscarbon(triggerer))
 		return
 	//Quick and dirty solution for preventing activations behind walls.
-	if(!(triggerer in view(proximity_range, src)))
+	if(!can_see(src, triggerer))
 		return
 	if(!can_trigger(triggerer))
 		return
