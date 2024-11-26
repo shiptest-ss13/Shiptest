@@ -110,10 +110,11 @@
 	))
 
 	if(is_type_in_typecache(new_target, typecache_of_targets))
-		targets |= WEAKREF(new_target)
+		targets |= new_target
 
 /obj/machinery/porta_turret/proc/on_uncrossed(atom/old_loc, atom/movable/target)
-	targets -= WEAKREF(target)
+	//Should also get any deleted targets, since they're moved to nullspace
+	targets -= target
 
 /obj/machinery/porta_turret/RefreshParts()
 	var/obj/item/gun/turret_gun = locate() in component_parts
@@ -406,22 +407,21 @@
 		current_target_ref = null
 		target_beam.set_target(null)
 
-	for(var/datum/weakref/ref as anything in targets)
-		var/atom/movable/target = ref.resolve()
-		if(isnull(target))
-			targets -= ref
+	for(var/atom/movable/target as anything in targets)
+		if(isnull(target) || QDELETED(target))
+			targets -= target
 			stack_trace("Invalid target in turret list")
 			return FALSE
 
-		if(check_target(target, ref))
+		if(check_target(target))
 			break
 
-/obj/machinery/porta_turret/proc/check_target(atom/movable/target, datum/weakref/ref)
+/obj/machinery/porta_turret/proc/check_target(atom/movable/target)
 	// mecha|carbon|silicon|simple_animal
 	if(ismecha(target))
 		var/obj/mecha/mech = target
 		if(!mech.occupant)
-			targets -= ref
+			targets -= target
 			return FALSE
 		target = mech.occupant
 
@@ -430,7 +430,7 @@
 
 	if(target_mob.stat == DEAD)
 		//They probably won't need to be re-checked
-		targets -= ref
+		targets -= target
 		return FALSE
 
 	if(faction_check(src.faction, target_mob.faction))
