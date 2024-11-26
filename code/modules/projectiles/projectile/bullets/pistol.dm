@@ -10,9 +10,9 @@
 	bullet_identifier = "tiny bullet"
 
 /obj/projectile/bullet/c22lr/hp
-	name = ".22LR bullet"
+	name = ".22LR HP bullet"
 	damage = 22
-	armour_penetration = -60
+	armour_penetration = -50
 	ricochet_chance = 0
 	speed_mod = BULLET_SPEED_HP_MOD
 
@@ -28,7 +28,7 @@
 	name = ".22LR rubber bullet"
 	damage = 4
 	stamina = 15
-	armour_penetration = -70
+	armour_penetration = -50
 	speed_mod = BULLET_SPEED_HV_MOD //do not do this for other rubber bullets. If you do I will come out of the woodwork and bludgeon you to death with this stick i found.
 	ricochets_max = 8 //ding ding ding ding
 	ricochet_incidence_leeway = 70
@@ -59,7 +59,7 @@
 /obj/projectile/bullet/c9mm/hp
 	name = "9mm hollow point bullet"
 	damage = 30
-	armour_penetration = -40
+	armour_penetration = -30
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c9mm/rubber
@@ -93,14 +93,14 @@
 /obj/projectile/bullet/c10mm/hp
 	name = "10mm hollow point bullet"
 	damage = 35
-	armour_penetration = -40
+	armour_penetration = -30
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c10mm/rubber
 	name = "10mm rubber bullet"
 	damage = 7
 	stamina = 35
-	armour_penetration = -40
+	armour_penetration = -30
 	speed_mod = BULLET_SPEED_RUBBER_MOD
 	bullet_identifier = "small rubber bullet"
 
@@ -127,13 +127,13 @@
 /obj/projectile/bullet/c45/hp
 	name = ".45 hollow point bullet"
 	damage = 37
-	armour_penetration = -40
+	armour_penetration = -30
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c45/rubber
 	name = ".45 rubber bullet"
 	damage = 7
 	stamina = 37
-	armour_penetration = -40
+	armour_penetration = -30
 	speed_mod = BULLET_SPEED_RUBBER_MOD
 	bullet_identifier = "small rubber bullet"

@@ -119,7 +119,7 @@
 /obj/projectile/bullet/a4570/hp
 	name = ".45-70 hollow point bullet"
 	damage = 55
-	armour_penetration = -20
+	armour_penetration = -10
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/a4570/explosive //for extra oof
@@ -143,14 +143,13 @@
 	name = ".44 roumain rubber bullet"
 	damage =  7
 	stamina = 40
-	armour_penetration = -20
+	armour_penetration = -10
 	speed_mod = BULLET_SPEED_RUBBER_MOD
 	bullet_identifier = "small rubber bullet"
-
 
 /obj/projectile/bullet/a44roum/hp
 	name = ".44 roumain hollow point bullet"
 	damage =  40
-	armour_penetration = -20
+	armour_penetration = -10
 	ricochet_chance = 0
 	speed_mod = BULLET_SPEED_HP_MOD
