@@ -206,5 +206,5 @@
 /obj/structure/railing/thin
 	icon_state = "railing_thin"
 
-/obj/structure/railing/thick/corner
+/obj/structure/railing/thin/corner
 	icon_state = "railing_thin_corner"
