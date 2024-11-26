@@ -5,13 +5,6 @@
 
 	ruin_type = RUINTYPE_ROCK
 
-/datum/map_template/ruin/rockplanet/harmfactory
-	name = "Harm Factory"
-	description = "A factory made for HARM and AGONY."
-	id = "rockplanet_harmfactory"
-	suffix = "rockplanet_harmfactory.dmm"
-	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
-
 /datum/map_template/ruin/rockplanet/budgetcuts
 	name = "Budgetcuts"
 	description = "Nanotrasen's gotta lay off some personnel, and this facility hasn't been worth the effort so far"
