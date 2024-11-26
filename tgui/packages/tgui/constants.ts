@@ -125,7 +125,7 @@ export const RADIO_CHANNELS = [
     color: '#dd3535',
   },
   {
-    name: 'CLIP-CMM',
+    name: 'CMM',
     freq: 1355,
     color: '#57b8f0',
   },
