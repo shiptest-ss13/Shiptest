@@ -63,7 +63,7 @@
 		if(user.canUseTopic(src, BE_CLOSE))
 			name = "[initial(src.name)][(inputvalue ? " - '[inputvalue]'" : null)]"
 			if(BB)
-				BB.name = "[initial(BB.name)][(inputvalue ? " - '[inputvalue]'" : null)]"
+				BB.bullet_identifier = "[initial(BB.bullet_identifier)][(inputvalue ? " - '[inputvalue]'" : null)]"
 	else if(istype(attacking_item, /obj/item/ammo_box) && user.is_holding(src))
 		add_fingerprint(user)
 		var/obj/item/ammo_box/ammo_box = attacking_item
