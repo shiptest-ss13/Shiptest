@@ -4,74 +4,114 @@
 	name = "5.56x42mm CLIP bullet"
 	damage = 25
 	armour_penetration = 20
+	speed = BULLET_SPEED_RIFLE
+
+/obj/projectile/bullet/a556_42/hp
+	name = "5.56x42mm CLIP hollow point bullet"
+	damage = 35
+	armour_penetration = 0
+	speed_mod = BULLET_SPEED_HP_MOD
+
+/obj/projectile/bullet/a556_42/ap
+	name = "5.56x42mm CLIP bullet"
+	damage = 20
+	armour_penetration = 40
+	speed_mod = BULLET_SPEED_AP_MOD
+
+/obj/projectile/bullet/a556_42/rubber
+	name = "5.56x42mm CLIP bullet"
+	damage = 5
+	stamina = 25
+	armour_penetration = 0
+	speed_mod = BULLET_SPEED_RUBBER_MOD
 
 // 8x50mmR (Illestren Rifle)
 
 /obj/projectile/bullet/a8_50r
 	name = "8x50mmR bullet"
-	speed = 0.3
 	damage = 35
 	armour_penetration = 40
+	speed = BULLET_SPEED_RIFLE
 
-/obj/projectile/bullet/a8_50rhp
-	name = "8x50mmR bullet"
-	speed = 0.3
+/obj/projectile/bullet/a8_50r/hp
+	name = "8x50mmR hollow point bullet"
 	damage = 49
 	armour_penetration = 0
+	speed_mod = BULLET_SPEED_HP_MOD
 
-// .300 Magnum (Smile Rifle)
+/obj/projectile/bullet/a8_50r/match
+	name = "8x50mmR match bullet"
+	damage = 40
+	armour_penetration = -10
+	speed_mod = BULLET_SPEED_AP_MOD
+	ricochets_max = 4
+	ricochet_chance = 80
+	ricochet_auto_aim_angle = 40
+	ricochet_auto_aim_range = 5
+	ricochet_incidence_leeway = 50
+	ricochet_decay_chance = 1
+	ricochet_decay_damage = 1
 
-/obj/projectile/bullet/a300
-	name = ".300 Magnum bullet"
-	speed = 0.3
-	damage = 45
-	stamina = 10
-	armour_penetration = 40
-
-// Bloat evil wizard stupid shit
-
-/obj/projectile/bullet/a762_enchanted
-	name = "enchanted 8x50mmR bullet"
-	damage = 20
-	stamina = 80
+/obj/projectile/bullet/a8_50r/trac
+	damage = 10
+	armour_penetration = 0
+	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a8_50r
 
 //7.62x40mm CLIP (SKM Rifles)
 
 /obj/projectile/bullet/a762_40
-	name = "7.62x40mm CLIP"
+	name = "7.62x40mm CLIP bullet"
 	damage = 30
 	armour_penetration = 20
+	speed = BULLET_SPEED_RIFLE
+
+/obj/projectile/bullet/a762_40/hp
+	name = "7.62x40mm CLIP hollow point bullet"
+	damage = 40
+	armour_penetration = 0
+	speed_mod = BULLET_SPEED_HP_MOD
+
+/obj/projectile/bullet/a762_40/ap
+	name = "7.62x40mm CLIP armor piercing bullet"
+	damage = 25
+	armour_penetration = 40
+	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/projectile/bullet/a762_40/rubber //"rubber"
-	name = "7.62x40mm CLIP Rubber"
+	name = "7.62x40mm CLIP rubber bullet"
 	damage = 15
 	stamina = 40
-	armour_penetration = 20
-
+	armour_penetration = 0
+	speed_mod = BULLET_SPEED_RUBBER_MOD
 
 //.308 WIN (M514 & GAL DMRs)
 
 /obj/projectile/bullet/a308
-	name = ".308"
+	name = ".308 bullet"
 	speed = 0.3
 	damage = 30
 	armour_penetration = 40
+	speed = BULLET_SPEED_RIFLE
+
+/obj/projectile/bullet/a308/hp
+	name = ".308 hollow point bullet"
+	damage = 40
+	armour_penetration = 10
+	speed_mod = BULLET_SPEED_HP_MOD
+
+/obj/projectile/bullet/a308/ap
+	name = ".308 armor piercing bullet"
+	damage = 25
+	armour_penetration = 60
+	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/projectile/bullet/a308/rubber //"rubber"
-	name = ".308 Rubber"
+	name = ".308 rubber bullet"
 	speed = 0.3
 	damage = 25
 	stamina = 50
 	armour_penetration = 40
-
-// 8x58mm caseless (SG-669)
-
-/obj/projectile/bullet/a858
-	name = "8x58mm caseless bullet"
-	speed = 0.3
-	damage = 35
-	armour_penetration = 40
-
+	speed_mod = BULLET_SPEED_RUBBER_MOD
 
 // .299 Eoehoma Caseless (E-40)
 
@@ -79,22 +119,4 @@
 	name = ".299 Eoehoma caseless bullet"
 	damage = 20
 	armour_penetration = 10
-
-//6.5x57mm CLIP (F90)
-
-/obj/projectile/bullet/a65clip
-	name = "6.5x57mm CLIP bullet"
-	speed = 0.3
-	stamina = 10
-	damage = 40
-	armour_penetration = 50
-
-	icon_state = "redtrac"
-	light_system = MOVABLE_LIGHT
-	light_color = COLOR_SOFT_RED
-	light_range = 2
-
-/obj/projectile/bullet/a65clip/rubber //"rubber"
-	name = "6.5x57mm CLIP rubber bullet"
-	damage = 10
-	stamina = 40
+	speed = BULLET_SPEED_RIFLE
