@@ -64,8 +64,8 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 	"A crudely-drawn picture of a Gorlex Marauder exploding",
 	"A scratched-out link to some kind of website",
 	".:|:;",
-	"\"SPEAR TO THE SHOAL, FOR A FREE FRONTIER!\""
-	"\"Arm this!\""
+	"\"SPEAR TO THE SHOAL, FOR A FREE FRONTIER!\"",
+	"\"Arm this!\"",
 ))
 
 
