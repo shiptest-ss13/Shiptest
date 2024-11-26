@@ -49,6 +49,9 @@
 	/// Cooldown until we can shoot again
 	COOLDOWN_DECLARE(fire_cooldown)
 
+	var/reaction_time = 5 SECONDS
+	COOLDOWN_DECLARE(reaction_cooldown)
+
 	/// Determines if the turret is on
 	var/on = TRUE
 	/// Turret flags about who is turret allowed to shoot
@@ -65,6 +68,8 @@
 
 	/// For connecting to additional turrets
 	var/id = ""
+
+	var/datum/beam/target_beam
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
@@ -384,11 +389,15 @@
 	if(!COOLDOWN_FINISHED(src, fire_cooldown))
 		return
 
-	var/mob/current_target = current_target_ref?.resolve()
-	if(current_target && check_target(current_target, current_target) && target(current_target))
-		return
+	if(current_target_ref)
+		var/mob/current_target = current_target_ref?.resolve()
+		if(current_target && check_target(current_target, current_target) && target(current_target))
+			return
 
-	current_target_ref = null
+		current_target_ref = null
+		if(target_beam)
+			qdel(target_beam)
+
 	for(var/datum/weakref/ref as anything in targets)
 		var/atom/movable/target = ref.resolve()
 		if(isnull(target))
@@ -475,7 +484,7 @@
 	return threatcount
 
 //Returns whether or not we should stop searching for targets
-/obj/machinery/porta_turret/proc/target(atom/movable/target)
+/obj/machinery/porta_turret/proc/target(mob/living/target)
 	if(!COOLDOWN_FINISHED(src, fire_cooldown))
 		return TRUE
 	COOLDOWN_START(src, fire_cooldown, shot_delay)
@@ -502,6 +511,17 @@
 
 	if(!can_see(our_turf, target, scan_range))
 		return FALSE
+
+	if(current_target_ref?.resolve() != target)
+		//We have a new target, so we need to update the reference
+		current_target_ref = WEAKREF(target)
+		COOLDOWN_START(src, reaction_cooldown, reaction_time)
+
+		target_beam = Beam(target, icon_state="1-full", beam_color=COLOR_RED, maxdistance=scan_range, time=reaction_time)
+
+		target.do_alert_animation(src)
+
+		return TRUE
 
 	update_appearance(UPDATE_ICON_STATE)
 	var/obj/projectile/shot
