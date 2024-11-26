@@ -18,9 +18,6 @@
 	. = ..()
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
 
-/obj/machinery/porta_turret/syndicate/setup()
-	return
-
 /obj/machinery/porta_turret/syndicate/assess_perp(mob/living/carbon/human/perp)
 	return 10 //Syndicate turrets shoot everything not in their faction
 
@@ -72,9 +69,6 @@
 /obj/machinery/porta_turret/ship/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
-
-/obj/machinery/porta_turret/ship/setup()
-	return
 
 /obj/machinery/porta_turret/ship/examine(mob/user)
 	. = ..()

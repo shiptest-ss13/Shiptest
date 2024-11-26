@@ -18,14 +18,12 @@
 	var/lethal = FALSE
 	/// Variable dictating if the panel is locked, preventing changes to turret settings
 	var/locked = TRUE
-	/// An area in which linked turrets are located, it can be an area name, path or nothing
-	var/control_area = null
 	/// AI is unable to use this machine if set to TRUE
 	var/ailock = FALSE
 	/// Variable dictating if linked turrets will shoot cyborgs
 	var/shoot_cyborgs = FALSE
 	/// List of all linked turrets
-	var/list/turrets = list()
+	var/list/datum/weakref/turret_refs = list()
 	///id for connecting to additional turrets
 	var/id = ""
 
@@ -39,7 +37,7 @@
 	power_change() //Checks power and initial settings
 
 /obj/machinery/turretid/Destroy()
-	turrets.Cut()
+	turret_refs.Cut()
 	return ..()
 
 /obj/machinery/turretid/Initialize(mapload) //map-placed turrets autolink turrets
@@ -48,27 +46,30 @@
 		return
 
 /obj/machinery/turretid/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	id = "[text_red(port)][id]"
+	id = "[text_ref(port)][id]"
 	RegisterSignal(port, COMSIG_SHIP_DONE_CONNECTING, PROC_REF(late_connect_to_shuttle))
 
 /obj/machinery/turretid/disconnect_from_shuttle(obj/docking_port/mobile/port)
-	UnregisterSignal(port, COMSIG_SHIP_DONE_CONNECTING)
+	turret_refs.Cut()
 
 /obj/machinery/turretid/proc/late_connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	SIGNAL_HANDLER
 
-	for(var/datum/weakref/ship_guns in port.turret_list)
-		var/obj/machinery/porta_turret/turret_gun = ship_guns.resolve()
-		if(turret_gun.id == id)
-			turrets |= turret_gun
-			turret_gun.controller = src
+	for(var/datum/weakref/ship_gun in port.turret_list)
+		var/obj/machinery/porta_turret/turret_gun = ship_gun.resolve()
+		//skip if it doesn't exist or if the id doesn't match
+		if(turret_gun?.id != id)
+			continue
+
+		turret_refs |= ship_gun
+
+	UnregisterSignal(port, COMSIG_SHIP_DONE_CONNECTING)
 
 /obj/machinery/turretid/examine(mob/user)
 	. += ..()
 	if(issilicon(user) && !(machine_stat & BROKEN))
 		. += {"<span class='notice'>Ctrl-click [src] to [ enabled ? "disable" : "enable"] turrets.</span>
 					<span class='notice'>Alt-click [src] to set turrets to [ lethal ? "stun" : "kill"].</span>"}
-
 
 /obj/machinery/turretid/attackby(obj/item/I, mob/user, params)
 	if(machine_stat & BROKEN)
@@ -79,7 +80,7 @@
 			return
 		var/obj/item/multitool/M = I
 		if(M.buffer && istype(M.buffer, /obj/machinery/porta_turret))
-			turrets |= M.buffer
+			turret_refs |= WEAKREF(M.buffer)
 			to_chat(user, "<span class='notice'>You link \the [M.buffer] with \the [src].</span>")
 			return
 
@@ -169,8 +170,12 @@
 	updateTurrets()
 
 /obj/machinery/turretid/proc/updateTurrets()
-	for (var/obj/machinery/porta_turret/aTurret in turrets)
-		aTurret.setState(enabled, lethal, shoot_cyborgs)
+	for(var/datum/weakref/turret_ref in turret_refs)
+		var/obj/machinery/porta_turret/turret = turret_ref.resolve()
+		if(!turret)
+			turret_refs -= turret_ref
+			continue
+		turret.setState(enabled, lethal, shoot_cyborgs)
 	update_appearance()
 
 /obj/machinery/turretid/update_icon_state()

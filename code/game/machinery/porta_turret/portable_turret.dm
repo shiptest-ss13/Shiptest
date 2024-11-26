@@ -1,36 +1,9 @@
-#define TURRET_STUN 0
-#define TURRET_LETHAL 1
-
-#define POPUP_ANIM_TIME 5
-#define POPDOWN_ANIM_TIME 5 //Be sure to change the icon animation at the same time or it'll look bad
-
-#define TURRET_FLAG_SHOOT_ALL_REACT (1<<0)	// The turret gets pissed off and shoots at people nearby (unless they have sec access!)
-#define TURRET_FLAG_AUTH_WEAPONS (1<<1)	// Checks if it can shoot people that have a weapon they aren't authorized to have
-#define TURRET_FLAG_SHOOT_CRIMINALS (1<<2)	// Checks if it can shoot people that are wanted
-#define TURRET_FLAG_SHOOT_ALL (1<<3)  // The turret gets pissed off and shoots at people nearby (unless they have sec access!)
-#define TURRET_FLAG_SHOOT_ANOMALOUS (1<<4)  // Checks if it can shoot at unidentified lifeforms (ie xenos)
-#define TURRET_FLAG_SHOOT_UNSHIELDED (1<<5)	// Checks if it can shoot people that aren't mindshielded and who arent heads
-#define TURRET_FLAG_SHOOT_BORGS (1<<6)	// checks if it can shoot cyborgs
-#define TURRET_FLAG_SHOOT_HEADS (1<<7)	// checks if it can shoot at heads of staff
-
-DEFINE_BITFIELD(turret_flags, list(
-	"TURRET_FLAG_SHOOT_ALL_REACT" = TURRET_FLAG_SHOOT_ALL_REACT,
-	"TURRET_FLAG_AUTH_WEAPONS" = TURRET_FLAG_AUTH_WEAPONS,
-	"TURRET_FLAG_SHOOT_CRIMINALS" = TURRET_FLAG_SHOOT_CRIMINALS,
-	"TURRET_FLAG_SHOOT_ALL" = TURRET_FLAG_SHOOT_ALL,
-	"TURRET_FLAG_SHOOT_ANOMALOUS" = TURRET_FLAG_SHOOT_ANOMALOUS,
-	"TURRET_FLAG_SHOOT_UNSHIELDED" = TURRET_FLAG_SHOOT_UNSHIELDED,
-	"TURRET_FLAG_SHOOT_BORGS" = TURRET_FLAG_SHOOT_BORGS,
-	"TURRET_FLAG_SHOOT_HEADS" = TURRET_FLAG_SHOOT_HEADS,
-))
-
 /obj/machinery/porta_turret
 	name = "turret"
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "standard_stun"
-	layer = OBJ_LAYER
 	density = TRUE
-	desc = "A covered turret that shoots at its enemies."
+	desc = "A turret that shoots at its enemies."
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_LOW
 	active_power_usage = ACTIVE_DRAW_HIGH
@@ -40,7 +13,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	integrity_failure = 0.5
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 	base_icon_state = "standard"
-	subsystem_type = /datum/controller/subsystem/turrets
+	subsystem_type = /datum/controller/subsystem/processing/turrets
 	circuit = /obj/item/circuitboard/machine/turret
 
 	/// Scan range of the turret for locating targets
@@ -87,9 +60,6 @@ DEFINE_BITFIELD(turret_flags, list(
 	/// The spark system, used for generating... sparks?
 	var/datum/effect_system/spark_spread/spark_system
 
-	/// Linked turret control panel of the turret
-	var/obj/machinery/turretid/controller = null
-
 	/// The turret will try to shoot from a turf in that direction when in a wall
 	var/wall_turret_direction
 
@@ -110,9 +80,6 @@ DEFINE_BITFIELD(turret_flags, list(
 	spark_system.attach(src)
 
 /obj/machinery/porta_turret/Destroy()
-	if(controller)
-		controller.turrets -= src
-		controller = null
 	QDEL_NULL(spark_system)
 	remove_control()
 	return ..()
@@ -121,7 +88,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	. = ..()
 	AddComponent(/datum/component/connect_range, src, loc_connections, scan_range, TRUE)
 
-/obj/machinery/porta_turret/proc/on_entered(atom/movable/new_target, atom/old_loc)
+/obj/machinery/porta_turret/proc/on_entered(atom/old_loc, atom/movable/new_target)
 	var/static/list/typecache_of_targets = typecacheof(list(
 		/mob/living/carbon,
 		/mob/living/silicon,
@@ -132,7 +99,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(is_type_in_typecache(new_target, typecache_of_targets))
 		targets |= WEAKREF(new_target)
 
-/obj/machinery/porta_turret/proc/on_uncrossed(atom/movable/target, atom/old_loc)
+/obj/machinery/porta_turret/proc/on_uncrossed(atom/old_loc, atom/movable/target)
 	targets -= WEAKREF(target)
 
 /obj/machinery/porta_turret/RefreshParts()
@@ -184,12 +151,12 @@ DEFINE_BITFIELD(turret_flags, list(
 		end_processing()
 
 		var/datum/component/connect_range/prox = GetComponent(/datum/component/connect_range)
-		prox.set_tracked(null)
+		prox?.set_tracked(null)
 	else if(!processing && functional)
 		begin_processing()
 
 		var/datum/component/connect_range/prox = GetComponent(/datum/component/connect_range)
-		prox.set_tracked(src)
+		prox?.set_tracked(src)
 
 /obj/machinery/porta_turret/update_icon_state()
 	if(machine_stat & BROKEN)
@@ -418,60 +385,58 @@ DEFINE_BITFIELD(turret_flags, list(
 		return
 
 	var/mob/current_target = current_target_ref?.resolve()
-	if(current_target && target(current_target))
+	if(current_target && check_target(current_target, current_target) && target(current_target))
 		return
 
-	current_target = null
+	current_target_ref = null
 	for(var/datum/weakref/ref as anything in targets)
-		// mecha|carbon|silicon|simple_animal
 		var/atom/movable/target = ref.resolve()
 		if(isnull(target))
 			targets -= ref
 			stack_trace("Invalid target in turret list")
-			continue
+			return FALSE
 
-		if(ismecha(target))
-			var/obj/mecha/mech = target
-			if(!mech.occupant)
-				targets -= ref
-				continue
-			target = mech.occupant
+		if(check_target(target, ref))
+			break
 
-		// We know the target must be a mob now
-		var/mob/target_mob = target
-
-		if(target_mob.stat == DEAD)
-			//They probably won't need to be re-checked
+/obj/machinery/porta_turret/proc/check_target(atom/movable/target, datum/weakref/ref)
+	// mecha|carbon|silicon|simple_animal
+	if(ismecha(target))
+		var/obj/mecha/mech = target
+		if(!mech.occupant)
 			targets -= ref
-			continue
+			return FALSE
+		target = mech.occupant
 
-		if(faction_check(src.faction, target_mob.faction))
-			continue
+	// We know the target must be a mob now
+	var/mob/target_mob = target
 
-		if(iscyborg(target_mob))
-			if((turret_flags & TURRET_FLAG_SHOOT_BORGS) && target(target_mob))
-				return
-			continue
+	if(target_mob.stat == DEAD)
+		//They probably won't need to be re-checked
+		targets -= ref
+		return FALSE
 
-		if(isanimal(target_mob))
-			if((turret_flags & TURRET_FLAG_SHOOT_ANOMALOUS) && target(target_mob))
-				return
-			continue
+	if(faction_check(src.faction, target_mob.faction))
+		return FALSE
 
-		// We know the target must be a carbon now
-		var/mob/living/carbon/target_carbon = target_mob
+	if(iscyborg(target_mob))
+		return (turret_flags & TURRET_FLAG_SHOOT_BORGS) && target(target_mob)
 
-		if(!ishuman(target_carbon))
-			if((turret_flags & TURRET_FLAG_SHOOT_ANOMALOUS) && target(target_carbon))
-				return
-			continue
+	if(isanimal(target_mob))
+		return (turret_flags & TURRET_FLAG_SHOOT_ANOMALOUS) && target(target_mob)
 
-		//If not set to lethal, only target carbons that can use items
-		if(mode != TURRET_LETHAL && (target_carbon.handcuffed || !(target_carbon.mobility_flags & MOBILITY_USE)))
-			continue
+	//We know the target must be a carbon now
+	var/mob/living/carbon/target_carbon = target_mob
 
-		if(assess_perp(target_carbon) >= 4 && target(target_carbon))
-			return
+	//Nonhuman carbons, e.g. monkeys, xenos, etc.
+	if(!ishuman(target_carbon))
+		return (turret_flags & TURRET_FLAG_SHOOT_ANOMALOUS) && target(target_carbon)
+
+	//If not set to lethal, only target carbons that can use items
+	if(mode != TURRET_LETHAL && (target_carbon.handcuffed || !(target_carbon.mobility_flags & MOBILITY_USE)))
+		return FALSE
+
+	return assess_perp(target_carbon) >= 4 && target(target_carbon)
 
 /obj/machinery/porta_turret/proc/assess_perp(mob/living/carbon/human/perp)
 	var/threatcount = 0	//the integer returned
