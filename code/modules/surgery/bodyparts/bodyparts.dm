@@ -66,7 +66,7 @@
 	/// How many hit points worth of integrity this limb has lost. 10 integrity = 10 HP
 	var/integrity_loss = 0
 	/// The amount of integrity_loss that this limb can have without any effects.
-	var/integrity_threshold = 15
+	var/integrity_threshold = 20
 
 	/// So we know if we need to scream if this limb hits max damage
 	var/last_maxed

@@ -889,7 +889,7 @@
 							integ_icon_num = 3
 						if(integ_loss > (comparison*3))
 							integ_icon_num = 4
-						//no 100% integ loss icon as it's visually indistinguishable from limb removal
+						//no 100% integ loss icon as it'd be visually indistinguishable from limb removal
 						if(integ_icon_num)
 							hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[BP.body_zone]_integ[integ_icon_num]"))
 
