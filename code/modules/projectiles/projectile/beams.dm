@@ -17,6 +17,8 @@
 	near_miss_sound = 'sound/weapons/gun/hit/energy_miss1.ogg'
 	ricochet_sound = 'sound/weapons/gun/hit/energy_ricochet1.ogg'
 
+	bullet_identifier = "laser"
+
 	flag = "laser"
 	eyeblur = 2
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
