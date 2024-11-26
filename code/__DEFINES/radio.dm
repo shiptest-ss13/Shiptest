@@ -75,11 +75,11 @@
 #define FREQ_SIGNALER 1457 // the default for new signalers
 #define FREQ_COMMON 1459 // Common comms frequency, dark green
 
-#define MAX_FREQ 1489 // ------------------------------------------------------
+#define MAX_FREQ 1689 // ------------------------------------------------------
 
-#define FREQ_WIDEBAND 1501 // sector wide communication
+#define FREQ_WIDEBAND 1691 // sector wide communication
 
-#define MAX_FREE_FREQ 1599 // -------------------------------------------------
+#define MAX_FREE_FREQ 1699 // -------------------------------------------------
 
 // Transmission types.
 #define TRANSMISSION_WIRE 0 // some sort of wired connection, not used
