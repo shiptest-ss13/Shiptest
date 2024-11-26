@@ -1022,20 +1022,22 @@
 	dir = 4
 	},
 /obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/railing{
 	dir = 8
-	},
-/obj/structure/railing/corner{
-	dir = 4;
-	pixel_y = -22
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 4;
+	layer = 3.09
+	},
+/obj/structure/railing/corner{
+	dir = 4;
+	pixel_y = -22;
+	layer = 3.091
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "wf" = (
@@ -1380,7 +1382,6 @@
 	name = "bridge window shutters";
 	pixel_x = -14
 	},
-/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Cg" = (
@@ -2277,7 +2278,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/border,
-/obj/machinery/light/small/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "RI" = (
