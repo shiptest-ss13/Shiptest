@@ -49,7 +49,9 @@
 	/// Cooldown until we can shoot again
 	COOLDOWN_DECLARE(fire_cooldown)
 
-	var/reaction_time = 5 SECONDS
+	/// Reaction time of the turret, how long it takes after acquiring a target to begin firing
+	var/reaction_time
+	/// Cooldown until we can start firing
 	COOLDOWN_DECLARE(reaction_cooldown)
 
 	/// Determines if the turret is on
@@ -69,7 +71,8 @@
 	/// For connecting to additional turrets
 	var/id = ""
 
-	var/datum/beam/target_beam
+	/// The beam showing which target we're acquiring
+	var/datum/simple_beam/target_beam
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
@@ -78,6 +81,10 @@
 
 /obj/machinery/porta_turret/Initialize()
 	. = ..()
+	if(!reaction_time)
+		reaction_time = shot_delay
+
+	target_beam = new(src, null, 'icons/effects/beam.dmi', "1-full", COLOR_RED, 127)
 	update_appearance()
 	//Sets up a spark system
 	spark_system = new /datum/effect_system/spark_spread
@@ -86,6 +93,7 @@
 
 /obj/machinery/porta_turret/Destroy()
 	QDEL_NULL(spark_system)
+	QDEL_NULL(target_beam)
 	remove_control()
 	return ..()
 
@@ -157,6 +165,7 @@
 
 		var/datum/component/connect_range/prox = GetComponent(/datum/component/connect_range)
 		prox?.set_tracked(null)
+		target_beam.set_target(null)
 	else if(!processing && functional)
 		begin_processing()
 
@@ -395,8 +404,7 @@
 			return
 
 		current_target_ref = null
-		if(target_beam)
-			qdel(target_beam)
+		target_beam.set_target(null)
 
 	for(var/datum/weakref/ref as anything in targets)
 		var/atom/movable/target = ref.resolve()
@@ -487,13 +495,10 @@
 /obj/machinery/porta_turret/proc/target(mob/living/target)
 	if(!COOLDOWN_FINISHED(src, fire_cooldown))
 		return TRUE
-	COOLDOWN_START(src, fire_cooldown, shot_delay)
 
 	var/turf/our_turf = get_turf(src)
 	if(!istype(our_turf))
 		return TRUE
-
-	setDir(get_dir(our_turf, target))
 
 	//Wall turrets will try to find adjacent empty turf to shoot from to cover full arc
 	if(our_turf.density)
@@ -512,16 +517,26 @@
 	if(!can_see(our_turf, target, scan_range))
 		return FALSE
 
-	if(current_target_ref?.resolve() != target)
-		//We have a new target, so we need to update the reference
-		current_target_ref = WEAKREF(target)
-		COOLDOWN_START(src, reaction_cooldown, reaction_time)
+	setDir(get_dir(our_turf, target))
 
-		target_beam = Beam(target, icon_state="1-full", beam_color=COLOR_RED, maxdistance=scan_range, time=reaction_time)
+	if(!manual_control)
+		if(current_target_ref?.resolve() != target)
+			//We have a new target, so we need to update the reference
+			current_target_ref = WEAKREF(target)
+			COOLDOWN_START(src, reaction_cooldown, reaction_time)
 
-		target.do_alert_animation(src)
+			target_beam.set_target(target)
 
-		return TRUE
+			if(ishuman(target) || target.client)
+				target.do_alert_animation(target)
+
+			return TRUE
+
+		if(!COOLDOWN_FINISHED(src, reaction_cooldown))
+			return TRUE
+
+	target_beam.set_target(null)
+	COOLDOWN_START(src, fire_cooldown, shot_delay)
 
 	update_appearance(UPDATE_ICON_STATE)
 	var/obj/projectile/shot
@@ -534,9 +549,6 @@
 		use_power(reqpower * 2)
 		shot = new lethal_projectile(our_turf)
 		playsound(loc, lethal_projectile_sound, 75, TRUE)
-
-	//Focus on them, since we seem to be able to hit them
-	current_target_ref = WEAKREF(target)
 
 	//Shooting Code:
 	shot.preparePixelProjectile(target, our_turf)

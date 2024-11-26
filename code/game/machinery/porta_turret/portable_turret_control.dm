@@ -194,11 +194,11 @@
 /obj/machinery/turretid/ship
 	req_ship_access = TRUE
 
-
 /obj/item/wallframe/turret_control
 	name = "turret control frame"
 	desc = "Used for building turret control panels."
-	icon_state = "apc"
+	icon = 'icons/obj/machines/turret_control.dmi'
+	icon_state = "control_off"
 	result_path = /obj/machinery/turretid
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
 	inverse_pixel_shift = TRUE
