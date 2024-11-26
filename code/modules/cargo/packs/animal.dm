@@ -105,7 +105,7 @@
 
 /datum/supply_pack/animal/fox
 	name = "Fox Crate"
-	desc = "The fox goes...? Comes with a collar!"//what does the fox say // awful
+	desc = "The fox goes...? Comes with a collar!"//what does the fox say // awful //yip
 	cost = 5000
 	contains = list(/mob/living/simple_animal/pet/fox,
 					/obj/item/clothing/neck/petcollar)

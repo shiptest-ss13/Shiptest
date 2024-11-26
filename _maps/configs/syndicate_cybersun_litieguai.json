@@ -8,7 +8,7 @@
 	"tags": [
 		"Medical"
 	],
-	"map_path": "_maps/shuttles/syndicate/syndicate_litieguai.dmm",
+	"map_path": "_maps/shuttles/syndicate/syndicate_cybersun_litieguai.dmm",
 	"namelists": [
 		"SPACE",
 		"BEASTS",
@@ -17,6 +17,7 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
+			"officer": true,
 			"slots": 1
 		},
 		"Medical Director": {
