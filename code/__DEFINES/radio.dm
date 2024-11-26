@@ -5,14 +5,9 @@
 #define RADIO_CHANNEL_COMMON "Common"
 #define RADIO_KEY_COMMON ";"
 
-#define RADIO_CHANNEL_COMMAND "Command"
-#define RADIO_KEY_COMMAND "c"
-#define RADIO_TOKEN_COMMAND ":c"
-
-#define RADIO_CHANNEL_AI_PRIVATE "AI Private"
-#define RADIO_KEY_AI_PRIVATE "o"
-#define RADIO_TOKEN_AI_PRIVATE ":o"
-
+#define RADIO_CHANNEL_EMERGENCY "Emergency"
+#define RADIO_KEY_EMERGENCY "c"
+#define RADIO_TOKEN_EMERGENCY ":c"
 
 #define RADIO_CHANNEL_SYNDICATE "Syndicate"
 #define RADIO_KEY_SYNDICATE "t"
@@ -51,15 +46,15 @@
 #define MIN_FREE_FREQ 1201 // -------------------------------------------------
 // Frequencies are always odd numbers and range from 1201 to 1599.
 
-#define FREQ_SYNDICATE 1213 // Nuke op comms frequency, dark brown
-#define FREQ_CENTCOM 1337 // CentCom comms frequency, gray
+#define FREQ_SYNDICATE 1213 // Syndicate Coalition comms frequency, dark brown
+#define FREQ_CENTCOM 1337 // NT-CentCom comms frequency, gray
 #define FREQ_SOLGOV 1345 // SolGov comms frequency, dark blue WS ADDITION
 #define FREQ_INTEQ 1347 // Inteq comms frequency, light brown
 #define FREQ_PGF 1349 // PGF comms frequency, lime green
 #define FREQ_NANOTRASEN 1351 // Nanotrasen comms frequency, plum
-#define FREQ_COMMAND 1353 // Command comms frequency, gold
+#define FREQ_EMERGENCY 1353 // Emergency comms frequency, red
 #define FREQ_MINUTEMEN 1355 // Minutemen comms frequency, soft blue
-#define FREQ_PIRATE 1359 // Pirate comms frequency, red
+#define FREQ_PIRATE 1359 // Pirate comms frequency, gold
 
 #define FREQ_HOLOGRID_SOLUTION 1433
 #define FREQ_STATUS_DISPLAYS 1435
@@ -72,7 +67,6 @@
 
 #define FREQ_ATMOS_STORAGE 1441
 #define FREQ_NAV_BEACON 1445
-#define FREQ_AI_PRIVATE 1447 // AI private comms frequency, magenta
 #define FREQ_PRESSURE_PLATE 1447
 #define FREQ_AIRLOCK_CONTROL 1449
 #define FREQ_ELECTROPACK 1449

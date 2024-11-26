@@ -8,7 +8,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	// Department
 	MODE_KEY_DEPARTMENT = MODE_DEPARTMENT,
-	RADIO_KEY_COMMAND = RADIO_CHANNEL_COMMAND,
+	RADIO_KEY_EMERGENCY = RADIO_CHANNEL_EMERGENCY,
 
 	// Faction
 	RADIO_KEY_SYNDICATE = RADIO_CHANNEL_SYNDICATE,
@@ -25,7 +25,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	MODE_KEY_DEADMIN = MODE_DEADMIN,
 
 	// Misc
-	RADIO_KEY_AI_PRIVATE = RADIO_CHANNEL_AI_PRIVATE, // AI Upload channel
 	MODE_KEY_VOCALCORDS = MODE_VOCALCORDS,		// vocal cords, used by Voice of God
 
 
@@ -38,7 +37,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	// Department
 	"ð" = MODE_DEPARTMENT,
-	"ñ" = RADIO_CHANNEL_COMMAND,
+	"ñ" = RADIO_CHANNEL_EMERGENCY,
 
 	// Faction
 	"å" = RADIO_CHANNEL_SYNDICATE,
@@ -53,7 +52,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	"â" = MODE_ADMIN,
 
 	// Misc
-	"ù" = RADIO_CHANNEL_AI_PRIVATE,
 	"÷" = MODE_VOCALCORDS
 ))
 
