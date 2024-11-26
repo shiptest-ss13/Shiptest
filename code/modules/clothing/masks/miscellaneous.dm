@@ -154,13 +154,6 @@
 	clothing_flags = VOICEBOX_TOGGLABLE
 	modifies_speech = TRUE
 
-/obj/item/clothing/mask/frog/handle_speech(datum/source, list/speech_args) //whenever you speak
-	if(!(clothing_flags & VOICEBOX_DISABLED))
-		if(prob(5)) //sometimes, the angry spirit finds others words to speak.
-			speech_args[SPEECH_MESSAGE] = pick("HUUUUU!!","SMOOOOOKIN'!!","Hello my baby, hello my honey, hello my rag-time gal.", "Feels bad, man.", "GIT DIS GUY OFF ME!!" ,"SOMEBODY STOP ME!!", "NORMIES, GET OUT!!")
-		else
-			speech_args[SPEECH_MESSAGE] = pick("Ree!!", "Reee!!","REEE!!","REEEEE!!") //but its usually just angry gibberish,
-
 /obj/item/clothing/mask/frog/cursed
 	clothing_flags = NONE
 

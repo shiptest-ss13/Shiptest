@@ -34,19 +34,6 @@
 	result = /obj/item/reagent_containers/food/snacks/salad/validsalad
 	subcategory = CAT_SALAD
 
-/datum/crafting_recipe/food/monkeysdelight
-	name = "Monkeys delight"
-	reqs = list(
-		/datum/reagent/consumable/flour = 5,
-		/datum/reagent/consumable/sodiumchloride = 1,
-		/datum/reagent/consumable/blackpepper = 1,
-		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/monkeycube = 1,
-		/obj/item/reagent_containers/food/snacks/grown/banana = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/soup/monkeysdelight
-	subcategory = CAT_SALAD
-
 /datum/crafting_recipe/food/oatmeal
 	name = "Oatmeal"
 	reqs = list(

@@ -15,13 +15,13 @@
 /obj/item/ammo_casing/energy/csour
 	projectile_type = /obj/projectile/bullet/csour
 	select_name = "sour"
-	fire_sound = 'sound/weapons/gun/shotgun/shot_old.ogg'
+	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 	e_cost = 50
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect
 
 /obj/item/ammo_casing/energy/csweet
 	projectile_type = /obj/projectile/bullet/csweet
 	select_name = "sweet"
-	fire_sound = 'sound/weapons/gun/sniper/shot_old.ogg'
+	fire_sound = 'sound/weapons/gun/sniper/shot.ogg'
 	e_cost = 70
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect

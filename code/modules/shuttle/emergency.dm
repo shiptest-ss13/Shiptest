@@ -91,7 +91,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/storage/overmap_ship, 28)
 	new /obj/item/tank/internals/oxygen/red(src)
 	new /obj/item/tank/internals/oxygen/red(src)
 	new /obj/item/pickaxe/emergency(src)
-	new /obj/item/kitchen/knife/hunting(src)
+	new /obj/item/melee/knife/hunting(src)
 	new /obj/item/survivalcapsule(src)
 
 /obj/item/storage/overmap_ship/fueled/PopulateContents()

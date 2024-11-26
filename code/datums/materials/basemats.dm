@@ -127,30 +127,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	ore_type = /obj/item/stack/ore/bluespace_crystal
 	value_per_unit = 0.15
 
-///Honks and slips
-/datum/material/bananium
-	name = "bananium"
-	id = "bananium"
-	desc = "Material with hilarious properties"
-	color = "#ffff00" //obnoxiously bright yellow
-	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
-	sheet_type = /obj/item/stack/sheet/mineral/bananium
-	ore_type = /obj/item/stack/ore/bananium
-	value_per_unit = 0.5
-	beauty_modifier = 0.5
-	armor_modifiers = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 100, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0) //Clowns cant be blown away.
-
-/datum/material/bananium/on_applied(atom/source, amount, material_flags)
-	. = ..()
-	source.LoadComponent(/datum/component/squeak, list('sound/items/bikehorn.ogg'=1), 50, falloff_exponent = 20)
-	source.AddComponent(/datum/component/slippery, min(amount / 10, 80))
-
-
-/datum/material/bananium/on_removed(atom/source, amount, material_flags)
-	. = ..()
-	qdel(source.GetComponent(/datum/component/slippery))
-	qdel(source.GetComponent(/datum/component/squeak))
-
 
 ///Mediocre force increase
 /datum/material/titanium
@@ -165,18 +141,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	value_per_unit = 0.0625
 	beauty_modifier = 0.05
 	armor_modifiers = list("melee" = 1.35, "bullet" = 1.3, "laser" = 1.3, "energy" = 1.25, "bomb" = 1.25, "bio" = 1, "rad" = 1, "fire" = 0.7, "acid" = 1)
-
-/datum/material/runite
-	name = "runite"
-	id = "runite"
-	desc = "Runite"
-	color = "#3F9995"
-	strength_modifier = 1.3
-	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
-	sheet_type = /obj/item/stack/sheet/mineral/runite
-	value_per_unit = 0.3
-	beauty_modifier = 0.5
-	armor_modifiers = list("melee" = 1.35, "bullet" = 2, "laser" = 0.5, "energy" = 1.25, "bomb" = 1.25, "bio" = 1, "rad" = 1, "fire" = 1.4, "acid" = 1) //rune is weak against magic lasers but strong against bullets. This is the combat triangle.
 
 ///Force decrease
 /datum/material/plastic
@@ -224,41 +188,19 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 		var/obj/wooden = source
 		wooden.resistance_flags &= ~FLAMMABLE
 
-///Stronk force increase
-/datum/material/adamantine
-	name = "adamantine"
-	id = "adamantine"
-	desc = "A powerful material made out of magic, I mean science!"
-	color = "#6d7e8e"
+//Remember when the theme used to be "Eerie" before 1.3? Good times.
+/datum/material/hellstone
+	name = "hellstone"
+	id = "hellstone"
+	desc = "A colloquialism given to millenia-old slag, heat-treated through the eons in deep magma."
+	color = "#ffaf5e"
 	strength_modifier = 1.5
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
-	sheet_type = /obj/item/stack/sheet/mineral/adamantine
+	sheet_type = /obj/item/stack/sheet/mineral/hidden/hellstone
+	ore_type = /obj/item/stack/ore/hellstone
 	value_per_unit = 0.25
 	beauty_modifier = 0.4
 	armor_modifiers = list("melee" = 1.5, "bullet" = 1.5, "laser" = 1.3, "energy" = 1.3, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 2.5, "acid" = 1)
-
-///RPG Magic.
-/datum/material/mythril
-	name = "mythril"
-	id = "mythril"
-	desc = "How this even exists is byond me"
-	color = "#f2d5d7"
-	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
-	sheet_type = /obj/item/stack/sheet/mineral/mythril
-	value_per_unit = 0.75
-	strength_modifier = 1.2
-	armor_modifiers = list("melee" = 1.5, "bullet" = 1.5, "laser" = 1.5, "energy" = 1.5, "bomb" = 1.5, "bio" = 1.5, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
-	beauty_modifier = 0.5
-
-/datum/material/mythril/on_applied_obj(atom/source, amount, material_flags)
-	. = ..()
-	if(istype(source, /obj/item))
-		source.AddComponent(/datum/component/fantasy)
-
-/datum/material/mythril/on_removed_obj(atom/source, material_flags)
-	. = ..()
-	if(istype(source, /obj/item))
-		qdel(source.GetComponent(/datum/component/fantasy))
 
 //formed when freon react with o2, emits a lot of plasma when heated
 /datum/material/hot_ice
@@ -322,18 +264,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	beauty_modifier = 0.3
 	turf_sound_override = FOOTSTEP_SAND
 	texture_layer_icon_state = "sand"
-
-/datum/material/runedmetal
-	name = "runed metal"
-	id = "runed metal"
-	desc = "Mir'ntrath barhah Nar'sie."
-	color = "#3C3434"
-	categories = list(MAT_CATEGORY_RIGID = TRUE)
-	sheet_type = /obj/item/stack/sheet/runed_metal
-	value_per_unit = 0.75
-	armor_modifiers = list("melee" = 1.2, "bullet" = 1.2, "laser" = 1, "energy" = 1, "bomb" = 1.2, "bio" = 1.2, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
-	beauty_modifier = -0.15
-	texture_layer_icon_state = "runed"
 
 /datum/material/bronze
 	name = "bronze"

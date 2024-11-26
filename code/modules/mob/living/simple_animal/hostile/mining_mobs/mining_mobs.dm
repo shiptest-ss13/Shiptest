@@ -1,7 +1,7 @@
 //the base mining mob
 /mob/living/simple_animal/hostile/asteroid
 	vision_range = 2
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	faction = list("mining")
 	weather_immunities = list("lava","ash")
 	obj_damage = 30
@@ -12,25 +12,17 @@
 	response_harm_simple = "strike"
 	status_flags = 0
 	a_intent = INTENT_HARM
-	var/crusher_loot
+	var/mob_trophy
 	var/throw_message = "bounces off of"
 	var/throw_deflection = 20		//WS edit - Whitesands
-	var/fromtendril = FALSE
+	var/from_nest = FALSE
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	mob_size = MOB_SIZE_LARGE
 	var/icon_aggro = null
-	var/crusher_drop_mod = 25
-	var/datum/armor/armor		//WS edit - Whitesands
+	var/trophy_drop_mod = 25
 
 /mob/living/simple_animal/hostile/asteroid/Initialize(mapload)
-	if (islist(armor))		//WS edit begin - Whitesands
-		armor = getArmor(arglist(armor))
-	else if (!armor)
-		armor = getArmor()
-	else if (!istype(armor, /datum/armor))
-		stack_trace("Invalid type [armor.type] found in .armor during [src.type] Initialize()")		//WS edit begin - Whitesands
-
 	. = ..()
 	apply_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
 
@@ -44,11 +36,6 @@
 	if(stat == DEAD)
 		return
 	icon_state = icon_living
-
-/mob/living/simple_animal/hostile/asteroid/getarmor(def_zone, type)		//WS edit begin - Whitesands
-	if(armor)
-		return armor.getRating(type)
-	return 0		// If no armor		//WS edit end
 
 /mob/living/simple_animal/hostile/asteroid/bullet_act(obj/projectile/P)//Reduces damage from most projectiles to curb off-screen kills
 	if(!stat)
@@ -70,13 +57,13 @@
 
 /mob/living/simple_animal/hostile/asteroid/death(gibbed)
 	SSblackbox.record_feedback("tally", "mobs_killed_mining", 1, type)
-	var/datum/status_effect/crusher_damage/C = has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
-	if(C && crusher_loot && prob((C.total_damage/maxHealth) * crusher_drop_mod)) //on average, you'll need to kill 4 creatures before getting the item
-		spawn_crusher_loot()
+	if(prob(trophy_drop_mod)) //on average, you'll need to kill 5 creatures before getting the item
+		spawn_mob_trophy()
 	..(gibbed)
 
-/mob/living/simple_animal/hostile/asteroid/proc/spawn_crusher_loot()
-	butcher_results[crusher_loot] = 1
+/mob/living/simple_animal/hostile/asteroid/proc/spawn_mob_trophy()
+	if(mob_trophy)
+		butcher_results[mob_trophy] = 1
 
 /mob/living/simple_animal/hostile/asteroid/handle_temperature_damage()
 	if(bodytemperature < minbodytemp)

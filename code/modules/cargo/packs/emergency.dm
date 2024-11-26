@@ -8,25 +8,25 @@
 
 /datum/supply_pack/emergency/internals
 	name = "Internals Crate"
-	desc = "Two gas masks, two breathing masks, and four empty oxygen tanks of varying size. Oxygen canister sold separately."
-	cost = 500
-	contains = list(/obj/item/clothing/mask/gas,
-					/obj/item/clothing/mask/gas,
+	desc = "Contains four breathing masks, three advanced emergency oxygen tanks and one large oxygen tank. Oxygen canister sold separately."
+	cost = 100
+	contains = list(/obj/item/clothing/mask/breath,
 					/obj/item/clothing/mask/breath,
 					/obj/item/clothing/mask/breath,
-					/obj/item/tank/internals/emergency_oxygen/empty,
-					/obj/item/tank/internals/emergency_oxygen/empty,
-					/obj/item/tank/internals/oxygen/empty,
-					/obj/item/tank/internals/oxygen/empty)
+					/obj/item/clothing/mask/breath,
+					/obj/item/tank/internals/emergency_oxygen/engi,
+					/obj/item/tank/internals/emergency_oxygen/engi,
+					/obj/item/tank/internals/emergency_oxygen/engi,
+					/obj/item/tank/internals/oxygen)
 	crate_name = "internals crate"
 
 /datum/supply_pack/emergency/plasmaman_tank
-	name = "Plasmaman Tank Kit"
-	desc = "Contains two empty plasmaman belt tanks, for when you just can't bear to refill a normal tank with plasma. Plasma canisters sold separately. Warranty void if filled with flammable gas."
-	cost = 500
-	contains = list(/obj/item/tank/internals/plasmaman/belt/empty,
-					/obj/item/tank/internals/plasmaman/belt/empty)
-	crate_name = "plasmaman tank kit"
+	name = "Plasmaman Internals Crate"
+	desc = "Contains two plasmaman belt tanks, for when you just can't bear to refill a normal tank with plasma. Plasma canisters sold separately."
+	cost = 100
+	contains = list(/obj/item/tank/internals/plasmaman/belt/full,
+					/obj/item/tank/internals/plasmaman/belt/full)
+	crate_name = "plasmaman internals crate"
 
 /datum/supply_pack/emergency/plasmaman_suit
 	name = "Plasmaman Suit Kit"

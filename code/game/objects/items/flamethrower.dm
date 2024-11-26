@@ -183,9 +183,9 @@
 	update_appearance()
 
 #define REQUIRED_POWER_TO_FIRE_FLAMETHROWER 10
-#define FLAMETHROWER_POWER_MULTIPLIER 0.5
-#define FLAMETHROWER_RANGE 4
-#define FLAMETHROWER_RELEASE_AMOUNT 8
+#define FLAMETHROWER_POWER_MULTIPLIER 0.8
+#define FLAMETHROWER_RANGE 5
+#define FLAMETHROWER_RELEASE_AMOUNT 5
 
 /obj/item/flamethrower/proc/flame_turf(target)
 	if(!beaker)

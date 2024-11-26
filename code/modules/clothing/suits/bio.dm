@@ -8,7 +8,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 20, "fire" = 30, "acid" = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	resistance_flags = ACID_PROOF
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 
 /obj/item/clothing/suit/bio_suit
 	name = "bio suit"
@@ -98,4 +98,4 @@
 
 /obj/item/clothing/suit/bio_suit/plaguedoctorsuit/Initialize()
 	. = ..()
-	allowed += list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/cane)
+	allowed += list(/obj/item/storage/book/bible, /obj/item/cane)

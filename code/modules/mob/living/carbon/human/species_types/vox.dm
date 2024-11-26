@@ -2,7 +2,6 @@
 /datum/species/vox
 	name = "\improper Vox"
 	id = SPECIES_VOX
-	species_age_min = 17
 	species_age_max = 280
 	species_traits = list(EYECOLOR, NO_UNDERWEAR)
 	mutant_bodyparts = list()
@@ -10,8 +9,8 @@
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = GRAIN
 	liked_food = MEAT
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	loreblurb = "Vox test"
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
+	loreblurb = "Vox are a big bird-like species with quills, much larger and much more long-lasting than other species. Sadly, not much else is known."
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -26,7 +25,13 @@
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 20
+	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 20
+
 	bodytype = BODYTYPE_VOX
+
+	custom_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
+	damage_overlay_type = "vox"
 
 	species_chest = /obj/item/bodypart/chest/vox
 	species_head = /obj/item/bodypart/head/vox
@@ -66,13 +71,28 @@
 
 /datum/species/vox/New()
 	. = ..()
+	// This is in new because "[HEAD_LAYER]" etc. is NOT a constant compile-time value. For some reason.
+	// Why not just use HEAD_LAYER? Well, because HEAD_LAYER is a number, and if you try to use numbers as indexes,
+	// BYOND will try to make it an ordered list. So, we have to use a string. This is annoying, but it's the only way to do it smoothly.
+	offset_clothing = list(
+		"[SUIT_STORE_LAYER]" = list(
+							"[NORTH]" = list("x" = 8, "y" = 0),
+							"[EAST]" = list("x" = 8, "y" = 0),
+							"[SOUTH]" = list("x" = 8, "y" = 0),
+							"[WEST]" = list("x" =  -8, "y" = 0)
+							),
+		"[EARS_LAYER]" = list(
+							"[NORTH]" = list("x" = 8, "y" = 0),
+							"[EAST]" = list("x" = 8, "y" = 0),
+							"[SOUTH]" = list("x" = 8, "y" = 0),
+							"[WEST]" = list("x" =  -8, "y" = 0)
+							),
+	)
 
 /datum/species/vox/random_name(gender,unique,lastname)
 	if(unique)
 		return random_unique_vox_name()
 	return vox_name()
-
-
 
 /datum/species/vox/on_species_gain(mob/living/carbon/C)
 	. = ..()

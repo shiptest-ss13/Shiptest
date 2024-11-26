@@ -155,6 +155,14 @@
 	:3
 */
 
+/obj/item/organ/ears/elf
+	name = "elf ears"
+	damage_multiplier = 1.5
+
+	linked_features = list(
+		/datum/sprite_accessory/mutant_part/ears::mutant_string = /datum/sprite_accessory/mutant_part/ears/elf::name
+	)
+
 /obj/item/organ/ears/cat
 	name = "cat ears"
 	icon = 'icons/obj/clothing/hats.dmi'
@@ -163,6 +171,15 @@
 
 	linked_features = list(
 		/datum/sprite_accessory/mutant_part/ears::mutant_string = /datum/sprite_accessory/mutant_part/ears/cat::name
+	)
+	auto_color_src = COLOR_SRC_HAIR_COLOR
+
+/obj/item/organ/ears/dog
+	name = "dog ears"
+	damage_multiplier = 2
+
+	linked_features = list(
+		/datum/sprite_accessory/mutant_part/ears::mutant_string = /datum/sprite_accessory/mutant_part/ears/dog::name
 	)
 	auto_color_src = COLOR_SRC_HAIR_COLOR
 
@@ -176,11 +193,22 @@
 	)
 	auto_color_src = COLOR_SRC_HAIR_COLOR
 
-/obj/item/organ/ears/elf
-	name = "elf ears"
-	damage_multiplier = 1.5
+/obj/item/organ/ears/rabbit
+	name = "rabbit ears"
+	damage_multiplier = 2
 
 	linked_features = list(
-		/datum/sprite_accessory/mutant_part/ears::mutant_string = /datum/sprite_accessory/mutant_part/ears/elf::name
+		/datum/sprite_accessory/mutant_part/ears::mutant_string = /datum/sprite_accessory/mutant_part/ears/rabbit::name
+	)
+	auto_color_src = COLOR_SRC_HAIR_COLOR
+
+/obj/item/organ/ears/rabbit/bent
+	linked_features = list(
+		/datum/sprite_accessory/mutant_part/ears::mutant_string = /datum/sprite_accessory/mutant_part/ears/rabbit/bent::name
+	)
+
+/obj/item/organ/ears/rabbit/floppy
+	linked_features = list(
+		/datum/sprite_accessory/mutant_part/ears::mutant_string = /datum/sprite_accessory/mutant_part/ears/rabbit/floppy::name
 	)
 

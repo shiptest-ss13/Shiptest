@@ -294,65 +294,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 /proc/ionnum()
 	return "[pick("!","@","#","$","%","^","&")][pick("!","@","#","$","%","^","&","*")][pick("!","@","#","$","%","^","&","*")][pick("!","@","#","$","%","^","&","*")]"
 
-//Returns a list of all items of interest with their name
-/proc/getpois(mobs_only = FALSE, skip_mindless = FALSE, specify_dead_role = TRUE)
-	var/list/mobs = sortmobs()
-	var/list/namecounts = list()
-	var/list/pois = list()
-	for(var/mob/M in mobs)
-		if(skip_mindless && (!M.mind && !M.ckey))
-			if(!isbot(M) && !iscameramob(M) && !ismegafauna(M))
-				continue
-		if(M.client && M.client.holder && M.client.holder.fakekey) //stealthmins
-			continue
-		var/name = avoid_assoc_duplicate_keys(M.name, namecounts) + M.get_realname_string()
-
-		if(M.stat == DEAD && specify_dead_role)
-			if(isobserver(M))
-				name += " \[ghost\]"
-			else
-				name += " \[dead\]"
-		pois[name] = M
-
-	if(!mobs_only)
-		for(var/atom/A in GLOB.poi_list)
-			if(!A || !A.loc)
-				continue
-			pois[avoid_assoc_duplicate_keys(A.name, namecounts)] = A
-
-	return pois
-//Orders mobs by type then by name
-/proc/sortmobs()
-	var/list/moblist = list()
-	var/list/sortmob = sortNames(GLOB.mob_list)
-	for(var/mob/living/silicon/ai/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/camera/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/silicon/pai/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/silicon/robot/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/carbon/human/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/brain/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/carbon/alien/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/dead/observer/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/dead/new_player/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/carbon/monkey/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/simple_animal/slime/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/simple_animal/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/carbon/true_devil/M in sortmob)
-		moblist.Add(M)
-	return moblist
-
 // Format a power value in W, kW, MW, or GW.
 /proc/DisplayPower(powerused)
 	if(powerused < 1000) //Less than a kW
@@ -384,7 +325,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 /proc/get_mob_by_ckey(key)
 	if(!key)
 		return
-	var/list/mobs = sortmobs()
+	var/list/mobs = SSpoints_of_interest.get_mob_pois()
 	for(var/mob/M in mobs)
 		if(M.ckey == key)
 			return M
@@ -739,7 +680,7 @@ GLOBAL_LIST_INIT(WALLITEMS, typecacheof(list(
 	/obj/machinery/newscaster, /obj/machinery/firealarm, /obj/structure/noticeboard, /obj/machinery/button,
 	/obj/machinery/computer/security/telescreen, /obj/machinery/embedded_controller/radio/simple_vent_controller,
 	/obj/item/storage/secure/safe, /obj/machinery/door_timer, /obj/machinery/flasher, /obj/machinery/keycard_auth,
-	/obj/structure/mirror, /obj/structure/fireaxecabinet, /obj/machinery/computer/security/telescreen/entertainment,
+	/obj/structure/mirror, /obj/structure/cabinet, /obj/machinery/computer/security/telescreen/entertainment,
 	/obj/structure/sign/picture_frame, /obj/machinery/bounty_board
 	)))
 
@@ -1329,44 +1270,6 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	temp = ((temp + (temp>>3))&29127) % 63	//070707
 	return temp
 
-//same as do_mob except for movables and it allows both to drift and doesn't draw progressbar
-/proc/do_atom(atom/movable/user , atom/movable/target, time = 30, uninterruptible = 0,datum/callback/extra_checks = null)
-	if(!user || !target)
-		return TRUE
-	var/user_loc = user.loc
-
-	var/drifting = FALSE
-	if(!user.Process_Spacemove(0) && user.inertia_dir)
-		drifting = TRUE
-
-	var/target_drifting = FALSE
-	if(!target.Process_Spacemove(0) && target.inertia_dir)
-		target_drifting = TRUE
-
-	var/target_loc = target.loc
-
-	var/endtime = world.time+time
-	. = TRUE
-	while (world.time < endtime)
-		stoplag(1)
-		if(QDELETED(user) || QDELETED(target))
-			. = 0
-			break
-		if(uninterruptible)
-			continue
-
-		if(drifting && !user.inertia_dir)
-			drifting = FALSE
-			user_loc = user.loc
-
-		if(target_drifting && !target.inertia_dir)
-			target_drifting = FALSE
-			target_loc = target.loc
-
-		if((!drifting && user.loc != user_loc) || (!target_drifting && target.loc != target_loc) || (extra_checks && !extra_checks.Invoke()))
-			. = FALSE
-			break
-
 //returns a GUID like identifier (using a mostly made up record format)
 //guids are not on their own suitable for access or security tokens, as most of their bits are predictable.
 //	(But may make a nice salt to one)
@@ -1458,10 +1361,15 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		REMOVE_TRAIT(the_atom2,trait,source)
 
 /proc/get_random_food()
-	var/list/blocked = list(/obj/item/reagent_containers/food/snacks/store/bread,
-		/obj/item/reagent_containers/food/snacks/breadslice,
-		/obj/item/reagent_containers/food/snacks/store/cake,
-		/obj/item/reagent_containers/food/snacks/cakeslice,
+	var/static/list/allowed_food = list()
+
+	if(!LAZYLEN(allowed_food)) //it's static so we only ever do this once
+		var/list/blocked = list(
+		/obj/item/food/spaghetti,
+		/obj/item/food/bread,
+		/obj/item/food/breadslice,
+		/obj/item/food/cake,
+		/obj/item/food/cakeslice,
 		/obj/item/reagent_containers/food/snacks/store,
 		/obj/item/reagent_containers/food/snacks/pie,
 		/obj/item/reagent_containers/food/snacks/kebab,
@@ -1473,15 +1381,21 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		/obj/item/reagent_containers/food/snacks/soup,
 		/obj/item/reagent_containers/food/snacks/grown,
 		/obj/item/reagent_containers/food/snacks/grown/mushroom,
-		/obj/item/reagent_containers/food/snacks/deepfryholder,
+		/obj/item/food/deepfryholder,
 		/obj/item/reagent_containers/food/snacks/clothing,
 		/obj/item/reagent_containers/food/snacks/grown/shell, //base types
-		/obj/item/reagent_containers/food/snacks/store/bread,
+		/obj/item/food/bread,
 		/obj/item/reagent_containers/food/snacks/grown/nettle
 		)
-	blocked |= typesof(/obj/item/reagent_containers/food/snacks/customizable)
+		blocked |= typesof(/obj/item/reagent_containers/food/snacks/customizable)
 
-	return pick(subtypesof(/obj/item/reagent_containers/food/snacks) - blocked)
+		var/list/unfiltered_allowed_food = subtypesof(/obj/item/food) - blocked
+		for(var/obj/item/food/food as anything in unfiltered_allowed_food)
+			if(!initial(food.icon_state)) //food with no icon_state should probably not be spawned
+				continue
+			allowed_food.Add(food)
+
+	return pick(allowed_food)
 
 /proc/get_random_drink()
 	var/list/blocked = list(/obj/item/reagent_containers/food/drinks/soda_cans,

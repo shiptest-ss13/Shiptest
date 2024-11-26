@@ -188,3 +188,61 @@
 		exowear = PREF_EXOWEAR
 */
 
+
+// CORRESPONDING VARIABLE NAME:
+// preferred_smoke_brand
+// default value: PREF_CIG_SPACE
+/datum/preference/choiced_string/pref_cig
+	name = "Preferred Cigarette Brand"
+
+	external_key = "pref_cig"
+	default_value = PREF_CIG_SPACE
+
+	randomization_flags = PREF_RAND_FLAG_SPAWN_HINTS
+
+/datum/preference/choiced_string/pref_cig/get_options_list()
+	return GLOB.valid_smoke_types
+
+// doesn't actually get applied, annoyingly
+
+// UI CREATION
+/*
+			if("Smoker" in all_quirks)
+				dat += "<h3>Smoker</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=preferred_smoke_brand;task=input'>[preferred_smoke_brand]</a><BR>"
+
+*/
+
+// UI INTERACTION
+/*
+				if("preferred_smoke_brand")
+					var/smokeBrand = input(user, "What cigarettes are your favorite?", "Character Preference", preferred_smoke_brand) as null|anything in GLOB.valid_smoke_types
+					if(smokeBrand)
+						preferred_smoke_brand = smokeBrand
+
+*/
+
+// CHARACTER COPY
+/*
+	none
+*/
+
+// SERIALIZATION
+/*
+	WRITE_FILE(S["preferred_smoke_brand"]		, preferred_smoke_brand)
+
+*/
+
+// DESERIALIZATION
+/*
+	READ_FILE(S["preferred_smoke_brand"], preferred_smoke_brand)
+
+*/
+
+// RANDOMIZATION
+/*
+	none
+*/
+
+

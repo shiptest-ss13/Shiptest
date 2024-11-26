@@ -1,9 +1,9 @@
 /obj/effect/anomaly/heartbeat
 	name = "heartbeat"
 	icon_state = "heartbeat"
-	desc = "A mysterious anomaly, it ionizes the world around it."
+	desc = "A throbbing vertex, spreading a cancer to the world around itself."
 	density = TRUE
-	aSignal = /obj/item/assembly/signaler/anomaly/heartbeat
+	core = /obj/item/assembly/signaler/anomaly/heartbeat
 	effectrange = 3
 	pulse_delay = 6 SECONDS
 	var/reagent_amount = 5

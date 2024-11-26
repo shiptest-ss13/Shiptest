@@ -14,6 +14,30 @@
 			return legcuffed
 	return null
 
+/mob/living/carbon/get_slot_by_item(obj/item/looking_for)
+	if(looking_for == back)
+		return ITEM_SLOT_BACK
+
+	if(back && (looking_for in back))
+		return ITEM_SLOT_BACKPACK
+
+	if(looking_for == wear_mask)
+		return ITEM_SLOT_MASK
+
+	if(looking_for == wear_neck)
+		return ITEM_SLOT_NECK
+
+	if(looking_for == head)
+		return ITEM_SLOT_HEAD
+
+	if(looking_for == handcuffed)
+		return ITEM_SLOT_HANDCUFFED
+
+	if(looking_for == legcuffed)
+		return ITEM_SLOT_LEGCUFFED
+
+	return ..()
+
 /mob/living/carbon/proc/equip_in_one_of_slots(obj/item/I, list/slots, qdel_on_fail = 1)
 	for(var/slot in slots)
 		if(equip_to_slot_if_possible(I, slots[slot], qdel_on_fail = 0, disable_warning = TRUE))
@@ -83,6 +107,9 @@
 			update_inv_hands()
 		if(ITEM_SLOT_BACKPACK)
 			if(!back || !SEND_SIGNAL(back, COMSIG_TRY_STORAGE_INSERT, I, src, TRUE))
+				not_handled = TRUE
+		if(ITEM_SLOT_ID)
+			if(!wear_id || !SEND_SIGNAL(wear_id, COMSIG_TRY_STORAGE_INSERT, I, src, TRUE))
 				not_handled = TRUE
 		else
 			not_handled = TRUE

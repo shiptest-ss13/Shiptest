@@ -53,10 +53,6 @@
 
 //Striped Beanies have unique sprites
 
-/obj/item/clothing/head/beanie/christmas
-	name = "christmas beanie"
-	icon_state = "beaniechristmas"
-
 /obj/item/clothing/head/beanie/striped
 	name = "striped beanie"
 	icon_state = "beaniestriped"
@@ -78,15 +74,3 @@
 	desc = "A beanie made from durathread, its resilient fibres provide some protection to the wearer."
 	icon_state = "beaniedurathread"
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 15, "energy" = 25, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 5)
-
-/obj/item/clothing/head/beanie/waldo
-	name = "red striped bobble hat"
-	desc = "If you're going on a worldwide hike, you'll need some cold protection."
-	icon_state = "waldo_hat"
-
-/obj/item/clothing/head/beanie/rasta
-	name = "rastacap"
-	desc = "Perfect for tucking in those dreadlocks."
-	icon_state = "beanierasta"
-
-//No dog fashion sprites yet :(  poor Ian can't be dope like the rest of us yet

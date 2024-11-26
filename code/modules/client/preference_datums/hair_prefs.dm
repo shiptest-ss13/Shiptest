@@ -142,7 +142,7 @@
 /datum/preference/choiced_string/facial_hairstyle/apply_to_human(mob/living/carbon/human/target, data)
 	target.facial_hairstyle = data
 
-datum/preference/choiced_string/facial_hairstyle/randomize(list/dependency_data, list/rand_dependency_data)
+/datum/preference/choiced_string/facial_hairstyle/randomize(list/dependency_data, list/rand_dependency_data)
 	var/char_gender = rand_dependency_data[/datum/preference/choiced_string/gender]
 	// lots of men are clean-shaven, you know -- hence the prob(50)
 	if(char_gender == MALE && prob(50))

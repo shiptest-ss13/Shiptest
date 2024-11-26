@@ -42,12 +42,12 @@
 					/obj/item/seeds/tower = 3,
 					/obj/item/seeds/watermelon = 3,
 					/obj/item/seeds/wheat = 3,
-					/obj/item/seeds/whitebeet = 3)
+					/obj/item/seeds/whitebeet = 3,
+					/obj/item/seeds/plump = 3)
 	contraband = list(/obj/item/seeds/amanita = 2,
 					/obj/item/seeds/glowshroom = 2,
 					/obj/item/seeds/liberty = 2,
 					/obj/item/seeds/nettle = 2,
-					/obj/item/seeds/plump = 2,
 					/obj/item/seeds/reishi = 2,
 					/obj/item/seeds/cannabis = 3,
 					/obj/item/seeds/starthistle = 2,

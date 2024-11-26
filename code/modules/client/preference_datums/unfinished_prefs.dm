@@ -28,7 +28,7 @@
 		return "[data] is not a species datum!"
 	var/datum/species/chosen_species = data
 	#warn roundstart_races isn't populated at The Beginning Of Everything but instead at the end of SSticker init. unsure if that happens before clients connect or not. test
-	#warn also the name "roundstart_races" and "roundstart_no_hard_check" doesn't quite make sense since we don't have roundstart........
+	#warn also the name "roundstart_races" and "roundstart_no_hard_check" doesn't quite make sense since we don't have roundstart; we should verify the config files once we get to the TM stage!!
 	if(!(chosen_species.id in GLOB.roundstart_races) && !(chosen_species.id in (CONFIG_GET(keyed_list/roundstart_no_hard_check))))
 		return "[chosen_species] not a valid join species."
 	return FALSE

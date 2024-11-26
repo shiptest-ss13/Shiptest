@@ -15,8 +15,8 @@ The console is located at computer/gulag_teleporter.dm
 	state_open = FALSE
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 200
-	active_power_usage = 5000
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_EXTREME
 	circuit = /obj/item/circuitboard/machine/gulag_teleporter
 	var/locked = FALSE
 	var/message_cooldown

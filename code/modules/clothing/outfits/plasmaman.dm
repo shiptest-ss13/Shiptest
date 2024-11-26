@@ -17,7 +17,7 @@
 
 	head = /obj/item/clothing/head/helmet/space/plasmaman/botany
 	uniform = /obj/item/clothing/under/plasmaman/botany
-	gloves = /obj/item/clothing/gloves/color/botanic_leather/plasmaman
+	gloves = /obj/item/clothing/gloves/botanic_leather/plasmaman
 
 /datum/outfit/plasmaman/curator
 	name = "Curator Plasmaman"
@@ -217,3 +217,9 @@
 	head = /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	uniform = /obj/item/clothing/under/plasmaman/solgov
 	gloves = /obj/item/clothing/gloves/color/plasmaman/white
+
+/datum/outfit/plasmaman/ngr
+	name = "Plasmangr"
+	head = /obj/item/clothing/head/helmet/space/plasmaman/ngr
+	uniform= /obj/item/clothing/under/plasmaman/ngr
+	gloves = /obj/item/clothing/gloves/color/plasmaman/black

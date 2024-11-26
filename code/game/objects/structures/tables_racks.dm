@@ -106,6 +106,8 @@
 		return TRUE
 	if(locate(/obj/structure/table) in get_turf(mover))
 		return TRUE
+	if(mover.movement_type & FLOATING)
+		return TRUE
 
 /obj/structure/table/CanAStarPass(ID, dir, caller)
 	. = !density
@@ -160,7 +162,7 @@
 /obj/structure/table/attackby(obj/item/I, mob/user, params)
 	var/list/modifiers = params2list(params)
 	if(!(flags_1 & NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
-		if(I.tool_behaviour == TOOL_SCREWDRIVER && deconstruction_ready)
+		if((I.tool_behaviour == TOOL_SCREWDRIVER) && deconstruction_ready)
 			to_chat(user, "<span class='notice'>You start disassembling [src]...</span>")
 			if(I.use_tool(src, user, 20, volume=50))
 				deconstruct(TRUE)
@@ -224,6 +226,15 @@
 			return TRUE
 	else
 		return ..()
+
+/obj/structure/table/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, 1 SECONDS, volume=0))
+		to_chat(user, span_warning("You cut [src] into sheets."))
+		deconstruct(wrench_disassembly = TRUE)
+		return TRUE
 
 /obj/structure/table/proc/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	return
@@ -372,7 +383,7 @@
 		check_break(M)
 
 /obj/structure/table/glass/proc/check_break(mob/living/M)
-	if(M.has_gravity() && M.mob_size > MOB_SIZE_SMALL && !(M.movement_type & FLYING))
+	if(M.has_gravity() && M.mob_size > MOB_SIZE_SMALL && !(M.movement_type & (FLYING || FLOATING)))
 		table_shatter(M)
 
 /obj/structure/table/glass/proc/table_shatter(mob/living/L)
@@ -690,9 +701,13 @@
 		return
 	if(user.body_position == LYING_DOWN || user.usable_legs < 2)
 		return
+
+	if(user.a_intent != INTENT_HARM)
+		to_chat(user, span_danger("You aren't HARMFUL enough to beat the rack."))
+		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.do_attack_animation(src, ATTACK_EFFECT_KICK)
-	user.visible_message("<span class='danger'>[user] kicks [src].</span>", null, null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_danger("[user] kicks [src]."), null, null, COMBAT_MESSAGE_RANGE)
 	take_damage(rand(4,8), BRUTE, "melee", 1)
 
 /obj/structure/rack/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
@@ -724,7 +739,6 @@
 /obj/item/rack_parts
 	name = "rack parts"
 	desc = "Parts of a rack."
-	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "rack_parts"
 	flags_1 = CONDUCT_1
 	custom_materials = list(/datum/material/iron=2000)
@@ -746,7 +760,7 @@
 		return
 	building = TRUE
 	to_chat(user, "<span class='notice'>You start assembling [src]...</span>")
-	if(do_after(user, 50, target = user, progress=TRUE))
+	if(do_after(user, 50, target = user))
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return
 		var/obj/structure/R = new construction_type(user.loc)

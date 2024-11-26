@@ -33,6 +33,7 @@
 #define IN_STORAGE (1<<11) //is this item in the storage item, such as backpack? used for tooltips
 #define SURGICAL_TOOL (1<<12)	//Tool commonly used for surgery: won't attack targets in an active surgical operation on help intent (in case of mistakes)
 #define EYE_STAB (1<<13) /// Item can be used to eyestab
+#define NO_PIXEL_RANDOM_DROP (1<<14) //if dropped, it wont have a randomized pixel_x/pixel_y
 
 // Flags for the clothing_flags var on /obj/item/clothing
 
@@ -51,6 +52,7 @@
 #define ANTI_TINFOIL_MANEUVER (1<<12) //Hats with negative effects when worn (i.e the tinfoil hat).
 #define DANGEROUS_OBJECT (1<<13) //Clothes that cause a larger notification when placed on a person.
 #define FAST_EMBARK (1<<14) //Clothes that speed up mech and pod boarding.
+#define SEALS_EYES (1<<15) //Goggles and helmets that seal eyes from the enviroment
 /// Flags for the organ_flags var on /obj/item/organ
 
 #define ORGAN_SYNTHETIC (1<<0)	//Synthetic organs, or cybernetic organs. Reacts to EMPs and don't deteriorate or heal

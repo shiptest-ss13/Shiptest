@@ -7,8 +7,8 @@
 	icon_keyboard = "power_key"
 	light_color = LIGHT_COLOR_YELLOW
 	use_power = ACTIVE_POWER_USE
-	idle_power_usage = 20
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/computer/powermonitor
 	tgui_id = "PowerMonitor"
 
@@ -49,10 +49,12 @@
 
 /obj/machinery/computer/monitor/process()
 	if(!get_powernet())
-		use_power = IDLE_POWER_USE
+		if(use_static_power != IDLE_POWER_USE)
+			set_idle_power()
 		search()
 	else
-		use_power = ACTIVE_POWER_USE
+		if(use_static_power != ACTIVE_POWER_USE)
+			set_active_power()
 		record()
 
 /obj/machinery/computer/monitor/proc/search() //keep in sync with /datum/computer_file/program/power_monitor's version

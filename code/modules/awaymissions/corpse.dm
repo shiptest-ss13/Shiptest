@@ -6,7 +6,7 @@
 	name = "Mob Spawner"
 	density = TRUE
 	anchored = TRUE
-	icon = 'icons/effects/mapping_helpers.dmi' // These aren't *really* mapping helpers but it fits the most with it's common usage (to help place corpses in maps)
+	icon = 'icons/effects/mapping/mapping_helpers.dmi' // These aren't *really* mapping helpers but it fits the most with it's common usage (to help place corpses in maps)
 	icon_state = "mobspawner" // So it shows up in the map editor
 	var/mob_type = null
 	var/mob_name = ""
@@ -30,7 +30,7 @@
 	var/mob_color //Change the mob's color
 	var/assignedrole
 	var/show_flavour = TRUE
-	var/banType = ROLE_LAVALAND
+	var/ban_type = ROLE_LAVALAND
 	var/ghost_usable = TRUE
 	/// Weakref to the mob this spawner created - just if you needed to do something with it.
 	var/datum/weakref/spawned_mob_ref
@@ -42,7 +42,7 @@
 	if(!uses)
 		to_chat(user, "<span class='warning'>This spawner is out of charges!</span>")
 		return
-	if(is_banned_from(user.key, banType))
+	if(is_banned_from(user.key, ban_type))
 		to_chat(user, "<span class='warning'>You are jobanned!</span>")
 		return
 	if(!allow_spawn(user))
@@ -61,11 +61,11 @@
 	if(instant || (roundstart && (mapload || (SSticker && SSticker.current_state > GAME_STATE_SETTING_UP))))
 		INVOKE_ASYNC(src, PROC_REF(create))
 	else if(ghost_usable)
-		GLOB.poi_list |= src
+		SSpoints_of_interest.make_point_of_interest(src)
 		LAZYADD(GLOB.mob_spawners[name], src)
 
 /obj/effect/mob_spawn/Destroy()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	var/list/spawners = GLOB.mob_spawners[name]
 	LAZYREMOVE(spawners, src)
 	if(!LAZYLEN(spawners))
@@ -138,6 +138,7 @@
 // Base version - place these on maps/templates.
 /obj/effect/mob_spawn/human
 	mob_type = /mob/living/carbon/human
+	icon_state = "corpsehuman"
 	//Human specific stuff.
 	var/mob_species = null		//Set to make them a mutant race such as lizard or skeleton. Uses the datum typepath instead of the ID.
 	var/datum/outfit/outfit = /datum/outfit	//If this is a path, it will be instanced in Initialize()
@@ -225,7 +226,7 @@
 				C.sensor_mode = NO_SENSORS
 
 
-	var/obj/item/card/id/W = H.wear_id
+	var/obj/item/card/id/W = H.get_idcard()
 	if(W)
 		if(H.age)
 			W.registered_age = H.age
@@ -327,12 +328,10 @@
 /obj/effect/mob_spawn/human/corpse/cargo_tech
 	name = "Cargo Tech"
 	outfit = /datum/outfit/job/cargo_tech
-	icon_state = "corpsecargotech"
 
 /obj/effect/mob_spawn/human/cook
 	name = "Cook"
 	outfit = /datum/outfit/job/cook
-	icon_state = "corpsecook"
 
 /obj/effect/mob_spawn/human/cook/husked
 	husk = TRUE
@@ -340,8 +339,6 @@
 /obj/effect/mob_spawn/human/doctor
 	name = "Doctor"
 	outfit = /datum/outfit/job/doctor
-	icon_state = "corpsedoctor"
-
 
 /obj/effect/mob_spawn/human/doctor/alive
 	death = FALSE
@@ -364,22 +361,18 @@
 /obj/effect/mob_spawn/human/engineer
 	name = "Engineer"
 	outfit = /datum/outfit/job/engineer
-	icon_state = "corpseengineer"
 
 /obj/effect/mob_spawn/human/clown
 	name = "Clown"
 	outfit = /datum/outfit/job/clown
-	icon_state = "corpseclown"
 
 /obj/effect/mob_spawn/human/scientist
 	name = "Scientist"
 	outfit = /datum/outfit/job/scientist
-	icon_state = "corpsescientist"
 
 /obj/effect/mob_spawn/human/miner
 	name = "Shaft Miner"
 	outfit = /datum/outfit/job/miner
-	icon_state = "corpseminer"
 
 /obj/effect/mob_spawn/human/plasmaman
 	mob_species = /datum/species/plasmaman
@@ -406,7 +399,6 @@
 
 /obj/effect/mob_spawn/human/bartender
 	name = "Space Bartender"
-	icon_state = "corpsebartender"
 	id_job = "Bartender"
 	id_access_list = list(ACCESS_BAR)
 	outfit = /datum/outfit/spacebartender
@@ -438,7 +430,7 @@
 /datum/outfit/spacebartender/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 
-	var/obj/item/card/id/W = H.wear_id
+	var/obj/item/card/id/W = H.get_idcard()
 	if(H.age < AGE_MINOR)
 		W.registered_age = AGE_MINOR
 		to_chat(H, "<span class='notice'>You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!</span>")

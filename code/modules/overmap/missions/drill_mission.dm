@@ -21,7 +21,7 @@
 	sampler = spawn_bound(/obj/machinery/drill/mission, accept_loc, VARSET_CALLBACK(src, sampler, null))
 	sampler.mission_class = class_wanted
 	sampler.num_wanted = num_wanted
-
+	sampler.name += " (Class [class_wanted])"
 //Gives players a little extra money for going past the mission goal
 /datum/mission/drill/turn_in()
 	value += (sampler.num_current - num_wanted)*50

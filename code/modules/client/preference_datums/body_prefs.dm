@@ -564,7 +564,13 @@
 	return TRUE
 
 /datum/preference/flavor_text/_is_invalid(data, list/dependency_data)
-	#warn impl. make sure shit gets sanitized well!!!
+	if(!istext(data))
+		return "Flavor text must be a string!"
+	if(length(data) > MAX_FLAVOR_LEN)
+		return "Flavor text was too long, at [length(data)] characters out of [MAX_FLAVOR_LEN]!"
+	#warn stupid solution that might not line up with other validation methods. ugh
+	else if(data != html_encode(html_decode(data)))
+		return "Flavor text contained invalid characters!"
 
 /datum/preference/flavor_text/apply_to_human(mob/living/carbon/human/target, data)
 	target.flavor_text = data
@@ -578,7 +584,17 @@
 	return serialized_data
 
 /datum/preference/flavor_text/button_action(mob/user, old_data, list/dependency_data, list/href_list, list/hints)
-	#warn impl
+	var/new_text = stripped_multiline_input(
+		usr,
+		"A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes.",
+		"Flavor Text",
+		old_data,
+		MAX_FLAVOR_LEN,
+		TRUE
+	)
+	if(new_text != old_data && new_text)
+		return new_text
+	return old_data
 
 // 	var/msg =
 // 	sanitize(
@@ -635,10 +651,12 @@
 
 // UI INTERACTION
 /*
+
 				if("flavor_text")
-					var/msg = sanitize(stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Flavor Text", features["flavor_text"], 4096, TRUE))
+					var/msg = stripped_multiline_input(usr, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes.", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
 					if(msg) //WS edit - "Cancel" does not clear flavor text
-						features["flavor_text"] = html_decode(msg)
+						features["flavor_text"] = msg
+
 
 */
 

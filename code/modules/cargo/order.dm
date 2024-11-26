@@ -24,6 +24,8 @@
 	src.orderer_ckey = orderer_ckey
 	src.reason = reason
 	src.paying_account = paying_account
+	if(pack && paying_account)
+		SSblackbox.record_feedback("tally", "crate_ordered", 1, pack.name)
 
 /datum/supply_order/proc/generateRequisition(turf/T)
 	var/obj/item/paper/requisition_paper = new(T)

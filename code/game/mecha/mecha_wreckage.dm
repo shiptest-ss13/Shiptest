@@ -129,9 +129,9 @@
 	name = "\improper Marauder wreckage"
 	icon_state = "marauder-broken"
 
-/obj/structure/mecha_wreckage/mauler
-	name = "\improper Mauler wreckage"
-	icon_state = "mauler-broken"
+/obj/structure/mecha_wreckage/touro
+	name = "\improper Touro wreckage"
+	icon_state = "touro-broken"
 	desc = "The syndicate won't be very happy about this..."
 
 /obj/structure/mecha_wreckage/seraph

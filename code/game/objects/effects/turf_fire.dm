@@ -5,7 +5,7 @@
 #define TURF_FIRE_VOLUME 150
 #define TURF_FIRE_MAX_POWER 50
 
-#define TURF_FIRE_ENERGY_PER_BURNED_OXY_MOL 12000
+#define TURF_FIRE_ENERGY_PER_BURNED_OXY_MOL 30000
 #define TURF_FIRE_BURN_RATE_BASE 0.12
 #define TURF_FIRE_BURN_RATE_PER_POWER 0.02
 #define TURF_FIRE_BURN_CARBON_DIOXIDE_MULTIPLIER 0.75
@@ -65,7 +65,7 @@
 
 /obj/effect/abstract/turf_fire/Initialize(mapload, power, fire_color)
 	. = ..()
-	particles = new /particles/lava
+	particles = new /particles/smoke/turf_fire
 	var/turf/open/open_turf = loc
 	if(open_turf.turf_fire)
 		return INITIALIZE_HINT_QDEL

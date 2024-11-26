@@ -2,6 +2,7 @@
 	name = "Black Market Uplink"
 	icon = 'icons/obj/blackmarket.dmi'
 	icon_state = "uplink"
+	desc = "A jury rigged uplink capable of accessing illicit or grey market vendors. There's a port on side for linking it to a LTSRBT for more practical shipping."
 
 	// UI variables.
 	var/viewing_category
@@ -13,6 +14,8 @@
 	var/money = 0
 	/// List of typepaths for "/datum/blackmarket_market"s that this uplink can access.
 	var/list/accessible_markets = list(/datum/blackmarket_market/blackmarket)
+	// Linked LTSRBT for uplink to send to.
+	var/obj/machinery/ltsrbt/target
 
 /obj/item/blackmarket_uplink/Initialize()
 	. = ..()
@@ -53,6 +56,10 @@
 	user.put_in_hands(holochip)
 	to_chat(user, "<span class='notice'>You withdraw [amount_to_remove] credits into a holochip.</span>")
 
+/obj/item/blackmarket_uplink/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>It's LTSRBT link [target ? "contains a [target]." : "is empty."]</span>"
+
 /obj/item/blackmarket_uplink/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -75,19 +82,20 @@
 	if(viewing_category && market)
 		if(market.available_items[viewing_category])
 			for(var/datum/blackmarket_item/I in market.available_items[viewing_category])
-				data["items"] += list(list(
-					"id" = I.type,
-					"name" = I.name,
-					"cost" = I.price,
-					"amount" = I.unlimited ? "INF" : I.stock,
-					"desc" = I.desc || I.name
-				))
+				if(I.available)
+					data["items"] += list(list(
+						"id" = I.type,
+						"name" = I.name,
+						"cost" = I.price,
+						"amount" = I.unlimited ? "INF" : I.stock,
+						"desc" = I.desc || I.name
+					))
 	return data
 
 /obj/item/blackmarket_uplink/ui_static_data(mob/user)
 	var/list/data = list()
 	data["delivery_method_description"] = SSblackmarket.shipping_method_descriptions
-	data["ltsrbt_built"] = SSblackmarket.telepads.len
+	data["ltsrbt_built"] = target
 	data["markets"] = list()
 	for(var/M in accessible_markets)
 		var/datum/blackmarket_market/BM = SSblackmarket.markets[M]
@@ -155,7 +163,7 @@
 	time = 30
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_MULTITOOL)
 	reqs = list(
-		/obj/item/stock_parts/subspace/amplifier = 1,
+		/obj/item/stock_parts/scanning_module = 1,
 		/obj/item/stack/cable_coil = 15,
 		/obj/item/radio = 1,
 		/obj/item/analyzer = 1

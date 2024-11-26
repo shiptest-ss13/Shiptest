@@ -47,6 +47,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	icon_state = "generic"
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	verb_say = "beeps"
 	verb_ask = "beeps"
 	verb_exclaim = "beeps"
@@ -550,7 +552,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				L.client.give_award(/datum/award/achievement/misc/vendor_squish, L) // good job losing a fight with an inanimate object idiot
 
 			L.Paralyze(60)
-			L.emote("scream")
+			L.force_scream()
 			playsound(L, 'sound/effects/blobattack.ogg', 40, TRUE)
 			playsound(L, 'sound/effects/splat.ogg', 50, TRUE)
 
@@ -712,15 +714,13 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/ui_data(mob/user)
 	. = list()
 	var/mob/living/carbon/human/H
-	var/obj/item/card/id/card
+	var/obj/item/card/bank/card
 	if(ishuman(user))
 		H = user
-		card = H.get_idcard(TRUE)
+		card = H.get_bankcard()
 		if(card)
 			.["user"] = list()
 			.["user"]["points"] = card.mining_points
-			.["user"]["name"] = card.registered_name
-			.["user"]["job"] = card.assignment || "No Job"
 			if(card.registered_account)
 				.["user"]["name"] = card.registered_account.account_holder
 				.["user"]["cash"] = card.registered_account.account_balance
@@ -767,7 +767,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				return
 			if(!all_items_free && ishuman(usr))
 				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/id/C = H.get_idcard(TRUE)
+				var/obj/item/card/bank/C = H.get_bankcard()
 
 				if(!C)
 					say("No card found.")
@@ -800,7 +800,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					if(payment_account)
 						payment_account.transfer_money(account, price_to_use)
 					else
-						account.adjust_money(-price_to_use, "vendor_purchase")
+						account.adjust_money(-price_to_use, CREDIT_LOG_VENDOR_PURCHASE)
 					SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
 					log_econ("[price_to_use] credits were inserted into [src] by [H] to buy [R].")
 			if(last_shopper != REF(usr) || purchase_message_cooldown < world.time)
@@ -944,10 +944,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/custom/compartmentLoadAccessCheck(mob/user)
 	. = FALSE
 	var/mob/living/carbon/human/H
-	var/obj/item/card/id/C
+	var/obj/item/card/bank/C
 	if(ishuman(user))
 		H = user
-		C = H.get_idcard(FALSE)
+		C = H.get_bankcard(FALSE)
 		if(C?.registered_account && C.registered_account == private_a)
 			return TRUE
 
@@ -1001,7 +1001,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			vend_ready = FALSE
 			if(ishuman(usr))
 				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/id/C = H.get_idcard(TRUE)
+				var/obj/item/card/bank/C = H.get_bankcard()
 
 				if(!C)
 					say("No card found.")
@@ -1032,7 +1032,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						if(owner)
 							owner.transfer_money(account, S.custom_price)
 						else
-							account.adjust_money(-S.custom_price, "vendor_purchase")
+							account.adjust_money(-S.custom_price, CREDIT_LOG_VENDOR_PURCHASE)
 						SSblackbox.record_feedback("amount", "vending_spent", S.custom_price)
 						log_econ("[S.custom_price] credits were spent on [src] buying a [S] by [owner.account_holder], owned by [private_a.account_holder].")
 						vending_machine_input[N] = max(vending_machine_input[N] - 1, 0)
@@ -1053,10 +1053,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/custom/attackby(obj/item/I, mob/user, params)
 	if(!private_a)
 		var/mob/living/carbon/human/H
-		var/obj/item/card/id/C
+		var/obj/item/card/bank/C
 		if(ishuman(user))
 			H = user
-			C = H.get_idcard(TRUE)
+			C = H.get_bankcard(TRUE)
 			if(C?.registered_account)
 				private_a = C.registered_account
 				say("\The [src] has been linked to [C].")

@@ -36,7 +36,7 @@
 	return ..()
 
 /datum/action/innate/mecha/mech_eject
-	name = "Eject From Mech"
+	name = "Eject From Exosuit"
 	button_icon_state = "mech_eject"
 
 /datum/action/innate/mecha/mech_eject/Activate()
@@ -179,9 +179,23 @@
 	else
 		chassis.leg_overload_mode = 0
 		chassis.step_in = initial(chassis.step_in)
-		chassis.step_energy_drain = chassis.normal_step_energy_drain
+		chassis.update_part_values()
 		chassis.occupant_message("<span class='notice'>You disable leg actuators overload.</span>")
 	UpdateButtonIcon()
+
+/datum/action/innate/mecha/mech_charge_mode
+	name = "Charge"
+	button_icon_state = "mech_overload_off"
+
+/datum/action/innate/mecha/mech_charge_mode/Activate()
+	if(!owner || !chassis || chassis.occupant != owner)
+		return
+	if(chassis.charge_ready && !chassis.charging)
+		chassis.start_charge()
+		chassis.charge_ready = FALSE
+		addtimer(VARSET_CALLBACK(chassis, charge_ready, TRUE), chassis.charge_cooldown)
+	else
+		chassis.occupant_message(span_warning("The leg actuators are still recharging!"))
 
 /datum/action/innate/mecha/mech_smoke
 	name = "Smoke"

@@ -1,6 +1,7 @@
 //Stack-only storage.
 /datum/component/storage/concrete/stack
 	display_numerical_stacking = TRUE
+	storage_flags = STORAGE_FLAGS_LEGACY_DEFAULT
 	var/max_combined_stack_amount = 300
 	max_w_class = WEIGHT_CLASS_NORMAL
 	max_combined_w_class = WEIGHT_CLASS_NORMAL * 14

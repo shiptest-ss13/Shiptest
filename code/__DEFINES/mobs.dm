@@ -28,6 +28,13 @@
 #define BLOOD_VOLUME_BAD 224
 #define BLOOD_VOLUME_SURVIVE 122
 
+// Bloodloss
+#define BLOOD_LOSS_MAXIMUM 30
+#define BLOOD_LOSS_DAMAGE_MAXIMUM 2
+#define BLOOD_LOSS_DAMAGE_BASE 0.013
+#define BLOOD_CAUTERIZATION_RATIO 10
+#define BLOOD_CAUTERIZATION_DAMAGE_RATIO 300
+
 //Sizes of mobs, used by mob/living/var/mob_size
 #define MOB_SIZE_TINY 0
 #define MOB_SIZE_SMALL 1
@@ -69,7 +76,6 @@
 #define MONKEY_BODYPART "monkey"
 #define ALIEN_BODYPART "alien"
 #define LARVA_BODYPART "larva"
-#define DEVIL_BODYPART "devil"
 
 //Defines for Species IDs
 #define SPECIES_ABDUCTOR "abductor"
@@ -124,10 +130,12 @@
 #define BODYTYPE_ORGANIC (1<<0)
 #define BODYTYPE_ROBOTIC (1<<1)
 #define BODYTYPE_HUMANOID (1<<2) //Everything
-#define BODYTYPE_BOXHEAD (1<<3) //TV Head
-#define BODYTYPE_DIGITIGRADE (1<<4) //Cancer
-#define BODYTYPE_KEPORI (1<<5) //Just Kepori
-#define BODYTYPE_VOX (1<<6) //Big Vox
+#define BODYTYPE_SNOUT (1<<3) //Snouts
+#define BODYTYPE_SNOUT_SMALL (1<<4) //Elzuose snouts
+#define BODYTYPE_BOXHEAD (1<<5) //TV Head
+#define BODYTYPE_DIGITIGRADE (1<<6) //Lizard legs
+#define BODYTYPE_KEPORI (1<<7) //Just Kepori
+#define BODYTYPE_VOX (1<<8) //Big Vox
 
 // Health/damage defines
 #define MAX_LIVING_HEALTH 100
@@ -386,13 +394,15 @@
 #define RACE_SWAP (1<<3)
 //ERT spawn template (avoid races that don't function without correct gear)
 #define ERT_SPAWN (1<<4)
-//xenobio black crossbreed
-#define SLIME_EXTRACT (1<<5)
 //Wabbacjack staff projectiles
-#define WABBAJACK (1<<6)
+#define WABBAJACK (1<<5)
 
 #define SLEEP_CHECK_DEATH(X) sleep(X); if(QDELETED(src) || stat == DEAD) return;
-#define INTERACTING_WITH(X, Y) (Y in X.do_afters)
+
+#define DOING_INTERACTION(user, interaction_key) (LAZYACCESS(user.do_afters, interaction_key))
+#define DOING_INTERACTION_LIMIT(user, interaction_key, max_interaction_count) ((LAZYACCESS(user.do_afters, interaction_key) || 0) >= max_interaction_count)
+#define DOING_INTERACTION_WITH_TARGET(user, target) (LAZYACCESS(user.do_afters, target))
+#define DOING_INTERACTION_WITH_TARGET_LIMIT(user, target, max_interaction_count) ((LAZYACCESS(user.do_afters, target) || 0) >= max_interaction_count)
 
 /// If you examine the same atom twice in this timeframe, we call examine_more() instead of examine()
 #define EXAMINE_MORE_TIME 1 SECONDS
@@ -400,9 +410,6 @@
 #define EYE_CONTACT_RANGE 5
 
 #define SILENCE_RANGED_MESSAGE (1<<0)
-
-///Swarmer flags
-#define SWARMER_LIGHT_ON (1<<0)
 
 /// Returns whether or not the given mob can succumb
 #define CAN_SUCCUMB(target) (HAS_TRAIT(target, TRAIT_CRITICAL_CONDITION) && !HAS_TRAIT(target, TRAIT_NODEATH))

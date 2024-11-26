@@ -461,12 +461,12 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		return
 	if(length(src_object.contents()))
 		to_chat(usr, "<span class='notice'>You start dumping out the contents...</span>")
-		if(!do_after(usr,20,target=src_object.parent))
+		if(!do_after(usr, 20, target=src_object.parent))
 			return FALSE
 
 	var/list/things = src_object.contents()
 	var/datum/progressbar/progress = new(user, things.len, src)
-	while (do_after(usr, 10, TRUE, src, FALSE, CALLBACK(src_object, TYPE_PROC_REF(/datum/component/storage, mass_remove_from_storage), src, things, progress)))
+	while (do_after(usr, 10, src, TRUE, FALSE, CALLBACK(src_object, TYPE_PROC_REF(/datum/component/storage, mass_remove_from_storage), src, things, progress)))
 		stoplag(1)
 	progress.end_progress()
 
@@ -582,8 +582,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 /turf/proc/acid_melt()
 	return
 
-/turf/handle_fall(mob/faller)
-	if(has_gravity(src))
+/turf/handle_fall(mob/faller, fall_sound_played)
+	if(has_gravity(src) && !fall_sound_played)
 		playsound(src, "bodyfall", 50, TRUE)
 	faller.drop_all_held_items()
 

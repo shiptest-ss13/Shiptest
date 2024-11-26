@@ -60,7 +60,7 @@
 	qdel(src)
 
 /obj/structure/chair/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1))
+	if((W.tool_behaviour == TOOL_WRENCH || W.tool_behaviour == TOOL_DECONSTRUCT) && !(flags_1&NODECONSTRUCT_1))
 		W.play_tool_sound(src)
 		deconstruct()
 	else if(istype(W, /obj/item/assembly/shock_kit))
@@ -355,3 +355,12 @@
 	custom_materials = list(/datum/material/plastic = 2000)
 	break_chance = 25
 	origin_type = /obj/structure/chair/plastic
+
+/obj/structure/chair/handrail
+	name = "handrail"
+	icon = 'icons/obj/structures/handrail.dmi'
+	icon_state = "handrail"
+	desc = "A safety railing with buckles to secure yourself to when floor isn't stable enough."
+	item_chair = null
+	buildstackamount = 4
+	buildstacktype = /obj/item/stack/rods

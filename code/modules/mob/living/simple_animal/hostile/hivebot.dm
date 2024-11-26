@@ -23,7 +23,7 @@
 	projectiletype = /obj/projectile/hivebotbullet
 	faction = list("hivebot")
 	check_friendly_fire = 1
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	possible_a_intents = list(INTENT_HELP, INTENT_GRAB, INTENT_DISARM, INTENT_HARM)
 	minbodytemp = 0
 	verb_say = "states"
@@ -69,7 +69,7 @@
 
 /mob/living/simple_animal/hostile/hivebot/death(gibbed)
 	do_sparks(3, TRUE, src)
-	new /obj/effect/spawner/lootdrop/waste/hivebot(loc)
+	new /obj/effect/spawner/random/waste/hivebot(loc)
 	..(TRUE)
 
 /mob/living/simple_animal/hostile/hivebot/range
@@ -120,7 +120,6 @@
 	maxHealth = 60
 	ranged = TRUE
 	rapid = 3
-	gold_core_spawnable = HOSTILE_SPAWN
 	var/datum/action/innate/hivebot/foamwall/foam
 
 /mob/living/simple_animal/hostile/hivebot/mechanic/Initialize(mapload)

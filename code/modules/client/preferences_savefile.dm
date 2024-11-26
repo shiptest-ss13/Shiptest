@@ -446,6 +446,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// READ_FILE(S["backpack"], backpack)
 	// READ_FILE(S["jumpsuit_style"], jumpsuit_style)
 	READ_FILE(S["phobia"], phobia)
+	// READ_FILE(S["feature_kepori_head_feathers"], features["kepori_head_feathers"])
 	// READ_FILE(S["generic_adjective"], generic_adjective)
 	READ_FILE(S["randomise"],  randomise)
 	// READ_FILE(S["body_size"], features[FEATURE_BODY_SIZE])
@@ -487,9 +488,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["equipped_gear"], equipped_gear)
 	if(config) //This should *probably* always be there, but just in case.
 		if(length(equipped_gear) > CONFIG_GET(number/max_loadout_items))
-			to_chat(parent, "<span class='userdanger'>Loadout maximum items exceeded in loaded slot, Your loadout has been cleared! You had [length(equipped_gear)]/[CONFIG_GET(number/max_loadout_items)] equipped items!</span>")
+			to_chat(parent, span_userdanger("Loadout maximum items exceeded in loaded slot, Your loadout has been cleared! You had [length(equipped_gear)]/[CONFIG_GET(number/max_loadout_items)] equipped items!"))
 			equipped_gear = list()
-			WRITE_FILE(S["equipped_gear"]				, equipped_gear)
+			WRITE_FILE(S["equipped_gear"], equipped_gear)
+
+	for(var/gear in equipped_gear)
+		if(!(gear in GLOB.gear_datums))
+			to_chat(parent, span_warning("Removing nonvalid loadout item [gear] from loadout"))
+			equipped_gear -= gear //be GONE
+			WRITE_FILE(S["equipped_gear"], equipped_gear)
 
 	// READ_FILE(S["feature_human_tail"], features["tail_human"])
 	// READ_FILE(S["feature_human_ears"], features["ears"])
@@ -546,7 +553,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		// underwear								= sanitize_inlist(underwear, GLOB.underwear_list)
 		// undershirt 								= sanitize_inlist(undershirt, GLOB.undershirt_list)
 
-	var/datum/species/chosen_species = get_pref_data(/datum/preference/species)
 	// socks				= sanitize_inlist(socks, GLOB.socks_list)
 	// age					= sanitize_integer(age, chosen_species.species_age_min, chosen_species.species_age_max, initial(age))
 	// hair_color			= sanitize_hexcolor(hair_color)
@@ -587,6 +593,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["ipc_brain"]				= sanitize_inlist(features["ipc_brain"], GLOB.ipc_brain_list)
 	// features["kepori_feathers"]		= sanitize_inlist(features["kepori_feathers"], GLOB.kepori_feathers_list, "Plain")
 	// features["kepori_body_feathers"]	= sanitize_inlist(features["kepori_body_feathers"], GLOB.kepori_body_feathers_list, "Plain")
+	// features["kepori_head_feathers"]	= sanitize_inlist(features["kepori_head_feathers"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/kepori_head_feathers], "None")
 	// features["kepori_tail_feathers"]	= sanitize_inlist(features["kepori_tail_feathers"], GLOB.kepori_tail_feathers_list, "Fan")
 	// features["vox_head_quills"]		= sanitize_inlist(features["vox_head_quills"], GLOB.vox_head_quills_list, "None")
 	// features["vox_neck_quills"]		= sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
@@ -665,6 +672,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_ipc_brain"]			, features["ipc_brain"])
 	// WRITE_FILE(S["feature_kepori_feathers"]		, features["kepori_feathers"])
 	// WRITE_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
+	// WRITE_FILE(S["feature_kepori_head_feathers"], features["feature_kepori_head_feathers"])
 	// WRITE_FILE(S["feature_kepori_tail_feathers"], features["kepori_tail_feathers"])
 	// WRITE_FILE(S["feature_vox_head_quills"]		, features["vox_head_quills"])
 	// WRITE_FILE(S["feature_vox_neck_quills"]		, features["vox_neck_quills"])

@@ -201,7 +201,18 @@
 	name = "Circulator/Heat Exchanger (Machine Board)"
 	icon_state = "engineering"
 	build_path = /obj/machinery/atmospherics/components/binary/circulator
+	var/pipe_layer = PIPING_LAYER_DEFAULT
 	req_components = list()
+
+/obj/item/circuitboard/machine/circulator/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_MULTITOOL)
+		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
+		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
+		return
+
+/obj/item/circuitboard/machine/circulator/examine()
+	. = ..()
+	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
 
 /obj/item/circuitboard/machine/emitter
 	name = "Emitter (Machine Board)"
@@ -559,7 +570,7 @@
 	var/static/list/fridges_name_paths = list(/obj/machinery/smartfridge = "plant produce",
 		/obj/machinery/smartfridge/food = "food",
 		/obj/machinery/smartfridge/drinks = "drinks",
-		/obj/machinery/smartfridge/extract = "slimes",
+		/obj/machinery/smartfridge/bloodbank = "blood",
 		/obj/machinery/smartfridge/organ = "organs",
 		/obj/machinery/smartfridge/chemistry = "chems",
 		/obj/machinery/smartfridge/chemistry/virology = "viruses",
@@ -946,7 +957,7 @@
 		/obj/item/stock_parts/micro_laser = 2)
 
 /obj/item/circuitboard/machine/mech_recharger
-	name = "Mechbay Recharger (Machine Board)"
+	name = "Exosuit Bay Recharger (Machine Board)"
 	icon_state = "science"
 	build_path = /obj/machinery/mech_bay_recharge_port
 	req_components = list(
@@ -970,15 +981,6 @@
 	req_components = list(
 		/obj/item/airlock_painter = 1,
 		/obj/item/stack/sheet/glass = 1)
-
-/obj/item/circuitboard/machine/monkey_recycler
-	name = "Monkey Recycler (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/monkey_recycler
-	req_components = list(
-		/obj/item/stock_parts/matter_bin = 1,
-		/obj/item/stock_parts/manipulator = 1)
-	needs_anchored = FALSE
 
 /obj/item/circuitboard/machine/nanite_chamber
 	name = "Nanite Chamber (Machine Board)"
@@ -1005,11 +1007,6 @@
 		/obj/item/stock_parts/manipulator = 2,
 		/obj/item/stock_parts/micro_laser = 2,
 		/obj/item/stock_parts/scanning_module = 1)
-
-/obj/item/circuitboard/machine/processor/slime
-	name = "Slime Processor (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/processor/slime
 
 /obj/item/circuitboard/machine/protolathe/department/science
 	name = "Protolathe (Machine Board) - Science"
@@ -1099,17 +1096,6 @@
 		/obj/item/stock_parts/capacitor = 2,
 		/obj/item/stack/sheet/glass = 1)
 	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
-
-/obj/item/circuitboard/machine/bepis
-	name = "BEPIS Chamber (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/rnd/bepis
-	req_components = list(
-		/obj/item/stack/cable_coil = 5,
-		/obj/item/stock_parts/capacitor = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/stock_parts/scanning_module = 1)
 
 /obj/item/circuitboard/machine/bluespace_miner
 	name = "Bluespace Miner (Machine Board)"
@@ -1277,19 +1263,6 @@
 		/obj/item/stock_parts/manipulator = 1)
 	needs_anchored = FALSE
 
-/obj/item/circuitboard/machine/processor/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		if(build_path == /obj/machinery/processor)
-			name = "Slime Processor (Machine Board)"
-			build_path = /obj/machinery/processor/slime
-			to_chat(user, "<span class='notice'>Name protocols successfully updated.</span>")
-		else
-			name = "Food Processor (Machine Board)"
-			build_path = /obj/machinery/processor
-			to_chat(user, "<span class='notice'>Defaulting name protocols.</span>")
-	else
-		return ..()
-
 /obj/item/circuitboard/machine/protolathe/department/service
 	name = "Protolathe - Service (Machine Board)"
 	icon_state = "service"
@@ -1381,16 +1354,6 @@
 		/obj/item/stock_parts/scanning_module = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
-//Misc
-/obj/item/circuitboard/machine/sheetifier
-	name = "Sheet-meister 2000 (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/sheetifier
-	req_components = list(
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/stock_parts/matter_bin = 2)
-	needs_anchored = FALSE
-
 /obj/item/circuitboard/machine/abductor
 	name = "alien board (Report This)"
 	icon_state = "abductor_mod"
@@ -1431,6 +1394,15 @@
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/micro_laser = 1)
 
+/obj/item/circuitboard/machine/shuttle/engine/fire
+	name = "Combustion Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/fire
+	req_components = list(
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/assembly/igniter = 1,
+		/obj/item/stack/sheet/plasteel = 2
+	)
+
 /obj/item/circuitboard/machine/shuttle/engine/electric
 	name = "Ion Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/electric
@@ -1470,9 +1442,41 @@
 
 /obj/item/circuitboard/machine/shuttle/heater
 	name = "Fueled Engine Heater (Machine Board)"
+	desc = "You can use mulitool to switch pipe layers"
 	build_path = /obj/machinery/atmospherics/components/unary/shuttle/heater
+	var/pipe_layer = PIPING_LAYER_DEFAULT
 	req_components = list(/obj/item/stock_parts/micro_laser = 2,
 		/obj/item/stock_parts/matter_bin = 1)
+
+/obj/item/circuitboard/machine/shuttle/heater/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_MULTITOOL)
+		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
+		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
+		return
+
+/obj/item/circuitboard/machine/shuttle/heater/examine()
+	. = ..()
+	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
+
+/obj/item/circuitboard/machine/shuttle/fire_heater
+	name = "Combustion Engine Heater (Machine Board)"
+	desc = "You can use mulitool to switch pipe layers"
+	var/pipe_layer = PIPING_LAYER_DEFAULT
+	build_path = /obj/machinery/atmospherics/components/unary/shuttle/fire_heater
+	req_components = list(
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/matter_bin = 1
+	)
+
+/obj/item/circuitboard/machine/shuttle/fire_heater/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_MULTITOOL)
+		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
+		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
+		return
+
+/obj/item/circuitboard/machine/shuttle/fire_heater/examine()
+	. = ..()
+	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
 
 /obj/item/circuitboard/machine/shuttle/smes
 	name = "Electric Engine Precharger (Machine Board)"
@@ -1501,22 +1505,8 @@
 		/obj/item/stock_parts/manipulator = 2,
 	)
 
-/obj/item/circuitboard/machine/coffeemaker
-	name = "Modello 3 Coffeemaker"
-	build_path = /obj/machinery/coffeemaker
-	req_components = list(
-		/obj/item/stack/sheet/glass = 1,
-		/obj/item/reagent_containers/glass/beaker = 2,
-		/obj/item/stock_parts/capacitor = 1,
-		/obj/item/stock_parts/micro_laser = 2,
-	)
-
-/obj/item/circuitboard/machine/coffeemaker/impressa
-	name = "Impressa Coffeemaker"
-	build_path = /obj/machinery/coffeemaker/impressa
-	req_components = list(
-		/obj/item/stack/sheet/glass = 1,
-		/obj/item/reagent_containers/glass/beaker = 2,
-		/obj/item/stock_parts/capacitor = 1,
-		/obj/item/stock_parts/micro_laser = 2,
-	)
+/obj/item/circuitboard/machine/suit_storage_unit
+	name = "Suit Storage Unit"
+	icon_state = "engineering"
+	build_path = /obj/machinery/suit_storage_unit
+	req_components = list(/obj/item/stock_parts/micro_laser = 4)

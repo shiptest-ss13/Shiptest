@@ -1,6 +1,4 @@
-//Kepori mutant parts
-
-//Start head feathers
+// "Hair" feathers
 
 /datum/sprite_accessory/mutant_part/kepori_feathers
 	mutant_string = "kepori_feathers"
@@ -11,7 +9,7 @@
 	clothes_flags_inv_hide = HIDEHAIR
 
 	color_src = COLOR_SRC_HAIR_COLOR
-	icon = 'icons/mob/kepori_parts.dmi'
+	icon = 'icons/mob/species/kepori/kepori_parts.dmi'
 
 /datum/sprite_accessory/mutant_part/kepori_feathers/none
 	name = "None"
@@ -44,10 +42,6 @@
 	name = "Spikey"
 	icon_state = "spikey"
 
-/datum/sprite_accessory/mutant_part/kepori_feathers/soap
-	name = "Soap"
-	icon_state = "soap"
-
 /datum/sprite_accessory/mutant_part/kepori_feathers/crowned
 	name = "Crowned"
 	icon_state = "crowned"
@@ -64,48 +58,71 @@
 	name = "Bun"
 	icon_state = "bun"
 
-//Start body feathers
+// Head/Face feathers
+/datum/sprite_accessory/mutant_part/kepori_head_feathers
+	mutant_string = "kepori_head_feathers"
+	abstract_type = /datum/sprite_accessory/mutant_part/kepori_head_feathers
+	randomizable = TRUE
+
+	body_zone = BODY_ZONE_HEAD
+	color_src = COLOR_SRC_MUT_COLOR_SECONDARY
+	icon = 'icons/mob/species/kepori/kepori_parts.dmi'
+
+/datum/sprite_accessory/mutant_part/kepori_head_feathers/none
+	name = "None"
+
+/datum/sprite_accessory/mutant_part/kepori_head_feathers/full
+	name = "Full"
+	icon_state = "full"
+
+/datum/sprite_accessory/mutant_part/kepori_head_feathers/half
+	name = "Half"
+	icon_state = "half"
+
+// Body feathers
 
 /datum/sprite_accessory/mutant_part/kepori_body_feathers
 	mutant_string = "kepori_body_feathers"
 	abstract_type = /datum/sprite_accessory/mutant_part/kepori_body_feathers
 	randomizable = TRUE
 
+	body_zone = BODY_ZONE_CHEST
 	color_src = COLOR_SRC_MUT_COLOR_SECONDARY
-	icon = 'icons/mob/kepori_parts.dmi'
+	icon = 'icons/mob/species/kepori/kepori_parts.dmi'
 
 /datum/sprite_accessory/mutant_part/kepori_body_feathers/none
 	name = "None"
-
-/datum/sprite_accessory/mutant_part/kepori_body_feathers/aftik
-	name = "Aftik"
-	icon_state = "aftik"
 
 /datum/sprite_accessory/mutant_part/kepori_body_feathers/belly
 	name = "Belly"
 	icon_state = "belly"
 
-/datum/sprite_accessory/mutant_part/kepori_body_feathers/shirt
-	name = "Shirt"
-	icon_state = "shirt"
+/datum/sprite_accessory/mutant_part/kepori_body_feathers/belly_wings
+	name = "Belly + Wings"
+	icon_state = "bwings"
 
 /datum/sprite_accessory/mutant_part/kepori_body_feathers/soap
 	name = "Soap"
 	icon_state = "soap"
 
+/datum/sprite_accessory/mutant_part/kepori_body_feathers/soap_wings
+	name = "Soap + Wings"
+	icon_state = "swings"
+
 /datum/sprite_accessory/mutant_part/kepori_body_feathers/wings
 	name = "Wings"
 	icon_state = "wings"
 
-//Start tail feathers
+// Tail feathers
 
 /datum/sprite_accessory/mutant_part/kepori_tail_feathers
 	mutant_string = "kepori_tail_feathers"
 	abstract_type = /datum/sprite_accessory/mutant_part/kepori_tail_feathers
 	randomizable = TRUE
 
+	body_zone = BODY_ZONE_CHEST
 	color_src = COLOR_SRC_MUT_COLOR_SECONDARY
-	icon = 'icons/mob/kepori_parts.dmi'
+	icon = 'icons/mob/species/kepori/kepori_parts.dmi'
 
 /datum/sprite_accessory/mutant_part/kepori_tail_feathers/none
 	name = "None"

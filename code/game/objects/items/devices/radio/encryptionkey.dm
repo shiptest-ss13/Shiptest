@@ -88,6 +88,11 @@
 	icon_state = "solgov_cypherkey"
 	channels = list(RADIO_CHANNEL_SOLGOV = 1)
 
+//	/obj/item/encryptionkey/suns
+//	name = "\improper SUNS encryption key"
+//	icon_state = "suns_cypherkey"
+//	channels = list(RADIO_CHANNEL_SUNS = 1)
+
 /obj/item/encryptionkey/wideband
 	name = "wideband encryption key"
 	icon = 'icons/obj/radio.dmi'

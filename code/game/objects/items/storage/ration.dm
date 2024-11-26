@@ -9,16 +9,28 @@
 	resistance_flags = FLAMMABLE
 	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
+	var/emblem_icon_state = "null"
+	var/ration_overlay = "null"
 
 /obj/item/storage/ration/Initialize(mapload)
 	. = ..()
 	update_icon()
+	update_overlays()
+
+/obj/item/storage/ration/update_overlays()
+	. = ..()
+	var/mutable_appearance/ration_overlay
+	if(emblem_icon_state)
+		ration_overlay = mutable_appearance(icon, emblem_icon_state)
+	add_overlay(ration_overlay)
 
 /obj/item/storage/ration/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 7
-	STR.set_holdable(list(/obj/item/reagent_containers/food))
+	STR.set_holdable(list(
+		/obj/item/reagent_containers/food,
+		/obj/item/ration_heater))
 	STR.locked = TRUE
 	STR.locked_flavor = "sealed closed"
 
@@ -38,13 +50,13 @@
 /obj/item/storage/ration/vegan_chili
 	name = "vegan chili with beans ration"
 	desc = "A complete meal package containing a hearty vegan chili with beans, complemented by vegetable crackers, savory cornbread, flavorful pizza crackers, and more. A perfect choice for plant-based nourishment."
-
+	emblem_icon_state = "emblem_vegan_chili"
 /obj/item/storage/ration/vegan_chili/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/vegan_chili = 1,
 		/obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers = 1,
 		/obj/item/reagent_containers/food/snacks/ration/side/cornbread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/snack/pizza_crackers = 1,
+		/obj/item/reagent_containers/food/snacks/ration/snack/fruit_puree = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread = 1,
 		/obj/item/reagent_containers/food/snacks/ration/pack/grape_beverage = 1,
 		/obj/item/ration_heater = 1
@@ -54,7 +66,7 @@
 /obj/item/storage/ration/shredded_beef
 	name = "shredded beef in barbecue sauce ration"
 	desc = "Enjoy the rich and savory flavors of shredded beef in smoky barbecue sauce with this satisfying ration. Accompanied by a fruit puree, jerky wrap, cinnamon bun, and additional condiments, this ration is perfect for meat lovers."
-
+	emblem_icon_state = "emblem_shredded_beef"
 /obj/item/storage/ration/shredded_beef/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/shredded_beef = 1,
@@ -70,7 +82,7 @@
 /obj/item/storage/ration/pork_spaghetti
 	name = "spaghetti with pork and sauce ration"
 	desc = "Indulge in a comforting meal of spaghetti with tender pork and savory sauce with this ration. Complemented by a toaster pastry, seasoned bread sticks, dried raisins, and other accompaniments, this ration offers a flavorful experience."
-
+	emblem_icon_state = "emblem_pork_spaghetti"
 /obj/item/storage/ration/pork_spaghetti/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/pork_spaghetti = 1,
@@ -86,7 +98,7 @@
 /obj/item/storage/ration/fried_fish
 	name = "fried fish chunks ration"
 	desc = "Experience the crispy delight of fried fish chunks with this ration. Accompanied by an energy bar, tortillas, toasted corn kernels, and more, this ration provides a satisfying combination of flavors and textures."
-
+	emblem_icon_state = "emblem_fried_fish"
 /obj/item/storage/ration/fried_fish/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/fried_fish = 1,
@@ -103,7 +115,7 @@
 /obj/item/storage/ration/beef_strips
 	name = "beef strips in tomato sauce ration"
 	desc = "Savor the deliciousness of tender beef strips in a flavorful tomato sauce with this ration. Enjoy a chocolate pudding, white wheat snack bread, blackberry preserves, and peppermint candy rings as delightful accompaniments."
-
+	emblem_icon_state = "emblem_beef_strips"
 /obj/item/storage/ration/beef_strips/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/beef_strips = 1,
@@ -120,7 +132,7 @@
 /obj/item/storage/ration/chili_macaroni
 	name = "chili and macaroni ration"
 	desc = "Indulge in the comforting combination of chili and macaroni in this flavorful ration. Satisfy your taste buds with a mix of sweet and savory treats."
-
+	emblem_icon_state = "emblem_chili_macaroni"
 /obj/item/storage/ration/chili_macaroni/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/chili_macaroni = 1,
@@ -137,7 +149,7 @@
 /obj/item/storage/ration/chicken_wings_hot_sauce
 	name = "chicken wings in hot sauce ration"
 	desc = "Experience the bold and spicy flavors of chicken wings drenched in hot sauce. This ration also includes a mix of delightful snacks for a well-rounded meal."
-
+	emblem_icon_state = "emblem_chicken_wings_hot_sauce"
 /obj/item/storage/ration/chicken_wings_hot_sauce/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/chicken_wings_hot_sauce = 1,
@@ -153,7 +165,7 @@
 /obj/item/storage/ration/fish_stew
 	name = "fish stew ration"
 	desc = "Dive into the depths of flavor with this fish stew ration. Enjoy a hearty blend of seafood and vegetables, complemented by a selection of tasty accompaniments."
-
+	emblem_icon_state = "emblem_fish_stew"
 /obj/item/storage/ration/fish_stew/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/fish_stew = 1,
@@ -170,7 +182,7 @@
 /obj/item/storage/ration/lemon_pepper_chicken
 	name = "lemon pepper chicken ration"
 	desc = "A tasty Lemon Pepper Chicken ration that combines the flavors of fruit and meat. Perfect for a satisfying meal."
-
+	emblem_icon_state = "emblem_lemon_pepper_chicken"
 /obj/item/storage/ration/lemon_pepper_chicken/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/lemon_pepper_chicken = 1,
@@ -186,7 +198,7 @@
 /obj/item/storage/ration/sausage_peppers_onions
 	name = "sausage, peppers and onions ration"
 	desc = "Indulge in the delightful combination of juicy sausage, peppers, and onions in this hearty ration."
-
+	emblem_icon_state = "emblem_sausage_peppers_onions"
 /obj/item/storage/ration/sausage_peppers_onions/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/sausage_peppers_onions = 1,
@@ -202,7 +214,7 @@
 /obj/item/storage/ration/pork_dumplings_chili_sauce
 	name = "pork dumplings in chili sauce ration"
 	desc = "Savor the rich flavors of pork dumplings in a spicy chili sauce, accompanied by a variety of complementary snacks."
-
+	emblem_icon_state = "emblem_pork_dumplings_chili_sauce"
 /obj/item/storage/ration/pork_dumplings_chili_sauce/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/dumplings_chili_sauce = 1,
@@ -218,7 +230,7 @@
 /obj/item/storage/ration/battered_fish_sticks
 	name = "battered fish sticks ration"
 	desc = "Enjoy the crispy goodness of battered fish sticks, along with a selection of sides and a delectable dessert."
-
+	emblem_icon_state = "emblem_battered_fish_sticks"
 /obj/item/storage/ration/battered_fish_sticks/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/battered_fish_sticks = 1,
@@ -234,7 +246,7 @@
 /obj/item/storage/ration/assorted_salted_offal
 	name = "assorted salted offal ration"
 	desc = "An adventurous choice, this ration offers an assortment of salted offal, providing a unique culinary experience."
-
+	emblem_icon_state = "emblem_assorted_salted_offal"
 /obj/item/storage/ration/assorted_salted_offal/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/assorted_salted_offal = 1,
@@ -250,7 +262,7 @@
 /obj/item/storage/ration/maple_pork_sausage_patty
 	name = "maple pork sausage patty ration"
 	desc = "Start your day with a satisfying breakfast featuring a maple-infused pork sausage patty and a variety of treats."
-
+	emblem_icon_state = "emblem_maple_pork_sausage_patty"
 /obj/item/storage/ration/maple_pork_sausage_patty/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/maple_pork_sausage_patty = 1,
@@ -267,7 +279,7 @@
 /obj/item/storage/ration/pepper_jack_beef_patty
 	name = "jalapeno pepper jack beef patty ration"
 	desc = "Experience a flavorful fusion of jalapeno, pepper jack cheese, and beef in this grilled beef patty ration."
-
+	emblem_icon_state = "emblem_pepper_jack_beef_patty"
 /obj/item/storage/ration/pepper_jack_beef_patty/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/pepper_jack_beef_patty = 1,
@@ -284,7 +296,7 @@
 /obj/item/storage/ration/beef_goulash
 	name = "beef goulash ration"
 	desc = "Delight in the rich flavors of beef goulash, accompanied by a selection of sides and a sweet treat."
-
+	emblem_icon_state = "emblem_beef_goulash"
 /obj/item/storage/ration/beef_goulash/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/beef_goulash = 1,
@@ -301,7 +313,7 @@
 /obj/item/storage/ration/pepperoni_pizza_slice
 	name = "pepperoni pizza slice ration"
 	desc = "Indulge in the classic taste of pepperoni pizza with this ration, complete with sides and a refreshing beverage."
-
+	emblem_icon_state = "emblem_pepperoni_pizza_slice"
 /obj/item/storage/ration/pepperoni_pizza_slice/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/pepperoni_pizza_slice = 1,
@@ -317,7 +329,7 @@
 /obj/item/storage/ration/blackened_calamari
 	name = "blackened calamari in red sauce ration"
 	desc = "Enjoy the savory delight of blackened calamari served in a rich red sauce."
-
+	emblem_icon_state = "emblem_blackened_calamari"
 /obj/item/storage/ration/blackened_calamari/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/blackened_calamari = 1,
@@ -334,7 +346,7 @@
 /obj/item/storage/ration/elbow_macaroni
 	name = "elbow macaroni in tomato sauce ration"
 	desc = "Savor the comforting taste of elbow macaroni in a delicious tomato sauce."
-
+	emblem_icon_state = "emblem_elbow_macaroni"
 /obj/item/storage/ration/elbow_macaroni/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/elbow_macaroni = 1,
@@ -351,7 +363,7 @@
 /obj/item/storage/ration/cheese_pizza_slice
 	name = "cheese pizza slice ration"
 	desc = "Experience the timeless flavor of a classic cheese pizza slice."
-
+	emblem_icon_state = "emblem_cheese_pizza_slice"
 /obj/item/storage/ration/cheese_pizza_slice/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/cheese_pizza_slice = 1,
@@ -368,7 +380,7 @@
 /obj/item/storage/ration/crayons
 	name = "military grade crayon ration"
 	desc = "Proven to increase kill count by atleast 1."
-
+	emblem_icon_state = "emblem_crayons"
 /obj/item/storage/ration/crayons/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/toy/crayon/red = 1,

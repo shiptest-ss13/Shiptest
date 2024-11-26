@@ -75,6 +75,7 @@
 	strip_delay = 60
 	alternate_worn_layer = BODY_LAYER
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION
 
 /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
 	desc = "A surprisingly advanced balaclava. while it doesn't muffle your voice it has a miniature rebreather for internals. Comfy to boot! This one is a variataion commonly used by the IRMG to protect it's members idenites."

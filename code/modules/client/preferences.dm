@@ -15,7 +15,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/client/parent
 	//doohickeys for savefiles
 	var/path
-	var/max_save_slots = 20
+	var/max_save_slots = 30
 
 	// ! make global tbh
 	var/list/friendlyGenders = list(
@@ -89,6 +89,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							RANDOM_EYE_COLOR = TRUE,
 						)
 	var/phobia = "spiders"
+
 	var/list/custom_names = list() // just for the ai name, i think
 
 	//Quirk list
@@ -96,6 +97,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	///The outfit we currently want to preview on our character
 	var/datum/outfit/job/selected_outfit
+
+
 	///Gear the character has equipped
 	var/list/equipped_gear = list() // ! loadout?
 
@@ -108,7 +111,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
 
 	/// If we spawn an ERT as an admin and choose to spawn as the briefing officer, we'll be given this outfit
-	var/brief_outfit = /datum/outfit/centcom/commander
+	var/brief_outfit = /datum/outfit/job/nanotrasen/captain
 
 	var/ooccolor = "#c43b23"
 	var/asaycolor = "#ff4500"			//This won't change the color for current admins, only incoming ones.
@@ -263,7 +266,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			load_path(C.ckey)
 			unlock_content = C.IsByondMember()
 			if(unlock_content)
-				max_save_slots = 30
+				max_save_slots = 50
 
 	#warn removed due to being incomplete and unimplemented. will be re-added later, when things work again
 	/*
@@ -285,7 +288,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	random_character()
 	key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key) // give them default keybinds and update their movement keys
 	C?.set_macros()
-	var/datum/species/chosen_species = get_pref_data(/datum/preference/species)
+
 	if(!loaded_preferences_successfully)
 		save_preferences()
 	save_character()		//let's save this new random character so it doesn't keep generating new ones.
@@ -662,6 +665,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			// 		dat += APPEARANCE_CATEGORY_COLUMN
 
 			// 	dat += "<h3>Horns</h3>"
+			// if("kepori_head_feathers" in current_species.default_features)
+			// 	if(!mutant_category)
+			// 		dat += APPEARANCE_CATEGORY_COLUMN
+
+			// 	dat += "<h3>Head Feathers</h3>"
+			// 	dat += "<a href='?_src_=prefs;preference=kepori_head_feathers;task=input'>[features["kepori_head_feathers"]]</a><BR>"
+			// 	dat += "<span style='border:1px solid #161616; background-color: #[features[FEATURE_MUTANT_COLOR2]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Change</a><BR>"
+
+			// 	mutant_category++
+			// 	if(mutant_category >= MAX_MUTANT_ROWS)
+			// 		dat += "</td>"
+			// 		mutant_category = 0
 
 			// 	dat += "<a href='?_src_=prefs;preference=horns;task=input'>[features["horns"]]</a><BR>"
 			// 	// dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
@@ -1031,7 +1046,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Hide Prayers:</b> <a href = '?_src_=prefs;preference=toggle_prayers'>[(chat_toggles & CHAT_PRAYER)?"Shown":"Hidden"]</a><br>"
 				dat += "<b>Split Admin Tabs:</b> <a href = '?_src_=prefs;preference=toggle_split_admin_tabs'>[(toggles & SPLIT_ADMIN_TABS)?"Enabled":"Disabled"]</a><br>"
 				dat += "<b>Fast MC Refresh:</b> <a href = '?_src_=prefs;preference=toggle_fast_mc_refresh'>[(toggles & FAST_MC_REFRESH)?"Enabled":"Disabled"]</a><br>"
-				dat += "<b>Ignore Being Summoned as Cult Ghost:</b> <a href = '?_src_=prefs;preference=toggle_ignore_cult_ghost'>[(toggles & ADMIN_IGNORE_CULT_GHOST)?"Don't Allow Being Summoned":"Allow Being Summoned"]</a><br>"
 				dat += "<b>Briefing Officer Outfit:</b> <a href = '?_src_=prefs;preference=briefoutfit;task=input'>[brief_outfit]</a><br>"
 				if(CONFIG_GET(flag/allow_admin_asaycolor))
 					dat += "<br>"
@@ -1562,6 +1576,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				// 	if(new_tail)
 				// 		features["tail_elzu"] = new_tail
 
+				// if("kepori_body_feathers")
+				// 	var/new_kepori_feathers
+				// 	new_kepori_feathers = input(user, "Choose your character's body feathers:", "Character Preference") as null|anything in GLOB.kepori_body_feathers_list
+				// 	if (new_kepori_feathers)
+				// 		features["kepori_body_feathers"] = new_kepori_feathers
+
 				if("ooccolor")
 					var/new_ooccolor = input(user, "Choose your OOC colour:", "Game Preference",ooccolor) as color|null
 					if(new_ooccolor)
@@ -1746,8 +1766,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					toggles ^= DEADMIN_POSITION_SECURITY
 				if("toggle_deadmin_silicon")
 					toggles ^= DEADMIN_POSITION_SILICON
-				if("toggle_ignore_cult_ghost")
-					toggles ^= ADMIN_IGNORE_CULT_GHOST
 
 				if("be_special")
 					var/be_special_type = href_list["be_special_type"]
@@ -1952,13 +1970,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!character.equip_to_slot_or_del(G.spawn_item(character, character), G.slot))
 					continue
 
-	#warn fuck this
-	var/datum/species/chosen_species
-	chosen_species = dat_species.type
-	if(roundstart_checks && !(dat_species.id in GLOB.roundstart_races) && !(dat_species.id in (CONFIG_GET(keyed_list/roundstart_no_hard_check))))
-		chosen_species = /datum/species/human
-		dat_species = new /datum/species/human
-		save_character()
+	// var/datum/species/chosen_species
+	// chosen_species = dat_species.type
+	// if(roundstart_checks && !(dat_species.id in GLOB.roundstart_races) && !(dat_species.id in (CONFIG_GET(keyed_list/roundstart_no_hard_check))))
+	// 	chosen_species = /datum/species/human
+	// 	dat_species = new /datum/species/human
+	// 	save_character()
 
 	//prosthetics work for vox and kepori and update just fine for everyone
 	// character.dna.features = features.Copy()
@@ -2015,20 +2032,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)
-		if("human")
-			return random_unique_name()
 		if("ai")
 			return pick(GLOB.ai_names)
 		if("cyborg")
 			return DEFAULT_CYBORG_NAME
-		if("clown")
-			return pick(GLOB.clown_names)
-		if("mime")
-			return pick(GLOB.mime_names)
-		if("religion")
-			return DEFAULT_RELIGION
-		if("deity")
-			return DEFAULT_DEITY
 	return random_unique_name()
 
 /datum/preferences/proc/ask_for_custom_name(mob/user,name_id)

@@ -14,7 +14,7 @@
 	wreckage = /obj/structure/mecha_wreckage/gygax
 	internal_damage_threshold = 35
 	max_equip = 3
-	step_energy_drain = 3
+	base_step_energy_drain = 8
 
 /obj/mecha/combat/gygax/mechturn(direction)
 	. = ..()
@@ -58,6 +58,13 @@
 		return
 	cell = new /obj/item/stock_parts/cell/bluespace(src)
 
+/obj/mecha/combat/gygax/inteq
+	name = "\improper Basenji"
+	desc = "A lightweight security exosuit, modified to IRMG standards. The leg actuators have been maxed out, allowing for powerful short ranged charges."
+	icon_state = "inteqgygax"
+	charge_break_walls = TRUE
+	charge_toss_structures = TRUE
+	charge_toss_mobs = TRUE
 
 /obj/mecha/combat/gygax/GrantActions(mob/living/user, human_occupant = 0)
 	..()
@@ -67,3 +74,12 @@
 /obj/mecha/combat/gygax/RemoveActions(mob/living/user, human_occupant = 0)
 	..()
 	overload_action.Remove(user)
+
+/obj/mecha/combat/gygax/inteq/GrantActions(mob/living/user, human_occupant = 0)
+	..()
+	overload_action.Remove(user)
+	charge_action.Grant(user,src)
+
+/obj/mecha/combat/gygax/inteq/RemoveActions(mob/living/user, human_occupant)
+	. = ..()
+	charge_action.Remove(user)

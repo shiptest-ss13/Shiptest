@@ -176,7 +176,7 @@
 				return
 
 			to_chat(user, "<span class='notice'>You connect to [M]'s power line...</span>")
-			while(do_after(user, 15, target = M, progress = 0))
+			while(do_after(user, 15, target = M, progress = TRUE))
 				if(!user || !user.cell || mode != "draw")
 					return
 
@@ -210,7 +210,7 @@
 
 			to_chat(user, "<span class='notice'>You connect to [target]'s power port...</span>")
 
-			while(do_after(user, 15, target = target, progress = 0))
+			while(do_after(user, 15, target = target, progress = TRUE))
 				if(!user || !user.cell || mode != "draw")
 					return
 
@@ -248,7 +248,7 @@
 
 		to_chat(user, "<span class='notice'>You connect to [target]'s power port...</span>")
 
-		while(do_after(user, 15, target = target, progress = 0))
+		while(do_after(user, 15, target = target, progress = TRUE))
 			if(!user || !user.cell || mode != "charge")
 				return
 
@@ -886,7 +886,7 @@
 	desc = "A special apparatus for carrying drinks without spilling the contents. Alt-Z or right-click to drop the beaker."
 	icon_state = "borg_beaker_apparatus"
 	storable = list(/obj/item/reagent_containers/food/drinks/,
-				/obj/item/reagent_containers/food/condiment)
+				/obj/item/reagent_containers/condiment)
 
 /obj/item/borg/apparatus/beaker/service/Initialize()
 	. = ..()

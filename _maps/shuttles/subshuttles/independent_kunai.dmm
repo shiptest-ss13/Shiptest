@@ -260,7 +260,9 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "polengine";
 	name = "Engine Shutters"
@@ -278,7 +280,9 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "polengine"
 	},

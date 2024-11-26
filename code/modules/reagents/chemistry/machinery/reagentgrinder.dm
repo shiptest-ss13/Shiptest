@@ -8,8 +8,8 @@
 	base_icon_state = "juicer"
 	layer = BELOW_OBJ_LAYER
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	circuit = /obj/item/circuitboard/machine/reagentgrinder
 	pass_flags = PASSTABLE
 	resistance_flags = ACID_PROOF
@@ -261,10 +261,11 @@
 	operating = FALSE
 
 /obj/machinery/reagentgrinder/proc/juice()
-	power_change()
 	if(!beaker || machine_stat & (NOPOWER|BROKEN) || beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 		return
+	set_active_power()
 	operate_for(50, juicing = TRUE)
+	set_idle_power()
 	for(var/obj/item/i in holdingitems)
 		if(beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 			break
@@ -281,10 +282,11 @@
 	remove_object(I)
 
 /obj/machinery/reagentgrinder/proc/grind(mob/user)
-	power_change()
 	if(!beaker || machine_stat & (NOPOWER|BROKEN) || beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 		return
+	set_active_power()
 	operate_for(60)
+	set_idle_power()
 	for(var/i in holdingitems)
 		if(beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 			break
@@ -310,10 +312,11 @@
 
 /obj/machinery/reagentgrinder/proc/mix(mob/user)
 	//For butter and other things that would change upon shaking or mixing
-	power_change()
 	if(!beaker || machine_stat & (NOPOWER|BROKEN))
 		return
+	set_active_power()
 	operate_for(50, juicing = TRUE)
+	set_idle_power()
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/reagentgrinder, mix_complete)), 50)
 
 /obj/machinery/reagentgrinder/proc/mix_complete()

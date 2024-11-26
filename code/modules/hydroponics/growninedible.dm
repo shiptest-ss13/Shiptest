@@ -7,6 +7,7 @@
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	resistance_flags = FLAMMABLE
 	var/obj/item/seeds/seed = null // type path, gets converted to item on New(). It's safe to assume it's always a seed item.
+	var/auto_scatter = TRUE
 
 /obj/item/grown/Initialize(newloc, obj/item/seeds/new_seed)
 	. = ..()
@@ -18,13 +19,14 @@
 		// This is for adminspawn or map-placed growns. They get the default stats of their seed type.
 		seed = new seed()
 		seed.adjust_potency(50-seed.potency)
-
-	pixel_x = base_pixel_x + rand(-5, 5)
-	pixel_y = base_pixel_y + rand(-5, 5)
+	if(auto_scatter)
+		pixel_x = base_pixel_x + rand(-5, 5)
+		pixel_y = base_pixel_y + rand(-5, 5)
 
 	if(seed)
-		for(var/datum/plant_gene/trait/T in seed.genes)
-			T.on_new(src, newloc)
+		// Go through all traits in their genes and call on_new_plant from them.
+		for(var/datum/plant_gene/trait/trait in seed.genes)
+			trait.on_new_plant(src, newloc)
 
 		if(istype(src, seed.product)) // no adding reagents if it is just a trash item
 			seed.prepare_result(src)
@@ -35,11 +37,10 @@
 /obj/item/grown/attackby(obj/item/O, mob/user, params)
 	..()
 	if (istype(O, /obj/item/plant_analyzer))
-		var/msg = "<span class='info'>*---------*\n This is \a <span class='name'>[src]</span>\n"
+		var/msg = "This is \a <span class='name'>[src]</span>\n"
 		if(seed)
 			msg += seed.get_analyzer_text()
-		msg += "</span>"
-		to_chat(usr, msg)
+		to_chat(usr, examine_block(msg))
 		return
 
 /obj/item/grown/proc/add_juice()

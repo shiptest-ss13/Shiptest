@@ -80,13 +80,6 @@
 	custom_materials = null
 	grind_results = list(/datum/reagent/ash = 5, /datum/reagent/cellulose = 10)
 
-/datum/crafting_recipe/charcoal_stylus
-	name = "Charcoal Stylus"
-	result = /obj/item/pen/charcoal
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 1, /datum/reagent/ash = 30)
-	time = 30
-	category = CAT_PRIMAL
-
 /obj/item/pen/fountain/captain
 	name = "captain's fountain pen"
 	desc = "It's an expensive Oak fountain pen. The nib is quite sharp."

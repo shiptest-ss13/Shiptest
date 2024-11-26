@@ -1,0 +1,65 @@
+{
+	"prefix": "SUNS",
+	"map_name": "Panacea-class Infirm Vessel",
+	"map_short_name": "Panacea-class",
+	"map_path": "_maps/shuttles/syndicate/syndicate_panacea.dmm",
+	"faction": "/datum/faction/syndicate/suns",
+	"description": "Shortly after Solcon breached the Oort Cloud, SUNS joined into the Syndicate Coalition. Holding close ties to both the ACLF and GEC, students jumped at the opportunity to see the rest of the galaxy. The Panacea-class was the first of its kind out of Sol, moving typically planetside inpatient care to a space vessel and jumping system to system. The Panacea class is a moderately well supplied ship, allowing for emergency pharmaceutical compounding, mental and physical therapy, and general medical work, while doubling as a student run vessel.",
+	"tags": [
+		"Generalist",
+		"Medical",
+		"RP Focus"
+	],
+	"starting_funds": 1000,
+	"map_id": "syndicate_panacea",
+	"limit": 1,
+	"namelists": [
+		"SUNS",
+		"SPACE",
+		"GENERAL"
+	],
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/suns",
+			"officer": true,
+			"slots": 1
+		},
+
+		"Academic": {
+			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/suns",
+			"officer": true,
+			"slots": 1
+		},
+
+		"Peacekeeper": {
+			"outfit": "/datum/outfit/job/syndicate/security/suns",
+			"slots": 1
+		},
+
+		"Ship Doctor":{
+			"outfit": "/datum/outfit/job/syndicate/doctor/suns",
+			"slots": 2
+		},
+
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/suns",
+			"slots": 2
+		},
+
+		"Ship Psychologist": {
+			"outfit": "/datum/outfit/job/syndicate/psychologist/suns",
+			"slots": 1
+		},
+
+		"Student Mixologist": {
+			"outfit": "/datum/outfit/job/syndicate/bartender/suns",
+			"slots": 1
+		},
+
+		"Long Term Patient": {
+			"outfit": "/datum/outfit/job/syndicate/patient",
+			"slots": 5
+		}
+	},
+	"enabled": true
+}

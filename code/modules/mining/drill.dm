@@ -218,7 +218,7 @@
 /obj/machinery/drill/AltClick(mob/user)
 	if(active)
 		to_chat(user, "<span class='notice'>You begin the manual shutoff process.</span>")
-		if(do_after(user,10))
+		if(do_after(user, 10, src))
 			active = FALSE
 			soundloop.stop()
 			deltimer(current_timerid)
@@ -344,6 +344,8 @@
 
 //Overly long proc to handle the unique properties for each malfunction type
 /obj/machinery/drill/proc/malfunction(malfunction_type)
+	if(active)
+		mining.toggle_spawning() //turns mob spawning off after a malfunction
 	switch(malfunction_type)
 		if(MALF_LASER)
 			say("Malfunction: Laser array damaged, please replace before continuing mining operations.")

@@ -1,5 +1,5 @@
 
-/mob/living/silicon/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, break_modifier = 1)
+/mob/living/silicon/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1, sharpness = FALSE)
 	var/hit_percent = (100-blocked)/100
 	if((!damage || (!forced && hit_percent <= 0)))
 		return 0

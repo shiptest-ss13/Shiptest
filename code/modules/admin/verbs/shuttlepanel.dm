@@ -1,5 +1,5 @@
 /datum/admins/proc/open_shuttlepanel()
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Shuttle Manipulator"
 	set desc = "Opens the shuttle manipulator UI."
 
@@ -7,7 +7,6 @@
 		return
 
 	SSshuttle.ui_interact(usr)
-
 
 /obj/docking_port/mobile/proc/admin_fly_shuttle(mob/user)
 	var/list/options = list()

@@ -313,6 +313,14 @@
 /mob/proc/get_item_by_slot(slot_id)
 	return null
 
+/// Gets what slot the item on the mob is held in.
+/// Returns null if the item isn't in any slots on our mob.
+/// Does not check if the passed item is null, which may result in unexpected outcoms.
+/mob/proc/get_slot_by_item(obj/item/looking_for)
+	if(looking_for in held_items)
+		return ITEM_SLOT_HANDS
+
+	return null
 
 ///Is the mob incapacitated
 /mob/proc/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE)
@@ -444,8 +452,6 @@
 				else
 					client.eye = client.mob
 					client.perspective = MOB_PERSPECTIVE
-			else
-				//Do nothing
 		else
 			//Reset to common defaults: mob if on turf, otherwise current loc
 			if(isturf(loc))
@@ -454,7 +460,7 @@
 			else
 				client.perspective = EYE_PERSPECTIVE
 				client.eye = loc
-		return 1
+		return TRUE
 
 /// Show the mob's inventory to another mob
 /mob/proc/show_inv(mob/user)
@@ -522,16 +528,16 @@
 		to_chat(src, "<span class='warning'>You don't have a free hand to examine this!</span>")
 		return FALSE
 	//can only queue up one examine on something at a time
-	if(examined_thing in do_afters)
+	if(DOING_INTERACTION_WITH_TARGET(src, examined_thing))
 		return FALSE
 
 	to_chat(src, "<span class='notice'>You start feeling around for something...</span>")
 	visible_message("<span class='notice'> [name] begins feeling around for \the [examined_thing.name]...</span>")
 
 	/// how long it takes for the blind person to find the thing they're examining
-	var/examine_delay_length = rand(1 SECONDS, 2 SECONDS)
+	var/examine_delay_length = rand(0.5 SECONDS, 1 SECONDS)
 	if(client?.recent_examines && client?.recent_examines[examined_thing]) //easier to find things we just touched
-		examine_delay_length = 0.5 SECONDS
+		examine_delay_length = 0.25 SECONDS
 	else if(isobj(examined_thing))
 		examine_delay_length *= 1.5
 	else if(ismob(examined_thing) && examined_thing != src)
@@ -821,8 +827,10 @@
 		src << browse(null, t1)
 
 	if(href_list["flavor_more"])
-		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(flavor_text, "\n", "<BR>")), text("window=[];size=500x200", name))
-		onclose(usr, "[name]")
+		var/datum/browser/popup = new(usr, "[name]'s flavor text", "[name]'s Flavor Text (expanded)", 500, 200)
+		popup.set_content(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", "[name]'s flavor text (expanded)", replacetext(flavor_text, "\n", "<BR>")))
+		popup.open()
+		return
 
 	if(user != src)
 		if(href_list["item"] && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
@@ -1200,6 +1208,7 @@
 	var/list/searching = GetAllContents()
 	var/search_id = 1
 	var/search_pda = 1
+	var/search_bankcard = 1
 
 	for(var/A in searching)
 		if(search_id && istype(A, /obj/item/card/id))
@@ -1207,18 +1216,24 @@
 			if(ID.registered_name == oldname)
 				ID.registered_name = newname
 				ID.update_label()
-				if(ID.registered_account?.account_holder == oldname)
-					ID.registered_account.account_holder = newname
-				if(!search_pda)
+				if(!search_pda || !search_bankcard)
 					break
 				search_id = 0
+
+		if(search_bankcard && istype(A, /obj/item/card/bank))
+			var/obj/item/card/bank/bank_card = A
+			if(bank_card.registered_account?.account_holder == oldname)
+				bank_card.registered_account.account_holder = newname
+				if(!search_id || !search_pda)
+					break
+				search_bankcard = 0
 
 		else if(search_pda && istype(A, /obj/item/pda))
 			var/obj/item/pda/PDA = A
 			if(PDA.owner == oldname)
 				PDA.owner = newname
 				PDA.update_label()
-				if(!search_id)
+				if(!search_id || !search_bankcard)
 					break
 				search_pda = 0
 
@@ -1299,6 +1314,9 @@
 
 ///Get the id card on this mob
 /mob/proc/get_idcard(hand_first)
+	return
+
+/mob/proc/get_bankcard()
 	return
 
 /mob/proc/get_id_in_hand()

@@ -106,7 +106,7 @@
 /datum/emote/living/carbon/human/tailthump/get_sound(mob/living/user)
 	if(!ishuman(user))
 		return
-	if(islizard(user) || (isvox(user)))
+	if(!isnull(user.getorgan(/obj/item/organ/tail)) || (isvox(user)))
 		return 'sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
 
 /datum/emote/living/carbon/human/weh //lizard
@@ -346,6 +346,7 @@
 	key_third_person = "whistles"
 	message = "whistles!"
 	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
 
 /datum/emote/living/carbon/human/kepiwhistle/get_sound(mob/living/user)
 	if(!ishuman(user))
@@ -357,3 +358,4 @@
 	key = "woop"
 	key_third_person = "woops"
 	message = "woops!"
+	emote_type = EMOTE_AUDIBLE

@@ -7,7 +7,7 @@
 	circuit = /obj/item/circuitboard/machine/bluespace_miner
 	layer = BELOW_OBJ_LAYER
 	use_power = NO_POWER_USE
-	idle_power_usage = 50000
+	idle_power_usage = ACTIVE_DRAW_EXTREME * 10
 
 	var/powered = FALSE
 	var/active = FALSE

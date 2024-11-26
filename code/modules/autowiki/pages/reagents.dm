@@ -1,65 +1,52 @@
-/*
-Templates:
-
-Autowiki/Reaction
-{{{chems|ERROR}}} {{#if: {{{temperature|}}} | <br />Temperature {{{temperature}}} | }} {{#if: {{{container|}}} | <br />Needs container "{{{container}}}" | }} <br/>Makes {{{volume|1}}}u
-
-Autowiki/Reagent
-{{#if: {{{tooltip|}}} | {{Tooltip|{{{volume}}} part [[#{{{name}}}|{{{name}}}]]|{{{tooltip}}}|FEF6E7}} | {{{volume}}} part {{{name}}} }}
-
-*/
-
 /datum/autowiki/reagents
-	page = "Template:Autowiki/Content/Reactions"
+	page = "Template:Autowiki/Content/Reagents"
 
 /datum/autowiki/reagents/generate()
-	var/list/output = list()
+	var/output = ""
 
 	var/list/mixable_reagents = list()
-	var/list/all_reactions = list()
 	for(var/type in subtypesof(/datum/chemical_reaction))
 		var/datum/chemical_reaction/reaction = new type
-		all_reactions += reaction
 		mixable_reagents |= reaction.results
+		qdel(reaction)
 
-	for(var/datum/chemical_reaction/reaction as anything in all_reactions)
-		var/required_chems = ""
-		for(var/datum/reagent/required_chem_type as anything in reaction.required_reagents)
-			var/has_tooltip = (required_chem_type in mixable_reagents) && !(required_chem_type in reaction.results) && !(required_chem_type in GLOB.base_reagents)
-			required_chems += format_required_reagent(required_chem_type, reaction.required_reagents[required_chem_type], has_tooltip)
+	var/list/categories = list()
 
-		for(var/datum/reagent/required_catalyst_type as anything in reaction.required_catalysts)
-			var/has_tooltip = (required_catalyst_type in mixable_reagents) && !(required_catalyst_type in reaction.results) && !(required_catalyst_type in GLOB.base_reagents)
-			required_chems += format_required_reagent(required_catalyst_type, reaction.required_catalysts[required_catalyst_type], has_tooltip, "Catalyst")
+	for(var/reagent in mixable_reagents)
+		var/datum/reagent/chem = new reagent
 
-		for(var/datum/reagent/result_chem_type as anything in reaction.results)
-			var/result_name = escape_value(initial(result_chem_type.name))
-			var/list/details = list("volume" = reaction.results[result_chem_type], "chems" = required_chems, "name" = result_name)
+		LAZYINITLIST(categories[chem.category])
+		categories[chem.category] += list(chem)
 
-			if(reaction.required_temp > 0)
-				details["temperature"] = "[reaction.is_cold_recipe ? "below" : "above"] [reaction.required_temp]K"
-
-			if(reaction.required_container)
-				details["container"] = "[escape_value(initial(reaction.required_container.name))]"
-
-			var/description = include_template("Autowiki/Reaction", details)
-			if(result_name in output)
-				output[result_name] += "<br />OR<br />[description]"
-			else
-				output[result_name] = description
+	for(var/category in sortList(categories))
+		output += "\n"
+		output += generate_category(category, categories[category])
 
 	return output
 
-/datum/autowiki/reagents/proc/format_required_reagent(datum/reagent/required_reagent_type, volume, has_tooltip = FALSE, type)
-	var/list/details = list(
-		"volume" = volume,
-		"name" = escape_value(initial(required_reagent_type.name))
-	)
+/datum/autowiki/reagents/proc/generate_category(name, list/datum/reagent/reagents)
+	var/output = "== [escape_value(name)] ==\n"
 
-	if(has_tooltip)
-		details["tooltip"] = include_template("Autowiki/Content/Reactions/[initial(required_reagent_type.name)]")
+	output += "{| class='wikitable sortable' style=width:100%; text-align:left; border: 3px solid #FFDD66; cellspacing=0; cellpadding=2; background-color:white;'\n"
+	output += "! scope='col' style='width:150px; background-color:#FFDD66;' |Name\n"
+	output += "! class='unsortable' scope='col' style='width:150px; background-color:#FFDD66;' |Recipe\n"
+	output += "! class='unsortable' scope='col' style='background-color:#FFDD66;' |Description\n"
+	output += "! scope='col' | Metabolization Rate\n"
+	output += "! scope='col' | Overdose Threshold\n"
+	output += "! scope='col' | Addiction Threshold\n"
+	output += "|-\n"
 
-	if(type)
-		details["type"] = type
+	reagents = sortList(reagents, /proc/cmp_typepaths_asc)
 
-	return include_template("Autowiki/Reagent", details)
+	for(var/datum/reagent/reagent as anything in reagents)
+		output += "! style='background-color: #FFEE88;' | [include_template("anchor", list("1" = escape_value(reagent.name)))][escape_value(reagent.name)] <span style='color:[escape_value(reagent.color)];background-color:[escape_value(reagent.color)]'>_</span>\n"
+		output += "|[include_template("Autowiki/Content/Reactions/[escape_value(reagent.name)]")]\n"
+		output += "|[escape_value(reagent.description)]\n"
+		output += "|data-sort-value=[reagent.metabolization_rate]|[reagent.metabolization_rate] units per tick\n"
+		output += "|[reagent.overdose_threshold || "data-sort-value=0|N/A"]\n"
+		output += "|[reagent.addiction_threshold || "data-sort-value=0|N/A"]\n"
+		output += "|-\n"
+
+	output += "|}\n"
+
+	return output

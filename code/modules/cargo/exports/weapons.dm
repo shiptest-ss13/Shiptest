@@ -13,7 +13,7 @@
 /datum/export/weapon/knife
 	cost = 100
 	unit_name = "combat knife"
-	export_types = list(/obj/item/kitchen/knife/combat)
+	export_types = list(/obj/item/melee/knife/combat)
 
 
 /datum/export/weapon/taser
@@ -40,12 +40,6 @@
 	cost = 300
 	unit_name = "WT-550 automatic rifle"
 	export_types = list(/obj/item/gun/ballistic/automatic/smg/wt550)
-
-/datum/export/weapon/shotgun
-	cost = 300
-	unit_name = "combat shotgun"
-	export_types = list(/obj/item/gun/ballistic/shotgun/automatic/combat)
-
 
 /datum/export/weapon/flashbang
 	cost = 5

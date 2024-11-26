@@ -3,6 +3,7 @@
 	name = "\improper Sarathi"
 	id = SPECIES_SARATHI
 	species_traits = list(EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY)
+	species_age_max = 175
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("frills", "horns", "spines")
 	mutanttongue = /obj/item/organ/tongue/lizard
@@ -10,7 +11,7 @@
 	coldmod = 1.5
 	heatmod = 0.67
 	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "tail_lizard" = "Smooth", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", FEATURE_LEGS_TYPE = FEATURE_NORMAL_LEGS, FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -19,7 +20,6 @@
 	exotic_bloodtype = "L"
 	disliked_food = GRAIN | DAIRY | CLOTH | GROSS
 	liked_food = GORE | MEAT
-	inert_mutation = FIREBREATH
 	deathsound = 'sound/voice/lizard/deathsound.ogg'
 	wings_icons = list("Dragon")
 	species_language_holder = /datum/language_holder/lizard
@@ -47,6 +47,9 @@
 	// Lizards are coldblooded and can stand a greater temperature range than humans
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 20 // This puts lizards 10 above lavaland max heat for ash lizards.
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 10
+
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 25
+	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 3
 	loreblurb = "The Sarathi are a cold-blooded reptilian species originating from the planet Kalixcis, where they evolved alongside the Elzuosa. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 
 	ass_image = 'icons/ass/asslizard.png'
@@ -90,7 +93,7 @@
 
 /// Lizards are cold blooded and do not stabilize body temperature naturally
 /datum/species/lizard/natural_bodytemperature_stabilization(datum/gas_mixture/environment, mob/living/carbon/human/H)
-	return
+	return 0
 
 /datum/species/lizard/random_name(gender,unique,lastname)
 	if(unique)

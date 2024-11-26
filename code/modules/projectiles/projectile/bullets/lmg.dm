@@ -67,7 +67,7 @@
 
 /obj/projectile/bullet/mm712x82/hp
 	name = "7.12x82mm hollow point bullet"
-	damage = 45
+	damage = 40
 	armour_penetration = -20
 
 /obj/projectile/bullet/incendiary/mm712x82

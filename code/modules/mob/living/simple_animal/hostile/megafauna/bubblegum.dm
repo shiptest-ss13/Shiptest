@@ -56,7 +56,7 @@ Difficulty: Hard
 	pixel_x = -32
 	base_pixel_x = -32
 	del_on_death = TRUE
-	crusher_loot = list(/obj/structure/closet/crate/necropolis/bubblegum/crusher)
+	//mob_trophy = /obj/item/mob_trophy/demon_claws
 	loot = list(/obj/structure/closet/crate/necropolis/bubblegum)
 	blood_volume = BLOOD_VOLUME_MAXIMUM //BLEED FOR ME
 	var/charging = FALSE
@@ -504,7 +504,7 @@ Difficulty: Hard
 	health = 1
 	maxHealth = 1
 	alpha = 127.5
-	crusher_loot = null
+	mob_trophy = null
 	loot = null
 	achievement_type = null
 	crusher_achievement_type = null

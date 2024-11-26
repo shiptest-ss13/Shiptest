@@ -1,5 +1,6 @@
 /datum/supply_pack/material
 	group = "Materials & Sheets"
+	faction = FACTION_NS_LOGI
 
 /*
 		Basic construction materials
@@ -110,3 +111,9 @@
 	contains = list(/obj/item/stack/sheet/mineral/wood/fifty)
 	crate_name = "wood planks crate"
 
+/datum/supply_pack/material/concrete_mix
+	name = "Concrete Bag"
+	desc = "Feeling lazy? Need a structure and quick? Use F.O.O.D.'s near-instant concrete mix! Just add water."
+	cost = 500
+	contains = list(/obj/item/reagent_containers/glass/concrete_bag)
+	crate_name = "Concrete Mix"

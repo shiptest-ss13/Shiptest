@@ -17,6 +17,7 @@
 	toolspeed = 0.9
 	var/drill_delay = 7
 	var/drill_level = DRILL_BASIC
+	wall_decon_damage = 100
 
 /obj/item/mecha_parts/mecha_equipment/drill/Initialize()
 	. = ..()
@@ -62,15 +63,22 @@
 	return
 
 /turf/closed/wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
-	if(drill.do_after_mecha(src, 60 / drill.drill_level))
+	while(drill.do_after_mecha(src, 15 / drill.drill_level))
 		drill.log_message("Drilled through [src]", LOG_MECHA)
-		dismantle_wall(devastated = TRUE)
+		drill.occupant_message("<span class='notice'>You drill through some of the outer plating...</span>")
+		playsound(src,'sound/weapons/drill.ogg',60,TRUE)
+		if(!alter_integrity(-drill.wall_decon_damage))
+			return TRUE
 
 /turf/closed/wall/r_wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
 	if(drill.drill_level >= DRILL_HARDENED)
-		if(drill.do_after_mecha(src, 120 / drill.drill_level))
+		while(drill.do_after_mecha(src, 20 / drill.drill_level))
 			drill.log_message("Drilled through [src]", LOG_MECHA)
-			dismantle_wall(devastated = TRUE)
+			drill.occupant_message("<span class='notice'>You drill through some of the outer plating...</span>")
+			playsound(src,'sound/weapons/drill.ogg',60,TRUE)
+			if(!alter_integrity(-drill.wall_decon_damage))
+				return TRUE
+
 	else
 		drill.occupant_message("<span class='danger'>[src] is too durable to drill through.</span>")
 
@@ -150,6 +158,7 @@
 	drill_level = DRILL_HARDENED
 	force = 15
 	toolspeed = 0.7
+	wall_decon_damage = 300
 
 
 /obj/item/mecha_parts/mecha_equipment/mining_scanner

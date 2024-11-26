@@ -41,6 +41,9 @@
 /obj/item/storage/box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
+	STR.max_volume = STORAGE_VOLUME_CONTAINER_S
+	STR.max_w_class = WEIGHT_CLASS_SMALL
 	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 
 /obj/item/storage/box/update_overlays()
@@ -124,8 +127,12 @@
 	var/radio_type = /obj/item/radio
 
 /obj/item/storage/box/survival/PopulateContents()
-	new mask_type(src)
-	new radio_type(src)
+	if(!isnull(mask_type))
+		new mask_type(src)
+
+	if(!isnull(radio_type))
+		new radio_type(src)
+
 	if(!isnull(medipen_type))
 		new medipen_type(src)
 
@@ -165,9 +172,11 @@
 
 /obj/item/storage/box/survival/clip/balaclava
 	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
-
-/obj/item/storage/box/survival/clip/balaclava
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
+
+/obj/item/storage/box/survival/frontier
+	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary
+	internal_type = /obj/item/tank/internals/emergency_oxygen //frontiersmen dont
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -449,7 +458,7 @@
 
 /obj/item/storage/box/condimentbottles/PopulateContents()
 	for(var/i in 1 to 6)
-		new /obj/item/reagent_containers/food/condiment(src)
+		new /obj/item/reagent_containers/condiment(src)
 
 /obj/item/storage/box/cups
 	name = "box of paper cups"
@@ -470,11 +479,6 @@
 /obj/item/storage/box/donkpockets/PopulateContents()
 	for(var/i in 1 to 6)
 		new donktype(src)
-
-/obj/item/storage/box/donkpockets/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/donkpocket))
 
 /obj/item/storage/box/donkpockets/donkpocketspicy
 	name = "box of spicy-flavoured donk-pockets"
@@ -513,12 +517,6 @@
 	illustration = null
 	var/cube_type = /obj/item/reagent_containers/food/snacks/monkeycube
 
-/obj/item/storage/box/monkeycubes/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 7
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/monkeycube))
-
 /obj/item/storage/box/monkeycubes/PopulateContents()
 	for(var/i in 1 to 5)
 		new cube_type(src)
@@ -532,12 +530,6 @@
 	desc = "Waffle Co. brand gorilla cubes. Do not taunt."
 	icon_state = "monkeycubebox"
 	illustration = null
-
-/obj/item/storage/box/gorillacubes/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 3
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/monkeycube))
 
 /obj/item/storage/box/gorillacubes/PopulateContents()
 	for(var/i in 1 to 3)
@@ -670,12 +662,6 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "spbox"
 
-/obj/item/storage/box/snappops/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.set_holdable(list(/obj/item/toy/snappop))
-	STR.max_items = 8
-
 /obj/item/storage/box/snappops/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/toy/snappop)
 
@@ -690,12 +676,6 @@
 	drop_sound = 'sound/items/handling/matchbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/matchbox_pickup.ogg'
 	custom_price = 20
-
-/obj/item/storage/box/matches/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 10
-	STR.set_holdable(list(/obj/item/match))
 
 /obj/item/storage/box/matches/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/match)
@@ -714,9 +694,10 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	foldable = /obj/item/stack/sheet/cardboard //BubbleWrap
 
-/obj/item/storage/box/lights/ComponentInitialize()
+/obj/item/storage/box/lights/ComponentInitialize()//holy oversized box. this one can stay the way it is, for now
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.storage_flags = STORAGE_FLAGS_LEGACY_DEFAULT
 	STR.max_items = 21
 	STR.set_holdable(list(/obj/item/light/tube, /obj/item/light/bulb))
 	STR.max_combined_w_class = 21
@@ -849,6 +830,16 @@
 /obj/item/storage/box/lethalshot/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/buckshot(src)
+
+/obj/item/storage/box/techshot
+	name = "box of unloaded shotgun tech shells"
+	desc = "A box full of unloaded tech shells, capable of producing a variety of effects once loaded."
+	icon_state = "techshot_box"
+	illustration = null
+
+/obj/item/storage/box/techshot/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun/techshell(src)
 
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
@@ -1370,10 +1361,10 @@
 		/obj/item/stack/sheet/mineral/uranium=20,\
 		/obj/item/stack/sheet/mineral/diamond=50,\
 		/obj/item/stack/sheet/bluespace_crystal=50,\
-		/obj/item/stack/sheet/mineral/bananium=50,\
+		/obj/item/stack/sheet/mineral/hidden/hellstone=50,\
 		/obj/item/stack/sheet/mineral/wood=50,\
 		/obj/item/stack/sheet/plastic/fifty=1,\
-		/obj/item/stack/sheet/runed_metal/fifty=1
+		/obj/item/stack/sheet/mineral/hidden/hellstone/fifty=1
 		)
 	generate_items_inside(items_inside,src)
 
@@ -1463,8 +1454,7 @@
 /obj/item/storage/box/gum/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/chewable/bubblegum))
-	STR.max_items = 4
+	STR.max_volume = (STORAGE_VOLUME_CONTAINER_S / 2)
 
 /obj/item/storage/box/gum/PopulateContents()
 	for(var/i in 1 to 4)
@@ -1520,53 +1510,3 @@
 		)
 	generate_items_inside(items_inside,src)
 
-/obj/item/storage/box/coffeepack
-	icon_state = "arabica_beans"
-	name = "arabica beans"
-	desc = "A bag containing fresh, dry coffee arabica beans. Ethically sourced and packaged by Donk! Co."
-	illustration = null
-	icon = 'icons/obj/food/containers.dmi'
-	var/beantype = /obj/item/reagent_containers/food/snacks/grown/coffee
-
-/obj/item/storage/box/cofeepack/Initialize(mapload)
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 5
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/grown/coffee))
-
-/obj/item/storage/box/coffeepack/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/reagent_containers/food/snacks/grown/coffee = 5,
-		/obj/item/reagent_containers/food/snacks/grown/coffee/robusta = 5)
-	generate_items_inside(items_inside,src)
-
-/obj/item/storage/box/coffeepack/robusta
-	icon_state = "robusta_beans"
-	name = "robusta beans"
-	desc = "A bag containing fresh, dry coffee robusta beans. Ethically sourced and packaged by Donk! Co."
-	beantype = /obj/item/reagent_containers/food/snacks/grown/coffee/robusta
-
-
-/*
- * Coffee condiments display -- someone can make this fancy eventually, i cant fucking figure it out for the life of me -- it exists in TG
- */
-
-/obj/item/storage/box/coffee_condi_display
-	name = "coffee condiments display"
-	desc = "A neat small box, holding all your favorite coffee condiments."
-
-/obj/item/storage/box/coffee_condi_display/Initialize(mapload)
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 14
-	STR.set_holdable(list(
-		/obj/item/reagent_containers/food/condiment/pack/sugar,
-		/obj/item/reagent_containers/food/condiment/pack/creamer,
-		/obj/item/reagent_containers/food/condiment/pack/astrotame,
-	))
-
-/obj/item/storage/box/coffee_condi_display/PopulateContents()
-	for(var/i in 1 to 4)
-		new /obj/item/reagent_containers/food/condiment/pack/sugar(src)
-		new /obj/item/reagent_containers/food/condiment/pack/creamer(src)
-		new /obj/item/reagent_containers/food/condiment/pack/astrotame(src)

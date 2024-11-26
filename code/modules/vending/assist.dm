@@ -10,8 +10,7 @@
 		/obj/item/stock_parts/manipulator = 3,
 		/obj/item/stock_parts/micro_laser = 3,
 		/obj/item/stock_parts/scanning_module = 3,
-		/obj/item/stock_parts/capacitor = 3)
-	contraband = list(
+		/obj/item/stock_parts/capacitor = 3,
 		/obj/item/assembly/timer = 2,
 		/obj/item/assembly/voice = 2,
 		/obj/item/assembly/health = 2,

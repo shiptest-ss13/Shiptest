@@ -24,36 +24,46 @@
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
+	ears = /obj/item/radio/headset
 	r_pocket = /obj/item/radio
 
 ///captains
 
 /datum/outfit/job/inteq/captain
-	name = "IRMG - Vanguard (Naked)"
+	name = "IRMG - Vanguard"
 	id_assignment = "Vanguard"
 	jobtype = /datum/job/captain
 	job_icon = "captain"
 
-	ears = /obj/item/radio/headset/inteq/alt/captain
-	shoes = /obj/item/clothing/shoes/combat
-	r_pocket = /obj/item/assembly/flash/handheld
-	l_pocket = /obj/item/restraints/handcuffs
-	jobtype = /datum/job/captain
 	id = /obj/item/card/id/gold
-
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
-
-/datum/outfit/job/inteq/captain/geared
-	name = "IRMG - Vanguard"
-
 	head = /obj/item/clothing/head/beret/sec/hos/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
-	belt = /obj/item/storage/belt/security/webbing/inteq
 	suit = /obj/item/clothing/suit/armor/hos/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	belt = /obj/item/storage/belt/security/webbing/inteq
 	gloves = /obj/item/clothing/gloves/combat
-	accessory = null
+	ears = /obj/item/radio/headset/inteq/alt/captain
+	shoes = /obj/item/clothing/shoes/combat
+
+	r_pocket = /obj/item/assembly/flash/handheld
+	l_pocket = /obj/item/restraints/handcuffs
+
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+
+/datum/outfit/job/inteq/captain/empty
+	name = "IRMG - Vanguard (Naked)"
+
+	head = null
+	glasses = null
+	mask = null
+	belt = null
+	suit = null
+	dcoat = null
+	gloves = null
+
+	r_pocket = null
+	l_pocket = null
 
 /datum/outfit/job/inteq/captain/honorable
 	name = "IRMG - Honorable Vanguard"
@@ -71,8 +81,8 @@
 ///Chief Engineer
 
 /datum/outfit/job/inteq/ce
-	name = "IRMG - Artificer Class II"
-	id_assignment = "Artificer Class II"
+	name = "IRMG - Honorable Artificer"
+	id_assignment = "Honorable Artificer"
 	job_icon = "chiefengineer"
 	jobtype = /datum/job/chief_engineer
 
@@ -82,7 +92,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/yellow
 	belt = /obj/item/storage/belt/utility/full
 
 	id = /obj/item/card/id/silver
@@ -126,6 +136,7 @@
 	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
+	ears = /obj/item/radio/headset/alt
 	head = /obj/item/clothing/head/helmet/inteq
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	belt = /obj/item/storage/belt/security/webbing/inteq
@@ -139,6 +150,14 @@
 	backpack = /obj/item/storage/backpack/messenger/inteq
 	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
+
+/datum/outfit/job/inteq/security/empty
+	name = "IRMG - Enforcer (Naked)"
+	head = null
+	suit = null
+	belt = null
+	mask = null
+	gloves = null
 
 /datum/outfit/job/inteq/security/beluga
 	name = "IRMG - Enforcer (Beluga)"
@@ -156,14 +175,6 @@
 	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 
-/datum/outfit/job/inteq/security/empty
-	name = "IRMG - Enforcer (Naked)"
-	head = null
-	suit = null
-	belt = null
-	mask = null
-	gloves = null
-
 ///engineers
 
 /datum/outfit/job/inteq/engineer
@@ -172,6 +183,7 @@
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
+	ears = /obj/item/radio/headset/alt
 	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
 	head = /obj/item/clothing/head/soft/inteq
 	shoes = /obj/item/clothing/shoes/combat
@@ -200,6 +212,17 @@
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/melee/classic_baton=1)
+
+/datum/outfit/job/inteq/warden/pilot
+	name = "IRMG - Shuttle Pilot"
+	job_icon = "securityofficer"
+	id_assignment = "Shuttle Pilot"
+
+	head = /obj/item/clothing/head/soft/inteq
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	belt = null
+	mask = /obj/item/clothing/mask/breath
+	gloves = /obj/item/clothing/gloves/fingerless
 
 // cmo
 

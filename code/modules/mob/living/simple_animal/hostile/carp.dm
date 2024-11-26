@@ -37,13 +37,12 @@
 	speak_emote = list("gnashes")
 
 	//Space carp aren't affected by cold.
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1500
 	faction = list("carp", "mining")
 	movement_type = FLYING
 	pressure_resistance = 200
-	gold_core_spawnable = HOSTILE_SPAWN
 
 	var/random_color = TRUE //if the carp uses random coloring
 	var/rarechance = 1 //chance for rare color variant
@@ -159,7 +158,6 @@
 	icon_state = "holocarp"
 	icon_living = "holocarp"
 	maxbodytemp = INFINITY
-	gold_core_spawnable = NO_SPAWN
 	del_on_death = 1
 	random_color = FALSE
 	food_type = list()
@@ -229,7 +227,6 @@
 	desc = "A failed Syndicate experiment in weaponized space carp technology, it now serves as a lovable mascot."
 	gender = FEMALE
 	speak_emote = list("squeaks")
-	gold_core_spawnable = NO_SPAWN
 	faction = list(ROLE_SYNDICATE)
 	AIStatus = AI_OFF
 	rarechance = 10

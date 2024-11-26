@@ -1,4 +1,7 @@
-#define ELZUOSE_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
+#define GOOD_SOIL list(/turf/open/floor/plating/grass, /turf/open/floor/plating/dirt, /turf/open/floor/ship/dirt, /turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid/whitesands/grass, /turf/open/floor/grass/fairy/beach)
+#define DIG_TIME (7.5 SECONDS)
+#define ROOT_TIME (3 SECONDS)
+#define ROOT_CHARGE_GAIN (5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
 /datum/species/elzuose
 	name = "\improper Elzuose"
@@ -13,9 +16,9 @@
 	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
 	exotic_bloodtype = "E"
-	damage_overlay_type = "" //We are too cool for regular damage overlays
 	species_traits = list(EYECOLOR, HAIR, FACEHAIR)
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
+	species_age_max = 300
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
 	toxic_food = NONE
@@ -24,6 +27,9 @@
 	bodytemp_heat_damage_limit = FIRE_MINIMUM_TEMPERATURE_TO_SPREAD // about 150C
 	// Cold temperatures hurt faster as it is harder to move with out the heat energy
 	bodytemp_cold_damage_limit = (T20C - 10) // about 10c
+
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 100
+
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
 	mutant_bodyparts = list("tail_elzu")
@@ -41,7 +47,6 @@
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 
 	var/emp_effect = FALSE
-	var/emag_effect = FALSE
 
 	/// The color that all Elzu trend towards as they become increasingly injured.
 	var/static/unhealthy_color = "#EDA495"
@@ -50,7 +55,10 @@
 
 	loreblurb = "Elzuosa are an uncommon and unusual species best described as crystalline, electrically-powered plantpeople. They hail from the warm planet Kalixcis, where they evolved alongside the Sarathi. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 
-	var/drain_time = 0 //used to keep ethereals from spam draining power sources
+	var/drain_time = 0 //used to keep elzu from spam draining power sources
+
+	var/datum/action/innate/root/rooting
+
 
 /datum/species/elzuose/Destroy(force)
 	if(ethereal_light)
@@ -61,23 +69,30 @@
 	. = ..()
 	if(!ishuman(C))
 		return
-	var/mob/living/carbon/human/ethereal = C
+	var/mob/living/carbon/human/elzu = C
 
-	RegisterSignal(ethereal, COMSIG_ATOM_EMAG_ACT, PROC_REF(on_emag_act))
-	RegisterSignal(ethereal, COMSIG_ATOM_EMP_ACT, PROC_REF(on_emp_act))
-	ethereal_light = ethereal.mob_light()
-	update_elzu_color(ethereal)
+	RegisterSignal(elzu, COMSIG_ATOM_EMP_ACT, PROC_REF(on_emp_act))
+	RegisterSignal(elzu, COMSIG_DIGOUT, PROC_REF(digout))
+	RegisterSignal(elzu, COMSIG_MOVABLE_MOVED, PROC_REF(uproot))
 
-	//The following code is literally only to make admin-spawned ethereals not be black.
+	rooting = new
+	rooting.Grant(elzu)
+
+	ethereal_light = elzu.mob_light()
+	update_elzu_color(elzu)
+
+	//The following code is literally only to make admin-spawned elzu not black.
 	// not sure it does anything anymore...
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts)
 		if(BP.limb_id == SPECIES_ELZUOSE)
 			BP.update_limb(is_creating = TRUE)
 
 /datum/species/elzuose/on_species_loss(mob/living/carbon/human/C, datum/species/new_species)
-	UnregisterSignal(C, COMSIG_ATOM_EMAG_ACT)
 	UnregisterSignal(C, COMSIG_ATOM_EMP_ACT)
+	UnregisterSignal(C, COMSIG_DIGOUT)
+	UnregisterSignal(C, COMSIG_MOVABLE_MOVED)
 	QDEL_NULL(ethereal_light)
+	QDEL_NULL(rooting) // calls Remove() on its own
 	return ..()
 
 /datum/species/elzuose/random_name(gender,unique,lastname)
@@ -124,12 +139,15 @@
 			H.clear_alert("ethereal_overcharge")
 
 /datum/species/elzuose/proc/discharge_process(mob/living/carbon/human/H)
-	to_chat(H, "<span class='warning'>You begin to lose control over your charge!</span>")
-	H.visible_message("<span class='danger'>[H] begins to spark violently!</span>")
-	var/static/mutable_appearance/overcharge //shameless copycode from lightning spell
+	to_chat(H, span_warning("You begin to lose control over your charge!"))
+	H.visible_message(span_danger("[H] begins to spark violently!"))
+
+	//shameless copycode from lightning spell
+	var/static/mutable_appearance/overcharge
 	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
 	H.add_overlay(overcharge)
-	if(do_mob(H, H, 50, 1))
+
+	if(do_after(H, 50, H, IGNORE_USER_LOC_CHANGE))
 		H.flash_lighting_fx(5, 7, "#" + H.dna.features[FEATURE_MUTANT_COLOR])
 		var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 		playsound(H, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
@@ -137,12 +155,13 @@
 		tesla_zap(H, 2, (stomach.crystal_charge / ELZUOSE_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
 		if(istype(stomach))
 			stomach.adjust_charge(ELZUOSE_CHARGE_FULL - stomach.crystal_charge)
-		to_chat(H, "<span class='warning'>You violently discharge energy!</span>")
-		H.visible_message("<span class='danger'>[H] violently discharges energy!</span>")
+		to_chat(H, span_warning("You violently discharge energy!"))
+		H.visible_message(span_danger("[H] violently discharges energy!"))
+
 		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself
 			var/datum/disease/D = new /datum/disease/heart_failure
 			H.ForceContractDisease(D)
-			to_chat(H, "<span class='userdanger'>You're pretty sure you just felt your heart stop for a second there..</span>")
+			to_chat(H, span_userdanger("You're pretty sure you just felt your heart stop for a second there..."))
 			H.playsound_local(H, 'sound/effects/singlebeat.ogg', 100, 0)
 		H.Paralyze(100)
 		return
@@ -153,13 +172,89 @@
 		return stomach.crystal_charge
 	return ELZUOSE_CHARGE_NONE
 
+/* Root mechanics */
+
+/datum/action/innate/root
+	name = "Root"
+	desc = "Root into good soil to gain charge."
+	check_flags = AB_CHECK_CONSCIOUS
+	button_icon_state = "plant-22"
+	icon_icon = 'icons/obj/flora/plants.dmi'
+	background_icon_state = "bg_alien"
+
+/datum/action/innate/root/Activate()
+	var/mob/living/carbon/human/_human = owner
+	var/datum/species/elzuose/_elzu = _human.dna.species
+	// this is healthy for elzu, they shouldnt be able to overcharge and get heart attacks from this
+	var/obj/item/organ/stomach/ethereal/stomach = _human.getorganslot(ORGAN_SLOT_STOMACH)
+
+	if(_human.wear_suit && istype(_human.wear_suit, /obj/item/clothing))
+		var/obj/item/clothing/CS = _human.wear_suit
+		if (CS.clothing_flags & THICKMATERIAL)
+			to_chat(_human, span_warning("Your [CS.name] is too thick to root in!"))
+			return
+
+	if(stomach.crystal_charge > ELZUOSE_CHARGE_FULL)
+		to_chat(_human, span_warning("Your charge is full!"))
+		return
+	_elzu.drain_time = world.time + ROOT_TIME
+	_human.visible_message(span_notice("[_human] is digging into the ground"), span_warning("You start to dig yourself into the ground to root. You won't won't be able to move once you start the process."), span_notice("You hear digging."))
+	if(!do_after(_human,DIG_TIME, target = _human))
+		to_chat(_human, span_warning("You were interupted!"))
+		return
+	_human.apply_status_effect(/datum/status_effect/rooted)
+	to_chat(_human, span_notice("You root into the ground and begin to feed."))
+
+	while(do_after(_human, ROOT_TIME, target = _human))
+		if(istype(stomach))
+			to_chat(_human, span_notice("You receive some charge from rooting."))
+			stomach.adjust_charge(ROOT_CHARGE_GAIN)
+			_human.adjustBruteLoss(-3)
+			_human.adjustFireLoss(-3)
+
+			if(stomach.crystal_charge > ELZUOSE_CHARGE_FULL)
+				stomach.crystal_charge = ELZUOSE_CHARGE_FULL
+				to_chat(_human, span_notice("You're full on charge!"))
+				break
+
+		else
+			to_chat(_human,span_warning("You're missing your biological battery and can't recieve charge from rooting!"))
+			break
+
+/datum/species/elzuose/proc/digout(mob/living/carbon/human/_human)
+	if(do_after(_human, DIG_TIME,target = _human))
+		to_chat(_human, span_notice("You finish digging yourself out."))
+		_human.remove_status_effect(/datum/status_effect/rooted)
+		return
+
+/datum/species/elzuose/proc/uproot(mob/living/carbon/human/_human)
+	//You got moved and uprooted, time to suffer the consequences.
+	if(_human.has_status_effect(/datum/status_effect/rooted))
+		_human.visible_message(span_warning("[_human] is forcefully uprooted. That looked like it hurt."), span_warning("You're forcefully unrooted! Ouch!"), span_warning("You hear someone scream in pain."))
+		_human.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
+		_human.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
+		_human.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
+		_human.force_scream()
+		_human.remove_status_effect(/datum/status_effect/rooted)
+		return
+
+/datum/action/innate/root/IsAvailable()
+	if(..())
+		var/mob/living/carbon/human/_human = owner
+		var/turf/terrain = get_turf(_human)
+		if(_human.has_status_effect(/datum/status_effect/rooted))
+			return FALSE
+		if(is_type_in_list(terrain,GOOD_SOIL))
+			return TRUE
+		return FALSE
+
 /* Color mechanics */
 
 /datum/species/elzuose/spec_updatehealth(mob/living/carbon/human/H)
 	. = ..()
 	update_elzu_color()
 
-/// Using the Elzu's base color, their damage, and whether they are EMPed, emagged, or dead,
+/// Using the Elzu's base color, their damage, and whether they are EMPed or dead,
 /// recalculate their color and update their appearance accordingly.
 /datum/species/elzuose/proc/update_elzu_color(mob/living/carbon/human/H)
 	if(!ethereal_light)
@@ -172,15 +267,12 @@
 		used_color = drain_color
 		ethereal_light.set_light_on(FALSE)
 	else
-		// emagged elzu glow just as bright even when taking damage -- but the rest visibly suffer.
-		if(!emag_effect)
-			used_color = get_adjusted_color(H, used_color)
+		// mixes the color with the generic "hurt" color based on their current health
+		used_color = get_adjusted_color(H, used_color)
 
 		// calculates the strength of their light partially based on their health
 		set_ethereal_light(H, used_color)
 		ethereal_light.set_light_on(TRUE)
-
-		ethereal_light.set_light_on(FALSE)
 
 	// this is the variable that actually controls what color the limbs and accessories (hair, tail, horns) have.
 	fixed_mut_color = copytext_char(used_color, 2)
@@ -194,7 +286,7 @@
 	H.update_hair()
 
 /datum/species/elzuose/proc/get_adjusted_color(mob/living/carbon/human/H, base_color)
-	var/health_percent = max(H.health, 0) / 100
+	var/health_frac = max(H.health, 0) / H.maxHealth
 
 	var/static/unhealthy_color_red_part   = GETREDPART(unhealthy_color)
 	var/static/unhealthy_color_green_part = GETGREENPART(unhealthy_color)
@@ -205,9 +297,9 @@
 	var/default_color_blue_part  = GETBLUEPART(base_color)
 
 	var/result = rgb(
-		unhealthy_color_red_part   + ((default_color_red_part   - unhealthy_color_red_part)   * health_percent),
-		unhealthy_color_green_part + ((default_color_green_part - unhealthy_color_green_part) * health_percent),
-		unhealthy_color_blue_part  + ((default_color_blue_part  - unhealthy_color_blue_part)  * health_percent)
+		unhealthy_color_red_part   + ((default_color_red_part   - unhealthy_color_red_part)   * health_frac),
+		unhealthy_color_green_part + ((default_color_green_part - unhealthy_color_green_part) * health_frac),
+		unhealthy_color_blue_part  + ((default_color_blue_part  - unhealthy_color_blue_part)  * health_frac)
 	)
 	return result
 
@@ -226,69 +318,15 @@
 	emp_effect = TRUE
 	update_elzu_color(H)
 
-	to_chat(H, "<span class='notice'>You feel the light of your body leave you.</span>")
+	to_chat(H, span_notice("You feel the light of your body leave you."))
 	switch(severity)
 		if(EMP_LIGHT)
 			addtimer(CALLBACK(src, PROC_REF(stop_emp), H), 10 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE) //We're out for 10 seconds
 		if(EMP_HEAVY)
 			addtimer(CALLBACK(src, PROC_REF(stop_emp), H), 20 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE) //We're out for 20 seconds
 
-/datum/species/elzuose/proc/on_emag_act(mob/living/carbon/human/H, mob/user)
-	if(emag_effect)
-		return
-	emag_effect = TRUE
-	if(user)
-		to_chat(user, "<span class='notice'>You tap [H] on the back with your card.</span>")
-	H.visible_message("<span class='danger'>[H] starts flickering in an array of colors!</span>")
-	handle_emag(H)
-	addtimer(CALLBACK(src, PROC_REF(stop_emag), H), 30 SECONDS) //Disco mode for 30 seconds! This doesn't affect the ethereal at all besides either annoying some players, or making someone look badass.
-
 /datum/species/elzuose/proc/stop_emp(mob/living/carbon/human/H)
 	emp_effect = FALSE
 	update_elzu_color(H)
 
-	to_chat(H, "<span class='notice'>You feel more energized as your shine comes back.</span>")
-
-/datum/species/elzuose/proc/handle_emag(mob/living/carbon/human/H)
-	if(!emag_effect)
-		return
-	// gotta remove the leading # from this list... god i hate that so many colors don't have those baked in. pointless
-	H.dna.features[FEATURE_MUTANT_COLOR] = copytext(pick(ELZUOSE_EMAG_COLORS), 2)
-	update_elzu_color(H)
-
-	addtimer(CALLBACK(src, PROC_REF(handle_emag), H), 5) //Call ourselves every 0.5 seconds to change color
-
-/datum/species/elzuose/proc/stop_emag(mob/living/carbon/human/H)
-	emag_effect = FALSE
-	update_elzu_color(H)
-
-	H.visible_message("<span class='danger'>[H] stops flickering and goes back to [H.p_their()] normal state!</span>")
-
-/datum/species/elzuose/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
-	if(istype(I, /obj/item/multitool))
-		if(user.a_intent == INTENT_HARM)
-			. = ..() // multitool beatdown
-			return
-
-		if (emag_effect == TRUE)
-			to_chat(user, "<span class='danger'>The multitool can't get a lock on [H]'s EM frequency!</span>")
-			return
-
-		if(user != H)
-			// random color change
-			H.dna.features[FEATURE_MUTANT_COLOR] = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
-			update_elzu_color(H)
-			H.visible_message("<span class='danger'>[H]'s EM frequency is scrambled to a random color!</span>")
-		else
-			// select new color
-			var/new_etherealcolor = input(user, "Choose your Elzuose color:", "Character Preference", "#" + H.dna.features[FEATURE_MUTANT_COLOR]) as color|null
-			if(new_etherealcolor)
-				var/temp_hsv = RGBtoHSV(new_etherealcolor)
-				if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright ok??
-					H.dna.features[FEATURE_MUTANT_COLOR] = sanitize_hexcolor(new_etherealcolor, 6, include_crunch = FALSE)
-					update_elzu_color(H)
-					H.visible_message("<span class='notice'>[H] modulates \his EM frequency to [new_etherealcolor].</span>")
-				else
-					to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
-	else
-		. = ..()
+	to_chat(H, span_notice("You feel more energized as your shine comes back."))

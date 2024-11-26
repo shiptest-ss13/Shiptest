@@ -35,7 +35,7 @@
 /turf/open/floor/plastic,
 /area/ruin/rockplanet/nanotrasen)
 "aQ" = (
-/mob/living/simple_animal/hostile/nanotrasen,
+/mob/living/simple_animal/hostile/human/nanotrasen,
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -47,7 +47,7 @@
 /obj/machinery/reagentgrinder{
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = -2;
 	pixel_y = 6
 	},
@@ -109,7 +109,7 @@
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
 "by" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel,
@@ -214,7 +214,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "db" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
@@ -339,7 +339,7 @@
 /turf/open/floor/engine,
 /area/ruin/rockplanet/nanotrasen)
 "ff" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg,
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
@@ -517,7 +517,7 @@
 	pixel_x = -1;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/condiment/sugar{
+/obj/item/reagent_containers/condiment/sugar{
 	pixel_x = 5;
 	pixel_y = 5
 	},
@@ -769,12 +769,12 @@
 "mO" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
 	pixel_x = -8;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	desc = "Salt. From space oceans, presumably. A staple of modern medicine.";
 	pixel_x = -8;
 	pixel_y = 12
@@ -960,21 +960,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "pj" = (
 /obj/structure/table/reinforced,
-/obj/item/slime_extract/grey{
-	pixel_x = -4;
-	pixel_y = -1
-	},
-/obj/item/slime_extract/grey{
-	pixel_x = 8
-	},
-/obj/item/slime_extract/grey,
-/obj/item/slime_extract/grey,
-/obj/item/slime_extract/green{
-	pixel_x = 4;
-	pixel_y = -6
-	},
 /obj/structure/window/reinforced,
-/obj/item/slime_scanner,
 /turf/open/floor/engine,
 /area/ruin/rockplanet/nanotrasen)
 "pl" = (
@@ -1347,7 +1333,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil,
 /obj/machinery/light/small/broken/directional/north,
-/mob/living/simple_animal/hostile/pirate/ranged/space,
+/mob/living/simple_animal/hostile/human/pirate/ranged/space,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/nanotrasen)
 "vz" = (
@@ -1462,7 +1448,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/nanotrasen,
+/mob/living/simple_animal/hostile/human/nanotrasen,
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
@@ -1565,7 +1551,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
 "Ap" = (
@@ -1713,7 +1699,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Cx" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
@@ -1728,7 +1714,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/nanotrasen)
 "CJ" = (
-/mob/living/simple_animal/hostile/pirate/melee/space,
+/mob/living/simple_animal/hostile/human/pirate/melee/space,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -1767,7 +1753,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/nanotrasen)
 "Dt" = (
-/mob/living/simple_animal/hostile/pirate/ranged/space,
+/mob/living/simple_animal/hostile/human/pirate/ranged/space,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -2036,7 +2022,7 @@
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/nanotrasen/ranged,
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/nanotrasen)
 "Hs" = (
@@ -2069,7 +2055,7 @@
 	},
 /area/ruin/rockplanet/nanotrasen)
 "Ie" = (
-/mob/living/simple_animal/hostile/pirate/melee/space,
+/mob/living/simple_animal/hostile/human/pirate/melee/space,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -2507,7 +2493,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "Rm" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/carpet/black,
 /area/ruin/rockplanet/nanotrasen)
@@ -2697,7 +2683,7 @@
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/rockplanet/nanotrasen)
 "Vn" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged,
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -2744,9 +2730,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/nanotrasen)
 "WY" = (
-/obj/machinery/computer/communications{
-	dir = 1;
-	req_access = null
+/obj/structure/frame/computer{
+	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2835,7 +2820,7 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Ze" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg,
 /obj/effect/turf_decal/corner/transparent/purple/border{
 	dir = 1
 	},
@@ -2908,7 +2893,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/assault,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/nanotrasen)
 "ZZ" = (

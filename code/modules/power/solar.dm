@@ -324,7 +324,7 @@
 	icon_state = "computer"
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 250
+	idle_power_usage = IDLE_DRAW_LOW
 	max_integrity = 200
 	integrity_failure = 0.5
 	var/icon_screen = "solar"

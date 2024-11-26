@@ -1,4 +1,5 @@
 {
+	"faction": "/datum/faction/syndicate",
 	"prefix": "ISV",
 	"namelists": [
 		"GORLEX",
@@ -28,12 +29,17 @@
 			"officer": true,
 			"slots": 1
 		},
+		"Bridge Officer": {
+			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/cybersun",
+			"officer": true,
+			"slots": 1
+		},
 		"Medic": {
 			"outfit": "/datum/outfit/job/syndicate/doctor/gorlex",
 			"slots": 1
 		},
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/syndicate/miner/gorlex",
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
 			"slots": 1
 		},
 		"Trooper": {
@@ -43,11 +49,7 @@
 		"Deck Assistant": {
 			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
 			"slots": 2
-		},
-		"Bridge Officer": {
-			"outfit": "/datum/outfit/job/syndicate/head_of_personnel",
-			"slots": 1
 		}
 	},
-	"enabled": true
+	"enabled": false
 }

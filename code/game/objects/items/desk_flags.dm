@@ -1,6 +1,6 @@
 /obj/item/desk_flag
 	name = "blank desk flag"
-	desc = "Show your patriotism with WaffleCo. brand desk flags!"
+	desc = "Show your patriotism with desk flags!"
 	icon = 'icons/obj/deskflags.dmi'
 	icon_state = "flag"
 	force = 3
@@ -30,3 +30,8 @@
 	name = "gezenan desk flag"
 	desc = "A small banner on a pole depicting the sigil of the Pan-Gezenan Federation."
 	icon_state = "gezena"
+
+/obj/item/desk_flag/suns
+	name = "SUNS desk flag"
+	desc = "A little desk decoration in the gold and purple color palette of SUNS."
+	icon_state = "suns"

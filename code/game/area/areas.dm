@@ -13,7 +13,7 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility = INVISIBILITY_LIGHTING
 
-	var/area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA
+	var/area_flags = VALID_TERRITORY | UNIQUE_AREA
 
 	var/fire = null
 	///Whether there is an atmos alarm in this area
@@ -110,7 +110,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /proc/process_teleport_locs()
 	for(var/V in GLOB.sortedAreas)
 		var/area/AR = V
-		if(istype(AR, /area/shuttle) || AR.area_flags & NOTELEPORT)
+		if(AR.area_flags & NOTELEPORT)
 			continue
 		if(GLOB.teleportlocs[AR.name])
 			continue
@@ -633,7 +633,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	power_environ = FALSE
 	always_unpowered = FALSE
 	area_flags &= ~VALID_TERRITORY
-	area_flags &= ~BLOBS_ALLOWED
 	addSorted()
 /**
  * Set the area size of the area

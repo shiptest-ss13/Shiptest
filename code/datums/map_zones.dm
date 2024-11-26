@@ -533,6 +533,9 @@
 /datum/virtual_level/proc/get_block()
 	return block(locate(low_x,low_y,z_value), locate(high_x,high_y,z_value))
 
+/datum/virtual_level/proc/get_block_portion(lower_x, lower_y, higher_x, higher_y)
+	return block(locate(lower_x,lower_y,z_value), locate(higher_x,higher_y,z_value))
+
 /datum/virtual_level/proc/get_unreserved_block()
 	return block(locate(low_x + reserved_margin, low_y + reserved_margin, z_value), locate(high_x - reserved_margin,high_y - reserved_margin,z_value))
 
@@ -541,6 +544,9 @@
 
 /datum/virtual_level/proc/get_random_position()
 	return locate(rand(low_x, high_x), rand(low_y, high_y), z_value)
+
+/datum/virtual_level/proc/get_random_position_in_margin()
+	return locate(rand(low_x + reserved_margin, high_x - reserved_margin), rand(low_y + reserved_margin, high_y - reserved_margin), z_value)
 
 /datum/virtual_level/proc/get_below_turf(turf/Turf)
 	if(!down_linkage)
@@ -631,7 +637,7 @@
 		var/ty = destination_y
 		var/turf/DT = locate(tx, ty, destination_z)
 		var/itercount = 0
-		while(DT.density || istype(DT.loc,/area/shuttle)) // Extend towards the center of the map, trying to look for a better place to arrive
+		while(DT.density) // Extend towards the center of the map, trying to look for a better place to arrive
 			if (itercount++ >= 100)
 				log_game("SPACE Z-TRANSIT ERROR: Could not find a safe place to land [arrived] within 100 iterations.")
 				break

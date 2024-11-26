@@ -13,7 +13,7 @@
 				/datum/surgery_step/clamp_bleeders,
 				/datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
-	target_mobtypes = list(/mob/living) //Feel free to dissect devils but they're magic.
+	target_mobtypes = list(/mob/living)
 	replaced_by = /datum/surgery/advanced/experimental_dissection/adv
 	requires_tech = FALSE
 	var/value_multiplier = 0.25
@@ -34,7 +34,7 @@
 		/obj/item/scalpel/augment = 75,
 		/obj/item/scalpel/advanced = 60,
 		TOOL_SCALPEL = 45,
-		/obj/item/kitchen/knife = 30,
+		/obj/item/melee/knife = 30,
 		/obj/item/shard = 10)// special tools not only cut down time but also improve probability
 	time = 125
 	silicons_obey_prob = TRUE

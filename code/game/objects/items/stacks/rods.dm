@@ -9,6 +9,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	new/datum/stack_recipe("modern railing corner", /obj/structure/railing/modern/corner, 1, time = 10, window_checks = TRUE), \
 	new/datum/stack_recipe("modern railing end", /obj/structure/railing/modern/end, 3, time = 18, window_checks = TRUE), \
 	new/datum/stack_recipe("ladder", /obj/structure/ladder/crafted, 15, time = 150, one_per_turf = TRUE, on_floor = FALSE), \
+	new/datum/stack_recipe("handrail", /obj/structure/chair/handrail, 4, time = 15, one_per_turf = TRUE), \
 	))
 
 /obj/item/stack/rods

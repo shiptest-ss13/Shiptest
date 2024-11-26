@@ -204,6 +204,11 @@
 		else // Many other things have registered here
 			lookup[sig_type][src] = TRUE
 
+/// Registers multiple signals to the same proc.
+/datum/proc/RegisterSignals(datum/target, list/signal_types, proctype, override = FALSE)
+	for (var/signal_type in signal_types)
+		RegisterSignal(target, signal_type, proctype, override)
+
 /**
  * Stop listening to a given signal from target
  *
@@ -321,10 +326,12 @@
 	// all the objects that are receiving the signal get the signal this final time.
 	// AKA: No you can't cancel the signal reception of another object by doing an unregister in the same signal.
 	var/list/queued_calls = list()
-	for(var/datum/listening_datum as anything in target)
-		queued_calls[listening_datum] = listening_datum.signal_procs[src][sigtype]
-	for(var/datum/listening_datum as anything in queued_calls)
-		. |= call(listening_datum, queued_calls[listening_datum])(arglist(arguments))
+	// This should be faster than doing `var/datum/listening_datum as anything in target` as it does not implicitly copy the list
+	for(var/i in 1 to length(target))
+		var/datum/listening_datum = target[i]
+		queued_calls.Add(listening_datum, listening_datum.signal_procs[src][sigtype])
+	for(var/i in 1 to length(queued_calls) step 2)
+		. |= call(queued_calls[i], queued_calls[i + 1])(arglist(arguments))
 
 // The type arg is casted so initial works, you shouldn't be passing a real instance into this
 /**
@@ -357,17 +364,17 @@
  */
 /datum/proc/GetExactComponent(datum/component/c_type)
 	RETURN_TYPE(c_type)
-	if(initial(c_type.dupe_mode) == COMPONENT_DUPE_ALLOWED || initial(c_type.dupe_mode) == COMPONENT_DUPE_SELECTIVE)
+	var/initial_type_mode = initial(c_type.dupe_mode)
+	if(initial_type_mode == COMPONENT_DUPE_ALLOWED || initial_type_mode == COMPONENT_DUPE_SELECTIVE)
 		stack_trace("GetComponent was called to get a component of which multiple copies could be on an object. This can easily break and should be changed. Type: \[[c_type]\]")
-	var/list/dc = datum_components
-	if(!dc)
+	var/list/all_components = datum_components
+	if(!all_components)
 		return null
-	var/datum/component/C = dc[c_type]
-	if(C)
-		if(length(C))
-			C = C[1]
-		if(C.type == c_type)
-			return C
+	var/datum/component/potential_component
+	if(length(all_components))
+		potential_component = all_components[c_type]
+	if(potential_component?.type == c_type)
+		return potential_component
 	return null
 
 /**

@@ -6,6 +6,8 @@
 	icon = 'icons/obj/machines/research.dmi'
 	base_icon_state = "tdoppler"
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	verb_say = "states coldly"
 	var/cooldown = 10
 	var/next_announce = 0

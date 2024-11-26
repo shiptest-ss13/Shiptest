@@ -64,6 +64,15 @@
 	)
 	auto_color_src = COLOR_SRC_HAIR_COLOR
 
+/obj/item/organ/tail/dog
+	name = "dog tail"
+	desc = "A severed dog tail."
+
+	linked_features = list(
+		/datum/sprite_accessory/mutant_part/tails/human::mutant_string = /datum/sprite_accessory/mutant_part/tails/human/dog::name
+	)
+	auto_color_src = COLOR_SRC_HAIR_COLOR
+
 /obj/item/organ/tail/fox
 	name = "fox tail"
 	desc = "A severed fox tail. Sad."
@@ -78,3 +87,12 @@
 	linked_features = list(
 		/datum/sprite_accessory/mutant_part/tails/human::mutant_string = /datum/sprite_accessory/mutant_part/tails/human/fox/alt::name
 	)
+
+/obj/item/organ/tail/rabbit
+	name = "rabbit tail"
+	desc = "A severed rabbit tail."
+
+	linked_features = list(
+		/datum/sprite_accessory/mutant_part/tails/human::mutant_string = /datum/sprite_accessory/mutant_part/tails/human/rabbit::name
+	)
+	auto_color_src = COLOR_SRC_HAIR_COLOR

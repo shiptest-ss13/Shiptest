@@ -48,8 +48,8 @@
 	radio_connection = null
 	adjacent_turfs.Cut()
 	return ..()
-
-/obj/machinery/atmospherics/components/unary/vent_scrubber/auto_use_power()
+/*
+/obj/machinery/atmospherics/components/unary/vent_scrubber/auto_use_power() //auto_use_power no longer called
 	if(!on || welded || !is_operational || !powered(power_channel))
 		return FALSE
 
@@ -64,7 +64,7 @@
 		amount += amount * (adjacent_turfs.len * (adjacent_turfs.len / 2))
 	use_power(amount, power_channel)
 	return TRUE
-
+*/
 /obj/machinery/atmospherics/components/unary/vent_scrubber/update_icon_nopipes()
 	cut_overlays()
 	if(showpipe)
@@ -138,13 +138,20 @@
 	..()
 
 	if(welded || !on || !is_operational)
+		if(use_static_power != NO_POWER_USE)
+			set_no_power()
 		return FALSE
 	if(!nodes[1])
 		return FALSE
 	scrub(loc)
 	if(widenet)
+		if(use_static_power != ACTIVE_POWER_USE)
+			set_active_power()
 		for(var/turf/tile in adjacent_turfs)
 			scrub(tile)
+	else
+		if(use_static_power != IDLE_POWER_USE)
+			set_idle_power()
 	return TRUE
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/proc/scrub(turf/tile)

@@ -77,6 +77,9 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	///How good of an accelerant is this reagent
 	var/accelerant_quality = 0
 
+	///The section of the autowiki chem table this reagent will be under
+	var/category = "Misc"
+
 /datum/reagent/New()
 	. = ..()
 

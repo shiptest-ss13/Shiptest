@@ -130,7 +130,7 @@
 	desc = "Damn son, where'd you find this?"
 	id = "air_horn"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000, /datum/material/bananium = 1000)
+	materials = list(/datum/material/iron = 4000, /datum/material/hellstone = 1000)
 	build_path = /obj/item/bikehorn/airhorn
 	category = list("Equipment")
 
@@ -229,7 +229,7 @@
 	id = "roastingstick"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron=1000, /datum/material/glass = 500, /datum/material/bluespace = 250)
-	build_path = /obj/item/melee/roastingstick
+	build_path = /obj/item/roastingstick
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 

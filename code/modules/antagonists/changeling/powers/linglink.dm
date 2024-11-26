@@ -58,7 +58,7 @@
 				target.say("[MODE_TOKEN_CHANGELING] AAAAARRRRGGGGGHHHHH!!")
 				to_chat(target, "<span class='changeling bold'>You can now communicate in the changeling hivemind, say \"[MODE_TOKEN_CHANGELING] message\" to communicate!</span>")
 		SSblackbox.record_feedback("nested tally", "changeling_powers", 1, list("[name]", "[i]"))
-		if(!do_mob(user, target, 20))
+		if(!do_after(user, 2 SECONDS, target))
 			to_chat(user, "<span class='warning'>Our link with [target] has ended!</span>")
 			changeling.islinking = 0
 			target.mind.linglink = 0
@@ -67,7 +67,7 @@
 	to_chat(user, "<span class='notice'>We must keep holding on to [target] to sustain the link. </span>")
 	while(user.pulling && user.grab_state >= GRAB_NECK)
 		target.reagents.add_reagent(/datum/reagent/medicine/salbutamol, 0.5) // So they don't choke to death while you interrogate them
-		do_mob(user, target, 100, TRUE)
+		do_after(user, 10 SECONDS, target, hidden = TRUE)
 
 	changeling.islinking = 0
 	target.mind.linglink = 0

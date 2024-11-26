@@ -94,6 +94,47 @@
 	mut_part_type = /datum/sprite_accessory/mutant_part/kepori_body_feathers
 	default_value = /datum/sprite_accessory/mutant_part/kepori_body_feathers/none::name
 
+// CORRESPONDING VARIABLE NAME:
+// features["kepori_head_feathers"]
+// default value: "None"
+/datum/preference/choiced_string/mutant_bodypart/kepori_head_feathers
+	name = "Kepori Head Feathers"
+	external_key = "feature_kepori_head_feathers"
+
+	mut_part_type = /datum/sprite_accessory/mutant_part/kepori_head_feathers
+	default_value = /datum/sprite_accessory/mutant_part/kepori_head_feathers/none::name
+
+// UI INTERACTION
+/*
+			if("kepori_head_feathers" in current_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Head Feathers</h3>"
+				dat += "<a href='?_src_=prefs;preference=kepori_head_feathers;task=input'>[features["kepori_head_feathers"]]</a><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features[FEATURE_MUTANT_COLOR2]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Change</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+*/
+
+// SERIALIZATION
+/*
+	WRITE_FILE(S["feature_kepori_head_feathers"], features["feature_kepori_head_feathers"])
+
+*/
+
+// DESERIALIZATION
+/*
+	READ_FILE(S["feature_kepori_head_feathers"], features["kepori_head_feathers"])
+	features["kepori_head_feathers"]	= sanitize_inlist(features["kepori_head_feathers"], GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/kepori_head_feathers], "None")
+
+*/
+
+
 /datum/preference/choiced_string/mutant_bodypart/kepori_tail_feathers
 	name = "Kepori Tail Feathers"
 	external_key = "feature_kepori_tail_feathers"
@@ -341,7 +382,7 @@
 // features["ipc_tail"]
 // default value: "None"
 /datum/preference/choiced_string/mutant_bodypart/ipc_tail
-	name = "IPC Tail"
+	name = "Tail (IPC)"
 	external_key = "feature_ipc_tail"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/ipc_tail
@@ -599,7 +640,7 @@
 // features["tail_lizard"]
 // default value: "Smooth"
 /datum/preference/choiced_string/mutant_bodypart/organ_linked/sarathi_tail
-	name = "Sarathi Tail"
+	name = "Tail (Sarathi)"
 	external_key = "feature_lizard_tail"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/tails/lizard
@@ -664,7 +705,7 @@
 // features["tail_elzu"]
 // default value: "None"
 /datum/preference/choiced_string/mutant_bodypart/organ_linked/elzu_tail
-	name = "Elzu Tail"
+	name = "Tail (Elzu)"
 	external_key = "feature_elzu_tail"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/tails/elzu
@@ -792,21 +833,24 @@
 
 
 #warn should be in another file; should maybe be unified with datum/preference/choiced_string/mutant_bodypart/organ_linked.
-/datum/preference/choiced_string/organ_types
-	abstract_type = /datum/preference/choiced_string/organ
+/datum/preference/choiced_string/indiv_organs
+	abstract_type = /datum/preference/choiced_string/indiv_organs
 
-	dependencies = list(/datum/preference/species)
 	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
-	/// An associative list matching user-displayed (and save-written) strings to the organ type to be added to the mob's species datum prior to its finalization.
+	/// An associative list, which matches user-displayed (and save-written) strings to organ types,
+	/// the latter of which are added to the mob's species datum prior to its finalization.
+	/// If a string is matched to "null" instead, no organ will be altered.
 	var/list/string_type_lookup
 
-/datum/preference/choiced_string/organ_types/get_options_list()
+/datum/preference/choiced_string/indiv_organs/get_options_list()
 	return string_type_lookup
 
-/datum/preference/choiced_string/organ_types/apply_to_human(mob/living/carbon/human/target, data)
+/datum/preference/choiced_string/indiv_organs/apply_to_human(mob/living/carbon/human/target, data)
 	var/obj/item/organ/organ_type = string_type_lookup[data]
-	// add the organ to their bodyplan -- later, in the
+	if(isnull(organ_type))
+		return
+
 	switch(initial(organ_type.slot))
 		if(ORGAN_SLOT_BRAIN)
 			target.dna.species.mutantbrain = organ_type
@@ -829,43 +873,36 @@
 		else
 			target.dna.species.mutant_organs |= organ_type
 
-
-// NOTE: this is a bad way of doing things.
-// New organ-linked sprite accessory preferences should use the /datum/preference/choiced_string/mutant_bodypart/organ_linked approach instead;
-// THIS approach is what's necessary for sprite-accessory linked organs with variable_feature_data = FALSE.
-/datum/preference/choiced_string/organ_types/human_ears
-
 // CORRESPONDING VARIABLE NAME:
 // features["tail_human"]
 // default value: "None"
-/datum/preference/
-	// abstract_type = /datum/preference
+/datum/preference/choiced_string/indiv_organs/human_tail
+	name = "Tail (Human)"
+	external_key = "feature_human_tail"
 
-	// name =
+	dependencies = list(/datum/preference/species)
 
-	// external_key =
-	// application_priority = PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE
+	// this fucking sucks, and i'm sorry.
+	// i meant to slay boilerplate master-list-adding, and i ended up empowering it instead...
+	string_type_lookup = list(
+		"None" = null,
+		"Cat" = /obj/item/organ/tail/cat,
+		"Dog" = /obj/item/organ/tail/dog,
+		"Fox" = /obj/item/organ/tail/fox,
+		"Fox 2" = /obj/item/organ/tail/fox/alt,
+		"Rabbit" = /obj/item/organ/tail/rabbit
+	)
+	default_value = "None"
 
-	// default_value =
+/datum/preference/choiced_string/indiv_organs/human_tail/_is_available(list/dependency_data)
+	var/datum/species/chosen_species = dependency_data[/datum/preference/species]
+	return ("tail_human" in chosen_species.default_features)
 
-	// dependencies = list()
-
-	// randomization_flags = NONE
-	// rand_dependencies = list()
-
-/datum/preference//_is_available(list/dependency_data)
-
-/datum/preference//_is_invalid(data, list/dependency_data)
-
-/datum/preference//apply_to_human(mob/living/carbon/human/target, data)
-
-/datum/preference//_serialize(data)
-
-/datum/preference//deserialize(serialized_data)
-
-/datum/preference//button_action(mob/user, old_data, list/dependency_data, list/href_list, list/hints)
-
-/datum/preference//randomize(list/dependency_data, list/rand_dependency_data)
+/datum/preference/choiced_string/indiv_organs/human_tail/randomize(list/dependency_data, list/rand_dependency_data)
+	// most people are not furries
+	if(prob(50))
+		return default_value
+	return ..()
 
 // UI CREATION
 /*
@@ -897,11 +934,17 @@
 
 // CHARACTER COPY
 /*
-	if(C.dna.features["tail_human"] == "Cat")
-		mutant_organs |= /obj/item/organ/tail/cat
-	if(C.dna.features["tail_human"] == "Fox")
-		mutant_organs |= /obj/item/organ/tail/fox
-
+	switch(C.dna.features["tail_human"])
+		if("Cat")
+			mutant_organs |= /obj/item/organ/tail/cat
+		if("Dog")
+			mutant_organs |= /obj/item/organ/tail/dog
+		if("Fox")
+			mutant_organs |= /obj/item/organ/tail/fox
+		if("Fox 2")
+			mutant_organs |= /obj/item/organ/tail/fox/alt
+		if("Rabbit")
+			mutant_organs |= /obj/item/organ/tail/rabbit
 */
 
 // SERIALIZATION
@@ -925,39 +968,40 @@
 
 
 
-
-
 // CORRESPONDING VARIABLE NAME:
 // features["ears"]
 // default value: "None"
-/datum/preference/
-	// abstract_type = /datum/preference
+/datum/preference/choiced_string/indiv_organs/human_ears
+	name = "Ears"
+	external_key = "feature_human_ears"
 
-	// name =
+	dependencies = list(/datum/preference/species)
 
-	// external_key =
-	// application_priority = PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE
+	// this fucking sucks, and i'm sorry.
+	// i meant to slay boilerplate master-list-adding, and i ended up empowering it instead...
+	string_type_lookup = list(
+		"None" = null,
+		"Elf" = /obj/item/organ/ears/elf,
+		"Cat" = /obj/item/organ/ears/cat,
+		"Dog" = /obj/item/organ/ears/dog,
+		"Fox" = /obj/item/organ/ears/fox,
+		"Rabbit" = /obj/item/organ/ears/rabbit,
+		"Bent Rabbit" = /obj/item/organ/ears/rabbit/bent,
+		"Floppy Rabbit" = /obj/item/organ/ears/rabbit/floppy
+	)
+	default_value = "None"
 
-	// default_value =
+// im SORRYYYYYYYYYYYYYYYYYY
+/datum/preference/choiced_string/indiv_organs/human_ears/_is_available(list/dependency_data)
+	var/datum/species/chosen_species = dependency_data[/datum/preference/species]
+	return ("ears" in chosen_species.default_features)
 
-	// dependencies = list()
-
-	// randomization_flags = NONE
-	// rand_dependencies = list()
-
-/datum/preference//_is_available(list/dependency_data)
-
-/datum/preference//_is_invalid(data, list/dependency_data)
-
-/datum/preference//apply_to_human(mob/living/carbon/human/target, data)
-
-/datum/preference//_serialize(data)
-
-/datum/preference//deserialize(serialized_data)
-
-/datum/preference//button_action(mob/user, old_data, list/dependency_data, list/href_list, list/hints)
-
-/datum/preference//randomize(list/dependency_data, list/rand_dependency_data)
+/datum/preference/choiced_string/indiv_organs/human_ears/randomize(list/dependency_data, list/rand_dependency_data)
+	// again, most people are not furries.
+	// (annoyingly, the ones who are don't have the good sense to match tail with ears)
+	if(prob(50))
+		return default_value
+	return ..()
 
 // UI CREATION
 /*
@@ -990,13 +1034,21 @@
 
 // CHARACTER COPY
 /*
-	if(C.dna.features["ears"] == "Cat")
-		mutantears = /obj/item/organ/ears/cat
-	if(C.dna.features["ears"] == "Fox")
-		mutantears = /obj/item/organ/ears/fox
-	if(C.dna.features["ears"] == "Elf")
-		mutantears = /obj/item/organ/ears/elf
-
+	switch(C.dna.features["ears"])
+		if("Elf")
+			mutantears = /obj/item/organ/ears/elf
+		if("Cat")
+			mutantears = /obj/item/organ/ears/cat
+		if("Dog")
+			mutantears = /obj/item/organ/ears/dog
+		if("Fox")
+			mutantears = /obj/item/organ/ears/fox
+		if("Rabbit")
+			mutantears = /obj/item/organ/ears/rabbit
+		if("Bent Rabbit")
+			mutantears = /obj/item/organ/ears/rabbit/bent
+		if("Floppy Rabbit")
+			mutantears = /obj/item/organ/ears/rabbit/floppy
 */
 
 // SERIALIZATION

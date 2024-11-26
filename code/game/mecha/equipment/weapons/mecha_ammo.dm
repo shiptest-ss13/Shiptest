@@ -50,7 +50,7 @@
 
 /obj/item/mecha_ammo/lmg
 	name = "machine gun ammo"
-	desc = "A box of linked ammunition, designed for the Ultra AC 2 exosuit weapon."
+	desc = "A box of linked ammunition, designed for the UMG-2 exosuit weapon."
 	icon_state = "lmg"
 	rounds = 300
 	ammo_type = "lmg"
@@ -83,7 +83,7 @@
 /obj/item/mecha_ammo/tank_shell
 	name = "anti-armor missile"
 	desc = "A large missle, intended to be loaded into a Type 207."
-	icon = 'icons/obj/ammo_bullets.dmi'
+	icon = 'icons/obj/ammunition/ammo_bullets.dmi'
 	icon_state = "srm-8"
 	rounds = 1
 	throw_range = 0

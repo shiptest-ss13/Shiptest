@@ -8,7 +8,7 @@
 	var/volume_rate = 1000
 	var/overpressure_m = 80
 	var/use_overlays = TRUE
-	var/list/scrubbing = list(GAS_PLASMA, GAS_CO2, GAS_NITROUS, GAS_BZ, GAS_NITRYL, GAS_TRITIUM, GAS_HYPERNOB, GAS_H2O, GAS_FREON)
+	var/list/scrubbing = list(GAS_PLASMA, GAS_CO2, GAS_NITROUS, GAS_BZ, GAS_NITRYL, GAS_TRITIUM, GAS_HYPERNOB, GAS_H2O, GAS_FREON, GAS_HYDROGEN)
 
 /obj/machinery/portable_atmospherics/scrubber/Destroy()
 	var/turf/T = get_turf(src)
@@ -113,8 +113,8 @@
 	name = "huge air scrubber"
 	icon_state = "scrubber:0"
 	anchored = TRUE
-	active_power_usage = 500
-	idle_power_usage = 10
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 
 	overpressure_m = 200
 	volume_rate = 1500
@@ -137,8 +137,10 @@
 	if((!anchored && !movable) || !is_operational)
 		on = FALSE
 		update_appearance()
-	use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
-	if(!on)
+	if(on)
+		set_active_power()
+	else
+		set_idle_power()
 		return
 
 	..()

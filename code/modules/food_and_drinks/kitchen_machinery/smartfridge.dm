@@ -9,9 +9,10 @@
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/smartfridge
+	integrity_failure = 0.4
 
 	var/max_n_of_items = 1500
 	var/allow_ai_retrieve = FALSE
@@ -40,7 +41,10 @@
 		. += "<span class='notice'>The status display reads: This unit can hold a maximum of <b>[max_n_of_items]</b> items.</span>"
 
 /obj/machinery/smartfridge/update_icon_state()
-	if(machine_stat)
+	if(machine_stat & BROKEN)
+		icon_state = "[initial(icon_state)]-broken"
+		return ..()
+	else if(!powered())
 		icon_state = "[initial(icon_state)]-off"
 		return ..()
 
@@ -53,10 +57,8 @@
 			icon_state = "[initial(icon_state)]"
 		if(1 to 25)
 			icon_state = "[initial(icon_state)]1"
-		if(26 to 75)
+		if(26 to INFINITY)
 			icon_state = "[initial(icon_state)]2"
-		if(76 to INFINITY)
-			icon_state = "[initial(icon_state)]3"
 	return ..()
 
 /obj/machinery/smartfridge/update_overlays()
@@ -245,8 +247,9 @@
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "drying_rack"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 200
+	circuit = null
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	visible_contents = FALSE
 	var/drying = FALSE
 
@@ -258,7 +261,6 @@
 
 /obj/machinery/smartfridge/drying_rack/on_deconstruction()
 	new /obj/item/stack/sheet/mineral/wood(drop_location(), 10)
-	..()
 
 /obj/machinery/smartfridge/drying_rack/RefreshParts()
 /obj/machinery/smartfridge/drying_rack/default_deconstruction_screwdriver()
@@ -326,10 +328,10 @@
 /obj/machinery/smartfridge/drying_rack/proc/toggle_drying(forceoff)
 	if(drying || forceoff)
 		drying = FALSE
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 	else
 		drying = TRUE
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 	update_appearance()
 
 /obj/machinery/smartfridge/drying_rack/proc/rack_dry()
@@ -366,7 +368,7 @@
 /obj/machinery/smartfridge/drinks/accept_check(obj/item/O)
 	if(!istype(O, /obj/item/reagent_containers) || (O.item_flags & ABSTRACT) || !O.reagents || !O.reagents.reagent_list.len)
 		return FALSE
-	if(istype(O, /obj/item/reagent_containers/glass) || istype(O, /obj/item/reagent_containers/food/drinks) || istype(O, /obj/item/reagent_containers/food/condiment))
+	if(istype(O, /obj/item/reagent_containers/glass) || istype(O, /obj/item/reagent_containers/food/drinks) || istype(O, /obj/item/reagent_containers/condiment))
 		return TRUE
 
 // ----------------------------
@@ -379,23 +381,6 @@
 	if(istype(O, /obj/item/reagent_containers/food/snacks/))
 		return TRUE
 	return FALSE
-
-// -------------------------------------
-// Xenobiology Slime-Extract Smartfridge
-// -------------------------------------
-/obj/machinery/smartfridge/extract
-	name = "smart slime extract storage"
-	desc = "A refrigerated storage unit for slime extracts."
-
-/obj/machinery/smartfridge/extract/accept_check(obj/item/O)
-	if(istype(O, /obj/item/slime_extract))
-		return TRUE
-	if(istype(O, /obj/item/slime_scanner))
-		return TRUE
-	return FALSE
-
-/obj/machinery/smartfridge/extract/preloaded
-	initial_contents = list(/obj/item/slime_scanner = 2)
 
 // -------------------------
 // Organ Surgery Smartfridge

@@ -395,6 +395,17 @@
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/cyberimp_joywire
+	name = "\improper Midi-Sed pleasure vivifier"
+	desc = "A widely popular (and addictive) implant produced by Miditeke-Sedari Tokoce that stimulates the brain's pleasure centers. Dramatically increases mood, but interferes with taste reception even if uninstalled."
+	id = "ci-joywire"
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 60
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/gold = 500, /datum/material/silver = 500)
+	build_path = /obj/item/organ/cyberimp/brain/joywire
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
 /datum/design/cyberimp_nutriment
 	name = "Nutriment Pump Implant"
 	desc = "This implant with synthesize and pump into your bloodstream a small amount of nutriment when you are starving."
@@ -465,7 +476,7 @@
 	desc = "Makes death amusing."
 	id = "implant_trombone"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/glass = 500, /datum/material/bananium = 500)
+	materials = list(/datum/material/glass = 500, /datum/material/hellstone = 500)
 	build_path = /obj/item/implantcase/sad_trombone
 	category = list("Medical Designs")
 

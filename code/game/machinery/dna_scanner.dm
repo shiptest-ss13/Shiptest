@@ -6,8 +6,8 @@
 	base_icon_state = "scanner"
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 50
-	active_power_usage = 300
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	occupant_typecache = list(/mob/living, /obj/item/bodypart/head, /obj/item/organ/brain)
 	circuit = /obj/item/circuitboard/machine/dnascanner
 	var/locked = FALSE

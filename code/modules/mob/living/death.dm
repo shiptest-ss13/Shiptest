@@ -1,4 +1,4 @@
-/mob/living/gib(no_brain, no_organs, no_bodyparts)
+/mob/living/gib(no_brain, no_organs, no_bodyparts, safe_gib = FALSE)
 	var/prev_lying = lying_angle
 	if(stat != DEAD)
 		death(TRUE)
@@ -12,7 +12,8 @@
 		spread_bodyparts(no_brain, no_organs)
 
 	spawn_gibs(no_bodyparts)
-	qdel(src)
+	if(!safe_gib)
+		qdel(src)
 
 /mob/living/proc/gib_animation()
 	return

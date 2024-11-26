@@ -62,6 +62,10 @@
 	icon_state = "hardhat_orange"
 	dog_fashion = null
 
+/obj/item/clothing/head/hardhat/purple
+	icon_state = "hardhat_purple"
+	dog_fashion = null
+
 /obj/item/clothing/head/hardhat/red
 	name = "firefighter helmet"
 	icon_state = "hardhat_red"
@@ -116,7 +120,7 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 
 /obj/item/clothing/head/hardhat/mining
 	name = "mining helmet"

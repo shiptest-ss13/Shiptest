@@ -9,8 +9,8 @@
 	icon_state = "tele0"
 	base_icon_state = "tele"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 10
-	active_power_usage = 2000
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_HIGH
 	circuit = /obj/item/circuitboard/machine/teleporter_hub
 	var/accuracy = 0
 	var/obj/machinery/teleport/station/power_station
@@ -106,8 +106,8 @@
 	icon_state = "controller"
 	base_icon_state = "controller"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 10
-	active_power_usage = 2000
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_HIGH
 	circuit = /obj/item/circuitboard/machine/teleporter_station
 	var/engaged = FALSE
 	var/obj/machinery/computer/teleporter/teleporter_console

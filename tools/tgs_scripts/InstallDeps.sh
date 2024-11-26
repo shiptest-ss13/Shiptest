@@ -7,7 +7,6 @@ has_cargo="$(command -v ~/.cargo/bin/cargo)"
 has_sudo="$(command -v sudo)"
 has_curl="$(command -v curl)"
 has_grep="$(command -v grep)"
-has_youtubedl="$(command -v youtube-dl)"
 has_pip3="$(command -v pip3)"
 set -e
 set -x
@@ -33,19 +32,14 @@ if ! [ -x "$has_cargo" ]; then
 	. ~/.profile
 fi
 
-# install or update youtube-dl when not present, or if it is present with pip3,
-# which we assume was used to install it
-if ! [ -x "$has_youtubedl" ]; then
-	echo "Installing youtube-dl with pip3..."
-	if ! [ -x "$has_sudo" ]; then
-		apt-get update
-		apt-get install -y python3 python3-pip
-	else
-		sudo apt-get update
-		sudo apt-get install -y python3 python3-pip
-	fi
-	pip3 install youtube-dl --break-system-packages
-elif [ -x "$has_pip3" ]; then
-	echo "Ensuring youtube-dl is up-to-date with pip3..."
-	pip3 install youtube-dl -U --break-system-packages
+# install or update yt-dlp when not present
+echo "Installing/updating yt-dlp..."
+if ! [ -x "$has_sudo" ]; then
+	apt-get update
+	apt-get install -y yt-dlp
+else
+	sudo apt-get update
+	sudo apt-get install -y yt-dlp
 fi
+
+

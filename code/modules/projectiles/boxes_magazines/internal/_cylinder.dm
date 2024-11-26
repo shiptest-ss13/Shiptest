@@ -2,7 +2,7 @@
 	name = "revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = ".357"
-	max_ammo = 7
+	max_ammo = 6
 	instant_load = TRUE
 
 /obj/item/ammo_box/magazine/internal/cylinder/get_round(keep = FALSE, counter_clockwise = FALSE)
@@ -66,7 +66,7 @@
 		var/list/ammo_list_no_empty = ammo_list(FALSE)
 		listclearnulls(ammo_list_no_empty)
 		for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
-			if(!((instant_load && attacking_box.instant_load) || (ammo_list_no_empty.len >= max_ammo) || do_after_mob(user, list(attacking_box), 1 SECONDS))) //stupid work around for revolvers
+			if(!((instant_load && attacking_box.instant_load) || (ammo_list_no_empty.len >= max_ammo) || do_after(user, 1 SECONDS, attacking_box))) //stupid work around for revolvers
 				break
 			var/did_load = give_round(casing_to_insert, replace_spent)
 			if(!did_load)

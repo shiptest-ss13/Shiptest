@@ -21,7 +21,6 @@
 #define DEADMIN_POSITION_SECURITY (1<<18)
 #define DEADMIN_POSITION_SILICON (1<<19)
 #define SOUND_ENDOFROUND (1<<20)
-#define ADMIN_IGNORE_CULT_GHOST (1<<21)
 #define SPLIT_ADMIN_TABS (1<<22)
 #define FAST_MC_REFRESH (1<<23)
 
@@ -129,20 +128,19 @@
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
 
-#warn ensure that these defines are universally used (post-update from master)
 #warn file could do with some sorting.
 // Strings used as keys in the "features" list on mobs, signifying various attributes.
 // THESE SHOULD NOT OVERLAP WITH THE mutant_string VARIABLE
 // ON ANY /datum/sprite_accessory/mutant_part SUBTYPE!!
 // THINGS WILL BREAK!!!!
-#define FEATURE_MUTANT_COLOR "mcolor"
-#define FEATURE_MUTANT_COLOR2 "mcolor2"
-#define FEATURE_BODY_SIZE "body_size"
+#define FEATURE_MUTANT_COLOR "feature_mcolor"
+#define FEATURE_MUTANT_COLOR2 "feature_mcolor2"
+#define FEATURE_BODY_SIZE "feature_body_size"
 
-#define FEATURE_FLAVOR_TEXT "flavor_text"
-#define FEATURE_IPC_CHASSIS "ipc_chassis"
-#define FEATURE_IPC_BRAIN "ipc_brain"
-#define FEATURE_LEGS_TYPE "legs"
+#define FEATURE_FLAVOR_TEXT "feature_flavor_text"
+#define FEATURE_IPC_CHASSIS "feature_ipc_chassis"
+#define FEATURE_IPC_BRAIN "feature_ipc_brain"
+#define FEATURE_LEGS_TYPE "feature_legs"
 
 
 //Hairstyles
@@ -195,6 +193,22 @@ GLOBAL_LIST_INIT(jumpsuitlist, list(PREF_SUIT, PREF_SKIRT, PREF_ALTSUIT, PREF_GR
 #define PREF_COATEXOWEAR "Departmental Winter Coat"
 GLOBAL_LIST_INIT(exowearlist, list(PREF_NOEXOWEAR, PREF_EXOWEAR, PREF_ALTEXOWEAR, PREF_COATEXOWEAR))
 
+//favorite cigarette brand
+#define PREF_CIG_SPACE "Space Cigarettes"
+#define PREF_CIG_DROMEDARY "DromedaryCo Cigarettes"
+#define PREF_CIG_UPLIFT "Uplift Smooth Cigarettes"
+#define PREF_CIG_ROBUST "Robust Cigarettes"
+#define PREF_CIG_ROBUSTGOLD "Robust Gold Cigarettes"
+#define PREF_CIG_CARP "Carp Classic Cigarettes"
+#define PREF_CIG_MIDORI "Midori Taboko Rollies"
+#define PREF_CIGAR "Premium Cigars"
+#define PREF_CIGAR_SOLAR "Solarian Cigars"
+#define PREF_CIGAR_COHIBA "Cohiba Cigars"
+#define PREF_VAPE "Vape Pen"
+#define PREF_PIPE "Fancy Pipe"
+
+GLOBAL_LIST_INIT(valid_smoke_types, sortList(list(PREF_CIG_SPACE, PREF_CIG_DROMEDARY, PREF_CIG_UPLIFT, PREF_CIG_ROBUST, PREF_CIG_ROBUSTGOLD, PREF_CIG_CARP, PREF_CIG_MIDORI, PREF_CIGAR, PREF_CIGAR_SOLAR, PREF_CIGAR_COHIBA, PREF_VAPE, PREF_PIPE)))
+
 // Body sizes
 #define BODY_SIZE_NORMAL "Normal"
 #define BODY_SIZE_SHORT "Short"
@@ -203,32 +217,12 @@ GLOBAL_LIST_INIT(exowearlist, list(PREF_NOEXOWEAR, PREF_EXOWEAR, PREF_ALTEXOWEAR
 #define BODY_SIZE_NORMAL_SCALE 1
 #define BODY_SIZE_SHORT_SCALE 0.93
 #define BODY_SIZE_TALL_SCALE 1.03
+
 GLOBAL_LIST_INIT(body_sizes, list(BODY_SIZE_NORMAL = BODY_SIZE_NORMAL_SCALE, BODY_SIZE_SHORT = BODY_SIZE_SHORT_SCALE, BODY_SIZE_TALL = BODY_SIZE_TALL_SCALE))
 
 // IPC brains
 GLOBAL_LIST_INIT(ipc_brain_list, list("Posibrain", "Man-Machine Interface"))
 
-
-GLOBAL_LIST_INIT(color_list_ethereal, list(
-	"Red" = "ff4d4d",
-	"Faint Red" = "ffb3b3",
-	"Dark Red" = "9c3030",
-	"Orange" = "ffa64d",
-	"Burnt Orange" = "cc4400",
-	"Bright Yellow" = "ffff99",
-	"Dull Yellow" = "fbdf56",
-	"Faint Green" = "ddff99",
-	"Green" = "97ee63",
-	"Seafoam Green" = "00fa9a",
-	"Dark Green" = "37835b",
-	"Cyan Blue" = "00ffff",
-	"Faint Blue" = "b3d9ff",
-	"Blue" = "3399ff",
-	"Dark Blue" = "6666ff",
-	"Purple" = "ee82ee",
-	"Dark Fuschia" = "cc0066",
-	"Pink" = "ff99cc",
-	"White" = "f2f2f2",))
 
 GLOBAL_LIST_INIT(ghost_forms_with_directions_list, list(
 	"ghost",

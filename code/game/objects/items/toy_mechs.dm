@@ -535,10 +535,10 @@
 	special_attack_type = SPECIAL_ATTACK_DAMAGE
 	special_attack_cry = "ROCKET BARRAGE"
 
-/obj/item/toy/prize/mauler
-	name = "toy Mauler"
+/obj/item/toy/prize/touro
+	name = "toy Touro"
 	desc = "9/13"
-	icon_state = "maulertoy"
+	icon_state = "tourotoy"
 	max_combat_health = 7 //500 integrity
 	special_attack_type = SPECIAL_ATTACK_DAMAGE
 	special_attack_cry = "BULLET STORM"

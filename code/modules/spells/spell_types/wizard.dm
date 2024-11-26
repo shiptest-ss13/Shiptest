@@ -132,12 +132,6 @@
 	sound1 = 'sound/magic/blink.ogg'
 	sound2 = 'sound/magic/blink.ogg'
 
-/obj/effect/proc_holder/spell/targeted/turf_teleport/blink/cult
-	name = "quickstep"
-
-	charge_max = 100
-	clothes_req = TRUE
-
 /obj/effect/proc_holder/spell/targeted/area_teleport/teleport
 	name = "Teleport"
 	desc = "This spell teleports you to an area of your selection."
@@ -194,20 +188,6 @@
 	summon_type = list(/mob/living/simple_animal/hostile/carp)
 	cast_sound = 'sound/magic/summon_karp.ogg'
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/construct
-	name = "Artificer"
-	desc = "This spell conjures a construct which may be controlled by Shades."
-	school = "conjuration"
-	charge_max = 600
-	clothes_req = FALSE
-	invocation = "none"
-	invocation_type = "none"
-	range = 0
-	summon_type = list(/obj/structure/constructshell)
-	action_icon = 'icons/mob/actions/actions_cult.dmi'
-	action_icon_state = "artificer"
-	cast_sound = 'sound/magic/summonitems_generic.ogg'
-
 /obj/effect/proc_holder/spell/aoe_turf/conjure/creature
 	name = "Summon Creature Swarm"
 	desc = "This spell tears the fabric of reality, allowing horrific daemons to spill forth."
@@ -223,12 +203,6 @@
 	summon_type = list(/mob/living/simple_animal/hostile/netherworld)
 	cast_sound = 'sound/magic/summonitems_generic.ogg'
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/creature/cult
-	name = "Summon Creatures (DANGEROUS)"
-	clothes_req = TRUE
-	charge_max = 5000
-	summon_amt = 2
-
 /obj/effect/proc_holder/spell/aoe_turf/repulse
 	name = "Repulse"
 	desc = "This spell throws everything around the user away."
@@ -242,46 +216,34 @@
 	sound = 'sound/magic/repulse.ogg'
 	var/maxthrow = 5
 	var/sparkle_path = /obj/effect/temp_visual/gravpush
-	var/anti_magic_check = TRUE
 	var/repulse_force = MOVE_FORCE_EXTREMELY_STRONG
-
+	var/stun_amt = 5
 	action_icon_state = "repulse"
 
-/obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/targets,mob/user = usr, stun_amt = 5)
+/obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/hit_turfs, mob/user = usr)
 	var/list/thrownatoms = list()
-	var/atom/throwtarget
 	var/distfromcaster
 	playMagSound()
-	for(var/atom/movable/hit_target as anything in targets) //Done this way so things don't get thrown all around hilariously.
-		thrownatoms += hit_target
 
-	for(var/am in thrownatoms)
-		var/atom/movable/AM = am
+	for(var/turf/T in hit_turfs)
+		for(var/atom/movable/hit_target in T.contents)
+			thrownatoms += hit_target
+
+	for(var/thrown_atom in thrownatoms)
+		if(!ismovable(thrown_atom))
+			continue
+		var/atom/movable/AM = thrown_atom
 		if(AM == user || AM.anchored)
 			continue
-
-		if(ismob(AM))
-			var/mob/M = AM
-			if(M.anti_magic_check(anti_magic_check, FALSE))
-				continue
-
-		throwtarget = get_edge_target_turf(user, get_dir(user, get_step_away(AM, user)))
-		distfromcaster = get_dist(user, AM)
-		if(distfromcaster == 0)
-			if(isliving(AM))
-				var/mob/living/M = AM
-				M.Paralyze(40)
-				M.adjustBruteLoss(5)
-				shake_camera(AM, 2, 1)
-				to_chat(M, "<span class='userdanger'>You're slammed into the floor by [user]!</span>")
-		else
-			new sparkle_path(get_turf(AM), get_dir(user, AM)) //created sparkles will disappear on their own
-			if(isliving(AM))
-				var/mob/living/M = AM
-				shake_camera(AM, 2, 1)
+		var/atom/throwtarget = get_edge_target_turf(user, get_dir(user, get_step_away(AM, user)))
+		new sparkle_path(get_turf(AM), get_dir(user, AM)) //created sparkles will disappear on their own
+		if(isliving(AM))
+			var/mob/living/M = AM
+			shake_camera(AM, 2, 1)
+			if(stun_amt)
 				M.Paralyze(stun_amt)
-				to_chat(M, "<span class='userdanger'>You're thrown back by [user]!</span>")
-			AM.safe_throw_at(throwtarget, ((clamp((maxthrow - (clamp(distfromcaster - 2, 0, distfromcaster))), 3, maxthrow))), 1,user, force = repulse_force)//So stuff gets tossed around at the same time.
+			to_chat(M, "<span class='userdanger'>You're thrown back by [user]!</span>")
+		AM.safe_throw_at(throwtarget, ((clamp((maxthrow - (clamp(distfromcaster - 2, 0, distfromcaster))), 3, maxthrow))), 1,user, force = repulse_force)//So stuff gets tossed around at the same time.
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse/xeno //i fixed conflicts only to find out that this is in the WIZARD file instead of the xeno file?!
 	name = "Tail Sweep"
@@ -297,7 +259,7 @@
 	action_icon = 'icons/mob/actions/actions_xeno.dmi'
 	action_icon_state = "tailsweep"
 	action_background_icon_state = "bg_alien"
-	anti_magic_check = FALSE
+	stun_amt = 0
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse/xeno/cast(list/targets,mob/user = usr)
 	if(iscarbon(user))

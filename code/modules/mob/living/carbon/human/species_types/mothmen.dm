@@ -1,5 +1,5 @@
 /datum/species/moth
-	name = "\improper Mothperson"
+	name = "\improper Moth"
 	id = SPECIES_MOTH
 	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE, HAIR, EMOTE_OVERLAY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
@@ -15,7 +15,7 @@
 	toxic_food = MEAT | RAW | GORE
 	mutanteyes = /obj/item/organ/eyes/compound 	//WS Edit - Compound eyes
 	mutanttongue = /obj/item/organ/tongue/moth //WS Edit - Insectoid language
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	species_language_holder = /datum/language_holder/moth
 	loreblurb = "Bug-mammal hybrids resembling Sol's lepidopterans. They share the least DNA with baseline humans of any human-derived geneline, being significant portions insect and modified whole-cloth DNA. Their classification as another human geneline or as something else is highly debated. All evidence that would point to their origin– which is presumably a genelab somewhere– has seemingly disappeared into thin air. Mothpeople themselves have no centralized culture or homeworld, leading to a fractured existence amongst the stars."
 	wings_icons = list("Megamoth", "Mothra")
@@ -71,11 +71,6 @@
 		H.adjustToxLoss(3)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 	return ..()
-
-/datum/species/moth/check_species_weakness(obj/item/weapon, mob/living/attacker)
-	if(istype(weapon, /obj/item/melee/flyswatter))
-		return 9 //flyswatters deal 10x damage to moths
-	return 0
 
 /datum/species/space_move(mob/living/carbon/human/H)
 	. = ..()

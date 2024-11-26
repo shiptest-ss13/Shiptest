@@ -151,7 +151,7 @@
 /obj/singularity/energy_ball/orbit(obj/singularity/energy_ball/target)
 	if (istype(target))
 		target.orbiting_balls += src
-		GLOB.poi_list -= src
+		SSpoints_of_interest.remove_point_of_interest(src)
 		target.dissipate_strength = target.orbiting_balls.len
 	. = ..()
 
@@ -279,12 +279,6 @@
 
 		else if(closest_type >= BLOB)
 			continue
-
-		else if(istype(A, /obj/structure/blob))
-			var/obj/structure/blob/B = A
-			if(!(B.obj_flags & BEING_SHOCKED))
-				closest_type = BLOB
-				closest_atom = A
 
 		else if(closest_type >= STRUCTURE)
 			continue

@@ -58,6 +58,12 @@
 	reagent_id = /datum/reagent/firefighting_foam
 	tank_volume = 500
 
+/obj/structure/reagent_dispensers/foamtank/antirad
+	name = "anti-radiation foam tank"
+	desc = "A tank full of decontamination foam"
+	reagent_id = /datum/reagent/anti_radiation_foam
+	tank_volume = 1000
+
 /obj/structure/reagent_dispensers/fueltank
 	name = "fuel tank"
 	desc = "A tank full of industrial welding fuel. Do not consume."
@@ -67,9 +73,6 @@
 /obj/structure/reagent_dispensers/fueltank/boom()
 	explosion(get_turf(src), 0, 1, 5, flame_range = 5)
 	qdel(src)
-
-/obj/structure/reagent_dispensers/fueltank/blob_act(obj/structure/blob/B)
-	boom()
 
 /obj/structure/reagent_dispensers/fueltank/ex_act()
 	boom()
@@ -160,12 +163,6 @@
 	desc = "Beer is liquid bread, it's good for you..."
 	icon_state = "beer"
 	reagent_id = /datum/reagent/consumable/ethanol/beer
-
-/obj/structure/reagent_dispensers/beerkeg/blob_act(obj/structure/blob/B)
-	explosion(src.loc,0,3,5,7,10)
-	if(!QDELETED(src))
-		qdel(src)
-
 
 /obj/structure/reagent_dispensers/virusfood
 	name = "virus food dispenser"
