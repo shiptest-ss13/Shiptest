@@ -25,12 +25,6 @@
 	id = "rockplanet_shippingdock"
 	suffix = "rockplanet_shippingdock.dmm"
 
-/datum/map_template/ruin/rockplanet/nomadcrash
-	name = "Nomad Crash"
-	description = "A Crashed Arrow & Axe Interceptor. A long forgotten Crew. They tried their best to survive..."
-	id = "rockplanet_nomadcrash"
-	suffix = "rockplanet_nomadcrash.dmm"
-
 /datum/map_template/ruin/rockplanet/distillery
 	name = "Frontiersman Distillery"
 	description = "A former pre-ICW era Nanotrasen outpost converted into a moonshine distillery by Frontiersman bootleggers."
