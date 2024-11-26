@@ -12,7 +12,7 @@
 /obj/projectile/bullet/c22lr/hp
 	name = ".22LR bullet"
 	damage = 22
-	armour_penetration = -65
+	armour_penetration = -60
 	ricochet_chance = 0
 	speed_mod = BULLET_SPEED_HP_MOD
 
