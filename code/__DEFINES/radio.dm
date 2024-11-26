@@ -62,8 +62,7 @@
 #define FREQ_ATMOS_CONTROL 1439 // air alarms <-> vents and scrubbers
 
 #define MIN_FREQ 1441 // ------------------------------------------------------
-// Only the 1441 to 1489 range is freely available for general conversation.
-// This represents 1/8th of the available spectrum.
+// Only the 1441 to 1689 range is freely available for general conversation.
 
 #define FREQ_ATMOS_STORAGE 1441
 #define FREQ_NAV_BEACON 1445
