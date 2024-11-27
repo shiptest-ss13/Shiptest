@@ -288,6 +288,7 @@
 "bp" = (
 /obj/structure/bed/roller,
 /obj/effect/turf_decal/corner/transparent/blue/mono,
+/obj/structure/closet/body_bag,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "bt" = (
@@ -434,6 +435,15 @@
 	pixel_y = 3
 	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = -10;
+	name = "door lock";
+	normaldoorcontrol = 1;
+	id = "vb2";
+	specialfunctions = 4
+	},
 /turf/open/floor/plastic,
 /area/ship/crew/crewtwo)
 "bZ" = (
@@ -1609,6 +1619,9 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "hx" = (
@@ -1843,6 +1856,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "jh" = (
@@ -2650,6 +2664,15 @@
 /obj/structure/sign/poster/contraband/mothpill{
 	pixel_y = 30
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = 12;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "mR" = (
@@ -3151,6 +3174,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3979,7 +4005,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/grunge{
 	dir = 2;
-	name = "Cargo"
+	name = "Cargo";
+	req_access = list(31)
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -6338,6 +6365,7 @@
 	pixel_y = 16;
 	pixel_x = -8
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "DU" = (
@@ -6365,6 +6393,9 @@
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
 	name = "Medbay"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -8825,7 +8856,8 @@
 	},
 /obj/machinery/door/airlock/mining{
 	dir = 4;
-	name = "Mech Bay"
+	name = "Mech Bay";
+	req_access = list(31)
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -9884,6 +9916,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "Ut" = (
@@ -10193,6 +10228,7 @@
 /obj/structure/bed/roller,
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/machinery/light/directional/north,
+/obj/structure/closet/body_bag,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "We" = (
