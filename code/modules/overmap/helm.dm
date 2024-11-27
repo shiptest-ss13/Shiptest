@@ -276,6 +276,7 @@
 				return
 			if(!current_ship.Rename(new_name))
 				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed.")
+				return
 			update_static_data(usr, ui)
 			return
 		if("reload_ship")
