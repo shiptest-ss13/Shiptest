@@ -315,11 +315,10 @@
 			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
 			return
 
-		if(!I.tool_start_check(user, amount=0))
-			return
-
 		to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
-		if(I.use_tool(src, user, 40, volume=50))
+		while(obj_integrity < max_integrity)
+			if(!I.use_tool(src, user, 4 SECONDS, 2, 50))
+				break
 			obj_integrity = max(obj_integrity + 20, max_integrity)
 			to_chat(user, "<span class='notice'>You repair [src].</span>")
 
