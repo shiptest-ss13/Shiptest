@@ -312,11 +312,12 @@
 
 /obj/item/clothing/neck/dogtag
 	name = "dogtag"
-	desc = "lo"
+	desc = "A nondescript dogtag."
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "dogtag"
 	resistance_flags = FIRE_PROOF
 	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
 
 /obj/item/clothing/neck/dogtag/frontier
 	name = "frontiersman dogtag"
