@@ -215,18 +215,19 @@
 /obj/structure/closet/wall/directional/north{
 	name = "anesthesia locker"
 	},
-/obj/item/clothing/under/rank/medical/gown/green{
-	pixel_x = 5
-	},
-/obj/item/clothing/under/rank/medical/gown/green{
-	pixel_y = -5;
-	pixel_x = 5
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/item/clothing/mask/breath/medical{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/tank/internals/anesthetic{
+	pixel_x = 2;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "cm" = (
@@ -1561,13 +1562,12 @@
 /obj/structure/closet/wall/directional/north{
 	name = "patient's locker"
 	},
-/obj/item/tank/internals/anesthetic{
-	pixel_x = 2;
-	pixel_y = -2
+/obj/item/clothing/under/rank/medical/gown/green{
+	pixel_x = 5
 	},
-/obj/item/clothing/mask/breath/medical{
-	pixel_x = -4;
-	pixel_y = 4
+/obj/item/clothing/under/rank/medical/gown/green{
+	pixel_y = -5;
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
