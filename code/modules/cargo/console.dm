@@ -89,6 +89,13 @@
 		if(!charge_account)
 			reconnect()
 
+/obj/machinery/computer/cargo/ui_static_data(mob/user)
+	. = ..()
+	if(outpost_docked)
+		generate_pack_data()
+	else
+		supply_pack_data = list()
+
 /obj/machinery/computer/cargo/ui_data(mob/user)
 	var/canBeacon = beacon && (isturf(beacon.loc) || ismob(beacon.loc))//is the beacon in a valid location?
 	var/list/data = list()
@@ -118,10 +125,6 @@
 	else if (use_beacon && !canBeacon)
 		message = "BEACON ERROR: MUST BE EXPOSED"//beacon's loc/user's loc must be a turf
 	data["message"] = message
-	if(outpost_docked)
-		generate_pack_data()
-	else
-		supply_pack_data = list()
 
 	data["supplies"] = supply_pack_data
 	if (cooldown > 0)//cooldown used for printing beacons
@@ -176,7 +179,7 @@
 				beacon.name = "Supply Pod Beacon #[printed_beacons]"
 		if("add")
 			var/area/ship/current_area = get_area(src)
-			if(istype(current_ship.docked_to, /datum/overmap/outpost/outpost_docked))
+			if(istype(current_ship.docked_to, /datum/overmap/outpost))
 				var/datum/supply_pack/current_pack = locate(params["ref"])
 				var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
 				var/total_cost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : current_pack.cost
@@ -214,7 +217,7 @@
 					else if(issilicon(usr))
 						name = usr.real_name
 						rank = "Silicon"
-					var/datum/supply_order/SO = new(current_pack, name, rank, usr.ckey, "")
+					var/datum/supply_order/SO = new(current_pack, name, rank, usr.ckey, "", ordering_outpost = current_ship.docked_to)
 					new /obj/effect/pod_landingzone(landing_turf, podType, SO)
 					update_appearance() // ??????????????????
 					return TRUE
