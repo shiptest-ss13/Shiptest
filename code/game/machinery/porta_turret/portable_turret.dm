@@ -350,7 +350,10 @@
 			power_change()
 		return
 
-	if(I.tool_behaviour == TOOL_MULTITOOL && !locked)
+	if(I.tool_behaviour == TOOL_MULTITOOL)
+		if(locked)
+			to_chat(user, span_warning("The controls are locked."))
+			return
 		if(!multitool_check_buffer(user, I))
 			return
 		var/obj/item/multitool/M = I
@@ -359,15 +362,27 @@
 		return
 
 	if(istype(I, /obj/item/card/id))
-		//Behavior lock/unlock mangement
-		if(allowed(user))
-			locked = !locked
-			to_chat(user, "<span wclass='notice'>Controls are now [locked ? "locked" : "unlocked"].</span>")
-		else
-			to_chat(user, "<span class='alert'>Access denied.</span>")
+		toggle_lock(user)
 		return
 
 	return ..()
+
+/obj/machinery/porta_turret/AltClick(mob/user)
+	. = ..()
+	toggle_lock(user)
+
+/obj/machinery/porta_turret/proc/toggle_lock(mob/user)
+	if(!user.canUseTopic(src, !issilicon(user)))
+		return
+	if(!allowed(user))
+		to_chat(user, span_alert("Access denied."))
+		return
+	if(obj_flags & EMAGGED || (machine_stat & (BROKEN|MAINT)))
+		to_chat(user, span_warning("The turret is unresponsive!"))
+		return
+
+	locked = !locked
+	update_appearance()
 
 /obj/machinery/porta_turret/emag_act(mob/user)
 	if(obj_flags & EMAGGED)

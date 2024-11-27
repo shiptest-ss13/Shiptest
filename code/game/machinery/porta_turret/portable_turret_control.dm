@@ -80,20 +80,28 @@
 			to_chat(user, "<span class='notice'>You link \the [M.buffer] with \the [src].</span>")
 			return
 
-	if (issilicon(user))
+	if(issilicon(user))
 		return attack_hand(user)
 
-	// trying to unlock the interface
-	if (in_range(src, user))
-		if (allowed(usr))
-			if(obj_flags & EMAGGED)
-				to_chat(user, "<span class='warning'>The turret control is unresponsive!</span>")
-				return
+	if(istype(I, /obj/item/card/id))
+		toggle_lock(user)
 
-			locked = !locked
-			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the panel.</span>")
-		else
-			to_chat(user, "<span class='alert'>Access denied.</span>")
+/obj/machinery/turretid/AltClick(mob/user)
+	. = ..()
+	toggle_lock(user)
+
+/obj/machinery/turretid/proc/toggle_lock(mob/user)
+	if(!user.canUseTopic(src, !issilicon(user)))
+		return
+	if(!allowed(user))
+		to_chat(user, span_alert("Access denied."))
+		return
+	if(obj_flags & EMAGGED || (machine_stat & (BROKEN|MAINT)))
+		to_chat(user, span_warning("The turret control is unresponsive!"))
+		return
+
+	locked = !locked
+	update_appearance()
 
 /obj/machinery/turretid/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
