@@ -62,7 +62,6 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
 /obj/machinery/door/airlock/external,
-/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "bI" = (
@@ -240,7 +239,6 @@
 /obj/effect/turf_decal/siding{
 	color = "#730622"
 	},
-/obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/bench/grey/directional/south{
 	color = "#ABB0B8"
@@ -268,11 +266,11 @@
 /area/ship/crew/cryo)
 "fW" = (
 /obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 5;
+	dir = 6;
 	id = "Bansheeturrets"
 	},
-/turf/closed/wall/mineral/titanium,
-/area/ship/cargo)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/external/dark)
 "gf" = (
 /obj/machinery/power/terminal,
 /obj/effect/turf_decal/techfloor{
@@ -299,6 +297,7 @@
 /obj/effect/spawner/random/trash/cigbutt,
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "hC" = (
@@ -451,7 +450,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/decal/cleanable/oil/slippery,
-/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "ko" = (
@@ -679,12 +677,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "nK" = (
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/structure/closet/secure_closet/armorycage{
 	anchored = 1;
 	can_be_unanchored = 1;
@@ -697,6 +689,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark/end{
 	dir = 1
 	},
+/obj/item/ammo_box/magazine/m57_39_asp,
+/obj/item/ammo_box/magazine/m57_39_asp,
+/obj/item/ammo_box/magazine/m57_39_asp,
+/obj/item/ammo_box/magazine/m57_39_asp,
+/obj/item/ammo_box/magazine/m57_39_asp,
+/obj/item/ammo_box/magazine/m57_39_asp,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "or" = (
@@ -755,12 +753,14 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "oF" = (
-/obj/machinery/porta_turret/ship/syndicate/weak{
-	dir = 6;
-	id = "Bansheeturrets"
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Privacy Shutters";
+	id = "Bansheeprivacyshutters"
 	},
-/turf/closed/wall/mineral/titanium,
-/area/ship/cargo)
+/turf/open/floor/plating,
+/area/ship/bridge)
 "oR" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
@@ -807,7 +807,7 @@
 	color = "#730622";
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "pk" = (
@@ -852,6 +852,7 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/light/small/directional/east,
 /obj/item/tank/jetpack/carbondioxide,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "qq" = (
@@ -1170,10 +1171,11 @@
 /area/ship/engineering)
 "xF" = (
 /obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
-/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/effect/turf_decal/industrial/fire/cee,
 /obj/effect/turf_decal/siding/thinplating/dark/end,
+/obj/machinery/airalarm/directional/west,
+/obj/item/gun/ballistic/automatic/pistol/asp/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/asp/no_mag,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "xS" = (
@@ -1470,9 +1472,6 @@
 	},
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/gloves/color/black,
-/obj/item/clothing/head/beret/highlander{
-	pixel_y = 9
-	},
 /obj/item/clothing/head/beret/black{
 	pixel_y = 9;
 	pixel_x = 8
@@ -1680,13 +1679,19 @@
 /obj/effect/turf_decal/siding{
 	color = "#730622"
 	},
-/obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "Ic" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
+"Ix" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 5;
+	id = "Bansheeturrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/external/dark)
 "IQ" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -1944,12 +1949,11 @@
 /area/ship/cargo)
 "MT" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
-/obj/machinery/firealarm/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/filingcabinet{
 	density = 0;
 	dir = 1;
-	pixel_x = -13
+	pixel_x = -10
 	},
 /obj/item/storage/fancy/cigarettes/cigpack_syndicate,
 /obj/item/lighter/enigma,
@@ -2023,7 +2027,7 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/west,
-/obj/machinery/cryopod/syndicate{
+/obj/machinery/cryopod{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -2112,7 +2116,6 @@
 	},
 /obj/structure/table/greyscale,
 /obj/machinery/fax/syndicate,
-/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "OQ" = (
@@ -2229,6 +2232,7 @@
 /obj/structure/chair/bench/grey/directional/north{
 	color = "#ABB0B8"
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "Rz" = (
@@ -2283,14 +2287,8 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 28
 	},
-/obj/machinery/light_switch{
-	pixel_y = 23;
-	name = "External Lighting Switch";
-	color = "#efbc43";
-	pixel_x = 11
-	},
 /turf/open/floor/plating,
-/area/ship/external/dark)
+/area/ship/engineering)
 "SD" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/plasma/reinforced{
@@ -3031,7 +3029,7 @@ bT
 SG
 UL
 Oy
-bT
+oF
 eV
 Ga
 yV
@@ -3056,7 +3054,7 @@ bT
 Xg
 aY
 MT
-bT
+oF
 HM
 Ga
 ph
@@ -3229,7 +3227,7 @@ pM
 pM
 pM
 pM
-fW
+Ao
 oR
 Xf
 MK
@@ -3237,7 +3235,7 @@ kF
 MA
 oR
 oR
-oF
+Ao
 MU
 pM
 pM
@@ -3402,7 +3400,7 @@ pM
 pM
 pM
 pM
-Sc
+Ix
 Sc
 iG
 SR
@@ -3414,7 +3412,7 @@ oR
 SR
 kP
 Sc
-Sc
+fW
 pM
 pM
 pM
