@@ -147,34 +147,27 @@
 			return TRUE
 		if("power")
 			toggle_on(usr)
-			return TRUE
 		if("mode")
 			toggle_lethal(usr)
-			return TRUE
-
 		if("toggle_dangerous")
 			turret_flags ^= TURRET_FLAG_SHOOT_DANGEROUS_ONLY
-			return TRUE
 		if("toggle_retaliate")
 			turret_flags ^= TURRET_FLAG_SHOOT_RETALIATE
-			return TRUE
+
 
 		if("toggle_fauna")
 			turret_flags ^= TURRET_FLAG_SHOOT_FAUNA
-			return TRUE
 		if("toggle_humans")
 			turret_flags ^= TURRET_FLAG_SHOOT_HUMANS
-			return TRUE
 		if("toggle_silicons")
 			turret_flags ^= TURRET_FLAG_SHOOT_SILICONS
-			return TRUE
-
 		if("toggle_nonfaction")
 			turret_flags ^= TURRET_FLAG_SHOOT_NONFACTION
-			return TRUE
 		if("toggle_specificfaction")
 			turret_flags ^= TURRET_FLAG_SHOOT_SPECIFIC_FACTION
-			return TRUE
+
+		else
+			return
 
 	update_turrets()
 

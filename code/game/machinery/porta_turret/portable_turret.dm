@@ -427,6 +427,7 @@
 	retaliating = TRUE
 
 /obj/machinery/porta_turret/bullet_act(obj/projectile/hitting_projectile)
+	. = ..()
 	if(ismob(hitting_projectile.firer))
 		retaliate(hitting_projectile.firer)
 
