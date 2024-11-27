@@ -106,6 +106,16 @@
 	faction = /datum/faction/syndicate/ngr
 	faction_discount = 20
 
+/datum/supply_pack/sec_supply/halberd
+	name = "Energy Halberd Crate"
+	desc = "Contains one Solarian Energy Halberd, for issue to your local Sonnensoldner battalion."
+	cost = 1500
+	contains = list(/obj/item/energyhalberd)
+	crate_name = "energy halberd crate"
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		Stamina / PVP weapons (intentionally overpriced due to odd balance position of stamina weapons)
 */

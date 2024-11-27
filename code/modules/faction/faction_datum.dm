@@ -94,7 +94,7 @@
 	short_name = "Indie"
 	prefixes = PREFIX_INDEPENDENT
 
-/datum/faction/scarborough_arms
+/datum/faction/syndicate/scarborough_arms
 	name = "Scarborough Arms"
 	parent_faction = /datum/faction/syndicate
 	prefixes = PREFIX_INDEPENDENT

@@ -97,6 +97,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
 	mag_type = /obj/item/ammo_box/magazine/boomslang/short
 
+/obj/item/storage/guncase/boomslangmilitary
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/boomslang
+	mag_type = /obj/item/ammo_box/magazine/boomslang/short
+
 /obj/item/storage/guncase/rattlesnake
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	mag_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
@@ -117,6 +121,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
 
+/obj/item/storage/guncase/taipan
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/taipan
+	mag_type = /obj/item/ammo_box/magazine/sniper_rounds
+
 /* Etherbor */
 
 /obj/item/storage/guncase/pistol/kalixpistol
@@ -129,6 +137,14 @@
 
 /obj/item/storage/guncase/energy/bg16
 	gun_type = /obj/item/gun/energy/kalix/pgf
+	mag_type = /obj/item/stock_parts/cell/gun/pgf
+
+/obj/item/storage/guncase/energy/hbg7
+	gun_type = /obj/item/gun/energy/kalix/pgf/heavy
+	mag_type = /obj/item/stock_parts/cell/gun/pgf
+
+/obj/item/storage/guncase/energy/hbg7l
+	gun_type = /obj/item/gun/energy/kalix/pgf/heavy/sniper
 	mag_type = /obj/item/stock_parts/cell/gun/pgf
 
 /* Serene Outdoors Guns */
@@ -158,6 +174,22 @@
 /obj/item/storage/guncase/pistol/modelh
 	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
 	mag_type = /obj/item/ammo_box/magazine/modelh
+
+/obj/item/storage/guncase/pistol/pistolec
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/solgov
+	mag_type = /obj/item/ammo_box/magazine/pistol556mm
+
+/obj/item/storage/guncase/ssg669
+	gun_type = /obj/item/gun/ballistic/rifle/solgov
+	mag_type = /obj/item/ammo_box/a858
+
+/obj/item/storage/guncase/claris
+	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/claris
+	mag_type = /obj/item/ammo_box/amagpellet_claris
+
+/obj/item/storage/guncase/gar
+	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/gar
+	mag_type = /obj/item/ammo_box/magazine/gar
 
 /* VI */
 
@@ -228,12 +260,20 @@
 	mag_type = /obj/item/ammo_box/magazine/p16
 
 /obj/item/storage/guncase/cmf4
-	gun_type = /obj/item/gun/ballistic/automatic/marksman/f4/
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/f4
 	mag_type = /obj/item/ammo_box/magazine/f4_308
 
 /obj/item/storage/guncase/cm15
 	gun_type = /obj/item/gun/ballistic/shotgun/cm15
 	mag_type = /obj/item/ammo_box/magazine/cm15_12g
+
+/obj/item/storage/guncase/cmf90
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/f90
+	mag_type = /obj/item/ammo_box/magazine/f90
+
+/obj/item/storage/guncase/cm40
+	gun_type = /obj/item/gun/ballistic/automatic/hmg/cm40
+	mag_type = /obj/item/ammo_box/magazine/cm40_762_40_box
 
 /* Inteq */
 
@@ -271,3 +311,7 @@
 /obj/item/storage/guncase/skm
 	gun_type = /obj/item/gun/ballistic/automatic/assault/skm
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+
+/obj/item/storage/guncase/skm_lmg
+	gun_type = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
+	mag_type = /obj/item/ammo_box/magazine/skm_762_40/drum

@@ -41,7 +41,7 @@
 	desc = "Contains a civilian variant of the Ringneck pistol, produced by Scarborough Arms and chambered in 10mm."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/ringneck)
-	faction = /datum/faction/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough_arms
 
 /datum/supply_pack/gun/cm23
 	name = "CM-23 Pistol Crate"
@@ -71,9 +71,27 @@
 /datum/supply_pack/gun/asp
 	name = "BC-81 'Asp' Crate"
 	desc = "Contains a compact armor-piercing sidearm, chambered in 5.7mm"
-	cost = 3000
+	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/asp)
-	faction = /datum/faction/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough_arms
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/pistolec
+	name = "Pistole 'C' Crate"
+	desc = "Contains a compact solarian-produced sidearm, chambered in 5.56mm HITP. Not to be confused with 5.56x42 CLIP."
+	cost = 1000
+	contains = list(/obj/item/storage/guncase/pistol/pistolec)
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/pistolec
+	name = "Model 'H' Gauss Pistol Crate"
+	desc = "Contains a compact solarian-produced gauss pistol, chambered in ferromagnetic slugs. Remember to sign your necessary forms upon arrival."
+	cost = 2000
+	contains = list(/obj/item/storage/guncase/pistol/modelh)
+	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -103,7 +121,7 @@
 	desc = "Contains a civilian variant of the Viper revolver, chambered in .357 magnum."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/pistol/viper)
-	faction = /datum/faction/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 5
 
 /datum/supply_pack/gun/a357
@@ -111,7 +129,7 @@
 	desc = "Contains a double-action military variant of the Viper revolver, chambered in .357 magnum."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/pistol/a357)
-	faction = /datum/faction/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -134,6 +152,7 @@
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/energy/laser)
 	crate_name = "laser crate"
+	faction = /datum/faction/nt
 
 /datum/supply_pack/gun/mini_energy
 	name = "Mini Energy Gun Crate"
@@ -141,6 +160,8 @@
 	cost = 500
 	contains = list(/obj/item/storage/guncase/pistol/miniegun)
 	crate_name = "laser crate"
+	faction_discount = 20
+	faction = /datum/faction/nt
 
 /datum/supply_pack/gun/energy
 	name = "Energy Gun Crate"
@@ -149,6 +170,7 @@
 	contains = list(/obj/item/storage/guncase/energy/egun)
 	crate_name = "energy gun crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/nt
 
 /datum/supply_pack/gun/ion
 	name = "Ion Rifle Crate"
@@ -157,6 +179,7 @@
 	contains = list(/obj/item/storage/guncase/energy/iongun)
 	crate_name = "ion rifle crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/nt
 
 /datum/supply_pack/gun/laser/kalix/pistol
 	name = "Etherbor SG-8 Beam Pistol Crate"
@@ -164,6 +187,7 @@
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/kalixpistol)
 	crate_name = "beam pistol crate"
+	faction = /datum/faction/pgf
 
 /datum/supply_pack/gun/laser/kalix
 	name = "Etherbor BG-12 Beam Rifle Crate"
@@ -171,6 +195,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/kalixrifle)
 	crate_name = "beam rifle crate"
+	faction = /datum/faction/pgf
 
 /datum/supply_pack/gun/laser/bg16
 	name = "Etherbor BG-16 Beam Rifle Crate"
@@ -209,7 +234,7 @@
 	desc = "For when you need to deal with 2 drunkards the old-fashioned way. Contains a double-barreled shotgun, favored by Bartenders. Warranty voided if sawed off."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/doublebarrel)
-	crate_name = "shotguns crate"
+	crate_name = "shotgun crate"
 	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/conflagration
@@ -217,7 +242,8 @@
 	desc = "For when you need to deal with 6 hooligans and look good doing it. Contains one lever-action shotgun, with a 6 round capacity."
 	cost = 1500
 	contains = list(/obj/item/storage/guncase/conflagration)
-	crate_name = "shotguns crate"
+	crate_name = "shotgun crate"
+	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/hellfire_shotgun
 	name = "Hellfire Shotgun Crate"
@@ -248,7 +274,7 @@
 	contains = list(/obj/item/storage/guncase/bulldog)
 	cost = 4000
 	crate_name = "shotgun crate"
-	faction = /datum/faction/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -282,7 +308,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/cobra)
 	crate_name = "SMG crate"
-	faction = /datum/faction/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 10
 
 /datum/supply_pack/gun/vector
@@ -340,7 +366,7 @@
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/rattlesnake)
 	crate_name = "Machinepistol crate"
-	faction = /datum/faction/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -370,7 +396,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/sidewinder)
 	crate_name = "SMG crate"
-	faction = /datum/faction/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -406,6 +432,7 @@
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/absolution)
 	crate_name = "shotguns crate"
+	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/illestren
 	name = "Illestren Rifle Crate"
@@ -422,31 +449,6 @@
 	contains = list(/obj/item/storage/guncase/beacon)
 	crate_name = "rifle crate"
 	faction = /datum/faction/srm
-
-/datum/supply_pack/gun/scout
-	name = "Scout Sniper Rifle Crate"
-	desc = "Contains a traditional scoped rifle to hunt wildlife and big game from a respectful distance. Chambered in powerful .300 Magnum."
-	cost = 4000
-	contains = list(/obj/item/storage/guncase/scout)
-	crate_name = "rifle crate"
-	faction = /datum/faction/srm
-
-/datum/supply_pack/gun/gauss
-	name = "Prototype Gauss Rifle"
-	desc = "Contains a high-powered prototype armor-piercing gauss rifle. For NT employee use only."
-	cost = 3500
-	contains = list(/obj/item/storage/guncase/gauss)
-	crate_name = "rifle crate"
-	faction = /datum/faction/nt
-	faction_discount = 0
-	faction_locked = TRUE
-
-/datum/supply_pack/gun/boomslang90
-	name = "Boomslang-90 Rifle Crate"
-	desc = "Contains a civilian variant of the Boomslang Sniper rifle- modified with a 2x scope, rather than a sniper scope. Chambered in the powerful 6.5x57mm CLIP."
-	cost = 5000
-	contains = list(/obj/item/storage/guncase/boomslang)
-	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/skm
 	name = "SKM-24 Rifle Crate"
@@ -481,7 +483,7 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hydra)
 	crate_name = "rifle crate"
-	faction = /datum/faction/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -494,6 +496,8 @@
 	faction = /datum/faction/clip
 	faction_discount = 0
 	faction_locked = TRUE
+
+/* Marksman Rifles */
 
 /datum/supply_pack/gun/cmf4
 	name = "CM-F4 Designated Marksman Rifle"
@@ -521,7 +525,7 @@
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/sbr80)
 	crate_name = "dmr crate"
-	faction = /datum/faction/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -532,6 +536,72 @@
 	contains = list(/obj/item/storage/guncase/vickland)
 	crate_name = "dmr crate"
 	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/gauss
+	name = "Prototype Gauss Rifle"
+	desc = "Contains a high-powered prototype armor-piercing gauss rifle, operable with ferromagnetic pellets. For NT employee use only."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/gauss)
+	crate_name = "dmr crate"
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/claris
+	name = "Claris Gauss Rifle"
+	desc = "Contains a high-powered armor-piercing gauss rifle, loaded directly via ferromagnetic pellet speedloaders."
+	cost = 2500
+	contains = list(/obj/item/storage/guncase/claris)
+	crate_name = "dmr crate"
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/boomslang90
+	name = "Boomslang-90 Designated Marksman Rifle Crate"
+	desc = "Contains a civilian variant of the Boomslang Sniper rifle- modified with a 2x scope, rather than a sniper scope. Chambered in the powerful 6.5x57mm CLIP."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/boomslang)
+	crate_name = "dmr crate"
+	faction = /datum/faction/syndicate/scarborough_arms
+
+/datum/supply_pack/gun/boomslang10
+	name = "Boomslang-10 Sniper Rifle Crate"
+	desc = "Contains a military variant of the Boomslang Sniper rifle equipped with an 8x sniper scope, for licenesed buyers only. Chambered in the powerful 6.5x57mm CLIP."
+	cost = 4500
+	contains = list(/obj/item/storage/guncase/boomslangmilitary)
+	crate_name = "marksman rifle crate"
+	faction = /datum/faction/syndicate/scarborough_arms
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/f90
+	name = "CM-F90 Sniper Rifle Crate"
+	desc = "Contains a military sniper rifle equipped with an 8x sniper scope, for Minuteman use only. Chambered in the powerful 6.5x57mm CLIP."
+	cost = 4500
+	contains = list(/obj/item/storage/guncase/cmf90)
+	crate_name = "marksman rifle crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/scout
+	name = "Scout Sniper Rifle Crate"
+	desc = "Contains a traditional scoped rifle to hunt wildlife and big game from a respectful distance. Chambered in powerful .300 Magnum."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/scout)
+	crate_name = "sniper rifle crate"
+	faction = /datum/faction/srm
+
+/datum/supply_pack/gun/ssg669
+	name = "SSG-669C Sniper Rifle Crate"
+	desc = "Contains a traditional scoped rifle to hunt wildlife and big game from a respectful distance. Chambered in powerful .300 Magnum."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/ssg669)
+	crate_name = "sniper rifle crate"
+	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -564,7 +634,7 @@
 	cost = 500
 	contains = list(/obj/item/attachment/energy_bayonet)
 	crate_name = "bayonet crate"
-	faction = /datum/faction/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 0
 	faction_locked = TRUE
 

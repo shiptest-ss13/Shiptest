@@ -91,6 +91,7 @@
 
 /obj/machinery/computer/cargo/ui_static_data(mob/user)
 	. = ..()
+	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
 	if(outpost_docked)
 		generate_pack_data()
 	else
@@ -178,7 +179,6 @@
 				printed_beacons++//printed_beacons starts at 0, so the first one out will be called beacon # 1
 				beacon.name = "Supply Pod Beacon #[printed_beacons]"
 		if("add")
-			var/area/ship/current_area = get_area(src)
 			if(istype(current_ship.docked_to, /datum/overmap/outpost))
 				var/datum/supply_pack/current_pack = locate(params["ref"])
 				var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
