@@ -141,7 +141,7 @@
 	desc = "One set of well-rounded tactical armor. While it does not protect the limbs, the vest is fairly durable. The set includes a helmet and vest."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/vest/marine,
-					/obj/item/clothing/head/helmet/marine)
+					/obj/item/clothing/head/helmet/bulletproof/x11)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -150,6 +150,6 @@
 	desc = "One set of well-rounded medium tactical body armor. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
 	cost = 3000
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium,
-					/obj/item/clothing/head/helmet/marine)
+					/obj/item/clothing/head/helmet/bulletproof/x11)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
