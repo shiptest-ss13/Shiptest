@@ -448,14 +448,8 @@
 	..()
 	if(visualsOnly)
 		return
-	if(istype(H.wear_id, /obj/item/storage/wallet))
-		var/obj/item/storage/wallet/W = H.wear_id
-		if(W.front_id)
-			var/obj/item/card/id/ID = W.GetID()
-			ID.access += list(ACCESS_ROBOTICS)
-	else
-		var/obj/item/card/id/W = H.wear_id
-		W.access += list(ACCESS_ROBOTICS)
+	var/obj/item/card/id/W = H.get_idcard()
+	W.access += list(ACCESS_KITCHEN)
 
 /datum/outfit/job/syndicate/ce/ngr
 	name = "Syndicate - Foreman (New Gorlex Republic)"
