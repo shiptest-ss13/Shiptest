@@ -22,7 +22,7 @@
 /obj/machinery/light/small/directional/west,
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "ac" = (
 /obj/structure/chair/handrail{
 	dir = 4
@@ -67,7 +67,7 @@
 	name = "EVA Storage"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "av" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/storage/equip)
@@ -306,7 +306,7 @@
 "cS" = (
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "cV" = (
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 5
@@ -372,7 +372,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "dr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -522,17 +522,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/box,
 /obj/machinery/power/ship_gravity,
-/obj/structure/platform/industrial{
-	dir = 1
-	},
-/obj/structure/platform/industrial{
-	dir = 8
-	},
-/obj/structure/platform/industrial/corner{
-	dir = 9
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/structure/platform/industrial{
+	dir = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -557,14 +551,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/box,
-/obj/structure/platform/industrial,
-/obj/structure/platform/industrial{
-	dir = 8
-	},
-/obj/structure/platform/industrial/corner,
-/obj/structure/railing{
-	dir = 6
-	},
 /obj/item/storage/toolbox/mechanical{
 	pixel_x = -2;
 	pixel_y = 9
@@ -572,6 +558,12 @@
 /obj/item/storage/toolbox/electrical{
 	pixel_x = 2;
 	pixel_y = 2
+	},
+/obj/structure/platform/industrial{
+	dir = 6
+	},
+/obj/structure/railing{
+	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -960,7 +952,7 @@
 /area/ship/crew/dorm/captain)
 "hK" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "hN" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
@@ -1607,10 +1599,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/platform/industrial{
-	dir = 8
-	},
 /obj/machinery/light/dim/directional/south,
+/obj/structure/platform/industrial{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "nN" = (
@@ -1805,7 +1797,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/mono,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "qf" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -2506,6 +2498,7 @@
 	pixel_x = 8;
 	pixel_y = 17
 	},
+/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "wS" = (
@@ -3004,7 +2997,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "BD" = (
 /obj/effect/turf_decal/corner/opaque/black/half{
 	dir = 4
@@ -3090,7 +3083,7 @@
 	pixel_x = 10
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "Dn" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 9
@@ -3120,6 +3113,9 @@
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = -8
+	},
+/obj/machinery/computer/cargo{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -3377,8 +3373,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/med_data/laptop{
 	dir = 4;
-	pixel_x = -7;
-	pixel_y = 6
+	pixel_x = -3;
+	pixel_y = 9
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -3571,7 +3567,7 @@
 /obj/item/pickaxe/mini,
 /obj/item/pickaxe/mini,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "HN" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/half{
 	dir = 1
@@ -3836,7 +3832,7 @@
 	pixel_x = -20
 	},
 /turf/open/floor/plasteel/mono,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "JE" = (
 /obj/effect/turf_decal/corner/opaque/black/half,
 /turf/open/floor/plasteel/mono,
@@ -4904,7 +4900,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "SE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/box,
@@ -4932,7 +4928,7 @@
 /area/ship/medical/surgery)
 "SJ" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "SR" = (
 /obj/effect/turf_decal/corner/opaque/black/half{
 	dir = 1
@@ -5201,7 +5197,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /turf/open/floor/plating,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "VG" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only{
@@ -5268,12 +5264,6 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/structure/platform/industrial{
-	dir = 8
-	},
-/obj/structure/railing{
-	dir = 4
-	},
 /obj/machinery/button/door{
 	pixel_x = -12;
 	pixel_y = 20;
@@ -5292,6 +5282,12 @@
 	pixel_y = -10
 	},
 /obj/machinery/light/dim/directional/north,
+/obj/structure/platform/industrial{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Wm" = (
@@ -5334,7 +5330,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
-/area/ship/storage/eva)
+/area/ship/cargo)
 "WI" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -5372,13 +5368,13 @@
 	dir = 8;
 	icon_state = "computer-left"
 	},
-/obj/structure/platform/ship_four{
-	dir = 8
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 9
 	},
 /obj/machinery/light/directional/north,
+/obj/structure/platform/ship_four{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Xd" = (
@@ -5690,15 +5686,11 @@
 	dir = 8;
 	icon_state = "computer-right"
 	},
-/obj/structure/platform/ship_four,
-/obj/structure/platform/ship_four{
-	dir = 8
-	},
-/obj/structure/platform/ship_four/corner{
-	dir = 6
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 10
+	},
+/obj/structure/platform/ship_four{
+	dir = 6
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
