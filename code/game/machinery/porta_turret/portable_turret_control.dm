@@ -146,10 +146,7 @@
 		if("lock")
 			if(!usr.has_unlimited_silicon_privilege)
 				return
-			if((obj_flags & EMAGGED) || (machine_stat & BROKEN))
-				to_chat(usr, "<span class='warning'>The turret control is unresponsive!</span>")
-				return
-			locked = !locked
+			toggle_lock(usr)
 			return TRUE
 		if("power")
 			toggle_on(usr)

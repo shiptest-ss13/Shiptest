@@ -207,9 +207,8 @@
 		ui.open()
 
 /obj/machinery/porta_turret/ui_data(mob/user)
-	var/is_silicon = issilicon(user)
 	var/allow_manual_control = FALSE
-	if(is_silicon)
+	if(issilicon(user))
 		var/mob/living/silicon/silicon_user = user
 		allow_manual_control = silicon_user.hack_software
 
@@ -217,7 +216,7 @@
 		"locked" = locked,
 		"enabled" = on,
 		"lethal" = lethal,
-		"siliconUser" = issilicon(user),
+		"siliconUser" = user.has_unlimited_silicon_privilege && check_ship_ai_access(user),
 		"manual_control" = manual_control,
 		"dangerous_only" = turret_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY,
 		"retaliate" = turret_flags & TURRET_FLAG_SHOOT_RETALIATE,
@@ -242,10 +241,7 @@
 		if("lock")
 			if(!usr.has_unlimited_silicon_privilege)
 				return
-			if((obj_flags & EMAGGED) || (machine_stat & BROKEN))
-				to_chat(usr, "<span class='warning'>The turret control is unresponsive!</span>")
-				return
-			locked = !locked
+			toggle_lock(usr)
 			return TRUE
 		if("power")
 			if(anchored)
