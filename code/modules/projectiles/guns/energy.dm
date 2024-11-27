@@ -29,6 +29,7 @@
 
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS
+	var/latch_closed = TRUE
 
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
@@ -174,6 +175,16 @@
 			to_chat(user, span_notice("You remove the power cell."))
 			eject_cell(user)
 	return ..()
+
+/obj/item/gun/energy/AltClick(mob/living/user, obj/item/I)
+	if(cell && !internal_magazine && latch_closed)
+		to_chat(user, span_notice("You unlatch the power cell retainment clip."))
+		tac_reloads = TRUE
+		latch_closed = FALSE
+	else if(!latch_closed)
+		to_chat(user, span_notice("You latch the power cell retainment clip."))
+		tac_reloads = FALSE
+		latch_closed = TRUE
 
 /obj/item/gun/energy/can_shoot(visuals)
 	if(safety && !visuals)
