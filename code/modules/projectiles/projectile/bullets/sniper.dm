@@ -73,8 +73,8 @@
 
 /obj/projectile/bullet/a858
 	name = "8x58mm caseless bullet"
-	damage = 35
-	armour_penetration = 40
+	damage = 40
+	armour_penetration = 45
 	speed = BULLET_SPEED_SNIPER
 	bullet_identifier = "huge bullet"
 
