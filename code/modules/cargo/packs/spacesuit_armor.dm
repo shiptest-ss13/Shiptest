@@ -86,16 +86,6 @@
 	crate_type = /obj/structure/closet/crate/secure/engineering
 	faction = FACTION_NT
 
-/datum/supply_pack/spacesuit_armor/swat
-	name = "SWAT Crate"
-	desc = "Contains one fullbody set of tough, fireproof, pressurized suit designed in a joint effort by IS-ERI and Nanotrasen. The set contains a suit, helmet, and combat belt."
-	cost = 3500
-	contains = list(/obj/item/clothing/head/helmet/swat/nanotrasen,
-					/obj/item/clothing/suit/space/swat,
-					/obj/item/storage/belt/military/assault)
-	crate_name = "swat crate"
-	crate_type = /obj/structure/closet/crate/secure/gear
-
 /*
 		Non-spaceworthy (armor)
 */
