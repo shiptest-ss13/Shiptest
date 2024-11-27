@@ -480,10 +480,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hangar)
 "cf" = (
-/obj/machinery/door/window/brigdoor/southright{
-	req_access = list(3);
-	dir = 2
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "cg" = (
@@ -1350,7 +1346,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
-/obj/item/radio/intercom/directional/east,
+/obj/item/radio/intercom/directional/east{
+	pixel_y = 5
+	},
 /obj/item/taperecorder{
 	pixel_y = 6;
 	pixel_x = 8
@@ -1365,6 +1363,15 @@
 	pixel_x = -5
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = -11;
+	pixel_x = 22;
+	name = "cell lock";
+	normaldoorcontrol = 1;
+	id = "gbj";
+	specialfunctions = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "fW" = (
@@ -3021,6 +3028,9 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "oj" = (
@@ -3825,6 +3835,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
+"sd" = (
+/obj/machinery/door/airlock/grunge{
+	req_access = list(3);
+	dir = 4;
+	name = "Cell";
+	id_tag = "gbj"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/security/armory)
 "sn" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -4211,7 +4230,6 @@
 	},
 /area/ship/cargo)
 "us" = (
-/obj/structure/window/reinforced,
 /obj/structure/bed/pod{
 	dir = 2
 	},
@@ -5142,8 +5160,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -6575,6 +6594,9 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "EQ" = (
@@ -8292,15 +8314,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = -12
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Nw" = (
@@ -8694,6 +8707,9 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "Pn" = (
@@ -10402,10 +10418,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
-"WV" = (
-/obj/structure/window/reinforced,
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
 "WY" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner{
 	dir = 1
@@ -12294,7 +12306,7 @@ We
 We
 Cd
 Cd
-Cd
+sd
 Cd
 TG
 Hl
@@ -12378,7 +12390,7 @@ We
 We
 Cd
 mr
-WV
+cf
 Pb
 nt
 Rb
