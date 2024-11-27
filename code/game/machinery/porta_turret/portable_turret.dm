@@ -283,6 +283,8 @@
 
 /obj/machinery/porta_turret/power_change()
 	. = ..()
+	if(!(flags_1 & INITIALIZED_1))
+		return
 	if(!anchored || (machine_stat & BROKEN) || !powered())
 		update_appearance(UPDATE_ICON_STATE)
 		remove_control()
