@@ -19,8 +19,8 @@
 		)
 	refill_canister = /obj/item/vending_refill/snack
 	canload_access_list = list(ACCESS_KITCHEN)
-	default_price = 60
-	extra_price = 160
+	default_price = 5
+	extra_price = 10
 	input_display_header = "Chef's Food Selection"
 
 /obj/item/vending_refill/snack
