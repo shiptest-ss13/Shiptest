@@ -159,7 +159,7 @@
 	desc = "This is it. The Bee's Knees. The Creme of the Crop. The Pick of the Litter. The best of the best of the best. The Crown Jewel of Nanotrasen. The Alpha and the Omega of security headwear. Guaranteed to strike fear into the hearts of each and every criminal unfortunate enough to hear its screeching wail bore into their soul. Also comes with a security gasmask."
 	cost = 6000 //justice comes at a price. An expensive, noisy price.
 	contains = list(/obj/item/clothing/head/helmet/justice,
-					/obj/item/clothing/mask/gas/sechailer)
+					/obj/item/clothing/mask/gas)
 	crate_name = "security clothing crate"
 
 /datum/supply_pack/costumes_toys/collectable_hats

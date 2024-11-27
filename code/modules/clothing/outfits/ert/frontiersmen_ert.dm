@@ -55,7 +55,7 @@
 	if(prob(60))
 		suit = pick_weight(list(
 		/obj/item/clothing/suit/armor/vest = 5,
-		/obj/item/clothing/suit/armor/vest/bulletproof/frontier = 5,
+		/obj/item/clothing/suit/armor/vest/frontier = 5,
 		/obj/item/clothing/suit/armor/vest/scrap = 1))
 
 	if(prob(50))
@@ -195,7 +195,7 @@
 
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer
+	mask = /obj/item/clothing/mask/breath
 	belt = /obj/item/gun/ballistic/automatic/pistol/deagle/gold // daring today aren't we
 
 	backpack = /obj/item/minigunpack
@@ -231,7 +231,7 @@
 
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
 	mask = /obj/item/clothing/mask/breath/ngr
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	suit = /obj/item/clothing/suit/armor/vest/frontier
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/mauler
 	belt = /obj/item/storage/belt/medical/webbing/frontiersmen/combat
 	glasses = /obj/item/clothing/glasses/hud/health
@@ -273,7 +273,7 @@
 /datum/outfit/job/frontiersmen/ert/sentry
 	name = "ERT - Frontiersman Sentry (SKM-24v LMG)"
 
-	head = /obj/item/clothing/head/helmet/marine/frontier
+	head = /obj/item/clothing/head/helmet/frontier
 	mask = /obj/item/clothing/mask/balaclava
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	suit_store = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag
