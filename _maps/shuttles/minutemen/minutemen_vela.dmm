@@ -5933,6 +5933,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/computer/mech_bay_power_console{
+	dir = 4
+	},
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
@@ -7252,21 +7255,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "It" = (
-/obj/machinery/button/door{
-	dir = 1;
-	id = "obhangarent11";
-	name = "umbilical window shutters";
-	pixel_x = -4;
-	pixel_y = -22
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	id = "obhangarent1";
-	name = "pod lockdown";
-	pixel_x = 9;
-	pixel_y = -22;
-	req_access_txt = list(1)
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
@@ -7385,6 +7373,9 @@
 	req_access = list(3);
 	dir = 4;
 	name = "Armory"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10405,6 +10396,9 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
