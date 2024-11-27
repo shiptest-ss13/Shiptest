@@ -740,6 +740,9 @@
 /obj/effect/turf_decal/trimline/opaque/solgovgold/line{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "kd" = (
@@ -1174,11 +1177,11 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/effect/turf_decal/road/line/edge/opaque/black{
-	dir = 4
-	},
 /obj/effect/turf_decal/trimline/opaque/solgovgold/line{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -1638,6 +1641,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/solgovgold/line{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2351,7 +2357,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
 	},
-/obj/item/melee/axe/fire,
+/obj/item/gun/energy/plasmacutter,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "Cx" = (
@@ -2901,6 +2907,9 @@
 /obj/effect/turf_decal/trimline/opaque/solgovgold/line{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "KQ" = (
@@ -3019,12 +3028,12 @@
 /obj/structure/chair/office/light{
 	dir = 8
 	},
-/obj/effect/turf_decal/road/line/opaque/black{
-	dir = 8
-	},
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/trimline/opaque/solgovgold/line{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -3564,6 +3573,9 @@
 /obj/effect/turf_decal/trimline/opaque/solgovgold/line{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Vz" = (
@@ -3831,9 +3843,9 @@
 	dir = 4
 	},
 /obj/item/radio/headset/syndicate/alt,
-/obj/item/storage/toolbox/mechanical,
 /obj/item/analyzer,
 /obj/item/clothing/shoes/workboots,
+/obj/item/storage/toolbox/electrical,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "ZJ" = (
