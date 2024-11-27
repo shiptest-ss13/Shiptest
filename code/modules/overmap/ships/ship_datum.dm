@@ -9,7 +9,8 @@
 	char_rep = ">"
 	token_icon_state = "ship"
 
-	var/legacy_rendering_switch = FALSE //afjkhsdjklha
+	///If TRUE stationary_icon_state and moving_icon_state are used instead of an overlay being applied to stationary_icon_state
+	var/legacy_rendering_switch = FALSE
 
 	///the icon state used when we are stationary
 	//var/stationary_icon_state = "ship"

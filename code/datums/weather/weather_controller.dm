@@ -136,3 +136,9 @@
 		/datum/weather/rain/heavy/storm = 50,
 		/datum/weather/rain/heavy/storm/blocking = 30,
 	)
+
+/datum/weather_controller/fallout
+	possible_weathers = list(
+		/datum/weather/nuclear_fallout = 90,
+		/datum/weather/nuclear_fallout/normal = 10,
+	)

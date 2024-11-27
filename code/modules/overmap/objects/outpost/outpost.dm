@@ -51,7 +51,7 @@
 	/// Our faction of the outpost
 	var/faction
 
-/datum/overmap/outpost/Initialize(position, ...)
+/datum/overmap/outpost/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	. = ..()
 	// init our template vars with the correct singletons
 	main_template = SSmapping.outpost_templates[main_template]

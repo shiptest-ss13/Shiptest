@@ -323,3 +323,10 @@
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		alter_integrity(-400)
 		return
+
+/turf/closed/zap_act(power, zap_flags, shocked_targets)
+	if(QDELETED(src))
+		return FALSE
+	if(alter_integrity(-power) >= 0)
+		return TRUE
+	return power / 2

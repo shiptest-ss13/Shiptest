@@ -9,6 +9,8 @@
 	var/atom/movable/screen/map_view/cam_screen
 	var/atom/movable/screen/plane_master/lighting/cam_plane_master
 	var/atom/movable/screen/background/cam_background
+	/// Countdown we use in case it's needed
+	var/obj/effect/countdown/countdown
 
 /obj/overmap/rendered
 	render_map = TRUE
@@ -44,6 +46,7 @@
 		QDEL_NULL(cam_screen)
 		QDEL_NULL(cam_plane_master)
 		QDEL_NULL(cam_background)
+	QDEL_NULL(countdown)
 	return ..()
 
 /obj/overmap/attack_ghost(mob/user)

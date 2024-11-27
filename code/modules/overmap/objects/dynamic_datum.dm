@@ -54,7 +54,7 @@
 	//controls what kind of sound we play when we land and the maptext comes up
 	var/landing_sound
 
-/datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)
+/datum/overmap/dynamic/Initialize(position, datum/overmap_star_system/system_spawned_in, load_now=TRUE, ...)
 	. = ..()
 
 	vlevel_height = CONFIG_GET(number/overmap_encounter_size)
@@ -162,12 +162,6 @@
 		planet_name = "LV-[pick(rand(11111,99999))]"
 		token.icon_state = "sector"
 		Rename(planet_name)
-
-// - SERVER ISSUE: LOADING ALL PLANETS AT ROUND START KILLS PERFORMANCE BEYOND WHAT IS REASONABLE. OPTIMIZE SSMOBS IF YOU WANT THIS BACK
-// #ifdef FULL_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
-// 	if(load_now)
-// 		load_level() //Load the level whenever it's randomised
-// #endif
 
 	if(!preserve_level)
 		token.desc += span_notice("\nIt may not still be here if you leave it.")

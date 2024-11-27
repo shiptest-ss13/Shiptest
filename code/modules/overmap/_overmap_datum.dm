@@ -103,8 +103,9 @@
  * This proc is called directly after New(). It's done after the basic creation and placement of the token and setup has been completed.
  *
  * * placement_x/y - the X and Y position of the overmap datum.
+ * * system_spawned_in - The star system datum we spawned in.
  */
-/datum/overmap/proc/Initialize(position, ...)
+/datum/overmap/proc/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	PROTECTED_PROC(TRUE)
 	return
 
@@ -193,6 +194,26 @@
 	else if(dir & WEST)
 		move_x -= magnitude
 	return overmap_move(move_x, move_y)
+
+/**
+ * Moves the overmap datum in a specific direction a specific number of spaces (magnitude, default 1).
+ *
+ * * dir - The direction to move the overmap datum in. Takes cardinal and diagonal directions.
+ * * magnitude - The number of spaces to move the overmap datum in the direction.
+ */
+/datum/overmap/proc/get_overmap_step(dir, magnitude = 1)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	var/move_x = x
+	var/move_y = y
+	if(dir & NORTH)
+		move_y += magnitude
+	else if(dir & SOUTH)
+		move_y -= magnitude
+	if(dir & EAST)
+		move_x += magnitude
+	else if(dir & WEST)
+		move_x -= magnitude
+	return list("x" = move_x, "y" = move_y)
 
 /**
  * Proc used to rename an overmap datum and everything related to it.

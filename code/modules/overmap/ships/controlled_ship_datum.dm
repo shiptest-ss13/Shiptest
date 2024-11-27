@@ -77,6 +77,9 @@
 	///our faction datum, used for cargo stuff
 	var/datum/faction/faction_datum
 
+	///The cooldown for events hitting this ship. Generally used by events with a big consquence and fires slower than normal, like flares
+	COOLDOWN_DECLARE(event_cooldown)
+
 	/// checks if we spawned /obj/effect/spawner/costume/test_ship_matspawn on a autolathe on the ship, if TRUE, we don't spawn another when another autolathe is spawned. Delete this var when ships have the new mats mapped
 	var/matbundle_spawned = FALSE
 

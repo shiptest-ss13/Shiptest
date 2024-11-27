@@ -17,24 +17,44 @@
 	var/chain_rate = 0
 	///The mapgen we set ourself to when a ship docks to empty space over us
 	var/datum/map_generator/empty_space_mapgen
-	/// override the mountain value to this value
+	/// Override the mountain value of the mapgen to this value.
 	var/mountain_height_override
+	/// What's the lifespan of this event? If unset, effectively disables this features.
+	var/lifespan
+	/// The 'death time' of the object. Used for limited lifespan events.
+	var/death_time
 
-
-/datum/overmap/event/Initialize(position, ...)
+/datum/overmap/event/Initialize(position, datum/overmap_star_system/system_spawned_in, set_lifespan,...)
 	. = ..()
 	SSovermap.events += src
 	current_overmap.events += src
 	alter_token_appearance()
 
+	if(lifespan || set_lifespan)
+		if(set_lifespan)
+			lifespan = set_lifespan
+		death_time = world.time + lifespan
+		token.countdown = new /obj/effect/countdown/overmap_event(token)
+		token.countdown.color = current_overmap.hazard_primary_color
+		if(!current_overmap.override_object_colors)
+			token.countdown.color = default_color
+		token.countdown.start()
+		START_PROCESSING(SSprocessing, src)
+
 /datum/overmap/event/Destroy()
 	. = ..()
 	SSovermap.events -= src
 	current_overmap.events -= src
+	if(lifespan)
+		STOP_PROCESSING(SSprocessing, src)
 
 /datum/overmap/event/alter_token_appearance()
 	token_icon_state = "[base_icon_state][icon_suffix]"
 	return ..()
+
+/datum/overmap/event/process()
+	if(death_time < world.time && lifespan)
+		qdel(src)
 
 /**
  * The main proc for calling other procs. Called by SSovermap.
@@ -43,6 +63,8 @@
 	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
 		if(prob(chance_to_affect))
 			affect_ship(Ship)
+	if(death_time < world.time && lifespan)
+		qdel(src)
 
 /**
  * The proc called on all ships that are currently being affected.
@@ -93,7 +115,7 @@
 				affect_ship(Ship)
 
 /datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/Ship)
-	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0)
+	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0, Ship.shuttle_port)
 
 /datum/overmap/event/meteor/minor
 	name = "asteroid field (minor)"
@@ -126,13 +148,13 @@
 
 ///ION STORM - explodes your IPCs
 /datum/overmap/event/emp
-	name = "ion storm (moderate)"
+	name = "electromagnetic storm (moderate)"
 	desc = "A heavily ionized area of space, prone to causing electromagnetic pulses in ships"
-	base_icon_state = "ion"
-	default_color = "#7cb4d4"
+	base_icon_state = "emp_medium_"
+	default_color = "#4066ff"
 	spread_chance = 20
 	chain_rate = 2
-	chance_to_affect = 20
+	chance_to_affect = 30
 	var/strength = 4
 
 /datum/overmap/event/emp/alter_token_appearance()
@@ -142,43 +164,126 @@
 		token.color = current_overmap.hazard_primary_color
 	current_overmap.post_edit_token_state(src)
 
-/datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/S)
-	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
-	source_area.set_fire_alarm_effect()
+/datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/ship)
+	if(!(COOLDOWN_FINISHED(ship, event_cooldown)))
+		return
+	priority_announce("WARNING: Brace for inbound magnetic pulse.", "[src]", 'sound/effects/overmap/telegraph.ogg', sender_override = name, zlevel = ship.shuttle_port.virtual_z())
+
+	addtimer(CALLBACK(src, PROC_REF(affect_ship_2), ship), 2 SECONDS)
+	COOLDOWN_START(ship, event_cooldown, 5 SECONDS)
+
+/datum/overmap/event/emp/proc/affect_ship_2(datum/overmap/ship/controlled/ship)
+	if(!(locate(ship) in get_nearby_overmap_objects()))
+		return
+
+	var/area/source_area = pick(ship.shuttle_port.shuttle_areas)
+
 	var/source_object = pick(source_area.contents)
-	empulse(get_turf(source_object), round(rand(strength / 2, strength)), rand(strength, strength * 2))
-	for(var/mob/M as anything in GLOB.player_list)
-		if(S.shuttle_port.is_in_shuttle_bounds(M))
-			M.playsound_local(S.shuttle_port, 'sound/weapons/ionrifle.ogg', strength)
+
+	empulse(get_turf(source_object), round(rand(strength / 4, strength)), rand(strength, strength * 2))
+
+	for(var/mob/living/carbon/affected_mob as anything in range(round(strength * 2), get_turf(source_object)))
+		if(!istype(affected_mob))
+			continue
+		affected_mob.flash_act(1, 1)
+
+	for(var/mob/affected_mob as anything in GLOB.player_list)
+		if(ship.shuttle_port.is_in_shuttle_bounds(affected_mob))
+			affected_mob.playsound_local(affected_mob, 'sound/effects/overmap/neutron_pulse.ogg', 100)
 
 /datum/overmap/event/emp/modify_emptyspace_mapgen(datum/overmap/dynamic/our_planet)
 	our_planet.weather_controller_type = /datum/weather_controller/shrouded
 	return ..()
 
 /datum/overmap/event/emp/minor
-	name = "ion storm (minor)"
+	name = "electromagnetic storm (minor)"
+	base_icon_state = "emp_minor_"
 	chain_rate = 1
-	strength = 1
-	chance_to_affect = 15
+	strength = 2
+	chance_to_affect = 20
 
 /datum/overmap/event/emp/major
-	name = "ion storm (major)"
-	chance_to_affect = 25
+	name = "electromagnetic storm (major)"
+	base_icon_state = "emp_major_"
+	chance_to_affect = 40
 	chain_rate = 4
-	strength = 6
+	strength = 8
+
+///SOLAR FLARE - Explodes your organics and IPCs
+/datum/overmap/event/flare
+	name = "solar flare (moderate)"
+	desc = "A area with very high level of the local ejected mass from the sun, causing fires in ships"
+	base_icon_state = "flare_medium_"
+	default_color = "#f65f00"
+	spread_chance = 20
+	chain_rate = 2
+	chance_to_affect = 20
+	var/strength = 4
+
+/datum/overmap/event/flare/alter_token_appearance()
+	icon_suffix = "[rand(1, 4)]"
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.hazard_primary_color
+	current_overmap.post_edit_token_state(src)
+
+/datum/overmap/event/flare/affect_ship(datum/overmap/ship/controlled/ship)
+	if(!(COOLDOWN_FINISHED(ship, event_cooldown)))
+		return
+	priority_announce("WARNING: Brace for inbound solar flare.", "[src]", 'sound/effects/overmap/telegraph.ogg', sender_override = name, zlevel = ship.shuttle_port.virtual_z())
+
+	addtimer(CALLBACK(src, PROC_REF(affect_ship_2), ship), 2 SECONDS)
+	COOLDOWN_START(ship, event_cooldown, 5 SECONDS)
+
+/datum/overmap/event/flare/proc/affect_ship_2(datum/overmap/ship/controlled/ship)
+	if(!(locate(ship) in get_nearby_overmap_objects()))
+		return
+
+	var/area/source_area = pick(ship.shuttle_port.shuttle_areas)
+
+	var/source_object = pick(source_area.contents)
+
+	flame_radius(get_turf(source_object), round(rand(strength / 2, strength)), rand(strength, strength * 2))
+
+	for(var/mob/living/carbon/affected_mob as anything in range(round(strength * 2), get_turf(source_object)))
+		if(!istype(affected_mob))
+			continue
+		affected_mob.flash_act(1, 1)
+
+	for(var/mob/affected_mob as anything in GLOB.player_list)
+		if(ship.shuttle_port.is_in_shuttle_bounds(affected_mob))
+			affected_mob.playsound_local(affected_mob, 'sound/effects/overmap/solar_flare.ogg', 100)
+
+/datum/overmap/event/flare/modify_emptyspace_mapgen(datum/overmap/dynamic/our_planet)
+	our_planet.weather_controller_type = /datum/weather_controller/lavaland
+	return ..()
+
+/datum/overmap/event/flare/minor
+	name = "solar flare (minor)"
+	base_icon_state = "flare_minor_"
+	chain_rate = 1
+	strength = 2
+	chance_to_affect = 15
+
+/datum/overmap/event/flare/major
+	name = "solar flare (major)"
+	base_icon_state = "flare_major_"
+	chance_to_affect = 60
+	chain_rate = 4
+	strength = 8
 
 ///ELECTRICAL STORM - explodes your computer and IPCs
 /datum/overmap/event/electric
 	name = "electrical storm (moderate)"
-	desc = "A spatial anomaly, an unfortunately common sight on the frontier. Disturbing it tends to lead to intense electrical discharges"
+	desc = "A buildup of static electrity, an unfortunately common sight on the frontier. Disturbing it tends to lead to intense electrical discharges"
 	base_icon_state = "electrical_medium_"
 	default_color = "#e8e85c"
 	chance_to_affect = 15
 	spread_chance = 30
 	chain_rate = 3
 	var/zap_flag = ZAP_STORM_FLAGS
-	var/max_damage = 15
-	var/min_damage = 5
+	var/max_damage = 20
+	var/min_damage = 10
 
 /datum/overmap/event/electric/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -190,10 +295,10 @@
 /datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
 	var/datum/virtual_level/ship_vlevel = S.shuttle_port.get_virtual_level()
 	var/turf/source = ship_vlevel.get_side_turf(pick(GLOB.cardinals))
-	tesla_zap(source, 10, TESLA_DEFAULT_POWER, zap_flag)
-	for(var/mob/M as anything in GLOB.player_list)
-		if(S.shuttle_port.is_in_shuttle_bounds(M))
-			M.playsound_local(source, 'sound/magic/lightningshock.ogg', rand(min_damage / 10, max_damage / 10))
+	tesla_zap(source, 10, rand(min_damage, max_damage), zap_flag)
+	for(var/mob/poor_crew as anything in GLOB.player_list)
+		if(S.shuttle_port.is_in_shuttle_bounds(poor_crew))
+			poor_crew.playsound_local(poor_crew, THUNDER_SOUND, rand(min_damage, max_damage))
 
 
 /datum/overmap/event/electric/modify_emptyspace_mapgen(datum/overmap/dynamic/our_planet)
@@ -213,9 +318,9 @@
 	base_icon_state = "electrical_major_"
 	spread_chance = 15
 	chain_rate = 6
-	max_damage = 20
-	min_damage = 10
-	zap_flag = ZAP_TESLA_FLAGS
+	max_damage = 40
+	min_damage = 20
+	zap_flag = ZAP_DEFAULT_FLAGS
 
 /datum/overmap/event/nebula
 	name = "nebula"
@@ -377,4 +482,49 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/meteor/dust = 50,
 	/datum/overmap/event/anomaly = 10
 ))
+
+///RADIATION STORM - explodes your organics
+/datum/overmap/event/rad
+	name = "radiation storm (moderate)"
+	desc = "An area with a high concentration of gamma rays. Better not take long here."
+	base_icon_state = "gamma_medium_"
+	default_color = "#d651c2"
+	spread_chance = 20
+	chain_rate = 2
+	chance_to_affect = 60
+	var/strength = 10
+
+/datum/overmap/event/rad/alter_token_appearance()
+	icon_suffix = "[rand(1, 4)]"
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.hazard_primary_color
+	current_overmap.post_edit_token_state(src)
+
+/datum/overmap/event/rad/affect_ship(datum/overmap/ship/controlled/ship)
+	for(var/mob/affected_mob as anything in GLOB.player_list)
+		if(!isliving(affected_mob))
+			return
+		if(ship.shuttle_port.is_in_shuttle_bounds(affected_mob))
+			affected_mob.rad_act(strength)
+			to_chat(affected_mob, span_notice("You taste metal."))
+
+
+/datum/overmap/event/rad/modify_emptyspace_mapgen(datum/overmap/dynamic/our_planet)
+	our_planet.weather_controller_type = /datum/weather_controller/fallout
+	return ..()
+
+/datum/overmap/event/rad/minor
+	name = "radiation storm (minor)"
+	base_icon_state = "gamma_minor_"
+	chain_rate = 1
+	strength = 10
+	chance_to_affect = 40
+
+/datum/overmap/event/rad/major
+	name = "radiation storm (major)"
+	base_icon_state = "gamma_major_"
+	chance_to_affect = 80
+	chain_rate = 4
+	strength = 8
 

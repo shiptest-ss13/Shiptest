@@ -16,7 +16,7 @@
 	///The currently linked jump point
 	var/datum/overmap/jump_point/destination
 
-/datum/overmap/jump_point/Initialize(position, _other_wormhole, ...)
+/datum/overmap/jump_point/Initialize(position, datum/overmap_star_system/system_spawned_in, _other_wormhole, ...)
 	. = ..()
 	alter_token_appearance()
 

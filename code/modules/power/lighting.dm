@@ -250,6 +250,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	var/bulb_vacuum_colour = "#4F82FF"	// colour of the light when air alarm is set to severe
 	var/bulb_vacuum_brightness = 8
 
+	var/constant_flickering = FALSE // Are we always flickering?
+	var/flicker_timer = null
+
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light, 32)
 
 /obj/machinery/light/broken
@@ -637,6 +640,37 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	cell.use(pwr)
 	set_light(brightness * bulb_emergency_brightness_mul, max(bulb_emergency_pow_min, bulb_emergency_pow_mul * (cell.charge / cell.maxcharge)), bulb_emergency_colour)
 	return TRUE
+
+/obj/machinery/light/proc/start_flickering()
+	on = FALSE
+	update(FALSE, TRUE, FALSE)
+
+	constant_flickering = TRUE
+
+	flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_on)), rand(0.5 SECONDS, 1 SECONDS))
+
+/obj/machinery/light/proc/stop_flickering()
+	constant_flickering = FALSE
+
+	if(flicker_timer)
+		deltimer(flicker_timer)
+		flicker_timer = null
+
+	seton(has_power())
+
+/obj/machinery/light/proc/alter_flicker(enable = TRUE)
+	if(!constant_flickering)
+		return
+	if(has_power())
+		on = enable
+		update(FALSE, TRUE, FALSE)
+
+/obj/machinery/light/proc/flicker_on()
+	alter_flicker(TRUE)
+	flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_off)), rand(0.5 SECONDS, 1 SECONDS))
+
+/obj/machinery/light/proc/flicker_off()
+	alter_flicker(FALSE)
 
 
 /obj/machinery/light/proc/flicker(amount = rand(10, 20))

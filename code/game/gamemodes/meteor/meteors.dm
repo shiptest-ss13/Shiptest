@@ -39,12 +39,15 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	for(var/i = 0; i < number; i++)
 		spawn_meteor(meteortypes)
 
-/proc/spawn_meteor(list/meteortypes, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD)
+/proc/spawn_meteor(list/meteortypes, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD, obj/docking_port/mobile/shuttle_port)
 	var/turf/pickedstart
 	var/turf/pickedgoal
 	var/max_i = 10//number of tries to spawn meteor.
 	while(!isspaceturf(pickedstart))
 		var/startSide = pick(GLOB.cardinals)
+		if(shuttle_port)
+			startSide = shuttle_port.preferred_direction
+
 		pickedstart = vlevel.get_side_turf(startSide, padding)
 		pickedgoal = vlevel.get_side_turf(REVERSE_DIR(startSide), padding)
 		max_i--
@@ -79,7 +82,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	var/dropamt = 2
 
 /obj/effect/meteor/Move()
-	if(z != z_original || loc == dest)
+	if(get_virtual_level() != z_original || loc == dest)
 		qdel(src)
 		return FALSE
 
@@ -102,7 +105,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 
 /obj/effect/meteor/Initialize(mapload, target)
 	. = ..()
-	z_original = z
+	z_original = get_virtual_level()
 	GLOB.meteor_list += src
 	SSaugury.register_doom(src, threat)
 	SpinAnimation()

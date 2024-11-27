@@ -144,7 +144,6 @@
 	preserve_level = TRUE
 	gravity = TRUE
 
-
 /datum/overmap/static_object/testmap
 	name = "test"
 	desc = "TESTMAP"
