@@ -25,12 +25,6 @@
 	projectile_type = /obj/projectile/bullet/c10mm/hp
 	bullet_skin = "hollow"
 
-/obj/item/ammo_casing/c10mm/inc
-	name = "10mm incendiary bullet casing"
-	desc = "A 10mm incendiary bullet casing."
-	bullet_skin = "incen"
-	projectile_type = /obj/projectile/bullet/incendiary/c10mm
-
 /obj/item/ammo_casing/c10mm/rubber
 	name = "10mm rubber bullet casing"
 	desc = "A 10mm rubber bullet casing."
@@ -64,12 +58,6 @@
 	desc = "A 9mm hollow point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/c9mm/hp
-
-/obj/item/ammo_casing/c9mm/inc
-	name = "9mm incendiary bullet casing"
-	desc = "A 9mm incendiary bullet casing."
-	bullet_skin = "incen"
-	projectile_type = /obj/projectile/bullet/incendiary/c9mm
 
 /obj/item/ammo_casing/c9mm/rubber
 	name = "9mm rubber bullet casing"
@@ -105,12 +93,6 @@
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/c45/hp
 
-/obj/item/ammo_casing/c45/inc
-	name = ".45 incendiary bullet casing"
-	desc = "A .45 incendiary bullet casing."
-	bullet_skin = "incen"
-	projectile_type = /obj/projectile/bullet/incendiary/c45
-
 /obj/item/ammo_casing/c45/rubber
 	name = ".45 rubber bullet casing"
 	desc = "A .45 rubber bullet casing."
@@ -138,3 +120,21 @@
 	projectile_type = /obj/projectile/bullet/c22lr
 	caliber = "22lr"
 	stack_size = 25
+
+/obj/item/ammo_casing/c22lr/hp
+	name = ".22 LR HP bullet casing"
+	desc = "A .22 LR bullet HP casing."
+	projectile_type = /obj/projectile/bullet/c22lr/hp
+	bullet_skin = "hollow"
+
+/obj/item/ammo_casing/c22lr/ap
+	name = ".22 LR AP bullet casing"
+	desc = "A .22 LR bullet casing."
+	projectile_type = /obj/projectile/bullet/c22lr/ap
+	bullet_skin = "ap"
+
+/obj/item/ammo_casing/c22lr/rubber
+	name = ".22 LR rubber bullet casing"
+	desc = "A .22 LR bullet casing."
+	projectile_type = /obj/projectile/bullet/c22lr/rubber
+	bullet_skin = "rubber"

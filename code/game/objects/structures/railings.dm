@@ -106,16 +106,16 @@
 	if(!(direction & dir))
 		return
 
-	if (!density)
+	if(!density)
 		return
 
-	if (leaving.throwing)
+	if(leaving.throwing)
 		return
 
-	if (leaving.movement_type & (PHASING | FLYING | FLOATING))
+	if(leaving.movement_type & (PHASING | FLYING | FLOATING))
 		return
 
-	if (leaving.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
+	if(leaving.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
 		return
 
 	leaving.Bump(src)
@@ -142,12 +142,12 @@
 
 /obj/structure/railing/wood
 	name = "wooden railing"
-	color = "#A47449"
+	icon_state = "wood_railing_thin"
 	buildstack = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/railing/corner/wood
 	name = "wooden railing"
-	color = "#A47449"
+	icon_state = "wood_corners_thin"
 	buildstack = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/railing/modern
@@ -196,3 +196,15 @@
 	density = FALSE
 	climbable = FALSE
 	buildstackamount = 1
+
+/obj/structure/railing/thick
+	icon_state = "railing_thick"
+
+/obj/structure/railing/thick/corner
+	icon_state = "railing_thick_corner"
+
+/obj/structure/railing/thin
+	icon_state = "railing_thin"
+
+/obj/structure/railing/thin/corner
+	icon_state = "railing_thin_corner"
