@@ -47,7 +47,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/dry_seafloor
 	icon_state = "drydesert"
 	base_icon_state = "drydesert"
-	footstep = FOOTSTEP_FLOOR
+	footstep = FOOTSTEP_ASTEROID
 	barefootstep = FOOTSTEP_ASTEROID
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY

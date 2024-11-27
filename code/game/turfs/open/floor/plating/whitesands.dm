@@ -48,7 +48,7 @@
 	icon_plating = null
 	base_icon_state = WHITESANDS_DRIED_ENV
 	layer = STONE_TURF_LAYER
-	footstep = FOOTSTEP_FLOOR
+	footstep = FOOTSTEP_ASTEROID
 	barefootstep = FOOTSTEP_ASTEROID
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY

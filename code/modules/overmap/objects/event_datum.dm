@@ -35,18 +35,17 @@
 			lifespan = set_lifespan
 		death_time = world.time + lifespan
 		token.countdown = new /obj/effect/countdown/overmap_event(token)
-		token.countdown.color = current_overmap.hazard_primary_color
-		if(!current_overmap.override_object_colors)
-			token.countdown.color = default_color
+		token.countdown.color = current_overmap.hazard_secondary_color
+
 		token.countdown.start()
-		START_PROCESSING(SSprocessing, src)
+		START_PROCESSING(SSfastprocess, src)
 
 /datum/overmap/event/Destroy()
 	. = ..()
 	SSovermap.events -= src
 	current_overmap.events -= src
 	if(lifespan)
-		STOP_PROCESSING(SSprocessing, src)
+		STOP_PROCESSING(SSfastprocess, src)
 
 /datum/overmap/event/alter_token_appearance()
 	token_icon_state = "[base_icon_state][icon_suffix]"

@@ -6,7 +6,7 @@
 	base_icon_state = "wasteland"
 	floor_variance = 88
 	max_icon_states = 22
-	footstep = FOOTSTEP_FLOOR
+	footstep = FOOTSTEP_ASTEROID
 	barefootstep = FOOTSTEP_ASTEROID
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY

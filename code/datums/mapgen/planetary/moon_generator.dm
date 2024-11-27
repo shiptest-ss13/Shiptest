@@ -291,7 +291,7 @@
 	icon_state = "moonsand_coarse"
 	base_icon_state = "moonsand_coarse"
 	gender = PLURAL
-	footstep = FOOTSTEP_FLOOR
+	footstep = FOOTSTEP_ASTEROID
 	barefootstep = FOOTSTEP_ASTEROID
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY

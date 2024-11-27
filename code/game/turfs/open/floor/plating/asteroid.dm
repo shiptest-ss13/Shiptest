@@ -150,6 +150,7 @@
 
 /turf/open/floor/plating/asteroid/ex_act(severity, target)
 	. = SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
+	getDug(TRUE)
 	contents_explosion(severity, target)
 
 //footstep handling
@@ -216,6 +217,14 @@
 		if(old_exited_dirs & Ddir)
 			exited_dirs |= NDir
 
+//should prvent the broken tile sprites from showing up
+/turf/open/floor/plating/asteroid/break_tile()
+	getDug(TRUE)
+	return
+
+/turf/open/floor/burn_tile()
+	return
+
 /turf/open/floor/plating/asteroid/proc/get_light(obj/item/source, target_light, target_power, target_color,)
 	light_range = target_light
 	light_power = target_power
@@ -234,3 +243,4 @@
 
 /turf/open/floor/plating/asteroid/ship
 	baseturfs = /turf/open/floor/plating
+

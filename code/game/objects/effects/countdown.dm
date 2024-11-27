@@ -194,7 +194,7 @@
 /obj/effect/countdown/overmap_event
 	name = "overmap event countdown"
 	invisibility = 0
-	//text_size = 2
+	text_size = 2
 
 /obj/effect/countdown/overmap_event/get_value()
 	var/obj/overmap/token = attached_to
