@@ -19,9 +19,12 @@
 	/// Scan range of the turret for locating targets
 	var/scan_range = 7
 	/// List of ALL targets in range, even if they are not visible
-	var/list/datum/weakref/targets = list()
+	var/list/mob/living/targets = list()
 	/// The current target of the turret, if any
-	var/datum/weakref/current_target_ref
+	var/mob/living/current_target
+
+	/// The beam showing which target we're acquiring
+	var/datum/simple_beam/target_beam
 
 	/// If the turret's behaviour control access is locked
 	var/locked = TRUE
@@ -71,9 +74,6 @@
 	/// For connecting to additional turrets
 	var/id = ""
 
-	/// The beam showing which target we're acquiring
-	var/datum/simple_beam/target_beam
-
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 		COMSIG_ATOM_EXITED = PROC_REF(on_uncrossed),
@@ -92,6 +92,11 @@
 	spark_system.attach(src)
 
 /obj/machinery/porta_turret/Destroy()
+	targets.Cut()
+	targets = null
+
+	set_target(null)
+
 	QDEL_NULL(spark_system)
 	QDEL_NULL(target_beam)
 	remove_control()
@@ -166,7 +171,8 @@
 
 		var/datum/component/connect_range/prox = GetComponent(/datum/component/connect_range)
 		prox?.set_tracked(null)
-		target_beam.set_target(null)
+		set_target(null)
+
 	else if(!processing && functional)
 		begin_processing()
 
@@ -399,15 +405,16 @@
 	if(!COOLDOWN_FINISHED(src, fire_cooldown))
 		return
 
-	if(current_target_ref)
-		var/mob/current_target = current_target_ref?.resolve()
-		if(current_target && check_target(current_target, current_target) && target(current_target))
+	if(current_target)
+		//Try to fire at the current target first
+		if(check_target(current_target) && target(current_target))
 			return
 
-		current_target_ref = null
-		target_beam.set_target(null)
+		//Current target is invalid, so we need to find a new one
+		set_target(null)
 
 	for(var/atom/movable/target as anything in targets)
+		//TODO: Remove this if it never happens, because it shouldn't
 		if(isnull(target) || QDELETED(target))
 			targets -= target
 			stack_trace("Invalid target in turret list")
@@ -520,12 +527,9 @@
 	setDir(get_dir(our_turf, target))
 
 	if(!manual_control)
-		if(current_target_ref?.resolve() != target)
-			//We have a new target, so we need to update the reference
-			current_target_ref = WEAKREF(target)
+		if(current_target != target)
+			set_target(target)
 			COOLDOWN_START(src, reaction_cooldown, reaction_time)
-
-			target_beam.set_target(target)
 
 			if(ishuman(target) || target.client)
 				target.do_alert_animation(target)
@@ -556,6 +560,16 @@
 	shot.fired_from = src
 	shot.fire()
 	return TRUE
+
+/obj/machinery/porta_turret/proc/set_target(atom/movable/target = null)
+	if(current_target)
+		UnregisterSignal(current_target, COMSIG_PARENT_QDELETING)
+
+	current_target = target
+	target_beam.set_target(target)
+
+	if(current_target)
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(set_target))
 
 /obj/machinery/porta_turret/proc/setState(on, mode, shoot_cyborgs)
 	if(locked)
