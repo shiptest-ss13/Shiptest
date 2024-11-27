@@ -15,7 +15,7 @@
 	var/obj/machinery/porta_turret/P = target
 	if(!istype(P))
 		return
-	P.setState(P.on, !P.mode)
+	P.set_state(P.on, !P.lethal)
 
 /datum/action/turret_quit
 	name = "Release Control"

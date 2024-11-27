@@ -242,7 +242,7 @@
 
 		if(istype(the_target, /obj/machinery/porta_turret))
 			var/obj/machinery/porta_turret/P = the_target
-			if(!(P.turret_flags & TURRET_FLAG_SHOOT_ANOMALOUS)) //Don't attack turrets that won't shoot us
+			if(!(P.turret_flags & TURRET_FLAG_SHOOT_FAUNA)) //Don't attack turrets that won't shoot us
 				return FALSE
 			if(P.machine_stat & BROKEN) //Or turrets that are already broken
 				return FALSE

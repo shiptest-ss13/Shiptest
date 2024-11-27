@@ -4,7 +4,7 @@
 	use_power = NO_POWER_USE
 	scan_range = 9
 	req_access = list(ACCESS_SYNDICATE)
-	mode = TURRET_LETHAL
+	lethal = TRUE
 	stun_projectile = /obj/projectile/bullet
 	lethal_projectile = /obj/projectile/bullet
 	lethal_projectile_sound = 'sound/weapons/gun/pistol/shot.ogg'
@@ -12,14 +12,12 @@
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
 	faction = list(ROLE_SYNDICATE)
+	turret_flags = TURRET_FLAG_HOSTILE
 	desc = "A ballistic machine gun auto-turret."
 
 /obj/machinery/porta_turret/syndicate/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
-
-/obj/machinery/porta_turret/syndicate/assess_perp(mob/living/carbon/human/perp)
-	return 10 //Syndicate turrets shoot everything not in their faction
 
 /obj/machinery/porta_turret/syndicate/energy
 	icon_state = "standard_lethal"
@@ -52,19 +50,10 @@
 
 /obj/machinery/porta_turret/ship
 	circuit = /obj/item/circuitboard/machine/turret/ship
-	max_integrity = 200
-	use_power = ACTIVE_POWER_USE
-	active_power_usage = ACTIVE_DRAW_MINIMAL
 	scan_range = 9
 	req_ship_access = TRUE
-	stun_projectile = /obj/projectile/beam/disabler
-	lethal_projectile = /obj/projectile/beam/laser
-	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
-	stun_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	faction = list("neutral", "turret")
-	mode = TURRET_STUN
 
 /obj/machinery/porta_turret/ship/ComponentInitialize()
 	. = ..()
@@ -330,8 +319,7 @@
 	shot_delay = 2
 	scan_range = 6
 
-/obj/machinery/porta_turret/ship/frontiersmen/assess_perp(mob/living/carbon/human/perp)
-	return 10 //Syndicate turrets shoot everything not in their faction //this needs to be default behavior and im gonna refactor it soon
+	turret_flags = TURRET_FLAG_HOSTILE
 
 /obj/machinery/porta_turret/ship/frontiersmen/light
 	name = "Pounder Turret"

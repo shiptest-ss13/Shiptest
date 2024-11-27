@@ -30,7 +30,7 @@
 	var/locked = TRUE
 
 	/// In which mode is turret in, stun or lethal
-	var/mode = TURRET_STUN
+	var/lethal = FALSE
 
 	/// Stun mode projectile type
 	var/stun_projectile = /obj/projectile/beam/disabler
@@ -60,10 +60,15 @@
 	/// Determines if the turret is on
 	var/on = TRUE
 	/// Turret flags about who is turret allowed to shoot
-	var/turret_flags = TURRET_FLAG_SHOOT_CRIMINALS | TURRET_FLAG_SHOOT_ANOMALOUS
+	var/turret_flags = TURRET_FLAG_DEFAULT
+
+	/// If the turret is currently retaliating. Turrets will ignore all other settings to shoot at the attacker until they're dead or out of range
+	var/retaliating = FALSE
 
 	/// Same faction mobs will never be shot at, no matter the other settings
 	var/list/faction = list("neutral", "turret")
+
+	var/list/target_faction = list("hostile")
 
 	/// The spark system, used for generating... sparks?
 	var/datum/effect_system/spark_spread/spark_system
@@ -189,75 +194,65 @@
 	if(!on)
 		icon_state = "[base_icon_state]_off"
 		return ..()
-	switch(mode)
-		if(TURRET_STUN)
-			icon_state = "[base_icon_state]_stun"
-		if(TURRET_LETHAL)
-			icon_state = "[base_icon_state]_lethal"
+	if(lethal)
+		icon_state = "[base_icon_state]_lethal"
+	else
+		icon_state = "[base_icon_state]_stun"
 	return ..()
 
 /obj/machinery/porta_turret/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "PortableTurret", name)
+		ui = new(user, src, "TurretControl", name)
 		ui.open()
 
 /obj/machinery/porta_turret/ui_data(mob/user)
-	var/list/data = list(
+	var/is_silicon = issilicon(user)
+	var/allow_manual_control = FALSE
+	if(is_silicon)
+		var/mob/living/silicon/silicon_user = user
+		allow_manual_control = silicon_user.hack_software
+
+	return list(
 		"locked" = locked,
-		"on" = on,
-		"check_weapons" = turret_flags & TURRET_FLAG_AUTH_WEAPONS,
-		"neutralize_criminals" = turret_flags & TURRET_FLAG_SHOOT_CRIMINALS,
-		"neutralize_all" = turret_flags & TURRET_FLAG_SHOOT_ALL,
-		"neutralize_unidentified" = turret_flags & TURRET_FLAG_SHOOT_ANOMALOUS,
-		"neutralize_nonmindshielded" = turret_flags & TURRET_FLAG_SHOOT_UNSHIELDED,
-		"neutralize_cyborgs" = turret_flags & TURRET_FLAG_SHOOT_BORGS,
-		"ignore_heads" = turret_flags & TURRET_FLAG_SHOOT_HEADS,
+		"enabled" = on,
+		"lethal" = lethal,
+		"siliconUser" = issilicon(user),
 		"manual_control" = manual_control,
-		"silicon_user" = FALSE,
-		"allow_manual_control" = FALSE,
+		"dangerous_only" = turret_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY,
+		"retaliate" = turret_flags & TURRET_FLAG_SHOOT_RETALIATE,
+		"shoot_fauna" = turret_flags & TURRET_FLAG_SHOOT_FAUNA,
+		"shoot_humans" = turret_flags & TURRET_FLAG_SHOOT_HUMANS,
+		"shoot_silicons" = turret_flags & TURRET_FLAG_SHOOT_SILICONS,
+		"only_nonfaction" = turret_flags & TURRET_FLAG_SHOOT_NONFACTION,
+		"only_specificfaction" = turret_flags & TURRET_FLAG_SHOOT_SPECIFIC_FACTION,
+		"allow_manual_control" = allow_manual_control,
 	)
-	if(issilicon(user))
-		data["silicon_user"] = TRUE
-		if(!manual_control)
-			var/mob/living/silicon/S = user
-			if(S.hack_software)
-				data["allow_manual_control"] = TRUE
-	return data
 
 /obj/machinery/porta_turret/ui_act(action, list/params)
 	. = ..()
 	if(.)
 		return
 
+	if(locked)
+		to_chat(usr, span_warning("[src]'s controls are locked."))
+		return
+
 	switch(action)
+		if("lock")
+			if(!usr.has_unlimited_silicon_privilege)
+				return
+			if((obj_flags & EMAGGED) || (machine_stat & BROKEN))
+				to_chat(usr, "<span class='warning'>The turret control is unresponsive!</span>")
+				return
+			locked = !locked
+			return TRUE
 		if("power")
 			if(anchored)
 				toggle_on()
 				return TRUE
 			else
 				to_chat(usr, "<span class='warning'>It has to be secured first!</span>")
-		if("authweapon")
-			turret_flags ^= TURRET_FLAG_AUTH_WEAPONS
-			return TRUE
-		if("shootcriminals")
-			turret_flags ^= TURRET_FLAG_SHOOT_CRIMINALS
-			return TRUE
-		if("shootall")
-			turret_flags ^= TURRET_FLAG_SHOOT_ALL
-			return TRUE
-		if("checkxenos")
-			turret_flags ^= TURRET_FLAG_SHOOT_ANOMALOUS
-			return TRUE
-		if("checkloyal")
-			turret_flags ^= TURRET_FLAG_SHOOT_UNSHIELDED
-			return TRUE
-		if("shootborgs")
-			turret_flags ^= TURRET_FLAG_SHOOT_BORGS
-			return TRUE
-		if("shootheads")
-			turret_flags ^= TURRET_FLAG_SHOOT_HEADS
-			return TRUE
 		if("manual")
 			if(!issilicon(usr))
 				return
@@ -265,6 +260,33 @@
 			if(!user.hack_software)
 				return
 			give_control(usr)
+			return TRUE
+		if("mode")
+			lethal = !lethal
+			return TRUE
+
+		if("toggle_dangerous")
+			turret_flags ^= TURRET_FLAG_SHOOT_DANGEROUS_ONLY
+			return TRUE
+		if("toggle_retaliate")
+			turret_flags ^= TURRET_FLAG_SHOOT_RETALIATE
+			return TRUE
+
+		if("toggle_fauna")
+			turret_flags ^= TURRET_FLAG_SHOOT_FAUNA
+			return TRUE
+		if("toggle_humans")
+			turret_flags ^= TURRET_FLAG_SHOOT_HUMANS
+			return TRUE
+		if("toggle_silicons")
+			turret_flags ^= TURRET_FLAG_SHOOT_SILICONS
+			return TRUE
+
+		if("toggle_nonfaction")
+			turret_flags ^= TURRET_FLAG_SHOOT_NONFACTION
+			return TRUE
+		if("toggle_specificfaction")
+			turret_flags ^= TURRET_FLAG_SHOOT_SPECIFIC_FACTION
 			return TRUE
 
 /obj/machinery/porta_turret/power_change()
@@ -366,12 +388,14 @@
 	if(on)
 		//if the turret is on, the EMP no matter how severe disables the turret for a while
 		//and scrambles its settings, with a slight chance of having an emag effect
-		if(prob(10))
-			turret_flags |= TURRET_FLAG_SHOOT_CRIMINALS
-		if(prob(10))
-			turret_flags |= TURRET_FLAG_AUTH_WEAPONS
+		if(prob(5))
+			turret_flags ^= TURRET_FLAG_SHOOT_HUMANS
+		if(prob(5))
+			turret_flags ^= TURRET_FLAG_SHOOT_FAUNA
 		if(prob(1))
-			turret_flags |= TURRET_FLAG_SHOOT_ALL // Shooting everyone is a pretty big deal, so it's least likely to get turned on
+			turret_flags ^= TURRET_FLAG_SHOOT_NONFACTION
+		if(prob(1))
+			turret_flags ^= TURRET_FLAG_SHOOT_SPECIFIC_FACTION
 
 		toggle_on(FALSE)
 		remove_control()
@@ -385,12 +409,24 @@
 	//damage received
 	if(prob(30))
 		spark_system.start()
-	if(on && !(turret_flags & TURRET_FLAG_SHOOT_ALL_REACT) && !(obj_flags & EMAGGED))
-		turret_flags |= TURRET_FLAG_SHOOT_ALL_REACT
-		addtimer(CALLBACK(src, PROC_REF(reset_attacked)), 60)
 
-/obj/machinery/porta_turret/proc/reset_attacked()
-	turret_flags &= ~TURRET_FLAG_SHOOT_ALL_REACT
+/obj/machinery/porta_turret/proc/retaliate(mob/living/target)
+	if(!(turret_flags & TURRET_FLAG_SHOOT_RETALIATE) || current_target || !on || allowed(target))
+		return
+
+	set_target(target)
+	target(target)
+	retaliating = TRUE
+
+/obj/machinery/porta_turret/bullet_act(obj/projectile/hitting_projectile)
+	if(ismob(hitting_projectile.firer))
+		retaliate(hitting_projectile.firer)
+
+/obj/machinery/porta_turret/attacked_by(obj/item/I, mob/living/user)
+	. = ..()
+	if(!I.force || I.damtype == STAMINA)
+		return
+	retaliate(user)
 
 /obj/machinery/porta_turret/obj_break(damage_flag)
 	. = ..()
@@ -423,7 +459,7 @@
 		if(check_target(target))
 			break
 
-/obj/machinery/porta_turret/proc/check_target(atom/movable/target)
+/obj/machinery/porta_turret/proc/check_target(atom/movable/target, check_flags = turret_flags)
 	// mecha|carbon|silicon|simple_animal
 	if(ismecha(target))
 		var/obj/mecha/mech = target
@@ -440,63 +476,51 @@
 		targets -= target
 		return FALSE
 
-	if(faction_check(src.faction, target_mob.faction))
+	if((check_flags & TURRET_FLAG_SHOOT_NONFACTION) && faction_check(src.faction, target_mob.faction))
+		return FALSE
+
+	if((check_flags & TURRET_FLAG_SHOOT_SPECIFIC_FACTION) && !faction_check(src.faction, target_mob.faction))
 		return FALSE
 
 	if(iscyborg(target_mob))
-		return (turret_flags & TURRET_FLAG_SHOOT_BORGS) && target(target_mob)
+		return (check_flags & TURRET_FLAG_SHOOT_SILICONS) && target(target_mob)
 
-	if(isanimal(target_mob))
-		return (turret_flags & TURRET_FLAG_SHOOT_ANOMALOUS) && target(target_mob)
+	if(!ishuman(target_mob))
+		if(!(check_flags & TURRET_FLAG_SHOOT_FAUNA))
+			return FALSE
 
-	//We know the target must be a carbon now
-	var/mob/living/carbon/target_carbon = target_mob
+		if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
+			return target(target_mob)
 
-	//Nonhuman carbons, e.g. monkeys, xenos, etc.
-	if(!ishuman(target_carbon))
-		return (turret_flags & TURRET_FLAG_SHOOT_ANOMALOUS) && target(target_carbon)
+		//this is gross
+		var/static/list/dangerous_fauna = typecacheof(list(/mob/living/simple_animal/hostile, /mob/living/carbon/alien, /mob/living/carbon/monkey))
+		if(!is_type_in_typecache(target_mob, dangerous_fauna))
+			return FALSE
 
-	//If not set to lethal, only target carbons that can use items
-	if(mode != TURRET_LETHAL && (target_carbon.handcuffed || !(target_carbon.mobility_flags & MOBILITY_USE)))
+		if(ismonkey(target_mob))
+			var/mob/living/carbon/monkey/monke = target_mob
+			return monke.mode == MONKEY_HUNT && target(target_mob)
+		if(istype(target_mob, /mob/living/simple_animal/hostile/retaliate))
+			var/mob/living/simple_animal/hostile/retaliate/target_animal = target_mob
+			return length(target_animal.enemies) && target(target_mob)
+
+		return target(target_mob)
+
+	//We know the target must be a human now
+	var/mob/living/carbon/human/target_carbon = target_mob
+
+	if(check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id))
 		return FALSE
 
-	return assess_perp(target_carbon) >= 4 && target(target_carbon)
+	if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
+		return target(target_carbon)
 
-/obj/machinery/porta_turret/proc/assess_perp(mob/living/carbon/human/perp)
-	var/threatcount = 0	//the integer returned
+	//Not dangerous if you can't hold anything
+	if(target_carbon.handcuffed || !(target_carbon.mobility_flags & MOBILITY_USE))
+		return FALSE
 
-	if(obj_flags & EMAGGED)
-		return 10	//if emagged, always return 10.
-
-	if((turret_flags & (TURRET_FLAG_SHOOT_ALL | TURRET_FLAG_SHOOT_ALL_REACT)) && !allowed(perp))
-		//if the turret has been attacked or is angry, target all non-sec people
-		return 10
-
-	if(turret_flags & TURRET_FLAG_AUTH_WEAPONS)	//check for weapon authorization
-		if(isnull(perp.wear_id) || istype(perp.wear_id.GetID(), /obj/item/card/id/syndicate))
-
-			if(allowed(perp)) //if the perp has security access, return 0
-				return 0
-			if(perp.is_holding_item_of_type(/obj/item/gun) ||  perp.is_holding_item_of_type(/obj/item/melee/baton))
-				threatcount += 4
-
-			if(istype(perp.belt, /obj/item/gun) || istype(perp.belt, /obj/item/melee/baton))
-				threatcount += 2
-
-	if(turret_flags & TURRET_FLAG_SHOOT_CRIMINALS)	//if the turret can check the records, check if they are set to *Arrest* on records
-		var/perpname = perp.get_face_name(perp.get_id_name())
-		var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.security)
-		if(!R || (R.fields["criminal"] == "*Arrest*"))
-			threatcount += 4
-
-	if((turret_flags & TURRET_FLAG_SHOOT_UNSHIELDED) && (!HAS_TRAIT(perp, TRAIT_MINDSHIELD)))
-		threatcount += 4
-
-	// If we aren't shooting heads then return a threatcount of 0
-	if (!(turret_flags & TURRET_FLAG_SHOOT_HEADS) && (perp.get_assignment() in GLOB.command_positions))
-		return 0
-
-	return threatcount
+	if(target_carbon.is_holding_item_of_type(/obj/item/gun) || target_carbon.is_holding_item_of_type(/obj/item/melee))
+		return target(target_carbon)
 
 //Returns whether or not we should stop searching for targets
 /obj/machinery/porta_turret/proc/target(mob/living/target)
@@ -544,15 +568,16 @@
 
 	update_appearance(UPDATE_ICON_STATE)
 	var/obj/projectile/shot
-	//any lethaling turrets drain 2x power and use a different projectile
-	if(mode == TURRET_STUN)
-		use_power(reqpower)
-		shot = new stun_projectile(our_turf)
-		playsound(loc, stun_projectile_sound, 75, TRUE)
-	else
+	//any lethaling turrets drain 2x the power and use a different projectile
+	if(lethal)
 		use_power(reqpower * 2)
 		shot = new lethal_projectile(our_turf)
 		playsound(loc, lethal_projectile_sound, 75, TRUE)
+	else
+		use_power(reqpower)
+		shot = new stun_projectile(our_turf)
+		playsound(loc, stun_projectile_sound, 75, TRUE)
+
 
 	//Shooting Code:
 	shot.preparePixelProjectile(target, our_turf)
@@ -565,19 +590,22 @@
 	if(current_target)
 		UnregisterSignal(current_target, COMSIG_PARENT_QDELETING)
 
+	retaliating = FALSE
 	current_target = target
 	target_beam.set_target(target)
 
 	if(current_target)
 		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(set_target))
 
-/obj/machinery/porta_turret/proc/setState(on, mode, shoot_cyborgs)
+/obj/machinery/porta_turret/proc/set_state(on, new_mode, new_flags)
 	if(locked)
 		return
 
-	shoot_cyborgs ? (turret_flags |= TURRET_FLAG_SHOOT_BORGS) : (turret_flags &= ~TURRET_FLAG_SHOOT_BORGS)
+	if(!isnull(new_flags))
+		turret_flags = new_flags
+
+	lethal = new_mode
 	toggle_on(on)
-	src.mode = mode
 	power_change()
 
 /obj/item/gun/proc/get_turret_properties()

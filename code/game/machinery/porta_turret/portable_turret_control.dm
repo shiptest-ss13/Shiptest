@@ -20,8 +20,8 @@
 	var/locked = TRUE
 	/// AI is unable to use this machine if set to TRUE
 	var/ailock = FALSE
-	/// Variable dictating if linked turrets will shoot cyborgs
-	var/shoot_cyborgs = FALSE
+	/// Flags to apply to all linked turrets
+	var/turret_flags = TURRET_FLAG_DEFAULT
 	/// List of all linked turrets
 	var/list/datum/weakref/turret_refs = list()
 	///id for connecting to additional turrets
@@ -34,16 +34,11 @@
 		locked = FALSE
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -24 : 24)
 		pixel_y = (dir & 3)? (dir ==1 ? -24 : 24) : 0
-	power_change() //Checks power and initial settings
+	power_change()
 
 /obj/machinery/turretid/Destroy()
 	turret_refs.Cut()
 	return ..()
-
-/obj/machinery/turretid/Initialize(mapload) //map-placed turrets autolink turrets
-	. = ..()
-	if(!mapload)
-		return
 
 /obj/machinery/turretid/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[text_ref(port)][id]"
@@ -63,6 +58,7 @@
 
 		turret_refs |= ship_gun
 
+	update_turrets()
 	UnregisterSignal(port, COMSIG_SHIP_DONE_CONNECTING)
 
 /obj/machinery/turretid/examine(mob/user)
@@ -119,13 +115,19 @@
 		ui.open()
 
 /obj/machinery/turretid/ui_data(mob/user)
-	var/list/data = list()
-	data["locked"] = locked
-	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
-	data["enabled"] = enabled
-	data["lethal"] = lethal
-	data["shootCyborgs"] = shoot_cyborgs
-	return data
+	return list(
+		"locked" = locked,
+		"enabled" = enabled,
+		"lethal" = lethal,
+		"siliconUser" = user.has_unlimited_silicon_privilege && check_ship_ai_access(user),
+		"dangerous_only" = turret_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY,
+		"retaliate" = turret_flags & TURRET_FLAG_SHOOT_RETALIATE,
+		"shoot_fauna" = turret_flags & TURRET_FLAG_SHOOT_FAUNA,
+		"shoot_humans" = turret_flags & TURRET_FLAG_SHOOT_HUMANS,
+		"shoot_silicons" = turret_flags & TURRET_FLAG_SHOOT_SILICONS,
+		"only_nonfaction" = turret_flags & TURRET_FLAG_SHOOT_NONFACTION,
+		"only_specificfaction" = turret_flags & TURRET_FLAG_SHOOT_SPECIFIC_FACTION,
+	)
 
 /obj/machinery/turretid/ui_act(action, list/params)
 	. = ..()
@@ -147,35 +149,50 @@
 		if("mode")
 			toggle_lethal(usr)
 			return TRUE
-		if("shoot_silicons")
-			shoot_silicons(usr)
+
+		if("toggle_dangerous")
+			turret_flags ^= TURRET_FLAG_SHOOT_DANGEROUS_ONLY
 			return TRUE
+		if("toggle_retaliate")
+			turret_flags ^= TURRET_FLAG_SHOOT_RETALIATE
+			return TRUE
+
+		if("toggle_fauna")
+			turret_flags ^= TURRET_FLAG_SHOOT_FAUNA
+			return TRUE
+		if("toggle_humans")
+			turret_flags ^= TURRET_FLAG_SHOOT_HUMANS
+			return TRUE
+		if("toggle_silicons")
+			turret_flags ^= TURRET_FLAG_SHOOT_SILICONS
+			return TRUE
+
+		if("toggle_nonfaction")
+			turret_flags ^= TURRET_FLAG_SHOOT_NONFACTION
+			return TRUE
+		if("toggle_specificfaction")
+			turret_flags ^= TURRET_FLAG_SHOOT_SPECIFIC_FACTION
+			return TRUE
+
+	update_turrets()
 
 /obj/machinery/turretid/proc/toggle_lethal(mob/user)
 	lethal = !lethal
 	add_hiddenprint(user)
 	log_combat(user, src, "[lethal ? "enabled" : "disabled"] lethals on")
-	updateTurrets()
 
 /obj/machinery/turretid/proc/toggle_on(mob/user)
 	enabled = !enabled
 	add_hiddenprint(user)
 	log_combat(user, src, "[enabled ? "enabled" : "disabled"]")
-	updateTurrets()
 
-/obj/machinery/turretid/proc/shoot_silicons(mob/user)
-	shoot_cyborgs = !shoot_cyborgs
-	add_hiddenprint(user)
-	log_combat(user, src, "[shoot_cyborgs ? "Shooting Borgs" : "Not Shooting Borgs"]")
-	updateTurrets()
-
-/obj/machinery/turretid/proc/updateTurrets()
+/obj/machinery/turretid/proc/update_turrets()
 	for(var/datum/weakref/turret_ref in turret_refs)
 		var/obj/machinery/porta_turret/turret = turret_ref.resolve()
 		if(!turret)
 			turret_refs -= turret_ref
 			continue
-		turret.setState(enabled, lethal, shoot_cyborgs)
+		turret.set_state(enabled, lethal, turret_flags)
 	update_appearance()
 
 /obj/machinery/turretid/update_icon_state()
@@ -190,6 +207,7 @@
 
 /obj/machinery/turretid/lethal
 	lethal = TRUE
+	turret_flags = TURRET_FLAG_HOSTILE
 
 /obj/machinery/turretid/ship
 	req_ship_access = TRUE
