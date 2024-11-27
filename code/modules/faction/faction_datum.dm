@@ -14,12 +14,8 @@
 
 /// Easy way to check if something is "allowed", checks to see if it matches the name or faction typepath because factions are a fucking mess
 /datum/faction/proc/allowed_faction(value_to_check)
-	var/datum/faction/faction_to_check = value_to_check
-	//are we the same faction datum?
-	if(istype(value_to_check, src))
-		return TRUE
-	///if they are our parent faction then allow
-	if(istype(faction_to_check, parent_faction))
+	///Allow if we share a parent faction
+	if(istype(value_to_check, parent_faction))
 		return TRUE
 	//do we have the same faction even if one is a define?
 	if(value_to_check == name)

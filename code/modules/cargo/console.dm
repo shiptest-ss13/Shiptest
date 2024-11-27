@@ -176,15 +176,11 @@
 				beacon.name = "Supply Pod Beacon #[printed_beacons]"
 		if("add")
 			var/area/ship/current_area = get_area(src)
-			var/datum/overmap/outpost/outpost_docked = current_ship.docked_to
-			if(outpost_docked)
+			if(istype(current_ship.docked_to, /datum/overmap/outpost/outpost_docked))
 				var/datum/supply_pack/current_pack = locate(params["ref"])
 				var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
 				var/total_cost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : current_pack.cost
-				if( \
-					!current_pack || !charge_account?.has_money(total_cost) || !istype(current_area) || \
-					!istype(current_area.mobile_port.current_ship.docked_to, /datum/overmap/outpost) \
-				)
+				if(!current_pack || !charge_account?.has_money(total_cost))
 					return
 
 				var/turf/landing_turf
@@ -303,7 +299,7 @@
 			"discountpercent" = current_pack.faction_discount,
 			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
 			"ref" = REF(current_pack),
-			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction." : "") // If there is a description, use it. Otherwise use the pack's name.
+			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : "") // If there is a description, use it. Otherwise use the pack's name.
 		))
 
 /obj/machinery/computer/cargo/retro
