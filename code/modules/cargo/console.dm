@@ -176,7 +176,7 @@
 				beacon.name = "Supply Pod Beacon #[printed_beacons]"
 		if("add")
 			var/area/ship/current_area = get_area(src)
-			if(istype(current_ship.docked_to, /datum/overmap/outpost/outpost_docked))
+			if(istype(current_ship.docked_to, /datum/overmap/outpost))
 				var/datum/supply_pack/current_pack = locate(params["ref"])
 				var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
 				var/total_cost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : current_pack.cost
