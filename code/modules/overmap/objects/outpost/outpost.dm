@@ -46,7 +46,7 @@
 	/// our 'Order number'
 	var/ordernum = 1
 	/// Our faction of the outpost
-	var/faction
+	var/datum/faction/faction
 
 /datum/overmap/outpost/Initialize(position, ...)
 	. = ..()
