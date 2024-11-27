@@ -18,6 +18,7 @@
 	var/list/cant_hold								//if this is set, items, and their children, won't fit
 	var/list/exception_hold           //if set, these items will be the exception to the max size of object that can fit.
 	var/list/can_hold_trait							/// If set can only contain stuff with this single trait present.
+	var/list/can_hold_max_of_items 			// if set, storage can only hold up to the set amount of said item.
 
 	var/can_hold_description
 
@@ -566,6 +567,16 @@
 			if(!stop_messages)
 				to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
 			return FALSE
+	if(length(can_hold_max_of_items))
+		if(is_type_in_typecache(I,can_hold_max_of_items))
+			var/amount = 0
+			for(var/_item in contents())
+				if(is_type_in_typecache(_item,can_hold_max_of_items))
+					amount++
+			if(amount >= can_hold_max_of_items[I.type])
+				if(!stop_messages)
+					to_chat(M, "<span class='warning'>[host] cannot hold another [I]!</span>")
+					return FALSE
 	if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT) || (can_hold_trait && !HAS_TRAIT(I, can_hold_trait))) //Items which this container can't hold.
 		if(!stop_messages)
 			to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
