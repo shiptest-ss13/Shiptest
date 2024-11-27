@@ -44,9 +44,6 @@
 	id = "[text_ref(port)][id]"
 	RegisterSignal(port, COMSIG_SHIP_DONE_CONNECTING, PROC_REF(late_connect_to_shuttle))
 
-/obj/machinery/turretid/disconnect_from_shuttle(obj/docking_port/mobile/port)
-	turret_refs.Cut()
-
 /obj/machinery/turretid/proc/late_connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	SIGNAL_HANDLER
 

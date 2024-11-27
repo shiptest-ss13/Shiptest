@@ -154,10 +154,6 @@
 	id = "[text_ref(port)][initial(id)]"
 	port.turret_list |= WEAKREF(src)
 
-/obj/machinery/porta_turret/disconnect_from_shuttle(obj/docking_port/mobile/port)
-	id = initial(id)
-	port.turret_list -= WEAKREF(src)
-
 /obj/machinery/porta_turret/proc/toggle_on(set_to)
 	var/current = on
 	if (!isnull(set_to))
