@@ -621,9 +621,6 @@
 "ff" = (
 /obj/effect/turf_decal/corner/transparent/grey/full,
 /obj/effect/turf_decal/corner/transparent/lightgrey/diagonal,
-/obj/structure/closet/secure_closet/freezer/fridge{
-	populate = 0
-	},
 /obj/effect/turf_decal/siding/thinplating,
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/reagent_containers/condiment/flour,
@@ -637,6 +634,11 @@
 /obj/item/reagent_containers/food/snacks/meat/steak/chicken,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/structure/closet/secure_closet/freezer{
+	anchored = 1;
+	locked = 0;
+	name = "fridge"
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/ccommons)
 "fj" = (
