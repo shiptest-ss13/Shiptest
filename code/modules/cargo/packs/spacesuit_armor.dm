@@ -85,16 +85,6 @@
 	crate_type = /obj/structure/closet/crate/secure/engineering
 	faction = /datum/faction/nt
 
-/datum/supply_pack/spacesuit_armor/swat
-	name = "SWAT Crate"
-	desc = "Contains one fullbody set of tough, fireproof, pressurized suit designed in a joint effort by IS-ERI and Nanotrasen. The set contains a suit, helmet, and combat belt."
-	cost = 3500
-	contains = list(/obj/item/clothing/head/helmet/swat/nanotrasen,
-					/obj/item/clothing/suit/space/swat,
-					/obj/item/storage/belt/military/assault)
-	crate_name = "swat crate"
-	crate_type = /obj/structure/closet/crate/secure/gear
-
 /*
 		Non-spaceworthy (armor)
 */
@@ -140,7 +130,7 @@
 	desc = "One set of well-rounded tactical armor. While it does not protect the limbs, the vest is fairly durable. The set includes a helmet and vest."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/vest/marine,
-					/obj/item/clothing/head/helmet/marine)
+					/obj/item/clothing/head/helmet/bulletproof/x11)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -149,6 +139,6 @@
 	desc = "One set of well-rounded medium tactical body armor. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
 	cost = 3000
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium,
-					/obj/item/clothing/head/helmet/marine)
+					/obj/item/clothing/head/helmet/bulletproof/x11)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
