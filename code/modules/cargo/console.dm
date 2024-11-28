@@ -179,8 +179,9 @@
 				printed_beacons++//printed_beacons starts at 0, so the first one out will be called beacon # 1
 				beacon.name = "Supply Pod Beacon #[printed_beacons]"
 		if("add")
-			if(istype(current_ship.docked_to, /datum/overmap/outpost))
-				var/datum/supply_pack/current_pack = locate(params["ref"])
+			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
+			if(istype(current_ship.docked_to))
+				var/datum/supply_pack/current_pack = locate(params["ref"]) in current_outpost.supply_packs
 				var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
 				var/total_cost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : current_pack.cost
 				if(!current_pack || !charge_account?.has_money(total_cost))
