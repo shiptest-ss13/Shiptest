@@ -288,6 +288,7 @@
 	if(!anchored || (machine_stat & BROKEN) || !powered())
 		update_appearance(UPDATE_ICON_STATE)
 		remove_control()
+		set_target(null)
 	check_should_process()
 
 /obj/machinery/porta_turret/attackby(obj/item/I, mob/user, params)
@@ -374,6 +375,7 @@
 		to_chat(user, span_warning("The turret is unresponsive!"))
 		return
 
+	to_chat(user, span_notice("You [locked ? "unlock" : "lock"] [src]."))
 	locked = !locked
 	update_appearance()
 
@@ -419,7 +421,7 @@
 		spark_system.start()
 
 /obj/machinery/porta_turret/proc/retaliate(mob/living/target)
-	if(!(turret_flags & TURRET_FLAG_SHOOT_RETALIATE) || current_target || !on || allowed(target))
+	if(!(turret_flags & TURRET_FLAG_SHOOT_RETALIATE) || current_target || !on || allowed(target) || (machine_stat & BROKEN|NOPOWER|MAINT))
 		return
 
 	set_target(target)
@@ -460,10 +462,15 @@
 
 	for(var/atom/movable/target as anything in targets)
 		//TODO: Remove this if it never happens, because it shouldn't
-		if(isnull(target) || QDELETED(target))
+		if(QDELETED(target))
 			targets -= target
-			stack_trace("Invalid target in turret list")
+			stack_trace("Qdeleted target in turret list")
 			return FALSE
+
+		if(isnull(target))
+			targets -= target
+			stack_trace("Null target in turret list")
+			continue
 
 		if(check_target(target))
 			break

@@ -60,9 +60,12 @@
 
 /obj/machinery/turretid/examine(mob/user)
 	. += ..()
-	if(issilicon(user) && !(machine_stat & BROKEN))
-		. += {"<span class='notice'>Ctrl-click [src] to [ enabled ? "disable" : "enable"] turrets.</span>
-					<span class='notice'>Alt-click [src] to set turrets to [ lethal ? "stun" : "kill"].</span>"}
+	if((machine_stat & (BROKEN|MAINT)))
+		return
+
+	. += span_notice("<b>Alt-click</b> [src] to [locked ? "unlock" : "lock"] it.")
+	. += span_notice("<b>Ctrl-click</b> [src] to [enabled ? "disable" : "enable"] turrets.")
+	. += span_notice("<b>Ctrl-shift-click</b> [src] to set turrets to [lethal ? "stun" : "kill"] mode.")
 
 /obj/machinery/turretid/attackby(obj/item/I, mob/user, params)
 	if(machine_stat & BROKEN)
@@ -87,23 +90,18 @@
 	. = ..()
 	toggle_lock(user)
 
-/obj/machinery/turretid/proc/toggle_lock(mob/user)
-	if(!user.canUseTopic(src, !issilicon(user)))
-		return
-	if(!allowed(user))
-		to_chat(user, span_alert("Access denied."))
-		return
-	if(obj_flags & EMAGGED || (machine_stat & (BROKEN|MAINT)))
-		to_chat(user, span_warning("The turret control is unresponsive!"))
-		return
+/obj/machinery/turretid/CtrlClick(mob/user)
+	. = ..()
+	toggle_on(user)
 
-	locked = !locked
-	update_appearance()
+/obj/machinery/turretid/CtrlShiftClick(mob/user)
+	. = ..()
+	toggle_lethal(user)
 
 /obj/machinery/turretid/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
-	to_chat(user, "<span class='notice'>You short out the turret controls' access analysis module.</span>")
+	to_chat(user, span_notice("You short out the turret controls' access analysis module."))
 	obj_flags |= EMAGGED
 	locked = FALSE
 
@@ -111,7 +109,7 @@
 	if(!ailock || isAdminGhostAI(user))
 		return attack_hand(user)
 	else
-		to_chat(user, "<span class='warning'>There seems to be a firewall preventing you from accessing this device!</span>")
+		to_chat(user, span_warning("There seems to be a firewall preventing you from accessing this device!"))
 
 /obj/machinery/turretid/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -171,12 +169,38 @@
 
 	update_turrets()
 
+/obj/machinery/turretid/proc/toggle_lock(mob/user)
+	if(!user.canUseTopic(src, !issilicon(user)))
+		return
+	if(!allowed(user))
+		to_chat(user, span_alert("Access denied."))
+		return
+	if(obj_flags & EMAGGED || (machine_stat & (BROKEN|MAINT)))
+		to_chat(user, span_warning("The turret control is unresponsive!"))
+		return
+
+	to_chat(user, span_notice("You [locked ? "unlock" : "lock"] the turret control."))
+	locked = !locked
+	update_appearance()
+
 /obj/machinery/turretid/proc/toggle_lethal(mob/user)
+	if(!user.canUseTopic(src, !issilicon(user)))
+		return
+	if(obj_flags & EMAGGED || (machine_stat & (BROKEN|MAINT)))
+		to_chat(user, span_warning("The turret control is unresponsive!"))
+		return
+
 	lethal = !lethal
 	add_hiddenprint(user)
 	log_combat(user, src, "[lethal ? "enabled" : "disabled"] lethals on")
 
 /obj/machinery/turretid/proc/toggle_on(mob/user)
+	if(!user.canUseTopic(src, !issilicon(user)))
+		return
+	if(obj_flags & EMAGGED || (machine_stat & (BROKEN|MAINT)))
+		to_chat(user, span_warning("The turret control is unresponsive!"))
+		return
+
 	enabled = !enabled
 	add_hiddenprint(user)
 	log_combat(user, src, "[enabled ? "enabled" : "disabled"]")
