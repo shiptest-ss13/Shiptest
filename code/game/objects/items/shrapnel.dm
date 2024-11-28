@@ -153,7 +153,7 @@
 /obj/item/ammo_casing/caseless/shrapnel
 	name = "directional shrapnel burst :D"
 	desc = "I May Have Overreacted"
-	pellets = 4
+	pellets = 5
 	variance = 70
 	projectile_type = /obj/projectile/bullet/shrapnel/claymore
 	randomspread = TRUE
@@ -161,7 +161,7 @@
 /obj/item/ammo_casing/caseless/shrapnel/shred
 	name = "point blank directional shrapnel burst"
 	desc = "Claymores are lethal to armored infantry at point blank range."
-	pellets = 3
+	pellets = 4
 	variance = 50
 	projectile_type = /obj/projectile/bullet/shrapnel/claymore/pointbl
 	randomspread = TRUE

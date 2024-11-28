@@ -82,6 +82,7 @@
 		/obj/structure/girder/displaced,
 		/obj/structure/girder/reinforced
 	)
+
 /obj/effect/spawner/random/waste/hivebot
 	loot = list(
 		/obj/effect/spawner/random/salvage/metal,
@@ -96,6 +97,45 @@
 		/obj/item/stack/ore/salvage/scrapuranium
 	)
 	spawn_loot_count = 2
+
+/obj/effect/spawner/random/waste/hivebot/more
+	spawn_loot_count = 4
+
+/obj/effect/spawner/random/waste/hivebot/part
+	loot = list(
+		/obj/item/stock_parts/capacitor,
+		/obj/item/stock_parts/scanning_module,
+		/obj/item/stock_parts/manipulator,
+		/obj/item/stock_parts/micro_laser,
+		/obj/item/stock_parts/matter_bin,
+		/obj/item/stock_parts/capacitor/adv,
+		/obj/item/stock_parts/scanning_module/adv,
+		/obj/item/stock_parts/manipulator/nano,
+		/obj/item/stock_parts/micro_laser/high,
+		/obj/item/stock_parts/matter_bin/adv,
+	)
+	spawn_loot_count = 1
+	spawn_loot_chance = 100
+
+/obj/effect/spawner/random/waste/hivebot/part/heavy
+	loot = list(
+		/obj/item/stock_parts/capacitor/super,
+		/obj/item/stock_parts/scanning_module/phasic,
+		/obj/item/stock_parts/manipulator/pico,
+		/obj/item/stock_parts/micro_laser/ultra,
+		/obj/item/stock_parts/matter_bin/super,
+	)
+
+
+/obj/effect/spawner/random/waste/hivebot/part/superheavy
+	loot = list(
+		/obj/item/stock_parts/capacitor/quadratic,
+		/obj/item/stock_parts/scanning_module/triphasic,
+		/obj/item/stock_parts/manipulator/femto,
+		/obj/item/stock_parts/micro_laser/quadultra,
+		/obj/item/stock_parts/matter_bin/bluespace,
+	)
+
 
 /obj/effect/spawner/random/waste/hivebot/beacon
 	spawn_loot_count = 6
