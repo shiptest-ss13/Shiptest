@@ -129,7 +129,7 @@
 	if (!internal_magazine && (A.type in (allowed_ammo_types - blacklisted_ammo_types)))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
-			insert_cell(user, C)
+			return insert_cell(user, C)
 		else
 			if (tac_reloads)
 				eject_cell(user, C)
@@ -137,14 +137,18 @@
 	return ..()
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(user.transferItemToLoc(C, src))
-		cell = C
-		to_chat(user, span_notice("You load the [C] into \the [src]."))
-		playsound(src, load_sound, load_sound_volume, load_sound_vary)
-		update_appearance()
-		return TRUE
+	if(!latch_closed)
+		if(user.transferItemToLoc(C, src))
+			cell = C
+			to_chat(user, span_notice("You load the [C] into \the [src]."))
+			playsound(src, load_sound, load_sound_volume, load_sound_vary)
+			update_appearance()
+			return TRUE
+		else
+			to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
+			return FALSE
 	else
-		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
+		to_chat(user, span_warning("The [src]'s cell retainment clip is latched!"))
 		return FALSE
 
 /obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
@@ -176,15 +180,22 @@
 			eject_cell(user)
 	return ..()
 
-/obj/item/gun/energy/AltClick(mob/living/user, obj/item/I)
-	if(cell && !internal_magazine && latch_closed)
-		to_chat(user, span_notice("You unlatch the power cell retainment clip."))
-		tac_reloads = TRUE
-		latch_closed = FALSE
+/obj/item/gun/energy/AltClick(mob/living/user)
+	if(!internal_magazine && latch_closed)
+		to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
+		if(do_after(user, 10))
+			to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip."))
+			playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
+			tac_reloads = TRUE
+			latch_closed = FALSE
 	else if(!latch_closed)
-		to_chat(user, span_notice("You latch the power cell retainment clip."))
-		tac_reloads = FALSE
-		latch_closed = TRUE
+		to_chat(user, span_notice("You start to latch the [src]'s power cell retainment clip..."))
+		if(do_after(user, 10))
+			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip."))
+			playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
+			tac_reloads = FALSE
+			latch_closed = TRUE
+	return ..()
 
 /obj/item/gun/energy/can_shoot(visuals)
 	if(safety && !visuals)
