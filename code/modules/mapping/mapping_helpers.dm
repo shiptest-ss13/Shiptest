@@ -383,7 +383,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 			found_airlock.update_appearance()
 			qdel(src)
 		if(note_info)
-			var/obj/item/paper/paper = new /obj/item/paper(airlock)
+			var/obj/item/paper/paper = new /obj/item/paper(found_airlock)
 			if(note_name)
 				paper.name = note_name
 			paper.add_raw_text("[note_info]")
