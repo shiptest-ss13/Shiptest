@@ -230,6 +230,21 @@
 		return secondary.screwdriver_act(user, attack_obj,)
 	return ..()
 
+/obj/item/gun/ballistic/automatic/assault/e40/attack_hand(mob/user)
+	var/current_firemode = gun_firemodes[firemode_index]
+	if(current_firemode == FIREMODE_OTHER && loc == user && user.is_holding(src) && secondary.cell && !secondary.latch_closed)
+		secondary.eject_cell(user)
+		return
+	if(current_firemode == FIREMODE_OTHER && loc == user && user.is_holding(src) && secondary.cell && secondary.latch_closed)
+		to_chat(user, span_warning("The cell retainment clip is latched!"))
+		return
+	return ..()
+
+/obj/item/gun/ballistic/automatic/assault/e40/AltClick(mob/living/user)
+	var/current_firemode = gun_firemodes[firemode_index]
+	if(current_firemode == FIREMODE_OTHER)
+		return secondary.AltClick(user)
+
 /obj/item/gun/ballistic/automatic/assault/e40/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
 	secondary.wielded = TRUE
@@ -296,6 +311,7 @@
 	fire_delay = 0.2 SECONDS
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
+	latch_toggle_delay = 1.5 SECONDS
 
 	spread_unwielded = 20
 

@@ -30,6 +30,7 @@
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS
 	var/latch_closed = TRUE
+	var/latch_toggle_delay = 1.2 SECONDS
 
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
@@ -183,14 +184,14 @@
 /obj/item/gun/energy/AltClick(mob/living/user)
 	if(!internal_magazine && latch_closed)
 		to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
-		if(do_after(user, 10))
+		if(do_after(user, latch_toggle_delay))
 			to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip."))
 			playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
 			tac_reloads = TRUE
 			latch_closed = FALSE
-	else if(!latch_closed)
+	else if(!internal_magazine && !latch_closed)
 		to_chat(user, span_notice("You start to latch the [src]'s power cell retainment clip..."))
-		if(do_after(user, 10))
+		if(do_after(user, latch_toggle_delay))
 			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip."))
 			playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 			tac_reloads = FALSE
