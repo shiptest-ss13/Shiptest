@@ -301,6 +301,16 @@
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	has_gravity = STANDARD_GRAVITY
 	always_unpowered = TRUE
+	//these vars are from atom but do nothing when on an area, should be okay to use
+	light_range = 2
+	light_power = 0.80
+	light_color = "#FFFFFF"
+
+/area/overmap_encounter/planetoid/update_light()
+	for(var/turf/updating_turf as anything in contents)
+		if(!istype(updating_turf))
+			continue
+		SEND_SIGNAL(updating_turf, COMSIG_OVERMAPTURF_UPDATE_LIGHT, light_range, light_power, light_color)
 
 // Used for caves on multi-biome planetoids.
 /area/overmap_encounter/planetoid/cave
@@ -308,6 +318,8 @@
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
 	allow_weather = FALSE
+	light_range = 0
+	light_power = 0
 
 /area/overmap_encounter/planetoid/cave/explored
 	area_flags = VALID_TERRITORY
@@ -317,6 +329,9 @@
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
 	ambientsounds = MINING
+	light_color = COLOR_LAVAPLANET_LIGHT
+	light_range = 2
+	light_power = 0.6
 
 /area/overmap_encounter/planetoid/lava/explored
 	area_flags = VALID_TERRITORY
@@ -325,11 +340,9 @@
 	name = "\improper Frozen Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
-
-/area/overmap_encounter/planetoid/snowball
-	name = "\improper Snowball Planetoid"
-	sound_environment = SOUND_ENVIRONMENT_STONE_CORRIDOR
-	ambientsounds = TUNDRA
+	light_color = COLOR_ICEPLANET_LIGHT
+	light_range = 2
+	light_power = 1
 
 /area/overmap_encounter/planetoid/ice/explored
 	area_flags = VALID_TERRITORY
@@ -338,6 +351,9 @@
 	name = "\improper Sandy Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = MINING
+	light_color = COLOR_SANDPLANET_LIGHT
+	light_range = 2
+	light_power = 0.6
 
 /area/overmap_encounter/planetoid/sand/explored
 	area_flags = VALID_TERRITORY
@@ -346,6 +362,9 @@
 	name = "\improper Jungle Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = AWAY_MISSION
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_VERY_LIGHT_GRAY
 
 /area/overmap_encounter/planetoid/jungle/explored
 	area_flags = VALID_TERRITORY
@@ -354,6 +373,9 @@
 	name = "\improper Battlefield Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CITY
 	ambientsounds = SPOOKY
+	light_color = COLOR_FOGGY_LIGHT
+	light_range = 2
+	light_power = 1
 
 /area/overmap_encounter/planetoid/battlefield/explored
 	area_flags = VALID_TERRITORY
@@ -363,6 +385,9 @@
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = AWAY_MISSION
+	light_color = COLOR_ROCKPLANET_LIGHT
+	light_range = 2
+	light_power = 0.6
 
 /area/overmap_encounter/planetoid/rockplanet/explored
 	area_flags = VALID_TERRITORY
@@ -371,11 +396,17 @@
 	name = "\improper Beach Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = BEACH
+	light_color = COLOR_BEACHPLANET_LIGHT
+	light_range = 2
+	light_power = 0.80
 
 /area/overmap_encounter/planetoid/waterplanet
 	name = "\improper Water Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = MINING
+	light_color = "#09121a"
+	light_range = 2
+	light_power = 1
 
 /area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
 	area_flags = UNIQUE_AREA
@@ -388,6 +419,9 @@
 	name = "\improper Waste Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
 	ambientsounds = MAINTENANCE
+	light_color = COLOR_WASTEPLANET_LIGHT
+	light_range = 2
+	light_power = 0.2
 
 /area/overmap_encounter/planetoid/wasteplanet/explored
 	area_flags = VALID_TERRITORY
@@ -397,29 +431,53 @@
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
 
 /area/overmap_encounter/planetoid/desert
 	name = "\improper Desert Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	ambientsounds = DESERT
+	light_range = 2
+	light_power = 0.6
+	light_color = "#ffd2bd"
 
 /area/overmap_encounter/planetoid/shrouded
 	name = "\improper Shrouded Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	ambientsounds = DESERT
+	light_range = 0
+	light_power = 0
+
+/area/overmap_encounter/planetoid/snowball
+	name = "\improper Snowball Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_STONE_CORRIDOR
+	ambientsounds = TUNDRA
+	light_color = COLOR_FOGGY_LIGHT
+	light_range = 2
+	light_power = 1
 
 /area/overmap_encounter/planetoid/moon
 	name = "\improper Planetoid Moon"
 	ambientsounds = SPACE
 	sound_environment = SOUND_AREA_SPACE
+	light_range = 2
+	light_power = 1
+	light_color = "#FFFFFF" // should look liminal, due to moons lighting
 
 /area/overmap_encounter/planetoid/asteroid
 	name = "\improper Asteroid Field"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = SPACE
+	light_range = 0
+	light_power = 0
 
 /area/overmap_encounter/planetoid/gas_giant
 	name = "\improper Gas Giant"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	ambientsounds = REEBE
 	has_gravity = GAS_GIANT_GRAVITY
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_DARK_MODERATE_ORANGE

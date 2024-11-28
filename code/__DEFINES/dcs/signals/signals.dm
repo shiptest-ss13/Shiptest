@@ -734,3 +734,6 @@
 #define COMSIG_ADDED_POINT_OF_INTEREST "added_point_of_interest"
 /// Sent from base of /datum/controller/subsystem/points_of_interest/proc/on_poi_element_removed : (atom/old_poi)
 #define COMSIG_REMOVED_POINT_OF_INTEREST "removed_point_of_interest"
+
+///Send from overmap areas to their turfs when they need to update their light, might be useful for events?: (light_range, light_power, light_color)
+#define COMSIG_OVERMAPTURF_UPDATE_LIGHT "atom_attackby"

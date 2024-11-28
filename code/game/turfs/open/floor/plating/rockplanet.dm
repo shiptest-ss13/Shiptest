@@ -13,6 +13,7 @@
 	light_color = COLOR_ROCKPLANET_LIGHT
 
 /turf/open/floor/plating/asteroid/rockplanet/lit
+	light_color = COLOR_ROCKPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
 

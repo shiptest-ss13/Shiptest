@@ -51,5 +51,6 @@
 	planetary_atmos = TRUE
 
 /turf/open/floor/plating/grass/beach/lit
+	light_color = COLOR_BEACHPLANET_LIGHT
 	light_range = 2
 	light_power = 0.80

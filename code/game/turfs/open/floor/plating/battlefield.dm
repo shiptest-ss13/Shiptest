@@ -17,13 +17,13 @@
 
 /turf/open/floor/plating/asteroid/battlefield_wasteland/lit
 	baseturfs = /turf/open/floor/plating/asteroid/battlefield_wasteland/lit
-	light_color = "#849abf"
+	light_color = COLOR_FOGGY_LIGHT
 	light_range = 2
 	light_power = 1
 
 /turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
 	baseturfs = /turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
-	light_color = "#849abf"
+	light_color = COLOR_FOGGY_LIGHT
 	light_range = 2
 	light_power = 1
 
@@ -73,4 +73,4 @@
 /turf/open/water/battlefield/lit
 	light_range = 2
 	light_power = 1
-	light_color = "#849abf"
+	light_color = COLOR_FOGGY_LIGHT
