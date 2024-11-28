@@ -109,7 +109,6 @@
 	cost = 1250
 	contains = list(/obj/item/gun/energy/laser/scatter)
 	crate_name = "scatter laser crate"
-	faction = FACTION_FRONTIER
 
 /datum/supply_pack/gun/ion
 	name = "Ion Rifle Crate"
