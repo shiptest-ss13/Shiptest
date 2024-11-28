@@ -311,7 +311,7 @@
 	fire_delay = 0.2 SECONDS
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
-	latch_toggle_delay = 1.5 SECONDS
+	latch_toggle_delay = 1.2 SECONDS
 
 	spread_unwielded = 20
 

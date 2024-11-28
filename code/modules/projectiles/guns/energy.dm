@@ -30,7 +30,7 @@
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS
 	var/latch_closed = TRUE
-	var/latch_toggle_delay = 1.2 SECONDS
+	var/latch_toggle_delay = 1.0 SECONDS
 
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
@@ -236,7 +236,12 @@
 /obj/item/gun/energy/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(!chambered && can_shoot())
 		process_chamber()	// If the gun was drained and then recharged, load a new shot.
-	return ..()
+	..() //process the gunshot as normal
+	if(!latch_closed && prob(65)) //make the cell slide out if it's fired while the retainment clip is unlatched, with an 65% probability
+		to_chat(user, span_warning("The [src]'s cell falls out!"))
+		eject_cell()
+	return
+
 
 /obj/item/gun/energy/proc/select_fire(mob/living/user)
 	select++
