@@ -353,6 +353,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 		/obj/item/ammo_box/magazine/internal/shot/dual/lethal,
 	)
 
+EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
+
 /obj/item/gun/ballistic/shotgun/doublebarrel/roumain
 	name = "HP antique double-barreled shotgun"
 	desc = "A special-edition shotgun hand-made by Hunter's Pride with a high-quality walnut stock inlaid with brass scrollwork. Shotguns like this are very rare outside of the Saint-Roumain Militia's ranks. Otherwise functionally identical to a common double-barreled shotgun. Chambered in 12g."
@@ -439,6 +441,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	item_state = "shotgun_qb"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15 //blunt edge and really heavy

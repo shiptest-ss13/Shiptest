@@ -80,9 +80,9 @@
 	timeout = 3 MINUTES
 
 /datum/mood_event/legion_good
-	mood_change = 20
-	description = span_nicegreen("I'm feeling great!")
+	mood_change = 5
+	description = span_nicegreen("Everything feels so light! I'm strong! Unstoppable!")
 
 /datum/mood_event/legion_bad
-	mood_change = -20
-	description = span_warning("That felt awful!")
+	mood_change = -4
+	description = span_warning("Something is slithering through my veins")

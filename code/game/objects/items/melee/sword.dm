@@ -67,7 +67,7 @@
 
 /obj/item/melee/sword/mass/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=22, icon_wielded="[base_icon_state]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=22)
 
 /obj/item/melee/sword/katana
 	name = "katana"

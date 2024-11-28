@@ -92,10 +92,11 @@
 		if(initial(above_suit))
 			above_suit = !above_suit
 			to_chat(user, "[src] will be worn [above_suit ? "above" : "below"] your suit.")
+		return ..()
 
 /obj/item/clothing/accessory/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>\The [src] can be attached to a uniform. Alt-click to remove it once attached.</span>"
+	. += "<span class='notice'>\The [src] can be attached to a uniform. Ctrl-click to remove it once attached.</span>"
 	if(initial(above_suit))
 		. += "<span class='notice'>\The [src] can be worn above or below your suit. Alt-click to toggle.</span>"
 
@@ -114,16 +115,6 @@
 	item_state = "maidapron"
 	minimize_when_attached = FALSE
 	attachment_slot = null
-
-/obj/item/clothing/accessory/maidapron/syndicate
-	name = "syndicate maid apron"
-	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
-	icon_state = "maidapronsynd"
-
-/obj/item/clothing/accessory/maidapron/inteq
-	name = "inteq maid apron"
-	desc = "A 'tactical' apron to protect you from all sorts of spills, from dough to blood!"
-	icon_state = "inteqmaidapron"
 
 //////////
 //Medals//
@@ -431,7 +422,6 @@
 	name = "syndicate holster"
 	desc = "A two pouched hip holster that uses chameleon technology to disguise itself and any guns in it."
 	var/datum/action/item_action/chameleon/change/chameleon_action
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/chameleon
 
 /obj/item/clothing/accessory/holster/chameleon/Initialize()
 	. = ..()
