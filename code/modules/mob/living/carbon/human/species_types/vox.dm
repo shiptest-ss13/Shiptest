@@ -16,7 +16,7 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	species_clothing_path = 'icons/mob/clothing/species/vox.dmi'
-	species_eye_path = 'icons/mob/vox_parts.dmi'
+	species_eye_path = 'icons/mob/species/vox/vox_parts.dmi'
 	punchdamagelow = 6
 	punchdamagehigh = 12
 	mutanttongue = /obj/item/organ/tongue/vox

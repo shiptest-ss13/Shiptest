@@ -99,11 +99,11 @@
 
 /obj/machinery/suit_storage_unit/security
 	suit_type = /obj/item/clothing/suit/space/hardsuit/security
-	mask_type = /obj/item/clothing/mask/gas/sechailer
+	mask_type = /obj/item/clothing/mask/gas/vigilitas
 
 /obj/machinery/suit_storage_unit/hos
 	suit_type = /obj/item/clothing/suit/space/hardsuit/security/hos
-	mask_type = /obj/item/clothing/mask/gas/sechailer
+	mask_type = /obj/item/clothing/mask/gas/vigilitas
 	storage_type = /obj/item/tank/internals/oxygen
 
 /obj/machinery/suit_storage_unit/mining
@@ -165,7 +165,7 @@
 
 /obj/machinery/suit_storage_unit/independent/security
 	suit_type = /obj/item/clothing/suit/space/hardsuit/security/independent
-	mask_type = /obj/item/clothing/mask/gas/sechailer
+	mask_type = /obj/item/clothing/mask/gas
 
 /obj/machinery/suit_storage_unit/independent/engineering
 	suit_type = /obj/item/clothing/suit/space/engineer

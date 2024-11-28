@@ -35,7 +35,11 @@
 	del_on_death = 1
 	minbodytemp = 0
 	maxbodytemp = 600
-	loot = list(/obj/effect/decal/cleanable/robot_debris)
+	loot = list(
+		/obj/effect/decal/cleanable/robot_debris,
+		/obj/effect/spawner/random/waste/hivebot,
+		/obj/effect/spawner/random/waste/hivebot/part,
+		)
 
 	//yeah so it turns out that /simple_animal/hostile gets upset when you call say because say contains a sleep. so we have to do this on subtypes.
 	var/list/aggro_blurb = list("INFILTRATOR WITHIN AO!!", "TERMINATE HOSTILE!!", "DEFEND TERMINUS!!", "CODE 7-34!!")
@@ -75,7 +79,6 @@
 
 /mob/living/simple_animal/hostile/hivebot/death(gibbed)
 	do_sparks(3, TRUE, src)
-	new /obj/effect/spawner/random/waste/hivebot(loc)
 	..(TRUE)
 
 /mob/living/simple_animal/hostile/hivebot/ranged
@@ -87,6 +90,12 @@
 	ranged = TRUE
 	retreat_distance = 5
 	minimum_distance = 5
+	loot = list(
+		/obj/effect/decal/cleanable/robot_debris,
+		/obj/effect/spawner/random/waste/hivebot,
+		/obj/effect/spawner/random/waste/hivebot/part,
+		/obj/effect/spawner/random/waste/hivebot/part,
+		)
 
 /mob/living/simple_animal/hostile/hivebot/ranged/rapid
 	ranged = TRUE
@@ -108,7 +117,14 @@
 	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
 	melee_damage_lower = 12
 	melee_damage_upper = 20
-	move_to_delay = 7
+	move_to_delay = 10
+	loot = list(
+		/obj/effect/decal/cleanable/robot_debris,
+		/obj/effect/spawner/random/waste/hivebot/more,
+		/obj/effect/spawner/random/waste/hivebot/part/heavy,
+		/obj/effect/spawner/random/waste/hivebot/part,
+		/obj/effect/spawner/random/waste/hivebot/part,
+		)
 
 /mob/living/simple_animal/hostile/hivebot/defender //slave to the system
 	name = "core hivebot"
@@ -131,7 +147,22 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 28
 
-	move_to_delay = 15
+	move_to_delay = 20
+
+	loot = list(
+		/obj/effect/decal/cleanable/robot_debris,
+		/obj/effect/spawner/random/waste/hivebot/more,
+		/obj/effect/spawner/random/waste/hivebot/part/superheavy,
+		/obj/effect/spawner/random/waste/hivebot/part/heavy,
+		/obj/effect/spawner/random/waste/hivebot/part/heavy,
+		)
+
+/mob/living/simple_animal/hostile/hivebot/defender/death(gibbed)
+	//once we get better sprites i want this to be like the claw's death. aka fucking cool.
+	radiation_pulse(src, 500)
+	explosion(src, 0,1,3,3,)
+	..(TRUE)
+
 
 /mob/living/simple_animal/hostile/hivebot/defender/Initialize(mapload)
 	. = ..()

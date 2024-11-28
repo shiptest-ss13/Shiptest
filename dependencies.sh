@@ -27,4 +27,4 @@ export PYTHON_VERSION=3.9.0
 export AUXMOS_REPO=https://github.com/shiptest-ss13/auxmos
 
 #auxmos version
-export AUXMOS_VERSION=v2.5.5.1
+export AUXMOS_VERSION=v2.5.5.2
