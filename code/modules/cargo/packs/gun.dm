@@ -211,7 +211,7 @@
 /datum/supply_pack/gun/beacon
 	name = "Beacon Break Action Rifle Crate"
 	desc = "Contains a single shot break action rifle to hunt wildlife that annoys you in particular. Chambered in devastating .45-70 rounds. Warranty voided if sawed off."
-	cost = 2250
+	cost = 1000
 	contains = list(/obj/item/storage/guncase/beacon)
 	crate_name = "rifle crate"
 	faction = FACTION_SRM

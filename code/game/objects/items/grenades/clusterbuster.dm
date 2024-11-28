@@ -79,7 +79,7 @@
 		var/obj/item/grenade/P = new type(loc)
 		if(istype(P))
 			P.active = TRUE
-			addtimer(CALLBACK(P, TYPE_PROC_REF(/obj/item/grenade, prime)), rand(15,60))
+			P.preprime(delayoverride = P.det_time + rand(1.5 SECONDS, 6 SECONDS))
 		var/steps = rand(1,4)
 		for(var/i in 1 to steps)
 			step_away(src,loc)

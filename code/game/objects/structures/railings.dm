@@ -142,12 +142,12 @@
 
 /obj/structure/railing/wood
 	name = "wooden railing"
-	color = "#A47449"
+	icon_state = "wood_railing_thin"
 	buildstack = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/railing/corner/wood
 	name = "wooden railing"
-	color = "#A47449"
+	icon_state = "wood_corners_thin"
 	buildstack = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/railing/modern
@@ -202,3 +202,9 @@
 
 /obj/structure/railing/thick/corner
 	icon_state = "railing_thick_corner"
+
+/obj/structure/railing/thin
+	icon_state = "railing_thin"
+
+/obj/structure/railing/thin/corner
+	icon_state = "railing_thin_corner"

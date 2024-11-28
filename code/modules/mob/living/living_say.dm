@@ -57,7 +57,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	"÷" = MODE_VOCALCORDS
 ))
 
-/mob/living/proc/Ellipsis(original_msg, chance = 50, keep_words)
+/mob/living/proc/ellipsis(original_msg, chance = 50, keep_words)
 	if(chance <= 0)
 		return "..."
 	if(chance >= 100)
@@ -79,7 +79,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	return new_msg
 
-/mob/living/say(message, bubble_type,list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/mob/living/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	var/ic_blocked = FALSE
 	if(client && !forced && CHAT_FILTER_CHECK(message))
 		//The filter doesn't act on the sanitized message, but the raw message.
@@ -112,8 +112,13 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		client?.dsay(message)
 		return
 
-	// dead is the only state you can never emote
-	if(stat != DEAD && check_emote(original_message, forced))
+	var/succumbed = FALSE
+
+	if(stat == DEAD)
+		say_dead(original_message)
+		return
+
+	if(check_emote(original_message, forced))
 		return
 
 	switch(stat)
@@ -123,11 +128,19 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			if(!(message_mods[MODE_CHANGELING] || message_mods[MODE_ALIEN]))
 				return
 		if(HARD_CRIT)
-			if(!(message_mods[WHISPER_MODE] || message_mods[MODE_CHANGELING] || message_mods[MODE_ALIEN]))
+			if(!(message_mods[MODE_CHANGELING] || message_mods[MODE_ALIEN]))
+				// If we cut our message short, abruptly end it with a-..
+				var/message_len = length_char(message)
+				var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
+				message = copytext_char(message, 1, health_diff) + (message_len > health_diff ? "-.." : "...")
+				message = ellipsis(message, 10, 1)
+
+				//If the player didn't voluntarily whisper, we'll ask them to confirm their dying words
+				if(!message_mods[WHISPER_MODE] && (tgui_alert(src, "Your dying words will be \"[message]\", continue?", "Succumb", list("Cancel", "Continue"), 15 SECONDS) != "Continue"))
+					return
+
 				message_mods[WHISPER_MODE] = MODE_WHISPER_CRIT
-		if(DEAD)
-			say_dead(original_message)
-			return
+				succumbed = TRUE
 
 	if(client && SSlag_switch.measures[SLOWMODE_SAY] && !HAS_TRAIT(src, TRAIT_BYPASS_MEASURES) && !forced && src == usr)
 		if(!COOLDOWN_FINISHED(client, say_slowmode))
@@ -149,33 +162,20 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	var/message_range = 7
 
-	var/succumbed = FALSE
-
 	if(message_mods[MODE_CUSTOM_SAY_EMOTE])
 		log_message(message_mods[MODE_CUSTOM_SAY_EMOTE], LOG_RADIO_EMOTE)
 
 	if(!message_mods[MODE_CUSTOM_SAY_ERASE_INPUT])
-		if(message_mods[WHISPER_MODE])
+		//Final words (MODE_WHISPER_CRIT) are already obfuscated, let them have full range
+		if(message_mods[WHISPER_MODE] == MODE_WHISPER)
 			if(saymode || message_mods[RADIO_EXTENSION]) //no radio while in crit
 				saymode = null
 				message_mods -= RADIO_EXTENSION
 			message_range = 1
 			var/logged_message = message
-			if(stat == HARD_CRIT) //This is cheaper than checking for MODE_WHISPER_CRIT message mod
-				var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
-				// If we cut our message short, abruptly end it with a-..
-				var/message_len = length_char(message)
-				message = copytext_char(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"
-				message = Ellipsis(message, 10, 1)
-				last_words = message
-				var/final_warning = alert(usr, "Your dying words will be \"[last_words]\", continue?", "Succumb", "Cancel", "Continue")
-				if(final_warning == "Cancel" || QDELETED(src))
-					return
-				message_mods[WHISPER_MODE] = MODE_WHISPER_CRIT
-				succumbed = TRUE
-			src.log_talk(logged_message, LOG_WHISPER, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
+			src.log_talk(logged_message, LOG_WHISPER, forced_by = forced, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
 		else
-			src.log_talk(message, LOG_SAY, forced_by=forced, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
+			src.log_talk(message, LOG_SAY, forced_by = forced, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
 
 	message = treat_message(message) // unfortunately we still need this
 	var/sigreturn = SEND_SIGNAL(src, COMSIG_MOB_SAY, args)
@@ -226,9 +226,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mods)
 
 	if(succumbed)
-		succumb(1)
+		succumb(TRUE)
 		to_chat(src, compose_message(src, language, message, , spans, message_mods))
-		dying_breath(message)
 
 	return 1
 
@@ -249,6 +248,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	// Create map text prior to modifying message for goonchat
 	if (client?.prefs.chat_on_map && !(stat == UNCONSCIOUS || stat == HARD_CRIT) && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
+		if(message_mods[MODE_WHISPER] == MODE_WHISPER_CRIT)
+			play_screen_text("<i>message</i>")
 		if(message_mods[MODE_CUSTOM_SAY_ERASE_INPUT])
 			create_chat_message(speaker, null, message_mods[MODE_CUSTOM_SAY_EMOTE], spans, EMOTE_MESSAGE)
 		else
@@ -419,8 +420,3 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(get_minds && mind)
 		return mind.get_language_holder()
 	. = ..()
-
-/mob/living/proc/dying_breath(message)
-	for(var/mob/M in get_hearers_in_view(7, src))
-		if(M.can_hear())
-			M.play_screen_text("<i>[message]")

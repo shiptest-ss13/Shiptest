@@ -126,7 +126,6 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
-	lightweight = 1
 	jetpack = null
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/hl
@@ -148,7 +147,6 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/hl
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
-	lightweight = 1
 	jetpack = null
 
 /////////
