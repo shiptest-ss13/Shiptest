@@ -301,15 +301,15 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "hC" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
@@ -429,6 +429,9 @@
 "jq" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "jr" = (
@@ -556,6 +559,22 @@
 /obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/sheet/glass/twenty,
 /obj/item/stack/sheet/plastic/five,
+/obj/item/stack/sheet/mineral/wood{
+	name = "Emergency Ore-box planks";
+	desc = "Emergency planks for when you did get assigned with an Ore-box."
+	},
+/obj/item/stack/sheet/mineral/wood{
+	name = "Emergency Ore-box planks";
+	desc = "Emergency planks for when you did get assigned with an Ore-box."
+	},
+/obj/item/stack/sheet/mineral/wood{
+	name = "Emergency Ore-box planks";
+	desc = "Emergency planks for when you did get assigned with an Ore-box."
+	},
+/obj/item/stack/sheet/mineral/wood{
+	name = "Emergency Ore-box planks";
+	desc = "Emergency planks for when you did get assigned with an Ore-box."
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "lS" = (
@@ -617,6 +636,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "mV" = (
@@ -700,9 +722,6 @@
 "or" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 10
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -898,7 +917,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "rd" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/structure/closet/secure_closet/freezer/fridge{
+	populate = 0
+	},
 /obj/item/storage/fancy/egg_box,
 /obj/item/reagent_containers/condiment/flour,
 /obj/item/reagent_containers/condiment/sugar,
@@ -960,17 +981,18 @@
 	pixel_y = 8
 	},
 /obj/item/storage/toolbox/mechanical{
-	pixel_x = -6;
+	pixel_x = -3;
 	pixel_y = 7
 	},
 /obj/structure/platform/industrial/corner{
 	dir = 4
 	},
 /obj/item/mecha_parts/mecha_equipment/salvage_saw{
-	pixel_x = -7
+	pixel_x = 5
 	},
+/obj/item/mecha_parts/mecha_equipment/drill,
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp{
-	pixel_x = -7;
+	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/machinery/computer/helm/viewscreen/directional/south,
@@ -1014,10 +1036,6 @@
 /obj/structure/catwalk/over/plated_catwalk/white,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
-"tg" = (
-/obj/structure/sign/number/random,
-/turf/closed/wall/mineral/titanium,
-/area/ship/engineering)
 "tO" = (
 /obj/machinery/door/airlock/freezer{
 	name = "Bathroom"
@@ -1196,9 +1214,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "yo" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
@@ -1218,9 +1233,14 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "yF" = (
-/obj/structure/sign/number/random,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/sign/number/random{
+	pixel_y = 32
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "yV" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/siding{
@@ -1242,10 +1262,6 @@
 "zm" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 9
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-2"
 	},
 /obj/machinery/computer/crew{
 	icon_state = "computer-left"
@@ -1533,9 +1549,11 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "Gc" = (
-/obj/structure/sign/number/random,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/canteen)
+/obj/structure/sign/number/random{
+	pixel_y = 32
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Gi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
@@ -1626,7 +1644,9 @@
 /obj/item/pickaxe/drill,
 /obj/item/weldingtool/hugetank,
 /obj/item/clothing/mask/gas/welding,
-/obj/item/storage/backpack/duffelbag/syndie/c4,
+/obj/item/storage/backpack/duffelbag/syndie/c4{
+	name = "Demolition charges"
+	},
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/wrapping,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -1945,6 +1965,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/landmark/start/shaft_miner,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "MT" = (
@@ -2088,6 +2109,7 @@
 /obj/item/circuitboard/mecha/ripley/peripherals,
 /obj/item/circuitboard/mecha/ripley/main,
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley,
+/obj/item/mecha_parts/chassis/ripley,
 /obj/item/mecha_parts/part/ripley_torso,
 /obj/item/mecha_parts/part/ripley_right_leg{
 	pixel_y = -9;
@@ -2348,6 +2370,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "TG" = (
@@ -2455,6 +2480,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/sign/number/random{
+	pixel_y = 32
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "WE" = (
@@ -2481,7 +2509,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/effect/landmark/start/shaft_miner,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Xg" = (
@@ -2587,6 +2615,12 @@
 	pixel_y = -4
 	},
 /obj/effect/landmark/start/captain,
+/obj/machinery/power/apc/auto_name/directional/west{
+	pixel_y = 10
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "YN" = (
@@ -2785,8 +2819,8 @@ YN
 mV
 lV
 Zq
-tg
-qF
+Hs
+yF
 SR
 SR
 rj
@@ -2810,8 +2844,8 @@ iH
 jp
 Cd
 wR
+Zq
 yF
-qF
 SR
 SR
 iG
@@ -2835,7 +2869,7 @@ xe
 XL
 gf
 CN
-yF
+Zq
 Wd
 KF
 Mf
@@ -2860,8 +2894,8 @@ Zr
 iz
 iz
 iz
+iz
 Gc
-SR
 SR
 SR
 iG
