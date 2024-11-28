@@ -1266,6 +1266,11 @@
 /obj/machinery/computer/crew{
 	icon_state = "computer-left"
 	},
+/obj/machinery/button/door{
+	id = "Bansheebridgewindow";
+	name = "Bridge windows";
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "zr" = (
@@ -2615,12 +2620,10 @@
 	pixel_y = -4
 	},
 /obj/effect/landmark/start/captain,
-/obj/machinery/power/apc/auto_name/directional/west{
-	pixel_y = 10
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "YN" = (
