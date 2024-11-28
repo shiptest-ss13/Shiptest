@@ -60,7 +60,10 @@ SUBSYSTEM_DEF(overmap)
 	return ..()
 
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)
+	if(istype(system_to_spawn))
+		return create_new_star_system(system_to_spawn)
 	return create_new_star_system(new system_to_spawn)
+
 
 /datum/controller/subsystem/overmap/fire()
 	if(events_enabled)
@@ -186,7 +189,7 @@ SUBSYSTEM_DEF(overmap)
 
 
 /////////////////////////////////////////////////////////////////////
-/////////////////           OVERMAP DATUM           /////////////////
+/////////////////         STAR SYSTEM DATUM         /////////////////
 /////////////////////////////////////////////////////////////////////
 
 /datum/overmap_star_system
@@ -369,7 +372,44 @@ SUBSYSTEM_DEF(overmap)
 		datum_to_edit.token.add_filter("gloweffect", 5, list("type"="drop_shadow", "color"= "#808080", "size"=2, "offset"=1))
 
 
-/datum/overmap_star_system/New()
+/datum/overmap_star_system/shiptest
+	has_outpost = TRUE
+
+/datum/overmap_star_system/shiptest/New(generate_now=TRUE)
+	if(!prob(10))
+		return ..()
+	//Small easter egg so all these palletes doesn't go to waste in the event mines
+	var/list/possible_overmaps = list(subtypesof(/datum/overmap_star_system))
+	possible_overmaps -= /datum/overmap_star_system/shiptest //thats us!
+	possible_overmaps -= /datum/overmap_star_system/wilderness //has no intresting colors
+	possible_overmaps -= /datum/overmap_star_system/wilderness/oldgen //ditto - wouldnt it be funny to have this generate sometimes just for shits and giggles?
+	possible_overmaps -= /datum/overmap_star_system/amber_term //this overmap does not play well without the filter
+
+	var/datum/overmap_star_system/picked_overmap = pick(possible_overmaps)
+	if(!picked_overmap)
+		return ..() //something went wrong but we ball
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = picked_overmap.primary_color
+	secondary_color = picked_overmap.secondary_color
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = picked_overmap.hazard_primary_color
+	hazard_secondary_color = picked_overmap.hazard_secondary_color
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = picked_overmap.primary_structure_color
+	secondary_structure_color = picked_overmap.secondary_structure_color
+
+	override_object_colors = TRUE
+	overmap_icon_state = picked_overmap.overmap_icon_state
+
+
+/datum/overmap_star_system/New(generate_now=TRUE)
+	if(generate_now)
+		setup_system()
+
+/datum/overmap_star_system/proc/setup_system()
 	var/starname
 	if(!name)
 		starname = gen_star_name() //we reuse this for the name of the star if name isnt defined, like a uncharted sector or something
@@ -402,11 +442,12 @@ SUBSYSTEM_DEF(overmap)
 	if (!generator_type) //TODO: maybe datumize these?
 		generator_type = OVERMAP_GENERATOR_RANDOM
 
-	if (generator_type == OVERMAP_GENERATOR_SOLAR)
+	if (generator_type == OVERMAP_GENERATOR_SOLAR || generator_type = OVERMAP_GENERATOR_RANDOM)
 		var/datum/overmap/star/center
 		var/startype = pick(subtypesof(/datum/overmap/star))
 		center = new startype(list("x" = round(size / 2 + 1), "y" = round(size / 2 + 1)), src)
-		center.name = starname
+		if(starname)
+			center.name = starname
 		radius_positions = list()
 		for(var/x in 1 to size)
 			for(var/y in 1 to size)
@@ -420,12 +461,14 @@ SUBSYSTEM_DEF(overmap)
 
 	create_map()
 
-	return ..()
 
 /datum/overmap_star_system/Destroy(force, ...)
+	//if we haven't even generated a map yet, don't freak out about it
+	if(!overmap_container)
+		return ..()
 	if(!force)
-		stack_trace("Something has attempted to delete a star system. THIS SHOULD NEVER HAPPEN. STACK TRACING TO SEE WHY THIS IS HAPPENING. PANIC.")
-		message_admins("<span class='danger'>Something has attempted to delete a star system. THIS SHOULD NEVER HAPPEN. STACK TRACING TO SEE WHY THIS IS HAPPENING. CHECK RUNTIMES NOW.</span>")
+		stack_trace("Something has attempted to delete a star system. THIS SHOULD NEVER HAPPEN. STACK TRACING TO SEE WHY THIS IS HAPPENING.")
+		message_admins("<span class='danger'>Something has attempted to delete a star system. THIS SHOULD NEVER HAPPEN. STACK TRACING TO SEE WHY THIS IS HAPPENING. CHECK RUNTIMES.</span>")
 		return QDEL_HINT_LETMELIVE
 	stack_trace("Something has attempted to delete a star system but it was a force delete, so we are assuming it was inentional. This should still not happen reguardless, but cleaning up the system.")
 	message_admins("<span class='danger'>Something has attempted to delete a star system but it was a force delete, so we are assuming it was inentional. This should still not happen reguardless, but cleaning up the system.</span>")
@@ -442,12 +485,13 @@ SUBSYSTEM_DEF(overmap)
  * The proc that creates all the objects on the overmap, split into seperate procs for redundancy.
  */
 /datum/overmap_star_system/proc/create_map()
-	if (generator_type == OVERMAP_GENERATOR_SOLAR)
-		spawn_events_in_orbits()
-		spawn_ruin_levels_in_orbits()
-	else
-		spawn_events()
-		spawn_ruin_levels()
+	switch(generator_type)
+		if(OVERMAP_GENERATOR_SOLAR)
+			spawn_events_in_orbits()
+			spawn_ruin_levels_in_orbits()
+		if(OVERMAP_GENERATOR_RANDOM)
+			spawn_events()
+			spawn_ruin_levels()
 
 	if(has_outpost)
 		spawn_outpost()
@@ -832,6 +876,7 @@ SUBSYSTEM_DEF(overmap)
  */
 /// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
 /datum/overmap_star_system/proc/post_edit_token_state(datum/overmap/datum_to_edit)
+	datum_to_edit.token.remove_filter("gloweffect")
 	return
 
 /datum/overmap_star_system/ngr
