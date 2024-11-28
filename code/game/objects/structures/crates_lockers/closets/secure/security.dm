@@ -126,7 +126,7 @@
 	new /obj/item/clothing/under/rank/security/warden/skirt(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/holosign_creator/security(src)
-	new /obj/item/clothing/mask/gas/sechailer(src)
+	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/storage/box/zipties(src)
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/belt/security/full(src)
@@ -321,7 +321,7 @@
 	..()
 	new /obj/item/gun/ballistic/automatic/smg/wt550(src)
 	new /obj/item/clothing/head/helmet/bulletproof(src)
-	new /obj/item/clothing/mask/gas/sechailer(src)
+	new /obj/item/clothing/mask/gas/vigilitas(src)
 	new /obj/item/clothing/suit/armor/vest/bulletproof(src)
 
 /obj/structure/closet/secure_closet/lethalshots
