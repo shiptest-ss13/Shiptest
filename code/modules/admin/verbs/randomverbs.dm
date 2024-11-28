@@ -938,9 +938,10 @@
 				nova.has_outpost = FALSE
 
 	if(tgui_alert(usr, "Edit Overmap Colors?", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
-		nova.override_object_colors = TRUE
 		if(!nova)
 			nova = new overmap_type(FALSE)
+
+		nova.override_object_colors = TRUE
 		var/inputed
 		inputed = input(usr, "Set Primary Color (Planets):", nova.primary_color) as color|null
 		if(inputed)

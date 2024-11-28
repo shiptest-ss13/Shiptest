@@ -55,7 +55,7 @@ SUBSYSTEM_DEF(overmap)
 	outposts = list()
 	events = list()
 
-	default_system = create_new_star_system(new /datum/overmap_star_system/outposted)
+	default_system = create_new_star_system(new /datum/overmap_star_system/shiptest)
 
 	return ..()
 
@@ -255,6 +255,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/wilderness
 	name = null
 	has_outpost = FALSE
+	override_object_colors = TRUE
 
 /datum/overmap_star_system/wilderness/oldgen
 	generator_type = OVERMAP_GENERATOR_RANDOM
@@ -381,7 +382,7 @@ SUBSYSTEM_DEF(overmap)
 	//Small easter egg so all these palletes doesn't go to waste in the event mines
 	var/list/possible_overmaps = list(subtypesof(/datum/overmap_star_system))
 	possible_overmaps -= /datum/overmap_star_system/shiptest //thats us!
-	possible_overmaps -= /datum/overmap_star_system/wilderness //has no intresting colors
+	//possible_overmaps -= /datum/overmap_star_system/wilderness //has no intresting colors
 	possible_overmaps -= /datum/overmap_star_system/wilderness/oldgen //ditto - wouldnt it be funny to have this generate sometimes just for shits and giggles?
 	possible_overmaps -= /datum/overmap_star_system/amber_term //this overmap does not play well without the filter
 
@@ -442,7 +443,7 @@ SUBSYSTEM_DEF(overmap)
 	if (!generator_type) //TODO: maybe datumize these?
 		generator_type = OVERMAP_GENERATOR_RANDOM
 
-	if (generator_type == OVERMAP_GENERATOR_SOLAR || generator_type = OVERMAP_GENERATOR_RANDOM)
+	if ((generator_type == OVERMAP_GENERATOR_SOLAR) || (generator_type = OVERMAP_GENERATOR_RANDOM))
 		var/datum/overmap/star/center
 		var/startype = pick(subtypesof(/datum/overmap/star))
 		center = new startype(list("x" = round(size / 2 + 1), "y" = round(size / 2 + 1)), src)
@@ -453,7 +454,7 @@ SUBSYSTEM_DEF(overmap)
 			for(var/y in 1 to size)
 				radius_positions["[round(sqrt((x - center.x) ** 2 + (y - center.y) ** 2)) + 1]"] += list(list("x" = x, "y" = y))
 		if(!hazard_primary_color)
-			hazard_primary_color = center.spectral_type
+			hazard_primary_color = center.get_rand_spectral_color(center.spectral_type, center.color_vary)
 		else
 			center.custom_color = FALSE
 			center.spectral_type = hazard_primary_color

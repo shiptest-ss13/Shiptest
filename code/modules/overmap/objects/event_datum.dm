@@ -441,7 +441,7 @@
 	name = "anomaly field"
 	desc = "A highly anomalous area of space, disturbing it leads to the manifestation of odd spatial phenomena"
 	base_icon_state = "anomaly"
-	default_color = "#c46a24"
+	default_color = "#d6c633"
 	chance_to_affect = 10
 	spread_chance = 35
 	chain_rate = 6
