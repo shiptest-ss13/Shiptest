@@ -14,7 +14,7 @@
 	flags_cover = MASKCOVERSMOUTH
 	visor_flags_cover = MASKCOVERSMOUTH
 	resistance_flags = NONE
-	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/mask/balaclava/attack_self(mob/user)
 	adjustmask(user)

@@ -169,7 +169,7 @@
 
 // Security survival box
 /obj/item/storage/box/survival/security
-	mask_type = /obj/item/clothing/mask/gas/sechailer
+	mask_type = /obj/item/clothing/mask/gas
 
 // Medical survival box
 /obj/item/storage/box/survival/medical
@@ -687,7 +687,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	drop_sound = 'sound/items/handling/matchbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/matchbox_pickup.ogg'
-	custom_price = 20
+	custom_price = 2
 
 /obj/item/storage/box/matches/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/match)
@@ -744,6 +744,14 @@
 /obj/item/storage/box/flares/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/flashlight/flare(src)
+
+/obj/item/storage/box/glowsticks
+	name = "box of glowsticks"
+	illustration = "sparkler"
+
+/obj/item/storage/box/glowsticks/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/effect/spawner/random/decoration/glowstick(src)
 
 /obj/item/storage/box/deputy
 	name = "box of deputy armbands"
@@ -1324,30 +1332,6 @@
 		/obj/item/screwdriver = 1)
 	generate_items_inside(items_inside,src)
 
-//It's a maid costume from the IRMG and Syndicate, what else.
-/obj/item/storage/box/inteqmaid
-	name = "IRMG non standard issue maid outfit"
-	desc = "A box containing a 'tactical' and 'practical' maid outfit from the IRMG."
-
-/obj/item/storage/box/inteqmaid/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/clothing/head/maidheadband/inteq = 1,
-		/obj/item/clothing/under/syndicate/inteq/skirt/maid = 1,
-		/obj/item/clothing/gloves/combat/maid/inteq = 1,)
-	generate_items_inside(items_inside,src)
-
-/obj/item/storage/box/syndimaid
-	name = "Syndicate maid outfit"
-	desc = "A box containing a 'tactical' and 'practical' maid outfit."
-	icon_state = "syndiebox"
-
-/obj/item/storage/box/syndimaid/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/clothing/head/maidheadband/syndicate = 1,
-		/obj/item/clothing/under/syndicate/skirt/maid = 1,
-		/obj/item/clothing/gloves/combat/maid = 1,)
-	generate_items_inside(items_inside,src)
-
 // because i have no idea where the fuck to put this
 /obj/item/storage/box/maid
 	name = "Maid box"
@@ -1358,7 +1342,8 @@
 		/obj/item/clothing/head/maidheadband = 1,
 		/obj/item/clothing/under/costume/maid = 1,
 		/obj/item/clothing/gloves/maid = 1,
-		/obj/item/clothing/neck/maid = 1,)
+		/obj/item/clothing/neck/maid = 1,
+		/obj/item/clothing/accessory/maidapron = 1,)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/material
@@ -1470,7 +1455,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	illustration = null
 	foldable = null
-	custom_price = 120
+	custom_price = 5
 
 /obj/item/storage/box/gum/ComponentInitialize()
 	. = ..()
@@ -1485,7 +1470,7 @@
 	name = "nicotine gum packet"
 	desc = "Designed to help with nicotine addiction and oral fixation all at once without destroying your lungs in the process. Mint flavored!"
 	icon_state = "bubblegum_nicotine"
-	custom_premium_price = 275
+	custom_premium_price = 10
 
 /obj/item/storage/box/gum/nicotine/PopulateContents()
 	for(var/i in 1 to 4)
@@ -1495,8 +1480,8 @@
 	name = "HP+ gum packet"
 	desc = "A seemingly homemade packaging with an odd smell. It has a weird drawing of a smiling face sticking out its tongue."
 	icon_state = "bubblegum_happiness"
-	custom_price = 300
-	custom_premium_price = 300
+	custom_price = 10
+	custom_premium_price = 10
 
 /obj/item/storage/box/gum/happiness/Initialize()
 	. = ..()

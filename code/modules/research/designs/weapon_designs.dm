@@ -238,16 +238,6 @@
 	build_path = /obj/item/ammo_box/magazine/wt550m9/ap
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/mag_oldsmg/ic_mag
-	name = "WT-550 Auto Gun Incendiary Magazine (4.6x30mm IC)"
-	desc = "A 20 round armour piercing magazine for the out of date security WT-550 Auto Rifle"
-	id = "mag_oldsmg_ic"
-	materials = list(/datum/material/iron = 6000, /datum/material/silver = 600, /datum/material/glass = 1000)
-	build_path = /obj/item/ammo_box/magazine/wt550m9/inc
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-//WS edit - free lethals
-
 /datum/design/commanderammo
 	name = "Commander magazine (9mm)"
 	desc = "A single stack magazine chambered in 9mm for Commander sidearms."
@@ -388,7 +378,7 @@
 	id = "ap9mm"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000, /datum/material/uranium = 1000)
-	build_path = /obj/item/storage/box/ammo/c9mm/ap
+	build_path = /obj/item/storage/box/ammo/c9mm_ap
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -461,36 +451,6 @@
 	build_path = /obj/item/storage/box/ammo/c556mm_hp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/inc9mm
-	name = "Incendiary 9mm ammo box"
-	desc = "A box full of incendiary 9mm ammunition."
-	id = "inc9mm"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/plasma = 5000)
-	build_path = /obj/item/storage/box/ammo/c9mm_incendiary
-	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/inc10mm
-	name = "Incendiary 10mm ammo box"
-	desc = "A box full of incendiary 10mm ammunition."
-	id = "inc10mm"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/plasma = 5000)
-	build_path = /obj/item/storage/box/ammo/c10mm_incendiary
-	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/inc45
-	name = "Incendiary .45 ammo box"
-	desc = "A box full of incendiary .45 ammunition."
-	id = "inc45"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/plasma = 5000)
-	build_path = /obj/item/storage/box/ammo/c45_incendiary
-	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/rubbershot
 	name = "Rubber Shot"
