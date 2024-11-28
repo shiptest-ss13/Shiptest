@@ -100,7 +100,7 @@
 
 		var/datum/overmap_star_system/selected_system //the star system we are
 		if(length(SSovermap.tracked_star_systems) > 1)
-			selected_system = tgui_input_list(usr, "Which star system do you want to spawn it in?", "Spawn Planet/Ruin", SSovermap.tracked_star_systems)
+			selected_system = tgui_input_list(usr, "Which star system do you want to spawn it in?", "Spawn Overmap Object", SSovermap.tracked_star_systems)
 		else
 			selected_system = SSovermap.tracked_star_systems[1]
 		if(!selected_system)
