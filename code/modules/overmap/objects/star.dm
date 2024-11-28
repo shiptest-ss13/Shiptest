@@ -27,7 +27,7 @@
 	///The minimum lifespan of the random events
 	var/event_lifespan_min = (20 SECONDS)
 	///The maximum lifespan of the random events
-	var/event_lifespan_max = (50 SECONDS)
+	var/event_lifespan_max = (80 SECONDS)
 
 	///The minimum spawn range of the random events.
 	var/eventspawn_min_range = 1
@@ -38,7 +38,7 @@
 	///The minimum lifespan of the random events
 	var/eventspawn_cooldown_min = (5 SECONDS)
 	///The maximum lifespan of the random events
-	var/eventspawn_cooldown_max = (20 SECONDS)
+	var/eventspawn_cooldown_max = (15 SECONDS)
 	///cooldown declare to store this value
 	COOLDOWN_DECLARE(event_spawn_cd)
 
@@ -118,6 +118,11 @@
 	spectral_type = STAR_M
 	color_vary = 0.5
 
+	eventspawn_max_range = 1
+
+	eventspawn_cooldown_min = (20 SECONDS)
+	eventspawn_cooldown_max = (30 SECONDS)
+
 /datum/overmap/star/dwarf/orange
 	desc = "One of the main sequence stars, this orange dwarf star emits a steady glow, as it has for billions of years."
 	spectral_type = STAR_K
@@ -157,6 +162,8 @@
 		/datum/overmap/event/rad = 10,
 		/datum/overmap/event/rad/major = 5,
 	)
+	eventspawn_cooldown_min = (4 SECONDS)
+	eventspawn_cooldown_max = (8 SECONDS)
 
 /*
 		Mid-size stars
@@ -298,6 +305,11 @@
 		/datum/overmap/event/rad = 70,
 		/datum/overmap/event/rad/major = 80,
 	)
+	event_lifespan_min = (30 SECONDS)
+	event_lifespan_max = (100 SECONDS)
+
+	eventspawn_cooldown_min = (4 SECONDS)
+	eventspawn_cooldown_max = (8 SECONDS)
 
 /datum/overmap/star/singularity/alter_token_appearance()
 	. = ..()
@@ -306,3 +318,41 @@
 	token.bound_width = 96
 	token.pixel_x = -32
 	token.pixel_y = -32
+
+/datum/overmap/star/pulsar
+	desc = "An incredibly dense star that spins incredibly fast, shooting out radiation out of both it's poles. it is mainly made of neutrons as it's intense gravity causes other particles to combine into more neutrons."
+	spectral_type = STAR_F
+	color_vary = 0.5
+	token_icon_state = "pulsar"
+
+	color_vary = 1
+
+	events_to_spawn = list(\
+		/datum/overmap/event/electric/minor = 50,
+		/datum/overmap/event/electric = 40,
+		/datum/overmap/event/electric/major = 3,
+
+		/datum/overmap/event/emp/minor = 80,
+		/datum/overmap/event/emp = 100,
+		/datum/overmap/event/emp/major = 120,
+
+		/datum/overmap/event/rad/minor = 20,
+		/datum/overmap/event/rad = 10,
+		/datum/overmap/event/rad/major = 5,
+	)
+	event_lifespan_min = (30 SECONDS)
+	event_lifespan_max = (100 SECONDS)
+
+	eventspawn_cooldown_min = (4 SECONDS)
+	eventspawn_cooldown_max = (8 SECONDS)
+
+/datum/overmap/star/pulsar/alter_token_appearance()
+	token.icon = 'icons/misc/overmap_larger.dmi'
+	token.bound_height = 96
+	token.bound_width = 96
+	token.pixel_x = -32
+	token.pixel_y = -32
+
+	var/half_duration = rand(7 SECONDS, 15 SECONDS)
+	animate(token, color = token.color, time = half_duration, loop = -1, easing = SINE_EASING, flags = ANIMATION_PARALLEL)
+	animate(color = get_rand_spectral_color(STAR_F - 0.5, 0.125), time = half_duration, easing = SINE_EASING)
