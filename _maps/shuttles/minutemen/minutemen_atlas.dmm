@@ -1700,7 +1700,7 @@
 /obj/structure/closet/secure_closet{
 	icon_state = "hop";
 	name = "sergeant's locker";
-	req_access_txt = "19"
+	req_access_txt = "3"
 	},
 /obj/item/storage/guncase/doublebarrel{
 	pixel_x = 1;
@@ -3269,7 +3269,7 @@
 /obj/machinery/door/airlock/command{
 	dir = 4;
 	name = "Bridge";
-	req_one_access = list(19, 3)
+	req_one_access = list(19,3)
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 9
@@ -3360,7 +3360,7 @@
 	},
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = 5;
-	list_reagents = list(/datum/reagent/consumable/ice = 30)
+	list_reagents = list(/datum/reagent/consumable/ice=30)
 	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
@@ -4931,6 +4931,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Ze" = (
@@ -4964,7 +4965,7 @@
 /obj/machinery/door/airlock/command{
 	dir = 4;
 	name = "Bridge";
-	req_one_access = list(19, 3)
+	req_one_access = list(19,3)
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 9

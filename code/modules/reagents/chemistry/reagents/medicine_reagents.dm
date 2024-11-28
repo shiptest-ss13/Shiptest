@@ -1957,7 +1957,7 @@
 	color = "#302f20"
 	metabolization_rate = REAGENTS_METABOLISM * 0.8
 	overdose_threshold = 50
-	var/clone_dam = 0.25
+	var/clone_dam = 0.1
 
 /datum/reagent/medicine/soulus/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
