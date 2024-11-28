@@ -129,6 +129,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/sec/frontier
 	gloves = /obj/item/clothing/gloves/color/black
+	neck = /obj/item/clothing/neck/dogtag/frontier
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged
 	outfit = /datum/outfit/frontier
@@ -145,7 +146,7 @@
 
 /datum/outfit/frontier/trooper
 	name = "Frontiersman Armored Corpse"
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	suit = /obj/item/clothing/suit/armor/vest/frontier
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	ears = /obj/item/radio/headset

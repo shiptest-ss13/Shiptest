@@ -581,7 +581,7 @@
 
 /datum/reagent/medicine/anti_rad/on_mob_life(mob/living/carbon/M)
 	M.radiation -= M.radiation - rand(50,150)
-	M.adjust_disgust(7*REM, 0)
+	M.adjust_disgust(4*REM)
 	..()
 	. = 1
 
@@ -1956,8 +1956,8 @@
 	reagent_state = SOLID
 	color = "#302f20"
 	metabolization_rate = REAGENTS_METABOLISM * 0.8
-	overdose_threshold = 100
-	var/clone_dam = 0.25
+	overdose_threshold = 50
+	var/clone_dam = 0.1
 
 /datum/reagent/medicine/soulus/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
@@ -1976,7 +1976,7 @@
 /datum/reagent/medicine/soulus/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-0.1*REM, 0)
 	M.adjustBruteLoss(-0.1*REM, 0)
-	M.adjustCloneLoss(clone_dam *REM, 0)
+	M.adjustCloneLoss(clone_dam*REM, 0)
 	..()
 
 /datum/reagent/medicine/soulus/overdose_process(mob/living/M)

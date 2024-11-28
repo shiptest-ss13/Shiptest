@@ -5,6 +5,12 @@
 /*
 		Standard supplies
 */
+/datum/supply_pack/sec_supply/holster
+	name = "Shoulder Holster Crate"
+	desc = "Contains a shoulder holster, capable of holding a single pistol or revolver and your ammo."
+	cost = 600
+	contains = list(/obj/item/clothing/accessory/holster)
+	crate_name = "holster crate"
 
 /datum/supply_pack/sec_supply/chemimp
 	name = "Chemical Implants Crate"
@@ -150,7 +156,7 @@
 
 /datum/supply_pack/sec_supply/taser
 	name = "Hybrid Taser Crate"
-	desc = "Two disabler-taser hybrid weapons."
+	desc = "Contains two disabler-taser hybrid weapons."
 	cost = 12000
 	contains = list(/obj/item/gun/energy/e_gun/advtaser,
 					/obj/item/gun/energy/e_gun/advtaser)

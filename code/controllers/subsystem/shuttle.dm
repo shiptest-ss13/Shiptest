@@ -490,7 +490,7 @@ SUBSYSTEM_DEF(shuttle)
 					user.forceMove(new_ship.get_jump_to_turf())
 					message_admins("[key_name_admin(user)] loaded [new_ship] ([S]) with the shuttle manipulator.")
 					log_admin("[key_name(user)] loaded [new_ship] ([S]) with the shuttle manipulator.</span>")
-					SSblackbox.record_feedback("text", "shuttle_manipulator", 1, "[S]")
+					SSblackbox.record_feedback("tally", "shuttle_manipulator_spawned", 1, "[S]")
 
 		if("edit_template")
 			if(S)

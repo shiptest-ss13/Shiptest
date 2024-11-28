@@ -60,7 +60,7 @@
 	var/datum/element/ele = SSdcs.GetElement(arguments)
 	arguments[1] = src
 	if(ele.Attach(arglist(arguments)) == ELEMENT_INCOMPATIBLE)
-		CRASH("Incompatible [arguments[1]] assigned to a [type]! args: [json_encode(args)]")
+		CRASH("Incompatible [ele] assigned to a [type]! args: [json_encode(args)]")
 
 /**
  * Finds the singleton for the element type given and detaches it from src

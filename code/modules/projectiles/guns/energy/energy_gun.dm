@@ -253,3 +253,6 @@
 	dual_wield_spread = 140
 	shaded_charge = TRUE
 	manufacturer = MANUFACTURER_EOEHOMA
+
+/obj/item/gun/energy/e_gun/e11/empty_cell
+	spawn_no_ammo = TRUE

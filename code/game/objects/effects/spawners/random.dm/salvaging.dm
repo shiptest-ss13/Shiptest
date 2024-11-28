@@ -45,7 +45,7 @@
 	icon_state = "laser_gun"
 	loot = list(
 			/obj/item/gun/energy/lasercannon = 1,
-			/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto = 1,
+			/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber = 1,
 			/obj/item/gun/energy/temperature/security = 1,
 		)
 
