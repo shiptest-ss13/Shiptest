@@ -189,6 +189,7 @@
 			playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
 			tac_reloads = TRUE
 			latch_closed = FALSE
+			update_appearance()
 	else if(!internal_magazine && !latch_closed)
 		if(!cell && is_attachment_in_contents_list())
 			return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
@@ -198,6 +199,7 @@
 			playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 			tac_reloads = FALSE
 			latch_closed = TRUE
+			update_appearance()
 	return
 
 /obj/item/gun/energy/can_shoot(visuals)
@@ -282,13 +284,19 @@
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()
-	if(!internal_magazine)
+	if(ismob(loc) && !internal_magazine)
 		var/mutable_appearance/latch_overlay
 		latch_overlay = mutable_appearance('icons/obj/guns/cell_latch.dmi')
 		if(latch_closed)
-			latch_overlay.icon_state = "latch-on"
+			if(cell)
+				latch_overlay.icon_state = "latch-on-full"
+			else
+				latch_overlay.icon_state = "latch-on-empty"
 		else
-			latch_overlay.icon_state = "latch-off"
+			if(cell)
+				latch_overlay.icon_state = "latch-off-full"
+			else
+				latch_overlay.icon_state = "latch-off-empty"
 		. += latch_overlay
 	if(cell)
 		. += "[icon_state]_cell"
