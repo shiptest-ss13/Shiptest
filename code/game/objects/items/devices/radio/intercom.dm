@@ -195,14 +195,26 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/wideband, 26)
 	independent = TRUE
 
 /obj/item/wallframe/intercom/wideband
-	name = "wideband relay frame"
+	name = "wideband relay wall frame"
 	desc = "A detached wideband relay. Attach to a wall and screw it in to use."
 	icon_state = "intercom-wideband"
 	result_path = /obj/item/radio/intercom/wideband/unscrewed
 	pixel_shift = 26
 
+/obj/item/wallframe/intercom/wideband/attackby(obj/item/attack_obj, mob/user, params)
+	if(istype(attack_obj, /obj/item/screwdriver))
+		src = new /obj/item/wallframe/intercom/wideband/table
+		to_chat(user, span_notice("You ready the table screws on the wideband frame."))
+
 /obj/item/wallframe/intercom/wideband/table
+	name = "wideband relay table frame"
+	desc = "A detached wideband relay. Attach to a table and screw it in to use."
 	icon_state = "intercom-wideband-table"
 	icon = 'icons/obj/radio.dmi'
 	result_path = /obj/item/radio/intercom/wideband/table
 	pixel_shift = 0
+
+/obj/item/wallframe/intercom/wideband/table/attackby(obj/item/attack_obj, mob/user, params)
+	if(istype(attack_obj, /obj/item/screwdriver))
+		src = new /obj/item/wallframe/intercom/wideband
+		to_chat(user, span_notice("You ready the wall screws on the wideband frame."))
