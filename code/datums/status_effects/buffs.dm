@@ -409,7 +409,6 @@
 	owner.adjustBruteLoss(-20)
 	owner.adjustFireLoss(-20)
 	owner.remove_CC()
-	owner.reagents.add_reagent(/datum/reagent/medicine/soulus=15)
 	owner.bodytemperature = owner.get_body_temp_normal()
 	return TRUE
 
