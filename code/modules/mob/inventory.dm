@@ -518,7 +518,7 @@
 		return TRUE
 
 	if(equipped.equipping_sound)
-		src.playsound_local(src.loc, equipped.equipping_sound, 50)
+		playsound(src.loc, equipped.equipping_sound, 50)
 
 	visible_message(
 		span_notice("[src] starts to put on [equipped]..."),
@@ -538,7 +538,7 @@
 		return TRUE
 
 	if(unequipped.unequipping_sound)
-		src.playsound_local(src.loc, unequipped.unequipping_sound, 50)
+		playsound(src.loc, unequipped.unequipping_sound, 50)
 
 	visible_message(
 		span_notice("[src] starts to take off [unequipped]..."),

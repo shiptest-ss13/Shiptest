@@ -59,13 +59,13 @@
 #define EQUIP_DELAY_SHOES (2 SECONDS)
 /// Delay base for suit and cloak slot items that are trivially removed or put on. (Coats, Jackets, Ponchos, etc.)
 #define EQUIP_DELAY_COAT (2 SECONDS)
-/// Delay base for gloves.
-#define EQUIP_DELAY_GLOVES (2 SECONDS)
 
 /// Delay base for belts.
 #define EQUIP_DELAY_BELT (1 SECONDS)
 /// Delay base for hats.
 #define EQUIP_DELAY_HAT (1 SECONDS)
+/// Delay base for gloves.
+#define EQUIP_DELAY_GLOVES (1 SECONDS)
 
 // Flags for self equipping items
 /// Allow movement during equip/unequip
