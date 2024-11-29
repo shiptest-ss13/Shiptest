@@ -68,6 +68,7 @@
 	/// The amount of integrity_loss that this limb can have without any effects.
 	var/integrity_ignored = 20
 	/// If the limb has lost less than this amount of health, integrity loss should not be accrued.
+	/// Ignored if this is is greater or equal to the remaining health of the limb.
 	var/integrity_threshold = 15
 
 	/// So we know if we need to scream if this limb hits max damage
