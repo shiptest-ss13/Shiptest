@@ -174,22 +174,31 @@
 	user.put_in_hands(old_cell)
 	update_appearance()
 
+//special is_type_in_list method to counteract problem with current method
+/obj/item/gun/energy/proc/is_attachment_in_contents_list()
+	for(var/content_item in contents)
+		if(istype(content_item, /obj/item/attachment/))
+			return TRUE
+	return FALSE
+
 /obj/item/gun/energy/AltClick(mob/living/user)
 	if(!internal_magazine && latch_closed)
 		to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
-		if(do_after(user, latch_toggle_delay))
+		if(do_after(user, latch_toggle_delay, src))
 			to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip."))
 			playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
 			tac_reloads = TRUE
 			latch_closed = FALSE
 	else if(!internal_magazine && !latch_closed)
-		to_chat(user, span_notice("You start to latch the [src]'s power cell retainment clip..."))
-		if(do_after(user, latch_toggle_delay))
+		if(!cell && is_attachment_in_contents_list())
+			return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
+		to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
+		if (do_after(user, latch_toggle_delay, src))
 			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip."))
 			playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 			tac_reloads = FALSE
 			latch_closed = TRUE
-	return ..()
+	return
 
 /obj/item/gun/energy/can_shoot(visuals)
 	if(safety && !visuals)
@@ -230,7 +239,7 @@
 	if(!chambered && can_shoot())
 		process_chamber()	// If the gun was drained and then recharged, load a new shot.
 	..() //process the gunshot as normal
-	if(!latch_closed && prob(65)) //make the cell slide out if it's fired while the retainment clip is unlatched, with an 65% probability
+	if(!latch_closed && prob(65)) //make the cell slide out if it's fired while the retainment clip is unlatched, with a 65% probability
 		to_chat(user, span_warning("The [src]'s cell falls out!"))
 		eject_cell()
 	return
