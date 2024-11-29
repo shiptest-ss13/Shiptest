@@ -677,15 +677,17 @@
 /obj/item/clothing/shoes/laceup{
 	pixel_y = -12
 	},
+/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/machinery/light/directional/north,
+/obj/item/storage/backpack/satchel/med,
+/obj/item/storage/backpack/messenger/med,
 /obj/item/clothing/shoes/sneakers/white{
 	pixel_y = -12
 	},
-/obj/item/clothing/gloves/color/latex/nitrile,
 /obj/item/storage/belt/medical,
 /obj/item/clothing/glasses/hud/health/prescription{
 	pixel_y = 5
 	},
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "fm" = (
@@ -1476,7 +1478,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/item/storage/backpack/medic,
 /turf/open/floor/plasteel/white,
 /area/ship/storage/equip)
 "mx" = (
@@ -1798,7 +1799,6 @@
 	},
 /obj/effect/turf_decal/borderfloorwhite/corner,
 /obj/machinery/firealarm/directional/west,
-/obj/item/storage/backpack/messenger/med,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "pZ" = (
@@ -1917,20 +1917,22 @@
 /obj/item/clothing/shoes/workboots{
 	pixel_y = -8
 	},
-/obj/item/clothing/shoes/sneakers/white{
-	pixel_y = -12
-	},
-/obj/item/clothing/shoes/sneakers/white{
-	pixel_y = -12
-	},
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/storage/belt/medical/paramedic,
-/obj/item/storage/belt/medical/paramedic,
 /obj/item/radio/intercom/directional/east,
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 8
 	},
+/obj/item/storage/backpack/medic,
+/obj/item/storage/backpack/duffelbag/med,
+/obj/item/clothing/shoes/sneakers/white{
+	pixel_y = -12
+	},
+/obj/item/clothing/shoes/sneakers/white{
+	pixel_y = -12
+	},
+/obj/item/storage/belt/medical/paramedic,
+/obj/item/storage/belt/medical/paramedic,
 /obj/item/clothing/head/soft/paramedic{
 	pixel_y = 10
 	},
@@ -3432,7 +3434,6 @@
 	icon_state = "0-6"
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/obj/item/storage/backpack/duffelbag/med,
 /turf/open/floor/plasteel/white,
 /area/ship/storage/equip)
 "Gp" = (
@@ -5263,7 +5264,6 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 4
 	},
-/obj/item/storage/backpack/satchel/med,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "We" = (
