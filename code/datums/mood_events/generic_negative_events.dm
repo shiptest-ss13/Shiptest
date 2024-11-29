@@ -116,7 +116,7 @@
 	mood_change = -4
 
 /datum/mood_event/healsbadman
-	description = span_warning("I feel like I'm held together by flimsy string, and could fall apart at any moment!")
+	description = span_warning("I feel like something is moving through my veins, eating away at me!")
 	mood_change = -4
 	timeout = 2 MINUTES
 

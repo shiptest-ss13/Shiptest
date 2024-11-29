@@ -125,7 +125,7 @@
 		update_appearance()
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
-	if (!internal_magazine && (A.type in allowed_ammo_types))
+	if (!internal_magazine && (A.type in (allowed_ammo_types - blacklisted_ammo_types)))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)

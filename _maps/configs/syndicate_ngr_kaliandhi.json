@@ -1,0 +1,58 @@
+{
+	"faction": "/datum/faction/syndicate/ngr",
+	"prefix": "NGRV",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_name": "Kali Andhi-class Destroyer",
+	"map_short_name": "Kali Andhi-class",
+	"description": "A post-ICW destroyer design commissioned by the New Gorlex Republic and outfitted for general patrol and reclamation duties. The Kali Andhi-class, despite its young age, has been instrumental in securing New Gorlex's modest territorial claims, making them a somewhat unwelcome sight for the PGF's frontier mission.",
+	"tags": [
+		"RP Focus",
+		"Combat"
+	],
+	"map_path": "_maps/shuttles/syndicate/syndicate_ngr_kaliandhi.dmm",
+	"map_id": "syndicate_gorlex_kaliandhi",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/ngr",
+			"officer": true,
+			"slots": 1
+		},
+		"Lieutenant": {
+			"outfit": "/datum/outfit/job/syndicate/hos/ngr",
+			"officer": true,
+			"slots": 1
+		},
+		"Ensign": {
+			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/ngr",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/syndicate/doctor/ngr",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/ngr",
+			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/syndicate/miner/ngr",
+			"slots":1
+		},
+		"Operative": {
+			"outfit": "/datum/outfit/job/syndicate/security/ngr",
+			"slots": 3
+		},
+		"Initiate": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/ngr",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

@@ -134,11 +134,6 @@
 				newletter = "oo"
 			else if(lowerletter == "c")
 				newletter = "k"
-		if(rand(1, 20) == 20)
-			if(newletter == " ")
-				newletter = "...huuuhhh..."
-			else if(newletter == ".")
-				newletter = " *BURP*."
 		switch(rand(1, 20))
 			if(1)
 				newletter += "'"
