@@ -66,7 +66,9 @@
 	/// How many hit points worth of integrity this limb has lost. 10 integrity = 10 HP
 	var/integrity_loss = 0
 	/// The amount of integrity_loss that this limb can have without any effects.
-	var/integrity_threshold = 20
+	var/integrity_ignored = 20
+	/// If the limb has lost less than this amount of health, integrity loss should not be accrued.
+	var/integrity_threshold = 15
 
 	/// So we know if we need to scream if this limb hits max damage
 	var/last_maxed
@@ -296,7 +298,7 @@
 // Removes integrity from the limb, if it uses integrity.
 /obj/item/bodypart/proc/take_integrity_damage(loss)
 	if (uses_integrity)
-		integrity_loss = clamp(integrity_loss + loss, 0, max_damage+integrity_threshold)
+		integrity_loss = clamp(integrity_loss + loss, 0, max_damage+integrity_ignored)
 
 
 // Heals integrity for the limb, if it uses integrity.
@@ -313,7 +315,7 @@
 		return
 
 	if (uses_integrity && (burn > 0 || brute > 0))
-		var/max_heal = max(0, burn_dam + brute_dam - max(0,integrity_loss-integrity_threshold))
+		var/max_heal = max(0, burn_dam + brute_dam - max(0,integrity_loss-integrity_ignored))
 		var/total_heal = min(brute,brute_dam)+min(burn,burn_dam) //in case we're trying to heal nonexistent dmg
 		var/heal_mult = min(1,max_heal/total_heal)
 		brute *= heal_mult
@@ -393,9 +395,10 @@
 		total = max(total, stamina_dam)
 	return total
 
-///Returns damage that can be healed, optionally accounting for if integrity_loss is lost
+///Returns damage that can be healed on a limb.
+/// integrity_cost: Optional, returns how much damage can be healed after losing X integrity
 /obj/item/bodypart/proc/get_curable_damage(integrity_cost=0)
-	var/total = brute_dam + burn_dam - max(0,(integrity_loss+integrity_cost)-integrity_threshold)
+	var/total = brute_dam + burn_dam - max(0,(integrity_loss+integrity_cost)-integrity_ignored)
 	return total
 
 //Checks disabled status thresholds
