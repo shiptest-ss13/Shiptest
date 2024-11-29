@@ -461,9 +461,9 @@
 				if(affecting.get_curable_damage(integrity_damage_incurred ? integrity_loss : 0) <= 0)
 					var/limb_hp_loss = affecting.integrity_loss-affecting.integrity_ignored
 					if(limb_hp_loss+integrity_loss >= affecting.max_damage)
-						to_chat(user, "<span class='warning'>[affecting] is destroyed! It needs surgery to work again.</span>")
+						to_chat(user, "<span class='warning'>[affecting] is destroyed! It needs structural repairs to be repaired any further.</span>")
 					else
-						to_chat(user, "<span class='warning'>[affecting] needs surgery to improve any further.</span>")
+						to_chat(user, "<span class='warning'>[affecting] has taken too much structural damage, and needs surgery to improve any further.</span>")
 					return
 				if (integrity_damage_incurred)
 					affecting.take_integrity_damage(integrity_loss)
