@@ -606,7 +606,7 @@
 /obj/item/clothing/head/helmet/space/syndicate/black/engie,
 /obj/item/clothing/shoes/magboots/syndie,
 /obj/item/clothing/mask/gas/syndicate,
-/obj/machinery/light/small/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "mk" = (
@@ -1060,7 +1060,9 @@
 /obj/structure/sign/poster/contraband/gec{
 	pixel_y = 32
 	},
-/obj/structure/extinguisher_cabinet/directional/west,
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "uv" = (
@@ -1435,7 +1437,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/north,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "DU" = (
