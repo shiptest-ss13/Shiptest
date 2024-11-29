@@ -16,6 +16,12 @@
 	lace_time = 12 SECONDS
 	greyscale_icon_state = "boots"
 
+	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_BOOTS
+	equip_delay_other = EQUIP_DELAY_BOOTS * 1.5
+	strip_delay = EQUIP_DELAY_BOOTS * 1.5
+
 /obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
 	name = "\improper SWAT boots"
 	desc = "High speed, no drag combat boots."
@@ -67,6 +73,12 @@
 	can_be_tied = FALSE
 	greyscale_icon_state = "boots"
 
+	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_BOOTS
+	equip_delay_other = EQUIP_DELAY_BOOTS * 1.5
+	strip_delay = EQUIP_DELAY_BOOTS * 1.5
+
 /obj/item/clothing/shoes/jackboots
 	name = "jackboots"
 	desc = "Ankle-high combat boots for combat scenarios or combat situations. All combat, all the time."
@@ -81,6 +93,12 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	can_be_tied = FALSE
 	greyscale_icon_state = "boots"
+
+	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_BOOTS
+	equip_delay_other = EQUIP_DELAY_BOOTS * 1.5
+	strip_delay = EQUIP_DELAY_BOOTS * 1.5
 
 /obj/item/clothing/shoes/jackboots/fast
 	slowdown = -1
@@ -99,6 +117,12 @@
 	lace_time = 8 SECONDS
 	greyscale_icon_state = "boots"
 
+	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_BOOTS
+	equip_delay_other = EQUIP_DELAY_BOOTS * 1.5
+	strip_delay = EQUIP_DELAY_BOOTS * 1.5
+
 /obj/item/clothing/shoes/workboots
 	name = "work boots"
 	desc = "Nanotrasen-issue Engineering lace-up work boots for the especially blue-collar."
@@ -112,6 +136,12 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
 	greyscale_icon_state = "boots"
+
+	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_BOOTS
+	equip_delay_other = EQUIP_DELAY_BOOTS * 1.5
+	strip_delay = EQUIP_DELAY_BOOTS * 1.5
 
 /obj/item/clothing/shoes/winterboots/ice_boots
 	name = "ice hiking boots"
@@ -150,6 +180,12 @@
 	var/recharging_rate = 60 //default 6 seconds between each dash
 	var/recharging_time = 0 //time until next dash
 	greyscale_icon_state = "boots"
+
+	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_BOOTS
+	equip_delay_other = EQUIP_DELAY_BOOTS * 1.5
+	strip_delay = EQUIP_DELAY_BOOTS * 1.5
 
 /obj/item/clothing/shoes/bhop/ui_action_click(mob/user, action)
 	if(!isliving(user))
@@ -210,6 +246,12 @@
 	var/max_occupants = 4
 	can_be_tied = FALSE
 	greyscale_icon_state = "boots"
+
+	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_BOOTS
+	equip_delay_other = EQUIP_DELAY_BOOTS * 1.5
+	strip_delay = EQUIP_DELAY_BOOTS * 1.5
 
 /obj/item/clothing/shoes/cowboy/Initialize()
 	. = ..()

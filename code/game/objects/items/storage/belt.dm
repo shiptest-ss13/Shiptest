@@ -16,6 +16,13 @@
 	greyscale_icon_state = "belt"
 	greyscale_colors = list(list(16, 12), list(15, 11), list(13, 12))
 
+	equipping_sound = 'sound/items/equip/equipping_vfast_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_vfast_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_BELT
+	equip_delay_other = EQUIP_DELAY_BELT * 1.5
+	strip_delay = EQUIP_DELAY_BELT * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT
+
 /obj/item/storage/belt/update_overlays()
 	. = ..()
 	if(!content_overlays)

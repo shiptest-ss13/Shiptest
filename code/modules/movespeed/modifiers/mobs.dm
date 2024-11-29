@@ -98,6 +98,10 @@
 	multiplicative_slowdown = SOFTCRIT_ADD_SLOWDOWN
 	flags = IGNORE_NOSLOW
 
+/datum/movespeed_modifier/do_after_slow
+	multiplicative_slowdown = DO_AFTER_SLOWDOWN
+	flags = IGNORE_NOSLOW
+
 /datum/movespeed_modifier/slime_tempmod
 	variable = TRUE
 

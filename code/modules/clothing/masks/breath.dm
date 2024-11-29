@@ -14,6 +14,11 @@
 	visor_flags_cover = MASKCOVERSMOUTH
 	resistance_flags = NONE
 
+	equip_delay_self = EQUIP_DELAY_MASK
+	equip_delay_other = EQUIP_DELAY_MASK * 1.5
+	strip_delay = EQUIP_DELAY_MASK * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
+
 /obj/item/clothing/mask/breath/attack_self(mob/user)
 	adjustmask(user)
 

@@ -18,6 +18,13 @@
 	supports_variations = VOX_VARIATION
 	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 
+	equipping_sound = 'sound/items/equip/equipping_long_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_long_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_OVERSUIT
+	equip_delay_other = EQUIP_DELAY_OVERSUIT * 1.5
+	strip_delay = EQUIP_DELAY_OVERSUIT * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
+
 /obj/item/clothing/suit/worn_overlays(isinhands = FALSE)
 	. = ..()
 	if(!isinhands)

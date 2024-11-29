@@ -17,6 +17,12 @@
 
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
+	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_SUIT
+	equip_delay_other = EQUIP_DELAY_SUIT * 1.5
+	strip_delay = EQUIP_DELAY_SUIT * 1.5
+
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
 	if(!allowed)

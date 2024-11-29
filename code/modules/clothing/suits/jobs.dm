@@ -14,6 +14,13 @@
 	body_parts_covered = CHEST|GROIN
 	allowed = list(/obj/item/reagent_containers/spray/plantbgone, /obj/item/plant_analyzer, /obj/item/seeds, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/cultivator, /obj/item/reagent_containers/spray/pestspray, /obj/item/hatchet, /obj/item/storage/bag/plants)
 
+	equipping_sound = 'sound/items/equip/equipping_short_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_short_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
+
 /obj/item/clothing/suit/apron/waders
 	name = "horticultural waders"
 	desc = "A pair of heavy duty leather waders, perfect for insulating your soft flesh from spills, soil and thorns."

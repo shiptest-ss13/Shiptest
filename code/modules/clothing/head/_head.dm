@@ -14,6 +14,13 @@
 	supports_variations = VOX_VARIATION
 	blood_overlay_type = "helmet"
 
+	equipping_sound = 'sound/items/equip/equipping_vfast_generic.ogg'
+	unequipping_sound = 'sound/items/equip/unequipping_vfast_generic.ogg'
+	equip_delay_self = EQUIP_DELAY_HAT
+	equip_delay_other = EQUIP_DELAY_HAT * 1.5
+	strip_delay = EQUIP_DELAY_HAT * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT
+
 ///Special throw_impact for hats to frisbee hats at people to place them on their heads/attempt to de-hat them.
 /obj/item/clothing/head/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
 	. = ..()

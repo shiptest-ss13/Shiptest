@@ -32,6 +32,11 @@
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	kepori_override_icon = 'icons/mob/clothing/back/backpacks_kepori.dmi'
 
+	equip_delay_self = EQUIP_DELAY_BACK
+	equip_delay_other = EQUIP_DELAY_BACK * 1.5
+	strip_delay = EQUIP_DELAY_BACK * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
+
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
