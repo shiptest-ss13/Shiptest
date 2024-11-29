@@ -226,8 +226,6 @@
 /obj/item/gun/ballistic/automatic/assault/e40/attackby(obj/item/attack_obj, mob/user, params)
 	if(istype(attack_obj, /obj/item/stock_parts/cell/gun))
 		return secondary.attackby(attack_obj, user, params)
-	if(istype(attack_obj, /obj/item/screwdriver))
-		return secondary.screwdriver_act(user, attack_obj,)
 	return ..()
 
 /obj/item/gun/ballistic/automatic/assault/e40/attack_hand(mob/user)

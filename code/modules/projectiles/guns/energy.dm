@@ -174,14 +174,6 @@
 	user.put_in_hands(old_cell)
 	update_appearance()
 
-/obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
-	if(cell && !internal_magazine)
-		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
-		if(I.use_tool(src, user, unscrewing_time, volume = 100))
-			to_chat(user, span_notice("You remove the power cell."))
-			eject_cell(user)
-	return ..()
-
 /obj/item/gun/energy/AltClick(mob/living/user)
 	if(!internal_magazine && latch_closed)
 		to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
