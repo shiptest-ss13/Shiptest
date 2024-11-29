@@ -29,6 +29,7 @@
 
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS
+
 	var/latch_closed = TRUE
 	var/latch_toggle_delay = 1.0 SECONDS
 
