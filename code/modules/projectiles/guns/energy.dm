@@ -282,6 +282,15 @@
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()
+	if(!internal_magazine)
+		var/mutable_appearance/latch_overlay
+		latch_overlay = mutable_appearance('icons/obj/guns/cell_latch.dmi')
+		if(latch_closed)
+			latch_overlay.icon_state = "latch-on"
+		else
+			latch_overlay.icon_state = "latch-off"
+		. += latch_overlay
+		update_appearance()
 	if(cell)
 		. += "[icon_state]_cell"
 		if(ratio == 0)
