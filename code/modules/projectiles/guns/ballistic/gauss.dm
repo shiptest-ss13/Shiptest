@@ -103,6 +103,7 @@
 	allowed_cell_types = list(
 		/obj/item/stock_parts/cell/gun/solgov,
 	)
+	slot_flags = ITEM_SLOT_BACK
 	fire_delay = 0.4 SECONDS
 	bolt_type = BOLT_TYPE_NO_BOLT
 	internal_magazine = TRUE
@@ -143,8 +144,8 @@
 	allowed_cell_types = list(
 		/obj/item/stock_parts/cell/gun/solgov,
 	)
+	slot_flags = ITEM_SLOT_BACK
 	burst_size = 1
-
 	fire_delay = 0.2 SECONDS
 
 	actions_types = list()
