@@ -290,7 +290,6 @@
 		else
 			latch_overlay.icon_state = "latch-off"
 		. += latch_overlay
-		update_appearance()
 	if(cell)
 		. += "[icon_state]_cell"
 		if(ratio == 0)
