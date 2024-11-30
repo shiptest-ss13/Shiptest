@@ -311,7 +311,7 @@
 	name = "E-SG 500 Energy Shotgun Crate"
 	desc = "Contains an energy-based shotgun equipped with dual kill/disable modes, ideal for short range. The on-board computer is notoriously unreliable. For NT employee use only."
 	cost = 3000
-	contains = list(/obj/item/storage/guncase/ultima)
+	contains = list(/obj/item/storage/guncase/energy/ultima)
 	crate_name = "shotgun crate"
 	faction = /datum/faction/nt
 	faction_discount = 0
@@ -373,7 +373,7 @@
 	name = "E-TAR Dual-Mode Energy SMG Crate"
 	desc = "Contains a compact energy-based PDW platform, ideal for suppressing threats at mid-range. For NT employee use only."
 	cost = 2000
-	contains = list(/obj/item/storage/guncase/etar)
+	contains = list(/obj/item/storage/guncase/energy/etar)
 	crate_name = "SMG crate"
 	faction = /datum/faction/nt
 	faction_discount = 0
