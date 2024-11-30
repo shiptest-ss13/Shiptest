@@ -13,6 +13,7 @@
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	greyscale_icon_state = "boots"
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
 	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
 	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
 	equip_delay_self = EQUIP_DELAY_BOOTS

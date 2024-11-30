@@ -30,6 +30,11 @@
 	resistance_flags = FIRE_PROOF
 	clothing_flags = SNUG_FIT
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equip_delay_self = EQUIP_DELAY_HELMET
+	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
+	strip_delay = EQUIP_DELAY_HELMET * 1.5
+
 /obj/item/clothing/head/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
 

@@ -200,6 +200,8 @@
 
 	equipping_sound = 'sound/items/equip/equipping_short_generic.ogg'
 	unequipping_sound = 'sound/items/equip/unequipping_short_generic.ogg'
+
+	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equip_delay_self = EQUIP_DELAY_COAT
 	equip_delay_other = EQUIP_DELAY_COAT * 1.5
 	strip_delay = EQUIP_DELAY_COAT * 1.5

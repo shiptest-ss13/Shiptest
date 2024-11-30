@@ -8,6 +8,7 @@
 	var/hoodtype = /obj/item/clothing/head/hooded/winterhood //so the chaplain hoodie or other hoodies can override this
 	pocket_storage_component_path = FALSE
 
+	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = 'sound/items/equip/equipping_short_generic.ogg'
 	unequipping_sound = 'sound/items/equip/unequipping_short_generic.ogg'
 	equip_delay_self = EQUIP_DELAY_COAT
@@ -104,6 +105,7 @@
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
 
+	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = 'sound/items/equip/equipping_short_generic.ogg'
 	unequipping_sound = 'sound/items/equip/unequipping_short_generic.ogg'
 	equip_delay_self = EQUIP_DELAY_COAT

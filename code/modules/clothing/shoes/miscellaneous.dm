@@ -16,6 +16,7 @@
 	lace_time = 12 SECONDS
 	greyscale_icon_state = "boots"
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
 	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
 	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
 	equip_delay_self = EQUIP_DELAY_BOOTS
@@ -94,6 +95,7 @@
 	can_be_tied = FALSE
 	greyscale_icon_state = "boots"
 
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
 	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
 	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
 	equip_delay_self = EQUIP_DELAY_BOOTS
@@ -117,6 +119,7 @@
 	lace_time = 8 SECONDS
 	greyscale_icon_state = "boots"
 
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
 	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
 	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
 	equip_delay_self = EQUIP_DELAY_BOOTS
@@ -181,6 +184,7 @@
 	var/recharging_time = 0 //time until next dash
 	greyscale_icon_state = "boots"
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
 	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
 	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
 	equip_delay_self = EQUIP_DELAY_BOOTS
@@ -247,6 +251,7 @@
 	can_be_tied = FALSE
 	greyscale_icon_state = "boots"
 
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
 	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
 	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
 	equip_delay_self = EQUIP_DELAY_BOOTS

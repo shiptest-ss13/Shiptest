@@ -18,6 +18,7 @@
 	supports_variations = VOX_VARIATION
 	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
 	equipping_sound = 'sound/items/equip/equipping_long_generic.ogg'
 	unequipping_sound = 'sound/items/equip/unequipping_long_generic.ogg'
 	equip_delay_self = EQUIP_DELAY_OVERSUIT

@@ -128,6 +128,7 @@
 	resistance_flags = NONE
 	flags_1 = RAD_PROTECT_CONTENTS_1
 	supports_variations = VOX_VARIATION
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
 
 /obj/item/clothing/suit/radiation
 	name = "radiation suit"
@@ -150,6 +151,7 @@
 	resistance_flags = NONE
 	flags_1 = RAD_PROTECT_CONTENTS_1
 	supports_variations = VOX_VARIATION
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
 
 /obj/item/clothing/head/radiation/space
 	name = "low-pressure radiation helmet"
@@ -164,6 +166,7 @@
 	flash_protect = FLASH_PROTECTION_WELDER
 	strip_delay = 50
 	equip_delay_other = 50
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
 
 /obj/item/clothing/suit/radiation/space
 	name = "low-pressure radiation suit"
@@ -180,4 +183,4 @@
 	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
 	strip_delay = 80
 	equip_delay_other = 80
-
+	equip_sound = 'sound/items/equip/armor_equip.ogg'

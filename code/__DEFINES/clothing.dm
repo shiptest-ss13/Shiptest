@@ -66,6 +66,8 @@
 #define EQUIP_DELAY_HAT (1 SECONDS)
 /// Delay base for gloves.
 #define EQUIP_DELAY_GLOVES (1 SECONDS)
+/// Delay base for glasses.
+#define EQUIP_DELAY_EYEWEAR (1 SECONDS)
 
 // Flags for self equipping items
 /// Allow movement during equip/unequip

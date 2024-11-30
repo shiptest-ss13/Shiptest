@@ -11,6 +11,7 @@
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	resistance_flags = NONE
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
 	equip_delay_self = EQUIP_DELAY_MASK
 	equip_delay_other = EQUIP_DELAY_MASK * 1.5
 	strip_delay = EQUIP_DELAY_MASK * 1.5
