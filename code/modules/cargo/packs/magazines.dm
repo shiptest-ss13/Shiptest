@@ -286,7 +286,7 @@
 	name = "Bulldog Magazine Crate"
 	desc = "Contains an 8-round 12ga box magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog)
-	cost = 1500
+	cost = 1000
 	faction = /datum/faction/syndicate/scarborough_arms
 
 
