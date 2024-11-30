@@ -12,3 +12,8 @@
 #define COMSIG_OBJ_HIDE "obj_hide"
 /// from base of [/atom/proc/obj_destruction]: (damage_flag)
 #define COMSIG_OBJ_DESTRUCTION "obj_destruction"
+
+/// Sent from /obj/item/update_weight_class(). (old_w_class, new_w_class)
+#define COMSIG_ITEM_WEIGHT_CLASS_CHANGED "item_weight_class_changed"
+/// Sent from /obj/item/update_weight_class(), to its loc. (obj/item/changed_item, old_w_class, new_w_class)
+#define COMSIG_ATOM_CONTENTS_WEIGHT_CLASS_CHANGED "atom_contents_weight_class_changed"

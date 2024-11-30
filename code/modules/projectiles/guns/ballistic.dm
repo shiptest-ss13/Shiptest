@@ -14,7 +14,6 @@
 	desc = "Now comes in flavors like GUN. Uses 10mm ammo, for some reason."
 	name = "projectile gun"
 	w_class = WEIGHT_CLASS_NORMAL
-
 	has_safety = TRUE
 	safety = TRUE
 
@@ -43,6 +42,9 @@
 
 /obj/item/gun/ballistic/Initialize(mapload, spawn_empty)
 	. = ..()
+
+	allowed_ammo_types = typecacheof(allowed_ammo_types) - blacklisted_ammo_types
+
 	if(spawn_empty)
 		if(internal_magazine)
 			spawn_no_ammo = TRUE
@@ -234,7 +236,7 @@
 				to_chat(user, "<span class='notice'>There's already a [magazine_wording] in \the [src].</span>")
 		return
 
-	if(istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box/magazine/ammo_stack))
+	if(istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box))
 		if (bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)
 			if (chambered && !chambered.BB)
 				chambered.on_eject(shooter = user)

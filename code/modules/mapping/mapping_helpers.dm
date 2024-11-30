@@ -71,14 +71,6 @@
 	name = "asteroid snow baseturf editor"
 	baseturf = /turf/open/floor/plating/asteroid/snow
 
-/obj/effect/baseturf_helper/beach/sand
-	name = "beach sand baseturf editor"
-	baseturf = /turf/open/floor/plating/beach/sand
-
-/obj/effect/baseturf_helper/beach/water
-	name = "water baseturf editor"
-	baseturf = /turf/open/floor/plating/beach/water
-
 /obj/effect/baseturf_helper/lava
 	name = "lava baseturf editor"
 	baseturf = /turf/open/lava/smooth
@@ -169,7 +161,7 @@
 	if(airlock.seal)
 		log_mapping("[src] at [AREACOORD(src)] tried to seal [airlock] but it's already already got a seal? What the hell!")
 	else
-		airlock.seal = new /obj/item/door_seal(src)
+		airlock.seal = new /obj/item/door_seal(airlock)
 
 
 
@@ -391,7 +383,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 			found_airlock.update_appearance()
 			qdel(src)
 		if(note_info)
-			var/obj/item/paper/paper = new /obj/item/paper(src)
+			var/obj/item/paper/paper = new /obj/item/paper(found_airlock)
 			if(note_name)
 				paper.name = note_name
 			paper.add_raw_text("[note_info]")

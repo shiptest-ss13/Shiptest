@@ -10,9 +10,9 @@
 "b" = (
 /obj/structure/catwalk,
 /obj/machinery/conveyor_switch/oneway{
+	desc = "A conveyor control switch. It appears to only go in one direction; once you've pulled this, there's no going back.";
 	id = "superpill_start";
-	name = "jumpstart device";
-	desc = "A conveyor control switch. It appears to only go in one direction; once you've pulled this, there's no going back."
+	name = "jumpstart device"
 	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
@@ -34,8 +34,8 @@
 	id = "superpill_start"
 	},
 /obj/item/reagent_containers/pill/floorpill{
-	pixel_y = -5;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = -5
 	},
 /obj/item/reagent_containers/pill/floorpill{
 	pixel_x = 6
@@ -80,7 +80,7 @@
 	name = "environmental storytelling"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	filter_types = list("co2","bz","o2","plasma","water_vapor","nob","no2","tritium","freon","pluox","stim")
+	filter_types = list("co2","n2","co2","bz","water_vapor","miasma","freon","tritium","n20")
 	},
 /turf/open/floor/plating{
 	initial_gas_mix = "n2o=28, n2=72;TEMP=7"
