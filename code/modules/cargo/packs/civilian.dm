@@ -78,7 +78,7 @@
 	contains = list(/obj/item/storage/box/fountainpens)
 	crate_name = "calligraphy crate"
 	crate_type = /obj/structure/closet/crate/wooden
-	faction = FACTION_SOLGOV
+	faction = /datum/faction/solgov
 
 /datum/supply_pack/civilian/wrapping_paper
 	name = "Festive Wrapping Paper Crate"

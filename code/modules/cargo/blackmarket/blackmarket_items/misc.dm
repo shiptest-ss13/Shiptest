@@ -11,15 +11,15 @@
 	stock_max = 6
 	availability_prob = 80
 
-/datum/blackmarket_item/misc/shoulder_holster
-	name = "Shoulder holster"
-	desc = "Yeehaw, hardboiled friends! This holster is the first step in your dream of becoming a detective and being allowed to shoot real guns!"
+/datum/blackmarket_item/misc/cham_holster
+	name = "Chameleon Shoulder holster"
+	desc = "Looking to pack some heat without attracting attention? This adapative chameleon shoulder holster can disguise itself and your piece!"
 	item = /obj/item/clothing/accessory/holster
 
 	price_min = 200
 	price_max = 800
-	stock_max = 8
-	availability_prob = 60
+	stock_max = 4
+	availability_prob = 40
 
 /datum/blackmarket_item/misc/strange_seed
 	name = "Strange Seeds"

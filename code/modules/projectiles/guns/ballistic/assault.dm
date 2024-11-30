@@ -4,7 +4,7 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 	wield_delay = 0.8 SECONDS
-	wield_slowdown = 0.6
+	wield_slowdown = RIFLE_SLOWDOWN
 	aimed_wield_slowdown = RIFLE_AIM_SLOWDOWN
 
 	zoom = RIFLE_ZOOM
@@ -79,34 +79,6 @@
 	icon_state = "skm_inteq"
 	item_state = "skm_inteq"
 	manufacturer = MANUFACTURER_INTEQ
-
-/obj/item/gun/ballistic/automatic/assault/p16
-	name = "\improper P-16"
-	desc = "An assault rifle pattern from Sol, existing before the Night of Fire. A favorite of professional mercenaries and well-heeled pirates. Chambered in 5.56mm."
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	fire_sound = 'sound/weapons/gun/rifle/m16.ogg'
-	icon_state = "p16"
-	item_state = "p16"
-	show_magazine_on_sprite = TRUE
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	default_ammo_type = /obj/item/ammo_box/magazine/p16
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/p16,
-	)
-	spread = 2
-	wield_delay = 0.5 SECONDS
-
-	fire_delay = 0.18 SECONDS
-
-	rack_sound = 'sound/weapons/gun/rifle/m16_cocked.ogg'
-	load_sound = 'sound/weapons/gun/rifle/m16_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/rifle/m16_reload.ogg'
-	eject_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
-
-/obj/item/gun/ballistic/automatic/assault/p16/no_mag
-	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/automatic/assault/cm82
 	name = "\improper CM-16"
@@ -301,37 +273,3 @@
 	default_firemode = FIREMODE_FULLAUTO
 
 	spread_unwielded = 20
-
-//techinically a battle rifle, i'm putting it here for organisation sake
-
-/obj/item/gun/ballistic/automatic/marksman/vickland //weapon designed by Apogee-dev
-	name = "\improper Vickland"
-	desc = "The pride of the Saint-Roumain Militia, the Vickland is a rare semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. It is unusual in its class for its internal rotary magazine, which must be reloaded using stripper clips. Chambered in .308."
-	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
-
-	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
-	icon_state = "vickland"
-	item_state = "vickland"
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
-	internal_magazine = TRUE
-	default_ammo_type = /obj/item/ammo_box/magazine/internal/vickland
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/internal/vickland,
-	)
-	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
-
-	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	zoomable = FALSE //no scope on it
-
-	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
-
-	fire_delay = 0.4 SECONDS
-
-	spread_unwielded = 25
-	recoil = 0
-	recoil_unwielded = 4
-	wield_slowdown = 0.75
