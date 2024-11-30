@@ -935,7 +935,7 @@
 /obj/structure/flora/grass/green,
 /obj/item/mine/directional/claymore/live,
 /obj/item/ammo_casing/spent/slug/buck,
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "dW" = (
 /obj/item/ammo_casing/spent/rifle_brass,
@@ -1210,10 +1210,8 @@
 	},
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/item/mine/directional/claymore/live{
-	pixel_y = 3
-	},
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/lobby)
 "eN" = (
@@ -2331,6 +2329,10 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
+"jA" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "jF" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
@@ -2511,7 +2513,7 @@
 /obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/pod/dark,
 /area/ruin/icemoon/tesla_lab/cargo)
 "kl" = (
@@ -4157,7 +4159,7 @@
 /obj/item/mine/directional/claymore/live{
 	pixel_y = 3
 	},
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "rj" = (
 /obj/effect/turf_decal/trimline/transparent/blue/corner{
@@ -4174,7 +4176,7 @@
 "rk" = (
 /obj/structure/flora/grass/green,
 /obj/item/ammo_casing/spent/slug/buck,
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "rn" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
@@ -4213,7 +4215,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "ru" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
@@ -4564,7 +4566,7 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "sO" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -5261,13 +5263,17 @@
 	pixel_x = 11;
 	pixel_y = -10
 	},
-/obj/item/reagent_containers/hypospray/medipen/tuberculosiscure{
-	pixel_y = -10;
-	pixel_x = -6
-	},
 /obj/item/reagent_containers/syringe/contraband/bath_salts{
 	pixel_y = 13;
 	pixel_x = 6
+	},
+/obj/item/reagent_containers/hypospray/medipen/survival{
+	pixel_y = -12;
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = -7;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/icemoon/tesla_lab/medbay)
@@ -6630,7 +6636,7 @@
 "AJ" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/mob_spawn/human/corpse/clip/researcher,
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "AK" = (
 /obj/effect/turf_decal/industrial/caution{
@@ -7916,6 +7922,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/obj/effect/mob_spawn/human/corpse/clip/researcher,
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/office_two)
 "FU" = (
@@ -8042,9 +8049,6 @@
 	},
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/item/mine/directional/claymore/live{
-	pixel_y = 3
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -8134,7 +8138,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "GC" = (
 /obj/machinery/conveyor{
@@ -9203,6 +9207,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
+"KP" = (
+/obj/structure/flora/grass/green,
+/obj/item/mine/directional/claymore/live,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "KQ" = (
 /obj/item/paper{
 	pixel_x = -4;
@@ -9221,7 +9230,7 @@
 "KR" = (
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/structure/flora/rock/pile/icy,
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "KV" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -9264,9 +9273,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/medbay)
-"Ld" = (
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/template_noop)
 "Le" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 4
@@ -9575,10 +9581,6 @@
 /obj/machinery/door/firedoor/heavy/closed,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/office)
-"MH" = (
-/obj/item/ammo_casing/spent/slug/buck,
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/overmap_encounter/planetoid/ice/explored)
 "MI" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 8
@@ -10164,8 +10166,8 @@
 	pixel_y = 11;
 	pixel_x = 6
 	},
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "Pe" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -10316,7 +10318,8 @@
 	pixel_y = 15;
 	pixel_x = -10
 	},
-/turf/open/floor/plating/asteroid/snow/lit,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "PA" = (
 /obj/effect/turf_decal/corner/transparent/blue/mono,
@@ -10358,6 +10361,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
+"PF" = (
+/obj/effect/decal/cleanable/crayon{
+	color = "#FF3333";
+	icon_state = "danger";
+	pixel_y = 15;
+	pixel_x = -10
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "PH" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/slab_1,
@@ -10471,7 +10483,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Qb" = (
 /obj/item/stack/sheet/mineral/sandbags,
@@ -10484,11 +10496,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
-"Qk" = (
-/obj/effect/decal/cleanable/blood/drip,
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/overmap_encounter/planetoid/ice/explored)
 "Ql" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line,
 /obj/structure/cable/yellow{
@@ -10549,6 +10556,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
+"Qx" = (
+/obj/structure/flora/grass/green,
+/obj/item/mine/directional/claymore/live{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "Qz" = (
 /obj/effect/turf_decal/trimline/opaque/purple/line,
 /obj/effect/mapping_helpers/turf/burnt,
@@ -10724,6 +10738,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
+"Ro" = (
+/obj/structure/flora/rock/icy,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "Rp" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 1
@@ -11224,7 +11242,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "SN" = (
 /obj/structure/catwalk/over,
@@ -11467,7 +11485,7 @@
 "TH" = (
 /obj/structure/flora/grass/green,
 /obj/structure/flora/rock/icy,
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "TI" = (
 /obj/effect/decal/cleanable/blood/splatter{
@@ -11564,7 +11582,7 @@
 	icon_state = "gib4";
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Ud" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -12972,11 +12990,11 @@ Bi
 SK
 Bi
 Fv
-Fv
-Fv
-Fv
-uP
-uP
+cM
+cM
+cM
+cM
+cM
 uP
 uP
 uP
@@ -13036,11 +13054,11 @@ SK
 SK
 Fv
 Fv
-FE
-Fv
-uP
-uP
-uP
+jA
+cM
+cM
+TM
+cM
 uP
 uP
 uP
@@ -13100,10 +13118,10 @@ SK
 SK
 Fv
 TH
-AA
-Bi
-uP
-uP
+Qx
+un
+cM
+cM
 uP
 uP
 uP
@@ -13162,12 +13180,12 @@ Kb
 Kb
 SK
 Fv
-EW
-Fv
-Bi
-Fv
-uP
-uP
+Pd
+cM
+un
+cM
+cM
+cM
 uP
 uP
 uP
@@ -13227,11 +13245,11 @@ Fv
 Fv
 PH
 PH
-Fv
-uP
-uP
-uP
-uP
+cM
+cM
+cM
+TM
+cM
 uP
 uP
 uP
@@ -13290,10 +13308,10 @@ Fv
 Fv
 jM
 PH
-EW
-uP
-uP
-uP
+Pd
+TM
+cM
+cM
 uP
 uP
 uP
@@ -13353,11 +13371,11 @@ Kb
 Fv
 PH
 PH
-Fv
-uP
-uP
-uP
-uP
+cM
+TM
+TM
+cM
+cM
 uP
 uP
 uP
@@ -13416,12 +13434,12 @@ AN
 Fv
 Fv
 Fv
-Fv
-Fv
-uG
-Fv
-uP
-uP
+cM
+cM
+Ro
+un
+un
+cM
 uP
 uP
 uP
@@ -13479,12 +13497,12 @@ Kb
 Fv
 Fv
 Fv
-Fv
-Bi
-Fv
-Fv
-uP
-uP
+cM
+un
+cM
+cM
+cM
+cM
 uP
 uP
 uP
@@ -13542,13 +13560,13 @@ Kb
 SK
 Fv
 Fv
-FE
-vZ
-Fv
-Fv
-Fv
-uP
-uP
+jA
+KP
+cM
+cM
+cM
+cM
+cM
 uP
 uP
 "}
@@ -13605,13 +13623,13 @@ SK
 SK
 Xl
 uG
-Fv
-Bi
-Fv
-Fv
-FE
-uP
-uP
+cM
+un
+cM
+cM
+jA
+cM
+cM
 uP
 uP
 "}
@@ -13667,14 +13685,14 @@ Kb
 SK
 SK
 SK
-Fv
-EW
-Fv
-Fv
-uP
-uP
-uP
-uP
+cM
+Pd
+cM
+cM
+cM
+cM
+Qx
+Ro
 uP
 uP
 "}
@@ -13730,14 +13748,14 @@ Kb
 SK
 SK
 SK
-Fv
+cM
 PH
 PH
-Fv
-Fv
-uP
-uP
-uP
+cM
+cM
+TM
+un
+cM
 uP
 uP
 "}
@@ -13793,14 +13811,14 @@ rM
 SK
 SK
 SK
-Fv
+cM
 RC
 PH
-EW
-Fv
-uP
-uP
-uP
+Pd
+cM
+TM
+un
+un
 uP
 uP
 "}
@@ -13856,14 +13874,14 @@ rM
 rM
 rM
 SK
-Fv
+cM
 PH
 PH
-Fv
-Fv
-uP
-uP
-uP
+cM
+TM
+TM
+cM
+cM
 uP
 uP
 "}
@@ -13919,14 +13937,14 @@ oj
 GZ
 rM
 SK
-Fv
-Fv
-Fv
-MH
-MH
-uP
-uP
-uP
+cM
+cM
+cM
+CI
+CI
+un
+cM
+cM
 uP
 uP
 "}
@@ -13985,11 +14003,11 @@ rM
 rM
 rM
 rg
-MH
-MH
-uP
-uP
-uP
+CI
+CI
+un
+cM
+cM
 uP
 uP
 "}
@@ -14047,12 +14065,12 @@ na
 eL
 FY
 Ml
-Fv
-Fv
-Fv
-uP
-uP
-uP
+cM
+cM
+cM
+cM
+KP
+cM
 uP
 uP
 "}
@@ -14111,11 +14129,11 @@ Gq
 qS
 QX
 rt
-FE
-Fv
-uP
-uP
-uP
+jA
+cM
+cM
+un
+un
 uP
 uP
 "}
@@ -14174,11 +14192,11 @@ rM
 rM
 rM
 SM
-Bi
-MH
+un
+CI
 KR
-uP
-uP
+cM
+cM
 uP
 uP
 "}
@@ -14237,12 +14255,12 @@ lr
 PZ
 PZ
 GB
-Bi
+un
 rk
-MH
-uP
-uP
-uP
+CI
+cM
+cM
+cM
 uP
 "}
 (23,1,1) = {"
@@ -14297,14 +14315,14 @@ rM
 rM
 rM
 On
-Fv
-Fv
+cM
+cM
 PH
 PH
-Bi
+un
 dU
 Pd
-uP
+cM
 uP
 uP
 "}
@@ -14360,14 +14378,14 @@ dr
 rM
 rM
 rM
-Fv
-Fv
+cM
+cM
 jM
 PH
-Fv
-Fv
-Ld
-uP
+cM
+cM
+cM
+cM
 uP
 uP
 "}
@@ -14423,14 +14441,14 @@ Iz
 SD
 Fv
 FE
-Fv
-Fv
+cM
+cM
 PH
 PH
-Fv
-Fv
-uG
-uP
+cM
+cM
+Ro
+cM
 uP
 uP
 "}
@@ -14486,13 +14504,13 @@ YA
 SD
 Fv
 Fv
-Fv
-Fv
-Fv
-Fv
-Fv
-Fv
-Bi
+TM
+cM
+cM
+cM
+cM
+cM
+un
 uP
 uP
 uP
@@ -14549,13 +14567,13 @@ YA
 SD
 Fv
 Fv
-Fv
-Fv
-Fv
-Fv
-Fv
-vZ
-Fv
+cM
+cM
+TM
+TM
+cM
+KP
+cM
 uP
 uP
 uP
@@ -14613,12 +14631,12 @@ SD
 uG
 PH
 PH
-Fv
-Fv
-Fv
-Fv
-FE
-Fv
+cM
+TM
+cM
+cM
+jA
+cM
 uP
 uP
 uP
@@ -14676,12 +14694,12 @@ SD
 Fv
 YV
 PH
-Fv
-Fv
-Fv
+Ro
+cM
+cM
 Py
-Fv
-Fv
+cM
+cM
 uP
 uP
 uP
@@ -14739,11 +14757,11 @@ ue
 Fv
 PH
 PH
-Fv
-Fv
-Fv
-Fv
-Fv
+cM
+cM
+TM
+TM
+cM
 cM
 cM
 uP
@@ -14802,10 +14820,10 @@ cM
 Fv
 Fv
 vZ
-Bi
-Fv
-Fv
-Fv
+un
+cM
+cM
+cM
 cM
 jv
 FW
@@ -14865,10 +14883,10 @@ ur
 Kq
 XF
 AJ
-Fv
-Bi
-Py
-Fv
+cM
+un
+PF
+cM
 cM
 xA
 xA
@@ -14929,8 +14947,8 @@ oa
 XF
 RF
 Ua
-Qk
-po
+XF
+RF
 HA
 tQ
 GD
@@ -14991,9 +15009,9 @@ Mt
 bI
 pO
 RF
-Qk
+XF
 sJ
-Qk
+XF
 oF
 df
 GD
@@ -15055,8 +15073,8 @@ Ts
 cM
 cM
 po
-po
-po
+RF
+RF
 UT
 FV
 GD
