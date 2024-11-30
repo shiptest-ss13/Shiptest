@@ -26,8 +26,8 @@
 	///Determines the amount of pixels to move the icon state for the overlay. in the y direction
 	var/pixel_shift_y = 16
 	/// Determines what layer the icon state for the overlay renders on.
-	var/render_layer = FLOAT_LAYER
-	var/render_plane = FLOAT_PLANE
+	var/render_layer = FLOAT_LAYER //inhands
+	var/render_plane = FLOAT_PLANE //world
 
 	//Toggle modifers are handled seperatly
 	///Modifier applied to the parent
