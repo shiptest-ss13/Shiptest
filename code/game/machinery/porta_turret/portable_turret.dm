@@ -421,7 +421,7 @@
 		spark_system.start()
 
 /obj/machinery/porta_turret/proc/retaliate(mob/living/target)
-	if(!(turret_flags & TURRET_FLAG_SHOOT_RETALIATE) || current_target || !on || allowed(target) || (machine_stat & BROKEN|NOPOWER|MAINT))
+	if(!(turret_flags & TURRET_FLAG_SHOOT_RETALIATE) || current_target || !on || (req_ship_access && allowed(target)) || (machine_stat & BROKEN|NOPOWER|MAINT))
 		return
 
 	set_target(target)
@@ -525,7 +525,7 @@
 	//We know the target must be a human now
 	var/mob/living/carbon/human/target_carbon = target_mob
 
-	if(check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id))
+	if(req_ship_access && (check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id)))
 		return FALSE
 
 	if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
