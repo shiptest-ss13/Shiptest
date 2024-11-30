@@ -31,6 +31,37 @@
 	name = "\improper .38 DumDum bullet"
 	embedding = list(embed_chance=70, fall_chance=7, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10, embed_chance_turf_mod=-100)
 
+/obj/item/shrapnel/bullet/tracker
+	name = "\improper bullet tracker"
+	embedding = list(embed_chance=100, fall_chance=0, jostle_chance=1, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=1, jostle_pain_mult=2, rip_time=100, embed_chance_turf_mod=-100)
+	var/lifespan = 3000
+	var/gps_tag = "*TRAC"
+	var/timer_id
+
+/obj/item/shrapnel/bullet/tracker/Initialize()
+	. = ..()
+	timer_id = QDEL_IN(src, lifespan)
+	AddComponent(/datum/component/gps/item, gps_tag)
+
+/obj/item/shrapnel/bullet/tracker/Destroy()
+	deltimer(timer_id)
+	return ..()
+
+/obj/item/shrapnel/bullet/tracker/c38
+	name = ".38 Tracker"
+
+/obj/item/shrapnel/bullet/tracker/a8_50r
+	name = "8x50mm Tracker"
+
+/obj/item/shrapnel/bullet/tracker/a858
+	name = "8x58mm Tracker"
+
+/obj/item/shrapnel/bullet/tracker/a65clip
+	name = "6.5x57mm Tracker"
+
+/obj/item/shrapnel/bullet/tracker/a308
+	name = ".308 Tracker"
+
 /obj/projectile/bullet/shrapnel
 	name = "flying shrapnel shard"
 	damage = 10

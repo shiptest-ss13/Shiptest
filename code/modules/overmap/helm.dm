@@ -360,7 +360,7 @@
 	// Unregister map objects
 	if(current_ship)
 		user.client?.clear_map(current_ship.token.map_name)
-		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer) // If accelerating with nobody else to stop it
+		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer && is_living) // If accelerating with nobody else to stop it
 			say("Pilot absence detected, engaging acceleration safeties.")
 			current_ship.change_heading(BURN_NONE)
 
