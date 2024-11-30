@@ -334,6 +334,17 @@
 		SEND_SIGNAL(src, COMSIG_GUN_SET_AUTOFIRE_SPEED, fire_delay)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
+/obj/item/gun/ballistic/automatic/assault/e40/examine(mob/user)
+	. = ..()
+	if(!secondary.internal_magazine)
+		. += "The cell retainment latch is [secondary.latch_closed ? "<span class='green'>CLOSED</span>" : "<span class='red'>OPEN</span>"]. Alt-Click to toggle the latch."
+	var/obj/item/ammo_casing/energy/shot = secondary.ammo_type[select]
+	if(secondary.cell)
+		. += "\The [name]'s cell has [secondary.cell.percent()]% charge remaining."
+		. += "\The [name] has [round(secondary.cell.charge/shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode."
+	else
+		. += span_notice("\The [name] doesn't seem to have a cell!")
+
 //laser
 
 /obj/item/gun/energy/laser/e40_laser_secondary
