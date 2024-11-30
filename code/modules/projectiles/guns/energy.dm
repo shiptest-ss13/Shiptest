@@ -185,7 +185,7 @@
 	if(!internal_magazine && latch_closed)
 		to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
 		if(do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-			to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip."))
+			to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip " + "<span class='red'>OPEN</span>" + "."))
 			playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
 			tac_reloads = TRUE
 			latch_closed = FALSE
@@ -195,7 +195,7 @@
 			return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
 		to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
 		if (do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip."))
+			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + "<span class='green'>CLOSED</span>" + "."))
 			playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 			tac_reloads = FALSE
 			latch_closed = TRUE
@@ -376,6 +376,8 @@
 		. += "\The [name] has [round(cell.charge/shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode."
 	else
 		. += span_notice("\The [name] doesn't seem to have a cell!")
+	if(latch_closed)
+		. += "The cell retainment latch is [latch_closed ? "<span class='green'>CLOSED</span>" : "<span class='red'>OPEN</span>"]. Alt-Click to toggle the latch."
 
 /obj/item/gun/energy/unsafe_shot(target)
 	. = ..()
