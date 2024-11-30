@@ -60,6 +60,7 @@
 	pellets = 3
 	variance = 35
 	e_cost = 2000
+	select_name = "kill"
 
 /obj/item/ammo_casing/energy/laser/ultima/alt
 	select_name = "scatter"
