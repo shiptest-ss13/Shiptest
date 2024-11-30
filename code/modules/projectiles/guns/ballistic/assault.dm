@@ -241,7 +241,26 @@
 /obj/item/gun/ballistic/automatic/assault/e40/AltClick(mob/living/user)
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode == FIREMODE_OTHER)
-		return secondary.AltClick(user)
+		if(secondary.latch_closed)
+			to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
+			if(do_after(user, secondary.latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
+				to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip."))
+				playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
+				secondary.tac_reloads = TRUE
+				secondary.latch_closed = FALSE
+				update_appearance()
+				return
+		else
+			to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
+			if (do_after(user, secondary.latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
+				to_chat(user, span_notice("You latch the [src]'s power cell retainment clip."))
+				playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
+				secondary.tac_reloads = FALSE
+				secondary.latch_closed = TRUE
+				update_appearance()
+				return
+	else
+		return ..()
 
 /obj/item/gun/ballistic/automatic/assault/e40/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
@@ -282,6 +301,20 @@
 		. += "[icon_state]_charge[ratio]"
 	if(secondary.cell)
 		. += "[icon_state]_cell"
+	if(ismob(loc))
+		var/mutable_appearance/latch_overlay
+		latch_overlay = mutable_appearance('icons/obj/guns/cell_latch.dmi')
+		if(secondary.latch_closed)
+			if(secondary.cell)
+				latch_overlay.icon_state = "latch-on-full"
+			else
+				latch_overlay.icon_state = "latch-on-empty"
+		else
+			if(secondary.cell)
+				latch_overlay.icon_state = "latch-off-full"
+			else
+				latch_overlay.icon_state = "latch-off-empty"
+		. += latch_overlay
 
 
 /obj/item/gun/ballistic/automatic/assault/e40/toggle_safety(mob/user, silent=FALSE)
