@@ -644,3 +644,10 @@
 	cost = 250
 	contains = list(/obj/item/attachment/silencer)
 	crate_name = "suppressor crate"
+
+/datum/supply_pack/gun/attachment/strap
+	name = "Shoulder Strap Crate"
+	desc = "Contains a single shoulder strap to be mounted on a firearm for easy carrying without armor holsters. Only compatible with longarms."
+	cost = 400
+	contains = list(/obj/item/attachment/strap)
+	crate_name = "shoulder strap crate"
