@@ -1025,7 +1025,8 @@
 /area/ship/hallway/central)
 "tO" = (
 /obj/machinery/door/airlock/freezer{
-	name = "Bathroom"
+	name = "Bathroom";
+	id_tag = "Bansheebathroomdoor"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -1219,6 +1220,15 @@
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/button/door{
+	id = "Bansheebathroomdoor";
+	name = "Door Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_y = 20;
+	req_access_txt = "3";
+	specialfunctions = 4;
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "yF" = (
