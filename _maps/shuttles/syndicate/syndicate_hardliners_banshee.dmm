@@ -63,7 +63,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo)
+/area/ship/hallway/central)
 "bI" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -143,7 +143,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "dG" = (
@@ -159,6 +158,10 @@
 "ef" = (
 /obj/structure/table,
 /obj/machinery/computer/helm/viewscreen/directional/south,
+/obj/item/paper_bin{
+	pixel_y = 5;
+	pixel_x = 8
+	},
 /obj/item/flashlight/lamp{
 	pixel_x = -7;
 	pixel_y = 10
@@ -169,8 +172,8 @@
 	layer = 3.1
 	},
 /obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = 11;
-	pixel_y = 4
+	pixel_x = 18;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = 18;
@@ -454,7 +457,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo)
+/area/ship/hallway/central)
 "ko" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
@@ -590,7 +593,7 @@
 	pixel_y = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo)
+/area/ship/hallway/central)
 "lV" = (
 /obj/structure/railing{
 	dir = 4
@@ -730,11 +733,11 @@
 	dir = 4
 	},
 /obj/structure/table/greyscale,
+/obj/item/paper_bin,
 /obj/item/flashlight/lamp{
 	pixel_x = -7;
-	pixel_y = 10
+	pixel_y = 16
 	},
-/obj/item/paper_bin,
 /obj/item/pen/fourcolor,
 /obj/item/folder{
 	pixel_y = 6;
@@ -978,30 +981,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "rG" = (
-/obj/structure/rack,
-/obj/item/stock_parts/cell/super{
-	pixel_x = 9;
-	pixel_y = 8
-	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -3;
-	pixel_y = 7
-	},
-/obj/structure/platform/industrial/corner{
-	dir = 4
-	},
-/obj/item/mecha_parts/mecha_equipment/salvage_saw{
-	pixel_x = 5
-	},
-/obj/item/mecha_parts/mecha_equipment/drill,
-/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp{
-	pixel_x = 5;
-	pixel_y = -5
-	},
 /obj/machinery/computer/helm/viewscreen/directional/south,
 /obj/structure/platform/industrial{
 	dir = 8
 	},
+/obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "sd" = (
@@ -1105,7 +1089,7 @@
 /obj/item/clothing/mask/breath,
 /obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo)
+/area/ship/hallway/central)
 "vb" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/atmospherics/pipe/layer_manifold,
@@ -1411,6 +1395,9 @@
 "CV" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/cryo)
+"CZ" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/hallway/central)
 "Ds" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -2235,14 +2222,34 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Re" = (
-/obj/structure/railing{
-	dir = 1;
-	layer = 3.09
+/obj/structure/rack,
+/obj/item/stock_parts/cell/super{
+	pixel_x = 9;
+	pixel_y = 8
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/structure/platform/industrial/corner{
+	dir = 4
+	},
+/obj/item/mecha_parts/mecha_equipment/salvage_saw{
+	pixel_x = 5
+	},
+/obj/item/mecha_parts/mecha_equipment/drill,
+/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp{
+	pixel_x = 5;
+	pixel_y = -5
 	},
 /obj/structure/platform/industrial{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/railing{
+	dir = 1;
+	layer = 3.09
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Rt" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -2646,7 +2653,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
-/area/ship/cargo)
+/area/ship/hallway/central)
 "Zq" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
@@ -3219,7 +3226,7 @@ oR
 oR
 HG
 oR
-oR
+iT
 lS
 bv
 MU
@@ -3269,9 +3276,9 @@ Xf
 MK
 kF
 MA
-oR
-oR
-Ao
+iT
+iT
+CZ
 MU
 pM
 pM
