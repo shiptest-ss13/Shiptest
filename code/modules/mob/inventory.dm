@@ -513,19 +513,21 @@
 /mob/proc/unequip_delay_self_check(obj/item/unequipped, bypass_delay)
 	return TRUE
 
+#define EQUIPPING_INTERACTION_KEY(item) "equipping_item_[ref(item)]"
+
 /mob/living/carbon/human/equip_delay_self_check(obj/item/equipped, bypass_delay)
 	if(!equipped.equip_delay_self || bypass_delay)
 		return TRUE
 
-	if(equipped.equipping_sound)
-		playsound(src.loc, equipped.equipping_sound, 50)
+	if(DOING_INTERACTION(src, EQUIPPING_INTERACTION_KEY(equipped)))
+		return FALSE
 
 	visible_message(
 		span_notice("[src] starts to put on [equipped]..."),
 		span_notice("You start to put on [equipped]...")
 	)
 
-	. = equipped.do_equip_wait(src)
+	. = equipped.do_equip_wait(src, equipped.equipping_sound)
 
 	if(.)
 		visible_message(
@@ -537,15 +539,15 @@
 	if(!unequipped.equip_delay_self || is_holding(unequipped))
 		return TRUE
 
-	if(unequipped.unequipping_sound)
-		playsound(src.loc, unequipped.unequipping_sound, 50)
+	if(DOING_INTERACTION(src, EQUIPPING_INTERACTION_KEY(unequipped)))
+		return FALSE
 
 	visible_message(
 		span_notice("[src] starts to take off [unequipped]..."),
 		span_notice("You start to take off [unequipped]...")
 	)
 
-	. = unequipped.do_equip_wait(src)
+	. = unequipped.do_equip_wait(src, unequipped.unequipping_sound)
 
 	if(.)
 		visible_message(
@@ -555,7 +557,8 @@
 
 
 /// Called by equip_delay_self and unequip_delay_self.
-/obj/item/proc/do_equip_wait(mob/living/equipping)
+/obj/item/proc/do_equip_wait(mob/living/equipping, var/soundtoplay)
+
 	var/flags = NONE
 	if(equip_self_flags & EQUIP_ALLOW_MOVEMENT)
 		flags |= IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE
@@ -563,11 +566,16 @@
 	if(equip_self_flags & EQUIP_SLOWDOWN)
 		equipping.add_movespeed_modifier(/datum/movespeed_modifier/equipping)
 
+	if(soundtoplay)
+		playsound(equipping.loc, soundtoplay, 35)
+
 	ADD_TRAIT(equipping, TRAIT_EQUIPPING_OR_UNEQUIPPING, ref(src))
 
-	. = do_after(equipping, equip_delay_self, equipping, flags)
+	. = do_after(equipping, equip_delay_self, equipping, flags, interaction_key = EQUIPPING_INTERACTION_KEY(src))
 
 	REMOVE_TRAIT(equipping, TRAIT_EQUIPPING_OR_UNEQUIPPING, ref(src))
 
 	if(!HAS_TRAIT(equipping, TRAIT_EQUIPPING_OR_UNEQUIPPING))
 		equipping.remove_movespeed_modifier(/datum/movespeed_modifier/equipping)
+
+#undef EQUIPPING_INTERACTION_KEY
