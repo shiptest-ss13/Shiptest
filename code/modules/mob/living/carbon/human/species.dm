@@ -1279,14 +1279,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(!to_equip.equip_delay_self || bypass_equip_delay_self)
 		return TRUE
 
-	if(to_equip.equipping_sound)
-		ourhuman.playsound_local(ourhuman.loc, to_equip.equipping_sound, 50)
 	ourhuman.visible_message(
 	span_notice("[ourhuman] start putting on [to_equip]..."),
 	span_notice("You start putting on [to_equip]...")
 	)
 
-	. = to_equip.do_equip_wait(ourhuman)
+	. = to_equip.do_equip_wait(ourhuman, to_equip.equipping_sound)
 
 	if(.)
 		ourhuman.visible_message(
