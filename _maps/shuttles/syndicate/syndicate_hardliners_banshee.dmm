@@ -1329,10 +1329,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/command{
-	req_access_txt = "20";
-	name = "Bridge"
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -1340,6 +1336,10 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Privacy Shutters";
 	id = "Bansheeprivacyshutters"
+	},
+/obj/machinery/door/airlock/command/glass{
+	req_access_txt = "20";
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
@@ -1655,7 +1655,7 @@
 /obj/effect/decal/cleanable/wrapping,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/item/melee/axe/sledgehammer,
-/obj/item/storage/firstaid,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "HB" = (
