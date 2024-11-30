@@ -208,6 +208,9 @@
 /obj/item/gun/ballistic/automatic/assault/e40/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode != FIREMODE_OTHER)
+		if(!secondary.latch_closed && prob(65))
+			to_chat(user, span_warning("[src]'s cell falls out!"))
+			secondary.eject_cell()
 		return ..()
 	return secondary.process_fire(target, user, message, params, zone_override, bonus_spread)
 
@@ -244,7 +247,7 @@
 		if(secondary.latch_closed)
 			to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
 			if(do_after(user, secondary.latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-				to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip " + "<span class='red'>OPEN</span>" + "."))
+				to_chat(user, span_notice("You unlatch [src]'s power cell retainment clip " + "<span class='red'>OPEN</span>" + "."))
 				playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
 				secondary.tac_reloads = TRUE
 				secondary.latch_closed = FALSE
@@ -253,7 +256,7 @@
 		else
 			to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
 			if (do_after(user, secondary.latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-				to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + "<span class='green'>CLOSED</span>" + "."))
+				to_chat(user, span_notice("You latch [src]'s power cell retainment clip " + "<span class='green'>CLOSED</span>" + "."))
 				playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 				secondary.tac_reloads = FALSE
 				secondary.latch_closed = TRUE
