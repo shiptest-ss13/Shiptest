@@ -557,7 +557,7 @@
 
 
 /// Called by equip_delay_self and unequip_delay_self.
-/obj/item/proc/do_equip_wait(mob/living/equipping, var/soundtoplay)
+/obj/item/proc/do_equip_wait(mob/living/equipping, soundtoplay)
 
 	var/flags = NONE
 	if(equip_self_flags & EQUIP_ALLOW_MOVEMENT)
