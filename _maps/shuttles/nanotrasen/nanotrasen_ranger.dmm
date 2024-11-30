@@ -2,16 +2,16 @@
 "ab" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
+	layer = 4.2;
 	pixel_x = 5;
-	pixel_y = 11;
-	layer = 4.2
+	pixel_y = 11
 	},
 /obj/item/toy/plush/moth/redish{
 	pixel_x = -4
 	},
 /obj/item/folder/red{
-	pixel_x = -4;
 	layer = 3.01;
+	pixel_x = -4;
 	pixel_y = -8
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -20,9 +20,9 @@
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/light_switch{
+	dir = 8;
 	pixel_x = 20;
-	pixel_y = 11;
-	dir = 8
+	pixel_y = 11
 	},
 /turf/open/floor/wood,
 /area/ship/crew/specialized/security)
@@ -70,8 +70,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/stairs{
-	dir = 1;
-	color = "#a8b2b6"
+	color = "#a8b2b6";
+	dir = 1
 	},
 /area/ship/bridge)
 "aD" = (
@@ -112,8 +112,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding{
-	dir = 4;
-	color = "#730622"
+	color = "#730622";
+	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
@@ -345,9 +345,9 @@
 	dir = 1
 	},
 /obj/item/radio/weather_monitor{
-	pixel_x = 25;
 	anchored = 1;
-	name = "barometric monitor"
+	name = "barometric monitor";
+	pixel_x = 25
 	},
 /turf/open/floor/circuit/telecomms,
 /area/ship/science/ai_chamber)
@@ -383,8 +383,8 @@
 "cW" = (
 /obj/docking_port/mobile{
 	dir = 2;
-	preferred_direction = 4;
-	port_direction = 8
+	port_direction = 8;
+	preferred_direction = 4
 	},
 /obj/machinery/camera/autoname,
 /obj/machinery/light/floor,
@@ -412,8 +412,8 @@
 /obj/machinery/light/small/directional/south,
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_y = 8;
-	pixel_x = -21
+	pixel_x = -21;
+	pixel_y = 8
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/crew/specialized/cargo)
@@ -463,8 +463,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/thinplating{
-	dir = 1;
-	color = "#a8b2b6"
+	color = "#a8b2b6";
+	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/arrow_ccw,
 /obj/machinery/light/dim/directional/north,
@@ -544,9 +544,9 @@
 /area/ship/hallway/central)
 "ef" = (
 /obj/docking_port/stationary{
-	width = 30;
+	dwidth = 15;
 	height = 15;
-	dwidth = 15
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -586,8 +586,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/thinplating{
-	dir = 1;
-	color = "#a8b2b6"
+	color = "#a8b2b6";
+	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/arrow_ccw,
 /obj/machinery/advanced_airlock_controller{
@@ -633,16 +633,16 @@
 "eT" = (
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_y = -21;
 	id = "Rangar_Starboard_Blasts";
 	name = "Blast Doors";
+	pixel_y = -21;
 	req_ship_access = 1
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
+	id = "Ranger_Starboard_holofield";
 	pixel_x = 9;
-	pixel_y = -20;
-	id = "Ranger_Starboard_holofield"
+	pixel_y = -20
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -659,11 +659,11 @@
 "eU" = (
 /obj/machinery/computer/helm/viewscreen/directional/north,
 /obj/machinery/button/door{
+	dir = 8;
+	id = "Ranger_Supply_Specialist_Quarters";
+	name = "Supply Quarters Windows";
 	pixel_x = 12;
 	pixel_y = 4;
-	dir = 8;
-	name = "Supply Quarters Windows";
-	id = "Ranger_Supply_Specialist_Quarters";
 	req_ship_access = 1
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -749,8 +749,8 @@
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/door/window/brigdoor/northright{
-	req_access_txt = "1";
 	name = "Secure Lockup";
+	req_access_txt = "1";
 	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -813,11 +813,11 @@
 	name = "Cryogenic Storage"
 	},
 /obj/machinery/button/door{
-	pixel_x = -21;
 	dir = 4;
-	pixel_y = 3;
+	id = "RangerCryoShutters";
 	name = "Cryogenics Access";
-	id = "RangerCryoShutters"
+	pixel_x = -21;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/stairs{
 	color = "#8A9397"
@@ -1018,8 +1018,8 @@
 	pixel_y = 9
 	},
 /obj/item/storage/guncase/pistol{
-	pixel_y = -4;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -4
 	},
 /obj/item/melee/knife/survival{
 	pixel_x = 7;
@@ -1079,8 +1079,8 @@
 /obj/structure/grille,
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "Engineering_Specialist_Shutters";
 	dir = 4;
+	id = "Engineering_Specialist_Shutters";
 	name = "Communications Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -1177,12 +1177,12 @@
 /area/ship/hallway/central)
 "ix" = (
 /obj/item/storage/box/syringes{
-	pixel_y = 10;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/glass/bottle/mannitol{
-	pixel_y = 8;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle/morphine{
 	pixel_x = 5
@@ -1246,8 +1246,8 @@
 	dir = 10
 	},
 /obj/item/clipboard{
-	pixel_y = -2;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -2
 	},
 /obj/item/pen{
 	pixel_x = -7;
@@ -1399,14 +1399,14 @@
 	icon_state = "computer-right"
 	},
 /obj/machinery/light_switch{
-	pixel_y = 23;
-	name = "External Lighting Switch";
 	color = "#efbc43";
-	pixel_x = 6
+	name = "External Lighting Switch";
+	pixel_x = 6;
+	pixel_y = 23
 	},
 /obj/item/paper{
-	name = "NT Spaceworks Notice";
-	default_raw_text = "Dear engineer, please bring your attention to the advanced control mechanisms present on and around this console. There is an external lighting switch to toggle the vessel's exterior lighting, highlighted in yellow, an air alarm connected to this console which controls external atmospherics fittings, and the console itself, which can read external atmosphere from a main sensor affixed to the fore of the vessel. -NT Spaceworks"
+	default_raw_text = "Dear engineer, please bring your attention to the advanced control mechanisms present on and around this console. There is an external lighting switch to toggle the vessel's exterior lighting, highlighted in yellow, an air alarm connected to this console which controls external atmospherics fittings, and the console itself, which can read external atmosphere from a main sensor affixed to the fore of the vessel. -NT Spaceworks";
+	name = "NT Spaceworks Notice"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/external/dark)
@@ -1421,8 +1421,8 @@
 	pixel_y = 2
 	},
 /obj/item/storage/firstaid/medical{
-	pixel_y = 7;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 7
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -1546,8 +1546,8 @@
 	pixel_y = 10
 	},
 /obj/item/folder/red{
-	pixel_x = -4;
 	layer = 3.01;
+	pixel_x = -4;
 	pixel_y = -8
 	},
 /obj/item/folder,
@@ -1637,25 +1637,25 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/survival_pod{
-	dir = 6;
-	density = 0
+	density = 0;
+	dir = 6
 	},
 /obj/structure/window/reinforced/survival_pod{
-	dir = 10;
-	density = 0
+	density = 0;
+	dir = 10
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/specialized/cargo)
 "lp" = (
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_y = 6;
-	pixel_x = 22;
 	id = "Ranger_FireFighting_Shut";
 	name = "Ready Room";
-	req_ship_access = 1;
+	pixel_x = 22;
+	pixel_y = 6;
+	req_one_access = list(50, 10, 5, 1, 20);
 	req_one_access_txt = "50,10,5,1,20";
-	req_one_access = list(50, 10, 5, 1, 20)
+	req_ship_access = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -1680,8 +1680,8 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/preopen{
 	dir = 4;
-	name = "Intelligence Core";
-	id = "AiCore"
+	id = "AiCore";
+	name = "Intelligence Core"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
@@ -1700,8 +1700,8 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	dir = 4;
-	name = "Intelligence Core";
-	id = "AiCore"
+	id = "AiCore";
+	name = "Intelligence Core"
 	},
 /obj/machinery/door/airlock/engineering/glass{
 	dir = 4;
@@ -1726,8 +1726,8 @@
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/structure/sign/warning/coldtemp{
-	pixel_y = -29;
-	layer = 2.8
+	layer = 2.8;
+	pixel_y = -29
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
@@ -1804,8 +1804,8 @@
 "mv" = (
 /obj/machinery/light/dim/directional/east,
 /obj/effect/turf_decal/siding/thinplating{
-	dir = 1;
-	color = "#a8b2b6"
+	color = "#a8b2b6";
+	dir = 1
 	},
 /obj/machinery/shower{
 	dir = 1
@@ -1877,28 +1877,28 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/stack/marker_beacon/thirty{
+	amount = 100;
 	icon_state = "markerrandom";
 	pixel_x = -9;
-	pixel_y = 13;
-	amount = 100
+	pixel_y = 13
 	},
 /obj/item/stack/marker_beacon/thirty{
+	amount = 100;
 	icon_state = "markerrandom";
 	pixel_x = 11;
-	pixel_y = 13;
-	amount = 100
+	pixel_y = 13
 	},
 /obj/item/stack/marker_beacon/thirty{
+	amount = 100;
 	icon_state = "markerrandom";
 	pixel_x = 5;
-	pixel_y = 13;
-	amount = 100
+	pixel_y = 13
 	},
 /obj/item/stack/marker_beacon/thirty{
+	amount = 100;
 	icon_state = "markerrandom";
 	pixel_x = -2;
-	pixel_y = 13;
-	amount = 100
+	pixel_y = 13
 	},
 /obj/item/stock_parts/cell/gun,
 /obj/effect/turf_decal/corner/opaque/syndiered/three_quarters{
@@ -1947,18 +1947,18 @@
 "nE" = (
 /obj/machinery/button/door{
 	dir = 2;
-	pixel_x = -2;
-	name = "Access Blast Doors";
 	id = "Ranger_AI_Core_Blasts";
+	name = "Access Blast Doors";
+	pixel_x = -2;
 	pixel_y = 22;
 	req_access_txt = "10";
 	req_ship_access = 1
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 2;
+	id = "AI_Core_Field_Engi";
 	pixel_x = 6;
-	pixel_y = 20;
-	id = "AI_Core_Field_Engi"
+	pixel_y = 20
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -2064,8 +2064,8 @@
 /obj/structure/chair/sofa/brown/corner/directional/south,
 /obj/machinery/light/dim/directional/east,
 /obj/item/ammo_casing/spent{
-	pixel_x = 13;
-	desc = "A spent bullet-casing that <b>someone</b> hid behind the couch, likely to avoid the Lieutenant's ire."
+	desc = "A spent bullet-casing that <b>someone</b> hid behind the couch, likely to avoid the Lieutenant's ire.";
+	pixel_x = 13
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/central)
@@ -2158,11 +2158,11 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_x = 26;
 	id = "AiCore";
 	name = "Core Access";
-	req_access_txt = "20";
+	pixel_x = 26;
 	pixel_y = 8;
+	req_access_txt = "20";
 	req_ship_access = 1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -2302,12 +2302,12 @@
 	},
 /obj/structure/table/wood,
 /obj/item/toy/plush/moth/deadhead{
-	pixel_x = -7;
-	layer = 4.3
+	layer = 4.3;
+	pixel_x = -7
 	},
 /obj/item/folder/yellow{
-	pixel_y = -4;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -4
 	},
 /obj/item/pen/survival{
 	pixel_x = 5;
@@ -2317,11 +2317,11 @@
 	dir = 5
 	},
 /obj/machinery/button/door{
+	dir = 8;
+	id = "Ranger_Engineering_Specialist_Quarters";
+	name = "Engineering Quarters Windows";
 	pixel_x = 22;
 	pixel_y = -2;
-	dir = 8;
-	name = "Engineering Quarters Windows";
-	id = "Ranger_Engineering_Specialist_Quarters";
 	req_ship_access = 1
 	},
 /obj/structure/cable{
@@ -2332,9 +2332,9 @@
 	pixel_y = 21
 	},
 /obj/item/flashlight/lamp/green{
+	layer = 4.2;
 	pixel_x = 12;
-	pixel_y = 13;
-	layer = 4.2
+	pixel_y = 13
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/wood,
@@ -2419,8 +2419,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding{
-	dir = 4;
-	color = "#730622"
+	color = "#730622";
+	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
@@ -2566,10 +2566,10 @@
 	dir = 9
 	},
 /obj/machinery/button/door{
-	pixel_y = 21;
 	id = "BridgeAtrium";
 	name = "Atrium Shutters";
 	pixel_x = 9;
+	pixel_y = 21;
 	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -2577,9 +2577,9 @@
 "sl" = (
 /obj/machinery/telecomms/processor/preset_four{
 	autolinkers = list("processor4","bus");
-	network = "nt_commnet";
 	id = "Nanotrasen Communications Processor";
-	layer = 3.09
+	layer = 3.09;
+	network = "nt_commnet"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -2655,10 +2655,10 @@
 "sU" = (
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -22;
-	pixel_y = 8;
 	id = "Ranger_Cycler_Shutters";
 	name = "Air Cycler Shutters";
+	pixel_x = -22;
+	pixel_y = 8;
 	req_ship_access = 1
 	},
 /obj/structure/chair/handrail{
@@ -2806,11 +2806,11 @@
 "tZ" = (
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -21;
-	name = "Shutters";
 	id = "Ranger_SB_maint_shut";
-	req_ship_access = 1;
-	pixel_y = 5
+	name = "Shutters";
+	pixel_x = -21;
+	pixel_y = 5;
+	req_ship_access = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -2859,24 +2859,24 @@
 	pixel_y = -8
 	},
 /obj/item/holosign_creator/engineering{
-	pixel_y = 6;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 6
 	},
 /obj/item/holosign_creator/atmos{
-	pixel_y = 6;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /obj/item/flashlight/seclite{
 	pixel_x = 2;
 	pixel_y = 15
 	},
 /obj/item/gps{
-	pixel_y = 9;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 9
 	},
 /obj/item/melee/knife/survival{
-	pixel_y = 6;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/item/clothing/head/welding{
 	pixel_y = -9
@@ -2894,9 +2894,9 @@
 /area/ship/engineering)
 "ux" = (
 /obj/machinery/telecomms/hub{
-	network = "nt_commnet";
+	autolinkers = list("hub","bus","relay","messaging","nanotrasen","broadcasterB","receiverB");
 	id = "Nanotrasen Communications Hub";
-	autolinkers = list("hub","bus","relay","messaging","nanotrasen","broadcasterB","receiverB")
+	network = "nt_commnet"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -2924,8 +2924,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Corridor Lockdown Port";
-	id = "RangerPortShutters"
+	id = "RangerPortShutters";
+	name = "Corridor Lockdown Port"
 	},
 /obj/effect/turf_decal/corner/opaque/vired/half{
 	dir = 8
@@ -2976,8 +2976,8 @@
 "vh" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/machinery/door/window{
-	req_ship_access = 1;
-	name = "Surgical Compartment"
+	name = "Surgical Compartment";
+	req_ship_access = 1
 	},
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1
@@ -3095,12 +3095,12 @@
 	pixel_y = 4
 	},
 /obj/machinery/button/door{
-	pixel_x = 26;
 	dir = 8;
-	name = "Medical Shutters";
 	id = "MedShutters";
-	req_ship_access = 1;
-	req_access_txt = "5"
+	name = "Medical Shutters";
+	pixel_x = 26;
+	req_access_txt = "5";
+	req_ship_access = 1
 	},
 /obj/machinery/light_switch{
 	dir = 8;
@@ -3265,8 +3265,8 @@
 "wu" = (
 /obj/machinery/telecomms/server/presets/nanotrasen{
 	autolinkers = list("nanotrasen","hub");
-	network = "nt_commnet";
-	freq_listening = list(1353,1447,1459)
+	freq_listening = list(1353,1447,1459);
+	network = "nt_commnet"
 	},
 /obj/item/disk/holodisk/lp/stations,
 /obj/effect/turf_decal/techfloor{
@@ -3287,8 +3287,8 @@
 	pixel_y = 4
 	},
 /obj/item/storage/box/donkpockets/donkpocketspicy{
-	pixel_y = 9;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 9
 	},
 /obj/structure/table/reinforced{
 	color = "#8A9397"
@@ -3298,15 +3298,15 @@
 /area/ship/hallway/central)
 "wE" = (
 /obj/machinery/button/door{
-	pixel_y = 21;
-	name = "Blast Doors";
 	id = "Ranger_Port_Blasts";
+	name = "Blast Doors";
+	pixel_y = 21;
 	req_ship_access = 1
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_y = 20;
+	id = "Ranger_Port_holofields";
 	pixel_x = 8;
-	id = "Ranger_Port_holofields"
+	pixel_y = 20
 	},
 /obj/effect/turf_decal/trimline/transparent/white/filled/corner{
 	dir = 4
@@ -3444,15 +3444,15 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
+	id = "AI_Core_Field_Engi";
 	pixel_x = 20;
-	pixel_y = 9;
-	id = "AI_Core_Field_Engi"
+	pixel_y = 9
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_x = 22;
-	name = "Access Blast Doors";
 	id = "Ranger_AI_Core_Blasts";
+	name = "Access Blast Doors";
+	pixel_x = 22;
 	pixel_y = 1;
 	req_access_txt = "10";
 	req_ship_access = 1
@@ -3516,12 +3516,12 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/survival_pod{
-	dir = 5;
-	density = 0
+	density = 0;
+	dir = 5
 	},
 /obj/structure/window/reinforced/survival_pod{
-	dir = 9;
-	density = 0
+	density = 0;
+	dir = 9
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/specialized/cargo)
@@ -3532,8 +3532,8 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	name = "Security Specialist's Quarters";
-	id = "Ranger_Security_Specialist_Quarters"
+	id = "Ranger_Security_Specialist_Quarters";
+	name = "Security Specialist's Quarters"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -3548,8 +3548,8 @@
 "yU" = (
 /obj/machinery/door/window/brigdoor/eastright{
 	dir = 2;
-	req_access_txt = "1";
 	name = "Armory";
+	req_access_txt = "1";
 	req_ship_access = 1
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10{
@@ -3660,9 +3660,9 @@
 	dir = 4
 	},
 /obj/structure/filingcabinet/chestdrawer{
+	density = 0;
 	dir = 4;
-	pixel_x = -6;
-	density = 0
+	pixel_x = -6
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3672,8 +3672,8 @@
 	pixel_y = -1
 	},
 /obj/item/paper/crumpled{
-	pixel_y = -6;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -6
 	},
 /obj/item/paper/crumpled{
 	pixel_x = -10;
@@ -3694,8 +3694,8 @@
 "zM" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	name = "Security Specialist's Quarters";
-	id = "Ranger_Security_Specialist_Quarters"
+	id = "Ranger_Security_Specialist_Quarters";
+	name = "Security Specialist's Quarters"
 	},
 /obj/structure/grille,
 /obj/machinery/door/firedoor/window,
@@ -3737,11 +3737,11 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/button/door{
+	dir = 4;
+	id = "Ranger_Medical_Specialist_Quarters";
+	name = "Medical Quarters Windows";
 	pixel_x = -22;
 	pixel_y = 1;
-	dir = 4;
-	name = "Medical Quarters Windows";
-	id = "Ranger_Medical_Specialist_Quarters";
 	req_ship_access = 1
 	},
 /turf/open/floor/wood,
@@ -3790,17 +3790,17 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = 20;
-	pixel_x = -5;
-	name = "Starboard Corridor Shutters";
 	id = "RangerStarboardShutters";
+	name = "Starboard Corridor Shutters";
+	pixel_x = -5;
+	pixel_y = 20;
 	req_ship_access = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = 20;
-	pixel_x = 5;
-	name = "Port Corridor Shutters";
 	id = "RangerPortShutters";
+	name = "Port Corridor Shutters";
+	pixel_x = 5;
+	pixel_y = 20;
 	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -3874,9 +3874,9 @@
 	name = "Ready Room";
 	pixel_x = -22;
 	pixel_y = 6;
+	req_one_access = list(50, 10, 5, 1, 20);
 	req_one_access_txt = "50,10,5,1,20";
-	req_ship_access = 1;
-	req_one_access = list(50, 10, 5, 1, 20)
+	req_ship_access = 1
 	},
 /obj/item/clothing/suit/space/hardsuit/ert/lp/sec,
 /obj/machinery/suit_storage_unit/inherit{
@@ -3960,8 +3960,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating{
-	dir = 1;
-	color = "#a8b2b6"
+	color = "#a8b2b6";
+	dir = 1
 	},
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/showroomfloor,
@@ -4055,14 +4055,14 @@
 /obj/structure/crate_shelf,
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_y = 8;
-	pixel_x = -21
+	pixel_x = -21;
+	pixel_y = 8
 	},
 /obj/machinery/button/door{
-	pixel_x = -22;
 	dir = 4;
-	name = "Cargo Privacy Shutters";
 	id = "Ranger_Cargo_Privacy";
+	name = "Cargo Privacy Shutters";
+	pixel_x = -22;
 	pixel_y = -1;
 	req_ship_access = 1
 	},
@@ -4071,15 +4071,15 @@
 "Cq" = (
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -21;
+	id = "Ranger_AI_Core_Ext_Blasts";
 	name = "Outer Window Blast Doors";
-	id = "Ranger_AI_Core_Ext_Blasts"
+	pixel_x = -21
 	},
 /obj/machinery/light/dim/directional/south,
 /obj/machinery/telecomms/message_server/preset{
 	autolinkers = list("messaging","hub");
-	network = "nt_commnet";
-	layer = 3.1
+	layer = 3.1;
+	network = "nt_commnet"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -4098,9 +4098,9 @@
 "CB" = (
 /obj/machinery/telecomms/bus/preset_four{
 	autolinkers = list("hub","processor4","bus");
-	network = "nt_commnet";
+	freq_listening = list(1353,1447,1459);
 	id = "Nanotrasen Communications Bus";
-	freq_listening = list(1353,1447,1459)
+	network = "nt_commnet"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -4181,11 +4181,11 @@
 "CW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/button/door{
-	pixel_x = 21;
 	dir = 8;
-	pixel_y = 3;
+	id = "RangerCryoShutters";
 	name = "Cryogenics Access";
-	id = "RangerCryoShutters"
+	pixel_x = 21;
+	pixel_y = 3
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "RangerCryoShutters";
@@ -4205,8 +4205,8 @@
 /area/ship/engineering/engines/starboard)
 "Dr" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "AI_Core_Field_Engi";
-	dir = 8
+	dir = 8;
+	id = "AI_Core_Field_Engi"
 	},
 /obj/machinery/door/poddoor{
 	dir = 2;
@@ -4251,40 +4251,40 @@
 	},
 /obj/machinery/button/door{
 	id = "SecureCell";
+	name = "Cell Bolt Controls";
 	normaldoorcontrol = 1;
 	pixel_x = 7;
 	pixel_y = 10;
-	specialfunctions = 4;
 	req_access_txt = "1";
 	req_ship_access = 1;
-	name = "Cell Bolt Controls"
+	specialfunctions = 4
 	},
 /obj/structure/table/reinforced{
 	color = "#8A9397"
 	},
 /obj/machinery/button/door{
 	id = "SecShutters";
-	name = "Privacy Shutters";
 	layer = 2.92;
-	req_ship_access = 1;
-	req_access_txt = "1";
+	name = "Privacy Shutters";
 	pixel_x = -5;
-	pixel_y = 10
+	pixel_y = 10;
+	req_access_txt = "1";
+	req_ship_access = 1
 	},
 /obj/machinery/button/door{
 	id = "CellHallShutters";
+	layer = 2.91;
 	name = "Cell Hall Shutters";
-	req_access_txt = "1";
-	req_ship_access = 1;
 	pixel_x = -5;
 	pixel_y = 2;
-	layer = 2.91
+	req_access_txt = "1";
+	req_ship_access = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = -6;
-	pixel_x = -5;
 	id = "SecCellWindowShutters";
 	name = "Cell Window Shutters";
+	pixel_x = -5;
+	pixel_y = -6;
 	req_access_txt = "1";
 	req_ship_access = 1
 	},
@@ -4341,8 +4341,8 @@
 	color = "#c1b6a5"
 	},
 /obj/item/paper/crumpled{
-	pixel_y = -6;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -6
 	},
 /obj/item/paper/crumpled/muddy{
 	name = "coffee-stained paper scrap";
@@ -4425,11 +4425,11 @@
 /obj/item/storage/ration/beef_strips,
 /obj/item/storage/ration/fried_fish,
 /obj/item/reagent_containers/food/snacks/popcorn{
-	icon_state = "seed-sunflower";
-	icon = 'icons/obj/hydroponics/seeds.dmi';
 	desc = "Dehydrated, salted sunflower seeds, for snacking!";
-	name = "Snacking Sunflower Seeds";
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	icon = 'icons/obj/hydroponics/seeds.dmi';
+	icon_state = "seed-sunflower";
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4);
+	name = "Snacking Sunflower Seeds"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
@@ -4518,12 +4518,12 @@
 	pixel_y = 4
 	},
 /obj/item/reagent_containers/glass/maunamug{
-	pixel_y = 9;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 9
 	},
 /obj/item/clothing/mask/cigarette/cigar/havana{
-	pixel_y = 2;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 2
 	},
 /obj/structure/table/reinforced{
 	color = "#8A9397"
@@ -4636,8 +4636,8 @@
 	dir = 1
 	},
 /obj/machinery/door/window{
-	opacity = 1;
-	name = "Toilet"
+	name = "Toilet";
+	opacity = 1
 	},
 /obj/item/soap/nanotrasen,
 /obj/structure/closet/wall/directional/west{
@@ -4723,8 +4723,8 @@
 	},
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "Engineering_Specialist_Shutters";
 	dir = 4;
+	id = "Engineering_Specialist_Shutters";
 	name = "Communications Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -4795,9 +4795,9 @@
 "Ib" = (
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -21;
-	name = "Shutters";
 	id = "Ranger_Port_maint_shut";
+	name = "Shutters";
+	pixel_x = -21;
 	req_ship_access = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4863,9 +4863,9 @@
 	dir = 5
 	},
 /obj/machinery/light_switch{
+	dir = 8;
 	pixel_x = 20;
-	pixel_y = 11;
-	dir = 8
+	pixel_y = 11
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -4954,9 +4954,9 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/security{
+	dir = 8;
 	name = "Security Specialist's Office";
-	req_access_txt = "1";
-	dir = 8
+	req_access_txt = "1"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4988,8 +4988,8 @@
 	pixel_y = 6
 	},
 /obj/item/extinguisher/advanced{
-	pixel_y = 10;
-	pixel_x = 12
+	pixel_x = 12;
+	pixel_y = 10
 	},
 /obj/item/extinguisher{
 	pixel_x = -3
@@ -5046,8 +5046,8 @@
 /area/ship/hallway/central)
 "Kq" = (
 /obj/machinery/door/airlock/command{
-	req_access_txt = "20";
-	name = "Lieutenant's Quarters"
+	name = "Lieutenant's Quarters";
+	req_access_txt = "20"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -5148,13 +5148,13 @@
 	dir = 5
 	},
 /obj/item/stack/tape{
-	pixel_y = 10;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 10
 	},
 /obj/item/stack/tape{
-	pixel_y = 17;
+	layer = 3.01;
 	pixel_x = 7;
-	layer = 3.01
+	pixel_y = 17
 	},
 /obj/item/hand_labeler{
 	pixel_x = -7;
@@ -5300,8 +5300,8 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	name = "Medical Specialist's Quarters";
-	id = "Ranger_Medical_Specialist_Quarters"
+	id = "Ranger_Medical_Specialist_Quarters";
+	name = "Medical Specialist's Quarters"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -5359,11 +5359,11 @@
 /area/ship/hallway/central)
 "Ms" = (
 /obj/machinery/button/door{
-	pixel_y = -20;
-	name = "Ranger Bridge Shutters";
-	id = "Ranger_Bridge_Shutters";
 	dir = 1;
+	id = "Ranger_Bridge_Shutters";
+	name = "Ranger Bridge Shutters";
 	pixel_x = 6;
+	pixel_y = -20;
 	req_ship_access = 1
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals4,
@@ -5405,9 +5405,9 @@
 	pixel_x = -10
 	},
 /obj/item/flashlight/lamp/green{
+	layer = 4.2;
 	pixel_x = 5;
-	pixel_y = 13;
-	layer = 4.2
+	pixel_y = 13
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -5427,9 +5427,9 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -26;
 	id = "AiCore";
 	name = "Core Access";
+	pixel_x = -26;
 	req_access_txt = "20";
 	req_ship_access = 1
 	},
@@ -5450,10 +5450,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_y = 6;
-	pixel_x = -22;
 	id = "Engineering_Specialist_Shutters";
-	name = "Comms Shutters"
+	name = "Comms Shutters";
+	pixel_x = -22;
+	pixel_y = 6
 	},
 /obj/machinery/camera/autoname{
 	dir = 5
@@ -5504,8 +5504,8 @@
 	pixel_y = 1
 	},
 /obj/item/aiModule/reset/purge{
-	pixel_y = 6;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 6
 	},
 /obj/item/aiModule/reset{
 	pixel_x = 4;
@@ -5591,8 +5591,8 @@
 	},
 /obj/machinery/computer/security/telescreen{
 	dir = 1;
-	pixel_y = -28;
-	network = list("ss13")
+	network = list("ss13");
+	pixel_y = -28
 	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/security)
@@ -5630,8 +5630,8 @@
 "NM" = (
 /obj/structure/railing,
 /turf/open/floor/plasteel/stairs{
-	dir = 4;
-	color = "#a8b2b6"
+	color = "#a8b2b6";
+	dir = 4
 	},
 /area/ship/bridge)
 "NR" = (
@@ -5667,8 +5667,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/medical{
-	name = "Medical Specialist's Quarters";
 	dir = 8;
+	name = "Medical Specialist's Quarters";
 	req_access_txt = "5"
 	},
 /obj/structure/cable{
@@ -5778,8 +5778,8 @@
 "Oc" = (
 /obj/machinery/door/window/brigdoor/eastleft{
 	dir = 2;
-	req_access_txt = "1";
 	name = "Armory";
+	req_access_txt = "1";
 	req_ship_access = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -5821,9 +5821,9 @@
 /obj/machinery/airalarm/directional/south,
 /obj/structure/table/reinforced,
 /obj/item/flashlight/lamp/green{
+	layer = 4.2;
 	pixel_x = 9;
-	pixel_y = 11;
-	layer = 4.2
+	pixel_y = 11
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/specialized/cargo)
@@ -5894,8 +5894,8 @@
 /area/ship/hallway/starboard)
 "OK" = (
 /obj/effect/turf_decal/siding/thinplating{
-	dir = 1;
-	color = "#a8b2b6"
+	color = "#a8b2b6";
+	dir = 1
 	},
 /obj/item/bikehorn/rubberducky,
 /obj/machinery/airalarm/directional/west,
@@ -6014,8 +6014,8 @@
 /obj/structure/closet/secure_closet{
 	icon_state = "qm";
 	name = "Logistics Specialist's Locker";
-	req_ship_access = 1;
-	req_one_access = list(50)
+	req_one_access = list(50);
+	req_ship_access = 1
 	},
 /obj/item/clothing/suit/hooded/wintercoat/cargo{
 	pixel_x = 14
@@ -6081,8 +6081,8 @@
 	},
 /obj/item/stock_parts/micro_laser/high,
 /obj/item/stock_parts/micro_laser/high{
-	pixel_y = 4;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 4
 	},
 /obj/item/stack/cable_coil/cut/red,
 /turf/open/floor/plasteel/mono/dark,
@@ -6187,16 +6187,6 @@
 	},
 /obj/item/clothing/mask/gas/vigilitas,
 /obj/item/clothing/mask/gas/vigilitas,
-/obj/item/clothing/mask/gas/sechailer{
-	pixel_x = -1;
-	pixel_y = -14;
-	name = "half-mask respirator"
-	},
-/obj/item/clothing/mask/gas/sechailer{
-	pixel_x = -1;
-	pixel_y = -14;
-	name = "half-mask respirator"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "Ro" = (
@@ -6341,12 +6331,12 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding{
-	dir = 8;
-	color = "#FF6600"
+	color = "#FF6600";
+	dir = 8
 	},
 /obj/effect/turf_decal/siding{
-	dir = 4;
-	color = "#FF6600"
+	color = "#FF6600";
+	dir = 4
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
@@ -6396,8 +6386,8 @@
 	name = "Secure Holding Locker"
 	},
 /obj/machinery/door/window/brigdoor/northleft{
-	req_access_txt = "1";
 	name = "Secure Lockup";
+	req_access_txt = "1";
 	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -6453,9 +6443,9 @@
 	dir = 8
 	},
 /obj/item/gps/computer{
+	density = 0;
 	pixel_x = 32;
-	pixel_y = 0;
-	density = 0
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/telecomms_floor/tatmos,
 /area/ship/science/ai_chamber)
@@ -6523,9 +6513,9 @@
 /area/ship/crew/toilet)
 "UQ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output{
-	piping_layer = 2;
 	dir = 8;
-	layer = 2
+	layer = 2;
+	piping_layer = 2
 	},
 /turf/open/floor/engine/air,
 /area/ship/hallway/central)
@@ -6549,8 +6539,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Corridor Lockdown Port";
-	id = "RangerPortShutters"
+	id = "RangerPortShutters";
+	name = "Corridor Lockdown Port"
 	},
 /obj/effect/turf_decal/corner/opaque/vired/half{
 	dir = 4
@@ -6632,8 +6622,8 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
-	name = "Bridge-Atrium Shutters";
-	id = "BridgeAtrium"
+	id = "BridgeAtrium";
+	name = "Bridge-Atrium Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
@@ -6708,11 +6698,11 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
+	dir = 4;
+	id = "Ranger_Security_Specialist_Quarters";
+	name = "Security Quarters Windows";
 	pixel_x = -22;
 	pixel_y = -2;
-	dir = 4;
-	name = "Security Quarters Windows";
-	id = "Ranger_Security_Specialist_Quarters";
 	req_ship_access = 1
 	},
 /turf/open/floor/wood,
@@ -6724,8 +6714,8 @@
 	name = "Communications Access"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "AI_Core_Field_Engi";
-	dir = 4
+	dir = 4;
+	id = "AI_Core_Field_Engi"
 	},
 /obj/structure/cable{
 	icon_state = "0-5"
@@ -6931,8 +6921,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Corridor Lockdown Starboard";
-	id = "RangerStarboardShutters"
+	id = "RangerStarboardShutters";
+	name = "Corridor Lockdown Starboard"
 	},
 /obj/effect/turf_decal/corner/opaque/vired/half{
 	dir = 4
@@ -7016,8 +7006,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Corridor Lockdown Starboard";
-	id = "RangerStarboardShutters"
+	id = "RangerStarboardShutters";
+	name = "Corridor Lockdown Starboard"
 	},
 /obj/effect/turf_decal/corner/opaque/vired/half{
 	dir = 8
@@ -7088,9 +7078,9 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/light_switch{
+	dir = 8;
 	pixel_x = 20;
-	pixel_y = 11;
-	dir = 8
+	pixel_y = 11
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -7221,7 +7211,7 @@
 /obj/item/clothing/head/soft/black,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/item/clothing/glasses/hud/security/prescription,
-/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/mask/gas/vigilitas,
 /obj/item/clothing/suit/armor/nanotrasen,
 /obj/item/clothing/suit/armor/nanotrasen/slim,
 /obj/item/clothing/suit/armor/vest/security/officer,
@@ -7286,8 +7276,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/stairs{
-	dir = 1;
-	color = "#a8b2b6"
+	color = "#a8b2b6";
+	dir = 1
 	},
 /area/ship/bridge)
 "ZW" = (
