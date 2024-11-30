@@ -24,12 +24,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
-"al" = (
-/obj/effect/turf_decal/corner/opaque/black/three_quarters,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/tech,
-/area/ship/crew/ccommons)
 "aA" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner{
 	dir = 4
@@ -338,8 +332,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "gj" = (
-/obj/effect/turf_decal/corner/opaque/black/three_quarters,
-/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/west,
+/obj/effect/turf_decal/industrial/fire,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/half{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "gs" = (
@@ -827,11 +827,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "qJ" = (
-/obj/effect/turf_decal/industrial/fire,
 /obj/effect/turf_decal/industrial/fire{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
@@ -845,6 +843,7 @@
 /obj/structure/sign/poster/syndicate/random{
 	pixel_y = 32
 	},
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "rg" = (
@@ -1781,14 +1780,19 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Je" = (
-/obj/effect/turf_decal/corner/opaque/black/three_quarters,
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner,
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = 32
 	},
 /obj/structure/chair/handrail{
 	dir = 8
+	},
+/obj/effect/turf_decal/industrial/fire,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/half{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
@@ -1827,12 +1831,8 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/fire,
 /obj/effect/turf_decal/industrial/fire{
 	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark/end{
-	dir = 8
 	},
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/syndi/hl,
@@ -1840,6 +1840,10 @@
 	pixel_y = 9;
 	pixel_x = -9
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "Jz" = (
@@ -1961,12 +1965,8 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/fire,
 /obj/effect/turf_decal/industrial/fire{
 	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark/end{
-	dir = 4
 	},
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/syndicate/black/green,
@@ -1975,6 +1975,10 @@
 	pixel_y = 9;
 	pixel_x = -9
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "KU" = (
@@ -2306,6 +2310,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
+"RJ" = (
+/obj/effect/turf_decal/industrial/fire,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/ccommons)
 "RR" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3030,7 +3039,7 @@ XB
 XB
 lO
 Jy
-al
+gj
 Ud
 xD
 Bq
@@ -3051,7 +3060,7 @@ XB
 XB
 lO
 qJ
-gj
+RJ
 Kn
 Th
 lP
