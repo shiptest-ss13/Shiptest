@@ -39,6 +39,7 @@
 	pellets = 4
 	variance = 35
 	e_cost = 2000
+
 /obj/item/ammo_casing/energy/disabler/scatter/ultima/alt
 	select_name = "blast"
 
