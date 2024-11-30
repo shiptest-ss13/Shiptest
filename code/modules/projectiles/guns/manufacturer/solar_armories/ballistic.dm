@@ -82,6 +82,8 @@
 
 	fire_select_icon_state_prefix = "caseless_"
 
+	slot_flags = ITEM_SLOT_BELT
+
 /obj/item/gun/ballistic/automatic/pistol/solgov/old
 	icon_state = "pistole-c-old"
 
@@ -113,6 +115,8 @@
 	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	fire_select_icon_state_prefix = "pellet_"
+
+	slot_flags = ITEM_SLOT_BACK
 
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
@@ -153,6 +157,8 @@
 	actions_types = list()
 	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
+
+	slot_flags = ITEM_SLOT_BACK
 
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
