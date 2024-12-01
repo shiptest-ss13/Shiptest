@@ -2584,7 +2584,10 @@
 "HC" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/opaque/blue/filled,
-/obj/item/storage/case/surgery,
+/obj/item/storage/case/surgery{
+	pixel_x = 1;
+	pixel_y = 3
+	},
 /obj/item/reagent_containers/glass/bottle/morphine{
 	pixel_y = 9;
 	pixel_x = 5

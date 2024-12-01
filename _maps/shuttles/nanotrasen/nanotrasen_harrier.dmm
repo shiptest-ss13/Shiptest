@@ -2297,7 +2297,10 @@
 /area/ship/engineering/engine)
 "mG" = (
 /obj/structure/table/glass,
-/obj/item/storage/case/surgery,
+/obj/item/storage/case/surgery{
+	pixel_x = 0;
+	pixel_y = 2
+	},
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_y = -25
 	},

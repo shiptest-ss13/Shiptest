@@ -4410,7 +4410,10 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/construction)
 "ZI" = (
-/obj/item/storage/case/surgery,
+/obj/item/storage/case/surgery{
+	pixel_x = 0;
+	pixel_y = 3
+	},
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/structure/table/glass,
 /obj/effect/turf_decal/borderfloor/cee,

@@ -7629,7 +7629,10 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/item/storage/case/surgery,
+/obj/item/storage/case/surgery{
+	pixel_x = 0;
+	pixel_y = 3
+	},
 /obj/item/reagent_containers/glass/bottle/morphine,
 /obj/item/reagent_containers/glass/bottle/morphine{
 	pixel_x = -8

@@ -2192,7 +2192,10 @@
 /area/ship/crew/office)
 "nk" = (
 /obj/structure/table/chem,
-/obj/item/storage/case/surgery,
+/obj/item/storage/case/surgery{
+	pixel_x = 0;
+	pixel_y = 3
+	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde,
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
 	pixel_x = 7

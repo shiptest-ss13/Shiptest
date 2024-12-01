@@ -1442,7 +1442,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "mE" = (
-/obj/item/storage/case/surgery,
+/obj/item/storage/case/surgery{
+	pixel_x = 0;
+	pixel_y = 3
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
