@@ -7,7 +7,6 @@
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = 'sound/items/equip/equipping_short_generic.ogg'
 	unequipping_sound = 'sound/items/equip/unequipping_short_generic.ogg'
-	equip_self_flags = EQUIP_ALLOW_MOVEMENT
 
 	var/damaged_clothes = 0 //similar to machine's BROKEN stat and structure's broken var
 	///What level of bright light protection item has.

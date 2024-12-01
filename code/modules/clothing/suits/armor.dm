@@ -22,6 +22,7 @@
 	equip_delay_self = EQUIP_DELAY_SUIT
 	equip_delay_other = EQUIP_DELAY_SUIT * 1.5
 	strip_delay = EQUIP_DELAY_SUIT * 1.5
+	equip_self_flags = null
 
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()

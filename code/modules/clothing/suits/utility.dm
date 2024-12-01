@@ -30,6 +30,7 @@
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
+	equip_self_flags = null
 
 /obj/item/clothing/suit/fire/firefighter
 	icon_state = "firesuit"
@@ -68,6 +69,10 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	resistance_flags = NONE
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equip_delay_self = EQUIP_DELAY_HELMET
+	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
+	strip_delay = EQUIP_DELAY_HELMET * 1.5
 
 /obj/item/clothing/suit/bomb_suit
 	name = "bomb suit"
@@ -91,7 +96,7 @@
 	strip_delay = 70
 	equip_delay_other = 70
 	resistance_flags = NONE
-
+	equip_self_flags = null
 
 /obj/item/clothing/head/bomb_hood/security
 	icon_state = "bombsuit_sec"
@@ -152,6 +157,7 @@
 	flags_1 = RAD_PROTECT_CONTENTS_1
 	supports_variations = VOX_VARIATION
 	equip_sound = 'sound/items/equip/straps_equip.ogg'
+	equip_self_flags = null
 
 /obj/item/clothing/head/radiation/space
 	name = "low-pressure radiation helmet"
@@ -167,6 +173,7 @@
 	strip_delay = 50
 	equip_delay_other = 50
 	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equip_self_flags = null
 
 /obj/item/clothing/suit/radiation/space
 	name = "low-pressure radiation suit"
@@ -184,3 +191,4 @@
 	strip_delay = 80
 	equip_delay_other = 80
 	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equip_self_flags = null

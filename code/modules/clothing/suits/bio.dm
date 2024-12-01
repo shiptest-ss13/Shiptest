@@ -31,6 +31,7 @@
 	equip_delay_other = 70
 	resistance_flags = ACID_PROOF
 	equip_sound = 'sound/items/equip/straps_equip.ogg'
+	equip_self_flags = null
 
 //Standard biosuit, orange stripe
 /obj/item/clothing/head/bio_hood/general
