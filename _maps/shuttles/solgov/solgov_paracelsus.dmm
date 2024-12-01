@@ -1144,14 +1144,6 @@
 /obj/effect/turf_decal/solgov/all/center_left,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
-"kN" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "sg_par_sonnen"
-	},
-/turf/open/floor/plating,
-/area/ship/security/armory)
 "kO" = (
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
@@ -1189,7 +1181,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "sg_par_dorms";
+	id = "sg_par_sonnen";
 	name = "shutter control";
 	pixel_x = 20;
 	pixel_y = 7
@@ -2179,7 +2171,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "sg_par_dorms"
+	id = "sg_par_sonnen"
 	},
 /turf/open/floor/plating,
 /area/ship/security/armory)
@@ -3333,7 +3325,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "sg_par_holocargo2";
+	id = "sg_par_cargo2";
 	name = "shutter control";
 	pixel_x = 20;
 	pixel_y = 7
@@ -6435,7 +6427,7 @@ Dr
 kU
 Mg
 fg
-kN
+uD
 wI
 "}
 (25,1,1) = {"
