@@ -89,6 +89,14 @@
 		if(!charge_account)
 			reconnect()
 
+/obj/machinery/computer/cargo/ui_static_data(mob/user)
+	. = ..()
+	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
+	if(outpost_docked)
+		generate_pack_data()
+	else
+		supply_pack_data = list()
+
 /obj/machinery/computer/cargo/ui_data(mob/user)
 	var/canBeacon = beacon && (isturf(beacon.loc) || ismob(beacon.loc))//is the beacon in a valid location?
 	var/list/data = list()
@@ -118,8 +126,6 @@
 	else if (use_beacon && !canBeacon)
 		message = "BEACON ERROR: MUST BE EXPOSED"//beacon's loc/user's loc must be a turf
 	data["message"] = message
-	if(outpost_docked)
-		generate_pack_data()
 	data["supplies"] = supply_pack_data
 	if (cooldown > 0)//cooldown used for printing beacons
 		cooldown--
@@ -135,34 +141,6 @@
 			for(var/datum/mission/M as anything in out.missions)
 				data["outpostMissions"] += list(M.get_tgui_info())
 
-	return data
-
-/obj/machinery/computer/cargo/ui_static_data(mob/user)
-	var/list/data = list()
-	data["supplies"] = list()
-	if(!current_ship.docked_to)
-		return data
-
-	var/datum/overmap/outpost/outpost_docked = current_ship.docked_to
-
-	if(!istype(outpost_docked))
-		return data
-
-	for(var/datum/supply_pack/current_pack as anything in outpost_docked.supply_packs)
-		if(!data["supplies"][current_pack.group])
-			data["supplies"][current_pack.group] = list(
-				"name" = current_pack.group,
-				"packs" = list()
-			)
-		if(current_pack.hidden && !(obj_flags & EMAGGED))
-			continue
-		data["supplies"][current_pack.group]["packs"] += list(list(
-			"name" = current_pack.name,
-			"cost" = current_pack.cost,
-			"id" = current_pack,
-			"desc" = current_pack.desc || current_pack.name, // If there is a description, use it. Otherwise use the pack's name.
-			"small_item" = current_pack.small_item,
-		))
 	return data
 
 /obj/machinery/computer/cargo/ui_act(action, params, datum/tgui/ui)
@@ -200,14 +178,12 @@
 				printed_beacons++//printed_beacons starts at 0, so the first one out will be called beacon # 1
 				beacon.name = "Supply Pod Beacon #[printed_beacons]"
 		if("add")
-			var/area/ship/current_area = get_area(src)
-			var/datum/overmap/outpost/outpost_docked = current_ship.docked_to
-			if(outpost_docked)
-				var/datum/supply_pack/current_pack = outpost_docked.supply_packs[text2path(params["id"])]
-				if( \
-					!current_pack || !charge_account?.has_money(current_pack.cost) || !istype(current_area) || \
-					!istype(current_area.mobile_port.current_ship.docked_to, /datum/overmap/outpost) \
-				)
+			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
+			if(istype(current_ship.docked_to))
+				var/datum/supply_pack/current_pack = locate(params["ref"]) in current_outpost.supply_packs
+				var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
+				var/total_cost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : current_pack.cost
+				if(!current_pack || !charge_account?.has_money(total_cost))
 					return
 
 				var/turf/landing_turf
@@ -231,7 +207,7 @@
 				// note that, because of CHECK_TICK above, we aren't sure if we can
 				// afford the pack, even though we checked earlier. luckily adjust_money
 				// returns false if the account can't afford the price
-				if(landing_turf && charge_account.adjust_money(-current_pack.cost, CREDIT_LOG_CARGO))
+				if(landing_turf && charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
 					var/name = "*None Provided*"
 					var/rank = "*None Provided*"
 					if(ishuman(usr))
@@ -241,7 +217,7 @@
 					else if(issilicon(usr))
 						name = usr.real_name
 						rank = "Silicon"
-					var/datum/supply_order/SO = new(current_pack, name, rank, usr.ckey, "")
+					var/datum/supply_order/SO = new(current_pack, name, rank, usr.ckey, "", ordering_outpost = current_ship.docked_to)
 					new /obj/effect/pod_landingzone(landing_turf, podType, SO)
 					update_appearance() // ??????????????????
 					return TRUE
@@ -315,11 +291,18 @@
 			)
 		if((current_pack.hidden))
 			continue
+		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
+		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
+		if(current_pack.faction_locked && !same_faction)
+			continue
 		supply_pack_data[current_pack.group]["packs"] += list(list(
 			"name" = current_pack.name,
 			"cost" = current_pack.cost,
-			"id" = current_pack,
-			"desc" = current_pack.desc || current_pack.name // If there is a description, use it. Otherwise use the pack's name.
+			"discountedcost" = discountedcost ? discountedcost : null,
+			"discountpercent" = current_pack.faction_discount,
+			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
+			"ref" = REF(current_pack),
+			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : "") // If there is a description, use it. Otherwise use the pack's name.
 		))
 
 /obj/machinery/computer/cargo/retro

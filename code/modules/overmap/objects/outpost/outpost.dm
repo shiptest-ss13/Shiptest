@@ -52,7 +52,7 @@
 	/// our 'Order number'
 	var/ordernum = 1
 	/// Our faction of the outpost
-	var/faction
+	var/datum/faction/faction
 
 /datum/overmap/outpost/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	. = ..()
@@ -158,6 +158,8 @@
 
 	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
 		current_pack = new current_pack()
+		if(current_pack.faction)
+			current_pack.faction = new current_pack.faction()
 		if(!current_pack.contains)
 			continue
 		supply_packs += current_pack

@@ -75,7 +75,7 @@
 	spread = 20
 	spread_unwielded = 35
 	dual_wield_spread = 35
-	wield_slowdown = 0.25
+	wield_slowdown = SMG_SLOWDOWN
 	wield_delay = 0.2 SECONDS
 	fire_delay = 0.09 SECONDS
 	safety_multiplier = 2
@@ -166,7 +166,7 @@
 	default_firemode = FIREMODE_FULLAUTO
 
 	manufacturer = MANUFACTURER_IMPORT
-	wield_slowdown = 0.5
+	wield_slowdown = SMG_SLOWDOWN
 	safety_multiplier = 2
 
 /obj/item/ammo_box/magazine/c22lr_pounder_pan

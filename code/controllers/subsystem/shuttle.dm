@@ -30,15 +30,11 @@ SUBSYSTEM_DEF(shuttle)
 
 	/// Whether express consoles are blocked from ordering anything or not
 	var/supplyBlocked = FALSE
-	/// Order number given to next cargo order
-	var/ordernum = 1
 
 	/// Stops ALL shuttles from being able to move
 	var/lockdown = FALSE
 
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
-	ordernum = rand(1, 9000)
-
 	for(var/obj/docking_port/stationary/stationary_port as anything in stationary)
 		stationary_port.load_roundstart()
 		CHECK_TICK
@@ -201,7 +197,6 @@ SUBSYSTEM_DEF(shuttle)
 	if (istype(SSshuttle.transit_request_failures))
 		transit_request_failures = SSshuttle.transit_request_failures
 
-	ordernum = SSshuttle.ordernum
 	lockdown = SSshuttle.lockdown
 
 /datum/controller/subsystem/shuttle/proc/is_in_shuttle_bounds(atom/A)
