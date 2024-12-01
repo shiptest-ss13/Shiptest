@@ -50,6 +50,11 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = -5
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "aG" = (
@@ -365,8 +370,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/turf_decal/solgov/all,
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/engine/hull,
 /area/ship/crew/crewtwo)
 "dj" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2{
@@ -485,8 +489,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/turf_decal/solgov/top,
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/engine/hull,
 /area/ship/crew/crewtwo)
 "eC" = (
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/corner,
@@ -1062,6 +1065,7 @@
 /area/ship/crew/canteen)
 "jZ" = (
 /obj/machinery/light/small/directional/south,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "kl" = (
@@ -1186,8 +1190,8 @@
 	dir = 8
 	},
 /obj/machinery/light_switch{
-	pixel_x = 11;
-	pixel_y = 22
+	pixel_x = 12;
+	pixel_y = 21
 	},
 /obj/machinery/button/door{
 	dir = 8;
@@ -1418,8 +1422,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/solgov/bottom_left,
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/engine/hull,
 /area/ship/cargo/office)
 "nG" = (
 /obj/machinery/button/door{
@@ -1812,8 +1815,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/turf_decal/solgov/all/top_right,
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/engine/hull,
 /area/ship/crew/crewtwo)
 "qL" = (
 /turf/closed/wall/mineral/titanium,
@@ -1942,7 +1944,7 @@
 /area/ship/crew/crewtwo)
 "rK" = (
 /obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/engine/hull,
 /area/ship/cargo/office)
 "rM" = (
 /turf/closed/wall/mineral/titanium,
@@ -2179,6 +2181,12 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
+"uD" = (
+/obj/structure/sign/solgov_seal{
+	pixel_y = -27
+	},
+/turf/template_noop,
+/area/template_noop)
 "uJ" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
@@ -2748,7 +2756,6 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/west,
-/obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
 "zs" = (
@@ -2882,6 +2889,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "AX" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/crewtwo)
 "AZ" = (
@@ -3226,6 +3236,13 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo/office)
+"Eq" = (
+/obj/structure/sign/solgov_seal{
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/turf/template_noop,
+/area/template_noop)
 "Er" = (
 /obj/effect/turf_decal/techfloor,
 /obj/item/radio/intercom/directional/south,
@@ -3695,6 +3712,10 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
+"IP" = (
+/obj/structure/sign/solgov_seal,
+/turf/template_noop,
+/area/template_noop)
 "IX" = (
 /obj/item/clothing/head/solgov/captain,
 /obj/item/clothing/suit/armor/vest/solgov/captain,
@@ -4305,11 +4326,11 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/door/poddoor{
-	id = "sg_par_cargo1"
-	},
 /obj/effect/turf_decal/siding/yellow{
 	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "sg_par_cargo1"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo/office)
@@ -4738,6 +4759,13 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
+"RK" = (
+/obj/structure/sign/solgov_flag{
+	pixel_x = -1;
+	pixel_y = 0
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security/armory)
 "RL" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/port)
@@ -4746,8 +4774,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/solgov/bottom_right,
-/turf/open/floor/plasteel/patterned/ridged,
+/turf/open/floor/engine/hull,
 /area/ship/cargo/office)
 "RQ" = (
 /obj/structure/railing/wood{
@@ -5921,7 +5948,7 @@ vB
 vB
 wb
 PY
-wI
+IP
 "}
 (9,1,1) = {"
 wI
@@ -6021,7 +6048,7 @@ wI
 "}
 (12,1,1) = {"
 wI
-wI
+uD
 Wt
 rY
 AX
@@ -6049,7 +6076,7 @@ sC
 ph
 wb
 NY
-wI
+IP
 "}
 (13,1,1) = {"
 wI
@@ -6117,7 +6144,7 @@ wI
 "}
 (15,1,1) = {"
 wI
-wI
+Eq
 qK
 Uc
 EQ
@@ -6428,7 +6455,7 @@ qL
 qL
 Ev
 gQ
-Dr
+RK
 kU
 Mg
 fg
