@@ -88,7 +88,7 @@
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
-	interference_power = 20
+	interference_power = 15
 
 	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
 
@@ -137,7 +137,7 @@
 	name = "asteroid field (minor)"
 	base_icon_state = "meteor_light_"
 	chain_rate = 3
-	interference_power = 5
+	interference_power = 10
 
 	mountain_height_override = 0.85
 
@@ -152,7 +152,7 @@
 	base_icon_state = "meteor_major_"
 	spread_chance = 25
 	chain_rate = 6
-	interference_power = 30
+	interference_power = 20
 
 	mountain_height_override = 0.5
 
@@ -228,6 +228,7 @@
 	chance_to_affect = 40
 	chain_rate = 4
 	strength = 8
+	interference_power = 200
 
 ///SOLAR FLARE - Explodes your organics and IPCs
 /datum/overmap/event/flare
@@ -341,7 +342,7 @@
 /datum/overmap/event/electric/major
 	name = "electrical storm (major)"
 	base_icon_state = "electrical_major_"
-	interference_power = 40
+	interference_power = 30
 	spread_chance = 15
 	chain_rate = 6
 	max_damage = 40
@@ -357,7 +358,7 @@
 	spread_chance = 75
 	chance_to_affect = 85
 
-	interference_power = 60
+	interference_power = 50
 
 	//list of ships we are currently affecting so we can stop flicking the lights when they leave
 	var/list/affected_ships = list()
@@ -520,7 +521,7 @@
 	spread_chance = 50
 	chain_rate = 4
 	safe_speed = 7
-	interference_power = 10
+	interference_power = 5
 	meteor_types = list(
 		/obj/effect/meteor/dust=3,
 	)
@@ -544,7 +545,7 @@
 /datum/overmap/event/anomaly/Initialize(position, datum/overmap_star_system/system_spawned_in, set_lifespan, ...)
 	. = ..()
 	if(prob(50)) //only 50% chance of having interference
-		interference_power = rand(20,100)
+		interference_power = rand(20,60)
 
 /datum/overmap/event/anomaly/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -586,7 +587,7 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	spread_chance = 20
 	chain_rate = 2
 	chance_to_affect = 60
-	interference_power = 60
+	interference_power = 40
 	var/strength = 20
 
 /datum/overmap/event/rad/alter_token_appearance()
@@ -614,14 +615,14 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	base_icon_state = "gamma_minor_"
 	chain_rate = 1
 	strength = 5
-	interference_power = 40
+	interference_power = 20
 	chance_to_affect = 40
 
 /datum/overmap/event/rad/major
 	name = "radiation storm (major)"
 	base_icon_state = "gamma_major_"
 	chance_to_affect = 80
-	interference_power = 80
+	interference_power = 60
 	chain_rate = 4
 	strength = 60
 

@@ -88,17 +88,17 @@ SUBSYSTEM_DEF(overmap)
 		if(!istype(our_dynamic))
 			continue
 		if(our_dynamic.mapzone?.is_in_bounds(source))
-			return D
-	for(var/datum/overmap/static_datum/our_static as anything in overmap_objects)
+			return our_dynamic
+	for(var/datum/overmap/static_object/our_static as anything in overmap_objects)
 		if(!istype(our_static))
 			continue
 		if(our_static.mapzone?.is_in_bounds(source))
-			return D
+			return our_static
 	for(var/datum/overmap/outpost/our_outpost as anything in overmap_objects)
 		if(!istype(our_outpost))
 			continue
 		if(our_outpost.mapzone?.is_in_bounds(source))
-			return D
+			return our_outpost
 
 /// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
 /datum/controller/subsystem/overmap/proc/player_ship_spawn_allowed()
