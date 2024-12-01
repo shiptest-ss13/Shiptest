@@ -25,7 +25,12 @@
 	var/list/mob/is_using							//lazy list of mobs looking at the contents of this storage.
 
 	var/locked = FALSE								//when locked nothing can see inside or use it.
-	var/locked_flavor = "locked"					//prevents tochat messages related to locked from sending
+	var/locked_flavor = "seems to be locked!"					//prevents tochat messages related to locked from sending
+
+	/// If the storage object can be accessed while equipped to slot by mob(e.g. backpack in back slot)
+	var/worn_access = TRUE
+	/// If the storage object can be accessed while being held anywhere on a mob
+	var/carry_access = TRUE
 
 	/// Storage flags, including what kinds of limiters we use for how many items we can hold
 	var/storage_flags = STORAGE_FLAGS_LEGACY_DEFAULT
@@ -222,7 +227,7 @@
 	SIGNAL_HANDLER
 
 	if(locked)
-		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
+		to_chat(M, "<span class='warning'>[parent] [locked_flavor]</span>")
 		return FALSE
 	if((M.get_active_held_item() == parent) && allow_quick_empty)
 		INVOKE_ASYNC(src, PROC_REF(quick_empty), M)
@@ -233,8 +238,10 @@
 	if(!isitem(O) || !click_gather || SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE))
 		return FALSE
 	. = COMPONENT_NO_ATTACK
+	if(!access_check())
+		return FALSE
 	if(locked)
-		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
+		to_chat(M, "<span class='warning'>[parent] [locked_flavor]</span>")
 		return FALSE
 	var/obj/item/I = O
 	if(collection_mode == COLLECT_ONE)
@@ -309,6 +316,8 @@
 	var/atom/A = parent
 	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated())
 		return
+	if(!access_check())
+		return FALSE
 	if(locked)
 		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return FALSE
@@ -426,6 +435,8 @@
 	var/atom/A = parent
 	var/atom/dump_destination = dest_object.get_dumping_location()
 	if(M.CanReach(A) && dump_destination && M.CanReach(dump_destination))
+		if(!access_check())
+			return FALSE
 		if(locked)
 			to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 			return FALSE
@@ -530,6 +541,8 @@
 	if(locked && !force)
 		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return FALSE
+	if(!access_check())
+		return FALSE
 	if(force || M.CanReach(parent, view_only = TRUE))
 		if(use_sound && !silent)
 			playsound(A, use_sound, 50, TRUE, -5)
@@ -557,6 +570,8 @@
 	var/atom/host = parent
 	if(real_location == I.loc)
 		return FALSE //Means the item is already in the storage item
+	if(!access_check())
+		return FALSE
 	if(locked)
 		if(M && !stop_messages)
 			host.add_fingerprint(M)
@@ -755,6 +770,8 @@
 
 	if(A.loc == user)
 		. = COMPONENT_NO_ATTACK_HAND
+		if(!access_check())
+			return FALSE
 		if(locked)
 			to_chat(user, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		else
@@ -794,6 +811,8 @@
 /datum/component/storage/proc/on_alt_click_async(datum/source, mob/user)
 	if(!isliving(user) || !user.CanReach(parent) || user.incapacitated())
 		return
+	if(!access_check())
+		return FALSE
 	if(locked)
 		to_chat(user, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return
@@ -833,3 +852,20 @@
 //Gets our max volume
 /datum/component/storage/proc/get_max_volume()
 	return max_volume || AUTO_SCALE_STORAGE_VOLUME(max_w_class, max_combined_w_class)
+
+//checks for mob-related storage access conditions
+/datum/component/storage/proc/access_check(message = TRUE)
+	var/atom/ourparent = parent
+	if(ismob(ourparent.loc))
+		var/mob/holder = ourparent.loc
+
+		if(!carry_access)
+			if(message)
+				to_chat(holder, span_warning( "[ourparent] is too cumbersome to open inhand, you're going to have to set it down!"))
+			return FALSE
+
+		if(!worn_access && !holder.held_items.Find(ourparent))
+			if(message)
+				to_chat(holder, span_warning( "Your arms aren't long enough to reach [ourparent] while it's on your back!"))
+			return FALSE
+	return TRUE

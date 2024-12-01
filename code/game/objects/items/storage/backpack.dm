@@ -39,6 +39,7 @@
 	STR.max_volume = STORAGE_VOLUME_BACKPACK
 	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
 	STR.use_sound = 'sound/items/storage/unzip.ogg'
+	STR.worn_access = FALSE
 
 /*
  * Backpack Types
@@ -396,6 +397,7 @@
 	STR.max_w_class = MAX_WEIGHT_CLASS_DUFFEL
 	LAZYINITLIST(STR.exception_hold) // This code allows you to fit one mob holder into a duffel bag
 	STR.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
+	STR.carry_access = FALSE
 
 /obj/item/storage/backpack/duffelbag/captain
 	name = "captain's duffel bag"
