@@ -365,6 +365,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/effect/turf_decal/solgov/all,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/crewtwo)
 "dj" = (
@@ -484,6 +485,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/effect/turf_decal/solgov/top,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/crewtwo)
 "eC" = (
@@ -1144,6 +1146,14 @@
 /obj/effect/turf_decal/solgov/all/center_left,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"kN" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "sg_par_sonnen"
+	},
+/turf/open/floor/plating,
+/area/ship/security/armory)
 "kO" = (
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
@@ -1408,6 +1418,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/solgov/bottom_left,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo/office)
 "nG" = (
@@ -1801,6 +1812,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/effect/turf_decal/solgov/all/top_right,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/crewtwo)
 "qL" = (
@@ -2167,14 +2179,6 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
-"uD" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "sg_par_sonnen"
-	},
-/turf/open/floor/plating,
-/area/ship/security/armory)
 "uJ" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
@@ -2513,6 +2517,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/effect/turf_decal/solgov/bottom_left,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/crewtwo)
 "xh" = (
@@ -3336,6 +3341,7 @@
 	pixel_x = 20;
 	pixel_y = 7
 	},
+/obj/effect/turf_decal/solgov/bottom_right,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/crewtwo)
 "ER" = (
@@ -3506,10 +3512,11 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "Ho" = (
-/obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/solgov/all/bottom_center,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/crewtwo)
 "Ht" = (
@@ -4502,7 +4509,7 @@
 	dir = 4
 	},
 /turf/closed/wall/mineral/titanium,
-/area/ship/hallway/port)
+/area/ship/crew/crewtwo)
 "PN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -4739,6 +4746,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/solgov/bottom_right,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo/office)
 "RQ" = (
@@ -6141,10 +6149,10 @@ wI
 "}
 (16,1,1) = {"
 wI
-jg
+rM
 PJ
-jg
-jg
+rM
+rM
 jg
 JR
 jg
@@ -6392,7 +6400,7 @@ iW
 mT
 NE
 gK
-uD
+kN
 wI
 "}
 (24,1,1) = {"
@@ -6424,7 +6432,7 @@ Dr
 kU
 Mg
 fg
-uD
+kN
 wI
 "}
 (25,1,1) = {"
