@@ -34,12 +34,18 @@
 	STR.max_items = 7
 	STR.set_holdable(list(
 		/obj/item/healthanalyzer,
+		/obj/item/healthanalyzer/advanced,
 		/obj/item/scalpel,
+		/obj/item/scalpel/advanced,
 		/obj/item/circular_saw,
+		/obj/item/circular_saw/best, //CODY WUZ HERE
 		/obj/item/surgicaldrill,
+		/obj/item/surgicaldrill/advanced,
 		/obj/item/retractor,
+		/obj/item/retractor/advanced,
 		/obj/item/cautery,
 		/obj/item/hemostat,
+		/obj/item/shears,
 		))
 
 /obj/item/storage/case/surgery/PopulateContents()
