@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(default_weight_class_to_volume, list(
 #define STORAGE_VOLUME_CONTAINER_S DEFAULT_VOLUME_NORMAL //4 small items
 #define STORAGE_VOLUME_CONTAINER_M (DEFAULT_VOLUME_NORMAL * 2) //8 small items
 #define STORAGE_VOLUME_SATCHEL (DEFAULT_VOLUME_NORMAL * 4) //4 normal items
-#define STORAGE_VOLUME_BACKPACK (DEFAULT_VOLUME_NORMAL * 6) //1.5x satchel, 4 bulky items
+#define STORAGE_VOLUME_BACKPACK (DEFAULT_VOLUME_NORMAL * 6) //1.5x satchel, 3 bulky items
 #define STORAGE_VOLUME_DUFFLEBAG (DEFAULT_VOLUME_NORMAL * 12) //2X backpack, 6 bulky items
 #define STORAGE_VOLUME_BAG_OF_HOLDING (DEFAULT_VOLUME_NORMAL * 9) //1.5x backpack
 

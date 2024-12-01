@@ -561,7 +561,7 @@
 
 //This proc return 1 if the item can be picked up and 0 if it can't.
 //Set the stop_messages to stop it from printing messages
-/datum/component/storage/proc/can_be_inserted(obj/item/I, stop_messages = FALSE, mob/M)
+/datum/component/storage/proc/can_be_inserted(obj/item/I, stop_messages = FALSE, mob/M, bypass_access = FALSE)
 	if(!istype(I) || (I.item_flags & ABSTRACT))
 		return FALSE //Not an item
 	if(I == parent)
@@ -570,8 +570,9 @@
 	var/atom/host = parent
 	if(real_location == I.loc)
 		return FALSE //Means the item is already in the storage item
-	if(!access_check())
-		return FALSE
+	if(!bypass_access)//For stuff like setting up outfits, setting up roundstart backpacks, etc.
+		if(!access_check())
+			return FALSE
 	if(locked)
 		if(M && !stop_messages)
 			host.add_fingerprint(M)
@@ -675,17 +676,17 @@
 		var/obj/O = parent
 		O.update_appearance()
 
-/datum/component/storage/proc/signal_insertion_attempt(datum/source, obj/item/I, mob/M, silent = FALSE, force = FALSE)
+/datum/component/storage/proc/signal_insertion_attempt(datum/source, obj/item/I, mob/M, silent = FALSE, force = FALSE, bypass_access = FALSE)
 	SIGNAL_HANDLER
 
-	if((!force && !can_be_inserted(I, TRUE, M)) || (I == parent))
+	if((!force && !can_be_inserted(I, TRUE, M, bypass_access)) || (I == parent))
 		return FALSE
 	return handle_item_insertion(I, silent, M)
 
-/datum/component/storage/proc/signal_can_insert(datum/source, obj/item/I, mob/M, silent = FALSE)
+/datum/component/storage/proc/signal_can_insert(datum/source, obj/item/I, mob/M, silent = FALSE, bypass_access = FALSE)
 	SIGNAL_HANDLER
 
-	return can_be_inserted(I, silent, M)
+	return can_be_inserted(I, silent, M, bypass_access)
 
 /datum/component/storage/proc/show_to_ghost(datum/source, mob/dead/observer/M)
 	SIGNAL_HANDLER
