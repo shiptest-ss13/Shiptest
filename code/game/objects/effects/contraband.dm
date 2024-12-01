@@ -65,6 +65,11 @@
 	poster_type = /obj/structure/sign/poster/rilena/random
 	icon_state = "rolled_rilena"
 
+/obj/item/poster/random_pgf
+	name = "random PGF poster"
+	poster_type = /obj/structure/sign/poster/pgf/random
+	icon_state = "rolled_legit"
+
 // The poster sign/structure
 
 /obj/structure/sign/poster
@@ -242,6 +247,7 @@
 		/obj/structure/sign/poster/solgov/suns,
 		/obj/structure/sign/poster/official/ion_carbine,
 		/obj/structure/sign/poster/official/mini_energy_gun,
+		/obj/structure/sign/poster/pgf/etherborcatalog,
 		)
 
 
@@ -418,8 +424,8 @@
 
 /obj/structure/sign/poster/contraband/pgf
 	name = "PGF Marine"
-	desc = "This poster depicts a PGF marine with a E-40. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
-	icon_state = "poster_pgf"
+	desc = "This poster depicts a PGF marine with a HBG-7. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_powerarmor"
 
 /obj/structure/sign/poster/contraband/free_drone
 	name = "Free Drone"
@@ -1059,7 +1065,12 @@
 	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
 	icon_state = "poster-rilena_timeline"
 
-//PGF Mission Accomplished
+//PGF - Mission Accomplished!!
+/obj/structure/sign/poster/pgf
+	poster_item_name = "pgf poster"
+	poster_item_desc = "This poster comes with its own automatic adhesive mechanism, for easy pinning to any vertical surface. Its patrotic themes have marked it as nice decorations on PGF vessels."
+	poster_item_icon_state = "rolled_legit"
+
 /obj/structure/sign/poster/pgf/mission_accomplished_1
 	name = "MISSION ACCOMPLISHED! 1"
 	desc = "MISSION ACCOMPLISHED SOLDIER!"
@@ -1137,6 +1148,57 @@
 	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_7
 	icon_state = "rolled_poster"
 
+/obj/structure/sign/poster/pgf/random
+	name = "random pgf poster"
+	icon_state = "random_pgf"
+	never_random = TRUE
+	random_basetype = /obj/structure/sign/poster/pgf
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/pgf/enlist_marine
+	name = "Enlist - PGFM"
+	desc = "'Don't have a place you belong? Enlist in the Pan-Gezena Marine Corps. and find yours here.' The poster has a picture of a PGFM marine."
+	icon_state = "poster-pgf_enlist_marine"
+
+/obj/structure/sign/poster/pgf/enlist_navy
+	name = "Enlist - PGFN"
+	desc = "'Don't have a place you belong? Enlist in the Pan-Gezena Federal Navy and find yours here.' The poster has a picture of a navy pilot; not an navyman as you would expect."
+	icon_state = "poster-pgf_enlist_navy"
+
+/obj/structure/sign/poster/pgf/etherbor
+	name = "Etherbor Industries logo"
+	desc = "The proud and patrotic face of the miltiary-industrial complex."
+	icon_state = "poster-pgf_etherbor"
+
+/obj/structure/sign/poster/pgf/etherbor_pride
+	name = "Rainbow Etherbor Industries logo"
+	desc = "A strange rainbow variation of the face of the miltiary-industrial complex."
+	icon_state = "poster-pgf_etherborpride"
+
+/obj/structure/sign/poster/pgf/ancestor
+	name = "Your Ancestor's legacy"
+	desc = "'Your ancestors fought against Zale imperialism side by side, will YOU continue their legacy and fight against the Zohil Explorat's tyranny?' It depicts an almost 500 year old black and white photograph of a Gezenan infantryman."
+	icon_state = "poster-pgf_ancestor"
+
+/obj/structure/sign/poster/pgf/friend
+	name = "This person is your FRIEND"
+	desc = "'This person is your FRIEND. They fight for FREEDOM' It depicts a CLIP serviceman smiling."
+	icon_state = "poster-pgf_freedomfighter"
+
+/obj/structure/sign/poster/pgf/etherborcatalog
+	name = "Etherbor Firearm Catalog"
+	desc = "A various selection of Etherbor's catalog. The items available for purchase by civiliians have a price tag."
+	icon_state = "poster-pgf_etherborcatalog"
+
+/obj/structure/sign/poster/pgf/crusader
+	name = "Crusader Spacefighter"
+	desc = "'Freedom's new warrior, the Crusdader Spacefighter Exosuit!' The Crusader Spacefighter, based off the Gygax platform. While the poster acknoleges that power armor is more effective in most ground situations, it does note that 'exosuits' have excellent performance for their size relative to fighters."
+	icon_state = "poster-pgf_crusader"
+
+/obj/structure/sign/poster/pgf/besieger
+	name = "Besieger Heavy Exosuit"
+	desc = "'IF THERE WERE NO XENOFAUNA, RIPSAWS, TOUROS, MARAUDERS, AND MAKOS, YOU WOULDN'T NEED THE BESIEGER'\n'But these threats do exists, and the Besieger is the only Exosuit that can effectively counter them... and survive."
+	icon_state = "poster-pgf_besieger"
 
 #undef PLACE_SPEED
 #undef POSTER_SUBTYPES

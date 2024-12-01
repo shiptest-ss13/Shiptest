@@ -175,8 +175,11 @@
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
 
-/obj/item/storage/box/survival/clip
+/obj/item/storage/box/survival/extended
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
+
+/obj/item/storage/box/survival/extended/nomask
+	mask_type = null // for gas mask spawn
 
 /obj/item/storage/box/survival/clip/balaclava
 	mask_type = /obj/item/clothing/mask/balaclava

@@ -8,7 +8,7 @@
 
 	faction_icon = "bg_clip"
 
-	box = /obj/item/storage/box/survival/clip
+	box = /obj/item/storage/box/survival/extended
 
 // 	var/list/selectable_alt_titles = list()
 
@@ -286,7 +286,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/satchel/sec/clip
 
-	box = /obj/item/storage/box/survival/clip/balaclava
+	box = /obj/item/storage/box/survival/extended
 
 /datum/outfit/job/clip/minutemen/deckhand
 	name = "CLIP Minutemen - Deckhand"
@@ -511,6 +511,8 @@
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
 	duffelbag = /obj/item/storage/backpack/security/clip //to-do: bug rye for clip duffles // rye. rye. give me 20 pound bag of ice //done
+
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1)
 
 /datum/outfit/job/clip/minutemen/grunt/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
