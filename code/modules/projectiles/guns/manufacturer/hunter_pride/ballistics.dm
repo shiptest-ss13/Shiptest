@@ -620,9 +620,9 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-		/obj/item/attachment/scope
-		/obj/item/attachment/long_scope
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -700,9 +700,9 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-		/obj/item/attachment/scope
-		/obj/item/attachment/long_scope
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -856,9 +856,9 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-		/obj/item/attachment/scope
-		/obj/item/attachment/long_scope
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -953,9 +953,9 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-		/obj/item/attachment/scope
-		/obj/item/attachment/long_scope
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -963,7 +963,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
-	default_attachments = list(\obj\item\attachment\scope)
+	default_attachments = list(/obj/item/attachment/scope)
 
 /obj/item/gun/ballistic/rifle/scout
 	name = "HP Scout"

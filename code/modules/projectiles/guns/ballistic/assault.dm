@@ -56,10 +56,10 @@
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-		/obj/item/attachment/scope
-		/obj/item/attachment/long_scope
-		/obj/item/attachment/energy_bayonet
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+		/obj/item/attachment/energy_bayonet,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
