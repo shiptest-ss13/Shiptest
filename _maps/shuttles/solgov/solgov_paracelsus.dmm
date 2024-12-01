@@ -829,8 +829,8 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate/freezer/surplus_limbs/organs,
+/obj/machinery/autolathe,
+/obj/effect/turf_decal/industrial/outline/orange,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo/office)
 "is" = (
@@ -2102,6 +2102,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/office)
 "vi" = (
@@ -3352,10 +3353,10 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/office)
 "Gk" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/office)
@@ -3571,7 +3572,6 @@
 /obj/item/clothing/under/solgov/formal,
 /obj/item/folder/solgov,
 /obj/item/folder/solgov,
-/obj/item/folder/documents/solgov,
 /obj/item/folder/documents/solgov,
 /obj/structure/closet/secure_closet{
 	icon_state = "cap";
@@ -3900,7 +3900,6 @@
 	pixel_y = -6;
 	specialfunctions = 4
 	},
-/obj/machinery/autolathe,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "LS" = (
@@ -4229,13 +4228,30 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo/office)
 "OX" = (
-/obj/machinery/light/directional/west,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/mono,
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/structure/closet/secure_closet/security{
+	anchored = 1;
+	name = "sonnensöldners's locker";
+	populate = 0
+	},
+/obj/item/clothing/head/solgov/sonnensoldner,
+/obj/item/radio{
+	icon_state = "sec_radio"
+	},
+/obj/item/clothing/under/solgov/formal,
+/obj/item/clothing/under/solgov/dress,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/gloves/combat,
+/obj/item/storage/belt/sabre/solgov,
+/obj/item/radio/headset/solgov/alt,
+/obj/item/storage/backpack,
+/obj/item/clothing/suit/armor/vest/solgov,
+/obj/item/clothing/suit/armor/vest/solgov,
+/turf/open/floor/plasteel/patterned,
 /area/ship/cargo/office)
 "OZ" = (
 /obj/structure/closet/secure_closet/personal/patient,
@@ -4736,7 +4752,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/office)
 "Tm" = (
@@ -5110,6 +5125,7 @@
 	pixel_y = 30
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/freezer/surplus_limbs/organs,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo/office)
 "WG" = (
@@ -5154,21 +5170,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/structure/table,
-/obj/item/cigbutt{
-	pixel_y = 5
-	},
-/obj/item/cigbutt{
-	pixel_y = 15
-	},
-/obj/item/cigbutt{
-	pixel_x = -11;
-	pixel_y = 9
-	},
-/obj/item/clothing/mask/cigarette/robust{
-	pixel_x = 8;
-	pixel_y = 10
-	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
 "Xe" = (
