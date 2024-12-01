@@ -1,3 +1,6 @@
+#define SOLAR_ATTACHMENTS 	list(/obj/item/attachment/laser_sight,/obj/item/attachment/rail_light,/obj/item/attachment/bayonet,/obj/item/attachment/energy_bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope)
+#define SOLAR_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
+
 ///SOLAR ARMORIES
 //fuck you im not typing the full name out
 //solarwaffledesuckenmydickengeschutzenweaponmanufacturinglocation
@@ -118,12 +121,8 @@
 
 	slot_flags = ITEM_SLOT_BACK
 
-	valid_attachments = list(
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/energy_bayonet
-	)
+	valid_attachments = SOLAR_ATTACHMENTS
+	slot_available = SOLAR_ATTACH_SLOTS
 
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
@@ -160,12 +159,8 @@
 
 	slot_flags = ITEM_SLOT_BACK
 
-	valid_attachments = list(
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/energy_bayonet
-	)
+	valid_attachments = SOLAR_ATTACHMENTS
+	slot_available = SOLAR_ATTACH_SLOTS
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO

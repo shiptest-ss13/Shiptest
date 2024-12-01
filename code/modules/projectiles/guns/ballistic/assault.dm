@@ -51,6 +51,22 @@
 		/obj/item/ammo_box/magazine/skm_762_40,
 	)
 
+	//truly a doohickey for every occasion
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet
+		/obj/item/attachment/scope
+		/obj/item/attachment/long_scope
+		/obj/item/attachment/energy_bayonet
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
 	spread = 1
 	wield_delay = 0.7 SECONDS
 
