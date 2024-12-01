@@ -4,7 +4,7 @@
 			Please anchor the drill in place and defend it until it has gathered enough samples.\
 			Operation of the core sampling drill is extremely dangerous, caution is advised. "
 	value = 2000
-	duration = 80 MINUTES
+	duration = 90 MINUTES
 	weight = 8
 
 	var/obj/machinery/drill/mission/sampler

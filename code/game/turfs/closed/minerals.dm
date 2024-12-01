@@ -184,7 +184,7 @@
 	return ..()
 
 /turf/closed/mineral/random
-	var/list/mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4,
+	var/list/mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 3, /obj/item/stack/ore/gold = 4,
 		/obj/item/stack/ore/galena = 4, /obj/item/stack/ore/plasma = 40, /obj/item/stack/ore/hematite = 65, /obj/item/stack/ore/rutile = 5,
 		/turf/closed/mineral/gibtonite = 4, /obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/malachite = 50,
 		/obj/item/stack/ore/sulfur = 5)
@@ -825,7 +825,7 @@
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4,
 		/obj/item/stack/ore/galena = 10, /obj/item/stack/ore/sulfur = 25, /obj/item/stack/ore/hematite = 80, /obj/item/stack/ore/malachite = 20,
-		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/graphite= 10)
+		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/graphite = 10)
 
 /turf/closed/mineral/gibtonite/rockplanet
 	name = "hematite"
@@ -879,7 +879,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/shrouded
 	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 30, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 5,
 		/obj/item/stack/ore/galena = 12, /obj/item/stack/ore/plasma = 25, /obj/item/stack/ore/magnetite = 20, /obj/item/stack/ore/rutile = 6,
-		/obj/item/stack/ore/bluespace_crystal = 10, /obj/item/stack/ore/quartzite = 5,)
+		/obj/item/stack/ore/bluespace_crystal = 10, /obj/item/stack/ore/quartzite = 5)
 
 /turf/closed/mineral/random/waterplanet
 	environment_type = "water"

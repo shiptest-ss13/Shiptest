@@ -39,7 +39,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
-	//landing_sound = 'sound/effects/planet_landing_2.ogg'
+
 	primary_ores = list(\
 		/obj/item/stack/ore/sulfur,
 		/obj/item/stack/ore/galena,
@@ -60,11 +60,12 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE
-	//landing_sound = 'sound/effects/planet_landing_2.ogg'
+
 	primary_ores = list(\
 		/obj/item/stack/ore/malachite,
 		/obj/item/stack/ore/quartzite,
 		/obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/gold,
 		)
 
 /datum/planet_type/jungle
@@ -78,7 +79,6 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
-	//landing_sound = 'sound/effects/planet_landing_1.ogg'
 	primary_ores = list(\
 		/obj/item/stack/ore/graphite/coal,
 		/obj/item/stack/ore/malachite,
@@ -98,7 +98,6 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/rockplanet
 	ruin_type = RUINTYPE_ROCK
-	//landing_sound = 'sound/effects/planet_landing_2.ogg'
 	primary_ores = list(\
 		/obj/item/stack/ore/hematite,
 		/obj/item/stack/ore/sulfur,
@@ -115,7 +114,6 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
-	//landing_sound = 'sound/effects/planet_landing_2.ogg'
 	primary_ores = list(\
 		/obj/item/stack/ore/quartzite,
 		/obj/item/stack/ore/hematite,
@@ -134,7 +132,6 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_BEACH
-	//landing_sound = 'sound/effects/planet_landing_1.ogg'
 	primary_ores = list(\
 		/obj/item/stack/ore/hematite,
 		/obj/item/stack/ore/malachite,
@@ -237,7 +234,7 @@
 
 /datum/planet_type/water
 	name = "aqua planet"
-	desc = "A very weak energy signal originating from a planet entirely covered in water with caves with oxygen pockets. (VERY UNFINISHED, YOU HAVE BEEN WARNED)"
+	desc = "A very weak energy signal originating from a planet entirely covered in water with caves with oxygen pockets."
 	planet = DYNAMIC_WORLD_WATERPLANET
 	icon_state = "water"
 	color = LIGHT_COLOR_DARK_BLUE
@@ -248,6 +245,12 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/water/beach/deep
 	weather_controller_type = /datum/weather_controller/waterplanet
+
+	primary_ores = list(\
+		/obj/item/stack/ore/plasma,
+		/obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/malachite,
+		)
 
 /datum/planet_type/desert
 	name = "desert planet"
@@ -310,7 +313,7 @@
 
 /datum/planet_type/battlefield
 	name = "battlefield planet"
-	desc = "The site of a major ICW battlefield. The remminants of a major city, colony, or nature reserve, reduced to a muddy hellscape by decades of fighing. Beware the toxic rain, wear a gas mask! (VERY UNFINISHED, YOU HAVE BEEN WARNED)"
+	desc = "The site of a major ICW battlefield. The remminants of a major city, colony, or nature reserve, reduced to a muddy hellscape by decades of fighing. Beware the toxic rain, wear a gas mask!"
 	planet = DYNAMIC_WORLD_BATTLEFIELD
 	icon_state = "battlefield"
 	color = "#b32048"
@@ -320,6 +323,8 @@
 	mapgen = /datum/map_generator/planet_generator/battlefield
 	default_baseturf = /turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
 	weather_controller_type = /datum/weather_controller/toxic
+
+//superflat planets, intended for use in events
 
 /datum/planet_type/debug
 	name = "TEST PLANET"
@@ -333,7 +338,6 @@
 	weather_controller_type = null
 	ruin_type = null
 	weight = 0
-	//landing_sound = 'sound/effects/planet_landing_1.ogg'
 
 /turf/open/floor/white/lit
 	light_range = 2
@@ -346,22 +350,67 @@
 	area_type = /area/overmap_encounter/planetoid
 
 /datum/planet_type/snowball
-	name = "snowball planet"
-	desc = "A world entirely covered in snow; there is very likely nothing of intrest here."
+	name = "snowball dwarf planet"
+	desc = "A world entirely covered in snow from violent storms; there is with absolute certainty nothing of interest here."
 	planet = DYNAMIC_WORLD_SNOWBALL
 	icon_state = "misc"
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/snowball
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/snow/lit/snowball
+	default_baseturf = /turf/open/floor/plating/asteroid/snow/lit
 	weather_controller_type = /datum/weather_controller/snow_planet/severe
 	ruin_type = null
 	weight = 1
-	//landing_sound = 'sound/effects/planet_landing_1.ogg'
 
 /datum/map_generator/single_turf/snowball
-	turf_type = /turf/open/floor/plating/asteroid/snow/lit/snowball
+	turf_type = /turf/open/floor/plating/asteroid/snow/lit
 	area_type = /area/overmap_encounter/planetoid/snowball
 
-/turf/open/floor/plating/asteroid/snow/lit/snowball
-	light_color = "#67769e"
+/datum/planet_type/dustball
+	name = "dustball dwarf planet"
+	desc = "A world entirely covered in dust; there is with absolute certainty nothing of interest here."
+	planet = DYNAMIC_WORLD_DUSTBALL
+	icon_state = "misc"
+	color = COLOR_WHITE
+	mapgen = /datum/map_generator/single_turf/dustball
+	gravity = STANDARD_GRAVITY
+	default_baseturf = /turf/open/floor/plating/asteroid/whitesands/lit
+	weather_controller_type = /datum/weather_controller/rockplanet/severe
+	weight = 1
+
+/datum/map_generator/single_turf/dustball
+	turf_type = /turf/open/floor/plating/asteroid/whitesands/lit
+	area_type = /area/overmap_encounter/planetoid/dustball
+
+
+/datum/planet_type/duneball
+	name = "duneball dwarf planet"
+	desc = "A world entirely covered in hot arid sand; there is with absolute certainty nothing of interest here."
+	planet = DYNAMIC_WORLD_SUPERFLAT
+	icon_state = "misc"
+	color = COLOR_WHITE
+	mapgen = /datum/map_generator/single_turf/duneball
+	gravity = STANDARD_GRAVITY
+	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
+	weather_controller_type = /datum/weather_controller/rockplanet/severe
+	weight = 1
+
+/datum/map_generator/single_turf/duneball
+	turf_type = /turf/open/floor/plating/asteroid/desert/lit
+	area_type = /area/overmap_encounter/planetoid/duneball
+
+/datum/planet_type/waterball
+	name = "waterball dwarf planet"
+	desc = "A world entirely covered in cool water and cooler storms; there is with absolute certainty nothing of interest here.."
+	planet = DYNAMIC_WORLD_SUPERFLAT
+	icon_state = "misc"
+	color = COLOR_WHITE
+	mapgen = /datum/map_generator/single_turf/waterball
+	gravity = STANDARD_GRAVITY
+	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
+	weather_controller_type = /datum/weather_controller/rockplanet/severe
+	weight = 1
+
+/datum/map_generator/single_turf/waterball
+	turf_type = /turf/open/water/stormy_planet_lit
+	area_type = /area/overmap_encounter/planetoid/waterball

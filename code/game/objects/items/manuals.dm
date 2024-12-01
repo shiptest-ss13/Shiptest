@@ -658,6 +658,7 @@
 						<br>
 						&emsp;<b>Can be found in abundance at:</b>
 						<ul>
+							<li>Ice Worlds<br></li>
 							<li>Jungle Worlds<br></li>
 							<li>Desert Worlds<br></li>
 						</ul>

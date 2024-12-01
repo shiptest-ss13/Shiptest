@@ -484,6 +484,10 @@
 		new /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/whitesands(loc)
 		return INITIALIZE_HINT_QDEL
 
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/nest
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2)
+	from_nest = TRUE
+
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/whitesands
 	name = "ancient goliath"
 	desc = "Goliaths are biologically immortal, and rare specimens have survived for centuries. This one is clearly ancient, and its shell is dangerously durable."

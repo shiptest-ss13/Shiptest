@@ -101,8 +101,8 @@
 	icon_state = "royalcrab"
 	icon_living = "royalcrab"
 	icon_dead = "royalcrab_dead"
-	maxHealth = 150
-	health = 150
+	maxHealth = 70
+
 	speed = 1
 	speak_chance = 1
 	emote_see = list("skitters","oozes liquid from its mouth", "scratches at the ground", "clicks its claws")
