@@ -280,7 +280,6 @@
 		star_2.color = get_rand_spectral_color(pick(spectral_types), color_vary)
 		return
 
-
 	token.add_overlay(star_1)
 	token.add_overlay(star_2)
 

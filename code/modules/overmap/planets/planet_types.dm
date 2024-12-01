@@ -168,6 +168,11 @@
 	ruin_type = null // asteroid ruins when
 	weight = 0
 	//landing_sound = 'sound/effects/planet_landing_1.ogg'
+	primary_ores = list(\
+		/obj/item/stack/ore/plasma,
+		/obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/malachite,
+		)
 
 /datum/planet_type/spaceruin
 	name = "weak energy signal"

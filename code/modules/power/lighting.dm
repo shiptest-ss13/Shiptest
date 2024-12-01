@@ -647,7 +647,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 
 	constant_flickering = TRUE
 
-	flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_on)), rand(0.5 SECONDS, 1 SECONDS))
+	flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_on)), rand(0.5 SECONDS, 1 SECONDS), TIMER_STOPPABLE)
 
 /obj/machinery/light/proc/stop_flickering()
 	constant_flickering = FALSE
@@ -667,10 +667,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 
 /obj/machinery/light/proc/flicker_on()
 	alter_flicker(TRUE)
-	flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_off)), rand(0.5 SECONDS, 1 SECONDS))
+	flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_off)), rand(0.5 SECONDS, 1 SECONDS), TIMER_STOPPABLE)
 
 /obj/machinery/light/proc/flicker_off()
 	alter_flicker(FALSE)
+	flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_on)), rand(0.5 SECONDS, 5 SECONDS), TIMER_STOPPABLE)
 
 
 /obj/machinery/light/proc/flicker(amount = rand(10, 20))
@@ -820,9 +821,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 
 // called when area power state changes
 /obj/machinery/light/power_change()
-	SHOULD_CALL_PARENT(0)
-	var/area/A = get_area(src)
-	seton(A.lightswitch && A.power_light)
+	SHOULD_CALL_PARENT(FALSE)
+	seton(has_power())
 
 // called when on fire
 

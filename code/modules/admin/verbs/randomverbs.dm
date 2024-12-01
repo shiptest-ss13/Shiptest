@@ -976,7 +976,7 @@
 			nova.overmap_icon_state = inputed
 
 	if(tgui_alert(usr, "Give sector custom name? If no inherits from basetype or picks randomly", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
-		nova.name = input(usr, "Set Secondary Structure Color (Outposts):", nova.secondary_structure_color) as text|null
+		nova.name = input(usr, "Set Sector name:", "Spawn Overmap") as text|null
 
 	message_admins("Generating Star System type: [overmap_type], this may take some time!")
 	if(nova)

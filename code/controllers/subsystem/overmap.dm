@@ -377,10 +377,11 @@ SUBSYSTEM_DEF(overmap)
 	has_outpost = TRUE
 
 /datum/overmap_star_system/shiptest/New(generate_now=TRUE)
-	if(!prob(10))
+	if(!prob(100))
 		return ..()
+
 	//Small easter egg so all these palletes doesn't go to waste in the event mines
-	var/list/possible_overmaps = list(subtypesof(/datum/overmap_star_system))
+	var/list/possible_overmaps = subtypesof(/datum/overmap_star_system)
 	possible_overmaps -= /datum/overmap_star_system/shiptest //thats us!
 	//possible_overmaps -= /datum/overmap_star_system/wilderness //has no intresting colors
 	possible_overmaps -= /datum/overmap_star_system/wilderness/oldgen //ditto - wouldnt it be funny to have this generate sometimes just for shits and giggles?
@@ -404,6 +405,7 @@ SUBSYSTEM_DEF(overmap)
 
 	override_object_colors = TRUE
 	overmap_icon_state = picked_overmap.overmap_icon_state
+	return ..()
 
 
 /datum/overmap_star_system/New(generate_now=TRUE)
@@ -764,10 +766,10 @@ SUBSYSTEM_DEF(overmap)
 		map_to_load.width,
 		map_to_load.height,
 		ALLOCATION_QUADRANT,
-		static_datum.border_size
+		QUADRANT_MAP_SIZE
 	)
 
-	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
+	vlevel.reserve_margin(static_datum.border_size)
 
 	var/datum/map_generator/mapgen
 
@@ -879,6 +881,15 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/proc/post_edit_token_state(datum/overmap/datum_to_edit)
 	datum_to_edit.token.remove_filter("gloweffect")
 	return
+
+/**
+ * Updates everything in the system's token state
+ * Useful for events!
+ */
+/datum/overmap_star_system/proc/update_all_colors()
+	for(var/datum/overmap/current_object as anything in overmap_objects)
+		current_object.alter_token_appearance()
+
 
 /datum/overmap_star_system/ngr
 	name = "Gorlex Controlled - Ecbatana"

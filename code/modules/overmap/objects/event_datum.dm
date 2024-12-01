@@ -23,6 +23,8 @@
 	var/lifespan
 	/// The 'death time' of the object. Used for limited lifespan events.
 	var/death_time
+	///How much % of a radio message we scramble before sending. Will only scramble 1/5th this value if the radio is an adjacent tile, not 100%.
+	var/interference_power
 
 /datum/overmap/event/Initialize(position, datum/overmap_star_system/system_spawned_in, set_lifespan,...)
 	. = ..()
@@ -88,6 +90,7 @@
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
+	interference_power = 20
 
 	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
 
@@ -98,10 +101,26 @@
 		/obj/effect/meteor/big=1,
 		/obj/effect/meteor/irradiated=3
 	)
+	var/primary_ores = list(\
+		/obj/item/stack/ore/plasma,
+		/obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/malachite,
+		)
 
 /datum/overmap/event/meteor/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
 	..()
+
+	var/orestext
+	if(primary_ores)
+		orestext += span_boldnotice("\nInitial scans show a high concentration of the following ores:\n")
+		for(var/obj/ore as anything in primary_ores)
+			var/hex = ORES_TO_COLORS_LIST[ore]
+			orestext += "<font color='[hex]'>	- [ore.name]\n</font>"
+		desc += orestext
+
+		token.desc += span_notice("\nYou could land within the [src] if you were to [span_bold("Dock to Empty Space")] while flying over...\n")
+
 	if(current_overmap.override_object_colors)
 		token.color = current_overmap.hazard_primary_color
 	current_overmap.post_edit_token_state(src)
@@ -120,6 +139,7 @@
 	name = "asteroid field (minor)"
 	base_icon_state = "meteor_light_"
 	chain_rate = 3
+	interference_power = 5
 
 	mountain_height_override = 0.85
 
@@ -134,6 +154,7 @@
 	base_icon_state = "meteor_major_"
 	spread_chance = 25
 	chain_rate = 6
+	interference_power = 30
 
 	mountain_height_override = 0.5
 
@@ -145,7 +166,7 @@
 		/obj/effect/meteor/tunguska = 1
 	)
 
-///ION STORM - explodes your IPCs
+///Electromagnetic - explodes your IPCs
 /datum/overmap/event/emp
 	name = "electromagnetic storm (moderate)"
 	desc = "A heavily ionized area of space, prone to causing electromagnetic pulses in ships"
@@ -154,6 +175,7 @@
 	spread_chance = 20
 	chain_rate = 2
 	chance_to_affect = 30
+	interference_power = 100
 	var/strength = 4
 
 /datum/overmap/event/emp/alter_token_appearance()
@@ -200,6 +222,7 @@
 	chain_rate = 1
 	strength = 2
 	chance_to_affect = 20
+	interference_power = 80
 
 /datum/overmap/event/emp/major
 	name = "electromagnetic storm (major)"
@@ -217,6 +240,7 @@
 	spread_chance = 20
 	chain_rate = 2
 	chance_to_affect = 20
+	interference_power = 20
 	var/strength = 4
 
 /datum/overmap/event/flare/alter_token_appearance()
@@ -263,11 +287,13 @@
 	chain_rate = 1
 	strength = 2
 	chance_to_affect = 15
+	interference_power = 15
 
 /datum/overmap/event/flare/major
 	name = "solar flare (major)"
 	base_icon_state = "flare_major_"
 	chance_to_affect = 60
+	interference_power = 60
 	chain_rate = 4
 	strength = 8
 
@@ -280,6 +306,7 @@
 	chance_to_affect = 15
 	spread_chance = 30
 	chain_rate = 3
+	interference_power = 15
 	var/zap_flag = ZAP_STORM_FLAGS
 	var/max_damage = 20
 	var/min_damage = 10
@@ -307,6 +334,7 @@
 /datum/overmap/event/electric/minor
 	name = "electrical storm (minor)"
 	base_icon_state = "electrical_minor_"
+	interference_power = 5
 	spread_chance = 40
 	chain_rate = 2
 	max_damage = 10
@@ -315,6 +343,7 @@
 /datum/overmap/event/electric/major
 	name = "electrical storm (major)"
 	base_icon_state = "electrical_major_"
+	interference_power = 40
 	spread_chance = 15
 	chain_rate = 6
 	max_damage = 40
@@ -328,6 +357,14 @@
 	default_color = "#c053f3"
 	chain_rate = 8
 	spread_chance = 75
+	chance_to_affect = 85
+
+	interference_power = 70
+
+	//list of ships we are currently affecting so we can stop flicking the lights when they leave
+	var/list/affected_ships = list()
+	//assoc list of clients we are currently overriding with our custom ambience
+	var/list/affected_mobs = list()
 
 /datum/overmap/event/nebula/alter_token_appearance()
 	. = ..()
@@ -335,6 +372,63 @@
 		token.color = current_overmap.hazard_secondary_color
 	token.opacity = TRUE
 	current_overmap.post_edit_token_state(src)
+
+/datum/overmap/event/nebula/process()
+	. = ..()
+	var/list/nearby_objects = get_nearby_overmap_objects()
+	var/datum/virtual_level/ship_vlevel
+
+	for(var/datum/overmap/ship/controlled/ship as anything in affected_ships)
+		if(!(ship in nearby_objects))
+
+			ship_vlevel = ship.shuttle_port.get_virtual_level()
+			affected_ships -= ship
+			ship.hidden = FALSE
+			ship.alter_token_appearance()
+
+			for(var/obj/machinery/light/light_to_mess in GLOB.machines)
+				if(light_to_mess.virtual_z() != ship_vlevel.id)
+					continue
+				light_to_mess.stop_flickering()
+
+	if(affected_ships.len == 0)
+		STOP_PROCESSING(SSfastprocess, src)
+
+/datum/overmap/event/nebula/affect_ship(datum/overmap/ship/controlled/ship)
+	var/datum/virtual_level/ship_vlevel = ship.shuttle_port.get_virtual_level()
+
+	for(var/mob/affected_mob as anything in GLOB.player_list)
+		if(ship.shuttle_port.is_in_shuttle_bounds(affected_mob))
+			// 'hijacks' the ambience for this nebula one.
+			if(!affected_mob.client)
+				continue
+
+			if(affected_mob in affected_mobs)
+				if(affected_mobs[affected_mob] > world.time)
+					continue
+
+			affected_mobs[affected_mob] = world.time + 38 SECONDS
+
+			var/sound = 'sound/effects/overmap/nebula_ambient.ogg'
+			SEND_SOUND(affected_mob, sound(sound, repeat = 0, wait = 0, volume = 85, channel = CHANNEL_AMBIENCE))
+
+			SSambience.ambience_listening_clients[affected_mob.client] = world.time + 40 SECONDS
+
+
+	if(ship in affected_ships)
+		return
+
+	if(affected_ships.len == 0)
+		START_PROCESSING(SSfastprocess, src)
+	affected_ships += ship
+	ship.hidden = TRUE
+	ship.alter_token_appearance()
+
+
+	for(var/obj/machinery/light/light_to_mess in GLOB.machines)
+		if(light_to_mess.virtual_z() != ship_vlevel.id)
+			continue
+		light_to_mess.start_flickering()
 
 
 /datum/overmap/event/wormhole
@@ -345,15 +439,16 @@
 	spread_chance = 0
 	chain_rate = 0
 	chance_to_affect = 100
+	interference_power = 40
 	///The currently linked wormhole
 	var/datum/overmap/event/wormhole/other_wormhole
 
-/datum/overmap/event/wormhole/Initialize(position, _other_wormhole, ...)
+/datum/overmap/event/wormhole/Initialize(position, datum/overmap_star_system/system_spawned_in, set_lifespan, _other_wormhole, ...)
 	. = ..()
 	if(_other_wormhole)
 		other_wormhole = _other_wormhole
 	if(!other_wormhole)
-		other_wormhole = new(null, src) //Create a new wormhole at a random location
+		other_wormhole = new(null, current_overmap, set_lifespan, src) //Create a new wormhole at a random location
 	alter_token_appearance()
 
 /datum/overmap/event/wormhole/alter_token_appearance()
@@ -383,6 +478,7 @@
 	spread_chance = 50
 	chain_rate = 4
 	safe_speed = 2
+	interference_power = 0
 	meteor_types = list(
 		/obj/effect/meteor/carp=16,
 		/obj/effect/meteor/carp/big=1, //numbers I pulled out of my ass
@@ -426,6 +522,7 @@
 	spread_chance = 50
 	chain_rate = 4
 	safe_speed = 7
+	interference_power = 10
 	meteor_types = list(
 		/obj/effect/meteor/dust=3,
 	)
@@ -446,6 +543,11 @@
 	spread_chance = 35
 	chain_rate = 6
 
+/datum/overmap/event/anomaly/Initialize(position, datum/overmap_star_system/system_spawned_in, set_lifespan, ...)
+	. = ..()
+	if(prob(50)) //only 50% chance of having interference
+		interference_power = rand(20,100)
+
 /datum/overmap/event/anomaly/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
 	..()
@@ -459,7 +561,7 @@
 	new /obj/effect/spawner/random/anomaly/storm(get_turf(source_object))
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
-			M.playsound_local(S.shuttle_port, 'sound/effects/bamf.ogg', 100)
+			M.playsound_local(M, 'sound/effects/bamf.ogg', 100)
 
 GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/wormhole = 10,
@@ -467,11 +569,6 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/electric/minor = 45,
 	/datum/overmap/event/electric = 40,
 	/datum/overmap/event/electric/major = 35,
-	/* commented out until ion storms aren't literal torture
-	/datum/overmap/event/emp/minor = 45,
-	/datum/overmap/event/emp = 40,
-	/datum/overmap/event/emp/major = 45,
-	*/
 	/datum/overmap/event/meteor/minor = 45,
 	/datum/overmap/event/meteor = 40,
 	/datum/overmap/event/meteor/major = 35,
@@ -491,7 +588,8 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	spread_chance = 20
 	chain_rate = 2
 	chance_to_affect = 60
-	var/strength = 10
+	interference_power = 60
+	var/strength = 20
 
 /datum/overmap/event/rad/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -517,13 +615,15 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	name = "radiation storm (minor)"
 	base_icon_state = "gamma_minor_"
 	chain_rate = 1
-	strength = 10
+	strength = 5
+	interference_power = 40
 	chance_to_affect = 40
 
 /datum/overmap/event/rad/major
 	name = "radiation storm (major)"
 	base_icon_state = "gamma_major_"
 	chance_to_affect = 80
+	interference_power = 80
 	chain_rate = 4
-	strength = 8
+	strength = 60
 

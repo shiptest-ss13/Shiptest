@@ -38,6 +38,9 @@
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
 	var/datum/map_zone/mapzone
 	var/list/datum/hangar_shaft/shaft_datums = list()
+	///The weather the virtual z will have. If null, the outpost will have no weather.
+	var/datum/weather_controller/weather_controller_type
+
 
 	/// The maximum number of missions that may be offered by the outpost at one time.
 	/// Missions which have been accepted do not count against this limit.
@@ -178,6 +181,9 @@
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
 	main_template.load(vlevel.get_unreserved_bottom_left_turf())
+
+	if(weather_controller_type)
+		new weather_controller_type(mapzone)
 
 	// assoc list of lists of landmarks in a shaft, starting with the main landmark
 	var/list/list/shaft_lists = list()

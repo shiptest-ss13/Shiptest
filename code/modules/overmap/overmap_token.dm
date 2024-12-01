@@ -56,6 +56,22 @@
 		return
 	user.abstract_move(jump_to_turf)
 
+/obj/overmap/vv_get_dropdown()
+	. = ..()
+	VV_DROPDOWN_OPTION("", "---------")
+	VV_DROPDOWN_OPTION(VV_HK_VV_PARENT, "View Variables Of Parent Datum")
+	VV_DROPDOWN_OPTION(VV_HK_UNFSCK_OBJECT, "Unfsck this overmap object | PANIC BUTTON")
+
+/obj/overmap/vv_do_topic(list/href_list)
+	. = ..()
+	if(href_list[VV_HK_VV_PARENT])
+		if(!check_rights(R_VAREDIT))
+			return
+		usr.client.debug_variables(parent)
+	if(href_list[VV_HK_UNFSCK_OBJECT])
+		return parent.vv_do_topic(href_list)
+
+
 /obj/overmap/vv_edit_var(var_name, var_value)
 	switch(var_name)
 		if(NAMEOF(src, render_map))

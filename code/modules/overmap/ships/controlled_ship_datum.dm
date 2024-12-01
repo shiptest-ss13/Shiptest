@@ -470,6 +470,18 @@
 /datum/overmap/ship/controlled/proc/get_faction()
 	return source_template.faction_name
 
+/datum/overmap/ship/controlled/alter_token_appearance()
+	if(!source_template)
+		return ..()
+	desc = {"
+	[span_boldnotice("IFF is reporting the following:")]
+	[span_bold("Affiliation: ")][get_faction()]
+	[span_bold("Class: ")][source_template.short_name]
+	[span_bold("Velocity: ")][get_speed()] Gm/s
+	"}
+	return ..()
+
+
 /obj/item/key/ship
 	name = "ship key"
 	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck. Comes with a cute little shuttle-shaped keychain."

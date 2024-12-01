@@ -37,6 +37,9 @@
 	///ONLY USED FOR NON-SIMULATED SHIPS. The amount per burn that this ship accelerates
 	var/acceleration_speed = 0.02
 
+	///Is this ship hidden? If true we hide the ships name/class on the token.
+	var/hidden = FALSE
+
 /datum/overmap/ship/Initialize(position, system_spawned_in, ...)
 	. = ..()
 	if(docked_to)
@@ -255,13 +258,17 @@
 		if(direction)
 			token.dir = direction
 	..()
+	if(hidden)
+		token.name = "???"
+		token.desc = "There's no identification of what this is. It's possible to get more information with your radar by getting closer."
+		token.icon_state = "unknown"
 	token.color = current_overmap.primary_structure_color
 	current_overmap.post_edit_token_state(src)
 	if(!legacy_rendering_switch)
 		token.cut_overlays()
 		if(direction)
 			token.add_overlay("dir_moving")
-		else
+		else if(!hidden)
 			token.add_overlay("dir_idle")
 		if(speed)
 			token.add_overlay("speed_[clamp(round(speed,1),0,10)]")

@@ -250,23 +250,40 @@
 	// Determine the identity information which will be attached to the signal.
 	var/atom/movable/virtualspeaker/speaker = new(null, M, src)
 
+	// Check for the overmap's interference level and adjust the message accordingly
+	var/interference_level = get_overmap_interference()
+	if(interference_level)
+		message = Gibberish(message, TRUE, interference_level)
+
+
 	// Construct the signal
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
+	signal.data["interference"] = interference_level
+	signal.data["sfx"] = 'sound/effects/radio_chatter.ogg'
+
+	var/talkie_sound = 'sound/effects/walkietalkie.ogg'
+	//IF the interference is too high then we won't be able to tell whos talking
+	if(interference_level >= 60)
+		speaker.name = "Unknown"
+		signal.data["sfx"] = 'sound/effects/overmap/heavy_interference.ogg'
+		talkie_sound = 'sound/effects/overmap/heavy_interference.ogg'
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))		//WS Edit - SolGov Rep
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.map_zones = list(0)  // reaches all Z-levels
 		signal.broadcast()
-		playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
+		if(!interference_level >= 60)
+			signal.data["sfx"] = 'sound/effects/overmap/wideband.ogg'
+		playsound(src, talkie_sound, 20, FALSE)
 		return
 
 	// All radios make an attempt to use the subspace system first
 	signal.send_to_receivers()
 
 	//At this point the signal was transmitted so play a sound			//WS Edit - Radio chatter
-	playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
+	playsound(src, talkie_sound, 20, FALSE)			//WS Edit - Radio chatter
 
 	// If the radio is subspace-only, that's all it can do
 	if (subspace_transmission)
@@ -287,6 +304,24 @@
 	signal.transmission_method = TRANSMISSION_RADIO
 	signal.map_zones = list(mapzone)
 	signal.broadcast()
+
+/// Gets the interference power of nearby overmap objects.
+/obj/item/radio/proc/get_overmap_interference()
+	var/datum/overmap/our_overmap_object = SSovermap.get_overmap_object_by_location(src)
+	var/interference_power = 0
+	if(istype(our_overmap_object))
+		for(var/datum/overmap/event/nearby_event as anything in our_overmap_object.get_nearby_overmap_objects(empty_if_src_docked = FALSE))
+			if(!istype(nearby_event))
+				continue
+			interference_power += nearby_event.interference_power
+
+		for(var/direction as anything in GLOB.cardinals)
+			var/newcords = our_overmap_object.get_overmap_step(direction)
+			for(var/datum/overmap/event/nearby_event as anything in our_overmap_object.current_overmap.overmap_container[newcords["x"]][newcords["y"]])
+				if(!istype(nearby_event))
+					continue
+				interference_power += nearby_event.interference_power / 5
+	return interference_power
 
 /obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()

@@ -51,6 +51,8 @@
 		icon = smooth_icon
 
 	var/area/overmap_encounter/selected_area = get_area(src)
+	if(!istype(selected_area))
+		return
 
 	RegisterSignal(selected_area, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(get_light))
 	if(istype(selected_area))
@@ -58,6 +60,7 @@
 		light_range = selected_area.light_range
 		light_power = selected_area.light_power
 		update_light()
+
 
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/proc/getDug(no_dirt)

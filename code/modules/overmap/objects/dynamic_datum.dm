@@ -153,6 +153,7 @@
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
 	gravity = planet.gravity
+	token_icon_state = planet.icon_state
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
 	landing_sound = planet.landing_sound
@@ -163,9 +164,7 @@
 		token.icon_state = "sector"
 		Rename(planet_name)
 
-	if(!preserve_level)
-		token.desc += span_notice("\nIt may not still be here if you leave it.")
-		token.update_appearance()
+	alter_token_appearance()
 
 /datum/overmap/dynamic/alter_token_appearance()
 	if(!planet)
@@ -180,7 +179,11 @@
 			var/hex = ORES_TO_COLORS_LIST[ore]
 			orestext += "<font color='[hex]'>	- [ore.name]\n</font>"
 		desc += orestext
+
+	if(!preserve_level)
+		token.desc += span_notice("\nIt may not still be here if you leave it.")
 	..()
+
 	if(current_overmap.override_object_colors)
 		token.color = current_overmap.primary_color
 	current_overmap.post_edit_token_state(src)
