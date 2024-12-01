@@ -49,6 +49,9 @@
 	/// Token type to instantiate.
 	var/token_type = /obj/overmap
 
+	///How much % of a radio message we scramble of radios nearby/on top of us before sending. Will only scramble 1/5th this value if the radio is an adjacent tile, not 100%. Meant for hazards
+	var/interference_power
+
 	/// The current docking ticket of this object, if any
 	var/datum/docking_ticket/current_docking_ticket
 
@@ -70,6 +73,7 @@
 		current_overmap = SSovermap.default_system
 		stack_trace("[src.name] has no overmap on load!! This is very bad!! Set the object's overmap to the default overmap of the round!!")
 	current_overmap.overmap_objects |= src
+	SSovermap.overmap_objects |= src
 
 	contents = list()
 

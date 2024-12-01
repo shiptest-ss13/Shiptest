@@ -1,6 +1,9 @@
 /datum/overmap/star
 	name = "star"
 	desc = "A star."
+
+	interference_power = 30
+
 	var/spectral_type = STAR_G
 	var/color_vary = 0
 	/// Do we randomly have a color? If FALSE we take the spectral_type and use that color
@@ -115,6 +118,7 @@
 /datum/overmap/star/dwarf
 	token_icon_state = "star_new"
 	desc = "A red dwarf. Smallest and most numerous of the main-sequence stars, some red dwarves boast trillion-year lifespans; none have yet died of old age."
+	interference_power = 10
 	spectral_type = STAR_M
 	color_vary = 0.5
 
@@ -243,6 +247,7 @@
 /datum/overmap/star/binary
 	token_icon_state = "binaryswoosh"
 	desc = "Two stars, each locked in the other's orbit. These systems form at stellar birth, and may persist long after one or both stars die."
+	interference_power = 40
 	color_vary = 0.75
 
 /datum/overmap/star/binary/gen_star_name()
@@ -289,6 +294,7 @@
 /datum/overmap/star/singularity
 	name = "black hole"
 	desc = "An incredibly dense astral body, so massive even light cannot escape its gravitational pull past the event horizon."
+	interference_power = 60
 	token_icon_state = "accretiondisk"
 	spectral_type = STAR_K
 	color_vary = 1
@@ -320,6 +326,7 @@
 
 /datum/overmap/star/pulsar
 	desc = "An incredibly dense star that spins incredibly fast, shooting out radiation out of both it's poles. it is mainly made of neutrons as it's intense gravity causes other particles to combine into more neutrons."
+	interference_power = 300
 	spectral_type = STAR_F
 	color_vary = 0.5
 	token_icon_state = "pulsar"

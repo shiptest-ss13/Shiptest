@@ -250,11 +250,8 @@
 	// Determine the identity information which will be attached to the signal.
 	var/atom/movable/virtualspeaker/speaker = new(null, M, src)
 
-	// Check for the overmap's interference level and adjust the message accordingly
-	var/interference_level = get_overmap_interference()
-	if(interference_level)
-		message = Gibberish(message, TRUE, interference_level)
-
+	// Check for the overmap's interference level
+	var/interference_level = SSovermap.get_overmap_interference(src)
 
 	// Construct the signal
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
@@ -304,24 +301,6 @@
 	signal.transmission_method = TRANSMISSION_RADIO
 	signal.map_zones = list(mapzone)
 	signal.broadcast()
-
-/// Gets the interference power of nearby overmap objects.
-/obj/item/radio/proc/get_overmap_interference()
-	var/datum/overmap/our_overmap_object = SSovermap.get_overmap_object_by_location(src)
-	var/interference_power = 0
-	if(istype(our_overmap_object))
-		for(var/datum/overmap/event/nearby_event as anything in our_overmap_object.get_nearby_overmap_objects(empty_if_src_docked = FALSE))
-			if(!istype(nearby_event))
-				continue
-			interference_power += nearby_event.interference_power
-
-		for(var/direction as anything in GLOB.cardinals)
-			var/newcords = our_overmap_object.get_overmap_step(direction)
-			for(var/datum/overmap/event/nearby_event as anything in our_overmap_object.current_overmap.overmap_container[newcords["x"]][newcords["y"]])
-				if(!istype(nearby_event))
-					continue
-				interference_power += nearby_event.interference_power / 5
-	return interference_power
 
 /obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()

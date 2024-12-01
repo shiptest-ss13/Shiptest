@@ -141,11 +141,11 @@
 	else
 		planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 
-	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
+	if(!ispath(planet, /datum/planet_type/asteroid) && !ispath(planet, /datum/planet_type/spaceruin)) //these aren't real planets
 		planet_name = "[gen_planet_name()]"
 		Rename(planet_name)
 		token.name = "[planet_name]" + " ([planet.name])"
-	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
+	if(!ispath(planet, /datum/planet_type/asteroid) || !ispath(planet, /datum/planet_type/spaceruin))
 		Rename(planet.name)
 		token.name = "[planet.name]"
 
@@ -454,10 +454,36 @@
 	light_power = 0
 
 /area/overmap_encounter/planetoid/snowball
-	name = "\improper Snowball Planetoid"
+	name = "\improper Snowball Dwarf Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_STONE_CORRIDOR
 	ambientsounds = TUNDRA
-	light_color = COLOR_FOGGY_LIGHT
+	light_color = "#67769e"
+	light_range = 2
+	light_power = 1
+
+/area/overmap_encounter/planetoid/dustball
+	name = "\improper Dustball Dwarf Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_PLAIN
+	ambientsounds = DESERT
+	light_color = "#bf9b9b"
+	light_range = 2
+	light_power = 1
+
+/area/overmap_encounter/planetoid/duneball
+	name = "\improper Duneball Dwarf Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_PLAIN
+	ambientsounds = DESERT
+	light_color = "#be956b"
+	light_range = 2
+	light_power = 1
+
+/area/overmap_encounter/planetoid/waterball
+	name = "\improper Waterball Dwarf Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	ambientsounds = MINING
+	lighting_colour_tube = "#8affe2"
+	lighting_colour_bulb = "#8affe2"
+	light_color = "#09121a"
 	light_range = 2
 	light_power = 1
 

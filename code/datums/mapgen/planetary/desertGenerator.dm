@@ -89,7 +89,7 @@
 		/obj/structure/flora/ash/cacti,
 	)
 	*/
-	flora_spawn_chance = 3
+	flora_spawn_chance = 0
 	mob_spawn_chance = 1
 
 	mob_spawn_list = list(
@@ -102,6 +102,14 @@
 
 /datum/biome/dry_seafloor
 	open_turf_types = list(/turf/open/floor/plating/asteroid/dry_seafloor/lit = 1)
+
+	flora_spawn_list = list(
+		/obj/structure/flora/rock/pile = 5,
+		/obj/structure/flora/rock = 5,
+		/obj/structure/flora/ash/cacti = 1,
+	)
+
+	flora_spawn_chance = 1
 
 /datum/biome/cave/desert
 	open_turf_types = list(/turf/open/floor/plating/asteroid/desert = 1)

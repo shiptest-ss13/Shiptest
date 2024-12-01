@@ -23,8 +23,6 @@
 	var/lifespan
 	/// The 'death time' of the object. Used for limited lifespan events.
 	var/death_time
-	///How much % of a radio message we scramble before sending. Will only scramble 1/5th this value if the radio is an adjacent tile, not 100%.
-	var/interference_power
 
 /datum/overmap/event/Initialize(position, datum/overmap_star_system/system_spawned_in, set_lifespan,...)
 	. = ..()
@@ -359,7 +357,7 @@
 	spread_chance = 75
 	chance_to_affect = 85
 
-	interference_power = 70
+	interference_power = 60
 
 	//list of ships we are currently affecting so we can stop flicking the lights when they leave
 	var/list/affected_ships = list()

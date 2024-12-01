@@ -84,11 +84,21 @@ SUBSYSTEM_DEF(overmap)
 		if(A.mobile_port.current_ship)
 			return A.mobile_port.current_ship
 		A = A.mobile_port.underlying_turf_area[T]
-	for(var/O in overmap_objects)
-		if(istype(O, /datum/overmap/dynamic))
-			var/datum/overmap/dynamic/D = O
-			if(D.mapzone?.is_in_bounds(source))
-				return D
+	for(var/datum/overmap/dynamic/our_dynamic as anything in overmap_objects)
+		if(!istype(our_dynamic))
+			continue
+		if(our_dynamic.mapzone?.is_in_bounds(source))
+			return D
+	for(var/datum/overmap/static_datum/our_static as anything in overmap_objects)
+		if(!istype(our_static))
+			continue
+		if(our_static.mapzone?.is_in_bounds(source))
+			return D
+	for(var/datum/overmap/outpost/our_outpost as anything in overmap_objects)
+		if(!istype(our_outpost))
+			continue
+		if(our_outpost.mapzone?.is_in_bounds(source))
+			return D
 
 /// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
 /datum/controller/subsystem/overmap/proc/player_ship_spawn_allowed()
@@ -186,6 +196,28 @@ SUBSYSTEM_DEF(overmap)
 	ship_spawning = TRUE
 	. = new /datum/overmap/ship/controlled(ship_loc, system_to_spawn_in, template) //This statement SHOULDN'T runtime (not counting runtimes actually in the constructor) so ship_spawning should always be toggled.
 	ship_spawning = FALSE
+
+/**
+ * Gets the interference power of nearby overmap objects.
+ * Inteded to get called by radios, but i'm sure you could use this for other things.
+ */
+/// Gets the interference power of nearby overmap objects.
+/datum/controller/subsystem/overmap/proc/get_overmap_interference(atom/source)
+	var/datum/overmap/our_overmap_object = get_overmap_object_by_location(source)
+	var/interference_power = 0
+	if(istype(our_overmap_object))
+		for(var/datum/overmap/event/nearby_obj as anything in our_overmap_object.get_nearby_overmap_objects(empty_if_src_docked = FALSE))
+			if(!istype(nearby_obj))
+				continue
+			interference_power += nearby_obj.interference_power
+
+		for(var/direction as anything in GLOB.cardinals)
+			var/newcords = our_overmap_object.get_overmap_step(direction)
+			for(var/datum/overmap/event/nearby_obj as anything in our_overmap_object.current_overmap.overmap_container[newcords["x"]][newcords["y"]])
+				if(!istype(nearby_obj))
+					continue
+				interference_power += nearby_obj.interference_power / 5
+	return interference_power
 
 
 /////////////////////////////////////////////////////////////////////
