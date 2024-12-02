@@ -839,6 +839,13 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
+"hB" = (
+/obj/structure/sign/solgov_seal{
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/turf/template_noop,
+/area/template_noop)
 "hM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/neck/stripedsolgovscarf,
@@ -2182,11 +2189,8 @@
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "uD" = (
-/obj/structure/sign/solgov_seal{
-	pixel_y = -27
-	},
-/turf/template_noop,
-/area/template_noop)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security/armory)
 "uJ" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
@@ -2521,11 +2525,10 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
 /obj/effect/turf_decal/solgov/bottom_left,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/crewtwo)
 "xh" = (
@@ -3139,6 +3142,10 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "Dr" = (
+/obj/structure/sign/solgov_flag{
+	pixel_x = -1;
+	pixel_y = 0
+	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security/armory)
 "Du" = (
@@ -3169,6 +3176,12 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"Dw" = (
+/obj/structure/sign/solgov_seal{
+	pixel_y = -27
+	},
+/turf/template_noop,
+/area/template_noop)
 "Dz" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -3236,13 +3249,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo/office)
-"Eq" = (
-/obj/structure/sign/solgov_seal{
-	pixel_x = 28;
-	pixel_y = 0
-	},
-/turf/template_noop,
-/area/template_noop)
 "Er" = (
 /obj/effect/turf_decal/techfloor,
 /obj/item/radio/intercom/directional/south,
@@ -3341,10 +3347,6 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
 	id = "sg_par_holocargo2";
@@ -3359,6 +3361,7 @@
 	pixel_y = 7
 	},
 /obj/effect/turf_decal/solgov/bottom_right,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/crewtwo)
 "ER" = (
@@ -3532,8 +3535,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/solgov/all/bottom_center,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/crewtwo)
 "Ht" = (
@@ -4759,13 +4762,6 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
-"RK" = (
-/obj/structure/sign/solgov_flag{
-	pixel_x = -1;
-	pixel_y = 0
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/security/armory)
 "RL" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/port)
@@ -6048,7 +6044,7 @@ wI
 "}
 (12,1,1) = {"
 wI
-uD
+Dw
 Wt
 rY
 AX
@@ -6144,7 +6140,7 @@ wI
 "}
 (15,1,1) = {"
 wI
-Eq
+hB
 qK
 Uc
 EQ
@@ -6455,7 +6451,7 @@ qL
 qL
 Ev
 gQ
-RK
+Dr
 kU
 Mg
 fg
@@ -6487,11 +6483,11 @@ Es
 BJ
 qL
 BU
-Dr
-Dr
-Dr
-Dr
-Dr
+uD
+uD
+uD
+uD
+uD
 wI
 "}
 (26,1,1) = {"
