@@ -1,10 +1,10 @@
 /obj/projectile/plasma
 	name = "plasma blast"
 	icon_state = "plasmacutter"
-	damage_type = BRUTE
-	damage = 5
+	damage_type = BURN
+	damage = 15
 	range = 4
-	dismemberment = 20
+	dismemberment = 10
 	/// chance that the plasmablast ruins the ore
 	var/slag_chance = 33
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser

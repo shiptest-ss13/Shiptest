@@ -5,7 +5,6 @@
 	desc = "It's a cape that can be worn around your neck."
 	icon = 'icons/obj/clothing/cloaks.dmi'
 	icon_state = "qmcloak"
-	item_state = "qmcloak"
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDESUITSTORAGE
@@ -180,19 +179,3 @@
 	resistance_flags = NONE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	flags_cover = HEADCOVERSEYES
-
-/obj/item/clothing/suit/hooded/cloak/goliath/polar
-	name = "polar cloak"
-	icon_state = "polarcloak"
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/polar
-	desc = "A tribal hood made from a polar bears pelt. Keeps it's wearer warm and looks badass while doing it."
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS
-
-/obj/item/clothing/head/hooded/cloakhood/goliath/polar
-	name = "polar cloak"
-	icon_state = "hoodie_gray"
-	mob_overlay_state = "polhood"
-	desc = "Wear bear on head show little man you big man, kill bear for cloak."
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-	cold_protection = HEAD

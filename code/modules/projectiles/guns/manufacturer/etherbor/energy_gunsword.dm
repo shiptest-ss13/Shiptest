@@ -14,9 +14,13 @@
 	fire_delay = 0.16 SECONDS
 
 	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.35
+	wield_slowdown = LASER_RIFLE_SLOWDOWN
 
-	cell_type = /obj/item/stock_parts/cell/gun/kalix
+	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
@@ -43,7 +47,7 @@
 	armour_penetration = -10
 
 /obj/item/gun/energy/kalix/empty_cell
-	dead_cell = TRUE
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/kalix/pgf
 	name = "Etherbor BG-16"
@@ -54,7 +58,11 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	cell_type = /obj/item/stock_parts/cell/gun/pgf
+	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
 
 /obj/projectile/beam/hitscan/kalix/pgf
@@ -81,12 +89,16 @@
 	modifystate = FALSE
 
 	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
 	spread_unwielded = 5
 
-	cell_type = /obj/item/stock_parts/cell/gun/kalix
+	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pistol)
 
 
@@ -98,7 +110,7 @@
 	delay = 0
 
 /obj/item/gun/energy/kalix/pistol/empty_cell
-	dead_cell = TRUE
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "Etherbor HBG-7"
@@ -116,7 +128,7 @@
 	fire_delay = 0.2 SECONDS
 
 	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.6
+	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
 
 	spread = 0
 	spread_unwielded = 20
@@ -169,5 +181,5 @@
 	spread = -5
 	spread_unwielded = 40
 
-	wield_slowdown = 1
+	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS

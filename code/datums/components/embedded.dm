@@ -164,7 +164,10 @@
 	if(harmful && prob(chance))
 		var/damage = weapon.w_class * jostle_pain_mult
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage)
-		to_chat(victim, "<span class='userdanger'>[weapon] embedded in your [limb.name] jostles and stings!</span>")
+		if(HAS_TRAIT(victim, TRAIT_ANALGESIA))
+			to_chat(victim, span_notice("[weapon] embedded in your [limb.name] shifts around."))
+			return
+		to_chat(victim, span_userdanger("[weapon] embedded in your [limb.name] jostles and stings!"))
 
 
 /// Called when then item randomly falls out of a carbon. This handles the damage and descriptors, then calls safe_remove()
@@ -205,7 +208,7 @@
 		if(harmful)
 			var/damage = weapon.w_class * remove_pain_mult
 			limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage) //It hurts to rip it out, get surgery you dingus.
-			victim.emote("scream")
+			victim.force_scream()
 			victim.visible_message("<span class='notice'>[victim] successfully rips [weapon] out of [victim.p_their()] [limb.name]!</span>", "<span class='notice'>You successfully remove [weapon] from your [limb.name].</span>")
 		else
 			victim.visible_message("<span class='notice'>[victim] successfully rips [weapon] off of [victim.p_their()] [limb.name]!</span>", "<span class='notice'>You successfully remove [weapon] from your [limb.name].</span>")

@@ -333,6 +333,14 @@
 			new mineral_path(T, 2)
 	qdel(src)
 
+/obj/structure/door_assembly/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, 3 SECONDS, volume=100))
+		to_chat(user, "<span class='warning'>You slice [src] apart.</span>")
+		deconstruct(FALSE)
+		return TRUE
 
 /obj/structure/door_assembly/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	if(the_rcd.mode == RCD_DECONSTRUCT)

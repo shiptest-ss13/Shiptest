@@ -395,7 +395,7 @@
 			L.manual_emote("roar")
 		else if(ishuman(L)) //For humans
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
-			L.manual_emote("scream")
+			L.force_manual_scream()
 			L.Paralyze(100)
 		else if(ismonkey(L)) //For monkeys
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)

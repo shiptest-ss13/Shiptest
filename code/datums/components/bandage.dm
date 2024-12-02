@@ -41,7 +41,7 @@
 	SIGNAL_HANDLER
 
 	var/obj/item/bodypart/heal_target = parent
-	lifespan -= 1 + heal_target.bleeding // particularly nasty bleeding can burn through dressing faster
+	lifespan--
 	heal_target.adjust_bleeding(-bleed_reduction)
 	if(lifespan <= 0 || !heal_target.bleeding) //remove treatment once it's no longer able to treat
 		drop_bandage(TRUE)

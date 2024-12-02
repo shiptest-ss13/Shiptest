@@ -46,6 +46,20 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Test Room"
 	icon_state = "storage"
 
+/area/hyperspace
+	icon_state = "space"
+	requires_power = TRUE
+	always_unpowered = TRUE
+	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	power_light = FALSE
+	power_equip = FALSE
+	power_environ = FALSE
+	area_flags = UNIQUE_AREA | CAVES_ALLOWED | MOB_SPAWN_ALLOWED
+	outdoors = TRUE
+	ambientsounds = SPACE
+	flags_1 = CAN_BE_DIRTY_1
+	sound_environment = SOUND_AREA_SPACE
+
 //EXTRA
 
 /area/asteroid
@@ -148,6 +162,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/crew/crewfive
 	name = "Crew Quarters 5"
+
+/area/ship/crew/specialized
+	name = "???"
+
+/area/ship/crew/specialized/medical
+	name = "Medical Specialist's Quarters"
+
+/area/ship/crew/specialized/security
+	name = "Security Specialist's Quarters"
+
+/area/ship/crew/specialized/engineering
+	name = "Engineering Specialist's Quarters"
+
+/area/ship/crew/specialized/cargo
+	name = "Cargo Specialist's Quarters"
 
 /area/ship/crew/cryo
 	name = "Cryopod Room"
@@ -291,6 +320,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
 	ambientsounds = list('sound/ambience/ambimalf.ogg', 'sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambiatmos.ogg', 'sound/ambience/ambiatmos2.ogg')
+
+/area/ship/science/workshop
+	name = "Workshop"
+	icon_state = "workshop"
 
 /// Engineering ///
 /area/ship/engineering

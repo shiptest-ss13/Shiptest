@@ -27,8 +27,8 @@
 	locked = 0;
 	name = "fridge"
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/storage/cans/sixbeer,
 /obj/item/reagent_containers/food/snacks/icecreamsandwich,
 /obj/machinery/light/directional/south,
@@ -50,10 +50,7 @@
 	pixel_x = -11;
 	pixel_y = 5
 	},
-/obj/item/ammo_box/a762_40/inteq{
-	pixel_x = 5;
-	pixel_y = 12
-	},
+/obj/item/storage/box/ammo/a762_40/inteq,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey{
 	pixel_x = -7;
 	pixel_y = 6
@@ -364,6 +361,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/tank/jetpack/oxygen,
+/obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "hY" = (
@@ -492,6 +490,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/tank/jetpack/oxygen,
+/obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "mw" = (
@@ -575,6 +574,7 @@
 	dir = 8
 	},
 /obj/item/tank/jetpack/oxygen,
+/obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "nL" = (
@@ -971,7 +971,7 @@
 	req_access_txt = "58"
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/mask/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/assault,
@@ -1393,6 +1393,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/item/attachment/rail_light,
+/obj/item/attachment/rail_light,
+/obj/item/attachment/rail_light,
+/obj/item/attachment/rail_light,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "EC" = (
@@ -2046,11 +2050,11 @@
 	dir = 4
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -2231,6 +2235,7 @@
 	dir = 8
 	},
 /obj/item/tank/jetpack/oxygen,
+/obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "Wf" = (
@@ -2346,9 +2351,7 @@
 /obj/item/gps{
 	pixel_x = 12
 	},
-/obj/item/stamp/hos{
-	name = "vanguard's rubber stamp"
-	},
+/obj/item/stamp/inteq/vanguard,
 /obj/item/pen/fountain,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)

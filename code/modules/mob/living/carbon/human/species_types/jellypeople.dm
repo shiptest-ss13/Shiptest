@@ -20,7 +20,7 @@
 	coldmod = 6   // = 3x cold damage
 	heatmod = 0.5 // = 1/4x heat damage
 	burnmod = 0.5 // = 1/2x generic burn damage
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	inherent_factions = list("slime")
 	species_language_holder = /datum/language_holder/jelly
 	ass_image = 'icons/ass/assslime.png'
@@ -222,7 +222,7 @@
 	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,NOBLOOD)
 	hair_color = "mutcolor"
 	hair_alpha = 150
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN
 	var/datum/action/innate/split_body/slime_split
 	var/list/mob/living/carbon/bodies
 	var/datum/action/innate/swap_body/swap_body
@@ -517,50 +517,22 @@
 	id = SPECIES_LUMINESCENT
 	var/glow_intensity = LUMINESCENT_DEFAULT_GLOW
 	var/obj/effect/dummy/luminescent_glow/glow
-	var/obj/item/slime_extract/current_extract
-	var/datum/action/innate/integrate_extract/integrate_extract
-	var/datum/action/innate/use_extract/extract_minor
-	var/datum/action/innate/use_extract/major/extract_major
-	var/extract_cooldown = 0
-
 	examine_limb_id = SPECIES_JELLYPERSON
 
 //Species datums don't normally implement destroy, but JELLIES SUCK ASS OUT OF A STEEL STRAW
 /datum/species/jelly/luminescent/Destroy(force, ...)
-	current_extract = null
 	QDEL_NULL(glow)
-	QDEL_NULL(integrate_extract)
-	QDEL_NULL(extract_major)
-	QDEL_NULL(extract_minor)
 	return ..()
 
 
 /datum/species/jelly/luminescent/on_species_loss(mob/living/carbon/C)
 	..()
-	if(current_extract)
-		current_extract.forceMove(C.drop_location())
-		current_extract = null
 	QDEL_NULL(glow)
-	QDEL_NULL(integrate_extract)
-	QDEL_NULL(extract_major)
-	QDEL_NULL(extract_minor)
 
 /datum/species/jelly/luminescent/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
 	glow = new(C)
 	update_glow(C)
-	integrate_extract = new(src)
-	integrate_extract.Grant(C)
-	extract_minor = new(src)
-	extract_minor.Grant(C)
-	extract_major = new(src)
-	extract_major.Grant(C)
-
-/datum/species/jelly/luminescent/proc/update_slime_actions()
-	integrate_extract.update_name()
-	integrate_extract.UpdateButtonIcon()
-	extract_minor.UpdateButtonIcon()
-	extract_major.UpdateButtonIcon()
 
 /datum/species/jelly/luminescent/proc/update_glow(mob/living/carbon/C, intensity)
 	if(intensity)
@@ -580,108 +552,6 @@
 	. = ..()
 	if(!isliving(loc))
 		return INITIALIZE_HINT_QDEL
-
-
-/datum/action/innate/integrate_extract
-	name = "Integrate Extract"
-	desc = "Eat a slime extract to use its properties."
-	check_flags = AB_CHECK_CONSCIOUS
-	button_icon_state = "slimeconsume"
-	icon_icon = 'icons/mob/actions/actions_slime.dmi'
-	background_icon_state = "bg_alien"
-
-/datum/action/innate/integrate_extract/proc/update_name()
-	var/datum/species/jelly/luminescent/species = target
-	if(!species || !species.current_extract)
-		name = "Integrate Extract"
-		desc = "Eat a slime extract to use its properties."
-	else
-		name = "Eject Extract"
-		desc = "Eject your current slime extract."
-
-/datum/action/innate/integrate_extract/UpdateButtonIcon(status_only, force)
-	var/datum/species/jelly/luminescent/species = target
-	if(!species || !species.current_extract)
-		button_icon_state = "slimeconsume"
-	else
-		button_icon_state = "slimeeject"
-	..()
-
-/datum/action/innate/integrate_extract/ApplyIcon(atom/movable/screen/movable/action_button/current_button, force)
-	..(current_button, TRUE)
-	var/datum/species/jelly/luminescent/species = target
-	if(species?.current_extract)
-		current_button.add_overlay(mutable_appearance(species.current_extract.icon, species.current_extract.icon_state))
-
-/datum/action/innate/integrate_extract/Activate()
-	var/mob/living/carbon/human/H = owner
-	var/datum/species/jelly/luminescent/species = target
-	if(!is_species(H, /datum/species/jelly/luminescent) || !species)
-		return
-	CHECK_DNA_AND_SPECIES(H)
-
-	if(species.current_extract)
-		var/obj/item/slime_extract/S = species.current_extract
-		if(!H.put_in_active_hand(S))
-			S.forceMove(H.drop_location())
-		species.current_extract = null
-		to_chat(H, "<span class='notice'>You eject [S].</span>")
-		species.update_slime_actions()
-	else
-		var/obj/item/I = H.get_active_held_item()
-		if(istype(I, /obj/item/slime_extract))
-			var/obj/item/slime_extract/S = I
-			if(!S.Uses)
-				to_chat(H, "<span class='warning'>[I] is spent! You cannot integrate it.</span>")
-				return
-			if(!H.temporarilyRemoveItemFromInventory(S))
-				return
-			S.forceMove(H)
-			species.current_extract = S
-			to_chat(H, "<span class='notice'>You consume [I], and you feel it pulse within you...</span>")
-			species.update_slime_actions()
-		else
-			to_chat(H, "<span class='warning'>You need to hold an unused slime extract in your active hand!</span>")
-
-/datum/action/innate/use_extract
-	name = "Extract Minor Activation"
-	desc = "Pulse the slime extract with energized jelly to activate it."
-	check_flags = AB_CHECK_CONSCIOUS
-	button_icon_state = "slimeuse1"
-	icon_icon = 'icons/mob/actions/actions_slime.dmi'
-	background_icon_state = "bg_alien"
-	var/activation_type = SLIME_ACTIVATE_MINOR
-
-/datum/action/innate/use_extract/IsAvailable()
-	if(..())
-		var/datum/species/jelly/luminescent/species = target
-		if(species && species.current_extract && (world.time > species.extract_cooldown))
-			return TRUE
-		return FALSE
-
-/datum/action/innate/use_extract/ApplyIcon(atom/movable/screen/movable/action_button/current_button, force)
-	..(current_button, TRUE)
-	var/datum/species/jelly/luminescent/species = owner
-	if(species?.current_extract)
-		current_button.add_overlay(mutable_appearance(species.current_extract.icon, species.current_extract.icon_state))
-
-/datum/action/innate/use_extract/Activate()
-	var/mob/living/carbon/human/H = owner
-	var/datum/species/jelly/luminescent/species = owner
-	if(!is_species(H, /datum/species/jelly/luminescent) || !species)
-		return
-	CHECK_DNA_AND_SPECIES(H)
-
-	if(species.current_extract)
-		species.extract_cooldown = world.time + 100
-		var/cooldown = species.current_extract.activate(H, species, activation_type)
-		species.extract_cooldown = world.time + cooldown
-
-/datum/action/innate/use_extract/major
-	name = "Extract Major Activation"
-	desc = "Pulse the slime extract with plasma jelly to activate it."
-	button_icon_state = "slimeuse2"
-	activation_type = SLIME_ACTIVATE_MAJOR
 
 ///////////////////////////////////STARGAZERS//////////////////////////////////////////
 

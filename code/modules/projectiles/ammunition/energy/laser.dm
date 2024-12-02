@@ -6,6 +6,9 @@
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
+/obj/projectile/beam/laser/eoehoma/hermit // Used for the Hermits with E-11 because apparently you can only set it on projectile for simple mobs? That's fun!
+	spread = 80
+
 /obj/item/ammo_casing/energy/laser/assault
 	projectile_type = /obj/projectile/beam/laser/assault
 	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
@@ -28,7 +31,7 @@
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
 /obj/item/ammo_casing/energy/laser/smg
-	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
+	projectile_type = /obj/projectile/beam/laser/weak
 	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"
 	delay = 0.13 SECONDS

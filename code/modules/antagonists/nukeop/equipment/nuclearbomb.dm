@@ -473,8 +473,6 @@
 			off_station = NUKE_NEAR_MISS
 		if((bomb_location.x < (128-NUKERANGE)) || (bomb_location.x > (128+NUKERANGE)) || (bomb_location.y < (128-NUKERANGE)) || (bomb_location.y > (128+NUKERANGE)))
 			off_station = NUKE_NEAR_MISS
-	else if(bomb_location.onSyndieBase())
-		off_station = NUKE_SYNDICATE_BASE
 	else
 		off_station = NUKE_MISS_STATION
 
@@ -524,6 +522,10 @@
 		to_chat(user, "<span class='notice'>[src] has had its plutonium core removed as a part of being decommissioned.</span>")
 		return TRUE
 	return ..()
+
+/obj/machinery/nuclearbomb/beer/empty/Initialize()
+	. = ..()
+	keg.reagent_id = null
 
 /obj/machinery/nuclearbomb/beer/actually_explode()
 	//Unblock roundend, we're not actually exploding.

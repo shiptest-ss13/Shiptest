@@ -220,7 +220,6 @@
 					to_chat(user, "<span class='notice'>You connect the monitor.</span>")
 					if(brain)
 						var/mob/living/brain/B = brain.brainmob
-						SSticker.mode.remove_antag_for_borging(B.mind)
 
 						var/mob/living/silicon/ai/A = null
 

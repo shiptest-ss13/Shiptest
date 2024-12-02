@@ -12,7 +12,9 @@
 	var/static/list/folder_insertables = typecacheof(list(
 		/obj/item/paper,
 		/obj/item/photo,
-		/obj/item/documents
+		/obj/item/documents,
+		/obj/item/disk,
+		/obj/item/tape,
 	))
 
 /obj/item/folder/Initialize()

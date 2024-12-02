@@ -20,7 +20,7 @@
 	var/pressure_direction = 0
 	var/turf/pressure_specific_target
 
-	var/datum/gas_mixture/turf/air
+	var/datum/gas_mixture/air
 
 	var/obj/effect/hotspot/active_hotspot
 	var/planetary_atmos = FALSE //air will revert to initial_gas_mix over time
@@ -184,14 +184,14 @@
 /turf/proc/handle_decompression_floor_rip()
 
 /turf/open/floor/handle_decompression_floor_rip(sum)
-	if(sum > 20 && prob(clamp(sum / 10, 0, 30)) && !blocks_air)
+	if(!blocks_air && sum > 20 && prob(clamp(sum / 10, 0, 30)))
 		remove_tile()
 
 /turf/open/process_cell(fire_count)
 
 //////////////////////////SPACEWIND/////////////////////////////
 
-/turf/proc/consider_pressure_difference()
+/turf/proc/consider_pressure_difference(turf/T, difference)
 	return
 
 /turf/open/consider_pressure_difference(turf/T, difference)

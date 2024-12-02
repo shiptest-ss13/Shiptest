@@ -79,6 +79,14 @@
 				return
 	return ..()
 
+/obj/structure/barricade/wooden/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, 2 SECONDS, volume=0))
+		to_chat(user, "<span class='warning'>You cut apart [src].</span>")
+		deconstruct()
+		return TRUE
 
 /obj/structure/barricade/wooden/crude
 	name = "crude plank barricade"
