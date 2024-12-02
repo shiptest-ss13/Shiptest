@@ -839,13 +839,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
-"hB" = (
-/obj/structure/sign/solgov_seal{
-	pixel_x = 28;
-	pixel_y = 0
-	},
-/turf/template_noop,
-/area/template_noop)
 "hM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/neck/stripedsolgovscarf,
@@ -1025,6 +1018,13 @@
 "jF" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
+"jH" = (
+/obj/structure/sign/solgov_seal{
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/turf/template_noop,
+/area/template_noop)
 "jJ" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 1
@@ -1158,13 +1158,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "kN" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "sg_par_sonnen"
-	},
-/turf/open/floor/plating,
-/area/ship/security/armory)
+/obj/structure/sign/solgov_seal,
+/turf/template_noop,
+/area/template_noop)
 "kO" = (
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
@@ -1265,6 +1261,12 @@
 	dwidth = 15;
 	height = 15;
 	width = 30
+	},
+/turf/template_noop,
+/area/template_noop)
+"lv" = (
+/obj/structure/sign/solgov_seal{
+	pixel_y = -27
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2189,7 +2191,12 @@
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "uD" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "sg_par_sonnen"
+	},
+/turf/open/floor/plating,
 /area/ship/security/armory)
 "uJ" = (
 /obj/effect/turf_decal/siding/yellow{
@@ -3142,10 +3149,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "Dr" = (
-/obj/structure/sign/solgov_flag{
-	pixel_x = -1;
-	pixel_y = 0
-	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security/armory)
 "Du" = (
@@ -3176,12 +3179,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
-"Dw" = (
-/obj/structure/sign/solgov_seal{
-	pixel_y = -27
-	},
-/turf/template_noop,
-/area/template_noop)
 "Dz" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -3716,9 +3713,12 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "IP" = (
-/obj/structure/sign/solgov_seal,
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/sign/solgov_flag{
+	pixel_x = -1;
+	pixel_y = 0
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security/armory)
 "IX" = (
 /obj/item/clothing/head/solgov/captain,
 /obj/item/clothing/suit/armor/vest/solgov/captain,
@@ -4744,7 +4744,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "RI" = (
@@ -5944,7 +5943,7 @@ vB
 vB
 wb
 PY
-IP
+kN
 "}
 (9,1,1) = {"
 wI
@@ -6044,7 +6043,7 @@ wI
 "}
 (12,1,1) = {"
 wI
-Dw
+lv
 Wt
 rY
 AX
@@ -6072,7 +6071,7 @@ sC
 ph
 wb
 NY
-IP
+kN
 "}
 (13,1,1) = {"
 wI
@@ -6140,7 +6139,7 @@ wI
 "}
 (15,1,1) = {"
 wI
-hB
+jH
 qK
 Uc
 EQ
@@ -6423,7 +6422,7 @@ iW
 mT
 NE
 gK
-kN
+uD
 wI
 "}
 (24,1,1) = {"
@@ -6451,11 +6450,11 @@ qL
 qL
 Ev
 gQ
-Dr
+IP
 kU
 Mg
 fg
-kN
+uD
 wI
 "}
 (25,1,1) = {"
@@ -6483,11 +6482,11 @@ Es
 BJ
 qL
 BU
-uD
-uD
-uD
-uD
-uD
+Dr
+Dr
+Dr
+Dr
+Dr
 wI
 "}
 (26,1,1) = {"
