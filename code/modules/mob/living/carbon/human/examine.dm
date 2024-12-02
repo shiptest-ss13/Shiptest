@@ -338,6 +338,17 @@
 		if(151 to INFINITY)
 			. += "<b>[t_He] [t_is] covered in glistening dust!</b>" //End WS edit
 
+	//slop. Someone please add an examine proc to species
+	if(iselzuose(src))
+		var/datum/species/elzuose/ourspecies = dna.species
+		switch(ourspecies.carapace_state)
+			if(CARAPACE_DAMAGED)
+				. += span_warning("[t_His] skin is backlit by small, hairline fractures.")
+			if(CARAPACE_BREAKING)
+				. += span_warning("[t_His] skin is underlaid with precarious looking cracks, on the verge of splitting apart.")
+			if(CARAPACE_BROKEN)
+				. += span_warning("<b>[t_His] carapace has completely splintered apart, exposing flashes of the delicate tissue beneath.<b>")
+
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))
 		. += trait_exam
