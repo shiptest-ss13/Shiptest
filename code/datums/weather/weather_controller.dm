@@ -152,3 +152,8 @@
 		/datum/weather/nuclear_fallout = 90,
 		/datum/weather/nuclear_fallout/normal = 10,
 	)
+
+/datum/weather_controller/waterplanet/severe
+	possible_weathers = list(
+		/datum/weather/rain/heavy/storm_intense = 100,
+	)

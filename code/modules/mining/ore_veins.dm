@@ -115,11 +115,19 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 
 //
-//	Planetary and Class Subtypes - Used for lavaland
+//	Planetary and Class Subtypes
 //	The current set of subtypes are heavily subject to future balancing and reworking as the balance of them is tested more
 //
 
-/obj/structure/vein/classtwo
+//lavaland veins, same as basetype
+/obj/structure/vein/lavaland
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 20,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		)
+
+/obj/structure/vein/lavaland/classtwo
 	mining_charges = 8
 	vein_class = 2
 	ore_list = list(
@@ -143,7 +151,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 5,
 		)
 
-/obj/structure/vein/classthree
+/obj/structure/vein/lavaland/classthree
 	mining_charges = 10
 	vein_class = 3
 	ore_list = list(
@@ -278,7 +286,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/rutile = 4,
 		)
 	max_mobs = 6
-	spawn_time = 10 SECONDS
+	spawn_time = 15 SECONDS
 
 /obj/structure/vein/jungle/classthree
 	mining_charges = 10
@@ -303,7 +311,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 	//jungle mobs are kind of fucking hard, less max
 	max_mobs = 4
-	spawn_time = 8 SECONDS
+	spawn_time = 10 SECONDS
 
 //Sand planets - more or less the same as lavaland but with the sand planet variants
 
@@ -440,7 +448,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	max_mobs = 6
 	spawn_time = 8 SECONDS
 
-//wasteplanet, gives almost exclusively scrap but lots of it
+//wasteplanet
 /obj/structure/vein/waste
 	// class 1 has easy mobs, the ones you find on the surface
 	mob_types = list(
@@ -696,7 +704,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 1,
 		)
 
-	max_mobs = 0
+	max_mobs = -1
 	spawn_time = 8 SECONDS
 	///His greed was his downfall
 	var/greed_chance = 5
@@ -704,14 +712,13 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/shrouded/Initialize()
 	. = ..()
 	if(prob(greed_chance))
-		max_mobs = 10
+		max_mobs = 15
 
 /obj/structure/vein/shrouded/classtwo
 	mining_charges = 10
 	vein_class = 2
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/antlion = 70,
-		/mob/living/simple_animal/hostile/asteroid/antlion/mega = 10,
+		/mob/living/simple_animal/hostile/asteroid/royalcrab
 		)
 
 	ore_list = list(
@@ -735,8 +742,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 3
 
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/antlion = 50,
-		/mob/living/simple_animal/hostile/asteroid/antlion/mega = 5,
+		/mob/living/simple_animal/hostile/asteroid/royalcrab
 		)
 
 	ore_list = list(

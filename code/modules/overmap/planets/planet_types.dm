@@ -20,16 +20,21 @@
 	///The color we set the token to, note this is overridden by fancy overmaps
 	var/color = "#ffffff"
 	///Our weight when picking a new overmap object
-	var/weight = 20
+	var/weight = 40
 	///Do we not self destruct when a ship undocks with no players left behind?
 	var/preserve_level = FALSE
 	///The sound we play when we are landed on. Not reccomended outside of stingers.
 	var/landing_sound
 	///We read from this list to let players know the most common ores on this planet, otherwise does nothing.
 	var/list/primary_ores
+	///Do we 'selfloop' like the overmap? Probably should only enable this on space levels
+	var/selfloop = FALSE
+	///How much of a radio message we mess up on nearby or on landed/orbitting ships
+	var/interference_power = 0
+
 
 /datum/planet_type/lava
-	name = "lava planet"
+	name = "lava planetoid"
 	desc = "A planet rife with seismic and volcanic activity. High temperatures and dangerous xenofauna render it dangerous for the unprepared."
 	planet = DYNAMIC_WORLD_LAVA
 	icon_state = "lava"
@@ -39,6 +44,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
+	interference_power = 5
 
 	primary_ores = list(\
 		/obj/item/stack/ore/sulfur,
@@ -50,7 +56,7 @@
 
 
 /datum/planet_type/ice
-	name = "frozen planet"
+	name = "frozen planetoid"
 	desc = "A frozen planet covered in thick snow, thicker ice, and dangerous predators."
 	planet = DYNAMIC_WORLD_ICE
 	icon_state = "ice"
@@ -69,7 +75,7 @@
 		)
 
 /datum/planet_type/jungle
-	name = "jungle planet"
+	name = "jungle planetoid"
 	desc = "A densely forested world, filled with vines, animals, and underbrush. Surprisingly habitable with a machete."
 	planet = DYNAMIC_WORLD_JUNGLE
 	icon_state = "jungle"
@@ -88,7 +94,7 @@
 		)
 
 /datum/planet_type/rock
-	name = "rock planet"
+	name = "rock planetoid"
 	desc = "A rocky red world in the midst of terraforming. While some plants have taken hold, it is widely hostile to life."
 	planet = DYNAMIC_WORLD_ROCKPLANET
 	icon_state = "rock"
@@ -104,7 +110,7 @@
 		)
 
 /datum/planet_type/sand
-	name = "salty sand planet"
+	name = "salty sand planetoid"
 	desc = "A formerly vibrant world, turned to sand by the ravages of the ICW. The survivors of it are long mad by now."
 	planet = DYNAMIC_WORLD_SAND
 	icon_state = "whitesands"
@@ -122,7 +128,7 @@
 
 
 /datum/planet_type/beach
-	name = "ocean planet"
+	name = "ocean planetoid"
 	desc = "The platonic ideal of vacation spots. Warm, comfortable temperatures, and a breathable atmosphere."
 	planet = DYNAMIC_WORLD_BEACHPLANET
 	icon_state = "ocean"
@@ -150,9 +156,11 @@
 	weather_controller_type = null
 	weight = 0
 	ruin_type = RUINTYPE_YELLOW
+	interference_power = 20
 
+//legacy asteroid field, avoid using this outside of punchcards
 /datum/planet_type/asteroid
-	name = "legacy asteroid field"
+	name = "asteroid field"
 	desc = "A field of asteroids with significant traces of minerals."
 	planet = DYNAMIC_WORLD_ASTEROID
 	icon_state = "asteroid"
@@ -164,7 +172,7 @@
 	weather_controller_type = null
 	ruin_type = null // asteroid ruins when
 	weight = 0
-	//landing_sound = 'sound/effects/planet_landing_1.ogg'
+	selfloop = TRUE
 	primary_ores = list(\
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/hematite,
@@ -181,10 +189,10 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = RUINTYPE_SPACE
-	//landing_sound = 'sound/effects/planet_landing_2.ogg'
+	selfloop = TRUE
 
 /datum/planet_type/waste
-	name = "waste disposal planet"
+	name = "waste disposal planetoid"
 	desc = "A highly oxygenated world, coated in garbage, radiation, and rust."
 	planet = DYNAMIC_WORLD_WASTEPLANET
 	icon_state = "waste"
@@ -194,7 +202,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
-	//landing_sound = 'sound/effects/planet_landing_2.ogg'
+	interference_power = 5
 	primary_ores = list(\
 		/obj/item/stack/ore/sulfur,
 		/obj/item/stack/ore/hematite,
@@ -217,7 +225,7 @@
 	ruin_type = null //it's a Gas Giant. Not Cloud fuckin City
 	weight = 0
 	preserve_level = TRUE
-	//landing_sound = 'sound/effects/planet_landing_1.ogg'
+	interference_power = 10
 
 /datum/planet_type/plasma_giant
 	name = "plasma giant"
@@ -230,17 +238,17 @@
 	weight = 0
 	icon_state = "giant"
 	preserve_level = TRUE
-	//landing_sound = 'sound/effects/planet_landing_1.ogg'
+	interference_power = 10
 
 /datum/planet_type/water
-	name = "aqua planet"
+	name = "aqua planetoid"
 	desc = "A very weak energy signal originating from a planet entirely covered in water with caves with oxygen pockets."
 	planet = DYNAMIC_WORLD_WATERPLANET
 	icon_state = "water"
 	color = LIGHT_COLOR_DARK_BLUE
-	weight = 5
+	weight = 0
 
-	ruin_type = RUINTYPE_WATER // minor planets have no ruins
+	//ruin_type = RUINTYPE_WATER
 	mapgen = /datum/map_generator/planet_generator/waterplanet
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/water/beach/deep
@@ -253,14 +261,14 @@
 		)
 
 /datum/planet_type/desert
-	name = "desert planet"
+	name = "desert planetoid"
 	desc = "A very weak energy signal originating from a very hot and harsh planet."
 	planet = DYNAMIC_WORLD_DESERT
 	icon_state = "desert"
 	color = "#f3c282"
-	weight = 5
+	weight = 0
 
-	ruin_type = RUINTYPE_DESERT // minor planets have no ruins
+	//ruin_type = RUINTYPE_DESERT
 	mapgen = /datum/map_generator/planet_generator/desert
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
@@ -273,18 +281,19 @@
 		)
 
 /datum/planet_type/shrouded
-	name = "shrouded planet"
-	desc = "A very weak energy signal originating from a planet shrouded in a perpetual storm of bizzare, light absorbing particles."
+	name = "shrouded planetoid"
+	desc = "A very weak energy signal originating from a planet shrouded in a perpetual storm of bizzare particles that absorb almost all waves on the electromagnetic spectrum."
 	planet = DYNAMIC_WORLD_SHROUDED
 	icon_state = "shrouded"
 	color = "#783ca4"
-	weight = 5
+	weight = 0
 
 	//ruin_type = RUINTYPE_SHROUDED
 	mapgen = /datum/map_generator/planet_generator/shrouded
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/shrouded
 	weather_controller_type = /datum/weather_controller/shrouded
+	interference_power = 100
 
 	primary_ores = list(\
 		/obj/item/stack/ore/autunite,
@@ -298,8 +307,8 @@
 	planet = DYNAMIC_WORLD_MOON
 	icon_state = "moon"
 	color = "#d1c3c3"
+	weight = 15
 
-	ruin_type = null // minor 'planets' have no ruins
 	mapgen = /datum/map_generator/planet_generator/moon
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
@@ -312,7 +321,7 @@
 		)
 
 /datum/planet_type/battlefield
-	name = "battlefield planet"
+	name = "battlefield planetoid"
 	desc = "The site of a major ICW battlefield. The remminants of a major city, colony, or nature reserve, reduced to a muddy hellscape by decades of fighing. Beware the toxic rain, wear a gas mask!"
 	planet = DYNAMIC_WORLD_BATTLEFIELD
 	icon_state = "battlefield"
@@ -350,7 +359,7 @@
 	area_type = /area/overmap_encounter/planetoid
 
 /datum/planet_type/snowball
-	name = "snowball dwarf planet"
+	name = "snowball dwarf planetoid"
 	desc = "A world entirely covered in snow from violent storms; there is with absolute certainty nothing of interest here."
 	planet = DYNAMIC_WORLD_SNOWBALL
 	icon_state = "misc"
@@ -367,8 +376,8 @@
 	area_type = /area/overmap_encounter/planetoid/snowball
 
 /datum/planet_type/dustball
-	name = "dustball dwarf planet"
-	desc = "A world entirely covered in dust; there is with absolute certainty nothing of interest here."
+	name = "dustball dwarf planetoid"
+	desc = "A world entirely covered in dust; there is with absolute certainty nothing of interest here. This would make an awful place to make a crash landing in."
 	planet = DYNAMIC_WORLD_DUSTBALL
 	icon_state = "misc"
 	color = COLOR_WHITE
@@ -384,7 +393,7 @@
 
 
 /datum/planet_type/duneball
-	name = "duneball dwarf planet"
+	name = "duneball dwarf planetoid"
 	desc = "A world entirely covered in hot arid sand; there is with absolute certainty nothing of interest here."
 	planet = DYNAMIC_WORLD_SUPERFLAT
 	icon_state = "misc"
@@ -400,7 +409,7 @@
 	area_type = /area/overmap_encounter/planetoid/duneball
 
 /datum/planet_type/waterball
-	name = "waterball dwarf planet"
+	name = "waterball dwarf planetoid"
 	desc = "A world entirely covered in cool water and cooler storms; there is with absolute certainty nothing of interest here.."
 	planet = DYNAMIC_WORLD_SUPERFLAT
 	icon_state = "misc"
@@ -408,7 +417,7 @@
 	mapgen = /datum/map_generator/single_turf/waterball
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
-	weather_controller_type = /datum/weather_controller/rockplanet/severe
+	weather_controller_type = /datum/weather_controller/waterplanet/severe
 	weight = 1
 
 /datum/map_generator/single_turf/waterball

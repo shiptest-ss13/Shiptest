@@ -102,11 +102,11 @@
 		/obj/structure/geyser/random = 4,
 		/obj/effect/spawner/random/anomaly/lava = 2,
 		/obj/structure/flora/rock/hell = 14,
-		/obj/structure/vein = 5,
-		/obj/structure/vein/classtwo = 2,
+		/obj/structure/vein/lavaland = 5,
+		/obj/structure/vein/lavaland/classtwo = 2,
 		/obj/structure/elite_tumor = 2,
 		/obj/structure/geyser/random = 2,
-		/obj/structure/vein/classthree = 1,
+		/obj/structure/vein/lavaland/classthree = 1,
 		/obj/effect/spawner/minefield = 1,
 		/obj/effect/spawner/random/anomaly/lava = 1,
 	)
@@ -166,9 +166,9 @@
 		/obj/structure/flora/tree/dead/barren = 50,
 		/obj/structure/flora/tree/dead/tall/grey = 45,
 		/obj/effect/spawner/random/anomaly/lava = 10,
-		/obj/structure/vein = 5,
-		/obj/structure/vein/classtwo = 2,
-		/obj/structure/vein/classthree = 1,
+		/obj/structure/vein/lavaland = 5,
+		/obj/structure/vein/lavaland/classtwo = 2,
+		/obj/structure/vein/lavaland/classthree = 1,
 	)
 
 /datum/biome/lavaland/plains/dense/mixed

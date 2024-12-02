@@ -121,6 +121,12 @@
 	// If all went well we return the encounter
 	return encounter
 
+//basetype for mission punchcards, this has the tells for an improperly set punchcard removed for use by missions
+/obj/item/overmap_punchcard_spawner/dynamic/mission
+	encounter_name = null
+	planet_name = null
+	planet_type = /datum/planet_type/lava
+
 // ** STATIC OBJECTS **//
 
 /obj/item/overmap_punchcard_spawner/static_overmap

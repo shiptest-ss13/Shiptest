@@ -85,13 +85,27 @@
 	flora_spawn_chance = 0
 	mob_spawn_chance = 0
 
+	feature_spawn_chance = 0.1
+	feature_spawn_list = list(
+		/obj/structure/vein/shrouded = 4,
+		/obj/structure/vein/shrouded/classtwo = 6,
+		/obj/structure/vein/shrouded/classthree = 2,
+	)
+
 /datum/biome/cave/desert/shrouded
 	open_turf_types = list(/turf/open/floor/plating/asteroid/shrouded = 1)
 	closed_turf_types = list(/turf/closed/mineral/random/shrouded = 1)
 
-	mob_spawn_chance = 3
+	mob_spawn_chance = 0
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/royalcrab = 10,
+	)
+
+	feature_spawn_chance = 0.4
+	feature_spawn_list = list(
+		/obj/structure/vein/shrouded = 6,
+		/obj/structure/vein/shrouded/classtwo = 4,
+		/obj/structure/vein/shrouded/classthree = 2,
 	)
 
 /mob/living/simple_animal/hostile/asteroid/royalcrab
@@ -101,7 +115,7 @@
 	icon_state = "royalcrab"
 	icon_living = "royalcrab"
 	icon_dead = "royalcrab_dead"
-	maxHealth = 70
+	maxHealth = 50
 
 	speed = 1
 	speak_chance = 1

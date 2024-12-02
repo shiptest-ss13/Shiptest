@@ -190,6 +190,7 @@
 	end_overlay = "smoke"
 
 	toxic_power = 20
+
 /datum/weather/rain/heavy/storm_intense
 	name = "storm"
 	desc = "Storm with rain and lightning."

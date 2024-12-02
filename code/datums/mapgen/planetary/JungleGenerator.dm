@@ -149,6 +149,12 @@
 
 /datum/biome/jungle_wasteland
 	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/wasteland = 1)
+	feature_spawn_chance = 0.2
+	feature_spawn_list = list(
+		/obj/structure/vein/jungle = 4,
+		/obj/structure/vein/jungle/classtwo = 6,
+		/obj/structure/vein/jungle/classthree = 2,
+	)
 
 /datum/biome/jungle/water
 	open_turf_types = list(/turf/open/water/jungle/lit = 1)
@@ -181,8 +187,10 @@
 	feature_spawn_chance = 0.5
 	feature_spawn_list = list(
 		/obj/item/pickaxe/rusted = 1,
-		/obj/structure/spawner/burrow/jungle_planet = 1,
-		/obj/effect/spawner/random/anomaly/jungle = 1
+		/obj/structure/spawner/burrow/jungle_planet = 4,
+		/obj/effect/spawner/random/anomaly/jungle = 2,
+		/obj/structure/vein/jungle = 8,
+		/obj/structure/vein/jungle/classtwo = 4,
 	)
 
 /datum/biome/cave/jungle/dirt

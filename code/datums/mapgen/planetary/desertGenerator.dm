@@ -81,21 +81,13 @@
 
 /datum/biome/desert
 	open_turf_types = list(/turf/open/floor/plating/asteroid/desert/lit = 1)
-	/*
-	flora_spawn_list = list(
-		/obj/structure/flora/planetary/palebush,
-		/obj/structure/flora/rock/pile,
-		/obj/structure/flora/rock,
-		/obj/structure/flora/ash/cacti,
-	)
-	*/
+
 	flora_spawn_chance = 0
 	mob_spawn_chance = 1
 
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/antlion = 100,
-	//	/mob/living/simple_animal/tindalos = 60,
-	//	/mob/living/simple_animal/thinbug = 60,
+
 		/mob/living/simple_animal/hostile/lizard = 20,
 		/mob/living/simple_animal/hostile/asteroid/antlion/mega = 10,
 	)
@@ -107,6 +99,12 @@
 		/obj/structure/flora/rock/pile = 5,
 		/obj/structure/flora/rock = 5,
 		/obj/structure/flora/ash/cacti = 1,
+	)
+	feature_spawn_chance = 0.5
+	feature_spawn_list = list(
+		/obj/structure/vein/desert = 4,
+		/obj/structure/vein/desert/classtwo = 6,
+		/obj/structure/vein/desert/classthree = 2,
 	)
 
 	flora_spawn_chance = 1
@@ -121,4 +119,11 @@
 		/mob/living/simple_animal/hostile/asteroid/antlion = 100,
 		/mob/living/simple_animal/hostile/lizard = 20,
 		/mob/living/simple_animal/hostile/asteroid/antlion/mega = 10,
+	)
+
+	feature_spawn_chance = 0.2
+	feature_spawn_list = list(
+		/obj/structure/vein/desert = 6,
+		/obj/structure/vein/desert/classtwo = 4,
+		/obj/structure/vein/desert/classthree = 2,
 	)

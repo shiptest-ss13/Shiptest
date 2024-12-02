@@ -199,6 +199,8 @@
 		var/atom/A = a
 		if(!(zap_flags & ZAP_ALLOW_DUPLICATES) && LAZYACCESS(shocked_targets, A))
 			continue
+		if(source.virtual_z() != A.virtual_z())
+			continue
 		if(closest_type >= BIKE)
 			break
 

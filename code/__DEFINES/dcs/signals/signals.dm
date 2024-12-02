@@ -736,4 +736,4 @@
 #define COMSIG_REMOVED_POINT_OF_INTEREST "removed_point_of_interest"
 
 ///Send from overmap areas to their turfs when they need to update their light, might be useful for events?: (light_range, light_power, light_color)
-#define COMSIG_OVERMAPTURF_UPDATE_LIGHT "atom_attackby"
+#define COMSIG_OVERMAPTURF_UPDATE_LIGHT "overmapturf_update_light"

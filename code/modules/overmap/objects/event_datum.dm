@@ -85,14 +85,14 @@
 	desc = "An area of space rich with asteroids, going fast through here could prove dangerous"
 	base_icon_state = "meteor_medium_"
 	default_color = "#a08444"
-	chance_to_affect = 15
+	chance_to_affect = 100
 	spread_chance = 50
 	chain_rate = 4
 	interference_power = 15
 
 	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
 
-	var/safe_speed = 3
+	var/safe_speed = 4
 	var/list/meteor_types = list(
 		/obj/effect/meteor/dust=3,
 		/obj/effect/meteor/medium=8,
@@ -123,15 +123,14 @@
 		token.color = current_overmap.hazard_primary_color
 	current_overmap.post_edit_token_state(src)
 
-/datum/overmap/event/meteor/apply_effect()
-	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
-		if(Ship.get_speed() > safe_speed)
-			var/how_fast =  (Ship.get_speed() - safe_speed)
-			if(prob(chance_to_affect + how_fast))
-				affect_ship(Ship)
-
 /datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/Ship)
-	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0, Ship.shuttle_port)
+	var/final_speed = Ship.get_speed()
+	var/rng = rand()
+	if(prob(50))
+		rng *= -1 //makes it negative
+	final_speed += rng
+	final_speed -= safe_speed
+	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0, Ship.shuttle_port, final_speed)
 
 /datum/overmap/event/meteor/minor
 	name = "asteroid field (minor)"
@@ -146,6 +145,8 @@
 		/obj/effect/meteor/medium=4,
 		/obj/effect/meteor/irradiated=2
 	)
+
+	safe_speed = 5
 
 /datum/overmap/event/meteor/major
 	name = "asteroid field (major)"
@@ -307,8 +308,8 @@
 	chain_rate = 3
 	interference_power = 15
 	var/zap_flag = ZAP_STORM_FLAGS
-	var/max_damage = 20
-	var/min_damage = 10
+	var/max_damage = 3000
+	var/min_damage = 1000
 
 /datum/overmap/event/electric/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -320,7 +321,8 @@
 /datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
 	var/datum/virtual_level/ship_vlevel = S.shuttle_port.get_virtual_level()
 	var/turf/source = ship_vlevel.get_side_turf(pick(GLOB.cardinals))
-	tesla_zap(source, 10, rand(min_damage, max_damage), zap_flag)
+	tesla_zap(source, 32, rand(min_damage, max_damage), zap_flag)
+
 	for(var/mob/poor_crew as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(poor_crew))
 			poor_crew.playsound_local(poor_crew, THUNDER_SOUND, rand(min_damage, max_damage))
@@ -336,8 +338,8 @@
 	interference_power = 5
 	spread_chance = 40
 	chain_rate = 2
-	max_damage = 10
-	min_damage = 3
+	max_damage = 1000
+	min_damage = 500
 
 /datum/overmap/event/electric/major
 	name = "electrical storm (major)"
@@ -345,13 +347,13 @@
 	interference_power = 30
 	spread_chance = 15
 	chain_rate = 6
-	max_damage = 40
-	min_damage = 20
+	max_damage = 5000
+	min_damage = 3000
 	zap_flag = ZAP_DEFAULT_FLAGS
 
 /datum/overmap/event/nebula
 	name = "nebula"
-	desc = "There's coffee in here"
+	desc = "Beware of modular code."
 	base_icon_state = "nebula"
 	default_color = "#c053f3"
 	chain_rate = 8
@@ -476,12 +478,13 @@
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
-	safe_speed = 2
+	safe_speed = 5
 	interference_power = 0
 	meteor_types = list(
 		/obj/effect/meteor/carp=16,
 		/obj/effect/meteor/carp/big=1, //numbers I pulled out of my ass
 	)
+	primary_ores = null
 
 /datum/overmap/event/meteor/carp/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"
@@ -517,14 +520,15 @@
 	desc = "A cloud of spaceborne dust. Relatively harmless, unless you're travelling at relative speeds"
 	base_icon_state = "dust"
 	default_color = "#506469" //we should make these defines
-	chance_to_affect = 30
+	chance_to_affect = 90
 	spread_chance = 50
 	chain_rate = 4
-	safe_speed = 7
+	safe_speed = 3
 	interference_power = 5
 	meteor_types = list(
 		/obj/effect/meteor/dust=3,
 	)
+	primary_ores = null
 
 /datum/overmap/event/meteor/dust/alter_token_appearance()
 	icon_suffix = "[rand(1, 4)]"

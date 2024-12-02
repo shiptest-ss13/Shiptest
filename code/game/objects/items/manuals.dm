@@ -560,15 +560,14 @@
 				<h2>An all in one Guide to materials for the aspiring scavenger</h2>
 				</center>
 				<h2>Introduction</h2>
-					&emsp;Everyone should be familiar with the base materials, iron, copper, and gold. These essential
-					raw materials have made space travel and living possible, and even more so with the
-					invention of the autolathe. However, nature provides you with ores which are confusing and have a mixture
-					of raw materials. This guide aims to provide an easy and simple reference for which ores correspond to each
-					material.
+					&emsp;Despite the longstanding familiarity with the base materials such as, iron, copper, and gold;
+					many people are also unaware of the ore these raw materials are mined from.
+					This guide aims to provide an easy and simple reference for which material are mined from
+					what ore.
 
 				<br>
 				<h2>Ores</h2>
-					&emsp;<b>Note:</b> Unless told otherwise, assume all ores yield 1000 cm^2 of their respective matierals
+					&emsp;<b>Note:</b> Unless told otherwise, assume all ores yield 1000 cm^3 of their respective matierals
 					<h3><font color="#87423b">Hematite</font></h3>
 						<ul>
 							<li>100% iron<br></li>

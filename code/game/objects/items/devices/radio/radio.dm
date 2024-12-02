@@ -272,8 +272,8 @@
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.map_zones = list(0)  // reaches all Z-levels
-		signal.broadcast()
 		signal.data["sfx"] = 'sound/effects/overmap/wideband.ogg'
+		signal.broadcast()
 		playsound(src, talkie_sound, 20, FALSE)
 		return
 

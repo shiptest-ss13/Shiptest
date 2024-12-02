@@ -86,9 +86,13 @@
 	flora_spawn_chance = 3
 	mob_spawn_chance = 0
 
-	feature_spawn_chance = 1
+	feature_spawn_chance = 1.2
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/greeble/random_ruin_greeble = 1
+		/obj/effect/spawner/random/greeble/random_ruin_greeble = 20,
+		/obj/structure/vein/moon = 2,
+		/obj/structure/vein/moon/classtwo = 4,
+		/obj/structure/vein/moon/classthree = 1,
+
 	)
 
 /datum/biome/rocky
@@ -102,6 +106,13 @@
 /datum/biome/cave/moon
 	open_turf_types = list(/turf/open/floor/plating/asteroid/moon = 1)
 	closed_turf_types = list(/turf/closed/mineral/random/moon = 1)
+
+	feature_spawn_chance = 0.1
+	feature_spawn_list = list(
+		/obj/structure/vein/moon = 6,
+		/obj/structure/vein/moon/classtwo = 4,
+		/obj/structure/vein/moon/classthree = 1,
+	)
 
 //GREEBLES
 
