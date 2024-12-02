@@ -25,8 +25,8 @@
 		/obj/item/storage/fancy/cigarettes/cigars/cohiba = 1,
 		/obj/item/clothing/mask/vape/cigar = 3)
 	refill_canister = /obj/item/vending_refill/cigarette
-	default_price = 50
-	extra_price = 150
+	default_price = 10
+	extra_price = 20
 	light_mask = "cigs-light-mask"
 
 /obj/machinery/vending/cigarette/syndicate

@@ -631,8 +631,8 @@
 
 	//customize explosive power
 	var/range_devastation = -1
-	var/range_heavy = 1
-	var/range_light = 2
+	var/range_heavy = 0
+	var/range_light = 1
 	var/range_flame = 0
 
 	//using this to indicate pb

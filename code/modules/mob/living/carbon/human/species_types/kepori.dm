@@ -128,14 +128,19 @@
 /datum/species/kepori/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self, swap)
 	if(..()) //If it already fits, then it's fine.
 		return TRUE
-	if(slot == ITEM_SLOT_MASK)
-		if(H.wear_mask && !swap)
-			return FALSE
-		if(I.w_class > WEIGHT_CLASS_SMALL)
-			return FALSE
-		if(!H.get_bodypart(BODY_ZONE_HEAD))
-			return FALSE
-		return equip_delay_self_check(I, H, bypass_equip_delay_self)
+	if(slot != ITEM_SLOT_MASK)
+		return FALSE
+	//Blocks all items that are equippable to other slots. (block anything with a flag that ISN'T item_slot_mask)
+	if(I.slot_flags & ~ITEM_SLOT_KEPORI_BEAK)
+		return FALSE
+	if(H.wear_mask && !swap)
+		return FALSE
+	if(I.w_class > WEIGHT_CLASS_SMALL)
+		return FALSE
+	//ya ain't got no biters to put it in sir
+	if(!H.get_bodypart(BODY_ZONE_HEAD))
+		return FALSE
+	return equip_delay_self_check(I, H, bypass_equip_delay_self)
 
 /datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
