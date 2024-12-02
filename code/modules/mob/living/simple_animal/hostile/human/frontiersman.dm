@@ -17,7 +17,7 @@
 	icon_state = "frontiersmanmelee_mask"
 	icon_living = "frontiersmanmelee_mask"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier,
-				/obj/item/clothing/mask/gas/sechailer,
+				/obj/item/clothing/mask/breath,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
@@ -41,14 +41,14 @@
 	icon_living = "frontiersmanranged_mask"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
 				/obj/item/gun/ballistic/revolver/shadow,
-				/obj/item/clothing/mask/gas/sechailer,
+				/obj/item/clothing/mask/breath,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
-				/obj/item/clothing/mask/gas/sechailer,
+				/obj/item/clothing/mask/breath,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/neutered
@@ -81,14 +81,14 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/surgeon,
 				/obj/item/melee/knife/survival,
 				/obj/item/gun/syringe,
-				/obj/item/clothing/mask/gas/sechailer,
+				/obj/item/clothing/mask/breath,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals/neuter
 	icon_state = "frontiersmansurgeon_mask"
 	icon_living = "frontiersmansurgeon_mask"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/surgeon,
-				/obj/item/clothing/mask/gas/sechailer,
+				/obj/item/clothing/mask/breath,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin
@@ -106,14 +106,14 @@
 	icon_living = "frontiersmanrangedrifle_mask"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
 				/obj/item/gun/ballistic/rifle/illestren,
-				/obj/item/clothing/mask/gas/sechailer,
+				/obj/item/clothing/mask/breath,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
-				/obj/item/clothing/mask/gas/sechailer,
+				/obj/item/clothing/mask/breath,
 				/obj/item/tank/internals/emergency_oxygen/engi)
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered

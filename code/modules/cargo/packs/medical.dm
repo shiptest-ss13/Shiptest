@@ -61,6 +61,13 @@
 		/obj/item/reagent_containers/glass/bottle/morphine,
 		/obj/item/reagent_containers/glass/bottle/morphine,
 	)
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 25
+
+/datum/supply_pack/medical/painkillers/fill(obj/structure/closet/crate/cargo_crate)
+	. = ..()
+	if(prob(5))
+		new /obj/item/reagent_containers/glass/bottle/painkiller_booze(cargo_crate)
 
 /datum/supply_pack/medical/iv_drip
 	name = "IV Drip Crate"
@@ -84,6 +91,8 @@
 					/obj/item/reagent_containers/medigel/sterilizine,
 					/obj/item/roller)
 	crate_name = "surgical supplies crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 50 //this shouldnt be 3k but if it is...
 
 
 /datum/supply_pack/medical/anesthetic
@@ -93,6 +102,8 @@
 	contains = list(/obj/item/clothing/mask/breath/medical,
 					/obj/item/tank/internals/anesthetic)
 	crate_name = "anesthetics crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 25
 
 /*
 		Bundles and supplies
@@ -115,6 +126,8 @@
 					/obj/item/reagent_containers/blood/synthetic)
 	crate_name = "blood freezer"
 	crate_type = /obj/structure/closet/crate/freezer
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 25
 
 /datum/supply_pack/medical/surplus
 	name = "Medical Surplus Crate"
@@ -142,7 +155,8 @@
 					/obj/item/reagent_containers/pill/neurine,
 					/obj/item/vending_refill/medical)
 	crate_name = "medical surplus crate"
-	faction = FACTION_SUNS
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 25
 
 /datum/supply_pack/medical/surplus/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 7)
