@@ -688,7 +688,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/shrouded
 	mining_charges = 8
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/royalcrab
+		/mob/living/simple_animal/hostile/asteroid/royalcrab = 50,
+		/mob/living/simple_animal/hostile/alien = 5,
+		/mob/living/simple_animal/hostile/alien/drone = 5,
+		/mob/living/simple_animal/hostile/alien/sentinel = 1,
 		)
 
 	//same surface ore drop rate
@@ -705,9 +708,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	max_mobs = -1
-	spawn_time = 8 SECONDS
+	spawn_time = 5 SECONDS
 	///His greed was his downfall
-	var/greed_chance = 5
+	var/greed_chance = 10
 
 /obj/structure/vein/shrouded/Initialize()
 	. = ..()
@@ -718,7 +721,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 10
 	vein_class = 2
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/royalcrab
+		/mob/living/simple_animal/hostile/asteroid/royalcrab = 30,
+		/mob/living/simple_animal/hostile/alien = 5,
+		/mob/living/simple_animal/hostile/alien/drone = 5,
+		/mob/living/simple_animal/hostile/alien/sentinel = 1,
 		)
 
 	ore_list = list(
@@ -733,16 +739,19 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 1,
 		)
 
-	spawn_time = 6 SECONDS
+	spawn_time = 4 SECONDS
 
-	greed_chance = 10
+	greed_chance = 20
 
 /obj/structure/vein/shrouded/classthree
 	mining_charges = 12
 	vein_class = 3
 
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/royalcrab
+		/mob/living/simple_animal/hostile/asteroid/royalcrab = 10,
+		/mob/living/simple_animal/hostile/alien = 5,
+		/mob/living/simple_animal/hostile/alien/drone = 5,
+		/mob/living/simple_animal/hostile/alien/sentinel = 1,
 		)
 
 	ore_list = list(
@@ -757,8 +766,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 5,
 		)
 
-	greed_chance = 15
-	spawn_time = 4 SECONDS
+	greed_chance = 25
+	spawn_time = 3 SECONDS
 
 // Asteroid veins.
 

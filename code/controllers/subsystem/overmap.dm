@@ -282,6 +282,8 @@ SUBSYSTEM_DEF(overmap)
 	var/overmap_icon_state = "overmap_dark"
 
 	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the palletez
+	var/can_jump_to = TRUE
+	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the palletez
 	var/can_be_selected_randomly = TRUE
 
 /datum/overmap_star_system/wilderness
@@ -571,10 +573,7 @@ SUBSYSTEM_DEF(overmap)
 
 	if(has_outpost)
 		spawn_outpost()
-//		spawn_initial_ships()
 
-	//I the initial ship causes more problem than it's worth anyways, works fine without one too
-	//spawn_initial_ships()
 
 /**
  * VERY Simple random generation for overmap events, spawns the event in a random turf and sometimes spreads it out similar to ores

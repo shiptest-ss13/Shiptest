@@ -364,6 +364,10 @@
 				else
 					if(length(SSovermap.tracked_star_systems) >= 1)
 						var/list/choices = LAZYCOPY(SSovermap.tracked_star_systems)
+						for(var/datum/overmap_star_system/current_system as anything in choices)
+							if(!current_system.can_jump_to)
+								LAZYREMOVE(choices, current_system)
+
 						LAZYADD(choices, "Out of the Frontier")
 						LAZYREMOVE(choices, current_ship.current_overmap)
 						var/selected_system = tgui_input_list(usr, "To which system?", "Bluespace Jump", choices)

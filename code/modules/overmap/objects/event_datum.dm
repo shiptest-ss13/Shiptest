@@ -389,6 +389,14 @@
 					continue
 				light_to_mess.stop_flickering()
 
+			for(var/mob/affected_mob as anything in affected_mob)
+				if(!istype(affected_mob))
+					continue
+				var/datum/overmap/mobs_overmap = SSovermap.get_overmap_object_by_location(affected_mob)
+				if(mobs_overmap == ship)
+					var/datum/overmap/event/nebula/new_nebula = locate(/datum/overmap/event/nebula) in mobs_overmap.get_nearby_overmap_objects()
+					new_nebula.affected_mobs[affected_mob] = affected_mobs[affected_mob]
+
 	if(affected_ships.len == 0)
 		STOP_PROCESSING(SSfastprocess, src)
 
@@ -399,6 +407,9 @@
 		if(ship.shuttle_port.is_in_shuttle_bounds(affected_mob))
 			// 'hijacks' the ambience for this nebula one.
 			if(!affected_mob.client)
+				continue
+
+			if(!(affected_mob in SSambience.ambience_listening_clients))
 				continue
 
 			if(affected_mob in affected_mobs)

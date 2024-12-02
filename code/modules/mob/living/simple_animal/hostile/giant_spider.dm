@@ -37,6 +37,7 @@
 	response_disarm_continuous = "gently pushes aside"
 	response_disarm_simple = "gently push aside"
 	maxHealth = 75
+	health = 75
 	obj_damage = 60
 	melee_damage_lower = 5
 	melee_damage_upper = 15
@@ -194,6 +195,7 @@
 	icon_living = "tarantula"
 	icon_dead = "tarantula_dead"
 	maxHealth = 50 // woah nelly
+	health = 50
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	poison_per_bite = 0
