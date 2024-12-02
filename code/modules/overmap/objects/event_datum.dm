@@ -92,7 +92,7 @@
 
 	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
 
-	var/safe_speed = 4
+	var/safe_speed = 3
 	var/list/meteor_types = list(
 		/obj/effect/meteor/dust=3,
 		/obj/effect/meteor/medium=8,
@@ -143,7 +143,6 @@
 	meteor_types = list(
 		/obj/effect/meteor/dust=12,
 		/obj/effect/meteor/medium=4,
-		/obj/effect/meteor/irradiated=2
 	)
 
 	safe_speed = 5
@@ -161,8 +160,6 @@
 		/obj/effect/meteor/medium=50,
 		/obj/effect/meteor/big=25,
 		/obj/effect/meteor/flaming=10,
-		/obj/effect/meteor/irradiated=10,
-		/obj/effect/meteor/tunguska = 1
 	)
 
 ///Electromagnetic - explodes your IPCs
