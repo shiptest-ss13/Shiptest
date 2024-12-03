@@ -814,12 +814,17 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/newscaster/security_unit, 30)
 			if(istype(human_user.wear_id, /obj/item/pda))
 				var/obj/item/pda/P = human_user.wear_id
 				if(P.id)
-					scanned_user = "[P.id.registered_name] ([P.id.assignment])"
+					scanned_user = "[P.id.registered_name])"
 				else
 					scanned_user = "Unknown"
 			else if(istype(human_user.wear_id, /obj/item/card/id))
 				var/obj/item/card/id/ID = human_user.wear_id
-				scanned_user ="[ID.registered_name] ([ID.assignment])"
+				scanned_user ="[ID.registered_name])"
+			else if(istype(human_user.wear_id, /obj/item/storage/wallet))
+				var/obj/item/storage/wallet/our_wallet = human_user.wear_id
+				if(our_wallet.front_id)
+					var/obj/item/card/id/ID = our_wallet.GetID()
+					scanned_user = "[ID.registered_name]"
 			else
 				scanned_user ="Unknown"
 		else

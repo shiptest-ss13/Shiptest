@@ -13,7 +13,7 @@
 		// Cargo Stuff
 		"c-reader", "desttagger", "salestagger", "handlabel", "packagewrap",
 		// Research Stuff
-		"destructive_analyzer", "experimentor", "rdconsole", "rdserver", "design_disk", "tech_disk", "mechfab",
+		"destructive_analyzer", "experimentor", "rdserver", "design_disk", "tech_disk", "mechfab",
 		// Miscellaneous Stufff
 		"paystand", "space_heater", "bucket", "plastic_knife", "plastic_fork", "plastic_spoon", "fax",
 		// Security Stuff
@@ -119,7 +119,7 @@
 	display_name = "Biological Processing"
 	description = "From slimes to kitchens."
 	prereq_ids = list("biotech")
-	design_ids = list("smartfridge", "gibber", "deepfryer", "monkey_recycler", "processor", "gibber", "microwave", "reagentgrinder", "dish_drive")
+	design_ids = list("smartfridge", "gibber", "deepfryer", "processor", "gibber", "microwave", "reagentgrinder", "dish_drive")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -230,7 +230,7 @@
 	display_name = "Basic Bluespace Theory"
 	description = "Basic studies into the mysterious alternate dimension known as bluespace."
 	prereq_ids = list("base")
-	design_ids = list("beacon", "xenobioconsole", "telesci_gps", "bluespace_crystal")
+	design_ids = list("beacon", "telesci_gps", "bluespace_crystal")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -704,7 +704,7 @@
 	display_name = "Ballistic Weaponry"
 	description = "This isn't research.. This is reverse-engineering!"
 	prereq_ids = list("weaponry")
-	design_ids = list("mag_oldsmg", "mag_oldsmg_ap", "mag_oldsmg_ic", "shotgun_slug")
+	design_ids = list("mag_oldsmg", "mag_oldsmg_ap", "shotgun_slug")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -721,7 +721,7 @@
 	display_name = "Exotic Ammunition"
 	description = "They won't know what hit em."
 	prereq_ids = list("adv_weaponry", "medical_weapons")
-	design_ids = list("techshotshell", "c38_hotshot", "c38_iceblox", "inc9mm", "inc10mm", "inc45", "incendiary_slug")
+	design_ids = list("techshotshell", "c38_hotshot", "c38_iceblox", "incendiary_slug")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 

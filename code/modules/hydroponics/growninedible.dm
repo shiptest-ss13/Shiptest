@@ -7,6 +7,7 @@
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	resistance_flags = FLAMMABLE
 	var/obj/item/seeds/seed = null // type path, gets converted to item on New(). It's safe to assume it's always a seed item.
+	var/auto_scatter = TRUE
 
 /obj/item/grown/Initialize(newloc, obj/item/seeds/new_seed)
 	. = ..()
@@ -18,9 +19,9 @@
 		// This is for adminspawn or map-placed growns. They get the default stats of their seed type.
 		seed = new seed()
 		seed.adjust_potency(50-seed.potency)
-
-	pixel_x = base_pixel_x + rand(-5, 5)
-	pixel_y = base_pixel_y + rand(-5, 5)
+	if(auto_scatter)
+		pixel_x = base_pixel_x + rand(-5, 5)
+		pixel_y = base_pixel_y + rand(-5, 5)
 
 	if(seed)
 		// Go through all traits in their genes and call on_new_plant from them.

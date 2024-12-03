@@ -212,6 +212,10 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "This is used by Inteq Risk Management Group's mercenaries. Protects ears from flashbangs."
 	icon_state = "inteq_headset_alt"
 
+/obj/item/radio/headset/inteq/alt/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
 /obj/item/radio/headset/inteq/alt/captain
 	name = "vanguard bowman headset"
 	desc = "Used by Inteq Risk Management Group's elite vanguards. Protects ears from flashbangs."

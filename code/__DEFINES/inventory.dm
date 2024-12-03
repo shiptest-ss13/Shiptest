@@ -31,6 +31,8 @@
 
 //SLOT GROUP HELPERS
 #define ITEM_SLOT_POCKETS (ITEM_SLOT_LPOCKET|ITEM_SLOT_RPOCKET)
+//All the item slots that are allowed to be held in Kepori beaks (their mask slot)
+#define ITEM_SLOT_KEPORI_BEAK (ITEM_SLOT_MASK|ITEM_SLOT_ID|ITEM_SLOT_POCKETS|ITEM_SLOT_DEX_STORAGE|ITEM_SLOT_SUITSTORE)
 
 //Bit flags for the flags_inv variable, which determine when a piece of clothing hides another. IE a helmet hiding glasses.
 //Make sure to update check_obscured_slots() if you add more.
@@ -82,8 +84,9 @@
 #define DIGITIGRADE_VARIATION_NO_NEW_ICON (1<<2)
 #define DIGITIGRADE_VARIATION_SAME_ICON_FILE (1<<3) //intended for use with factional icon files for organization purposes, otherwise use either above. Ex of naming: a state called "nameof_thing" can be named "nameof_thing_digi"
 #define SNOUTED_VARIATION (1<<4) //Ex of naming: a state called "nameof_thing" can be named "nameof_thing_snouted"
-#define VOX_VARIATION (1<<5)
-#define KEPORI_VARIATION (1<<6)
+#define SNOUTED_SMALL_VARIATION (1<<5) //For Elzuose snouts
+#define VOX_VARIATION (1<<6)
+#define KEPORI_VARIATION (1<<7)
 
 #define NOT_DIGITIGRADE 0
 #define FULL_DIGITIGRADE 1

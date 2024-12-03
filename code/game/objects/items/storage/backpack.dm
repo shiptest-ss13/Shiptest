@@ -483,7 +483,6 @@
 	desc = "A large duffel bag for holding extra tactical supplies."
 	icon_state = "duffel-syndie"
 	item_state = "duffel-syndieammo"
-	slowdown = 0
 	resistance_flags = FIRE_PROOF
 
 /obj/item/storage/backpack/duffelbag/syndie/ComponentInitialize()
@@ -597,7 +596,7 @@
 	new /obj/item/clothing/shoes/magboots/syndie(src)
 	new /obj/item/storage/firstaid/tactical(src)
 	new /obj/item/gun/ballistic/automatic/toy(src)
-	new /obj/item/ammo_box/foambox/riot(src)
+	new /obj/item/storage/box/ammo/foam_darts/riot(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/med/bioterrorbundle
 	desc = "A large duffel bag containing deadly chemicals, a handheld chem sprayer, Bioterror foam grenade, a Donksoft assault rifle, box of riot grade darts, a dart pistol, and a box of syringes."
@@ -608,7 +607,7 @@
 	new /obj/item/gun/syringe/syndicate(src)
 	new /obj/item/gun/ballistic/automatic/toy(src)
 	new /obj/item/storage/box/syringes(src)
-	new /obj/item/ammo_box/foambox/riot(src)
+	new /obj/item/storage/box/ammo/foam_darts/riot(src)
 	new /obj/item/grenade/chem_grenade/bioterrorfoam(src)
 	if(prob(5))
 		new /obj/item/reagent_containers/food/snacks/pizza/pineapple(src)

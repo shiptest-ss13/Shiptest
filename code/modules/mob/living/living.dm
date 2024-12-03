@@ -484,7 +484,9 @@
 			if(!silent)
 				to_chat(src, "<span class='notice'>You will now lay down as soon as you are able to.</span>")
 		else
-			if(!silent)
+			if(!silent && m_intent == MOVE_INTENT_WALK)
+				to_chat(src, "<span class='notice'>You gently lay down.</span>")
+			else if(!silent)
 				to_chat(src, "<span class='notice'>You lay down.</span>")
 			set_lying_down()
 	else
@@ -1147,13 +1149,6 @@
 		mind.transfer_to(new_mob)
 	else
 		new_mob.key = key
-
-	for(var/para in hasparasites())
-		var/mob/living/simple_animal/hostile/guardian/G = para
-		G.summoner = new_mob
-		G.Recall()
-		to_chat(G, "<span class='holoparasite'>Your summoner has changed form!</span>")
-
 /mob/living/rad_act(amount)
 	. = ..()
 
@@ -1794,12 +1789,15 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 
 
 /// Changes the value of the [living/body_position] variable.
-/mob/living/proc/set_body_position(new_value)
+/mob/living/proc/set_body_position(new_value, fall_sound_played)
 	if(body_position == new_value)
 		return
 	. = body_position
 	body_position = new_value
 	if(new_value == LYING_DOWN) // From standing to lying down.
+		if(has_gravity() && m_intent != MOVE_INTENT_WALK)
+			playsound(src, "bodyfall", 50, TRUE) // Will play the falling sound if not walking
+			fall_sound_played = TRUE
 		on_lying_down()
 	else // From lying down to standing up.
 		on_standing_up()

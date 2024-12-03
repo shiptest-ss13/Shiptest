@@ -80,6 +80,9 @@
 
 //Soft caps
 
+/datum/gear/hat/softcap
+	subtype_path = /datum/gear/hat/softcap
+
 /datum/gear/hat/softcap/red
 	display_name = "cap, red"
 	path = /obj/item/clothing/head/soft/red
@@ -99,6 +102,23 @@
 /datum/gear/hat/softcap/black
 	display_name = "cap, black"
 	path = /obj/item/clothing/head/soft/black
+
+/datum/gear/hat/utility_black
+	display_name = "utility cover, black"
+	path = /obj/item/clothing/head/soft/utility_black
+
+/datum/gear/hat/utility_olive
+	display_name = "utility cover, olive"
+	path = /obj/item/clothing/head/soft/utility_olive
+
+/datum/gear/hat/utility_beige
+	display_name = "utility cover, beige"
+	path = /obj/item/clothing/head/soft/utility_beige
+
+/datum/gear/hat/utility_navy
+	display_name = "utility cover, navy"
+	path = /obj/item/clothing/head/soft/utility_navy
+
 
 //Beanies
 

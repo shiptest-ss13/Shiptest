@@ -10,13 +10,13 @@
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = GRAIN
 	liked_food = MEAT
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	loreblurb = "Vox are a big bird-like species with quills, much larger and much more long-lasting than other species. Sadly, not much else is known."
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	species_clothing_path = 'icons/mob/clothing/species/vox.dmi'
-	species_eye_path = 'icons/mob/vox_parts.dmi'
+	species_eye_path = 'icons/mob/species/vox/vox_parts.dmi'
 	punchdamagelow = 6
 	punchdamagehigh = 12
 	mutanttongue = /obj/item/organ/tongue/vox
@@ -30,6 +30,9 @@
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 20
 
 	bodytype = BODYTYPE_VOX
+
+	custom_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
+	damage_overlay_type = "vox"
 
 	species_chest = /obj/item/bodypart/chest/vox
 	species_head = /obj/item/bodypart/head/vox

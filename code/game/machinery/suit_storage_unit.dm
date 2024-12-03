@@ -99,11 +99,11 @@
 
 /obj/machinery/suit_storage_unit/security
 	suit_type = /obj/item/clothing/suit/space/hardsuit/security
-	mask_type = /obj/item/clothing/mask/gas/sechailer
+	mask_type = /obj/item/clothing/mask/gas/vigilitas
 
 /obj/machinery/suit_storage_unit/hos
 	suit_type = /obj/item/clothing/suit/space/hardsuit/security/hos
-	mask_type = /obj/item/clothing/mask/gas/sechailer
+	mask_type = /obj/item/clothing/mask/gas/vigilitas
 	storage_type = /obj/item/tank/internals/oxygen
 
 /obj/machinery/suit_storage_unit/mining
@@ -165,7 +165,7 @@
 
 /obj/machinery/suit_storage_unit/independent/security
 	suit_type = /obj/item/clothing/suit/space/hardsuit/security/independent
-	mask_type = /obj/item/clothing/mask/gas/sechailer
+	mask_type = /obj/item/clothing/mask/gas
 
 /obj/machinery/suit_storage_unit/independent/engineering
 	suit_type = /obj/item/clothing/suit/space/engineer
@@ -181,6 +181,13 @@
 	suit_type = /obj/item/clothing/suit/space/pilot
 	helmet_type = /obj/item/clothing/head/helmet/space/pilot/random
 	mask_type = /obj/item/clothing/mask/breath
+
+/obj/machinery/suit_storage_unit/minutemen
+	suit_type = /obj/item/clothing/suit/space/hardsuit/clip_patroller
+	mask_type = /obj/item/clothing/mask/breath
+
+/obj/machinery/suit_storage_unit/minutemen/spotter
+	suit_type = /obj/item/clothing/suit/space/hardsuit/clip_spotter
 
 //End shiptest suits
 
@@ -450,7 +457,7 @@
 				mob_occupant.adjustFireLoss(rand(20, 36))
 			else
 				mob_occupant.adjustFireLoss(rand(10, 16))
-			mob_occupant.emote("scream")
+			mob_occupant.force_scream()
 		addtimer(CALLBACK(src, PROC_REF(cook)), 50)
 	else
 		uv_cycles = (BASE_UV_CYCLES - lasers_bonus)
@@ -659,7 +666,7 @@
 		else if(istype(AM, /obj/item/mod/control) && !storage)
 			AM.forceMove(src)
 			mod = AM
-		else if(istype(AM, /obj/item) && !storage)
+		else if(istype(AM, /obj/item) && !AM.anchored && !storage)
 			AM.forceMove(src)
 			storage = AM
 	update_appearance()

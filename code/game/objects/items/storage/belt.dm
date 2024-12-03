@@ -259,6 +259,15 @@
 	new /obj/item/hypospray/mkii(src)
 	update_appearance()
 
+/obj/item/storage/belt/medical/webbing/combat/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor(src)
+	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/stack/medical/splint(src)
+
 /obj/item/storage/belt/security
 	name = "security belt"
 	desc = "Can hold security gear like handcuffs and flashes."
@@ -285,7 +294,6 @@
 		/obj/item/ammo_box/magazine,
 		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
 		/obj/item/ammo_box/a357, //some day we should refactor these into an ammo_box/speedloader type
-		/obj/item/ammo_box/a4570, //but not today
 		/obj/item/ammo_box/a858, //oh boy stripper clips too
 		/obj/item/ammo_box/vickland_a308,
 		/obj/item/ammo_box/a300,
@@ -299,7 +307,8 @@
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola,
 		/obj/item/holosign_creator/security,
-		/obj/item/stock_parts/cell/gun   //WS edit Gun cells fit where they should and not where they dont
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/ammo_box/magazine/ammo_stack, //handfuls of bullets
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()
@@ -323,10 +332,12 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
 
-/obj/item/storage/belt/security/webbing/bulldog/PopulateContents()
+/obj/item/storage/belt/security/webbing/bulldog_mixed/PopulateContents()
 	. = ..()
-	for(var/i in 1 to 3)
-		new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/bioterror(src) // you only get ONE this one is nasty
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/slug(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/slug(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src)
 
 /obj/item/storage/belt/mining
 	name = "explorer's webbing"
@@ -453,15 +464,29 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/storage/belt/military/c20r/PopulateContents()
+/obj/item/storage/belt/military/cobra/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/m45_cobra(src)
 
-/obj/item/storage/belt/military/assault/m90/PopulateContents()
+/obj/item/storage/belt/military/hydra/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
+
+/obj/item/storage/belt/military/boomslang/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/boomslang(src)
+
+/obj/item/storage/belt/military/mako/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/hedp(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/hedp(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -545,6 +570,22 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
+
+/obj/item/storage/belt/military/assault/hydra/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
+
+/obj/item/storage/belt/military/assault/sniper/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_box/magazine/sniper_rounds(src)
+	new /obj/item/ammo_box/magazine/sniper_rounds(src)
+	new /obj/item/ammo_box/magazine/sniper_rounds/penetrator(src)
+
+/obj/item/storage/belt/military/assault/commander/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/co9mm(src)
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"
@@ -751,6 +792,7 @@
 	item_state = "sheath"
 	base_icon_state = "sheath"
 	w_class = WEIGHT_CLASS_BULKY
+	var/sabre_type = /obj/item/melee/sword/sabre
 
 /obj/item/storage/belt/sabre/ComponentInitialize()
 	. = ..()
@@ -760,7 +802,7 @@
 	STR.use_sound = null //if youre wondering why this is null, its so you can look in your sheath to prepare to draw, without letting anyone know youre preparing to draw it
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sword/sabre
+		sabre_type
 		))
 
 /obj/item/storage/belt/sabre/examine(mob/user)
@@ -788,7 +830,7 @@
 	return ..()
 
 /obj/item/storage/belt/sabre/PopulateContents()
-	new /obj/item/melee/sword/sabre(src)
+	new sabre_type(src)
 	update_appearance()
 
 /obj/item/storage/belt/sabre/solgov
@@ -798,21 +840,7 @@
 	icon_state = "sheath-solgov"
 	item_state = "sheath-solgov"
 	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/storage/belt/sabre/solgov/ComponentInitialize()
-	AddComponent(component_type)
-	AddElement(/datum/element/update_icon_updates_onmob)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 1
-	STR.use_sound = null
-	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.set_holdable(list(
-		/obj/item/melee/sword/sabre/solgov
-		))
-
-/obj/item/storage/belt/sabre/solgov/PopulateContents()
-	new /obj/item/melee/sword/sabre/solgov(src)
-	update_appearance()
+	sabre_type = /obj/item/melee/sword/sabre/solgov
 
 /obj/item/storage/belt/sabre/suns
 	name = "SUNS sabre sheath"
@@ -827,22 +855,7 @@
 	icon_state = "suns-sheath"
 	item_state = "suns-sheath"
 	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/storage/belt/sabre/suns/ComponentInitialize()
-	AddComponent(component_type)
-	AddElement(/datum/element/update_icon_updates_onmob)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 1
-	STR.use_sound = null
-	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.set_holdable(list(
-		/obj/item/melee/sword/sabre/suns
-		))
-
-/obj/item/storage/belt/sabre/suns/PopulateContents()
-	new /obj/item/melee/sword/sabre/suns(src)
-	update_appearance()
-
+	sabre_type = /obj/item/melee/sword/sabre/suns
 
 /obj/item/storage/belt/sabre/suns/captain
 	name = "SUNS captain's sabre sheath"
@@ -852,21 +865,7 @@
 	icon_state = "suns-capsheath"
 	item_state = "suns-capsheath"
 	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/storage/belt/sabre/suns/captain/ComponentInitialize()
-	AddComponent(component_type)
-	AddElement(/datum/element/update_icon_updates_onmob)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 1
-	STR.use_sound = null
-	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.set_holdable(list(
-		/obj/item/melee/sword/sabre/suns/captain
-		))
-
-/obj/item/storage/belt/sabre/suns/captain/PopulateContents()
-	new /obj/item/melee/sword/sabre/suns/captain(src)
-	update_appearance()
+	sabre_type = /obj/item/melee/sword/sabre/suns/captain
 
 /obj/item/storage/belt/sabre/suns/cmo
 	name = "SUNS cane sheath"
@@ -882,21 +881,15 @@
 	icon_state = "suns-cane"
 	item_state = "suns-cane"
 	w_class = WEIGHT_CLASS_BULKY
+	sabre_type = /obj/item/melee/sword/sabre/suns/cmo
 
-/obj/item/storage/belt/sabre/suns/cmo/ComponentInitialize()
-	AddComponent(component_type)
-	AddElement(/datum/element/update_icon_updates_onmob)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 1
-	STR.use_sound = null
-	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.set_holdable(list(
-		/obj/item/melee/sword/sabre/suns/cmo
-		))
-
-/obj/item/storage/belt/sabre/suns/cmo/PopulateContents()
-	new /obj/item/melee/sword/sabre/suns/cmo(src)
-	update_appearance()
+/obj/item/storage/belt/sabre/pgf
+	name = "cutlass sheath"
+	desc = "A mass produced thermoplastic-leather sheath made to hold a boarding cutlass."
+	base_icon_state = "sheath-pgf"
+	icon_state = "sheath-pgf"
+	item_state = "sheath-pgf"
+	sabre_type = /obj/item/melee/sword/sabre/pgf
 
 /obj/item/storage/belt/security/webbing/inteq
 	name = "inteq webbing"
@@ -910,8 +903,18 @@
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/skm_762_40(src)
 
+/obj/item/storage/belt/security/webbing/inteq/skm_carabine/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/smgm10mm(src)
+
 /obj/item/storage/belt/security/webbing/inteq/alt
 	name = "inteq drop pouch harness"
 	desc = "A harness with a bunch of pouches attached to them emblazoned in the colors of the IRMG, can hold security gear."
 	icon_state = "inteq_droppouch"
 	item_state = "inteq_droppouch"
+
+/obj/item/storage/belt/security/webbing/inteq/alt/bulldog/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m12g_bulldog(src)

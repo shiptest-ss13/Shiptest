@@ -87,7 +87,6 @@
 				C.visible_message("<span class='notice'>[C] coughs up a half-digested telecrystal</span>","<span class='notice'>You cough up a half-digested telecrystal!</span>")
 				break
 
-	CONFIG_SET(number/shuttle_refuel_delay, max(CONFIG_GET(number/shuttle_refuel_delay), CHALLENGE_SHUTTLE_DELAY))
 	SSblackbox.record_feedback("amount", "nuclear_challenge_mode", 1)
 
 	qdel(src)

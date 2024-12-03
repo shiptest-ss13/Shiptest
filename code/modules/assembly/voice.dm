@@ -103,6 +103,10 @@
 	. = ..()
 	listening = FALSE
 
+/obj/item/assembly/voice/preset
+	mode = 1
+	recorded = "example phrase"
+
 #undef INCLUSIVE_MODE
 #undef EXCLUSIVE_MODE
 #undef RECOGNIZER_MODE

@@ -229,37 +229,6 @@
 		)
 	content_overlays = TRUE
 
-/obj/item/clothing/head/helmet/marine
-	name = "tactical combat helmet"
-	desc = "A tactical black helmet, sealed from outside hazards with a reinforced visor."
-	icon_state = "marine_command"
-	item_state = "helmetalt"
-	armor = list("melee" = 50, "bullet" = 75, "laser" = 55, "energy" = 25, "bomb" = 60, "bio" = 100, "fire" = 70, "acid" = 50)
-	slowdown = 0.3
-	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
-	clothing_flags = STOPSPRESSUREDAMAGE
-	resistance_flags = FIRE_PROOF | ACID_PROOF
-	can_flashlight = TRUE
-	dog_fashion = null
-
-/obj/item/clothing/head/helmet/marine/Initialize(mapload)
-	set_attached_light(new /obj/item/flashlight/seclite)
-	update_helmlight()
-	update_appearance()
-	. = ..()
-
-/obj/item/clothing/head/helmet/marine/security
-	name = "marine heavy helmet"
-	icon_state = "marine_security"
-
-/obj/item/clothing/head/helmet/marine/engineer
-	name = "marine utility helmet"
-	icon_state = "marine_engineer"
-
-/obj/item/clothing/head/helmet/marine/medic
-	name = "marine medic helmet"
-	icon_state = "marine_medic"
-
 /obj/item/clothing/head/helmet/old
 	name = "degrading helmet"
 	desc = "Standard issue security helmet. Due to degradation the helmet's visor obstructs the users ability to see long distances."
@@ -549,7 +518,7 @@
 	icon_state = "solgov_envirohelm"
 	item_state = "solgov_envirohelm"
 
-/obj/item/clothing/head/helmet/operator
+/obj/item/clothing/head/helmet/syndie
 	name = "\improper operator helmet"
 	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
 	icon_state = "operator"

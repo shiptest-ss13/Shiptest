@@ -243,7 +243,6 @@
 /obj/effect/turf_decal/industrial/traffic/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/directional/east,
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
@@ -257,12 +256,7 @@
 	pixel_y = -23;
 	dir = 1
 	},
-/obj/machinery/mineral/ore_redemption{
-	dir = 8;
-	input_dir = 8;
-	output_dir = 8
-	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "cW" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -1090,7 +1084,7 @@
 	pixel_y = -32
 	},
 /obj/item/storage/bag/tray,
-/obj/effect/spawner/lootdrop/ration{
+/obj/effect/spawner/random/food_or_drink/ration{
 	pixel_x = 6;
 	pixel_y = 6
 	},
@@ -2631,7 +2625,7 @@
 "zh" = (
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
@@ -3425,7 +3419,7 @@
 /area/ship/crew/canteen)
 "Hq" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/bounty,
 /obj/structure/sign/poster/official/ian{
 	pixel_x = 32
@@ -3803,7 +3797,7 @@
 "Kc" = (
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light_switch{
 	pixel_x = -8;
 	pixel_y = -20;
@@ -3827,7 +3821,7 @@
 /area/ship/crew)
 "Ko" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/bounty,
 /turf/open/floor/carpet/red,
 /area/ship/crew)
@@ -4118,7 +4112,7 @@
 "Nv" = (
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "Nw" = (
@@ -4569,6 +4563,8 @@
 	pixel_y = 7;
 	pixel_x = -8
 	},
+/obj/item/attachment/rail_light,
+/obj/item/attachment/rail_light,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "SK" = (
@@ -4927,7 +4923,7 @@
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/mask/balaclava/inteq,
 /obj/item/clothing/under/syndicate/inteq/skirt,
 /obj/item/clothing/under/syndicate/inteq,
 /obj/item/clothing/head/beret/sec/inteq,

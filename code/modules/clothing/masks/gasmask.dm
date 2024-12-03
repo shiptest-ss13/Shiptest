@@ -275,3 +275,10 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
 
+/obj/item/clothing/mask/gas/inteq
+	name = "Inteq gas mask"
+	desc = "A protective gas mask refit for Inteq's standards. It features a modified scratch resistant visor, ports for connecting an oxygen supply, and secure, comfortable straps."
+	icon_state = "inteq_gas_mask"
+	item_state = "inteq_gas_mask"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	supports_variations = KEPORI_VARIATION

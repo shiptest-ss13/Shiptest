@@ -259,6 +259,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DWARF "dwarf"
 #define TRAIT_FASTMED "fast_med_use"
 #define TRAIT_SILENT_FOOTSTEPS "silent_footsteps" //makes your footsteps completely silent
+#define TRAIT_PAIN_RESIST "pain_resistance" //you resist pain
 #define TRAIT_NICE_SHOT "nice_shot" //hnnnnnnnggggg..... you're pretty good....
 /// The holder of this trait has antennae or whatever that hurt a ton when noogied
 #define TRAIT_ANTENNAE "antennae"
@@ -301,6 +302,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NO_STORAGE_INSERT "no_storage_insert" //cannot be inserted in a storage.
 #define TRAIT_T_RAY_VISIBLE "t-ray-visible" // Visible on t-ray scanners if the atom/var/level == 1
 #define TRAIT_NO_TELEPORT "no-teleport" //you just can't
+/// A transforming item that is actively extended / transformed
+#define TRAIT_TRANSFORM_ACTIVE "active_transform"
 #define TRAIT_WIELDED "wielded" //The item is currently being wielded
 
 //quirk traits
@@ -329,6 +332,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BALD "bald"
 #define TRAIT_BADTOUCH "bad_touch"
 #define TRAIT_ANXIOUS "anxious"
+#define TRAIT_ANALGESIA "congenital_analgesia"
 
 /// Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"

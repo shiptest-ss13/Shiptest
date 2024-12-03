@@ -57,7 +57,7 @@
 	SIGNAL_HANDLER
 	qdel(src)
 
-/datum/component/attachment_holder/Destroy(force, silent)
+/datum/component/attachment_holder/Destroy(force)
 	QDEL_LIST(attachments)
 	attachments = null
 	return ..()

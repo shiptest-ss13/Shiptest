@@ -57,8 +57,9 @@
 	new /obj/item/reagent_containers/food/drinks/flask/det(src)
 
 /obj/item/clothing/head/fedora/det_hat/examine_more(mob/user)
+	. = ..()
 	if(!in_range(src, user) || !isobserver(user)) //hide the easter egg a little more
-		. = "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
+		. += "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
 		return
 	. += "<span class='notice'>Alt-click to take a candy corn.</span>"
 
@@ -184,7 +185,7 @@
 	. = ..()
 	UnregisterSignal(M, COMSIG_MOB_SAY)
 
-/obj/item/clothing/head/warden/drill/proc/handle_speech(datum/source, mob/speech_args)
+/obj/item/clothing/head/warden/drill/proc/handle_speech(datum/source, list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
 	if(message[1] != "*")
 		switch (mode)

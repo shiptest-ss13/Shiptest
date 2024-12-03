@@ -52,6 +52,23 @@
 		Tools
 */
 
+/datum/supply_pack/medical/painkillers
+	name = "Painkiller Supply Crate"
+	desc = "Contains a supply of painkillers. Great for stopping headaches, feeling broken bones, and screaming people!"
+	cost = 1000
+	contains = list(
+		/obj/item/reagent_containers/glass/bottle/morphine,
+		/obj/item/reagent_containers/glass/bottle/morphine,
+		/obj/item/reagent_containers/glass/bottle/morphine,
+	)
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 25
+
+/datum/supply_pack/medical/painkillers/fill(obj/structure/closet/crate/cargo_crate)
+	. = ..()
+	if(prob(5))
+		new /obj/item/reagent_containers/glass/bottle/painkiller_booze(cargo_crate)
+
 /datum/supply_pack/medical/iv_drip
 	name = "IV Drip Crate"
 	desc = "Contains a single IV drip for administering blood to patients."
@@ -74,6 +91,8 @@
 					/obj/item/reagent_containers/medigel/sterilizine,
 					/obj/item/roller)
 	crate_name = "surgical supplies crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 50 //this shouldnt be 3k but if it is...
 
 
 /datum/supply_pack/medical/anesthetic
@@ -83,6 +102,8 @@
 	contains = list(/obj/item/clothing/mask/breath/medical,
 					/obj/item/tank/internals/anesthetic)
 	crate_name = "anesthetics crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 25
 
 /*
 		Bundles and supplies
@@ -105,6 +126,8 @@
 					/obj/item/reagent_containers/blood/synthetic)
 	crate_name = "blood freezer"
 	crate_type = /obj/structure/closet/crate/freezer
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 25
 
 /datum/supply_pack/medical/surplus
 	name = "Medical Surplus Crate"
@@ -132,35 +155,13 @@
 					/obj/item/reagent_containers/pill/neurine,
 					/obj/item/vending_refill/medical)
 	crate_name = "medical surplus crate"
-	faction = FACTION_SUNS
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 25
 
 /datum/supply_pack/medical/surplus/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 7)
 		var/item = pick(contains)
 		new item(C)
-
-/datum/supply_pack/medical/virus
-	name = "Virus Crate"
-	desc = "Contains twelve different bottles, containing several viral samples for virology research. Also includes seven beakers and syringes. Balled-up jeans not included."
-	cost = 3500
-	contains = list(/obj/item/reagent_containers/glass/bottle/flu_virion,
-					/obj/item/reagent_containers/glass/bottle/cold,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/fake_gbs,
-					/obj/item/reagent_containers/glass/bottle/magnitis,
-					/obj/item/reagent_containers/glass/bottle/pierrot_throat,
-					/obj/item/reagent_containers/glass/bottle/brainrot,
-					/obj/item/reagent_containers/glass/bottle/anxiety,
-					/obj/item/reagent_containers/glass/bottle/beesease,
-					/obj/item/storage/box/syringes,
-					/obj/item/storage/box/beakers,
-					/obj/item/reagent_containers/glass/bottle/mutagen)
-	crate_name = "virus crate"
-	crate_type = /obj/structure/closet/crate/medical
-	faction = FACTION_SUNS
 
 /datum/supply_pack/medical/salglucanister
 	name = "Heavy-Duty Saline Canister"

@@ -35,13 +35,13 @@
 
 /datum/action/item_action/organ_action/colossus
 	name = "Voice of God"
-	var/obj/item/organ/vocal_cords/colossus/cords = null
-
-/datum/action/item_action/organ_action/colossus/New()
-	..()
-	cords = target
 
 /datum/action/item_action/organ_action/colossus/IsAvailable()
+	if(!istype(target, /obj/item/organ/vocal_cords/colossus))
+		return FALSE
+
+	var/obj/item/organ/vocal_cords/colossus/cords = target
+
 	if(world.time < cords.next_command)
 		return FALSE
 	if(!owner)
@@ -58,6 +58,7 @@
 /datum/action/item_action/organ_action/colossus/Trigger()
 	. = ..()
 	if(!IsAvailable())
+		var/obj/item/organ/vocal_cords/colossus/cords = target
 		if(world.time < cords.next_command)
 			to_chat(owner, "<span class='notice'>You must wait [DisplayTimeText(cords.next_command - world.time)] before Speaking again.</span>")
 		return

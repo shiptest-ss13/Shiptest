@@ -127,6 +127,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("dresser", /obj/structure/dresser, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("picture frame", /obj/item/wallframe/picture, 1, time = 10),\
 	new/datum/stack_recipe("painting frame", /obj/item/wallframe/painting, 1, time = 10),\
+	new/datum/stack_recipe("easel", /obj/structure/easel, 4, time = 10),\
 	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("wooden buckler", /obj/item/shield/riot/buckler, 20, time = 40), \
 	new/datum/stack_recipe("apiary", /obj/structure/beebox, 40, time = 50),\
@@ -136,6 +137,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("rake", /obj/item/cultivator/rake, 5, time = 10),\
 	new/datum/stack_recipe("ore box", /obj/structure/ore_box, 4, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	new/datum/stack_recipe("wooden crate", /obj/structure/closet/crate/wooden, 6, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
+	new/datum/stack_recipe("wooden cabinet", /obj/structure/closet/cabinet, 10, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	new/datum/stack_recipe("baseball bat", /obj/item/melee/baseball_bat, 5, time = 15),\
 	new/datum/stack_recipe("loom", /obj/structure/loom, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar, 3), \
@@ -346,8 +348,6 @@ GLOBAL_LIST_INIT(durathread_recipes, list ( \
  */
 GLOBAL_LIST_INIT(cardboard_recipes, list (														\
 	new/datum/stack_recipe("box", /obj/item/storage/box),										\
-	new/datum/stack_recipe("cardborg suit", /obj/item/clothing/suit/cardborg, 3),				\
-	new/datum/stack_recipe("cardborg helmet", /obj/item/clothing/head/cardborg),				\
 	new/datum/stack_recipe("large box", /obj/structure/closet/cardboard, 4, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("cardboard cutout", /obj/item/cardboard_cutout, 5),					\
 	null,																						\
@@ -452,7 +452,6 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	new/datum/stack_recipe("bronze hat", /obj/item/clothing/head/bronze), \
 	null,
 	new/datum/stack_recipe("bronze chair", /obj/structure/chair/comfy/shuttle/bronze, 1, time = 0, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("Marx Bust", /obj/structure/statue/bronze/marx, 15, one_per_turf = 1, on_floor = 1), \
 ))
 
 /obj/item/stack/tile/bronze
