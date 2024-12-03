@@ -335,6 +335,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	var/turf_count = LAZYLEN(atmos_adjacent_turfs)
 	if(blocks_air || !turf_count) //if there weren't any open turfs, no need to update.
 		return
+	if(!air)
+		Initalize_Atmos(0)
 
 	var/datum/gas_mixture/total = new//Holders to assimilate air from nearby turfs
 

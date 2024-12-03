@@ -141,7 +141,6 @@
 	icon = 'icons/turf/snow.dmi'
 	icon_state = "ice"
 	initial_gas_mix = FROZEN_ATMOS
-	initial_temperature = 180
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/ice
 	slowdown = 1
@@ -173,10 +172,10 @@
 	light_color = LIGHT_COLOR_LIGHT_CYAN
 
 /turf/open/floor/plating/ice/colder
-	initial_temperature = 140
+	//initial_temperature = 140
 
 /turf/open/floor/plating/ice/temperate
-	initial_temperature = 255.37
+	//initial_temperature = 255.37
 
 /turf/open/floor/plating/ice/break_tile()
 	return
@@ -208,7 +207,6 @@
 	icon = 'icons/turf/snow.dmi'
 	icon_state = "snowplating"
 	initial_gas_mix = FROZEN_ATMOS
-	initial_temperature = 180
 	attachment_holes = FALSE
 	planetary_atmos = TRUE
 	footstep = FOOTSTEP_SAND
@@ -229,10 +227,10 @@
 	planetary_atmos = TRUE
 
 /turf/open/floor/plating/snowed/colder
-	initial_temperature = 140
+	//initial_temperature = 140
 
 /turf/open/floor/plating/snowed/temperatre
-	initial_temperature = 255.37
+	//initial_temperature = 255.37
 
 /turf/open/floor/plating/snowed/smoothed/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
