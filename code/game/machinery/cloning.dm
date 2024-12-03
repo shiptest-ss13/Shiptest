@@ -39,7 +39,7 @@
 	var/internal_radio = TRUE
 	var/obj/item/radio/radio
 	var/radio_key = /obj/item/encryptionkey/headset_com
-	var/radio_channel = RADIO_CHANNEL_COMMAND
+	var/radio_channel = RADIO_CHANNEL_EMERGENCY
 
 	var/obj/effect/countdown/clonepod/countdown
 

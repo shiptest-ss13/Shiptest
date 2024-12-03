@@ -34,10 +34,14 @@
 	desc = "Upon closer examination, it's still dirt, just more wet than usual."
 	slowdown = 0.5
 	baseturfs = /turf/open/floor/plating/dirt/jungle
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+	light_color = COLOR_JUNGLEPLANET_LIGHT
 	footstep = FOOTSTEP_MUD
 	barefootstep = FOOTSTEP_MUD
 	clawfootstep = FOOTSTEP_MUD
+
+/turf/open/floor/plating/dirt/jungle/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
+	return
 
 /turf/open/floor/plating/dirt/jungle/lit
 	baseturfs = /turf/open/floor/plating/dirt/jungle/lit
@@ -82,6 +86,10 @@
 	smooth_icon = 'icons/turf/floors/forestgrass.dmi'
 	baseturfs = /turf/open/floor/plating/grass/jungle
 	light_color = COLOR_JUNGLEPLANET_LIGHT
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plating/grass/jungle/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
+	return
 
 /turf/open/floor/plating/grass/jungle/lit
 	baseturfs = /turf/open/floor/plating/dirt/jungle/lit

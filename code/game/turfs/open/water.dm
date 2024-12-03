@@ -91,6 +91,7 @@
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
 	color = "#617B64"
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 /turf/open/water/jungle/Initialize(mapload)
 	. = ..()

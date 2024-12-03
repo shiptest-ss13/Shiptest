@@ -45,7 +45,7 @@
 	name = "ice blast"
 	damage = 5
 	nodamage = FALSE
-	temperature = -75
+	temperature = -2
 
 /mob/living/simple_animal/hostile/asteroid/ice_demon/OpenFire()
 	// Sentient ice demons teleporting has been linked to server crashes

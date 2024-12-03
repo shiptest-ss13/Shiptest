@@ -45,10 +45,10 @@
 	damage_type = BURN
 	nodamage = TRUE
 	flag = "energy"
-	temperature = -50 // Cools you down! per hit!
+	temperature = -5 // Cools you down! per hit!
 
 /obj/projectile/temp/basilisk/super
-	temperature = -100
+	temperature = -20
 	damage = 5
 	nodamage = FALSE
 

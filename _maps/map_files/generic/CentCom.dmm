@@ -3979,37 +3979,6 @@
 /obj/structure/speaking_tile,
 /turf/closed/mineral/ash_rock,
 /area/errorroom)
-"aLY" = (
-/obj/item/rupee,
-/turf/open/floor/plating/asteroid/waterplanet{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
-	planetary_atmos = 0
-	},
-/area/errorroom)
-"aLZ" = (
-/turf/open/floor/plating/asteroid/waterplanet{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
-	planetary_atmos = 0
-	},
-/area/errorroom)
-"aMa" = (
-/obj/effect/landmark/error,
-/turf/open/floor/plating/asteroid/waterplanet{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
-	planetary_atmos = 0
-	},
-/area/errorroom)
-"aMb" = (
-/obj/structure/signpost/salvation{
-	icon = 'icons/obj/structures.dmi';
-	icon_state = "ladder10";
-	invisibility = 100
-	},
-/turf/open/floor/plating/asteroid/waterplanet{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
-	planetary_atmos = 0
-	},
-/area/errorroom)
 "aMc" = (
 /obj/structure/lattice,
 /turf/open/space,
@@ -4658,17 +4627,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating/airless,
 /area/syndicate_mothership/control)
-"aQg" = (
-/obj/structure/closet,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/machinery/iv_drip,
-/obj/item/roller,
-/obj/item/storage/firstaid/regular,
-/obj/item/reagent_containers/medigel/synthflesh,
-/obj/item/reagent_containers/medigel/synthflesh,
-/obj/item/reagent_containers/medigel/synthflesh,
-/turf/open/floor/wood,
-/area/centcom/holding)
 "aQj" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/sake,
@@ -5422,6 +5380,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
+"aVh" = (
+/obj/structure/signpost/salvation{
+	icon = 'icons/obj/structures.dmi';
+	icon_state = "ladder10";
+	invisibility = 100
+	},
+/turf/open/floor/plating/asteroid/waterplanet{
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
+	planetary_atmos = 0
+	},
+/area/errorroom)
 "aVl" = (
 /obj/effect/landmark/thunderdome/two,
 /obj/effect/turf_decal/industrial/warning{
@@ -11431,6 +11400,13 @@
 	},
 /turf/open/floor/circuit,
 /area/ctf)
+"lSd" = (
+/obj/item/rupee,
+/turf/open/floor/plating/asteroid/waterplanet{
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
+	planetary_atmos = 0
+	},
+/area/errorroom)
 "lTy" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
@@ -12269,6 +12245,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ctf)
+"nzz" = (
+/turf/open/floor/plating/asteroid/waterplanet{
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
+	planetary_atmos = 0
+	},
+/area/errorroom)
 "nBt" = (
 /obj/effect/turf_decal/corner/opaque/brown,
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -14703,6 +14685,17 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/centcom)
+"srq" = (
+/obj/structure/closet,
+/obj/item/storage/case/surgery,
+/obj/machinery/iv_drip,
+/obj/item/roller,
+/obj/item/storage/firstaid/regular,
+/obj/item/reagent_containers/medigel/synthflesh,
+/obj/item/reagent_containers/medigel/synthflesh,
+/obj/item/reagent_containers/medigel/synthflesh,
+/turf/open/floor/wood,
+/area/centcom/holding)
 "ssv" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
@@ -16393,6 +16386,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
+"wix" = (
+/obj/effect/landmark/error,
+/turf/open/floor/plating/asteroid/waterplanet{
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
+	planetary_atmos = 0
+	},
+/area/errorroom)
 "wjj" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -18023,13 +18023,13 @@ aaa
 aaa
 aLV
 aLW
-aLY
-aLY
-aLY
-aLZ
-aLY
-aLY
-aLY
+lSd
+lSd
+lSd
+nzz
+lSd
+lSd
+lSd
 aLW
 aLV
 aaa
@@ -18280,13 +18280,13 @@ aaa
 aaa
 aLV
 aLW
-aLY
-aLY
-aLY
-aLZ
-aLY
-aLY
-aLY
+lSd
+lSd
+lSd
+nzz
+lSd
+lSd
+lSd
 aLW
 aLV
 aaa
@@ -18537,13 +18537,13 @@ aaa
 aaa
 aLV
 aLW
-aLY
-aLY
-aLY
-aLZ
-aLY
-aLY
-aLY
+lSd
+lSd
+lSd
+nzz
+lSd
+lSd
+lSd
 aLW
 aLV
 aaa
@@ -18794,13 +18794,13 @@ aaa
 aaa
 aLV
 aLW
-aLZ
-aLZ
-aLZ
-aLZ
-aLZ
-aLZ
-aLZ
+nzz
+nzz
+nzz
+nzz
+nzz
+nzz
+nzz
 aLW
 aLV
 aaa
@@ -19051,13 +19051,13 @@ aaa
 aaa
 aLV
 aLW
-aLY
-aLY
-aLY
-aLZ
-aLZ
-aLZ
-aLZ
+lSd
+lSd
+lSd
+nzz
+nzz
+nzz
+nzz
 aLW
 aLV
 aaa
@@ -19308,13 +19308,13 @@ aaa
 aaa
 aLV
 aLX
-aLY
-aLY
-aLY
-aLZ
-aLZ
-aMa
-aMb
+lSd
+lSd
+lSd
+nzz
+nzz
+wix
+aVh
 aLW
 aLV
 aaa
@@ -19565,13 +19565,13 @@ aaa
 aaa
 aLV
 aLW
-aLY
-aLY
-aLY
-aLZ
-aLZ
-aLZ
-aLZ
+lSd
+lSd
+lSd
+nzz
+nzz
+nzz
+nzz
 aLW
 aLV
 aaa
@@ -19822,13 +19822,13 @@ aaa
 aaa
 aLV
 aLW
-aLZ
-aLZ
-aLZ
-aLZ
-aLZ
-aLZ
-aLZ
+nzz
+nzz
+nzz
+nzz
+nzz
+nzz
+nzz
 aLW
 aLV
 aaa
@@ -20079,13 +20079,13 @@ aaa
 aaa
 aLV
 aLW
-aLY
-aLY
-aLY
-aLZ
-aLY
-aLY
-aLY
+lSd
+lSd
+lSd
+nzz
+lSd
+lSd
+lSd
 aLW
 aLV
 aaa
@@ -20336,13 +20336,13 @@ aaa
 aaa
 aLV
 aLW
-aLY
-aLY
-aLY
-aLZ
-aLY
-aLY
-aLY
+lSd
+lSd
+lSd
+nzz
+lSd
+lSd
+lSd
 aLW
 aLV
 aaa
@@ -20593,13 +20593,13 @@ aaa
 aaa
 aLV
 aLW
-aLY
-aLY
-aLY
-aLZ
-aLY
-aLY
-aLY
+lSd
+lSd
+lSd
+nzz
+lSd
+lSd
+lSd
 aLW
 aLV
 aaa
@@ -45998,7 +45998,7 @@ aCT
 aNT
 avt
 aMx
-aQg
+srq
 aTb
 aMx
 atW

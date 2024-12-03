@@ -36,6 +36,7 @@
 	/// smoothed icon in case we use it
 	var/smooth_icon
 
+
 /turf/open/floor/plating/asteroid/Initialize(mapload, inherited_virtual_z)
 	var/proper_name = name
 	. = ..()

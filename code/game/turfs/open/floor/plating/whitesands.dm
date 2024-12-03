@@ -7,7 +7,7 @@
 	icon_state = "sand"
 	planetary_atmos = TRUE
 	base_icon_state = WHITESANDS_SAND_ENV
-	initial_gas_mix = WHITESANDS_ATMOS //Fallback, and used to tell the AACs that this is the exterior
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
@@ -72,7 +72,7 @@
 ///basalt
 
 /turf/open/floor/plating/asteroid/basalt/whitesands
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	icon_state = "whitesands_basalt0"
@@ -94,7 +94,7 @@
 	base_icon_state = "ws_grass"
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/grass/dead
 	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
@@ -145,10 +145,10 @@
 /turf/open/floor/plating/asteroid/snow/lit/whitesands
 	light_color = COLOR_SANDPLANET_LIGHT
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/concrete/whitesands
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	light_color = COLOR_SANDPLANET_LIGHT
 
 /turf/open/floor/concrete/whitesands/lit
@@ -156,7 +156,7 @@
 	light_power = 0.6
 
 /turf/open/floor/concrete/reinforced/whitesands
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	light_color = COLOR_SANDPLANET_LIGHT
 
 /turf/open/floor/concrete/reinforced/whitesands/lit
@@ -164,7 +164,7 @@
 	light_power = 0.6
 
 /turf/open/floor/concrete/pavement/whitesands
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	light_color = COLOR_SANDPLANET_LIGHT
 
 /turf/open/floor/concrete/pavement/whitesands/lit
@@ -172,7 +172,7 @@
 	light_power = 0.6
 
 /turf/open/floor/concrete/slab_1/whitesands
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	light_color = COLOR_SANDPLANET_LIGHT
 
 /turf/open/floor/concrete/slab_1/whitesands/lit
@@ -180,7 +180,7 @@
 	light_power = 0.6
 
 /turf/open/floor/plating/whitesands
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	light_color = COLOR_SANDPLANET_LIGHT
 
 /turf/open/floor/plating/whitesands/lit

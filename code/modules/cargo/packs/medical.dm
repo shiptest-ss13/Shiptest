@@ -85,9 +85,9 @@
 
 /datum/supply_pack/medical/surgery
 	name = "Surgical Supplies Crate"
-	desc = "Do you want to perform surgery, but don't have one of those fancy shmancy degrees? Just get started with this crate containing a medical duffelbag, Sterilizine spray and collapsible roller bed."
+	desc = "Do you want to perform surgery, but don't have one of those fancy shmancy degrees? Just get started with this crate containing a medical case, Sterilizine spray and collapsible roller bed."
 	cost = 3000
-	contains = list(/obj/item/storage/backpack/duffelbag/med/surgery,
+	contains = list(/obj/item/storage/case/surgery,
 					/obj/item/reagent_containers/medigel/sterilizine,
 					/obj/item/roller)
 	crate_name = "surgical supplies crate"
