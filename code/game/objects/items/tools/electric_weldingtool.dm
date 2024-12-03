@@ -63,10 +63,10 @@
 		switched_off()
 		return
 
-// We don't need to know how much fuel it has, because it doesn't use any.
 /obj/item/weldingtool/electric/examine(mob/user)
 	. = ..()
-	. -= "It contains [get_fuel()] unit\s of fuel out of [max_fuel]."
+	//Overwrite the last entry, which normally shows welder fuel usage
+	.[length(.)] = "[src] is currently [powered ? "powered" : "unpowered"]."
 
 // This is what uses fuel in the parent. We override it here to not use fuel
 /obj/item/weldingtool/electric/use(used = 0)
