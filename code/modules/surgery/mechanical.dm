@@ -129,7 +129,7 @@
 
 /datum/surgery_step/repair_structure
 	name = "replace structural rods"
-	time = 6.4 SECONDS
+	time = 3.4 SECONDS
 	implements = list(
 		/obj/item/stack/rods = 100
 		)
