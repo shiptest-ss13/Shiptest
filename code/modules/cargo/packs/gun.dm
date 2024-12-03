@@ -142,6 +142,15 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/cm357
+	name = "CM-357 Automag Pistol Crate"
+	desc = "Contains a magazine-fed .357 handgun, produced for the CMM-BARD division and available for requisition in small numbers to the Minutemen."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/pistol/cm357)
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		Energy
 */
@@ -200,7 +209,7 @@
 /datum/supply_pack/gun/laser/bg16
 	name = "Etherbor BG-16 Beam Rifle Crate"
 	desc = "Contains a single BG-16 Beam Rifle, a military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
-	cost = 3000
+	cost = 3500
 	contains = list(/obj/item/storage/guncase/energy/bg16)
 	crate_name = "beam rifle crate"
 	faction = /datum/faction/pgf
@@ -298,6 +307,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/ultima
+	name = "E-SG 500 Energy Shotgun Crate"
+	desc = "Contains an energy-based shotgun equipped with dual kill/disable modes, ideal for short range. The on-board computer is notoriously unreliable. For NT employee use only."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/energy/ultima)
+	crate_name = "shotgun crate"
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		SMGs
 */
@@ -345,6 +364,16 @@
 	desc = "Contains a compact 9mm automatic SMG produced by NT Ballistics. For NT employee use only."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/saber)
+	crate_name = "SMG crate"
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/etar
+	name = "E-TAR Dual-Mode Energy SMG Crate"
+	desc = "Contains a compact energy-based PDW platform, ideal for suppressing threats at mid-range. For NT employee use only."
+	cost = 2000
+	contains = list(/obj/item/storage/guncase/energy/etar)
 	crate_name = "SMG crate"
 	faction = /datum/faction/nt
 	faction_discount = 0
@@ -496,6 +525,17 @@
 	faction = /datum/faction/clip
 	faction_discount = 0
 	faction_locked = TRUE
+
+/datum/supply_pack/gun/cm24
+	name = "CM-24 Surplus Stockpile Rifle"
+	desc = "Contains a higher-powered rifle chambered in 7.62x40 CLIP based on the SKM-24 platform, formerly the main service rifle of the CMM. This one has been pulled from reservist stockpiles."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/cm82)
+	crate_name = "rifle crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 
 /* Marksman Rifles */
 
