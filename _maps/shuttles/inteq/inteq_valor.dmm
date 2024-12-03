@@ -544,13 +544,13 @@
 /area/ship/medical)
 "eU" = (
 /obj/structure/table,
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_x = -7;
-	pixel_y = 10
+/obj/item/storage/case/surgery{
+	pixel_x = -4;
+	pixel_y = 1
 	},
 /obj/item/reagent_containers/medigel/sterilizine{
-	pixel_x = -1;
-	pixel_y = 3
+	pixel_x = 8;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/borderfloorwhite,
 /obj/machinery/button/door{
@@ -2979,18 +2979,18 @@
 	pixel_x = -6;
 	pixel_y = 4
 	},
-/obj/item/storage/backpack/duffelbag/med/surgery{
+/obj/item/storage/case/surgery{
 	pixel_x = 4;
-	pixel_y = 14
+	pixel_y = 1
 	},
 /obj/effect/turf_decal/borderfloorblack,
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
 	pixel_x = 9;
-	pixel_y = 4
+	pixel_y = 13
 	},
 /obj/item/reagent_containers/syringe{
-	pixel_x = -7;
-	pixel_y = -4
+	pixel_x = -6;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
