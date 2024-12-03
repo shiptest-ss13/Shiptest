@@ -5,6 +5,12 @@
 /*
 		Standard supplies
 */
+/datum/supply_pack/sec_supply/holster
+	name = "Shoulder Holster Crate"
+	desc = "Contains a shoulder holster, capable of holding a single pistol or revolver and your ammo."
+	cost = 600
+	contains = list(/obj/item/clothing/accessory/holster)
+	crate_name = "holster crate"
 
 /datum/supply_pack/sec_supply/chemimp
 	name = "Chemical Implants Crate"
@@ -92,7 +98,9 @@
 	contains = list(/obj/item/flamethrower/full)
 	crate_name = "flamethrower crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
-	faction = FACTION_NGR
+
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 20
 
 /datum/supply_pack/sec_supply/incendiary_grenade
 	name = "Incendiary Grenade Crate"
@@ -101,7 +109,18 @@
 	contains = list(/obj/item/grenade/chem_grenade/incendiary)
 	crate_name = "incendiary grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = FACTION_NGR
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 20
+
+/datum/supply_pack/sec_supply/halberd
+	name = "Energy Halberd Crate"
+	desc = "Contains one Solarian Energy Halberd, for issue to your local Sonnensoldner battalion."
+	cost = 1500
+	contains = list(/obj/item/energyhalberd)
+	crate_name = "energy halberd crate"
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
 
 /*
 		Stamina / PVP weapons (intentionally overpriced due to odd balance position of stamina weapons)
@@ -123,38 +142,17 @@
 
 /datum/supply_pack/sec_supply/baton
 	name = "Stun Batons Crate"
-	desc = "Arm the Civil Protection Forces with three stun batons. Batteries included."
-	cost = 9000
-	contains = list(/obj/item/melee/baton/loaded,
-					/obj/item/melee/baton/loaded,
-					/obj/item/melee/baton/loaded)
+	desc = "Arm your vessel security with a stun baton. Batteries included."
+	cost = 3000
+	contains = list(/obj/item/melee/baton/loaded)
 	crate_name = "stun baton crate"
-
-/datum/supply_pack/sec_supply/disabler
-	name = "Disabler Crate"
-	desc = "Three stamina-draining disabler weapons."
-	cost = 9000
-	contains = list(/obj/item/gun/energy/disabler,
-					/obj/item/gun/energy/disabler,
-					/obj/item/gun/energy/disabler)
-	crate_name = "disabler crate"
 
 /datum/supply_pack/sec_supply/dragnet
 	name = "DRAGnet Crate"
-	desc = "Contains three \"Dynamic Rapid-Apprehension of the Guilty\" netting devices, a recent breakthrough in law enforcement prisoner management technology."
-	cost = 10000
-	contains = list(/obj/item/gun/energy/e_gun/dragnet,
-					/obj/item/gun/energy/e_gun/dragnet,
-					/obj/item/gun/energy/e_gun/dragnet)
+	desc = "Contains one \"Dynamic Rapid-Apprehension of the Guilty\" netting device, a recent breakthrough in law enforcement prisoner management technology."
+	cost = 2000
+	contains = list(/obj/item/gun/energy/e_gun/dragnet)
 	crate_name = "\improper DRAGnet crate"
-
-/datum/supply_pack/sec_supply/taser
-	name = "Hybrid Taser Crate"
-	desc = "Contains two disabler-taser hybrid weapons."
-	cost = 12000
-	contains = list(/obj/item/gun/energy/e_gun/advtaser,
-					/obj/item/gun/energy/e_gun/advtaser)
-	crate_name = "hybrid taser crate"
 
 /datum/supply_pack/sec_supply/claymore
 	name = "C-10 Claymore Crate"

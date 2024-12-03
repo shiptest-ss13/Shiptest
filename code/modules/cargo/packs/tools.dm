@@ -73,13 +73,6 @@
 	contains = list(/obj/item/pickaxe/drill/jackhammer)
 	crate_name = "jackhammer crate"
 
-/datum/supply_pack/tools/plasmacutter
-	name = "Plasmacutter Crate"
-	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
-	cost = 1250
-	contains = list(/obj/item/gun/energy/plasmacutter)
-	crate_name = "plasmacutter crate"
-
 /datum/supply_pack/tools/metalfoam
 	name = "Metal Foam Grenade Crate"
 	desc = "Seal up those pesky hull breaches with 7 metal foam grenades."
@@ -111,8 +104,11 @@
 /datum/supply_pack/tools/anglegrinder
 	name = "Angle Grinder"
 	desc = "Contains one angle grinder pack, a tool used for quick structure deconstruction and salvaging"
-	cost = 2000
-	contains = list(/obj/item/gear_pack/anglegrinder)
+	cost = 1500
+	contains = list(
+		/obj/item/gear_pack/anglegrinder,
+		/obj/item/radio/headset/alt
+		)
 	crate_name = "angle grinder crate"
 
 /datum/supply_pack/tools/electric_welder
@@ -121,6 +117,13 @@
 	cost = 850
 	contains = list(/obj/item/weldingtool/electric)
 	crate_name = "electric welder crate"
+
+/datum/supply_pack/tools/plasmacutter
+	name = "Plasmacutter Crate"
+	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
+	cost = 2500
+	contains = list(/obj/item/gun/energy/plasmacutter)
+	crate_name = "plasmacutter crate"
 
 /*
 		Liquid tanks

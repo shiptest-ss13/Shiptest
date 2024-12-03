@@ -179,53 +179,6 @@
 	projectile = /obj/projectile/energy/electrode
 	fire_sound = 'sound/weapons/taser.ogg'
 
-
-/obj/item/mecha_parts/mecha_equipment/weapon/honker
-	name = "\improper HoNkER BlAsT 5000"
-	desc = "Equipment for clown exosuits. Spreads fun and joy to everyone around. Honk!"
-	icon_state = "mecha_honker"
-	energy_drain = 200
-	equip_cooldown = 150
-	range = MECHA_MELEE|MECHA_RANGED
-	kickback = FALSE
-
-/obj/item/mecha_parts/mecha_equipment/weapon/honker/can_attach(obj/mecha/combat/honker/M)
-	if(..())
-		if(istype(M))
-			return 1
-	return 0
-
-/obj/item/mecha_parts/mecha_equipment/weapon/honker/action(target, params)
-	if(!action_checks(target))
-		return
-	playsound(chassis, 'sound/items/airhorn.ogg', 100, TRUE)
-	chassis.occupant_message("<font color='red' size='5'>HONK</font>")
-	for(var/mob/living/carbon/M in ohearers(6, chassis))
-		if(ishuman(M))
-			var/mob/living/carbon/human/H = M
-			if(istype(H.ears, /obj/item/clothing/ears/earmuffs))
-				continue
-		var/turf/turf_check = get_turf(M)
-		if(isspaceturf(turf_check) && !turf_check.Adjacent(src)) //in space nobody can hear you honk.
-			continue
-		to_chat(M, "<font color='red' size='7'>HONK</font>")
-		M.SetSleeping(0)
-		M.stuttering += 20
-		M.adjustEarDamage(0, 30)
-		M.Paralyze(60)
-		if(prob(30))
-			M.Stun(200)
-			M.Unconscious(80)
-		else
-			M.Jitter(500)
-
-	log_message("Honked from [src.name]. HONK!", LOG_MECHA)
-	var/turf/T = get_turf(src)
-	message_admins("[ADMIN_LOOKUPFLW(chassis.occupant)] used a Mecha Honker in [ADMIN_VERBOSEJMP(T)]")
-	log_game("[key_name(chassis.occupant)] used a Mecha Honker in [AREACOORD(T)]")
-	return 1
-
-
 //Base ballistic weapon type
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic
 	name = "general ballistic weapon"
@@ -310,17 +263,6 @@
 	projectiles_cache_max = 96
 	harmful = TRUE
 	ammo_type = "incendiary"
-
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/silenced
-	name = "\improper S.H.H. \"Quietus\" Carbine"
-	desc = "A weapon for combat exosuits. A mime invention, field tests have shown that targets cannot even scream before going down."
-	fire_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
-	icon_state = "mecha_mime"
-	equip_cooldown = 30
-	projectile = /obj/projectile/bullet/mime
-	projectiles = 6
-	projectile_energy_cost = 50
-	harmful = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot
 	name = "\improper LBX-10 \"Scattershot\" Heavy Shotgun"
@@ -439,7 +381,7 @@
 	var/turf/T = get_turf(src)
 	message_admins("[ADMIN_LOOKUPFLW(chassis.occupant)] fired a [src] in [ADMIN_VERBOSEJMP(T)]")
 	log_game("[key_name(chassis.occupant)] fired a [src] in [AREACOORD(T)]")
-	addtimer(CALLBACK(F, TYPE_PROC_REF(/obj/item/grenade/flashbang, prime)), det_time)
+	F.preprime(delayoverride = det_time)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/clusterbang //Because I am a heartless bastard -Sieve //Heartless? for making the poor man's honkblast? - Kaze
 	name = "\improper SOB-3 grenade launcher"
