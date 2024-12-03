@@ -27,12 +27,6 @@
 
 	var/list/atmos_overlay_types //gas IDs of current active gas overlays
 
-/turf/open/Initialize(mapload, inherited_virtual_z)
-	air = new(2500,src)
-	air.copy_from_turf(src)
-	update_air_ref(planetary_atmos ? AIR_REF_PLANETARY_TURF : AIR_REF_OPEN_TURF)
-	return ..()
-
 /turf/open/Destroy()
 	if(active_hotspot)
 		QDEL_NULL(active_hotspot)

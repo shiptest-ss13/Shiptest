@@ -19,6 +19,38 @@
 /datum/atmosphere/proc/generate_gas_string()
 	var/target_pressure = rand(minimum_pressure, maximum_pressure)
 	var/pressure_scalar = target_pressure / maximum_pressure
+	var/temperature = rand(minimum_temp, maximum_temp)
+
+	var/total_moles = target_pressure * CELL_VOLUME / (temperature * R_IDEAL_GAS_EQUATION)
+
+	var/list/gas_weights = list()
+	var/sum
+
+	for(var/gas in base_gases)
+		var/to_add = base_gases[gas]
+		gas_weights[gas] = to_add
+		sum += to_add
+
+	for(var/gas in normal_gases)
+		var/to_add = normal_gases[gas] * rand(50, 200) / 100 * pressure_scalar
+		gas_weights[gas] += to_add
+		sum += to_add
+
+	for(var/gas in restricted_gases)
+		if(!prob(restricted_chance))
+			continue
+		var/to_add = restricted_gases[gas] * rand(50, 200) / 100 * pressure_scalar
+		gas_weights[gas] += to_add
+		sum += to_add
+
+	var/list/string_builder = list()
+	for(var/gas in gas_weights)
+		var/real_weight = CEILING(gas_weights[gas] / sum * total_moles, 0.1)
+		string_builder += "[GLOB.gas_data.ids[gas]]=[real_weight]"
+	string_builder += "TEMP=[temperature]"
+
+	gas_string = string_builder.Join(";")
+	return
 
 	// First let's set up the gasmix and base gases for this template
 	// We make the string from a gasmix in this proc because gases need to calculate their pressure
