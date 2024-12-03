@@ -42,19 +42,19 @@
 	///If true, the radio has access to the full spectrum.
 	var/freerange = FALSE
 	///If true, the radio transmits and receives on subspace exclusively.
-	var/subspace_transmission = FALSE 
+	var/subspace_transmission = FALSE
 	///If true, subspace_transmission can be toggled at will.
-	var/subspace_switchable = FALSE 
+	var/subspace_switchable = FALSE
 	///Frequency lock to stop the user from untuning specialist radios.
-	var/freqlock = FALSE 
+	var/freqlock = FALSE
 	///If true, broadcasts will be large and BOLD.
-	var/use_command = FALSE 
+	var/use_command = FALSE
 	///If true, use_command can be toggled at will.
-	var/command = FALSE 
+	var/command = FALSE
 	///If true, the UI will display the voice log for the frequency
 	var/log = FALSE
 	///the voice log
-	var/list/loglist = list() 
+	var/list/loglist = list()
 
 	///Encryption key handling
 	var/obj/item/encryptionkey/keyslot
