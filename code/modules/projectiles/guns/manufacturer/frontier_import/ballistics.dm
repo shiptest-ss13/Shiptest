@@ -247,7 +247,7 @@
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot
 	name = "\improper Hammer"
-	desc = "A disposable rocket-propelled grenade launcher loaded with a HEDP shell."
+	desc = "A disposable rocket-propelled grenade launcher loaded with a standard HE shell."
 
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
@@ -276,6 +276,15 @@
 
 	safety_multiplier = 0
 
+/obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
+	name = "\improper Hammer-DP"
+	desc = "A disposable rocket-propelled grenade launcher loaded with an HEDP shell for Direct Penetration of your target."
+
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot/hedp
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot/hedp,
+	)
+
 /obj/item/gun/ballistic/rocketlauncher/oneshot/Initialize()
 	. = ..()
 	if(prob(1))
@@ -287,6 +296,12 @@
 		. += span_warning("It has been spent, and is now useless.")
 
 /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	name = "oneshot rocket launcher magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/rocket
+	caliber = "84mm"
+	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot/hedp
 	name = "oneshot rocket launcher magazine"
 	ammo_type = /obj/item/ammo_casing/caseless/rocket/hedp
 	caliber = "84mm"
