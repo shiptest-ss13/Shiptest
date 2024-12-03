@@ -40,7 +40,6 @@
 /obj/vehicle/ridden/atv/turret/Initialize()
 	. = ..()
 	turret = new(loc)
-	turret.base = src
 
 /obj/vehicle/ridden/atv/turret/Moved()
 	. = ..()
