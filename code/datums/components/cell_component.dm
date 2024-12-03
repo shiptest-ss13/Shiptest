@@ -175,7 +175,7 @@ The cells are removed from objects with the component through alt-click.
 		return
 
 	to_chat(user, span_notice("You connect [inserting_item] onto [equipment]."))
-	playsound(equipment,  'sound/weapons/magin.ogg', 40, TRUE)
+	playsound(equipment, 'sound/weapons/magin.ogg', 40, TRUE)
 	inserted_cell = inserting_item
 	inserting_item.forceMove(parent)
 	handle_cell_overlays(FALSE)
