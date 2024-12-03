@@ -14,8 +14,8 @@
 	supports_variations = VOX_VARIATION
 	blood_overlay_type = "helmet"
 
-	equipping_sound = 'sound/items/equip/equipping_vfast_generic.ogg'
-	unequipping_sound = 'sound/items/equip/unequipping_vfast_generic.ogg'
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
 	equip_delay_self = EQUIP_DELAY_HAT
 	equip_delay_other = EQUIP_DELAY_HAT * 1.5
 	strip_delay = EQUIP_DELAY_HAT * 1.5

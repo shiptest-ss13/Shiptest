@@ -17,8 +17,8 @@
 	greyscale_icon_state = "glasses"
 
 	equip_sound = 'sound/items/equip/straps_equip.ogg'
-	equipping_sound = 'sound/items/equip/equipping_vfast_generic.ogg'
-	unequipping_sound = 'sound/items/equip/unequipping_vfast_generic.ogg'
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
 	equip_delay_self = EQUIP_DELAY_EYEWEAR
 	equip_delay_other = EQUIP_DELAY_EYEWEAR * 1.5
 	strip_delay = EQUIP_DELAY_EYEWEAR * 1.5

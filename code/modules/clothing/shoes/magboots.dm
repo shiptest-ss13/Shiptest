@@ -14,8 +14,8 @@
 	greyscale_icon_state = "boots"
 
 	equip_sound = 'sound/items/equip/armor_equip.ogg'
-	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
-	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
+	equipping_sound = EQUIP_SOUND_MED_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_MED_GENERIC
 	equip_delay_self = EQUIP_DELAY_BOOTS
 	equip_delay_other = EQUIP_DELAY_BOOTS * 1.5
 	strip_delay = EQUIP_DELAY_BOOTS * 1.5

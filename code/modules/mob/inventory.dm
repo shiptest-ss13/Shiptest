@@ -254,10 +254,10 @@
 		return FALSE
 	return TRUE
 
-/mob/proc/putItemFromInventoryInHandIfPossible(obj/item/I, hand_index, force_removal = FALSE)
+/mob/proc/putItemFromInventoryInHandIfPossible(obj/item/I, hand_index, force_removal = FALSE, use_unequip_delay = FALSE)
 	if(!can_put_in_hand(I, hand_index))
 		return FALSE
-	if(!temporarilyRemoveItemFromInventory(I, force_removal))
+	if(!temporarilyRemoveItemFromInventory(I, force_removal, use_unequip_delay = use_unequip_delay))
 		return FALSE
 	I.remove_item_from_storage(src)
 	if(!put_in_hand(I, hand_index))

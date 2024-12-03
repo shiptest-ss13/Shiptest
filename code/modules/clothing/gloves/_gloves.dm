@@ -12,8 +12,8 @@
 	attack_verb = list("challenged")
 	var/transfer_prints = FALSE
 
-	equipping_sound = 'sound/items/equip/equipping_vfast_generic.ogg'
-	unequipping_sound = 'sound/items/equip/unequipping_vfast_generic.ogg'
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
 	equip_delay_self = EQUIP_DELAY_GLOVES
 	equip_delay_other = EQUIP_DELAY_GLOVES + (3 SECONDS)
 	strip_delay = EQUIP_DELAY_GLOVES + (3 SECONDS)

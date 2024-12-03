@@ -9,8 +9,8 @@
 	pocket_storage_component_path = FALSE
 
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
-	equipping_sound = 'sound/items/equip/equipping_short_generic.ogg'
-	unequipping_sound = 'sound/items/equip/unequipping_short_generic.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
 	equip_delay_self = EQUIP_DELAY_COAT
 	equip_delay_other = EQUIP_DELAY_COAT * 1.5
 	strip_delay = EQUIP_DELAY_COAT * 1.5
@@ -106,8 +106,8 @@
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
 
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
-	equipping_sound = 'sound/items/equip/equipping_short_generic.ogg'
-	unequipping_sound = 'sound/items/equip/unequipping_short_generic.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
 	equip_delay_self = EQUIP_DELAY_COAT
 	equip_delay_other = EQUIP_DELAY_COAT * 1.5
 	strip_delay = EQUIP_DELAY_COAT * 1.5

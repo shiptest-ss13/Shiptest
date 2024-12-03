@@ -5,8 +5,8 @@
 	integrity_failure = 0.4
 
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
-	equipping_sound = 'sound/items/equip/equipping_short_generic.ogg'
-	unequipping_sound = 'sound/items/equip/unequipping_short_generic.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
 
 	var/damaged_clothes = 0 //similar to machine's BROKEN stat and structure's broken var
 	///What level of bright light protection item has.

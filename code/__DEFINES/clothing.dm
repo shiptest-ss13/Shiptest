@@ -40,7 +40,7 @@
 
 // Base equipment delays
 /// Delay base for full-body coverage suit slot items. (hardsuits, spacesuits, radsuits, etc.)
-#define EQUIP_DELAY_OVERSUIT (8 SECONDS)
+#define EQUIP_DELAY_OVERSUIT (6 SECONDS)
 /// Delay base for Undersuits.
 #define EQUIP_DELAY_UNDERSUIT (6 SECONDS)
 
@@ -74,3 +74,16 @@
 #define EQUIP_ALLOW_MOVEMENT (1<<0)
 /// Apply a slowdown when equipping or unequipping.
 #define EQUIP_SLOWDOWN (1<<1)
+
+//sound defines for equipping and unequipping
+#define EQUIP_SOUND_VFAST_GENERIC 'sound/items/equip/equipping_vfast_generic.ogg'
+#define UNEQUIP_SOUND_VFAST_GENERIC 'sound/items/equip/unequipping_vfast_generic.ogg'
+
+#define EQUIP_SOUND_SHORT_GENERIC 'sound/items/equip/equipping_short_generic.ogg'
+#define UNEQUIP_SOUND_SHORT_GENERIC 'sound/items/equip/unequipping_short_generic.ogg'
+
+#define EQUIP_SOUND_MED_GENERIC 'sound/items/equip/equipping_med_generic.ogg'
+#define UNEQUIP_SOUND_MED_GENERIC 'sound/items/equip/unequipping_med_generic.ogg'
+
+#define EQUIP_SOUND_LONG_GENERIC 'sound/items/equip/equipping_long_generic.ogg'
+#define UNEQUIP_SOUND_LONG_GENERIC 'sound/items/equip/unequipping_long_generic.ogg'

@@ -17,8 +17,8 @@
 
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
-	equipping_sound = 'sound/items/equip/equipping_med_generic.ogg'
-	unequipping_sound = 'sound/items/equip/unequipping_med_generic.ogg'
+	equipping_sound = EQUIP_SOUND_MED_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_MED_GENERIC
 	equip_delay_self = EQUIP_DELAY_SUIT
 	equip_delay_other = EQUIP_DELAY_SUIT * 1.5
 	strip_delay = EQUIP_DELAY_SUIT * 1.5
