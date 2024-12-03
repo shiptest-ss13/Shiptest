@@ -13,6 +13,7 @@
 	dual_wield_spread = 60
 	wield_slowdown = LASER_RIFLE_SLOWDOWN
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/gun/energy/e_gun/empty_cell
 	spawn_no_ammo = TRUE
@@ -49,7 +50,6 @@
 	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 
 	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
@@ -240,7 +240,6 @@
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
 	shaded_charge = TRUE
-	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal

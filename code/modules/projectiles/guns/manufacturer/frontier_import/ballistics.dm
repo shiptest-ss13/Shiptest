@@ -8,7 +8,6 @@
 
 	icon_state = "mauler"
 	item_state = "hp_generic"
-	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_mauler,
@@ -139,6 +138,7 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	w_class = WEIGHT_CLASS_BULKY //this gun is visually larger, so I believe this is good
 
 	icon_state = "pounder"
 	item_state = "pounder"
