@@ -389,7 +389,7 @@
 					continue
 				light_to_mess.stop_flickering()
 
-			for(var/mob/affected_mob as anything in affected_mob)
+			for(var/mob/affected_mob as anything in affected_mobs)
 				if(!istype(affected_mob))
 					continue
 				var/datum/overmap/mobs_overmap = SSovermap.get_overmap_object_by_location(affected_mob)

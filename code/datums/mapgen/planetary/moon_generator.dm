@@ -253,8 +253,8 @@
 	desc = "Supposedly poisonous to humanoids."
 	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark
 	icon = 'icons/turf/planetary/moon.dmi'
-	icon_state = "moonsand"
-	base_icon_state = "moonsand"
+	icon_state = "sand"
+	base_icon_state = "sand"
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
@@ -266,13 +266,18 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
 
-	floor_variance = 0
-	max_icon_states = 0
+	floor_variance = 89
+	max_icon_states = 9
 
 	has_footsteps = TRUE
 	footstep_icon_state = "moon"
 
 	smooth_icon = 'icons/turf/floors/moonsand.dmi'
+
+/turf/open/floor/plating/asteroid/moon/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	if(prob(floor_variance))
+		add_overlay("sandalt_[rand(1,max_icon_states)]")
 
 /turf/open/floor/plating/asteroid/sand/Initialize(mapload, inherited_virtual_z)
 	. = ..()

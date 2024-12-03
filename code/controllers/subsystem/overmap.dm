@@ -413,6 +413,7 @@ SUBSYSTEM_DEF(overmap)
 
 /datum/overmap_star_system/ngr
 	name = "Gorlex Controlled - Ecbatana"
+	starname = "Ecbatana"
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#d9ad82"
@@ -446,12 +447,15 @@ SUBSYSTEM_DEF(overmap)
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
 
+//default shiptest overmap
 /datum/overmap_star_system/shiptest
 	has_outpost = TRUE
 	can_be_selected_randomly = FALSE
+	size = 30
 
 /datum/overmap_star_system/shiptest/New(generate_now=TRUE)
-	if(!prob(100))
+	//1/20 rounds
+	if(!prob(5))
 		return ..()
 
 	//Small easter egg so all these palletes doesn't go to waste in the event mines

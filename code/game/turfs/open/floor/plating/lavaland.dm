@@ -61,11 +61,19 @@
 	has_footsteps = TRUE
 	footstep_icon_state = "shrouded"
 
+	floor_variance = 83
+	max_icon_states = 5
+
 	layer = SAND_TURF_LAYER
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
 
+
+/turf/open/floor/plating/asteroid/purple/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	if(prob(floor_variance))
+		add_overlay("sandalt_[rand(1,max_icon_states)]")
 
 /turf/open/floor/plating/asteroid/purple/lit
 	light_range = 2

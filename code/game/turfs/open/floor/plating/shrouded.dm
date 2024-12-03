@@ -6,8 +6,8 @@
 	icon_state = "sand-255"
 	base_icon_state = "sand"
 
-	floor_variance = 20
-	max_icon_states = 8
+	floor_variance = 83
+	max_icon_states = 5
 	slowdown = 1.5
 	planetary_atmos = TRUE
 	initial_gas_mix = SHROUDED_DEFAULT_ATMOS
@@ -22,3 +22,8 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
 	smooth_icon = 'icons/turf/floors/shroudedsand.dmi'
+
+/turf/open/floor/plating/asteroid/shrouded/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	if(prob(floor_variance))
+		add_overlay("sandalt_[rand(1,max_icon_states)]")

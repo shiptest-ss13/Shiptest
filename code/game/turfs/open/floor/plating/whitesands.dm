@@ -13,8 +13,8 @@
 	clawfootstep = FOOTSTEP_SAND
 	layer = SAND_TURF_LAYER
 	digResult = /obj/item/stack/ore/glass/whitesands
-	max_icon_states = 0
-	floor_variance = 0
+	max_icon_states = 9
+	floor_variance = 40
 	slowdown = 1.5
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
@@ -34,6 +34,8 @@
 		transform = translation
 		icon = smooth_icon
 		icon_plating = null
+	if(prob(floor_variance))
+		add_overlay("sandalt_[rand(1,max_icon_states)]")
 
 /turf/open/floor/plating/asteroid/whitesands/lit
 	light_range = 2
