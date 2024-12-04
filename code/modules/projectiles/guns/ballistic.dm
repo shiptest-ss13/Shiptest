@@ -26,7 +26,8 @@
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
-		/obj/item/attachment/gun
+		/obj/item/attachment/gun,
+		/obj/item/attachment/sling
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
