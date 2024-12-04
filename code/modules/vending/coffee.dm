@@ -13,8 +13,8 @@
 	/obj/item/reagent_containers/food/drinks/cafelatte = 3,
 	/obj/item/reagent_containers/food/drinks/soylatte = 3)
 	refill_canister = /obj/item/vending_refill/coffee
-	default_price = 25
-	extra_price = 40
+	default_price = 5
+	extra_price = 15
 	light_mask = "coffee-light-mask"
 	light_color = COLOR_DARK_MODERATE_ORANGE
 

@@ -504,7 +504,7 @@
 			result = examinify.examine_more(src)
 
 			if(!LAZYLEN(result))
-				result = list(span_notice("<i>You examine [src] closer, but find nothing of interest...</i>"))
+				result = list(span_notice("<i>You examine [examinify] closer, but find nothing of interest...</i>"))
 	else
 		result = examinify.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 

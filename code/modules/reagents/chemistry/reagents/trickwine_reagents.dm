@@ -62,7 +62,7 @@
 				paralyze_dur = reac_volume
 			else
 				paralyze_dur = 50 + ((reac_volume - 50) / 4)
-		M.adjust_bodytemperature((-20*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
+		M.adjust_bodytemperature((-1*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
 		M.Paralyze(paralyze_dur)
 		walk(M, 0) //stops them mid pathing even if they're stunimmunee
 		M.apply_status_effect(/datum/status_effect/ice_block_talisman, paralyze_dur)
