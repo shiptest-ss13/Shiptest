@@ -85,7 +85,7 @@
 
 /obj/item/reagent_containers/glass/beaker/flamethrower_underbarrel
 	name = "internal fuel tank"
-	desc = "An internal fuel tank for a flamethrower. You shouldnt have been able to pull this out."
+	desc = "An internal fuel tank for a flamethrower. You shouldn't have been able to pull this out."
 	icon = 'icons/obj/chemical/hypovial.dmi'
 	icon_state = "hypovial"
 	volume = 20
