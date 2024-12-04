@@ -70,7 +70,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	projectile_deflect_chance = 50
+	projectile_deflect_chance = 0
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/space/Initialize()
@@ -86,7 +86,7 @@
 	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
-	projectile_deflect_chance = 50
+	projectile_deflect_chance = 0
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword
@@ -128,7 +128,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
-	projectile_deflect_chance = 50
+	projectile_deflect_chance = 25
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/Initialize()
