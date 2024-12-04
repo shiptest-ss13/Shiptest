@@ -28,7 +28,7 @@
 	// concentration was high enough. this caused a bunch of lag and added nothing to the game whatsoever
 	// thus, the temperatures were reduced to 70-90 C
 	minimum_temp = T20C + 20
-	maximum_temp = T20C + 40
+	maximum_temp = T20C + 45
 
 /datum/atmosphere/icemoon
 	id = ICEMOON_DEFAULT_ATMOS
@@ -242,19 +242,19 @@
 		GAS_PLASMA=0.1,
 	)
 	restricted_chance = 1
-
+/*
 /datum/atmosphere/desert
 	id = DESERT_DEFAULT_ATMOS
 	base_gases = list(
-		GAS_O2=10,
-		GAS_N2=40,
+		GAS_O2=5,
+		GAS_N2=20,
 	)
 	normal_gases = list(
 		GAS_O2=5,
 		GAS_N2=5,
 	)
 	restricted_gases = list(
-		GAS_CO=0.01,
+		GAS_CO=0.1,
 	)
 	restricted_chance = 1
 
@@ -262,5 +262,6 @@
 	maximum_pressure = ONE_ATMOSPHERE + 50
 
 	minimum_temp = T20C + 20
-	maximum_temp = T20C + 80
+	maximum_temp = T20C + 30
 
+*/

@@ -4,7 +4,7 @@
 	desc = "Upon closer examination, it's still dirt, just more wet than usual."
 	slowdown = 0.5
 	baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 	footstep = FOOTSTEP_MUD
 	barefootstep = FOOTSTEP_MUD
 	clawfootstep = FOOTSTEP_MUD
@@ -22,7 +22,7 @@
 	slowdown = 1
 	baseturfs = /turf/open/floor/plating/asteroid/dirt/wasteland
 	floor_variance = 15
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/asteroid/dirt/grass/jungle
 	icon = 'icons/turf/floors/forestgrass.dmi'

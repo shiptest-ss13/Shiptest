@@ -138,7 +138,7 @@
 
 	reagent_to_extract = /datum/reagent/toxin/acid
 	extracted_reagent_visible_name = "acid"
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 
 	var/particle_to_spawn = /particles/smoke/steam/vent/high
 	var/obj/effect/particle_holder/part_hold
