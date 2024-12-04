@@ -299,7 +299,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	default_ammo_type = /obj/item/ammo_box/magazine/m22lr_himehabu
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m22lr_himehabu,
@@ -350,7 +350,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	ammo_type = /obj/item/ammo_casing/c22lr
 	caliber = "22lr"
 	max_ammo = 10
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
 //########### SMGS ###########//
@@ -525,7 +525,6 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	default_ammo_type = /obj/item/ammo_box/magazine/boomslang
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/boomslang,
-		/obj/item/ammo_box/magazine/boomslang/short,
 	)
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -541,7 +540,7 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	spread_unwielded = 35
 	recoil = 4
 	recoil_unwielded = 10
-	wield_slowdown = 1
+	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
@@ -657,9 +656,6 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m556_42_hydra,
-		/obj/item/ammo_box/magazine/m556_42_hydra/extended,
-		/obj/item/ammo_box/magazine/m556_42_hydra/casket,
-		/obj/item/ammo_box/magazine/m556_42_hydra/small
 	)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "underbarrel grenade launcher")
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
@@ -684,7 +680,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 	fire_delay = 0.18 SECONDS
 	spread = 1
 	spread_unwielded = 8
-	wield_slowdown = 0.4
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
@@ -740,7 +736,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 	fire_delay = 0.08 SECONDS
 	spread = 6
 	spread_unwielded = 20
-	wield_slowdown = 0.85 //better than the lmgs since it doesnt have a bipod, still not ideal
+	wield_slowdown = SAW_SLOWDOWN //better than the lmgs since it doesnt have a bipod, still not ideal
 	wield_delay = 0.9 SECONDS //ditto
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
@@ -779,7 +775,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 
 	spread = 0
 	spread_unwielded = 12
-	wield_slowdown = 0.8 //dmrrrr
+	wield_slowdown = DMR_SLOWDOWN //dmrrrr
 	wield_delay = 0.85 SECONDS //above
 	zoomable = TRUE
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
@@ -913,12 +909,6 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m12g_bulldog,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/stun,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/slug,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/dragon,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/bioterror,
-		/obj/item/ammo_box/magazine/m12g_bulldog/drum/meteor,
 	)
 	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
@@ -944,7 +934,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	spread_unwielded = 16
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 0.6
+	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
 	wield_delay = 0.65 SECONDS
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
@@ -979,6 +969,9 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/m12g_bulldog/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/m12g_bulldog/drum
 	name = "shotgun drum magazine (12g buckshot)"
 	desc = "A bulky 12-round drum designed for the Bulldog shotgun and it's derivatives."
@@ -989,6 +982,9 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	max_ammo = 12
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m12g_bulldog/drum/stun
 	name = "shotgun drum magazine (12g taser slugs)"

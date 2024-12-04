@@ -57,7 +57,10 @@
 //BALLISTIC
 	///Compatible magazines with the gun
 	var/default_ammo_type
+	///Allowed base types of magazines with the gun
 	var/allowed_ammo_types
+	///Incompatible magazines with the gun
+	var/blacklisted_ammo_types
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
 	///Do we eject the magazine upon runing out of ammo?
@@ -1117,6 +1120,7 @@
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	/obj/item/gun/energy/plasmacutter,
 	/obj/item/melee/energy,
+	/obj/item/gear_handle/anglegrinder,
 	)))
 
 ///Handles all the logic of sawing off guns,

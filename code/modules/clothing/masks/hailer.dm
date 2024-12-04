@@ -13,6 +13,7 @@
 	visor_flags_inv = HIDEFACIALHAIR | HIDEFACE
 	flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
 	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/mask/gas/sechailer/swat
 	name = "\improper SWAT mask"
