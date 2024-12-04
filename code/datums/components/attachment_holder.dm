@@ -21,7 +21,7 @@
 	var/obj/item/gun/parent_gun = parent
 
 	src.slot_room = slot_room
-	src.valid_types = typecahceof(valid_types)
+	src.valid_types = typecacheof(valid_types)
 	src.slot_offsets = slot_offsets
 
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(handle_attack))
