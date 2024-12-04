@@ -202,14 +202,14 @@
 	SIGNAL_HANDLER
 
 	for(var/obj/item/attach as anything in attachments)
-		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_WEILD , parent, user, params))
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_WIELD , parent, user, params))
 			return TRUE
 
 /datum/component/attachment_holder/proc/handle_item_unwield(obj/item/parent, mob/user, params)
 	SIGNAL_HANDLER
 
 	for(var/obj/item/attach as anything in attachments)
-		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNWEILD, parent, user, params))
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNWIELD, parent, user, params))
 			return TRUE
 
 /datum/component/attachment_holder/proc/handle_unique_action(obj/item/parent, mob/user, params)
