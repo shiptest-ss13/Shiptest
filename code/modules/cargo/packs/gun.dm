@@ -705,6 +705,7 @@
 	cost = 750
 	contains = list(/obj/item/attachment/gun/energy/e_gun)
 	crate_name = "underbarrel energy gun crate"
+
 /datum/supply_pack/gun/attachment/sling
 	name = "Shoulder Sling Crate"
 	desc = "Contains a single shoulder sling to be mounted on a firearm for easy carrying without armor holsters. Only compatible with longarms."
