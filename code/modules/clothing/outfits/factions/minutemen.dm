@@ -224,8 +224,7 @@
 
 	l_hand = /obj/item/storage/briefcase
 
-	backpack = /obj/item/storage/backpack/satchel/leather
-	satchel = /obj/item/storage/backpack/satchel/leather
+	backpack = /obj/item/storage/backpack/industrial
 
 	l_pocket = /obj/item/toy/crayon/white
 	r_pocket = /obj/item/radio
@@ -240,7 +239,7 @@
 	backpack_contents = list(/obj/item/storage/box/evidence=1,\
 		/obj/item/detective_scanner=1,\
 		/obj/item/melee/classic_baton=1,\
-		/obj/item/ammo_box/magazine/cm5_9mm = 1, \
+		/obj/item/ammo_box/magazine/cm5_9mm = 2, \
 		/obj/item/gun/ballistic/automatic/smg/cm5/compact
 		)
 
