@@ -14,9 +14,9 @@
 	var/datum/callback/on_examine
 	///Called on the parents preattack
 	var/datum/callback/on_preattack
-	///Called on the parents weild
+	///Called on the parents wield
 	var/datum/callback/on_wield
-	///Called on the parents unweild
+	///Called on the parents unwield
 	var/datum/callback/on_unwield
 	///Unused...Also a little broken..
 	var/list/datum/action/actions
