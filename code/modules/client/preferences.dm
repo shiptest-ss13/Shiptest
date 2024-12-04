@@ -119,7 +119,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"vox_neck_quills" = "Plain",
 							"elzu_horns" = "None",
 							"elzu_tail" = "None",
-							"flavor_text" = ""
+							"flavor_text" = "",
+							"flavor_portrait" = "",
+							"flavor_portrait_source" = ""
 						)
 	var/height_filter = "Normal"
 	var/list/randomise = list(
@@ -348,14 +350,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE]'>Always Random Age: [(randomise[RANDOM_AGE]) ? "Yes" : "No"]</A>"
 				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE_ANTAG]'>When Antagonist: [(randomise[RANDOM_AGE_ANTAG]) ? "Yes" : "No"]</A>"
 
-			dat += "<br><a href='byond://?_src_=prefs;preference=flavor_text;task=input'><b>Set Flavor Text</b></a>"
-			if(length(features["flavor_text"]) <= 40)
-				if(!length(features["flavor_text"]))
-					dat += "\[...\]"
-				else
-					dat += "[features["flavor_text"]]"
-			else
-				dat += "[copytext_char(features["flavor_text"], 1, 37)]...<BR>"
+			dat += "<br><b>Flavor Text: </b>"
+			var/flavortext = "\[...\]"
+			if(length(features["flavor_text"]) > 40)
+				flavortext = copytext_char(features["flavor_text"], 1, 37) + "..."
+			else if(length(features["flavor_text"]))
+				flavortext = features["flavor_text"]
+			dat += "<a href='byond://?_src_=prefs;preference=flavor_text;task=input'>[flavortext]</a>"
+
+			dat += "<br><b>Portrait:</b>"
+			var/portrait_text = length(features["flavor_portrait"]) ? "\[Image by [features["flavor_portrait_source"]]\]" : "\[Unset\]"
+			dat += "<a href='byond://?_src_=prefs;preference=flavor_portrait;task=input'>[portrait_text]</a>"
 
 			dat += "<br><br><b>Special Names:</b><BR>"
 			var/old_group
@@ -1746,6 +1751,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(msg)
 						features["flavor_text"] = msg
 
+				if("flavor_portrait")
+					var/url = input(user, "A URL to an image that will be shown when others examine you.", "Flavor Portrait", features["flavor_portrait"]) as text|null
+					if(isnull(url))
+						return
+					features["flavor_portrait"] = url
+
+					var/source = input(user, "The name of the artist or other source for the specified image.", "Flavor Portrait", features["flavor_portrait_source"]) as text|null
+					if(isnull(source))
+						return
+					features["flavor_portrait_source"] = source
+
 				if("hair")
 					var/new_hair = input(user, "Choose your character's hair colour:", "Character Preference","#"+hair_color) as color|null
 					if(new_hair)
@@ -2560,7 +2576,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.fbp = fbp
 
-	character.set_flavor_text(features["flavor_text"]) //Let's update their flavor_text at least initially
+	character.set_flavor_text(features["flavor_text"], features["flavor_portrait"], features["flavor_portrait_source"]) //Let's update their flavor_text at least initially
 
 	if(loadout) //I have been told not to do this because it's too taxing on performance, but hey, I did it anyways! //I hate you old me //don't be mean
 		for(var/gear in equipped_gear)
