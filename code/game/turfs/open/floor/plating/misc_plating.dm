@@ -171,11 +171,8 @@
 	light_power = 1
 	light_color = LIGHT_COLOR_LIGHT_CYAN
 
-/turf/open/floor/plating/ice/colder
-	//initial_temperature = 140
-
 /turf/open/floor/plating/ice/temperate
-	//initial_temperature = 255.37
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/open/floor/plating/ice/break_tile()
 	return
@@ -225,12 +222,6 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_SNOWED)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_SNOWED)
 	planetary_atmos = TRUE
-
-/turf/open/floor/plating/snowed/colder
-	//initial_temperature = 140
-
-/turf/open/floor/plating/snowed/temperatre
-	//initial_temperature = 255.37
 
 /turf/open/floor/plating/snowed/smoothed/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
