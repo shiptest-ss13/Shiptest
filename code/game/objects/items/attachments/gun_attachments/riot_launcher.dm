@@ -20,5 +20,5 @@
 
 /obj/item/gun/grenadelauncher/underbarrel
 	name = "underbarrel riot grenade launcher"
-	desc = "An even terribler thing. Just despicable really. You shouldnt be seeing this."
+	desc = "An even more terrible thing. Just despicable, really. You shouldn't be seeing this."
 	max_grenades = 1
