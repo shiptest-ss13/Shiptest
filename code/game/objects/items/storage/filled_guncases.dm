@@ -216,6 +216,12 @@
 /obj/item/storage/guncase/energy/egun
 	gun_type = /obj/item/gun/energy/e_gun
 
+/obj/item/storage/guncase/energy/ultima
+	gun_type = /obj/item/gun/energy/e_gun/iot
+
+/obj/item/storage/guncase/energy/etar
+	gun_type = /obj/item/gun/energy/e_gun/smg
+
 /obj/item/storage/guncase/energy/iongun
 	gun_type = /obj/item/gun/energy/ionrifle
 
@@ -266,6 +272,10 @@
 /obj/item/storage/guncase/cm15
 	gun_type = /obj/item/gun/ballistic/shotgun/cm15
 	mag_type = /obj/item/ammo_box/magazine/cm15_12g
+
+/obj/item/storage/guncase/cm24
+	gun_type = /obj/item/gun/ballistic/automatic/assault/skm/cm24
+	mag_type = /obj/item/ammo_box/magazine/skm_762_40
 
 /obj/item/storage/guncase/cmf90
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/f90

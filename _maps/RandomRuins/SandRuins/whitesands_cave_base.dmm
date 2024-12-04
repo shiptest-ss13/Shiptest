@@ -864,7 +864,7 @@
 /area/ruin/whitesands/cave_base)
 "tB" = (
 /obj/machinery/porta_turret/cave_base{
-	mode = 1
+	lethal = 1
 	},
 /obj/effect/turf_decal/box/red,
 /obj/structure/cable,
@@ -1103,7 +1103,7 @@
 /area/ruin/whitesands/cave_base)
 "yD" = (
 /obj/machinery/porta_turret/cave_base{
-	mode = 1
+	lethal = 1
 	},
 /obj/structure/cable,
 /obj/effect/turf_decal/box/red,
@@ -1507,7 +1507,7 @@
 	},
 /obj/machinery/light/floor,
 /obj/machinery/porta_turret/cave_base{
-	mode = 1
+	lethal = 1
 	},
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/cave_base)
@@ -1536,7 +1536,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "HF" = (
 /obj/machinery/porta_turret/cave_base{
-	mode = 1
+	lethal = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -2016,7 +2016,7 @@
 /obj/effect/turf_decal/box/red,
 /obj/machinery/light/floor,
 /obj/machinery/porta_turret/cave_base{
-	mode = 1
+	lethal = 1
 	},
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/cave_base)
@@ -2182,7 +2182,7 @@
 /turf/open/floor/plating/asteroid/whitesands/grass,
 /area/overmap_encounter/planetoid/cave/explored)
 "Xe" = (
-/obj/machinery/porta_turret,
+/obj/machinery/porta_turret/cave_base,
 /turf/closed/mineral/random/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
 "XF" = (

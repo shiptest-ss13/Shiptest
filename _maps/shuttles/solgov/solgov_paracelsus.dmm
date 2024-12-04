@@ -892,10 +892,14 @@
 /area/ship/hallway/port)
 "jh" = (
 /obj/structure/table,
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_y = 7
+/obj/item/storage/case/surgery{
+	pixel_x = -3;
+	pixel_y = 3
 	},
-/obj/item/reagent_containers/medigel/sterilizine,
+/obj/item/reagent_containers/medigel/sterilizine{
+	pixel_x = 9;
+	pixel_y = 4
+	},
 /obj/machinery/light/directional/west,
 /obj/structure/sign/poster/solgov/random{
 	pixel_y = 30
@@ -1679,10 +1683,14 @@
 /area/ship/cargo)
 "qH" = (
 /obj/structure/table,
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_y = 7
+/obj/item/storage/case/surgery{
+	pixel_x = 3;
+	pixel_y = 2
 	},
-/obj/item/reagent_containers/medigel/sterilizine,
+/obj/item/reagent_containers/medigel/sterilizine{
+	pixel_x = -10;
+	pixel_y = 3
+	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/medical/surgery)

@@ -2,7 +2,7 @@
 	name = "SL L-204 laser gun"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
 
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron=2000)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
@@ -170,7 +170,6 @@
 	inhand_y_dimension = 64
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
-	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima)
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
@@ -263,7 +262,6 @@
 	shaded_charge = FALSE
 	ammo_x_offset = 4
 	charge_sections = 2
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = 0
 
 
