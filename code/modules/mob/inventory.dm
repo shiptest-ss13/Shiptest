@@ -566,12 +566,17 @@
 	if(equip_self_flags & EQUIP_SLOWDOWN)
 		equipping.add_movespeed_modifier(/datum/movespeed_modifier/equipping)
 
+	var/ourchannel
 	if(soundtoplay)
-		playsound(equipping.loc, soundtoplay, 35)
+		ourchannel = SSsounds.random_available_channel()
+		playsound(equipping.loc, soundtoplay, 35, channel = ourchannel)
 
 	ADD_TRAIT(equipping, TRAIT_EQUIPPING_OR_UNEQUIPPING, ref(src))
 
 	. = do_after(equipping, equip_delay_self, equipping, flags, interaction_key = EQUIPPING_INTERACTION_KEY(src))
+
+	if(ourchannel)
+		playsound(equipping.loc, null, 35, channel = ourchannel)
 
 	REMOVE_TRAIT(equipping, TRAIT_EQUIPPING_OR_UNEQUIPPING, ref(src))
 
