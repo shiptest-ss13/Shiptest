@@ -21,7 +21,6 @@
 	equip_delay_self = EQUIP_DELAY_UNDERSUIT
 	equip_delay_other = EQUIP_DELAY_UNDERSUIT * 1.5
 	strip_delay = EQUIP_DELAY_UNDERSUIT * 1.5
-	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
 
 	var/has_sensor = HAS_SENSORS // For the crew computer
 	var/random_sensor = TRUE
