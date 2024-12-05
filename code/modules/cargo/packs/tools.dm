@@ -39,6 +39,13 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/assbelt
+	name = "Assault Belt"
+	desc = "Contains an assault belt, with not one, not two, but six pockets."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/assault)
+	crate_name = "assault belt crate"
+
 /datum/supply_pack/tools/cellcharger
 	name = "Cell Charger Crate"
 	desc = "Contains a cell charger, able to charge all sorts of power cells."

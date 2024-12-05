@@ -1,5 +1,6 @@
 /obj/item/gun/ballistic/automatic/pistol
 	bolt_type = BOLT_TYPE_LOCKING
+	w_class = WEIGHT_CLASS_NORMAL
 
 	vary_fire_sound = FALSE
 	fire_sound_volume = 90

@@ -76,9 +76,15 @@
 	parent.attack_self(user)
 	return TRUE
 
-/datum/component/attachment/proc/update_overlays(obj/item/parent, list/overlays, list/offset)
+/datum/component/attachment/proc/update_overlays(obj/item/attachment/parent, list/overlays, list/offset)
 	if(!(attach_features_flags & ATTACH_NO_SPRITE))
-		overlays += mutable_appearance(parent.icon, "[parent.icon_state]-attached")
+		var/overlay_layer = FLOAT_LAYER
+		var/overlay_plane = FLOAT_PLANE
+		if(parent.render_layer)
+			overlay_layer = parent.render_layer
+		if(parent.render_plane)
+			overlay_layer = parent.render_plane
+		overlays += mutable_appearance(parent.icon, "[parent.icon_state]-attached",overlay_layer,overlay_plane)
 
 /datum/component/attachment/proc/try_attach(obj/item/parent, obj/item/holder, mob/user, bypass_checks)
 	SIGNAL_HANDLER
