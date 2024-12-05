@@ -73,7 +73,7 @@
 
 	if(!M.incapacitated() && loc == M && istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
-		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index))
+		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index, FALSE, TRUE))
 			add_fingerprint(usr)
 
 /obj/item/reagent_containers/food/snacks/clothing
