@@ -1,21 +1,12 @@
 SUBSYSTEM_DEF(map_gen)
 	name = "Map Generation"
 	wait = 1
-	// ? according to kapu, SS_TICKER and SS_BACKGROUND don't play well together.
-	// ? additionally, map generation needs to happen at high server load, so SS_BACKGROUND is undesireable.
-	// ? however, moving it up would move it above SSair: long queues may lead it to eat ticks.
-	// ? thus SSair must be moved up. however, it must also not conflict with SScallbacks, which handles atmos callbacks
-	// ? for SSair and is, i BELIEVE, consistently scheduled first to ensure it completes.
-	// ? also, live tests revealed a bug with a reservation corner that was repeatedly allocated for vlevels.
-	// ? this should be fixed: possible overlap with the simultaneous dock SGTs?
-	flags = SS_TICKER | SS_BACKGROUND
 	init_order = INIT_ORDER_MAP_GEN
-	priority = FIRE_PRIORITY_MAP_GEN // not 100% sure this makes a difference, due to confluence of SS_TICKER and SS_BACKGROUND
+	priority = FIRE_PRIORITY_MAP_GEN
 	runlevels = RUNLEVELS_DEFAULT
 
 	/// All possible biomes in assoc list, mapping type to instance
 	var/list/biomes = list()
-
 
 	/// Priority queue containing /datum/map_generator instances for the subsystem to run.
 	/// The subsystem will, upon firing, run the first subsystem in this list until the list is empty or
@@ -24,8 +15,20 @@ SUBSYSTEM_DEF(map_gen)
 	/// identical priority effectively has its own queue that is handled after all foregoing queues have been emptied.
 	var/list/jobs = list()
 
+	var/current_job_start_time = 0
+
+	var/average_generation_time = 0
+
+/* Probably unnecessary? Reenable in case of emergency
+BACKGROUND_SUBSYSTEM_DEF(map_gen)
+	name = "Map Generation (Background)"
+	priority = FIRE_PRIORITY_MAP_GEN_BACKGROUND
+*/
+
 /datum/controller/subsystem/map_gen/stat_entry(msg)
-	msg = "Q:[length(jobs)]"
+	msg += "Q:[length(SSmap_gen.jobs)]|"
+	msg += "A:[round(SSmap_gen.average_generation_time TICKS)]s|"
+	msg += "ETA:[round((length(SSmap_gen.jobs) * SSmap_gen.average_generation_time) TICKS)]s"
 	return ..()
 
 /datum/controller/subsystem/map_gen/Initialize(timeofday)
@@ -58,10 +61,11 @@ SUBSYSTEM_DEF(map_gen)
 
 /datum/controller/subsystem/map_gen/fire(resumed = 0)
 	// jobs are sorted by priority, and handled in order
-	for(var/datum/map_generator/cur_map_gen in jobs) // serves as a queue
+	for(var/datum/map_generator/cur_map_gen in SSmap_gen.jobs) // serves as a queue
 		while(cur_map_gen.phase != MAPGEN_PHASE_FINISHED)
 			switch(cur_map_gen.phase)
 				if(MAPGEN_PHASE_GENERATE)
+					SSmap_gen.current_job_start_time = REALTIMEOFDAY
 					handle_gen_phase(cur_map_gen)
 					if(state != SS_RUNNING)
 						return
@@ -87,7 +91,14 @@ SUBSYSTEM_DEF(map_gen)
 		var/message = "MAPGEN: map_generator datum [get_log_string(cur_map_gen)] finished, removing from queue"
 		log_shuttle(message)
 		log_world(message)
-		jobs -= cur_map_gen
+
+		//If a job was interrupted, we don't want to count it in the average generation time.
+		if(SSmap_gen.current_job_start_time)
+			SSmap_gen.average_generation_time = MC_AVERAGE_FAST(SSmap_gen.average_generation_time, REALTIMEOFDAY - SSmap_gen.current_job_start_time)
+			SSmap_gen.current_job_start_time = 0
+
+		SSmap_gen.jobs -= cur_map_gen
+
 	// This can only be reached if the queue is cleared. Once that happens, the subsystem doesn't need to fire.
 	can_fire = FALSE
 

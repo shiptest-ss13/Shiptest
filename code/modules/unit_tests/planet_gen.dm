@@ -22,4 +22,3 @@
 
 	UNTIL(!length(SSmap_gen.jobs))
 	qdel(mapzone)
-	Run()
