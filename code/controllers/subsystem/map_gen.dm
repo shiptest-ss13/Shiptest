@@ -61,7 +61,7 @@ BACKGROUND_SUBSYSTEM_DEF(map_gen)
 
 /datum/controller/subsystem/map_gen/fire(resumed = 0)
 	// jobs are sorted by priority, and handled in order
-	for(var/datum/map_generator/cur_map_gen in SSmap_gen.jobs) // serves as a queue
+	for(var/datum/map_generator/cur_map_gen as anything in SSmap_gen.jobs) // serves as a queue
 		while(cur_map_gen.phase != MAPGEN_PHASE_FINISHED)
 			switch(cur_map_gen.phase)
 				if(MAPGEN_PHASE_GENERATE)
@@ -91,6 +91,8 @@ BACKGROUND_SUBSYSTEM_DEF(map_gen)
 		var/message = "MAPGEN: map_generator datum [get_log_string(cur_map_gen)] finished, removing from queue"
 		log_shuttle(message)
 		log_world(message)
+
+		cur_map_gen.on_complete?.Invoke()
 
 		//If a job was interrupted, we don't want to count it in the average generation time.
 		if(SSmap_gen.current_job_start_time)

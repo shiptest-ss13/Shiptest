@@ -17,8 +17,7 @@
 		var/datum/map_generator/mapgen = new planet_type.mapgen(block_turfs)
 		SSmap_gen.queue_generation(MAPGEN_PRIORITY_MED, mapgen)
 
-		var/datum/map_generator/clear_turfs/map_gen = new(block_turfs)
-		SSmap_gen.queue_generation(MAPGEN_PRIORITY_LOW, map_gen)
-
 	UNTIL(!length(SSmap_gen.jobs))
+
+	mapzone.clear_reservation()
 	qdel(mapzone)

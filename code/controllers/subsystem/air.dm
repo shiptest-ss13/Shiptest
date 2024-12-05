@@ -75,8 +75,15 @@ SUBSYSTEM_DEF(air)
 	/// Replaces "resumed" in fire() due to needing to keep the background subsystem synched.
 	var/incomplete = FALSE
 
+//This exists to hoover up all the spare processing time in a tick for use in the air subsystem, if there is any.
 BACKGROUND_SUBSYSTEM_DEF(air)
 	name = "Atmospherics (Background)"
+
+/datum/controller/subsystem/air/background/fire()
+	//Don't begin a new run, let the main subsystem handle that to ensure we don't double-process machinery
+	if(SSair.currentpart == SSAIR_ACTIVETURFS)
+		return
+	return ..()
 
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"

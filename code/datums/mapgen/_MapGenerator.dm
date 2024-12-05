@@ -25,7 +25,10 @@
 	/// The "priority" of the datum in the SSmap_gen job queue,
 	var/priority
 
-/datum/map_generator/New(list/_turfs, datum/map_template/_template = null, turf/_template_turf = null)
+	/// A callback which is invoked when the map generator has completed its generation.
+	var/datum/callback/on_complete = null
+
+/datum/map_generator/New(list/_turfs, datum/map_template/_template = null, turf/_template_turf = null, _on_complete = null)
 	turfs = _turfs
 	template = _template
 	template_turf = _template_turf

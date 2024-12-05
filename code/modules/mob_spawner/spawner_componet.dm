@@ -13,9 +13,13 @@
 	var/wave_downtime //Average time until spawning starts again
 	var/wave_timer
 	var/current_timerid
+	var/datum/virtual_level/vlevel
 	var/spawn_amount
 
 /datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max, _wave_length, _wave_downtime, _spawn_amount = 1)
+	if(!ismovable(parent))
+		return COMPONENT_INCOMPATIBLE
+
 	if(_spawn_time)
 		spawn_time=_spawn_time
 	if(_mob_types)
@@ -39,14 +43,19 @@
 	if(_spawn_amount)
 		spawn_amount = _spawn_amount
 
+	var/atom/movable/owner = parent
+	vlevel = owner.get_virtual_level()
+
 	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING), PROC_REF(stop_spawning))
 	RegisterSignal(parent, list(COMSIG_SPAWNER_TOGGLE_SPAWNING), PROC_REF(toggle_spawning))
+	RegisterSignal(parent, COMSIG_ATOM_VIRTUAL_Z_CHANGE, PROC_REF(virtual_z_changed))
 	START_PROCESSING(SSprocessing, src)
 
 /datum/component/spawner/process()
-	if(!parent) //Sanity check for instances where the spawner may be sleeping while the parent is destroyed
-		qdel(src)
+	if(vlevel.clearing)
+		STOP_PROCESSING(SSprocessing, src)
 		return
+
 	try_spawn_mob()
 
 /datum/component/spawner/proc/stop_spawning(force)
@@ -109,3 +118,6 @@
 		P.visible_message("<span class='danger'>[L] [pick(spawn_text)] [P].</span>")
 		if(length(spawn_sound))
 			playsound(P, pick(spawn_sound), 50, TRUE)
+
+/datum/component/spawner/proc/virtual_z_changed(new_virtual_z, old_virtual_z)
+	vlevel = SSmapping.virtual_z_translation["[new_virtual_z]"]

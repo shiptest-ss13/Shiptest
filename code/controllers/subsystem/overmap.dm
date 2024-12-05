@@ -305,7 +305,8 @@ SUBSYSTEM_DEF(overmap)
 	// As long as we don't store a reference to it, we don't need to qdelete this:
 	// the datum will be picked up by GC once the proc returns, as SSmap_gen will remove it from the internal queue.
 	mapgen = new dynamic_datum.mapgen(vlevel.get_unreserved_block(), used_ruin, ruin_turf)
-	SSmap_gen.queue_generation(MAPGEN_PRIORITY_MED, mapgen)
+	// Admin-spawned, etc. encounters have a lower priority since a ship likely isn't trying to dock right away.
+	SSmap_gen.queue_generation(requesting ? MAPGEN_PRIORITY_MED : MAPGEN_PRIORITY_LOW, mapgen)
 
 	// the # of phases "between" the start of the job queue and completion of the mapgen datum's job.
 	// this works because phases are numeric. it's stored because jobs will disappear from the queue as they're completed.

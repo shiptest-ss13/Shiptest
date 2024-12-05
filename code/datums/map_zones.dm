@@ -116,6 +116,8 @@
 	var/reserved_margin = 0
 	/// Margin for dockers and ruins to avoid placing things
 	var/mapping_margin = MAPPING_MARGIN
+	/// Whether the virtual level is clearing itself
+	var/clearing = FALSE //TODO: Make this a signal
 
 /datum/virtual_level/proc/is_in_mapping_bounds(atom/Atom)
 	if(Atom.x >= low_x + mapping_margin && Atom.x <= high_x - mapping_margin && Atom.y >= low_y + mapping_margin && Atom.y <= high_y - mapping_margin && Atom.z == z_value)
@@ -428,22 +430,35 @@
 		turf.virtual_z = id
 
 /datum/virtual_level/proc/clear_reservation()
+	clearing = TRUE
+
 	/// Create a dummy reservation to safeguard this space from being allocated mid-clearing in case the virtual level does get deleted
 	var/datum/dummy_space_reservation/safeguard = new(low_x, low_y, high_x, high_y, z_value)
 
 	var/list/turf/block_turfs = get_block()
+	var/list/atom/movable/all_contents = list()
+	for(var/turf/turf as anything in block_turfs)
+		all_contents += turf.contents
 
 	var/static/list/ignored_atoms = typecacheof(list(/mob/dead, /atom/movable/lighting_object))
+	// don't waste time trying to qdelete the lighting object
+	for(var/atom/movable/thing as anything in all_contents)
+		//There's a dedicated macro for checking in a typecache, but it has unecessary checks
+		//And this needs to be fast
+		if(ignored_atoms[thing.type])
+			continue
+		qdel(thing)
+		CHECK_TICK
+
+	all_contents.Cut()
 	for(var/turf/turf as anything in block_turfs)
-		// don't waste time trying to qdelete the lighting object
 		for(var/atom/movable/thing as anything in turf.contents)
-			//There's a dedicated macro for checking in a typecache, but it has unecessary checks
-			//And this needs to be fast
 			if(ignored_atoms[thing.type])
 				continue
-			qdel(thing)
-			// DO NOT CHECK_TICK HERE. IT CAN CAUSE ITEMS TO GET LEFT BEHIND
-			// THIS IS REALLY IMPORTANT FOR CONSISTENCY. SORRY ABOUT THE LAG SPIKE
+			all_contents += thing
+
+	if(length(all_contents))
+		stack_trace("Stragglers detected in virtual level after cleanup")
 
 	var/datum/map_generator/clear_turfs/map_gen = new(block_turfs)
 	SSmap_gen.queue_generation(MAPGEN_PRIORITY_LOW, map_gen)
@@ -451,6 +466,8 @@
 		stoplag(2)
 
 	qdel(safeguard)
+
+	clearing = FALSE
 
 /datum/virtual_level/proc/get_trait(trait)
 	return traits[trait]
