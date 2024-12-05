@@ -116,7 +116,6 @@ SUBSYSTEM_DEF(mapping)
 
 	areas_in_z = SSmapping.areas_in_z
 	map_zones = SSmapping.map_zones
-	biomes = SSmapping.biomes
 	planet_types = SSmapping.planet_types
 
 	maplist = SSmapping.maplist

@@ -273,10 +273,6 @@ SUBSYSTEM_DEF(overmap)
 	var/datum/map_template/ruin/used_ruin = ispath(ruin_type) ? (new ruin_type) : ruin_type
 	SSblackbox.record_feedback("tally", "encounter_spawned", 1, "[dynamic_datum.mapgen]")
 
-	var/turf/ruin_turf
-
-	var/list/ruin_turfs = list()
-
 	// name is random but PROBABLY unique
 	var/encounter_name = dynamic_datum.planet_name || "\improper Uncharted Space [dynamic_datum.x]/[dynamic_datum.y]-[rand(1111, 9999)]"
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
@@ -291,6 +287,9 @@ SUBSYSTEM_DEF(overmap)
 	)
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
+	var/turf/ruin_turf
+	var/list/ruin_turfs = list()
+	var/list/ruin_templates = list()
 	if(used_ruin)
 		ruin_turf = locate(
 			rand(
