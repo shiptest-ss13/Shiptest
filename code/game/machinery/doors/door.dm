@@ -356,7 +356,7 @@
 		for(var/atom/movable/M in get_turf(src))
 			if(M.density && M != src) //something is blocking the door
 				if(autoclose)
-					autoclose_in(fast_close ? close_speed/10, close_speed)
+					autoclose_in(fast_close ? close_speed/10 : close_speed)
 				return
 
 	operating = TRUE
