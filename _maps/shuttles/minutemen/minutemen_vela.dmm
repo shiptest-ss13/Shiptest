@@ -288,9 +288,8 @@
 	list_reagents = list(/datum/reagent/consumable/ice = 30);
 	pixel_y = 10
 	},
-/obj/item/stamp/clip{
-	pixel_y = 2;
-	pixel_x = -13
+/obj/item/stamp{
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -1190,6 +1189,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/departments/restroom{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "fl" = (
@@ -2080,6 +2082,9 @@
 	dir = 6
 	},
 /obj/structure/table/chem,
+/obj/structure/railing/thin{
+	dir = 6
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "kn" = (
@@ -2218,9 +2223,6 @@
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "kL" = (
-/obj/structure/railing{
-	layer = 4
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
@@ -2246,6 +2248,7 @@
 	pixel_x = -3;
 	id = "vela_mech_shield"
 	},
+/obj/structure/railing/thin,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
 "kS" = (
@@ -4114,7 +4117,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "ts" = (
-/obj/machinery/light/directional/west,
 /obj/effect/turf_decal/trimline/transparent/blue/warning{
 	dir = 4
 	},
@@ -4128,19 +4130,22 @@
 	dir = 2;
 	layer = 2.5
 	},
+/obj/structure/sign/departments/medbay{
+	pixel_x = -31
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "tv" = (
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/effect/turf_decal/rechargefloor,
 /obj/mecha/working/ripley/clip,
-/obj/structure/railing{
-	layer = 4
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/railing/thin{
+	layer = 4
+	},
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
 "tA" = (
@@ -5966,6 +5971,9 @@
 	pixel_y = 1
 	},
 /obj/item/cautery,
+/obj/structure/railing/thin{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "Cj" = (
@@ -7184,9 +7192,6 @@
 /obj/machinery/mech_bay_recharge_port{
 	dir = 8
 	},
-/obj/structure/railing{
-	layer = 4
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 1
 	},
@@ -7194,6 +7199,7 @@
 	color = "#75A2BB"
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/railing/thin,
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
 "HU" = (
@@ -8587,9 +8593,6 @@
 	color = "#75A2BB"
 	},
 /obj/machinery/mech_bay_recharge_port,
-/obj/structure/railing{
-	layer = 4
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 4
 	},
@@ -8597,6 +8600,7 @@
 	color = "#75A2BB"
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/railing/thin,
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
 "Om" = (
@@ -8750,6 +8754,9 @@
 "OZ" = (
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/structure/platform/ship_four{
+	dir = 4
+	},
+/obj/structure/railing/thin{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -9746,13 +9753,13 @@
 "TM" = (
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/effect/turf_decal/rechargefloor,
-/obj/structure/railing{
-	layer = 4
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/railing/thin{
+	layer = 4
+	},
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
 "TN" = (
