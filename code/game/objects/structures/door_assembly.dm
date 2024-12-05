@@ -190,7 +190,6 @@
 	qdel(src)
 
 /obj/structure/door_assembly/attackby(obj/item/W, mob/user, params)
-	. = ..()
 	if(istype(W, /obj/item/pen))
 		var/t = stripped_input(user, "Enter the name for the door.", name, created_name,MAX_NAME_LEN)
 		if(!t)
@@ -283,7 +282,7 @@
 						to_chat(user, "<span class='warning'>You cannot add [G] to [src]!</span>")
 				else
 					to_chat(user, "<span class='warning'>You cannot add [G] to [src]!</span>")
-
+	..()
 	update_name()
 	update_appearance()
 
