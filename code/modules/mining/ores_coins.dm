@@ -153,6 +153,7 @@
 
 /obj/item/stack/ore/sulfur
 	name = "sulfur dust"
+	singular_name = "sulfur dust"
 	icon_state = "sulfur"
 	item_state = "sulfur"
 	grind_results = list(/datum/reagent/sulfur = 10)
@@ -230,6 +231,7 @@
 //alt version for jungle planets
 /obj/item/stack/ore/graphite/coal
 	name = "coal"
+	singular_name = "coal"
 
 	custom_materials = list(/datum/material/carbon=200)
 	refined_type = /obj/item/stack/ore/slag
@@ -254,6 +256,7 @@
 
 /obj/item/stack/ore/quartzite
 	name = "quartzite"
+	singular_name = "quartzite"
 	icon_state = "quartzite"
 	item_state = "quartzite"
 

@@ -79,6 +79,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 
 /obj/item/stack/sheet/plasteel
 	name = "carbon steel"
+	singular_name = "carbon steel"
 	desc = "This sheet is an alloy of iron and carbon."
 	icon = 'icons/obj/materials/sheets.dmi'
 	icon_state = "sheet-plasteel"
