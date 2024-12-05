@@ -2761,7 +2761,7 @@
 	pixel_y = -3
 	},
 /obj/item/gps{
-	gpstag = "VELA";
+	gpstag = "LAN-O-VELA-277";
 	pixel_x = -11;
 	pixel_y = 3
 	},
@@ -3613,7 +3613,6 @@
 	name = "blastglasses";
 	desc = "Tried and true technology designed for the flash adverse mech pilot."
 	},
-/obj/item/clothing/shoes/combat,
 /obj/item/radio/headset/clip/alt/captain,
 /obj/item/clipboard{
 	pixel_y = -6
@@ -3643,6 +3642,7 @@
 	pixel_y = -15
 	},
 /obj/item/storage/guncase/pistol/cm357,
+/obj/item/clothing/shoes/jackboots,
 /turf/open/floor/pod/dark,
 /area/ship/bridge)
 "ra" = (
@@ -5677,7 +5677,6 @@
 	name = "captain's locker";
 	req_access_txt = "20"
 	},
-/obj/item/clothing/shoes/combat,
 /obj/item/clothing/glasses/sunglasses{
 	name = "blastglasses";
 	desc = "Tried and true technology designed for the flash adverse mech pilot."
@@ -5703,6 +5702,7 @@
 	pixel_y = 13
 	},
 /obj/item/storage/guncase/cm1,
+/obj/item/clothing/shoes/jackboots,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/captain)
 "Bq" = (
@@ -6082,11 +6082,11 @@
 	},
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = 5;
-	pixel_y = 8
+	pixel_x = 9;
+	pixel_y = 2
 	},
 /obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = -6;
+	pixel_x = -4;
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/drinks/mug{
@@ -6094,8 +6094,8 @@
 	pixel_y = -3
 	},
 /obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = 5;
-	pixel_y = -3
+	pixel_x = 1;
+	pixel_y = -1
 	},
 /obj/structure/sink{
 	dir = 4;
@@ -6775,7 +6775,8 @@
 /obj/structure/curtain/cloth,
 /mob/living/simple_animal/hostile/asteroid/wolf{
 	name = "Hansk";
-	faction = list("playerMinuteman")
+	faction = list("playerMinuteman");
+	desc = "A devious little creature that was sold under the pretense of being a small adorable puppy. Hansk isn't small, but is just as adorable as that fateful day."
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/captain)
@@ -6845,9 +6846,27 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/machinery/light/directional/east,
 /obj/machinery/camera/autoname{
 	dir = 8
+	},
+/obj/structure/sign/directions/supply{
+	pixel_y = -10;
+	pixel_x = 29
+	},
+/obj/structure/sign/directions/command{
+	pixel_x = 29;
+	pixel_y = -4;
+	dir = 4
+	},
+/obj/structure/sign/directions/engineering{
+	dir = 8;
+	pixel_y = 2;
+	pixel_x = 29
+	},
+/obj/structure/sign/directions/security{
+	pixel_y = 8;
+	pixel_x = 29;
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -7270,10 +7289,6 @@
 	pixel_x = -6;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/drinks/beaglemug{
-	pixel_y = 2;
-	pixel_x = 6
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Ij" = (
@@ -7475,6 +7490,19 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	dir = 2;
+	pixel_y = 22;
+	pixel_x = 6;
+	name = "bay shutters";
+	id = "vela_mech"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 2;
+	pixel_y = 21;
+	pixel_x = -3;
+	id = "vela_mech_shield"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar)
 "IV" = (
@@ -7606,30 +7634,15 @@
 	dir = 1;
 	layer = 2.8
 	},
-/obj/item/grown/log/tree,
-/obj/item/grown/log/tree{
-	pixel_x = 3;
-	pixel_y = -1
-	},
-/obj/item/grown/log/tree{
-	pixel_y = -3;
-	pixel_x = -3
-	},
-/obj/item/grown/log/tree{
-	pixel_y = 6
-	},
-/obj/item/grown/log/tree{
-	pixel_x = -6;
-	pixel_y = 5
-	},
-/obj/item/grown/log/tree{
-	pixel_y = 4;
-	pixel_x = 8
-	},
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 9
 	},
 /obj/machinery/light/small/directional/north,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
 "JE" = (
@@ -10261,6 +10274,9 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
+/obj/structure/sign/departments/engineering{
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Wj" = (
@@ -10850,7 +10866,6 @@
 	name = "blastglasses";
 	desc = "Tried and true technology designed for the flash adverse mech pilot."
 	},
-/obj/item/clothing/shoes/combat,
 /obj/item/radio/headset/clip/alt/captain,
 /obj/item/megaphone,
 /obj/item/binoculars,
@@ -10863,6 +10878,7 @@
 	pixel_x = -3
 	},
 /obj/item/storage/guncase/pistol/cm23,
+/obj/item/clothing/shoes/jackboots,
 /turf/open/floor/pod/dark,
 /area/ship/bridge)
 "Zk" = (
