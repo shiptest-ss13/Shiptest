@@ -286,14 +286,14 @@ SUBSYSTEM_DEF(overmap)
 	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the palletez
 	var/can_be_selected_randomly = TRUE
 
-/datum/overmap_star_system/wilderness
+/datum/overmap_star_system/oldcolors
 	name = null
-	has_outpost = FALSE
 	override_object_colors = TRUE
 	can_be_selected_randomly = FALSE
 
-/datum/overmap_star_system/wilderness/oldgen //wouldnt it be funny to have this generate sometimes just for shits and gig
+/datum/overmap_star_system/oldgen //wouldnt it be funny to have this generate sometimes just for shits and giggles
 	generator_type = OVERMAP_GENERATOR_RANDOM
+	can_be_selected_randomly = FALSE
 
 /datum/overmap_star_system/safezone
 	name = "Lymantria Teagarden Memorial sector"
@@ -304,8 +304,8 @@ SUBSYSTEM_DEF(overmap)
 	secondary_color = "#828282"
 
 	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#494982"
-	hazard_secondary_color = "#a2b210"
+	hazard_primary_color = "#a2b210"
+	hazard_secondary_color = "#5757c5"
 
 	//structure colors, used for ships and outposts/colonies
 	primary_structure_color = "#fbaa51"
@@ -451,7 +451,6 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/shiptest
 	has_outpost = TRUE
 	can_be_selected_randomly = FALSE
-	size = 30
 
 /datum/overmap_star_system/shiptest/New(generate_now=TRUE)
 	//1/20 rounds
