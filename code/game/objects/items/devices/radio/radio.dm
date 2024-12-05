@@ -279,12 +279,9 @@
 	signal.data["sfx"] = 'sound/effects/radio_chatter.ogg'
 
 	var/talkie_sound = 'sound/effects/walkietalkie.ogg'
-	//If the interference is too high then we won't be able to tell whos talking
-	if(interference_level >= 40)
-		speaker.name = "Unknown"
 
 	//If the interference is extremely high we play this alt sound effect
-	if(interference_level >= 60)
+	if(interference_level >= INTERFERENCE_LEVEL_RADIO_STATIC_SOUND)
 		talkie_sound = 'sound/effects/overmap/heavy_interference.ogg'
 
 	// Independent radios, on the CentCom frequency, reach all independent radios

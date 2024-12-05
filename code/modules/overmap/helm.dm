@@ -23,18 +23,20 @@
 	var/viewer = FALSE
 	/// When are we allowed to jump
 	var/jump_allowed
-	/// Current state of our jump
+	/// The current state of our jump
 	var/jump_state = JUMP_STATE_OFF
-	///if we are calibrating the jump
+	/// Are we calibrating the jump?
 	var/calibrating = FALSE
-	///holding jump timer ID
+	/// Jump timer ID holder
 	var/jump_timer
-	///is the AI allowed to control this helm console
+	/// Is the AI allowed to control this helm console?
 	var/allow_ai_control = FALSE
-	/// store an ntnet relay for tablets on the ship
+	/// Store an ntnet relay for tablets on the ship
 	var/obj/machinery/ntnet_relay/integrated/ntnet_relay
-	/// where are we jumping to, if null, deletes the ship
+	/// Where are we jumping to, if null, deletes the ship
 	var/datum/overmap_star_system/jump_destination
+	/// If we are jumping, what cords are we jumping to?
+	var/list/jump_coords
 
 /obj/machinery/computer/helm/retro
 	icon = 'icons/obj/machines/retro_computer.dmi'
@@ -60,7 +62,10 @@
 	. = ..()
 	ui_interact(usr)
 
-/obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
+/obj/machinery/computer/helm/proc/calibrate_jump(datum/overmap_star_system/new_system, list/newpos)
+	///We are already jumping, don't calibrate again!
+	if(jump_state != JUMP_STATE_OFF || calibrating)
+		return
 	if(jump_allowed < 0)
 		say("Bluespace Jump Calibration offline. Please contact your system administrator.")
 		return
@@ -71,14 +76,15 @@
 		var/jump_wait = DisplayTimeText(jump_allowed - world.time)
 		say("Bluespace Jump Calibration is currently recharging. ETA: [jump_wait].")
 		return
-	if(jump_state != JUMP_STATE_OFF && !inline)
-		return // This exists to prefent Href exploits to call process_jump more than once by a client
 	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
-	if(jump_destination)
-		priority_announce("Bluespace jump calibration to destination [jump_destination.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+	if(new_system)
+		priority_announce("Bluespace jump calibration to destination [new_system.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		jump_destination = new_system
+		jump_coords = newpos
 	else
 		priority_announce("Bluespace jump calibration initialized. Exitting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+
 	calibrating = TRUE
 	return TRUE
 
@@ -93,8 +99,11 @@
 		current_ship = null
 
 /obj/machinery/computer/helm/proc/cancel_jump()
+	if(!calibrating)
+		return
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
 	calibrating = FALSE
+	jump_coords = null
 	deltimer(jump_timer)
 
 /obj/machinery/computer/helm/proc/jump_sequence()
@@ -123,9 +132,13 @@
 	if(!jump_destination)
 		qdel(current_ship)
 		return
-	current_ship.move_overmaps(jump_destination)
+	if(jump_coords)
+		current_ship.move_overmaps(jump_destination, jump_coords["x"], jump_coords["y"])
+	else
+		current_ship.move_overmaps(jump_destination)
 	jump_destination = null
 	jump_state = JUMP_STATE_OFF
+	jump_coords = null
 	calibrating = FALSE
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
@@ -380,7 +393,7 @@
 							return
 						else
 							jump_destination = selected_system
-						calibrate_jump()
+						calibrate_jump(selected_system)
 						return
 
 

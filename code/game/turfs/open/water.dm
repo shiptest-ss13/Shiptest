@@ -25,7 +25,7 @@
 	if(!istype(selected_area))
 		return
 
-	RegisterSignal(selected_area, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(get_light))
+	RegisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(get_light))
 	if(istype(selected_area))
 		light_range = selected_area.light_range
 		light_range = selected_area.light_range

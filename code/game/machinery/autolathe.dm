@@ -456,5 +456,5 @@
 		return
 	if(current_ship.matbundle_spawned)
 		return
-	new /obj/effect/spawner/costume/test_ship_matspawn(get_turf(src))
+	new /obj/effect/spawner/random/test_ship_matspawn(get_turf(src))
 	current_ship.matbundle_spawned = TRUE

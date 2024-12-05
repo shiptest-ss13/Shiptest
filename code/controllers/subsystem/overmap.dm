@@ -281,9 +281,9 @@ SUBSYSTEM_DEF(overmap)
 	///the icon state for the overmap background. if using a bright background, use "overmap", if dark, "overmap_dark"
 	var/overmap_icon_state = "overmap_dark"
 
-	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the palletez
+	//Can players bluespace jump to this sector? Recommended to be FALSE if this is a punchcard or for some event
 	var/can_jump_to = TRUE
-	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the palletez
+	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the pallete
 	var/can_be_selected_randomly = TRUE
 
 /datum/overmap_star_system/oldcolors
@@ -937,7 +937,6 @@ SUBSYSTEM_DEF(overmap)
  * Edits a token after it's updated by alter_token_appearance(). Meant for visual effects
  * * token_to_edit - The overmap object we're editing [/datum/overmap/event].
  */
-/// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
 /datum/overmap_star_system/proc/post_edit_token_state(datum/overmap/datum_to_edit)
 	datum_to_edit.token.remove_filter("gloweffect")
 	return
@@ -949,3 +948,51 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/proc/update_all_colors()
 	for(var/datum/overmap/current_object as anything in overmap_objects)
 		current_object.alter_token_appearance()
+
+/**
+ * Creates 2 jump points to link an overmap to another one "naturally"
+ * * destination_system - The destination system we want to connect us to [/datum/overmap_star_system].
+ * * point_direction - The direction we spawn the jump point spawn in. In the target system we make one in the opposite direction.
+ */
+//Returns the jump point in our system
+/datum/overmap_star_system/proc/create_jump_point_link(datum/overmap_star_system/destination_system, point_direction)
+	var/datum/overmap/jump_point/point2 = new(destination_system.get_overmap_edge(REVERSE_DIR(point_direction)), destination_system)
+	point2.dir = REVERSE_DIR(point_direction)
+	var/datum/overmap/jump_point/point1 = new(get_overmap_edge(point_direction), src, point2)
+	point1.dir = point_direction
+	point1.alter_token_appearance()
+	return point1
+
+/**
+ * Gets the edge of a star system
+ * * dir - The direction we are getting the edge from.
+ */
+//Returns the jump point in our system
+/datum/overmap_star_system/proc/get_overmap_edge(dir)
+	var/center_coords = round(size / 2 + 1)
+
+	var/edge_x = center_coords
+	var/edge_y = center_coords
+
+	if(dir & NORTH)
+		edge_y = round(size - size/15)
+	else if(dir & SOUTH)
+		edge_y = round(size/15 + 2)
+	if(dir & EAST)
+		edge_x = round(size - size/15)
+	else if(dir & WEST)
+		edge_x = round(size/15 + 2)
+
+	if(edge_x > size) // I don't know how to do this better atm
+		edge_x = size
+	if(edge_y > size)
+		edge_y = size
+
+
+	if(edge_x <= 0) // I don't know how to do this better atm
+		edge_x = size
+	if(edge_y <= 0)
+		edge_y = size
+
+
+	return list("x" = edge_x, "y" = edge_y)

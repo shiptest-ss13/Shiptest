@@ -150,7 +150,7 @@
 	if(status != SHELTER_DEPLOY_ALLOWED)
 		return INITIALIZE_HINT_QDEL
 
-	INVOKE_ASYNC(src, /obj/effect/greeble_spawner/.proc/load_template)
+	INVOKE_ASYNC(src, PROC_REF(load_template))
 
 /obj/effect/greeble_spawner/proc/load_template()
 	var/turf/deploy_location = get_turf(src)

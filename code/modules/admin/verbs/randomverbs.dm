@@ -937,6 +937,16 @@
 			if("No")
 				nova.has_outpost = FALSE
 
+		inputed = tgui_alert(usr, "Should players be able to jump to this sector?", "Spawn Overmap", list("Yes", "No"))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		switch(inputed)
+			if("Yes")
+				nova.has_outpost = TRUE
+			if("No")
+				nova.has_outpost = FALSE
+
 	if(tgui_alert(usr, "Edit Overmap Colors?", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
 		if(!nova)
 			nova = new overmap_type(FALSE)

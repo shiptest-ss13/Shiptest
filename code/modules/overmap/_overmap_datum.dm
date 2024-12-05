@@ -185,6 +185,7 @@
 	// Updates the token with the new position.
 	token.abstract_move(OVERMAP_TOKEN_TURF(x, y, current_overmap))
 	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVED, old_x, old_y)
+	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVE_SELF, src)
 	return TRUE
 
 /**
@@ -630,6 +631,7 @@
 		message_admins("Something went wrong when [src.name] attempted to move. Exception: [error.name] at [error.file]: line [error.line]. Check runtimes!") //TODO: Remove this
 
 	current_overmap = new_system // finally, we move
+	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVE_SYSTEMS, src, new_x, new_y)
 
 	if(new_x || new_y)
 		overmap_move(new_x, new_y)
@@ -637,6 +639,7 @@
 		var/list/results = current_overmap.get_unused_overmap_square()
 		overmap_move(results["x"], results["y"])
 	alter_token_appearance()
+
 
 
 /*

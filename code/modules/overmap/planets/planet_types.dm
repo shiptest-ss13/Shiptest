@@ -23,7 +23,7 @@
 	var/weight = 40
 	///Do we not self destruct when a ship undocks with no players left behind?
 	var/preserve_level = FALSE
-	///The sound we play when we are landed on. Not reccomended outside of stingers.
+	///The sound we play when we are landed on. Not recommended outside of stingers.
 	var/landing_sound
 	///We read from this list to let players know the most common ores on this planet, otherwise does nothing.
 	var/list/primary_ores

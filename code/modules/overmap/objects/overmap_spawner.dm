@@ -143,7 +143,7 @@
 
 	///Do we want this object to have gravity?
 	var/gravity = TRUE
-	///The border size to use. It's reccomended to set this to 0 if you  use up the entirety of the allocated space (eg. 255x255 map where theres no bordering map levels)
+	///The border size to use. It's recommended to set this to 0 if you  use up the entirety of the allocated space (eg. 255x255 map where theres no bordering map levels)
 	var/border_size = QUADRANT_SIZE_BORDER
 	///What map does this load? If none expect pain
 	var/datum/map_template/map_to_load

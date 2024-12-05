@@ -214,8 +214,6 @@
 	#define COMPONENT_NO_ATTACK_HAND (1<<0) //works on all 3.
 ///from base of atom/set_opacity(): (new_opacity)
 #define COMSIG_ATOM_SET_OPACITY "atom_set_opacity"
-/// Called on [/atom/SpinAnimation()] : (speed, loops, segments, angle)
-#define COMSIG_ATOM_SPIN_ANIMATION "atom_spin_animation"
 
 /// from base of /atom/movable/proc/on_virtual_z_change():  (new_virtual_z, old_virtual_z)
 #define COMSIG_ATOM_VIRTUAL_Z_CHANGE "atom_virtual_z_change"
@@ -224,8 +222,6 @@
 #define COMSIG_STORAGE_ENTERED "storage_entered"
 //from base of atom/movable/on_exit_storage(): (datum/component/storage/concrete/master_storage)
 #define COMSIG_STORAGE_EXITED "storage_exited"
-/// From /datum/element/immerse/proc/add_submerge_overlay(): (visual_overlay)
-#define COMSIG_MOVABLE_EDIT_UNIQUE_IMMERSE_OVERLAY "movable_edit_unique_submerge_overlay"
 
 ///from base of atom/expose_reagents():
 #define COMSIG_ATOM_EXPOSE_REAGENTS "atom_expose_reagents"
@@ -679,10 +675,19 @@
 // /datum/overmap signals
 /// From overmap Move(): (old_x, old_y)
 #define COMSIG_OVERMAP_MOVED "overmap_moved"
+/// From overmap move_overmaps(): (datum/overmap, old_x, old_y)
+#define COMSIG_OVERMAP_MOVE_SYSTEMS "overmap_moved_systems"
+/// From overmap Move(): (datum/overmap)
+#define COMSIG_OVERMAP_MOVE_SELF "overmap_move_self"
 /// From overmap Dock(): (datum/overmap)
 #define COMSIG_OVERMAP_DOCK "overmap_dock"
 /// From overmap Undock(): (datum/overmap)
 #define COMSIG_OVERMAP_UNDOCK "overmap_undock"
+
+/// From overmap jump points: (/datum/overmap_star_system, new_x, new_y)
+#define COMSIG_OVERMAP_CALIBRATE_JUMP "overmap_calibrate_jump"
+/// From overmap jump points
+#define COMSIG_OVERMAP_CANCEL_JUMP "overmap_cancel_jump"
 
 // /datum/component/spawner signals
 // Called by parent when pausing spawning, returns bool: (datum/source, spawning_started)

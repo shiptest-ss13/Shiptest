@@ -1,4 +1,3 @@
-#define LEGIONVIRUS_TYPE /datum/disease/transformation/legionvirus
 #define MAX_BULLET_SHELL_DAMAGE 2
 
 //A beast that fire freezing blasts.
@@ -203,7 +202,6 @@
 	projectiletype = /obj/projectile/temp/basilisk/heated
 
 #undef MAX_BULLET_SHELL_DAMAGE
-#undef LEGIONVIRUS_TYPE
 
 //Watcher
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher

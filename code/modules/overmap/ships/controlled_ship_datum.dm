@@ -80,7 +80,7 @@
 	///The cooldown for events hitting this ship. Generally used by events with a big consquence and fires slower than normal, like flares
 	COOLDOWN_DECLARE(event_cooldown)
 
-	/// checks if we spawned /obj/effect/spawner/costume/test_ship_matspawn on a autolathe on the ship, if TRUE, we don't spawn another when another autolathe is spawned. Delete this var when ships have the new mats mapped
+	/// checks if we spawned /obj/effect/spawner/random/test_ship_matspawn on a autolathe on the ship, if TRUE, we don't spawn another when another autolathe is spawned. Delete this var when ships have the new mats mapped
 	var/matbundle_spawned = FALSE
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
@@ -128,6 +128,8 @@
 			refresh_engines()
 		ship_account = new(name, source_template.starting_funds)
 		faction_datum = source_template.faction_datum
+	RegisterSignal(src, COMSIG_OVERMAP_CALIBRATE_JUMP, PROC_REF(do_jump))
+	RegisterSignal(src, COMSIG_OVERMAP_CANCEL_JUMP, PROC_REF(stop_jump))
 
 #ifdef UNIT_TESTS
 	Rename("[source_template]", TRUE)
@@ -477,9 +479,36 @@
 	[span_boldnotice("IFF is reporting the following:")]
 	[span_bold("Affiliation: ")][get_faction()]
 	[span_bold("Class: ")][source_template.short_name]
-	[span_bold("Velocity: ")][get_speed()] Gm/s
+	[span_bold("Velocity: ")][round(get_speed(), 0.1)] Gm/s
 	"}
 	return ..()
+
+//when bluespace jumping gets moved to its own machine make this NOT look for non-vewscreen helms
+/datum/overmap/ship/controlled/proc/do_jump(obj/item/source, datum/overmap_star_system/new_system, new_x, new_y)
+	var/obj/machinery/computer/helm/our_helm
+	for(var/obj/machinery/computer/helm/checked_helm as anything in helms)
+		if(checked_helm.viewer)
+			continue
+		our_helm = checked_helm
+		break
+	var/list/newpos
+	if(new_x && new_y)
+		newpos = list("x" = new_x, "y" = new_y)
+
+	if(our_helm)
+		our_helm.calibrate_jump(new_system, newpos)
+
+//ditto
+/datum/overmap/ship/controlled/proc/stop_jump(obj/item/source)
+	var/obj/machinery/computer/helm/our_helm
+	for(var/obj/machinery/computer/helm/checked_helm as anything in helms)
+		if(checked_helm.viewer)
+			continue
+		our_helm = checked_helm
+		break
+
+	if(our_helm)
+		our_helm.cancel_jump()
 
 
 /obj/item/key/ship
@@ -531,3 +560,4 @@
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE
+

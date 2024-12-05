@@ -337,8 +337,6 @@
 				monoxide_reagent.metabolization_rate = 10 //purges 10 per tick
 		breath.adjust_moles(GAS_CO, -gas_breathed)
 
-		breath.adjust_moles(GAS_CO, -gas_breathed)
-
 	// Sulfur Dioxide
 		var/sulfur_dioxide_pp = PP(breath,GAS_SO2)
 		if (prob(sulfur_dioxide_pp) && !HAS_TRAIT(H, TRAIT_ANALGESIA))

@@ -15,7 +15,7 @@
 	restricted_gases = list(
 		GAS_ARGON=0.1,
 		GAS_BZ= 0.1,
-		GAS_SO2 = 0,1,
+		GAS_SO2 = 0.1,
 	)
 	restricted_chance = 50
 

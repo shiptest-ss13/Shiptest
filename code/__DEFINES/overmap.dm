@@ -101,13 +101,20 @@
 		/obj/item/stack/ore/quartzite = "#cfb4d1",\
 		)
 
-// Ship interactions and such.
+// Ship interactions with overmap objects and such.
+
+//Used by ships
 #define INTERACTION_OVERMAP_DOCK "Dock to Specific Location"
 #define INTERACTION_OVERMAP_QUICKDOCK "Quick Dock"
 #define INTERACTION_OVERMAP_HAIL "Hail"
 #define INTERACTION_OVERMAP_INTERDICTION "Reverse Dock (Interdiction)"
+//Used by empty space
 #define INTERACTION_OVERMAP_SETSIGNALSPRITE "Set Signal Appearance"
-#define INTERACTION_OVERMAP_SELECTED "ERROR" //use this to end the interaction when it calls the parrent
+//Used by jump points
+#define INTERACTION_OVERMAP_JUMPTO "Bluespace Jump to Target System"
+
+//Used to end an interaction if a target object has them
+#define INTERACTION_OVERMAP_SELECTED "ERROR" //use this to end the interaction without failing
 
 //All the 'shipmodules' a ship can have.
 #define SHIPMODULE_BSDRIVE "bluespace_drive"

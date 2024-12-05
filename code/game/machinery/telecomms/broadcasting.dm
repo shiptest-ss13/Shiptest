@@ -177,7 +177,7 @@
 
 		if(radio.last_chatter_time + 1 SECONDS < world.time && source != radio)
 			if(data["sfx"])
-				if(interference_level >= 60)
+				if(interference_level >= INTERFERENCE_LEVEL_RADIO_STATIC_SOUND)
 					playsound(radio, 'sound/effects/overmap/heavy_interference.ogg' , 20, FALSE)
 				else
 					playsound(radio, data["sfx"], 20, FALSE)
@@ -185,7 +185,7 @@
 		if(radio.log)
 			var/name = data["name"]
 			var/list/log_details = list()
-			if(interference_level >= 40)
+			if(interference_level >= INTERFERENCE_LEVEL_RADIO_PREVENT_ID)
 				log_details["name"] = "Unknown▸"
 			else
 				log_details["name"] = "[name]▸"
@@ -234,7 +234,7 @@
 			var/atom/movable/virtualspeaker/temp_virt = new(FALSE, virt.source, virt.radio)
 
 			//IF the interference is too high then we won't be able to tell whos talking
-			if(interference_level >= 40)
+			if(interference_level >= INTERFERENCE_LEVEL_RADIO_PREVENT_ID)
 				temp_virt.name = "Unknown"
 
 			hearer.Hear(temp_rendered, temp_virt, language, temp_message, frequency, spans, message_mods)
