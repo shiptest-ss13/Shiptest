@@ -85,7 +85,7 @@
 	desc = "An area of space rich with asteroids, going fast through here could prove dangerous"
 	base_icon_state = "meteor_medium_"
 	default_color = "#a08444"
-	chance_to_affect = 100
+	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
 	interference_power = 15
@@ -124,13 +124,7 @@
 	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/Ship)
-	var/final_speed = Ship.get_speed()
-	var/rng = rand()
-	if(prob(50))
-		rng *= -1 //makes it negative
-	final_speed += rng
-	final_speed -= safe_speed
-	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0, Ship.shuttle_port, final_speed)
+	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0, Ship.shuttle_port\)
 
 /datum/overmap/event/meteor/minor
 	name = "asteroid field (minor)"

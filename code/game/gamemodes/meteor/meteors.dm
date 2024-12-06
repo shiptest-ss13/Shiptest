@@ -39,7 +39,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	for(var/i = 0; i < number; i++)
 		spawn_meteor(meteortypes)
 
-/proc/spawn_meteor(list/meteortypes, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD, obj/docking_port/mobile/shuttle_port, speed)
+/proc/spawn_meteor(list/meteortypes, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD, obj/docking_port/mobile/shuttle_port)
 	var/turf/pickedstart
 	var/turf/pickedgoal
 	var/max_i = 10//number of tries to spawn meteor.
@@ -55,50 +55,45 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 			return
 	var/Me = pick_weight(meteortypes)
 	var/obj/effect/meteor/M = new Me(pickedstart, pickedgoal)
-	M.hitpwr = speed
 	M.dest = pickedgoal
 
 ///////////////////////
 //The meteor effect
 //////////////////////
 
-//TODO: Fucking rewrite this from scratch this is not only unsalvagable but needs to be recoded from scratch
-
 /obj/effect/meteor
-	name = "\proper small meteor"
+	name = "\proper the concept of meteor"
 	desc = "You should probably run instead of gawking at this."
 	icon = 'icons/obj/meteor.dmi'
 	icon_state = "small"
 	density = TRUE
 	anchored = TRUE
 	var/hits = 4
-	var/hitpwr = 2 //mutiplied by 10 is the damage we do to things we hit. added to depending on the velocity in Gm/s
+	var/hitpwr = 2 //Level of ex_act to be called on hit.
 	var/dest
 	pass_flags = PASSTABLE
-	var/heavy = TRUE
+	var/heavy = 0
 	var/meteorsound = 'sound/effects/meteorimpact.ogg'
 	var/z_original
 	var/threat = 0 // used for determining which meteors are most interesting
 	var/lifetime = DEFAULT_METEOR_LIFETIME
 	var/timerid = null
-	var/list/meteordrop = list(/obj/item/stack/ore/hematite)
+	var/list/meteordrop = list(/obj/item/stack/ore/iron)
 	var/dropamt = 2
-	var/damage_mutiplier = 1
 
 /obj/effect/meteor/Move()
-	if(get_virtual_level() != z_original || loc == dest)
+	if(z != z_original || loc == dest)
 		qdel(src)
 		return FALSE
 
 	. = ..() //process movement...
 
-	var/turf/T = get_turf(loc)
-	if(. && hitpwr > 0)//.. if did move, ram the turf we get in
+	if(.)//.. if did move, ram the turf we get in
+		var/turf/T = get_turf(loc)
 		ram_turf(T)
 
-	if(!isspaceturf(T))//randomly takes a 'hit' from ramming
-		get_hit()
-
+		if(prob(10) && !isspaceturf(T))//randomly takes a 'hit' from ramming
+			get_hit()
 
 /obj/effect/meteor/Destroy()
 	if (timerid)
@@ -110,7 +105,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 
 /obj/effect/meteor/Initialize(mapload, target)
 	. = ..()
-	z_original = get_virtual_level()
+	z_original = z
 	GLOB.meteor_list += src
 	SSaugury.register_doom(src, threat)
 	SpinAnimation()
@@ -120,34 +115,33 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 /obj/effect/meteor/Bump(atom/A)
 	if(A)
 		ram_turf(get_turf(A))
+		playsound(src.loc, meteorsound, 40, TRUE)
 		get_hit()
 
-/obj/effect/meteor/proc/ram_turf(turf/turf_to_ram)
+/obj/effect/meteor/proc/ram_turf(turf/T)
 	//first bust whatever is in the turf
-	var/list/hitlist
-	hitlist += turf_to_ram.contents
-	hitlist += turf_to_ram
-	for(var/atom/atom_to_ram in hitlist)
-		if(!istype(atom_to_ram))
-			continue
-		var/turf/closed/turf_closed = atom_to_ram
-		if(istype(turf_closed))
-			turf_closed.alter_integrity(damage_mutiplier*-10*hitpwr)
-			if(get_hit())
-				return
-		var/obj/object = atom_to_ram
-		if(istype(object))
-			object.take_damage(damage_mutiplier*10*hitpwr, damage_flag = "bomb")
-			if(get_hit())
-				return
-		var/mob/living/mob_to_ram = atom_to_ram
-		if(istype(mob_to_ram))
-			mob_to_ram.visible_message("<span class='warning'>[src] slams into [mob_to_ram].</span>", "<span class='userdanger'>[src] slams into you!.</span>")
-			mob_to_ram.take_overall_damage(damage_mutiplier*20*hitpwr)
+	for(var/atom/A in T)
+		if(A != src)
+			if(isliving(A))
+				A.visible_message("<span class='warning'>[src] slams into [A].</span>", "<span class='userdanger'>[src] slams into you!.</span>")
+			switch(hitpwr)
+				if(EXPLODE_DEVASTATE)
+					SSexplosions.highobj += A
+				if(EXPLODE_HEAVY)
+					SSexplosions.medobj += A
+				if(EXPLODE_LIGHT)
+					SSexplosions.lowobj += A
 
-			var/throw_target = get_edge_target_turf(mob_to_ram, get_dir(mob_to_ram, get_step_away(mob_to_ram, mob_to_ram)))
-			mob_to_ram.throw_at(throw_target, 200, 4)
-			mob_to_ram.Knockdown(5 SECONDS)
+	//then, ram the turf if it still exists
+	if(T)
+		switch(hitpwr)
+			if(EXPLODE_DEVASTATE)
+				SSexplosions.highturf += T
+			if(EXPLODE_HEAVY)
+				SSexplosions.medturf += T
+			if(EXPLODE_LIGHT)
+				SSexplosions.lowturf += T
+
 
 
 //process getting 'hit' by colliding with a dense object
@@ -158,8 +152,6 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 		make_debris()
 		meteor_effect()
 		qdel(src)
-		return TRUE
-	return FALSE
 
 /obj/effect/meteor/ex_act()
 	return
@@ -177,8 +169,6 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 		. = ..()
 
 /obj/effect/meteor/proc/make_debris()
-	if(isspaceturf(get_turf(src))) //don't clog up transit levels with shit
-		return
 	for(var/throws = dropamt, throws > 0, throws--)
 		var/thing_to_spawn = pick(meteordrop)
 		new thing_to_spawn(get_turf(src))
@@ -189,19 +179,10 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 		walk_towards(src, chasing, delay)
 
 /obj/effect/meteor/proc/meteor_effect()
-	var/sound/meteor_sound = meteorsound
-	var/random_frequency = get_rand_frequency()
-	var/do_shake_cam = FALSE
-
-	switch(hitpwr)
-		if(-2 to 1)
-			meteor_sound = sound(meteorsound)
-		if(1 to 2)
-			meteor_sound = meteorsound
-		if(2 to INFINITY)
-			do_shake_cam = TRUE
-
 	if(heavy)
+		var/sound/meteor_sound = sound(meteorsound)
+		var/random_frequency = get_rand_frequency()
+
 		for(var/mob/M in GLOB.player_list)
 			if((M.orbiting) && (SSaugury.watchers[M]))
 				continue
@@ -209,8 +190,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 			if(!T || T.virtual_z() != src.virtual_z())
 				continue
 			var/dist = get_dist(M.loc, src.loc)
-			if(do_shake_cam)
-				shake_camera(M, dist > 20 ? 1 : 2, dist > 20 ? 1 : 2)
+			shake_camera(M, dist > 20 ? 2 : 4, dist > 20 ? 1 : 3)
 			M.playsound_local(src.loc, null, 50, 1, random_frequency, 10, S = meteor_sound)
 
 ///////////////////////
@@ -224,11 +204,9 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	pass_flags = PASSTABLE | PASSGRILLE
 	hits = 1
 	hitpwr = 3
-	heavy = FALSE
 	meteorsound = 'sound/weapons/gun/smg/shot.ogg'
 	meteordrop = list(/obj/item/stack/ore/glass)
 	threat = 1
-	damage_mutiplier = 0.1
 
 //Medium-sized
 /obj/effect/meteor/medium
@@ -238,11 +216,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 
 /obj/effect/meteor/medium/meteor_effect()
 	..()
-	if(hitpwr > 2)
-		explosion(src, 0, 1, 2, 3, 0)
-
-
-
+	explosion(src.loc, 0, 1, 2, 3, 0)
 
 //Large-sized
 /obj/effect/meteor/big
@@ -255,9 +229,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 
 /obj/effect/meteor/big/meteor_effect()
 	..()
-	if(hitpwr > 2)
-		explosion(src, 1, 2, 3, 4, 0)
-
+	explosion(src.loc, 1, 2, 3, 4, 0)
 
 //Flaming meteor
 /obj/effect/meteor/flaming
@@ -265,30 +237,28 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	icon_state = "flaming"
 	hits = 5
 	heavy = 1
-	meteorsound = 'sound/effects/overmap/solar_flare.ogg'
-	meteordrop = list(/obj/item/stack/ore/sulfur)
+	meteorsound = 'sound/effects/bamf.ogg'
+	meteordrop = list(/obj/item/stack/ore/plasma)
 	threat = 20
 
 /obj/effect/meteor/flaming/meteor_effect()
 	..()
-	if(hitpwr > 2)
-		flame_radius(get_turf(src), 5)
+	explosion(src.loc, 1, 2, 3, 4, 0, 0, 5)
 
 //Radiation meteor
 /obj/effect/meteor/irradiated
 	name = "glowing meteor"
 	icon_state = "glowing"
 	heavy = 1
-	meteordrop = list(/obj/item/stack/ore/autunite)
+	meteordrop = list(/obj/item/stack/ore/uranium)
 	threat = 15
 
 
 /obj/effect/meteor/irradiated/meteor_effect()
 	..()
-	if(hitpwr > 2)
-		explosion(src.loc, 0, 0, 4, 3, 0)
+	explosion(src.loc, 0, 0, 4, 3, 0)
 	new /obj/effect/decal/cleanable/greenglow(get_turf(src))
-	radiation_pulse(src, 200)
+	radiation_pulse(src, 500)
 
 //Meaty Ore
 /obj/effect/meteor/meaty
@@ -360,12 +330,11 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 
 /obj/effect/meteor/tunguska/meteor_effect()
 	..()
-	if(hitpwr > 2)
-		explosion(src.loc, 5, 10, 15, 20, 0)
+	explosion(src.loc, 5, 10, 15, 20, 0)
 
 /obj/effect/meteor/tunguska/Bump()
 	..()
-	if(hitpwr > 2)
+	if(prob(20))
 		explosion(src.loc,2,4,6,8)
 
 /obj/effect/meteor/carp
