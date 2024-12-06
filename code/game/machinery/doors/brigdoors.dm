@@ -115,8 +115,8 @@
 		return 0
 
 	if(!forced)
-		Radio.set_frequency(FREQ_COMMAND)
-		Radio.talk_into(src, "Timer has expired. Releasing prisoner.", FREQ_COMMAND)
+		Radio.set_frequency(FREQ_EMERGENCY)
+		Radio.talk_into(src, "Timer has expired. Releasing prisoner.", FREQ_EMERGENCY)
 
 	timing = FALSE
 	activation_time = null

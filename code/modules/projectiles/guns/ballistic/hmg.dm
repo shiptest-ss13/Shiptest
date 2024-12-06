@@ -12,11 +12,12 @@
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
+	wield_slowdown = HMG_SLOWDOWN
+
 	spread = 4
 	spread_unwielded = 80
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 3
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 20
@@ -63,6 +64,22 @@
 		deploy_bipod(user)
 	else
 		retract_bipod(user=user)
+
+/obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/total_recoil = recoil_bonus
+
+	if(bipod_deployed)
+		total_recoil += deploy_recoil_bonus
+
+	return ..(user, total_recoil)
+
+/obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
+	var/total_spread = bonus_spread
+
+	if(bipod_deployed)
+		total_spread += deploy_spread_bonus
+
+	return ..(user, total_spread)
 
 /obj/item/gun/ballistic/automatic/hmg/proc/deploy_bipod(mob/user)
 	//we check if we can actually deploy the thing
@@ -194,7 +211,7 @@
 	recoil = 1 //identical to other LMGS
 	recoil_unwielded = 4 //same as skm
 
-	wield_slowdown = 1 //not as severe as other lmgs, but worse than the normal skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
 	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock skm
 
 	has_bipod = TRUE

@@ -190,12 +190,18 @@
 	resistance_flags = FIRE_PROOF
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 
-/obj/item/clothing/head/helmet/marine/frontier
+/obj/item/clothing/head/helmet/frontier
 	name = "frontiersmen reinforced helmet"
 	desc = "A reinforced Frontiersmen X-11. The front plate has a small window to let the user see."
 	icon_state = "marine_frontier"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	armor = list("melee" = 35, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50)
+	slowdown = 0.1
+	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
+	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 
 ////////////
 //Glasses//
