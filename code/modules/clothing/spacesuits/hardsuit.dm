@@ -616,7 +616,7 @@
 		/obj/item/gun/energy/wormhole_projector,
 		/obj/item/hand_tele,
 		/obj/item/aicard)
-	slowdown = 1.5
+	slowdown = 2
 	armor = list("melee" = 30, "bullet" = 45, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/rd
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION

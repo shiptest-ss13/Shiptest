@@ -175,7 +175,7 @@
 
 /datum/supply_pack/spacesuits/heavy_sec_hardsuit
 	name = "Heavy Security Hardsuit Crate"
-	desc = "The culimination of research into robust engineering equipment. This hardsuit makes the wearer near immune to the natural hazards the Frontier can throw."
+	desc = "Nanotrasen's premier solution to security hazards in low pressure environments, a well armored, highly mobile combat suit. The wearer is advised to have their zero-g training completed before utilizing the jetpack module."
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/hos)
 	crate_name = "advanced hardsuit crate"
