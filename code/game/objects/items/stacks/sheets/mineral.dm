@@ -458,7 +458,8 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
  */
 
 /obj/item/stack/sheet/mineral/coal
-	name = "carbon rod"
+	name = "carbon rods"
+	singular_name = "carbon rod"
 	desc = "A rod of pure carbon."
 	icon = 'icons/obj/materials/ingots.dmi'
 	icon_state = "ingot-graphite"
@@ -604,7 +605,8 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	amount = 5
 
 /obj/item/stack/sheet/mineral/quartz
-	name = "quartz crystal"
+	name = "quartz crystals"
+	singular_name = "quartz crystal"
 	icon = 'icons/obj/materials/ingots.dmi'
 	icon_state = "ingot-quartz"
 	item_state = "ingot-quartz"

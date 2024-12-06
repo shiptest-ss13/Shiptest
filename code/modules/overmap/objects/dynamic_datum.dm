@@ -281,6 +281,9 @@
 	if(length(mapzone?.get_mind_mobs()))
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 	log_shuttle("[src] [REF(src)] UNLOAD")
+	if(mapzone)
+		mapzone.clear_reservation()
+		QDEL_NULL(mapzone)
 	qdel(src)
 
 /datum/overmap/dynamic/spaceruin
@@ -420,10 +423,6 @@
 	light_color = "#09121a"
 	light_range = 2
 	light_power = 1
-
-/area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
-	area_flags = UNIQUE_AREA
-	area_flags = VALID_TERRITORY | UNIQUE_AREA
 
 /area/overmap_encounter/planetoid/beachplanet/explored
 	area_flags = VALID_TERRITORY
