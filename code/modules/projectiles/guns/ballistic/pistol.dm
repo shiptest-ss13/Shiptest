@@ -15,52 +15,9 @@
 	fire_delay = 0.2 SECONDS
 	spread = 5
 	spread_unwielded = 7
-	wield_slowdown = 0.15
+	wield_slowdown = PISTOL_SLOWDOWN
 
 	muzzleflash_iconstate = "muzzle_flash_light"
-
-/obj/item/gun/ballistic/automatic/pistol/candor
-	name = "\improper Candor"
-	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
-	icon_state = "candor"
-	item_state = "hp_generic"
-	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
-
-	default_ammo_type = /obj/item/ammo_box/magazine/m45
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m45,
-	)
-	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
-	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
-	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	load_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
-	show_magazine_on_sprite = TRUE
-
-NO_MAG_GUN_HELPER(automatic/pistol/candor)
-
-/obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
-	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
-	item_state = "hp_generic_fresh"
-
-NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
-
-/obj/item/gun/ballistic/automatic/pistol/candor/factory/update_overlays()
-	. = ..()
-	. += "[initial(icon_state)]_factory"
-
-/obj/item/gun/ballistic/automatic/pistol/candor/phenex
-	name = "\improper HP Phenex"
-	desc = "A uniquely modified version of the Candor, famously created by Hunter's Pride. Named after the daemonic Phoenix of legend that the Ashen Huntsman had once slain, this hell-kissed weapon is more visually intimidating than its original counterpart, but mechanically acts the same. Chambered in .45."
-	icon_state = "phenex"
-	item_state = "hp_phenex"
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "\improper Desert Eagle"
@@ -170,36 +127,6 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	if(funnysounds)
 		. += "<span class='info'>Alt-click to use \the [src] vox hailer.</span>"
 
-/obj/item/gun/ballistic/automatic/pistol/solgov
-	name = "\improper Pistole C"
-	desc = "A favorite of the Terran Regency that is despised by the Solarian bureaucracy. Shifted out of military service centuries ago, though still popular among civilians. Chambered in 5.56mm caseless."
-	icon_state = "pistole-c"
-	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
-
-	weapon_weight = WEAPON_LIGHT
-	default_ammo_type = /obj/item/ammo_box/magazine/pistol556mm
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/pistol556mm,
-	)
-	fire_sound = 'sound/weapons/gun/pistol/pistolec.ogg'
-	manufacturer = MANUFACTURER_SOLARARMORIES
-	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
-
-	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
-
-	fire_select_icon_state_prefix = "caseless_"
-
-/obj/item/gun/ballistic/automatic/pistol/solgov/old
-	icon_state = "pistole-c-old"
-
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
 	desc = "An exceedingly flimsy plastic gun that is extremely cheap to produce. You get what you pay for."
@@ -289,5 +216,3 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	)
 
 EMPTY_GUN_HELPER(ballistic/derringer)
-
-

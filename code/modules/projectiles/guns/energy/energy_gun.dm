@@ -11,6 +11,7 @@
 	modifystate = TRUE
 	ammo_x_offset = 2
 	dual_wield_spread = 60
+	wield_slowdown = LASER_RIFLE_SLOWDOWN
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/e_gun/empty_cell
@@ -30,7 +31,7 @@
 	ammo_x_offset = 2
 	charge_sections = 3
 	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
 	spread_unwielded = 5
@@ -57,7 +58,7 @@
 	fire_delay = 0.2 SECONDS
 
 	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.6
+	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
 	spread_unwielded = 20
 
 /obj/item/gun/energy/e_gun/old
@@ -188,7 +189,7 @@
 	charge_sections = 6
 
 	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
 	spread_unwielded = 5
@@ -219,6 +220,7 @@
 	weapon_weight = WEAPON_LIGHT
 
 	fire_delay = 0.13 SECONDS
+	wield_slowdown = LASER_SMG_SLOWDOWN
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
