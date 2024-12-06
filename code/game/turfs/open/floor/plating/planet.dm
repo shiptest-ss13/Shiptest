@@ -76,14 +76,12 @@
 	floor_variance = 100
 	max_icon_states = 3
 	tiled_dirt = FALSE
-	update_lighting_on_init = TRUE
 	has_grass = TRUE
 
 /turf/open/floor/plating/asteroid/dirt/grass/fairy
 	light_range = 2
 	light_power = 0.80
 	light_color = COLOR_BLUE_LIGHT
-	update_lighting_on_init = FALSE
 
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin
 	name = "dried basin"
@@ -95,7 +93,6 @@
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin
-	var/update_lighting_on_init = TRUE
 	var/current_water = 0 //yeah
 
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin/examine(mob/user)
@@ -113,17 +110,6 @@
 
 /turf/open/floor/plating/asteroid/sand/terraform
 	light_color = LIGHT_COLOR_TUNGSTEN
-	var/update_lighting_on_init = TRUE
-
-/turf/open/floor/plating/asteroid/sand/terraform/Initialize(mapload, inherited_virtual_z) //inheritance moment
-	. = ..()
-	if(!update_lighting_on_init)
-		return
-	var/area/selected_area = get_area(src)
-	if(istype(selected_area, /area/overmap_encounter) && !istype(selected_area, /area/overmap_encounter/planetoid/cave)) //cheap trick, but i dont want to automate this shit
-		light_range = 2
-		light_power = 0.80
-		update_light()
 
 /turf/closed/mineral/random/volcanic/terraformed
 	turf_type = /turf/open/floor/plating/asteroid/dirt
