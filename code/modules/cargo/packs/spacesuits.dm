@@ -79,7 +79,7 @@
 
 //fucking gezena
 
-/datum/supply_pack/spacesuits/spacesuit/solgov
+/datum/supply_pack/spacesuits/spacesuit/pgf
 	name = "Rakalla Crate"
 	desc = "Contains one Rakalla Suit. It provides robust-enough protection from the elements while being quite flexible."
 	cost = 600
@@ -288,7 +288,7 @@
 
 //ngr
 
-/datum/supply_pack/spacesuits/white_red_hardsuit
+/datum/supply_pack/spacesuits/beige_red_hardsuit
 	name = "Beige-Red Hardsuit Crate"
 	desc = "A widely producted variation on the classic Blood-Red hardsuit produced by factories with in the New Gorlex Republic. This suit protects the wearer with thick plates and stylish colors."
 	cost = 5000
@@ -300,7 +300,7 @@
 
 //srm
 
-/datum/supply_pack/spacesuits/white_red_hardsuit
+/datum/supply_pack/spacesuits/roumain_hardsuit
 	name = "Roumain Hardsuit Crate"
 	desc = "A hardsuit hand-crafted to resemble plate armor of yore, the Roumain Hardsuit allows the wearer to swiftly move whilst on the hunt, while protecting them from the beasts around them."
 	cost = 5000

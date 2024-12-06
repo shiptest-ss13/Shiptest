@@ -116,7 +116,7 @@
 //jardliner
 
 /datum/supply_pack/armor/hardliner_armor
-	name = "Hardliner Crate"
+	name = "Hardliner Armor Crate"
 	desc = "One set of well-rounded hardliner body armor. Well. Rounded aside from the painfully obvious white. Subsidized by Cybersun Biodynamics."
 	cost = 500
 	contains = list(/obj/item/clothing/suit/armor/hardliners,
