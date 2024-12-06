@@ -18,13 +18,6 @@
 	suffix = "icemoon_underground_abandoned_village.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_INHOSPITABLE)
 
-/datum/map_template/ruin/icemoon/brazillian_lab
-	name = "Barricaded Compound"
-	id = "brazillian-lab"
-	description = "A conspicuous compound in the middle of the cold wasteland. What goodies are inside?"
-	suffix = "icemoon_underground_brazillianlab.dmm"
-	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_INHOSPITABLE)
-
 /datum/map_template/ruin/icemoon/crashed_holemaker
 	name = "Crashed Holemaker"
 	id = "crashed_holemaker"

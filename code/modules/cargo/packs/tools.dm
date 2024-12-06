@@ -39,6 +39,13 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/assbelt
+	name = "Assault Belt"
+	desc = "Contains an assault belt, with not one, not two, but six pockets."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/assault)
+	crate_name = "assault belt crate"
+
 /datum/supply_pack/tools/cellcharger
 	name = "Cell Charger Crate"
 	desc = "Contains a cell charger, able to charge all sorts of power cells."
@@ -74,13 +81,6 @@
 	contains = list(/obj/item/pickaxe/drill/jackhammer)
 	crate_name = "jackhammer crate"
 
-/datum/supply_pack/tools/plasmacutter
-	name = "Plasmacutter Crate"
-	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
-	cost = 1250
-	contains = list(/obj/item/gun/energy/plasmacutter)
-	crate_name = "plasmacutter crate"
-
 /datum/supply_pack/tools/metalfoam
 	name = "Metal Foam Grenade Crate"
 	desc = "Seal up those pesky hull breaches with 7 metal foam grenades."
@@ -112,9 +112,19 @@
 /datum/supply_pack/tools/anglegrinder
 	name = "Angle Grinder"
 	desc = "Contains one angle grinder pack, a tool used for quick structure deconstruction and salvaging"
-	cost = 2000
-	contains = list(/obj/item/gear_pack/anglegrinder)
+	cost = 1500
+	contains = list(
+		/obj/item/gear_pack/anglegrinder,
+		/obj/item/radio/headset/alt
+		)
 	crate_name = "Angle Grinder"
+
+/datum/supply_pack/tools/plasmacutter
+	name = "Plasmacutter Crate"
+	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
+	cost = 2500
+	contains = list(/obj/item/gun/energy/plasmacutter)
+	crate_name = "plasmacutter crate"
 
 /*
 		Liquid tanks

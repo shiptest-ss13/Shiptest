@@ -188,6 +188,11 @@
 	anchored = TRUE
 	reagent_id = /datum/reagent/consumable/nutraslop
 
+/obj/structure/reagent_dispensers/servingdish/wrench_act(mob/living/user, obj/item/tool)
+	. = ..()
+	default_unfasten_wrench(user, tool)
+	return TRUE
+
 /obj/structure/reagent_dispensers/plumbed
 	name = "stationairy water tank"
 	anchored = TRUE

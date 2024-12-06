@@ -112,7 +112,7 @@
 		var/area/A = get_area(connected_holopad)
 		calling_holopad.say("[A] holopad disconnected.")
 	else if(H == calling_holopad && connected_holopad)
-		connected_holopad.say("[user] disconnected.")
+		connected_holopad.say("[caller_location] disconnected.")
 
 	ConnectionFailure(H, TRUE)
 
