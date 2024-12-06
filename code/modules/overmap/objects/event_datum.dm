@@ -123,6 +123,13 @@
 		token.color = current_overmap.hazard_primary_color
 	current_overmap.post_edit_token_state(src)
 
+/datum/overmap/event/meteor/apply_effect()
+	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
+		if(Ship.get_speed() > safe_speed)
+			var/how_fast =  (Ship.get_speed() - safe_speed)
+			if(prob(chance_to_affect + how_fast))
+				affect_ship(Ship)
+
 /datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/Ship)
 	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0, Ship.shuttle_port)
 
