@@ -124,7 +124,7 @@
 	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/Ship)
-	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0, Ship.shuttle_port\)
+	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0, Ship.shuttle_port)
 
 /datum/overmap/event/meteor/minor
 	name = "asteroid field (minor)"
@@ -355,8 +355,6 @@
 
 	//list of ships we are currently affecting so we can stop flicking the lights when they leave
 	var/list/affected_ships = list()
-	//assoc list of clients we are currently overriding with our custom ambience
-	var/list/affected_mobs = list()
 
 /datum/overmap/event/nebula/alter_token_appearance()
 	. = ..()
@@ -383,40 +381,11 @@
 					continue
 				light_to_mess.stop_flickering()
 
-			for(var/mob/affected_mob as anything in affected_mobs)
-				if(!istype(affected_mob))
-					continue
-				var/datum/overmap/mobs_overmap = SSovermap.get_overmap_object_by_location(affected_mob)
-				if(mobs_overmap == ship)
-					var/datum/overmap/event/nebula/new_nebula = locate(/datum/overmap/event/nebula) in mobs_overmap.get_nearby_overmap_objects()
-					new_nebula.affected_mobs[affected_mob] = affected_mobs[affected_mob]
-
 	if(affected_ships.len == 0)
 		STOP_PROCESSING(SSfastprocess, src)
 
 /datum/overmap/event/nebula/affect_ship(datum/overmap/ship/controlled/ship)
 	var/datum/virtual_level/ship_vlevel = ship.shuttle_port.get_virtual_level()
-
-	for(var/mob/affected_mob as anything in GLOB.player_list)
-		if(ship.shuttle_port.is_in_shuttle_bounds(affected_mob))
-			// 'hijacks' the ambience for this nebula one.
-			if(!affected_mob.client)
-				continue
-
-			if(!(affected_mob in SSambience.ambience_listening_clients))
-				continue
-
-			if(affected_mob in affected_mobs)
-				if(affected_mobs[affected_mob] > world.time)
-					continue
-
-			affected_mobs[affected_mob] = world.time + 38 SECONDS
-
-			var/sound = 'sound/effects/overmap/nebula_ambient.ogg'
-			SEND_SOUND(affected_mob, sound(sound, repeat = 0, wait = 0, volume = 85, channel = CHANNEL_AMBIENCE))
-
-			SSambience.ambience_listening_clients[affected_mob.client] = world.time + 40 SECONDS
-
 
 	if(ship in affected_ships)
 		return
