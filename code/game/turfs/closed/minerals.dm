@@ -52,6 +52,26 @@
 		transform = M
 		icon = smooth_icon
 
+	var/area/overmap_encounter/selected_area = get_area(src)
+	if(!istype(selected_area))
+		return
+
+	RegisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(get_light))
+	if(istype(selected_area))
+		light_range = selected_area.light_range
+		light_range = selected_area.light_range
+		light_power = selected_area.light_power
+		update_light()
+
+/turf/closed/mineral/Destroy()
+	. = ..()
+	UnregisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
+
+/turf/closed/mineral/proc/get_light(obj/item/source, target_light, target_power, target_color,)
+	light_range = target_light
+	light_power = target_power
+	light_color = target_color
+	update_light()
 
 /turf/closed/mineral/proc/Spread_Vein()
 	var/spreadChance = initial(mineralType.spreadChance)
@@ -903,3 +923,23 @@
 	baseturfs = /turf/open/floor/plating
 	environment_type = "snow_cavern"
 	turf_type = /turf/open/floor/plating
+
+/turf/closed/mineral/random/moon
+	name = "moonrock"
+	desc = "A great portal conductor, supposedly."
+	icon = 'icons/turf/walls/moon.dmi'
+	smooth_icon = 'icons/turf/walls/moon.dmi'
+	icon_state = "moon-0"
+	base_icon_state = "moon"
+	initial_gas_mix = AIRLESS_ATMOS
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	turf_type = /turf/open/floor/plating/asteroid/moon_coarse/dark
+	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark
+	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 2, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 5,
+		/obj/item/stack/ore/galena = 2, /obj/item/stack/ore/plasma = 1, /obj/item/stack/ore/hematite = 40, /obj/item/stack/ore/rutile = 20,
+		/obj/item/stack/ore/bluespace_crystal = 5, /obj/item/stack/ore/quartzite = 80)
+
+/turf/closed/mineral/random/moon/lit
+	turf_type = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit
+	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit

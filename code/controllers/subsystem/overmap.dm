@@ -726,6 +726,12 @@ SUBSYSTEM_DEF(overmap)
 	if(dynamic_datum.weather_controller_type)
 		new dynamic_datum.weather_controller_type(mapzone)
 
+	var/list/areas_to_update = get_areas(/area/overmap_encounter/planetoid)
+	for(var/area/overmap_encounter/planetoid as anything in areas_to_update)
+		if(mapzone.is_in_bounds(planetoid))
+			planetoid.update_light()
+
+
 	// locates the first dock in the bottom left, accounting for padding and the border
 	var/turf/primary_docking_turf = locate(
 		vlevel.low_x+RESERVE_DOCK_DEFAULT_PADDING + vlevel.reserved_margin,

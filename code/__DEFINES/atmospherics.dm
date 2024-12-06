@@ -67,7 +67,7 @@
 #define OPEN_HEAT_TRANSFER_COEFFICIENT 0.4
 /// a hack for now
 #define WINDOW_HEAT_TRANSFER_COEFFICIENT 0.1
-/// a hack to help make vacuums BIOME_COLD, sacrificing realism for gameplay
+/// a hack to help make vacuums "cold", sacrificing realism for gameplay
 #define HEAT_CAPACITY_VACUUM 7000
 
 //FIRE

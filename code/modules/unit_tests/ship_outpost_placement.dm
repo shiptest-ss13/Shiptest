@@ -6,7 +6,7 @@
 		log_test("Loading [map.name]")
 		try
 			// they'll spawn in empty space, and won't be docked
-			new /datum/overmap/ship/controlled(list("x" = 1, "y" = 1), SSovermap.default_system map)
+			new /datum/overmap/ship/controlled(list("x" = 1, "y" = 1), SSovermap.default_system, map)
 		catch(var/exception/e)
 			TEST_FAIL("Runtime error loading ship type ([map.name]): [e] on [e.file]:[e.line]\n[e.desc]")
 

@@ -36,7 +36,6 @@
 	/// smoothed icon in case we use it
 	var/smooth_icon
 
-
 /turf/open/floor/plating/asteroid/Initialize(mapload, inherited_virtual_z)
 	var/proper_name = name
 	. = ..()
@@ -62,6 +61,9 @@
 		light_power = selected_area.light_power
 		update_light()
 
+/turf/open/floor/plating/asteroid/Destroy()
+	. = ..()
+	UnregisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
 
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/proc/getDug(no_dirt)

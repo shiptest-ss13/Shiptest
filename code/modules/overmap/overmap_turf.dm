@@ -12,6 +12,8 @@
 	if(!virtual_z)
 		return
 	var/datum/virtual_level/vlevel = get_virtual_level()
+	if(!vlevel.current_systen)
+		return
 	var/primary_color = vlevel.current_systen.primary_color //jesus
 	var/secondary_color = vlevel.current_systen.secondary_color
 	var/new_icon_state = vlevel.current_systen.overmap_icon_state

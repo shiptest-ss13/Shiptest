@@ -15,7 +15,6 @@
 
 	baseturfs = /turf/open/floor/plating/asteroid/dirt
 	floor_variance = 0
-	var/update_lighting_on_init = TRUE
 	var/has_grass = FALSE
 
 /turf/open/floor/plating/asteroid/dirt/examine(mob/user)
@@ -27,13 +26,6 @@
 
 /turf/open/floor/plating/asteroid/dirt/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	if(!update_lighting_on_init)
-		return
-	var/area/selected_area = get_area(src)
-	if(istype(selected_area, /area/overmap_encounter) && !istype(selected_area, /area/overmap_encounter/planetoid/cave)) //cheap trick, but i dont want to automate this shit
-		light_range = 2
-		light_power = 0.80
-		update_light()
 
 /turf/open/floor/plating/asteroid/dirt/attackby(obj/item/item_attacked_by, mob/user, params)
 	. = ..()
@@ -110,16 +102,6 @@
 	. = ..()
 	if(ismob(user, /datum/species/pod))
 		. += "<span class='notice'>It could hold water, maybe 50 units per meter could do the trick. Currently, it has <i>[current_water]</i> units.</span>"
-
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin/Initialize(mapload, inherited_virtual_z) //inheritance moment
-	. = ..()
-	if(!update_lighting_on_init)
-		return
-	var/area/selected_area = get_area(src)
-	if(istype(selected_area, /area/overmap_encounter) && !istype(selected_area, /area/overmap_encounter/planetoid/cave)) //cheap trick, but i dont want to automate this shit
-		light_range = 2
-		light_power = 0.80
-		update_light()
 
 /turf/open/floor/plating/asteroid/whitesands/dried
 	var/current_water = 0 //yeah

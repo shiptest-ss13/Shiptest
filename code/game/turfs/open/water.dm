@@ -32,6 +32,10 @@
 		light_power = selected_area.light_power
 		update_light()
 
+/turf/open/water/Destroy()
+	. = ..()
+	UnregisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
+
 /turf/open/water/examine(mob/user)
 	. = ..()
 	if(reagent_to_extract)

@@ -10,7 +10,6 @@
 		GAS_O2=10,
 		GAS_CO=10,
 		GAS_CO2=10,
-		GAS_SO2 = 1,
 	)
 	restricted_gases = list(
 		GAS_ARGON=0.1,

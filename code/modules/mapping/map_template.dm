@@ -137,17 +137,21 @@
 
 	return mapzone
 
-/datum/map_template/proc/load(turf/T, centered = FALSE, init_atmos = TRUE)
+/datum/map_template/proc/load(turf/T, centered = FALSE, init_atmos = TRUE, show_oob_error = TRUE)
 	if(centered)
 		T = locate(T.x - round(width/2) , T.y - round(height/2) , T.z)
 	if(!T)
 		return
 	if(T.x+width-1 > world.maxx)
-		message_admins("<span class='adminnotice'>[src] has failed to load as it's width will be more than the world's x limit ([world.maxx])!</span>")
-		CRASH("<span class='adminnotice'>[src] has failed to load as it's width will be more than the world's x limit ([world.maxx])!/span>")
+		if(show_oob_error)
+			message_admins("<span class='adminnotice'>[src] has failed to load as it's width will be more than the world's x limit ([world.maxx])!</span>")
+			stack_trace("<span class='adminnotice'>[src] has failed to load as it's width will be more than the world's x limit ([world.maxx])!/span>")
+		return
 	if(T.y+height-1 > world.maxy)
-		message_admins("<span class='adminnotice'>[src] has failed to load as it's height will be more than the world's Y limit ([world.maxy])!</span>")
-		CRASH("<span class='adminnotice'>[src] has failed to load as it's height will be more than the world's Y limit ([world.maxy])!/span>")
+		if(show_oob_error)
+			message_admins("<span class='adminnotice'>[src] has failed to load as it's height will be more than the world's Y limit ([world.maxy])!</span>")
+			stack_trace("<span class='adminnotice'>[src] has failed to load as it's height will be more than the world's Y limit ([world.maxy])!/span>")
+		return
 
 	var/list/border = block(locate(max(T.x-1, 1),			max(T.y-1, 1),			 T.z),
 							locate(min(T.x+width+1, world.maxx),	min(T.y+height+1, world.maxy), T.z))

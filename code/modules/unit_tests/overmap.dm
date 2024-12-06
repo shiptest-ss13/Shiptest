@@ -32,8 +32,8 @@
 	TEST_ASSERT(docker in dockee.contents, "Ship did not add itself to dockee after docking")
 	TEST_ASSERT_EQUAL(docker.docking, FALSE, "Ship did not set var/docking to false after docking (Value: [docker.docking])")
 
-	TEST_ASSERT(!docker.x, "Ship did not set x to null after docking (Value: [docker.x])")
-	TEST_ASSERT(!docker.y, "Ship did not set y to null after docking (Value: [docker.y])")
+	TEST_ASSERT(docker.x == dockee.x, "Ship did match x to dockee after docking (Value: [docker.x])")
+	TEST_ASSERT(docker.y == dockee.y, "Ship did match y to dockee after docking (Value: [docker.y])")
 
 	TEST_ASSERT_EQUAL(docker.shuttle_port.virtual_z(), dockee.mapzone.id, "Ship did not move shuttle port to dockee's mapzone (Ship [docker.shuttle_port.virtual_z()] vs Mapzone [dockee.mapzone.id])")
 
