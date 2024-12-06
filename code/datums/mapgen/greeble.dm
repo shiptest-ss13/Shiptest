@@ -62,6 +62,9 @@
 	banned_objects = typecacheof(/obj/structure/stone_tile)
 
 /datum/map_template/greeble/proc/check_deploy(turf/deploy_location)
+	if(isnull(deploy_location))
+		return SHELTER_DEPLOY_BAD_TURFS
+
 	var/affected = get_affected_turfs(deploy_location, centered=TRUE)
 	for(var/turf/T in affected)
 		var/area/A = get_area(T)

@@ -526,7 +526,8 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
  * Sulfur
  */
 /obj/item/stack/sheet/mineral/sulfur
-	name = "sulfur crystal"
+	name = "sulfur crystals"
+	singular_name = "sulfur crystal"
 	icon = 'icons/obj/materials/ingots.dmi'
 	icon_state = "ingot-sulfur"
 	item_state = "ingot-sulfur"
