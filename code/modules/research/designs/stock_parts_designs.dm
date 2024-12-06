@@ -39,7 +39,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "adv_capacitor"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/plastic = 150, /datum/material/glass = 150, /datum/material/silicon = 150)
+	materials = list(/datum/material/carbon = 150, /datum/material/glass = 150, /datum/material/silicon = 150)
 	build_path = /obj/item/stock_parts/capacitor/adv
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
@@ -50,7 +50,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "super_capacitor"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/plastic = 200, /datum/material/glass = 200, /datum/material/silicon = 200, /datum/material/gold = 100)
+	materials = list(/datum/material/carbon = 200, /datum/material/glass = 200, /datum/material/silicon = 200, /datum/material/gold = 100)
 	build_path = /obj/item/stock_parts/capacitor/super
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2

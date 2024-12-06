@@ -115,7 +115,7 @@
 	desc = "Allows tracking of someone's location if their suit sensors are turned to tracking beacon."
 	id = "crewpinpointer"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 3000, /datum/material/glass = 750, /datum/material/plastic = 750, /datum/material/gold = 500,  /datum/material/copper = 200, /datum/material/silicon = 1000)
+	materials = list(/datum/material/iron = 3000, /datum/material/glass = 750, /datum/material/carbon = 750, /datum/material/gold = 500,  /datum/material/copper = 200, /datum/material/silicon = 1000)
 	build_path = /obj/item/pinpointer/crew
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SECURITY
@@ -167,7 +167,7 @@
 	id = "defibrillator_compact"
 	build_type = PROTOLATHE
 	build_path = /obj/item/defibrillator/compact
-	materials = list(/datum/material/iron = 16000, /datum/material/glass = 4000, /datum/material/plastic = 4000, /datum/material/silver = 6000, /datum/material/gold = 3000, /datum/material/silicon = 2000)
+	materials = list(/datum/material/iron = 16000, /datum/material/glass = 4000, /datum/material/carbon = 4000, /datum/material/silver = 6000, /datum/material/gold = 3000, /datum/material/silicon = 2000)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -187,7 +187,7 @@
 	id = "medigel"
 	build_path = /obj/item/reagent_containers/medigel
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2500, /datum/material/plastic = 500)
+	materials = list(/datum/material/iron = 2500, /datum/material/carbon = 500)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -197,7 +197,7 @@
 	id = "laserscalpel"
 	build_path = /obj/item/scalpel/advanced
 	build_type = PROTOLATHE
-	materials = list(/datum/material/silver = 6000, /datum/material/glass = 750, /datum/material/plastic = 750, /datum/material/silicon = 2000, /datum/material/gold = 1500, /datum/material/diamond = 200, /datum/material/titanium = 4000)
+	materials = list(/datum/material/silver = 6000, /datum/material/glass = 750, /datum/material/carbon = 750, /datum/material/silicon = 2000, /datum/material/gold = 1500, /datum/material/diamond = 200, /datum/material/titanium = 4000)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -207,7 +207,7 @@
 	id = "mechanicalpinches"
 	build_path = /obj/item/retractor/advanced
 	build_type = PROTOLATHE
-	materials = list(/datum/material/silver = 12000, /datum/material/glass = 2000, /datum/material/plastic = 2000, /datum/material/silicon = 4000, /datum/material/titanium = 5000)
+	materials = list(/datum/material/silver = 12000, /datum/material/glass = 2000, /datum/material/carbon = 2000, /datum/material/silicon = 4000, /datum/material/titanium = 5000)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -217,7 +217,7 @@
 	id = "searingtool"
 	build_path = /obj/item/surgicaldrill/advanced
 	build_type = PROTOLATHE
-	materials = list(/datum/material/silver = 4000, /datum/material/glass = 1000, /datum/material/plastic = 1000, /datum/material/copper = 2000, /datum/material/silicon = 3000, /datum/material/titanium = 3000)
+	materials = list(/datum/material/silver = 4000, /datum/material/glass = 1000, /datum/material/carbon = 1000, /datum/material/copper = 2000, /datum/material/silicon = 3000, /datum/material/titanium = 3000)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
