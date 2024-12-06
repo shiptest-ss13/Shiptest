@@ -181,7 +181,7 @@
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
 
-	slowdown = 0.5
+	slowdown = 0.2
 
 	icon_state = "hardsuit-clip-patrol"
 	hardsuit_type = "hardsuit-clip-patrol"
@@ -220,7 +220,7 @@
 	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 
 	resistance_flags = null
-	slowdown = 2
+	slowdown = 1.25
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 

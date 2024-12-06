@@ -554,7 +554,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/firstaid, /obj/item/healthanalyzer, /obj/item/stack/medical)
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/medical
-	slowdown = 0.5
+	slowdown = 0.3
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/medical/cmo
@@ -616,7 +616,7 @@
 		/obj/item/gun/energy/wormhole_projector,
 		/obj/item/hand_tele,
 		/obj/item/aicard)
-	slowdown = 2
+	slowdown = 1.5
 	armor = list("melee" = 30, "bullet" = 45, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/rd
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
@@ -1187,5 +1187,5 @@
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov
 	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
-	slowdown = 0.5
+	slowdown = 0.2
 	supports_variations = DIGITIGRADE_VARIATION
