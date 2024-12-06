@@ -162,6 +162,34 @@
 
 /* CM Lancaster */
 
+/datum/supply_pack/magazine/cm23_mag
+	name = "CM-23 Magazine Crate"
+	desc = "Contains a 10mm magazine for the CM-23 handgun."
+	contains = list(/obj/item/ammo_box/magazine/cm23)
+	cost = 500
+	faction = /datum/faction/clip
+
+/datum/supply_pack/magazine/cm70_mag
+	name = "CM-70 Magazine Crate"
+	desc = "Contains a 9mm magazine for the CM-70 machinepistol."
+	contains = list(/obj/item/ammo_box/magazine/m9mm_cm70)
+	cost = 750
+	faction = /datum/faction/clip
+
+/datum/supply_pack/magazine/cm357_mag
+	name = "CM-357 Magazine Crate"
+	desc = "Contains a .357 magazine for the CM-357 automag pistol."
+	contains = list(/obj/item/ammo_box/magazine/cm357)
+	cost = 1000
+	faction = /datum/faction/clip
+
+/datum/supply_pack/magazine/cm5_mag
+	name = "CM-5 Magazine Crate"
+	desc = "Contains a 9mm magazine for the CM-5 SMG."
+	contains = list(/obj/item/ammo_box/magazine/cm5_9mm)
+	cost = 750
+	faction = /datum/faction/clip
+
 /datum/supply_pack/magazine/cm82_mag
 	name = "CM-82 Magazine Crate"
 	desc = "Contains a 5.56mm magazine for the CM-82 rifle, containing thirty rounds. Notably, these are also compatable with the P-16 rifle."
@@ -187,6 +215,13 @@
 	desc = "Contains a 5-round 6.5mm magazine for use with the CM-F90 sniper rifle."
 	contains = list(/obj/item/ammo_box/magazine/f90)
 	cost = 1000
+	faction = /datum/faction/clip
+
+/datum/supply_pack/magazine/cm15
+	name = "CM-15 Magazine Crate"
+	desc = "Contains an 8-round 12ga magazine for the CM-15 Automatic Shotgun."
+	contains = list(/obj/item/ammo_box/magazine/cm15_12g)
+	cost = 1500
 	faction = /datum/faction/clip
 
 /* NT */
@@ -247,18 +282,11 @@
 
 /* Shotguns */
 
-/datum/supply_pack/magazine/cm15
-	name = "CM-15 Magazine Crate"
-	desc = "Contains an 8-round 12ga magazine for the CM-15 Automatic Shotgun."
-	contains = list(/obj/item/ammo_box/magazine/cm15_12g)
-	cost = 1500
-	faction = /datum/faction/clip
-
 /datum/supply_pack/magazine/bulldog
 	name = "Bulldog Magazine Crate"
 	desc = "Contains an 8-round 12ga box magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog)
-	cost = 1500
+	cost = 1000
 	faction = /datum/faction/syndicate/scarborough_arms
 
 
