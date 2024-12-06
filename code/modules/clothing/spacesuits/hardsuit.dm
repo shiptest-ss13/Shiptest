@@ -954,6 +954,8 @@
 
 ///////////////Shiptest Additions////////////////////
 
+//this 'shiptest' server really needs to just add new files
+
 //Softsuit helmet light framework
 /obj/item/clothing/head/helmet/space/light
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
@@ -1034,6 +1036,10 @@
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 5, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75)
 
 	//Engineer Softsuit
+
+	// >softsuit
+	// >hardsuit.dm
+
 /obj/item/clothing/suit/space/engineer
 	name = "engineering space suit"
 	icon_state = "space-independent-eng"
@@ -1144,14 +1150,14 @@
 		A.UpdateButtonIcon()
 
 //Inteq Hardsuit
-/obj/item/clothing/head/helmet/space/hardsuit/security/independent/inteq
+/obj/item/clothing/head/helmet/space/hardsuit/security/independent/inteq //i fucking hate this typepath
 	name = "inteq hardsuit helmet"
 	desc = "A somewhat boxy, monocular visored helmet designed for hazardous, low pressure environments. It has the letters 'IRMG' imprinted onto the earpad."
 	icon_state = "hardsuit0-inteq"
 	item_state = "hardsuit-inteq"
 	hardsuit_type = "inteq"
 
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq
+/obj/item/clothing/suit/space/hardsuit/security/independent/inteq //this one too. you know you can just redeclare variables and have shorter paths right? Fucking hardsuit/security/indepentent/inteq how about just /hardsuit/inteq did you ever think about that huh???
 	name = "inteq hardsuit"
 	desc = "A heavy-duty looking suit that protects against hazardous, low pressure environments. It's bulk provides ample protection, if not a bit cumbersome to wear."
 	icon_state = "hardsuit-inteq"
@@ -1170,7 +1176,7 @@
 	hardsuit_type = "solgov"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75)
 
-/obj/item/clothing/suit/space/hardsuit/solgov
+/obj/item/clothing/suit/space/hardsuit/solgov //see this is a good path. not fucking /security/independant/inteq. its just /hardsuit/solgov
 	icon_state = "hardsuit_solgov"
 	name = "\improper SolGov hardsuit"
 	desc = "An armored spaceproof suit. A powered exoskeleton keeps the suit light and mobile."
