@@ -821,19 +821,25 @@ SUBSYSTEM_DEF(overmap)
 	if(static_datum.mapgen)
 		use_mapgen = TRUE
 	var/datum/map_template/map_to_load = ispath(map) ? (new map) : map
+	var/datum/map_zone/mapzone
+	var/datum/virtual_level/vlevel
 
-	// name is random but PROBABLY unique
-	var/encounter_name = static_datum.planet_name || "\improper Uncharted Space [static_datum.x]/[static_datum.y]-[rand(1111, 9999)]"
-	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
-	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
-		encounter_name,
-		list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = static_datum.default_baseturf, ZTRAIT_GRAVITY = static_datum.gravity),
-		mapzone,
-		map_to_load.width,
-		map_to_load.height,
-		ALLOCATION_QUADRANT,
-		QUADRANT_MAP_SIZE
-	)
+	if(static_datum.load_seperate_z)
+		mapzone = map_to_load.load_new_z()
+		vlevel = mapzone.virtual_levels[1]
+	else
+		// name is random but PROBABLY unique
+		var/encounter_name = static_datum.planet_name || "\improper Uncharted Space [static_datum.x]/[static_datum.y]-[rand(1111, 9999)]"
+		mapzone = SSmapping.create_map_zone(encounter_name)
+		vlevel = SSmapping.create_virtual_level(
+			encounter_name,
+			list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = static_datum.default_baseturf, ZTRAIT_GRAVITY = static_datum.gravity),
+			mapzone,
+			map_to_load.width,
+			map_to_load.height,
+			ALLOCATION_QUADRANT,
+			QUADRANT_MAP_SIZE
+		)
 
 	vlevel.reserve_margin(static_datum.border_size)
 
@@ -856,8 +862,6 @@ SUBSYSTEM_DEF(overmap)
 		new static_datum.weather_controller_type(mapzone)
 
 	var/list/docking_ports = list()
-//	var/turf/turf_lower = locate(vlevel.low_x,vlevel.low_y)
-//	var/turf/turf_higher = locate(vlevel.high_x,vlevel.high_y)
 
 	for(var/obj/docking_port/stationary/port as obj in SSshuttle.stationary)
 		if(port.virtual_z() == vlevel.id)

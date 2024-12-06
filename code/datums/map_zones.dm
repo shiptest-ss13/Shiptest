@@ -166,7 +166,7 @@
 	if(!crosslinked["[direction]"])
 		CRASH("Virtual level tried to unlink a direction that wasn't linked.")
 	var/datum/virtual_level/other_zone = crosslinked["[direction]"]
-	var/reversed_dir = REVERSE_DIR(direction)
+	var/reversed_dir = REVERSE_DIR(text2num(direction))
 	crosslinked -= "[direction]"
 	other_zone.crosslinked -= "[reversed_dir]"
 	clear_dir_linkage(direction)
@@ -207,6 +207,8 @@
 	var/turf/ending = locate(end_x, end_y, z_value)
 	var/list/turfblock = block(beginning, ending)
 	for(var/turf/closed/indestructible/edge/edgy_turf as anything in turfblock)
+		if(!istype(edgy_turf))
+			continue
 		edgy_turf.density = TRUE
 		edgy_turf.opacity = TRUE
 		edgy_turf.destination_z = null
