@@ -228,6 +228,8 @@ SUBSYSTEM_DEF(overmap)
 	var/name
 	/// Name of the star
 	var/starname
+	///Type of the star
+	var/datum/overmap/star/startype
 
 	///Defines which generator to use for the overmap
 	var/generator_type
@@ -528,7 +530,8 @@ SUBSYSTEM_DEF(overmap)
 
 	if ((generator_type == OVERMAP_GENERATOR_SOLAR) || (generator_type == OVERMAP_GENERATOR_RANDOM))
 		var/datum/overmap/star/center
-		var/startype = pick(subtypesof(/datum/overmap/star))
+		if(!startype)
+			startype = pick(subtypesof(/datum/overmap/star))
 		center = new startype(list("x" = round(size / 2 + 1), "y" = round(size / 2 + 1)), src)
 		if(starname)
 			center.name = starname
