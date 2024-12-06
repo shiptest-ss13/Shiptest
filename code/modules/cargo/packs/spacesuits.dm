@@ -81,7 +81,7 @@
 
 /datum/supply_pack/spacesuits/spacesuit/solgov
 	name = "Rakalla Crate"
-	desc = "Contains one Tortoise Microlite Armored Suit, the pride and joy of many Solarian explorers."
+	desc = "Contains one Rakalla Suit. It provides robust-enough protection from the elements while being quite flexible."
 	cost = 600
 	contains = list(/obj/item/clothing/suit/space/gezena,
 					/obj/item/clothing/head/helmet/space/gezena)
