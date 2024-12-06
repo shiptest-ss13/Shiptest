@@ -1156,6 +1156,7 @@
 	icon_state = "hardsuit0-inteq"
 	item_state = "hardsuit-inteq"
 	hardsuit_type = "inteq"
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /obj/item/clothing/suit/space/hardsuit/security/independent/inteq //this one too. you know you can just redeclare variables and have shorter paths right? Fucking hardsuit/security/indepentent/inteq how about just /hardsuit/inteq did you ever think about that huh???
 	name = "inteq hardsuit"
@@ -1163,8 +1164,10 @@
 	icon_state = "hardsuit-inteq"
 	item_state = "hardsuit-inteq"
 	hardsuit_type = "inteq"
+
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/inteq
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 //solarian
 
