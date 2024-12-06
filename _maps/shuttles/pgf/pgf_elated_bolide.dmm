@@ -1615,6 +1615,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "jB" = (
@@ -1776,6 +1779,9 @@
 	id = "bolide_armory";
 	dir = 4;
 	name = "Armory"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -5437,6 +5443,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Im" = (
@@ -7561,10 +7570,6 @@
 /obj/structure/closet/wall/white/directional/south,
 /obj/item/storage/ration/crayons,
 /obj/structure/table/reinforced,
-/obj/machinery/door/airlock/security{
-	name = "Engineering Storage";
-	req_one_access_txt = "1"
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "Ve" = (
