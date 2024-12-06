@@ -43,6 +43,7 @@
 /obj/effect/spawner/random/seventyrock
 	name = "70% rock spawn chance"
 	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "basalt1"
 	loot = list(
 			/obj/structure/flora/rock = 5,
 		)
