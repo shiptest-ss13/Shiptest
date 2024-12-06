@@ -173,6 +173,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/heavy_sec_hardsuit
+	name = "Heavy Security Hardsuit Crate"
+	desc = "The culimination of research into robust engineering equipment. This hardsuit makes the wearer near immune to the natural hazards the Frontier can throw."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/hos)
+	crate_name = "advanced hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
 //general syndicate
 
 /datum/supply_pack/spacesuits/op_hardsuit //pls nerf

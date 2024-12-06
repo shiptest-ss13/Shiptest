@@ -65,7 +65,7 @@
 
 /datum/supply_pack/armor/clip_armor
 	name = "X-11 Armor Crate"
-	desc = "One set of Lanchester-manufactured X-11 armor, sold at a discount to the Confederated League due to a recent contract."
+	desc = "One set of Lanchester Manufacturing-manufactured X-11 armor, sold at a discount to the Confederated League due to a recent contract."
 	cost = 1250
 	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof,
 					/obj/item/clothing/head/helmet/bulletproof/x11/clip,
@@ -78,7 +78,7 @@
 
 /datum/supply_pack/armor/clip_riot
 	name = "CLIP Riot Armor Crate"
-	desc = "One set of Clover-manufactured Riot armor, traditionally issued to BARD for xenofauna removal, but available to League vessels deployed in the Frontier due to high Xenofauna density."
+	desc = "One set of Clover Corp-manufactured Riot armor, traditionally issued to BARD for xenofauna removal, but available to League vessels deployed in the Frontier due to high Xenofauna density."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/armor/riot/clip,
 					/obj/item/clothing/head/helmet/riot/clip,
@@ -142,7 +142,7 @@
 //ngr
 /datum/supply_pack/armor/ngr_armor
 	name = "NGR Armor Crate"
-	desc = "One fairly durable, well manufactured tpye-1 armor vest and associated helmet, painted in the proud reds of the New Gorlex Republic."
+	desc = "One fairly durable, well manufactured type-1 armor vest and associated helmet, painted in the proud reds of the New Gorlex Republic."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/armor/ngr,
 					/obj/item/clothing/head/helmet/ngr)
