@@ -30,7 +30,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "dH" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
@@ -82,7 +88,13 @@
 	},
 /area/hangar)
 "jc" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -154,11 +166,17 @@
 /area/hangar)
 "nd" = (
 /obj/effect/turf_decal/weather/rock,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/hangar)
 "nE" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 10
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/hangar)
@@ -172,11 +190,17 @@
 /obj/effect/turf_decal/weather/rock{
 	dir = 6
 	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/hangar)
 "oR" = (
 /obj/effect/landmark/outpost/hangar_numbers,
-/obj/effect/turf_decal/corner/opaque/bar/half{
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -201,7 +225,10 @@
 /turf/open/floor/plasteel/dark,
 /area/hangar)
 "qY" = (
-/obj/effect/turf_decal/corner/opaque/bar/half,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "rJ" = (
@@ -211,8 +238,14 @@
 	},
 /area/hangar)
 "rS" = (
-/obj/effect/turf_decal/corner/opaque/bar/three_quarters{
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
@@ -346,7 +379,13 @@
 	},
 /area/hangar)
 "Ap" = (
-/obj/effect/turf_decal/corner/opaque/bar/three_quarters,
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters,
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "AD" = (
@@ -530,14 +569,23 @@
 	},
 /area/hangar)
 "Su" = (
-/obj/effect/turf_decal/corner/opaque/bar/three_quarters{
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "SF" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/hangar)
@@ -548,6 +596,9 @@
 	},
 /obj/effect/turf_decal/weather/rock{
 	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/hangar)
@@ -569,8 +620,14 @@
 	},
 /area/hangar)
 "Ve" = (
-/obj/effect/turf_decal/corner/opaque/bar/three_quarters{
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
@@ -595,6 +652,9 @@
 "Wl" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/hangar)
