@@ -43,6 +43,8 @@
 
 /obj/structure/crate_shelf/examine(mob/user)
 	. = ..()
+	if(capacity < max_capacity)
+		. += span_notice("You could <b>add another shelf</b> with <b> 2 sheets of metal</b>.")
 	. += span_notice("There are some <b>bolts</b> holding [src] together.")
 	if(shelf_contents.Find(null)) // If there's an empty space in the shelf, let the examiner know.
 		. += span_notice("You could <b>drag and drop</b> a crate into [src].")

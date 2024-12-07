@@ -4,7 +4,7 @@
 	icon = 'icons/obj/chemical/medicine.dmi'
 	icon_state = "bottle19"
 	desc = "Inject certain types of monster organs with this stabilizer to preserve their healing powers indefinitely."
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_price = 400
 
 /obj/item/hivelordstabilizer/afterattack(obj/item/organ/M, mob/user, proximity)
@@ -27,6 +27,7 @@
 	icon_state = "roro core 2"
 	item_flags = NOBLUDGEON
 	slot = ORGAN_SLOT_REGENERATIVE_CORE
+	organ_flags = null
 	force = 0
 	actions_types = list(/datum/action/item_action/organ_action/use)
 	var/inert = 0
@@ -85,10 +86,10 @@
 		if(inert)
 			to_chat(user, span_notice("[src] has decayed past usabality."))
 			return
-		else
-			if(H.stat == DEAD)
-				to_chat(user, span_notice("[src] is useless on the dead."))
-				return
+		if(H.stat == DEAD)
+			to_chat(user, span_notice("[src] is useless on the dead."))
+			return
+		if(do_after(user, 10, target))
 			if(H != user)
 				H.visible_message(span_notice("[user] smears [src] across [H]... malignant black tendrils entangle and reinforce [H.p_their()] flesh!"))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "other"))
@@ -96,6 +97,7 @@
 				to_chat(user, span_notice("You smear [src] across your body. Malignant black tendrils start to grow around the application site, reinforcing your flesh!"))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
 			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
+			H.reagents.add_reagent(/datum/reagent/medicine/soulus,15)
 			H.force_scream()
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman)
 			qdel(src)
