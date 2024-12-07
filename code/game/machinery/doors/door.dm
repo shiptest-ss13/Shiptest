@@ -27,8 +27,8 @@
 	var/welded = FALSE
 	///does this airlock close quickly
 	var/fast_close = 0
-	///how many seconds should this door close after, if it is autoclosing
-	var/close_speed = 60
+	///how long this door takes to close, if it is autoclosing
+	var/close_speed = 6 SECONDS
 	var/heat_proof = FALSE // For rglass-windowed airlocks and firedoors
 	var/emergency = FALSE // Emergency access override
 	var/sub_door = FALSE // true if it's meant to go under another door.
