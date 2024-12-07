@@ -23,14 +23,12 @@
 
 /turf/open/lava/Initialize(mapload)
 	. = ..()
-	if(prob(20))
-		particle_emitter = new /obj/effect/particle_emitter/lava(src)
+	particle_emitter = new /obj/effect/particle_emitter/lava(src)
 	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_LAVALAND_LAVA)
 
 /turf/open/lava/Destroy()
 	. = ..()
-	if(particle_emitter)
-		QDEL_NULL(particle_emitter)
+	QDEL_NULL(particle_emitter)
 
 /turf/open/lava/ex_act(severity, target)
 	contents_explosion(severity, target)
