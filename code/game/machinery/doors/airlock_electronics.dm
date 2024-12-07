@@ -98,10 +98,10 @@
 			var/tune = params["tune"]
 			var/adjust = text2num(params["adjust"])
 			if(adjust)
-				tune = close_speed + adjust * 10
+				tune = close_speed + adjust SECONDS
 				. = TRUE
 			else if(text2num(tune) != null)
-				tune = tune * 10
+				tune = tune SECONDS
 				. = TRUE
 			if(.)
 				close_speed = clamp(tune, 0, 300)
