@@ -49,7 +49,6 @@
 /datum/overmap/star/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	var/name = gen_star_name()
 	Rename(name)
-	set_station_name(name)
 	alter_token_appearance()
 	START_PROCESSING(SSprocessing, src)
 

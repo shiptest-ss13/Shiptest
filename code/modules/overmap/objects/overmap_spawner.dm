@@ -126,6 +126,7 @@
 	encounter_name = null
 	planet_name = null
 	planet_type = /datum/planet_type/lava
+	preserve_level = FALSE
 
 // ** STATIC OBJECTS **//
 
