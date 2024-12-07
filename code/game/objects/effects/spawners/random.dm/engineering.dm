@@ -136,3 +136,13 @@
 		/obj/item/stack/cable_coil/red,
 		/obj/item/stack/rods/fifty
 	)
+
+/obj/effect/spawner/random/test_ship_matspawn
+	name = "roundstart mat spawn"
+	spawn_all_loot = TRUE
+	loot = list(
+		/obj/item/stack/sheet/mineral/coal/ten,
+		/obj/item/stack/sheet/mineral/silicon/five,
+		/obj/item/stack/sheet/mineral/copper/five,
+		/obj/item/book/manual/materials_and_you
+	)

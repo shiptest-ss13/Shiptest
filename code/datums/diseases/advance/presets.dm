@@ -3,7 +3,7 @@
 	copy_type = /datum/disease/advance
 
 /datum/disease/advance/cold/New()
-	name = "Cold"
+	name = BIOME_COLD
 	symptoms = list(new/datum/symptom/sneeze)
 	..()
 

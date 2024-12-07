@@ -4,6 +4,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"aO" = (
+/obj/item/stack/ore/autunite,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "aP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -21,6 +26,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_radiation/main)
+"bB" = (
+/obj/item/stack/ore/autunite,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "bX" = (
 /obj/effect/decal/cleanable/greenglow/filled,
 /obj/effect/dummy/lighting_obj{
@@ -91,10 +101,6 @@
 /area/ruin/wasteplanet/wasteplanet_radiation)
 "gr" = (
 /turf/open/floor/plating/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_radiation)
-"gx" = (
-/mob/living/simple_animal/hostile/hivebot,
-/turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
 "gM" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
@@ -261,6 +267,10 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
+"pi" = (
+/mob/living/simple_animal/hostile/hivebot,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
 "pp" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
@@ -329,11 +339,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
-"tl" = (
-/obj/item/stack/ore/uranium,
-/obj/effect/turf_decal/industrial/warning/dust/corner,
-/turf/open/floor/plating/rust,
-/area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "ty" = (
 /turf/template_noop,
 /area/template_noop)
@@ -430,6 +435,10 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/wasteplanet_radiation/main)
+"yK" = (
+/mob/living/simple_animal/hostile/hivebot/ranged,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
 "yW" = (
 /obj/effect/spawner/structure/window/hollow,
 /turf/open/floor/plating,
@@ -599,15 +608,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/wasteplanet_radiation/main)
-"IE" = (
-/obj/item/stack/ore/uranium,
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plating/rust,
-/area/ruin/wasteplanet/wasteplanet_radiation/containment)
-"Jq" = (
-/obj/item/stack/ore/uranium,
-/turf/open/floor/plating/rust,
-/area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "Jw" = (
 /obj/structure/girder,
 /turf/open/floor/plating/wasteplanet,
@@ -683,10 +683,6 @@
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
-"Mh" = (
-/mob/living/simple_animal/hostile/hivebot/ranged,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_radiation)
 "Mq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -712,6 +708,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/wasteplanet/rust,
 /area/ruin/wasteplanet/wasteplanet_radiation)
+"Nh" = (
+/obj/item/stack/ore/autunite,
+/obj/effect/turf_decal/industrial/warning/dust/corner,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "Nj" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 8
@@ -732,11 +733,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/maint)
-"Ny" = (
-/obj/item/stack/ore/uranium,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
-/area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "NG" = (
 /obj/structure/closet/crate/radiation{
 	anchored = 1
@@ -874,6 +870,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
+"UH" = (
+/obj/item/stack/ore/autunite,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "UR" = (
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
@@ -1377,7 +1377,7 @@ UR
 Gl
 Hf
 lS
-gx
+pi
 UR
 UR
 YO
@@ -1419,7 +1419,7 @@ UR
 ZC
 Gl
 Gl
-Mh
+yK
 UR
 Gl
 UR
@@ -1584,7 +1584,7 @@ Yl
 sh
 bX
 Xi
-Jq
+UH
 lJ
 WB
 Yl
@@ -1655,7 +1655,7 @@ Yl
 Yl
 Qp
 Ld
-tl
+Nh
 Yl
 Yl
 Sf
@@ -1761,11 +1761,11 @@ wn
 UR
 Sf
 Yl
-IE
+bB
 Xi
 aF
 tA
-Ny
+aO
 eO
 Yl
 ZJ

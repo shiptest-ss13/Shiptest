@@ -1,5 +1,6 @@
 /turf/open/floor/plating/asteroid/rockplanet
 	name = "iron sand"
+	icon = 'icons/turf/planetary/rockplanet.dmi'
 	icon_state = "dry_soft"
 	base_icon_state = "dry_soft"
 	floor_variance = 100
@@ -12,6 +13,7 @@
 	light_color = COLOR_ROCKPLANET_LIGHT
 
 /turf/open/floor/plating/asteroid/rockplanet/lit
+	light_color = COLOR_ROCKPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
 

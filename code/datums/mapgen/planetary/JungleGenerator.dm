@@ -81,7 +81,7 @@
 	)
 
 /datum/biome/jungle
-	open_turf_types = list(/turf/open/floor/plating/grass/jungle/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/jungle = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/grass/jungle = 1,
 		/obj/structure/flora/grass/jungle/b = 1,
@@ -105,7 +105,7 @@
 
 /datum/biome/jungle/dense
 	flora_spawn_chance = 100
-	open_turf_types = list(/turf/open/floor/plating/grass/jungle/lit = 1, /turf/open/floor/plating/dirt/jungle/dark/lit = 9)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/jungle = 1, /turf/open/floor/plating/asteroid/dirt/jungle/dark = 9)
 	flora_spawn_list = list(
 		/obj/structure/flora/grass/jungle = 1,
 		/obj/structure/flora/grass/jungle/b = 1,
@@ -127,7 +127,7 @@
 		)
 
 /datum/biome/jungle/plains
-	open_turf_types = list(/turf/open/floor/plating/grass/jungle/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/jungle = 1)
 	flora_spawn_chance = 50
 	mob_spawn_chance = 1
 	mob_spawn_list = list(
@@ -136,7 +136,7 @@
 	)
 
 /datum/biome/mudlands
-	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/dark/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/jungle/dark = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/grass/jungle = 1,
 		/obj/structure/flora/grass/jungle/b = 1,
@@ -148,7 +148,13 @@
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 1)
 
 /datum/biome/jungle_wasteland
-	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/wasteland/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/wasteland = 1)
+	feature_spawn_chance = 0.2
+	feature_spawn_list = list(
+		/obj/structure/vein/jungle = 4,
+		/obj/structure/vein/jungle/classtwo = 6,
+		/obj/structure/vein/jungle/classthree = 2,
+	)
 
 /datum/biome/jungle/water
 	open_turf_types = list(/turf/open/water/jungle/lit = 1)
@@ -158,7 +164,7 @@
 	flora_spawn_list = list(/obj/structure/flora/rock = 1)
 
 /datum/biome/cave/jungle
-	open_turf_types = list(/turf/open/floor/plating/dirt/jungle = 10, /turf/open/floor/plating/dirt/jungle/dark = 10)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/jungle = 10, /turf/open/floor/plating/asteroid/dirt/jungle/dark = 10)
 	closed_turf_types = list(/turf/closed/mineral/random/jungle = 1)
 	flora_spawn_chance = 5
 	flora_spawn_list = list(
@@ -174,18 +180,21 @@
 	mob_spawn_chance = 1
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 1,
+		/mob/living/simple_animal/hostile/bear/cave = 1,
 		/mob/living/simple_animal/hostile/retaliate/bat = 1,
 		/mob/living/simple_animal/hostile/retaliate/poison/snake = 1
 	)
 	feature_spawn_chance = 0.5
 	feature_spawn_list = list(
 		/obj/item/pickaxe/rusted = 1,
-		/obj/structure/spawner/burrow/jungle_planet = 1,
-		/obj/effect/spawner/random/anomaly/jungle = 1
+		/obj/structure/spawner/burrow/jungle_planet = 4,
+		/obj/effect/spawner/random/anomaly/jungle = 2,
+		/obj/structure/vein/jungle = 8,
+		/obj/structure/vein/jungle/classtwo = 4,
 	)
 
 /datum/biome/cave/jungle/dirt
-	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/wasteland = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/wasteland = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/junglebush = 1,
 		/obj/structure/flora/junglebush/b = 1,
@@ -198,7 +207,7 @@
 	)
 
 /datum/biome/cave/lush
-	open_turf_types = list(/turf/open/floor/plating/grass/jungle = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/jungle = 1)
 	closed_turf_types = list(/turf/closed/mineral/random/jungle = 1)
 	flora_spawn_chance = 50
 	flora_spawn_list = list(
@@ -234,7 +243,7 @@
 	)
 
 /datum/biome/cave/lush/bright
-	open_turf_types = list(/turf/open/floor/plating/grass/jungle/lit = 12, /turf/open/water/jungle/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/jungle = 12, /turf/open/water/jungle/lit = 1)
 	flora_spawn_chance = 40
 	mob_spawn_chance = 1
 	mob_spawn_list = list(

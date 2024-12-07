@@ -96,10 +96,10 @@
 	plane = FULLSCREEN_PLANE
 	layer = FLASH_LAYER
 	icon = 'icons/effects/ore_visuals.dmi'
-	appearance_flags = 0 //to avoid having TILE_BOUND in the flags, so that the 480x480 icon states let you see it no matter where you are
+	appearance_flags = TILE_BOUND
 	duration = 35
-	pixel_x = -224
-	pixel_y = -224
+	pixel_x = 0
+	pixel_y = 0
 
 /obj/effect/temp_visual/mining_overlay/Initialize()
 	. = ..()
@@ -236,7 +236,7 @@
 
 	if(O.vein_contents.len > 0)
 		to_chat(user, "<span class='notice'>Class [O.vein_class] ore vein with [O.mining_charges] possible ore lodes found.</span>")
-		for(var/re in O.vein_contents)
-			to_chat(user, "<span class='notice'>\tExtractable amounts of [re].</span>")
+		for(var/obj/re as anything in O.vein_contents)
+			to_chat(user, "<span class='notice'>\tExtractable amounts of [re.name].</span>")
 	else
 		to_chat(user, "<span class='notice'>No notable mineral deposits found in [O].</span>")

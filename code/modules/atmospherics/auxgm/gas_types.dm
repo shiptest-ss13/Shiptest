@@ -37,6 +37,9 @@
 
 	flags = GAS_FLAG_DANGEROUS
 
+	fusion_power = 0
+	enthalpy = -110500
+
 /datum/gas/carbon_dioxide //what the fuck is this?
 	id = GAS_CO2
 	specific_heat = 30
