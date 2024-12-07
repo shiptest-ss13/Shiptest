@@ -116,6 +116,7 @@
 	icon_living = "royalcrab"
 	icon_dead = "royalcrab_dead"
 	maxHealth = 50
+	health = 50
 
 	speed = 1
 	speak_chance = 1
