@@ -8,6 +8,8 @@
 	gas_transfer_coefficient = 0.9
 	equip_delay_other = 20
 
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
 	equip_delay_self = EQUIP_DELAY_MASK
 	equip_delay_other = EQUIP_DELAY_MASK * 1.5
 	strip_delay = EQUIP_DELAY_MASK * 1.5
@@ -36,6 +38,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 25, "rad" = 0, "fire" = 0, "acid" = 0)
 	actions_types = list(/datum/action/item_action/adjust)
 
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
 	equip_delay_self = EQUIP_DELAY_MASK
 	equip_delay_other = EQUIP_DELAY_MASK * 1.5
 	strip_delay = EQUIP_DELAY_MASK * 1.5
@@ -164,6 +168,8 @@
 	clothing_flags = VOICEBOX_TOGGLABLE
 	modifies_speech = TRUE
 
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
 	equip_delay_self = EQUIP_DELAY_MASK
 	equip_delay_other = EQUIP_DELAY_MASK * 1.5
 	strip_delay = EQUIP_DELAY_MASK * 1.5
@@ -191,6 +197,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	modifies_speech = TRUE
 
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
 	equip_delay_self = EQUIP_DELAY_MASK
 	equip_delay_other = EQUIP_DELAY_MASK * 1.5
 	strip_delay = EQUIP_DELAY_MASK * 1.5
@@ -220,6 +228,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	clothing_flags = VOICEBOX_TOGGLABLE
 
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
 	equip_delay_self = EQUIP_DELAY_MASK
 	equip_delay_other = EQUIP_DELAY_MASK * 1.5
 	strip_delay = EQUIP_DELAY_MASK * 1.5
@@ -248,6 +258,8 @@
 	flags_inv = HIDEFACE
 	flags_cover = MASKCOVERSMOUTH
 
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
 	equip_delay_self = EQUIP_DELAY_MASK
 	equip_delay_other = EQUIP_DELAY_MASK * 1.5
 	strip_delay = EQUIP_DELAY_MASK * 1.5

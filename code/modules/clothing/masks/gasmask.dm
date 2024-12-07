@@ -12,6 +12,8 @@
 	resistance_flags = NONE
 
 	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
 	equip_delay_self = EQUIP_DELAY_MASK
 	equip_delay_other = EQUIP_DELAY_MASK * 1.5
 	strip_delay = EQUIP_DELAY_MASK * 1.5

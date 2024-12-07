@@ -41,23 +41,23 @@
 // Base equipment delays
 /// Delay base for full-body coverage suit slot items. (hardsuits, spacesuits, radsuits, etc.)
 #define EQUIP_DELAY_OVERSUIT (6 SECONDS)
-/// Delay base for Undersuits.
-#define EQUIP_DELAY_UNDERSUIT (6 SECONDS)
 
-/// Delay base for hard-body shoes and boots.
-#define EQUIP_DELAY_BOOTS (4 SECONDS)
-/// Delay base for hard-body, strapped, or otherwise head-covering hats.
-#define EQUIP_DELAY_HELMET (4 SECONDS)
 /// Delay base for suit slot items
 #define EQUIP_DELAY_SUIT (4 SECONDS)
 
-/// Delay base for masks.
-#define EQUIP_DELAY_MASK (2 SECONDS)
+/// Delay base for hard-body shoes and boots.
+#define EQUIP_DELAY_BOOTS (2 SECONDS)
+/// Delay base for hard-body, strapped, or otherwise head-covering hats.
+#define EQUIP_DELAY_HELMET (2 SECONDS)
 /// Delay base for shoes.
 #define EQUIP_DELAY_SHOES (2 SECONDS)
 /// Delay base for suit and cloak slot items that are trivially removed or put on. (Coats, Jackets, Ponchos, etc.)
 #define EQUIP_DELAY_COAT (2 SECONDS)
+/// Delay base for Undersuits.
+#define EQUIP_DELAY_UNDERSUIT (2 SECONDS)
 
+/// Delay base for masks.
+#define EQUIP_DELAY_MASK (1 SECONDS)
 /// Delay base for back-worn objects.
 #define EQUIP_DELAY_BACK (1 SECONDS)
 /// Delay base for belts.
