@@ -413,3 +413,8 @@
 	file_name = "frontiersmen_brawler"
 	name = "Brawler-class Dropship"
 	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/skink
+	file_name = "nanotrasen_skink"
+	name = "Skink-class Cargo Runner"
+	prefix = "NTSV"
