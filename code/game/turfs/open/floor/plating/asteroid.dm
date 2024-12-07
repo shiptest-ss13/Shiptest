@@ -67,6 +67,8 @@
 
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/proc/getDug(no_dirt)
+	if(dug)
+		return
 	if(smoothing_flags)
 		add_overlay("[base_icon_state]_dug")
 

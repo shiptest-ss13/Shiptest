@@ -132,6 +132,7 @@
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	dug = TRUE
 
 /turf/open/floor/plating/asteroid/icerock/smooth
 	floor_variance = 0
@@ -143,6 +144,7 @@
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	dug = TRUE
 
 /turf/open/floor/plating/asteroid/icerock/temperate
 	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
