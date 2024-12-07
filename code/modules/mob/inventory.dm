@@ -301,7 +301,8 @@
 	if(HAS_TRAIT(I, TRAIT_NODROP) && !force)
 		return FALSE
 
-	if(use_unequip_delay && !unequip_delay_self_check(I))
+	var/static/list/exclude_from_unequip_delay = list(null, ITEM_SLOT_RPOCKET, ITEM_SLOT_LPOCKET, ITEM_SLOT_SUITSTORE, ITEM_SLOT_HANDS)
+	if(use_unequip_delay && !(get_slot_by_item(I) in exclude_from_unequip_delay) && !unequip_delay_self_check(I))
 		return FALSE
 
 	var/hand_index = get_held_index_of_item(I)
