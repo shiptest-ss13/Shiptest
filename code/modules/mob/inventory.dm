@@ -301,6 +301,10 @@
 	if(HAS_TRAIT(I, TRAIT_NODROP) && !force)
 		return FALSE
 
+	if(HAS_TRAIT(src, TRAIT_EQUIPPING_OR_UNEQUIPPING))//shim because our do_after is less neat than daedalus's
+		to_chat(src, span_warning("You're already unequipping something!"))
+		return FALSE
+
 	var/static/list/exclude_from_unequip_delay = list(null, ITEM_SLOT_RPOCKET, ITEM_SLOT_LPOCKET, ITEM_SLOT_SUITSTORE, ITEM_SLOT_HANDS)
 	if(use_unequip_delay && !(get_slot_by_item(I) in exclude_from_unequip_delay) && !unequip_delay_self_check(I))
 		return FALSE
