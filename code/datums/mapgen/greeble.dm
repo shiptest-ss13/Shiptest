@@ -31,18 +31,16 @@
 	template = new template()
 	if(!template)
 		WARNING("Greeble template not found!")
-		return INITIALIZE_HINT_QDEL
+		qdel(src)
+		return
 
 	var/turf/deploy_location = get_turf(src)
 	var/status = template.check_deploy(deploy_location)
 
 	if(status != SHELTER_DEPLOY_ALLOWED)
-		return INITIALIZE_HINT_QDEL
+		qdel(src)
+		return
 
-	INVOKE_ASYNC(src, PROC_REF(load_template))
-
-/obj/effect/greeble_spawner/proc/load_template()
-	var/turf/deploy_location = get_turf(src)
 	template.load(deploy_location, centered = TRUE, show_oob_error = FALSE)
 	qdel(src)
 
