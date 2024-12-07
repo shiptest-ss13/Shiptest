@@ -13,10 +13,9 @@
 	var/wave_downtime //Average time until spawning starts again
 	var/wave_timer
 	var/current_timerid
-	var/datum/virtual_level/vlevel
 	var/spawn_amount
 
-/datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max, _wave_length, _wave_downtime, _spawn_amount = 1)
+/datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max, _wave_length, _wave_downtime)
 	if(!ismovable(parent))
 		return COMPONENT_INCOMPATIBLE
 
@@ -43,19 +42,14 @@
 	if(_spawn_amount)
 		spawn_amount = _spawn_amount
 
-	var/atom/movable/owner = parent
-	vlevel = owner.get_virtual_level()
+	var/static/list/connections = list(COMSIG_VLEVEL_CLEARING = PROC_REF(stop_spawning))
+	AddElement(/datum/element/connect_vlevel, parent, connections)
 
 	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING), PROC_REF(stop_spawning))
 	RegisterSignal(parent, list(COMSIG_SPAWNER_TOGGLE_SPAWNING), PROC_REF(toggle_spawning))
-	RegisterSignal(parent, COMSIG_ATOM_VIRTUAL_Z_CHANGE, PROC_REF(virtual_z_changed))
 	START_PROCESSING(SSprocessing, src)
 
 /datum/component/spawner/process()
-	if(vlevel.clearing)
-		STOP_PROCESSING(SSprocessing, src)
-		return
-
 	try_spawn_mob()
 
 /datum/component/spawner/proc/stop_spawning(force)
@@ -67,19 +61,6 @@
 		if(L.nest == src)
 			L.nest = null
 	spawned_mobs = null
-
-//Different from stop_spawning() as it doesn't untether all mobs from it and is meant for temporarily stopping spawning
-/datum/component/spawner/proc/toggle_spawning(datum/source, currently_spawning)
-	SIGNAL_HANDLER
-
-	if(currently_spawning)
-		STOP_PROCESSING(SSprocessing, src)
-		deltimer(current_timerid) //Otherwise if spawning is paused while the wave timer is loose it'll just unpause on its own
-		COOLDOWN_RESET(src, wave_timer)
-		return FALSE
-	else
-		START_PROCESSING(SSprocessing, src)
-		return TRUE
 
 /datum/component/spawner/proc/try_spawn_mob()
 	var/atom/P = parent
@@ -118,6 +99,3 @@
 		P.visible_message("<span class='danger'>[L] [pick(spawn_text)] [P].</span>")
 		if(length(spawn_sound))
 			playsound(P, pick(spawn_sound), 50, TRUE)
-
-/datum/component/spawner/proc/virtual_z_changed(new_virtual_z, old_virtual_z)
-	vlevel = SSmapping.virtual_z_translation["[new_virtual_z]"]
