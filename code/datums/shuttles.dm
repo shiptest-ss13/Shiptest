@@ -413,3 +413,8 @@
 	file_name = "frontiersmen_brawler"
 	name = "Brawler-class Dropship"
 	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/galley
+	file_name = "ramzi_galley"
+	name = "Galley-class Dropship"
+	prefix = "SV"

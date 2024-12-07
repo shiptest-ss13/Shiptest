@@ -1,0 +1,430 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/storage)
+"c" = (
+/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/firedoor,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "minimalta_bridgedoor";
+	name = "Safety Shutter"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"d" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/pod/light,
+/area/ship/storage)
+"e" = (
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"f" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/pod,
+/area/ship/storage)
+"g" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1;
+	name = "tactical chair"
+	},
+/obj/structure/railing{
+	dir = 8;
+	layer = 4.1
+	},
+/obj/machinery/light/dim/directional/south,
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"h" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/pod/dark,
+/area/ship/storage)
+"k" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/storage)
+"n" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals7{
+	dir = 9
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 21;
+	pixel_y = -8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"q" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"s" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/corner,
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/obj/machinery/holopad,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"v" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/pod/dark,
+/area/ship/storage)
+"w" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 8;
+	id = "cargopirate_sub";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cargopirate_sub_hatch";
+	name = "Blast Shutters"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/storage)
+"x" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"y" = (
+/turf/template_noop,
+/area/template_noop)
+"z" = (
+/obj/machinery/computer/mech_bay_power_console{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/storage)
+"A" = (
+/obj/structure/window/reinforced/survival_pod/spawner/west,
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"B" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"E" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 8;
+	layer = 4.1
+	},
+/obj/machinery/button/door{
+	id = "minimalta_bridgedoor";
+	name = "Bridge Shutter";
+	pixel_y = 22;
+	pixel_x = 10
+	},
+/obj/item/radio/intercom/wideband/directional/north{
+	pixel_x = -5;
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"F" = (
+/obj/machinery/mech_bay_recharge_port,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/storage)
+"H" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/pod,
+/area/ship/storage)
+"I" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/floor/pod/dark,
+/area/ship/storage)
+"J" = (
+/obj/structure/window/reinforced/survival_pod/spawner/west,
+/obj/structure/extinguisher_cabinet/directional/south,
+/obj/structure/crate_shelf,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"L" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"N" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor/shutters{
+	id = "cargopirate_sub_hatch";
+	name = "Blast Shutters"
+	},
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/storage)
+"O" = (
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/pod/dark,
+/area/ship/storage)
+"Q" = (
+/obj/machinery/door/window/survival_pod{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
+/area/ship/storage)
+"S" = (
+/obj/machinery/button/door{
+	id = "cargopirate_sub_hatch";
+	name = "Pod Door Control";
+	pixel_y = 22
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "cargopirate_sub";
+	pixel_x = 8;
+	pixel_y = 21
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/pod/light,
+/area/ship/storage)
+"T" = (
+/obj/effect/turf_decal/industrial/warning/corner,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/pod,
+/area/ship/storage)
+"U" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 4;
+	id = "cargopirate_sub";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cargopirate_sub_hatch";
+	name = "Blast Shutters"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/storage)
+"V" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"W" = (
+/obj/effect/turf_decal/techfloor/corner,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals3{
+	dir = 10
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
+"X" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/dim/directional/south,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/storage)
+"Z" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/airalarm/directional/south,
+/obj/structure/crate_shelf,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+
+(1,1,1) = {"
+y
+V
+a
+V
+y
+"}
+(2,1,1) = {"
+a
+e
+T
+B
+a
+"}
+(3,1,1) = {"
+a
+S
+h
+X
+a
+"}
+(4,1,1) = {"
+U
+H
+d
+F
+a
+"}
+(5,1,1) = {"
+N
+O
+f
+W
+a
+"}
+(6,1,1) = {"
+w
+I
+v
+z
+a
+"}
+(7,1,1) = {"
+a
+A
+Q
+J
+a
+"}
+(8,1,1) = {"
+c
+x
+s
+Z
+a
+"}
+(9,1,1) = {"
+a
+E
+L
+g
+a
+"}
+(10,1,1) = {"
+k
+q
+L
+n
+a
+"}
+(11,1,1) = {"
+k
+k
+k
+a
+a
+"}
