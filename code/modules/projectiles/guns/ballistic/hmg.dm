@@ -65,6 +65,22 @@
 	else
 		retract_bipod(user=user)
 
+/obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/total_recoil = recoil_bonus
+
+	if(bipod_deployed)
+		total_recoil += deploy_recoil_bonus
+
+	return ..(user, total_recoil)
+
+/obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
+	var/total_spread = bonus_spread
+
+	if(bipod_deployed)
+		total_spread += deploy_spread_bonus
+
+	return ..(user, total_spread)
+
 /obj/item/gun/ballistic/automatic/hmg/proc/deploy_bipod(mob/user)
 	//we check if we can actually deploy the thing
 	var/can_deploy = TRUE

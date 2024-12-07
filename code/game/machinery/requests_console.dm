@@ -302,7 +302,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 
 	if(href_list["send"] && message && to_department && priority)
 
-		var/radio_freq = FREQ_COMMAND
+		var/radio_freq = FREQ_EMERGENCY
 
 		var/datum/signal/subspace/messaging/rc/signal = new(src, list(
 			"sender" = department,
