@@ -32,8 +32,8 @@
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	kepori_override_icon = 'icons/mob/clothing/back/backpacks_kepori.dmi'
 
-	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
-	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
 	equip_delay_self = EQUIP_DELAY_BACK
 	equip_delay_other = EQUIP_DELAY_BACK * 1.5
 	strip_delay = EQUIP_DELAY_BACK * 1.5
@@ -187,6 +187,12 @@
 	item_state = "satchel-norm"
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
+
+	equipping_sound = null
+	unequipping_sound = null
+	equip_delay_self = null
+	equip_delay_other = EQUIP_DELAY_BACK
+	strip_delay = EQUIP_DELAY_BACK
 
 /obj/item/storage/backpack/satchel/ComponentInitialize()
 	. = ..()
