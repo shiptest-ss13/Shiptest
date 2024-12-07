@@ -234,7 +234,7 @@
 	icon_state = "hardsuit0-clip_spotter"
 	hardsuit_type = "clip_spotter"
 
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
 	resistance_flags = null
 
 	supports_variations = SNOUTED_VARIATION

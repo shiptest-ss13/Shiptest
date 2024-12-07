@@ -574,7 +574,7 @@
 	hardsuit_type = "rd"
 	resistance_flags = ACID_PROOF | FIRE_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80)
+	armor = list("melee" = 30, "bullet" = 45, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80)
 	var/explosion_detection_dist = 21
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SCAN_REAGENTS | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //WS Port - Cit Internals
 	actions_types = list(/datum/action/item_action/toggle_helmet_light, /datum/action/item_action/toggle_research_scanner)
@@ -628,7 +628,7 @@
 	icon_state = "hardsuit0-sec"
 	item_state = "sec_helm"
 	hardsuit_type = "sec"
-	armor = list("melee" = 35, "bullet" = 20, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 
 /obj/item/clothing/suit/space/hardsuit/security
@@ -636,7 +636,7 @@
 	name = "security hardsuit"
 	desc = "A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	item_state = "sec_hardsuit"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
 	slowdown = 0.5
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
@@ -651,7 +651,7 @@
 	desc = "A special bulky helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
 	icon_state = "hardsuit0-hos"
 	hardsuit_type = "hos"
-	armor = list("melee" = 45, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
 
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
@@ -1046,7 +1046,7 @@
 	item_state = "space-independent-eng"
 	desc = "A civilian space suit designed for construction and salvage in hazardous, low-pressure environments. Has shielding against radiation and heat and abundant storage.<br>Though they lack the physical protection of more expensive hardsuits, this type of suit is extremely common wherever construction and salvage work must be done in open space."
 	siemens_coefficient = 0
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 20, "bomb" = 0, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 	resistance_flags = FIRE_PROOF
 
@@ -1156,7 +1156,7 @@
 	icon_state = "hardsuit0-inteq"
 	item_state = "hardsuit-inteq"
 	hardsuit_type = "inteq"
-	armor = list("melee" = 35, "bullet" = 25, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /obj/item/clothing/suit/space/hardsuit/security/independent/inteq //this one too. you know you can just redeclare variables and have shorter paths right? Fucking hardsuit/security/indepentent/inteq how about just /hardsuit/inteq did you ever think about that huh???
 	name = "inteq hardsuit"
