@@ -214,7 +214,6 @@
 		exposed = !exposed
 	return TRUE
 
-
 /obj/item/reagent_containers/food/snacks/urinalcake
 	name = "urinal cake"
 	desc = "The noble urinal cake, protecting the people's pipes from the people's pee. Edibility is suggested to be low."
