@@ -732,7 +732,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/table/greyscale,
 /obj/item/paper_bin,
 /obj/item/flashlight/lamp{
 	pixel_x = -7;
@@ -771,6 +770,7 @@
 	pixel_x = -9;
 	pixel_y = -3
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "os" = (
@@ -1776,7 +1776,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "JK" = (
-/obj/structure/table/greyscale,
 /obj/item/flashlight/lamp/green{
 	pixel_y = 3;
 	pixel_x = -7
@@ -1793,6 +1792,7 @@
 	pixel_x = 9;
 	pixel_y = 4
 	},
+/obj/structure/table,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "JW" = (
@@ -2143,8 +2143,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/structure/table/greyscale,
 /obj/machinery/fax/syndicate,
+/obj/structure/table,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "OQ" = (
