@@ -115,6 +115,7 @@
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(preattack_intercept))
 	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(attack_self))
 	RegisterSignal(parent, COMSIG_ITEM_PICKUP, PROC_REF(signal_on_pickup))
+	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(signal_on_equip))
 
 	RegisterSignal(parent, COMSIG_MOVABLE_POST_THROW, PROC_REF(close_all))
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
@@ -786,6 +787,12 @@
 	update_actions()
 	for(var/mob/M in can_see_contents() - user)
 		close(M)
+
+/datum/component/storage/proc/signal_on_equip(datum/source, mob/user)
+	SIGNAL_HANDLER
+
+	if(!worn_access)
+		close(user)
 
 /datum/component/storage/proc/signal_take_obj(datum/source, atom/movable/AM, new_loc, force = FALSE)
 	SIGNAL_HANDLER
