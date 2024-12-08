@@ -81,6 +81,7 @@
 		send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 		button_icon_state = "mech_cycle_equip_on"
 		UpdateButtonIcon()
+		chassis.autofire_check()
 		return
 	var/number = 0
 	for(var/A in available_equipment)
@@ -95,6 +96,7 @@
 				chassis.occupant_message("<span class='notice'>You switch to [chassis.selected].</span>")
 				button_icon_state = "mech_cycle_equip_on"
 			send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
+			chassis.autofire_check()
 			UpdateButtonIcon()
 			return
 
