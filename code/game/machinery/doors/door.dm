@@ -25,7 +25,10 @@
 	var/operating = FALSE
 	var/glass = FALSE
 	var/welded = FALSE
-	var/normalspeed = 1
+	///does this airlock close quickly
+	var/fast_close = 0
+	///how long this door takes to close, if it is autoclosing
+	var/close_speed = 6 SECONDS
 	var/heat_proof = FALSE // For rglass-windowed airlocks and firedoors
 	var/emergency = FALSE // Emergency access override
 	var/sub_door = FALSE // true if it's meant to go under another door.
@@ -353,7 +356,7 @@
 		for(var/atom/movable/M in get_turf(src))
 			if(M.density && M != src) //something is blocking the door
 				if(autoclose)
-					autoclose_in(60)
+					autoclose_in(fast_close ? close_speed/10 : close_speed)
 				return
 
 	operating = TRUE
