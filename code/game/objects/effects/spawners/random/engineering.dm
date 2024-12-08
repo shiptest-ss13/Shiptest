@@ -33,7 +33,7 @@
 /obj/effect/spawner/random/engineering/tool/adv
 	loot = list(
 			/obj/item/screwdriver/power = 1,
-			/obj/item/weldingtool/experimental = 1,
+			/obj/item/weldingtool/electric = 1,
 			/obj/item/crowbar/power = 1,
 		)
 

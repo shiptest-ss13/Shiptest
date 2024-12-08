@@ -13,6 +13,8 @@
 	circuit = /obj/item/circuitboard/computer/cargo
 	light_color = COLOR_BRIGHT_ORANGE
 
+	/// The ship we reside on for ease of access
+	var/datum/overmap/ship/controlled/current_ship
 	var/contraband = FALSE
 	var/self_paid = FALSE
 	var/safety_warning = "For safety reasons, the automated supply shuttle \
@@ -47,7 +49,6 @@
 		obj_flags |= EMAGGED
 	else
 		obj_flags &= ~EMAGGED
-	generate_pack_data()
 
 /obj/machinery/computer/cargo/Destroy()
 	if(beacon)
@@ -77,6 +78,9 @@
 	board.obj_flags |= EMAGGED
 	update_static_data(user)
 
+/obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	current_ship = port.current_ship
+
 /obj/machinery/computer/cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -85,21 +89,23 @@
 		if(!charge_account)
 			reconnect()
 
+/obj/machinery/computer/cargo/ui_static_data(mob/user)
+	. = ..()
+	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
+	if(outpost_docked)
+		generate_pack_data()
+	else
+		supply_pack_data = list()
+
 /obj/machinery/computer/cargo/ui_data(mob/user)
 	var/canBeacon = beacon && (isturf(beacon.loc) || ismob(beacon.loc))//is the beacon in a valid location?
 	var/list/data = list()
 
-	// not a big fan of get_containing_shuttle
-	var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
-	var/datum/overmap/ship/controlled/ship
-	var/outpost_docked = FALSE
-	if(D)
-		ship = D.current_ship
-		outpost_docked = istype(ship.docked_to, /datum/overmap/outpost)
+	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
 
-	data["onShip"] = !isnull(ship)
-	data["numMissions"] = ship ? LAZYLEN(ship.missions) : 0
-	data["maxMissions"] = ship ? ship.max_missions : 0
+	data["onShip"] = !isnull(current_ship)
+	data["numMissions"] = current_ship ? LAZYLEN(current_ship.missions) : 0
+	data["maxMissions"] = current_ship ? current_ship.max_missions : 0
 	data["outpostDocked"] = outpost_docked
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
@@ -120,9 +126,7 @@
 	else if (use_beacon && !canBeacon)
 		message = "BEACON ERROR: MUST BE EXPOSED"//beacon's loc/user's loc must be a turf
 	data["message"] = message
-	if(!supply_pack_data)
-		generate_pack_data()
-		stack_trace("You didn't give the cargo tech good advice, and he ripped the manifest. As a result, there was no pack data for [src]")
+
 	data["supplies"] = supply_pack_data
 	if (cooldown > 0)//cooldown used for printing beacons
 		cooldown--
@@ -130,35 +134,14 @@
 	data["shipMissions"] = list()
 	data["outpostMissions"] = list()
 
-	if(ship)
-		for(var/datum/mission/M as anything in ship.missions)
+	if(current_ship)
+		for(var/datum/mission/M as anything in current_ship.missions)
 			data["shipMissions"] += list(M.get_tgui_info())
 		if(outpost_docked)
-			var/datum/overmap/outpost/out = ship.docked_to
+			var/datum/overmap/outpost/out = current_ship.docked_to
 			for(var/datum/mission/M as anything in out.missions)
 				data["outpostMissions"] += list(M.get_tgui_info())
 
-	return data
-
-/obj/machinery/computer/cargo/ui_static_data(mob/user)
-	var/list/data = list()
-	data["supplies"] = list()
-	for(var/pack in SSshuttle.supply_packs)
-		var/datum/supply_pack/P = SSshuttle.supply_packs[pack]
-		if(!data["supplies"][P.group])
-			data["supplies"][P.group] = list(
-				"name" = P.group,
-				"packs" = list()
-			)
-		if(P.hidden && !(obj_flags & EMAGGED))
-			continue
-		data["supplies"][P.group]["packs"] += list(list(
-			"name" = P.name,
-			"cost" = P.cost,
-			"id" = pack,
-			"desc" = P.desc || P.name, // If there is a description, use it. Otherwise use the pack's name.
-			"small_item" = P.small_item,
-		))
 	return data
 
 /obj/machinery/computer/cargo/ui_act(action, params, datum/tgui/ui)
@@ -196,49 +179,49 @@
 				printed_beacons++//printed_beacons starts at 0, so the first one out will be called beacon # 1
 				beacon.name = "Supply Pod Beacon #[printed_beacons]"
 		if("add")
-			var/area/ship/current_area = get_area(src)
-			var/datum/supply_pack/pack = SSshuttle.supply_packs[text2path(params["id"])]
-			if( \
-				!pack || !charge_account?.has_money(pack.cost) || !istype(current_area) || \
-				!istype(current_area.mobile_port.current_ship.docked_to, /datum/overmap/outpost) \
-			)
-				return
+			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
+			if(istype(current_ship.docked_to))
+				var/datum/supply_pack/current_pack = locate(params["ref"]) in current_outpost.supply_packs
+				var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
+				var/total_cost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : current_pack.cost
+				if(!current_pack || !charge_account?.has_money(total_cost))
+					return
 
-			var/turf/landing_turf
-			if(!isnull(beacon) && use_beacon) // prioritize beacons over landing in cargobay
-				landing_turf = get_turf(beacon)
-				beacon.update_status(SP_LAUNCH)
-			else if(!use_beacon)// find a suitable supplypod landing zone in cargobay
-				var/list/empty_turfs = list()
-				if(!landingzone)
-					reconnect()
+				var/turf/landing_turf
+				if(!isnull(beacon) && use_beacon) // prioritize beacons over landing in cargobay
+					landing_turf = get_turf(beacon)
+					beacon.update_status(SP_LAUNCH)
+				else if(!use_beacon)// find a suitable supplypod landing zone in cargobay
+					var/list/empty_turfs = list()
 					if(!landingzone)
-						WARNING("[src] couldnt find a Ship/Cargo (aka cargobay) area on a ship, and as such it has set the supplypod landingzone to the area it resides in.")
-						landingzone = get_area(src)
-				for(var/turf/open/floor/T in landingzone.contents)//uses default landing zone
-					if(T.is_blocked_turf())
-						continue
-					empty_turfs += T
-					CHECK_TICK
-				landing_turf = pick(empty_turfs)
+						reconnect()
+						if(!landingzone)
+							WARNING("[src] couldnt find a Ship/Cargo (aka cargobay) area on a ship, and as such it has set the supplypod landingzone to the area it resides in.")
+							landingzone = get_area(src)
+					for(var/turf/open/floor/T in landingzone.contents)//uses default landing zone
+						if(T.is_blocked_turf())
+							continue
+						empty_turfs += T
+						CHECK_TICK
+					landing_turf = pick(empty_turfs)
 
-			// note that, because of CHECK_TICK above, we aren't sure if we can
-			// afford the pack, even though we checked earlier. luckily adjust_money
-			// returns false if the account can't afford the price
-			if(landing_turf && charge_account.adjust_money(-pack.cost, CREDIT_LOG_CARGO))
-				var/name = "*None Provided*"
-				var/rank = "*None Provided*"
-				if(ishuman(usr))
-					var/mob/living/carbon/human/H = usr
-					name = H.get_authentification_name()
-					rank = H.get_assignment(hand_first = TRUE)
-				else if(issilicon(usr))
-					name = usr.real_name
-					rank = "Silicon"
-				var/datum/supply_order/SO = new(pack, name, rank, usr.ckey, "")
-				new /obj/effect/pod_landingzone(landing_turf, podType, SO)
-				update_appearance() // ??????????????????
-				return TRUE
+				// note that, because of CHECK_TICK above, we aren't sure if we can
+				// afford the pack, even though we checked earlier. luckily adjust_money
+				// returns false if the account can't afford the price
+				if(landing_turf && charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
+					var/name = "*None Provided*"
+					var/rank = "*None Provided*"
+					if(ishuman(usr))
+						var/mob/living/carbon/human/H = usr
+						name = H.get_authentification_name()
+						rank = H.get_assignment(hand_first = TRUE)
+					else if(issilicon(usr))
+						name = usr.real_name
+						rank = "Silicon"
+					var/datum/supply_order/SO = new(current_pack, name, rank, usr.ckey, "", ordering_outpost = current_ship.docked_to)
+					new /obj/effect/pod_landingzone(landing_turf, podType, SO)
+					update_appearance() // ??????????????????
+					return TRUE
 
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
@@ -292,20 +275,35 @@
 
 /obj/machinery/computer/cargo/proc/generate_pack_data()
 	supply_pack_data = list()
-	for(var/pack in SSshuttle.supply_packs)
-		var/datum/supply_pack/P = SSshuttle.supply_packs[pack]
-		if(!supply_pack_data[P.group])
-			supply_pack_data[P.group] = list(
-				"name" = P.group,
+
+	if(!current_ship.docked_to)
+		return supply_pack_data
+
+	var/datum/overmap/outpost/outpost_docked = current_ship.docked_to
+
+	if(!istype(outpost_docked))
+		return supply_pack_data
+
+	for(var/datum/supply_pack/current_pack as anything in outpost_docked.supply_packs)
+		if(!supply_pack_data[current_pack.group])
+			supply_pack_data[current_pack.group] = list(
+				"name" = current_pack.group,
 				"packs" = list()
 			)
-		if((P.hidden))
+		if((current_pack.hidden))
 			continue
-		supply_pack_data[P.group]["packs"] += list(list(
-			"name" = P.name,
-			"cost" = P.cost,
-			"id" = pack,
-			"desc" = P.desc || P.name // If there is a description, use it. Otherwise use the pack's name.
+		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
+		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
+		if(current_pack.faction_locked && !same_faction)
+			continue
+		supply_pack_data[current_pack.group]["packs"] += list(list(
+			"name" = current_pack.name,
+			"cost" = current_pack.cost,
+			"discountedcost" = discountedcost ? discountedcost : null,
+			"discountpercent" = current_pack.faction_discount,
+			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
+			"ref" = REF(current_pack),
+			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : "") // If there is a description, use it. Otherwise use the pack's name.
 		))
 
 /obj/machinery/computer/cargo/retro

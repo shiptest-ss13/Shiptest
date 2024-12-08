@@ -70,6 +70,7 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 /turf/open/water/jungle/Initialize(mapload)
 	. = ..()
