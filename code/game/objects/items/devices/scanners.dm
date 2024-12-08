@@ -221,7 +221,7 @@ GENE SCANNER
 	// Body part damage report
 	if(iscarbon(M) && mode == SCANNER_VERBOSE)
 		var/mob/living/carbon/C = M
-		var/list/damaged = C.get_damaged_bodyparts(1,1)
+		var/list/damaged = C.get_damaged_bodyparts(1,1,ignore_integrity=TRUE)
 		if(length(damaged)>0 || oxy_loss>0 || tox_loss>0 || fire_loss>0)
 			var/dmgreport = "<span class='info ml-1'>General status:</span>\
 							<table class='ml-2'><tr><font face='Verdana'>\
