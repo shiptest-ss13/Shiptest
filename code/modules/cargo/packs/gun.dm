@@ -35,6 +35,7 @@
 	cost = 750
 	contains = list(/obj/item/storage/guncase/pistol/commander)
 	faction = /datum/faction/nt
+	faction_discount = 20
 
 /datum/supply_pack/gun/ringneck
 	name = "Ringneck Pistol Crate"
@@ -463,6 +464,7 @@
 	contains = list(/obj/item/storage/guncase/winchester)
 	crate_name = "rifle crate"
 	faction = /datum/faction/srm
+	faction_discount = 20
 
 /datum/supply_pack/gun/absolution
 	name = "Absolution Lever Action Rifle Crate"
