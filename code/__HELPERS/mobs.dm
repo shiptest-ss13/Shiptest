@@ -307,6 +307,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	if(!user.Process_Spacemove(0) && user.inertia_dir)
 		drifting = TRUE
 
+	var/holding = user.get_active_held_item()
 	var/whichhand = user.active_hand_index
 
 	delay *= user.do_after_coefficent()
@@ -337,7 +338,8 @@ GLOBAL_LIST_EMPTY(species_list)
 		// Check flags
 		if(QDELETED(user) \
 			|| (!(timed_action_flags & IGNORE_USER_LOC_CHANGE) && !drifting && user.loc != user_loc) \
-			|| (!(timed_action_flags & IGNORE_HELD_ITEM) && user.active_hand_index != whichhand) \
+			|| (!(timed_action_flags & IGNORE_HAND_CHANGE) && user.active_hand_index != whichhand) \
+			|| (!(timed_action_flags & IGNORE_HELD_ITEM) && user.get_active_held_item() != holding) \
 			|| (!(timed_action_flags & IGNORE_INCAPACITATED) && HAS_TRAIT(user, TRAIT_INCAPACITATED)) \
 			|| (extra_checks && !extra_checks.Invoke()))
 			. = FALSE
