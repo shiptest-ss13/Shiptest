@@ -111,7 +111,7 @@
 	if(isliving(A))
 		check_heat(A)
 
-	if(iscarbon(A)) //WS edit - moth dust from hugging
+	if(iscarbon(A))
 		var/mob/living/carbon/C = A
 		C.mothdust -= 10;
 
@@ -132,15 +132,18 @@
 /obj/machinery/shower/proc/check_heat(mob/living/L)
 	var/mob/living/carbon/C = L
 
-	if(current_temperature == SHOWER_FREEZING)
-		if(iscarbon(L))
-			C.adjust_bodytemperature(-5, 280)
-		to_chat(L, "<span class='warning'>[src] is freezing!</span>")
-	else if(current_temperature == SHOWER_BOILING)
-		if(iscarbon(L))
-			C.adjust_bodytemperature(5, 0, 350)
-		L.adjustFireLoss(5)
-		to_chat(L, "<span class='danger'>[src] is searing!</span>")
+	switch(current_temperature)
+		if(SHOWER_FREEZING)
+			if(iscarbon(L))
+				C.adjust_bodytemperature(-2)
+			to_chat(L, "<span class='warning'>[src] is cold!</span>")
+		if(SHOWER_BOILING)
+			if(iscarbon(L))
+				C.adjust_bodytemperature(2, 0, 350)
+			to_chat(L, "<span class='danger'>[src] is hot!</span>")
+		if(SHOWER_NORMAL)
+			if(iscarbon(L))
+				C.adjust_bodytemperature(1, HUMAN_BODYTEMP_NORMAL)
 
 
 /obj/effect/mist
