@@ -389,9 +389,10 @@
 	if(invisible_man)
 		. += "...?"
 	else
-		var/flavor = print_flavor_text()
-		if(flavor)
-			. += flavor
+		var/text_to_add = flavor_text
+		if(length(text_to_add) > MAX_SHORTFLAVOR_LEN)
+			text_to_add = "[copytext(text_to_add, 1, MAX_SHORTFLAVOR_LEN)]... <a href=\"byond://?src=[text_ref(src)];flavor_more=1\">More...</a>"
+		. += span_notice(text_to_add)
 	. += "*---------*</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
