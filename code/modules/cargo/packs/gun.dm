@@ -361,11 +361,11 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/wt550
-	name = "WT-550 Auto Rifle Crate"
+	name = "WT-550 PDW Crate"
 	desc = "Contains a high-powered, automatic personal defense weapon chambered in 4.6x30mm."
-	cost = 4000
+	cost = 3000
 	contains = list(/obj/item/storage/guncase/wt550)
-	crate_name = "auto rifle crate"
+	crate_name = "PDW crate"
 	faction_discount = 10
 	faction = /datum/faction/nt
 
