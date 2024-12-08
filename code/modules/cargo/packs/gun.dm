@@ -35,6 +35,7 @@
 	cost = 750
 	contains = list(/obj/item/storage/guncase/pistol/commander)
 	faction = /datum/faction/nt
+	faction_discount = 20
 
 /datum/supply_pack/gun/ringneck
 	name = "Ringneck Pistol Crate"
@@ -58,6 +59,15 @@
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/pistol/cm70)
 	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/commissioner
+	name = "Commissioner Pistol Crate"
+	desc = "Contains a modified Commander pistol, adjusted to fit the IRMG's standards and painted in the brown and gold of all IRMG firearms."
+	cost = 750
+	contains = list(/obj/item/storage/guncase/commissioner)
+	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -351,11 +361,11 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/wt550
-	name = "WT-550 Auto Rifle Crate"
+	name = "WT-550 PDW Crate"
 	desc = "Contains a high-powered, automatic personal defense weapon chambered in 4.6x30mm."
-	cost = 4000
+	cost = 3000
 	contains = list(/obj/item/storage/guncase/wt550)
-	crate_name = "auto rifle crate"
+	crate_name = "PDW crate"
 	faction_discount = 10
 	faction = /datum/faction/nt
 
@@ -454,6 +464,7 @@
 	contains = list(/obj/item/storage/guncase/winchester)
 	crate_name = "rifle crate"
 	faction = /datum/faction/srm
+	faction_discount = 20
 
 /datum/supply_pack/gun/absolution
 	name = "Absolution Lever Action Rifle Crate"
