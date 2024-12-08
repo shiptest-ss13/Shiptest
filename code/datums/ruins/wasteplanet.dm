@@ -4,13 +4,6 @@
 	prefix = "_maps/RandomRuins/WasteRuins/"
 	ruin_type = RUINTYPE_WASTE
 
-/datum/map_template/ruin/wasteplanet/weaponstest
-	name = "Weapons testing facility"
-	id = "guntested"
-	description = "A abandoned Nanotrasen weapons facility, presumably the place where the X-01 was manufactured."
-	suffix = "wasteplanet_lab.dmm"
-	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE)
-
 /datum/map_template/ruin/wasteplanet/pandora
 	id = "pandora_arena"
 	suffix = "wasteplanet_pandora.dmm"
