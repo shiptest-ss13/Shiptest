@@ -13,6 +13,7 @@
 	throw_speed = 3
 	throw_range = 7
 	var/empty = FALSE
+	var/max_items = 10
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/case/ComponentInitialize()
@@ -30,7 +31,8 @@
 /obj/item/storage/case/surgery/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_w_class = INFINITY //workaround for the differently sized items, case is still limited to 7 items max and to the list.
+	STR.max_combined_w_class = INFINITY //part of the workaround, not setting a max combined weight defaults to some weird number.
 	STR.max_items = 7
 	STR.set_holdable(list(
 		/obj/item/healthanalyzer,
