@@ -78,6 +78,9 @@
 
 /obj/effect/spawner/random/waste/girder
 	loot = list(
+		/obj/structure/girder/wasteworld,
+		/obj/structure/girder/wasteworld,
+		/obj/structure/girder/wasteworld,
 		/obj/structure/girder,
 		/obj/structure/girder/displaced,
 		/obj/structure/girder/reinforced
