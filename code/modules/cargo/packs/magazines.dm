@@ -175,6 +175,7 @@
 	contains = list(/obj/item/ammo_box/magazine/m9mm_cm70)
 	cost = 750
 	faction = /datum/faction/clip
+	faction_discount = 20
 
 /datum/supply_pack/magazine/cm357_mag
 	name = "CM-357 Magazine Crate"
@@ -189,6 +190,7 @@
 	contains = list(/obj/item/ammo_box/magazine/cm5_9mm)
 	cost = 750
 	faction = /datum/faction/clip
+	faction_discount = 20
 
 /datum/supply_pack/magazine/cm82_mag
 	name = "CM-82 Magazine Crate"
@@ -249,6 +251,7 @@
 	contains = list(/obj/item/ammo_box/magazine/pistol556mm)
 	cost = 750
 	faction = /datum/faction/solgov
+	faction_discount = 20
 
 /datum/supply_pack/magazine/fms_mag
 	name = "Ferromagnetic Slug Magazine Crate"
@@ -256,6 +259,7 @@
 	contains = list(/obj/item/ammo_box/magazine/modelh)
 	cost = 750
 	faction = /datum/faction/solgov
+	faction_discount = 20
 
 /datum/supply_pack/magazine/gar_ammo
 	name = "GAR Ferromagnetic Lance Magazine Crate"
@@ -279,6 +283,7 @@
 	contains = list(/obj/item/ammo_box/magazine/smgm10mm)
 	cost = 750
 	faction = /datum/faction/inteq
+	faction_discount = 20
 
 /* Shotguns */
 
