@@ -91,12 +91,6 @@
 /area/ship/engineering)
 "aF" = (
 /obj/structure/rack,
-/obj/item/aiModule/core/full/corp{
-	pixel_y = -3
-	},
-/obj/item/aiModule/core/freeformcore{
-	pixel_y = 1
-	},
 /obj/item/aiModule/reset/purge{
 	pixel_y = 5
 	},
@@ -104,6 +98,7 @@
 	name = "AI Module Storage";
 	req_access_txt = "16"
 	},
+/obj/item/borg/upgrade/ai,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
 "aG" = (
@@ -2217,7 +2212,6 @@
 "BY" = (
 /obj/item/phone,
 /obj/structure/table,
-/obj/item/borg/upgrade/ai,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
 "Cg" = (
