@@ -241,7 +241,7 @@
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/ap)
 	faction = /datum/faction/nt
 
-/* Solgov */
+/* SolGov */
 
 /datum/supply_pack/magazine/mag_556mm
 	name = "5.56 Pistole C Magazine Crate"

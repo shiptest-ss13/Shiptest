@@ -29,25 +29,33 @@
 			"shortname" = escape_value(ship.short_name) || ship_name,
 			"description" = escape_value(ship.description),
 			"prefix" = escape_value(ship.prefix),
+			"faction" = escape_value(ship.faction.name),
+			"color" = escape_value(copytext_char(ship.faction.color, 2)), // The wiki doesn't want the leading #
 			"tags" = escape_value(ship.tags?.Join(", ")),
+			"startingFunds" = ship.starting_funds,
 			"limit" = ship.limit,
 			"crewCount" = count_crew(ship.job_slots),
 			"crew" = format_crew_list(ship.job_slots),
+			"officerCoeff" = ship.officer_time_coeff,
+			"spawnCoeff" = ship.spawn_time_coeff,
 			"enabled" = ship.enabled ? "Yes" : "No",
-			"size" = size
+			"size" = "[size] ([ship.width]x[ship.height])"
 		))
 
-		//Other fields: manufacturer, faction, color
+		//Other fields: manufacturer
 
 	return output
 
 /datum/autowiki/ship/proc/count_crew(list/crew)
 	var/output = 0
+	var/officers = 0
 
-	for(var/job in crew)
+	for(var/datum/job/job as anything in crew)
+		if(job.officer)
+			officers += crew[job]
 		output += crew[job]
 
-	return output
+	return "[crew] ([officers] officer[length(officers) != 1 ? "s" : ""])"
 
 /datum/autowiki/ship/proc/format_crew_list(list/crew)
 	var/output = ""

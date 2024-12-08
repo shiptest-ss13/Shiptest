@@ -81,7 +81,7 @@
 		if(NAMEOF(src, y))
 			return parent.overmap_move(parent.x, var_value)
 		if(NAMEOF(src, name))
-			parent.Rename(var_value)
+			parent.Rename(var_value, TRUE)
 			return TRUE
 	return ..()
 /**

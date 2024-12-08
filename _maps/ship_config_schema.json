@@ -1,5 +1,5 @@
 {
-	"$schema": "https://json-schema.org/draft-04/schema",
+	"$schema": "https://json-schema.org/draft-07/schema",
 	"title": "Ship Configuration Schema",
 	"description": "A ship configuration, used for defining new ship classes.",
 	"tags": "A list of tags, used for searching ships by quality.",
@@ -30,12 +30,14 @@
 		},
 		"faction": {
 			"title": "Ship Faction Datum",
-			"type": [ "null", "string" ],
-			"description": "Default faction datum"
+			"type": ["null", "string"],
+			"pattern": "^/datum/faction/(.*)$",
+			"default": "/datum/faction/independent",
+			"description": "The path of the ship's original faction datum. If null, the ship will be considered independent."
 		},
 		"prefix": {
 			"title": "Ship Default Prefix",
-			"type": [ "null", "string" ],
+			"type": ["null", "string"],
 			"description": "The prefix of the ship class, appended to randomly generated names when they're first purchased.",
 			"maxLength": 5
 		},
@@ -125,7 +127,7 @@
 		"roundstart": {
 			"title": "Random Roundstart Selection",
 			"type": "boolean",
-			"description": "Whether or not the ship has a chance to be randomly selected as the free roundstart ship.",
+			"description": "(DEPRECATED) Whether or not the ship has a chance to be randomly selected as the free roundstart ship.",
 			"default": false
 		},
 		"limit": {
@@ -136,7 +138,7 @@
 			"maximum": 100,
 			"default": 1
 		},
-		"starting_funds":{
+		"starting_funds": {
 			"title": "Ship Starting Funds",
 			"Type": "integer",
 			"description": "The amount of money a ship's bank account starts with",
