@@ -21,7 +21,7 @@
 	var/obj/item/gun/parent_gun = parent
 
 	src.slot_room = slot_room
-	src.valid_types = valid_types
+	src.valid_types = typecacheof(valid_types)
 	src.slot_offsets = slot_offsets
 
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(handle_attack))
@@ -29,8 +29,12 @@
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
 	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(handle_qdel))
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(handle_item_pre_attack))
+	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD, PROC_REF(handle_item_wield))
+	RegisterSignal(parent, COMSIG_TWOHANDED_UNWIELD, PROC_REF(handle_item_unwield))
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(handle_ctrl_shift_click))
+	RegisterSignal(parent, COMSIG_CLICK_CTRL, PROC_REF(handle_ctrl_click))
 	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(handle_alt_click))
+	RegisterSignal(parent, COMSIG_CLICK_UNIQUE_ACTION, PROC_REF(handle_unique_action))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
 
 	if(length(default_attachments))
@@ -82,6 +86,13 @@
 
 	INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
 
+/datum/component/attachment_holder/proc/handle_ctrl_click(obj/item/parent, mob/user)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_CTRL_CLICK, parent, user))
+			return TRUE
+
 /datum/component/attachment_holder/proc/do_attachment_radial(obj/item/parent, mob/user)
 	var/list/attachments_as_list = attachments_to_list(TRUE)
 	var/selection = show_radial_menu(user, parent, attachments_as_list)
@@ -114,7 +125,7 @@
 /datum/component/attachment_holder/proc/do_attach(obj/item/attachment, mob/user, bypass_checks)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)
-	if(!(attachment.type in valid_types))
+	if(!(is_type_in_typecache(attachment,valid_types)))
 		to_chat(user, span_notice("[attachment] is not a valid attachment for this [parent]!"))
 		return
 	if(!slot_room[slot])
@@ -185,4 +196,25 @@
 
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_PRE_ATTACK, parent, target_atom, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_item_wield(obj/item/parent, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_WIELD , parent, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_item_unwield(obj/item/parent, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNWIELD, parent, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_unique_action(obj/item/parent, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNIQUE_ACTION, parent, user, params))
 			return TRUE
