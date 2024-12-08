@@ -102,13 +102,14 @@
 	set name = "Open Interview"
 	set category = "Admin.Interview"
 	var/mob/dead/new_player/M = usr
-	if (M?.client?.interviewee)
-		var/datum/interview/I = GLOB.interviews.interview_for_client(M.client)
-		if (I) // we can be returned nothing if the user is on cooldown
-			I.ui_interact(M)
-		else
-			to_chat(usr, "<span class='adminsay'>You are on cooldown for interviews. Please" \
-				+ " wait at least 3 minutes before starting a new questionnaire.</span>", confidential = TRUE)
+	if (!M?.client?.interviewee)
+		return
+	var/datum/interview/I = GLOB.interviews.interview_for_client(M.client)
+	if (I) // we can be returned nothing if the user is on cooldown
+		I.ui_interact(M)
+	else
+		to_chat(usr, "<span class='adminsay'>You are on cooldown for interviews. Please" \
+			+ " wait at least 3 minutes before starting a new questionnaire.</span>", confidential = TRUE)
 
 /datum/interview/ui_interact(mob/user, datum/tgui/ui = null)
 	ui = SStgui.try_update_ui(user, src, ui)
