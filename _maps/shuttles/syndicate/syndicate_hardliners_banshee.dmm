@@ -525,6 +525,10 @@
 /area/ship/cargo)
 "lD" = (
 /obj/structure/table,
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis{
+	pixel_x = -8;
+	pixel_y = 9
+	},
 /obj/item/storage/toolbox/syndicate{
 	pixel_y = 8
 	},
@@ -535,10 +539,6 @@
 	},
 /obj/item/analyzer{
 	pixel_x = 8
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_cannabis{
-	pixel_x = -8;
-	pixel_y = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -1662,6 +1662,8 @@
 /obj/item/melee/axe/sledgehammer,
 /obj/item/melee/axe/sledgehammer,
 /obj/item/storage/firstaid/regular,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "HB" = (
@@ -1783,7 +1785,7 @@
 /area/ship/crew/canteen)
 "JK" = (
 /obj/item/flashlight/lamp/green{
-	pixel_y = 3;
+	pixel_y = 14;
 	pixel_x = -7
 	},
 /obj/machinery/button/door{
@@ -1799,6 +1801,9 @@
 	pixel_y = 4
 	},
 /obj/structure/table,
+/obj/item/toy/plush/rilena{
+	pixel_x = -3
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "JW" = (
@@ -2031,6 +2036,29 @@
 /obj/structure/closet/secure_closet/wall/directional/north,
 /obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/item/flashlight{
+	pixel_y = 2;
+	pixel_x = -12
+	},
+/obj/item/flashlight{
+	pixel_y = 2;
+	pixel_x = -8
+	},
+/obj/item/flashlight{
+	pixel_y = 2;
+	pixel_x = -4
+	},
+/obj/item/flashlight{
+	pixel_y = 2
+	},
+/obj/item/flashlight{
+	pixel_y = 2;
+	pixel_x = 4
+	},
+/obj/item/flashlight{
+	pixel_y = 2;
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/cryo)
 "Nn" = (
@@ -2078,6 +2106,10 @@
 	},
 /obj/item/storage/fancy/cigarettes/cigpack_syndicate{
 	pixel_y = 10
+	},
+/obj/item/toy/plush/mora{
+	pixel_y = 14;
+	pixel_x = 10
 	},
 /obj/item/storage/pill_bottle/dice{
 	pixel_x = 9;
@@ -2676,9 +2708,9 @@
 /area/ship/engineering)
 "Zr" = (
 /obj/machinery/door/airlock/grunge{
-	req_access_txt = "10";
 	dir = 4;
-	name = "Engine Bay"
+	name = "Engine Bay";
+	req_one_access = list(10,43)
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
