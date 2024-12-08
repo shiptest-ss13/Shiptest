@@ -12,6 +12,12 @@
 	obj_flags = IMMUTABLE_SLOW
 	visor_flags = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|ALLOWINTERNALS
 
+	equipping_sound = null
+	unequipping_sound = null
+	equip_delay_self = null
+	strip_delay = null
+	equip_self_flags = null
+
 /obj/item/clothing/suit/mod
 	name = "MOD chestplate"
 	desc = "A chestplate for a MODsuit."
@@ -26,6 +32,12 @@
 	cold_protection = CHEST|GROIN
 	obj_flags = IMMUTABLE_SLOW
 
+	equipping_sound = null
+	unequipping_sound = null
+	equip_delay_self = null
+	strip_delay = null
+	equip_self_flags = null
+
 /obj/item/clothing/gloves/mod
 	name = "MOD gauntlets"
 	desc = "A pair of gauntlets for a MODsuit."
@@ -38,6 +50,12 @@
 	heat_protection = HANDS|ARMS
 	cold_protection = HANDS|ARMS
 	obj_flags = IMMUTABLE_SLOW
+
+	equipping_sound = null
+	unequipping_sound = null
+	equip_delay_self = null
+	strip_delay = null
+	equip_self_flags = null
 
 /obj/item/clothing/shoes/mod
 	name = "MOD boots"
@@ -54,3 +72,9 @@
 	supports_variations = DIGITIGRADE_VARIATION
 	can_be_tied = FALSE
 	visor_flags_inv = HIDESHOES
+
+	equipping_sound = null
+	unequipping_sound = null
+	equip_delay_self = null
+	strip_delay = null
+	equip_self_flags = null

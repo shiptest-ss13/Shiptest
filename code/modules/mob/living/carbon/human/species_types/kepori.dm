@@ -145,7 +145,7 @@
 	//ya ain't got no biters to put it in sir
 	if(!H.get_bodypart(BODY_ZONE_HEAD))
 		return FALSE
-	return equip_delay_self_check(I, H, bypass_equip_delay_self)
+	return H.equip_delay_self_check(I, bypass_equip_delay_self)
 
 /datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
