@@ -70,7 +70,6 @@
 	poster_type = /obj/structure/sign/poster/contraband/gec
 	icon_state = "rolled_poster"
 
-
 // The poster sign/structure
 
 /obj/structure/sign/poster
