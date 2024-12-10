@@ -65,6 +65,12 @@
 	poster_type = /obj/structure/sign/poster/rilena/random
 	icon_state = "rolled_rilena"
 
+/obj/item/poster/gec
+	name = "GEC poster"
+	poster_type = /obj/structure/sign/poster/contraband/gec
+	icon_state = "rolled_poster"
+
+
 // The poster sign/structure
 
 /obj/structure/sign/poster

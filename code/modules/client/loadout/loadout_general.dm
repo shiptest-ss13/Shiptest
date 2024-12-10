@@ -91,6 +91,38 @@
 	display_name = "paper bin"
 	path = /obj/item/paper_bin
 
+/datum/gear/desklamp
+	display_name = "desk lamp"
+	path = /obj/item/flashlight/lamp
+
+/datum/gear/desklamp_green
+	display_name = "desk lamp, old"
+	path = /obj/item/flashlight/lamp/green
+
+/datum/gear/deskflag
+	display_name = "desk flag, white"
+	path = /obj/item/desk_flag
+
+/datum/gear/deskflag_gezena
+	display_name = "desk flag, gezena"
+	path = /obj/item/desk_flag/gezena
+
+/datum/gear/deskflag_solgov
+	display_name = "desk flag, solcon"
+	path = /obj/item/desk_flag/solgov
+
+/datum/gear/deskflag_NGR
+	display_name = "desk flag, new gorlex"
+	path = /obj/item/desk_flag/ngr
+
+/datum/gear/deskflag_SUNS
+	display_name = "desk flag, suns"
+	path = /obj/item/desk_flag/suns
+
+/datum/gear/deskflag_trans
+	display_name = "desk flag, trans"
+	path = /obj/item/desk_flag/trans
+
 /datum/gear/cane
 	display_name = "cane"
 	path = /obj/item/cane
@@ -128,6 +160,30 @@
 	display_name = "toy, rilena tali plushie"
 	path = /obj/item/toy/plush/tali
 
+/datum/gear/tali_figure
+	display_name = "toy, rilena tali action figure"
+	path = /obj/item/toy/figure/tali
+
+/datum/gear/xeno_figure
+	display_name = "toy, xenomorph action figure"
+	path = /obj/item/toy/toy_xeno
+
+/datum/gear/inteq_figure
+	display_name = "toy, inteq enforcer action figure"
+	path = /obj/item/toy/figure/inteq
+
+/datum/gear/nuke_figure
+	display_name = "toy, nuclear weapon action figure"
+	path = /obj/item/toy/nuke
+
+/datum/gear/griffin_figure
+	display_name = "toy, rilena tali action figure"
+	path = /obj/item/toy/talking/griffin
+
+/datum/gear/owl_figure
+	display_name = "toy, rilena tali action figure"
+	path = /obj/item/toy/talking/owl
+
 /datum/gear/amongus
 	display_name = "toy, suspicious pill plushie"
 	path = /obj/item/toy/plush/among
@@ -162,6 +218,26 @@
 	display_name = "poster, rilena"
 	path = /obj/item/poster/random_rilena
 	description = "A random poster of the RILENA series."
+
+/datum/gear/gec_poster
+	display_name = "poster, gec"
+	path = /obj/item/poster/gec
+	description = "A poster representing the Galactic Engineering Concordat union."
+
+/obj/item/poster/random_minutemen
+	display_name = "poster, clip"
+	path = /obj/item/poster/gec
+	description = "A random poster from the Confederated League of Independent Planets."
+
+/obj/item/poster/random_retro
+	display_name = "poster, retro"
+	path = /obj/item/poster/gec
+	description = "A random retro poster from the early days of NT."
+
+/obj/item/poster/random_solgov
+	display_name = "poster, solcon"
+	path = /obj/item/poster/gec
+	description = "A random poster from the Solar Confederation."
 
 /datum/gear/camera
 	display_name = "polaroid camera"

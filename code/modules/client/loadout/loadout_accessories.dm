@@ -24,6 +24,10 @@
 	display_name = "shemagh"
 	path = /obj/item/clothing/neck/shemagh
 
+/datum/gear/accessory/shemagh
+	display_name = "shemagh, new gorlex"
+	path = /obj/item/clothing/neck/shemagh/ngr
+
 //(The actually good scarves)
 
 /datum/gear/accessory/scarf/striped
@@ -40,6 +44,10 @@
 /datum/gear/accessory/scarf/striped/blue
 	display_name = "striped scarf, blue"
 	path = /obj/item/clothing/neck/stripedbluescarf
+
+/datum/gear/accessory/scarf/striped/solarian
+	display_name = "striped scarf, solarian"
+	path = /obj/item/clothing/neck/stripedsolgovscarf
 
 //Ties
 
@@ -135,7 +143,6 @@
 /datum/gear/accessory/stethoscope
 	display_name = "stethoscope"
 	path = /obj/item/clothing/neck/stethoscope
-	allowed_roles = list("Medical Doctor", "Chief Medical Officer")
 
 /datum/gear/accessory/headphones
 	display_name = "headphones"

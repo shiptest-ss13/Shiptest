@@ -9,17 +9,14 @@
 /datum/gear/hat/hhat_yellow
 	display_name = "hardhat, yellow"
 	path = /obj/item/clothing/head/hardhat
-	allowed_roles = list("Chief Engineer", "Engineer", "Atmospheric Technician")
 
 /datum/gear/hat/hhat_orange
 	display_name = "hardhat, orange"
 	path = /obj/item/clothing/head/hardhat/orange
-	allowed_roles = list("Chief Engineer", "Engineer", "Atmospheric Technician")
 
 /datum/gear/hat/hhat_blue
 	display_name = "hardhat, blue"
 	path = /obj/item/clothing/head/hardhat/dblue
-	allowed_roles = list("Chief Engineer", "Engineer", "Atmospheric Technician")
 
 //Berets, AKA how I lost my will to live again
 
@@ -76,7 +73,6 @@
 /datum/gear/hat/beret/engineering/hazard
 	display_name = "beret, hazard"
 	path = /obj/item/clothing/head/beret/eng/hazard
-	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
 
 //Soft caps
 
