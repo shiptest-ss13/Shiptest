@@ -7,7 +7,6 @@
 	crate_type = /obj/structure/closet/crate/secure/weapon
 	faction_discount = 10
 
-
 /datum/supply_pack/attachment/rail_light
 	name = "Tactical Rail Light Crate"
 	desc = "Contains a single rail light to be mounted on a firearm."
