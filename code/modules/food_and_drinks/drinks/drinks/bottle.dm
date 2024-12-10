@@ -532,7 +532,7 @@
 		cut_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
 		active = 0
 
-/ob/item/reagent_containers/food/drinks/molotov/full
+/obj/item/reagent_containers/food/drinks/molotov/full
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/pruno
