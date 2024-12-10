@@ -384,6 +384,14 @@
 
 	supports_variations = SNOUTED_VARIATION
 
+/obj/item/clothing/mask/balaclava/combat
+	name = "combat balaclava"
+	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot!"
+	icon_state = "combat_balaclava"
+	item_state = "combat_balaclava"
+	alternate_worn_layer = BODY_LAYER
+	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
+
 //gloves
 
 /obj/item/clothing/gloves/color/latex/nitrile/clip
@@ -456,7 +464,7 @@
 /obj/item/storage/belt/military/clip/engi/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
-	new /obj/item/weldingtool/experimental(src)
+	new /obj/item/weldingtool/electric(src)
 	new /obj/item/multitool(src)
 	new /obj/item/construction/rcd/combat(src)
 	new /obj/item/extinguisher/mini(src)

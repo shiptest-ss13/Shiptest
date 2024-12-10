@@ -66,9 +66,6 @@
 	///Boolean to limit the areas (subtypes included) that atoms in this area can smooth with. Used for shuttles.
 	var/area_limited_icon_smoothing = FALSE
 
-	///WS Addition - Color on minimaps, if it's null (which is default) it makes one at random.
-	var/minimap_color
-
 	var/list/power_usage
 
 	var/lighting_colour_tube = "#FFF6ED"
@@ -128,14 +125,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
  *  Adds the item to the GLOB.areas_by_type list based on area type
  */
 /area/New()
-	if(!minimap_color) // goes in New() because otherwise it doesn't fucking work
-		// generate one using the icon_state
-		if(icon_state && icon_state != "unknown")
-			var/icon/I = new(icon, icon_state, dir)
-			I.Scale(1,1)
-			minimap_color = I.GetPixel(1,1)
-		else // no icon state? use random.
-			minimap_color = rgb(rand(50,70),rand(50,70),rand(50,70))
 	// This interacts with the map loader, so it needs to be set immediately
 	// rather than waiting for atoms to initialize.
 	if (area_flags & UNIQUE_AREA)

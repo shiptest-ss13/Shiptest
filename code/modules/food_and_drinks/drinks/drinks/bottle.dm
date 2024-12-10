@@ -9,7 +9,7 @@
 	desc = "This blank bottle is unyieldingly anonymous, offering no clues to its contents."
 	icon_state = "glassbottle"
 	fill_icon_thresholds = list(0, 10, 20, 30, 40, 50, 60, 70, 80, 90)
-	custom_price = 65
+	custom_price = 15
 	amount_per_transfer_from_this = 10
 	volume = 100
 	force = 15 //Smashing bottles over someone's head hurts.
@@ -32,7 +32,7 @@
 	desc = "This blank bottle is unyieldingly anonymous, offering no clues to its contents."
 	icon_state = "glassbottlesmall"
 	volume = 50
-	custom_price = 55
+	custom_price = 1
 
 /obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
 	if(!target)
@@ -297,7 +297,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
 	name = "orange juice"
 	desc = "Sweet and tart orange juice. Usually found fortified to make it more nutritious. Full of vitamin C!"
-	custom_price = 100
+	custom_price = 10
 	icon_state = "orangejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -309,7 +309,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/lemonjuice
 	name = "lemon juice"
 	desc = "Lemonade for everyone!"
-	custom_price = 100
+	custom_price = 10
 	icon_state = "lemonjuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -321,7 +321,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/cream
 	name = "milk cream"
 	desc = "Cream made from milk. It's thicker than milk, which hopefully prevents any mixups."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "cream"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -333,7 +333,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/tomatojuice
 	name = "tomato juice"
 	desc = "Juice from tomatoes and salt. You'll often find some technicians soaking in this if they've been working with plasma."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "tomatojuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -345,7 +345,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/limejuice
 	name = "lime juice"
 	desc = "Lime juice. You might want to mix something with this instead of drinking it straight..."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "limejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -357,7 +357,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/pineapplejuice
 	name = "pineapple juice"
 	desc = "Tart, sweet juice from the tropical pineapple."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "pineapplejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -370,7 +370,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/menthol
 	name = "menthol"
 	desc = "Tastes naturally minty, and imparts a very mild numbing sensation."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "mentholbox"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -381,7 +381,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/grenadine
 	name = "Three-Star Grenadine"
 	desc = "A commonly seen bottle of grenadine - or sweet fruit syrup. It might even contain real cherries, as well as some blackcurrant for color."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "grenadine"
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/grenadine = 100)
@@ -391,7 +391,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/applejack
 	name = "Mars Lightning"
 	desc = "A strong brandy originating from apples, considered the older sibling to hard cider. Mars Lightning is often partnered with anti-gravity racing companies, leading to it often being served straight or for impromptu mixes."
-	custom_price = 100
+	custom_price = 15
 	icon_state = "applejack_bottle"
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/ethanol/applejack = 100)
@@ -400,7 +400,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/champagne
 	name = "Treu Champagne"
 	desc = "Finely sourced from entire canton planets dedicated to faithful reproduction of pre-Night Of Fire vineyards. Typically enjoyed for celebrations and the turn of new years."
-	custom_premium_price = 250
+	custom_premium_price = 25
 	icon_state = "champagne_bottle"
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/ethanol/champagne = 100)
@@ -414,7 +414,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/trappist
 	name = "Roumain Trapper's"
 	desc = "Traditionally (and heavily monitored for authenticity) made beer brewed on Illestren. Trapper's beer must be brewed by Saint Roumain Hunters or Shadows, made to fit the needs of their community first, and must never be made for profit... which makes it a common sight in the Frontier."
-	custom_premium_price = 170
+	custom_premium_price = 17
 	icon_state = "trappistbottle"
 	volume = 50
 	list_reagents = list(/datum/reagent/consumable/ethanol/trappist = 50)
@@ -606,8 +606,8 @@
 /obj/item/sandstar
 	name = "SandBlast Sarsaparilla star"
 	desc = "Legend says something amazing happens when you collect enough of these."
-	custom_price = 100
-	custom_premium_price = 110
+	custom_price = 10
+	custom_premium_price = 11
 	icon = 'icons/obj/items.dmi'
 	icon_state = "sandstar"
 	w_class = WEIGHT_CLASS_TINY

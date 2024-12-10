@@ -32,6 +32,26 @@
 	stock_max = 3
 	availability_prob = 50
 
+/datum/blackmarket_item/weapon/fireaxe
+	name = "Fire Axe"
+	desc = "An incredibly sharp axe of reputable make, used by various engineers to settle arguments while hammered. Sold to us by a very friendly man in a suit."
+	item = /obj/item/melee/axe/fire
+
+	price_min = 1200
+	price_max = 2300
+	stock_max = 3
+	availability_prob = 40
+
+/datum/blackmarket_item/weapon/sledgehammer
+	name = "Breaching Sledgehammer"
+	desc = "A Clique outfit had to ditch a lot of equipment to evade a Gezenan assault. This little piece breaks legs and walls like no other. You want in?"
+	item = /obj/item/melee/axe/sledgehammer
+
+	price_min = 2000
+	price_max = 3000
+	stock_max = 3
+	availability_prob = 30
+
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
 	desc = "Need a bit more... omph in your right hook? This gas operated powerfist will put you in the heavyweight."
@@ -159,10 +179,43 @@
 	stock_max = 3
 	availability_prob = 40
 
+/datum/blackmarket_item/weapon/cm23
+	name = "CM-23 pistol"
+	desc = "The service pistol of the Confederated League. Chambered in 10mm and fresh off a crashed clipper. We made sure to scratch the ID off this time."
+
+	item = /obj/item/gun/ballistic/automatic/pistol/cm23
+	pair_item = list(/datum/blackmarket_item/ammo/cm23_mag)
+	price_min = 500
+	price_max = 1500
+	stock_max = 4
+	availability_prob = 50
+
+/datum/blackmarket_item/weapon/cm70
+	name = "CM-70 Machine Pistol"
+	desc = "One slick piece from the Confederated League. Chambered in 9mm. That officer wasn't happy to lose this but you should be safe."
+
+	item = /obj/item/gun/ballistic/automatic/pistol/cm70
+	pair_item = list(/datum/blackmarket_item/ammo/cm70_mag)
+	price_min = 900
+	price_max = 2100
+	stock_max = 2
+	availability_prob = 50
+
+/datum/blackmarket_item/weapon/cm5
+	name = "CM-5 SMG"
+	desc = "Now isn't this a good find. A whole League sub-machinegun, chambered in 9mm. We're pretty sure no one is gonna notice the pallet of these missing."
+
+	item = /obj/item/gun/ballistic/automatic/smg/cm5
+	pair_item = list(/datum/blackmarket_item/ammo/cm5_mag)
+	price_min = 1750
+	price_max = 3500
+	stock_max = 2
+	availability_prob = 30
+
 /datum/blackmarket_item/weapon/saber_smg
 	name = "Saber 9mm SMG"
 	desc = "A prototype 9mm submachine gun. Most of these never got past the RND phase and into distribution. But we happen know a guy."
-	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto
+	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
 	pair_item = list(/datum/blackmarket_item/ammo/saber_mag)
 
 	price_min = 2250
@@ -351,19 +404,9 @@
 	stock_max = 2
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/fireaxe
-	name = "Fire Axe"
-	desc = "An incredibly sharp axe of reputable make, used by various engineers to settle arguments while hammered. Sold to us by a very friendly man in a suit."
-	item = /obj/item/melee/axe/fire
-
-	price_min = 1200
-	price_max = 2300
-	stock_max = 3
-	availability_prob = 40
-
 /datum/blackmarket_item/weapon/oneshot
 	name = "Hammer Launcher"
-	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HEDP rocket. "
+	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HE rocket. "
 	item = /obj/item/gun/ballistic/rocketlauncher/oneshot
 
 	price_min = 3000
@@ -371,3 +414,25 @@
 	stock_min = 1
 	stock_max = 5
 	availability_prob = 25
+
+/datum/blackmarket_item/weapon/oneshot/hedp
+	name = "Hammer-DP Launcher"
+	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HEDP rocket. "
+	item = /obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
+
+	price_min = 4000
+	price_max = 6000
+	stock_min = 1
+	stock_max = 5
+	availability_prob = 10
+
+/datum/blackmarket_item/weapon/skm_lmg
+	name = "SKM-24u Light Machinegun"
+	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machinegun, ready to blow away whatever you point it at. Increased firerate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
+	item = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
+
+	price_min = 5000
+	price_max = 7000
+	stock_max = 2
+	availability_prob = 15
+	spawn_weighting = FALSE
