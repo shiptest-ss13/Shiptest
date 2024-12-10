@@ -34,6 +34,9 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[ammo_count() ? 42 : 0]"
 
+/obj/item/ammo_box/magazine/smgm9mm/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/smgm9mm/ap
 	name = "SMG magazine (9mm AP)"
 	desc = "A 30-round magazine for 9mm submachine guns. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
@@ -56,6 +59,9 @@
 /obj/item/ammo_box/magazine/smgm10mm/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
+
+/obj/item/ammo_box/magazine/smgm10mm/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/smgm10mm/rubber
 	name = "SMG magazine (10mm rubber)"
@@ -90,6 +96,9 @@
 /obj/item/ammo_box/magazine/c45_firestorm_mag/update_icon_state()
 	. = ..()
 	icon_state = "firestorm_mag-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/c45_firestorm_mag/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/c45_firestorm_mag/pan
 	name = "pan magazine (.45)"
