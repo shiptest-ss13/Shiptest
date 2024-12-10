@@ -507,6 +507,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/gar
+	name = "Solarian 'GAR' Automatic Rifle"
+	desc = "A modern solarian military rifle, chambered in ferromagnetic lances. Not for export."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/gar)
+	crate_name = "auto rifle crate"
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/hades
 	name = "SL AL-655 'Hades' energy rifle"
 	desc = "Contains a high-energy, automatic laser rifle. For NT employee use only."
@@ -547,6 +557,27 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/* Heavy */
+
+/datum/supply_pack/gun/cm40
+	name = "CM-40 Squad Automatic Weapon"
+	desc = "Contains a CM-40 Squad Automatic Weapon, a CLIP-produced LMG for Minuteman usage in situations that require heavy firepower. For Minuteman use only."
+	cost = 6000
+	contains = list(/obj/item/storage/guncase/cm40)
+	crate_name = "LMG crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/saw80
+	name = "SAW-80 Squad Automatic Weapon"
+	desc = "Contains one of the rarely-produced SAW-80 Squad Automatic Weapon platforms, exclusively for licensed buyers. Remember, short controlled bursts!"
+	cost = 6000
+	contains = list(/obj/item/storage/guncase/saw80)
+	crate_name = "LMG crate"
+	faction = /datum/faction/syndicate/scarborough_arms
+	faction_discount = 0
+	faction_locked = TRUE
 
 /* Marksman Rifles */
 
