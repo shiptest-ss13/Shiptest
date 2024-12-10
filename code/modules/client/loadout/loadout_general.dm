@@ -177,11 +177,11 @@
 	path = /obj/item/toy/nuke
 
 /datum/gear/griffin_figure
-	display_name = "toy, rilena tali action figure"
+	display_name = "toy, griffin action figure"
 	path = /obj/item/toy/talking/griffin
 
 /datum/gear/owl_figure
-	display_name = "toy, rilena tali action figure"
+	display_name = "toy, owl action figure"
 	path = /obj/item/toy/talking/owl
 
 /datum/gear/amongus
