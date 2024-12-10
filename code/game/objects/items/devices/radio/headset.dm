@@ -314,7 +314,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/headset_com/alt
 	name = "command bowman headset"
 	desc = "An officer's headset. Protects ears from flashbangs."
-	icon_state = "com_headset_alt"
+	icon_state = "headset_alt"
 
 /obj/item/radio/headset/headset_com/alt/ComponentInitialize()
 	. = ..()
@@ -333,7 +333,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/heads/captain/alt
 	name = "captain's bowman headset"
 	desc = "Dresses the ears of independent ship captains across the frontier. Protects ears from flashbangs."
-	icon_state = "com_headset_alt"
+	icon_state = "headset_alt"
 
 /obj/item/radio/headset/heads/captain/alt/ComponentInitialize()
 	. = ..()
@@ -459,7 +459,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/heads/hos/alt
 	name = "\proper the head of security's bowman headset"
 	desc = "The headset of the man in charge of keeping order and protecting the innocent. Protects ears from flashbangs."
-	icon_state = "com_headset_alt"
+	icon_state = "headset_alt"
 
 /obj/item/radio/headset/heads/hos/ComponentInitialize()
 	. = ..()
