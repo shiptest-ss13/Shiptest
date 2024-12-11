@@ -45,10 +45,4 @@
 			"ships" = ships_output.Join(", ")
 		))
 
-	output += include_template("Autowiki/ShipTable/Row", list(
-		"name" = "Removed/Deprecated",
-		"color" = "C8C8C8",
-		"ships" = "{{{removed}}}" //allows for manual editing
-	))
-
 	return output.Join("\n")

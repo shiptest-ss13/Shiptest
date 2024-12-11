@@ -18,8 +18,11 @@
 	if(!short_name)
 		short_name = uppertext(copytext_char(name, 3))
 
-	allowed_factions += parent_faction
+	//All subtypes of this faction, all subtypes of specifically allowed factions, and SPECIFICALLY the parent faction (no subtypes) are allowed.
+	//Try not to nest factions too deeply, yeah?
+	allowed_factions += src
 	allowed_factions = typecacheof(allowed_factions)
+	allowed_factions[parent_faction] = TRUE
 
 /// Easy way to check if something is "allowed", checks to see if it matches the name or faction typepath because factions are a fucking mess
 /datum/faction/proc/allowed_faction(value_to_check)
