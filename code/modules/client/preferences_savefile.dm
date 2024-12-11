@@ -85,12 +85,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(toggles & FAST_MC_REFRESH)
 			toggles |= SPLIT_ADMIN_TABS
 		else
-			toggles -= SPLIT_ADMIN_TABS
+			toggles &= ~SPLIT_ADMIN_TABS
 
 		if(toggles & SOUND_RADIO)
 			toggles |= FAST_MC_REFRESH
 		else
-			toggles -= FAST_MC_REFRESH
+			toggles &= ~FAST_MC_REFRESH
 
 		toggles |= SOUND_RADIO
 
