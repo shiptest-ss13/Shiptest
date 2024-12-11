@@ -523,6 +523,22 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"lA" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/sign/number/random{
+	pixel_y = 32
+	},
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/item/toy/plush/tali{
+	pixel_y = 3;
+	pixel_x = 3
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "lD" = (
 /obj/structure/table,
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis{
@@ -1564,6 +1580,15 @@
 /obj/structure/sign/number/random{
 	pixel_y = 32
 	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/mug/tea{
+	pixel_y = 6;
+	pixel_x = 9
+	},
+/obj/item/food/butterbiscuit{
+	pixel_y = -2;
+	pixel_x = 5
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Gi" = (
@@ -2300,6 +2325,17 @@
 /obj/item/mecha_parts/mecha_equipment/thrusters/ion,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
+"Rm" = (
+/obj/machinery/light/floor,
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/item/toy/plush/sharai{
+	pixel_y = 3;
+	pixel_x = -3
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Rt" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 10
@@ -2548,6 +2584,15 @@
 	},
 /obj/structure/sign/number/random{
 	pixel_y = 32
+	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/mug/tea{
+	pixel_y = -2;
+	pixel_x = -9
+	},
+/obj/item/food/butterbiscuit{
+	pixel_y = 8;
+	pixel_x = -5
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -2903,7 +2948,7 @@ jp
 Cd
 wR
 Zq
-yF
+lA
 SR
 SR
 iG
@@ -2978,7 +3023,7 @@ rv
 qa
 ef
 iz
-os
+Rm
 SR
 SR
 rj
