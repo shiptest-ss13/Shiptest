@@ -5,34 +5,28 @@
 	var/parent_faction
 	/// List of prefixes that ships of this faction uses
 	var/list/prefixes
-	/// list of factions that are "allowed" with this faction, used for factional cargo
-	var/list/allowed_factions
+	/// List/Typecache of factions that this faction is allowed to interact with. Non-recursive.
+	var/list/allowed_factions = list()
 	/// Theme color for this faction, currently only used for the wiki
 	var/color = "#ffffff"
 	/// Whether or not this faction should be able to use prefixes that aren't their own (see: Frontiersmen using Indie prefixes)
 	var/check_prefix = TRUE
+	/// Sorting order for factions
+	var/order = FACTION_SORT_DEFAULT
 
 /datum/faction/New()
 	if(!short_name)
 		short_name = uppertext(copytext_char(name, 3))
 
-	var/list/all_allowed = list(src.type, )
+	allowed_factions += parent_faction
 	allowed_factions = typecacheof(allowed_factions)
 
 /// Easy way to check if something is "allowed", checks to see if it matches the name or faction typepath because factions are a fucking mess
 /datum/faction/proc/allowed_faction(value_to_check)
-	///Are we the same datum?
-	if(istype(value_to_check, src))
-		return TRUE
-	///Allow if we share a parent faction
-	if(istype(value_to_check, parent_faction))
-		return TRUE
 	//do we have the same faction even if one is a define?
 	if(value_to_check == name)
 		return TRUE
-	if(value_to_check in allowed_factions)
-		return TRUE
-	return FALSE
+	return is_type_in_typecache(value_to_check, allowed_factions)
 
 /datum/faction/syndicate
 	name = FACTION_SYNDICATE
@@ -59,26 +53,35 @@
 	short_name = "SUNS"
 	prefixes = PREFIX_SUNS
 
+/datum/faction/syndicate/scarborough
+	name = "Scarborough Arms"
+	parent_faction = /datum/faction/syndicate
+	prefixes = PREFIX_NONE
+
 /datum/faction/solgov
 	name = FACTION_SOLGOV
+	parent_faction = /datum/faction/solgov
 	prefixes = PREFIX_SOLGOV
 	color = "#444e5f"
 
 /datum/faction/srm
 	name = FACTION_SRM
 	short_name = "SRM"
+	parent_faction = /datum/faction/srm
 	prefixes = PREFIX_SRM
 	color = "#6B3500"
 
 /datum/faction/inteq
 	name = FACTION_INTEQ
 	short_name = "INTEQ"
+	parent_faction = /datum/faction/inteq
 	prefixes = PREFIX_INTEQ
 	color = "#7E6641"
 
 /datum/faction/clip
 	name = FACTION_CLIP
 	short_name = "CLIP"
+	parent_faction = /datum/faction/clip
 	prefixes = PREFIX_CLIP
 	color = "#3F90DF"
 
@@ -102,21 +105,19 @@
 	prefixes = PREFIX_FRONTIERSMEN
 	color = "#80735D"
 	check_prefix = FALSE
+	parent_faction = /datum/faction/frontiersmen
 
 /datum/faction/pgf
 	name = FACTION_PGF
 	short_name = "PGF"
+	parent_faction = /datum/faction/pgf
 	prefixes = PREFIX_PGF
 	color = "#359829"
 
 /datum/faction/independent
 	name = FACTION_INDEPENDENT
 	short_name = "IND"
+	parent_faction =  /datum/faction/independent
 	prefixes = PREFIX_INDEPENDENT
 	color = "#A0A0A0"
-
-/datum/faction/syndicate/scarborough_arms
-	name = "Scarborough Arms"
-	parent_faction = /datum/faction/syndicate
-	prefixes = PREFIX_INDEPENDENT
-	allowed_factions = list(/datum/faction/syndicate)
+	order = FACTION_SORT_INDEPENDENT

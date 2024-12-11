@@ -64,19 +64,26 @@
 	wiki_dummy.setDir(SOUTH)
 	for(var/datum/job/job as anything in crew)
 		var/filename = SANITIZE_FILENAME(escape_value(format_text(initial(job.outfit.name))))
+		var/hudname = "[filename]-hud"
 
 		output += include_template("Autowiki/ShipCrewMember", list(
 			"name" = escape_value(job.name),
 			"officer" = job.officer ? "Yes" : "No",
 			"slots" = crew[job],
-			"icon" = filename
+			"icon" = filename,
+			"hudicon" = hudname
 		))
 
 		//Only generate each unique outfit once
-		if(filename in job_icon_list)
-			continue
+		if(!(filename in job_icon_list))
+			upload_icon(get_dummy_image(job), filename)
+			job_icon_list += filename
+		if(!(hudname in job_icon_list))
+			var/icon/hudicon = get_hud_image(job)
+			if(hudicon)
+				upload_icon(hudicon, hudname)
+			job_icon_list += hudname
 
-		upload_icon(get_dummy_image(job, filename), filename)
 
 	return output
 
@@ -92,6 +99,16 @@
 
 	//Make all icons 32x32 for wiki sizing consistency
 	if(wiki_icon.Height() != 32 || wiki_icon.Width() != 32)
-		wiki_icon.Crop(1, 1, 32, 32)
+		wiki_icon.Crop(0, 0, 32, 32)
 
 	return wiki_icon
+
+/datum/autowiki/ship/proc/get_hud_image(datum/job/to_equip)
+	if(!icon_exists('icons/mob/hud.dmi', "hud[initial(to_equip.outfit.faction_icon)]"))
+		return FALSE
+
+	var/icon/hudicon = icon('icons/mob/hud.dmi', "hud[initial(to_equip.outfit.faction_icon)]")
+	hudicon.Blend(icon('icons/mob/hud.dmi', "hud[initial(to_equip.outfit.job_icon)]"), ICON_OVERLAY)
+	hudicon.Crop(0, 16, 9, 24)
+
+	return hudicon

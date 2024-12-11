@@ -1,17 +1,17 @@
-#define FACTION_SYNDICATE "Syndicate"
+#define FACTION_SYNDICATE "Syndicate Coalition"
 	#define FACTION_NGR "New Gorlex Republic"
-	#define FACTION_CYBERSUN "CyberSun"
-	#define FACTION_HARDLINERS "Hardliners"
+	#define FACTION_CYBERSUN "Cybersun Industries"
+	#define FACTION_HARDLINERS "Gorlex Hardliners"
 	#define FACTION_SUNS "Student-Union of Naturalistic Sciences"
-#define FACTION_SOLGOV "SolGov"
+#define FACTION_SOLGOV "Solar Confederation"
 #define FACTION_SRM "Saint-Roumain Militia"
 #define FACTION_INTEQ "Inteq Risk Management Group"
-#define FACTION_CLIP "CLIP Minutemen"
+#define FACTION_CLIP "Confederated League of Independent Planets"
 #define FACTION_NT "Nanotrasen"
 	#define FACTION_NS_LOGI "N+S Logistics"
 	#define FACTION_VIGILITAS "Vigilitas Interstellar"
 #define FACTION_FRONTIERSMEN "Frontiersmen Fleet"
-#define FACTION_PGF "Pan-Gezenan Federation"
+#define FACTION_PGF "Pan-Gezena Federation"
 #define FACTION_INDEPENDENT "Independent"
 
 #define PREFIX_SYNDICATE list("SEV", "SSV")
@@ -29,3 +29,7 @@
 #define PREFIX_FRONTIERSMEN list("FFV")
 #define PREFIX_PGF list("PGF", "PGFMC", "PGFN")
 #define PREFIX_INDEPENDENT list("SV", "IMV", "ISV")
+#define PREFIX_NONE list()
+
+#define FACTION_SORT_DEFAULT 0
+#define FACTION_SORT_INDEPENDENT 100
