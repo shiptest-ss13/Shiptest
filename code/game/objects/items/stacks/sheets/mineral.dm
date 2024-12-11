@@ -570,7 +570,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	singular_name = "lead bar"
 	sheettype = "lead"
 	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/toxin/leadacetate = 20) //maybe make it a more unique reagent?
+	grind_results = list(/datum/reagent/toxin/leadacetate = 20)
 	point_value = 2
 	merge_type = /obj/item/stack/sheet/mineral/lead
 
@@ -612,7 +612,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	icon_state = "ingot-quartz"
 	item_state = "ingot-quartz"
 	sheettype = "quartz"
-	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/quartz=MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/quartz = 20) //maybe make it a more unique reagent?
 	point_value = 1
 	merge_type = /obj/item/stack/sheet/mineral/quartz

@@ -466,7 +466,16 @@ SUBSYSTEM_DEF(overmap)
 				possible_types -= outpost_type
 		found_type = pick(possible_types)
 
-	new found_type(location, src)
+	var/datum/overmap/outpost/our_outpost = new found_type(location, src)
+
+	//gets rid of nearby events that casue radio interference
+	for(var/direction as anything in GLOB.cardinals)
+		var/newcords = our_outpost.get_overmap_step(direction)
+		for(var/datum/overmap/event/nearby_event as anything in our_outpost.current_overmap.overmap_container[newcords["x"]][newcords["y"]])
+			if(!istype(nearby_event))
+				continue
+			if(nearby_event.interference_power)
+				qdel(nearby_event)
 	return
 
 /**

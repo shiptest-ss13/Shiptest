@@ -217,8 +217,10 @@
 	var/load_template_on_initialize = TRUE
 	/// The docking ticket of the ship docking to this port.
 	var/datum/docking_ticket/current_docking_ticket
-	/// moves docking port around in it's "box" so that any ship can land in this "box" think of this as, whatever the height and width are set to on initialize, anything smaller than the "box" can land in it with this on
+	/// Moves docking port around in it's "box" so that any ship can land in this "box" think of this as, whatever the height and width are set to on initialize, anything smaller than the "box" can land in it with this on
 	var/adjust_dock_for_landing = FALSE
+	/// Is set to TRUE when we are adjusting the dock for landing, this is to prevent the dock from getting messed up by TWO ships adjusting the dock
+	var/is_adjusting_now = FALSE
 
 
 	/// disables the port from being docked to when the mobile port the ship is attatched to is docked. Useless on non-ships.
@@ -260,9 +262,11 @@
  */
 
 /obj/docking_port/stationary/proc/adjust_dock_to_shuttle(obj/docking_port/mobile/shuttle)
-	if(!adjust_dock_for_landing)
+	if(!adjust_dock_for_landing || is_adjusting_now)
 		return
+	is_adjusting_now = TRUE
 	if(!istype(shuttle))
+		is_adjusting_now = FALSE
 		CRASH("Invalid docking port ([shuttle]) passed to adjust_dock_to_shuttle().")
 	log_shuttle("[src] [REF(src)] DOCKING: ADJUST [src] [REF(src)] TO [shuttle][REF(shuttle)]")
 	// the shuttle's dimensions where "true height" measures distance from the shuttle's fore to its aft
@@ -301,6 +305,7 @@
 
 	dir = final_facing_dir
 	if(shuttle.height > height || shuttle.width > width)
+		is_adjusting_now = FALSE
 		CRASH("Shuttle cannot fit in dock!")
 
 	// offset for the dock within its area
@@ -336,6 +341,7 @@
 		dwidth = olddwidth
 		height = oldheight
 		width = oldwidth
+		is_adjusting_now = FALSE
 
 /obj/docking_port/stationary/transit
 	name = "transit dock"

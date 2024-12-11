@@ -82,24 +82,26 @@
 
 
 	base_gases = list(
-		GAS_O3=7,
+		GAS_O2=7,
 		GAS_N2=10,
 	)
 	normal_gases = list(
 		GAS_O2=7,
-		GAS_O3=3,
+		GAS_CO=2,
 	)
 	restricted_gases = list(
 		GAS_CHLORINE=1,
 		GAS_AMMONIA=1,
 		GAS_SO2=3,
+		GAS_CO=2,
+		GAS_O3=1,
 	)
 	restricted_chance = 10
 
 	minimum_pressure = ONE_ATMOSPHERE - 30
 	maximum_pressure = ONE_ATMOSPHERE + 100
 
-	minimum_temp = T20C - 10
+	minimum_temp = T20C - 20
 	maximum_temp = T20C + 20
 
 //sandplanet
@@ -191,11 +193,11 @@
 		GAS_N2=1,
 	)
 	restricted_gases = list(
-		GAS_CO=0.1,
+		GAS_CO=1,
 	)
 	restricted_chance = 5
 
-	minimum_pressure = 101.3
+	minimum_pressure = 41.3
 	maximum_pressure = 135.7
 
 	minimum_temp = T0C - 20
@@ -260,7 +262,7 @@
 	minimum_pressure = ONE_ATMOSPHERE
 	maximum_pressure = ONE_ATMOSPHERE + 50
 
-	minimum_temp = T20C + 20
-	maximum_temp = T20C + 30
+	minimum_temp = T20C + 15
+	maximum_temp = T20C + 25
 
 */

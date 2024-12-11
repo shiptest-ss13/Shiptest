@@ -23,7 +23,7 @@
 	)
 	var/obj/machinery/drill/mission/sampler
 	var/obj/item/overmap_punchcard_spawner/dynamic/mission/punchcard
-	var/num_wanted = 8
+	var/num_wanted = 5
 	var/class_wanted = 1
 	var/spawn_punchcard = TRUE
 	var/bonus_text = TRUE
@@ -101,7 +101,7 @@
 	value = 4000
 	weight = 10
 	class_wanted = 2
-	num_wanted = 10
+	num_wanted = 6
 
 /datum/mission/drill/classthree
 	name = "Class 3 core sample mission"
@@ -109,7 +109,7 @@
 	weight = 6
 	duration = 120 MINUTES
 	class_wanted = 3
-	num_wanted = 12
+	num_wanted = 8
 
 /*
 		Variant for rare planets
@@ -122,14 +122,14 @@
 			A punchcard will be provided to locate the planet, as it is impossible to find otherwise. "
 	value = 3000
 	duration = 90 MINUTES
-	weight = 5
+	weight = 4
 
 	available_planets = list(
 		/datum/planet_type/water = /obj/structure/vein/waterplanet,
 		/datum/planet_type/desert = /obj/structure/vein/desert,
 	)
 	bonus_text = FALSE
-	num_wanted = 10
+	num_wanted = 6
 
 /datum/mission/drill/rareplanet/handle_info()
 	name = "Class [class_wanted] rare [selected_planet.name] core sample mission"
@@ -155,8 +155,10 @@
 	value = 5000
 	weight = 3
 	class_wanted = 2
-	num_wanted = 12
+	num_wanted = 8
 	available_planets = list(
+		/datum/planet_type/water = /obj/structure/vein/waterplanet,
+		/datum/planet_type/desert = /obj/structure/vein/desert,
 		/datum/planet_type/water = /obj/structure/vein/waterplanet,
 		/datum/planet_type/desert = /obj/structure/vein/desert,
 		/datum/planet_type/shrouded = /obj/structure/vein/shrouded,
@@ -165,10 +167,10 @@
 /datum/mission/drill/rareplanet/classthree
 	name = "Class 3 rare core sample mission"
 	value = 6500
-	weight = 1
+	weight = 2
 	duration = 120 MINUTES
 	class_wanted = 3
-	num_wanted = 14
+	num_wanted = 10
 	available_planets = list(
 		/datum/planet_type/water = /obj/structure/vein/waterplanet,
 		/datum/planet_type/desert = /obj/structure/vein/desert,
