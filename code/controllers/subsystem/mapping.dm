@@ -17,7 +17,6 @@ SUBSYSTEM_DEF(mapping)
 	var/list/ruins_templates = list()
 	var/list/planet_types = list()
 
-	var/list/maplist
 	var/list/ship_purchase_list
 
 	var/list/shuttle_templates = list()
@@ -123,7 +122,6 @@ SUBSYSTEM_DEF(mapping)
 	biomes = SSmapping.biomes
 	planet_types = SSmapping.planet_types
 
-	maplist = SSmapping.maplist
 	ship_purchase_list = SSmapping.ship_purchase_list
 
 	virtual_z_translation = SSmapping.virtual_z_translation
@@ -175,7 +173,6 @@ SUBSYSTEM_DEF(mapping)
 #define CHECK_STRING_EXISTS(X) if(!istext(data[X])) { stack_trace("[##X] missing from json!"); continue; }
 #define CHECK_LIST_EXISTS(X) if(!islist(data[X])) { stack_trace("[##X] missing from json!"); continue; }
 /datum/controller/subsystem/mapping/proc/load_ship_templates()
-	maplist = list()
 	ship_purchase_list = list()
 	var/list/filelist = flist("_maps/configs/")
 	for(var/filename in filelist)
@@ -225,6 +222,9 @@ SUBSYSTEM_DEF(mapping)
 				stack_trace("Unknown faction prefix: [data["prefix"]] on [S.name]'s config!")
 			if(S.faction.check_prefix && !(S.prefix in S.faction.prefixes))
 				stack_trace("Faction prefix mismatch for [S.faction.name]: [data["prefix"]] on [S.name]'s config!")
+
+		if(!S.prefix)
+			S.prefix = S.faction.prefixes[1]
 
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
@@ -279,9 +279,6 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
-
-		if(isnum(data["roundstart"]) && data["roundstart"])
-			maplist[S.name] = S
 
 		if(isnum(data["space_spawn"]) && data["space_spawn"])
 			S.space_spawn = TRUE

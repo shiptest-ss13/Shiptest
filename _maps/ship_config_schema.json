@@ -31,7 +31,7 @@
 		},
 		"faction": {
 			"title": "Ship Faction Datum",
-			"type": ["null", "string"],
+			"type": "string",
 			"pattern": "^/datum/faction/(.*)$",
 			"default": "/datum/faction/independent",
 			"description": "The path of the ship's original faction datum. If null, the ship will be considered independent."
@@ -129,12 +129,6 @@
 					}
 				]
 			}
-		},
-		"roundstart": {
-			"title": "Random Roundstart Selection",
-			"type": "boolean",
-			"description": "(DEPRECATED) Whether or not the ship has a chance to be randomly selected as the free roundstart ship.",
-			"default": false
 		},
 		"limit": {
 			"title": "Ship Spawning Limit",
