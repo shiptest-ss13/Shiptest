@@ -59,9 +59,9 @@
 	prefixes = PREFIX_NONE
 
 /datum/faction/solgov
-	name = FACTION_SOLGOV
+	name = FACTION_SOLCON
 	parent_faction = /datum/faction/solgov
-	prefixes = PREFIX_SOLGOV
+	prefixes = PREFIX_SOLCON
 	color = "#444e5f"
 
 /datum/faction/srm

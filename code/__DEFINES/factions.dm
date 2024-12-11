@@ -3,7 +3,7 @@
 	#define FACTION_CYBERSUN "Cybersun Industries"
 	#define FACTION_HARDLINERS "Gorlex Hardliners"
 	#define FACTION_SUNS "Student-Union of Naturalistic Sciences"
-#define FACTION_SOLGOV "Solar Confederation"
+#define FACTION_SOLCON "Solar Confederation"
 #define FACTION_SRM "Saint-Roumain Militia"
 #define FACTION_INTEQ "Inteq Risk Management Group"
 #define FACTION_CLIP "Confederated League of Independent Planets"
@@ -19,7 +19,7 @@
 	#define PREFIX_CYBERSUN list("CSSV")
 	#define PREFIX_HARDLINERS list("GMV")
 	#define PREFIX_SUNS list("SUNS")
-#define PREFIX_SOLGOV list("SCSV")
+#define PREFIX_SOLCON list("SCSV")
 #define PREFIX_SRM list("SRSV")
 #define PREFIX_INTEQ list("IRMV")
 #define PREFIX_CLIP list("CMSV", "CLSV")
