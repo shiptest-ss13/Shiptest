@@ -6,12 +6,6 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/unpowered/sensor_array)
-"az" = (
-/obj/item/crowbar/large,
-/turf/open/floor/suns/plain{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered/sensor_array)
 "aH" = (
 /obj/effect/turf_decal/suns/line/marble/fill{
 	dir = 9
@@ -67,16 +61,11 @@
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "cf" = (
-/obj/effect/turf_decal/siding/yellow{
-	dir = 10
-	},
 /obj/effect/decal/cleanable/glass,
 /obj/effect/turf_decal/weather/snow{
 	dir = 10
 	},
-/turf/open/floor/plasteel/patterned{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/icemoon,
 /area/ruin/unpowered/sensor_array)
 "cm" = (
 /obj/structure/railing/thin{
@@ -317,13 +306,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/sensor_array)
-"ji" = (
-/obj/structure/closet/body_bag,
-/obj/effect/mob_spawn/human/corpse/solgov/sonnensoldner,
-/turf/open/floor/suns/plain{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered/sensor_array)
 "jt" = (
 /obj/structure/platform/industrial{
 	dir = 1
@@ -350,14 +332,6 @@
 	icon_state = "xgibbl1"
 	},
 /turf/open/floor/wood/icemoon,
-/area/ruin/unpowered/sensor_array)
-"ky" = (
-/obj/effect/turf_decal/siding/yellow{
-	dir = 4
-	},
-/turf/open/floor/plasteel/patterned{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
 /area/ruin/unpowered/sensor_array)
 "kE" = (
 /obj/structure/dresser{
@@ -456,21 +430,11 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/overmap_encounter/planetoid/ice/explored)
-"nV" = (
-/obj/item/weldingtool/mini/empty,
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/overmap_encounter/planetoid/ice/explored)
 "or" = (
 /turf/open/floor/suns/dark{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/sensor_array)
-"oA" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "xsplatter1"
-	},
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
 "oK" = (
 /obj/item/radio/intercom/directional/west,
 /obj/machinery/computer{
@@ -799,14 +763,9 @@
 	},
 /area/overmap_encounter/planetoid/ice/explored)
 "zH" = (
-/obj/effect/turf_decal/siding/yellow{
-	dir = 6
-	},
 /obj/item/shard,
 /obj/effect/turf_decal/weather/snow,
-/turf/open/floor/plasteel/patterned{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/icemoon,
 /area/ruin/unpowered/sensor_array)
 "Ah" = (
 /obj/machinery/door/airlock,
@@ -1154,14 +1113,6 @@
 	},
 /turf/open/floor/wood/icemoon,
 /area/ruin/unpowered/sensor_array)
-"Mb" = (
-/obj/effect/turf_decal/spline/fancy/opaque/solgovblue{
-	dir = 8
-	},
-/turf/open/floor/plasteel/patterned{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered/sensor_array)
 "MB" = (
 /obj/structure/fence/post,
 /turf/open/floor/plating/asteroid/snow/lit,
@@ -1200,7 +1151,7 @@
 /area/ruin/unpowered/sensor_array)
 "NE" = (
 /obj/item/stack/tile/suns/plain{
-	amount = 3
+	amount = 7
 	},
 /turf/open/floor/plating/icemoon,
 /area/ruin/unpowered/sensor_array)
@@ -1241,10 +1192,17 @@
 /turf/open/floor/wood/icemoon,
 /area/ruin/unpowered/sensor_array)
 "QW" = (
-/obj/structure/closet/body_bag,
-/obj/effect/mob_spawn/human/corpse/solgov/sonnensoldner,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/overmap_encounter/planetoid/ice/explored)
+/obj/item/stack/cable_coil/yellow{
+	amount = 3
+	},
+/obj/item/wallframe/advanced_airlock_controller{
+	pixel_y = -2;
+	pixel_x = -6
+	},
+/turf/open/floor/plasteel/tech/grid{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/sensor_array)
 "RI" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "sunsensor_bridge"
@@ -1346,18 +1304,6 @@
 	},
 /obj/structure/curtain,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/unpowered/sensor_array)
-"Vp" = (
-/obj/item/stack/cable_coil/yellow{
-	amount = 3
-	},
-/obj/item/wallframe/advanced_airlock_controller{
-	pixel_y = -2;
-	pixel_x = -6
-	},
-/turf/open/floor/plasteel/tech/grid{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
 /area/ruin/unpowered/sensor_array)
 "Vz" = (
 /obj/structure/sign/warning/securearea,
@@ -1782,9 +1728,9 @@ DE
 Tu
 DE
 DE
-az
+DE
 Uh
-Mb
+Uh
 cf
 Zc
 DI
@@ -1816,7 +1762,7 @@ ML
 DE
 NE
 Uh
-ky
+Uh
 zH
 JM
 DI
@@ -1987,9 +1933,9 @@ zB
 Ki
 Ki
 DI
-yC
-Yo
 OX
+Yo
+yC
 "}
 (16,1,1) = {"
 dp
@@ -2018,10 +1964,10 @@ IB
 KP
 Ki
 ZN
-QW
-yC
-ca
+DI
 OX
+ca
+yC
 "}
 (17,1,1) = {"
 dp
@@ -2049,11 +1995,11 @@ wo
 Ps
 aK
 pU
-oA
 DI
-nV
-Yo
+DI
 OX
+Yo
+yC
 "}
 (18,1,1) = {"
 dp
@@ -2136,7 +2082,7 @@ Di
 DE
 Da
 HD
-Vp
+QW
 Ym
 xs
 DI
@@ -2164,7 +2110,7 @@ dp
 xs
 DE
 NP
-ji
+DE
 DE
 ur
 Yx
