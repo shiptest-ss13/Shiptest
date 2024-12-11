@@ -285,8 +285,8 @@ NEAR_DEATH_EXPERIENCE
 
 ## ROUNDSTART SILICON LAWS ###
 ## This controls what the AI's laws are at the start of the round.
-## Set to 0/commented out for "off", silicons will just start with Crewsimov.
-## Set to 1 for "custom", silicons will start with the custom laws defined in silicon_laws.txt. (If silicon_laws.txt is empty, the AI will spawn with Crewsimov and Custom boards will auto-delete.)
+## Set to 0/commented out for "off", silicons will start with no laws.
+## Set to 1 for "custom", silicons will start with the custom laws defined in silicon_laws.txt. (If silicon_laws.txt is empty, the AI will spawn with Asimov and Custom boards will auto-delete.)
 ## Set to 2 for "random", silicons will start with a random lawset picked from random laws specified below.
 ## Set to 3 for "weighted random", using values in "silicon_weights.txt", a law will be selected, with weights specifed in that file.
 DEFAULT_LAWS 0
@@ -299,7 +299,6 @@ DEFAULT_LAWS 0
 ## standard-ish laws. These are fairly ok to run
 RANDOM_LAWS asimov
 RANDOM_LAWS asimovpp
-RANDOM_LAWS crewsimov
 RANDOM_LAWS paladin
 RANDOM_LAWS robocop
 RANDOM_LAWS corporate
@@ -330,8 +329,7 @@ RANDOM_LAWS corporate
 LAW_WEIGHT custom,0
 
 ## standard-ish laws. These are fairly ok to run
-LAW_WEIGHT crewsimov,32
-LAW_WEIGHT asimov,12
+LAW_WEIGHT asimov,32
 LAW_WEIGHT asimovpp,12
 LAW_WEIGHT paladin,12
 LAW_WEIGHT robocop,12
