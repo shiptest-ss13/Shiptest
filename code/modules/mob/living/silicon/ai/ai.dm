@@ -127,6 +127,7 @@
 	to_chat(src, "Use say :b to speak to your cyborgs through binary.")
 	to_chat(src, "For department channels, use the following say commands:")
 	to_chat(src, ":o - AI Private, :c - Command.")
+	to_chat(src, ":c - Command.")
 
 	job = "AI"
 

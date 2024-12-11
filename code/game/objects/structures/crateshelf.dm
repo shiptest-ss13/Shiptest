@@ -43,6 +43,8 @@
 
 /obj/structure/crate_shelf/examine(mob/user)
 	. = ..()
+	if(capacity < max_capacity)
+		. += span_notice("You could <b>add another shelf</b> with <b> 2 sheets of metal</b>.")
 	. += span_notice("There are some <b>bolts</b> holding [src] together.")
 	if(shelf_contents.Find(null)) // If there's an empty space in the shelf, let the examiner know.
 		. += span_notice("You could <b>drag and drop</b> a crate into [src].")
@@ -81,7 +83,7 @@
 				balloon_alert(user, "adding additional shelf to rack")
 				if(do_after(user, 3 SECONDS, src))
 					add_shelf(1)
-					our_sheet.add(-2)
+					our_sheet.use(2)
 					return TRUE
 				to_chat(user, span_notice("Adding a shelf to [src] requires more metal."))
 				return FALSE
@@ -169,8 +171,12 @@
 		shelf_contents[shelf_contents.Find(crate)] = null
 	if(!(flags_1&NODECONSTRUCT_1))
 		density = FALSE
-		var/obj/item/rack_parts/shelf/newparts = new(loc)
-		transfer_fingerprints_to(newparts)
+		var/obj/item/rack_parts/shelf/new_parts = new(loc)
+		if(capacity >= 2)
+			var/obj/item/stack/sheet/metal/new_metal = new(loc)
+			new_metal.amount = (capacity-1)*2
+			transfer_fingerprints_to(new_metal)
+		transfer_fingerprints_to(new_parts)
 	return ..()
 
 /obj/item/rack_parts/shelf

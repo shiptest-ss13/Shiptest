@@ -96,7 +96,6 @@
 	req_access_txt = "3"
 	},
 /obj/item/gun/energy/e_gun/hos,
-/obj/item/clothing/mask/gas/sechailer,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/storage/belt/military,
 /obj/item/clothing/suit/armor/vest/leather,
@@ -106,6 +105,7 @@
 /obj/item/clothing/under/rank/security/head_of_security/alt/skirt,
 /obj/item/clothing/under/rank/security/head_of_security/nt,
 /obj/item/clothing/under/rank/security/head_of_security/nt/skirt,
+/obj/item/clothing/mask/gas/vigilitas,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
 "by" = (
@@ -566,8 +566,8 @@
 "jb" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
-	color = "#808080"
+	color = "#808080";
+	dir = 2
 	},
 /obj/effect/decal/cleanable/vomit,
 /obj/effect/decal/cleanable/blood/old,
@@ -944,8 +944,8 @@
 "oO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/wallframe/light_fixture{
-	pixel_y = -14;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = -14
 	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
@@ -1185,8 +1185,8 @@
 	pixel_y = 5
 	},
 /obj/item/trash/sosjerky{
-	pixel_y = 8;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/nanotrasen)
@@ -1348,8 +1348,8 @@
 	pixel_x = -32
 	},
 /obj/effect/turf_decal/industrial/warning{
-	dir = 1;
-	color = "#808080"
+	color = "#808080";
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -1615,8 +1615,8 @@
 "Bl" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 1;
-	color = "#808080"
+	color = "#808080";
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -2139,8 +2139,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
-	color = "#808080"
+	color = "#808080";
+	dir = 2
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/nanotrasen)

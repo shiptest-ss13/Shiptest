@@ -63,12 +63,12 @@
 /obj/item/encryptionkey/headset_com
 	name = "command radio encryption key"
 	icon_state = "com_cypherkey"
-	channels = list(RADIO_CHANNEL_COMMAND = 1)
+	channels = list(RADIO_CHANNEL_EMERGENCY = 1)
 
 /obj/item/encryptionkey/heads/captain
 	name = "\proper the captain's encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_WIDEBAND = 0) //WS edit - Wideband radio
+	channels = list(RADIO_CHANNEL_EMERGENCY = 1, RADIO_CHANNEL_WIDEBAND = 0) //WS edit - Wideband radio
 
 /obj/item/encryptionkey/headset_cent
 	name = "\improper CentCom radio encryption key"
@@ -77,21 +77,13 @@
 	channels = list(RADIO_CHANNEL_CENTCOM = 1, RADIO_CHANNEL_WIDEBAND = 0) //WS edit- Wideband Radio
 
 /obj/item/encryptionkey/ai //ported from NT, this goes 'inside' the AI.
-	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_AI_PRIVATE = 1)
-
-/obj/item/encryptionkey/secbot
-	channels = list(RADIO_CHANNEL_AI_PRIVATE = 1)
+	channels = list(RADIO_CHANNEL_EMERGENCY = 1)
 
 /obj/item/encryptionkey/solgov
 	name = "\improper SolGov encryption key"
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "solgov_cypherkey"
 	channels = list(RADIO_CHANNEL_SOLGOV = 1)
-
-//	/obj/item/encryptionkey/suns
-//	name = "\improper SUNS encryption key"
-//	icon_state = "suns_cypherkey"
-//	channels = list(RADIO_CHANNEL_SUNS = 1)
 
 /obj/item/encryptionkey/wideband
 	name = "wideband encryption key"
