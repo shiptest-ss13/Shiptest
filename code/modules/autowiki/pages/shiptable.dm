@@ -32,7 +32,7 @@
 			var/ship_name = "\[\[[ship.name]|[shorter_name]\]\]"
 			if(!ship.enabled)
 				ships_output += include_template("Tooltip", list(
-					"1" = ship_name,
+					"1" = "''[ship_name]''",
 					"2" = "This ship is admin-spawn only.",
 					"3" = "f00" //red
 				))
