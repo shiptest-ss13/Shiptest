@@ -109,15 +109,6 @@
 	category = list("AI Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/crewsimov
-	name = "Core Module Design (Crewsimov)"
-	desc = "Allows for the construction of an Crewsimov AI Core Module."
-	id = "crewsimov_module"
-	materials = list(/datum/material/glass = 1000, /datum/material/diamond = 2000, /datum/material/bluespace = 1000)
-	build_path = /obj/item/aiModule/core/full/crewsimov
-	category = list("AI Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/board/paladin_module
 	name = "Core Module Design (P.A.L.A.D.I.N.)"
 	desc = "Allows for the construction of a P.A.L.A.D.I.N. AI Core Module."

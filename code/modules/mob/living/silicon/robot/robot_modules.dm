@@ -601,11 +601,6 @@
 	return ..()
 //WS End
 
-/obj/item/robot_module/security/do_transform_animation()
-	..()
-	to_chat(loc, "<span class='userdanger'>While you have picked the security module, your first priority are your own laws. \
-	For Crewsimov, this means you must follow the orders of criminals on your ship's manifest unless there is a law 1 reason not to.</span>")
-
 /obj/item/robot_module/security/respawn_consumable(mob/living/silicon/robot/R, coeff = 1)
 	..()
 	var/obj/item/gun/energy/e_gun/advtaser/cyborg/T = locate(/obj/item/gun/energy/e_gun/advtaser/cyborg) in basic_modules
@@ -633,11 +628,6 @@
 	moduleselect_icon = "standard"
 	can_be_pushed = FALSE
 	hat_offset = -2
-
-/obj/item/robot_module/peacekeeper/do_transform_animation()
-	..()
-	to_chat(loc, "<span class='userdanger'>Under CREWSIMOV, you are an enforcer of the PEACE and preventer of CREW HARM. \
-	You are not a security module and you are expected to follow orders and prevent harm above all else.</span>")
 
 /obj/item/robot_module/janitor
 	name = "Janitor"
