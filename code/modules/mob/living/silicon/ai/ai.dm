@@ -124,7 +124,7 @@
 	to_chat(src, "<B>To look at other parts of your vessel, click on yourself to get a camera menu.</B>")
 	to_chat(src, "<B>While observing through a camera, you can use most (networked) devices which you can see, such as computers, APCs, intercoms, doors, etc.</B>")
 	to_chat(src, "To use something, simply click on it.")
-	to_chat(src, "Use say :b to speak to other silicons through binary.")
+	to_chat(src, "Use say :b to speak to your cyborgs through binary.")
 
 	job = "AI"
 
