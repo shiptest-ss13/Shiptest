@@ -37,6 +37,7 @@
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
 		/obj/item/attachment/sling
 	)
 	slot_available = list(
@@ -129,6 +130,9 @@
 		update_appearance()
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
+	if(..())
+		return FALSE
+
 	if (!internal_magazine && (A.type in (allowed_ammo_types - blacklisted_ammo_types)))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
@@ -136,8 +140,6 @@
 		else
 			if (tac_reloads)
 				eject_cell(user, C)
-
-	return ..()
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(!latch_closed)
