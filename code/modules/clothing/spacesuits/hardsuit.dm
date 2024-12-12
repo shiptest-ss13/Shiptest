@@ -1036,10 +1036,6 @@
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 5, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75)
 
 	//Engineer Softsuit
-
-	// >softsuit
-	// >hardsuit.dm
-
 /obj/item/clothing/suit/space/engineer
 	name = "engineering space suit"
 	icon_state = "space-independent-eng"
