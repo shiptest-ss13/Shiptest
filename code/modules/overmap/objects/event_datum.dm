@@ -110,7 +110,7 @@
 	..()
 
 	if(safe_speed)
-		token.desc += span_notice("\nYou can safely navigate through this if your ship is travelling under [span_bold(safe_speed)] Gm/s.")
+		token.desc += span_notice("\nYou can safely navigate through this if your ship is travelling under [span_bold("[safe_speed] Gm/s")].")
 
 	var/orestext
 	if(primary_ores)
