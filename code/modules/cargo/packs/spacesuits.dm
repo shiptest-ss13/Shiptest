@@ -53,7 +53,7 @@
 
 //inteq
 
-/datum/supply_pack/spacesuits/spacesuit/binteq
+/datum/supply_pack/spacesuits/spacesuit/inteq
 	name = "Inteq Space Suit Crate"
 	desc = "Contains one IRMG Space Suit, manufactured aboard the Mothership and widely distributed among Inteq. Most of the cost is logistical in nature."
 	cost = 500
