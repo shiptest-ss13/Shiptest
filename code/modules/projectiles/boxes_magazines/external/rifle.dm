@@ -1,13 +1,3 @@
-/obj/item/ammo_box/magazine/m556_42_hydra
-	name = "toploader magazine (5.56x42mm)"
-	desc = "An advanced, 30-round toploading magazine for the M-90gl Carbine. These rounds do moderate damage with good armor penetration."
-	icon_state = "5.56m-1"
-	base_icon_state = "5.56m"
-	ammo_type = /obj/item/ammo_casing/a556_42
-	caliber = "5.56x42mm"
-	max_ammo = 30
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
-
 /obj/item/ammo_box/magazine/rifle47x33mm
 	name = "\improper Solarian LMG magazine (4.73x33mm caseless)"
 	desc = "A large, 50-round magazine for the Solar machine gun. These rounds do moderate damage with good armor penetration."
@@ -72,6 +62,9 @@
 	caliber = ".308"
 	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/f4_308/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/p16 //repath to /obj/item/ammo_box/magazine/generic_556 sometime
 	name = "assault rifle magazine (5.56x42mm CLIP)"
