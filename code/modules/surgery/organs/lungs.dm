@@ -54,7 +54,7 @@
 
 	var/cold_message = "your face freezing and an icicle forming"
 	var/chilly_message = "chilly air"
-	var/chlly_threshold = T20C-7
+	var/chlly_threshold = T20C-20
 	var/cold_level_1_threshold = 240
 	var/cold_level_2_threshold = 220
 	var/cold_level_3_threshold = 200
@@ -65,10 +65,10 @@
 
 	var/hot_message = "your face burning and a searing heat"
 	var/warm_message = "warm air"
-	var/warm_threshold = T20C+10
-	var/heat_level_1_threshold = 316
-	var/heat_level_2_threshold = 323
-	var/heat_level_3_threshold = 343
+	var/warm_threshold = T20C+20
+	var/heat_level_1_threshold = 323
+	var/heat_level_2_threshold = 335
+	var/heat_level_3_threshold = 350
 	var/heat_level_1_damage = HEAT_GAS_DAMAGE_LEVEL_1
 	var/heat_level_2_damage = HEAT_GAS_DAMAGE_LEVEL_2
 	var/heat_level_3_damage = HEAT_GAS_DAMAGE_LEVEL_3
