@@ -612,7 +612,7 @@
 	id = "cargo_bay"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/outpost/external)
+/area/outpost/cargo)
 "eu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
@@ -1290,7 +1290,7 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1,
-/area/outpost/external)
+/area/outpost/cargo)
 "hU" = (
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
@@ -3918,7 +3918,7 @@
 	name = "Custodial Closet"
 	},
 /turf/open/floor/plasteel/dark,
-/area/outpost/hallway/central)
+/area/outpost/crew/bar)
 "xv" = (
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/outpost/hallway/central)
@@ -4307,19 +4307,10 @@
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/starboard)
 "zM" = (
-/obj/machinery/light/dim/directional/north,
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 1
+	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/security)
 "zQ" = (
 /obj/structure/chair/wood,
@@ -5013,6 +5004,21 @@
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/hallway/central)
+"DY" = (
+/obj/machinery/light/dim/directional/north,
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/outpost/security)
 "Ef" = (
 /obj/machinery/light/dim/directional/east,
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -6071,12 +6077,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/outpost/crew/bar)
-"Le" = (
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 4
-	},
-/turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/outpost/security)
 "Ll" = (
 /obj/structure/holosign/barrier/engineering/infinite,
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked,
@@ -6354,7 +6354,7 @@
 	locked = 1
 	},
 /turf/open/floor/concrete/slab_1,
-/area/outpost/external)
+/area/outpost/cargo)
 "MF" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked,
@@ -10862,7 +10862,7 @@ rC
 AE
 fy
 kA
-LU
+fy
 Uu
 iX
 nv
@@ -10953,10 +10953,10 @@ Gt
 MG
 UQ
 ED
-zM
+DY
 pR
-Le
 zM
+DY
 pR
 ED
 Tk
@@ -12719,15 +12719,15 @@ Hv
 Em
 Em
 Em
-px
-px
-px
+eW
+eW
+eW
 MD
 et
 hT
-px
-px
-px
+eW
+eW
+eW
 ZX
 Em
 cT
