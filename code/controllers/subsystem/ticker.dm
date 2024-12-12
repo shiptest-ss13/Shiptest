@@ -62,6 +62,8 @@ SUBSYSTEM_DEF(ticker)
 	/// Why an emergency shuttle was called
 	var/emergency_reason
 
+	/// People who have been commended and will receive a heart
+	var/list/hearts
 
 /datum/controller/subsystem/ticker/Initialize(timeofday)
 	load_mode()
