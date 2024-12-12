@@ -441,3 +441,8 @@
 	name = "Brawler-class Dropship"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/skink
+	file_name = "nanotrasen_skink"
+	name = "Skink-class Cargo Runner"
+	prefix = "NTSV"
