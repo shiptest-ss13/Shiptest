@@ -25,16 +25,6 @@
 "cX" = (
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
 /area/hangar)
-"ef" = (
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/turf_decal/weather/rock{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/hangar)
 "eh" = (
 /obj/structure/flora/rock/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
@@ -60,23 +50,7 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"eD" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/plasteel/tech,
-/area/hangar)
-"eJ" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
-	dir = 1
-	},
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/hangar)
 "eN" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 10
-	},
 /obj/effect/turf_decal/weather/rock{
 	dir = 1
 	},
@@ -88,33 +62,9 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"eV" = (
-/obj/structure/sign/warning/nosmoking/burnt{
-	pixel_y = 28
-	},
-/obj/machinery/computer/hydrogen_exchange,
-/turf/open/floor/plasteel/tech,
-/area/hangar)
 "fl" = (
 /obj/structure/flora/tree/cactus,
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
-/area/hangar)
-"gX" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 5
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ha" = (
-/obj/machinery/door/airlock/maintenance{
-	req_access_txt = "101"
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
 /area/hangar)
 "ho" = (
 /obj/effect/landmark/outpost/hangar_numbers,
@@ -132,34 +82,12 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"hF" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"iB" = (
-/obj/machinery/atmospherics/components/binary/volume_pump{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/hangar)
 "jA" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /turf/open/floor/plasteel/tech,
-/area/hangar)
-"jI" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
 /area/hangar)
 "ks" = (
 /obj/effect/turf_decal/weather/rock{
@@ -181,19 +109,13 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
 /area/hangar)
 "mb" = (
-/obj/structure/railing{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/bar/half{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/grid,
-/area/hangar)
-"mq" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
-	dir = 1
+/obj/effect/turf_decal/weather/rock{
+	dir = 5
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "mt" = (
 /obj/structure/flora/rock/pile/rockplanet,
@@ -218,21 +140,9 @@
 /turf/open/floor/plasteel/dark,
 /area/hangar)
 "nS" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/turf_decal/weather/rock{
 	dir = 1
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ox" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 8
 	},
 /turf/open/floor/plating{
 	planetary_atmos = 1
@@ -259,23 +169,6 @@
 "sk" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/hangar)
-"sn" = (
-/obj/machinery/atmospherics/components/binary/valve/digital,
-/obj/effect/turf_decal/corner/opaque/bar/half,
-/turf/open/floor/plasteel/dark,
-/area/hangar)
-"tz" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/rock{
-	dir = 1
-	},
-/obj/structure/railing/corner{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/hangar)
 "tB" = (
 /obj/effect/turf_decal/corner/opaque/bar/half{
 	dir = 1
@@ -297,13 +190,6 @@
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel/dark,
 /area/hangar)
-"ur" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "uO" = (
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked/lit,
 /area/hangar)
@@ -315,15 +201,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/hangar)
-"we" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/rock{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "wG" = (
 /obj/effect/turf_decal/arrows{
@@ -344,13 +221,6 @@
 /area/hangar)
 "zl" = (
 /turf/closed/indestructible/rock/rockplanet,
-/area/hangar)
-"zn" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/components/unary/hydrogen_pump{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "zr" = (
 /obj/structure/marker_beacon{
@@ -396,13 +266,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
-"AW" = (
-/obj/machinery/atmospherics/components/binary/valve/digital,
-/obj/effect/turf_decal/corner/opaque/bar/half{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/hangar)
 "BC" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 4
@@ -425,13 +288,6 @@
 /obj/structure/flora/rock/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked/lit,
 /area/hangar)
-"DF" = (
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "ED" = (
 /obj/effect/turf_decal/corner/opaque/bar/three_quarters{
 	dir = 4
@@ -441,21 +297,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/hangar)
-"GS" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 9
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "Hi" = (
 /obj/structure/flora/rock/pile/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
-/area/hangar)
-"Hj" = (
-/turf/open/floor/plasteel/tech,
 /area/hangar)
 "Hs" = (
 /obj/effect/landmark/outpost/elevator_machine,
@@ -480,29 +324,9 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"ID" = (
-/obj/effect/turf_decal/industrial/shutoff{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/binary/volume_pump{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/hangar)
 "II" = (
 /obj/structure/flora/tree/cactus,
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked/lit,
-/area/hangar)
-"IX" = (
-/obj/structure/railing/corner{
-	dir = 1;
-	layer = 4.1
-	},
-/obj/effect/turf_decal/corner/opaque/bar/half{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "Jl" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters,
@@ -520,20 +344,6 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Kt" = (
-/obj/effect/turf_decal/corner/opaque/bar/half,
-/obj/machinery/atmospherics/components/binary/valve/digital,
-/turf/open/floor/plasteel/dark,
-/area/hangar)
-"KI" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "Mg" = (
 /obj/effect/turf_decal/corner/opaque/bar/three_quarters{
 	dir = 1
@@ -542,10 +352,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/hangar)
-"Nl" = (
-/obj/item/toy/plush/moth/deadhead,
-/turf/open/floor/plasteel/tech,
 /area/hangar)
 "Nr" = (
 /obj/effect/decal/fakelattice,
@@ -571,15 +377,6 @@
 "Op" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Pg" = (
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
-	dir = 1
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
@@ -637,15 +434,6 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"TR" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/rock{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/hangar)
 "VK" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 8
@@ -654,15 +442,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/hangar)
-"VW" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 6
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
 /area/hangar)
 "Wf" = (
 /obj/effect/turf_decal/corner/opaque/bar/half{
@@ -683,13 +462,6 @@
 /obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked/lit,
 /area/hangar)
-"Yb" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "Yu" = (
 /obj/structure/flora/rock/pile/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/safe/cracked/lit,
@@ -707,12 +479,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/hangar)
-"ZS" = (
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
 /area/hangar)
 
 (1,1,1) = {"
@@ -1275,8 +1041,8 @@ zl
 zl
 uO
 nn
-VW
-sn
+TB
+Pv
 IB
 IB
 IB
@@ -1317,8 +1083,8 @@ IB
 IB
 IB
 IB
-AW
-gX
+qm
+TB
 SC
 Sg
 Sg
@@ -1336,7 +1102,7 @@ zl
 Sg
 cX
 nn
-KI
+TB
 BD
 IB
 IB
@@ -1379,7 +1145,7 @@ IB
 IB
 IB
 ZD
-ox
+TB
 SC
 cX
 Sg
@@ -1397,7 +1163,7 @@ zl
 Sg
 cX
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -1440,7 +1206,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 Sg
@@ -1458,7 +1224,7 @@ zl
 Sg
 fl
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -1501,7 +1267,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 lh
 Hi
@@ -1519,7 +1285,7 @@ Sg
 XF
 uO
 nn
-KI
+TB
 Pv
 zr
 IB
@@ -1562,7 +1328,7 @@ IB
 IB
 zr
 qm
-ox
+TB
 SC
 cX
 uO
@@ -1580,7 +1346,7 @@ mt
 cX
 uO
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -1623,7 +1389,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 fl
@@ -1641,7 +1407,7 @@ zl
 zl
 De
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -1684,7 +1450,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 uO
@@ -1702,7 +1468,7 @@ zl
 zl
 cX
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -1745,7 +1511,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 cX
@@ -1763,7 +1529,7 @@ zl
 zl
 cX
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -1806,7 +1572,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 uO
 XF
@@ -1824,7 +1590,7 @@ zl
 zl
 lh
 nn
-KI
+TB
 Pv
 zr
 IB
@@ -1867,7 +1633,7 @@ IB
 IB
 zr
 qm
-ox
+TB
 SC
 cX
 uO
@@ -1885,7 +1651,7 @@ zl
 zl
 cX
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -1928,7 +1694,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 uO
@@ -1946,7 +1712,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 uk
 IB
 IB
@@ -1989,7 +1755,7 @@ IB
 IB
 IB
 tB
-ox
+TB
 SC
 uO
 Sg
@@ -2007,7 +1773,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -2050,7 +1816,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 uO
 Sg
@@ -2068,7 +1834,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -2111,7 +1877,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 mt
@@ -2129,7 +1895,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 Pv
 zr
 IB
@@ -2172,7 +1938,7 @@ IB
 IB
 zr
 qm
-ox
+TB
 SC
 lh
 Sg
@@ -2190,7 +1956,7 @@ zl
 zl
 eh
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -2233,7 +1999,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 cX
@@ -2251,8 +2017,8 @@ zl
 zl
 lh
 nn
-Pg
-Kt
+TB
+Pv
 IB
 IB
 IB
@@ -2293,8 +2059,8 @@ IB
 IB
 IB
 IB
-AW
-ur
+qm
+TB
 SC
 fl
 lh
@@ -2312,7 +2078,7 @@ zl
 zl
 fl
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -2355,7 +2121,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 CY
@@ -2373,7 +2139,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -2416,7 +2182,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 Sg
@@ -2434,7 +2200,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 Pv
 zr
 IB
@@ -2477,7 +2243,7 @@ IB
 IB
 zr
 qm
-ox
+TB
 SC
 cX
 Sg
@@ -2495,7 +2261,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -2538,7 +2304,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 lh
 Sg
@@ -2556,7 +2322,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 uk
 IB
 IB
@@ -2599,7 +2365,7 @@ IB
 IB
 IB
 tB
-ox
+TB
 SC
 cX
 lh
@@ -2617,7 +2383,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -2660,7 +2426,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 uO
@@ -2678,7 +2444,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -2721,7 +2487,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 uO
 cX
@@ -2739,7 +2505,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 Pv
 zr
 IB
@@ -2782,7 +2548,7 @@ IB
 IB
 zr
 qm
-ox
+TB
 SC
 cX
 II
@@ -2800,7 +2566,7 @@ zl
 zl
 Hi
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -2843,7 +2609,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 lh
 uO
@@ -2861,7 +2627,7 @@ zl
 zl
 lh
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -2904,7 +2670,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 cX
@@ -2922,7 +2688,7 @@ zl
 zl
 Sg
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -2965,7 +2731,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 cX
 XF
@@ -2983,7 +2749,7 @@ zl
 zl
 zl
 nn
-KI
+TB
 Pv
 IB
 IB
@@ -3026,7 +2792,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 uO
 Sg
@@ -3043,8 +2809,8 @@ zl
 zl
 zl
 zl
-tz
-KI
+nn
+TB
 Pv
 zr
 IB
@@ -3087,7 +2853,7 @@ IB
 IB
 zr
 qm
-ox
+TB
 SC
 XF
 zl
@@ -3096,16 +2862,16 @@ zl
 "}
 (40,1,1) = {"
 zl
-sk
-sk
-sk
-sk
-sk
 zl
-sk
-zn
-eJ
-hF
+zl
+zl
+zl
+zl
+zl
+zl
+zl
+nn
+TB
 Pv
 IB
 IB
@@ -3148,7 +2914,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 lh
 zl
@@ -3157,16 +2923,16 @@ zl
 "}
 (41,1,1) = {"
 zl
-sk
-fl
-cX
-fl
-sk
-sk
-sk
-ID
-mb
-hF
+zl
+zl
+zl
+zl
+zl
+zl
+zl
+zl
+nn
+TB
 BD
 IB
 IB
@@ -3209,7 +2975,7 @@ IB
 IB
 IB
 ZD
-ox
+TB
 SC
 Sg
 zl
@@ -3218,16 +2984,16 @@ zl
 "}
 (42,1,1) = {"
 zl
-sk
-cX
-Nl
-cX
-cX
-ha
-Hj
-ZS
-IX
-DF
+zl
+zl
+zl
+zl
+zl
+zl
+zl
+zl
+nn
+TB
 Pv
 IB
 IB
@@ -3270,7 +3036,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 Sg
 zl
@@ -3279,17 +3045,17 @@ zl
 "}
 (43,1,1) = {"
 zl
-sk
-fl
-cX
-fl
-sk
-sk
-eD
-iB
-mq
-Pg
-sn
+zl
+zl
+zl
+zl
+zl
+zl
+zl
+zl
+nn
+TB
+Pv
 IB
 IB
 IB
@@ -3330,8 +3096,8 @@ IB
 IB
 IB
 IB
-AW
-ur
+qm
+TB
 SC
 zl
 zl
@@ -3340,16 +3106,16 @@ zl
 "}
 (44,1,1) = {"
 zl
-sk
-sk
-sk
-sk
-sk
-sk
-eV
-ef
-mq
-KI
+zl
+zl
+zl
+zl
+zl
+zl
+zl
+zl
+nn
+TB
 Pv
 zr
 IB
@@ -3392,7 +3158,7 @@ IB
 IB
 zr
 qm
-ox
+TB
 SC
 zl
 zl
@@ -3406,11 +3172,11 @@ zl
 zl
 zl
 zl
-sk
-sk
 zl
-we
-hF
+zl
+zl
+nn
+TB
 Pv
 IB
 IB
@@ -3453,7 +3219,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 zl
 zl
@@ -3470,7 +3236,7 @@ zl
 zl
 zl
 zl
-zl
+mb
 nS
 Pv
 IB
@@ -3514,7 +3280,7 @@ IB
 IB
 IB
 qm
-ox
+TB
 SC
 zl
 zl
@@ -3531,8 +3297,8 @@ zl
 zl
 zl
 zl
-cX
-TR
+zl
+eN
 Xg
 Og
 Og
@@ -3575,7 +3341,7 @@ Og
 Og
 Og
 PD
-ox
+TB
 SC
 zl
 zl
@@ -3594,49 +3360,49 @@ zl
 lh
 cX
 eN
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-Yb
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-Yb
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-Yb
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-jI
-GS
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
+TB
 SC
 Sg
 zl
