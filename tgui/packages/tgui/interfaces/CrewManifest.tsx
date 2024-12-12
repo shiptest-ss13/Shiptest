@@ -40,9 +40,7 @@ export const CrewManifest = (props, context) => {
                     {crewMember.name}
                   </Table.Cell>
                   <Table.Cell
-                    className={
-                      'CrewManifest__Cell CrewManifest__Icons'
-                    }
+                    className={'CrewManifest__Cell CrewManifest__Icons'}
                     collapsing
                   >
                     {!!crewMember.officer && (
