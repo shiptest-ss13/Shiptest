@@ -120,7 +120,7 @@
 			to_chat(src, "<span class='userdanger'>You have been installed as an AI! </span>")
 			to_chat(src, "<span class='danger'>You must obey your silicon laws above all else. Your objectives will consider you to be dead.</span>")
 
-	to_chat(src, "<B>You are playing as an AI. AIs cannot move, but can interact with many objects while viewing them (through cameras).</B>")
+	to_chat(src, "<B>You are playing as an AI. AI cannot move, but can interact with many objects while viewing them (through cameras).</B>")
 	to_chat(src, "<B>To look at other parts of your vessel, click on yourself to get a camera menu.</B>")
 	to_chat(src, "<B>While observing through a camera, you can use most (networked) devices which you can see, such as computers, APCs, intercoms, doors, etc.</B>")
 	to_chat(src, "To use something, simply click on it.")
