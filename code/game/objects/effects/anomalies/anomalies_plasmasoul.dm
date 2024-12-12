@@ -18,6 +18,10 @@
 	harm_surrounding_mobs()
 
 /obj/effect/anomaly/plasmasoul/Bumped(atom/movable/AM)
+	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
+		return
+
+	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 	var/turf/open/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
 	harm_surrounding_mobs()
 	if(istype(spot))

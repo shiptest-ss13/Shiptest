@@ -31,7 +31,7 @@
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
 /obj/item/ammo_casing/energy/laser/smg
-	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
+	projectile_type = /obj/projectile/beam/laser/weak
 	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"
 	delay = 0.13 SECONDS
@@ -56,10 +56,10 @@
 	select_name = "scatter"
 
 /obj/item/ammo_casing/energy/laser/ultima
-	projectile_type = /obj/projectile/beam/laser/weak/negative_ap/low_range
-	pellets = 3
-	variance = 35
-	e_cost = 2000
+	projectile_type = /obj/projectile/beam/weak
+	pellets = 6
+	variance = 25
+	e_cost = 1000
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/laser/ultima/alt

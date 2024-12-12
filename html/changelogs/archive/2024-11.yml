@@ -112,3 +112,230 @@
   SomeguyManperson:
   - code_imp: weapons which can be wielded may now have a force of 0 when wielded
       or unwielded
+2024-11-11:
+  Erikafox:
+  - balance: Crusher damage has been slightly increased across the board.
+  SomeguyManperson:
+  - bugfix: guns with magazines can no longer sometimes refuse to accept those magazines
+  - balance: etherbor military and civilian weapon cells are interchangeable between
+      military and civilian arms
+2024-11-12:
+  firebudgy:
+  - balance: Kansatsu has been removed from the player-accessible ship pool.
+2024-11-14:
+  randy10122:
+  - bugfix: fixes a typo in the .45 HP ammo crate's description
+2024-11-15:
+  Anticept:
+  - balance: growth serum now maxes out at 30% growth with 30u and has a smooth sliding
+      scale.
+  Burning02:
+  - balance: Rail lights have been brightened
+  Erikafox:
+  - balance: medium and light ngr turrets swapped ammo. mediums should be more effective
+      now.
+  - rscadd: implements thick railings from code
+  - bugfix: platform dirs
+  - imageadd: platform internal corners
+  - balance: legion cores now slowly build up cloneloss when you use them.
+  - balance: Hivebots now have some armor and real bullets. Please bring guns to waste
+      planets.
+  - code_imp: you can now looc while unconscious/in crit.
+  MarkSuckerberg:
+  - rscdel: Most fishing missions. Now only the cooking one, that takes 1-3 of any
+      fish, has been left.
+  - tweak: The fish cooking mission now pays twice as much as it used to, 500 credits
+      per fish. It's also less likely to appear as a mission.
+  Sadhorizon:
+  - rscadd: Added an inteq survival box.
+  SomeguyManperson:
+  - code_imp: legion virus stage messages now properly display themselves. instead
+      of not doing that.
+  - code_imp: legion infesting people now give them a direct chat message. Say hello
+      to your new friend! They might be sticking around your body longer than you
+      will.
+  generalthrax:
+  - balance: Ramzi mobs now use the rusted-red as a reference item instead of blood-reds
+      to have lower armour.
+2024-11-16:
+  Apogee-dev:
+  - balance: Massively buffed combat exosuit armor
+  - balance: Made repairing exosuits with a welder a do_after
+  - balance: Combat exosuits get less healing from repairs
+  - balance: The Paladin now has higher melee armor and lower bullet armor than the
+      Durand
+  Erikafox:
+  - rscadd: Trickwine fluff has been rewritten
+  - balance: Trickwines have been somewhat nerfed
+  - rscdel: prismwine, forcewine
+  - rscadd: N+S has reported losing contact with one of their rockplanet based mining
+      installations
+  - rscadd: You can now add shelves to crate racks
+  - rscadd: you can now buy marine armor at the outpost
+  - balance: marine armor now has different levels of protection.
+  - bugfix: marine crate path + price
+  PositiveEntropy:
+  - rscadd: Ditigrade sprites for NGR and Hardliner regular and officer jumpsuits.
+  Sadhorizon:
+  - bugfix: E-11 Manufactory ruin is no longer dark.
+  firebudgy:
+  - rscadd: New sprites for hard hats and soft caps for Vox! Flipped states and on/off
+      states included.
+  - bugfix: Black Shorts are now able to fit Vox
+  generalthrax:
+  - balance: Frontiersmen vests now count as normal armour vests and not bulletproof
+  - balance: Frontiersmen simplemobs count this for their armour values
+  - balance: Frontie armour vest in the blackmarket cost decreased
+  - bugfix: 9mm AP spawns with 9mm AP now
+2024-11-17:
+  fighterslam:
+  - rscadd: Various minor fixes & QOL adjustments to the Ranger. Major changes include
+      updating all of the Specialist quarters and a complete re-arrangement of the
+      Medical and Supply areas.
+2024-11-18:
+  Apogee-dev:
+  - rscadd: Replaced NGR Hyena with the NGR Derecho-class salvage ship
+  Erikafox:
+  - rscadd: girlfailing adjective
+  - rscadd: vomiting now removes a random amount of disgust.
+  - balance: vomiting should no longer trigger 12000 times in one minute on that one
+      person. im so sorry
+  firebudgy:
+  - rscadd: Four new hats for your blorbo customization! Find them in loadout. Sponsored
+      by Miskilamo Shipbreaking.
+  - bugfix: Vox Frontiersmen Officers finally stitched up their clothing.
+2024-11-20:
+  Erikafox:
+  - balance: frontiersmen turrets kill everything not in their faction
+  - balance: medium marine armor now costs 3k at da outpost.
+  - bugfix: crate shelves now return all metal
+  - bugfix: crate shelves no longer lead to 0 metal stacks
+  - bugfix: Cthonian Platforms now have proper dirs
+  Sadhorizon:
+  - code_imp: Added a Hardliner faction datum.
+  SomeguyManperson:
+  - bugfix: 9mm AP boxes now work right
+  generalthrax:
+  - balance: Replaced rubbershot on the Kilo and Scarab with buckshot
+  - rscadd: Added a soft suit to the Listening Post
+  - bugfix: Fixed the Listening Post Comms Monitor to be the right type
+2024-11-21:
+  Anticept:
+  - bugfix: growth serum capped at 25 instead of 30% for sprite scaling reasons.
+  Erikafox:
+  - rscadd: rifle calibre and pdw calibre rubbershot/armor piercing/hollow point.
+      check da outpost
+  - rscadd: tracker rounds for a few guns. check the black market :3
+  - rscdel: most forms of incendiary ammo
+  - rscdel: A bunch of clown and mime stuff tangentially related to guns
+  - rscadd: walls on wasteworlds now have a chance to start damaged
+  - balance: walls on waste worlds are now universally weaker
+  - rscadd: fax secret documents
+  - rscadd: and space cash and biscuit folders. without
+  MarkSuckerberg:
+  - tweak: Whispering (as in, directly using the verb or typing `#` before your message)
+      will now skip the succumb confirmation prompt, while normal talking will still
+      continue to prompt if you want to succumb.
+  fighterslam:
+  - bugfix: fixes access on the ranger armory
+  firebudgy:
+  - rscadd: Enabled thee screaming audio emote for Vox.
+  generalthrax:
+  - bugfix: You can no longer see through Marauder hardsuits
+2024-11-22:
+  MarkSuckerberg:
+  - bugfix: Examine more should now say the actual object as the subject and not yourself.
+  zimon9:
+  - balance: reduces drink and cigarette vender item costs
+2024-11-23:
+  Apogee-dev:
+  - rscadd: Ramzi and Frontiersman mobs now have more names and descriptions
+  Sadhorizon:
+  - tweak: Dwayne is now made out of titanium.
+  SomeguyManperson:
+  - bugfix: mech repair now loop
+2024-11-24:
+  SomeguyManperson:
+  - bugfix: some weapons are now more visible than they weren't supposed to be (which
+      is none)
+  firebudgy:
+  - rscadd: Species sprites for various Vigilitas items
+  - rscadd: Nanotrasen vox.dmi
+  generalthrax:
+  - rscdel: You no longer slur your speech at low drunkenness.
+  - balance: Thresholds for slurred speech increased as well as the threshold for
+      getting drunk.
+  - rscdel: Making weird groaning sounds and burping loudly at random was removed
+      from slurred speech.
+2024-11-27:
+  Burning02:
+  - rscadd: Adds a singular light tube to the SSU room in the Atlas
+  - bugfix: The Atlas Sergeant can now access their belongings
+2024-11-28:
+  Apogee-dev:
+  - balance: replaced sec hailers in outfits and maps with gas masks or breath masks
+      depending on circumstance
+  Erikafox:
+  - balance: marine armor is now less protective, marginally, and slows you down |more|
+  - rscdel: Marine Helmets
+  - bugfix: legion cores should now ACTUALLY give you cloneloss. my bad there guys.
+      sorry.
+  - rscadd: new detonate effect for phantom cores and plasmasoul cores.
+  - rscadd: Anomaly cores now grind down into something.
+  - balance: plasmasouls suck less
+  - rscadd: hivebots now drop stock parts. Stronger ones drop better parts
+  - balance: claymores are now less explody - they have increased shrapnel prowess
+      to mildly compensate.
+  Gristlebee:
+  - rscadd: Shoulder holsters to outpost for 600
+  - rscadd: Cham holsters to black market
+  - rscadd: Accessories will fall off jumpsuits when destroyed.
+  - balance: Shoulder holsters can only hold one gun a time.
+  - bugfix: Accessory storage acts more consistently like other storage items.
+  MarkSuckerberg:
+  - tweak: Kepori can't hold items in their beak that are (allegedly) meant to be
+      equipped to other slots.
+  Martinpachu:
+  - rscdel: The cargo listing for the SWAT suit.
+  Sadhorizon:
+  - bugfix: Waiters can access Sunskipper kitchen again.
+  Spooky, Erika:
+  - rscadd: thin railings
+  - imageadd: 'spooky: thin railing sprites and sprites for wooden railings'
+  Yule&:
+  - bugfix: Tiles modified by the Floor Painter no longer reset after shuttle transit
+  Zevotech:
+  - rscdel: Removed the unused NT_Asteroid outpost.
+  - rscadd: Remapped and moved the Brazillab ruin to Sandplanet.
+  - bugfix: Fixed the Trabuco's inhand sprites.
+  generalthrax:
+  - rscadd: Adds Dogtag Missions to hunt down Ramzi Clique and Frontiersman NPCS from
+      Ruins
+  - rscadd: Adds Salvage Missions to collect Protolathe or R&D Console Boards
+  - rscdel: Removes Fishing Missions
+  - rscdel: Removes impossible missions like Bluespace Watcher and Abandoned Floorbot
+  - balance: Increases price of Migo missions to be on par with Legion
+  - balance: Increases the value of Strange Crystal missions
+  - rscdel: Remove R&D design board from unlocked Protolathes and Science Protolathes
+2024-11-29:
+  Apogee-dev:
+  - rscdel: Removed inteq and syndicate maid outfits
+  Burning02:
+  - bugfix: Swaps the planetary tiles on Brazil lab to be non-planetary tile types.
+  Gristlebee:
+  - bugfix: Sealed and note placer mapping helper
+  PositiveEntropy:
+  - imageadd: The Vox have been visually overhauled and resprited!
+  - imageadd: 'Adds a new hair gradient: Splotches!'
+  generalthrax:
+  - rscadd: Adds the Gorlex Marauder Breaching Sledgehammer, for both utility and
+      combat. Available in the black market.
+  - rscadd: Sledgehammers are mapped in on the Kali and Derecho-class
+2024-11-30:
+  Jedi-Toothpaste:
+  - bugfix: Claris and Gar can now be stored on your back
+  'rye-rice, firebudgy ':
+  - rscadd: Factional cargo.
+  - rscdel: the remminants of the P16 as it was already completely removed in Serene
+      Sporting
+  - balance: Sporter is now 400 credits.
