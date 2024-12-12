@@ -32,3 +32,10 @@
 	suffix = "icemoon_ice_lodge.dmm"
 	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
 
+/datum/map_template/ruin/icemoon/sensors
+	name = "Sensor Arrays"
+	id = "sensors"
+	description = "A SolGov radar facility for interstellar research, recently taken over by SUNS."
+	suffix = "icemoon_sensors.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_INHOSPITABLE)
+
