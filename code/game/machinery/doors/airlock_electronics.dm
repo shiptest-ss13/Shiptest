@@ -2,6 +2,8 @@
 	name = "airlock electronics"
 	req_access = list(ACCESS_MAINT_TUNNELS)
 	custom_price = 50
+	///how fast the constructed airlock will close
+	var/close_speed = 15 SECONDS
 	/// A list of all granted accesses
 	var/list/accesses = list()
 	/// If the airlock should require ALL or only ONE of the listed accesses
@@ -47,6 +49,7 @@
 
 /obj/item/electronics/airlock/ui_data()
 	var/list/data = list()
+	data["close_speed"] = close_speed
 	data["accesses"] = accesses
 	data["oneAccess"] = one_access
 	data["unres_direction"] = unres_sides
@@ -90,6 +93,18 @@
 			if(isnull(region))
 				return
 			accesses -= get_region_accesses(region)
+			. = TRUE
+		if("close_speed")
+			var/tune = params["tune"]
+			var/adjust = text2num(params["adjust"])
+			if(adjust)
+				tune = close_speed + adjust SECONDS
+				. = TRUE
+			else if(text2num(tune) != null)
+				tune = tune SECONDS
+				. = TRUE
+			if(.)
+				close_speed = clamp(tune, 0, 300)
 			. = TRUE
 
 /obj/item/electronics/airlock/ui_host()
