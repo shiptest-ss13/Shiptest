@@ -518,7 +518,7 @@
 	playsound(A, "rustle", 50, TRUE, -5)
 	if(istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
-		M.putItemFromInventoryInHandIfPossible(A, H.held_index)
+		M.putItemFromInventoryInHandIfPossible(A, H.held_index, FALSE, TRUE)
 		return
 	A.add_fingerprint(M)
 
