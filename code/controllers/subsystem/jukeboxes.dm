@@ -127,7 +127,7 @@ SUBSYSTEM_DEF(jukeboxes)
 				song_played.status = SOUND_MUTE | SOUND_UPDATE
 			else
 				song_played.status = SOUND_UPDATE
-				if(get_area(M) in areas || M in hearerscache)
+				if((get_area(M) in areas) || (M in hearerscache))
 					inrange = TRUE
 
 			M.playsound_local(currentturf, null, jukebox.volume, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000))

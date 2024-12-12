@@ -31,7 +31,7 @@
 			. = FALSE
 
 /turf/proc/block_all_conductivity()
-	conductivity_blocked_directions |= NORTH | SOUTH | EAST | WEST | UP | DOWN
+	conductivity_blocked_directions |= ALL
 
 /atom/movable/proc/BlockThermalConductivity() // Objects that don't let heat through.
 	return FALSE
@@ -47,7 +47,7 @@
 
 		//Clear all adjacent turfs
 		LAZYNULL(atmos_adjacent_turfs)
-		conductivity_blocked_directions = NORTH | SOUTH | EAST | WEST | UP | DOWN
+		conductivity_blocked_directions = ALL
 
 		__update_auxtools_turf_adjacency_info()
 		return
@@ -59,28 +59,39 @@
 	if(locate(/obj/machinery/door/firedoor) in src)
 		src_has_firelock = 2
 
-	LAZYINITLIST(atmos_adjacent_turfs)
-	atmos_adjacent_turfs.Cut()
+	var/blocks_thermal = FALSE
+	if(!thermal_conductivity || !heat_capacity)
+		blocks_thermal = TRUE
+	else
+		for(var/atom/movable/content as anything in contents)
+			if(content.BlockThermalConductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
+				blocks_thermal = TRUE
+				break
+
+	//LAZYINITLIST(atmos_adjacent_turfs) with Cut()
+	if(atmos_adjacent_turfs)
+		atmos_adjacent_turfs.Cut()
+	else
+		atmos_adjacent_turfs = list()
 
 	var/datum/virtual_level/zone = get_virtual_level()
-	if(!zone)
-		CRASH("ImmediateCalculateAdjacentTurfs() called on a turf with no virtual level")
 
-	for(var/direction in GLOB.cardinals_multiz)
-		var/turf/current_turf = zone.get_zone_step(src, direction)
-		if(current_turf.blocks_air)
+	//Turfs above/below can only exist in zones
+	for(var/direction in (zone ? GLOB.cardinals_multiz : GLOB.cardinals))
+		var/turf/current_turf = zone?.get_zone_step(src, direction) || get_step(src, direction)
+		if(!current_turf || current_turf.blocks_air)
 			conductivity_blocked_directions |= direction
 			continue
 
 		//Conductivity Update
 		var/opp = REVERSE_DIR(direction)
-		//all these must be above zero for auxmos to even consider them
-		if(!thermal_conductivity || !heat_capacity || !current_turf.thermal_conductivity || !current_turf.heat_capacity)
+		//these must be above zero for auxmos to even consider them
+		if(blocks_thermal || !current_turf.thermal_conductivity || !current_turf.heat_capacity)
 			conductivity_blocked_directions |= direction
 			current_turf.conductivity_blocked_directions |= opp
 		else
-			for(var/obj/O in contents + current_turf.contents)
-				if(O.BlockThermalConductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
+			for(var/atom/movable/content as anything in current_turf.contents)
+				if(content.BlockThermalConductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
 					conductivity_blocked_directions |= direction
 					current_turf.conductivity_blocked_directions |= opp
 					break

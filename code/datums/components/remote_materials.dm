@@ -39,7 +39,7 @@ handles linking back and forth.
 	mat_container = null
 	return ..()
 
-/datum/component/remote_materials/OnDeconstruct(disassembled)
+/datum/component/remote_materials/proc/OnDeconstruct(disassembled)
 	SIGNAL_HANDLER
 	if(!silo && mat_container)
 		// specify explicitly in case the other component is deleted first
