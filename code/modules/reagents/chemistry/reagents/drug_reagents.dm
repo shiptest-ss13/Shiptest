@@ -448,3 +448,28 @@
 	if(prob(15))
 		M.adjustToxLoss(2, 0)
 	..()
+
+/datum/reagent/drug/cannabis
+	name = "Cannabis"
+	description = "A psychoactive drug from the Cannabis plant used for recreational purposes."
+	color = "#059033"
+	overdose_threshold = INFINITY
+	metabolization_rate = 0.125 * REAGENTS_METABOLISM
+
+/datum/reagent/drug/cannabis/on_mob_life(mob/living/carbon/M)
+	M.apply_status_effect(/datum/status_effect/stoned)
+	M.adjust_nutrition(-1 * REM) //munchies
+	if(prob(35))
+		var/smoke_message = pick("You feel relaxed.","You feel calmed.","Your mouth feels dry.","You could use some water.","Your heart beats quickly.","You feel clumsy.","You crave junk food.","You notice you've been moving more slowly.")
+		to_chat(M, span_notice("[smoke_message]"))
+	if(prob(10))
+		if(M.body_position == LYING_DOWN && !M.IsSleeping())
+			to_chat(M, span_warning("You doze off..."))
+			M.Sleeping(10 SECONDS)
+		else
+			var/eepy_message = pick("Oh stars you're sleepy", "Your eyelids feel heavy.", "You could use a power nap.", "It'd be nice to lay down a bit....")
+			to_chat(M, span_notice("[eepy_message]"))
+	if(prob(20) && M.buckled && M.body_position != LYING_DOWN && !M.IsParalyzed())
+		to_chat(M, span_warning("It's too comfy to move..."))
+		M.Paralyze(10 SECONDS)
+	return ..()
