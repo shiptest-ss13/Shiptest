@@ -56,3 +56,10 @@
 	name = "Space Mall"
 	description = "An old shopping centre, owned by a former member of Nanotrasen's board of directors.."
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
+
+/datum/map_template/ruin/space/scrapstation
+	id = "scrapstation"
+	suffix = "scrapstation.dmm"
+	name = "Ramzi Scrapping Station"
+	description = "A Syndicate FOB dating back to the ICW, now home to the Ramzi Clique and their latest haul."
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
