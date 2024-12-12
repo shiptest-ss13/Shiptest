@@ -1273,7 +1273,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return TRUE
 		if(ITEM_SLOT_BACKPACK)
 			if(H.back)
-				if(SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_CAN_INSERT, I, H, TRUE))
+				if(SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_CAN_INSERT, I, H, TRUE, TRUE))
 					return TRUE
 			return FALSE
 	return FALSE //Unsupported slot

@@ -224,8 +224,7 @@
 
 	l_hand = /obj/item/storage/briefcase
 
-	backpack = /obj/item/storage/backpack/satchel/leather
-	satchel = /obj/item/storage/backpack/satchel/leather
+	backpack = /obj/item/storage/backpack/industrial
 
 	l_pocket = /obj/item/toy/crayon/white
 	r_pocket = /obj/item/radio
