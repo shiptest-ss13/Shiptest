@@ -203,18 +203,16 @@
 		. += "<B>AGE:</B>"
 		. += "[registered_age] years old [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 	if(length(ship_access))
-		. += "<B>SHIP ACCESS:</B>"
-
 		var/list/ship_factions = list()
-		for(var/datum/overmap/ship/controlled/ship in ship_access)
-			var/faction = ship.get_faction()
-			if(!(faction in ship_factions))
-				ship_factions += faction
-		. += "<B>[ship_factions.Join(", ")]</B>"
-
 		var/list/ship_names = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
+			ship_factions |= ship.source_template.faction.name
 			ship_names += ship.name
+
+		. += "<B>FACTION ACCESS:</B>"
+		. += "[ship_factions.Join(", ")]"
+
+		. += "<B>SHIP ACCESS:</B>"
 		. += "[ship_names.Join(", ")]"
 
 /obj/item/card/id/GetAccess()
@@ -271,7 +269,7 @@
 // Finds the referenced ship in the list
 /obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship)
 	if (ship)
-		return ship_access.Find(ship)
+		return ship in ship_access
 
 /*
 Usage:
