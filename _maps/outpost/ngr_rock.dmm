@@ -221,13 +221,13 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "bv" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = -28
 	},
+/obj/machinery/atmospherics/components/binary/volume_pump{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/outpost/cargo)
 "bw" = (
@@ -431,10 +431,15 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
 /area/outpost/external)
 "cV" = (
-/obj/machinery/atmospherics/components/unary/hydrogen_pump{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/outline/orange,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister{
+	icon_state = "orangews";
+	name = "hydrogen canister";
+	desc = "Hydrogen. Used in thruster fuel."
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo)
 "cY" = (
@@ -672,7 +677,7 @@
 /area/outpost/cargo)
 "eE" = (
 /obj/machinery/door/airlock/grunge{
-	name = "Lounge";
+	name = "Private Lounge";
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1127,6 +1132,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
+"he" = (
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/crew/lounge)
 "hg" = (
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
@@ -3143,7 +3158,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/outpost/hallway/central)
 "sY" = (
@@ -3188,6 +3202,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/lounge)
 "tl" = (
@@ -3852,11 +3869,11 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe/wet/cracked,
 /area/outpost/maintenance/starboard)
 "wZ" = (
-/obj/machinery/atmospherics/components/binary/volume_pump{
-	dir = 8
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/dim/directional/south,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/outpost/cargo)
 "xd" = (
@@ -4183,6 +4200,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "yZ" = (
@@ -5442,15 +5462,10 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "GV" = (
-/obj/machinery/atmospherics/components/unary/portables_connector{
+/obj/effect/turf_decal/industrial/outline/orange,
+/obj/machinery/atmospherics/components/unary/hydrogen_pump{
 	dir = 4
 	},
-/obj/machinery/portable_atmospherics/canister{
-	icon_state = "orangews";
-	name = "hydrogen canister";
-	desc = "Hydrogen. Used in thruster fuel."
-	},
-/obj/effect/turf_decal/industrial/outline/orange,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo)
 "GY" = (
@@ -5518,6 +5533,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/lounge)
 "HC" = (
@@ -7228,6 +7246,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "Sn" = (
@@ -7412,6 +7433,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/grunge{
 	name = "Lounge"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/lounge)
@@ -11528,7 +11552,7 @@ oG
 xF
 kx
 LC
-LW
+he
 oG
 fI
 nv
