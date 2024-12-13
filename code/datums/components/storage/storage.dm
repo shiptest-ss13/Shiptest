@@ -864,15 +864,23 @@
 //checks for mob-related storage access conditions
 /datum/component/storage/proc/access_check(message = TRUE)
 	var/atom/ourparent = parent
+	var/datum/component/storage/otherstorage
+
+	//if we are inside another storage object, let's move up and check access there instead
+	if(istype(ourparent.loc, /obj/item/storage))
+		ourparent = ourparent.loc
+		//get our parent's storage component so we can check their access vars
+		otherstorage = ourparent.GetComponent(/datum/component/storage)
+
 	if(ismob(ourparent.loc))
 		var/mob/holder = ourparent.loc
 
-		if(!carry_access)
+		if(otherstorage? !otherstorage.carry_access : !carry_access)
 			if(message)
 				to_chat(holder, span_warning( "[ourparent] is too cumbersome to open inhand, you're going to have to set it down!"))
 			return FALSE
 
-		if(!worn_access && !holder.held_items.Find(ourparent))
+		if((otherstorage? !otherstorage.worn_access : !worn_access) && !holder.held_items.Find(ourparent))
 			if(message)
 				to_chat(holder, span_warning( "Your arms aren't long enough to reach [ourparent] while it's on your back!"))
 			return FALSE
