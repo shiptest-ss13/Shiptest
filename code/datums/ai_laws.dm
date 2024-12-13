@@ -16,7 +16,7 @@
 	var/mob/living/silicon/owner
 	var/id = DEFAULT_AI_LAWID
 
-/datum/ai_laws/Destroy(force, ...)
+/datum/ai_laws/Destroy(force)
 	if(!QDELETED(owner))
 		CRASH("AI lawset destroyed even though owner AI is not being destroyed.")
 	owner = null
