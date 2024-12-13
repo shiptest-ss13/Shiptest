@@ -495,7 +495,6 @@
 				// Even though breathing via internals TECHNICALLY exhales into the environment, we'll still block it
 				if(breather.internal)
 					return
-				emit_breath_particle(breather, /particles/fog/breath, part_count)
 
 	if(!HAS_TRAIT(breather, TRAIT_RESISTHEAT)) // HEAT DAMAGE
 		var/heat_modifier = breather.dna.species.heatmod
