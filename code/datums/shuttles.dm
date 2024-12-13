@@ -379,12 +379,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
-//your subshuttle here //why is my subshuttle here
-/datum/map_template/shuttle/subshuttles/heron
-	file_name = "nanotrasen_falcon"
-	name = "Falcon Dropship"
-	token_icon_state = "ship_tiny_generic"
-	prefix = "NTSV"
+//your subshuttle here //why is my subshuttle here // its no longer there
 
 /datum/map_template/shuttle/subshuttles/crux
 	file_name = "minutemen_crux"
@@ -445,4 +440,5 @@
 /datum/map_template/shuttle/subshuttles/skink
 	file_name = "nanotrasen_skink"
 	name = "Skink-class Cargo Runner"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "NTSV"
