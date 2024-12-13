@@ -74,7 +74,11 @@ would spawn and follow the beaker, even if it is carried or thrown.
 /datum/effect_system/proc/scoot(direction, obj/effect/ref, steps)
 	if(QDELETED(src))
 		return
-	ref.forceMove(get_step(ref, direction))
+	var/step = get_step(ref, direction)
+	if(isnull(step))
+		return
+
+	ref.forceMove(step)
 
 	if(steps)
 		addtimer(CALLBACK(src, PROC_REF(scoot), direction, ref, steps - 1), 5)
