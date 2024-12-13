@@ -121,40 +121,6 @@
 	LAZYNULL(atmos_adjacent_turfs)
 	__update_auxtools_turf_adjacency_info()
 
-/**
- * Returns a list of adjacent turfs that can share air with this one.
- * alldir includes adjacent diagonal tiles that can share
- * air with both of the related adjacent cardinal tiles
- */
-/turf/proc/GetAtmosAdjacentTurfs(alldir = FALSE)
-	if(!alldir)
-		return LAZYCOPY(atmos_adjacent_turfs)
-
-	var/list/adjacent_turfs = LAZYCOPY(atmos_adjacent_turfs)
-
-	for(var/dir in GLOB.diagonals)
-		var/turf/S = get_step(src, dir)
-		if(!S)
-			continue
-		adjacent_turfs += S
-
-	//This is hot code so we're doing as little as we possibly can
-	var/datum/virtual_level/zone = get_virtual_level()
-	if(!zone)
-		return adjacent_turfs
-
-	var/turf/above = zone.get_above_turf(src)
-	var/turf/below = zone.get_below_turf(src)
-
-	if(above)
-		adjacent_turfs += above
-		adjacent_turfs += above.atmos_adjacent_turfs
-	if(below)
-		adjacent_turfs += below
-		adjacent_turfs += below.atmos_adjacent_turfs
-
-	return adjacent_turfs
-
 /turf/proc/get_atmos_adjacent_turfs()
 	return LAZYCOPY(atmos_adjacent_turfs)
 
