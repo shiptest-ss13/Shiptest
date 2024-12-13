@@ -13,7 +13,6 @@
 	throw_speed = 3
 	throw_range = 7
 	var/empty = FALSE
-	var/max_items = 10
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/case/ComponentInitialize()
