@@ -13,8 +13,8 @@
 	clawfootstep = FOOTSTEP_SAND
 	layer = SAND_TURF_LAYER
 	digResult = /obj/item/stack/ore/glass/whitesands
-	max_icon_states = 9
-	floor_variance = 40
+	floor_variance = 83
+	max_icon_states = 5
 	slowdown = 1.5
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)

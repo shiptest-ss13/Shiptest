@@ -447,7 +447,7 @@ SUBSYSTEM_DEF(overmap)
  * Creates a single outpost somewhere near the center of the system.
  */
 /datum/overmap_star_system/proc/spawn_outpost()
-	var/list/location = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
+	var/list/location = get_unused_overmap_square_in_radius(rand(4, round(size/5)))
 
 	var/datum/overmap/outpost/found_type
 	if(fexists(OUTPOST_OVERRIDE_FILEPATH))

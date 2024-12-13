@@ -3,7 +3,7 @@
 	name = "desert sand"
 	desc = "It's coarse and gets everywhere."
 	baseturfs = /turf/open/floor/plating/asteroid/desert
-	icon = 'icons/turf/planetary/desert.dmi'
+	icon = 'icons/turf/floors/desertsand.dmi'
 	icon_state = "sand"
 	base_icon_state = "sand"
 	layer = SAND_TURF_LAYER
@@ -17,14 +17,14 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
 
-	floor_variance = 20
-	max_icon_states = 9
+	floor_variance = 83
+	max_icon_states = 5
 
 	has_footsteps = TRUE
 	footstep_icon_state = "desert"
 	smooth_icon = 'icons/turf/floors/desertsand.dmi'
 
-/turf/open/floor/plating/asteroid/sand/Initialize(mapload, inherited_virtual_z)
+/turf/open/floor/plating/asteroid/desert/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(prob(floor_variance))
 		add_overlay("sandalt_[rand(1,max_icon_states)]")

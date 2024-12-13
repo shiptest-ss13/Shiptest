@@ -5,6 +5,8 @@
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "sand"
 	base_icon_state = "sand"
+	floor_variance = 83
+	max_icon_states = 5
 	baseturfs = /turf/open/floor/plating/asteroid/sand
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
@@ -14,11 +16,12 @@
 	digResult = /obj/item/stack/ore/glass
 	planetary_atmos = TRUE
 	digResult = /obj/item/stack/ore/glass/beach
-	floor_variance = 0
+
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
 	slowdown = 0.6
+
 
 	has_footsteps = TRUE
 	footstep_icon_state = "beach"
@@ -27,12 +30,8 @@
 
 /turf/open/floor/plating/asteroid/sand/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	if(smoothing_flags)
-		var/matrix/translation = new
-		translation.Translate(-19, -19)
-		transform = translation
-		icon = smooth_icon
-		icon_plating = null
+	if(prob(floor_variance))
+		add_overlay("sandalt_[rand(1,max_icon_states)]")
 
 /turf/open/floor/plating/asteroid/sand/lit
 	light_range = 2

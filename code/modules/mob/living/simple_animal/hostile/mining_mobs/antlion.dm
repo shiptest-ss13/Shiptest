@@ -9,6 +9,7 @@
 	emote_hear = list("clicks its mandibles")
 	emote_see = list("shakes the sand off itself")
 
+	health = 55
 	maxHealth = 55
 
 	melee_damage_lower = 10
@@ -86,6 +87,7 @@
 	icon_living = "queen"
 	icon_dead = "queen_dead"
 	mob_size = MOB_SIZE_LARGE
+	health = 175
 	maxHealth = 175
 	melee_damage_lower = 25
 	melee_damage_upper = 25

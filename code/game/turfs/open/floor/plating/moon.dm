@@ -19,8 +19,8 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
 
-	floor_variance = 89
-	max_icon_states = 9
+	floor_variance = 83
+	max_icon_states = 5
 
 	has_footsteps = TRUE
 	footstep_icon_state = "moon"

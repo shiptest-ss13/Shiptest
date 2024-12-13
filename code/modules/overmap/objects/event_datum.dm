@@ -109,9 +109,6 @@
 	icon_suffix = "[rand(1, 4)]"
 	..()
 
-	if(safe_speed)
-		token.desc += span_notice("\nYou can safely navigate through this if your ship is travelling under [span_bold("[safe_speed] Gm/s")].")
-
 	var/orestext
 	if(primary_ores)
 		orestext += span_boldnotice("\nInitial scans show a high concentration of the following ores:\n")
@@ -121,6 +118,9 @@
 		desc += orestext
 
 		token.desc += span_notice("\nYou could land within the [src] if you were to [span_bold("Dock to Empty Space")] while flying over...\n")
+
+	if(safe_speed)
+		token.desc += span_notice("\nYou can safely navigate through this if your ship is travelling under [span_bold("[safe_speed] Gm/s")].")
 
 	if(current_overmap.override_object_colors)
 		token.color = current_overmap.hazard_primary_color
