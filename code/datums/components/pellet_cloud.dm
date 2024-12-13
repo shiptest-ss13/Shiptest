@@ -83,20 +83,22 @@
 	UnregisterSignal(parent, list(COMSIG_PARENT_PREQDELETED, COMSIG_PELLET_CLOUD_INIT, COMSIG_GRENADE_PRIME, COMSIG_GRENADE_ARMED, COMSIG_MOVABLE_MOVED, COMSIG_MINE_TRIGGERED, COMSIG_ITEM_DROPPED))
 
 
-//create_casing_pellets() is for directed pellet clouds for ammo casings that have multiple pellets (buckshot and scatter lasers for instance)
-//
-//Honestly this is mostly just a rehash of [/obj/item/ammo_casing/proc/fire_casing()] for pellet counts > 1, except this lets us tamper with the pellets and hook onto them for tracking purposes.
-//The arguments really don't matter, this proc is triggered by COMSIG_PELLET_CLOUD_INIT which is only for this really, it's just a big mess of the state vars we need for doing the stuff over here.
+/**
+ * create_casing_pellets() is for directed pellet clouds for ammo casings that have multiple pellets (buckshot and scatter lasers for instance)
+ *
+ * Honestly this is mostly just a rehash of [/obj/item/ammo_casing/proc/fire_casing] for pellet counts > 1, except this lets us tamper with the pellets and hook onto them for tracking purposes.
+ * The arguments really don't matter, while this proc is triggered by COMSIG_FIRE_CASING, it's just a big mess of the state vars we need for doing the stuff over here.
+ */
+/datum/component/pellet_cloud/proc/create_casing_pellets(obj/item/ammo_casing/shell, atom/target, mob/living/user, fired_from, randomspread, spread, zone_override, params, distro, obj/projectile/proj)
+	SIGNAL_HANDLER
 
-
-/datum/component/pellet_cloud/proc/create_casing_pellets(obj/item/ammo_casing/shell, atom/target, mob/living/user, fired_from, randomspread, spread, zone_override, params, distro)
-	if(user)
-		shooter = user
-	else
-		shooter = fired_from
-	var/targloc = get_turf(target)
+	shooter = user
+	var/turf/target_loc = get_turf(target)
 	if(!zone_override)
 		zone_override = shooter.zone_selected
+
+	// things like mouth executions and gunpoints can multiply the damage of projectiles, so this makes sure those effects are applied to each pellet instead of just one
+	var/original_damage = shell.BB.damage
 
 	for(var/i in 1 to num_pellets)
 		shell.ready_proj(target, user, SUPPRESSED_VERY, zone_override, fired_from)
@@ -107,14 +109,14 @@
 				spread = round((i / num_pellets - 0.5) * distro)
 
 		RegisterSignal(shell.BB, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit))
-		RegisterSignal(shell.BB, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
+		RegisterSignals(shell.BB, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
+		shell.BB.damage = original_damage
 		pellets += shell.BB
-		if(user)
-			if(!shell.throw_proj(target, targloc, shooter, params, spread))
-				return
-		else
-			if(!shell.throw_proj(target, targloc, null, params, spread, shooter))
-				return
+		var/turf/current_loc = get_turf(fired_from)
+		if (!istype(target_loc) || !istype(current_loc) || !(shell.BB))
+			return
+		INVOKE_ASYNC(shell, TYPE_PROC_REF(/obj/item/ammo_casing, throw_proj), target, target_loc, shooter, params, spread, fired_from)
+
 		if(i != num_pellets)
 			shell.newshot()
 
@@ -208,6 +210,8 @@
 
 ///One of our pellets hit something, record what it was and check if we're done (terminated == num_pellets)
 /datum/component/pellet_cloud/proc/pellet_hit(obj/projectile/P, atom/movable/firer, atom/target, Angle)
+	SIGNAL_HANDLER
+
 	pellets -= P
 	terminated++
 	hits++
@@ -220,6 +224,8 @@
 
 ///One of our pellets disappeared due to hitting their max range (or just somehow got qdel'd), remove it from our list and check if we're done (terminated == num_pellets)
 /datum/component/pellet_cloud/proc/pellet_range(obj/projectile/P)
+	SIGNAL_HANDLER
+
 	pellets -= P
 	terminated++
 	UnregisterSignal(P, list(COMSIG_PARENT_QDELETING, COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PROJECTILE_SELF_ON_HIT))
@@ -271,6 +277,8 @@
 
 /// Look alive, we're armed! Now we start watching to see if anyone's covering us
 /datum/component/pellet_cloud/proc/grenade_armed(obj/item/nade)
+	SIGNAL_HANDLER
+
 	if(ismob(nade.loc))
 		shooter = nade.loc
 	LAZYINITLIST(bodies)
@@ -283,11 +291,15 @@
 
 /// Someone dropped the grenade, so set them to the shooter in case they're on top of it when it goes off
 /datum/component/pellet_cloud/proc/grenade_dropped(obj/item/nade, mob/living/slick_willy)
+	SIGNAL_HANDLER
+
 	shooter = slick_willy
 	grenade_moved()
 
 /// Our grenade has moved, reset var/list/bodies so we're "on top" of any mobs currently on the tile
 /datum/component/pellet_cloud/proc/grenade_moved()
+	SIGNAL_HANDLER
+
 	LAZYCLEARLIST(bodies)
 	for(var/mob/living/new_mob in get_turf(parent))
 		RegisterSignal(new_mob, COMSIG_PARENT_QDELETING, PROC_REF(on_target_qdel), override=TRUE)
@@ -295,10 +307,14 @@
 
 /// Someone who was originally "under" the grenade has moved off the tile and is now eligible for being a martyr and "covering" it
 /datum/component/pellet_cloud/proc/grenade_uncrossed(datum/source, atom/movable/AM, direction)
+	SIGNAL_HANDLER
+
 	LAZYREMOVE(bodies, AM)
 
 /// Our grenade or landmine or caseless shell or whatever tried deleting itself, so we intervene and nullspace it until we're done here
 /datum/component/pellet_cloud/proc/nullspace_parent()
+	SIGNAL_HANDLER
+
 	var/atom/movable/AM = parent
 	AM.moveToNullspace()
 	queued_delete = TRUE
