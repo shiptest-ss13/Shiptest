@@ -611,6 +611,14 @@
 	light_range = 2
 	},
 /area/outpost/external)
+"ep" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/outpost/maintenance/starboard)
 "et" = (
 /obj/machinery/door/poddoor/shutters/indestructible{
 	dir = 8;
@@ -1132,16 +1140,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
-"he" = (
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
-/turf/open/floor/plasteel/dark,
-/area/outpost/crew/lounge)
 "hg" = (
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
@@ -1420,9 +1418,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/rilena/random{
-	pixel_y = 31
-	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "iW" = (
@@ -1529,6 +1525,16 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/outpost/maintenance/starboard)
+"jR" = (
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/crew/lounge)
 "jW" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -2051,6 +2057,22 @@
 /obj/effect/turf_decal/weather/rock,
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/starboard)
+"mZ" = (
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/rilena/random{
+	pixel_y = 31
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/hallway/central)
 "na" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -6455,6 +6477,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /obj/effect/turf_decal/siding/wideplating/dark,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo)
 "Nd" = (
@@ -8962,7 +8985,7 @@ Al
 gk
 dj
 cj
-ZW
+ep
 LU
 YO
 YO
@@ -9630,7 +9653,7 @@ Dy
 Ng
 No
 fy
-fI
+mZ
 vh
 ZE
 Ce
@@ -11552,7 +11575,7 @@ oG
 xF
 kx
 LC
-he
+jR
 oG
 fI
 nv
