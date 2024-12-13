@@ -33,6 +33,8 @@
 #define SHUTTLE_TOUCHES_EDGE "landing area overlaps with map border"
 #define SHUTTLE_OUR_MOBILEDOCK_FORBIDS_DOCKING "our mobile docking port is docked, forbidding docking"
 #define SHUTTLE_TARGET_MOBILEDOCK_FORBIDS_DOCKING "target's mobile docking port is docked forbidding docking"
+#define SHUTTLE_PORT_IS_ADJUSTING "port is in the middle of adjusting another ship to land"
+
 
 //Launching Shuttles to CentCom
 #define NOLAUNCH -1

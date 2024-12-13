@@ -341,7 +341,8 @@
 		dwidth = olddwidth
 		height = oldheight
 		width = oldwidth
-		is_adjusting_now = FALSE
+	is_adjusting_now = FALSE
+
 
 /obj/docking_port/stationary/transit
 	name = "transit dock"
@@ -600,6 +601,8 @@
 			return SHUTTLE_ALREADY_DOCKED
 
 	if(S.adjust_dock_for_landing && intention_to_dock)
+		if(S.is_adjusting_now)
+			return SHUTTLE_PORT_IS_ADJUSTING
 		S.adjust_dock_to_shuttle(src)
 
 	if(istype(S, /obj/docking_port/stationary/transit))
