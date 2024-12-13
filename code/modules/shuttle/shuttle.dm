@@ -341,6 +341,7 @@
 		dwidth = olddwidth
 		height = oldheight
 		width = oldwidth
+		break
 	is_adjusting_now = FALSE
 
 
