@@ -119,7 +119,7 @@
 		return //Dont fuck over stranded people
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
-	var/list/results = current_overmap.get_unused_overmap_square() //unsure on why theyre "reset" instead of deleted; ask mark about this sometime
+	var/list/results = current_overmap.get_unused_overmap_square() //dynamic turfs reseting was intentional, apparently isn't a worry, so maybe refactor this into asking SSovermap to spawn a new dynamic datum then self destructing
 	overmap_move(results["x"], results["y"])
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)

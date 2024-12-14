@@ -193,6 +193,7 @@
 
 /obj/effect/countdown/overmap_event
 	name = "overmap event countdown"
+	mouse_opacity = FALSE
 	invisibility = 0
 	text_size = 2
 

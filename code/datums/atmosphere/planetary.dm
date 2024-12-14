@@ -8,13 +8,13 @@
 	)
 	normal_gases = list(
 		GAS_O2=10,
-		GAS_CO=10,
+		GAS_CO=2,
 		GAS_CO2=10,
 	)
 	restricted_gases = list(
 		GAS_ARGON=0.1,
 		GAS_BZ= 0.1,
-		GAS_SO2 = 0.1,
+		GAS_CO = 0.1,
 	)
 	restricted_chance = 50
 
@@ -191,6 +191,7 @@
 	normal_gases = list(
 		GAS_CO2=3,
 		GAS_N2=1,
+		GAS_CO=1,
 	)
 	restricted_gases = list(
 		GAS_CO=1,

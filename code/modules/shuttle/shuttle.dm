@@ -334,7 +334,9 @@
 	for(var/turf/closed/indestructible/edgeturf as anything in return_turfs())
 		if(!istype(edgeturf))
 			continue
-		stack_trace("Dock adjusted to fit a vessel but somehow it's bounds ended up in an edge! This doesn't seem right so resetting it back to how it was before as a failsafe!")
+		message_admins("[src] [ADMIN_JMP(src)] adjusted to fit a vessel but somehow it's bounds ended up in an edge tile ([ADMIN_JMP(edgeturf)])! This doesn't seem right so resetting it back to how it was before as a failsafe!")
+		stack_trace("[src] adjusted to fit a vessel but somehow it's bounds ended up in an edge! This doesn't seem right so resetting it back to how it was before as a failsafe!")
+
 		forceMove(oldloc)
 		dir = olddir
 		dheight = olddheight

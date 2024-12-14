@@ -14,11 +14,9 @@
 
 	melee_damage_lower = 10
 	melee_damage_upper = 10
-	//sharpness = SHARP_EDGED
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
-	//attack_vis_effect = ATTACK_EFFECT_BITE
 
 	//Their "ranged" ability is burrowing
 	ranged = TRUE
@@ -39,8 +37,13 @@
 		burrow()
 
 /mob/living/simple_animal/hostile/asteroid/antlion/proc/burrow()
-	ranged_cooldown = world.time + ranged_cooldown_time
 	var/turf/my_turf = get_turf(src)
+	if(!isopenturf(my_turf))
+		return
+	if(!istype(my_turf, /turf/open/floor/plating/asteroid))
+		return
+
+	ranged_cooldown = world.time + ranged_cooldown_time
 	playsound(my_turf, 'sound/effects/bamf.ogg', 50, 0)
 	visible_message("<span class='notice'>\The [src] burrows into \the [my_turf]!</span>")
 	burrowed = TRUE
@@ -53,15 +56,19 @@
 /mob/living/simple_animal/hostile/asteroid/antlion/proc/diggy()
 	var/list/turf_targets = list()
 	if(target)
-		for(var/turf/T in range(1, get_turf(target)))
-			if(!isopenturf(T))
+		for(var/turf/possible_emergening_spot in range(1, get_turf(target)))
+			if(!isopenturf(possible_emergening_spot))
 				continue
-			turf_targets += T
+			if(!istype(possible_emergening_spot, /turf/open/floor/plating/asteroid))
+				continue
+			turf_targets += possible_emergening_spot
 	else
-		for(var/turf/T in view(5, src))
-			if(!isopenturf(T))
+		for(var/turf/possible_emergening_spot in view(5, src))
+			if(!isopenturf(possible_emergening_spot))
 				continue
-			turf_targets += T
+			if(!istype(possible_emergening_spot, /turf/open/floor/plating/asteroid))
+				continue
+			turf_targets += possible_emergening_spot
 	if(length(turf_targets))
 		forceMove(pick(turf_targets))
 

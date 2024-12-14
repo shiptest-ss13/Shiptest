@@ -184,23 +184,12 @@
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
 
+//TODO: SUPER LEGACY,  REMOVE
 /turf/open/floor/plating/asteroid/snow/ice
-	name = "icy snow"
-	desc = "Looks colder."
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
 	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120"
-	floor_variance = 0
-	icon_state = "snow-ice"
-	icon_plating = "snow-ice"
-	base_icon_state = "snow_cavern"
-	footstep = FOOTSTEP_FLOOR
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	max_icon_states = 7
-	light_color = COLOR_ICEPLANET_LIGHT
 
-
+//TODO: SUPER LEGACY, REMOVE AS WELL
 /turf/open/floor/plating/asteroid/snow/ice/icemoon
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
