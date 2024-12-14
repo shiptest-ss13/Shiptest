@@ -196,6 +196,14 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/thrusters/gas
 	)
 
+/datum/supply_pack/mech/equipment/ionthrust
+	name = "Exosuit Ion thruster kit"
+	desc = "An electrical powered thruster pack, perfect for exosuits without a functional way to refill more tradional RCS thrusters."
+	cost = 2000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/thrusters/ion
+	)
+
 /datum/supply_pack/mech/equipment/ripley_upgrade
 	name = "APLU upgrade kit"
 	desc = "Contains an APLU MK II upgrade kit. The upgrade will replace the cockpit with a spaceworthy canopy, but the added weight makes it slower."

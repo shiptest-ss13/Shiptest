@@ -280,7 +280,6 @@
 	min_val = -1
 
 /datum/config_entry/flag/starlight
-/datum/config_entry/flag/grey_assistants
 
 /datum/config_entry/flag/allow_random_events	// Enables random events mid-round when set
 

@@ -39,12 +39,18 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/assbelt
+	name = "Assault Belt"
+	desc = "Contains an assault belt, with not one, not two, but six pockets."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/assault)
+	crate_name = "assault belt crate"
+
 /datum/supply_pack/tools/cellcharger
 	name = "Cell Charger Crate"
 	desc = "Contains a cell charger, able to charge all sorts of power cells."
-	cost = 2000
+	cost = 1000
 	contains = list(/obj/machinery/cell_charger)
-
 
 /datum/supply_pack/tools/rped
 	name = "RPED crate"
@@ -73,13 +79,6 @@
 	cost = 1750
 	contains = list(/obj/item/pickaxe/drill/jackhammer)
 	crate_name = "jackhammer crate"
-
-/datum/supply_pack/tools/plasmacutter
-	name = "Plasmacutter Crate"
-	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
-	cost = 1250
-	contains = list(/obj/item/gun/energy/plasmacutter)
-	crate_name = "plasmacutter crate"
 
 /datum/supply_pack/tools/metalfoam
 	name = "Metal Foam Grenade Crate"
@@ -112,9 +111,26 @@
 /datum/supply_pack/tools/anglegrinder
 	name = "Angle Grinder"
 	desc = "Contains one angle grinder pack, a tool used for quick structure deconstruction and salvaging"
-	cost = 2000
-	contains = list(/obj/item/gear_pack/anglegrinder)
-	crate_name = "Angle Grinder"
+	cost = 1500
+	contains = list(
+		/obj/item/gear_pack/anglegrinder,
+		/obj/item/radio/headset/alt
+		)
+	crate_name = "angle grinder crate"
+
+/datum/supply_pack/tools/electric_welder
+	name = "Electric Welder"
+	desc = "Contains a single electric welder, useful for many applications. No fuel required!"
+	cost = 850
+	contains = list(/obj/item/weldingtool/electric)
+	crate_name = "electric welder crate"
+
+/datum/supply_pack/tools/plasmacutter
+	name = "Plasmacutter Crate"
+	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
+	cost = 2500
+	contains = list(/obj/item/gun/energy/plasmacutter)
+	crate_name = "plasmacutter crate"
 
 /*
 		Liquid tanks

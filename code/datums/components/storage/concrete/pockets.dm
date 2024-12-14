@@ -107,7 +107,13 @@
 	can_hold = typecacheof(list(
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
-		/obj/item/ammo_box))
+		/obj/item/gun/energy/laser,
+		/obj/item/gun/energy/e_gun,
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me
+	can_hold_max_of_items = typecacheof(list(
+		/obj/item/gun = 1,
+	))
 
 /datum/component/storage/concrete/pockets/holster/real_location()
 	// if the component is reparented to a jumpsuit, the items still go in the protector
@@ -136,17 +142,3 @@
 		/obj/item/gun/energy/dueling,
 		/obj/item/gun/ballistic/shotgun,
 		/obj/item/gun/ballistic/rocketlauncher))
-
-/datum/component/storage/concrete/pockets/holster/chameleon
-	max_items = 1
-
-/datum/component/storage/concrete/pockets/holster/chameleon/Initialize()
-	original_parent = parent
-	. = ..()
-	can_hold = typecacheof(list(
-		/obj/item/gun/ballistic/automatic/pistol/ringneck,
-		/obj/item/gun/ballistic/revolver,
-		/obj/item/gun/energy/e_gun/mini,
-		/obj/item/gun/energy/disabler,
-		/obj/item/gun/energy/pulse/carbine,
-		/obj/item/gun/energy/dueling))

@@ -34,9 +34,9 @@
 		var/required_living_minutes = CONFIG_GET(number/panic_bunker_living)
 		var/living_minutes = client.get_exp_living(TRUE)
 		if (required_living_minutes > living_minutes)
-			client.interviewee = TRUE
 			register_for_interview()
 			return
+	client.interviewee = FALSE
 
 	new_player_panel()
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)

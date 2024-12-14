@@ -83,6 +83,10 @@
 /obj/projectile/beam/weaker
 	damage = 10
 
+/obj/projectile/beam/weak/low_range
+	damage = 10
+	range = 9
+
 /obj/projectile/beam/weak/penetrator
 	armour_penetration = 50
 
