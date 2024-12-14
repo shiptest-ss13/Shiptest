@@ -104,4 +104,16 @@
 
 /area/ruin/wasteplanet/wasteplanet_icwbase
 	name = "ICW Base Warehouse"
-	icon_state = "dk_yellow"
+	icon_state = "storage"
+
+/area/ruin/wasteplanet/wasteplanet_icwbase
+	name = "ICW Base Main Hab Zone"
+	icon_state = "crew_quarters"
+
+/area/ruin/wasteplanet/wasteplanet_icwbase
+	name = "ICW Base Main Hab Zone"
+	icon_state = "crew_quarters"
+
+/area/ruin/wasteplanet/wasteplanet_icwbase
+	name = "ICW Base Cybersun Wing"
+	icon_state = "blue"
