@@ -86,9 +86,9 @@
 	flora_spawn_chance = 3
 	mob_spawn_chance = 0
 
-	feature_spawn_chance = 1.2
+	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/greeble/random_ruin_greeble = 20,
+		/obj/effect/spawner/random/greeble/random_ruin_greeble = 15,
 		/obj/structure/vein/moon = 2,
 		/obj/structure/vein/moon/classtwo = 4,
 		/obj/structure/vein/moon/classthree = 1,
@@ -98,7 +98,7 @@
 /datum/biome/rocky
 	open_turf_types = list(/turf/open/floor/plating/asteroid/moon_coarse/lit/surface_craters = 1)
 
-	feature_spawn_chance = 0.5
+	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
 		/obj/effect/spawner/random/greeble/random_ruin_greeble = 1
 	)

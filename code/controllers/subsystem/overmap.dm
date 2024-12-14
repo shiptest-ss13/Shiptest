@@ -783,6 +783,7 @@ SUBSYSTEM_DEF(overmap)
 	var/datum/overmap/jump_point/point1 = new(get_overmap_edge(point_direction), src, point2)
 	point1.dir = point_direction
 	point1.alter_token_appearance()
+	point2.alter_token_appearance()
 	return point1
 
 /**
