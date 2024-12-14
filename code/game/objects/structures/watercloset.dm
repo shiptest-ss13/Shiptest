@@ -477,6 +477,13 @@
 	/// if it can be seen through when closed
 	var/opaque_closed = FALSE
 
+/obj/structure/curtain/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE,CALLBACK(src, PROC_REF(can_be_rotated)),null)
+
+/obj/structure/curtain/proc/can_be_rotated(mob/user, rotation_type)
+	return !anchored
+
 /obj/structure/curtain/proc/toggle()
 	open = !open
 	if(open)

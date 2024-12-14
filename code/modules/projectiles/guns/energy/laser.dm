@@ -2,7 +2,7 @@
 	name = "SL L-204 laser gun"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
 
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=2000)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
@@ -129,6 +129,7 @@
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/xray)
 	ammo_x_offset = 3
+	w_class = WEIGHT_CLASS_BULKY
 
 ////////Laser Tag////////////////////
 
@@ -171,6 +172,7 @@
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima)
+	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
@@ -202,7 +204,6 @@
 	item_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 4
-	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/mini,
@@ -253,6 +254,7 @@
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50)
 	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_EOEHOMA
 
 	wield_delay = 0.7 SECONDS
