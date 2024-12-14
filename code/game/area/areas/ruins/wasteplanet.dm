@@ -79,3 +79,29 @@
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship
 	name = "Abandoned Shipbreaking Yard"
 	icon_state = "red"
+
+//Syndicate Comms+Med base
+
+/area/ruin/wasteplanet/wasteplanet_icwbase
+	name = "ICW Base Tcomms room"
+	icon_state = "bridge"
+
+/area/ruin/wasteplanet/wasteplanet_icwbase
+	name = "ICW Base Command Zone"
+	icon_state = "bridge"
+
+/area/ruin/wasteplanet/wasteplanet_icwbase
+	name = "ICW Base Vault"
+	icon_state = "security"
+
+/area/ruin/wasteplanet/wasteplanet_icwbase
+	name = "ICW Base Engineering Bay"
+	icon_state = "engine"
+
+/area/ruin/wasteplanet/wasteplanet_icwbase
+	name = "ICW Base Tcomms Monitoring"
+	icon_state = "bridge"
+
+/area/ruin/wasteplanet/wasteplanet_icwbase
+	name = "ICW Base Warehouse"
+	icon_state = "dk_yellow"
