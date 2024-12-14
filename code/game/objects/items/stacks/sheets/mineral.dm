@@ -166,11 +166,11 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
  * Plasma
  */
 /obj/item/stack/sheet/mineral/plasma
-	name = "solid plasma"
-	icon = 'icons/obj/materials/sheets.dmi'
-	icon_state = "sheet-plasma"
-	item_state = "sheet-plasma"
-	singular_name = "plasma sheet"
+	name = "plasma crystals"
+	icon = 'icons/obj/materials/ingots.dmi'
+	icon_state = "ingot-plasma"
+	item_state = "ingot-plasma"
+	singular_name = "plasma crystal"
 	sheettype = "plasma"
 	resistance_flags = FLAMMABLE
 	max_integrity = 100
@@ -584,12 +584,12 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	amount = 5
 
 /obj/item/stack/sheet/mineral/silicon
-	name = "silicon crystal"
+	name = "silicon crystals"
 	desc = "Looks tasty."
 	icon = 'icons/obj/materials/ingots.dmi'
 	icon_state = "ingot-silicon"
 	item_state = "ingot-silicon"
-	singular_name = "ingot-silicon"
+	singular_name = "silicon crystal"
 	sheettype = "lead"
 	custom_materials = list(/datum/material/silicon=MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/toxin/leadacetate = 20) //maybe make it a more unique reagent?
