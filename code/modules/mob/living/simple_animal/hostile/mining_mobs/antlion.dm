@@ -48,7 +48,7 @@
 	visible_message("<span class='notice'>\The [src] burrows into \the [my_turf]!</span>")
 	burrowed = TRUE
 	invisibility = INVISIBILITY_MAXIMUM
-	AIStatus = AI_OFF
+	toggle_ai(AI_OFF)
 	mob_size = MOB_SIZE_TINY
 	new /obj/effect/temp_visual/burrow_sand_splash(my_turf)
 	addtimer(CALLBACK(src, PROC_REF(diggy)), 2 SECONDS)
@@ -79,7 +79,7 @@
 	visible_message("<span class='danger'>\The [src] erupts from \the [my_turf]!</span>")
 	invisibility = 0
 	burrowed = FALSE
-	AIStatus = AI_ON
+	toggle_ai(AI_ON)
 	mob_size = initial(mob_size)
 	playsound(my_turf, 'sound/effects/bamf.ogg', 50, 0)
 	new /obj/effect/temp_visual/burrow_sand_splash(my_turf)

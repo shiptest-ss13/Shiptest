@@ -189,12 +189,3 @@
 /mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub/death(gibbed)
 	. = ..()
 	flame_radius(get_turf(src), 2)
-
-
-/proc/flame_radius(turf/epicenter, radius = 1, power = 5, fire_color = "red")
-	if(!isturf(epicenter))
-		CRASH("flame_radius used without a valid turf parameter")
-	radius = clamp(radius, 1, 50) //Sanitize inputs
-
-	for(var/turf/turf_to_flame as anything in filled_turfs(epicenter, radius, "circle"))
-		turf_to_flame.IgniteTurf(power, fire_color)
