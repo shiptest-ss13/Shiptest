@@ -101,6 +101,7 @@
 	blood_overlay_type = "coat"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	togglename = "buttons"
+	allowed = list(/obj/item/gun)
 
 ///////////////
 //Spacesuits//
