@@ -181,6 +181,12 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"uf" = (
+/obj/effect/turf_decal/corner/opaque/bar/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/hangar)
 "uk" = (
 /obj/effect/turf_decal/corner/opaque/bar/half,
 /obj/machinery/light/floor/hangar,
@@ -340,6 +346,21 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"KE" = (
+/obj/effect/turf_decal/weather/rock{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/rack,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/turf/open/floor/plasteel/dark,
+/area/hangar)
 "Mg" = (
 /obj/effect/turf_decal/corner/opaque/bar/three_quarters{
 	dir = 1
@@ -410,6 +431,10 @@
 /obj/effect/turf_decal/corner/opaque/bar/half,
 /obj/effect/turf_decal/weather/rock,
 /turf/open/floor/plasteel/dark,
+/area/hangar)
+"SL" = (
+/obj/structure/flora/grass/rockplanet/dead,
+/turf/open/floor/plating/asteroid/snow/temperatre,
 /area/hangar)
 "SY" = (
 /obj/effect/turf_decal/weather/rock,
@@ -776,7 +801,7 @@ rH
 rH
 qm
 TB
-SC
+Pv
 Sg
 zl
 zl
@@ -853,7 +878,7 @@ zl
 zl
 zl
 mt
-nn
+qm
 TB
 Pv
 IB
@@ -1020,7 +1045,7 @@ IB
 zr
 qm
 TB
-SC
+Pv
 Sg
 zl
 zl
@@ -1081,7 +1106,7 @@ IB
 IB
 qm
 TB
-SC
+Pv
 Sg
 Sg
 zl
@@ -2560,8 +2585,8 @@ zl
 zl
 zl
 zl
-Hi
-nn
+mt
+qm
 TB
 Pv
 IB
@@ -2621,8 +2646,8 @@ zl
 zl
 zl
 zl
-lh
-nn
+SL
+qm
 TB
 Pv
 IB
@@ -2683,7 +2708,7 @@ zl
 zl
 zl
 Sg
-nn
+qm
 TB
 Pv
 IB
@@ -2972,7 +2997,7 @@ IB
 IB
 ZD
 TB
-SC
+Pv
 Sg
 zl
 zl
@@ -3033,7 +3058,7 @@ IB
 IB
 qm
 TB
-SC
+Pv
 Sg
 zl
 zl
@@ -3399,7 +3424,7 @@ TB
 TB
 TB
 TB
-SC
+Pv
 Sg
 zl
 zl
@@ -3455,7 +3480,7 @@ Rh
 Rh
 Rh
 Rh
-Rh
+uf
 Rh
 Rh
 Rh
@@ -3792,8 +3817,8 @@ sk
 sk
 sk
 sk
-BC
-BC
+KE
+KE
 BC
 ks
 uO
