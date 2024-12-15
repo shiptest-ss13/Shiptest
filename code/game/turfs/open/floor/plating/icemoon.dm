@@ -99,11 +99,6 @@
 	light_power = 1
 	baseturfs = /turf/open/floor/plating/asteroid/icerock/lit
 
-/turf/open/floor/plating/asteroid/snow/lit/safe
-	light_range = 2
-	light_power = 1
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-
 /turf/open/floor/plating/asteroid/snow/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
@@ -116,8 +111,16 @@
 	planetary_atmos = FALSE
 
 /turf/open/floor/plating/asteroid/snow/safe
+	baseturfs = /turf/open/floor/plating/asteroid/icerock/lit
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
+/turf/open/floor/plating/asteroid/snow/safe/rock
+	baseturfs = /turf/open/floor/plating/asteroid/icerock/lit
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+
+/turf/open/floor/plating/asteroid/snow/safe/rock/lit
+	light_range = 2
+	light_power = 0.6
 
 /turf/open/floor/plating/asteroid/snow/under
 	icon_state = "snow_dug"
