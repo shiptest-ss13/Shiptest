@@ -204,8 +204,10 @@
 /obj/item/clothing/under/clip/formal,
 /obj/item/clothing/suit/toggle/lawyer/clip,
 /obj/item/storage/backpack/security/clip,
-/obj/item/storage/backpack/satchel/cap,
 /obj/item/radio/headset/clip/captain,
+/obj/item/clothing/head/clip/slouch,
+/obj/item/clothing/shoes/laceup,
+/obj/item/storage/backpack/satchel/cap,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "hu" = (
@@ -253,6 +255,13 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 9
 	},
+/obj/structure/closet/wall/directional/west,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/duffelbag,
+/obj/item/clothing/under/clip,
+/obj/item/clothing/under/clip,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "jr" = (
@@ -679,6 +688,11 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 12
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "tG" = (
@@ -958,12 +972,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 10
 	},
-/obj/machinery/firealarm/directional/east,
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = -10
-	},
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 8;
 	piping_layer = 2
@@ -1053,6 +1061,7 @@
 	},
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/trash/candy,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "FB" = (
@@ -1777,6 +1786,7 @@
 	icon_state = "0-9"
 	},
 /obj/machinery/light/directional/east,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Wd" = (
