@@ -307,32 +307,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "kg" = (
-/obj/item/clothing/head/clip{
-	pixel_x = -9;
-	pixel_y = -3
-	},
-/obj/item/clothing/head/clip{
-	pixel_x = -9;
-	pixel_y = -3
-	},
-/obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = 8;
-	pixel_y = 1
-	},
-/obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = 8;
-	pixel_y = 1
-	},
-/obj/item/storage/belt/military/clip,
-/obj/item/storage/belt/military/clip,
-/obj/item/reagent_containers/spray/pepper{
-	pixel_y = -6;
-	pixel_x = 9
-	},
-/obj/item/reagent_containers/spray/pepper{
-	pixel_y = -6;
-	pixel_x = 9
-	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -342,17 +316,39 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/loading{
+	icon_state = "loadingarea_stripes";
+	color = "#75A2BB"
+	},
+/obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northleft{
 	req_access = list(1)
 	},
-/obj/structure/table/reinforced,
-/obj/item/clothing/head/helmet/bulletproof/x11/clip{
-	pixel_y = 5;
-	pixel_x = -4
+/obj/item/clothing/suit/armor/vest{
+	pixel_y = 3
 	},
-/obj/item/clothing/head/helmet/bulletproof/x11/clip{
-	pixel_y = 5;
-	pixel_x = -4
+/obj/item/clothing/suit/armor/vest{
+	pixel_y = 3
+	},
+/obj/item/clothing/head/helmet/bulletproof/m10{
+	pixel_y = 1
+	},
+/obj/item/clothing/head/helmet/bulletproof/m10{
+	pixel_y = 1
+	},
+/obj/item/storage/box/ammo/c10mm{
+	pixel_y = -3
+	},
+/obj/item/storage/box/ammo/c10mm{
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/spray/pepper{
+	pixel_y = 3;
+	pixel_x = 9
+	},
+/obj/item/reagent_containers/spray/pepper{
+	pixel_y = 3;
+	pixel_x = 9
 	},
 /turf/open/floor/pod/dark,
 /area/ship/hallway/central)
@@ -1150,6 +1146,9 @@
 	},
 /obj/structure/curtain,
 /obj/machinery/light/small/directional/west,
+/obj/structure/sign/poster/official/cleanliness{
+	pixel_y = -32
+	},
 /turf/open/floor/plastic,
 /area/ship/hallway/central)
 "GP" = (
@@ -1253,19 +1252,23 @@
 	pixel_y = 4;
 	pixel_x = 5
 	},
-/obj/item/clothing/glasses/meson{
-	pixel_y = 2;
-	pixel_x = 1
+/obj/structure/sign/poster/clip/enlist{
+	pixel_y = -32
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/gps{
+	pixel_x = -5;
+	pixel_y = 3
 	},
 /obj/item/gps{
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/item/clothing/glasses/meson,
-/obj/structure/sign/poster/clip/enlist{
-	pixel_y = -32
+/obj/item/clothing/glasses/meson{
+	pixel_y = 2;
+	pixel_x = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Kx" = (
@@ -1313,13 +1316,15 @@
 /turf/template_noop,
 /area/space)
 "LX" = (
-/obj/machinery/airalarm/directional/east,
 /obj/structure/dresser{
 	dir = 4
 	},
 /obj/item/flashlight/lamp/green{
 	pixel_x = 6;
 	pixel_y = 14
+	},
+/obj/structure/sign/poster/clip/lanchester{
+	pixel_x = 32
 	},
 /turf/open/floor/carpet/blue{
 	icon_state = "carpet_blue-203"
@@ -1446,20 +1451,12 @@
 	},
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
-/obj/machinery/door/window/brigdoor/northright{
-	req_access = list(1)
-	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/box/ammo/c10mm{
-	pixel_x = -15;
-	pixel_y = -1
-	},
-/obj/item/storage/box/ammo/c10mm{
-	pixel_x = -15;
-	pixel_y = -1
+/obj/machinery/door/window/brigdoor/northright{
+	req_access = list(1)
 	},
 /turf/open/floor/pod/dark,
 /area/ship/hallway/central)
