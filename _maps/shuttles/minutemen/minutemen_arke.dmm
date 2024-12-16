@@ -100,10 +100,13 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = -27
+	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "cu" = (
 /obj/machinery/door/poddoor{
 	id = "arke_cargo"
@@ -127,9 +130,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/telecomms/server/presets/minutemen,
 /turf/open/floor/circuit/telecomms,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "dt" = (
 /obj/structure/tank_dispenser/oxygen,
 /obj/machinery/light/directional/east,
@@ -190,9 +191,7 @@
 	},
 /obj/machinery/telecomms/bus/preset_five,
 /turf/open/floor/circuit/telecomms,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "fW" = (
 /obj/effect/turf_decal/minutemen/corner,
 /obj/structure/closet/secure_closet/wall/directional/north{
@@ -247,9 +246,7 @@
 	network = "clip_commnet"
 	},
 /turf/open/floor/circuit/telecomms,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "iW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -281,9 +278,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/telecomms_floor/tatmos,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "jZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -535,9 +530,7 @@
 "pO" = (
 /obj/structure/sign/warning/coldtemp,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "pS" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/light/floor,
@@ -643,9 +636,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/circuit/telecomms,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "sR" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -655,9 +646,7 @@
 /area/ship/crew)
 "sW" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "sZ" = (
 /obj/structure/lattice/catwalk,
 /obj/effect/decal/fakelattice{
@@ -880,9 +869,7 @@
 	icon = 'icons/obj/stairs.dmi';
 	dir = 1
 	},
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "zs" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1046,9 +1033,7 @@
 "EN" = (
 /obj/structure/sign/clip,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "Fu" = (
 /obj/machinery/firealarm/directional/north,
 /obj/machinery/light/directional/east,
@@ -1158,9 +1143,7 @@
 /obj/machinery/light/directional/west,
 /obj/machinery/telecomms/processor/preset_five,
 /turf/open/floor/circuit/telecomms,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "GS" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
@@ -1209,9 +1192,7 @@
 	network = "clip_commnet"
 	},
 /turf/open/floor/circuit/telecomms,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "Iw" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
@@ -1437,9 +1418,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor/tatmos,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "OJ" = (
 /obj/effect/turf_decal/industrial/loading{
 	icon_state = "loadingarea_stripes";
@@ -1464,17 +1443,13 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/telecomms/relay/preset/minutemen,
 /turf/open/floor/circuit/telecomms,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "Qn" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor/tatmos,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "QN" = (
 /obj/structure/table/wood,
 /obj/machinery/airalarm/directional/south,
@@ -1496,11 +1471,6 @@
 	dir = 6
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = 12;
-	pixel_y = -16
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1508,9 +1478,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor/tatmos,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 "QW" = (
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/light/dim/directional/north,
@@ -1841,9 +1809,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/telecomms_floor/tatmos,
-/area/ship/engineering/communications{
-	lightswitch = 1
-	})
+/area/ship/engineering/communications)
 
 (1,1,1) = {"
 es
