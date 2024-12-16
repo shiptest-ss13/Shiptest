@@ -20,7 +20,7 @@
 /datum/component/connect_vlevel_behalf/RegisterWithParent()
 	RegisterSignal(tracked, COMSIG_MOVABLE_VIRTUAL_Z_CHANGE, PROC_REF(on_vlevel_changed))
 	RegisterSignal(tracked, COMSIG_PARENT_QDELETING, PROC_REF(handle_tracked_qdel))
-	update_signals()
+	update_signals(tracked.get_virtual_level())
 
 /datum/component/connect_vlevel_behalf/UnregisterFromParent()
 	unregister_signals()
@@ -40,7 +40,7 @@
 	if(isnull(virtual_level))
 		return
 
-	tracked_level = tracked.virtual_z
+	tracked_level = virtual_level
 
 	for (var/signal in connections)
 		parent.RegisterSignal(tracked_level, signal, connections[signal])
@@ -55,5 +55,6 @@
 
 /datum/component/connect_vlevel_behalf/proc/on_vlevel_changed(atom/movable/listener, virtual_z, old_virtual_z)
 	SIGNAL_HANDLER
-	update_signals()
+	unregister_signals()
+	update_signals(virtual_z)
 
