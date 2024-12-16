@@ -1,0 +1,35 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Arke-class Surveying Ship",
+	"prefix": "CLSV",
+	"namelists": ["GENERAL", "CLIP MINUTEMEN", "NATURAL_AGGRESSIVE"],
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pellentesque, nisl in dapibus ornare, lectus est congue elit, nec tempus arcu nibh ut nisl. Maecenas et facilisis ipsum. Donec consequat, metus non placerat faucibus, urna felis tincidunt.",
+	"tags": [
+		"Telecomms",
+		"Specialist"
+	],
+	"map_short_name": "Arke-class",
+	"faction": "/datum/faction/clip",
+	"map_path": "_maps/shuttles/minutemen/minutemen_arke.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/clip/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Corpsman": {
+			"outfit": "/datum/outfit/job/clip/doctor",
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/clip/mechanic",
+			"slots": 1
+		},
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
