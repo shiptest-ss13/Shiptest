@@ -43,7 +43,7 @@
 		spawn_amount = _spawn_amount
 
 	var/static/list/connections = list(COMSIG_VLEVEL_CLEARING = PROC_REF(stop_spawning))
-	AddElement(/datum/element/connect_vlevel, parent, connections)
+	AddComponent(/datum/component/connect_vlevel_behalf, parent, connections)
 
 	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING), PROC_REF(stop_spawning))
 	RegisterSignal(parent, list(COMSIG_SPAWNER_TOGGLE_SPAWNING), PROC_REF(toggle_spawning))

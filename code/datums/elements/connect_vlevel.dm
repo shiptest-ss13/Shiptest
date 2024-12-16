@@ -15,14 +15,14 @@
 	src.connections = connections
 
 	var/turf/location = get_turf(listener)
-	RegisterSignal(listener, COMSIG_ATOM_VIRTUAL_Z_CHANGE, PROC_REF(on_vlevel_changed))
+	RegisterSignal(listener, COMSIG_MOVABLE_VIRTUAL_Z_CHANGE, PROC_REF(on_vlevel_changed))
 	update_signals(listener, location.virtual_z)
 
 /datum/element/connect_vlevel/Detach(atom/movable/listener)
 	. = ..()
 	var/turf/location = get_turf(listener)
 	unregister_signals(listener, location.virtual_z)
-	UnregisterSignal(listener, COMSIG_ATOM_VIRTUAL_Z_CHANGE)
+	UnregisterSignal(listener, COMSIG_MOVABLE_VIRTUAL_Z_CHANGE)
 
 /datum/element/connect_vlevel/proc/update_signals(atom/movable/listener, virtual_z)
 	var/datum/virtual_level/virtual_level = SSmapping.virtual_z_translation["[virtual_z]"]
