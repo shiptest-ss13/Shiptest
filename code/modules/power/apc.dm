@@ -286,7 +286,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	has_electronics = APC_ELECTRONICS_SECURED
 	// is starting with a power cell installed, create it and set its charge level
 	if(cell_type)
-		cell = new cell_type
+		cell = new cell_type(src)
 		cell.charge = start_charge * cell.maxcharge / 100 		// (convert percentage to actual value)
 
 	var/area/A = loc.loc
