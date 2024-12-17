@@ -331,6 +331,7 @@
 
 /obj/machinery/roulette/update_overlays()
 	. = ..()
+
 	if(machine_stat & MAINT)
 		return
 
