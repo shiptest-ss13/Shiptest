@@ -352,7 +352,7 @@ export const RouletteBetTable = (props, context) => {
       <tr>
         <td colSpan="2">
           <Box bold m={1} fontSize="14px" textAlign="center">
-            Swipe an ID card with a connected account to spin!
+            Swipe a bank card with a connected account to spin!
           </Box>
         </td>
       </tr>
