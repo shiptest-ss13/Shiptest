@@ -2,6 +2,8 @@
 |		  Slot Machines		  	|
 |	  Original code by Glloyd	|
 |	  Tgstation port by Miauw	|
+|	  Shiptest Adjustments by	|
+|			 Flopppi			|
 \*******************************/
 
 #define SPIN_PRICE 5
@@ -11,8 +13,6 @@
 #define SPIN_TIME 65 //As always, deciseconds.
 #define REEL_DEACTIVATE_DELAY 7
 #define SEVEN "<font color='red'>7</font>"
-#define CASH 1
-#define COIN 2
 
 /obj/machinery/computer/slot_machine
 	name = "slot machine"
@@ -31,9 +31,6 @@
 	var/working = 0
 	var/balance = 0 //How much money is in the machine, ready to be CONSUMED.
 	var/jackpots = 0
-	var/paymode = CASH //toggles between CASH/COIN, defined above
-	var/cointype = /obj/item/coin/iron //default cointype
-	var/list/coinvalues = list()
 	var/list/reels = list(list("", "", "") = 0, list("", "", "") = 0, list("", "", "") = 0, list("", "", "") = 0, list("", "", "") = 0)
 	var/list/symbols = list(SEVEN = 1, "<font color='orange'>&</font>" = 2, "<font color='yellow'>@</font>" = 2, "<font color='green'>$</font>" = 2, "<font color='blue'>?</font>" = 2, "<font color='grey'>#</font>" = 2, "<font color='white'>!</font>" = 2, "<font color='fuchsia'>%</font>" = 2) //if people are winning too much, multiply every number in this list by 2 and see if they are still winning too much.
 
@@ -50,10 +47,6 @@
 		randomize_reels()
 
 	INVOKE_ASYNC(src, PROC_REF(toggle_reel_spin), FALSE)
-
-	for(cointype in typesof(/obj/item/coin))
-		var/obj/item/coin/C = cointype
-		coinvalues["[cointype]"] = initial(C.value)
 
 /obj/machinery/computer/slot_machine/Destroy()
 	if(balance)
@@ -82,45 +75,13 @@
 
 
 /obj/machinery/computer/slot_machine/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/coin))
-		var/obj/item/coin/C = I
-		if(paymode == COIN)
-			if(prob(2))
-				if(!user.transferItemToLoc(C, drop_location(), silent = FALSE))
-					return
-				C.throw_at(user, 3, 10)
-				if(prob(10))
-					balance = max(balance - SPIN_PRICE, 0)
-				to_chat(user, "<span class='warning'>[src] spits your coin back out!</span>")
-
-			else
-				if(!user.temporarilyRemoveItemFromInventory(C))
-					return
-				to_chat(user, "<span class='notice'>You insert [C] into [src]'s slot!</span>")
-				balance += C.value
-				qdel(C)
-		else
-			to_chat(user, "<span class='warning'>This machine is only accepting cash!</span>")
-	else if(istype(I, /obj/item/spacecash/bundle))
-		if(paymode == CASH)
-			var/obj/item/spacecash/bundle/H = I
-			if(!user.temporarilyRemoveItemFromInventory(H))
-				return
-			to_chat(user, "<span class='notice'>You insert [H.value] credits into [src]'s! slot</span>")
-			balance += H.value
-			qdel(H)
-		else
-			to_chat(user, "<span class='warning'>This machine is only accepting coins!</span>")
-	else if(I.tool_behaviour == TOOL_MULTITOOL)
-		if(balance > 0)
-			visible_message("<b>[src]</b> says, 'ERROR! Please empty the machine balance before altering paymode'") //Prevents converting coins into holocredits and vice versa
-		else
-			if(paymode == CASH)
-				paymode = COIN
-				visible_message("<b>[src]</b> says, 'This machine now works with COINS!'")
-			else
-				paymode = CASH
-				visible_message("<b>[src]</b> says, 'This machine now works with CASH!'")
+	if(istype(I, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/H = I
+		if(!user.temporarilyRemoveItemFromInventory(H))
+			return
+		to_chat(user, "<span class='notice'>You insert [H.value] credits into [src]'s! slot</span>")
+		balance += H.value
+		qdel(H)
 	else
 		return ..()
 
@@ -263,13 +224,8 @@
 		jackpots += 1
 		balance += money - give_payout(JACKPOT)
 		money = 0
-		if(paymode == CASH)
-			new /obj/item/spacecash/bundle(loc,JACKPOT)
-		else
-			for(var/i = 0, i < 5, i++)
-				cointype = pick(subtypesof(/obj/item/coin))
-				var/obj/item/coin/C = new cointype(loc)
-				random_step(C, 2, 50)
+
+		new /obj/item/spacecash/bundle(loc,JACKPOT)
 
 	else if(linelength == 5)
 		visible_message("<b>[src]</b> says, 'Big Winner! You win a thousand credits!'")
@@ -313,37 +269,21 @@
 	balance += surplus
 
 /obj/machinery/computer/slot_machine/proc/give_payout(amount)
-	if(paymode == CASH)
-		cointype = /obj/item/spacecash/bundle
-	else
-		cointype = obj_flags & EMAGGED ? /obj/item/coin/iron : /obj/item/coin/silver
-
 	if(!(obj_flags & EMAGGED))
-		amount = dispense(amount, cointype, null, 0)
+		amount = dispense(amount, null, 0)
 
 	else
 		var/mob/living/target = locate() in range(2, src)
 
-		amount = dispense(amount, cointype, target, 1)
+		amount = dispense(amount, target, 1)
 
 	return amount
 
-/obj/machinery/computer/slot_machine/proc/dispense(amount = 0, cointype = /obj/item/coin/silver, mob/living/target, throwit = 0)
-	if(paymode == CASH)
-		var/obj/item/spacecash/bundle/H = new /obj/item/spacecash/bundle(loc, amount)
+/obj/machinery/computer/slot_machine/proc/dispense(amount = 0, mob/living/target, throwit = 0)
+	var/obj/item/spacecash/bundle/H = new /obj/item/spacecash/bundle(loc, amount)
 
-		if(throwit && target)
-			H.throw_at(target, 3, 10)
-	else
-		var/value = coinvalues["[cointype]"]
-
-		while(amount >= value)
-			var/obj/item/coin/C = new cointype(loc) //DOUBLE THE PAIN
-			amount -= value
-			if(throwit && target)
-				C.throw_at(target, 3, 10)
-			else
-				random_step(C, 2, 40)
+	if(throwit && target)
+		H.throw_at(target, 3, 10)
 
 	return amount
 
@@ -353,5 +293,3 @@
 #undef BIG_PRIZE
 #undef SMALL_PRIZE
 #undef SPIN_PRICE
-#undef CASH
-#undef COIN
