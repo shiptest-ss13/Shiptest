@@ -66,7 +66,7 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "bF" = (
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-8"
 	},
@@ -86,7 +86,7 @@
 	icon_state = "lattice-6"
 	},
 /obj/machinery/light/floor,
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "ci" = (
@@ -519,7 +519,7 @@
 	},
 /obj/item/storage/fancy/donut_box{
 	pixel_x = -4;
-	pixel_y = -4
+	pixel_y = 3
 	},
 /obj/machinery/jukebox/boombox{
 	pixel_y = 6;
@@ -532,7 +532,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/communications)
 "pS" = (
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /obj/machinery/light/floor,
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-74"
@@ -648,7 +648,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/communications)
 "sZ" = (
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-12"
 	},
@@ -765,7 +765,9 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 26
 	},
-/obj/structure/closet/emcloset/wall/directional/south,
+/obj/structure/closet/emcloset/wall/directional/south{
+	populate = 0
+	},
 /obj/item/clothing/head/helmet/space/fragile{
 	pixel_x = -2;
 	pixel_y = -14
@@ -983,7 +985,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "DP" = (
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-29"
 	},
@@ -1104,7 +1106,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Gw" = (
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-23"
 	},
@@ -1194,9 +1196,10 @@
 /turf/open/floor/circuit/telecomms,
 /area/ship/engineering/communications)
 "Iw" = (
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
-	name = "exhaust injector"
+	name = "exhaust injector";
+	layer = 3.1
 	},
 /obj/structure/sign/warning/hottemp{
 	pixel_x = 32
@@ -1400,7 +1403,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Oy" = (
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /obj/machinery/light/floor,
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-21"
