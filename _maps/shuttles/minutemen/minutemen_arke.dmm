@@ -670,7 +670,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
-/obj/structure/reagent_dispensers/watertank,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /obj/machinery/light_switch{
@@ -678,6 +677,7 @@
 	pixel_x = 20;
 	pixel_y = 12
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "tG" = (
@@ -852,8 +852,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "zd" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "arke_engi_lockdown"
+	},
+/turf/open/floor/plating,
 /area/ship/engineering)
 "zn" = (
 /obj/machinery/door/firedoor/border_only,
@@ -938,7 +942,6 @@
 /area/ship/cargo)
 "Bu" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
-/obj/structure/reagent_dispensers/fueltank,
 /obj/structure/sign/warning/fire{
 	pixel_x = 24;
 	pixel_y = -6
@@ -948,6 +951,7 @@
 	pixel_y = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "BH" = (
@@ -1295,16 +1299,17 @@
 	width = 30;
 	height = 15;
 	dwidth = 1;
-	dheight = 3
+	dheight = 3;
+	name = "Arke Cargo Bay"
 	},
 /turf/template_noop,
 /area/space)
 "LX" = (
 /obj/structure/dresser{
-	dir = 4
+	dir = 8
 	},
 /obj/item/flashlight/lamp/green{
-	pixel_x = 6;
+	pixel_x = 2;
 	pixel_y = 14
 	},
 /obj/structure/sign/poster/clip/lanchester{
@@ -1516,8 +1521,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Rs" = (
-/obj/structure/sign/clip{
-	pixel_x = 32
+/obj/docking_port/stationary{
+	width = 30;
+	height = 15;
+	dwidth = 7;
+	dheight = -3;
+	name = "Arke External Airlock";
+	dir = 4
 	},
 /turf/template_noop,
 /area/space)
@@ -1841,7 +1851,7 @@ Gt
 GS
 Gw
 Oy
-Rs
+es
 es
 "}
 (3,1,1) = {"
@@ -2240,7 +2250,7 @@ es
 es
 es
 bF
-es
+Rs
 es
 es
 es
