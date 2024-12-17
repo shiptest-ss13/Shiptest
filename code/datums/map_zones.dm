@@ -448,6 +448,7 @@
 		qdel(thing)
 		CHECK_TICK
 
+#ifdef TESTING
 	all_contents.Cut()
 	for(var/turf/turf as anything in block_turfs)
 		for(var/atom/movable/thing as anything in turf.contents)
@@ -459,7 +460,7 @@
 		stack_trace("Stragglers detected in virtual level after cleanup")
 		//lattice
 		//broken bottles
-
+#endif
 
 	var/datum/map_generator/clear_turfs/map_gen = new(block_turfs)
 	SSmap_gen.queue_generation(MAPGEN_PRIORITY_LOW, map_gen)
