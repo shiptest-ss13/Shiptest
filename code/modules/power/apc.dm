@@ -1310,7 +1310,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(cell && !shorted)
 		// draw power from cell as before to power the area
 		var/cellused = min(cell.charge, GLOB.CELLRATE * lastused_total)	// clamp deduction to a max, amount left in cell
-		cell.use(cellused)
+		cell.use(cellused, FALSE)
 
 		if(excess > lastused_total)		// if power excess recharge the cell
 										// by the same amount just used
