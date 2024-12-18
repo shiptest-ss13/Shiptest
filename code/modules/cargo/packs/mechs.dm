@@ -73,6 +73,25 @@ Build Your Own Suit
 	)
 	crate_name = "Gygax Construction Kit"
 
+/datum/supply_pack/mech/mpgygax_parts
+	name = "Gygax construction kit"
+	desc = "An agile exosuit made famous by Nanotrasen security personnel during the ICW. Or at least the parts to it."
+	cost = 12000
+	contains = list(
+		/obj/item/mecha_parts/chassis/gygax,
+		/obj/item/mecha_parts/part/gygax_head,
+		/obj/item/mecha_parts/part/gygax_torso,
+		/obj/item/mecha_parts/part/gygax_left_arm,
+		/obj/item/mecha_parts/part/gygax_right_arm,
+		/obj/item/mecha_parts/part/gygax_left_leg,
+		/obj/item/mecha_parts/part/gygax_right_leg,
+		/obj/item/mecha_parts/part/gygax_armor,
+		/obj/item/circuitboard/mecha/gygax/peripherals,
+		/obj/item/circuitboard/mecha/gygax/main,
+		/obj/item/circuitboard/mecha/gygax/targeting
+	)
+	crate_name = "Gygax Construction Kit"
+
 /datum/supply_pack/mech/durand_parts
 	name = "Durand construction kit"
 	desc = "The kit to a bulky suit most frequently used by the CLIP Minutemen, older models tend to find themselves disassembled and sold off."
