@@ -20,7 +20,7 @@
 ///Machine that lets you play roulette. Odds are pre-defined to be the same as European Roulette without the "En Prison" rule
 /obj/machinery/roulette
 	name = "Roulette Table"
-	desc = "A computerized roulette table. Swipe your bank card to play or register yourself as owner!"
+	desc = "A computerized roulette table. Swipe your bank card to play or register yourself as the owner!"
 	icon = 'icons/obj/machines/roulette.dmi'
 	icon_state = "idle"
 	density = TRUE
@@ -217,7 +217,7 @@
 	handle_color_light(color)
 
 	if(!is_winner)
-		audible_message("<span class='warning'>You lost! Better luck next time</span>")
+		audible_message("<span class='warning'>You lost! Better luck next time!</span>")
 		playsound(src, 'sound/machines/synth_no.ogg', 50)
 		return FALSE
 
