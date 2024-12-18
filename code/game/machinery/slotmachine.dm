@@ -2,7 +2,7 @@
 |		  Slot Machines		  	|
 |	  Original code by Glloyd	|
 |	  Tgstation port by Miauw	|
-|	  Shiptest Adjustments by	|
+|	  Shiptest adjustments by	|
 |			 Flopppi			|
 \*******************************/
 
