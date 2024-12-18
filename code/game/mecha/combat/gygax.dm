@@ -70,6 +70,7 @@
 	charge_distance = 6
 	charge_cooldown = 8
 	charge_power_consume = 100
+	charge_windup = 0
 
 /obj/mecha/combat/gygax/charger/nt/loaded/Initialize()
 	. = ..()

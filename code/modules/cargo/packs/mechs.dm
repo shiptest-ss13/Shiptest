@@ -236,10 +236,13 @@ Mech Equipment
 /datum/supply_pack/mech/equipment/ripley_upgrade/clip
 	name = "CLIP Ripley MK-IV upgrade kit"
 	desc = "Contains a CLIP-custom APLU MK-IV upgrade kit. The upgrade will replace the cockpit with a lightweight spaceworthy canopy, and parts to overclock the leg servos. Maintains the speed of the MK-1, but consumes more power."
-	cost = 750
+	cost = 500
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
 	)
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/paladin_upgrade
 	name = "CLIP Durand Paladin upgrade kit"
@@ -248,6 +251,9 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
 	)
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/basenji_upgrade
 	name = "IRMG Basenji upgrade kit"
@@ -256,6 +262,9 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
 	)
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/melee_armor_booster
 	name = "Exosuit CCW armor kit"
