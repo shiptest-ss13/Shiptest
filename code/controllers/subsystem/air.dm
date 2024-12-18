@@ -338,8 +338,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 			//We operate directly with the pipeline like this because we can trust any rebuilds to remake it properly
 			var/datum/pipeline/linepipe = pack[SSAIR_REBUILD_PIPELINE]
 			var/list/border = pack[SSAIR_REBUILD_QUEUE]
-			expand_pipeline(linepipe, border)
-			if(state != SS_RUNNING) //expand_pipeline can fail a tick check, we shouldn't let things get too fucky here
+			if(expand_pipeline(linepipe, border)) //expand_pipeline can fail a tick check, we shouldn't let things get too fucky here
 				return
 
 			linepipe.building = FALSE
@@ -365,7 +364,8 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 			if(item.parent == net)
 				continue
 			if(item.parent)
-				item.parent.merge(net)
+				border += item.parent.members
+				net.merge(item.parent)
 				continue
 
 			net.members += item
