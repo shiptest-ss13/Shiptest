@@ -1,5 +1,4 @@
 import { marked } from 'marked';
-import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';
 import { Box, Section, Stack } from '../components';
 import { Window } from '../layouts';
@@ -27,11 +26,11 @@ export const FlavorText = (props, context) => {
   return (
     <Window title={data.characterName} width={400} height={200}>
       <Window.Content>
-        <Stack fill vertical>
+        <Stack fill>
           {data.portraitUrl && (
             <Section title="Portrait">
               <Box className="FlavorText__Portrait">
-                <img src={resolveAsset(data.portraitUrl)} />
+                <img src={data.portraitUrl} />
               </Box>
               <Box italic textAlign="center">
                 {data.portraitSource}

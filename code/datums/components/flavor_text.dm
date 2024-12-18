@@ -8,6 +8,7 @@
 	var/static/flavortext_regex = regex(@"https://i\.imgur\.com/[0-9A-z]{7}\.(?:png|jpe?g)")
 
 /datum/component/flavor_text/Initialize(_flavor_text, _portrait_url, _portrait_source)
+	//You could technically use this on any atom, but... no.
 	if(!ismob(parent))
 		return COMPONENT_INCOMPATIBLE
 
@@ -48,7 +49,7 @@
 /datum/component/flavor_text/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "FlavorText", "[user.real_name]")
+		ui = new(user, src, "FlavorText", "[user.name]")
 		ui.set_autoupdate(FALSE)
 		ui.open()
 
