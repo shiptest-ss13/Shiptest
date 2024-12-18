@@ -91,7 +91,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
 	crate_name = "MP-Gygax Construction Kit"
-	faction = faction = /datum/faction/nt
+	faction = /datum/faction/nt
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/durand_parts
