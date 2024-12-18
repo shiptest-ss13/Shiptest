@@ -403,7 +403,7 @@
 
 /obj/item/roulette_wheel_beacon
 	name = "roulette wheel beacon"
-	desc = "An N.T. approved roulette wheel beacon. Toss it down and you will have a complementary roulette wheel delivered to you."
+	desc = "An N.T.-approved roulette wheel beacon. Toss it down, and a complementary roulette wheel will be delivered to you."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "floor_beacon"
 	var/used
