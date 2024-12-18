@@ -362,11 +362,11 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 				net.addMachineryMember(considered_device)
 				continue
 			var/obj/machinery/atmospherics/pipe/item = considered_device
-			if(item in net.members)
+			if(item.parent == net)
 				continue
 			if(item.parent)
-				log_mapping("Doubled atmosmachine found at [AREACOORD(item)] with other contents: [json_encode(item.loc.contents)]")
-				item.stack_trace("Possible doubled atmosmachine")
+				item.parent.merge(net)
+				continue
 
 			net.members += item
 			border += item
