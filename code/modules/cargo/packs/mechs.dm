@@ -78,7 +78,7 @@ Build Your Own Suit
 	desc = "A set of parts for a mass produced version of the famous Gygax exosuit model. The armor plating was reduced to cut costs for mass production, but the lighter weight allows the MP-Gygax's modified servos to perform swift moderate distance charges without heavily taxing the power supply. "
 	cost = 8000
 	contains = list(
-		/obj/item/mecha_parts/chassis/mpgygax,
+		/obj/item/mecha_parts/chassis/mp_gygax,
 		/obj/item/mecha_parts/part/gygax_head,
 		/obj/item/mecha_parts/part/gygax_torso,
 		/obj/item/mecha_parts/part/gygax_left_arm,
@@ -91,7 +91,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
 	crate_name = "MP-Gygax Construction Kit"
-	faction = faction = /datum/faction/nt
+	faction = /datum/faction/nt
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/durand_parts
