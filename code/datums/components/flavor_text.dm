@@ -63,3 +63,8 @@
 	data["portraitSource"] = portrait_source
 	data["flavorText"] = flavor_text
 	return data
+
+/datum/component/flavor_text/vv_edit_var(var_name, var_value)
+	if(var_name == NAMEOF(src, portrait_url) && !findtext(var_value, flavortext_regex))
+		return FALSE
+	return ..()

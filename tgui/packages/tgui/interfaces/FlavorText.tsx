@@ -24,26 +24,30 @@ export const FlavorText = (props, context) => {
   });
 
   return (
-    <Window title={data.characterName} width={400} height={200}>
+    <Window title={data.characterName} width={500} height={300}>
       <Window.Content>
         <Stack fill>
           {data.portraitUrl && (
-            <Section title="Portrait">
-              <Box className="FlavorText__Portrait">
-                <img src={data.portraitUrl} />
-              </Box>
-              <Box italic textAlign="center">
-                {data.portraitSource}
-              </Box>
-            </Section>
+            <Stack.Item grow>
+              <Section title="Portrait" fill>
+                <Box className="FlavorText__Portrait">
+                  <img src={data.portraitUrl} />
+                </Box>
+                <Box italic textAlign="center">
+                  {data.portraitSource}
+                </Box>
+              </Section>
+            </Stack.Item>
           )}
-          <Section title="Flavor Text">
-            <Box
-              dangerouslySetInnerHTML={{
-                __html: marked(data.flavorText),
-              }}
-            />
-          </Section>
+          <Stack.Item grow>
+            <Section title="Flavor Text" fill>
+              <Box
+                dangerouslySetInnerHTML={{
+                  __html: marked(data.flavorText),
+                }}
+              />
+            </Section>
+          </Stack.Item>
         </Stack>
       </Window.Content>
     </Window>
