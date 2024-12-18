@@ -50,7 +50,7 @@
 
 /obj/mecha/combat/gygax/charger
 	name = "\improper Modified Gygax"
-	desc = "A lightweight security exosuit, this one seems to have been modfied for short high speed charges instead of enhanced speed."
+	desc = "A lightweight security exosuit, this one seems to have been modified for short high speed charges instead of enhanced speed."
 	charge_break_walls = TRUE
 	charge_toss_structures = TRUE
 	charge_toss_mobs = TRUE

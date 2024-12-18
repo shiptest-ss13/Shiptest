@@ -74,23 +74,25 @@ Build Your Own Suit
 	crate_name = "Gygax Construction Kit"
 
 /datum/supply_pack/mech/mpgygax_parts
-	name = "Gygax construction kit"
-	desc = "An agile exosuit made famous by Nanotrasen security personnel during the ICW. Or at least the parts to it."
-	cost = 12000
+	name = "MP-Gygax construction kit"
+	desc = "A set of parts for a mass produced version of the famous Gygax exosuit model. The armor plating was reduced to cut costs for mass production, but the lighter weight allows the MP-Gygax's modified servos to perform swift moderate distance charges without heavily taxing the power supply. "
+	cost = 8000
 	contains = list(
-		/obj/item/mecha_parts/chassis/gygax,
+		/obj/item/mecha_parts/chassis/mpgygax,
 		/obj/item/mecha_parts/part/gygax_head,
 		/obj/item/mecha_parts/part/gygax_torso,
 		/obj/item/mecha_parts/part/gygax_left_arm,
 		/obj/item/mecha_parts/part/gygax_right_arm,
 		/obj/item/mecha_parts/part/gygax_left_leg,
 		/obj/item/mecha_parts/part/gygax_right_leg,
-		/obj/item/mecha_parts/part/gygax_armor,
+		/obj/item/mecha_parts/part/mpgygax_armor,
 		/obj/item/circuitboard/mecha/gygax/peripherals,
 		/obj/item/circuitboard/mecha/gygax/main,
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
-	crate_name = "Gygax Construction Kit"
+	crate_name = "MP-Gygax Construction Kit"
+	faction = faction = /datum/faction/nt
+	faction_locked = TRUE
 
 /datum/supply_pack/mech/durand_parts
 	name = "Durand construction kit"
@@ -226,9 +228,33 @@ Mech Equipment
 /datum/supply_pack/mech/equipment/ripley_upgrade
 	name = "APLU upgrade kit"
 	desc = "Contains an APLU MK II upgrade kit. The upgrade will replace the cockpit with a spaceworthy canopy, but the added weight makes it slower."
-	cost = 1500
+	cost = 500
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley
+	)
+
+/datum/supply_pack/mech/equipment/ripley_upgrade/clip
+	name = "CLIP Ripley MK-IV upgrade kit"
+	desc = "Contains a CLIP-custom APLU MK-IV upgrade kit. The upgrade will replace the cockpit with a lightweight spaceworthy canopy, and parts to overclock the leg servos. Maintains the speed of the MK-1, but consumes more power."
+	cost = 750
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
+	)
+
+/datum/supply_pack/mech/equipment/paladin_upgrade
+	name = "CLIP Durand Paladin upgrade kit"
+	desc = "Contains a CLIP-custom conversion kit for a Durand combat exosuit, to convert it to the specialized Paladin anti-xenofauna exosuit. Features an electrical replusion field that repels any melee attacks, but loses the ability to defend against ranged projectiles."
+	cost = 500
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
+	)
+
+/datum/supply_pack/mech/equipment/basenji_upgrade
+	name = "IRMG Basenji upgrade kit"
+	desc = "Contains an IRMG-custom conversion kit for a Gygax combat exosuit, to convert it to the specialized Basenji breaching exosuit. The upgrade will overclock the Gygax's leg actuators, allowing for short ranged charges capable of smashing through most obstacles."
+	cost = 500
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
 	)
 
 /datum/supply_pack/mech/equipment/melee_armor_booster
