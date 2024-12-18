@@ -79,7 +79,7 @@
 		var/obj/item/spacecash/bundle/H = I
 		if(!user.temporarilyRemoveItemFromInventory(H))
 			return
-		to_chat(user, "<span class='notice'>You insert [H.value] credits into [src]'s! slot</span>")
+		to_chat(user, "<span class='notice'>You insert [H.value] credits into [src]'s slot!</span>")
 		balance += H.value
 		qdel(H)
 	else
@@ -110,7 +110,7 @@
 
 	else
 		dat = {"Five credits to play!<BR>
-		<B>Prize Money Available:</B> [money] (jackpot payout is ALWAYS 100%!)<BR>
+		<B>Prize Money Available:</B> [money] (Jackpot payout is ALWAYS 100%!)<BR>
 		<B>Credit Remaining:</B> [balance]<BR>
 		[plays] players have tried their luck today, and [jackpots] have won a jackpot!<BR>
 		<HR><BR>
@@ -119,7 +119,7 @@
 		[reeltext]
 		<BR>"}
 		if(balance > 0)
-			dat+="<font size='1'><A href='?src=[REF(src)];refund=1'>Refund balance</A><BR>"
+			dat+="<font size='1'><A href='?src=[REF(src)];refund=1'>Refund Balance</A><BR>"
 
 	var/datum/browser/popup = new(user, "slotmachine", "Slot Machine")
 	popup.set_content(dat)
