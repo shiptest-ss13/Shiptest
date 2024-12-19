@@ -21,7 +21,7 @@ export const MiningVendor = (props, context) => {
             <Box color="light-gray">
               No registered cash card!
               <br />
-              Please contact your local financial insitution!
+              Please contact your local banking insitution!
             </Box>
           )}
         </Section>
