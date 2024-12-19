@@ -260,15 +260,16 @@ SUBSYSTEM_DEF(overmap)
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
  * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
  * * ruin_type - The type of ruin to spawn, or null if none should be placed.
+ * * requesting - The ship datum whose helms we should feed progress updates to. May be null.
  */
-/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(datum/overmap/dynamic/dynamic_datum, ruin_type)
+/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(datum/overmap/dynamic/dynamic_datum, ruin_type, datum/overmap/ship/controlled/requesting = null)
 	log_shuttle("SSOVERMAP: SPAWNING DYNAMIC ENCOUNTER STARTED")
 	if(!dynamic_datum)
 		CRASH("spawn_dynamic_encounter called without any datum to spawn!")
 	if(!dynamic_datum.default_baseturf)
 		CRASH("spawn_dynamic_encounter called with overmap datum [REF(dynamic_datum)], which lacks a default_baseturf!")
 
-	var/datum/map_generator/mapgen = new dynamic_datum.mapgen
+	var/datum/map_generator/mapgen
 	var/datum/map_template/ruin/used_ruin = ispath(ruin_type) ? (new ruin_type) : ruin_type
 	SSblackbox.record_feedback("tally", "encounter_spawned", 1, "[dynamic_datum.mapgen]")
 
@@ -284,17 +285,13 @@ SUBSYSTEM_DEF(overmap)
 		ALLOCATION_QUADRANT,
 		QUADRANT_MAP_SIZE
 	)
-
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
-	// the generataed turfs start unpopulated (i.e. no flora / fauna / etc.). we add that AFTER placing the ruin, relying on the ruin's areas to determine what gets populated
-	log_shuttle("SSOVERMAP: START_DYN_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
-	mapgen.generate_turfs(vlevel.get_unreserved_block())
-
+	var/turf/ruin_turf
 	var/list/ruin_turfs = list()
 	var/list/ruin_templates = list()
 	if(used_ruin)
-		var/turf/ruin_turf = locate(
+		ruin_turf = locate(
 			rand(
 				vlevel.low_x+6 + vlevel.reserved_margin,
 				vlevel.high_x-used_ruin.width-6 - vlevel.reserved_margin
@@ -302,14 +299,31 @@ SUBSYSTEM_DEF(overmap)
 			vlevel.high_y-used_ruin.height-6 - vlevel.reserved_margin,
 			vlevel.z_value
 		)
-		used_ruin.load(ruin_turf)
 		ruin_turfs[used_ruin.name] = ruin_turf
 		ruin_templates[used_ruin.name] = used_ruin
 
-	// fill in the turfs, AFTER generating the ruin. this prevents them from generating within the ruin
-	// and ALSO prevents the ruin from being spaced when it spawns in
-	// WITHOUT needing to fill the reservation with a bunch of dummy turfs
-	mapgen.populate_turfs(vlevel.get_unreserved_block())
+	// As long as we don't store a reference to it, we don't need to qdelete this:
+	// the datum will be picked up by GC once the proc returns, as SSmap_gen will remove it from the internal queue.
+	mapgen = new dynamic_datum.mapgen(vlevel.get_unreserved_block(), used_ruin, ruin_turf)
+	// Admin-spawned, etc. encounters have a lower priority since a ship likely isn't trying to dock right away.
+	SSmap_gen.queue_generation(requesting ? MAPGEN_PRIORITY_MED : MAPGEN_PRIORITY_LOW, mapgen)
+
+	// the # of phases "between" the start of the job queue and completion of the mapgen datum's job.
+	// this works because phases are numeric. it's stored because jobs will disappear from the queue as they're completed.
+	var/total_phases = SSmap_gen.jobs.Find(mapgen) * MAPGEN_PHASE_FINISHED
+
+	while(mapgen.phase != MAPGEN_PHASE_FINISHED)
+		if(requesting)
+			var/local_pos = SSmap_gen.jobs.Find(mapgen)
+			var/incomplete_phases = local_pos * MAPGEN_PHASE_FINISHED
+			for(var/i = 1, i <= local_pos, i++)
+				var/datum/map_generator/job = SSmap_gen.jobs[i]
+				incomplete_phases -= job.phase + ((job.phase_index-1)/length(job.turfs))
+
+			for(var/obj/machinery/computer/helm/Helm as anything in requesting.helms)
+				Helm.say("Landing Progress: [round(100 * (total_phases - incomplete_phases) / total_phases)]%")
+		// stoplag() is a dumb solution to ensuring synchronicity, but I'm lazy.
+		stoplag(30)
 
 	if(dynamic_datum.weather_controller_type)
 		new dynamic_datum.weather_controller_type(mapzone)
