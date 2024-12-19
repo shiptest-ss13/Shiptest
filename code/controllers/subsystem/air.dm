@@ -249,15 +249,9 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 		return
 	machine.atmos_processing = TRUE
 	if(machine.interacts_with_air)
-		if(mapload)
-			deferred_atmos_air_machinery += machine
-		else
-			atmos_air_machinery += machine
+		atmos_air_machinery += machine
 	else
-		if(mapload)
-			deferred_atmos_machinery += machine
-		else
-			atmos_machinery += machine
+		atmos_machinery += machine
 
 /**
  * Removes a given machine to the processing system for SSAIR_ATMOSMACHINERY processing.
