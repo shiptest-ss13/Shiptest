@@ -1,0 +1,50 @@
+{
+	"faction": "/datum/faction/syndicate",
+	"prefix": "ISV",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_name": "Revenant-class Heavy Tug",
+	"map_short_name": "Revenant-class",
+	"description": "The Revenant-class Heavy Tug is a Cybersun-manufactured series of custom salvaging ships, commissioned by the hardliners to suit their needs. A far cry from the original ships used by the Marauders, it attempts to keep some design cues to keep most veterans content. Equipped with the latest in salvaging equipment, It is perfect for when a critical data store needs to be sawed open.",
+	"tags": [
+		"RP Focus",
+		"Salvage",
+		"Engineering"
+	],
+	"map_path": "_maps/shuttles/syndicate/syndicate_hardliner_revenant.dmm",
+	"map_id": "syndicate_hardliner_revenant",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/job/syndicate/hos/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
+			"slots": 1
+		},
+		"Trooper": {
+			"outfit": "/datum/outfit/job/syndicate/security/gorlex",
+			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/syndicate/miner/gorlex",
+			"slots": 2
+		},
+		"Deck Assistant": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
