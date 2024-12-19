@@ -203,18 +203,26 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/wideband, 26)
 
 /obj/item/wallframe/intercom/wideband/attackby(obj/item/attack_obj, mob/user, params)
 	if(istype(attack_obj, /obj/item/screwdriver))
-		src = new /obj/item/wallframe/intercom/wideband/table
-		to_chat(user, span_notice("You ready the table screws on the wideband frame."))
+		to_chat(user, span_notice("You begin to move the mounting screws to the frame's table bracket."))
+		if(do_after(user, 0.8 SECONDS, src))
+			playsound(src, 'sound/items/screwdriver2.ogg', 30, TRUE)
+			var/obj/item/wallframe/intercom/wideband/table/replacement = new (get_turf(src))
+			qdel(src)
+			to_chat(user, span_notice("You ready the table bracket on [replacement]."))
 
 /obj/item/wallframe/intercom/wideband/table
 	name = "wideband relay table frame"
 	desc = "A detached wideband relay. Attach to a table and screw it in to use."
-	icon_state = "intercom-wideband-table"
-	icon = 'icons/obj/radio.dmi'
+	icon_state = "intercom-wideband"
+	icon = 'icons/obj/wallframe.dmi'
 	result_path = /obj/item/radio/intercom/wideband/table
 	pixel_shift = 0
 
 /obj/item/wallframe/intercom/wideband/table/attackby(obj/item/attack_obj, mob/user, params)
 	if(istype(attack_obj, /obj/item/screwdriver))
-		src = new /obj/item/wallframe/intercom/wideband
-		to_chat(user, span_notice("You ready the wall screws on the wideband frame."))
+		to_chat(user, span_notice("You begin to move the mounting screws to the frame's wall bracket."))
+		if(do_after(user, 0.8 SECONDS, src))
+			playsound(src, 'sound/items/screwdriver2.ogg', 30, TRUE)
+			var/obj/item/wallframe/intercom/wideband/replacement = new (get_turf(src))
+			qdel(src)
+			to_chat(user, span_notice("You ready the wall bracket on [replacement]."))
