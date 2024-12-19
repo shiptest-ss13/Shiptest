@@ -41,20 +41,17 @@
 			var/list/turflist = list()
 			for(var/turf/T in (orange(i, epicenter) - orange(i-1, epicenter)))
 				turflist |= T
-			for(var/turf/T in turflist)
+			for(var/turf/T as anything in turflist)
 				if(!(get_dir(T,epicenter) in GLOB.cardinals) && (abs(T.x - epicenter.x) == abs(T.y - epicenter.y)))
 					turflist.Remove(T)
 					turflist.Add(T) // we move the purely diagonal turfs to the end of the list.
-			for(var/turf/T in turflist)
-				if(accessible[T])
+			for(var/turf/turf as anything in turflist)
+				if(accessible[turf])
 					continue
-				for(var/thing in T.GetAtmosAdjacentTurfs(alldir = TRUE))
-					var/turf/NT = thing
-					if(!(NT in accessible))
+				for(var/turf/new_turf as anything in turf.get_atmos_cardinal_adjacent_turfs())
+					if(!accessible[new_turf])
 						continue
-					if(!(get_dir(T,NT) in GLOB.cardinals))
-						continue
-					accessible[T] = 1
+					accessible[turf] = TRUE
 					break
 		var/list/reactable = accessible
 		for(var/turf/T in accessible)

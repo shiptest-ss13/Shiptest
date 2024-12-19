@@ -85,7 +85,7 @@
  *
  * Returns [QDEL_HINT_QUEUE]
  */
-/datum/proc/Destroy(force=FALSE, ...)
+/datum/proc/Destroy(force)
 	SHOULD_CALL_PARENT(TRUE)
 	tag = null
 	datum_flags &= ~DF_USE_TAG //In case something tries to REF us
@@ -111,10 +111,10 @@
 		var/all_components = dc[/datum/component]
 		if(length(all_components))
 			for(var/datum/component/component as anything in all_components)
-				qdel(component, FALSE, TRUE)
+				qdel(component, FALSE)
 		else
 			var/datum/component/C = all_components
-			qdel(C, FALSE, TRUE)
+			qdel(C, FALSE)
 		dc.Cut()
 
 	clear_signal_refs()

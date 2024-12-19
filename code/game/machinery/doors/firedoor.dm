@@ -72,7 +72,7 @@
 /obj/machinery/door/firedoor/Destroy()
 	remove_from_areas()
 	density = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	affecting_areas.Cut()
 	return ..()
 
@@ -430,7 +430,7 @@
 	if(operating || welded)
 		return
 	density = TRUE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	do_animate("closing")
 	update_freelook_sight()
 	if(!(flags_1 & ON_BORDER_1))
