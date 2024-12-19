@@ -8,6 +8,7 @@
 	dismemberment = 50
 	armour_penetration = 60
 	var/breakthings = TRUE
+	bullet_identifier = "huge bullet"
 
 /obj/projectile/bullet/p50/on_hit(atom/target, blocked = 0)
 	if(isobj(target) && (blocked != 100) && breakthings)
@@ -46,6 +47,7 @@
 	stamina = 10
 	damage = 40
 	armour_penetration = 50
+	bullet_identifier = "huge bullet"
 
 	speed = BULLET_SPEED_SNIPER
 
@@ -65,14 +67,16 @@
 	damage = 10
 	stamina = 40
 	speed_mod = BULLET_SPEED_RUBBER_MOD
+	bullet_identifier = "huge rubber bullet"
 
 // 8x58mm caseless (SG-669)
 
 /obj/projectile/bullet/a858
 	name = "8x58mm caseless bullet"
-	damage = 35
-	armour_penetration = 40
+	damage = 40
+	armour_penetration = 45
 	speed = BULLET_SPEED_SNIPER
+	bullet_identifier = "huge bullet"
 
 /obj/projectile/bullet/a858/trac
 	name = "8x58mm tracker"
@@ -88,6 +92,7 @@
 	stamina = 10
 	armour_penetration = 40
 	speed = BULLET_SPEED_RIFLE
+	bullet_identifier = "huge bullet"
 
 /obj/projectile/bullet/a300/trac
 	name = ".300 Tracker"
