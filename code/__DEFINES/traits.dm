@@ -267,6 +267,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HOLDABLE "holdable"
 /// This person is blushing
 #define TRAIT_BLUSHING "blushing"
+///This person has red eyes from smoking the devil's lettuce.
+#define TRAIT_BLOODSHOT_EYES "bloodshot_eyes"
 /// The person has their eyes closed. Visual only
 #define TRAIT_EYESCLOSED "eyesclosed"
 /// The person is snoring. Visual only
