@@ -1172,3 +1172,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if("Set-Tab")
 			stat_tab = payload["tab"]
 			SSstatpanels.immediate_send_stat_data(src)
+
+///Gives someone hearted status for OOC, from behavior commendations
+/client/proc/adjust_heart(duration = 24 HOURS)
+	var/new_duration = world.realtime + duration
+	if(prefs.hearted_until > new_duration)
+		return
+	to_chat(src, "<span class='nicegreen'>Someone awarded you a heart!</span>")
+	prefs.hearted_until = new_duration
+	prefs.hearted = TRUE
+	prefs.save_preferences()
