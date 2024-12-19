@@ -353,6 +353,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
+/obj/item/ammo_box/magazine/m22lr_himehabu/empty
+	start_empty = TRUE
+
 //########### SMGS ###########//
 
 
@@ -507,6 +510,9 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/m57_39_sidewinder/empty
+	start_empty = TRUE
+
 //########### MARKSMAN ###########//
 /obj/item/gun/ballistic/automatic/marksman/boomslang
 	name = "MSR-90 \"Boomslang\""
@@ -595,6 +601,9 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	caliber = "6.5CLIP"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
+
+/obj/item/ammo_box/magazine/boomslang/short/empty
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/marksman/taipan
 	name = "AMR-83 \"Taipan\""
@@ -868,12 +877,18 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 		return
 	icon_state = "[base_icon_state]-[ammo_count() == 1 ? 1 : round(ammo_count(),5)]"
 
+/obj/item/ammo_box/magazine/m556_42_hydra/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/m556_42_hydra/small
 	name = "Short Hydra assault rifle magazine (5.56x42mm CLIP)"
 	desc = "A short, 20-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles; intended for the DMR variant. These rounds do moderate damage with good armor penetration."
 	icon_state = "hydra_small_mag-20"
 	base_icon_state = "hydra_small_mag"
 	max_ammo = 20
+
+/obj/item/ammo_box/magazine/m556_42_hydra/small/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/extended
 	name = "extended Hydra assault rifle magazine (5.56x42mm CLIP)"
@@ -882,6 +897,9 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	base_icon_state = "hydra_extended_mag"
 	max_ammo = 60
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/casket
 	name = "casket Hydra assault rifle magazine (5.56x42mm CLIP)"

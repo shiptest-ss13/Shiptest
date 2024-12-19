@@ -41,6 +41,9 @@
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
+/obj/item/ammo_box/c38/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c38/trac
 	name = "speed loader (.38 TRAC)"
 	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These TRAC rounds do pitiful damage, but embed a tracking device in targets hit."
@@ -148,6 +151,9 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	item_flags = NO_MAT_REDEMPTION
 	instant_load = TRUE
+
+/obj/item/ammo_box/amagpellet_claris/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/a40mm
 	name = "ammo box (40mm grenades)"

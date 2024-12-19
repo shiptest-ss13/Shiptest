@@ -121,6 +121,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
 
+/obj/item/storage/guncase/saw80
+	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/lmg
+	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra/extended
+
 /obj/item/storage/guncase/taipan
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/taipan
 	mag_type = /obj/item/ammo_box/magazine/sniper_rounds
