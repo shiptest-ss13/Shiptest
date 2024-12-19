@@ -313,7 +313,7 @@
 	// Carbon Monoxide
 		var/carbon_monoxide_pp = PP(breath,GAS_CO)
 		if (carbon_monoxide_pp > gas_stimulation_min)
-			H.reagents.add_reagent(/datum/reagent/carbon_monoxide, 1)
+			H.reagents.add_reagent(/datum/reagent/carbon_monoxide, 2)
 			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
 			if(monoxide_reagent.volume > 10)
 				monoxide_reagent.metabolization_rate = (10 - carbon_monoxide_pp)

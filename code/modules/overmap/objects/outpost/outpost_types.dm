@@ -96,12 +96,15 @@
 	token_icon_state = "station_1"
 	main_template = /datum/map_template/outpost/indie_space
 	elevator_template = /datum/map_template/outpost/elevator_indie
+	faction = FACTION_INDEPENDENT
 	// Uses "default" hangars (indie_space).
 
 /datum/overmap/outpost/nanotrasen_ice
 	token_icon_state = "station_asteroid_0"
 	main_template = /datum/map_template/outpost/nanotrasen_ice
 	elevator_template = /datum/map_template/outpost/elevator_ice
+	faction = FACTION_NT
+	weather_controller_type = /datum/weather_controller/chill
 	hangar_templates = list(
 		/datum/map_template/outpost/hangar/nt_ice_20x20,
 		/datum/map_template/outpost/hangar/nt_ice_40x20,

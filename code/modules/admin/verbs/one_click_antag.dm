@@ -330,7 +330,16 @@
 					spawn_location = SSovermap.outposts[1]
 
 			if(!spawn_location)
-				spawn_location = SSovermap.get_unused_overmap_square()
+				var/datum/overmap_star_system/selected_system //the star system we are
+
+				if(length(SSovermap.tracked_star_systems) > 1)
+					selected_system = tgui_input_list(usr, "Which star system do you want to spawn it in?", "Spawn ERT Shuttle", SSovermap.tracked_star_systems)
+				else
+					selected_system = SSovermap.tracked_star_systems[1]
+				if(!selected_system)
+					return //if selected_system didnt get selected, we nope out, this is very bad
+
+				spawn_location = selected_system.get_unused_overmap_square()
 
 			var/datum/overmap/ship/controlled/ship = new(spawn_location, template)
 

@@ -19,13 +19,13 @@
 			BIOME_LOW_HUMIDITY = /datum/biome/lavaland/outback,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/lavaland/plains/dense,
 			BIOME_HIGH_HUMIDITY = /datum/biome/lavaland/plains/dense/mixed,
-			BIOME_HIGHEST_HUMIDITY = /datum/biome/lavaland/outback
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/lavaland,
 		),
 		BIOME_WARM = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/lavaland,
-			BIOME_LOW_HUMIDITY = /datum/biome/lavaland/plains,
+			BIOME_LOW_HUMIDITY = /datum/biome/lavaland/lush,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/lavaland/forest,
-			BIOME_HIGH_HUMIDITY = /datum/biome/lavaland/lush,
+			BIOME_HIGH_HUMIDITY = /datum/biome/lavaland/,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/lavaland/lava
 		),
 		BIOME_TEMPERATE = list(
@@ -45,8 +45,8 @@
 		BIOME_HOTTEST = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/lavaland/forest/rocky,
 			BIOME_LOW_HUMIDITY = /datum/biome/lavaland/outback,
-			BIOME_MEDIUM_HUMIDITY = /datum/biome/lavaland/plains,
-			BIOME_HIGH_HUMIDITY = /datum/biome/lavaland,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/lavaland,
+			BIOME_HIGH_HUMIDITY = /datum/biome/lavaland/nearlava,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/lavaland/lava
 		)
 	)
@@ -63,20 +63,20 @@
 			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/lavaland/rocky,
 			BIOME_LOW_HUMIDITY = /datum/biome/cave/lavaland,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/lavaland/lava,
-			BIOME_HIGH_HUMIDITY = /datum/biome/cave/lavaland/mossy,
+			BIOME_HIGH_HUMIDITY = /datum/biome/cave/lavaland,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/lavaland/lava
 		),
 		BIOME_WARM_CAVE = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/lavaland/rocky,
 			BIOME_LOW_HUMIDITY = /datum/biome/cave/lavaland,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/lavaland/mossy,
-			BIOME_HIGH_HUMIDITY = /datum/biome/cave/lavaland/rocky,
+			BIOME_HIGH_HUMIDITY = /datum/biome/cave/lavaland/obsidian,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/lavaland/lava
 		),
 		BIOME_HOT_CAVE = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/lavaland/rocky,
 			BIOME_LOW_HUMIDITY = /datum/biome/cave/lavaland/mossy,
-			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/lavaland/mossy,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/lavaland/obsidian,
 			BIOME_HIGH_HUMIDITY = /datum/biome/cave/lavaland/lava,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/lavaland/lava
 		)
@@ -102,11 +102,11 @@
 		/obj/structure/geyser/random = 4,
 		/obj/effect/spawner/random/anomaly/lava = 2,
 		/obj/structure/flora/rock/hell = 14,
-		/obj/structure/vein = 5,
-		/obj/structure/vein/classtwo = 2,
+		/obj/structure/vein/lavaland = 5,
+		/obj/structure/vein/lavaland/classtwo = 2,
 		/obj/structure/elite_tumor = 2,
 		/obj/structure/geyser/random = 2,
-		/obj/structure/vein/classthree = 1,
+		/obj/structure/vein/lavaland/classthree = 1,
 		/obj/effect/spawner/minefield = 1,
 		/obj/effect/spawner/random/anomaly/lava = 1,
 	)
@@ -115,7 +115,7 @@
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
+		/mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub = 10,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
@@ -128,10 +128,8 @@
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/dead/tall/grey = 1,
 		/obj/structure/flora/tree/dead/barren = 1,
-		/obj/structure/flora/ausbushes/fullgrass/hell = 10,
-		/obj/structure/flora/ausbushes/sparsegrass/hell = 5
 	)
-	flora_spawn_chance = 85
+	flora_spawn_chance = 70
 
 /datum/biome/lavaland/forest/rocky
 	flora_spawn_list = list(
@@ -146,7 +144,7 @@
 
 /datum/biome/lavaland/plains
 	open_turf_types = list(
-		/turf/open/floor/plating/grass/lava/purple = 30
+		/turf/open/floor/plating/asteroid/dirt/grass/lavaland = 30
 	)
 
 	flora_spawn_list = list(
@@ -161,29 +159,29 @@
 /datum/biome/lavaland/plains/dense
 	flora_spawn_chance = 85
 	open_turf_types = list(
-		/turf/open/floor/plating/grass/lava = 50
+		/turf/open/floor/plating/asteroid/dirt/grass/lavaland = 50
 	)
 	feature_spawn_chance = 5
 	feature_spawn_list = list(
 		/obj/structure/flora/tree/dead/barren = 50,
 		/obj/structure/flora/tree/dead/tall/grey = 45,
 		/obj/effect/spawner/random/anomaly/lava = 10,
-		/obj/structure/vein = 5,
-		/obj/structure/vein/classtwo = 2,
-		/obj/structure/vein/classthree = 1,
+		/obj/structure/vein/lavaland = 5,
+		/obj/structure/vein/lavaland/classtwo = 2,
+		/obj/structure/vein/lavaland/classthree = 1,
 	)
 
 /datum/biome/lavaland/plains/dense/mixed
 	flora_spawn_chance = 50
 	open_turf_types = list(
-		/turf/open/floor/plating/grass/lava = 50,
-		/turf/open/floor/plating/grass/lava/purple = 45,
+		/turf/open/floor/plating/asteroid/dirt/grass/lavaland = 50,
+		/turf/open/floor/plating/asteroid/dirt/grass/lavaland = 45,
 		/turf/open/floor/plating/moss = 1
 	)
 
 /datum/biome/lavaland/outback
 	open_turf_types = list(
-		/turf/open/floor/plating/grass/lava/orange = 20
+		/turf/open/floor/plating/asteroid/dirt/grass/lavaland = 20
 	)
 
 	flora_spawn_list = list(
@@ -198,8 +196,8 @@
 
 /datum/biome/lavaland/lush
 	open_turf_types = list(
-		/turf/open/floor/plating/grass/lava/purple = 20,
-		/turf/open/floor/plating/asteroid/basalt/purple/lit = 1
+		/turf/open/floor/plating/asteroid/dirt/grass/lavaland = 20,
+		/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit = 1
 	)
 	flora_spawn_list = list(
 		/obj/structure/flora/ash/fireblossom = 3,
@@ -224,6 +222,16 @@
 	flora_spawn_chance = 2
 	feature_spawn_chance = 0
 
+/datum/biome/lavaland/nearlava
+	open_turf_types = list(
+		/turf/open/floor/plating/asteroid/obsidian/lit = 1,
+	)
+	flora_spawn_list = list(
+		/obj/structure/flora/rock/lava = 1,
+		/obj/structure/flora/rock/pile/lava = 1
+	)
+	flora_spawn_chance = 2
+
 /datum/biome/lavaland/lava/rocky
 	flora_spawn_chance = 4
 
@@ -239,7 +247,7 @@
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
+		/mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub = 10,
 		/obj/structure/spawner/burrow/lava_planet = 10
 	)
 	flora_spawn_chance = 1
@@ -253,6 +261,11 @@
 		/obj/structure/flora/ash/puce = 2,
 		/obj/item/mine/proximity/explosive/live = 1,
 		/obj/item/mine/pressure/explosive/rusty/live = 1
+	)
+
+/datum/biome/cave/lavaland/obsidian
+	open_turf_types = list(
+		/turf/open/floor/plating/asteroid/obsidian = 1
 	)
 
 /datum/biome/cave/lavaland/rocky

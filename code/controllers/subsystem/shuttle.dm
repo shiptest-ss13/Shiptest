@@ -90,7 +90,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(!(M in transit_requesters))
 		transit_requesters += M
 
-/datum/controller/subsystem/shuttle/proc/generate_transit_dock(obj/docking_port/mobile/M)
+/datum/controller/subsystem/shuttle/proc/generate_transit_dock(obj/docking_port/mobile/M, offset_x, offset_y)
 	// First, determine the size of the needed zone
 	// Because of shuttle rotation, the "width" of the shuttle is not
 	// always x.
@@ -100,14 +100,29 @@ SUBSYSTEM_DEF(shuttle)
 	var/dock_angle = dir2angle(M.preferred_direction) + dir2angle(M.port_direction) + 180
 	var/dock_dir = angle2dir(dock_angle)
 
-	var/transit_width = SHUTTLE_TRANSIT_BORDER * 2
-	var/transit_height = SHUTTLE_TRANSIT_BORDER * 2
+	var/transit_width = SHUTTLE_TRANSIT_BORDER
+	var/transit_height = SHUTTLE_TRANSIT_BORDER
 
 	// Shuttles travelling on their side have their dimensions swapped
 	// from our perspective
 	var/list/union_coords = M.return_union_coords(M.get_all_towed_shuttles(), 0, 0, dock_dir)
 	transit_width += union_coords[3] - union_coords[1] + 1
 	transit_height += union_coords[4] - union_coords[2] + 1
+
+	///attempt at making transit levels bigger to allow for better ship to ship docking
+	if(transit_width <= 32) ///32 x 3 = 96 - small sized ships shouldnt be bigger than this
+		transit_width *= 3
+	else if(transit_width <= 63) // 63 x 2 = 127 -  127 is the defialt size of planets, ideally we dont go higher than this
+		transit_width *= 2
+	else
+		transit_width = 127 // fuckhuge ships should prbobaly max out here
+
+	if(transit_height <= 32) ///32 x 3 = 96 - small sized ships shouldnt be bigger than this
+		transit_height *= 3
+	else if(transit_height <= 63) // 63 x 2 = 127 -  127 is the defialt size of planets, ideally we dont go higher than this
+		transit_height *= 2
+	else
+		transit_height = 127 // fuckhuge ships should prbobaly max out here
 
 	var/transit_path = /turf/open/space/transit
 	switch(travel_dir)
@@ -151,8 +166,8 @@ SUBSYSTEM_DEF(shuttle)
 	// Then create a transit docking port in the middle
 	// union coords (1,2) points from the docking port to the bottom left corner of the bounding box
 	// So if we negate those coordinates, we get the vector pointing from the bottom left of the bounding box to the docking port
-	var/transit_x = bottomleft.x + SHUTTLE_TRANSIT_BORDER + abs(union_coords[1])
-	var/transit_y = bottomleft.y + SHUTTLE_TRANSIT_BORDER + abs(union_coords[2])
+	var/transit_x = bottomleft.x + (transit_width/2) + abs(union_coords[1]) + offset_x
+	var/transit_y = bottomleft.y + (transit_height/2) + abs(union_coords[2]) + offset_y
 
 	var/turf/midpoint = locate(transit_x, transit_y, bottomleft.z)
 	if(!midpoint)
@@ -334,7 +349,7 @@ SUBSYSTEM_DEF(shuttle)
 		S.owner_ship = new_shuttle
 		S.load_roundstart()
 
-	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
+	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle, template.tranist_x_offset, template.tranist_y_offset)
 
 	if(!transit_dock)
 		qdel(src, TRUE)
@@ -449,6 +464,7 @@ SUBSYSTEM_DEF(shuttle)
 				)
 				var/ship_loc
 				var/datum/overmap/ship/controlled/new_ship
+				var/datum/overmap_star_system/selected_system //the star system we want to spawn in
 
 				switch(choice)
 					if(null)
@@ -457,20 +473,29 @@ SUBSYSTEM_DEF(shuttle)
 						ship_loc = null // null location causes overmap to just get a random square
 					if("Outpost")
 						if(length(SSovermap.outposts) > 1)
-							var/temp_loc = input(user, "Select outpost to spawn at") as null|anything in SSovermap.outposts
+							var/datum/overmap/outpost/temp_loc = input(user, "Select outpost to spawn at") as null|anything in SSovermap.outposts
 							if(!temp_loc)
 								message_admins("Invalid spawn location.")
 								return
+							selected_system = temp_loc.current_overmap
 							ship_loc = temp_loc
 						else
 							ship_loc = SSovermap.outposts[1]
+							selected_system = SSovermap.tracked_star_systems[1]
 					if("Specific Overmap Square")
 						var/loc_x = input(user, "X overmap coordinate:") as num
 						var/loc_y = input(user, "Y overmap coordinate:") as num
 						ship_loc = list("x" = loc_x, "y" = loc_y)
 
+				if(!selected_system)
+					if(length(SSovermap.tracked_star_systems) > 1)
+						selected_system = tgui_input_list(user, "Which star system do you want to spawn it in?", "Ship Location", SSovermap.tracked_star_systems)
+					else
+						selected_system = SSovermap.tracked_star_systems[1]
+					if(!selected_system)
+						return //if selected_system didnt get selected, we nope out, this is very bad
 				if(!new_ship)
-					new_ship = new(ship_loc, S)
+					new_ship = new(ship_loc, selected_system, S)
 				if(new_ship?.shuttle_port)
 					user.forceMove(new_ship.get_jump_to_turf())
 					message_admins("[key_name_admin(user)] loaded [new_ship] ([S]) with the shuttle manipulator.")

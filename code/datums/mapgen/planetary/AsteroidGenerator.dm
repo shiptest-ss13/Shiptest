@@ -1,5 +1,5 @@
 /datum/map_generator/planet_generator/asteroid
-	mountain_height = 0.65
+	mountain_height = 0.7
 	perlin_zoom = 20
 
 	initial_closed_chance = 45
@@ -85,6 +85,18 @@
 		)
 	)
 
+/datum/map_generator/planet_generator/asteroid/pre_generation(datum/overmap/our_planet)
+	var/datum/overmap/dynamic/dynamic_planet = our_planet
+	var/datum/overmap/event/nearby_event
+	if(!istype(dynamic_planet))
+		return
+	nearby_event = locate(/datum/overmap/event) in dynamic_planet.get_nearby_overmap_objects()
+	if(!nearby_event || !nearby_event.mountain_height_override)
+		return
+
+	mountain_height = nearby_event.mountain_height_override
+	return TRUE
+
 /datum/biome/asteroid
 	open_turf_types = list(
 		/turf/open/space = 1
@@ -100,7 +112,7 @@
 		/turf/closed/mineral/random = 1
 	)
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/airless = 1
+		/turf/open/floor/plating/asteroid/smoothed/airless = 1
 	)
 
 /datum/biome/cave/asteroid/vanilla
@@ -114,8 +126,8 @@
 		/obj/structure/spawner/burrow/asteroid = 3,
 		/obj/structure/geyser/random = 1,
 		/obj/structure/vein/asteroid = 5,
-		/obj/structure/vein/classtwo/asteroid = 10,
-		/obj/structure/vein/classthree/asteroid = 5
+		/obj/structure/vein/asteroid/classtwo = 10,
+		/obj/structure/vein/asteroid/classthree = 5
 	)
 
 	mob_spawn_list = list(
@@ -148,7 +160,7 @@
 		/turf/closed/mineral/random = 5
 	)
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/airless = 1
+		/turf/open/floor/plating/asteroid/smoothed/airless = 1
 	)
 
 	flora_spawn_list = list(
@@ -161,8 +173,8 @@
 		/obj/structure/geyser/random = 5,
 		/obj/structure/spawner/carp = 5,
 		/obj/structure/vein/asteroid = 10,
-		/obj/structure/vein/classtwo/asteroid = 15,
-		/obj/structure/vein/classthree/asteroid = 12
+		/obj/structure/vein/asteroid/classtwo = 15,
+		/obj/structure/vein/asteroid/classthree = 12
 	)
 
 	mob_spawn_list = list(

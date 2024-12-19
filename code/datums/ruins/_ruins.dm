@@ -24,4 +24,3 @@
 
 	mappath = prefix + suffix
 	..(path = mappath)
-
