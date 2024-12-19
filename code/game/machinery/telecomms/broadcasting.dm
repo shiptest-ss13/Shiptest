@@ -167,12 +167,8 @@
 				if(R.independent && R.can_receive(frequency, map_zones))
 					radios += R
 
-	//WS edit begin - Radio chatter #434
 	// Next, we'll have each radio play a small sound effect except for the one that broadcasted it.
 	for(var/obj/item/radio/radio in radios)
-		if(radio.last_chatter_time + 1 SECONDS < world.time && source != radio)
-			playsound(radio, "sound/effects/radio_chatter.ogg", 20, FALSE)
-			radio.last_chatter_time = world.time
 		if(radio.log)
 			var/name = data["name"]
 			var/list/log_details = list()
