@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section } from '../components';
+import { Button, LabeledList, Section, NumberInput } from '../components';
 import { Window } from '../layouts';
 import { AccessList } from './common/AccessList';
 
@@ -8,8 +8,9 @@ export const AirlockElectronics = (props, context) => {
   const { oneAccess, unres_direction } = data;
   const regions = data.regions || [];
   const accesses = data.accesses || [];
+  const close_speed = data.close_speed || [];
   return (
-    <Window width={420} height={485}>
+    <Window width={420} height={500}>
       <Window.Content>
         <Section title="Main">
           <LabeledList>
@@ -85,6 +86,24 @@ export const AirlockElectronics = (props, context) => {
             })
           }
         />
+        <LabeledList>
+          <LabeledList.Item label="Airlock Speed">
+            <NumberInput
+              animate
+              unit="seconds"
+              step={0.5}
+              stepPixelSize={15}
+              minValue={2}
+              maxValue={30}
+              value={close_speed / 10}
+              onDrag={(e, value) =>
+                act('close_speed', {
+                  adjust: value - close_speed / 10,
+                })
+              }
+            />
+          </LabeledList.Item>
+        </LabeledList>
       </Window.Content>
     </Window>
   );

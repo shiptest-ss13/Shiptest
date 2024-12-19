@@ -64,7 +64,7 @@ export const Radio = (props, context) => {
                   animate
                   unit="kHz"
                   step={0.2}
-                  stepPixelSize={10}
+                  stepPixelSize={15}
                   minValue={minFrequency / 10}
                   maxValue={maxFrequency / 10}
                   value={frequency / 10}
