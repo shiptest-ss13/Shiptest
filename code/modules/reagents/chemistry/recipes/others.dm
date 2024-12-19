@@ -611,7 +611,7 @@
 	mix_message = "The mixture rapidly condenses and darkens in color..."
 
 /datum/chemical_reaction/cellulose_carbonization/ash		// Sub for cellulose
-	required_reagents = list(/datum/reagent/ash_fibers)
+	required_reagents = list(/datum/reagent/ash_fibers = 1)
 
 /datum/chemical_reaction/fervor
 	results = list(/datum/reagent/consumable/fervor = 10)
