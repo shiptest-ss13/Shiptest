@@ -14,8 +14,12 @@
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 	permeability_coefficient = 0.5
-	slowdown = SHOES_SLOWDOWN
-	strip_delay = 1 SECONDS
+
+	equip_delay_self = EQUIP_DELAY_SHOES
+	equip_delay_other = EQUIP_DELAY_SHOES * 1.5
+	strip_delay = EQUIP_DELAY_SHOES * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
+
 	blood_overlay_type = "shoe"
 
 	var/offset = 0

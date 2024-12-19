@@ -16,6 +16,13 @@
 	flags_cover = HEADCOVERSEYES
 	//flags_inv = HIDEHAIR // nah
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_HELMET
+	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
+	strip_delay = EQUIP_DELAY_HELMET * 1.5
+
 	dog_fashion = /datum/dog_fashion/head/helmet
 
 	//if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.
