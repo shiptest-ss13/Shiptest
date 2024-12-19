@@ -105,7 +105,7 @@
 
 // Mech Scattershot
 
-/obj/projectile/bullet/scattershot
+/obj/projectile/bullet/pellet/scattershot
 	damage = 24
 	armour_penetration = -20
 
