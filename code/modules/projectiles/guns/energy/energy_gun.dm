@@ -11,7 +11,9 @@
 	modifystate = TRUE
 	ammo_x_offset = 2
 	dual_wield_spread = 60
+	wield_slowdown = LASER_RIFLE_SLOWDOWN
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/energy/e_gun/empty_cell
 	spawn_no_ammo = TRUE
@@ -30,7 +32,7 @@
 	ammo_x_offset = 2
 	charge_sections = 3
 	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
 	spread_unwielded = 5
@@ -57,7 +59,7 @@
 	fire_delay = 0.2 SECONDS
 
 	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.6
+	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
 	spread_unwielded = 20
 
 /obj/item/gun/energy/e_gun/old
@@ -110,15 +112,20 @@
 
 /obj/item/gun/energy/e_gun/turret
 	name = "hybrid turret gun"
-	desc = "A heavy hybrid energy cannon with two settings: Stun and kill."
+	desc = "A heavy hybrid energy cannon with two settings: Stun and kill. ...It doesn't seem have a trigger, seems it can only be used as a turret."
 	icon_state = "turretlaser"
 	item_state = "turretlaser"
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
+	default_ammo_type = null
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)
 	weapon_weight = WEAPON_HEAVY
 	trigger_guard = TRIGGER_GUARD_NONE
 	ammo_x_offset = 2
+
+/obj/item/gun/energy/e_gun/turret/pre_fire(atom/target, mob/living/user, message, flag, params, zone_override, bonus_spread, dual_wielded_gun)
+	to_chat(user, span_notice("[src] is not designed to be fired by hand."))
+	return FALSE
 
 /obj/item/gun/energy/e_gun/nuclear
 	name = "advanced energy gun"
@@ -188,7 +195,7 @@
 	charge_sections = 6
 
 	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
 	spread_unwielded = 5
@@ -219,6 +226,7 @@
 	weapon_weight = WEAPON_LIGHT
 
 	fire_delay = 0.13 SECONDS
+	wield_slowdown = LASER_SMG_SLOWDOWN
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -233,8 +241,8 @@
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
 	shaded_charge = TRUE
-	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
+	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
 

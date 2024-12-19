@@ -129,6 +129,7 @@
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/xray)
 	ammo_x_offset = 3
+	w_class = WEIGHT_CLASS_BULKY
 
 ////////Laser Tag////////////////////
 
@@ -170,8 +171,8 @@
 	inhand_y_dimension = 64
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
-	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima)
+	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
@@ -203,7 +204,6 @@
 	item_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 4
-	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/mini,
@@ -229,7 +229,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
 	spread_unwielded = 5
@@ -254,16 +254,16 @@
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50)
 	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_EOEHOMA
 
 	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.6
+	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	spread_unwielded = 20
 
 	shaded_charge = FALSE
 	ammo_x_offset = 4
 	charge_sections = 2
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = 0
 
 

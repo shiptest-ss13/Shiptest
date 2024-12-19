@@ -4,13 +4,6 @@
 	prefix = "_maps/RandomRuins/SandRuins/"
 	ruin_type = RUINTYPE_SAND
 
-/datum/map_template/ruin/whitesands/medipen_plant
-	name = "Abandoned Medipen Factory"
-	id = "medipenplant"
-	description = "A once prosperous autoinjector manufacturing plant."
-	suffix = "whitesands_surface_medipen_plant.dmm"
-	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
-
 /datum/map_template/ruin/whitesands/pubbyslopcrash
 	name = "Pubby Slop Crash"
 	id = "ws-pubbyslopcrash"
@@ -47,3 +40,10 @@
 	description = "An old Eoehoma Firearms manufacturing plant dedicated to assembly of the beloved-by-many E-11 rifle."
 	suffix = "whitesands_surface_e11_manufactory.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_HAZARDOUS)
+
+/datum/map_template/ruin/whitesands/brazillian_lab
+	name = "Hermit Weapons-Testing Compound"
+	id = "brazillian-lab"
+	description = "A conspicuous compound in the middle of the sandy wasteland. What goodies are inside?"
+	suffix = "whitesands_brazillianlab.dmm"
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_INHOSPITABLE)

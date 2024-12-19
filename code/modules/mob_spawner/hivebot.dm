@@ -5,7 +5,7 @@
 	icon = 'icons/obj/machines/bsm.dmi'
 	icon_state = "bsm_on"
 
-	faction = list("mining")
+	faction = list("hivebot")
 	max_integrity = 250
 	mob_types = list(
 		/mob/living/simple_animal/hostile/hivebot = 40,

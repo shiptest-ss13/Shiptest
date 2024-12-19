@@ -30,10 +30,14 @@
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS
 
+	var/latch_closed = TRUE
+	var/latch_toggle_delay = 1.0 SECONDS
+
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/sling
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1
@@ -128,7 +132,7 @@
 	if (!internal_magazine && (A.type in (allowed_ammo_types - blacklisted_ammo_types)))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
-			insert_cell(user, C)
+			return insert_cell(user, C)
 		else
 			if (tac_reloads)
 				eject_cell(user, C)
@@ -136,14 +140,18 @@
 	return ..()
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(user.transferItemToLoc(C, src))
-		cell = C
-		to_chat(user, span_notice("You load the [C] into \the [src]."))
-		playsound(src, load_sound, load_sound_volume, load_sound_vary)
-		update_appearance()
-		return TRUE
+	if(!latch_closed)
+		if(user.transferItemToLoc(C, src))
+			cell = C
+			to_chat(user, span_notice("You load the [C] into \the [src]."))
+			playsound(src, load_sound, load_sound_volume, load_sound_vary)
+			update_appearance()
+			return TRUE
+		else
+			to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
+			return FALSE
 	else
-		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
+		to_chat(user, span_warning("The [src]'s cell retainment clip is latched!"))
 		return FALSE
 
 /obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
@@ -167,13 +175,33 @@
 	user.put_in_hands(old_cell)
 	update_appearance()
 
-/obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
-	if(cell && !internal_magazine)
-		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
-		if(I.use_tool(src, user, unscrewing_time, volume = 100))
-			to_chat(user, span_notice("You remove the power cell."))
-			eject_cell(user)
-	return ..()
+//special is_type_in_list method to counteract problem with current method
+/obj/item/gun/energy/proc/is_attachment_in_contents_list()
+	for(var/content_item in contents)
+		if(istype(content_item, /obj/item/attachment/))
+			return TRUE
+	return FALSE
+
+/obj/item/gun/energy/AltClick(mob/living/user)
+	if(!internal_magazine && latch_closed)
+		to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
+		if(do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
+			to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip " + "<span class='red'>OPEN</span>" + "."))
+			playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
+			tac_reloads = TRUE
+			latch_closed = FALSE
+			update_appearance()
+	else if(!internal_magazine && !latch_closed)
+		if(!cell && is_attachment_in_contents_list())
+			return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
+		to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
+		if (do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
+			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + "<span class='green'>CLOSED</span>" + "."))
+			playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
+			tac_reloads = FALSE
+			latch_closed = TRUE
+			update_appearance()
+	return
 
 /obj/item/gun/energy/can_shoot(visuals)
 	if(safety && !visuals)
@@ -213,7 +241,12 @@
 /obj/item/gun/energy/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(!chambered && can_shoot())
 		process_chamber()	// If the gun was drained and then recharged, load a new shot.
-	return ..()
+	..() //process the gunshot as normal
+	if(!latch_closed && prob(65)) //make the cell slide out if it's fired while the retainment clip is unlatched, with a 65% probability
+		to_chat(user, span_warning("The [src]'s cell falls out!"))
+		eject_cell()
+	return
+
 
 /obj/item/gun/energy/proc/select_fire(mob/living/user)
 	select++
@@ -252,6 +285,20 @@
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()
+	if(ismob(loc) && !internal_magazine)
+		var/mutable_appearance/latch_overlay
+		latch_overlay = mutable_appearance('icons/obj/guns/cell_latch.dmi')
+		if(latch_closed)
+			if(cell)
+				latch_overlay.icon_state = "latch-on-full"
+			else
+				latch_overlay.icon_state = "latch-on-empty"
+		else
+			if(cell)
+				latch_overlay.icon_state = "latch-off-full"
+			else
+				latch_overlay.icon_state = "latch-off-empty"
+		. += latch_overlay
 	if(cell)
 		. += "[icon_state]_cell"
 		if(ratio == 0)
@@ -322,6 +369,8 @@
 
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
+	if(!internal_magazine)
+		. += "The cell retainment latch is [latch_closed ? "<span class='green'>CLOSED</span>" : "<span class='red'>OPEN</span>"]. Alt-Click to toggle the latch."
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	if(ammo_type.len > 1)
 		. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"

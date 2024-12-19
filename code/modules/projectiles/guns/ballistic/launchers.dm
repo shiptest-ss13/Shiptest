@@ -58,7 +58,14 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 	"A drawing of the Rilena character 'T4L1' smoking a boof",
 	"\"Eat it corpo!\"",
 	"A Sarathi woman in a suggestive pose",
-	"\"Arm this!\""
+	"A masculine Sarathi shouldering a launcher",
+	"A Vox woman with a sledgehammer over their shoulder",
+	"A man in a floral patterned shirt and nothing else, drawn leaning against the rocket's tube",
+	"A crudely-drawn picture of a Gorlex Marauder exploding",
+	"A scratched-out link to some kind of website",
+	".:|:;",
+	"\"SPEAR TO THE SHOAL, FOR A FREE FRONTIER!\"",
+	"\"Arm this!\"",
 ))
 
 

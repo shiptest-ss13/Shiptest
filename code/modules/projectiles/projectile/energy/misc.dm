@@ -33,7 +33,7 @@
 	icon_state = "blastwave"
 	color = "#00ff00"
 	hitsound = 'sound/weapons/sear.ogg'
-	var/heatpwr = 350
+	var/heatpwr = 6
 
 /obj/projectile/energy/plasmabolt/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -56,4 +56,4 @@
 	icon_state = "blastwave"
 	color = "#00ff00"
 	hitsound = 'sound/weapons/sear.ogg'
-	heatpwr = 700
+	heatpwr = 11
