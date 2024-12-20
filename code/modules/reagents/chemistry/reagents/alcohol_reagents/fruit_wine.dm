@@ -72,7 +72,7 @@
 		if(120 to INFINITY)
 			alcohol_description = "suicidally strong"
 		if(90 to 120)
-			alcohol_description = "rather strong"
+			alcohol_description = "intense"
 		if(70 to 90)
 			alcohol_description = "strong"
 		if(40 to 70)
