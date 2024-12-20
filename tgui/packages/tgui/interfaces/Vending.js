@@ -125,7 +125,7 @@ export const Vending = (props, context) => {
               <Box color="light-grey">
                 No registered cash card!
                 <br />
-                Please contact your local banking insitution!
+                Please contact your local bank!
               </Box>
             )}
           </Section>
