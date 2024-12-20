@@ -7,7 +7,7 @@
 	icon_state = "snow_0"
 	icon_plating = null
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	slowdown = 1.5
+	slowdown = 1.05
 	base_icon_state = "snow"
 	max_icon_states = 3
 	floor_variance = 75

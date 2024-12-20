@@ -19,7 +19,7 @@
 	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "wasteland"
 	base_icon_state = "wasteland"
-	slowdown = 1
+	slowdown = 0.7
 	baseturfs = /turf/open/floor/plating/asteroid/dirt/wasteland
 	floor_variance = 15
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
