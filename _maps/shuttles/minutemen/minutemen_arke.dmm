@@ -31,10 +31,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/item/storage/toolbox/electrical{
-	pixel_y = -8;
-	pixel_x = -9
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -62,6 +58,7 @@
 	anchored = 1
 	},
 /obj/structure/cable/yellow,
+/obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
@@ -619,10 +616,6 @@
 /obj/structure/cable{
 	icon_state = "9-10"
 	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_y = 14;
-	pixel_x = 4
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sc" = (
@@ -952,7 +945,14 @@
 	pixel_y = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/reagent_dispensers/watertank,
+/obj/structure/table,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 11
+	},
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 1;
+	pixel_x = 2
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "BH" = (
@@ -1460,7 +1460,6 @@
 /turf/open/floor/plasteel/telecomms_floor/tatmos,
 /area/ship/engineering/communications)
 "QN" = (
-/obj/structure/table/wood,
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/fax/clip,
 /obj/machinery/button/door{
@@ -1470,6 +1469,7 @@
 	name = "bridge shutters";
 	pixel_x = -24
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "QS" = (
@@ -1665,7 +1665,6 @@
 "Uo" = (
 /obj/machinery/firealarm/directional/north,
 /obj/machinery/light/directional/west,
-/obj/structure/table/wood,
 /obj/item/paper_bin{
 	pixel_x = -4;
 	pixel_y = 4
@@ -1678,6 +1677,7 @@
 	pixel_x = 5;
 	pixel_y = 5
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "UN" = (
@@ -1802,17 +1802,14 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ZQ" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 8;
-	color = "#75A2BB"
-	},
-/obj/effect/turf_decal/box/corners{
-	color = "#75A2BB"
-	},
 /obj/structure/railing{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/watertank,
+/obj/effect/turf_decal/box{
+	color = "#75A2BB"
+	},
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "ZU" = (
