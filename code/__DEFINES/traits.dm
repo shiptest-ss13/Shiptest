@@ -305,6 +305,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// A transforming item that is actively extended / transformed
 #define TRAIT_TRANSFORM_ACTIVE "active_transform"
 #define TRAIT_WIELDED "wielded" //The item is currently being wielded
+#define TRAIT_FORCE_SUIT_STORAGE "force_suit_storage" // the item can be worn in suit storage without an outerclothing
 
 //quirk traits
 #define TRAIT_ALCOHOL_TOLERANCE "alcohol_tolerance"

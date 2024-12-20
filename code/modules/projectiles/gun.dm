@@ -650,7 +650,11 @@
 	if(wielded_fully)
 		simulate_recoil(user, recoil, actual_angle)
 	else if(!wielded_fully)
-		simulate_recoil(user, recoil_unwielded, actual_angle)
+		var/recoil_temp = recoil_unwielded
+		var/obj/item/shield/riot/shield = user.get_inactive_held_item()
+		if(istype(shield))
+			recoil_temp += shield.recoil_bonus
+		simulate_recoil(user, recoil_temp, actual_angle)
 
 	if(suppressed)
 		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
@@ -1120,6 +1124,7 @@
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	/obj/item/gun/energy/plasmacutter,
 	/obj/item/melee/energy,
+	/obj/item/gear_handle/anglegrinder,
 	)))
 
 ///Handles all the logic of sawing off guns,

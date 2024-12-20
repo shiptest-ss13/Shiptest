@@ -97,3 +97,11 @@
 		/obj/item/storage/box/flares,
 		/obj/item/storage/box/flares,
 	)
+
+/datum/supply_pack/exploration/nvg
+	name = "Night Vision Goggles"
+	desc = "Contains a singular pair of Night Vision Goggles, for all your spelunking and military LARP occasions."
+	cost = 1000
+	contains = list(
+		/obj/item/clothing/glasses/night
+	)
