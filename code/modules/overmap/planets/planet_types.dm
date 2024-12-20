@@ -307,7 +307,7 @@
 	planet = DYNAMIC_WORLD_MOON
 	icon_state = "moon"
 	color = "#d1c3c3"
-	weight = 15
+	weight = 20
 
 	mapgen = /datum/map_generator/planet_generator/moon
 	gravity = STANDARD_GRAVITY
@@ -326,7 +326,7 @@
 	planet = DYNAMIC_WORLD_BATTLEFIELD
 	icon_state = "battlefield"
 	color = "#b32048"
-	weight = 2
+	weight = 0
 
 	ruin_type = RUINTYPE_BATTLEFIELD // minor 'planets' have no ruins
 	mapgen = /datum/map_generator/planet_generator/battlefield

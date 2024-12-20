@@ -282,7 +282,6 @@
 	if(custom_color)
 		star_1.color = get_rand_spectral_color(pick(spectral_types), color_vary)
 		star_2.color = get_rand_spectral_color(pick(spectral_types), color_vary)
-		return
 
 	token.add_overlay(star_1)
 	token.add_overlay(star_2)
@@ -324,6 +323,7 @@
 	token.pixel_y = -32
 
 /datum/overmap/star/pulsar
+	name = "Pulsar"
 	desc = "An incredibly dense star that spins incredibly fast, shooting out radiation out of both it's poles. it is mainly made of neutrons as it's intense gravity causes other particles to combine into more neutrons."
 	interference_power = 300
 	spectral_type = STAR_F
@@ -352,6 +352,7 @@
 	eventspawn_cooldown_max = (8 SECONDS)
 
 /datum/overmap/star/pulsar/alter_token_appearance()
+	. = ..()
 	token.icon = 'icons/misc/overmap_larger.dmi'
 	token.bound_height = 96
 	token.bound_width = 96
