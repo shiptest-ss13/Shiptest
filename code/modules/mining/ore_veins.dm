@@ -266,10 +266,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 2
 	//We then start to introduce the unused jungle mobs... slowly.
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/wolf/random = 65,
-		/mob/living/simple_animal/hostile/bear/cave = 50,
-		/mob/living/simple_animal/hostile/poison/giant_spider = 25,
-		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 10,
+		/mob/living/simple_animal/hostile/asteroid/wolf/random = 75,
+		/mob/living/simple_animal/hostile/bear/cave = 60,
+		/mob/living/simple_animal/hostile/poison/giant_spider = 45,
+		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 20,
 		/mob/living/simple_animal/hostile/jungle/seedling = 1,
 		/mob/living/simple_animal/hostile/jungle/mega_arachnid = 1,
 		/mob/living/simple_animal/hostile/jungle/mook = 1,
