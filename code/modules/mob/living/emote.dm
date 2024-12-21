@@ -616,6 +616,12 @@
 /datum/emote/living/custom/replace_pronoun(mob/user, message)
 	return message
 
+/datum/emote/living/custom/subtle
+	key = "subtle"
+	key_third_person = "subtle custom"
+	message = null
+	range = 1
+
 /datum/emote/living/help
 	key = "help"
 
