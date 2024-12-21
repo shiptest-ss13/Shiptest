@@ -110,9 +110,9 @@
 	if(pump_direction & RELEASING) // internal -> external
 		var/pressure_delta = 10000
 
-		if(pressure_checks&EXT_BOUND)
+		if(pressure_checks & EXT_BOUND)
 			pressure_delta = min(pressure_delta, (external_pressure_bound - environment_pressure))
-		if(pressure_checks&INT_BOUND)
+		if(pressure_checks & INT_BOUND)
 			pressure_delta = min(pressure_delta, (air_contents.return_pressure() - internal_pressure_bound))
 
 		if(pressure_delta > 0)
@@ -126,9 +126,9 @@
 		if(environment.return_pressure() > 0)
 			var/our_multiplier = air_contents.return_volume() / (environment.return_temperature() * R_IDEAL_GAS_EQUATION)
 			var/moles_delta = 10000 * our_multiplier
-			if(pressure_checks&EXT_BOUND)
+			if(pressure_checks & EXT_BOUND)
 				moles_delta = min(moles_delta, (environment_pressure - external_pressure_bound) * environment.return_volume() / (environment.return_temperature() * R_IDEAL_GAS_EQUATION))
-			if(pressure_checks&INT_BOUND)
+			if(pressure_checks & INT_BOUND)
 				moles_delta = min(moles_delta, (internal_pressure_bound - air_contents.return_pressure()) * our_multiplier)
 
 			if(moles_delta > 0)

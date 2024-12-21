@@ -6,7 +6,7 @@
 	item_state = "spur"
 
 	muzzleflash_iconstate = "muzzle_flash_laser"
-	muzzle_flash_color = COLOR_SOFT_RED
+	light_color = COLOR_SOFT_RED
 
 	has_safety = TRUE
 	safety = TRUE

@@ -146,7 +146,7 @@
 	..()
 	if(!holding)
 		var/turf/T = get_turf(src)
-		for(var/turf/AT in T.GetAtmosAdjacentTurfs(alldir = TRUE))
+		for(var/turf/AT as anything in T.get_atmos_all_adjacent_turfs())
 			scrub(AT.return_air())
 
 /obj/machinery/portable_atmospherics/scrubber/huge/attackby(obj/item/W, mob/user)

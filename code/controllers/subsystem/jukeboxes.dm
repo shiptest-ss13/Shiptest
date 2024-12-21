@@ -35,9 +35,7 @@ SUBSYSTEM_DEF(jukeboxes)
 	var/sound/song_to_init = sound(T.song_path)
 	song_to_init.status = SOUND_MUTE
 	for(var/mob/M in GLOB.player_list)
-		if(!M.client)
-			continue
-		if(!(M.client.prefs.toggles & SOUND_INSTRUMENTS))
+		if(!(M?.client.prefs.toggles & SOUND_INSTRUMENTS))
 			continue
 
 		M.playsound_local(M, null, 100, channel = youvegotafreejukebox[2], S = song_to_init)
@@ -88,9 +86,7 @@ SUBSYSTEM_DEF(jukeboxes)
 	return ..()
 
 /datum/controller/subsystem/jukeboxes/fire()
-	if(!activejukeboxes.len)
-		return
-	for(var/list/jukeinfo in activejukeboxes)
+	for(var/list/jukeinfo as anything in activejukeboxes)
 		if(!jukeinfo.len)
 			stack_trace("Active jukebox without any associated metadata.")
 			continue
@@ -103,42 +99,38 @@ SUBSYSTEM_DEF(jukeboxes)
 			stack_trace("Nonexistant or invalid object associated with jukebox.")
 			continue
 		var/sound/song_played = sound(juketrack.song_path)
-		var/area/currentarea = get_area(jukebox)
 		var/turf/currentturf = get_turf(jukebox)
-		var/list/hearerscache = hearers(7, jukebox)
-		var/turf/above_turf = currentturf.above()
-		var/turf/below_turf = currentturf.below()
+		var/list/hearerscache = get_hearers_in_view(7, jukebox)
+
+		var/datum/virtual_level/zone = currentturf.get_virtual_level()
+		var/turf/above_turf = zone.get_above_turf(currentturf)
+		var/turf/below_turf = zone.get_below_turf(currentturf)
+
+		var/list/virtual_ids = list(zone.id)
+		var/list/areas = list(get_area(jukebox))
+		if(above_turf && istransparentturf(above_turf))
+			virtual_ids += above_turf.virtual_z
+			areas += get_area(above_turf)
+		if(below_turf && istransparentturf(below_turf))
+			virtual_ids += below_turf.virtual_z
+			areas += get_area(below_turf)
 
 		song_played.falloff = jukeinfo[4]
 
-		for(var/mob/M in GLOB.player_list)
-			if(!M.client)
-				continue
-			if(!(M.client.prefs.toggles & SOUND_INSTRUMENTS) || !M.can_hear())
+		for(var/mob/M as anything in GLOB.player_list)
+			if(!(M.client?.prefs.toggles & SOUND_INSTRUMENTS) || !M.can_hear())
 				M.stop_sound_channel(jukeinfo[2])
 				continue
 
 			var/inrange = FALSE
-			if(jukebox.z == M.z)	//todo - expand this to work with mining planet z-levels when robust jukebox audio gets merged to master
-				song_played.status = SOUND_UPDATE
-				if(get_area(M) == currentarea)
-					inrange = TRUE
-				else if(M in hearerscache)
-					inrange = TRUE
-			else if(above_turf?.z == M.z)
-				song_played.status = SOUND_UPDATE
-				if(istransparentturf(above_turf) && (get_area(M) == get_area(above_turf)))
-					inrange = TRUE
-			else if(below_turf?.z == M.z)
-				song_played.status = SOUND_UPDATE
-				if(istransparentturf(below_turf) && (get_area(M) == get_area(below_turf)))
-					inrange = TRUE
+			if(jukebox.volume <= 0 || !(M.virtual_z() in virtual_ids))
+				song_played.status = SOUND_MUTE | SOUND_UPDATE
 			else
-				song_played.status = SOUND_MUTE | SOUND_UPDATE	//Setting volume = 0 doesn't let the sound properties update at all, which is lame.
-
-			if(jukebox.volume <= 0)
-				song_played.status = SOUND_MUTE
+				song_played.status = SOUND_UPDATE
+				if((get_area(M) in areas) || (M in hearerscache))
+					inrange = TRUE
 
 			M.playsound_local(currentturf, null, jukebox.volume, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000))
-			CHECK_TICK
-	return
+
+			if(MC_TICK_CHECK)
+				return

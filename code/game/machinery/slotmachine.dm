@@ -55,7 +55,7 @@
 		var/obj/item/coin/C = cointype
 		coinvalues["[cointype]"] = initial(C.value)
 
-/obj/machinery/computer/slot_machine/Destroy()
+/obj/machinery/computer/slot_machine/deconstruct(disassembled, mob/user)
 	if(balance)
 		give_payout(balance)
 	return ..()

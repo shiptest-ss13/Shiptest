@@ -57,7 +57,7 @@ GLOBAL_PROTECT(donators)
 	load_information()
 	GLOB.donators[ckey] = src
 
-/datum/donator/Destroy(force, ...)
+/datum/donator/Destroy(force)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
 	. = ..()
