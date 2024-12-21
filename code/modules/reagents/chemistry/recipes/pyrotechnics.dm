@@ -6,7 +6,7 @@
 	explode(holder, created_volume)
 
 /datum/chemical_reaction/reagent_explosion/proc/explode(datum/reagents/holder, created_volume)
-	if(QDELING(holder.my_atom))
+	if(QDELETED(holder.my_atom))
 		return
 	var/power = modifier + round(created_volume/strengthdiv, 1)
 	if(power > 0)
