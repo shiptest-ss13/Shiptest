@@ -20,7 +20,7 @@
 ///Machine that lets you play roulette. Odds are pre-defined to be the same as European Roulette without the "En Prison" rule
 /obj/machinery/roulette
 	name = "Roulette Table"
-	desc = "A computerized roulette table. Swipe your ID to play or register yourself as owner!"
+	desc = "A computerized roulette table. Swipe your cash card to play or register yourself as the owner!"
 	icon = 'icons/obj/machines/roulette.dmi'
 	icon_state = "idle"
 	density = TRUE
@@ -213,11 +213,11 @@
 	audible_message("<span class='notice'>The result is: [result]</span>")
 
 	playing = FALSE
-	update_icon(potential_payout, color, rolled_number, is_winner)
+	update_icon(ALL, potential_payout, color, rolled_number, is_winner)
 	handle_color_light(color)
 
 	if(!is_winner)
-		audible_message("<span class='warning'>You lost! Better luck next time</span>")
+		audible_message("<span class='warning'>You lost! Better luck next time!</span>")
 		playsound(src, 'sound/machines/synth_no.ogg', 50)
 		return FALSE
 
@@ -403,7 +403,7 @@
 
 /obj/item/roulette_wheel_beacon
 	name = "roulette wheel beacon"
-	desc = "N.T. approved roulette wheel beacon, toss it down and you will have a complementary roulette wheel delivered to you."
+	desc = "An N.T.-approved roulette wheel beacon. Toss it down, and a complementary roulette wheel will be delivered to you."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "floor_beacon"
 	var/used
@@ -412,6 +412,7 @@
 	if(used)
 		return
 	loc.visible_message("<span class='warning'>\The [src] begins to beep loudly!</span>")
+	playsound(get_turf(src), 'sound/machines/click.ogg', 50, TRUE)
 	used = TRUE
 	addtimer(CALLBACK(src, PROC_REF(launch_payload)), 40)
 
