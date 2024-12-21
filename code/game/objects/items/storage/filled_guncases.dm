@@ -325,3 +325,8 @@
 /obj/item/storage/guncase/skm_lmg
 	gun_type = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40/drum
+
+/* Eoehoma */
+
+/obj/item/storage/guncase/energy/e10
+	gun_type = /obj/item/gun/energy/laser/e10
