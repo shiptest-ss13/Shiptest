@@ -191,6 +191,13 @@
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	faction = /datum/faction/nt
 
+/datum/supply_pack/gun/scatterlaser
+	name = "Scatter Laser Crate"
+	desc = "Contains a multi-function scatter energy gun, capable of firing armour penetrating slugs, and devastating scattered laser bolts."
+	cost = 1250
+	contains = list(/obj/item/gun/energy/laser/scatter)
+	crate_name = "scatter laser crate"
+
 /datum/supply_pack/gun/ion
 	name = "Ion Rifle Crate"
 	desc = "Contains a single Mk.I Ion Projector, a special anti-tank rifle designed to disable electronic threats at range."
