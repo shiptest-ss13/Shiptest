@@ -270,23 +270,35 @@
 	// Determine the identity information which will be attached to the signal.
 	var/atom/movable/virtualspeaker/speaker = new(null, M, src)
 
+	// Check for the overmap's interference level
+	var/interference_level = SSovermap.get_overmap_interference(src)
+
 	// Construct the signal
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
+	signal.data["interference"] = interference_level
+	signal.data["sfx"] = 'sound/effects/radio_chatter.ogg'
+
+	var/talkie_sound = 'sound/effects/walkietalkie.ogg'
+
+	//If the interference is extremely high we play this alt sound effect
+	if(interference_level >= INTERFERENCE_LEVEL_RADIO_STATIC_SOUND)
+		talkie_sound = 'sound/effects/overmap/heavy_interference.ogg'
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))		//WS Edit - SolGov Rep
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.map_zones = list(0)  // reaches all Z-levels
+		signal.data["sfx"] = 'sound/effects/overmap/wideband.ogg'
 		signal.broadcast()
-		playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
+		playsound(src, talkie_sound, 20, FALSE)
 		return
 
 	// All radios make an attempt to use the subspace system first
 	signal.send_to_receivers()
 
 	//At this point the signal was transmitted so play a sound			//WS Edit - Radio chatter
-	playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
+	playsound(src, talkie_sound, 20, FALSE)			//WS Edit - Radio chatter
 
 	// If the radio is subspace-only, that's all it can do
 	if (subspace_transmission)

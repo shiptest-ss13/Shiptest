@@ -81,7 +81,7 @@
 	)
 
 /datum/biome/grass
-	open_turf_types = list(/turf/open/floor/plating/grass/beach/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/jungle = 1,
 		/obj/structure/flora/ausbushes/brflowers = 1,
@@ -177,7 +177,7 @@
 	flora_spawn_chance = 6
 
 /datum/biome/cave/beach/magical
-	open_turf_types = list(/turf/open/floor/grass/fairy/beach = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/fairy = 1)
 	flora_spawn_chance = 20
 	flora_spawn_list = list(
 		/obj/structure/flora/ausbushes/grassybush = 1,

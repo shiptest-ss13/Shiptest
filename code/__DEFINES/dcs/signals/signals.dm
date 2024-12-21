@@ -675,10 +675,19 @@
 // /datum/overmap signals
 /// From overmap Move(): (old_x, old_y)
 #define COMSIG_OVERMAP_MOVED "overmap_moved"
+/// From overmap move_overmaps(): (datum/overmap, old_x, old_y)
+#define COMSIG_OVERMAP_MOVE_SYSTEMS "overmap_moved_systems"
+/// From overmap Move(): (datum/overmap)
+#define COMSIG_OVERMAP_MOVE_SELF "overmap_move_self"
 /// From overmap Dock(): (datum/overmap)
 #define COMSIG_OVERMAP_DOCK "overmap_dock"
 /// From overmap Undock(): (datum/overmap)
 #define COMSIG_OVERMAP_UNDOCK "overmap_undock"
+
+/// From overmap jump points: (/datum/overmap_star_system, new_x, new_y)
+#define COMSIG_OVERMAP_CALIBRATE_JUMP "overmap_calibrate_jump"
+/// From overmap jump points
+#define COMSIG_OVERMAP_CANCEL_JUMP "overmap_cancel_jump"
 
 // /datum/component/spawner signals
 // Called by parent when pausing spawning, returns bool: (datum/source, spawning_started)
@@ -731,6 +740,8 @@
 /// Sent from base of /datum/controller/subsystem/points_of_interest/proc/on_poi_element_removed : (atom/old_poi)
 #define COMSIG_REMOVED_POINT_OF_INTEREST "removed_point_of_interest"
 
+///Send from overmap areas to their turfs when they need to update their light, might be useful for events?: (light_range, light_power, light_color)
+#define COMSIG_OVERMAPTURF_UPDATE_LIGHT "overmapturf_update_light"
 // Power signals
 /// Sent when an obj/item calls item_use_power: (use_amount, user, check_only)
 #define COMSIG_ITEM_POWER_USE "item_use_power"

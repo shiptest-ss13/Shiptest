@@ -1,5 +1,5 @@
 /datum/unit_test/overmap_move/Run()
-	var/datum/overmap/ship/S = new(list("x" = 1, "y" = 1))
+	var/datum/overmap/ship/S = new(list("x" = 1, "y" = 1), SSovermap.default_system)
 
 	S.change_heading(NORTHEAST)
 	S.process(1)
@@ -19,8 +19,8 @@
 	TEST_ASSERT(S.is_still(), "Ship did not stop after burning engines")
 
 /datum/unit_test/overmap_dock/Run()
-	var/datum/overmap/ship/controlled/docker = new(list("x" = 1, "y" = 1), SSmapping.ship_purchase_list[pick(SSmapping.ship_purchase_list)]) //TODO: debug ship instead of picking random ship
-	var/datum/overmap/dynamic/empty/dockee = new(list("x" = 1, "y" = 1))
+	var/datum/overmap/ship/controlled/docker = new(list("x" = 1, "y" = 1), SSovermap.default_system, SSmapping.ship_purchase_list[pick(SSmapping.ship_purchase_list)]) //TODO: debug ship instead of picking random ship
+	var/datum/overmap/dynamic/empty/dockee = new(list("x" = 1, "y" = 1), SSovermap.default_system)
 
 	docker.dock_time = 0
 
@@ -28,12 +28,12 @@
 	docker.Dock(dockee)
 
 	TEST_ASSERT_EQUAL(docker.docked_to, dockee, "Ship did not dock to dockee (Value: [docker.docked_to])")
-	TEST_ASSERT(!(docker in SSovermap.overmap_container[1][1]), "Ship did not remove itself from overmap container after docking")
+	TEST_ASSERT(!(docker in docker.current_overmap.overmap_container[1][1]), "Ship did not remove itself from overmap container after docking")
 	TEST_ASSERT(docker in dockee.contents, "Ship did not add itself to dockee after docking")
 	TEST_ASSERT_EQUAL(docker.docking, FALSE, "Ship did not set var/docking to false after docking (Value: [docker.docking])")
 
-	TEST_ASSERT(!docker.x, "Ship did not set x to null after docking (Value: [docker.x])")
-	TEST_ASSERT(!docker.y, "Ship did not set y to null after docking (Value: [docker.y])")
+	TEST_ASSERT(docker.x == dockee.x, "Ship did match x to dockee after docking (Value: [docker.x])")
+	TEST_ASSERT(docker.y == dockee.y, "Ship did match y to dockee after docking (Value: [docker.y])")
 
 	TEST_ASSERT_EQUAL(docker.shuttle_port.virtual_z(), dockee.mapzone.id, "Ship did not move shuttle port to dockee's mapzone (Ship [docker.shuttle_port.virtual_z()] vs Mapzone [dockee.mapzone.id])")
 
@@ -43,7 +43,7 @@
 	docker.Undock()
 
 	TEST_ASSERT(!docker.docked_to, "Ship did not undock from dockee (Value: [docker.docked_to])")
-	TEST_ASSERT(docker in SSovermap.overmap_container[3][3], "Ship did not add itself to overmap container in correct position after undocking")
+	TEST_ASSERT(docker in docker.current_overmap.overmap_container[3][3], "Ship did not add itself to overmap container in correct position after undocking")
 	TEST_ASSERT(!(docker in dockee.contents), "Ship did not remove itself from dockee after undocking")
 	TEST_ASSERT_EQUAL(docker.docking, FALSE, "Ship did not set var/docking to false after undocking (Value: [docker.docking])")
 

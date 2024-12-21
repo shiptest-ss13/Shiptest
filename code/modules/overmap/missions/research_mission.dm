@@ -51,20 +51,12 @@
 	var/obj/docking_port/mobile/scanner_port
 	if(failed || (num_current >= num_wanted))
 		return
-	over_obj = locate(objective_type) in SSovermap.overmap_container[ship.x][ship.y]
+	over_obj = locate(objective_type) in ship.current_overmap.overmap_container[ship.x][ship.y]
 	scanner_port = SSshuttle.get_containing_shuttle(scanner)
 	if(!over_obj || !scanner.is_operational || scanner_port?.current_ship != servant)
 		return
 	num_current++
-/* commented out until ion storms aren't literal torture
-/datum/mission/research/ion
-	name = "Ion storm research mission"
-	desc = "We require data on the behavior of ion storms in the system for an ongoing study. \
-			Please anchor the attached sensor array to your ship and fly it through the storms. \
-			It must be powered to collect the data."
-	value = 3500
-	objective_type = /datum/overmap/event/emp
-*/
+
 /datum/mission/research/meteor
 	name = "Asteroid field research mission"
 	desc = "We require data on the behavior of asteroid fields in the system for an ongoing study. \
@@ -92,6 +84,35 @@
 	value = 1000
 	weight = 4
 	objective_type = /datum/overmap/event/meteor/dust
+
+/datum/mission/research/radstorm
+	name = "Radiation storm field research mission"
+	desc = "We require data on the behavior of radiation storms in the system for an ongoing study. \
+			Please anchor the attached sensor array to your ship and fly it through the fields. \
+			It must be powered to collect the data."
+	value = 3500
+	weight = 2
+	objective_type = /datum/overmap/event/rad
+
+/datum/mission/research/ion
+	name = "Ion storm research mission"
+	desc = "We require data on the behavior of electromagnetic storms in the system for an ongoing study. \
+			Please anchor the attached sensor array to your ship and fly it through the storms. \
+			It must be powered to collect the data."
+	value = 4500
+	weight = 2
+	objective_type = /datum/overmap/event/emp
+
+/datum/mission/research/flare
+	name = "Solar flare field research mission"
+	desc = "We require data on the behavior of solar flares in the system for an ongoing study. \
+			Please anchor the attached sensor array to your ship and fly it through the fields. \
+			It must be powered to collect the data."
+	value = 5000
+	weight = 2
+	objective_type = /datum/overmap/event/flare
+
+
 
 /*
 		Research mission scanning machine
