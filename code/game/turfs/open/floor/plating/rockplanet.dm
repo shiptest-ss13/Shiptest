@@ -46,7 +46,6 @@
 	light_power = 0.6
 
 //i hate subtyping but i love you erika
-//this is the second time your name is mentioned here lol
 
 /turf/open/floor/plating/asteroid/rockplanet/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
@@ -55,33 +54,33 @@
 	light_range = 2
 	light_power = 0.6
 
-/turf/open/floor/plating/asteroid/rockplanet/safe/cracked
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe
 	name = "iron cracked sand"
 	icon_state = "dry_cracked0"
 	base_icon_state = "dry_cracked"
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet
 
-/turf/open/floor/plating/asteroid/rockplanet/safe/cracked/lit
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit
 	light_range = 2
 	light_power = 0.6
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet/lit
 
-/turf/open/floor/plating/asteroid/rockplanet/safe/wet
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe
 	icon_state = "wet_soft0"
 	base_icon_state = "wet_soft"
 
-/turf/open/floor/plating/asteroid/rockplanet/safe/wet/lit
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/lit
 	light_range = 2
 	light_power = 0.6
 
-/turf/open/floor/plating/asteroid/rockplanet/safe/wet/cracked
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked
 	name = "iron cracked sand"
 	icon_state = "wet_cracked0"
 	base_icon_state = "wet_cracked"
 
-/turf/open/floor/plating/asteroid/rockplanet/safe/wet/cracked/lit
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked/lit
 	light_range = 2
 	light_power = 0.6
 
