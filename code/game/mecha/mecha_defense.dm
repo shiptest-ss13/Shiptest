@@ -309,7 +309,7 @@
 		obj_integrity += min(10 * repair_multiplier, max_integrity-obj_integrity)
 		if(obj_integrity == max_integrity)
 			to_chat(user, span_notice("It looks to be fully repaired now."))
-		return
+			return
 	to_chat(user, span_warning("The [name] is at full integrity!"))
 
 /obj/mecha/proc/mech_toxin_damage(mob/living/target)
