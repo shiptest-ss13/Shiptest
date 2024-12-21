@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 41
+#define SAVEFILE_VERSION_MAX 42
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -76,8 +76,23 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(current_version < 38)
 		outline_enabled = TRUE
 		outline_color = COLOR_BLUE_GRAY
+
 	if (current_version < 40)
 		LAZYADD(key_bindings["Space"], "hold_throw_mode")
+
+	if(current_version < 42)
+		//The toggles defines were moved down one bit
+		if(toggles & FAST_MC_REFRESH)
+			toggles |= SPLIT_ADMIN_TABS
+		else
+			toggles &= ~SPLIT_ADMIN_TABS
+
+		if(toggles & SOUND_RADIO)
+			toggles |= FAST_MC_REFRESH
+		else
+			toggles &= ~FAST_MC_REFRESH
+
+		toggles |= SOUND_RADIO
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
 	if(current_version < 39)

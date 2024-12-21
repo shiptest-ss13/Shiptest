@@ -28,9 +28,6 @@
 	var/emped = 0
 	///It can be used for hotkeys
 	var/headset = FALSE
-	///The time since we last played a radio chatter sound.
-	var/last_chatter_time
-
 	///Whether the radio will transmit dialogue it hears nearby.
 	var/broadcasting = FALSE
 	///Whether the radio is currently receiving.
@@ -274,19 +271,15 @@
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))		//WS Edit - SolGov Rep
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.map_zones = list(0)  // reaches all Z-levels
 		signal.broadcast()
-		playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
 		return
 
 	// All radios make an attempt to use the subspace system first
 	signal.send_to_receivers()
-
-	//At this point the signal was transmitted so play a sound			//WS Edit - Radio chatter
-	playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
 
 	// If the radio is subspace-only, that's all it can do
 	if (subspace_transmission)
