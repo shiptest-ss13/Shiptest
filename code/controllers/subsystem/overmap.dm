@@ -989,8 +989,8 @@ SUBSYSTEM_DEF(overmap)
 	can_be_selected_randomly = FALSE
 
 /datum/overmap_star_system/shiptest/New(generate_now=TRUE)
-	//1/20 rounds
-	if(!prob(5))
+	//1/10 rounds
+	if(!prob(10))
 		return ..()
 
 	//Small easter egg so all these palletes doesn't go to waste in the event mines
