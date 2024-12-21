@@ -402,8 +402,16 @@
 /turf/open/floor/plasteel,
 /area/outpost/cargo)
 "cK" = (
-/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked,
-/area/outpost/maintenance/starboard)
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera,
+/turf/open/floor/plasteel/tech,
+/area/outpost/hallway/central)
 "cL" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
@@ -500,8 +508,19 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "dF" = (
-/turf/open/floor/plating/asteroid/rockplanet/wet/safe,
-/area/outpost/maintenance/starboard)
+/obj/effect/turf_decal/techfloor,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/obj/machinery/camera{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/security)
 "dM" = (
 /turf/closed/indestructible/rock/rockplanet,
 /area/outpost/hallway/central)
@@ -1283,7 +1302,7 @@
 /turf/open/floor/carpet/red_gold,
 /area/outpost/crew/bar)
 "io" = (
-/turf/open/floor/plating/asteroid/rockplanet/wet/safe/lit,
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked/lit,
 /area/outpost/external)
 "iu" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
@@ -1832,9 +1851,9 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/hallway/central)
 "lR" = (
-/obj/structure/girder,
-/turf/open/floor/plating/asteroid/rockplanet/wet/safe/lit,
-/area/outpost/external)
+/obj/structure/flora/grass/rockplanet/dead,
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe,
+/area/outpost/maintenance/starboard)
 "lT" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3411,16 +3430,8 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "uZ" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera,
-/turf/open/floor/plasteel/tech,
-/area/outpost/hallway/central)
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked,
+/area/outpost/maintenance/starboard)
 "vd" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -3562,10 +3573,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo)
-"vH" = (
-/obj/structure/flora/grass/rockplanet/dead,
-/turf/open/floor/plating/asteroid/rockplanet/wet/safe,
-/area/outpost/maintenance/starboard)
 "vM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5175,7 +5182,7 @@
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/starboard)
 "GH" = (
-/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked/lit,
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/lit,
 /area/outpost/external)
 "GK" = (
 /obj/structure/chair/wood{
@@ -5940,6 +5947,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
+"LL" = (
+/obj/structure/girder,
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked/lit,
+/area/outpost/external)
 "LU" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/hallway/central)
@@ -6427,19 +6438,9 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "Os" = (
-/obj/effect/turf_decal/techfloor,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 5
-	},
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 1
-	},
-/obj/machinery/camera{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/outpost/security)
+/obj/structure/flora/rock/pile/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked,
+/area/outpost/maintenance/starboard)
 "Ot" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -6597,7 +6598,7 @@
 /area/outpost/maintenance/starboard)
 "Pu" = (
 /obj/structure/girder,
-/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked/lit,
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/lit,
 /area/outpost/external)
 "PB" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -7309,6 +7310,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo)
+"Vq" = (
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe,
+/area/outpost/maintenance/starboard)
 "Vu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -7852,10 +7856,6 @@
 "ZL" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
-/area/outpost/maintenance/starboard)
-"ZN" = (
-/obj/structure/flora/rock/pile/rockplanet,
-/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked,
 /area/outpost/maintenance/starboard)
 "ZQ" = (
 /obj/structure/table/wood,
@@ -8609,7 +8609,7 @@ Tk
 Tk
 Np
 Np
-cK
+uZ
 bN
 fo
 bN
@@ -8690,9 +8690,9 @@ Tk
 fo
 fo
 fo
-dF
+Vq
 fo
-ZN
+Os
 Ji
 Wy
 Np
@@ -8768,13 +8768,13 @@ Wy
 Tk
 Tk
 Np
-cK
+uZ
 fo
 fo
 fo
 fo
 fo
-cK
+uZ
 Np
 Tk
 Tk
@@ -8849,7 +8849,7 @@ Tk
 Tk
 Np
 bN
-dF
+Vq
 fo
 fo
 fo
@@ -8929,13 +8929,13 @@ Np
 Np
 Np
 Np
-cK
+uZ
 fo
 fo
 fo
 fo
 fo
-dF
+Vq
 Tk
 Tk
 Tk
@@ -9015,7 +9015,7 @@ fo
 fo
 fo
 fo
-cK
+uZ
 Tk
 Tk
 Tk
@@ -9090,7 +9090,7 @@ gD
 Np
 Np
 Np
-dF
+Vq
 fo
 fo
 fo
@@ -9455,8 +9455,8 @@ Tk
 Tk
 Tk
 Tk
-Hv
-Hv
+bc
+bc
 Tk
 Tk
 Tk
@@ -9477,7 +9477,7 @@ Np
 bN
 Np
 Np
-dF
+Vq
 rM
 Np
 Np
@@ -9533,11 +9533,11 @@ Em
 Em
 Em
 Tk
-Em
-Em
+bc
+bc
 Hv
 Hv
-RN
+WW
 fy
 fy
 fy
@@ -9554,7 +9554,7 @@ GR
 Np
 Np
 bN
-cK
+uZ
 bN
 Np
 Np
@@ -9623,7 +9623,7 @@ tD
 Nq
 eu
 fy
-uZ
+cK
 vh
 Xa
 uV
@@ -9633,9 +9633,9 @@ jd
 gg
 bN
 bN
-dF
+Vq
 gh
-cK
+uZ
 fm
 Np
 rM
@@ -9711,15 +9711,15 @@ Ma
 MV
 dq
 fp
-cK
-vH
-dF
+uZ
+lR
+Vq
 fo
 fo
-dF
+Vq
 Np
-dF
-dF
+Vq
+Vq
 rM
 ny
 Np
@@ -9792,13 +9792,13 @@ MV
 Xw
 tt
 bN
-cK
+uZ
 fo
 fo
 fo
 Np
 Np
-vH
+lR
 Np
 bN
 cg
@@ -9872,7 +9872,7 @@ MV
 Ae
 OJ
 bN
-dF
+Vq
 fo
 fo
 fo
@@ -9937,7 +9937,7 @@ Em
 Em
 Em
 Em
-Hv
+bc
 fy
 CG
 vM
@@ -9953,9 +9953,9 @@ nS
 Ol
 fm
 bN
-cK
-dF
-ZN
+uZ
+Vq
+Os
 Np
 Np
 Np
@@ -10723,7 +10723,7 @@ Em
 Em
 Em
 Em
-GH
+io
 Em
 Em
 Em
@@ -10803,8 +10803,8 @@ Em
 Em
 Em
 Em
-io
 GH
+io
 Em
 Em
 Em
@@ -10882,10 +10882,10 @@ Em
 Em
 Em
 Em
-Em
-lR
-io
-io
+bc
+Pu
+GH
+GH
 Em
 Em
 Hv
@@ -10960,12 +10960,12 @@ Hv
 Em
 Em
 Em
-Em
-Em
+bc
+bc
 Tk
-io
-io
 GH
+GH
+io
 Em
 Em
 Hv
@@ -10975,7 +10975,7 @@ Em
 Hv
 Em
 Em
-Em
+bc
 fy
 ks
 tG
@@ -11039,13 +11039,13 @@ Em
 Em
 Em
 Em
-Em
-Em
+bc
+bc
 Tk
 Tk
 Tk
-io
 GH
+io
 av
 Em
 Em
@@ -11054,8 +11054,8 @@ Em
 Em
 hO
 Em
-Em
-Em
+bc
+bc
 fy
 oc
 rJ
@@ -11123,10 +11123,10 @@ Em
 Em
 Tk
 hq
-io
-io
-io
-Pu
+GH
+GH
+GH
+LL
 Em
 Em
 Em
@@ -11134,8 +11134,8 @@ Em
 Em
 Hv
 Em
-Em
-Em
+bc
+bc
 fy
 fy
 KX
@@ -11152,7 +11152,7 @@ Sn
 JC
 ED
 Lw
-Os
+dF
 pm
 Je
 CO
@@ -11203,10 +11203,10 @@ Em
 Em
 Hv
 Tk
+bc
 GH
-io
 Tk
-GH
+io
 Em
 Em
 Em
@@ -11214,8 +11214,8 @@ uG
 Em
 Em
 Em
-Em
-Em
+bc
+bc
 fy
 rC
 AE
@@ -11284,9 +11284,10 @@ Em
 Hv
 av
 Tk
-GH
+io
 Tk
 Tk
+bc
 Em
 Em
 Em
@@ -11294,8 +11295,7 @@ Em
 Em
 Em
 Em
-Em
-Em
+bc
 to
 to
 to
@@ -11365,9 +11365,9 @@ hO
 Em
 Em
 Em
-Em
+bc
 Tk
-Em
+bc
 Em
 Em
 Em
@@ -11375,7 +11375,7 @@ Em
 Em
 Em
 ZX
-Em
+bc
 ev
 ze
 FV
@@ -11446,7 +11446,7 @@ Em
 Em
 Em
 AI
-Em
+bc
 Em
 Em
 Em
@@ -11535,7 +11535,7 @@ Hv
 Em
 Em
 Em
-Em
+bc
 ev
 wu
 mC
@@ -11615,7 +11615,7 @@ Hv
 Em
 Em
 Em
-Em
+bc
 to
 to
 to
@@ -11696,7 +11696,7 @@ Hv
 Em
 Em
 Em
-RN
+WW
 Ko
 jp
 Vl
@@ -12016,7 +12016,7 @@ Em
 cT
 Hv
 Em
-Em
+bc
 Ko
 Wo
 Ic
@@ -12096,7 +12096,7 @@ Hv
 Em
 Hv
 Em
-Em
+bc
 Ko
 Ko
 Ko
@@ -12177,13 +12177,13 @@ Em
 Hv
 Hv
 Em
-Em
+bc
 oG
 xJ
 nR
 eP
 Ko
-uZ
+cK
 eF
 aq
 eW
@@ -12257,7 +12257,7 @@ Em
 Hv
 Hv
 RN
-Em
+bc
 oG
 Cy
 TU
@@ -12579,9 +12579,9 @@ Em
 Em
 Em
 Hv
-Hv
-Em
-Hv
+bc
+bc
+bc
 LU
 eX
 EM
@@ -12660,14 +12660,14 @@ Em
 Em
 Em
 Em
-Em
-Em
+bc
+bc
 LU
 bs
 Zu
 lm
 eW
-Hv
+bc
 eW
 xZ
 OF
@@ -12741,13 +12741,13 @@ Em
 Em
 Em
 Em
-Em
+bc
 LU
 MV
 LJ
 MV
 LU
-Hv
+bc
 eW
 fb
 ww
@@ -12821,7 +12821,7 @@ Em
 Em
 Em
 Em
-Em
+bc
 LU
 ix
 KC
@@ -13243,7 +13243,7 @@ cT
 Tk
 Tk
 Tk
-GH
+io
 Tk
 Tk
 Tk
@@ -13321,9 +13321,9 @@ hO
 Em
 Em
 Em
-io
-io
 GH
+GH
+io
 Tk
 Tk
 Tk
@@ -13402,8 +13402,8 @@ Em
 Em
 Em
 cT
-GH
 io
+GH
 Tk
 Tk
 Tk
@@ -13483,7 +13483,7 @@ Em
 Em
 Em
 Em
-io
+GH
 Tk
 Tk
 Tk
@@ -13546,8 +13546,8 @@ Em
 Em
 Em
 Em
-Em
-Em
+bc
+bc
 Hv
 Em
 Em
@@ -13562,7 +13562,7 @@ Em
 Em
 Em
 Em
-GH
+io
 Tk
 Tk
 Tk
@@ -13625,11 +13625,11 @@ Em
 Em
 Em
 Em
-cT
+Sb
 Tk
+bc
 io
-GH
-GH
+io
 Em
 CJ
 Aw
@@ -13641,7 +13641,7 @@ Em
 Em
 Em
 Em
-io
+GH
 Tk
 Tk
 Tk
@@ -13704,7 +13704,7 @@ Hv
 Em
 Em
 Hv
-Em
+bc
 Tk
 Tk
 Tk
@@ -13789,8 +13789,8 @@ Em
 Tk
 Tk
 Tk
-io
 GH
+io
 CJ
 Aw
 gx
@@ -13869,7 +13869,7 @@ Em
 Em
 Tk
 Tk
-GH
+io
 Em
 CJ
 Aw
@@ -14253,7 +14253,7 @@ Em
 Em
 CR
 uS
-io
+GH
 Em
 RN
 Em
@@ -14333,8 +14333,8 @@ Bo
 Bo
 le
 Tk
-Pu
-GH
+LL
+io
 Em
 Em
 Em
@@ -14414,8 +14414,8 @@ px
 Tk
 Tk
 Tk
-io
-io
+GH
+GH
 Em
 Em
 Em
@@ -14496,7 +14496,7 @@ Tk
 Tk
 Mu
 ER
-GH
+io
 Em
 Em
 Em
@@ -14575,9 +14575,9 @@ Em
 av
 Em
 Em
-GH
 io
 GH
+io
 Em
 Em
 Em
@@ -14658,7 +14658,7 @@ Em
 Em
 Em
 Em
-GH
+io
 Em
 Em
 Em
