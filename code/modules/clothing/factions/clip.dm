@@ -181,6 +181,8 @@
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
 
+	slowdown = 0.2
+
 	icon_state = "hardsuit-clip-patrol"
 	hardsuit_type = "hardsuit-clip-patrol"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clip_patroller
@@ -213,12 +215,12 @@
 	icon_state = "clip_spotter"
 	hardsuit_type = "clip_spotter"
 
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clip_spotter
 	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 
 	resistance_flags = null
-	slowdown = 1
+	slowdown = 1.25
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
@@ -232,7 +234,7 @@
 	icon_state = "hardsuit0-clip_spotter"
 	hardsuit_type = "clip_spotter"
 
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
 	resistance_flags = null
 
 	supports_variations = SNOUTED_VARIATION
