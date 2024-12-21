@@ -2,6 +2,10 @@
 	projectile_type = /obj/projectile/beam/laser
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/underbarrel
+	projectile_type = /obj/projectile/beam/laser
+	e_cost =  1250
+
 /obj/item/ammo_casing/energy/laser/eoehoma
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
