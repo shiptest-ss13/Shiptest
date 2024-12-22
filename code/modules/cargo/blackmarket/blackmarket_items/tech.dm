@@ -50,7 +50,7 @@
 	price_min = 5000
 	price_max = 8000
 	stock = 1
-	availability_prob = 5
+	availability_prob = 25
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tech/boris
@@ -58,8 +58,8 @@
 	desc = "A Bluespace Optimi-blah blah blah, I'm bored already. This module will convert a cyborg frame into an AI compatible shell."
 	item = /obj/item/borg/upgrade/ai
 
-	price_min = 500
-	price_max = 1000
+	price_min = 250
+	price_max = 500
 	stock = 1
 	availability_prob = 0
 

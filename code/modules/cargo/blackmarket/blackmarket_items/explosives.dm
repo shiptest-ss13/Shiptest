@@ -49,7 +49,7 @@
 	item = /obj/item/grenade/c4
 
 	price_min = 100
-	price_max = 400
+	price_max = 300
 	stock_min = 5
 	stock_max = 10
 	availability_prob = 50

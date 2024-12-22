@@ -27,11 +27,12 @@
 	item = /obj/item/clothing/under/rank/security/officer/military
 
 	price_min = 50
-	price_max = 200
+	price_max = 100
 	stock_min = 5
 	stock_max = 10
 	availability_prob = 80
 
+//cut
 /datum/blackmarket_item/clothing/galaxy_blue
 	name = "Blue Galaxy Suit"
 	desc = "A handsome silk suit, treated with a finish of bluespace dust for an out of this world sheen."
@@ -41,7 +42,7 @@
 	price_max = 2000
 	stock = 1
 	availability_prob = 20
-
+//cut
 /datum/blackmarket_item/clothing/galaxy_red
 	name = "Red Galaxy Suit"
 	desc = "A handsome silk suit, treated with a finish of telecrystal dust. It cuts a menacing figure."
@@ -97,7 +98,7 @@
 	item = /obj/item/storage/box
 
 	price_min = 500
-	price_max = 1250
+	price_max = 1000
 	stock_max = 3
 	availability_prob = 50
 
@@ -132,23 +133,20 @@
 /datum/blackmarket_item/clothing/gezena_armor
 	name = "Raksha-Plating vest"
 	desc = "Genuine armor vests used by the PGF Marine Corp. If a military guy in a cape comes by, play dumb."
-	item = /obj/item/clothing/suit/armor/gezena/marine
-	pair_item = list(/datum/blackmarket_item/clothing/gezena_helmet)
+	item =  /obj/item/storage/box
 
 	price_min = 750
-	price_max = 1250
+	price_max = 1750
 	stock_max = 3
 	availability_prob = 20
 
-/datum/blackmarket_item/clothing/gezena_helmet
-	name = "Raksha-Helm"
-	desc = "A helmet used by the PGF Marine Corp. They won't miss it. Not like there's much to protect up there anyways."
-	item = /obj/item/clothing/head/helmet/gezena
-
-	price_min = 500
-	price_max = 600
-	stock_max = 3
-	availability_prob = 0
+/datum/blackmarket_item/clothing/frontiersmen_armor_fireproof/spawn_item(loc)
+	var/obj/item/storage/box/B = ..()
+	B.name = "Armor Set Box"
+	B.desc = "A beat up looking box with some armor inside."
+	new /obj/item/clothing/suit/armor/frontier/fireproof(B)
+	new /obj/item/clothing/head/helmet/gezena(B)
+	return B
 
 /datum/blackmarket_item/clothing/full_spacesuit_set
 	name = "\improper Nanotrasen Branded Spacesuit Box"
@@ -182,7 +180,7 @@
 	var/obj/item/storage/box/syndie_kit/B = ..()
 	B.name = "Spacesuit Box"
 	B.desc = "It has a Syndicate logo on it."
-	var/suit_color = pick(list("red","green","dark green","blue","orange","black","black-green","black-blue","black-orange","black-red"))
+	var/suit_color = pick(list("red","green","dark-green","blue","orange","black","black-green","black-blue","black-orange","black-red"))
 	switch(suit_color)
 		if("red")
 			new /obj/item/clothing/head/helmet/space/syndicate(B)

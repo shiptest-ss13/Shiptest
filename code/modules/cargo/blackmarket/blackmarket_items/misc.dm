@@ -1,16 +1,6 @@
 /datum/blackmarket_item/misc
 	category = "Miscellaneous"
 
-/datum/blackmarket_item/misc/cap_gun
-	name = "Cap Gun"
-	desc = "Prank your friends with this harmless gun! Harmlessness guranteed."
-	item = /obj/item/toy/gun
-
-	price_min = 50
-	price_max = 200
-	stock_max = 6
-	availability_prob = 80
-
 /datum/blackmarket_item/misc/cham_holster
 	name = "Chameleon Shoulder holster"
 	desc = "Looking to pack some heat without attracting attention? This adapative chameleon shoulder holster can disguise itself and your piece!"

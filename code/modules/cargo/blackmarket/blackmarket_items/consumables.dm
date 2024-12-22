@@ -1,17 +1,6 @@
 /datum/blackmarket_item/consumable
 	category = "Consumables"
 
-/datum/blackmarket_item/consumable/donk_pocket_box
-	name = "Box of Donk Pockets"
-	desc = "A well packaged box containing the favourite snack of every spacefarer."
-	item = /obj/effect/spawner/random/food_or_drink/donkpockets
-
-	stock_min = 2
-	stock_max = 5
-	price_min = 325
-	price_max = 400
-	availability_prob = 80
-
 /datum/blackmarket_item/consumable/suspicious_pills
 	name = "Bottle of Suspicious Pills"
 	desc = "A random cocktail of luxury drugs that are sure to put a smile on your face!"
@@ -161,7 +150,8 @@
 
 /datum/blackmarket_item/consumable/xeno_corpse/spawn_item(loc)
 	var/mob/living/simple_animal/hostile/alien = ..()
-	alien.stat = DEAD
+	if(prob(95))
+		alien.stat = DEAD
 	return new alien(loc)
 
 /datum/blackmarket_item/consumable/berries

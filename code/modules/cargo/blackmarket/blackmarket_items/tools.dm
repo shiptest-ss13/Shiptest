@@ -7,7 +7,7 @@
 	item = /obj/item/wrench/combat
 
 	price_min = 500
-	price_max = 2500
+	price_max = 1000
 	stock = 1
 	availability_prob = 20
 
@@ -20,17 +20,6 @@
 	price_max = 5000
 	stock = 1
 	availability_prob = 25
-
-/datum/blackmarket_item/tool/binoculars
-	name = "Binoculars"
-	desc = "Twice as effective as a monocular for seeing across long distances."
-	item = /obj/item/binoculars
-
-	price_min = 50
-	price_max = 300
-	stock_min = 2
-	stock_max = 4
-	availability_prob = 70
 
 /datum/blackmarket_item/tool/whetstone
 	name = "Whetstone"
@@ -79,8 +68,8 @@
 	desc = "An extra large 150u jug of thermite. For those hard to reach places."
 	item = /obj/item/reagent_containers/glass/chem_jug/thermite
 
-	price_min = 400
-	price_max = 1200
+	price_min = 200
+	price_max = 1000
 	stock_max = 3
 	availability_prob = 20
 
