@@ -62,3 +62,39 @@
 	light_range = 2
 	light_power = 0.8
 	light_color = LIGHT_COLOR_BLUEGREEN
+
+//ruinturfs
+
+/turf/open/floor/plating/jungleplanet
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plating/jungleplanet/lit
+	light_range = 2
+	light_power = 1
+
+
+
+/turf/open/floor/concrete/jungleplanet
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/jungleplanet/lit
+	light_range = 2
+	light_power = 1
+
+/turf/open/floor/concrete/slab_1/jungleplanet
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_1/jungleplanet/lit
+	light_range = 2
+	light_power = 1
+
+/turf/open/floor/concrete/reinforced/jungleplanet
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/reinforced/jungleplanet/lit
+	light_range = 2
+	light_power = 1
