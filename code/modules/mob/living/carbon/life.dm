@@ -583,7 +583,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				natural_change = (1 / (thermal_protection + 1)) * natural_change
 
 	// Apply the natural stabilization changes
-	adjust_bodytemperature(natural_change)
+	adjust_bodytemperature(natural_change, use_insulation=FALSE)
 
 /**
  * Get the insulation that is appropriate to the temperature you're being exposed to.

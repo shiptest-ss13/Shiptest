@@ -130,21 +130,21 @@
 	qdel(src)
 
 /obj/machinery/shower/proc/check_heat(mob/living/L)
-	var/mob/living/carbon/C = L
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
 
-	switch(current_temperature)
-		if(SHOWER_FREEZING)
-			if(iscarbon(L))
-				C.adjust_bodytemperature(-2, 280)
-			to_chat(L, "<span class='warning'>[src] is cold!</span>")
-		if(SHOWER_BOILING)
-			if(iscarbon(L))
-				C.adjust_bodytemperature(2, 0, 330)
-			to_chat(L, "<span class='danger'>[src] is hot!</span>")
-		if(SHOWER_NORMAL)
-			if(iscarbon(L))
-				C.adjust_bodytemperature(1, HUMAN_BODYTEMP_NORMAL)
-
+		switch(current_temperature)
+			if(SHOWER_FREEZING)
+				C.adjust_bodytemperature(-3, 280)
+				to_chat(L, "<span class='warning'>[src] is cold!</span>")
+			if(SHOWER_BOILING)
+				C.adjust_bodytemperature(3, 0, 330)
+				to_chat(L, "<span class='danger'>[src] is hot!</span>")
+			if(SHOWER_NORMAL)
+				if(C.bodytemperature >= HUMAN_BODYTEMP_NORMAL)
+					C.adjust_bodytemperature(-2, HUMAN_BODYTEMP_NORMAL)
+				else
+					C.adjust_bodytemperature(2, HUMAN_BODYTEMP_NORMAL)
 
 /obj/effect/mist
 	name = "mist"
