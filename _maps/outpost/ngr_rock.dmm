@@ -1814,16 +1814,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
-"lJ" = (
-/obj/machinery/light/directional/north,
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/outpost/hallway/central)
 "lL" = (
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
@@ -4209,12 +4199,10 @@
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/vacant_rooms/shop)
 "zZ" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/line,
-/obj/structure/closet/firecloset/wall/directional/south,
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/clothing,
+/turf/open/floor/plasteel/dark,
 /area/outpost/hallway/central)
 "Aa" = (
 /obj/effect/spawner/random/trash/grille_or_waste,
@@ -5088,10 +5076,14 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/outpost/maintenance/starboard)
 "FN" = (
-/obj/effect/turf_decal/techfloor,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/clothing,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "FU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5151,6 +5143,14 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/concrete/slab_1,
+/area/outpost/hallway/central)
+"Ge" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/line,
+/obj/structure/closet/firecloset/wall/directional/south,
+/turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "Gf" = (
 /obj/structure/table/wood/poker,
@@ -6410,7 +6410,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/xmastree/rdrod,
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
 "Ol" = (
@@ -7048,6 +7047,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
+/obj/effect/spawner/xmastree/rdrod,
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
 "Tn" = (
@@ -11558,7 +11558,7 @@ mC
 yo
 to
 oR
-FN
+zZ
 iX
 Ex
 wG
@@ -12599,9 +12599,9 @@ bc
 bc
 bc
 LU
-lJ
+FN
 EM
-zZ
+Ge
 eW
 aw
 eW
