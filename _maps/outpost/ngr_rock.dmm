@@ -1809,14 +1809,10 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "lJ" = (
-/obj/machinery/light/directional/north,
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/clothing,
+/turf/open/floor/plasteel/dark,
 /area/outpost/hallway/central)
 "lL" = (
 /obj/machinery/light/small/directional/east,
@@ -3510,8 +3506,13 @@
 	pixel_x = 4;
 	pixel_y = -1
 	},
-/obj/item/stamp/ngr{
-	pixel_x = -8
+/obj/item/stamp{
+	pixel_y = 6;
+	pixel_x = -7
+	},
+/obj/item/stamp/denied{
+	pixel_y = 1;
+	pixel_x = -7
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/maintenance/central)
@@ -4187,12 +4188,6 @@
 "zV" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/vacant_rooms/shop)
-"zZ" = (
-/obj/effect/turf_decal/techfloor,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/clothing,
-/turf/open/floor/plasteel/dark,
-/area/outpost/hallway/central)
 "Aa" = (
 /obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
@@ -5021,8 +5016,8 @@
 "Fz" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/west,
-/obj/machinery/fax/admin/outpost{
-	pixel_y = 5
+/obj/item/clipboard{
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/maintenance/central)
@@ -5065,11 +5060,13 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/outpost/maintenance/starboard)
 "FN" = (
+/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
+	dir = 5
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/line,
-/obj/structure/closet/firecloset/wall/directional/south,
+/obj/effect/turf_decal/trimline/opaque/bar/filled/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "FU" = (
@@ -5130,6 +5127,14 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/concrete/slab_1,
+/area/outpost/hallway/central)
+"Ge" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/line,
+/obj/structure/closet/firecloset/wall/directional/south,
+/turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "Gf" = (
 /obj/structure/table/wood/poker,
@@ -11534,7 +11539,7 @@ mC
 yo
 to
 oR
-zZ
+lJ
 iX
 Ex
 wG
@@ -12575,9 +12580,9 @@ bc
 bc
 bc
 LU
-lJ
-EM
 FN
+EM
+Ge
 eW
 aw
 eW
