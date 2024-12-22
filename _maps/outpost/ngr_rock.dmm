@@ -1966,9 +1966,6 @@
 /area/outpost/crew/lounge)
 "mL" = (
 /obj/structure/extinguisher_cabinet/directional/south,
-/obj/machinery/holopad{
-	pixel_x = 1
-	},
 /obj/structure/chair/office{
 	dir = 1
 	},
@@ -2246,6 +2243,9 @@
 	},
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad{
+	pixel_x = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "oC" = (
@@ -3811,7 +3811,6 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/outpost/hallway/central)
 "xy" = (
-/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
