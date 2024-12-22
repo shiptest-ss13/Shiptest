@@ -635,7 +635,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
  * * use_steps (optional) Use the body temp divisors and max change rates
  * * hardsuit_fix (optional) num HUMAN_BODYTEMP_NORMAL - H.bodytemperature Use hardsuit override until hardsuits fix is done...
  */
-/mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=INFINITY, use_insulation=FALSE, use_steps=FALSE, \
+/mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=INFINITY, use_insulation=TRUE, use_steps=FALSE, \
 											hardsuit_fix=FALSE)
 	// apply insulation to the amount of change
 	if(use_insulation)
