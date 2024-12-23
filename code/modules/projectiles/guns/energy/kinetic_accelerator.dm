@@ -17,7 +17,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 	muzzleflash_iconstate = "muzzle_flash_light"
-	muzzle_flash_color = COLOR_WHITE
+	light_color = COLOR_WHITE
 
 	var/overheat_time = 16
 	var/holds_charge = FALSE
