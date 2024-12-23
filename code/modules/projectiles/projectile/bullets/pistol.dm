@@ -53,7 +53,7 @@
 /obj/projectile/bullet/c9mm/ap
 	name = "9mm armor-piercing bullet"
 	damage = 18
-	armour_penetration = 20
+	armour_penetration = 10
 	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/projectile/bullet/c9mm/hp
@@ -87,7 +87,7 @@
 /obj/projectile/bullet/c10mm/ap
 	name = "10mm armor-piercing bullet"
 	damage = 23
-	armour_penetration = 20
+	armour_penetration = 10
 	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/projectile/bullet/c10mm/hp
@@ -121,7 +121,7 @@
 /obj/projectile/bullet/c45/ap
 	name = ".45 armor-piercing bullet"
 	damage = 22
-	armour_penetration = 20
+	armour_penetration = 10
 	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/projectile/bullet/c45/hp
