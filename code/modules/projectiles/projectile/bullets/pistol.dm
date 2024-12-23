@@ -108,7 +108,7 @@
 
 /obj/projectile/bullet/c45
 	name = ".45 bullet"
-	damage = 27
+	damage = 25
 	armour_penetration = -20
 	speed = BULLET_SPEED_HANDGUN
 	bullet_identifier = "small bullet"
@@ -120,7 +120,7 @@
 
 /obj/projectile/bullet/c45/ap
 	name = ".45 armor-piercing bullet"
-	damage = 25
+	damage = 22
 	armour_penetration = 20
 	speed_mod = BULLET_SPEED_AP_MOD
 
