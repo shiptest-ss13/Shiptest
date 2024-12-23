@@ -336,6 +336,7 @@
 		return
 
 	if(playing)
+		remove_overlays += overlays
 		. += "random_numbers"
 
 /obj/machinery/roulette/update_icon(updates=ALL, payout, color, rolled_number, is_winner = FALSE)
