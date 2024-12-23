@@ -617,10 +617,11 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "ef" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4{
-	dir = 8
+/obj/structure/closet/crate/large,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/structure/sign/poster/random{
+	pixel_y = 32
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "ej" = (
@@ -1140,6 +1141,12 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
+"hj" = (
+/obj/structure/closet/crate/science,
+/obj/effect/spawner/random/maintenance,
+/obj/item/circuitboard/computer/crew,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "hl" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1151,15 +1158,9 @@
 /turf/open/floor/engine/fuel,
 /area/ship/engineering/engine)
 "hm" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/warning/vacuum/external{
-	pixel_y = 24
+/obj/structure/sign/poster/random{
+	pixel_y = -32
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3507,14 +3508,6 @@
 /obj/item/storage/box/cups,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"vh" = (
-/obj/structure/closet/crate/large,
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/structure/sign/poster/random{
-	pixel_y = 32
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "vi" = (
 /obj/structure/sign/number/eight{
 	dir = 1
@@ -3969,6 +3962,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
+"xP" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/random/maintenance/two,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "xT" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -4896,6 +4895,19 @@
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"DJ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/vacuum/external{
+	pixel_y = 24
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "DO" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/dorm/dormtwo)
@@ -5008,8 +5020,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm/dormtwo)
 "Fh" = (
-/obj/structure/closet/crate/secure/loot,
+/obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/ship/storage/port)
 "Fi" = (
@@ -5028,9 +5041,12 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "Fl" = (
-/obj/structure/closet/crate/science,
-/obj/effect/spawner/random/maintenance,
-/obj/item/circuitboard/computer/crew,
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/plastic/twenty,
+/obj/structure/sign/poster/random{
+	pixel_x = 32
+	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Fm" = (
@@ -5311,12 +5327,10 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "GQ" = (
-/obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/plastic/twenty,
-/obj/structure/sign/poster/random{
-	pixel_x = 32
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4{
+	dir = 8
 	},
-/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "GR" = (
@@ -5477,12 +5491,6 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
-"HQ" = (
-/obj/structure/closet/crate,
-/obj/effect/spawner/random/maintenance/two,
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "Ic" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -7754,13 +7762,6 @@
 "XJ" = (
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"XO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/random{
-	pixel_y = -32
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "XV" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
@@ -9662,7 +9663,7 @@ si
 ks
 Bz
 IB
-XO
+hm
 fK
 sw
 sw
@@ -9725,11 +9726,11 @@ sw
 sw
 sw
 fK
-GQ
-HQ
-ff
-hm
 Fl
+xP
+ff
+DJ
+hj
 fK
 sw
 sw
@@ -9828,8 +9829,8 @@ sw
 sw
 sy
 fK
-vh
 ef
+GQ
 Gq
 fK
 qt
