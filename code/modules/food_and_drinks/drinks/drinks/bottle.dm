@@ -135,11 +135,6 @@
 	icon_state = "whiskeybottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 100)
 
-/obj/item/reagent_containers/food/drinks/bottle/kong
-	name = "Kong"
-	desc = "Makes You Go Ape!"
-	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey/kong = 100)
-
 /obj/item/reagent_containers/food/drinks/bottle/candycornliquor
 	name = "candy corn liquor"
 	desc = "Like they drank in 2D speakeasies."
