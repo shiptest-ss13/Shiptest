@@ -501,7 +501,7 @@
 	req_ship_access = 0
 	},
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "gp" = (
@@ -586,12 +586,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "he" = (
-/obj/structure/closet/crate/large,
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 24
 	},
+/obj/structure/rack,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "hn" = (
@@ -1344,10 +1344,10 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "qh" = (
-/obj/structure/rack,
-/obj/effect/spawner/random/maintenance,
+/obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "qv" = (
@@ -1420,10 +1420,11 @@
 /area/ship/maintenance/port)
 "rn" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate,
-/obj/effect/spawner/random/maintenance/two,
 /obj/structure/sign/poster/random{
 	pixel_x = 32
+	},
+/obj/effect/spawner/random/salvage_machine{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -1761,10 +1762,7 @@
 /area/ship/crew/cryo)
 "uo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "ut" = (
@@ -2295,16 +2293,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "AT" = (
-/obj/effect/spawner/random/salvage_machine{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "space";
-	pixel_y = 29;
-	pixel_x = 1;
-	paint_colour = "#FF0000"
-	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/closet/emcloset/anchored{
+	populate = 0
+	},
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "AU" = (
@@ -2860,6 +2856,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "space";
+	pixel_y = 29;
+	pixel_x = 1;
+	paint_colour = "#FF0000"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Ia" = (
@@ -3299,8 +3301,8 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Md" = (
-/obj/structure/rack,
-/obj/effect/spawner/random/maintenance,
+/obj/structure/closet/crate/large,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Me" = (
@@ -3872,7 +3874,7 @@
 "UZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/cigbutt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)

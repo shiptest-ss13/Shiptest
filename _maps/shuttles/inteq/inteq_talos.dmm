@@ -617,11 +617,10 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "ef" = (
-/obj/structure/closet/crate/large,
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/structure/sign/poster/random{
-	pixel_y = 32
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4{
+	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "ej" = (
@@ -900,8 +899,8 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/starboard)
 "fN" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 4
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/layer2{
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1141,12 +1140,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
-"hj" = (
-/obj/structure/closet/crate/science,
-/obj/effect/spawner/random/maintenance,
-/obj/item/circuitboard/computer/crew,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "hl" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1158,9 +1151,15 @@
 /turf/open/floor/engine/fuel,
 /area/ship/engineering/engine)
 "hm" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/random{
-	pixel_y = -32
+/obj/structure/sign/warning/vacuum/external{
+	pixel_y = 24
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2781,6 +2780,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "qF" = (
@@ -3962,12 +3962,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
-"xP" = (
-/obj/structure/closet/crate,
-/obj/effect/spawner/random/maintenance/two,
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "xT" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -4573,6 +4567,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/turf/open/floor/plasteel/dark,
+/area/ship/maintenance/starboard)
+"BE" = (
+/obj/structure/closet/crate/science,
+/obj/effect/spawner/random/maintenance,
+/obj/item/circuitboard/computer/crew,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "BJ" = (
@@ -4824,6 +4824,12 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
+"Dj" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/random/maintenance/two,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Dl" = (
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
@@ -4895,19 +4901,6 @@
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"DJ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/warning/vacuum/external{
-	pixel_y = 24
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "DO" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/dorm/dormtwo)
@@ -4946,7 +4939,7 @@
 	autolinkers = list("hub","processor4","bus");
 	network = "irmg_commnet"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/ship/engineering/communications)
 "Ep" = (
 /obj/item/trash/can,
@@ -5041,13 +5034,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "Fl" = (
-/obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/plastic/twenty,
-/obj/structure/sign/poster/random{
-	pixel_x = 32
-	},
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
+/turf/closed/wall/yesdiag,
 /area/ship/maintenance/starboard)
 "Fm" = (
 /obj/structure/cable{
@@ -5327,10 +5314,12 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "GQ" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4{
-	dir = 8
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/plastic/twenty,
+/obj/structure/sign/poster/random{
+	pixel_x = 32
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "GR" = (
@@ -5501,7 +5490,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet,
 /obj/effect/spawner/random/maintenance/two,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
 "Io" = (
 /obj/structure/cable/yellow{
@@ -5565,7 +5554,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "IB" = (
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
 "ID" = (
 /obj/machinery/door/airlock/public/glass{
@@ -5603,6 +5592,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"IO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/maintenance/starboard)
 "IR" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -7807,12 +7803,20 @@
 /obj/structure/sign/poster/random{
 	pixel_y = 32
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
 /obj/structure/chair/handrail,
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/port)
+"Yr" = (
+/obj/structure/closet/crate/large,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/structure/sign/poster/random{
+	pixel_y = 32
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Yt" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -7926,7 +7930,7 @@
 /obj/structure/closet,
 /obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
 "Zb" = (
 /obj/structure/table,
@@ -9627,7 +9631,7 @@ fK
 WP
 Jk
 ff
-ff
+Fl
 If
 YZ
 fK
@@ -9663,7 +9667,7 @@ si
 ks
 Bz
 IB
-hm
+IO
 fK
 sw
 sw
@@ -9726,11 +9730,11 @@ sw
 sw
 sw
 fK
-Fl
-xP
+GQ
+Dj
 ff
-DJ
-hj
+hm
+BE
 fK
 sw
 sw
@@ -9829,8 +9833,8 @@ sw
 sw
 sy
 fK
+Yr
 ef
-GQ
 Gq
 fK
 qt
