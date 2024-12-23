@@ -617,11 +617,10 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "ef" = (
-/obj/structure/closet/crate/large,
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/structure/sign/poster/random{
-	pixel_y = 32
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4{
+	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "ej" = (
@@ -1152,9 +1151,16 @@
 /turf/open/floor/engine/fuel,
 /area/ship/engineering/engine)
 "hm" = (
-/obj/structure/closet/crate,
-/obj/effect/spawner/random/maintenance/two,
-/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/vacuum/external{
+	pixel_y = 24
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "hw" = (
@@ -2886,13 +2892,6 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"rl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/random{
-	pixel_y = -32
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "rv" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3241,12 +3240,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/storage/port)
-"tg" = (
-/obj/structure/closet/crate/science,
-/obj/effect/spawner/random/maintenance,
-/obj/item/circuitboard/computer/crew,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "ti" = (
 /obj/structure/cable{
 	icon_state = "2-9"
@@ -3514,6 +3507,14 @@
 /obj/item/storage/box/cups,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"vh" = (
+/obj/structure/closet/crate/large,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/structure/sign/poster/random{
+	pixel_y = 32
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "vi" = (
 /obj/structure/sign/number/eight{
 	dir = 1
@@ -4575,15 +4576,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"BD" = (
-/obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/plastic/twenty,
-/obj/structure/sign/poster/random{
-	pixel_x = 32
-	},
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "BJ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5036,10 +5028,9 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "Fl" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/science,
+/obj/effect/spawner/random/maintenance,
+/obj/item/circuitboard/computer/crew,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Fm" = (
@@ -5320,16 +5311,12 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "GQ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/plastic/twenty,
+/obj/structure/sign/poster/random{
+	pixel_x = 32
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/warning/vacuum/external{
-	pixel_y = 24
-	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "GR" = (
@@ -5490,6 +5477,12 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
+"HQ" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/random/maintenance/two,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Ic" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -7761,6 +7754,13 @@
 "XJ" = (
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"XO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "XV" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
@@ -9234,7 +9234,7 @@ sw
 sw
 sw
 yp
-Qy
+wU
 lM
 SH
 yp
@@ -9662,7 +9662,7 @@ si
 ks
 Bz
 IB
-rl
+XO
 fK
 sw
 sw
@@ -9725,11 +9725,11 @@ sw
 sw
 sw
 fK
-BD
-hm
-ff
 GQ
-tg
+HQ
+ff
+hm
+Fl
 fK
 sw
 sw
@@ -9828,8 +9828,8 @@ sw
 sw
 sy
 fK
+vh
 ef
-Fl
 Gq
 fK
 qt
