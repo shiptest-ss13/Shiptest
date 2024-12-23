@@ -188,7 +188,7 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ch" = (
-/obj/structure/closet/cardboard,
+/obj/effect/spawner/random/trash/box,
 /obj/effect/spawner/random/maintenance,
 /obj/effect/spawner/random/entertainment/plushie,
 /obj/effect/spawner/random/entertainment/plushie,
@@ -3691,9 +3691,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "Rs" = (
-/obj/machinery/door/airlock/maintenance{
-	req_ship_access = 0
-	},
+/obj/machinery/door/airlock/maintenance/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
@@ -4170,7 +4168,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Zc" = (
-/obj/structure/grille,
+/obj/effect/spawner/random/structure/grille,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
 	icon_state = "4-8"
