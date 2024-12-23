@@ -3,7 +3,7 @@
 |	  Original code by Glloyd	|
 |	  Tgstation port by Miauw	|
 |	  Shiptest adjustments by	|
-|			 Flopppi			|
+|	   Flopppi and Geoengi		|
 \*******************************/
 
 #define SPIN_PRICE 5
