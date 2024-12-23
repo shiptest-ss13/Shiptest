@@ -412,7 +412,7 @@
 	if(used)
 		return
 	loc.visible_message("<span class='warning'>\The [src] begins to beep loudly!</span>")
-	playsound(get_turf(src), 'sound/machines/click.ogg', 50, TRUE)
+	playsound(get_turf(src), 'sound/machines/triple_beep.ogg', 50, TRUE)
 	used = TRUE
 	addtimer(CALLBACK(src, PROC_REF(launch_payload)), 40)
 
