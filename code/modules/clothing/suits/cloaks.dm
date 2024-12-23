@@ -11,6 +11,12 @@
 	greyscale_colors = list(list(11, 15), list(12, 22), list(12, 22))
 	greyscale_icon_state = "cloak"
 
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
+
 /obj/item/clothing/neck/cloak/hos
 	name = "head of security's cloak"
 	desc = "Worn by Securistan, ruling their watch with an iron fist."
