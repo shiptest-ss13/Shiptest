@@ -1762,7 +1762,9 @@
 /area/ship/crew/cryo)
 "uo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "ut" = (
@@ -2305,6 +2307,9 @@
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/clothing/mask/breath,
 /obj/item/clothing/mask/breath,
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "AU" = (
@@ -2874,7 +2879,6 @@
 	icon_state = "0-1"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/spider/stickyweb,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Iu" = (
@@ -3307,6 +3311,9 @@
 "Md" = (
 /obj/structure/closet/crate/large,
 /obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/layer2{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Me" = (
@@ -3878,7 +3885,9 @@
 "UZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/cigbutt,
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
