@@ -1944,13 +1944,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					else
 						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 3)
 
-		//Stay hydrated.
-		if(!(H.mob_biotypes & MOB_ROBOTIC) && H.reagents.has_reagent(/datum/reagent/water) && H.stat != DEAD)
-			burn_damage -= clamp(H.reagents.get_reagent_amount(/datum/reagent/water) /10, 0, 2)
-		// if youre dead, no need to sweat?
-		if(H.stat != DEAD)
-			burn_damage -= (max(burn_damage - 2.5, 0))
-
 		// Apply species and physiology modifiers to heat damage
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
 
@@ -2005,7 +1998,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		firemodifier = min(firemodifier, 0)
 
 	// this can go below 5 at log 2.5
-	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 2,0)
+	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 5,0)
 	return burn_damage
 
 /// Handle the air pressure of the environment
