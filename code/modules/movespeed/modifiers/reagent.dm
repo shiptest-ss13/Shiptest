@@ -39,3 +39,6 @@
 
 /datum/movespeed_modifier/reagent/shock_wine
 	multiplicative_slowdown = -0.30
+
+/datum/movespeed_modifier/reagent/cannabis
+	multiplicative_slowdown = 0.4
