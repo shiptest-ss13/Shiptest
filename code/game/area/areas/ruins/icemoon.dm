@@ -46,3 +46,8 @@
 /area/ruin/powered/icemoon/lodge/gear_room
 	name = "Gear Room"
 	icon_state = "security"
+
+// Sensors Array
+/area/ruin/unpowered/sensor_array
+	name = "Sensor Array Facility" // In honor of the kugelblitz shenanigan of all time
+	icon_state = "purple"
