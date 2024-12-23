@@ -29,5 +29,5 @@
 	sound_weak_inside = /datum/looping_sound/weak_inside_ashstorm
 
 /datum/weather/snow_storm/weather_act(mob/living/living_mob)
-	living_mob.adjust_bodytemperature(-rand(5,15))
+	living_mob.adjust_bodytemperature(-rand(2,4))
 

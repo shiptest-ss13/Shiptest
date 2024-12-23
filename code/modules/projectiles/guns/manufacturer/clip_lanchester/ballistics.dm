@@ -1,3 +1,7 @@
+#define CLIP_ATTACHMENTS list(list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet))
+#define CLIP_ATTACHMNENT_POINTS list()
+
+
 //########### PISTOLS ###########//
 /obj/item/gun/ballistic/automatic/pistol/cm23
 	name = "\improper CM-23"
@@ -24,6 +28,21 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+
+	default_attachments = list(/obj/item/attachment/laser_sight)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		)
+	)
+
 	recoil_unwielded = 3
 
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag
@@ -87,6 +106,9 @@
 /obj/item/ammo_box/magazine/m9mm_cm70/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
+
+/obj/item/ammo_box/magazine/m9mm_cm70/empty
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/cm357
 	name = "\improper CM-357"
@@ -152,12 +174,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 	fire_sound = 'sound/weapons/gun/smg/cm5.ogg'
 	manufacturer = MANUFACTURER_MINUTEMAN
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-	)
+	valid_attachments = CLIP_ATTACHMENTS
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1
@@ -190,6 +207,9 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	caliber = "9mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/cm5_9mm/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/cm5_9mm/rubber
 	desc = "A 30-round magazine for the CM-5 submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
@@ -324,7 +344,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 		)
 	)
 
-	wield_slowdown = 2
+	wield_slowdown = DMR_SLOWDOWN
 	spread = -4
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
@@ -365,7 +385,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	spread_unwielded = 35
 	recoil = 4
 	recoil_unwielded = 10
-	wield_slowdown = 1
+	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
@@ -383,6 +403,9 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 /obj/item/ammo_box/magazine/f90/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/f90/empty
+	start_empty = TRUE
 
 //########### RIFLES ###########//
 /obj/item/gun/ballistic/automatic/assault/cm82
@@ -475,7 +498,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	recoil = 2 //identical to other LMGS
 	recoil_unwielded = 7 //same as skm
 
-	wield_slowdown = 1 //not as severe as other lmgs, but worse than the normal skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
 	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock skm
 
 	has_bipod = TRUE
@@ -500,6 +523,9 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 /obj/item/ammo_box/magazine/cm40_762_40_box/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/cm40_762_40_box/empty
+	start_empty = TRUE
 
 //########### MISC ###########//
 
@@ -550,7 +576,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	spread_unwielded = 16
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 0.6
+	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
 	wield_delay = 0.65 SECONDS
 
 
