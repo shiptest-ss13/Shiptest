@@ -144,3 +144,7 @@
 #define VV_HK_TO_OUTFIT_EDITOR "outfit_editor"
 
 #define VV_HK_WEAKREF_RESOLVE "weakref_resolve"
+
+//overmap objects
+#define VV_HK_VV_PARENT "vv_parent"
+#define VV_HK_UNFSCK_OBJECT "unfsck"

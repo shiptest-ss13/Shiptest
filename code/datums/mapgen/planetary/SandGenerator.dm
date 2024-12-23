@@ -1,6 +1,6 @@
 /datum/map_generator/planet_generator/sand
 	mountain_height = 0.8
-	perlin_zoom = 65
+	perlin_zoom = 70
 
 	primary_area_type = /area/overmap_encounter/planetoid/sand
 
@@ -29,23 +29,23 @@
 		),
 		BIOME_TEMPERATE = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/sand,
-			BIOME_LOW_HUMIDITY = /datum/biome/sand/riverbed,
-			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/grass/dead,
+			BIOME_LOW_HUMIDITY =/datum/biome/sand/grass/dead,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/grass,
 			BIOME_HIGH_HUMIDITY = /datum/biome/sand/grass,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/sand/grass
 		),
 		BIOME_HOT = list(
-			BIOME_LOWEST_HUMIDITY =/datum/biome/sand/acid,
-			BIOME_LOW_HUMIDITY = /datum/biome/sand/wasteland,
+			BIOME_LOWEST_HUMIDITY =/datum/biome/sand/sulfur_plains,
+			BIOME_LOW_HUMIDITY = /datum/biome/sand/sulfur_plains,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/riverbed,
-			BIOME_HIGH_HUMIDITY = /datum/biome/sand,
+			BIOME_HIGH_HUMIDITY = /datum/biome/sand/grass,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/sand/grass
 		),
 		BIOME_HOTTEST = list(
-			BIOME_LOWEST_HUMIDITY = /datum/biome/sand/acid/total,
-			BIOME_LOW_HUMIDITY = /datum/biome/sand/acid,
-			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/riverbed,
-			BIOME_HIGH_HUMIDITY = /datum/biome/sand/wasteland,
+			BIOME_LOWEST_HUMIDITY = /datum/biome/sand/sulfur_plains,
+			BIOME_LOW_HUMIDITY = /datum/biome/sand/sulfur_plains,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/sulfur_plains,
+			BIOME_HIGH_HUMIDITY = /datum/biome/sand/sulfur_plains,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/sand
 		)
 	)
@@ -92,15 +92,16 @@
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 8,
-		/obj/structure/vein = 8,
-		/obj/structure/vein/classtwo = 4,
+		/obj/structure/vein/sand = 8,
+		/obj/structure/vein/sand/classtwo = 4,
 		/obj/structure/elite_tumor = 4,
-		/obj/structure/vein/classthree = 2,
+		/obj/structure/vein/sand/classthree = 2,
 		/obj/effect/spawner/random/anomaly/sand = 1,
+		/obj/effect/greeble_spawner/whitesands/oasis = 1,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/human/hermit/survivor/random = 25,
@@ -166,19 +167,19 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried/lit = 1)
 	flora_spawn_chance = 0
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 40,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 40,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 30,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 20,
 		/mob/living/simple_animal/hostile/human/hermit/survivor/random = 40,
 	)
 
-/datum/biome/sand/acid //plains
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 10, /turf/open/water/acid/whitesands = 1)
-
-/datum/biome/sand/acid/total
-	open_turf_types = list(/turf/open/water/acid/whitesands = 1)
+/datum/biome/sand/sulfur_plains //plains
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 1)
 	flora_spawn_chance = 0
-	feature_spawn_chance = 0
+	feature_spawn_chance = 1.4
+	feature_spawn_list = list(
+		/obj/effect/spawner/random/greeble/sulfurpool = 1
+	)
 	mob_spawn_chance = 0
 
 /datum/biome/cave/sand
@@ -195,15 +196,15 @@
 		/obj/structure/flora/ash/puce = 1,
 	)
 	feature_spawn_list = list(
-		/obj/structure/vein = 8,
+		/obj/structure/vein/sand = 8,
 		/obj/structure/geyser/random = 4,
-		/obj/structure/vein/classtwo = 4,
+		/obj/structure/vein/sand/classtwo = 4,
 		/obj/structure/elite_tumor = 4,
 		/obj/effect/spawner/random/anomaly/sand/cave = 1
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
@@ -213,7 +214,7 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 1)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 20,
@@ -228,4 +229,164 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 7, /turf/open/lava = 1)
 
 /datum/biome/cave/sand/volcanic/acidic
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 8, /turf/open/water/acid/whitesands = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 1, /turf/open/water/whitesands = 8)
+
+/obj/effect/spawner/random/greeble/sulfurpool
+	loot = list(
+			/obj/effect/greeble_spawner/whitesands/sulfurpool1 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool2 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool3 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool4 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool5 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool6 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool7 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool8 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool9 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool10 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool11 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool12 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool13 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool14 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool15 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool16 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool17 = 5,
+			/obj/effect/greeble_spawner/whitesands/sulfurpool18 = 5,
+		)
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool1
+	template = /datum/map_template/greeble/whitesands/sulfurpool1
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool2
+	template = /datum/map_template/greeble/whitesands/sulfurpool2
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool3
+	template = /datum/map_template/greeble/whitesands/sulfurpool3
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool4
+	template = /datum/map_template/greeble/whitesands/sulfurpool4
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool5
+	template = /datum/map_template/greeble/whitesands/sulfurpool5
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool6
+	template = /datum/map_template/greeble/whitesands/sulfurpool6
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool7
+	template = /datum/map_template/greeble/whitesands/sulfurpool7
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool8
+	template = /datum/map_template/greeble/whitesands/sulfurpool8
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool9
+	template = /datum/map_template/greeble/whitesands/sulfurpool9
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool10
+	template = /datum/map_template/greeble/whitesands/sulfurpool10
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool10
+	template = /datum/map_template/greeble/whitesands/sulfurpool10
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool11
+	template = /datum/map_template/greeble/whitesands/sulfurpool11
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool12
+	template = /datum/map_template/greeble/whitesands/sulfurpool12
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool13
+	template = /datum/map_template/greeble/whitesands/sulfurpool13
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool14
+	template = /datum/map_template/greeble/whitesands/sulfurpool14
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool15
+	template = /datum/map_template/greeble/whitesands/sulfurpool15
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool16
+	template = /datum/map_template/greeble/whitesands/sulfurpool16
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool17
+	template = /datum/map_template/greeble/whitesands/sulfurpool17
+
+/obj/effect/greeble_spawner/whitesands/sulfurpool18
+	template = /datum/map_template/greeble/whitesands/sulfurpool18
+
+/datum/map_template/greeble/whitesands/sulfurpool1
+	name = "Sulfur Greeble 1"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_1.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool2
+	name = "Sulfur Greeble 2"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_2.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool3
+	name = "Sulfur Greeble 3"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_3.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool4
+	name = "Sulfur Greeble 4"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_4.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool5
+	name = "Sulfur Greeble 5"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_5.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool6
+	name = "Sulfur Greeble 6"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_6.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool7
+	name = "Sulfur Greeble 7"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_7.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool8
+	name = "Sulfur Greeble 8"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_8.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool9
+	name = "Sulfur Greeble 9"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_9.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool10
+	name = "Sulfur Greeble 10"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_10.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool11
+	name = "Sulfur Greeble 11"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_11.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool12
+	name = "Sulfur Greeble 12"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_12.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool13
+	name = "Sulfur Greeble 13"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_13.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool14
+	name = "Sulfur Greeble 14"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_14.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool15
+	name = "Sulfur Greeble 15"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_15.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool16
+	name = "Sulfur Greeble 16"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_16.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool17
+	name = "Sulfur Greeble 17"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_17.dmm"
+
+/datum/map_template/greeble/whitesands/sulfurpool18
+	name = "Sulfur Greeble 18"
+	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_18.dmm"
+
+/obj/effect/greeble_spawner/whitesands/oasis
+	template = /datum/map_template/greeble/whitesands/oasis
+
+/datum/map_template/greeble/whitesands/oasis
+	name = "Rare Oasis"
+	mappath = "_maps/templates/greebles/whitesands/oasis_1.dmm"
+	clear_everything = TRUE
+
