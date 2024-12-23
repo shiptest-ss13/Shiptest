@@ -832,7 +832,7 @@
 /obj/machinery/door/airlock/maintenance{
 	req_ship_access = 0
 	},
-/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "kf" = (
@@ -2229,6 +2229,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/effect/spawner/random/trash/bucket{
+	pixel_x = -7;
+	pixel_y = -4
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)

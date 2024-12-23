@@ -1707,7 +1707,7 @@
 /obj/item/radio/headset/alt,
 /obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ship/engineering)
 "kg" = (
 /obj/effect/turf_decal/box/corners,
 /obj/effect/decal/cleanable/dirt,
@@ -5322,7 +5322,9 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/storage)
 "GA" = (
-/obj/structure/filingcabinet/chestdrawer/wheeled,
+/obj/structure/filingcabinet/chestdrawer/wheeled{
+	dir = 8
+	},
 /obj/item/folder,
 /obj/item/folder/yellow,
 /obj/item/folder/red,
@@ -7626,7 +7628,9 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "WC" = (
-/obj/structure/dresser,
+/obj/structure/dresser{
+	dir = 8
+	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
