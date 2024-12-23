@@ -428,48 +428,44 @@
 		turf.virtual_z = id
 
 /datum/virtual_level/proc/clear_reservation()
+	SEND_SIGNAL(src, COMSIG_VLEVEL_CLEARING)
+
 	/// Create a dummy reservation to safeguard this space from being allocated mid-clearing in case the virtual level does get deleted
 	var/datum/dummy_space_reservation/safeguard = new(low_x, low_y, high_x, high_y, z_value)
 
-	var/area/space_area = GLOB.areas_by_type[/area/space]
-
 	var/list/turf/block_turfs = get_block()
-
-	var/static/list/ignored_atoms = typecacheof(list(/mob/dead, /atom/movable/lighting_object))
+	var/list/atom/movable/all_contents = list()
 	for(var/turf/turf as anything in block_turfs)
-		// don't waste time trying to qdelete the lighting object
+		all_contents += turf.contents
+
+	var/static/list/ignored_atoms = typecacheof(list(/mob/dead, /atom/movable/lighting_object, /obj/effect/hotspot))
+	// don't waste time trying to qdelete the lighting object
+	for(var/atom/movable/thing as anything in all_contents)
+		//There's a dedicated macro for checking in a typecache, but it has unecessary checks
+		//And this needs to be fast
+		if(ignored_atoms[thing.type])
+			continue
+		qdel(thing)
+		CHECK_TICK
+
+#ifdef TESTING
+	all_contents.Cut()
+	for(var/turf/turf as anything in block_turfs)
 		for(var/atom/movable/thing as anything in turf.contents)
-			//There's a dedicated macro for checking in a typecache, but it has unecessary checks
-			//And this needs to be fast
 			if(ignored_atoms[thing.type])
 				continue
-			qdel(thing)
-			// DO NOT CHECK_TICK HERE. IT CAN CAUSE ITEMS TO GET LEFT BEHIND
-			// THIS IS REALLY IMPORTANT FOR CONSISTENCY. SORRY ABOUT THE LAG SPIKE
+			all_contents += thing
 
-	for(var/turf/turf as anything in block_turfs)
-		// Reset turf
-		turf.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, CHANGETURF_IGNORE_AIR|CHANGETURF_DEFER_CHANGE|CHANGETURF_DEFER_BATCH)
-		// Reset area
-		var/area/old_area = get_area(turf)
-		space_area.contents += turf
-		turf.change_area(old_area, space_area)
-		turf.virtual_z = 0
-		CHECK_TICK
+	if(length(all_contents))
+		stack_trace("Stragglers detected in virtual level after cleanup")
+		//lattice
+		//broken bottles
+#endif
 
-	for(var/turf/turf as anything in block_turfs)
-		turf.AfterChange(CHANGETURF_IGNORE_AIR)
-
-		// we don't need to smooth anything in the reserve, because it's empty, nor do we need to check its starlight.
-		// only the sides need to do that. this saved ~4-5% of reservation clear times in testing
-		if(turf.x != low_x && turf.x != high_x && turf.y != low_y && turf.y != high_y)
-			continue
-
-		QUEUE_SMOOTH(turf)
-		QUEUE_SMOOTH_NEIGHBORS(turf)
-		for(var/turf/open/space/adj in RANGE_TURFS(1, turf))
-			adj.check_starlight(turf)
-		CHECK_TICK
+	var/datum/map_generator/clear_turfs/map_gen = new(block_turfs)
+	SSmap_gen.queue_generation(MAPGEN_PRIORITY_LOW, map_gen)
+	while(map_gen.phase != MAPGEN_PHASE_FINISHED)
+		stoplag(2)
 
 	qdel(safeguard)
 
