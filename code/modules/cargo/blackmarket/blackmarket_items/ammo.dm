@@ -285,7 +285,7 @@
 
 /datum/blackmarket_item/ammo/c38hotshot
 	name = ".38 Hearth Ammo Box"
-	desc = "We got our ship cook to marinade some .38 in some hearthwine we pocketed off some hunters. It'll cook your targets to a nice well done."
+	desc = "We got our ship cook to marinade some .38 in some hearthflame we pocketed off some hunters. It'll cook your targets to a nice well done."
 	item = /obj/item/ammo_box/c38/hotshot
 
 	price_min = 300
@@ -296,7 +296,7 @@
 
 /datum/blackmarket_item/ammo/c38iceblox
 	name = ".38 Chilled Ammo Box"
-	desc = "One of our runners accidentally spilled some .38 into a fucking pristine icewine shipment. It'll freeze your targets faster than our runner froze solid outside for making a mess."
+	desc = "One of our runners accidentally spilled some .38 into a fucking pristine wine of ice shipment. It'll freeze your targets faster than our runner froze solid outside for making a mess."
 	item = /obj/item/ammo_box/c38/iceblox
 
 	price_min = 300
@@ -304,3 +304,32 @@
 	stock_min = 3
 	stock_max = 8
 	availability_prob = 50
+
+/datum/blackmarket_item/ammo/a8x50match
+	name = "8x50mm Match Box"
+	desc = "We found this dead guy with a recording of him going \"Watch this!\", and richoetting something before crumbling over. This is the ammo he had!"
+	item = /obj/item/storage/box/ammo/a8_50r/match
+	price_min = 500
+	price_max = 1000
+	stock_min = 1
+	stock_max = 4
+	availability_prob = 30
+
+/datum/blackmarket_item/ammo/c22rub
+	name = ".22lr Rubbers"
+	desc = "A 100 round box of .22 rubbershot from some godsforsaken frontier world. We're pretty sure the use-case is making someone think that they just pissed off a beehive"
+	item = /obj/item/storage/box/ammo/c22lr/rubber
+	price_min = 400
+	price_max = 800
+	stock_min = 1
+	stock_max = 4
+	availability_prob = 40
+
+/datum/blackmarket_item/ammo/a8x58trac
+	name = "8x58mm Tracker"
+	desc = "We hot glued a GPS onto the inside of this 8x58mm shell! For the low low price of. Whatever the price is. You can have it!"
+	item = /obj/item/ammo_casing/caseless/a858/trac
+	price_min = 50
+	price_max = 500
+	stock_min = 4
+	stock_max = 8
