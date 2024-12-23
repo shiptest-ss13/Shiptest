@@ -5,6 +5,7 @@
 	damage = 20
 	armour_penetration = -20
 	speed = BULLET_SPEED_REVOLVER
+	bullet_identifier = "small bullet"
 
 /obj/projectile/bullet/c38/surplus
 	damage = 15
@@ -32,11 +33,12 @@
 	ricochet_incidence_leeway = 70
 	ricochet_chance = 130
 	ricochet_decay_damage = 0.8
+	bullet_identifier = "small rubber bullet"
 
 /obj/projectile/bullet/c38/dumdum
 	name = ".38 dum-dum bullet"
 	damage = 20
-	armour_penetration = -50
+	armour_penetration = -40
 	ricochets_max = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/c38/dumdum
 
@@ -75,6 +77,7 @@
 	damage = 30
 
 	speed = BULLET_SPEED_REVOLVER
+	bullet_identifier = "medium bullet"
 
 /obj/projectile/bullet/a357/match
 	name = ".357 match bullet"
@@ -94,13 +97,13 @@
 	speed_mod = BULLET_SPEED_HP_MOD
 	ricochet_chance = 0
 
-
 // .45-70 Gov't (Hunting Revolver)
 
 /obj/projectile/bullet/a4570
 	name = ".45-70 bullet"
 	damage = 45 //crits in 3-4 taps depending on armor
 	speed = BULLET_SPEED_REVOLVER
+	bullet_identifier = "large bullet"
 
 /obj/projectile/bullet/a4570/match
 	name = ".45-70 match bullet"
@@ -116,7 +119,7 @@
 /obj/projectile/bullet/a4570/hp
 	name = ".45-70 hollow point bullet"
 	damage = 55
-	armour_penetration = -50
+	armour_penetration = -10
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/a4570/explosive //for extra oof
@@ -134,17 +137,19 @@
 	name = ".44 roumain bullet"
 	damage =  25
 	speed = BULLET_SPEED_REVOLVER
+	bullet_identifier = "small bullet"
 
 /obj/projectile/bullet/a44roum/rubber
 	name = ".44 roumain rubber bullet"
 	damage =  7
-	stamina = 38
-	armour_penetration = -20
+	stamina = 40
+	armour_penetration = -10
 	speed_mod = BULLET_SPEED_RUBBER_MOD
+	bullet_identifier = "small rubber bullet"
 
 /obj/projectile/bullet/a44roum/hp
 	name = ".44 roumain hollow point bullet"
 	damage =  40
-	armour_penetration = -20
+	armour_penetration = -10
 	ricochet_chance = 0
 	speed_mod = BULLET_SPEED_HP_MOD
