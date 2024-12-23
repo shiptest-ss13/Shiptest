@@ -98,13 +98,11 @@
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
 		/obj/structure/flora/rock/hell = 20,
-		/obj/structure/elite_tumor = 4,
 		/obj/structure/geyser/random = 4,
 		/obj/effect/spawner/random/anomaly/lava = 2,
 		/obj/structure/flora/rock/hell = 14,
 		/obj/structure/vein = 5,
 		/obj/structure/vein/classtwo = 2,
-		/obj/structure/elite_tumor = 2,
 		/obj/structure/geyser/random = 2,
 		/obj/structure/vein/classthree = 1,
 		/obj/effect/spawner/minefield = 1,
