@@ -215,7 +215,6 @@
 /turf/open/lava/smooth/lava_land_surface
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
-	smoothing_flags = null
 
 	baseturfs = /turf/open/lava/smooth/lava_land_surface
 

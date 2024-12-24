@@ -92,7 +92,7 @@ the parameters are from the client, meaning object is what they clicked on, not 
 			switch(action_type)
 				if("Strict type")
 					var/i = 0
-					for(var/datum/overmap/target in SSovermap.overmap_objects)
+					for(var/datum/overmap/target in selected_overmap_datum.current_overmap.overmap_objects)
 						if(target.type == O_type)
 							i++
 							qdel(target)

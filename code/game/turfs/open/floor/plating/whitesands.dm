@@ -36,6 +36,13 @@
 	light_power = 0.6
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
 
+/turf/open/floor/plating/asteroid/whitesands/rocky
+	has_footsteps = FALSE
+
+/turf/open/floor/plating/asteroid/whitesands/rocky/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	add_overlay("sandalt_[rand(6,9)]")
+
 /turf/open/floor/plating/asteroid/whitesands/dried
 	name = "dried sand"
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried

@@ -82,7 +82,7 @@
 	)
 
 /datum/biome/sand
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 5, /turf/open/floor/plating/asteroid/whitesands/rocky = 1)
 	flora_spawn_chance = 3
 	flora_spawn_list = list(
 		/obj/structure/flora/ash/leaf_shroom = 4 ,
@@ -211,7 +211,7 @@
 	)
 
 /datum/biome/cave/sand/deep
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 5, /turf/open/floor/plating/asteroid/whitesands/rocky = 5)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 50,
