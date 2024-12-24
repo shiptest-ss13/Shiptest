@@ -207,6 +207,9 @@ SUBSYSTEM_DEF(mapping)
 		if(istext(data["prefix"]))
 			S.prefix = data["prefix"]
 
+		if(istext(data["manufacturer"]))
+			S.manufacturer = data["manufacturer"]
+
 		if(istext(data["faction"]))
 			S.faction_path = text2path(data["faction"])
 		if(S.faction_path)

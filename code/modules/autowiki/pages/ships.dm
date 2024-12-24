@@ -28,6 +28,7 @@
 			"name" = ship_name,
 			"shortname" = escape_value(ship.short_name) || ship_name,
 			"description" = escape_value(ship.description),
+			"manufacturer" = escape_value(ship.manufacturer),
 			"prefix" = escape_value(ship.prefix),
 			"tags" = escape_value(ship.tags?.Join(", ")),
 			"limit" = ship.limit,
