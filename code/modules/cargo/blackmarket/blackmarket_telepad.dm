@@ -1,3 +1,6 @@
+#define EXPORT_PRICE 300
+#define EXPORT_TAX_PERCENTAGE 20
+
 /obj/item/circuitboard/machine/ltsrbt
 	name = "LTSRBT (Machine Board)"
 	icon_state = "bluespacearray"
@@ -31,6 +34,10 @@
 	var/transmitting
 	/// Queue for purchases that the machine should recieve and send.
 	var/list/datum/blackmarket_purchase/queue = list()
+
+	var/entry_name
+	var/entry_price
+	var/entry_desc
 
 /obj/machinery/ltsrbt/Initialize()
 	. = ..()
@@ -119,6 +126,35 @@
 	if(queue.len)
 		recieving = pick_n_take(queue)
 
+// /obj/machinery/ltsrbt/ui_interact(mob/user, datum/tgui/ui)
+// 	. = ..()
+// 	ui = SStgui.try_update_ui(user, src, ui)
+// 	if(!ui)
+// 		ui = new(user, src, "Smes", name)
+// 		ui.open()
+
+// /obj/machinery/ltsrbt/ui_data(mob/user)
+// 	var/list/data = list()
+// 	data["name"] = entry_name
+// 	data["desc"] = entry_desc
+// 	data["price"] = entry_price
+
+// 	return data
+
+// /obj/machinery/ltsrbt/ui_static_data(mob/user)
+// 	var/list/data = list()
+// 	data["fee"] = EXPORT_PRICE
+// 	data["tax"] = EXPORT_TAX_PERCENTAGE
+
+// 	return data
+
+/obj/machinery/ltsrbt/ui_act(action, list/params)
+	. = ..()
+
+	if(.)
+		return
+
+
 /datum/crafting_recipe/blackmarket_telepad
 	name = "Black Market LTRSBT Board"
 	result = /obj/item/circuitboard/machine/ltsrbt
@@ -132,3 +168,6 @@
 		/obj/item/circuitboard = 1
 	)
 	category = CAT_MISC
+
+#undef EXPORT_PRICE
+#undef EXPORT_TAX_PERCENTAGE

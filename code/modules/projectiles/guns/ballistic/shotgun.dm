@@ -114,7 +114,7 @@
 /datum/action/item_action/toggle_tube/Trigger()
 	if(istype(target, /obj/item/gun/ballistic/shotgun/automatic/dual_tube))
 		var/obj/item/gun/ballistic/shotgun/automatic/dual_tube/shotty = target
-		shotty.toggle_tube()
+		shotty.toggle_tube(owner)
 		return
 	..()
 
