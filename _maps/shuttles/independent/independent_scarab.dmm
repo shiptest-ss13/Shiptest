@@ -277,9 +277,9 @@
 /area/ship/engineering)
 "dJ" = (
 /obj/structure/closet/crate/trashcart,
-/obj/item/trash/chips,
-/obj/item/trash/can,
-/obj/item/trash/sosjerky,
+/obj/effect/spawner/random/trash/garbage,
+/obj/effect/spawner/random/trash/garbage,
+/obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -1167,7 +1167,7 @@
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/random/maintenance,
-/obj/item/trash/chips,
+/obj/effect/spawner/random/trash/garbage,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -1580,6 +1580,10 @@
 	},
 /obj/structure/railing,
 /obj/machinery/light/directional/west,
+/obj/item/stamp/captain{
+	pixel_x = -7;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "sG" = (
@@ -2449,7 +2453,9 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/east,
-/obj/effect/spawner/random/bedsheet,
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "Dt" = (
@@ -2615,7 +2621,7 @@
 /area/ship/hallway/starboard)
 "FP" = (
 /obj/structure/closet/crate/bin,
-/obj/item/trash/boritos,
+/obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2797,6 +2803,7 @@
 /obj/item/clothing/head/hardhat/white,
 /obj/effect/turf_decal/box,
 /obj/item/storage/box/ammo/c38,
+/obj/item/clothing/accessory/holster,
 /obj/item/megaphone/cargo,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -3704,7 +3711,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "Rs" = (
-/obj/machinery/door/airlock/maintenance/external,
+/obj/machinery/door/airlock/maintenance/external{
+	req_ship_access = 0
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
@@ -4095,7 +4104,8 @@
 "Xd" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
-	pixel_y = 7
+	pixel_y = 7;
+	layer = 3.22
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
