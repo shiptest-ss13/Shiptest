@@ -972,6 +972,8 @@
 	icon_state = "8-9"
 	},
 /obj/structure/catwalk/over,
+/obj/structure/closet/crate,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "gp" = (
@@ -4162,6 +4164,8 @@
 /area/ship/engineering)
 "yP" = (
 /obj/structure/catwalk/over,
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/plastic/twenty,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "yS" = (
@@ -4855,12 +4859,6 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
-"Dj" = (
-/obj/structure/closet/crate,
-/obj/effect/spawner/random/maintenance/two,
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "Dl" = (
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
@@ -5344,13 +5342,10 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "GQ" = (
-/obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/plastic/twenty,
 /obj/structure/sign/poster/random{
 	pixel_x = 32
 	},
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
+/turf/closed/wall,
 /area/ship/maintenance/starboard)
 "GR" = (
 /obj/structure/bed,
@@ -5584,6 +5579,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "IB" = (
+/obj/item/cigbutt,
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
 "ID" = (
@@ -5625,7 +5621,7 @@
 "IO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/random{
-	pixel_y = -32
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
@@ -9660,7 +9656,7 @@ WP
 Jk
 ff
 Fl
-If
+IO
 YZ
 fK
 sw
@@ -9695,7 +9691,7 @@ si
 ks
 Bz
 IB
-IO
+If
 fK
 sw
 sw
@@ -9759,7 +9755,7 @@ sw
 sw
 fK
 GQ
-Dj
+ff
 ff
 hm
 BE
