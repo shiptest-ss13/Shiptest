@@ -4859,6 +4859,10 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
+"Dj" = (
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Dl" = (
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
@@ -5256,6 +5260,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/sink{
+	pixel_y = 21
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -9755,7 +9762,7 @@ sw
 sw
 fK
 GQ
-ff
+Dj
 ff
 hm
 BE
