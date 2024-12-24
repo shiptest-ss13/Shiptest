@@ -802,6 +802,14 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		[second_queue]
 	"}, "window=check_timer_sources;size=700x700")
 
+ADMIN_VERB(allow_browser_inspect, R_DEBUG, "Allow Browser Inspect", "Allow browser debugging via inspect", ADMIN_CATEGORY_DEBUG)
+	if(user.byond_version < 516)
+		to_chat(user, span_warning("You can only use this on 516!"))
+		return
+
+	to_chat(user, span_notice("You can now right click to use inspect on browsers."))
+	winset(user, null, list("browser-options" = "+devtools"))
+
 /proc/generate_timer_source_output(list/datum/timedevent/events)
 	var/list/per_source = list()
 
