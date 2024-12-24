@@ -86,7 +86,6 @@
 			data["AccountBalance"] = C.registered_account.account_balance
 		else
 			data["AccountBalance"] = 0
-		data["CanUnbolt"] = (C == my_card)
 
 	return data
 
@@ -98,7 +97,7 @@
 	var/mob/living/carbon/human/H = usr
 	switch(action)
 		if("anchor")
-			if(my_card == H.get_bankcard()))
+			if(my_card == H.get_bankcard())
 				set_anchored(!anchored)
 			. = TRUE
 		if("ChangeBetAmount")
