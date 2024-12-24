@@ -20,7 +20,7 @@
 ///Machine that lets you play roulette. Odds are pre-defined to be the same as European Roulette without the "En Prison" rule
 /obj/machinery/roulette
 	name = "Roulette Table"
-	desc = "A computerized roulette table. Swipe your ID to play or register yourself as owner!"
+	desc = "A computerized roulette table. Swipe your cash card to play or register yourself as the owner!"
 	icon = 'icons/obj/machines/roulette.dmi'
 	icon_state = "idle"
 	density = TRUE
@@ -86,7 +86,6 @@
 			data["AccountBalance"] = C.registered_account.account_balance
 		else
 			data["AccountBalance"] = 0
-		data["CanUnbolt"] = (H.get_idcard() == my_card)
 
 	return data
 
@@ -95,9 +94,11 @@
 	if(.)
 		return
 
+	var/mob/living/carbon/human/H = usr
 	switch(action)
 		if("anchor")
-			set_anchored(!anchored)
+			if(my_card == H.get_bankcard())
+				set_anchored(!anchored)
 			. = TRUE
 		if("ChangeBetAmount")
 			chosen_bet_amount = clamp(text2num(params["amount"]), 10, 500)
@@ -117,7 +118,7 @@
 	if(istype(W, /obj/item/card/bank))
 		playsound(src, 'sound/machines/card_slide.ogg', 50, TRUE)
 
-		if(machine_stat & MAINT || !on || locked)
+		if(machine_stat & MAINT || !on || locked || !powered())
 			to_chat(user, "<span class='notice'>The machine appears to be disabled.</span>")
 			return FALSE
 
@@ -213,11 +214,11 @@
 	audible_message("<span class='notice'>The result is: [result]</span>")
 
 	playing = FALSE
-	update_icon(potential_payout, color, rolled_number, is_winner)
+	update_icon(ALL, potential_payout, color, rolled_number, is_winner)
 	handle_color_light(color)
 
 	if(!is_winner)
-		audible_message("<span class='warning'>You lost! Better luck next time</span>")
+		audible_message("<span class='warning'>You lost! Better luck next time!</span>")
 		playsound(src, 'sound/machines/synth_no.ogg', 50)
 		return FALSE
 
@@ -336,6 +337,7 @@
 		return
 
 	if(playing)
+		remove_overlays += overlays
 		. += "random_numbers"
 
 /obj/machinery/roulette/update_icon(updates=ALL, payout, color, rolled_number, is_winner = FALSE)
@@ -403,7 +405,7 @@
 
 /obj/item/roulette_wheel_beacon
 	name = "roulette wheel beacon"
-	desc = "N.T. approved roulette wheel beacon, toss it down and you will have a complementary roulette wheel delivered to you."
+	desc = "An NT-approved roulette wheel beacon. Toss it down, and a complementary roulette wheel will be delivered to you."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "floor_beacon"
 	var/used
@@ -412,6 +414,7 @@
 	if(used)
 		return
 	loc.visible_message("<span class='warning'>\The [src] begins to beep loudly!</span>")
+	playsound(get_turf(src), 'sound/machines/triple_beep.ogg', 50, TRUE)
 	used = TRUE
 	addtimer(CALLBACK(src, PROC_REF(launch_payload)), 40)
 
