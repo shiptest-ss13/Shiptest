@@ -453,14 +453,27 @@
 	isGlass = TRUE
 
 ////////////////////////// MOLOTOV ///////////////////////
-/obj/item/reagent_containers/food/drinks/bottle/molotov
+/obj/item/reagent_containers/food/drinks/molotov
 	name = "molotov cocktail"
 	desc = "A throwing weapon used to ignite things, typically filled with an accelerant. Recommended highly by desperate militias and revolutionaries. Light and toss."
 	icon_state = "vodkabottle"
+	fill_icon_thresholds = list(0, 10, 20, 30, 40, 50, 60, 70, 80, 90)
+	amount_per_transfer_from_this = 10
+	volume = 100
+	force = 15 //Smashing bottles over someone's head hurts.
+	throwforce = 15
+	item_state = "broken_beer" //Generic held-item sprite until unique ones are made.
+	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	pickup_sound =  'sound/items/handling/bottle_pickup.ogg'
+	drop_sound = 'sound/items/handling/bottle_drop.ogg'
+	var/const/duration = 13 //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
+	isGlass = TRUE
+	foodtype = ALCOHOL
 	list_reagents = list()
 	var/active = 0
 
-/obj/item/reagent_containers/food/drinks/bottle/molotov/CheckParts(list/parts_list)
+/obj/item/reagent_containers/food/drinks/molotov/CheckParts(list/parts_list)
 	..()
 	var/obj/item/reagent_containers/food/drinks/bottle/B = locate() in contents
 	if(B)
@@ -471,7 +484,7 @@
 			isGlass = FALSE
 	return
 
-/obj/item/reagent_containers/food/drinks/bottle/molotov/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+/obj/item/reagent_containers/food/drinks/molotov/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/firestarter = FALSE
 	for(var/datum/reagent/reagent as anything in reagents.reagent_list)
 		if(reagent.accelerant_quality)
@@ -488,7 +501,7 @@
 			new /obj/effect/hotspot(otherT)
 	..()
 
-/obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
+/obj/item/reagent_containers/food/drinks/molotov/attackby(obj/item/I, mob/user, params)
 	if(I.get_temperature() && !active)
 		active = TRUE
 		log_bomber(user, "has primed a", src, "for detonation")
@@ -498,7 +511,7 @@
 		if(!isGlass)
 			addtimer(CALLBACK(src, PROC_REF(explode)), 5 SECONDS)
 
-/obj/item/reagent_containers/food/drinks/bottle/molotov/proc/explode()
+/obj/item/reagent_containers/food/drinks/molotov/proc/explode()
 	if(!active)
 		return
 	if(get_turf(src))
@@ -510,7 +523,7 @@
 		target.fire_act()
 	qdel(src)
 
-/obj/item/reagent_containers/food/drinks/bottle/molotov/attack_self(mob/user)
+/obj/item/reagent_containers/food/drinks/molotov/attack_self(mob/user)
 	if(active)
 		if(!isGlass)
 			to_chat(user, "<span class='danger'>The flame's spread too far on it!</span>")
@@ -518,6 +531,9 @@
 		to_chat(user, "<span class='info'>You snuff out the flame on [src].</span>")
 		cut_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
 		active = 0
+
+/obj/item/reagent_containers/food/drinks/molotov/full
+	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/pruno
 	name = "pruno mix"

@@ -223,24 +223,24 @@
 			if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 				holder.remove_reagent(/datum/reagent/consumable/capsaicin, 5)
 			if(isslime(M))
-				cooling = -rand(5,20)
+				cooling = -rand(1,2)
 		if(15 to 25)
 			cooling = -20 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(isslime(M))
-				cooling = -rand(10,20)
+				cooling = -rand(2,4)
 		if(25 to 35)
 			cooling = -30 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(prob(1))
 				M.emote("shiver")
 			if(isslime(M))
-				cooling = -rand(15,20)
+				cooling = -rand(4,8)
 		if(35 to INFINITY)
 			cooling = -40 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(prob(5))
 				M.emote("shiver")
 			if(isslime(M))
-				cooling = -rand(20,25)
-	M.adjust_bodytemperature(cooling, 50)
+				cooling = -rand(8,10)
+	M.adjust_bodytemperature(cooling, 10)
 	..()
 
 /datum/reagent/consumable/frostoil/expose_turf(turf/T, reac_volume)
@@ -428,7 +428,7 @@
 	taste_description = "your imprisonment"
 
 /datum/reagent/consumable/hot_ramen/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
+	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
 	..()
 
 /datum/reagent/consumable/hell_ramen
@@ -439,7 +439,7 @@
 	taste_description = "wet and cheap noodles on fire"
 
 /datum/reagent/consumable/hell_ramen/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(10 * TEMPERATURE_DAMAGE_COEFFICIENT)
+	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT)
 	..()
 
 /datum/reagent/consumable/flour
@@ -776,7 +776,7 @@
 	..()
 
 /datum/reagent/consumable/pyre_elementum/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())		// Doesn't kill you like capsaicin
+	M.adjust_bodytemperature(2 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())		// Doesn't kill you like capsaicin
 	if(!ingested)							// Unless you didn't eat it
 		M.adjustFireLoss(0.25*REM, 0)
 	..()

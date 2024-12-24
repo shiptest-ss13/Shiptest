@@ -116,16 +116,6 @@
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
-/obj/item/clothing/accessory/maidapron/syndicate
-	name = "syndicate maid apron"
-	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
-	icon_state = "maidapronsynd"
-
-/obj/item/clothing/accessory/maidapron/inteq
-	name = "inteq maid apron"
-	desc = "A 'tactical' apron to protect you from all sorts of spills, from dough to blood!"
-	icon_state = "inteqmaidapron"
-
 //////////
 //Medals//
 //////////

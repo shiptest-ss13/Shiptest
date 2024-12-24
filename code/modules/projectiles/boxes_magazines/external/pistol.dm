@@ -52,6 +52,8 @@
 	else
 		icon_state = "[base_icon_state]-0"
 
+/obj/item/ammo_box/magazine/pistol556mm/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/co9mm/hp
 	name = "pistol magazine (9mm HP)"

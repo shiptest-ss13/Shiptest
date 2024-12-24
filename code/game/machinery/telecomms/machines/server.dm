@@ -116,7 +116,7 @@
 
 /obj/machinery/telecomms/server/presets/command
 	id = "Command Server"
-	freq_listening = list(FREQ_COMMAND, FREQ_COMMON)
+	freq_listening = list(FREQ_EMERGENCY, FREQ_COMMON)
 	autolinkers = list("command")
 
 /obj/machinery/telecomms/server/presets/common/birdstation/Initialize()

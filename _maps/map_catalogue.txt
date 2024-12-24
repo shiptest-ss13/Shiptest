@@ -1,30 +1,9 @@
 Find the key for using this catalogue in "map_catalogue_key.txt"
 
-
 	IceRuins:
-		File Name = _maps\RandomRuins\IceRuins\icemoon_hydroponics_lab.dmm
-		Size = (x = 33)(y = 33)(z = 1)
-		Tags = "Medium Loot", "Medium Combat Challenge", "Antag_Gear", "Shelter"
-
-		File Name = _maps\RandomRuins\IceRuins\icemoon_surface_corporate_rejects.dmm
-		Size = (x = 34)(y = 38)(z = 1)
-		Tags = "Boss Combat Challenge", "Major Loot", "Antag Gear", "Shelter", "Lava"
-
-		File Name = _maps\RandomRuins\IceRuins\icemoon_surface_engioutpost.dmm
-		Size = (x = 40)(y = 20)(z = 1)
-		Tags = "No Combat", "Minor Loot", "Shelter"
-
-		File Name = _maps\RandomRuins\IceRuins\icemoon_underground_abandoned_newcops.dmm
-		Size = (x = 37)(y = 32)(z = 1)
-		Tags = "Medium Combat Challenge", "Minor Loot", "Shelter"
-
 		File Name = _maps\RandomRuins\IceRuins\icemoon_underground_abandoned_village.dmm
 		Size = (x = 28)(y = 28)(z = 1)
 		Tags = "Medium Combat Challenge", "Minor Loot", "Antag Gear", "Inhospitable"
-
-		File Name = _maps\RandomRuins\IceRuins\icemoon_underground_brazillianlab.dmm
-		Size = (x = 40)(y = 30)(z = 1)
-		Tags = "Boss Combat Challenge", "Major Loot", "Inhospitable"
 
 		File Name = _maps\RandomRuins\IceRuins\icemoon_underground_burnies_lair.dmm
 		Size = (x = 20)(y = 20)(z = 1)
@@ -38,7 +17,9 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 		Size = (x = 47)(y = 37)(z = 1)
 		Tags = "Medium Combat Challenge", "Minor Loot", "Shelter"
 
-
+		File Name = _maps\RandomRuins\IceRuins\icemoon_ice_lodge.dmm
+		Size = (x = 44)(y = 49)(z = 1)
+		Tags = "Medium Combat Challenge", "Medium Loot", "Shelter", "Liveable"
 
 	JungleRuins:
 		File Name = "_maps\RandomRuins\JungleRuins\jungle_syndicate.dmm"
@@ -65,10 +46,6 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 		Size = (x = 43)(y = 63)(z = 1)
 		Tags = "Medium Combat Challenge", "Hazardous", "Liveable", "Major Loot"
 
-		File Name "_maps\RandomRuins\JungleRuins\jungle_abandoned_library
-		Size = (x = 36)(y = 35)(z = 1)
-		Tags = "Medium Combat Challenge", "Medium Loot", "Antag Gear", "Necropolis Loot", "Liveable"
-
 	LavaRuins:
 		File Name = "_maps\RandomRuins\LavaRuins\lavaland_surface_buried_shrine.dmm"
 		Size = (x = 67)(y = 55)(z = 1)
@@ -77,10 +54,6 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 		File Name = "_maps\RandomRuins\LavaRuins\lavaland_surface_biodome_winter.dmm"
 		Size = (x = 46)(y = 42)(z = 1)
 		Tags = "Medium Combat Challenge", "Medium Loot", "Shelter"
-
-		File Name = "_maps\RandomRuins\LavaRuins\lavaland_surface_elephant_graveyard.dmm"
-		Size = (x = 29)(y = 35)(z = 1)
-		Tags = "No Combat", "Minor Loot", "Hazardous", "Inhospitable"
 
 		File Name = "_maps\RandomRuins\LavaRuins\lavaland_surface_lava_canyon.dmm"
 		Size = (x = 90)(y = 63)(z = 1)
@@ -100,10 +73,6 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 
 
 	ReebeRuins:
-		File Name = "_maps\RandomRuins\Ruins\reebe_swarmers.dmm"
-		Size = (x = 20)(y = 20)(z = 1)
-		Tags = "Medium Combat Challenge", "Minor Loot", "Liveable"
-
 		File Name = "_maps\RandomRuins\Ruins\reebe_arena.dmm"
 		Size = (x = 79)(y = 60)(z = 1)
 		Tags = "Boss Combat Challenge", "Medium Loot", "Liveable"
@@ -140,36 +109,34 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 
 
 	SandRuins:
-		File Name = "_maps\RandomRuins\Ruins\whitesands_surface_camp_saloon.dmm"
+		File Name = "_maps\RandomRuins\SandRuins\whitesands_surface_camp_saloon.dmm"
 		Size = (x = 30)(y = 30)(z = 1)
 		Tags = "Medium Combat Challenge", "Medium Loot", "Inhospitable"
 
-		File Name = "_maps\RandomRuins\Ruins\whitesands_surface_camp_combination.dmm"
+		File Name = "_maps\RandomRuins\SandRuins\whitesands_surface_camp_combination.dmm"
 		Size = (x = 59)(y = 59)(z = 1)
 		Tags = "Medium Combat Challenge", "Medium Loot", "Inhospitable", "Hazardous"
 
-		File Name = "_maps\RandomRuins\Ruins\whitesands_surface_medipen_plant.dmm"
+		File Name = "_maps\RandomRuins\SandRuins\whitesands_surface_medipen_plant.dmm"
 		Size = (x = 23)(y = 29)(z = 1)
 		Tags = "No Combat", "Major Loot", "Shelter"
 
-		File Name = "_maps\RandomRuins\Ruins\whitesands_surface_pubbyslopcrash.dmm"
+		File Name = "_maps\RandomRuins\SandRuins\whitesands_surface_pubbyslopcrash.dmm"
 		Size = (x = 40)(y = 25)(z = 1)
 		Tags = "Minor Combat Challenge", "Medium Loot", "Shelter"
 
+		File Name = _maps\RandomRuins\SandRuins\whitesands_brazillianlab.dmm
+		Size = (x = 40)(y = 30)(z = 1)
+		Tags = "Boss Combat Challenge", "Major Loot", "Inhospitable"
 
+		File Name = "_maps\RandomRuins\Ruins\whitesands_surface_e11_manufactory.dmm"
+		Size = (x = 70)(y = 63)(z = 1)
+		Tags = "Medium Combat Challenge", "Medium Loot", "Shelter", "Hazardous"
 
 	SpaceRuins:
-		File Name = "_maps\RandomRuins\SpaceRuins\astraeus.dmm"
-		Size = (x = 47)(y = 35)(z = 1)
-		Tags = "Minor Combat Challenge", "Medium Loot", "Inhospitable"
-
 		File Name = "_maps\RandomRuins\SpaceRuins\bigderelict1.dmm"
 		Size = (x = 40)(y = 34)(z = 1)
 		Tags = "Minor Combat Challenge", "Medium Loot", "Shelter"
-
-		File Name = "_maps\RandomRuins\SpaceRuins\corporate_mining.dmm"
-		Size = (x = 50)(y = 50)(z = 1)
-		Tags = "No Combat", "Medium Loot", "Shelter"
 
 		File Name = "_maps\RandomRuins\SpaceRuins\onehalf.dmm"
 		Size = (x = 29)(y = 20)(z = 1)
@@ -192,14 +159,6 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 		Size = (x = 75)(y = 76)(z = 1)
 		Tags = "Medium Combat Challenge", "Medium Loot", Liveable"
 
-		File Name = "_maps\RandomRuins\BeachRuins\beach_colony.dmm"
-		Size = (x = 30)(y = 30)(z = 1)
-		Tags = "Minor Combat Challenge", "Minor Loot"
-
-		File Name = "_maps\RandomRuins\BeachRuins\beach_fishing_hut.dmm"
-		Size = (x = 30)(y = 40)(z = 1)
-		Tags = "Hard Combat Challenge, "Major Loot", "Hazardous"
-
 		File Name = "_maps\RandomRuins\BeachRuins\beach_crashed_engineer.dmm"
 		Size = (x = 32)(y = 32)(z = 1)
 		Tags = "Minor Combat Challenge, "Medium Loot", "Hazardous"
@@ -208,26 +167,11 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 		Size = (x = 33)(y = 26)(z = 1)
 		Tags = "Medium Combat Challenge", "Medium Loot", "Liveable"
 
-		File Name = "_maps\RandomRuins\BeachRuins\beach_ocean_town.dmm"
-		Size = (x = 80)(y = 83)(z = 1)
-		Tags = "No Combat", "Minor loot", "Liveable"
-
 		File Name = "_maps\RandomRuins\BeachRuins\beach_treasure_cove.dmm"
 		Size = (x = 37)(y = 43)(z = 1)
 		Tags = "Medium Combat Challenge", "Medium Loot", "Liveable"
 
-		File Name = "_maps\RandomRuins\BeachRuins\beach_float_resort.dmm"
-		Size = (x = 38)(y = 52)(z = 1)
-		Tags = "No Combat", "Minor Loot", "Liveable"
-
 	Waste Ruins:
-		File name ="_maps\RandomRuins\wasteruins\wasteplanet_lab.dmm"
-		Size = (x = 26)(y = 25)(z = 1)
-		Tags = "No Combat", "Medium Loot" "Shelter" "hazardous" "hospitable"
-
-		File name ="_maps\RandomRuins\wasteruins\wasteplanet_pandora.dmm"
-		Size = (x = 18)(y = 21)(z = 1)
-		Tags = "Boss Combat Challenge", "Medium Loot" "Megafauna", "hospitable"
 
 		File name ="_maps\RandomRuins\wasteruins\wasteplanet_unhonorable.dmm"
 		Size = (x = 34)(y = 34)(z = 1)
@@ -240,3 +184,7 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 		File name = "_maps\RandomRuins\wasteruins\wasteplanet_yard.dmm"
 		Size = (x = 43)(y = 51)(z = 1)
 		Tags = "Medium Combat Challenge", "Medium Loot", "Shelter", "Hazardous"
+
+		File name = "_maps\RandomRuins\wasteruins\wasteplanet_tradepost.dmm"
+		Size = (x = 57)(y = 51)(z = 1)
+		Tags = "Minor Combat Challenge", "Medium Loot", "Shelter", "Hazardous"
