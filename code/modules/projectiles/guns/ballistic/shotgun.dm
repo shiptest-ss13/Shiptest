@@ -80,29 +80,26 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/tube,
 	)
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
+	actions_types = list(/datum/action/item_action/toggle_tube)
+
 	semi_auto = TRUE
+	casing_ejector = TRUE
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to pump it.</span>"
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
 	. = ..()
 	if (!alternate_magazine)
 		alternate_magazine = new default_ammo_type(src)
 
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/attack_self(mob/living/user)
-	if(!chambered && magazine.contents.len)
-		rack()
-	else
-		toggle_tube(user)
-
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/proc/toggle_tube(mob/living/user)
 	var/current_mag = magazine
 	var/alt_mag = alternate_magazine
+	//alt_mag.moveToNullspace
 	magazine = alt_mag
 	alternate_magazine = current_mag
 	toggled = !toggled
@@ -111,10 +108,16 @@
 	else
 		to_chat(user, "<span class='notice'>You switch to tube A.</span>")
 
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/AltClick(mob/living/user)
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+/datum/action/item_action/toggle_tube
+	name = "Toggle Tube"
+
+/datum/action/item_action/toggle_tube/Trigger()
+	if(istype(target, /obj/item/gun/ballistic/shotgun/automatic/dual_tube))
+		var/obj/item/gun/ballistic/shotgun/automatic/dual_tube/shotty = target
+		shotty.toggle_tube()
 		return
-	rack()
+	..()
+
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
