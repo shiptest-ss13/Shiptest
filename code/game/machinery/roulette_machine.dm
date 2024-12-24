@@ -95,11 +95,11 @@
 	if(.)
 		return
 
+	var/mob/living/carbon/human/H = usr
 	switch(action)
-		if("anchor" && "CanUnbolt")
-			set_anchored(!anchored)
-		else
-			return
+		if("anchor")
+			if(my_card == H.get_bankcard()))
+				set_anchored(!anchored)
 			. = TRUE
 		if("ChangeBetAmount")
 			chosen_bet_amount = clamp(text2num(params["amount"]), 10, 500)
