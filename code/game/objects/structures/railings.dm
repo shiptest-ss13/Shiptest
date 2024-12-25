@@ -23,7 +23,7 @@
 
 /obj/structure/railing/update_appearance(updates)
 	. = ..()
-	if(dir = (1 || 5 || 9))
+	if(dir == (1 || 5 || 9))
 		layer = 2.76
 	else
 		layer = 3.08
