@@ -6,9 +6,8 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/loading{
-	dir = 4;
-	pixel_x = 4
+/obj/effect/turf_decal/industrial/loading/red{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -142,10 +141,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "br" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "bt" = (
@@ -1159,10 +1158,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/structure/railing{
-	dir = 8;
-	layer = 4.1
-	},
 /obj/structure/cable,
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech/grid,
@@ -1305,9 +1300,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar/starboard)
 "nE" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1354,14 +1346,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "or" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /obj/structure/chair/handrail{
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating,
-/turf/open/floor/plasteel/patterned/grid,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/rust,
 /area/ship/cargo)
 "ov" = (
 /obj/structure/catwalk/over,
@@ -1753,10 +1745,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/structure/railing{
-	dir = 4;
-	layer = 4.1
-	},
 /obj/structure/cable,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1795,7 +1783,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plasteel/patterned/grid,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "sU" = (
 /obj/effect/turf_decal/techfloor{
@@ -1945,13 +1933,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "uW" = (
-/obj/effect/turf_decal/industrial/loading,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/industrial/loading/red,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "vs" = (
@@ -2283,9 +2271,8 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/loading{
-	dir = 4;
-	pixel_x = 4
+/obj/effect/turf_decal/industrial/loading/red{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -2365,9 +2352,6 @@
 /area/ship/hangar/starboard)
 "zO" = (
 /obj/machinery/power/smes/engineering,
-/obj/structure/railing{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
@@ -2464,9 +2448,8 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/loading{
-	dir = 4;
-	pixel_x = 4
+/obj/effect/turf_decal/industrial/loading/red{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -2675,7 +2658,6 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "Ea" = (
-/obj/effect/turf_decal/industrial/loading,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -2697,6 +2679,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/effect/turf_decal/industrial/loading/red,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Ed" = (
@@ -3093,10 +3076,10 @@
 "Je" = (
 /obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/siding/thinplating,
-/obj/structure/cable/yellow{
+/obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/patterned/grid,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "Jh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3321,9 +3304,9 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "MI" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/reagent_dispensers/beerkeg,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Nk" = (
@@ -3613,9 +3596,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "Qn" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/fermenting_barrel,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Qw" = (
@@ -4009,9 +3992,9 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "UL" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/radio/intercom/directional/east,
 /obj/machinery/smartfridge/drying_rack,
+/obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Vf" = (
