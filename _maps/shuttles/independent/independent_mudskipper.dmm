@@ -578,22 +578,15 @@
 	locked = 1;
 	secure = 1
 	},
-/obj/item/gun/energy/laser/scatter,
-/obj/item/stock_parts/cell/gun/upgraded,
-/obj/machinery/holopad/emergency/command,
 /obj/item/storage/backpack/duffelbag,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/head/caphat,
 /obj/item/megaphone/command,
-/obj/item/gun/energy/laser,
-/obj/item/gun/energy/laser,
-/obj/item/gun/energy/laser/e10,
-/obj/item/gun/energy/laser/e10,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/machinery/holopad/emergency/command,
+/obj/item/gun/energy/laser/scatter,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ot" = (
@@ -1011,10 +1004,22 @@
 /area/ship/hallway/central)
 "xH" = (
 /obj/machinery/recharger{
-	pixel_y = 4
+	pixel_y = 4;
+	pixel_x = -8
 	},
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 5
+	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/stock_parts/cell/gun/upgraded{
+	pixel_x = 5;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "xR" = (
@@ -1746,9 +1751,11 @@
 /area/ship/bridge)
 "OD" = (
 /obj/machinery/airalarm/directional/east,
-/obj/structure/chair/plastic{
-	dir = 8
-	},
+/obj/structure/guncloset,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser/e10,
+/obj/item/gun/energy/laser/e10,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "OR" = (
@@ -2214,18 +2221,26 @@
 	gpstag = "SCAV1"
 	},
 /obj/item/gps/mining{
-	gpstag = "SCAV1"
+	gpstag = "SCAV1";
+	pixel_y = 10
 	},
 /obj/item/gps/mining{
-	gpstag = "SCAV1"
+	gpstag = "SCAV1";
+	pixel_x = -8
 	},
 /obj/item/gps/mining{
-	gpstag = "SCAV1"
+	gpstag = "SCAV1";
+	pixel_x = -8;
+	pixel_y = 10
 	},
 /obj/item/melee/knife/survival,
-/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival{
+	pixel_x = 6
+	},
 /obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite{
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Yd" = (
