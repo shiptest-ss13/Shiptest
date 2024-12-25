@@ -501,6 +501,14 @@
 /obj/machinery/telecomms/processor,
 /turf/open/floor/plasteel/mono/white,
 /area/space)
+"lV" = (
+/obj/structure/salvageable/starport/missile_launcher{
+	density = 0;
+	pixel_x = -28;
+	pixel_y = -6
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/space)
 "ma" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 1
@@ -757,17 +765,13 @@
 	pixel_x = 6;
 	pixel_y = 32
 	},
-/obj/structure{
-	desc = "A devastating strike weapon of times past. The mountings seem broken now.";
-	dir = 4;
-	icon = 'icons/mecha/mecha_equipment.dmi';
-	icon_state = "mecha_missilerack_six";
-	name = "ancient missile rack";
-	pixel_x = -26;
-	pixel_y = 11
-	},
 /obj/structure/platform/ship{
 	dir = 4
+	},
+/obj/structure/salvageable/starport/missile_launcher{
+	density = 0;
+	pixel_x = -28;
+	pixel_y = 9
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
@@ -1107,6 +1111,12 @@
 /area/space)
 "zN" = (
 /turf/open/water/jungle/lit,
+/area/space)
+"zO" = (
+/obj/structure/salvageable/starport/cannon{
+	pixel_y = 17
+	},
+/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "zQ" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal{
@@ -1533,18 +1543,6 @@
 	},
 /turf/open/water/jungle,
 /area/space)
-"IM" = (
-/obj/structure{
-	desc = "A devastating strike weapon of times past. The mountings seem broken now.";
-	dir = 4;
-	icon = 'icons/mecha/mecha_equipment.dmi';
-	icon_state = "mecha_missilerack_six";
-	name = "ancient missile rack";
-	pixel_x = -26;
-	pixel_y = -5
-	},
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/space)
 "IO" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -1632,6 +1630,12 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
+"Kz" = (
+/obj/structure/salvageable/starport/cannon{
+	pixel_y = -17
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
 "KH" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -4017,7 +4021,7 @@ os
 Dz
 UT
 To
-IM
+lV
 dP
 EM
 dP
@@ -4181,11 +4185,11 @@ os
 MU
 UT
 UT
-UT
+Kz
 eG
 Io
 eG
-ep
+zO
 Tu
 UT
 GE
