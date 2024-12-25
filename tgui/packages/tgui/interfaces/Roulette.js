@@ -338,7 +338,7 @@ export const RouletteBetTable = (props, context) => {
                 <NumberInput
                   value={customBet}
                   minValue={0}
-                  maxValue={1000}
+                  maxValue={500}
                   step={10}
                   stepPixelSize={4}
                   width="40px"
