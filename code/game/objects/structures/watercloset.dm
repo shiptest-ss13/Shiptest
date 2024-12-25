@@ -214,7 +214,6 @@
 		exposed = !exposed
 	return TRUE
 
-
 /obj/item/reagent_containers/food/snacks/urinalcake
 	name = "urinal cake"
 	desc = "The noble urinal cake, protecting the people's pipes from the people's pee. Edibility is suggested to be low."
@@ -477,6 +476,13 @@
 	var/open = TRUE
 	/// if it can be seen through when closed
 	var/opaque_closed = FALSE
+
+/obj/structure/curtain/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE,CALLBACK(src, PROC_REF(can_be_rotated)),null)
+
+/obj/structure/curtain/proc/can_be_rotated(mob/user, rotation_type)
+	return !anchored
 
 /obj/structure/curtain/proc/toggle()
 	open = !open

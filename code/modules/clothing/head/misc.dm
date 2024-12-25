@@ -226,18 +226,6 @@
 	icon_state = "intern_hat"
 	item_state = "intern_hat"
 
-/obj/item/clothing/head/maidheadband/syndicate
-	name = "tactical maid headband"
-	desc = "Tacticute."
-	icon_state = "syndieheadband"
-	item_state = "syndieheadband"
-
-/obj/item/clothing/head/maidheadband/inteq
-	name = "inteq maid headband"
-	desc = "Tacticute."
-	icon_state = "inteqheadband"
-	item_state = "inteqheadband"
-
 /obj/item/clothing/head/inteq_peaked
 	name = "inteq peaked cap"
 	desc = "A peaked cap for Vanguards with a commanding authority, emblazoned with the golden badge of the IRMG."

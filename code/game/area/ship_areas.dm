@@ -163,6 +163,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/crewfive
 	name = "Crew Quarters 5"
 
+/area/ship/crew/specialized
+	name = "???"
+
+/area/ship/crew/specialized/medical
+	name = "Medical Specialist's Quarters"
+
+/area/ship/crew/specialized/security
+	name = "Security Specialist's Quarters"
+
+/area/ship/crew/specialized/engineering
+	name = "Engineering Specialist's Quarters"
+
+/area/ship/crew/specialized/cargo
+	name = "Cargo Specialist's Quarters"
+
 /area/ship/crew/cryo
 	name = "Cryopod Room"
 	icon_state = "cryo"
@@ -306,6 +321,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "ai_chamber"
 	ambientsounds = list('sound/ambience/ambimalf.ogg', 'sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambiatmos.ogg', 'sound/ambience/ambiatmos2.ogg')
 
+/area/ship/science/workshop
+	name = "Workshop"
+	icon_state = "workshop"
+
 /// Engineering ///
 /area/ship/engineering
 	name = "Engineering"
@@ -337,6 +356,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "tcomsatcham"
 	lighting_colour_tube = "#e2feff"
 	lighting_colour_bulb = "#d5fcff"
+
+/area/ship/engineering/communications/room
+	name = "Communications Room"
 
 /area/ship/engineering/engine
 	name = "Engine Room"
