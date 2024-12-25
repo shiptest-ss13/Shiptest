@@ -6,8 +6,9 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/loading/red{
-	dir = 4
+/obj/effect/turf_decal/arrows/red{
+	dir = 4;
+	color = "#521818"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -182,17 +183,9 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
 "bE" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6;
-	color = "#808080"
-	},
 /obj/structure/closet/wall/red{
 	name = "Ammo locker";
 	pixel_y = -29
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6;
-	color = "#808080"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6;
@@ -442,7 +435,7 @@
 	dir = 4;
 	color = "#912a2a"
 	},
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "dR" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -592,7 +585,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/effect/turf_decal/trimline/opaque/brown/line,
+/obj/effect/turf_decal/trimline/opaque/red/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "fY" = (
@@ -655,6 +648,11 @@
 	color = "#521818";
 	dir = 1
 	},
+/obj/item/clothing/under/dress/skirt/pinafore/maroon,
+/obj/item/clothing/under/dress/skirt/pinafore/plaid,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/shoes/laceup,
+/obj/item/reagent_containers/food/snacks/grown/poppy/lily,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "gt" = (
@@ -727,11 +725,11 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/brown/warning{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/red/warning{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -811,11 +809,10 @@
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 31
 	},
-/obj/mecha/working/ripley/deathripley{
-	name = "\improper MELITA";
-	desc = "A garishly spray-painted Ripley exosuit donning the colours of the Ramzi Clique."
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/mecha/combat/gygax/dark{
+	name = "\improper MELITA"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
 "hI" = (
@@ -1131,9 +1128,6 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hangar/starboard)
 "lj" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
@@ -1141,6 +1135,7 @@
 	name = "Thruster Blast Door";
 	dir = 4
 	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "lm" = (
@@ -1149,10 +1144,10 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "lq" = (
-/obj/effect/turf_decal/atmos/plasma{
+/obj/effect/turf_decal/atmos/mix{
 	dir = 8
 	},
-/turf/open/floor/engine/plasma,
+/turf/open/floor/engine/hydrogen_fuel,
 /area/ship/engineering)
 "lr" = (
 /obj/structure/grille,
@@ -1204,7 +1199,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "mf" = (
-/turf/open/floor/engine/plasma,
+/turf/open/floor/engine/hydrogen_fuel,
 /area/ship/engineering)
 "mm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1274,9 +1269,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar/starboard)
 "nj" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/hatch/red{
+	color = "#521818"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "nn" = (
@@ -1611,9 +1608,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar/starboard)
 "rk" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "rm" = (
@@ -1819,7 +1814,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/platform/industrial{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar/starboard)
@@ -1977,7 +1972,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/obj/effect/turf_decal/industrial/loading/red,
+/obj/effect/turf_decal/arrows/red{
+	color = "#521818"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "vs" = (
@@ -2057,7 +2054,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output{
 	dir = 8
 	},
-/turf/open/floor/engine/plasma,
+/turf/open/floor/engine/hydrogen_fuel,
 /area/ship/engineering)
 "wc" = (
 /obj/structure/closet/crate/radiation,
@@ -2079,7 +2076,7 @@
 	dir = 4;
 	color = "#912a2a"
 	},
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "wm" = (
 /obj/structure/cable/yellow{
@@ -2245,10 +2242,12 @@
 "yi" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/rack,
-/obj/item/mecha_parts/mecha_equipment/drill,
-/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
-/obj/item/mecha_parts/mecha_equipment/mining_scanner,
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/item/mecha_parts/mecha_equipment/thrusters/ion,
+/obj/item/mecha_ammo/scattershot,
+/obj/item/mecha_ammo/scattershot,
+/obj/item/mecha_ammo/incendiary,
+/obj/item/mecha_ammo/incendiary,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
 "yk" = (
@@ -2300,6 +2299,7 @@
 /obj/item/storage/backpack/duffelbag/syndie/c4{
 	pixel_y = 12
 	},
+/obj/item/melee/axe/sledgehammer,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "zc" = (
@@ -2320,8 +2320,9 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/loading/red{
-	dir = 4
+/obj/effect/turf_decal/arrows/red{
+	dir = 4;
+	color = "#521818"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -2370,10 +2371,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/trimline/opaque/brown/line{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "zH" = (
@@ -2500,8 +2501,9 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/loading/red{
-	dir = 4
+/obj/effect/turf_decal/arrows/red{
+	dir = 4;
+	color = "#521818"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -2528,9 +2530,10 @@
 "BX" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/rack,
-/obj/item/mecha_parts/concealed_weapon_bay,
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg,
-/obj/item/mecha_ammo/lmg,
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot,
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/robotics)
 "BY" = (
@@ -2737,7 +2740,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/obj/effect/turf_decal/industrial/loading/red,
+/obj/effect/turf_decal/arrows/red{
+	color = "#521818"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Ed" = (
@@ -2810,6 +2815,9 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Fg" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/security/armory)
 "Fj" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -2970,11 +2978,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/brown/warning{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/red/warning{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -3063,7 +3071,7 @@
 	color = "#912a2a";
 	dir = 8
 	},
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "IQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3099,20 +3107,9 @@
 	pixel_x = -8;
 	pixel_y = 4
 	},
-/obj/item/door_seal{
-	pixel_x = 6
-	},
 /obj/item/pen/red{
 	pixel_x = -8;
 	pixel_y = 6
-	},
-/obj/item/camera_bug{
-	pixel_x = 2;
-	pixel_y = 10
-	},
-/obj/item/door_seal{
-	pixel_y = -1;
-	pixel_x = 2
 	},
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
@@ -3519,9 +3516,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar/starboard)
 "OD" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/oil,
+/obj/effect/turf_decal/industrial/hatch/red{
+	color = "#521818"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "OJ" = (
@@ -3630,7 +3629,7 @@
 	icon_state = "2-8"
 	},
 /obj/structure/platform/industrial{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar/starboard)
@@ -3895,7 +3894,6 @@
 "Ss" = (
 /obj/effect/turf_decal/techfloor/corner,
 /obj/structure/rack,
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/storage/toolbox/electrical{
 	pixel_x = -1;
 	pixel_y = -4
@@ -3915,6 +3913,9 @@
 	pixel_x = 2
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/hatch/red{
+	color = "#521818"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/robotics)
 "St" = (
@@ -4390,13 +4391,13 @@
 /obj/machinery/status_display/shuttle{
 	pixel_y = -32
 	},
-/obj/effect/turf_decal/trimline/opaque/brown/line,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 23;
 	pixel_y = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/effect/turf_decal/trimline/opaque/red/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "XY" = (
@@ -4409,7 +4410,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/brown/line{
+/obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
@@ -4719,12 +4720,12 @@ XG
 XG
 "}
 (12,1,1) = {"
-mp
+Fg
 RX
 Nk
 Lq
 RG
-RX
+Fg
 fZ
 BY
 CH
@@ -4739,7 +4740,7 @@ XG
 "}
 (13,1,1) = {"
 Vf
-mp
+Fg
 RX
 RX
 RX

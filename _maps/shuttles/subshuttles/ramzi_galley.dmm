@@ -14,10 +14,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
-"d" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/pod/light,
-/area/ship/storage)
 "e" = (
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
@@ -33,8 +29,10 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "f" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/pod,
+/obj/effect/turf_decal/industrial/fire{
+	color = "#912a2a"
+	},
+/turf/open/floor/pod/dark,
 /area/ship/storage)
 "g" = (
 /obj/structure/chair/comfy/shuttle{
@@ -52,9 +50,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "h" = (
-/obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/fire{
+	color = "#912a2a"
 	},
 /turf/open/floor/pod/dark,
 /area/ship/storage)
@@ -89,19 +89,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "s" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning/corner,
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
 /obj/machinery/holopad,
+/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black/corner,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
-"v" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/pod/dark,
 /area/ship/storage)
 "w" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -124,13 +120,13 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage)
 "x" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
 /obj/machinery/power/terminal{
 	dir = 8
 	},
 /obj/structure/cable/yellow,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "y" = (
@@ -201,7 +197,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/pod,
+/turf/open/floor/pod/dark,
 /area/ship/storage)
 "I" = (
 /obj/structure/cable{
@@ -216,10 +212,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "L" = (
-/obj/effect/turf_decal/industrial/warning{
+/obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "N" = (
@@ -278,15 +274,17 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/pod/light,
+/turf/open/floor/pod/dark,
 /area/ship/storage)
 "T" = (
-/obj/effect/turf_decal/industrial/warning/corner,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/open/floor/pod,
+/obj/effect/turf_decal/industrial/fire/corner{
+	color = "#912a2a"
+	},
+/turf/open/floor/pod/dark,
 /area/ship/storage)
 "U" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -327,27 +325,31 @@
 /obj/effect/turf_decal/steeldecal/steel_decals3{
 	dir = 10
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
 	pixel_y = -32
+	},
+/obj/effect/turf_decal/industrial/outline/red{
+	color = "#521818"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "X" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/dim/directional/south,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/turf_decal/industrial/outline/red{
+	color = "#521818"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage)
 "Z" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
 /obj/machinery/airalarm/directional/south,
 /obj/structure/crate_shelf,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 
@@ -375,7 +377,7 @@ a
 (4,1,1) = {"
 U
 H
-d
+f
 F
 a
 "}
@@ -389,7 +391,7 @@ a
 (6,1,1) = {"
 w
 I
-v
+f
 z
 a
 "}
