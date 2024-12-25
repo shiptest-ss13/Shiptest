@@ -207,7 +207,7 @@
 	name = "surgical apron"
 	desc = "A sterile blue surgical apron."
 	icon_state = "surgical"
-	allowed = list(/obj/item/scalpel, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 //SolGov suits
 

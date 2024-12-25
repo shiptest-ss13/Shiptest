@@ -156,9 +156,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "ax" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -274,15 +272,11 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "aL" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "aM" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -631,9 +625,11 @@
 /area/ship/crew/canteen)
 "ce" = (
 /obj/structure/table,
-/obj/machinery/fax,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/fax/nanotrasen{
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cf" = (
@@ -1528,9 +1524,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "fb" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -1683,7 +1677,6 @@
 "jo" = (
 /obj/machinery/porta_turret/ship/nt/light{
 	id = "meta_grid";
-	pixel_y = 0;
 	dir = 4
 	},
 /turf/closed/wall/mineral/titanium,
@@ -1793,9 +1786,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "lC" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -2210,7 +2201,6 @@
 "uT" = (
 /obj/machinery/porta_turret/ship/nt/light{
 	id = "meta_grid";
-	pixel_y = 0;
 	dir = 4
 	},
 /turf/closed/wall/mineral/titanium,
@@ -2404,7 +2394,6 @@
 "yF" = (
 /obj/machinery/porta_turret/ship/nt/light{
 	id = "meta_grid";
-	pixel_y = 0;
 	dir = 5
 	},
 /turf/closed/wall/mineral/titanium,
@@ -3087,7 +3076,6 @@
 "Lo" = (
 /obj/machinery/porta_turret/ship/nt/light{
 	id = "meta_grid";
-	pixel_y = 0;
 	dir = 6
 	},
 /turf/closed/wall/mineral/titanium,
@@ -3267,7 +3255,6 @@
 	dir = 4
 	},
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	name = "Salvage Ship";
 	port_direction = 2;
 	preferred_direction = 4;
@@ -3489,7 +3476,6 @@
 "TR" = (
 /obj/machinery/porta_turret/ship/nt/light{
 	id = "meta_grid";
-	pixel_y = 0;
 	dir = 10
 	},
 /turf/closed/wall/mineral/titanium,
@@ -3497,7 +3483,6 @@
 "TV" = (
 /obj/machinery/porta_turret/ship/nt/light{
 	id = "meta_grid";
-	pixel_y = 0;
 	dir = 9
 	},
 /turf/closed/wall/mineral/titanium,
