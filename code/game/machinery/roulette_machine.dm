@@ -86,7 +86,7 @@
 			data["AccountBalance"] = C.registered_account.account_balance
 		else
 			data["AccountBalance"] = 0
-		data["CanUnbolt"] = (H.get_idcard() == my_card)
+		data["CanUnbolt"] = (C == my_card)
 
 	return data
 
@@ -95,9 +95,11 @@
 	if(.)
 		return
 
+	var/mob/living/carbon/human/H = usr
 	switch(action)
 		if("anchor")
-			set_anchored(!anchored)
+			if(my_card == H.get_bankcard())
+				set_anchored(!anchored)
 			. = TRUE
 		if("ChangeBetAmount")
 			chosen_bet_amount = clamp(text2num(params["amount"]), 10, 500)
@@ -117,7 +119,7 @@
 	if(istype(W, /obj/item/card/bank))
 		playsound(src, 'sound/machines/card_slide.ogg', 50, TRUE)
 
-		if(machine_stat & MAINT || !on || locked)
+		if(machine_stat & MAINT || !on || locked|| !powered())
 			to_chat(user, "<span class='notice'>The machine appears to be disabled.</span>")
 			return FALSE
 
