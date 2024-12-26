@@ -86,6 +86,7 @@
 			data["AccountBalance"] = C.registered_account.account_balance
 		else
 			data["AccountBalance"] = 0
+		data["CanUnbolt"] = (H.get_idcard() == my_card)
 
 	return data
 
@@ -94,11 +95,9 @@
 	if(.)
 		return
 
-	var/mob/living/carbon/human/H = usr
 	switch(action)
 		if("anchor")
-			if(my_card == H.get_bankcard())
-				set_anchored(!anchored)
+			set_anchored(!anchored)
 			. = TRUE
 		if("ChangeBetAmount")
 			chosen_bet_amount = clamp(text2num(params["amount"]), 10, 500)
@@ -118,7 +117,7 @@
 	if(istype(W, /obj/item/card/bank))
 		playsound(src, 'sound/machines/card_slide.ogg', 50, TRUE)
 
-		if(machine_stat & MAINT || !on || locked || !powered())
+		if(machine_stat & MAINT || !on || locked)
 			to_chat(user, "<span class='notice'>The machine appears to be disabled.</span>")
 			return FALSE
 
@@ -174,7 +173,7 @@
 				if(!msg)
 					return
 				name = msg
-				desc = "Owned by [new_card.registered_account.account_holder], draws directly from [user.p_their()] account."
+				desc = "Owned by [new_card.registered_account.account_holder]. The wheel draws directly from [user.p_their()] account."
 				my_card = new_card
 				to_chat(user, "<span class='notice'>You link the wheel to your account.</span>")
 				power_change()
@@ -285,7 +284,7 @@
 ///Returns TRUE if the player bet correctly.
 /obj/machinery/roulette/proc/check_win(bet_type, bet_amount, rolled_number)
 	var/actual_bet_number = text2num(bet_type) //Only returns the numeric bet types, AKA singles.
-	if(actual_bet_number) //This means we're playing singles
+	if(!null(actual_bet_number)) //This means we're playing singles
 		return rolled_number == actual_bet_number
 
 	switch(bet_type) //Otherwise, we are playing a "special" game, switch on all the cases so we can check.
