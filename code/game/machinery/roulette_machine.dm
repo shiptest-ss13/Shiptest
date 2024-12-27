@@ -119,7 +119,7 @@
 	if(istype(W, /obj/item/card/bank))
 		playsound(src, 'sound/machines/card_slide.ogg', 50, TRUE)
 
-		if(machine_stat & MAINT || !on || locked|| !powered())
+		if(machine_stat & MAINT || !on || locked || !powered())
 			to_chat(user, "<span class='notice'>The machine appears to be disabled.</span>")
 			return FALSE
 
