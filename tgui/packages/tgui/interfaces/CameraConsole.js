@@ -49,14 +49,20 @@ export const CameraConsole = (props, context) => {
     <Window width={870} height={708} resizable>
       <div className="CameraConsole__left">
         <Window.Content scrollable>
+
           <CameraConsoleContent />
         </Window.Content>
       </div>
       <div className="CameraConsole__right">
+
         <div className="CameraConsole__toolbar">
+          <b>Network: </b>
+          {(data.network) || '—'}
+          <b>{"\n"}</b>
           <b>Camera: </b>
           {(activeCamera && activeCamera.name) || '—'}
         </div>
+
         <div className="CameraConsole__toolbarRight">
           <Button
             icon="chevron-left"
@@ -95,12 +101,36 @@ export const CameraConsoleContent = (props, context) => {
   const { activeCamera } = data;
   const cameras = selectCameras(data.cameras, searchText);
   return (
+
     <Flex direction={'column'} height="100%">
+
       <Flex.Item>
         <Input
           autoFocus
           fluid
-          mt={1}
+          m={1}
+          placeholder="Enter a network"
+          onInput={(e, value) =>
+            act('set_temp_network', {
+              name: value
+            })
+          }
+        />
+
+        <Button
+            icon="fill-floppy-fill"
+            onClick={() =>
+              act('set_network')
+            }
+          />
+
+      </Flex.Item>
+
+      <Flex.Item>
+        <Input
+          autoFocus
+          fluid
+          m={1}
           placeholder="Search for a camera"
           onInput={(e, value) => setSearchText(value)}
         />

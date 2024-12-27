@@ -7,6 +7,7 @@
 	light_color = COLOR_SOFT_RED
 
 	var/list/network = list("ss13")
+	var/tempNetwork = list("")
 	var/obj/machinery/camera/active_camera
 	var/list/concurrent_users = list()
 
@@ -126,6 +127,13 @@
 	. = ..()
 	if(.)
 		return
+
+	if(action == "set_network")
+		network = tempNetwork
+
+
+	if(action == "set_temp_network")
+		tempNetwork = params["name"]
 
 	if(action == "switch_camera")
 		var/c_tag = params["name"]
