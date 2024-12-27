@@ -118,9 +118,16 @@ export const CameraConsoleContent = (props, context) => {
         />
 
         <Button
-            icon="fill-floppy-fill"
+            icon="add"
+            ml={1}
             onClick={() =>
               act('set_network')
+            }
+          />
+
+        <Button
+            icon="refresh"
+            onClick={() => act('refresh')
             }
           />
 

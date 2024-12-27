@@ -123,17 +123,25 @@
 			))
 	return data
 
-/obj/machinery/computer/security/ui_act(action, params)
+//This is the only way to refresh the UI, from what I've found
+/obj/machinery/computer/security/proc/ui_refresh(mob/user, datum/tgui/ui)
+	ui.close()
+	ui_interact(user, ui)
+
+/obj/machinery/computer/security/ui_act(action, params, ui)
 	. = ..()
 	if(.)
 		return
 
 	if(action == "set_network")
 		network = tempNetwork
-
+		ui_refresh(usr, ui)
 
 	if(action == "set_temp_network")
 		tempNetwork = params["name"]
+
+	if(action == "refresh")
+		ui_refresh(usr, ui)
 
 	if(action == "switch_camera")
 		var/c_tag = params["name"]
