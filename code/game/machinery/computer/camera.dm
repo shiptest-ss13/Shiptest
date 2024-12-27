@@ -64,6 +64,14 @@
 		network -= i
 		network += "[REF(port)][i]"
 
+/obj/machinery/computer/security/multitool_act(mob/living/user, obj/item/I)
+	. = ..()
+	var/obj/item/multitool/M = I
+	if(M.buffer != null)
+		network = M.buffer
+		to_chat(user, "<span class='notice'>You copy the network [M.buffer] from the multitool's buffer.</span>")
+	return
+
 /obj/machinery/computer/security/ui_interact(mob/user, datum/tgui/ui)
 	// Update UI
 	ui = SStgui.try_update_ui(user, src, ui)

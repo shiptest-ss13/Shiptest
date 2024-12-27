@@ -258,8 +258,27 @@
 	if(!panel_open)
 		return
 
-	setViewRange((view_range == initial(view_range)) ? short_range : initial(view_range))
-	to_chat(user, "<span class='notice'>You [(view_range == initial(view_range)) ? "restore" : "mess up"] the camera's focus.</span>")
+	var/obj/item/multitool/M = I
+	var/list/choice_list = list("Occlude the camera lens", "Save the camera network to the multitool buffer", "Transfer the network in the buffer to the camera", "Change the camera network")
+	var/choice = input(user, "Select a function", "Camera Settings") as null|anything in choice_list
+
+	switch(choice)
+		if("Occlude the camera lens")
+			setViewRange((view_range == initial(view_range)) ? short_range : initial(view_range))
+			to_chat(user, "<span class='notice'>You [(view_range == initial(view_range)) ? "restore" : "mess up"] the camera's focus.</span>")
+
+		if("Save the camera network to the multitool buffer")
+			M.buffer = network[1]
+			to_chat(user, "<span class='notice'>You add network [network[1]] to the multitool's buffer.</span>")
+
+		if("Transfer the network in the buffer to the camera")
+			network[1] = M.buffer
+			to_chat(user, "<span class='notice'>You set the camera to network [network[1]] from the multiool's buffer.</span>")
+
+		if("Change the camera network")
+			network[1] = stripped_input(user, "Set a network for this camera. 32 characters max.", "Network", max_length = 32)
+			to_chat(user, "<span class='notice'>You set the camera network to [network[1]].</span>")
+
 	return TRUE
 
 /obj/machinery/camera/welder_act(mob/living/user, obj/item/I)
