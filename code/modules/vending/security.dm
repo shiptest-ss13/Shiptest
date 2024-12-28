@@ -105,7 +105,7 @@
 	premium = list()
 	voucher_items = list(
 		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/hades,
-		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/combat)
+		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/m11)
 
 /obj/machinery/vending/security/marine/syndicate
 	icon_state = "syndicate-marine"

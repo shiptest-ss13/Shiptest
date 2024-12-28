@@ -77,7 +77,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
 	dir = 4
 	},
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/listening_post)
 "cm" = (
@@ -186,9 +186,7 @@
 "dJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "dM" = (
@@ -298,9 +296,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -464,9 +460,7 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "hA" = (
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/power/terminal{
 	dir = 1
 	},
@@ -727,11 +721,11 @@
 /area/ruin/unpowered/listening_post/operations)
 "na" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax{
-	pixel_y = 7
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
+	},
+/obj/machinery/fax/ruin{
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -1116,7 +1110,7 @@
 /area/ruin/unpowered/listening_post)
 "te" = (
 /obj/item/gun/ballistic/automatic/smg/cobra{
-	spawnwithmagazine = 0
+	default_ammo_type = 0
 	},
 /obj/item/ammo_box/magazine/m45_cobra{
 	start_empty = 1
@@ -1238,7 +1232,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "vJ" = (
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/listening_post)
 "vR" = (
@@ -1763,18 +1759,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "FW" = (
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/power/smes/engineering,
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "Gy" = (
-/obj/machinery/computer/telecomms/monitor{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
+	},
+/obj/machinery/computer/telecomms/server{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -2039,7 +2033,7 @@
 /area/ruin/unpowered/listening_post/engineering)
 "MZ" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/structure/sign/poster/official/high_class_martini{
 	pixel_y = 32
 	},
@@ -2124,8 +2118,8 @@
 /area/ruin/unpowered/listening_post/commons)
 "Om" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "On" = (
@@ -2199,9 +2193,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -2246,7 +2238,7 @@
 	icon_state = "trimline";
 	dir = 8
 	},
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
@@ -2471,9 +2463,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,

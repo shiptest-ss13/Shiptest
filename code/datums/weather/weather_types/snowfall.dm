@@ -43,4 +43,4 @@
 	thunder_chance = 2
 
 /datum/weather/snowfall/heavy/weather_act(mob/living/living_mob)
-	living_mob.adjust_bodytemperature(-rand(2,4))
+	living_mob.adjust_bodytemperature(-rand(1,2))

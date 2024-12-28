@@ -96,7 +96,6 @@
 	req_access_txt = "3"
 	},
 /obj/item/gun/energy/e_gun/hos,
-/obj/item/clothing/mask/gas/sechailer,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/storage/belt/military,
 /obj/item/clothing/suit/armor/vest/leather,
@@ -106,10 +105,11 @@
 /obj/item/clothing/under/rank/security/head_of_security/alt/skirt,
 /obj/item/clothing/under/rank/security/head_of_security/nt,
 /obj/item/clothing/under/rank/security/head_of_security/nt/skirt,
+/obj/item/clothing/mask/gas/vigilitas,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
 "by" = (
-/obj/machinery/vending/cola/random,
+/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel,
@@ -214,7 +214,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "db" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
@@ -566,8 +566,8 @@
 "jb" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
-	color = "#808080"
+	color = "#808080";
+	dir = 2
 	},
 /obj/effect/decal/cleanable/vomit,
 /obj/effect/decal/cleanable/blood/old,
@@ -944,8 +944,8 @@
 "oO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/wallframe/light_fixture{
-	pixel_y = -14;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = -14
 	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
@@ -960,21 +960,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "pj" = (
 /obj/structure/table/reinforced,
-/obj/item/slime_extract/grey{
-	pixel_x = -4;
-	pixel_y = -1
-	},
-/obj/item/slime_extract/grey{
-	pixel_x = 8
-	},
-/obj/item/slime_extract/grey,
-/obj/item/slime_extract/grey,
-/obj/item/slime_extract/green{
-	pixel_x = 4;
-	pixel_y = -6
-	},
 /obj/structure/window/reinforced,
-/obj/item/slime_scanner,
 /turf/open/floor/engine,
 /area/ruin/rockplanet/nanotrasen)
 "pl" = (
@@ -1199,8 +1185,8 @@
 	pixel_y = 5
 	},
 /obj/item/trash/sosjerky{
-	pixel_y = 8;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/nanotrasen)
@@ -1318,7 +1304,7 @@
 	pixel_x = -9;
 	pixel_y = 3
 	},
-/obj/item/stamp/hos{
+/obj/item/stamp/nanotrasen/vigilitas/security{
 	pixel_x = -9;
 	pixel_y = 9
 	},
@@ -1362,8 +1348,8 @@
 	pixel_x = -32
 	},
 /obj/effect/turf_decal/industrial/warning{
-	dir = 1;
-	color = "#808080"
+	color = "#808080";
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -1565,7 +1551,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
 "Ap" = (
@@ -1629,8 +1615,8 @@
 "Bl" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 1;
-	color = "#808080"
+	color = "#808080";
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -1713,7 +1699,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Cx" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
@@ -2153,8 +2139,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
-	color = "#808080"
+	color = "#808080";
+	dir = 2
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/nanotrasen)
@@ -2201,7 +2187,7 @@
 	pixel_x = 7;
 	pixel_y = 3
 	},
-/obj/item/stamp/rd{
+/obj/item/stamp/nanotrasen/science{
 	pixel_x = -6;
 	pixel_y = 12
 	},
@@ -2507,7 +2493,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "Rm" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/carpet/black,
 /area/ruin/rockplanet/nanotrasen)

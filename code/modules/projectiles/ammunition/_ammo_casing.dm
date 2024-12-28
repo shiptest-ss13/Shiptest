@@ -48,10 +48,23 @@
 	///What this casing can be stacked into.
 	var/obj/item/ammo_box/magazine/stack_type = /obj/item/ammo_box/magazine/ammo_stack
 	///Maximum stack size of ammunition
-	var/stack_size = 12
+	var/stack_size = 15
 
 /obj/item/ammo_casing/attackby(obj/item/attacking_item, mob/user, params)
-	if(istype(attacking_item, /obj/item/ammo_box) && user.is_holding(src))
+	if(istype(attacking_item, /obj/item/pen))
+		if(!user.is_literate())
+			to_chat(user, "<span class='notice'>You scribble illegibly on the [src]!</span>")
+			return
+		var/inputvalue = stripped_input(user, "What would you like to label the round?", "Bullet Labelling", "", MAX_NAME_LEN)
+
+		if(!inputvalue)
+			return
+
+		if(user.canUseTopic(src, BE_CLOSE))
+			name = "[initial(src.name)][(inputvalue ? " - '[inputvalue]'" : null)]"
+			if(BB)
+				BB.name = "[initial(BB.name)][(inputvalue ? " - '[inputvalue]'" : null)]"
+	else if(istype(attacking_item, /obj/item/ammo_box) && user.is_holding(src))
 		add_fingerprint(user)
 		var/obj/item/ammo_box/ammo_box = attacking_item
 		var/obj/item/ammo_casing/other_casing = ammo_box.get_round(TRUE)
@@ -91,6 +104,10 @@
 		return
 
 	return ..()
+
+/obj/item/ammo_casing/examine(mob/user)
+	. = ..()
+	. += span_notice("You could write a message on \the [src] by writing on it with a pen.")
 
 /obj/item/ammo_casing/proc/try_stacking(obj/item/ammo_casing/other_casing, mob/living/user)
 	if(user)
@@ -136,10 +153,6 @@
 	ammo_stack.update_ammo_count()
 	return ammo_stack
 
-/obj/item/ammo_casing/spent
-	name = "spent bullet casing"
-	BB = null
-
 /obj/item/ammo_casing/Initialize()
 	. = ..()
 	if(projectile_type)
@@ -154,11 +167,8 @@
 
 /obj/item/ammo_casing/Destroy()
 	. = ..()
-
 	if(BB)
 		QDEL_NULL(BB)
-	else
-		SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
 
 /obj/item/ammo_casing/update_icon_state()
 	icon_state = "[initial(icon_state)][BB ? (bullet_skin ? "-[bullet_skin]" : "") : "-empty"]"
@@ -202,3 +212,44 @@
 
 	else if(location.bullet_bounce_sound)
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, pick(location.bullet_bounce_sound), 20, 1), bounce_delay) //Soft / non-solid turfs that shouldn't make a sound when a shell casing is ejected over them.
+
+/obj/item/ammo_casing/spent
+	name = "spent bullet casing"
+	projectile_type = null
+	BB = null
+
+/obj/item/ammo_casing/spent/pistol_brass
+	icon_state = "pistol-brass"
+
+/obj/item/ammo_casing/spent/pistol_steel
+	icon_state = "pistol-steel"
+
+/obj/item/ammo_casing/spent/magnum_brass
+	icon_state = "magnum-brass"
+
+/obj/item/ammo_casing/spent/magnum_steel
+	icon_state = "magnum-steel"
+
+/obj/item/ammo_casing/spent/rifle_brass
+	icon_state = "rifle-brass"
+
+/obj/item/ammo_casing/spent/rifle_steel
+	icon_state = "rifle-steel"
+
+/obj/item/ammo_casing/spent/big_brass
+	icon_state = "big-brass"
+
+/obj/item/ammo_casing/spent/big_steel
+	icon_state = "big-steel" //balls
+
+/obj/item/ammo_casing/spent/slug
+	icon_state = "slug"
+
+/obj/item/ammo_casing/spent/slug/buck
+	icon_state = "buckshot"
+
+/obj/item/ammo_casing/spent/slug/beanbag
+	icon_state = "beanbag"
+
+/obj/item/ammo_casing/spent/slug/rubber
+	icon_state = "rubber"

@@ -45,6 +45,8 @@
 /// Use this when something shouldn't happen and is of note, but shouldn't block CI.
 /// Does not mark the test as failed.
 #define TEST_NOTICE(source, message) source.log_for_test((##message), "notice", __FILE__, __LINE__)
+/// TEST_NOTICE but more important
+#define TEST_WARNING(source, message) source.log_for_test((##message), "warning", __FILE__, __LINE__)
 
 /// Constants indicating unit test completion status
 #define UNIT_TEST_PASSED 0
@@ -67,10 +69,9 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
-
 #ifdef BASIC_TESTS
 
-//#include "icons/inhands.dm"
+#include "icons/inhands.dm"
 #include "icons/missing_icons.dm"
 #include "icons/spritesheets.dm"
 #include "icons/worn_icons.dm"
@@ -83,6 +84,7 @@
 #include "connect_loc.dm"
 #include "biome_lists.dm"
 #include "emoting.dm"
+#include "gun_sanity.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
 #include "open_air.dm"

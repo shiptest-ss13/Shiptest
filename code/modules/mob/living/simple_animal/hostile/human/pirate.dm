@@ -5,10 +5,9 @@
 	icon_living = "piratemelee"
 	icon_dead = "pirate_dead"
 	speak_chance = 0
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	speak_emote = list("yarrs")
 	loot = list(/obj/effect/mob_spawn/human/corpse/pirate,
-			/obj/item/melee/transforming/energy/sword/saber/pirate)
+			/obj/item/melee/energy/sword/saber/pirate)
 	faction = list("pirate")
 
 /mob/living/simple_animal/hostile/human/pirate/melee
@@ -31,9 +30,10 @@
 	icon_state = "piratespace"
 	icon_living = "piratespace"
 	icon_dead = "piratespace_dead"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	speed = 1
+	armor_base = /obj/item/clothing/suit/space
 
 /mob/living/simple_animal/hostile/human/pirate/melee/space/Initialize()
 	. = ..()
@@ -71,9 +71,10 @@
 	icon_state = "piratespaceranged"
 	icon_living = "piratespaceranged"
 	icon_dead = "piratespaceranged_dead"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	speed = 1
+	armor_base = /obj/item/clothing/suit/space
 
 /mob/living/simple_animal/hostile/human/pirate/ranged/space/Initialize()
 	. = ..()

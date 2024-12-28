@@ -25,7 +25,7 @@
 	contains = list(/obj/item/storage/toolbox/electrical,
 					/obj/item/storage/toolbox/mechanical,
 					/obj/item/clothing/head/welding)
-	cost = 500
+	cost = 200
 	crate_name = "toolbox crate"
 
 /datum/supply_pack/tools/engigear
@@ -39,12 +39,18 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/assbelt
+	name = "Assault Belt"
+	desc = "Contains an assault belt, with not one, not two, but six pockets."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/assault)
+	crate_name = "assault belt crate"
+
 /datum/supply_pack/tools/cellcharger
 	name = "Cell Charger Crate"
 	desc = "Contains a cell charger, able to charge all sorts of power cells."
-	cost = 4000
+	cost = 1000
 	contains = list(/obj/machinery/cell_charger)
-
 
 /datum/supply_pack/tools/rped
 	name = "RPED crate"
@@ -74,13 +80,6 @@
 	contains = list(/obj/item/pickaxe/drill/jackhammer)
 	crate_name = "jackhammer crate"
 
-/datum/supply_pack/tools/plasmacutter
-	name = "Plasmacutter Crate"
-	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
-	cost = 1250
-	contains = list(/obj/item/gun/energy/plasmacutter)
-	crate_name = "plasmacutter crate"
-
 /datum/supply_pack/tools/metalfoam
 	name = "Metal Foam Grenade Crate"
 	desc = "Seal up those pesky hull breaches with 7 metal foam grenades."
@@ -98,25 +97,40 @@
 /datum/supply_pack/tools/jetpack
 	name = "Jetpack Crate"
 	desc = "For when you need to go fast in space."
-	cost = 2000
+	cost = 750
 	contains = list(/obj/item/tank/jetpack/carbondioxide)
 	crate_name = "jetpack crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
-/datum/supply_pack/tools/transfer_valve
-	name = "Tank Transfer Valves Crate"
-	desc = "The key ingredient for making a lot of people very angry very fast. Contains a tank transfer valve."
-	cost = 3000
-	contains = list(/obj/item/transfer_valve)
-	crate_name = "tank transfer valve crate"
-	crate_type = /obj/structure/closet/crate/secure/science
+/datum/supply_pack/tools/jetpack/harness
+	name = "Jetpack Harness Crate"
+	desc = "A compact jetpack harness for those who don't wish to be weighed down by larger traditional jetpacks."
+	cost = 1500
+	contains = list(/obj/item/tank/jetpack/oxygen/harness)
 
 /datum/supply_pack/tools/anglegrinder
 	name = "Angle Grinder"
 	desc = "Contains one angle grinder pack, a tool used for quick structure deconstruction and salvaging"
-	cost = 2000
-	contains = list(/obj/item/gear_pack/anglegrinder)
-	crate_name = "Angle Grinder"
+	cost = 1500
+	contains = list(
+		/obj/item/gear_pack/anglegrinder,
+		/obj/item/radio/headset/alt
+		)
+	crate_name = "angle grinder crate"
+
+/datum/supply_pack/tools/electric_welder
+	name = "Electric Welder"
+	desc = "Contains a single electric welder, useful for many applications. No fuel required!"
+	cost = 850
+	contains = list(/obj/item/weldingtool/electric)
+	crate_name = "electric welder crate"
+
+/datum/supply_pack/tools/plasmacutter
+	name = "Plasmacutter Crate"
+	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
+	cost = 2500
+	contains = list(/obj/item/gun/energy/plasmacutter)
+	crate_name = "plasmacutter crate"
 
 /*
 		Liquid tanks

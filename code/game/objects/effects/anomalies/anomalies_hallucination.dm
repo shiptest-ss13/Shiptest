@@ -19,8 +19,8 @@
 	var/turf/open/our_turf = get_turf(src)
 	if(istype(our_turf))
 		hallucination_pulse(our_turf, 5)
-	pixel_x = pixel_x + clamp(rand(-5, 5), -16, 16)
-	pixel_y = pixel_y + clamp(rand(-5, 5), -16, 16)
+	pixel_x = clamp(pixel_x + rand(-5, 5), -16, 16)
+	pixel_y = clamp(pixel_y + rand(-5, 5), -16, 16)
 
 /obj/effect/anomaly/hallucination/detonate()
 	var/turf/open/our_turf = get_turf(src)
@@ -45,7 +45,7 @@
 		var/list/messages = list(
 			"You feel your conscious mind fall apart!",
 			"Reality warps around you!",
-			"Something's wispering around you!",
+			"Something whispers around you!",
 			"You are going insane!",
 		)
 		to_chat(user, span_warning(pick(messages)))

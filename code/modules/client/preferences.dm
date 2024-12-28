@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/ooccolor = "#c43b23"
 	var/asaycolor = "#ff4500"			//This won't change the color for current admins, only incoming ones.
 	/// If we spawn an ERT as an admin and choose to spawn as the briefing officer, we'll be given this outfit
-	var/brief_outfit = /datum/outfit/centcom/commander
+	var/brief_outfit = /datum/outfit/job/nanotrasen/captain
 	var/enable_tips = TRUE
 	var/tip_delay = 500 //tip delay in milliseconds
 
@@ -893,7 +893,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				mutant_category = 0
 			// end generic adjective
 
-			if("wings" in pref_species.default_features && GLOB.r_wings_list.len >1)
+			if(("wings" in pref_species.default_features) && GLOB.r_wings_list.len >1)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 

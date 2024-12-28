@@ -30,7 +30,6 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/damaged)
 	del_on_death = TRUE
 
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	minbodytemp = 180
 	status_flags = CANPUSH
@@ -50,10 +49,18 @@
 	// If we drop l and r hand loot
 	var/neutered = FALSE
 
+	///Steals the armor datum from this type of armor
+	var/obj/item/clothing/armor_base
+
 /mob/living/simple_animal/hostile/human/Initialize(mapload)
 	. = ..()
 	if(mob_spawner)
 		apply_dynamic_human_appearance(src, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)
+	if(ispath(armor_base, /obj/item/clothing))
+		//sigh. if only we could get the initial() value of list vars
+		var/obj/item/clothing/instance = new armor_base()
+		armor = instance.armor
+		qdel(instance)
 
 /mob/living/simple_animal/hostile/human/drop_loot()
 	. = ..()
@@ -65,3 +72,15 @@
 		new r_hand(loc)
 	if(l_hand && !neutered)
 		new r_hand(loc)
+
+/mob/living/simple_animal/hostile/human/vv_edit_var(var_name, var_value)
+	switch(var_name)
+		if (NAMEOF(src, armor_base))
+			if(ispath(var_value, /obj/item/clothing))
+				var/obj/item/clothing/temp = new var_value
+				armor = temp.armor
+				qdel(temp)
+				datum_flags |= DF_VAR_EDITED
+				return TRUE
+			return FALSE
+	. = ..()

@@ -4,7 +4,10 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher//this is only used for underbarrel grenade launchers at the moment, but admins can still spawn it if they feel like being assholes
 	desc = "A break-action, single-shot grenade launcher. A compact way to deliver a big boom."
 	name = "grenade launcher"
-	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/grenadelauncher,
+	)
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	bolt_type = BOLT_TYPE_NO_BOLT
@@ -24,7 +27,10 @@
 	name = "multi grenade launcher"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_grenadelnchr"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/grenademulti,
+	)
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg/attack_self()
 	return
@@ -34,7 +40,10 @@
 	desc = "A prototype pistol designed to fire self-propelled rockets."
 	icon_state = "gyropistol"
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
-	mag_type = /obj/item/ammo_box/magazine/m75
+	default_ammo_type = /obj/item/ammo_box/magazine/m75
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m75,
+	)
 	burst_size = 1
 	fire_delay = 0.4 SECONDS
 	actions_types = list()
@@ -49,7 +58,14 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 	"A drawing of the Rilena character 'T4L1' smoking a boof",
 	"\"Eat it corpo!\"",
 	"A Sarathi woman in a suggestive pose",
-	"\"Arm this!\""
+	"A masculine Sarathi shouldering a launcher",
+	"A Vox woman with a sledgehammer over their shoulder",
+	"A man in a floral patterned shirt and nothing else, drawn leaning against the rocket's tube",
+	"A crudely-drawn picture of a Gorlex Marauder exploding",
+	"A scratched-out link to some kind of website",
+	".:|:;",
+	"\"SPEAR TO THE SHOAL, FOR A FREE FRONTIER!\"",
+	"\"Arm this!\"",
 ))
 
 
@@ -59,7 +75,10 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 
 	icon_state = "rocketlauncher"
 	item_state = "rocketlauncher"
-	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/rocketlauncher,
+	)
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
 	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
 	gun_firemodes = list(FIREMODE_SEMIAUTO)

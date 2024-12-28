@@ -213,16 +213,20 @@ Like its parent but can be applied to carbon mobs instead of clothing items
 */
 
 /datum/component/bloodysoles/feet
-	var/static/mutable_appearance/bloody_feet
+	var/mutable_appearance/bloody_feet
 
 /datum/component/bloodysoles/feet/Initialize()
 	if(!iscarbon(parent))
 		return COMPONENT_INCOMPATIBLE
 	parent_atom = parent
 	wielder = parent
-
 	if(!bloody_feet)
-		bloody_feet = mutable_appearance('icons/effects/blood.dmi', "shoeblood", SHOES_LAYER)
+		var/overlay_file = 'icons/effects/blood.dmi'
+		var/mob/living/carbon/parent_carbon = parent_atom
+		var/custom_overlay_icon = parent_carbon.dna.species.custom_overlay_icon
+		if(custom_overlay_icon)
+			overlay_file = custom_overlay_icon
+		bloody_feet = mutable_appearance(overlay_file, "shoeblood", SHOES_LAYER)
 
 	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(on_clean))
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))

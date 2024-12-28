@@ -4,7 +4,7 @@
 	limb_id = SPECIES_ELZUOSE
 	is_dimorphic = FALSE
 	uses_mutcolor = TRUE
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_SNOUT
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_SNOUT_SMALL
 
 /obj/item/bodypart/chest/ethereal
 	icon = 'icons/mob/species/ethereal/bodyparts.dmi'
