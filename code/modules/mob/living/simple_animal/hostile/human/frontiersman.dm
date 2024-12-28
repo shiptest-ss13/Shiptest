@@ -7,7 +7,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	loot = list()
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = NORMAL_ATMOS_REQS
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	footstep_type = FOOTSTEP_MOB_SHOE
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier
@@ -15,7 +15,7 @@
 
 /mob/living/simple_animal/hostile/human/frontier/internals
 	icon_state = "frontiersmanmelee_mask"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/internals
 
@@ -33,7 +33,7 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals
 	icon_state = "frontiersmanranged_mask"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
 
@@ -90,7 +90,7 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals
 	icon_state = "frontiersmanrangedrifle_mask"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
 
@@ -114,7 +114,7 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
 	icon_state = "frontiersmanrangedelite_mask"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered
@@ -130,7 +130,7 @@
 	icon_living = "frontiersmanflametrooper"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/flame,
 				/obj/item/flamethrower)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
 
@@ -165,7 +165,7 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals
 	icon_state = "frontiersmanrangedak47_mask"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
 	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
@@ -186,7 +186,7 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals
 	icon_state = "frontiersmanrangedmosin_mask"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
 
@@ -209,7 +209,7 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals
 	icon_state = "frontiersmanrangedminigun_mask"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/internals
 
@@ -236,7 +236,7 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
 	icon_state = "frontiersmanofficer_mask"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
 
