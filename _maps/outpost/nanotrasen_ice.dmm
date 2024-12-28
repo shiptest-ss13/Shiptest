@@ -95,10 +95,9 @@
 /obj/structure/sign/nanotrasen{
 	pixel_x = -32
 	},
-/obj/structure/flora/grass/both{
-	layer = 3.1
-	},
-/turf/open/floor/plating/asteroid/snow/temperatre{
+/obj/structure/chair/bench/blue/directional/north,
+/obj/effect/turf_decal/borderfloor,
+/turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
 	light_range = 2
 	},
@@ -973,6 +972,21 @@
 /obj/item/stack/cable_coil/red,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
+"hb" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 6
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "hc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -1404,6 +1418,17 @@
 	light_range = 2
 	},
 /area/outpost/exterior)
+"kT" = (
+/obj/structure/railing/corner,
+/obj/structure/chair/bench/blue/directional/north,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "kX" = (
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/light/dim/directional/south,
@@ -1462,12 +1487,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/cryo)
 "li" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
 	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
@@ -2276,6 +2300,20 @@
 "pa" = (
 /turf/closed/indestructible/reinforced,
 /area/outpost/maintenance/starboard)
+"pd" = (
+/obj/structure/flora/grass/both{
+	layer = 3.1
+	},
+/obj/structure/railing,
+/obj/structure/chair/bench/blue/directional/north,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "pi" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -2560,7 +2598,6 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
 	light_range = 2
@@ -2999,6 +3036,13 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/bathroom)
+"tG" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "tI" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -3550,6 +3594,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
+"wK" = (
+/obj/structure/closet/crate/bin,
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "wL" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -3688,12 +3742,11 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/starboard)
 "xB" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/corner{
 	layer = 4.1
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
@@ -4370,6 +4423,14 @@
 	light_range = 2
 	},
 /area/outpost/exterior)
+"Cv" = (
+/obj/structure/table,
+/obj/effect/turf_decal/borderfloor,
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "Cy" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/siding/white/corner{
@@ -4410,6 +4471,21 @@
 	pixel_y = -3
 	},
 /turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
+"CR" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 5
+	},
+/turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
 	light_range = 2
 	},
@@ -6110,6 +6186,19 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
+"Pu" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "Pz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -6413,6 +6502,18 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/engineering/atmospherics)
+"Ra" = (
+/obj/machinery/vending/wallmed{
+	pixel_x = -23
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "Rb" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -7128,6 +7229,17 @@
 	light_range = 2
 	},
 /area/outpost/exterior)
+"VS" = (
+/obj/structure/railing,
+/obj/structure/table,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "VW" = (
 /obj/machinery/door/airlock{
 	dir = 4;
@@ -7172,6 +7284,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
+"Wi" = (
+/obj/structure/chair/bench/blue/directional/north,
+/obj/effect/turf_decal/borderfloor,
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "Wq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair{
@@ -12547,8 +12667,8 @@ yR
 qY
 yR
 yR
-NG
-Yj
+Ra
+wK
 AS
 tI
 PN
@@ -12631,8 +12751,8 @@ TP
 Bd
 fx
 aQ
-NG
-NG
+tG
+kT
 AS
 Bj
 Bj
@@ -12714,9 +12834,9 @@ NG
 dq
 Bd
 KO
-NG
-NG
-BC
+Cv
+tG
+VS
 NG
 NG
 IH
@@ -12798,9 +12918,9 @@ Ho
 nW
 Bd
 KO
-NG
-NG
-IH
+Wi
+tG
+pd
 NG
 vC
 NG
@@ -12882,9 +13002,9 @@ Ay
 do
 Ti
 kn
-au
-Ja
-dk
+hb
+tG
+CR
 Ja
 au
 Ja
@@ -12967,7 +13087,7 @@ rL
 xs
 rL
 rL
-ly
+Pu
 ly
 ly
 rL

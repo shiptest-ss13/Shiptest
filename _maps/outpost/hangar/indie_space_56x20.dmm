@@ -10,9 +10,7 @@
 /area/hangar)
 "af" = (
 /obj/effect/landmark/outpost/hangar_dock,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "ag" = (
 /turf/closed/indestructible/reinforced,
@@ -35,39 +33,29 @@
 /obj/structure/marker_beacon{
 	picked_color = "Teal"
 	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "am" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "an" = (
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "ap" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "as" = (
 /obj/machinery/elevator_call_button{
 	pixel_y = 25
 	},
 /obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "ax" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -78,83 +66,59 @@
 	},
 /area/hangar)
 "ay" = (
-/obj/machinery/atmospherics/components/unary/passive_vent{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/landmark/outpost/hangar_numbers,
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aB" = (
-/obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aC" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aD" = (
 /obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aE" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aG" = (
 /obj/effect/turf_decal/arrows{
 	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aI" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aJ" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aK" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 1
 	},
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aN" = (
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "aP" = (
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aX" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -179,11 +143,15 @@
 	},
 /area/hangar)
 "vM" = (
-/obj/machinery/atmospherics/pipe/simple/general,
-/turf/closed/indestructible/reinforced,
+/obj/effect/turf_decal/arrows{
+	dir = 8
+	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 
 (1,1,1) = {"
+aZ
+aZ
 aZ
 aZ
 aZ
@@ -220,6 +188,8 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
 an
@@ -253,9 +223,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 ae
 ae
@@ -278,7 +250,7 @@ ai
 ae
 ae
 aC
-an
+aB
 an
 ag
 "}
@@ -286,9 +258,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 ax
 ax
@@ -311,7 +285,7 @@ ax
 ax
 ax
 aC
-an
+aB
 an
 ag
 "}
@@ -319,9 +293,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -344,7 +320,7 @@ aN
 aN
 af
 aC
-an
+aB
 an
 ag
 "}
@@ -352,9 +328,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -377,11 +355,13 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
 (7,1,1) = {"
+aZ
+aZ
 aZ
 aZ
 aZ
@@ -418,9 +398,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -443,7 +425,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -451,9 +433,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aI
 aN
 aN
@@ -476,7 +460,7 @@ aN
 aN
 aN
 aK
-an
+aB
 an
 ag
 "}
@@ -484,9 +468,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -509,7 +495,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -517,9 +503,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -542,11 +530,13 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
 (12,1,1) = {"
+aZ
+aZ
 aZ
 aZ
 aZ
@@ -583,9 +573,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -608,7 +600,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -616,9 +608,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -641,7 +635,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -649,9 +643,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -674,7 +670,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -682,9 +678,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -707,11 +705,13 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
 (17,1,1) = {"
+aZ
+aZ
 aZ
 aZ
 aZ
@@ -748,9 +748,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -773,7 +775,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -781,9 +783,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aI
 aN
 aN
@@ -806,7 +810,7 @@ aN
 aN
 aN
 aK
-an
+aB
 an
 ag
 "}
@@ -814,9 +818,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -839,7 +845,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -847,9 +853,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -872,11 +880,13 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
 (22,1,1) = {"
+aZ
+aZ
 aZ
 aZ
 aZ
@@ -913,9 +923,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -938,7 +950,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -946,9 +958,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -971,7 +985,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -979,9 +993,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1004,7 +1020,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1012,9 +1028,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1037,11 +1055,13 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
 (27,1,1) = {"
+aZ
+aZ
 aZ
 aZ
 aZ
@@ -1078,9 +1098,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1103,17 +1125,19 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
 (29,1,1) = {"
-aZ
-aZ
-aZ
 ag
-an
-an
+ag
+ag
+ag
+ag
+ag
+ag
+as
 aI
 aN
 aN
@@ -1136,16 +1160,18 @@ aN
 aN
 aN
 aK
-an
+aB
 an
 ag
 "}
 (30,1,1) = {"
-aZ
-aZ
-aZ
 ag
-an
+mX
+mX
+mX
+mX
+jJ
+ag
 an
 aJ
 aN
@@ -1169,16 +1195,18 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
 (31,1,1) = {"
-aZ
-aZ
-aZ
 ag
-an
+mX
+mX
+mX
+mX
+mX
+aj
 an
 aJ
 aN
@@ -1202,17 +1230,19 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
 (32,1,1) = {"
-aZ
-aZ
-aZ
 ag
-an
-aG
+mX
+mX
+mX
+mX
+mX
+aj
+ay
 aJ
 al
 aN
@@ -1240,11 +1270,13 @@ an
 ag
 "}
 (33,1,1) = {"
-aZ
-aZ
-aZ
 ag
-an
+mX
+mX
+mX
+mX
+mX
+aj
 an
 aJ
 aN
@@ -1268,16 +1300,18 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
 (34,1,1) = {"
-aZ
-aZ
-aZ
 ag
-an
+mX
+mX
+mX
+mX
+mX
+ag
 an
 aJ
 aN
@@ -1301,16 +1335,18 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
 (35,1,1) = {"
-aZ
-aZ
-aZ
 ag
-an
+ag
+ag
+ag
+ag
+ag
+ag
 an
 aJ
 aN
@@ -1334,7 +1370,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1342,9 +1378,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1367,7 +1405,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1375,9 +1413,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-aG
+vM
 aJ
 al
 aN
@@ -1408,9 +1448,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1433,7 +1475,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1441,9 +1483,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aI
 aN
 aN
@@ -1466,7 +1510,7 @@ aN
 aN
 aN
 aK
-an
+aB
 an
 ag
 "}
@@ -1474,9 +1518,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1499,7 +1545,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1507,9 +1553,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1532,7 +1580,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1540,9 +1588,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-aG
+vM
 aJ
 al
 aN
@@ -1573,9 +1623,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1598,7 +1650,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1606,9 +1658,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1631,7 +1685,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1639,9 +1693,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1664,7 +1720,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1672,9 +1728,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1697,7 +1755,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1705,9 +1763,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-aG
+vM
 aJ
 al
 aN
@@ -1738,9 +1798,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1763,7 +1825,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1771,9 +1833,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aI
 aN
 aN
@@ -1796,7 +1860,7 @@ aN
 aN
 aN
 aK
-an
+aB
 an
 ag
 "}
@@ -1804,9 +1868,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1829,7 +1895,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1837,9 +1903,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1862,7 +1930,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1870,9 +1938,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-aG
+vM
 aJ
 al
 aN
@@ -1903,9 +1973,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1928,7 +2000,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1936,9 +2008,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1961,7 +2035,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -1969,9 +2043,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -1994,7 +2070,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -2002,9 +2078,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -2027,7 +2105,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -2035,9 +2113,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-aG
+vM
 aJ
 al
 aN
@@ -2068,9 +2148,11 @@ ag
 aZ
 aZ
 aZ
+aZ
+aZ
 ag
 an
-an
+aB
 aJ
 aN
 aN
@@ -2093,7 +2175,7 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
@@ -2101,9 +2183,11 @@ ag
 aZ
 aZ
 aZ
-vM
-ay
+aZ
+aZ
+ag
 an
+aB
 aI
 aN
 aN
@@ -2126,17 +2210,19 @@ aN
 aN
 aN
 aK
-an
+aB
 an
 ag
 "}
 (60,1,1) = {"
+aZ
+aZ
+aZ
+aZ
+aZ
 ag
-ag
-ag
-ag
-ag
-as
+an
+aB
 aJ
 aN
 aN
@@ -2159,17 +2245,19 @@ aN
 aN
 aN
 aC
-an
+aB
 an
 ag
 "}
 (61,1,1) = {"
+aZ
+aZ
+aZ
+aZ
+aZ
 ag
-mX
-mX
-jJ
-aj
 an
+aB
 ap
 aE
 aE
@@ -2192,49 +2280,53 @@ aE
 aE
 aE
 am
-an
+aB
 an
 ag
 "}
 (62,1,1) = {"
+aZ
+aZ
+aZ
+aZ
+aZ
 ag
-mX
-mX
-mX
-aj
+an
 aB
-an
-an
-an
+aB
+aB
+aB
 aD
-an
-an
-an
-an
+aB
+aB
+aB
+aB
 aD
-an
-an
-an
-an
+aB
+aB
+aB
+aB
 aD
-an
-an
-an
-an
+aB
+aB
+aB
+aB
 aD
-an
-an
-an
-an
+aB
+aB
+aB
+aB
 an
 ag
 "}
 (63,1,1) = {"
+aZ
+aZ
+aZ
+aZ
+aZ
 ag
-mX
-mX
-mX
-aj
+an
 an
 an
 an
@@ -2263,9 +2355,11 @@ an
 ag
 "}
 (64,1,1) = {"
-ag
-ag
-ag
+aZ
+aZ
+aZ
+aZ
+aZ
 ag
 ag
 ag
