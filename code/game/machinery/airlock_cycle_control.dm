@@ -103,6 +103,8 @@
 	var/list/airlocks = list()
 	var/list/vents = list()
 	var/obj/vis_target = null
+	MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/advanced_airlock_controller, 24)
+	dir = 1 // So none of the current maps break (dir helpers require sprite dirs to be swapped; 1 is down-facing, so what it was before).
 
 /obj/machinery/advanced_airlock_controller/lavaland
 	exterior_pressure = WARNING_LOW_PRESSURE + 10
@@ -115,6 +117,7 @@
 /obj/machinery/advanced_airlock_controller/internal //cycles doors but doesn't drain
 	exterior_pressure = ONE_ATMOSPHERE
 	depressurization_margin = ONE_ATMOSPHERE
+	MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/advanced_airlock_controller/internal, 24)
 
 /obj/machinery/advanced_airlock_controller/New(loc, ndir, nbuild)
 	..()
