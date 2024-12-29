@@ -37,8 +37,8 @@ Build Your Own Suit
 	crate_name = "APLU construction kit"
 
 /datum/supply_pack/mech/odysseus_parts
-	name = "Odysseus construction kit"
-	desc = "DeForest Medical's premier solution to on the go medical treatment. Some assembly required."
+	name = "202r construction kit"
+	desc = "Cybersun Biodynamics' premier solution to on-the-go medical treatment. Some assembly required."
 	cost = 5000
 	contains = list(
 		/obj/item/mecha_parts/chassis/odysseus,
@@ -52,11 +52,11 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/odysseus/peripherals,
 		/obj/item/circuitboard/mecha/odysseus/main
 		)
-	crate_name = "Odysseus Construction Kit"
+	crate_name = "202r Construction Kit"
 
 /datum/supply_pack/mech/gygax_parts
-	name = "Gygax construction kit"
-	desc = "An agile exosuit made famous by Nanotrasen security personnel during the ICW. Or at least the parts to it."
+	name = "501p construction kit"
+	desc = "An agile combat exosuit sold across the galaxy by Cybersun. Or at least the parts to it."
 	cost = 12000
 	contains = list(
 		/obj/item/mecha_parts/chassis/gygax,
@@ -71,7 +71,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/main,
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
-	crate_name = "Gygax Construction Kit"
+	crate_name = "501p Construction Kit"
 
 /datum/supply_pack/mech/durand_parts
 	name = "Durand construction kit"
