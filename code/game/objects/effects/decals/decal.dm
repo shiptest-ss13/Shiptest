@@ -65,6 +65,14 @@
 /obj/effect/turf_decal/Destroy(force)
 	SHOULD_CALL_PARENT(FALSE)
 
+	// If we don't do this, turf decals will end up stacking up on a tile, and break the overlay limit
+	// I hate it too bestie
+	if(GLOB.running_create_and_destroy)
+		var/turf/T = loc
+		T.RemoveElement(/datum/element/decal, icon, icon_state, dir, FALSE, color, null, null, alpha, FALSE)
+		if(detail_overlay)
+			T.RemoveElement(/datum/element/decal, icon, detail_overlay, dir, FALSE, detail_color, null, null, alpha, appearance_flags)
+
 	// Intentionally used over moveToNullspace(), which calls doMove(), which fires
 	// off an enormous amount of procs, signals, etc, that this temporary effect object
 	// never needs or affects.
