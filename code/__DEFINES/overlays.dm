@@ -12,7 +12,6 @@
 /// Checks if an atom has reached the overlay limit, and make a loud error if it does.
 #define VALIDATE_OVERLAY_LIMIT(changed_on) \
 	if(length(changed_on.overlays) >= MAX_ATOM_OVERLAYS) { \
-		var/text_lays = overlays2text(changed_on.overlays); \
 		changed_on.overlays.Cut(); \
 	} \
 
