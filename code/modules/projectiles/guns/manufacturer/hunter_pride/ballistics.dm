@@ -316,10 +316,6 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	)
 
 	obj_flags = UNIQUE_RENAME
-	unique_reskin = list("Default" = "dshotgun",
-						"Stainless Steel" = "dshotgun_white",
-						"Stained Green" = "dshotgun_green"
-						)
 	semi_auto = TRUE
 	can_be_sawn_off = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
