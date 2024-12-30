@@ -144,7 +144,7 @@
 	message_apply_others =  ""
 	message_apply_self = ""
 	message_remove_others = ""
-	message_remove_self = "
+	message_remove_self = ""
 	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/ash
@@ -153,7 +153,7 @@
 	message_apply_others =  ""
 	message_apply_self = ""
 	message_remove_others = ""
-	message_remove_self = "
+	message_remove_self = ""
 	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/ash/tick()
@@ -190,7 +190,7 @@
 	message_apply_others =  ""
 	message_apply_self = ""
 	message_remove_others = ""
-	message_remove_self = "
+	message_remove_self = ""
 	alert_desc = ""
 	trait = TRAIT_NOFIRE
 
@@ -200,7 +200,7 @@
 	message_apply_others =  ""
 	message_apply_self = ""
 	message_remove_others = ""
-	message_remove_self = "
+	message_remove_self = ""
 	alert_desc = ""
 	var/icon/cube
 
@@ -266,7 +266,7 @@
 	message_apply_others =  ""
 	message_apply_self = ""
 	message_remove_others = ""
-	message_remove_self = "
+	message_remove_self = ""
 	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/shock/tick()
@@ -299,7 +299,7 @@
 	message_apply_others =  ""
 	message_apply_self = ""
 	message_remove_others = ""
-	message_remove_self = "
+	message_remove_self = ""
 	alert_desc = ""
 	trait = TRAIT_RESISTCOLD
 
@@ -309,7 +309,7 @@
 	message_apply_others =  ""
 	message_apply_self = ""
 	message_remove_others = ""
-	message_remove_self = "
+	message_remove_self = ""
 	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/hearth/tick()
@@ -347,7 +347,7 @@
 	message_apply_others =  ""
 	message_apply_self = ""
 	message_remove_others = ""
-	message_remove_self = "
+	message_remove_self = ""
 	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/force/on_apply()
@@ -378,7 +378,7 @@
 	message_apply_others =  ""
 	message_apply_self = ""
 	message_remove_others = ""
-	message_remove_self = "
+	message_remove_self = ""
 	alert_desc = ""
 	var/reflect_count = 0
 	var/recent_movement = FALSE
@@ -424,7 +424,7 @@
 	message_apply_others =  ""
 	message_apply_self = ""
 	message_remove_others = ""
-	message_remove_self = "
+	message_remove_self = ""
 	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/prism/on_apply()
