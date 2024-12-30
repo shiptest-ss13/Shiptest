@@ -96,7 +96,7 @@
 	var/datum/status_effect/trickwine/debuff_effect = null
 	var/datum/status_effect/trickwine/buff_effect = null
 
-/datum/reagent/consumable/ethanol/trickwine/on_mob_metabolize(mob/living/consumer)
+/datum/reagent/consumable/ethanol/trickwine/on_mob_metabolize(mob/living/conasumer)
 	if(buff_effect)
 		consumer.apply_status_effect(buff_effect, src)
 	..()
@@ -109,7 +109,7 @@
 /datum/reagent/consumable/ethanol/trickwine/expose_mob(mob/living/exposed_mob, method = TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(debuff_effect)
-			exposed_mob.apply_status_effect(debuff_effect, src, (reac_volume / ETHANOL_METABOLISM) * 2) //Goal is it have the same duration as when you drink it.
+			exposed_mob.apply_status_effect(debuff_effect, src, (reac_volume / ETHANOL_METABOLISM) * 10)
 	return ..()
 
 
@@ -350,9 +350,12 @@
 
 /datum/status_effect/trickwine/buff/prism/tick()
 	. = ..()
-	if(prob(50) && reflect_count < MAX_REFLECTS && recent_movement)
-		adjust_charge(1)
-		to_chat(owner, span_notice("Your resin sweat builds up another layer!"))
+	if(prob(50) && reflect_count < MAX_REFLECTS)
+		if(recent_movement)
+			adjust_charge(1)
+			to_chat(owner, span_notice("Your resin sweat builds up another layer!"))
+		else
+			to_chat(owner, span_warning("You need to keep moving to build up resin sweat!"))
 	recent_movement = FALSE
 
 /datum/status_effect/trickwine/buff/prism/proc/adjust_charge(change)
