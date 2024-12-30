@@ -837,7 +837,19 @@
 	if(prob(50))
 		homing_offset_y = -homing_offset_y
 
-//Spread is FORCED!
+/**
+ * Aims the projectile at a target.
+ *
+ * Must be passed at least one of a target or a list of click parameters.
+ * If only passed the click modifiers the source atom must be a mob with a client.
+ *
+ * Arguments:
+ * - [target][/atom]: (Optional) The thing that the projectile will be aimed at.
+ * - [source][/atom]: The initial location of the projectile or the thing firing it.
+ * - [modifiers][/list]: (Optional) A list of click parameters to apply to this operation.
+ * - deviation: (Optional) How the trajectory should deviate from the target in degrees.
+ *   - //Spread is FORCED!
+ */
 /obj/projectile/proc/preparePixelProjectile(atom/target, atom/source, list/modifiers = null, spread = 0)
 	if(!(isnull(modifiers) || islist(modifiers)))
 		stack_trace("WARNING: Projectile [type] fired with non-list modifiers, likely was passed click params.")
