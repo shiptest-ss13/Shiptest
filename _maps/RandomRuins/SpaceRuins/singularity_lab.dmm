@@ -552,7 +552,7 @@
 /obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid,
 /obj/item/storage/firstaid,
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/storage/case/surgery,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "cv" = (
@@ -9118,7 +9118,7 @@
 /obj/effect/gibspawner,
 /obj/item/gun/energy/lasercannon{
 	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
-	icon_state = "pulse";
+	icon_state = "lasercannon";
 	name = "NT-LS-1013"
 	},
 /turf/open/floor/plating/asteroid,
@@ -10922,7 +10922,7 @@
 /obj/machinery/light/directional/north,
 /obj/item/gun/energy/lasercannon{
 	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
-	icon_state = "pulse";
+	icon_state = "lasercannon";
 	name = "NT-LS-1013"
 	},
 /obj/item/gun/energy/laser/iot,

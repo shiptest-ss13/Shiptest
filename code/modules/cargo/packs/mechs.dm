@@ -117,6 +117,14 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/drill/diamonddrill
 	)
 
+/datum/supply_pack/mech/equipment/salvage_saw
+	name = "Exosuit Salvage Saw"
+	desc = "Contains an upsized angle grinder for an Exosuit, for all your larger salvage problems."
+	cost = 2000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/salvage_saw
+	)
+
 /datum/supply_pack/mech/equipment/scanner
 	name = "Exosuit scanner kit"
 	desc = "An electronic mining scanner, graded to interface with an exosuit."
@@ -194,6 +202,14 @@ Mech Equipment
 	cost = 800
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/thrusters/gas
+	)
+
+/datum/supply_pack/mech/equipment/ionthrust
+	name = "Exosuit Ion thruster kit"
+	desc = "An electrical powered thruster pack, perfect for exosuits without a functional way to refill more tradional RCS thrusters."
+	cost = 2000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/thrusters/ion
 	)
 
 /datum/supply_pack/mech/equipment/ripley_upgrade

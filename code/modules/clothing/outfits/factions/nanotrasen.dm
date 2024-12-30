@@ -188,7 +188,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
 
-	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
+	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/m11
 
 // Engineering //
 
@@ -327,6 +327,12 @@
 	box = /obj/item/storage/box/survival/mining
 
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
+
+/datum/outfit/job/nanotrasen/miner/no_equipment
+	name = "Nanotrasen - Miner (No Equipment)"
+
+	r_pocket = null
+	backpack_contents = null
 
 // Cargo Tech
 /datum/outfit/job/nanotrasen/cargo_tech

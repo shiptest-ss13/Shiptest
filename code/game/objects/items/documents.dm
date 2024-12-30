@@ -5,7 +5,7 @@
 	icon_state = "docs_generic"
 	item_state = "paper"
 	throwforce = 0
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_NORMAL
 	throw_range = 1
 	throw_speed = 1
 	layer = MOB_LAYER
@@ -53,6 +53,10 @@
 	name = "Second Battlegroup secret documents"
 	desc = "\"Top Secret\" documents belonging to the Second Battlegroup of New Gorlex Republic. They are filled with sensitive operational intelligence. These documents are verified with a red wax seal."
 	icon_state = "docs_red"
+
+/obj/item/documents/eoehoma // For use in Eoehoma-related ruins.
+	desc = "\"Top Secret\" Eoehoma Firearms documents. Filled with weapon blueprints and eviction notices."
+	icon_state = "docs_blue"
 
 /obj/item/documents/photocopy
 	desc = "A copy of some top-secret documents. Nobody will notice they aren't the originals... right?"

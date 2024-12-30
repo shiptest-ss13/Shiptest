@@ -44,10 +44,8 @@
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/Initialize()
 	. = ..()
-	var/i = rand(1,3)
-	while(i)
+	for (var/i in 1 to rand(1, 3))
 		loot += pick(/obj/item/stack/ore/silver, /obj/item/stack/ore/gold, /obj/item/stack/ore/uranium, /obj/item/stack/ore/diamond)
-		i--
 	spit = new
 	burrow = new
 	spit.Grant(src)

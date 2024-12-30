@@ -160,7 +160,7 @@
 	ears = /obj/item/radio/headset/alt
 	r_hand = /obj/item/gun/energy/pulse
 
-	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+	l_pocket = /obj/item/melee/energy/sword/saber
 	r_pocket = /obj/item/shield/energy
 
 

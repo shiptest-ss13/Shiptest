@@ -322,7 +322,7 @@ All foods are distributed among various categories. Use common sense.
 
 	return result
 
-/obj/item/reagent_containers/food/snacks/Destroy()
+/obj/item/reagent_containers/food/snacks/deconstruct(disassembled)
 	if(contents)
 		for(var/atom/movable/something in contents)
 			something.forceMove(drop_location())

@@ -126,17 +126,17 @@
 	new /obj/item/clothing/under/rank/security/warden/skirt(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/holosign_creator/security(src)
-	new /obj/item/clothing/mask/gas/sechailer(src)
+	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/storage/box/zipties(src)
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/flashlight/seclite(src)
-	new /obj/item/megaphone/sec(src) //WS edit - Small QoL Brig additions
+	new /obj/item/megaphone/sec(src)
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
-	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
-	new /obj/item/gun/ballistic/automatic/pistol/commander(src) //WS edit - free lethals
-	new /obj/item/gun_voucher //WS edit - gun gun gun gun gun gun gun
+	new /obj/item/gun/ballistic/shotgun/automatic/m11(src)
+	new /obj/item/gun/ballistic/automatic/pistol/commander(src)
+	new /obj/item/gun_voucher
 
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
@@ -267,6 +267,11 @@
 	name = "Contraband Locker"
 	req_access = list(ACCESS_HEADS)
 
+/obj/structure/closet/secure_closet/armorycage
+	name = "armory locker"
+	req_access = list(ACCESS_ARMORY)
+	icon_state = "shotguncase"
+
 /obj/structure/closet/secure_closet/armory1
 	name = "armory armor locker"
 	req_access = list(ACCESS_ARMORY)
@@ -316,7 +321,7 @@
 	..()
 	new /obj/item/gun/ballistic/automatic/smg/wt550(src)
 	new /obj/item/clothing/head/helmet/bulletproof(src)
-	new /obj/item/clothing/mask/gas/sechailer(src)
+	new /obj/item/clothing/mask/gas/vigilitas(src)
 	new /obj/item/clothing/suit/armor/vest/bulletproof(src)
 
 /obj/structure/closet/secure_closet/lethalshots

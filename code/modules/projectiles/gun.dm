@@ -21,6 +21,8 @@
 	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
 	trigger_guard = TRIGGER_GUARD_NORMAL
 
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
+
 	///The manufacturer of this weapon. For flavor mostly. If none, this will not show.
 	var/manufacturer = MANUFACTURER_NONE
 
@@ -29,12 +31,12 @@
 */
 	///Effect for the muzzle flash of the gun.
 	var/obj/effect/muzzle_flash/muzzle_flash
+
+	light_range = 3
+	light_color = COLOR_VERY_SOFT_YELLOW
+
 	///Icon state of the muzzle flash effect.
 	var/muzzleflash_iconstate
-	///Brightness of the muzzle flash effect.
-	var/muzzle_flash_lum = 3
-	///Color of the muzzle flash effect.
-	var/muzzle_flash_color = COLOR_VERY_SOFT_YELLOW
 
 /*
  *  Firing
@@ -57,7 +59,10 @@
 //BALLISTIC
 	///Compatible magazines with the gun
 	var/default_ammo_type
+	///Allowed base types of magazines with the gun
 	var/allowed_ammo_types
+	///Incompatible magazines with the gun
+	var/blacklisted_ammo_types
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
 	///Do we eject the magazine upon runing out of ammo?
@@ -286,6 +291,8 @@
 	var/safety = FALSE
 	///The wording of safety. Useful for guns that have a non-standard safety system, like a revolver
 	var/safety_wording = "safety"
+	///multiplier for this gun's misfire chances. Closer to 0 is better.
+	var/safety_multiplier = 1
 
 /*
  *  Spawn Info (Stuff that becomes useless onces the gun is spawned, mostly here for mappers)
@@ -645,7 +652,11 @@
 	if(wielded_fully)
 		simulate_recoil(user, recoil, actual_angle)
 	else if(!wielded_fully)
-		simulate_recoil(user, recoil_unwielded, actual_angle)
+		var/recoil_temp = recoil_unwielded
+		var/obj/item/shield/riot/shield = user.get_inactive_held_item()
+		if(istype(shield))
+			recoil_temp += shield.recoil_bonus
+		simulate_recoil(user, recoil_temp, actual_angle)
 
 	if(suppressed)
 		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
@@ -860,14 +871,10 @@
 
 /obj/item/gun/proc/handle_muzzle_flash(mob/living/user, firing_angle)
 	var/atom/movable/flash_loc = user
-	var/prev_light = light_range
-
-	if(!light_on && (light_range <= muzzle_flash_lum))
-		set_light_range(muzzle_flash_lum)
-		set_light_color(muzzle_flash_color)
+	if(!light_on)
 		set_light_on(TRUE)
-		update_light()
-		addtimer(CALLBACK(src, PROC_REF(reset_light_range), prev_light), 1 SECONDS)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light_on), FALSE), 1 SECONDS)
+
 	//Offset the pixels.
 	switch(firing_angle)
 		if(0, 360)
@@ -942,13 +949,6 @@
 
 	addtimer(CALLBACK(src, PROC_REF(remove_muzzle_flash), flash_loc, muzzle_flash), 0.2 SECONDS)
 
-/obj/item/gun/proc/reset_light_range(lightrange)
-	set_light_range(lightrange)
-	set_light_color(initial(light_color))
-	if(lightrange <= 0)
-		set_light_on(FALSE)
-	update_light()
-
 /obj/item/gun/proc/remove_muzzle_flash(atom/movable/flash_loc, obj/effect/muzzle_flash/muzzle_flash)
 	if(!QDELETED(flash_loc))
 		flash_loc.vis_contents -= muzzle_flash
@@ -957,7 +957,7 @@
 // for guns firing on their own without a user
 /obj/item/gun/proc/discharge(cause, seek_chance = 10)
 	var/target
-	if(!safety)
+	if(!safety && has_safety)
 		// someone is very unlucky and about to be shot
 		if(prob(seek_chance))
 			for(var/mob/living/target_mob in range(6, get_turf(src)))
@@ -985,16 +985,17 @@
 	if(ishuman(src))
 		human_holder = src
 	for(var/obj/item/gun/at_risk in get_all_contents())
-		var/chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM
+		var/chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM * at_risk.safety_multiplier)
 		if(human_holder)
 			// gun is less likely to go off in a holster
 			if(at_risk == human_holder.s_store)
-				chance_to_fire = GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW
+				chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW * at_risk.safety_multiplier)
 		if(at_risk.safety == FALSE && prob(chance_to_fire))
-			if(at_risk.process_fire(src,src,FALSE, null,  pick(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)) == TRUE)
+			var/bodyzone = pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)
+			if(at_risk.process_fire(src,src,FALSE, null, bodyzone) == TRUE)
 				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
-				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s leg without its safties on!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your leg without its safeties on!"))
-				emote("scream")
+				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s [bodyzone]!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your [bodyzone]!"))
+				human_holder.force_scream()
 
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom
@@ -1113,7 +1114,8 @@
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	/obj/item/gun/energy/plasmacutter,
-	/obj/item/melee/transforming/energy,
+	/obj/item/melee/energy,
+	/obj/item/gear_handle/anglegrinder,
 	)))
 
 ///Handles all the logic of sawing off guns,

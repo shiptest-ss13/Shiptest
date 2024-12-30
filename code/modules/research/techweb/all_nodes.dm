@@ -13,7 +13,7 @@
 		// Cargo Stuff
 		"c-reader", "desttagger", "salestagger", "handlabel", "packagewrap",
 		// Research Stuff
-		"destructive_analyzer", "experimentor", "rdconsole", "rdserver", "design_disk", "tech_disk", "mechfab",
+		"destructive_analyzer", "experimentor", "rdserver", "design_disk", "tech_disk", "mechfab",
 		// Miscellaneous Stufff
 		"paystand", "space_heater", "bucket", "plastic_knife", "plastic_fork", "plastic_spoon", "fax",
 		// Security Stuff
@@ -367,9 +367,7 @@
 	display_name = "Artificial Intelligence"
 	description = "AI unit research."
 	prereq_ids = list("adv_robotics")
-	design_ids = list("aifixer", "aicore", "safeguard_module", "onehuman_module", "protectstation_module", "quarantine_module", "oxygen_module", "freeform_module",
-	"reset_module", "purge_module", "remove_module", "freeformcore_module", "asimov_module", "paladin_module", "tyrant_module", "overlord_module", "corporate_module",
-	"default_module", "borg_ai_control", "mecha_tracking_ai_control", "aiupload", "intellicard")
+	design_ids = list("aifixer", "aicore", "reset_module", "purge_module", "remove_module", "borg_ai_control", "mecha_tracking_ai_control", "aiupload", "intellicard")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -594,7 +592,7 @@
 	id = "exp_tools"
 	display_name = "Experimental Tools"
 	description = "Highly advanced tools."
-	design_ids = list("exwelder", "jawsoflife", "handdrill", "laserscalpel", "mechanicalpinches", "searingtool")
+	design_ids = list("jawsoflife", "handdrill", "laserscalpel", "mechanicalpinches", "searingtool")
 	prereq_ids = list("adv_engi")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
@@ -704,7 +702,7 @@
 	display_name = "Ballistic Weaponry"
 	description = "This isn't research.. This is reverse-engineering!"
 	prereq_ids = list("weaponry")
-	design_ids = list("mag_oldsmg", "mag_oldsmg_ap", "mag_oldsmg_ic", "shotgun_slug")
+	design_ids = list("mag_oldsmg", "mag_oldsmg_ap", "shotgun_slug")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -721,7 +719,7 @@
 	display_name = "Exotic Ammunition"
 	description = "They won't know what hit em."
 	prereq_ids = list("adv_weaponry", "medical_weapons")
-	design_ids = list("techshotshell", "c38_hotshot", "c38_iceblox", "inc9mm", "inc10mm", "inc45", "incendiary_slug")
+	design_ids = list("techshotshell", "c38_hotshot", "c38_iceblox", "incendiary_slug")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 

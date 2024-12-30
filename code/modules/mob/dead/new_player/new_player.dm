@@ -130,10 +130,10 @@
 		return
 
 	if(src != usr)
-		return 0
+		return FALSE
 
 	if(!client)
-		return 0
+		return FALSE
 
 	if(client.interviewee)
 		return FALSE

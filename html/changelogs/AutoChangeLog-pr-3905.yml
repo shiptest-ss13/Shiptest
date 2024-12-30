@@ -1,0 +1,7 @@
+author: MarkSuckerberg
+changes:
+  - {bugfix: Jukeboxes should not leak across virtual Zs anymore}
+  - {bugfix: Candles can no longer be used like tiki torches}
+  - {tweak: 'Ore silos will now only drop materials when dissasembled or destroyed,
+      instead of any deletion'}
+delete-after: true

@@ -112,7 +112,10 @@
 	display_overlays = screen_on
 	update_appearance()
 
-
+/obj/item/modular_computer/laptop/examine_more(mob/user)
+	if(screen_on)
+		interact(user)
+	return ..()
 
 // Laptop frame, starts empty and closed.
 /obj/item/modular_computer/laptop/buildable

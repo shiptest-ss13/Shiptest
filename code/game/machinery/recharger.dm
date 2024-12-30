@@ -3,7 +3,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "recharger"
 	base_icon_state = "recharger"
-	desc = "A charging dock for energy based weaponry."
+	desc = "A charging dock for energy based weaponry. However someones modified it to work with most things with cells."
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
 	active_power_usage = ACTIVE_DRAW_LOW
@@ -74,7 +74,7 @@
 		G.play_tool_sound(src)
 		return
 
-	var/allowed = is_type_in_typecache(G, allowed_devices)
+	var/allowed = G.get_cell()
 
 	if(allowed)
 		if(anchored)

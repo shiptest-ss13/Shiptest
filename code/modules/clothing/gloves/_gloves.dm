@@ -17,6 +17,7 @@
 	clothamnt = 2
 	greyscale_colors = list(list(10, 13), list(11, 14), list(9, 12))
 	greyscale_icon_state = "gloves"
+	blood_overlay_type = "hands"
 
 /obj/item/clothing/gloves/wash(clean_types)
 	. = ..()
@@ -30,9 +31,8 @@
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedgloves")
 		if(HAS_BLOOD_DNA(src))
-			var/mutable_appearance/bloody_hands = mutable_appearance('icons/effects/blood.dmi', "bloodyhands")
-			bloody_hands.color = get_blood_dna_color(return_blood_DNA())
-			. += bloody_hands
+			. += setup_blood_overlay()
+
 
 /obj/item/clothing/gloves/update_clothes_damaged_state(damaging = TRUE)
 	..()

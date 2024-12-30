@@ -668,12 +668,6 @@
 #define COMSIG_TRY_STORAGE_RETURN_INVENTORY "storage_return_inventory"	//(list/list_to_inject_results_into, recursively_search_inside_storages = TRUE)
 #define COMSIG_TRY_STORAGE_CAN_INSERT "storage_can_equip" //(obj/item/insertion_candidate, mob/user, silent) - returns bool
 
-// /datum/component/two_handed signals
-#define COMSIG_TWOHANDED_WIELD "twohanded_wield" //from base of datum/component/two_handed/proc/wield(mob/living/carbon/user): (/mob/user)
-	#define COMPONENT_TWOHANDED_BLOCK_WIELD 1
-#define COMSIG_TWOHANDED_UNWIELD "twohanded_unwield" //from base of datum/component/two_handed/proc/unwield(mob/living/carbon/user): (/mob/user)
-
-
 // /datum/action signals
 #define COMSIG_ACTION_TRIGGER "action_trigger" //from base of datum/action/proc/Trigger(): (datum/action)
 	#define COMPONENT_ACTION_BLOCK_TRIGGER 1
@@ -736,3 +730,11 @@
 #define COMSIG_ADDED_POINT_OF_INTEREST "added_point_of_interest"
 /// Sent from base of /datum/controller/subsystem/points_of_interest/proc/on_poi_element_removed : (atom/old_poi)
 #define COMSIG_REMOVED_POINT_OF_INTEREST "removed_point_of_interest"
+
+// Power signals
+/// Sent when an obj/item calls item_use_power: (use_amount, user, check_only)
+#define COMSIG_ITEM_POWER_USE "item_use_power"
+	#define NO_COMPONENT NONE
+	#define COMPONENT_POWER_SUCCESS (1<<0)
+	#define COMPONENT_NO_CELL (1<<1)
+	#define COMPONENT_NO_CHARGE (1<<2)

@@ -3,13 +3,13 @@
 /obj/item/chainsaw
 	name = "chainsaw"
 	desc = "A versatile power tool. Useful for limbing trees and delimbing humans."
-	icon_state = "chainsaw_off"
+	icon_state = "chainsaw"
 	icon = 'icons/obj/weapon/axe.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/chainsaw_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
 	flags_1 = CONDUCT_1
 	force = 13
-	var/force_on = 24
+	var/active_force = 24
 	w_class = WEIGHT_CLASS_HUGE
 	throwforce = 13
 	throw_speed = 2
@@ -31,8 +31,8 @@
 /obj/item/chainsaw/attack_self(mob/user)
 	on = !on
 	to_chat(user, "As you pull the starting cord dangling from [src], [on ? "it begins to whirr." : "the chain stops moving."]")
-	force = on ? force_on : initial(force)
-	throwforce = on ? force_on : initial(force)
+	force = on ? active_force : initial(force)
+	throwforce = on ? active_force : initial(force)
 	icon_state = "chainsaw_[on ? "on" : "off"]"
 	var/datum/component/butchering/butchering = src.GetComponent(/datum/component/butchering)
 	butchering.butchering_enabled = on
@@ -56,7 +56,7 @@
 	name = "THE GREAT COMMUNICATOR"
 	desc = "<span class='warning'>VRRRRRRR!!!</span>"
 	armour_penetration = 100
-	force_on = 30
+	active_force = 30
 
 /obj/item/chainsaw/doomslayer/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)

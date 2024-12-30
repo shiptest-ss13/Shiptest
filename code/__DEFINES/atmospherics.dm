@@ -210,8 +210,6 @@
 #define KITCHEN_COLDROOM_ATMOS "o2=33;n2=124;TEMP=193.15"
 /// used in the holodeck burn test program
 #define BURNMIX_ATMOS "o2=2500;plasma=5000;TEMP=370"
-/// used in rockplanet
-#define ROCKPLANET_DEFAULT_ATMOS "co2=95;n2=3;TEMP=210.15"
 //ATMOSPHERICS DEPARTMENT GAS TANK TURFS
 #define ATMOS_TANK_N2O "n2o=6000;TEMP=293.15"
 #define ATMOS_TANK_CO2 "co2=50000;TEMP=293.15"
@@ -226,11 +224,16 @@
 //PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
 #define LAVALAND_EQUIPMENT_EFFECT_PRESSURE 90
-#define ICEMOON_DEFAULT_ATMOS "ICEMOON_ATMOS"
 #define GAS_GIANT_ATMOS "GAS_GIANT_ATMOS"
 #define PLASMA_GIANT_ATMOS "PLASMA_GIANT_ATMOS"
-#define WASTEPLANET_DEFAULT_ATMOS "WASTEPLANET_ATMOS"
+#define DEFAULT_ATMOS_DETECTOR "plasma=70000;TEMP=293.15"
 #define LAVALAND_DEFAULT_ATMOS "LAVALAND_ATMOS"
+#define ICEMOON_DEFAULT_ATMOS "ICEMOON_ATMOS"
+#define WASTEPLANET_DEFAULT_ATMOS "WASTEPLANET_ATMOS"
+#define ROCKPLANET_DEFAULT_ATMOS "ROCKPLANET_ATMOS"
+#define BEACHPLANET_DEFAULT_ATMOS "BEACHPLANET_ATMOS"
+#define JUNGLEPLANET_DEFAULT_ATMOS "JUNGLEPLANET_ATMOS"
+#define SANDPLANET_DEFAULT_ATMOS "SANDPLANET_ATMOS"
 
 
 //ATMOS MIX IDS
@@ -325,23 +328,45 @@
 // Gas defines because i hate typepaths
 #define GAS_O2 "o2"
 #define GAS_N2 "n2"
+#define GAS_CO "co"
+#define GAS_O3 "ozone"
 #define GAS_CO2 "co2"
 #define GAS_PLASMA "plasma"
 #define GAS_H2O "water_vapor"
-#define GAS_HYPERNOB "nob"
 #define GAS_NITROUS "n2o"
-#define GAS_NITRYL "no2"
 #define GAS_TRITIUM "tritium"
 #define GAS_BZ "bz"
-#define GAS_STIMULUM "stim"
-#define GAS_PLUOXIUM "pluox"
 #define GAS_FREON "freon"
 #define GAS_HYDROGEN "h2"
 #define GAS_CHLORINE "cl2"
 #define GAS_HYDROGEN_CHLORIDE "hcl"
 
+#define GAS_SO2 "so2"
+#define GAS_ARGON "ar"
+#define GAS_METHANE "methane"
+#define GAS_AMMONIA "ammonia"
+
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)
+
+// odors
+#define GAS_ODOR_CHEMICAL list(\
+	span_notice("It smells fainly like space cleaner."),\
+	span_danger("It smells like chemicals."),\
+	span_danger("There's a strong smell in the air, like chlorine."),\
+	span_userdanger("The smell burns the inside of your nose! It's unbearable!"))
+
+#define GAS_ODOR_SULFUR list(\
+	span_notice("Somebody passed gas in here."),\
+	span_danger("It smells like rotten eggs."),\
+	span_danger("There's a strong smell in the air, like something died here."),\
+	span_userdanger("The smell of chemical rot overwhelms you! It's unbearable!"))
+
+#define GAS_ODOR_SMOG list(\
+	null,\
+	span_notice("Theres a charred smell in the air."),\
+	span_danger("There's a strong smell in the air, like something's burning."),\
+	span_userdanger("The acidic smell overwhelms you! It's unbearable!"))
 
 // Flag for update_air_ref()
 #define AIR_REF_CLOSED_TURF -1

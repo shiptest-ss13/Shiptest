@@ -1,4 +1,3 @@
-#define CANDLE_LUMINOSITY 2
 /obj/item/candle
 	name = "red candle"
 	desc = "In Greek myth, Prometheus stole fire from the Gods and gave it to \
@@ -8,6 +7,10 @@
 	item_state = "candle1"
 	w_class = WEIGHT_CLASS_TINY
 	light_color = LIGHT_COLOR_FIRE
+	light_power = 0.8
+	light_range = 2
+	light_system = MOVABLE_LIGHT
+	light_on = FALSE
 	heat = 1000
 	var/wax = 1000
 	var/lit = FALSE
@@ -39,20 +42,22 @@
 	return lit * heat
 
 /obj/item/candle/proc/light(show_message)
-	if(!lit)
-		lit = TRUE
-		if(show_message)
-			usr.visible_message(show_message)
-		set_light(CANDLE_LUMINOSITY, 0.8)
+	if(lit)
+		return
+	lit = TRUE
+	if(show_message)
+		usr.visible_message(show_message)
+	set_light_on(TRUE)
+	if(!infinite)
 		START_PROCESSING(SSobj, src)
-		update_appearance()
+	update_appearance()
 
 /obj/item/candle/proc/put_out_candle()
 	if(!lit)
 		return
 	lit = FALSE
 	update_appearance()
-	set_light(0)
+	set_light_on(FALSE)
 	return TRUE
 
 /obj/item/candle/extinguish()
@@ -62,8 +67,7 @@
 /obj/item/candle/process()
 	if(!lit)
 		return PROCESS_KILL
-	if(!infinite)
-		wax--
+	wax--
 	if(!wax)
 		new /obj/item/trash/candle(loc)
 		qdel(src)
@@ -85,43 +89,22 @@
 	icon_state = "torch_unlit"
 	item_state = "torch"
 	w_class = WEIGHT_CLASS_BULKY
-	light_color = LIGHT_COLOR_FIRE
+	light_range = 7
 	infinite = TRUE
 	heat = 2000
 
-/obj/item/candle/tribal_torch/attackby(obj/item/W, mob/user, params)
-	..()
-	var/msg = W.ignition_effect(src, user)
-	if(msg)
-		light(msg)
-		set_light(7)
-
-/obj/item/candle/tribal_torch/fire_act(exposed_temperature, exposed_volume)
-	if(!src.lit)
-		light() //honk
-		set_light(7)
-	..()
-
-/obj/item/candle/attack_self(mob/user)
+/obj/item/candle/tribal_torch/attack_self(mob/user)
 	if(!src.lit)
 		to_chat(user, "<span class='notice'>You start pushing [src] into the ground...</span>")
 		if (do_after(user, 20, target=src))
 			qdel(src)
 			new /obj/structure/destructible/tribal_torch(get_turf(user))
-			light_color = LIGHT_COLOR_ORANGE
 			user.visible_message("<span class='notice'>[user] plants \the [src] firmly in the ground.</span>", "<span class='notice'>You plant \the [src] firmly in the ground.</span>")
 			return
-	else if(lit)
-		user.visible_message(
-			"<span class='notice'>[user] snuffs [src] out.</span>")
-		lit = FALSE
-		update_appearance()
-		set_light(0)
+	return ..()
 
 
 /obj/item/candle/tribal_torch/update_appearance()
 	icon_state = "torch[lit ? "_lit" : "_unlit"]"
 	item_state = "torch[lit ? "-on" : ""]"
 	return ..()
-
-#undef CANDLE_LUMINOSITY

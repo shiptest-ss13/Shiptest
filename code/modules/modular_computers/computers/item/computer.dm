@@ -6,10 +6,15 @@
 	desc = "A small portable microcomputer."
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "laptop"
-	light_on = FALSE
 	integrity_failure = 0.5
 	max_integrity = 100
 	armor = list("melee" = 0, "bullet" = 20, "laser" = 20, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
+	light_range = 2.3
+	light_power = 0.6
+	light_color = "#FFFFFF"
+	light_on = FALSE
 
 	var/enabled = 0											// Whether the computer is turned on.
 	var/screen_on = 1										// Whether the computer is active/opened/it's screen is on.
@@ -43,9 +48,9 @@
 
 	var/list/idle_threads							// Idle programs on background. They still receive process calls but can't be interacted with.
 	var/obj/physical = null									// Object that represents our computer. It's used for Adjacent() and UI visibility checks.
-	var/has_light = FALSE						//If the computer has a flashlight/LED light/what-have-you installed
-	var/comp_light_luminosity = 3				//The brightness of that light
-	var/comp_light_color			//The color of that light
+
+	/// If the computer has a flashlight/LED light/what-have-you installed
+	var/has_light = FALSE
 
 
 /obj/item/modular_computer/Initialize()
@@ -53,7 +58,6 @@
 	START_PROCESSING(SSobj, src)
 	if(!physical)
 		physical = src
-	comp_light_color = "#FFFFFF"
 	idle_threads = list()
 	update_appearance()
 

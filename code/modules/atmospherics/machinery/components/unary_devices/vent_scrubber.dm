@@ -20,7 +20,7 @@
 	var/id_tag = null
 	var/scrubbing = SCRUBBING //0 = siphoning, 1 = scrubbing
 
-	var/filter_types = list(GAS_CO2, GAS_BZ)
+	var/filter_types = list(GAS_CO2, GAS_BZ, GAS_CO)
 	var/volume_rate = 200
 	var/widenet = 0 //is this scrubber acting on the 3x3 area around it.
 	var/list/turf/adjacent_turfs = list()
@@ -126,12 +126,11 @@
 	return TRUE
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/atmosinit()
-	radio_filter_in = frequency==initial(frequency)?(RADIO_FROM_AIRALARM):null
-	radio_filter_out = frequency==initial(frequency)?(RADIO_TO_AIRALARM):null
+	radio_filter_in = frequency == initial(frequency) ? (RADIO_FROM_AIRALARM) : null
+	radio_filter_out = frequency == initial(frequency) ? (RADIO_TO_AIRALARM) : null
 	if(frequency)
 		set_frequency(frequency)
 	broadcast_status()
-	check_turfs()
 	..()
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos()
@@ -141,54 +140,34 @@
 		if(use_static_power != NO_POWER_USE)
 			set_no_power()
 		return FALSE
-	if(!nodes[1])
+
+	if(!nodes[1] || !islist(filter_types))
 		return FALSE
-	scrub(loc)
+
+	var/datum/gas_mixture/air_contents = airs[1]
+	if(!air_contents.return_pressure() >= 50 * ONE_ATMOSPHERE)
+		return FALSE
+
+	var/turf/location = loc
+	scrub(location)
 	if(widenet)
-		if(use_static_power != ACTIVE_POWER_USE)
-			set_active_power()
-		for(var/turf/tile in adjacent_turfs)
+		for(var/turf/tile as anything in location.atmos_adjacent_turfs)
 			scrub(tile)
-	else
-		if(use_static_power != IDLE_POWER_USE)
-			set_idle_power()
 	return TRUE
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/proc/scrub(turf/tile)
-	if(!istype(tile))
-		return FALSE
 	var/datum/gas_mixture/environment = tile.return_air()
-	var/datum/gas_mixture/air_contents = airs[1]
-
-	if(air_contents.return_pressure() >= 50 * ONE_ATMOSPHERE || !islist(filter_types))
-		return FALSE
 
 	if(scrubbing & SCRUBBING)
-		environment.scrub_into(air_contents, volume_rate/environment.return_volume(), filter_types)
-		tile.air_update_turf()
+		environment.scrub_into(airs[1], volume_rate / environment.return_volume(), filter_types)
 
 	else //Just siphoning all air
-		environment.transfer_ratio_to(air_contents, volume_rate/environment.return_volume())
-		tile.air_update_turf()
+		environment.transfer_ratio_to(airs[1], volume_rate / environment.return_volume())
 
+	tile.air_update_turf()
 	update_parents()
 
 	return TRUE
-
-//There is no easy way for an object to be notified of changes to atmos can pass flags
-//	So we check every machinery process (2 seconds)
-/obj/machinery/atmospherics/components/unary/vent_scrubber/process()
-	if(widenet)
-		check_turfs()
-
-//we populate a list of turfs with nonatmos-blocked cardinal turfs AND
-//	diagonal turfs that can share atmos with *both* of the cardinal turfs
-
-/obj/machinery/atmospherics/components/unary/vent_scrubber/proc/check_turfs()
-	adjacent_turfs.Cut()
-	var/turf/T = get_turf(src)
-	if(istype(T))
-		adjacent_turfs = T.GetAtmosAdjacentTurfs(alldir = 1)
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/receive_signal(datum/signal/signal)
 	if(!is_operational || !signal.data["tag"] || (signal.data["tag"] != id_tag) || (signal.data["sigtype"]!="command"))
@@ -205,6 +184,11 @@
 		widenet = text2num(signal.data["widenet"])
 	if("toggle_widenet" in signal.data)
 		widenet = !widenet
+
+	if(widenet)
+		set_active_power()
+	else
+		set_idle_power()
 
 	var/old_scrubbing = scrubbing
 	if("scrubbing" in signal.data)
@@ -310,10 +294,10 @@
 	icon_state = "scrub_map_on-4"
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/lavaland
-	filter_types = list(GAS_CO2, GAS_PLASMA, GAS_H2O, GAS_BZ)
+	filter_types = list(GAS_CO2, GAS_PLASMA, GAS_H2O, GAS_BZ, GAS_CO)
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3/lavaland
-	filter_types = list(GAS_CO2, GAS_PLASMA, GAS_H2O, GAS_BZ)
+	filter_types = list(GAS_CO2, GAS_PLASMA, GAS_H2O, GAS_BZ, GAS_CO)
 
 #undef SIPHONING
 #undef SCRUBBING
