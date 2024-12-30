@@ -141,10 +141,20 @@
 /datum/status_effect/trickwine/buff/ash
 	id = "ash_wine_buff"
 	trickwine_examine_text = "SUBJECTPRONOUN seems to be filled with energy and devotion. There eyes are dialated and they seem to be twitching."
+	message_apply_others =  ""
+	message_apply_self = ""
+	message_remove_others = ""
+	message_remove_self = "
+	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/ash
 	id = "ash_wine_debuff"
 	trickwine_examine_text = "SUBJECTPRONOUN seems to be covered in a thin layer of ash. They seem to be twitching and jittery."
+	message_apply_others =  ""
+	message_apply_self = ""
+	message_remove_others = ""
+	message_remove_self = "
+	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/ash/tick()
 	switch(pick("jitter", "dizzy", "drug"))
@@ -176,14 +186,25 @@
 
 /datum/status_effect/trickwine/buff/ice
 	id = "ice_wine_buff"
+	trickwine_examine_text = ""
+	message_apply_others =  ""
+	message_apply_self = ""
+	message_remove_others = ""
+	message_remove_self = "
+	alert_desc = ""
 	trait = TRAIT_NOFIRE
 
 /datum/status_effect/trickwine/debuff/ice
 	id = "ice_wine_debuff"
+	trickwine_examine_text = ""
+	message_apply_others =  ""
+	message_apply_self = ""
+	message_remove_others = ""
+	message_remove_self = "
+	alert_desc = ""
 	var/icon/cube
 
 /datum/status_effect/trickwine/debuff/ice/on_apply()
-	walk(owner, 0) //stops them mid pathing even if they're stunimmunee
 	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
 	owner.Paralyze(duration)
 	to_chat(owner, span_userdanger("You become frozen in a cube!"))
@@ -241,6 +262,12 @@
 
 /datum/status_effect/trickwine/debuff/shock
 	id = "shock_wine_debuff"
+	trickwine_examine_text = ""
+	message_apply_others =  ""
+	message_apply_self = ""
+	message_remove_others = ""
+	message_remove_self = "
+	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/shock/tick()
 	if(rand(25))
@@ -253,7 +280,7 @@
 	boozepwr = 70
 	taste_description = "apple cut apart by tangy pricks"
 	glass_name = "Hearthflame"
-	glass_desc = "Fiery brew utilized by members of the Saint-Roumain Militia, engineered to heat the body and cauterize wounds. Goes out in a blaze of glory when thrown."
+	glass_desc = "A fiery brew utilized by members of the Saint-Roumain Militia, engineered to heat the body and cauterize wounds. Goes out in a blaze of glory when thrown."
 	breakaway_flask_icon_state = "baflaskhearthwine"
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth
@@ -268,10 +295,22 @@
 
 /datum/status_effect/trickwine/buff/hearth
 	id = "hearth_wine_buff"
+	trickwine_examine_text = ""
+	message_apply_others =  ""
+	message_apply_self = ""
+	message_remove_others = ""
+	message_remove_self = "
+	alert_desc = ""
 	trait = TRAIT_RESISTCOLD
 
 /datum/status_effect/trickwine/debuff/hearth
 	id = "hearth_wine_debuff"
+	trickwine_examine_text = ""
+	message_apply_others =  ""
+	message_apply_self = ""
+	message_remove_others = ""
+	message_remove_self = "
+	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/hearth/tick()
 	//owner.fire_act()
@@ -293,15 +332,23 @@
 
 /datum/status_effect/trickwine/buff/force
 	id = "force_wine_buff"
+	trickwine_examine_text = ""
 	message_apply_others =  "glows a dim grey aura."
 	message_apply_self = "You feel faster than lightning!"
 	message_remove_others = "'s aura fades away."
 	message_remove_self = "You feel sluggish."
+	alert_desc = ""
 	// No shrapnel seems useful
 	trait = TRAIT_PIERCEIMMUNE
 
 /datum/status_effect/trickwine/debuff/force
 	id = "force_wine_debuff"
+	trickwine_examine_text = ""
+	message_apply_others =  ""
+	message_apply_self = ""
+	message_remove_others = ""
+	message_remove_self = "
+	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/force/on_apply()
 	var/turf/turf = get_turf(owner)
@@ -327,6 +374,12 @@
 #define MAX_REFLECTS 3
 /datum/status_effect/trickwine/buff/prism
 	id = "prism_wine_buff"
+	trickwine_examine_text = ""
+	message_apply_others =  ""
+	message_apply_self = ""
+	message_remove_others = ""
+	message_remove_self = "
+	alert_desc = ""
 	var/reflect_count = 0
 	var/recent_movement = FALSE
 
@@ -367,8 +420,12 @@
 
 /datum/status_effect/trickwine/debuff/prism
 	id = "prism_wine_debuff"
-	message_apply_others = "seems weakend!"
-	message_remove_others = "has returned to normal!"
+	trickwine_examine_text = ""
+	message_apply_others =  ""
+	message_apply_self = ""
+	message_remove_others = ""
+	message_remove_self = "
+	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/prism/on_apply()
 	if(ishuman(owner))
