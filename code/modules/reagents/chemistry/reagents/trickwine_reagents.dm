@@ -96,7 +96,7 @@
 	var/datum/status_effect/trickwine/debuff_effect = null
 	var/datum/status_effect/trickwine/buff_effect = null
 
-/datum/reagent/consumable/ethanol/trickwine/on_mob_metabolize(mob/living/conasumer)
+/datum/reagent/consumable/ethanol/trickwine/on_mob_metabolize(mob/living/consumer)
 	if(buff_effect)
 		consumer.apply_status_effect(buff_effect, src)
 	..()
@@ -225,9 +225,9 @@
 	id = "shock_wine_buff"
 	trickwine_examine_text = "SUBJECTPRONOUN seems to be crackling with energy."
 	message_apply_others =  "seems to be crackling with energy!"
-	message_apply_self = "You feel faster than lightning!"
+	message_apply_self = "You feel like a bolt of lightning!"
 	message_remove_others = "has lost their statis energy."
-	message_remove_self = "You feel sluggish."
+	message_remove_self = "Inertia leaves your body!"
 	alert_desc = "You feel faster then lightning and cracking with energy! Your immune to shock damage and move faster!"
 	trait = TRAIT_SHOCKIMMUNE
 
@@ -291,7 +291,6 @@
 	buff_effect = /datum/status_effect/trickwine/buff/force
 	debuff_effect = /datum/status_effect/trickwine/debuff/force
 
-//Completenly useless rn.
 /datum/status_effect/trickwine/buff/force
 	id = "force_wine_buff"
 	message_apply_others =  "glows a dim grey aura."
@@ -328,29 +327,21 @@
 #define MAX_REFLECTS 3
 /datum/status_effect/trickwine/buff/prism
 	id = "prism_wine_buff"
-	var/reflect_count = MAX_REFLECTS
+	var/reflect_count = 0
 	var/recent_movement = FALSE
 
 /datum/status_effect/trickwine/buff/prism/on_apply()
-	if(ishuman(owner))
-		var/mob/living/carbon/human/the_human = owner
-		the_human.physiology.burn_mod *= 0.5
 	RegisterSignal(owner, COMSIG_CHECK_REFLECT, PROC_REF(on_check_reflect))
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
-	owner.visible_message(span_warning("[owner] seems to shimmer with power!"))
 	return ..()
 
 /datum/status_effect/trickwine/buff/prism/on_remove()
-	if(ishuman(owner))
-		var/mob/living/carbon/human/the_human = owner
-		the_human.physiology.burn_mod *= 2
 	UnregisterSignal(owner, list(COMSIG_CHECK_REFLECT, COMSIG_MOVABLE_MOVED))
-	owner.visible_message(span_warning("[owner] has returned to normal!"))
 	..()
 
 /datum/status_effect/trickwine/buff/prism/tick()
 	. = ..()
-	if(prob(50) && reflect_count < MAX_REFLECTS)
+	if(prob(25) && reflect_count < MAX_REFLECTS)
 		if(recent_movement)
 			adjust_charge(1)
 			to_chat(owner, span_notice("Your resin sweat builds up another layer!"))
@@ -376,8 +367,8 @@
 
 /datum/status_effect/trickwine/debuff/prism
 	id = "prism_wine_debuff"
-	message_apply_others = " seems weakend!"
-	message_remove_others = " has returned to normal!"
+	message_apply_others = "seems weakend!"
+	message_remove_others = "has returned to normal!"
 
 /datum/status_effect/trickwine/debuff/prism/on_apply()
 	if(ishuman(owner))
