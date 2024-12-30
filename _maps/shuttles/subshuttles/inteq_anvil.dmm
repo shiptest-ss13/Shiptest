@@ -191,14 +191,6 @@
 "w" = (
 /turf/template_noop,
 /area/template_noop)
-"x" = (
-/obj/machinery/porta_turret/ship/weak{
-	faction = list("playerInteq","turret");
-	dir = 9;
-	id = "anvil_grid"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
 "y" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable{
@@ -387,9 +379,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "T" = (
-/obj/machinery/porta_turret/ship/weak{
-	faction = list("playerInteq","turret");
-	dir = 10;
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 8;
 	id = "anvil_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -436,7 +427,7 @@
 
 (1,1,1) = {"
 w
-x
+T
 X
 u
 Q

@@ -24,8 +24,8 @@
 	name = "Plasmaman Internals Crate"
 	desc = "Contains two plasmaman belt tanks, for when you just can't bear to refill a normal tank with plasma. Plasma canisters sold separately."
 	cost = 100
-	contains = list(/obj/item/tank/internals/plasmaman/belt,
-					/obj/item/tank/internals/plasmaman/belt)
+	contains = list(/obj/item/tank/internals/plasmaman/belt/full,
+					/obj/item/tank/internals/plasmaman/belt/full)
 	crate_name = "plasmaman internals crate"
 
 /datum/supply_pack/emergency/plasmaman_suit

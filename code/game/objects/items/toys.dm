@@ -245,9 +245,9 @@
 /obj/item/toy/ammo/gun
 	name = "capgun ammo"
 	desc = "Make sure to recyle the box in an autolathe when it gets empty."
-	icon = 'icons/obj/ammo.dmi'
+	icon = 'icons/obj/ammunition/ammo.dmi'
 	icon_state = "357OLD-7"
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=10)
 	var/amount_left = 7
 
@@ -296,7 +296,7 @@
 		w_class = WEIGHT_CLASS_SMALL
 	add_fingerprint(user)
 
-// Copied from /obj/item/melee/transforming/energy/sword/attackby
+// Copied from /obj/item/melee/energy/sword/attackby
 /obj/item/toy/sword/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/toy/sword))
 		if(HAS_TRAIT(W, TRAIT_NODROP) || HAS_TRAIT(src, TRAIT_NODROP))
@@ -541,31 +541,6 @@
 
 /obj/item/toy/talking/AI/generate_messages()
 	return list(generate_ion_law())
-
-/obj/item/toy/talking/codex_gigas
-	name = "Toy Codex Gigas"
-	desc = "A tool to help you write fictional devils!"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "demonomicon"
-	lefthand_file = 'icons/mob/inhands/misc/books_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/books_righthand.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	recharge_time = 60
-
-/obj/item/toy/talking/codex_gigas/activation_message(mob/user)
-	user.visible_message(
-		"<span class='notice'>[user] presses the button on \the [src].</span>",
-		"<span class='notice'>You press the button on \the [src].</span>",
-		"<span class='notice'>You hear a soft click.</span>")
-
-/obj/item/toy/talking/codex_gigas/generate_messages()
-	var/datum/fakeDevil/devil = new
-	var/list/messages = list()
-	messages += "Some fun facts about: [devil.truename]"
-	messages += "[GLOB.lawlorify[LORE][devil.obligation]]"
-	messages += "[GLOB.lawlorify[LORE][devil.ban]]"
-	messages += "[GLOB.lawlorify[LORE][devil.banish]]"
-	return messages
 
 /obj/item/toy/talking/owl
 	name = "owl action figure"
@@ -1041,7 +1016,8 @@
 	desc = "A compact ball of snow. Good for throwing at people."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "snowball"
-	throwforce = 12 //pelt your enemies to death with lumps of snow
+	throwforce = 1 //pelt your enemies to death with lumps of snow
+	var/stam_dam = 8
 
 /obj/item/toy/snowball/afterattack(atom/target as mob|obj|turf|area, mob/user)
 	. = ..()
@@ -1050,6 +1026,10 @@
 
 /obj/item/toy/snowball/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(!..())
+		var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
+		if(ishuman(hit_atom) && !caught)//if they are a carbon and they didn't catch it
+			var/mob/living/carbon/human/dorkass = hit_atom
+			dorkass.apply_damage(stam_dam, STAMINA)
 		playsound(src, 'sound/effects/pop.ogg', 20, TRUE)
 		qdel(src)
 
@@ -1285,7 +1265,6 @@
 /obj/item/toy/figure/curator
 	name = "Curator action figure"
 	icon_state = "curator"
-	toysay = "One day while..."
 
 /obj/item/toy/figure/md
 	name = "Medical Doctor action figure"
@@ -1418,7 +1397,7 @@
 	pixel_x = rand(-5, 5)
 	pixel_y = rand(-5, 5)
 	icon_state = "shell[rand(1,3)]"
-	color = pickweight(possible_colors)
+	color = pick_weight(possible_colors)
 	setDir(pick(GLOB.cardinals))
 
 /obj/item/toy/brokenradio

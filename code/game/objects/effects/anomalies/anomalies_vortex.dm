@@ -2,9 +2,8 @@
 /obj/effect/anomaly/vortex
 	name = "vortex"
 	icon_state = "vortex"
-	desc = "A mysterious anomaly, this one destroys everything around it."
-	aSignal = /obj/item/assembly/signaler/anomaly/vortex
-	bSignal = null
+	desc = "An incredibly compact black orb, its hunger unquenchable."
+	core = /obj/item/assembly/signaler/anomaly/vortex
 
 /obj/effect/anomaly/vortex/anomalyEffect()
 	..()

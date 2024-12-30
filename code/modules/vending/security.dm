@@ -12,8 +12,6 @@
 		/obj/item/assembly/flash/handheld = 5,
 		/obj/item/storage/box/evidence = 6,
 		/obj/item/flashlight/seclite = 4,
-		/obj/item/ammo_box/c9mm/rubbershot = 3,
-		/obj/item/ammo_box/c9mm = 1,
 		/obj/item/stock_parts/cell/gun = 3,
 		/obj/item/clothing/glasses/sunglasses = 2)
 	premium = list(
@@ -107,7 +105,7 @@
 	premium = list()
 	voucher_items = list(
 		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/hades,
-		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/combat)
+		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/m11)
 
 /obj/machinery/vending/security/marine/syndicate
 	icon_state = "syndicate-marine"

@@ -761,10 +761,6 @@
 			"key" = /obj/item/bikehorn
 		),
 		list(
-			"key" = /obj/item/clothing/shoes/clown_shoes,
-			"action" = ITEM_DELETE
-		),
-		list(
 			"key" = /obj/item/bikehorn
 		),
 	)

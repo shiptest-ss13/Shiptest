@@ -14,8 +14,7 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	faction = list("nether")
 	speak_emote = list("screams")
-	gold_core_spawnable = HOSTILE_SPAWN
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	var/phaser = TRUE
@@ -158,7 +157,6 @@
 	icon_state = "blank-body"
 	icon_living = "blank-body"
 	icon_dead = "blank-dead"
-	gold_core_spawnable = NO_SPAWN
 	health = 100
 	maxHealth = 100
 	melee_damage_lower = 5

@@ -59,7 +59,7 @@
 
 	///Atmos effect - Yes, you can make creatures that require plasma or co2 to survive. N2O is a trace gas and handled separately, hence why it isn't here. It'd be hard to add it. Hard and me don't mix (Yes, yes make all the dick jokes you want with that.) - Errorage
 	///Leaving something at 0 means it's off - has no maximum.
-	var/list/atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	var/list/atmos_requirements = NORMAL_ATMOS_REQS
 	///This damage is taken when atmos doesn't fit all the requirements above.
 	var/unsuitable_atmos_damage = 2
 
@@ -86,7 +86,6 @@
 	///Set to 1 to allow breaking of crates,lockers,racks,tables; 2 for walls; 3 for Rwalls.
 	var/environment_smash = ENVIRONMENT_SMASH_NONE
 
-
 	///Hot simple_animal baby making vars.
 	var/list/childtype = null
 	var/next_scan_time = 0
@@ -98,8 +97,6 @@
 	var/obj/item/card/id/access_card = null
 	///In the event that you want to have a buffing effect on the mob, but don't want it to stack with other effects, any outside force that applies a buff to a simple mob should at least set this to 1, so we have something to check against.
 	var/buffed = 0
-	///If the mob can be spawned with a gold slime core. HOSTILE_SPAWN are spawned with plasma, FRIENDLY_SPAWN are spawned with blood.
-	var/gold_core_spawnable = NO_SPAWN
 
 	var/datum/component/spawner/nest
 
@@ -143,8 +140,18 @@
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
 	var/footstep_type
 
+	/// Base armor value on this mob for running armor checks
+	var/datum/armor/armor
+
+
 /mob/living/simple_animal/Initialize(mapload)
 	. = ..()
+	if (islist(armor))
+		armor = getArmor(arglist(armor))
+	else if (!armor)
+		armor = getArmor()
+	else if (!istype(armor, /datum/armor))
+		stack_trace("Invalid type [armor.type] found in .armor during [src.type] Initialize()")
 	GLOB.simple_animals[AIStatus] += src
 	if(gender == PLURAL)
 		gender = pick(MALE,FEMALE)
@@ -172,6 +179,11 @@
 		QDEL_NULL(access_card)
 
 	return ..()
+
+/mob/living/simple_animal/getarmor(def_zone, type)
+	if(armor)
+		return armor.getRating(type)
+	return FALSE
 
 /mob/living/simple_animal/attackby(obj/item/O, mob/user, params)
 	if(!is_type_in_list(O, food_type))
@@ -466,7 +478,7 @@
 			return //we never mate when not alone, so just abort early
 
 	if(alone && partner && children < 3)
-		var/childspawn = pickweight(childtype)
+		var/childspawn = pick_weight(childtype)
 		var/turf/target = get_turf(loc)
 		if(target)
 			return new childspawn(target)
@@ -630,30 +642,29 @@
 	GLOB.simple_animals[togglestatus] += list(src)
 	AIStatus = togglestatus
 
-	var/virt_z = "[virtual_z()]"
+	var/virt_z = virtual_z()
 	if(!virt_z)
 		return
 
 	switch(togglestatus)
 		if(AI_Z_OFF)
-			LAZYADDASSOCLIST(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
-
+			LAZYADDASSOCLIST(SSidlenpcpool.idle_mobs_by_virtual_level, "[virt_z]", src)
 		else
-			LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
+			LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, "[virt_z]", src)
 
 /mob/living/simple_animal/proc/check_should_sleep()
 	if (pulledby || shouldwakeup)
 		toggle_ai(AI_ON)
 		return
 
-	var/virt_z = "[virtual_z()]"
-	if(!virt_z)
-		return
-	var/players_on_virtual_z = LAZYACCESS(SSmobs.players_by_virtual_z, virt_z)
-	if(!length(players_on_virtual_z))
-		toggle_ai(AI_Z_OFF)
-	else if(AIStatus == AI_Z_OFF)
-		toggle_ai(AI_ON)
+	var/virt_z = virtual_z()
+	var/players_on_virtual_z = 0
+	if(virt_z)
+		players_on_virtual_z = LAZYACCESS(SSmobs.players_by_virtual_z, "[virt_z]")
+		if(!length(players_on_virtual_z))
+			toggle_ai(AI_Z_OFF)
+		else if(AIStatus == AI_Z_OFF)
+			toggle_ai(AI_ON)
 
 /mob/living/simple_animal/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
@@ -665,6 +676,7 @@
 	. = ..()
 	if(previous_virtual_z)
 		LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, "[previous_virtual_z]", src)
-	toggle_ai(initial(AIStatus))
+	if(QDELETED(src))
+		return
 	if(new_virtual_z)
 		check_should_sleep()

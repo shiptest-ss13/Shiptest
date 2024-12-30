@@ -42,6 +42,18 @@ Map Change:
     - "**/*.dmm"
     - "_maps/**"
 
+Ship:
+- changed-files:
+  - any-glob-to-any-file:
+    - "_maps/shuttles/**"
+    - "_maps/configs/**"
+
+Ruin:
+- changed-files:
+  - any-glob-to-any-file:
+    - "_maps/RandomRuins/**"
+    - "code/datums/ruins/**"
+
 # Any changes to .ogg files are marked as sound
 Sound:
 - changed-files:

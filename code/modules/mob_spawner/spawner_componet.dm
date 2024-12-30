@@ -114,7 +114,7 @@
 				spot = pick(peel)
 			else
 				spot = pick(circleviewturfs(origin, spawn_distance_max))
-		var/chosen_mob_type = pickweight(mob_types)
+		var/chosen_mob_type = pick_weight(mob_types)
 		var/mob/living/simple_animal/L = new chosen_mob_type(spot)
 		L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1)
 		spawned_mobs += L

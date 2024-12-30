@@ -254,7 +254,7 @@
 		var/obj/item/card/bank/ID = I
 		var/datum/bank_account/account = ID.registered_account
 		var/target_credits = total_price - credits
-		if(!account.adjust_money(-target_credits, "laptop_vendor"))
+		if(!account.adjust_money(-target_credits, CREDIT_LOG_VENDOR_PURCHASE))
 			say("Insufficient credits on card to purchase!")
 			return
 		credits += target_credits

@@ -114,14 +114,14 @@
 
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine
-	name = "Ashwine"
-	description = "A traditional sacrament for members of the Saint-Roumain Militia. Known to grant visions, and is used both for ritual and entertainment purposes aboard Saint-Roumain vessels."
+	name = "Wine Of Ash"
+	description = "A traditional sacrament for members of the Saint-Roumain Militia. Believed to grant visions, seeing use both in ritual and entertainment within the Militia."
 	color = "#6CC66C"
 	boozepwr = 80
 	quality = DRINK_VERYGOOD
-	taste_description = "devotional energy and a hint of high-potency hallucinogens"
-	glass_name = "Ashwine"
-	glass_desc = "A traditional sacrament for members of the Saint-Roumain Militia. Known to grant visions, and is used both for ritual and entertainment purposes aboard Saint-Roumain vessels."
+	taste_description = "a rustic fruit, with hints of sweet yet tangy ash."
+	glass_name = "Wine Of Ash"
+	glass_desc = "A traditional sacrament for members of the Saint-Roumain Militia. Believed to grant visions, seeing use both in ritual and entertainment within the Militia."
 	breakaway_flask_icon_state = "baflaskashwine"
 	buff_effect = /datum/status_effect/trickwine/buff/ash
 	debuff_effect = /datum/status_effect/trickwine/debuff/ash
@@ -156,12 +156,12 @@
 			owner.adjust_drugginess(3)
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine
-	name = "Icewine"
+	name = "Wine Of Ice"
 	description = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
 	color = "#C0F1EE"
 	boozepwr = 70
-	taste_description = "a cold night on the hunt"
-	glass_name = "Icewine"
+	taste_description = "a weighty meat, undercut by a mild pepper."
+	glass_name = "Wine Of Ice"
 	glass_desc = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
 	breakaway_flask_icon_state = "baflaskicewine"
 	buff_effect = /datum/status_effect/trickwine/buff/ice
@@ -169,7 +169,9 @@
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
-	M.adjustFireLoss(-1)
+	M.adjustFireLoss(-0.25)
+	if(prob(10))
+		to_chat(M, span_notice("Sweat runs down your body."))
 	return ..()
 
 /datum/status_effect/trickwine/buff/ice
@@ -201,12 +203,12 @@
 	UnregisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE)
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine
-	name = "Shockwine"
+	name = "Lightning's Blessing"
 	description = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
 	color = "#FEFEB8"
-	boozepwr = 70
-	taste_description = "the adrenaline of the chase"
-	glass_name = "Shockwine"
+	boozepwr = 50
+	taste_description = "a sharp and unrelenting citrus"
+	glass_name = "Lightning's Blessing"
 	glass_desc = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
 	breakaway_flask_icon_state = "baflaskshockwine"
 	buff_effect = /datum/status_effect/trickwine/buff/shock
@@ -245,13 +247,13 @@
 		do_sparks(5, FALSE, owner)
 
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine
-	name = "Hearthwine"
-	description = "A fiery brew utilized by members of the Saint-Roumain Militia, engineered to cauterize wounds in the field. Goes out in a blaze of glory when thrown."
+	name = "Hearthflame"
+	description = "A fiery brew utilized by members of the Saint-Roumain Militia, engineered to heat the body and cauterize wounds. Goes out in a blaze of glory when thrown."
 	color = "#FEE185"
 	boozepwr = 70
-	taste_description = "the heat of battle"
-	glass_name = "Hearthwine"
-	glass_desc = "Fiery brew utilized by members of the Saint-Roumain Militia, engineered to cauterize wounds in the field. Goes out in a blaze of glory when thrown."
+	taste_description = "apple cut apart by tangy pricks"
+	glass_name = "Hearthflame"
+	glass_desc = "Fiery brew utilized by members of the Saint-Roumain Militia, engineered to heat the body and cauterize wounds. Goes out in a blaze of glory when thrown."
 	breakaway_flask_icon_state = "baflaskhearthwine"
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth

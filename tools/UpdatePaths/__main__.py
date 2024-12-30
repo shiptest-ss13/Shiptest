@@ -119,7 +119,11 @@ def update_path(dmm_data, replacement_string, verbose=False):
                     continue
                 if prop_value.startswith("@OLD"):
                     params = prop_value.split(":")
-                    if prop_name in old_props:
+                    if len(params) > 1:
+                        old_prop_name = params[1]
+                        if old_prop_name in old_props:
+                            out_props[prop_name] = old_props[old_prop_name]
+                    elif prop_name in old_props:
                         out_props[prop_name] = old_props[params[1]] if len(params) > 1 else old_props[prop_name]
                     continue
                 out_props[prop_name] = prop_value

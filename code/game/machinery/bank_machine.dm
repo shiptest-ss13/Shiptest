@@ -33,7 +33,7 @@
 	if(value)
 		var/datum/bank_account/ship_account = ship_account_ref.resolve()
 		if(ship_account)
-			ship_account.adjust_money(value, "deposit")
+			ship_account.adjust_money(value, CREDIT_LOG_DEPOSIT)
 			to_chat(user, "<span class='notice'>You deposit [I]. The [ship_account.account_holder] Budget is now [ship_account.account_balance] cr.</span>")
 		qdel(I)
 		return
@@ -53,7 +53,7 @@
 
 		playsound(src, 'sound/items/poster_being_created.ogg', 100, TRUE)
 		syphoning_credits += 200
-		ship_account.adjust_money(-200)
+		ship_account.adjust_money(-200, "siphon")
 		if(next_warning < world.time && prob(15))
 			var/area/A = get_area(loc)
 			var/message = "Unauthorized credit withdrawal underway in [initial(A.name)]!!"

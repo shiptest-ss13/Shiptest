@@ -112,7 +112,6 @@
 							/obj/item/clothing/under/color/darkgreen,
 							/obj/item/clothing/neck/scarf/green,
 							/obj/item/clothing/head/beanie/green,
-							/obj/item/clothing/suit/poncho/green,
 							/obj/item/clothing/mask/bandana/green)
 	free_clothes = list(/obj/item/clothing/mask/bandana/green,
 						/obj/item/clothing/under/color/darkgreen,
@@ -286,15 +285,11 @@
 	gang_id = "YAK"
 	acceptable_clothes = list(/obj/item/clothing/head/soft/yellow,
 							/obj/item/clothing/under/costume/yakuza,
-							/obj/item/clothing/shoes/yakuza,
 							/obj/item/clothing/neck/scarf/yellow,
 							/obj/item/clothing/head/beanie/yellow,
 							/obj/item/clothing/mask/bandana/gold,
-							/obj/item/clothing/head/hardhat,
-							/obj/item/clothing/suit/yakuza)
+							/obj/item/clothing/head/hardhat)
 	free_clothes = list(/obj/item/clothing/under/costume/yakuza,
-						/obj/item/clothing/shoes/yakuza,
-						/obj/item/clothing/suit/yakuza,
 						/obj/item/clothing/head/hardhat,
 						/obj/item/toy/crayon/spraycan)
 	gang_objective = "The boss is thrilled about this new construction opportunity we've all been given, yadda yadda, look, he knows we're here to expand our business ventures for the clan, but Majima wanted it made VERY clear that we do NOT fuck this station's infrastructure up. If more than 15% of this station is busted when we get the hell out of here, it's your ass on the line."
@@ -310,12 +305,8 @@
 	gang_id = "JB"
 	acceptable_clothes = list(/obj/item/clothing/head/soft/blue,
 							/obj/item/clothing/under/costume/jackbros,
-							/obj/item/clothing/shoes/jackbros,
-							/obj/item/clothing/head/jackbros,
 							/obj/item/clothing/mask/bandana/blue)
 	free_clothes = list(/obj/item/clothing/under/costume/jackbros,
-						/obj/item/clothing/shoes/jackbros,
-						/obj/item/clothing/head/jackbros,
 						/obj/item/toy/crayon/spraycan)
 	gang_objective = "Hee-hello friends! We need to expand our influence, ho! Get a King Frost in as the Captain of this joint! Either get the original Captain on board with the program, or Hee-ho a fellow Jack Frost into the position yourselves!"
 	antag_hud_name = "JackFrost"

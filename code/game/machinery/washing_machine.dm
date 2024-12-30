@@ -9,7 +9,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_PURPLE = /obj/item/clothing/under/color/lightpurple,
 		DYE_BLACK = /obj/item/clothing/under/color/black,
 		DYE_WHITE = /obj/item/clothing/under/color/white,
-		DYE_RAINBOW = /obj/item/clothing/under/color/rainbow,
 		DYE_MIME = /obj/item/clothing/under/rank/civilian/mime,
 		DYE_CLOWN = /obj/item/clothing/under/rank/civilian/clown,
 		DYE_CHAP = /obj/item/clothing/under/rank/civilian/chaplain,
@@ -33,7 +32,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_PURPLE = /obj/item/clothing/under/color/jumpskirt/lightpurple,
 		DYE_BLACK = /obj/item/clothing/under/color/jumpskirt/black,
 		DYE_WHITE = /obj/item/clothing/under/color/jumpskirt/white,
-		DYE_RAINBOW = /obj/item/clothing/under/color/jumpskirt/rainbow,
 		DYE_MIME = /obj/item/clothing/under/rank/civilian/mime/skirt,
 		DYE_CHAP = /obj/item/clothing/under/rank/civilian/chaplain/skirt,
 		DYE_QM = /obj/item/clothing/under/rank/cargo/qm/skirt,
@@ -231,10 +229,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/item/stack/sheet/hairlesshide/machine_wash(obj/machinery/washing_machine/WM)
 	new /obj/item/stack/sheet/wethide(drop_location(), amount)
-	qdel(src)
-
-/obj/item/clothing/suit/hooded/ian_costume/machine_wash(obj/machinery/washing_machine/WM)
-	new /obj/item/reagent_containers/food/snacks/meat/slab/corgi(loc)
 	qdel(src)
 
 /mob/living/simple_animal/pet/machine_wash(obj/machinery/washing_machine/WM)

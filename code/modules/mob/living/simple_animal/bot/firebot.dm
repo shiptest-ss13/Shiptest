@@ -15,7 +15,7 @@
 	maxHealth = 25
 
 	radio_key = /obj/item/encryptionkey/headset_com
-	radio_channel = RADIO_CHANNEL_COMMAND
+	radio_channel = RADIO_CHANNEL_EMERGENCY
 	bot_type = FIRE_BOT
 	model = "Firebot"
 	bot_core = /obj/machinery/bot_core/firebot

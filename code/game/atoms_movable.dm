@@ -540,7 +540,7 @@
 
 	var/previous_virtual_z = OldLoc?.virtual_z() || 0
 	var/current_virtual_z = virtual_z()
-	if(current_virtual_z && current_virtual_z != previous_virtual_z)
+	if(current_virtual_z != previous_virtual_z)
 		on_virtual_z_change(current_virtual_z, previous_virtual_z)
 
 	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, OldLoc, Dir, Forced, old_locs)
@@ -1221,7 +1221,7 @@
 
 //Returns an atom's power cell, if it has one. Overload for individual items.
 /atom/movable/proc/get_cell()
-	return
+	return null
 
 /atom/movable/proc/can_be_pulled(user, grab_state, force)
 	if(src == user || !isturf(loc))

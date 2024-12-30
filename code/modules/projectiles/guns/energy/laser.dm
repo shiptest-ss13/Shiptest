@@ -2,8 +2,6 @@
 	name = "SL L-204 laser gun"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
 
-	icon_state = "laser"
-	item_state = "laser"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=2000)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
@@ -16,7 +14,7 @@
 	spread_unwielded = 10
 
 /obj/item/gun/energy/laser/empty_cell
-	dead_cell = TRUE
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
@@ -60,7 +58,7 @@
 /obj/item/gun/energy/laser/captain/scattershot
 	name = "scatter shot laser rifle"
 	desc = "An industrial-grade heavy-duty laser rifle with a modified laser lens to scatter its shot into multiple smaller lasers. The inner-core can self-charge for theoretically infinite use."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser/slug)
 	shaded_charge = FALSE
 
 /obj/item/gun/energy/laser/cyborg
@@ -74,8 +72,8 @@
 
 /obj/item/gun/energy/laser/scatter
 	name = "scatter laser gun"
-	desc = "A laser gun equipped with a refraction kit that spreads bolts."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser)
+	desc = "A laser gun mimicking the function of a shotgun, manufactured with an adjustable lens capable of projecting scattershot or slugs."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser/slug)
 	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/laser/scatter/shotty
@@ -96,8 +94,10 @@
 	icon_state = "lasercannon"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_BULKY
-	mag_size = MAG_SIZE_LARGE
-	cell_type = "/obj/item/stock_parts/cell/gun/large"
+	default_ammo_type = /obj/item/stock_parts/cell/gun/large
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/large,
+	)
 	force = 10
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
@@ -129,6 +129,7 @@
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/xray)
 	ammo_x_offset = 3
+	w_class = WEIGHT_CLASS_BULKY
 
 ////////Laser Tag////////////////////
 
@@ -170,8 +171,8 @@
 	inhand_y_dimension = 64
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
-	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima)
+	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
@@ -203,17 +204,19 @@
 	item_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 4
-	mag_size = MAG_SIZE_SMALL
-	w_class = WEIGHT_CLASS_NORMAL
-	cell_type = /obj/item/stock_parts/cell/gun/mini
+	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/mini,
+	)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/hitscan)
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/laser/hitscanpistol/examine_more(mob/user)
+	. = ..()
 	if(in_range(src, user) || isobserver(user))
-		. = list("<span class='notice'>You examine [src] closer. Under the grip is a small inscription: \"NT CN SVALINN 462\".</span>")
+		. += "<span class='notice'>You examine [src] closer. Under the grip is a small inscription: \"NT CN SVALINN 462\".</span>"
 	else
-		. = list("<span class='warning'>You try to examine [src] closer, but you're too far away.</span>")
+		. += "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
 
 /obj/item/gun/energy/laser/e10
 	name = "E-10 laser pistol"
@@ -226,7 +229,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
 	spread_unwielded = 5
@@ -245,20 +248,22 @@
 	icon_state = "e50"
 	item_state = "e50"
 
-	mag_size = MAG_SIZE_LARGE
-	cell_type = /obj/item/stock_parts/cell/gun/large
+	default_ammo_type = /obj/item/stock_parts/cell/gun/large
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/large,
+	)
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50)
 	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_EOEHOMA
 
 	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.6
+	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	spread_unwielded = 20
 
 	shaded_charge = FALSE
 	ammo_x_offset = 4
 	charge_sections = 2
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = 0
 
 

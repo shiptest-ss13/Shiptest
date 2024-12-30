@@ -117,6 +117,14 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/drill/diamonddrill
 	)
 
+/datum/supply_pack/mech/equipment/salvage_saw
+	name = "Exosuit Salvage Saw"
+	desc = "Contains an upsized angle grinder for an Exosuit, for all your larger salvage problems."
+	cost = 2000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/salvage_saw
+	)
+
 /datum/supply_pack/mech/equipment/scanner
 	name = "Exosuit scanner kit"
 	desc = "An electronic mining scanner, graded to interface with an exosuit."
@@ -196,6 +204,14 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/thrusters/gas
 	)
 
+/datum/supply_pack/mech/equipment/ionthrust
+	name = "Exosuit Ion thruster kit"
+	desc = "An electrical powered thruster pack, perfect for exosuits without a functional way to refill more tradional RCS thrusters."
+	cost = 2000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/thrusters/ion
+	)
+
 /datum/supply_pack/mech/equipment/ripley_upgrade
 	name = "APLU upgrade kit"
 	desc = "Contains an APLU MK II upgrade kit. The upgrade will replace the cockpit with a spaceworthy canopy, but the added weight makes it slower."
@@ -218,6 +234,15 @@ Mech Equipment
 	cost = 1000
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
+	)
+
+/datum/supply_pack/mech/equipment/recharger
+	name = "Exosuit Recharger kit"
+	desc = "Two boards for an exosuit recharger and recharger console. For the stylish exosuit bay."
+	cost = 400
+	contains = list(
+		/obj/item/circuitboard/computer/mech_bay_power_console,
+		/obj/item/circuitboard/machine/mech_recharger
 	)
 
 /*

@@ -333,11 +333,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	reagents?.add_reagent(/datum/reagent/toxin/carpotoxin , 3) // They lied
 
 /obj/item/clothing/mask/cigarette/syndicate
-	desc = "An unknown brand cigarette."
+	desc = "An obscure brand of cigarette."
 	chem_volume = 60
 	smoketime = 60
 	smoke_all = TRUE
-	list_reagents = list(/datum/reagent/drug/nicotine = 10, /datum/reagent/medicine/omnizine = 15)
+	list_reagents = list(/datum/reagent/drug/nicotine = 10, /datum/reagent/drug/aranesp = 5, /datum/reagent/medicine/synaptizine = 5)
 
 /obj/item/clothing/mask/cigarette/xeno
 	desc = "A Xeno Filtered brand cigarette."
@@ -566,7 +566,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	heat = 1500
 	resistance_flags = FIRE_PROOF
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/fuel/oil = 5)
-	custom_price = 55
+	custom_price = 5
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	light_power = 0.6
@@ -1059,4 +1059,4 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	vapecolor = "ecigar"
 	overlayname = "ecigar"
 	chem_volume = 150
-	custom_premium_price = 300
+	custom_premium_price = 10

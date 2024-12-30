@@ -26,18 +26,17 @@
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
-	var/w_class_on = WEIGHT_CLASS_BULKY
+	var/active_w_class = WEIGHT_CLASS_BULKY
 	var/halberd_color = "green"
 	var/two_hand_force = 34
 	var/hacked = FALSE
 	var/list/possible_colors = list("red", "blue", "green", "purple", "yellow")
-	var/wielded = FALSE // track wielded status on item
 
 /obj/item/energyhalberd/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=force, force_wielded=two_hand_force, wieldsound='sound/weapons/saberon.ogg', unwieldsound='sound/weapons/saberoff.ogg')
 
-/// Triggered on wield of two handed item
+
 /// Specific hulk checks due to reflection chance for balance issues and switches hitsounds.
 /obj/item/energyhalberd/proc/on_halberdwield(obj/item/source, mob/living/carbon/user)
 	SIGNAL_HANDLER
@@ -46,20 +45,16 @@
 		if(user.dna.check_mutation(HULK))
 			to_chat(user, "<span class='warning'>You lack the grace to wield this!</span>")
 			return COMPONENT_TWOHANDED_BLOCK_WIELD
-	wielded = TRUE
 	sharpness = IS_SHARP
-	w_class = w_class_on
+	w_class = active_w_class
 	hitsound = 'sound/weapons/blade1.ogg'
 	START_PROCESSING(SSobj, src)
 	set_light_on(TRUE)
 
 
-/// Triggered on unwield of two handed item
 /// switch hitsounds
 /obj/item/energyhalberd/proc/on_halberdunwield(obj/item/source, mob/living/carbon/user)
 	SIGNAL_HANDLER
-
-	wielded = FALSE
 	sharpness = initial(sharpness)
 	w_class = initial(w_class)
 	hitsound = "swing_hit"
@@ -68,7 +63,7 @@
 
 
 /obj/item/energyhalberd/update_icon_state()
-	if(wielded)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		icon_state = "halberd[halberd_color]"
 		return ..()
 	else
@@ -101,28 +96,28 @@
 	if(user.has_dna())
 		if(user.dna.check_mutation(HULK))
 			to_chat(user, "<span class='warning'>You grip the blade too hard and accidentally drop it!</span>")
-			if(wielded)
+			if(HAS_TRAIT(src, TRAIT_WIELDED))
 				user.dropItemToGround(src, force=TRUE)
 				return
 	..()
-	if(wielded && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
+	if(HAS_TRAIT(src, TRAIT_WIELDED) && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
 		impale(user)
 		return
 
 /obj/item/energyhalberd/proc/impale(mob/living/user)
 	to_chat(user, "<span class='warning'>You swing around a bit before losing your balance and impaling yourself on [src].</span>")
-	if(wielded)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		user.take_bodypart_damage(20,25,check_armor = TRUE)
 	else
 		user.adjustStaminaLoss(25)
 
 /obj/item/energyhalberd/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(wielded)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		return ..()
 	return 0
 
 /obj/item/energyhalberd/process()
-	if(wielded)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		if(hacked)
 			set_light_color(pick(COLOR_SOFT_RED, LIGHT_COLOR_GREEN, LIGHT_COLOR_LIGHT_CYAN, LIGHT_COLOR_LAVENDER))
 		open_flame()
@@ -130,12 +125,12 @@
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/energyhalberd/IsReflect()
-	if(wielded)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		return 1
 
 /obj/item/energyhalberd/ignition_effect(atom/A, mob/user)
-	// same as /obj/item/melee/transforming/energy, mostly
-	if(!wielded)
+	// same as /obj/item/melee/energy, mostly
+	if(!HAS_TRAIT(src, TRAIT_WIELDED))
 		return ""
 	var/in_mouth = ""
 	if(iscarbon(user))

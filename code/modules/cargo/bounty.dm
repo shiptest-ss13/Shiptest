@@ -21,7 +21,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 // Called when the claim button is clicked. Override to provide fancy rewards.
 /datum/bounty/proc/claim(datum/bank_account/claimer_account)
 	if(can_claim() && claimer_account)
-		claimer_account.adjust_money(reward, "bounty")
+		claimer_account.adjust_money(reward, CREDIT_LOG_BOUNTY)
 		claimed = TRUE
 
 // If an item sent in the cargo shuttle can satisfy the bounty.
@@ -75,7 +75,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 // Returns a new bounty of random type, but does not add it to GLOB.bounties_list.
 /proc/random_bounty()
-	switch(rand(1, 13))
+	switch(rand(1, 12))
 		if(1)
 			var/subtype = pick(subtypesof(/datum/bounty/item/assistant))
 			return new subtype
@@ -103,18 +103,15 @@ GLOBAL_LIST_EMPTY(bounties_list)
 			var/subtype = pick(subtypesof(/datum/bounty/item/science))
 			return new subtype
 		if(9)
-			var/subtype = pick(subtypesof(/datum/bounty/item/slime))
-			return new subtype
-		if(10)
 			var/subtype = pick(subtypesof(/datum/bounty/item/engineering))
 			return new subtype
-		if(11)
+		if(10)
 			var/subtype = pick(subtypesof(/datum/bounty/item/mining))
 			return new subtype
-		if(12)
+		if(11)
 			var/subtype = pick(subtypesof(/datum/bounty/item/medical))
 			return new subtype
-		if(13)
+		if(12)
 			var/subtype = pick(subtypesof(/datum/bounty/item/botany))
 			return new subtype
 
@@ -153,10 +150,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	/********************************Dynamic Gens********************************/
 
 	for(var/i in 0 to 1)
-		if(prob(50))
-			pick = pick(subtypesof(/datum/bounty/item/slime))
-		else
-			pick = pick(subtypesof(/datum/bounty/item/science))
+		pick = pick(subtypesof(/datum/bounty/item/science))
 		try_add_bounty(new pick)
 
 	/********************************Cutoff for Non-Low Priority Bounties********************************/
