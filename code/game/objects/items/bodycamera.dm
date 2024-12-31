@@ -80,7 +80,7 @@
 
 	return TRUE
 
-/obj/item/bodycamera/proc/setViewRange(num = 7)
+/obj/item/bodycamera/proc/setViewRange(num = 5)
 	src.view_range = num
 	GLOB.cameranet.updateVisibility(src, 0)
 
