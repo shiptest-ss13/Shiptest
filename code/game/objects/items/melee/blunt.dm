@@ -19,6 +19,25 @@
 	desc = "spikey."
 	sharpness = IS_SHARP
 
+/obj/item/gun/ballistic/automatic/pistol/disposable/buster
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/dual/lethal
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/dual/lethal,
+	)
+
+/obj/item/melee/brass_knuckles/busters
+	name = "knucklebusters"
+	force = 10
+	var/obj/item/gun/stored_gun
+
+/obj/item/melee/brass_knuckles/busters/Initialize()
+	. = ..()
+	stored_gun = new /obj/item/gun/ballistic/automatic/pistol/disposable/buster()
+
+/obj/item/melee/brass_knuckles/busters/attack(mob/living/M, mob/living/user)
+	. = ..()
+	stored_gun.afterattack(M, user)
+
 /obj/item/melee/sledgehammer
 	name = "sledgehammer"
 	icon_state = "sledgehammer"
