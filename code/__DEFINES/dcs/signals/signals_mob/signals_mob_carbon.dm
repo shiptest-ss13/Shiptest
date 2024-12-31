@@ -1,3 +1,6 @@
+/// from base of [/mob/living/changeNext_Move()] (next_move)
+#define COMSIG_LIVING_CHANGENEXT_MOVE "living_changenext_move"
+
 ///Called from /mob/living/carbon/help_shake_act, before any hugs have ocurred. (mob/living/helper)
 #define COMSIG_CARBON_PRE_HELP_ACT "carbon_pre_help"
 	/// Stops the rest of help act (hugging, etc) from occuring

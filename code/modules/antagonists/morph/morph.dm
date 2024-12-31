@@ -16,7 +16,7 @@
 	status_flags = CANPUSH
 	pass_flags = PASSTABLE
 	ventcrawler = VENTCRAWLER_ALWAYS
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxHealth = 150
 	health = 150

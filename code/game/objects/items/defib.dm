@@ -302,7 +302,6 @@
 	var/obj/item/defibrillator/defib
 	var/req_defib = TRUE
 	var/combat = FALSE //If it penetrates armor and gives additional functionality
-	var/wielded = FALSE // track wielded status on item
 
 /obj/item/shockpaddles/ComponentInitialize()
 	. = ..()
@@ -367,10 +366,10 @@
 	update_appearance()
 
 /obj/item/shockpaddles/update_icon_state()
-	icon_state = "[base_icon_state][wielded]"
+	icon_state = "[base_icon_state][HAS_TRAIT(src, TRAIT_WIELDED)]"
 	item_state = icon_state
 	if(cooldown)
-		icon_state = "[base_icon_state][wielded]_cooldown"
+		icon_state = "[base_icon_state][HAS_TRAIT(src, TRAIT_WIELDED)]_cooldown"
 	return ..()
 
 /obj/item/shockpaddles/dropped(mob/user)
@@ -397,7 +396,7 @@
 		user.visible_message("<span class='notice'>[defib] beeps: Unit is unpowered.</span>")
 		playsound(src, 'sound/machines/defib_failed.ogg', 50, FALSE)
 		return
-	if(!wielded)
+	if(!HAS_TRAIT(src, TRAIT_WIELDED))
 		if(iscyborg(user))
 			to_chat(user, "<span class='warning'>You must activate the paddles in your active module before you can use them on someone!</span>")
 		else
@@ -442,7 +441,7 @@
 		var/mob/living/M = H.pulledby
 		if(M.electrocute_act(30, H))
 			M.visible_message("<span class='danger'>[M] is electrocuted by [M.p_their()] contact with [H]!</span>")
-			M.emote("scream")
+			M.force_scream()
 
 /obj/item/shockpaddles/proc/do_disarm(mob/living/M, mob/living/user)
 	if(req_defib && defib.safety)
@@ -502,7 +501,7 @@
 			user.visible_message("<span class='boldannounce'><i>[user] shocks [H] with \the [src]!</span>", "<span class='warning'>You shock [H] with \the [src]!</span>")
 			playsound(src, 'sound/machines/defib_zap.ogg', 100, TRUE, -1)
 			playsound(src, 'sound/weapons/egloves.ogg', 100, TRUE, -1)
-			H.emote("scream")
+			H.force_scream()
 			shock_touching(45, H)
 			if(H.can_heartattack() && !H.undergoing_cardiac_arrest())
 				if(!H.stat)

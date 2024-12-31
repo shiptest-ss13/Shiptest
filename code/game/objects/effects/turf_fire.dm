@@ -65,10 +65,16 @@
 
 /obj/effect/abstract/turf_fire/Initialize(mapload, power, fire_color)
 	. = ..()
-	particles = new /particles/smoke/turf_fire
 	var/turf/open/open_turf = loc
 	if(open_turf.turf_fire)
 		return INITIALIZE_HINT_QDEL
+
+	var/datum/gas_mixture/environment = open_turf.air
+	var/oxy = environment.get_moles(GAS_O2)
+	if (oxy < TURF_FIRE_BURN_MINIMUM_OXYGEN_REQUIRED)
+		return INITIALIZE_HINT_QDEL
+
+	particles = new /particles/smoke/turf_fire
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
@@ -83,6 +89,18 @@
 		hex_color = fire_color
 		color = fire_color
 		base_icon_state = "greyscale"
+
+	switch(base_icon_state) //switches light color depdning on the flame color
+		if("greyscale")
+			light_color = hex_color
+		if("red")
+			light_color = LIGHT_COLOR_FIRE
+		if("blue")
+			light_color = LIGHT_COLOR_CYAN
+		if("green")
+			light_color = LIGHT_COLOR_GREEN
+		else
+			light_color = COLOR_VERY_LIGHT_GRAY
 
 	open_turf.turf_fire = src
 	START_PROCESSING(SSturf_fire, src)
@@ -100,27 +118,28 @@
 	var/turf/open/open_turf = loc
 	if(open_turf.planetary_atmos)
 		return TRUE
+
 	var/datum/gas_mixture/cached_air = open_turf.air
+
 	var/oxy = cached_air.get_moles(GAS_O2)
 	if (oxy < TURF_FIRE_BURN_MINIMUM_OXYGEN_REQUIRED)
 		return FALSE
+
 	var/temperature = cached_air.return_temperature()
 	var/old_heat_capacity = cached_air.heat_capacity()
+
 	var/burn_rate = TURF_FIRE_BURN_RATE_BASE + fire_power * TURF_FIRE_BURN_RATE_PER_POWER
-	if(burn_rate > oxy)
-		burn_rate = oxy
+	burn_rate = max(oxy, burn_rate)
 
-	var/new_o2 = (cached_air.get_moles(GAS_O2) - burn_rate)
-	cached_air.set_moles(GAS_O2, new_o2)
+	cached_air.adjust_moles(GAS_O2, -burn_rate)
 
-	var/new_co2 = (cached_air.get_moles(GAS_O2) + burn_rate * TURF_FIRE_BURN_CARBON_DIOXIDE_MULTIPLIER)
-	cached_air.set_moles(GAS_CO2, new_co2)
+	cached_air.adjust_moles(GAS_CO2, burn_rate * TURF_FIRE_BURN_CARBON_DIOXIDE_MULTIPLIER)
 
 	var/new_heat_capacity = cached_air.heat_capacity()
 	var/energy_released = burn_rate * TURF_FIRE_ENERGY_PER_BURNED_OXY_MOL
 	cached_air.adjust_heat((temperature * old_heat_capacity + energy_released) / new_heat_capacity)
-	open_turf.air = cached_air
-	open_turf.air_update_turf(TRUE)
+
+	open_turf.air_update_turf()
 	return TRUE
 
 /obj/effect/abstract/turf_fire/process()
@@ -180,29 +199,18 @@
 		return
 	current_fire_state = new_state
 
-	switch(base_icon_state) //switches light color depdning on the flame color
-		if("greyscale")
-			light_color = hex_color
-		if("red")
-			light_color = LIGHT_COLOR_FIRE
-		if("blue")
-			light_color = LIGHT_COLOR_CYAN
-		if("green")
-			light_color = LIGHT_COLOR_GREEN
-		else
-			light_color = COLOR_VERY_LIGHT_GRAY
-	update_light()
-
 	switch(current_fire_state)
 		if(TURF_FIRE_STATE_SMALL)
 			icon_state = "[base_icon_state]_small"
-			set_light_range(1.5)
+			light_range = 1.5
 		if(TURF_FIRE_STATE_MEDIUM)
 			icon_state = "[base_icon_state]_medium"
-			set_light_range(2.5)
+			light_range = 2
 		if(TURF_FIRE_STATE_LARGE)
 			icon_state = "[base_icon_state]_big"
-			set_light_range(3)
+			light_range = 3
+
+	update_light()
 
 #undef TURF_FIRE_REQUIRED_TEMP
 #undef TURF_FIRE_TEMP_BASE

@@ -2,9 +2,9 @@
 /obj/effect/anomaly/bluespace
 	name = "jumper"
 	icon_state = "bluespace"
-	desc = "A mysterious anomaly that causes teleportation around it."
+	desc = "A hole in the fabric of bluespace, perforating reality around it."
 	density = TRUE
-	aSignal = /obj/item/assembly/signaler/anomaly/bluespace
+	core = /obj/item/assembly/signaler/anomaly/bluespace
 	///range from which we can teleport someone
 	effectrange = 3
 	var/reagent_amount = 3
@@ -63,7 +63,7 @@
 		if(istype(A, /obj/item/beacon))
 			continue // don't teleport beacons because that's just insanely stupid
 		if(iscameramob(A))
-			continue // Don't mess with AI eye, xenobio or advanced cameras
+			continue // Don't mess with AI eye, or advanced cameras
 		if(A.anchored)
 			continue
 

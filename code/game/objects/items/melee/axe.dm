@@ -2,6 +2,7 @@
 	icon = 'icons/obj/weapon/axe.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 5
 	throwforce = 15
 	w_class = WEIGHT_CLASS_BULKY

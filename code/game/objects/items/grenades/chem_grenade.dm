@@ -217,35 +217,7 @@
 	if(stage != GRENADE_READY)
 		return
 
-	for(var/obj/item/slime_extract/S in beakers)
-		if(S.Uses)
-			for(var/obj/item/reagent_containers/glass/G in beakers)
-				G.reagents.trans_to(S, G.reagents.total_volume)
-
-			//If there is still a core (sometimes it's used up)
-			//and there are reagents left, behave normally,
-			//otherwise drop it on the ground for timed reactions like gold.
-
-			if(S)
-				if(S.reagents && S.reagents.total_volume)
-					for(var/obj/item/reagent_containers/glass/G in beakers)
-						S.reagents.trans_to(G, S.reagents.total_volume)
-				else
-					S.forceMove(get_turf(src))
-					no_splash = TRUE
 	..()
-
-	//I tried to just put it in the allowed_containers list but
-	//if you do that it must have reagents.  If you're going to
-	//make a special case you might as well do it explicitly. -Sayu
-/obj/item/grenade/chem_grenade/large/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/slime_extract) && stage == GRENADE_WIRED)
-		if(!user.transferItemToLoc(I, src))
-			return
-		to_chat(user, "<span class='notice'>You add [I] to the [initial(name)] assembly.</span>")
-		beakers += I
-	else
-		return ..()
 
 /obj/item/grenade/chem_grenade/cryo // Intended for rare cryogenic mixes. Cools the area moderately upon detonation.
 	name = "cryo grenade"

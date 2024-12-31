@@ -182,7 +182,7 @@
 		qdel(src)
 		return
 	//lets try to grow in a direction
-	for(var/turf/check_turf in src_turf.GetAtmosAdjacentTurfs())
+	for(var/turf/check_turf as anything in src_turf.get_atmos_adjacent_turfs())
 		//we cannot grow on blacklisted turfs
 		if(is_type_in_list(check_turf, blacklisted_turfs))
 			continue

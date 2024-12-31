@@ -85,12 +85,12 @@
 			COOLDOWN_START(src, baton_bash, BATON_BASH_COOLDOWN)
 	else if(istype(W, /obj/item/stack/sheet/mineral/titanium))
 		if (obj_integrity >= max_integrity)
-			to_chat(user, "<span class='warning'>[src] is already in perfect condition.</span>")
+			to_chat(user, span_warning("[src] is already in perfect condition."))
 		else
 			var/obj/item/stack/sheet/mineral/titanium/T = W
 			T.use(1)
 			obj_integrity = max_integrity
-			to_chat(user, "<span class='notice'>You repair [src] with [T].</span>")
+			to_chat(user, span_notice("You repair [src] with [T]."))
 	else
 		return ..()
 
@@ -112,6 +112,7 @@
 	block_chance = 0
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 30
+	recoil_bonus = 0 //it's PLASTIC
 
 /obj/item/shield/riot/buckler
 	name = "wooden buckler"

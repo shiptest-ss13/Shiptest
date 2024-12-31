@@ -37,6 +37,16 @@
 		final_block_chance = projectile_block_chance //Don't bring a sword to a gunfight
 	return ..()
 
+/obj/item/melee/sword/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
+
+//cruft
+/obj/item/melee/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(attack_type == PROJECTILE_ATTACK)
+		final_block_chance = projectile_block_chance //Don't bring a sword to a gunfight
+	return ..()
+
 /obj/item/melee/sword/claymore
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
@@ -190,6 +200,13 @@
 	desc = "A thin blade used by SUNS medical instructors."
 	icon_state = "suns-swordstick"
 	item_state = "suns-swordstick"
+
+/obj/item/melee/sword/sabre/pgf
+	name = "\improper boarding cutlass"
+	desc = "When beam and bullet puncture the hull, a trustworthy blade will carry you through the fight"
+	icon_state = "pgf-sabre"
+	block_chance = 30
+	force = 22
 
 /obj/item/melee/sword/sabre/suns/telescopic
 	name = "telescopic sabre"

@@ -1,9 +1,10 @@
 /obj/effect/anomaly/flux
 	name = "tesla"
-	icon_state = "flux"
-	desc = "A mysterious anomaly that sends out a near constant stream of electrical arcs."
+	icon_state = "tesla"
+	//double-check that these only happen in atmosphere now
+	desc = "A break in the atmosphere, small yet potent lightning arcs flashing off it."
 	density = TRUE
-	aSignal = /obj/item/assembly/signaler/anomaly/flux
+	core = /obj/item/assembly/signaler/anomaly/flux
 	pulse_delay = 2 SECONDS
 	effectrange = 0
 	var/canshock = FALSE
@@ -99,3 +100,7 @@
 /obj/effect/anomaly/flux/big/planetary
 	immortal = TRUE
 	immobile = TRUE
+
+/obj/effect/anomaly/flux/storm
+	drops_core = FALSE
+	explosive = FLUX_LOW_EXPLOSIVE

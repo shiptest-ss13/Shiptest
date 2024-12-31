@@ -68,10 +68,8 @@
 			if(icon_state == "nothing")
 				continue
 
-			bad_list[icon] += list(icon_state)
-
-			var/match_message
-			if(icon_state in possible_icon_states)
-				for(var/file_place in possible_icon_states[icon_state])
-					match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
-			TEST_FAIL("Missing icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"[match_message]")
+		var/match_message
+		if(icon_state in possible_icon_states)
+			for(var/file_place in possible_icon_states[icon_state])
+				match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
+		TEST_FAIL("Missing icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"[match_message]")

@@ -242,7 +242,7 @@
 /datum/reagent/brimdust/on_mob_life(mob/living/carbon/carbon, delta_time, times_fired)
 	. = ..()
 	carbon.adjustFireLoss((ispodperson(carbon) ? -1 : 1) * delta_time)
-	carbon.adjust_bodytemperature(55 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, carbon.get_body_temp_normal())
+	carbon.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, carbon.get_body_temp_normal())
 
 /datum/reagent/brimdust/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
 	. = ..()

@@ -99,8 +99,6 @@
 	if(!(ITEM_SLOT_EYES in obscured))
 		if(glasses)
 			. += "[t_He] [t_has] [glasses.get_examine_string(user)] covering [t_his] eyes."
-		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
-			. += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>"
 
 	//ears
 	if(ears && !(ITEM_SLOT_EARS in obscured))
@@ -432,4 +430,4 @@
 	if ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 		return
 	if(get_age())
-		. += list(span_notice("[p_they(TRUE)] appear[p_s()] to be [get_age()]."))
+		. += span_notice("[p_they(TRUE)] appear[p_s()] to be [get_age()].")

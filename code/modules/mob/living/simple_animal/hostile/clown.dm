@@ -29,7 +29,6 @@
 	del_on_death = 1
 	loot = list(/obj/effect/mob_spawn/human/clown/corpse)
 
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 270
 	maxbodytemp = 370
 	unsuitable_atmos_damage = 10
@@ -56,7 +55,7 @@
 	. = ..()
 	if(banana_time && banana_time < world.time)
 		var/turf/T = get_turf(src)
-		var/list/adjacent =  T.GetAtmosAdjacentTurfs()
+		var/list/adjacent =  T.get_atmos_adjacent_turfs()
 		new banana_type(pick(adjacent))
 		banana_time = world.time + rand(30,60)
 

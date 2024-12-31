@@ -51,7 +51,7 @@
 	var/list/arguments = raw_args.Copy(2)
 	if(Initialize(arglist(arguments)) == COMPONENT_INCOMPATIBLE)
 		stack_trace("Incompatible [type] assigned to a [parent.type]! args: [json_encode(arguments)]")
-		qdel(src, TRUE, TRUE)
+		qdel(src, TRUE)
 		return
 
 	_JoinParent(parent)
@@ -69,15 +69,13 @@
  *
  * Arguments:
  * * force - makes it not check for and remove the component from the parent
- * * silent - deletes the component without sending a [COMSIG_COMPONENT_REMOVING] signal
  */
-/datum/component/Destroy(force=FALSE, silent=FALSE)
+/datum/component/Destroy(force=FALSE)
 	if(!parent)
 		return ..()
 	if(!force)
 		_RemoveFromParent()
-	if(!silent)
-		SEND_SIGNAL(parent, COMSIG_COMPONENT_REMOVING, src)
+	SEND_SIGNAL(parent, COMSIG_COMPONENT_REMOVING, src)
 	parent = null
 	return ..()
 
@@ -364,17 +362,17 @@
  */
 /datum/proc/GetExactComponent(datum/component/c_type)
 	RETURN_TYPE(c_type)
-	if(initial(c_type.dupe_mode) == COMPONENT_DUPE_ALLOWED || initial(c_type.dupe_mode) == COMPONENT_DUPE_SELECTIVE)
+	var/initial_type_mode = initial(c_type.dupe_mode)
+	if(initial_type_mode == COMPONENT_DUPE_ALLOWED || initial_type_mode == COMPONENT_DUPE_SELECTIVE)
 		stack_trace("GetComponent was called to get a component of which multiple copies could be on an object. This can easily break and should be changed. Type: \[[c_type]\]")
-	var/list/dc = datum_components
-	if(!dc)
+	var/list/all_components = datum_components
+	if(!all_components)
 		return null
-	var/datum/component/C = dc[c_type]
-	if(C)
-		if(length(C))
-			C = C[1]
-		if(C.type == c_type)
-			return C
+	var/datum/component/potential_component
+	if(length(all_components))
+		potential_component = all_components[c_type]
+	if(potential_component?.type == c_type)
+		return potential_component
 	return null
 
 /**

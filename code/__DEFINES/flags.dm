@@ -97,8 +97,6 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define HIDDEN_AREA (1<<6)
 /// If false, loading multiple maps with this area type will create multiple instances.
 #define UNIQUE_AREA (1<<7)
-/// Can the Xenobio management console transverse this area by default?
-#define XENOBIOLOGY_COMPATIBLE (1<<8)
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask

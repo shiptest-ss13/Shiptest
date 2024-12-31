@@ -617,9 +617,6 @@
 	if(!MP)
 		return 0	//Sanity, this should never happen.
 
-	if(ispath(MP, /mob/living/simple_animal/hostile/construct))
-		return 0 //Verbs do not appear for players.
-
 //Good mobs!
 	if(ispath(MP, /mob/living/simple_animal/pet/cat))
 		return 1
@@ -630,8 +627,6 @@
 	if(ispath(MP, /mob/living/simple_animal/hostile/carp))
 		return 1
 	if(ispath(MP, /mob/living/simple_animal/hostile/mushroom))
-		return 1
-	if(ispath(MP, /mob/living/simple_animal/shade))
 		return 1
 	if(ispath(MP, /mob/living/simple_animal/hostile/killertomato))
 		return 1

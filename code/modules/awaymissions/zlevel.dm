@@ -23,8 +23,6 @@ GLOBAL_LIST_INIT(potentialRandomZlevels, generateMapList(filename = "[global.con
 	if(!current)
 		current = new
 		current.id = id
-		if(delay)
-			current.wait = CONFIG_GET(number/gateway_delay)
 		GLOB.gateway_destinations += current
 	current.target_turfs += get_turf(src)
 

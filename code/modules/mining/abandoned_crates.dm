@@ -124,6 +124,10 @@
 			qdel(src)
 		..()
 
+// No busting open (used to disallow angle grinder cheesing
+/obj/structure/closet/crate/secure/loot/bust_open()
+	boom()
+
 /obj/structure/closet/crate/secure/loot/proc/spawn_loot()
 	var/loot = rand(1,100) //100 different crates with varying chances of spawning
 	switch(loot)
@@ -178,7 +182,6 @@
 			new /obj/item/clothing/shoes/kindleKicks(src)
 		if(65 to 66)
 			new /obj/item/clothing/suit/ianshirt(src)
-			new /obj/item/clothing/suit/hooded/ian_costume(src)
 		if(67 to 68)
 			new /obj/item/toy/plush/awakenedplushie(src)
 		if(69 to 70)
@@ -229,7 +232,7 @@
 			new /obj/item/gun/ballistic/automatic/toy/pistol(src)
 			new /obj/item/gun/ballistic/automatic/toy(src)
 			new /obj/item/gun/ballistic/automatic/toy(src)
-			new /obj/item/ammo_box/foambox(src)
+			new /obj/item/storage/box/ammo/foam_darts(src)
 		if(98)
 			for(var/i in 1 to 3)
 				new /mob/living/simple_animal/hostile/poison/bees/toxin(src)
