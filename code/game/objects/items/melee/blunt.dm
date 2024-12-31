@@ -1,6 +1,6 @@
 /obj/item/melee/brass_knuckles
-	name = "spiked brass knuckles"
-	desc = "spikey."
+	name = "brass knuckles"
+	desc = "yea."
 	icon_state = "powerfist"
 	item_state = "powerfist"
 	hitsound = 'sound/weapons/melee/stab_hit.ogg'
@@ -13,6 +13,11 @@
 	w_class = WEIGHT_CLASS_SMALL
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
 	resistance_flags = FIRE_PROOF
+
+/obj/item/melee/brass_knuckles/spiked
+	name = "spiked brass knuckles"
+	desc = "spikey."
+	sharpness = IS_SHARP
 
 /obj/item/melee/sledgehammer
 	name = "sledgehammer"
@@ -45,11 +50,9 @@
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	name = "breaching sledgehammer"
 	desc = "A large hammer used by the Gorlex Marauder splinters. As powerful as a weapon as it is a shipbreaking and mining tool."
-
 	toolspeed = 0.5
 	wall_decon_damage = MINERAL_WALL_INTEGRITY
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
-	var/wielded = FALSE
 
 /obj/item/melee/sledgehammer/gorlex/Initialize()
 	. = ..()
@@ -60,16 +63,16 @@
 	SIGNAL_HANDLER
 
 	tool_behaviour = TOOL_MINING
-	wielded = TRUE
 
 /obj/item/melee/sledgehammer/gorlex/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
 	tool_behaviour = null
-	wielded = FALSE
 
 /obj/item/melee/sledgehammer/gorlex/attack(mob/living/target, mob/living/user)
 	. = ..()
+	if(!HAS_TRAIT(src, TRAIT_WIELDED))
+		return
 	var/atom/throw_target = get_edge_target_turf(target, user.dir)
 	if(!target.anchored)
 		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)

@@ -205,7 +205,7 @@
 	name = "\improper boarding cutlass"
 	desc = "When beam and bullet puncture the hull, a trustworthy blade will carry you through the fight"
 	icon_state = "pgf-sabre"
-	block_chance = 30
+	self_stam_coef = 0.25
 	force = 22
 
 /obj/item/melee/sword/sabre/suns/telescopic

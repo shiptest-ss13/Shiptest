@@ -13,12 +13,6 @@
 		user.Stun(40)
 		return TRUE
 
-//This is only pathed here because there is currently only melee using it, the second you want to add charged to something just make it /obj/item/get_cell()
-/obj/item/melee/get_cell()
-	var/datum/component/transforming/charged/charged_comp = GetComponent(/datum/component/transforming/charged)
-	if(charged_comp)
-		return charged_comp.cell
-
 /obj/item/melee/chainofcommand
 	name = "chain of command"
 	desc = "A tool used by great men to placate the frothing masses."

@@ -137,7 +137,8 @@
 		source.balloon_alert(owner, "Riposte!")
 		owner.changeNext_move(riposte)
 
-	to_chat(owner, "stamina_damage [stamina_damage] time_since_part [time_since_parry] parry_time_out_time [parry_time_out_time] armour_pen [armour_penetration_percentage] damage [damage] stam_const [stamina_constant] stam_coef [stamina_coefficient]")
+	if(GLOB.Debug2)
+		to_chat(owner, "stamina_damage [stamina_damage] time_since_part [time_since_parry] parry_time_out_time [parry_time_out_time] armour_pen [armour_penetration_percentage] damage [damage] stam_const [stamina_constant] stam_coef [stamina_coefficient]")
 	owner.adjustStaminaLoss(stamina_damage)
 	if(owner.getStaminaLoss() < 100)
 		return COMPONENT_HIT_REACTION_BLOCK
