@@ -14,17 +14,8 @@
 
 	//OTHER
 
-	var/view_range = 7
-	var/short_range = 2 //should not need this
-
-	var/alarm_on = FALSE
+	var/view_range = 5
 	var/busy = FALSE
-	var/emped = FALSE  //Number of consecutive EMP's on this camera
-	var/in_use_lights = 0
-
-	// Upgrades bitflag
-	var/upgrades = 0
-	var/datum/component/empprotection/emp_component
 
 /obj/item/bodycamera/Initialize(mapload)
 	. = ..()
@@ -44,9 +35,9 @@
 
 /obj/item/bodycamera/examine(mob/user)
 	. += ..()
-	. += "The [src] is currently [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle its status."
-	. += "The [src] is set to a nametag of '[c_tag]'. Use a multitool on the [src] in order to set a new nametag."
-	. += "The [src] is set to transmit on the '[network[1]]' network. Use a multitool on the [src] in order to set it to transmit across a different network."
+	. += "The body camera is currently [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle its status."
+	. += "The body camera is set to a nametag of '[c_tag]'. Use a multitool on [src] in order to set a new nametag."
+	. += "The body camera is set to transmit on the '[network[1]]' network. Use a multitool on [src] in order to set it to transmit across a different network."
 
 /obj/item/bodycamera/AltClick(mob/user)
 	. = ..()
@@ -127,10 +118,6 @@
 
 /obj/item/bodycamera/proc/isXRay()
 	return FALSE
-
-/obj/item/bodycamera/get_remote_view_fullscreens(mob/user)
-	if(view_range == short_range) //unfocused
-		user.overlay_fullscreen("remote_view", /atom/movable/screen/fullscreen/impaired, 2)
 
 /obj/item/bodycamera/update_remote_sight(mob/living/user)
 	user.see_invisible = SEE_INVISIBLE_LIVING //can't see ghosts through cameras

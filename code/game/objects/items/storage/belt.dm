@@ -307,6 +307,7 @@
 		/obj/item/holosign_creator/security,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box/magazine/ammo_stack, //handfuls of bullets
+		/obj/item/bodycamera,
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()
@@ -392,7 +393,8 @@
 		/obj/item/storage/bag/plants,
 		/obj/item/stack/marker_beacon,
 		/obj/item/restraints/legcuffs/bola/watcher,
-		/obj/item/melee/sword/bone
+		/obj/item/melee/sword/bone,
+		/obj/item/bodycamera,
 		))
 
 
