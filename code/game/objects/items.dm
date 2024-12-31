@@ -19,7 +19,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	name = "item"
 	icon = 'icons/obj/items.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
-	bad_type = /obj/item
 	///icon state name for inhand overlays
 	var/item_state = null
 	///Icon file for left hand inhand overlays
@@ -217,10 +216,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/outline_filter
 
 	var/canMouseDown = FALSE
-
-	//for setting world icons on the go
-	var/inventory_state
-	var/world_state
 
 	var/attack_cooldown = CLICK_CD_MELEE
 

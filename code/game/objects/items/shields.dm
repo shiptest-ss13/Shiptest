@@ -29,9 +29,12 @@
 	var/is_bashable = TRUE
 	/// sound when a shield is bashed
 	var/shield_bash_sound = 'sound/effects/shieldbash.ogg'
+	var/recoil_bonus = -2
 
 /obj/item/shield/examine(mob/user)
 	. = ..()
+	if(recoil_bonus)
+		. += span_info("Firing a gun while holding this will brace against it, reducing the impact of recoil.")
 	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
 	switch(healthpercent)
 		if(50 to 99)
