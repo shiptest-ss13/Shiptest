@@ -269,15 +269,15 @@
 
 		if("Save the camera network to the multitool buffer")
 			M.buffer = network[1]
-			to_chat(user, "<span class='notice'>You add network [network[1]] to the multitool's buffer.</span>")
+			to_chat(user, "<span class='notice'>You add network '[network[1]]' to the multitool's buffer.</span>")
 
 		if("Transfer the network in the buffer to the camera")
 			network[1] = M.buffer
-			to_chat(user, "<span class='notice'>You set the camera to network [network[1]] from the multiool's buffer.</span>")
+			to_chat(user, "<span class='notice'>You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer.</span>")
 
 		if("Change the camera network")
-			network[1] = stripped_input(user, "Set a network for this camera. 32 characters max.", "Network", max_length = 32)
-			to_chat(user, "<span class='notice'>You set the camera network to [network[1]].</span>")
+			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are not case sensitive.", "Network Tuning", max_length = 32)
+			to_chat(user, "<span class='notice'>You set [src] to transmit across the '[network[1]]' network.</span>")
 
 	return TRUE
 
