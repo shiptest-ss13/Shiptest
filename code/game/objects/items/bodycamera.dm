@@ -46,9 +46,10 @@
 		status = !status
 		if(status)
 			icon_state = "bodycamera-on"
+			playsound(user, 'sound/items/bodycamera_on.ogg', 25, FALSE)
 		else
 			icon_state = "bodycamera-off"
-		playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE) //I want this to be like a "beep ^beep" sound when turned on and a "beep Vbeep" sound when turned off
+			playsound(user, 'sound/items/bodycamera_off.ogg', 25, FALSE)
 		user.visible_message(
 			span_notice("[user] turns [src] [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
 			span_notice("You turn [src] [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
