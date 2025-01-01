@@ -108,7 +108,7 @@ export const CameraConsoleContent = (props, context) => {
           placeholder="Enter a network"
           onInput={(e, value) =>
             act('set_temp_network', {
-              name: value
+              name: value,
             })
           }
         />
