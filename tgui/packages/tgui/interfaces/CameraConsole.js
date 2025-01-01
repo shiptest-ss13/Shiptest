@@ -49,15 +49,14 @@ export const CameraConsole = (props, context) => {
     <Window width={870} height={708} resizable>
       <div className="CameraConsole__left">
         <Window.Content scrollable>
-
           <CameraConsoleContent />
         </Window.Content>
       </div>
       <div className="CameraConsole__right">
         <div className="CameraConsole__toolbar">
           <b>Network: </b>
-          {(data.network) || '—'}
-          <b>{"\n"}</b>
+          {data.network || '—'}
+          <b>{'\n'}</b>
           <b>Camera: </b>
           {(activeCamera && activeCamera.name) || '—'}
         </div>
@@ -112,18 +111,8 @@ export const CameraConsoleContent = (props, context) => {
             })
           }
         />
-        <Button
-            icon="add"
-            ml={1}
-            onClick={() =>
-              act('set_network')
-            }
-          />
-        <Button
-            icon="refresh"
-            onClick={() => act('refresh')
-            }
-          />
+        <Button icon="add" ml={1} onClick={() => act('set_network')} />
+        <Button icon="refresh" onClick={() => act('refresh')} />
       </Flex.Item>
       <Flex.Item>
         <Input
