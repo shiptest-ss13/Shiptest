@@ -48,7 +48,7 @@
 			"y" = 18,
 		)
 	)
-//TEST CHANGE
+
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
 	if(!(. & EMP_PROTECT_CONTENTS))
