@@ -180,7 +180,9 @@
 	// we don't need to update anything.
 	// Most security cameras will end here as they're not moving.
 	if(istype(active_camera, /obj/machinery/camera))
-		return
+		var/newturf = get_turf(cam_location)
+		if(last_camera_turf == newturf)
+			return
 
 	// Cameras that get here are moving, and are likely attached to some moving atom such as cyborgs.
 	last_camera_turf = get_turf(cam_location)
