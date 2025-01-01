@@ -157,6 +157,7 @@
 /obj/machinery/computer/security/proc/ui_refresh(mob/user, datum/tgui/ui)
 	ui.close()
 	ui_interact(user, ui)
+	show_camera_static()
 
 /obj/machinery/computer/security/ui_act(action, params, ui)
 	. = ..()

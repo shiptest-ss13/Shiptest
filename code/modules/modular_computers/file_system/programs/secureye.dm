@@ -114,6 +114,7 @@
 /datum/computer_file/program/secureye/proc/ui_refresh(mob/user, datum/tgui/ui)
 	ui.close()
 	ui_interact(user, ui)
+	show_camera_static()
 
 /datum/computer_file/program/secureye/ui_act(action, params, ui)
 	. = ..()
