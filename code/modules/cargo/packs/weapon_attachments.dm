@@ -55,13 +55,13 @@
 /datum/supply_pack/attachment/scope
 	name = "Scope Crate"
 	desc = "Contains a single scope to be mounted on a firearm."
-	cost = 100
+	cost = 400
 	contains = list(/obj/item/attachment/scope)
 	crate_name = "scope crate"
 
 /datum/supply_pack/attachment/rail_light
 	name = "Long Scope Crate"
 	desc = "Contains a single high powered scope to be mounted on a firearm."
-	cost = 100
+	cost = 800
 	contains = list(/obj/item/attachment/long_scope)
 	crate_name = "scope crate"
