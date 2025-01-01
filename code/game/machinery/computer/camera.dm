@@ -9,6 +9,8 @@
 	var/list/network = list("ss13")
 	var/tempNetwork = list("")
 	var/obj/machinery/camera/active_camera
+	/// The turf where the camera was last updated.
+	var/turf/last_camera_turf
 	var/list/concurrent_users = list()
 
 	// Stuff needed to render the map
@@ -69,21 +71,16 @@
 	var/obj/item/multitool/M = I
 	if(M.buffer != null)
 		network = M.buffer
-		to_chat(user, "<span class='notice'>You copy the network [M.buffer] from the multitool's buffer.</span>")
+		to_chat(user, "<span class='notice'>You input network '[M.buffer]' from the multitool's buffer into [src].</span>")
 	return
 
 /obj/machinery/computer/security/ui_interact(mob/user, datum/tgui/ui)
 	// Update UI
 	ui = SStgui.try_update_ui(user, src, ui)
+
 	// Show static if can't use the camera
-	if(istype(active_camera, /obj/machinery/camera))
-		var/obj/machinery/camera/active_camera_S = active_camera
-		if(!active_camera_S?.can_use())
-			show_camera_static()
-	else if(istype(active_camera, /obj/item/bodycamera))
-		var/obj/machinery/camera/active_camera_B = active_camera
-		if(!active_camera_B?.can_use())
-			show_camera_static()
+	update_active_camera_screen()
+
 	if(!ui)
 		var/user_ref = REF(user)
 		var/is_living = isliving(user)
@@ -112,7 +109,7 @@
 			var/obj/machinery/camera/active_camera_S = active_camera
 			if(!active_camera_S?.can_use())
 				data["activeCamera"] = list(
-					name = active_camera_S.c_tag +  " (DEACTIVATED)",
+					name = active_camera_S.c_tag,
 					status = active_camera_S.status,
 				)
 			else
@@ -124,9 +121,9 @@
 
 		else if(istype(active_camera, /obj/item/bodycamera))
 			var/obj/machinery/camera/active_camera_B = active_camera
-			if(active_camera_B?.can_use())
+			if(!active_camera_B?.can_use())
 				data["activeCamera"] = list(
-					name = active_camera_B.c_tag +  " (DEACTIVATED)",
+					name = active_camera_B.c_tag,
 					status = active_camera_B.status,
 				)
 			else
@@ -146,24 +143,14 @@
 		var/obj/C = cameras[i]
 		if(istype(C, /obj/machinery/camera))
 			var/obj/machinery/camera/C_cam = C
-			if(!C_cam?.can_use())
-				data["cameras"] += list(list(
-					name = C_cam.c_tag + " (DEACTIVATED)",
-				))
-			else
-				data["cameras"] += list(list(
-					name = C_cam.c_tag,
-				))
+			data["cameras"] += list(list(
+				name = C_cam.c_tag,
+			))
 		else if(istype(C, /obj/item/bodycamera))
 			var/obj/item/bodycamera/C_cam = C
-			if(!C_cam?.can_use())
-				data["cameras"] += list(list(
-					name = C_cam.c_tag + " (DEACTIVATED)",
-				))
-			else
-				data["cameras"] += list(list(
-					name = C_cam.c_tag,
-				))
+			data["cameras"] += list(list(
+				name = C_cam.c_tag,
+			))
 	return data
 
 //This is the only way to refresh the UI, from what I've found
@@ -190,60 +177,10 @@
 		var/c_tag = params["name"]
 		var/list/cameras = get_available_cameras()
 		var/obj/C = cameras[c_tag]
+		active_camera = C
 		playsound(src, get_sfx("terminal_type"), 25, FALSE)
 
-		if(istype(C, /obj/machinery/camera))
-			var/obj/machinery/camera/active_camera_S = C
-
-			// Show static if can't use the camera
-			if(!active_camera_S?.can_use())
-				show_camera_static()
-				return TRUE
-
-			var/list/visible_turfs = list()
-			for(var/turf/T in (active_camera_S.isXRay() \
-					? range(active_camera_S.view_range, active_camera_S) \
-					: view(active_camera_S.view_range, active_camera_S)))
-				visible_turfs += T
-
-			var/list/bbox = get_bbox_of_atoms(visible_turfs)
-			var/size_x = bbox[3] - bbox[1] + 1
-			var/size_y = bbox[4] - bbox[2] + 1
-
-			cam_screen.vis_contents = visible_turfs
-			cam_background.icon_state = "clear"
-			cam_background.fill_rect(1, 1, size_x, size_y)
-
-		if(istype(C, /obj/item/bodycamera))
-			var/obj/item/bodycamera/active_camera_B = C
-
-			// Show static if can't use the camera
-			if(!active_camera_B?.can_use())
-				show_camera_static()
-				return TRUE
-
-			var/list/visible_turfs = list()
-
-			// Derived from https://github.com/tgstation/tgstation/pull/52767
-			// Is this camera located in or attached to a living thing? If so, assume the camera's loc is the living thing.
-			var/cam_location = active_camera_B.loc
-
-			// Is the camera in the following items? If so, let it transmit an image as normal
-			if((istype(cam_location, /obj/item/clothing/suit/armor)) || (istype(cam_location, /obj/item/clothing/head/helmet)) || istype(cam_location, /obj/item/storage/belt))
-				cam_location = active_camera_B.loc.loc
-
-			var/list/visible_things =  view(active_camera_B.view_range, cam_location)
-
-			for(var/turf/visible_turf in visible_things)
-				visible_turfs += visible_turf
-
-			var/list/bbox = get_bbox_of_atoms(visible_turfs)
-			var/size_x = bbox[3] - bbox[1] + 1
-			var/size_y = bbox[4] - bbox[2] + 1
-
-			cam_screen.vis_contents = visible_turfs
-			cam_background.icon_state = "clear"
-			cam_background.fill_rect(1, 1, size_x, size_y)
+		update_active_camera_screen()
 
 		return TRUE
 
@@ -259,6 +196,69 @@
 		active_camera = null
 		playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)
 		use_power(0)
+
+/obj/machinery/computer/security/proc/update_active_camera_screen()
+	if(istype(active_camera, /obj/machinery/camera))
+		var/obj/machinery/camera/active_camera_S = active_camera
+
+		// Show static if can't use the camera
+		if(!active_camera_S?.can_use())
+			show_camera_static()
+			return TRUE
+
+		var/list/visible_turfs = list()
+		for(var/turf/T in (active_camera_S.isXRay() \
+				? range(active_camera_S.view_range, active_camera_S) \
+				: view(active_camera_S.view_range, active_camera_S)))
+			visible_turfs += T
+
+		var/list/bbox = get_bbox_of_atoms(visible_turfs)
+		var/size_x = bbox[3] - bbox[1] + 1
+		var/size_y = bbox[4] - bbox[2] + 1
+
+		cam_screen.vis_contents = visible_turfs
+		cam_background.icon_state = "clear"
+		cam_background.fill_rect(1, 1, size_x, size_y)
+
+	if(istype(active_camera, /obj/item/bodycamera))
+		var/obj/item/bodycamera/active_camera_B = active_camera
+
+		// Show static if can't use the camera
+		if(!active_camera_B?.can_use())
+			show_camera_static()
+			return TRUE
+
+		var/list/visible_turfs = list()
+
+		// Derived from https://github.com/tgstation/tgstation/pull/52767
+		// Is this camera located in or attached to a living thing? If so, assume the camera's loc is the living thing.
+		var/cam_location = active_camera_B.loc
+
+		// Is the camera in the following items? If so, let it transmit an image as normal
+		if((istype(cam_location, /obj/item/clothing/suit/armor)) || (istype(cam_location, /obj/item/clothing/head/helmet)) || istype(cam_location, /obj/item/storage/belt))
+			cam_location = active_camera_B.loc.loc
+
+		// If we're not forcing an update for some reason and the cameras are in the same location,
+		// we don't need to update anything.
+		// Most security cameras will end here as they're not moving.
+		if(istype(active_camera, /obj/machinery/camera))
+			return
+
+		// Cameras that get here are moving, and are likely attached to some moving atom such as cyborgs.
+		last_camera_turf = get_turf(cam_location)
+
+		var/list/visible_things =  view(active_camera_B.view_range, cam_location)
+
+		for(var/turf/visible_turf in visible_things)
+			visible_turfs += visible_turf
+
+		var/list/bbox = get_bbox_of_atoms(visible_turfs)
+		var/size_x = bbox[3] - bbox[1] + 1
+		var/size_y = bbox[4] - bbox[2] + 1
+
+		cam_screen.vis_contents = visible_turfs
+		cam_background.icon_state = "clear"
+		cam_background.fill_rect(1, 1, size_x, size_y)
 
 /obj/machinery/computer/security/proc/show_camera_static()
 	cam_screen.vis_contents.Cut()

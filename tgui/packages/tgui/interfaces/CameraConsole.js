@@ -54,7 +54,6 @@ export const CameraConsole = (props, context) => {
         </Window.Content>
       </div>
       <div className="CameraConsole__right">
-
         <div className="CameraConsole__toolbar">
           <b>Network: </b>
           {(data.network) || '—'}
@@ -62,7 +61,6 @@ export const CameraConsole = (props, context) => {
           <b>Camera: </b>
           {(activeCamera && activeCamera.name) || '—'}
         </div>
-
         <div className="CameraConsole__toolbarRight">
           <Button
             icon="chevron-left"
@@ -101,9 +99,7 @@ export const CameraConsoleContent = (props, context) => {
   const { activeCamera } = data;
   const cameras = selectCameras(data.cameras, searchText);
   return (
-
     <Flex direction={'column'} height="100%">
-
       <Flex.Item>
         <Input
           autoFocus
@@ -116,7 +112,6 @@ export const CameraConsoleContent = (props, context) => {
             })
           }
         />
-
         <Button
             icon="add"
             ml={1}
@@ -124,15 +119,12 @@ export const CameraConsoleContent = (props, context) => {
               act('set_network')
             }
           />
-
         <Button
             icon="refresh"
             onClick={() => act('refresh')
             }
           />
-
       </Flex.Item>
-
       <Flex.Item>
         <Input
           autoFocus
