@@ -134,7 +134,7 @@
 	playsound(owner, sound_to_play, clamp(stamina_damage, 40, 120))
 	//Riposte!
 	if(riposte != -1)
-		source.balloon_alert(owner, "Riposte!")
+		source.balloon_alert(owner, "riposte!")
 		owner.changeNext_move(riposte)
 
 	if(GLOB.Debug2)
