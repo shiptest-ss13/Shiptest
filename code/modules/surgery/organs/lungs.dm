@@ -76,6 +76,9 @@
 
 	var/crit_stabilizing_reagent = /datum/reagent/medicine/epinephrine
 
+	///Can we smell odors? If false then we don't smell certain gases
+	var/can_smell = TRUE
+
 /obj/item/organ/lungs/New()
 	. = ..()
 	populate_gas_info()
@@ -216,7 +219,8 @@
 			H.reagents.add_reagent(R, breath.get_moles(gas) * 2) // 2 represents molarity of O2, we don't have citadel molarity
 			mole_adjustments[gas] = (gas in mole_adjustments) ? mole_adjustments[gas] - breath.get_moles(gas) : -breath.get_moles(gas)
 
-	handle_smell(breath, H)
+	if(can_smell)
+		handle_smell(breath, H)
 
 	for(var/gas in mole_adjustments)
 		breath.adjust_moles(gas, mole_adjustments[gas])
@@ -491,7 +495,6 @@
 				// Even though breathing via internals TECHNICALLY exhales into the environment, we'll still block it
 				if(breather.internal)
 					return
-				emit_breath_particle(breather, /particles/fog/breath, part_count)
 
 	if(!HAS_TRAIT(breather, TRAIT_RESISTHEAT)) // HEAT DAMAGE
 		var/heat_modifier = breather.dna.species.heatmod
@@ -581,6 +584,8 @@
 	icon_state = "lungs-plasma"
 
 	breathing_class = BREATH_PLASMA
+
+	can_smell = FALSE
 
 /obj/item/organ/lungs/plasmaman/populate_gas_info()
 	..()

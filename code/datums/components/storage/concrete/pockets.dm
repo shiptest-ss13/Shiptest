@@ -107,9 +107,12 @@
 	can_hold = typecacheof(list(
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
-		/obj/item/ammo_box))
+		/obj/item/gun/energy/laser,
+		/obj/item/gun/energy/e_gun,
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me
 	can_hold_max_of_items = typecacheof(list(
-		/obj/item/gun/ballistic = 1
+		/obj/item/gun = 1,
 	))
 
 /datum/component/storage/concrete/pockets/holster/real_location()
