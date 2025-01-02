@@ -2,7 +2,7 @@ SUBSYSTEM_DEF(overmap)
 	name = "Overmap"
 	wait = 10
 	init_order = INIT_ORDER_OVERMAP
-	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
+	flags = SS_KEEP_TIMING
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
 
 	/// All the existing star systems, it's gonna be atleast 1 including the main system

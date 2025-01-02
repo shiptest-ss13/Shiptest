@@ -94,7 +94,6 @@
 		/obj/structure/geyser/random = 8,
 		/obj/structure/vein/sand = 8,
 		/obj/structure/vein/sand/classtwo = 4,
-		/obj/structure/elite_tumor = 4,
 		/obj/structure/vein/sand/classthree = 2,
 		/obj/effect/spawner/random/anomaly/sand = 1,
 		/obj/effect/greeble_spawner/whitesands/oasis = 1,
@@ -199,7 +198,6 @@
 		/obj/structure/vein/sand = 8,
 		/obj/structure/geyser/random = 4,
 		/obj/structure/vein/sand/classtwo = 4,
-		/obj/structure/elite_tumor = 4,
 		/obj/effect/spawner/random/anomaly/sand/cave = 1
 	)
 	mob_spawn_chance = 4

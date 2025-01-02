@@ -107,6 +107,9 @@
 	. = ..()
 	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
 
+/obj/item/ammo_box/magazine/m9mm_cm70/empty
+	start_empty = TRUE
+
 /obj/item/gun/ballistic/automatic/pistol/cm357
 	name = "\improper CM-357"
 	desc = "A semi-automatic magnum handgun designed specifically for BARD's megafauna removal unit, as standard handguns had proven useless as backup weapons. Its heft and power have also made it a status symbol among the few CLIP officers able to requisition one. Chambered in .357."
@@ -204,6 +207,9 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	caliber = "9mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/cm5_9mm/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/cm5_9mm/rubber
 	desc = "A 30-round magazine for the CM-5 submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
@@ -398,6 +404,9 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
 
+/obj/item/ammo_box/magazine/f90/empty
+	start_empty = TRUE
+
 //########### RIFLES ###########//
 /obj/item/gun/ballistic/automatic/assault/cm82
 	name = "\improper CM-82"
@@ -514,6 +523,9 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 /obj/item/ammo_box/magazine/cm40_762_40_box/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/cm40_762_40_box/empty
+	start_empty = TRUE
 
 //########### MISC ###########//
 

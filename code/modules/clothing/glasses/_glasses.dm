@@ -321,7 +321,7 @@
 	patch_one.forceMove(user.drop_location())
 	patch_two.forceMove(user.drop_location())
 	to_chat(user, "<span class='notice'>You undo the knot on the eyepatches.</span>")
-	Destroy()
+	qdel(src)
 
 /obj/item/clothing/glasses/sunglasses/big
 	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Larger than average enhanced shielding blocks flashes."
