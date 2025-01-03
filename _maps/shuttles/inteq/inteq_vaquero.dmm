@@ -892,7 +892,6 @@
 /obj/item/clothing/shoes/combat,
 /obj/effect/turf_decal/hardline_small/right,
 /obj/structure/closet/wall/directional/east{
-	icon_door = "yellow_wall";
 	name = "engineering closet"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -1744,9 +1743,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Bu" = (
-/obj/structure/closet/wall/directional/north{
-	icon_door = "grey_wall"
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
