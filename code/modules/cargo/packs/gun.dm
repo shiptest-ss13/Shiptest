@@ -31,7 +31,7 @@
 
 /datum/supply_pack/gun/commanders
 	name = "Commander Pistol Crate"
-	desc = "Contains a modified Candor 'Commander' pistol, produced by Nanotrasen and chambered in 9mm."
+	desc = "Contains a double stacked Commander pistol, produced by Nanotrasen along with Vigilitas Interstellar and is chambered in 9mm."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/pistol/commander)
 	faction = /datum/faction/nt
