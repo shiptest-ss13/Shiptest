@@ -50,6 +50,7 @@
 					/obj/item/clothing/head/helmet/space/syndicate/black/engie)
 	faction = /datum/faction/syndicate
 	faction_locked = TRUE
+	faction_discount = 0
 
 //inteq
 
@@ -206,6 +207,7 @@
 	crate_name = "neutron star hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/cmt_hardsuit
@@ -216,6 +218,7 @@
 	crate_name = "neutron star hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
 	faction_locked = TRUE
 
 //inteq hardsuits
@@ -238,6 +241,7 @@
 	crate_name = "inteq hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/inteq
+	faction_discount = 0
 	faction_locked = TRUE
 
 //solarian hardsuit
@@ -250,6 +254,7 @@
 	crate_name = "solarian hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/solgov
+	faction_discount = 0
 	faction_locked = TRUE
 
 //clip jardsuits
@@ -262,6 +267,7 @@
 	crate_name = "patroller hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/clip
+	faction_discount = 0
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/spotter_hardsuit
@@ -272,6 +278,7 @@
 	crate_name = "patroller hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/clip
+	faction_discount = 0
 	faction_locked = TRUE
 
 //jardline
@@ -284,6 +291,7 @@
 	crate_name = "white-red hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/syndicate/hardliners
+	faction_discount = 0
 	faction_locked = TRUE
 
 //ngr
@@ -296,6 +304,7 @@
 	crate_name = "beige-red hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/syndicate/ngr
+	faction_discount = 0
 	faction_locked = TRUE
 
 //srm
@@ -308,4 +317,5 @@
 	crate_name = "roumain hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/srm
+	faction_discount = 0
 	faction_locked = TRUE
