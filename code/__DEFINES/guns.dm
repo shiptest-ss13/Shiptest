@@ -121,6 +121,7 @@
 #define COMSIG_ATTACHMENT_UPDATE_OVERLAY "attach-overlay"
 #define COMSIG_ATTACHMENT_UNIQUE_ACTION "attach-unique-action"
 #define COMSIG_ATTACHMENT_CTRL_CLICK "attach-ctrl-click"
+#define COMSIG_ATTACHMENT_ALT_CLICK "attach-alt-click"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 

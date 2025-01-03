@@ -84,7 +84,13 @@
 /datum/component/attachment_holder/proc/handle_alt_click(obj/item/parent, mob/user)
 	SIGNAL_HANDLER
 
-	INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
+	if(user.a_intent == INTENT_HARM)
+		INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
+		return TRUE
+	else
+		for(var/obj/item/attach as anything in attachments)
+			if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_ALT_CLICK, parent, user))
+				return TRUE
 
 /datum/component/attachment_holder/proc/handle_ctrl_click(obj/item/parent, mob/user)
 	SIGNAL_HANDLER
@@ -163,13 +169,15 @@
 		var/selected = tgui_input_list(user, "Select Attachment", "Detach", tool_list)
 		if(!parent.Adjacent(user) || !selected || !tool || !tool.use_tool(parent, user, 2 SECONDS * tool.toolspeed))
 			return
-		do_detach(tool_list[selected], user)
+		if(selected)
+			do_detach(tool_list[selected], user)
 	else
 		if(!length(hand_list))
 			return
 		var/selected = tgui_input_list(user, "Select Attachment", "Detach", hand_list)
-		if(do_after(user, 2 SECONDS, parent))
-			do_detach(hand_list[selected], user)
+		if(selected)
+			if(do_after(user, 2 SECONDS, parent))
+				do_detach(hand_list[selected], user)
 
 
 /datum/component/attachment_holder/proc/handle_attack(obj/item/parent, obj/item/item, mob/user)

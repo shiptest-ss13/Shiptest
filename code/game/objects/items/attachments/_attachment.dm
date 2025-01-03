@@ -56,6 +56,7 @@
 		CALLBACK(src, PROC_REF(on_wield)), \
 		CALLBACK(src, PROC_REF(on_unwield)), \
 		CALLBACK(src, PROC_REF(on_examine)), \
+		CALLBACK(src, PROC_REF(on_alt_click)), \
 		signals)
 
 /obj/item/attachment/Destroy()
@@ -112,6 +113,10 @@
 
 /obj/item/attachment/proc/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	return
+
+/obj/item/attachment/proc/on_alt_click(obj/item/gun/gun, mob/user, list/examine_list)
+	AltClick(user)
+	return TRUE
 
 /obj/item/attachment/examine(mob/user)
 	. = ..()

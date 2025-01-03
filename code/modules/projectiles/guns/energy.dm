@@ -162,19 +162,20 @@
 	var/obj/item/stock_parts/cell/gun/old_cell = cell
 	old_cell.update_appearance()
 	cell = null
-	to_chat(user, span_notice("You pull the cell out of \the [src]."))
 	update_appearance()
-	if(tac_load && tac_reloads)
-		if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
-			if(insert_cell(user, tac_load))
-				to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
+	if(user)
+		to_chat(user, span_notice("You pull the cell out of \the [src]."))
+		if(tac_load && tac_reloads)
+			if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
+				if(insert_cell(user, tac_load))
+					to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
+				else
+					to_chat(user, span_warning("You dropped the old cell, but the new one doesn't fit. How embarassing."))
 			else
-				to_chat(user, span_warning("You dropped the old cell, but the new one doesn't fit. How embarassing."))
-		else
-			to_chat(user, span_warning("Your reload was interupted!"))
-			return
+				to_chat(user, span_warning("Your reload was interupted!"))
+				return
 
-	user.put_in_hands(old_cell)
+		user.put_in_hands(old_cell)
 	update_appearance()
 
 //special is_type_in_list method to counteract problem with current method
@@ -185,6 +186,8 @@
 	return FALSE
 
 /obj/item/gun/energy/AltClick(mob/living/user)
+	if(..())
+		return
 	if(!internal_magazine && latch_closed)
 		to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
 		if(do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
@@ -194,8 +197,8 @@
 			latch_closed = FALSE
 			update_appearance()
 	else if(!internal_magazine && !latch_closed)
-		if(!cell && is_attachment_in_contents_list())
-			return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
+		// if(!cell && is_attachment_in_contents_list())
+		// 	return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
 		to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
 		if (do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
 			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + "<span class='green'>CLOSED</span>" + "."))
