@@ -237,6 +237,6 @@
 	if(O.vein_contents.len > 0)
 		to_chat(user, "<span class='notice'>Class [O.vein_class] ore vein with [O.mining_charges] possible ore lodes found.</span>")
 		for(var/re in O.vein_contents)
-			to_chat(user, "<span class='notice'>\tExtractable amounts of [re].</span>")
+			to_chat(user, "<span class='notice'>\tExtractable amounts of [re.name].</span>")
 	else
 		to_chat(user, "<span class='notice'>No notable mineral deposits found in [O].</span>")
