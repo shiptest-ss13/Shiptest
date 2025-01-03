@@ -80,7 +80,7 @@
 #define NON_PROJECTILE_ATTACKS list(MELEE_ATTACK, UNARMED_ATTACK, LEAP_ATTACK)
 
 // the standard parry time out time
-#define PARRY_DEFAULT_TIMEOUT 0.75 SECONDS
+#define PARRY_DEFAULT_TIMEOUT 1 SECONDS
 #define PARRY_RIPOST 0.50 SECONDS
 
 //attack visual effects
