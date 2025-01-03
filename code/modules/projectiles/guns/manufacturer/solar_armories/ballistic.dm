@@ -203,7 +203,7 @@
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	spread = -5
 	spread_unwielded = 20
-	recoil = 0
-	recoil_unwielded = 4
+	recoil = 1
+	recoil_unwielded = 8
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
