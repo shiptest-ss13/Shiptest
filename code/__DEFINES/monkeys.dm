@@ -9,9 +9,9 @@
 /// How long does it take the item to be taken from a mobs hand
 #define MONKEY_ITEM_SNATCH_DELAY 25
 /// Probability monkey will aggro when cuffed
-#define MONKEY_CUFF_RETALIATION_PROB20
+#define MONKEY_CUFF_RETALIATION_PROB 20
 /// Probability monkey will aggro when syringed
-#define MONKEY_SYRINGE_RETALIATION_PROB20
+#define MONKEY_SYRINGE_RETALIATION_PROB 20
 
 // Probability per Life tick that the monkey will:
 /// probability that monkey resist out of restraints
