@@ -64,12 +64,9 @@
 		begin_processing()
 
 /obj/machinery/clonepod/Destroy()
-	var/mob/living/mob_occupant = occupant
-	go_out()
-	if(mob_occupant)
-		log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to Destroy().")
 	QDEL_NULL(radio)
 	QDEL_NULL(countdown)
+	QDEL_NULL(occupant)
 	if(connected)
 		connected.DetachCloner(src)
 	QDEL_LIST(unattached_flesh)
