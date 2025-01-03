@@ -110,6 +110,7 @@
 /datum/component/attachment_holder/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
 	if(length(attachments))
 		examine_list += span_notice("It has [length(attachments)] attachment\s.")
+		examine_list += span_notice("You can remove them by pressing alt-click on the [parent] on harm intent.")
 	for(var/obj/item/attach as anything in attachments)
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE, user, examine_list)
 
