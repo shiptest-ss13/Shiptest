@@ -387,8 +387,8 @@
 	var/should_stun = (!(flags & SHOCK_TESLA) || siemens_coeff > 0.5) && !(flags & SHOCK_NOSTUN)
 	if(should_stun)
 		Paralyze(40)
-	//Jitter and other fluff.
-	jitteriness += 1000
+	//jitter and other fluff.
+	adjust_jitter(1000, max = 1500)
 	do_jitter_animation(jitteriness)
 	stuttering += 2
 	addtimer(CALLBACK(src, PROC_REF(secondary_shock), should_stun), 20)
