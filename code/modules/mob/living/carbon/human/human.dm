@@ -569,10 +569,6 @@
 				if("Paroled")
 					threatcount += 2
 
-	//Check for dresscode violations
-	if(istype(head, /obj/item/clothing/head/wizard) || istype(head, /obj/item/clothing/head/helmet/space/hardsuit/wizard))
-		threatcount += 2
-
 	//Check for nonhuman scum
 	if(dna && dna.species.id && dna.species.id != SPECIES_HUMAN)
 		threatcount += 1
