@@ -34,14 +34,14 @@
 	UnregisterSignal(parent, COMSIG_ITEM_HIT_REACT)
 	var/obj/item/I = parent
 	if(ismob(I.loc))
-		UnregisterSignal(I.loc, COMSIG_LIVING_RESIST)
+		UnregisterSignal(I.loc, COMSIG_HUMAN_PARRY)
 
 /datum/component/parry/Initialize(
 	_stamina_constant = 0,
 	_stamina_coefficient = 0,
 	_parry_time_out_time = PARRY_DEFAULT_TIMEOUT,
 	_parry_cooldown = 0.75 SECONDS,
-	_riposte = PARRY_RIPOST,
+	_riposte = FALSE,
 	_requires_two_hands = FALSE,
 	_requires_activation = FALSE,
 	_parryable_attack_types = ALL_ATTACK_TYPES
@@ -78,28 +78,29 @@
 /datum/component/parry/proc/equipped(obj/item/source, mob/user, slot)
 	SIGNAL_HANDLER
 	if(slot == ITEM_SLOT_HANDS)
-		RegisterSignal(user, COMSIG_LIVING_RESIST, PROC_REF(start_parry))
+		RegisterSignal(user, COMSIG_HUMAN_PARRY, PROC_REF(start_parry))
 	else
-		UnregisterSignal(user, COMSIG_LIVING_RESIST)
+		UnregisterSignal(user, COMSIG_HUMAN_PARRY)
 
 /datum/component/parry/proc/dropped(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	UnregisterSignal(user, COMSIG_LIVING_RESIST)
+	UnregisterSignal(user, COMSIG_HUMAN_PARRY)
 
 /datum/component/parry/proc/start_parry(mob/living/L)
 	SIGNAL_HANDLER
 	var/time_since_parry = world.time - time_parried
 	if(L.stat != CONSCIOUS)
 		return
-	//if(requires_two_hands && !HAS_TRAIT(parent, TRAIT_WIELDED)) // If our item has special conditions before being able to parry.
-	//	return
+	if(requires_two_hands && !HAS_TRAIT(parent, TRAIT_WIELDED)) // If our item has special conditions before being able to parry.
+		return
 	if(requires_activation && !HAS_TRAIT(parent, TRAIT_TRANSFORM_ACTIVE)) // If our item requires an activation to be able to parry. [E-sword / Teleshield, etc.]
 		return
 	if(time_since_parry < parry_cooldown) // stops spam
 		return
 
 	time_parried = world.time
+	L.changeNext_move(CLICK_CD_PARRY)
 	L.do_attack_animation(L, used_item = parent)
 
 /datum/component/parry/proc/attempt_parry(obj/item/source, mob/living/carbon/human/owner, atom/movable/hitby, damage = 0, attack_type = MELEE_ATTACK)
@@ -107,7 +108,7 @@
 	if(!(attack_type in parryable_attack_types))
 		return
 	var/time_since_parry = world.time - time_parried
-	if(time_since_parry > parry_time_out_time)
+	if(time_since_parry > parry_time_out_time + parry_time_out_time)
 		return
 
 	var/armour_penetration_percentage = 0
@@ -133,9 +134,9 @@
 
 	playsound(owner, sound_to_play, clamp(stamina_damage, 40, 120))
 	//Riposte!
-	if(riposte != -1)
+	if(riposte)
 		source.balloon_alert(owner, "riposte!")
-		owner.changeNext_move(riposte)
+		owner.changeNext_move(0)
 
 	if(GLOB.Debug2)
 		to_chat(owner, "stamina_damage [stamina_damage] time_since_part [time_since_parry] parry_time_out_time [parry_time_out_time] armour_pen [armour_penetration_percentage] damage [damage] stam_const [stamina_constant] stam_coef [stamina_coefficient]")
@@ -147,3 +148,4 @@
 	SIGNAL_HANDLER
 
 	examine_list += examine_text
+	examine_list += "You can parry with the <b>parry<b> button"

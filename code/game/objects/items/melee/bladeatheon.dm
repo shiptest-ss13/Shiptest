@@ -18,7 +18,7 @@
 	attack_verb =  list("pierced", "swipe", "slash", "chop")
 	self_stam_const = 5
 	self_stam_coef = 0.5
-	riposte = 0.1 SECONDS
+	riposte = TRUE
 
 /obj/item/melee/sword/pedang/Initialize()
 	. = ..()

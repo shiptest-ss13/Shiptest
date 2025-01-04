@@ -72,6 +72,8 @@
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
 		if(attempt_initiate_surgery(I, src, user))
 			return TRUE
+	//This should really be in attack but 2 much logic doesnt call parent
+	user.changeNext_move(I.attack_cooldown)
 	return I.attack(src, user)
 
 /mob/living/attack_hand(mob/living/user)
@@ -93,8 +95,6 @@
  * * mob/living/user - The mob hitting with this item
  */
 /obj/item/proc/attack(mob/living/M, mob/living/user)
-	user.changeNext_move(attack_cooldown)
-
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
 		return
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, M, user)

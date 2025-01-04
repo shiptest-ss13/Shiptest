@@ -48,9 +48,10 @@
 #define CLICK_CD_CLICK_ABILITY 6
 #define CLICK_CD_BREAKOUT 100
 #define CLICK_CD_HANDCUFFED 10
-#define CLICK_CD_RESIST 6
+#define CLICK_CD_RESIST 20
 #define CLICK_CD_GRABBING 10
 #define CLICK_CD_LOOK_UP 5
+#define CLICK_CD_PARRY 8
 
 //Cuff resist speeds
 #define FAST_CUFFBREAK 1
@@ -81,7 +82,6 @@
 
 // the standard parry time out time
 #define PARRY_DEFAULT_TIMEOUT 1 SECONDS
-#define PARRY_RIPOST 0.50 SECONDS
 
 //attack visual effects
 #define ATTACK_EFFECT_PUNCH "punch"
