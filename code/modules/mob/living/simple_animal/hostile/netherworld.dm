@@ -147,7 +147,7 @@
 	..()
 	if(stat)
 		return
-	if(prob(10))
+	if(prob(1))
 		var/chosen_sound = pick(migo_sounds)
 		playsound(src, chosen_sound, 50, TRUE)
 
