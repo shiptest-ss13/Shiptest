@@ -39,6 +39,11 @@
 			"description": "The prefix of the ship class, appended to randomly generated names when they're first purchased.",
 			"maxLength": 5
 		},
+		"manufacturer": {
+			"title": "Ship Manufacturer",
+			"type": [ "null", "string" ],
+			"description": "The manufacturer of the ship class, used in autowiki templates."
+		},
 		"namelists": {
 			"title": "Namelists",
 			"type": "array",
