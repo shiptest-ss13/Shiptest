@@ -215,6 +215,9 @@
 ///from base of atom/set_opacity(): (new_opacity)
 #define COMSIG_ATOM_SET_OPACITY "atom_set_opacity"
 
+///from base of atom/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+#define COMSIG_ATOM_HITBY "atom_hitby"
+
 /// from base of /atom/movable/proc/on_virtual_z_change():  (new_virtual_z, old_virtual_z)
 #define COMSIG_ATOM_VIRTUAL_Z_CHANGE "atom_virtual_z_change"
 
@@ -484,6 +487,8 @@
 #define COMSIG_LIVING_DROP_LIMB "living_drop_limb"
 ///from base of mob/living/set_buckled(): (new_buckled)
 #define COMSIG_LIVING_SET_BUCKLED "living_set_buckled"
+///From post-can inject check of syringe after attack (mob/user)
+#define COMSIG_LIVING_TRY_SYRINGE "living_try_syringe"
 
 ///sent from borg recharge stations: (amount, repairs)
 #define COMSIG_PROCESS_BORGCHARGER_OCCUPANT "living_charge"

@@ -138,6 +138,9 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /mob/living/carbon/attack_hand(mob/living/carbon/human/user)
 
+	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_HAND, user) & COMPONENT_CANCEL_ATTACK_CHAIN)
+		. = TRUE
+
 	for(var/datum/surgery/S in surgeries)
 		if(body_position != LYING_DOWN && S.lying_required)
 			continue
