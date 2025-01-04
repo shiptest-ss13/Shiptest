@@ -8,15 +8,27 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
-	block_chance = 10
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = IS_SHARP
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
+	var/self_stam_const = 10
+	var/self_stam_coef = 1
+	var/riposte = FALSE
+	///	Lock parrying to only work while transformed
+	var/parry_transformed = FALSE
 
 /obj/item/melee/sword/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
+	AddComponent( \
+		/datum/component/parry, \
+		_stamina_constant = self_stam_const, \
+		_stamina_coefficient = self_stam_coef, \
+		_parryable_attack_types = NON_PROJECTILE_ATTACKS, \
+		_riposte = riposte, \
+		_requires_activation = parry_transformed, \
+	)
 
 //cruft
 /obj/item/melee/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
@@ -31,7 +43,6 @@
 	item_state = "claymore"
 	force = 30
 	throwforce = 10
-	block_chance = 40
 	max_integrity = 200
 
 /obj/item/melee/sword/claymore/Initialize()
@@ -63,11 +74,49 @@
 	base_icon_state = "machete"
 	force = 20
 	throwforce = 15
-	max_integrity = 50
+	max_integrity = 300
+	integrity_failure = 0.50
+	var/broken = FALSE
 
 /obj/item/melee/sword/mass/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=22)
+	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 22, icon_wielded = "[base_icon_state]_w")
+
+/obj/item/melee/sword/mass/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	. = ..()
+	if(.)
+		on_block(owner, hitby, attack_text, damage, attack_type)
+
+/obj/item/melee/sword/mass/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
+	take_damage(damage)
+
+/obj/item/melee/sword/mass/welder_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(broken)
+		if(I.use_tool(src, user, 0, volume = 40))
+			name = src::name
+			broken = FALSE
+			obj_integrity = max_integrity
+		return TRUE
+
+/obj/item/melee/sword/mass/obj_break(damage_flag)
+	. = ..()
+	if(!broken)
+		if(isliving(loc))
+			loc.balloon_alert(loc, "[src] cracks!")
+		name = "broken [src::name]"
+		broken = TRUE
+
+/obj/item/melee/sword/mass/examine(mob/user)
+	. = ..()
+	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
+	switch(healthpercent)
+		if(50 to 99)
+			. += span_info("It looks slightly damaged.")
+		if(25 to 50)
+			. += span_info("It appears heavily damaged.")
+		if(0 to 25)
+			. += span_warning("It's falling apart!")
 
 /obj/item/melee/sword/katana
 	name = "katana"
@@ -78,7 +127,6 @@
 	force = 30
 	throwforce = 10
 	w_class = WEIGHT_CLASS_HUGE
-	block_chance = 10
 	max_integrity = 200
 
 /obj/item/melee/sword/chainsaw
@@ -102,11 +150,14 @@
 	item_state = "sabre"
 	force = 15
 	throwforce = 10
-	block_chance = 60
+	block_chance = 0
 	armour_penetration = 75
 	attack_verb = list("slashed", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
+	self_stam_const = 5
+	self_stam_coef = 0.5
+	riposte = TRUE
 
 /obj/item/melee/sword/sabre/on_enter_storage(datum/component/storage/concrete/S)
 	var/obj/item/storage/belt/sabre/B = S.real_location()
@@ -141,7 +192,7 @@
 	name = "\improper boarding cutlass"
 	desc = "When beam and bullet puncture the hull, a trustworthy blade will carry you through the fight"
 	icon_state = "pgf-sabre"
-	block_chance = 30
+	self_stam_coef = 0.25
 	force = 22
 
 /obj/item/melee/sword/sabre/suns/telescopic
@@ -157,6 +208,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("smacked", "prodded")
 
+	parry_transformed = TRUE
 	var/extend_sound = 'sound/weapons/batonextend.ogg'
 
 	var/on_block_chance = 40

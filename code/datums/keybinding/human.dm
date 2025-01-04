@@ -24,7 +24,7 @@
 	hotkey_keys = list("Space")
 	name = "unique_action"
 	full_name = "Perform unique action"
-	description = ""
+	description = "Primarly used for guns"
 	keybind_signal = COMSIG_KB_HUMAN_UNIQUEACTION
 
 
@@ -35,6 +35,15 @@
 	var/mob/living/carbon/human/current_human = user.mob
 	current_human.do_unique_action()
 	return TRUE
+
+/datum/keybinding/human/parry
+	name = "parry"
+	full_name = "Parry"
+	keybind_signal = COMSIG_KB_HUMAN_PARRY
+
+/datum/keybinding/human/parry/down(client/C)
+	. = ..()
+	SEND_SIGNAL(C.mob, COMSIG_HUMAN_PARRY)
 
 /datum/keybinding/human/quick_equip_belt
 	hotkey_keys = list("ShiftE")

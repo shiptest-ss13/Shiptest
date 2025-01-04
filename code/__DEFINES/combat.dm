@@ -40,7 +40,9 @@
 //Actual combat defines
 
 //click cooldowns, in tenths of a second, used for various combat actions
+#define HEAVY_WEAPON_CD 10
 #define CLICK_CD_MELEE 8
+#define LIGHT_WEAPON_CD 6
 #define CLICK_CD_RANGE 4
 #define CLICK_CD_RAPID 2
 #define CLICK_CD_CLICK_ABILITY 6
@@ -49,6 +51,7 @@
 #define CLICK_CD_RESIST 20
 #define CLICK_CD_GRABBING 10
 #define CLICK_CD_LOOK_UP 5
+#define CLICK_CD_PARRY 8
 
 //Cuff resist speeds
 #define FAST_CUFFBREAK 1
@@ -74,6 +77,11 @@
 #define PROJECTILE_ATTACK 3
 #define THROWN_PROJECTILE_ATTACK 4
 #define LEAP_ATTACK 5
+#define ALL_ATTACK_TYPES list(MELEE_ATTACK, UNARMED_ATTACK, PROJECTILE_ATTACK, THROWN_PROJECTILE_ATTACK, LEAP_ATTACK)
+#define NON_PROJECTILE_ATTACKS list(MELEE_ATTACK, UNARMED_ATTACK, LEAP_ATTACK)
+
+// the standard parry time out time
+#define PARRY_DEFAULT_TIMEOUT 1 SECONDS
 
 //attack visual effects
 #define ATTACK_EFFECT_PUNCH "punch"
