@@ -193,31 +193,21 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_laser
-	name = "Exosuit Weapon (CH-PS \"Immolator\" Laser)"
-	desc = "Allows for the construction of CH-PS Laser."
+	name = "Exosuit Weapon (CH-PS \"Downpour\" energy carbine)"
+	desc = "Allows for the construction of CH-PS energy carbine."
 	id = "mech_laser"
 	build_type = MECHFAB
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/carbine
 	materials = list(/datum/material/iron=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_laser_heavy
-	name = "Exosuit Weapon (CH-LC \"Solaris\" Laser Cannon)"
-	desc = "Allows for the construction of CH-LC Laser Cannon."
+	name = "Exosuit Weapon (CH-LC \"Solaris\" Beam Cannon)"
+	desc = "Allows for the construction of CH-LC Beam Cannon."
 	id = "mech_laser_heavy"
 	build_type = MECHFAB
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
-	materials = list(/datum/material/iron=10000)
-	construction_time = 100
-	category = list("Exosuit Equipment")
-
-/datum/design/mech_disabler
-	name = "Exosuit Weapon (CH-DS \"Peacemaker\" Disabler)"
-	desc = "Allows for the construction of CH-DS Disabler."
-	id = "mech_disabler"
-	build_type = MECHFAB
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	materials = list(/datum/material/iron=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
