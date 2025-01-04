@@ -594,7 +594,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	custom_materials = list(/datum/material/silicon=MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/toxin/leadacetate = 20) //maybe make it a more unique reagent?
 	point_value = 2
-	merge_type = /obj/item/stack/sheet/mineral/lead
+	merge_type = /obj/item/stack/sheet/mineral/silicon
 
 /obj/item/stack/sheet/mineral/silicon/fifty
 	amount = 50
