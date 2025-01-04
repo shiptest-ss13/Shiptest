@@ -33,8 +33,8 @@
 	wanted_objects = list(
 		/obj/item/stack/ore/diamond,
 		/obj/item/stack/ore/gold,
-		/obj/item/stack/ore/silver,
-		/obj/item/stack/ore/uranium)
+		/obj/item/stack/ore/galena,
+		/obj/item/stack/ore/autunite)
 
 	var/chase_time = 100
 	var/will_burrow = TRUE
@@ -45,7 +45,7 @@
 /mob/living/simple_animal/hostile/asteroid/goldgrub/Initialize()
 	. = ..()
 	for (var/i in 1 to rand(1, 3))
-		loot += pick(/obj/item/stack/ore/silver, /obj/item/stack/ore/gold, /obj/item/stack/ore/uranium, /obj/item/stack/ore/diamond)
+		loot += pick(/obj/item/stack/ore/galena, /obj/item/stack/ore/gold, /obj/item/stack/ore/autunite, /obj/item/stack/ore/diamond)
 	spit = new
 	burrow = new
 	spit.Grant(src)
@@ -123,6 +123,8 @@
 			visible_message("<span class='notice'>The [name] looks at [target.name] with hungry eyes.</span>")
 		else if(isliving(target))
 			Aggro()
+			if(client)
+				return
 			visible_message("<span class='danger'>The [name] tries to flee from [target.name]!</span>")
 			retreat_distance = 10
 			minimum_distance = 10
@@ -152,6 +154,8 @@
 		AM.forceMove(loc)
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/proc/Burrow()//Begin the chase to kill the goldgrub in time
+	if(client)
+		return
 	if(!stat)
 		visible_message("<span class='danger'>The [name] buries into the ground, vanishing from sight!</span>")
 		qdel(src)
@@ -163,3 +167,25 @@
 /mob/living/simple_animal/hostile/asteroid/goldgrub/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	vision_range = 9
 	. = ..()
+
+/mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub
+	name = "lavagrub"
+	desc = "A worm that grows fat from eating everything in its sight. This unique mutation seen on lava planetoids sets shit on fucking fire. Probably to ward off predators."
+	icon_state = "lavagrub"
+	icon_living = "lavagrub"
+	icon_aggro = "lavagrub_alert"
+	icon_dead = "lavagrub_dead"
+	deathmessage = "stops moving as the carcass explodes into flames!"
+
+/mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub/Moved(atom/OldLoc, Dir, Forced = FALSE)
+	. = ..()
+	if(isnull(OldLoc))
+		return
+	if(!isturf(OldLoc))
+		return
+	var/turf/flame_to_turf = get_turf(OldLoc)
+	flame_to_turf.IgniteTurf(10)
+
+/mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub/death(gibbed)
+	. = ..()
+	flame_radius(get_turf(src), 2)

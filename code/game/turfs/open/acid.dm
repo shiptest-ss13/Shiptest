@@ -1,6 +1,7 @@
 /turf/open/water/acid
 	name = "acid lake"
 	desc = "A lake of acid."
+	icon = 'icons/turf/floors/ws_floors.dmi'
 	icon_state = "acid"
 	baseturfs = /turf/open/water/acid
 	slowdown = 2

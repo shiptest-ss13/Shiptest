@@ -183,7 +183,7 @@
 	gender = PLURAL
 	name = "dirt"
 	desc = "Upon closer examination, it's still dirt."
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "dirt"
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND

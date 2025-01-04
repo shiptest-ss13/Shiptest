@@ -126,7 +126,6 @@
 	else if (use_beacon && !canBeacon)
 		message = "BEACON ERROR: MUST BE EXPOSED"//beacon's loc/user's loc must be a turf
 	data["message"] = message
-
 	data["supplies"] = supply_pack_data
 	if (cooldown > 0)//cooldown used for printing beacons
 		cooldown--

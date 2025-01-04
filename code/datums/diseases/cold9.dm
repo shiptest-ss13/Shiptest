@@ -28,7 +28,7 @@
 			if(prob(5))
 				to_chat(affected_mob, "<span class='danger'>You feel stiff.</span>")
 		if(3)
-			affected_mob.adjust_bodytemperature(-20)
+			affected_mob.adjust_bodytemperature(-3)
 			if(prob(1))
 				affected_mob.emote("sneeze")
 			if(prob(1))
