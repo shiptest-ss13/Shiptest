@@ -278,7 +278,7 @@
 			return
 	if(!wearer.incapacitated())
 		var/atom/movable/screen/inventory/hand/ui_hand = over_object
-		if(wearer.putItemFromInventoryInHandIfPossible(src, ui_hand.held_index))
+		if(wearer.putItemFromInventoryInHandIfPossible(src, ui_hand.held_index, FALSE, TRUE))
 			add_fingerprint(usr)
 			return ..()
 
