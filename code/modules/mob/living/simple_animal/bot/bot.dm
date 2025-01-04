@@ -791,7 +791,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 /mob/living/simple_animal/bot/proc/do_calc_summon_path(turf/avoid)
 	set_path(get_path_to(src, summon_target, /turf/proc/Distance_cardinal, 0, 150, id=access_card, exclude=avoid))
 	if(!length(path)) //Cannot reach target. Give up and announce the issue.
-		speak("Summon command failed, destination unreachable.",radio_channel)
+		speak("Summon command failed, destination unreachable.", radio_channel)
 		bot_reset()
 
 /mob/living/simple_animal/bot/proc/summon_step()

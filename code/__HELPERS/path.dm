@@ -134,7 +134,7 @@
 	if(!start || !end)
 		stack_trace("Invalid A* start or destination")
 		return FALSE
-	if(start.z != end.z || start == end ) //no pathfinding between z levels
+	if(start.z != end.z || start == end) //no pathfinding between z levels
 		return FALSE
 	if(max_distance && (max_distance < get_dist(start, end))) //if start turf is farther than max_distance from end turf, no need to do anything
 		return FALSE
