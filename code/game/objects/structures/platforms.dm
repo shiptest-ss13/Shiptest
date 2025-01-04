@@ -21,8 +21,8 @@
 
 /obj/structure/platform/update_appearance(updates)
 	. = ..()
-	if(dir == 1)
-		layer = 2.89
+	if(dir == (1 || 5 || 9))
+		layer = 2.76
 	else
 		layer = 3.08
 
