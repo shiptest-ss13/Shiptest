@@ -44,13 +44,3 @@
 	desc = "An integrated disabler that draws from a cyborg's power cell. This weapon contains a limiter to prevent the cyborg's power cell from overheating."
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
-
-/obj/item/gun/energy/disabler/e60
-	name = "E-60"
-	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
-	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
-	icon_state = "e60"
-	manufacturer = MANUFACTURER_EOEHOMA
