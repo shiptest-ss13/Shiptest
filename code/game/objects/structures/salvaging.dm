@@ -56,14 +56,14 @@
 		/obj/item/stack/ore/salvage/scrapgold/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 
-		/obj/effect/spawner/random/salvage_capacitor = 50,
-		/obj/effect/spawner/random/salvage_capacitor = 50,
-		/obj/effect/spawner/random/salvage_scanning = 50,
-		/obj/effect/spawner/random/salvage_scanning = 50,
-		/obj/effect/spawner/random/salvage_matter_bin = 40,
-		/obj/effect/spawner/random/salvage_matter_bin = 40,
-		/obj/effect/spawner/random/salvage_manipulator = 40,
-		/obj/effect/spawner/random/salvage_manipulator = 40,
+		/obj/effect/spawner/random/salvage/part/capacitor = 50,
+		/obj/effect/spawner/random/salvage/part/capacitor = 50,
+		/obj/effect/spawner/random/salvage/part/scanning = 50,
+		/obj/effect/spawner/random/salvage/part/scanning = 50,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
+		/obj/effect/spawner/random/salvage/part/manipulator = 40,
+		/obj/effect/spawner/random/salvage/part/manipulator = 40,
 		/obj/effect/spawner/random/salvage_laser = 40,
 		/obj/effect/spawner/random/salvage_laser = 40,
 	)
@@ -79,7 +79,7 @@
 		/obj/item/stack/ore/salvage/scrapgold/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 
-		/obj/effect/spawner/random/salvage_capacitor = 60,
+		/obj/effect/spawner/random/salvage/part/capacitor = 60,
 
 		/obj/item/computer_hardware/battery = 40,
 		/obj/item/computer_hardware/battery = 40,
@@ -106,10 +106,10 @@
 		/obj/item/stack/ore/salvage/scraptitanium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 
-		/obj/effect/spawner/random/salvage_matter_bin = 40,
-		/obj/effect/spawner/random/salvage_matter_bin = 40,
-		/obj/effect/spawner/random/salvage_matter_bin = 40,
-		/obj/effect/spawner/random/salvage_manipulator = 30,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
+		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 
 		/obj/item/circuitboard/machine/autolathe = 35,
 
@@ -133,17 +133,17 @@
 		/obj/item/stack/ore/salvage/scrapplasma/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 
-		/obj/effect/spawner/random/salvage_matter_bin = 40,
-		/obj/effect/spawner/random/salvage_matter_bin = 40,
-		/obj/effect/spawner/random/salvage_manipulator = 30,
-		/obj/effect/spawner/random/salvage_manipulator = 30,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
+		/obj/effect/spawner/random/salvage/part/manipulator = 30,
+		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 
 		/obj/effect/spawner/random/engineering/tool = 45,
 		/obj/effect/spawner/random/medical/surgery_tool = 55,
 		/obj/effect/spawner/random/medical/beaker = 45,
 		/obj/effect/spawner/random/medical/prosthetic = 25,
-		/obj/effect/spawner/random/random_gun_protolathe_lootdrop = 5, //:flushed:
-		/obj/effect/spawner/random/random_ammo_protolathe_lootdrop = 5,
+		/obj/effect/spawner/random/salvage/prolathe/gun = 5, //:flushed:
+		/obj/effect/spawner/random/salvage/prolathe/ammo = 5,
 
 		/obj/item/storage/part_replacer = 20,
 		/obj/item/storage/part_replacer/bluespace = 1,
@@ -171,8 +171,8 @@
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 		/obj/item/stack/ore/salvage/scrapbluespace = 60,
 
-		/obj/effect/spawner/random/salvage_matter_bin = 40,
-		/obj/effect/spawner/random/salvage_manipulator = 30,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
+		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 
 		/obj/item/stack/circuit_stack = 50, //this might be the only way in the game to get a poly circuit, and the only way for many ships to get essensial electronics. huh.
 		/obj/effect/spawner/random/circuit/machine/mech = 45, //with all the wonderful broken mechs lying around, this might be a chance to get something stupidly overpowered.
@@ -198,12 +198,12 @@
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 		/obj/item/stack/ore/salvage/scrapplasma = 60,
 
-		/obj/effect/spawner/random/salvage_scanning = 40,
+		/obj/effect/spawner/random/salvage/part/scanning = 40,
 		/obj/effect/spawner/random/salvage_laser = 30,
-		/obj/effect/spawner/random/salvage_manipulator = 30,
+		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 
 		/obj/item/storage/toolbox/syndicate/empty = 80,
-		/obj/effect/spawner/random/destructive_anal_loot = 65,
+		/obj/effect/spawner/random/salvage/destructive_analyzer = 65,
 
 		/obj/item/stack/sheet/metal/five = 15, //same as above but more geared towards stuff used by circuit imprinter
 		/obj/item/stack/sheet/glass/five = 15,
