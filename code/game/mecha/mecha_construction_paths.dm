@@ -527,14 +527,14 @@
 				user.visible_message("<span class='notice'>[user] cuts the internal armor layer from [parent].</span>", "<span class='notice'>You cut the internal armor layer from [parent].</span>")
 		if(21)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures Gygax Armor Plates.</span>", "<span class='notice'>You secure Gygax Armor Plates.</span>")
+				user.visible_message("<span class='notice'>[user] secures the armor plates.</span>", "<span class='notice'>You secure the armor plates.</span>")
 			else
-				user.visible_message("<span class='notice'>[user] pries Gygax Armor Plates from [parent].</span>", "<span class='notice'>You pry Gygax Armor Plates from [parent].</span>")
+				user.visible_message("<span class='notice'>[user] pries the armor plates from [parent].</span>", "<span class='notice'>You pry the armor plates from [parent].</span>")
 		if(22)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds Gygax Armor Plates to [parent].</span>", "<span class='notice'>You weld Gygax Armor Plates to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] welds the armor plates to [parent].</span>", "<span class='notice'>You weld the armor plates to [parent].</span>")
 			else
-				user.visible_message("<span class='notice'>[user] unfastens Gygax Armor Plates.</span>", "<span class='notice'>You unfasten Gygax Armor Plates.</span>")
+				user.visible_message("<span class='notice'>[user] unfastens the armor plates.</span>", "<span class='notice'>You unfasten the armor plates.</span>")
 	return TRUE
 
 /datum/component/construction/unordered/mecha_chassis/firefighter

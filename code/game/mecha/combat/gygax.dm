@@ -1,6 +1,6 @@
 /obj/mecha/combat/gygax
-	desc = "A lightweight, security exosuit. Popular among private and corporate security."
-	name = "\improper Gygax"
+	desc = "A light security exosuit manufactured by Cybersun Biodynamics. The basic version of the 500 Series combat exosuits, the 501p can overload its leg actuators to further enhance mobility."
+	name = "\improper 501p Security Exosuit"
 	icon_state = "gygax"
 	step_in = 3
 	dir_in = 1 //Facing North.
@@ -22,10 +22,11 @@
 		mechstep(direction) //agile mechs get to move and turn in the same step
 
 /obj/mecha/combat/gygax/dark
-	desc = "A lightweight exosuit, painted in a dark scheme."
-	name = "\improper Dark Gygax"
+	desc = "A light combat exosuit manufactured by Cybersun Biodynamics. An exclusive variant of the 500 Series meant for use by Cybersun's own personnel and trusted parties, the 515 EX operates more efficiently in overload mode."
+	name = "\improper 515 EX Combat Exosuit"
 	icon_state = "darkgygax"
 	wreckage = /obj/structure/mecha_wreckage/gygax/dark
+	leg_overload_coeff = 50
 
 /obj/mecha/combat/gygax/dark/loaded/Initialize()
 	. = ..()
@@ -50,7 +51,7 @@
 
 /obj/mecha/combat/gygax/inteq
 	name = "\improper Basenji"
-	desc = "A lightweight security exosuit, modified to IRMG standards. The leg actuators have been maxed out, allowing for powerful short ranged charges."
+	desc = "A light security exosuit originally manufactured by Cybersun Biodynamics, extensively modified by IRMG artificers. The leg actuators have been maxed out, allowing for powerful short ranged charges."
 	icon_state = "inteqgygax"
 	charge_break_walls = TRUE
 	charge_toss_structures = TRUE

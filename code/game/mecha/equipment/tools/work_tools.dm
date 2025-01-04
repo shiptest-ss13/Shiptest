@@ -662,7 +662,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
 	name = "IRMG Basenji Conversion Kit"
-	desc = "An IRMG-custom conversion kit for a Gygax combat exosuit, to convert it to the specialized Pyrnese breaching exosuit."
+	desc = "An IRMG-custom conversion kit for a 500 Series combat exosuit, to convert it to the specialized Basenji breaching exosuit."
 	source_mech = list(/obj/mecha/combat/gygax,/obj/mecha/combat/gygax/dark)
 	result_mech = /obj/mecha/combat/gygax/inteq
 

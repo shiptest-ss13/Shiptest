@@ -110,7 +110,7 @@
 	AI = null
 
 /obj/structure/mecha_wreckage/gygax
-	name = "\improper Gygax wreckage"
+	name = "\improper 501p wreckage"
 	icon_state = "gygax-broken"
 	parts = list(
 				/obj/item/mecha_parts/part/gygax_torso,
@@ -122,7 +122,7 @@
 				)
 
 /obj/structure/mecha_wreckage/gygax/dark
-	name = "\improper Dark Gygax wreckage"
+	name = "\improper 515 EX wreckage"
 	icon_state = "darkgygax-broken"
 
 /obj/structure/mecha_wreckage/marauder
@@ -132,7 +132,6 @@
 /obj/structure/mecha_wreckage/touro
 	name = "\improper Touro wreckage"
 	icon_state = "touro-broken"
-	desc = "The syndicate won't be very happy about this..."
 
 /obj/structure/mecha_wreckage/seraph
 	name = "\improper Seraph wreckage"
@@ -210,7 +209,7 @@
 
 
 /obj/structure/mecha_wreckage/odysseus
-	name = "\improper Odysseus wreckage"
+	name = "\improper 202r wreckage"
 	icon_state = "odysseus-broken"
 	parts = list(
 			/obj/item/mecha_parts/part/odysseus_torso,

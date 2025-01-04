@@ -24,12 +24,12 @@
 	wanted_types = list(/obj/mecha/working/ripley/firefighter)
 
 /datum/bounty/item/mech/odysseus
-	name = "Odysseus"
+	name = "200 Series"
 	reward = 11000
 	wanted_types = list(/obj/mecha/medical/odysseus)
 
 /datum/bounty/item/mech/gygax
-	name = "Gygax"
+	name = "500 Series"
 	reward = 28000
 	wanted_types = list(/obj/mecha/combat/gygax)
 

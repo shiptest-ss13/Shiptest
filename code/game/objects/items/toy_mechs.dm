@@ -490,7 +490,7 @@
 		victim.combat_health--
 
 /obj/item/toy/prize/gygax
-	name = "toy Gygax"
+	name = "toy 515p"
 	desc = "4/13"
 	icon_state = "gygaxtoy"
 	max_combat_health = 5 //250 integrity
@@ -544,7 +544,7 @@
 	special_attack_cry = "BULLET STORM"
 
 /obj/item/toy/prize/odysseus
-	name = "toy Odysseus"
+	name = "toy 202r"
 	desc = "10/13"
 	icon_state = "odysseustoy"
 	max_combat_health = 4 //120 integrity
