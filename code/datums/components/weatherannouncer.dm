@@ -93,7 +93,8 @@
 			light.set_light_color(LIGHT_COLOR_YELLOW)
 		if(WEATHER_ALERT_IMMINENT_OR_ACTIVE)
 			light.set_light_color(LIGHT_COLOR_INTENSE_RED)
-	light.update_light()
+	if(light.light_system == STATIC_LIGHT)
+		light.update_light()
 
 /// Returns a string we should display to communicate what you should be doing
 /datum/component/weather_announcer/proc/get_warning_message()
