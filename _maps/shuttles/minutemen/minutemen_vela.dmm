@@ -1622,7 +1622,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/firealarm/directional/east,
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "ho" = (
@@ -1636,6 +1636,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "hr" = (
@@ -3242,49 +3243,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
-"pj" = (
-/obj/structure/closet/secure_closet/miner{
-	name = "pilot's equipment";
-	populate = 0
-	},
-/obj/structure/railing{
-	dir = 9;
-	layer = 2.8
-	},
-/obj/item/storage/belt/utility/full{
-	pixel_y = -5
-	},
-/obj/item/clothing/under/clip,
-/obj/item/storage/backpack/security/clip{
-	pixel_y = -7;
-	pixel_x = -3
-	},
-/obj/item/radio/headset/clip/alt{
-	pixel_y = 6;
-	pixel_x = 10
-	},
-/obj/item/clothing/shoes/jackboots{
-	pixel_y = -4;
-	pixel_x = 7
-	},
-/obj/effect/turf_decal/trimline/transparent/blue/line{
-	dir = 1
-	},
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/sunglasses{
-	name = "blastglasses";
-	desc = "Tried and true technology designed for the flash adverse mech pilot.";
-	pixel_y = 4
-	},
-/obj/item/clothing/glasses/hud/diagnostic{
-	pixel_y = -2
-	},
-/obj/item/clothing/head/hardhat/dblue{
-	pixel_y = 5
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
-/turf/open/floor/pod/dark,
-/area/ship/hangar)
 "pm" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/effect/turf_decal/spline/fancy/opaque/white/corner{
@@ -7024,6 +6982,49 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plating,
 /area/ship/external/dark)
+"Gl" = (
+/obj/structure/closet/secure_closet/miner{
+	name = "pilot's equipment";
+	populate = 0
+	},
+/obj/structure/railing{
+	dir = 9;
+	layer = 2.8
+	},
+/obj/item/storage/belt/utility/full{
+	pixel_y = -5
+	},
+/obj/item/clothing/under/clip,
+/obj/item/storage/backpack/security/clip{
+	pixel_y = -7;
+	pixel_x = -3
+	},
+/obj/item/radio/headset/clip/alt{
+	pixel_y = 6;
+	pixel_x = 10
+	},
+/obj/item/clothing/shoes/jackboots{
+	pixel_y = -4;
+	pixel_x = 7
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 1
+	},
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/sunglasses{
+	name = "blastglasses";
+	desc = "Tried and true technology designed for the flash adverse mech pilot.";
+	pixel_y = 4
+	},
+/obj/item/clothing/glasses/hud/diagnostic{
+	pixel_y = -2
+	},
+/obj/item/clothing/head/hardhat/dblue{
+	pixel_y = 5
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
+/turf/open/floor/pod/dark,
+/area/ship/hangar)
 "Go" = (
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -8111,6 +8112,14 @@
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 8
 	},
+/obj/structure/closet/crate/engineering,
+/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip,
+/obj/item/mecha_parts/part/ripley_left_arm,
+/obj/item/mecha_parts/part/ripley_left_leg,
+/obj/item/mecha_parts/part/ripley_right_arm,
+/obj/item/mecha_parts/part/ripley_right_leg,
+/obj/item/mecha_parts/part/ripley_torso,
+/obj/item/mecha_parts/chassis/ripley,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Lx" = (
@@ -12637,7 +12646,7 @@ We
 yq
 ce
 dZ
-pj
+Gl
 Cq
 lb
 Vh
