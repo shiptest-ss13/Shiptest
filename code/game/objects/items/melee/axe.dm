@@ -36,7 +36,7 @@
 			var/obj/structure/W = A
 			W.obj_destruction("axe")
 
-/obj/item/melee/axe/fire  // DEM AXES MAN, marker -Agouri
+/obj/item/melee/axe/fire
 	name = "fire axe"
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
 	icon_state = "fireaxe"
@@ -51,6 +51,7 @@
 
 /obj/item/melee/axe/scrap
 	name = "scrap axe"
+	icon_state = "scrapaxe"
 	desc = "Oversided and with a pretty dull blade, its decent against armour"
 	force_wielded = 22
 	armour_penetration = 10

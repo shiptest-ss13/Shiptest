@@ -1,6 +1,7 @@
 /obj/item/melee/powerfist
 	name = "power-fist"
 	desc = "A metal gauntlet with a piston-powered ram ontop for that extra 'ompfh' in your punch."
+	icon = 'icons/obj/weapon/blunt.dmi'
 	icon_state = "powerfist"
 	item_state = "powerfist"
 	flags_1 = CONDUCT_1
