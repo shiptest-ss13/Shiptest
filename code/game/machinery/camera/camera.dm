@@ -258,8 +258,27 @@
 	if(!panel_open)
 		return
 
-	setViewRange((view_range == initial(view_range)) ? short_range : initial(view_range))
-	to_chat(user, "<span class='notice'>You [(view_range == initial(view_range)) ? "restore" : "mess up"] the camera's focus.</span>")
+	var/obj/item/multitool/M = I
+	var/list/choice_list = list("Occlude the camera lens", "Save the camera network to the multitool buffer", "Transfer the network in the buffer to the camera", "Change the camera network")
+	var/choice = input(user, "Select a function", "Camera Settings") as null|anything in choice_list
+
+	switch(choice)
+		if("Occlude the camera lens")
+			setViewRange((view_range == initial(view_range)) ? short_range : initial(view_range))
+			to_chat(user, "<span class='notice'>You [(view_range == initial(view_range)) ? "restore" : "mess up"] the camera's focus.</span>")
+
+		if("Save the camera network to the multitool buffer")
+			M.buffer = network[1]
+			to_chat(user, "<span class='notice'>You add network '[network[1]]' to the multitool's buffer.</span>")
+
+		if("Transfer the network in the buffer to the camera")
+			network[1] = M.buffer
+			to_chat(user, "<span class='notice'>You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer.</span>")
+
+		if("Change the camera network")
+			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are not case sensitive.", "Network Tuning", max_length = 32)
+			to_chat(user, "<span class='notice'>You set [src] to transmit across the '[network[1]]' network.</span>")
+
 	return TRUE
 
 /obj/machinery/camera/welder_act(mob/living/user, obj/item/I)

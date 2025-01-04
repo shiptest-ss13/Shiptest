@@ -23,6 +23,9 @@ export const NtosSecurEye = (props, context) => {
         </div>
         <div className="CameraConsole__right">
           <div className="CameraConsole__toolbar">
+            <b>Network: </b>
+            {data.network || '—'}
+            <b>{'\n'}</b>
             <b>Camera: </b>
             {(activeCamera && activeCamera.name) || '—'}
           </div>
