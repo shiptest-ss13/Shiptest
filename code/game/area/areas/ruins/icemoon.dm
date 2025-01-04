@@ -47,8 +47,12 @@
 	name = "Gear Room"
 	icon_state = "security"
 
-// teslalab
+// Sensors Array
+/area/ruin/unpowered/sensor_array
+	name = "Sensor Array Facility"
+	icon_state = "purple"
 
+// teslalab
 /area/ruin/icemoon/tesla_lab
 	name = "CLIP Lab Complex"
 	icon_state = "hallC"
