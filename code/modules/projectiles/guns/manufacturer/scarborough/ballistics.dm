@@ -467,6 +467,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
 		/obj/item/attachment/foldable_stock/sidewinder
 	)
 	slot_available = list(
