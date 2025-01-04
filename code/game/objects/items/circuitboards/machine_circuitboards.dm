@@ -724,7 +724,7 @@
 		/obj/item/stock_parts/capacitor = 1,
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stack/sheet/bluespace_crystal = 1,
+		/obj/item/stack/ore/bluespace_crystal/refined = 1,
 		/obj/item/stock_parts/cell = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
 	needs_anchored = FALSE
