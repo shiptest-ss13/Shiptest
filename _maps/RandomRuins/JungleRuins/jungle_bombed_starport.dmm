@@ -35,16 +35,13 @@
 	},
 /turf/open/floor/concrete,
 /area/space)
+"av" = (
+/obj/structure/spacevine,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/space)
 "ay" = (
 /obj/structure/spacevine,
 /turf/open/floor/concrete/jungleplanet/lit,
-/area/space)
-"aB" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	pixel_y = 32
-	},
-/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "aF" = (
 /obj/item/reagent_containers/food/snacks/spidereggs{
@@ -53,23 +50,6 @@
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
-"aK" = (
-/obj/structure/flora/grass/jungle/b,
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/space)
-"aN" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/closet/secure_closet/security{
-	populate = 0;
-	icon_state = "syndicate";
-	name = "operative's locker";
-	opened = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
 "aO" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 1
@@ -77,29 +57,9 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
 "aP" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	pixel_y = -32
-	},
-/obj/structure/spacevine{
-	pixel_y = -32
-	},
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
-"aQ" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter,
 /turf/open/floor/plasteel/dark/jungleplanet/lit,
-/area/space)
-"aR" = (
-/obj/structure/spacevine/dense,
-/turf/open/floor/plasteel/dark/jungleplanet,
-/area/space)
-"aT" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/closed/wall,
 /area/space)
 "bc" = (
 /obj/effect/turf_decal/box,
@@ -117,15 +77,6 @@
 	},
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/space)
-"bf" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
-/turf/open/floor/plating/jungleplanet/lit,
-/area/space)
 "bi" = (
 /turf/open/floor/pod/dark,
 /area/space)
@@ -138,22 +89,17 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
+"bk" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spider/stickyweb,
+/obj/structure/door_assembly,
+/turf/open/floor/plating/jungleplanet/lit,
+/area/space)
 "bl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
-"bn" = (
-/obj/structure/spacevine,
-/turf/open/water/jungle/lit,
-/area/space)
-"bp" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/table,
-/obj/structure/spider/stickyweb,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
 /area/space)
 "bs" = (
 /obj/effect/turf_decal/industrial/stand_clear/white{
@@ -169,11 +115,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
-"bA" = (
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
-/turf/open/floor/plasteel/white/jungleplanet,
 /area/space)
 "bD" = (
 /obj/structure/toilet{
@@ -193,6 +134,17 @@
 /mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/space)
+"bF" = (
+/obj/effect/spawner/random/trash/grime,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
+"bH" = (
+/obj/structure/platform/military{
+	dir = 5
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/space)
 "bI" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle/lit,
@@ -202,6 +154,24 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
+/area/space)
+"bQ" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
+	},
+/obj/structure/spider/stickyweb,
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
+/turf/open/floor/plating/jungleplanet/lit,
+/area/space)
+"bS" = (
+/obj/structure/platform/military{
+	dir = 1
+	},
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "bU" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -229,14 +199,6 @@
 /obj/effect/turf_decal/industrial/traffic,
 /turf/open/floor/plasteel/dark,
 /area/space)
-"cf" = (
-/obj/structure/flora/junglebush/c,
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	pixel_x = 32
-	},
-/turf/open/floor/plating/grass/jungle/lit,
-/area/space)
 "cg" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/manifold/green/hidden,
@@ -253,6 +215,10 @@
 	},
 /obj/structure/filingcabinet/double/grey,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"cq" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "cr" = (
 /obj/machinery/mech_bay_recharge_port{
@@ -313,6 +279,10 @@
 	},
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
+"cK" = (
+/obj/machinery/suit_storage_unit,
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "cL" = (
 /obj/effect/turf_decal/industrial/stand_clear/red{
 	dir = 4
@@ -323,18 +293,17 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/space)
-"cO" = (
-/obj/structure/spacevine/dense,
-/obj/structure/spacevine{
-	pixel_x = 32
-	},
-/turf/open/water/jungle,
-/area/space)
 "cS" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/corner/transparent/syndiered/border,
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"db" = (
+/obj/structure/flora/junglebush/c,
+/obj/structure/spacevine,
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "dc" = (
 /obj/structure/cable{
@@ -368,12 +337,7 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
-"dr" = (
-/obj/structure/flora/rock/pile,
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/space)
-"dt" = (
+"ds" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -406,6 +370,13 @@
 	icon_state = "stairs_t"
 	},
 /area/space)
+"dy" = (
+/obj/structure/platform/military{
+	dir = 1
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/space)
 "dA" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/barricade/sandbags,
@@ -418,6 +389,13 @@
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
+"dG" = (
+/obj/structure/platform/military{
+	dir = 1
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/space)
 "dI" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/effect/turf_decal/industrial/warning,
@@ -429,6 +407,13 @@
 	dir = 2;
 	icon = 'icons/obj/stairs.dmi'
 	},
+/area/space)
+"dK" = (
+/obj/structure/platform/military/corner{
+	dir = 4
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "dP" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -471,6 +456,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"ed" = (
+/obj/structure/spacevine,
+/turf/open/floor/plasteel/dark/jungleplanet,
+/area/space)
 "ef" = (
 /obj/structure/railing/thin{
 	dir = 6
@@ -499,10 +488,12 @@
 	},
 /turf/open/space/basic,
 /area/space)
-"en" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/patterned/brushed,
+"em" = (
+/obj/structure/platform/military/corner{
+	dir = 4
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "ep" = (
 /turf/open/floor/plating/jungleplanet/lit,
@@ -554,28 +545,11 @@
 /obj/effect/turf_decal/industrial/caution,
 /turf/open/floor/plasteel/dark,
 /area/space)
-"eR" = (
-/obj/structure/spider/stickyweb,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
-"eS" = (
-/obj/structure/platform/military{
-	dir = 9
-	},
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
 "eV" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
-"eW" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider,
-/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "eX" = (
 /obj/structure/flora/junglebush/b,
@@ -584,11 +558,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "fc" = (
-/obj/structure/platform/military{
-	dir = 8
-	},
-/obj/structure/spacevine/dense,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/turf/open/floor/wood,
 /area/space)
 "fd" = (
 /obj/structure/spacevine{
@@ -611,10 +581,22 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"fn" = (
+/obj/structure/spider/stickyweb,
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
 "fp" = (
 /obj/structure/platform/military,
 /obj/structure/spacevine,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
+"fr" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/table,
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
 /area/space)
 "ft" = (
 /obj/structure/platform/military,
@@ -632,6 +614,13 @@
 	},
 /turf/open/floor/plasteel/mono/dark/jungleplanet,
 /area/space)
+"fw" = (
+/obj/structure/platform/military{
+	dir = 8
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/space)
 "fx" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
@@ -646,6 +635,16 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
+"fH" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/space)
 "fJ" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -655,15 +654,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"fK" = (
+/obj/structure/flora/junglebush,
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/space)
 "fM" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine{
 	pixel_x = 32
 	},
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
-"fN" = (
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "fQ" = (
@@ -711,12 +711,19 @@
 	},
 /turf/open/floor/plasteel/mono/dark/jungleplanet,
 /area/space)
-"gl" = (
+"gi" = (
+/obj/structure/platform/military{
+	dir = 8
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/space)
+"gj" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine{
-	pixel_y = -32
+	pixel_y = 32
 	},
-/turf/open/floor/plating/dirt/jungle/dark/lit,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "gm" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -728,20 +735,16 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"gt" = (
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree1"
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/space)
 "gu" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
-"gw" = (
-/mob/living/simple_animal/hostile/poison/giant_spider,
-/turf/open/floor/plasteel/white/jungleplanet,
+"gz" = (
+/obj/structure/platform/military/corner{
+	dir = 1
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "gC" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -756,10 +759,10 @@
 	icon = 'icons/obj/stairs.dmi'
 	},
 /area/space)
-"gG" = (
+"gH" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "gJ" = (
 /obj/structure/railing/thin{
@@ -767,14 +770,6 @@
 	},
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
-/area/space)
-"gK" = (
-/obj/structure/flora/junglebush,
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	pixel_y = 32
-	},
-/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "gM" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -804,14 +799,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark/jungleplanet,
-/area/space)
-"gW" = (
-/obj/structure/flora/junglebush/large,
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	pixel_x = 32
-	},
-/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "gZ" = (
 /obj/structure/table/reinforced,
@@ -856,17 +843,6 @@
 "hk" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/pod/dark,
-/area/space)
-"hn" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/stairs{
-	dir = 8;
-	icon = 'icons/obj/stairs.dmi';
-	icon_state = "stairs_t"
-	},
 /area/space)
 "hq" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -951,9 +927,14 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
 /area/space)
+"hQ" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel/dark/jungleplanet/lit,
+/area/space)
 "hT" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/turf/open/floor/wood,
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "hU" = (
 /obj/structure/flora/junglebush/c,
@@ -969,6 +950,16 @@
 	},
 /obj/structure/spacevine,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
+"hX" = (
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/water/jungle,
 /area/space)
 "hZ" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
@@ -1010,11 +1001,6 @@
 	dir = 8;
 	icon = 'icons/obj/stairs.dmi'
 	},
-/area/space)
-"ij" = (
-/obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider,
-/turf/open/floor/plasteel/dark/jungleplanet/lit,
 /area/space)
 "il" = (
 /obj/machinery/atmospherics/pipe/manifold/green/hidden{
@@ -1062,19 +1048,8 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "iI" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/obj/structure/spider/stickyweb,
-/obj/structure/spider/cocoon,
-/turf/open/floor/plating/jungleplanet/lit,
-/area/space)
-"iL" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
+/turf/open/floor/plasteel/white/jungleplanet,
 /area/space)
 "iQ" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
@@ -1104,14 +1079,12 @@
 	},
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"jb" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/chair{
-	dir = 1
+"ja" = (
+/obj/structure/platform/military/corner{
+	dir = 8
 	},
-/obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider,
-/turf/open/floor/plasteel,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "je" = (
 /obj/effect/turf_decal/road/stripes{
@@ -1120,18 +1093,10 @@
 /obj/effect/turf_decal/road,
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/space)
-"jh" = (
-/obj/structure/platform/military{
-	dir = 6
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
-"ji" = (
-/obj/structure/flora/grass/jungle,
-/obj/structure/flora/junglebush/large,
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+"jg" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "jk" = (
 /obj/structure/flora/junglebush,
@@ -1170,6 +1135,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"jq" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/space)
 "jr" = (
 /obj/structure/platform/military,
 /turf/open/floor/concrete/jungleplanet/lit,
@@ -1189,9 +1158,6 @@
 "jz" = (
 /obj/structure/platform/military/corner,
 /turf/open/floor/concrete/jungleplanet/lit,
-/area/space)
-"jA" = (
-/turf/open/floor/carpet/red,
 /area/space)
 "jB" = (
 /obj/structure/railing/thin{
@@ -1254,24 +1220,15 @@
 	},
 /turf/open/water/jungle,
 /area/space)
-"jT" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/corner/transparent/syndiered/border{
-	dir = 1
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plasteel/dark/jungleplanet,
+"ka" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/green/hidden,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
-"jU" = (
-/obj/machinery/suit_storage_unit,
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
-"jX" = (
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree4"
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+"kb" = (
+/obj/structure/table,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "kh" = (
 /obj/effect/turf_decal/syndicateemblem/top/right{
@@ -1283,9 +1240,20 @@
 "kj" = (
 /turf/open/water/jungle,
 /area/space)
-"kp" = (
-/obj/effect/gibspawner/generic/animal,
-/obj/effect/decal/cleanable/dirt/dust,
+"kl" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/spacevine,
+/turf/open/water/jungle,
+/area/space)
+"kr" = (
+/obj/item/flamethrower/full/tank,
+/obj/structure/table,
+/obj/item/storage/box/beakers{
+	pixel_x = 11;
+	pixel_y = -5
+	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "kw" = (
@@ -1317,10 +1285,6 @@
 	},
 /obj/structure/spacevine,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
-"kB" = (
-/obj/structure/spacevine,
-/turf/open/floor/plasteel/dark/jungleplanet,
 /area/space)
 "kG" = (
 /obj/structure/railing/thin{
@@ -1393,32 +1357,29 @@
 /obj/item/paper_bin,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/space)
-"lh" = (
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 1
+"lj" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/spacevine,
+/turf/open/floor/plasteel/stairs{
+	dir = 2;
+	icon = 'icons/obj/stairs.dmi'
 	},
-/turf/open/floor/plasteel/dark,
 /area/space)
 "ll" = (
 /obj/effect/decal/cleanable/molten_object,
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"lm" = (
-/obj/structure/platform/military/corner{
+"ln" = (
+/obj/structure/platform/military{
 	dir = 4
 	},
-/obj/structure/spacevine/dense,
+/obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "lo" = (
 /obj/structure/platform/military/corner,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
-"lp" = (
-/obj/structure/spacevine/dense,
-/turf/open/floor/plasteel/mono/dark/jungleplanet,
 /area/space)
 "lq" = (
 /turf/open/floor/plasteel/mono/dark/jungleplanet/lit,
@@ -1428,13 +1389,6 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/space)
-"lt" = (
-/obj/structure/platform/military/corner{
-	dir = 4
-	},
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "lu" = (
 /obj/structure/flora/junglebush,
@@ -1457,6 +1411,10 @@
 	},
 /obj/item/stack/cable_coil/cut,
 /turf/open/floor/plasteel/patterned/brushed,
+/area/space)
+"lF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "lI" = (
 /turf/open/floor/plasteel/dark/jungleplanet,
@@ -1486,17 +1444,6 @@
 /obj/item/bedsheet/double/brown,
 /turf/open/floor/plasteel/mono/white,
 /area/space)
-"mc" = (
-/obj/structure/railing/thin{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/spacevine,
-/turf/open/floor/plasteel/stairs{
-	dir = 2;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/space)
 "me" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -1519,11 +1466,15 @@
 	icon = 'icons/obj/stairs.dmi'
 	},
 /area/space)
-"mk" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/manifold/green/hidden,
+"mn" = (
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/jungleplanet/lit,
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
+"mo" = (
+/obj/machinery/atmospherics/pipe/simple/green/hidden,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "mt" = (
 /obj/structure/table,
@@ -1588,15 +1539,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
-"mH" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
 "mK" = (
+/obj/structure/platform/military/corner{
+	dir = 4
+	},
 /obj/structure/spider/stickyweb,
-/obj/structure/door_assembly,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "mM" = (
 /obj/structure/cable{
@@ -1665,6 +1613,10 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"nn" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plasteel/dark/jungleplanet,
+/area/space)
 "np" = (
 /obj/structure/platform/military,
 /obj/structure/spacevine,
@@ -1732,13 +1684,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
-"nI" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	pixel_y = -32
-	},
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
 "nL" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/spider/stickyweb,
@@ -1779,11 +1724,9 @@
 /turf/open/floor/plating,
 /area/space)
 "nR" = (
-/obj/machinery/door/airlock/medical{
-	dir = 4;
-	name = "Medical Station"
-	},
-/turf/open/floor/plasteel/tech/grid,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "nS" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1809,13 +1752,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
-"nZ" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/structure/spacevine,
-/turf/open/water/jungle,
-/area/space)
 "oe" = (
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -1838,11 +1774,6 @@
 /area/space)
 "os" = (
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
-"ot" = (
-/obj/structure/flora/junglebush,
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "ou" = (
 /obj/structure/platform/military/corner{
@@ -1877,6 +1808,31 @@
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "oR" = (
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/space)
+"oS" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"oU" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
+	dir = 1
+	},
+/obj/structure/closet/wall/directional/south,
+/obj/item/clothing/shoes/jackboots,
+/turf/open/floor/plasteel,
+/area/space)
+"oW" = (
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/space)
 "pg" = (
@@ -1940,12 +1896,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
-"pE" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
 "pG" = (
 /obj/structure/window/plasma/reinforced{
 	dir = 8
@@ -1963,6 +1913,18 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/space)
+"pN" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/space)
+"pP" = (
+/obj/structure/spider/stickyweb,
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/floor/plasteel/dark/jungleplanet/lit,
+/area/space)
 "pQ" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -1970,12 +1932,12 @@
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
-"pU" = (
+"pR" = (
 /obj/structure/platform/military{
-	dir = 8
+	dir = 9
 	},
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "pZ" = (
 /obj/structure/platform/military{
@@ -2008,24 +1970,15 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
 /area/space)
-"qj" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
-	},
-/obj/structure/spacevine,
-/turf/open/water/jungle,
+"qi" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spider/stickyweb,
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "qk" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/jungleplanet/lit,
-/area/space)
-"qm" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/obj/structure/door_assembly,
 /turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "qq" = (
@@ -2050,6 +2003,17 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
+"qt" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plasteel/mono/dark/jungleplanet,
+/area/space)
+"qu" = (
+/obj/structure/platform/military{
+	dir = 9
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/space)
 "qw" = (
 /obj/effect/turf_decal/weather/dirt/corner{
 	dir = 4
@@ -2064,6 +2028,13 @@
 /obj/structure/platform/military/corner,
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle/lit,
+/area/space)
+"qD" = (
+/obj/structure/platform/military{
+	dir = 4
+	},
+/obj/structure/spacevine,
+/turf/open/floor/concrete/jungleplanet/lit,
 /area/space)
 "qE" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/border{
@@ -2137,18 +2108,17 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
-"qV" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/spacevine/dense,
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/space)
 "qY" = (
 /obj/structure/platform/military{
 	dir = 4
 	},
 /turf/open/water/jungle/lit,
+/area/space)
+"qZ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
 /area/space)
 "rd" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2190,6 +2160,11 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"rs" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/door_assembly,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
 "rt" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/railing/thin/corner,
@@ -2198,22 +2173,31 @@
 /area/space)
 "ru" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
 /turf/open/floor/plasteel/white/jungleplanet,
+/area/space)
+"rv" = (
+/obj/structure/flora/tree/jungle/small{
+	icon_state = "tree4"
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/space)
+"rx" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
+	dir = 1
+	},
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel,
 /area/space)
 "rA" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/cocoon,
 /mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/space)
-"rB" = (
-/obj/structure/platform/military{
-	dir = 1
-	},
-/obj/structure/spacevine{
-	pixel_x = 32
-	},
-/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "rE" = (
 /obj/structure/platform/military{
@@ -2231,6 +2215,14 @@
 "rK" = (
 /obj/structure/chair/plastic,
 /turf/open/floor/plasteel/mono/dark/jungleplanet/lit,
+/area/space)
+"rL" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel,
 /area/space)
 "rM" = (
 /obj/effect/turf_decal/techfloor{
@@ -2377,21 +2369,13 @@
 /obj/structure/spacevine,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
-"sO" = (
-/obj/machinery/atmospherics/components/unary/passive_vent{
+"sP" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/turf_decal/corner/transparent/syndiered/border{
 	dir = 1
 	},
-/turf/open/floor/wood,
-/area/space)
-"sQ" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/human/syndicate/civilian,
-/turf/open/floor/plasteel/tech/grid,
+/obj/structure/spacevine,
+/turf/open/floor/plasteel/dark/jungleplanet,
 /area/space)
 "sS" = (
 /obj/structure/cable{
@@ -2404,13 +2388,6 @@
 /obj/structure/platform/military,
 /turf/open/water/jungle,
 /area/space)
-"sX" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
-/area/space)
 "sY" = (
 /obj/machinery/suit_storage_unit/inherit{
 	locked = 1
@@ -2421,25 +2398,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
-"tc" = (
-/obj/structure/platform/military/corner{
-	dir = 1
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
-"ti" = (
+"te" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal{
-	dir = 1
+	dir = 4
 	},
-/obj/structure/chair,
-/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
-/area/space)
-"tj" = (
-/obj/structure/flora/grass/jungle/b,
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "tk" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -2483,6 +2447,13 @@
 	dir = 8
 	},
 /turf/open/floor/engine/hydrogen_fuel,
+/area/space)
+"tx" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "ty" = (
 /obj/structure/platform/military/corner{
@@ -2541,6 +2512,14 @@
 	},
 /turf/open/floor/pod/dark,
 /area/space)
+"tP" = (
+/obj/structure/flora/junglebush/c,
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/grass/jungle/lit,
+/area/space)
 "ua" = (
 /turf/open/space/basic,
 /area/space)
@@ -2550,29 +2529,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
-"ue" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	pixel_x = 32
-	},
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
 "ug" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
-"uj" = (
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner,
-/turf/open/floor/plasteel/dark,
+"uh" = (
+/obj/structure/flora/rock/jungle,
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "un" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2607,13 +2571,13 @@
 	},
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/space)
-"uz" = (
-/obj/structure/table,
-/turf/open/floor/wood,
-/area/space)
-"uB" = (
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/patterned/brushed,
+"uy" = (
+/obj/structure/platform/military/corner{
+	dir = 1
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "uC" = (
 /obj/structure/barricade/sandbags,
@@ -2621,11 +2585,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark/jungleplanet,
-/area/space)
-"uE" = (
-/obj/structure/platform/military/corner,
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "uF" = (
 /obj/structure/flora/grass/jungle/b,
@@ -2655,12 +2614,11 @@
 	},
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"uP" = (
-/obj/structure/platform/military{
-	dir = 4
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
+"uS" = (
+/obj/machinery/atmospherics/pipe/simple/green/hidden,
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "uT" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -2671,12 +2629,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
-"uV" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/concrete/jungleplanet/lit,
+"uU" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/cocoon,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "uW" = (
 /obj/structure/closet/firecloset/full{
@@ -2707,11 +2663,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
-"vg" = (
-/obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
 "vj" = (
 /obj/structure/platform/military{
 	dir = 1
@@ -2733,11 +2684,6 @@
 /obj/structure/platform/military/corner,
 /turf/open/water/jungle,
 /area/space)
-"vu" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/space)
 "vv" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/hardline_small{
@@ -2747,13 +2693,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
-"vx" = (
-/obj/structure/platform/military{
-	dir = 8
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "vz" = (
 /obj/structure/platform/military{
@@ -2780,6 +2719,17 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"vP" = (
+/obj/structure/spacevine/dense,
+/turf/open/water/jungle,
+/area/space)
+"vR" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/space)
 "vU" = (
 /obj/structure/platform/military{
 	dir = 4
@@ -2787,18 +2737,9 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
-"vW" = (
-/obj/structure/table,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
 "vX" = (
 /obj/structure/platform/military,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
-"wa" = (
-/mob/living/simple_animal/hostile/poison/giant_spider,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "wb" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2810,6 +2751,20 @@
 	icon = 'icons/obj/stairs.dmi';
 	icon_state = "stairs_t"
 	},
+/area/space)
+"wd" = (
+/mob/living/simple_animal/hostile/human/syndicate/civilian,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"wr" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/item/kirbyplants/random{
+	pixel_x = 9
+	},
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/cocoon,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
 /area/space)
 "wt" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -2846,16 +2801,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
-"wP" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/human/syndicate/civilian,
-/turf/open/floor/plasteel/tech/grid,
-/area/space)
 "wT" = (
 /obj/structure/cable{
 	icon_state = "2-9"
@@ -2864,6 +2809,11 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/space)
+"xd" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "xf" = (
 /obj/structure/platform/military,
@@ -2913,25 +2863,20 @@
 	},
 /turf/open/water/jungle,
 /area/space)
-"xs" = (
-/obj/effect/turf_decal/weather/dirt/corner{
-	dir = 1
-	},
-/obj/structure/spacevine/dense,
-/turf/open/water/jungle,
-/area/space)
-"xt" = (
-/obj/structure/platform/military{
-	dir = 1
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
+"xw" = (
+/turf/open/floor/plasteel/freezer,
 /area/space)
 "xC" = (
 /obj/structure/platform/military/corner{
 	dir = 1
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
+/area/space)
+"xE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/closed/wall,
 /area/space)
 "xG" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -2990,22 +2935,9 @@
 /obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/wood,
 /area/space)
-"yi" = (
-/obj/structure/spacevine/dense,
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/space)
 "yj" = (
-/obj/structure/barricade/sandbags,
-/obj/structure/spacevine,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
-"yk" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
-/turf/open/floor/plasteel/patterned/brushed,
+/obj/machinery/atmospherics/pipe/simple/green/hidden,
+/turf/open/floor/wood,
 /area/space)
 "ys" = (
 /obj/effect/turf_decal/road/stripes{
@@ -3015,13 +2947,6 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
-/area/space)
-"yt" = (
-/obj/structure/platform/military/corner{
-	dir = 8
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "yu" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -3037,6 +2962,28 @@
 	},
 /turf/open/floor/plasteel/dark/jungleplanet/lit,
 /area/space)
+"yw" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/security{
+	populate = 0;
+	icon_state = "syndicate";
+	name = "operative's locker"
+	},
+/obj/item/melee/knife/combat,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/storage/belt/security/webbing{
+	name = "syndicate webbing";
+	desc = "Unique and versatile chest rig, can hold syndicate gear."
+	},
+/obj/item/flashlight/seclite,
+/obj/item/clothing/suit/armor/vest/syndie,
+/obj/item/clothing/head/helmet/syndie,
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "yC" = (
 /obj/structure/platform/military,
 /obj/effect/turf_decal/weather/dirt{
@@ -3050,18 +2997,13 @@
 	},
 /turf/open/floor/plasteel/mono/dark/jungleplanet/lit,
 /area/space)
-"yE" = (
-/obj/effect/turf_decal/industrial/warning,
+"yG" = (
+/obj/structure/flora/junglebush/large,
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/space)
-"yK" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal{
-	dir = 1
+/obj/structure/spacevine{
+	pixel_x = 32
 	},
-/obj/structure/dresser,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "yN" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -3079,25 +3021,18 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/space)
+"yR" = (
+/obj/structure/platform/military{
+	dir = 1
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/space)
 "yV" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/space)
-"yX" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
-"yZ" = (
-/obj/structure/platform/military{
-	dir = 9
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "za" = (
 /obj/effect/turf_decal/industrial/stand_clear{
@@ -3121,6 +3056,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"zg" = (
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/spacevine,
+/turf/open/floor/plasteel/stairs{
+	dir = 2;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/space)
 "zj" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/spider/stickyweb,
@@ -3136,8 +3082,18 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating/jungleplanet/lit,
 /area/space)
-"zo" = (
-/turf/open/floor/plasteel/freezer,
+"zl" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/space)
+"zq" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "zv" = (
 /obj/effect/decal/cleanable/molten_object,
@@ -3146,9 +3102,6 @@
 	rad_range = 2
 	},
 /turf/open/water/jungle,
-/area/space)
-"zx" = (
-/turf/open/floor/wood,
 /area/space)
 "zB" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -3218,13 +3171,6 @@
 	},
 /turf/open/floor/plating,
 /area/space)
-"zP" = (
-/obj/structure/flora/tree/jungle{
-	icon_state = "tree10"
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/space)
 "zQ" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
@@ -3259,9 +3205,11 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
-"Ab" = (
+"zY" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/flora/junglebush/large,
 /obj/structure/spacevine,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "Ah" = (
 /obj/structure/flora/tree/jungle/small{
@@ -3293,10 +3241,15 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/jungleplanet/lit,
 /area/space)
-"Aq" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/jungleplanet/lit,
+"Ap" = (
+/obj/structure/platform/military/corner{
+	dir = 1
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "At" = (
 /obj/structure/platform/military{
@@ -3309,16 +3262,22 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"Au" = (
-/obj/effect/turf_decal/siding/wood/corner{
+"Aw" = (
+/obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/syndicate/civilian,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
-"Ay" = (
-/obj/item/reagent_containers/food/snacks/meat/slab/spider,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+"AD" = (
+/obj/structure/platform/military{
+	dir = 10
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "AF" = (
 /obj/machinery/door/airlock/medical{
@@ -3338,6 +3297,11 @@
 	},
 /obj/effect/turf_decal/weather/dirt/corner,
 /turf/open/water/jungle,
+/area/space)
+"AK" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel/dark/jungleplanet/lit,
 /area/space)
 "AP" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/filled/warning{
@@ -3378,6 +3342,13 @@
 	},
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
+"AX" = (
+/obj/structure/flora/tree/jungle{
+	icon_state = "tree10"
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/space)
 "Ba" = (
 /turf/open/floor/plasteel/stairs{
 	dir = 2;
@@ -3411,15 +3382,11 @@
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "Bx" = (
-/obj/structure/barricade/security{
-	layer = 2.89
+/obj/machinery/door/airlock/medical{
+	dir = 4;
+	name = "Medical Station"
 	},
-/obj/machinery/porta_turret/ship/ngr/heavy{
-	dir = 2;
-	pixel_y = 5
-	},
-/obj/structure/spider/stickyweb,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "Bz" = (
 /obj/structure/chair{
@@ -3466,23 +3433,12 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"BS" = (
-/mob/living/simple_animal/hostile/human/syndicate/civilian,
-/turf/open/floor/plasteel/dark,
-/area/space)
 "BT" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
-"BV" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/human/syndicate/melee,
-/turf/open/floor/plasteel/dark,
 /area/space)
 "BY" = (
 /obj/structure/table,
@@ -3493,6 +3449,11 @@
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
+/area/space)
+"BZ" = (
+/obj/effect/gibspawner/generic/animal,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "Cb" = (
 /obj/structure/flora/grass/jungle,
@@ -3540,20 +3501,25 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"Cw" = (
+/obj/effect/gibspawner/generic/animal,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
+"CA" = (
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "CB" = (
 /obj/structure/platform/military{
 	dir = 6
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
-"CC" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "CD" = (
 /obj/structure/flora/rock/jungle,
@@ -3584,15 +3550,15 @@
 	},
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"CM" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/tech/grid,
-/area/space)
 "CO" = (
 /obj/structure/platform/military{
 	dir = 9
 	},
+/turf/open/floor/plating/grass/jungle/lit,
+/area/space)
+"CQ" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "CS" = (
@@ -3731,8 +3697,13 @@
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
-"DG" = (
-/obj/structure/reagent_dispensers/fueltank,
+"DA" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/jungleplanet/lit,
+/area/space)
+"DE" = (
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "DH" = (
@@ -3763,21 +3734,33 @@
 	},
 /turf/open/floor/pod/dark,
 /area/space)
+"DL" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "DM" = (
 /obj/structure/platform/military{
 	dir = 10
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
+"DN" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/manifold/green/hidden,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/jungleplanet/lit,
+/area/space)
 "DR" = (
 /obj/effect/gibspawner/generic/animal,
 /obj/item/reagent_containers/food/snacks/meat/slab/spider,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
-"DT" = (
-/obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+"DS" = (
+/obj/structure/flora/rock/pile,
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "DX" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -3799,8 +3782,15 @@
 /turf/open/floor/concrete,
 /area/space)
 "Ec" = (
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
+"Ed" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
 "Eg" = (
 /obj/effect/turf_decal/box,
@@ -3809,6 +3799,13 @@
 	},
 /obj/structure/spacevine,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/space)
+"Ej" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "Ek" = (
 /obj/effect/turf_decal/techfloor{
@@ -3831,6 +3828,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Em" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
 "En" = (
 /obj/effect/turf_decal/road/stripes{
 	dir = 1
@@ -3839,6 +3842,13 @@
 	dir = 9
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
+/area/space)
+"Ep" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 4
+	},
+/obj/structure/spacevine/dense,
+/turf/open/water/jungle,
 /area/space)
 "Eq" = (
 /obj/structure/cable{
@@ -3860,16 +3870,22 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
-"Ex" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/spacevine,
-/turf/open/floor/plasteel/stairs{
-	dir = 2;
-	icon = 'icons/obj/stairs.dmi'
+"Ew" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "Ey" = (
 /turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/space)
+"EB" = (
+/obj/structure/flora/grass/jungle/b,
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "EC" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon,
@@ -3909,14 +3925,23 @@
 	},
 /turf/open/floor/concrete,
 /area/space)
-"Fh" = (
-/obj/structure/spider/stickyweb,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
 "Fi" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/space)
+"Fj" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/space)
+"Fk" = (
+/obj/structure/platform/military{
+	dir = 4
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "Fp" = (
 /obj/machinery/power/floodlight{
@@ -3939,6 +3964,13 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
+"Ft" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/syndicate/melee,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Fv" = (
 /obj/structure/chair{
 	dir = 8;
@@ -3948,25 +3980,10 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"Fy" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plating/jungleplanet/lit,
-/area/space)
 "Fz" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /turf/open/floor/engine/hull/reinforced,
-/area/space)
-"FA" = (
-/obj/effect/turf_decal/weather/dirt/corner{
-	dir = 4
-	},
-/obj/structure/spacevine/dense,
-/turf/open/water/jungle,
 /area/space)
 "FB" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -3976,6 +3993,10 @@
 	dir = 10
 	},
 /turf/open/water/jungle,
+/area/space)
+"FD" = (
+/obj/structure/window/reinforced,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "FE" = (
 /obj/structure/cable{
@@ -3997,7 +4018,12 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/space)
-"FQ" = (
+"FH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/space)
+"FR" = (
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -4015,10 +4041,6 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/jungleplanet/lit,
-/area/space)
-"Ga" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "Gc" = (
 /obj/effect/turf_decal/road{
@@ -4045,19 +4067,14 @@
 	},
 /turf/open/water/jungle,
 /area/space)
-"Gt" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/item/kirbyplants/random{
-	pixel_x = 9
-	},
-/obj/structure/spider/stickyweb,
-/obj/structure/spider/cocoon,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
-/area/space)
 "Gu" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/space)
+"Gv" = (
+/obj/structure/flora/junglebush/b,
+/obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "Gw" = (
@@ -4100,14 +4117,6 @@
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
-"GI" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor,
-/mob/living/simple_animal/hostile/human/syndicate/civilian,
-/turf/open/floor/plasteel/tech/grid,
-/area/space)
 "GJ" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
 	dir = 8
@@ -4120,10 +4129,33 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
-"GQ" = (
-/obj/structure/flora/junglebush/b,
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+"GN" = (
+/obj/structure/closet/secure_closet/security{
+	populate = 0;
+	icon_state = "syndicate";
+	name = "operative's locker"
+	},
+/obj/item/melee/knife/combat,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/storage/belt/security/webbing{
+	name = "syndicate webbing";
+	desc = "Unique and versatile chest rig, can hold syndicate gear."
+	},
+/obj/item/flashlight/seclite,
+/obj/item/clothing/suit/armor/vest/syndie,
+/obj/item/clothing/head/helmet/syndie,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
+"GO" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "GR" = (
 /obj/structure/platform/military{
@@ -4169,15 +4201,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
-"Hg" = (
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 8
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/space)
 "Hh" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/spacevine{
@@ -4194,20 +4217,20 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
 /area/space)
-"Hp" = (
-/obj/structure/chair/comfy/shuttle{
-	name = "grav couch";
-	dir = 2;
-	pixel_y = 5;
-	desc = "A comfortable seat designed to keep the seated from slipping under while partaking in intense manuevers"
+"Hq" = (
+/obj/structure/flora/junglebush,
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
 	},
-/mob/living/simple_animal/hostile/human/syndicate/civilian,
-/turf/open/floor/plasteel/mono/dark,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"Hr" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plating/jungleplanet/lit,
+"Hs" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "Hy" = (
 /obj/structure/platform/military{
@@ -4257,8 +4280,17 @@
 /area/space)
 "HT" = (
 /obj/structure/spacevine,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/turf/open/water/jungle/lit,
+/area/space)
+"HV" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "HX" = (
 /obj/effect/turf_decal/techfloor{
@@ -4266,20 +4298,6 @@
 	},
 /obj/structure/closet/crate/radiation,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
-"Ia" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal{
-	dir = 1
-	},
-/obj/structure/chair{
-	dir = 1
-	},
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel,
-/area/space)
-"Ie" = (
-/obj/effect/spawner/random/trash/grime,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "Ih" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -4353,6 +4371,13 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
 /area/space)
+"IB" = (
+/obj/structure/flora/tree/jungle/small{
+	icon_state = "tree1"
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/space)
 "IC" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -4389,6 +4414,15 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"IR" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
+	},
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/cocoon,
+/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "IX" = (
 /obj/structure/flora/junglebush/c,
@@ -4429,11 +4463,6 @@
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
-"Jr" = (
-/obj/effect/gibspawner/generic/animal,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
 "Jt" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/spacevine{
@@ -4454,6 +4483,7 @@
 /obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 1
 	},
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
 /area/space)
 "JA" = (
@@ -4567,6 +4597,14 @@
 	},
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
+"Kp" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
+	dir = 1
+	},
+/obj/structure/dresser,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel,
+/area/space)
 "Ks" = (
 /obj/effect/turf_decal/weather/dirt/corner{
 	dir = 4
@@ -4605,6 +4643,13 @@
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
+"KK" = (
+/obj/structure/platform/military{
+	dir = 8
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/space)
 "KN" = (
 /obj/structure/platform/military/corner{
 	dir = 8
@@ -4619,12 +4664,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
-"KT" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/spider/stickyweb,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
 /area/space)
 "KU" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -4656,13 +4695,9 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Lk" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun,
-/turf/open/floor/plating/jungleplanet/lit,
-/area/space)
-"Ll" = (
+/obj/structure/flora/tree/jungle,
 /obj/structure/spacevine,
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "Lo" = (
 /obj/structure/spacevine,
@@ -4670,26 +4705,18 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"Lr" = (
-/obj/structure/platform/military{
-	dir = 5
-	},
-/obj/structure/spacevine,
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
-"Lt" = (
-/obj/structure/platform/military{
-	dir = 5
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
 "Lu" = (
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree5"
 	},
 /turf/open/floor/plating/grass/jungle/lit,
+/area/space)
+"Lw" = (
+/obj/structure/platform/military{
+	dir = 8
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "Lz" = (
 /obj/machinery/computer/telecomms/monitor{
@@ -4711,12 +4738,6 @@
 /obj/structure/flora/junglebush/c,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/space)
-"LD" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/structure/spider/stickyweb,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "LE" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
@@ -4790,6 +4811,11 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/jungleplanet/lit,
 /area/space)
+"Mh" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/space)
 "Ml" = (
 /obj/structure/closet/secure_closet/medical3,
 /obj/item/defibrillator,
@@ -4806,16 +4832,12 @@
 	color = "#777777"
 	},
 /area/space)
-"Mq" = (
-/obj/structure/platform/military{
+"Mo" = (
+/obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
-"Mr" = (
-/obj/structure/window/reinforced,
-/turf/open/floor/plasteel/mono/dark,
+/obj/structure/spacevine,
+/turf/open/water/jungle,
 /area/space)
 "Ms" = (
 /obj/structure/platform/military{
@@ -4847,18 +4869,16 @@
 	},
 /turf/open/floor/plasteel/mono/dark/jungleplanet,
 /area/space)
-"MI" = (
-/obj/structure/platform/military{
-	dir = 5
-	},
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/space)
 "MK" = (
 /obj/structure/platform/military{
 	dir = 5
 	},
 /turf/open/water/jungle/lit,
+/area/space)
+"ML" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "MO" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -4887,6 +4907,10 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
+"MY" = (
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/space)
 "MZ" = (
 /obj/structure/railing/thin{
 	dir = 4
@@ -4900,6 +4924,12 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/concrete/slab_2,
+/area/space)
+"Nc" = (
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
+/turf/open/floor/wood,
 /area/space)
 "Nf" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner,
@@ -4932,6 +4962,17 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"Nl" = (
+/obj/structure/platform/military{
+	dir = 5
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/space)
+"Np" = (
+/obj/structure/table,
+/turf/open/floor/wood,
 /area/space)
 "Nq" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -4979,13 +5020,12 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
-"NJ" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal{
-	dir = 1
+"NI" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
 	},
-/obj/structure/closet/wall/directional/south,
-/obj/item/clothing/shoes/jackboots,
-/turf/open/floor/plasteel,
+/obj/structure/spacevine,
+/turf/open/water/jungle,
 /area/space)
 "NO" = (
 /obj/structure/cable{
@@ -5017,6 +5057,17 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
 /area/space)
+"NU" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel/stairs{
+	dir = 8;
+	icon = 'icons/obj/stairs.dmi';
+	icon_state = "stairs_t"
+	},
+/area/space)
 "NY" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/chair{
@@ -5026,10 +5077,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/space)
-"NZ" = (
-/obj/structure/spacevine/dense,
-/turf/open/water/jungle,
-/area/space)
 "Oh" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -5037,20 +5084,20 @@
 /obj/structure/platform/military,
 /turf/open/water/jungle,
 /area/space)
-"Oj" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal{
-	dir = 1
-	},
-/obj/structure/table,
+"Ok" = (
+/mob/living/simple_animal/hostile/poison/giant_spider,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
-"Om" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt/jungle/lit,
+"Ol" = (
+/obj/effect/turf_decal/road,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/jungleplanet/lit,
+/area/space)
+"Oo" = (
+/obj/structure/platform/military/corner,
+/obj/structure/spacevine,
+/turf/open/floor/concrete/jungleplanet/lit,
 /area/space)
 "Op" = (
 /obj/structure/platform/military{
@@ -5113,6 +5160,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
+"OJ" = (
+/turf/open/floor/carpet/red,
+/area/space)
 "OL" = (
 /obj/structure/platform/military{
 	dir = 9
@@ -5120,10 +5170,15 @@
 /turf/open/water/jungle/lit,
 /area/space)
 "OM" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
+"ON" = (
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
-/turf/open/floor/wood,
+/obj/structure/spacevine/dense,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
 "OQ" = (
 /obj/structure/flora/grass/jungle,
@@ -5158,10 +5213,6 @@
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/space)
-"Pd" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/turf/open/floor/plasteel/tech/grid,
-/area/space)
 "Pe" = (
 /obj/item/stack/sheet/mineral/plastitanium,
 /obj/structure/platform/military{
@@ -5195,13 +5246,17 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"Po" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/spacevine/dense,
-/turf/open/floor/plasteel/stairs{
-	dir = 2;
-	icon = 'icons/obj/stairs.dmi'
+"Pm" = (
+/obj/structure/window/reinforced{
+	dir = 4
 	},
+/obj/structure/closet/secure_closet/security{
+	populate = 0;
+	icon_state = "syndicate";
+	name = "operative's locker";
+	opened = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Pp" = (
 /obj/effect/turf_decal/road{
@@ -5240,6 +5295,13 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
+"PH" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/jungleplanet/lit,
+/area/space)
 "PJ" = (
 /obj/effect/turf_decal/box,
 /obj/structure/cable{
@@ -5247,15 +5309,13 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
-"PO" = (
-/obj/structure/platform/military/corner{
-	dir = 1
+"PN" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
 	},
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	pixel_y = -32
-	},
-/turf/open/floor/plating/dirt/jungle/lit,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "PP" = (
 /obj/structure/closet/firecloset/full{
@@ -5351,9 +5411,10 @@
 	color = "#777777"
 	},
 /area/space)
-"Qt" = (
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/dark/jungleplanet/lit,
+"Qs" = (
+/obj/item/reagent_containers/food/snacks/meat/slab/spider,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "Qu" = (
 /obj/item/ammo_casing/caseless/rocket{
@@ -5383,27 +5444,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
-"QE" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	pixel_x = 32
+"Qv" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
 	},
-/obj/structure/spacevine{
-	pixel_y = 32
-	},
-/turf/open/floor/plating/grass/jungle/lit,
+/obj/structure/door_assembly,
+/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "QF" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/space)
-"QG" = (
-/obj/structure/platform/military{
-	dir = 4
-	},
-/obj/structure/spacevine,
-/turf/open/floor/concrete/jungleplanet/lit,
 /area/space)
 "QK" = (
 /obj/structure/spacevine{
@@ -5451,6 +5503,11 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /turf/open/floor/plating,
 /area/space)
+"Ra" = (
+/obj/structure/spacevine,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
 "Rb" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -5458,16 +5515,10 @@
 /obj/structure/closet/crate/engineering,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
-"Rc" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
+"Re" = (
+/obj/structure/platform/military/corner,
 /obj/structure/spacevine,
-/turf/open/floor/plating/jungleplanet/lit,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "Rh" = (
 /obj/structure/spacevine,
@@ -5488,21 +5539,24 @@
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/space)
+"Rt" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/spacevine/dense,
+/turf/open/floor/plasteel/stairs{
+	dir = 2;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/space)
+"Rv" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun,
+/turf/open/floor/plating/jungleplanet/lit,
+/area/space)
 "Rw" = (
 /obj/structure/spacevine{
 	pixel_y = -32
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
-"Rz" = (
-/obj/structure/spacevine{
-	pixel_x = 32
-	},
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	pixel_y = 32
-	},
-/turf/open/water/jungle,
 /area/space)
 "RC" = (
 /obj/structure/platform/military,
@@ -5516,6 +5570,13 @@
 	icon_state = "1-6"
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/space)
+"RJ" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 1
+	},
+/obj/structure/spacevine/dense,
+/turf/open/water/jungle,
 /area/space)
 "RN" = (
 /obj/effect/turf_decal/industrial/stand_clear/white{
@@ -5565,10 +5626,15 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
-"Sj" = (
-/obj/effect/turf_decal/road,
-/obj/structure/barricade/sandbags,
-/turf/open/floor/concrete/jungleplanet/lit,
+"Sk" = (
+/obj/structure/spacevine,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/space)
+"Sq" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Sr" = (
 /obj/structure/frame/machine,
@@ -5582,6 +5648,13 @@
 	dir = 8
 	},
 /turf/open/water/jungle,
+/area/space)
+"Sw" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "SF" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -5627,11 +5700,6 @@
 	},
 /turf/open/floor/pod/dark,
 /area/space)
-"SW" = (
-/obj/structure/spider/stickyweb,
-/obj/structure/spider/cocoon,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
 "SX" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
@@ -5648,38 +5716,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
-"Tb" = (
-/obj/structure/spider/stickyweb,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/dark/jungleplanet/lit,
-/area/space)
-"Te" = (
-/obj/structure/platform/military{
-	dir = 10
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/space)
-"Tg" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal{
-	dir = 1
-	},
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel,
-/area/space)
-"Th" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/spacevine,
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/space)
 "Ti" = (
-/obj/structure/platform/military{
-	dir = 1
-	},
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt/jungle/lit,
+/obj/structure/barricade/sandbags,
+/obj/structure/spacevine,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "Tm" = (
 /obj/structure/crate_shelf,
@@ -5720,9 +5760,14 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
 "Tz" = (
-/obj/structure/platform/military/corner,
-/obj/structure/spacevine,
-/turf/open/floor/concrete/jungleplanet/lit,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/syndicate/civilian,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "TA" = (
 /obj/structure/platform/military{
@@ -5749,6 +5794,17 @@
 	icon = 'icons/obj/stairs.dmi'
 	},
 /area/space)
+"TS" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/spacevine,
+/turf/open/floor/plating/jungleplanet/lit,
+/area/space)
 "TT" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/platform/military/corner{
@@ -5758,6 +5814,11 @@
 /area/space)
 "TU" = (
 /turf/template_noop,
+/area/space)
+"TV" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/cocoon,
+/turf/open/floor/plasteel/dark/jungleplanet/lit,
 /area/space)
 "TZ" = (
 /obj/machinery/power/floodlight{
@@ -5811,11 +5872,40 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
+"Ul" = (
+/obj/structure/barricade/security{
+	layer = 2.89
+	},
+/obj/machinery/porta_turret/ship/ngr/heavy{
+	dir = 2;
+	pixel_y = 5
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
 "Um" = (
 /obj/effect/turf_decal/corner/opaque/cybersunteal/diagonal{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"Uo" = (
+/obj/structure/chair/comfy/shuttle{
+	name = "grav couch";
+	dir = 2;
+	pixel_y = 5;
+	desc = "A comfortable seat designed to keep the seated from slipping under while partaking in intense manuevers"
+	},
+/mob/living/simple_animal/hostile/human/syndicate/civilian,
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
+"Uu" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor,
+/mob/living/simple_animal/hostile/human/syndicate/civilian,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "Ux" = (
 /obj/structure/barricade/sandbags,
@@ -5848,6 +5938,20 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/space)
+"UF" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/spacevine/dense,
+/turf/open/water/jungle,
+/area/space)
+"UH" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/water/jungle,
+/area/space)
 "UI" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/double/black,
@@ -5876,14 +5980,6 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
-"UQ" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal{
-	dir = 1
-	},
-/obj/structure/spider/stickyweb,
-/obj/structure/spider/cocoon,
-/turf/open/floor/plasteel,
 /area/space)
 "UR" = (
 /obj/structure/table,
@@ -5926,17 +6022,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"Vu" = (
+/obj/structure/platform/military{
+	dir = 5
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/space)
 "Vw" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/manifold/green/hidden{
 	dir = 1
 	},
 /turf/open/floor/plating/jungleplanet/lit,
-/area/space)
-"Vy" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "VA" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
@@ -5955,15 +6054,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
-"VH" = (
-/obj/item/flamethrower/full/tank,
-/obj/structure/table,
-/obj/item/storage/box/beakers{
-	pixel_x = 11;
-	pixel_y = -5
-	},
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
 "VM" = (
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree10"
@@ -5979,11 +6069,6 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/c,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/space)
-"VR" = (
-/obj/structure/flora/tree/jungle,
-/obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "VS" = (
@@ -6006,24 +6091,18 @@
 /obj/structure/platform/military,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
-"Wc" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+"Wd" = (
+/obj/structure/platform/military{
+	dir = 6
 	},
 /obj/structure/spacevine,
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "Wg" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/space)
-"Wk" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/wood,
 /area/space)
 "Wm" = (
 /obj/structure/toilet{
@@ -6042,28 +6121,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/space)
-"Wn" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/closet/secure_closet/security{
-	populate = 0;
-	icon_state = "syndicate";
-	name = "operative's locker"
-	},
-/obj/item/melee/knife/combat,
-/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/storage/belt/security/webbing{
-	name = "syndicate webbing";
-	desc = "Unique and versatile chest rig, can hold syndicate gear."
-	},
-/obj/item/flashlight/seclite,
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/syndie,
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
 "Wp" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor{
@@ -6074,6 +6131,11 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"Wq" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/space)
 "Wu" = (
 /obj/machinery/suit_storage_unit/inherit{
 	locked = 1
@@ -6081,13 +6143,6 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/mono/dark,
-/area/space)
-"Ww" = (
-/obj/structure/platform/military/corner{
-	dir = 4
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "Wx" = (
 /turf/closed/wall,
@@ -6104,12 +6159,6 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/concrete/slab_4,
-/area/space)
-"WD" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "WE" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -6149,43 +6198,12 @@
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/space)
-"WM" = (
-/obj/structure/closet/secure_closet/security{
-	populate = 0;
-	icon_state = "syndicate";
-	name = "operative's locker"
-	},
-/obj/item/melee/knife/combat,
-/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/storage/belt/security/webbing{
-	name = "syndicate webbing";
-	desc = "Unique and versatile chest rig, can hold syndicate gear."
-	},
-/obj/item/flashlight/seclite,
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/syndie,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
-"WQ" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/space)
 "WS" = (
 /obj/structure/platform/military,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "WT" = (
 /turf/open/floor/plasteel/tech,
-/area/space)
-"WW" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "WX" = (
 /obj/structure/spacevine{
@@ -6212,6 +6230,14 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
+"Xe" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
+	dir = 1
+	},
+/obj/structure/chair,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel,
+/area/space)
 "Xi" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spider/stickyweb,
@@ -6234,12 +6260,6 @@
 "Xn" = (
 /turf/open/floor/plasteel/mono/white,
 /area/space)
-"Xp" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/space)
 "Xq" = (
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -6256,12 +6276,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
-"Xt" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+"XL" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
+	dir = 1
 	},
-/obj/structure/spacevine/dense,
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/cocoon,
+/turf/open/floor/plasteel,
 /area/space)
 "XN" = (
 /obj/structure/railing/thin{
@@ -6288,13 +6309,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
-"XT" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/spacevine/dense,
-/turf/open/water/jungle,
-/area/space)
 "XU" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -6312,11 +6326,6 @@
 	dir = 1
 	},
 /turf/open/water/jungle,
-/area/space)
-"Yb" = (
-/obj/structure/flora/rock/jungle,
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
 /area/space)
 "Yc" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -6355,6 +6364,12 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"Yq" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/space)
 "Yr" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine{
@@ -6386,13 +6401,6 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/jungleplanet/lit,
 /area/space)
-"YD" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/structure/spacevine,
-/turf/open/water/jungle,
-/area/space)
 "YE" = (
 /obj/structure/platform/military{
 	dir = 1
@@ -6410,33 +6418,19 @@
 /obj/effect/turf_decal/corner/transparent/syndiered/border,
 /turf/open/floor/plating/jungleplanet/lit,
 /area/space)
-"YI" = (
-/obj/structure/platform/military{
-	dir = 4
-	},
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
-/area/space)
 "YJ" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
 /turf/open/floor/plasteel/mono/dark/jungleplanet/lit,
-/area/space)
-"YK" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/spider/stickyweb,
-/obj/structure/door_assembly,
-/turf/open/floor/plating/jungleplanet/lit,
 /area/space)
 "YN" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle/lit,
 /area/space)
-"YO" = (
-/obj/structure/flora/junglebush/c,
-/obj/structure/spacevine,
-/obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+"YP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "YQ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -6471,11 +6465,11 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "Zf" = (
-/obj/structure/platform/military{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plating/dirt/jungle/lit,
+/obj/structure/spacevine,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
 "Zi" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/filled/warning,
@@ -6489,6 +6483,15 @@
 	dir = 4
 	},
 /turf/open/water/jungle/lit,
+/area/space)
+"Zo" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/structure/spider/stickyweb,
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/floor/plasteel,
 /area/space)
 "Zp" = (
 /turf/open/floor/concrete/jungleplanet/lit,
@@ -6558,14 +6561,6 @@
 	pixel_y = 5
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
-"ZI" = (
-/obj/structure/platform/military/corner{
-	dir = 1
-	},
-/obj/structure/spacevine,
-/obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/lit,
 /area/space)
 "ZN" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -7550,13 +7545,13 @@ Jk
 Yi
 os
 os
-MI
-YI
+Nl
+Fk
 nb
-YI
-YI
+Fk
+Fk
 rE
-YI
+Fk
 HH
 os
 os
@@ -8060,7 +8055,7 @@ KY
 Rh
 Rh
 Ii
-YD
+Mo
 Gf
 Gf
 kj
@@ -8142,7 +8137,7 @@ bd
 SX
 Rh
 Ii
-YD
+Mo
 Gf
 Gf
 Gf
@@ -8226,11 +8221,11 @@ Cc
 go
 Gf
 Gf
-nZ
-nZ
-nZ
-nZ
-qj
+kl
+kl
+kl
+kl
+NI
 Ii
 ju
 kj
@@ -8302,9 +8297,9 @@ cv
 KY
 KY
 KY
-tj
+hT
 tD
-tj
+hT
 go
 bI
 Rh
@@ -8384,7 +8379,7 @@ KY
 KY
 KY
 BL
-tj
+hT
 Ma
 Rh
 go
@@ -8472,7 +8467,7 @@ go
 go
 go
 go
-VR
+Lk
 go
 Rh
 YC
@@ -8623,18 +8618,18 @@ bd
 ah
 IL
 IL
-tj
+hT
 Rh
 Wg
 ok
-ji
+zY
 go
 go
 go
 ok
 Rh
 go
-dr
+DS
 go
 Rh
 kO
@@ -8716,7 +8711,7 @@ go
 Ii
 Ii
 Ii
-uE
+Re
 EH
 gM
 Jk
@@ -9275,8 +9270,8 @@ me
 me
 me
 me
-uV
-uV
+PH
+PH
 me
 me
 me
@@ -9357,7 +9352,7 @@ rk
 rk
 rk
 rk
-Sj
+Ol
 rk
 rk
 rk
@@ -9774,9 +9769,9 @@ ay
 ay
 Zp
 Zp
-Tz
-QG
-QG
+Oo
+qD
+qD
 bN
 KN
 Zp
@@ -9851,9 +9846,9 @@ os
 Pt
 LO
 LO
-vx
-vx
-vx
+fw
+fw
+fw
 Il
 Ow
 Uy
@@ -9864,7 +9859,7 @@ GB
 Fr
 Il
 Il
-Te
+AD
 os
 mj
 os
@@ -9935,22 +9930,22 @@ bd
 Rh
 Rh
 Zq
-tj
-uE
+hT
+Re
 LU
 cS
-aR
-aR
-kB
-jT
-Lt
-yt
-Vy
-ZI
+nn
+nn
+ed
+sP
+bH
+ja
+Wq
+uy
 Il
-Om
+Hs
 ie
-lm
+em
 KY
 KY
 Ey
@@ -10014,16 +10009,16 @@ os
 It
 Rh
 Rh
-zP
+AX
 Zx
 xp
 go
 rg
 yO
-Ab
-kB
-lp
-kB
+Sk
+ed
+qt
+ed
 dP
 uC
 eO
@@ -10095,14 +10090,14 @@ GE
 OY
 It
 Rh
-tj
+hT
 go
 eX
 go
 Zx
 so
 Ux
-kB
+ed
 kh
 ND
 MH
@@ -10113,9 +10108,9 @@ Ii
 IX
 Bc
 Rh
-ot
-XT
-xs
+fK
+UF
+RJ
 PB
 KY
 ju
@@ -10184,21 +10179,21 @@ VM
 go
 so
 Ux
-kB
+ed
 jI
 jx
 gV
 lI
 uu
-rB
-ue
+bS
+Sw
 sh
 ok
-Yb
+uh
 go
-NZ
-NZ
-FA
+vP
+vP
+Ep
 IO
 Xm
 sT
@@ -10245,7 +10240,7 @@ eO
 rg
 Am
 fp
-Th
+Ed
 UT
 UT
 mv
@@ -10257,15 +10252,15 @@ UT
 UT
 GE
 OY
-Ti
+dG
 fx
 Rh
-tj
+hT
 fx
 go
 xp
 so
-Ab
+Sk
 lI
 gg
 Jb
@@ -10276,16 +10271,16 @@ dP
 dP
 dP
 dP
-aB
+gj
 Zx
-ot
-NZ
-NZ
-NZ
+fK
+vP
+vP
+vP
 kj
 sT
 os
-Ec
+lF
 Yt
 bd
 bd
@@ -10321,14 +10316,14 @@ fU
 Wy
 Ms
 VF
-Rc
+TS
 Ij
-Lt
-jh
+bH
+Wd
 Am
 sN
-Th
-Ll
+Ed
+av
 UT
 UT
 VS
@@ -10339,10 +10334,10 @@ UT
 UT
 GE
 Am
-Ti
+dG
 Ii
 Ii
-tj
+hT
 Ii
 go
 Ii
@@ -10358,16 +10353,16 @@ df
 TL
 el
 dP
-gK
-cf
-gW
+Hq
+tP
+yG
 uL
-cO
-NZ
-NZ
+UH
+vP
+vP
 sT
-Ec
-Ec
+lF
+lF
 Yt
 kO
 bd
@@ -10403,14 +10398,14 @@ os
 os
 os
 os
-Rc
-yj
-yj
+TS
+Ti
+Ti
 OY
 Am
-Po
-Xt
-Ll
+Rt
+Fj
+av
 BB
 UT
 mv
@@ -10421,14 +10416,14 @@ UT
 UT
 GE
 Am
-Ti
+dG
 Ii
 KY
 Ey
 fx
 fx
-tj
-PO
+hT
+Ap
 dP
 dP
 dP
@@ -10440,16 +10435,16 @@ LT
 hq
 Cu
 dP
-QE
+HV
 dP
 dP
 dP
 dP
-NZ
-NZ
+vP
+vP
 RZ
-Ec
-Ec
+lF
+lF
 Yt
 bd
 bd
@@ -10488,11 +10483,11 @@ qk
 NO
 rO
 zB
-CC
-CC
+Ew
+Ew
 dI
 Eq
-Ll
+av
 BB
 UT
 UT
@@ -10510,7 +10505,7 @@ fx
 fx
 KY
 Rh
-aP
+fH
 dP
 QW
 QW
@@ -10527,11 +10522,11 @@ dP
 gZ
 qF
 dP
-Rz
-cO
+hX
+UH
 RZ
-Ec
-Ec
+lF
+lF
 Yt
 bd
 KY
@@ -10572,9 +10567,9 @@ os
 gu
 os
 OY
-Ex
-Th
-Ll
+lj
+Ed
+av
 BB
 Sr
 BB
@@ -10585,14 +10580,14 @@ UT
 UT
 GE
 OY
-Lr
-yt
-uE
+Vu
+ja
+Re
 EH
 EH
 Jk
-yt
-nI
+ja
+vR
 dP
 QW
 oe
@@ -10612,7 +10607,7 @@ dP
 dP
 dP
 RZ
-Ec
+lF
 os
 eO
 KY
@@ -10655,8 +10650,8 @@ PX
 Hy
 os
 Bw
-Th
-Ll
+Ed
+av
 UT
 Sr
 BB
@@ -10668,13 +10663,13 @@ UT
 GE
 OY
 OY
-Ti
+dG
 so
 OY
 os
 os
 eO
-gl
+Ej
 dP
 QW
 QW
@@ -10737,7 +10732,7 @@ eO
 WS
 os
 XP
-Th
+Ed
 Eg
 UT
 UT
@@ -10750,8 +10745,8 @@ UT
 GE
 OY
 Sd
-yX
-yE
+zq
+Mh
 XN
 os
 os
@@ -10819,8 +10814,8 @@ eO
 vX
 os
 fp
-qV
-Wc
+ON
+Zf
 PE
 CW
 CW
@@ -10832,9 +10827,9 @@ UT
 GE
 OY
 zI
-yX
-vu
-mc
+zq
+xd
+zg
 os
 os
 eO
@@ -10901,7 +10896,7 @@ eO
 so
 os
 hW
-fc
+Lw
 Wx
 Wx
 Wx
@@ -10914,9 +10909,9 @@ JY
 VF
 OY
 OY
-xt
+yR
 so
-yj
+Ti
 gu
 gu
 ZS
@@ -10995,11 +10990,11 @@ OY
 OY
 OY
 OY
-yZ
-Ww
+qu
+dK
 so
 gu
-fN
+DE
 os
 os
 dP
@@ -11061,8 +11056,8 @@ dP
 os
 qd
 os
-xt
-tc
+yR
+gz
 Il
 ie
 ie
@@ -11073,12 +11068,12 @@ LO
 LO
 LO
 Il
-vx
+fw
 Il
 Il
 Il
-Ww
-YO
+dK
+db
 so
 os
 qd
@@ -11105,7 +11100,7 @@ dP
 kI
 yC
 os
-Ec
+lF
 IC
 PB
 KY
@@ -11146,21 +11141,21 @@ os
 It
 Ii
 Rh
-jX
-yi
+rv
+CQ
 hI
 hI
 Ii
 Ii
-GQ
+Gv
 Rh
 Ii
 Ii
 Ii
 Ii
 Rh
-GQ
-gt
+Gv
+IB
 so
 os
 qd
@@ -11187,7 +11182,7 @@ dP
 dP
 vX
 os
-Ec
+lF
 Ya
 PB
 KY
@@ -11228,25 +11223,25 @@ os
 eO
 Ii
 Bc
-tj
+hT
 go
 xp
 go
 Ii
 fx
-gt
-tj
+IB
+hT
 go
 go
 go
-tj
-tj
-tj
-tj
+hT
+hT
+hT
+hT
 vX
 os
 qd
-Ec
+lF
 PX
 dP
 dP
@@ -11269,7 +11264,7 @@ FG
 dP
 WS
 os
-Ec
+lF
 Ya
 PB
 Qi
@@ -11297,7 +11292,7 @@ Nf
 eV
 bs
 eV
-BV
+Ft
 dP
 dP
 zO
@@ -11324,11 +11319,11 @@ go
 bd
 Lu
 fx
-tj
+hT
 so
 os
 qd
-Ec
+lF
 eO
 dP
 CU
@@ -11351,7 +11346,7 @@ hc
 dP
 WS
 os
-Ec
+lF
 Bh
 cv
 KY
@@ -11395,7 +11390,7 @@ Jk
 tC
 EH
 EH
-uP
+ln
 tC
 tC
 Jk
@@ -11407,10 +11402,10 @@ Jk
 Jk
 EH
 EH
-jh
+Wd
 os
 qd
-Ec
+lF
 eO
 dP
 CU
@@ -11433,7 +11428,7 @@ dP
 dP
 vX
 os
-Ec
+lF
 bU
 KY
 KY
@@ -11491,8 +11486,8 @@ os
 os
 os
 os
-Aq
-Ec
+DA
+lF
 hM
 dP
 dP
@@ -11515,7 +11510,7 @@ dP
 bd
 vX
 os
-Ec
+lF
 eO
 TU
 TU
@@ -11537,7 +11532,7 @@ hq
 OF
 JS
 JS
-sQ
+Tz
 JS
 JS
 mC
@@ -11597,7 +11592,7 @@ dP
 Ey
 vX
 os
-Ec
+lF
 ZS
 Jk
 Jk
@@ -11649,7 +11644,7 @@ os
 os
 os
 os
-Lk
+Rv
 os
 os
 os
@@ -11679,9 +11674,9 @@ dP
 Jk
 Yi
 os
-Ec
-Ec
-Ec
+lF
+lF
+lF
 os
 os
 eO
@@ -11698,7 +11693,7 @@ OY
 py
 dP
 hq
-GI
+Uu
 dP
 dP
 nG
@@ -11738,8 +11733,8 @@ LO
 Hy
 os
 qd
-Ec
-Ie
+lF
+bF
 os
 gu
 gu
@@ -11751,19 +11746,19 @@ dB
 os
 aF
 os
-Ay
-Ec
-kp
-Ec
+Qs
+lF
+Cw
+lF
 os
 os
 os
 os
-Ec
-Ec
-Ec
-Ec
-Ec
+lF
+lF
+lF
+lF
+lF
 ZH
 os
 eO
@@ -11813,7 +11808,7 @@ Wx
 KY
 Wx
 Wx
-nR
+Bx
 Wx
 Wx
 Wx
@@ -11830,12 +11825,12 @@ qd
 qd
 qd
 qd
-Hr
+nR
 qd
 qd
-Aq
-Aq
-Aq
+DA
+DA
+DA
 qd
 qd
 os
@@ -11869,12 +11864,12 @@ oe
 oe
 Lf
 oe
-Hp
+Uo
 rI
 Fz
 WT
 zd
-BS
+wd
 Vj
 oe
 BT
@@ -11896,31 +11891,31 @@ EG
 Wx
 oR
 oR
-gw
+MY
 oR
 Wx
 vX
-DG
+cq
 qd
-vW
-vW
+kb
+kb
 os
-Ie
+bF
 gu
 os
 rU
 os
 DR
-eR
-eR
-Hr
+Ec
+Ec
+nR
 os
 oQ
 os
-Ec
-Ec
-Ec
-Ec
+lF
+lF
+lF
+lF
 OL
 zH
 zH
@@ -11984,8 +11979,8 @@ Wx
 vX
 os
 qd
-VH
-vW
+kr
+kb
 os
 os
 Wx
@@ -11995,7 +11990,7 @@ Wx
 Wx
 Wx
 jm
-Hr
+nR
 sK
 Wx
 Wx
@@ -12066,8 +12061,8 @@ Wx
 vX
 os
 qd
-vW
-vW
+kb
+kb
 oe
 Pf
 Wx
@@ -12076,19 +12071,19 @@ IA
 Wx
 bD
 Wx
-Fh
-YK
-eR
+jg
+bk
+Ec
 Wx
-Tg
-ti
-Oj
-Ia
+Jz
+Xe
+rL
+rx
 Wx
 BD
 zN
 zN
-bn
+HT
 zN
 Dj
 KY
@@ -12114,7 +12109,7 @@ vO
 vO
 vO
 vO
-wP
+Aw
 vO
 vO
 vO
@@ -12154,24 +12149,24 @@ oe
 UR
 Wx
 Cq
-KT
+zl
 Wx
-en
+FH
 Wx
-mH
+YP
 zk
-gG
+mo
 fQ
 zc
 cG
-Tg
-UQ
+Jz
+XL
 Wx
 BD
 zN
-bn
-bn
-bn
+HT
+HT
+HT
 Zk
 Aj
 KY
@@ -12223,7 +12218,7 @@ Wx
 Pk
 Wx
 oR
-WQ
+iI
 oR
 oR
 Wx
@@ -12236,25 +12231,25 @@ oe
 UR
 Wx
 VA
-KT
+zl
 Dw
 JE
-CM
-LD
+gH
+uS
 cg
 os
 Wx
 Zz
 Wx
-yK
-Tg
+Kp
+Jz
 Wx
 BD
 zN
 zN
-bn
-bn
-bn
+HT
+HT
+HT
 Dj
 KY
 KY
@@ -12318,25 +12313,25 @@ oe
 Pf
 Wx
 NS
-bp
+fr
 NY
-Gt
+wr
 Wx
-wa
+Ok
 Zw
-Ga
+OM
 Wx
 sI
 Wx
 GC
-NJ
+oU
 Wx
 MK
 ou
 zN
-bn
-bn
-bn
+HT
+HT
+HT
 Zk
 tr
 tr
@@ -12390,7 +12385,7 @@ Wx
 Wx
 Wx
 Ys
-ru
+oW
 Wx
 gu
 YQ
@@ -12404,21 +12399,21 @@ Wx
 Wx
 Wx
 Wx
-eR
+Ec
 Zw
-mH
+YP
 Wx
 Wx
 Wx
 Wx
 Wx
 Wx
-eR
+Ec
 MK
 zN
 zN
-bn
-bn
+HT
+HT
 zN
 zN
 zN
@@ -12486,21 +12481,21 @@ Vl
 IY
 jD
 Wx
-eR
-Fy
-mH
-eR
+Ec
+PN
+YP
+Ec
 YV
-Qt
-Qt
-Qt
-ij
-eR
+TV
+hQ
+TV
+pP
+Ec
 os
 zN
 zN
 zN
-bn
+HT
 zN
 zN
 zN
@@ -12533,7 +12528,7 @@ os
 OY
 OY
 OY
-HT
+Ra
 os
 qd
 os
@@ -12554,7 +12549,7 @@ HR
 lE
 Wx
 Ys
-ru
+oW
 Wx
 os
 qd
@@ -12563,21 +12558,21 @@ Wx
 qK
 oe
 Wx
-sX
-sX
+te
+te
 Dl
 XQ
 fQ
-gG
-mk
-mH
+mo
+DN
+YP
 os
-mH
-eR
-eR
-eR
-eR
-eR
+YP
+Ec
+Ec
+Ec
+Ec
+Ec
 os
 zN
 zN
@@ -12636,7 +12631,7 @@ Wx
 Wx
 Wx
 Ys
-ru
+oW
 Wx
 sK
 qd
@@ -12652,14 +12647,14 @@ Zz
 Wx
 os
 Zw
-Fh
+jg
 OV
-Qt
+hQ
 YV
 YV
-Qt
-Qt
-Tb
+hQ
+hQ
+AK
 os
 zN
 zN
@@ -12715,10 +12710,10 @@ uF
 EG
 Wx
 GY
-yk
+pN
 Wx
 Ys
-ru
+oW
 Wx
 os
 qd
@@ -12732,21 +12727,21 @@ zQ
 Wx
 UC
 Wx
-eR
-Fy
-SW
-Qt
-Qt
+Ec
+PN
+uU
+hQ
+hQ
 YV
 YV
 YV
-Qt
-Qt
+hQ
+hQ
 os
 zN
 zN
-bn
-bn
+HT
+HT
 zN
 zN
 TU
@@ -12784,11 +12779,11 @@ os
 qd
 os
 Wx
-jU
-Mr
-lh
-iL
-jU
+cK
+FD
+tx
+DL
+cK
 Wx
 Lo
 uF
@@ -12800,7 +12795,7 @@ MF
 zE
 zC
 uH
-bA
+ru
 Wx
 os
 qd
@@ -12814,20 +12809,20 @@ Wx
 Wx
 Wx
 Wx
-eR
-Fy
-eR
+Ec
+PN
+Ec
 YV
 YV
 YV
 xH
-Qt
-Qt
-Qt
+hQ
+hQ
+hQ
 os
 zN
 zN
-bn
+HT
 zN
 zN
 zN
@@ -12866,11 +12861,11 @@ os
 qd
 os
 Wx
-Wn
-Xp
-lh
-Xp
-aN
+yw
+Sq
+tx
+Sq
+Pm
 Wx
 Xi
 nL
@@ -12882,35 +12877,35 @@ Wx
 Wx
 Wx
 Ys
-ru
+oW
 Wx
 os
 qd
-eR
-eR
-eR
+Ec
+Ec
+Ec
 Zw
 os
 os
 os
 os
-vg
-eR
-eR
+mn
+Ec
+Ec
 Zw
 os
 YV
 YV
-Qt
-Qt
-Qt
-Qt
+hQ
+hQ
+TV
+hQ
 YV
 os
 zN
-bn
-bn
-bn
+HT
+HT
+HT
 zN
 zN
 TU
@@ -12948,11 +12943,11 @@ qd
 qd
 os
 oe
-Hg
-Hg
-uj
-Hg
-Hg
+CA
+CA
+oS
+CA
+CA
 Wx
 Xi
 ok
@@ -12964,34 +12959,34 @@ BH
 Qr
 Wx
 Ys
-ru
+oW
 Wx
 os
 qd
-Hr
-Hr
-Hr
+nR
+nR
+nR
 yb
 SP
 aj
-WD
-WD
-WD
-WD
+ka
+ka
+ka
+ka
 aj
 cg
 os
 os
-eR
-eR
-eR
-eR
-eR
+Ec
+Ec
+uU
+Ec
+Ec
 os
 os
 zN
-bn
-bn
+HT
+HT
 zN
 zN
 zN
@@ -13030,11 +13025,11 @@ os
 qd
 os
 Wx
-FQ
-pE
-lh
-pE
-WM
+FR
+GO
+tx
+GO
+GN
 Wx
 Zx
 Ii
@@ -13046,34 +13041,34 @@ WJ
 WJ
 AF
 uH
-ru
+oW
 Wx
-eR
-Hr
-eR
+Ec
+nR
+Ec
 os
-eR
-eR
-eR
+Ec
+Ec
+Ec
 os
-eR
-eR
-eR
-eR
-WW
+Ec
+Ec
+Ec
+Ec
+ML
 Zw
 os
 os
-Qt
-aQ
-Qt
-ij
+hQ
+aP
+hQ
+pP
 YV
 os
 os
 zN
-bn
-bn
+HT
+HT
 zN
 zN
 TU
@@ -13112,11 +13107,11 @@ os
 qd
 os
 Wx
-jU
-Mr
-lh
-iL
-jU
+cK
+FD
+tx
+DL
+cK
 Wx
 MO
 vU
@@ -13128,22 +13123,22 @@ Ml
 BY
 Wx
 Ys
-ru
+oW
 Wx
-Jr
-Hr
-eR
+BZ
+nR
+Ec
 Pt
-pU
-pU
+KK
+KK
 Wx
 Wx
 Wx
 Wx
 Wx
 Wx
-eR
-qm
+Ec
+Qv
 os
 Wx
 Wx
@@ -13155,7 +13150,7 @@ os
 OL
 zN
 zN
-bn
+HT
 zN
 zN
 TU
@@ -13224,14 +13219,14 @@ hP
 Wx
 Wm
 Wx
-eR
+Ec
 Zw
 os
 Wx
 Jz
-Jz
-Jz
-Jz
+Xe
+rL
+rx
 Wx
 OL
 JK
@@ -13304,16 +13299,16 @@ Wx
 Cq
 VA
 Wx
-uB
+jq
 Wx
-eR
+Ec
 Vw
 Xc
-Pd
+fQ
 zc
 cG
 Jz
-Jz
+XL
 Wx
 BD
 zN
@@ -13387,22 +13382,22 @@ VA
 VA
 Dw
 CS
-CM
-gG
-mk
-mK
+gH
+mo
+DN
+rs
 Wx
 Zz
 Wx
-Jz
+Kp
 Jz
 Wx
 BD
 zN
-bn
-bn
-bn
-bn
+HT
+HT
+HT
+HT
 zN
 zN
 zN
@@ -13467,22 +13462,22 @@ IL
 Wx
 NS
 qh
-jb
+Zo
 ME
 Wx
-eR
-iI
-eR
+Ec
+IR
+Ec
 Wx
 sI
 Wx
-Jz
-Jz
+GC
+oU
 Wx
 BD
 zN
-bn
-bn
+HT
+HT
 zN
 zN
 zN
@@ -13552,9 +13547,9 @@ Wx
 Wx
 Wx
 Wx
-eR
-bf
-eR
+Ec
+bQ
+Ec
 Wx
 Wx
 Wx
@@ -13564,8 +13559,8 @@ Wx
 BD
 zN
 zN
-bn
-bn
+HT
+HT
 zN
 zN
 zN
@@ -13633,22 +13628,22 @@ bd
 bd
 Ey
 WS
-eR
-eR
+Ec
+Ec
 Zw
 os
-eR
-eR
-DT
-eR
-eR
-eR
+Ec
+Ec
+fn
+Ec
+Ec
+Ec
 BD
 zN
 zN
 zN
-bn
-bn
+HT
+HT
 zN
 zN
 zN
@@ -13720,11 +13715,11 @@ os
 Zw
 qd
 qd
-Hr
-Hr
-Hr
-eW
-eR
+nR
+nR
+nR
+qi
+Ec
 BD
 zN
 zN
@@ -13802,10 +13797,10 @@ os
 Zw
 os
 os
-eR
-eR
-eR
-eR
+Ec
+Ec
+Ec
+Ec
 os
 BD
 zN
@@ -13958,28 +13953,28 @@ KY
 Gu
 SX
 Wx
-zo
-zo
+xw
+xw
 Wx
 yh
-hT
+yj
 il
-hT
-hT
-hT
-sO
+yj
+yj
+yj
+Nc
 Wx
 os
 os
 os
 os
 os
-eR
-eR
-eR
-eR
-eR
-eR
+Ec
+Ec
+Ec
+Ec
+Ec
+Ec
 hM
 "}
 (91,1,1) = {"
@@ -14040,28 +14035,28 @@ KY
 IL
 KY
 Wx
-zo
-zo
+xw
+xw
 Wx
-Wk
-Wk
-Au
-zx
-zx
-zx
-zx
+qZ
+qZ
+Yq
+fc
+fc
+fc
+fc
 Wx
 os
-eR
-eR
-eR
+Ec
+Ec
+Ec
 os
 os
 os
-eR
-eR
-Bx
-eR
+Ec
+Ec
+Ul
+Ec
 eO
 "}
 (92,1,1) = {"
@@ -14122,28 +14117,28 @@ Ey
 KY
 KY
 Wx
-zo
+xw
 Wx
 Wx
-jA
+OJ
 EY
-OM
-zx
-uz
-uz
-zx
+Em
+fc
+Np
+Np
+fc
 Wx
 os
-eR
-eS
-Zf
-Zf
+Ec
+pR
+gi
+gi
 LO
 LO
 Hy
-eR
-eR
-eR
+Ec
+Ec
+Ec
 eO
 "}
 (93,1,1) = {"
@@ -14204,20 +14199,20 @@ TU
 TU
 TU
 Wx
-jA
-jA
-jA
-jA
+OJ
+OJ
+OJ
+OJ
 EY
-OM
-zx
-uz
-uz
-zx
+Em
+fc
+Np
+Np
+fc
 Wx
-hn
-eR
-Mq
+NU
+Ec
+dy
 KY
 IL
 IL
@@ -14287,19 +14282,19 @@ TU
 TU
 Wx
 EY
-jA
-jA
-jA
+OJ
+OJ
+OJ
 EY
-OM
-zx
-uz
-uz
-zx
+Em
+fc
+Np
+Np
+fc
 Wx
-dt
-Zf
-lt
+ds
+gi
+mK
 KY
 KY
 KY
@@ -14371,13 +14366,13 @@ Wx
 EY
 EY
 EY
-jA
+OJ
 EY
-OM
-zx
-zx
-zx
-zx
+Em
+fc
+fc
+fc
+fc
 Wx
 EG
 dP
@@ -14453,8 +14448,8 @@ Wx
 Wx
 Wx
 Wx
-aT
-aT
+xE
+xE
 Wx
 Wx
 Wx
@@ -14541,7 +14536,7 @@ TU
 TU
 TU
 eA
-aK
+EB
 SX
 KY
 Ba
