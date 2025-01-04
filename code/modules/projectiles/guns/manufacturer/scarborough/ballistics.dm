@@ -76,12 +76,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 
 /obj/item/ammo_box/magazine/m10mm_ringneck
 	name = "Ringneck pistol magazine (10mm)"
-	desc = "An 10-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
+	desc = "An 8-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "ringneck_mag-1"
 	base_icon_state = "ringneck_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
-	max_ammo = 10
+	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m10mm_ringneck/empty
@@ -353,6 +353,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
+/obj/item/ammo_box/magazine/m22lr_himehabu/empty
+	start_empty = TRUE
+
 //########### SMGS ###########//
 
 
@@ -507,6 +510,9 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/m57_39_sidewinder/empty
+	start_empty = TRUE
+
 //########### MARKSMAN ###########//
 /obj/item/gun/ballistic/automatic/marksman/boomslang
 	name = "MSR-90 \"Boomslang\""
@@ -538,7 +544,7 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	manufacturer = MANUFACTURER_SCARBOROUGH
 	spread = -5
 	spread_unwielded = 35
-	recoil = 4
+	recoil = 2
 	recoil_unwielded = 10
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
@@ -595,6 +601,9 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	caliber = "6.5CLIP"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
+
+/obj/item/ammo_box/magazine/boomslang/short/empty
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/marksman/taipan
 	name = "AMR-83 \"Taipan\""
@@ -868,12 +877,18 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 		return
 	icon_state = "[base_icon_state]-[ammo_count() == 1 ? 1 : round(ammo_count(),5)]"
 
+/obj/item/ammo_box/magazine/m556_42_hydra/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/m556_42_hydra/small
 	name = "Short Hydra assault rifle magazine (5.56x42mm CLIP)"
 	desc = "A short, 20-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles; intended for the DMR variant. These rounds do moderate damage with good armor penetration."
 	icon_state = "hydra_small_mag-20"
 	base_icon_state = "hydra_small_mag"
 	max_ammo = 20
+
+/obj/item/ammo_box/magazine/m556_42_hydra/small/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/extended
 	name = "extended Hydra assault rifle magazine (5.56x42mm CLIP)"
@@ -882,6 +897,9 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	base_icon_state = "hydra_extended_mag"
 	max_ammo = 60
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/casket
 	name = "casket Hydra assault rifle magazine (5.56x42mm CLIP)"
