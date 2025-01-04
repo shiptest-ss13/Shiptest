@@ -109,6 +109,7 @@
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
 		/obj/item/gun/energy/e_gun,
+		/obj/item/gun/energy/kalix/pistol,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me
 	can_hold_max_of_items = typecacheof(list(
