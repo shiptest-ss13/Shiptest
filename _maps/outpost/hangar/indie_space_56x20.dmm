@@ -51,11 +51,10 @@
 /turf/open/floor/hangar/plasteel,
 /area/hangar)
 "as" = (
-/obj/machinery/elevator_call_button{
-	pixel_y = 25
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
 	},
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "ax" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -71,7 +70,7 @@
 /area/hangar)
 "aB" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/hangar/plasteel,
+/turf/open/floor/hangar,
 /area/hangar)
 "aC" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
@@ -141,6 +140,13 @@
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"rY" = (
+/obj/effect/landmark/outpost/elevator_machine,
+/obj/machinery/elevator_call_button{
+	pixel_y = 25
+	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "vM" = (
 /obj/effect/turf_decal/arrows{
@@ -233,17 +239,17 @@ ae
 ae
 ai
 ae
-ae
-ae
-ae
-ai
-ae
-ae
+as
 ae
 ae
 ai
 ae
+as
 ae
+ae
+ai
+ae
+as
 ae
 ae
 ai
@@ -1137,7 +1143,7 @@ ag
 ag
 ag
 ag
-as
+an
 aI
 aN
 aN
@@ -1172,7 +1178,7 @@ mX
 mX
 jJ
 ag
-an
+rY
 aJ
 aN
 aN

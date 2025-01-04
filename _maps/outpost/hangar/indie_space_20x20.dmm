@@ -33,8 +33,10 @@
 /turf/open/floor/plasteel/grimy,
 /area/hangar)
 "av" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/hangar/plasteel,
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "ax" = (
 /obj/machinery/door/airlock,
@@ -89,12 +91,8 @@
 	},
 /area/hangar)
 "aM" = (
-/obj/machinery/elevator_call_button{
-	pixel_y = 25
-	},
-/obj/effect/landmark/outpost/elevator_machine,
 /obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/hangar/plasteel,
+/turf/open/floor/hangar,
 /area/hangar)
 "aN" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
@@ -141,6 +139,13 @@
 "jL" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
 	dir = 1
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
+"kI" = (
+/obj/effect/landmark/outpost/elevator_machine,
+/obj/machinery/elevator_call_button{
+	pixel_y = 25
 	},
 /turf/open/floor/hangar/plasteel,
 /area/hangar)
@@ -279,30 +284,30 @@ aH
 aH
 aB
 aZ
-av
+aM
 ap
 ac
 ac
 aC
 ac
-ac
-ac
-ac
-aC
-ac
-ac
+av
 ac
 ac
 aC
 ac
+av
 ac
+ac
+aC
+ac
+av
 ac
 ac
 aC
 ac
 ac
 az
-av
+aM
 aB
 "}
 (4,1,1) = {"
@@ -313,7 +318,7 @@ aH
 aH
 aB
 aZ
-av
+aM
 ap
 ad
 ad
@@ -336,7 +341,7 @@ ad
 ad
 ad
 az
-av
+aM
 aB
 "}
 (5,1,1) = {"
@@ -347,7 +352,7 @@ aH
 aH
 am
 aZ
-av
+aM
 ap
 aJ
 aJ
@@ -370,7 +375,7 @@ aJ
 aJ
 ao
 az
-av
+aM
 aB
 "}
 (6,1,1) = {"
@@ -381,7 +386,7 @@ aH
 aH
 am
 aZ
-av
+aM
 ap
 aJ
 aJ
@@ -404,7 +409,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 aB
 "}
 (7,1,1) = {"
@@ -449,7 +454,7 @@ aH
 aH
 aB
 aZ
-av
+aM
 ap
 aJ
 aJ
@@ -472,7 +477,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 am
 "}
 (9,1,1) = {"
@@ -483,7 +488,7 @@ aH
 aH
 aB
 aZ
-av
+aM
 gQ
 aJ
 aJ
@@ -506,7 +511,7 @@ aJ
 aJ
 aJ
 aE
-av
+aM
 am
 "}
 (10,1,1) = {"
@@ -517,7 +522,7 @@ aH
 aH
 aB
 aZ
-av
+aM
 ap
 aJ
 aJ
@@ -540,7 +545,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 am
 "}
 (11,1,1) = {"
@@ -574,7 +579,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 am
 "}
 (12,1,1) = {"
@@ -585,7 +590,7 @@ qz
 qz
 jk
 am
-aZ
+kI
 ap
 Qc
 aJ
@@ -642,7 +647,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 am
 "}
 (14,1,1) = {"
@@ -676,7 +681,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 aB
 "}
 (15,1,1) = {"
@@ -710,7 +715,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 aB
 "}
 (16,1,1) = {"
@@ -744,7 +749,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 aB
 "}
 (17,1,1) = {"
@@ -755,7 +760,7 @@ am
 am
 am
 am
-av
+aM
 ap
 Qc
 aJ
@@ -789,7 +794,7 @@ aH
 aH
 am
 aZ
-av
+aM
 ap
 aJ
 aJ
@@ -812,7 +817,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 am
 "}
 (19,1,1) = {"
@@ -823,7 +828,7 @@ aH
 aH
 am
 aZ
-av
+aM
 gQ
 aJ
 aJ
@@ -846,7 +851,7 @@ aJ
 aJ
 aJ
 aE
-av
+aM
 am
 "}
 (20,1,1) = {"
@@ -857,7 +862,7 @@ aH
 aH
 am
 aZ
-av
+aM
 ap
 aJ
 aJ
@@ -880,7 +885,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 am
 "}
 (21,1,1) = {"
@@ -891,7 +896,7 @@ aH
 aH
 am
 aZ
-av
+aM
 ap
 aJ
 aJ
@@ -914,7 +919,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 am
 "}
 (22,1,1) = {"
@@ -959,7 +964,7 @@ aH
 rQ
 aO
 Rz
-av
+aM
 ap
 aJ
 aJ
@@ -982,7 +987,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 am
 "}
 (24,1,1) = {"
@@ -993,7 +998,7 @@ aH
 rQ
 yo
 aA
-av
+aM
 ap
 aJ
 aJ
@@ -1016,7 +1021,7 @@ aJ
 aJ
 aJ
 az
-av
+aM
 am
 "}
 (25,1,1) = {"
@@ -1027,7 +1032,7 @@ aH
 rQ
 aT
 aA
-av
+aM
 aN
 aP
 aP
@@ -1050,7 +1055,7 @@ aP
 aP
 aP
 jL
-av
+aM
 am
 "}
 (26,1,1) = {"
@@ -1061,30 +1066,30 @@ aH
 rQ
 ud
 aA
-av
-av
-av
-av
+aM
+aM
+aM
+aM
 rC
-av
-av
-av
-av
+aM
+aM
+aM
+aM
 rC
-av
-av
-av
-av
+aM
+aM
+aM
+aM
 rC
-av
-av
-av
-av
+aM
+aM
+aM
+aM
 rC
-av
-av
-av
-av
+aM
+aM
+aM
+aM
 am
 "}
 (27,1,1) = {"

@@ -10,7 +10,7 @@
 /area/hangar)
 "af" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/hangar/plasteel,
+/turf/open/floor/hangar,
 /area/hangar)
 "ai" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
@@ -18,11 +18,10 @@
 /turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aj" = (
-/obj/machinery/elevator_call_button{
-	pixel_y = 25
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
 	},
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "al" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
@@ -138,6 +137,13 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"Ny" = (
+/obj/effect/landmark/outpost/elevator_machine,
+/obj/machinery/elevator_call_button{
+	pixel_y = 25
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
 "OP" = (
 /obj/effect/landmark/outpost/elevator,
 /turf/open/floor/plasteel/elevatorshaft{
@@ -233,17 +239,17 @@ aH
 aH
 aw
 aH
-aH
-aH
-aH
-aw
-aH
-aH
+aj
 aH
 aH
 aw
 aH
+aj
 aH
+aH
+aw
+aH
+aj
 aH
 aH
 aw
@@ -962,7 +968,7 @@ ab
 ab
 ab
 ab
-aj
+av
 aL
 aD
 aD
@@ -997,7 +1003,7 @@ JT
 JT
 OP
 ab
-av
+Ny
 aL
 aD
 aD

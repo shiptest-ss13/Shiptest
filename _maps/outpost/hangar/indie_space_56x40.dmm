@@ -96,7 +96,7 @@
 /area/hangar)
 "aN" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/hangar/plasteel,
+/turf/open/floor/hangar,
 /area/hangar)
 "aO" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
@@ -141,6 +141,12 @@
 "Qi" = (
 /obj/effect/landmark/outpost/elevator,
 /turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Yz" = (
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/tech{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -269,37 +275,37 @@ aG
 aG
 aw
 aG
-aG
-aG
-aG
-aw
-aG
-aG
+Yz
 aG
 aG
 aw
 aG
-aG
-aG
-aG
-aw
-aG
-aG
+Yz
 aG
 aG
 aw
 aG
-aG
-aG
-aG
-aw
-aG
-aG
+Yz
 aG
 aG
 aw
 aG
+Yz
 aG
+aG
+aw
+aG
+Yz
+aG
+aG
+aw
+aG
+Yz
+aG
+aG
+aw
+aG
+Yz
 aG
 aG
 aw
@@ -1693,7 +1699,7 @@ aH
 aH
 aH
 aH
-ab
+aA
 am
 aM
 aM
@@ -1748,7 +1754,7 @@ ck
 ck
 Qi
 aH
-aA
+ab
 aP
 aM
 aM
