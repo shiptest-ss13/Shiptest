@@ -1,8 +1,9 @@
 /obj/item/melee/brass_knuckles
 	name = "brass knuckles"
 	desc = "yea."
-	icon_state = "powerfist"
-	item_state = "powerfist"
+	icon = 'icons/obj/weapon/blunt.dmi'
+	icon_state = "brass_knuckles"
+	item_state = "brass_knuckles"
 	hitsound = 'sound/weapons/melee/stab_hit.ogg'
 	pickup_sound = 'sound/weapons/melee/general_pickup.ogg'
 	flags_1 = CONDUCT_1
@@ -29,6 +30,7 @@
 
 /obj/item/melee/brass_knuckles/busters
 	name = "knucklebusters"
+	icon_state = "powerfist"
 	force = 10
 	var/obj/item/gun/stored_gun
 
@@ -65,8 +67,7 @@
 
 /obj/item/melee/sledgehammer/gorlex
 	icon_state = "sledgehammer"
-	base_icon_state = "sledgehammer"
-	icon = 'icons/obj/weapon/axe.dmi'
+	base_icon_state = "gorlex_sledgehammer"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	name = "breaching sledgehammer"
