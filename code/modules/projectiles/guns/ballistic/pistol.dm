@@ -157,6 +157,7 @@
 	name = ".38 Derringer"
 	desc = "An easily concealable derringer. Uses .38 special ammo."
 	icon_state = "derringer"
+	item_state = "hp_generic"
 
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
@@ -201,6 +202,7 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 	icon_state = "derringer_syndie"
+	item_state = "sa_generic"
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/derr357
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/derr357,
