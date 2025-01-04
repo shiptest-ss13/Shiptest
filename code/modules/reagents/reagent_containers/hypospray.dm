@@ -309,6 +309,16 @@
 	base_icon_state = "morphen"
 	item_state = "morphen"
 
+/obj/item/reagent_containers/hypospray/medipen/mannitol
+	name = "tricordrazine injector"
+	desc = "An injector filled with mannitol, a restorative compound that targets the brain."
+	list_reagents = list(/datum/reagent/medicine/mannitol = 15)
+	volume = 15
+	amount_per_transfer_from_this = 15
+	icon_state = "morphen"
+	base_icon_state = "morphen"
+	item_state = "morphen"
+
 //A vial-loaded hypospray. Cartridge-based!
 /obj/item/hypospray/mkii
 	name = "hypospray mk.II"
