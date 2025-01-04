@@ -315,7 +315,7 @@
 	projectiles = 12
 	projectiles_cache = 24
 	projectiles_cache_max = 72
-	projectiles_per_shot = 7
+	projectiles_per_shot = 8
 	variance = 25
 	harmful = TRUE
 	ammo_type = "scattershot"
