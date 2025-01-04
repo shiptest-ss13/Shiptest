@@ -50,10 +50,12 @@
 	autoclose = TRUE
 	secondsElectrified = MACHINE_NOT_ELECTRIFIED //How many seconds remain until the door is no longer electrified. -1/MACHINE_ELECTRIFIED_PERMANENT = permanently electrified until someone fixes it.
 	assemblytype = /obj/structure/door_assembly
-	normalspeed = 1
+	fast_close = FALSE
 	explosion_block = 1
 	hud_possible = list(DIAG_AIRLOCK_HUD)
 	req_ship_access = TRUE
+
+	close_speed = 150
 
 	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
 
@@ -1260,7 +1262,7 @@
 		playsound(src, pry_open_sound, 30, TRUE, mono_adj = TRUE)
 
 	if(autoclose)
-		autoclose_in(normalspeed ? 150 : 15)
+		autoclose_in(fast_close ? clamp(close_speed/10, 10, 300) : close_speed)
 
 	if(!density)
 		return TRUE
@@ -1565,7 +1567,7 @@
 	data["locked"] = locked // bolted
 	data["lights"] = lights // bolt lights
 	data["safe"] = safe // safeties
-	data["speed"] = normalspeed // safe speed
+	data["operation speed"] = fast_close // safe speed
 	data["welded"] = welded // welded
 	data["opened"] = !density // opened
 
@@ -1633,7 +1635,7 @@
 			safe = !safe
 			. = TRUE
 		if("speed-toggle")
-			normalspeed = !normalspeed
+			fast_close = !fast_close
 			. = TRUE
 		if("open-close")
 			user_toggle_open(usr)
