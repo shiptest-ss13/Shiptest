@@ -414,3 +414,8 @@
 	file_name = "nanotrasen_skink"
 	name = "Skink-class Cargo Runner"
 	prefix = "NTSV"
+
+/datum/map_template/shuttle/subshuttles/galley
+	file_name = "ramzi_galley"
+	name = "Galley-class Dropship"
+	prefix = "SV"

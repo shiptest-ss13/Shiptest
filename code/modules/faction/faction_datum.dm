@@ -92,6 +92,10 @@
 	short_name = "PGF"
 	prefixes = PREFIX_PGF
 
+/datum/faction/ramzi
+	name = FACTION_RAMZI
+	prefixes = list("SV", "ISV")
+
 /datum/faction/independent
 	name = FACTION_INDEPENDENT
 	short_name = "Indie"
