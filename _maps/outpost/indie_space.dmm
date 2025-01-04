@@ -103,6 +103,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
+"aD" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned,
+/area/outpost/maintenance/central)
 "aE" = (
 /obj/machinery/light/small/directional/east,
 /obj/structure/cable/yellow{
@@ -578,6 +582,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/security)
+"cY" = (
+/obj/effect/turf_decal/corner/opaque/neutral/half,
+/obj/structure/chair/bench/olive/directional/north,
+/obj/machinery/light/dim/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/outpost/medical)
 "dc" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -827,6 +837,13 @@
 "em" = (
 /turf/closed/indestructible/reinforced,
 /area/outpost/external)
+"ep" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/outpost/hallway/central)
 "eq" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -1620,6 +1637,16 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/hallway/central)
+"iM" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/central)
 "iN" = (
@@ -3772,6 +3799,7 @@
 /area/outpost/crew/library)
 "sW" = (
 /obj/effect/spawner/random/trash/decal,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/maintenance/central)
 "ta" = (
@@ -4064,6 +4092,7 @@
 /obj/structure/chair/bench/olive/directional/east{
 	dir = 2
 	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/outpost/medical)
 "un" = (
@@ -4339,6 +4368,7 @@
 "vK" = (
 /obj/effect/turf_decal/corner/opaque/neutral/half,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/outpost/medical)
 "vR" = (
@@ -4847,6 +4877,11 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/grimy,
 /area/outpost/hallway/central)
+"yl" = (
+/obj/effect/turf_decal/corner/opaque/neutral/half,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/outpost/medical)
 "yq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -5222,6 +5257,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
 "AH" = (
@@ -5725,6 +5761,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/central)
 "CP" = (
@@ -7851,6 +7888,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
 "Or" = (
@@ -8878,6 +8916,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/central)
 "Tp" = (
@@ -9476,6 +9515,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/port)
+"Wv" = (
+/obj/effect/turf_decal/corner/opaque/neutral/half{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/outpost/medical)
 "Ww" = (
 /obj/machinery/elevator_call_button{
 	dir = 8;
@@ -9586,6 +9632,7 @@
 /obj/effect/turf_decal/corner/opaque/neutral/half,
 /obj/item/kirbyplants/random,
 /obj/item/radio/intercom/directional/south,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/outpost/medical)
 "WZ" = (
@@ -9863,6 +9910,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/central)
 "Yj" = (
@@ -9998,6 +10046,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
 "YQ" = (
@@ -16948,7 +16997,7 @@ HR
 yX
 cg
 Yh
-Vt
+iM
 Vt
 Vt
 wr
@@ -17077,8 +17126,8 @@ Nf
 Op
 ad
 AB
-Nf
-Nf
+ep
+ep
 gz
 lh
 HD
@@ -17321,7 +17370,7 @@ Rt
 gq
 gq
 Cr
-Tg
+yl
 Xb
 Ko
 Df
@@ -17569,8 +17618,8 @@ gq
 um
 Tg
 uD
-Ko
-Df
+Wv
+cY
 Ck
 HD
 HD
@@ -17803,7 +17852,7 @@ ov
 DO
 OK
 sW
-OK
+aD
 cq
 GU
 Bj
