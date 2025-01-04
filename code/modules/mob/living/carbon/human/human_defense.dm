@@ -137,22 +137,12 @@
 /mob/living/carbon/human/proc/get_best_shield()
 	var/obj/item/l_hand = held_items[1]
 	var/obj/item/r_hand = held_items[2]
-	var/datum/component/parry/left_hand_parry = l_hand?.GetComponent(/datum/component/parry)
-	var/datum/component/parry/right_hand_parry = r_hand?.GetComponent(/datum/component/parry)
-	if(!right_hand_parry && !left_hand_parry)
-		if(!(r_hand || l_hand))
-			return r_hand || l_hand
-		else if(r_hand?.block_chance > l_hand?.block_chance)
-			return r_hand
-		else
-			return l_hand
-
-	if(right_hand_parry && left_hand_parry)
-		if(right_hand_parry.stamina_coefficient > left_hand_parry.stamina_coefficient) // try and parry with your best item
-			return left_hand_parry.parent
-		else
-			return right_hand_parry.parent
-	return right_hand_parry?.parent || left_hand_parry?.parent // parry with whichever hand has an item that can parry
+	if(!(r_hand || l_hand))
+		return r_hand || l_hand
+	else if(r_hand?.block_chance > l_hand?.block_chance)
+		return r_hand
+	else
+		return l_hand
 
 /mob/living/carbon/human/proc/check_block()
 	if(mind)

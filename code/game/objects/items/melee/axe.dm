@@ -48,10 +48,3 @@
 	desc = "A large, vicious axe crafted out of several sharpened bone plates and crudely tied together. Made of monsters, by killing monsters, for killing monsters."
 	icon_state = "bone_axe"
 	base_icon_state = "bone_axe"
-
-/obj/item/melee/axe/scrap
-	name = "scrap axe"
-	icon_state = "scrapaxe"
-	desc = "Oversided and with a pretty dull blade, its decent against armour"
-	force_wielded = 22
-	armour_penetration = 10

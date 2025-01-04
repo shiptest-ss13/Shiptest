@@ -8,6 +8,7 @@
 	block_cooldown_time = 0 SECONDS
 	slot_flags = ITEM_SLOT_BACK
 	force = 10
+	block_chance = 50
 	throwforce = 5
 	throw_speed = 2
 	throw_range = 3
@@ -42,13 +43,6 @@
 			. += span_info("It appears heavily damaged.")
 		if(0 to 25)
 			. += span_warning("It's falling apart!")
-
-/obj/item/shield/proc/add_parry_component()
-	AddComponent(/datum/component/parry, _stamina_constant = 2, _stamina_coefficient = 0.5, _parryable_attack_types = ALL_ATTACK_TYPES)
-
-/obj/item/shield/Initialize(mapload)
-	. = ..()
-	add_parry_component()
 
 /obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
 	if(transparent && (hitby.pass_flags & PASSGLASS))
@@ -139,9 +133,6 @@
 	shield_break_leftover = /obj/item/stack/sheet/mineral/wood
 	shield_break_sound = 'sound/effects/bang.ogg'
 
-/obj/item/shield/riot/buckler/add_parry_component()
-	AddComponent(/datum/component/parry, _stamina_constant = 2, _stamina_coefficient = 0.7, _parryable_attack_types = ALL_ATTACK_TYPES, _parry_cooldown = (7 / 3) SECONDS) // 2.3333 seconds of cooldown for 30% uptime
-
 /obj/item/shield/riot/flash
 	name = "strobe shield"
 	desc = "A shield with a built in, high intensity light capable of blinding and disorienting suspects. Takes regular handheld flashes as bulbs."
@@ -231,9 +222,6 @@
 /obj/item/shield/energy/Initialize()
 	. = ..()
 	icon_state = "[base_icon_state]0"
-
-/obj/item/shield/energy/add_parry_component()
-	return
 
 /obj/item/shield/energy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	return 0

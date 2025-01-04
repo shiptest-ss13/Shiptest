@@ -8,27 +8,15 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
+	block_chance = 10
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = IS_SHARP
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
-	var/self_stam_const = 10
-	var/self_stam_coef = 1
-	var/riposte = FALSE
-	///	Lock parrying to only work while transformed
-	var/parry_transformed = FALSE
 
 /obj/item/melee/sword/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
-	AddComponent( \
-		/datum/component/parry, \
-		_stamina_constant = self_stam_const, \
-		_stamina_coefficient = self_stam_coef, \
-		_parryable_attack_types = NON_PROJECTILE_ATTACKS, \
-		_riposte = riposte, \
-		_requires_activation = parry_transformed, \
-	)
 
 //cruft
 /obj/item/melee/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
@@ -43,6 +31,7 @@
 	item_state = "claymore"
 	force = 30
 	throwforce = 10
+	block_chance = 40
 	max_integrity = 200
 
 /obj/item/melee/sword/claymore/Initialize()
@@ -127,6 +116,7 @@
 	force = 30
 	throwforce = 10
 	w_class = WEIGHT_CLASS_HUGE
+	block_chance = 10
 	max_integrity = 200
 
 /obj/item/melee/sword/chainsaw
@@ -150,14 +140,11 @@
 	item_state = "sabre"
 	force = 15
 	throwforce = 10
-	block_chance = 0
+	block_chance = 60
 	armour_penetration = 75
 	attack_verb = list("slashed", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
-	self_stam_const = 5
-	self_stam_coef = 0.5
-	riposte = TRUE
 
 /obj/item/melee/sword/sabre/on_enter_storage(datum/component/storage/concrete/S)
 	var/obj/item/storage/belt/sabre/B = S.real_location()
@@ -192,7 +179,7 @@
 	name = "\improper boarding cutlass"
 	desc = "When beam and bullet puncture the hull, a trustworthy blade will carry you through the fight"
 	icon_state = "pgf-sabre"
-	self_stam_coef = 0.25
+	block_chance = 30
 	force = 22
 
 /obj/item/melee/sword/sabre/suns/telescopic
@@ -208,7 +195,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("smacked", "prodded")
 
-	parry_transformed = TRUE
 	var/extend_sound = 'sound/weapons/batonextend.ogg'
 
 	var/on_block_chance = 40

@@ -529,7 +529,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			COOLDOWN_START(src, block_cooldown, block_cooldown_time)
 		return TRUE
 
-	//Mostly parrying
 	var/signal_result = (SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, owner, hitby, damage, attack_type)) + prob(final_block_chance)
 	if(!signal_result)
 		return FALSE

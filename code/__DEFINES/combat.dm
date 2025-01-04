@@ -51,7 +51,6 @@
 #define CLICK_CD_RESIST 20
 #define CLICK_CD_GRABBING 10
 #define CLICK_CD_LOOK_UP 5
-#define CLICK_CD_PARRY 8
 
 //Cuff resist speeds
 #define FAST_CUFFBREAK 1
@@ -79,9 +78,6 @@
 #define LEAP_ATTACK 5
 #define ALL_ATTACK_TYPES list(MELEE_ATTACK, UNARMED_ATTACK, PROJECTILE_ATTACK, THROWN_PROJECTILE_ATTACK, LEAP_ATTACK)
 #define NON_PROJECTILE_ATTACKS list(MELEE_ATTACK, UNARMED_ATTACK, LEAP_ATTACK)
-
-// the standard parry time out time
-#define PARRY_DEFAULT_TIMEOUT 1 SECONDS
 
 //attack visual effects
 #define ATTACK_EFFECT_PUNCH "punch"
