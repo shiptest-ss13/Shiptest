@@ -564,7 +564,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 	var/datum/job/captain/All = new/datum/job/captain
 	all_access.access = All.get_access()
 
-	set_path(get_path_to(src, waypoint, /turf/proc/Distance_cardinal, 0, 200, id=all_access))
+	set_path(get_path_to(src, waypoint, 200, id=all_access))
 	calling_ai = caller //Link the AI to the bot!
 	ai_waypoint = waypoint
 
@@ -816,7 +816,9 @@ Pass a positive integer as an argument to override a bot's default speed.
 		calc_summon_path()
 
 /mob/living/simple_animal/bot/proc/summon_step_not_moved()
-	calc_summon_path()
+	//calc_summon_path()
+	speak("Summon command failed, destination unreachable.",radio_channel)
+	bot_reset()
 	tries = 0
 
 /mob/living/simple_animal/bot/Bump(atom/A) //Leave no door unopened!
