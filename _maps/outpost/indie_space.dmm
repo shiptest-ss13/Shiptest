@@ -1,4 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/effect/turf_decal/corner/opaque/neutral/half{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/outpost/medical)
 "ab" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner_techfloor_gray{
@@ -103,10 +110,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
-"aD" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned,
-/area/outpost/maintenance/central)
 "aE" = (
 /obj/machinery/light/small/directional/east,
 /obj/structure/cable/yellow{
@@ -582,12 +585,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/security)
-"cY" = (
-/obj/effect/turf_decal/corner/opaque/neutral/half,
-/obj/structure/chair/bench/olive/directional/north,
-/obj/machinery/light/dim/directional/east,
-/turf/open/floor/plasteel/dark,
-/area/outpost/medical)
 "dc" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -837,13 +834,6 @@
 "em" = (
 /turf/closed/indestructible/reinforced,
 /area/outpost/external)
-"ep" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/outpost/hallway/central)
 "eq" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -1261,7 +1251,6 @@
 	pixel_y = -25;
 	pixel_x = -7
 	},
-/obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "arrow";
@@ -1272,11 +1261,6 @@
 	icon_state = "arrow";
 	pixel_y = -19;
 	pixel_x = 2
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "nay";
-	pixel_x = -10;
-	pixel_y = -1
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "f";
@@ -1292,6 +1276,9 @@
 	pixel_x = -10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/fore)
 "gE" = (
@@ -1637,16 +1624,6 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
-/turf/open/floor/plasteel/dark,
-/area/outpost/hallway/central)
-"iM" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/central)
 "iN" = (
@@ -2104,6 +2081,13 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /turf/open/floor/plasteel,
 /area/outpost/vacant_rooms)
+"ld" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/outpost/hallway/central)
 "lh" = (
 /obj/structure/barricade/wooden/crude,
 /turf/closed/indestructible/rock,
@@ -2335,12 +2319,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
 "mf" = (
-/obj/structure/disposalpipe/segment{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/rust,
-/area/outpost/maintenance/fore)
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned,
+/area/outpost/maintenance/central)
 "mg" = (
 /turf/closed/indestructible/reinforced/rust,
 /area/outpost/crew/cryo)
@@ -2656,6 +2637,7 @@
 	},
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/outpost/medical)
 "nL" = (
@@ -4208,7 +4190,9 @@
 "uN" = (
 /obj/structure/festivus{
 	pixel_x = -17;
-	pixel_y = -7
+	pixel_y = -7;
+	name = "normal pole";
+	desc = "A fairly normal pole in a fairly normal position."
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
@@ -4337,6 +4321,7 @@
 	pixel_y = 5;
 	pixel_x = -7
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/outpost/maintenance/starboard)
 "vB" = (
@@ -4877,11 +4862,6 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/grimy,
 /area/outpost/hallway/central)
-"yl" = (
-/obj/effect/turf_decal/corner/opaque/neutral/half,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/outpost/medical)
 "yq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -4907,6 +4887,16 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
+"yF" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/outpost/hallway/central)
 "yL" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -5565,6 +5555,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/fore)
+"BT" = (
+/obj/effect/turf_decal/corner/opaque/neutral/half,
+/obj/structure/chair/bench/olive/directional/north,
+/obj/machinery/light/dim/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/outpost/medical)
 "BX" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/mug{
@@ -5585,7 +5581,7 @@
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-21";
-	name = "oxygen generation system"
+	name = "oxygen reclaimation system"
 	},
 /turf/open/floor/plating,
 /area/outpost/engineering/atmospherics)
@@ -6255,6 +6251,7 @@
 /area/outpost/vacant_rooms/office)
 "FB" = (
 /obj/structure/platform/wood_two/corner,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "FE" = (
@@ -6937,6 +6934,9 @@
 	pixel_y = -25;
 	pixel_x = -7
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "IS" = (
@@ -7157,6 +7157,11 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/outpost/maintenance/starboard)
+"Kc" = (
+/obj/effect/turf_decal/corner/opaque/neutral/half,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/outpost/medical)
 "Kd" = (
 /obj/machinery/light/small/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -8056,6 +8061,7 @@
 	pixel_x = -2;
 	pixel_y = -3
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "Pm" = (
@@ -8126,7 +8132,7 @@
 "PE" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-21";
-	name = "oxygen generation system"
+	name = "oxygen reclaimation system"
 	},
 /turf/open/floor/plating,
 /area/outpost/engineering/atmospherics)
@@ -8233,6 +8239,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
+"Qc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/wood,
+/area/outpost/maintenance/starboard)
 "Qg" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -8632,6 +8643,9 @@
 	pixel_x = 2
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/item/toy/balloon,
+/obj/item/toy/balloon,
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/fore)
 "RR" = (
@@ -9515,13 +9529,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/port)
-"Wv" = (
-/obj/effect/turf_decal/corner/opaque/neutral/half{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/outpost/medical)
 "Ww" = (
 /obj/machinery/elevator_call_button{
 	dir = 8;
@@ -15612,7 +15619,7 @@ Ro
 Ro
 Ui
 gC
-mf
+ho
 NK
 zY
 rW
@@ -16997,7 +17004,7 @@ HR
 yX
 cg
 Yh
-iM
+yF
 Vt
 Vt
 wr
@@ -17126,8 +17133,8 @@ Nf
 Op
 ad
 AB
-ep
-ep
+ld
+ld
 gz
 lh
 HD
@@ -17370,7 +17377,7 @@ Rt
 gq
 gq
 Cr
-yl
+Kc
 Xb
 Ko
 Df
@@ -17618,8 +17625,8 @@ gq
 um
 Tg
 uD
-Wv
-cY
+aa
+BT
 Ck
 HD
 HD
@@ -17852,7 +17859,7 @@ ov
 DO
 OK
 sW
-aD
+mf
 cq
 GU
 Bj
@@ -20294,7 +20301,7 @@ NH
 PI
 PI
 Ul
-Gt
+Qc
 Gt
 PI
 HD

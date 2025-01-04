@@ -180,6 +180,7 @@
 	name = "morphine medipen"
 	desc = "A rapid way to get you out of a tight situation and fast! You'll feel rather drowsy, though."
 	list_reagents = list(/datum/reagent/medicine/morphine = 10)
+	custom_price = 75
 
 /obj/item/reagent_containers/hypospray/medipen/oxandrolone
 	name = "oxandrolone medipen"
@@ -237,6 +238,7 @@
 	item_state = "atropen"
 	base_icon_state = "atropen"
 	list_reagents = list(/datum/reagent/medicine/atropine = 10)
+	custom_price = 100
 
 /obj/item/reagent_containers/hypospray/medipen/pumpup
 	name = "maintenance pump-up"
@@ -277,11 +279,13 @@
 	list_reagents = list(/datum/reagent/medicine/psicodine = 10)
 	volume = 10
 	amount_per_transfer_from_this = 10
+	custom_price = 50
 
 /obj/item/reagent_containers/hypospray/medipen/synap
 	name = "synaptizine injector"
 	desc = "A stimulating injector with a shot of synaptizine inside."
 	list_reagents = list(/datum/reagent/medicine/synaptizine = 5)
+	custom_price = 75
 	volume = 5
 	amount_per_transfer_from_this = 5
 	icon_state = "stimpen"

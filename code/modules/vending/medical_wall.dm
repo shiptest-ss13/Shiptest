@@ -14,6 +14,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/synap = 6,
 		/obj/item/reagent_containers/hypospray/medipen/antihol = 10,
 		/obj/item/reagent_containers/hypospray/medipen/tricord = 6,
+		/obj/item/reagent_containers/hypospray/medipen/morphine = 6,
 		/obj/item/reagent_containers/hypospray/medipen/anti_rad = 10,
 	)
 	premium = list(
@@ -23,7 +24,7 @@
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/wallmed
-	default_price = 100
+	default_price = 75
 	extra_price = 200
 	tiltable = FALSE
 	light_mask = "wallmed-light-mask"
