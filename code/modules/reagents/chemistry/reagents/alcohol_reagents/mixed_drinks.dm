@@ -17,37 +17,6 @@
 /datum/reagent/consumable/ethanol/beer/green/on_mob_end_metabolize(mob/living/M)
 	M.remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, color)
 
-/datum/reagent/consumable/ethanol/kahlua
-	name = "Kahlua"
-	description = "A widely known coffee-flavoured liqueur. Still labeled under an old name from Earth, despite the loss of history."
-	color = "#664300" // rgb: 102, 67, 0
-	boozepwr = 45
-	taste_description = "a bitter combination"
-	glass_icon_state = "kahluaglass"
-	glass_name = "glass of coffee liquor"
-	glass_desc = "Bitter from the coffee and alcohol alike!"
-	shot_glass_icon_state = "shotglasscream"
-
-/datum/reagent/consumable/ethanol/kahlua/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
-	M.drowsyness = max(0,M.drowsyness-3)
-	M.AdjustSleeping(-40)
-	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
-		M.adjust_jitter(5, max = 100)
-	..()
-	. = 1
-
-/datum/reagent/consumable/ethanol/whiskey
-	name = "Whiskey"
-	description = "A well-aged whiskey."
-	color = "#664300" // rgb: 102, 67, 0
-	boozepwr = 75
-	taste_description = "molasses"
-	glass_icon_state = "whiskeyglass"
-	glass_name = "glass of whiskey"
-	glass_desc = "Often described as having a silky mouthfeel and a smokey aftertaste. The brown-amber color catches the light very well."
-	shot_glass_icon_state = "shotglassbrown"
-
 /datum/reagent/consumable/ethanol/whiskey/candycorn
 	name = "candy corn liquor"
 	description = "Like they drank in 2D speakeasies."
