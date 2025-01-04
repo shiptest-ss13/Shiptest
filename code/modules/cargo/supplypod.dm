@@ -452,8 +452,11 @@
 	glow_effect.fadeAway(delays[POD_OPENING])
 	glow_effect = null
 
+/obj/structure/closet/supplypod/deconstruct(disassembled)
+	. = ..()
+	open_pod(src, broken = disassembled) //Lets dump our contents by opening up
+
 /obj/structure/closet/supplypod/Destroy()
-	open_pod(src, broken = TRUE) //Lets dump our contents by opening up
 	deleteRubble()
 	endGlow()
 	return ..()

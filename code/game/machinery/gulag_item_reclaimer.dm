@@ -12,10 +12,13 @@
 	var/list/stored_items = list()
 	var/obj/machinery/gulag_teleporter/linked_teleporter = null
 
-/obj/machinery/gulag_item_reclaimer/Destroy()
+/obj/machinery/gulag_item_reclaimer/deconstruct(disassembled)
 	for(var/i in contents)
 		var/obj/item/I = i
 		I.forceMove(get_turf(src))
+	return ..()
+
+/obj/machinery/gulag_item_reclaimer/Destroy()
 	if(linked_teleporter)
 		linked_teleporter.linked_reclaimer = null
 	return ..()

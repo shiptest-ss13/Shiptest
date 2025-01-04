@@ -100,6 +100,7 @@
 /mob/living/simple_animal/hostile/hivebot/ranged/rapid
 	ranged = TRUE
 	rapid = 3
+	rapid_fire_delay = 4
 	casingtype = /obj/item/ammo_casing/c57x39mm
 	projectilesound = 'sound/weapons/gun/smg/sidewinder.ogg'
 
@@ -140,6 +141,7 @@
 	casingtype = /obj/item/ammo_casing/mm712x82
 	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
 	rapid = 3
+	rapid_fire_delay = 4
 
 	retreat_distance = 3
 	minimum_distance = 5
