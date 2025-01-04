@@ -47,3 +47,10 @@
 /obj/machinery/vending/medical/syndicate_access
 	name = "\improper SyndiMed Plus"
 	req_access = list(ACCESS_SYNDICATE)
+
+/obj/machinery/vending/medical
+	name = "\improper NanoMed Plus"
+	desc = "Medical drug dispenser."
+	icon_state = "med"
+	icon_deny = "med-deny"
+	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"

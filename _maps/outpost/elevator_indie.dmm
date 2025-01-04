@@ -1,19 +1,46 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /obj/structure/elevator_platform,
-/obj/machinery/status_display/elevator{
-	pixel_x = -32
+/obj/machinery/elevator_floor_button{
+	pixel_y = 22
 	},
 /turf/template_noop,
 /area/template_noop)
 "e" = (
 /obj/structure/elevator_platform,
-/obj/machinery/light/small/directional/east,
+/obj/structure/crate_shelf{
+	capacity = 2
+	},
 /turf/template_noop,
 /area/template_noop)
 "k" = (
 /obj/structure/elevator_platform,
-/obj/machinery/light/small/directional/west,
+/obj/machinery/status_display/elevator{
+	pixel_x = -32
+	},
+/obj/machinery/light/dim/directional/south,
+/turf/template_noop,
+/area/template_noop)
+"r" = (
+/obj/structure/elevator_platform,
+/obj/machinery/status_display/elevator{
+	pixel_x = 32
+	},
+/obj/machinery/light/dim/directional/south,
+/turf/template_noop,
+/area/template_noop)
+"s" = (
+/obj/structure/elevator_platform,
+/obj/machinery/status_display/elevator{
+	pixel_x = 32
+	},
+/obj/machinery/light/dim/directional/north,
+/turf/template_noop,
+/area/template_noop)
+"x" = (
+/obj/structure/elevator_platform,
+/obj/item/radio/intercom/table,
+/obj/structure/table,
 /turf/template_noop,
 /area/template_noop)
 "A" = (
@@ -22,26 +49,45 @@
 /area/template_noop)
 "S" = (
 /obj/structure/elevator_platform,
-/obj/machinery/elevator_floor_button{
-	pixel_y = 0;
-	dir = 8;
-	pixel_x = 24
+/obj/machinery/status_display/elevator{
+	pixel_x = -32
 	},
+/obj/machinery/light/dim/directional/north,
 /turf/template_noop,
 /area/template_noop)
 
 (1,1,1) = {"
-k
-a
+S
+A
+A
+A
 k
 "}
 (2,1,1) = {"
 A
 A
+e
+A
 A
 "}
 (3,1,1) = {"
+a
+A
+x
+A
+A
+"}
+(4,1,1) = {"
+A
+A
 e
-S
-e
+A
+A
+"}
+(5,1,1) = {"
+s
+A
+A
+A
+r
 "}
