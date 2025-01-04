@@ -27,6 +27,7 @@
 	dir = 8
 	},
 /obj/item/training_toolbox,
+/obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plating,
 /area/ship/storage)
 "af" = (
@@ -3216,7 +3217,6 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 5
 	},
-/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
 /obj/machinery/light/directional/east,
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
@@ -3242,6 +3242,49 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
+"pj" = (
+/obj/structure/closet/secure_closet/miner{
+	name = "pilot's equipment";
+	populate = 0
+	},
+/obj/structure/railing{
+	dir = 9;
+	layer = 2.8
+	},
+/obj/item/storage/belt/utility/full{
+	pixel_y = -5
+	},
+/obj/item/clothing/under/clip,
+/obj/item/storage/backpack/security/clip{
+	pixel_y = -7;
+	pixel_x = -3
+	},
+/obj/item/radio/headset/clip/alt{
+	pixel_y = 6;
+	pixel_x = 10
+	},
+/obj/item/clothing/shoes/jackboots{
+	pixel_y = -4;
+	pixel_x = 7
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 1
+	},
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/sunglasses{
+	name = "blastglasses";
+	desc = "Tried and true technology designed for the flash adverse mech pilot.";
+	pixel_y = 4
+	},
+/obj/item/clothing/glasses/hud/diagnostic{
+	pixel_y = -2
+	},
+/obj/item/clothing/head/hardhat/dblue{
+	pixel_y = 5
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
+/turf/open/floor/pod/dark,
+/area/ship/hangar)
 "pm" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/effect/turf_decal/spline/fancy/opaque/white/corner{
@@ -4926,8 +4969,8 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/reagent_dispensers/fueltank,
 /obj/machinery/light/directional/west,
+/obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar)
 "xA" = (
@@ -8744,7 +8787,7 @@
 /obj/structure/railing{
 	dir = 10
 	},
-/obj/structure/reagent_dispensers/watertank,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar)
 "Os" = (
@@ -12594,7 +12637,7 @@ We
 yq
 ce
 dZ
-lb
+pj
 Cq
 lb
 Vh
