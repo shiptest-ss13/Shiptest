@@ -5,6 +5,7 @@ have ways of interacting with a specific mob and control it.
 ///OOK OOK OOK
 
 /datum/ai_controller/monkey
+	movement_delay = 0.4 SECONDS
 	blackboard = list(BB_MONKEY_AGRESSIVE = FALSE,\
 	BB_MONKEY_BEST_FORCE_FOUND = 0,\
 	BB_MONKEY_ENEMIES = list(),\
@@ -27,6 +28,7 @@ have ways of interacting with a specific mob and control it.
 /datum/ai_controller/monkey/TryPossessPawn(atom/new_pawn)
 	if(!isliving(new_pawn))
 		return AI_CONTROLLER_INCOMPATIBLE
+	var/mob/living/living_pawn = new_pawn
 	RegisterSignal(new_pawn, COMSIG_PARENT_ATTACKBY, PROC_REF(on_attackby))
 	RegisterSignal(new_pawn, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
 	RegisterSignal(new_pawn, COMSIG_ATOM_ATTACK_PAW, PROC_REF(on_attack_paw))
@@ -36,11 +38,13 @@ have ways of interacting with a specific mob and control it.
 	RegisterSignal(new_pawn, COMSIG_LIVING_TRY_SYRINGE, PROC_REF(on_try_syringe))
 	RegisterSignal(new_pawn, COMSIG_ATOM_HULK_ATTACK, PROC_REF(on_attack_hulk))
 	RegisterSignal(new_pawn, COMSIG_CARBON_CUFF_ATTEMPTED, PROC_REF(on_attempt_cuff))
+	RegisterSignal(new_pawn, COMSIG_MOB_MOVESPEED_UPDATED, .proc/update_movespeed)
+	movement_delay = living_pawn.cached_multiplicative_slowdown
 	return ..() //Run parent at end
 
-/datum/ai_controller/monkey/UnpossessPawn()
+/datum/ai_controller/monkey/UnpossessPawn(destroy)
 	UnregisterSignal(pawn, list(COMSIG_PARENT_ATTACKBY, COMSIG_ATOM_ATTACK_HAND, COMSIG_ATOM_ATTACK_PAW, COMSIG_ATOM_BULLET_ACT, COMSIG_ATOM_HITBY, COMSIG_LIVING_START_PULL,\
-	COMSIG_LIVING_TRY_SYRINGE, COMSIG_ATOM_HULK_ATTACK, COMSIG_CARBON_CUFF_ATTEMPTED))
+	COMSIG_LIVING_TRY_SYRINGE, COMSIG_ATOM_HULK_ATTACK, COMSIG_CARBON_CUFF_ATTEMPTED, COMSIG_MOB_MOVESPEED_UPDATED))
 	return ..() //Run parent at end
 
 /datum/ai_controller/monkey/able_to_run()
@@ -113,7 +117,7 @@ have ways of interacting with a specific mob and control it.
 
 	var/obj/item/W = locate(/obj/item) in oview(2, living_pawn)
 
-	if(W && !blackboard[BB_MONKEY_BLACKLISTITEMS][W] && W.force > blackboard[BB_MONKEY_BEST_FORCE_FOUND])
+	if(W && !blackboard[BB_MONKEY_BLACKLISTITEMS][W] && W.force < blackboard[BB_MONKEY_BEST_FORCE_FOUND])
 		blackboard[BB_MONKEY_PICKUPTARGET] = W
 		current_movement_target = W
 		current_behaviors += GET_AI_BEHAVIOR(/datum/ai_behavior/monkey_equip/ground)
@@ -202,3 +206,7 @@ have ways of interacting with a specific mob and control it.
 	// chance of monkey retaliation
 	if(prob(MONKEY_CUFF_RETALIATION_PROB))
 		retaliate(user)
+
+/datum/ai_controller/monkey/proc/update_movespeed(mob/living/pawn)
+	SIGNAL_HANDLER
+	movement_delay = pawn.cached_multiplicative_slowdown
