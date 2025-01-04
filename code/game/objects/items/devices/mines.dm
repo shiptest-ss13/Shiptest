@@ -131,6 +131,8 @@
 
 ///NOW we actually blow up
 /obj/item/mine/proc/blast_now(atom/movable/triggerer)
+	if(QDELETED(src))
+		return
 	var/datum/effect_system/spark_spread/sporks = new /datum/effect_system/spark_spread
 	sporks.set_up(3, 1, src)
 	sporks.start()
