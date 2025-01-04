@@ -603,7 +603,7 @@
 		/obj/item/screwdriver,
 		/obj/item/lighter,
 		/obj/item/multitool,
-		/obj/item/reagent_containers/food/drinks/bottle/molotov,
+		/obj/item/reagent_containers/food/drinks/molotov,
 		/obj/item/grenade/c4,
 		/obj/item/reagent_containers/food/snacks/grown/cherry_bomb,
 		/obj/item/reagent_containers/food/snacks/grown/firelemon
