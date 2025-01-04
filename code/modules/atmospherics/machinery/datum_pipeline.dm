@@ -89,8 +89,8 @@
 					continue
 
 				if(item.parent)
-					log_mapping("Possible doubled atmosmachine found at [AREACOORD(item)] with other contents: [json_encode(item.loc.contents)]")
-					item.stack_trace("Possible doubled atmosmachine found")
+					possible_expansions += item.parent.members
+					merge(item.parent)
 					continue
 
 				members += item

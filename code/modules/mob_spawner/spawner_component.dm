@@ -15,6 +15,9 @@
 	var/current_timerid
 
 /datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max, _wave_length, _wave_downtime)
+	if(!ismovable(parent))
+		return COMPONENT_INCOMPATIBLE
+
 	if(_spawn_time)
 		spawn_time=_spawn_time
 	if(_mob_types)
@@ -36,14 +39,14 @@
 	if(_wave_downtime)
 		wave_downtime = _wave_downtime
 
+	var/static/list/connections = list(COMSIG_VLEVEL_CLEARING = PROC_REF(stop_spawning))
+	AddComponent(/datum/component/connect_vlevel_behalf, parent, connections)
+
 	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING), PROC_REF(stop_spawning))
 	RegisterSignal(parent, list(COMSIG_SPAWNER_TOGGLE_SPAWNING), PROC_REF(toggle_spawning))
 	START_PROCESSING(SSprocessing, src)
 
 /datum/component/spawner/process()
-	if(!parent) //Sanity check for instances where the spawner may be sleeping while the parent is destroyed
-		qdel(src)
-		return
 	try_spawn_mob()
 
 /datum/component/spawner/proc/stop_spawning(force)
