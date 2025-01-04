@@ -48,13 +48,11 @@
 	icon_state = "security"
 
 // Sensors Array
-
 /area/ruin/unpowered/sensor_array
-	name = "Sensor Array Facility" // In honor of the kugelblitz shenanigan of all time
+	name = "Sensor Array Facility"
 	icon_state = "purple"
- 
-// teslalab
 
+// teslalab
 /area/ruin/icemoon/tesla_lab
 	name = "CLIP Lab Complex"
 	icon_state = "hallC"
