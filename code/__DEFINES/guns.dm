@@ -76,6 +76,21 @@
 #define GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM 10
 #define GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH 15
 
+//aiming down sights values
+#define PISTOL_ZOOM 2
+#define SHOTGUN_ZOOM 2
+#define SMG_ZOOM 2
+#define RIFLE_ZOOM 2
+#define DMR_ZOOM 4
+
+//ads slowdown
+#define PISTOL_AIM_SLOWDOWN 0.1
+#define SHOTGUN_AIM_SLOWDOWN 0.3
+#define SMG_AIM_SLOWDOWN 0.2
+#define RIFLE_AIM_SLOWDOWN 0.3
+#define LONG_RIFLE_AIM_SLOWDOWN 0.4
+#define HEAVY_AIM_SLOWDOWN 0.6
+
 //slowdown defines
 #define NO_SLOWDOWN 0.0
 #define LIGHT_PISTOL_SLOWDOWN 0.05
