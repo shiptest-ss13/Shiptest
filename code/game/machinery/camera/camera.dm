@@ -36,6 +36,7 @@
 	var/busy = FALSE
 	var/emped = FALSE  //Number of consecutive EMP's on this camera
 	var/in_use_lights = 0
+	var/can_transmit_across_z_levels = FALSE
 
 	// Upgrades bitflag
 	var/upgrades = 0

@@ -1,6 +1,6 @@
 /obj/item/bodycamera
 	name = "body camera"
-	desc = "Sends a live camera feed over a network."
+	desc = "Ruggedized portable camera unit. Warrenty void if exposed to space."
 	icon = 'icons/obj/item/bodycamera.dmi'
 	icon_state = "bodycamera-off"
 	resistance_flags = FIRE_PROOF //double check that this flag works for fireproof objects
@@ -12,11 +12,9 @@
 	var/area/myarea = null
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
-
-	//OTHER
-
 	var/view_range = 5
 	var/busy = FALSE
+	var/can_transmit_across_z_levels = FALSE
 
 /obj/item/bodycamera/Initialize()
 	. = ..()

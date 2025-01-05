@@ -40,11 +40,11 @@
 	crate_name = "engineering gear crate"
 
 /datum/supply_pack/tools/bodycamera
-	name = "Bodycamera Crate"
-	desc = "Contains a bodycamera, so you can keep track of your workers at all times."
-	cost = 200
+	name = "Body Camera Crate"
+	desc = "Contains two portable cameras designed to help keep track of a working group at all times."
+	cost = 250
 	contains = list(/obj/item/bodycamera,
-				)
+					/obj/item/bodycamera)
 	crate_name = "bodycamera crate"
 
 /datum/supply_pack/tools/assbelt
