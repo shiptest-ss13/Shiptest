@@ -47,15 +47,15 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered/half{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding{
 	color = "#730622"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "bv" = (
@@ -236,15 +236,15 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "eV" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding{
 	color = "#730622"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/bench/grey/directional/south{
 	color = "#ABB0B8"
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
@@ -286,9 +286,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "gN" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding{
 	color = "#730622"
 	},
@@ -300,6 +297,9 @@
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
 /obj/item/radio/intercom/directional/north,
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "hC" = (
@@ -372,10 +372,10 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen)
 "iG" = (
+/obj/effect/turf_decal/spline/plain/opaque/syndiered,
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/plain/opaque/syndiered,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "iH" = (
@@ -503,10 +503,10 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "kP" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/spline/plain/opaque/syndiered{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "lh" = (
@@ -555,6 +555,8 @@
 /obj/item/analyzer{
 	pixel_x = 8
 	},
+/obj/effect/turf_decal/industrial/traffic,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "lP" = (
@@ -614,10 +616,10 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/traffic{
-	dir = 4
+	dir = 6
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
+	dir = 6
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/syndicate/black/engie,
@@ -808,11 +810,14 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "oT" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding{
 	color = "#730622"
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
@@ -845,12 +850,12 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "ph" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/siding{
 	color = "#730622";
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "pk" = (
@@ -923,13 +928,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "rb" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding{
 	color = "#730622"
 	},
 /obj/structure/chair/handrail,
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "rc" = (
@@ -937,6 +942,12 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -960,12 +971,15 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
 "rj" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half{
-	dir = 1
-	},
 /obj/effect/turf_decal/spline/plain/opaque/syndiered,
 /obj/machinery/light/floor{
 	pixel_y = -5
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/half{
+	dir = 1
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -1015,7 +1029,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "sV" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/siding{
 	color = "#730622";
 	dir = 1
@@ -1026,6 +1039,7 @@
 /obj/structure/sign/poster/random{
 	pixel_y = -32
 	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "sY" = (
@@ -1147,9 +1161,6 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "vV" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding{
 	color = "#730622"
 	},
@@ -1157,6 +1168,9 @@
 /obj/structure/chair/handrail,
 /obj/structure/sign/poster/rilena/random{
 	pixel_y = 32
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
@@ -1258,7 +1272,6 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "yV" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/siding{
 	color = "#730622";
 	dir = 1
@@ -1267,6 +1280,7 @@
 /obj/structure/chair/bench/grey/directional/north{
 	color = "#ABB0B8"
 	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "ze" = (
@@ -1308,13 +1322,13 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "An" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/spline/plain/opaque/syndiered{
 	dir = 1
 	},
 /obj/machinery/light/floor{
 	pixel_y = 5
 	},
+/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Ao" = (
@@ -1429,9 +1443,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered/half{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding{
 	color = "#730622"
 	},
@@ -1439,6 +1450,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/bench/grey/directional/south{
 	color = "#ABB0B8"
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
@@ -1449,10 +1463,10 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/traffic{
-	dir = 4
+	dir = 5
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
+	dir = 5
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
@@ -1636,7 +1650,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "GC" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/siding{
 	color = "#730622";
 	dir = 1
@@ -1644,6 +1657,7 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "Hr" = (
@@ -1731,13 +1745,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "HM" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding{
 	color = "#730622"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "Ic" = (
@@ -2226,7 +2240,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/siding{
 	color = "#730622";
 	dir = 1
@@ -2239,6 +2252,7 @@
 	pixel_x = -22;
 	pixel_y = -9
 	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "PB" = (
@@ -2347,7 +2361,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Ru" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/siding{
 	color = "#730622";
 	dir = 1
@@ -2356,6 +2369,7 @@
 	color = "#ABB0B8"
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "Rz" = (
@@ -2453,6 +2467,16 @@
 "SR" = (
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"Ta" = (
+/obj/effect/turf_decal/spline/plain/opaque/syndiered,
+/obj/machinery/light/floor{
+	pixel_y = -5
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/half{
+	dir = 1
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Tc" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2483,7 +2507,6 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "TI" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/siding{
 	color = "#730622";
 	dir = 1
@@ -2494,6 +2517,7 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/emcloset/wall/directional/south,
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "TP" = (
@@ -2553,7 +2577,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "VD" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/siding{
 	color = "#730622";
 	dir = 1
@@ -2563,6 +2586,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/landmark/start/assistant,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "VO" = (
@@ -3025,7 +3052,7 @@ iz
 Rm
 SR
 SR
-rj
+Ta
 SR
 ze
 pM
@@ -3125,7 +3152,7 @@ Gi
 TG
 Go
 JW
-rj
+Ta
 pM
 pM
 pM
