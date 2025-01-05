@@ -4,13 +4,6 @@
 	prefix = "_maps/RandomRuins/SandRuins/"
 	ruin_type = RUINTYPE_SAND
 
-/datum/map_template/ruin/whitesands/medipen_plant
-	name = "Abandoned Medipen Factory"
-	id = "medipenplant"
-	description = "A once prosperous autoinjector manufacturing plant."
-	suffix = "whitesands_surface_medipen_plant.dmm"
-	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
-
 /datum/map_template/ruin/whitesands/pubbyslopcrash
 	name = "Pubby Slop Crash"
 	id = "ws-pubbyslopcrash"

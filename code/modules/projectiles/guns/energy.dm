@@ -6,7 +6,7 @@
 	item_state = "spur"
 
 	muzzleflash_iconstate = "muzzle_flash_laser"
-	muzzle_flash_color = COLOR_SOFT_RED
+	light_color = COLOR_SOFT_RED
 
 	has_safety = TRUE
 	safety = TRUE
@@ -36,7 +36,8 @@
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/sling
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1

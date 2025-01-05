@@ -135,6 +135,7 @@ EMPTY_GUN_HELPER(automatic/m12_sporter)
 	name = "Model 13 \"Larker\""
 	desc = "A common after-market modification of the Model 12 \"Sporter\" rifle, keyed to fire a three round burst."
 	burst_size = 3
+	burst_delay = 0.6
 
 	icon_state = "larker"
 	item_state = "larker"
