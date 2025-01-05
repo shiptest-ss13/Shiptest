@@ -210,8 +210,20 @@
 /datum/computer_file/program/secureye/proc/get_available_cameras()
 	var/list/L = list()
 	for (var/obj/cam as anything in GLOB.cameranet.cameras)
-		if(cam.virtual_z() != computer.virtual_z())//Only show cameras on the same level.
-			continue
+		if(istype(cam, /obj/machinery/camera))
+			var/obj/machinery/camera/cam_S = cam
+			if((cam_S.virtual_z() != computer.virtual_z()) || (cam_S.can_transmit_across_z_levels)) //Only show cameras on the same level.
+				if(cam_S.can_transmit_across_z_levels)
+					//let them transmit
+				else
+					continue
+		else if(istype(cam, /obj/item/bodycamera))
+			var/obj/machinery/camera/cam_B = cam
+			if((cam_B.virtual_z() != computer.virtual_z()) || (cam_B.can_transmit_across_z_levels)) //Only show cameras on the same level.
+				if(cam_B.can_transmit_across_z_levels)
+					//let them transmit
+				else
+					continue
 		L.Add(cam)
 	var/list/camlist = list()
 	for(var/obj/cam as anything in L)

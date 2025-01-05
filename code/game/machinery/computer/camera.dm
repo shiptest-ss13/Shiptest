@@ -269,8 +269,20 @@
 /obj/machinery/computer/security/proc/get_available_cameras()
 	var/list/L = list()
 	for (var/obj/C in GLOB.cameranet.cameras)
-		if((is_away_level(src) || is_away_level(C)) && (C.virtual_z() != virtual_z()))//if on away mission, can only receive feed from same z_level cameras
-			continue
+		if(istype(C, /obj/machinery/camera))
+			var/obj/machinery/camera/cam = C
+			if(cam.virtual_z() != virtual_z())
+				if(cam.can_transmit_across_z_levels)
+					//let them transmit
+				else
+					continue
+		else if(istype(C, /obj/item/bodycamera))
+			var/obj/item/bodycamera/cam = C
+			if((cam.virtual_z() != virtual_z()) || (cam.can_transmit_across_z_levels))//if on away mission, can only receive feed from same z_level cameras
+				if(cam.can_transmit_across_z_levels)
+					//let them transmit
+				else
+					continue
 		L.Add(C)
 	var/list/D = list()
 	for(var/obj/C in L)
