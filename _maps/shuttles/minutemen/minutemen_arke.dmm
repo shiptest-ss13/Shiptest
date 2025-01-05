@@ -100,7 +100,7 @@
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 22;
-	pixel_y = -27
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
@@ -256,8 +256,6 @@
 /obj/item/storage/backpack/duffelbag,
 /obj/item/clothing/under/clip,
 /obj/item/clothing/under/clip,
-/obj/item/radio/headset/clip,
-/obj/item/radio/headset/clip,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "jr" = (
@@ -504,6 +502,13 @@
 	pixel_y = 24;
 	id = "arke"
 	},
+/obj/machinery/button/door{
+	id = "arke_bridge";
+	dir = 8;
+	pixel_y = 2;
+	name = "bridge shutters";
+	pixel_x = 24
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "pE" = (
@@ -690,6 +695,9 @@
 "tN" = (
 /obj/effect/turf_decal/minutemen/edge{
 	dir = 4
+	},
+/obj/structure/chair/office{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1041,6 +1049,7 @@
 	},
 /obj/item/flashlight,
 /obj/item/flashlight,
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "EK" = (
@@ -1109,6 +1118,10 @@
 /area/ship/cargo)
 "Gg" = (
 /obj/machinery/computer/cryopod/directional/north,
+/obj/machinery/light_switch{
+	pixel_y = 21;
+	pixel_x = -15
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "Gj" = (
@@ -1361,8 +1374,13 @@
 "Nl" = (
 /obj/effect/turf_decal/techfloor/orange,
 /obj/machinery/firealarm/directional/east,
-/obj/machinery/light/dim/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/wall/directional/south,
+/obj/item/radio/headset/clip,
+/obj/item/radio/headset/clip,
+/obj/item/radio/headset/clip,
+/obj/item/radio/headset/clip,
+/obj/item/radio/headset/clip,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "No" = (
@@ -1476,13 +1494,6 @@
 "QN" = (
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/fax/clip,
-/obj/machinery/button/door{
-	id = "arke_bridge";
-	dir = 4;
-	pixel_y = 2;
-	name = "bridge shutters";
-	pixel_x = -24
-	},
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
