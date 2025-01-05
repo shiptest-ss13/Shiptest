@@ -11,6 +11,8 @@
 	box = /obj/item/storage/box/survival/clip
 	ears = /obj/item/radio/headset
 
+	satchel = /obj/item/storage/backpack/security/clip
+
 // 	var/list/selectable_alt_titles = list()
 
 /datum/outfit/job/clip/post_equip(mob/living/carbon/human/H, visualsOnly)
@@ -43,6 +45,7 @@
 	job_icon = "scribe"
 
 	suit = /obj/item/clothing/suit/hazardvest
+	head = /obj/item/clothing/head/soft/utility_navy
 	gloves = /obj/item/clothing/gloves/color/black
 	accessory = /obj/item/clothing/accessory/pocketprotector/full
 	shoes = /obj/item/clothing/shoes/workboots
@@ -165,6 +168,28 @@
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/med
+
+/datum/outfit/job/clip/medtech
+	name = "CLIP - Medical Technician"
+	job_icon = "paramedic"
+	jobtype = /datum/job/paramedic
+
+	l_hand = null
+
+	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
+	suit = null
+	head = /obj/item/clothing/head/soft/paramedic
+	shoes = /obj/item/clothing/shoes/sneakers/blue
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
+	belt = /obj/item/storage/belt/medical/paramedic
+	l_pocket = /obj/item/flashlight/pen
+
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/para
+
+	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/job/clip/scientist
 	name = "CLIP - Researcher"
@@ -401,7 +426,7 @@
 	suit_store = null
 
 /datum/outfit/job/clip/minutemen/paramedic
-	name = "CLIP Minutemen - BARD Combat Medic"
+	name = "CLIP Minutemen - Medical Technician"
 	job_icon = "paramedic"
 	jobtype = /datum/job/paramedic
 

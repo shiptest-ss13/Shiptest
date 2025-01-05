@@ -393,6 +393,7 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 	name = "loading area stripes"
 	icon_state = "loadingarea_stripes"
 	color = COLOR_WARNING
+	detail_overlay = null
 
 /obj/effect/turf_decal/industrial/loading/stripes/red
 	color = COLOR_RED_GRAY

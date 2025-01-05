@@ -674,11 +674,6 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = 12
-	},
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
@@ -994,6 +989,10 @@
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 8;
 	piping_layer = 2
+	},
+/obj/machinery/light_switch{
+	pixel_y = 21;
+	pixel_x = 6
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
