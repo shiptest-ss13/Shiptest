@@ -108,16 +108,16 @@
 /obj/machinery/door/poddoor{
 	id = "arke_cargo"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo)
 "cN" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/structure/extinguisher_cabinet/directional/west,
-/obj/effect/turf_decal/industrial/loading{
-	icon_state = "loadingarea_stripes";
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/loading/stripes{
 	color = "#75A2BB"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "cP" = (
@@ -256,6 +256,8 @@
 /obj/item/storage/backpack/duffelbag,
 /obj/item/clothing/under/clip,
 /obj/item/clothing/under/clip,
+/obj/item/radio/headset/clip,
+/obj/item/radio/headset/clip,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "jr" = (
@@ -307,10 +309,6 @@
 	},
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
-	},
-/obj/effect/turf_decal/industrial/loading{
-	icon_state = "loadingarea_stripes";
-	color = "#75A2BB"
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northleft{
@@ -451,6 +449,7 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
 "oz" = (
@@ -460,7 +459,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "oD" = (
 /obj/machinery/porta_turret/ship/clip{
@@ -493,7 +492,6 @@
 /area/ship/cargo)
 "pt" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/item/radio/intercom/directional/north,
 /obj/item/radio/intercom/wideband/table{
 	dir = 4;
 	pixel_x = 1;
@@ -501,6 +499,10 @@
 	},
 /obj/machinery/computer/crew{
 	dir = 8
+	},
+/obj/machinery/turretid/ship{
+	pixel_y = 24;
+	id = "arke"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -567,6 +569,7 @@
 /obj/machinery/autolathe,
 /obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/sheet/glass/twenty,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "rf" = (
@@ -690,6 +693,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"tV" = (
+/obj/docking_port/stationary{
+	width = 30;
+	height = 15;
+	dwidth = 7;
+	name = "Arke External Airlock";
+	dir = 4
+	},
+/turf/template_noop,
+/area/space)
 "tY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -734,6 +747,7 @@
 	pixel_y = 6;
 	pixel_x = 6
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "uQ" = (
@@ -742,6 +756,12 @@
 /obj/item/melee/knife/kitchen,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"uW" = (
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/ship/cargo)
 "ve" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Bathroom"
@@ -758,20 +778,20 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 26
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
 /obj/structure/closet/emcloset/wall/directional/south{
 	populate = 0
-	},
-/obj/item/clothing/head/helmet/space/fragile{
-	pixel_x = -2;
-	pixel_y = -14
 	},
 /obj/item/clothing/suit/space/fragile{
 	pixel_x = 6;
 	pixel_y = -14
 	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
+/obj/item/clothing/head/helmet/space/fragile{
+	pixel_x = -2;
+	pixel_y = -14
 	},
 /obj/item/tank/internals/oxygen/red{
 	pixel_y = -21
@@ -975,14 +995,13 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
 	},
-/obj/effect/turf_decal/industrial/loading{
-	icon_state = "loadingarea_stripes";
-	color = "#75A2BB"
-	},
 /obj/structure/chair/handrail{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/loading/stripes{
+	color = "#75A2BB"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "DB" = (
@@ -1141,7 +1160,9 @@
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_y = -32
 	},
-/turf/open/floor/plastic,
+/obj/structure/catwalk/over/plated_catwalk/white,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plasteel/mono/white,
 /area/ship/crew)
 "GP" = (
 /obj/effect/turf_decal/techfloor{
@@ -1225,7 +1246,8 @@
 	dir = 8;
 	id = "arke_holo"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo)
 "Ki" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1283,16 +1305,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "Li" = (
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Ly" = (
@@ -1429,10 +1448,6 @@
 /turf/open/floor/plasteel/telecomms_floor/tatmos,
 /area/ship/engineering/communications)
 "OJ" = (
-/obj/effect/turf_decal/industrial/loading{
-	icon_state = "loadingarea_stripes";
-	color = "#75A2BB"
-	},
 /obj/item/storage/guncase/pistol/cm23,
 /obj/item/storage/guncase/pistol/cm23{
 	pixel_y = 8
@@ -1522,29 +1537,23 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Rs" = (
-/obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 7;
-	dheight = -3;
-	name = "Arke External Airlock";
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "arke_bridge";
 	dir = 4
 	},
-/turf/template_noop,
-/area/space)
+/turf/open/floor/plating,
+/area/ship/bridge)
 "RA" = (
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 4
-	},
-/obj/machinery/turretid/ship{
-	pixel_x = -28;
-	pixel_y = -3;
-	id = "arke"
 	},
 /obj/machinery/computer/monitor{
 	dir = 1;
 	icon_state = "computer-right"
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "RB" = (
@@ -1558,7 +1567,8 @@
 	dir = 4;
 	id = "arke_holo"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo)
 "Sd" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning{
@@ -1653,13 +1663,12 @@
 	},
 /area/ship/crew)
 "TW" = (
-/obj/effect/turf_decal/industrial/loading{
-	icon_state = "loadingarea_stripes";
+/obj/structure/closet/firecloset/wall/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/loading/stripes{
 	color = "#e32424";
 	dir = 8
 	},
-/obj/structure/closet/firecloset/wall/directional/east,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Uo" = (
@@ -2104,8 +2113,8 @@ kg
 lm
 pt
 Xl
-Wd
-Wd
+Rs
+Rs
 "}
 (20,1,1) = {"
 es
@@ -2118,8 +2127,8 @@ No
 OJ
 lm
 CB
-Wd
-Wd
+Rs
+Rs
 es
 "}
 (21,1,1) = {"
@@ -2134,7 +2143,7 @@ Ki
 lm
 es
 es
-es
+sZ
 es
 "}
 (22,1,1) = {"
@@ -2149,7 +2158,7 @@ re
 lm
 es
 es
-es
+sZ
 es
 "}
 (23,1,1) = {"
@@ -2160,11 +2169,11 @@ es
 lm
 tY
 lm
-lm
+DB
 fg
 es
 es
-es
+sZ
 es
 "}
 (24,1,1) = {"
@@ -2176,10 +2185,10 @@ lm
 vP
 lm
 es
+sZ
 es
 es
-es
-es
+bF
 es
 "}
 (25,1,1) = {"
@@ -2189,9 +2198,9 @@ es
 es
 lm
 Li
-DB
+lm
 es
-es
+sZ
 es
 es
 es
@@ -2203,10 +2212,10 @@ es
 es
 es
 DB
+uW
+lm
 es
-sZ
-es
-es
+bF
 es
 es
 es
@@ -2217,38 +2226,8 @@ es
 es
 es
 es
-sZ
 es
-bF
-es
-es
-es
-es
-es
-es
-"}
-(28,1,1) = {"
-es
-es
-es
-es
-sZ
-es
-es
-es
-es
-es
-es
-es
-es
-"}
-(29,1,1) = {"
-es
-es
-es
-es
-bF
-Rs
+tV
 es
 es
 es
