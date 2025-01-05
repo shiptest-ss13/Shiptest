@@ -254,6 +254,7 @@
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/storage/backpack/satchel,
 /obj/item/storage/backpack/duffelbag,
+/obj/item/clothing/under/clip/medic,
 /obj/item/clothing/under/clip,
 /obj/item/clothing/under/clip,
 /turf/open/floor/plasteel/grimy,
@@ -1375,7 +1376,9 @@
 /obj/effect/turf_decal/techfloor/orange,
 /obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall/directional/south,
+/obj/structure/closet/wall/directional/south{
+	name = "spare headsets"
+	},
 /obj/item/radio/headset,
 /obj/item/radio/headset,
 /obj/item/radio/headset,
