@@ -9,6 +9,7 @@
 	faction_icon = "bg_clip"
 
 	box = /obj/item/storage/box/survival/clip
+	ears = /obj/item/radio/headset
 
 // 	var/list/selectable_alt_titles = list()
 
@@ -36,7 +37,16 @@
 	// selectable_alt_titles = list("Volunteer","Civillian")
 
 	r_pocket = /obj/item/radio
-	ears = /obj/item/radio/headset/clip
+
+/datum/outfit/job/clip/assistant/surveyor
+	name = "CLIP - Surveyor"
+	job_icon = "scribe"
+
+	suit = /obj/item/clothing/suit/hazardvest
+	gloves = /obj/item/clothing/gloves/color/black
+	accessory = /obj/item/clothing/accessory/pocketprotector/full
+	shoes = /obj/item/clothing/shoes/workboots
+	l_pocket = /obj/item/clipboard
 
 /datum/outfit/job/clip/captain
 	name = "CLIP - Captain"
@@ -147,7 +157,6 @@
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	head = /obj/item/clothing/head/beret/med
-	ears = /obj/item/radio/headset/clip
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
 	suit_store = /obj/item/flashlight/pen
@@ -207,7 +216,6 @@
 	uniform = /obj/item/clothing/under/clip
 	accessory = /obj/item/clothing/accessory/armband/engine
 	head = /obj/item/clothing/head/hardhat/dblue
-	ears = /obj/item/radio/headset/clip
 	suit =  /obj/item/clothing/suit/hazardvest
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
