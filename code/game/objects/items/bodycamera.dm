@@ -18,7 +18,7 @@
 	var/view_range = 5
 	var/busy = FALSE
 
-/obj/item/bodycamera/Initialize(mapload)
+/obj/item/bodycamera/Initialize()
 	. = ..()
 	for(var/i in network)
 		network -= i
@@ -26,6 +26,7 @@
 
 	GLOB.cameranet.cameras += src
 	GLOB.cameranet.addCamera(src)
+	c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
 	update_appearance()
 
 /obj/item/bodycamera/Destroy()
