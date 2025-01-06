@@ -159,7 +159,7 @@
 /datum/status_effect/trickwine/debuff/ash/tick()
 	switch(pick("jitter", "dizzy", "drug"))
 		if("jitter")
-			owner.Jitter(3)
+			owner.adjust_jitter(3)
 		if("dizzy")
 			owner.Dizzy(2)
 		if("drug")

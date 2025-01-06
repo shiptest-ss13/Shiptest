@@ -245,13 +245,24 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		deaf_type = 2 // Since you should be able to hear yourself without looking
 
 	// Create map text prior to modifying message for goonchat
-	if (client?.prefs.chat_on_map && !(stat == UNCONSCIOUS || stat == HARD_CRIT) && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
+	if(client?.prefs.chat_on_map && !(stat == UNCONSCIOUS || stat == HARD_CRIT) && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
 		if(message_mods[MODE_WHISPER] == MODE_WHISPER_CRIT)
 			play_screen_text("<i>message</i>")
 		if(message_mods[MODE_CUSTOM_SAY_ERASE_INPUT])
 			create_chat_message(speaker, null, message_mods[MODE_CUSTOM_SAY_EMOTE], spans, EMOTE_MESSAGE)
 		else
 			create_chat_message(speaker, message_language, raw_message, spans)
+
+	if(radio_freq && (client?.prefs.toggles & SOUND_RADIO))
+		//All calls to hear that include radio_freq will be from radios, so we can assume that the speaker is a virtualspeaker
+		var/atom/movable/virtualspeaker/virt = speaker
+		//Play the walkie sound if this mob is speaking, and don't apply cooldown
+		if(virt.source == src)
+			playsound_local(get_turf(speaker), "sound/effects/walkietalkie.ogg", 20, FALSE)
+		else if(COOLDOWN_FINISHED(src, radio_crackle_cooldown))
+			playsound_local(get_turf(speaker), "sound/effects/radio_chatter.ogg", 20, FALSE)
+		//Always start it so that it only crackles when there hasn't been a message in a while
+		COOLDOWN_START(src, radio_crackle_cooldown, 5 SECONDS)
 
 	// Recompose message for AI hrefs, language incomprehension.
 	message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mods)
