@@ -1,5 +1,5 @@
 /datum/ai_planning_subtree/find_and_hunt_target
-	var/list/hunt_targets = list(/obj/item/trash)
+	var/list/hunt_targets = list(/obj/effect/decal/cleanable/food)
 
 /datum/ai_planning_subtree/find_and_hunt_target/New()
 	. = ..()
