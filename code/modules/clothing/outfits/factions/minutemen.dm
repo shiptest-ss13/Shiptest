@@ -176,8 +176,7 @@
 
 	l_hand = null
 
-	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
-	suit = null
+	uniform = /obj/item/clothing/under/clip/medic
 	head = /obj/item/clothing/head/soft/paramedic
 	shoes = /obj/item/clothing/shoes/sneakers/blue
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
@@ -424,27 +423,6 @@
 	head = /obj/item/clothing/head/clip/corpsman
 	suit = null
 	suit_store = null
-
-/datum/outfit/job/clip/minutemen/paramedic
-	name = "CLIP Minutemen - Medical Technician"
-	job_icon = "paramedic"
-	jobtype = /datum/job/paramedic
-
-	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
-	head = /obj/item/clothing/head/soft/paramedic
-	suit = /obj/item/clothing/suit/armor/vest
-	shoes = /obj/item/clothing/shoes/sneakers/blue
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
-	belt = /obj/item/storage/belt/medical/paramedic
-	suit_store = /obj/item/flashlight/pen
-	backpack_contents = list(/obj/item/roller=1)
-
-	backpack = /obj/item/storage/backpack/medic
-	satchel = /obj/item/storage/backpack/satchel/med
-	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/para
-
-	box = /obj/item/storage/box/survival/medical
 
 ///vehicle crew
 
