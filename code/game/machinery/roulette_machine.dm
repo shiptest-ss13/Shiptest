@@ -219,7 +219,7 @@
 	handle_color_light(color)
 
 	if(!is_winner)
-		audible_message("<span class='warning'>You lost! Better luck next time!</span>")
+		audible_message(span_warning("You lost! Better luck next time!"))
 		playsound(src, 'sound/machines/synth_no.ogg', 50)
 		return FALSE
 

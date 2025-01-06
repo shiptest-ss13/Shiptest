@@ -224,7 +224,7 @@
 		balance += money - give_payout(JACKPOT)
 		money = 0
 
-		new /obj/item/spacecash/bundle(loc,JACKPOT)
+		new /obj/item/spacecash/bundle(loc, JACKPOT)
 
 	else if(linelength == 5)
 		visible_message("<b>[src]</b> says, 'Big Winner! You win a thousand credits!'")
