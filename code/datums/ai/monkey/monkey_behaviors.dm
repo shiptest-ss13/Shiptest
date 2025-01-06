@@ -173,11 +173,12 @@
 	if(isnull(controller.blackboard[BB_MONKEY_GUN_WORKED]))
 		controller.blackboard[BB_MONKEY_GUN_WORKED] = TRUE
 
+	living_pawn.a_intent = INTENT_HARM
 	if(living_pawn.CanReach(target, weapon))
 		if(weapon)
 			weapon.melee_attack_chain(living_pawn, target)
 		else
-			living_pawn.attack_paw(target)
+			target.attack_paw(living_pawn)
 		controller.blackboard[BB_MONKEY_GUN_WORKED] = TRUE // We reset their memory of the gun being 'broken' if they accomplish some other attack
 	else if(weapon)
 		var/atom/real_target = target
