@@ -32,7 +32,7 @@
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
 	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
-		M.Jitter(5)
+		M.adjust_jitter(5, max = 100)
 	..()
 	. = 1
 

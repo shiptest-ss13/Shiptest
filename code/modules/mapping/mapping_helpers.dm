@@ -508,3 +508,33 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	var/obj/structure/crate_shelf/shelf = locate(/obj/structure/crate_shelf) in range(range, crate)
 	if(!shelf.load(crate))
 		log_mapping("[src] failed to shelve a crate at [AREACOORD(src)]")
+
+/obj/effect/mapping_helpers/chair
+	name = "chair helper"
+
+/obj/effect/mapping_helpers/chair/tim_buckley
+	name = "chair buckler 12000"
+	desc = "buckles a guy into the chair if theres a guy and a chair."
+
+/obj/effect/mapping_helpers/chair/tim_buckley/LateInitialize()
+	var/turf/turf = get_turf(src)
+	if(locate(/obj/structure/chair) in turf && locate(/mob/living/carbon) in turf)
+		var/obj/structure/chair/idiot_throne = locate(/obj/structure/chair) in turf
+		var/mob/living/carbon/idiot = locate(/mob/living/carbon)
+		idiot_throne.buckle_mob(idiot, TRUE)
+		qdel(src)
+	log_mapping("[src] at [x],[y] could not find a chair and guy on current turf.")
+	qdel(src)
+
+/obj/effect/mapping_helpers/turf
+	name = "turf helper"
+
+/obj/effect/mapping_helpers/turf/burnt
+	name = "turf_burner"
+	desc = "burns the everliving shit out of the turf its on."
+
+/obj/effect/mapping_helpers/turf/burnt/LateInitialize()
+	var/turf/our_turf = loc
+	our_turf.burn_tile()
+	qdel(src)
+  
