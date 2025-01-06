@@ -4,12 +4,12 @@
 	prefix = "_maps/RandomRuins/BeachRuins/"
 	ruin_type = RUINTYPE_BEACH
 
-/datum/map_template/ruin/beachplanet/fishinghut
-	name = "Fishing Hut"
-	id = "fishinghut"
-	description = "A small fishing hut floating on the ocean."
-	suffix = "beach_fishing_hut.dmm"
-	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_HAZARDOUS)
+/datum/map_template/ruin/beachplanet/crashedengie
+	name = "Crashed Engineer Ship"
+	id = "beach_crashed_engineer"
+	description = "An abandoned camp built by a crashed engineer"
+	suffix = "beach_crashed_engineer.dmm"
+	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_HAZARDOUS)
 
 /datum/map_template/ruin/beachplanet/ancient
 	name = "Ancient Danger"

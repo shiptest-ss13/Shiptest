@@ -89,9 +89,10 @@
 	user.put_in_hands(inserted_key)
 	inserted_key = null
 
-/obj/vehicle/sealed/Destroy()
+/obj/vehicle/sealed/deconstruct(disassembled = TRUE)
 	DumpMobs()
-	explosion(loc, 0, 1, 2, 3, 0)
+	if(!disassembled)
+		explosion(loc, 0, 1, 2, 3, 0)
 	return ..()
 
 /obj/vehicle/sealed/proc/DumpMobs(randomstep = TRUE)
