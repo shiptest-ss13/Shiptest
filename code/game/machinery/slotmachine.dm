@@ -74,14 +74,14 @@
 	return ..()
 
 
-/obj/machinery/computer/slot_machine/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/spacecash/bundle))
-		var/obj/item/spacecash/bundle/H = I
-		if(!user.temporarilyRemoveItemFromInventory(H))
+/obj/machinery/computer/slot_machine/attackby(obj/item/object, mob/living/user, params)
+	if(istype(object, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/credits = object
+		if(!user.temporarilyRemoveItemFromInventory(credits))
 			return
-		to_chat(user, "<span class='notice'>You insert [H.value] credits into [src]'s slot!</span>")
-		balance += H.value
-		qdel(H)
+		to_chat(user, span_notice("You insert [credits.value] credits into [src]'s slot!"))
+		balance += credits.value
+		qdel(credits)
 	else
 		return ..()
 
@@ -159,7 +159,7 @@
 	var/the_name
 	if(user)
 		the_name = user.real_name
-		visible_message("<span class='notice'>[user] pulls the lever and the slot machine starts spinning!</span>")
+		visible_message(span_notice("[user] pulls the lever and the slot machine starts spinning!"))
 	else
 		the_name = "Exaybachay"
 
@@ -191,14 +191,14 @@
 
 /obj/machinery/computer/slot_machine/proc/can_spin(mob/user)
 	if(machine_stat & NOPOWER)
-		to_chat(user, "<span class='warning'>The slot machine has no power!</span>")
+		to_chat(user, span_warning("The slot machine has no power!"))
 	if(machine_stat & BROKEN)
-		to_chat(user, "<span class='warning'>The slot machine is broken!</span>")
+		to_chat(user, span_warning("The slot machine is broken!"))
 	if(working)
-		to_chat(user, "<span class='warning'>You need to wait until the machine stops spinning before you can play again!</span>")
+		to_chat(user, span_warning("You need to wait until the machine stops spinning before you can play again!"))
 		return 0
 	if(balance < SPIN_PRICE)
-		to_chat(user, "<span class='warning'>Insufficient money to play!</span>")
+		to_chat(user, span_warning("Insufficient money to play!"))
 		return 0
 	return 1
 
@@ -235,12 +235,12 @@
 		give_money(SMALL_PRIZE)
 
 	else if(linelength == 3)
-		to_chat(user, "<span class='notice'>You win three free games!</span>")
+		to_chat(user, span_notice("You win three free games!"))
 		balance += SPIN_PRICE * 4
 		money = max(money - SPIN_PRICE * 4, money)
 
 	else
-		to_chat(user, "<span class='warning'>No luck!</span>")
+		to_chat(user, span_warning("No luck!"))
 
 /obj/machinery/computer/slot_machine/proc/get_lines()
 	var/amountthesame
@@ -279,10 +279,10 @@
 	return amount
 
 /obj/machinery/computer/slot_machine/proc/dispense(amount = 0, mob/living/target, throwit = 0)
-	var/obj/item/spacecash/bundle/H = new /obj/item/spacecash/bundle(loc, amount)
+	var/obj/item/spacecash/bundle/credits = new /obj/item/spacecash/bundle(loc, amount)
 
 	if(throwit && target)
-		H.throw_at(target, 3, 10)
+		credits.throw_at(target, 3, 10)
 
 	return amount
 
