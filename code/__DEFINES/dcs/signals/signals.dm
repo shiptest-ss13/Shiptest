@@ -570,11 +570,6 @@
 ///called when removing a given item from a mob, from mob/living/carbon/remove_embedded_object(mob/living/carbon/target, /obj/item)
 #define COMSIG_CARBON_EMBED_REMOVAL "item_embed_remove_safe"
 
-// /mob/living/simple_animal/hostile signals
-#define COMSIG_HOSTILE_ATTACKINGTARGET "hostile_attackingtarget"
-	#define COMPONENT_HOSTILE_NO_ATTACK 1
-
-
 /// Admin helps
 /// From /datum/admin_help/RemoveActive().
 /// Fired when an adminhelp is made inactive either due to closing or resolving.
