@@ -117,7 +117,7 @@ have ways of interacting with a specific mob and control it.
 
 	var/obj/item/W = locate(/obj/item) in oview(2, living_pawn)
 
-	if(W && !blackboard[BB_MONKEY_BLACKLISTITEMS][W] && W.force < blackboard[BB_MONKEY_BEST_FORCE_FOUND])
+	if(W && !blackboard[BB_MONKEY_BLACKLISTITEMS][W] && W.force > blackboard[BB_MONKEY_BEST_FORCE_FOUND])
 		blackboard[BB_MONKEY_PICKUPTARGET] = W
 		current_movement_target = W
 		current_behaviors += GET_AI_BEHAVIOR(/datum/ai_behavior/monkey_equip/ground)
