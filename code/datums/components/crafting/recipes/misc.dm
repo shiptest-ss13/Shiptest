@@ -155,7 +155,8 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER) //hole punching and scissors
 	reqs = list(
 			/obj/item/stack/rods = 3,
-			/obj/item/stack/sheet/mineral/titanium = 2)
+			/obj/item/stack/sheet/mineral/titanium = 2,
+			/obj/item/stack/cable_coil = 2)
 	result = /obj/item/stack/medical/structure
 	category = CAT_MISC
 

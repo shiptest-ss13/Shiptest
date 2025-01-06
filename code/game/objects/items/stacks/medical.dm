@@ -425,7 +425,7 @@
 
 /obj/item/stack/medical/structure
 	name = "replacement structural rods"
-	desc = "Steel rods with adjustable titanium fasteners, for quickly repairing structural damage to robotic limbs."
+	desc = "Steel rods and cable with adjustable titanium fasteners, for quickly repairing structural damage to robotic limbs."
 	gender = PLURAL
 	icon = 'icons/obj/items.dmi'
 	icon_state = "ipc_splint"
