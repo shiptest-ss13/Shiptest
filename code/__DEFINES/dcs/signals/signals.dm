@@ -27,7 +27,7 @@
 /// a client (re)connected, after all /client/New() checks have passed : (client/connected_client)
 #define COMSIG_GLOB_CLIENT_CONNECT "!client_connect"
 /// a person somewhere has thrown something : (mob/living/carbon/carbon_thrower, target)
-#define COMSIG_GLOB_CARBON_THROW_THING	"!throw_thing"
+#define COMSIG_GLOB_CARBON_THROW_THING "!throw_thing"
 
 // signals from globally accessible objects
 /// from SSsun when the sun changes position : (azimuth)
