@@ -537,4 +537,3 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	var/turf/our_turf = loc
 	our_turf.burn_tile()
 	qdel(src)
-  
