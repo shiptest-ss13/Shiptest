@@ -931,5 +931,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
 
+	recoil = 1
+	recoil_unwielded = 8
+
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 

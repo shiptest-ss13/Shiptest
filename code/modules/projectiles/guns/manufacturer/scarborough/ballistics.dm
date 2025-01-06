@@ -76,12 +76,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 
 /obj/item/ammo_box/magazine/m10mm_ringneck
 	name = "Ringneck pistol magazine (10mm)"
-	desc = "An 10-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
+	desc = "An 8-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "ringneck_mag-1"
 	base_icon_state = "ringneck_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
-	max_ammo = 10
+	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m10mm_ringneck/empty
@@ -544,7 +544,7 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	manufacturer = MANUFACTURER_SCARBOROUGH
 	spread = -5
 	spread_unwielded = 35
-	recoil = 4
+	recoil = 2
 	recoil_unwielded = 10
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
