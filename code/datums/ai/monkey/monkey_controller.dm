@@ -155,7 +155,7 @@ have ways of interacting with a specific mob and control it.
 				continue
 			living_pawn.dropItemToGround(held)
 
-		AddBehavior(/datum/ai_behavior/consume, pick(food_candidates))
+		queue_behavior(/datum/ai_behavior/consume, pick(food_candidates))
 		return TRUE
 
 /datum/ai_controller/monkey/proc/IsEdible(obj/item/thing)

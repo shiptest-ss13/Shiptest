@@ -5,6 +5,8 @@
 	set waitfor = FALSE
 	set invisibility = 0
 
+	SEND_SIGNAL(src, COMSIG_LIVING_LIFE, delta_time, times_fired)
+
 	if((movement_type & FLYING) && !(movement_type & FLOATING))	//TODO: Better floating
 		float(on = TRUE)
 
@@ -64,6 +66,7 @@
 		return 1
 
 /mob/living/proc/handle_breathing(times_fired)
+	SEND_SIGNAL(src, COMSIG_LIVING_HANDLE_BREATHING, delta_time, times_fired)
 	return
 
 /mob/living/proc/handle_mutations_and_radiation()
