@@ -151,7 +151,7 @@
 
 /obj/structure/door_assembly/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
-	if((I.tool_behaviour == TOOL_SCREWDRIVER) && state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
+	if(state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
 		user.visible_message(
 			span_notice("[user] finishes the airlock."),
 			span_notice("You start finishing the airlock...")
