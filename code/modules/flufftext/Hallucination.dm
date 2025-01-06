@@ -1265,7 +1265,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	target.playsound_local(get_turf(src), "sparks", 100, 1)
 	target.staminaloss += 50
 	target.Stun(40)
-	target.jitteriness += 1000
+	target.adjust_jitter(1000, max = 1500)
 	target.do_jitter_animation(target.jitteriness)
 	addtimer(CALLBACK(src, PROC_REF(shock_drop)), 20)
 

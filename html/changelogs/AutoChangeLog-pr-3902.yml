@@ -1,0 +1,8 @@
+author: MarkSuckerberg
+changes:
+  - {rscadd: A pref to totally disable radio crackle sounds.}
+  - {tweak: Radio crackle will only play if it's been 5 seconds since the last radio
+      message the mob has heard.}
+  - {tweak: The radio crackle will only play once a message has been successfully
+      transmitted.}
+delete-after: true

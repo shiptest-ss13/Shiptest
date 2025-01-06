@@ -2071,7 +2071,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "mr" = (
 /obj/machinery/light/directional/north,
-/obj/structure/radioactive/stack,
+/obj/structure/hazard/radioactive/stack,
 /turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "mt" = (
@@ -2551,7 +2551,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
-/obj/structure/radioactive/stack,
+/obj/structure/hazard/radioactive/stack,
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
@@ -3391,7 +3391,7 @@
 	},
 /area/overmap_encounter/planetoid/cave/explored)
 "uB" = (
-/obj/structure/radioactive{
+/obj/structure/hazard/radioactive{
 	pixel_x = 7;
 	pixel_y = 9
 	},
