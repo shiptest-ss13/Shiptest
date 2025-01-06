@@ -32,6 +32,10 @@ have ways of interacting with a specific atom and control it. They posses a blac
 	COOLDOWN_DECLARE(movement_cooldown)
 	///Delay between movements. This is on the controller so we can keep the movement datum singleton
 	var/movement_delay = 0.1 SECONDS
+	///A list for the path we're currently following, if we're using JPS pathing
+	var/list/movement_path
+	///Cooldown for JPS movement, how often we're allowed to try making a new path
+	COOLDOWN_DECLARE(repath_cooldown)
 
 /datum/ai_controller/New(atom/new_pawn)
 	ai_movement = SSai_movement.movement_types[ai_movement]
@@ -134,7 +138,7 @@ have ways of interacting with a specific atom and control it. They posses a blac
 	if(!is_type_in_typecache(target_turf, GLOB.dangerous_turfs))
 		movable_pawn.Move(target_turf, get_dir(current_loc, target_turf))
 	if(current_loc == get_turf(movable_pawn))
-		if(++pathing_attempts >= MAX_PATHING_ATTEMPTS)
+		if(++pathing_attempts >= AI_MAX_PATH_LENGTH)
 			CancelActions()
 			pathing_attempts = 0
 
@@ -176,3 +180,7 @@ have ways of interacting with a specific atom and control it. They posses a blac
 	UnregisterSignal(pawn, COMSIG_MOB_LOGOUT)
 	set_ai_status(AI_STATUS_ON) //Can't do anything while player is connected
 	RegisterSignal(pawn, COMSIG_MOB_LOGIN, PROC_REF(on_sentience_gained))
+
+/// Use this proc to define how your controller defines what access the pawn has for the sake of pathfinding, likely pointing to whatever ID slot is relevant
+/datum/ai_controller/proc/get_access()
+	return

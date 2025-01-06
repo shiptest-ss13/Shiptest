@@ -26,6 +26,8 @@
 #define COMSIG_GLOB_BUTTON_PRESSED "!button_pressed"
 /// a client (re)connected, after all /client/New() checks have passed : (client/connected_client)
 #define COMSIG_GLOB_CLIENT_CONNECT "!client_connect"
+/// a person somewhere has thrown something : (mob/living/carbon/carbon_thrower, target)
+#define COMSIG_GLOB_CARBON_THROW_THING	"!throw_thing"
 
 // signals from globally accessible objects
 /// from SSsun when the sun changes position : (azimuth)
@@ -264,6 +266,7 @@
 #define COMSIG_CLICK_CTRL "ctrl_click"
 //from base of atom/AltClick(): (/mob)
 #define COMSIG_CLICK_ALT "alt_click"
+	#define COMPONENT_CANCEL_CLICK_ALT (1<<0)
 //from base of atom/CtrlShiftClick(/mob)
 #define COMSIG_CLICK_CTRL_SHIFT "ctrl_shift_click"
 ///from base of atom/CtrlShiftRightClick(/mob)
@@ -320,6 +323,8 @@
 	#define COMPONENT_CANCEL_THROW (1<<0)
 ///from base of atom/movable/throw_at(): (datum/thrownthing, spin)
 #define COMSIG_MOVABLE_POST_THROW "movable_post_throw"
+///from base of datum/thrownthing/finalize(): (obj/thrown_object, datum/thrownthing) used for when a throw is finished
+#define COMSIG_MOVABLE_THROW_LANDED "movable_throw_landed"
 ///from base of atom/movable/onTransitZ(): (old_z, new_z)
 #define COMSIG_MOVABLE_Z_CHANGED "movable_ztransit"
 ///called when the movable is placed in an unaccessible area, used for shiploving: ()
