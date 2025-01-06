@@ -383,7 +383,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	manufacturer = MANUFACTURER_MINUTEMAN
 	spread = -5
 	spread_unwielded = 35
-	recoil = 4
+	recoil = 2
 	recoil_unwielded = 10
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS

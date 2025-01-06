@@ -55,25 +55,6 @@
 /obj/item/ammo_box/magazine/pistol556mm/empty
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/co9mm/hp
-	name = "pistol magazine (9mm HP)"
-	desc= "A 10-round double-stack magazine for standard-issue 9mm pistols. These hollow point rounds do significant damage against soft targets, but are nearly ineffective against armored ones."
-	ammo_type = /obj/item/ammo_casing/c9mm/hp
-
-/obj/item/ammo_box/magazine/co9mm/ap
-	name = "pistol magazine (9mm AP)"
-	desc= "A 10-round double-stack magazine for standard-issue 9mm pistols. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
-	ammo_type = /obj/item/ammo_casing/c9mm/ap
-
-/obj/item/ammo_box/magazine/co9mm/rubber
-	name = "pistol magazine (9mm rubber)"
-	desc = "A 10-round double-stack magazine for standard-issue 9mm pistols. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
-	ammo_type = /obj/item/ammo_casing/c9mm/rubber
-
-/obj/item/ammo_box/magazine/co9mm/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[ammo_count() == 1 ? 1 : round(ammo_count(),2)]"
-
 /obj/item/ammo_box/magazine/m50
 	name = "handgun magazine (.50 AE)"
 	desc = "An oversized, 7-round handgun magazine for the Desert Eagle handgun. These rounds do significant damage with average performance against armor."
