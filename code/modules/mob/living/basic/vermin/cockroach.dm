@@ -9,7 +9,6 @@
 	health = 1
 	maxHealth = 1
 	speed = 1.25
-	gold_core_spawnable = FRIENDLY_SPAWN
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 
 	verb_say = "chitters"
@@ -60,14 +59,15 @@
 		living_pawn.Move(get_step(living_pawn, move_dir), move_dir)
 
 
-/obj/projectile/glockroachbullet
+/obj/projectile/bullet/glockroach
 	damage = 10 //same damage as a hivebot
 	damage_type = BRUTE
 
 /obj/item/ammo_casing/glockroach
 	name = "0.9mm bullet casing"
 	desc = "A... 0.9mm bullet casing? What?"
-	projectile_type = /obj/projectile/glockroachbullet
+	caliber = "0.9mm"
+	projectile_type = /obj/projectile/bullet/glockroach
 
 
 /mob/living/basic/cockroach/glockroach

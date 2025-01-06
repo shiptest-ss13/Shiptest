@@ -10,8 +10,6 @@
 
 	var/basic_mob_flags = NONE
 
-	///Defines how fast the basic mob can move. This is a multiplier
-	var/speed = 1
 	///How much stamina the mob recovers per second
 	var/stamina_recovery = 5
 
@@ -21,8 +19,6 @@
 	var/armour_penetration = 0
 	///Damage type of a simple mob's melee attack, should it do damage.
 	var/melee_damage_type = BRUTE
-	///How much wounding power it has
-	var/wound_bonus = CANT_WOUND
 	///How much bare wounding power it has
 	var/bare_wound_bonus = 0
 	///If the attacks from this are sharp
@@ -78,8 +74,6 @@
 	///Flip the sprite upside down on death. Mostly here for things lacking custom dead sprites.
 	var/flip_on_death = FALSE
 
-	///If the mob can be spawned with a gold slime core. HOSTILE_SPAWN are spawned with plasma, FRIENDLY_SPAWN are spawned with blood.
-	var/gold_core_spawnable = NO_SPAWN
 	///Sentience type, for slime potions. SHOULD BE AN ELEMENT BUT I DONT CARE ABOUT IT FOR NOW
 	var/sentience_type = SENTIENCE_ORGANIC
 
@@ -122,7 +116,7 @@
 		icon_state = icon_dead
 		if(flip_on_death)
 			transform = transform.Turn(180)
-		set_density(FALSE)
+		density = 0
 
 /mob/living/basic/proc/melee_attack(atom/target)
 	src.face_atom(target)
@@ -132,12 +126,12 @@
 	SEND_SIGNAL(src, COMSIG_HOSTILE_POST_ATTACKINGTARGET, target, result)
 	return result
 
-/mob/living/basic/proc/set_varspeed(var_value)
+/mob/living/basic/set_varspeed(var_value)
 	speed = var_value
 	update_basic_mob_varspeed()
 
 /mob/living/basic/proc/update_basic_mob_varspeed()
 	if(speed == 0)
-		remove_movespeed_modifier(/datum/movespeed_modifier/simplemob_varspeed)
-	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/simplemob_varspeed, multiplicative_slowdown = speed)
+		remove_movespeed_modifier(/datum/movespeed_modifier/basicmob_varspeed)
+	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/basicmob_varspeed, multiplicative_slowdown = speed)
 	SEND_SIGNAL(src, POST_BASIC_MOB_UPDATE_VARSPEED)

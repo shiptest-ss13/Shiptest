@@ -37,17 +37,17 @@
 		return TRUE
 
 	if(ismecha(the_target)) //Targetting vs mechas
-		var/obj/vehicle/sealed/mecha/M = the_target
-		for(var/occupant in M.occupants)
-			if(can_attack(living_mob, occupant)) //Can we attack any of the occupants?
+		var/obj/mecha/M = the_target
+		if(M.occupant)
+			if(can_attack(living_mob, M.occupant)) //Can we attack the occupant?
 				return TRUE
 
 	if(istype(the_target, /obj/machinery/porta_turret)) //Cringe turret! kill it!
 		var/obj/machinery/porta_turret/P = the_target
 		if(P.in_faction(living_mob)) //Don't attack if the turret is in the same faction
 			return FALSE
-		if(P.has_cover && !P.raised) //Don't attack invincible turrets
-			return FALSE
+		//if(P.has_cover && !P.raised) //Don't attack invincible turrets
+		//	return FALSE
 		if(P.machine_stat & BROKEN) //Or turrets that are already broken
 			return FALSE
 		return TRUE

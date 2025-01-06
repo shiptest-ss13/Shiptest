@@ -342,7 +342,7 @@
 	if(!affecting)
 		affecting = get_bodypart(BODY_ZONE_CHEST)
 	var/armor = run_armor_check(affecting, MELEE, armour_penetration = user.armour_penetration)
-	apply_damage(damage, user.melee_damage_type, affecting, armor, wound_bonus = user.wound_bonus, bare_wound_bonus = user.bare_wound_bonus, sharpness = user.sharpness)
+	apply_damage(damage, user.melee_damage_type, affecting, armor, sharpness = user.sharpness)
 
 
 /mob/living/carbon/human/attack_animal(mob/living/simple_animal/M)
