@@ -43,7 +43,7 @@
 		finish_action(controller, FALSE)
 		return
 
-	//need to set intent to help here
+	living_pawn.a_intent = INTENT_HELP
 
 	if(held_item)
 		held_item.melee_attack_chain(pawn, target)
