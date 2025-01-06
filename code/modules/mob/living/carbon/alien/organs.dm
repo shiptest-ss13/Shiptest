@@ -137,7 +137,7 @@
 		owner.force_scream()
 		owner.Paralyze(100)
 
-	owner.jitteriness += 30
+	owner.adjust_jitter(30)
 	owner.confused += 30
 	owner.stuttering += 30
 
