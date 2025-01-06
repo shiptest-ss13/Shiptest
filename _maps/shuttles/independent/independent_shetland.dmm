@@ -112,9 +112,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
 "bc" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -155,9 +153,7 @@
 /area/ship/hallway/fore)
 "by" = (
 /obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -396,9 +392,7 @@
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/port)
 "dq" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/engine/hull,
 /area/ship/maintenance/port)
 "dB" = (
@@ -447,9 +441,7 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
@@ -550,9 +542,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "eV" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -831,9 +821,7 @@
 /turf/open/floor/plating,
 /area/ship/medical)
 "gS" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/engine/hull,
 /area/ship/maintenance/starboard)
 "gV" = (
@@ -1203,9 +1191,7 @@
 	id = "shetland_cargo";
 	locked = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "jY" = (
@@ -2740,9 +2726,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "wT" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -3033,8 +3017,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/random{
-	pixel_x = -32;
-	pixel_y = 0
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
@@ -3324,7 +3307,6 @@
 "BL" = (
 /obj/machinery/door/airlock/external,
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 2;
 	launch_status = 0;
 	port_direction = 8;
@@ -4160,7 +4142,6 @@
 	name = "Nugget"
 	},
 /obj/structure/bed/dogbed{
-	anchored = 1;
 	can_be_unanchored = 1
 	},
 /turf/open/floor/carpet/blue,
@@ -4364,8 +4345,7 @@
 /obj/effect/spawner/random/bedsheet,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/random{
-	pixel_x = -32;
-	pixel_y = 0
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
@@ -4418,9 +4398,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
 "Lu" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -4992,9 +4970,7 @@
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "PP" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "shetportthrusters"
@@ -5163,9 +5139,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "QV" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "shetstarboardengine"
@@ -5445,6 +5419,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Tk" = (
@@ -5769,9 +5744,7 @@
 	id = "shetland_cargo";
 	locked = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Ws" = (
@@ -6009,9 +5982,7 @@
 /area/ship/crew/dorm)
 "YA" = (
 /obj/machinery/power/smes/engineering,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "YN" = (
@@ -6128,8 +6099,7 @@
 	},
 /obj/structure/curtain,
 /obj/structure/sign/poster/random{
-	pixel_x = -32;
-	pixel_y = 0
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -6169,9 +6139,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/cryo)
 "ZT" = (
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "8-9"
 	},
