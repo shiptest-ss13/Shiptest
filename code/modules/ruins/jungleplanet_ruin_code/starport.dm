@@ -1,6 +1,7 @@
 /obj/structure/salvageable/starport
 	name = "starport ruin structure"
 	icon = 'icons/mecha/mecha_equipment.dmi'
+	density = 0
 
 /obj/structure/salvageable/starport/missile_launcher
 	name = "\improper starfighter missile rack"
