@@ -133,7 +133,7 @@
 /datum/supply_pack/sec_supply/baton
 	name = "Stun Baton Crate"
 	desc = "Arm your vessel security with a stun baton. Batteries included."
-	cost = 1500
+	cost = 2500
 	contains = list(/obj/item/melee/baton/loaded)
 	crate_name = "stun baton crate"
 
