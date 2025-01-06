@@ -429,7 +429,7 @@
 	gender = PLURAL
 	icon = 'icons/obj/items.dmi'
 	icon_state = "ipc_splint"
-	amount = 3
+	amount = 2
 	max_amount = 3
 	novariants = FALSE
 	self_delay = 50
