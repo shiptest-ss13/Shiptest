@@ -86,7 +86,6 @@
 			data["AccountBalance"] = card.registered_account.account_balance
 		else
 			data["AccountBalance"] = 0
-	
 	return data
 
 /obj/machinery/roulette/ui_act(action, params)
