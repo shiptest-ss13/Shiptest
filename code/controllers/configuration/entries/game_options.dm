@@ -280,7 +280,6 @@
 	min_val = -1
 
 /datum/config_entry/flag/starlight
-/datum/config_entry/flag/grey_assistants
 
 /datum/config_entry/flag/allow_random_events	// Enables random events mid-round when set
 
@@ -383,3 +382,6 @@
 	max_val = 255
 	config_entry_value = 127
 	min_val = 127
+
+/datum/config_entry/number/commendation_percent_poll
+	integer = FALSE

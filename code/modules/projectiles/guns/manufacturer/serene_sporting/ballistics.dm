@@ -1,4 +1,4 @@
-#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope)
+#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun)
 #define SERENE_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_SCOPE = 1)
 
 /* Micro Target */
@@ -139,6 +139,7 @@ EMPTY_GUN_HELPER(automatic/m12_sporter)
 	name = "Model 13 \"Larker\""
 	desc = "A common after-market modification of the Model 12 \"Sporter\" rifle, keyed to fire a three round burst."
 	burst_size = 3
+	burst_delay = 0.6
 
 	icon_state = "larker"
 	item_state = "larker"

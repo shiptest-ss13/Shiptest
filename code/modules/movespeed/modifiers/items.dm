@@ -24,3 +24,6 @@
 
 /datum/movespeed_modifier/sphere
 	multiplicative_slowdown = -0.5
+
+/datum/movespeed_modifier/equipping
+	multiplicative_slowdown = 1.5

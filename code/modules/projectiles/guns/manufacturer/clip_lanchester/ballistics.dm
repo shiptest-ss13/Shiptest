@@ -1,4 +1,4 @@
-#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/scope, /obj/item/attachment/long_scope)
+#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/scope, /obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun)
 #define CLIP_ATTACHMENT_POINTS list(ATTACHMENT_SLOT_MUZZLE = 1,ATTACHMENT_SLOT_RAIL = 1,ATTACHMENT_SLOT_SCOPE=1)
 
 
@@ -107,6 +107,9 @@
 	. = ..()
 	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
 
+/obj/item/ammo_box/magazine/m9mm_cm70/empty
+	start_empty = TRUE
+
 /obj/item/gun/ballistic/automatic/pistol/cm357
 	name = "\improper CM-357"
 	desc = "A semi-automatic magnum handgun designed specifically for BARD's megafauna removal unit, as standard handguns had proven useless as backup weapons. Its heft and power have also made it a status symbol among the few CLIP officers able to requisition one. Chambered in .357."
@@ -202,6 +205,9 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	caliber = "9mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/cm5_9mm/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/cm5_9mm/rubber
 	desc = "A 30-round magazine for the CM-5 submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
@@ -373,7 +379,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	manufacturer = MANUFACTURER_MINUTEMAN
 	spread = -5
 	spread_unwielded = 35
-	recoil = 4
+	recoil = 2
 	recoil_unwielded = 10
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
@@ -393,6 +399,9 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 /obj/item/ammo_box/magazine/f90/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/f90/empty
+	start_empty = TRUE
 
 //########### RIFLES ###########//
 /obj/item/gun/ballistic/automatic/assault/cm82
@@ -513,6 +522,9 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 /obj/item/ammo_box/magazine/cm40_762_40_box/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/cm40_762_40_box/empty
+	start_empty = TRUE
 
 //########### MISC ###########//
 

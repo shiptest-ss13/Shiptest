@@ -321,12 +321,12 @@
 				if(1)
 					C.confused += 5
 					C.stuttering += 10
-					C.Jitter(10)
+					C.set_jitter(10)
 				if(2)
 					C.Paralyze(40)
 					C.confused += 10
 					C.stuttering += 15
-					C.Jitter(25)
+					C.set_jitter(25)
 		playsound(get_turf(src), 'sound/machines/warning-buzzer.ogg', 130, 3)
 		cooldown = world.time + 600
 		user.log_message("used an emagged Cyborg Harm Alarm in [AREACOORD(user)]", LOG_ATTACK)
@@ -593,7 +593,7 @@
 	to_chat(user, "<span class='boldnotice'>You [active? "activate":"deactivate"] [src].</span>")
 
 /obj/item/borg/projectile_dampen/update_icon_state()
-	icon_state = "[initial(icon_state)][active]"
+	icon_state = "shield[active]"
 	return ..()
 
 /obj/item/borg/projectile_dampen/proc/activate_field()

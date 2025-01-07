@@ -376,7 +376,7 @@
 			/obj/item/stock_parts/micro_laser/high = 2,
 			/obj/item/stock_parts/matter_bin/adv = 2,
 			/obj/item/survey_handheld = 1,
-			/obj/item/weldingtool/experimental = 1,
+			/obj/item/weldingtool/electric = 1,
 			/obj/item/mmi/posibrain = 1,
 			/obj/item/reagent_containers/glass/beaker/plastic = 1,
 			/obj/item/organ/eyes/robotic/shield = 1,

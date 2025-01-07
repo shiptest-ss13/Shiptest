@@ -240,10 +240,11 @@
 	icon_state = "inteqeng"
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION
 
-/obj/item/clothing/under/syndicate/inteq/skirt/artificer
+/obj/item/clothing/under/syndicate/inteq/artificer/skirt
 	name = "inteq artificer overall skirt"
 	desc = "A black set of overalls in the likeness of a skirt atop a standard issue turtleneck, for the IRMG's support division Artificers."
 	icon_state = "inteqeng_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/corpsman
@@ -252,10 +253,11 @@
 	icon_state = "inteqmed"
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION
 
-/obj/item/clothing/under/syndicate/inteq/skirt/corpsman
+/obj/item/clothing/under/syndicate/inteq/corpsman/skirt
 	name = "inteq corpsman skirtleneck"
 	desc = "A sterile white turtleneck with a free flowing black skirt, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division Corpsmen."
 	icon_state = "inteqmed_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/honorable

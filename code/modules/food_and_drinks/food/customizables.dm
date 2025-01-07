@@ -148,9 +148,9 @@
 	slice.update_customizable_overlays(src)
 
 
-/obj/item/reagent_containers/food/snacks/customizable/Destroy()
-	for(. in ingredients)
-		qdel(.)
+/obj/item/reagent_containers/food/snacks/customizable/deconstruct(disassembled)
+	for(var/ingredient in ingredients)
+		qdel(ingredient)
 	return ..()
 
 

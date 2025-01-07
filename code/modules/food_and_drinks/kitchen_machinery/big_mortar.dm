@@ -28,7 +28,7 @@
 	. += span_notice("It can be (un)secured with <b>wrench</b>")
 	. += span_notice("You can empty all of the items out of it with <b>Alt Click</b>")
 
-/obj/structure/large_mortar/Destroy()
+/obj/structure/large_mortar/deconstruct(disassembled)
 	drop_everything_contained()
 	return ..()
 

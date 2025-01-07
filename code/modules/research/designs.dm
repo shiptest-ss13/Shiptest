@@ -162,6 +162,17 @@ other types of metals and chemistry for reagents).
 	desc = "A design disk containing the pattern for a refill box of standard 9mm ammo, used in Commander pistols."
 	starting_blueprints = list(/datum/design/c9mmautolathe)
 
+/obj/item/disk/design_disk/ammo_c9mm/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/c9mmautolathe()
+
+/obj/item/disk/design_disk/telecomms
+	name = "design disk - Telecomms parts"
+	desc = "A design disk containing blueprints for specialized telecommunications parts."
+	color = "#64A8D9"
+	max_blueprints = 7
+	starting_blueprints = list(/datum/design/subspace_ansible, /datum/design/hyperwave_filter, /datum/design/subspace_amplifier, /datum/design/subspace_treatment, /datum/design/subspace_analyzer, /datum/design/subspace_crystal, /datum/design/subspace_transmitter)
+
 /obj/item/disk/design_disk/blanks
 	design_name = "Blank Ammo"
 	starting_blueprints = list(/datum/design/blank_shell)
