@@ -2,7 +2,6 @@
 #define DEFAULT_SHELF_MAX_CAPACITY 4
 #define DEFAULT_SHELF_USE_DELAY 1 SECONDS // Default interaction delay of the shelf
 #define DEFAULT_SHELF_VERTICAL_OFFSET 10 // Vertical pixel offset of shelving-related things. Set to 10 by default due to this leaving more of the crate on-screen to be clicked.
-#define DEFAULT_SHELF_PICKUP TRUE // If the shelf will pickup crates on it's tile on mapload
 
 /obj/structure/crate_shelf
 	name = "crate shelf"
@@ -16,7 +15,7 @@
 	var/capacity = DEFAULT_SHELF_CAPACITY
 	var/max_capacity = DEFAULT_SHELF_MAX_CAPACITY
 	var/use_delay = DEFAULT_SHELF_USE_DELAY
-	var/pickup = DEFAULT_SHELF_PICKUP
+	var/pickup_crates = TRUE
 	var/list/shelf_contents
 
 /obj/structure/crate_shelf/built
@@ -191,7 +190,8 @@
 
 /obj/structure/crate_shelf/proc/load_crates(atom/movable/holder)
 	for(var/obj/structure/closet/crate/crate in loc)
-		if(crate != src && !load(crate))
+		if(!load(crate))
+			log_mapping("[src] failed to shelve a crate at [AREACOORD(src)]")
 			break
 
 /obj/item/rack_parts/shelf
