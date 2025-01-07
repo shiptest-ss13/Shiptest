@@ -38,7 +38,6 @@
 		squash_chance = 50, \
 		squash_damage = 1, \
 	)
-	//ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
 /mob/living/basic/cockroach/ex_act() //Explosions are a terrible way to handle a cockroach.
 	return FALSE
@@ -86,10 +85,19 @@
 	obj_damage = 10
 	faction = list(FACTION_HOSTILE)
 	ai_controller = /datum/ai_controller/basic_controller/cockroach/glockroach
+	///number of burst shots
+	var/burst_shots
+	///cooldown between attacks
+	var/ranged_cooldown = 1 SECONDS
 
-/mob/living/basic/cockroach/glockroach/Initialize()
+/mob/living/basic/cockroach/glockroach/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/ranged_attacks, /obj/item/ammo_casing/glockroach)
+	AddComponent(\
+		/datum/component/ranged_attacks,\
+		casing_type = /obj/item/ammo_casing/glockroach,\
+		burst_shots = burst_shots,\
+		cooldown_time = ranged_cooldown,\
+	)
 
 /datum/ai_controller/basic_controller/cockroach/glockroach
 	planning_subtrees = list(
