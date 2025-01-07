@@ -443,3 +443,8 @@
 #define SQUASHED_SHOULD_BE_DOWN (1<<0)
 ///Whether or not to gib when the squashed mob is moved over
 #define SQUASHED_SHOULD_BE_GIBBED (1<<0)
+
+/// Default minimum body temperature mobs can exist in before taking damage
+#define NPC_DEFAULT_MIN_TEMP 250
+/// Default maximum body temperature mobs can exist in before taking damage
+#define NPC_DEFAULT_MAX_TEMP 350
