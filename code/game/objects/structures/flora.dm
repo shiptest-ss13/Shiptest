@@ -883,7 +883,7 @@
 			else if (isliving(user))
 				var/mob/living/L = user
 				L.Immobilize(100, TRUE)
-				L.jitteriness += 50
+				L.adjust_jitter(50)
 				L.adjustToxLoss(66)
 		return 1
 	else ..()

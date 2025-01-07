@@ -161,6 +161,7 @@
 	diag_hud_set_mechstat()
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	update_part_values()
+	AddComponent(/datum/component/automatic_fire_mecha,0.5)
 
 /obj/mecha/update_icon_state()
 	if(silicon_pilot && silicon_icon_state)
@@ -477,7 +478,7 @@
 ////////////////////////////
 
 
-/obj/mecha/proc/click_action(atom/target,mob/user,params)
+/obj/mecha/proc/click_action(atom/target,mob/user,params, cooldown_override = null)
 	if(!occupant || occupant != user)
 		return
 	if(!locate(/turf) in list(target,target.loc)) // Prevents inventory from being drilled
@@ -513,13 +514,13 @@
 				to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 				return
 			if(selected.action(target,params))
-				selected.start_cooldown()
+				selected.start_cooldown(cooldown_override)
 	else if(selected && selected.is_melee())
 		if(isliving(target) && selected.harmful && HAS_TRAIT(L, TRAIT_PACIFISM))
 			to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 			return
 		if(selected.action(target,params))
-			selected.start_cooldown()
+			selected.start_cooldown(cooldown_override)
 	else
 		if(internal_damage & MECHA_INT_CONTROL_LOST)
 			var/list/possible_targets = oview(1,src)
@@ -980,6 +981,7 @@
 	else
 		to_chat(user, "<span class='warning'>You stop entering the exosuit!</span>")
 
+// wake up should go off here
 /obj/mecha/proc/moved_inside(mob/living/carbon/human/H)
 	. = FALSE
 	if(H && H.client && (H in range(1)))
@@ -995,6 +997,8 @@
 		playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 		if(!internal_damage)
 			SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
+		SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
+		autofire_check()
 		return TRUE
 
 /obj/mecha/proc/mmi_move_inside(obj/item/mmi/M, mob/user)
@@ -1039,6 +1043,8 @@
 	B.remote_control = src
 	B.update_mouse_pointer()
 	icon_state = initial(icon_state)
+	SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
+	autofire_check()
 	update_appearance()
 	setDir(dir_in)
 	log_message("[M] moved in as pilot.", LOG_MECHA)
@@ -1122,6 +1128,7 @@
 	var/mob/living/L = occupant
 	occupant = null //we need it null when forceMove calls Exited().
 	silicon_pilot = FALSE
+	SEND_SIGNAL(src,COMSIG_MECH_EXITED,L)
 	if(mob_container.forceMove(newloc))//ejecting mob container
 		log_message("[mob_container] moved out.", LOG_MECHA)
 		L << browse(null, "window=exosuit")
@@ -1201,7 +1208,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 			user.sight |= occupant_sight_flags
 
 ///////////////////////
-////// Ammo stuff /////
+////// Weapon stuff ///
 ///////////////////////
 
 /obj/mecha/proc/ammo_resupply(obj/item/mecha_ammo/A, mob/user,fail_chat_override = FALSE)
@@ -1249,6 +1256,17 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		else
 			to_chat(user, "<span class='notice'>None of the equipment on this exosuit can use this ammo!</span>")
 	return FALSE
+
+/obj/mecha/proc/autofire_check()
+	if(istype(selected,/obj/item/mecha_parts/mecha_equipment/weapon))
+		var/obj/item/mecha_parts/mecha_equipment/weapon/mech_gun = selected
+		if(mech_gun.full_auto)
+			SEND_SIGNAL(src,COMSIG_MECH_ENABLE_AUTOFIRE)
+			SEND_SIGNAL(src,COMSIG_MECH_SET_AUTOFIRE_SPEED, mech_gun.equip_cooldown)
+		else
+			SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
+	else
+		SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
 
 
 ///////////////////////

@@ -368,6 +368,8 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	var/speaking = "[emergency_alert] The supermatter has reached critical integrity failure. Emergency causality destabilization field has been activated."
 	radio.talk_into(src, speaking, common_channel, language = get_selected_language())
 	for(var/i in SUPERMATTER_COUNTDOWN_TIME to 0 step -10)
+		if(QDELETED(src))
+			return
 		if(damage < explosion_point) // Cutting it a bit close there engineers
 			radio.talk_into(src, "[safe_alert] Failsafe has been disengaged.", common_channel)
 			final_countdown = FALSE
@@ -970,17 +972,18 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 				continue //You can't pull someone nailed to the deck
 		step_towards(P,center)
 
-/obj/machinery/power/supermatter_crystal/proc/supermatter_anomaly_gen(turf/anomalycenter, type = FLUX_ANOMALY, anomalyrange = 5)
-	var/turf/L = pick(orange(anomalyrange, anomalycenter))
-	if(L)
-		switch(type)
-			if(FLUX_ANOMALY)
-				var/obj/effect/anomaly/flux/A = new(L, 300)
-				A.explosive = FALSE
-			if(GRAVITATIONAL_ANOMALY)
-				new /obj/effect/anomaly/grav(L, 250)
-			if(PYRO_ANOMALY)
-				new /obj/effect/anomaly/pyro(L, 200)
+/obj/machinery/power/supermatter_crystal/proc/supermatter_anomaly_gen(anomalycenter, type = FLUX_ANOMALY, anomalyrange = 5)
+	var/turf/spawn_turf = pick(orange(anomalyrange, anomalycenter))
+	if(!istype(spawn_turf))
+		return
+	switch(type)
+		if(FLUX_ANOMALY)
+			var/obj/effect/anomaly/flux/A = new(spawn_turf, 300)
+			A.explosive = FALSE
+		if(GRAVITATIONAL_ANOMALY)
+			new /obj/effect/anomaly/grav(spawn_turf, 250)
+		if(PYRO_ANOMALY)
+			new /obj/effect/anomaly/pyro(spawn_turf, 200)
 
 /obj/machinery/power/supermatter_crystal/proc/supermatter_zap(atom/zapstart = src, range = 5, zap_str = 4000, zap_flags = ZAP_SUPERMATTER_FLAGS, list/targets_hit = list())
 	if(QDELETED(zapstart))

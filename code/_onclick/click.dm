@@ -160,7 +160,10 @@
 			UnarmedAttack(A,1)
 	else
 		if(W)
-			W.afterattack(A,src,0,params)
+			if(W.pre_attack(A,src,params))
+				return
+			else
+				W.afterattack(A,src,0,params)
 		else
 			RangedAttack(A,params)
 
@@ -342,7 +345,8 @@
 	A.AltClick(src)
 
 /atom/proc/AltClick(mob/user)
-	if(SEND_SIGNAL(src, COMSIG_CLICK_ALT, user) & COMPONENT_CANCEL_CLICK_ALT)
+	. = SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
+	if(. & COMPONENT_CANCEL_CLICK_ALT)
 		return
 	var/turf/T = get_turf(src)
 	if(T && (isturf(loc) || isturf(src)) && user.TurfAdjacent(T))
