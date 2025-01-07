@@ -96,8 +96,6 @@
 		/datum/reagent/consumable/ethanol/trickwine/ice_wine,
 		/datum/reagent/consumable/ethanol/trickwine/shock_wine,
 		/datum/reagent/consumable/ethanol/trickwine/hearth_wine,
-		/datum/reagent/consumable/ethanol/trickwine/force_wine,
-		/datum/reagent/consumable/ethanol/trickwine/prism_wine
 	))
 	reagents.add_reagent(trickwine_type, 200)
 	name = "barrel of [trickwine_type::name]"

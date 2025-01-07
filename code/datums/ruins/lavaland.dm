@@ -47,7 +47,8 @@
 	setpiece_item = /obj/item/documents/nanotrasen
 
 /datum/mission/dynamic/brainchip
-	name = "one of our cargo techs died with some important tech in his head. get it back"
+	name = "brainchip recovery"
+	description = "one of our cargo techs died with some important tech in his head. get it back"
 	setpiece_item = /mob/living/carbon/human
 
 /obj/effect/landmark/mission_poi/main/implanted
