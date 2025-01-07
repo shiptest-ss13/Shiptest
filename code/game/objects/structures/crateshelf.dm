@@ -123,6 +123,8 @@
 	if(!next_free) // If we don't find an empty slot, return early.
 		if(ismob(user))
 			balloon_alert(user, "shelf full!")
+		else
+			log_mapping("[src] attempted to shelve a crate when full at [AREACOORD(src)]")
 		return FALSE
 	if(!user || do_after(user, use_delay, target = crate)) // Skip do_after if called with no mob
 		if(shelf_contents[next_free] != null)
