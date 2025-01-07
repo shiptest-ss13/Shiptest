@@ -65,3 +65,38 @@
 	cost = 800
 	contains = list(/obj/item/attachment/long_scope)
 	crate_name = "scope crate"
+
+/datum/supply_pack/attachment/shotgun
+	name = "Underbarrel Shotgun Crate"
+	desc = "Contains a single shot underbarrel shotgun to be mounted on a firearm."
+	cost = 750
+	contains = list(/obj/item/attachment/gun/ballistic/shotgun)
+	crate_name = "underbarrel shotgun crate"
+
+/datum/supply_pack/attachment/flamethrower
+	name = "Underbarrel Flamethrower Crate"
+	desc = "Contains a compact underbarrel flamethrower to be mounted on a firearm."
+	cost = 750
+	contains = list(/obj/item/attachment/gun/flamethrower)
+	crate_name = "underbarrel flamethrower crate"
+
+/datum/supply_pack/attachment/e_gun
+	name = "Underbarrel Energy Gun Crate"
+	desc = "Contains an underbarrel energy gun to be mounted on a firearm."
+	cost = 750
+	contains = list(/obj/item/attachment/gun/energy/e_gun)
+	crate_name = "underbarrel energy gun crate"
+
+/datum/supply_pack/attachment/riot_launcher
+	name = "Underbarrel Riot Grenade Launcher Crate"
+	desc = "Contains a single shot underbarrel riot grenade launcher to be mounted on a firearm."
+	cost = 750
+	contains = list(/obj/item/attachment/gun/riot)
+	crate_name = "underbarrel riot grenade launcher crate"
+
+/datum/supply_pack/attachment/flare
+	name = "Underbarrel Flare Gun Crate"
+	desc = "Contains a single shot underbarrel flare gun to be mounted on a firearm. One box of flares included."
+	cost = 200
+	contains = list(/obj/item/attachment/gun/flare)
+	crate_name = "underbarrel flare gun crate"
