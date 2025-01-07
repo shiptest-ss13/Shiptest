@@ -45,14 +45,14 @@
 	name = "scattershot ammo"
 	desc = "A box of scaled-up buckshot, for use in exosuit shotguns."
 	icon_state = "scattershot"
-	rounds = 40
+	rounds = 24
 	ammo_type = "scattershot"
 
 /obj/item/mecha_ammo/lmg
 	name = "machine gun ammo"
 	desc = "A box of linked ammunition, designed for the UMG-2 exosuit weapon."
 	icon_state = "lmg"
-	rounds = 300
+	rounds = 200
 	ammo_type = "lmg"
 
 /obj/item/mecha_ammo/lmg/tank

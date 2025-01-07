@@ -13,7 +13,6 @@
 	var/buildstack = /obj/item/stack/rods
 	var/buildstackamount = 3
 
-
 /obj/structure/railing/Initialize()
 	. = ..()
 	if(density && flags_1 & ON_BORDER_1)
@@ -21,6 +20,13 @@
 			COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 		)
 		AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/railing/update_appearance(updates)
+	. = ..()
+	if(dir == (1 || 5 || 9))
+		layer = 2.76
+	else
+		layer = 3.08
 
 /obj/structure/railing/corner //aesthetic corner sharp edges hurt oof ouch
 	icon_state = "railing_corner"

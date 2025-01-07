@@ -32,6 +32,13 @@
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	kepori_override_icon = 'icons/mob/clothing/back/backpacks_kepori.dmi'
 
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_BACK
+	equip_delay_other = EQUIP_DELAY_BACK * 1.5
+	strip_delay = EQUIP_DELAY_BACK * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
+
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -43,11 +50,6 @@
 /*
  * Backpack Types
  */
-
-/obj/item/storage/backpack/old/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 12
 
 /obj/item/storage/backpack/holding
 	name = "bag of holding"
@@ -180,6 +182,12 @@
 	item_state = "satchel-norm"
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
+
+	equipping_sound = null
+	unequipping_sound = null
+	equip_delay_self = null
+	equip_delay_other = EQUIP_DELAY_BACK
+	strip_delay = EQUIP_DELAY_BACK
 
 /obj/item/storage/backpack/satchel/ComponentInitialize()
 	. = ..()
