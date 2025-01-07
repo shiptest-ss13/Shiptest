@@ -89,7 +89,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Command Deck";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -197,7 +197,7 @@
 "bW" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Foreman's Office";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "56"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -824,7 +824,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Life Support";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "10"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1527,7 +1527,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 1;
 	name = "Engineering";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "10"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2162,7 +2162,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Control Room";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "10"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -2823,7 +2823,7 @@
 "xQ" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Foreman's Office";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "56"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -3237,7 +3237,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Bridge";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -5561,7 +5561,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Command Deck";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "19"
 	},
 /obj/structure/sign/directions/command{

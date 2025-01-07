@@ -1276,7 +1276,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
 	name = "Armory";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access = list(3)
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2154,7 +2154,7 @@
 "oc" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Bridge";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "19"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -3133,7 +3133,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
 	name = "Armory";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access = list(3)
 	},
 /obj/structure/cable{
@@ -5508,7 +5508,7 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Control Room";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "10"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5834,7 +5834,7 @@
 "MS" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Command Deck";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "19"
 	},
 /obj/structure/cable{
@@ -5874,7 +5874,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Engineering";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "10"
 	},
 /obj/structure/cable{
@@ -7589,7 +7589,7 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Life Support";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "10"
 	},
 /obj/machinery/door/firedoor/border_only,
