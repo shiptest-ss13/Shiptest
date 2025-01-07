@@ -190,7 +190,7 @@
 	M.AdjustParalyzed(-40)
 	M.AdjustImmobilized(-40)
 	M.adjustStaminaLoss(-2, 0)
-	M.Jitter(2)
+	M.adjust_jitter(2)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,4))
 	..()
 	. = 1
@@ -208,11 +208,11 @@
 	. = 1
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage1(mob/living/M)
-	M.Jitter(5)
+	M.adjust_jitter(5, max = 150)
 	..()
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage2(mob/living/M)
-	M.Jitter(10)
+	M.adjust_jitter(10, max = 300)
 	M.Dizzy(10)
 	..()
 
@@ -220,7 +220,7 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 4, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(15)
+	M.adjust_jitter(15, max = 600)
 	M.Dizzy(15)
 	..()
 
@@ -228,7 +228,7 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(20)
+	M.adjust_jitter(20)
 	M.Dizzy(20)
 	M.adjustToxLoss(5, 0)
 	..()
@@ -288,7 +288,7 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(5)
+	M.adjust_jitter(5, max = 150)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	..()
 
@@ -297,7 +297,7 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(10)
+	M.adjust_jitter(10, max = 300)
 	M.Dizzy(10)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	..()
@@ -307,7 +307,7 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 12, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(15)
+	M.adjust_jitter(15, max = 600)
 	M.Dizzy(15)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	..()
@@ -317,7 +317,7 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 16, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(50)
+	M.adjust_jitter(50)
 	M.Dizzy(50)
 	M.adjustToxLoss(5, 0)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
@@ -362,7 +362,7 @@
 	..()
 
 /datum/reagent/drug/happiness/on_mob_life(mob/living/carbon/M)
-	M.jitteriness = 0
+	M.adjust_jitter(-20)
 	M.confused = 0
 	M.disgust = 0
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2)
@@ -386,25 +386,25 @@
 /datum/reagent/drug/happiness/addiction_act_stage1(mob/living/M)// all work and no play makes jack a dull boy
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(min(mood.sanity, SANITY_DISTURBED))
-	M.Jitter(5)
+	M.adjust_jitter(5, max = 150)
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage2(mob/living/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(min(mood.sanity, SANITY_UNSTABLE))
-	M.Jitter(10)
+	M.adjust_jitter(10, max = 300)
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage3(mob/living/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(min(mood.sanity, SANITY_CRAZY))
-	M.Jitter(15)
+	M.adjust_jitter(15, max = 500)
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage4(mob/living/carbon/human/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(SANITY_INSANE)
-	M.Jitter(20)
+	M.adjust_jitter(20)
 	..()
 	. = 1
 
@@ -425,7 +425,7 @@
 	..()
 
 /datum/reagent/drug/pumpup/on_mob_life(mob/living/carbon/M)
-	M.Jitter(5)
+	M.adjust_jitter(5)
 
 	if(prob(5))
 		to_chat(M, "<span class='notice'>[pick("Go! Go! GO!", "You feel ready...", "You feel invincible...")]</span>")
@@ -439,7 +439,7 @@
 	to_chat(M, "<span class='userdanger'>You can't stop shaking, your heart beats faster and faster...</span>")
 
 /datum/reagent/drug/pumpup/overdose_process(mob/living/M)
-	M.Jitter(5)
+	M.adjust_jitter(5)
 	if(prob(5))
 		M.drop_all_held_items()
 	if(prob(20))

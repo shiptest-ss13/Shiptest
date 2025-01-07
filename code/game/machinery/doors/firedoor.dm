@@ -468,6 +468,11 @@
 	assemblytype = /obj/structure/firelock_frame/heavy
 	max_integrity = 550
 
+/obj/machinery/door/firedoor/heavy/closed
+	icon_state = "door_closed"
+	opacity = TRUE
+	density = TRUE
+
 /obj/machinery/door/firedoor/window
 	name = "firelock window shutter"
 	icon = 'icons/obj/doors/doorfirewindow.dmi'
