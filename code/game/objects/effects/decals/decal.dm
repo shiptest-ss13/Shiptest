@@ -61,5 +61,5 @@
 
 /obj/effect/turf_decal/Destroy(force)
 	SHOULD_CALL_PARENT(FALSE)
-	moveToNullspace()
+	loc = null
 	return QDEL_HINT_QUEUE
