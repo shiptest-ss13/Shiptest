@@ -953,6 +953,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"md" = (
+/obj/structure/closet/crate/wooden{
+	name = "mining gear crate"
+	},
+/obj/effect/mapping_helpers/crate_shelve,
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen)
 "mk" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3484,6 +3491,13 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/goliath,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
+"Ue" = (
+/obj/structure/crate_shelf/built,
+/obj/structure/closet/crate{
+	name = "supplies crate"
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen)
 "Ug" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -4391,8 +4405,8 @@ Up
 cC
 mm
 zP
-Rz
-Rz
+md
+Ue
 RH
 NI
 Lb
@@ -4415,7 +4429,7 @@ OY
 zj
 SH
 hh
-Rz
+md
 PM
 uG
 IJ

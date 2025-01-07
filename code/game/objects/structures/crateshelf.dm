@@ -121,9 +121,10 @@
 /obj/structure/crate_shelf/proc/load(obj/structure/closet/crate/crate, mob/user)
 	var/next_free = shelf_contents.Find(null) // Find the first empty slot in the shelf.
 	if(!next_free) // If we don't find an empty slot, return early.
-		balloon_alert(user, "shelf full!")
+		if(ismob(user))
+			balloon_alert(user, "shelf full!")
 		return FALSE
-	if(!user || do_after(user, use_delay, target = crate))
+	if(!user || do_after(user, use_delay, target = crate)) // Skip do_after if called with no mob
 		if(shelf_contents[next_free] != null)
 			return FALSE // Something has been added to the shelf while we were waiting, abort!
 		if(crate.opened) // If the crate is open, try to close it.
