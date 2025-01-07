@@ -20,7 +20,7 @@
 	if(!isliving(target))
 		return ELEMENT_INCOMPATIBLE
 	src.atmos_requirements = string_assoc_list(atmos_requirements)
-	RegisterSignal(target, COMSIG_LIVING_HANDLE_BREATHING, .proc/on_non_stasis_life)
+	RegisterSignal(target, COMSIG_LIVING_HANDLE_BREATHING, PROC_REF(on_non_stasis_life))
 
 /datum/element/atmos_requirements/Detach(datum/target)
 	. = ..()

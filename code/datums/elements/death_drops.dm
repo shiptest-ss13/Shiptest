@@ -17,7 +17,7 @@
 		stack_trace("death drops element added to [target] with NO LOOT")
 	if(!src.loot)
 		src.loot = loot.Copy()
-	RegisterSignal(target, COMSIG_MOB_DEATH, .proc/on_death)
+	RegisterSignal(target, COMSIG_MOB_DEATH, PROC_REF(on_death))
 
 /datum/element/death_drops/Detach(datum/target)
 	. = ..()
