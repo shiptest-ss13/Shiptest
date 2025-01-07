@@ -1,9 +1,9 @@
-/obj/structure/salvageable/starport
+/obj/structure/salvageable/airbase
 	name = "starport ruin structure"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	density = 0
 
-/obj/structure/salvageable/starport/missile_launcher
+/obj/structure/salvageable/airbase/missile_launcher
 	name = "\improper starfighter missile rack"
 	desc = "A devastating strike weapon used by daring Gorlex pilots during the ICW. The firing mechanisms, while sturdy, seem to be ruined by the passage of time."
 	icon_state = "mecha_missilerack"
@@ -17,7 +17,7 @@
 		/obj/item/gun/ballistic/rocketlauncher = 10
 	)
 
-/obj/structure/salvageable/starport/cannon
+/obj/structure/salvageable/airbase/cannon
 	name = "\improper starfighter cannon assembly"
 	desc = "A high powered rotary cannon used by daring Gorlex pilots during the ICW. The mechanisms seem to be ruined by the passage of time."
 	icon_state = "mecha_scatter"
@@ -30,3 +30,6 @@
 		/obj/item/stack/sheet/metal/five = 10,
 		/obj/item/stack/sheet/plasteel/five = 30,
 	)
+
+/obj/machinery/porta_turret/ship/syndicate/heavy/starport
+	turret_flags = TURRET_FLAG_HOSTILE

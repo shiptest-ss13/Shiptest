@@ -120,6 +120,11 @@
 	name = "Airbase Shed"
 	icon_state = "storage"
 
+/area/ruin/jungle/airbase/turrets
+	name = "Abandoned Airbase Guns"
+	icon_state = "green"
+	requires_power = FALSE
+
 // Syndicate fort
 
 /area/ruin/jungle/syndifort
