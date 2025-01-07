@@ -104,7 +104,7 @@
 
 /obj/item/clothing/suit/toggle/armor/vest/hardliners/Initialize()
 	. = ..()
-		allowed = GLOB.security_vest_allowed
+	allowed = GLOB.security_vest_allowed
 
 ///////////////
 //Spacesuits//
