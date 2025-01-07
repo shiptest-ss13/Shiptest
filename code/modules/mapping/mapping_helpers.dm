@@ -490,6 +490,25 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	icon_cache[url] = I
 	return I
 
+/obj/effect/mapping_helpers/crate_shelve
+	name = "crate shelver"
+	icon_state = "crate"
+	late = TRUE
+	var/range = 1
+
+/obj/effect/mapping_helpers/crate_shelve/LateInitialize(mapload)
+	. = ..()
+	var/obj/structure/closet/crate/crate = locate(/obj/structure/closet/crate) in loc
+	if(!crate)
+		log_mapping("[src] failed to find a crate at [AREACOORD(src)]")
+	else
+		shelve(crate)
+
+/obj/effect/mapping_helpers/crate_shelve/proc/shelve(crate)
+	var/obj/structure/crate_shelf/shelf = locate(/obj/structure/crate_shelf) in range(range, crate)
+	if(!shelf.load(crate))
+		log_mapping("[src] failed to shelve a crate at [AREACOORD(src)]")
+
 /obj/effect/mapping_helpers/chair
 	name = "chair helper"
 
