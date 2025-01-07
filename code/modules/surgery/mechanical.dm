@@ -33,14 +33,14 @@
 				TOOL_CAUTERY = 60,
 				TOOL_HEMOSTAT = 60,
 				TOOL_RETRACTOR = 60,
-				/obj/item/melee/transforming/energy = 40,
+				/obj/item/melee/energy = 40,
 				/obj/item/gun/energy/laser = 20)
 	time = 2 SECONDS
 	missinghpbonus = 10
 
 /datum/surgery_step/heal/mechanic/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/repairtype
-	if(tool.tool_behaviour == TOOL_WELDER || tool.tool_behaviour == TOOL_CAUTERY || istype(tool, /obj/item/melee/transforming/energy) || istype(tool, /obj/item/gun/energy/laser))
+	if(tool.tool_behaviour == TOOL_WELDER || tool.tool_behaviour == TOOL_CAUTERY || istype(tool, /obj/item/melee/energy) || istype(tool, /obj/item/gun/energy/laser))
 		brutehealing = 5
 		burnhealing = 0
 		repairtype = "dents"

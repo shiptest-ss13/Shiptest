@@ -265,6 +265,9 @@
 #define COMSIG_CLICK_CTRL_SHIFT "ctrl_shift_click"
 ///from base of atom/CtrlShiftRightClick(/mob)
 #define COMSIG_CLICK_CTRL_SHIFT_RIGHT "ctrl_shift_right_click"
+/// from mob/ver/do_unique_action
+#define COMSIG_CLICK_UNIQUE_ACTION "unique_action"
+	#define OVERIDE_UNIQUE_ACTION 1
 //from base of atom/MouseDrop(): (/atom/over, /mob/user)
 #define COMSIG_MOUSEDROP_ONTO "mousedrop_onto"
 	#define COMPONENT_NO_MOUSEDROP 1
@@ -668,12 +671,6 @@
 #define COMSIG_TRY_STORAGE_RETURN_INVENTORY "storage_return_inventory"	//(list/list_to_inject_results_into, recursively_search_inside_storages = TRUE)
 #define COMSIG_TRY_STORAGE_CAN_INSERT "storage_can_equip" //(obj/item/insertion_candidate, mob/user, silent) - returns bool
 
-// /datum/component/two_handed signals
-#define COMSIG_TWOHANDED_WIELD "twohanded_wield" //from base of datum/component/two_handed/proc/wield(mob/living/carbon/user): (/mob/user)
-	#define COMPONENT_TWOHANDED_BLOCK_WIELD 1
-#define COMSIG_TWOHANDED_UNWIELD "twohanded_unwield" //from base of datum/component/two_handed/proc/unwield(mob/living/carbon/user): (/mob/user)
-
-
 // /datum/action signals
 #define COMSIG_ACTION_TRIGGER "action_trigger" //from base of datum/action/proc/Trigger(): (datum/action)
 	#define COMPONENT_ACTION_BLOCK_TRIGGER 1
@@ -718,10 +715,18 @@
 /// generally called before temporary non-parallel animate()s on the atom (animation_duration)
 #define COMSIG_ATOM_TEMPORARY_ANIMATION_START "atom_temp_animate_start"
 
-/// send when enabling/diabling an autofire component
+/// send when enabling/diabling an autofire component for guns
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
 #define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
 #define COMSIG_GUN_SET_AUTOFIRE_SPEED "set_autofire_speed"
+
+/// send when enabling/diabling an autofire component for mechs
+#define COMSIG_MECH_DISABLE_AUTOFIRE "disable_mech_autofire"
+#define COMSIG_MECH_ENABLE_AUTOFIRE "enable_mech_autofire"
+#define COMSIG_MECH_SET_AUTOFIRE_SPEED "set_mech_autofire_speed"
+
+#define COMSIG_MECH_ENTERED "mech_entered"
+#define COMSIG_MECH_EXITED "mech_exited"
 
 ///sent when guns need to notify the gun hud to update. mostly for revolvers.
 #define COMSIG_UPDATE_AMMO_HUD "update_ammo_hud"
@@ -740,3 +745,11 @@
 #define COMSIG_ADDED_POINT_OF_INTEREST "added_point_of_interest"
 /// Sent from base of /datum/controller/subsystem/points_of_interest/proc/on_poi_element_removed : (atom/old_poi)
 #define COMSIG_REMOVED_POINT_OF_INTEREST "removed_point_of_interest"
+
+// Power signals
+/// Sent when an obj/item calls item_use_power: (use_amount, user, check_only)
+#define COMSIG_ITEM_POWER_USE "item_use_power"
+	#define NO_COMPONENT NONE
+	#define COMPONENT_POWER_SUCCESS (1<<0)
+	#define COMPONENT_NO_CELL (1<<1)
+	#define COMPONENT_NO_CHARGE (1<<2)

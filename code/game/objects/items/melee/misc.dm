@@ -5,17 +5,19 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	var/projectile_block_chance = 0
 
-/obj/item/melee/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(attack_type == PROJECTILE_ATTACK)
-		final_block_chance = projectile_block_chance //Don't bring a sword to a gunfight
-	return ..()
-
+//cruft
 /obj/item/melee/proc/check_martial_counter(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	if(target.check_block())
 		target.visible_message("<span class='danger'>[target.name] blocks [src] and twists [user]'s arm behind [user.p_their()] back!</span>",
 					"<span class='userdanger'>You block the attack!</span>")
 		user.Stun(40)
 		return TRUE
+
+//This is only pathed here because there is currently only melee using it, the second you want to add charged to something just make it /obj/item/get_cell()
+/obj/item/melee/get_cell()
+	var/datum/component/transforming/charged/charged_comp = GetComponent(/datum/component/transforming/charged)
+	if(charged_comp)
+		return charged_comp.cell
 
 /obj/item/melee/chainofcommand
 	name = "chain of command"
@@ -101,8 +103,8 @@
 	attack_verb = list("beat", "smacked")
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 3.5)
 	w_class = WEIGHT_CLASS_HUGE
-	var/homerun_ready = 0
-	var/homerun_able = 0
+	var/homerun_ready = FALSE
+	var/homerun_able = FALSE
 
 /obj/item/melee/baseball_bat/homerun
 	name = "home run bat"

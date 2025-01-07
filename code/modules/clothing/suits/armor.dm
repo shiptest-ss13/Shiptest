@@ -17,6 +17,13 @@
 
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
+	equipping_sound = EQUIP_SOUND_MED_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_MED_GENERIC
+	equip_delay_self = EQUIP_DELAY_SUIT
+	equip_delay_other = EQUIP_DELAY_SUIT * 1.5
+	strip_delay = EQUIP_DELAY_SUIT * 1.5
+	equip_self_flags = null
+
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
 	if(!allowed)
@@ -47,22 +54,32 @@
 	icon_state = "marine_light"
 	item_state = "armor"
 	clothing_flags = THICKMATERIAL
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	armor = list("melee" = 50, "bullet" = 75, "laser" = 55, "energy" = 25, "bomb" = 60, "bio" = 100, "fire" = 70, "acid" = 50)
-	cold_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 20, "bullet" = 45, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 65, "fire" = 40, "acid" = 50)
+	cold_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
-	slowdown = 0.5
+	slowdown = 0 //one day...
 
 /obj/item/clothing/suit/armor/vest/marine/medium
 	name = "medium tactical armor vest"
 	icon_state = "marine_medium"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50)
+	slowdown = 0.4
 
 /obj/item/clothing/suit/armor/vest/marine/heavy
-	name = "large tactical armor vest"
+	name = "heavy tactical armor vest"
 	icon_state = "marine_heavy"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 55, "energy" = 25, "bomb" = 50, "bio" = 75, "fire" = 40, "acid" = 50)
+	slowdown = 0.8
 
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"

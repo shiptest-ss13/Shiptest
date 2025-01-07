@@ -80,9 +80,7 @@
 		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
 		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine,
 		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine,
-		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine,
-		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine,
-		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine
+		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine
 	))
 	return new trickwine(loc)
 

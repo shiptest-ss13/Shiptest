@@ -9,16 +9,15 @@
 	)
 	armor_base = /obj/item/clothing/suit/hooded/survivor
 
+	speak_emote = list("breathes heavily.", "growls.", "sharply inhales.")
+	emote_hear = list("murmers.","grumbles.","whimpers.")
+
 /mob/living/simple_animal/hostile/human/hermit/survivor/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
 	..()
-	/*
-	if(prob(15))
-		new /obj/item/mob_trophy/shiny(loc)
-		visible_message("<span class='warning'>You notice a glimmering nugget of shiny metal.</span>")
-	*/
+
 
 /mob/living/simple_animal/hostile/human/hermit/survivor
 	name = "Hermit Wanderer"
@@ -61,11 +60,26 @@
 	icon_living = "survivor_gunslinger"
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 	speed = 10
-	rapid = 4
+	rapid = 3
 	rapid_fire_delay = 3
-	casingtype = /obj/item/ammo_casing/a545_39/recycled
+	casingtype = /obj/item/ammo_casing/c46x30mm/recycled
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/gunslinger,
+	)
+
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11 // Intended for the e11_manufactory ruin.
+	name = "Hermit Trooper"
+	desc = "Quality weapons are hard to get by in the sandworlds, which forces many survivors to improvise with that they have. This one is hoping that an E-11 of all things will save his life."
+	icon_state = "survivor_e11"
+	icon_living = "survivor_e11"
+	projectilesound = 'sound/weapons/gun/laser/e-fire.ogg'
+	speed = 10
+	faction = list("eoehoma")
+	rapid_fire_delay = 1
+	casingtype = null
+	projectiletype = /obj/projectile/beam/laser/eoehoma/hermit
+	loot = list(
+		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/e11,
 	)
 
 //survivor corpses
@@ -248,7 +262,7 @@
 			if(prob(20))
 				new /obj/item/gun/ballistic/rifle/polymer(loc)
 			else
-				visible_message(span_warning("The hunter's weapon shatters as they impact the ground!"))
+				visible_message(span_warning("The hermit's weapon shatters as they impact the ground!"))
 
 		if("gunslinger")
 			uniform = pick_weight(list(
@@ -272,12 +286,31 @@
 			if(prob(30))
 				shoes = /obj/item/clothing/shoes/combat //sometimes there are nicer shoes
 			if(prob(50))
-				l_pocket = /obj/item/ammo_box/magazine/skm_545_39
+				l_pocket = /obj/item/ammo_box/magazine/skm_46_30/recycled
 			if(prob(20))
 				new /obj/item/gun/ballistic/automatic/smg/skm_carbine(loc)
 			else
-				visible_message(span_warning("The gunslinger's weapon shatters as they impact the ground!"))
+				visible_message(span_warning("The hermit's weapon shatters as they impact the ground!"))
 
+		if("e11")
+			uniform = pick_weight(list(
+				/obj/item/clothing/under/rank/cargo/miner = 65,
+				/obj/item/clothing/under/color/random = 25,
+				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 10,
+				)
+			)
+			belt = pick_weight(list(
+				/obj/item/storage/belt/utility = 25,
+				/obj/item/storage/belt/mining = 15,
+				/obj/item/storage/belt/fannypack = 15,
+				/obj/item/storage/belt/mining/alt = 5,
+				)
+			)
+			shoes = /obj/item/clothing/shoes/workboots
+			if(prob(50)) // Hilarious, ain't it?
+				new /obj/item/gun/energy/e_gun/e11 (loc)
+			else
+				visible_message(span_warning("The trooper's weapon shatters as they impact the ground!"))
 	. = ..()
 
 
@@ -289,6 +322,9 @@
 
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/gunslinger
 	survivor_type = "gunslinger"
+
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands/e11
+	survivor_type = "e11"
 
 //hold overs for any admin who may want to spawn their own survivor realmobs
 

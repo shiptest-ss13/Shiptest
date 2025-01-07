@@ -722,11 +722,11 @@
 /area/ruin/unpowered/listening_post/operations)
 "na" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax{
-	pixel_y = 7
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
+	},
+/obj/machinery/fax/ruin{
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -1233,7 +1233,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
 "vJ" = (
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/listening_post)
 "vR" = (
@@ -1763,11 +1765,11 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post/engineering)
 "Gy" = (
-/obj/machinery/computer/telecomms/monitor{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
+	},
+/obj/machinery/computer/telecomms/server{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)

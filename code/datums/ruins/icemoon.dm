@@ -4,14 +4,6 @@
 	prefix = "_maps/RandomRuins/IceRuins/"
 	ruin_type = RUINTYPE_ICE
 
-/datum/map_template/ruin/icemoon/hydroponicslab
-	name = "Hydroponics Lab"
-	id = "hydroponicslab"
-	description = "An abandoned hydroponics research facility containing hostile plant fauna."
-	suffix = "icemoon_hydroponics_lab.dmm"
-	ruin_tags = list(RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_SHELTER)
-	dynamic_mission_types = list(/datum/mission/dynamic/data_reterival)
-
 /datum/map_template/ruin/icemoon/abandonedvillage
 	name = "Abandoned Village"
 	id = "abandonedvillage"
@@ -22,14 +14,6 @@
 		/datum/mission/dynamic/data_reterival,
 		/datum/mission/dynamic/signaled/drill
 	)
-
-/datum/map_template/ruin/icemoon/brazillian_lab
-	name = "Barricaded Compound"
-	id = "brazillian-lab"
-	description = "A conspicuous compound in the middle of the cold wasteland. What goodies are inside?"
-	suffix = "icemoon_underground_brazillianlab.dmm"
-	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_INHOSPITABLE)
-	dynamic_mission_types = list(/datum/mission/dynamic/data_reterival)
 
 /datum/map_template/ruin/icemoon/crashed_holemaker
 	name = "Crashed Holemaker"
@@ -53,3 +37,11 @@
 	mission_reward = /obj/structure/fermenting_barrel/trickwine
 	faction = /datum/faction/srm
 	setpiece_item = /mob/living/carbon/human
+
+/datum/map_template/ruin/icemoon/tesla_lab
+	name = "CLIP Research Lab"
+	id = "tesla_lab"
+	description = "Records show this settlement as belonging to the SRM, but no one has heard from them as of late. I wonder what happened?"
+	suffix = "icemoon_tesla_lab.dmm"
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+

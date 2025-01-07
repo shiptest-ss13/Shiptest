@@ -71,14 +71,6 @@
 	name = "asteroid snow baseturf editor"
 	baseturf = /turf/open/floor/plating/asteroid/snow
 
-/obj/effect/baseturf_helper/beach/sand
-	name = "beach sand baseturf editor"
-	baseturf = /turf/open/floor/plating/beach/sand
-
-/obj/effect/baseturf_helper/beach/water
-	name = "water baseturf editor"
-	baseturf = /turf/open/floor/plating/beach/water
-
 /obj/effect/baseturf_helper/lava
 	name = "lava baseturf editor"
 	baseturf = /turf/open/lava/smooth
@@ -169,7 +161,7 @@
 	if(airlock.seal)
 		log_mapping("[src] at [AREACOORD(src)] tried to seal [airlock] but it's already already got a seal? What the hell!")
 	else
-		airlock.seal = new /obj/item/door_seal(src)
+		airlock.seal = new /obj/item/door_seal(airlock)
 
 
 
@@ -391,7 +383,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 			found_airlock.update_appearance()
 			qdel(src)
 		if(note_info)
-			var/obj/item/paper/paper = new /obj/item/paper(src)
+			var/obj/item/paper/paper = new /obj/item/paper(found_airlock)
 			if(note_name)
 				paper.name = note_name
 			paper.add_raw_text("[note_info]")
@@ -497,3 +489,32 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	var/icon/I = new(file_name)
 	icon_cache[url] = I
 	return I
+
+/obj/effect/mapping_helpers/chair
+	name = "chair helper"
+
+/obj/effect/mapping_helpers/chair/tim_buckley
+	name = "chair buckler 12000"
+	desc = "buckles a guy into the chair if theres a guy and a chair."
+
+/obj/effect/mapping_helpers/chair/tim_buckley/LateInitialize()
+	var/turf/turf = get_turf(src)
+	if(locate(/obj/structure/chair) in turf && locate(/mob/living/carbon) in turf)
+		var/obj/structure/chair/idiot_throne = locate(/obj/structure/chair) in turf
+		var/mob/living/carbon/idiot = locate(/mob/living/carbon)
+		idiot_throne.buckle_mob(idiot, TRUE)
+		qdel(src)
+	log_mapping("[src] at [x],[y] could not find a chair and guy on current turf.")
+	qdel(src)
+
+/obj/effect/mapping_helpers/turf
+	name = "turf helper"
+
+/obj/effect/mapping_helpers/turf/burnt
+	name = "turf_burner"
+	desc = "burns the everliving shit out of the turf its on."
+
+/obj/effect/mapping_helpers/turf/burnt/LateInitialize()
+	var/turf/our_turf = loc
+	our_turf.burn_tile()
+	qdel(src)

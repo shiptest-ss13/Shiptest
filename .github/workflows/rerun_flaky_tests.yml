@@ -1,7 +1,7 @@
 name: Rerun/Report Flaky Tests
 on:
   workflow_run:
-    workflows: [Checks]
+    workflows: [Checks, TGS Test Suite]
     types:
       - completed
 

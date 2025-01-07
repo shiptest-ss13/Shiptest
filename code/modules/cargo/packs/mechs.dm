@@ -117,6 +117,14 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/drill/diamonddrill
 	)
 
+/datum/supply_pack/mech/equipment/salvage_saw
+	name = "Exosuit Salvage Saw"
+	desc = "Contains an upsized angle grinder for an Exosuit, for all your larger salvage problems."
+	cost = 2000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/salvage_saw
+	)
+
 /datum/supply_pack/mech/equipment/scanner
 	name = "Exosuit scanner kit"
 	desc = "An electronic mining scanner, graded to interface with an exosuit."
@@ -196,6 +204,14 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/thrusters/gas
 	)
 
+/datum/supply_pack/mech/equipment/ionthrust
+	name = "Exosuit Ion thruster kit"
+	desc = "An electrical powered thruster pack, perfect for exosuits without a functional way to refill more tradional RCS thrusters."
+	cost = 2000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/thrusters/ion
+	)
+
 /datum/supply_pack/mech/equipment/ripley_upgrade
 	name = "APLU upgrade kit"
 	desc = "Contains an APLU MK II upgrade kit. The upgrade will replace the cockpit with a spaceworthy canopy, but the added weight makes it slower."
@@ -246,20 +262,20 @@ weapons
 		/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun
 	)
 
-/datum/supply_pack/mech/weapon/laser
-	name = "Immolator kit"
-	desc = "A light laser cannon designed for combat usage."
+/datum/supply_pack/mech/weapon/carbine
+	name = "Downpour kit"
+	desc = "A rapid fire energy carbine designed for combat usage."
 	cost = 1000
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
+		/obj/item/mecha_parts/mecha_equipment/weapon/energy/carbine
 	)
 
 /datum/supply_pack/mech/weapon/biglaser
 	name = "Solaris kit"
-	desc = "A heavy laser cannon designed for combat usage."
+	desc = "A heavy beam cannon designed for combat usage."
 	cost = 2000
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
+		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	)
 
 /datum/supply_pack/mech/weapon/ion_cannon
@@ -280,7 +296,7 @@ weapons
 
 /datum/supply_pack/mech/weapon/lmg
 	name = "UMG-2 kit"
-	desc = "Contains a mounted gun which fires in three round bursts."
+	desc = "Contains a fully automatic mounted machine gun for combat exosuits."
 	cost = 2250
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
@@ -305,7 +321,7 @@ ammo
 
 /datum/supply_pack/mech/ammo/scattershot_ammo
 	name = "LBX-10 ammo box"
-	desc = "Contains a fourty-round box of upscaled buckshot, to be loaded directly in a mounted LBX-10."
+	desc = "Contains a twenty four round box of upscaled buckshot, to be loaded directly in a mounted LBX-10."
 	cost = 500
 	contains = list(
 		/obj/item/mecha_ammo/scattershot
@@ -313,8 +329,8 @@ ammo
 
 /datum/supply_pack/mech/ammo/lmg_ammo
 	name = "UMG-2 ammo box"
-	desc = "Contains a three hundred-round box of heavy ammunition for the UMG-2."
-	cost = 750
+	desc = "Contains a two hundred-round box of heavy ammunition for the UMG-2."
+	cost = 500
 	contains = list(
 		/obj/item/mecha_ammo/lmg
 	)

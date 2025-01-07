@@ -1121,9 +1121,7 @@
 "sw" = (
 /obj/effect/turf_decal/siding/wood/end,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall/directional/east{
-	icon_door = "grey_wall"
-	},
+/obj/structure/closet/wall/directional/east,
 /obj/item/flashlight/lantern{
 	pixel_x = 8
 	},
@@ -2001,7 +1999,7 @@
 	req_one_access_txt = "1"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/suit/armor/vest/bulletproof/frontier,
+/obj/item/clothing/suit/armor/vest/frontier,
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier{
 	pixel_y = 6
 	},
@@ -2478,7 +2476,7 @@
 	icon_state = "gib3-old";
 	pixel_x = -6
 	},
-/obj/item/melee/transforming/energy/sword/saber/pirate/yellow{
+/obj/item/melee/energy/sword/saber/pirate/yellow{
 	pixel_x = -5;
 	pixel_y = 16
 	},

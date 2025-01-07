@@ -13,7 +13,7 @@
 	obj_flags = UNIQUE_RENAME
 	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
 	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
-	custom_price = 25
+	custom_price = 2
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/on_reagent_change(changetype)
 	cut_overlays()
@@ -33,6 +33,32 @@
 		icon_state = "glass_empty"
 		renamedByPlayer = FALSE //so new drinks can rename the glass
 
+/obj/item/reagent_containers/food/drinks/beaglemug
+	name = "beagle mug"
+	desc = "A beloved edifice of a Dog, now as a mug!"
+	icon_state = "beaglemug"
+	amount_per_transfer_from_this = 10
+	volume = 30
+	custom_materials = list(/datum/material/glass=500)
+	max_integrity = 20
+	spillable = TRUE
+	resistance_flags = ACID_PROOF
+	obj_flags = UNIQUE_RENAME
+	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
+	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
+	custom_price = 15
+
+/obj/item/reagent_containers/food/drinks/beaglemug/on_reagent_change(changetype)
+	cut_overlays()
+	if(reagents.reagent_list.len)
+		var/mutable_appearance/reagent_overlay = mutable_appearance(icon, "beaglemug_overlay")
+		icon_state = "beaglemug"
+		reagent_overlay.color = mix_color_from_reagents(reagents.reagent_list)
+		add_overlay(reagent_overlay)
+	else
+		icon_state = "beaglemug"
+		renamedByPlayer = FALSE
+
 //Shot glasses!//
 //  This lets us add shots in here instead of lumping them in with drinks because >logic  //
 //  The format for shots is the exact same as iconstates for the drinking glass, except you use a shot glass instead.  //
@@ -49,7 +75,7 @@
 	possible_transfer_amounts = list()
 	volume = 15
 	custom_materials = list(/datum/material/glass=100)
-	custom_price = 20
+	custom_price = 1
 	var/filled_desc = "The challenge is not taking as many as you can, but guessing what it is before you pass out."
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/on_reagent_change(changetype)

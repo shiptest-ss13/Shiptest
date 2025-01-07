@@ -11,17 +11,3 @@
 	serving as a supply and repair depot, as well as being host to its most important legal proceedings\
 	and the thrilling pay-per-view broadcasts of <i>PLASTEEL CHEF</i> and <i>THUNDERDOME LIVE</i>.<br> \
 	We hope you enjoy your stay!"
-
-/obj/item/paper/fluff/awaymissions/centcom/gateway_memo
-	name = "Memo to XCC-P5831 QM"
-	default_raw_text = "<b>From: XCC-P5831 Management Office</b><br>\
-	<b>To: Rolf Ingram, XCC-P5831 Quartermaster</b><br>\
-	Hey, Rolf, once you pack that gateway into the ferry hangar, <i>make absolutely sure</i> \
-	to deactivate it! As you may know, SS13 has recently got its network up and running, \
-	which means that until we get this gate shipped off to the next colonization staging \
-	area, they'll be able to hop straight in here if its hooked up on our end.<br>\
-	Obviously, that's something I'd very much rather avoid. Our forensics and medical \
-	teams never did figure out what happened that last time... and I can't wrap my head \
-	around it myself. Why would a shuttle full of evacuees all snap and beat each other \
-	to death the moment they reached safety?<br>\
-	- D. Cereza"

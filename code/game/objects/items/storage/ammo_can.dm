@@ -8,6 +8,23 @@
 	pickup_sound =  'sound/items/handling/ammobox_pickup.ogg'
 	material_flags = NONE
 	has_latches = FALSE
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/toolbox/ammo/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_volume = STORAGE_VOLUME_BACKPACK
+	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
+	STR.set_holdable(list(
+		/obj/item/storage/box/ammo,
+		/obj/item/mine,
+		/obj/item/grenade,
+		/obj/item/ammo_casing/caseless/rocket,
+		/obj/item/ammo_box/magazine/ammo_stack,
+		/obj/item/ammo_casing,
+		/obj/item/mine,
+		/obj/item/grenade
+		))
 
 /obj/item/storage/toolbox/ammo/a850r/PopulateContents()
 	name = "ammo can (8x50mmR)"

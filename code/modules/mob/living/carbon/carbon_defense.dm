@@ -1,6 +1,8 @@
 /mob/living/carbon/attackby(obj/item/W, mob/user, params)
 	var/obj/item/bodypart/BP = get_bodypart(check_zone(user.zone_selected))
-	var/has_painkillers = reagents.has_reagent(/datum/reagent/medicine/morphine, needs_metabolizing = TRUE)
+	if(!BP)
+		return ..()
+	var/painless = (HAS_TRAIT(user, TRAIT_ANALGESIA) || HAS_TRAIT(user, TRAIT_PAIN_RESIST))
 	if(W.tool_behaviour == TOOL_WELDER && IS_ROBOTIC_LIMB(BP) && BP.brute_dam) //prioritize healing if we're synthetic
 		return ..()
 	if(user.a_intent != INTENT_HELP || !W.get_temperature() || !BP.can_bandage()) //this will also catch low damage synthetic welding
@@ -9,7 +11,7 @@
 	var/heal_time = 2 SECONDS
 	playsound(user, 'sound/surgery/cautery1.ogg', 20)
 	balloon_alert(user, "cauterizing...")
-	if(src == user && !has_painkillers)
+	if(src == user && !painless)
 		heal_time *= 2 //oof ouch owie
 	user.visible_message(span_nicegreen("[user] holds [W] up to [user == src ? "their" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [p_their()] bleeding..."), span_nicegreen("You hold [W] up to [user == src ? "your" : "[src]'s"] [parse_zone(BP.body_zone)], trying to slow [user == src ? "your" : p_their()] bleeding..."))
 	if(do_after(user, heal_time, target = src))
@@ -385,8 +387,8 @@
 	var/should_stun = (!(flags & SHOCK_TESLA) || siemens_coeff > 0.5) && !(flags & SHOCK_NOSTUN)
 	if(should_stun)
 		Paralyze(40)
-	//Jitter and other fluff.
-	jitteriness += 1000
+	//jitter and other fluff.
+	adjust_jitter(1000, max = 1500)
 	do_jitter_animation(jitteriness)
 	stuttering += 2
 	addtimer(CALLBACK(src, PROC_REF(secondary_shock), should_stun), 20)

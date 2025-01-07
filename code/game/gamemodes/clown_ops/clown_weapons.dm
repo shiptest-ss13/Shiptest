@@ -12,60 +12,59 @@
 
 //BANANIUM SWORD
 
-/obj/item/melee/transforming/energy/sword/bananium
+/obj/item/melee/energy/sword/bananium
 	name = "bananium sword"
 	desc = "An elegant weapon, for a more civilized age."
 	force = 0
 	throwforce = 0
-	force_on = 0
-	throwforce_on = 0
+	active_force = 0
+	active_throwforce = 0
 	hitsound = null
 	attack_verb_on = list("slipped")
-	clumsy_check = FALSE
 	sharpness = IS_BLUNT
 	sword_color = "yellow"
 	heat = 0
 	light_color = COLOR_YELLOW
 	var/next_trombone_allowed = 0
 
-/obj/item/melee/transforming/energy/sword/bananium/Initialize()
+/obj/item/melee/energy/sword/bananium/Initialize()
 	. = ..()
 	adjust_slipperiness()
 
 /* Adds or removes a slippery component, depending on whether the sword
  * is active or not.
  */
-/obj/item/melee/transforming/energy/sword/proc/adjust_slipperiness()
-	if(active)
+/obj/item/melee/energy/sword/proc/adjust_slipperiness()
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		AddComponent(/datum/component/slippery, 60, GALOSHES_DONT_HELP)
 	else
 		qdel(GetComponent(/datum/component/slippery))
 
-/obj/item/melee/transforming/energy/sword/bananium/attack(mob/living/M, mob/living/user)
+/obj/item/melee/energy/sword/bananium/attack(mob/living/M, mob/living/user)
 	..()
-	if(active)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
 		slipper.Slip(src, M)
 
-/obj/item/melee/transforming/energy/sword/bananium/throw_impact(atom/hit_atom, throwingdatum)
+/obj/item/melee/energy/sword/bananium/throw_impact(atom/hit_atom, throwingdatum)
 	. = ..()
-	if(active)
+	if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
 		slipper.Slip(src, hit_atom)
 
-/obj/item/melee/transforming/energy/sword/bananium/attackby(obj/item/I, mob/living/user, params)
-	if((world.time > next_trombone_allowed) && istype(I, /obj/item/melee/transforming/energy/sword/bananium))
+/obj/item/melee/energy/sword/bananium/attackby(obj/item/I, mob/living/user, params)
+	if((world.time > next_trombone_allowed) && istype(I, /obj/item/melee/energy/sword/bananium))
 		next_trombone_allowed = world.time + 50
 		to_chat(user, "<span class='warning'>You slap the two swords together. Sadly, they do not seem to fit!</span>")
 		playsound(src, 'sound/misc/sadtrombone.ogg', 50)
 		return TRUE
 	return ..()
 
-/obj/item/melee/transforming/energy/sword/bananium/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/energy/sword/bananium/on_transform(obj/item/source, mob/user, active)
 	. = ..()
 	adjust_slipperiness()
 
-/obj/item/melee/transforming/energy/sword/bananium/ignition_effect(atom/A, mob/user)
+/obj/item/melee/energy/sword/bananium/ignition_effect(atom/A, mob/user)
 	return ""
 
 //BANANIUM SHIELD
@@ -179,72 +178,3 @@
 
 /obj/item/clothing/mask/fakemoustache/sticky/proc/unstick()
 	REMOVE_TRAIT(src, TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)
-
-//DARK H.O.N.K. AND CLOWN MECH WEAPONS
-
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/banana_mortar/bombanana
-	name = "bombanana mortar"
-	desc = "Equipment for clown exosuits. Launches exploding banana peels."
-	icon_state = "mecha_bananamrtr"
-	projectile = /obj/item/grown/bananapeel/bombanana
-	projectiles = 8
-	projectile_energy_cost = 1000
-
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/banana_mortar/bombanana/can_attach(obj/mecha/combat/honker/M)
-	if(..())
-		if(istype(M))
-			return TRUE
-	return FALSE
-
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/tearstache
-	name = "\improper HONKeR-6 grenade launcher"
-	desc = "A weapon for combat exosuits. Launches primed tear-stache grenades."
-	icon_state = "mecha_grenadelnchr"
-	projectile = /obj/item/grenade/chem_grenade/teargas/moustache
-	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
-	projectiles = 6
-	missile_speed = 1.5
-	projectile_energy_cost = 800
-	equip_cooldown = 60
-	det_time = 20
-
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/tearstache/can_attach(obj/mecha/combat/honker/M)
-	if(..())
-		if(istype(M))
-			return TRUE
-	return FALSE
-
-/obj/mecha/combat/honker/dark
-	desc = "Produced by \"Tyranny of Honk, INC\", this exosuit is designed as heavy clown-support. This one has been painted black for maximum fun. HONK!"
-	name = "\improper Dark H.O.N.K"
-	icon_state = "darkhonker"
-	max_integrity = 300
-	deflect_chance = 15
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 50, "energy" = 35, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
-	max_temperature = 35000
-	operation_req_access = list(ACCESS_SYNDICATE)
-	internals_req_access = list(ACCESS_SYNDICATE)
-	wreckage = /obj/structure/mecha_wreckage/honker/dark
-	max_equip = 4
-
-/obj/mecha/combat/honker/dark/add_cell(obj/item/stock_parts/cell/C)
-	if(C)
-		C.forceMove(src)
-		cell = C
-		return
-	cell = new /obj/item/stock_parts/cell/hyper(src)
-
-/obj/mecha/combat/honker/dark/loaded/Initialize()
-	. = ..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/honker()
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/banana_mortar/bombanana()//Needed more offensive weapons.
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/tearstache()//The mousetrap mortar was not up-to-snuff.
-	ME.attach(src)
-
-/obj/structure/mecha_wreckage/honker/dark
-	name = "\improper Dark H.O.N.K wreckage"
-	icon_state = "darkhonker-broken"
