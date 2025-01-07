@@ -87,9 +87,6 @@
 
 /obj/effect/anomaly/grav/high/Initialize(mapload, new_lifespan)
 	. = ..()
-	INVOKE_ASYNC(src, PROC_REF(setup_grav_field))
-
-/obj/effect/anomaly/grav/high/proc/setup_grav_field()
 	grav_field = new(src, effectrange, TRUE, 2)
 
 /obj/effect/anomaly/grav/high/Destroy()

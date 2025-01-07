@@ -61,6 +61,9 @@
 	flags_cover = HEADCOVERSMOUTH|HEADCOVERSEYES|PEPPERPROOF | SEALS_EYES
 	visor_flags_inv = HIDEEYES|HIDEFACE
 
+	//remove when phorids suck less
+	equip_delay_self = null
+
 // WS Begin - plasmeme command helmets buff - used for RD bomb scanner
 /obj/item/clothing/head/helmet/space/plasmaman/proc/display_visor_message(msg)
 	var/mob/wearer = loc
