@@ -176,6 +176,22 @@
 	display_name = "suit, checkered"
 	path = /obj/item/clothing/under/suit/checkered
 
+/datum/gear/uniform/suit/detective
+	display_name = "suit, hardworn"
+	path = /obj/item/clothing/under/rank/security/detective
+
+/datum/gear/uniform/suit/detective/skirt
+	display_name = "suitskirt, hardworn"
+	path =  /obj/item/clothing/under/rank/security/detective/skirt
+
+/datum/gear/uniform/suit/detective/grey
+	display_name = "suit, noir"
+	path = /obj/item/clothing/under/rank/security/detective/grey
+
+/datum/gear/uniform/suit/detective/grey/skirt
+	display_name = "suitskirt, noir"
+	path = /obj/item/clothing/under/rank/security/detective/grey/skirt
+
 // Dresses
 /datum/gear/uniform/dress
 	subtype_path = /datum/gear/uniform/dress
