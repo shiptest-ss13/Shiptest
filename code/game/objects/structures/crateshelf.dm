@@ -27,7 +27,7 @@
 /obj/structure/crate_shelf/Initialize(mapload)
 	. = ..()
 
-	if (mapload && pickup)
+	if (mapload && pickup_crates)
 		. = INITIALIZE_HINT_LATELOAD
 
 	shelf_contents = new/list(capacity) // Initialize our shelf's contents list, this will be used later.
