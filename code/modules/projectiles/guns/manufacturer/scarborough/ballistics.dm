@@ -1,4 +1,4 @@
-#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet)
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/gun)
 #define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 //########### PISTOLS ###########//
@@ -467,6 +467,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
 		/obj/item/attachment/foldable_stock/sidewinder
 	)
 	slot_available = list(
@@ -666,7 +668,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m556_42_hydra,
 	)
-	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "underbarrel grenade launcher")
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto")
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_OTHER)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -795,72 +797,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	name = "SMR-80 \"Hydra\""
 	desc = "Scarborough Arms' premier modular assault rifle platform. This is the basic configuration, optimized for light weight and handiness. A very well-regarded, if expensive and rare, assault rifle. This one has an underslung grenade launcher attached. Chambered in 5.56x42mm CLIP."
 
-	icon_state = "hydra_gl"
-	item_state = "hydra_gl"
-
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO, FIREMODE_OTHER)
-
-	var/obj/item/gun/ballistic/revolver/grenadelauncher/secondary
-
-	slot_available = list( //no rail slot
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_SCOPE = 1,
-	)
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/Initialize()
-	. = ..()
-	secondary = new /obj/item/gun/ballistic/revolver/grenadelauncher(src)
-	RegisterSignal(secondary, COMSIG_ATOM_UPDATE_ICON, PROC_REF(secondary_update_icon))
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
-	return secondary.pre_fire(target, user, message, params, zone_override, bonus_spread)
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/can_shoot()
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode != FIREMODE_OTHER)
-		return ..()
-	return secondary.can_shoot()
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/afterattack(atom/target, mob/living/user, flag, params)
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode != FIREMODE_OTHER)
-		return ..()
-	return secondary.afterattack(target, user, flag, params)
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/attackby(obj/item/attack_obj, mob/user, params)
-	if(istype(attack_obj, secondary.magazine.ammo_type))
-		secondary.unique_action()
-		return secondary.attackby(attack_obj, user, params)
-	return ..()
-
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/can_shoot()
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode != FIREMODE_OTHER)
-		return ..()
-	return secondary.can_shoot()
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/on_wield(obj/item/source, mob/user)
-	wielded = TRUE
-	secondary.wielded = TRUE
-	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/do_wield(mob/user)
-	. = ..()
-	secondary.wielded_fully = wielded_fully
-
-/// triggered on unwield of two handed item
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/on_unwield(obj/item/source, mob/user)
-	. = ..()
-	secondary.wielded_fully = FALSE
-	secondary.wielded = FALSE
-
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/proc/secondary_update_icon()
-	update_appearance()
-	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
-
+	default_attachments = list(/obj/item/attachment/gun/ballistic/launcher)
 
 /obj/item/ammo_box/magazine/m556_42_hydra
 	name = "Hydra assault rifle magazine (5.56x42mm CLIP)"
