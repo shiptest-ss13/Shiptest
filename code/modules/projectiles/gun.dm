@@ -1053,13 +1053,13 @@
 
 	if(zoomed)
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate))
-		ADD_TRAIT(user, TRAIT_AIMING, src)
+		ADD_TRAIT(user, TRAIT_AIMING, ref(src))
 		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direc)
 		min_recoil = min_recoil_aimed
 		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/aiming, multiplicative_slowdown = aimed_wield_slowdown)
 	else
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
-		REMOVE_TRAIT(user, TRAIT_AIMING, src)
+		REMOVE_TRAIT(user, TRAIT_AIMING, ref(src))
 		user.client.view_size.zoomIn()
 		min_recoil = initial(min_recoil)
 		user.remove_movespeed_modifier(/datum/movespeed_modifier/aiming)
