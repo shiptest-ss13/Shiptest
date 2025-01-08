@@ -977,6 +977,11 @@
 /obj/structure/crate_shelf{
 	capacity = 2
 	},
+/obj/structure/closet/crate/rations,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "ha" = (
@@ -2199,7 +2204,6 @@
 "nk" = (
 /obj/structure/table/chem,
 /obj/item/storage/case/surgery{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde,
@@ -3296,6 +3300,25 @@
 /obj/effect/turf_decal/spline/fancy/transparent/bottlegreen{
 	dir = 1
 	},
+/obj/structure/closet/crate{
+	name = "CLIP lend-lease"
+	},
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "uN" = (
@@ -3857,6 +3880,19 @@
 /obj/effect/turf_decal/spline/fancy/transparent/bottlegreen{
 	dir = 1
 	},
+/obj/structure/closet/crate/internals,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "yN" = (
@@ -5414,25 +5450,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/storage/starboard)
-"Ia" = (
-/obj/structure/closet/crate/internals,
-/obj/item/tank/internals/oxygen/red,
-/obj/item/tank/internals/oxygen/red,
-/obj/item/tank/internals/oxygen/red,
-/obj/item/tank/internals/oxygen/red,
-/obj/item/tank/internals/oxygen/red,
-/obj/item/tank/internals/oxygen/red,
-/obj/item/tank/internals/oxygen/yellow,
-/obj/item/tank/internals/oxygen/yellow,
-/obj/item/tank/internals/oxygen/yellow,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/mask/breath,
-/obj/effect/turf_decal/spline/fancy/opaque/grey{
-	dir = 1
-	},
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/cargo)
 "If" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6144,34 +6161,14 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "LL" = (
-/obj/structure/closet/crate{
-	name = "CLIP lend-lease"
-	},
-/obj/item/clothing/mask/gas/clip,
-/obj/item/clothing/mask/gas/clip,
-/obj/item/clothing/mask/gas/clip,
-/obj/item/clothing/mask/gas/clip,
-/obj/item/clothing/mask/gas/clip,
-/obj/item/clothing/mask/gas/clip,
-/obj/item/clothing/mask/gas/clip,
-/obj/item/clothing/mask/gas/clip,
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 1
 	},
-/obj/item/storage/box/flares,
-/obj/item/storage/box/flares,
-/obj/item/storage/box/flares,
-/obj/item/storage/box/flares,
-/obj/item/storage/box/flares,
-/obj/item/storage/box/flares,
-/obj/item/storage/box/flares,
-/obj/item/storage/box/flares,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "LN" = (
 /obj/item/radio/intercom/directional/west,
-/obj/structure/closet/crate/freezer/blood,
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 1
 	},
@@ -6249,6 +6246,7 @@
 /obj/effect/turf_decal/spline/fancy/transparent/bottlegreen{
 	dir = 1
 	},
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "MH" = (
@@ -6537,8 +6535,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Pc" = (
-/obj/structure/closet/crate/radiation,
-/obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/structure/sign/poster/contraband/missing_gloves{
 	pixel_x = -28
 	},
@@ -6955,6 +6951,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/structure/closet/crate/radiation,
+/obj/item/stack/sheet/mineral/uranium/twenty,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "RJ" = (
@@ -7074,6 +7072,7 @@
 /obj/effect/turf_decal/spline/fancy/transparent/bottlegreen{
 	dir = 1
 	},
+/obj/structure/closet/crate/freezer/surplus_limbs,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "SD" = (
@@ -7171,11 +7170,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "SY" = (
-/obj/structure/closet/crate/rations,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "Tf" = (
@@ -7602,13 +7596,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
-"Vj" = (
-/obj/structure/closet/crate/freezer/surplus_limbs,
-/obj/effect/turf_decal/spline/fancy/opaque/grey{
-	dir = 1
-	},
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/cargo)
 "Vo" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -8348,6 +8335,7 @@
 /obj/item/storage/bag/construction,
 /obj/item/storage/bag/construction,
 /obj/item/storage/bag/construction,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "ZT" = (
@@ -8831,7 +8819,7 @@ BF
 ql
 Uu
 Su
-Vj
+zM
 vo
 gj
 dE
@@ -8860,7 +8848,7 @@ NQ
 fg
 Uu
 yK
-Ia
+zM
 vo
 zM
 De
