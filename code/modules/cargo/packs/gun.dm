@@ -31,7 +31,7 @@
 
 /datum/supply_pack/gun/commanders
 	name = "Commander Pistol Crate"
-	desc = "Contains a modified Candor 'Commander' pistol, produced by Nanotrasen and chambered in 9mm."
+	desc = "Contains a double stacked Commander pistol, produced by Nanotrasen along with Vigilitas Interstellar and is chambered in 9mm."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/pistol/commander)
 	faction = /datum/faction/nt
@@ -190,6 +190,13 @@
 	crate_name = "energy gun crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	faction = /datum/faction/nt
+
+/datum/supply_pack/gun/scatterlaser
+	name = "Scatter Laser Crate"
+	desc = "Contains a multi-function scatter energy gun, capable of firing armour penetrating slugs, and devastating scattered laser bolts."
+	cost = 1250
+	contains = list(/obj/item/gun/energy/laser/scatter)
+	crate_name = "scatter laser crate"
 
 /datum/supply_pack/gun/ion
 	name = "Ion Rifle Crate"
@@ -698,7 +705,7 @@
 
 /datum/supply_pack/gun/attachment/laser_sight
 	name = "Laser Sight Crate"
-	desc = "Contains a single rail light to be mounted on a firearm."
+	desc = "Contains a single laser sight to be mounted on a firearm."
 	cost = 250
 	contains = list(/obj/item/attachment/laser_sight)
 	crate_name = "laser sight crate"
@@ -727,9 +734,46 @@
 	contains = list(/obj/item/attachment/silencer)
 	crate_name = "suppressor crate"
 
+/datum/supply_pack/gun/attachment/shotgun
+	name = "Underbarrel Shotgun Crate"
+	desc = "Contains a single shot underbarrel shotgun to be mounted on a firearm."
+	cost = 750
+	contains = list(/obj/item/attachment/gun/ballistic/shotgun)
+	crate_name = "underbarrel shotgun crate"
+
+/datum/supply_pack/gun/attachment/flamethrower
+	name = "Underbarrel Flamethrower Crate"
+	desc = "Contains a compact underbarrel flamethrower to be mounted on a firearm."
+	cost = 750
+	contains = list(/obj/item/attachment/gun/flamethrower)
+	crate_name = "underbarrel flamethrower crate"
+
+/datum/supply_pack/gun/attachment/e_gun
+	name = "Underbarrel Energy Gun Crate"
+	desc = "Contains an underbarrel energy gun to be mounted on a firearm."
+	cost = 750
+	contains = list(/obj/item/attachment/gun/energy/e_gun)
+	crate_name = "underbarrel energy gun crate"
+
 /datum/supply_pack/gun/attachment/sling
 	name = "Shoulder Sling Crate"
 	desc = "Contains a single shoulder sling to be mounted on a firearm for easy carrying without armor holsters. Only compatible with longarms."
 	cost = 250
 	contains = list(/obj/item/attachment/sling)
 	crate_name = "shoulder sling crate"
+
+/datum/supply_pack/gun/attachment/riot_launcher
+	name = "Underbarrel Riot Grenade Launcher Crate"
+	desc = "Contains a single shot underbarrel riot grenade launcher to be mounted on a firearm."
+	cost = 750
+	contains = list(/obj/item/attachment/gun/riot)
+	crate_name = "underbarrel riot grenade launcher crate"
+
+/datum/supply_pack/gun/attachment/flare
+	name = "Underbarrel Flare Gun Crate"
+	desc = "Contains a single shot underbarrel flare gun to be mounted on a firearm. One box of flares included."
+	cost = 200
+	contains = list(/obj/item/attachment/gun/flare)
+	crate_name = "underbarrel flare gun crate"
+
+

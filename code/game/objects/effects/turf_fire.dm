@@ -90,6 +90,18 @@
 		color = fire_color
 		base_icon_state = "greyscale"
 
+	switch(base_icon_state) //switches light color depdning on the flame color
+		if("greyscale")
+			light_color = hex_color
+		if("red")
+			light_color = LIGHT_COLOR_FIRE
+		if("blue")
+			light_color = LIGHT_COLOR_CYAN
+		if("green")
+			light_color = LIGHT_COLOR_GREEN
+		else
+			light_color = COLOR_VERY_LIGHT_GRAY
+
 	open_turf.turf_fire = src
 	START_PROCESSING(SSturf_fire, src)
 	if(power)
@@ -187,29 +199,18 @@
 		return
 	current_fire_state = new_state
 
-	switch(base_icon_state) //switches light color depdning on the flame color
-		if("greyscale")
-			light_color = hex_color
-		if("red")
-			light_color = LIGHT_COLOR_FIRE
-		if("blue")
-			light_color = LIGHT_COLOR_CYAN
-		if("green")
-			light_color = LIGHT_COLOR_GREEN
-		else
-			light_color = COLOR_VERY_LIGHT_GRAY
-	update_light()
-
 	switch(current_fire_state)
 		if(TURF_FIRE_STATE_SMALL)
 			icon_state = "[base_icon_state]_small"
-			set_light_range(1.5)
+			light_range = 1.5
 		if(TURF_FIRE_STATE_MEDIUM)
 			icon_state = "[base_icon_state]_medium"
-			set_light_range(2.5)
+			light_range = 2
 		if(TURF_FIRE_STATE_LARGE)
 			icon_state = "[base_icon_state]_big"
-			set_light_range(3)
+			light_range = 3
+
+	update_light()
 
 #undef TURF_FIRE_REQUIRED_TEMP
 #undef TURF_FIRE_TEMP_BASE
