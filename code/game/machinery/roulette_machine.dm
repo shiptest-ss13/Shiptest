@@ -391,6 +391,8 @@
 			set_machine_stat(machine_stat | MAINT)
 			icon_state = "open"
 
+	return TRUE
+
 /obj/machinery/roulette/proc/shock(mob/user, prb)
 	if(!on)		// unpowered, no shock
 		return FALSE
