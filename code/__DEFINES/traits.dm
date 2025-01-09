@@ -307,6 +307,9 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_WIELDED "wielded" //The item is currently being wielded
 #define TRAIT_FORCE_SUIT_STORAGE "force_suit_storage" // the item can be worn in suit storage without an outerclothing
 
+/// Equipping or unequipping an item
+#define TRAIT_EQUIPPING_OR_UNEQUIPPING "equipping_or_unequipping"
+
 //quirk traits
 #define TRAIT_ALCOHOL_TOLERANCE "alcohol_tolerance"
 #define TRAIT_AGEUSIA "ageusia"

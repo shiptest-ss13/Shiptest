@@ -112,7 +112,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#332521"
 	},
 /turf/open/floor/wood/ebony,
@@ -121,9 +120,7 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -426,7 +423,6 @@
 /area/ship/hallway/central)
 "eI" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /obj/structure/chair/wood{
@@ -558,7 +554,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /turf/open/floor/wood/walnut,
@@ -571,9 +566,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "hi" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -868,17 +861,6 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/structure/closet/crate/wooden{
-	name = "mining gear crate"
-	},
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/melee/knife/hunting,
-/obj/item/melee/knife/hunting,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/head/hardhat/mining,
-/obj/item/clothing/head/hardhat/mining,
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -12
 	},
@@ -947,15 +929,32 @@
 /area/ship/bridge)
 "lV" = (
 /obj/structure/crate_shelf,
+/obj/structure/closet/crate{
+	name = "supplies crate"
+	},
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/storage/box/lights/mixed,
+/obj/item/storage/box/drinkingglasses,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/fancy/candle_box,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass{
+	amount = 10
+	},
+/obj/item/stack/sheet/plastic/five,
 /obj/structure/sign/poster/contraband/space_cube{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "mk" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
@@ -971,7 +970,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#332521"
 	},
 /turf/open/floor/wood/ebony,
@@ -1027,7 +1025,6 @@
 /area/ship/crew/canteen)
 "mW" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /obj/structure/railing/wood{
@@ -1161,7 +1158,6 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#332521"
 	},
 /turf/open/floor/wood/ebony,
@@ -1293,9 +1289,7 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1351,9 +1345,7 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1587,8 +1579,7 @@
 	dir = 1
 	},
 /obj/structure/bed/dogbed{
-	name = "Remy's bed";
-	anchored = 1
+	name = "Remy's bed"
 	},
 /mob/living/simple_animal/mouse/gray{
 	name = "Remy"
@@ -1649,9 +1640,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-9"
 	},
-/obj/structure/chair/wood{
-	dir = 2
-	},
+/obj/structure/chair/wood,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "uP" = (
@@ -1679,7 +1668,6 @@
 /obj/structure/fluff/hedge,
 /obj/structure/railing/wood{
 	layer = 3.1;
-	dir = 2;
 	color = "#792f27"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1924,7 +1912,6 @@
 /area/ship/crew/canteen)
 "yH" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /obj/structure/chair/sofa/red/directional/north,
@@ -1945,9 +1932,7 @@
 	color = "#543C30";
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "zc" = (
@@ -1991,6 +1976,18 @@
 /obj/effect/turf_decal/dept/cargo{
 	dir = 4
 	},
+/obj/structure/closet/crate/wooden{
+	name = "mining gear crate"
+	},
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/melee/knife/hunting,
+/obj/item/melee/knife/hunting,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/clothing/head/hardhat/mining,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "zC" = (
@@ -2054,7 +2051,6 @@
 	},
 /obj/structure/railing/wood{
 	layer = 3.1;
-	dir = 2;
 	color = "#792f27"
 	},
 /obj/effect/turf_decal/borderfloorblack{
@@ -2722,9 +2718,7 @@
 	icon_state = "5-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/chair/wood{
-	dir = 2
-	},
+/obj/structure/chair/wood,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "Ju" = (
@@ -2873,22 +2867,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Ll" = (
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
-/obj/item/clothing/head/helmet/space/eva,
-/obj/item/clothing/head/helmet/space/eva,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/eva,
-/obj/item/clothing/suit/space/eva,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/internals{
-	name = "EVA gear crate"
-	},
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = -32
 	},
@@ -3081,9 +3064,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "NI" = (
-/obj/structure/chair/wood{
-	dir = 2
-	},
+/obj/structure/chair/wood,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "NM" = (
@@ -3115,9 +3096,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "OP" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "OS" = (
@@ -3453,7 +3432,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -3549,29 +3527,22 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "UK" = (
-/obj/structure/closet/crate{
-	name = "supplies crate"
-	},
-/obj/item/reagent_containers/condiment/saltshaker,
-/obj/item/reagent_containers/condiment/saltshaker,
-/obj/item/reagent_containers/condiment/peppermill,
-/obj/item/reagent_containers/condiment/peppermill,
-/obj/item/storage/box/lights/mixed,
-/obj/item/storage/box/drinkingglasses,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/fancy/candle_box,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/item/stack/sheet/metal/twenty,
-/obj/item/stack/sheet/glass{
-	amount = 10
-	},
-/obj/item/stack/sheet/plastic/five,
 /obj/machinery/airalarm/directional/west,
+/obj/structure/closet/crate/internals{
+	name = "EVA gear crate"
+	},
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Ve" = (
@@ -3579,7 +3550,6 @@
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 2;
 	color = "#543C30"
 	},
 /obj/structure/table/wood/fancy/red_gold,
