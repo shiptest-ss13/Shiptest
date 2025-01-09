@@ -421,6 +421,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(anchored)
 		return
 
+	//check if the item is inside another item's storage
+	if(istype(loc, /obj/item/storage))
+		//if so, can we actually access it?
+		var/datum/component/storage/ourstorage = loc.GetComponent(/datum/component/storage)
+		if(!ourstorage.access_check())
+			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_HIDE_FROM, user)//you're not supposed to be in here right now, punk!
+			return
+
 	if(resistance_flags & ON_FIRE)
 		var/mob/living/carbon/C = user
 		var/can_handle_hot = FALSE
