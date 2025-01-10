@@ -613,19 +613,6 @@
 "jM" = (
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
-"jZ" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = "vagrantatriumshuts";
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/roumain)
 "kl" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -2035,6 +2022,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
 "KD" = (
@@ -2947,7 +2935,7 @@ bF
 Ut
 qN
 qN
-jZ
+qN
 dt
 bF
 bF
