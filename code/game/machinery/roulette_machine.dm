@@ -390,6 +390,7 @@
 			to_chat(user, span_notice("You removed the top section of [src]."))
 			set_machine_stat(machine_stat | MAINT)
 			icon_state = "open"
+
 	return TRUE
 
 /obj/machinery/roulette/proc/shock(mob/user, prb)
