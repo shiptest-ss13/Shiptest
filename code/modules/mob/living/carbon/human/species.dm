@@ -149,9 +149,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	/// Minimum amount of kelvin moved toward normal body temperature per tick.
 	var/bodytemp_autorecovery_min = HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM
 	/// The maximum temperature the species is comfortable at. Going above this does not apply any effects, but warns players that the temperture is hot
-	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL) //20 c will always be below human bodytemp, this just makes it so when it can sustain that its higher
+	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL + 7) //20 c will always be below human bodytemp, this just makes it so when it can sustain that its higher
 	/// The minimum temperature the species is comfortable at. Going below this does not apply any effects, but warns players that the temperture is chilly
-	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 1)
+	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 5)
 	/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery.
 	var/bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR
 	///Similar to the autorecovery_divsor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to lose bodytemp faster.
