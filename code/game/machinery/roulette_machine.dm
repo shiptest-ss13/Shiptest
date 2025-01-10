@@ -117,7 +117,10 @@
 	if(istype(held, /obj/item/card/bank))
 		playsound(src, 'sound/machines/card_slide.ogg', 50, TRUE)
 
-		if(machine_stat & MAINT || !on || locked || !powered())
+		if(!powered())
+			to_chat(user, span_warning("The machine is unpowered!"))
+			return FALSE
+		else if(machine_stat & MAINT || !on || locked)
 			to_chat(user, span_notice("The machine appears to be disabled."))
 			return FALSE
 
@@ -390,7 +393,6 @@
 			to_chat(user, span_notice("You removed the top section of [src]."))
 			set_machine_stat(machine_stat | MAINT)
 			icon_state = "open"
-
 	return TRUE
 
 /obj/machinery/roulette/proc/shock(mob/user, prb)
