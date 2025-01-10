@@ -47,19 +47,30 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "aL" = (
-/obj/structure/dresser{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
-	dir = 4
+/obj/structure/closet/cabinet,
+/obj/item/storage/backpack/duffelbag/syndie{
+	pixel_y = 9;
+	pixel_x = -4
 	},
 /obj/item/storage/backpack/duffelbag/syndie{
 	pixel_y = 14;
 	pixel_x = 4
 	},
-/obj/item/storage/backpack/duffelbag/syndie{
-	pixel_y = 9;
-	pixel_x = -4
+/obj/item/storage/backpack{
+	pixel_x = -4;
+	pixel_y = -3
+	},
+/obj/item/storage/backpack{
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/item/storage/backpack/satchel{
+	pixel_x = -4;
+	pixel_y = -9
+	},
+/obj/item/storage/backpack/satchel{
+	pixel_x = 5;
+	pixel_y = -6
 	},
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
@@ -159,6 +170,7 @@
 	pixel_x = -9
 	},
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "dn" = (
@@ -334,11 +346,10 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 27
 	},
-/obj/machinery/cell_charger{
-	pixel_y = 6;
-	pixel_x = 1
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
 	},
-/obj/structure/table,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "fO" = (
@@ -354,8 +365,8 @@
 /obj/structure/platform/ship_two,
 /obj/structure/railing/thin,
 /obj/machinery/door/firedoor/border_only,
-/obj/structure/tank_dispenser/oxygen,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "gX" = (
@@ -986,7 +997,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "tg" = (
-/obj/structure/closet/cabinet,
+/obj/machinery/recharge_station,
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
 	},
@@ -1245,11 +1256,6 @@
 /obj/effect/turf_decal/industrial/warning/fulltile{
 	color = "#FFFFFF"
 	},
-/obj/structure/table,
-/obj/machinery/cell_charger{
-	pixel_y = -2;
-	pixel_x = -3
-	},
 /obj/structure/closet/wall/orange/directional/north,
 /obj/item/clothing/under/syndicate/cybersun/research{
 	pixel_y = 9
@@ -1272,7 +1278,7 @@
 /obj/item/clothing/gloves/combat{
 	pixel_y = 5
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "xM" = (
 /obj/structure/chair/sofa/blue/corpo/corner/directional/east,
@@ -1471,7 +1477,6 @@
 /area/ship/crew/ccommons)
 "CF" = (
 /obj/effect/turf_decal/box/white,
-/obj/item/clothing/suit/space/hardsuit/security/independent,
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/tank/jetpack,
 /obj/effect/turf_decal/corner/transparent/cybersunteal/half{
@@ -1481,6 +1486,7 @@
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_y = -28
 	},
+/obj/item/clothing/suit/space/syndicate/black/red,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Df" = (
@@ -1892,7 +1898,6 @@
 /area/ship/bridge)
 "Jf" = (
 /obj/effect/turf_decal/box/white,
-/obj/item/clothing/suit/space/hardsuit/security/independent,
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/tank/jetpack,
 /obj/effect/turf_decal/corner/transparent/cybersunteal/half{
@@ -1900,6 +1905,7 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/machinery/airalarm/directional/north,
+/obj/item/clothing/suit/space/syndicate/black/red,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Jo" = (
@@ -1945,7 +1951,7 @@
 	color = "#FFFFFF"
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "Kf" = (
 /obj/structure/chair/plastic{
@@ -2098,6 +2104,7 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/box/white,
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/power/terminal,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "Nm" = (
@@ -2161,6 +2168,24 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/structure/dresser,
+/obj/item/kirbyplants{
+	icon_state = "plant-23";
+	pixel_y = 20;
+	pixel_x = -7
+	},
+/obj/item/lipstick/black{
+	pixel_y = 8;
+	pixel_x = 8
+	},
+/obj/item/lipstick/purple{
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/obj/item/lipstick{
+	pixel_x = -1;
+	pixel_y = 2
+	},
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
 	},
@@ -2193,9 +2218,9 @@
 	pixel_x = 9;
 	pixel_y = 3
 	},
-/obj/item/melee/energy/sword/saber,
-/obj/item/melee/energy/sword/saber{
-	pixel_x = 6
+/obj/item/attachment/energy_bayonet,
+/obj/item/attachment/energy_bayonet{
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -2292,15 +2317,18 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Rz" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-2"
-	},
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 11;
 	pixel_x = 22
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/violet/hidden,
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "St" = (
@@ -2427,6 +2455,29 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 5
 	},
+/obj/structure/closet/emcloset/wall/directional/south{
+	populate = 0
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = -4;
+	pixel_y = -5
+	},
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = -4;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "TM" = (
@@ -2477,10 +2528,6 @@
 	name = "safe code";
 	default_raw_text = "47,25,54"
 	},
-/obj/item/screwdriver{
-	pixel_y = 6;
-	pixel_x = -6
-	},
 /obj/item/pen/fountain/captain{
 	pixel_y = 6;
 	pixel_x = 6
@@ -2490,6 +2537,10 @@
 	default_raw_text = "Check under the grav couch.";
 	pixel_x = 7;
 	pixel_y = -5
+	},
+/obj/item/crowbar{
+	pixel_y = 7;
+	pixel_x = -3
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -2614,7 +2665,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/violet/hidden,
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/airalarm/directional/east{
 	pixel_y = -3
 	},
@@ -2627,6 +2677,11 @@
 	pixel_x = 22;
 	name = "window shutters";
 	id = "zengine1"
+	},
+/obj/structure/table,
+/obj/machinery/cell_charger{
+	pixel_y = 6;
+	pixel_x = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2697,7 +2752,7 @@
 	desc = "A comfortable seat designed to support the pilot during high-g manuevers."
 	},
 /obj/structure/safe/floor{
-	number_of_tumblers = 0;
+	number_of_tumblers = 3;
 	tumblers = list(45,27,54)
 	},
 /obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag,
@@ -2707,6 +2762,9 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun,
 /obj/item/folder/documents/syndicate/cybersun,
 /obj/item/reagent_containers/food/drinks/flask,
+/obj/item/reagent_containers/food/drinks/bottle/sake{
+	pixel_y = 2
+	},
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
 	},
@@ -2729,6 +2787,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/east,
+/obj/structure/closet/crate/rations,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "ZG" = (
