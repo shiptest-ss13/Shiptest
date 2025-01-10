@@ -1224,6 +1224,14 @@
 /obj/machinery/light/directional/west,
 /obj/structure/filingcabinet/double,
 /obj/machinery/airalarm/directional/north,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/pen,
+/obj/item/pen,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "wg" = (
@@ -1273,7 +1281,9 @@
 /obj/effect/turf_decal/industrial/warning/fulltile{
 	color = "#FFFFFF"
 	},
-/obj/structure/closet/wall/orange/directional/north,
+/obj/structure/closet/wall/orange/directional/north{
+	name = "technician's closet"
+	},
 /obj/item/clothing/under/syndicate/cybersun/research{
 	pixel_y = 9
 	},
