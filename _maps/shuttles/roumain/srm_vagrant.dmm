@@ -46,7 +46,7 @@
 	pixel_x = 0
 	},
 /obj/effect/turf_decal/siding/brown/corner,
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "aG" = (
 /obj/structure/cable{
@@ -83,8 +83,10 @@
 	pixel_x = 10;
 	pixel_y = 3
 	},
-/obj/effect/turf_decal/siding/brown,
-/turf/open/floor/wood/birch,
+/obj/effect/turf_decal/siding/brown{
+	dir = 6
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/security)
 "bF" = (
 /turf/template_noop,
@@ -121,7 +123,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "vagrantengineshuts";
+	id = "vagrantstarboardengineshuts";
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -144,6 +146,9 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/siding/brown{
+	dir = 10
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/security)
@@ -341,6 +346,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "fm" = (
@@ -349,15 +357,13 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet/ship,
 /area/ship/roumain)
 "fT" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_x = -25
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/red/arrow_cw{
 	dir = 4
 	},
+/obj/machinery/advanced_airlock_controller/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "fY" = (
@@ -366,9 +372,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
-	},
-/obj/effect/turf_decal/siding/brown{
-	dir = 6
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -415,7 +418,7 @@
 /obj/item/clothing/suit/armor/roumain/flamebearer,
 /obj/item/clothing/under/suit/roumain,
 /obj/effect/turf_decal/siding/brown/corner,
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/security)
 "gJ" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet/ship,
@@ -429,7 +432,7 @@
 /area/ship/medical)
 "gV" = (
 /obj/machinery/door/airlock/medical/glass{
-	name = "Medical Bay"
+	name = "Herbalist Shed"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -454,7 +457,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "vagrantengineshuts";
+	id = "vagrantstarboardengineshuts";
 	dir = 8
 	},
 /obj/structure/cable{
@@ -551,7 +554,7 @@
 /obj/effect/turf_decal/siding/brown/corner{
 	dir = 4
 	},
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "ja" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -654,6 +657,9 @@
 	dir = 8;
 	icon_state = "computer-left"
 	},
+/obj/effect/turf_decal/siding/brown{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "kJ" = (
@@ -661,7 +667,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "vagrantengineshuts";
+	id = "vagrantportengineshuts";
 	dir = 8
 	},
 /obj/structure/cable{
@@ -772,7 +778,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/birch,
 /area/ship/bridge)
 "lW" = (
 /obj/item/reagent_containers/glass/mortar/bone,
@@ -862,11 +868,10 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 4
 	},
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "ni" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 1;
 	piping_layer = 2
 	},
 /turf/open/floor/plasteel/dark,
@@ -959,7 +964,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 4
 	},
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/security)
 "pp" = (
 /obj/structure/cable{
@@ -981,6 +986,10 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/trimline/opaque/red/arrow_cw{
 	dir = 4
+	},
+/obj/structure/destructible/tribal_torch{
+	pixel_x = -10;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
@@ -1081,7 +1090,7 @@
 /obj/effect/turf_decal/siding/brown/corner{
 	dir = 4
 	},
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/security)
 "qR" = (
 /obj/structure/cable{
@@ -1133,7 +1142,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "vagrantengineshuts";
+	id = "vagrantportengineshuts";
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -1150,7 +1159,7 @@
 "sH" = (
 /obj/machinery/door/airlock/glass{
 	dir = 4;
-	name = "Atrium"
+	name = "Cargo Bay"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1171,7 +1180,6 @@
 /area/ship/cargo)
 "sI" = (
 /obj/item/clothing/head/hardhat/solgov,
-/obj/item/storage/toolbox/mechanical,
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/head/welding,
 /obj/item/clothing/suit/hazardvest/roumain,
@@ -1183,8 +1191,9 @@
 	anchored = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/storage/toolbox/electrical,
 /obj/item/clothing/gloves/color/yellow,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/electrical,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "sP" = (
@@ -1196,7 +1205,7 @@
 /obj/item/tank/internals/emergency_oxygen/double,
 /obj/item/clothing/mask/breath,
 /obj/effect/turf_decal/siding/brown,
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "sV" = (
 /obj/structure/platform/wood{
@@ -1236,9 +1245,9 @@
 	pixel_y = 0
 	},
 /obj/effect/turf_decal/siding/brown{
-	dir = 1
+	dir = 5
 	},
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "un" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1296,6 +1305,9 @@
 	name = "Window Shutters";
 	pixel_y = -8;
 	layer = 2.8
+	},
+/obj/effect/turf_decal/siding/brown{
+	dir = 9
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
@@ -1394,7 +1406,7 @@
 /obj/structure/chair/wood/wings{
 	dir = 4
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/birch,
 /area/ship/bridge)
 "yb" = (
 /obj/structure/railing/corner/wood,
@@ -1578,7 +1590,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/button/door{
-	id = "vagrantengineshuts";
+	id = "vagrantportengineshuts";
 	name = "Engine Shutters";
 	dir = 1;
 	pixel_x = -7;
@@ -1715,6 +1727,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/button/door{
+	id = "vagrantstarboardengineshuts";
+	name = "Engine Shutters";
+	pixel_x = 0;
+	pixel_y = 21
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "DJ" = (
@@ -1762,10 +1780,12 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 4
 	},
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "FA" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	name = "Starboard Engine Room"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1866,7 +1886,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 4
 	},
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/security)
 "Hn" = (
 /turf/closed/wall/r_wall/yesdiag,
@@ -1987,7 +2007,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/brown,
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "Jp" = (
 /obj/structure/chair/wood{
@@ -2007,7 +2027,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/stoneborder,
-/obj/structure/window/reinforced/tinted/frosted,
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 8
+	},
 /obj/item/reagent_containers/glass/bucket/wooden{
 	pixel_x = 2;
 	pixel_y = 3
@@ -2285,7 +2307,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	name = "Port Engine Room"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -2297,6 +2321,9 @@
 /obj/machinery/computer/cargo{
 	dir = 8;
 	icon_state = "computer-right"
+	},
+/obj/effect/turf_decal/siding/brown{
+	dir = 8
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
@@ -2356,7 +2383,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/birch,
 /area/ship/security)
 "Pj" = (
 /obj/structure/platform/wood{
@@ -2394,7 +2421,7 @@
 /turf/open/floor/plating/sandy_dirt/ship,
 /area/ship/roumain)
 "PS" = (
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/birch,
 /area/ship/security)
 "Qa" = (
 /obj/structure/platform/wood{
@@ -2421,7 +2448,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Qs" = (
-/obj/machinery/door/airlock/security/glass,
+/obj/machinery/door/airlock/security/glass{
+	name = "Armory"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2450,9 +2479,11 @@
 	dir = 6
 	},
 /obj/structure/table/wood/fancy,
-/obj/machinery/fax/roumain,
+/obj/machinery/fax/roumain{
+	layer = 3.22
+	},
 /obj/effect/turf_decal/siding/brown,
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "Rk" = (
 /turf/open/floor/plating/sandy_dirt/ship,
@@ -2492,6 +2523,9 @@
 /obj/item/storage/box/ammo/a12g_buckshot,
 /obj/item/storage/box/ammo/a12g_buckshot,
 /obj/item/storage/toolbox/ammo/a850r,
+/obj/effect/turf_decal/siding/brown{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "Ss" = (
@@ -2568,7 +2602,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/birch,
 /area/ship/bridge)
 "TU" = (
 /obj/machinery/power/ship_gravity,
@@ -2611,6 +2645,12 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/brown/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/brown/corner{
+	dir = 1
+	},
 /turf/open/floor/wood/birch,
 /area/ship/cargo)
 "UH" = (
@@ -2631,22 +2671,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/table/wood,
-/obj/item/storage/toolbox/fishing{
-	pixel_x = -1;
-	pixel_y = 5
-	},
-/obj/item/storage/toolbox/fishing{
-	pixel_x = 1;
-	pixel_y = 0
-	},
 /obj/effect/turf_decal/siding/brown{
 	dir = 1
 	},
-/turf/open/floor/wood/birch,
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood/walnut,
 /area/ship/security)
 "Ve" = (
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/birch,
 /area/ship/bridge)
 "Vy" = (
 /obj/structure/window/reinforced/fulltile,
@@ -2675,7 +2707,9 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/ship,
 /area/ship/roumain)
 "VB" = (
-/obj/machinery/door/airlock/command,
+/obj/machinery/door/airlock/command{
+	name = "Bridge"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2728,7 +2762,7 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/birch,
 /area/ship/bridge)
 "VL" = (
 /obj/machinery/atmospherics/components/binary/pump{
@@ -2751,10 +2785,15 @@
 	pixel_x = -4;
 	pixel_y = -5
 	},
+/obj/effect/turf_decal/siding/brown{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "Wg" = (
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -2796,7 +2835,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/structure/table/wood,
 /obj/effect/turf_decal/siding/brown{
 	dir = 1
 	},
@@ -2816,7 +2854,8 @@
 	pixel_y = 5;
 	pixel_x = -3
 	},
-/turf/open/floor/wood/birch,
+/obj/structure/table/wood,
+/turf/open/floor/wood/walnut,
 /area/ship/security)
 "WU" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -2826,8 +2865,17 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/east,
-/obj/item/kirbyplants/random,
-/turf/open/floor/wood/birch,
+/obj/structure/table/wood,
+/obj/structure/table/wood,
+/obj/item/storage/toolbox/fishing{
+	pixel_x = 1;
+	pixel_y = 0
+	},
+/obj/item/storage/toolbox/fishing{
+	pixel_x = -1;
+	pixel_y = 5
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/security)
 "XB" = (
 /obj/structure/window/reinforced/fulltile,
@@ -2905,7 +2953,7 @@
 	dir = 4
 	},
 /obj/item/toy/plush/frederick,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/birch,
 /area/ship/bridge)
 "ZO" = (
 /obj/structure/cable{
@@ -2917,14 +2965,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/brown{
-	dir = 5
-	},
 /turf/open/floor/wood/birch,
 /area/ship/bridge)
 
 (1,1,1) = {"
-bF
 bF
 bF
 bF
@@ -2953,7 +2997,6 @@ bF
 bF
 bF
 bF
-bF
 BD
 Io
 Lb
@@ -2968,7 +3011,6 @@ bF
 bF
 "}
 (3,1,1) = {"
-bF
 bF
 bF
 bF
@@ -2996,7 +3038,6 @@ bF
 bF
 bF
 bF
-bF
 BD
 Op
 Op
@@ -3012,7 +3053,6 @@ bF
 bF
 "}
 (5,1,1) = {"
-bF
 bF
 bF
 bF
@@ -3039,7 +3079,6 @@ bF
 bF
 bF
 bF
-bF
 My
 za
 nk
@@ -3056,7 +3095,6 @@ bF
 bF
 "}
 (7,1,1) = {"
-bF
 bF
 bF
 lw
@@ -3079,7 +3117,6 @@ bF
 "}
 (8,1,1) = {"
 bF
-bF
 Hn
 rH
 kJ
@@ -3100,7 +3137,6 @@ dW
 bF
 "}
 (9,1,1) = {"
-bF
 bF
 xc
 cZ
@@ -3123,7 +3159,6 @@ bF
 "}
 (10,1,1) = {"
 bF
-bF
 xc
 HZ
 rz
@@ -3145,7 +3180,6 @@ bF
 "}
 (11,1,1) = {"
 bF
-bF
 xc
 ni
 pp
@@ -3166,7 +3200,6 @@ zP
 bF
 "}
 (12,1,1) = {"
-bF
 oO
 xc
 sI
@@ -3188,7 +3221,6 @@ zP
 KN
 "}
 (13,1,1) = {"
-bF
 GV
 fd
 Wg
@@ -3211,7 +3243,6 @@ jM
 "}
 (14,1,1) = {"
 bF
-bF
 Hn
 xc
 Hy
@@ -3232,7 +3263,6 @@ uy
 bF
 "}
 (15,1,1) = {"
-bF
 bF
 jM
 xc
@@ -3255,7 +3285,6 @@ bF
 "}
 (16,1,1) = {"
 bF
-bF
 jM
 EM
 fT
@@ -3276,7 +3305,6 @@ bF
 bF
 "}
 (17,1,1) = {"
-bF
 bF
 jM
 EM
@@ -3299,7 +3327,6 @@ bF
 "}
 (18,1,1) = {"
 ie
-bF
 jM
 Hn
 xc
@@ -3320,7 +3347,6 @@ bF
 bF
 "}
 (19,1,1) = {"
-bF
 bF
 bF
 bF
@@ -3345,7 +3371,6 @@ bF
 bF
 bF
 bF
-bF
 xc
 JR
 pN
@@ -3364,7 +3389,6 @@ bF
 bF
 "}
 (21,1,1) = {"
-bF
 bF
 bF
 JE
@@ -3388,7 +3412,6 @@ bF
 (22,1,1) = {"
 bF
 bF
-bF
 Vy
 aE
 nc
@@ -3408,7 +3431,6 @@ bF
 bF
 "}
 (23,1,1) = {"
-bF
 bF
 bF
 Vy
@@ -3432,7 +3454,6 @@ bF
 (24,1,1) = {"
 bF
 bF
-bF
 Vy
 QA
 lQ
@@ -3452,7 +3473,6 @@ bF
 bF
 "}
 (25,1,1) = {"
-bF
 bF
 bF
 Vy
@@ -3476,7 +3496,6 @@ bF
 (26,1,1) = {"
 bF
 bF
-bF
 YL
 Cp
 kD
@@ -3496,7 +3515,6 @@ bF
 bF
 "}
 (27,1,1) = {"
-bF
 bF
 bF
 bF
@@ -3523,7 +3541,6 @@ bF
 bF
 bF
 bF
-bF
 SV
 IZ
 hr
@@ -3540,7 +3557,6 @@ bF
 bF
 "}
 (29,1,1) = {"
-bF
 bF
 bF
 bF
@@ -3567,7 +3583,6 @@ bF
 bF
 bF
 bF
-bF
 SV
 iq
 pD
@@ -3584,7 +3599,6 @@ bF
 bF
 "}
 (31,1,1) = {"
-bF
 bF
 bF
 bF
@@ -3611,7 +3625,6 @@ bF
 bF
 bF
 bF
-bF
 mi
 SV
 SV
@@ -3628,7 +3641,6 @@ bF
 bF
 "}
 (33,1,1) = {"
-bF
 bF
 bF
 bF
