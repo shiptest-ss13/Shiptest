@@ -777,9 +777,14 @@
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/north,
+/obj/machinery/light/small/directional/north{
+	pixel_x = -6
+	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
+	},
+/obj/item/radio/intercom/directional/north{
+	pixel_x = 5
 	},
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
@@ -816,7 +821,8 @@
 	},
 /obj/item/kitchen/fork{
 	pixel_y = 9;
-	pixel_x = -14
+	pixel_x = -14;
+	name = "sushi fork"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -1103,7 +1109,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/trinary/filter/atmos/o2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
@@ -1111,6 +1116,7 @@
 	dir = 9
 	},
 /obj/machinery/light/directional/east,
+/obj/machinery/atmospherics/components/trinary/filter/atmos/n2,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "vd" = (
@@ -1217,7 +1223,7 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/structure/filingcabinet/double,
-/obj/item/radio/intercom/directional/north,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "wg" = (
@@ -1679,13 +1685,12 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/violet/hidden,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2350,6 +2355,10 @@
 	icon_state = "1-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 1;
+	name = "Waste to Processing"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "St" = (
@@ -2662,11 +2671,12 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/trinary/filter/atmos/n2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
 /obj/machinery/light/directional/east,
+/obj/machinery/atmospherics/components/trinary/filter/atmos/o2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "WR" = (
@@ -2678,7 +2688,7 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/atmospherics/pipe/simple/violet/hidden,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "Xq" = (
@@ -2706,6 +2716,10 @@
 /obj/machinery/cell_charger{
 	pixel_y = 6;
 	pixel_x = 1
+	},
+/obj/item/paper/paperslip{
+	name = "Distro Instructions";
+	default_raw_text = "1. Ensure Filter Function. Filter 1 should be set to filter OXYGEN. Filter 2 should be set to filter NITROGEN <br> 2. Activate external scrubber. Scrub Oxygen/Nitrogen. Ensure temperature of external air does not compromise airmix. <br> 3. Anchor in spare Air Mixture Canister to kickstart system. <br> 4. Activate Distro To Processing Pump to establish recycling loop."
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2857,6 +2871,10 @@
 	id = "zengine2"
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/item/stack/sheet/mineral/plasma/ten{
+	pixel_y = -6;
+	pixel_x = 2
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 
