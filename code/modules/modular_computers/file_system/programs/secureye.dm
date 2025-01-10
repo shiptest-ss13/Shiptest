@@ -166,7 +166,7 @@
 			show_camera_static()
 			return
 	else if(istype(active_camera, /obj/item/bodycamera))
-		var/obj/machinery/camera/active_camera_B = active_camera
+		var/obj/item/bodycamera/active_camera_B = active_camera
 		if(!active_camera_B?.can_use())
 			show_camera_static()
 			return

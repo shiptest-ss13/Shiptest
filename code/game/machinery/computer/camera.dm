@@ -173,7 +173,6 @@
 		ui_refresh(usr, ui)
 
 	if(action == "set_temp_network")
-
 		tempNetwork = sanitize_filename(params["name"])
 
 	if(action == "refresh")
