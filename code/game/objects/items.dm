@@ -78,12 +78,20 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/usesound
 	///Used when yate into a mob
 	var/mob_throw_hit_sound
-	///Sound used when equipping the item into a valid slot
+	///Sound used when an item has been equipped into a valid slot
 	var/equip_sound
 	///Sound uses when picking the item up (into your hands)
 	var/pickup_sound
 	///Sound uses when dropping the item, or when its thrown.
 	var/drop_sound
+	///Sound used when an item is being equipped with equip_delay
+	var/equipping_sound
+	///Sound used when an item is being unequipped with equip_delay
+	var/unequipping_sound
+
+	///flags used for equip_delay
+	var/equip_self_flags = NONE
+
 	///Whether or not we use stealthy audio levels for this item's attack sounds
 	var/stealthy_audio = FALSE
 
@@ -413,6 +421,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(anchored)
 		return
 
+	//check if the item is inside another item's storage
+	if(istype(loc, /obj/item/storage))
+		//if so, can we actually access it?
+		var/datum/component/storage/ourstorage = loc.GetComponent(/datum/component/storage)
+		if(!ourstorage.access_check())
+			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_HIDE_FROM, user)//you're not supposed to be in here right now, punk!
+			return
+
 	if(resistance_flags & ON_FIRE)
 		var/mob/living/carbon/C = user
 		var/can_handle_hot = FALSE
@@ -462,7 +478,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(throwing)
 		throwing.finalize(FALSE)
 	if(loc == user)
-		if(!allow_attack_hand_drop(user) || !user.temporarilyRemoveItemFromInventory(src))
+		if(!allow_attack_hand_drop(user) || !user.temporarilyRemoveItemFromInventory(src, use_unequip_delay = TRUE))
 			return
 
 	remove_outline()
@@ -1194,8 +1210,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 ///Intended for interactions with guns, like racking
 /obj/item/proc/unique_action(mob/living/user)
-	return
 
+///Called before unique action, if any other associated items should do a unique action or override it.
+/obj/item/proc/pre_unique_action(mob/living/user)
+	if(SEND_SIGNAL(src,COMSIG_CLICK_UNIQUE_ACTION,user) & OVERIDE_UNIQUE_ACTION)
+		return TRUE
+	return FALSE //return true if the proc should end here
 /**
  * Returns null if this object cannot be used to interact with physical writing mediums such as paper.
  * Returns a list of key attributes for this object interacting with paper otherwise.
