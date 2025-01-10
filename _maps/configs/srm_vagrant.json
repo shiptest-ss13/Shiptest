@@ -1,0 +1,45 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Vagrant-class Hunting Vessel",
+	"faction": "/datum/faction/srm",
+	"prefix": "SRSV",
+	"namelists": [
+		"SAINT-ROUMAIN",
+		"BEASTS"
+	],
+	"map_short_name": "Vagrant-class",
+	"map_path": "_maps/shuttles/roumain/srm_vagrant.dmm",
+	"description": "A lighter hunting vessel of the Saint-Roumian-Militia, issued to modest Montagnes seeking either to prove themselves or who have a fondness for simplicity. While smaller than other vessels among the Militia, the Vagrant is considerably cheaper than other options and features a rocky terrarium which has yet to be populated with a fresh abundance of life. The poor soil provides a challenge that encourages its' crew to collect herbs one finds along their path, while still posessing a vital tree from the owning Montagnes’ home planet. To build a healthy ecosystem between this oak and wild, foreign plants is seen as a great accomplishment. As a highly religious ascetic order, the SRM supplies the Vagrant with supplies to achieve this goal and expects the crew aboard to learn how to perform medicine in more “natural” ways, using herbs and plants found in the wilderness, and then grown in house. The ship is captained by a Montagne, who oversees a team of Hunters, and Shadows apprenticing them.",
+	"tags": [
+		"Botany",
+		"Combat",
+		"Generalist"
+	],
+	"map_id": "srm_vagrant",
+	"limit": 1,
+	"job_slots": {
+		"Hunter Montagne": {
+			"outfit": "/datum/outfit/job/roumain/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Flamebearer": {
+			"outfit": "/datum/outfit/job/roumain/flamebearer",
+			"officer": true,
+			"slots": 1
+		},
+		"Machinist": {
+			"outfit": "/datum/outfit/job/roumain/engineer",
+			"slots": 1
+		},
+		"Hunter": {
+			"outfit": "/datum/outfit/job/roumain/security",
+			"slots": 1
+		},
+		"Shadow": {
+			"outfit": "/datum/outfit/job/roumain/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
