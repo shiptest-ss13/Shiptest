@@ -226,6 +226,7 @@
 /obj/effect/turf_decal/corner/transparent/cybersunteal/half{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "en" = (
@@ -235,7 +236,7 @@
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_y = -10;
-	pixel_x = -23;
+	pixel_x = -22;
 	name = "EVA Access";
 	id = "zeva"
 	},
@@ -243,6 +244,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 4
+	},
+/obj/item/radio/intercom/directional/west{
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/ccommons)
@@ -364,6 +368,9 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal,
 /obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/item/radio/intercom/directional/east{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "gX" = (
@@ -692,7 +699,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/machinery/light/small/directional/west,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -815,7 +822,13 @@
 /area/ship/crew/ccommons)
 "rb" = (
 /obj/structure/chair/sofa/blue/corpo/right/directional/east,
-/obj/machinery/computer/helm/viewscreen/directional/west,
+/obj/machinery/computer/helm/viewscreen/directional/west{
+	pixel_y = -5
+	},
+/obj/item/radio/intercom/directional/west{
+	pixel_y = 16;
+	pixel_x = -32
+	},
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
 	},
@@ -1049,7 +1062,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/east,
+/obj/machinery/advanced_airlock_controller/directional/east,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -1204,6 +1217,7 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/structure/filingcabinet/double,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "wg" = (
@@ -1850,6 +1864,7 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "Ix" = (
@@ -2106,6 +2121,9 @@
 /obj/effect/turf_decal/box/white,
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/power/terminal,
+/obj/item/radio/intercom/directional/north{
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "Nm" = (
@@ -2131,6 +2149,16 @@
 /obj/item/soap/deluxe,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/cargo)
+"NU" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/line,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 5
+	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = -4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/ccommons)
 "Ob" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/suns/hatch{
@@ -2512,7 +2540,7 @@
 	},
 /obj/machinery/button/door{
 	pixel_x = -23;
-	pixel_y = 9;
+	pixel_y = 10;
 	dir = 4;
 	name = "window shutters";
 	id = "zbridge2"
@@ -2534,6 +2562,9 @@
 /obj/item/crowbar{
 	pixel_y = 7;
 	pixel_x = -3
+	},
+/obj/item/radio/intercom/wideband/directional/west{
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -3050,7 +3081,7 @@ xM
 rb
 gX
 fF
-lE
+NU
 qj
 qj
 qj
