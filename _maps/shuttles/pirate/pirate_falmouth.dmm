@@ -1023,7 +1023,7 @@
 /obj/structure/guncloset{
 	anchored = 1;
 	can_be_unanchored = 1;
-	req_access_txt = "19"
+	req_access = list(19)
 	},
 /obj/item/gun/energy/e_gun/e11,
 /obj/item/gun/ballistic/automatic/pistol/candor/no_mag,
@@ -1316,7 +1316,7 @@
 /obj/structure/closet/secure_closet/armorycage{
 	anchored = 1;
 	can_be_unanchored = 1;
-	req_access_txt = "19"
+	req_access = list(1)
 	},
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 1
