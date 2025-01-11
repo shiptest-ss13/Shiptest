@@ -1299,10 +1299,6 @@
 /obj/item/clothing/under/syndicate/cybersun/research{
 	pixel_y = 9
 	},
-/obj/item/clothing/mask/gas/welding{
-	pixel_y = 11;
-	pixel_x = -8
-	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = 1
 	},
@@ -1316,6 +1312,10 @@
 /obj/item/storage/belt/utility/syndicate,
 /obj/item/clothing/gloves/combat{
 	pixel_y = 5
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_y = 13;
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -1799,13 +1799,6 @@
 	pixel_y = -4;
 	pixel_x = 4
 	},
-/obj/item/clothing/mask/gas/welding{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/clothing/mask/gas/welding{
-	pixel_y = 5
-	},
 /obj/item/stock_parts/cell/high{
 	pixel_x = 9;
 	pixel_y = -10
@@ -1826,6 +1819,14 @@
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = 10
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_y = 13;
+	pixel_x = -6
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_y = 7;
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
