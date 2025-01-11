@@ -9,12 +9,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/brown{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/brown{
-	dir = 8
-	},
+/obj/effect/turf_decal/siding/brown/end,
 /turf/open/floor/wood/birch,
 /area/ship/cargo)
 "ah" = (
@@ -83,9 +78,7 @@
 	pixel_x = 10;
 	pixel_y = 3
 	},
-/obj/effect/turf_decal/siding/brown{
-	dir = 6
-	},
+/obj/effect/turf_decal/siding/brown,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "bF" = (
@@ -147,9 +140,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/effect/turf_decal/siding/brown{
-	dir = 10
-	},
+/obj/effect/turf_decal/siding/brown,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "cf" = (
@@ -226,10 +217,6 @@
 /area/ship/roumain)
 "dE" = (
 /obj/structure/table/wood/fancy,
-/obj/item/disk/holodisk/roumain{
-	pixel_x = -2;
-	pixel_y = 4
-	},
 /obj/item/book/manual/srmlore{
 	pixel_y = 4;
 	pixel_x = 2
@@ -341,7 +328,7 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "vagrantengineshuts"
+	id = "vagrantportengineshuts"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -375,6 +362,19 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/siding/brown/end{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/brown/corner{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = -27
+	},
+/obj/effect/turf_decal/siding/brown/corner{
+	dir = 4;
+	pixel_x = 0;
+	pixel_y = -27
 	},
 /turf/open/floor/wood/birch,
 /area/ship/security)
@@ -593,21 +593,10 @@
 /area/ship/medical)
 "jy" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/eva{
-	pixel_x = -8
-	},
-/obj/item/clothing/head/helmet/space/eva{
-	pixel_y = 8;
-	pixel_x = 8
-	},
-/obj/item/clothing/mask/breath{
-	pixel_y = 9;
-	pixel_x = -6
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 4;
-	pixel_y = -6
-	},
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/mask/breath,
+/obj/item/tank/internals/emergency_oxygen/double,
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
 "jB" = (
@@ -647,6 +636,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
+"kq" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "ky" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/bonfire,
@@ -868,6 +863,10 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 4
 	},
+/obj/item/disk/holodisk/roumain{
+	pixel_x = -2;
+	pixel_y = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "ni" = (
@@ -916,7 +915,9 @@
 /turf/open/floor/grass/ship,
 /area/ship/roumain)
 "oC" = (
-/obj/structure/flora/tree/srm,
+/obj/structure/flora/tree/srm{
+	bound_height = 32
+	},
 /obj/item/candle{
 	layer = 5.1;
 	pixel_x = -10;
@@ -1119,11 +1120,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/brown{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/brown{
-	dir = 8
+/obj/effect/turf_decal/siding/brown/end{
+	dir = 1
 	},
 /turf/open/floor/wood/birch,
 /area/ship/cargo)
@@ -1175,6 +1173,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/brown/end{
+	dir = 8
 	},
 /turf/open/floor/wood/birch,
 /area/ship/cargo)
@@ -1245,7 +1246,7 @@
 	pixel_y = 0
 	},
 /obj/effect/turf_decal/siding/brown{
-	dir = 5
+	dir = 1
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
@@ -1306,8 +1307,9 @@
 	pixel_y = -8;
 	layer = 2.8
 	},
+/obj/item/radio/intercom/wideband/directional/south,
 /obj/effect/turf_decal/siding/brown{
-	dir = 9
+	dir = 1
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
@@ -1446,11 +1448,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/brown/corner{
+/obj/effect/turf_decal/siding/brown{
 	dir = 8
-	},
-/obj/effect/turf_decal/siding/brown/corner{
-	dir = 1
 	},
 /turf/open/floor/wood/birch,
 /area/ship/cargo)
@@ -1562,17 +1561,9 @@
 	dir = 1
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/eva{
-	pixel_x = -8
-	},
-/obj/item/clothing/head/helmet/space/eva{
-	pixel_y = 8;
-	pixel_x = 8
-	},
-/obj/item/clothing/mask/breath{
-	pixel_y = 9;
-	pixel_x = -6
-	},
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/mask/breath,
 /obj/item/tank/internals/emergency_oxygen/double{
 	pixel_x = 4;
 	pixel_y = -6
@@ -1997,16 +1988,11 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet/ship,
 /area/ship/roumain)
 "Jh" = (
-/obj/structure/table/wood/fancy,
-/obj/item/radio/intercom/wideband/table{
-	dir = 1;
-	pixel_y = 2;
-	pixel_x = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/brown,
+/obj/structure/filingcabinet,
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "Jp" = (
@@ -2964,6 +2950,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/brown/end,
+/obj/effect/turf_decal/siding/brown/corner{
+	dir = 8;
+	pixel_x = 0;
+	pixel_y = 27
+	},
+/obj/effect/turf_decal/siding/brown/corner{
+	pixel_x = 0;
+	pixel_y = 27
+	},
 /turf/open/floor/wood/birch,
 /area/ship/bridge)
 
@@ -3647,11 +3643,11 @@ bF
 bF
 bF
 jM
-jM
-jM
-jM
-jM
-jM
+kq
+kq
+kq
+kq
+kq
 Go
 bF
 bF
