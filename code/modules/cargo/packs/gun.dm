@@ -398,7 +398,7 @@
 
 /datum/supply_pack/gun/firestorm
 	name = "Firestorm SMG Crate"
-	desc = "Contains a Hunter's Pride SMG, intended for internal use by hunters and chambered in .45"
+	desc = "Contains a Hunter's Pride SMG, intended for internal use by hunters and chambered in .44 Roumain."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/firestorm)
 	crate_name = "SMG crate"
