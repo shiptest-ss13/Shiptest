@@ -501,7 +501,8 @@
 	var/dam_force = 30
 	harmful = TRUE
 	tool_behaviour = TOOL_DECONSTRUCT
-	toolspeed = 0.5
+	toolspeed = 0.3
+	wall_decon_damage = 400
 	var/datum/effect_system/spark_spread/spark_system
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/can_attach(obj/mecha/M as obj)
@@ -512,7 +513,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/attach()
 	..()
-	toolspeed = 0.5
+	toolspeed = 0.3
 	return
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/detach()
@@ -532,10 +533,13 @@
 		target.add_overlay(GLOB.cutting_effect)
 		if(target.deconstruct_act(chassis.occupant, src))
 			do_sparks(2, TRUE, src)
-			chassis.stopped--
 		target.cut_overlay(GLOB.cutting_effect)
 		if(!chassis.stopped)
 			occupant_message("[src] finishes cutting, allowing movement again.")
+	if(chassis.stopped > 0)
+		chassis.stopped--
+	else
+		chassis.stopped = 0
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/tool_start_check(user, amount)
 	if(!chassis.stopped)
