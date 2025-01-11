@@ -174,6 +174,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 	fire_sound = 'sound/weapons/gun/smg/cm5.ogg'
 	manufacturer = MANUFACTURER_MINUTEMAN
 
+	spread = 3
+	spread_unwielded = 7
+
 	valid_attachments = CLIP_ATTACHMENTS
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
