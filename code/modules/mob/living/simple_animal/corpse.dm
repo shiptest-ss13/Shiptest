@@ -103,7 +103,7 @@
 
 /datum/outfit/cybersunmedicaldirectorcorpse
 	name = "Cybersun Medical Director Corpse"
-	uniform = obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun
+	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/cybersun
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
