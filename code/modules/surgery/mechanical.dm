@@ -7,12 +7,20 @@
 		/datum/surgery_step/mechanic_open,
 		/datum/surgery_step/open_hatch,
 		/datum/surgery_step/prepare_electronics,
-		/datum/surgery_step/fix_brain,
+		/datum/surgery_step/fix_brain/mechanic,
 		/datum/surgery_step/close_hatch,
 		/datum/surgery_step/mechanic_close
 	)
 	lying_required = FALSE
 	self_operable = TRUE
+
+/datum/surgery_step/fix_brain/mechanic
+	implements = list(
+		TOOL_MULTITOOL = 85,
+		TOOL_HEMOSTAT = 85,
+		TOOL_SCREWDRIVER = 40,
+		/obj/item/pen = 5
+	)
 
 /datum/surgery/healing/mechanic
 	name = "Repair machinery"
