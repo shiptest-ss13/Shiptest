@@ -25,7 +25,7 @@
 	name = "underbarrel ballistic gun"
 	desc = "You shouldnt be seeing this."
 	semi_auto = TRUE
-	always_chambers = TRUE
+	//always_chambers = TRUE
 	casing_ejector = TRUE
 	gunslinger_recoil_bonus = 0
 	default_ammo_type  = /obj/item/ammo_box/magazine/internal/shot/underbarrel
