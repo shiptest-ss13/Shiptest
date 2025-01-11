@@ -321,8 +321,7 @@
 /area/ship/cargo)
 "ia" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	name = "Starboard Thrusters";
-	req_access_txt = "10"
+	name = "Starboard Thrusters"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
@@ -1747,10 +1746,6 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Jg" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	name = "Starboard Thrusters";
-	req_access_txt = "10"
-	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1758,13 +1753,12 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer5,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Starboard Thrusters"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
 "JF" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	name = "Port Thrusters";
-	req_access_txt = "10"
-	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1774,6 +1768,9 @@
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer1,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Port Thrusters"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
@@ -2559,8 +2556,7 @@
 /area/ship/hallway/fore)
 "Zj" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	name = "Port Thrusters";
-	req_access_txt = "10"
+	name = "Port Thrusters"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
