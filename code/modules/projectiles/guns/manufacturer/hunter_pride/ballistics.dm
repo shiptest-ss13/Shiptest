@@ -819,6 +819,9 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
+	unique_attachments = list(
+		/obj/item/attachment/alof)
+
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/sawoff(forced = FALSE)
 	. = ..()
 	if(.)

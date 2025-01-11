@@ -1,6 +1,6 @@
 /obj/item/attachment/alof
 	name = "alof tube"
-	desc = "FUcked up."
+	desc = "An antiquated spring operated magazine attachment for the HP Beacon. Has a capacity of three rounds."
 	icon_state = "alof"
 
 	attach_features_flags = ATTACH_REMOVABLE_HAND
