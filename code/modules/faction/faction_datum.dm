@@ -2,7 +2,6 @@
 	var/name
 	/// Primarly to be used for backend stuff.
 	var/short_name
-	var/parent_faction
 	/// List of prefixes that ships of this faction uses
 	var/list/prefixes
 	/// list of factions that are "allowed" with this faction, used for factional cargo
@@ -17,9 +16,6 @@
 	///Are we the same datum?
 	if(istype(value_to_check, src))
 		return TRUE
-	///Allow if we share a parent faction
-	if(istype(value_to_check, parent_faction))
-		return TRUE
 	//do we have the same faction even if one is a define?
 	if(value_to_check == name)
 		return TRUE
@@ -29,7 +25,6 @@
 
 /datum/faction/syndicate
 	name = FACTION_SYNDICATE
-	parent_faction = /datum/faction/syndicate
 	prefixes = PREFIX_SYNDICATE
 
 /datum/faction/syndicate/ngr
@@ -72,7 +67,6 @@
 /datum/faction/nt
 	name = FACTION_NT
 	short_name = "NT"
-	parent_faction = /datum/faction/nt
 	prefixes = PREFIX_NT
 
 /datum/faction/nt/ns_logi
@@ -99,6 +93,10 @@
 
 /datum/faction/syndicate/scarborough_arms
 	name = "Scarborough Arms"
-	parent_faction = /datum/faction/syndicate
 	prefixes = PREFIX_INDEPENDENT
-	allowed_factions = list(/datum/faction/syndicate)
+	allowed_factions = list(/datum/faction/syndicate,
+		/datum/faction/syndicate/ngr,
+		/datum/faction/syndicate/cybersun,
+		/datum/faction/syndicate/hardliners,
+		/datum/faction/syndicate/suns
+	)
