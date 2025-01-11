@@ -1362,7 +1362,7 @@
 	icon_state = "2-9"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Dz" = (
@@ -1941,11 +1941,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
 /obj/effect/spawner/random/trash/cigbutt,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Nd" = (
