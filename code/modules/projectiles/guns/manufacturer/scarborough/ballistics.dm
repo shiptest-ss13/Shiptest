@@ -463,12 +463,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 	show_ammo_capacity_on_magazine_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/gun,
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(
 		/obj/item/attachment/foldable_stock/sidewinder
 	)
 	slot_available = list(

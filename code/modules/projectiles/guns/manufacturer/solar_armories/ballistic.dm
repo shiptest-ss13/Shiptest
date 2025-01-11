@@ -118,12 +118,9 @@
 
 	slot_flags = ITEM_SLOT_BACK
 
-	valid_attachments = list(
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
+	unique_attachments = (
 		/obj/item/attachment/energy_bayonet
-	)
+		)
 
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
@@ -160,12 +157,9 @@
 
 	slot_flags = ITEM_SLOT_BACK
 
-	valid_attachments = list(
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
+	unique_attachments = (
 		/obj/item/attachment/energy_bayonet
-	)
+		)
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -207,3 +201,4 @@
 	recoil_unwielded = 8
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
+
