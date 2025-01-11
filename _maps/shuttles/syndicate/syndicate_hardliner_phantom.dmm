@@ -190,18 +190,10 @@
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/freezer/fridge,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/structure/table/reinforced,
+/obj/machinery/microwave{
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "er" = (
@@ -260,14 +252,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "fo" = (
-/obj/structure/table/reinforced,
-/obj/machinery/microwave{
-	pixel_y = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/corner{
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 4
 	},
-/turf/open/floor/plasteel/patterned/brushed,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "fU" = (
 /obj/effect/turf_decal/techfloor{
@@ -727,20 +718,17 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "nN" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/ccommons)
+"ov" = (
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 23
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/structure/chair/handrail{
+	dir = 8
 	},
-/obj/machinery/mineral/processing_unit_console{
-	pixel_y = -18;
-	machinedir = 6;
-	output_dir = 1;
-	dir = 1
-	},
-/turf/open/floor/pod,
-/area/ship/cargo)
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/ccommons)
 "pm" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security/armory)
@@ -819,11 +807,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/components/binary/pressure_valve/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "qJ" = (
@@ -847,10 +835,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "rg" = (
-/obj/structure/chair/plastic{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/plastic,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "rp" = (
@@ -932,6 +918,13 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
+"uh" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "up" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -966,6 +959,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
+"vd" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	name = "Cargo Bay"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "vx" = (
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/engineering)
@@ -1014,7 +1014,6 @@
 /turf/open/floor/pod,
 /area/ship/cargo)
 "wx" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1026,6 +1025,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
 	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -1288,6 +1290,7 @@
 /obj/item/radio/headset/syndicate/alt/leader,
 /obj/item/clothing/gloves/combat,
 /obj/machinery/firealarm/directional/north,
+/obj/item/clothing/suit/armor/hardliners/sergeant,
 /obj/item/storage/guncase/pistol/a357,
 /obj/item/storage/box/ammo/a357,
 /obj/structure/closet/secure_closet/wall/directional/west{
@@ -1295,6 +1298,8 @@
 	name = "captain's closet";
 	req_access_txt = "20"
 	},
+/obj/item/computer_hardware/card_slot,
+/obj/item/modular_computer/laptop,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "BP" = (
@@ -2003,9 +2008,6 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
 	dir = 4
 	},
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = 23
-	},
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
@@ -2176,6 +2178,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"Pz" = (
+/obj/machinery/mineral/processing_unit_console{
+	pixel_y = -18;
+	machinedir = 6;
+	output_dir = 1;
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "PB" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen)
@@ -2613,6 +2624,23 @@
 /obj/item/reagent_containers/food/drinks/bottle/applejack{
 	pixel_x = 4;
 	pixel_y = 9
+	},
+/obj/structure/closet/secure_closet/freezer/wall/directional/south,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/effect/turf_decal/trimline/opaque/syndiered/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
@@ -3110,7 +3138,7 @@ fU
 Rn
 xD
 Iv
-PB
+vd
 PB
 Vu
 XB
@@ -3122,8 +3150,8 @@ XB
 XB
 XB
 XB
-XB
 UC
+nN
 JO
 xD
 WW
@@ -3131,8 +3159,8 @@ WW
 WW
 xD
 Wa
+uh
 EA
-XB
 XB
 XB
 XB
@@ -3143,17 +3171,17 @@ XB
 XB
 XB
 XB
-XB
 lO
+ov
 Lg
 EA
 Vz
 sJ
 qe
 SM
-nN
+Dc
+Pz
 EA
-XB
 XB
 XB
 XB
@@ -3164,7 +3192,7 @@ XB
 XB
 XB
 XB
-XB
+lO
 lO
 Jk
 EA
@@ -3174,7 +3202,7 @@ vz
 Jd
 Gv
 EA
-XB
+EA
 XB
 XB
 XB
