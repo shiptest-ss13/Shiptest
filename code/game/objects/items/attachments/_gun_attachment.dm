@@ -9,6 +9,7 @@
 	wield_delay = 0.1 SECONDS
 	var/weapon_type = /obj/item/gun/ballistic/shotgun/automatic
 	var/obj/item/gun/attached_gun
+	var/internal_ammo = TRUE
 	//basically so the fire select shows the right icon
 	var/underbarrel_prefix = ""
 
@@ -16,6 +17,10 @@
 	. = ..()
 	if(weapon_type)
 		attached_gun = new weapon_type(src)
+		if(attached_gun.internal_cell || attached_gun.internal_magazine)
+			internal_ammo = TRUE
+		else
+			internal_ammo = FALSE
 
 /obj/item/attachment/gun/Destroy()
 	. = ..()
