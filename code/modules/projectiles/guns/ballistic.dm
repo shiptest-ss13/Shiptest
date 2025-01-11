@@ -16,6 +16,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	has_safety = TRUE
 	safety = TRUE
+	// when we load the gun, should it instantly chamber the next round?
+	var/always_chambers = FALSE
 
 	min_recoil = 0.1
 
@@ -24,6 +26,7 @@
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
 		/obj/item/attachment/sling
 	)
 	slot_available = list(
@@ -218,10 +221,8 @@
 	return chambered
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
-	. = ..()
-
-	if(.)
-		return
+	if(..())
+		return FALSE
 
 	if(sealed_magazine)
 		to_chat(user, span_warning("The [magazine_wording] on [src] is sealed and cannot be reloaded!"))
@@ -239,14 +240,14 @@
 
 	if(istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box))
 		if (bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)
-			if (chambered && !chambered.BB)
+			if ((chambered && !chambered.BB) || (chambered && always_chambers))
 				chambered.on_eject(shooter = user)
 				chambered = null
 			var/num_loaded = magazine.attackby(A, user, params)
 			if (num_loaded)
 				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into \the [src].</span>")
 				playsound(src, load_sound, load_sound_volume, load_sound_vary)
-				if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
+				if ((chambered == null && bolt_type == BOLT_TYPE_NO_BOLT) || always_chambers)
 					chamber_round()
 				A.update_appearance()
 				update_appearance()

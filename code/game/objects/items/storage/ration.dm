@@ -32,7 +32,7 @@
 		/obj/item/reagent_containers/food,
 		/obj/item/ration_heater))
 	STR.locked = TRUE
-	STR.locked_flavor = "sealed closed"
+	STR.locked_flavor = "seems to be sealed closed!"
 
 /obj/item/storage/ration/proc/open_ration(mob/user)
 	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
