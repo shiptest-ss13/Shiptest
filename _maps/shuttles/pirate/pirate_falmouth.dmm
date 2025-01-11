@@ -233,12 +233,12 @@
 "fu" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
 	icon_state = "1-9"
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "fH" = (
@@ -879,9 +879,9 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "xh" = (
@@ -1294,6 +1294,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Cl" = (
@@ -1326,6 +1329,8 @@
 /obj/item/storage/box/ammo/a357,
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Dn" = (
@@ -2281,7 +2286,7 @@
 /area/ship/hallway/fore)
 "Sf" = (
 /obj/structure/safe/floor{
-	number_of_tumblers = 0;
+	number_of_tumblers = 3;
 	tumblers = list(4,5,1)
 	},
 /obj/structure/cable{
@@ -2311,6 +2316,9 @@
 	dir = 2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "SB" = (
@@ -2533,7 +2541,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 10
 	},
-/obj/machinery/suit_storage_unit,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "YF" = (
@@ -2600,7 +2608,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
 	},
-/obj/machinery/suit_storage_unit,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "ZY" = (
