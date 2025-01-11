@@ -315,7 +315,8 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/independent/security{
-	name = "security suit storage unit"
+	name = "security suit storage unit";
+	req_access_txt = "1"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -2609,7 +2610,10 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
 	},
-/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/suit_storage_unit/independent/security{
+	name = "security suit storage unit";
+	req_access_txt = "1"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "ZY" = (
