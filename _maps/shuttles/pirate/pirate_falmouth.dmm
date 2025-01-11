@@ -269,10 +269,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_y = 10
-	},
-/obj/item/clothing/head/welding,
+/obj/item/pickaxe,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "hb" = (
@@ -824,7 +821,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "vC" = (
-/obj/machinery/portable_atmospherics/canister/fuel,
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
 	},
@@ -833,6 +829,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4{
 	dir = 5
 	},
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "vF" = (
@@ -1844,7 +1841,10 @@
 /turf/closed/wall/rust/yesdiag,
 /area/ship/crew/dorm/captain)
 "Li" = (
-/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/portable_atmospherics/canister/air{
+	anchored = 1;
+	can_be_unanchored = 1
+	},
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech,
@@ -1984,11 +1984,16 @@
 "NT" = (
 /obj/structure/table,
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = 5;
+	pixel_y = 10
+	},
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis{
 	pixel_x = -4;
 	pixel_y = 4
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/item/clothing/head/welding,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Oe" = (
