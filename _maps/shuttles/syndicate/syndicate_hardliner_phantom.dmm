@@ -103,7 +103,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/cargo)
+/area/ship/bridge)
 "cu" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -182,8 +182,8 @@
 /obj/item/storage/belt/mining,
 /obj/item/clothing/glasses/meson,
 /obj/item/mining_scanner,
-/obj/item/pickaxe/drill/jackhammer,
 /obj/item/melee/knife/survival,
+/obj/item/melee/axe/sledgehammer,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "eh" = (
@@ -793,7 +793,7 @@
 	id = "phantom_smelt"
 	},
 /turf/open/floor/plating,
-/area/ship/cargo)
+/area/ship/bridge)
 "qn" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -905,7 +905,7 @@
 	id = "phantom_smelt"
 	},
 /turf/open/floor/plating,
-/area/ship/cargo)
+/area/ship/bridge)
 "sX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -964,6 +964,12 @@
 	dir = 4;
 	name = "Cargo Bay"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "vx" = (
@@ -991,7 +997,7 @@
 	layer = 3.091
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/cargo)
+/area/ship/bridge)
 "wf" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1783,7 +1789,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/cargo)
+/area/ship/bridge)
 "Je" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner,
 /obj/structure/sign/warning/vacuum/external{
@@ -1867,6 +1873,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "JO" = (
@@ -1897,8 +1904,8 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/mining_scanner,
 /obj/item/radio/weather_monitor,
-/obj/item/pickaxe/drill/jackhammer,
 /obj/item/melee/knife/survival,
+/obj/item/melee/axe/sledgehammer,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "JV" = (
@@ -2069,7 +2076,7 @@
 	input_dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/cargo)
+/area/ship/bridge)
 "Nk" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -2361,7 +2368,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/cargo)
+/area/ship/bridge)
 "Tf" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -2481,7 +2488,7 @@
 	id = "phantom_smelt"
 	},
 /turf/open/floor/plating,
-/area/ship/cargo)
+/area/ship/bridge)
 "Wa" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3174,7 +3181,7 @@ XB
 lO
 ov
 Lg
-EA
+xD
 Vz
 sJ
 qe
@@ -3195,7 +3202,7 @@ XB
 lO
 lO
 Jk
-EA
+xD
 MX
 cg
 vz
