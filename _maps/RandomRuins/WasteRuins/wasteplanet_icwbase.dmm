@@ -69,9 +69,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
@@ -158,7 +156,6 @@
 	dir = 1
 	},
 /obj/effect/spawner/random/maintenance,
-/obj/machinery/light/dim/directional/south,
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "aB" = (
@@ -203,17 +200,13 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "aL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
@@ -222,9 +215,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -916,8 +907,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "dW" = (
 /obj/machinery/door/airlock/external{
-	dir = 4;
-	req_one_access = list(1,48)
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -999,7 +989,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "er" = (
 /obj/machinery/power/rtg/advanced{
-	power_gen = 5000
+	power_gen = 7500
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -1770,9 +1760,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
@@ -1930,9 +1918,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ib" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -2153,9 +2139,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -2483,6 +2467,14 @@
 	icon_state = "4-8"
 	},
 /obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"kG" = (
+/obj/structure/cable,
+/obj/machinery/porta_turret/ship/frontiersmen/light{
+	faction = list("Frontiersmen","Turret");
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
@@ -3361,9 +3353,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcommoni)
@@ -4364,9 +4354,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -4411,7 +4399,8 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret")
+	faction = list("Frontiersmen","Turret");
+	dir = 8
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -4622,7 +4611,6 @@
 "tI" = (
 /obj/machinery/door/airlock/medical{
 	name = "Morgue";
-	req_one_access = list(5,45);
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood{
@@ -4829,9 +4817,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
@@ -5616,7 +5602,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yt" = (
 /obj/machinery/power/rtg/advanced{
-	power_gen = 5000
+	power_gen = 7500
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -5722,8 +5708,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "za" = (
 /obj/machinery/door/airlock/external{
-	dir = 4;
-	req_one_access = list(1,48)
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5778,7 +5763,8 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret")
+	faction = list("Frontiersmen","Turret");
+	dir = 10
 	},
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -5842,9 +5828,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -6165,9 +6149,7 @@
 "AH" = (
 /obj/effect/turf_decal/weather,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
@@ -6238,9 +6220,7 @@
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
@@ -6376,7 +6356,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret")
+	faction = list("Frontiersmen","Turret");
+	dir = 5
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6805,9 +6786,7 @@
 "Dw" = (
 /obj/effect/turf_decal/weather,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -6815,8 +6794,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "Dy" = (
 /obj/machinery/door/airlock/external{
-	dir = 4;
-	req_one_access = list(1,48)
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/footprints{
@@ -6921,8 +6899,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "DW" = (
 /obj/machinery/door/airlock/external{
-	dir = 4;
-	req_one_access = list(1,48)
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7182,7 +7159,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret")
+	faction = list("Frontiersmen","Turret");
+	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -7323,9 +7301,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -7831,9 +7807,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcommoni)
@@ -8302,9 +8276,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -8582,8 +8554,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "LK" = (
 /obj/machinery/door/airlock/external{
-	dir = 4;
-	req_one_access = list(1,48)
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -8749,7 +8720,8 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "MC" = (
 /obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret")
+	faction = list("Frontiersmen","Turret");
+	dir = 10
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -8786,9 +8758,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -9085,9 +9055,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -10325,9 +10293,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
@@ -10353,9 +10319,7 @@
 "Tx" = (
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -10498,7 +10462,8 @@
 "Ud" = (
 /obj/structure/cable,
 /obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret")
+	faction = list("Frontiersmen","Turret");
+	dir = 5
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -10647,7 +10612,8 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret")
+	faction = list("Frontiersmen","Turret");
+	dir = 1
 	},
 /turf/open/floor/plating/wasteplanet{
 	icon_state = "panelscorched"
@@ -10844,8 +10810,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "VF" = (
 /obj/machinery/door/airlock/external{
-	dir = 4;
-	req_one_access = list(1,48)
+	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
@@ -11066,9 +11031,15 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "WB" = (
-/obj/machinery/light/dim/directional/south,
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/porta_turret/ship/frontiersmen/light{
+	faction = list("Frontiersmen","Turret");
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "WD" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
@@ -11401,7 +11372,8 @@
 "Ye" = (
 /obj/structure/cable,
 /obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret")
+	faction = list("Frontiersmen","Turret");
+	dir = 6
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -11746,8 +11718,6 @@
 "Zx" = (
 /obj/machinery/door/airlock/medical{
 	name = "Surgery";
-	req_one_access_txt = "150";
-	req_access = list(150,5);
 	dir = 4
 	},
 /obj/structure/cable{
@@ -11885,9 +11855,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
@@ -13858,7 +13826,7 @@ Ha
 Ck
 yb
 aA
-WB
+Ha
 Sr
 KB
 nn
@@ -13919,8 +13887,8 @@ JT
 Ha
 Zx
 Ha
-WB
-WB
+Ha
+Ha
 cz
 Ha
 Ha
@@ -14098,7 +14066,7 @@ nU
 Nx
 Nx
 Kp
-Ud
+kG
 Ha
 tr
 YA
@@ -16788,7 +16756,7 @@ Nx
 Nx
 Nx
 Nx
-nk
+WB
 Nx
 Nx
 Nx
@@ -16799,7 +16767,7 @@ Nx
 Nx
 Nx
 Nx
-nk
+WB
 Nx
 Nx
 Nt
