@@ -114,6 +114,16 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"cf" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/line,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 5
+	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = -4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/ccommons)
 "ck" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 1
@@ -2180,15 +2190,8 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/cargo)
 "NU" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/line,
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 5
-	},
-/obj/item/radio/intercom/directional/south{
-	pixel_x = -4
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/crew/ccommons)
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "Ob" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/suns/hatch{
@@ -2275,6 +2278,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
+"QJ" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering/engine)
 "QV" = (
 /obj/structure/table/chem,
 /obj/structure/sink/chem{
@@ -2402,7 +2408,8 @@
 /obj/structure/table/chem,
 /obj/machinery/jukebox/boombox{
 	pixel_x = -4;
-	pixel_y = 4
+	pixel_y = 4;
+	name = "Mr. Jams"
 	},
 /obj/machinery/reagentgrinder{
 	pixel_y = 7;
@@ -2538,7 +2545,8 @@
 "TM" = (
 /obj/structure/table/chem,
 /obj/machinery/microwave{
-	pixel_y = 5
+	pixel_y = 5;
+	name = "Mr. Wave"
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -2932,11 +2940,11 @@ VI
 VI
 VI
 Mn
+QJ
 ZG
 ZG
 ZG
-ZG
-ZG
+QJ
 Mn
 VI
 VI
@@ -2970,7 +2978,7 @@ VI
 VI
 lK
 LG
-ZG
+QJ
 hp
 EP
 ZG
@@ -2982,7 +2990,7 @@ Hu
 ZG
 Bi
 hp
-ZG
+QJ
 LG
 cX
 VI
@@ -3033,7 +3041,7 @@ VI
 VI
 VI
 VI
-ZG
+QJ
 ZG
 qj
 qj
@@ -3045,7 +3053,7 @@ qj
 qj
 qj
 ZG
-ZG
+QJ
 VI
 VI
 VI
@@ -3124,7 +3132,7 @@ xM
 rb
 gX
 fF
-NU
+cf
 qj
 qj
 qj
@@ -3413,7 +3421,7 @@ VI
 VI
 VI
 cX
-KT
+NU
 KT
 KT
 AX
@@ -3421,7 +3429,7 @@ Jw
 KT
 KT
 KT
-KT
+NU
 lK
 VI
 VI
@@ -3477,13 +3485,13 @@ VI
 VI
 VI
 VI
-KT
+NU
 KT
 pU
 Zm
 Ff
 KT
-KT
+NU
 VI
 VI
 VI
