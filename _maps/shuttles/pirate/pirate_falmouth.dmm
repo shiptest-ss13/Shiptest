@@ -1085,6 +1085,11 @@
 /obj/item/clothing/head/soft/utility_beige,
 /obj/item/clothing/glasses/cheapsuns,
 /obj/item/storage/guncase/pistol/cm357,
+/obj/item/paper/crumpled/fluff{
+	default_raw_text = "4-5-9";
+	pixel_x = -2;
+	pixel_y = 7
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm/captain)
 "AG" = (
@@ -1635,14 +1640,9 @@
 	pixel_x = -5;
 	pixel_y = -19
 	},
-/obj/item/paper/crumpled/fluff{
-	default_raw_text = "4-5-9";
-	pixel_x = -7;
-	pixel_y = 7
-	},
-/obj/item/pen{
-	pixel_x = -8;
-	pixel_y = 4
+/obj/item/paper_bin{
+	pixel_x = -6;
+	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine{
 	pixel_x = 10;
@@ -1652,6 +1652,10 @@
 	icon_state = "mglass-6-";
 	pixel_x = 6;
 	pixel_y = -1
+	},
+/obj/item/pen{
+	pixel_x = -8;
+	pixel_y = 4
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm/captain)
