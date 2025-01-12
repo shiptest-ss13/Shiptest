@@ -636,12 +636,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
-"kq" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "ky" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/bonfire,
@@ -794,6 +788,8 @@
 /obj/item/reagent_containers/glass/bottle/formaldehyde,
 /obj/item/reagent_containers/glass/bottle/formaldehyde,
 /obj/structure/closet/cabinet,
+/obj/item/reagent_containers/glass/filter,
+/obj/item/storage/firstaid/roumain,
 /turf/open/floor/wood/walnut,
 /area/ship/medical)
 "lX" = (
@@ -1377,6 +1373,12 @@
 "xc" = (
 /turf/closed/wall/r_wall,
 /area/ship/engineering/electrical)
+"xk" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "xt" = (
 /obj/machinery/computer/cryopod/retro/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -3643,11 +3645,11 @@ bF
 bF
 bF
 jM
-kq
-kq
-kq
-kq
-kq
+xk
+xk
+xk
+xk
+xk
 Go
 bF
 bF
