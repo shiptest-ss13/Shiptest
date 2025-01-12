@@ -316,7 +316,7 @@
 	name = "Bulldog Drum Magazine Crate"
 	desc = "Contains a 12-round 12ga drum magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty)
-	cost = 1250
+	cost = 1500
 	faction = /datum/faction/syndicate/scarborough_arms
 
 /* energy weapons */
