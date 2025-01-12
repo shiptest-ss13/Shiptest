@@ -62,6 +62,11 @@ jobs:
         with:
           path: tgui/.yarn/cache
           key: ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('tgui/yarn.lock') }}-${{ hashFiles('.github/workflows/ci_suite.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('tgui/yarn.lock') }}-
+            ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-
+            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-
 
       - name: Install Tools
         run: |
@@ -190,8 +195,8 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('tgui/yarn.lock') }}-${{ hashFiles('.github/workflows/ci_suite.yml') }}
           restore-keys: |
             ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('tgui/yarn.lock') }}-
-            ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
-            ${{ runner.os }}-build-
+            ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-
+            ${{ runner.os }}-yarn-
             ${{ runner.os }}-
 
       - name: Compile
