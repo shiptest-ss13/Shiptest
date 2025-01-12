@@ -808,7 +808,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "dp" = (
 /obj/structure/sign/warning/radiation/rad_area,
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
 "ds" = (
 /obj/effect/spawner/random/salvage/metal,
@@ -984,11 +984,6 @@
 	dir = 4
 	},
 /turf/open/floor/engine,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"em" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/random/mine,
-/turf/open/floor/plating/wasteplanet/rust,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "eo" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -3387,6 +3382,11 @@
 /obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/carpet/green,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
+"ov" = (
+/obj/structure/bodycontainer/morgue,
+/obj/effect/mob_spawn/human/corpse/cybersunfieldmedic,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "oE" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/diagonal,
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered,
@@ -4825,11 +4825,6 @@
 /obj/structure/fluff/oldturret,
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcommoni)
-"uH" = (
-/obj/structure/bodycontainer/morgue,
-/obj/effect/mob_spawn/human/corpse/cybersunfieldmedic,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "uJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -5416,10 +5411,6 @@
 /obj/structure/closet/secure_closet/freezer{
 	name = "fridge"
 	},
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 1
 	},
@@ -5605,6 +5596,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
+"yq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/mine,
+/turf/open/floor/plating/wasteplanet/rust,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "ys" = (
 /obj/effect/supplypod_rubble,
 /obj/structure/closet/crate/secure/engineering,
@@ -9047,14 +9043,8 @@
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "NO" = (
-/obj/structure/closet/crate/rations,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "NS" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border,
 /obj/machinery/hydroponics/constructable,
@@ -10832,7 +10822,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "VC" = (
 /obj/structure/sign/departments/medbay/alt,
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "VD" = (
 /obj/structure/bed,
@@ -11633,6 +11623,7 @@
 "YU" = (
 /obj/effect/supplypod_rubble,
 /obj/structure/closet/crate/secure/weapon,
+/obj/item/storage/box/ammo/a762_40,
 /obj/item/storage/box/ammo/a762_40,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -13910,7 +13901,7 @@ oj
 pY
 Np
 zY
-em
+yq
 cX
 zY
 "}
@@ -13938,7 +13929,7 @@ Ha
 VC
 SO
 nS
-cF
+AN
 cF
 cF
 Tz
@@ -14011,7 +14002,7 @@ lo
 mi
 Nx
 Nx
-cF
+AN
 zA
 aQ
 Lk
@@ -14121,7 +14112,7 @@ so
 ja
 KZ
 Tm
-cF
+AN
 cF
 cF
 IK
@@ -14720,7 +14711,7 @@ Wd
 Cj
 Ha
 tY
-uH
+ov
 Ha
 Ha
 No
@@ -14937,7 +14928,7 @@ dG
 Mh
 cF
 cF
-cF
+AN
 jM
 iY
 LX
@@ -15120,7 +15111,7 @@ yK
 cx
 cF
 cF
-cF
+AN
 EG
 MF
 LX
@@ -15475,7 +15466,7 @@ Ff
 Sz
 Fp
 kx
-NO
+kd
 PH
 pw
 Tj
@@ -15603,7 +15594,7 @@ pw
 Tj
 QF
 fb
-mz
+tw
 mz
 tw
 Ku
@@ -15786,7 +15777,7 @@ pw
 ku
 dt
 dE
-mz
+tw
 mz
 tw
 aq
@@ -16071,11 +16062,11 @@ qN
 ho
 ho
 MZ
-gL
+NO
 DW
 dW
 Dy
-gL
+NO
 ER
 Nq
 ZO
