@@ -219,13 +219,13 @@
 	cost = 500
 
 /datum/supply_pack/magazine/skm_ammo_extended
-	name = "SKM Magazine Crate"
+	name = "SKM Extended Magazine Crate"
 	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of fourty rounds."
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40/extended/empty)
 	cost = 1000
 	faction = /datum/faction/inteq
-	faction_discount = 20
-
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/magazine/f4_mag
 	name = "F4 Magazine Crate"
