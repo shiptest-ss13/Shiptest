@@ -237,7 +237,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "bU" = (
 /obj/structure/cable/yellow{
@@ -557,7 +557,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "fb" = (
 /obj/effect/turf_decal/techfloor{
@@ -820,16 +820,20 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/central)
 "ht" = (
-/obj/machinery/elevator_call_button{
-	dir = 4;
-	pixel_x = -25
+/obj/structure/platform,
+/obj/structure/platform/corner{
+	dir = 10
 	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 1
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
-/obj/effect/turf_decal/techfloor,
-/turf/open/floor/plasteel/patterned/grid,
-/area/outpost/hallway/port)
+/obj/structure/platform{
+	dir = 8
+	},
+/turf/open/water/beach/deep,
+/area/outpost/external)
 "hB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
@@ -1063,7 +1067,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "jv" = (
 /obj/structure/table,
@@ -1682,10 +1686,12 @@
 /obj/effect/turf_decal/corner/opaque/brown/diagonal{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/outline/orange,
-/obj/effect/turf_decal/industrial/traffic/fulltile,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/dim/directional/north,
+/obj/effect/turf_decal/industrial/outline/orange,
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/outpost/cargo/smeltery)
 "ol" = (
@@ -1932,7 +1938,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "qH" = (
 /obj/machinery/power/apc/auto_name/directional/west,
@@ -2012,7 +2018,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "ra" = (
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -2304,7 +2310,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "sW" = (
 /obj/structure/railing{
@@ -3820,7 +3826,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "Ec" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4130,12 +4136,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/cargo)
 "FN" = (
-/obj/structure/platform/industrial_alt{
-	dir = 1
-	},
-/obj/structure/platform/industrial_alt/corner{
-	dir = 9
-	},
+/obj/effect/decal/fakelattice,
 /obj/structure/platform/industrial_alt{
 	dir = 4
 	},
@@ -4422,7 +4423,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "HT" = (
 /obj/effect/turf_decal/techfloor,
@@ -4486,9 +4487,11 @@
 /obj/effect/turf_decal/corner/opaque/brown/diagonal{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/outline/orange,
-/obj/effect/turf_decal/industrial/traffic/fulltile,
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/effect/turf_decal/industrial/outline/orange,
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/outpost/cargo/smeltery)
 "Im" = (
@@ -4516,6 +4519,9 @@
 "Ir" = (
 /obj/effect/turf_decal/corner/transparent/lightgrey{
 	dir = 8
+	},
+/obj/effect/turf_decal/industrial/shutoff{
+	pixel_y = 16
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
@@ -4703,6 +4709,9 @@
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
 	},
+/obj/structure/platform{
+	dir = 4
+	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
 "Kc" = (
@@ -4740,7 +4749,6 @@
 /turf/closed/indestructible/titanium,
 /area/outpost/cargo)
 "Kx" = (
-/obj/effect/turf_decal/industrial/shutoff,
 /obj/effect/turf_decal/corner/transparent/nsorange,
 /obj/effect/turf_decal/corner/transparent/nsorange{
 	dir = 1
@@ -4986,7 +4994,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "Mi" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -5296,7 +5304,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "Ot" = (
 /obj/item/kirbyplants/random,
@@ -5308,6 +5316,14 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/port)
+"Ou" = (
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
+/area/outpost/external)
 "Ox" = (
 /obj/effect/spawner/random/structure/grille,
 /turf/open/floor/plating/rust,
@@ -5320,9 +5336,6 @@
 /area/outpost/cargo)
 "OJ" = (
 /obj/structure/platform,
-/obj/structure/platform/corner{
-	dir = 10
-	},
 /obj/effect/forcefield/mime/advanced{
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
@@ -5425,13 +5438,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
-"PG" = (
-/obj/effect/decal/fakelattice,
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/turf/open/water/beach/deep,
-/area/outpost/external)
 "PL" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/corner/opaque/brown/diagonal{
@@ -5478,6 +5484,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo)
+"Qc" = (
+/obj/structure/platform/industrial_alt{
+	dir = 1
+	},
+/obj/structure/platform/industrial_alt{
+	dir = 4
+	},
+/turf/open/water/beach/deep,
+/area/outpost/external)
 "Qe" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
@@ -5537,7 +5552,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "QC" = (
 /turf/closed/indestructible/fakeglass,
@@ -5658,17 +5673,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/central)
-"RE" = (
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/obj/structure/platform{
-	dir = 4
-	},
-/turf/open/water/beach/deep,
-/area/outpost/external)
 "RF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset/wall/directional/south,
@@ -5794,9 +5798,6 @@
 /turf/open/floor/wood,
 /area/outpost/hallway/central)
 "SJ" = (
-/obj/machinery/elevator_call_button{
-	pixel_x = -23
-	},
 /obj/machinery/newscaster/directional/north,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
@@ -6053,7 +6054,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "Us" = (
 /obj/machinery/conveyor{
@@ -6447,6 +6448,9 @@
 "WX" = (
 /obj/structure/platform/industrial_alt{
 	dir = 1
+	},
+/obj/structure/platform/industrial_alt/corner{
+	dir = 9
 	},
 /obj/structure/platform/industrial_alt{
 	dir = 4
@@ -9057,14 +9061,14 @@ EV
 EV
 EV
 Le
-RE
-kD
-Le
-Ka
 Ka
 kD
 Le
-RE
+Ou
+Ou
+kD
+Le
+Ka
 kD
 EV
 EV
@@ -9190,7 +9194,7 @@ eW
 eW
 qF
 hi
-WX
+Qc
 Gv
 Gv
 Gv
@@ -9401,7 +9405,7 @@ kL
 kL
 xy
 hi
-WX
+Qc
 Gv
 Gv
 Gv
@@ -10732,7 +10736,7 @@ gz
 AI
 iW
 iW
-ht
+BK
 ew
 Vp
 Vp
@@ -11201,7 +11205,7 @@ EV
 ag
 ZA
 Xc
-OJ
+ht
 Fl
 ZA
 Xc
@@ -11644,7 +11648,7 @@ ls
 tA
 ls
 ls
-WX
+Qc
 Jq
 EV
 EV
@@ -12232,7 +12236,7 @@ EV
 cQ
 Gv
 Gv
-PG
+FN
 Gv
 uC
 HU
@@ -12240,7 +12244,7 @@ Uw
 Wz
 qj
 HU
-FN
+WX
 Gv
 Jq
 EV
@@ -12344,7 +12348,7 @@ Ue
 HU
 HU
 HU
-FN
+WX
 Gv
 Gv
 Gv
@@ -12453,7 +12457,7 @@ tB
 tB
 tB
 tB
-WX
+Qc
 uC
 tB
 YM
