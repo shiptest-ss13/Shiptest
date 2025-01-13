@@ -5,7 +5,9 @@
 /area/space)
 "d" = (
 /obj/structure/elevator_platform,
-/obj/machinery/light/directional/east,
+/obj/machinery/status_display/elevator{
+	pixel_y = -32
+	},
 /turf/template_noop,
 /area/space)
 "I" = (
@@ -19,29 +21,22 @@
 /area/space)
 "T" = (
 /obj/structure/elevator_platform,
-/obj/machinery/status_display/elevator{
-	pixel_x = -32
-	},
-/turf/template_noop,
-/area/space)
-"Y" = (
-/obj/structure/elevator_platform,
-/obj/machinery/light/directional/west,
+/obj/machinery/light/floor/hangar,
 /turf/template_noop,
 /area/space)
 
 (1,1,1) = {"
 T
 a
-Y
+a
 "}
 (2,1,1) = {"
 a
 a
-a
+d
 "}
 (3,1,1) = {"
-I
 a
-d
+I
+T
 "}
