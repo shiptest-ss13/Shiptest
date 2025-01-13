@@ -735,13 +735,6 @@
 	icon_state = "platingdmg2"
 	},
 /area/outpost/external)
-"gG" = (
-/obj/structure/platform/industrial_alt,
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/turf/open/water/beach/deep,
-/area/outpost/external)
 "gJ" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/corner/opaque/brown/diagonal{
@@ -2553,7 +2546,10 @@
 	},
 /area/outpost/maintenance/port)
 "uC" = (
-/obj/effect/decal/fakelattice,
+/obj/structure/platform/industrial_alt,
+/obj/structure/platform/industrial_alt/corner{
+	dir = 6
+	},
 /obj/structure/platform/industrial_alt{
 	dir = 4
 	},
@@ -4707,9 +4703,6 @@
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
 	},
-/obj/structure/platform{
-	dir = 4
-	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
 "Kc" = (
@@ -5432,6 +5425,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
+"PG" = (
+/obj/effect/decal/fakelattice,
+/obj/structure/platform/industrial_alt{
+	dir = 4
+	},
+/turf/open/water/beach/deep,
+/area/outpost/external)
 "PL" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/corner/opaque/brown/diagonal{
@@ -5517,9 +5517,6 @@
 /area/outpost/hallway/central)
 "Qp" = (
 /obj/structure/platform/industrial_alt,
-/obj/structure/platform/industrial_alt/corner{
-	dir = 6
-	},
 /obj/structure/platform/industrial_alt{
 	dir = 4
 	},
@@ -5661,6 +5658,17 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/central)
+"RE" = (
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/obj/structure/platform{
+	dir = 4
+	},
+/turf/open/water/beach/deep,
+/area/outpost/external)
 "RF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset/wall/directional/south,
@@ -6085,14 +6093,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/port)
-"UN" = (
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
-/area/outpost/external)
 "UO" = (
 /obj/effect/turf_decal/corner/opaque/brown/diagonal{
 	dir = 4
@@ -9057,14 +9057,14 @@ EV
 EV
 EV
 Le
-Ka
-kD
-Le
-UN
-UN
+RE
 kD
 Le
 Ka
+Ka
+kD
+Le
+RE
 kD
 EV
 EV
@@ -9081,7 +9081,7 @@ Gv
 Gv
 Gv
 Gv
-Qp
+uC
 mx
 hi
 dj
@@ -9173,7 +9173,7 @@ Gv
 Gv
 Gv
 Gv
-Qp
+uC
 EA
 EA
 EA
@@ -10329,7 +10329,7 @@ tO
 Vp
 Vp
 IL
-ew
+QC
 YG
 AJ
 CR
@@ -10533,7 +10533,7 @@ tO
 Vp
 Vp
 Vp
-ew
+QC
 YG
 yg
 gA
@@ -10800,7 +10800,7 @@ qn
 qn
 mq
 cH
-gG
+Qp
 EA
 xO
 ZJ
@@ -12232,9 +12232,9 @@ EV
 cQ
 Gv
 Gv
-uC
+PG
 Gv
-Qp
+uC
 HU
 Uw
 Wz
@@ -12454,7 +12454,7 @@ tB
 tB
 tB
 WX
-Qp
+uC
 tB
 YM
 tB

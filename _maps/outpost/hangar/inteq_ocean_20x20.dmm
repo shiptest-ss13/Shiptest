@@ -5,6 +5,26 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
+"bd" = (
+/obj/structure/platform/industrial_alt,
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
+/area/hangar)
+"bv" = (
+/obj/structure/platform/industrial_alt{
+	dir = 4
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
+/area/hangar)
 "bY" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
@@ -13,10 +33,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
-/turf/open/floor/plasteel/patterned/grid,
-/area/hangar)
-"dq" = (
-/obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "dD" = (
@@ -68,6 +84,17 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
 /turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"kO" = (
+/obj/structure/platform/industrial_alt{
+	dir = 1
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
 /area/hangar)
 "nC" = (
 /obj/structure/platform/industrial_alt{
@@ -148,17 +175,6 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"sN" = (
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
-/area/hangar)
 "vA" = (
 /turf/closed/indestructible/rock,
 /area/hangar)
@@ -227,6 +243,9 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
+"DA" = (
+/turf/closed/indestructible/fakeglass,
+/area/hangar)
 "El" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -270,6 +289,10 @@
 /area/hangar)
 "IT" = (
 /obj/effect/landmark/outpost/hangar_numbers,
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"Jn" = (
+/obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "Ld" = (
@@ -342,17 +365,6 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Re" = (
-/obj/structure/platform/industrial_alt{
-	dir = 1
-	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
-/area/hangar)
 "SZ" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden,
@@ -374,15 +386,6 @@
 	dir = 4
 	},
 /turf/closed/indestructible/fakeglass,
-/area/hangar)
-"Ww" = (
-/obj/structure/platform/industrial_alt,
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
 /area/hangar)
 "XX" = (
 /turf/open/floor/plasteel/elevatorshaft,
@@ -722,30 +725,30 @@ Le
 Le
 Le
 dD
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
-sN
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
+bv
 dD
 Le
 Le
@@ -860,7 +863,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 dD
 eI
 sH
@@ -889,7 +892,7 @@ eI
 sH
 YO
 dD
-Re
+kO
 Le
 Le
 Le
@@ -907,7 +910,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -936,7 +939,7 @@ eI
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -954,7 +957,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -983,7 +986,7 @@ eI
 sH
 YO
 Ld
-Re
+kO
 Le
 Le
 Le
@@ -1001,7 +1004,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 sI
 eI
 sH
@@ -1030,7 +1033,7 @@ eI
 sH
 YO
 Ld
-Re
+kO
 Le
 Le
 Le
@@ -1048,7 +1051,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 sI
 eI
 sH
@@ -1077,7 +1080,7 @@ eI
 sH
 YO
 Ld
-Re
+kO
 Le
 Le
 Le
@@ -1095,7 +1098,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -1124,7 +1127,7 @@ eI
 sH
 YO
 Ld
-Re
+kO
 Le
 Le
 Le
@@ -1142,7 +1145,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 sI
 eI
 sH
@@ -1171,7 +1174,7 @@ Me
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -1189,7 +1192,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 sI
 eI
 sH
@@ -1218,7 +1221,7 @@ eI
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -1236,7 +1239,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -1265,7 +1268,7 @@ eI
 sH
 YO
 Ld
-Re
+kO
 Le
 Le
 Le
@@ -1283,7 +1286,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -1312,7 +1315,7 @@ eI
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -1330,7 +1333,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -1359,7 +1362,7 @@ eI
 sH
 YO
 Ld
-Re
+kO
 Le
 Le
 vA
@@ -1377,7 +1380,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -1406,7 +1409,7 @@ eI
 sH
 YO
 Ld
-Re
+kO
 Le
 Le
 vA
@@ -1424,7 +1427,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 sI
 eI
 sH
@@ -1453,7 +1456,7 @@ eI
 sH
 YO
 Ld
-Re
+kO
 Le
 Le
 Le
@@ -1471,7 +1474,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -1500,7 +1503,7 @@ eI
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -1518,7 +1521,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -1547,7 +1550,7 @@ eI
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -1565,7 +1568,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 sI
 eI
 sH
@@ -1594,7 +1597,7 @@ eI
 sH
 YO
 Ld
-Re
+kO
 Le
 Le
 Le
@@ -1612,7 +1615,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 sI
 eI
 sH
@@ -1641,7 +1644,7 @@ Me
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -1659,7 +1662,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -1688,7 +1691,7 @@ eI
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -1706,7 +1709,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -1735,7 +1738,7 @@ eI
 SZ
 YO
 Ld
-Re
+kO
 Le
 Le
 Le
@@ -1753,7 +1756,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 sI
 eI
 sH
@@ -1782,7 +1785,7 @@ eI
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -1800,7 +1803,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 sI
 eI
 sH
@@ -1829,7 +1832,7 @@ eI
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -1847,7 +1850,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 Ld
 eI
 sH
@@ -1876,7 +1879,7 @@ eI
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -1894,7 +1897,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 sI
 eI
 sH
@@ -1923,7 +1926,7 @@ NM
 sH
 YO
 sI
-Re
+kO
 Le
 Le
 Le
@@ -1941,7 +1944,7 @@ Le
 Le
 Le
 Le
-Ww
+bd
 dD
 eI
 sH
@@ -1970,7 +1973,7 @@ sH
 sH
 YO
 dD
-Re
+kO
 Le
 Le
 Le
@@ -2047,11 +2050,11 @@ eI
 Fj
 IT
 Fj
-dq
+Jn
 Fj
 Yx
 Fj
-dq
+Jn
 Fj
 IT
 Fj
@@ -2330,9 +2333,9 @@ VB
 dD
 VB
 dD
-VB
+DA
 dD
-VB
+DA
 dD
 VB
 dD
