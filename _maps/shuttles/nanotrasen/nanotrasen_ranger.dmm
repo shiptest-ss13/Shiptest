@@ -123,16 +123,51 @@
 /turf/open/floor/pod/light,
 /area/ship/storage/equip)
 "aK" = (
-/obj/structure/sign/poster/official/ion_carbine{
-	pixel_x = 32
-	},
-/obj/structure/window/reinforced/spawner,
 /obj/structure/crate_shelf,
+/obj/item/storage/box/ammo/c9mm{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/storage/box/ammo/c9mm{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/storage/box/ammo/c9mm{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/storage/box/ammo/c9mm{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/storage/box/ammo/c9mm_rubber{
+	pixel_x = -9
+	},
+/obj/structure/closet/crate/secure/gear{
+	name = "Ammunition Crate"
+	},
+/obj/item/ammo_box/magazine/smgm9mm{
+	pixel_x = 11
+	},
+/obj/item/ammo_box/magazine/smgm9mm{
+	pixel_x = 11
+	},
+/obj/item/ammo_box/magazine/smgm9mm{
+	pixel_x = 11
+	},
+/obj/item/ammo_box/magazine/smgm9mm{
+	pixel_x = 11
+	},
+/obj/item/ammo_box/magazine/co9mm,
 /obj/effect/turf_decal/industrial/fire{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/sign/poster/official/ion_carbine{
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
@@ -190,9 +225,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "br" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/machinery/door/window/northright{
 	dir = 4
 	},
@@ -1315,9 +1348,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "jb" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "jd" = (
@@ -1946,7 +1977,6 @@
 /area/ship/hallway/starboard)
 "nE" = (
 /obj/machinery/button/door{
-	dir = 2;
 	id = "Ranger_AI_Core_Blasts";
 	name = "Access Blast Doors";
 	pixel_x = -2;
@@ -1955,7 +1985,6 @@
 	req_ship_access = 1
 	},
 /obj/machinery/button/shieldwallgen{
-	dir = 2;
 	id = "AI_Core_Field_Engi";
 	pixel_x = 6;
 	pixel_y = 20
@@ -2076,9 +2105,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "oI" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/northleft{
 	dir = 4
 	},
@@ -2518,9 +2545,7 @@
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/central)
 "rW" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/northright{
 	dir = 4
 	},
@@ -2756,9 +2781,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "tr" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "tK" = (
@@ -3192,9 +3215,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "wc" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/northright{
 	dir = 4
 	},
@@ -3561,42 +3582,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
-/obj/item/storage/box/ammo/c9mm{
-	pixel_x = -9;
-	pixel_y = 9
-	},
-/obj/item/storage/box/ammo/c9mm{
-	pixel_x = -9;
-	pixel_y = 9
-	},
-/obj/item/storage/box/ammo/c9mm{
-	pixel_x = -9;
-	pixel_y = 9
-	},
-/obj/item/storage/box/ammo/c9mm{
-	pixel_x = -9;
-	pixel_y = 9
-	},
-/obj/item/storage/box/ammo/c9mm_rubber{
-	pixel_x = -9
-	},
-/obj/structure/closet/crate/secure/gear{
-	name = "Ammunition Crate"
-	},
 /obj/effect/decal/cleanable/wrapping,
-/obj/item/ammo_box/magazine/smgm9mm{
-	pixel_x = 11
-	},
-/obj/item/ammo_box/magazine/smgm9mm{
-	pixel_x = 11
-	},
-/obj/item/ammo_box/magazine/smgm9mm{
-	pixel_x = 11
-	},
-/obj/item/ammo_box/magazine/smgm9mm{
-	pixel_x = 11
-	},
-/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/storage/equip)
 "yZ" = (
@@ -3974,9 +3960,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "BO" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/northleft{
 	dir = 4
 	},
@@ -4066,6 +4050,28 @@
 	pixel_y = -1;
 	req_ship_access = 1
 	},
+/obj/structure/closet/crate/hydroponics{
+	name = "Sustenance Crate"
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/storage/ration/assorted_salted_offal,
+/obj/item/storage/ration/battered_fish_sticks,
+/obj/item/storage/ration/beef_goulash,
+/obj/item/storage/ration/beef_strips,
+/obj/item/storage/ration/fried_fish,
+/obj/item/reagent_containers/food/snacks/popcorn{
+	desc = "Dehydrated, salted sunflower seeds, for snacking!";
+	icon = 'icons/obj/hydroponics/seeds.dmi';
+	icon_state = "seed-sunflower";
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4);
+	name = "Snacking Sunflower Seeds"
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Cq" = (
@@ -4209,7 +4215,6 @@
 	id = "AI_Core_Field_Engi"
 	},
 /obj/machinery/door/poddoor{
-	dir = 2;
 	id = "Ranger_AI_Core_Blasts";
 	name = "Communications Access"
 	},
@@ -4411,32 +4416,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "EA" = (
-/obj/structure/closet/crate/hydroponics{
-	name = "Sustenance Crate"
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/storage/ration/assorted_salted_offal,
-/obj/item/storage/ration/battered_fish_sticks,
-/obj/item/storage/ration/beef_goulash,
-/obj/item/storage/ration/beef_strips,
-/obj/item/storage/ration/fried_fish,
-/obj/item/reagent_containers/food/snacks/popcorn{
-	desc = "Dehydrated, salted sunflower seeds, for snacking!";
-	icon = 'icons/obj/hydroponics/seeds.dmi';
-	icon_state = "seed-sunflower";
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4);
-	name = "Snacking Sunflower Seeds"
-	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/storage/ration/cheese_pizza_slice,
-/obj/item/storage/ration/pepperoni_pizza_slice,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "EE" = (
@@ -6705,7 +6686,6 @@
 /area/ship/crew/specialized/security)
 "Wp" = (
 /obj/machinery/door/poddoor{
-	dir = 2;
 	id = "Ranger_AI_Core_Blasts";
 	name = "Communications Access"
 	},
@@ -7123,9 +7103,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Zj" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/machinery/door/window/northleft{
 	dir = 4
 	},

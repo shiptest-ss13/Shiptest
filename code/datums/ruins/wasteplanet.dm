@@ -4,13 +4,6 @@
 	prefix = "_maps/RandomRuins/WasteRuins/"
 	ruin_type = RUINTYPE_WASTE
 
-/datum/map_template/ruin/wasteplanet/pandora
-	id = "pandora_arena"
-	suffix = "wasteplanet_pandora.dmm"
-	name = "Pandora Arena"
-	description = "Some... thing has settled here."
-	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_MEGAFAUNA, RUIN_TAG_LIVEABLE)
-
 /datum/map_template/ruin/wasteplanet/radiation
 	name = "Honorable deeds storage"
 	id = "wasteplanet_radiation"

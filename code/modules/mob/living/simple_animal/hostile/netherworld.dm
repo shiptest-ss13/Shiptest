@@ -126,6 +126,7 @@
 	deathmessage = "wails as its form turns into a pulpy mush."
 	deathsound = 'sound/voice/hiss6.ogg'
 	phaser = FALSE
+	var/sound_prob = 1
 
 /mob/living/simple_animal/hostile/netherworld/migo/asteroid
 	faction = list("mining")
@@ -147,7 +148,7 @@
 	..()
 	if(stat)
 		return
-	if(prob(10))
+	if(prob(sound_prob))
 		var/chosen_sound = pick(migo_sounds)
 		playsound(src, chosen_sound, 50, TRUE)
 
