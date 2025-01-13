@@ -5,7 +5,6 @@
 	item_state = "helmet"
 	cuttable = TRUE
 	clothamnt = 2
-	var/flipped = 0
 	unique_reskin = list("grey cap" = "greysoft",
 						"black cap" = "blacksoft",
 						"red cap" = "redsoft",
@@ -22,19 +21,26 @@
 						"brown cap" = "brownsoft",
 						"light brown cap" = "lightbrownsoft"
 						)
+	var/flipped = 0
+	//we can't use initial for procs because we need to account for unique_reskin, so this stores the skin of the hat we use.
+	var/hat_icon
+
+/obj/item/clothing/head/soft/Initialize()
+	. = ..()
+	hat_icon = icon_state
 
 /obj/item/clothing/head/soft/examine(mob/user)
 	. = ..()
 	if(unique_reskin && !current_skin)
 		. += "You can <b>Alt-Click</b> [src] to apply a new skin to it."
 
-/obj/item/clothing/head/soft/reskin_obj(mob/M)
+/obj/item/clothing/head/soft/reskin_obj(mob/M, change_name)
 	. = ..()
-	if(current_skin)
-		item_state = unique_reskin[current_skin]
+	hat_icon = icon_state
+	return
 
 /obj/item/clothing/head/soft/dropped()
-	icon_state = "[current_skin]"
+	icon_state = hat_icon
 	flipped=0
 	..()
 
@@ -47,7 +53,7 @@
 
 /obj/item/clothing/head/soft/AltClick(mob/user)
 	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		reskin_obj(user)
+		reskin_obj(user, TRUE)
 		return TRUE
 	else
 		if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -60,16 +66,10 @@
 	if(!user.incapacitated())
 		flipped = !flipped
 		if(src.flipped)
-			if(current_skin)
-				icon_state = "[current_skin]_flipped"
-			else
-				icon_state = "[icon_state]_flipped"
+			icon_state = "[icon_state]_flipped"
 			to_chat(user, span_notice("You flip the hat backwards."))
 		else
-			if(current_skin)
-				icon_state = "[current_skin]"
-			else
-				icon_state = initial(icon_state)
+			icon_state = hat_icon
 			to_chat(user, span_notice("You flip the hat back in normal position."))
 		usr.update_inv_head()	//so our mob-overlays update
 
