@@ -8,9 +8,11 @@
 
 /datum/supply_pack/spacesuit_armor/spacesuit
 	name = "Space Suit Crate"
-	desc = "Contains one basic space suit. Although the technology is centuries old, it should protect you from the vacuum of space."
+	desc = "Contains two basic space suits. Although the technology is centuries old, it should protect you from the vacuum of space."
 	cost = 500
 	contains = list(/obj/item/clothing/suit/space,
+					/obj/item/clothing/suit/space,
+					/obj/item/clothing/head/helmet/space,
 					/obj/item/clothing/head/helmet/space)
 	crate_name = "space suit crate"
 

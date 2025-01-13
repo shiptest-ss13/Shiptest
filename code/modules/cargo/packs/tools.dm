@@ -62,7 +62,7 @@
 /datum/supply_pack/tools/mining
 	name = "Basic Mining Crate"
 	desc = "Contains two pickaxes, two ore bags, and two manual mining scanners."
-	cost = 1000
+	cost = 250 //cheaper to send your legions to war (mining) (also you can just print all this asides the scanners so what's the point anyway)
 	contains = list(
 		/obj/item/pickaxe,
 		/obj/item/pickaxe/mini,
@@ -128,7 +128,7 @@
 /datum/supply_pack/tools/plasmacutter
 	name = "Plasmacutter Crate"
 	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
-	cost = 2500
+	cost = 2000
 	contains = list(/obj/item/gun/energy/plasmacutter)
 	crate_name = "plasmacutter crate"
 
