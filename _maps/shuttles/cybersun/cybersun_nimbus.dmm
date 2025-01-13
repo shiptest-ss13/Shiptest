@@ -369,10 +369,10 @@
 /obj/structure/railing/thin,
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal,
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/item/radio/intercom/directional/east{
 	pixel_y = 5
 	},
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "gX" = (
@@ -469,6 +469,14 @@
 	icon_state = "plant-17";
 	pixel_y = 8;
 	pixel_x = -7
+	},
+/obj/item/paper_bin{
+	pixel_y = 3;
+	pixel_x = 3
+	},
+/obj/item/pen/edagger{
+	pixel_y = 5;
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -796,9 +804,6 @@
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
 	},
-/area/ship/bridge)
-"qg" = (
-/turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
 "qj" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1762,6 +1767,16 @@
 	color = "#E6D2BA"
 	},
 /area/ship/crew/ccommons)
+"Gu" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/line,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 5
+	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = -4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/ccommons)
 "GQ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 8
@@ -2271,16 +2286,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
-"PR" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/line,
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 5
-	},
-/obj/item/radio/intercom/directional/south{
-	pixel_x = -4
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/crew/ccommons)
 "QV" = (
 /obj/structure/table/chem,
 /obj/structure/sink/chem{
@@ -2348,7 +2353,6 @@
 	},
 /area/ship/cargo)
 "Rm" = (
-/obj/structure/crate_shelf,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal,
 /obj/machinery/button/door{
 	pixel_y = 23;
@@ -2361,6 +2365,7 @@
 	id = "zcs"
 	},
 /obj/machinery/light/directional/east,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "Rs" = (
@@ -2503,6 +2508,9 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/ccommons)
+"TD" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "TL" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
 /obj/structure/cable/cyan{
@@ -2560,19 +2568,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/ccommons)
 "TS" = (
-/obj/structure/table/glass,
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 6
 	},
-/obj/item/paper_bin{
-	pixel_y = 3;
-	pixel_x = 3
-	},
-/obj/item/pen/edagger{
-	pixel_y = 5;
-	pixel_x = 2
-	},
 /obj/structure/extinguisher_cabinet/directional/south,
+/obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Uu" = (
@@ -3132,7 +3132,7 @@ xM
 rb
 gX
 fF
-PR
+Gu
 qj
 qj
 qj
@@ -3421,7 +3421,7 @@ VI
 VI
 VI
 cX
-qg
+TD
 KT
 KT
 AX
@@ -3429,7 +3429,7 @@ Jw
 KT
 KT
 KT
-qg
+TD
 lK
 VI
 VI
@@ -3485,13 +3485,13 @@ VI
 VI
 VI
 VI
-qg
+TD
 KT
 pU
 Zm
 Ff
 KT
-qg
+TD
 VI
 VI
 VI
