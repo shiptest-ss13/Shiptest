@@ -5,6 +5,7 @@
 	icon_state = "energy"
 	weapon_type = /obj/item/gun/energy/e_gun
 	var/automatic_charge_overlays = TRUE
+	allow_hand_interaction = TRUE
 
 /obj/item/attachment/gun/energy/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/stock_parts/cell/gun))

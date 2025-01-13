@@ -58,6 +58,7 @@
 	name = "ZAP-22"
 	desc = "A compact underbarrel gun chambered in 22lr. Holds eight rounds."
 	weapon_type = /obj/item/gun/ballistic/automatic/pistol/himehabu/underbarrel
+	allow_hand_interaction = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/himehabu/underbarrel
 	name = "PC-81 \"Himehabu\""

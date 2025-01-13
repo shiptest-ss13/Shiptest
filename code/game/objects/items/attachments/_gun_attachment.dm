@@ -9,7 +9,7 @@
 	wield_delay = 0.1 SECONDS
 	var/weapon_type = /obj/item/gun/ballistic/shotgun/automatic
 	var/obj/item/gun/attached_gun
-	var/internal_ammo = TRUE
+	var/allow_hand_interaction = FALSE
 	//basically so the fire select shows the right icon
 	var/underbarrel_prefix = ""
 
@@ -17,10 +17,7 @@
 	. = ..()
 	if(weapon_type)
 		attached_gun = new weapon_type(src)
-		if(attached_gun.internal_cell || attached_gun.internal_magazine)
-			internal_ammo = TRUE
-		else
-			internal_ammo = FALSE
+		attached_gun.interaction_flags_item = NONE
 
 /obj/item/attachment/gun/Destroy()
 	. = ..()
@@ -70,13 +67,14 @@
 	attached_gun.unique_action(user)
 
 /obj/item/attachment/gun/on_attack_hand(obj/item/gun/gun, mob/user, list/examine_list)
-	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
-		attack_hand(user)
+	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL && allow_hand_interaction)
+		attached_gun.attack_hand(user)
 		return COMPONENT_NO_ATTACK_HAND
 
 /obj/item/attachment/gun/attack_hand(mob/user)
 	. = ..()
-	attached_gun.attack_hand(user)
+	if(loc == user && user.is_holding(src) && allow_hand_interaction)
+		attached_gun.attack_hand(user)
 
 /obj/item/attachment/gun/on_unique_action(obj/item/gun/gun, mob/user)
 	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
