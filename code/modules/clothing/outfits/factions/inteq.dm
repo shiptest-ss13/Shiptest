@@ -3,7 +3,7 @@
 	faction_icon = "bg_inteq"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq
-	box = /obj/item/storage/box/survival
+	box = /obj/item/storage/box/survival/inteq
 
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
@@ -235,7 +235,6 @@
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	ears = /obj/item/radio/headset/inteq/captain
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
-	alt_uniform = /obj/item/clothing/under/syndicate/inteq/skirt/corpsman
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt
 	alt_suit = /obj/item/clothing/suit/armor/inteq/corpsman

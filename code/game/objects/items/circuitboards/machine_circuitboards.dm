@@ -724,7 +724,7 @@
 		/obj/item/stock_parts/capacitor = 1,
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stack/sheet/bluespace_crystal = 1,
+		/obj/item/stack/ore/bluespace_crystal/refined = 1,
 		/obj/item/stock_parts/cell = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
 	needs_anchored = FALSE
@@ -1510,3 +1510,15 @@
 	icon_state = "engineering"
 	build_path = /obj/machinery/suit_storage_unit
 	req_components = list(/obj/item/stock_parts/micro_laser = 4)
+
+/obj/item/circuitboard/machine/turret
+	name = "Turret"
+	icon_state = "security"
+	build_path = /obj/machinery/porta_turret
+	req_components = list(/obj/item/stock_parts/capacitor = 2, /obj/item/stock_parts/scanning_module = 1, /obj/item/assembly/prox_sensor = 1, /obj/item/gun/energy = 1)
+	def_components = list(/obj/item/gun/energy = /obj/item/gun/energy/e_gun/turret)
+
+/obj/item/circuitboard/machine/turret/ship
+	name = "Ship-mounted Turret"
+	//We don't want to let people take the gun out of the turret
+	def_components = list(/obj/item/gun/energy = /obj/item/stack/sheet/metal)

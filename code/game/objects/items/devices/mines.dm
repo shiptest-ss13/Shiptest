@@ -131,6 +131,8 @@
 
 ///NOW we actually blow up
 /obj/item/mine/proc/blast_now(atom/movable/triggerer)
+	if(QDELETED(src))
+		return
 	var/datum/effect_system/spark_spread/sporks = new /datum/effect_system/spark_spread
 	sporks.set_up(3, 1, src)
 	sporks.start()
@@ -322,7 +324,7 @@
 	if(!iscarbon(triggerer))
 		return
 	//Quick and dirty solution for preventing activations behind walls.
-	if(!(triggerer in view(proximity_range, src)))
+	if(!can_see(src, triggerer))
 		return
 	if(!can_trigger(triggerer))
 		return
@@ -631,8 +633,8 @@
 
 	//customize explosive power
 	var/range_devastation = -1
-	var/range_heavy = 1
-	var/range_light = 2
+	var/range_heavy = 0
+	var/range_light = 1
 	var/range_flame = 0
 
 	//using this to indicate pb

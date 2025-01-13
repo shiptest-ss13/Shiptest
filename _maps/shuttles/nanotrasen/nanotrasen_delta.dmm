@@ -91,12 +91,6 @@
 /area/ship/engineering)
 "aF" = (
 /obj/structure/rack,
-/obj/item/aiModule/core/full/corp{
-	pixel_y = -3
-	},
-/obj/item/aiModule/core/freeformcore{
-	pixel_y = 1
-	},
 /obj/item/aiModule/reset/purge{
 	pixel_y = 5
 	},
@@ -104,6 +98,7 @@
 	name = "AI Module Storage";
 	req_access_txt = "16"
 	},
+/obj/item/borg/upgrade/ai,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
 "aG" = (
@@ -1215,10 +1210,14 @@
 /area/ship/engineering)
 "fU" = (
 /obj/structure/table/glass,
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_y = 4
+/obj/item/storage/case/surgery{
+	pixel_x = -3;
+	pixel_y = 6
 	},
-/obj/item/storage/firstaid/medical,
+/obj/item/storage/firstaid/medical{
+	pixel_x = 5;
+	pixel_y = 3
+	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /turf/open/floor/plasteel/white,
@@ -2213,7 +2212,6 @@
 "BY" = (
 /obj/item/phone,
 /obj/structure/table,
-/obj/item/borg/upgrade/ai,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
 "Cg" = (

@@ -102,6 +102,10 @@
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	togglename = "buttons"
 
+/obj/item/clothing/suit/toggle/armor/vest/hardliners/Initialize()
+	. = ..()
+	allowed = GLOB.security_vest_allowed
+
 ///////////////
 //Spacesuits//
 //////////////
@@ -126,7 +130,6 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
-	lightweight = 1
 	jetpack = null
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/hl
@@ -148,7 +151,6 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/hl
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
-	lightweight = 1
 	jetpack = null
 
 /////////

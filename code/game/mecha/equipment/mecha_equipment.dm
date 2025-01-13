@@ -96,29 +96,33 @@
 /obj/item/mecha_parts/mecha_equipment/proc/action(atom/target)
 	return 0
 
-/obj/item/mecha_parts/mecha_equipment/proc/start_cooldown()
-	set_ready_state(0)
+/obj/item/mecha_parts/mecha_equipment/proc/start_cooldown(cooldown_override)
+	set_ready_state(FALSE)
 	chassis.use_power(energy_drain)
-	addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), equip_cooldown)
+	if(cooldown_override)
+		addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), cooldown_override)
+	else
+		addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), equip_cooldown)
 
 /obj/item/mecha_parts/mecha_equipment/proc/do_after_cooldown(atom/target)
 	if(!chassis)
 		return
 	var/C = chassis.loc
-	set_ready_state(0)
+	set_ready_state(FALSE)
 	chassis.use_power(energy_drain)
-	. = do_after(chassis.occupant, equip_cooldown, target=target)
-	set_ready_state(1)
-	if(!chassis || 	chassis.loc != C || src != chassis.selected || !(get_dir(chassis, target)&chassis.dir))
-		return 0
+	. = do_after(chassis.occupant, equip_cooldown, target=target, extra_checks = CALLBACK(src, PROC_REF(check_do_after), target, C))
+	set_ready_state(TRUE)
 
 /obj/item/mecha_parts/mecha_equipment/proc/do_after_mecha(atom/target, delay)
 	if(!chassis)
 		return
 	var/C = chassis.loc
-	. = do_after(chassis.occupant, delay, target=target)
-	if(!chassis || 	chassis.loc != C || src != chassis.selected || !(get_dir(chassis, target)&chassis.dir))
-		return 0
+	. = do_after(chassis.occupant, delay, target=target, extra_checks = CALLBACK(src, PROC_REF(check_do_after), target, C))
+
+/obj/item/mecha_parts/mecha_equipment/proc/check_do_after(atom/target, turf/chassis_turf)
+	. = TRUE
+	if(!chassis || 	chassis.loc != chassis_turf || src != chassis.selected || !(get_dir(chassis, target)&chassis.dir))
+		return FALSE
 
 /obj/item/mecha_parts/mecha_equipment/proc/can_attach(obj/mecha/M)
 	if(M.equipment.len<M.max_equip)
@@ -141,7 +145,7 @@
 		update_chassis_page()
 		log_message("[src] removed from equipment.", LOG_MECHA)
 		chassis = null
-		set_ready_state(1)
+		set_ready_state(TRUE)
 	return
 
 
