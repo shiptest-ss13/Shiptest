@@ -344,6 +344,7 @@ SUBSYSTEM_DEF(vote)
 /datum/action/vote
 	name = "Vote!"
 	button_icon_state = "vote"
+	background_icon_state = "bg_blink"
 
 /datum/action/vote/IsAvailable()
 	return TRUE // Democracy is always available to the free people
