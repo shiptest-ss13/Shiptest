@@ -137,7 +137,7 @@
 
 	return mapzone
 
-/datum/map_template/proc/load(turf/T, centered = FALSE, init_atmos = TRUE, show_oob_error = TRUE)
+/datum/map_template/proc/load(turf/T, centered = FALSE, init_atmos = TRUE, show_oob_error = TRUE, timeout)
 	if(centered)
 		T = locate(T.x - round(width/2) , T.y - round(height/2) , T.z)
 	if(!T)
@@ -170,7 +170,7 @@
 
 	UNSETEMPTY(turf_blacklist)
 	parsed.turf_blacklist = turf_blacklist
-	if(!parsed.load(T.x, T.y, T.z, cropMap=TRUE, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=should_place_on_top))
+	if(!parsed.load(T.x, T.y, T.z, cropMap=TRUE, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=should_place_on_top, timeout = timeout))
 		return
 	var/list/bounds = parsed.bounds
 	if(!bounds)
