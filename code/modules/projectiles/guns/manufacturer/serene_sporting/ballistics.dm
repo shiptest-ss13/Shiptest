@@ -119,7 +119,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 	righthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/serene_outdoors/onmob.dmi'
 	icon_state = "m20_inteq"
-	item_state = "so_generic"
+	item_state = "inteq_generic"
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m20_auto_elite
 	allowed_ammo_types = list(

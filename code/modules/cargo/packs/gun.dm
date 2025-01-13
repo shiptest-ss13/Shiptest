@@ -84,6 +84,9 @@
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/pinscher)
 	crate_name = "pistol crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/gun/candors
 	name = "Candor Pistol Crate"
