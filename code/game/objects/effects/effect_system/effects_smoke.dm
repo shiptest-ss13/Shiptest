@@ -76,7 +76,7 @@
 	if(!t_loc)
 		return
 	var/list/newsmokes = list()
-	for(var/turf/T in t_loc.GetAtmosAdjacentTurfs())
+	for(var/turf/T in t_loc.get_atmos_adjacent_turfs())
 		var/obj/effect/particle_effect/smoke/foundsmoke = locate() in T //Don't spread smoke where there's already smoke!
 		if(foundsmoke)
 			continue
@@ -134,6 +134,22 @@
 
 /datum/effect_system/smoke_spread/bad
 	effect_type = /obj/effect/particle_effect/smoke/bad
+
+/////////////////////////////////////////////
+// Hazard smoke
+/////////////////////////////////////////////
+
+/obj/effect/particle_effect/smoke/hazard
+	lifetime = 8
+
+/obj/effect/particle_effect/smoke/hazard/smoke_mob(mob/living/carbon/M)
+	if(..())
+		M.adjustOxyLoss(4)
+		M.emote(pick("cough","gasp"))
+		return 1
+
+/datum/effect_system/smoke_spread/hazard
+	effect_type = /obj/effect/particle_effect/smoke/hazard
 
 /////////////////////////////////////////////
 // Nanofrost smoke

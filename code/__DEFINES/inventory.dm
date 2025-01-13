@@ -31,6 +31,8 @@
 
 //SLOT GROUP HELPERS
 #define ITEM_SLOT_POCKETS (ITEM_SLOT_LPOCKET|ITEM_SLOT_RPOCKET)
+//All the item slots that are allowed to be held in Kepori beaks (their mask slot)
+#define ITEM_SLOT_KEPORI_BEAK (ITEM_SLOT_MASK|ITEM_SLOT_ID|ITEM_SLOT_POCKETS|ITEM_SLOT_DEX_STORAGE|ITEM_SLOT_SUITSTORE)
 
 //Bit flags for the flags_inv variable, which determine when a piece of clothing hides another. IE a helmet hiding glasses.
 //Make sure to update check_obscured_slots() if you add more.

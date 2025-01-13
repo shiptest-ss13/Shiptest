@@ -25,6 +25,9 @@
 	fire_sound = 'sound/weapons/taser2.ogg'
 	harmful = FALSE
 
+/obj/item/ammo_casing/energy/disabler/underbarrel
+	e_cost = 625
+
 /obj/item/ammo_casing/energy/disabler/hos
 	e_cost = 600
 
@@ -35,10 +38,10 @@
 	fire_sound = 'sound/weapons/taser.ogg'
 
 /obj/item/ammo_casing/energy/disabler/scatter/ultima
-	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap/low_range
+	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap
 	pellets = 4
-	variance = 35
-	e_cost = 2000
+	variance = 25
+	e_cost = 1000
 
 /obj/item/ammo_casing/energy/disabler/scatter/ultima/alt
 	select_name = "blast"

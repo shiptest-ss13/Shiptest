@@ -23,6 +23,11 @@
 	var/grace_count = 0
 	var/datum/looping_sound/geiger/soundloop
 
+	//fuck you 15 year old hardsuit code
+	equip_delay_self = null
+	equip_delay_other = null
+	strip_delay = null
+
 /obj/item/clothing/head/helmet/space/hardsuit/Initialize()
 	. = ..()
 	soundloop = new(list(), FALSE, TRUE)
@@ -436,7 +441,6 @@
 	item_state = "hardsuit1-ramzi"
 	hardsuit_type = "ramzi"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
-	lightweight = 1
 	jetpack = null
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	slowdown = 0.7

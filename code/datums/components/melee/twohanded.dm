@@ -9,8 +9,8 @@
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS 		// Only one of the component can exist on an item
 	var/wielded = FALSE 							/// Are we holding the two handed item properly
 	var/force_multiplier = 0						/// The multiplier applied to force when wielded, does not work with force_wielded, and force_unwielded
-	var/force_wielded = 0	 						/// The force of the item when wielded
-	var/force_unwielded = 0		 					/// The force of the item when unwielded
+	var/force_wielded = null						/// The force of the item when wielded
+	var/force_unwielded = null						/// The force of the item when unwielded
 	var/wieldsound = FALSE 							/// Play sound when wielded
 	var/unwieldsound = FALSE 						/// Play sound when unwielded
 	var/attacksound = FALSE							/// Play sound on attack when wielded
@@ -33,7 +33,7 @@
  * * icon_wielded (optional) The icon to be used when wielded
  */
 /datum/component/two_handed/Initialize(require_twohands=FALSE, wieldsound=FALSE, unwieldsound=FALSE, attacksound=FALSE, \
-										force_multiplier=0, force_wielded=0, force_unwielded=0, icon_wielded=FALSE)
+										force_multiplier=0, force_wielded=null, force_unwielded=null, icon_wielded=FALSE)
 	if(!isitem(parent))
 		return COMPONENT_INCOMPATIBLE
 
@@ -153,7 +153,7 @@
 	var/obj/item/parent_item = parent
 	if(force_multiplier)
 		parent_item.force *= force_multiplier
-	else if(force_wielded)
+	else if(!isnull(force_wielded))
 		parent_item.force = force_wielded
 	if(sharpened_increase)
 		parent_item.force += sharpened_increase
@@ -200,7 +200,7 @@
 		parent_item.force -= sharpened_increase
 	if(force_multiplier)
 		parent_item.force /= force_multiplier
-	else if(force_unwielded)
+	else if(!isnull(force_unwielded))
 		parent_item.force = force_unwielded
 
 	// update the items name to remove the wielded status
