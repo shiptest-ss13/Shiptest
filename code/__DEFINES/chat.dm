@@ -37,3 +37,5 @@
 #define debug2_world_log(msg) if (GLOB.Debug2) log_world("DEBUG: [msg]")
 /// Adds a generic box around whatever message you're sending in chat. Really makes things stand out.
 #define examine_block(str) ("<div class='examine_block'>" + str + "</div>")
+/// Helps vote notifications stand out more
+#define vote_notice_block(str) ("<div class='vote_notice_block'>" + str + "</div>")

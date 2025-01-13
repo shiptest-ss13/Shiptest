@@ -209,9 +209,10 @@ SUBSYSTEM_DEF(vote)
 	var/to_display = current_vote.initiate_vote(vote_initiator_name, duration)
 
 	log_vote(to_display)
-	to_chat(world, span_infoplain(vote_font("\n[span_bold(to_display)]\n\
+	to_chat(world, span_infoplain("\n"))
+	to_chat(world, span_infoplain(vote_font(vote_notice_block("[span_bold(to_display)]\n\
 		Type <b>vote</b> or click <a href='byond://winset?command=vote'>here</a> to place your votes.\n\
-		You have [DisplayTimeText(duration)] to vote.")))
+		You have [DisplayTimeText(duration)] to vote."))))
 
 	// And now that it's going, give everyone a voter action
 	for(var/client/new_voter as anything in GLOB.clients)
