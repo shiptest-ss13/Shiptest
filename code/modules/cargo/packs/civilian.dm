@@ -176,16 +176,19 @@
 
 /datum/supply_pack/civilian/artsupply
 	name = "Art Supplies"
-	desc = "Make some happy little accidents with a rapid cable layer, three spraycans, and lots of crayons!"
-	cost = 1000
-	contains = list(/obj/item/rcl,
-					/obj/item/storage/toolbox/artistic,
-					/obj/item/toy/crayon/spraycan,
-					/obj/item/toy/crayon/spraycan,
-					/obj/item/toy/crayon/spraycan,
+	desc = "Make some happy little accidents with an easel, and unlimited imagination! Imagination not included." //removed the rcl, shiptest doesn't have the space for wireart (literally)
+	cost = 750
+	contains = list(/obj/structure/easel,
+					/obj/item/canvas,
+					/obj/item/canvas,
+					/obj/item/canvas/twentythreeXtwentythree,
+					/obj/item/canvas/twentythreeXtwentythree,
+					/obj/item/canvas/nineteenXnineteen,
+					/obj/item/canvas/nineteenXnineteen,
+					/obj/item/canvas/twentythreeXnineteen,
+					/obj/item/canvas/twentythreeXnineteen,
 					/obj/item/storage/crayons,
-					/obj/item/toy/crayon/white,
-					/obj/item/toy/crayon/rainbow)
+					/obj/item/toy/crayon/spraycan,)
 	crate_name = "art supply crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
@@ -231,3 +234,14 @@
 	desc = "A box of spare IDs for replacing a lost ID."
 	cost = 100
 	contains = list(/obj/item/storage/box/ids)
+
+/datum/supply_pack/civilian/spare_clothes
+	name = "Spare Jumpsuits Crate"
+	desc = "Contains a spare set of utility jumpsuits and shoes for those unfortunate accidents." //how did we not have this before
+	cost = 150
+	contains = list(/obj/item/clothing/under/utility,
+					/obj/item/clothing/under/utility/skirt,
+					/obj/item/clothing/shoes/sneakers/black,
+					/obj/item/clothing/shoes/sneakers/black)
+	crate_name = "spare jumpsuits crate"
+	crate_type = /obj/structure/closet/crate/wooden

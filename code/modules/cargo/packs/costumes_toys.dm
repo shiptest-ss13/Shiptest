@@ -184,14 +184,3 @@
 					/obj/item/clothing/under/dress/rilena,
 					/obj/item/gun/energy/buster)
 	crate_name = "collectable merchandise crate"
-
-/datum/supply_pack/costumes_toys/spare_clothes
-	name = "Spare Jumpsuits Crate"
-	desc = "Contains a spare set of utility jumpsuits and shoes for those unfortunate accidents." //how did we not have this before
-	cost = 150
-	contains = list(/obj/item/clothing/under/utility,
-					/obj/item/clothing/under/utility/skirt,
-					/obj/item/clothing/shoes/sneakers/black,
-					/obj/item/clothing/shoes/sneakers/black)
-	crate_name = "spare jumpsuits crate"
-	crate_type = /obj/structure/closet/crate/wooden
