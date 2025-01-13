@@ -37,8 +37,9 @@
 	. += ..()
 	. += "The body camera is currently [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle its status."
 	if(in_range(src, user))
-		. += "<span class='notice'>The body camera is set to a nametag of '[c_tag]'. Use a multitool on [src] in order to set a new nametag.</span>"
-		. += "<span class='notice'>The body camera is set to transmit on the '[network[1]]' network. Use a multitool on [src] in order to set it to transmit across a different network.</span>"
+		. += "<span class='notice'>The body camera is set to a nametag of '<b>[c_tag]</b>'.</span>"
+		. += "<span class='notice'>The body camera is set to transmit on the '<b>[network[1]]</b>' network.</span>"
+		. += "<span class='notice'>It looks like a <b>multitool</b> is needed to change the settings.</span>"
 
 /obj/item/bodycamera/AltClick(mob/user)
 	. = ..()
