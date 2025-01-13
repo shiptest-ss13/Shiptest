@@ -73,7 +73,7 @@
 					/obj/item/reagent_containers/condiment/sugar,
 					/obj/item/storage/fancy/egg_box,
 					/obj/item/reagent_containers/food/snacks/meat/slab,
-					/obj/item/reagent_containers/food/snacks/meat/slab
+					/obj/item/reagent_containers/food/snacks/meat/slab,
 					/obj/item/reagent_containers/condiment/enzyme)
 	crate_name = "food crate"
 	crate_type = /obj/structure/closet/crate/freezer
@@ -87,7 +87,7 @@
 					/obj/item/reagent_containers/condiment/ketchup,
 					/obj/item/reagent_containers/condiment/hotsauce,
 					/obj/item/reagent_containers/food/drinks/bottle/cream,
-					/obj/item/reagent_containers/condiment/mayonnaise
+					/obj/item/reagent_containers/condiment/mayonnaise,
 					/obj/item/reagent_containers/condiment/bbqsauce)
 	crate_name = "condiments crate"
 	crate_type = /obj/structure/closet/crate/freezer

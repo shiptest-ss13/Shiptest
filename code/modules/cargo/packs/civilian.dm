@@ -230,4 +230,4 @@
 	name = "Box of Spare IDs"
 	desc = "A box of spare IDs for replacing a lost ID."
 	cost = 100
-	contains - list(/obj/item/storage/box/ids)
+	contains = list(/obj/item/storage/box/ids)
