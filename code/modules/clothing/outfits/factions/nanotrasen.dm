@@ -328,6 +328,12 @@
 
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
 
+/datum/outfit/job/nanotrasen/miner/no_equipment
+	name = "Nanotrasen - Miner (No Equipment)"
+
+	r_pocket = null
+	backpack_contents = null
+
 // Cargo Tech
 /datum/outfit/job/nanotrasen/cargo_tech
 	name = "Nanotrasen - Cargo Tech"

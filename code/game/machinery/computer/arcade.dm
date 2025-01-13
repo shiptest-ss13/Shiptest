@@ -360,13 +360,13 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 	return
 
 /obj/machinery/computer/arcade/battle/examine_more(mob/user)
-	var/list/msg = list("<span class='notice'><i>You notice some writing scribbled on the side of [src]...</i></span>")
-	msg += "\t<span class='info'>smart -> defend, defend, light attack</span>"
-	msg += "\t<span class='info'>shotgun -> defend, defend, power attack</span>"
-	msg += "\t<span class='info'>short temper -> counter, counter, counter</span>"
-	msg += "\t<span class='info'>poisonous -> light attack, light attack, light attack</span>"
-	msg += "\t<span class='info'>chonker -> power attack, power attack, power attack</span>"
-	return msg
+	. = ..()
+	. += "<span class='notice'><i>You notice some writing scribbled on the side of [src]...</i></span>"
+	. += "\t<span class='info'>smart -> defend, defend, light attack</span>"
+	. += "\t<span class='info'>shotgun -> defend, defend, power attack</span>"
+	. += "\t<span class='info'>short temper -> counter, counter, counter</span>"
+	. += "\t<span class='info'>poisonous -> light attack, light attack, light attack</span>"
+	. += "\t<span class='info'>chonker -> power attack, power attack, power attack</span>"
 
 /obj/machinery/computer/arcade/battle/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
@@ -528,11 +528,11 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 	if(gamers[gamer] > 2 && prob(20 * gamers[gamer]))
 
-		Radio.set_frequency(FREQ_COMMAND)
-		Radio.talk_into(src, "SECURITY ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please watch for violent behavior.", FREQ_COMMAND)
+		Radio.set_frequency(FREQ_EMERGENCY)
+		Radio.talk_into(src, "SECURITY ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please watch for violent behavior.", FREQ_EMERGENCY)
 
-		Radio.set_frequency(FREQ_COMMAND)
-		Radio.talk_into(src, "PSYCH ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please schedule psych evaluation.", FREQ_COMMAND)
+		Radio.set_frequency(FREQ_EMERGENCY)
+		Radio.talk_into(src, "PSYCH ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please schedule psych evaluation.", FREQ_EMERGENCY)
 
 		gamers[gamer] = -1
 

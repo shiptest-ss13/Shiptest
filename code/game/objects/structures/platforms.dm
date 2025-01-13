@@ -17,6 +17,15 @@
 			COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 		)
 		AddElement(/datum/element/connect_loc, loc_connections)
+	update_appearance()
+
+/obj/structure/platform/update_appearance(updates)
+	. = ..()
+	if(dir == (1 || 5 || 9))
+		layer = 2.76
+	else
+		layer = 3.08
+
 
 /obj/structure/platform/corner
 	icon_state = "platform_corners"

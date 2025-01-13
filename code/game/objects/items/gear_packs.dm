@@ -24,6 +24,13 @@
 	var/obj/item/gear_handle/gear_handle_type = /obj/item/gear_handle
 	var/obj/item/gear_handle/gear_handle
 
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_BACK
+	equip_delay_other = EQUIP_DELAY_BACK * 1.5
+	strip_delay = EQUIP_DELAY_BACK * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT
+
 /obj/item/gear_pack/get_cell()
 	return cell
 
@@ -106,7 +113,7 @@
 		var/mob/M = loc
 		if(!M.incapacitated() && istype(over_object, /atom/movable/screen/inventory/hand))
 			var/atom/movable/screen/inventory/hand/H = over_object
-			M.putItemFromInventoryInHandIfPossible(src, H.held_index)
+			M.putItemFromInventoryInHandIfPossible(src, H.held_index, FALSE, TRUE)
 
 /obj/item/gear_pack/attackby(obj/item/W, mob/user, params)
 	if(W == gear_handle)

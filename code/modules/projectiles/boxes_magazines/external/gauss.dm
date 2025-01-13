@@ -7,6 +7,9 @@
 	max_ammo = 24
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/gauss/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/modelh
 	name = "Model H magazine (ferromagnetic slugs)"
 	desc = "A 10-round magazine for the Model H pistol. Ferromagnetic slugs are slow and incredibly powerful bullets, but are easily stopped by even a sliver of armor."
@@ -31,3 +34,6 @@
 /obj/item/ammo_box/magazine/gar/update_icon()
 	. = ..()
 	icon_state = "gar-mag-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/gar/empty
+	start_empty = TRUE

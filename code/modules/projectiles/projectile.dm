@@ -73,7 +73,10 @@
 	/// number of times we've pierced something. Incremented BEFORE bullet_act and on_hit proc!
 	var/pierces = 0
 
-	var/speed = 0.8			//Amount of deciseconds it takes for projectile to travel
+	///Amount of deciseconds it takes for projectile to travel
+	var/speed = 0.8
+	///plus/minus modifier to projectile speed
+	var/speed_mod = 0
 	var/Angle = 0
 	var/original_angle = 0		//Angle at firing
 	var/nondirectional_sprite = FALSE //Set TRUE to prevent projectiles from having their sprites rotated based on firing angle
@@ -165,6 +168,7 @@
 
 	///If defined, on hit we create an item of this type then call hitby() on the hit target with this, mainly used for embedding items (bullets) in targets
 	var/shrapnel_type
+
 	///If TRUE, hit mobs even if they're on the floor and not our target
 	var/hit_stunned_targets = FALSE
 	/// If true directly targeted turfs can be hit
@@ -177,6 +181,7 @@
 /obj/projectile/Initialize()
 	. = ..()
 	decayedRange = range
+	speed = speed + speed_mod
 	AddElement(/datum/element/connect_loc, projectile_connections)
 
 /obj/projectile/proc/Range()
