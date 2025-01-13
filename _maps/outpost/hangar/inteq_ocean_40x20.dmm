@@ -1,15 +1,25 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "bx" = (
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/machinery/door/poddoor/shutters/indestructible{
+	dir = 4
 	},
+/turf/closed/indestructible/fakeglass,
 /area/hangar)
 "cv" = (
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/machinery/elevator_call_button{
+	dir = 1;
+	pixel_y = -24
 	},
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "dh" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -19,155 +29,78 @@
 	},
 /area/hangar)
 "dB" = (
-/obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"eP" = (
-/obj/machinery/computer/hydrogen_exchange,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
-"fc" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"gg" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"gA" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech,
-/area/hangar)
-"ht" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"iy" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 10
-	},
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/machinery/elevator_call_button{
-	dir = 1;
-	pixel_y = -24
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"iG" = (
-/obj/machinery/atmospherics/components/unary/hydrogen_pump{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"fc" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"gg" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"ht" = (
+/obj/structure/platform/industrial_alt/corner{
+	dir = 1
+	},
+/turf/open/water/beach/deep,
+/area/hangar)
+"iy" = (
+/obj/effect/landmark/outpost/elevator{
+	shaft = "1"
+	},
+/turf/open/floor/plasteel/elevatorshaft,
 /area/hangar)
 "ja" = (
 /turf/closed/indestructible/rock,
-/area/hangar)
-"jy" = (
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/plasteel/tech,
-/area/hangar)
-"jA" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"kG" = (
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
 "mb" = (
 /turf/open/water/beach/deep,
 /area/hangar)
 "ms" = (
 /obj/machinery/light/floor/hangar,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
 	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "mH" = (
-/obj/structure/platform/industrial_alt/corner{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
-/turf/open/water/beach/deep,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "ox" = (
 /obj/machinery/light/floor/hangar,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 10
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"pb" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 6
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"pY" = (
-/obj/structure/platform/industrial_alt{
-	dir = 1
-	},
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/obj/structure/platform/industrial_alt/corner{
-	dir = 5
-	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
-/area/hangar)
-"qc" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/manifold4w/orange/hidden,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ru" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"qc" = (
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
 	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
 /area/hangar)
 "rz" = (
 /obj/effect/turf_decal/techfloor{
@@ -182,15 +115,11 @@
 /turf/open/floor/plating/rust,
 /area/hangar)
 "sb" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 6
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
 	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "sq" = (
 /obj/effect/landmark/outpost/hangar_dock,
@@ -199,49 +128,26 @@
 	},
 /area/hangar)
 "sw" = (
-/obj/machinery/atmospherics/components/binary/volume_pump{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/shutoff,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "uZ" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 5
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
 	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"vw" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
-	dir = 1
+/obj/machinery/door/airlock/hatch{
+	dir = 4
 	},
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
 "vS" = (
-/obj/effect/landmark/outpost/elevator,
-/turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"wi" = (
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "wK" = (
 /obj/structure/platform/industrial_alt,
@@ -253,31 +159,32 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "xp" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "xt" = (
 /turf/closed/indestructible/reinforced,
 /area/hangar)
 "yF" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 9
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"yH" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
 	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"yH" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "zx" = (
 /obj/structure/platform/industrial_alt{
@@ -285,21 +192,14 @@
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
-"zy" = (
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "zU" = (
-/obj/structure/platform/industrial,
-/obj/structure/platform/industrial{
-	dir = 1
+/obj/effect/turf_decal/techfloor{
+	dir = 4
 	},
-/turf/open/floor/plasteel/elevatorshaft,
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "AI" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -308,59 +208,24 @@
 	},
 /area/hangar)
 "Bg" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	dir = 4;
-	id = "ocean_ERT_bay"
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
 	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
-"Bm" = (
-/obj/machinery/door/airlock/maintenance{
-	req_access_txt = "101"
+"Bo" = (
+/obj/machinery/door/poddoor/shutters/indestructible{
+	dir = 4
 	},
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
-/area/hangar)
-"Bo" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/obj/effect/turf_decal/techfloor/orange,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"BC" = (
-/obj/machinery/door/airlock/outpost{
-	dir = 4;
-	req_access = list("101");
-	name = "Tram Car Door"
-	},
-/turf/open/floor/plasteel,
-/area/hangar)
-"BL" = (
-/obj/structure/table/reinforced,
-/obj/structure/sign/warning/nosmoking/burnt{
-	pixel_y = 28
-	},
-/turf/open/floor/plasteel/tech/techmaint,
 /area/hangar)
 "CW" = (
 /turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Dl" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 10
-	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -383,37 +248,17 @@
 	},
 /area/hangar)
 "EO" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/effect/landmark/outpost/hangar_numbers,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "Gv" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 6
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"HK" = (
-/obj/structure/railing/corner{
-	dir = 1;
-	layer = 4.1
-	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "HL" = (
-/obj/effect/turf_decal/industrial/shutoff,
-/obj/machinery/atmospherics/components/binary/volume_pump{
+/obj/machinery/door/poddoor/shutters/indestructible{
 	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plating/rust,
 /area/hangar)
 "In" = (
 /obj/effect/turf_decal/techfloor{
@@ -425,17 +270,14 @@
 /area/hangar)
 "Ip" = (
 /obj/machinery/light/floor/hangar,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 6
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "IE" = (
-/turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/elevatorshaft,
 /area/hangar)
 "II" = (
 /obj/structure/platform/industrial_alt{
@@ -449,85 +291,50 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "JE" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 10
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Kr" = (
-/obj/structure/railing/corner{
+/obj/structure/platform/industrial{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
-"Lc" = (
-/turf/closed/indestructible/fakeglass,
-/area/hangar)
-"LL" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
-"Me" = (
-/obj/machinery/atmospherics/components/binary/valve/digital,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"MG" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 9
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"MI" = (
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/turf/open/water/beach/deep,
-/area/hangar)
-"MQ" = (
-/obj/machinery/atmospherics/components/binary/valve/digital,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 10
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Ng" = (
-/obj/machinery/door/poddoor/shutters/indestructible,
-/turf/closed/indestructible/fakeglass,
-/area/hangar)
-"Pn" = (
-/obj/structure/platform/industrial_alt{
+/obj/structure/platform/industrial{
 	dir = 8
 	},
-/obj/structure/platform/industrial_alt,
-/obj/structure/platform/industrial_alt/corner{
-	dir = 6
+/turf/open/floor/plasteel/elevatorshaft,
+/area/hangar)
+"Lc" = (
+/obj/machinery/elevator_call_button{
+	dir = 8;
+	pixel_x = 23
 	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
+/turf/closed/indestructible/reinforced,
+/area/hangar)
+"LL" = (
+/obj/effect/turf_decal/corner/opaque/yellow/full,
+/obj/effect/landmark/outpost/hangar_numbers,
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"Me" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
 	},
-/turf/open/water/beach/deep,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"MG" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"MQ" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "PX" = (
 /obj/structure/platform/industrial_alt{
@@ -541,26 +348,12 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "RQ" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	dir = 4;
-	id = "ocean_ERT_bay"
-	},
+/obj/machinery/door/poddoor/ert,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/hangar)
 "Tp" = (
-/obj/structure/platform/industrial_alt,
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/obj/structure/platform/industrial_alt/corner{
-	dir = 10
-	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "Ue" = (
 /turf/open/floor/plating/rust,
@@ -589,28 +382,32 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "Vr" = (
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
-"Vz" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"VD" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 10
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
-"VH" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"Vz" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"VH" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "VJ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -627,19 +424,14 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "WX" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
 	},
-/area/hangar)
-"WZ" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 
 (1,1,1) = {"
@@ -938,30 +730,30 @@ mb
 mb
 mb
 xt
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
-Uh
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
+PX
 xt
 mb
 mb
@@ -1033,7 +825,7 @@ xt
 xt
 VH
 yF
-Dl
+xp
 rz
 rz
 rz
@@ -1078,9 +870,9 @@ mb
 mb
 wK
 xt
-fc
+Me
 AI
-JE
+MQ
 rB
 VJ
 VJ
@@ -1101,9 +893,9 @@ VJ
 VJ
 rB
 VJ
-fc
+Me
 AI
-JE
+MQ
 xt
 II
 mb
@@ -1125,9 +917,9 @@ mb
 mb
 wK
 Ue
-fc
+Me
 AI
-JE
+MQ
 In
 In
 In
@@ -1148,9 +940,9 @@ In
 In
 In
 In
-fc
+Me
 AI
-JE
+MQ
 CW
 II
 mb
@@ -1172,9 +964,9 @@ mb
 mb
 wK
 Ue
-fc
+Me
 AI
-JE
+MQ
 Ue
 Ue
 Ue
@@ -1195,9 +987,9 @@ CW
 CW
 Ue
 sq
-fc
+Me
 AI
-JE
+MQ
 Ue
 II
 mb
@@ -1219,9 +1011,9 @@ mb
 mb
 wK
 CW
-fc
+Me
 AI
-JE
+MQ
 Ue
 Ue
 CW
@@ -1242,15 +1034,15 @@ CW
 CW
 CW
 Ue
-fc
+Me
 AI
-JE
+MQ
 Ue
 II
 mb
 mb
 mb
-mb
+ja
 ja
 "}
 (14,1,1) = {"
@@ -1266,9 +1058,9 @@ mb
 mb
 wK
 CW
-fc
+Me
 AI
-JE
+MQ
 Eb
 Ue
 CW
@@ -1289,15 +1081,15 @@ Ue
 CW
 CW
 Dn
-fc
+Me
 AI
-JE
+MQ
 Ue
 II
 mb
 mb
-mb
-mb
+ja
+ja
 ja
 "}
 (15,1,1) = {"
@@ -1313,8 +1105,8 @@ mb
 mb
 wK
 Ue
-fc
-pb
+Me
+AI
 MQ
 Ue
 CW
@@ -1337,9 +1129,9 @@ CW
 CW
 Ue
 Me
-uZ
-JE
-Ue
+AI
+MQ
+CW
 II
 mb
 mb
@@ -1360,8 +1152,8 @@ mb
 mb
 wK
 CW
-fc
-jA
+Me
+AI
 ox
 Ue
 CW
@@ -1384,8 +1176,8 @@ CW
 CW
 CW
 ms
-ru
-JE
+AI
+MQ
 CW
 II
 mb
@@ -1407,9 +1199,9 @@ mb
 mb
 wK
 CW
-fc
-jA
-JE
+Me
+AI
+MQ
 Ue
 CW
 CW
@@ -1430,15 +1222,15 @@ Ue
 CW
 CW
 CW
-fc
-ru
-JE
+Me
+AI
+MQ
 CW
 II
 mb
 mb
 mb
-mb
+ja
 ja
 "}
 (18,1,1) = {"
@@ -1454,9 +1246,9 @@ mb
 mb
 wK
 Ue
-fc
-jA
-JE
+Me
+AI
+MQ
 CW
 CW
 CW
@@ -1477,15 +1269,15 @@ CW
 CW
 CW
 CW
-fc
-ru
-JE
-Ue
+Me
+AI
+MQ
+CW
 II
 mb
 mb
 mb
-mb
+ja
 ja
 "}
 (19,1,1) = {"
@@ -1501,9 +1293,9 @@ mb
 mb
 wK
 Ue
-fc
-jA
-JE
+Me
+AI
+MQ
 Eb
 CW
 CW
@@ -1524,10 +1316,10 @@ CW
 Ue
 CW
 Eb
-fc
-ru
-JE
-CW
+Me
+AI
+MQ
+Ue
 II
 mb
 mb
@@ -1537,6 +1329,7 @@ ja
 "}
 (20,1,1) = {"
 ja
+ja
 mb
 mb
 mb
@@ -1545,45 +1338,45 @@ mb
 mb
 mb
 mb
-mb
-wK
-Ue
-gA
-jA
-JE
+WU
+CW
+Me
+AI
+MQ
 CW
 CW
-Ue
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-Ue
 Ue
 CW
 CW
 CW
 CW
 CW
-fc
-ru
-JE
+CW
+CW
+CW
+CW
+CW
+Ue
+Ue
+CW
+CW
+CW
+CW
+CW
+Me
+AI
+MQ
 Ue
 II
 mb
 mb
-ja
+mb
 ja
 ja
 "}
 (21,1,1) = {"
 ja
+ja
 mb
 mb
 mb
@@ -1592,25 +1385,11 @@ mb
 mb
 mb
 mb
-mb
-wK
-Ue
-fc
-jA
-JE
+WU
 CW
-Ue
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
-CW
+Me
+AI
+MQ
 CW
 Ue
 CW
@@ -1618,14 +1397,27 @@ CW
 CW
 CW
 CW
-fc
-ru
-JE
+CW
+CW
+CW
+CW
+CW
+CW
+CW
 Ue
+CW
+CW
+CW
+CW
+CW
+Me
+AI
+MQ
+CW
 II
 mb
 mb
-ja
+mb
 ja
 ja
 "}
@@ -1640,13 +1432,11 @@ mb
 mb
 mb
 mb
-wK
-CW
-fc
-jA
-ox
-CW
-CW
+WU
+Ue
+Me
+AI
+MQ
 CW
 CW
 CW
@@ -1665,20 +1455,21 @@ CW
 CW
 CW
 CW
-ms
-ru
-JE
+CW
+CW
+Me
+AI
+MQ
 CW
 II
 mb
 mb
-mb
+ja
 ja
 ja
 "}
 (23,1,1) = {"
 ja
-ja
 mb
 mb
 mb
@@ -1687,11 +1478,12 @@ mb
 mb
 mb
 mb
-wK
+mb
+WU
 CW
-fc
-jA
-JE
+Me
+AI
+MQ
 CW
 CW
 CW
@@ -1712,20 +1504,19 @@ Ue
 CW
 CW
 CW
-fc
-ru
-JE
-CW
+Me
+AI
+MQ
+Ue
 II
 mb
 mb
-mb
+ja
 ja
 ja
 "}
 (24,1,1) = {"
 ja
-ja
 mb
 mb
 mb
@@ -1734,11 +1525,12 @@ mb
 mb
 mb
 mb
-wK
+mb
+WU
 CW
-fc
-jA
-JE
+Me
+AI
+ox
 Eb
 CW
 CW
@@ -1759,21 +1551,19 @@ Ue
 Ue
 CW
 Eb
-fc
-ru
-JE
+ms
+AI
+MQ
 Ue
 II
 mb
 mb
-mb
+ja
 ja
 ja
 "}
 (25,1,1) = {"
 ja
-ja
-ja
 mb
 mb
 mb
@@ -1781,11 +1571,13 @@ mb
 mb
 mb
 mb
-wK
+mb
+mb
+WU
 Ue
-fc
-jA
-JE
+Me
+AI
+MQ
 CW
 CW
 CW
@@ -1801,26 +1593,25 @@ CW
 CW
 CW
 CW
-CW
-Ue
-Ue
 CW
 Ue
-fc
-ru
-JE
+Ue
 CW
+Ue
+Me
+AI
+MQ
+Ue
 II
 mb
 mb
 mb
-mb
+ja
 ja
 "}
 (26,1,1) = {"
 ja
 ja
-ja
 mb
 mb
 mb
@@ -1828,40 +1619,41 @@ mb
 mb
 mb
 mb
-wK
+mb
+WU
 Ue
-fc
-jA
-JE
-Ue
-CW
-CW
-CW
+Me
+AI
+MQ
 Ue
 CW
 CW
 CW
 Ue
-Ue
-Ue
-CW
-CW
 CW
 CW
 CW
 Ue
 Ue
+Ue
+CW
+CW
+CW
+CW
 CW
 Ue
-fc
-ru
-JE
 Ue
+CW
+Ue
+Me
+AI
+MQ
+CW
 II
 mb
 mb
 mb
-mb
+ja
 ja
 "}
 (27,1,1) = {"
@@ -1875,45 +1667,44 @@ mb
 mb
 mb
 mb
-wK
+WU
 CW
-fc
-jA
-JE
-CW
-CW
-CW
-CW
-CW
-Ue
-CW
-Ue
-Ue
-Ue
-CW
-CW
-CW
-CW
+Me
+AI
+MQ
 CW
 CW
 CW
 CW
 CW
 Ue
-fc
-ru
-JE
+CW
+Ue
+Ue
+Ue
+CW
+CW
+CW
+CW
+CW
+CW
+CW
+CW
+CW
+Ue
+Me
+AI
+MQ
 CW
 II
 mb
 mb
 mb
-mb
+ja
 ja
 "}
 (28,1,1) = {"
 ja
-ja
 mb
 mb
 mb
@@ -1922,11 +1713,12 @@ mb
 mb
 mb
 mb
-wK
+mb
+WU
 CW
-fc
-jA
-ox
+Me
+AI
+MQ
 Ue
 CW
 CW
@@ -1947,15 +1739,15 @@ CW
 CW
 CW
 Ue
-ms
-ru
-JE
+Me
+AI
+MQ
 CW
 II
 mb
-mb
-mb
-mb
+ja
+ja
+ja
 ja
 "}
 (29,1,1) = {"
@@ -1969,11 +1761,11 @@ mb
 mb
 mb
 mb
-wK
-CW
-fc
-jA
-JE
+WU
+Ue
+Me
+AI
+MQ
 Dn
 CW
 CW
@@ -1994,15 +1786,15 @@ CW
 CW
 CW
 Eb
-fc
-ru
-JE
+Me
+AI
+MQ
 Ue
 II
 mb
 mb
-mb
-mb
+ja
+ja
 ja
 "}
 (30,1,1) = {"
@@ -2016,11 +1808,11 @@ mb
 mb
 mb
 mb
-wK
-CW
-fc
-jA
-JE
+WU
+Ue
+Me
+AI
+MQ
 Ue
 CW
 CW
@@ -2041,9 +1833,9 @@ CW
 CW
 CW
 Ue
-fc
-ru
-JE
+Me
+AI
+MQ
 Ue
 II
 mb
@@ -2054,6 +1846,7 @@ ja
 "}
 (31,1,1) = {"
 ja
+ja
 mb
 mb
 mb
@@ -2062,11 +1855,10 @@ mb
 mb
 mb
 mb
-mb
-wK
-Ue
-fc
-qc
+WU
+CW
+Me
+AI
 MQ
 CW
 CW
@@ -2089,8 +1881,8 @@ CW
 CW
 CW
 Me
-dh
-JE
+AI
+MQ
 Ue
 II
 mb
@@ -2110,11 +1902,11 @@ mb
 mb
 mb
 mb
-wK
-Ue
-fc
-jA
-JE
+WU
+CW
+Me
+AI
+ox
 CW
 CW
 CW
@@ -2135,14 +1927,14 @@ Ue
 CW
 CW
 Ue
-fc
-ru
-JE
+ms
+AI
+MQ
 CW
 II
 mb
 mb
-ja
+mb
 ja
 ja
 "}
@@ -2157,11 +1949,11 @@ mb
 mb
 mb
 mb
-wK
-Ue
-fc
-jA
-JE
+WU
+CW
+Me
+AI
+MQ
 CW
 CW
 CW
@@ -2182,10 +1974,10 @@ Ue
 CW
 CW
 Ue
-fc
-ru
-JE
-Ue
+Me
+AI
+MQ
+CW
 II
 mb
 mb
@@ -2204,11 +1996,11 @@ mb
 mb
 mb
 mb
-wK
+WU
 Ue
-fc
-jA
-ox
+Me
+AI
+MQ
 Dn
 CW
 CW
@@ -2229,15 +2021,15 @@ CW
 CW
 CW
 Dn
-ms
-ru
-JE
-CW
+Me
+AI
+MQ
+Ue
 II
 mb
 mb
 mb
-mb
+ja
 ja
 "}
 (35,1,1) = {"
@@ -2251,11 +2043,11 @@ mb
 mb
 mb
 mb
-wK
-CW
-fc
-jA
-JE
+WU
+Ue
+Me
+AI
+MQ
 CW
 CW
 CW
@@ -2276,33 +2068,33 @@ CW
 CW
 CW
 Ue
-fc
-ru
-JE
+Me
+AI
+MQ
 CW
 II
 mb
 mb
 mb
-mb
+ja
 ja
 "}
 (36,1,1) = {"
 ja
 ja
 ja
-mb
-mb
+ja
 ja
 mb
 mb
 mb
 mb
-wK
-CW
-fc
-jA
-JE
+mb
+WU
+Ue
+Me
+AI
+MQ
 CW
 CW
 CW
@@ -2323,9 +2115,9 @@ CW
 CW
 CW
 CW
-fc
-ru
-JE
+Me
+AI
+MQ
 CW
 II
 mb
@@ -2339,17 +2131,17 @@ ja
 ja
 ja
 ja
-ja
 mb
 mb
 mb
 mb
 mb
-wK
+mb
+WU
 CW
-fc
-jA
-JE
+Me
+AI
+MQ
 CW
 Ue
 CW
@@ -2370,9 +2162,9 @@ Ue
 CW
 CW
 CW
-fc
-ru
-JE
+Me
+AI
+MQ
 Ue
 II
 mb
@@ -2384,7 +2176,6 @@ ja
 (38,1,1) = {"
 ja
 ja
-ja
 mb
 mb
 mb
@@ -2392,11 +2183,12 @@ mb
 mb
 mb
 mb
-wK
-CW
-fc
-jA
-JE
+mb
+WU
+Ue
+Me
+AI
+MQ
 CW
 CW
 CW
@@ -2417,21 +2209,20 @@ Ue
 CW
 CW
 Ue
-fc
-ru
-JE
-Ue
+Me
+AI
+MQ
+CW
 II
 mb
-ja
-ja
+mb
+mb
 ja
 ja
 "}
 (39,1,1) = {"
 ja
 ja
-ja
 mb
 mb
 mb
@@ -2439,11 +2230,12 @@ mb
 mb
 mb
 mb
-wK
-Ue
-fc
-jA
-JE
+mb
+WU
+CW
+Me
+AI
+MQ
 Dn
 CW
 CW
@@ -2464,21 +2256,21 @@ CW
 CW
 CW
 Dn
-fc
-ru
-JE
-Ue
+Me
+AI
+MQ
+CW
 II
 mb
 mb
-ja
+mb
 ja
 ja
 "}
 (40,1,1) = {"
 ja
 ja
-ja
+mb
 mb
 mb
 mb
@@ -2487,9 +2279,9 @@ mb
 mb
 mb
 wK
-CW
-fc
-jA
+Ue
+Me
+AI
 ox
 Ue
 CW
@@ -2512,19 +2304,19 @@ CW
 CW
 CW
 ms
-ru
-JE
+AI
+MQ
 CW
 II
 mb
 mb
-mb
+ja
 ja
 ja
 "}
 (41,1,1) = {"
 ja
-ja
+mb
 mb
 mb
 mb
@@ -2534,10 +2326,10 @@ mb
 mb
 mb
 wK
-CW
-fc
-jA
-JE
+Ue
+Me
+AI
+MQ
 Ue
 CW
 CW
@@ -2558,20 +2350,20 @@ CW
 CW
 CW
 CW
-fc
-ru
-JE
-Ue
+Me
+AI
+MQ
+CW
 II
 mb
 mb
-mb
-mb
+ja
+ja
 ja
 "}
 (42,1,1) = {"
 ja
-ja
+mb
 mb
 mb
 mb
@@ -2582,9 +2374,9 @@ mb
 mb
 wK
 CW
-fc
-jA
-JE
+Me
+AI
+MQ
 CW
 CW
 CW
@@ -2605,9 +2397,9 @@ CW
 CW
 CW
 Ue
-fc
-ru
-JE
+Me
+AI
+MQ
 Ue
 II
 mb
@@ -2629,9 +2421,9 @@ mb
 mb
 wK
 Ue
-fc
-jA
-JE
+Me
+AI
+MQ
 CW
 CW
 CW
@@ -2652,14 +2444,14 @@ CW
 CW
 Ue
 CW
-fc
-ru
-JE
+Me
+AI
+MQ
 CW
 II
 mb
 mb
-ja
+mb
 ja
 ja
 "}
@@ -2671,14 +2463,14 @@ mb
 mb
 mb
 mb
-zx
-zx
-zx
-Pn
+mb
+mb
+mb
+wK
 Ue
-fc
-jA
-JE
+Me
+AI
+MQ
 Eb
 CW
 CW
@@ -2699,14 +2491,14 @@ CW
 CW
 Ue
 Eb
-fc
-ru
-JE
+Me
+AI
+MQ
 CW
 II
 mb
 mb
-ja
+mb
 ja
 ja
 "}
@@ -2717,15 +2509,15 @@ mb
 mb
 mb
 mb
-Dz
-xt
-xt
-xt
-xt
-xt
-fc
-jA
-JE
+mb
+mb
+mb
+mb
+wK
+CW
+Me
+AI
+MQ
 CW
 CW
 CW
@@ -2746,10 +2538,10 @@ CW
 CW
 Ue
 Ue
-fc
-ru
-JE
-Ue
+Me
+AI
+MQ
+CW
 II
 mb
 mb
@@ -2764,14 +2556,14 @@ mb
 mb
 mb
 mb
-Dz
-xt
-Vr
-xt
-xt
-iG
-LL
-jA
+mb
+mb
+mb
+mb
+wK
+CW
+Me
+AI
 ox
 CW
 CW
@@ -2794,8 +2586,8 @@ CW
 CW
 Ue
 ms
-ru
-JE
+AI
+MQ
 CW
 II
 mb
@@ -2811,15 +2603,15 @@ mb
 mb
 mb
 mb
-Dz
-xt
-Vr
-Bm
-Vr
-sw
-HK
-jA
-JE
+mb
+mb
+mb
+mb
+wK
+Ue
+Me
+AI
+MQ
 Ue
 CW
 CW
@@ -2840,10 +2632,10 @@ CW
 CW
 CW
 Ue
-fc
-ru
-JE
-CW
+Me
+AI
+MQ
+Ue
 II
 mb
 mb
@@ -2858,14 +2650,14 @@ mb
 mb
 mb
 mb
-Dz
-xt
-Vr
-xt
-eP
-vw
-Vz
-qc
+mb
+mb
+mb
+mb
+wK
+Ue
+Me
+AI
 MQ
 Ue
 Ue
@@ -2889,7 +2681,7 @@ CW
 CW
 Me
 dh
-JE
+MQ
 Ue
 II
 mb
@@ -2905,15 +2697,15 @@ mb
 mb
 mb
 mb
-Dz
-xt
-Vr
-xt
-BL
-HL
-Kr
-jA
-JE
+mb
+mb
+mb
+mb
+wK
+CW
+Me
+AI
+MQ
 Dn
 Ue
 CW
@@ -2934,10 +2726,10 @@ Ue
 CW
 CW
 Dn
-fc
-ru
-JE
-CW
+Me
+AI
+MQ
+Ue
 II
 mb
 mb
@@ -2952,15 +2744,15 @@ mb
 mb
 mb
 mb
-Dz
-xt
-Vr
-xt
-xt
-kG
-LL
-WZ
-JE
+mb
+mb
+mb
+mb
+wK
+CW
+Me
+AI
+MQ
 Ue
 Ue
 Ue
@@ -2981,9 +2773,9 @@ CW
 CW
 CW
 Ue
-fc
-ru
-JE
+Me
+AI
+MQ
 CW
 II
 mb
@@ -2999,15 +2791,15 @@ mb
 mb
 mb
 mb
-Dz
-xt
-xt
-xt
-xt
-xt
-HK
-WZ
-JE
+mb
+mb
+mb
+mb
+wK
+Ue
+Me
+AI
+MQ
 Ue
 Ue
 Ue
@@ -3028,9 +2820,9 @@ CW
 CW
 Ue
 Ue
-fc
-ru
-JE
+Me
+AI
+MQ
 CW
 II
 mb
@@ -3047,13 +2839,13 @@ mb
 mb
 mb
 mb
-MI
-MI
-MI
-Tp
+mb
+mb
+mb
+wK
 CW
-fc
-EO
+Me
+AI
 yH
 yF
 yF
@@ -3076,8 +2868,8 @@ yF
 yF
 yF
 gg
-ru
-JE
+AI
+MQ
 CW
 II
 mb
@@ -3098,33 +2890,33 @@ mb
 mb
 mb
 wK
-Ue
-fc
-VD
+xt
+Me
+AI
+AI
+AI
+AI
+AI
+AI
+AI
+AI
+AI
+AI
+mH
+sw
 Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-Vz
-MG
-JE
+AI
+AI
+AI
+AI
+AI
+AI
+AI
+AI
+AI
+AI
+AI
+MQ
 xt
 II
 mb
@@ -3143,34 +2935,34 @@ mb
 mb
 mb
 mb
-mb
-wK
-Ue
+xt
+xt
+xt
 fc
 Vr
-cv
-Gv
+Vr
+Vr
 Ip
+Vr
+dB
 Gv
 Gv
 Gv
 Gv
+sb
+LL
+MG
 Gv
 Gv
 Gv
 Gv
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
+vS
+Vr
+Vr
 Ip
-Gv
-Gv
-Gv
+Vr
+Vr
+Vr
 WX
 xt
 xt
@@ -3181,7 +2973,9 @@ mb
 ja
 "}
 (55,1,1) = {"
-ja
+xt
+xt
+xt
 mb
 mb
 mb
@@ -3190,31 +2984,29 @@ mb
 mb
 mb
 mb
-mb
-wK
+xt
+xt
+xt
 CW
-fc
-cv
-JE
-xt
-xt
-xt
-xt
-xt
-xt
-xt
-xt
-Bg
-Bg
-Bg
-Bg
-xt
-Ue
-CW
-Ue
 CW
 CW
 Ue
+Me
+Gv
+EO
+Gv
+Tp
+Gv
+Bg
+Gv
+Tp
+Gv
+EO
+Gv
+MQ
+CW
+CW
+Ue
 Ue
 CW
 xt
@@ -3223,13 +3015,14 @@ xt
 mb
 mb
 mb
-mb
-ja
-ja
+xt
+xt
+xt
 "}
 (56,1,1) = {"
-ja
-ja
+IE
+IE
+xt
 mb
 mb
 mb
@@ -3238,91 +3031,92 @@ mb
 mb
 mb
 mb
-wK
-Ue
-fc
-cv
-JE
-pY
+mb
+xt
+Uh
+Uh
+Uh
+Uh
+Uh
+xt
 zU
-MI
-MI
-MI
 zU
-MI
+zU
 xt
+zU
+zU
 cv
-cv
-cv
-cv
+Lc
+zU
+zU
+zU
 xt
-PX
-PX
-PX
-PX
-PX
-PX
-PX
-PX
-PX
+Uh
+Uh
+Uh
+Uh
+Uh
+Uh
 xt
 mb
 mb
 mb
 mb
-mb
-ja
-ja
+xt
+IE
+IE
 "}
 (57,1,1) = {"
-ja
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-wK
-CW
-fc
-cv
+JE
+JE
+RQ
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
 JE
 xt
+Bo
+Bo
+HL
 xt
+uZ
+qc
+qc
 xt
+HL
+Bo
+Bo
 xt
-xt
-xt
-mb
-xt
-cv
-cv
-cv
-cv
-xt
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-xt
-mb
-mb
-mb
-mb
-mb
-ja
-ja
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+RQ
+JE
+JE
 "}
 (58,1,1) = {"
-ja
+IE
+IE
+RQ
 mb
 mb
 mb
@@ -3332,157 +3126,71 @@ mb
 mb
 mb
 mb
-wK
-CW
-fc
-cv
-yH
-Bo
-Ng
+mb
+mb
+mb
+mb
+mb
+mb
+xt
 IE
 IE
 IE
-Ng
-mb
 xt
-cv
-cv
-xt
-xt
-xt
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-ja
-ja
-"}
-(59,1,1) = {"
-ja
-ja
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-wK
-Ue
-fc
-cv
-dB
-Bo
-Ng
 IE
 IE
-IE
-Ng
-mb
-xt
-cv
-cv
-xt
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-ja
-ja
-"}
-(60,1,1) = {"
-ja
-ja
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-wK
-Ue
-fc
-cv
-ht
-Bo
-Ng
-IE
-IE
-IE
-Ng
-mb
-xt
-xt
-xt
-xt
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-ja
-ja
-"}
-(61,1,1) = {"
-ja
-ja
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-wK
-CW
-fc
-cv
 iy
 xt
+IE
+IE
+IE
 xt
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+RQ
+IE
+IE
+"}
+(59,1,1) = {"
+IE
+IE
+RQ
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
 xt
-BC
+IE
+IE
+IE
 xt
+IE
+IE
+IE
+xt
+IE
+IE
+IE
 xt
 mb
 mb
@@ -3495,6 +3203,14 @@ mb
 mb
 mb
 mb
+RQ
+IE
+IE
+"}
+(60,1,1) = {"
+IE
+IE
+RQ
 mb
 mb
 mb
@@ -3507,32 +3223,88 @@ mb
 mb
 mb
 mb
-ja
+mb
+mb
+mb
+xt
+IE
+IE
+IE
+xt
+IE
+IE
+IE
+xt
+IE
+IE
+IE
+xt
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+RQ
+IE
+IE
+"}
+(61,1,1) = {"
+JE
+JE
+RQ
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+xt
+bx
+xt
+bx
+xt
+bx
+xt
+bx
+xt
+bx
+xt
+bx
+xt
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+JE
+RQ
+JE
+JE
 "}
 (62,1,1) = {"
-ja
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-wK
-Ue
-fc
-cv
-yH
-zy
-jy
 IE
 IE
-vS
-Lc
-zx
-mH
+xt
 mb
 mb
 mb
@@ -3547,18 +3319,9 @@ mb
 mb
 mb
 mb
-mb
-mb
-mb
-mb
-mb
-mb
-mb
-ja
-"}
-(63,1,1) = {"
-ja
-ja
+Dz
+xt
+Vc
 mb
 mb
 mb
@@ -3567,17 +3330,8 @@ mb
 mb
 mb
 mb
-wK
-Ue
-fc
-cv
-dB
-bx
-jy
-IE
-IE
-IE
-Lc
+mb
+Dz
 xt
 Vc
 mb
@@ -3590,6 +3344,14 @@ mb
 mb
 mb
 mb
+xt
+IE
+IE
+"}
+(63,1,1) = {"
+xt
+xt
+xt
 mb
 mb
 mb
@@ -3601,7 +3363,37 @@ mb
 mb
 mb
 mb
-ja
+mb
+mb
+mb
+ht
+zx
+Uf
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+ht
+zx
+Uf
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+xt
+xt
+xt
 "}
 (64,1,1) = {"
 ja
@@ -3614,19 +3406,19 @@ mb
 mb
 mb
 mb
-wK
-CW
-fc
-cv
-ht
-bx
-jy
-IE
-IE
-IE
-Lc
-MI
-Uf
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
 mb
 mb
 mb
@@ -3661,17 +3453,17 @@ ja
 mb
 mb
 mb
-wK
-CW
-fc
-cv
-JE
-xt
-xt
-xt
-BC
-xt
-xt
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
 mb
 mb
 mb
@@ -3707,18 +3499,18 @@ ja
 ja
 mb
 mb
-WU
-wK
-Ue
-fc
-cv
-yH
-wi
-Ng
-IE
-IE
-IE
-Ng
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
 mb
 mb
 mb
@@ -3755,17 +3547,17 @@ mb
 mb
 mb
 mb
-wK
-Ue
-fc
-cv
-dB
-bx
-Ng
-IE
-IE
-IE
-Ng
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
 mb
 mb
 mb
@@ -3802,17 +3594,17 @@ mb
 mb
 mb
 mb
-wK
-xt
-sb
-Gv
-Gv
-bx
-Ng
-IE
-IE
-IE
-Ng
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
 mb
 mb
 mb
@@ -3849,24 +3641,24 @@ ja
 mb
 mb
 mb
-wK
-xt
-xt
-Ue
-Ue
-xt
-RQ
-RQ
-RQ
-RQ
-RQ
-xt
 mb
 mb
 mb
-ja
-ja
-ja
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
 ja
 ja
 ja
@@ -3901,13 +3693,13 @@ ja
 ja
 ja
 ja
-xt
 ja
 ja
 ja
 ja
 ja
-xt
+ja
+ja
 ja
 ja
 ja

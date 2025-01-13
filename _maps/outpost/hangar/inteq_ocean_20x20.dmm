@@ -15,6 +15,10 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
+"dq" = (
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
 "dD" = (
 /turf/closed/indestructible/reinforced,
 /area/hangar)
@@ -144,12 +148,28 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"sN" = (
+/obj/structure/platform/industrial_alt{
+	dir = 4
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
+/area/hangar)
 "vA" = (
 /turf/closed/indestructible/rock,
 /area/hangar)
 "vE" = (
 /obj/structure/platform/industrial_alt{
-	dir = 4
+	dir = 8
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
@@ -322,6 +342,17 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"Re" = (
+/obj/structure/platform/industrial_alt{
+	dir = 1
+	},
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
+/area/hangar)
 "SZ" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden,
@@ -343,6 +374,15 @@
 	dir = 4
 	},
 /turf/closed/indestructible/fakeglass,
+/area/hangar)
+"Ww" = (
+/obj/structure/platform/industrial_alt,
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
 /area/hangar)
 "XX" = (
 /turf/open/floor/plasteel/elevatorshaft,
@@ -682,30 +722,30 @@ Le
 Le
 Le
 dD
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
-nC
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
 dD
 Le
 Le
@@ -820,7 +860,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 dD
 eI
 sH
@@ -849,7 +889,7 @@ eI
 sH
 YO
 dD
-Fa
+Re
 Le
 Le
 Le
@@ -867,7 +907,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -896,7 +936,7 @@ eI
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -914,7 +954,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -943,7 +983,7 @@ eI
 sH
 YO
 Ld
-Fa
+Re
 Le
 Le
 Le
@@ -961,7 +1001,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 sI
 eI
 sH
@@ -990,7 +1030,7 @@ eI
 sH
 YO
 Ld
-Fa
+Re
 Le
 Le
 Le
@@ -1008,7 +1048,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 sI
 eI
 sH
@@ -1037,7 +1077,7 @@ eI
 sH
 YO
 Ld
-Fa
+Re
 Le
 Le
 Le
@@ -1055,7 +1095,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -1084,7 +1124,7 @@ eI
 sH
 YO
 Ld
-Fa
+Re
 Le
 Le
 Le
@@ -1102,7 +1142,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 sI
 eI
 sH
@@ -1131,7 +1171,7 @@ Me
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -1149,7 +1189,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 sI
 eI
 sH
@@ -1178,7 +1218,7 @@ eI
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -1196,7 +1236,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -1225,7 +1265,7 @@ eI
 sH
 YO
 Ld
-Fa
+Re
 Le
 Le
 Le
@@ -1243,7 +1283,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -1272,7 +1312,7 @@ eI
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -1290,7 +1330,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -1319,7 +1359,7 @@ eI
 sH
 YO
 Ld
-Fa
+Re
 Le
 Le
 vA
@@ -1337,7 +1377,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -1366,7 +1406,7 @@ eI
 sH
 YO
 Ld
-Fa
+Re
 Le
 Le
 vA
@@ -1384,7 +1424,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 sI
 eI
 sH
@@ -1413,7 +1453,7 @@ eI
 sH
 YO
 Ld
-Fa
+Re
 Le
 Le
 Le
@@ -1431,7 +1471,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -1460,7 +1500,7 @@ eI
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -1478,7 +1518,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -1507,7 +1547,7 @@ eI
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -1525,7 +1565,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 sI
 eI
 sH
@@ -1554,7 +1594,7 @@ eI
 sH
 YO
 Ld
-Fa
+Re
 Le
 Le
 Le
@@ -1572,7 +1612,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 sI
 eI
 sH
@@ -1601,7 +1641,7 @@ Me
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -1619,7 +1659,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -1648,7 +1688,7 @@ eI
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -1666,7 +1706,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -1695,7 +1735,7 @@ eI
 SZ
 YO
 Ld
-Fa
+Re
 Le
 Le
 Le
@@ -1713,7 +1753,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 sI
 eI
 sH
@@ -1742,7 +1782,7 @@ eI
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -1760,7 +1800,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 sI
 eI
 sH
@@ -1789,7 +1829,7 @@ eI
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -1807,7 +1847,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 Ld
 eI
 sH
@@ -1836,7 +1876,7 @@ eI
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -1854,7 +1894,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 sI
 eI
 sH
@@ -1883,7 +1923,7 @@ NM
 sH
 YO
 sI
-Fa
+Re
 Le
 Le
 Le
@@ -1901,7 +1941,7 @@ Le
 Le
 Le
 Le
-MF
+Ww
 dD
 eI
 sH
@@ -1930,7 +1970,7 @@ sH
 sH
 YO
 dD
-Fa
+Re
 Le
 Le
 Le
@@ -2007,11 +2047,11 @@ eI
 Fj
 IT
 Fj
-Fj
+dq
 Fj
 Yx
 Fj
-Fj
+dq
 Fj
 IT
 Fj
@@ -2379,7 +2419,7 @@ Le
 Le
 Le
 fQ
-vE
+nC
 xO
 Le
 Le
@@ -2391,7 +2431,7 @@ Le
 Le
 Le
 fQ
-vE
+nC
 xO
 Le
 Le
@@ -2705,13 +2745,13 @@ vA
 vA
 vA
 vA
-dD
 vA
 vA
 vA
 vA
 vA
-dD
+vA
+vA
 vA
 vA
 vA

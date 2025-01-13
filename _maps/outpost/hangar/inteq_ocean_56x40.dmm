@@ -9,101 +9,55 @@
 /area/hangar)
 "bb" = (
 /obj/machinery/light/floor/hangar,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 6
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "bT" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 9
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ca" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 6
-	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"ca" = (
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "cS" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
 /area/hangar)
-"ec" = (
-/obj/structure/platform/industrial_alt{
-	dir = 8
-	},
-/obj/structure/platform/industrial_alt,
-/obj/structure/platform/industrial_alt/corner{
-	dir = 6
-	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
-/area/hangar)
 "eP" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
+/obj/machinery/elevator_call_button{
+	dir = 8;
+	pixel_x = 23
 	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/closed/indestructible/reinforced,
 /area/hangar)
 "eY" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 10
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "gF" = (
-/obj/machinery/atmospherics/components/binary/volume_pump{
-	dir = 4
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
 	},
-/obj/effect/turf_decal/industrial/shutoff,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "hd" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 10
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
 	},
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/machinery/elevator_call_button{
-	dir = 1;
-	pixel_y = -24
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"hf" = (
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "hn" = (
 /obj/structure/platform/industrial_alt{
@@ -111,38 +65,11 @@
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
-"jF" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
 "jN" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"kv" = (
-/obj/machinery/atmospherics/components/unary/hydrogen_pump{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
-"lY" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 10
-	},
-/obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "ma" = (
 /turf/open/floor/plating{
@@ -150,9 +77,11 @@
 	},
 /area/hangar)
 "mH" = (
-/turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
 	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "nf" = (
 /obj/effect/forcefield/mime/advanced{
@@ -168,18 +97,21 @@
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
-"ob" = (
-/obj/effect/landmark/outpost/elevator,
-/turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "ou" = (
-/obj/machinery/atmospherics/components/unary/portables_connector{
+/obj/machinery/elevator_call_button{
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "oy" = (
 /obj/structure/marker_beacon{
@@ -190,29 +122,16 @@
 	},
 /area/hangar)
 "oP" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 6
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"oW" = (
-/obj/structure/platform/industrial_alt{
-	dir = 1
-	},
-/obj/structure/platform/industrial_alt{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/structure/platform/industrial_alt/corner{
-	dir = 5
-	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"oW" = (
+/obj/effect/turf_decal/corner/opaque/yellow/full,
+/obj/effect/landmark/outpost/hangar_numbers,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "pb" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -221,11 +140,10 @@
 	},
 /area/hangar)
 "pl" = (
-/obj/structure/platform/industrial,
-/obj/structure/platform/industrial{
-	dir = 1
+/obj/machinery/door/poddoor/shutters/indestructible{
+	dir = 4
 	},
-/turf/open/floor/plasteel/elevatorshaft,
+/turf/closed/indestructible/fakeglass,
 /area/hangar)
 "qc" = (
 /obj/structure/platform/industrial_alt{
@@ -238,20 +156,14 @@
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
-"qA" = (
-/obj/structure/railing/corner{
+"rw" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
-"rw" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 10
-	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "rA" = (
 /obj/effect/landmark/outpost/hangar_dock,
@@ -260,10 +172,14 @@
 	},
 /area/hangar)
 "sP" = (
-/obj/structure/platform/industrial_alt{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/turf/open/water/beach/deep,
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "uz" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -275,26 +191,34 @@
 /turf/closed/indestructible/reinforced,
 /area/hangar)
 "wb" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
 	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "wt" = (
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/structure/platform/industrial{
+	dir = 4
 	},
+/obj/structure/platform/industrial{
+	dir = 8
+	},
+/turf/open/floor/plasteel/elevatorshaft,
 /area/hangar)
 "xI" = (
-/obj/machinery/atmospherics/components/binary/valve/digital,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
 	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "yh" = (
 /obj/structure/platform/industrial_alt{
@@ -308,13 +232,10 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "Bm" = (
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
+/obj/effect/landmark/outpost/elevator{
+	shaft = "1"
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/elevatorshaft,
 /area/hangar)
 "BL" = (
 /turf/closed/indestructible/rock,
@@ -324,38 +245,25 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "Ct" = (
-/obj/machinery/atmospherics/components/binary/valve/digital,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 10
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/machinery/door/airlock/hatch{
+	dir = 4
 	},
-/area/hangar)
-"Cw" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /turf/open/floor/plating{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"CC" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
+"Cw" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 4
 	},
-/obj/effect/turf_decal/techfloor/orange,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "CE" = (
-/obj/machinery/light/floor/hangar,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/elevatorshaft,
 /area/hangar)
 "Dd" = (
 /obj/structure/platform/industrial_alt{
@@ -369,15 +277,12 @@
 /turf/open/water/beach/deep,
 /area/hangar)
 "Dy" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/landmark/outpost/hangar_numbers,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "DM" = (
-/turf/closed/indestructible/fakeglass,
+/obj/machinery/door/poddoor/ert,
+/turf/open/floor/plasteel/elevatorshaft,
 /area/hangar)
 "Ff" = (
 /obj/structure/platform/industrial_alt,
@@ -388,100 +293,53 @@
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
-"Fk" = (
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
 "FG" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
+/obj/machinery/light/floor/hangar,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
 	},
-/area/hangar)
-"Gr" = (
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "GK" = (
 /turf/open/floor/plating/rust,
 /area/hangar)
-"HF" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 9
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "IK" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
 	},
-/area/hangar)
-"Ji" = (
-/obj/effect/turf_decal/industrial/shutoff,
-/obj/machinery/atmospherics/components/binary/volume_pump{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Jp" = (
-/obj/structure/railing/corner{
-	dir = 1;
-	layer = 4.1
-	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "JA" = (
-/obj/machinery/door/poddoor/shutters/indestructible,
-/turf/closed/indestructible/fakeglass,
-/area/hangar)
-"MJ" = (
-/obj/machinery/door/airlock/outpost{
-	dir = 4;
-	req_access = list("101");
-	name = "Tram Car Door"
+/obj/machinery/door/poddoor/shutters/indestructible{
+	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating/rust,
 /area/hangar)
 "Po" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 10
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
 	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"PT" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 5
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "Rh" = (
-/obj/machinery/door/airlock/maintenance{
-	req_access_txt = "101"
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 4
 	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
 	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "RE" = (
 /obj/structure/platform/industrial_alt/corner{
@@ -489,85 +347,56 @@
 	},
 /turf/open/water/beach/deep,
 /area/hangar)
-"RJ" = (
-/obj/structure/platform/industrial_alt/corner{
-	dir = 8
-	},
-/turf/open/water/beach/deep,
-/area/hangar)
 "RT" = (
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/plasteel/tech,
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
 /area/hangar)
 "SK" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
-	dir = 1
+/obj/machinery/door/poddoor/shutters/indestructible{
+	dir = 4
 	},
 /turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Tx" = (
-/obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
 "TB" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	dir = 4;
-	id = "ocean_ERT_bay"
+/obj/effect/turf_decal/techfloor{
+	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"TL" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 6
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"TM" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/turf/open/floor/plasteel/patterned/grid,
+/area/hangar)
+"TL" = (
+/obj/structure/platform/industrial_alt/corner{
+	dir = 1
 	},
+/turf/open/water/beach/deep,
+/area/hangar)
+"TM" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "Ve" = (
 /obj/machinery/light/floor/hangar,
-/obj/effect/turf_decal/corner/transparent/bottlegreen{
-	dir = 10
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Vr" = (
-/obj/machinery/computer/hydrogen_exchange,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
-"Vz" = (
-/obj/effect/turf_decal/corner/transparent/bottlegreen,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "VS" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 "Wv" = (
 /turf/open/water/beach/deep,
@@ -586,42 +415,6 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Xf" = (
-/obj/structure/table/reinforced,
-/obj/structure/sign/warning/nosmoking/burnt{
-	pixel_y = 28
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/hangar)
-"Xo" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	dir = 4;
-	id = "ocean_ERT_bay"
-	},
-/turf/open/floor/plasteel/elevatorshaft,
-/area/hangar)
-"XD" = (
-/obj/structure/platform/industrial_alt,
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/obj/structure/platform/industrial_alt/corner{
-	dir = 10
-	},
-/obj/effect/forcefield/mime/advanced{
-	name = "long fall";
-	desc = "You don't want to jump off. You probably won't be saved.";
-	timeleft = null
-	},
-/turf/open/water/beach/deep,
-/area/hangar)
-"XT" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/manifold4w/orange/hidden,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "YF" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden,
@@ -630,19 +423,13 @@
 	},
 /area/hangar)
 "YP" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Zg" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/patterned/grid,
 /area/hangar)
 
 (1,1,1) = {"
@@ -664,6 +451,16 @@ BL
 BL
 BL
 BL
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 BL
 BL
 BL
@@ -677,26 +474,16 @@ BL
 BL
 BL
 BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
-BL
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 BL
 BL
 BL
@@ -735,9 +522,14 @@ Wv
 Wv
 Wv
 Wv
-BL
-BL
-BL
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 Wv
 Wv
 BL
@@ -749,21 +541,16 @@ Wv
 Wv
 BL
 BL
-BL
-BL
-BL
-Wv
-BL
-BL
-BL
-BL
-BL
-BL
-BL
 Wv
 Wv
-BL
-BL
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 BL
 BL
 Wv
@@ -803,15 +590,6 @@ Wv
 Wv
 Wv
 Wv
-BL
-BL
-Wv
-Wv
-Wv
-BL
-BL
-BL
-Wv
 Wv
 Wv
 Wv
@@ -824,8 +602,17 @@ Wv
 Wv
 BL
 BL
-Wv
 BL
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 Wv
 Wv
 Wv
@@ -870,17 +657,17 @@ Wv
 Wv
 Wv
 Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 BL
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
 Wv
 Wv
 Wv
@@ -994,50 +781,50 @@ Wv
 Wv
 Wv
 vH
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
+nf
 vH
 Wv
 Wv
@@ -1061,50 +848,50 @@ Wv
 Wv
 Wv
 vH
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
-qc
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
+Dd
 vH
 Wv
 Wv
@@ -1136,21 +923,26 @@ GK
 ma
 ma
 GK
+GK
+GK
 ma
 ma
+GK
+ma
+GK
+ma
+ma
+GK
+ma
+ma
+vH
+vH
 vH
 vH
 GK
 GK
 ma
 GK
-GK
-GK
-ma
-GK
-ma
-GK
-ma
 ma
 GK
 GK
@@ -1159,12 +951,7 @@ ma
 ma
 GK
 GK
-ma
-vH
-vH
 GK
-GK
-ma
 ma
 ma
 GK
@@ -1239,7 +1026,7 @@ aM
 aM
 wb
 bT
-Dy
+Po
 vH
 vH
 vH
@@ -1261,13 +1048,11 @@ Wv
 Wv
 Ff
 vH
-FG
+xI
 uz
 eY
 cS
 pb
-pb
-pb
 cS
 pb
 cS
@@ -1275,18 +1060,10 @@ pb
 pb
 pb
 cS
-cS
-cS
-pb
-pb
 pb
 pb
 pb
 cS
-pb
-cS
-pb
-pb
 pb
 cS
 pb
@@ -1300,11 +1077,21 @@ cS
 pb
 pb
 pb
+cS
+pb
+cS
+pb
 pb
 pb
 cS
 pb
-FG
+pb
+cS
+pb
+pb
+cS
+pb
+xI
 uz
 eY
 vH
@@ -1328,7 +1115,7 @@ Wv
 Wv
 Ff
 GK
-FG
+xI
 uz
 eY
 WI
@@ -1371,7 +1158,7 @@ WI
 WI
 WI
 WI
-FG
+xI
 uz
 eY
 ma
@@ -1395,7 +1182,7 @@ Wv
 Wv
 Ff
 GK
-FG
+xI
 uz
 eY
 GK
@@ -1438,7 +1225,7 @@ ma
 ma
 GK
 rA
-FG
+xI
 uz
 eY
 GK
@@ -1462,7 +1249,7 @@ Wv
 Wv
 Ff
 ma
-FG
+xI
 uz
 eY
 GK
@@ -1505,7 +1292,7 @@ ma
 ma
 ma
 GK
-FG
+xI
 uz
 eY
 GK
@@ -1529,7 +1316,7 @@ Wv
 Wv
 Ff
 ma
-FG
+xI
 uz
 eY
 oy
@@ -1572,7 +1359,7 @@ GK
 ma
 ma
 WH
-FG
+xI
 uz
 eY
 GK
@@ -1596,9 +1383,9 @@ Wv
 Wv
 Ff
 GK
-FG
-TL
-Ct
+xI
+uz
+eY
 GK
 ma
 ma
@@ -1640,7 +1427,7 @@ ma
 ma
 GK
 xI
-PT
+uz
 eY
 GK
 yh
@@ -1663,8 +1450,8 @@ Wv
 Wv
 Ff
 ma
-FG
-eP
+xI
+uz
 Ve
 GK
 ma
@@ -1706,8 +1493,8 @@ GK
 ma
 ma
 ma
-CE
-YP
+FG
+uz
 eY
 ma
 yh
@@ -1730,8 +1517,8 @@ Wv
 Wv
 Ff
 ma
-FG
-eP
+xI
+uz
 eY
 GK
 ma
@@ -1773,8 +1560,8 @@ GK
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
 ma
 yh
@@ -1797,8 +1584,8 @@ Wv
 Wv
 Ff
 GK
-FG
-eP
+xI
+uz
 eY
 ma
 ma
@@ -1840,8 +1627,8 @@ ma
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
 GK
 yh
@@ -1864,8 +1651,8 @@ Wv
 Wv
 Ff
 GK
-FG
-eP
+xI
+uz
 eY
 oy
 ma
@@ -1907,8 +1694,8 @@ ma
 GK
 ma
 oy
-FG
-YP
+xI
+uz
 eY
 ma
 yh
@@ -1930,9 +1717,9 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
+ma
+xI
+uz
 eY
 ma
 ma
@@ -1974,15 +1761,15 @@ ma
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
-GK
+ma
 yh
 Wv
 Wv
-BL
-BL
+Wv
+Wv
 BL
 "}
 (21,1,1) = {"
@@ -1998,8 +1785,8 @@ Wv
 Wv
 Ff
 GK
-FG
-eP
+xI
+uz
 eY
 ma
 GK
@@ -2041,15 +1828,15 @@ ma
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
-GK
+ma
 yh
 Wv
 Wv
-BL
-BL
+Wv
+Wv
 BL
 "}
 (22,1,1) = {"
@@ -2064,10 +1851,10 @@ Wv
 Wv
 Wv
 Ff
-ma
-FG
-eP
-Ve
+GK
+xI
+uz
+eY
 ma
 ma
 ma
@@ -2108,20 +1895,20 @@ ma
 ma
 ma
 ma
-CE
-YP
+xI
+uz
 eY
 ma
 yh
 Wv
 Wv
 Wv
-BL
+Wv
 BL
 "}
 (23,1,1) = {"
 BL
-BL
+Wv
 Wv
 Wv
 Wv
@@ -2131,9 +1918,9 @@ Wv
 Wv
 Wv
 Ff
-ma
-FG
-eP
+GK
+xI
+uz
 eY
 ma
 ma
@@ -2175,20 +1962,20 @@ GK
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
-ma
+GK
 yh
 Wv
 Wv
 Wv
-BL
+Wv
 BL
 "}
 (24,1,1) = {"
 BL
-BL
+Wv
 Wv
 Wv
 Wv
@@ -2198,10 +1985,10 @@ Wv
 Wv
 Wv
 Ff
-ma
-FG
-eP
-eY
+GK
+xI
+uz
+Ve
 oy
 ma
 ma
@@ -2243,7 +2030,7 @@ GK
 ma
 oy
 FG
-YP
+uz
 eY
 GK
 yh
@@ -2255,8 +2042,8 @@ BL
 "}
 (25,1,1) = {"
 BL
-BL
-BL
+Wv
+Wv
 Wv
 Wv
 Wv
@@ -2265,9 +2052,9 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
+ma
+xI
+uz
 eY
 ma
 ma
@@ -2309,21 +2096,21 @@ GK
 GK
 ma
 GK
-FG
-YP
+xI
+uz
 eY
 ma
 yh
 Wv
 Wv
 Wv
-Wv
+BL
 BL
 "}
 (26,1,1) = {"
 BL
 BL
-BL
+Wv
 Wv
 Wv
 Wv
@@ -2332,9 +2119,9 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
+ma
+xI
+uz
 eY
 GK
 ma
@@ -2376,15 +2163,15 @@ GK
 GK
 ma
 GK
-FG
-YP
+xI
+uz
 eY
-GK
+ma
 yh
 Wv
 Wv
 Wv
-Wv
+BL
 BL
 "}
 (27,1,1) = {"
@@ -2400,8 +2187,8 @@ Wv
 Wv
 Ff
 ma
-FG
-eP
+xI
+uz
 eY
 ma
 ma
@@ -2443,15 +2230,15 @@ ma
 ma
 ma
 GK
-FG
-YP
+xI
+uz
 eY
-ma
+GK
 yh
 Wv
 Wv
 Wv
-Wv
+BL
 BL
 "}
 (28,1,1) = {"
@@ -2467,63 +2254,63 @@ Wv
 Wv
 Ff
 ma
-FG
-eP
-Ve
-GK
-ma
-ma
-ma
-GK
-GK
-ma
-ma
-GK
-GK
-ma
-GK
-GK
-ma
-ma
-GK
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-GK
-ma
-ma
-ma
-ma
-ma
-GK
-CE
-YP
+xI
+uz
 eY
+GK
 ma
+ma
+ma
+GK
+GK
+ma
+ma
+GK
+GK
+ma
+GK
+GK
+ma
+ma
+GK
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+GK
+ma
+ma
+ma
+ma
+ma
+GK
+xI
+uz
+eY
+GK
 yh
 Wv
 Wv
 Wv
-Wv
+BL
 BL
 "}
 (29,1,1) = {"
 BL
-Wv
+BL
 Wv
 Wv
 Wv
@@ -2534,8 +2321,8 @@ Wv
 Wv
 Ff
 ma
-FG
-eP
+xI
+uz
 eY
 WH
 ma
@@ -2577,15 +2364,15 @@ ma
 ma
 ma
 oy
-FG
-YP
+xI
+uz
 eY
 GK
 yh
 Wv
 Wv
 Wv
-Wv
+BL
 BL
 "}
 (30,1,1) = {"
@@ -2601,8 +2388,8 @@ Wv
 Wv
 Ff
 ma
-FG
-eP
+xI
+uz
 eY
 GK
 ma
@@ -2644,10 +2431,10 @@ ma
 ma
 ma
 GK
-FG
-YP
+xI
+uz
 eY
-GK
+ma
 yh
 Wv
 Wv
@@ -2657,8 +2444,8 @@ BL
 "}
 (31,1,1) = {"
 BL
-Wv
-Wv
+BL
+BL
 Wv
 Wv
 Wv
@@ -2668,9 +2455,9 @@ Wv
 Wv
 Ff
 GK
-FG
-XT
-Ct
+xI
+uz
+eY
 ma
 ma
 ma
@@ -2712,20 +2499,20 @@ ma
 ma
 ma
 xI
-YF
+uz
 eY
-GK
+ma
 yh
 Wv
 Wv
-Wv
+BL
 BL
 BL
 "}
 (32,1,1) = {"
 BL
-Wv
-Wv
+BL
+BL
 Wv
 Wv
 Wv
@@ -2734,10 +2521,10 @@ Wv
 Wv
 Wv
 Ff
-ma
-FG
-eP
-eY
+GK
+xI
+uz
+Ve
 ma
 ma
 GK
@@ -2779,21 +2566,21 @@ ma
 ma
 ma
 FG
-YP
+uz
 eY
 ma
 yh
 Wv
 Wv
-Wv
-Wv
+BL
+BL
 BL
 "}
 (33,1,1) = {"
 BL
-Wv
-Wv
-Wv
+BL
+BL
+BL
 Wv
 Wv
 Wv
@@ -2802,8 +2589,8 @@ Wv
 Wv
 Ff
 GK
-FG
-eP
+xI
+uz
 eY
 ma
 ma
@@ -2845,21 +2632,21 @@ ma
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
-ma
+GK
 yh
 Wv
 Wv
 Wv
-Wv
+BL
 BL
 "}
 (34,1,1) = {"
 BL
-Wv
-Wv
+BL
+BL
 Wv
 Wv
 Wv
@@ -2868,9 +2655,9 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
+ma
+xI
+uz
 eY
 ma
 GK
@@ -2912,21 +2699,21 @@ GK
 ma
 GK
 ma
-CE
-YP
+xI
+uz
 eY
 GK
 yh
 Wv
 Wv
 Wv
-Wv
+BL
 BL
 "}
 (35,1,1) = {"
 BL
-Wv
-Wv
+BL
+BL
 Wv
 Wv
 Wv
@@ -2935,10 +2722,10 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
-lY
+ma
+xI
+uz
+eY
 ma
 ma
 ma
@@ -2979,21 +2766,21 @@ GK
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
 GK
 yh
 Wv
 Wv
 Wv
-Wv
+BL
 BL
 "}
 (36,1,1) = {"
 BL
-Wv
-Wv
+BL
+BL
 Wv
 Wv
 Wv
@@ -3002,9 +2789,9 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
+ma
+xI
+uz
 eY
 ma
 GK
@@ -3046,21 +2833,21 @@ GK
 ma
 ma
 GK
-FG
-YP
+xI
+uz
 eY
-GK
+ma
 yh
 Wv
 Wv
 Wv
-BL
+Wv
 BL
 "}
 (37,1,1) = {"
 BL
 BL
-Wv
+BL
 Wv
 Wv
 Wv
@@ -3069,9 +2856,9 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
+ma
+xI
+uz
 eY
 GK
 ma
@@ -3113,15 +2900,15 @@ ma
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
 ma
 yh
 Wv
 Wv
 Wv
-BL
+Wv
 BL
 "}
 (38,1,1) = {"
@@ -3136,9 +2923,9 @@ Wv
 Wv
 Wv
 Ff
-ma
-FG
-eP
+GK
+xI
+uz
 eY
 ma
 ma
@@ -3180,15 +2967,15 @@ ma
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
 GK
 yh
 Wv
 Wv
 Wv
-BL
+Wv
 BL
 "}
 (39,1,1) = {"
@@ -3204,8 +2991,8 @@ Wv
 Wv
 Ff
 GK
-FG
-eP
+xI
+uz
 eY
 ma
 ma
@@ -3247,21 +3034,21 @@ ma
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
 ma
 yh
 Wv
 Wv
 Wv
-BL
+Wv
 BL
 "}
 (40,1,1) = {"
 BL
 BL
-BL
+Wv
 Wv
 Wv
 Wv
@@ -3270,66 +3057,66 @@ Wv
 Wv
 Wv
 Ff
+GK
+xI
+uz
+Ve
+GK
+ma
+ma
+ma
+ma
+GK
+GK
+GK
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+GK
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+GK
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+GK
+ma
+ma
+ma
+ma
+GK
 ma
 FG
-eP
+uz
 eY
-GK
 ma
-ma
-ma
-ma
-GK
-GK
-GK
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-GK
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-GK
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-GK
-ma
-ma
-ma
-ma
-GK
-ma
-CE
-YP
-eY
-GK
 yh
 Wv
 Wv
 Wv
-BL
+Wv
 BL
 "}
 (41,1,1) = {"
 BL
 BL
-BL
-BL
+Wv
+Wv
 Wv
 Wv
 Wv
@@ -3338,8 +3125,8 @@ Wv
 Wv
 Ff
 ma
-FG
-eP
+xI
+uz
 eY
 GK
 ma
@@ -3381,15 +3168,15 @@ ma
 ma
 ma
 GK
-FG
-YP
+xI
+uz
 eY
-ma
+GK
 yh
 Wv
 Wv
 Wv
-Wv
+BL
 BL
 "}
 (42,1,1) = {"
@@ -3404,59 +3191,59 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
-lY
 ma
-ma
-ma
-ma
-GK
-GK
-ma
-ma
-GK
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-GK
-ma
-ma
-ma
-ma
-ma
-GK
-ma
-ma
-ma
-FG
-YP
+xI
+uz
 eY
+ma
+ma
+ma
+ma
 GK
+GK
+ma
+ma
+GK
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+GK
+ma
+ma
+ma
+ma
+ma
+GK
+ma
+ma
+ma
+xI
+uz
+eY
+ma
 yh
 Wv
 Wv
-Wv
-Wv
+BL
+BL
 BL
 "}
 (43,1,1) = {"
@@ -3471,9 +3258,9 @@ Wv
 Wv
 Wv
 Ff
-ma
-FG
-eP
+GK
+xI
+uz
 eY
 ma
 ma
@@ -3515,20 +3302,20 @@ GK
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
 ma
 yh
 Wv
-Wv
-Wv
-Wv
+BL
+BL
+BL
 BL
 "}
 (44,1,1) = {"
 BL
-BL
+Wv
 Wv
 Wv
 Wv
@@ -3538,9 +3325,9 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
+ma
+xI
+uz
 eY
 ma
 ma
@@ -3582,20 +3369,20 @@ ma
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
-GK
+ma
 yh
 Wv
 Wv
 Wv
-Wv
+BL
 BL
 "}
 (45,1,1) = {"
 BL
-BL
+Wv
 Wv
 Wv
 Wv
@@ -3606,8 +3393,8 @@ Wv
 Wv
 Ff
 GK
-FG
-eP
+xI
+uz
 eY
 ma
 GK
@@ -3649,15 +3436,15 @@ GK
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
-GK
+ma
 yh
 Wv
 Wv
 Wv
-Wv
+BL
 BL
 "}
 (46,1,1) = {"
@@ -3673,9 +3460,9 @@ Wv
 Wv
 Ff
 GK
-FG
-XT
-Ct
+xI
+uz
+eY
 ma
 ma
 ma
@@ -3717,14 +3504,14 @@ ma
 ma
 GK
 xI
-YF
+uz
 eY
-ma
+GK
 yh
 Wv
 Wv
-Wv
-Wv
+BL
+BL
 BL
 "}
 (47,1,1) = {"
@@ -3740,8 +3527,8 @@ Wv
 Wv
 Ff
 ma
-FG
-eP
+xI
+uz
 eY
 ma
 ma
@@ -3783,20 +3570,20 @@ ma
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
 ma
 yh
 Wv
 Wv
-Wv
-Wv
+BL
+BL
 BL
 "}
 (48,1,1) = {"
 BL
-Wv
+BL
 Wv
 Wv
 Wv
@@ -3807,9 +3594,9 @@ Wv
 Wv
 Ff
 ma
-FG
-eP
-eY
+xI
+uz
+Ve
 ma
 ma
 ma
@@ -3851,19 +3638,19 @@ ma
 ma
 GK
 FG
-YP
+uz
 eY
 ma
 yh
 Wv
 Wv
-BL
+Wv
 BL
 BL
 "}
 (49,1,1) = {"
 BL
-Wv
+BL
 Wv
 Wv
 Wv
@@ -3873,9 +3660,9 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
+ma
+xI
+uz
 eY
 ma
 ma
@@ -3917,10 +3704,10 @@ GK
 ma
 ma
 GK
-FG
-YP
+xI
+uz
 eY
-GK
+ma
 yh
 Wv
 Wv
@@ -3930,8 +3717,8 @@ BL
 "}
 (50,1,1) = {"
 BL
-Wv
-Wv
+BL
+BL
 Wv
 Wv
 Wv
@@ -3940,10 +3727,10 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
-Ve
+ma
+xI
+uz
+eY
 WH
 ma
 ma
@@ -3984,8 +3771,8 @@ ma
 ma
 ma
 WH
-CE
-YP
+xI
+uz
 eY
 ma
 yh
@@ -3998,8 +3785,8 @@ BL
 (51,1,1) = {"
 BL
 BL
-Wv
-Wv
+BL
+BL
 Wv
 Wv
 Wv
@@ -4008,8 +3795,8 @@ Wv
 Wv
 Ff
 ma
-FG
-eP
+xI
+uz
 eY
 ma
 ma
@@ -4051,10 +3838,10 @@ ma
 ma
 ma
 GK
-FG
-YP
+xI
+uz
 eY
-ma
+GK
 yh
 Wv
 Wv
@@ -4065,18 +3852,18 @@ BL
 (52,1,1) = {"
 BL
 BL
-BL
 Wv
 Wv
-BL
+Wv
+Wv
 Wv
 Wv
 Wv
 Wv
 Ff
 ma
-FG
-eP
+xI
+uz
 eY
 ma
 ma
@@ -4118,32 +3905,32 @@ ma
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
-ma
+GK
 yh
 Wv
 Wv
 Wv
-BL
+Wv
 BL
 "}
 (53,1,1) = {"
 BL
 BL
 BL
-BL
-BL
+Wv
+Wv
 Wv
 Wv
 Wv
 Wv
 Wv
 Ff
-ma
-FG
-eP
+GK
+xI
+uz
 eY
 ma
 GK
@@ -4185,21 +3972,21 @@ GK
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
 GK
 yh
 Wv
 Wv
 Wv
-BL
+Wv
 BL
 "}
 (54,1,1) = {"
 BL
 BL
-BL
+Wv
 Wv
 Wv
 Wv
@@ -4208,9 +3995,9 @@ Wv
 Wv
 Wv
 Ff
-ma
-FG
-eP
+GK
+xI
+uz
 eY
 ma
 ma
@@ -4252,21 +4039,21 @@ GK
 ma
 ma
 GK
-FG
-YP
+xI
+uz
 eY
-GK
+ma
 yh
 Wv
-BL
-BL
-BL
+Wv
+Wv
+Wv
 BL
 "}
 (55,1,1) = {"
 BL
 BL
-BL
+Wv
 Wv
 Wv
 Wv
@@ -4275,9 +4062,9 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-eP
+ma
+xI
+uz
 eY
 WH
 ma
@@ -4319,21 +4106,21 @@ ma
 ma
 ma
 WH
-FG
-YP
+xI
+uz
 eY
-GK
+ma
 yh
 Wv
 Wv
-BL
-BL
+Wv
+Wv
 BL
 "}
 (56,1,1) = {"
 BL
-BL
-BL
+Wv
+Wv
 Wv
 Wv
 Wv
@@ -4342,9 +4129,9 @@ Wv
 Wv
 Wv
 Ff
-ma
-FG
-eP
+GK
+xI
+uz
 Ve
 GK
 ma
@@ -4386,20 +4173,20 @@ ma
 ma
 ma
 ma
-CE
-YP
+FG
+uz
 eY
-ma
+GK
 yh
 Wv
 Wv
-Wv
+BL
 BL
 BL
 "}
 (57,1,1) = {"
 BL
-BL
+Wv
 Wv
 Wv
 Wv
@@ -4409,9 +4196,9 @@ Wv
 Wv
 Wv
 Ff
-ma
-FG
-eP
+GK
+xI
+uz
 eY
 GK
 ma
@@ -4453,15 +4240,15 @@ ma
 ma
 ma
 ma
-FG
-YP
+xI
+uz
 eY
 GK
 yh
 Wv
 Wv
-Wv
-Wv
+BL
+BL
 BL
 "}
 (58,1,1) = {"
@@ -4477,8 +4264,8 @@ Wv
 Wv
 Ff
 ma
-FG
-eP
+xI
+uz
 eY
 ma
 ma
@@ -4520,8 +4307,8 @@ ma
 ma
 ma
 GK
-FG
-YP
+xI
+uz
 eY
 GK
 yh
@@ -4532,6 +4319,73 @@ BL
 BL
 "}
 (59,1,1) = {"
+BL
+BL
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Ff
+GK
+xI
+uz
+eY
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+GK
+ma
+ma
+ma
+GK
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+ma
+GK
+ma
+ma
+ma
+GK
+ma
+ma
+ma
+ma
+ma
+ma
+GK
+ma
+xI
+uz
+eY
+ma
+yh
+Wv
+Wv
+Wv
+BL
+BL
+"}
+(60,1,1) = {"
 BL
 Wv
 Wv
@@ -4544,75 +4398,8 @@ Wv
 Wv
 Ff
 GK
-FG
-eP
-eY
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-GK
-ma
-ma
-ma
-GK
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-GK
-ma
-ma
-ma
-GK
-ma
-ma
-ma
-ma
-ma
-ma
-GK
-ma
-FG
-YP
-eY
-ma
-yh
-Wv
-Wv
-BL
-BL
-BL
-"}
-(60,1,1) = {"
-BL
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-nY
-nY
-nY
-ec
-GK
-FG
-eP
+xI
+uz
 eY
 oy
 ma
@@ -4654,14 +4441,14 @@ ma
 ma
 GK
 oy
-FG
-YP
+xI
+uz
 eY
 ma
 yh
 Wv
 Wv
-BL
+Wv
 BL
 BL
 "}
@@ -4672,14 +4459,14 @@ Wv
 Wv
 Wv
 Wv
-Cm
-vH
-vH
-vH
-vH
-vH
-FG
-eP
+Wv
+Wv
+Wv
+Wv
+Ff
+ma
+xI
+uz
 eY
 ma
 ma
@@ -4721,8 +4508,8 @@ ma
 ma
 GK
 GK
-FG
-YP
+xI
+uz
 eY
 GK
 yh
@@ -4739,14 +4526,14 @@ Wv
 Wv
 Wv
 Wv
-Cm
-vH
-Fk
-vH
-vH
-kv
-jF
-eP
+Wv
+Wv
+Wv
+Wv
+Ff
+ma
+xI
+uz
 Ve
 ma
 ma
@@ -4788,8 +4575,8 @@ ma
 ma
 ma
 GK
-CE
-YP
+FG
+uz
 eY
 ma
 yh
@@ -4806,14 +4593,14 @@ Wv
 Wv
 Wv
 Wv
-Cm
-vH
-Fk
-Rh
-Fk
-gF
-Jp
-eP
+Wv
+Wv
+Wv
+Wv
+Ff
+GK
+xI
+uz
 eY
 GK
 ma
@@ -4855,8 +4642,8 @@ ma
 ma
 ma
 GK
-FG
-YP
+xI
+uz
 eY
 ma
 yh
@@ -4873,15 +4660,15 @@ Wv
 Wv
 Wv
 Wv
-Cm
-vH
-Fk
-vH
-Vr
-SK
-Cw
-XT
-Ct
+Wv
+Wv
+Wv
+Wv
+Ff
+GK
+xI
+uz
+eY
 GK
 GK
 ma
@@ -4940,14 +4727,14 @@ Wv
 Wv
 Wv
 Wv
-Cm
-vH
-Fk
-vH
-Xf
-Ji
-qA
-eP
+Wv
+Wv
+Wv
+Wv
+Ff
+ma
+xI
+uz
 eY
 WH
 GK
@@ -4989,8 +4776,8 @@ GK
 ma
 ma
 WH
-FG
-YP
+xI
+uz
 eY
 ma
 yh
@@ -5007,14 +4794,14 @@ Wv
 Wv
 Wv
 Wv
-Cm
-vH
-Fk
-vH
-vH
-ou
-jF
-VS
+Wv
+Wv
+Wv
+Wv
+Ff
+ma
+xI
+uz
 eY
 GK
 GK
@@ -5056,8 +4843,8 @@ ma
 ma
 ma
 GK
-FG
-YP
+xI
+uz
 eY
 ma
 yh
@@ -5074,14 +4861,14 @@ Wv
 Wv
 Wv
 Wv
-Cm
-vH
-vH
-vH
-vH
-vH
-Jp
-VS
+Wv
+Wv
+Wv
+Wv
+Ff
+GK
+xI
+uz
 eY
 GK
 GK
@@ -5123,8 +4910,8 @@ ma
 ma
 GK
 GK
-FG
-YP
+xI
+uz
 eY
 ma
 yh
@@ -5142,13 +4929,13 @@ Wv
 Wv
 Wv
 Wv
-sP
-sP
-sP
-XD
+Wv
+Wv
+Wv
+Ff
 ma
-FG
-Zg
+xI
+uz
 TM
 bT
 bT
@@ -5191,7 +4978,7 @@ bT
 bT
 bT
 jN
-YP
+uz
 eY
 ma
 yh
@@ -5213,52 +5000,52 @@ Wv
 Wv
 Wv
 Ff
-GK
-FG
-rw
+vH
+xI
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+mH
 Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-Cw
-HF
+Rh
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
+uz
 eY
 vH
 yh
@@ -5278,27 +5065,14 @@ Wv
 Wv
 Wv
 Wv
-Wv
-Ff
-GK
-FG
-Fk
-wt
-oP
-bb
-oP
-oP
-oP
-oP
-oP
-oP
+vH
+vH
+vH
+sP
 oP
 oP
 oP
 bb
-oP
-oP
-oP
 oP
 oP
 oP
@@ -5310,13 +5084,26 @@ oP
 oP
 oP
 oP
+hd
+ca
+ca
+ca
+ca
+gF
+oW
+rw
+ca
+ca
+ca
+ca
+VS
+oP
+oP
+oP
 oP
 oP
 oP
 bb
-oP
-oP
-oP
 oP
 oP
 oP
@@ -5336,7 +5123,9 @@ Wv
 BL
 "}
 (71,1,1) = {"
-BL
+vH
+vH
+vH
 Wv
 Wv
 Wv
@@ -5345,47 +5134,45 @@ Wv
 Wv
 Wv
 Wv
-Wv
-Ff
+vH
+vH
+vH
 ma
-FG
-wt
+ma
+ma
+GK
+ma
+ma
+GK
+GK
+ma
+GK
+ma
+ma
+GK
+GK
+xI
+ca
+Dy
+ca
+ca
+ca
+YP
+ca
+ca
+ca
+Dy
+ca
 eY
-vH
-vH
-vH
-vH
-vH
-vH
-vH
-vH
-TB
-TB
-TB
-TB
-vH
-GK
-GK
-GK
 ma
-GK
-ma
-ma
-GK
-GK
-ma
-GK
-ma
-ma
-GK
 GK
 ma
 ma
 ma
 GK
 ma
-GK
 ma
+GK
 GK
 ma
 ma
@@ -5398,146 +5185,148 @@ vH
 Wv
 Wv
 Wv
-Wv
-BL
-BL
+vH
+vH
+vH
 "}
 (72,1,1) = {"
-BL
-BL
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Ff
-GK
-FG
-wt
-eY
-oW
-pl
-sP
-sP
-sP
-pl
-sP
-vH
-wt
-wt
-wt
-wt
-vH
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
+CE
+CE
 vH
 Wv
 Wv
 Wv
 Wv
 Wv
-BL
-BL
+Wv
+Wv
+Wv
+Wv
+vH
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+vH
+TB
+TB
+TB
+vH
+TB
+TB
+ou
+eP
+TB
+TB
+TB
+vH
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+qc
+vH
+Wv
+Wv
+Wv
+Wv
+vH
+CE
+CE
 "}
 (73,1,1) = {"
-BL
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Ff
-ma
-FG
 wt
-eY
-vH
-vH
-vH
-vH
-vH
-vH
-Wv
-vH
+wt
+DM
 wt
 wt
 wt
 wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
 vH
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
+SK
+SK
+JA
 vH
-Wv
-Wv
-Wv
-Wv
-Wv
-BL
-BL
+Ct
+RT
+RT
+vH
+JA
+SK
+SK
+vH
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+DM
+wt
+wt
 "}
 (74,1,1) = {"
-BL
+CE
+CE
+DM
 Wv
 Wv
 Wv
@@ -5547,23 +5336,34 @@ Wv
 Wv
 Wv
 Wv
-Ff
-ma
-FG
-wt
-TM
-CC
-JA
-mH
-mH
-mH
-JA
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 Wv
 vH
-wt
-wt
+CE
+CE
+CE
 vH
+CE
+CE
+Bm
 vH
+CE
+CE
+CE
 vH
 Wv
 Wv
@@ -5586,26 +5386,14 @@ Wv
 Wv
 Wv
 Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-BL
-BL
+DM
+CE
+CE
 "}
 (75,1,1) = {"
-BL
-BL
+CE
+CE
+DM
 Wv
 Wv
 Wv
@@ -5614,21 +5402,35 @@ Wv
 Wv
 Wv
 Wv
-Ff
-GK
-FG
-wt
-Tx
-CC
-JA
-mH
-mH
-mH
-JA
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 Wv
 vH
-wt
-wt
+CE
+CE
+CE
+vH
+CE
+CE
+CE
+vH
+CE
+CE
+CE
 vH
 Wv
 Wv
@@ -5651,28 +5453,14 @@ Wv
 Wv
 Wv
 Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-BL
-BL
+DM
+CE
+CE
 "}
 (76,1,1) = {"
-BL
-BL
+CE
+CE
+DM
 Wv
 Wv
 Wv
@@ -5681,21 +5469,35 @@ Wv
 Wv
 Wv
 Wv
-Ff
-GK
-FG
-wt
-Vz
-CC
-JA
-mH
-mH
-mH
-JA
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 Wv
 vH
+CE
+CE
+CE
 vH
+CE
+CE
+CE
 vH
+CE
+CE
+CE
 vH
 Wv
 Wv
@@ -5718,116 +5520,81 @@ Wv
 Wv
 Wv
 Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-BL
-BL
+DM
+CE
+CE
 "}
 (77,1,1) = {"
-BL
-BL
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Ff
-ma
-FG
 wt
-hd
+wt
+DM
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
 vH
+pl
 vH
+pl
 vH
-MJ
+pl
 vH
+pl
 vH
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-BL
+pl
+vH
+pl
+vH
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+wt
+DM
+wt
+wt
 "}
 (78,1,1) = {"
-BL
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Ff
-GK
-FG
-wt
-TM
-Bm
-RT
-mH
-mH
-ob
-DM
-nY
-RJ
+CE
+CE
+vH
 Wv
 Wv
 Wv
@@ -5852,6 +5619,9 @@ Wv
 Wv
 Wv
 Wv
+Cm
+vH
+hn
 Wv
 Wv
 Wv
@@ -5861,38 +5631,7 @@ Wv
 Wv
 Wv
 Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-BL
-"}
-(79,1,1) = {"
-BL
-BL
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Ff
-GK
-FG
-wt
-Tx
-Gr
-RT
-mH
-mH
-mH
-DM
+Cm
 vH
 hn
 Wv
@@ -5915,6 +5654,14 @@ Wv
 Wv
 Wv
 Wv
+vH
+CE
+CE
+"}
+(79,1,1) = {"
+vH
+vH
+vH
 Wv
 Wv
 Wv
@@ -5936,7 +5683,47 @@ Wv
 Wv
 Wv
 Wv
-BL
+Wv
+Wv
+Wv
+TL
+nY
+RE
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+TL
+nY
+RE
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+vH
+vH
+vH
 "}
 (80,1,1) = {"
 BL
@@ -5949,19 +5736,19 @@ Wv
 Wv
 Wv
 Wv
-Ff
-ma
-FG
-wt
-Vz
-Gr
-RT
-mH
-mH
-mH
-DM
-sP
-RE
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 Wv
 Wv
 Wv
@@ -6016,17 +5803,17 @@ BL
 Wv
 Wv
 Wv
-Ff
-ma
-FG
-wt
-eY
-vH
-vH
-vH
-MJ
-vH
-vH
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 Wv
 Wv
 Wv
@@ -6082,18 +5869,18 @@ BL
 BL
 Wv
 Wv
-nf
-Ff
-GK
-FG
-wt
-TM
-hf
-JA
-mH
-mH
-mH
-JA
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 Wv
 Wv
 Wv
@@ -6150,17 +5937,26 @@ Wv
 Wv
 Wv
 Wv
-Ff
-GK
-FG
-wt
-Tx
-Gr
-JA
-mH
-mH
-mH
-JA
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 Wv
 Wv
 Wv
@@ -6181,15 +5977,6 @@ Wv
 Wv
 Wv
 BL
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
 Wv
 Wv
 Wv
@@ -6217,17 +6004,26 @@ Wv
 Wv
 Wv
 Wv
-Ff
-vH
-ca
-oP
-oP
-Gr
-JA
-mH
-mH
-mH
-JA
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+BL
+BL
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
 Wv
 Wv
 Wv
@@ -6248,16 +6044,7 @@ Wv
 BL
 BL
 BL
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
-Wv
+BL
 Wv
 Wv
 Wv
@@ -6283,27 +6070,9 @@ BL
 BL
 Wv
 Wv
-Wv
-Ff
-vH
-vH
-GK
-GK
-vH
-Xo
-Xo
-Xo
-Xo
-Xo
-vH
-Wv
-Wv
-Wv
-Wv
-Wv
 BL
 BL
-Wv
+BL
 Wv
 Wv
 Wv
@@ -6317,6 +6086,22 @@ BL
 BL
 BL
 Wv
+BL
+BL
+Wv
+BL
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+Wv
+BL
+BL
+BL
 Wv
 Wv
 Wv
@@ -6326,8 +6111,10 @@ BL
 BL
 BL
 BL
-Wv
-Wv
+BL
+BL
+BL
+BL
 Wv
 Wv
 Wv
@@ -6356,13 +6143,13 @@ BL
 BL
 BL
 BL
-vH
 BL
 BL
 BL
 BL
 BL
-vH
+BL
+BL
 BL
 BL
 BL

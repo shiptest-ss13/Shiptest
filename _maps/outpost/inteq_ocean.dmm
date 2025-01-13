@@ -375,16 +375,13 @@
 /obj/structure/platform{
 	dir = 1
 	},
-/obj/structure/platform{
-	dir = 8
-	},
-/obj/structure/platform/corner{
-	dir = 9
-	},
 /obj/effect/forcefield/mime/advanced{
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
+	},
+/obj/structure/platform{
+	dir = 4
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -738,6 +735,13 @@
 	icon_state = "platingdmg2"
 	},
 /area/outpost/external)
+"gG" = (
+/obj/structure/platform/industrial_alt,
+/obj/structure/platform/industrial_alt{
+	dir = 4
+	},
+/turf/open/water/beach/deep,
+/area/outpost/external)
 "gJ" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/corner/opaque/brown/diagonal{
@@ -877,9 +881,6 @@
 /area/outpost/hallway/central)
 "ic" = (
 /obj/structure/platform,
-/obj/structure/platform{
-	dir = 8
-	},
 /obj/structure/platform/corner{
 	dir = 6
 	},
@@ -887,6 +888,9 @@
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
+	},
+/obj/structure/platform{
+	dir = 4
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -2306,6 +2310,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "sW" = (
@@ -2548,12 +2553,9 @@
 	},
 /area/outpost/maintenance/port)
 "uC" = (
+/obj/effect/decal/fakelattice,
 /obj/structure/platform/industrial_alt{
-	dir = 8
-	},
-/obj/structure/platform/industrial_alt,
-/obj/structure/platform/industrial_alt/corner{
-	dir = 6
+	dir = 4
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -2687,9 +2689,6 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo)
 "vA" = (
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
 /obj/structure/railing{
 	dir = 8
 	},
@@ -3242,18 +3241,15 @@
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
 "zQ" = (
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
 /obj/structure/platform/industrial_alt,
-/obj/structure/platform/industrial_alt/corner{
-	dir = 10
-	},
 /obj/structure/railing/corner,
 /obj/effect/forcefield/mime/advanced{
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
+	},
+/obj/structure/platform/industrial_alt{
+	dir = 8
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -3912,9 +3908,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/outpost/crew/bar)
 "EK" = (
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
 /obj/structure/railing/corner{
 	dir = 1;
 	layer = 4.1
@@ -3923,6 +3916,9 @@
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
+	},
+/obj/structure/platform/industrial_alt{
+	dir = 8
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -4139,9 +4135,14 @@
 /area/outpost/cargo)
 "FN" = (
 /obj/structure/platform/industrial_alt{
+	dir = 1
+	},
+/obj/structure/platform/industrial_alt/corner{
+	dir = 9
+	},
+/obj/structure/platform/industrial_alt{
 	dir = 4
 	},
-/obj/effect/decal/fakelattice,
 /turf/open/water/beach/deep,
 /area/outpost/external)
 "FO" = (
@@ -4424,6 +4425,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "HT" = (
@@ -4671,13 +4673,10 @@
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
 "JG" = (
-/obj/structure/platform/industrial_alt,
 /obj/structure/platform/industrial_alt{
-	dir = 4
+	dir = 8
 	},
-/obj/structure/platform/industrial_alt/corner{
-	dir = 10
-	},
+/obj/structure/platform/industrial_alt,
 /turf/open/water/beach/deep,
 /area/outpost/external)
 "JO" = (
@@ -4703,13 +4702,13 @@
 /turf/open/water/beach/deep,
 /area/outpost/external)
 "Ka" = (
-/obj/structure/platform{
-	dir = 8
-	},
 /obj/effect/forcefield/mime/advanced{
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
+	},
+/obj/structure/platform{
+	dir = 4
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -4925,12 +4924,9 @@
 /turf/open/floor/hangar/plasteel/white,
 /area/outpost/cargo)
 "LE" = (
-/obj/structure/platform/industrial_alt{
-	dir = 4
-	},
 /obj/structure/platform/industrial_alt,
-/obj/structure/platform/industrial_alt/corner{
-	dir = 10
+/obj/structure/platform/industrial_alt{
+	dir = 8
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -4996,6 +4992,7 @@
 /obj/effect/turf_decal/corner/opaque/inteqbrown/diagonal{
 	dir = 4
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "Mi" = (
@@ -5330,9 +5327,6 @@
 /area/outpost/cargo)
 "OJ" = (
 /obj/structure/platform,
-/obj/structure/platform{
-	dir = 4
-	},
 /obj/structure/platform/corner{
 	dir = 10
 	},
@@ -5340,6 +5334,9 @@
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
+	},
+/obj/structure/platform{
+	dir = 8
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -5520,11 +5517,11 @@
 /area/outpost/hallway/central)
 "Qp" = (
 /obj/structure/platform/industrial_alt,
-/obj/structure/platform/industrial_alt{
-	dir = 8
-	},
 /obj/structure/platform/industrial_alt/corner{
 	dir = 6
+	},
+/obj/structure/platform/industrial_alt{
+	dir = 4
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -6088,6 +6085,14 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/port)
+"UN" = (
+/obj/effect/forcefield/mime/advanced{
+	name = "long fall";
+	desc = "You don't want to jump off. You probably won't be saved.";
+	timeleft = null
+	},
+/turf/open/water/beach/deep,
+/area/outpost/external)
 "UO" = (
 /obj/effect/turf_decal/corner/opaque/brown/diagonal{
 	dir = 4
@@ -6261,13 +6266,13 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/bar)
 "VB" = (
-/obj/structure/platform{
-	dir = 4
-	},
 /obj/effect/forcefield/mime/advanced{
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
+	},
+/obj/structure/platform{
+	dir = 8
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -6364,10 +6369,7 @@
 	dir = 1
 	},
 /obj/structure/platform/industrial_alt{
-	dir = 4
-	},
-/obj/structure/platform/industrial_alt/corner{
-	dir = 5
+	dir = 8
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -6447,10 +6449,7 @@
 	dir = 1
 	},
 /obj/structure/platform/industrial_alt{
-	dir = 8
-	},
-/obj/structure/platform/industrial_alt/corner{
-	dir = 9
+	dir = 4
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -6471,16 +6470,13 @@
 /obj/structure/platform{
 	dir = 1
 	},
-/obj/structure/platform{
-	dir = 4
-	},
-/obj/structure/platform/corner{
-	dir = 5
-	},
 /obj/effect/forcefield/mime/advanced{
 	name = "long fall";
 	desc = "You don't want to jump off. You probably won't be saved.";
 	timeleft = null
+	},
+/obj/structure/platform{
+	dir = 8
 	},
 /turf/open/water/beach/deep,
 /area/outpost/external)
@@ -7880,13 +7876,13 @@ EV
 EV
 EV
 cQ
-GH
+Gv
 Ck
 EV
 EV
 EV
 Ck
-GH
+Gv
 Jq
 EV
 EV
@@ -8084,13 +8080,13 @@ EV
 EV
 EV
 qQ
-Gv
+GH
 Ck
 EV
 EV
 EV
 Ck
-Gv
+GH
 JZ
 EV
 EV
@@ -8798,13 +8794,13 @@ EV
 EV
 EV
 cQ
-GH
+Gv
 Ck
 EV
 EV
 EV
 Ck
-GH
+Gv
 Jq
 EV
 EV
@@ -8984,12 +8980,12 @@ EV
 EV
 EV
 cQ
-GH
-GH
-GH
-GH
-GH
-GH
+Gv
+Gv
+Gv
+Gv
+Gv
+Gv
 Jq
 EV
 EV
@@ -9002,13 +8998,13 @@ EV
 EV
 EV
 qQ
-Gv
+GH
 Ck
 EV
 EV
 EV
 Ck
-Gv
+GH
 JZ
 EV
 EV
@@ -9064,8 +9060,8 @@ Le
 Ka
 kD
 Le
-Ka
-Ka
+UN
+UN
 kD
 Le
 Ka
@@ -9076,16 +9072,16 @@ EV
 EV
 EV
 cQ
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-GH
-uC
+Gv
+Gv
+Gv
+Gv
+Gv
+Gv
+Gv
+Gv
+Gv
+Qp
 mx
 hi
 dj
@@ -9172,12 +9168,12 @@ dg
 ic
 aw
 cH
-GH
-GH
-GH
-GH
-GH
-uC
+Gv
+Gv
+Gv
+Gv
+Gv
+Qp
 EA
 EA
 EA
@@ -9195,12 +9191,12 @@ eW
 qF
 hi
 WX
-GH
-GH
-GH
-GH
-GH
-GH
+Gv
+Gv
+Gv
+Gv
+Gv
+Gv
 Jq
 EV
 EV
@@ -9370,8 +9366,8 @@ ag
 uD
 qn
 st
-Ks
-Ks
+qn
+qn
 FU
 qn
 uD
@@ -9406,11 +9402,11 @@ kL
 xy
 hi
 WX
-GH
-GH
-GH
-GH
-GH
+Gv
+Gv
+Gv
+Gv
+Gv
 Ck
 EV
 EV
@@ -9722,7 +9718,7 @@ EV
 EV
 EV
 Ck
-GH
+Gv
 Jq
 EV
 EV
@@ -9926,7 +9922,7 @@ Vp
 Vp
 Vp
 ew
-Gv
+GH
 JZ
 EV
 EV
@@ -10233,8 +10229,8 @@ gj
 gj
 gj
 cQ
-GH
-GH
+Gv
+Gv
 Jq
 EV
 EV
@@ -10641,8 +10637,8 @@ gj
 gj
 gj
 qQ
-Gv
-Gv
+GH
+GH
 kR
 EV
 EV
@@ -10804,7 +10800,7 @@ qn
 qn
 mq
 cH
-Qp
+gG
 EA
 xO
 ZJ
@@ -10946,7 +10942,7 @@ Vp
 Vp
 Vp
 ew
-GH
+Gv
 Jq
 EV
 EV
@@ -11150,7 +11146,7 @@ EV
 EV
 EV
 Ck
-Gv
+GH
 JZ
 EV
 EV
@@ -11445,12 +11441,12 @@ ma
 XI
 ls
 Wl
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
+GH
+GH
+GH
+GH
+GH
+GH
 Ck
 EV
 EV
@@ -11534,11 +11530,11 @@ eC
 DL
 GK
 Wl
-Gv
-Gv
-Gv
-Gv
-JG
+GH
+GH
+GH
+GH
+LE
 ls
 hg
 Kf
@@ -11620,8 +11616,8 @@ EV
 EV
 EV
 qQ
-Gv
-Gv
+GH
+GH
 LE
 yU
 SK
@@ -11743,7 +11739,7 @@ EV
 EV
 EV
 qQ
-Gv
+GH
 LE
 tB
 tg
@@ -11756,13 +11752,13 @@ EV
 EV
 EV
 cQ
-GH
+Gv
 Ck
 EV
 EV
 EV
 Ck
-GH
+Gv
 Jq
 EV
 EV
@@ -11960,13 +11956,13 @@ EV
 EV
 EV
 qQ
-Gv
+GH
 Ck
 EV
 EV
 EV
 Ck
-Gv
+GH
 JZ
 EV
 EV
@@ -12041,8 +12037,8 @@ RD
 sm
 HU
 Wl
-Gv
-Gv
+GH
+GH
 JZ
 tB
 Qk
@@ -12133,9 +12129,9 @@ EV
 EV
 EV
 qQ
-Gv
-FN
-Gv
+GH
+fh
+GH
 LE
 HU
 kF
@@ -12234,18 +12230,18 @@ EV
 EV
 EV
 cQ
-GH
-GH
-fh
-GH
+Gv
+Gv
+uC
+Gv
 Qp
 HU
 Uw
 Wz
 qj
 HU
-WX
-GH
+FN
+Gv
 Jq
 EV
 tB
@@ -12348,13 +12344,13 @@ Ue
 HU
 HU
 HU
-WX
-GH
-GH
-GH
-GH
-GH
-GH
+FN
+Gv
+Gv
+Gv
+Gv
+Gv
+Gv
 Jq
 YG
 tB
@@ -12572,13 +12568,13 @@ EV
 EV
 EV
 cQ
-GH
+Gv
 Ck
 EV
 EV
 EV
 Ck
-GH
+Gv
 Jq
 EV
 EV
@@ -12776,13 +12772,13 @@ EV
 EV
 EV
 qQ
-Gv
+GH
 Ck
 EV
 EV
 EV
 Ck
-Gv
+GH
 JZ
 EV
 EV
@@ -13070,11 +13066,11 @@ tB
 tB
 tB
 Wl
-Gv
-Gv
-Gv
-Gv
-Gv
+GH
+GH
+GH
+GH
+GH
 JZ
 EV
 EV
@@ -13152,8 +13148,8 @@ EV
 EV
 EV
 qQ
-Gv
-JG
+GH
+LE
 At
 SA
 nS
@@ -13168,9 +13164,9 @@ Hb
 EJ
 wl
 Wl
-Gv
-Gv
-Gv
+GH
+GH
+GH
 JZ
 EV
 EV
@@ -13388,13 +13384,13 @@ EV
 EV
 EV
 cQ
-GH
+Gv
 Ck
 EV
 EV
 EV
 Ck
-GH
+Gv
 Jq
 EV
 EV
@@ -13471,8 +13467,8 @@ cm
 ku
 wl
 Wl
-Gv
-Gv
+GH
+GH
 JZ
 EV
 EV
@@ -13592,13 +13588,13 @@ EV
 EV
 EV
 qQ
-Gv
+GH
 Ck
 EV
 EV
 EV
 Ck
-Gv
+GH
 JZ
 EV
 EV
@@ -13874,10 +13870,10 @@ vA
 vA
 vA
 EK
-Gv
-Gv
-Gv
-Gv
+GH
+GH
+GH
+GH
 JZ
 EV
 EV
@@ -14204,13 +14200,13 @@ EV
 EV
 EV
 cQ
-GH
+Gv
 Ck
 EV
 EV
 EV
 Ck
-GH
+Gv
 Jq
 EV
 EV
@@ -14408,13 +14404,13 @@ EV
 EV
 EV
 qQ
-Gv
+GH
 Ck
 EV
 EV
 EV
 Ck
-Gv
+GH
 JZ
 EV
 EV
@@ -15020,13 +15016,13 @@ EV
 EV
 EV
 cQ
-GH
+Gv
 Ck
 EV
 EV
 EV
 Ck
-GH
+Gv
 Jq
 EV
 EV
@@ -15224,13 +15220,13 @@ EV
 EV
 EV
 qQ
-Gv
+GH
 Ck
 EV
 EV
 EV
 Ck
-Gv
+GH
 JZ
 EV
 EV
@@ -15836,13 +15832,13 @@ EV
 EV
 EV
 cQ
-GH
+Gv
 Ck
 EV
 EV
 EV
 Ck
-GH
+Gv
 Jq
 EV
 EV
@@ -16040,13 +16036,13 @@ EV
 EV
 EV
 qQ
-Gv
+GH
 Ck
 EV
 EV
 EV
 Ck
-Gv
+GH
 JZ
 EV
 EV
