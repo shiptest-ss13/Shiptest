@@ -9,11 +9,11 @@
 /datum/supply_pack/spacesuit_armor/spacesuit
 	name = "Space Suit Crate"
 	desc = "Contains two basic space suits. Although the technology is centuries old, it should protect you from the vacuum of space."
-	cost = 500
-	contains = list(/obj/item/clothing/suit/space,
-					/obj/item/clothing/suit/space,
-					/obj/item/clothing/head/helmet/space,
-					/obj/item/clothing/head/helmet/space)
+	cost = 500 //changed the suit type to be the one without pockets, making it more consistent with the
+	contains = list(/obj/item/clothing/suit/space/eva,
+					/obj/item/clothing/suit/space/eva,
+					/obj/item/clothing/head/helmet/space/eva,
+					/obj/item/clothing/head/helmet/space/eva)
 	crate_name = "space suit crate"
 
 /datum/supply_pack/spacesuit_armor/pilot_spacesuit

@@ -30,7 +30,7 @@
 
 /datum/supply_pack/emergency/plasmaman_suit
 	name = "Phorid Suit Kit"
-	desc = "Keep the Phorid in your life comfy with a Plasmaman envirosuit. Refills sold seperately."
+	desc = "Keep the Phorid in your life comfy with a Phorid envirosuit. Refills sold seperately."
 	cost = 500 //halves the price, halves the equipment. It's unlikely you need to equip more than 1 phorid at a time anyway
 	contains = list(/obj/item/clothing/under/plasmaman,
 					/obj/item/clothing/head/helmet/space/plasmaman,

@@ -17,7 +17,7 @@
 /datum/supply_pack/costumes_toys/foamforce
 	name = "Foam Force Crate"
 	desc = "Break out the big guns with two Foam Force shotguns!"
-	cost = 100
+	cost = 200
 	contains = list(/obj/item/gun/ballistic/shotgun/toy,
 					/obj/item/gun/ballistic/shotgun/toy)
 	crate_name = "foam force shotgun crate"
