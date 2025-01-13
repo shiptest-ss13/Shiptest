@@ -69,6 +69,15 @@
 /obj/item/attachment/gun/unique_action(mob/living/user)
 	attached_gun.unique_action(user)
 
+/obj/item/attachment/gun/on_attack_hand(obj/item/gun/gun, mob/user, list/examine_list)
+	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
+		attack_hand(user)
+		return COMPONENT_NO_ATTACK_HAND
+
+/obj/item/attachment/gun/attack_hand(mob/user)
+	. = ..()
+	attached_gun.attack_hand(user)
+
 /obj/item/attachment/gun/on_unique_action(obj/item/gun/gun, mob/user)
 	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
 		attached_gun.unique_action(user)

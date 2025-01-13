@@ -54,4 +54,14 @@
 		/obj/item/ammo_box/magazine/internal/grenadelauncher
 	)
 
+/obj/item/attachment/gun/ballistic/zip
+	name = "ZAP-22"
+	desc = "A compact underbarrel gun chambered in 22lr. Holds eight rounds."
+	weapon_type = /obj/item/gun/ballistic/automatic/pistol/himehabu/underbarrel
+
+/obj/item/gun/ballistic/automatic/pistol/himehabu/underbarrel
+	name = "PC-81 \"Himehabu\""
+	desc = "You shouldn't be seeing this."
+
+
 
