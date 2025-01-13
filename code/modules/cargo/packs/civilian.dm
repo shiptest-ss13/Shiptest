@@ -225,3 +225,9 @@
 	cost = 1500
 	contains = list(/obj/machinery/jukebox)
 	crate_name = "Jukebox"
+
+/datum/supply_pack/civilian/id_crate
+	name = "Box of Spare IDs"
+	desc = "A box of spare IDs for replacing a lost ID."
+	cost = 100
+	contains - list(/obj/item/storage/box/ids)
