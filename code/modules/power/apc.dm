@@ -326,6 +326,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			. += "The cover is broken. It may be hard to force it open."
 		else
 			. += "The cover is closed."
+			ui_interact(user)
 
 	. += "<span class='notice'>Alt-Click the APC to [ locked ? "unlock" : "lock"] the interface.</span>"
 
@@ -899,10 +900,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(!ui)
 		ui = new(user, src, "Apc", name)
 		ui.open()
-
-/obj/machinery/power/apc/examine_more(mob/user)
-	ui_interact(user)
-	return ..()
 
 /obj/machinery/power/apc/ui_data(mob/user)
 	var/list/data = list(

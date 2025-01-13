@@ -32,6 +32,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 		. += "<span class='notice'>It's <b>screwed</b> and secured to the wall.</span>"
 	else
 		. += "<span class='notice'>It's <i>unscrewed</i> from the wall, and can be <b>detached</b>.</span>"
+	interact(user)
 
 /obj/item/radio/intercom/attackby(obj/item/I, mob/living/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
@@ -176,10 +177,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	. = ..()
 	set_frequency(FREQ_WIDEBAND)
 	freqlock = TRUE
-
-/obj/item/radio/intercom/wideband/examine_more(mob/user)
-	interact(user)
-	return ..()
 
 /obj/item/radio/intercom/wideband/unscrewed
 	unscrewed = TRUE

@@ -27,6 +27,8 @@
 	. = ..()
 	if(screen_on)
 		. += "<span class='notice'>Alt-click to close it.</span>"
+	if(screen_on && enabled)
+		interact(user)
 
 /obj/item/modular_computer/laptop/Initialize()
 	. = ..()
@@ -111,11 +113,6 @@
 	screen_on = !screen_on
 	display_overlays = screen_on
 	update_appearance()
-
-/obj/item/modular_computer/laptop/examine_more(mob/user)
-	if(screen_on)
-		interact(user)
-	return ..()
 
 // Laptop frame, starts empty and closed.
 /obj/item/modular_computer/laptop/buildable
