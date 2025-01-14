@@ -68,7 +68,7 @@
 /datum/supply_pack/cybernetic/cyberorgans
 	name = "Cybernetic Organs Replacement Pack"
 	desc = "Precision-manufactured replacement organs for those suffering catastrophic organ failure. Keep crate sealed until use, contaminants may cause rejection."
-	cost = 1000
+	cost = 2000
 	contains = list(/obj/item/organ/lungs/cybernetic/tier2,
 					/obj/item/organ/stomach/cybernetic/tier2,
 					/obj/item/organ/liver/cybernetic/tier2,
