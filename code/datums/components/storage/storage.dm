@@ -263,7 +263,7 @@
 	if(!len)
 		to_chat(M, "<span class='warning'>You failed to pick up anything with [parent]!</span>")
 		return
-	if(!(I in view(collection_range, M))) // You can't steal things you can't see or reach
+	if(!M.CanReach(I, src, TRUE)) // You can't steal things you can't see or reach
 		return
 	if(I.anchored)
 		to_chat(M, "<span class='warning'>\The [I] is stuck to the ground and cannot be picked up by [parent]!</span>")
