@@ -47,6 +47,8 @@
 	var/busy = FALSE
 	/// Variable needed to determine the selected category of forms on Photocopier.js
 	var/category
+	/// Variable to select which pool of blanks is loaded to print
+	var/blanks_path = 'strings/blanks/indie_blanks.json'
 
 /obj/machinery/photocopier/Initialize()
 	. = ..()
@@ -84,7 +86,7 @@
 	data["num_copies"] = num_copies
 
 	try
-		var/list/blanks = json_decode(file2text("strings/blanks/nt_blanks.json"))
+		var/list/blanks = json_decode(file2text(blanks_config))
 		if (blanks != null)
 			data["blanks"] = blanks
 			data["category"] = category
@@ -213,8 +215,9 @@
 			var/list/printinfo
 			for(var/infoline as anything in params["info"])
 				printinfo += infoline
-			printblank.name = printname
-			printblank.add_raw_text(printinfo)
+			printblank.name = "paper - [printname]"
+			printblank.add_raw_text(printinfo, advanced_html = TRUE)
+			printblank.update_appearance()
 			return printblank
 
 /**
@@ -522,6 +525,31 @@
 		return FALSE
 	else
 		return TRUE
+
+/*
+ * Factional photocopiers
+ */
+
+/obj/machinery/photocopier/clip
+	blanks_path = 'strings/blanks/clip_blanks.json'
+
+/obj/machinery/photocopier/independent
+	blanks_path = 'strings/blanks/indie_blanks.json'
+
+/obj/machinery/photocopier/inteq
+	blanks_path = 'strings/blanks/inteq_blanks.json'
+
+/obj/machinery/photocopier/nanotrasen
+	blanks_path = 'strings/blanks/nt_blanks.json'
+
+/obj/machinery/photocopier/pgf
+	blanks_path = 'strings/blanks/pgf_blanks.json'
+
+/obj/machinery/photocopier/solcon
+	blanks_path = 'strings/blanks/solcon_blanks.json'
+
+/obj/machinery/photocopier/syndicate
+	blanks_path = 'strings/blanks/syndicate_blanks.json'
 
 /*
  * Toner cartridge
