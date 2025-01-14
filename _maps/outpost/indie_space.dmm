@@ -771,6 +771,7 @@
 /obj/machinery/door/airlock/outpost{
 	icon = 'icons/obj/doors/airlocks/station/security.dmi';
 	name = "brig";
+	overlays_file = 'icons/obj/doors/airlocks/station/overlays.dmi';
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -6845,7 +6846,8 @@
 	},
 /obj/machinery/door/airlock/outpost{
 	icon = 'icons/obj/doors/airlocks/station/security.dmi';
-	name = "brig"
+	name = "brig";
+	overlays_file = 'icons/obj/doors/airlocks/station/overlays.dmi'
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
@@ -8015,7 +8017,8 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/outpost{
 	icon = 'icons/obj/doors/airlocks/station/security.dmi';
-	name = "brig"
+	name = "brig";
+	overlays_file = 'icons/obj/doors/airlocks/station/overlays.dmi'
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
