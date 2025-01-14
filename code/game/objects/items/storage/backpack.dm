@@ -46,6 +46,15 @@
 	STR.max_volume = STORAGE_VOLUME_BACKPACK
 	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
 	STR.use_sound = 'sound/items/storage/unzip.ogg'
+	STR.worn_access = FALSE
+
+/obj/item/storage/backpack/examine(mob/user)
+	. = ..()
+	var/datum/component/storage/bpack = GetComponent(/datum/component/storage)
+	if(bpack.worn_access == FALSE)
+		. += span_notice("You won't be able to open this once it's on your back.")
+	if(bpack.carry_access == FALSE)
+		. +=  span_notice("You'll have to set this down on the floor if you want to open it.")
 
 /*
  * Backpack Types
@@ -192,8 +201,9 @@
 /obj/item/storage/backpack/satchel/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_volume = STORAGE_VOLUME_BACKPACK
+	STR.max_volume = STORAGE_VOLUME_SATCHEL
 	STR.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
+	STR.worn_access = TRUE
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
@@ -324,6 +334,13 @@
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(15, 16), list(19, 13), list(13, 18))
 
+/obj/item/storage/backpack/messenger/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_volume = STORAGE_VOLUME_SATCHEL
+	STR.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
+	STR.worn_access = TRUE
+
 /obj/item/storage/backpack/messenger/chem
 	name = "chemistry messenger bag"
 	desc = "A sterile backpack worn over one shoulder. This one is in Chemistry colors."
@@ -404,6 +421,7 @@
 	STR.max_w_class = MAX_WEIGHT_CLASS_DUFFEL
 	LAZYINITLIST(STR.exception_hold) // This code allows you to fit one mob holder into a duffel bag
 	STR.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
+	STR.carry_access = FALSE
 
 /obj/item/storage/backpack/duffelbag/captain
 	name = "captain's duffel bag"

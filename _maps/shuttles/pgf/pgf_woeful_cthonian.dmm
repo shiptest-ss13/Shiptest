@@ -786,25 +786,24 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/obj/structure/closet/crate{
-	name = "ration crate"
-	},
-/obj/item/storage/ration/beef_strips,
-/obj/item/storage/ration/blackened_calamari,
-/obj/item/storage/ration/assorted_salted_offal,
-/obj/item/storage/ration/assorted_salted_offal,
-/obj/item/storage/ration/shredded_beef,
-/obj/item/storage/ration/shredded_beef,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "iW" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/crate_shelf,
 /obj/machinery/light/small/directional/west,
+/obj/structure/closet/crate/medical,
+/obj/item/storage/firstaid/radiation,
+/obj/item/reagent_containers/hypospray/medipen/anti_rad,
+/obj/item/reagent_containers/hypospray/medipen/anti_rad,
+/obj/item/reagent_containers/hypospray/medipen/anti_rad,
+/obj/item/reagent_containers/hypospray/medipen/anti_rad,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "jg" = (
@@ -1370,7 +1369,6 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	dir = 4;
-	pixel_y = 0;
 	pixel_x = 1
 	},
 /obj/item/desk_flag/gezena{
@@ -1497,6 +1495,19 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/machinery/firealarm/directional/east,
+/obj/structure/closet/crate{
+	name = "ration crate"
+	},
+/obj/item/storage/ration/beef_strips,
+/obj/item/storage/ration/blackened_calamari,
+/obj/item/storage/ration/assorted_salted_offal,
+/obj/item/storage/ration/assorted_salted_offal,
+/obj/item/storage/ration/shredded_beef,
+/obj/item/storage/ration/shredded_beef,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "sT" = (
@@ -2655,6 +2666,10 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/crate_shelf,
 /obj/machinery/light/small/directional/east,
+/obj/structure/closet/crate/engineering,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/mining_scanner,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Ig" = (
@@ -2871,10 +2886,6 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/east,
-/obj/structure/closet/crate/engineering,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/mining_scanner,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Kz" = (
@@ -3096,18 +3107,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid/radiation,
-/obj/item/reagent_containers/hypospray/medipen/anti_rad,
-/obj/item/reagent_containers/hypospray/medipen/anti_rad,
-/obj/item/reagent_containers/hypospray/medipen/anti_rad,
-/obj/item/reagent_containers/hypospray/medipen/anti_rad,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/regular,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
