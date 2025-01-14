@@ -48,7 +48,7 @@
 /datum/supply_pack/cybernetic/cyberhud_diagnostic
 	name = "Integrated Exosuit Diagnostic HUD"
 	desc = "A HUD over the user's eyes that allows one to view an uplink of Powered Exoskeleton information. Reports of recalls and blindness are merely disinformation by competitors."
-	cost = 500
+	cost = 750
 	contains = list(/obj/item/organ/cyberimp/eyes/hud/diagnostic)
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
