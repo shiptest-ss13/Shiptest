@@ -491,6 +491,8 @@
 	desc = "It opens and closes. Effectively impervious to conventional methods of destruction."
 	normal_integrity = INFINITY
 	explosion_block = INFINITY
+	flags_1 = RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1 | HTML_USE_INITAL_ICON_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	has_hatch = FALSE
 	req_one_access_txt = "101" //109 for command areas
 

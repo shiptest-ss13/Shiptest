@@ -768,8 +768,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/security/brig{
-	req_access = list("101");
+/obj/machinery/door/airlock/outpost{
+	icon = 'icons/obj/doors/airlocks/station/security.dmi';
+	name = "brig";
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -2254,20 +2255,6 @@
 /mob/living/simple_animal/mouse/brown,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
-"oW" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/airlock/security/brig{
-	req_access = list("101")
-	},
-/turf/open/floor/plasteel/tech,
-/area/outpost/security)
 "pb" = (
 /obj/structure/chair/stool/bar{
 	dir = 1;
@@ -6848,9 +6835,6 @@
 /turf/open/floor/carpet/green,
 /area/outpost/crew/bar)
 "PY" = (
-/obj/machinery/door/airlock/security/brig{
-	req_access = list("101")
-	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -6858,6 +6842,10 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/airlock/outpost{
+	icon = 'icons/obj/doors/airlocks/station/security.dmi';
+	name = "brig"
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
@@ -8025,8 +8013,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock/security/brig{
-	req_access = list("101")
+/obj/machinery/door/airlock/outpost{
+	icon = 'icons/obj/doors/airlocks/station/security.dmi';
+	name = "brig"
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
@@ -18505,7 +18494,7 @@ cX
 WJ
 cX
 cX
-oW
+PY
 Qr
 xc
 Lh
