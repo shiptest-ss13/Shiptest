@@ -76,4 +76,4 @@
 	crate_name = "organs crate"
 	crate_type = /obj/structure/closet/crate/freezer
 	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 75
+	faction_discount = 50
