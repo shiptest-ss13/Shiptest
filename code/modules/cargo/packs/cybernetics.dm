@@ -13,7 +13,7 @@
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
 	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 75
+	faction_discount = 50
 
 /datum/supply_pack/cybernetic/cyberarm_toolset
 	name = "Integrated Engineering Toolset Kit"
@@ -23,7 +23,7 @@
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
 	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 75
+	faction_discount = 50
 
 /datum/supply_pack/cybernetic/cyberhud_sec
 	name = "Integrated Security HUD"
@@ -33,7 +33,7 @@
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
 	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 75
+	faction_discount = 50
 
 /datum/supply_pack/cybernetic/cyberhud_med
 	name = "Integrated Medical Analysis HUD"
