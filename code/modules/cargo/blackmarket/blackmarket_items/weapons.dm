@@ -436,3 +436,23 @@
 	stock_max = 2
 	availability_prob = 15
 	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/cqcbook
+	name = "Manual of Close Quarters Combat Training"
+	desc = "An old book that teaches the user the basics of Close Quarters Combat, instructing them on techniques against humanoid opponents. The book appears to have some sort of DRM preventing other users from reading it, once the first user is done..."
+	item = /obj/item/book/granter/martial/cqc
+
+	price_min = 4000
+	price_max = 8000
+	stock = 1
+	availability_prob = 5
+
+/datum/blackmarket_item/weapon/carpscroll
+	name = "Scroll of Martial Arts Training"
+	desc = "An ancient scroll - nearly falling apart - that will teach the user the ways of a long-lost martial art. It is said that the practicioner will have no use for guns, and fear no firearm. The ink looks like it'll only make it through one reading..."
+	item = /obj/item/book/granter/martial/carp
+
+	price_min = 15000
+	price_max = 20000
+	stock = 1
+	availability_prob = 5

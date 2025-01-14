@@ -212,3 +212,216 @@
 	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE
+
+/datum/blackmarket_item/tech/rndconsoleboard
+	name = "Nanotrasen-Branded R&D Console Board"
+	desc = "A computer board from a Nanotrasen Research Station, capable of linking up with other machines and servers."
+	item = /obj/item/circuitboard/computer/rdconsole
+	pair_item = list(/datum/blackmarket_item/tech/rndprotolatheboard, /datum/blackmarket_item/tech/rndanalyzerboard, /datum/blackmarket_item/tech/rndcircuitboard, /datum/blackmarket_item/tech/rndserverboard)
+
+	price_min = 10000
+	price_max = 15000 
+	stock = 1
+	availability_prob = 5
+
+/datum/blackmarket_item/tech/rndprotolatheboard
+	name = "Nanotrasen-Branded Prototype Lathe Board"
+	desc = "A Prototype Lathe machine board, ready to print out reclaimed technology... When linked to an R&D console, that is."
+	item = /obj/item/circuitboard/machine/protolathe
+	pair_item = list(/datum/blackmarket_item/tech/rndconsoleboard, /datum/blackmarket_item/tech/rndserverboard)
+
+	price_min = 10000 
+	price_max = 15000
+	stock = 1
+	availability_prob = 5
+
+/datum/blackmarket_item/tech/rndanalyzerboard
+	name = "Nanotrasen-Branded Destructive Analyzer Board"
+	desc = ""
+	item = /obj/item/circuitboard/machine/destructive_analyzer
+	pair_item = list(/datum/blackmarket_item/tech/rndconsoleboard, /datum/blackmarket_item/tech/rndserverboard)
+
+	price_min = 5000
+	price_max = 10000
+	stock = 1
+	availability_prob = 5
+
+/datum/blackmarket_item/tech/rndcircuitboard
+	name = "Nanotrasen-Branded Circuit Imprinter Board"
+	desc = ""
+	item = /obj/item/circuitboard/machine/circuit_imprinter
+	pair_item = list(/datum/blackmarket_item/tech/rndconsoleboard, /datum/blackmarket_item/tech/rndserverboard)
+
+	price_min = 10000
+	price_max = 20000
+	stock = 1
+	availability_prob = 5
+
+/datum/blackmarket_item/tech/rndserverboard
+	name = "Nanotrasen-Branded Research Server Board"
+	desc = "A machine board for a server used to pass data between machines such as the Protolathe and Circuit Imprinter and the controlling R&D console."
+	item = /obj/item/circuitboard/machine/rdserver
+	pair_item = list(/datum/blackmarket_item/tech/rndconsoleboard)
+
+	price_min = 5000
+	price_max = 8000
+	stock = 1
+	availability_prob = 5
+
+/datum/blackmarket_item/tech/exosuitfabboard
+	name = "Nanotrasen-Branded Exosuit Fabricator Board"
+	desc = "A circuit board to build an exosuit fabricator - capable of constructing both Exosuit and cyborg parts. You wouldn't download a Mech."
+	item = /obj/item/circuitboard/machine/mechfab
+
+	price_min = 8000
+	price_max = 12000
+	stock = 1
+	availability_prob = 5
+
+/datum/blackmarket_item/tech/chemdispenserboard
+	name = "Nanotrasen-Branded Chemical Dispenser Board"
+	desc = "A machine board used to build a miraculous device, capable of synthisizing a dazzling variety of chemicals. Can't imagine why a company with a pharmacueticals division wouldn't sell this outright."
+	item = /obj/item/circuitboard/machine/chem_dispenser
+	pair_item = list(/datum/blackmarket_item/tech/chem_master)
+
+	price_min = 20000
+	price_max = 30000 
+	stock = 1
+	availability_prob = 5
+
+/datum/blackmarket_item/tech/dnascannerboard
+	name = "Nanotrasen-Branded DNA Scanner Machine Board"
+	desc = "A board for a DNA scanner pod. Used with either the DNA Scanner console, or a cloning console."
+	item = /obj/item/circuitboard/machine/dnascanner
+
+	price_min = 5000
+	price_max = 10000
+	stock = 1
+	availability_prob = 5
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/tech/dnaconsoleboard
+	name = "Nanotrasen-Branded DNA Scanner Console Board"
+	desc = "A board for a DNA scanner console, has to be paired with a DNA scanner and R&D console. If you don't know what you're doing, I wouldn't go monkeying around with this if i were you."
+	item = /obj/item/circuitboard/computer/scan_consolenew
+	pair_item = list(/datum/blackmarket_item/tech/dnascannerboard)
+
+	price_min = 5000
+	price_max = 10000
+	stock = 1
+	availability_prob = 5
+
+/datum/blackmarket_item/tech/clonepodboard
+	name = "Nanotrasen-Branded Cloning Pod Board"
+	desc = "A board for a machine banned in several sectors, when paired with a Cloning Console and a DNA scanner, death for organics is no obstacle."
+	item = /obj/item/circuitboard/machine/clonepod
+
+	price_min = 5000
+	price_max = 10000
+	stock = 1
+	availability_prob = 5
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/tech/cloneconsoleboard
+	name = "Nanotrasen-Branded Cloning Console Board"
+	desc = "A board for a computer banned in several sectors, when paired with a Cloning Pod and a DNA scanner, death for organics is no obstacle."
+	item = /obj/item/circuitboard/computer/cloning
+	pair_item = list(/datum/blackmarket_item/tech/dnascannerboard, /datum/blackmarket_item/tech/clonepodboard)
+
+	price_min = 5000
+	price_max = 10000
+	stock = 1
+	availability_prob = 5
+
+/datum/blackmarket_item/tech/eicboard
+	name = "Enhanced Interrogation Chamber Board"
+	desc = "A board both developed by and used by Nanotrasen, but this one is lacking the branding and logo. This machine was used by their Corporate Security forces to break the will of enemy agents."
+	item = /obj/item/circuitboard/machine/hypnochair
+
+	price_min = 5000
+	price_max = 10000
+	stock = 1
+	availability_prob = 5
+
+
+/datum/blackmarket_item/tech/organharvesterboard
+	name = "Nanotrasen-Branded Organ Harvester Board"
+	desc = "A board for a machine that will tear a humanoid body down to nothing but it's limbs and organs. For when there aren't enough organ donors."
+	item = /obj/item/circuitboard/machine/harvester
+
+	price_min = 1000
+	price_max = 2000
+	stock = 1
+	availability_prob = 20
+
+/datum/blackmarket_item/tech/limbgrowerboard
+	name = "Nanotrasen-Branded Limb Grower Board"
+	desc = "A board for a machine that can regrow organic limbs and organs on demand using Synthflesh. For when you really need a hand. Or a leg."
+	item = /obj/item/circuitboard/machine/limbgrower
+
+	price_min = 1000
+	price_max = 2000
+	stock = 1
+	availability_prob = 20
+
+/datum/blackmarket_item/tech/engtoolimplant
+	name = "Engineering Tools Arm Implant"
+	desc = "A cybernetic implant designed to give the owner access to a full toolset stowed within the forearm. Always keep your tools on hand."
+	item = /obj/item/organ/cyberimp/arm/toolset
+
+	price_min = 3000
+	price_max = 6000
+	stock = 1
+	availability_prob = 15
+
+/datum/blackmarket_item/tech/surgicaltoolimplant
+	name = "Surgical Tools Arm Implant"
+	desc = "A cybernetic implant designed to give the owner access to a full array of surgical implements, stowed within the forearm. For the truly dedicated surgeon."
+	item = /obj/item/organ/cyberimp/arm/surgery
+
+	price_min = 3000
+	price_max = 6000
+	stock = 1
+	availability_prob = 15
+
+/datum/blackmarket_item/tech/weldingeyesimplant
+	name = "Weld-Shielded Cyber Eyes"
+	desc = "A pair of cybernetic eyes that will automatically filter out welder light, and they won't even obscure your vision!"
+	item = /obj/item/organ/cyberimp/arm/surgery
+
+	price_min = 3000
+	price_max = 6000
+	stock = 1
+	availability_prob = 15
+
+/datum/blackmarket_item/tech/medicalhudimplant
+	name = "Medical HUD Analyzer Implant"
+	desc = "An implant installed in the eye socket that gives the owner a real time health readout of anyone they look at. Not sold at mass market after numerous health privacy law violations."
+	item = /obj/item/organ/cyberimp/eyes/hud/medical
+
+	price_min = 3000
+	price_max = 6000
+	stock = 1
+	availability_prob = 15
+
+/datum/blackmarket_item/tech/plantdnamanipulatorboard
+	name = "Nanotrasen-Branded Plant DNA Manipulator Board"
+	desc = "A circuit board for building a machine capable of modifying the DNA of plants. Not sold at mass market because of the potential for GMO Patent infringement."
+	item = /obj/item/circuitboard/machine/plantgenes
+	pair_item = (/datum/blackmarket_item/tech/somtaraygun)
+
+	price_min = 2000
+	price_max = 4000
+	stock = 1
+	availability_prob = 25
+
+/datum/blackmarket_item/tech/somtaraygun
+	name = "Floral Somatoray"
+	desc = "A handheld raygun device that releases burst of radiation, causing mutations in plants. Recalled after numerous incidents involing people using it as a toy ray gun."
+	item = /obj/item/gun/energy/floragun
+
+	price_min = 2000
+	price_max = 4000
+	stock = 1
+	availability_prob = 15
+	spawn_weighting = FALSE
