@@ -341,3 +341,11 @@
 					/obj/item/melee/flyswatter)
 	crate_name = "beekeeping starter crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
+
+/datum/supply_pack/food/kitchen_knife
+	name = "Kitchen Knife Crate"
+	desc = "Need a new knife to cut something hard? Try out this stamped steel knife, straight from The New Gorlex Republic's factories."
+	cost = 100
+	contains = list(/obj/item/melee/knife/kitchen)
+	crate_name = "kitchen knife crate"
+	crate_type = /obj/structure/closet/crate/wooden

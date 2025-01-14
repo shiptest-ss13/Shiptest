@@ -173,7 +173,8 @@
 
 /datum/supply_pack/medical/epipen_crate
 	name = "Bulk Epipen Crate"
-	desc = "Contains a spare box of Epipen Autoinjectors, for when the going gets tough."
+	desc = "Contains a spare box of epinephrine medipens, for when the going gets tough."
 	cost = 600
 	contains = list(/obj/item/storage/box/medipens)
+	crate_name = "epinephrine medipen crate"
 
