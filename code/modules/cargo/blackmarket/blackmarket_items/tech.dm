@@ -220,7 +220,7 @@
 	pair_item = list(/datum/blackmarket_item/tech/rndprotolatheboard, /datum/blackmarket_item/tech/rndanalyzerboard, /datum/blackmarket_item/tech/rndcircuitboard, /datum/blackmarket_item/tech/rndserverboard)
 
 	price_min = 10000
-	price_max = 15000 
+	price_max = 15000
 	stock = 1
 	availability_prob = 5
 
@@ -230,7 +230,7 @@
 	item = /obj/item/circuitboard/machine/protolathe
 	pair_item = list(/datum/blackmarket_item/tech/rndconsoleboard, /datum/blackmarket_item/tech/rndserverboard)
 
-	price_min = 10000 
+	price_min = 10000
 	price_max = 15000
 	stock = 1
 	availability_prob = 5
@@ -285,7 +285,7 @@
 	pair_item = list(/datum/blackmarket_item/tech/chem_master)
 
 	price_min = 20000
-	price_max = 30000 
+	price_max = 30000
 	stock = 1
 	availability_prob = 5
 
