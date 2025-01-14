@@ -48,7 +48,7 @@
 	STR.use_sound = 'sound/items/storage/unzip.ogg'
 	STR.worn_access = FALSE
 
-/obj/machinery/examine(mob/user)
+/obj/item/storage/backpack/examine(mob/user)
 	. = ..()
 	var/datum/component/storage/bpack = GetComponent(/datum/component/storage)
 	if(bpack.worn_access == FALSE)
