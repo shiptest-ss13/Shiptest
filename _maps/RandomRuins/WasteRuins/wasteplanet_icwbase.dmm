@@ -57,6 +57,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/item/ammo_casing/spent,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcommoni)
 "ak" = (
@@ -494,6 +495,9 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
 "bV" = (
@@ -729,8 +733,11 @@
 /turf/open/floor/engine,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "cZ" = (
-/obj/structure/radioactive/waste,
-/turf/open/floor/plating/wasteplanet/rust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/item/ammo_casing/spent,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "df" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
@@ -989,7 +996,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "er" = (
 /obj/machinery/power/rtg/advanced{
-	power_gen = 7500
+	power_gen = 15000
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -2473,9 +2480,10 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "kG" = (
 /obj/structure/cable,
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret");
-	dir = 1
+/obj/machinery/porta_turret/ship/frontiersmen{
+	reqpower = 0;
+	faction = list("Frontiersmen");
+	dir = 5
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -2616,10 +2624,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
-"ll" = (
-/obj/structure/radioactive/stack,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ln" = (
@@ -3080,8 +3084,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret")
+/obj/machinery/porta_turret/ship/frontiersmen{
+	reqpower = 0;
+	faction = list("Frontiersmen")
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -3433,9 +3438,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "oS" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/grunge{
-	req_access = list(3,150)
-	},
+/obj/machinery/door/airlock/grunge,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
@@ -4272,9 +4275,7 @@
 "st" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/grunge{
-	req_access = list(3,150)
-	},
+/obj/machinery/door/airlock/grunge,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
@@ -4398,9 +4399,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret");
-	dir = 8
+/obj/machinery/porta_turret/ship/frontiersmen{
+	reqpower = 0;
+	faction = list("Frontiersmen");
+	dir = 10
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -4831,6 +4833,7 @@
 	icon_state = "floor6-old"
 	},
 /obj/effect/decal/cleanable/shreds,
+/obj/item/ammo_casing/spent,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "uM" = (
@@ -5545,10 +5548,6 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
-"yf" = (
-/obj/structure/radioactive,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "yh" = (
 /obj/effect/turf_decal/road/line/opaque/syndiered{
 	dir = 4
@@ -5602,7 +5601,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yt" = (
 /obj/machinery/power/rtg/advanced{
-	power_gen = 7500
+	power_gen = 15000
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -5762,9 +5761,9 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret");
-	dir = 10
+/obj/machinery/porta_turret/ship/frontiersmen{
+	reqpower = 0;
+	faction = list("Frontiersmen")
 	},
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -6060,8 +6059,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret")
+/obj/machinery/porta_turret/ship/frontiersmen{
+	reqpower = 0;
+	faction = list("Frontiersmen")
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -6354,10 +6354,6 @@
 "BM" = (
 /obj/structure/cable{
 	icon_state = "0-8"
-	},
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret");
-	dir = 5
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6975,9 +6971,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "El" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/grunge{
-	req_access = list(3,150)
-	},
+/obj/machinery/door/airlock/grunge,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
@@ -7057,10 +7051,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
-"EK" = (
-/obj/structure/radioactive/waste,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "EO" = (
 /obj/structure/chair/sofa/red/corpo/left/directional/north,
 /obj/item/ammo_casing/spent,
@@ -7117,9 +7107,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcommoni)
 "EW" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/grunge{
-	req_access = list(3,150)
-	},
+/obj/machinery/door/airlock/grunge,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
@@ -7142,10 +7130,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
-"Fc" = (
-/obj/structure/radioactive/waste,
-/turf/open/floor/plating/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Ff" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -7154,19 +7138,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
-"Fg" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret");
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Fj" = (
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 4
@@ -7700,8 +7671,9 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret")
+/obj/machinery/porta_turret/ship/frontiersmen{
+	reqpower = 0;
+	faction = list("Frontiersmen")
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -8083,6 +8055,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/item/ammo_casing/spent,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcommoni)
 "JR" = (
@@ -8719,12 +8692,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "MC" = (
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret");
-	dir = 10
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/porta_turret/ship/frontiersmen{
+	reqpower = 0;
+	faction = list("Frontiersmen");
+	dir = 10
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -8867,6 +8841,7 @@
 	},
 /obj/effect/decal/cleanable/garbage,
 /obj/effect/decal/cleanable/shreds,
+/obj/item/ammo_casing/spent,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Nd" = (
@@ -9039,6 +9014,9 @@
 /obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 9
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
@@ -9302,6 +9280,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
@@ -10459,14 +10440,6 @@
 	},
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
-"Ud" = (
-/obj/structure/cable,
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret");
-	dir = 5
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Ue" = (
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/wasteplanet/rust,
@@ -10611,8 +10584,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret");
+/obj/machinery/porta_turret/ship/frontiersmen{
+	reqpower = 0;
+	faction = list("Frontiersmen");
 	dir = 1
 	},
 /turf/open/floor/plating/wasteplanet{
@@ -11034,8 +11008,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret");
+/obj/machinery/porta_turret/ship/frontiersmen{
+	reqpower = 0;
+	faction = list("Frontiersmen");
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
@@ -11252,6 +11227,9 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
 "Xr" = (
@@ -11371,10 +11349,6 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Ye" = (
 /obj/structure/cable,
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	faction = list("Frontiersmen","Turret");
-	dir = 6
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -11951,7 +11925,7 @@ HE
 Nx
 Nx
 Nx
-Fc
+Nt
 Nx
 Nx
 Nx
@@ -12003,7 +11977,7 @@ nU
 nU
 nU
 Nx
-EK
+Nx
 Nx
 Nx
 Nx
@@ -12021,7 +11995,7 @@ nU
 nU
 nU
 nU
-EK
+Nx
 Nx
 Nx
 Nx
@@ -12030,14 +12004,14 @@ Nx
 Nx
 Nx
 Nx
-EK
+Nx
 nU
 nU
 nU
 nU
 nU
-yf
-EK
+Nx
+Nx
 Nx
 Nx
 HE
@@ -12098,8 +12072,8 @@ nU
 nU
 nU
 nU
-ll
-yf
+Nx
+Nx
 zY
 Nx
 HE
@@ -12111,7 +12085,7 @@ Nx
 Nx
 Nx
 Nx
-EK
+Nx
 Nx
 nU
 nU
@@ -12160,7 +12134,7 @@ nU
 nU
 nU
 nU
-EK
+Nx
 Nx
 fw
 Nx
@@ -12182,7 +12156,7 @@ Nx
 Nx
 Nx
 Nx
-EK
+Nx
 Nx
 nU
 nU
@@ -12191,7 +12165,7 @@ nU
 nU
 nU
 Nx
-EK
+Nx
 nU
 nU
 nU
@@ -12267,18 +12241,18 @@ nU
 nU
 Nx
 Nx
-EK
 Nx
 Nx
 Nx
 Nx
+Nx
 nU
 nU
 nU
 nU
 nU
-ll
-EK
+Nx
+Nx
 nU
 nU
 nU
@@ -12339,8 +12313,8 @@ Nx
 Nx
 Nx
 Nx
-yf
-yf
+Nx
+Nx
 nU
 nU
 nU
@@ -12659,7 +12633,7 @@ Nx
 Nx
 nU
 nU
-EK
+Nx
 Nx
 Nx
 Nx
@@ -12717,7 +12691,7 @@ HE
 (15,1,1) = {"
 Nx
 Nx
-EK
+Nx
 nU
 nU
 Nx
@@ -12781,7 +12755,7 @@ Nx
 Nx
 nU
 nU
-EK
+Nx
 Nx
 Nx
 Nx
@@ -12954,7 +12928,7 @@ nU
 nU
 nU
 nU
-EK
+Nx
 Nx
 HE
 "}
@@ -13255,7 +13229,7 @@ Nx
 Nx
 Nx
 Nx
-EK
+Nx
 nU
 nU
 nU
@@ -13510,7 +13484,7 @@ HE
 (28,1,1) = {"
 HE
 Nx
-EK
+Nx
 nU
 nU
 nU
@@ -13941,7 +13915,7 @@ Nx
 nU
 nU
 nU
-EK
+Nx
 Nx
 Wd
 Nx
@@ -14027,8 +14001,8 @@ un
 Up
 Wt
 cF
-lo
-Nx
+cZ
+Qg
 Nx
 Nx
 cF
@@ -14113,7 +14087,7 @@ nU
 nU
 nU
 nU
-cZ
+zY
 Nx
 HE
 "}
@@ -14363,7 +14337,7 @@ HE
 "}
 (42,1,1) = {"
 HE
-EK
+Nx
 nU
 nU
 nU
@@ -14857,7 +14831,7 @@ nU
 nU
 nU
 nU
-EK
+Nx
 Wd
 Nx
 Cj
@@ -14902,7 +14876,7 @@ iY
 LX
 Nx
 Nx
-EK
+Nx
 nU
 nU
 nU
@@ -14940,7 +14914,7 @@ ap
 Nx
 Nx
 Nx
-yf
+Nx
 Nx
 Nx
 Nx
@@ -14982,7 +14956,7 @@ nU
 Nx
 Kp
 mB
-Ud
+kG
 Ha
 Cd
 fg
@@ -15000,8 +14974,8 @@ Nx
 Nx
 me
 Nx
-EK
-yf
+Nx
+Nx
 Hc
 sl
 Nx
@@ -15706,7 +15680,7 @@ HE
 (64,1,1) = {"
 HE
 HE
-EK
+Nx
 nU
 nU
 nU
@@ -15757,7 +15731,7 @@ PY
 gb
 Wd
 Nx
-EK
+Nx
 nU
 nU
 nU
@@ -15836,7 +15810,7 @@ nU
 Nx
 Gp
 mB
-Fg
+MJ
 jn
 mB
 HA
@@ -16198,7 +16172,7 @@ nU
 nU
 nU
 nU
-EK
+Nx
 Nx
 Nx
 Nx
@@ -16808,22 +16782,6 @@ nU
 nU
 nU
 nU
-EK
-Nx
-Nx
-Nx
-nU
-nU
-nU
-nU
-Nx
-Nx
-nU
-nU
-nU
-nU
-nU
-nU
 Nx
 Nx
 Nx
@@ -16832,9 +16790,15 @@ nU
 nU
 nU
 nU
+Nx
+Nx
 nU
 nU
 nU
+nU
+nU
+nU
+Nx
 Nx
 Nx
 Nx
@@ -16845,6 +16809,16 @@ nU
 nU
 nU
 nU
+Nx
+Nx
+Nx
+nU
+nU
+nU
+nU
+nU
+nU
+nU
 nU
 nU
 nU
@@ -16853,7 +16827,7 @@ nU
 nU
 nU
 Nx
-EK
+Nx
 nU
 nU
 nU
@@ -16918,7 +16892,7 @@ nU
 nU
 nU
 nU
-EK
+Nx
 Nx
 HE
 HE
