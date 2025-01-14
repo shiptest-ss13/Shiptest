@@ -58,7 +58,7 @@
 /datum/supply_pack/cybernetic/cyber_breathing
 	name = "Integrated Breathing Tube"
 	desc = "Commonly used for those with medical conditions relating to breathing, this implant provides a port to attach portable oxygen canisters to that pumps air directly into your lungs. Keep port sealed when not in use."
-	cost = 750
+	cost = 1000
 	contains = list(/obj/item/organ/cyberimp/mouth/breathing_tube)
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
