@@ -668,6 +668,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/airbase/engineering)
+"dp" = (
+/obj/effect/decal/cleanable/chem_pile,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/jungle/airbase)
 "ds" = (
 /obj/effect/turf_decal/corner/opaque/orange/three_quarters{
 	dir = 4
@@ -901,7 +905,6 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "eh" = (
 /obj/structure/safe/floor,
-/obj/structure/chair/office/light,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/gun/ballistic/automatic/pistol/himehabu,
@@ -1616,11 +1619,11 @@
 	anchored = 1;
 	icon_state = "hos";
 	name = "Cybersun Locker";
-	req_access = list(150, 20)
+	req_access = list(150, 20);
+	populate = 0
 	},
 /obj/item/clothing/suit/cybersun_suit,
 /obj/item/clothing/head/soft/cybersun,
-/obj/item/crowbar,
 /obj/item/clothing/gloves/combat,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/jungle/airbase/tower)
@@ -2637,6 +2640,9 @@
 	},
 /obj/item/bedsheet/double/brown,
 /obj/machinery/light/small/directional/east,
+/obj/item/crowbar{
+	pixel_x = 2
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/jungle/airbase/tower)
 "mb" = (
@@ -3097,13 +3103,11 @@
 	anchored = 1;
 	icon_state = "hos";
 	name = "Captain's Locker";
-	req_access = list(150, 20)
+	req_access = list(150, 20);
+	populate = 0
 	},
 /obj/item/card/id/syndicate_command/captain_id,
 /obj/item/storage/lockbox/medal,
-/obj/item/codespeak_manual{
-	charges = 2
-	},
 /obj/item/megaphone/sec{
 	name = "syndicate megaphone"
 	},
@@ -3324,13 +3328,10 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/machinery/turretid/lethal{
-	pixel_x = -27
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/jungle/airbase/turrets)
+/area/ruin/jungle/airbase/tower)
 "oL" = (
 /obj/effect/turf_decal/corner/opaque/orange{
 	dir = 6
@@ -3538,13 +3539,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/tower)
 "pG" = (
-/obj/structure/window/plasma/reinforced{
+/obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/airbase)
 "pH" = (
@@ -4101,6 +4098,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
 	},
+/mob/living/simple_animal/hostile/human/syndicate/ranged,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/airbase/tower)
 "rS" = (
@@ -4159,6 +4157,10 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line,
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/paper/paperslip{
+	name = "safe location";
+	default_raw_text = "Under the damn chair."
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/jungle/airbase/tower)
 "se" = (
@@ -6132,6 +6134,19 @@
 /obj/item/stack/sheet/cotton/cloth,
 /turf/open/floor/plasteel/mono/dark/jungleplanet,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Bs" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/airbase)
 "Bw" = (
 /obj/structure/closet/firecloset/full{
 	anchored = 1
@@ -8004,13 +8019,13 @@
 /area/ruin/jungle/airbase/tower)
 "Jm" = (
 /obj/structure/rack,
-/obj/item/grenade/chem_grenade/clf3,
-/obj/item/grenade/chem_grenade/clf3{
-	pixel_y = 7;
-	pixel_x = -11
+/obj/item/grenade/chem_grenade/incendiary,
+/obj/item/grenade/chem_grenade/incendiary{
+	pixel_x = -9;
+	pixel_y = -2
 	},
-/obj/item/grenade/chem_grenade/clf3{
-	pixel_x = 11;
+/obj/item/grenade/chem_grenade/incendiary{
+	pixel_x = 8;
 	pixel_y = 3
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
@@ -8759,7 +8774,9 @@
 /turf/open/floor/plasteel/dark/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ml" = (
-/obj/structure/closet/secure_closet/medical3,
+/obj/structure/closet/secure_closet/medical3{
+	populate = 0
+	},
 /obj/item/defibrillator,
 /obj/item/clothing/under/syndicate/medic,
 /obj/item/clothing/shoes/combat,
@@ -9425,7 +9442,12 @@
 	pixel_y = 14
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/white,
+/obj/item/stack/tile/plasteel/white{
+	pixel_y = 6;
+	pixel_x = -4
+	},
+/mob/living/simple_animal/hostile/human/syndicate/civilian,
+/turf/open/floor/plating,
 /area/ruin/jungle/airbase/tower)
 "Pm" = (
 /obj/effect/decal/cleanable/oil{
@@ -10628,13 +10650,6 @@
 "UI" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/double/black,
-/obj/item/paper{
-	name = "concealed note";
-	icon_state = "scrap";
-	color = "#505050";
-	desc = "This note is crumpled and torn.";
-	default_raw_text = "<font color=white>ever since the war ended some eighteen years ago, the syndicate has been at odds with ourselves. our branches' ideals and personal goals are dividing the syndicate more and more. <br><br>tensions keep rising on the frontier sectors, where it's less likely that people will get caught sabotaging or hindering each other, and you, presumably, have just been given captainship of a vessel full of members who all hate each other.<br><br> to put it bluntly, you're in <i>deep</i>. this melting pot of ideologies, at its worst, is going to tear your leadership apart. you're going to need to keep tensions low on this two decade old warship so it doesn't all go to shit. <br><br>keep track of where every member comes from:<br>-you are, most likely, from the aclf<br>-the lieutenant is an officer from the new gorlex republic<br>-the medics come from cybersun<br>-the engineers are from the gec<br>-the operatives are a mix of the 2nd battlegroup and the aclf<br>-the bartender is from donk<br>-the miner is from suns<br>-deck assistants are a wildcard, not contracted from anyone in specific"
-	},
 /obj/structure/curtain/cloth/fancy{
 	name = "blood-red curtains"
 	},
@@ -11209,7 +11224,15 @@
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Xn" = (
-/turf/open/floor/plasteel/mono/white,
+/obj/item/stack/tile/plasteel/white{
+	pixel_x = -6;
+	pixel_y = -5
+	},
+/obj/structure/chair/office/light{
+	pixel_y = 4;
+	pixel_x = 2
+	},
+/turf/open/floor/plating,
 /area/ruin/jungle/airbase/tower)
 "Xp" = (
 /obj/machinery/light/directional/west,
@@ -11531,6 +11554,17 @@
 /obj/item/tank/internals/emergency_oxygen/engi/empty,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/airbase/tower)
+"YU" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
+/obj/structure/window/plasma/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/airbase)
 "YV" = (
 /obj/effect/turf_decal/syndicateemblem/top/right{
 	dir = 4
@@ -11670,13 +11704,13 @@
 /area/ruin/jungle/airbase/dorms)
 "ZA" = (
 /obj/structure/table,
-/obj/item/grenade/chem_grenade/clf3{
-	pixel_y = 1;
-	pixel_x = 6
+/obj/item/grenade/chem_grenade/incendiary{
+	pixel_x = -9;
+	pixel_y = 1
 	},
-/obj/item/grenade/chem_grenade/clf3{
-	pixel_y = 6;
-	pixel_x = -4
+/obj/item/grenade/chem_grenade/incendiary{
+	pixel_x = 3;
+	pixel_y = 6
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -13050,9 +13084,9 @@ MU
 Rx
 TZ
 UT
-UT
+ih
 eG
-UT
+ih
 Mc
 tJ
 ex
@@ -13070,9 +13104,9 @@ XP
 ex
 TZ
 UT
-UT
+ih
 eG
-UT
+ih
 UT
 tJ
 UT
@@ -13131,11 +13165,11 @@ os
 MU
 Vv
 UT
-UT
-ih
+WP
+Bs
 eG
-ih
-Rx
+YU
+dp
 UT
 ex
 nT
@@ -13151,11 +13185,11 @@ uX
 PP
 UE
 um
-UT
-ih
+WP
+Bs
 eG
-ih
-UT
+YU
+WP
 UT
 UT
 GE
@@ -13217,7 +13251,7 @@ WP
 pG
 eG
 pG
-WP
+Zr
 Fk
 NH
 dx
@@ -13233,11 +13267,11 @@ EI
 Ur
 UE
 um
-WP
+Zr
 pG
 eG
 pG
-WP
+eG
 um
 um
 GE
