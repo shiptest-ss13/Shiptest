@@ -500,7 +500,7 @@
 
 /obj/machinery/door/airlock/outpost/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF)
+	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF|EMP_PROTECT_WIRES)
 
 /obj/machinery/door/airlock/outpost/attackby(obj/item/C, mob/user, params) //maintenance panel cannot be opened
 	if(C.tool_behaviour == TOOL_SCREWDRIVER)
