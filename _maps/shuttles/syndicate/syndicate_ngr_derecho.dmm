@@ -89,7 +89,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Command Deck";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -197,7 +197,7 @@
 "bW" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Foreman's Office";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "56"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -407,6 +407,24 @@
 /area/ship/cargo)
 "dZ" = (
 /obj/structure/crate_shelf,
+/obj/structure/closet/crate{
+	name = "food crate"
+	},
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "ea" = (
@@ -494,24 +512,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4;
 	layer = 2.04
-	},
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/structure/closet/crate{
-	name = "food crate"
 	},
 /obj/structure/chair/handrail,
 /obj/effect/decal/cleanable/dirt,
@@ -702,9 +702,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "fQ" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -826,7 +824,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Life Support";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "10"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1002,9 +1000,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "derecho_bridge_shut"
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -1042,9 +1038,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "iK" = (
-/obj/structure/closet/crate,
-/obj/item/stack/sheet/metal/twenty,
-/obj/item/stack/sheet/glass/five,
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/pod/dark,
 /area/ship/science/workshop)
@@ -1534,7 +1527,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 1;
 	name = "Engineering";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "10"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1905,7 +1898,6 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Workshop";
-	req_access = null;
 	req_one_access = list(10, 48)
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -2170,7 +2162,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Control Room";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "10"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -2181,9 +2173,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "sm" = (
@@ -2336,9 +2326,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "sU" = (
@@ -2458,9 +2446,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "uX" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -2837,7 +2823,7 @@
 "xQ" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Foreman's Office";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "56"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2981,9 +2967,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering/atmospherics)
 "yO" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "derecho_engine_blast"
@@ -2991,9 +2975,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "yS" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -3210,6 +3192,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass/five,
 /turf/open/floor/pod/dark,
 /area/ship/science/workshop)
 "Ae" = (
@@ -3252,7 +3237,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Bridge";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -3290,9 +3275,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/science/workshop)
 "AW" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -3397,8 +3380,7 @@
 	},
 /obj/structure/closet/secure_closet/engineering_electrical{
 	req_access = null;
-	req_access_txt = "11";
-	req_one_access = null
+	req_access_txt = "11"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
@@ -3490,9 +3472,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -3600,9 +3580,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "DP" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -3976,9 +3954,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "derecho_office_shut"
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /turf/open/floor/plating,
@@ -4609,9 +4585,7 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/photocopier,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
@@ -5249,8 +5223,7 @@
 	},
 /obj/structure/closet/secure_closet/engineering_welding{
 	req_access = null;
-	req_access_txt = "11";
-	req_one_access = null
+	req_access_txt = "11"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -5588,7 +5561,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Command Deck";
-	normalspeed = 0;
+	fast_close = 1;
 	req_access_txt = "19"
 	},
 /obj/structure/sign/directions/command{
@@ -5647,9 +5620,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "WD" = (
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -5912,7 +5883,6 @@
 	id = "derecho_entrance_holo";
 	pixel_x = -20;
 	pixel_y = 7;
-	req_one_access = null;
 	req_ship_access = 1
 	},
 /obj/machinery/button/door{
@@ -5921,7 +5891,6 @@
 	name = "Blast Door Control";
 	pixel_x = -21;
 	pixel_y = -4;
-	req_one_access = null;
 	req_ship_access = 1
 	},
 /turf/open/floor/pod,
