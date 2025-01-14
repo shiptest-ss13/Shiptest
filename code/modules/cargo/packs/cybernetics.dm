@@ -43,7 +43,7 @@
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
 	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 75
+	faction_discount = 50
 
 /datum/supply_pack/cybernetic/cyberhud_diagnostic
 	name = "Integrated Exosuit Diagnostic HUD"
