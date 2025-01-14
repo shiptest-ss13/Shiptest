@@ -8,7 +8,7 @@
 /datum/supply_pack/cybernetic/cyberarm_surgset
 	name = "Integrated Surgical Toolset Kit"
 	desc = "The latest in advanced medical cybernetics, the Surgical Toolset can be installed in the arms and act as a concealed kit to render surgical aid at striking efficiency."
-	cost = 3500
+	cost = 4500
 	contains = list(/obj/item/organ/cyberimp/arm/surgery)
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
