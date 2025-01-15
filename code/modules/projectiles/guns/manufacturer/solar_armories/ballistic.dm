@@ -40,6 +40,9 @@
 	spread_unwielded = 12
 	fire_select_icon_state_prefix = "slug_"
 
+	//gauss doesn't explode so there's not light.
+	light_range = 0
+
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
@@ -123,6 +126,8 @@
 
 	valid_attachments = SOLAR_ATTACHMENTS
 	slot_available = SOLAR_ATTACH_SLOTS
+	//gauss doesn't explode so there's not light.
+	light_range = 0
 
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
@@ -161,6 +166,9 @@
 
 	valid_attachments = SOLAR_ATTACHMENTS
 	slot_available = SOLAR_ATTACH_SLOTS
+
+	//gauss doesn't explode so there's not light.
+	light_range = 0
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO

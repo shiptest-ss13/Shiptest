@@ -432,7 +432,7 @@
 	if(air_contents.return_pressure() >= SEND_PRESSURE)
 		full_pressure = TRUE
 		pressure_charging = FALSE
-		update_appearance()
+		update_appearance(UPDATE_OVERLAYS)
 	return
 
 /obj/machinery/disposal/bin/get_remote_view_fullscreens(mob/user)
