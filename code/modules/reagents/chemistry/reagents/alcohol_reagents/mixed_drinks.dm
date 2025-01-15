@@ -1824,3 +1824,24 @@
 /datum/reagent/consumable/ethanol/homesick/on_mob_metabolize(mob/living/M)
 	var/drink_message = pick("You think of what you've left behind...", "You think of the people who miss you...", "You think of where you're from...")
 	to_chat(M, "<span class='notice'>[drink_message]</span>")
+
+/datum/reagent/consumable/ethanol/eudamonia
+	name = "Eudamonia"
+	description = "A fleeting, virtous drink that inspires vigorous debate."
+	color = "#6884a1"
+	boozepwr = 40
+	quality = DRINK_GOOD
+	overdose_threshold = 40
+	taste_description = "a flourishing alcoholic bloom"
+	glass_icon_state = "eudamonia"
+	glass_name = "Eudamonia"
+	glass_desc = "A drink popular in academic circles, supposedly made with a distilled virtue. Most published recipes insist to use an antidepressant."
+
+/datum/reagent/consumable/ethanol/eudamonia/overdose_process(mob/living/M)
+	//don't mix uppers and downers, kids.
+	if(prob(8) && iscarbon(M))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4*REM)
+		to_chat(M, pick("Your head aches as you struggle to grasp the concepts.", "The world slows down for a precious second, a headache forming within you.", "Clusters of pain open and close within your mind's eye.", "Aches and pains fill your head."))
+	else if(prob(50))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM)
+		M.adjust_disgust(40)

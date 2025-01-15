@@ -325,3 +325,7 @@ WS End */
 /datum/chemical_reaction/chartreuse
 	results = list(/datum/reagent/medicine/chartreuse = 10)
 	required_reagents = list(/datum/reagent/medicine/puce_essence = 5, /datum/reagent/consumable/tinlux = 5, /datum/reagent/consumable/entpoly = 1)
+
+/datum/chemical_reaction/lithium_carbonate
+	results = list(/datum/reagent/medicine/lithium_carbonate = 3)
+	required_reagents = list(/datum/reagent/lithium = 1, /datum/reagent/carbon = 1, /datum/reagent/water = 1)
