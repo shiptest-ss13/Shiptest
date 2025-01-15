@@ -300,7 +300,7 @@
 	pixel_x = 25;
 	pixel_y = -9
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "bd" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -480,12 +480,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "bU" = (
-/obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/engineering{
+	input_level = 200000;
+	output_level = 200000
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
@@ -2035,7 +2038,7 @@
 "il" = (
 /mob/living/simple_animal/hostile/human/frontier/internals,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "io" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2712,7 +2715,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "lK" = (
 /obj/structure/chair/sofa/red/corpo/corner/directional/west,
@@ -3027,7 +3030,7 @@
 	pixel_x = 0;
 	pixel_y = -35
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "ng" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -3107,7 +3110,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "nz" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -3724,7 +3727,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "qb" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -4690,7 +4693,9 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "tY" = (
-/obj/structure/bodycontainer/morgue,
+/obj/structure/bodycontainer/morgue{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "tZ" = (
@@ -7514,7 +7519,7 @@
 	pixel_x = 0;
 	pixel_y = -17;
 	name = "degraded GPS system";
-	gpstag = "F-HQ"
+	gpstag = F-HQ
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 9
@@ -8157,7 +8162,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "Jq" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "Js" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -9191,12 +9196,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
 "NX" = (
-/obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 9
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/engineering{
+	input_level = 200000;
+	output_level = 200000
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
@@ -9266,7 +9274,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "Oo" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -10502,7 +10510,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "TJ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
@@ -10605,7 +10613,6 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Uc" = (
 /obj/item/kirbyplants/random,
-/obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 6
 	},
@@ -11744,7 +11751,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "YT" = (
 /obj/structure/salvageable/computer,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "YU" = (
 /obj/effect/supplypod_rubble,
