@@ -143,3 +143,27 @@
 #define CLONING_DELETE_RECORD (1<<1)
 
 #define CLICKSOUND_INTERVAL (0.1 SECONDS)	//! clicky noises, how much time needed in between clicks on the machine for the sound to play on click again.
+
+/// ONLY shoots at mobs who match the rest of the flags and have weaponry/are otherwise dangerous
+#define TURRET_FLAG_SHOOT_DANGEROUS_ONLY (1<<0)
+/// Will shoot at things that shoot at it
+#define TURRET_FLAG_SHOOT_RETALIATE (1<<1)
+
+/// Will shoot at things that aren't human
+#define TURRET_FLAG_SHOOT_FAUNA (1<<2)
+/// Will shoot at humans
+#define TURRET_FLAG_SHOOT_HUMANS (1<<3)
+/// Will shoot at silicons
+#define TURRET_FLAG_SHOOT_SILICONS (1<<4)
+/// Will shoot at any kind of mob
+#define TURRET_FLAG_SHOOT_ALLMOBS TURRET_FLAG_SHOOT_FAUNA|TURRET_FLAG_SHOOT_HUMANS|TURRET_FLAG_SHOOT_SILICONS
+
+/// Will only shoot at things that AREN'T in the turret's set faction
+#define TURRET_FLAG_SHOOT_NONFACTION (1<<5)
+/// Will only shoot at things that ARE in the turret's set faction
+#define TURRET_FLAG_SHOOT_SPECIFIC_FACTION (1<<6)
+/// Will totally ignore targets' factions - the same as not setting the above two flags
+//#define TURRET_FLAG_SHOOT_ALLFACTION (1<<8)
+
+#define TURRET_FLAG_DEFAULT TURRET_FLAG_SHOOT_DANGEROUS_ONLY|TURRET_FLAG_SHOOT_RETALIATE|TURRET_FLAG_SHOOT_FAUNA|TURRET_FLAG_SHOOT_NONFACTION
+#define TURRET_FLAG_HOSTILE TURRET_FLAG_SHOOT_ALLMOBS|TURRET_FLAG_SHOOT_RETALIATE|TURRET_FLAG_SHOOT_NONFACTION

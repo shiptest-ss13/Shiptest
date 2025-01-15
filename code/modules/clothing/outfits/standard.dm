@@ -49,7 +49,7 @@
 
 	var/obj/item/radio/R = H.ears
 	if(R)
-		R.set_frequency(FREQ_SYNDICATE)
+		R.set_frequency(FREQ_PIRATE)
 		R.freqlock = TRUE
 
 	var/obj/item/card/id/W = H.wear_id

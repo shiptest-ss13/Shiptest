@@ -28,7 +28,7 @@
 			var/hostile_ai_status = hostile_target.AIStatus
 			hostile_target.toggle_ai(AI_OFF)
 			addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status),reac_volume)
-		M.Jitter(3 * reac_volume)
+		M.adjust_jitter(3 * reac_volume)
 		M.Dizzy(2 * reac_volume)
 		M.set_drugginess(3 * reac_volume)
 	return ..()
@@ -62,7 +62,7 @@
 				paralyze_dur = reac_volume
 			else
 				paralyze_dur = 50 + ((reac_volume - 50) / 4)
-		M.adjust_bodytemperature((-20*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
+		M.adjust_bodytemperature((-1*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
 		M.Paralyze(paralyze_dur)
 		walk(M, 0) //stops them mid pathing even if they're stunimmunee
 		M.apply_status_effect(/datum/status_effect/ice_block_talisman, paralyze_dur)

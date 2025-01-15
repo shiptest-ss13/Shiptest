@@ -78,12 +78,20 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/usesound
 	///Used when yate into a mob
 	var/mob_throw_hit_sound
-	///Sound used when equipping the item into a valid slot
+	///Sound used when an item has been equipped into a valid slot
 	var/equip_sound
 	///Sound uses when picking the item up (into your hands)
 	var/pickup_sound
 	///Sound uses when dropping the item, or when its thrown.
 	var/drop_sound
+	///Sound used when an item is being equipped with equip_delay
+	var/equipping_sound
+	///Sound used when an item is being unequipped with equip_delay
+	var/unequipping_sound
+
+	///flags used for equip_delay
+	var/equip_self_flags = NONE
+
 	///Whether or not we use stealthy audio levels for this item's attack sounds
 	var/stealthy_audio = FALSE
 
@@ -146,6 +154,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/strip_delay = 40
 	///How long it takes to resist out of the item (cuffs and such)
 	var/breakouttime = 0
+	///How much power would this item use?
+	var/power_use_amount = POWER_CELL_USE_NORMAL
 
 	/// Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
 	var/list/attack_verb
@@ -411,6 +421,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(anchored)
 		return
 
+	//check if the item is inside another item's storage
+	if(istype(loc, /obj/item/storage))
+		//if so, can we actually access it?
+		var/datum/component/storage/ourstorage = loc.GetComponent(/datum/component/storage)
+		if(!ourstorage.access_check())
+			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_HIDE_FROM, user)//you're not supposed to be in here right now, punk!
+			return
+
 	if(resistance_flags & ON_FIRE)
 		var/mob/living/carbon/C = user
 		var/can_handle_hot = FALSE
@@ -460,7 +478,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(throwing)
 		throwing.finalize(FALSE)
 	if(loc == user)
-		if(!allow_attack_hand_drop(user) || !user.temporarilyRemoveItemFromInventory(src))
+		if(!allow_attack_hand_drop(user) || !user.temporarilyRemoveItemFromInventory(src, use_unequip_delay = TRUE))
 			return
 
 	remove_outline()
@@ -965,6 +983,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/remove_outline()
 	remove_filter(HOVER_OUTLINE_FILTER)
 
+/// Use the power of an attached component that posesses power handling, will return the signal bitflag.
+/obj/item/proc/item_use_power(use_amount, mob/user, check_only)
+	SHOULD_CALL_PARENT(TRUE)
+	return SEND_SIGNAL(src, COMSIG_ITEM_POWER_USE, use_amount, user, check_only)
+
 /// Called when a mob tries to use the item as a tool.Handles most checks.
 /obj/item/proc/use_tool(atom/target, mob/living/user, delay, amount=0, volume=0, datum/callback/extra_checks)
 	// we have no target, why are we even doing this?
@@ -1187,8 +1210,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 ///Intended for interactions with guns, like racking
 /obj/item/proc/unique_action(mob/living/user)
-	return
 
+///Called before unique action, if any other associated items should do a unique action or override it.
+/obj/item/proc/pre_unique_action(mob/living/user)
+	if(SEND_SIGNAL(src,COMSIG_CLICK_UNIQUE_ACTION,user) & OVERIDE_UNIQUE_ACTION)
+		return TRUE
+	return FALSE //return true if the proc should end here
 /**
  * Returns null if this object cannot be used to interact with physical writing mediums such as paper.
  * Returns a list of key attributes for this object interacting with paper otherwise.

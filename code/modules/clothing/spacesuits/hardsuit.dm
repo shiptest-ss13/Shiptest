@@ -23,6 +23,11 @@
 	var/grace_count = 0
 	var/datum/looping_sound/geiger/soundloop
 
+	//fuck you 15 year old hardsuit code
+	equip_delay_self = null
+	equip_delay_other = null
+	strip_delay = null
+
 /obj/item/clothing/head/helmet/space/hardsuit/Initialize()
 	. = ..()
 	soundloop = new(list(), FALSE, TRUE)

@@ -520,7 +520,7 @@
 	examine_limb_id = SPECIES_JELLYPERSON
 
 //Species datums don't normally implement destroy, but JELLIES SUCK ASS OUT OF A STEEL STRAW
-/datum/species/jelly/luminescent/Destroy(force, ...)
+/datum/species/jelly/luminescent/Destroy(force)
 	QDEL_NULL(glow)
 	return ..()
 

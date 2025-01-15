@@ -19,6 +19,8 @@
 	var/list/name_categories = list("GENERAL")
 	/// The prefix of the ship's name.
 	var/prefix = "ISV"
+	/// The name of the ship's manufacturer.
+	var/manufacturer = "Unknown"
 	/// The full name of the ship's faction.
 	var/faction_name = "Independent"
 	var/faction_path = /datum/faction/independent
@@ -360,11 +362,7 @@
 	name = "Sugarcube Transport"
 	prefix = "ISV"
 
-//your subshuttle here //why is my subshuttle here
-/datum/map_template/shuttle/subshuttles/heron
-	file_name = "nanotrasen_falcon"
-	name = "Falcon Dropship"
-	prefix = "NTSV"
+//your subshuttle here //why is my subshuttle here // its no longer there
 
 /datum/map_template/shuttle/subshuttles/crux
 	file_name = "minutemen_crux"
@@ -413,3 +411,8 @@
 	file_name = "frontiersmen_brawler"
 	name = "Brawler-class Dropship"
 	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/skink
+	file_name = "nanotrasen_skink"
+	name = "Skink-class Cargo Runner"
+	prefix = "NTSV"

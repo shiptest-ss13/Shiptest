@@ -219,24 +219,24 @@
 	return located_vein
 
 //For scanning ore veins of their contents
-/obj/item/pinpointer/mineral/afterattack(obj/structure/vein/O, mob/user, proximity)
+/obj/item/pinpointer/mineral/afterattack(obj/structure/vein/our_vein, mob/user, proximity)
 	. = ..()
-	if(!proximity || !istype(O,/obj/structure/vein))
+	if(!proximity || !istype(our_vein,/obj/structure/vein))
 		return
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)
 	if(user.a_intent == INTENT_HARM)
-		if(O.detectable == TRUE)
+		if(our_vein.detectable == TRUE)
 			to_chat(user,span_notice("You blacklist the vein from the scanner's telemetry, and will no longer be detected as a site of interest to the scanner."))
-			O.detectable = FALSE
+			our_vein.detectable = FALSE
 			return
 		else
 			to_chat(user,span_notice("You mark vein into the scanner's telemetry, allowing it be located by underground scans."))
-			O.detectable = TRUE
+			our_vein.detectable = TRUE
 			return
 
-	if(O.vein_contents.len > 0)
-		to_chat(user, "<span class='notice'>Class [O.vein_class] ore vein with [O.mining_charges] possible ore lodes found.</span>")
-		for(var/re in O.vein_contents)
-			to_chat(user, "<span class='notice'>\tExtractable amounts of [re].</span>")
+	if(our_vein.vein_contents.len > 0)
+		to_chat(user, "<span class='notice'>Class [our_vein.vein_class] ore vein with [our_vein.mining_charges] possible ore lodes found.</span>")
+		for(var/our_ore in our_vein.vein_contents)
+			to_chat(user, "<span class='notice'>\tExtractable amounts of [our_ore?:name].</span>")
 	else
-		to_chat(user, "<span class='notice'>No notable mineral deposits found in [O].</span>")
+		to_chat(user, "<span class='notice'>No notable mineral deposits found in [our_vein].</span>")

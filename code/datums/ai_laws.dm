@@ -16,7 +16,7 @@
 	var/mob/living/silicon/owner
 	var/id = DEFAULT_AI_LAWID
 
-/datum/ai_laws/Destroy(force, ...)
+/datum/ai_laws/Destroy(force)
 	if(!QDELETED(owner))
 		CRASH("AI lawset destroyed even though owner AI is not being destroyed.")
 	owner = null
@@ -235,10 +235,6 @@
 /datum/ai_laws/proc/set_laws_config()
 	var/list/law_ids = CONFIG_GET(keyed_list/random_laws)
 	switch(CONFIG_GET(number/default_laws))
-		if(0)
-			add_inherent_law("You may not injure a human being or, through inaction, allow a human being to come to harm.")
-			add_inherent_law("You must obey orders given to you by human beings, except where such orders would conflict with the First Law.")
-			add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
 		if(1)
 			var/datum/ai_laws/templaws = new /datum/ai_laws/custom()
 			inherent = templaws.inherent

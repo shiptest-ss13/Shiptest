@@ -1320,9 +1320,6 @@
 /atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	return
 
-/atom/proc/disconnect_from_shuttle(obj/docking_port/mobile/port)
-	return
-
 /// Generic logging helper
 /atom/proc/log_message(message, message_type, color=null, log_globally=TRUE)
 	if(!log_globally)
