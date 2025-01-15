@@ -1,4 +1,4 @@
-#define CLIP_ATTACHMENTS list(list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet))
+#define CLIP_ATTACHMENTS list(list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/sling, /obj/item/attachment/gun))
 #define CLIP_ATTACHMNENT_POINTS list()
 
 
@@ -173,6 +173,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/cm5.ogg'
 	manufacturer = MANUFACTURER_MINUTEMAN
+
+	spread = 3
+	spread_unwielded = 7
 
 	valid_attachments = CLIP_ATTACHMENTS
 	slot_available = list(
@@ -383,7 +386,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	manufacturer = MANUFACTURER_MINUTEMAN
 	spread = -5
 	spread_unwielded = 35
-	recoil = 4
+	recoil = 2
 	recoil_unwielded = 10
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS

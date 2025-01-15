@@ -221,7 +221,7 @@
 /turf/open/floor/plastic,
 /area/ruin/wasteplanet/wasteplanet_radiation/main)
 "nN" = (
-/obj/structure/radioactive{
+/obj/structure/hazard/radioactive{
 	pixel_x = 7
 	},
 /turf/open/floor/plating,
@@ -305,10 +305,10 @@
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
 "sh" = (
-/obj/structure/radioactive/stack{
+/obj/structure/hazard/radioactive/stack{
 	pixel_y = -12
 	},
-/obj/structure/radioactive{
+/obj/structure/hazard/radioactive{
 	pixel_y = 6
 	},
 /turf/open/floor/plating/rust,
@@ -807,7 +807,7 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/main)
 "Rz" = (
-/obj/structure/radioactive/waste,
+/obj/structure/hazard/radioactive/waste,
 /obj/effect/decal/cleanable/greenglow/filled,
 /obj/effect/dummy/lighting_obj{
 	light_color = "#80B425";
@@ -835,14 +835,14 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/main)
 "Tf" = (
-/obj/structure/radioactive{
+/obj/structure/hazard/radioactive{
 	pixel_x = -1;
 	pixel_y = 7
 	},
-/obj/structure/radioactive{
+/obj/structure/hazard/radioactive{
 	pixel_x = 8
 	},
-/obj/structure/radioactive{
+/obj/structure/hazard/radioactive{
 	pixel_x = 8;
 	pixel_y = 19
 	},
@@ -878,7 +878,7 @@
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
 "Va" = (
-/obj/structure/radioactive/stack,
+/obj/structure/hazard/radioactive/stack,
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "Vg" = (
@@ -895,11 +895,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
 "VA" = (
-/obj/structure/radioactive{
+/obj/structure/hazard/radioactive{
 	pixel_x = -6;
 	pixel_y = 9
 	},
-/obj/structure/radioactive{
+/obj/structure/hazard/radioactive{
 	pixel_x = 3;
 	pixel_y = 4
 	},
@@ -926,7 +926,7 @@
 /turf/open/floor/plastic,
 /area/ruin/wasteplanet/wasteplanet_radiation/main)
 "WB" = (
-/obj/structure/radioactive{
+/obj/structure/hazard/radioactive{
 	pixel_x = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,

@@ -32,7 +32,7 @@
 
 	l_pocket = /obj/item/ammo_box/a44roum_speedloader
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/pan = 3, /obj/item/ammo_box/a44roum_speedloader = 2, /obj/item/storage/box/ammo/a44roum)
+	backpack_contents = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/pan = 2, /obj/item/ammo_box/a44roum_speedloader = 2, /obj/item/storage/box/ammo/a44roum)
 
 /datum/outfit/job/roumain/ert/vickland
 	name = "ERT - Saint-Roumain Hunter (Vickland)" // vickland and candor

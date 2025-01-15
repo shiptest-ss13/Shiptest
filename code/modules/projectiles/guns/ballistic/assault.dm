@@ -20,6 +20,8 @@
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16
 
+	light_range = 2
+
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
 	desc = "An obsolete model of assault rifle once used by CLIP. Legendary for its durability and low cost, surplus rifles are commonplace on the Frontier, and the design has been widely copied. Chambered in 7.62x40mm CLIP."
@@ -327,5 +329,6 @@
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 	latch_toggle_delay = 1.2 SECONDS
+	valid_attachments = list()
 
 	spread_unwielded = 20

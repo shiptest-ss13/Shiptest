@@ -11,8 +11,14 @@
 	slot_flags = ITEM_SLOT_GLOVES
 	attack_verb = list("challenged")
 	var/transfer_prints = FALSE
-	strip_delay = 20
-	equip_delay_other = 40
+
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_GLOVES
+	equip_delay_other = EQUIP_DELAY_GLOVES + (3 SECONDS)
+	strip_delay = EQUIP_DELAY_GLOVES + (3 SECONDS)
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT
+
 	cuttable = TRUE
 	clothamnt = 2
 	greyscale_colors = list(list(10, 13), list(11, 14), list(9, 12))
