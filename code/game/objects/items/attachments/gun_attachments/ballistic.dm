@@ -61,7 +61,7 @@
 	)
 
 /obj/item/attachment/gun/ballistic/zip
-	name = "ZAP-22"
+	name = "PC-22 \"Hognose\""
 	desc = "A compact underbarrel gun chambered in 22lr. Holds eight rounds."
 	weapon_type = /obj/item/gun/ballistic/automatic/pistol/himehabu/underbarrel
 	allow_hand_interaction = TRUE
