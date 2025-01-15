@@ -14,6 +14,12 @@
 	else
 		return ..()
 
+/obj/item/attachment/gun/energy/hand_attack_interaction(mob/user)
+	var/obj/item/gun/energy/e_gun = attached_gun
+	if(e_gun.tac_reloads && e_gun.cell)
+		e_gun.eject_cell(user)
+		return ..()
+
 /obj/item/attachment/gun/energy/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	var/obj/item/gun/energy/e_gun = attached_gun
 	var/obj/item/ammo_casing/energy/shot = e_gun.ammo_type[e_gun.select]

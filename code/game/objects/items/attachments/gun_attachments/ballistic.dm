@@ -9,6 +9,12 @@
 	else
 		return ..()
 
+/obj/item/attachment/gun/ballistic/hand_attack_interaction(mob/user)
+	var/obj/item/gun/ballistic/ballistic_gun = attached_gun
+	if(ballistic_gun.magazine)
+		ballistic_gun.eject_magazine(user)
+		return ..()
+
 /obj/item/attachment/gun/ballistic/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	var/obj/item/gun/ballistic/ballistic_gun = attached_gun
 	var/gun_bolt = ballistic_gun.bolt_type
