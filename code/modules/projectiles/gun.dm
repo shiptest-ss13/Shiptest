@@ -34,6 +34,7 @@
 
 	light_range = 3
 	light_color = COLOR_VERY_SOFT_YELLOW
+	light_on = FALSE
 
 	///Icon state of the muzzle flash effect.
 	var/muzzleflash_iconstate
@@ -879,7 +880,7 @@
 	var/atom/movable/flash_loc = user
 	if(!light_on)
 		set_light_on(TRUE)
-		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light_on), FALSE), 1 SECONDS)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light_on), FALSE), 3)
 
 	//Offset the pixels.
 	switch(firing_angle)
