@@ -461,22 +461,17 @@
 	if(!HAS_TRAIT(breather, TRAIT_RESISTCOLD)) // COLD DAMAGE
 		var/cold_modifier = breather.dna.species.coldmod
 		var/breath_effect_prob = 0
-		var/part_count = 0
 		if(breath_temperature < cold_level_3_threshold)
 			breather.apply_damage(cold_level_3_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
 			breath_effect_prob = 100
-			part_count = 8
 		if(breath_temperature > cold_level_3_threshold && breath_temperature < cold_level_2_threshold)
 			breather.apply_damage(cold_level_2_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
 			breath_effect_prob = 75
-			part_count = 5
 		if(breath_temperature > cold_level_2_threshold && breath_temperature < cold_level_1_threshold)
 			breather.apply_damage(cold_level_1_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
 			breath_effect_prob = 50
-			part_count = 3
 		if(breath_temperature > cold_level_1_threshold)
 			breath_effect_prob = 25
-			part_count = 2
 
 		if(breath_temperature < cold_level_1_threshold)
 			if(prob(sqrt(breath_effect_prob) * 6))
@@ -484,7 +479,6 @@
 		else if(breath_temperature < chlly_threshold)
 			if(!breath_effect_prob)
 				breath_effect_prob = 20
-				part_count = 1
 			if(prob(sqrt(breath_effect_prob) * 6))
 				to_chat(breather, "<span class='warning'>You feel [chilly_message] in your [name].</span>")
 		if(breath_temperature < chlly_threshold)
@@ -524,43 +518,6 @@
 
 	// The air you breathe out should match your body temperature
 	breath.set_temperature(breather.bodytemperature)
-
-/// Creates a particle effect off the mouth of the passed mob.
-/obj/item/organ/lungs/proc/emit_breath_particle(mob/living/carbon/human/breather, particle_type, part_count)
-	ASSERT(ispath(particle_type, /particles))
-
-	var/obj/effect/abstract/particle_holder/holder = new(breather, particle_type)
-	var/particles/breath_particle = holder.particles
-	var/breath_dir = breather.dir
-
-	var/list/particle_grav = list(0, 0.1, 0)
-	var/list/particle_pos = list(0, 10, 0)
-	if(breath_dir & NORTH)
-		particle_grav[2] = 0.2
-		breath_particle.rotation = pick(-45, 45)
-		// Layer it behind the mob since we're facing away from the camera
-		holder.pixel_w -= 4
-		holder.pixel_y += 4
-	if(breath_dir & WEST)
-		particle_grav[1] = -0.2
-		particle_pos[1] = -5
-		breath_particle.rotation = -45
-	if(breath_dir & EAST)
-		particle_grav[1] = 0.2
-		particle_pos[1] = 5
-		breath_particle.rotation = 45
-	if(breath_dir & SOUTH)
-		particle_grav[2] = 0.2
-		breath_particle.rotation = pick(-45, 45)
-		// Shouldn't be necessary but just for parity
-		holder.pixel_w += 4
-		holder.pixel_y -= 4
-
-	breath_particle.gravity = particle_grav
-	breath_particle.position = particle_pos
-	breath_particle.count = part_count
-
-	QDEL_IN(holder, breath_particle.lifespan)
 
 /obj/item/organ/lungs/on_life()
 	. = ..()
