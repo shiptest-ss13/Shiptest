@@ -86,7 +86,7 @@
 	data["num_copies"] = num_copies
 
 	try
-		var/list/blanks = json_decode(file2text(blanks_config))
+		var/list/blanks = json_decode(file2text(blanks_path))
 		if (blanks != null)
 			data["blanks"] = blanks
 			data["category"] = category
@@ -531,25 +531,25 @@
  */
 
 /obj/machinery/photocopier/clip
-	blanks_path = 'strings/blanks/clip_blanks.json'
+	//blanks_path = 'strings/blanks/clip_blanks.json'
 
 /obj/machinery/photocopier/independent
-	blanks_path = 'strings/blanks/indie_blanks.json'
+	//blanks_path = 'strings/blanks/indie_blanks.json'
 
 /obj/machinery/photocopier/inteq
-	blanks_path = 'strings/blanks/inteq_blanks.json'
+	//blanks_path = 'strings/blanks/inteq_blanks.json'
 
 /obj/machinery/photocopier/nanotrasen
-	blanks_path = 'strings/blanks/nt_blanks.json'
+	//blanks_path = 'strings/blanks/nt_blanks.json'
 
 /obj/machinery/photocopier/pgf
-	blanks_path = 'strings/blanks/pgf_blanks.json'
+	//blanks_path = 'strings/blanks/pgf_blanks.json'
 
 /obj/machinery/photocopier/solcon
-	blanks_path = 'strings/blanks/solcon_blanks.json'
+	//blanks_path = 'strings/blanks/solcon_blanks.json'
 
 /obj/machinery/photocopier/syndicate
-	blanks_path = 'strings/blanks/syndicate_blanks.json'
+	//blanks_path = 'strings/blanks/syndicate_blanks.json'
 
 /*
  * Toner cartridge

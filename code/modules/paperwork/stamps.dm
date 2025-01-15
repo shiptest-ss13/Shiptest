@@ -127,20 +127,21 @@
 	dye_color = DYE_QM
 
 /obj/item/stamp/solgov
+	name = "SolGov rubber stamp"
+	icon_state = "stamp-solgov"
+
+/obj/item/stamp/solgov/captain
+
 	name = "SolGov Captain's rubber stamp"
 	icon_state = "stamp-solgov_captain"
 
-/obj/item/stamp/solgov/captain
+/obj/item/stamp/solgov/approved
 	name = "SolGov APPROVED rubber stamp"
 	icon_state = "stamp-solgov_ok"
 
-/obj/item/stamp/solgov/approved
+/obj/item/stamp/solgov/denied
 	name = "SolGov DENIED rubber stamp"
 	icon_state = "stamp-solgov_deny"
-
-/obj/item/stamp/solgov/denied
-	name = "SolGov rubber stamp"
-	icon_state = "stamp-solgov"
 
 /obj/item/stamp/inteq
 	name = "Inteq rubber stamp"
