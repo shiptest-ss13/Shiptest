@@ -30,8 +30,7 @@
 /obj/item/gun/ballistic/shotgun/underbarrel
 	name = "underbarrel ballistic gun"
 	desc = "You shouldnt be seeing this."
-	semi_auto = TRUE
-	//always_chambers = TRUE
+	semi_auto = FALSE
 	casing_ejector = TRUE
 	gunslinger_recoil_bonus = 0
 	default_ammo_type  = /obj/item/ammo_box/magazine/internal/shot/underbarrel
@@ -55,6 +54,7 @@
 /obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher
 	name = "underbarrel grenade launcher"
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
+	always_chambers = TRUE
 	default_ammo_type  = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/grenadelauncher

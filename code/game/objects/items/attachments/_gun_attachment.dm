@@ -67,15 +67,15 @@
 	attached_gun.unique_action(user)
 
 /obj/item/attachment/gun/on_attack_hand(obj/item/gun/gun, mob/user, list/examine_list)
-	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL && gun.loc == user && user.is_holding(gun))
+	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL && gun.loc == user && user.is_holding(gun) && allow_hand_interaction)
 		hand_attack_interaction(user)
 		return COMPONENT_NO_ATTACK_HAND
 	return
 
 /obj/item/attachment/gun/attack_hand(mob/user)
 	if(loc == user && user.is_holding(src) && allow_hand_interaction)
-		hand_attack_interaction(user)
-		return COMPONENT_NO_ATTACK_HAND
+		if(hand_attack_interaction(user))
+			return COMPONENT_NO_ATTACK_HAND
 	return ..()
 
 /obj/item/attachment/gun/proc/hand_attack_interaction(mob/user)
