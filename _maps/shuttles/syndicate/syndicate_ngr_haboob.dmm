@@ -588,6 +588,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "nB" = (
@@ -637,13 +640,19 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "oq" = (
-/obj/machinery/door/airlock/grunge{
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/grunge{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1492,7 +1501,7 @@
 	},
 /obj/machinery/button/door{
 	name = "Cargo Shutters";
-	id = "squallbridge";
+	id = "boobbridge";
 	pixel_x = -5
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1522,6 +1531,7 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "GT" = (
@@ -1616,12 +1626,12 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock/grunge,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/grunge,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "JJ" = (
@@ -1813,6 +1823,7 @@
 /obj/effect/turf_decal/corner/opaque/beige{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "MV" = (
@@ -2481,7 +2492,6 @@
 /area/ship/crew/dorm)
 "Xz" = (
 /obj/machinery/light/directional/north,
-/obj/structure/dresser,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
 	},
@@ -2489,6 +2499,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/beige,
+/obj/structure/dresser,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "XA" = (
