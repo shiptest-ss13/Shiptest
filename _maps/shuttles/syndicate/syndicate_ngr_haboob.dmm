@@ -34,7 +34,6 @@
 /obj/item/ammo_box/magazine/m57_39_asp,
 /obj/item/ammo_box/magazine/m57_39_asp,
 /obj/item/storage/box/ammo/c57x39,
-/obj/item/storage/box/ammo/c57x39,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "ap" = (
@@ -1170,6 +1169,9 @@
 "ys" = (
 /obj/machinery/autolathe,
 /obj/machinery/airalarm/directional/south,
+/obj/item/stack/sheet/metal/ten,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/glass/five,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "yD" = (
@@ -1213,7 +1215,7 @@
 	dir = 8
 	},
 /obj/structure/crate_shelf,
-/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "zS" = (
@@ -1401,7 +1403,7 @@
 "Ec" = (
 /obj/machinery/porta_turret/ship/ngr/light{
 	dir = 6;
-	id = "squallgun"
+	id = "boobgun"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security/armory)
@@ -1411,7 +1413,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/grunge{
-	req_one_access = list(19,3);
+	req_one_access = list(19);
 	name = "Bridge"
 	},
 /obj/structure/cable{
@@ -1718,7 +1720,7 @@
 /obj/structure/platform/military{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "LA" = (
@@ -2165,10 +2167,8 @@
 	icon_state = "2-5"
 	},
 /obj/machinery/light/directional/west,
-/obj/item/storage/guncase/pistol/rattlesnake,
-/obj/item/ammo_box/magazine/m9mm_rattlesnake/empty,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/guncase/pistol/asp,
+/obj/item/ammo_box/magazine/m57_39_asp/empty,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "QJ" = (
@@ -2622,6 +2622,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/structure/closet/crate,
+/obj/item/chair/plastic,
+/obj/item/chair/plastic,
+/obj/item/chair/plastic,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 
