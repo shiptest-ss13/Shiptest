@@ -156,6 +156,7 @@
 	r_pocket = null
 
 /datum/outfit/job/frontiersmen/doctor/corpse/internals
+	name = "Frontiersmen Surgeon Corpse Internals"
 	mask = /obj/item/clothing/mask/breath
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
