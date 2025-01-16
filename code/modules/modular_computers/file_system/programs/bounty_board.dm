@@ -12,10 +12,14 @@
 /datum/computer_file/program/bounty_board/ui_data(mob/user)
 	var/list/data = get_header_data()
 	data["missions"] = list()
-	for(var/datum/mission/dynamic/M as anything in SSmissions.active_missions)
+	for(var/datum/mission/ruin/M as anything in SSmissions.active_missions)
 		data["missions"] += list(M.get_tgui_info())
 	data["pad"] = FALSE
 	data["id_inserted"] = FALSE
+
+	var/obj/item/computer_hardware/card_slot/card_slot
+	if(computer)
+		card_slot = computer.all_components[MC_CARD]
 	if(computer && card_slot)
 		var/obj/item/card/id/id_card = card_slot.stored_card
 		data["id_inserted"] = !!id_card

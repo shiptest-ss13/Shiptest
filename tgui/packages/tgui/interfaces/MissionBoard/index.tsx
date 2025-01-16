@@ -31,8 +31,7 @@ export const MissionsContent = (props, context) => {
         <>
           <Button
             icon={'sync'}
-            tooltip={'Check Contents'}
-            disabled={!pad || !id_inserted}
+            tooltip={'Refresh'}
             onClick={() => act('recalc')}
           />
           <Button

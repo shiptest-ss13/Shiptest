@@ -17,7 +17,7 @@
 	id = "buried_shrine"
 	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
 	suffix = "lavaland_surface_buried_shrine.dmm"
-	dynamic_mission_types = list(/datum/mission/dynamic/signaled/kill/elite)
+	dynamic_mission_types = list(/datum/mission/ruin/signaled/kill/elite)
 
 /datum/map_template/ruin/lavaland/lava_canyon
 	name = "Lava Canyon"
@@ -31,22 +31,22 @@
 	description = "A  Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
 	suffix = "lavaland_surface_wrecked_factory.dmm"
 	dynamic_mission_types = list(
-		/datum/mission/dynamic/nanotrasen_docs,
-		/datum/mission/dynamic/captain_medal,
-		/datum/mission/dynamic/brainchip
+		/datum/mission/ruin/nanotrasen_docs,
+		/datum/mission/ruin/captain_medal,
+		/datum/mission/ruin/brainchip
 	)
 
-/datum/mission/dynamic/nanotrasen_docs
+/datum/mission/ruin/nanotrasen_docs
 	name = "recover some nanotrasen files."
 	value = 2500
 	setpiece_item = /obj/item/documents/nanotrasen
 
-/datum/mission/dynamic/captain_medal
+/datum/mission/ruin/captain_medal
 	name = "recover my lost medal."
 	value = 1250
 	setpiece_item = /obj/item/documents/nanotrasen
 
-/datum/mission/dynamic/brainchip
+/datum/mission/ruin/brainchip
 	name = "brainchip recovery"
 	desc = "one of our cargo techs died with some important tech in his head. get it back"
 	setpiece_item = /mob/living/carbon/human
@@ -66,11 +66,11 @@
 	id = "crashed_star"
 	description = "A crashed pirate ship. It would seem that it's crew died a while ago."
 	suffix = "lavaland_crashed_starwalker.dmm"
-	dynamic_mission_types = list(/datum/mission/dynamic/blackbox)
+	dynamic_mission_types = list(/datum/mission/ruin/blackbox)
 
 /datum/map_template/ruin/lavaland/abandonedlisteningpost
 	name = "Abandoned Listening Post"
 	id = "abandonedlistening"
 	description = "An abandoned Cybersun listening post. Seems like the Ramzi Clique has an interest in the site."
 	suffix = "lavaland_abandonedlisteningpost.dmm"
-	dynamic_mission_types = list(/datum/mission/dynamic/blackbox)
+	dynamic_mission_types = list(/datum/mission/ruin/blackbox)

@@ -11,11 +11,11 @@
 	suffix = "jungle_syndicate.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 	dynamic_mission_types = list(
-		/datum/mission/dynamic/nt_files,
-		/datum/mission/dynamic/signaled/kill/jerry
+		/datum/mission/ruin/nt_files,
+		/datum/mission/ruin/signaled/kill/jerry
 	)
 
-/datum/mission/dynamic/signaled/kill/jerry
+/datum/mission/ruin/signaled/kill/jerry
 	name = "FUCKING KIL JERRY THAT SUNOFA BITCH STOLE BY GODDAMN RELINA PLUSHIE!!"
 	desc = "I WANT MY FUCKIN PUSHIE BACK KILL HIM AND ILL PAY!"
 	author = "I FUCKING WANT HIM HUNG."
@@ -51,7 +51,7 @@
 	description = "A bombed out airbase from the ICW, taken back over by nature"
 	suffix = "jungle_bombed_starport.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE)
-	dynamic_mission_types = list(/datum/mission/dynamic/blackbox)
+	dynamic_mission_types = list(/datum/mission/ruin/blackbox)
 
 /datum/map_template/ruin/jungle/medtech
 	name = "MedTech facility"
@@ -67,6 +67,6 @@
 	suffix = "jungle_cavecrew.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE, RUIN_TAG_MAJOR_LOOT)
 	dynamic_mission_types = list(
-		/datum/mission/dynamic/signaled/kill/frontiersmen,
-		/datum/mission/dynamic/data_reterival
+		/datum/mission/ruin/signaled/kill/frontiersmen,
+		/datum/mission/ruin/data_reterival
 	)

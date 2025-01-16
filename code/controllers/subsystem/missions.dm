@@ -3,8 +3,8 @@ SUBSYSTEM_DEF(missions)
 	flags = SS_NO_INIT
 	priority = FIRE_PRIORITY_MISSIONS
 	var/list/obj/effect/landmark/mission_poi/unallocated_pois = list()
-	var/list/datum/mission/dynamic/inactive_missions = list()
-	var/list/datum/mission/dynamic/active_missions = list()
+	var/list/datum/mission/ruin/inactive_missions = list()
+	var/list/datum/mission/ruin/active_missions = list()
 
 /datum/controller/subsystem/missions/stat_entry(msg)
 	var/unallocated = unallocated_pois.len
@@ -19,7 +19,7 @@ SUBSYSTEM_DEF(missions)
 			//Make sure we dont ONLY take the one of the top.
 			if(prob(50))
 				//Has the pleasnt result of grabbing the most recent mission, idealy this means a freshly created planet
-				var/datum/mission/dynamic/mission_to_start = inactive_missions[inactive_missions.len - (i - 1)]
+				var/datum/mission/ruin/mission_to_start = inactive_missions[inactive_missions.len - (i - 1)]
 				mission_to_start.start_mission()
 				break
 

@@ -1,4 +1,4 @@
-/datum/mission/dynamic
+/datum/mission/ruin
 	value = 2000
 	duration = null
 	/// Which landmark we will search for in spawned_mission_pois of the planet
@@ -10,18 +10,18 @@
 	/// The item that you can turn in to complete the mission. If specific_item is false it uses the type of the item.
 	var/atom/movable/required_item
 
-/datum/mission/dynamic/generate_mission_details()
+/datum/mission/ruin/generate_mission_details()
 	. = ..()
 	setpiece_item = pick(setpiece_item)
 
-/datum/mission/dynamic/mission_regexs(mission_string)
+/datum/mission/ruin/mission_regexs(mission_string)
 	mission_string = ..()
 	if(ispath(setpiece_item))
 		var/atom/target = setpiece_item
 		mission_string = replacetext(mission_string, "%MISSION_REQUIRED", "[target::name]")
 	return mission_string
 
-/datum/mission/dynamic/spawn_mission_details(datum/overmap/dynamic/planet)
+/datum/mission/ruin/spawn_mission_details(datum/overmap/dynamic/planet)
 	if(isnull(mission_index))
 		stack_trace("[src] does not have a mission index!")
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
@@ -29,7 +29,7 @@
 
 	spawn_custom_details(planet)
 
-/datum/mission/dynamic/proc/use_poi(obj/effect/landmark/mission_poi/mission_poi, datum/overmap/dynamic/planet)
+/datum/mission/ruin/proc/use_poi(obj/effect/landmark/mission_poi/mission_poi, datum/overmap/dynamic/planet)
 	if(mission_poi.use_count <= 0)
 		qdel(mission_poi)
 		return
@@ -51,7 +51,7 @@
 		if(isatom(poi_result))
 			poi_result.AddComponent(/datum/component/mission_important, MISSION_IMPORTANCE_RELEVENT, src)
 
-/datum/mission/dynamic/proc/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi, datum/overmap/dynamic/planet)
+/datum/mission/ruin/proc/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi, datum/overmap/dynamic/planet)
 	required_item =	mission_poi.use_poi(setpiece_item, src)
 	if(isatom(required_item))
 		set_bound(required_item, null, TRUE, TRUE)
@@ -60,10 +60,10 @@
 		qdel(src)
 
 /// For handling logic outside of main piece thats too complex for the basic reiteration or you want to not require indexs to match.
-/datum/mission/dynamic/proc/spawn_custom_details(datum/overmap/dynamic/planet)
+/datum/mission/ruin/proc/spawn_custom_details(datum/overmap/dynamic/planet)
 	return
 
-/datum/mission/dynamic/can_turn_in(atom/movable/item_to_check)
+/datum/mission/ruin/can_turn_in(atom/movable/item_to_check)
 	if(istype(required_item))
 		if(specific_item)
 			if(item_to_check == required_item)

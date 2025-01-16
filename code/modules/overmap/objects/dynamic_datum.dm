@@ -113,7 +113,7 @@
 	if(length(mapzone?.get_mind_mobs()) || SSlag_switch.measures[DISABLE_PLANETDEL])
 		return //Dont fuck over stranded people
 
-	for(var/datum/mission/dynamic/dynamic_mission in dynamic_missions)
+	for(var/datum/mission/ruin/dynamic_mission in dynamic_missions)
 		if(dynamic_mission.active)
 			return //Dont fuck over people trying to complete a mission.
 
@@ -226,7 +226,7 @@
 	. = ..()
 	.["active_missions"] = list()
 	.["inactive_missions"] = list()
-	for(var/datum/mission/dynamic/mission as anything in dynamic_missions)
+	for(var/datum/mission/ruin/mission as anything in dynamic_missions)
 		if(mission.active)
 			.["active_missions"] += list(list(
 				"ref" = REF(mission),

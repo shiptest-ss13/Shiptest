@@ -1,10 +1,10 @@
-/datum/mission/dynamic/signaled
+/datum/mission/ruin/signaled
 	var/registered_type
 	var/atom/movable/registered_item
 	/// What signal will spawn the required item
 	var/mission_main_signal
 
-/datum/mission/dynamic/signaled/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi)
+/datum/mission/ruin/signaled/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi)
 	registered_item = mission_poi.use_poi(registered_type, src)
 	if(isatom(registered_item))
 		registered_item = set_bound(registered_item, null, FALSE, TRUE)
@@ -13,7 +13,7 @@
 		stack_trace("[src] did not generate a required item.")
 		qdel(src)
 
-/datum/mission/dynamic/signaled/proc/on_signaled(atom/movable/registered_item)
+/datum/mission/ruin/signaled/proc/on_signaled(atom/movable/registered_item)
 	SIGNAL_HANDLER
 
 	required_item = new setpiece_item(registered_item.loc)
@@ -23,7 +23,7 @@
 
 /obj/effect/landmark/mission_poi/main/drill
 
-/datum/mission/dynamic/signaled/drill
+/datum/mission/ruin/signaled/drill
 	name = "drill mission"
 	desc = "get this drill back up and running and send us proof"
 	value = 5000

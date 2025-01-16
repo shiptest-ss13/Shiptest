@@ -73,8 +73,8 @@
 		if("recalc")
 			recalc()
 		if("send")
-			var/datum/mission/dynamic/mission = locate(params["mission"])
-			if(!istype(mission, /datum/mission/dynamic))
+			var/datum/mission/ruin/mission = locate(params["mission"])
+			if(!istype(mission, /datum/mission/ruin))
 				return
 			turn_in(mission)
 		if("eject")
@@ -82,7 +82,7 @@
 			inserted_scan_id = null
 	. = TRUE
 
-/obj/machinery/computer/mission/proc/turn_in(datum/mission/dynamic/mission)
+/obj/machinery/computer/mission/proc/turn_in(datum/mission/ruin/mission)
 	var/obj/machinery/mission_pad/pad = pad_ref?.resolve()
 	for(var/atom/movable/item_on_pad as anything in get_turf(pad))
 		if(item_on_pad == pad)
@@ -113,7 +113,7 @@
 	var/list/data = list()
 	data["missions"] = list()
 	var/list/items_on_pad = recalc()
-	for(var/datum/mission/dynamic/M as anything in SSmissions.active_missions)
+	for(var/datum/mission/ruin/M as anything in SSmissions.active_missions)
 		data["missions"] += list(M.get_tgui_info(items_on_pad))
 	data["pad"] = pad_ref?.resolve() ? TRUE : FALSE
 	data["id_inserted"] = inserted_scan_id ? TRUE : FALSE
@@ -162,7 +162,7 @@
 /obj/machinery/bounty_viewer/ui_data(mob/user)
 	var/list/data = list()
 	data["missions"] = list()
-	for(var/datum/mission/dynamic/M as anything in SSmissions.active_missions)
+	for(var/datum/mission/ruin/M as anything in SSmissions.active_missions)
 		data["missions"] += list(M.get_tgui_info())
 	data["pad"] = FALSE
 	data["id_inserted"] = FALSE
