@@ -128,8 +128,8 @@
 	desc = "An ashen revenant wades through a sea of flames, mummified under twenty pounds of blackened asbestos fabric. Mirrored lenses glare inscrutably as they swing their instrument of destruction towards you. You should probably run."
 	icon_state = "frontiersmanflametrooper"
 	icon_living = "frontiersmanflametrooper"
-	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/flame,
-				/obj/item/flamethrower)
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/flame
+	r_hand = /obj/item/flamethrower
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
