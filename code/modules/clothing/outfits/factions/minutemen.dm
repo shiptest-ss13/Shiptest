@@ -11,7 +11,8 @@
 	box = /obj/item/storage/box/survival/clip
 	ears = /obj/item/radio/headset
 
-	satchel = /obj/item/storage/backpack/security/clip
+	backpack = /obj/item/storage/backpack/security/clip
+	satchel = /obj/item/storage/backpack/satchel/sec/clip
 
 // 	var/list/selectable_alt_titles = list()
 
