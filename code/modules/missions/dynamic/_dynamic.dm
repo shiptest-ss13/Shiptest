@@ -16,7 +16,7 @@
 
 /datum/mission/dynamic/mission_regexs(mission_string)
 	mission_string = ..()
-	mission_string = replacetext(mission_string, "%MISSION_REQUIRED", "[author]")
+	mission_string = replacetext(mission_string, "%MISSION_REQUIRED", "[setpiece_item::name]")
 	return mission_string
 
 /datum/mission/dynamic/spawn_mission_details(datum/overmap/dynamic/planet)
