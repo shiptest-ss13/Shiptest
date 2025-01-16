@@ -14,12 +14,12 @@
 	SIGNAL_HANDLER
 
 	if(!isdatum(mission_ref.resolve()))
-		examine_list += span_notice("[parent] was useful to a mission.")
+		examine_list += span_notice("[parent] <b>was</b> useful to a mission.")
 		return
 
 	switch(importance_level)
 		if(MISSION_IMPORTANCE_CRITICAL)
-			examine_list += span_notice("[parent] is critical to a mission.")
+			examine_list += span_warning("[parent] is critical to a mission.")
 		if(MISSION_IMPORTANCE_IMPORTANT)
 			examine_list += span_notice("[parent] is important to a mission.")
 		if(MISSION_IMPORTANCE_RELEVENT)
