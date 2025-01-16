@@ -148,9 +148,16 @@
 /obj/effect/mob_spawn/human/corpse/frontier/surgeon
 	outfit = /datum/outfit/job/frontiersmen/doctor/corpse
 
+/obj/effect/mob_spawn/human/corpse/frontier/surgeon/internals
+	outfit = /datum/outfit/job/frontiersmen/doctor/corpse/internals
+
 /datum/outfit/job/frontiersmen/doctor/corpse
 	name = "Frontiersmen Surgeon Corpse"
 	r_pocket = null
+
+/datum/outfit/job/frontiersmen/doctor/corpse/internals
+	mask = /obj/item/clothing/mask/breath
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
 	outfit = /datum/outfit/frontier/trooper

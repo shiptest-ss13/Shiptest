@@ -48,10 +48,9 @@
 	desc = "A member of the brutal Frontiersman terrorist fleet! They appear to be a \"doctor\" of some sort, nervously swinging about some kind of makeshift syringe launcher."
 	icon_state = "frontiersmansurgeon"
 	icon_living = "frontiersmansurgeon"
-	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/surgeon,
-				/obj/item/melee/knife/survival,
-				/obj/item/gun/syringe)
-
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/surgeon
+	l_hand = /obj/item/melee/knife/survival
+	r_hand = /obj/item/gun/syringe
 	minimum_distance = 1
 	retreat_distance = null
 	projectiletype = /obj/projectile/bullet/dart/tranq
@@ -62,23 +61,15 @@
 	armor_base = /obj/item/clothing/suit/frontiersmen
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/neuter
-	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/surgeon)
+	neutered = TRUE
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals
 	icon_state = "frontiersmansurgeon_mask"
 	icon_living = "frontiersmansurgeon_mask"
-	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/surgeon,
-				/obj/item/melee/knife/survival,
-				/obj/item/gun/syringe,
-				/obj/item/clothing/mask/breath,
-				/obj/item/tank/internals/emergency_oxygen/engi)
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/surgeon/internals
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals/neuter
-	icon_state = "frontiersmansurgeon_mask"
-	icon_living = "frontiersmansurgeon_mask"
-	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/surgeon,
-				/obj/item/clothing/mask/breath,
-				/obj/item/tank/internals/emergency_oxygen/engi)
+	neutered = TRUE
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin
 	name = "Frontiersman Sharpshot"
@@ -152,7 +143,7 @@
 	ranged_cooldown = world.time + ranged_cooldown_time
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter
-	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/flame)
+	neutered = TRUE
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm
 	name = "Frontiersman Gunner"
@@ -216,9 +207,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/internals
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered
-	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless,
-				/obj/item/clothing/mask/gas,
-				/obj/item/tank/internals/emergency_oxygen/engi)
+	neutered = TRUE
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/neutered
 	neutered = TRUE
