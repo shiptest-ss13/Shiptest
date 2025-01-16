@@ -36,7 +36,7 @@
 
 /obj/structure/salvageable/deconstruct_act(mob/living/user, obj/item/tool)
 	. = ..()
-	if(!.)
+	if(.)
 		return FALSE
 	user.visible_message("<span class='notice'>[user] starts slicing [src].</span>", \
 					"<span class='notice'>You start salvaging anything useful from [src]...</span>")

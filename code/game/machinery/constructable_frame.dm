@@ -23,7 +23,7 @@
 
 /obj/structure/frame/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
-	if(!.)
+	if(.)
 		return FALSE
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
