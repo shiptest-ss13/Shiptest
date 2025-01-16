@@ -84,6 +84,8 @@
 		if("inspect_mission")
 			var/datum/mission/dynamic/mission = locate(params["ref"])
 		if("load_mission")
+			if(!check_rights(R_DEBUG))
+				return
 			var/datum/mission/dynamic/mission = locate(params["ref"])
 			if(istype(mission, /datum/mission))
 				mission.start_mission()
