@@ -110,6 +110,7 @@
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
 	r_hand = /obj/item/gun/ballistic/shotgun/brimstone
+	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
 	icon_state = "frontiersmanrangedelite_mask"
@@ -206,6 +207,7 @@
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/penetrator
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
+	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals
 	icon_state = "frontiersmanrangedminigun_mask"
@@ -220,7 +222,6 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/neutered
 	neutered = TRUE
-	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless)
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer
 	name = "Frontiersman Boss"
