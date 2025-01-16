@@ -17,7 +17,7 @@
 /obj/effect/landmark/mission_poi/Initialize(mapload)
 	. = ..()
 	if(mapload && isnull(mission_index))
-		CRASH("[src] didnt have a mission index")
+		NOTICE("[src] didnt have a mission index")
 	SSmissions.unallocated_pois += list(src)
 	if(already_spawned && type_to_spawn)
 		var/atom/item_of_interest = search_poi()

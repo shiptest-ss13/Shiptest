@@ -42,14 +42,14 @@
 	/// is a callback to be invoked upon the atom's qdeletion.
 	var/list/atom/movable/bound_atoms
 
-/datum/mission/New(location, mission_index)
+/datum/mission/New(_location, _mission_index)
 	//source_outpost = _outpost
 	//RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
-	src.mission_index = mission_index
+	mission_index = _mission_index
 	SSmissions.inactive_missions += list(src)
 
 	if(location_specific)
-		src.mission_location = location
+		mission_location = _location
 		RegisterSignal(mission_location, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 		RegisterSignal(mission_location, COMSIG_OVERMAP_LOADED, PROC_REF(on_planet_load))
 
