@@ -106,7 +106,7 @@
 			put_in_hands(I)
 			update_inv_hands()
 		if(ITEM_SLOT_BACKPACK)
-			if(!back || !SEND_SIGNAL(back, COMSIG_TRY_STORAGE_INSERT, I, src, TRUE))
+			if(!back || !SEND_SIGNAL(back, COMSIG_TRY_STORAGE_INSERT, I, src, TRUE, FALSE, TRUE))
 				not_handled = TRUE
 		if(ITEM_SLOT_ID)
 			if(!wear_id || !SEND_SIGNAL(wear_id, COMSIG_TRY_STORAGE_INSERT, I, src, TRUE))
