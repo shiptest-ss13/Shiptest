@@ -26,7 +26,7 @@
 /datum/mission/dynamic/signaled/drill
 	name = "drill mission"
 	desc = "get this drill back up and running and send us proof"
-	value = 3000
+	value = 5000
 	faction = list(
 		/datum/faction/nt,
 		/datum/faction/nt/ns_logi,

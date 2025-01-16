@@ -1,14 +1,10 @@
-/obj/item/dog_tags
-	name = "dog tags"
-	icon_state = "skub"
-
 /obj/effect/landmark/mission_poi/main/kill
 
 /datum/mission/dynamic/signaled/kill
 	name = "%MISSION_TARGET termination"
 	desc = "Bounty for a high ranking %MISSION_TARGET residing on this planet. They should have identifying dogtags."
 	setpiece_poi = /obj/effect/landmark/mission_poi/main/kill
-	setpiece_item = /obj/item/dog_tags
+	setpiece_item = /obj/item/clothing/neck/dogtag
 	mission_main_signal = COMSIG_MOB_DEATH
 
 /datum/mission/dynamic/signaled/kill/generate_mission_details()
@@ -23,12 +19,13 @@
 	return mission_string
 
 /datum/mission/dynamic/signaled/kill/frontiersmen
-	value = 2500
+	value = 3500
 	mission_reward = /obj/item/gun/ballistic/automatic/pistol/mauler
 	registered_type = /mob/living/simple_animal/hostile/human/frontier/ranged/officer
+	setpiece_item = /obj/item/clothing/neck/dogtag/frontier
 
 /datum/mission/dynamic/signaled/kill/syndi_docs
-	value = 3000
+	value = 4000
 	registered_type = /mob/living/simple_animal/hostile/human/nanotrasen/elite
 	setpiece_item = /obj/item/folder/documents/syndicate
 

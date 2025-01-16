@@ -16,4 +16,8 @@
 		data["missions"] += list(M.get_tgui_info())
 	data["pad"] = FALSE
 	data["id_inserted"] = FALSE
+	if(computer && card_slot)
+		var/obj/item/card/id/id_card = card_slot.stored_card
+		data["id_inserted"] = !!id_card
+
 	return data

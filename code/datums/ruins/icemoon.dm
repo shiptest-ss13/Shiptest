@@ -34,6 +34,7 @@
 /datum/mission/dynamic/fallen_montagne
 	name = "dark signal investigation"
 	desc = "We've lost contact with one of our lodges but there signal has gone dark. We suspect they may have been assulted by a hostile faction. If they are KIA please retrive the Montagne's body."
+	value = 3000
 	mission_reward = /obj/structure/fermenting_barrel/trickwine
 	faction = /datum/faction/srm
 	setpiece_item = /mob/living/carbon/human

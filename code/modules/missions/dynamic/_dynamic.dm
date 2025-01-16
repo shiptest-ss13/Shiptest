@@ -23,9 +23,7 @@
 
 /datum/mission/dynamic/spawn_mission_details(datum/overmap/dynamic/planet)
 	if(isnull(mission_index))
-		WARNING("[src] does not have a mission index, setting it to 1 as a backup. change this in full pr")
-		mission_index = 1
-		//stack_trace("[src] does not have a mission index")
+		stack_trace("[src] does not have a mission index!")
 	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
 		use_poi(mission_poi, planet)
 
