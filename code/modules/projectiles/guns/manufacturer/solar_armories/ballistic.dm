@@ -37,6 +37,9 @@
 	spread_unwielded = 12
 	fire_select_icon_state_prefix = "slug_"
 
+	//gauss doesn't explode so there's not light.
+	light_range = 0
+
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
@@ -118,6 +121,9 @@
 
 	slot_flags = ITEM_SLOT_BACK
 
+	//gauss doesn't explode so there's not light.
+	light_range = 0
+
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
@@ -159,6 +165,9 @@
 	manufacturer = MANUFACTURER_SOLARARMORIES
 
 	slot_flags = ITEM_SLOT_BACK
+
+	//gauss doesn't explode so there's not light.
+	light_range = 0
 
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
