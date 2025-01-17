@@ -87,7 +87,7 @@ SUBSYSTEM_DEF(vote)
 
 	var/log_string = replacetext(to_display, "\n", "\\n") // 'keep' the newlines, but dont actually print them as newlines
 	log_vote(log_string)
-	to_chat(world, span_infoplain(vote_font("\n[to_display]")))
+	to_chat(world, span_infoplain(vote_font("[to_display]")))
 
 	// Finally, doing any effects on vote completion
 	if (final_winner) // if no one voted, or the vote cannot be won, final_winner will be null
@@ -209,8 +209,7 @@ SUBSYSTEM_DEF(vote)
 	var/to_display = current_vote.initiate_vote(vote_initiator_name, duration)
 
 	log_vote(to_display)
-	to_chat(world, span_infoplain("\n"))
-	to_chat(world, span_infoplain(vote_font(vote_notice_block("[span_bold(to_display)]\n\
+	to_chat(world, custom_boxed_message("purple_box center", span_infoplain(vote_font("[span_bold(to_display)]<br>\
 		Type <b>vote</b> or click <a href='byond://winset?command=vote'>here</a> to place your votes.\n\
 		You have [DisplayTimeText(duration)] to vote."))))
 
