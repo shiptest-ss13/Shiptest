@@ -35,7 +35,7 @@
 
 /obj/item/bodycamera/examine(mob/user)
 	. += ..()
-	. += "The body camera is currently [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle its status."
+	. += "The body camera is currently [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Alt-Click to toggle its status."
 	if(in_range(src, user))
 		. += "<span class='notice'>The body camera is set to a nametag of '<b>[c_tag]</b>'.</span>"
 		. += "<span class='notice'>The body camera is set to transmit on the '<b>[network[1]]</b>' network.</span>"
