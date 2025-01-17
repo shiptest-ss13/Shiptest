@@ -410,6 +410,9 @@
 	if(has_safety)
 		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
 
+	if(gun_firemodes.len > 1)
+		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
+
 	if(manufacturer)
 		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
 
@@ -1122,6 +1125,10 @@
 	update_appearance()
 	for(var/datum/action/current_action as anything in actions)
 		current_action.UpdateButtonIcon()
+
+/obj/item/gun/secondary_action(user)
+	if(gun_firemodes.len > 1)
+		fire_select(user)
 
 /datum/action/item_action/toggle_firemode/UpdateButtonIcon(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/our_gun = target
