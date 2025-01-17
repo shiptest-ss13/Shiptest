@@ -611,6 +611,22 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/illestren_a850r,
 	)
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/sling,
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
 	empty_autoeject = TRUE
 	eject_sound_vary = FALSE
 	can_be_sawn_off = TRUE
@@ -676,6 +692,20 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 
 	wield_slowdown = RIFLE_SLOWDOWN
 	wield_delay = 0.65 SECONDS
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
 
 	spread = -5
 	spread_unwielded = 7
@@ -819,6 +849,20 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -901,6 +945,22 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	recoil = 0
 	recoil_unwielded = 4
 	wield_slowdown = DMR_SLOWDOWN
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	default_attachments = list(/obj/item/attachment/scope)
 
 /obj/item/gun/ballistic/rifle/scout
 	name = "HP Scout"
