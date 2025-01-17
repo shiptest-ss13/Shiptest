@@ -1,5 +1,3 @@
-#define BULLET_SHELL_DAMAGE 1
-
 //A beast that fire freezing blasts.
 /mob/living/simple_animal/hostile/asteroid/basilisk
 	name = "basilisk"
@@ -158,7 +156,7 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/bullet_act(obj/projectile/P)
-	shell_damage(BULLET_SHELL_DAMAGE)
+	shell_damage(P.damage/4)
 	if(has_shell)
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 85, TRUE)
 		visible_message("<span class='notice'>The [P] is absorbed by the [src]'s shell, dealing minimal damage!</span>") //make it less confusing when bullets do no damage
@@ -166,7 +164,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(istype(AM, /obj/item))
-		shell_damage(BULLET_SHELL_DAMAGE)
+		shell_damage(AM.throwforce/4)
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/drop_loot()
@@ -200,8 +198,6 @@
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/heat
 	name = "glowing basilisk"
 	projectiletype = /obj/projectile/temp/basilisk/heated
-
-#undef BULLET_SHELL_DAMAGE
 
 //Watcher
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher
