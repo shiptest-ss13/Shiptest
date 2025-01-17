@@ -19,6 +19,8 @@
 	wield_slowdown = PISTOL_SLOWDOWN
 
 	muzzleflash_iconstate = "muzzle_flash_light"
+	light_range = 1
+
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "\improper Desert Eagle"

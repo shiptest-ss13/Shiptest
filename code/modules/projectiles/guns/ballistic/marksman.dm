@@ -5,3 +5,5 @@
 	zoomable = TRUE //this var as true without setting anything else produces a 2x zoom
 	wield_slowdown = DMR_SLOWDOWN
 	wield_delay = 1 SECONDS
+
+	light_range = 2
