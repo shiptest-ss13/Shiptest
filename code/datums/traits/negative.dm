@@ -490,7 +490,7 @@
 
 	switch(rand(1,3))
 		if(1)
-			quirk_holder.Jitter(10)
+			quirk_holder.set_jitter(10)
 			msg += "causing you to start fidgeting!"
 		if(2)
 			quirk_holder.stuttering = max(3, quirk_holder.stuttering)

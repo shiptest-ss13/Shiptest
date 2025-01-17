@@ -286,7 +286,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	has_electronics = APC_ELECTRONICS_SECURED
 	// is starting with a power cell installed, create it and set its charge level
 	if(cell_type)
-		cell = new cell_type
+		cell = new cell_type(src)
 		cell.charge = start_charge * cell.maxcharge / 100 		// (convert percentage to actual value)
 
 	var/area/A = loc.loc
@@ -1310,7 +1310,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(cell && !shorted)
 		// draw power from cell as before to power the area
 		var/cellused = min(cell.charge, GLOB.CELLRATE * lastused_total)	// clamp deduction to a max, amount left in cell
-		cell.use(cellused)
+		cell.use(cellused, FALSE)
 
 		if(excess > lastused_total)		// if power excess recharge the cell
 										// by the same amount just used
@@ -1345,23 +1345,33 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			lighting = autoset(lighting, AUTOSET_FORCE_OFF)
 			environ = autoset(environ, AUTOSET_FORCE_OFF)
 			area.poweralert(0, src)
-		else if(cell.percent() < 15 && longtermpower < 0)	// <15%, turn off lighting & equipment
-			equipment = autoset(equipment, AUTOSET_OFF)
-			lighting = autoset(lighting, AUTOSET_OFF)
-			environ = autoset(environ, AUTOSET_ON)
-			area.poweralert(0, src)
-		else if(cell.percent() < 30 && longtermpower < 0)			// <30%, turn off equipment
+		else if(longtermpower < 0)
+			switch(cell.percent())
+				if(0 to 15)
+					equipment = autoset(equipment, AUTOSET_OFF)
+					lighting = autoset(lighting, AUTOSET_OFF)
+					environ = autoset(environ, AUTOSET_ON)
+					area.poweralert(0, src)
+				if(15 to 30)
+					equipment = autoset(equipment, AUTOSET_OFF)
+					lighting = autoset(lighting, AUTOSET_ON)
+					environ = autoset(environ, AUTOSET_ON)
+					area.poweralert(0, src)
+				if(30 to 75)
+					equipment = autoset(equipment, AUTOSET_ON)
+					lighting = autoset(lighting, AUTOSET_ON)
+					environ = autoset(environ, AUTOSET_ON)
+					area.poweralert(0, src)
+				if(75 to 100)
+					equipment = autoset(equipment, AUTOSET_ON)
+					lighting = autoset(lighting, AUTOSET_ON)
+					environ = autoset(environ, AUTOSET_ON)
+					area.poweralert(1, src)
+		else
 			equipment = autoset(equipment, AUTOSET_ON)
 			lighting = autoset(lighting, AUTOSET_ON)
 			environ = autoset(environ, AUTOSET_ON)
-			area.poweralert(0, src)
-		else									// otherwise all can be on
-			equipment = autoset(equipment, 1)
-			lighting = autoset(lighting, 1)
-			environ = autoset(environ, 1)
 			area.poweralert(1, src)
-			if(cell.percent() > 75)
-				area.poweralert(1, src)
 
 		// now trickle-charge the cell
 		if(chargemode && charging == APC_CHARGING && operating)
@@ -1397,7 +1407,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			chargecount = 0
 
 	else // no cell, switch everything off
-
 		charging = APC_NOT_CHARGING
 		chargecount = 0
 		equipment = autoset(equipment, AUTOSET_FORCE_OFF)
