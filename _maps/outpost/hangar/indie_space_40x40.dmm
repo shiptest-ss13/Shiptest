@@ -167,18 +167,63 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/engine,
 /area/hangar)
+"gm" = (
+/obj/machinery/conveyor/auto,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "jY" = (
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
 /area/hangar)
+"oP" = (
+/obj/machinery/vending/snack/blue,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vB" = (
+/obj/machinery/vending/cola/red,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "BE" = (
-/obj/machinery/atmospherics/pipe/simple/general,
-/turf/closed/indestructible/reinforced,
+/obj/structure/plasticflaps/opaque,
+/obj/machinery/conveyor/auto,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Dv" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"DH" = (
+/obj/machinery/door/airlock/engineering{
+	max_integrity = 3000;
+	locked = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "JI" = (
 /obj/effect/landmark/outpost/elevator,
 /turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Sm" = (
+/turf/closed/indestructible/reinforced,
+/area/template_noop)
+"XA" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -1723,8 +1768,8 @@ aa
 (30,1,1) = {"
 au
 au
-au
-aa
+Sm
+DH
 aT
 aT
 ah
@@ -1827,9 +1872,9 @@ aT
 aa
 "}
 (32,1,1) = {"
-au
-au
-au
+aa
+aa
+aa
 aa
 aT
 ay
@@ -1880,10 +1925,10 @@ aT
 aa
 "}
 (33,1,1) = {"
-au
-au
-au
 aa
+vB
+aT
+aT
 aT
 aT
 ah
@@ -1933,10 +1978,10 @@ aT
 aa
 "}
 (34,1,1) = {"
-au
-au
-au
 aa
+XA
+aT
+aT
 aT
 aT
 ah
@@ -1986,10 +2031,10 @@ aT
 aa
 "}
 (35,1,1) = {"
-au
-au
-au
 aa
+Dv
+aS
+aT
 aT
 aT
 ah
@@ -2039,10 +2084,10 @@ aT
 aa
 "}
 (36,1,1) = {"
-au
-au
-au
 aa
+oP
+aT
+aT
 aT
 aT
 ah
@@ -2092,10 +2137,10 @@ aT
 aa
 "}
 (37,1,1) = {"
-au
-au
-au
 aa
+aY
+aT
+aT
 aT
 ay
 ah
@@ -2145,9 +2190,9 @@ aT
 aa
 "}
 (38,1,1) = {"
-au
-au
-au
+aa
+aa
+aa
 aa
 aT
 aT
@@ -2198,9 +2243,9 @@ aT
 aa
 "}
 (39,1,1) = {"
-au
-au
-au
+aa
+aT
+aT
 aa
 aT
 aT
@@ -2251,9 +2296,9 @@ aT
 aa
 "}
 (40,1,1) = {"
-au
-au
-au
+aa
+aT
+aT
 aa
 aT
 aT
@@ -2304,10 +2349,10 @@ aT
 aa
 "}
 (41,1,1) = {"
-au
-au
-au
 aa
+aT
+gm
+BE
 aT
 aT
 ah
@@ -2357,9 +2402,9 @@ aT
 aa
 "}
 (42,1,1) = {"
-au
-au
-au
+aa
+aT
+aa
 aa
 aT
 ay
@@ -2410,9 +2455,9 @@ aT
 aa
 "}
 (43,1,1) = {"
-au
-au
-au
+aa
+aT
+gm
 BE
 aY
 aT

@@ -173,9 +173,51 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"eM" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"hm" = (
+/obj/machinery/vending/snack/blue,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"wu" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"CD" = (
+/obj/machinery/vending/cola/red,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "MN" = (
-/obj/machinery/atmospherics/pipe/simple/general,
-/turf/closed/indestructible/reinforced,
+/obj/structure/plasticflaps/opaque,
+/obj/machinery/conveyor/auto,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ng" = (
+/obj/machinery/door/airlock/engineering{
+	max_integrity = 3000;
+	locked = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Pa" = (
+/obj/machinery/conveyor/auto,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Qi" = (
 /obj/effect/landmark/outpost/elevator,
@@ -183,6 +225,9 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"SK" = (
+/turf/closed/indestructible/reinforced,
+/area/template_noop)
 
 (1,1,1) = {"
 aV
@@ -2519,8 +2564,8 @@ aH
 (45,1,1) = {"
 aV
 aV
-aV
-aH
+SK
+Ng
 aN
 aN
 aP
@@ -2623,9 +2668,9 @@ aN
 aH
 "}
 (47,1,1) = {"
-aV
-aV
-aV
+aH
+aH
+aH
 aH
 aN
 aD
@@ -2676,10 +2721,10 @@ aN
 aH
 "}
 (48,1,1) = {"
-aV
-aV
-aV
 aH
+CD
+aN
+aN
 aN
 aN
 aP
@@ -2729,10 +2774,10 @@ aN
 aH
 "}
 (49,1,1) = {"
-aV
-aV
-aV
 aH
+wu
+aN
+aN
 aN
 aN
 am
@@ -2782,10 +2827,10 @@ aN
 aH
 "}
 (50,1,1) = {"
-aV
-aV
-aV
 aH
+eM
+au
+aN
 aN
 aN
 aP
@@ -2835,10 +2880,10 @@ aN
 aH
 "}
 (51,1,1) = {"
-aV
-aV
-aV
 aH
+hm
+aN
+aN
 aN
 aN
 aP
@@ -2888,10 +2933,10 @@ aN
 aH
 "}
 (52,1,1) = {"
-aV
-aV
-aV
 aH
+at
+aN
+aN
 aN
 aD
 aP
@@ -2941,9 +2986,9 @@ aN
 aH
 "}
 (53,1,1) = {"
-aV
-aV
-aV
+aH
+aH
+aH
 aH
 aN
 aN
@@ -2994,9 +3039,9 @@ aN
 aH
 "}
 (54,1,1) = {"
-aV
-aV
-aV
+aH
+aN
+aN
 aH
 aN
 aN
@@ -3047,9 +3092,9 @@ aN
 aH
 "}
 (55,1,1) = {"
-aV
-aV
-aV
+aH
+aN
+aN
 aH
 aN
 aN
@@ -3100,10 +3145,10 @@ aN
 aH
 "}
 (56,1,1) = {"
-aV
-aV
-aV
 aH
+aN
+Pa
+MN
 aN
 aN
 aP
@@ -3153,9 +3198,9 @@ aN
 aH
 "}
 (57,1,1) = {"
-aV
-aV
-aV
+aH
+aN
+aH
 aH
 aN
 aD
@@ -3206,10 +3251,10 @@ aN
 aH
 "}
 (58,1,1) = {"
-aV
-aV
-aV
 aH
+aN
+Pa
+MN
 aN
 aN
 aP
@@ -3259,10 +3304,10 @@ aN
 aH
 "}
 (59,1,1) = {"
-aV
-aV
-aV
-MN
+aH
+aN
+aN
+aH
 at
 aN
 am

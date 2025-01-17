@@ -178,9 +178,58 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"oC" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vi" = (
+/obj/machinery/vending/snack/blue,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vA" = (
+/obj/structure/plasticflaps/opaque,
+/obj/machinery/conveyor/auto,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "vM" = (
 /obj/machinery/atmospherics/pipe/simple/general,
 /turf/closed/indestructible/reinforced,
+/area/hangar)
+"Be" = (
+/obj/machinery/vending/cola/red,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ej" = (
+/turf/closed/indestructible/reinforced,
+/area/template_noop)
+"Hu" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Jf" = (
+/obj/machinery/conveyor/auto,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"TB" = (
+/obj/machinery/door/airlock/engineering{
+	max_integrity = 3000;
+	locked = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 
 (1,1,1) = {"
@@ -1605,8 +1654,8 @@ ag
 (44,1,1) = {"
 aZ
 aZ
-aZ
-ag
+Ej
+TB
 an
 an
 aJ
@@ -1669,9 +1718,9 @@ an
 ag
 "}
 (46,1,1) = {"
-aZ
-aZ
-aZ
+ag
+ag
+ag
 ag
 an
 an
@@ -1702,10 +1751,10 @@ an
 ag
 "}
 (47,1,1) = {"
-aZ
-aZ
-aZ
 ag
+Be
+an
+an
 an
 aG
 aJ
@@ -1735,10 +1784,10 @@ an
 ag
 "}
 (48,1,1) = {"
-aZ
-aZ
-aZ
 ag
+oC
+an
+an
 an
 an
 aJ
@@ -1768,10 +1817,10 @@ an
 ag
 "}
 (49,1,1) = {"
-aZ
-aZ
-aZ
 ag
+Hu
+aP
+an
 an
 an
 aI
@@ -1801,10 +1850,10 @@ an
 ag
 "}
 (50,1,1) = {"
-aZ
-aZ
-aZ
 ag
+vi
+an
+an
 an
 an
 aJ
@@ -1834,10 +1883,10 @@ an
 ag
 "}
 (51,1,1) = {"
-aZ
-aZ
-aZ
 ag
+ay
+an
+an
 an
 an
 aJ
@@ -1867,9 +1916,9 @@ an
 ag
 "}
 (52,1,1) = {"
-aZ
-aZ
-aZ
+ag
+ag
+ag
 ag
 an
 aG
@@ -1900,9 +1949,9 @@ an
 ag
 "}
 (53,1,1) = {"
-aZ
-aZ
-aZ
+ag
+an
+an
 ag
 an
 an
@@ -1933,9 +1982,9 @@ an
 ag
 "}
 (54,1,1) = {"
-aZ
-aZ
-aZ
+ag
+an
+an
 ag
 an
 an
@@ -1966,10 +2015,10 @@ an
 ag
 "}
 (55,1,1) = {"
-aZ
-aZ
-aZ
 ag
+an
+Jf
+vA
 an
 an
 aJ
@@ -1999,9 +2048,9 @@ an
 ag
 "}
 (56,1,1) = {"
-aZ
-aZ
-aZ
+ag
+an
+ag
 ag
 an
 an
@@ -2032,10 +2081,10 @@ an
 ag
 "}
 (57,1,1) = {"
-aZ
-aZ
-aZ
 ag
+an
+Jf
+vA
 an
 aG
 aJ
@@ -2065,9 +2114,9 @@ an
 ag
 "}
 (58,1,1) = {"
-aZ
-aZ
-aZ
+ag
+an
+an
 ag
 an
 an
@@ -2098,9 +2147,9 @@ an
 ag
 "}
 (59,1,1) = {"
-aZ
-aZ
-aZ
+ag
+an
+an
 vM
 ay
 an

@@ -167,8 +167,51 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"sg" = (
+/obj/machinery/vending/snack/blue,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"vZ" = (
+/obj/structure/plasticflaps/opaque,
+/obj/machinery/conveyor/auto,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Do" = (
+/obj/machinery/vending/cola/red,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"EA" = (
+/turf/closed/indestructible/reinforced,
+/area/template_noop)
 "JT" = (
 /turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Na" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ni" = (
+/obj/machinery/conveyor/auto,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Oj" = (
+/obj/machinery/door/airlock/engineering{
+	max_integrity = 3000;
+	locked = 1
+	},
+/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -181,6 +224,12 @@
 "TX" = (
 /obj/machinery/atmospherics/pipe/simple/general,
 /turf/closed/indestructible/reinforced,
+/area/hangar)
+"VY" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 
 (1,1,1) = {"
@@ -1077,8 +1126,8 @@ ab
 (28,1,1) = {"
 aP
 aP
-aP
-ab
+EA
+Oj
 aj
 aj
 aL
@@ -1141,9 +1190,9 @@ aj
 ab
 "}
 (30,1,1) = {"
-aP
-aP
-aP
+ab
+ab
+ab
 ab
 aj
 aj
@@ -1174,10 +1223,10 @@ aj
 ab
 "}
 (31,1,1) = {"
-aP
-aP
-aP
 ab
+Do
+aj
+aj
 aj
 aj
 aL
@@ -1207,10 +1256,10 @@ aj
 ab
 "}
 (32,1,1) = {"
-aP
-aP
-aP
 ab
+Na
+aj
+aj
 aj
 aX
 aL
@@ -1240,10 +1289,10 @@ aj
 ab
 "}
 (33,1,1) = {"
-aP
-aP
-aP
 ab
+VY
+aA
+aj
 aj
 aj
 aL
@@ -1273,10 +1322,10 @@ aj
 ab
 "}
 (34,1,1) = {"
-aP
-aP
-aP
 ab
+sg
+aj
+aj
 aj
 aj
 aL
@@ -1306,10 +1355,10 @@ aj
 ab
 "}
 (35,1,1) = {"
-aP
-aP
-aP
 ab
+av
+aj
+aj
 aj
 aj
 aL
@@ -1339,9 +1388,9 @@ aj
 ab
 "}
 (36,1,1) = {"
-aP
-aP
-aP
+ab
+ab
+ab
 ab
 aj
 aj
@@ -1372,9 +1421,9 @@ aj
 ab
 "}
 (37,1,1) = {"
-aP
-aP
-aP
+ab
+aj
+aj
 ab
 aj
 aX
@@ -1405,9 +1454,9 @@ aj
 ab
 "}
 (38,1,1) = {"
-aP
-aP
-aP
+ab
+aj
+aj
 ab
 aj
 aj
@@ -1438,10 +1487,10 @@ aj
 ab
 "}
 (39,1,1) = {"
-aP
-aP
-aP
 ab
+aj
+Ni
+vZ
 aj
 aj
 ai
@@ -1471,9 +1520,9 @@ aj
 ab
 "}
 (40,1,1) = {"
-aP
-aP
-aP
+ab
+aj
+ab
 ab
 aj
 aj
@@ -1504,10 +1553,10 @@ aj
 ab
 "}
 (41,1,1) = {"
-aP
-aP
-aP
 ab
+aj
+Ni
+vZ
 aj
 aj
 aL
@@ -1537,9 +1586,9 @@ aj
 ab
 "}
 (42,1,1) = {"
-aP
-aP
-aP
+ab
+aj
+aj
 ab
 aj
 aX
@@ -1570,9 +1619,9 @@ aj
 ab
 "}
 (43,1,1) = {"
-aP
-aP
-aP
+ab
+aj
+aj
 TX
 av
 aj

@@ -96,6 +96,12 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"aD" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "aE" = (
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel{
@@ -181,6 +187,49 @@
 "rQ" = (
 /obj/machinery/atmospherics/pipe/simple/general,
 /turf/closed/indestructible/reinforced,
+/area/hangar)
+"HA" = (
+/turf/closed/indestructible/reinforced,
+/area/template_noop)
+"NB" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Oh" = (
+/obj/machinery/vending/snack/blue,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Rs" = (
+/obj/machinery/door/airlock/engineering{
+	max_integrity = 3000;
+	locked = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"VU" = (
+/obj/machinery/vending/cola/red,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Yh" = (
+/obj/machinery/conveyor/auto,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ZL" = (
+/obj/structure/plasticflaps/opaque,
+/obj/machinery/conveyor/auto,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 
 (1,1,1) = {"
@@ -417,8 +466,8 @@ am
 (8,1,1) = {"
 aH
 aH
-aH
-am
+HA
+Rs
 aZ
 aZ
 aM
@@ -481,9 +530,9 @@ aZ
 am
 "}
 (10,1,1) = {"
-aH
-aH
-aH
+am
+am
+am
 am
 aZ
 aZ
@@ -514,10 +563,10 @@ aZ
 am
 "}
 (11,1,1) = {"
-aH
-aH
-aH
 am
+VU
+aZ
+aZ
 aZ
 aZ
 aM
@@ -547,10 +596,10 @@ aZ
 am
 "}
 (12,1,1) = {"
-aH
-aH
-aH
 am
+aD
+aZ
+aZ
 aZ
 az
 aM
@@ -580,10 +629,10 @@ aZ
 am
 "}
 (13,1,1) = {"
-aH
-aH
-aH
 am
+NB
+aE
+aZ
 aZ
 aZ
 aM
@@ -613,10 +662,10 @@ aZ
 am
 "}
 (14,1,1) = {"
-aH
-aH
-aH
 am
+Oh
+aZ
+aZ
 aZ
 aZ
 aM
@@ -646,10 +695,10 @@ aZ
 am
 "}
 (15,1,1) = {"
-aH
-aH
-aH
 am
+aO
+aZ
+aZ
 aZ
 aZ
 aM
@@ -679,9 +728,9 @@ aZ
 am
 "}
 (16,1,1) = {"
-aH
-aH
-aH
+am
+am
+am
 am
 aZ
 aZ
@@ -712,9 +761,9 @@ aZ
 am
 "}
 (17,1,1) = {"
-aH
-aH
-aH
+am
+aZ
+aZ
 am
 aZ
 az
@@ -745,9 +794,9 @@ aZ
 am
 "}
 (18,1,1) = {"
-aH
-aH
-aH
+am
+aZ
+aZ
 am
 aZ
 aZ
@@ -778,10 +827,10 @@ aZ
 am
 "}
 (19,1,1) = {"
-aH
-aH
-aH
 am
+aZ
+Yh
+ZL
 aZ
 aZ
 av
@@ -811,9 +860,9 @@ aZ
 am
 "}
 (20,1,1) = {"
-aH
-aH
-aH
+am
+aZ
+am
 am
 aZ
 aZ
@@ -844,10 +893,10 @@ aZ
 am
 "}
 (21,1,1) = {"
-aH
-aH
-aH
 am
+aZ
+Yh
+ZL
 aZ
 aZ
 aM
@@ -877,9 +926,9 @@ aZ
 am
 "}
 (22,1,1) = {"
-aH
-aH
-aH
+am
+aZ
+aZ
 am
 aZ
 az
@@ -910,9 +959,9 @@ aZ
 am
 "}
 (23,1,1) = {"
-aH
-aH
-aH
+am
+aZ
+aZ
 rQ
 aO
 aZ
