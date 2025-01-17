@@ -23,7 +23,8 @@
 		icon_state = icon_state_powered = icon_state_unpowered = "[base_icon_state]-[finish_color]"
 	return ..()
 
-/obj/item/modular_computer/tablet/examine(mob/user)
+/obj/item/modular_computer/tablet/examine_more(mob/user)
+	. = ..()
 	if(screen_on && enabled)
 		interact(user)
 

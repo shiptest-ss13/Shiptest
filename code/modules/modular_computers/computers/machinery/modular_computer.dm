@@ -39,6 +39,9 @@
 /obj/machinery/modular_computer/examine(mob/user)
 	. = ..()
 	. += get_modular_computer_parts_examine(user)
+
+/obj/machinery/modular_computer/examine_more(mob/user)
+	. = ..()
 	if(cpu.enabled)
 		interact(user)
 

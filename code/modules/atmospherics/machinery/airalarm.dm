@@ -263,7 +263,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			. += "<span class='notice'>It is missing wiring.</span>"
 		if(2)
 			. += "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"] the interface.</span>"
-			ui_interact(user)
+
+/obj/machinery/airalarm/examine_more(mob/user)
+	. = ..()
+	if(buildstage == 2)
+		ui_interact(user)
+
 
 /obj/machinery/airalarm/ui_status(mob/user)
 	if(user.has_unlimited_silicon_privilege && aidisabled)

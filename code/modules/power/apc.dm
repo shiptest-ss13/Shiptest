@@ -326,12 +326,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			. += "The cover is broken. It may be hard to force it open."
 		else
 			. += "The cover is closed."
-			ui_interact(user)
 
 	. += "<span class='notice'>Alt-Click the APC to [ locked ? "unlock" : "lock"] the interface.</span>"
 
 	if(issilicon(user))
 		. += "<span class='notice'>Ctrl-Click the APC to switch the breaker [ operating ? "off" : "on"].</span>"
+
+/obj/machinery/power/apc/examine_more(mob/user)
+	. = ..()
+	ui_interact(user)
 
 // update the APC icon to show the three base states
 // also add overlays for indicator lights

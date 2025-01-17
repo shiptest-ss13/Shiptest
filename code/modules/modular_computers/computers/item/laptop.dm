@@ -27,6 +27,9 @@
 	. = ..()
 	if(screen_on)
 		. += "<span class='notice'>Alt-click to close it.</span>"
+
+/obj/item/modular_computer/laptop/examine_more(mob/user)
+	. = ..()
 	if(screen_on && enabled)
 		interact(user)
 
