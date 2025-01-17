@@ -84,7 +84,7 @@
 /obj/item/attachment/gun/on_unique_action(obj/item/gun/gun, mob/user)
 	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
 		attached_gun.unique_action(user)
-		return OVERIDE_UNIQUE_ACTION
+		return OVERRIDE_UNIQUE_ACTION
 
 /obj/item/attachment/gun/on_ctrl_click(obj/item/gun/gun, mob/user)
 	attached_gun.toggle_safety(user,TRUE)

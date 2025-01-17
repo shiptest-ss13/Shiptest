@@ -39,7 +39,6 @@
 		/obj/item/attachment/bayonet,
 		/obj/item/attachment/gun,
 		/obj/item/attachment/sling,
-		/obj/item/attachment/battery_pack
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1
