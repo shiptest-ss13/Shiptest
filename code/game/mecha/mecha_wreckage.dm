@@ -114,6 +114,7 @@
 	icon_state = "gygax-broken"
 	parts = list(
 				/obj/item/mecha_parts/part/gygax_torso,
+				/obj/item/mecha_parts/chassis/gygax,
 				/obj/item/mecha_parts/part/gygax_head,
 				/obj/item/mecha_parts/part/gygax_left_arm,
 				/obj/item/mecha_parts/part/gygax_right_arm,
@@ -147,6 +148,7 @@
 	name = "\improper Ripley wreckage"
 	icon_state = "ripley-broken"
 	parts = list(/obj/item/mecha_parts/part/ripley_torso,
+				/obj/item/mecha_parts/chassis/ripley,
 				/obj/item/mecha_parts/part/ripley_left_arm,
 				/obj/item/mecha_parts/part/ripley_right_arm,
 				/obj/item/mecha_parts/part/ripley_left_leg,
@@ -155,6 +157,7 @@
 /obj/structure/mecha_wreckage/ripley/clip
 	name = "\improper Rogue wreckage"
 	icon_state = "clipripley-broken"
+
 
 /obj/structure/mecha_wreckage/ripley/mkii
 	name = "\improper Ripley MK-II wreckage"
@@ -165,6 +168,7 @@
 	icon_state = "firefighter-broken"
 	parts = list(/obj/item/mecha_parts/part/ripley_torso,
 				/obj/item/mecha_parts/part/ripley_left_arm,
+				/obj/item/mecha_parts/chassis/ripley,
 				/obj/item/mecha_parts/part/ripley_right_arm,
 				/obj/item/mecha_parts/part/ripley_left_leg,
 				/obj/item/mecha_parts/part/ripley_right_leg,
@@ -193,6 +197,7 @@
 	icon_state = "durand-broken"
 	parts = list(
 			/obj/item/mecha_parts/part/durand_torso,
+			/obj/item/mecha_parts/chassis/durand,
 			/obj/item/mecha_parts/part/durand_head,
 			/obj/item/mecha_parts/part/durand_left_arm,
 			/obj/item/mecha_parts/part/durand_right_arm,
@@ -213,6 +218,7 @@
 	icon_state = "odysseus-broken"
 	parts = list(
 			/obj/item/mecha_parts/part/odysseus_torso,
+			/obj/item/mecha_parts/chassis/odysseus,
 			/obj/item/mecha_parts/part/odysseus_head,
 			/obj/item/mecha_parts/part/odysseus_left_arm,
 			/obj/item/mecha_parts/part/odysseus_right_arm,
