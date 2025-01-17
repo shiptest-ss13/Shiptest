@@ -28,14 +28,14 @@ jobs:
           - 3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup BYOND cache
         id: cache-byond
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/BYOND
-          key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
+          key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}-${{ hashFiles('.github/workflows/run_integration_tests.yml') }}
 
       - name: Install BYOND
         if: steps.cache-byond.outputs.cache-hit != 'true'
@@ -45,19 +45,19 @@ jobs:
         run: |
           sudo dpkg --add-architecture i386
           sudo apt update || true
-          sudo apt install -o APT::Immediate-Configure=false libssl-dev:i386
+          sudo apt install -o APT::Immediate-Configure=false libssl-dev:i386 libgcc-s1:i386
 
       - name: Setup dependencies cache
         id: cache-deps
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.byond/bin
-          key: ${{ runner.os }}-deps-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
+          key: ${{ runner.os }}-deps-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}-${{ hashFiles('.github/workflows/run_integration_tests.yml') }}
 
       - name: Install build dependencies
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: |
-          sudo apt install -o APT::Immediate-Configure=false libgcc-s1:i386 g++-multilib zlib1g-dev:i386
+          sudo apt install -o APT::Immediate-Configure=false g++-multilib zlib1g-dev:i386
           rustup target add i686-unknown-linux-gnu
 
       - name: Build auxmos
