@@ -20,7 +20,7 @@
 	var/ricochet_sound = ""
 
 	///what we should call the fired bullet
-	var/bullet_identifier = "high velocity gnome"
+	var/bullet_identifier = null
 
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/def_zone = ""	//Aiming at
@@ -183,6 +183,8 @@
 	. = ..()
 	decayedRange = range
 	speed = speed + speed_mod
+	if(!bullet_identifier)
+		bullet_identifier = name
 	AddElement(/datum/element/connect_loc, projectile_connections)
 
 /obj/projectile/proc/Range()
