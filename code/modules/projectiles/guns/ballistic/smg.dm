@@ -11,6 +11,8 @@
 	recoil_unwielded = 4
 	w_class = WEIGHT_CLASS_BULKY
 
+	light_range = 1
+
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
