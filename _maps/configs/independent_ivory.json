@@ -1,0 +1,45 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "F-80 Ivory-Class Yacht",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "ISF Spacecraft",
+	"namelists": [
+		"CRUISE",
+		"SPACE",
+		"NATURAL"
+	],
+	"map_short_name": "Ivory-class",
+	"map_path": "_maps/shuttles/independent/independent_ivory.dmm",
+	"description": "The F-80 is a yacht manufatured by the ISF Shipyards. Most of these vessels can be found in the rich coreworlds, where it's popular for being a cheaper ISF design while still being plenty luxurious. On these worlds, it's commonly used for racing, short-range transport, and of course partying. In the Frontier however, the F-80s are most often used for sport hunting. The Frontier variants are usually modified with living quarters for a member of Saint-Roumain Militia who acts as a guide in the most dangerous of environments. Regardless of the variant and where it's found, the F-80 is the best choice for those who want the best of life.",
+	"tags": [
+		"RP Focus",
+		"Combat"
+	],
+	"starting_funds": 7000,
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"SRM Guide": {
+			"outfit": "/datum/outfit/job/roumain/security",
+			"slots": 1
+		},
+		"Bartender": {
+			"outfit": "/datum/outfit/job/independent/bartender/disarmed",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

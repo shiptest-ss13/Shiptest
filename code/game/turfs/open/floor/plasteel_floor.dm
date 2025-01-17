@@ -80,6 +80,8 @@
 /turf/open/floor/plasteel/patterned
 	icon_state = "tile_full"
 	base_icon_state = "tile_full"
+/turf/open/floor/plasteel/patterned/airless
+	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/patterned/cargo_one
 	icon_state = "cargo_one_full"
 	base_icon_state = "cargo_one_full"
