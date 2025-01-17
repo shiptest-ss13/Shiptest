@@ -1,6 +1,6 @@
 /obj/item/bodycamera
 	name = "body camera"
-	desc = "Ruggedized portable camera unit. Warrenty void if exposed to space."
+	desc = "Ruggedized portable camera unit. Warranty void if exposed to space."
 	icon = 'icons/obj/item/bodycamera.dmi'
 	icon_state = "bodycamera-off"
 	resistance_flags = FIRE_PROOF //double check that this flag works for fireproof objects
