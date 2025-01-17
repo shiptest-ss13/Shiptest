@@ -881,7 +881,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/ammo/mech/bag
 	name = "Exosuit Support Kit Bag"
-	desc = "A duffel bag containing ammo for four full reloads of the scattershot which is equipped on standard Dark Gygax and Touro exosuits. Also comes with some support equipment for maintaining the exosuit, including tools and an inducer."
+	desc = "A duffel bag containing ammo for four full reloads of the scattershot which is equipped on standard 515 EX and Touro exosuits. Also comes with some support equipment for maintaining the exosuit, including tools and an inducer."
 	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/mech
 	cost = 4
 	include_modes = list(/datum/game_mode/nuclear)
@@ -1125,7 +1125,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	restricted = TRUE
 
 /datum/uplink_item/support/gygax
-	name = "Dark Gygax Exosuit"
+	name = "515 EX Exosuit"
 	desc = "A lightweight exosuit, painted in a dark scheme. Its speed and equipment selection make it excellent \
 			for hit-and-run style attacks. Features an incendiary carbine, flash bang launcher, teleporter, ion thrusters and a Tesla energy array."
 	item = /obj/mecha/combat/gygax/dark/loaded
