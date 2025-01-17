@@ -167,6 +167,23 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"jh" = (
+/obj/structure/plasticflaps/opaque,
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ni" = (
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "sg" = (
 /obj/machinery/vending/snack/blue,
 /turf/open/floor/plasteel{
@@ -206,6 +223,12 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"NV" = (
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "Oj" = (
 /obj/machinery/door/airlock/engineering{
 	max_integrity = 3000;
@@ -227,6 +250,15 @@
 /area/hangar)
 "VY" = (
 /obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Yn" = (
+/obj/machinery/conveyor/auto,
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
@@ -1455,7 +1487,7 @@ ab
 "}
 (38,1,1) = {"
 ab
-aj
+aA
 aj
 ab
 aj
@@ -1491,8 +1523,8 @@ ab
 aj
 Ni
 vZ
-aj
-aj
+Ni
+NV
 ai
 aD
 aD
@@ -1555,10 +1587,10 @@ ab
 (41,1,1) = {"
 ab
 aj
-Ni
-vZ
-aj
-aj
+Yn
+jh
+ni
+NV
 aL
 aD
 aD
@@ -1587,7 +1619,7 @@ ab
 "}
 (42,1,1) = {"
 ab
-aj
+aA
 aj
 ab
 aj

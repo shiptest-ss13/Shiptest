@@ -173,6 +173,12 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"cl" = (
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "jk" = (
 /obj/effect/landmark/outpost/elevator,
 /turf/open/floor/plasteel/elevatorshaft{
@@ -188,9 +194,35 @@
 /obj/machinery/atmospherics/pipe/simple/general,
 /turf/closed/indestructible/reinforced,
 /area/hangar)
+"sw" = (
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "HA" = (
 /turf/closed/indestructible/reinforced,
 /area/template_noop)
+"Ig" = (
+/obj/structure/plasticflaps/opaque,
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"KQ" = (
+/obj/machinery/conveyor/auto,
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "NB" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/plasteel{
@@ -795,7 +827,7 @@ am
 "}
 (18,1,1) = {"
 am
-aZ
+aE
 aZ
 am
 aZ
@@ -831,8 +863,8 @@ am
 aZ
 Yh
 ZL
-aZ
-aZ
+Yh
+cl
 av
 aJ
 aJ
@@ -895,10 +927,10 @@ am
 (21,1,1) = {"
 am
 aZ
-Yh
-ZL
-aZ
-aZ
+KQ
+Ig
+sw
+cl
 aM
 aJ
 aJ
@@ -927,7 +959,7 @@ am
 "}
 (22,1,1) = {"
 am
-aZ
+aE
 aZ
 am
 aZ

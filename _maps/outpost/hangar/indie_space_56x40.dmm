@@ -77,9 +77,8 @@
 "aA" = (
 /obj/machinery/door/airlock,
 /obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/structure/lattice/catwalk,
+/turf/open/floor/engine,
 /area/hangar)
 "aD" = (
 /obj/effect/turf_decal/arrows{
@@ -168,6 +167,10 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"cb" = (
+/obj/machinery/atmospherics/pipe/simple/general,
+/turf/closed/indestructible/reinforced,
+/area/hangar)
 "ck" = (
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
@@ -175,6 +178,15 @@
 /area/hangar)
 "eM" = (
 /obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"fK" = (
+/obj/machinery/conveyor/auto,
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
@@ -187,6 +199,15 @@
 /area/hangar)
 "wu" = (
 /obj/machinery/vending/coffee,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"wL" = (
+/obj/structure/plasticflaps/opaque,
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
@@ -219,6 +240,14 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"Pl" = (
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "Qi" = (
 /obj/effect/landmark/outpost/elevator,
 /turf/open/floor/plasteel/elevatorshaft{
@@ -228,6 +257,12 @@
 "SK" = (
 /turf/closed/indestructible/reinforced,
 /area/template_noop)
+"Yr" = (
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 
 (1,1,1) = {"
 aV
@@ -2511,8 +2546,8 @@ aH
 (44,1,1) = {"
 aV
 aV
-aV
-aH
+SK
+Ng
 aN
 aN
 aP
@@ -2564,8 +2599,8 @@ aH
 (45,1,1) = {"
 aV
 aV
-SK
-Ng
+aV
+aH
 aN
 aN
 aP
@@ -2615,9 +2650,9 @@ aN
 aH
 "}
 (46,1,1) = {"
-aV
-aV
-aV
+aH
+aH
+aH
 aH
 aN
 aN
@@ -2669,11 +2704,11 @@ aH
 "}
 (47,1,1) = {"
 aH
-aH
-aH
-aH
+CD
 aN
-aD
+aN
+aN
+aN
 aP
 aE
 aM
@@ -2722,11 +2757,11 @@ aH
 "}
 (48,1,1) = {"
 aH
-CD
+wu
 aN
 aN
 aN
-aN
+aD
 aP
 aM
 aM
@@ -2775,8 +2810,8 @@ aH
 "}
 (49,1,1) = {"
 aH
-wu
-aN
+eM
+au
 aN
 aN
 aN
@@ -2827,59 +2862,6 @@ aN
 aH
 "}
 (50,1,1) = {"
-aH
-eM
-au
-aN
-aN
-aN
-aP
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aM
-aT
-aN
-aN
-aH
-"}
-(51,1,1) = {"
 aH
 hm
 aN
@@ -2932,13 +2914,66 @@ aN
 aN
 aH
 "}
-(52,1,1) = {"
+(51,1,1) = {"
 aH
 at
 aN
 aN
 aN
-aD
+aN
+aP
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aM
+aT
+aN
+aN
+aH
+"}
+(52,1,1) = {"
+aH
+aH
+aH
+aH
+aN
+aN
 aP
 aE
 aM
@@ -2987,11 +3022,11 @@ aH
 "}
 (53,1,1) = {"
 aH
-aH
-aH
-aH
 aN
 aN
+aH
+aN
+aD
 aP
 aM
 aM
@@ -3040,7 +3075,7 @@ aH
 "}
 (54,1,1) = {"
 aH
-aN
+au
 aN
 aH
 aN
@@ -3094,10 +3129,10 @@ aH
 (55,1,1) = {"
 aH
 aN
-aN
-aH
-aN
-aN
+Pa
+MN
+Pa
+Yr
 aP
 aM
 aM
@@ -3147,8 +3182,8 @@ aH
 (56,1,1) = {"
 aH
 aN
-Pa
-MN
+aH
+aH
 aN
 aN
 aP
@@ -3200,10 +3235,10 @@ aH
 (57,1,1) = {"
 aH
 aN
-aH
-aH
-aN
-aD
+fK
+wL
+Pl
+Yr
 aP
 aE
 aM
@@ -3252,11 +3287,11 @@ aH
 "}
 (58,1,1) = {"
 aH
+au
 aN
-Pa
-MN
+aH
 aN
-aN
+aD
 aP
 aM
 aM
@@ -3307,7 +3342,7 @@ aH
 aH
 aN
 aN
-aH
+cb
 at
 aN
 am

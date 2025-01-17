@@ -178,6 +178,10 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"oK" = (
+/obj/machinery/atmospherics/pipe/simple/general,
+/turf/closed/indestructible/reinforced,
+/area/hangar)
 "oP" = (
 /obj/machinery/vending/snack/blue,
 /turf/open/floor/plasteel{
@@ -186,6 +190,12 @@
 /area/hangar)
 "vB" = (
 /obj/machinery/vending/cola/red,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"xt" = (
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
@@ -212,6 +222,15 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"Jg" = (
+/obj/machinery/conveyor/auto,
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "JI" = (
 /obj/effect/landmark/outpost/elevator,
 /turf/open/floor/plasteel/elevatorshaft{
@@ -221,6 +240,23 @@
 "Sm" = (
 /turf/closed/indestructible/reinforced,
 /area/template_noop)
+"Uy" = (
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Xb" = (
+/obj/structure/plasticflaps/opaque,
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "XA" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/plasteel{
@@ -1612,7 +1648,7 @@ au
 au
 aa
 aT
-ay
+aT
 ah
 ac
 aF
@@ -1662,8 +1698,8 @@ aa
 (28,1,1) = {"
 au
 au
-au
-aa
+Sm
+DH
 aT
 aT
 ah
@@ -1766,10 +1802,10 @@ aT
 aa
 "}
 (30,1,1) = {"
-au
-au
-Sm
-DH
+aa
+aa
+aa
+aa
 aT
 aT
 ah
@@ -1819,112 +1855,6 @@ aT
 aa
 "}
 (31,1,1) = {"
-au
-au
-au
-aa
-aT
-aT
-ah
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-ab
-aT
-aT
-aa
-"}
-(32,1,1) = {"
-aa
-aa
-aa
-aa
-aT
-ay
-ah
-ac
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-ac
-ab
-ay
-aT
-aa
-"}
-(33,1,1) = {"
 aa
 vB
 aT
@@ -1977,14 +1907,15 @@ aT
 aT
 aa
 "}
-(34,1,1) = {"
+(32,1,1) = {"
 aa
 XA
 aT
 aT
 aT
-aT
+ay
 ah
+ac
 aF
 aF
 aF
@@ -2023,14 +1954,13 @@ aF
 aF
 aF
 aF
-aF
-aF
+ac
 ab
-aT
+ay
 aT
 aa
 "}
-(35,1,1) = {"
+(33,1,1) = {"
 aa
 Dv
 aS
@@ -2083,7 +2013,7 @@ aT
 aT
 aa
 "}
-(36,1,1) = {"
+(34,1,1) = {"
 aa
 oP
 aT
@@ -2136,11 +2066,117 @@ aT
 aT
 aa
 "}
-(37,1,1) = {"
+(35,1,1) = {"
 aa
 aY
 aT
 aT
+aT
+aT
+ah
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+ab
+aT
+aT
+aa
+"}
+(36,1,1) = {"
+aa
+aa
+aa
+aa
+aT
+aT
+ah
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+aF
+ab
+aT
+aT
+aa
+"}
+(37,1,1) = {"
+aa
+aT
+aT
+aa
 aT
 ay
 ah
@@ -2191,8 +2227,8 @@ aa
 "}
 (38,1,1) = {"
 aa
-aa
-aa
+aS
+aT
 aa
 aT
 aT
@@ -2245,10 +2281,10 @@ aa
 (39,1,1) = {"
 aa
 aT
-aT
-aa
-aT
-aT
+gm
+BE
+gm
+xt
 ax
 aF
 aF
@@ -2298,7 +2334,7 @@ aa
 (40,1,1) = {"
 aa
 aT
-aT
+aa
 aa
 aT
 aT
@@ -2351,10 +2387,10 @@ aa
 (41,1,1) = {"
 aa
 aT
-gm
-BE
-aT
-aT
+Jg
+Xb
+Uy
+xt
 ah
 aF
 aF
@@ -2403,8 +2439,8 @@ aa
 "}
 (42,1,1) = {"
 aa
+aS
 aT
-aa
 aa
 aT
 ay
@@ -2457,8 +2493,8 @@ aa
 (43,1,1) = {"
 aa
 aT
-gm
-BE
+aT
+oK
 aY
 aT
 ah
