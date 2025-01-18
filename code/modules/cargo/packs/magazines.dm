@@ -49,9 +49,11 @@
 	faction = /datum/faction/srm
 
 /datum/supply_pack/magazine/firestorm_mag
+
 	name = "Firestorm Stick Magazine Crate"
-	desc = "Contains a 28-round magazine for the Hunter's Pride Firestorm SMG."
-	contains = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/empty)
+	desc = "Contains a 24-round magazine for the Hunter's Pride Firestorm SMG."
+	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/empty)
+
 	cost = 300
 	faction = /datum/faction/srm
 
