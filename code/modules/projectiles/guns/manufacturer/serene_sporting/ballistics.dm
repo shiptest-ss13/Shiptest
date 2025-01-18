@@ -1,5 +1,5 @@
-#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/sling, /obj/item/attachment/gun)
-#define SERENE_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1)
+#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun)
+#define SERENE_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_SCOPE = 1)
 
 /* Micro Target */
 
@@ -109,9 +109,13 @@ EMPTY_GUN_HELPER(automatic/pistol/m17)
 			"x" = 44,
 			"y" = 18,
 		),
-		ATTACHMENT_SLOT_RAIL = list(
+		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 17,
 			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 28,
+			"y" = 17,
 		)
 	)
 
@@ -193,9 +197,13 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 			"x" = 47,
 			"y" = 21,
 		),
-		ATTACHMENT_SLOT_RAIL = list(
+		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 13,
 			"y" = 23,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 19,
 		)
 	)
 
