@@ -269,7 +269,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	unique_mag_sprites_for_variants = TRUE
 	burst_size = 1
 	actions_types = list()
-	fire_delay = 0.3 SECONDS
+	fire_delay = 0.22 SECONDS
 	bolt_type = BOLT_TYPE_OPEN
 	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
 	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
