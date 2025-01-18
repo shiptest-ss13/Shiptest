@@ -14,7 +14,6 @@
 					/obj/item/clothing/suit/space/eva,
 					/obj/item/clothing/head/helmet/space/eva,
 					/obj/item/clothing/head/helmet/space/eva)
-	crate_name = "space suit crate"
 
 /datum/supply_pack/spacesuits/pilot_spacesuit
 	name = "Pilot Space Suit Crate"

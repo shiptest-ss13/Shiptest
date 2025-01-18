@@ -111,3 +111,6 @@
 /obj/item/ammo_box/magazine/c45_firestorm_mag/pan/update_icon_state() //Causes the mag to NOT inherit the parent's update_icon oooh the misery
 	. = ..()
 	icon_state = "firestorm_pan"
+
+/obj/item/ammo_box/magazine/c45_firestorm_mag/pan/empty
+	start_empty = TRUE
