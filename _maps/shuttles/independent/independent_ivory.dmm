@@ -150,6 +150,9 @@
 	dir = 8;
 	color = "#FFFFFF"
 	},
+/obj/structure/sign/poster/rilena/random{
+	pixel_x = 26
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "cT" = (
@@ -230,11 +233,17 @@
 /area/ship/crew)
 "eA" = (
 /obj/structure/crate_shelf,
-/obj/structure/closet/crate/engineering,
+/obj/structure/closet/crate/engineering{
+	name = "material crate"
+	},
 /obj/item/stack/sheet/plastic/five,
 /obj/item/stack/sheet/glass/twenty,
 /obj/item/stack/sheet/mineral/wood/twentyfive,
 /obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/mineral/titanium/five,
+/obj/item/stack/sheet/mineral/titanium/five,
+/obj/item/stack/sheet/metal/five,
+/obj/item/stack/sheet/glass/five,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "eI" = (
@@ -328,8 +337,8 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 8
 	},
 /obj/structure/chair/handrail,
 /obj/effect/turf_decal/industrial/warning{
@@ -338,6 +347,12 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/structure/sign/poster/official/random{
+	pixel_y = 30
+	},
+/obj/structure/cable/green{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
@@ -449,10 +464,8 @@
 /area/template_noop)
 "hN" = (
 /obj/machinery/washing_machine,
-/obj/effect/turf_decal/corner/transparent/white/diagonal{
-	dir = 4
-	},
 /obj/machinery/light/directional/south,
+/obj/effect/turf_decal/corner/transparent/white/full,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
 "hO" = (
@@ -482,7 +495,7 @@
 /obj/item/clothing/suit/space/eva,
 /obj/item/clothing/head/helmet/space/eva,
 /obj/item/clothing/mask/breath,
-/obj/effect/turf_decal/industrial/outline,
+/obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "iy" = (
@@ -584,8 +597,14 @@
 	},
 /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/factory,
 /obj/item/melee/spear/bone,
-/obj/item/melee/knife/hunting,
-/obj/item/attachment/bayonet,
+/obj/item/melee/knife/hunting{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/obj/item/attachment/bayonet{
+	pixel_y = 5;
+	pixel_x = -6
+	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -815,6 +834,10 @@
 	dir = 5;
 	color = "#D5A66E"
 	},
+/obj/item/kirbyplants/random{
+	pixel_y = 20;
+	pixel_x = 10
+	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "op" = (
@@ -909,7 +932,11 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer4{
 	dir = 9
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "pZ" = (
 /obj/structure/grille,
@@ -938,7 +965,7 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
-/obj/effect/turf_decal/industrial/outline,
+/obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "qp" = (
@@ -953,7 +980,6 @@
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/suit/toggle/hazard,
 /obj/item/clothing/head/hardhat/dblue,
-/obj/item/clothing/glasses/welding,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/green{
 	icon_state = "1-4"
@@ -961,6 +987,8 @@
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "qx" = (
@@ -1029,11 +1057,15 @@
 /area/ship/bridge)
 "rP" = (
 /obj/structure/table/wood/fancy/black,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/commemorative{
+	pixel_x = -3;
+	pixel_y = 16
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
 "sf" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 8
 	},
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1054,6 +1086,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
@@ -1214,7 +1249,7 @@
 /area/ship/crew/dorm)
 "uU" = (
 /obj/structure/reagent_dispensers/watertank/high,
-/obj/effect/turf_decal/industrial/outline,
+/obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "vg" = (
@@ -1294,6 +1329,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-10"
 	},
+/obj/effect/turf_decal/industrial/loading/white{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "xq" = (
@@ -1360,11 +1398,9 @@
 	pixel_x = 4;
 	pixel_y = -4
 	},
-/obj/effect/turf_decal/corner/transparent/white/diagonal{
-	dir = 4
-	},
+/obj/effect/turf_decal/corner/transparent/white/full,
 /obj/machinery/newscaster/directional/east{
-	pixel_y = 8
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
@@ -1613,6 +1649,12 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
 "Dq" = (
@@ -1632,7 +1674,8 @@
 "DL" = (
 /obj/structure/closet/crate/secure/plasma{
 	name = "ammo crate";
-	desc = "A secure ammo crate."
+	desc = "A secure ammo crate.";
+	req_access_txt = "1"
 	},
 /obj/item/storage/box/ammo/a357,
 /obj/item/storage/box/ammo/a300,
@@ -1969,6 +2012,20 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew)
+"NO" = (
+/obj/effect/turf_decal/industrial/loading/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/cargo)
+"NU" = (
+/obj/structure/table/wood/fancy/black,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/commemorative{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/turf/open/floor/carpet/black,
+/area/ship/crew/ccommons)
 "Op" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -2036,6 +2093,17 @@
 /obj/structure/cable/green{
 	icon_state = "1-4"
 	},
+/obj/structure/closet/crate/wooden{
+	name = "fishing crate"
+	},
+/obj/item/book/fish_catalog,
+/obj/item/storage/fish_case,
+/obj/item/storage/fish_case,
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/item/storage/fish_case,
+/obj/item/storage/fish_case,
+/obj/item/storage/toolbox/fishing,
+/obj/item/storage/toolbox/fishing,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "QQ" = (
@@ -2132,9 +2200,7 @@
 	pixel_x = 6
 	},
 /obj/item/soap/deluxe,
-/obj/effect/turf_decal/corner/transparent/white/diagonal{
-	dir = 4
-	},
+/obj/effect/turf_decal/corner/transparent/white/full,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
 "TP" = (
@@ -2287,8 +2353,9 @@
 	pixel_y = 7
 	},
 /obj/item/stamp/captain{
-	pixel_x = -7;
-	pixel_y = 9
+	pixel_x = 8;
+	pixel_y = 9;
+	layer = 3.01
 	},
 /obj/item/pen/fountain/captain,
 /obj/item/folder/blue{
@@ -2330,7 +2397,10 @@
 	faction = list("neutral");
 	mood = "aslime-:3";
 	name = "Searle";
-	pass_flags = 4
+	pass_flags = 4;
+	desc = "A blue gelatinous blob commonly known as Searle. It seems happy!";
+	speak_emote = list("blorbles", "bounces around happily", "purrs");
+	speak_chance = 1
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
@@ -2506,9 +2576,9 @@ zW
 lc
 XJ
 cq
-AX
+NO
 xo
-AX
+NO
 DL
 eA
 HV
@@ -2710,7 +2780,7 @@ HQ
 aL
 fs
 Xr
-rP
+NU
 op
 yg
 tJ
