@@ -57,7 +57,7 @@
 
 /obj/item/storage/guncase/firestorm
 	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
-	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+	mag_type = /obj/item/ammo_box/magazine/c44_firestorm_mag
 
 /obj/item/storage/guncase/vickland
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/vickland
