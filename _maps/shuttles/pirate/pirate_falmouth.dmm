@@ -1653,14 +1653,18 @@
 	pixel_x = 10;
 	pixel_y = 16
 	},
-/obj/item/reagent_containers/food/drinks/modglass{
-	icon_state = "mglass-6-";
-	pixel_x = 6;
-	pixel_y = -1
+/obj/item/folder{
+	pixel_x = -6;
+	pixel_y = 6
 	},
 /obj/item/pen{
 	pixel_x = -8;
 	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/modglass{
+	icon_state = "mglass-6-";
+	pixel_x = 6;
+	pixel_y = -1
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm/captain)
@@ -2310,6 +2314,7 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/item/blackmarket_uplink,
+/obj/item/computer_hardware/card_slot,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm/captain)
 "So" = (
