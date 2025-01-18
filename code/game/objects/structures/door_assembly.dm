@@ -63,8 +63,6 @@
 			)
 
 	if(I.use_tool(src, user, 40, volume=100))
-		if(anchored)
-			return
 		to_chat(user, span_notice("You [anchored ? "unsecured" : "secured"] the airlock assembly."))
 		name = "[anchored ? "secured " : ""]airlock assembly"
 		anchored = !anchored
@@ -102,6 +100,7 @@
 					new /obj/item/stack/sheet/glass(get_turf(src))
 				glass = 0
 				return TRUE
+
 		else if(!anchored)
 			user.visible_message(
 				span_notice("[user] disassembles the airlock assembly."), \
@@ -128,6 +127,7 @@
 			user.put_in_hands(cable)
 			state = AIRLOCK_ASSEMBLY_NEEDS_WIRES
 			name = "secured airlock assembly"
+			return TRUE
 
 /obj/structure/door_assembly/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -210,6 +210,7 @@
 			state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
 			to_chat(user, "<span class='notice'>You wire the airlock assembly.</span>")
 			name = "wired airlock assembly"
+			return TRUE
 
 	else if(istype(W, /obj/item/electronics/airlock) && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 		W.play_tool_sound(src, 100)
@@ -225,6 +226,7 @@
 			state = AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER
 			name = "near finished airlock assembly"
 			electronics = W
+			return TRUE
 
 	else if(istype(W, /obj/item/stack/sheet) && (!glass || !mineral))
 		var/obj/item/stack/sheet/G = W
@@ -282,9 +284,11 @@
 						to_chat(user, "<span class='warning'>You cannot add [G] to [src]!</span>")
 				else
 					to_chat(user, "<span class='warning'>You cannot add [G] to [src]!</span>")
-	..()
-	update_name()
-	update_appearance()
+			update_name()
+			update_appearance()
+	else
+		return ..()
+
 
 /obj/structure/door_assembly/update_overlays()
 	. = ..()
