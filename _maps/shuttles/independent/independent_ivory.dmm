@@ -36,7 +36,7 @@
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "au" = (
-/obj/structure/railing/thick{
+/obj/structure/railing{
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -53,11 +53,24 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
+/mob/living/simple_animal/slime/pet{
+	colour = "cerulean";
+	icon_living = "cerulean baby slime";
+	icon_state = "cerulean baby slime";
+	icon_dead = "cerulean baby slime dead";
+	faction = list("neutral");
+	mood = "aslime-:3";
+	name = "Searle";
+	pass_flags = 4;
+	desc = "A blue gelatinous blob commonly known as Searle. It seems happy!";
+	speak_emote = list("blorbles", "bounces around happily", "purrs");
+	speak_chance = 1
+	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "aP" = (
 /obj/machinery/door/window/southright{
-	req_access_txt = "25"
+	req_ship_access = 1
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
@@ -185,6 +198,9 @@
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
+/obj/machinery/door/airlock{
+	name = "Dormitory"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "ef" = (
@@ -288,7 +304,7 @@
 /turf/open/floor/wood/birch,
 /area/ship/crew)
 "eK" = (
-/obj/structure/railing/thick{
+/obj/structure/railing{
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
@@ -374,8 +390,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "fs" = (
-/obj/machinery/holopad,
-/turf/open/floor/wood/birch,
+/obj/structure/chair/sofa/grey/left,
+/turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
 "fx" = (
 /obj/machinery/door/airlock/external{
@@ -527,10 +543,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "jg" = (
-/obj/structure/chair/sofa/grey{
-	dir = 8
-	},
 /obj/machinery/light/directional/east,
+/obj/structure/chair/sofa/grey/right{
+	dir = 4
+	},
+/obj/effect/spawner/random/entertainment/plushie/moth{
+	pixel_y = -8;
+	pixel_x = -4;
+	layer = 3.01
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
 "jv" = (
@@ -571,14 +592,9 @@
 /obj/item/storage/backpack/satchel,
 /obj/item/storage/backpack,
 /obj/item/clothing/under/pants/black,
-/obj/item/clothing/under/pants/khaki,
 /obj/item/clothing/under/pants/white,
 /obj/item/clothing/under/dress/skirt/pinafore,
 /obj/item/clothing/under/dress/skirt/color,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/shoes/laceup{
-	pixel_y = -13
-	},
 /obj/item/clothing/shoes/laceup{
 	pixel_y = -13
 	},
@@ -655,12 +671,11 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/engines/port)
 "lo" = (
-/obj/structure/chair/sofa/grey/left{
+/obj/structure/chair/sofa/grey{
 	dir = 4
 	},
-/obj/effect/spawner/random/entertainment/plushie/moth{
-	pixel_y = -5;
-	pixel_x = 3
+/obj/structure/railing/thin{
+	dir = 8
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
@@ -847,7 +862,7 @@
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "op" = (
-/obj/structure/table/wood/fancy/black,
+/obj/structure/table/glass,
 /obj/item/toy/cards/deck/kotahi{
 	pixel_y = 12;
 	pixel_x = 4
@@ -1023,10 +1038,10 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering/engines/port)
 "qL" = (
+/obj/machinery/newscaster/directional/east,
 /obj/structure/chair/sofa/grey/left{
 	dir = 8
 	},
-/obj/machinery/newscaster/directional/east,
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
 "qM" = (
@@ -1048,6 +1063,7 @@
 	dir = 8;
 	color = "#D5A66E"
 	},
+/obj/structure/railing/thin/corner,
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "rf" = (
@@ -1065,7 +1081,7 @@
 	},
 /area/ship/bridge)
 "rP" = (
-/obj/structure/table/wood/fancy/black,
+/obj/structure/table/glass,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/commemorative{
 	pixel_x = -3;
 	pixel_y = 16
@@ -1295,7 +1311,7 @@
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "vS" = (
-/obj/effect/landmark/start/bartender,
+/obj/effect/landmark/start/security_officer,
 /turf/template_noop,
 /area/template_noop)
 "wh" = (
@@ -1673,7 +1689,7 @@
 /turf/open/floor/plasteel/patterned/airless,
 /area/ship/external/dark)
 "DK" = (
-/obj/structure/railing/thick{
+/obj/structure/railing{
 	dir = 4
 	},
 /obj/machinery/autolathe,
@@ -1760,7 +1776,7 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew)
 "Fr" = (
-/obj/structure/railing/thick{
+/obj/structure/railing{
 	dir = 4
 	},
 /obj/structure/closet/crate/internals,
@@ -1787,10 +1803,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
-"Gs" = (
-/obj/effect/landmark/start/shaft_miner,
-/turf/template_noop,
-/area/template_noop)
 "GE" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1991,6 +2003,7 @@
 "KU" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/structure/chair/stool,
+/obj/machinery/holopad/emergency/bar,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "Ls" = (
@@ -2002,6 +2015,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10;
 	color = "#D5A66E"
+	},
+/obj/structure/railing/thin{
+	dir = 4
 	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
@@ -2028,7 +2044,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "NU" = (
-/obj/structure/table/wood/fancy/black,
+/obj/structure/table/glass,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/commemorative{
 	pixel_x = 4;
 	pixel_y = 4
@@ -2122,6 +2138,9 @@
 /obj/structure/sign/painting/library{
 	pixel_x = -30
 	},
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
 "Rs" = (
@@ -2213,7 +2232,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
 "TP" = (
-/obj/structure/table/wood/fancy/black,
+/obj/structure/table/glass,
 /obj/item/toy/cards/deck/syndicate{
 	pixel_x = -4;
 	pixel_y = 2
@@ -2397,19 +2416,16 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Yx" = (
-/obj/structure/chair/sofa/grey/right,
-/mob/living/simple_animal/slime/pet{
-	colour = "cerulean";
-	icon_living = "cerulean baby slime";
-	icon_state = "cerulean baby slime";
-	icon_dead = "cerulean baby slime dead";
-	faction = list("neutral");
-	mood = "aslime-:3";
-	name = "Searle";
-	pass_flags = 4;
-	desc = "A blue gelatinous blob commonly known as Searle. It seems happy!";
-	speak_emote = list("blorbles", "bounces around happily", "purrs");
-	speak_chance = 1
+/obj/structure/chair/sofa/grey/corner{
+	dir = 4
+	},
+/obj/effect/spawner/random/entertainment/plushie{
+	pixel_x = 6;
+	pixel_y = -3;
+	layer = 3.01
+	},
+/obj/structure/railing/thin/corner{
+	dir = 8
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
@@ -2431,7 +2447,6 @@
 	},
 /area/ship/bridge)
 "YX" = (
-/obj/structure/chair/sofa/grey/corner,
 /obj/machinery/button/door{
 	pixel_x = 20;
 	dir = 8;
@@ -2441,10 +2456,6 @@
 	},
 /obj/machinery/firealarm/directional/east{
 	pixel_y = -6
-	},
-/obj/effect/spawner/random/entertainment/plushie{
-	pixel_x = -6;
-	pixel_y = -3
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
@@ -2471,8 +2482,8 @@ hB
 hB
 hB
 hB
+hB
 Ls
-Gs
 "}
 (2,1,1) = {"
 hB
@@ -2763,7 +2774,7 @@ Cl
 as
 HK
 aZ
-Xr
+Yx
 lo
 QQ
 yg
@@ -2787,8 +2798,8 @@ KU
 Cl
 HQ
 aL
+aZ
 fs
-Xr
 NU
 op
 yg
@@ -2813,7 +2824,7 @@ Cl
 as
 vJ
 Ss
-Yx
+Xr
 TP
 rP
 yg
