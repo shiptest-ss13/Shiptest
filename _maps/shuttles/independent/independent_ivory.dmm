@@ -198,9 +198,6 @@
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
-/obj/machinery/door/airlock{
-	name = "Dormitory"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "ef" = (
@@ -389,6 +386,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
+"fs" = (
+/obj/structure/chair/sofa/grey/left,
+/turf/open/floor/carpet/black,
+/area/ship/crew/ccommons)
 "fx" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
@@ -2424,10 +2425,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
-"Yx" = (
-/obj/structure/chair/sofa/grey/left,
-/turf/open/floor/carpet/black,
-/area/ship/crew/ccommons)
 "YF" = (
 /obj/machinery/computer/helm{
 	icon_state = "computer-left";
@@ -2798,7 +2795,7 @@ Cl
 HQ
 aL
 aZ
-Yx
+fs
 NU
 op
 yg
