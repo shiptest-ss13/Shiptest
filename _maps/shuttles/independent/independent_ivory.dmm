@@ -389,10 +389,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
-"fs" = (
-/obj/structure/chair/sofa/grey/left,
-/turf/open/floor/carpet/black,
-/area/ship/crew/ccommons)
 "fx" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
@@ -1003,7 +999,7 @@
 /obj/item/clothing/under/rank/engineering/engineer,
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/suit/toggle/hazard,
-/obj/item/clothing/head/hardhat/dblue,
+/obj/item/clothing/head/hardhat/weldhat/dblue,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/green{
 	icon_state = "1-4"
@@ -1012,7 +1008,6 @@
 	icon_state = "1-8"
 	},
 /obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/glasses/welding,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "qx" = (
@@ -1803,6 +1798,20 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"Gs" = (
+/obj/structure/chair/sofa/grey/corner{
+	dir = 4
+	},
+/obj/effect/spawner/random/entertainment/plushie{
+	pixel_x = 6;
+	pixel_y = -3;
+	layer = 3.01
+	},
+/obj/structure/railing/thin/corner{
+	dir = 8
+	},
+/turf/open/floor/carpet/black,
+/area/ship/crew/ccommons)
 "GE" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -2416,17 +2425,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Yx" = (
-/obj/structure/chair/sofa/grey/corner{
-	dir = 4
-	},
-/obj/effect/spawner/random/entertainment/plushie{
-	pixel_x = 6;
-	pixel_y = -3;
-	layer = 3.01
-	},
-/obj/structure/railing/thin/corner{
-	dir = 8
-	},
+/obj/structure/chair/sofa/grey/left,
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
 "YF" = (
@@ -2774,7 +2773,7 @@ Cl
 as
 HK
 aZ
-Yx
+Gs
 lo
 QQ
 yg
@@ -2799,7 +2798,7 @@ Cl
 HQ
 aL
 aZ
-fs
+Yx
 NU
 op
 yg
