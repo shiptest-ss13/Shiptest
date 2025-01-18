@@ -30,7 +30,7 @@
 	var/list/rand_dependencies = list()
 	var/list/datum/preference/rand_children = list()
 
-	#warn needs to be rethought for the randomization and human-initialization era.
+	#warn remove, later
 	var/randomization_flags = NONE
 
 	/// The index of this pref in the global list that is a topological order of all preference datums.
@@ -113,7 +113,7 @@
 		GLOB.no_dependency_prefs += src
 
 #warn note that all these procs which take dependency_data (as code currently stands) may be passed "null" instead of a list if they have no dependencies.
-#warn this should be coded around, and heavily documented (as should the idea of a "pref data list")
+#warn this should be coded around, and heavily documented (as should the idea of a "pref value list")
 
 
 // ! a preference becoming unavailable needs to trigger a character update, as there might be leftover data.
@@ -150,7 +150,7 @@
 	// return FALSE if is is valid, and a truthy "error" value if it is not.
 
 
-/datum/preference/proc/apply_to_human(mob/living/carbon/human/target, data)
+/datum/preference/proc/apply_to_human(mob/living/carbon/human/target, data, app_hints)
 	SHOULD_CALL_PARENT(FALSE)
 	return
 

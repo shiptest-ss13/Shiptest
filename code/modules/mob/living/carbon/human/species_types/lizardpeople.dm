@@ -5,7 +5,7 @@
 	species_traits = list(EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY)
 	species_age_max = 175
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
-	mutant_bodyparts = list("frills", "horns", "spines")
+	mutant_bodyparts = list()
 	mutanttongue = /obj/item/organ/tongue/lizard
 	mutant_organs = list(/obj/item/organ/tail/lizard)
 	coldmod = 1.5

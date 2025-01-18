@@ -26,7 +26,6 @@
 	target.skin_tone = data
 
 /datum/preference/choiced_string/skin_tone/randomize(list/dependency_data, list/rand_dependency_data)
-	#warn another worthless randomization proc that should be removed in time
 	return random_skin_tone()
 
 // UI CREATION
@@ -47,8 +46,6 @@
 					var/new_s_tone = input(user, "Choose your character's skin-tone:", "Character Preference")  as null|anything in GLOB.skin_tones
 					if(new_s_tone)
 						skin_tone = new_s_tone
-
-
 */
 
 // CHARACTER COPY
@@ -81,7 +78,7 @@
 */
 
 
-#warn needs to show up for IPC screens as well, actually... ooogh ! oooootough!
+#warn needs to show up for IPC screens. note that some IPCs lack screens but have eyes, these must also be respected
 // CORRESPONDING VARIABLE NAME:
 // eye_color
 // default value: "000"
@@ -100,16 +97,10 @@
 		return TRUE
 	return FALSE
 
-#warn should figure out where this sits in the application hierarchy, since this might well not penetrate to the organ level if it's set after species, as organ_eyes.eye_color is set unreliably.
-#warn currently, eye color doesn't appear until you change tabs, and changing your gender to or from male will hide your eye color until a different preference is changed.
-#warn quite strange !!!!
+#warn below warnings written before "finalization" implemented.
 /datum/preference/color/eye_color/apply_to_human(mob/living/carbon/human/target, data)
+	// as this pref is processed before the body is finalized, we don't need to add the eye color to the organ itself
 	target.eye_color = data
-	var/obj/item/organ/eyes/organ_eyes = target.getorgan(/obj/item/organ/eyes)
-	if(organ_eyes)
-		if(!initial(organ_eyes.eye_color))
-			organ_eyes.eye_color = data
-		organ_eyes.old_eye_color = data
 
 /datum/preference/color/eye_color/randomize(list/dependency_data, list/rand_dependency_data)
 	// finally, a special randomization proc with meaningful behavior
@@ -118,14 +109,11 @@
 // UI CREATION
 /*
 			if((EYECOLOR in current_species.species_traits) && !(NOEYESPRITES in current_species.species_traits))
-
 				dat += "<h3>Eye Color</h3>"
 				dat += "<span style='border: 1px solid #161616; background-color: #[eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=eyes;task=input'>Change</a>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_EYE_COLOR]'>[(randomise[RANDOM_EYE_COLOR]) ? "Lock" : "Unlock"]</A>"
 
 				dat += "<br></td>"
-
-
 */
 
 // UI INTERACTION
@@ -571,6 +559,7 @@
 	#warn stupid solution that might not line up with other validation methods. ugh
 	else if(data != html_encode(html_decode(data)))
 		return "Flavor text contained invalid characters!"
+	return FALSE
 
 /datum/preference/flavor_text/apply_to_human(mob/living/carbon/human/target, data)
 	target.flavor_text = data
@@ -791,6 +780,13 @@
 	return FALSE
 
 /datum/preference/bool/digitigrade/apply_to_human(mob/living/carbon/human/target, data)
+	// so, a note about how digitigrade works:
+	// the feature FEATURE_LEGS_TYPE is not actually used by much code, and neither is the species var digitigrade_customization == DIGITIGRADE_FORCED.
+	//
+	// instead, during species finalization, if the mob should be digitigrade as determined by species.is_digitigrade(),
+	// replace_body() will give the mob digitigrade legs. these digitigrade legs have the BODYTYPE_DIGITIGRADE flag in their "bodytype" variable.
+	// that flag is then added to the species datum's "bodytype" variable via the use of the proc synchronize_bodytypes() when the limb is added to the mob.
+	// this pref thus only INDIRECTLY affects whether the mob will display with digitigrade sprites
 	if(data)
 		target.dna.features[FEATURE_LEGS_TYPE] = FEATURE_DIGITIGRADE_LEGS
 	else

@@ -9,9 +9,6 @@ GLOBAL_LIST_EMPTY_TYPED(no_dependency_prefs, /datum/preference)
 GLOBAL_LIST_EMPTY_TYPED(pref_topo_order, /datum/preference)
 GLOBAL_LIST_EMPTY_TYPED(pref_application_order, /datum/preference)
 
-// ! this is stupid; just make it a static var
-GLOBAL_VAR_INIT(preference_traverse_key, 0)
-
 // ! this is REALLY stupid. make_datum_references lists SHOULD NOT BE HERE DAWG...
 /datum/controller/global_vars/Initialize(...)
 	. = ..()
@@ -113,7 +110,7 @@ GLOBAL_VAR_INIT(preference_traverse_key, 0)
 				// that preferences are processed in, which ultimately depends on the order given by subtypesof().
 				// Additionally, we're altering the dependency graph, when the code was presumably written with the assumption that would stay constant.
 				// Thus, we can't expect "correct" behavior. To prevent saving invalid savefiles, we disable saving preferences.
-				// ! set some global variable forbidding preference saving
+				#warn set some global variable forbidding preference saving
 				continue
 
 			// Add the current preference to the children of the dependency we are processing.
@@ -131,15 +128,18 @@ GLOBAL_VAR_INIT(preference_traverse_key, 0)
 				previous_verts[next_vert] = 1
 
 
-/proc/create_topological_order(list/datum/preference/head_prefs, respect_rand)
+/// Returns, as a list, a topological order over all preference datums reachable as children of head_prefs.
+/// That is, it's a list of preference datums reachable from the head_prefs, such that each preference always comes before its children in the list.
+/proc/create_topological_order(list/datum/preference/head_prefs)
 	SHOULD_NOT_SLEEP(TRUE)
+	var/static/traverse_key = 0
 
 	var/list/working_list = head_prefs.Copy()
 	var/list/reverse_topo_order = list()
 
-	var/vertex_saw_children = GLOB.preference_traverse_key + 1
-	var/vertex_added_to_order = GLOB.preference_traverse_key + 2
-	GLOB.preference_traverse_key += 2
+	var/vertex_saw_children = traverse_key + 1
+	var/vertex_added_to_order = traverse_key + 2
+	traverse_key += 2
 
 	while(length(working_list))
 		var/datum/preference/current_vert = working_list[length(working_list)]
@@ -149,7 +149,7 @@ GLOBAL_VAR_INIT(preference_traverse_key, 0)
 
 		if(current_vert.traverse_key != vertex_saw_children)
 			// its children haven't been added yet: add them
-			working_list += (respect_rand) ? (current_vert.rand_children + current_vert.dep_children) : (current_vert.dep_children)
+			working_list += current_vert.rand_children + current_vert.dep_children
 			current_vert.traverse_key = vertex_saw_children
 		else
 			// we've added its children to the list: because it wasn't added then, and we reached it, we must add it
@@ -160,45 +160,64 @@ GLOBAL_VAR_INIT(preference_traverse_key, 0)
 	return reverseRange(reverse_topo_order)
 
 
+#warn need to use this as a debug proc to ensure that all pref value lists are valid. and comment
+/proc/check_pref_value_list(list/pref_value_list)
+	for(var/datum/preference/pref as anything in GLOB.pref_topo_order)
+		if(!(pref.type in pref_value_list))
+			return "Preference [pref.type] was not found in the value list!"
+		else
+			var/pref_dep_data = assemble_pref_dep_list(pref, pref_value_list)
+			var/pref_avail = pref.is_available(pref_dep_data)
 
-#warn due to the way list indexing works, ALL preference lists should have UNAVAILABLE for every entry by default. hmmghrghrgh.. need to ensure that's the case!!!
-#warn also, consider alternate forms of "valid" given use of prefs for non-roundstart randomization. other species!!!!
+			if(!pref_avail)
+				// Unavailable preferences must have value PREFERENCE_ENTRY_UNAVAILABLE.
+				if(pref_value_list[pref.type] != PREFERENCE_ENTRY_UNAVAILABLE)
+					return "Preference [pref.type] was present in the value list, unavailable, and had a value other than \"unavailable\"!"
+			else
+				if(pref_value_list[pref.type] == PREFERENCE_ENTRY_UNAVAILABLE)
+					return "Preference [pref.type] was present in the value list, available, and had value \"unavailable\"!"
+				var/pref_data = pref_value_list[pref.type]
+				var/pref_invalid = pref.is_invalid(pref_data, pref_dep_data)
+				// if the data is invalid, the validity error is *our* error
+				if(pref_invalid)
+					return pref_invalid
+
+	return null
 
 
-/proc/apply_prefs_list_to_human(mob/living/carbon/human/H, list/prefs_data_list)
-	#warn this is a stupid fucking way of doing this but whatever
-	var/finalized_bodyplan = FALSE
+#warn comment; decide whether or not to use the commented-out proc below. maybe remove the check inside this one?
+/proc/get_randomized_pref_value_list(list/preset_list)
+	if(!islist(preset_list))
+		preset_list = list()
+	var/output_list = preset_list.Copy()
 
-	for(var/datum/preference/pref as anything in GLOB.pref_application_order)
-		if(pref.application_priority < PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE && !finalized_bodyplan)
-			H.finalize_species()
-			finalized_bodyplan = TRUE
+	for(var/datum/preference/pref as anything in (GLOB.pref_topo_order - preset_list))
+		var/list/pref_deps = assemble_pref_dep_list(pref, output_list)
+		var/is_avail = pref.is_available(pref_deps)
+		if(!is_avail)
+			output_list[pref.type] = PREFERENCE_ENTRY_UNAVAILABLE
+		continue
 
-		var/pref_data = prefs_data_list[pref.type]
-		if(pref_data == PREFERENCE_ENTRY_UNAVAILABLE)
-			continue
+		var/pref_rand_deps = assemble_pref_dep_list(pref, output_list, TRUE)
+		output_list[pref.type] = pref.randomize(pref_deps, pref_rand_deps)
 
-		#warn deapplication code goes here!!!
+	var/pref_check = check_pref_value_list(output_list)
+	if(pref_check)
+		CRASH(pref_check)
+	else
+		return output_list
 
-		pref.apply_to_human(H, pref_data)
-
-	if(!finalized_bodyplan)
-		H.finalize_species()
-
-
-#warn should be rewritten, using the code for reverification from /datum/preferences
-#warn comment. note that errors here are runtimes! randomize() should always return a valid result.
-/proc/get_randomized_pref_list(list/preset_list, rand_hints)
+#warn REMOVE
+/*
+/proc/get_randomized_pref_value_list(list/preset_list)
 	var/output_list = list()
 
-	for(var/datum/preference/pref as anything in GLOB.pref_application_order)
-		if(!(pref.randomization_flags & rand_hints))
-			continue
-		var/list/pref_deps = assemble_pref_dep_list(pref)
+	for(var/datum/preference/pref as anything in GLOB.pref_topo_order)
+		var/list/pref_deps = assemble_pref_dep_list(pref, preset_list)
 		var/is_avail = pref.is_available(pref_deps)
 		// unavailable; mark it as such and continue
 		if(!is_avail)
-			if(pref.type in preset_list && preset_list[pref.type] != PREFERENCE_ENTRY_UNAVAILABLE)
+			if(preset_list[pref.type] != PREFERENCE_ENTRY_UNAVAILABLE && pref.type in preset_list)
 				stack_trace("Preference randomization was given preset data [pref.type] = [preset_list[pref.type]], but it was unavailable when it was reached!")
 			output_list[pref.type] = PREFERENCE_ENTRY_UNAVAILABLE
 			continue
@@ -207,66 +226,57 @@ GLOBAL_VAR_INIT(preference_traverse_key, 0)
 		if(pref.type in preset_list)
 			rand_data = preset_list[pref.type]
 		else
-			var/list/pref_rand_deps = assemble_pref_rand_dep_list(pref)
+			var/list/pref_rand_deps = assemble_pref_dep_list(pref, output_list, TRUE)
 			rand_data = pref.randomize(pref_deps, pref_rand_deps)
 
 		var/invalid_check = pref.is_invalid(rand_data, pref_deps)
 		if(invalid_check)
-			stack_trace("Preference [pref.type] was randomized to value [rand_data], but this value is invalid: [invalid_check]")
+			stack_trace("Preference [pref.type] was randomized to value [rand_data], but this value is invalid: [invalid_check]. Resetting to default.")
 			output_list[pref.type] = pref.default_value
 		else
 			output_list[pref.type] = rand_data
 
 	return output_list
+*/
 
-#warn these might need to be... i don't know, reorganized or unified with each other or something. once again, i need to be clear about the nature of their input and output data
-/proc/assemble_pref_dep_list(datum/preference/pref, list/pref_data_list)
-	if(!pref.dependencies || !length(pref.dependencies))
+
+#warn due to the way list indexing works, ALL preference lists should have UNAVAILABLE for every entry by default. hmmghrghrgh.. need to ensure that's the case!!!
+#warn also. COMMENT!!!!!!!!!
+/proc/apply_pref_value_list_to_human(mob/living/carbon/human/H, list/pref_value_list, app_hints)
+	#warn this is a stupid fucking way of doing this but whatever
+	var/finalized_bodyplan = FALSE
+
+	for(var/datum/preference/pref as anything in GLOB.pref_application_order)
+		if(pref.application_priority < PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE && !finalized_bodyplan)
+			H.finalize_species()
+			finalized_bodyplan = TRUE
+
+		var/pref_data = pref_value_list[pref.type]
+		if(pref_data == PREFERENCE_ENTRY_UNAVAILABLE)
+			continue
+
+		#warn deapplication code goes here!!!
+
+		pref.apply_to_human(H, pref_data, app_hints)
+
+	if(!finalized_bodyplan)
+		H.finalize_species()
+
+	#warn maybe necessary???
+	H.dna.update_dna_identity()
+
+
+#warn need to be clear about the nature of the input and output data
+/proc/assemble_pref_dep_list(datum/preference/pref, list/pref_value_list, rand_mode = FALSE)
+	var/dependency_types = rand_mode ? pref.dependencies : pref.rand_dependencies
+	if(!dependency_types || !length(dependency_types))
 		return null
 	var/dep_list = list()
 
-	for(var/datum/preference/dep_type as anything in pref.dependencies)
-		var/dep_data = pref_data_list[dep_type]
+	for(var/datum/preference/dep_type as anything in dependency_types)
+		var/dep_data = pref_value_list[dep_type]
 		#warn should note an explicit guarantee in _preference.dm about this list: it will ONLY contain dependencies, and does NOT contain unavailable dependencies.
 		if(dep_data != PREFERENCE_ENTRY_UNAVAILABLE)
 			dep_list[dep_type] = dep_data
 
 	return dep_list
-
-/proc/assemble_pref_rand_dep_list(datum/preference/pref, list/pref_data_list)
-	if(!pref.rand_dependencies || !length(pref.rand_dependencies))
-		return null
-	var/dep_list = list()
-
-	for(var/datum/preference/rand_dep_type as anything in pref.rand_dependencies)
-		var/rand_dep_data = pref_data_list[rand_dep_type]
-		#warn should note an explicit guarantee in _preference.dm about this list: it will ONLY contain dependencies, and does NOT contain unavailable dependencies.
-		if(rand_dep_data != PREFERENCE_ENTRY_UNAVAILABLE)
-			dep_list[rand_dep_type] = rand_dep_data
-
-	return dep_list
-
-
-#warn remgove, incl. from /datum/preferences
-// #warn note that this cannot "fail": if it does not return PREFERENCE_ENTRY_UNAVAILABLE, then the pref is assumed to be available and the entry is assumed to be valid
-// /datum/preferences/proc/get_pref_data(pref_type)
-// 	// ! not super efficient
-// 	if(pref_type in pref_cache)
-// 		return pref_cache[pref_type]
-// 	return pref_values[pref_type]
-
-
-// /datum/preferences/proc/assemble_pref_dep_list(datum/preference/pref)
-// 	if(!pref.dependencies || !length(pref.dependencies))
-// 		return null
-// 	var/dep_list = list()
-
-// 	for(var/datum/preference/dep_type as anything in pref.dependencies)
-// 		var/dep_data = get_pref_data(dep_type)
-
-// 		#warn should note an explicit guarantee in _preference.dm about this list: it will ONLY contain dependencies, and does NOT contain unavailable dependencies.
-// 		if(dep_data != PREFERENCE_ENTRY_UNAVAILABLE)
-// 			dep_list[dep_type] = dep_data
-
-// 	return dep_list
-

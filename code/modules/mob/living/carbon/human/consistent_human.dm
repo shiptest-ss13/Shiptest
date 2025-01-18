@@ -1,6 +1,6 @@
 /mob/living/carbon/human/dummy/consistent/setup_human_dna()
-	create_dna()
-	return //No randomisation
+	dna = new /datum/dna(src)
+	// overridden to stop dna initializatino (unimportant..?)
 
 #warn randomization, remove (tbf, this is a wiki thing... need a seed)
 /mob/living/carbon/human/dummy/consistent/proc/seeded_randomization(seed = 0, species_list = null)

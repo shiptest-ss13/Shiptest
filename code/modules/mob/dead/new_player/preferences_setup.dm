@@ -1,8 +1,8 @@
 #warn randomization. be careful. all procs in this file should eventually be removed
 	//The mob should have a gender you want before running this proc. Will run fine without H
-/datum/preferences/proc/random_character(gender_override, antag_override = FALSE)
-	if(randomise[RANDOM_SPECIES])
-		random_species()
+// /datum/preferences/proc/random_character(gender_override, antag_override = FALSE)
+	// if(randomise[RANDOM_SPECIES])
+	// 	random_species()
 	// else if(randomise[RANDOM_NAME])
 	// 	var/datum/species/chosen_species = get_pref_data(/datum/preference/species)
 	// 	real_name = chosen_species.random_name(gender,1)
@@ -47,9 +47,9 @@
 	// if(!pref_species)
 	// 	var/rando_race = pick(GLOB.roundstart_races)
 	// 	pref_species = new rando_race()
-	features = random_features()
+	// features = random_features()
 
-/datum/preferences/proc/random_species()
+// /datum/preferences/proc/random_species()
 	// var/random_species_type = GLOB.species_list[pick(GLOB.roundstart_races)]
 	// pref_species = new random_species_type
 	// if(randomise[RANDOM_NAME])
@@ -60,7 +60,7 @@
 /datum/preferences/proc/update_preview_icon(show_gear = TRUE, show_loadout = FALSE)
 	// Set up the dummy for its photoshoot
 	var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
-	copy_to(mannequin, 1, TRUE, TRUE, loadout = show_loadout)
+	copy_to(mannequin, TRUE, TRUE, TRUE, loadout = show_loadout)
 
 	if(selected_outfit && show_gear)
 		selected_outfit.equip(mannequin, TRUE, preference_source = parent)

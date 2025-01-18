@@ -22,8 +22,7 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 	cut_overlays(TRUE)
 
 /mob/living/carbon/human/dummy/setup_human_dna()
-	create_dna(src)
-	randomize_human(src)
+	dna = new /datum/dna(src)
 	dna.initialize_dna(skip_index = TRUE) //Skip stuff that requires full round init.
 
 //Inefficient pooling/caching way.

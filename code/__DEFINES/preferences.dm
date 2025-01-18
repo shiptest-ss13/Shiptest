@@ -220,9 +220,6 @@ GLOBAL_LIST_INIT(valid_smoke_types, sortList(list(PREF_CIG_SPACE, PREF_CIG_DROME
 
 GLOBAL_LIST_INIT(body_sizes, list(BODY_SIZE_NORMAL = BODY_SIZE_NORMAL_SCALE, BODY_SIZE_SHORT = BODY_SIZE_SHORT_SCALE, BODY_SIZE_TALL = BODY_SIZE_TALL_SCALE))
 
-// IPC brains
-GLOBAL_LIST_INIT(ipc_brain_list, list("Posibrain", "Man-Machine Interface"))
-
 
 GLOBAL_LIST_INIT(ghost_forms_with_directions_list, list(
 	"ghost",

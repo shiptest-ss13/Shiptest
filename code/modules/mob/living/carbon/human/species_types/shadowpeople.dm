@@ -74,12 +74,14 @@
 
 /obj/item/organ/brain/nightmare/Insert(mob/living/carbon/M, special = 0)
 	..()
-	if(M.dna.species.id != "nightmare")
-		M.set_species(/datum/species/shadow/nightmare)
-		visible_message("<span class='warning'>[M] thrashes as [src] takes root in [M.p_their()] body!</span>")
-	var/obj/effect/proc_holder/spell/targeted/shadowwalk/SW = new
-	M.AddSpell(SW)
-	shadowwalk = SW
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.dna.species.id != "nightmare" && ishuman(H))
+			H.set_species(/datum/species/shadow/nightmare)
+			visible_message("<span class='warning'>[H] thrashes as [src] takes root in [H.p_their()] body!</span>")
+		var/obj/effect/proc_holder/spell/targeted/shadowwalk/SW = new
+		H.AddSpell(SW)
+		shadowwalk = SW
 
 
 /obj/item/organ/brain/nightmare/Remove(mob/living/carbon/M, special = 0)
@@ -135,25 +137,26 @@
 	return 0
 
 /obj/item/organ/heart/nightmare/on_death()
-	if(!owner)
+	// monkeys are no longer revived by shadowling hearts to prevent them from changing species. because theyre FUCKING MONKEYS
+	if(!owner || !ishuman(owner))
 		return
-	var/turf/T = get_turf(owner)
+	var/mob/living/carbon/human/h_owner = owner
+	var/turf/T = get_turf(h_owner)
 	if(istype(T))
 		var/light_amount = T.get_lumcount()
 		if(light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD)
 			respawn_progress++
-			playsound(owner,'sound/effects/singlebeat.ogg',40,TRUE)
+			playsound(h_owner,'sound/effects/singlebeat.ogg',40,TRUE)
 	if(respawn_progress >= HEART_RESPAWN_THRESHHOLD)
-		owner.revive(full_heal = TRUE, admin_revive = FALSE)
-		if(!(owner.dna.species.id == "shadow" || owner.dna.species.id == "nightmare"))
-			var/mob/living/carbon/old_owner = owner
-			Remove(owner, HEART_SPECIAL_SHADOWIFY)
-			old_owner.set_species(/datum/species/shadow)
-			Insert(old_owner, HEART_SPECIAL_SHADOWIFY)
-			to_chat(owner, "<span class='userdanger'>You feel the shadows invade your skin, leaping into the center of your chest! You're alive!</span>")
-			SEND_SOUND(owner, sound('sound/effects/ghost.ogg'))
-		owner.visible_message("<span class='warning'>[owner] staggers to [owner.p_their()] feet!</span>")
-		playsound(owner, 'sound/hallucinations/far_noise.ogg', 50, TRUE)
+		h_owner.revive(full_heal = TRUE, admin_revive = FALSE)
+		if(!(h_owner.dna.species.id == "shadow" || h_owner.dna.species.id == "nightmare"))
+			Remove(h_owner, HEART_SPECIAL_SHADOWIFY)
+			h_owner.set_species(/datum/species/shadow)
+			Insert(h_owner, HEART_SPECIAL_SHADOWIFY)
+			to_chat(h_owner, "<span class='userdanger'>You feel the shadows invade your skin, leaping into the center of your chest! You're alive!</span>")
+			SEND_SOUND(h_owner, sound('sound/effects/ghost.ogg'))
+		h_owner.visible_message("<span class='warning'>[h_owner] staggers to [h_owner.p_their()] feet!</span>")
+		playsound(h_owner, 'sound/hallucinations/far_noise.ogg', 50, TRUE)
 		respawn_progress = 0
 
 /obj/item/organ/heart/nightmare/get_availability(datum/species/S)

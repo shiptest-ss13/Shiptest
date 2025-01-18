@@ -27,8 +27,9 @@
 	. = ..()
 	INVOKE_ASYNC(src, PROC_REF(setup_visuals))
 
-#warn this whole proc needs to be rewritten, it's based on shoddy assumptions.
+#warn this wholep proc sucks
 /mob/living/simple_animal/hostile/human/zombie/proc/setup_visuals()
+	#warn evil randomization, remove
 	var/datum/preferences/dummy_prefs = new
 	// doesn't work anymore
 	// dummy_prefs.pref_species = new /datum/species/zombie

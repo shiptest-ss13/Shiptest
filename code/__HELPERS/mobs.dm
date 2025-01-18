@@ -18,32 +18,33 @@
 			return "000000"
 
 #warn note that this is used for randomized prefs (via random_character); we need to be careful about features overlapping with our prefs, before we remove the former
-#warn randomization, remove
-/proc/random_features()
-	var/feature_list = list(
-		FEATURE_FLAVOR_TEXT = "",
+#warn remove
+// /proc/random_features()
+// 	var/feature_list = list(
+// 		FEATURE_FLAVOR_TEXT = "",
 
-		FEATURE_MUTANT_COLOR = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		FEATURE_MUTANT_COLOR2 = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		FEATURE_IPC_BRAIN = pick(GLOB.ipc_brain_list),
-		FEATURE_IPC_CHASSIS = pick(GLOB.ipc_chassis_list),
-		FEATURE_BODY_SIZE = pick(GLOB.body_sizes),
+// 		FEATURE_MUTANT_COLOR = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
+// 		FEATURE_MUTANT_COLOR2 = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
+// 		// FEATURE_IPC_BRAIN = pick(GLOB.ipc_brain_list),
+// 		FEATURE_IPC_CHASSIS = pick(GLOB.ipc_chassis_list),
+// 		FEATURE_BODY_SIZE = pick(GLOB.body_sizes),
 
-		FEATURE_LEGS_TYPE = FEATURE_NORMAL_LEGS,
-	)
+// 		FEATURE_LEGS_TYPE = FEATURE_NORMAL_LEGS,
+// 	)
 
-	for(var/datum/sprite_accessory/mutant_part/abstr_part_type as anything in GLOB.mut_part_name_datum_lookup)
-		// do not consider non-randomizable part types
-		if(!initial(abstr_part_type.randomizable))
-			continue
-		// look into the list to get the list of options
-		var/list/part_option_names = GLOB.mut_part_name_datum_lookup[abstr_part_type]
-		// pick an option to add to features
-		var/part_type_id = initial(abstr_part_type.mutant_string)
-		feature_list[part_type_id] = pick(part_option_names)
+// 	for(var/datum/sprite_accessory/mutant_part/abstr_part_type as anything in GLOB.mut_part_name_datum_lookup)
+// 		// do not consider non-randomizable part types
+// 		if(!initial(abstr_part_type.randomizable))
+// 			continue
+// 		// look into the list to get the list of options
+// 		var/list/part_option_names = GLOB.mut_part_name_datum_lookup[abstr_part_type]
+// 		// pick an option to add to features
+// 		var/part_type_id = initial(abstr_part_type.mutant_string)
+// 		feature_list[part_type_id] = pick(part_option_names)
 
-	return feature_list
+// 	return feature_list
 
+#warn clear out the unused versions of these
 /proc/random_hairstyle(gender)
 	return pick(GLOB.hairstyles_list)
 

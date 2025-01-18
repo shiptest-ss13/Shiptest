@@ -10,7 +10,7 @@
 
 /mob/living/brain/Initialize()
 	. = ..()
-	create_dna(src)
+	stored_dna = new /datum/dna/stored(src)
 	stored_dna.initialize_dna(random_blood_type())
 	if(isturf(loc)) //not spawned in an MMI or brain organ (most likely adminspawned)
 		var/obj/item/organ/brain/OB = new(loc) //we create a new brain organ for it.
@@ -20,12 +20,6 @@
 		ADD_TRAIT(src, TRAIT_IMMOBILIZED, BRAIN_UNAIDED)
 		ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, BRAIN_UNAIDED)
 
-
-/mob/living/brain/proc/create_dna()
-	stored_dna = new /datum/dna/stored(src)
-	if(!stored_dna.species)
-		var/rando_race = pick(GLOB.roundstart_races)
-		stored_dna.species = new rando_race()
 
 /mob/living/brain/Destroy()
 	if(key) //If there is a mob connected to this thing. Have to check key twice to avoid false death reporting.

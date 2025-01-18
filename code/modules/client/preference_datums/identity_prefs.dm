@@ -437,3 +437,73 @@
 */
 
 
+// CORRESPONDING VARIABLE NAME:
+// phobia
+// default value: "spiders"
+/datum/preference/choiced_string/phobia
+	name = "Phobia"
+	external_key = "phobia"
+
+	default_value = "spiders"
+
+	#warn should depend on quirks and phobia specifically in the future
+	// dependencies = list()
+
+/datum/preference/choiced_string/phobia/get_options_list()
+	return SStraumas.phobia_types
+
+/datum/preference/choiced_string/phobia/_is_available(list/dependency_data)
+	return TRUE
+
+// as of now, application is handled by the phobia quirk itself
+// /datum/preference/choiced_string/phobia/apply_to_human(mob/living/carbon/human/target, data)
+
+
+
+// UI CREATION
+/*
+			//Adds a thing to select which phobia because I can't be assed to put that in the quirks window
+			if("Phobia" in all_quirks)
+				dat += "<h3>Phobia</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=phobia;task=input'>[phobia]</a><BR>"
+
+
+*/
+
+// UI INTERACTION
+/*
+				if("phobia")
+					var/phobiaType = input(user, "What are you scared of?", "Character Preference", phobia) as null|anything in SStraumas.phobia_types
+					if(phobiaType)
+						phobia = phobiaType
+
+
+*/
+
+// CHARACTER COPY
+/*
+/datum/quirk/phobia/post_add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(new /datum/brain_trauma/mild/phobia(H.client?.prefs.phobia), TRAUMA_RESILIENCE_ABSOLUTE)
+
+*/
+
+// SERIALIZATION
+/*
+	WRITE_FILE(S["phobia"]						, phobia)
+
+*/
+
+// DESERIALIZATION
+/*
+	READ_FILE(S["phobia"], phobia)
+
+*/
+
+// RANDOMIZATION
+/*
+
+*/
+
+

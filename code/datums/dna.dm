@@ -4,8 +4,8 @@
 	var/unique_enzymes
 	var/uni_identity
 	var/datum/blood_type/blood_type
-	var/datum/species/species = new /datum/species/human //The type of mutant race the player is if applicable (i.e. potato-man)
-	var/list/features = list("FFF") //first value is mutant color
+	var/datum/species/species //The type of mutant race the player is if applicable (i.e. potato-man)
+	var/list/features = list()
 	var/real_name //Stores the real name of the person who originally got this dna datum. Used primarely for changelings,
 	var/list/mutations = list()   //All mutations are from now on here
 	var/list/temporary_mutations = list() //Temporary changes to the UE
@@ -48,7 +48,11 @@
 	destination.dna.unique_enzymes = unique_enzymes
 	destination.dna.uni_identity = uni_identity
 	destination.dna.blood_type = blood_type
-	destination.set_species(species.type, icon_update=0)
+
+	if(ishuman(destination))
+		var/mob/living/carbon/human/H = destination
+		H.set_species(species.type, icon_update=0)
+
 	destination.dna.features = features.Copy()
 	destination.dna.real_name = real_name
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
@@ -271,7 +275,6 @@
 	uni_identity = generate_uni_identity()
 	if(!skip_index) //I hate this
 		generate_dna_blocks()
-	features = random_features()
 
 
 /datum/dna/stored //subtype used by brain mob's stored_dna
@@ -344,48 +347,49 @@
 		update_mutations_overlay()
 
 
+#warn remove
 /// This proc is responsible for all the species-datum-based bookkeeping that must be done when changing a mob's species datum.
-/mob/living/carbon/proc/set_species(datum/species/mrace, icon_update = TRUE, robotic = FALSE)
-	if(mrace && has_dna())
-		var/datum/species/new_race
-		if(ispath(mrace))
-			new_race = new mrace
-		else if(istype(mrace))
-			new_race = mrace
-		else
-			return
-		dna.species.on_species_loss(src, new_race)
-		var/datum/species/old_species = dna.species
-		dna.species = new_race
+// /mob/living/carbon/human/proc/set_species(datum/species/mrace, icon_update = TRUE, robotic = FALSE)
+// 	if(mrace && has_dna())
+// 		var/datum/species/new_race
+// 		if(ispath(mrace))
+// 			new_race = new mrace
+// 		else if(istype(mrace))
+// 			new_race = mrace
+// 		else
+// 			return
+// 		dna.species.on_species_loss(src, new_race)
+// 		var/datum/species/old_species = dna.species
+// 		dna.species = new_race
 
-		//Solves quirk conflicts on species change if there's any
-		var/list/quirks_to_remove = list()
-		var/list/quirks_resolved = client?.prefs.handle_quirk_conflict("species", new_race, src)
-		for(var/datum/quirk/quirk_instance as anything in roundstart_quirks)
-			quirks_to_remove += quirk_instance.type
-		for(var/quirk_name in quirks_resolved)
-			var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
-			quirks_resolved += quirk_type
-			quirks_resolved -= quirk_name
-		quirks_to_remove -= quirks_resolved
-		for(var/quirk_type in quirks_to_remove)
-			remove_quirk(quirk_type)
+// 		//Solves quirk conflicts on species change if there's any
+// 		var/list/quirks_to_remove = list()
+// 		var/list/quirks_resolved = client?.prefs.handle_quirk_conflict("species", new_race, src)
+// 		for(var/datum/quirk/quirk_instance as anything in roundstart_quirks)
+// 			quirks_to_remove += quirk_instance.type
+// 		for(var/quirk_name in quirks_resolved)
+// 			var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
+// 			quirks_resolved += quirk_type
+// 			quirks_resolved -= quirk_name
+// 		quirks_to_remove -= quirks_resolved
+// 		for(var/quirk_type in quirks_to_remove)
+// 			remove_quirk(quirk_type)
 
-		dna.species.on_species_gain(src, old_species, robotic)
+// 		dna.species.on_species_gain(src, old_species, robotic)
 
-		if(ishuman(src))
-			qdel(language_holder)
-			var/species_holder = initial(mrace.species_language_holder)
-			language_holder = new species_holder(src)
-		update_atom_languages()
+		// if(ishuman(src))
+		// 	qdel(language_holder)
+		// 	var/species_holder = initial(mrace.species_language_holder)
+		// 	language_holder = new species_holder(src)
+		// update_atom_languages()
 
-/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, robotic = FALSE)
-	robotic ||= fbp
-	..()
-	if(icon_update)
-		update_hair()
-		update_mutations_overlay()// no lizard with human hulk overlay please.
-	AddComponent(/datum/component/bloodysoles/feet)
+// /mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, robotic = FALSE)
+// 	robotic ||= fbp
+// 	..()
+// 	if(icon_update)
+// 		update_hair()
+// 		update_mutations_overlay()// no lizard with human hulk overlay please.
+// 	AddComponent(/datum/component/bloodysoles/feet)
 
 /mob/proc/has_dna()
 	return
@@ -436,12 +440,6 @@
 			var/datum/mutation/human/HM = M
 			if(HM.allow_transfer || force_transfer_mutations)
 				dna.force_give(new HM.type(HM.class, copymut=HM)) //using force_give since it may include exotic mutations that otherwise wont be handled properly
-
-/mob/living/carbon/proc/create_dna()
-	dna = new /datum/dna(src)
-	if(!dna.species)
-		var/rando_race = pick(GLOB.roundstart_races)
-		dna.species = new rando_race()
 
 //proc used to update the mob's appearance after its dna UI has been changed
 /mob/living/carbon/proc/updateappearance(icon_update=1, mutcolor_update=0, mutations_overlay_update=0)

@@ -810,8 +810,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	if(client.prefs.randomise[RANDOM_NAME])
 		ghost_name = random_unique_name(gender)
-	if(client.prefs.randomise[RANDOM_BODY])
-		client.prefs.random_character(gender)
 
 	var/datum/species/pref_species = client.prefs.get_pref_data(/datum/preference/species)
 	if(HAIR in pref_species.species_traits)

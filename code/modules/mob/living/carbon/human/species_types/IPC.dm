@@ -16,7 +16,7 @@
 	mutantlungs = null //no more collecting change for you
 	mutantappendix = null
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
-	mutant_bodyparts = list("ipc_screen", "ipc_tail")
+	mutant_bodyparts = list()
 	default_features = list(FEATURE_MUTANT_COLOR = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_tail" = "None", FEATURE_IPC_CHASSIS = "Morpheus Cyberkinetics (Custom)", FEATURE_IPC_BRAIN = "Posibrain", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	meat = /obj/item/stack/sheet/plasteel{amount = 5}
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
@@ -72,10 +72,6 @@
 			if(species_datum?.has_screen)
 				change_screen = new
 				change_screen.Grant(H)
-		if(H.dna.features[FEATURE_IPC_BRAIN] == "Man-Machine Interface")
-			mutantbrain = /obj/item/organ/brain/mmi_holder
-		else
-			mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)

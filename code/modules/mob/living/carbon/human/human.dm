@@ -1,23 +1,34 @@
-#warn revive this, merge it with the below definition. important!!!!!!!
-// /mob/living/carbon/human/Initialize(mapload, prefs_opts)
+// /mob/living/carbon/human/Initialize()
+// 	add_verb(src, /mob/living/proc/mob_sleep)
+// 	add_verb(src, /mob/living/proc/toggle_resting)
+
+// 	physiology = new()
+
+// 	icon_state = ""		//Remove the inherent human icon that is visible on the map editor. We're rendering ourselves limb by limb, having it still be there results in a bug where the basic human icon appears below as south in all directions and generally looks nasty.
+
+// 	//initialize limbs first. kind of dumb, since this is going to be overwritten by set_species(), but it's necessary
+// 	create_bodyparts()
+
+// 	// we don't call create_internal_organs because they would be overwritten by species anyway
+
+// 	setup_human_dna()
+
+
+// 	prepare_huds() //Prevents a nasty runtime on human init
+
+// 	if(dna.species)
+// 		INVOKE_ASYNC(src, PROC_REF(set_species), dna.species.type) //This generates new limbs based on the species, beware.
+
 // 	. = ..()
-// 	var/skip_pref_randomize_set = FALSE
-// 	if(isnull(prefs_opts))
-// 		// generally this is the expected default value for datum/preference/species
-// 		prefs_opts = list(/datum/preference/species = new /datum/species/human())
-// 	else if(prefs_opts == WHATEVER_SENTINEL_VALUE)
-// 		skip_pref_randomize_set = TRUE
-// 	else if(!islist(prefs_opts))
-// 		stack_trace("Unrecognized prefs_opts arg [prefs_opts] passed to /mob/living/carbon/human/Initialize()!")
 
-// 	// generally, we expect to be passed a list associating preference types to preference data, representing a preset
-// 	if(!skip_pref_randomize_set)
-// 		// handles most body-based behavior, incl. species
-// 		fill_out_prefs_and_apply(src, prefs_opts)
+// 	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_FACE_ACT, PROC_REF(clean_face))
+// 	AddComponent(/datum/component/personal_crafting)
+// 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, -6)
+// 	AddComponent(/datum/component/bloodysoles/feet)
+// 	GLOB.human_list += src
 
-
-
-/mob/living/carbon/human/Initialize()
+#warn delete the above
+/mob/living/carbon/human/Initialize(mapload, pref_value_preset)
 	add_verb(src, /mob/living/proc/mob_sleep)
 	add_verb(src, /mob/living/proc/toggle_resting)
 
@@ -32,23 +43,53 @@
 
 	setup_human_dna()
 
+	//Prevents a nasty runtime on human init
+	prepare_huds()
 
-	prepare_huds() //Prevents a nasty runtime on human init
 
-	if(dna.species)
-		INVOKE_ASYNC(src, PROC_REF(set_species), dna.species.type) //This generates new limbs based on the species, beware.
+	if(isnull(pref_value_preset))
+		// generally this is the expected default value for datum/preference/species
+		pref_value_preset = list(/datum/preference/species = new /datum/species/human())
+	#warn should have an "all default values" option that lets you
+	// else if(pref_value_preset == WHATEVER_SENTINEL_VALUE)
+	// 	skip_pref_randomize_set = TRUE
+	else if(!islist(pref_value_preset))
+		stack_trace("Unrecognized pref_value_preset arg [pref_value_preset] passed to /mob/living/carbon/human/Initialize()!")
+
+	// randomizes "downwards" from list pref_value_preset, in the process coming up with other settings for the mob
+	var/list/full_pref_preset = get_randomized_pref_value_list(pref_value_preset)
+	apply_pref_value_list_to_human(src, full_pref_preset, PREFS_NO_GEAR)
 
 	. = ..()
 
 	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_FACE_ACT, PROC_REF(clean_face))
 	AddComponent(/datum/component/personal_crafting)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, -6)
+	AddComponent(/datum/component/bloodysoles/feet)
 	GLOB.human_list += src
+// ! so. i need:
+// ! a "create this character with these prefs, but ignore gear stuff" implementation of Initialize()
+// ! a "re-randomize this character, either respecting or not respecting their name, keeping their species" proc,
+// ! a similar proc, but which randomizes species as well
+// ! a spot-change proc which changes the species and only the species but attempts to keep everything else the same.
+// ! a spectrum of procs which might respect gender name etc.
+// ! finally, all of these need to respect current health if appropriate, and deapplication issues.
 
+// ! possible implementation:
+// ! one ur-proc which:
+// !	takes a list of prefs to preserve
+// !	and a list of prefs to override
+// !	and combines those settings somehow
+// !	and randomizes (or defaults???) the rest
+// !	and then applies this to a person.
+// !
+// !
+
+
+#warn verify that this is all working properly; move DNA initialization to after preference application? that'd make some sense. note that this is subtyped by dummy -- misery!!!
 /mob/living/carbon/human/proc/setup_human_dna()
 	//initialize dna. for spawned humans; overwritten by other code
-	create_dna(src)
-	randomize_human(src)
+	dna = new /datum/dna(src)
 	dna.initialize_dna()
 
 /mob/living/carbon/human/ComponentInitialize()

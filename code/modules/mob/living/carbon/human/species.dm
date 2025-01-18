@@ -387,6 +387,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			QDEL_NULL(old)
 		I.Insert(C)
 
+#warn document what this is actually used for -- not anything external!!!!
 /datum/species/proc/is_digitigrade(mob/living/carbon/leg_haver)
 	return (digitigrade_customization == DIGITIGRADE_OPTIONAL && leg_haver.dna.features[FEATURE_LEGS_TYPE] == FEATURE_DIGITIGRADE_LEGS) || digitigrade_customization == DIGITIGRADE_FORCED
 
@@ -486,6 +487,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	// reset the mob's language holder
 	qdel(C.language_holder)
 	C.language_holder = new species_language_holder(C)
+	C.update_atom_languages()
 
 	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src)
 
@@ -803,6 +805,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// so here we set them to lists again, so they can be added to
 		H.overlays_standing[layer] = list()
 
+	#warn this pings off of BODYTYPE_DIGITIGRADE, whereas prefs doesn't touch it, instead controlling merely
 	////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE
 	if(H.dna.species.bodytype & BODYTYPE_DIGITIGRADE)
 		var/uniform_compatible = FALSE

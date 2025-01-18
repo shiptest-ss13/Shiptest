@@ -127,6 +127,7 @@
 #define FLAG_MONKEY (1<<7)
 
 //Bodytype defines for how things can be worn.
+// For ease of debugging it's pretty fucking vital that this be kept in sync with the bitfields in /code/_globalvars/bitfields.dm
 #define BODYTYPE_ORGANIC (1<<0)
 #define BODYTYPE_ROBOTIC (1<<1)
 #define BODYTYPE_HUMANOID (1<<2) //Everything
