@@ -424,8 +424,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-6"
 	},
-/obj/machinery/power/port_gen/pacman,
 /obj/effect/decal/cleanable/plasma,
+/obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "jq" = (
@@ -838,6 +838,7 @@
 	},
 /obj/item/clothing/under/syndicate/hardliners/jumpsuit,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/melee/axe/sledgehammer,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "pf" = (
@@ -1697,8 +1698,6 @@
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/wrapping,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/item/melee/axe/sledgehammer,
-/obj/item/melee/axe/sledgehammer,
 /obj/item/storage/firstaid/regular,
 /obj/item/storage/box/flares,
 /obj/item/storage/box/flares,
@@ -2034,6 +2033,7 @@
 	},
 /obj/item/storage/fancy/cigarettes/cigpack_syndicate,
 /obj/item/lighter/enigma,
+/obj/item/spacecash/bundle/c500,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "MU" = (
@@ -2172,6 +2172,7 @@
 	},
 /obj/item/clothing/under/syndicate/hardliners/jumpsuit,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/melee/axe/sledgehammer,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Oj" = (
@@ -2191,7 +2192,6 @@
 	},
 /obj/item/circuitboard/mecha/ripley/peripherals,
 /obj/item/circuitboard/mecha/ripley/main,
-/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley,
 /obj/item/mecha_parts/chassis/ripley,
 /obj/item/mecha_parts/part/ripley_torso,
 /obj/item/mecha_parts/part/ripley_right_leg{
@@ -2420,10 +2420,10 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/closet/crate/engineering/electrical,
-/obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 28
 	},
+/obj/item/stack/sheet/mineral/uranium/ten,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "SD" = (
