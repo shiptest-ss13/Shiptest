@@ -657,7 +657,7 @@
 	faction = /datum/faction/syndicate/scarborough_arms
 
 /datum/supply_pack/gun/boomslang10
-	name = "Boomslang-10 Sniper Rifle Crate"
+	name = "MSR-90 'Boomslang' Sniper Rifle Crate"
 	desc = "Contains a military variant of the Boomslang Sniper rifle equipped with an 8x sniper scope, for licenesed buyers only. Chambered in the powerful 6.5x57mm CLIP."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/boomslangmilitary)

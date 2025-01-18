@@ -594,6 +594,9 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	max_ammo = 10
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
+/obj/item/ammo_box/magazine/boomslang/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/boomslang/short
 	name = "\improper Boomslang Magazine (6.5x57mm CLIP)"
 	desc = "A 5-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and can pierce protective equipment, excluding armored vehicles."
