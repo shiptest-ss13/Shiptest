@@ -157,7 +157,10 @@
 /area/ship/engineering/engines/port)
 "cT" = (
 /obj/structure/table/reinforced,
-/obj/machinery/jukebox/boombox,
+/obj/machinery/jukebox/boombox{
+	pixel_x = -4;
+	pixel_y = 5
+	},
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/light{
 	currentcolor = "#FFFFFF"
@@ -890,6 +893,9 @@
 /obj/item/kirbyplants/random{
 	pixel_y = 20;
 	pixel_x = -10
+	},
+/obj/structure/chair/stool/bar{
+	dir = 1
 	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
