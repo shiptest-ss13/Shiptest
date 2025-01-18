@@ -12,13 +12,19 @@
 	recoil_unwielded = 3
 	recoil_backtime_multiplier = 1
 
+	zoom_amt = PISTOL_ZOOM
+
 	wield_delay = 0.2 SECONDS
 	fire_delay = 0.2 SECONDS
 	spread = 5
 	spread_unwielded = 7
+
 	wield_slowdown = PISTOL_SLOWDOWN
+	aimed_wield_slowdown = PISTOL_AIM_SLOWDOWN
 
 	muzzleflash_iconstate = "muzzle_flash_light"
+	light_range = 1
+
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "\improper Desert Eagle"
