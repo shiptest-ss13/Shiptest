@@ -88,15 +88,6 @@
 	mask = /obj/item/clothing/mask/breath
 	gloves = /obj/item/clothing/gloves/color/plasmaman
 
-/datum/outfit/chrono_agent
-	name = "Timeline Eradication Agent"
-	uniform = /obj/item/clothing/under/color/white
-	suit = /obj/item/clothing/suit/space/chronos
-	back = /obj/item/chrono_eraser
-	head = /obj/item/clothing/head/helmet/space/chronos
-	mask = /obj/item/clothing/mask/breath
-	suit_store = /obj/item/tank/internals/oxygen
-
 /datum/outfit/debug //Debug objs plus hardsuit
 	name = "Debug outfit"
 	uniform = /obj/item/clothing/under/misc/patriotsuit

@@ -36,19 +36,24 @@
 	name = FACTION_NGR
 	short_name = "NGR"
 	prefixes = PREFIX_NGR
+	parent_faction = null
 
 /datum/faction/syndicate/cybersun
 	name = FACTION_CYBERSUN
 	prefixes = PREFIX_CYBERSUN
+	parent_faction = null
 
 /datum/faction/syndicate/hardliners
 	name = FACTION_HARDLINERS
 	prefixes = PREFIX_HARDLINERS
+	//holy fucking shit this system sucks
+	parent_faction = null
 
 /datum/faction/syndicate/suns
 	name = FACTION_SUNS
 	short_name = "SUNS"
 	prefixes = PREFIX_SUNS
+	parent_faction = null
 
 /datum/faction/solgov
 	name = FACTION_SOLGOV
