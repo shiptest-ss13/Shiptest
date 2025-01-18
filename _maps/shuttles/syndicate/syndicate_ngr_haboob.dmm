@@ -62,7 +62,6 @@
 /area/ship/engineering/engines/port)
 "aD" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/frontiersmen,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
 	},
@@ -73,6 +72,7 @@
 /obj/item/radio/intercom/directional/north{
 	pixel_x = 3
 	},
+/obj/machinery/fax/syndicate,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "bw" = (
@@ -684,9 +684,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/chair/handrail{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -716,7 +713,6 @@
 /turf/template_noop,
 /area/template_noop)
 "po" = (
-/obj/structure/chair/handrail,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -954,11 +950,9 @@
 	pixel_x = -21;
 	pixel_y = 5
 	},
-/obj/structure/closet/firecloset/full{
-	anchored = 1
-	},
 /obj/effect/decal/cleanable/ash,
 /obj/machinery/firealarm/directional/north,
+/obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "sR" = (
@@ -1086,6 +1080,8 @@
 	},
 /obj/item/storage/toolbox/electrical,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/glasses/welding,
+/obj/item/storage/backpack/industrial,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "wc" = (
@@ -1540,14 +1536,14 @@
 	name = "Window Shutters";
 	id = "boobwindows";
 	pixel_x = -5;
-	pixel_y = 7
+	pixel_y = 8
 	},
 /obj/machinery/button/door{
 	name = "Bridge Shutters";
 	id = "boobbridge";
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = -1
 	},
-/obj/item/radio/intercom/wideband/directional/north,
 /obj/item/radio/intercom/wideband/directional/north,
 /obj/machinery/firealarm/directional/north{
 	pixel_x = 18
@@ -2657,10 +2653,10 @@
 	pixel_x = 10
 	},
 /obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid,
 /obj/item/stack/medical/splint,
 /obj/item/stack/medical/splint,
 /obj/machinery/firealarm/directional/south,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "YD" = (
