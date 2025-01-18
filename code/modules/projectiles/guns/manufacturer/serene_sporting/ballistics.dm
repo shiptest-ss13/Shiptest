@@ -1,5 +1,5 @@
-#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet)
-#define SERENE_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1)
+#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun)
+#define SERENE_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_SCOPE = 1)
 
 /* Micro Target */
 
@@ -32,6 +32,7 @@
 	recoil = -2
 	recoil_unwielded = -2
 
+	wield_slowdown = PISTOL_SLOWDOWN
 
 	valid_attachments = list(
 		/obj/item/attachment/m17_barrel,
@@ -92,10 +93,10 @@ EMPTY_GUN_HELPER(automatic/pistol/m17)
 	fire_sound = 'sound/weapons/gun/gauss/claris.ogg'
 
 	spread = 0
-	spread_unwielded = 25
+	spread_unwielded = 15
 	recoil = 0
 	recoil_unwielded = 2
-	wield_slowdown = 0.5
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 	wield_delay = 1 SECONDS
 
 	manufacturer = MANUFACTURER_SERENE
@@ -108,9 +109,13 @@ EMPTY_GUN_HELPER(automatic/pistol/m17)
 			"x" = 44,
 			"y" = 18,
 		),
-		ATTACHMENT_SLOT_RAIL = list(
+		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 17,
 			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 28,
+			"y" = 17,
 		)
 	)
 
@@ -134,6 +139,7 @@ EMPTY_GUN_HELPER(automatic/m12_sporter)
 	name = "Model 13 \"Larker\""
 	desc = "A common after-market modification of the Model 12 \"Sporter\" rifle, keyed to fire a three round burst."
 	burst_size = 3
+	burst_delay = 0.6
 
 	icon_state = "larker"
 	item_state = "larker"
@@ -174,11 +180,13 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 
+	slot_flags = ITEM_SLOT_BACK
+
 	spread = 0
-	spread_unwielded = 40
-	recoil = 1
+	spread_unwielded = 20
+	recoil = 0.5
 	recoil_unwielded = 3
-	wield_slowdown = 0.5
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 	wield_delay = 1 SECONDS
 
 	valid_attachments = SERENE_ATTACHMENTS
@@ -189,9 +197,13 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 			"x" = 47,
 			"y" = 21,
 		),
-		ATTACHMENT_SLOT_RAIL = list(
+		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 13,
 			"y" = 23,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 19,
 		)
 	)
 
@@ -238,7 +250,7 @@ EMPTY_GUN_HELPER(automatic/m15)
 	spread_unwielded = 16
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 0.4
+	wield_slowdown = SHOTGUN_SLOWDOWN
 	wield_delay = 0.65 SECONDS
 
 	casing_ejector = TRUE

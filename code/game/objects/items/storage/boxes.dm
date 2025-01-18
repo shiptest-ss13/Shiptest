@@ -803,27 +803,6 @@
 	playsound(loc, "rustle", 50, TRUE, -5)
 	user.visible_message("<span class='notice'>[user] hugs \the [src].</span>","<span class='notice'>You hug \the [src].</span>")
 
-/////clown box & honkbot assembly
-/obj/item/storage/box/clown
-	name = "clown box"
-	desc = "A colorful cardboard box for the clown"
-	illustration = "clown"
-
-/obj/item/storage/box/clown/attackby(obj/item/I, mob/user, params)
-	if((istype(I, /obj/item/bodypart/l_arm/robot)) || (istype(I, /obj/item/bodypart/r_arm/robot)))
-		if(contents.len) //prevent accidently deleting contents
-			to_chat(user, "<span class='warning'>You need to empty [src] out first!</span>")
-			return
-		if(!user.temporarilyRemoveItemFromInventory(I))
-			return
-		qdel(I)
-		to_chat(user, "<span class='notice'>You add some wheels to the [src]! You've got a honkbot assembly now! Honk!</span>")
-		var/obj/item/bot_assembly/honkbot/A = new
-		qdel(src)
-		user.put_in_hands(A)
-	else
-		return ..()
-
 //////
 /obj/item/storage/box/hug/medical/PopulateContents()
 	new /obj/item/stack/medical/bruise_pack(src)
@@ -1332,30 +1311,6 @@
 		/obj/item/screwdriver = 1)
 	generate_items_inside(items_inside,src)
 
-//It's a maid costume from the IRMG and Syndicate, what else.
-/obj/item/storage/box/inteqmaid
-	name = "IRMG non standard issue maid outfit"
-	desc = "A box containing a 'tactical' and 'practical' maid outfit from the IRMG."
-
-/obj/item/storage/box/inteqmaid/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/clothing/head/maidheadband/inteq = 1,
-		/obj/item/clothing/under/syndicate/inteq/skirt/maid = 1,
-		/obj/item/clothing/gloves/combat/maid/inteq = 1,)
-	generate_items_inside(items_inside,src)
-
-/obj/item/storage/box/syndimaid
-	name = "Syndicate maid outfit"
-	desc = "A box containing a 'tactical' and 'practical' maid outfit."
-	icon_state = "syndiebox"
-
-/obj/item/storage/box/syndimaid/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/clothing/head/maidheadband/syndicate = 1,
-		/obj/item/clothing/under/syndicate/skirt/maid = 1,
-		/obj/item/clothing/gloves/combat/maid = 1,)
-	generate_items_inside(items_inside,src)
-
 // because i have no idea where the fuck to put this
 /obj/item/storage/box/maid
 	name = "Maid box"
@@ -1366,7 +1321,8 @@
 		/obj/item/clothing/head/maidheadband = 1,
 		/obj/item/clothing/under/costume/maid = 1,
 		/obj/item/clothing/gloves/maid = 1,
-		/obj/item/clothing/neck/maid = 1,)
+		/obj/item/clothing/neck/maid = 1,
+		/obj/item/clothing/accessory/maidapron = 1,)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/material

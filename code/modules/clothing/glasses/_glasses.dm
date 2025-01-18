@@ -8,13 +8,20 @@
 	w_class = WEIGHT_CLASS_SMALL
 	flags_cover = GLASSESCOVERSEYES
 	slot_flags = ITEM_SLOT_EYES
-	strip_delay = 20
-	equip_delay_other = 25
 	resistance_flags = NONE
 	custom_materials = list(/datum/material/glass = 250)
 	supports_variations = VOX_VARIATION
 	greyscale_colors = list(list(14, 26), list(17, 26))
 	greyscale_icon_state = "glasses"
+
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_EYEWEAR
+	equip_delay_other = EQUIP_DELAY_EYEWEAR * 1.5
+	strip_delay = EQUIP_DELAY_EYEWEAR * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT
+
 	var/vision_flags = 0
 	var/darkness_view = 2//Base human is 2
 	var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
@@ -321,7 +328,7 @@
 	patch_one.forceMove(user.drop_location())
 	patch_two.forceMove(user.drop_location())
 	to_chat(user, "<span class='notice'>You undo the knot on the eyepatches.</span>")
-	Destroy()
+	qdel(src)
 
 /obj/item/clothing/glasses/sunglasses/big
 	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Larger than average enhanced shielding blocks flashes."

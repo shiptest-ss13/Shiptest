@@ -53,24 +53,31 @@
 	var/gas_stimulation_min = 0.002 //Nitryl, Stimulum and Freon
 
 	var/cold_message = "your face freezing and an icicle forming"
-	var/cold_level_1_threshold = 260
-	var/cold_level_2_threshold = 200
-	var/cold_level_3_threshold = 120
+	var/chilly_message = "chilly air"
+	var/chlly_threshold = T20C-20
+	var/cold_level_1_threshold = 240
+	var/cold_level_2_threshold = 220
+	var/cold_level_3_threshold = 200
 	var/cold_level_1_damage = COLD_GAS_DAMAGE_LEVEL_1 //Keep in mind with gas damage levels, you can set these to be negative, if you want someone to heal, instead.
 	var/cold_level_2_damage = COLD_GAS_DAMAGE_LEVEL_2
 	var/cold_level_3_damage = COLD_GAS_DAMAGE_LEVEL_3
 	var/cold_damage_type = BURN
 
 	var/hot_message = "your face burning and a searing heat"
-	var/heat_level_1_threshold = 360
-	var/heat_level_2_threshold = 400
-	var/heat_level_3_threshold = 1000
+	var/warm_message = "warm air"
+	var/warm_threshold = T20C+20
+	var/heat_level_1_threshold = 323
+	var/heat_level_2_threshold = 335
+	var/heat_level_3_threshold = 350
 	var/heat_level_1_damage = HEAT_GAS_DAMAGE_LEVEL_1
 	var/heat_level_2_damage = HEAT_GAS_DAMAGE_LEVEL_2
 	var/heat_level_3_damage = HEAT_GAS_DAMAGE_LEVEL_3
 	var/heat_damage_type = BURN
 
 	var/crit_stabilizing_reagent = /datum/reagent/medicine/epinephrine
+
+	///Can we smell odors? If false then we don't smell certain gases
+	var/can_smell = TRUE
 
 /obj/item/organ/lungs/New()
 	. = ..()
@@ -85,7 +92,7 @@
 		damage_type = safe_damage_type
 	)
 
-/obj/item/organ/lungs/proc/check_breath(datum/gas_mixture/breath, mob/living/carbon/human/H)
+/obj/item/organ/lungs/proc/check_breath	(datum/gas_mixture/breath, mob/living/carbon/human/H)
 //TODO: add lung damage = less oxygen gains
 	var/breathModifier = (5-(5*(damage/maxHealth)/2)) //range 2.5 - 5
 	if(H.status_flags & GODMODE)
@@ -212,6 +219,9 @@
 			H.reagents.add_reagent(R, breath.get_moles(gas) * 2) // 2 represents molarity of O2, we don't have citadel molarity
 			mole_adjustments[gas] = (gas in mole_adjustments) ? mole_adjustments[gas] - breath.get_moles(gas) : -breath.get_moles(gas)
 
+	if(can_smell)
+		handle_smell(breath, H)
+
 	for(var/gas in mole_adjustments)
 		breath.adjust_moles(gas, mole_adjustments[gas])
 
@@ -298,6 +308,8 @@
 		if (gas_breathed > gas_stimulation_min)
 			H.reagents.add_reagent(/datum/reagent/hydrogen_chloride)
 
+		breath.adjust_moles(GAS_HYDROGEN_CHLORIDE, -gas_breathed)
+
 	// Carbon Monoxide
 		var/carbon_monoxide_pp = PP(breath,GAS_CO)
 		if (carbon_monoxide_pp > gas_stimulation_min)
@@ -327,6 +339,7 @@
 			if(monoxide_reagent)
 				monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 150)
 				monoxide_reagent.metabolization_rate = 10 //purges 10 per tick
+		breath.adjust_moles(GAS_CO, -gas_breathed)
 
 	// Sulfur Dioxide
 		var/sulfur_dioxide_pp = PP(breath,GAS_SO2)
@@ -344,6 +357,8 @@
 		if (gas_breathed > gas_stimulation_min)
 			H.reagents.add_reagent(/datum/reagent/sulfur_dioxide,1)
 
+		breath.adjust_moles(GAS_SO2, -gas_breathed)
+
 	// Ozone
 		var/ozone_pp = PP(breath,GAS_O3)
 		if (prob(ozone_pp))
@@ -357,6 +372,8 @@
 		gas_breathed = breath.get_moles(GAS_O3)
 		if (gas_breathed > gas_stimulation_min)
 			H.reagents.add_reagent(/datum/reagent/ozone,1)
+
+		breath.adjust_moles(GAS_O3, -gas_breathed)
 
 	// Ammonia
 		var/ammonia_pp = PP(breath,GAS_AMMONIA)
@@ -379,7 +396,7 @@
 			//ammonia is actually disposed of naturally by humans, but extremely poorly by non mammals, maybe we can make it toxic ONLY to certain species (plural) sometime?
 			H.reagents.add_reagent(/datum/reagent/ammonia,1)
 
-		handle_smell(breath, H)
+		breath.adjust_moles(GAS_AMMONIA, -gas_breathed)
 
 ///handles the smell a few gases have
 /obj/item/organ/lungs/proc/handle_smell(datum/gas_mixture/breath, mob/living/carbon/human/H)
@@ -436,35 +453,71 @@
 		H.failed_last_breath = TRUE
 
 
-/obj/item/organ/lungs/proc/handle_breath_temperature(datum/gas_mixture/breath, mob/living/carbon/human/H) // called by human/life, handles temperatures
+/obj/item/organ/lungs/proc/handle_breath_temperature(datum/gas_mixture/breath, mob/living/carbon/human/breather) // called by human/life, handles temperatures
+	if(!breath)
+		return
 	var/breath_temperature = breath.return_temperature()
 
-	if(!HAS_TRAIT(H, TRAIT_RESISTCOLD)) // COLD DAMAGE
-		var/cold_modifier = H.dna.species.coldmod
+	if(!HAS_TRAIT(breather, TRAIT_RESISTCOLD)) // COLD DAMAGE
+		var/cold_modifier = breather.dna.species.coldmod
+		var/breath_effect_prob = 0
 		if(breath_temperature < cold_level_3_threshold)
-			H.apply_damage_type(cold_level_3_damage*cold_modifier, cold_damage_type)
+			breather.apply_damage(cold_level_3_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
+			breath_effect_prob = 100
 		if(breath_temperature > cold_level_3_threshold && breath_temperature < cold_level_2_threshold)
-			H.apply_damage_type(cold_level_2_damage*cold_modifier, cold_damage_type)
+			breather.apply_damage(cold_level_2_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
+			breath_effect_prob = 75
 		if(breath_temperature > cold_level_2_threshold && breath_temperature < cold_level_1_threshold)
-			H.apply_damage_type(cold_level_1_damage*cold_modifier, cold_damage_type)
-		if(breath_temperature < cold_level_1_threshold)
-			if(prob(20))
-				to_chat(H, "<span class='warning'>You feel [cold_message] in your [name]!</span>")
+			breather.apply_damage(cold_level_1_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
+			breath_effect_prob = 50
+		if(breath_temperature > cold_level_1_threshold)
+			breath_effect_prob = 25
 
-	if(!HAS_TRAIT(H, TRAIT_RESISTHEAT)) // HEAT DAMAGE
-		var/heat_modifier = H.dna.species.heatmod
+		if(breath_temperature < cold_level_1_threshold)
+			if(prob(sqrt(breath_effect_prob) * 6))
+				to_chat(breather, "<span class='warning'>You feel [cold_message] in your [name]!</span>")
+		else if(breath_temperature < chlly_threshold)
+			if(!breath_effect_prob)
+				breath_effect_prob = 20
+			if(prob(sqrt(breath_effect_prob) * 6))
+				to_chat(breather, "<span class='warning'>You feel [chilly_message] in your [name].</span>")
+		if(breath_temperature < chlly_threshold)
+			if(breath_effect_prob)
+				// Breathing into your mask, no particle. We can add fogged up glasses later
+				if(breather.is_mouth_covered())
+					return
+				// Even though breathing via internals TECHNICALLY exhales into the environment, we'll still block it
+				if(breather.internal)
+					return
+
+	if(!HAS_TRAIT(breather, TRAIT_RESISTHEAT)) // HEAT DAMAGE
+		var/heat_modifier = breather.dna.species.heatmod
+		var/heat_message_prob = 0
 		if(breath_temperature > heat_level_1_threshold && breath_temperature < heat_level_2_threshold)
-			H.apply_damage_type(heat_level_1_damage*heat_modifier, heat_damage_type)
+			breather.apply_damage(heat_level_1_damage * heat_modifier, heat_damage_type, spread_damage = TRUE)
+			heat_message_prob = 100
 		if(breath_temperature > heat_level_2_threshold && breath_temperature < heat_level_3_threshold)
-			H.apply_damage_type(heat_level_2_damage*heat_modifier, heat_damage_type)
+			breather.apply_damage(heat_level_2_damage * heat_modifier, heat_damage_type, spread_damage = TRUE)
+			heat_message_prob = 75
 		if(breath_temperature > heat_level_3_threshold)
-			H.apply_damage_type(heat_level_3_damage*heat_modifier, heat_damage_type)
+			breather.apply_damage(heat_level_3_damage * heat_modifier, heat_damage_type, spread_damage = TRUE)
+			heat_message_prob = 50
 		if(breath_temperature > heat_level_1_threshold)
-			if(prob(20))
-				to_chat(H, "<span class='warning'>You feel [hot_message] in your [name]!</span>")
+			heat_message_prob = 25
+
+		if(breath_temperature > heat_level_1_threshold)
+			if(prob(sqrt(heat_message_prob) * 6))
+				to_chat(breather, "<span class='warning'>You feel [hot_message] in your [name]!</span>")
+		else if(breath_temperature > warm_threshold)
+			if(!heat_message_prob)
+				heat_message_prob = 20
+			if(prob(sqrt(heat_message_prob) * 6))
+				to_chat(breather, "<span class='warning'>You feel [warm_message] in your [name].</span>")
+
+
 
 	// The air you breathe out should match your body temperature
-	breath.set_temperature(H.bodytemperature)
+	breath.set_temperature(breather.bodytemperature)
 
 /obj/item/organ/lungs/on_life()
 	. = ..()
@@ -488,6 +541,8 @@
 	icon_state = "lungs-plasma"
 
 	breathing_class = BREATH_PLASMA
+
+	can_smell = FALSE
 
 /obj/item/organ/lungs/plasmaman/populate_gas_info()
 	..()

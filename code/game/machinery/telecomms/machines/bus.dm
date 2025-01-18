@@ -23,7 +23,7 @@
 	if(!istype(signal) || !is_freq_listening(signal))
 		return
 
-	if(change_frequency && signal.frequency != FREQ_SYNDICATE)
+	if(change_frequency)
 		signal.frequency = change_frequency
 
 	if(!istype(machine_from, /obj/machinery/telecomms/processor) && machine_from != src) // Signal must be ready (stupid assuming machine), let's send it
@@ -50,7 +50,7 @@
 /obj/machinery/telecomms/bus/preset_one
 	id = "General Communications Bus"
 	network = "tcommsat"
-	freq_listening = list(FREQ_COMMAND, FREQ_COMMON)
+	freq_listening = list(FREQ_EMERGENCY, FREQ_COMMON)
 	autolinkers = list("processor1", "command", "common", "messaging", "receiverA")
 
 /obj/machinery/telecomms/bus/preset_two

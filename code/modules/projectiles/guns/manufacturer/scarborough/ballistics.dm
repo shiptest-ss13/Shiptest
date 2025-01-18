@@ -1,4 +1,4 @@
-#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet)
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/scope, /obj/item/attachment/gun)
 #define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 //########### PISTOLS ###########//
@@ -76,12 +76,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 
 /obj/item/ammo_box/magazine/m10mm_ringneck
 	name = "Ringneck pistol magazine (10mm)"
-	desc = "An 10-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
+	desc = "An 8-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "ringneck_mag-1"
 	base_icon_state = "ringneck_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
-	max_ammo = 10
+	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m10mm_ringneck/empty
@@ -299,7 +299,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	default_ammo_type = /obj/item/ammo_box/magazine/m22lr_himehabu
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m22lr_himehabu,
@@ -350,8 +350,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	ammo_type = /obj/item/ammo_casing/c22lr
 	caliber = "22lr"
 	max_ammo = 10
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = AMMO_BOX_PER_BULLET
+
+/obj/item/ammo_box/magazine/m22lr_himehabu/empty
+	start_empty = TRUE
 
 //########### SMGS ###########//
 
@@ -464,6 +467,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
 		/obj/item/attachment/foldable_stock/sidewinder
 	)
 	slot_available = list(
@@ -507,6 +512,9 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/m57_39_sidewinder/empty
+	start_empty = TRUE
+
 //########### MARKSMAN ###########//
 /obj/item/gun/ballistic/automatic/marksman/boomslang
 	name = "MSR-90 \"Boomslang\""
@@ -538,9 +546,9 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	manufacturer = MANUFACTURER_SCARBOROUGH
 	spread = -5
 	spread_unwielded = 35
-	recoil = 4
+	recoil = 2
 	recoil_unwielded = 10
-	wield_slowdown = 1
+	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
@@ -586,6 +594,9 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	max_ammo = 10
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
+/obj/item/ammo_box/magazine/boomslang/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/boomslang/short
 	name = "\improper Boomslang Magazine (6.5x57mm CLIP)"
 	desc = "A 5-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and can pierce protective equipment, excluding armored vehicles."
@@ -595,6 +606,9 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	caliber = "6.5CLIP"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
+
+/obj/item/ammo_box/magazine/boomslang/short/empty
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/marksman/taipan
 	name = "AMR-83 \"Taipan\""
@@ -657,7 +671,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m556_42_hydra,
 	)
-	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "underbarrel grenade launcher")
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto")
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_OTHER)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -680,7 +694,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 	fire_delay = 0.18 SECONDS
 	spread = 1
 	spread_unwielded = 8
-	wield_slowdown = 0.4
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
@@ -736,7 +750,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 	fire_delay = 0.08 SECONDS
 	spread = 6
 	spread_unwielded = 20
-	wield_slowdown = 0.85 //better than the lmgs since it doesnt have a bipod, still not ideal
+	wield_slowdown = SAW_SLOWDOWN //better than the lmgs since it doesnt have a bipod, still not ideal
 	wield_delay = 0.9 SECONDS //ditto
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
@@ -775,7 +789,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 
 	spread = 0
 	spread_unwielded = 12
-	wield_slowdown = 0.8 //dmrrrr
+	wield_slowdown = DMR_SLOWDOWN //dmrrrr
 	wield_delay = 0.85 SECONDS //above
 	zoomable = TRUE
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
@@ -786,72 +800,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	name = "SMR-80 \"Hydra\""
 	desc = "Scarborough Arms' premier modular assault rifle platform. This is the basic configuration, optimized for light weight and handiness. A very well-regarded, if expensive and rare, assault rifle. This one has an underslung grenade launcher attached. Chambered in 5.56x42mm CLIP."
 
-	icon_state = "hydra_gl"
-	item_state = "hydra_gl"
-
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO, FIREMODE_OTHER)
-
-	var/obj/item/gun/ballistic/revolver/grenadelauncher/secondary
-
-	slot_available = list( //no rail slot
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_SCOPE = 1,
-	)
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/Initialize()
-	. = ..()
-	secondary = new /obj/item/gun/ballistic/revolver/grenadelauncher(src)
-	RegisterSignal(secondary, COMSIG_ATOM_UPDATE_ICON, PROC_REF(secondary_update_icon))
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
-	return secondary.pre_fire(target, user, message, params, zone_override, bonus_spread)
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/can_shoot()
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode != FIREMODE_OTHER)
-		return ..()
-	return secondary.can_shoot()
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/afterattack(atom/target, mob/living/user, flag, params)
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode != FIREMODE_OTHER)
-		return ..()
-	return secondary.afterattack(target, user, flag, params)
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/attackby(obj/item/attack_obj, mob/user, params)
-	if(istype(attack_obj, secondary.magazine.ammo_type))
-		secondary.unique_action()
-		return secondary.attackby(attack_obj, user, params)
-	return ..()
-
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/can_shoot()
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode != FIREMODE_OTHER)
-		return ..()
-	return secondary.can_shoot()
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/on_wield(obj/item/source, mob/user)
-	wielded = TRUE
-	secondary.wielded = TRUE
-	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/do_wield(mob/user)
-	. = ..()
-	secondary.wielded_fully = wielded_fully
-
-/// triggered on unwield of two handed item
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/on_unwield(obj/item/source, mob/user)
-	. = ..()
-	secondary.wielded_fully = FALSE
-	secondary.wielded = FALSE
-
-
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl/proc/secondary_update_icon()
-	update_appearance()
-	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
-
+	default_attachments = list(/obj/item/attachment/gun/ballistic/launcher)
 
 /obj/item/ammo_box/magazine/m556_42_hydra
 	name = "Hydra assault rifle magazine (5.56x42mm CLIP)"
@@ -868,12 +817,18 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 		return
 	icon_state = "[base_icon_state]-[ammo_count() == 1 ? 1 : round(ammo_count(),5)]"
 
+/obj/item/ammo_box/magazine/m556_42_hydra/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/m556_42_hydra/small
 	name = "Short Hydra assault rifle magazine (5.56x42mm CLIP)"
 	desc = "A short, 20-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles; intended for the DMR variant. These rounds do moderate damage with good armor penetration."
 	icon_state = "hydra_small_mag-20"
 	base_icon_state = "hydra_small_mag"
 	max_ammo = 20
+
+/obj/item/ammo_box/magazine/m556_42_hydra/small/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/extended
 	name = "extended Hydra assault rifle magazine (5.56x42mm CLIP)"
@@ -882,6 +837,9 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	base_icon_state = "hydra_extended_mag"
 	max_ammo = 60
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/casket
 	name = "casket Hydra assault rifle magazine (5.56x42mm CLIP)"
@@ -934,7 +892,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	spread_unwielded = 16
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 0.6
+	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
 	wield_delay = 0.65 SECONDS
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS

@@ -7,9 +7,13 @@
 
 	spread = 6
 	spread_unwielded = 10
-	wield_slowdown = 0.35
+	wield_slowdown = SMG_SLOWDOWN
+	aimed_wield_slowdown = SMG_AIM_SLOWDOWN
+	zoom_amt = SMG_ZOOM
 	recoil_unwielded = 4
 	w_class = WEIGHT_CLASS_BULKY
+
+	light_range = 1
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -65,36 +69,6 @@
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 
-
-/obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev
-	name = "HP Firestorm"
-	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .45."
-	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
-
-	icon_state = "firestorm"
-	item_state = "firestorm"
-	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/c45_firestorm_mag,
-	)
-	unique_mag_sprites_for_variants = TRUE
-	burst_size = 1
-	actions_types = list()
-	fire_delay = 0.13 SECONDS
-	bolt_type = BOLT_TYPE_OPEN
-	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
-	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
-
-
-	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	wield_slowdown = 0.4
-
-/obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
-	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag/pan
-
 /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	name = "\improper SKM-24v"
 	desc = "The SKM-24v was a carbine modification of the SKM-24 during the Frontiersmen War. This, however, is just a shoddy imitation of that carbine, effectively an SKM-24 with a sawed down barrel and a folding wire stock. Can be fired with the stock folded, though accuracy suffers. Chambered in 4.6x30mm."
@@ -126,13 +100,14 @@
 	spread_unwielded = 14
 
 	wield_delay = 0.6 SECONDS
-	wield_slowdown = 0.35
+	wield_slowdown = SMG_SLOWDOWN
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
 		/obj/item/attachment/foldable_stock
 	)
 
@@ -194,6 +169,7 @@
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
 		/obj/item/attachment/foldable_stock/inteq
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
@@ -230,6 +206,7 @@
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
 		/obj/item/attachment/foldable_stock
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock)

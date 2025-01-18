@@ -441,7 +441,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		if(prob(5))
 			AdjustSleeping(100)
 
-	//Jitteriness
+	//jitteriness
 	if(jitteriness)
 		do_jitter_animation(jitteriness)
 		jitteriness = max(jitteriness - restingpwr, 0)
@@ -474,7 +474,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		drunkenness = max(drunkenness - (drunkenness * 0.04) - 0.01, 0)
 		if(drunkenness >= 11)
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk)
-			jitteriness = max(jitteriness - 3, 0)
+			adjust_jitter(max(jitteriness -3,0), max = 200)
 			throw_alert("drunk", /atom/movable/screen/alert/drunk)
 			sound_environment_override = SOUND_ENVIRONMENT_PSYCHOTIC
 		else
@@ -583,7 +583,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				natural_change = (1 / (thermal_protection + 1)) * natural_change
 
 	// Apply the natural stabilization changes
-	adjust_bodytemperature(natural_change)
+	adjust_bodytemperature(natural_change, use_insulation=FALSE)
 
 /**
  * Get the insulation that is appropriate to the temperature you're being exposed to.
@@ -635,7 +635,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
  * * use_steps (optional) Use the body temp divisors and max change rates
  * * hardsuit_fix (optional) num HUMAN_BODYTEMP_NORMAL - H.bodytemperature Use hardsuit override until hardsuits fix is done...
  */
-/mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=INFINITY, use_insulation=FALSE, use_steps=FALSE, \
+/mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=INFINITY, use_insulation=TRUE, use_steps=FALSE, \
 											hardsuit_fix=FALSE)
 	// apply insulation to the amount of change
 	if(use_insulation)

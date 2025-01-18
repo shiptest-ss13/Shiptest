@@ -42,6 +42,13 @@
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_HELMET
+	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
+	strip_delay = EQUIP_DELAY_HELMET * 1.5
+
 /obj/item/clothing/head/snowman
 	name = "Snowman Head"
 	desc = "A ball of white styrofoam. So festive."
@@ -225,18 +232,6 @@
 	desc = "A horrifying mix of beanie and softcap in CentCom green. You'd have to be pretty desperate for power over your peers to agree to wear this."
 	icon_state = "intern_hat"
 	item_state = "intern_hat"
-
-/obj/item/clothing/head/maidheadband/syndicate
-	name = "tactical maid headband"
-	desc = "Tacticute."
-	icon_state = "syndieheadband"
-	item_state = "syndieheadband"
-
-/obj/item/clothing/head/maidheadband/inteq
-	name = "inteq maid headband"
-	desc = "Tacticute."
-	icon_state = "inteqheadband"
-	item_state = "inteqheadband"
 
 /obj/item/clothing/head/inteq_peaked
 	name = "inteq peaked cap"

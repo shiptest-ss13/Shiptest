@@ -277,6 +277,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_KISS_OF_DEATH "kiss_of_death"
 /// We can handle 'dangerous' plants in botany safely
 #define TRAIT_PLANT_SAFE "plant_safe"
+///This person is aiming and should not face atoms in different directions
+#define TRAIT_AIMING "aiming"
 /// This mob overrides certian SSlag_switch measures with this special trait
 #define TRAIT_BYPASS_MEASURES "bypass_lagswitch_measures"
 //non-mob traits
@@ -305,6 +307,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// A transforming item that is actively extended / transformed
 #define TRAIT_TRANSFORM_ACTIVE "active_transform"
 #define TRAIT_WIELDED "wielded" //The item is currently being wielded
+#define TRAIT_FORCE_SUIT_STORAGE "force_suit_storage" // the item can be worn in suit storage without an outerclothing
+
+/// Equipping or unequipping an item
+#define TRAIT_EQUIPPING_OR_UNEQUIPPING "equipping_or_unequipping"
 
 //quirk traits
 #define TRAIT_ALCOHOL_TOLERANCE "alcohol_tolerance"
