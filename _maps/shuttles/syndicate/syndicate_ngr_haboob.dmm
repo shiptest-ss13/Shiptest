@@ -974,6 +974,7 @@
 	populate = 0;
 	name = "lieutenant's locker"
 	},
+/obj/item/megaphone,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "tc" = (
@@ -2114,6 +2115,9 @@
 	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/folder{
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "PQ" = (
@@ -2237,6 +2241,7 @@
 /obj/item/storage/guncase/pistol/asp{
 	mag_count = 3
 	},
+/obj/item/megaphone,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "QJ" = (
