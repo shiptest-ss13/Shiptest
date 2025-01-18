@@ -95,6 +95,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "bA" = (
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 6;
+	id = "colossus_grid"
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security)
 "bJ" = (
@@ -928,6 +932,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
+"kc" = (
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 6;
+	id = "colossus_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/port)
 "kn" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/reagent_dispensers/watertank,
@@ -1091,6 +1102,13 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
+"mu" = (
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 5;
+	id = "colossus_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew)
 "my" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -2464,6 +2482,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
+"AQ" = (
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 6;
+	id = "colossus_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "AZ" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Port Engines"
@@ -5344,7 +5369,7 @@ XJ
 "}
 (29,1,1) = {"
 XJ
-hD
+kc
 hD
 hD
 hD
@@ -5481,7 +5506,7 @@ PJ
 SC
 SC
 SC
-It
+AQ
 XJ
 XJ
 XJ
@@ -5489,7 +5514,7 @@ XJ
 XJ
 XJ
 XJ
-ot
+mu
 xT
 xT
 xT

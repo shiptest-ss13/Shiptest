@@ -33,8 +33,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: master
 
       - name: Restore SpacemanDMM cache
         id: cache-spacemandmm
