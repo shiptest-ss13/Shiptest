@@ -39,7 +39,7 @@
 	if(in_range(src, user))
 		. += "<span class='notice'>The body camera is set to a nametag of '<b>[c_tag]</b>'.</span>"
 		. += "<span class='notice'>The body camera is set to transmit on the '<b>[network[1]]</b>' network.</span>"
-		. += "<span class='notice'>It looks like a <b>multitool</b> is needed to change the settings.</span>"
+		. += "<span class='notice'>It looks like you can modify the camera settings by using a <b>multitool<b> on it.</span>"
 
 /obj/item/bodycamera/AltClick(mob/user)
 	. = ..()
@@ -60,26 +60,29 @@
 /obj/item/bodycamera/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
 	var/obj/item/multitool/M = I
-	var/list/choice_list = list("Modify the camera tag", "Save the camera network to the multitool buffer", "Transfer the network in the buffer to the camera", "Change the camera network")
-	var/choice = input(user, "Select a function", "Camera Settings") as null|anything in choice_list
+	var/list/choice_list = list("Modify the camera tag", "Change the camera network", "Save the network to the multitool buffer", "Transfer the buffered network to the camera")
+	var/choice = tgui_input_list(user, "Select an option", "Camera Configuration", choice_list)
 
 	switch(choice)
 		if("Modify the camera tag")
 			c_tag_addition = stripped_input(user, "Set a nametag for this camera. Ensure that it is no bigger than 32 characters long.", "Nametag Setup", max_length = 32)
-			c_tag = "Body Camera - " + c_tag_addition
+			if(c_tag_addition == "")
+				c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+			else
+				c_tag = c_tag_addition
 			to_chat(user, "<span class='notice'>You set [src] nametag to '[c_tag]'.</span>")
 
-		if("Save the camera network to the multitool buffer")
+		if("Change the camera network")
+			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are case sensitive.", "Network Tuning", max_length = 32)
+			to_chat(user, "<span class='notice'>You set [src] to transmit across the '[network[1]]' network.</span>")
+
+		if("Save the network to the multitool buffer")
 			M.buffer = network[1]
 			to_chat(user, "<span class='notice'>You add network '[network[1]]' to the multitool's buffer.</span>")
 
-		if("Transfer the network in the buffer to the camera")
+		if("Transfer the buffered network to the camera")
 			network[1] = M.buffer
 			to_chat(user, "<span class='notice'>You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer.</span>")
-
-		if("Change the camera network")
-			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are not case sensitive.", "Network Tuning", max_length = 32)
-			to_chat(user, "<span class='notice'>You set [src] to transmit across the '[network[1]]' network.</span>")
 
 	return TRUE
 
@@ -127,3 +130,15 @@
 	user.sight = SEE_BLACKNESS
 	user.see_in_dark = 2
 	return 1
+
+/obj/item/paper/guides/bodycam
+	name = "Portable Camera Unit Users Guide"
+	default_raw_text = "<font face='serif'><font size=2><div align='center'><u><font size=5>Portable Camera Unit User's Guide</u>\n<div align='left'><font size=3> The Mark I Portable Camera unit is a versatile solution ⠀   for all of your project management needs.\n\n<font size=4><dl><dt> Features</dt><font size=3><dd> - Real-time visual data feedback </dd><dd> - Configurable EEPROM memory settings</dd><dd> - Passive thermal regulator</dd><dd> - Long-range millimeter-wave band antenna</dd><dd> - High-capacity self-recharging battery</dd><dd> - Easy to reach power button</dd></dl>\n\n To activate the camera, simply press and hold the\n power button for one second. You should hear a chime\n and a green status light should become lit.\n\n To deactivate the camera, depress the power button\n again for one second.\n\n In order to modify the settings of your portable camera\n unit, a ISO-standard multitool will be required.\n \n Simply connect the tool to the camera's settings port,\n and you should be able to modify the internal address\n of the camera, or the network configuration.\n\n You will also be able to save the network configuration\n of the camera and copy it to other Mark I Portable\n Camera units.\n\n We hope that our tools will provide the edge you need\n in order to ensure your team stays on-task."
+
+
+
+
+
+
+
+

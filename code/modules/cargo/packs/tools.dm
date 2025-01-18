@@ -44,7 +44,8 @@
 	desc = "Contains two portable cameras, designed to help keep track of a working group at all times."
 	cost = 250
 	contains = list(/obj/item/bodycamera,
-					/obj/item/bodycamera)
+					/obj/item/bodycamera,
+					/obj/item/paper/guides/bodycam)
 	crate_name = "bodycamera crate"
 
 /datum/supply_pack/tools/assbelt
