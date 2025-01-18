@@ -1,0 +1,11 @@
+author: TDHooligan
+changes:
+  - {rscadd: "Robotic body parts now have integrity, 1 'integrity loss' represents
+      1 HP of damage that cannot be healed/repaired."}
+  - {rscadd: New 'Replace Structure' surgery that allows a roboticist to restore limb
+      integrity.}
+  - {rscadd: New 'Structure Repair Kit' craft that restores limb integrity.}
+  - {balance: 'Robotic limbs start wearing out after multiple repairs, limiting their
+      repair potential.'}
+  - {balance: Repair machinery is no longer self-operable.}
+delete-after: true
