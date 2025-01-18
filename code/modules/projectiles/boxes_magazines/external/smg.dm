@@ -89,7 +89,7 @@
 	desc = "A 24-round stick magazine for the toploading Firestorm submachine gun. These rounds do moderate damage, and perform adequately against armor."
 	icon_state = "firestorm_mag-1"
 	base_icon_state = "firestorm_mag"
-	ammo_type = /obj/item/ammo_casing/c44
+	ammo_type = /obj/item/ammo_casing/a44roum
 	caliber = ".44 Roumain"
 	max_ammo = 24
 
