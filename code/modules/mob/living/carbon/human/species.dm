@@ -149,9 +149,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	/// Minimum amount of kelvin moved toward normal body temperature per tick.
 	var/bodytemp_autorecovery_min = HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM
 	/// The maximum temperature the species is comfortable at. Going above this does not apply any effects, but warns players that the temperture is hot
-	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL) //20 c will always be below human bodytemp, this just makes it so when it can sustain that its higher
+	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL + 7) //20 c will always be below human bodytemp, this just makes it so when it can sustain that its higher
 	/// The minimum temperature the species is comfortable at. Going below this does not apply any effects, but warns players that the temperture is chilly
-	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 1)
+	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 5)
 	/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery.
 	var/bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR
 	///Similar to the autorecovery_divsor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to lose bodytemp faster.
@@ -1105,7 +1105,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			return H.equip_delay_self_check(I, bypass_equip_delay_self)
 		if(ITEM_SLOT_NECK)
 			if(H.wear_neck && !swap)
 				return FALSE
@@ -1117,13 +1117,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(!(I.slot_flags & ITEM_SLOT_BACK))
 				return FALSE
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			return H.equip_delay_self_check(I, bypass_equip_delay_self)
 		if(ITEM_SLOT_OCLOTHING)
 			if(H.wear_suit && !swap)
 				return FALSE
 			if(!(I.slot_flags & ITEM_SLOT_OCLOTHING))
 				return FALSE
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			return H.equip_delay_self_check(I, bypass_equip_delay_self)
 		if(ITEM_SLOT_GLOVES)
 			if(H.gloves && !swap)
 				return FALSE
@@ -1131,7 +1131,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(H.num_hands < 2)
 				return FALSE
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			return H.equip_delay_self_check(I, bypass_equip_delay_self)
 		if(ITEM_SLOT_FEET)
 			if(H.shoes && !swap)
 				return FALSE
@@ -1143,7 +1143,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>This footwear isn't compatible with your feet!</span>")
 				return FALSE
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			return H.equip_delay_self_check(I, bypass_equip_delay_self)
 		if(ITEM_SLOT_BELT)
 			if(H.belt && !swap)
 				return FALSE
@@ -1156,7 +1156,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(!(I.slot_flags & ITEM_SLOT_BELT))
 				return
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			return H.equip_delay_self_check(I, bypass_equip_delay_self)
 		if(ITEM_SLOT_EYES)
 			if(H.glasses && !swap)
 				return FALSE
@@ -1167,7 +1167,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/obj/item/organ/eyes/E = H.getorganslot(ORGAN_SLOT_EYES)
 			if(E?.no_glasses)
 				return FALSE
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			return H.equip_delay_self_check(I, bypass_equip_delay_self)
 		if(ITEM_SLOT_HEAD)
 			if(H.head && !swap)
 				return FALSE
@@ -1175,7 +1175,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			return H.equip_delay_self_check(I, bypass_equip_delay_self)
 		if(ITEM_SLOT_EARS)
 			if(H.ears && !swap)
 				return FALSE
@@ -1183,13 +1183,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			return H.equip_delay_self_check(I, bypass_equip_delay_self)
 		if(ITEM_SLOT_ICLOTHING)
 			if(H.w_uniform && !swap)
 				return FALSE
 			if(!(I.slot_flags & ITEM_SLOT_ICLOTHING))
 				return FALSE
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			return H.equip_delay_self_check(I, bypass_equip_delay_self)
 		if(ITEM_SLOT_ID)
 			if(H.wear_id)
 				if(SEND_SIGNAL(H.wear_id, COMSIG_TRY_STORAGE_CAN_INSERT, I, H, TRUE))
@@ -1203,7 +1203,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(!(I.slot_flags & ITEM_SLOT_ID))
 				return FALSE
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			return H.equip_delay_self_check(I, bypass_equip_delay_self)
 		if(ITEM_SLOT_LPOCKET)
 			if(HAS_TRAIT(I, TRAIT_NODROP)) //Pockets aren't visible, so you can't move TRAIT_NODROP items into them.
 				return FALSE
@@ -1273,16 +1273,27 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return TRUE
 		if(ITEM_SLOT_BACKPACK)
 			if(H.back)
-				if(SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_CAN_INSERT, I, H, TRUE))
+				if(SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_CAN_INSERT, I, H, TRUE, TRUE))
 					return TRUE
 			return FALSE
 	return FALSE //Unsupported slot
 
-/datum/species/proc/equip_delay_self_check(obj/item/I, mob/living/carbon/human/H, bypass_equip_delay_self)
-	if(!I.equip_delay_self || bypass_equip_delay_self)
+/datum/species/proc/equip_delay_self_check(obj/item/to_equip, mob/living/carbon/human/ourhuman, bypass_equip_delay_self)
+	if(!to_equip.equip_delay_self || bypass_equip_delay_self)
 		return TRUE
-	H.visible_message("<span class='notice'>[H] start putting on [I]...</span>", "<span class='notice'>You start putting on [I]...</span>")
-	return do_after(H, I.equip_delay_self, target = H)
+
+	ourhuman.visible_message(
+	span_notice("[ourhuman] start putting on [to_equip]..."),
+	span_notice("You start putting on [to_equip]...")
+	)
+
+	. = to_equip.do_equip_wait(ourhuman, to_equip.equipping_sound)
+
+	if(.)
+		ourhuman.visible_message(
+			span_notice("[src] puts on [to_equip]."),
+			span_notice("You puts on [to_equip].")
+		)
 
 /datum/species/proc/before_equip_job(datum/job/J, mob/living/carbon/human/H)
 	return
@@ -1352,7 +1363,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if(H.satiety < 0)
 			H.satiety++
 			if(prob(round(-H.satiety/40)))
-				H.Jitter(5)
+				H.adjust_jitter(5, max = 100)
 			hunger_rate = 3 * HUNGER_FACTOR
 		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_nutrition(-hunger_rate)
@@ -1419,13 +1430,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	if(radiation > RAD_MOB_VOMIT && prob(RAD_MOB_VOMIT_PROB))
 		H.vomit(10, TRUE)
-
-	if(radiation > RAD_MOB_MUTATE)
-		if(prob(1))
-			to_chat(H, "<span class='danger'>You mutate!</span>")
-			H.easy_randmut(NEGATIVE+MINOR_NEGATIVE)
-			H.emote("gasp")
-			H.domutcheck()
 
 	if(radiation > RAD_MOB_HAIRLOSS)
 		if(prob(15) && !(H.hairstyle == "Bald") && (HAIR in species_traits))
@@ -1944,13 +1948,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					else
 						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 3)
 
-		//Stay hydrated.
-		if(!(H.mob_biotypes & MOB_ROBOTIC) && H.reagents.has_reagent(/datum/reagent/water) && H.stat != DEAD)
-			burn_damage -= clamp(H.reagents.get_reagent_amount(/datum/reagent/water) /10, 0, 2)
-		// if youre dead, no need to sweat?
-		if(H.stat != DEAD)
-			burn_damage -= (max(burn_damage - 2.5, 0))
-
 		// Apply species and physiology modifiers to heat damage
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
 
@@ -2005,7 +2002,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		firemodifier = min(firemodifier, 0)
 
 	// this can go below 5 at log 2.5
-	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 2,0)
+	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 5,0)
 	return burn_damage
 
 /// Handle the air pressure of the environment

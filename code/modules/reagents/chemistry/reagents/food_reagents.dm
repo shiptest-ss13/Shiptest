@@ -340,11 +340,11 @@
 			M.Dizzy(5)
 			M.set_drugginess(30)
 		if(5 to 10)
-			M.Jitter(10)
+			M.adjust_jitter(10)
 			M.Dizzy(10)
 			M.set_drugginess(35)
 		if (10 to INFINITY)
-			M.Jitter(20)
+			M.adjust_jitter(20)
 			M.Dizzy(20)
 			M.set_drugginess(40)
 	..()
@@ -361,7 +361,7 @@
 		if(prob(min(25,current_cycle)))
 			to_chat(M, "<span class='danger'>You can't get the scent of garlic out of your nose! You can barely think...</span>")
 			M.Paralyze(10)
-			M.Jitter(10)
+			M.adjust_jitter(10)
 	else if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(H.job == "Cook")
@@ -428,7 +428,7 @@
 	taste_description = "your imprisonment"
 
 /datum/reagent/consumable/hot_ramen/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
+	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/hell_ramen
@@ -776,7 +776,7 @@
 	..()
 
 /datum/reagent/consumable/pyre_elementum/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(2 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())		// Doesn't kill you like capsaicin
+	M.adjust_bodytemperature(2 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)		// Doesn't kill you like capsaicin
 	if(!ingested)							// Unless you didn't eat it
 		M.adjustFireLoss(0.25*REM, 0)
 	..()

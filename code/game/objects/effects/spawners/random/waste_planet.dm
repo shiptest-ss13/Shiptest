@@ -37,16 +37,16 @@
 
 /obj/effect/spawner/random/waste/radiation
 	loot = list(
-		/obj/structure/radioactive = 6,
-		/obj/structure/radioactive/stack = 6,
-		/obj/structure/radioactive/waste = 6
+		/obj/structure/hazard/radioactive = 6,
+		/obj/structure/hazard/radioactive/stack = 6,
+		/obj/structure/hazard/radioactive/waste = 6
 	)
 
 /obj/effect/spawner/random/waste/radiation/more_rads
 	loot = list(
-		/obj/structure/radioactive = 3,
-		/obj/structure/radioactive/stack = 12,
-		/obj/structure/radioactive/waste = 12
+		/obj/structure/hazard/radioactive = 3,
+		/obj/structure/hazard/radioactive/stack = 12,
+		/obj/structure/hazard/radioactive/waste = 12
 	)
 
 /obj/effect/spawner/random/waste/atmos_can
@@ -78,6 +78,9 @@
 
 /obj/effect/spawner/random/waste/girder
 	loot = list(
+		/obj/structure/girder/wasteworld,
+		/obj/structure/girder/wasteworld,
+		/obj/structure/girder/wasteworld,
 		/obj/structure/girder,
 		/obj/structure/girder/displaced,
 		/obj/structure/girder/reinforced
@@ -113,6 +116,7 @@
 		/obj/item/stock_parts/manipulator/nano,
 		/obj/item/stock_parts/micro_laser/high,
 		/obj/item/stock_parts/matter_bin/adv,
+		/obj/item/stock_parts/cell/super/empty,
 	)
 	spawn_loot_count = 1
 	spawn_loot_chance = 100
@@ -124,6 +128,7 @@
 		/obj/item/stock_parts/manipulator/pico,
 		/obj/item/stock_parts/micro_laser/ultra,
 		/obj/item/stock_parts/matter_bin/super,
+		/obj/item/stock_parts/cell/hyper/empty,
 	)
 
 
@@ -134,6 +139,7 @@
 		/obj/item/stock_parts/manipulator/femto,
 		/obj/item/stock_parts/micro_laser/quadultra,
 		/obj/item/stock_parts/matter_bin/bluespace,
+		/obj/item/stock_parts/cell/bluespace/empty,
 	)
 
 

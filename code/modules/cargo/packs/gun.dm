@@ -31,10 +31,11 @@
 
 /datum/supply_pack/gun/commanders
 	name = "Commander Pistol Crate"
-	desc = "Contains a modified Candor 'Commander' pistol, produced by Nanotrasen and chambered in 9mm."
+	desc = "Contains a double stacked Commander pistol, produced by Nanotrasen along with Vigilitas Interstellar and is chambered in 9mm."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/pistol/commander)
 	faction = /datum/faction/nt
+	faction_discount = 20
 
 /datum/supply_pack/gun/ringneck
 	name = "Ringneck Pistol Crate"
@@ -58,6 +59,15 @@
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/pistol/cm70)
 	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/commissioner
+	name = "Commissioner Pistol Crate"
+	desc = "Contains a modified Commander pistol, adjusted to fit the IRMG's standards and painted in the brown and gold of all IRMG firearms."
+	cost = 750
+	contains = list(/obj/item/storage/guncase/commissioner)
+	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -180,6 +190,13 @@
 	crate_name = "energy gun crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	faction = /datum/faction/nt
+
+/datum/supply_pack/gun/scatterlaser
+	name = "Scatter Laser Crate"
+	desc = "Contains a multi-function scatter energy gun, capable of firing armour penetrating slugs, and devastating scattered laser bolts."
+	cost = 1250
+	contains = list(/obj/item/gun/energy/laser/scatter)
+	crate_name = "scatter laser crate"
 
 /datum/supply_pack/gun/ion
 	name = "Ion Rifle Crate"
@@ -351,11 +368,11 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/wt550
-	name = "WT-550 Auto Rifle Crate"
+	name = "WT-550 PDW Crate"
 	desc = "Contains a high-powered, automatic personal defense weapon chambered in 4.6x30mm."
-	cost = 4000
+	cost = 3000
 	contains = list(/obj/item/storage/guncase/wt550)
-	crate_name = "auto rifle crate"
+	crate_name = "PDW crate"
 	faction_discount = 10
 	faction = /datum/faction/nt
 
@@ -454,6 +471,7 @@
 	contains = list(/obj/item/storage/guncase/winchester)
 	crate_name = "rifle crate"
 	faction = /datum/faction/srm
+	faction_discount = 20
 
 /datum/supply_pack/gun/absolution
 	name = "Absolution Lever Action Rifle Crate"
@@ -493,6 +511,16 @@
 	contains = list(/obj/item/storage/guncase/skm_inteq)
 	crate_name = "auto rifle crate"
 	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/gar
+	name = "Solarian 'GAR' Automatic Rifle"
+	desc = "A modern solarian military rifle, chambered in ferromagnetic lances. Not for export."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/gar)
+	crate_name = "auto rifle crate"
+	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -536,6 +564,27 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/* Heavy */
+
+/datum/supply_pack/gun/cm40
+	name = "CM-40 Squad Automatic Weapon"
+	desc = "Contains a CM-40 Squad Automatic Weapon, a CLIP-produced LMG for Minuteman usage in situations that require heavy firepower. For Minuteman use only."
+	cost = 6000
+	contains = list(/obj/item/storage/guncase/cm40)
+	crate_name = "LMG crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/saw80
+	name = "SAW-80 Squad Automatic Weapon"
+	desc = "Contains one of the rarely-produced SAW-80 Squad Automatic Weapon platforms, exclusively for licensed buyers. Remember, short controlled bursts!"
+	cost = 7000
+	contains = list(/obj/item/storage/guncase/saw80)
+	crate_name = "LMG crate"
+	faction = /datum/faction/syndicate/scarborough_arms
+	faction_discount = 0
+	faction_locked = TRUE
 
 /* Marksman Rifles */
 
@@ -608,7 +657,7 @@
 	faction = /datum/faction/syndicate/scarborough_arms
 
 /datum/supply_pack/gun/boomslang10
-	name = "Boomslang-10 Sniper Rifle Crate"
+	name = "MSR-90 'Boomslang' Sniper Rifle Crate"
 	desc = "Contains a military variant of the Boomslang Sniper rifle equipped with an 8x sniper scope, for licenesed buyers only. Chambered in the powerful 6.5x57mm CLIP."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/boomslangmilitary)
@@ -644,50 +693,3 @@
 	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE
-
-/* Attachments */
-
-/datum/supply_pack/gun/attachment/rail_light
-	name = "Tactical Rail Light Crate"
-	desc = "Contains a single rail light to be mounted on a firearm."
-	cost = 100
-	contains = list(/obj/item/attachment/rail_light)
-	crate_name = "rail light crate"
-
-/datum/supply_pack/gun/attachment/laser_sight
-	name = "Laser Sight Crate"
-	desc = "Contains a single rail light to be mounted on a firearm."
-	cost = 250
-	contains = list(/obj/item/attachment/laser_sight)
-	crate_name = "laser sight crate"
-
-/datum/supply_pack/gun/attachment/bayonet
-	name = "Bayonet Crate"
-	desc = "Contains a single bayonet to be mounted on a firearm."
-	cost = 250
-	contains = list(/obj/item/attachment/bayonet)
-	crate_name = "bayonet crate"
-
-/datum/supply_pack/gun/attachment/ebayonet
-	name = "Energy Bayonet Crate"
-	desc = "Contains a single energy bayonet to be mounted on a firearm, exclusive for Scarborough Firearms."
-	cost = 500
-	contains = list(/obj/item/attachment/energy_bayonet)
-	crate_name = "bayonet crate"
-	faction = /datum/faction/syndicate/scarborough_arms
-	faction_discount = 0
-	faction_locked = TRUE
-
-/datum/supply_pack/gun/attachment/silencer
-	name = "Suppressor Crate"
-	desc = "Contains a single suppressor to be mounted on a firearm."
-	cost = 250
-	contains = list(/obj/item/attachment/silencer)
-	crate_name = "suppressor crate"
-
-/datum/supply_pack/gun/attachment/sling
-	name = "Shoulder Sling Crate"
-	desc = "Contains a single shoulder sling to be mounted on a firearm for easy carrying without armor holsters. Only compatible with longarms."
-	cost = 250
-	contains = list(/obj/item/attachment/sling)
-	crate_name = "shoulder sling crate"

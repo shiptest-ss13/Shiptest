@@ -13,45 +13,28 @@
 	},
 /area/hangar)
 "al" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
-	dir = 8
+/obj/effect/turf_decal/arrows{
+	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "am" = (
 /turf/closed/indestructible/reinforced,
 /area/hangar)
 "ao" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/landmark/outpost/hangar_dock,
+/turf/open/floor/hangar,
 /area/hangar)
 "ap" = (
-/obj/structure/marker_beacon{
-	picked_color = "Teal"
-	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aq" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
-	dir = 1
-	},
-/obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/grimy,
 /area/hangar)
 "av" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
+/turf/open/floor/plasteel/tech{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -66,27 +49,17 @@
 /turf/closed/indestructible/reinforced,
 /area/hangar)
 "az" = (
-/obj/effect/turf_decal/arrows{
-	dir = 4
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aA" = (
-/obj/machinery/elevator_call_button{
-	pixel_y = 25
-	},
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/plasteel/grimy,
 /area/hangar)
 "aB" = (
-/obj/effect/landmark/outpost/hangar_dock,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/closed/indestructible/reinforced/rust,
 /area/hangar)
 "aC" = (
 /obj/effect/turf_decal/arrows{
@@ -97,18 +70,17 @@
 	},
 /area/hangar)
 "aE" = (
-/obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 1
 	},
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aH" = (
 /turf/template_noop,
 /area/template_noop)
 "aJ" = (
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "aL" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -119,53 +91,44 @@
 	},
 /area/hangar)
 "aM" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/hangar,
 /area/hangar)
 "aN" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
+	dir = 8
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
+"aO" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
+/area/hangar)
+"aP" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"aO" = (
-/obj/machinery/atmospherics/components/unary/passive_vent{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"aP" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aT" = (
-/obj/effect/turf_decal/arrows{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/structure/table,
+/turf/open/floor/plasteel/grimy,
 /area/hangar)
 "aY" = (
-/obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 9
 	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aZ" = (
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
+"gQ" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "jk" = (
 /obj/effect/landmark/outpost/elevator,
@@ -173,23 +136,87 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"jL" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
+	dir = 1
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
+"kI" = (
+/obj/effect/landmark/outpost/elevator_machine,
+/obj/machinery/elevator_call_button{
+	pixel_y = 25
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
 "qz" = (
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
 /area/hangar)
+"rC" = (
+/obj/effect/turf_decal/arrows{
+	dir = 1
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
 "rQ" = (
-/obj/machinery/atmospherics/pipe/simple/general,
 /turf/closed/indestructible/reinforced,
+/area/template_noop)
+"ud" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
+/area/hangar)
+"yo" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/hangar)
+"Co" = (
+/obj/effect/turf_decal/arrows{
+	dir = 8
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
+"Kl" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 10
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
+"LV" = (
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
+"Qc" = (
+/obj/structure/marker_beacon{
+	picked_color = "Teal"
+	},
+/turf/open/floor/hangar,
+/area/hangar)
+"Rz" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/plasteel/grimy,
+/area/hangar)
+"WI" = (
+/obj/effect/landmark/outpost/hangar_numbers,
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 
 (1,1,1) = {"
 aH
 aH
 aH
-am
-am
-am
+aH
+aH
+aB
+aB
+aB
 am
 am
 am
@@ -212,18 +239,19 @@ am
 am
 ay
 am
-am
-am
+aB
 am
 "}
 (2,1,1) = {"
 aH
 aH
 aH
-am
-aZ
-aZ
-aM
+aH
+aH
+aB
+aP
+aP
+Kl
 aL
 aL
 aL
@@ -244,52 +272,54 @@ aL
 aL
 aL
 aL
-ao
-aZ
-aZ
-am
+aY
+aP
+aB
 "}
 (3,1,1) = {"
 aH
 aH
 aH
-am
-aZ
+aH
+aH
+aB
 aZ
 aM
+ap
+ac
+ac
+aC
+ac
+av
+ac
+ac
+aC
+ac
+av
+ac
+ac
+aC
+ac
+av
 ac
 ac
 aC
 ac
 ac
-ac
-ac
-aC
-ac
-ac
-ac
-ac
-aC
-ac
-ac
-ac
-ac
-aC
-ac
-ac
-ao
-aZ
-aZ
-am
+az
+aM
+aB
 "}
 (4,1,1) = {"
 aH
 aH
 aH
-am
-aZ
+aH
+aH
+aB
 aZ
 aM
+ap
 ad
 ad
 ad
@@ -310,19 +340,20 @@ ad
 ad
 ad
 ad
-ao
-aZ
-aZ
-am
+az
+aM
+aB
 "}
 (5,1,1) = {"
 aH
 aH
 aH
+aH
+aH
 am
-aZ
 aZ
 aM
+ap
 aJ
 aJ
 aJ
@@ -342,20 +373,21 @@ aJ
 aJ
 aJ
 aJ
-aB
 ao
-aZ
-aZ
-am
+az
+aM
+aB
 "}
 (6,1,1) = {"
 aH
 aH
 aH
+aH
+aH
 am
-aZ
 aZ
 aM
+ap
 aJ
 aJ
 aJ
@@ -376,20 +408,21 @@ aJ
 aJ
 aJ
 aJ
-ao
-aZ
-aZ
-am
+az
+aM
+aB
 "}
 (7,1,1) = {"
 aH
 aH
 aH
-am
+aH
+aH
+aB
 aZ
-az
-aM
+al
 ap
+Qc
 aJ
 aJ
 aJ
@@ -408,20 +441,21 @@ aJ
 aJ
 aJ
 aJ
-ap
-ao
+Qc
 az
-aZ
+al
 am
 "}
 (8,1,1) = {"
 aH
 aH
 aH
-am
-aZ
+aH
+aH
+aB
 aZ
 aM
+ap
 aJ
 aJ
 aJ
@@ -442,19 +476,20 @@ aJ
 aJ
 aJ
 aJ
-ao
-aZ
-aZ
+az
+aM
 am
 "}
 (9,1,1) = {"
 aH
 aH
 aH
-am
+aH
+aH
+aB
 aZ
-aZ
-av
+aM
+gQ
 aJ
 aJ
 aJ
@@ -475,19 +510,20 @@ aJ
 aJ
 aJ
 aJ
-aq
-aZ
-aZ
+aE
+aM
 am
 "}
 (10,1,1) = {"
 aH
 aH
 aH
-am
-aZ
+aH
+aH
+aB
 aZ
 aM
+ap
 aJ
 aJ
 aJ
@@ -508,19 +544,20 @@ aJ
 aJ
 aJ
 aJ
-ao
-aZ
-aZ
+az
+aM
 am
 "}
 (11,1,1) = {"
-aH
-aH
-aH
 am
-aZ
-aZ
+am
+am
+am
+am
+aB
+am
 aM
+ap
 aJ
 aJ
 aJ
@@ -541,20 +578,21 @@ aJ
 aJ
 aJ
 aJ
-ao
-aZ
-aZ
+az
+aM
 am
 "}
 (12,1,1) = {"
-aH
-aH
-aH
 am
-aZ
-az
-aM
+qz
+qz
+qz
+qz
+jk
+am
+kI
 ap
+Qc
 aJ
 aJ
 aJ
@@ -573,153 +611,158 @@ aJ
 aJ
 aJ
 aJ
-ap
-ao
+Qc
 az
-aZ
+al
 am
 "}
 (13,1,1) = {"
-aH
-aH
-aH
 am
+qz
+qz
+qz
+qz
+qz
+ax
 aZ
-aZ
+ap
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+az
 aM
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-ao
-aZ
-aZ
 am
 "}
 (14,1,1) = {"
-aH
-aH
-aH
 am
-aZ
-aZ
+qz
+qz
+qz
+qz
+qz
+ax
+WI
+ap
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+az
 aM
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-ao
-aZ
-aZ
-am
+aB
 "}
 (15,1,1) = {"
-aH
-aH
-aH
 am
+qz
+qz
+qz
+qz
+qz
+ax
 aZ
-aZ
+ap
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+az
 aM
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-ao
-aZ
-aZ
-am
+aB
 "}
 (16,1,1) = {"
-aH
-aH
-aH
+am
+qz
+qz
+qz
+qz
+qz
 am
 aZ
-aZ
+ap
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+az
 aM
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-aJ
-ao
-aZ
-aZ
-am
+aB
 "}
 (17,1,1) = {"
-aH
-aH
-aH
 am
-aZ
-az
+am
+am
+am
+am
+am
+am
 aM
 ap
+Qc
 aJ
 aJ
 aJ
@@ -738,20 +781,21 @@ aJ
 aJ
 aJ
 aJ
-ap
-ao
+Qc
 az
-aZ
-am
+al
+aB
 "}
 (18,1,1) = {"
 aH
 aH
 aH
+aH
+aH
 am
 aZ
-aZ
 aM
+ap
 aJ
 aJ
 aJ
@@ -772,19 +816,20 @@ aJ
 aJ
 aJ
 aJ
-ao
-aZ
-aZ
+az
+aM
 am
 "}
 (19,1,1) = {"
 aH
 aH
 aH
+aH
+aH
 am
 aZ
-aZ
-av
+aM
+gQ
 aJ
 aJ
 aJ
@@ -805,19 +850,20 @@ aJ
 aJ
 aJ
 aJ
-aq
-aZ
-aZ
+aE
+aM
 am
 "}
 (20,1,1) = {"
 aH
 aH
 aH
+aH
+aH
 am
 aZ
-aZ
 aM
+ap
 aJ
 aJ
 aJ
@@ -838,19 +884,20 @@ aJ
 aJ
 aJ
 aJ
-ao
-aZ
-aZ
+az
+aM
 am
 "}
 (21,1,1) = {"
 aH
 aH
 aH
+aH
+aH
 am
 aZ
-aZ
 aM
+ap
 aJ
 aJ
 aJ
@@ -871,20 +918,21 @@ aJ
 aJ
 aJ
 aJ
-ao
-aZ
-aZ
+az
+aM
 am
 "}
 (22,1,1) = {"
 aH
 aH
 aH
+aH
+rQ
 am
 aZ
-az
-aM
+Co
 ap
+Qc
 aJ
 aJ
 aJ
@@ -903,20 +951,21 @@ aJ
 aJ
 aJ
 aJ
-ap
-ao
+Qc
 az
-aZ
+al
 am
 "}
 (23,1,1) = {"
 aH
 aH
 aH
+aH
 rQ
 aO
-aZ
+Rz
 aM
+ap
 aJ
 aJ
 aJ
@@ -937,19 +986,20 @@ aJ
 aJ
 aJ
 aJ
-ao
-aZ
-aZ
+az
+aM
 am
 "}
 (24,1,1) = {"
-am
-am
-am
-am
-am
+aH
+aH
+aH
+aH
+rQ
+yo
 aA
 aM
+ap
 aJ
 aJ
 aJ
@@ -970,93 +1020,90 @@ aJ
 aJ
 aJ
 aJ
-ao
-aZ
-aZ
+az
+aM
 am
 "}
 (25,1,1) = {"
-am
-qz
-qz
-jk
-ax
-aZ
-al
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
-aN
+aH
+aH
+aH
+aH
+rQ
+aT
+aA
+aM
 aN
 aP
-aZ
-aZ
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+aP
+jL
+aM
 am
 "}
 (26,1,1) = {"
-am
-qz
-qz
-qz
-ax
-aY
-aZ
-aZ
-aZ
-aT
-aZ
-aZ
-aZ
-aZ
-aT
-aZ
-aZ
-aZ
-aZ
-aT
-aZ
-aZ
-aZ
-aZ
-aT
-aZ
-aZ
-aZ
-aZ
-aZ
+aH
+aH
+aH
+aH
+rQ
+ud
+aA
+aM
+aM
+aM
+aM
+rC
+aM
+aM
+aM
+aM
+rC
+aM
+aM
+aM
+aM
+rC
+aM
+aM
+aM
+aM
+rC
+aM
+aM
+aM
+aM
 am
 "}
 (27,1,1) = {"
-am
-qz
-qz
-qz
-ax
+aH
+aH
+aH
+aH
+rQ
+aq
+aA
 aZ
 aZ
 aZ
-aE
-aZ
-aZ
-aZ
-aZ
-aZ
-aZ
+LV
 aZ
 aZ
 aZ
@@ -1067,14 +1114,24 @@ aZ
 aZ
 aZ
 aZ
-aE
 aZ
 aZ
 aZ
 aZ
-am
+aZ
+aZ
+LV
+aZ
+aZ
+aZ
+aB
 "}
 (28,1,1) = {"
+aH
+aH
+aH
+aH
+rQ
 am
 am
 am
@@ -1090,20 +1147,16 @@ am
 am
 am
 am
+aB
+aB
+aB
 am
 am
 am
 am
 am
+aB
 am
-am
-am
-am
-am
-am
-am
-am
-am
-am
-am
+aB
+aB
 "}

@@ -287,19 +287,6 @@
 	item_path = /obj/item/necromantic_stone
 	category = "Assistance"
 
-/datum/spellbook_entry/item/armor
-	name = "Mastercrafted Armor Set"
-	desc = "An artefact suit of armor that allows you to cast spells while providing more protection against attacks and the void of space."
-	item_path = /obj/item/clothing/suit/space/hardsuit/wizard
-	category = "Defensive"
-
-/datum/spellbook_entry/item/armor/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
-	. = ..()
-	if(.)
-		new /obj/item/tank/internals/oxygen(get_turf(user)) //i need to BREATHE
-		new /obj/item/clothing/shoes/sandal/magic(get_turf(user)) //In case they've lost them.
-		new /obj/item/clothing/gloves/combat/wizard(get_turf(user))//To complete the outfit
-
 /datum/spellbook_entry/item/contract
 	name = "Contract of Apprenticeship"
 	desc = "A magical contract binding an apprentice wizard to your service, using it will summon them to your side."
