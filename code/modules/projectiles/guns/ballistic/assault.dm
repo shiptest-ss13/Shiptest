@@ -6,6 +6,9 @@
 	default_firemode = FIREMODE_SEMIAUTO
 	wield_delay = 0.8 SECONDS
 	wield_slowdown = RIFLE_SLOWDOWN
+	aimed_wield_slowdown = RIFLE_AIM_SLOWDOWN
+
+	zoom_amt = RIFLE_ZOOM
 
 	fire_delay = 0.2 SECONDS
 
@@ -19,6 +22,8 @@
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16
+
+	light_range = 2
 
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
@@ -46,6 +51,22 @@
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/skm_762_40,
+	)
+
+	//truly a doohickey for every occasion
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+		/obj/item/attachment/energy_bayonet,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
 	spread = 1

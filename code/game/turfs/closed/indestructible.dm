@@ -100,6 +100,12 @@
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
+/turf/closed/indestructible/reinforced/rust
+	name = "rusted reinforced wall"
+	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi'
+	icon_state = "rusty_reinforced_wall-0"
+	base_icon_state = "rusty_reinforced_wall"
+
 /turf/closed/indestructible/titanium
 	name = "wall"
 	desc = "A light-weight titanium wall used in shuttles. Effectively impervious to conventional methods of destruction."
