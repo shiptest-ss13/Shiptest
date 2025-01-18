@@ -34,6 +34,9 @@
 
 	var/turf/curloc = get_turf(chassis)
 	var/turf/targloc = get_turf(target)
+
+	var/modifiers = params2list(params)
+
 	if (!targloc || !istype(targloc) || !curloc)
 		return 0
 	if (targloc == curloc)
@@ -53,7 +56,7 @@
 				spread = round((rand() - 0.5) * variance)
 			else
 				spread = round((i / projectiles_per_shot - 0.5) * variance)
-		A.preparePixelProjectile(target, chassis.occupant, params, spread)
+		A.preparePixelProjectile(target, chassis.occupant, modifiers, spread)
 
 		A.fire()
 		playsound(chassis, fire_sound, 50, TRUE)

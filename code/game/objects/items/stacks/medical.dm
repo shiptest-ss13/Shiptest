@@ -144,7 +144,7 @@
 	self_delay = 20
 	max_amount = 12
 	grind_results = list(/datum/reagent/cellulose = 2)
-	custom_price = 100
+	custom_price = 50
 
 /obj/item/stack/medical/gauze/twelve
 	amount = 12
@@ -373,6 +373,7 @@
 	self_delay = 40
 	other_delay = 15
 	splint_fracture = TRUE
+	custom_price = 50
 
 /obj/item/stack/medical/splint/heal(mob/living/target, mob/user)
 	. = ..()

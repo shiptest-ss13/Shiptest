@@ -179,10 +179,8 @@
 /obj/item/reagent_containers/hypospray/medipen/morphine
 	name = "morphine medipen"
 	desc = "A rapid way to get you out of a tight situation and fast! You'll feel rather drowsy, though."
-	icon_state = "morphen"
-	base_icon_state = "morphen"
-	item_state = "morphen"
 	list_reagents = list(/datum/reagent/medicine/morphine = 10)
+	custom_price = 75
 
 /obj/item/reagent_containers/hypospray/medipen/oxandrolone
 	name = "oxandrolone medipen"
@@ -233,16 +231,6 @@
 		return
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? 1 : 0]"
 
-/* Replaced with variant in whitesands/code/modules/reagents/reagent_containers/hypospray.dm
-/obj/item/reagent_containers/hypospray/medipen/survival
-	name = "survival medipen"
-	desc = "A medipen for surviving in the harshest of environments, heals and protects from environmental hazards. WARNING: Do not inject more than one pen in quick succession."
-	icon_state = "stimpen"
-	item_state = "stimpen"
-	volume = 57
-	amount_per_transfer_from_this = 58
-	list_reagents = list(/datum/reagent/medicine/salbutamol = 10, /datum/reagent/medicine/leporazine = 15, /datum/reagent/medicine/bicaridinep = 8, /datum/reagent/medicine/dermaline = 8, /datum/reagent/medicine/epinephrine = 10, /datum/reagent/medicine/lavaland_extract = 2, /datum/reagent/medicine/omnizine = 5)
-*/
 /obj/item/reagent_containers/hypospray/medipen/atropine
 	name = "atropine autoinjector"
 	desc = "A rapid way to save a person from a critical injury state!"
@@ -250,25 +238,7 @@
 	item_state = "atropen"
 	base_icon_state = "atropen"
 	list_reagents = list(/datum/reagent/medicine/atropine = 10)
-
-/obj/item/reagent_containers/hypospray/medipen/snail
-	name = "snail shot"
-	desc = "All-purpose snail medicine! Do not use on non-snails!"
-	icon_state = "snail"
-	item_state = "snail"
-	base_icon_state = "gorillapen"
-	list_reagents = list(/datum/reagent/snail = 10)
-
-/obj/item/reagent_containers/hypospray/medipen/magillitis
-	name = "experimental autoinjector"
-	desc = "A custom-frame needle injector with a small single-use reservoir, containing an experimental serum. Unlike the more common medipen frame, it cannot pierce through protective armor or hardsuits, nor can the chemical inside be extracted."
-	icon_state = "gorillapen"
-	item_state = "gorillapen"
-	base_icon_state = "gorillapen"
-	volume = 5
-	ignore_flags = 0
-	reagent_flags = NONE
-	list_reagents = list(/datum/reagent/magillitis = 5)
+	custom_price = 100
 
 /obj/item/reagent_containers/hypospray/medipen/pumpup
 	name = "maintenance pump-up"
@@ -285,6 +255,7 @@
 	volume = 15
 	amount_per_transfer_from_this = 15
 	list_reagents = list(/datum/reagent/medicine/anti_rad = 15)
+	custom_price = 25
 
 /obj/item/reagent_containers/hypospray/medipen/bonefixingjuice
 	name = "rejuvenating agent injector"
@@ -294,6 +265,59 @@
 	amount_per_transfer_from_this = 10
 	list_reagents = list(/datum/reagent/medicine/bonefixingjuice = 10)
 	icon_state = "syndipen"
+
+/obj/item/reagent_containers/hypospray/medipen/diphen
+	name = "diphenhydramine injector"
+	desc = "An effective way to stop an allergic reaction."
+	list_reagents = list(/datum/reagent/medicine/diphenhydramine = 10)
+	volume = 10
+	amount_per_transfer_from_this = 10
+
+/obj/item/reagent_containers/hypospray/medipen/psicodine
+	name = "psicodine injector"
+	desc = "An injector filled with psicodine, which rapidly stabilizes the mind."
+	list_reagents = list(/datum/reagent/medicine/psicodine = 10)
+	volume = 10
+	amount_per_transfer_from_this = 10
+	custom_price = 50
+
+/obj/item/reagent_containers/hypospray/medipen/synap
+	name = "synaptizine injector"
+	desc = "A stimulating injector with a shot of synaptizine inside."
+	list_reagents = list(/datum/reagent/medicine/synaptizine = 5)
+	custom_price = 75
+	volume = 5
+	amount_per_transfer_from_this = 5
+	icon_state = "stimpen"
+	item_state = "stimpen"
+
+/obj/item/reagent_containers/hypospray/medipen/antihol
+	name = "antihol injector"
+	desc = "An injector filled with antihol, essential for the binge drinker."
+	list_reagents = list(/datum/reagent/medicine/antihol = 10)
+	volume = 10
+	amount_per_transfer_from_this = 10
+	custom_price = 25
+
+/obj/item/reagent_containers/hypospray/medipen/tricord
+	name = "tricordrazine injector"
+	desc = "An injector filled with tricordrazine, a mildly effective healing agent."
+	list_reagents = list(/datum/reagent/medicine/tricordrazine = 15)
+	volume = 15
+	amount_per_transfer_from_this = 15
+	icon_state = "morphen"
+	base_icon_state = "morphen"
+	item_state = "morphen"
+
+/obj/item/reagent_containers/hypospray/medipen/mannitol
+	name = "tricordrazine injector"
+	desc = "An injector filled with mannitol, a restorative compound that targets the brain."
+	list_reagents = list(/datum/reagent/medicine/mannitol = 15)
+	volume = 15
+	amount_per_transfer_from_this = 15
+	icon_state = "morphen"
+	base_icon_state = "morphen"
+	item_state = "morphen"
 
 //A vial-loaded hypospray. Cartridge-based!
 /obj/item/hypospray/mkii
