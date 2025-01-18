@@ -646,14 +646,17 @@
 "sp" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate,
-/obj/item/reagent_containers/food/drinks/waterbottle/empty,
-/obj/item/reagent_containers/food/drinks/waterbottle/empty,
-/obj/item/reagent_containers/food/drinks/waterbottle/empty,
 /obj/item/storage/ration/vegan_chili,
 /obj/item/storage/ration/vegan_chili,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "sB" = (
@@ -847,12 +850,12 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "wi" = (
-/obj/machinery/power/ship_gravity/unanchored,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "wo" = (
@@ -1088,7 +1091,7 @@
 /obj/item/clothing/glasses/cheapsuns,
 /obj/item/storage/guncase/pistol/cm357,
 /obj/item/paper/crumpled/fluff{
-	default_raw_text = "4-5-9";
+	default_raw_text = "4-5-1";
 	pixel_x = -2;
 	pixel_y = 7
 	},
