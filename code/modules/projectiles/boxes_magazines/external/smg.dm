@@ -112,5 +112,5 @@
 	. = ..()
 	icon_state = "firestorm_pan"
 
-/obj/item/ammo_box/magazine/c45_firestorm_mag/pan/empty
+/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/empty
 	start_empty = TRUE
