@@ -52,7 +52,6 @@
 	var/allow_quick_gather = FALSE					//allow toggle mob verb which toggles collecting all items from a tile.
 
 	var/collection_mode = COLLECT_EVERYTHING
-	var/collection_range = 1 						//range that things can be picked up from, in view
 
 	var/insert_preposition = "in"					//you put things "in" a bag, but "on" a tray.
 
