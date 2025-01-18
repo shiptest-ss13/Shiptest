@@ -104,7 +104,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 	base_icon_state = "cm23_mag"
 	ammo_type = /obj/item/ammo_casing/a44roum
 	caliber = ".44 Roumain"
-	max_ammo = 10
+	max_ammo = 9
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m20_auto_elite/empty
