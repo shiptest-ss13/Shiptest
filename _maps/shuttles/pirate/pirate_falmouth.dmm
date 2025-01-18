@@ -852,6 +852,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "wo" = (
@@ -946,8 +947,9 @@
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
-	pixel_y = 5
+	pixel_y = 10
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "yV" = (
@@ -1849,6 +1851,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Ly" = (
