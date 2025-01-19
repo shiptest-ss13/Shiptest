@@ -279,13 +279,3 @@
 	availability_prob = 5
 	spawn_weighting = FALSE
 
-/datum/blackmarket_item/consumable/fermenting_barrel
-	name = "Roumain Distiller"
-	desc = "One of our lovely moonshine stills we made out of a late Elder's Montagne Oak. Solid for both moonshine and some exotic brews to kill lightweights."
-	item = /obj/structure/fermenting_barrel/distiller
-
-	price_min = 1000
-	price_max = 1500
-	stock = 1
-	availability_prob = 50
-
