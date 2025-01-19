@@ -45,6 +45,9 @@
 	icon_state = "skm_extended_mag-1"
 	max_ammo = 40
 
+/obj/item/ammo_box/magazine/skm_762_40/extended/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/skm_762_40/drum
 	name = "assault rifle drum (7.62x40mm CLIP)"
 	desc = "A 75-round drum for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."

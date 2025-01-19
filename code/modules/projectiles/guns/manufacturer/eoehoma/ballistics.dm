@@ -192,7 +192,6 @@
 	else
 		. += span_notice("\The [name] doesn't seem to have a cell!")
 
-
 /obj/item/ammo_box/magazine/e40
 	name = "E-40 magazine (.299 Eoehoma caseless)"
 	icon_state = "e40_mag-1"
@@ -214,5 +213,6 @@
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 	latch_toggle_delay = 1.2 SECONDS
+	valid_attachments = list()
 
 	spread_unwielded = 20

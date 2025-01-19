@@ -28,7 +28,7 @@
 			var/hostile_ai_status = hostile_target.AIStatus
 			hostile_target.toggle_ai(AI_OFF)
 			addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status),reac_volume)
-		M.Jitter(3 * reac_volume)
+		M.adjust_jitter(3 * reac_volume)
 		M.Dizzy(2 * reac_volume)
 		M.set_drugginess(3 * reac_volume)
 	return ..()
@@ -44,7 +44,7 @@
 	breakaway_flask_icon_state = "baflaskicewine"
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	M.adjustFireLoss(-0.25)
 	if(prob(10))
 		to_chat(M, span_notice("Sweat runs down your body."))
@@ -109,7 +109,7 @@
 	breakaway_flask_icon_state = "baflaskhearthwine"
 
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
-	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.heal_bleeding(0.25)

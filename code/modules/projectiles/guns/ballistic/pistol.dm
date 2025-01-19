@@ -12,13 +12,19 @@
 	recoil_unwielded = 3
 	recoil_backtime_multiplier = 1
 
+	zoom_amt = PISTOL_ZOOM
+
 	wield_delay = 0.2 SECONDS
 	fire_delay = 0.2 SECONDS
 	spread = 5
 	spread_unwielded = 7
+
 	wield_slowdown = PISTOL_SLOWDOWN
+	aimed_wield_slowdown = PISTOL_AIM_SLOWDOWN
 
 	muzzleflash_iconstate = "muzzle_flash_light"
+	light_range = 1
+
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "\improper Desert Eagle"
@@ -157,6 +163,7 @@
 	name = ".38 Derringer"
 	desc = "An easily concealable derringer. Uses .38 special ammo."
 	icon_state = "derringer"
+	item_state = "hp_generic"
 
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
@@ -201,6 +208,7 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 	icon_state = "derringer_syndie"
+	item_state = "sa_generic"
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/derr357
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/derr357,

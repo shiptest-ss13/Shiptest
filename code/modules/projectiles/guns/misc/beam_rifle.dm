@@ -206,7 +206,8 @@
 		if(!istype(curloc))
 			return
 		targloc = get_turf_in_angle(lastangle, curloc, 10)
-	P.preparePixelProjectile(targloc, current_user, current_user.client.mouseParams, 0)
+	var/mouse_modifiers = params2list(current_user.client.mouseParams)
+	P.preparePixelProjectile(targloc, current_user, mouse_modifiers, 0)
 	P.fire(lastangle)
 
 /obj/item/gun/energy/beam_rifle/process()
@@ -399,7 +400,8 @@
 		firing_dir = BB.firer.dir
 	if(!BB.suppressed && firing_effect_type)
 		new firing_effect_type(get_turf(src), firing_dir)
-	BB.preparePixelProjectile(target, user, params, spread)
+	var/modifiers = params2list(params)
+	BB.preparePixelProjectile(target, user, modifiers, spread)
 	BB.fire(gun? gun.lastangle : null, null)
 	BB = null
 	return TRUE

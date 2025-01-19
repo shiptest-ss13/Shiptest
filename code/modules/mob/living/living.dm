@@ -706,6 +706,7 @@
 	cure_blind()
 	cure_husk()
 	hallucination = 0
+	heal_overall_integrity(INFINITY, null, TRUE) //heal all limb integrity, so that you can...
 	heal_overall_damage(INFINITY, INFINITY, INFINITY, null, TRUE) //heal brute and burn dmg on both organic and robotic limbs, and update health right away.
 	ExtinguishMob()
 	fire_stacks = 0
@@ -1866,7 +1867,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		var/howfuck = rand(8,16)
 		AdjustParalyzed(howfuck)
 		AdjustKnockdown(howfuck)
-		Jitter(rand(150,200))
+		set_jitter(rand(150,200))
 
 /**
  * Sets the mob's speed variable and then calls update_living_varspeed().

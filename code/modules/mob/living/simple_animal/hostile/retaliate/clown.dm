@@ -55,7 +55,7 @@
 	. = ..()
 	if(banana_time && banana_time < world.time)
 		var/turf/T = get_turf(src)
-		var/list/adjacent =  T.GetAtmosAdjacentTurfs()
+		var/list/adjacent =  T.get_atmos_adjacent_turfs()
 		new banana_type(pick(adjacent))
 		banana_time = world.time + rand(30,60)
 

@@ -113,14 +113,16 @@
 	if (length(status_examines))
 		. += status_examines
 
-	//Jitters
+	//jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
-			. += "<span class='warning'><B>[t_He] [t_is] convulsing violently!</B></span>"
+			. += span_boldwarning("[t_He] [t_is] convulsing violently!")
 		if(200 to 300)
-			. += "<span class='warning'>[t_He] [t_is] extremely jittery.</span>"
+			. += span_warning("[t_He] [t_is] extremely jittery.")
 		if(100 to 200)
-			. += "<span class='warning'>[t_He] [t_is] twitching ever so slightly.</span>"
+			. += span_warning("[t_He] [t_is] twitching ever so slightly.")
+		if(50 to 100)
+			. += span_warning("[t_He] [t_is] flinching lightly")
 
 	var/appears_dead = FALSE
 	var/just_sleeping = FALSE
@@ -165,6 +167,13 @@
 		if(BP.bodypart_disabled)
 			disabled += BP
 		missing -= BP.body_zone
+		if(BP.uses_integrity && (BP.integrity_loss-BP.integrity_ignored) > 0)
+			if ((BP.integrity_loss-BP.integrity_ignored) > BP.max_damage*0.66)
+				msg += "<B>[t_His] [BP.name] is [BP.heavy_integrity_msg]!</B>\n"
+			else if (BP.integrity_loss-BP.integrity_ignored > BP.max_damage*0.33)
+				msg += "[t_His] [BP.name] is [BP.medium_integrity_msg]!\n"
+			else
+				msg += "[t_His] [BP.name] is [BP.light_integrity_msg].\n"
 		for(var/obj/item/I in BP.embedded_objects)
 			if(I.isEmbedHarmless())
 				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] stuck to [t_his] [BP.name]!</B>\n"

@@ -37,8 +37,8 @@ Build Your Own Suit
 	crate_name = "APLU construction kit"
 
 /datum/supply_pack/mech/odysseus_parts
-	name = "Odysseus construction kit"
-	desc = "DeForest Medical's premier solution to on the go medical treatment. Some assembly required."
+	name = "202r construction kit"
+	desc = "Cybersun Biodynamics' premier solution to on-the-go medical treatment. Some assembly required."
 	cost = 5000
 	contains = list(
 		/obj/item/mecha_parts/chassis/odysseus,
@@ -52,11 +52,11 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/odysseus/peripherals,
 		/obj/item/circuitboard/mecha/odysseus/main
 		)
-	crate_name = "Odysseus Construction Kit"
+	crate_name = "202r Construction Kit"
 
 /datum/supply_pack/mech/gygax_parts
-	name = "Gygax construction kit"
-	desc = "An agile exosuit made famous by Nanotrasen security personnel during the ICW. Or at least the parts to it."
+	name = "501p construction kit"
+	desc = "An agile combat exosuit sold across the galaxy by Cybersun. Or at least the parts to it."
 	cost = 12000
 	contains = list(
 		/obj/item/mecha_parts/chassis/gygax,
@@ -71,7 +71,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/main,
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
-	crate_name = "Gygax Construction Kit"
+	crate_name = "501p Construction Kit"
 
 /datum/supply_pack/mech/durand_parts
 	name = "Durand construction kit"
@@ -262,20 +262,20 @@ weapons
 		/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun
 	)
 
-/datum/supply_pack/mech/weapon/laser
-	name = "Immolator kit"
-	desc = "A light laser cannon designed for combat usage."
+/datum/supply_pack/mech/weapon/carbine
+	name = "Downpour kit"
+	desc = "A rapid fire energy carbine designed for combat usage."
 	cost = 1000
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
+		/obj/item/mecha_parts/mecha_equipment/weapon/energy/carbine
 	)
 
 /datum/supply_pack/mech/weapon/biglaser
 	name = "Solaris kit"
-	desc = "A heavy laser cannon designed for combat usage."
+	desc = "A heavy beam cannon designed for combat usage."
 	cost = 2000
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
+		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	)
 
 /datum/supply_pack/mech/weapon/ion_cannon
@@ -296,7 +296,7 @@ weapons
 
 /datum/supply_pack/mech/weapon/lmg
 	name = "UMG-2 kit"
-	desc = "Contains a mounted gun which fires in three round bursts."
+	desc = "Contains a fully automatic mounted machine gun for combat exosuits."
 	cost = 2250
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
@@ -321,7 +321,7 @@ ammo
 
 /datum/supply_pack/mech/ammo/scattershot_ammo
 	name = "LBX-10 ammo box"
-	desc = "Contains a fourty-round box of upscaled buckshot, to be loaded directly in a mounted LBX-10."
+	desc = "Contains a twenty four round box of upscaled buckshot, to be loaded directly in a mounted LBX-10."
 	cost = 500
 	contains = list(
 		/obj/item/mecha_ammo/scattershot
@@ -329,8 +329,8 @@ ammo
 
 /datum/supply_pack/mech/ammo/lmg_ammo
 	name = "UMG-2 ammo box"
-	desc = "Contains a three hundred-round box of heavy ammunition for the UMG-2."
-	cost = 750
+	desc = "Contains a two hundred-round box of heavy ammunition for the UMG-2."
+	cost = 500
 	contains = list(
 		/obj/item/mecha_ammo/lmg
 	)

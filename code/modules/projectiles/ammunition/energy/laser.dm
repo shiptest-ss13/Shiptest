@@ -2,6 +2,16 @@
 	projectile_type = /obj/projectile/beam/laser
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/underbarrel
+	projectile_type = /obj/projectile/beam/laser
+	e_cost =  1250
+
+/obj/item/ammo_casing/energy/laser/slug
+	projectile_type = /obj/projectile/beam/laser/slug
+	select_name = "slug"
+	delay = 0.9 SECONDS
+	fire_sound = 'sound/weapons/gun/laser/cs-fire.ogg'
+
 /obj/item/ammo_casing/energy/laser/eoehoma
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
@@ -51,8 +61,9 @@
 
 /obj/item/ammo_casing/energy/laser/scatter
 	projectile_type = /obj/projectile/beam/scatter
-	pellets = 5
-	variance = 25
+	pellets = 10
+	variance = 40
+	e_cost = 1598 //12 shots upgraded cell, 6 with normal cell
 	select_name = "scatter"
 
 /obj/item/ammo_casing/energy/laser/ultima
