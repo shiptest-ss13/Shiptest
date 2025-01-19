@@ -40,7 +40,7 @@
 
 /obj/item/attachment/gun/ballistic/shotgun
 	name = "underbarrel shotgun"
-	desc = "A single shot underbarrel shotgun for warding off anyone who gets too close for comfort."
+	desc = "A two shot pump underbarrel shotgun for warding off anyone who gets too close for comfort."
 	underbarrel_prefix = "sg_"
 	weapon_type = /obj/item/gun/ballistic/shotgun/underbarrel
 

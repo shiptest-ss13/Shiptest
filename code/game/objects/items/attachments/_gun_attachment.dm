@@ -13,10 +13,10 @@
 	//basically so the fire select shows the right icon
 	var/underbarrel_prefix = ""
 
-/obj/item/attachment/gun/Initialize()
+/obj/item/attachment/gun/Initialize(mapload, spawn_empty = FALSE)
 	. = ..()
 	if(weapon_type)
-		attached_gun = new weapon_type(src)
+		attached_gun = new weapon_type(src,spawn_empty)
 		attached_gun.interaction_flags_item = NONE
 
 /obj/item/attachment/gun/Destroy()

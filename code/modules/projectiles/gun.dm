@@ -270,6 +270,8 @@
 */
 	///The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED.
 	var/list/valid_attachments = list()
+	///The types of attachments allowed for this type of gun. Eg. Pistols/Rifles/Shotguns/etc.
+	var/list/weapon_class_attachments = list()
 	///The types of attachments that are unique to this gun. Adds it to the base valid_attachments list. So if this gun takes a special stock, add it here.
 	var/list/unique_attachments = list()
 	///The types of attachments that aren't allowed. Removes it from the base valid_attachments list.
@@ -350,6 +352,7 @@
 	. = ..()
 	var/list/attachment_list = valid_attachments
 	attachment_list += unique_attachments
+	attachment_list += weapon_class_attachments
 	if(refused_attachments)
 		for(var/to_remove in attachment_list)
 			if(refused_attachments.Find(to_remove))
