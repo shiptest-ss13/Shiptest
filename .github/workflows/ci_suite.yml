@@ -32,9 +32,11 @@ jobs:
     timeout-minutes: 20
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Master
+        uses: actions/checkout@v4
         with:
           ref: master
+      - uses: actions/checkout@v4
 
       - name: Restore SpacemanDMM cache
         id: cache-spacemandmm
