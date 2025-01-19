@@ -5567,10 +5567,6 @@
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
 "BF" = (
-/obj/machinery/elevator_call_button{
-	dir = 2;
-	pixel_y = 24
-	},
 /obj/structure/chair/bench/beige/directional/south,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -6200,13 +6196,6 @@
 "EP" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/outpost/maintenance/fore)
-"EQ" = (
-/obj/structure/falsewall/reinforced,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/closed/indestructible/reinforced/rust,
 /area/outpost/maintenance/fore)
 "ER" = (
 /obj/effect/spawner/random/trash/grille_or_waste,
@@ -16965,7 +16954,7 @@ NK
 ds
 ci
 NK
-EQ
+PS
 YO
 YO
 YO
