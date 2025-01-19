@@ -569,10 +569,6 @@
 				if("Paroled")
 					threatcount += 2
 
-	//Check for dresscode violations
-	if(istype(head, /obj/item/clothing/head/wizard) || istype(head, /obj/item/clothing/head/helmet/space/hardsuit/wizard))
-		threatcount += 2
-
 	//Check for nonhuman scum
 	if(dna && dna.species.id && dna.species.id != SPECIES_HUMAN)
 		threatcount += 1
@@ -878,6 +874,21 @@
 						icon_num = 0
 					if(icon_num)
 						hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[BP.body_zone][icon_num]"))
+					if (BP.uses_integrity) // Same, but for integrity
+						var/integ_loss = max(0,BP.integrity_loss-BP.integrity_ignored)
+						var/integ_icon_num
+						if(integ_loss)
+							integ_icon_num = 1
+						if(integ_loss > (comparison))
+							integ_icon_num = 2
+						if(integ_loss > (comparison*2))
+							integ_icon_num = 3
+						if(integ_loss > (comparison*3))
+							integ_icon_num = 4
+						//no 100% integ loss icon as it'd be visually indistinguishable from limb removal
+						if(integ_icon_num)
+							hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[BP.body_zone]_integ[integ_icon_num]"))
+
 				for(var/t in get_missing_limbs()) //Missing limbs
 					hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[t]6"))
 				for(var/t in get_disabled_limbs()) //Disabled limbs

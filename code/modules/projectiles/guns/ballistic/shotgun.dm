@@ -31,7 +31,10 @@
 	fire_select_icon_state_prefix = "sg_"
 
 	wield_slowdown = SHOTGUN_SLOWDOWN
+	aimed_wield_slowdown = SHOTGUN_AIM_SLOWDOWN
 	wield_delay = 0.8 SECONDS
+
+	zoom_amt = SHOTGUN_ZOOM
 
 	spread = 4
 	spread_unwielded = 10
@@ -39,6 +42,8 @@
 	recoil_unwielded = 4
 
 	gunslinger_recoil_bonus = -1
+
+	min_recoil = 0.1
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)

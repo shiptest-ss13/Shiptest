@@ -1,5 +1,5 @@
-#define CLIP_ATTACHMENTS list(list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/sling, /obj/item/attachment/gun))
-#define CLIP_ATTACHMNENT_POINTS list()
+#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/scope, /obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun)
+#define CLIP_ATTACHMENT_POINTS list(ATTACHMENT_SLOT_MUZZLE = 1,ATTACHMENT_SLOT_RAIL = 1,ATTACHMENT_SLOT_SCOPE=1)
 
 
 //########### PISTOLS ###########//
@@ -178,10 +178,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 	spread_unwielded = 7
 
 	valid_attachments = CLIP_ATTACHMENTS
-	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_RAIL = 1
-	)
+	slot_available = CLIP_ATTACHMENT_POINTS
+
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 37,
@@ -326,16 +324,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	actions_types = list()
 	manufacturer = MANUFACTURER_MINUTEMAN
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet
-	)
-	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_RAIL = 1
-	)
+	valid_attachments = CLIP_ATTACHMENTS
+	slot_available = CLIP_ATTACHMENT_POINTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 48,
@@ -344,8 +334,14 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 35,
 			"y" = 16,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 18,
+			"y" = 22,
 		)
 	)
+
+	default_attachments = list(/obj/item/attachment/scope)
 
 	wield_slowdown = DMR_SLOWDOWN
 	spread = -4
@@ -434,6 +430,9 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	wield_delay = 0.5 SECONDS
 
 	fire_delay = 0.18 SECONDS
+
+	valid_attachments = CLIP_ATTACHMENTS
+	slot_available = CLIP_ATTACHMENT_POINTS
 
 	load_sound = 'sound/weapons/gun/rifle/cm82_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/rifle/cm82_reload.ogg'
