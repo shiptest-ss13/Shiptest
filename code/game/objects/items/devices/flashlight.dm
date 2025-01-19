@@ -262,11 +262,11 @@
 	name = "flare"
 	desc = "A generic red flare. There are instructions on the side, it reads 'pull cord, make light'."
 	w_class = WEIGHT_CLASS_SMALL
-	light_range = 7 // Pretty bright.
+	light_range = 12 // Pretty bright.
 	icon_state = "flare"
 	item_state = "flare"
 	actions_types = list()
-	var/fuel = 900
+	var/fuel = 2700
 	var/on_damage = 7
 	var/produce_heat = 1500
 	heat = 1000
