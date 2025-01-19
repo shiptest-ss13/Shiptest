@@ -360,6 +360,8 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "ja" = (
@@ -975,6 +977,7 @@
 	name = "lieutenant's locker"
 	},
 /obj/item/megaphone,
+/obj/item/storage/belt/military/assault,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "tc" = (
@@ -1401,6 +1404,9 @@
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -14
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "Dc" = (
@@ -2247,7 +2253,7 @@
 	},
 /obj/item/megaphone,
 /obj/item/computer_hardware/card_slot,
-/obj/item/modular_computer/tablet,
+/obj/item/modular_computer/tablet/preset/cheap,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "QJ" = (
@@ -2458,6 +2464,9 @@
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/machinery/light/directional/north,
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 12
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "VD" = (
