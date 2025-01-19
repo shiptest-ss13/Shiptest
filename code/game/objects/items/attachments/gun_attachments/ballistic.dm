@@ -60,15 +60,27 @@
 		/obj/item/ammo_box/magazine/internal/grenadelauncher
 	)
 
-/obj/item/attachment/gun/ballistic/zip
+/obj/item/attachment/gun/ballistic/hognose
 	name = "PC-22 \"Hognose\""
-	desc = "A compact underbarrel gun chambered in 22lr. Holds eight rounds."
+	desc = "A compact underbarrel pistol chambered in 22lr. Holds eight rounds."
+	icon_state = "hognose"
 	weapon_type = /obj/item/gun/ballistic/automatic/pistol/himehabu/underbarrel
 	allow_hand_interaction = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/himehabu/underbarrel
-	name = "PC-81 \"Himehabu\""
+	name = "PC-22 \"Hognose\""
 	desc = "You shouldn't be seeing this."
+	default_ammo_type = /obj/item/ammo_box/magazine/m22lr_himehabu/hognose
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m22lr_himehabu/hognose,
+	)
+
+/obj/item/ammo_box/magazine/m22lr_himehabu/hognose
+	name = "Hognose magazine (.22 LR)"
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty
+	start_empty = TRUE
 
 
 
