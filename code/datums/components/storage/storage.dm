@@ -262,8 +262,6 @@
 	if(!len)
 		to_chat(M, "<span class='warning'>You failed to pick up anything with [parent]!</span>")
 		return
-	if(!M.CanReach(I, src)) //Emergency fix for the grinch bug. Will be removed for the actual fix.
-		return
 	if(I.anchored)
 		to_chat(M, "<span class='warning'>\The [I] is stuck to the ground and cannot be picked up by [parent]!</span>")
 		return
