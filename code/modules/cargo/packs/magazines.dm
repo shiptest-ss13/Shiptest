@@ -59,8 +59,8 @@
 
 /datum/supply_pack/magazine/firestorm_mag
 	name = "Firestorm Pan Magazine Crate"
-	desc = "Contains a 50-round pan magazine for the Hunter's Pride Firestorm SMG."
-	contains = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/pan/empty)
+	desc = "Contains a 40-round pan magazine for the Hunter's Pride Firestorm SMG."
+	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/empty)
 	cost = 1000
 	faction = /datum/faction/srm
 
@@ -84,6 +84,12 @@
 	desc = "Contains a 5.56 CLIP magazine for the Super Sporter Rifle, with a capacity of 20 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m15/empty)
 	cost = 300
+
+/datum/supply_pack/magazine/m20_auto_elite
+	name = "Auto Elite Magazine Crate"
+	desc = "Contains a .44 Roumain magazine for the Auto Elite pistol, with a capacity of ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/m20_auto_elite/empty)
+	cost = 250
 
 /* Scarbie */
 

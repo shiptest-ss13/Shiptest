@@ -23,10 +23,17 @@
 	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/m17
-	name = "M17 pistol Crate"
-	desc = "A cheap target shooting pistol manufactured by Serene Outdoors. Chambered in .22lr"
+	name = "M17 Micro Target Pistol Crate"
+	desc = "A cheap target shooting pistol manufactured by Serene Outdoors. Chambered in .22 LR."
 	cost = 400
 	contains = list(/obj/item/storage/guncase/pistol/m17)
+	crate_name = "pistol crate"
+
+/datum/supply_pack/gun/m20_auto_elite
+	name = "M20 Auto Elite Pistol Crate"
+	desc = "Contains a heavy pistol manufactured by Serene Outdoors. Chambered in .44 Roumain."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pistol/m20_auto_elite)
 	crate_name = "pistol crate"
 
 /datum/supply_pack/gun/commanders
@@ -67,6 +74,16 @@
 	desc = "Contains a modified Commander pistol, adjusted to fit the IRMG's standards and painted in the brown and gold of all IRMG firearms."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/commissioner)
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/pinscher
+	name = "Pinscher Heavy Pistol Crate"
+	desc = "Contains a heavy pistol manufactured by Serene Outdoors and modified to fit IRMG's standards. Chambered in .44 Roumain."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pistol/pinscher)
+	crate_name = "pistol crate"
 	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
