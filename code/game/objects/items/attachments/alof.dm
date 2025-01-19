@@ -9,9 +9,6 @@
 	wield_delay = 0.1 SECONDS
 	var/obj/item/ammo_box/magazine/internal/shot/alof/mag
 
-	var/replace = TRUE
-	var/bolt = TRUE
-
 /obj/item/attachment/alof/Initialize()
 	. = ..()
 	mag = new /obj/item/ammo_box/magazine/internal/shot/alof(src)
@@ -36,9 +33,9 @@
 
 /obj/item/attachment/alof/on_unique_action(obj/item/gun/gun, mob/user, obj/item)
 	. = ..()
-	if(gun.bolt_locked == bolt)
+	if(gun.bolt_locked)
 		var/obj/item/ammo_casing/casing_to_insert = mag.get_round(TRUE)
-		if(gun.magazine.give_round(casing_to_insert,replace))
+		if(gun.magazine.give_round(casing_to_insert,TRUE))
 			mag.stored_ammo -= casing_to_insert
 			to_chat(user,span_notice("\The [src] automatically loads another round into \the [gun]!"))
 
