@@ -351,13 +351,8 @@
 
 //Supply
 
-/obj/item/circuitboard/computer/bounty
-	name = "\improper Outpost Bounty Console (Computer Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/computer/mission
-
 /obj/item/circuitboard/computer/mission
-	name = "\improper Outpost Mission Console"
+	name = "\improper Outpost Mission Console (Computer Board)"
 	icon_state = "supply"
 	build_path = /obj/machinery/computer/mission
 

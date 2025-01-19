@@ -82,7 +82,7 @@
 			if(istype(focus, /datum/overmap))
 				focus.admin_load()
 		if("inspect_mission")
-			var/datum/mission/ruin/mission = locate(params["ref"])
+			//var/datum/mission/ruin/mission = locate(params["ref"])
 		if("load_mission")
 			if(!check_rights(R_DEBUG))
 				return

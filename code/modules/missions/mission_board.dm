@@ -124,21 +124,21 @@
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "pad-idle"
 
-/obj/machinery/bounty_viewer
-	name = "bounty viewer"
+/obj/machinery/mission_viewer
+	name = "mission viewer"
 	desc = "A multi-platform network for placing requests across the sector, this one is view only."
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "request_kiosk"
 	light_color = LIGHT_COLOR_GREEN
 
-/obj/machinery/bounty_viewer/Initialize(mapload, ndir, building)
+/obj/machinery/mission_viewer/Initialize(mapload, ndir, building)
 	. = ..()
 	if(building)
 		setDir(ndir)
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -32 : 32)
 		pixel_y = (dir & 3)? (dir ==1 ? -32 : 32) : 0
 
-/obj/machinery/bounty_viewer/wrench_act(mob/living/user, obj/item/I)
+/obj/machinery/mission_viewer/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
 	to_chat(user, span_notice("You start [anchored ? "un" : ""]securing [name]..."))
 	I.play_tool_sound(src)
@@ -150,16 +150,16 @@
 			new /obj/item/shard(loc)
 		else
 			to_chat(user, span_notice("You [anchored ? "un" : ""]secure [name]."))
-			new /obj/item/wallframe/bounty_viewer(loc)
+			new /obj/item/wallframe/mission_viewer(loc)
 		qdel(src)
 
-/obj/machinery/bounty_viewer/ui_interact(mob/user, datum/tgui/ui)
+/obj/machinery/mission_viewer/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "MissionBoard", name)
 		ui.open()
 
-/obj/machinery/bounty_viewer/ui_data(mob/user)
+/obj/machinery/mission_viewer/ui_data(mob/user)
 	var/list/data = list()
 	data["missions"] = list()
 	for(var/datum/mission/ruin/M as anything in SSmissions.active_missions)
@@ -168,10 +168,10 @@
 	data["id_inserted"] = FALSE
 	return data
 
-/obj/item/wallframe/bounty_viewer
+/obj/item/wallframe/mission_viewer
 	name = "disassembled bounty viewer"
 	desc = "Used to build a new bounty viewer, just secure to the wall."
 	icon_state = "request_kiosk"
 	custom_materials = list(/datum/material/iron = 14000, /datum/material/glass = 8000)
-	result_path = /obj/machinery/bounty_viewer
+	result_path = /obj/machinery/mission_viewer
 	inverse = FALSE

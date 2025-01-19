@@ -12,6 +12,10 @@
 				ruin.height
 			)
 
+			var/dynamic_missions = list()
+			for(var/datum/mission/ruin/mission_type in ruin.dynamic_mission_types)
+				dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
+
 			ruin.load(vlevel.get_unreserved_bottom_left_turf())
 
 			var/list/errors = atmosscan(TRUE, TRUE)
