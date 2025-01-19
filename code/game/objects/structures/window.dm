@@ -85,12 +85,16 @@
 /obj/structure/window/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)
 		if(RCD_DECONSTRUCT)
+			if(resistance_flags & INDESTRUCTIBLE)
+				return FALSE
 			return list("mode" = RCD_DECONSTRUCT, "delay" = 20, "cost" = 5)
 	return FALSE
 
 /obj/structure/window/rcd_act(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)
 		if(RCD_DECONSTRUCT)
+			if(resistance_flags & INDESTRUCTIBLE)
+				return FALSE
 			to_chat(user, "<span class='notice'>You deconstruct the window.</span>")
 			qdel(src)
 			return TRUE
