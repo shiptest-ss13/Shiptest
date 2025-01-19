@@ -75,7 +75,7 @@ Build Your Own Suit
 
 /datum/supply_pack/mech/mpgygax_parts
 	name = "NT-501p-MP construction kit"
-	desc = "A set of parts for a mass produced version of the NT-501p-MP exosuit model. The armor plating was reduced to cut costs for mass production, but the lighter weight allows the NT-501p-MP's modified servos to perform swift moderate distance charges without heavily taxing the power supply. "
+	desc = "A set of parts for the NT-501p-MP exosuit model, dervived from the original Cybersun designs and modified for mass production. The armor plating was reduced to cut costs for mass production, but the lighter weight allows the NT-501p-MP's modified servos to perform swift moderate distance charges without heavily taxing the power supply. "
 	cost = 8000
 	contains = list(
 		/obj/item/mecha_parts/chassis/mp_gygax,
