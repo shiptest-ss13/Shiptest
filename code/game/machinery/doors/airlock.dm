@@ -420,6 +420,9 @@
 				if(G.siemens_coefficient)//not insulated
 					new /datum/hallucination/shock(H)
 					return
+	else
+		if(aiControlDisabled == AI_WIRE_DISABLED)
+			return
 	if (cyclelinkedairlock)
 		if (!shuttledocked && !emergency && !cyclelinkedairlock.shuttledocked && !cyclelinkedairlock.emergency && allowed(user))
 			if(cyclelinkedairlock.operating)
@@ -1518,6 +1521,8 @@
 /obj/machinery/door/airlock/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)
 		if(RCD_DECONSTRUCT)
+			if(resistance_flags & INDESTRUCTIBLE)
+				return FALSE
 			if(seal)
 				to_chat(user, "<span class='notice'>[src]'s seal needs to be removed first.</span>")
 				return FALSE
@@ -1530,6 +1535,8 @@
 /obj/machinery/door/airlock/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_DECONSTRUCT)
+			if(resistance_flags & INDESTRUCTIBLE)
+				return FALSE
 			to_chat(user, "<span class='notice'>You deconstruct the airlock.</span>")
 			qdel(src)
 			return TRUE
