@@ -349,14 +349,14 @@
 	return TRUE
 
 //Proc to use when directly adding a trauma to the brain, so extra args can be given
-/obj/item/organ/brain/proc/gain_trauma(datum/brain_trauma/trauma, resilience, ...)
+/obj/item/organ/brain/proc/gain_trauma(datum/brain_trauma/trauma, resilience, natural_gain = FALSE, ...)
 	var/list/arguments = list()
-	if(args.len > 2)
-		arguments = args.Copy(3)
-	. = brain_gain_trauma(trauma, resilience, arguments)
+	if(args.len > 3)
+		arguments = args.Copy(4)
+	. = brain_gain_trauma(trauma, resilience, natural_gain, arguments)
 
 //Direct trauma gaining proc. Necessary to assign a trauma to its brain. Avoid using directly.
-/obj/item/organ/brain/proc/brain_gain_trauma(datum/brain_trauma/trauma, resilience, list/arguments)
+/obj/item/organ/brain/proc/brain_gain_trauma(datum/brain_trauma/trauma, resilience, list/arguments, natural_gain = FALSE)
 	if(!can_gain_trauma(trauma, resilience))
 		return
 
@@ -378,7 +378,10 @@
 	if(owner)
 		actual_trauma.owner = owner
 		actual_trauma.on_gain()
-	if(resilience)
+	if(natural_gain)
+		if(actual_trauma.resilience >= TRAUMA_RESILIENCE_LOBOTOMY)
+			actual_trauma.resilience = TRAUMA_RESILIENCE_SURGERY
+	else if(resilience)
 		actual_trauma.resilience = resilience
 	. = actual_trauma
 	if(owner?.client)
@@ -396,7 +399,7 @@
 		return
 
 	var/trauma_type = pick(possible_traumas)
-	gain_trauma(trauma_type, resilience)
+	gain_trauma(trauma_type, resilience, natural_gain)
 
 //Cure a random trauma of a certain resilience level
 /obj/item/organ/brain/proc/cure_trauma_type(brain_trauma_type = /datum/brain_trauma, resilience = TRAUMA_RESILIENCE_BASIC)
