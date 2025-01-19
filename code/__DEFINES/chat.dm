@@ -36,7 +36,7 @@
 /// Used for debug messages to the server
 #define debug2_world_log(msg) if (GLOB.Debug2) log_world("DEBUG: [msg]")
 /// Adds a generic box around whatever message you're sending in chat. Really makes things stand out.
-#define examine_block(str) ("<div class='boxed_message'>" + str + "</div>")
+#define boxed_message(str) ("<div class='boxed_message'>" + str + "</div>")
 /// Adds a box around whatever message you're sending in chat. Can apply color and/or additional classes. Available colors: red, green, blue, purple. Use it like red_box
 #define custom_boxed_message(classes, str) ("<div class='boxed_message " + classes + "'>" + str + "</div>")
 /// Makes a fieldset with a neaty styled name. Can apply additional classes.
