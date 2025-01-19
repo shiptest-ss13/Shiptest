@@ -14,7 +14,9 @@
 
 			var/dynamic_missions = list()
 			for(var/datum/mission/ruin/mission_type in ruin.dynamic_mission_types)
-				dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
+				var/datum/mission/ruin/new_mission = new mission_type(src, 1 + length(dynamic_missions))
+				dynamic_missions += new_mission
+				new_mission.start_mission()
 
 			ruin.load(vlevel.get_unreserved_bottom_left_turf())
 
