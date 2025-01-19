@@ -74,8 +74,8 @@ Build Your Own Suit
 	crate_name = "501p Construction Kit"
 
 /datum/supply_pack/mech/mpgygax_parts
-	name = "MP-Gygax construction kit"
-	desc = "A set of parts for a mass produced version of the famous Gygax exosuit model. The armor plating was reduced to cut costs for mass production, but the lighter weight allows the MP-Gygax's modified servos to perform swift moderate distance charges without heavily taxing the power supply. "
+	name = "NT-501p-MP construction kit"
+	desc = "A set of parts for a mass produced version of the NT-501p-MP exosuit model. The armor plating was reduced to cut costs for mass production, but the lighter weight allows the NT-501p-MP's modified servos to perform swift moderate distance charges without heavily taxing the power supply. "
 	cost = 8000
 	contains = list(
 		/obj/item/mecha_parts/chassis/mp_gygax,
@@ -90,7 +90,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/main,
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
-	crate_name = "MP-Gygax Construction Kit"
+	crate_name = "NT-501p-MP Construction Kit"
 	faction = /datum/faction/nt
 	faction_locked = TRUE
 

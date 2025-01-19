@@ -667,8 +667,8 @@
 	result_mech = /obj/mecha/combat/gygax/charger/inteq
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/mp_gygax
-	name = "MP-Gygax Conversion Kit"
-	desc = "A NT made conversion kit for a Gygax combat exosuit, to convert it to the lightweight MP-Gygax skirmishing exosuit."
+	name = "NT-501p-MP Conversion Kit"
+	desc = "A NT made conversion kit for a 501p combat exosuit, to convert it to the lightweight NT-501p-MP skirmishing exosuit."
 	source_mech = list(/obj/mecha/combat/gygax,/obj/mecha/combat/gygax/dark)
 	result_mech = /obj/mecha/combat/gygax/charger/mp
 

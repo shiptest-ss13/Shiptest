@@ -62,8 +62,8 @@
 	icon_state = "inteqgygax"
 
 /obj/mecha/combat/gygax/charger/mp
-	name = "\improper MP-Gygax"
-	desc = "A mass produced variant of the popular Gygax exosuit model. This model has had its armor plating reduced to reduce production costs. The leg actuators have been modified to take advantage of the consequently lighter frame, allowing for swift charges over moderate distances without heavily taxing the power supply."
+	name = "\improper NT-501p-MP"
+	desc = "An exosuit model derrived from the Cybersun 501p and modified for mass production. This model has had its armor plating reduced to reduce production costs. The leg actuators have been modified to take advantage of the consequently lighter frame, allowing for swift charges over moderate distances without heavily taxing the power supply."
 	armor = list("melee" = 25, "bullet" = 30, "laser" = 30, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	icon_state = "mpgygax"
 	charge_break_walls = FALSE
@@ -75,9 +75,9 @@
 
 /obj/mecha/combat/gygax/charger/nt/loaded/Initialize()
 	. = ..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy(src)
+	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/carbine(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
 	ME.attach(src)
