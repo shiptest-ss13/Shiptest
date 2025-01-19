@@ -503,6 +503,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 		log_mapping("[src] failed to find a crate at [AREACOORD(src)]")
 	else
 		shelve(crate)
+	qdel(src)
 
 /obj/effect/mapping_helpers/crate_shelve/proc/shelve(crate)
 	var/obj/structure/crate_shelf/shelf = locate(/obj/structure/crate_shelf) in range(range, crate)
