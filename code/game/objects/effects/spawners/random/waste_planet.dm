@@ -116,6 +116,7 @@
 		/obj/item/stock_parts/manipulator/nano,
 		/obj/item/stock_parts/micro_laser/high,
 		/obj/item/stock_parts/matter_bin/adv,
+		/obj/item/stock_parts/cell/super/empty,
 	)
 	spawn_loot_count = 1
 	spawn_loot_chance = 100
@@ -127,6 +128,7 @@
 		/obj/item/stock_parts/manipulator/pico,
 		/obj/item/stock_parts/micro_laser/ultra,
 		/obj/item/stock_parts/matter_bin/super,
+		/obj/item/stock_parts/cell/hyper/empty,
 	)
 
 
@@ -137,6 +139,7 @@
 		/obj/item/stock_parts/manipulator/femto,
 		/obj/item/stock_parts/micro_laser/quadultra,
 		/obj/item/stock_parts/matter_bin/bluespace,
+		/obj/item/stock_parts/cell/bluespace/empty,
 	)
 
 
