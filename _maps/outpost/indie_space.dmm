@@ -1058,12 +1058,6 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "fA" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -3127,6 +3121,22 @@
 /mob/living/simple_animal/mouse/brown,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
+"oW" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/outpost{
+	icon = 'icons/obj/doors/airlocks/station/security.dmi';
+	name = "brig";
+	overlays_file = 'icons/obj/doors/airlocks/station/overlays.dmi'
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/security)
 "oX" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -8311,22 +8321,6 @@
 	dir = 1
 	},
 /area/outpost/cargo)
-"PY" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/airlock/outpost{
-	icon = 'icons/obj/doors/airlocks/station/security.dmi';
-	name = "brig";
-	overlays_file = 'icons/obj/doors/airlocks/station/overlays.dmi'
-	},
-/turf/open/floor/plasteel/tech,
-/area/outpost/security)
 "Qe" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -20315,7 +20309,7 @@ wL
 wL
 dp
 kt
-PY
+oW
 yM
 ng
 My
@@ -20324,7 +20318,7 @@ wD
 WJ
 MT
 MT
-PY
+oW
 cJ
 fl
 Lh
