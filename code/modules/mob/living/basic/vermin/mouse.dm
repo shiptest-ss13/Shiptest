@@ -15,7 +15,6 @@
 	//can_be_held = TRUE
 	//held_w_class = WEIGHT_CLASS_TINY
 	//mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	//gold_core_spawnable = FRIENDLY_SPAWN
 	faction = list(FACTION_RAT)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mouse = 1)
 
@@ -40,13 +39,12 @@
 	. = ..()
 	if(contributes_to_ratcap)
 		SSmobs.cheeserats |= src
-	//ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
+	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
 	if(isnull(body_color))
 		body_color = pick("brown", "gray", "white")
 		held_state = "mouse_[body_color]" // not handled by variety element
 		AddElement(/datum/element/animal_variety, "mouse", body_color, FALSE)
-	//AddElement(/datum/element/swabable, CELL_LINE_TABLE_MOUSE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 10)
 	AddComponent(/datum/component/squeak, list('sound/effects/mousesqueek.ogg' = 1), 100, extrarange = SHORT_RANGE_SOUND_EXTRARANGE) //as quiet as a mouse or whatever
 
 	var/static/list/loc_connections = list(
@@ -57,24 +55,6 @@
 /mob/living/basic/mouse/Destroy()
 	SSmobs.cheeserats -= src
 	return ..()
-
-/mob/living/basic/mouse/examine(mob/user)
-	. = ..()
-
-	var/sameside = user.faction_check_mob(src, exact_match = TRUE)
-	/*
-	if(isregalrat(user))
-		if(sameside)
-			. += span_notice("This rat serves under you.")
-		else
-			. += span_warning("This peasant serves a different king! Strike [p_them()] down!")
-
-	else if(user != src && ismouse(user))
-		if(sameside)
-			. += span_notice("You both serve the same king.")
-		else
-			. += span_warning("This fool serves a different king!")
-	*/
 
 /// Kills the rat and changes its icon state to be splatted (bloody).
 /mob/living/basic/mouse/proc/splat()
@@ -110,11 +90,9 @@
 		var/obj/item/food/deadmouse/mouse = new(loc)
 		mouse.name = name
 		mouse.icon_state = icon_dead
-		/*
 		if(HAS_TRAIT(src, TRAIT_BEING_SHOCKED))
 			mouse.desc = "They're toast."
 			mouse.add_atom_colour("#3A3A3A", FIXED_COLOUR_PRIORITY)
-		*/
 	qdel(src)
 
 /mob/living/basic/mouse/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
@@ -135,7 +113,7 @@
 
 /// Signal proc for [COMSIG_ATOM_ENTERED]. Sends a lil' squeak to chat when someone walks over us.
 /mob/living/basic/mouse/on_entered(datum/source, atom/movable/entered)
-	SIGNAL_HANDLER
+	. = ..()
 
 	if(ishuman(entered) && stat == CONSCIOUS)
 		to_chat(entered, span_notice("[icon2html(src, entered)] Squeak!"))
@@ -180,7 +158,7 @@
 			span_hear("You hear electricity crack."),
 		)
 		// Finely toasted
-		//ADD_TRAIT(src, TRAIT_BEING_SHOCKED, TRAIT_GENERIC)
+		ADD_TRAIT(src, TRAIT_BEING_SHOCKED, TRAIT_GENERIC)
 		// Unfortunately we can't check the return value of electrocute_act before displaying a message,
 		// as it's possible the damage from electrocution results in our hunter being deleted.
 		// But what are the odds of the shock failing? Hahaha...
