@@ -12,12 +12,12 @@
 	density = FALSE
 	pass_flags = PASSTABLE|PASSGRILLE|PASSMOB
 	mob_size = MOB_SIZE_TINY
-	can_be_held = TRUE
-	held_w_class = WEIGHT_CLASS_TINY
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	gold_core_spawnable = FRIENDLY_SPAWN
-	faction = list(FACTION_RAT)
-	butcher_results = list(/obj/item/food/meat/slab/mouse = 1)
+	//can_be_held = TRUE
+	//held_w_class = WEIGHT_CLASS_TINY
+	//mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	//gold_core_spawnable = FRIENDLY_SPAWN
+	//faction = list(FACTION_RAT)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mouse = 1)
 
 	speak_emote = list("squeaks")
 	response_help_continuous = "pets"
@@ -40,13 +40,13 @@
 	. = ..()
 	if(contributes_to_ratcap)
 		SSmobs.cheeserats |= src
-	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
+	//ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
 	if(isnull(body_color))
 		body_color = pick("brown", "gray", "white")
 		held_state = "mouse_[body_color]" // not handled by variety element
-		AddElement(/datum/element/animal_variety, "mouse", body_color, FALSE)
-	AddElement(/datum/element/swabable, CELL_LINE_TABLE_MOUSE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 10)
+		//AddElement(/datum/element/animal_variety, "mouse", body_color, FALSE)
+	//AddElement(/datum/element/swabable, CELL_LINE_TABLE_MOUSE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 10)
 	AddComponent(/datum/component/squeak, list('sound/effects/mousesqueek.ogg' = 1), 100, extrarange = SHORT_RANGE_SOUND_EXTRARANGE) //as quiet as a mouse or whatever
 
 	var/static/list/loc_connections = list(
@@ -62,6 +62,7 @@
 	. = ..()
 
 	var/sameside = user.faction_check_mob(src, exact_match = TRUE)
+	/*
 	if(isregalrat(user))
 		if(sameside)
 			. += span_notice("This rat serves under you.")
@@ -73,6 +74,7 @@
 			. += span_notice("You both serve the same king.")
 		else
 			. += span_warning("This fool serves a different king!")
+	*/
 
 /// Kills the rat and changes its icon state to be splatted (bloody).
 /mob/living/basic/mouse/proc/splat()
@@ -121,7 +123,7 @@
 	if(!proximity_flag)
 		return
 
-	if(istype(attack_target, /obj/item/food/cheese))
+	if(istype(attack_target, /obj/item/reagent_containers/food/snacks/store/cheesewheel))
 		try_consume_cheese(attack_target)
 		return TRUE
 
@@ -137,17 +139,7 @@
 		to_chat(entered, span_notice("[icon2html(src, entered)] Squeak!"))
 
 /// Attempts to consume a piece of cheese, causing a few effects.
-/mob/living/basic/mouse/proc/try_consume_cheese(obj/item/food/cheese/cheese)
-	// Royal cheese will evolve us into a regal rat
-	if(istype(cheese, /obj/item/food/cheese/royal))
-		visible_message(
-			span_warning("[src] devours [cheese]! They morph into something... greater!"),
-			span_notice("You devour [cheese], and start morphing into something... greater!"),
-		)
-		evolve_into_regal_rat()
-		qdel(cheese)
-		return
-
+/mob/living/basic/mouse/proc/try_consume_cheese(obj/item/reagent_containers/food/snacks/store/cheesewheel/cheese)
 	var/cap = CONFIG_GET(number/ratcap)
 	// Normal cheese will either heal us
 	if(prob(90) || health < maxHealth)
@@ -173,13 +165,6 @@
 
 	qdel(cheese)
 
-/// Evolves this rat into a regal rat
-/mob/living/basic/mouse/proc/evolve_into_regal_rat()
-	var/mob/living/simple_animal/hostile/regalrat/controlled/regalrat = new(loc)
-	mind?.transfer_to(regalrat)
-	INVOKE_ASYNC(regalrat, /atom/movable/proc/say, "RISE, MY SUBJECTS! SCREEEEEEE!")
-	qdel(src)
-
 /// Creates a new mouse based on this mouse's subtype.
 /mob/living/basic/mouse/proc/create_a_new_rat()
 	new /mob/living/basic/mouse(loc)
@@ -193,7 +178,7 @@
 			span_hear("You hear electricity crack."),
 		)
 		// Finely toasted
-		ADD_TRAIT(src, TRAIT_BEING_SHOCKED, TRAIT_GENERIC)
+		//ADD_TRAIT(src, TRAIT_BEING_SHOCKED, TRAIT_GENERIC)
 		// Unfortunately we can't check the return value of electrocute_act before displaying a message,
 		// as it's possible the damage from electrocution results in our hunter being deleted.
 		// But what are the odds of the shock failing? Hahaha...
@@ -232,13 +217,12 @@
 	response_disarm_simple = "gently push aside"
 	response_harm_continuous = "splats"
 	response_harm_simple = "splat"
-	gold_core_spawnable = NO_SPAWN
 
 /mob/living/basic/mouse/brown/tom/Initialize(mapload)
 	. = ..()
 	// Tom fears no cable.
 	ADD_TRAIT(src, TRAIT_SHOCKIMMUNE, INNATE_TRAIT)
-	AddElement(/datum/element/pet_bonus, "squeaks happily!")
+	//AddElement(/datum/element/pet_bonus, "squeaks happily!")
 
 /mob/living/basic/mouse/brown/tom/create_a_new_rat()
 	new /mob/living/basic/mouse/brown(loc) // dominant gene
@@ -262,20 +246,13 @@
 /obj/item/food/deadmouse
 	name = "dead mouse"
 	desc = "They look like somebody dropped the bass on it. A lizard's favorite meal."
-	icon = 'icons/mob/simple/animal.dmi'
+	icon = 'icons/mob/animal.dmi'
 	icon_state = "mouse_gray_dead"
 	bite_consumption = 3
 	eatverbs = list("devour")
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
 	foodtypes = GORE | MEAT | RAW
 	grind_results = list(/datum/reagent/blood = 20, /datum/reagent/liquidgibs = 5)
-	decomp_req_handle = TRUE
-	ant_attracting = FALSE
-	decomp_type = /obj/item/food/deadmouse/moldy
-
-/obj/item/food/deadmouse/Initialize(mapload)
-	. = ..()
-	AddElement(/datum/element/swabable, CELL_LINE_TABLE_MOUSE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 10)
 
 /obj/item/food/deadmouse/examine(mob/user)
 	. = ..()
@@ -284,7 +261,7 @@
 
 /obj/item/food/deadmouse/attackby(obj/item/attacking_item, mob/user, params)
 	var/mob/living/living_user = user
-	if(istype(living_user) && attacking_item.get_sharpness() && living_user.combat_mode)
+	if(istype(living_user) && attacking_item.get_sharpness() && living_user.a_intent == INTENT_HARM)
 		if(!isturf(loc))
 			balloon_alert(user, "can't butcher here!")
 			return
@@ -295,7 +272,7 @@
 			return
 
 		loc.balloon_alert(user, "butchered")
-		new /obj/item/food/meat/slab/mouse(loc)
+		new /obj/item/reagent_containers/food/snacks/meat/slab/mouse(loc)
 		qdel(src)
 		return
 
