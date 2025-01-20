@@ -1822,7 +1822,7 @@
 
 /datum/reagent/medicine/rhigoxane/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-2*REM, 0.)
-	M.adjust_bodytemperature(-0.2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
+	M.adjust_bodytemperature(-0.6 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
 	..()
 	. = 1
 

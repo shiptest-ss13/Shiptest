@@ -1,6 +1,6 @@
 /obj/mecha/medical/odysseus
-	desc = "These exosuits are developed and produced by Vey-Med. (&copy; All rights reserved)."
-	name = "\improper Odysseus"
+	desc = "A high-end utility exosuit manufactured by Cybersun Biodynamics. The general medical variant of the 200 Series, the 202r features a high-speed leg design and advanced stabilization system to move patients safely over rough terrain."
+	name = "\improper 202r Medical exosuit"
 	icon_state = "odysseus"
 	step_in = 2
 	max_temperature = 15000
