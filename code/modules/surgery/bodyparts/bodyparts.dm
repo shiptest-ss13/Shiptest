@@ -837,7 +837,7 @@
 	if(bone_status != BONE_FLAG_BROKEN || !owner || istype(owner?.buckled, /obj/structure/bed/roller))
 		return
 
-	if(prob(5))
+	if(prob(owner.m_intent == MOVE_INTENT_RUN ? 5 : 1))
 		if(HAS_TRAIT(owner, TRAIT_ANALGESIA))
 			to_chat(owner, span_notice("[pick("You feel something shifting inside your [name].", "There is something moving inside [name].", "Something inside your [name] slips.")]"))
 		else
