@@ -5,7 +5,7 @@
 	///Flags for extra behavior
 	var/behavior_flags = NONE
 	///Cooldown between actions performances
-	var/action_cooldown = 0
+	var/action_cooldown = CLICK_CD_MELEE
 
 /// Called by the ai controller when first being added. Additional arguments depend on the behavior type.
 /// Return FALSE to cancel
