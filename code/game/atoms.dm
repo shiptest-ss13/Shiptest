@@ -1310,6 +1310,8 @@
 
 ///Deconstruct act
 /atom/proc/deconstruct_act(mob/living/user, obj/item/I)
+	if(flags_1 & NODECONSTRUCT_1)
+		return TRUE
 	return SEND_SIGNAL(src, COMSIG_ATOM_DECONSTRUCT_ACT, user, I)
 
 ///Generate a tag for this atom

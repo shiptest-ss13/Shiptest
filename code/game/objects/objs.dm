@@ -387,6 +387,12 @@
 		return FALSE
 	return TRUE
 
+/obj/deconstruct_act(mob/living/user, obj/item/I)
+	if(resistance_flags & INDESTRUCTIBLE)
+		to_chat(user, span_warning("[src] cannot be deconstructed!"))
+		return FALSE
+	return ..()
+
 /obj/analyzer_act(mob/living/user, obj/item/I)
 	if(atmosanalyzer_scan(user, src))
 		return TRUE
