@@ -35,7 +35,7 @@
 		/obj/effect/spawner/random/trash/soap = 3,
 		/obj/item/broken_bottle = 3,
 		/obj/effect/spawner/random/engineering/tool/common = 1,
-		/mob/living/simple_animal/mouse = 1,
+		/mob/living/basic/mouse = 1,
 		/obj/item/reagent_containers/glass/rag = 1,
 		/obj/effect/spawner/random/entertainment/drugs= 1,
 		/obj/item/reagent_containers/syringe = 1,

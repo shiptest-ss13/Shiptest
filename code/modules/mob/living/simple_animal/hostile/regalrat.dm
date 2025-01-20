@@ -145,7 +145,7 @@
 		return
 	var/cap = CONFIG_GET(number/ratcap)
 	var/something_from_nothing = FALSE
-	for(var/mob/living/simple_animal/mouse/M in oview(owner, 5))
+	for(var/mob/living/basic/mouse/M in oview(owner, 5))
 		var/mob/living/simple_animal/hostile/rat/new_rat = new(get_turf(M))
 		something_from_nothing = TRUE
 		if(M.mind && M.stat == CONSCIOUS)
@@ -158,7 +158,7 @@
 		if(LAZYLEN(SSmobs.cheeserats) >= cap)
 			to_chat(owner,"<span class='warning'>There's too many mice in this sector to beckon a new one! Find them first!</span>")
 			return
-		new /mob/living/simple_animal/mouse(owner.loc)
+		new /mob/living/basic/mouse(owner.loc)
 		owner.visible_message("<span class='warning'>[owner] commands a mouse to its side!</span>")
 	else
 		owner.visible_message("<span class='warning'>[owner] commands its army to action, mutating them into rats!</span>")
