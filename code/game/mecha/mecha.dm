@@ -1007,7 +1007,7 @@
 		if(!internal_damage)
 			SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
 		SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
-		autofire_check()
+		equipment_check()
 		return TRUE
 
 /obj/mecha/proc/mmi_move_inside(obj/item/mmi/M, mob/user)
@@ -1053,7 +1053,7 @@
 	B.update_mouse_pointer()
 	icon_state = initial(icon_state)
 	SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
-	autofire_check()
+	equipment_check()
 	update_appearance()
 	setDir(dir_in)
 	log_message("[M] moved in as pilot.", LOG_MECHA)
@@ -1266,7 +1266,8 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 			to_chat(user, "<span class='notice'>None of the equipment on this exosuit can use this ammo!</span>")
 	return FALSE
 
-/obj/mecha/proc/autofire_check()
+// handles actions tied to mech equipment
+/obj/mecha/proc/equipment_check()
 	occupant.client.view_size.zoomIn()
 	if(istype(selected,/obj/item/mecha_parts/mecha_equipment/weapon))
 		var/obj/item/mecha_parts/mecha_equipment/weapon/mech_gun = selected
