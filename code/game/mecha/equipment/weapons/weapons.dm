@@ -17,8 +17,8 @@
 	var/casing_type
 
 	var/scoped = FALSE //whether this weapon is scoped
-	var/zoom_mod = 10
-	var/zoom_out_mod = 3
+	var/zoom_mod = 6
+	var/zoom_out_mod = 2
 
 /obj/item/mecha_parts/mecha_equipment/weapon/can_attach(obj/mecha/M)
 	if(!..())
@@ -134,6 +134,8 @@
 	projectile = /obj/projectile/beam/emitter/hitscan
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	full_auto = FALSE
+	zoom_mod = 10
+	zoom_out_mod = 3
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
 	equip_cooldown = 20
