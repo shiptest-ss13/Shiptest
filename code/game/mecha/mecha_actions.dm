@@ -19,6 +19,8 @@
 	lights_action.Remove(user)
 	stats_action.Remove(user)
 	strafing_action.Remove(user)
+	if(zoom_action)
+		zoom_action.Remove(user)
 
 
 /datum/action/innate/mecha
@@ -226,11 +228,17 @@
 		chassis.log_message("Toggled zoom mode.", LOG_MECHA)
 		chassis.occupant_message("<font color='[chassis.zoom_mode?"blue":"red"]'>Zoom mode [chassis.zoom_mode?"en":"dis"]abled.</font>")
 		if(chassis.zoom_mode)
-			owner.client.view_size.setTo(4.5)
+			//RegisterSignal(chassis, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate_zoom))
+			owner.client.view_size.zoomOut(chassis.zoom_out_mod, chassis.zoom_mod, chassis.dir)
 			SEND_SOUND(owner, sound('sound/mecha/imag_enh.ogg',volume=50))
 		else
-			owner.client.view_size.resetToDefault() //Let's not let this stack shall we?
+			//UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
+			owner.client.view_size.zoomIn()
 		UpdateButtonIcon()
+
+// /obj/mecha/proc/rotate_zoom(atom/thing, old_dir, new_dir)
+// 	SIGNAL_HANDLER
+// 	occupant.client.view_size.zoomOut(zoom_out_amt, zoom_amt, new_dir)
 
 /datum/action/innate/mecha/mech_switch_damtype
 	name = "Reconfigure arm microtool arrays"
