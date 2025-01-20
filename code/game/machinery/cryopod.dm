@@ -450,7 +450,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		wakeupmessage += " A sickly feeling along with the pangs of hunger greet you upon your awakening."
 		sleepyhead.set_nutrition(100)
 		sleepyhead.apply_effect(rand(3,10), EFFECT_DROWSY)
-	to_chat(sleepyhead, span_danger(examine_block(wakeupmessage)))
+	to_chat(sleepyhead, span_danger(boxed_message(wakeupmessage)))
 
 /obj/machinery/cryopod/syndicate
 	icon_state = "sleeper_s-open"

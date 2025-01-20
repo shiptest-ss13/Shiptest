@@ -46,6 +46,7 @@
 	///Vars for mech charges
 	var/charging = FALSE
 	var/charge_ready = TRUE
+	var/charge_windup = 0.5
 	var/charge_cooldown = 50
 	var/charge_power_consume = 200
 	var/charge_distance = 5
@@ -608,6 +609,11 @@
 	if(zoom_mode)
 		if(world.time - last_message > 20)
 			occupant_message("<span class='warning'>Unable to move while in zoom mode!</span>")
+			last_message = world.time
+		return 0
+	if(charging)
+		if(world.time - last_message > 20)
+			occupant_message(span_warning("You can't change direction while charging!"))
 			last_message = world.time
 		return 0
 	if(!cell)
@@ -1277,7 +1283,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 	Shake(15, 15, 1 SECONDS)
 	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 2)
-	addtimer(CALLBACK(src,PROC_REF(handle_charge)),0.5 SECONDS, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src,PROC_REF(handle_charge)), charge_windup SECONDS, TIMER_STOPPABLE)
 
 /obj/mecha/proc/handle_charge()
 	var/turf/mecha_loc = get_turf(src)

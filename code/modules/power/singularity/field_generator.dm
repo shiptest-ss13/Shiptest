@@ -339,7 +339,7 @@ field_generator power level display
 	clean_up = 0
 	update_appearance()
 
-	//This is here to help fight the "hurr durr, release singulo cos nobody will notice before the
+	//This is here to help fight the "release singulo cos nobody will notice before the
 	//singulo eats the evidence". It's not fool-proof but better than nothing.
 	//I want to avoid using global variables.
 	INVOKE_ASYNC(src, PROC_REF(notify_admins))

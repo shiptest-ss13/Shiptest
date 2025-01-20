@@ -692,7 +692,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		var/datum/asset/fuckywucky = get_asset_datum(/datum/asset/simple/fuckywucky)
 		fuckywucky.send(m)
 		SEND_SOUND(m, 'sound/misc/fuckywucky.ogg')
-		to_chat(m, span_purple(examine_block("<img src='[SSassets.transport.get_asset_url("fuckywucky.png")]'>")))
+		to_chat(m, span_purple(boxed_message("<img src='[SSassets.transport.get_asset_url("fuckywucky.png")]'>")))
 
 	addtimer(CALLBACK(src, PROC_REF(restore_fucky_wucky)), 600)
 
