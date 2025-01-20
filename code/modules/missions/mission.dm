@@ -113,7 +113,7 @@
 	SSblackbox.record_feedback("tally", "mission_started", 1, src.type)
 	SSmissions.inactive_missions -= src
 	active = TRUE
-	time_issued = station_time_timestamp()
+	time_issued = station_time()
 	if(duration)
 		dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 	SSmissions.active_missions += src
@@ -183,7 +183,7 @@
 		"location" = "X[mission_location.x]/Y[mission_location.y]: [mission_location.name]",
 		"x" = mission_location.x,
 		"y" = mission_location.y,
-		"timeIssued" = time_issued,
+		"timeIssued" = time2text(station_time() - time_issued, "mm"),
 		"duration" = src.duration,
 		"remaining" = time_remaining,
 		"timeStr" = time2text(time_remaining, "mm:ss"),

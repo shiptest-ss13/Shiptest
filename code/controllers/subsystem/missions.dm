@@ -2,6 +2,7 @@ SUBSYSTEM_DEF(missions)
 	name = "Missions"
 	flags = SS_NO_INIT
 	priority = FIRE_PRIORITY_MISSIONS
+	wait = 10 SECONDS
 	var/list/obj/effect/landmark/mission_poi/unallocated_pois = list()
 	var/list/datum/mission/ruin/inactive_missions = list()
 	var/list/datum/mission/ruin/active_missions = list()
