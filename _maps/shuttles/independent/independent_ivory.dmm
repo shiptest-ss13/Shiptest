@@ -139,12 +139,12 @@
 	pixel_x = -20;
 	dir = 4;
 	pixel_y = -8;
-	id = "yacht_cargo";
+	id = "ivory_cargo";
 	name = "blast door control"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
-	id = "yacht_holo";
+	id = "ivory_holo";
 	pixel_x = -19;
 	pixel_y = 1
 	},
@@ -406,10 +406,10 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "yacht_cargo"
+	id = "ivory_cargo"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "yacht_holo"
+	id = "ivory_holo"
 	},
 /obj/structure/cable/green{
 	icon_state = "0-6"
@@ -437,10 +437,10 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "yacht_cargo"
+	id = "ivory_cargo"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "yacht_holo";
+	id = "ivory_holo";
 	dir = 1
 	},
 /obj/structure/cable/green{
@@ -890,7 +890,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "yacht_guides";
+	id = "ivory_guides";
 	dir = 2
 	},
 /obj/machinery/door/firedoor/window,
@@ -923,7 +923,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "yacht_bridge";
+	id = "ivory_bridge";
 	name = "shutter control";
 	pixel_y = -20;
 	pixel_x = -1
@@ -963,7 +963,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "yacht_bridge";
+	id = "ivory_bridge";
 	dir = 4
 	},
 /obj/machinery/door/firedoor/window,
@@ -1092,7 +1092,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "yacht_engines_strbd";
+	id = "ivory_engines_strbd";
 	name = "engine access";
 	pixel_y = -20;
 	dir = 1;
@@ -1148,7 +1148,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "yacht_engines_port";
+	id = "ivory_engines_port";
 	name = "engine access";
 	pixel_y = 20;
 	pixel_x = -7
@@ -1277,7 +1277,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "yacht_captains"
+	id = "ivory_captains"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -1363,7 +1363,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "yacht_commons"
+	id = "ivory_commons"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -1397,7 +1397,7 @@
 /obj/machinery/button/door{
 	pixel_x = -20;
 	dir = 4;
-	id = "yacht_guides";
+	id = "ivory_guides";
 	name = "shutter control";
 	pixel_y = -8
 	},
@@ -1466,7 +1466,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "yacht_engines_strbd";
+	id = "ivory_engines_strbd";
 	dir = 4
 	},
 /turf/open/floor/engine/hull,
@@ -1477,7 +1477,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "yacht_engines_port";
+	id = "ivory_engines_port";
 	dir = 4
 	},
 /turf/open/floor/engine/hull,
@@ -1862,7 +1862,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "yacht_bridge"
+	id = "ivory_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -2173,7 +2173,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "yacht_guides"
+	id = "ivory_guides"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -2188,7 +2188,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "yacht_cargo"
+	id = "ivory_cargo"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
@@ -2199,7 +2199,7 @@
 /obj/machinery/button/door{
 	pixel_x = 20;
 	dir = 8;
-	id = "yacht_captains";
+	id = "ivory_captains";
 	name = "shutter control";
 	pixel_y = 3
 	},
@@ -2418,7 +2418,7 @@
 	launch_status = 0;
 	port_direction = 8;
 	preferred_direction = 4;
-	name = "yacht dock"
+	name = "ivory dock"
 	},
 /obj/structure/railing/thick/corner{
 	dir = 1
@@ -2447,7 +2447,7 @@
 	pixel_x = 20;
 	dir = 8;
 	pixel_y = 6;
-	id = "yacht_commons";
+	id = "ivory_commons";
 	name = "shutter control"
 	},
 /obj/machinery/firealarm/directional/east{
