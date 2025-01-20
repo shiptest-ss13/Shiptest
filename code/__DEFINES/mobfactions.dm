@@ -2,6 +2,7 @@
 #define FACTION_HOSTILE "hostile"
 /// Acts as a default faction for most peaceful creatures
 #define FACTION_NEUTRAL "neutral"
+#define FACTION_RAT "rat"
 
 //"Antag" factions
 // anything with these factions should be hostile to the average player.

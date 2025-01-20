@@ -88,7 +88,7 @@
 		/obj/structure/grille = 5,
 		/obj/effect/spawner/random/trash/food_packaging = 3,
 		/obj/effect/spawner/random/trash/cigbutt = 1,
-		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
+		/obj/item/food/deadmouse = 1,
 	)
 
 /obj/effect/spawner/random/trash/decal

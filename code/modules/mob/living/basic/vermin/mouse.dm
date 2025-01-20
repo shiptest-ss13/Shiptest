@@ -16,7 +16,7 @@
 	//held_w_class = WEIGHT_CLASS_TINY
 	//mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	//gold_core_spawnable = FRIENDLY_SPAWN
-	//faction = list(FACTION_RAT)
+	faction = list(FACTION_RAT)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mouse = 1)
 
 	speak_emote = list("squeaks")
@@ -45,7 +45,7 @@
 	if(isnull(body_color))
 		body_color = pick("brown", "gray", "white")
 		held_state = "mouse_[body_color]" // not handled by variety element
-		//AddElement(/datum/element/animal_variety, "mouse", body_color, FALSE)
+		AddElement(/datum/element/animal_variety, "mouse", body_color, FALSE)
 	//AddElement(/datum/element/swabable, CELL_LINE_TABLE_MOUSE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 10)
 	AddComponent(/datum/component/squeak, list('sound/effects/mousesqueek.ogg' = 1), 100, extrarange = SHORT_RANGE_SOUND_EXTRARANGE) //as quiet as a mouse or whatever
 
@@ -110,9 +110,11 @@
 		var/obj/item/food/deadmouse/mouse = new(loc)
 		mouse.name = name
 		mouse.icon_state = icon_dead
+		/*
 		if(HAS_TRAIT(src, TRAIT_BEING_SHOCKED))
 			mouse.desc = "They're toast."
 			mouse.add_atom_colour("#3A3A3A", FIXED_COLOUR_PRIORITY)
+		*/
 	qdel(src)
 
 /mob/living/basic/mouse/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
@@ -132,7 +134,7 @@
 		return TRUE
 
 /// Signal proc for [COMSIG_ATOM_ENTERED]. Sends a lil' squeak to chat when someone walks over us.
-/mob/living/basic/mouse/proc/on_entered(datum/source, atom/movable/entered)
+/mob/living/basic/mouse/on_entered(datum/source, atom/movable/entered)
 	SIGNAL_HANDLER
 
 	if(ishuman(entered) && stat == CONSCIOUS)

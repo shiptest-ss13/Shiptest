@@ -239,7 +239,7 @@
 		target = scan(/obj/item/cigbutt)
 
 	if(!target && trash) //Search for dead mices.
-		target = scan(/obj/item/reagent_containers/food/snacks/deadmouse)
+		target = scan(/obj/item/food/deadmouse)
 
 	if(!target && auto_patrol) //Search for cleanables it can see.
 		if(mode == BOT_IDLE || mode == BOT_START_PATROL)
@@ -319,7 +319,7 @@
 	if(trash)
 		target_types += list(
 		/obj/item/trash,
-		/obj/item/reagent_containers/food/snacks/deadmouse,
+		/obj/item/food/deadmouse,
 		/obj/item/cigbutt,
 		)
 

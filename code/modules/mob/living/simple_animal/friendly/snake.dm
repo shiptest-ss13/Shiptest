@@ -209,7 +209,7 @@
 			else
 				say("I've already read that one.")
 				return
-	if(istype(O, /obj/item/reagent_containers/food/snacks/deadmouse))
+	if(istype(O, /obj/item/food/deadmouse))
 		if(speak_chance >= 75)
 			user.visible_message("[src] doesn't seem to want the [O]...")
 		else
