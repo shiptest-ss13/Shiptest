@@ -38,6 +38,8 @@
 
 /obj/structure/dresser/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
+	if(.)
+		return FALSE
 	to_chat(user, span_notice("You begin to disassemble [src]."))
 	if(I.use_tool(src, user, 10, volume=50))
 		to_chat(user, span_notice("You successfully deconstruct [src]."))
