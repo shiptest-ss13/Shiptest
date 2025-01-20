@@ -105,12 +105,12 @@
 	desc = "A bulky, 40-round pan magazine for the toploading Firestorm submachine gun. The rate of fire may be low, but this much ammo can mow through anything."
 	icon_state = "firestorm_pan"
 	base_icon_state = "firestorm_pan"
-	max_ammo = 50
+	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/c44_firestorm_mag/pan/update_icon_state() //Causes the mag to NOT inherit the parent's update_icon oooh the misery
 	. = ..()
 	icon_state = "firestorm_pan"
 
-/obj/item/ammo_box/magazine/c45_firestorm_mag/pan/empty
+/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/empty
 	start_empty = TRUE

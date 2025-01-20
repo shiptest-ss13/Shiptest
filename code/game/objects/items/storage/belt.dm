@@ -94,11 +94,11 @@
 /obj/item/storage/belt/utility/chief/full/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/electric(src)
 	new /obj/item/multitool(src)
 	new /obj/item/stack/cable_coil(src,MAXCOIL,pick("red","yellow","orange"))
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/analyzer(src)
-	//much roomier now that we've managed to remove two tools
 
 /obj/item/storage/belt/utility/full/PopulateContents()
 	new /obj/item/screwdriver(src)
@@ -149,6 +149,7 @@
 /obj/item/storage/belt/utility/full/ert/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/electric(src)
 	new /obj/item/multitool(src)
 	new /obj/item/construction/rcd/combat(src)
 	new /obj/item/extinguisher/mini(src)
