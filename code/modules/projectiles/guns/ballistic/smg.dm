@@ -8,8 +8,12 @@
 	spread = 6
 	spread_unwielded = 10
 	wield_slowdown = SMG_SLOWDOWN
+	aimed_wield_slowdown = SMG_AIM_SLOWDOWN
+	zoom_amt = SMG_ZOOM
 	recoil_unwielded = 4
 	w_class = WEIGHT_CLASS_BULKY
+
+	light_range = 1
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO

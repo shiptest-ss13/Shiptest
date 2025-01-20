@@ -2587,6 +2587,12 @@
 	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "Locker Room";
+	req_access_txt = null;
+	req_one_access_txt = "48,56"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "vF" = (
@@ -5645,7 +5651,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Locker Room";
-	req_access_txt = "48"
+	req_one_access = list(48, 56)
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
