@@ -70,7 +70,9 @@
 /obj/item/reagent_containers/food/snacks/grown/apple,
 /obj/item/reagent_containers/food/drinks/beer,
 /obj/item/reagent_containers/food/drinks/beer,
-/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/open/floor/plating/asteroid/rockplanet/wet/ship,
 /area/ship/roumain)
 "bz" = (
@@ -774,22 +776,12 @@
 /obj/item/pestle{
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/hypospray/medipen/survival{
-	pixel_x = 9;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/hypospray/medipen/survival{
-	pixel_x = 7
-	},
-/obj/item/reagent_containers/syringe/antiviral{
-	pixel_y = 1;
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/glass/bottle/formaldehyde,
-/obj/item/reagent_containers/glass/bottle/formaldehyde,
 /obj/structure/closet/cabinet,
+/obj/item/reagent_containers/glass/beaker,
 /obj/item/reagent_containers/glass/filter,
+/obj/item/reagent_containers/glass/beaker,
 /obj/item/storage/firstaid/roumain,
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/wood/walnut,
 /area/ship/medical)
 "lX" = (
@@ -942,27 +934,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
-"ph" = (
-/obj/structure/closet/secure_closet/shadow,
-/obj/item/clothing/head/cowboy/sec/roumain/shadow,
-/obj/item/clothing/suit/armor/roumain/shadow,
-/obj/item/melee/knife/hunting,
-/obj/item/clothing/accessory/waistcoat/roumain,
-/obj/item/storage/backpack/satchel/leather,
-/obj/item/gps{
-	pixel_x = -7
-	},
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/cowboy,
-/obj/item/clothing/shoes/cowboy/black,
-/obj/item/lighter,
-/obj/item/flashlight/lantern,
-/obj/item/clothing/under/suit/roumain,
-/obj/effect/turf_decal/siding/brown{
-	dir = 4
-	},
-/turf/open/floor/wood/walnut,
-/area/ship/security)
 "pp" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1373,12 +1344,6 @@
 "xc" = (
 /turf/closed/wall/r_wall,
 /area/ship/engineering/electrical)
-"xk" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "xt" = (
 /obj/machinery/computer/cryopod/retro/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1514,19 +1479,23 @@
 /area/ship/roumain)
 "zd" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/puce{
-	pixel_y = 6;
-	pixel_x = -6
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine{
+	pixel_x = -6;
+	pixel_y = 14
 	},
-/obj/item/reagent_containers/food/snacks/meat/slab/bear{
-	pixel_y = 4;
-	pixel_x = 2
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine{
+	pixel_x = 7;
+	pixel_y = 15
 	},
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf{
-	pixel_x = 7
+/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide{
+	amount = 3;
+	pixel_x = 4;
+	pixel_y = -6
 	},
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit{
-	pixel_y = -2
+/obj/item/stack/sheet/bone{
+	amount = 6;
+	pixel_x = -4;
+	pixel_y = 1
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/medical)
@@ -1944,30 +1913,22 @@
 /area/ship/roumain)
 "Io" = (
 /obj/structure/closet/crate/hydroponics,
-/obj/item/seeds/coffee,
-/obj/item/seeds/coffee,
-/obj/item/seeds/tea,
-/obj/item/seeds/tea,
-/obj/item/seeds/tobacco,
-/obj/item/seeds/tobacco,
-/obj/item/seeds/carrot,
-/obj/item/seeds/lavaland/puce,
-/obj/item/seeds/lavaland/puce,
-/obj/item/seeds/carrot,
-/obj/item/seeds/wheat,
-/obj/item/seeds/wheat,
 /obj/item/seeds/lavaland/cactus,
 /obj/item/seeds/lavaland/cactus,
-/obj/item/seeds/lavaland/porcini,
-/obj/item/seeds/lavaland/porcini,
-/obj/item/seeds/lavaland/polypore,
-/obj/item/seeds/lavaland/polypore,
-/obj/item/seeds/lavaland/inocybe,
-/obj/item/seeds/lavaland/inocybe,
-/obj/item/seeds/lavaland/ember,
-/obj/item/seeds/lavaland/ember,
 /obj/item/seeds/cotton,
 /obj/item/seeds/cotton,
+/obj/item/seeds/sunflower/moonflower,
+/obj/item/seeds/sunflower/moonflower,
+/obj/item/seeds/lavaland/inocybe,
+/obj/item/seeds/lavaland/inocybe,
+/obj/item/seeds/chili/ice,
+/obj/item/seeds/chili/ice,
+/obj/item/seeds/wheat/rice,
+/obj/item/seeds/wheat/rice,
+/obj/item/seeds/potato,
+/obj/item/seeds/potato,
+/obj/item/seeds/lemon,
+/obj/item/seeds/lemon,
 /turf/open/floor/plating/sandy_dirt/ship,
 /area/ship/roumain)
 "IZ" = (
@@ -2373,6 +2334,12 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/security)
+"OJ" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Pj" = (
 /obj/structure/platform/wood{
 	dir = 9
@@ -2497,23 +2464,14 @@
 	pixel_y = -8
 	},
 /obj/item/ammo_box/magazine/illestren_a850r{
-	pixel_x = -2;
-	pixel_y = -5
-	},
-/obj/item/ammo_box/magazine/illestren_a850r{
-	pixel_x = 7;
-	pixel_y = -7
-	},
-/obj/item/ammo_box/magazine/illestren_a850r{
 	pixel_x = 5;
 	pixel_y = -3
 	},
-/obj/item/storage/box/ammo/a12g_buckshot,
-/obj/item/storage/box/ammo/a12g_buckshot,
-/obj/item/storage/toolbox/ammo/a850r,
 /obj/effect/turf_decal/siding/brown{
 	dir = 8
 	},
+/obj/item/storage/toolbox/ammo/shotgun,
+/obj/item/storage/box/ammo/a8_50r,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "Ss" = (
@@ -2764,10 +2722,6 @@
 /obj/structure/guncloset{
 	anchored = 1
 	},
-/obj/item/gun/ballistic/rifle/illestren/factory{
-	pixel_x = -4;
-	pixel_y = -5
-	},
 /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration,
 /obj/item/gun/ballistic/rifle/illestren/factory{
 	pixel_x = -4;
@@ -2776,6 +2730,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 8
 	},
+/obj/item/gun/ballistic/shotgun/flamingarrow/conflagration,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "Wg" = (
@@ -3421,7 +3376,7 @@ SV
 HU
 gz
 Hg
-ph
+Hg
 qQ
 HU
 bF
@@ -3645,11 +3600,11 @@ bF
 bF
 bF
 jM
-xk
-xk
-xk
-xk
-xk
+OJ
+OJ
+OJ
+OJ
+OJ
 Go
 bF
 bF
