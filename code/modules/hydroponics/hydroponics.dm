@@ -570,7 +570,7 @@
 		msg += "Toxicity level: [span_notice("[toxic] / [HYDRO_MAX_TOXIC]")]\n"
 		msg += "Water level: [span_notice("[waterlevel] / [maxwater]")]\n"
 		msg += "Nutrition level: [span_notice("[reagents.total_volume] / [maxnutri]")]\n"
-		to_chat(user, examine_block(msg))
+		to_chat(user, boxed_message(msg))
 		return
 
 	else if(istype(O, /obj/item/cultivator))
