@@ -273,9 +273,11 @@
 /turf/open/floor/mineral/titanium/tiled/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "bx" = (
-/obj/structure/vein/classtwo,
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/vein/classtwo{
+	mining_charges = 60
+	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/mining_base/rig_two)
 "bC" = (
@@ -3697,7 +3699,8 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "tP" = (
-/obj/machinery/mineral/processing_unit,
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/railing,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
 "tQ" = (
@@ -4091,7 +4094,6 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "wz" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/closet/crate,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
 "wC" = (
@@ -5416,6 +5418,7 @@
 /obj/structure/platform/corner{
 	dir = 1
 	},
+/obj/structure/closet/crate,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
 "CZ" = (
@@ -9303,9 +9306,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/turf_decal/industrial/radiation{
-	dir = 1
-	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/rockplanet/mining_base/engineering)
 "Yk" = (
@@ -9619,7 +9619,9 @@
 /obj/structure/vein/classthree{
 	mining_charges = 80;
 	max_mobs = 18;
-	spawn_distance_max = 7
+	spawn_distance_max = 7;
+	ore_list = list(/obj/item/stack/ore/ice = 10);
+	vein_contents = list(/obj/item/stack/ore/ice)
 	},
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt,
@@ -12074,11 +12076,11 @@ at
 Eq
 xj
 ew
-MM
+tP
 wI
 wz
 xc
-tP
+xc
 xc
 xc
 hu

@@ -28,7 +28,6 @@
 /datum/ai_behavior/use_in_hand
 	behavior_flags = AI_BEHAVIOR_MOVE_AND_PERFORM
 
-
 /datum/ai_behavior/use_in_hand/perform(delta_time, datum/ai_controller/controller)
 	. = ..()
 	var/mob/living/pawn = controller.pawn

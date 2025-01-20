@@ -50,10 +50,12 @@
 	autoclose = TRUE
 	secondsElectrified = MACHINE_NOT_ELECTRIFIED //How many seconds remain until the door is no longer electrified. -1/MACHINE_ELECTRIFIED_PERMANENT = permanently electrified until someone fixes it.
 	assemblytype = /obj/structure/door_assembly
-	normalspeed = 1
+	fast_close = FALSE
 	explosion_block = 1
 	hud_possible = list(DIAG_AIRLOCK_HUD)
 	req_ship_access = TRUE
+
+	close_speed = 150
 
 	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
 
@@ -418,6 +420,9 @@
 				if(G.siemens_coefficient)//not insulated
 					new /datum/hallucination/shock(H)
 					return
+	else
+		if(aiControlDisabled == AI_WIRE_DISABLED)
+			return
 	if (cyclelinkedairlock)
 		if (!shuttledocked && !emergency && !cyclelinkedairlock.shuttledocked && !cyclelinkedairlock.emergency && allowed(user))
 			if(cyclelinkedairlock.operating)
@@ -1229,6 +1234,8 @@
 
 /obj/machinery/door/airlock/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
+	if(.)
+		return FALSE
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	var/decon_time = 5 SECONDS
@@ -1260,7 +1267,7 @@
 		playsound(src, pry_open_sound, 30, TRUE, mono_adj = TRUE)
 
 	if(autoclose)
-		autoclose_in(normalspeed ? 150 : 15)
+		autoclose_in(fast_close ? clamp(close_speed/10, 10, 300) : close_speed)
 
 	if(!density)
 		return TRUE
@@ -1516,6 +1523,8 @@
 /obj/machinery/door/airlock/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)
 		if(RCD_DECONSTRUCT)
+			if(resistance_flags & INDESTRUCTIBLE)
+				return FALSE
 			if(seal)
 				to_chat(user, "<span class='notice'>[src]'s seal needs to be removed first.</span>")
 				return FALSE
@@ -1528,6 +1537,8 @@
 /obj/machinery/door/airlock/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_DECONSTRUCT)
+			if(resistance_flags & INDESTRUCTIBLE)
+				return FALSE
 			to_chat(user, "<span class='notice'>You deconstruct the airlock.</span>")
 			qdel(src)
 			return TRUE
@@ -1565,7 +1576,7 @@
 	data["locked"] = locked // bolted
 	data["lights"] = lights // bolt lights
 	data["safe"] = safe // safeties
-	data["speed"] = normalspeed // safe speed
+	data["operation speed"] = fast_close // safe speed
 	data["welded"] = welded // welded
 	data["opened"] = !density // opened
 
@@ -1633,7 +1644,7 @@
 			safe = !safe
 			. = TRUE
 		if("speed-toggle")
-			normalspeed = !normalspeed
+			fast_close = !fast_close
 			. = TRUE
 		if("open-close")
 			user_toggle_open(usr)

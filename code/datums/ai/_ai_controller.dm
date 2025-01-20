@@ -51,7 +51,6 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/New(atom/new_pawn)
 	change_ai_movement_type(ai_movement)
 	init_subtrees()
-
 	PossessPawn(new_pawn)
 
 /datum/ai_controller/Destroy(force, ...)
@@ -129,7 +128,6 @@ multiple modular subtrees with behaviors
 	if(!able_to_run())
 		walk(pawn, 0) //stop moving
 		return //this should remove them from processing in the future through event-based stuff.
-
 	if(!LAZYLEN(current_behaviors))
 		PerformIdleBehavior(delta_time) //Do some stupid shit while we have nothing to do
 		return

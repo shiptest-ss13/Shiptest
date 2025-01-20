@@ -36,6 +36,8 @@
 		/obj/item/stack/ore/silver,
 		/obj/item/stack/ore/uranium)
 
+	armor = list(melee = 25, bullet = 60, laser = 40, energy = 80, bomb = 80, bio = 80, rad = 80, fire = 80, acid = 80, magic = 80)
+
 	var/chase_time = 100
 	var/will_burrow = TRUE
 	var/datum/action/innate/goldgrub/spitore/spit
@@ -157,8 +159,8 @@
 		qdel(src)
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/bullet_act(obj/projectile/P)
-	visible_message("<span class='danger'>The [P.name] is repelled by [name]'s girth!</span>")
-	return BULLET_ACT_BLOCK
+	visible_message("<span class='danger'>The [P.name] is absorbed by [name]'s girth!</span>")
+	. = ..()
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	vision_range = 9
