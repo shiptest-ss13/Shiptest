@@ -50,9 +50,7 @@
 	/// Variable needed to determine the selected category of forms on Photocopier.js
 	var/category
 	/// Variable to select which pool of blanks is loaded to print
-	var/blanks_path
-	/// Determines outpost-provided generic forms are appended to the normal list if blanks_path != null
-	var/default_blanks = FALSE
+	var/blanks_path = 'strings/blanks/indie_blanks.json'
 
 /obj/machinery/photocopier/Initialize()
 	. = ..()
@@ -102,8 +100,8 @@
 
 	try
 		var/list/blanks = json_decode(file2text(blanks_path))
-		if (blanks != null || default_blanks)
-			if (default_blanks)
+		if (blanks != null)
+			if (blanks_path != 'strings/blanks/indie_blanks.json')
 				blanks += json_decode(file2text('strings/blanks/indie_blanks.json'))
 			data["blanks"] = blanks
 			data["category"] = category
@@ -573,10 +571,6 @@
 /obj/machinery/photocopier/clip
 	blanks_path = 'strings/blanks/clip_blanks.json'
 
-/obj/machinery/photocopier/independent
-	blanks_path = 'strings/blanks/indie_blanks.json'
-	default_blanks = FALSE
-
 /obj/machinery/photocopier/inteq
 	blanks_path = 'strings/blanks/inteq_blanks.json'
 
@@ -591,6 +585,10 @@
 
 /obj/machinery/photocopier/syndicate
 	blanks_path = 'strings/blanks/syndicate_blanks.json'
+
+/obj/machinery/photocopier/ruin/Initialize()
+	. = ..()
+	wires.cut(WIRE_FORMS)
 
 /*
  * Toner cartridge

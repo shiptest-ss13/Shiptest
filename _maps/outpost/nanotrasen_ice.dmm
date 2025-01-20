@@ -283,7 +283,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
 "cm" = (
-/obj/machinery/photocopier,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
@@ -291,6 +290,7 @@
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
+/obj/machinery/photocopier/nanotrasen,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security)
 "cr" = (
@@ -1158,9 +1158,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "is" = (
@@ -2240,11 +2238,11 @@
 "oz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/photocopier,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/photocopier/nanotrasen,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/checkpoint)
 "oA" = (
@@ -4821,7 +4819,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/door/airlock/mining{
-	dir = 2;
 	name = "Smeltery"
 	},
 /turf/open/floor/plasteel/tech,
@@ -6763,9 +6760,7 @@
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
@@ -7516,9 +7511,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
