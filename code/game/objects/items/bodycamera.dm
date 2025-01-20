@@ -43,19 +43,21 @@
 
 /obj/item/bodycamera/AltClick(mob/user)
 	. = ..()
+	if(!user.CanReach(src))
+		return
 	if(do_after(user, 10, src, IGNORE_USER_LOC_CHANGE))
 		status = !status
 		if(status)
 			icon_state = "bodycamera-on"
-			playsound(user, 'sound/items/bodycamera_on.ogg', 25, FALSE)
+			playsound(user, 'sound/items/bodycamera_on.ogg', 23, FALSE)
 		else
 			icon_state = "bodycamera-off"
-			playsound(user, 'sound/items/bodycamera_off.ogg', 25, FALSE)
+			playsound(user, 'sound/items/bodycamera_off.ogg', 23, FALSE)
 		user.visible_message(
 			span_notice("[user] turns [src] [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
 			span_notice("You turn [src] [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
 		update_appearance()
-	)
+		)
 
 /obj/item/bodycamera/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
