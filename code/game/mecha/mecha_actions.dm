@@ -21,6 +21,7 @@
 	strafing_action.Remove(user)
 	if(zoom_action)
 		zoom_action.Remove(user)
+		user.client.view_size.zoomIn()
 
 
 /datum/action/innate/mecha

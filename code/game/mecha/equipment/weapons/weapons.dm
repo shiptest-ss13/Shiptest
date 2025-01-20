@@ -134,6 +134,7 @@
 	projectile = /obj/projectile/beam/emitter/hitscan
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	full_auto = FALSE
+	scoped = TRUE
 	zoom_mod = 10
 	zoom_out_mod = 3
 
