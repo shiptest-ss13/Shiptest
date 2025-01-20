@@ -310,7 +310,7 @@
 	item_state = "morphen"
 
 /obj/item/reagent_containers/hypospray/medipen/mannitol
-	name = "tricordrazine injector"
+	name = "mannitol injector"
 	desc = "An injector filled with mannitol, a restorative compound that targets the brain."
 	list_reagents = list(/datum/reagent/medicine/mannitol = 15)
 	volume = 15
