@@ -94,8 +94,6 @@
 	var/atom/hunted = hunting_weakref?.resolve()
 
 	if(QDELETED(hunted))
-		//Target is gone for some reason. forget about this task!
-		controller[hunting_target_key] = null
 		finish_action(controller, FALSE, hunting_target_key)
 	else
 		target_caught(hunter, hunted)
@@ -105,6 +103,7 @@
 	if(isliving(hunted)) // Are we hunting a living mob?
 		var/mob/living/living_target = hunted
 		hunter.manual_emote("chomps [living_target]!")
+		living_target.investigate_log("has been killed by [key_name(hunter)].", INVESTIGATE_DEATHS)
 		living_target.death()
 
 	else if(IS_EDIBLE(hunted))
