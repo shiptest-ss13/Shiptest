@@ -1,6 +1,6 @@
 /datum/wires/advanced_airlock_controller
 	holder_type = /obj/machinery/advanced_airlock_controller
-	proper_name = "Air Alarm"
+	proper_name = "Advanced Airlock Controller"
 
 /datum/wires/advanced_airlock_controller/New(atom/holder)
 	wires = list(
