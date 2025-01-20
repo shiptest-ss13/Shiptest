@@ -10,7 +10,7 @@
 	///Grabbed as apart of late init to ensure that the item of intrest cant move
 	var/datum/weakref/prespawned_weakref
 	///Only needed if you have multipe missiosn that would otherwise use the same poi's
-	var/mission_index = null
+	var/mission_index = 1
 	///Prefered over the passed one, used for varediting primarly.
 	var/type_to_spawn
 
