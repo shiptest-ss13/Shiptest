@@ -87,7 +87,7 @@ const MissionsList = (props, context) => {
         <LabeledList.Item label="Faction">{faction}</LabeledList.Item>
         <LabeledList.Item label="Description">{desc}</LabeledList.Item>
         <LabeledList.Item label="Time">
-          <Box>Issued: {timeIssued}</Box>
+          <Box>Issued: {timeIssued} minutes ago.</Box>
           {duration && <Box>Duration Left: {missionTimer(mission)}</Box>}
         </LabeledList.Item>
         <LabeledList.Item label="Rewards">{reward}</LabeledList.Item>

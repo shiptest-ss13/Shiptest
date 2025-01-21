@@ -11,6 +11,11 @@
 	suffix = "beach_crashed_engineer.dmm"
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_HAZARDOUS)
 
+/datum/mission/ruin/lost_axe
+	name = "I lost my axe!"
+	desc = "I left my axe on a beachplanet but forgot to take it when i got recused!"
+	setpiece_item = /obj/item/melee/axe/fire
+
 /datum/map_template/ruin/beachplanet/ancient
 	name = "Ancient Danger"
 	id = "beach_ancient"

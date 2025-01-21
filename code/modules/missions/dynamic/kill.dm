@@ -20,7 +20,10 @@
 
 /datum/mission/ruin/signaled/kill/frontiersmen
 	value = 3500
-	mission_reward = /obj/item/gun/ballistic/automatic/pistol/mauler
+	mission_reward = list(
+		/obj/item/gun/ballistic/automatic/pistol/mauler,
+		/obj/item/gun/ballistic/automatic/pistol/spitter
+	)
 	registered_type = /mob/living/simple_animal/hostile/human/frontier/ranged/officer
 	setpiece_item = /obj/item/clothing/neck/dogtag/frontier
 
