@@ -261,20 +261,18 @@
 				mode = BOT_IDLE
 				return
 
-		if(target && (!path || path.len == 0) && (get_dist(src,target) > 1))
+		if(!path || path.len == 0) //No path, need a new one
+			//Try to produce a path to the target, and ignore airlocks to which it has access.
 			path = get_path_to(src, target, 30, id=access_card)
-			mode = BOT_MOVING
-			if(!path.len) //try to get closer if you can't reach the target directly
-				path = get_path_to(src, target, 30, id=access_card)
-				if(!path.len) //Do not chase a target we cannot reach.
-					add_to_ignore(target)
-					target = null
-					path = list()
-
-		if(path.len > 0 && target)
-			if(!bot_move(path[path.len]))
+			if(!bot_move(target))
+				add_to_ignore(target)
 				target = null
-				mode = BOT_IDLE
+				path = list()
+				return
+			mode = BOT_MOVING
+		else if(!bot_move(target))
+			target = null
+			mode = BOT_IDLE
 			return
 
 	oldloc = loc
