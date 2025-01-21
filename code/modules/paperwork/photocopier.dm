@@ -77,6 +77,11 @@
 	ass = null //the mob isn't actually contained and just referenced, no need to delete it.
 	return ..()
 
+/obj/machinery/photocopier/update_overlays()
+	. = ..()
+	if(panel_open)
+		. += "photocopier_panel"
+
 /obj/machinery/photocopier/process(delta_time)
 	if(seconds_electrified > MACHINE_NOT_ELECTRIFIED)
 		seconds_electrified -= delta_time
