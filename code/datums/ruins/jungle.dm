@@ -10,7 +10,7 @@
 	description = "A small bunker owned by the Syndicate."
 	suffix = "jungle_syndicate.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
-	dynamic_mission_types = list(
+	ruin_mission_types = list(
 		/datum/mission/ruin/nt_files,
 		/datum/mission/ruin/signaled/kill/jerry
 	)
@@ -51,7 +51,7 @@
 	description = "A bombed out airbase from the ICW, taken back over by nature"
 	suffix = "jungle_bombed_starport.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE)
-	dynamic_mission_types = list(/datum/mission/ruin/blackbox)
+	ruin_mission_types = list(/datum/mission/ruin/blackbox)
 
 /datum/map_template/ruin/jungle/medtech
 	name = "MedTech facility"
@@ -66,7 +66,7 @@
 	description = "A frontiersmen base, hidden within a cave. They don't seem friendly"
 	suffix = "jungle_cavecrew.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE, RUIN_TAG_MAJOR_LOOT)
-	dynamic_mission_types = list(
+	ruin_mission_types = list(
 		/datum/mission/ruin/signaled/kill/frontiersmen,
 		/datum/mission/ruin/data_reterival
 	)

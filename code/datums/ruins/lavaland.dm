@@ -17,7 +17,7 @@
 	id = "buried_shrine"
 	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
 	suffix = "lavaland_surface_buried_shrine.dmm"
-	dynamic_mission_types = list(/datum/mission/ruin/signaled/kill/elite)
+	ruin_mission_types = list(/datum/mission/ruin/signaled/kill/elite)
 
 /datum/map_template/ruin/lavaland/lava_canyon
 	name = "Lava Canyon"
@@ -30,7 +30,7 @@
 	id = "wreck_factory"
 	description = "A  Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
 	suffix = "lavaland_surface_wrecked_factory.dmm"
-	dynamic_mission_types = list(
+	ruin_mission_types = list(
 		/datum/mission/ruin/nanotrasen_docs,
 		/datum/mission/ruin/captain_medal,
 		/datum/mission/ruin/brainchip
@@ -66,11 +66,11 @@
 	id = "crashed_star"
 	description = "A crashed pirate ship. It would seem that it's crew died a while ago."
 	suffix = "lavaland_crashed_starwalker.dmm"
-	dynamic_mission_types = list(/datum/mission/ruin/blackbox)
+	ruin_mission_types = list(/datum/mission/ruin/blackbox)
 
 /datum/map_template/ruin/lavaland/abandonedlisteningpost
 	name = "Abandoned Listening Post"
 	id = "abandonedlistening"
 	description = "An abandoned Cybersun listening post. Seems like the Ramzi Clique has an interest in the site."
 	suffix = "lavaland_abandonedlisteningpost.dmm"
-	dynamic_mission_types = list(/datum/mission/ruin/blackbox)
+	ruin_mission_types = list(/datum/mission/ruin/blackbox)

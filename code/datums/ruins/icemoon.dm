@@ -10,7 +10,7 @@
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_abandoned_village.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_INHOSPITABLE)
-	dynamic_mission_types = list(
+	ruin_mission_types = list(
 		/datum/mission/ruin/data_reterival,
 		/datum/mission/ruin/signaled/drill
 	)
@@ -21,7 +21,7 @@
 	description = "Safety records for early Nanotrasen Spaceworks vessels were, and always have been, top of their class. Absolutely no multi-billion credit projects have been painstakingly erased from history. (Citation Needed)"
 	suffix = "icemoon_crashed_holemaker.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_SHELTER)
-	dynamic_mission_types = list(/datum/mission/ruin/data_reterival)
+	ruin_mission_types = list(/datum/mission/ruin/data_reterival)
 
 /datum/map_template/ruin/icemoon/ice_lodge
 	name = "Ice Lodge"
@@ -29,7 +29,7 @@
 	description = "Records show this settlement as belonging to the SRM, but no one has heard from them as of late. I wonder what happened?"
 	suffix = "icemoon_ice_lodge.dmm"
 	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
-	dynamic_mission_types = list(/datum/mission/ruin/fallen_montagne)
+	ruin_mission_types = list(/datum/mission/ruin/fallen_montagne)
 
 /datum/mission/ruin/fallen_montagne
 	name = "dark signal investigation"
@@ -45,4 +45,5 @@
 	description = "Records show this settlement as belonging to the SRM, but no one has heard from them as of late. I wonder what happened?"
 	suffix = "icemoon_tesla_lab.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+	ruin_mission_types = list(/datum/mission/ruin/blackbox)
 

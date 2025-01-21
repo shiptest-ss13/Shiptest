@@ -28,7 +28,6 @@
 	mission_reward = list(
 		/obj/item/gun/energy/e_gun/old,
 		/obj/item/gun/energy/laser/retro,
-		/obj/item/gun/energy/laser/captain
 	)
 	faction = /datum/faction/nt
 	setpiece_item = /obj/item/documents/nanotrasen
