@@ -340,11 +340,24 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
+"fh" = (
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
+/area/ship/roumain)
 "fm" = (
 /obj/structure/chair/pew/right,
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe,
 /area/ship/roumain)
+"fJ" = (
+/obj/machinery/button/door{
+	pixel_x = 0;
+	pixel_y = -10;
+	name = "Airlock Shutters";
+	id = "airlockshutters"
+	},
+/turf/closed/wall/r_wall,
+/area/ship/engineering/electrical)
 "fT" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -864,7 +877,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "nk" = (
-/obj/structure/flora/grass/rockplanet/dead,
 /obj/machinery/hydroponics/soil,
 /obj/structure/platform/wood{
 	dir = 4
@@ -970,6 +982,10 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/cargo)
+"pM" = (
+/obj/structure/flora/grass/rockplanet/dead,
+/turf/open/floor/plating/sandy_dirt/ship,
+/area/ship/roumain)
 "pN" = (
 /obj/structure/sink{
 	dir = 8;
@@ -1041,23 +1057,23 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/shadow,
-/obj/item/clothing/head/cowboy/sec/roumain/shadow,
-/obj/item/clothing/suit/armor/roumain/shadow,
-/obj/item/melee/knife/hunting,
-/obj/item/clothing/accessory/waistcoat/roumain,
+/obj/effect/turf_decal/siding/brown/corner{
+	dir = 4
+	},
+/obj/item/clothing/under/suit/roumain,
+/obj/item/flashlight/lantern,
+/obj/item/lighter,
+/obj/item/clothing/shoes/cowboy/black,
+/obj/item/clothing/shoes/cowboy,
+/obj/item/clothing/shoes/combat,
 /obj/item/storage/backpack/satchel/leather,
 /obj/item/gps{
 	pixel_x = -7
 	},
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/cowboy,
-/obj/item/clothing/shoes/cowboy/black,
-/obj/item/lighter,
-/obj/item/flashlight/lantern,
-/obj/item/clothing/under/suit/roumain,
-/obj/effect/turf_decal/siding/brown/corner{
-	dir = 4
-	},
+/obj/item/clothing/accessory/waistcoat/roumain,
+/obj/item/melee/knife/hunting,
+/obj/item/clothing/suit/armor/roumain/shadow,
+/obj/item/clothing/head/cowboy/sec/roumain/shadow,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "qR" = (
@@ -1147,21 +1163,25 @@
 /turf/open/floor/wood/birch,
 /area/ship/cargo)
 "sI" = (
-/obj/item/clothing/head/hardhat/solgov,
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/head/welding,
-/obj/item/clothing/suit/hazardvest/roumain,
-/obj/item/clothing/head/cowboy/sec/roumain/machinist,
-/obj/item/clothing/under/suit/roumain,
-/obj/item/clothing/shoes/workboots/mining,
-/obj/item/storage/belt,
-/obj/structure/closet/secure_closet/machinist{
-	anchored = 1
+/obj/item/clothing/glasses/welding{
+	pixel_x = 1;
+	pixel_y = 6;
+	layer = 3.1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/electrical,
+/obj/structure/table/wood,
+/obj/item/storage/toolbox/electrical{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = 0;
+	pixel_y = -1
+	},
+/obj/item/clothing/gloves/color/yellow{
+	pixel_x = 0;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "sP" = (
@@ -1555,9 +1575,7 @@
 	pixel_x = -7;
 	pixel_y = -20
 	},
-/obj/structure/chair/wood/wings{
-	dir = 8
-	},
+/obj/structure/destructible/tribal_torch,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Bq" = (
@@ -1585,6 +1603,9 @@
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/poddoor/shutters{
+	id = "airlockshutters"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "BY" = (
@@ -1601,8 +1622,18 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
 /area/ship/roumain)
 "Cb" = (
-/obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/destructible/tribal_torch,
+/turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ship/roumain)
 "Cp" = (
 /obj/structure/window/reinforced/fulltile,
@@ -1698,7 +1729,11 @@
 	},
 /area/ship/roumain)
 "EM" = (
-/obj/machinery/door/airlock/external,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "airlockshutters"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "Fa" = (
@@ -1937,12 +1972,26 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe,
 /area/ship/roumain)
+"Je" = (
+/obj/machinery/button/door{
+	pixel_x = 0;
+	pixel_y = 13;
+	name = "Airlock Shutters";
+	id = "airlockshutters";
+	dir = 1
+	},
+/turf/closed/wall/r_wall,
+/area/ship/engineering/electrical)
 "Jh" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/brown,
 /obj/structure/filingcabinet,
+/obj/item/computer_hardware/card_slot,
+/obj/item/folder,
+/obj/item/folder/blue,
+/obj/item/folder/yellow,
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "Jp" = (
@@ -2106,8 +2155,6 @@
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 4
 	},
-/obj/structure/table/wood,
-/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "LW" = (
@@ -2362,6 +2409,7 @@
 /area/ship/engineering/electrical)
 "PE" = (
 /obj/structure/railing/corner/wood,
+/obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/sandy_dirt/ship,
 /area/ship/roumain)
 "PS" = (
@@ -2388,25 +2436,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/table/wood,
-/obj/item/paper_bin/bundlenatural{
-	pixel_y = 4;
-	pixel_x = 4
-	},
-/obj/item/pen/charcoal{
-	pixel_x = -7;
-	pixel_y = 3;
-	layer = 3.1
-	},
-/obj/item/clipboard{
-	pixel_x = -4;
-	pixel_y = 2;
-	layer = 2.9
-	},
-/obj/item/flashlight/lamp/green{
-	pixel_y = 16;
-	pixel_x = -16;
-	layer = 2.8
-	},
+/obj/machinery/cell_charger,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Qs" = (
@@ -2432,6 +2462,27 @@
 	dir = 8
 	},
 /turf/open/floor/wood/birch,
+/area/ship/security)
+"Qu" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/shadow,
+/obj/item/clothing/under/suit/roumain,
+/obj/item/flashlight/lantern,
+/obj/item/lighter,
+/obj/item/clothing/shoes/cowboy/black,
+/obj/item/clothing/shoes/cowboy,
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/backpack/satchel/leather,
+/obj/item/gps{
+	pixel_x = -7
+	},
+/obj/item/clothing/accessory/waistcoat/roumain,
+/obj/item/melee/knife/hunting,
+/obj/item/clothing/suit/armor/roumain/shadow,
+/obj/item/clothing/head/cowboy/sec/roumain/shadow,
+/turf/open/floor/wood/walnut,
 /area/ship/security)
 "QA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2535,19 +2586,9 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ship/roumain)
 "Te" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/destructible/tribal_torch,
-/turf/open/floor/plating/asteroid/rockplanet/safe,
-/area/ship/roumain)
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "TE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -2910,6 +2951,13 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/bridge)
+"ZL" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/door/poddoor/shutters{
+	id = "airlockshutters"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/electrical)
 "ZO" = (
 /obj/structure/cable{
 	icon_state = "2-9"
@@ -3068,7 +3116,7 @@ XO
 My
 Ik
 sV
-Rk
+pM
 Rk
 rY
 Pj
@@ -3229,12 +3277,12 @@ bF
 "}
 (15,1,1) = {"
 bF
-jM
-xc
-xc
-xc
-xc
 Te
+Je
+xc
+xc
+fJ
+Cb
 cf
 Uj
 KD
@@ -3250,13 +3298,13 @@ bF
 "}
 (16,1,1) = {"
 bF
-jM
+Te
 EM
 fT
 ps
 EM
 Yr
-Cb
+fh
 uV
 yX
 gg
@@ -3271,8 +3319,8 @@ bF
 "}
 (17,1,1) = {"
 bF
-jM
-EM
+Te
+ZL
 km
 NN
 BO
@@ -3292,7 +3340,7 @@ bF
 "}
 (18,1,1) = {"
 ie
-jM
+Te
 Hn
 xc
 xc
@@ -3343,7 +3391,7 @@ xc
 My
 Vz
 ZA
-Te
+Cb
 My
 Wu
 Me
@@ -3389,7 +3437,7 @@ SV
 HU
 gz
 Hg
-Hg
+Qu
 qQ
 HU
 bF
