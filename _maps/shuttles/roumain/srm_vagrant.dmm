@@ -75,6 +75,27 @@
 /obj/item/reagent_containers/condiment/enzyme,
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe,
 /area/ship/roumain)
+"bk" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/shadow,
+/obj/item/clothing/under/suit/roumain,
+/obj/item/flashlight/lantern,
+/obj/item/lighter,
+/obj/item/clothing/shoes/cowboy/black,
+/obj/item/clothing/shoes/cowboy,
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/backpack/satchel/leather,
+/obj/item/gps{
+	pixel_x = -7
+	},
+/obj/item/clothing/accessory/waistcoat/roumain,
+/obj/item/melee/knife/hunting,
+/obj/item/clothing/suit/armor/roumain/shadow,
+/obj/item/clothing/head/cowboy/sec/roumain/shadow,
+/turf/open/floor/wood/walnut,
+/area/ship/security)
 "bz" = (
 /obj/structure/destructible/tribal_torch{
 	pixel_x = 10;
@@ -194,7 +215,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "df" = (
-/turf/open/floor/plating/asteroid/rockplanet/safe,
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe,
 /area/ship/roumain)
 "dj" = (
 /obj/structure/window/reinforced/fulltile,
@@ -340,24 +361,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
-"fh" = (
-/obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
-/area/ship/roumain)
 "fm" = (
 /obj/structure/chair/pew/right,
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe,
 /area/ship/roumain)
-"fJ" = (
-/obj/machinery/button/door{
-	pixel_x = 0;
-	pixel_y = -10;
-	name = "Airlock Shutters";
-	id = "airlockshutters"
-	},
-/turf/closed/wall/r_wall,
-/area/ship/engineering/electrical)
 "fT" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -436,8 +444,14 @@
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "gJ" = (
-/turf/open/floor/plating/asteroid/rockplanet/wet/safe,
-/area/ship/roumain)
+/obj/machinery/button/door{
+	pixel_x = 0;
+	pixel_y = -10;
+	name = "Airlock Shutters";
+	id = "airlockshutters"
+	},
+/turf/closed/wall/r_wall,
+/area/ship/engineering/electrical)
 "gP" = (
 /obj/effect/turf_decal/siding/brown,
 /turf/open/floor/wood/birch,
@@ -982,10 +996,6 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/cargo)
-"pM" = (
-/obj/structure/flora/grass/rockplanet/dead,
-/turf/open/floor/plating/sandy_dirt/ship,
-/area/ship/roumain)
 "pN" = (
 /obj/structure/sink{
 	dir = 8;
@@ -1321,6 +1331,10 @@
 /obj/effect/turf_decal/siding/brown,
 /turf/open/floor/wood/birch,
 /area/ship/cargo)
+"vK" = (
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
+/area/ship/roumain)
 "wJ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -1622,19 +1636,9 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
 /area/ship/roumain)
 "Cb" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/destructible/tribal_torch,
-/turf/open/floor/plating/asteroid/rockplanet/safe,
-/area/ship/roumain)
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Cp" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -1972,16 +1976,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe,
 /area/ship/roumain)
-"Je" = (
-/obj/machinery/button/door{
-	pixel_x = 0;
-	pixel_y = 13;
-	name = "Airlock Shutters";
-	id = "airlockshutters";
-	dir = 1
-	},
-/turf/closed/wall/r_wall,
-/area/ship/engineering/electrical)
 "Jh" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -2288,6 +2282,9 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/cryo)
+"MW" = (
+/turf/open/floor/plating/asteroid/rockplanet/safe,
+/area/ship/roumain)
 "Ni" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2386,6 +2383,13 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe,
 /area/ship/roumain)
+"Pl" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/door/poddoor/shutters{
+	id = "airlockshutters"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/electrical)
 "Pt" = (
 /obj/structure/platform/wood{
 	dir = 1
@@ -2462,27 +2466,6 @@
 	dir = 8
 	},
 /turf/open/floor/wood/birch,
-/area/ship/security)
-"Qu" = (
-/obj/effect/turf_decal/siding/brown{
-	dir = 4
-	},
-/obj/structure/closet/secure_closet/shadow,
-/obj/item/clothing/under/suit/roumain,
-/obj/item/flashlight/lantern,
-/obj/item/lighter,
-/obj/item/clothing/shoes/cowboy/black,
-/obj/item/clothing/shoes/cowboy,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/backpack/satchel/leather,
-/obj/item/gps{
-	pixel_x = -7
-	},
-/obj/item/clothing/accessory/waistcoat/roumain,
-/obj/item/melee/knife/hunting,
-/obj/item/clothing/suit/armor/roumain/shadow,
-/obj/item/clothing/head/cowboy/sec/roumain/shadow,
-/turf/open/floor/wood/walnut,
 /area/ship/security)
 "QA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2572,6 +2555,10 @@
 "SV" = (
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
+"Tc" = (
+/obj/structure/flora/grass/rockplanet/dead,
+/turf/open/floor/plating/sandy_dirt/ship,
+/area/ship/roumain)
 "Td" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -2586,9 +2573,19 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ship/roumain)
 "Te" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/destructible/tribal_torch,
+/turf/open/floor/plating/asteroid/rockplanet/safe,
+/area/ship/roumain)
 "TE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -2654,6 +2651,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"UJ" = (
+/obj/machinery/button/door{
+	pixel_x = 0;
+	pixel_y = 13;
+	name = "Airlock Shutters";
+	id = "airlockshutters";
+	dir = 1
+	},
+/turf/closed/wall/r_wall,
+/area/ship/engineering/electrical)
 "UT" = (
 /obj/structure/bedsheetbin{
 	pixel_x = -3;
@@ -2951,13 +2958,6 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/bridge)
-"ZL" = (
-/obj/machinery/door/airlock/external,
-/obj/machinery/door/poddoor/shutters{
-	id = "airlockshutters"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/electrical)
 "ZO" = (
 /obj/structure/cable{
 	icon_state = "2-9"
@@ -3116,7 +3116,7 @@ XO
 My
 Ik
 sV
-pM
+Tc
 Rk
 rY
 Pj
@@ -3159,8 +3159,8 @@ xc
 ZA
 ZA
 iU
-gJ
-gJ
+df
+df
 qM
 Ja
 zP
@@ -3182,7 +3182,7 @@ Uj
 hq
 ai
 Il
-gJ
+df
 kl
 FA
 lM
@@ -3199,11 +3199,11 @@ pp
 Qo
 xc
 mz
-gJ
+df
 Gu
 sW
 Jb
-gJ
+df
 yI
 zP
 Dl
@@ -3241,7 +3241,7 @@ lX
 fZ
 Ni
 qR
-gJ
+df
 Gg
 ah
 qK
@@ -3262,11 +3262,11 @@ Hy
 WM
 xc
 LO
-gJ
+df
 Jp
 aJ
 Uh
-df
+MW
 MC
 gQ
 wY
@@ -3277,16 +3277,16 @@ bF
 "}
 (15,1,1) = {"
 bF
-Te
-Je
-xc
-xc
-fJ
 Cb
+UJ
+xc
+xc
+gJ
+Te
 cf
 Uj
 KD
-gJ
+df
 ZA
 NS
 gV
@@ -3298,17 +3298,17 @@ bF
 "}
 (16,1,1) = {"
 bF
-Te
+Cb
 EM
 fT
 ps
 EM
 Yr
-fh
+vK
 uV
 yX
 gg
-df
+MW
 yI
 gQ
 aG
@@ -3319,8 +3319,8 @@ bF
 "}
 (17,1,1) = {"
 bF
-Te
-ZL
+Cb
+Pl
 km
 NN
 BO
@@ -3340,14 +3340,14 @@ bF
 "}
 (18,1,1) = {"
 ie
-Te
+Cb
 Hn
 xc
 xc
 xc
 xc
 yU
-df
+MW
 iU
 XG
 NS
@@ -3391,7 +3391,7 @@ xc
 My
 Vz
 ZA
-Cb
+Te
 My
 Wu
 Me
@@ -3437,7 +3437,7 @@ SV
 HU
 gz
 Hg
-Qu
+bk
 qQ
 HU
 bF
