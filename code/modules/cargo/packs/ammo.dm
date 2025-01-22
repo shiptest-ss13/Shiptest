@@ -246,15 +246,15 @@
 
 /datum/supply_pack/ammo/a4570_box
 	name = ".45-70 Ammo Box Crate"
-	desc = "Contains a 20-round box containing devastatingly powerful .45-70 caliber ammunition."
+	desc = "Contains a 24-round box containing devastatingly powerful .45-70 caliber ammunition."
 	contains = list(/obj/item/storage/box/ammo/a4570)
-	cost = 400
+	cost = 300
 
 /datum/supply_pack/ammo/a4570_box/match
 	name = ".45-70 Match Crate"
-	desc = "Contains a 20-round box containing devastatingly powerful .45-70 caliber ammunition, that travels faster, pierces armour better, and ricochets off targets."
+	desc = "Contains a 24-round box containing devastatingly powerful .45-70 caliber ammunition, that travels faster, pierces armour better, and ricochets off targets."
 	contains = list(/obj/item/storage/box/ammo/a4570_match)
-	cost = 800
+	cost = 400
 
 /* 7.62 */
 
@@ -424,6 +424,12 @@
 	contains = list(/obj/item/storage/box/ammo/ferropellet)
 	cost = 250
 
+/datum/supply_pack/ammo/hcpellets
+	name = "High Conductivity Pellet Box Crate"
+	desc = "Contains a 48-round high conductivity pellet ammo box for gauss guns such as the Claris."
+	contains = list(/obj/item/storage/box/ammo/ferropellet/hc)
+	cost = 500
+
 /* ferroslugs */
 
 /datum/supply_pack/ammo/ferroslugboxcrate
@@ -432,6 +438,12 @@
 	contains = list(/obj/item/storage/box/ammo/ferroslug)
 	cost = 250
 
+/datum/supply_pack/ammo/hcslugs
+	name = "High Conductivity Slug Box Crate"
+	desc = "Contains a twenty-round high conductivity slug for gauss guns such as the Model-H."
+	contains = list(/obj/item/storage/box/ammo/ferroslug/hc)
+	cost = 500
+
 /* ferro lances */
 
 /datum/supply_pack/ammo/ferrolanceboxcrate
@@ -439,3 +451,9 @@
 	desc = "Contains a 48-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/storage/box/ammo/ferrolance)
 	cost = 250
+
+/datum/supply_pack/ammo/ferrolanceboxcrate
+	name = "High Conductivity Lance Box Crate"
+	desc = "Contains a 48-round box for high-powered gauss guns such as the GAR assault rifle."
+	contains = list(/obj/item/storage/box/ammo/ferrolance/hc)
+	cost = 500

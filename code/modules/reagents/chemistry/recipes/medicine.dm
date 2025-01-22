@@ -328,3 +328,13 @@ WS End */
 /datum/chemical_reaction/lithium_carbonate
 	results = list(/datum/reagent/medicine/lithium_carbonate = 3)
 	required_reagents = list(/datum/reagent/lithium = 1, /datum/reagent/carbon = 1, /datum/reagent/water = 1)
+
+/datum/chemical_reaction/chitosan
+	results = list(/datum/reagent/medicine/chitosan = 10)
+	required_reagents = list(/datum/reagent/silicon = 1, /datum/reagent/consumable/sugar = 2, /datum/reagent/cryptobiolin = 1)
+	required_temp = 380
+
+/datum/chemical_reaction/chitosan_failure
+	results = list(/datum/reagent/carbon = 1)
+	required_reagents = list(/datum/reagent/medicine/chitosan = 1)
+	required_temp = 405

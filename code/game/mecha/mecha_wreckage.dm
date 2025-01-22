@@ -110,10 +110,11 @@
 	AI = null
 
 /obj/structure/mecha_wreckage/gygax
-	name = "\improper Gygax wreckage"
+	name = "\improper 501p wreckage"
 	icon_state = "gygax-broken"
 	parts = list(
 				/obj/item/mecha_parts/part/gygax_torso,
+				/obj/item/mecha_parts/chassis/gygax,
 				/obj/item/mecha_parts/part/gygax_head,
 				/obj/item/mecha_parts/part/gygax_left_arm,
 				/obj/item/mecha_parts/part/gygax_right_arm,
@@ -122,7 +123,7 @@
 				)
 
 /obj/structure/mecha_wreckage/gygax/dark
-	name = "\improper Dark Gygax wreckage"
+	name = "\improper 515 EX wreckage"
 	icon_state = "darkgygax-broken"
 
 /obj/structure/mecha_wreckage/marauder
@@ -132,7 +133,6 @@
 /obj/structure/mecha_wreckage/touro
 	name = "\improper Touro wreckage"
 	icon_state = "touro-broken"
-	desc = "The syndicate won't be very happy about this..."
 
 /obj/structure/mecha_wreckage/seraph
 	name = "\improper Seraph wreckage"
@@ -148,6 +148,7 @@
 	name = "\improper Ripley wreckage"
 	icon_state = "ripley-broken"
 	parts = list(/obj/item/mecha_parts/part/ripley_torso,
+				/obj/item/mecha_parts/chassis/ripley,
 				/obj/item/mecha_parts/part/ripley_left_arm,
 				/obj/item/mecha_parts/part/ripley_right_arm,
 				/obj/item/mecha_parts/part/ripley_left_leg,
@@ -156,6 +157,7 @@
 /obj/structure/mecha_wreckage/ripley/clip
 	name = "\improper Rogue wreckage"
 	icon_state = "clipripley-broken"
+
 
 /obj/structure/mecha_wreckage/ripley/mkii
 	name = "\improper Ripley MK-II wreckage"
@@ -166,6 +168,7 @@
 	icon_state = "firefighter-broken"
 	parts = list(/obj/item/mecha_parts/part/ripley_torso,
 				/obj/item/mecha_parts/part/ripley_left_arm,
+				/obj/item/mecha_parts/chassis/ripley,
 				/obj/item/mecha_parts/part/ripley_right_arm,
 				/obj/item/mecha_parts/part/ripley_left_leg,
 				/obj/item/mecha_parts/part/ripley_right_leg,
@@ -194,6 +197,7 @@
 	icon_state = "durand-broken"
 	parts = list(
 			/obj/item/mecha_parts/part/durand_torso,
+			/obj/item/mecha_parts/chassis/durand,
 			/obj/item/mecha_parts/part/durand_head,
 			/obj/item/mecha_parts/part/durand_left_arm,
 			/obj/item/mecha_parts/part/durand_right_arm,
@@ -210,10 +214,11 @@
 
 
 /obj/structure/mecha_wreckage/odysseus
-	name = "\improper Odysseus wreckage"
+	name = "\improper 202r wreckage"
 	icon_state = "odysseus-broken"
 	parts = list(
 			/obj/item/mecha_parts/part/odysseus_torso,
+			/obj/item/mecha_parts/chassis/odysseus,
 			/obj/item/mecha_parts/part/odysseus_head,
 			/obj/item/mecha_parts/part/odysseus_left_arm,
 			/obj/item/mecha_parts/part/odysseus_right_arm,
