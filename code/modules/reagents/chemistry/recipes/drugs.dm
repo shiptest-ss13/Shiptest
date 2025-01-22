@@ -42,3 +42,9 @@
 	results = list(/datum/reagent/drug/finobranc = 4)
 	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/acetone = 1, /datum/reagent/medicine/mannitol = 1, /datum/reagent/phenol = 1, /datum/reagent/toxin/acid = 1)
 	required_temp = 290
+
+/datum/chemical_reaction/shoalmix
+	results = list(/datum/reagent/drug/combat_drug = 2)
+	required_reagents = list(/datum/reagent/consumable/vimukti = 1, /datum/reagent/medicine/dimorlin = 2, /datum/reagent/phenol = 1, /datum/reagent/medicine/atropine = 2)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
+	required_temp = 451

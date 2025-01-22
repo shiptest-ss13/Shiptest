@@ -94,10 +94,16 @@
 
 /obj/item/reagent_containers/pill/morphine
 	name = "morphine pill"
-	desc = "Commonly used to treat insomnia."
+	desc = "Commonly used to treat pain and restlessness."
 	icon_state = "pill8"
-	list_reagents = list(/datum/reagent/medicine/morphine = 5)
+	list_reagents = list(/datum/reagent/medicine/morphine = 10)
 	rename_with_volume = TRUE
+
+/obj/item/reagent_containers/pill/tramal
+	name = "tramal pill"
+	desc = "Commonly used to treat insomnia."
+	icon_state = "pill9"
+	list_reagents = list(/datum/reagent/medicine/morphine = 15)
 
 /obj/item/reagent_containers/pill/stimulant
 	name = "stimulant pill"
