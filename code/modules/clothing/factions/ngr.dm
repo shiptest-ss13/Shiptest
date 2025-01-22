@@ -229,6 +229,7 @@
 	item_state = "ngr_balaclava"
 	icon = 'icons/obj/clothing/faction/ngr/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/mask.dmi'
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/mask/breath/ngr
 	name = "NGR face mask"
@@ -237,7 +238,7 @@
 	item_state = "ngr_facemask"
 	icon = 'icons/obj/clothing/faction/ngr/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/mask.dmi'
-	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION
 
 //////////
 //Neck//
@@ -262,6 +263,7 @@
 	item_state = "ngr_webbing"
 	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/storage/belt/security/webbing/ngr/cobra/PopulateContents()
 	. = ..()
