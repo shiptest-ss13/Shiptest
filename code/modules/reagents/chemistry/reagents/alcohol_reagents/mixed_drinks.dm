@@ -1825,7 +1825,6 @@
 	quality = DRINK_GOOD
 	overdose_threshold = 40
 	taste_description = "a flourishing alcoholic bloom"
-	glass_icon_state = "eudamonia"
 	glass_name = "Eudamonia"
 	glass_desc = "A drink popular in academic circles, supposedly made with a distilled virtue. Most published recipes insist to use an antidepressant."
 
