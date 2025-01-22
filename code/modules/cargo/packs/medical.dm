@@ -57,9 +57,11 @@
 	desc = "Contains a supply of painkillers. Great for stopping headaches, feeling broken bones, and screaming people!"
 	cost = 1000
 	contains = list(
+		/obj/item/reagent_containers/glass/bottle/dimorlin,
 		/obj/item/reagent_containers/glass/bottle/morphine,
 		/obj/item/reagent_containers/glass/bottle/morphine,
-		/obj/item/reagent_containers/glass/bottle/morphine,
+		/obj/item/reagent_containers/glass/bottle/tramal,
+		/obj/item/reagent_containers/glass/bottle/tramal,
 	)
 	faction = /datum/faction/syndicate/suns
 	faction_discount = 25

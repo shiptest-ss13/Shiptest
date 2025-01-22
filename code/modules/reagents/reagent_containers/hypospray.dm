@@ -319,6 +319,16 @@
 	base_icon_state = "morphen"
 	item_state = "morphen"
 
+/obj/item/reagent_containers/hypospray/medipen/combat_drug
+	name = "combat cocktail"
+	desc = "An injector filled with a potent combat drug mixture. Straight from the Shoal."
+	list_reagents = list(/datum/reagent/drug/combat_drug = 6, /datum/reagent/medicine/bicaridinep = 6, /datum/reagent/medicine/dermaline = 6)
+	volume = 18
+	amount_per_transfer_from_this = 18
+	icon_state = "syndipen"
+	base_icon_state = "syndipen"
+	item_state = "syndipen"
+
 //A vial-loaded hypospray. Cartridge-based!
 /obj/item/hypospray/mkii
 	name = "hypospray mk.II"

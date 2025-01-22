@@ -103,7 +103,7 @@
 	name = "tramal pill"
 	desc = "Commonly used to treat insomnia."
 	icon_state = "pill9"
-	list_reagents = list(/datum/reagent/medicine/morphine = 15)
+	list_reagents = list(/datum/reagent/medicine/tramal = 10)
 
 /obj/item/reagent_containers/pill/stimulant
 	name = "stimulant pill"
@@ -185,6 +185,20 @@
 	name = "neurine pill"
 	desc = "Used to treat non-severe mental traumas."
 	list_reagents = list(/datum/reagent/medicine/neurine = 10)
+	icon_state = "pill22"
+	rename_with_volume = TRUE
+
+/obj/item/reagent_containers/pill/licarb
+	name = "lithium carbonate pill"
+	desc = "Used to depression."
+	list_reagents = list(/datum/reagent/medicine/lithium_carbonate = 10)
+	icon_state = "pill22"
+	rename_with_volume = TRUE
+
+/obj/item/reagent_containers/pill/hgh
+	name = "HGH pill"
+	desc = "A pill of Human Growth Hormone."
+	list_reagents = list(/datum/reagent/medicine/melatonin = 10)
 	icon_state = "pill22"
 	rename_with_volume = TRUE
 
