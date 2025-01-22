@@ -2241,7 +2241,7 @@
 
 /datum/reagent/medicine/lithium_carbonate
 	name = "Lithium Carbonate"
-	desc = "A mood stabilizer discovered by most spacefaring civilizations. Fairly widespread as a result."
+	description = "A mood stabilizer discovered by most spacefaring civilizations. Fairly widespread as a result."
 	color = "#b3acaa" //grey. boring.
 	reagent_state = SOLID
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
@@ -2263,28 +2263,36 @@
 
 /datum/reagent/medicine/melatonin
 	name = "Human Sleep Hormone"
-	desc = "A compound typically found within Solarians. The exact effects vary on the species it is administered to."
+	description = "A compound typically found within Solarians. The exact effects vary on the species it is administered to."
 	color = "#e1b1e1" //very light pink ourple
 	overdose_threshold = 0
-	var/regenerative
+	var/regenerating
 	var/rachnid_limb
 
 /datum/reagent/medicine/melatonin/on_mob_metabolize(mob/living/L)
 	. = ..()
 	if(iscarbon(L))
-	/mob/living/carbon/imbiber = L
+		var/mob/living/carbon/imbiber = L
 		if(isspiderperson(imbiber))
 		//we check limbs, if one is missing, we break from the for loop after setting it to heal
-			for var/limb in list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+			for (var/limb in list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
 				if(!imbiber.get_bodypart(limb))
 					rachnid_limb = limb
 					break
 
+/datum/reagent/medicine/melatonin/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	if(isspiderperson(L) && regenerating)
+		var/mob/living/carbon/spider
+		spider.regenerate_limb(rachnid_limb, TRUE, FALSE)
+		return
+
+
 /datum/reagent/medicine/melatonin/on_mob_life(mob/living/carbon/M)
 	. = ..()
-    if(isvox(M))
-		M.adjdustToxLoss(1)
-    if(islizard(M))
+	if(isvox(M))
+		M.adjustToxLoss(1)
+	if(islizard(M))
 		if(prob(10))
 			M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 		M.adjustOrganLoss(ORGAN_SLOT_HEART, 0.5)
@@ -2298,19 +2306,13 @@
 		if(M.IsSleeping())
 			if(M.getBruteLoss() && M.getFireLoss())
 				if(prob(50))
-					L.adjustBruteLoss(0.5)
+					M.adjustBruteLoss(0.5)
 				else
-					L.adjustFireLoss(0.5)
+					M.adjustFireLoss(0.5)
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-0.2)
 		else if(M.getFireLoss())
 			M.adjustFireLoss(-0.2)
-
-/datum/reagent/medicine/melatonin/on_mob_end_metabolize(mob/living/L)
-	. = ..()
-	if(isspiderperson(L) && regenerating)
-		var/mob/living/carbon/spidey = L
-		spidey.replace_limb(rachnid_limb)
 
 /datum/reagent/medicine/chitosan
 	name = "Chitosan"

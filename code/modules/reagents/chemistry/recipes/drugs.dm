@@ -45,6 +45,6 @@
 
 /datum/chemical_reaction/shoalmix
 	results = list(/datum/reagent/drug/combat_drug = 2)
-	required_reagents = list(/datum/reagent/consumable/vimukti = 1, /datum/reagent/medicine/dimorlin = 2, /datum/reagent/phenol = 1, /datum/reagent/medicine/atropine = 2)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vimukti = 1, /datum/reagent/medicine/dimorlin = 2, /datum/reagent/phenol = 1, /datum/reagent/medicine/atropine = 2)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
 	required_temp = 451

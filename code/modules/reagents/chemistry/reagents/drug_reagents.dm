@@ -460,7 +460,7 @@
 
 /datum/reagent/drug/finobranc/on_mob_metabolize(mob/living/L)
 	..()
-	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
+	var/datum/component/mood/mood = L.GetComponent(/datum/component/mood)
 	if(mood)
 		mood.mood_modifier += 1
 	if(ishuman(L))
@@ -469,7 +469,7 @@
 
 /datum/reagent/drug/finobranc/on_mob_end_metabolize(mob/living/L)
 	..()
-	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
+	var/datum/component/mood/mood = L.GetComponent(/datum/component/mood)
 	if(mood)
 		mood.mood_modifier -= 1
 	if(ishuman(L))
@@ -480,7 +480,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
 	if(ishuman(M))
 		var/mob/living/carbon/human/uh_oh = M
-		if(prob(5) && uh_oh.can_heartattack)
+		if(prob(5) && uh_oh.can_heartattack())
 			uh_oh.set_heartattack(TRUE)
 	M.adjust_jitter(5)
 	if(prob(15))
@@ -519,9 +519,9 @@
 
 /datum/reagent/drug/combat_drug/on_mob_metabolize(mob/living/L)
 	..()
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
-	M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
-	M.adjustOrganLoss(ORGAN_SLOT_HEART, 20)
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
+	L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+	L.adjustOrganLoss(ORGAN_SLOT_HEART, 20)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.do_after_speed += 0.6
@@ -550,7 +550,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, 4)
 	if(ishuman(M))
 		var/mob/living/carbon/human/uh_oh = M
-		if(uh_oh.can_heartattack)
+		if(uh_oh.can_heartattack())
 			uh_oh.set_heartattack(TRUE)
 	M.adjust_jitter(80)
 	M.drop_all_held_items()
