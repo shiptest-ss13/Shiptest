@@ -766,21 +766,27 @@
 	..()
 	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
 	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.damage_resistance += 5
 
 /datum/reagent/medicine/morphine/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.damage_resistance -= 5
 	..()
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
 	switch(current_cycle)
-		if(11)
-			to_chat(M, "<span class='warning'>You start to feel tired...</span>" )
-		if(12 to 24)
+		if(16)
+			to_chat(M, span_warning("You start to feel tired..."))
+		if(17 to 29)
 			M.drowsyness += 1
-		if(24 to INFINITY)
+		if(30 to INFINITY)
 			M.Sleeping(40)
 			. = 1
 	..()
@@ -817,6 +823,141 @@
 	..()
 
 /datum/reagent/medicine/morphine/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(3*REM, 0)
+		. = 1
+		M.Dizzy(5)
+		M.adjust_jitter(5)
+	..()
+
+/datum/reagent/medicine/tramal
+	name = "Tramal"
+	description = "A low intensity, high duration painkiller. Causes slight drowiness in extended use."
+	reagent_state = LIQUID
+	color = "#34eeee"
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	overdose_threshold = 30
+	addiction_threshold = 25
+
+/datum/reagent/medicine/tramal/on_mob_metabolize(mob/living/L)
+	..()
+	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
+	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
+
+/datum/reagent/medicine/tramal/on_mob_end_metabolize(mob/living/L)
+	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
+	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
+	..()
+
+/datum/reagent/medicine/tramal/on_mob_life(mob/living/carbon/M)
+	if(current_cycle >= 5)
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_light, name)
+	switch(current_cycle)
+		if(30)
+			to_chat(M, "<span class='warning'>You feel drowsy...</span>" )
+		if(31 to INFINITY)
+			M.drowsyness += 1
+	..()
+
+/datum/reagent/medicine/tramal/overdose_process(mob/living/M)
+	if(prob(33))
+		M.Dizzy(2)
+		M.adjust_jitter(2)
+	..()
+
+/datum/reagent/medicine/tramal/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.adjust_jitter(2)
+	..()
+
+/datum/reagent/medicine/tramal/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		M.Dizzy(3)
+		M.adjust_jitter(3)
+	..()
+
+/datum/reagent/medicine/tramal/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Dizzy(4)
+		M.adjust_jitter(4)
+	..()
+
+/datum/reagent/medicine/tramal/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		. = 1
+		M.Dizzy(5)
+		M.adjust_jitter(5)
+	..()
+
+/datum/reagent/medicine/dimorlin
+	name = "Dimorlin"
+	description = "A powerful analgesiac with a short activation period. Extremely habit forming"
+	reagent_state = LIQUID
+	color = "#71adad"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 15
+	addiction_threshold = 6
+
+/datum/reagent/medicine/dimorlin/on_mob_metabolize(mob/living/L)
+	..()
+	ADD_TRAIT(L, TRAIT_ANALGESIA, type)
+	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.damage_resistance += 15
+
+/datum/reagent/medicine/dimorlin/on_mob_end_metabolize(mob/living/L)
+	REMOVE_TRAIT(L, TRAIT_ANALGESIA, type)
+	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.damage_resistance -= 15
+	..()
+
+/datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/M)
+	if(current_cycle >= 3)
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
+	..()
+
+/datum/reagent/medicine/dimorlin/overdose_process(mob/living/M)
+	if(prob(33))
+		M.losebreath++
+		M.adjustOxyLoss(4, 0)
+	if(prob(20))
+		M.AdjustUnconscious(20)
+	if(prob(5))
+		M.adjustOrganLoss(ORGAN_SLOT_EYES, 5)
+	..()
+
+/datum/reagent/medicine/dimorlin/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjust_jitter(2)
+	..()
+
+/datum/reagent/medicine/dimorlin/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(1*REM, 0)
+		. = 1
+		M.Dizzy(3)
+		M.adjust_jitter(3)
+	..()
+
+/datum/reagent/medicine/dimorlin/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		. = 1
+		M.Dizzy(4)
+		M.adjust_jitter(4)
+	..()
+
+/datum/reagent/medicine/dimorlin/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.adjustToxLoss(3*REM, 0)

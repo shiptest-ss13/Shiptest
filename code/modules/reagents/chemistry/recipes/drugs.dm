@@ -37,3 +37,8 @@
 /datum/chemical_reaction/pumpup
 	results = list(/datum/reagent/drug/pumpup = 5)
 	required_reagents = list(/datum/reagent/medicine/epinephrine = 2, /datum/reagent/consumable/coffee = 5)
+
+/datum/chemical_reaction/finobranc
+	results = list(/datum/reagent/drug/finobranc = 4)
+	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/acetone = 1, /datum/reagent/medicine/mannitol = 1, /datum/reagent/phenol = 1, /datum/reagent/toxin/acid = 1)
+	required_temp = 290

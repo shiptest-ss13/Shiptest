@@ -448,3 +448,139 @@
 	if(prob(15))
 		M.adjustToxLoss(2, 0)
 	..()
+
+/datum/reagent/drug/finobranc
+	name = "Finobranc"
+	description = "Makes you impervious to stuns and grants a stamina regeneration buff, but you will be a nearly uncontrollable tramp-bearded raving lunatic."
+	reagent_state = SOLID
+	color = "#FAFAFA"
+	overdose_threshold = 20
+	addiction_threshold = 10
+	taste_description = "a burst of energy"
+
+/datum/reagent/drug/finobranc/on_mob_metabolize(mob/living/L)
+	..()
+	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
+	if(mood)
+		mood.mood_modifier += 1
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed += 0.3
+
+/datum/reagent/drug/finobranc/on_mob_end_metabolize(mob/living/L)
+	..()
+	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
+	if(mood)
+		mood.mood_modifier -= 1
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed -= 0.3
+
+/datum/reagent/drug/finobranc/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
+	if(ishuman(M))
+		var/mob/living/carbon/human/uh_oh = M
+		if(prob(5) && uh_oh.can_heartattack)
+			uh_oh.set_heartattack(TRUE)
+	M.adjust_jitter(5)
+	if(prob(15))
+		M.drop_all_held_items()
+	..()
+
+/datum/reagent/drug/finobranc/addiction_act_stage1(mob/living/M)
+	M.adjust_jitter(5, max = 150)
+	..()
+
+/datum/reagent/drug/finobranc/addiction_act_stage2(mob/living/M)
+	M.adjust_jitter(15, max = 150)
+	..()
+
+/datum/reagent/drug/finobranc/addiction_act_stage3(mob/living/M)
+	M.adjust_jitter(15, max = 150)
+	M.Dizzy(10)
+	..()
+
+/datum/reagent/drug/finobranc/addiction_act_stage4(mob/living/carbon/human/M)
+	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
+		for(var/i = 0, i < 8, i++)
+			step(M, pick(GLOB.cardinals))
+	M.adjust_jitter(15, max = 150)
+	M.Dizzy(10)
+	..()
+
+/datum/reagent/drug/combat_drug
+	name = "Shoalmix"
+	description = "An extremely potent mix of stimulants, painkillers, and performance enhancers that originated within the Shoal."
+	reagent_state = SOLID
+	color = "#FAFAFA"
+	overdose_threshold = 20
+	addiction_threshold = 6
+	taste_description = "a metallic bitter permeating your flesh."
+
+/datum/reagent/drug/combat_drug/on_mob_metabolize(mob/living/L)
+	..()
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
+	M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 20)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed += 0.6
+		drugged.physiology.damage_resistance += 10
+		drugged.physiology.hunger_mod += 1
+
+/datum/reagent/drug/combat_drug/on_mob_end_metabolize(mob/living/L)
+	..()
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed -= 0.6
+		drugged.physiology.damage_resistance -= 10
+		drugged.physiology.hunger_mod -= 1
+
+/datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/M)
+	..()
+	M.adjust_jitter(10, max = 500)
+	M.adjustStaminaLoss(-18, 0)
+	if(prob(30))
+		M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+		M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
+	if(prob(20))
+		to_chat(M, span_boldwarning("MOVE!! MOVE!! MOVE!!"))
+
+/datum/reagent/drug/combat_drug/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 4)
+	if(ishuman(M))
+		var/mob/living/carbon/human/uh_oh = M
+		if(uh_oh.can_heartattack)
+			uh_oh.set_heartattack(TRUE)
+	M.adjust_jitter(80)
+	M.drop_all_held_items()
+	..()
+
+/datum/reagent/drug/combat_drug/addiction_act_stage1(mob/living/M)
+	M.adjust_jitter(5, max = 150)
+	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	mood.setSanity(min(mood.sanity, SANITY_DISTURBED))
+	..()
+
+/datum/reagent/drug/combat_drug/addiction_act_stage2(mob/living/M)
+	M.adjust_jitter(15, max = 150)
+	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	mood.setSanity(min(mood.sanity, SANITY_UNSTABLE))
+	..()
+
+/datum/reagent/drug/combat_drug/addiction_act_stage3(mob/living/M)
+	M.adjust_jitter(15, max = 150)
+	M.Dizzy(10)
+	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	mood.setSanity(min(mood.sanity, SANITY_CRAZY))
+	..()
+
+/datum/reagent/drug/combat_drug/addiction_act_stage4(mob/living/carbon/human/M)
+	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
+		for(var/i = 0, i < 8, i++)
+			step(M, pick(GLOB.cardinals))
+	M.adjust_jitter(15, max = 150)
+	M.Dizzy(20)
+	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	mood.setSanity(min(mood.sanity, SANITY_INSANE))
+	..()
