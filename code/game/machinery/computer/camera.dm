@@ -7,7 +7,7 @@
 	light_color = COLOR_SOFT_RED
 
 	var/list/network = list("ss13")
-	var/tempNetwork = list("")
+	var/temp_network = list("")
 	var/obj/machinery/camera/active_camera
 	/// The turf where the camera was last updated.
 	var/turf/last_camera_turf
@@ -169,11 +169,11 @@
 		return
 
 	if(action == "set_network")
-		network = tempNetwork
+		network = temp_network
 		ui_refresh(usr, ui)
 
 	if(action == "set_temp_network")
-		tempNetwork = sanitize_filename(params["name"])
+		temp_network = sanitize_filename(params["name"])
 
 	if(action == "refresh")
 		ui_refresh(usr, ui)
