@@ -67,6 +67,9 @@
 	return
 
 /obj/structure/closet/Destroy()
+	if(istype(loc, /obj/structure/bigDelivery))
+		var/obj/structure/bigDelivery/wrap = loc
+		qdel(wrap)
 	dump_contents()
 	return ..()
 

@@ -79,3 +79,6 @@
 
 /obj/effect/projectile/tracer/pgf/rifle
 	icon_state = "beam_pgf_rifle"
+
+/obj/effect/projectile/tracer/gauss
+	icon_state = "hc_gauss"
