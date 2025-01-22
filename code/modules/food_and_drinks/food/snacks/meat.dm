@@ -145,7 +145,7 @@
 	desc = "A synthetic slab of meat."
 	icon_state = "meat_old"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/synth
-	foodtype = RAW | MEAT //hurr durr chemicals we're harmed in the production of this meat thus its non-vegan.
+	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/meatproduct
 	name = "meat product"

@@ -457,6 +457,22 @@
 	build_path = /obj/item/reagent_containers/food/drinks/modglass/large
 	category = list("initial", "Dinnerware")
 
+/datum/design/glassbottle
+	name = "Glass Bottle"
+	id = "glass_bottle"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=2500)
+	build_path = /obj/item/reagent_containers/food/drinks/bottle
+	category = list("initial", "Dinnerware")
+
+/datum/design/glassbottle_small
+	name = "Small Glass Bottle"
+	id = "glass_bottle_small"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=500)
+	build_path = /obj/item/reagent_containers/food/drinks/bottle/small
+	category = list("initial", "Dinnerware")
+
 /datum/design/shaker
 	name = "Shaker"
 	id = "shaker"

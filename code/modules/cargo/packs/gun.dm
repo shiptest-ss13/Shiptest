@@ -23,10 +23,17 @@
 	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/m17
-	name = "M17 pistol Crate"
-	desc = "A cheap target shooting pistol manufactured by Serene Outdoors. Chambered in .22lr"
+	name = "M17 Micro Target Pistol Crate"
+	desc = "A cheap target shooting pistol manufactured by Serene Outdoors. Chambered in .22 LR."
 	cost = 400
 	contains = list(/obj/item/storage/guncase/pistol/m17)
+	crate_name = "pistol crate"
+
+/datum/supply_pack/gun/m20_auto_elite
+	name = "M20 Auto Elite Pistol Crate"
+	desc = "Contains a heavy pistol manufactured by Serene Outdoors. Chambered in .44 Roumain."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pistol/m20_auto_elite)
 	crate_name = "pistol crate"
 
 /datum/supply_pack/gun/commanders
@@ -67,6 +74,16 @@
 	desc = "Contains a modified Commander pistol, adjusted to fit the IRMG's standards and painted in the brown and gold of all IRMG firearms."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/commissioner)
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/pinscher
+	name = "Pinscher Heavy Pistol Crate"
+	desc = "Contains a heavy pistol manufactured by Serene Outdoors and modified to fit IRMG's standards. Chambered in .44 Roumain."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pistol/pinscher)
+	crate_name = "pistol crate"
 	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
@@ -398,7 +415,7 @@
 
 /datum/supply_pack/gun/firestorm
 	name = "Firestorm SMG Crate"
-	desc = "Contains a Hunter's Pride SMG, intended for internal use by hunters and chambered in .45"
+	desc = "Contains a Hunter's Pride SMG, intended for internal use by hunters and chambered in .44 Roumain."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/firestorm)
 	crate_name = "SMG crate"
@@ -657,7 +674,7 @@
 	faction = /datum/faction/syndicate/scarborough_arms
 
 /datum/supply_pack/gun/boomslang10
-	name = "Boomslang-10 Sniper Rifle Crate"
+	name = "MSR-90 'Boomslang' Sniper Rifle Crate"
 	desc = "Contains a military variant of the Boomslang Sniper rifle equipped with an 8x sniper scope, for licenesed buyers only. Chambered in the powerful 6.5x57mm CLIP."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/boomslangmilitary)
@@ -693,87 +710,3 @@
 	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE
-
-/* Attachments */
-
-/datum/supply_pack/gun/attachment/rail_light
-	name = "Tactical Rail Light Crate"
-	desc = "Contains a single rail light to be mounted on a firearm."
-	cost = 100
-	contains = list(/obj/item/attachment/rail_light)
-	crate_name = "rail light crate"
-
-/datum/supply_pack/gun/attachment/laser_sight
-	name = "Laser Sight Crate"
-	desc = "Contains a single laser sight to be mounted on a firearm."
-	cost = 250
-	contains = list(/obj/item/attachment/laser_sight)
-	crate_name = "laser sight crate"
-
-/datum/supply_pack/gun/attachment/bayonet
-	name = "Bayonet Crate"
-	desc = "Contains a single bayonet to be mounted on a firearm."
-	cost = 250
-	contains = list(/obj/item/attachment/bayonet)
-	crate_name = "bayonet crate"
-
-/datum/supply_pack/gun/attachment/ebayonet
-	name = "Energy Bayonet Crate"
-	desc = "Contains a single energy bayonet to be mounted on a firearm, exclusive for Scarborough Firearms."
-	cost = 500
-	contains = list(/obj/item/attachment/energy_bayonet)
-	crate_name = "bayonet crate"
-	faction = /datum/faction/syndicate/scarborough_arms
-	faction_discount = 0
-	faction_locked = TRUE
-
-/datum/supply_pack/gun/attachment/silencer
-	name = "Suppressor Crate"
-	desc = "Contains a single suppressor to be mounted on a firearm."
-	cost = 250
-	contains = list(/obj/item/attachment/silencer)
-	crate_name = "suppressor crate"
-
-/datum/supply_pack/gun/attachment/shotgun
-	name = "Underbarrel Shotgun Crate"
-	desc = "Contains a single shot underbarrel shotgun to be mounted on a firearm."
-	cost = 750
-	contains = list(/obj/item/attachment/gun/ballistic/shotgun)
-	crate_name = "underbarrel shotgun crate"
-
-/datum/supply_pack/gun/attachment/flamethrower
-	name = "Underbarrel Flamethrower Crate"
-	desc = "Contains a compact underbarrel flamethrower to be mounted on a firearm."
-	cost = 750
-	contains = list(/obj/item/attachment/gun/flamethrower)
-	crate_name = "underbarrel flamethrower crate"
-
-/datum/supply_pack/gun/attachment/e_gun
-	name = "Underbarrel Energy Gun Crate"
-	desc = "Contains an underbarrel energy gun to be mounted on a firearm."
-	cost = 750
-	contains = list(/obj/item/attachment/gun/energy/e_gun)
-	crate_name = "underbarrel energy gun crate"
-
-/datum/supply_pack/gun/attachment/sling
-	name = "Shoulder Sling Crate"
-	desc = "Contains a single shoulder sling to be mounted on a firearm for easy carrying without armor holsters. Only compatible with longarms."
-	cost = 250
-	contains = list(/obj/item/attachment/sling)
-	crate_name = "shoulder sling crate"
-
-/datum/supply_pack/gun/attachment/riot_launcher
-	name = "Underbarrel Riot Grenade Launcher Crate"
-	desc = "Contains a single shot underbarrel riot grenade launcher to be mounted on a firearm."
-	cost = 750
-	contains = list(/obj/item/attachment/gun/riot)
-	crate_name = "underbarrel riot grenade launcher crate"
-
-/datum/supply_pack/gun/attachment/flare
-	name = "Underbarrel Flare Gun Crate"
-	desc = "Contains a single shot underbarrel flare gun to be mounted on a firearm. One box of flares included."
-	cost = 200
-	contains = list(/obj/item/attachment/gun/flare)
-	crate_name = "underbarrel flare gun crate"
-
-
