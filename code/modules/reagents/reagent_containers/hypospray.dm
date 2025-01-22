@@ -180,7 +180,13 @@
 	name = "morphine medipen"
 	desc = "A rapid way to get you out of a tight situation and fast! You'll feel rather drowsy, though."
 	list_reagents = list(/datum/reagent/medicine/morphine = 10)
-	custom_price = 75
+	custom_price = 50
+
+/obj/item/reagent_containers/hypospray/medipen/tramal
+	name = "tramal medipen"
+	desc = "A quick way to relieve persistant pain."
+	list_reagents = list(/datum/reagent/medicine/tramal = 10)
+	custom_price = 25
 
 /obj/item/reagent_containers/hypospray/medipen/oxandrolone
 	name = "oxandrolone medipen"
