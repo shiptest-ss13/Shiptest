@@ -188,6 +188,15 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
+/datum/techweb_node/construction
+	id = "construction"
+	display_name = "Advanced Construction"
+	description = "Expand new horizon with detailed construction."
+	prereq_ids = list("engineering")
+	design_ids = list("protolathe","protolathe_eng","protolathe_rnd","protolathe_sec","protolathe_med","protolathe_serv","protolathe_cargo")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	export_price = 5000
+
 /datum/techweb_node/adv_engi
 	id = "adv_engi"
 	display_name = "Advanced Engineering"

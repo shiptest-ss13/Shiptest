@@ -396,6 +396,61 @@
 	build_path = /obj/item/circuitboard/machine/autolathe
 	category = list ("Misc. Machinery")
 
+/datum/design/board/protolathe
+	name = "Machine Design (Protolathe Board)"
+	desc = "The circuit board for an protolathe."
+	id = "protolathe"
+	materials = list(/datum/material/glass = 1000)
+	build_path = /obj/item/circuitboard/machine/protolathe
+	category = list ("Misc. Machinery")
+
+/datum/design/board/protolathe/engineering
+	name = "Machine Design (Protolathe Board) - Engineering"
+	desc = "The circuit board for an department engineering protolathe."
+	id = "protolathe_eng"
+	materials = list(/datum/material/glass = 1000, /datum/material/gold = 200)
+	build_path = /obj/item/circuitboard/machine/protolathe/department/engineering
+	category = list ("Misc. Machinery")
+
+/datum/design/board/protolathe/science
+	name = "Machine Design (Protolathe Board) - Science"
+	desc = "The circuit board for an department science protolathe."
+	id = "protolathe_rnd"
+	materials = list(/datum/material/glass = 1000, /datum/material/gold = 200)
+	build_path = /obj/item/circuitboard/machine/protolathe/department/science
+	category = list ("Misc. Machinery")
+
+/datum/design/board/protolathe/medical
+	name = "Machine Design (Protolathe Board) - Medical"
+	desc = "The circuit board for an department medical protolathe."
+	id = "protolathe_med"
+	materials = list(/datum/material/glass = 1000, /datum/material/gold = 200)
+	build_path = /obj/item/circuitboard/machine/protolathe/department/medical
+	category = list ("Misc. Machinery")
+
+/datum/design/board/protolathe/service
+	name = "Machine Design (Protolathe Board) - Service"
+	desc = "The circuit board for an department service protolathe."
+	id = "protolathe_serv"
+	materials = list(/datum/material/glass = 1000, /datum/material/gold = 200)
+	build_path = /obj/item/circuitboard/machine/protolathe/department/service
+	category = list ("Misc. Machinery")
+
+/datum/design/board/protolathe/security
+	name = "Machine Design (Protolathe Board) - Security"
+	desc = "The circuit board for an department security protolathe."
+	id = "protolathe_sec"
+	materials = list(/datum/material/glass = 1000, /datum/material/gold = 200)
+	build_path = /obj/item/circuitboard/machine/protolathe/department/security
+	category = list ("Misc. Machinery")
+
+/datum/design/board/protolathe/cargo
+	name = "Machine Design (Protolathe Board) - Cargo"
+	desc = "The circuit board for an department cargo protolathe."
+	id = "protolathe_cargo"
+	materials = list(/datum/material/glass = 1000, /datum/material/gold = 200)
+	build_path = /obj/item/circuitboard/machine/protolathe/department/cargo
+	category = list ("Misc. Machinery")
 
 /datum/design/board/recharger
 	name = "Machine Design (Weapon Recharger Board)"
