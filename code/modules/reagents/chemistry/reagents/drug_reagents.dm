@@ -451,7 +451,7 @@
 
 /datum/reagent/drug/finobranc
 	name = "Finobranc"
-	description = "Makes you impervious to stuns and grants a stamina regeneration buff, but you will be a nearly uncontrollable tramp-bearded raving lunatic."
+	description = "A stimulant native to Sol. The seeds of the plant that serves as a precursor have spread throughout the frontier."
 	reagent_state = SOLID
 	color = "#FAFAFA"
 	overdose_threshold = 20
