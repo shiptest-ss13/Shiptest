@@ -11,7 +11,7 @@
 
 /obj/projectile/bullet/gauss/hc
 	name = "ferromagnetic pellet"
-	damage = 10
+	damage = 15
 	armour_penetration = 60
 	range = 35
 	hitscan = TRUE
@@ -29,7 +29,7 @@
 
 /obj/projectile/bullet/gauss/lance/hc
 	name = "ferromagnetic lance"
-	damage = 15
+	damage = 20
 	armour_penetration = 80
 	range = 35
 	hitscan = TRUE
