@@ -941,6 +941,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"lK" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "lM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1013,8 +1019,8 @@
 /area/ship/crew/dorm)
 "mq" = (
 /obj/docking_port/stationary{
-	dwidth = 3;
-	width = 7;
+	dwidth = 4;
+	width = 11;
 	height = 15;
 	dir = 8
 	},
@@ -2221,12 +2227,6 @@
 /area/ship/crew/dorm)
 "BH" = (
 /turf/open/floor/engine/hull,
-/area/ship/external/dark)
-"Ch" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 4
-	},
-/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Cl" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3559,6 +3559,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "PV" = (
@@ -3929,6 +3930,10 @@
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
+"Ut" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "UA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
@@ -4956,7 +4961,7 @@ OV
 XG
 OV
 ci
-hN
+WD
 WD
 OV
 OV
@@ -4968,8 +4973,8 @@ OV
 OV
 OV
 OV
-Ch
-hN
+WD
+lK
 Cl
 OV
 Cl
@@ -4998,7 +5003,7 @@ OV
 Wm
 XG
 XG
-WD
+hN
 WD
 hN
 XG
@@ -5010,8 +5015,8 @@ OV
 BH
 Cl
 Dw
+Ut
 PS
-WD
 Cl
 Cl
 kl

@@ -211,7 +211,7 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 
 /atom/movable/screen/alert/sweat
 	name = "Sweating"
-	desc = "You're sweating and the heat is starting to hurt. Get somewhere cooler and take off any insulating clothing like a fire suit."
+	desc = "You're sweating and the heat is starting to hurt. Get somewhere cooler, and take off any insulating clothing like a fire suit."
 	icon_state = "sweat"
 
 /atom/movable/screen/alert/shiver
@@ -420,9 +420,11 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 		return
 
 	if (length(last_whisper))
-		living_owner.dying_breath("[last_whisper]")
 		living_owner.say("#[last_whisper]")
-	living_owner.succumb(whispered = length(last_whisper) > 0)
+		//Say handles everything else for us
+		return
+
+	living_owner.succumb(FALSE)
 
 //ALIENS
 

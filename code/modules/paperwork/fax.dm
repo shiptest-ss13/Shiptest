@@ -34,6 +34,9 @@
 		/obj/item/paper,
 		/obj/item/photo,
 		/obj/item/holochip,
+		/obj/item/folder/biscuit,
+		/obj/item/spacecash,
+		/obj/item/documents,
 	)
 	/// List of types which should be allowed to be faxed if hacked
 	var/static/list/exotic_types = list(
@@ -47,9 +50,7 @@
 		/obj/item/reagent_containers/food/snacks/raisincookie,
 		/obj/item/reagent_containers/food/snacks/pancakes,
 		/obj/item/throwing_star,
-		/obj/item/spacecash,
 		/obj/item/card,
-		/obj/item/folder/biscuit
 	)
 	/// Internal radio for announcing over comms
 	var/obj/item/radio/radio

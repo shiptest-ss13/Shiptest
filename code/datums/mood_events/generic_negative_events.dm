@@ -93,10 +93,7 @@
 
 /datum/mood_event/brain_damage
 	mood_change = -3
-
-/datum/mood_event/brain_damage/add_effects()
-	var/damage_message = pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage")
-	description = span_warning("Hurr durr... [damage_message]")
+	description = span_warning("It's so... Hard to think...")
 
 /datum/mood_event/hulk //Entire duration of having the hulk mutation
 	description = span_warning("HULK SMASH!")
@@ -116,7 +113,7 @@
 	mood_change = -4
 
 /datum/mood_event/healsbadman
-	description = span_warning("I feel like I'm held together by flimsy string, and could fall apart at any moment!")
+	description = span_warning("I feel like something is moving through my veins, eating away at me!")
 	mood_change = -4
 	timeout = 2 MINUTES
 

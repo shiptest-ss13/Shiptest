@@ -478,7 +478,7 @@ WS End*/
 
 		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
 
-		H.Jitter(rand(0,2))
+		H.adjust_jitter(rand(0,2))
 		H.Dizzy(rand(0,2))
 
 

@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 41
+#define SAVEFILE_VERSION_MAX 42
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -76,8 +76,23 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(current_version < 38)
 		outline_enabled = TRUE
 		outline_color = COLOR_BLUE_GRAY
+
 	if (current_version < 40)
 		LAZYADD(key_bindings["Space"], "hold_throw_mode")
+
+	if(current_version < 42)
+		//The toggles defines were moved down one bit
+		if(toggles & FAST_MC_REFRESH)
+			toggles |= SPLIT_ADMIN_TABS
+		else
+			toggles &= ~SPLIT_ADMIN_TABS
+
+		if(toggles & SOUND_RADIO)
+			toggles |= FAST_MC_REFRESH
+		else
+			toggles &= ~FAST_MC_REFRESH
+
+		toggles |= SOUND_RADIO
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
 	if(current_version < 39)
@@ -208,21 +223,25 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["pda_color"], pda_color)
 	READ_FILE(S["whois_visible"], whois_visible)
 
-	// Custom hotkeys
-	READ_FILE(S["key_bindings"], key_bindings)
-	check_keybindings()
-
 	READ_FILE(S["show_credits"], show_credits)
 
 	//favorite outfits
 	READ_FILE(S["favorite_outfits"], favorite_outfits)
-
 	var/list/parsed_favs = list()
 	for(var/typetext in favorite_outfits)
 		var/datum/outfit/path = text2path(typetext)
 		if(ispath(path)) //whatever typepath fails this check probably doesn't exist anymore
 			parsed_favs += path
 	favorite_outfits = uniqueList(parsed_favs)
+
+	// OOC commendations
+	READ_FILE(S["hearted_until"], hearted_until)
+	if(hearted_until > world.realtime)
+		hearted = TRUE
+
+	// Custom hotkeys
+	READ_FILE(S["key_bindings"], key_bindings)
+	check_keybindings()
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -352,6 +371,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["favorite_outfits"], favorite_outfits)
 	WRITE_FILE(S["whois_visible"], whois_visible)
+	WRITE_FILE(S["hearted_until"], (hearted_until > world.realtime ? hearted_until : null))
 	return TRUE
 
 /datum/preferences/proc/load_character(slot)

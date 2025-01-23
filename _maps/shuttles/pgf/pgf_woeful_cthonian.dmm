@@ -120,7 +120,7 @@
 	},
 /obj/structure/catwalk/over,
 /obj/structure/platform{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -786,25 +786,24 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/obj/structure/closet/crate{
-	name = "ration crate"
-	},
-/obj/item/storage/ration/beef_strips,
-/obj/item/storage/ration/blackened_calamari,
-/obj/item/storage/ration/assorted_salted_offal,
-/obj/item/storage/ration/assorted_salted_offal,
-/obj/item/storage/ration/shredded_beef,
-/obj/item/storage/ration/shredded_beef,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "iW" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/crate_shelf,
 /obj/machinery/light/small/directional/west,
+/obj/structure/closet/crate/medical,
+/obj/item/storage/firstaid/radiation,
+/obj/item/reagent_containers/hypospray/medipen/anti_rad,
+/obj/item/reagent_containers/hypospray/medipen/anti_rad,
+/obj/item/reagent_containers/hypospray/medipen/anti_rad,
+/obj/item/reagent_containers/hypospray/medipen/anti_rad,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "jg" = (
@@ -922,7 +921,7 @@
 	},
 /obj/structure/catwalk/over,
 /obj/structure/platform{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -983,7 +982,7 @@
 /obj/machinery/light/directional/north,
 /obj/machinery/power/ship_gravity,
 /obj/structure/platform{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -1033,9 +1032,6 @@
 /obj/machinery/turretid/ship{
 	pixel_x = 26
 	},
-/obj/machinery/computer/cargo{
-	dir = 8
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
@@ -1046,7 +1042,12 @@
 	name = "bridge shutter control"
 	},
 /obj/structure/platform/ship_two{
-	dir = 8
+	dir = 5
+	},
+/obj/machinery/computer/cargo{
+	dir = 8;
+	layer = 3.1;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1094,10 +1095,12 @@
 	dir = 4
 	},
 /obj/machinery/computer/helm{
-	dir = 8
+	dir = 8;
+	layer = 3.1;
+	pixel_y = 5
 	},
 /obj/structure/platform/ship_two{
-	dir = 8
+	dir = 6
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1366,13 +1369,13 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	dir = 4;
-	pixel_y = 4
+	pixel_x = 1
 	},
 /obj/item/desk_flag/gezena{
 	pixel_x = 8
 	},
 /obj/structure/platform/ship_two{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1492,6 +1495,19 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/machinery/firealarm/directional/east,
+/obj/structure/closet/crate{
+	name = "ration crate"
+	},
+/obj/item/storage/ration/beef_strips,
+/obj/item/storage/ration/blackened_calamari,
+/obj/item/storage/ration/assorted_salted_offal,
+/obj/item/storage/ration/assorted_salted_offal,
+/obj/item/storage/ration/shredded_beef,
+/obj/item/storage/ration/shredded_beef,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "sT" = (
@@ -2579,9 +2595,9 @@
 "HC" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/opaque/blue/filled,
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_y = 10;
-	pixel_x = -6
+/obj/item/storage/case/surgery{
+	pixel_x = 1;
+	pixel_y = 3
 	},
 /obj/item/reagent_containers/glass/bottle/morphine{
 	pixel_y = 9;
@@ -2650,6 +2666,10 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/crate_shelf,
 /obj/machinery/light/small/directional/east,
+/obj/structure/closet/crate/engineering,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/mining_scanner,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Ig" = (
@@ -2866,10 +2886,6 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/east,
-/obj/structure/closet/crate/engineering,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/mining_scanner,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Kz" = (
@@ -2881,18 +2897,6 @@
 /obj/machinery/cell_charger{
 	pixel_y = 5;
 	pixel_x = -1
-	},
-/obj/item/screwdriver{
-	pixel_x = -1;
-	pixel_y = 4
-	},
-/obj/item/screwdriver{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/screwdriver{
-	pixel_x = 9;
-	pixel_y = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -3091,18 +3095,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid/radiation,
-/obj/item/reagent_containers/hypospray/medipen/anti_rad,
-/obj/item/reagent_containers/hypospray/medipen/anti_rad,
-/obj/item/reagent_containers/hypospray/medipen/anti_rad,
-/obj/item/reagent_containers/hypospray/medipen/anti_rad,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/regular,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -3246,7 +3238,7 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/structure/platform{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -3488,7 +3480,6 @@
 	pixel_x = 6;
 	pixel_y = -5
 	},
-/obj/item/screwdriver,
 /obj/item/radio/headset/pgf/alt/captain,
 /obj/item/storage/lockbox/medal,
 /obj/item/radio/headset/pgf/captain,

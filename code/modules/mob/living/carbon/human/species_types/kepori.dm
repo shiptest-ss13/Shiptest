@@ -21,11 +21,16 @@
 	// brutemod = 1.5
 	// burnmod = 1.5
 	speedmod = -0.10
-	bodytemp_normal = HUMAN_BODYTEMP_NORMAL + 30
-	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 30
-	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 30
+
+	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 35
+	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 3
+
 	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 40
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 3
+
+	bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR - 4
+
+
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
 	var/datum/action/innate/keptackle/keptackle
@@ -128,14 +133,19 @@
 /datum/species/kepori/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self, swap)
 	if(..()) //If it already fits, then it's fine.
 		return TRUE
-	if(slot == ITEM_SLOT_MASK)
-		if(H.wear_mask && !swap)
-			return FALSE
-		if(I.w_class > WEIGHT_CLASS_SMALL)
-			return FALSE
-		if(!H.get_bodypart(BODY_ZONE_HEAD))
-			return FALSE
-		return equip_delay_self_check(I, H, bypass_equip_delay_self)
+	if(slot != ITEM_SLOT_MASK)
+		return FALSE
+	//Blocks all items that are equippable to other slots. (block anything with a flag that ISN'T item_slot_mask)
+	if(I.slot_flags & ~ITEM_SLOT_KEPORI_BEAK)
+		return FALSE
+	if(H.wear_mask && !swap)
+		return FALSE
+	if(I.w_class > WEIGHT_CLASS_SMALL)
+		return FALSE
+	//ya ain't got no biters to put it in sir
+	if(!H.get_bodypart(BODY_ZONE_HEAD))
+		return FALSE
+	return H.equip_delay_self_check(I, bypass_equip_delay_self)
 
 /datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()

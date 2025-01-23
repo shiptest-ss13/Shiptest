@@ -126,7 +126,7 @@
 	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
 	tool_behaviour = TOOL_DECONSTRUCT
 	wall_decon_damage = 200
-	toolspeed = 0.9 //plasmacutters can be used like angle grinders, and are a bit faster
+	toolspeed = 1 //plasmacutters can be used like angle grinders
 	internal_magazine = TRUE //so you don't cheese through the need for plasma - WS EDIT
 	var/charge_cut = 100 //amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of cutting
 	var/adv = FALSE
@@ -185,7 +185,7 @@
 			"<span class='notice'>You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)].</span>")
 	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
 		return TRUE
-	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0)
+	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0, integrity_loss = 5)
 	return TRUE
 
 /obj/item/gun/energy/plasmacutter/use(amount)

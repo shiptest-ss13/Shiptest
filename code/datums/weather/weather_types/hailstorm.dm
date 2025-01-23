@@ -32,5 +32,5 @@
 	/// Think of some good solution of how weather should affect monsters and how they should be resistant to things like this
 	if(isanimal(living_mob))
 		return
-	living_mob.adjust_bodytemperature(-rand(3,6))
+	living_mob.adjust_bodytemperature(-rand(3,6), 243)
 	living_mob.adjustBruteLoss(rand(2,4))

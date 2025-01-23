@@ -19,6 +19,8 @@
 	close_sound_volume = 50
 	drag_slowdown = 0
 	var/obj/item/paper/fluff/jobs/cargo/manifest/manifest
+	var/shelve = FALSE
+	var/shelve_range = 0
 
 /obj/structure/closet/crate/Initialize()
 	. = ..()
@@ -64,6 +66,9 @@
 	if(istype(drop_atom, /turf/open) && istype(loc, /obj/structure/crate_shelf) && user.Adjacent(drop_atom))
 		var/obj/structure/crate_shelf/shelf = loc
 		return shelf.unload(src, user, drop_atom) // If we're being dropped onto a turf, and we're inside of a crate shelf, unload.
+	if(istype(drop_atom, /obj/structure) && istype(loc, /obj/structure/crate_shelf) && user.Adjacent(drop_atom) && !drop_atom.density)
+		var/obj/structure/crate_shelf/shelf = loc
+		return shelf.unload(src, user, drop_atom.loc) // If we're being dropped onto a turf, and we're inside of a crate shelf, unload.
 	if(istype(drop_atom, /obj/structure/crate_shelf) && isturf(loc) && user.Adjacent(src))
 		var/obj/structure/crate_shelf/shelf = drop_atom
 		return shelf.load(src, user) // If we're being dropped onto a crate shelf, and we're in a turf, load.

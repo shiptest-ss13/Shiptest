@@ -10,6 +10,15 @@
 	var/projectile_delay = 0
 	var/firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect	//the visual effect appearing when the weapon is fired.
 	var/kickback = TRUE //Will using this weapon in no grav push mecha back.
+	var/full_auto = FALSE // whether this gun is full auto.
+	var/mode = 0
+	var/eject_casings = FALSE
+	var/one_casing = FALSE // for shotgun type weapons so it doesnt throw out more casings than it's suppossed too
+	var/casing_type
+
+	var/scoped = FALSE //whether this weapon is scoped
+	var/zoom_mod = 6
+	var/zoom_out_mod = 2
 
 /obj/item/mecha_parts/mecha_equipment/weapon/can_attach(obj/mecha/M)
 	if(!..())
@@ -29,12 +38,15 @@
 
 	var/turf/curloc = get_turf(chassis)
 	var/turf/targloc = get_turf(target)
+
+	var/modifiers = params2list(params)
+
 	if (!targloc || !istype(targloc) || !curloc)
 		return 0
 	if (targloc == curloc)
 		return 0
 
-	set_ready_state(0)
+	var/eject_done = FALSE
 	for(var/i=1 to get_shot_amount())
 		var/obj/projectile/A = new projectile(curloc)
 		A.firer = chassis.occupant
@@ -48,10 +60,15 @@
 				spread = round((rand() - 0.5) * variance)
 			else
 				spread = round((i / projectiles_per_shot - 0.5) * variance)
-		A.preparePixelProjectile(target, chassis.occupant, params, spread)
+		A.preparePixelProjectile(target, chassis.occupant, modifiers, spread)
 
 		A.fire()
 		playsound(chassis, fire_sound, 50, TRUE)
+		if(eject_casings && !eject_done)
+			var/obj/item/ammo_casing/ejected = new casing_type(src)
+			ejected.on_eject(chassis)
+			if(one_casing)
+				eject_done = TRUE
 
 		sleep(max(0, projectile_delay))
 
@@ -74,33 +91,52 @@
 	chassis.use_power(energy_drain*get_shot_amount())
 	addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), equip_cooldown)
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
-	equip_cooldown = 8
-	name = "\improper CH-PS \"Immolator\" laser"
-	desc = "A weapon for combat exosuits. Shoots basic lasers."
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/carbine
+	equip_cooldown = 2
+	name = "\improper CH-PS \"Downpour\" energy carbine"
+	desc = "A weapon for combat exosuits. A rapid fire energy carbine with both lethal and disabler modes."
 	icon_state = "mecha_laser"
 	energy_drain = 30
 	projectile = /obj/projectile/beam/laser
 	fire_sound = 'sound/weapons/laser.ogg'
 	harmful = TRUE
+	full_auto = TRUE
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler
-	equip_cooldown = 8
-	name = "\improper CH-DS \"Peacemaker\" disabler"
-	desc = "A weapon for combat exosuits. Shoots basic disablers."
-	icon_state = "mecha_disabler"
-	energy_drain = 30
-	projectile = /obj/projectile/beam/disabler
-	fire_sound = 'sound/weapons/taser2.ogg'
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/carbine/Topic(href, href_list)
+	. = ..()
+	if(href_list["mode"])
+		mode = text2num(href_list["mode"])
+		switch(mode)
+			//laser mode
+			if(0)
+				occupant_message(span_notice("Carbine now set to laser."))
+				energy_drain = initial(energy_drain)
+				projectile = /obj/projectile/beam/laser
+				harmful = TRUE
+				fire_sound = 'sound/weapons/laser.ogg'
+			//disabler mode
+			if(1)
+				occupant_message(span_notice("Carbine now set to disable."))
+				energy_drain = (initial(energy_drain))/2
+				projectile = /obj/projectile/beam/disabler
+				harmful = FALSE
+				fire_sound = 'sound/weapons/taser2.ogg'
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
-	equip_cooldown = 15
-	name = "\improper CH-LC \"Solaris\" laser cannon"
-	desc = "A weapon for combat exosuits. Shoots heavy lasers."
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/carbine/get_equip_info()
+	return "[..()] \[<a href='?src=[REF(src)];mode=0'>Laser</a>|<a href='?src=[REF(src)];mode=1'>Disabler</a>\]"
+
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
+	equip_cooldown = 16
+	name = "\improper CH-LC \"Solaris\" beam sniper"
+	desc = "A scoped weapon for combat exosuits. Shoots long range heavy beam lasers."
 	icon_state = "mecha_laser"
 	energy_drain = 60
-	projectile = /obj/projectile/beam/laser/heavylaser
+	projectile = /obj/projectile/beam/emitter/hitscan
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	full_auto = FALSE
+	scoped = TRUE
+	zoom_mod = 10
+	zoom_out_mod = 3
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
 	equip_cooldown = 20
@@ -122,14 +158,16 @@
 	harmful = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse
-	equip_cooldown = 30
+	equip_cooldown = 4
 	name = "eZ-13 MK2 heavy pulse rifle"
-	desc = "A weapon for combat exosuits. Shoots powerful destructive blasts capable of demolishing obstacles."
+	desc = "A scoped weapon for combat exosuits. Shoots powerful destructive blasts capable of demolishing obstacles."
 	icon_state = "mecha_pulse"
 	energy_drain = 120
 	projectile = /obj/projectile/beam/pulse/heavy
 	fire_sound = 'sound/weapons/marauder.ogg'
 	harmful = TRUE
+	full_auto = TRUE
+	scoped = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma
 	equip_cooldown = 10
@@ -179,53 +217,6 @@
 	projectile = /obj/projectile/energy/electrode
 	fire_sound = 'sound/weapons/taser.ogg'
 
-
-/obj/item/mecha_parts/mecha_equipment/weapon/honker
-	name = "\improper HoNkER BlAsT 5000"
-	desc = "Equipment for clown exosuits. Spreads fun and joy to everyone around. Honk!"
-	icon_state = "mecha_honker"
-	energy_drain = 200
-	equip_cooldown = 150
-	range = MECHA_MELEE|MECHA_RANGED
-	kickback = FALSE
-
-/obj/item/mecha_parts/mecha_equipment/weapon/honker/can_attach(obj/mecha/combat/honker/M)
-	if(..())
-		if(istype(M))
-			return 1
-	return 0
-
-/obj/item/mecha_parts/mecha_equipment/weapon/honker/action(target, params)
-	if(!action_checks(target))
-		return
-	playsound(chassis, 'sound/items/airhorn.ogg', 100, TRUE)
-	chassis.occupant_message("<font color='red' size='5'>HONK</font>")
-	for(var/mob/living/carbon/M in ohearers(6, chassis))
-		if(ishuman(M))
-			var/mob/living/carbon/human/H = M
-			if(istype(H.ears, /obj/item/clothing/ears/earmuffs))
-				continue
-		var/turf/turf_check = get_turf(M)
-		if(isspaceturf(turf_check) && !turf_check.Adjacent(src)) //in space nobody can hear you honk.
-			continue
-		to_chat(M, "<font color='red' size='7'>HONK</font>")
-		M.SetSleeping(0)
-		M.stuttering += 20
-		M.adjustEarDamage(0, 30)
-		M.Paralyze(60)
-		if(prob(30))
-			M.Stun(200)
-			M.Unconscious(80)
-		else
-			M.Jitter(500)
-
-	log_message("Honked from [src.name]. HONK!", LOG_MECHA)
-	var/turf/T = get_turf(src)
-	message_admins("[ADMIN_LOOKUPFLW(chassis.occupant)] used a Mecha Honker in [ADMIN_VERBOSEJMP(T)]")
-	log_game("[key_name(chassis.occupant)] used a Mecha Honker in [AREACOORD(T)]")
-	return 1
-
-
 //Base ballistic weapon type
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic
 	name = "general ballistic weapon"
@@ -237,6 +228,7 @@
 	var/projectile_energy_cost
 	var/disabledreload //For weapons with no cache (like the rockets) which are reloaded by hand
 	var/ammo_type
+	casing_type = /obj/item/ammo_casing/spent/mecha
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/Initialize() //initial(projectiles) prevented me from making mech weapons start empty TODO: PORT ALL OF TG MECH IMPROVEMENTS
 	. = ..()
@@ -294,10 +286,19 @@
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/action(atom/target)
 	if(..())
-		projectiles -= get_shot_amount()
+		if(one_casing)
+			projectiles--
+		else
+			projectiles -= get_shot_amount()
 		send_byjax(chassis.occupant,"exosuit.browser","[REF(src)]",src.get_equip_info())
 		return 1
 
+/obj/item/ammo_casing/spent/mecha
+	name = "bullet casing"
+	desc = "A bullet casing designed to fired from exosuit mounted weapons."
+	projectile_type = null
+	icon_state = "rifle-brass"
+	transform = matrix(1.3, 0, 0, 0, 1.3, 0)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine
 	name = "\improper FNX-99 \"Phoenix\" Exosuit Carbine"
@@ -310,47 +311,53 @@
 	projectiles_cache_max = 96
 	harmful = TRUE
 	ammo_type = "incendiary"
+	eject_casings = TRUE
+	casing_type = /obj/item/ammo_casing/spent/mecha/carbine
 
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/silenced
-	name = "\improper S.H.H. \"Quietus\" Carbine"
-	desc = "A weapon for combat exosuits. A mime invention, field tests have shown that targets cannot even scream before going down."
-	fire_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
-	icon_state = "mecha_mime"
-	equip_cooldown = 30
-	projectile = /obj/projectile/bullet/mime
-	projectiles = 6
-	projectile_energy_cost = 50
-	harmful = TRUE
+/obj/item/ammo_casing/spent/mecha/carbine
+	name = "FNX-99 5.56mm Incendiary bullet"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot
 	name = "\improper LBX-10 \"Scattershot\" Heavy Shotgun"
 	desc = "A weapon for combat exosuits. Shoots a spread of pellets."
 	icon_state = "mecha_scatter"
-	equip_cooldown = 20
-	projectile = /obj/projectile/bullet/scattershot
-	projectiles = 40
-	projectiles_cache = 40
-	projectiles_cache_max = 160
-	projectiles_per_shot = 4
+	equip_cooldown = 10
+	projectile = /obj/projectile/bullet/pellet/scattershot
+	projectiles = 12
+	projectiles_cache = 24
+	projectiles_cache_max = 72
+	projectiles_per_shot = 8
 	variance = 25
 	harmful = TRUE
 	ammo_type = "scattershot"
+	eject_casings = TRUE
+	one_casing = TRUE
+	casing_type = /obj/item/ammo_casing/spent/mecha/scattergun
+
+/obj/item/ammo_casing/spent/mecha/scattergun
+	name = "8ga scattergun shell"
+	icon_state = "buckshot"
+	bounce_sfx_override = 'sound/weapons/gun/general/bulletcasing_shotgun_bounce.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
 	name = "\improper UMG-2 Mounted Machine Gun"
-	desc = "A weapon for combat exosuits. Shoots a rapid, three shot burst."
+	desc = "A weapon for combat exosuits. A fully automatic mounted machine gun with an impressive rate of fire and capacity."
 	icon_state = "mecha_uac2"
-	equip_cooldown = 10
+	equip_cooldown = 2
 	projectile = /obj/projectile/bullet/lmg
-	projectiles = 300
-	projectiles_cache = 300
-	projectiles_cache_max = 1200
-	projectiles_per_shot = 3
+	projectiles = 100
+	projectiles_cache = 200
+	projectiles_cache_max = 600
 	variance = 6
 	randomspread = TRUE
-	projectile_delay = 2
 	harmful = TRUE
 	ammo_type = "lmg"
+	full_auto = TRUE
+	eject_casings = TRUE
+	casing_type = /obj/item/ammo_casing/spent/mecha/umg
+
+/obj/item/ammo_casing/spent/mecha/umg
+	name = "UMG 7.5x50mm bullet"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/mounted
 	name = "\improper Mounted Heavy Machine Gun"
@@ -362,7 +369,6 @@
 	projectiles_cache = 0
 	projectiles_cache_max = 100
 	equip_cooldown = 1 SECONDS
-	projectile_delay = 1
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	name = "\improper SRM-8 missile rack"
@@ -439,7 +445,7 @@
 	var/turf/T = get_turf(src)
 	message_admins("[ADMIN_LOOKUPFLW(chassis.occupant)] fired a [src] in [ADMIN_VERBOSEJMP(T)]")
 	log_game("[key_name(chassis.occupant)] fired a [src] in [AREACOORD(T)]")
-	addtimer(CALLBACK(F, TYPE_PROC_REF(/obj/item/grenade/flashbang, prime)), det_time)
+	F.preprime(delayoverride = det_time)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/clusterbang //Because I am a heartless bastard -Sieve //Heartless? for making the poor man's honkblast? - Kaze
 	name = "\improper SOB-3 grenade launcher"

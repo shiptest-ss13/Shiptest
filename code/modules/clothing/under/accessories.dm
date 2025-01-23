@@ -92,10 +92,11 @@
 		if(initial(above_suit))
 			above_suit = !above_suit
 			to_chat(user, "[src] will be worn [above_suit ? "above" : "below"] your suit.")
+		return ..()
 
 /obj/item/clothing/accessory/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>\The [src] can be attached to a uniform. Alt-click to remove it once attached.</span>"
+	. += "<span class='notice'>\The [src] can be attached to a uniform. Ctrl-click to remove it once attached.</span>"
 	if(initial(above_suit))
 		. += "<span class='notice'>\The [src] can be worn above or below your suit. Alt-click to toggle.</span>"
 
@@ -114,16 +115,6 @@
 	item_state = "maidapron"
 	minimize_when_attached = FALSE
 	attachment_slot = null
-
-/obj/item/clothing/accessory/maidapron/syndicate
-	name = "syndicate maid apron"
-	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
-	icon_state = "maidapronsynd"
-
-/obj/item/clothing/accessory/maidapron/inteq
-	name = "inteq maid apron"
-	desc = "A 'tactical' apron to protect you from all sorts of spills, from dough to blood!"
-	icon_state = "inteqmaidapron"
 
 //////////
 //Medals//
@@ -183,7 +174,7 @@
 
 /obj/item/clothing/accessory/medal/conduct
 	name = "distinguished conduct medal"
-	desc = "A bronze medal awarded for distinguished conduct. Whilst a great honor, this is the most basic award given by Nanotrasen. It is often awarded by a captain to a member of his crew."
+	desc = "A bronze medal awarded for distinguished conduct. While an honor to be awarded, it is one of the most common medals next to the bronze heart."
 
 /obj/item/clothing/accessory/medal/bronze_heart
 	name = "bronze heart medal"
@@ -197,7 +188,7 @@
 
 /obj/item/clothing/accessory/medal/ribbon/cargo
 	name = "\"cargo tech of the shift\" award"
-	desc = "An award bestowed only upon those cargotechs who have exhibited devotion to their duty in keeping with the highest traditions of Cargonia."
+	desc = "A common award bestowed by cargo quartermasters everywhere to their outperforming employees. Often paired with Unpaid Time Off."
 
 /obj/item/clothing/accessory/medal/silver
 	name = "silver medal"
@@ -211,8 +202,8 @@
 	desc = "A silver medal awarded for acts of exceptional valor."
 
 /obj/item/clothing/accessory/medal/silver/security
-	name = "robust security award"
-	desc = "An award for distinguished combat and sacrifice in defence of Nanotrasen's commercial interests. Often awarded to security staff."
+	name = "exceptional service award"
+	desc = "A silver medal awarded for exceptional service within one's roles, often ranging from combat operations to triage and first aid."
 
 /obj/item/clothing/accessory/medal/silver/excellence
 	name = "\proper the head of personnel award for outstanding achievement in the field of excellence"
@@ -220,7 +211,7 @@
 
 /obj/item/clothing/accessory/medal/silver/bureaucracy
 	name = "\improper Excellence in Bureaucracy Medal"
-	desc = "Awarded for exemplary managerial services rendered while under contract with Nanotrasen."
+	desc = "An award for excellent bureaucratic work, often seen pinned to the uniforms of middle-managers."
 
 /obj/item/clothing/accessory/medal/gold
 	name = "gold medal"
@@ -265,7 +256,7 @@
 
 /obj/item/clothing/accessory/medal/gold/heroism
 	name = "medal of exceptional heroism"
-	desc = "An extremely rare golden medal awarded only by CentCom. To receive such a medal is the highest honor and as such, very few exist. This medal is almost never awarded to anybody but commanders."
+	desc = "An extremely rare golden medal awarded only by the highest echelons of military service. To receive such a medal is the highest honor and as such, very few exist. This medal is almost never awarded."
 
 /obj/item/clothing/accessory/medal/plasma
 	name = "plasma medal"
@@ -431,7 +422,6 @@
 	name = "syndicate holster"
 	desc = "A two pouched hip holster that uses chameleon technology to disguise itself and any guns in it."
 	var/datum/action/item_action/chameleon/change/chameleon_action
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/chameleon
 
 /obj/item/clothing/accessory/holster/chameleon/Initialize()
 	. = ..()

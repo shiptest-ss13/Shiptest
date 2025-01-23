@@ -1,5 +1,7 @@
 /mob/living/carbon/attackby(obj/item/W, mob/user, params)
 	var/obj/item/bodypart/BP = get_bodypart(check_zone(user.zone_selected))
+	if(!BP)
+		return ..()
 	var/painless = (HAS_TRAIT(user, TRAIT_ANALGESIA) || HAS_TRAIT(user, TRAIT_PAIN_RESIST))
 	if(W.tool_behaviour == TOOL_WELDER && IS_ROBOTIC_LIMB(BP) && BP.brute_dam) //prioritize healing if we're synthetic
 		return ..()
@@ -135,6 +137,9 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /mob/living/carbon/attack_hand(mob/living/carbon/human/user)
+
+	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_HAND, user) & COMPONENT_CANCEL_ATTACK_CHAIN)
+		. = TRUE
 
 	for(var/datum/surgery/S in surgeries)
 		if(body_position != LYING_DOWN && S.lying_required)
@@ -385,8 +390,8 @@
 	var/should_stun = (!(flags & SHOCK_TESLA) || siemens_coeff > 0.5) && !(flags & SHOCK_NOSTUN)
 	if(should_stun)
 		Paralyze(40)
-	//Jitter and other fluff.
-	jitteriness += 1000
+	//jitter and other fluff.
+	adjust_jitter(1000, max = 1500)
 	do_jitter_animation(jitteriness)
 	stuttering += 2
 	addtimer(CALLBACK(src, PROC_REF(secondary_shock), should_stun), 20)

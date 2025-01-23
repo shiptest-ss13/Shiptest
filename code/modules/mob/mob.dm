@@ -502,14 +502,17 @@
 			handle_eye_contact(examinify)
 		else
 			result = examinify.examine_more(src)
+
+			if(!LAZYLEN(result))
+				result = list(span_notice("<i>You examine [examinify] closer, but find nothing of interest...</i>"))
 	else
 		result = examinify.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
-	if(result.len)
+	if(length(result))
 		for(var/i in 1 to (length(result) - 1))
 			result[i] += "\n"
 
-	to_chat(src, examine_block("<span class='infoplain'>[result.Join()]</span>"))
+	to_chat(src, boxed_message("<span class='infoplain'>[result.Join()]</span>"))
 
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, examinify)
 
@@ -672,6 +675,9 @@
 
 	var/obj/item/I = get_active_held_item()
 	if(I)
+		if(I.pre_unique_action(src))
+			update_inv_hands()
+			return
 		I.unique_action(src)
 		update_inv_hands()
 

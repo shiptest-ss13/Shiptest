@@ -22,9 +22,9 @@
 
 /datum/reagent/medicine/leporazine/on_mob_life(mob/living/carbon/M)
 	if(M.bodytemperature > M.get_body_temp_normal(apply_change=FALSE))
-		M.adjust_bodytemperature(-40 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(apply_change=FALSE))
+		M.adjust_bodytemperature(-4 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(apply_change=FALSE))
 	else if(M.bodytemperature < (M.get_body_temp_normal(apply_change=FALSE) + 1))
-		M.adjust_bodytemperature(40 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE))
+		M.adjust_bodytemperature(4 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE))
 	..()
 
 /datum/reagent/medicine/adminordrazine //An OP chemical for admins
@@ -223,7 +223,7 @@
 /datum/reagent/medicine/rezadone/overdose_process(mob/living/M)
 	M.adjustToxLoss(1, 0)
 	M.Dizzy(5)
-	M.Jitter(5)
+	M.adjust_jitter(5)
 	..()
 	. = 1
 
@@ -581,7 +581,7 @@
 
 /datum/reagent/medicine/anti_rad/on_mob_life(mob/living/carbon/M)
 	M.radiation -= M.radiation - rand(50,150)
-	M.adjust_disgust(4*REM, 0)
+	M.adjust_disgust(4*REM)
 	..()
 	. = 1
 
@@ -668,7 +668,7 @@
 		var/obj/item/I = M.get_active_held_item()
 		if(I && M.dropItemToGround(I))
 			to_chat(M, "<span class='notice'>Your hands spaz out and you drop what you were holding!</span>")
-			M.Jitter(10)
+			M.adjust_jitter(10)
 
 	M.AdjustAllImmobility(-20)
 	M.adjustStaminaLoss(-1*REM, FALSE)
@@ -695,7 +695,7 @@
 	if(prob(3) && iscarbon(M))
 		M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
 		M.Unconscious(100)
-		M.Jitter(350)
+		M.set_jitter(200)
 
 	if(prob(33))
 		M.adjustToxLoss(2*REM, 0)
@@ -707,7 +707,7 @@
 	if(prob(6) && iscarbon(M))
 		M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
 		M.Unconscious(100)
-		M.Jitter(350)
+		M.set_jitter(400)
 
 	if(prob(33))
 		M.adjustToxLoss(3*REM, 0)
@@ -719,7 +719,7 @@
 	if(prob(12) && iscarbon(M))
 		M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
 		M.Unconscious(100)
-		M.Jitter(350)
+		M.set_jitter(600)
 
 	if(prob(33))
 		M.adjustToxLoss(4*REM, 0)
@@ -731,7 +731,7 @@
 	if(prob(24) && iscarbon(M))
 		M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
 		M.Unconscious(100)
-		M.Jitter(350)
+		M.set_jitter(1000)
 
 	if(prob(33))
 		M.adjustToxLoss(5*REM, 0)
@@ -749,7 +749,7 @@
 /datum/reagent/medicine/diphenhydramine/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
 		M.drowsyness += 1
-	M.jitteriness -= 1
+	M.adjust_jitter(-6)
 	M.reagents.remove_reagent(/datum/reagent/toxin/histamine,3)
 	..()
 
@@ -789,13 +789,13 @@
 	if(prob(33))
 		M.drop_all_held_items()
 		M.Dizzy(2)
-		M.Jitter(2)
+		M.adjust_jitter(2)
 	..()
 
 /datum/reagent/medicine/morphine/addiction_act_stage1(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.Jitter(2)
+		M.adjust_jitter(2)
 	..()
 
 /datum/reagent/medicine/morphine/addiction_act_stage2(mob/living/M)
@@ -804,7 +804,7 @@
 		M.adjustToxLoss(1*REM, 0)
 		. = 1
 		M.Dizzy(3)
-		M.Jitter(3)
+		M.adjust_jitter(3)
 	..()
 
 /datum/reagent/medicine/morphine/addiction_act_stage3(mob/living/M)
@@ -813,7 +813,7 @@
 		M.adjustToxLoss(2*REM, 0)
 		. = 1
 		M.Dizzy(4)
-		M.Jitter(4)
+		M.adjust_jitter(4)
 	..()
 
 /datum/reagent/medicine/morphine/addiction_act_stage4(mob/living/M)
@@ -822,7 +822,7 @@
 		M.adjustToxLoss(3*REM, 0)
 		. = 1
 		M.Dizzy(5)
-		M.Jitter(5)
+		M.adjust_jitter(5)
 	..()
 
 /datum/reagent/medicine/oculine
@@ -881,14 +881,14 @@
 	M.losebreath = 0
 	if(prob(20))
 		M.Dizzy(5)
-		M.Jitter(5)
+		M.adjust_jitter(5)
 	..()
 
 /datum/reagent/medicine/atropine/overdose_process(mob/living/M)
 	M.adjustToxLoss(0.5*REM, 0)
 	. = 1
 	M.Dizzy(1)
-	M.Jitter(1)
+	M.adjust_jitter(1)
 	..()
 
 /datum/reagent/medicine/epinephrine
@@ -1002,7 +1002,7 @@
 	taste_description = "acid"
 
 /datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M)
-	M.jitteriness = 0
+	M.adjust_jitter(-50)
 	if(M.has_dna())
 		M.dna.remove_all_mutations(list(MUT_NORMAL, MUT_EXTRA), TRUE)
 	if(!QDELETED(M)) //We were a monkey, now a human
@@ -1373,8 +1373,7 @@
 	for(var/datum/reagent/drug/R in M.reagents.reagent_list)
 		M.reagents.remove_reagent(R.type,5)
 	M.drowsyness += 2
-	if(M.jitteriness >= 3)
-		M.jitteriness -= 3
+	M.adjust_jitter(-3)
 	if (M.hallucination >= 5)
 		M.hallucination -= 5
 	if(prob(20))
@@ -1415,7 +1414,7 @@
 	..()
 	M.AdjustAllImmobility(-20)
 	M.adjustStaminaLoss(-10, 0)
-	M.Jitter(10)
+	M.adjust_jitter(10, max = 300)
 	M.Dizzy(10)
 	return TRUE
 
@@ -1431,7 +1430,7 @@
 	REMOVE_TRAIT(L, TRAIT_STUNRESISTANCE, type)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	L.Dizzy(0)
-	L.Jitter(0)
+	L.set_jitter(0)
 
 /datum/reagent/medicine/changelingadrenaline/overdose_process(mob/living/M as mob)
 	M.adjustToxLoss(1, 0)
@@ -1527,7 +1526,7 @@
 		overdose_threshold = overdose_threshold + rand(-10,10)/10 // for extra fun
 		M.AdjustAllImmobility(-5)
 		M.adjustStaminaLoss(-0.5*REM, 0)
-		M.Jitter(1)
+		M.adjust_jitter(1)
 		metabolization_rate = 0.01 * REAGENTS_METABOLISM * rand(5,20) // randomizes metabolism between 0.02 and 0.08 per tick
 		. = TRUE
 	..()
@@ -1540,7 +1539,7 @@
 	overdose_progress++
 	switch(overdose_progress)
 		if(1 to 40)
-			M.jitteriness = min(M.jitteriness+1, 10)
+			M.adjust_jitter(min(M.jitteriness+1, 10))
 			M.stuttering = min(M.stuttering+1, 10)
 			M.Dizzy(5)
 			if(prob(50))
@@ -1548,7 +1547,7 @@
 		if(41 to 80)
 			M.adjustOxyLoss(0.1*REM, 0)
 			M.adjustStaminaLoss(0.1*REM, 0)
-			M.jitteriness = min(M.jitteriness+1, 20)
+			M.adjust_jitter(min(M.jitteriness+1, 20))
 			M.stuttering = min(M.stuttering+1, 20)
 			M.Dizzy(10)
 			if(prob(50))
@@ -1584,7 +1583,7 @@
 	..()
 
 /datum/reagent/medicine/psicodine/on_mob_life(mob/living/carbon/M)
-	M.jitteriness = max(0, M.jitteriness-6)
+	M.adjust_jitter(-6)
 	M.dizziness = max(0, M.dizziness-6)
 	M.confused = max(0, M.confused-6)
 	M.disgust = max(0, M.disgust-6)
@@ -1688,40 +1687,6 @@
 	M.adjustToxLoss(6*REM, 0) // End result is 4 toxin loss taken. Do your own math.
 	..()
 	. = 1
-
-/* /datum/reagent/medicine/hepanephrodaxon	//WS edit: Temporary removal of overloaded chem
-	name = "Hepanephrodaxon"
-	description = "Used to repair the common tissues involved in filtration."
-	taste_description = "glue"
-	reagent_state = LIQUID
-	color = "#D2691E"
-	metabolization_rate = REM * 1.5
-	overdose_threshold = 10
-
-/datum/reagent/medicine/hepanephrodaxon/on_mob_life(mob/living/carbon/M)
-	var/repair_strength = 1
-	var/obj/item/organ/liver/L = M.getorganslot(ORGAN_SLOT_LIVER)
-	if(L.damage > 0)
-		L.damage = max(L.damage - 4 * repair_strength, 0)
-		M.confused = (2)
-	M.adjustToxLoss(-12)
-	..()
-	if(prob(30) && iscarbon(M))
-		var/obj/item/I = M.get_active_held_item()
-		if(I && M.dropItemToGround(I))
-			to_chat(M, "<span class='notice'>Your hands spaz out and you drop what you were holding!</span>")
-	M.adjustStaminaLoss(-10, 0)
-	M.Jitter(10)
-	M.Dizzy(15)
-
-/datum/reagent/medicine/hepanephrodaxon/overdose_process(mob/living/M)
-	var/obj/item/organ/liver/L = M.getorganslot(ORGAN_SLOT_LIVER)
-	L.damage = max(L.damage + 4, 0)
-	M.confused = (2)
-	..()
-	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
-	ADD_TRAIT(L, TRAIT_STUNRESISTANCE, type)
-	M.add_movespeed_modifier(/datum/movespeed_modifier/reagent/hepanephrodaxon) */
 
 /datum/reagent/medicine/bonefixingjuice
 	name = "C4L-Z1UM Agent"
@@ -1857,7 +1822,7 @@
 
 /datum/reagent/medicine/rhigoxane/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-2*REM, 0.)
-	M.adjust_bodytemperature(-20 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
+	M.adjust_bodytemperature(-0.6 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
 	..()
 	. = 1
 
@@ -1865,7 +1830,7 @@
 	if(method != VAPOR)
 		return
 
-	M.adjust_bodytemperature(-reac_volume * TEMPERATURE_DAMAGE_COEFFICIENT * 20, 200)
+	M.adjust_bodytemperature(-reac_volume * TEMPERATURE_DAMAGE_COEFFICIENT * 0.5, 200)
 	M.adjust_fire_stacks(-reac_volume / 2)
 	if(reac_volume >= metabolization_rate)
 		M.ExtinguishMob()
@@ -1874,7 +1839,7 @@
 
 /datum/reagent/medicine/rhigoxane/overdose_process(mob/living/carbon/M)
 	M.adjustFireLoss(3*REM, 0.)
-	M.adjust_bodytemperature(-35 * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
 	..()
 
 
@@ -1956,13 +1921,13 @@
 	reagent_state = SOLID
 	color = "#302f20"
 	metabolization_rate = REAGENTS_METABOLISM * 0.8
-	overdose_threshold = 100
-	var/clone_dam = 0.25
+	overdose_threshold = 50
+	var/tox_dam = 0.25
 
 /datum/reagent/medicine/soulus/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, INJECT))
-			M.jitteriness += reac_volume
+			M.adjust_jitter(reac_volume)
 			if(M.getFireLoss())
 				M.adjustFireLoss(-reac_volume*1.2)
 			if(M.getBruteLoss())
@@ -1976,7 +1941,7 @@
 /datum/reagent/medicine/soulus/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-0.1*REM, 0)
 	M.adjustBruteLoss(-0.1*REM, 0)
-	M.adjustCloneLoss(clone_dam *REM, 0)
+	M.adjustToxLoss(tox_dam*REM, 0)
 	..()
 
 /datum/reagent/medicine/soulus/overdose_process(mob/living/M)
@@ -1997,7 +1962,7 @@
 	color = "#302f20"
 	metabolization_rate = REAGENTS_METABOLISM
 	overdose_threshold = 100
-	clone_dam = 0
+	tox_dam = 0
 
 /datum/reagent/medicine/puce_essence		// P U C E
 	name = "Pucetylline Essence"
@@ -2131,4 +2096,26 @@
 /datum/reagent/medicine/skeletons_boon/overdose_process(mob/living/M)
 	ADD_TRAIT(M, TRAIT_ALLBREAK, TRAIT_GENERIC)
 	REMOVE_TRAIT(M, TRAIT_NOBREAK, TRAIT_GENERIC)
+	..()
+
+/datum/reagent/medicine/chitosan
+	name = "Chitosan"
+	description = "Vastly improves the blood's natural ability to coagulate and stop bleeding by hightening platelet production and effectiveness. Overdosing will cause extreme blood clotting, resulting in potential brain damage."
+	reagent_state = LIQUID
+	color = "#CC00FF"
+	overdose_threshold = 10
+
+/datum/reagent/medicine/chitosan/on_mob_life(mob/living/carbon/M)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.heal_bleeding(1)
+	..()
+	. = 1
+
+/datum/reagent/medicine/chitosan/overdose_process(mob/living/M)
+	M.adjustOxyLoss(4)
+	if(prob(10))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
+	if(prob(5))
+		M.adjustToxLoss(1)
 	..()

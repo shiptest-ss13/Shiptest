@@ -17,7 +17,7 @@
 	category = list("Exosuit Modules")
 
 /datum/design/board/odysseus_main
-	name = "\"Odysseus\" Central Control module"
+	name = "200 Series Central Control module"
 	desc = "Allows for the construction of a \"Odysseus\" Central Control module."
 	id = "odysseus_main"
 	build_path = /obj/item/circuitboard/mecha/odysseus/main
@@ -25,7 +25,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/odysseus_peri
-	name = "\"Odysseus\" Peripherals Control module"
+	name = "200 Series Peripherals Control module"
 	desc = "Allows for the construction of a \"Odysseus\" Peripheral Control module."
 	id = "odysseus_peri"
 	build_path = /obj/item/circuitboard/mecha/odysseus/peripherals
@@ -33,24 +33,24 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/gygax_main
-	name = "\"Gygax\" Central Control module"
-	desc = "Allows for the construction of a \"Gygax\" Central Control module."
+	name = "500 Series Central Control module"
+	desc = "Allows for the construction of a 500 Series Central Control module."
 	id = "gygax_main"
 	build_path = /obj/item/circuitboard/mecha/gygax/main
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/gygax_peri
-	name = "\"Gygax\" Peripherals Control module"
-	desc = "Allows for the construction of a \"Gygax\" Peripheral Control module."
+	name = "500 Series Peripherals Control module"
+	desc = "Allows for the construction of a 500 Series Peripheral Control module."
 	id = "gygax_peri"
 	build_path = /obj/item/circuitboard/mecha/gygax/peripherals
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/gygax_targ
-	name = "\"Gygax\" Weapons & Targeting Control module"
-	desc = "Allows for the construction of a \"Gygax\" Weapons & Targeting Control module."
+	name = "500 Series Weapons & Targeting Control module"
+	desc = "Allows for the construction of a 500 Series Weapons & Targeting Control module."
 	id = "gygax_targ"
 	build_path = /obj/item/circuitboard/mecha/gygax/targeting
 	category = list("Exosuit Modules")
@@ -193,31 +193,21 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_laser
-	name = "Exosuit Weapon (CH-PS \"Immolator\" Laser)"
-	desc = "Allows for the construction of CH-PS Laser."
+	name = "Exosuit Weapon (CH-PS \"Downpour\" energy carbine)"
+	desc = "Allows for the construction of CH-PS energy carbine."
 	id = "mech_laser"
 	build_type = MECHFAB
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/carbine
 	materials = list(/datum/material/iron=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_laser_heavy
-	name = "Exosuit Weapon (CH-LC \"Solaris\" Laser Cannon)"
-	desc = "Allows for the construction of CH-LC Laser Cannon."
+	name = "Exosuit Weapon (CH-LC \"Solaris\" Beam Cannon)"
+	desc = "Allows for the construction of CH-LC Beam Cannon."
 	id = "mech_laser_heavy"
 	build_type = MECHFAB
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
-	materials = list(/datum/material/iron=10000)
-	construction_time = 100
-	category = list("Exosuit Equipment")
-
-/datum/design/mech_disabler
-	name = "Exosuit Weapon (CH-DS \"Peacemaker\" Disabler)"
-	desc = "Allows for the construction of CH-DS Disabler."
-	id = "mech_disabler"
-	build_type = MECHFAB
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	materials = list(/datum/material/iron=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")

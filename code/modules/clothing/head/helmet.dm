@@ -16,6 +16,13 @@
 	flags_cover = HEADCOVERSEYES
 	//flags_inv = HIDEHAIR // nah
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_HELMET
+	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
+	strip_delay = EQUIP_DELAY_HELMET * 1.5
+
 	dog_fashion = /datum/dog_fashion/head/helmet
 
 	//if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.
@@ -228,37 +235,6 @@
 		"Urban" = "helmetalt_urban",
 		)
 	content_overlays = TRUE
-
-/obj/item/clothing/head/helmet/marine
-	name = "tactical combat helmet"
-	desc = "A tactical black helmet, sealed from outside hazards with a reinforced visor."
-	icon_state = "marine_command"
-	item_state = "helmetalt"
-	armor = list("melee" = 50, "bullet" = 75, "laser" = 55, "energy" = 25, "bomb" = 60, "bio" = 100, "fire" = 70, "acid" = 50)
-	slowdown = 0.3
-	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
-	clothing_flags = STOPSPRESSUREDAMAGE
-	resistance_flags = FIRE_PROOF | ACID_PROOF
-	can_flashlight = TRUE
-	dog_fashion = null
-
-/obj/item/clothing/head/helmet/marine/Initialize(mapload)
-	set_attached_light(new /obj/item/flashlight/seclite)
-	update_helmlight()
-	update_appearance()
-	. = ..()
-
-/obj/item/clothing/head/helmet/marine/security
-	name = "marine heavy helmet"
-	icon_state = "marine_security"
-
-/obj/item/clothing/head/helmet/marine/engineer
-	name = "marine utility helmet"
-	icon_state = "marine_engineer"
-
-/obj/item/clothing/head/helmet/marine/medic
-	name = "marine medic helmet"
-	icon_state = "marine_medic"
 
 /obj/item/clothing/head/helmet/old
 	name = "degrading helmet"
