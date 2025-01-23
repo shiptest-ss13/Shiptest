@@ -513,7 +513,7 @@
 	description = "An extremely potent mix of stimulants, painkillers, and performance enhancers that originated within the Shoal."
 	reagent_state = SOLID
 	color = "#FAFAFA"
-	overdose_threshold = 20
+	overdose_threshold = 12
 	addiction_threshold = 6
 	taste_description = "a metallic bitter permeating your flesh."
 
@@ -521,7 +521,8 @@
 	..()
 	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
 	L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
-	L.adjustOrganLoss(ORGAN_SLOT_HEART, 20)
+	if(!isvox(L))
+		L.adjustOrganLoss(ORGAN_SLOT_HEART, 20)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.do_after_speed += 0.6
@@ -538,9 +539,9 @@
 
 /datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/M)
 	..()
-	M.adjust_jitter(10, max = 500)
+	M.adjust_jitter(10, max = 200)
 	M.adjustStaminaLoss(-18, 0)
-	if(prob(30))
+	if(prob(30) && !isvox(M))
 		M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 		M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
 	if(prob(20))
