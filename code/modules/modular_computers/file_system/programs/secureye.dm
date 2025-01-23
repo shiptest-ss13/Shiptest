@@ -172,6 +172,10 @@
 			return
 
 	var/list/visible_turfs = list()
+
+	if(!active_camera.loc)
+		return
+
 	var/cam_location = active_camera.loc
 
 	if((istype(cam_location, /obj/item/clothing/suit)) || (istype(cam_location, /obj/item/clothing/head/helmet)) || istype(cam_location, /obj/item/storage/belt))

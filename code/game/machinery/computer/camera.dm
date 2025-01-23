@@ -235,6 +235,9 @@
 
 		var/list/visible_turfs = list()
 
+		if(!active_camera_B.loc)
+			return
+
 		// Derived from https://github.com/tgstation/tgstation/pull/52767
 		// Is this camera located in or attached to a living thing? If so, assume the camera's loc is the living thing.
 		var/cam_location = active_camera_B.loc
