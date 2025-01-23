@@ -379,9 +379,9 @@
 	min_val = 1
 
 /datum/config_entry/number/overmap_encounter_size
-	max_val = 255
-	config_entry_value = 127
-	min_val = 127
+	max_val = 254
+	config_entry_value = 254
+	min_val = 254
 
 /datum/config_entry/number/commendation_percent_poll
 	integer = FALSE
