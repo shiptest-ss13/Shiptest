@@ -20,5 +20,7 @@
 #define DISABLE_PLANETDEL 9
 /// Disables ALL new planet generation, TRAIT_BYPASS_MEASURES exempted
 #define DISABLE_PLANETGEN 10
+/// Prevents anyone from joining the game as observer
+#define DISABLE_OBSERVE 11
 
-#define MEASURES_AMOUNT 10 // The total number of switches defined above
+#define MEASURES_AMOUNT 11 // The total number of switches defined above

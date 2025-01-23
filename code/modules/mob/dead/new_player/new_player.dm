@@ -217,6 +217,10 @@
 	if(auth_check)
 		return
 
+	if(SSlag_switch.measures[DISABLE_OBSERVE])
+		to_chat(usr, span_notice("There is an administrative lock on entering the game as observer!"))
+		return
+
 	if(QDELETED(src) || !src.client)
 		ready = PLAYER_NOT_READY
 		return FALSE

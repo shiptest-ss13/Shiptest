@@ -631,6 +631,17 @@
 	message_admins("[key_name_admin(usr)] toggled new player game entering [SSlag_switch.measures[DISABLE_NON_OBSJOBS] ? "OFF" : "ON"].")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Entering", "[!SSlag_switch.measures[DISABLE_NON_OBSJOBS] ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/datum/admins/proc/togglobserve()
+	set category = "Server"
+	set desc="People can't observe from menu"
+	set name="Toggle Observe"
+	if(!SSlag_switch.initialized)
+		return
+	SSlag_switch.set_measure(DISABLE_OBSERVE, !SSlag_switch.measures[DISABLE_OBSERVE])
+	log_admin("[key_name(usr)] toggled new player game entering as observe. Lag Switch at index ([DISABLE_OBSERVE])")
+	message_admins("[key_name_admin(usr)] toggled new player game entering as observe [SSlag_switch.measures[DISABLE_OBSERVE] ? "OFF" : "ON"].")
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Observe", "[!SSlag_switch.measures[DISABLE_OBSERVE] ? "Enabled" : "Disabled"]"))
+
 /datum/admins/proc/toggleAI()
 	set category = "Server"
 	set desc="People can't be AI"
