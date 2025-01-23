@@ -65,7 +65,7 @@
 	active_power_usage = ACTIVE_DRAW_MEDIUM
 	anchored = FALSE
 	light_power = 1.75
-	var/list/light_setting_list = list(0, 5, 10, 15)
+	var/list/light_setting_list = list(0, 10, 15, 20)
 	var/light_power_coefficient = 200
 	var/setting = FLOODLIGHT_OFF
 

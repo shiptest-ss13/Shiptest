@@ -6,25 +6,20 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "af" = (
-/obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/hangar,
 /area/hangar)
 "ai" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aj" = (
-/turf/open/floor/plasteel{
+/obj/machinery/light/floor/hangar,
+/turf/open/floor/plasteel/tech{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -32,9 +27,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "am" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -46,25 +39,16 @@
 /area/hangar)
 "ap" = (
 /obj/effect/landmark/outpost/hangar_dock,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "as" = (
 /obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "av" = (
-/obj/machinery/atmospherics/components/unary/passive_vent{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aw" = (
 /obj/effect/turf_decal/arrows{
@@ -76,14 +60,10 @@
 /area/hangar)
 "aA" = (
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aD" = (
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "aF" = (
 /obj/machinery/door/airlock,
@@ -95,9 +75,7 @@
 /obj/structure/marker_beacon{
 	picked_color = "Teal"
 	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "aH" = (
 /turf/open/floor/plasteel/tech{
@@ -106,17 +84,13 @@
 /area/hangar)
 "aL" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aM" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aO" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -130,13 +104,10 @@
 /turf/template_noop,
 /area/template_noop)
 "aR" = (
-/obj/machinery/elevator_call_button{
-	pixel_y = 25
+/obj/effect/turf_decal/arrows{
+	dir = 4
 	},
-/obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aT" = (
 /obj/machinery/door/poddoor/multi_tile/four_tile_ver,
@@ -146,97 +117,32 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aX" = (
 /obj/effect/turf_decal/arrows{
-	dir = 4
+	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "aY" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 1
 	},
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
-"jh" = (
-/obj/structure/plasticflaps/opaque,
-/obj/machinery/conveyor/auto{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ni" = (
-/obj/machinery/conveyor/auto{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"sg" = (
-/obj/machinery/vending/snack/blue,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"vZ" = (
-/obj/structure/plasticflaps/opaque,
-/obj/machinery/conveyor/auto,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Do" = (
-/obj/machinery/vending/cola/red,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"EA" = (
-/turf/closed/indestructible/reinforced,
-/area/template_noop)
 "JT" = (
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"Na" = (
-/obj/machinery/vending/coffee,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
+"Ny" = (
+/obj/effect/landmark/outpost/elevator_machine,
+/obj/machinery/elevator_call_button{
+	pixel_y = 25
 	},
-/area/hangar)
-"Ni" = (
-/obj/machinery/conveyor/auto,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"NV" = (
-/obj/effect/turf_decal/box,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Oj" = (
-/obj/machinery/door/airlock/engineering{
-	max_integrity = 3000;
-	locked = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 "OP" = (
 /obj/effect/landmark/outpost/elevator,
@@ -245,26 +151,13 @@
 	},
 /area/hangar)
 "TX" = (
-/obj/machinery/atmospherics/pipe/simple/general,
-/turf/closed/indestructible/reinforced,
-/area/hangar)
-"VY" = (
-/obj/machinery/vending/cigarette,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Yn" = (
-/obj/machinery/conveyor/auto,
-/obj/machinery/conveyor/auto{
-	dir = 1
-	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/landmark/outpost/hangar_numbers,
+/turf/open/floor/hangar/plasteel,
 /area/hangar)
 
 (1,1,1) = {"
+aP
+aP
 aP
 aP
 aP
@@ -301,9 +194,11 @@ ab
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+av
 aL
 aO
 aO
@@ -326,50 +221,54 @@ aO
 aO
 aO
 al
-aj
-aj
+av
+av
 ab
 "}
 (3,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aH
 aH
 aw
 aH
-aH
-aH
-aH
-aw
-aH
-aH
+aj
 aH
 aH
 aw
 aH
+aj
 aH
+aH
+aw
+aH
+aj
 aH
 aH
 aw
 aH
 aH
 al
-aj
-aj
+af
+av
 ab
 "}
 (4,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 am
 am
@@ -392,17 +291,19 @@ am
 am
 am
 al
-aj
-aj
+af
+av
 ab
 "}
 (5,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -425,17 +326,19 @@ aD
 aD
 ap
 al
-aj
-aj
+af
+av
 ab
 "}
 (6,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -458,17 +361,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (7,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aX
+av
+aR
 aL
 aG
 aD
@@ -491,17 +396,19 @@ aD
 aD
 aG
 al
-aX
-aj
+aR
+av
 ab
 "}
 (8,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -524,17 +431,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (9,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 ai
 aD
 aD
@@ -557,17 +466,19 @@ aD
 aD
 aD
 aY
-aj
-aj
+af
+av
 ab
 "}
 (10,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -590,17 +501,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (11,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -623,17 +536,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (12,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aX
+av
+aR
 aL
 aG
 aD
@@ -656,17 +571,19 @@ aD
 aD
 aG
 al
-aX
-aj
+aR
+av
 ab
 "}
 (13,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -689,17 +606,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (14,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -722,17 +641,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (15,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -755,17 +676,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (16,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -788,17 +711,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (17,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aX
+av
+aR
 aL
 aG
 aD
@@ -821,17 +746,19 @@ aD
 aD
 aG
 al
-aX
-aj
+aR
+av
 ab
 "}
 (18,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -854,17 +781,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (19,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 ai
 aD
 aD
@@ -887,17 +816,19 @@ aD
 aD
 aD
 aY
-aj
-aj
+af
+av
 ab
 "}
 (20,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -920,17 +851,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (21,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -953,17 +886,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (22,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aX
+av
+aR
 aL
 aG
 aD
@@ -986,17 +921,19 @@ aD
 aD
 aG
 al
-aX
-aj
+aR
+av
 ab
 "}
 (23,1,1) = {"
 aP
 aP
 aP
+aP
+aP
 ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -1019,17 +956,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (24,1,1) = {"
-aP
-aP
-aP
 ab
-aj
-aj
+ab
+ab
+ab
+ab
+ab
+ab
+av
 aL
 aD
 aD
@@ -1052,17 +991,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (25,1,1) = {"
-aP
-aP
-aP
 ab
-aj
-aj
+JT
+JT
+JT
+JT
+OP
+ab
+Ny
 aL
 aD
 aD
@@ -1085,17 +1026,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (26,1,1) = {"
-aP
-aP
-aP
 ab
-aj
-aj
+JT
+JT
+JT
+JT
+JT
+aF
+av
 aL
 aD
 aD
@@ -1118,17 +1061,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (27,1,1) = {"
-aP
-aP
-aP
 ab
-aj
-aX
+JT
+JT
+JT
+JT
+JT
+aF
+TX
 aL
 aG
 aD
@@ -1151,17 +1096,19 @@ aD
 aD
 aG
 al
-aX
-aj
+aR
+av
 ab
 "}
 (28,1,1) = {"
-aP
-aP
-EA
-Oj
-aj
-aj
+ab
+JT
+JT
+JT
+JT
+JT
+aF
+av
 aL
 aD
 aD
@@ -1184,17 +1131,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (29,1,1) = {"
-aP
-aP
-aP
 ab
-aj
-aj
+JT
+JT
+JT
+JT
+JT
+ab
+av
 ai
 aD
 aD
@@ -1217,8 +1166,8 @@ aD
 aD
 aD
 aY
-aj
-aj
+af
+av
 ab
 "}
 (30,1,1) = {"
@@ -1226,8 +1175,10 @@ ab
 ab
 ab
 ab
-aj
-aj
+ab
+ab
+ab
+av
 aL
 aD
 aD
@@ -1250,17 +1201,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (31,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-Do
-aj
-aj
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -1283,16 +1236,18 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (32,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-Na
-aj
-aj
-aj
+av
 aX
 aL
 aG
@@ -1316,17 +1271,19 @@ aD
 aD
 aG
 al
-aX
-aj
+aR
+av
 ab
 "}
 (33,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-VY
-aA
-aj
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -1349,17 +1306,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (34,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-sg
-aj
-aj
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -1382,17 +1341,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (35,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
 av
-aj
-aj
-aj
-aj
+af
 aL
 aD
 aD
@@ -1415,17 +1376,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (36,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-ab
-ab
-ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -1448,16 +1411,18 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (37,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-aj
-aj
-ab
-aj
+av
 aX
 aL
 aG
@@ -1481,17 +1446,19 @@ aD
 aD
 aG
 al
-aX
-aj
+aR
+av
 ab
 "}
 (38,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-aA
-aj
-ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -1514,17 +1481,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (39,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-aj
-Ni
-vZ
-Ni
-NV
+av
+af
 ai
 aD
 aD
@@ -1547,17 +1516,19 @@ aD
 aD
 aD
 aY
-aj
-aj
+af
+av
 ab
 "}
 (40,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-aj
-ab
-ab
-aj
-aj
+av
+af
 aL
 aD
 aD
@@ -1580,17 +1551,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (41,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-aj
-Yn
-jh
-ni
-NV
+av
+af
 aL
 aD
 aD
@@ -1613,16 +1586,18 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (42,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-aA
-aj
-ab
-aj
+av
 aX
 aL
 aG
@@ -1646,17 +1621,19 @@ aD
 aD
 aG
 al
-aX
-aj
+aR
+av
 ab
 "}
 (43,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-aj
-aj
-TX
 av
-aj
+af
 aL
 aD
 aD
@@ -1679,17 +1656,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (44,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-ab
-ab
-ab
-ab
-aR
+av
+af
 aL
 aD
 aD
@@ -1712,17 +1691,19 @@ aD
 aD
 aD
 al
-aj
-aj
+af
+av
 ab
 "}
 (45,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-JT
-JT
-OP
-aF
-aj
+av
+af
 aM
 aU
 aU
@@ -1745,80 +1726,86 @@ aU
 aU
 aU
 ae
-aj
-aj
+af
+av
 ab
 "}
 (46,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-JT
-JT
-JT
-aF
+av
 af
-aj
-aj
-aj
+af
+af
+af
 as
-aj
-aj
-aj
-aj
+af
+af
+af
+af
 as
-aj
-aj
-aj
-aj
+af
+af
+af
+af
 as
-aj
-aj
-aj
-aj
+af
+af
+af
+af
 as
-aj
-aj
-aj
-aj
-aj
+af
+af
+af
+af
+av
 ab
 "}
 (47,1,1) = {"
+aP
+aP
+aP
+aP
+aP
 ab
-JT
-JT
-JT
-aF
-aj
-aj
-aj
+av
+av
+av
+av
 aA
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+av
+av
+av
+av
+av
+av
+av
+av
+av
+av
+av
+av
+av
+av
+av
+av
 aA
-aj
-aj
-aj
-aj
+av
+av
+av
+av
 ab
 "}
 (48,1,1) = {"
-ab
-ab
-ab
+aP
+aP
+aP
+aP
+aP
 ab
 ab
 ab
