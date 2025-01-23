@@ -93,8 +93,8 @@
 	COOLDOWN_START(src, spawn_delay, spawn_time)
 	//Avoid using this with spawners that add this component on initialize
 	//It causes numerous runtime errors during planet generation
-	var/spawn_max = clamp(spawn_amount, 1, max_mobs - length(spawned_mobs))
-	for(var/mob_index in 1 to spawn_max)
+	var/to_spawn = clamp(spawn_amount, 1, max_mobs - length(spawned_mobs))
+	for(var/mob_index in 1 to to_spawn)
 		if(spawn_distance_max > 1)
 			var/origin = spot
 			var/list/peel = turf_peel(spawn_distance_max, spawn_distance_min, origin, view_based = TRUE)
