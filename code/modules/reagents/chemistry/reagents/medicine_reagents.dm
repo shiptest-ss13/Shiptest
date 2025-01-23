@@ -1822,7 +1822,7 @@
 
 /datum/reagent/medicine/rhigoxane/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-2*REM, 0.)
-	M.adjust_bodytemperature(-0.2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
+	M.adjust_bodytemperature(-0.6 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
 	..()
 	. = 1
 
@@ -1922,7 +1922,7 @@
 	color = "#302f20"
 	metabolization_rate = REAGENTS_METABOLISM * 0.8
 	overdose_threshold = 50
-	var/clone_dam = 0.1
+	var/tox_dam = 0.25
 
 /datum/reagent/medicine/soulus/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
@@ -1941,7 +1941,7 @@
 /datum/reagent/medicine/soulus/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-0.1*REM, 0)
 	M.adjustBruteLoss(-0.1*REM, 0)
-	M.adjustCloneLoss(clone_dam*REM, 0)
+	M.adjustToxLoss(tox_dam*REM, 0)
 	..()
 
 /datum/reagent/medicine/soulus/overdose_process(mob/living/M)
@@ -1962,7 +1962,7 @@
 	color = "#302f20"
 	metabolization_rate = REAGENTS_METABOLISM
 	overdose_threshold = 100
-	clone_dam = 0
+	tox_dam = 0
 
 /datum/reagent/medicine/puce_essence		// P U C E
 	name = "Pucetylline Essence"
@@ -2096,4 +2096,26 @@
 /datum/reagent/medicine/skeletons_boon/overdose_process(mob/living/M)
 	ADD_TRAIT(M, TRAIT_ALLBREAK, TRAIT_GENERIC)
 	REMOVE_TRAIT(M, TRAIT_NOBREAK, TRAIT_GENERIC)
+	..()
+
+/datum/reagent/medicine/chitosan
+	name = "Chitosan"
+	description = "Vastly improves the blood's natural ability to coagulate and stop bleeding by hightening platelet production and effectiveness. Overdosing will cause extreme blood clotting, resulting in potential brain damage."
+	reagent_state = LIQUID
+	color = "#CC00FF"
+	overdose_threshold = 10
+
+/datum/reagent/medicine/chitosan/on_mob_life(mob/living/carbon/M)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.heal_bleeding(1)
+	..()
+	. = 1
+
+/datum/reagent/medicine/chitosan/overdose_process(mob/living/M)
+	M.adjustOxyLoss(4)
+	if(prob(10))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
+	if(prob(5))
+		M.adjustToxLoss(1)
 	..()
