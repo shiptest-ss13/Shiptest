@@ -22,6 +22,7 @@
 	var/alert = FALSE // TRUE to display things more seriously
 	var/process_scan = TRUE // some pinpointers change target every time they scan, which means we can't have it change very process but instead when it turns on.
 	var/icon_suffix = "" // for special pinpointer icons
+	var/reset = FALSE // FALSE to save target after disabling pinpointer // FALSE для того, чтобы сохранить target устройства при выключении
 
 /obj/item/pinpointer/Initialize()
 	. = ..()
@@ -45,7 +46,8 @@
 	if(active)
 		START_PROCESSING(SSfastprocess, src)
 	else
-		target = null
+		if(reset == TRUE)
+			target = null
 		STOP_PROCESSING(SSfastprocess, src)
 	update_appearance()
 
