@@ -13,6 +13,7 @@
 	var/wave_downtime //Average time until spawning starts again
 	var/wave_timer
 	var/current_timerid
+	var/spawn_amount
 
 /datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max, _wave_length, _wave_downtime, _spawn_amount = 1)
 	if(_spawn_time)
@@ -35,7 +36,7 @@
 		wave_length = _wave_length
 	if(_wave_downtime)
 		wave_downtime = _wave_downtime
-	if(_spawn_multiplier)
+	if(_spawn_amount)
 		spawn_amount = _spawn_amount
 
 	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING), PROC_REF(stop_spawning))
@@ -92,7 +93,7 @@
 	COOLDOWN_START(src, spawn_delay, spawn_time)
 	//Avoid using this with spawners that add this component on initialize
 	//It causes numerous runtime errors during planet generation
-	spawn_max = clamp(spawn_amount, 1, max_mobs - length(spawned_mobs))
+	var/spawn_max = clamp(spawn_amount, 1, max_mobs - length(spawned_mobs))
 	for(var/mob_index in 1 to spawn_max)
 		if(spawn_distance_max > 1)
 			var/origin = spot
