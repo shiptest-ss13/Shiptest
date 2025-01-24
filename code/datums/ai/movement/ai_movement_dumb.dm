@@ -11,6 +11,12 @@
 
 		var/atom/movable/movable_pawn = controller.pawn
 
+		if(!controller || !movable_pawn)
+			stack_trace("SHIT AI MOVEMENT IS EXPLODING!! BLAME FALLCON, [controller] and [movable_pawn]")
+			moving_controllers.Remove(controller)
+			if(controller)
+				qdel(controller)
+
 		var/can_move = TRUE
 
 		if(controller.ai_traits & STOP_MOVING_WHEN_PULLED && movable_pawn.pulledby)
