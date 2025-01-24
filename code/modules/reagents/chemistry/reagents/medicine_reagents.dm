@@ -2319,7 +2319,7 @@
 	description = "Vastly improves the blood's natural ability to coagulate and stop bleeding by hightening platelet production and effectiveness. Overdosing will cause extreme blood clotting, resulting in potential brain damage."
 	reagent_state = LIQUID
 	color = "#CC00FF"
-	overdose_threshold = 10
+	overdose_threshold = 11
 
 /datum/reagent/medicine/chitosan/on_mob_life(mob/living/carbon/M)
 	if(ishuman(M))
