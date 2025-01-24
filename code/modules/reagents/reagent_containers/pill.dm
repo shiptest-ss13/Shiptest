@@ -190,7 +190,7 @@
 
 /obj/item/reagent_containers/pill/licarb
 	name = "lithium carbonate pill"
-	desc = "Used to depression."
+	desc = "Used to treat depression."
 	list_reagents = list(/datum/reagent/medicine/lithium_carbonate = 10)
 	icon_state = "pill22"
 	rename_with_volume = TRUE
