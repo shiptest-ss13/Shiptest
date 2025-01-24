@@ -83,6 +83,7 @@
 /obj/item/gun/blastcannon/afterattack(atom/target, mob/user, flag, params)
 	if((!bomb && bombcheck) || (!target) || (get_dist(get_turf(target), get_turf(user)) <= 2))
 		return ..()
+	var/modifiers = params2list(params)
 	var/power = bomb? calculate_bomb() : debug_power
 	power = min(power, max_power)
 	QDEL_NULL(bomb)
@@ -98,7 +99,7 @@
 	log_game("Blast wave fired from [AREACOORD(starting)] at [AREACOORD(targturf)] ([target.name]) by [key_name(user)] with power [heavy]/[medium]/[light].")
 	var/obj/projectile/blastwave/BW = new(loc, heavy, medium, light)
 	BW.hugbox = hugbox
-	BW.preparePixelProjectile(target, get_turf(src), params, 0)
+	BW.preparePixelProjectile(target, get_turf(src), modifiers, 0)
 	BW.fire()
 	name = initial(name)
 	desc = initial(desc)

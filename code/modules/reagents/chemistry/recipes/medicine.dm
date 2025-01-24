@@ -325,3 +325,13 @@ WS End */
 /datum/chemical_reaction/chartreuse
 	results = list(/datum/reagent/medicine/chartreuse = 10)
 	required_reagents = list(/datum/reagent/medicine/puce_essence = 5, /datum/reagent/consumable/tinlux = 5, /datum/reagent/consumable/entpoly = 1)
+
+/datum/chemical_reaction/chitosan
+	results = list(/datum/reagent/medicine/chitosan = 10)
+	required_reagents = list(/datum/reagent/silicon = 1, /datum/reagent/consumable/sugar = 2, /datum/reagent/cryptobiolin = 1)
+	required_temp = 380
+
+/datum/chemical_reaction/chitosan_failure
+	results = list(/datum/reagent/carbon = 1)
+	required_reagents = list(/datum/reagent/medicine/chitosan = 1)
+	required_temp = 405

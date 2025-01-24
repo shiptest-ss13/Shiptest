@@ -4,6 +4,7 @@
 	icon = 'icons/turf/walls.dmi'
 	explosion_block = 50
 	max_integrity = 10000000
+	breakdown_duration = -1
 
 /turf/closed/indestructible/TerraformTurf(path, new_baseturf, flags, defer_change = FALSE, ignore_air = FALSE)
 	return
@@ -99,6 +100,12 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
+
+/turf/closed/indestructible/reinforced/rust
+	name = "rusted reinforced wall"
+	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi'
+	icon_state = "rusty_reinforced_wall-0"
+	base_icon_state = "rusty_reinforced_wall"
 
 /turf/closed/indestructible/titanium
 	name = "wall"
