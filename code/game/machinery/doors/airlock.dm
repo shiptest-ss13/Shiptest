@@ -1234,6 +1234,8 @@
 
 /obj/machinery/door/airlock/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
+	if(.)
+		return FALSE
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	var/decon_time = 5 SECONDS

@@ -1289,6 +1289,9 @@
 		return known_name
 	return .
 
+/mob/living/carbon/human/monkeybrain
+	ai_controller = /datum/ai_controller/monkey
+
 /mob/living/carbon/human/species
 	var/race = null
 
