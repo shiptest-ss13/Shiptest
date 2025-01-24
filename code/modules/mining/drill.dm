@@ -78,7 +78,7 @@
 		soundloop.stop()
 		update_overlays()
 		update_icon_state()
-	if(!active && our_vein.currently_spawning)
+	if(!active && our_vein?.currently_spawning)
 		our_vein.toggle_spawning()
 
 /obj/machinery/drill/Destroy()
@@ -225,7 +225,7 @@
 				active = FALSE
 				soundloop.stop()
 				deltimer(current_timerid)
-				if(our_vein.currently_spawning)
+				if(our_vein?.currently_spawning)
 					our_vein.toggle_spawning()
 				playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
 				say("Manual shutoff engaged, ceasing mining operations.")
