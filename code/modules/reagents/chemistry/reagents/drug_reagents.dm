@@ -514,7 +514,7 @@
 	reagent_state = SOLID
 	color = "#FAFAFA"
 	overdose_threshold = 12
-	addiction_threshold = 6
+	addiction_threshold = 7
 	taste_description = "a metallic bitter permeating your flesh."
 
 /datum/reagent/drug/combat_drug/on_mob_metabolize(mob/living/L)
