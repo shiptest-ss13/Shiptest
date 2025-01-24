@@ -204,6 +204,16 @@
 	faction = /datum/faction/nt
 	faction_discount = 50
 
+/datum/supply_pack/medical/vials/empty_vial
+	name = "Empty Vial Crate"
+	desc = "Contains 2 empty hypospray vials, for usage in a Hypospray."
+	cost = 400
+	contains = list(
+		/obj/item/reagent_containers/glass/bottle/vial/small,
+		/obj/item/reagent_containers/glass/bottle/vial/small
+	)
+	crate_name = "empty vial crate"
+
 /datum/supply_pack/medical/vials/bica_vial
 	name = "Bicardine Vial Crate"
 	desc = "Contains 2 spare bicardine vials, for usage in a Hypospray."

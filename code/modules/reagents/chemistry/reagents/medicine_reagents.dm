@@ -2329,7 +2329,8 @@
 	. = 1
 
 /datum/reagent/medicine/chitosan/overdose_process(mob/living/M)
-	M.adjustOxyLoss(4)
+	if(prob(50))
+		M.adjustOxyLoss(4)
 	if(prob(10))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	if(prob(5))
