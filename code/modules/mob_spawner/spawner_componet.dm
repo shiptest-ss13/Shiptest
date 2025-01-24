@@ -60,10 +60,10 @@
 	spawned_mobs = null
 
 //Different from stop_spawning() as it doesn't untether all mobs from it and is meant for temporarily stopping spawning
-/datum/component/spawner/proc/toggle_spawning(datum/source, spawning_started)
+/datum/component/spawner/proc/toggle_spawning(datum/source, currently_spawning)
 	SIGNAL_HANDLER
 
-	if(spawning_started)
+	if(currently_spawning)
 		STOP_PROCESSING(SSprocessing, src)
 		deltimer(current_timerid) //Otherwise if spawning is paused while the wave timer is loose it'll just unpause on its own
 		COOLDOWN_RESET(src, wave_timer)

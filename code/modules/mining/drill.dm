@@ -78,7 +78,7 @@
 		soundloop.stop()
 		update_overlays()
 		update_icon_state()
-	if(!active && our_vein)
+	if(!active && our_vein.currently_spawning)
 		our_vein.toggle_spawning()
 
 /obj/machinery/drill/Destroy()
@@ -148,7 +148,7 @@
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			anchored = FALSE
 
-			if(our_vein?.spawner_attached && our_vein?.spawning_started)
+			if(our_vein?.spawner_attached && our_vein?.currently_spawning)
 				our_vein.toggle_spawning()
 			our_vein = null
 			update_icon_state()
@@ -219,16 +219,20 @@
 
 /obj/machinery/drill/AltClick(mob/user)
 	if(active)
-		to_chat(user, "<span class='notice'>You begin the manual shutoff process.</span>")
+		to_chat(user, span_notice("You begin the manual shutoff process."))
 		if(do_after(user, 10, src))
-			active = FALSE
-			soundloop.stop()
-			deltimer(current_timerid)
-			our_vein.toggle_spawning()
-			playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
-			say("Manual shutoff engaged, ceasing mining operations.")
-			update_icon_state()
-			update_overlays()
+			if(active)
+				active = FALSE
+				soundloop.stop()
+				deltimer(current_timerid)
+				if(our_vein.currently_spawning)
+					our_vein.toggle_spawning()
+				playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
+				say("Manual shutoff engaged, ceasing mining operations.")
+				update_icon_state()
+				update_overlays()
+			else
+				to_chat(user, span_warning("The drill has already been turned off!"))
 		else
 			to_chat(user, "<span class='notice'>You cancel the manual shutoff process.</span>")
 
@@ -305,7 +309,7 @@
 		soundloop.start()
 		if(!our_vein.spawner_attached)
 			our_vein.begin_spawning()
-		else if(!our_vein.spawning_started)
+		else if(!our_vein.currently_spawning)
 			our_vein.toggle_spawning()
 		for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
 			mine_time = round((300/sqrt(laser.rating))*our_vein.mine_time_multiplier)
