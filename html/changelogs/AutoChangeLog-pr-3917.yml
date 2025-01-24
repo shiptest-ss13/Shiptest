@@ -1,0 +1,14 @@
+author: Geoengi
+changes:
+  - {rscadd: Roulette tables can be bought at cargo for the low price of 5000 credits!}
+  - {bugfix: Fixed persistent overlays on roulette tables and requires them to be
+      powered to function.}
+  - {bugfix: Roulette tables now pay out when betting zero.}
+  - {tweak: Owners of roulette tables are the only ones who can bolt or unbolt them.}
+  - {tweak: Slot machines don't announce who won a jackpot where.}
+  - {tweak: Replaced references to ID cards with cash cards where applicable.}
+  - {tweak: The roulette beacon now has an activation sound.}
+  - {spellcheck: The roulette beacon's description reads better.}
+  - {code_imp: Slot machines no longer accept material coins due to them nuking the
+      server if withdrawn.}
+delete-after: true
