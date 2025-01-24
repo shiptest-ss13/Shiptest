@@ -54,14 +54,14 @@
 
 /datum/mission/drill/classtwo
 	name = "Class 2 core sample mission"
-	value = 3500
+	value = 4500
 	weight = 6
 	class_wanted = 2
 	num_wanted = 6
 
 /datum/mission/drill/classthree
 	name = "Class 3 core sample mission"
-	value = 5000
+	value = 8000
 	weight = 4
 	duration = 100 MINUTES
 	class_wanted = 3
