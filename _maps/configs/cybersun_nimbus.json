@@ -1,0 +1,40 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "712-Y Nimbus-class Caravel",
+	"faction": "/datum/faction/syndicate/cybersun",
+	"prefix": "CSSV",
+	"manufacturer": "ISF Spacecraft",
+	"map_short_name": "Nimbus-Class",
+	"description": "An extremely compact vessel designed by Cybersun and manufactured by ISF Spacecraft for the civilian market. The Nimbus makes use of high quality components and professional craftsmanship to deliver an incomparably smooth flying experience. That is at the least, what advertisements claim. Most pilots praise the speed and manueverability, but have found the vessel's internal workings to require extensive work to access and modify, making the Nimbus an easy choice for people who don't have to modify their own craft.",
+	"tags": [
+		"Combat",
+		"Engineering",
+		"Specialist"
+	],
+	"map_path": "_maps/shuttles/cybersun/cybersun_nimbus.dmm",
+	"namelists": [
+		"SPACE",
+		"BEASTS"
+	],
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
+			"officer": true,
+			"slots": 1
+		},
+		"Troubleshooter": {
+			"outfit": "/datum/outfit/job/syndicate/miner/cybersun",
+			"officer": true,
+			"slots": 2
+		},
+		"Technician": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/cybersun",
+			"slots": 1
+		},
+		"Ship's Aide": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

@@ -185,7 +185,7 @@
 
 /obj/item/reagent_containers/food/snacks/cornedbeef
 	name = "corned beef and cabbage"
-	desc = "Now you can feel like a real tourist vacationing in Ireland."
+	desc = "A nice hearty meal."
 	icon_state = "cornedbeef"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
