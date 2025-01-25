@@ -77,7 +77,7 @@
 	if(prob(probability))
 		zone = check_zone(zone)
 	else
-		zone = pick_weight(list(BODY_ZONE_HEAD = 1, BODY_ZONE_CHEST = 1, BODY_ZONE_L_ARM = 4, BODY_ZONE_R_ARM = 4, BODY_ZONE_L_LEG = 4, BODY_ZONE_R_LEG = 4))
+		zone = pick_weight(list(BODY_ZONE_HEAD = 2, BODY_ZONE_CHEST = 78, BODY_ZONE_L_ARM = 5, BODY_ZONE_R_ARM = 5, BODY_ZONE_L_LEG = 5, BODY_ZONE_R_LEG = 5))
 	return zone
 
 ///Would this zone be above the neck
