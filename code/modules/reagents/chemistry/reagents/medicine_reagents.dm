@@ -57,7 +57,7 @@
 	M.stuttering = 0
 	M.slurring = 0
 	M.confused = 0
-	M.SetSleeping(0)
+	M.set_sleeping(0)
 	M.jitteriness = 0
 	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
 		M.blood_volume = BLOOD_VOLUME_NORMAL
@@ -2096,4 +2096,26 @@
 /datum/reagent/medicine/skeletons_boon/overdose_process(mob/living/M)
 	ADD_TRAIT(M, TRAIT_ALLBREAK, TRAIT_GENERIC)
 	REMOVE_TRAIT(M, TRAIT_NOBREAK, TRAIT_GENERIC)
+	..()
+
+/datum/reagent/medicine/chitosan
+	name = "Chitosan"
+	description = "Vastly improves the blood's natural ability to coagulate and stop bleeding by hightening platelet production and effectiveness. Overdosing will cause extreme blood clotting, resulting in potential brain damage."
+	reagent_state = LIQUID
+	color = "#CC00FF"
+	overdose_threshold = 10
+
+/datum/reagent/medicine/chitosan/on_mob_life(mob/living/carbon/M)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.heal_bleeding(1)
+	..()
+	. = 1
+
+/datum/reagent/medicine/chitosan/overdose_process(mob/living/M)
+	M.adjustOxyLoss(4)
+	if(prob(10))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
+	if(prob(5))
+		M.adjustToxLoss(1)
 	..()

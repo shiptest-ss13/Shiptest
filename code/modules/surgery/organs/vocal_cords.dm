@@ -253,7 +253,7 @@
 		cooldown = COOLDOWN_DAMAGE
 		for(var/V in listeners)
 			var/mob/living/L = V
-			L.SetSleeping(0)
+			L.set_sleeping(0)
 
 	//HEAL
 	else if((findtext(message, heal_words)))
