@@ -4255,7 +4255,11 @@
 /area/ship/crew/crewtwo)
 "Ti" = (
 /obj/machinery/light/directional/west,
-/turf/open/floor/engine/hull/interior,
+/obj/machinery/telecomms/relay/preset/minutemen,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
 "Tx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,

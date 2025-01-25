@@ -457,7 +457,7 @@
 		return
 	else
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
-			SetSleeping(400) //Short nap
+			set_sleeping(400) //Short nap
 
 
 /mob/proc/get_contents()
@@ -673,7 +673,7 @@
 	SetKnockdown(0)
 	SetImmobilized(0)
 	SetParalyzed(0)
-	SetSleeping(0)
+	set_sleeping(0)
 	setStaminaLoss(0)
 	SetUnconscious(0)
 

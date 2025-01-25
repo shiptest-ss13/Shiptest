@@ -285,11 +285,11 @@
 	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/kelotane(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/dexalin(src)
 
-/obj/item/storage/box/hypospray/CMO
-	name = "advanced hypospray mk. II kit"
+/obj/item/storage/box/hypospray/mkiii
+	name = "hypospray mk. III kit"
 
-/obj/item/storage/box/hypospray/CMO/PopulateContents()
-	new /obj/item/hypospray/mkii/CMO(src)
+/obj/item/storage/box/hypospray/mkiii/PopulateContents()
+	new /obj/item/hypospray/mkii/mkiii(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/bicaridine(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/antitoxin(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/kelotane(src)

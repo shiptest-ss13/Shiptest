@@ -14,7 +14,7 @@
 	flags_cover = MASKCOVERSMOUTH
 	visor_flags_cover = MASKCOVERSMOUTH
 	resistance_flags = NONE
-	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
 	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
