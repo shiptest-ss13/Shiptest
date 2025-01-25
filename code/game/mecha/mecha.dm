@@ -116,7 +116,6 @@
 	var/defense_mode = FALSE
 	var/leg_overload_mode = FALSE
 	var/leg_overload_coeff = 100
-	var/zoom_mode = FALSE
 	var/smoke = 5
 	var/smoke_ready = 1
 	var/smoke_cooldown = 100
@@ -124,6 +123,10 @@
 	var/phasing_energy_drain = 200
 	var/phase_state = "" //icon_state when phasing
 	var/strafe = FALSE //If we are strafing
+
+	var/zoom_mode = FALSE
+	var/zoom_mod = 6
+	var/zoom_out_mod = 2
 
 	var/nextsmash = 0
 	var/smashcooldown = 3	//deciseconds
@@ -1004,7 +1007,7 @@
 		if(!internal_damage)
 			SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
 		SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
-		autofire_check()
+		equipment_check()
 		return TRUE
 
 /obj/mecha/proc/mmi_move_inside(obj/item/mmi/M, mob/user)
@@ -1050,7 +1053,7 @@
 	B.update_mouse_pointer()
 	icon_state = initial(icon_state)
 	SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
-	autofire_check()
+	equipment_check()
 	update_appearance()
 	setDir(dir_in)
 	log_message("[M] moved in as pilot.", LOG_MECHA)
@@ -1263,7 +1266,9 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 			to_chat(user, "<span class='notice'>None of the equipment on this exosuit can use this ammo!</span>")
 	return FALSE
 
-/obj/mecha/proc/autofire_check()
+// handles actions tied to mech equipment
+/obj/mecha/proc/equipment_check()
+	occupant.client.view_size.zoomIn()
 	if(istype(selected,/obj/item/mecha_parts/mecha_equipment/weapon))
 		var/obj/item/mecha_parts/mecha_equipment/weapon/mech_gun = selected
 		if(mech_gun.full_auto)
@@ -1271,8 +1276,19 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 			SEND_SIGNAL(src,COMSIG_MECH_SET_AUTOFIRE_SPEED, mech_gun.equip_cooldown)
 		else
 			SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
+		if(mech_gun.scoped)
+			zoom_action.Grant(occupant,src)
+			zoom_mod = mech_gun.zoom_mod
+			zoom_out_mod = mech_gun.zoom_out_mod
+		else
+			zoom_action.Remove(occupant)
+			zoom_mod = initial(zoom_mod)
+			zoom_out_mod = initial(zoom_out_mod)
 	else
 		SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
+		zoom_action.Remove(occupant)
+		zoom_mod = initial(zoom_mod)
+		zoom_out_mod = initial(zoom_out_mod)
 
 
 ///////////////////////
