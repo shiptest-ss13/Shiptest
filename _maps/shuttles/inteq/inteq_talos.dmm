@@ -2967,7 +2967,7 @@
 /area/ship/maintenance/starboard)
 "rA" = (
 /obj/structure/closet/crate/large,
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "rB" = (
@@ -5754,8 +5754,8 @@
 	icon_state = "8-9"
 	},
 /obj/structure/catwalk/over,
-/obj/structure/closet/crate,
-/obj/effect/spawner/random/maintenance/two,
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/plastic/twenty,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ju" = (
@@ -6017,8 +6017,7 @@
 /area/ship/engineering)
 "KS" = (
 /obj/structure/catwalk/over,
-/obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/plastic/twenty,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "KY" = (
