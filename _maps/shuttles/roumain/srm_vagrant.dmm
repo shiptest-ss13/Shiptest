@@ -378,6 +378,7 @@
 	dir = 4
 	},
 /obj/machinery/advanced_airlock_controller/directional/west,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "fV" = (
@@ -1015,6 +1016,10 @@
 	pixel_x = -10;
 	pixel_y = 1
 	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "pD" = (
@@ -1063,6 +1068,20 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ship/roumain)
+"qI" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "airlockshutters"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/electrical)
 "qK" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/railing/corner{
@@ -1648,10 +1667,14 @@
 /area/ship/roumain)
 "BO" = (
 /obj/machinery/door/airlock/external,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters{
 	id = "airlockshutters"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
@@ -2546,12 +2569,11 @@
 	},
 /obj/item/storage/toolbox/ammo/shotgun,
 /obj/item/storage/box/ammo/a8_50r,
+/obj/item/storage/box/ammo/a12g_slug,
+/obj/item/storage/box/ammo/a8_50r/match,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "Ss" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/railing,
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe,
@@ -3325,7 +3347,7 @@ Cb
 EM
 fT
 ps
-EM
+qI
 Yr
 nr
 uV
