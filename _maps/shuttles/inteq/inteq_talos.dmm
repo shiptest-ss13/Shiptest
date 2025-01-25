@@ -381,7 +381,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "cp" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cq" = (
@@ -1281,7 +1281,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
 	},
@@ -6223,7 +6223,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Mg" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -8147,7 +8147,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Zs" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Zu" = (
