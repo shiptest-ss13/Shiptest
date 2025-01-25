@@ -836,7 +836,7 @@
 	description = "A low intensity, high duration painkiller. Causes slight drowiness in extended use."
 	reagent_state = LIQUID
 	color = "#34eeee"
-	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	metabolization_rate = 0.3 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	addiction_threshold = 25
 
