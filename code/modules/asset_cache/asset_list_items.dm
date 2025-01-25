@@ -112,6 +112,7 @@
 		"stamp-mime" = 'icons/stamp_icons/large_stamp-mime.png',
 		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png',
 		"stamp-solgov" = 'icons/stamp_icons/large_stamp-solgov.png',
+		"stamp-solgov_generic" = 'icons/stamp_icons/large_stamp-solgov_generic.png',
 		"stamp-solgov_captain" = 'icons/stamp_icons/large_stamp-solgov_captain.png',
 		"stamp-solgov_ok" = 'icons/stamp_icons/large_stamp-solgov_ok.png',
 		"stamp-solgov_deny" = 'icons/stamp_icons/large_stamp-solgov_deny.png',
