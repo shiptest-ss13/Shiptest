@@ -205,6 +205,7 @@ const Blanks = (props, context) => {
               act('print_blank', {
                 name: blank.name,
                 info: blank.info,
+                stampinfo: blank.stampinfo,
               })
             }
           >

@@ -235,6 +235,12 @@
 			var/list/printinfo
 			for(var/infoline as anything in params["info"])
 				printinfo += infoline
+			for(var/stampinfo as anything in params["stampinfo"])
+				var/stamp = stampinfo[1]
+				if(!istype(stamp, /obj/item/stamp/chameleon))
+					var/obj/item/stamp/real_stamp = new stamp()
+					var/stamp_detail = real_stamp.get_writing_implement_details()
+					printblank.add_stamp(stamp_detail["stamp_class"], stampinfo[2], stampinfo[3], stampinfo[4], stamp)
 			printblank.name = "paper - [printname]"
 			printblank.add_raw_text(printinfo, advanced_html = TRUE)
 			printblank.update_appearance()
