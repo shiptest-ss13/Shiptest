@@ -171,7 +171,7 @@
 			if (beacon)
 				beacon.update_status(SP_READY) //turns on the beacon's ready light
 		if("printBeacon")
-			cooldown = 10//a ~ten second cooldown for printing beacons to prevent spam
+			cooldown = 300
 			var/obj/item/supplypod_beacon/C = new /obj/item/supplypod_beacon(drop_location())
 			C.link_console(src, usr)//rather than in beacon's Initialize(), we can assign the computer to the beacon by reusing this proc)
 			printed_beacons++//printed_beacons starts at 0, so the first one out will be called beacon # 1
