@@ -70,8 +70,8 @@
 
 	update_appearance()
 
-	if(dos_overload)
-		dos_overload = max(0, dos_overload - dos_dissipate)
+	if(dos_overload > 0)
+		dos_overload = max(0, dos_overload - dos_dissipate * delta_time)
 
 	// If DoS traffic exceeded capacity, crash.
 	if((dos_overload > dos_capacity) && !dos_failure)

@@ -39,8 +39,8 @@
 	update_appearance()
 
 /obj/item/sparkler/process(delta_time)
-	burntime--
-	if(burntime < 1)
+	burntime -= delta_time
+	if(burntime <= 0)
 		new /obj/item/stack/rods(drop_location())
 		qdel(src)
 	else

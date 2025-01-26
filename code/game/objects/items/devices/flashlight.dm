@@ -266,7 +266,8 @@
 	icon_state = "flare"
 	item_state = "flare"
 	actions_types = list()
-	var/fuel = 2700
+	/// How many seconds of fuel we have left
+	var/fuel = 0
 	var/on_damage = 7
 	var/produce_heat = 1500
 	heat = 1000
@@ -284,13 +285,14 @@
 
 /obj/item/flashlight/flare/Initialize()
 	. = ..()
+	fuel = rand(1600, 2000)
 
 /obj/item/flashlight/flare/process(delta_time)
 	open_flame(heat)
-	fuel = max(fuel - 1, 0)
-	if(!fuel || !on)
+	fuel = max(fuel -= delta_time, 0)
+	if(fuel <= 0 || !on)
 		turn_off()
-		if(!fuel)
+		if(fuel <= 0)
 			icon_state = "[initial(icon_state)]-empty"
 		STOP_PROCESSING(SSobj, src)
 
@@ -479,13 +481,14 @@
 	icon_state = "glowstick"
 	item_state = "glowstick"
 	grind_results = list(/datum/reagent/phenol = 15, /datum/reagent/hydrogen = 10, /datum/reagent/oxygen = 5) //Meth-in-a-stick
+	/// How many seconds of fuel we have left
 	var/fuel = 0
 	toggle_on_sound = 'sound/effects/glowstick.ogg'
 	toggle_off_sound = 'sound/effects/glowstick.ogg'
 
 
 /obj/item/flashlight/glowstick/Initialize()
-	fuel = rand(1600, 2000)
+	fuel = rand(3200, 4000)
 	set_light_color(color)
 	return ..()
 
@@ -496,8 +499,8 @@
 
 
 /obj/item/flashlight/glowstick/process(delta_time)
-	fuel = max(fuel - 1, 0)
-	if(!fuel)
+	fuel = max(fuel - delta_time, 0)
+	if(fuel <= 0)
 		turn_off()
 		STOP_PROCESSING(SSobj, src)
 		update_appearance()
@@ -508,7 +511,7 @@
 
 /obj/item/flashlight/glowstick/update_appearance(updates=ALL)
 	. = ..()
-	if(!fuel)
+	if(fuel <= 0)
 		set_light_on(FALSE)
 	else if(on)
 		return
@@ -531,7 +534,7 @@
 	. += glowstick_overlay
 
 /obj/item/flashlight/glowstick/attack_self(mob/user)
-	if(!fuel)
+	if(fuel <= 0)
 		to_chat(user, "<span class='notice'>[src] is spent.</span>")
 		return
 	if(on)

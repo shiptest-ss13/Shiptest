@@ -28,7 +28,7 @@
 	var/bomb_defused = TRUE // If the bomb is inert.
 	var/bomb_timer = 1 // How long before blowing the bomb.
 	var/const/BOMB_TIMER_MIN = 1
-	var/const/BOMB_TIMER_MAX = 10
+	var/const/BOMB_TIMER_MAX = 20
 
 /obj/item/pizzabox/Initialize()
 	. = ..()

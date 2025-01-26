@@ -40,7 +40,7 @@
 		var/turf/T = get_turf(src)
 		scrub(T.return_air())
 
-/obj/machinery/portable_atmospherics/scrubber/proc/scrub(datum/gas_mixture/mixture)
+/obj/machinery/portable_atmospherics/scrubber/proc/scrub(datum/gas_mixture/mixture, delta_time = 2)
 	if(air_contents.return_pressure() >= overpressure_m * ONE_ATMOSPHERE)
 		return
 
@@ -147,7 +147,7 @@
 	if(!holding)
 		var/turf/T = get_turf(src)
 		for(var/turf/AT as anything in T.get_atmos_all_adjacent_turfs())
-			scrub(AT.return_air())
+			scrub(AT.return_air(), delta_time)
 
 /obj/machinery/portable_atmospherics/scrubber/huge/attackby(obj/item/W, mob/user)
 	if(default_unfasten_wrench(user, W))

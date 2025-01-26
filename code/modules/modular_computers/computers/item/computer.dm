@@ -239,12 +239,12 @@
 	for(var/I in idle_threads)
 		var/datum/computer_file/program/P = I
 		if(P.program_state != PROGRAM_STATE_KILLED)
-			P.process_tick()
+			P.process_tick(delta_time)
 			P.ntnet_status = get_ntnet_status()
 		else
 			idle_threads.Remove(P)
 
-	handle_power() // Handles all computer power interaction
+	handle_power(delta_time) // Handles all computer power interaction
 	//check_update_ui_need()
 
 /**

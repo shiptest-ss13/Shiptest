@@ -149,20 +149,20 @@
 		return FALSE
 
 	var/turf/location = loc
-	scrub(location)
+	scrub(location, delta_time)
 	if(widenet)
 		for(var/turf/tile as anything in location.atmos_adjacent_turfs)
-			scrub(tile)
+			scrub(tile, delta_time)
 	return TRUE
 
-/obj/machinery/atmospherics/components/unary/vent_scrubber/proc/scrub(turf/tile)
+/obj/machinery/atmospherics/components/unary/vent_scrubber/proc/scrub(turf/tile, delta_time = 0.5)
 	var/datum/gas_mixture/environment = tile.return_air()
 
 	if(scrubbing & SCRUBBING)
-		environment.scrub_into(airs[1], volume_rate / environment.return_volume(), filter_types)
+		environment.scrub_into(airs[1], volume_rate * delta_time / environment.return_volume(), filter_types)
 
 	else //Just siphoning all air
-		environment.transfer_ratio_to(airs[1], volume_rate / environment.return_volume())
+		environment.transfer_ratio_to(airs[1], volume_rate * delta_time / environment.return_volume())
 
 	tile.air_update_turf()
 	update_parents()

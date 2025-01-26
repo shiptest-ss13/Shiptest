@@ -452,8 +452,9 @@
 		turn_off()
 		return
 
-	var/used_amount = injection_amount/usage_ratio
-	reagents.trans_to(user,used_amount,multiplier=usage_ratio, method = INJECT)
+	var/inj_am = injection_amount * delta_time
+	var/used_amount = inj_am / usage_ratio
+	reagents.trans_to(user, used_amount, multiplier=usage_ratio, method = INJECT)
 	update_appearance()
 	user.update_inv_back() //for overlays update
 

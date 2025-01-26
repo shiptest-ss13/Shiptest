@@ -10,7 +10,7 @@
 	///is the assembly arming itself?
 	var/timing = FALSE
 	///seconds until the assembly arms itself
-	var/time = 10
+	var/time = 20
 	var/sensitivity = 1
 	var/hearing_range = 3
 	///Proximity monitor associated with this atom, needed for it to work.

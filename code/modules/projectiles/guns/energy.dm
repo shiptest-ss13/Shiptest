@@ -108,10 +108,10 @@
 
 /obj/item/gun/energy/process(delta_time)
 	if(selfcharge && cell && cell.percent() < 100)
-		charge_tick++
-		if(charge_tick < charge_delay)
+		charge_timer += delta_time
+		if(charge_timer < charge_delay)
 			return
-		charge_tick = 0
+		charge_timer = 0
 		cell.give(1000) //WS Edit - Egun energy cells
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)

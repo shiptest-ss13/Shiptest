@@ -8,8 +8,8 @@
 	pickup_sound =  'sound/items/handling/component_pickup.ogg'
 
 	var/timing = FALSE
-	var/time = 5
-	var/saved_time = 5
+	var/time = 10
+	var/saved_time = 10
 	var/loop = FALSE
 	var/hearing_range = 3
 
@@ -56,7 +56,7 @@
 /obj/item/assembly/timer/process(delta_time)
 	if(!timing)
 		return
-	time--
+	time -= delta_time
 	if(time <= 0)
 		timing = FALSE
 		timer_end()

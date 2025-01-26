@@ -228,11 +228,11 @@
 	else
 		end_processing()
 
-/obj/machinery/mineral/processing_unit/proc/smelt_ore()
+/obj/machinery/mineral/processing_unit/proc/smelt_ore(delta_time = 2)
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	var/datum/material/mat = selected_material
 	if(mat)
-		var/sheets_to_remove = (materials.materials[mat] >= (MINERAL_MATERIAL_AMOUNT * SMELT_AMOUNT)) ? SMELT_AMOUNT : round(materials.materials[mat] /  MINERAL_MATERIAL_AMOUNT)
+		var/sheets_to_remove = (materials.materials[mat] >= (MINERAL_MATERIAL_AMOUNT * SMELT_AMOUNT * delta_time) ) ? SMELT_AMOUNT * delta_time : round(materials.materials[mat] /  MINERAL_MATERIAL_AMOUNT)
 		if(!sheets_to_remove)
 			on = FALSE
 		else
@@ -257,11 +257,11 @@
 
 	generate_mineral(alloy.build_path, amount)
 
-/obj/machinery/mineral/processing_unit/proc/can_smelt(datum/design/D)
+/obj/machinery/mineral/processing_unit/proc/can_smelt(datum/design/D, delta_time = 2)
 	if(D.make_reagents.len)
 		return FALSE
 
-	var/build_amount = SMELT_AMOUNT
+	var/build_amount = SMELT_AMOUNT * delta_time
 
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 

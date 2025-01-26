@@ -1149,7 +1149,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/effect/hallucination/danger/anomaly/process(delta_time)
-	if(prob(70))
+	if(DT_PROB(45, delta_time))
 		step(src,pick(GLOB.alldirs))
 
 /obj/effect/hallucination/danger/anomaly/Destroy()
