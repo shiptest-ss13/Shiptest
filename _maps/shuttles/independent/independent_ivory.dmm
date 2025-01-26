@@ -482,7 +482,9 @@
 /turf/template_noop,
 /area/template_noop)
 "hN" = (
-/obj/machinery/washing_machine,
+/obj/machinery/washing_machine{
+	pixel_x = 4
+	},
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/corner/transparent/white/full,
 /turf/open/floor/plasteel/showroomfloor,
@@ -1551,7 +1553,7 @@
 /obj/machinery/shower{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/noslip,
 /area/ship/crew)
 "AF" = (
 /obj/item/radio/intercom/directional/east,
