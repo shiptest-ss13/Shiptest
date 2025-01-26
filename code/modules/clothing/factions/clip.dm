@@ -393,6 +393,7 @@
 	item_state = "combat_balaclava"
 	alternate_worn_layer = BODY_LAYER
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
+	supports_variations = KEPORI_VARIATION
 
 //gloves
 

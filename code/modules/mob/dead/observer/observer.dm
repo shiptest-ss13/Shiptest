@@ -520,6 +520,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			else
 				to_chat(A, "<span class='danger'>This mob is not located in the game world.</span>")
 
+/mob/dead/observer/verb/respawn()
+	if(can_reenter_corpse && client?.holder)
+		var/poll_client = tgui_alert(usr, "Returning to the title screen will forfeit any possible revival. Are you sure?", "Confirmation", list("Yes", "No"))
+		if(poll_client == "No")
+			return
+	abandon_mob()
+
 /mob/dead/observer/verb/change_view_range()
 	set category = "Ghost"
 	set name = "View Range"

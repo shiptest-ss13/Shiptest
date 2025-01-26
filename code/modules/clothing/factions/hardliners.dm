@@ -220,6 +220,7 @@
 	item_state = "hl_webbing"
 	icon = 'icons/obj/clothing/faction/hardliners/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/belt.dmi'
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/storage/belt/security/webbing/hardliners/sidewinder/PopulateContents()
 	. = ..()

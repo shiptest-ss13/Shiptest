@@ -92,15 +92,6 @@
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/ammo_box/magazine/e40
-	name = "E-40 magazine (.299 Eoehoma caseless)"
-	icon_state = "e40_mag-1"
-	base_icon_state = "e40_mag"
-	ammo_type = /obj/item/ammo_casing/caseless/c299
-	caliber = ".299 caseless"
-	max_ammo = 30
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
-
 // 8x50mmR En Bloc Clip (Illestren Hunting Rifle)
 
 /obj/item/ammo_box/magazine/illestren_a850r //this is a magazine codewise do nothing breaks

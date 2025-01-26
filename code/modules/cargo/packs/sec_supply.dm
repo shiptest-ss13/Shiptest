@@ -64,11 +64,11 @@
 /datum/supply_pack/sec_supply/survknives
 	name = "Survival Knives Crate"
 	desc = "Contains three sharpened survival knives. Each knife guaranteed to fit snugly inside any galactic-standard boot."
-	cost = 500
+	cost = 350
 	contains = list(/obj/item/melee/knife/survival,
 					/obj/item/melee/knife/survival,
 					/obj/item/melee/knife/survival)
-	crate_name = "combat knife crate"
+	crate_name = "survival knife crate"
 
 /datum/supply_pack/sec_supply/machete
 	name = "Stampted Steel Machete Crate"
@@ -76,6 +76,15 @@
 	cost = 500
 	contains = list(/obj/item/melee/sword/mass,
 					/obj/item/melee/sword/mass)
+	crate_name = "machete crate"
+
+/datum/supply_pack/sec_supply/combatknives
+	name = "Combat Knives Crate"
+	desc = "Contains three high quality combat knives. For the sharper, and meaner, crew."
+	cost = 1000
+	contains = list(/obj/item/melee/knife/combat,
+					/obj/item/melee/knife/combat,
+					/obj/item/melee/knife/combat)
 	crate_name = "combat knife crate"
 
 /datum/supply_pack/sec_supply/flamethrower

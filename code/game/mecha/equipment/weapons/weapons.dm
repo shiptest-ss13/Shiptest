@@ -16,6 +16,10 @@
 	var/one_casing = FALSE // for shotgun type weapons so it doesnt throw out more casings than it's suppossed too
 	var/casing_type
 
+	var/scoped = FALSE //whether this weapon is scoped
+	var/zoom_mod = 6
+	var/zoom_out_mod = 2
+
 /obj/item/mecha_parts/mecha_equipment/weapon/can_attach(obj/mecha/M)
 	if(!..())
 		return FALSE
@@ -123,13 +127,16 @@
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	equip_cooldown = 16
-	name = "\improper CH-LC \"Solaris\" beam cannon"
-	desc = "A weapon for combat exosuits. Shoots heavy beam lasers."
+	name = "\improper CH-LC \"Solaris\" beam sniper"
+	desc = "A scoped weapon for combat exosuits. Shoots long range heavy beam lasers."
 	icon_state = "mecha_laser"
 	energy_drain = 60
 	projectile = /obj/projectile/beam/emitter/hitscan
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	full_auto = FALSE
+	scoped = TRUE
+	zoom_mod = 10
+	zoom_out_mod = 3
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
 	equip_cooldown = 20
@@ -153,13 +160,14 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse
 	equip_cooldown = 4
 	name = "eZ-13 MK2 heavy pulse rifle"
-	desc = "A weapon for combat exosuits. Shoots powerful destructive blasts capable of demolishing obstacles."
+	desc = "A scoped weapon for combat exosuits. Shoots powerful destructive blasts capable of demolishing obstacles."
 	icon_state = "mecha_pulse"
 	energy_drain = 120
 	projectile = /obj/projectile/beam/pulse/heavy
 	fire_sound = 'sound/weapons/marauder.ogg'
 	harmful = TRUE
 	full_auto = TRUE
+	scoped = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma
 	equip_cooldown = 10
