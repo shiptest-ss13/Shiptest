@@ -53,7 +53,7 @@
 //Armored suits//
 /////////////////
 
-/obj/item/clothing/suit/armor/vest/frontier
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	name = "\improper Frontiersmen armor vest"
 	desc = "A scrap piece of armor made of disused protective plates. This one was used to protect the squishy bits of a Frontiersman, once."
 	icon_state = "frontier_armor"
