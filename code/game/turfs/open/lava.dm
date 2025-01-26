@@ -197,9 +197,9 @@
 			if("lava" in L.weather_immunities)
 				continue
 
-			L.adjustFireLoss(20)
+			L.adjustFireLoss(20 * delta_time)
 			if(L) //mobs turning into object corpses could get deleted here.
-				L.adjust_fire_stacks(20)
+				L.adjust_fire_stacks(20 * delta_time)
 				L.IgniteMob()
 
 /turf/open/lava/smooth

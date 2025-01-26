@@ -138,7 +138,7 @@
 	lefthand_file = GUN_LEFTHAND_ICON
 	righthand_file = GUN_RIGHTHAND_ICON
 
-	charge_delay = 5
+	charge_delay = 10
 	can_charge = FALSE
 	internal_magazine = TRUE
 	ammo_x_offset = 2
@@ -151,7 +151,7 @@
 
 /obj/item/gun/energy/e_gun/nuclear/process(delta_time)
 	if(fail_tick > 0)
-		fail_tick--
+		fail_tick -= delta_time * 0.5
 	..()
 
 /obj/item/gun/energy/e_gun/nuclear/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)

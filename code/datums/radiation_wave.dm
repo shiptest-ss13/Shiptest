@@ -53,7 +53,7 @@
 	if(!is_valid_rad_turf(master_turf))
 		qdel(src)
 		return
-	steps++
+	steps += delta_time
 
 	var/strength
 	if(steps>1)
