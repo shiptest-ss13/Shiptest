@@ -326,7 +326,7 @@ weapons
 
 /datum/supply_pack/mech/weapon/biglaser
 	name = "Solaris kit"
-	desc = "A heavy beam cannon designed for combat usage."
+	desc = "A heavy beam sniper cannon designed for combat usage."
 	cost = 2000
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser

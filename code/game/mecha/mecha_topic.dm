@@ -324,7 +324,7 @@
 			return
 		selected = equip
 		// enable autofire
-		autofire_check()
+		equipment_check()
 		occupant_message("<span class='notice'>You switch to [equip].</span>")
 		visible_message("<span class='notice'>[src] raises [equip].</span>")
 		send_byjax(usr, "exosuit.browser", "eq_list", get_equipment_list())

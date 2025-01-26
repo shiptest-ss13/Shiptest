@@ -35,7 +35,7 @@
 /datum/supply_pack/costumes_toys/lasertag
 	name = "Laser Tag Crate"
 	desc = "Are you tired of Foam Force? Looking for a real thrill? The new NT-Lasertag System is sure to Rock Your Socks, no cleanup required, just plain fun. The NT Way: includes enough equipment for a 3v3 laser-tag shootout."
-	cost = 100
+	cost = 500
 	contains = list(/obj/item/gun/energy/laser/redtag,
 					/obj/item/gun/energy/laser/redtag,
 					/obj/item/gun/energy/laser/redtag,
