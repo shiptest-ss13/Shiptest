@@ -215,7 +215,7 @@
 
 	return 1
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos()
+/obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos(delta_time)
 	..()
 
 	if(!on)

@@ -58,7 +58,7 @@
 
 #define GENRATE 800		// generator output coefficient from Q
 
-/obj/machinery/power/generator/process_atmos()
+/obj/machinery/power/generator/process_atmos(delta_time)
 
 	if(!cold_circ || !hot_circ)
 		return

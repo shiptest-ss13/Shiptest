@@ -63,7 +63,7 @@
 
 /obj/machinery/embedded_controller/process(delta_time)
 	if(program)
-		program.process()
+		program.process(delta_time)
 
 	update_appearance()
 	src.updateDialog()

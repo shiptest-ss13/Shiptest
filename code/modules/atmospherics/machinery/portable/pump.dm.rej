@@ -3,7 +3,7 @@ diff a/code/modules/atmospherics/machinery/portable/pump.dm b/code/modules/atmos
  	if(connected_port)
  		. += "siphon-connector"
 
--/obj/machinery/portable_atmospherics/pump/process_atmos()
+-/obj/machinery/portable_atmospherics/pump/process_atmos(delta_time)
 +/obj/machinery/portable_atmospherics/pump/process_atmos(delta_time)
  	..()
 

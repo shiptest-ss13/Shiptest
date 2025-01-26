@@ -120,7 +120,7 @@
 		on_overlay.color = overlay_color
 		. += on_overlay
 
-/obj/machinery/atmospherics/miner/process_atmos() //TODO figure out delta_time for this
+/obj/machinery/atmospherics/miner/process_atmos(delta_time) //TODO figure out delta_time for this
 	update_power()
 	check_operation()
 	if(active && !broken)

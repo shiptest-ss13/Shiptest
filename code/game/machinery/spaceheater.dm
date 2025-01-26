@@ -57,7 +57,7 @@
 	else
 		. += "There is no power cell installed."
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Temperature range at <b>[settableTemperatureRange]°C</b>.<br>Heating power at <b>[heatingPower*0.001]kJ</b>.<br>Power consumption at <b>[(efficiency*-0.0025)+150]%</b>.</span>" //100%, 75%, 50%, 25%
+		. += "<span class='notice'>The status display reads: Temperature range at <b>[settableTemperatureRange]°C</b>.<br>Heating power at <b>[siunit(heatingPower, "W", 1)]</b>.<br>Power consumption at <b>[(efficiency*-0.0025)+150]%</b>.</span>" //100%, 75%, 50%, 25%
 
 /obj/machinery/space_heater/update_icon_state()
 	icon_state = "[base_icon_state]-[on ? mode : "off"]"
@@ -69,7 +69,7 @@
 	if(panel_open)
 		. += "[base_icon_state]-open"
 
-/obj/machinery/space_heater/process_atmos() //TODO figure out delta_time
+/obj/machinery/space_heater/process_atmos(delta_time) //TODO figure out delta_time
 	if(!on || !is_operational)
 		if (on) // If it's broken, turn it off too
 			on = FALSE
@@ -99,19 +99,19 @@
 			return
 
 		var/heat_capacity = env.heat_capacity()
-		var/requiredPower = abs(env.return_temperature() - targetTemperature) * heat_capacity
-		requiredPower = min(requiredPower, heatingPower)
+		var/requiredEnergy = abs(env.return_temperature() - targetTemperature) * heat_capacity
+		requiredEnergy = min(requiredEnergy, heatingPower * delta_time)
 
-		if(requiredPower < 1)
+		if(requiredEnergy < 1)
 			return
 
-		var/deltaTemperature = requiredPower / heat_capacity
+		var/deltaTemperature = requiredEnergy / heat_capacity
 		if(mode == HEATER_MODE_COOL)
 			deltaTemperature *= -1
 		if(deltaTemperature)
 			env.set_temperature(env.return_temperature() + deltaTemperature)
 			air_update_turf()
-		cell.use(requiredPower / efficiency)
+		cell.use(requiredEnergy / efficiency)
 	else
 		on = FALSE
 		update_appearance()

@@ -244,7 +244,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				* of chems to give them each time so they'll have smoked it all by the end.
 				*/
 				if (smoke_all)
-					to_smoke = reagents.total_volume/((smoketime * 2) / (dragtime / 10))
+					to_smoke = reagents.total_volume / (smoketime / dragtime)
 
 				reagents.expose(C, INGEST, fraction)
 				var/obj/item/organ/lungs/L = C.getorganslot(ORGAN_SLOT_LUNGS)
@@ -356,7 +356,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/cigbutt/roach
 	throw_speed = 0.5
 	item_state = "spliffoff"
-	smoketime = 120 // four minutes
+	smoketime = 4 * 60
 	chem_volume = 50
 	list_reagents = null
 
@@ -835,6 +835,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/on = FALSE
 	var/chem_volume = 100
 	var/vapetime = 0 //this so it won't puff out clouds every tick
+	/// How often we take a drag in seconds
+	var/vapedelay = 8
 	var/screw = 0 // kinky
 	var/super = 0 //for the fattest vapes dude.
 	var/vapecolor //What color the vape should be. If this is not filled out it will automatically be set on Initialize()
@@ -1020,7 +1022,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		return
 	//open flame removed because vapes are a closed system, they wont light anything on fire
 
-	if(super && vapetime > 3)//Time to start puffing those fat vapes, yo.
+	if(super && vapetime >= vapedelay)//Time to start puffing those fat vapes, yo.
 		var/datum/effect_system/smoke_spread/chem/smoke_machine/s = new
 		var/datum/reagents/smokereagents = new
 		reagents.trans_to(smokereagents, reagents.total_volume / 10, 0.65)
@@ -1028,13 +1030,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		s.start()
 		vapetime = 0
 
-	if((obj_flags & EMAGGED) && vapetime > 3)
+	if((obj_flags & EMAGGED) && vapetime >= vapedelay)
 		var/datum/effect_system/smoke_spread/chem/smoke_machine/s = new
 		var/datum/reagents/smokereagents = new
 		reagents.trans_to(smokereagents, reagents.total_volume / 5, 0.75)
 		s.set_up(smokereagents, 4, 24, loc)
 		s.start()
-		vapetime = 0
+		vapetime -= vapedelay
 		if(prob(5))//small chance for the vape to break and deal damage if it's emagged
 			playsound(get_turf(src), 'sound/effects/pop_expl.ogg', 50, FALSE)
 			M.apply_damage(20, BURN, BODY_ZONE_HEAD)

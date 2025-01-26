@@ -827,12 +827,12 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		seconds_electrified--
 
 	//Pitch to the people!  Really sell it!
-	if(last_slogan + slogan_delay <= world.time && slogan_list.len > 0 && !shut_up && prob(5))
+	if(last_slogan + slogan_delay <= world.time && slogan_list.len > 0 && !shut_up && DT_PROB(2.5, delta_time))
 		var/slogan = pick(slogan_list)
 		speak(slogan)
 		last_slogan = world.time
 
-	if(shoot_inventory && prob(shoot_inventory_chance))
+	if(shoot_inventory && DT_PROB(shoot_inventory_chance, delta_time))
 		throw_item()
 /**
 	* Speak the given message verbally

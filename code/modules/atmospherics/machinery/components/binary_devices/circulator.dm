@@ -87,7 +87,7 @@
 	else
 		last_pressure_delta = 0
 
-/obj/machinery/atmospherics/components/binary/circulator/process_atmos()
+/obj/machinery/atmospherics/components/binary/circulator/process_atmos(delta_time)
 	..()
 	update_icon_nopipes()
 

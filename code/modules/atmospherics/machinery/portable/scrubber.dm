@@ -29,7 +29,7 @@
 	if(connected_port)
 		. += "scrubber-connector"
 
-/obj/machinery/portable_atmospherics/scrubber/process_atmos()
+/obj/machinery/portable_atmospherics/scrubber/process_atmos(delta_time)
 	..()
 	if(!on)
 		return
@@ -133,7 +133,7 @@
 	icon_state = "scrubber:[on]"
 	return ..()
 
-/obj/machinery/portable_atmospherics/scrubber/huge/process_atmos()
+/obj/machinery/portable_atmospherics/scrubber/huge/process_atmos(delta_time)
 	if((!anchored && !movable) || !is_operational)
 		on = FALSE
 		update_appearance()

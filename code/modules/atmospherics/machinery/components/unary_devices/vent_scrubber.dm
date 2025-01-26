@@ -133,7 +133,7 @@
 	broadcast_status()
 	..()
 
-/obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos()
+/obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos(delta_time)
 	..()
 
 	if(welded || !on || !is_operational)

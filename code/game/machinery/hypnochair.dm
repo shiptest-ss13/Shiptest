@@ -107,7 +107,7 @@
 	if(!istype(C) || C != victim)
 		interrupt_interrogation()
 		return
-	if(prob(10) && !(C.get_eye_protection() > 0))
+	if(DT_PROB(5, delta_time) && !(C.get_eye_protection() > 0))
 		to_chat(C, "<span class='hypnophrase'>[pick(\
 			"...blue... red... green... blue, red, green, blueredgreen<span class='small'>blueredgreen</span>",\
 			"...pretty colors...",\

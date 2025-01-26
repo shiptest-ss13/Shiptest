@@ -19,7 +19,7 @@
 		return FALSE
 	. = ..()
 
-/obj/machinery/atmospherics/pipe/heat_exchanging/process_atmos()
+/obj/machinery/atmospherics/pipe/heat_exchanging/process_atmos(delta_time)
 	var/environment_temperature = 0
 	var/datum/gas_mixture/pipe_air = return_air()
 

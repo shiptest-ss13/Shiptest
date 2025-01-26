@@ -200,7 +200,7 @@ Class Procs:
 /obj/machinery/process(delta_time)//If you dont use process or power why are you here
 	return PROCESS_KILL
 
-/obj/machinery/proc/process_atmos()//If you dont use process why are you here
+/obj/machinery/proc/process_atmos(delta_time)//If you dont use process why are you here
 	return PROCESS_KILL
 
 

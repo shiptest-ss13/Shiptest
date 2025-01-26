@@ -131,7 +131,7 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 	update_appearance()
 
 	if(traffic > 0)
-		traffic -= netspeed
+		traffic -= netspeed * delta_time
 
 /obj/machinery/telecomms/emp_act(severity)
 	. = ..()

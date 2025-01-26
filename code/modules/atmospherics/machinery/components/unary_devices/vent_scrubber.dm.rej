@@ -12,7 +12,7 @@ diff a/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubbe
  	check_turfs()
  	..()
 
--/obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos()
+-/obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos(delta_time)
 +/obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos(delta_time)
  	..()
  	if(welded || !is_operational)

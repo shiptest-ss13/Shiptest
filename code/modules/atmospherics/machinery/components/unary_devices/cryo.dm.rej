@@ -30,7 +30,7 @@ diff a/code/modules/atmospherics/machinery/components/unary_devices/cryo.dm b/co
 
  	return 1
 
--/obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos()
+-/obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos(delta_time)
 +/obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos(delta_time)
  	..()
 

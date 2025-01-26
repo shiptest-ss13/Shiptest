@@ -94,7 +94,7 @@
 	if(cpu)
 		// Keep names in sync.
 		cpu.name = name
-		cpu.process()
+		cpu.process(delta_time)
 
 // Used in following function to reduce copypaste
 /obj/machinery/modular_computer/proc/power_failure(malfunction = 0)

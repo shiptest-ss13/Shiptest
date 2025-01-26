@@ -187,8 +187,8 @@
 	if(!C || !is_operational)
 		return PROCESS_KILL
 	if(C.charge < C.maxcharge)
-		use_power(100)
-		C.give(80)
+		use_power(50 * delta_time)
+		C.give(40 * delta_time)
 		update_appearance()
 
 //wallframe, for attaching the mounts easily
