@@ -84,7 +84,7 @@
 	. += "<span class='notice'>The drill contains [num_current] of the [num_wanted] samples needed.</span>"
 
 /obj/machinery/drill/mission/start_mining()
-	if(mining.vein_class < mission_class && mining)
+	if(our_vein.vein_class < mission_class && our_vein)
 		say("Error: A vein class of [mission_class] or greater is required for operation.")
 		return
 	. = ..()

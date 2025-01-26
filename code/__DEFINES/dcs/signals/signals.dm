@@ -696,7 +696,7 @@
 #define COMSIG_OVERMAP_UNDOCK "overmap_undock"
 
 // /datum/component/spawner signals
-// Called by parent when pausing spawning, returns bool: (datum/source, spawning_started)
+// Called by parent when pausing spawning, returns bool: (datum/source, currently_spawning)
 #define COMSIG_SPAWNER_TOGGLE_SPAWNING "spawner_toggle"
 
 ///Beam Signals
