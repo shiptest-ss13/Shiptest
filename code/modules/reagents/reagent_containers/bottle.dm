@@ -41,7 +41,7 @@
 
 /obj/item/reagent_containers/glass/bottle/dimorlin
 	name = "dimorlin bottle"
-	desc = "A small bottle of dimorlin."
+	desc = "A small bottle of dimorlin. Apply one dose at a time."
 	list_reagents = list(/datum/reagent/medicine/dimorlin = 30)
 
 /obj/item/reagent_containers/glass/bottle/tramal

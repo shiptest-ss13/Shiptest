@@ -895,10 +895,10 @@
 
 /datum/reagent/medicine/dimorlin
 	name = "Dimorlin"
-	description = "A powerful analgesiac with a short activation period. Extremely habit forming"
+	description = "A powerful opiate-derivative analgesiac. Extremely habit forming"
 	reagent_state = LIQUID
 	color = "#71adad"
-	metabolization_rate = 0.8 * REAGENTS_METABOLISM
+	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	overdose_threshold = 15
 	addiction_threshold = 7
 

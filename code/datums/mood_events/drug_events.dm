@@ -91,3 +91,7 @@
 /datum/mood_event/legion_bad
 	mood_change = -4
 	description = span_warning("Something is slithering through my veins")
+
+/datum/mood_event/stoned
+	mood_change = 6
+	description = span_nicegreen("The world is so comfortable...")

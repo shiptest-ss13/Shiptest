@@ -195,9 +195,9 @@
 	icon_state = "pill22"
 	rename_with_volume = TRUE
 
-/obj/item/reagent_containers/pill/hgh
-	name = "HGH pill"
-	desc = "A pill of Human Growth Hormone."
+/obj/item/reagent_containers/pill/hsh
+	name = "HSH pill"
+	desc = "A pill of Human Sleep Hormone."
 	list_reagents = list(/datum/reagent/medicine/melatonin = 10)
 	icon_state = "pill22"
 	rename_with_volume = TRUE
