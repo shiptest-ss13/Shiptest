@@ -44,7 +44,7 @@
 	radiation_count += current_tick_amount/RAD_MEASURE_SMOOTHING
 
 	if(current_tick_amount)
-		grace = RAD_GRACE_PERIOD
+		grace = RAD_GEIGER_GRACE_PERIOD
 		last_tick_amount = current_tick_amount
 
 	else if(!(obj_flags & EMAGGED))
