@@ -251,9 +251,10 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 
 	spread = -4
 	spread_unwielded = 20
-	recoil = 1
-	recoil_unwielded = 4
-	fire_delay = 0.5 SECONDS
+	recoil = 1.25
+	recoil_unwielded = 6
+	fire_delay = 0.75 SECONDS
+	wield_delay = 1.15 SECONDS //a little longer and less wieldy than other DMRs
 
 	can_be_sawn_off = FALSE
 
@@ -263,18 +264,11 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 		ATTACHMENT_SLOT_RAIL = 1
 		)
 
-	//default_attachments = list(/obj/item/attachment/scope)
-
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 48,
 			"y" = 20,
 		),
-		/*
-		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 16,
-			"y" = 22,
-		),*/
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 32,
 			"y" = 18,
