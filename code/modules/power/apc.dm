@@ -332,6 +332,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(issilicon(user))
 		. += "<span class='notice'>Ctrl-Click the APC to switch the breaker [ operating ? "off" : "on"].</span>"
 
+/obj/machinery/power/apc/examine_more(mob/user)
+	. = ..()
+	ui_interact(user)
+
 // update the APC icon to show the three base states
 // also add overlays for indicator lights
 /obj/machinery/power/apc/update_appearance(updates=check_updates())
@@ -899,10 +903,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(!ui)
 		ui = new(user, src, "Apc", name)
 		ui.open()
-
-/obj/machinery/power/apc/examine_more(mob/user)
-	ui_interact(user)
-	return ..()
 
 /obj/machinery/power/apc/ui_data(mob/user)
 	var/list/data = list(
