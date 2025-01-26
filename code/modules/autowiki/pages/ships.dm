@@ -14,9 +14,9 @@
 		var/size = "Unknown"
 		var/longest_dimension = (ship.width * ship.height)
 		switch(longest_dimension)
-			if(0 to 999)
+			if(0 to 749)
 				size = "Small"
-			if(1000 to 1499)
+			if(750 to 1499)
 				size = "Medium"
 			if(1500 to INFINITY)
 				size = "Large"
