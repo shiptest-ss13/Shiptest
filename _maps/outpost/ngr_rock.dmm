@@ -179,6 +179,7 @@
 /area/outpost/external)
 "bf" = (
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/office)
 "bk" = (
@@ -299,6 +300,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
+"bx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating,
+/area/outpost/maintenance/starboard)
 "bA" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1090,6 +1096,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
+"ga" = (
+/obj/machinery/light/small/directional/south,
+/obj/structure/hazard/spray/steam/transparent_safe,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/outpost/maintenance/starboard)
 "gf" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -1317,6 +1330,10 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
+"hm" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating/rust,
+/area/outpost/maintenance/starboard)
 "hn" = (
 /obj/machinery/computer/security{
 	icon_state = "computer-right"
@@ -1467,7 +1484,6 @@
 /area/outpost/external)
 "iu" = (
 /obj/effect/decal/fakelattice,
-/obj/structure/fluff/steam_vent,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/starboard)
 "iv" = (
@@ -1488,7 +1504,7 @@
 	pixel_y = -5
 	},
 /obj/machinery/light/directional/north,
-/obj/structure/fluff/steam_vent,
+/obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/starboard)
 "ix" = (
@@ -1535,7 +1551,13 @@
 	dir = 4
 	},
 /obj/effect/decal/fakelattice,
-/obj/structure/fluff/steam_vent,
+/obj/structure/fluff{
+	name = "Geothermal Power Tap";
+	desc = "A complex machine that drills into the soil below it to gather thermal power.";
+	icon = 'icons/obj/power.dmi';
+	icon_state = "rtg";
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/vacant_rooms/office)
 "iF" = (
@@ -1978,6 +2000,12 @@
 "lk" = (
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
+"ll" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/south,
+/obj/structure/hazard/spray/steam/cough,
+/turf/open/floor/plating/rust,
+/area/outpost/maintenance/starboard)
 "lm" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -3072,6 +3100,7 @@
 	layer = 4.1
 	},
 /obj/machinery/light/directional/east,
+/obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "rY" = (
@@ -3914,6 +3943,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
+"vL" = (
+/obj/structure/hazard/spray/steam/transparent_safe,
+/turf/open/floor/plating/rust,
+/area/outpost/maintenance/starboard)
 "vM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4488,6 +4521,7 @@
 "za" = (
 /obj/item/pickaxe/rusted,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "ze" = (
@@ -4505,6 +4539,11 @@
 "zh" = (
 /obj/structure/chair/sofa/brown/old/corner/directional/west,
 /turf/open/floor/plating,
+/area/outpost/maintenance/starboard)
+"zj" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
 /area/outpost/maintenance/starboard)
 "zl" = (
 /obj/structure/closet/emcloset/wall/directional/west,
@@ -4782,7 +4821,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/fluff/steam_vent,
+/obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "AT" = (
@@ -5024,6 +5063,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo)
+"Cx" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/outpost/maintenance/starboard)
 "Cy" = (
 /obj/machinery/libraryscanner,
 /obj/effect/turf_decal/corner/opaque/bar/diagonal,
@@ -5049,13 +5093,7 @@
 	dir = 4
 	},
 /obj/effect/decal/fakelattice,
-/obj/structure/fluff{
-	name = "Geothermal Power Tap";
-	desc = "A complex machine that drills into the soil below it to gather thermal power.";
-	icon = 'icons/obj/power.dmi';
-	icon_state = "rtg";
-	pixel_y = 5
-	},
+/obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/vacant_rooms/office)
 "CJ" = (
@@ -5132,6 +5170,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/starboard)
+"Dj" = (
+/obj/structure/grille/broken,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/outpost/maintenance/starboard)
 "Dp" = (
 /obj/item/toy/plush/lizardplushie{
 	name = "dead lizard plushie";
@@ -5190,7 +5233,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/fluff/steam_vent,
+/obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/starboard)
 "DG" = (
@@ -6401,6 +6444,12 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/outpost/crew/bar)
+"Lc" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/hazard/spray/steam/transparent_safe,
+/turf/open/floor/plating,
+/area/outpost/maintenance/starboard)
 "Ll" = (
 /obj/structure/holosign/barrier/engineering/infinite,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
@@ -7321,6 +7370,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
+"QC" = (
+/obj/machinery/light/small/directional/east,
+/obj/structure/hazard/spray/steam/transparent_safe,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/outpost/maintenance/starboard)
 "QH" = (
 /obj/structure/flora/rock/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
@@ -8051,6 +8107,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "Wa" = (
@@ -9875,7 +9932,7 @@ Ao
 Np
 Wy
 zU
-Iw
+vL
 Ol
 YN
 Ol
@@ -9897,7 +9954,7 @@ bN
 rM
 Np
 Np
-bN
+vL
 Np
 Wy
 Rm
@@ -9983,14 +10040,14 @@ rM
 Np
 Np
 Np
-bN
+Iw
 fm
 Np
 Np
 Np
 Np
 Np
-bN
+Iw
 GP
 Wy
 gz
@@ -10171,7 +10228,7 @@ zK
 Gp
 Np
 Np
-OP
+ga
 Wy
 Np
 bN
@@ -10265,7 +10322,7 @@ bN
 Np
 Np
 Np
-bN
+zj
 Np
 Np
 cK
@@ -10353,14 +10410,14 @@ Wy
 Np
 Np
 Aa
-bN
-lL
+bx
+QC
 rM
 Np
 Np
 Np
 rM
-bN
+Cx
 Np
 lR
 fo
@@ -10447,7 +10504,7 @@ rM
 Np
 Np
 Np
-MF
+Dj
 Wy
 hQ
 Np
@@ -10839,7 +10896,7 @@ fm
 Np
 Np
 bN
-lL
+hm
 Np
 Np
 cL
@@ -10932,7 +10989,7 @@ Np
 rM
 Np
 Np
-OP
+Lc
 Wy
 bN
 Np
@@ -11574,7 +11631,7 @@ bH
 qe
 GR
 bN
-Eo
+ll
 Wy
 Tk
 Tk
