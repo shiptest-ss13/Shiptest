@@ -103,7 +103,7 @@
 		if(2000 to MAXIMUM_BURN_TIMER)
 			set_light(6)
 
-/obj/structure/fireplace/process()
+/obj/structure/fireplace/process(delta_time)
 	if(!lit)
 		return
 	if(world.time > flame_expiry_timer)

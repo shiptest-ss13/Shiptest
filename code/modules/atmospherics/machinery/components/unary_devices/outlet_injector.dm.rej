@@ -1,0 +1,28 @@
+diff a/code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm b/code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm	(rejected hunks)
+@@ -52,7 +52,7 @@
+ 	else
+ 		icon_state = "inje_on"
+
+-/obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos()
++/obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos(delta_time)
+ 	..()
+
+ 	injecting = 0
+@@ -63,7 +63,7 @@
+ 	var/datum/gas_mixture/air_contents = airs[1]
+
+ 	if(air_contents.temperature > 0)
+-		var/transfer_moles = (air_contents.return_pressure())*volume_rate/(air_contents.temperature * R_IDEAL_GAS_EQUATION)
++		var/transfer_moles = air_contents.return_pressure() * volume_rate * delta_time / (air_contents.temperature * R_IDEAL_GAS_EQUATION)
+
+ 		var/datum/gas_mixture/removed = air_contents.remove(transfer_moles)
+
+@@ -82,7 +82,7 @@
+ 	injecting = 1
+
+ 	if(air_contents.temperature > 0)
+-		var/transfer_moles = (air_contents.return_pressure())*volume_rate/(air_contents.temperature * R_IDEAL_GAS_EQUATION)
++		var/transfer_moles = air_contents.return_pressure() * volume_rate / (air_contents.temperature * R_IDEAL_GAS_EQUATION)
+ 		var/datum/gas_mixture/removed = air_contents.remove(transfer_moles)
+ 		loc.assume_air(removed)
+ 		update_parents()

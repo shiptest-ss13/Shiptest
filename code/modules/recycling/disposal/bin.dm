@@ -387,7 +387,7 @@
 
 //timed process
 //charge the gas reservoir and perform flush if ready
-/obj/machinery/disposal/bin/process()
+/obj/machinery/disposal/bin/process(delta_time)
 	if(machine_stat & BROKEN) //nothing can happen if broken
 		return
 

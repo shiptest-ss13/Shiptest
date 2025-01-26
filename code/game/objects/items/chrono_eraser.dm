@@ -217,13 +217,13 @@
 		underlays = list() //hack: BYOND refuses to update the underlay to match the icon_state otherwise
 		underlays += mob_underlay
 
-/obj/structure/chrono_field/process()
+/obj/structure/chrono_field/process(delta_time)
 	if(captured)
-		if(tickstokill > initial(tickstokill))
+		if(timetokill > initial(timetokill))
 			for(var/atom/movable/AM in contents)
 				AM.forceMove(drop_location())
 			qdel(src)
-		else if(tickstokill <= 0)
+		else if(timetokill <= 0)
 			to_chat(captured, "<span class='boldnotice'>As the last essence of your being is erased from time, you are taken back to your most enjoyable memory. You feel happy...</span>")
 			var/mob/dead/observer/ghost = captured.ghostize(1)
 			if(captured.mind)

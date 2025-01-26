@@ -381,7 +381,8 @@
 	var/on = FALSE
 	volume = 300
 	var/usage_ratio = 5 //5 unit added per 1 removed
-	var/injection_amount = 1
+	/// How much to inject per second
+	var/injection_amount = 0.5
 	amount_per_transfer_from_this = 5
 	reagent_flags = OPENCONTAINER
 	spillable = FALSE
@@ -439,7 +440,7 @@
 	if(ismob(loc))
 		to_chat(loc, "<span class='notice'>[src] turns off.</span>")
 
-/obj/item/reagent_containers/chemtank/process()
+/obj/item/reagent_containers/chemtank/process(delta_time)
 	if(!ishuman(loc))
 		turn_off()
 		return

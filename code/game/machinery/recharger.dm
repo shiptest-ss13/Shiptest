@@ -130,7 +130,7 @@
 		charging.forceMove(drop_location())
 		setCharging(null)
 
-/obj/machinery/recharger/process()
+/obj/machinery/recharger/process(delta_time)
 	if(machine_stat & (NOPOWER|BROKEN) || !anchored)
 		return PROCESS_KILL
 

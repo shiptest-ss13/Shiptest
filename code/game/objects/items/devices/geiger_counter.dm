@@ -11,7 +11,7 @@
 	item_flags = NOBLUDGEON
 	custom_materials = list(/datum/material/iron = 150, /datum/material/glass = 150)
 
-	var/grace = RAD_GRACE_PERIOD
+	var/grace = RAD_GEIGER_GRACE_PERIOD
 	var/datum/looping_sound/geiger/soundloop
 
 	var/scanning = FALSE

@@ -1,0 +1,23 @@
+diff a/code/game/machinery/cell_charger.dm b/code/game/machinery/cell_charger.dm	(rejected hunks)
+@@ -115,17 +115,17 @@
+ 		charging.emp_act(severity)
+
+ /obj/machinery/cell_charger/RefreshParts()
+-	charge_rate = 500
++	charge_rate = 250
+ 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
+ 		charge_rate *= C.rating
+
+-/obj/machinery/cell_charger/process()
++/obj/machinery/cell_charger/process(delta_time)
+ 	if(!charging || !anchored || (machine_stat & (BROKEN|NOPOWER)))
+ 		return
+
+ 	if(charging.percent() >= 100)
+ 		return
+-	use_power(charge_rate)
+-	charging.give(charge_rate)	//this is 2558, efficient batteries exist
++	use_power(charge_rate * delta_time)
++	charging.give(charge_rate * delta_time)	//this is 2558, efficient batteries exist
+
+ 	update_icon()

@@ -477,7 +477,7 @@
 		for(var/datum/spacevine_mutation/SM in SV.mutations)
 			SM.process_mutation(SV)
 		if(SV.energy < 2) //If tile isn't fully grown
-			if(prob(20))
+			if(DT_PROB(10, delta_time))
 				SV.grow()
 		else //If tile is fully grown
 			SV.entangle_mob()

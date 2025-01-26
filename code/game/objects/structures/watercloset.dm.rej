@@ -1,0 +1,10 @@
+diff a/code/game/objects/structures/watercloset.dm b/code/game/objects/structures/watercloset.dm	(rejected hunks)
+@@ -419,7 +419,7 @@
+ 	if(!reclaiming)
+ 		reclaiming = TRUE
+ 		START_PROCESSING(SSfluids, src)
+-		process()
++		process(SSFLUIDS_DT)
+
+ /obj/structure/sink/kitchen
+ 	name = "kitchen sink"

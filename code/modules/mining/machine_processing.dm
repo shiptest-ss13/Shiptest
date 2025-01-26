@@ -1,4 +1,5 @@
-#define SMELT_AMOUNT 10
+/// Smelt amount per second
+#define SMELT_AMOUNT 5
 
 /**********************Mineral processing unit console**************************/
 
@@ -213,13 +214,13 @@
 	if(istype(target, /obj/item/stack/ore))
 		process_ore(target)
 
-/obj/machinery/mineral/processing_unit/process()
+/obj/machinery/mineral/processing_unit/process(delta_time)
 	if(on)
 		if(selected_material)
-			smelt_ore()
+			smelt_ore(delta_time)
 
 		else if(selected_alloy)
-			smelt_alloy()
+			smelt_alloy(delta_time)
 
 
 		if(CONSOLE)
@@ -239,13 +240,13 @@
 			materials.retrieve_sheets(sheets_to_remove, mat, out)
 
 
-/obj/machinery/mineral/processing_unit/proc/smelt_alloy()
+/obj/machinery/mineral/processing_unit/proc/smelt_alloy(delta_time = 2)
 	var/datum/design/alloy = stored_research.isDesignResearchedID(selected_alloy) //check if it's a valid design
 	if(!alloy)
 		on = FALSE
 		return
 
-	var/amount = can_smelt(alloy)
+	var/amount = can_smelt(alloy, delta_time)
 
 	if(!amount)
 		on = FALSE

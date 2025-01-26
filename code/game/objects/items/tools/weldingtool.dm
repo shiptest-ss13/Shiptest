@@ -73,7 +73,7 @@
 		. += "[initial(icon_state)]-on"
 
 
-/obj/item/weldingtool/process()
+/obj/item/weldingtool/process(delta_time)
 	switch(welding)
 		if(0)
 			force = 3
@@ -186,8 +186,9 @@
 	if(!isOn() || !check_fuel())
 		return FALSE
 
-	if(used)
+	if(used > 0)
 		burned_fuel_for = 0
+
 	if(get_fuel() >= used)
 		reagents.remove_reagent(/datum/reagent/fuel, used)
 		check_fuel()

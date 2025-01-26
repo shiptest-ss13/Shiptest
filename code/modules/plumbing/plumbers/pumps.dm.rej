@@ -1,0 +1,21 @@
+diff a/code/modules/plumbing/plumbers/pumps.dm b/code/modules/plumbing/plumbers/pumps.dm	(rejected hunks)
+@@ -9,8 +9,8 @@
+ 	idle_power_usage = 10
+ 	active_power_usage = 1000
+
+-	///units we pump per process (2 seconds)
+-	var/pump_power = 2
++	///units we pump per second
++	var/pump_power = 1
+ 	///set to true if the loop couldnt find a geyser in process, so it remembers and stops checking every loop until moved. more accurate name would be absolutely_no_geyser_under_me_so_dont_try
+ 	var/geyserless = FALSE
+ 	///The geyser object
+@@ -30,7 +30,7 @@
+ 		update_icon()
+ 		geyserless = FALSE //we switched state, so lets just set this back aswell
+
+-/obj/machinery/plumbing/liquid_pump/process()
++/obj/machinery/plumbing/liquid_pump/process(delta_time)
+ 	if(!anchored || panel_open || geyserless)
+ 		return
+

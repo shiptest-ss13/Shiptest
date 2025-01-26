@@ -113,7 +113,7 @@
 		new /obj/item/stack/sheet/metal(loc)
 	qdel(src)
 
-/obj/machinery/iv_drip/process()
+/obj/machinery/iv_drip/process(delta_time)
 	if(!attached)
 		return PROCESS_KILL
 

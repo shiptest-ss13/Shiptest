@@ -22,7 +22,7 @@
 	var/mode = HEATER_MODE_STANDBY
 	var/setMode = "auto" // Anything other than "heat" or "cool" is considered auto.
 	var/targetTemperature = T20C
-	var/heatingPower = 40000
+	var/heatingPower = 20000
 	var/efficiency = 20000
 	var/temperatureTolerance = 1
 	var/settableTemperatureMedian = 30 + T0C
@@ -125,7 +125,7 @@
 	for(var/obj/item/stock_parts/capacitor/M in component_parts)
 		cap += M.rating
 
-	heatingPower = laser * 40000
+	heatingPower = laser * 20000
 
 	settableTemperatureRange = cap * 30
 	efficiency = (cap + 1) * 10000

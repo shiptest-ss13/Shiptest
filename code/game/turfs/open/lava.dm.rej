@@ -1,0 +1,13 @@
+diff a/code/game/turfs/open/lava.dm b/code/game/turfs/open/lava.dm	(rejected hunks)
+@@ -172,9 +172,9 @@
+ 			ADD_TRAIT(L, TRAIT_PERMANENTLY_ONFIRE,TURF_TRAIT)
+ 			L.update_fire()
+
+-			L.adjustFireLoss(20)
++			L.adjustFireLoss(20 * delta_time)
+ 			if(L) //mobs turning into object corpses could get deleted here.
+-				L.adjust_fire_stacks(20)
++				L.adjust_fire_stacks(20 * delta_time)
+ 				L.IgniteMob()
+
+ /turf/open/lava/smooth

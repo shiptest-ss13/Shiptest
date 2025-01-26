@@ -1,0 +1,18 @@
+diff a/code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm b/code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm	(rejected hunks)
+@@ -69,14 +69,14 @@
+ 		return
+
+
+-	var/transfer_ratio = transfer_rate/air1.volume
++	var/transfer_ratio = (transfer_rate * delta_time) / air1.volume
+
+ 	var/datum/gas_mixture/removed = air1.remove_ratio(transfer_ratio)
+
+ 	if(overclocked)//Some of the gas from the mixture leaks to the environment when overclocked
+ 		var/turf/open/T = loc
+ 		if(istype(T))
+-			var/datum/gas_mixture/leaked = removed.remove_ratio(VOLUME_PUMP_LEAK_AMOUNT)
++			var/datum/gas_mixture/leaked = removed.remove_ratio(DT_PROB_RATE(VOLUME_PUMP_LEAK_AMOUNT, delta_time))
+ 			T.assume_air(leaked)
+ 			T.air_update_turf()
+

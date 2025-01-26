@@ -1,5 +1,8 @@
 //I JUST WANNA GRILL FOR GOD'S SAKE
 
+#define GRILL_FUELUSAGE_IDLE 0.5
+#define GRILL_FUELUSAGE_ACTIVE 5
+
 /obj/machinery/grill
 	name = "grill"
 	desc = "Just like the old days."

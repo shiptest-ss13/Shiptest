@@ -1,0 +1,77 @@
+diff a/code/game/objects/items/cigs_lighters.dm b/code/game/objects/items/cigs_lighters.dm	(rejected hunks)
+@@ -251,7 +253,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
+ 				 * of chems to give them each time so they'll have smoked it all by the end.
+ 				 */
+ 				if (smoke_all)
+-					to_smoke = reagents.total_volume/((smoketime * 2) / (dragtime / 10))
++					to_smoke = reagents.total_volume / (smoketime / dragtime)
+
+ 				reagents.expose(C, INGEST, fraction)
+ 				var/obj/item/organ/lungs/L = C.getorganslot(ORGAN_SLOT_LUNGS)
+@@ -365,7 +367,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
+ 	type_butt = /obj/item/cigbutt/roach
+ 	throw_speed = 0.5
+ 	inhand_icon_state = "spliffoff"
+-	smoketime = 120 // four minutes
++	smoketime = 4 * 60
+ 	chem_volume = 50
+ 	list_reagents = null
+
+@@ -431,7 +433,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
+ /obj/item/clothing/mask/cigarette/candy
+ 	name = "Little Timmy's candy cigarette"
+ 	desc = "For all ages*! Doesn't contain any amount of nicotine. Health and safety risks can be read on the tip of the cigarette."
+-	smoketime = 120
++	smoketime = 2 * 60
+ 	icon_on = "candyon"
+ 	icon_off = "candyoff" //make sure to add positional sprites in icons/obj/cigarettes.dmi if you add more.
+ 	inhand_icon_state = "candyoff"
+@@ -468,7 +470,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
+ 	type_butt = /obj/item/cigbutt/cigarbutt
+ 	throw_speed = 0.5
+ 	inhand_icon_state = "cigaroff"
+-	smoketime = 300 // 11 minutes
++	smoketime = 11 * 60
+ 	chem_volume = 40
+ 	list_reagents = list(/datum/reagent/drug/nicotine = 25)
+
+@@ -556,7 +558,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
+ 		if(!packeditem)
+ 			if(G.dry == 1)
+ 				to_chat(user, "<span class='notice'>You stuff [O] into [src].</span>")
+-				smoketime = 400
++				smoketime = 13 * 60
+ 				packeditem = TRUE
+ 				name = "[O.name]-packed [initial(name)]"
+ 				if(O.reagents)
+@@ -849,6 +851,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
+ 	w_class = WEIGHT_CLASS_TINY
+ 	var/chem_volume = 100
+ 	var/vapetime = 0 //this so it won't puff out clouds every tick
++	/// How often we take a drag in seconds
++	var/vapedelay = 8
+ 	var/screw = FALSE // kinky
+ 	var/super = FALSE //for the fattest vapes dude.
+
+@@ -978,17 +982,17 @@ CIGARETTE PACKETS ARE IN FANCY.DM
+ 		return
+ 	//open flame removed because vapes are a closed system, they won't light anything on fire
+
+-	if(super && vapetime > 3)//Time to start puffing those fat vapes, yo.
++	if(super && vapetime >= vapedelay)//Time to start puffing those fat vapes, yo.
+ 		var/datum/effect_system/smoke_spread/chem/smoke_machine/s = new
+ 		s.set_up(reagents, 1, 24, loc)
+ 		s.start()
+-		vapetime = 0
++		vapetime -= vapedelay
+
+-	if((obj_flags & EMAGGED) && vapetime > 3)
++	if((obj_flags & EMAGGED) && vapetime >= vapedelay)
+ 		var/datum/effect_system/smoke_spread/chem/smoke_machine/s = new
+ 		s.set_up(reagents, 4, 24, loc)
+ 		s.start()
+-		vapetime = 0
++		vapetime -= vapedelay
+ 		if(prob(5))//small chance for the vape to break and deal damage if it's emagged
+ 			playsound(get_turf(src), 'sound/effects/pop_expl.ogg', 50, FALSE)
+ 			M.apply_damage(20, BURN, BODY_ZONE_HEAD)

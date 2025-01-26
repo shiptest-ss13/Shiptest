@@ -1,0 +1,10 @@
+diff a/code/modules/awaymissions/capture_the_flag.dm b/code/modules/awaymissions/capture_the_flag.dm	(rejected hunks)
+@@ -175,7 +175,7 @@
+ 	GLOB.poi_list.Remove(src)
+ 	..()
+
+-/obj/machinery/capture_the_flag/process()
++/obj/machinery/capture_the_flag/process(delta_time)
+ 	for(var/i in spawned_mobs)
+ 		if(!i)
+ 			spawned_mobs -= i

@@ -3,6 +3,7 @@ SUBSYSTEM_DEF(mobs)
 	priority = FIRE_PRIORITY_MOBS
 	flags = SS_KEEP_TIMING | SS_NO_INIT
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
+	wait = 2 SECONDS
 
 	var/list/currentrun = list()
 
@@ -26,7 +27,6 @@ SUBSYSTEM_DEF(mobs)
 	.["custom"] = cust
 
 /datum/controller/subsystem/mobs/fire(resumed = 0)
-	var/seconds = wait * 0.1
 	if (!resumed)
 		src.currentrun = GLOB.mob_living_list.Copy()
 
@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(mobs)
 		var/mob/living/L = currentrun[currentrun.len]
 		currentrun.len--
 		if(L)
-			L.Life(seconds, times_fired)
+			L.Life(times_fired)
 		else
 			GLOB.mob_living_list.Remove(L)
 			stack_trace("[L] no longer exists in mob_living_list")
