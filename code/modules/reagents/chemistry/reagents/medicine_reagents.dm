@@ -782,11 +782,11 @@
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
 	switch(current_cycle)
-		if(16)
+		if(29)
 			to_chat(M, span_warning("You start to feel tired..."))
-		if(17 to 29)
+		if(30 to 59)
 			M.drowsyness += 1
-		if(30 to INFINITY)
+		if(60 to INFINITY)
 			M.Sleeping(40)
 			. = 1
 	..()
@@ -836,27 +836,25 @@
 	description = "A low intensity, high duration painkiller. Causes slight drowiness in extended use."
 	reagent_state = LIQUID
 	color = "#34eeee"
-	metabolization_rate = 0.3 * REAGENTS_METABOLISM
-	overdose_threshold = 30
-	addiction_threshold = 25
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	overdose_threshold = 35
+	addiction_threshold = 30
 
 /datum/reagent/medicine/tramal/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
-	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 
 /datum/reagent/medicine/tramal/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
-	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	..()
 
 /datum/reagent/medicine/tramal/on_mob_life(mob/living/carbon/M)
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_light, name)
 	switch(current_cycle)
-		if(30)
+		if(60)
 			to_chat(M, "<span class='warning'>You feel drowsy...</span>" )
-		if(31 to INFINITY)
+		if(61 to INFINITY)
 			M.drowsyness += 1
 	..()
 

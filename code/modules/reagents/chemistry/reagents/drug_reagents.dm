@@ -592,7 +592,7 @@
 //comes from Uke-misikeci Rasi leaves
 /datum/reagent/drug/retukemi
 	name = "Retukemi"
-	desc = "A marginally psychoactive compound commonly found in the leaves of the Uke-misikeci Rasi plant."
+	description = "A marginally psychoactive compound commonly found in the leaves of the Uke-misikeci Rasi plant."
 	color = "#0ec84c"
 	overdose_threshold = INFINITY
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
@@ -615,7 +615,7 @@
 /datum/reagent/drug/retukemi/on_mob_life(mob/living/carbon/M)
 	..()
 	if(prob(10))
-		var/smoke_message = var/smoke_message = pick("You feel relaxed.","You feel calmed.","Your mouth feels dry.","Your throat is warm and scratchy...","You could use some water.","You feel clumsy.","You crave junk food.","You notice you've been moving more slowly.","The world feels softer and warmer...","A humming warmth spreads across your entire body.","You get lost in your thoughts for a moment...","Everything feels a little more comfortable.","You catch yourself in the middle of smiling vacantly.")
+		var/smoke_message = pick("You feel relaxed.","You feel calmed.","Your mouth feels dry.","Your throat is warm and scratchy...","You could use some water.","You feel clumsy.","You crave junk food.","You notice you've been moving more slowly.","The world feels softer and warmer...","A humming warmth spreads across your entire body.","You get lost in your thoughts for a moment...","Everything feels a little more comfortable.","You catch yourself in the middle of smiling vacantly.")
 		to_chat(M, span_notice("[smoke_message]"))
 	if(prob(2))
 		var/eepy_message = pick("You feel so, so tired.", "You stifle a yawn.", "You really ought to rest for a bit...", "It'd be nice to lay down a bit...","Being in a bed sounds wonderful, right now...","You shake your head to stay awake, but the feeling doesn't let up.","You really want to sleep next to someone...","You keep thinking about how nice a pillow would be, right now.")
