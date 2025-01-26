@@ -339,7 +339,7 @@ EMPTY_GUN_HELPER(automatic/m15)
 /obj/item/ammo_box/magazine/internal/shot/buckmaster
 	name = "Buckmaster internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	max_ammo = 8
+	max_ammo = 6
 
 EMPTY_GUN_HELPER(shotgun/automatic/m11)
 
