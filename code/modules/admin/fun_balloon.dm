@@ -14,7 +14,7 @@
 	SSobj.processing -= src
 	. = ..()
 
-/obj/effect/fun_balloon/process()
+/obj/effect/fun_balloon/process(delta_time)
 	if(!popped && check() && !QDELETED(src))
 		popped = TRUE
 		effect()

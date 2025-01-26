@@ -39,7 +39,7 @@
 		return
 	return ..()
 
-/obj/machinery/computer/bank_machine/process()
+/obj/machinery/computer/bank_machine/process(delta_time)
 	..()
 	if(siphoning)
 		if (machine_stat & (BROKEN|NOPOWER))

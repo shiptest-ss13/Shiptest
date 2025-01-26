@@ -73,7 +73,7 @@
 		resistance_flags |= ON_FIRE
 		qdel(src)
 
-/obj/item/greentext/process()
+/obj/item/greentext/process(delta_time)
 	if(last_holder && last_holder != new_holder) //Somehow it was swiped without ever getting dropped
 		to_chat(last_holder, "<span class='warning'>A sudden wave of failure washes over you...</span>")
 		last_holder.add_atom_colour("#FF0000", ADMIN_COLOUR_PRIORITY)

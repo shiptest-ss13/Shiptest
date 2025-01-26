@@ -106,7 +106,7 @@
 	else
 		return ..()
 
-/obj/machinery/hydroponics/process()
+/obj/machinery/hydroponics/process(delta_time)
 	var/needs_update = 0 // Checks if the icon needs updating so we don't redraw empty trays every time
 	var/temp_sustain = FALSE	// If we want self_sustaining effects temporarily		// WS edit begin - Crystals
 

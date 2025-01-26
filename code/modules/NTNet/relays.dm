@@ -62,7 +62,7 @@
 	icon_state = "bus[is_operational ? null : "_off"]"
 	return ..()
 
-/obj/machinery/ntnet_relay/process()
+/obj/machinery/ntnet_relay/process(delta_time)
 	if(is_operational)
 		set_active_power()
 	else

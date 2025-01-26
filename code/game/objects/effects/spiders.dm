@@ -180,7 +180,7 @@
 	forceMove(exit_vent.loc)
 	entry_vent = null
 
-/obj/structure/spider/spiderling/process()
+/obj/structure/spider/spiderling/process(delta_time)
 	if(travelling_in_vent)
 		if(isturf(loc))
 			travelling_in_vent = 0

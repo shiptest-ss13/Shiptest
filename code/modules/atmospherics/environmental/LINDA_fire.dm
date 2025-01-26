@@ -153,7 +153,7 @@
 	alpha = heat_a
 
 #define INSUFFICIENT(path) (location.air.get_moles(path) < 0.5)
-/obj/effect/hotspot/process()
+/obj/effect/hotspot/process(delta_time)
 	var/turf/open/location = loc
 	if(!istype(location))
 		qdel(src)

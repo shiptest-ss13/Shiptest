@@ -149,7 +149,7 @@
 	var/fail_chance = 0
 	manufacturer = MANUFACTURER_NONE
 
-/obj/item/gun/energy/e_gun/nuclear/process()
+/obj/item/gun/energy/e_gun/nuclear/process(delta_time)
 	if(fail_tick > 0)
 		fail_tick--
 	..()

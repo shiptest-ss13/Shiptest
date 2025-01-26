@@ -78,7 +78,7 @@ Contents:
 	return ..()
 
 // Space Suit temperature regulation and power usage
-/obj/item/clothing/suit/space/space_ninja/process()
+/obj/item/clothing/suit/space/space_ninja/process(delta_time)
 	var/mob/living/carbon/human/user = src.loc
 	if(!user || !ishuman(user) || !(user.wear_suit == src))
 		return

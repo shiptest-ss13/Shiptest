@@ -28,7 +28,7 @@
 	. = ..()
 	qdel(src)
 
-/obj/structure/closet/cardboard/agent/process()
+/obj/structure/closet/cardboard/agent/process(delta_time)
 	alpha = max(0, alpha - 50)
 
 /obj/structure/closet/cardboard/agent/proc/reveal()

@@ -118,7 +118,7 @@
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		charge_rate *= C.rating
 
-/obj/machinery/cell_charger/process()
+/obj/machinery/cell_charger/process(delta_time)
 	if(!charging || !anchored || (machine_stat & (BROKEN|NOPOWER)))
 		return
 

@@ -636,7 +636,7 @@
 /obj/projectile/Process_Spacemove(movement_dir = 0)
 	return TRUE	//Bullets don't drift in space
 
-/obj/projectile/process()
+/obj/projectile/process(delta_time)
 	last_process = world.time
 	if(!loc || !fired || !trajectory)
 		fired = FALSE

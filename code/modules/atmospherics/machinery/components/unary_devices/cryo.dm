@@ -176,7 +176,7 @@
 	else //Turned on
 		begin_processing()
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/process()
+/obj/machinery/atmospherics/components/unary/cryo_cell/process(delta_time)
 	..()
 
 	if(!on)

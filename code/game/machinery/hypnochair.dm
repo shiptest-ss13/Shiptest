@@ -102,7 +102,7 @@
 	update_appearance()
 	timerid = addtimer(CALLBACK(src, PROC_REF(finish_interrogation)), 450, TIMER_STOPPABLE)
 
-/obj/machinery/hypnochair/process()
+/obj/machinery/hypnochair/process(delta_time)
 	var/mob/living/carbon/C = occupant
 	if(!istype(C) || C != victim)
 		interrupt_interrogation()

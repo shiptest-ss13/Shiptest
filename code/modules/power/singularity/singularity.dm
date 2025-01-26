@@ -145,7 +145,7 @@
 	consume(AM)
 
 
-/obj/singularity/process()
+/obj/singularity/process(delta_time)
 	if(current_size >= STAGE_TWO)
 		move()
 		radiation_pulse(src, min(5000, (energy*4.5)+1000), RAD_DISTANCE_COEFFICIENT*0.5)

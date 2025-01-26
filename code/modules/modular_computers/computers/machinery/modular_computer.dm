@@ -90,7 +90,7 @@
 	return ..()
 
 // Process currently calls handle_power(), may be expanded in future if more things are added.
-/obj/machinery/modular_computer/process()
+/obj/machinery/modular_computer/process(delta_time)
 	if(cpu)
 		// Keep names in sync.
 		cpu.name = name

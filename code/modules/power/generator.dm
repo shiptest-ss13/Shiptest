@@ -103,7 +103,7 @@
 
 	src.updateDialog()
 
-/obj/machinery/power/generator/process()
+/obj/machinery/power/generator/process(delta_time)
 	//Setting this number higher just makes the change in power output slower, it doesnt actualy reduce power output cause **math**
 	var/power_output = round(lastgen / 10)
 	add_avail(power_output)

@@ -639,7 +639,7 @@
 	deactivate_field()
 	. = ..()
 
-/obj/item/borg/projectile_dampen/process()
+/obj/item/borg/projectile_dampen/process(delta_time)
 	process_recharge()
 	process_usage()
 

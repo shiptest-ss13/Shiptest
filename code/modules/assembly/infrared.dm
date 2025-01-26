@@ -78,7 +78,7 @@
 	else
 		refreshBeam()
 
-/obj/item/assembly/infra/process()
+/obj/item/assembly/infra/process(delta_time)
 	if(!on || !secured)
 		refreshBeam()
 		return

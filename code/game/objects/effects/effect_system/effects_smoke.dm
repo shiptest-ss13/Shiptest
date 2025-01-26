@@ -45,7 +45,7 @@
 	INVOKE_ASYNC(src, PROC_REF(fade_out))
 	QDEL_IN(src, 10)
 
-/obj/effect/particle_effect/smoke/process()
+/obj/effect/particle_effect/smoke/process(delta_time)
 	lifetime--
 	if(lifetime < 1)
 		kill_smoke()
@@ -232,7 +232,7 @@
 	lifetime = 10
 
 
-/obj/effect/particle_effect/smoke/chem/process()
+/obj/effect/particle_effect/smoke/chem/process(delta_time)
 	if(..())
 		var/turf/T = get_turf(src)
 		var/fraction = 1/initial(lifetime)

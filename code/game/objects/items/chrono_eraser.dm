@@ -174,7 +174,7 @@
 	interaction_flags_atom = NONE
 	var/mob/living/captured = null
 	var/obj/item/gun/energy/chrono_gun/gun = null
-	var/tickstokill = 15
+	var/timetokill = 15
 	var/mutable_appearance/mob_underlay
 	var/preloaded = 0
 	var/RPpos = null
@@ -209,7 +209,7 @@
 
 /obj/structure/chrono_field/update_overlays()
 	. = ..()
-	var/ttk_frame = 1 - (tickstokill / initial(tickstokill))
+	var/ttk_frame = 1 - (timetokill / initial(timetokill))
 	ttk_frame = clamp(CEILING(ttk_frame * CHRONO_FRAME_COUNT, 1), 1, CHRONO_FRAME_COUNT)
 	if(ttk_frame != RPpos)
 		RPpos = ttk_frame
@@ -240,14 +240,14 @@
 			update_appearance()
 			if(gun)
 				if(gun.field_check(src))
-					tickstokill--
+					timetokill -= delta_time
 				else
 					gun = null
 					return .()
 			else if(!attached)
-				tickstokill--
+				timetokill -= delta_time
 			else
-				tickstokill++
+				timetokill += delta_time
 	else
 		qdel(src)
 

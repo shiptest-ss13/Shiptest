@@ -695,7 +695,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		. += mutable_appearance(icon, "alarm_sign")
 		. += mutable_appearance(icon, "alarm_sign", layer, EMISSIVE_PLANE)
 
-/obj/machinery/airalarm/process()
+/obj/machinery/airalarm/process(delta_time)
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
 		return
 

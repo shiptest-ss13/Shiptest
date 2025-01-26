@@ -64,7 +64,7 @@
 	put_out_candle()
 	return ..()
 
-/obj/item/candle/process()
+/obj/item/candle/process(delta_time)
 	if(!lit)
 		return PROCESS_KILL
 	wax--

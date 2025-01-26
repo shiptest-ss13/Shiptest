@@ -57,7 +57,7 @@
 	else
 		. += "It is static, still, unmoving."
 
-/obj/structure/life_candle/process()
+/obj/structure/life_candle/process(delta_time)
 	if(!linked_minds.len)
 		STOP_PROCESSING(SSobj, src)
 		return

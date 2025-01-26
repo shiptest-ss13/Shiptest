@@ -124,7 +124,7 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 	else
 		on = FALSE
 
-/obj/machinery/telecomms/process()
+/obj/machinery/telecomms/process(delta_time)
 	update_power()
 
 	// Update the icon

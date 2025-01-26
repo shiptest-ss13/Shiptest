@@ -34,7 +34,7 @@
 		update_appearance()
 		geyserless = FALSE //we switched state, so lets just set this back aswell
 
-/obj/machinery/plumbing/liquid_pump/process()
+/obj/machinery/plumbing/liquid_pump/process(delta_time)
 	if(!anchored || panel_open || geyserless)
 		return
 

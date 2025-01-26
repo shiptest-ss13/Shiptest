@@ -195,7 +195,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	next_expand = world.time + FAKE_FLOOD_EXPAND_TIME
 	START_PROCESSING(SSobj, src)
 
-/datum/hallucination/fake_flood/process()
+/datum/hallucination/fake_flood/process(delta_time)
 	if(next_expand <= world.time)
 		radius++
 		if(radius > FAKE_FLOOD_MAX_RADIUS)
@@ -1148,7 +1148,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/effect/hallucination/danger/anomaly/process()
+/obj/effect/hallucination/danger/anomaly/process(delta_time)
 	if(prob(70))
 		step(src,pick(GLOB.alldirs))
 

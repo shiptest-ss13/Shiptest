@@ -122,7 +122,7 @@
 	RegisterSignal(owner, COMSIG_LIVING_REVIVE, PROC_REF(retrieve_head))
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
-/obj/item/dullahan_relay/process()
+/obj/item/dullahan_relay/process(delta_time)
 	if(!istype(loc, /obj/item/bodypart/head) || QDELETED(owner))
 		. = PROCESS_KILL
 		qdel(src)

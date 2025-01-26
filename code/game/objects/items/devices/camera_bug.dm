@@ -261,7 +261,7 @@
 
 	interact()
 
-/obj/item/camera_bug/process()
+/obj/item/camera_bug/process(delta_time)
 	if(track_mode == BUGMODE_LIST || (world.time < (last_tracked + refresh_interval)))
 		return
 	last_tracked = world.time

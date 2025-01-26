@@ -22,7 +22,7 @@
 	if(open)
 		. += "<span class='notice'>The battery case is open.</span>"
 
-/obj/item/reagent_containers/glass/maunamug/process()
+/obj/item/reagent_containers/glass/maunamug/process(delta_time)
 	..()
 	if(on && (!cell || cell.charge <= 0)) //Check if we ran out of power
 		change_power_status(FALSE)

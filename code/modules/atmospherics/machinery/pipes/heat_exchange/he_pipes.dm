@@ -50,7 +50,7 @@
 			L.bodytemperature = avg_temp
 		pipe_air.set_temperature(avg_temp)
 
-/obj/machinery/atmospherics/pipe/heat_exchanging/process()
+/obj/machinery/atmospherics/pipe/heat_exchanging/process(delta_time)
 	if(!parent)
 		return //machines subsystem fires before atmos is initialized so this prevents race condition runtimes
 

@@ -40,7 +40,7 @@
 	active = TRUE
 	return TRUE
 
-/datum/effect_system/trail_follow/process()
+/datum/effect_system/trail_follow/process(delta_time)
 	generate_effect()
 
 /datum/effect_system/trail_follow/generate_effect()

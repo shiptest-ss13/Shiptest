@@ -133,7 +133,7 @@
 		occupant = null
 	update_appearance()
 
-/obj/machinery/stasis/process()
+/obj/machinery/stasis/process(delta_time)
 	if(!occupant || !isliving(occupant))
 		use_power = IDLE_POWER_USE
 		return

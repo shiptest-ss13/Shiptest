@@ -110,7 +110,7 @@
 	to_chat(user, "<span class='notice'>You set the condenser switch to the '[refill_enabled ? "ON" : "OFF"]' position.</span>")
 	playsound(user, 'sound/machines/click.ogg', 30, TRUE)
 
-/obj/item/mop/advanced/process()
+/obj/item/mop/advanced/process(delta_time)
 	if(reagents.total_volume < mopcap)
 		reagents.add_reagent(refill_reagent, refill_rate)
 

@@ -73,7 +73,7 @@
 	else
 		return ..()
 
-/obj/machinery/computer/prisoner/management/process()
+/obj/machinery/computer/prisoner/management/process(delta_time)
 	if(!..())
 		src.updateDialog()
 	return

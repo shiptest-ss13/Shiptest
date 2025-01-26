@@ -40,7 +40,7 @@
 	RegisterSignal(parent, list(COMSIG_SPAWNER_TOGGLE_SPAWNING), PROC_REF(toggle_spawning))
 	START_PROCESSING(SSprocessing, src)
 
-/datum/component/spawner/process()
+/datum/component/spawner/process(delta_time)
 	if(!parent) //Sanity check for instances where the spawner may be sleeping while the parent is destroyed
 		qdel(src)
 		return

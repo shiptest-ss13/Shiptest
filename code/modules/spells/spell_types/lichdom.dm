@@ -110,7 +110,7 @@
 		SSticker.mode.round_ends_with_antag_death = initial(SSticker.mode.round_ends_with_antag_death)
 	. = ..()
 
-/obj/item/phylactery/process()
+/obj/item/phylactery/process(delta_time)
 	if(QDELETED(mind))
 		qdel(src)
 		return

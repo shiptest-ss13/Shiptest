@@ -93,7 +93,7 @@
 		held_mob = loc
 		START_PROCESSING(SSobj, src)
 
-/obj/item/reagent_containers/food/snacks/grown/ghost_chili/process()
+/obj/item/reagent_containers/food/snacks/grown/ghost_chili/process(delta_time)
 	if(held_mob && loc == held_mob)
 		if(held_mob.is_holding(src))
 			if(istype(held_mob) && held_mob.gloves)

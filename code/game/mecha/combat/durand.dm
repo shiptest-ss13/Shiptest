@@ -48,7 +48,7 @@
 	..()
 	defense_action.Remove(user)
 
-/obj/mecha/combat/durand/process()
+/obj/mecha/combat/durand/process(delta_time)
 	. = ..()
 	if(defense_mode && !use_power(max(0, shield_passive_drain - (scanmod.rating * 10))))
 		defense_action.Activate(forced_state = TRUE)

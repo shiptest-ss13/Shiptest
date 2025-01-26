@@ -32,7 +32,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/geiger_counter/process()
+/obj/item/geiger_counter/process(delta_time)
 	update_appearance()
 	update_sound()
 

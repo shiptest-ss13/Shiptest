@@ -271,7 +271,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/structure/alien/weeds/node/process()
+/obj/structure/alien/weeds/node/process(delta_time)
 	//we need to have a cooldown, so check and then add
 	if(!COOLDOWN_FINISHED(src, growtime))
 		return

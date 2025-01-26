@@ -212,7 +212,7 @@
 			to_chat(user, "<span class='warning'>You press the power button but \the [src] does not respond.</span>")
 
 // Process currently calls handle_power(), may be expanded in future if more things are added.
-/obj/item/modular_computer/process()
+/obj/item/modular_computer/process(delta_time)
 	if(!enabled) // The computer is turned off
 		last_power_usage = 0
 		return 0

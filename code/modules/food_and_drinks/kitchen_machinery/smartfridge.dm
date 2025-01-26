@@ -309,7 +309,7 @@
 	if(contents.len)
 		. += "drying_rack_filled"
 
-/obj/machinery/smartfridge/drying_rack/process()
+/obj/machinery/smartfridge/drying_rack/process(delta_time)
 	..()
 	if(drying)
 		if(rack_dry())//no need to update unless something got dried

@@ -454,7 +454,7 @@
 		KZ.set_production((spread_cap / initial(spread_cap)) * 5)
 		qdel(src)
 
-/datum/spacevine_controller/process()
+/datum/spacevine_controller/process(delta_time)
 	if(!LAZYLEN(vines))
 		qdel(src) //space vines exterminated. Remove the controller
 		return

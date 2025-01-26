@@ -44,7 +44,7 @@
 	linked_techweb = null
 	return ..()
 
-/obj/machinery/power/rad_collector/process()
+/obj/machinery/power/rad_collector/process(delta_time)
 	if(!loaded_tank)
 		return
 	if(!bitcoinmining)

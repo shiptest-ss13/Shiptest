@@ -106,7 +106,7 @@
 		update_appearance()
 	return ..()
 
-/obj/item/gun/energy/process()
+/obj/item/gun/energy/process(delta_time)
 	if(selfcharge && cell && cell.percent() < 100)
 		charge_tick++
 		if(charge_tick < charge_delay)

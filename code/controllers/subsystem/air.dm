@@ -390,8 +390,7 @@ SUBSYSTEM_DEF(air)
 		if (MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/air/proc/process_atmos_machinery(resumed = 0)
-	var/seconds = wait * 0.1
+/datum/controller/subsystem/air/proc/process_atmos_machinery(delta_time, resumed = 0)
 	if (!resumed)
 		src.currentrun = atmos_machinery.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -406,8 +405,7 @@ SUBSYSTEM_DEF(air)
 		if(MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/air/proc/process_atmos_air_machinery(resumed = 0)
-	var/seconds = wait * 0.1
+/datum/controller/subsystem/air/proc/process_atmos_air_machinery(delta_time, resumed = 0)
 	if (!resumed)
 		src.currentrun = atmos_air_machinery.Copy()
 	//cache for sanic speed (lists are references anyways)

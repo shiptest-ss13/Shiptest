@@ -56,7 +56,7 @@
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
-/obj/structure/hazard_shutoff/powered/process()
+/obj/structure/hazard_shutoff/powered/process(delta_time)
 	if(siphoned_power >= siphon_max)
 		return
 	update_cable()

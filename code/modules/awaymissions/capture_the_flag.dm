@@ -46,7 +46,7 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed)
 
-/obj/item/ctf/process()
+/obj/item/ctf/process(delta_time)
 	if(is_ctf_target(loc)) //don't reset from someone's hands.
 		return PROCESS_KILL
 	if(world.time > reset_cooldown)
@@ -201,7 +201,7 @@
 	SSpoints_of_interest.remove_point_of_interest(src)
 	return ..()
 
-/obj/machinery/capture_the_flag/process()
+/obj/machinery/capture_the_flag/process(delta_time)
 	for(var/i in spawned_mobs)
 		// Anyone in crit, automatically reap
 		var/mob/living/living_participant = i

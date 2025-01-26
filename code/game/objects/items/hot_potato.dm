@@ -67,7 +67,7 @@
 		return
 	return ..()
 
-/obj/item/hot_potato/process()
+/obj/item/hot_potato/process(delta_time)
 	if(stimulant)
 		if(isliving(loc))
 			var/mob/living/L = loc

@@ -31,7 +31,7 @@
 		circuit = C
 		C.moveToNullspace()
 
-/obj/machinery/computer/process()
+/obj/machinery/computer/process(delta_time)
 	if(machine_stat & (NOPOWER|BROKEN))
 		return 0
 	return 1

@@ -20,6 +20,9 @@
 
 //God bless These Deepfried States o7 -2024
 
+#define DEEPFRYER_COOKTIME 60
+#define DEEPFRYER_BURNTIME 120
+
 /obj/machinery/deepfryer
 	name = "deep fryer"
 	desc = "Deep fried <i>everything</i>."
@@ -31,7 +34,7 @@
 	layer = BELOW_OBJ_LAYER
 	var/obj/item/food/deepfryholder/frying //What's being fried RIGHT NOW?
 	var/cook_time = 0
-	var/oil_use = 0.05 //How much cooking oil is used per tick
+	var/oil_use = 0.025 //How much cooking oil is used per tick
 	var/fry_speed = 1 //How quickly we fry food
 	var/frying_fried //If the object has been fried; used for messages
 	var/frying_burnt //If the object has been burnt

@@ -133,7 +133,7 @@
 	/// State of tgui view, i.e. which tab is currently active, or which genome we're currently looking at.
 	var/list/list/tgui_view_state = list()
 
-/obj/machinery/computer/scan_consolenew/process()
+/obj/machinery/computer/scan_consolenew/process(delta_time)
 	. = ..()
 
 	// This is for pulsing the UI element with radiation as part of genetic makeup

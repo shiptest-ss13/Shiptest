@@ -336,7 +336,7 @@
 	change_icons = 0
 	wall_decon_damage = 500
 
-/obj/item/weldingtool/abductor/process()
+/obj/item/weldingtool/abductor/process(delta_time)
 	if(get_fuel() <= max_fuel)
 		reagents.add_reagent(/datum/reagent/fuel, 1)
 	..()

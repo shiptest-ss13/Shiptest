@@ -347,7 +347,7 @@
 						break //in case user is holding two guns
 
 //processing internal damage, temperature, air regulation, alert updates, lights power use.
-/obj/mecha/process()
+/obj/mecha/process(delta_time)
 	var/internal_temp_regulation = 1
 
 	if(internal_damage)

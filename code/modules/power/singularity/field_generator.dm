@@ -68,7 +68,7 @@ field_generator power level display
 	. = ..()
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
 
-/obj/machinery/field/generator/process()
+/obj/machinery/field/generator/process(delta_time)
 	if(active == FG_ONLINE)
 		calc_power()
 

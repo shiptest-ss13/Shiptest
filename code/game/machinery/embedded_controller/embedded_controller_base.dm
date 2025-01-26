@@ -18,7 +18,7 @@
 /datum/computer/file/embedded_program/proc/receive_signal(datum/signal/signal)
 	return null
 
-/datum/computer/file/embedded_program/process()
+/datum/computer/file/embedded_program/process(delta_time)
 	return 0
 
 /obj/machinery/embedded_controller
@@ -61,7 +61,7 @@
 	usr.set_machine(src)
 	addtimer(CALLBACK(src, PROC_REF(updateDialog)), 5)
 
-/obj/machinery/embedded_controller/process()
+/obj/machinery/embedded_controller/process(delta_time)
 	if(program)
 		program.process()
 

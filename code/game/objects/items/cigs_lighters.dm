@@ -685,7 +685,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	else
 		..()
 
-/obj/item/lighter/process()
+/obj/item/lighter/process(delta_time)
 	open_flame()
 
 /obj/item/lighter/get_temperature()

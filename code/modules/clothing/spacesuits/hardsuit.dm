@@ -814,7 +814,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/clothing/suit/space/hardsuit/shielded/process()
+/obj/item/clothing/suit/space/hardsuit/shielded/process(delta_time)
 	if(world.time > recharge_cooldown && current_charges < max_charges)
 		current_charges = clamp((current_charges + recharge_rate), 0, max_charges)
 		playsound(loc, 'sound/magic/charge.ogg', 50, TRUE)

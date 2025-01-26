@@ -76,7 +76,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/clothing/suit/space/hostile_environment/process()
+/obj/item/clothing/suit/space/hostile_environment/process(delta_time)
 	var/mob/living/carbon/C = loc
 	if(istype(C) && prob(2)) //cursed by bubblegum
 		if(prob(10))

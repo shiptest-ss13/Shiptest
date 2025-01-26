@@ -115,7 +115,7 @@
 		return ..()
 	return 0
 
-/obj/item/dualsaber/process()
+/obj/item/dualsaber/process(delta_time)
 	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		if(hacked)
 			set_light_color(pick(COLOR_SOFT_RED, LIGHT_COLOR_GREEN, LIGHT_COLOR_LIGHT_CYAN, LIGHT_COLOR_LAVENDER))

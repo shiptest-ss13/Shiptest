@@ -285,7 +285,7 @@
 /obj/item/flashlight/flare/Initialize()
 	. = ..()
 
-/obj/item/flashlight/flare/process()
+/obj/item/flashlight/flare/process(delta_time)
 	open_flame(heat)
 	fuel = max(fuel - 1, 0)
 	if(!fuel || !on)
@@ -495,7 +495,7 @@
 	return ..()
 
 
-/obj/item/flashlight/glowstick/process()
+/obj/item/flashlight/glowstick/process(delta_time)
 	fuel = max(fuel - 1, 0)
 	if(!fuel)
 		turn_off()

@@ -53,7 +53,7 @@
 		timing = TRUE
 	update_appearance()
 
-/obj/item/assembly/timer/process()
+/obj/item/assembly/timer/process(delta_time)
 	if(!timing)
 		return
 	time--

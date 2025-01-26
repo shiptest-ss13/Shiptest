@@ -19,7 +19,7 @@
 	else
 		dry()
 
-/obj/effect/decal/cleanable/blood/process()
+/obj/effect/decal/cleanable/blood/process(delta_time)
 	if(world.time > drytime)
 		dry()
 

@@ -49,7 +49,7 @@
 	if(melt_stuff(AM))
 		START_PROCESSING(SSobj, src)
 
-/turf/open/water/acid/process()
+/turf/open/water/acid/process(delta_time)
 	if(!melt_stuff())
 		STOP_PROCESSING(SSobj, src)
 

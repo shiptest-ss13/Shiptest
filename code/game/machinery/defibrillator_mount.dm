@@ -182,7 +182,7 @@
 		begin_processing()
 
 
-/obj/machinery/defibrillator_mount/charging/process()
+/obj/machinery/defibrillator_mount/charging/process(delta_time)
 	var/obj/item/stock_parts/cell/C = get_cell()
 	if(!C || !is_operational)
 		return PROCESS_KILL

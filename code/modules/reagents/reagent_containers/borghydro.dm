@@ -47,7 +47,7 @@ Borg Hypospray
 	QDEL_LIST(reagent_list)
 	return ..()
 
-/obj/item/reagent_containers/borghypo/process() //Every [recharge_time] seconds, recharge some reagents for the cyborg
+/obj/item/reagent_containers/borghypo/process(delta_time) //Every [recharge_time] seconds, recharge some reagents for the cyborg
 	charge_tick++
 	if(charge_tick >= recharge_time)
 		regenerate_reagents()
