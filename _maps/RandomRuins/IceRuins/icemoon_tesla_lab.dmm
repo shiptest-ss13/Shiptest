@@ -553,8 +553,7 @@
 "cl" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/pizza/vegetable{
-	pixel_x = -2;
-	pixel_y = 0
+	pixel_x = -2
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/icemoon/tesla_lab/lobby)
@@ -613,7 +612,6 @@
 "cG" = (
 /obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
-	pixel_y = 0;
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -1327,7 +1325,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/grunge{
-	dir = 2;
 	name = "Engineering"
 	},
 /turf/open/floor/plasteel/tech,
@@ -1645,7 +1642,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/grunge{
-	dir = 2;
 	name = "Server Room"
 	},
 /turf/open/floor/plasteel/dark,
@@ -1836,8 +1832,7 @@
 	pixel_y = 12
 	},
 /obj/item/reagent_containers/pill/happinesspsych{
-	pixel_x = -11;
-	pixel_y = 0
+	pixel_x = -11
 	},
 /obj/item/reagent_containers/pill/happinesspsych{
 	pixel_x = 5;
@@ -2047,7 +2042,6 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 2;
 	name = "Crawlspace"
 	},
 /obj/effect/mapping_helpers/airlock/sealed,
@@ -2507,8 +2501,7 @@
 	color = "#75A2BB"
 	},
 /obj/effect/turf_decal/industrial/loading{
-	icon_state = "loadingarea_stripes";
-	dir = 2
+	icon_state = "loadingarea_stripes"
 	},
 /obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid/brute,
@@ -2715,7 +2708,6 @@
 /area/ruin/icemoon/tesla_lab/medbay)
 "lb" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
-	pixel_y = 0;
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
@@ -3758,8 +3750,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/grunge{
-	name = "Bathroom";
-	dir = 2
+	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
@@ -3996,8 +3987,7 @@
 	color = "#75A2BB"
 	},
 /obj/effect/turf_decal/industrial/loading{
-	icon_state = "loadingarea_stripes";
-	dir = 2
+	icon_state = "loadingarea_stripes"
 	},
 /obj/machinery/portable_atmospherics/canister/carbon_monoxide,
 /turf/open/floor/pod/dark,
@@ -4542,7 +4532,6 @@
 	pixel_x = -5
 	},
 /obj/item/folder/blue{
-	pixel_y = 0;
 	pixel_x = 3
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -4914,16 +4903,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
-"ue" = (
-/obj/structure/window/plasma/fulltile,
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = "tl6";
-	dir = 2;
-	pixel_y = 0
-	},
-/turf/open/floor/plating,
-/area/ruin/icemoon/tesla_lab/lobby)
 "ug" = (
 /obj/effect/turf_decal/trimline/opaque/mauve/warning{
 	dir = 5
@@ -5189,7 +5168,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/grunge{
-	dir = 2;
 	name = "Lobby Office"
 	},
 /obj/structure/disposalpipe/segment,
@@ -5236,7 +5214,6 @@
 	pixel_x = -4
 	},
 /obj/item/reagent_containers/pill/paxpsych{
-	pixel_y = 0;
 	pixel_x = 2
 	},
 /obj/item/reagent_containers/pill/psicodine{
@@ -5647,8 +5624,7 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/mapping_helpers/turf/burnt,
 /obj/item/broken_bottle{
-	pixel_x = -14;
-	pixel_y = 0
+	pixel_x = -14
 	},
 /obj/item/stack/ore/salvage/scrapmetal{
 	pixel_x = 4;
@@ -5708,7 +5684,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/grunge{
-	dir = 2;
 	req_access = list(19);
 	name = "Recycling"
 	},
@@ -5780,9 +5755,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
@@ -6025,7 +5998,6 @@
 "yp" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/modular_computer/console/preset/civilian{
-	pixel_y = 0;
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/north{
@@ -7175,7 +7147,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/noticeboard{
-	dir = 2;
 	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
@@ -7294,7 +7265,6 @@
 	pixel_x = 6
 	},
 /obj/item/pen/fourcolor{
-	pixel_y = 0;
 	pixel_x = 3
 	},
 /obj/item/stamp/clip{
@@ -7711,7 +7681,6 @@
 /area/ruin/icemoon/tesla_lab/office)
 "Fb" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
-	pixel_y = 0;
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning,
@@ -8014,7 +7983,6 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 2;
 	name = "Crawlspace"
 	},
 /obj/effect/mapping_helpers/airlock/welded,
@@ -8693,7 +8661,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/structure/cabinet/oneshot{
 	dir = 4;
-	pixel_y = 0;
 	pixel_x = -24
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9337,8 +9304,7 @@
 	},
 /obj/effect/mapping_helpers/turf/burnt,
 /obj/item/broken_bottle{
-	pixel_x = -14;
-	pixel_y = 0
+	pixel_x = -14
 	},
 /obj/item/radio/intercom/directional/west{
 	frequency = 1473
@@ -9767,7 +9733,6 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 2;
 	req_access = list(19);
 	name = "Office"
 	},
@@ -9969,6 +9934,7 @@
 /obj/machinery/door/window/brigdoor/southleft{
 	req_access_txt = "3"
 	},
+/obj/effect/landmark/mission_poi/main/blackbox,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "Ox" = (
@@ -10538,9 +10504,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/icemoon/tesla_lab/engineering)
 "Qs" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -10673,7 +10637,6 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 2;
 	name = "Crawlspace"
 	},
 /obj/effect/mapping_helpers/airlock/welded,
@@ -11498,7 +11461,6 @@
 "TJ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/modular_computer/console/preset/civilian{
-	pixel_y = 0;
 	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -11696,14 +11658,12 @@
 /area/ruin/icemoon/tesla_lab/dorms)
 "Uy" = (
 /obj/machinery/button/door{
-	dir = 2;
 	pixel_y = -10;
 	pixel_x = -10;
 	name = "starboard shutter";
 	id = "h2"
 	},
 /obj/machinery/button/shieldwallgen{
-	dir = 2;
 	pixel_y = -11;
 	id = "h2s"
 	},
@@ -11830,7 +11790,6 @@
 /obj/effect/mapping_helpers/airlock/abandoned,
 /obj/machinery/door/airlock/grunge{
 	req_access = list(3);
-	dir = 2;
 	name = "Armory"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -11910,7 +11869,6 @@
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "VP" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
-	pixel_y = 0;
 	dir = 8
 	},
 /obj/item/weldingtool/largetank{
@@ -12127,8 +12085,7 @@
 	pixel_x = 3
 	},
 /obj/item/desynchronizer/tvstatic{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/office_two)
@@ -12465,11 +12422,9 @@
 /obj/item/documents,
 /obj/machinery/light/directional/east,
 /obj/item/folder/blue{
-	pixel_y = 0;
 	pixel_x = 3
 	},
 /obj/item/folder/blue{
-	pixel_y = 0;
 	pixel_x = 3
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -12591,7 +12546,6 @@
 /area/ruin/icemoon/tesla_lab/central_hall)
 "YV" = (
 /obj/machinery/porta_turret/ship/frontiersmen/light{
-	dir = 2;
 	reqpower = 0;
 	faction = list("Frontiersmen")
 	},
@@ -14753,7 +14707,7 @@ rM
 rM
 RA
 RA
-ue
+SD
 Fv
 PH
 PH

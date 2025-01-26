@@ -11,10 +11,10 @@
 	var/num_wanted = 4
 	var/class_wanted = 1
 
-/datum/mission/drill/New(...)
+/datum/mission/drill/generate_mission_details()
+	. = ..()
 	num_wanted = rand(num_wanted-2,num_wanted+2)
 	value += num_wanted*100
-	return ..()
 
 /datum/mission/drill/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
@@ -22,6 +22,7 @@
 	sampler.mission_class = class_wanted
 	sampler.num_wanted = num_wanted
 	sampler.name += " (Class [class_wanted])"
+
 //Gives players a little extra money for going past the mission goal
 /datum/mission/drill/turn_in()
 	value += (sampler.num_current - num_wanted)*50
@@ -67,27 +68,3 @@
 	class_wanted = 3
 	num_wanted = 8
 
-/*
-		Core sampling drill
-*/
-
-/obj/machinery/drill/mission
-	name = "core sampling research drill"
-	desc = "A specialized laser drill designed to extract geological samples."
-
-	var/num_current = 0
-	var/mission_class
-	var/num_wanted
-
-/obj/machinery/drill/mission/examine()
-	. = ..()
-	. += "<span class='notice'>The drill contains [num_current] of the [num_wanted] samples needed.</span>"
-
-/obj/machinery/drill/mission/start_mining()
-	if(mining.vein_class < mission_class && mining)
-		say("Error: A vein class of [mission_class] or greater is required for operation.")
-		return
-	. = ..()
-
-/obj/machinery/drill/mission/mine_success()
-	num_current++
