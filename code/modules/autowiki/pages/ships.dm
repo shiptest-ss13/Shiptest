@@ -12,16 +12,14 @@
 			continue
 
 		var/size = "Unknown"
-		var/longest_dimension = max(ship.width, ship.height)
+		var/longest_dimension = (ship.width * ship.height)
 		switch(longest_dimension)
-			if(0 to 19)
+			if(0 to 999)
 				size = "Small"
-			if(20 to 39)
+			if(1000 to 1499)
 				size = "Medium"
-			if(40 to 56)
+			if(1500 to INFINITY)
 				size = "Large"
-			if(57 to INFINITY)
-				size = "Undockable" //let's hope this is never the case
 
 		var/ship_name = escape_value(ship.name)
 		output[ship_name] = include_template("Autowiki/Ship", list(
