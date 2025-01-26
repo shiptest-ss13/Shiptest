@@ -110,9 +110,9 @@
 	else
 		adjust_nanites(null, amount) //just add to the nanite volume
 
-/datum/component/nanites/process(delta_time)
+/datum/component/nanites/process(seconds_per_tick)
 	if(!IS_IN_STASIS(host_mob))
-		adjust_nanites(null, regen_rate * delta_time)
+		adjust_nanites(null, regen_rate * seconds_per_tick)
 		add_research()
 		for(var/X in programs)
 			var/datum/nanite_program/NP = X

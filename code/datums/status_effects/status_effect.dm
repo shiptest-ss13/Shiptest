@@ -44,7 +44,7 @@
 		owner = null
 	return ..()
 
-/datum/status_effect/process(delta_time)
+/datum/status_effect/process(seconds_per_tick)
 	if(!owner)
 		qdel(src)
 		return

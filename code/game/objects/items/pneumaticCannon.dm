@@ -45,7 +45,7 @@
 /obj/item/pneumatic_cannon/proc/init_charge()	//wrapper so it can be vv'd easier
 	START_PROCESSING(SSobj, src)
 
-/obj/item/pneumatic_cannon/process(delta_time)
+/obj/item/pneumatic_cannon/process(seconds_per_tick)
 	if(++charge_timer >= charge_ticks && charge_type)
 		fill_with_type(charge_type, charge_amount)
 

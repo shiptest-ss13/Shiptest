@@ -47,7 +47,7 @@
 	SSweather.weather_controllers -= src
 	return ..()
 
-/datum/weather_controller/process(delta_time)
+/datum/weather_controller/process(seconds_per_tick)
 	if(current_weathers)
 		for(var/i in current_weathers)
 			var/datum/weather/W = current_weathers[i]

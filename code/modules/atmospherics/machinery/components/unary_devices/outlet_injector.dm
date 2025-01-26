@@ -54,7 +54,7 @@
 	else
 		icon_state = "inje_on"
 
-/obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos(delta_time)
+/obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos(seconds_per_tick)
 	..()
 
 	injecting = TRUE

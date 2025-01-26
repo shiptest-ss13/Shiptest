@@ -13,7 +13,7 @@
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/structure/closet/infinite/process(delta_time)
+/obj/structure/closet/infinite/process(seconds_per_tick)
 	if(!replicating_type)
 		if(!length(contents))
 			return

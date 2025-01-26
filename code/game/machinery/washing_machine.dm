@@ -162,18 +162,18 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 	START_PROCESSING(SSfastprocess, src)
 
-/obj/machinery/washing_machine/process(delta_time)
+/obj/machinery/washing_machine/process(seconds_per_tick)
 	if(!busy)
 		animate(src, transform=matrix(), time=2)
 		return PROCESS_KILL
 	if(anchored)
-		if(DT_PROB(2.5, delta_time))
+		if(SPT_PROB(2.5, seconds_per_tick))
 			var/matrix/M = new
 			M.Translate(rand(-1, 1), rand(0, 1))
 			animate(src, transform=M, time=1)
 			animate(transform=matrix(), time=1)
 	else
-		if(DT_PROB(0.5, delta_time))
+		if(SPT_PROB(0.5, seconds_per_tick))
 			step(src, pick(GLOB.cardinals))
 		var/matrix/M = new
 		M.Translate(rand(-3, 3), rand(-1, 3))

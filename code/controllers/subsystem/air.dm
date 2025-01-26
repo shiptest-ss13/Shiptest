@@ -127,7 +127,7 @@ SUBSYSTEM_DEF(air)
 
 /datum/controller/subsystem/air/fire(resumed = 0)
 	var/timer = TICK_USAGE_REAL
-	var/delta_time = wait * 0.1
+	var/seconds_per_tick = wait * 0.1
 
 	//Rebuilds can happen at any time, so this needs to be done outside of the normal system
 	cost_rebuilds = 0
@@ -217,7 +217,7 @@ SUBSYSTEM_DEF(air)
 
 	if(currentpart == SSAIR_HOTSPOTS)
 		timer = TICK_USAGE_REAL
-		process_hotspots(delta_time, resumed)
+		process_hotspots(seconds_per_tick, resumed)
 		cost_hotspots = MC_AVERAGE(cost_hotspots, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -295,7 +295,7 @@ SUBSYSTEM_DEF(air)
 		currentrun -= machine
 
 
-/datum/controller/subsystem/air/proc/process_pipenets(delta_time, resumed = FALSE)
+/datum/controller/subsystem/air/proc/process_pipenets(seconds_per_tick, resumed = FALSE)
 	if (!resumed)
 		src.currentrun = networks.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -304,7 +304,7 @@ SUBSYSTEM_DEF(air)
 		var/datum/thing = currentrun[currentrun.len]
 		currentrun.len--
 		if(thing)
-			thing.process(delta_time)
+			thing.process(seconds_per_tick)
 		else
 			networks.Remove(thing)
 		if(MC_TICK_CHECK)
@@ -390,7 +390,7 @@ SUBSYSTEM_DEF(air)
 		if (MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/air/proc/process_atmos_machinery(delta_time, resumed = 0)
+/datum/controller/subsystem/air/proc/process_atmos_machinery(seconds_per_tick, resumed = 0)
 	if (!resumed)
 		src.currentrun = atmos_machinery.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -400,12 +400,12 @@ SUBSYSTEM_DEF(air)
 		currentrun.len--
 		if(!M)
 			atmos_machinery -= M
-		if(M.process_atmos(delta_time) == PROCESS_KILL)
+		if(M.process_atmos(seconds_per_tick) == PROCESS_KILL)
 			stop_processing_machine(M)
 		if(MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/air/proc/process_atmos_air_machinery(delta_time, resumed = 0)
+/datum/controller/subsystem/air/proc/process_atmos_air_machinery(seconds_per_tick, resumed = 0)
 	if (!resumed)
 		src.currentrun = atmos_air_machinery.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -415,14 +415,14 @@ SUBSYSTEM_DEF(air)
 		currentrun.len--
 		if(!M)
 			atmos_air_machinery -= M
-		if(M.process_atmos(delta_time) == PROCESS_KILL)
+		if(M.process_atmos(seconds_per_tick) == PROCESS_KILL)
 			stop_processing_machine(M)
 		if(MC_TICK_CHECK)
 			return
 
 /datum/controller/subsystem/air/proc/process_turf_heat()
 
-/datum/controller/subsystem/air/proc/process_hotspots(delta_time, resumed = FALSE)
+/datum/controller/subsystem/air/proc/process_hotspots(seconds_per_tick, resumed = FALSE)
 	if (!resumed)
 		src.currentrun = hotspots.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -431,7 +431,7 @@ SUBSYSTEM_DEF(air)
 		var/obj/effect/hotspot/H = currentrun[currentrun.len]
 		currentrun.len--
 		if (H)
-			H.process(delta_time)
+			H.process(seconds_per_tick)
 		else
 			hotspots -= H
 		if(MC_TICK_CHECK)

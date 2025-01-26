@@ -72,7 +72,7 @@
 			cell = new preload_cell_type(src)
 	soundloop = new(list(src), active)
 
-/obj/machinery/drill/process(delta_time)
+/obj/machinery/drill/process(seconds_per_tick)
 	if(machine_stat & BROKEN || (active && !mining))
 		active = FALSE
 		soundloop.stop()
