@@ -6,7 +6,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "spaceold"
 	desc = "A special helmet with solar UV shielding to protect your eyes from harmful rays."
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //WS Port - Cit Internals
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 	item_state = "spaceold"
 	permeability_coefficient = 0.01
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70)
