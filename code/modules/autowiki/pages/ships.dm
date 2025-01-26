@@ -16,9 +16,9 @@
 		switch(longest_dimension)
 			if(0 to 749)
 				size = "Small"
-			if(750 to 1499)
+			if(750 to 1249)
 				size = "Medium"
-			if(1500 to INFINITY)
+			if(1250 to INFINITY)
 				size = "Large"
 
 		var/ship_name = escape_value(ship.name)
