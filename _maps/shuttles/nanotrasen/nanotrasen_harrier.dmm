@@ -664,10 +664,39 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -32
-	},
-/turf/open/floor/plasteel/mono,
+/obj/structure/closet/wall/directional/west,
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/coldsauce,
+/obj/item/reagent_containers/condiment/coldsauce,
+/obj/item/reagent_containers/condiment/coldsauce,
+/obj/item/reagent_containers/condiment/bbqsauce,
+/obj/item/reagent_containers/condiment/bbqsauce,
+/obj/item/reagent_containers/condiment/bbqsauce,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/roulette_wheel_beacon,
+/obj/item/storage/photo_album/bar,
+/turf/open/floor/wood/cold,
 /area/ship/crew/canteen)
 "dK" = (
 /obj/machinery/suit_storage_unit/standard_unit,
@@ -1193,6 +1222,14 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
+"gy" = (
+/obj/structure/table,
+/obj/effect/turf_decal/trimline/opaque/ntblue/line{
+	dir = 4
+	},
+/obj/item/storage/ration/elbow_macaroni,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "gA" = (
@@ -1809,12 +1846,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "jD" = (
-/obj/structure/fluff/hedge,
 /obj/machinery/light/directional/west,
-/obj/effect/turf_decal/trimline/opaque/ntblue/filled/end{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/structure/closet/secure_closet/freezer/meat,
+/turf/open/floor/wood/cold,
 /area/ship/crew/canteen)
 "jH" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1949,7 +1983,13 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
 	dir = 6
 	},
+<<<<<<< Updated upstream
 /turf/open/floor/plasteel,
+=======
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk,
+/turf/open/floor/wood/cold,
+>>>>>>> Stashed changes
 /area/ship/crew/canteen)
 "ky" = (
 /obj/structure/railing{
@@ -2402,27 +2442,10 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "na" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/condiment/ketchup{
-	pixel_x = 9;
-	pixel_y = 16
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
-/obj/item/reagent_containers/condiment/mayonnaise{
-	pixel_y = 16
-	},
-/obj/item/reagent_containers/condiment/hotsauce{
-	pixel_x = -9;
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/turf/open/floor/plating,
+/turf/open/floor/wood/cold,
 /area/ship/crew/canteen)
 "nf" = (
 /obj/structure/cable{
@@ -2445,6 +2468,10 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
+<<<<<<< Updated upstream
+=======
+/obj/machinery/grill,
+>>>>>>> Stashed changes
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "nx" = (
@@ -2617,20 +2644,14 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "pd" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/turf_decal/siding{
-	dir = 9
+/obj/structure/disposalpipe/segment{
+	dir = 5
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/wood/cold,
 /area/ship/crew/canteen)
 "pp" = (
 /obj/structure/railing{
@@ -2685,15 +2706,16 @@
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/crew/canteen)
 "pQ" = (
-/obj/machinery/disposal/bin,
 /obj/machinery/light/directional/north,
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/obj/structure/railing{
+/obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/obj/machinery/door/window/southright{
+	dir = 8;
+	name = "Freezer";
+	req_access_txt = "28"
+	},
+/turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "pR" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
@@ -2725,16 +2747,24 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
 "pZ" = (
+<<<<<<< Updated upstream
 /obj/structure/chair/comfy/blue/corpo/directional/south{
 	dir = 4
 	},
+=======
+>>>>>>> Stashed changes
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
 	dir = 10
 	},
+<<<<<<< Updated upstream
 /turf/open/floor/plasteel,
+=======
+/obj/machinery/deepfryer,
+/turf/open/floor/wood/cold,
+>>>>>>> Stashed changes
 /area/ship/crew/canteen)
 "qf" = (
 /obj/structure/chair/comfy/blue/corpo/directional/north,
@@ -2802,7 +2832,13 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/line,
+<<<<<<< Updated upstream
 /turf/open/floor/plasteel,
+=======
+/obj/structure/table/reinforced,
+/obj/machinery/microwave,
+/turf/open/floor/wood/cold,
+>>>>>>> Stashed changes
 /area/ship/crew/canteen)
 "qx" = (
 /turf/open/floor/plasteel,
@@ -2947,12 +2983,10 @@
 /turf/open/floor/plasteel,
 /area/ship/storage/eva)
 "rr" = (
-/obj/structure/closet/secure_closet/freezer/kitchen/mining,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/condiment/soymilk,
+/obj/machinery/vending/wardrobe/chef_wardrobe,
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/canteen)
 "ru" = (
@@ -3364,7 +3398,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "tO" = (
+<<<<<<< Updated upstream
 /obj/structure/closet/secure_closet/freezer/meat,
+=======
+/obj/machinery/vending/wardrobe/bar_wardrobe,
+>>>>>>> Stashed changes
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/canteen)
 "tQ" = (
@@ -3965,8 +4003,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
 "vZ" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/plating,
+/turf/open/floor/wood/cold,
 /area/ship/crew/canteen)
 "wa" = (
 /obj/effect/spawner/structure/window/shuttle,
@@ -3989,6 +4026,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"wk" = (
+/obj/machinery/jukebox,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/crew/canteen)
 "wn" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
@@ -4100,11 +4141,11 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "wO" = (
-/obj/machinery/disposal/bin,
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 1
 	},
 /obj/structure/disposalpipe/trunk,
+/obj/machinery/disposal/bin,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "wS" = (
@@ -4540,6 +4581,11 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"yW" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/ration/battered_fish_sticks,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "yY" = (
 /obj/structure/toilet{
 	dir = 1
@@ -4815,9 +4861,15 @@
 /turf/open/floor/plasteel,
 /area/ship/storage/eva)
 "Aw" = (
+<<<<<<< Updated upstream
 /obj/structure/table,
 /obj/effect/turf_decal/trimline/opaque/ntblue/line,
 /turf/open/floor/plasteel,
+=======
+/obj/effect/turf_decal/trimline/opaque/ntblue/line,
+/obj/machinery/gibber,
+/turf/open/floor/wood/cold,
+>>>>>>> Stashed changes
 /area/ship/crew/canteen)
 "Ax" = (
 /obj/structure/cable{
@@ -4882,6 +4934,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"Bh" = (
+/obj/structure/table,
+/obj/effect/turf_decal/trimline/opaque/ntblue/line{
+	dir = 8
+	},
+/obj/item/storage/ration/pepperoni_pizza_slice,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "Bj" = (
 /obj/machinery/holopad/emergency/kitchen,
 /obj/effect/turf_decal/box,
@@ -5697,7 +5757,11 @@
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "Fy" = (
+<<<<<<< Updated upstream
 /obj/structure/table/wood,
+=======
+/obj/machinery/vending/classicbeats,
+>>>>>>> Stashed changes
 /turf/open/floor/carpet/cyan,
 /area/ship/crew)
 "FD" = (
@@ -6198,6 +6262,12 @@
 /obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/janitor)
+"It" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/ration/chili_macaroni,
+/obj/item/storage/ration/chili_macaroni,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "Iu" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6676,18 +6746,8 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
 "KQ" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/siding{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
+/obj/structure/sign/barsign,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen)
 "KS" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -7437,6 +7497,11 @@
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
+"Ox" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/wood/cold,
+/area/ship/crew/canteen)
 "Oy" = (
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
@@ -7485,11 +7550,8 @@
 /area/ship/hallway/central)
 "OK" = (
 /obj/structure/table/reinforced,
-/obj/item/table_bell{
-	pixel_x = -4;
-	pixel_y = 13
-	},
-/turf/open/floor/plating,
+/obj/item/storage/ration/fish_stew,
+/turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "OO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -7639,6 +7701,7 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
 	dir = 4
 	},
+/obj/item/storage/ration/pepperoni_pizza_slice,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Py" = (
@@ -7700,6 +7763,7 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
 	dir = 8
 	},
+/obj/item/storage/ration/assorted_salted_offal,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "PL" = (
@@ -10879,8 +10943,8 @@ pP
 qI
 qI
 jD
-aC
-aH
+qI
+wk
 Wt
 Gd
 aC
@@ -10917,12 +10981,12 @@ MZ
 uG
 pZ
 dJ
-ql
-PH
-Kd
+vZ
+yW
+Tv
 Je
 ql
-PH
+Bh
 Kd
 mB
 ZS
@@ -10955,10 +11019,17 @@ MZ
 MZ
 uG
 Aw
+<<<<<<< Updated upstream
 mB
 Xf
 Pw
 se
+=======
+na
+vZ
+It
+Tv
+>>>>>>> Stashed changes
 Je
 Ur
 Pw
@@ -10994,9 +11065,9 @@ MZ
 MZ
 uG
 qw
-mB
-xn
-xn
+na
+vZ
+OK
 xn
 BY
 Nm
@@ -11034,7 +11105,7 @@ MZ
 uG
 kr
 pd
-KQ
+Ox
 KQ
 Pm
 Bj
@@ -11073,8 +11144,8 @@ MZ
 qI
 qI
 pQ
-na
-OK
+bX
+qI
 HC
 bu
 ql
@@ -11113,11 +11184,11 @@ qI
 mZ
 ad
 xK
-vZ
+qI
 HC
 bu
 Xf
-Pw
+gy
 se
 bu
 ZS
@@ -11152,7 +11223,7 @@ qI
 nv
 Oy
 ul
-vZ
+qI
 HC
 rx
 Gd
@@ -11230,7 +11301,7 @@ qI
 LP
 ri
 gq
-bX
+qI
 qI
 Ny
 qI
