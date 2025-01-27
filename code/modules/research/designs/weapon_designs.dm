@@ -663,7 +663,7 @@
 	desc = "A stripperclip of 8x50mmR."
 	id = "stripper762"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/magazine/illestren_a850r
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
