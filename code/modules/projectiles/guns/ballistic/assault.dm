@@ -54,7 +54,7 @@
 	)
 
 	//truly a doohickey for every occasion
-	weapon_class_attachments = list (
+	unique_attachments = list (
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
 		/obj/item/attachment/energy_bayonet,
