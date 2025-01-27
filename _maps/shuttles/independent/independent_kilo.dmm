@@ -6,7 +6,7 @@
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
 "ak" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/engine/hull,
 /area/ship/engineering)
 "am" = (
@@ -14,16 +14,16 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "ar" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "kilothrusters"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -336,7 +336,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cb" = (
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
@@ -646,10 +646,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"fu" = (
-/obj/effect/turf_decal/corner/opaque/black/mono,
-/turf/closed/wall/r_wall/yesdiag,
-/area/ship/cargo)
 "fv" = (
 /obj/structure/cable/cyan{
 	icon_state = "1-10"
@@ -2245,7 +2241,7 @@ Vq
 "}
 (14,1,1) = {"
 aa
-fu
+Nq
 ac
 Ud
 bX
