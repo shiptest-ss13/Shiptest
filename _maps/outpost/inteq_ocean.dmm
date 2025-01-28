@@ -28,9 +28,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-6"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
@@ -102,9 +99,6 @@
 /area/outpost/maintenance/port)
 "aM" = (
 /obj/structure/cable/yellow{
-	icon_state = "6-9"
-	},
-/obj/structure/cable/yellow{
 	icon_state = "1-9"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -114,6 +108,9 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "6-8"
+	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
 "aQ" = (
@@ -1065,9 +1062,6 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-9"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -2653,6 +2647,9 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
 "tW" = (
@@ -3185,9 +3182,6 @@
 /area/outpost/cargo)
 "xf" = (
 /obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3266,6 +3260,7 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/central)
 "xO" = (
@@ -3370,6 +3365,9 @@
 /area/outpost/hallway/port)
 "yL" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
 "yN" = (
@@ -3701,9 +3699,6 @@
 "AL" = (
 /obj/structure/cable/yellow{
 	icon_state = "6-9"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-6"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-6"
@@ -4639,6 +4634,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
@@ -5688,9 +5686,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-9"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-9"
-	},
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
@@ -5851,9 +5846,6 @@
 "Ph" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-9"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-6"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -6258,9 +6250,6 @@
 "Sr" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-9"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-9"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -7394,6 +7383,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
