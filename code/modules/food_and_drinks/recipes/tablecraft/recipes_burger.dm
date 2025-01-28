@@ -13,7 +13,7 @@
 	parts = list(
 		/obj/item/reagent_containers/food/snacks/meat/steak/plain/human = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/human
+	result = /obj/item/food/burger/human
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/burger
@@ -23,7 +23,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 
-	result = /obj/item/reagent_containers/food/snacks/burger/plain
+	result = /obj/item/food/burger/plain
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/corgiburger
@@ -33,7 +33,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 
-	result = /obj/item/reagent_containers/food/snacks/burger/corgi
+	result = /obj/item/food/burger/corgi
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/appendixburger
@@ -42,7 +42,7 @@
 		/obj/item/organ/appendix = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/appendix
+	result = /obj/item/food/burger/appendix
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/brainburger
@@ -51,7 +51,7 @@
 		/obj/item/organ/brain = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/brain
+	result = /obj/item/food/burger/brain
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/xenoburger
@@ -60,7 +60,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/steak/xeno = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/xeno
+	result = /obj/item/food/burger/xeno
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/bearger
@@ -69,7 +69,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/steak/bear = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/bearger
+	result = /obj/item/food/burger/bearger
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/fishburger
@@ -79,7 +79,7 @@
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/fish
+	result = /obj/item/food/burger/fish
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/tofuburger
@@ -88,7 +88,7 @@
 		/obj/item/reagent_containers/food/snacks/tofu = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/tofu
+	result = /obj/item/food/burger/tofu
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/redburger
@@ -98,7 +98,7 @@
 		/obj/item/toy/crayon/red = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/red
+	result = /obj/item/food/burger/red
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/orangeburger
@@ -108,7 +108,7 @@
 		/obj/item/toy/crayon/orange = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/orange
+	result = /obj/item/food/burger/orange
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/yellowburger
@@ -118,7 +118,7 @@
 		/obj/item/toy/crayon/yellow = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/yellow
+	result = /obj/item/food/burger/yellow
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/greenburger
@@ -128,7 +128,7 @@
 		/obj/item/toy/crayon/green = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/green
+	result = /obj/item/food/burger/green
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/blueburger
@@ -138,7 +138,7 @@
 		/obj/item/toy/crayon/blue = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/blue
+	result = /obj/item/food/burger/blue
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/purpleburger
@@ -148,7 +148,7 @@
 		/obj/item/toy/crayon/purple = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/purple
+	result = /obj/item/food/burger/purple
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/blackburger
@@ -158,7 +158,7 @@
 		/obj/item/toy/crayon/black = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/black
+	result = /obj/item/food/burger/black
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/whiteburger
@@ -168,7 +168,7 @@
 		/obj/item/toy/crayon/white = 1,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/white
+	result = /obj/item/food/burger/white
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/bigbiteburger
@@ -178,7 +178,7 @@
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/bigbite
+	result = /obj/item/food/burger/bigbite
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/superbiteburger
@@ -194,7 +194,7 @@
 		/obj/item/reagent_containers/food/snacks/bun = 1
 
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/superbite
+	result = /obj/item/food/burger/superbite
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/slimeburger
@@ -203,7 +203,7 @@
 		/datum/reagent/toxin/slimejelly = 5,
 		/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/jelly/slime
+	result = /obj/item/food/burger/jelly/slime
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/jellyburger
@@ -212,7 +212,7 @@
 			/datum/reagent/consumable/cherryjelly = 5,
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/jelly/cherry
+	result = /obj/item/food/burger/jelly/cherry
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/fivealarmburger
@@ -222,7 +222,7 @@
 			/obj/item/reagent_containers/food/snacks/grown/ghost_chili = 2,
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/fivealarm
+	result = /obj/item/food/burger/fivealarm
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/ratburger
@@ -231,7 +231,7 @@
 			/obj/item/reagent_containers/food/snacks/deadmouse = 1,
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/rat
+	result = /obj/item/food/burger/rat
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/baseballburger
@@ -240,7 +240,7 @@
 			/obj/item/melee/baseball_bat = 1,
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/baseball
+	result = /obj/item/food/burger/baseball
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/baconburger
@@ -250,7 +250,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 
-	result = /obj/item/reagent_containers/food/snacks/burger/baconburger
+	result = /obj/item/food/burger/baconburger
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/empoweredburger
@@ -260,7 +260,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 
-	result = /obj/item/reagent_containers/food/snacks/burger/empoweredburger
+	result = /obj/item/food/burger/empoweredburger
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/crabburger
@@ -270,7 +270,7 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 
-	result = /obj/item/reagent_containers/food/snacks/burger/crab
+	result = /obj/item/food/burger/crab
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/cheeseburger
@@ -280,7 +280,7 @@
 			/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/cheese
+	result = /obj/item/food/burger/cheese
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/soylentburger
@@ -290,7 +290,7 @@
 			/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/soylent
+	result = /obj/item/food/burger/soylent
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/ribburger
@@ -300,7 +300,7 @@
 			/obj/item/reagent_containers/food/snacks/onion_slice = 1, //feel free to remove if too burdensome.
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/rib
+	result = /obj/item/food/burger/rib
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/mcguffin
@@ -310,7 +310,7 @@
 			/obj/item/reagent_containers/food/snacks/meat/bacon = 2,
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/mcguffin
+	result = /obj/item/food/burger/mcguffin
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/chickenburger
@@ -320,5 +320,5 @@
 			/datum/reagent/consumable/mayonnaise = 5,
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/chicken
+	result = /obj/item/food/burger/chicken
 	subcategory = CAT_BURGER
