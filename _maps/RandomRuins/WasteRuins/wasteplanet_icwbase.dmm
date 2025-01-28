@@ -242,6 +242,7 @@
 	},
 /obj/effect/spawner/random/trash/botanical_waste,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "aQ" = (
@@ -2626,6 +2627,7 @@
 	},
 /obj/effect/spawner/random/trash/grime,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ko" = (
@@ -3232,6 +3234,7 @@
 	pixel_y = 1
 	},
 /obj/effect/spawner/random/trash/deluxe_garbage,
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "mR" = (
@@ -3922,6 +3925,7 @@
 	pixel_y = -4
 	},
 /obj/effect/spawner/random/trash/mess,
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "pr" = (
@@ -4678,6 +4682,7 @@
 	},
 /obj/effect/spawner/random/trash/mess,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "sg" = (
@@ -5489,6 +5494,7 @@
 	pixel_y = -3
 	},
 /obj/effect/spawner/random/trash/deluxe_garbage,
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "vw" = (
@@ -5584,7 +5590,6 @@
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "vS" = (
-/obj/effect/spawner/random/trash/cigbutt,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 1
 	},
@@ -5602,6 +5607,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/trash/cigbutt,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "vT" = (
@@ -5737,9 +5743,10 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "wo" = (
-/obj/structure/closet/crate/secure/loot,
-/turf/open/floor/plating/asteroid/wasteplanet/lit,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/garbage,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "wp" = (
 /obj/effect/decal/cleanable/robot_debris/gib{
 	pixel_x = -4;
@@ -5888,7 +5895,6 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "xc" = (
 /obj/effect/turf_decal/weather,
-/obj/structure/closet/crate/secure/loot,
 /obj/effect/supplypod_rubble,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -6082,6 +6088,7 @@
 	},
 /obj/effect/spawner/random/trash/mess,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "xM" = (
@@ -6359,6 +6366,7 @@
 	pixel_x = -6;
 	pixel_y = -3
 	},
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yN" = (
@@ -6965,6 +6973,7 @@
 	},
 /obj/effect/spawner/random/trash/mess,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Bb" = (
@@ -7150,7 +7159,6 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "BS" = (
 /obj/effect/supplypod_rubble,
-/obj/structure/closet/crate/secure/loot,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "BW" = (
@@ -9381,6 +9389,7 @@
 	pixel_y = 8
 	},
 /obj/effect/spawner/random/trash/mess,
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "KQ" = (
@@ -12227,6 +12236,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "WE" = (
@@ -15637,7 +15647,7 @@ cF
 cF
 AN
 Gq
-DH
+wo
 cM
 uj
 Yt
@@ -16298,7 +16308,7 @@ mC
 AS
 iU
 Nx
-wo
+Nx
 Nx
 Nx
 Nx
