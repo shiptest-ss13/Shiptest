@@ -776,11 +776,11 @@
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
 	switch(current_cycle)
-		if(11)
+		if(29)
 			to_chat(M, "<span class='warning'>You start to feel tired...</span>" )
-		if(12 to 24)
+		if(30 to 59)
 			M.drowsyness += 1
-		if(24 to INFINITY)
+		if(60 to INFINITY)
 			M.Sleeping(40)
 			. = 1
 	..()
