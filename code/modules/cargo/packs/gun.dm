@@ -618,7 +618,7 @@
 	cost = 7000
 	contains = list(/obj/item/storage/guncase/saw80)
 	crate_name = "LMG crate"
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
