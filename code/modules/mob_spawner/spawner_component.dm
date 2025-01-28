@@ -15,7 +15,7 @@
 	var/current_timerid
 	var/spawn_amount
 
-/datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max, _wave_length, _wave_downtime)
+/datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max, _wave_length, _wave_downtime, _spawn_amount)
 	if(!ismovable(parent))
 		return COMPONENT_INCOMPATIBLE
 
@@ -61,6 +61,19 @@
 		if(L.nest == src)
 			L.nest = null
 	spawned_mobs = null
+
+//Different from stop_spawning() as it doesn't untether all mobs from it and is meant for temporarily stopping spawning
+/datum/component/spawner/proc/toggle_spawning(datum/source, currently_spawning)
+	SIGNAL_HANDLER
+
+	if(currently_spawning)
+		STOP_PROCESSING(SSprocessing, src)
+		deltimer(current_timerid) //Otherwise if spawning is paused while the wave timer is loose it'll just unpause on its own
+		COOLDOWN_RESET(src, wave_timer)
+		return FALSE
+	else
+		START_PROCESSING(SSprocessing, src)
+		return TRUE
 
 /datum/component/spawner/proc/try_spawn_mob()
 	var/atom/P = parent
