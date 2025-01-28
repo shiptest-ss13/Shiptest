@@ -14,9 +14,10 @@
 		/obj/item/reagent_containers/hypospray/medipen/synap = 6,
 		/obj/item/reagent_containers/hypospray/medipen/mannitol = 10,
 		/obj/item/reagent_containers/hypospray/medipen/tricord = 6,
-		/obj/item/reagent_containers/hypospray/medipen/morphine = 6,
+		/obj/item/reagent_containers/hypospray/medipen/tramal = 6,
 		/obj/item/reagent_containers/hypospray/medipen/antihol = 10,
 		/obj/item/reagent_containers/hypospray/medipen/anti_rad = 10,
+		/obj/item/storage/pill_bottle/licarb = 4,
 	)
 	premium = list(
 		/obj/item/reagent_containers/medigel/styptic = 3,

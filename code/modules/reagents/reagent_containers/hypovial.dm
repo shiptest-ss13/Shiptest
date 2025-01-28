@@ -165,6 +165,7 @@
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/chitosan
 	name = "hypovial (chitosan)"
 	icon_state = "hypovial-b"
+	amount_per_transfer_from_this = 5
 	comes_with = list(/datum/reagent/medicine/chitosan = 60)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/CMO
