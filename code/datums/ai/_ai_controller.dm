@@ -58,6 +58,7 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/Destroy(force, ...)
 	set_ai_status(AI_STATUS_OFF)
 	UnpossessPawn(FALSE)
+	ai_movement.stop_moving_towards(src)
 	return ..()
 
 ///Overrides the current ai_movement of this controller with a new one
