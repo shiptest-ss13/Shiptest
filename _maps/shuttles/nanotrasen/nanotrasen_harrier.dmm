@@ -3955,14 +3955,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
-"vF" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "vI" = (
 /obj/structure/table,
 /obj/item/storage/bag/trash{
@@ -6933,7 +6925,7 @@
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 9
 	},
 /turf/open/floor/plasteel/patterned,
@@ -7181,6 +7173,14 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering)
+"Mp" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Ms" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -9497,7 +9497,7 @@
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer1{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 6
 	},
 /turf/open/floor/plasteel/patterned,
@@ -10101,7 +10101,7 @@ MZ
 MZ
 Yp
 bk
-vF
+Mp
 KZ
 kq
 Ds
