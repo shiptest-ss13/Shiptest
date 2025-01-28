@@ -210,7 +210,7 @@
 			new /obj/item/dnainjector/wackymut(src)
 		if(91)
 			for(var/i in 1 to 30)
-				new /mob/living/simple_animal/hostile/cockroach(src)
+				new /mob/living/basic/cockroach(src)
 		if(92)
 			new /obj/item/melee/sword/katana(src)
 		if(93)
