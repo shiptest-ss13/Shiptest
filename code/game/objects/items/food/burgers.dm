@@ -550,18 +550,6 @@
 	if(prob(33))
 		icon_state = "cheeseburgeralt"
 
-/obj/item/food/burger/crazy
-	name = "crazy hamburger"
-	desc = "Crazy hamburger! It is horrible!"
-	icon_state = "crazyhamburger"
-	tastes = list("bread made in turkey" = 2, "horse meat" = 4, "cheese from sao paulo from brazil" = 3, "red hot chili peppers" = 3, "oil from iraq" = 2, "grass of death" = 3)
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 5,
-		/datum/reagent/consumable/nutriment/protein = 2,
-	)
-	foodtypes = GRAIN | MEAT | DAIRY | TOXIC | GROSS | FRUIT
-	w_class = WEIGHT_CLASS_NORMAL // The crazy hamburger in the video was bigger than joker's hand therefore i think this weight class is adequate.
-
 /* When custom food is supported again
 
 // empty burger you can customize
