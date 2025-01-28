@@ -36,6 +36,9 @@
 "aw" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "ax" = (
@@ -215,6 +218,9 @@
 /obj/machinery/power/terminal,
 /obj/structure/cable,
 /obj/machinery/firealarm/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "db" = (
@@ -897,6 +903,9 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "lf" = (
@@ -1875,6 +1884,9 @@
 /obj/machinery/atmospherics/components/binary/pump{
 	name = "engine fuel pump"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "xJ" = (
@@ -2172,6 +2184,9 @@
 /obj/machinery/light_switch{
 	pixel_x = -5;
 	pixel_y = 22
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
@@ -2662,6 +2677,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
