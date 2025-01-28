@@ -2351,6 +2351,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"mA" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "mB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -7173,14 +7181,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering)
-"Mp" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "Ms" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10101,7 +10101,7 @@ MZ
 MZ
 Yp
 bk
-Mp
+mA
 KZ
 kq
 Ds
