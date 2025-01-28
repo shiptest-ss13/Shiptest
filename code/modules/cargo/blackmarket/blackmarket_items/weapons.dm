@@ -257,7 +257,7 @@
 
 /datum/blackmarket_item/weapon/mecha_weapon_bay
 	name = "Concealed Weapons Bay"
-	desc = "Ripley with a laser cannon? Odysseus with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
+	desc = "Ripley with a laser cannon? 200 Series with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
 	item = /obj/item/mecha_parts/concealed_weapon_bay
 
 	price_min = 1000
@@ -268,7 +268,7 @@
 
 /datum/blackmarket_item/weapon/mecha_syringe_gun
 	name = "Mounted Syringe Gun"
-	desc = "We ripped this off an old Nanotrasen exosuit. It's a real advanced piece of equipment. Exosuit not included."
+	desc = "We ripped this off an old Cybersun exosuit. It's a real advanced piece of equipment. Exosuit not included."
 	item = /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
 
 	price_min = 5000

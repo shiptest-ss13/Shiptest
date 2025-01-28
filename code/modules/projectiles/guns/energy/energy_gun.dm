@@ -251,22 +251,3 @@
 	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
-
-/obj/item/gun/energy/e_gun/e11
-	name = "E-11 hybrid energy rifle"
-	desc = "A hybrid energy gun fondly remembered as one of the worst weapons ever made. It hurts, but that's only if it manages to hit its target."
-	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
-	icon_state = "e11"
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/eoehoma)
-	ammo_x_offset = 0
-	spread = 80
-	spread_unwielded = 140
-	dual_wield_spread = 140
-	shaded_charge = TRUE
-	manufacturer = MANUFACTURER_EOEHOMA
-
-/obj/item/gun/energy/e_gun/e11/empty_cell
-	spawn_no_ammo = TRUE

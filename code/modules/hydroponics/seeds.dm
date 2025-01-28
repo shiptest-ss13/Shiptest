@@ -444,7 +444,7 @@
 			for(var/datum/plant_gene/reagent/Gene in genes)
 				msg += "\n<span class='notice'>- [Gene.get_name()] -</span>"
 			msg += "\n*---------*"
-		to_chat(user, examine_block(msg))
+		to_chat(user, boxed_message(msg))
 
 		return
 
