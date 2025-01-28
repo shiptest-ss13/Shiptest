@@ -164,6 +164,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 /obj/item/gun/ballistic/revolver/viper
 	name = "R-23 \"Viper\""
 	desc = "An imposing revolver used by officers and certain agents of Syndicate member factions during the ICW, still favored by captains and high-ranking officers of the former Syndicate. Chambered in .357 Magnum."
+	internal_magazine = TRUE
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
