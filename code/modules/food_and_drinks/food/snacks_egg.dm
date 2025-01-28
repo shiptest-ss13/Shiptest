@@ -98,7 +98,7 @@
 	filling_color = "#FFFFF0"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	tastes = list("egg" = 4, "salt" = 1, "pepper" = 1)
-	foodtype = MEAT | FRIED | BREAKFAST
+	foodtype = MEAT | BREAKFAST
 
 /obj/item/reagent_containers/food/snacks/boiledegg
 	name = "boiled egg"
