@@ -2351,14 +2351,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"mA" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "mB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -7442,6 +7434,10 @@
 /obj/structure/chair/bench/olive{
 	pixel_y = 6
 	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 6;
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "Nt" = (
@@ -8388,6 +8384,14 @@
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
+"Sd" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Si" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plating,
@@ -10101,7 +10105,7 @@ MZ
 MZ
 Yp
 bk
-mA
+Sd
 KZ
 kq
 Ds
