@@ -85,6 +85,7 @@
 #define CAT_CAKE "Cakes"
 #define CAT_EGG "Egg-Based Food"
 #define CAT_MEAT "Meats"
+#define CAT_MEXICAN "Mexican Food"
 #define CAT_MISCFOOD "Misc. Food"
 #define CAT_PASTRY "Pastries"
 #define CAT_PIE "Pies"

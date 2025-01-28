@@ -182,9 +182,9 @@
 					/obj/item/food/breadslice/plain,
 					/obj/item/food/breadslice/plain,
 					/obj/item/food/breadslice/plain, //Weighted to be more common
-					/obj/item/reagent_containers/food/snacks/bun,
-					/obj/item/reagent_containers/food/snacks/tortilla,
-					/obj/item/reagent_containers/food/snacks/pizzabread
+					/obj/item/food/bun,
+					/obj/item/food/tortilla,
+					/obj/item/food/pizzabread
 	)
 	crate_name = "food crate"
 	crate_type = /obj/structure/closet/crate/freezer

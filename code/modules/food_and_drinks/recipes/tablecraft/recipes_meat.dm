@@ -66,7 +66,7 @@
 	name = "Fish fingers"
 	reqs = list(
 		/datum/reagent/consumable/flour = 5,
-		/obj/item/reagent_containers/food/snacks/bun = 1,
+		/obj/item/food/bun = 1,
 		/obj/item/reagent_containers/food/snacks/fishmeat = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishfingers
@@ -153,9 +153,9 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/meat/cutlet = 2,
 		/obj/item/reagent_containers/food/snacks/grown/chili = 2,
-		/obj/item/reagent_containers/food/snacks/tortilla = 2
+		/obj/item/food/tortilla = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/enchiladas
+	result = /obj/item/food/enchiladas
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/stewedsoymeat
@@ -188,7 +188,7 @@
 /datum/crafting_recipe/food/rawkhinkali
 	name = "Raw Khinkali"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/doughslice = 1,
+		/obj/item/food/doughslice = 1,
 		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
 		/obj/item/reagent_containers/food/snacks/meatball = 1
 	)
@@ -198,7 +198,7 @@
 /datum/crafting_recipe/food/pigblanket
 	name = "Pig in a Blanket"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/bun = 1,
+		/obj/item/food/bun = 1,
 		/obj/item/reagent_containers/food/snacks/butter = 1,
 		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1
 	)
