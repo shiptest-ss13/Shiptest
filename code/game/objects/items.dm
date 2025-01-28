@@ -1213,7 +1213,16 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 ///Called before unique action, if any other associated items should do a unique action or override it.
 /obj/item/proc/pre_unique_action(mob/living/user)
-	if(SEND_SIGNAL(src,COMSIG_CLICK_UNIQUE_ACTION,user) & OVERIDE_UNIQUE_ACTION)
+	if(SEND_SIGNAL(src,COMSIG_CLICK_UNIQUE_ACTION,user) & OVERRIDE_UNIQUE_ACTION)
+		return TRUE
+	return FALSE //return true if the proc should end here
+
+///Intended for interactions with guns, like swapping firemodes
+/obj/item/proc/secondary_action(mob/living/user)
+
+///Called before unique action, if any other associated items should do a secondary action or override it.
+/obj/item/proc/pre_secondary_action(mob/living/user)
+	if(SEND_SIGNAL(src,COMSIG_CLICK_SECONDARY_ACTION,user) & OVERRIDE_SECONDARY_ACTION)
 		return TRUE
 	return FALSE //return true if the proc should end here
 /**

@@ -38,7 +38,7 @@
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
 		/obj/item/attachment/gun,
-		/obj/item/attachment/sling
+		/obj/item/attachment/sling,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1
@@ -119,7 +119,7 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/energy/attack_hand(mob/user)
-	if(!internal_magazine && loc == user && user.is_holding(src) && cell && tac_reloads)
+	if(!internal_magazine && loc == user && user.is_holding(src) && cell && tac_reloads && !(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL))
 		eject_cell(user)
 		return
 	return ..()
