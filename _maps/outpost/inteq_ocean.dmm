@@ -2433,10 +2433,10 @@
 /obj/structure/railing{
 	dir = 9
 	},
-/obj/machinery/atmospherics/components/unary/portables_connector{
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/unary/hydrogen_pump{
 	dir = 4
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/outpost/hallway/central)
 "sB" = (
@@ -3841,6 +3841,9 @@
 /area/outpost/hallway/port)
 "BS" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/outpost/hallway/central)
 "BU" = (
@@ -4236,11 +4239,11 @@
 /area/outpost/vacant_rooms/office)
 "ED" = (
 /obj/machinery/light/dim/directional/south,
-/obj/machinery/atmospherics/components/unary/hydrogen_pump{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 5
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating,
 /area/outpost/hallway/central)
 "EJ" = (
 /obj/machinery/light/dim/directional/south,
@@ -5169,9 +5172,7 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/cryo)
 "KC" = (
-/obj/machinery/atmospherics/components/binary/volume_pump{
-	dir = 1
-	},
+/obj/machinery/atmospherics/components/binary/volume_pump,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
