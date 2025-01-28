@@ -635,6 +635,13 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/woodsman
+	name = "Model 23 'Woodsman' Hunting Rifle"
+	desc = "Contains a semi-automatic hunting rifle chambered in 8x50mmR and produced by Serene Outdoors. Come with three magazines with a 5-round capacity."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/woodsman)
+	crate_name = "hunting rifle crate"
+
 /datum/supply_pack/gun/vickland
 	name = "Vickland Battle Rifle"
 	desc = "Contains a high-powered semi-automatic battle rifle chambered in .308 and produced by Hunter's Pride. Fed via stripper clips with a 10 round capacity."

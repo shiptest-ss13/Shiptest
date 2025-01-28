@@ -174,6 +174,11 @@
 	gun_type = /obj/item/gun/ballistic/automatic/m15
 	mag_type = /obj/item/ammo_box/magazine/m15
 
+/obj/item/storage/guncase/woodsman
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/woodsman
+	mag_type = /obj/item/ammo_box/magazine/m23
+	mag_count = 3
+
 /obj/item/storage/guncase/buckmaster
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/m11
 

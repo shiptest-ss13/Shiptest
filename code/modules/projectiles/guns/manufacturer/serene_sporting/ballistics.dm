@@ -215,6 +215,91 @@ EMPTY_GUN_HELPER(automatic/m12_sporter)
 
 EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 
+/* woodsman */
+
+/obj/item/gun/ballistic/automatic/marksman/woodsman
+	name = "Model 23 Woodsman"
+	desc = "A large semi-automatic hunting rifle manufactured by Serene Outdoors. Its powerful cartridge, excellent ergonomics and ease of use make it highly popular for hunting big game Chambered in 8x50mmR."
+
+	icon = 'icons/obj/guns/manufacturer/serene_outdoors/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/serene_outdoors/onmob.dmi'
+	icon_state = "woodsman"
+	item_state = "woodsman"
+
+	default_ammo_type = /obj/item/ammo_box/magazine/m23
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m23,
+	)
+
+	unique_mag_sprites_for_variants = TRUE
+
+	fire_sound = 'sound/weapons/gun/rifle/ssg669c.ogg'
+
+	manufacturer = MANUFACTURER_SERENE
+	show_magazine_on_sprite = TRUE
+
+	bolt_type = BOLT_TYPE_LOCKING
+
+	slot_flags = ITEM_SLOT_BACK
+
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_MEDIUM
+
+	slot_flags = ITEM_SLOT_BACK
+
+	spread = -4
+	spread_unwielded = 20
+	recoil = 1.25
+	recoil_unwielded = 6
+	fire_delay = 0.75 SECONDS
+	wield_delay = 1.15 SECONDS //a little longer and less wieldy than other DMRs
+
+	can_be_sawn_off = FALSE
+
+	valid_attachments = SERENE_ATTACHMENTS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+		)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 32,
+			"y" = 18,
+		)
+	)
+
+EMPTY_GUN_HELPER(automatic/marksman/woodsman)
+
+/obj/item/ammo_box/magazine/m23
+	name = "Model 23 magazine (8x50mmR)"
+	desc = "A 5-round magazine for the Model 23 \"Woodsman\". These rounds do high damage, with excellent armor penetration."
+	icon_state = "woodsman_mag-1"
+	base_icon_state = "woodsman_mag"
+	ammo_type = /obj/item/ammo_casing/a8_50r
+	caliber = "8x50mmR"
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m23/empty
+	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/m23/extended
+	name = "Model 23 Extended Magazine (8x50mmR)"
+	desc = "A 10-round magazine for the Model 23 \"Woodsman\". These rounds do high damage, with excellent armor penetration."
+	icon_state = "woodsman_extended-1"
+	base_icon_state = "woodsman_extended"
+	max_ammo = 10
+
+/obj/item/ammo_box/magazine/m23/extended/empty
+	start_empty = TRUE
+
 /* super soaker */
 
 /obj/item/gun/ballistic/automatic/m15
