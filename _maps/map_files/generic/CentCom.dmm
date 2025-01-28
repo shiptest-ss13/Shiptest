@@ -1687,8 +1687,7 @@
 "atW" = (
 /obj/structure/rack,
 /obj/item/melee/sword/claymore{
-	damtype = "stamina";
-	force = 30
+	damtype = "stamina"
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
@@ -1909,8 +1908,7 @@
 "avt" = (
 /obj/structure/rack,
 /obj/item/melee/sword/katana{
-	damtype = "stamina";
-	force = 30
+	damtype = "stamina"
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
@@ -2494,7 +2492,7 @@
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
 "aAb" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/nanotrasen,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "aAc" = (
@@ -3970,8 +3968,7 @@
 /obj/machinery/light/directional/east,
 /obj/structure/rack,
 /obj/item/melee/sword/claymore{
-	damtype = "stamina";
-	force = 30
+	damtype = "stamina"
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
@@ -4877,8 +4874,7 @@
 /obj/machinery/light/directional/west,
 /obj/structure/rack,
 /obj/item/melee/sword/claymore{
-	damtype = "stamina";
-	force = 30
+	damtype = "stamina"
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
@@ -8796,10 +8792,10 @@
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "gLF" = (
-/obj/machinery/photocopier,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
+/obj/machinery/photocopier/nanotrasen,
 /turf/open/floor/plasteel,
 /area/centcom/supply)
 "gLL" = (
@@ -9647,7 +9643,6 @@
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "iyA" = (
-/obj/machinery/photocopier,
 /obj/machinery/light/directional/north,
 /obj/machinery/button/door/indestructible{
 	id = "XCCFerry";
@@ -9684,6 +9679,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
+/obj/machinery/photocopier/nanotrasen,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "iyJ" = (
@@ -16842,7 +16838,6 @@
 /obj/structure/railing,
 /obj/structure/sign/flag/gezena{
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = 30
 	},
 /turf/open/floor/plasteel/mono/dark,

@@ -130,6 +130,19 @@
 	name = "SolGov rubber stamp"
 	icon_state = "stamp-solgov"
 
+/obj/item/stamp/solgov/captain
+
+	name = "SolGov Captain's rubber stamp"
+	icon_state = "stamp-solgov_captain"
+
+/obj/item/stamp/solgov/approved
+	name = "SolGov APPROVED rubber stamp"
+	icon_state = "stamp-solgov_ok"
+
+/obj/item/stamp/solgov/denied
+	name = "SolGov DENIED rubber stamp"
+	icon_state = "stamp-solgov_deny"
+
 /obj/item/stamp/inteq
 	name = "Inteq rubber stamp"
 	icon_state = "stamp-inteq"
@@ -152,7 +165,12 @@
 	icon_state = "stamp-inteq_corpsman"
 
 /obj/item/stamp/clip
-	name = "CLIP Minutemen rubber stamp"
+	name = "CLIP rubber stamp"
+	icon_state = "stamp-clip"
+	dye_color = DYE_FO
+
+/obj/item/stamp/clip/cmm
+	name = "CLIP minutemen rubber stamp"
 	icon_state = "stamp-cmm"
 	dye_color = DYE_FO
 

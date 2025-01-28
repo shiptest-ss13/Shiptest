@@ -253,7 +253,7 @@
 	var/new_stamp_datum = new /datum/paper_stamp(stamp_class, stamp_x, stamp_y, rotation)
 	LAZYADD(raw_stamp_data, new_stamp_datum);
 
-	if(LAZYLEN(stamp_cache) > MAX_PAPER_STAMPS_OVERLAYS)
+	if(!stamp_icon_state || LAZYLEN(stamp_cache) > MAX_PAPER_STAMPS_OVERLAYS)
 		return
 
 	var/mutable_appearance/stamp_overlay = mutable_appearance('icons/obj/bureaucracy.dmi', "paper_[stamp_icon_state]")

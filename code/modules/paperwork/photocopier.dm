@@ -29,6 +29,8 @@
 	power_channel = AREA_USAGE_EQUIP
 	max_integrity = 300
 	integrity_failure = 0.33
+	/// World ticks the machine is electrified for.
+	var/seconds_electrified = MACHINE_NOT_ELECTRIFIED
 	/// A reference to an `/obj/item/paper` inside the copier, if one is inserted. Otherwise null.
 	var/obj/item/paper/paper_copy
 	/// A reference to an `/obj/item/photo` inside the copier, if one is inserted. Otherwise null.
@@ -47,10 +49,13 @@
 	var/busy = FALSE
 	/// Variable needed to determine the selected category of forms on Photocopier.js
 	var/category
+	/// Variable to select which pool of blanks is loaded to print
+	var/blanks_path = 'strings/blanks/indie_blanks.json'
 
 /obj/machinery/photocopier/Initialize()
 	. = ..()
 	toner_cartridge = new(src)
+	wires = new /datum/wires/photocopier(src)
 
 /obj/machinery/photocopier/handle_atom_del(atom/deleting_atom)
 	if(deleting_atom == paper_copy)
@@ -72,6 +77,21 @@
 	ass = null //the mob isn't actually contained and just referenced, no need to delete it.
 	return ..()
 
+/obj/machinery/photocopier/update_overlays()
+	. = ..()
+	if(panel_open)
+		. += "photocopier_panel"
+
+/obj/machinery/photocopier/process(delta_time)
+	if(seconds_electrified > MACHINE_NOT_ELECTRIFIED)
+		seconds_electrified -= delta_time
+
+/obj/machinery/photocopier/attack_hand(mob/user)
+	if(seconds_electrified && !(machine_stat & NOPOWER))
+		if(shock(user, 100))
+			return
+	return ..()
+
 /obj/machinery/photocopier/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -84,8 +104,10 @@
 	data["num_copies"] = num_copies
 
 	try
-		var/list/blanks = json_decode(file2text("strings/blanks/nt_blanks.json"))
+		var/list/blanks = json_decode(file2text(blanks_path))
 		if (blanks != null)
+			if (blanks_path != 'strings/blanks/indie_blanks.json')
+				blanks += json_decode(file2text('strings/blanks/indie_blanks.json'))
 			data["blanks"] = blanks
 			data["category"] = category
 			data["forms_exist"] = TRUE
@@ -213,8 +235,13 @@
 			var/list/printinfo
 			for(var/infoline as anything in params["info"])
 				printinfo += infoline
-			printblank.name = printname
-			printblank.add_raw_text(printinfo)
+			for(var/stampinfo as anything in params["stampinfo"])
+				var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/simple/paper)
+				var/class = sheet.icon_class_name(stampinfo[1])
+				printblank.add_stamp(class, stampinfo[2], stampinfo[3], stampinfo[4])
+			printblank.name = "paper - [printname]"
+			printblank.add_raw_text(printinfo, advanced_html = TRUE)
+			printblank.update_appearance()
 			return printblank
 
 /**
@@ -385,7 +412,21 @@
 		object.forceMove(drop_location())
 	to_chat(user, "<span class='notice'>You take [object] out of [src]. [busy ? "The [src] comes to a halt." : ""]</span>")
 
+/**
+ * Open and close the wire panel.
+ */
+/obj/machinery/photocopier/screwdriver_act(mob/living/user, obj/item/screwdriver)
+	. = ..()
+	default_deconstruction_screwdriver(user, icon_state, icon_state, screwdriver)
+	update_icon()
+	return TRUE
+
 /obj/machinery/photocopier/attackby(obj/item/O, mob/user, params)
+	if(panel_open)
+		if(is_wire_tool(O))
+			wires.interact(user)
+		return
+
 	if(istype(O, /obj/item/paper))
 		if(copier_empty())
 			if(!user.dropItemToGround(O))
@@ -522,6 +563,41 @@
 		return FALSE
 	else
 		return TRUE
+
+/obj/machinery/photocopier/proc/shock(mob/living/user, chance)
+	if(!istype(user) || machine_stat & (BROKEN|NOPOWER))
+		return FALSE
+	if(!prob(chance))
+		return FALSE
+	do_sparks(5, TRUE, src)
+	var/check_range = TRUE
+	return electrocute_mob(user, get_area(src), src, 0.7, check_range)
+
+/*
+ * Factional photocopiers
+ */
+
+/obj/machinery/photocopier/clip
+	blanks_path = 'strings/blanks/clip_blanks.json'
+
+/obj/machinery/photocopier/inteq
+	blanks_path = 'strings/blanks/inteq_blanks.json'
+
+/obj/machinery/photocopier/nanotrasen
+	blanks_path = 'strings/blanks/nt_blanks.json'
+
+/obj/machinery/photocopier/pgf
+	blanks_path = 'strings/blanks/pgf_blanks.json'
+
+/obj/machinery/photocopier/solcon
+	blanks_path = 'strings/blanks/solcon_blanks.json'
+
+/obj/machinery/photocopier/syndicate
+	blanks_path = 'strings/blanks/syndicate_blanks.json'
+
+/obj/machinery/photocopier/ruin/Initialize()
+	. = ..()
+	wires.cut(WIRE_FORMS)
 
 /*
  * Toner cartridge
