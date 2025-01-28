@@ -3408,6 +3408,13 @@
 /obj/effect/turf_decal/industrial/loading{
 	dir = 4
 	},
+/obj/machinery/mineral/processing_unit_console{
+	dir = 8;
+	machinedir = 8;
+	output_dir = 4;
+	pixel_x = 20;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "tO" = (
@@ -3596,7 +3603,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/door/window/westleft,
+/obj/machinery/door/window/westleft{
+	dir = 8
+	},
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
@@ -6260,7 +6269,8 @@
 /area/ship/engineering/engine)
 "Ik" = (
 /obj/machinery/mineral/processing_unit{
-	input_dir = 8
+	input_dir = 8;
+	output_dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -7010,6 +7020,11 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"LS" = (
+/obj/structure/plasticflaps/opaque,
+/obj/machinery/mineral/unloading_machine,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "LW" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7836,11 +7851,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"PV" = (
-/obj/machinery/mineral/unloading_machine,
-/obj/structure/plasticflaps/opaque,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/cargo)
 "PZ" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/arrow_cw{
 	dir = 4
@@ -11230,7 +11240,7 @@ oG
 oG
 oG
 yr
-PV
+LS
 ZQ
 MZ
 MZ
