@@ -175,23 +175,6 @@
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
-"bg" = (
-/obj/item/clothing/glasses/hud/health,
-/obj/item/clothing/suit/toggle/labcoat/nanotrasen,
-/obj/item/clothing/under/nanotrasen/medical,
-/obj/item/clothing/shoes/sneakers/white,
-/obj/item/storage/pill_bottle/stimulant{
-	pixel_x = 5
-	},
-/obj/item/storage/backpack/satchel/med,
-/obj/structure/closet/secure_closet/medical3{
-	populate = 0
-	},
-/obj/structure/sign/poster/official/work_for_a_future{
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/medical)
 "bi" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -1011,6 +994,18 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/law_office)
+"fd" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "harrierwindows";
+	name = "Window Blast Door"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/medical)
 "fh" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -4483,8 +4478,20 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "xS" = (
-/obj/machinery/vending/medical,
-/obj/machinery/light/directional/north,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/suit/toggle/labcoat/nanotrasen,
+/obj/item/clothing/under/nanotrasen/medical,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/item/storage/pill_bottle/stimulant{
+	pixel_x = 5
+	},
+/obj/item/storage/backpack/satchel/med,
+/obj/structure/closet/secure_closet/medical3{
+	populate = 0
+	},
+/obj/structure/sign/poster/official/work_for_a_future{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "yc" = (
@@ -9761,16 +9768,9 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Zb" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "harrierwindows";
-	name = "Window Blast Door"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
+/obj/machinery/vending/medical,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ze" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
@@ -11848,7 +11848,7 @@ Om
 CJ
 wp
 Om
-xS
+Zb
 ZJ
 wA
 iz
@@ -11887,7 +11887,7 @@ Om
 vC
 dt
 Om
-bg
+xS
 yR
 gO
 VO
@@ -11927,7 +11927,7 @@ xQ
 dd
 tY
 jH
-Zb
+fd
 jH
 jH
 SM
