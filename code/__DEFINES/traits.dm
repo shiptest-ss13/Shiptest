@@ -288,6 +288,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_PARALYSIS "paralysis"
 /// Is this atom being actively shocked? Used to prevent repeated shocks.
 #define TRAIT_BEING_SHOCKED "shocked"
+/// Granted by prismwine, reflects lasers
+#define TRAIT_REFLECTIVE "reflective"
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 
 /* Traits for ventcrawling.
@@ -462,8 +464,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_FISH_SAFE_STORAGE "fish_case"
 /// Stuff that can go inside fish cases
 #define TRAIT_FISH_CASE_COMPATIBILE "fish_case_compatibile"
-/// Granted by prismwine
-#define TRAIT_REFLECTIVE "reflective"
 /// Self-explainatory.
 #define BEAUTY_ELEMENT_TRAIT "beauty_element"
 #define MOOD_COMPONENT_TRAIT "mood_component"
