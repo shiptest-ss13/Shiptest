@@ -155,6 +155,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_PACIFISM "pacifism"
 #define TRAIT_IGNORESLOWDOWN "ignoreslow"
 #define TRAIT_IGNOREDAMAGESLOWDOWN "ignoredamageslowdown"
+/// Makes it so the mob can use guns regardless of tool user status
+#define TRAIT_GUN_NATURAL "gunnatural"
 #define TRAIT_DEATHCOMA "deathcoma" //Causes death-like unconsciousness
 #define TRAIT_FAKEDEATH "fakedeath" //Makes the owner appear as dead to most forms of medical examination
 #define TRAIT_DISFIGURED "disfigured"
@@ -277,12 +279,15 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_KISS_OF_DEATH "kiss_of_death"
 /// We can handle 'dangerous' plants in botany safely
 #define TRAIT_PLANT_SAFE "plant_safe"
+///This person is aiming and should not face atoms in different directions
+#define TRAIT_AIMING "aiming"
 /// This mob overrides certian SSlag_switch measures with this special trait
 #define TRAIT_BYPASS_MEASURES "bypass_lagswitch_measures"
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
-
+/// Granted by prismwine, reflects lasers
+#define TRAIT_REFLECTIVE "reflective"
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 
 /*
@@ -449,8 +454,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_FISH_SAFE_STORAGE "fish_case"
 /// Stuff that can go inside fish cases
 #define TRAIT_FISH_CASE_COMPATIBILE "fish_case_compatibile"
-/// Granted by prismwine
-#define TRAIT_REFLECTIVE "reflective"
 /// Self-explainatory.
 #define BEAUTY_ELEMENT_TRAIT "beauty_element"
 #define MOOD_COMPONENT_TRAIT "mood_component"

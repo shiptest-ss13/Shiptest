@@ -62,16 +62,16 @@
 /datum/supply_pack/tools/mining
 	name = "Basic Mining Crate"
 	desc = "Contains two pickaxes, two ore bags, and two manual mining scanners."
-	cost = 1000
+	cost = 500 //cheaper to send your legions to war (mining) (also you can just print all this asides the scanners so what's the point anyway)
 	contains = list(
 		/obj/item/pickaxe,
 		/obj/item/pickaxe/mini,
 		/obj/item/storage/bag/ore,
 		/obj/item/storage/bag/ore,
 		/obj/item/mining_scanner,
-		/obj/item/mining_scanner
-	)
+		/obj/item/mining_scanner)
 	crate_name = "basic mining crate"
+	faction = /datum/faction/nt/ns_logi
 
 /datum/supply_pack/tools/jackhammer
 	name = "Jackhammer Crate"

@@ -1404,11 +1404,11 @@
 	pixel_x = 12;
 	pixel_y = 12
 	},
-/obj/item/storage/belt/mining{
-	pixel_x = 5;
+/obj/item/storage/belt/utility,
+/obj/item/storage/belt/mining/ngr{
+	pixel_x = 4;
 	pixel_y = 8
 	},
-/obj/item/storage/belt/utility,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "mJ" = (
@@ -5645,7 +5645,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Locker Room";
-	req_access_txt = "48"
+	req_one_access = list(48, 56)
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,

@@ -94,11 +94,11 @@
 /obj/item/storage/belt/utility/chief/full/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/electric(src)
 	new /obj/item/multitool(src)
 	new /obj/item/stack/cable_coil(src,MAXCOIL,pick("red","yellow","orange"))
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/analyzer(src)
-	//much roomier now that we've managed to remove two tools
 
 /obj/item/storage/belt/utility/full/PopulateContents()
 	new /obj/item/screwdriver(src)
@@ -149,6 +149,7 @@
 /obj/item/storage/belt/utility/full/ert/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/electric(src)
 	new /obj/item/multitool(src)
 	new /obj/item/construction/rcd/combat(src)
 	new /obj/item/extinguisher/mini(src)
@@ -167,6 +168,7 @@
 	icon_state = "medicwebbing"
 	item_state = "medicwebbing"
 	custom_premium_price = 900
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/storage/belt/medical/ComponentInitialize()
 	. = ..()
@@ -295,6 +297,7 @@
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash/handheld,
 		/obj/item/clothing/glasses,
+		/obj/item/binoculars,
 		/obj/item/ammo_casing/shotgun,
 		/obj/item/ammo_box/magazine,
 		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
@@ -309,6 +312,8 @@
 		/obj/item/flashlight/seclite,
 		/obj/item/melee/classic_baton/telescopic,
 		/obj/item/radio,
+		/obj/item/attachment,
+		/obj/item/extinguisher/mini,
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola,
 		/obj/item/holosign_creator/security,
@@ -443,6 +448,7 @@
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
 	resistance_flags = FIRE_PROOF
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 	unique_reskin = list(
 		"None" = "militarywebbing",
@@ -901,7 +907,7 @@
 	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
 	icon_state = "inteq_webbing"
 	item_state = "inteq_webbing"
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
 	. = ..()
