@@ -492,7 +492,9 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 6
 	},
-/obj/machinery/atmospherics/components/unary/portables_connector/layer2,
+/obj/machinery/atmospherics/components/unary/portables_connector/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "cW" = (
@@ -739,8 +741,10 @@
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/hallway/starboard)
 "dX" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "ea" = (
@@ -842,6 +846,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "ey" = (
@@ -2165,6 +2170,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"ld" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "lg" = (
 /obj/structure/mirror{
 	pixel_y = 32
@@ -2433,11 +2446,11 @@
 /area/ship/hallway/port)
 "mO" = (
 /obj/structure/closet/wardrobe/pink,
-/obj/item/clothing/suit/toggle/labcoat/science,
 /obj/item/clothing/glasses/science,
-/obj/item/clothing/under/nanotrasen/science,
-/obj/item/clothing/under/plasmaman/science/skirt,
-/obj/item/gps/science,
+/obj/item/clothing/glasses/science,
+/obj/item/clothing/glasses/science,
+/obj/item/storage/backpack/science,
+/obj/item/storage/backpack/science,
 /obj/item/storage/backpack/science,
 /turf/open/floor/plasteel/patterned,
 /area/ship/science)
@@ -3986,8 +3999,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
@@ -4710,6 +4723,10 @@
 	dir = 8
 	},
 /obj/machinery/camera,
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	dir = 8;
+	name = "Air to Port"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "zr" = (
@@ -6915,6 +6932,9 @@
 	},
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
@@ -9478,6 +9498,9 @@
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer1{
 	dir = 6
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "Yb" = (
@@ -10079,7 +10102,7 @@ MZ
 MZ
 Yp
 bk
-NX
+ld
 KZ
 kq
 Ds
