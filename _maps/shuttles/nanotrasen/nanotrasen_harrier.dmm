@@ -1011,31 +1011,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/law_office)
-"fd" = (
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -20;
-	pixel_y = -12
-	},
-/obj/structure/closet/secure_closet/medical3{
-	icon_state = "brig_phys";
-	name = "paramedic's locker";
-	populate = 0;
-	req_access = list(5)
-	},
-/obj/item/storage/backpack/messenger/para,
-/obj/item/storage/belt/medical/paramedic,
-/obj/item/clothing/shoes/sneakers/blue,
-/obj/item/clothing/glasses/hud/health,
-/obj/item/clothing/head/nanotrasen/cap/medical,
-/obj/item/storage/backpack/medic,
-/obj/item/clothing/under/nanotrasen/medical/paramedic,
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/medical)
 "fh" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -4508,16 +4483,9 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "xS" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "harrierwindows";
-	name = "Window Blast Door"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
+/obj/machinery/vending/medical,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/white,
 /area/ship/medical)
 "yc" = (
 /obj/structure/cable{
@@ -6006,6 +5974,31 @@
 	},
 /obj/item/reagent_containers/syringe,
 /turf/open/floor/plasteel/showroomfloor,
+/area/ship/medical)
+"Ga" = (
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = -12
+	},
+/obj/structure/closet/secure_closet/medical3{
+	icon_state = "brig_phys";
+	name = "paramedic's locker";
+	populate = 0;
+	req_access = list(5)
+	},
+/obj/item/storage/backpack/messenger/para,
+/obj/item/storage/belt/medical/paramedic,
+/obj/item/clothing/shoes/sneakers/blue,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/head/nanotrasen/cap/medical,
+/obj/item/storage/backpack/medic,
+/obj/item/clothing/under/nanotrasen/medical/paramedic,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Gd" = (
 /obj/structure/fluff/hedge,
@@ -9768,9 +9761,16 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Zb" = (
-/obj/machinery/vending/medical,
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/white,
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "harrierwindows";
+	name = "Window Blast Door"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
 /area/ship/medical)
 "Ze" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
@@ -11809,7 +11809,7 @@ uS
 gA
 Bq
 Om
-fd
+Ga
 YP
 Cz
 fT
@@ -11848,7 +11848,7 @@ Om
 CJ
 wp
 Om
-Zb
+xS
 ZJ
 wA
 iz
@@ -11927,7 +11927,7 @@ xQ
 dd
 tY
 jH
-xS
+Zb
 jH
 jH
 SM
