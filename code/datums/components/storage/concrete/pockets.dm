@@ -94,6 +94,7 @@
 		/obj/item/clothing/glasses/sunglasses/ballistic,
 		/obj/item/ammo_casing,
 		/obj/item/ammo_box/magazine/illestren_a850r,
+		/obj/item/bodycamera,
 	))
 
 /datum/component/storage/concrete/pockets/holster

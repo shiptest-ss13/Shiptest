@@ -7,14 +7,18 @@
 	light_color = COLOR_SOFT_RED
 
 	var/list/network = list("ss13")
+	var/temp_network = list("")
 	var/obj/machinery/camera/active_camera
+	/// The turf where the camera was last updated.
+	var/turf/last_camera_turf
 	var/list/concurrent_users = list()
 
 	// Stuff needed to render the map
 	var/map_name
 	var/const/default_map_size = 15
 	var/atom/movable/screen/map_view/cam_screen
-	var/atom/movable/screen/plane_master/lighting/cam_plane_master
+	/// All the plane masters that need to be applied.
+	var/list/cam_plane_masters
 	var/atom/movable/screen/background/cam_background
 
 /obj/machinery/computer/security/retro
@@ -43,18 +47,20 @@
 	cam_screen.assigned_map = map_name
 	cam_screen.del_on_map_removal = FALSE
 	cam_screen.screen_loc = "[map_name]:1,1"
-	cam_plane_master = new
-	cam_plane_master.name = "plane_master"
-	cam_plane_master.assigned_map = map_name
-	cam_plane_master.del_on_map_removal = FALSE
-	cam_plane_master.screen_loc = "[map_name]:CENTER"
+	cam_plane_masters = list()
+	for(var/plane in subtypesof(/atom/movable/screen/plane_master))
+		var/atom/movable/screen/instance = new plane()
+		instance.assigned_map = map_name
+		instance.del_on_map_removal = FALSE
+		instance.screen_loc = "[map_name]:CENTER"
+		cam_plane_masters += instance
 	cam_background = new
 	cam_background.assigned_map = map_name
 	cam_background.del_on_map_removal = FALSE
 
 /obj/machinery/computer/security/Destroy()
 	qdel(cam_screen)
-	qdel(cam_plane_master)
+	QDEL_LIST(cam_plane_masters)
 	qdel(cam_background)
 	return ..()
 
@@ -63,12 +69,21 @@
 		network -= i
 		network += "[REF(port)][i]"
 
+/obj/machinery/computer/security/multitool_act(mob/living/user, obj/item/I)
+	. = ..()
+	var/obj/item/multitool/M = I
+	if(M.buffer != null)
+		network = M.buffer
+		to_chat(user, "<span class='notice'>You input network '[M.buffer]' from the multitool's buffer into [src].</span>")
+	return
+
 /obj/machinery/computer/security/ui_interact(mob/user, datum/tgui/ui)
 	// Update UI
 	ui = SStgui.try_update_ui(user, src, ui)
+
 	// Show static if can't use the camera
-	if(!active_camera?.can_use())
-		show_camera_static()
+	update_active_camera_screen()
+
 	if(!ui)
 		var/user_ref = REF(user)
 		var/is_living = isliving(user)
@@ -82,7 +97,8 @@
 			use_power(active_power_usage)
 		// Register map objects
 		user.client.register_map_obj(cam_screen)
-		user.client.register_map_obj(cam_plane_master)
+		for(var/plane in cam_plane_masters)
+			user.client.register_map_obj(plane)
 		user.client.register_map_obj(cam_background)
 		// Open UI
 		ui = new(user, src, "CameraConsole", name)
@@ -93,16 +109,33 @@
 	data["network"] = network
 	data["activeCamera"] = null
 	if(active_camera)
-		if(!active_camera?.can_use())
-			data["activeCamera"] = list(
-				name = active_camera.c_tag +  " (DEACTIVATED)",
-				status = active_camera.status,
-			)
-		else
-			data["activeCamera"] = list(
-				name = active_camera.c_tag,
-				status = active_camera.status,
-			)
+		if(istype(active_camera, /obj/machinery/camera))
+			var/obj/machinery/camera/active_camera_S = active_camera
+			if(!active_camera_S?.can_use())
+				data["activeCamera"] = list(
+					name = active_camera_S.c_tag,
+					status = active_camera_S.status,
+				)
+			else
+				data["activeCamera"] = list(
+					name = active_camera_S.c_tag,
+					status = active_camera_S.status,
+				)
+			active_camera = active_camera_S
+
+		else if(istype(active_camera, /obj/item/bodycamera))
+			var/obj/machinery/camera/active_camera_B = active_camera
+			if(!active_camera_B?.can_use())
+				data["activeCamera"] = list(
+					name = active_camera_B.c_tag,
+					status = active_camera_B.status,
+				)
+			else
+				data["activeCamera"] = list(
+					name = active_camera_B.c_tag,
+					status = active_camera_B.status,
+				)
+			active_camera = active_camera_B
 	return data
 
 /obj/machinery/computer/security/ui_static_data()
@@ -111,47 +144,48 @@
 	var/list/cameras = get_available_cameras()
 	data["cameras"] = list()
 	for(var/i in cameras)
-		var/obj/machinery/camera/C = cameras[i]
-		if(!C?.can_use())
+		var/obj/C = cameras[i]
+		if(istype(C, /obj/machinery/camera))
+			var/obj/machinery/camera/C_cam = C
 			data["cameras"] += list(list(
-				name = C.c_tag + " (DEACTIVATED)",
+				name = C_cam.c_tag,
 			))
-		else
+		else if(istype(C, /obj/item/bodycamera))
+			var/obj/item/bodycamera/C_cam = C
 			data["cameras"] += list(list(
-				name = C.c_tag,
+				name = C_cam.c_tag,
 			))
 	return data
 
-/obj/machinery/computer/security/ui_act(action, params)
+//This is the only way to refresh the UI, from what I've found
+/obj/machinery/computer/security/proc/ui_refresh(mob/user, datum/tgui/ui)
+	ui.close()
+	ui_interact(user, ui)
+	show_camera_static()
+
+/obj/machinery/computer/security/ui_act(action, params, ui)
 	. = ..()
 	if(.)
 		return
 
+	if(action == "set_network")
+		network = temp_network
+		ui_refresh(usr, ui)
+
+	if(action == "set_temp_network")
+		temp_network = sanitize_filename(params["name"])
+
+	if(action == "refresh")
+		ui_refresh(usr, ui)
+
 	if(action == "switch_camera")
 		var/c_tag = params["name"]
 		var/list/cameras = get_available_cameras()
-		var/obj/machinery/camera/C = cameras[c_tag]
+		var/obj/C = cameras[c_tag]
 		active_camera = C
 		playsound(src, get_sfx("terminal_type"), 25, FALSE)
 
-		// Show static if can't use the camera
-		if(!active_camera?.can_use())
-			show_camera_static()
-			return TRUE
-
-		var/list/visible_turfs = list()
-		for(var/turf/T in (C.isXRay() \
-				? range(C.view_range, C) \
-				: view(C.view_range, C)))
-			visible_turfs += T
-
-		var/list/bbox = get_bbox_of_atoms(visible_turfs)
-		var/size_x = bbox[3] - bbox[1] + 1
-		var/size_y = bbox[4] - bbox[2] + 1
-
-		cam_screen.vis_contents = visible_turfs
-		cam_background.icon_state = "clear"
-		cam_background.fill_rect(1, 1, size_x, size_y)
+		update_active_camera_screen()
 
 		return TRUE
 
@@ -168,29 +202,120 @@
 		playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)
 		use_power(0)
 
+/obj/machinery/computer/security/proc/update_active_camera_screen()
+	if(istype(active_camera, /obj/machinery/camera))
+		var/obj/machinery/camera/active_camera_S = active_camera
+
+		// Show static if can't use the camera
+		if(!active_camera_S?.can_use())
+			show_camera_static()
+			return TRUE
+
+		var/list/visible_turfs = list()
+		for(var/turf/T in (active_camera_S.isXRay() \
+				? range(active_camera_S.view_range, active_camera_S) \
+				: view(active_camera_S.view_range, active_camera_S)))
+			visible_turfs += T
+
+		var/list/bbox = get_bbox_of_atoms(visible_turfs)
+		var/size_x = bbox[3] - bbox[1] + 1
+		var/size_y = bbox[4] - bbox[2] + 1
+
+		cam_screen.vis_contents = visible_turfs
+		cam_background.icon_state = "clear"
+		cam_background.fill_rect(1, 1, size_x, size_y)
+
+	if(istype(active_camera, /obj/item/bodycamera))
+		var/obj/item/bodycamera/active_camera_B = active_camera
+
+		// Show static if can't use the camera
+		if(!active_camera_B?.can_use())
+			show_camera_static()
+			return TRUE
+
+		var/list/visible_turfs = list()
+
+		if(!active_camera_B.loc)
+			return
+
+		// Derived from https://github.com/tgstation/tgstation/pull/52767
+		// Is this camera located in or attached to a living thing? If so, assume the camera's loc is the living thing.
+		var/cam_location = active_camera_B.loc
+
+		// Is the camera in the following items? If so, let it transmit an image as normal
+		if((istype(cam_location, /obj/item/clothing/suit)) || (istype(cam_location, /obj/item/clothing/head/helmet)) || istype(cam_location, /obj/item/storage/belt))
+			cam_location = active_camera_B.loc.loc
+
+		// If we're not forcing an update for some reason and the cameras are in the same location,
+		// we don't need to update anything.
+		// Most security cameras will end here as they're not moving.
+		if(istype(active_camera, /obj/machinery/camera))
+			return
+
+		// Cameras that get here are moving, and are likely attached to some moving atom such as cyborgs.
+		last_camera_turf = get_turf(cam_location)
+
+		var/list/visible_things =  view(active_camera_B.view_range, cam_location)
+
+		for(var/turf/visible_turf in visible_things)
+			visible_turfs += visible_turf
+
+		var/list/bbox = get_bbox_of_atoms(visible_turfs)
+		var/size_x = bbox[3] - bbox[1] + 1
+		var/size_y = bbox[4] - bbox[2] + 1
+
+		cam_screen.vis_contents = visible_turfs
+		cam_background.icon_state = "clear"
+		cam_background.fill_rect(1, 1, size_x, size_y)
+
 /obj/machinery/computer/security/proc/show_camera_static()
 	cam_screen.vis_contents.Cut()
 	cam_background.icon_state = "scanline2"
 	cam_background.fill_rect(1, 1, default_map_size, default_map_size)
 
-// Returns the list of cameras accessible from this computer
 /obj/machinery/computer/security/proc/get_available_cameras()
 	var/list/L = list()
-	for (var/obj/machinery/camera/C in GLOB.cameranet.cameras)
-		if((is_away_level(src) || is_away_level(C)) && (C.virtual_z() != virtual_z()))//if on away mission, can only receive feed from same z_level cameras
-			continue
+	for (var/obj/C in GLOB.cameranet.cameras)
+		if(istype(C, /obj/machinery/camera))
+			var/obj/machinery/camera/cam = C
+			if(cam.virtual_z() != virtual_z())
+				if(cam.can_transmit_across_z_levels)
+					//let them transmit
+				else
+					continue
+		else if(istype(C, /obj/item/bodycamera))
+			var/obj/item/bodycamera/cam = C
+			if((cam.virtual_z() != virtual_z()) || (cam.can_transmit_across_z_levels))//if on away mission, can only receive feed from same z_level cameras
+				if(cam.can_transmit_across_z_levels)
+					//let them transmit
+				else
+					continue
 		L.Add(C)
 	var/list/D = list()
-	for(var/obj/machinery/camera/C in L)
-		if(!C.network)
-			stack_trace("Camera in a cameranet has no camera network")
-			continue
-		if(!(islist(C.network)))
-			stack_trace("Camera in a cameranet has a non-list camera network")
-			continue
-		var/list/tempnetwork = C.network & network
-		if(tempnetwork.len)
-			D["[C.c_tag]"] = C
+	for(var/obj/C in L)
+		if(istype(C, /obj/machinery/camera))
+			var/obj/machinery/camera/cam = C
+			if(!cam.network)
+				stack_trace("Camera in a cameranet has no camera network")
+				continue
+			if(!(islist(cam.network)))
+				stack_trace("Camera in a cameranet has a non-list camera network")
+				continue
+			var/list/tempnetwork = cam.network & network
+			if(tempnetwork.len)
+				D["[cam.c_tag]"] = C
+
+		else if(istype(C, /obj/item/bodycamera))
+			var/obj/item/bodycamera/cam = C
+			if(!cam.network)
+				stack_trace("Camera in a cameranet has no camera network")
+				continue
+			if(!(islist(cam.network)))
+				stack_trace("Camera in a cameranet has a non-list camera network")
+				continue
+			var/list/tempnetwork = cam.network & network
+			if(tempnetwork.len)
+				D["[cam.c_tag]"] = cam
 	return D
 
 // SECURITY MONITORS

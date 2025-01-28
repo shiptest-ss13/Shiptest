@@ -39,6 +39,15 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/bodycamera
+	name = "Body Camera Crate"
+	desc = "Contains two portable cameras, designed to help keep track of a working group at all times."
+	cost = 250
+	contains = list(/obj/item/bodycamera,
+					/obj/item/bodycamera,
+					/obj/item/paper/guides/bodycam)
+	crate_name = "bodycamera crate"
+
 /datum/supply_pack/tools/assbelt
 	name = "Assault Belt"
 	desc = "Contains an assault belt, with not one, not two, but six pockets."

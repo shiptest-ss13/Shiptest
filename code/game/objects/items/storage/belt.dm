@@ -82,7 +82,8 @@
 		/obj/item/clothing/glasses/welding, //WS edit: ok mald sure I'll add the welding stuff to the. ok.
 		/obj/item/clothing/mask/gas/welding,
 		/obj/item/clothing/head/welding, //WS end
-		/obj/item/gun/energy/plasmacutter
+		/obj/item/gun/energy/plasmacutter,
+		/obj/item/bodycamera
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -225,7 +226,8 @@
 		/obj/item/construction/plumbing,
 		/obj/item/plunger,
 		/obj/item/reagent_containers/spray,
-		/obj/item/shears
+		/obj/item/shears,
+		/obj/item/bodycamera
 		))
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()
@@ -319,6 +321,7 @@
 		/obj/item/holosign_creator/security,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box/magazine/ammo_stack, //handfuls of bullets
+		/obj/item/bodycamera,
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()
@@ -404,7 +407,8 @@
 		/obj/item/storage/bag/plants,
 		/obj/item/stack/marker_beacon,
 		/obj/item/restraints/legcuffs/bola/watcher,
-		/obj/item/melee/sword/bone
+		/obj/item/melee/sword/bone,
+		/obj/item/bodycamera,
 		))
 
 
