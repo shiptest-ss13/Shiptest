@@ -152,12 +152,12 @@
 	. /= 10 //they're in deciseconds
 	return "[add_leading(num2text((. / 60) % 60), 2, "0")]:[add_leading(num2text(. % 60), 2, "0")]"
 
-/datum/overmap/ship/process(delta_time)
+/datum/overmap/ship/process(seconds_per_tick)
 	if((burn_direction == BURN_STOP && is_still()) || docked_to || docking)
 		change_heading(BURN_NONE)
 		return
 
-	var/added_velocity = calculate_burn(burn_direction, burn_engines(burn_percentage, delta_time))
+	var/added_velocity = calculate_burn(burn_direction, burn_engines(burn_percentage, seconds_per_tick))
 
 	//Slows down the ship just enough to come to a full stop
 	if(burn_direction == BURN_STOP)

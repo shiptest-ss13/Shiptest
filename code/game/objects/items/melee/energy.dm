@@ -185,7 +185,7 @@
 		sword_color = set_color
 		set_light_color(possible_colors[set_color])
 
-/obj/item/melee/energy/sword/saber/process()
+/obj/item/melee/energy/sword/saber/process(seconds_per_tick)
 	. = ..()
 	if(hacked)
 		var/set_color = pick(possible_colors)

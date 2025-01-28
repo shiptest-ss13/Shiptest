@@ -34,7 +34,7 @@
 	target = null
 	return ..()
 
-/datum/forced_movement/process()
+/datum/forced_movement/process(seconds_per_tick)
 	if(QDELETED(victim) || !victim.loc || QDELETED(target) || !target.loc)
 		qdel(src)
 		return

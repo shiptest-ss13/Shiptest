@@ -57,12 +57,12 @@
 /datum/ai_behavior/monkey_equip/ground
 	required_distance = 0
 
-/datum/ai_behavior/monkey_equip/ground/perform(delta_time, datum/ai_controller/controller)
+/datum/ai_behavior/monkey_equip/ground/perform(seconds_per_tick, datum/ai_controller/controller)
 	equip_item(controller)
 
 /datum/ai_behavior/monkey_equip/pickpocket
 
-/datum/ai_behavior/monkey_equip/pickpocket/perform(delta_time, datum/ai_controller/controller)
+/datum/ai_behavior/monkey_equip/pickpocket/perform(seconds_per_tick, datum/ai_controller/controller)
 
 	if(controller.blackboard[BB_MONKEY_PICKPOCKETING]) //We are pickpocketing, don't do ANYTHING!!!!
 		return
@@ -103,7 +103,7 @@
 
 /datum/ai_behavior/monkey_flee
 
-/datum/ai_behavior/monkey_flee/perform(delta_time, datum/ai_controller/controller)
+/datum/ai_behavior/monkey_flee/perform(seconds_per_tick, datum/ai_controller/controller)
 	. = ..()
 
 	var/mob/living/living_pawn = controller.pawn
@@ -127,7 +127,7 @@
 /datum/ai_behavior/monkey_attack_mob
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM //performs to increase frustration
 
-/datum/ai_behavior/monkey_attack_mob/perform(delta_time, datum/ai_controller/controller)
+/datum/ai_behavior/monkey_attack_mob/perform(seconds_per_tick, datum/ai_controller/controller)
 	. = ..()
 
 	var/mob/living/target = controller.blackboard[BB_MONKEY_CURRENT_ATTACK_TARGET]
@@ -145,12 +145,12 @@
 				break
 
 		// if the target has a weapon, chance to disarm them
-		if(W && DT_PROB(MONKEY_ATTACK_DISARM_PROB, delta_time))
+		if(W && SPT_PROB(MONKEY_ATTACK_DISARM_PROB, seconds_per_tick))
 			living_pawn.a_intent = INTENT_DISARM
-			monkey_attack(controller, target, delta_time)
+			monkey_attack(controller, target, seconds_per_tick)
 		else
 			living_pawn.a_intent = INTENT_HARM
-			monkey_attack(controller, target, delta_time)
+			monkey_attack(controller, target, seconds_per_tick)
 
 
 /datum/ai_behavior/monkey_attack_mob/finish_action(datum/ai_controller/controller, succeeded)
@@ -158,7 +158,7 @@
 	controller.blackboard[BB_MONKEY_CURRENT_ATTACK_TARGET] = null
 
 /// attack using a held weapon otherwise bite the enemy, then if we are angry there is a chance we might calm down a little
-/datum/ai_behavior/monkey_attack_mob/proc/monkey_attack(datum/ai_controller/controller, mob/living/target, delta_time)
+/datum/ai_behavior/monkey_attack_mob/proc/monkey_attack(datum/ai_controller/controller, mob/living/target, seconds_per_tick)
 	var/mob/living/living_pawn = controller.pawn
 
 	if(living_pawn.next_move > world.time)
@@ -203,7 +203,7 @@
 	if(controller.blackboard[BB_MONKEY_AGRESSIVE])
 		return
 
-	if(DT_PROB(MONKEY_HATRED_REDUCTION_PROB, delta_time))
+	if(SPT_PROB(MONKEY_HATRED_REDUCTION_PROB, seconds_per_tick))
 		controller.blackboard[BB_MONKEY_ENEMIES][target]--
 
 	// if we are not angry at our target, go back to idle
@@ -222,7 +222,7 @@
 	controller.blackboard[BB_MONKEY_DISPOSING] = FALSE //No longer disposing
 	controller.blackboard[BB_MONKEY_TARGET_DISPOSAL] = null //No target disposal
 
-/datum/ai_behavior/disposal_mob/perform(delta_time, datum/ai_controller/controller)
+/datum/ai_behavior/disposal_mob/perform(seconds_per_tick, datum/ai_controller/controller)
 	. = ..()
 
 	if(controller.blackboard[BB_MONKEY_DISPOSING]) //We are disposing, don't do ANYTHING!!!!
@@ -259,7 +259,7 @@
 	finish_action(controller, TRUE)
 
 
-/datum/ai_behavior/recruit_monkeys/perform(delta_time, datum/ai_controller/controller)
+/datum/ai_behavior/recruit_monkeys/perform(seconds_per_tick, datum/ai_controller/controller)
 	. = ..()
 
 	controller.blackboard[BB_MONKEY_RECRUIT_COOLDOWN] = world.time + MONKEY_RECRUIT_COOLDOWN
@@ -269,7 +269,7 @@
 		if(!HAS_AI_CONTROLLER_TYPE(L, /datum/ai_controller/monkey))
 			continue
 
-		if(!DT_PROB(MONKEY_RECRUIT_PROB, delta_time))
+		if(!SPT_PROB(MONKEY_RECRUIT_PROB, seconds_per_tick))
 			continue
 		var/datum/ai_controller/monkey/monkey_ai = L.ai_controller
 		var/atom/your_enemy = controller.blackboard[BB_MONKEY_CURRENT_ATTACK_TARGET]

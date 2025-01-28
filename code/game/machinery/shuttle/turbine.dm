@@ -155,10 +155,10 @@
 	. = ..()
 	locate_machinery()
 
-/obj/machinery/power/compressor/process(delta_time)
+/obj/machinery/power/compressor/process(seconds_per_tick)
 	return
 
-/obj/machinery/power/compressor/process_atmos(delta_time)
+/obj/machinery/power/compressor/process_atmos(seconds_per_tick)
 	// RPM function to include compression friction - be advised that too low/high of a compfriction value can make things screwy
 	rpm -= 1
 	rpm = (0.9 * rpm) + (0.1 * rpmtarget)
@@ -181,7 +181,7 @@
 
 	// Equalize the gas between the environment and the internal gas mix
 	if(pressure_delta > 0)
-		var/datum/gas_mixture/removed = environment.remove_ratio((1 - ((1 - intake_ratio)**delta_time)) * pressure_delta / (external_pressure * 2)) // silly math to keep it consistent with delta_time
+		var/datum/gas_mixture/removed = environment.remove_ratio((1 - ((1 - intake_ratio)**seconds_per_tick)) * pressure_delta / (external_pressure * 2)) // silly math to keep it consistent with seconds_per_tick
 		gas_contained.merge(removed)
 		inturf.air_update_turf()
 
@@ -239,11 +239,11 @@
 		compressor = null
 		obj_break()
 
-/obj/machinery/power/shuttle/engine/turbine/process(delta_time)
+/obj/machinery/power/shuttle/engine/turbine/process(seconds_per_tick)
 	add_avail(lastgen) // add power in process() so it doesn't update power output separately from the rest of the powernet (bad)
 	update_overlays()
 
-/obj/machinery/power/shuttle/engine/turbine/process_atmos(delta_time)
+/obj/machinery/power/shuttle/engine/turbine/process_atmos(seconds_per_tick)
 	if(!compressor)
 		set_machine_stat(BROKEN)
 		locate_machinery() // try to find the missing piece

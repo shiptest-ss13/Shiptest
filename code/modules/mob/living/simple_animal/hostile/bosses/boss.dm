@@ -115,7 +115,7 @@
 	points = min(points+cost, 100)
 
 
-/datum/boss_active_timed_battle/process()
+/datum/boss_active_timed_battle/process(seconds_per_tick)
 	if(world.time >= next_point_time)
 		next_point_time = world.time + point_regen_delay
 		points = min(100, ++points) //has to be out of 100

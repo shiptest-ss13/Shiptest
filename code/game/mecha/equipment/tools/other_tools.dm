@@ -251,7 +251,7 @@
 		send_byjax(chassis.occupant,"exosuit.browser","[REF(src)]",src.get_equip_info())
 
 
-/obj/item/mecha_parts/mecha_equipment/repair_droid/process()
+/obj/item/mecha_parts/mecha_equipment/repair_droid/process(seconds_per_tick)
 	if(!chassis)
 		STOP_PROCESSING(SSobj, src)
 		set_ready_state(1)
@@ -340,7 +340,7 @@
 	return "<span style=\"color:[equip_ready?"#0f0":"#f00"];\">*</span>&nbsp; [src.name] - <a href='?src=[REF(src)];toggle_relay=1'>[equip_ready?"A":"Dea"]ctivate</a>"
 
 
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay/process()
+/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay/process(seconds_per_tick)
 	if(!chassis || chassis.internal_damage & MECHA_INT_SHORT_CIRCUIT)
 		STOP_PROCESSING(SSobj, src)
 		set_ready_state(1)
@@ -439,7 +439,7 @@
 /obj/item/mecha_parts/mecha_equipment/generator/attackby(weapon,mob/user, params)
 	load_fuel(weapon)
 
-/obj/item/mecha_parts/mecha_equipment/generator/process()
+/obj/item/mecha_parts/mecha_equipment/generator/process(seconds_per_tick)
 	if(!chassis)
 		STOP_PROCESSING(SSobj, src)
 		set_ready_state(1)
@@ -478,7 +478,7 @@
 /obj/item/mecha_parts/mecha_equipment/generator/nuclear/generator_init()
 	fuel = new /obj/item/stack/sheet/mineral/uranium(src, 0)
 
-/obj/item/mecha_parts/mecha_equipment/generator/nuclear/process()
+/obj/item/mecha_parts/mecha_equipment/generator/nuclear/process(seconds_per_tick)
 	if(..())
 		radiation_pulse(get_turf(src), rad_per_cycle)
 
