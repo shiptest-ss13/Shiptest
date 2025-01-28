@@ -210,6 +210,14 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered)
+"ea" = (
+/obj/structure/table/reinforced,
+/obj/item/table_bell{
+	pixel_x = -4;
+	pixel_y = 13
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/listening_post)
 "eN" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -410,6 +418,10 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
+	},
+/obj/item/stamp/cybersun{
+	pixel_x = -9;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -1109,16 +1121,14 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/listening_post)
 "te" = (
-/obj/item/gun/ballistic/automatic/smg/cobra{
-	default_ammo_type = 0
-	},
-/obj/item/ammo_box/magazine/m45_cobra{
-	start_empty = 1
-	},
-/obj/structure/guncloset,
+/obj/structure/closet/secure_closet/armorycage,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
+/obj/item/gun/ballistic/automatic/smg/sidewinder/no_mag{
+	pixel_x = -7
+	},
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "tf" = (
@@ -1673,6 +1683,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/item/desk_flag/trans{
+	pixel_y = 9;
+	pixel_x = -9
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "Ey" = (
@@ -2069,6 +2083,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
+/obj/item/gun/ballistic/automatic/pistol/himehabu,
+/obj/item/ammo_box/magazine/m22lr_himehabu,
+/obj/item/folder/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "NK" = (
@@ -2164,6 +2181,15 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
+/obj/structure/closet/secure_closet/armorycage{
+	anchored = 1;
+	can_be_unanchored = 1;
+	name = "ammunition locker"
+	},
+/obj/item/ammo_box/magazine/m57_39_sidewinder,
+/obj/item/ammo_box/magazine/m57_39_sidewinder,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "OW" = (
@@ -2337,11 +2363,11 @@
 /area/ruin/unpowered/listening_post)
 "TM" = (
 /obj/structure/closet/cabinet,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/gun/ballistic/automatic/pistol/ringneck,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/suit/cybersun_suit,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "TS" = (
@@ -3081,7 +3107,7 @@ hE
 Di
 OW
 mG
-mG
+ea
 EM
 RV
 KS
