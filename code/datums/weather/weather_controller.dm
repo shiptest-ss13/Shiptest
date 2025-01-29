@@ -51,7 +51,7 @@
 	if(current_weathers)
 		for(var/i in current_weathers)
 			var/datum/weather/W = current_weathers[i]
-			W.process()
+			W.process(seconds_per_tick)
 	if(possible_weathers && world.time > next_weather)
 		run_weather(next_weather_type)
 		roll_next_weather()

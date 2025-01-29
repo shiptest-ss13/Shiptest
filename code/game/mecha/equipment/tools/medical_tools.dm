@@ -528,7 +528,7 @@
 /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/process(seconds_per_tick)
 	if(..())
 		return
-	medigun.process()
+	medigun.process(seconds_per_tick)
 
 /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/action(atom/target)
 	medigun.process_fire(target, loc)
