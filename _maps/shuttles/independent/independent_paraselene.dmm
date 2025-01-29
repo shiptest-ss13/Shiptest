@@ -58,6 +58,7 @@
 /obj/item/reagent_containers/glass/bottle/vial/tiny{
 	pixel_x = -5
 	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "cE" = (
@@ -287,6 +288,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "fY" = (
@@ -349,20 +351,6 @@
 /obj/machinery/autolathe,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
-"gW" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/effect/mapping_helpers/crate_shelve,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/turf/open/floor/plating,
 /area/ship/cargo)
 "hc" = (
 /obj/machinery/door/firedoor/border_only{
@@ -641,6 +629,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/floor,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "mE" = (
@@ -663,10 +652,7 @@
 /area/ship/engineering)
 "mT" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
-/obj/machinery/atmospherics/components/binary/valve/on/layer4,
-/obj/effect/turf_decal/industrial/shutoff{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "nc" = (
@@ -1246,6 +1232,7 @@
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/suit/hooded/wintercoat,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "zF" = (
@@ -1474,7 +1461,6 @@
 "CO" = (
 /obj/structure/table/glass,
 /obj/machinery/computer/cryopod/directional/north,
-/obj/machinery/light/small/directional/east,
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = -7
 	},
@@ -1484,6 +1470,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "Dl" = (
@@ -2127,7 +2114,7 @@
 /area/ship/cargo)
 "MP" = (
 /obj/structure/bookcase/random/fiction,
-/obj/item/wallframe/painting{
+/obj/structure/sign/painting/library{
 	pixel_y = 32
 	},
 /turf/open/floor/wood/maple,
@@ -2766,7 +2753,7 @@
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
 "WM" = (
-/obj/machinery/light/small/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/ccommons)
 "WQ" = (
@@ -3187,7 +3174,7 @@ XO
 II
 by
 fp
-gW
+fa
 lH
 gQ
 IR
