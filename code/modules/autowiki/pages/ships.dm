@@ -12,8 +12,8 @@
 			continue
 
 		var/size = "Unknown"
-		var/longest_dimension = (ship.width * ship.height)
-		switch(longest_dimension)
+		var/ship_area = (ship.width * ship.height)
+		switch(ship_area)
 			if(0 to 749)
 				size = "Small"
 			if(750 to 1249)
