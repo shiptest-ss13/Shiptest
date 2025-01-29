@@ -2554,11 +2554,8 @@
 /obj/machinery/light/floor{
 	pixel_x = 15
 	},
-/obj/machinery/power/apc/auto_name/directional/west{
-	pixel_y = -1
-	},
 /obj/machinery/newscaster/directional/west{
-	pixel_y = 15
+	pixel_y = 16
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -2566,6 +2563,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 2
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Ud" = (
