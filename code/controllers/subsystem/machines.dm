@@ -47,7 +47,7 @@ SUBSYSTEM_DEF(machines)
 	while(currentrun.len)
 		var/obj/machinery/thing = currentrun[currentrun.len]
 		currentrun.len--
-		if(!QDELETED(thing) && thing.process(wait * 0.1) != PROCESS_KILL)
+		if(QDELETED(thing) || thing.process(wait * 0.1) == PROCESS_KILL)
 			processing -= thing
 			if (!QDELETED(thing))
 				thing.datum_flags &= ~DF_ISPROCESSING
