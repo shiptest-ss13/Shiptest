@@ -257,7 +257,7 @@
 
 /obj/item/food/cornedbeef
 	name = "corned beef and cabbage"
-	desc = "Now you can feel like a real tourist vacationing in Ireland."
+	desc = "A nice hearty meal."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "cornedbeef"
 	food_reagents = list(
