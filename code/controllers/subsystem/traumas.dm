@@ -137,7 +137,7 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/wirecutters/abductor, /obj/item/wrench/abductor, /obj/item/stack/sheet/mineral/abductor)),
 
 		"birds" = typecacheof(list(
-			/obj/item/clothing/mask/gas/plaguedoctor, /obj/item/reagent_containers/food/snacks/cracker,
+			/obj/item/clothing/mask/gas/plaguedoctor, /obj/item/food/cracker,
 			/obj/item/clothing/suit/toggle/owlwings, /obj/item/clothing/under/costume/owl, /obj/item/clothing/mask/gas/owl_mask)),
 
 		"anime" = typecacheof(list(

@@ -152,7 +152,7 @@ RSF
 	dispense_cost = 100
 	discriptor = "cookie-units"
 	action_type = "Fabricates"
-	to_dispense = /obj/item/reagent_containers/food/snacks/cookie
+	to_dispense = /obj/item/food/cookie
 	///Tracks whether or not the cookiesynth is about to print a poisoned cookie
 	var/toxin = FALSE //This might be better suited to some initialize fuckery, but I don't have a good "poisoned" sprite
 	///Holds a copy of world.time taken the last time the synth gained a charge. Used with cooldowndelay to track when the next charge should be gained
@@ -184,11 +184,11 @@ RSF
 		P = user
 	if(((obj_flags & EMAGGED) || (P && P.emagged)) && !toxin)
 		toxin = TRUE
-		to_dispense = /obj/item/reagent_containers/food/snacks/cookie/sleepy
+		to_dispense = /obj/item/food/cookie/sleepy
 		to_chat(user, "<span class='alert'>Cookie Synthesizer hacked.</span>")
 	else
 		toxin = FALSE
-		to_dispense = /obj/item/reagent_containers/food/snacks/cookie
+		to_dispense = /obj/item/food/cookie
 		to_chat(user, "<span class='notice'>Cookie Synthesizer reset.</span>")
 
 /obj/item/rsf/cookiesynth/process()

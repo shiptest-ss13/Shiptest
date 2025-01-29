@@ -1194,7 +1194,7 @@
 			return
 		//let's keep it simple
 		//milk to plasmemes and skeletons, meat to lizards, electricity bars to ethereals, cookies to everyone else
-		var/obj/item/reagent_containers/food/cookiealt = /obj/item/reagent_containers/food/snacks/cookie
+		var/obj/item/reagent_containers/food/cookiealt = /obj/item/food/cookie
 		if(isskeleton(H))
 			cookiealt = /obj/item/reagent_containers/condiment/milk
 		else if(isplasmaman(H))
