@@ -140,20 +140,6 @@
 	tastes = list("pure electricity" = 2, "meat" = 1)
 	foodtypes = RAW | MEAT | TOXIC | GORE
 
-/obj/item/food/meat/slab/human/mutant/apid
-	icon_state = "apidmeat"
-	desc = "Smells like flowers, hopefully doesn't taste like one."
-	tastes = list("honey" = 1, "flowers" = 1, "meat" = 2)
-	foodtypes = MEAT | RAW | GORE
-
-/obj/item/food/meat/slab/human/mutant/psyphoza
-	icon_state = "psyphoza_meat"
-	desc = "Psychically awaiting consumption, spooky."
-	food_reagents = list(/datum/reagent/drug/mushroomhallucinogen = 3)
-	tastes = list("pop candy" = 1, "meat" = 1)
-	foodtypes = VEGETABLES | RAW | GORE
-	microwaved_type = /obj/item/food/meat/steak/plain/human/psyphoza
-
 ////////////////////////////////////// OTHER MEATS ////////////////////////////////////////////////////////
 
 

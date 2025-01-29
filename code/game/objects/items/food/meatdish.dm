@@ -119,7 +119,7 @@
 	name = "fish fry"
 	desc = "All that and no bag of chips..."
 	icon = 'icons/obj/food/meat.dmi'
-	icon_state = "fishfry"
+	icon_state = "fish_fry"
 	food_reagents = list(
 	/datum/reagent/consumable/nutriment = 6,
 	/datum/reagent/consumable/nutriment/vitamin = 3
