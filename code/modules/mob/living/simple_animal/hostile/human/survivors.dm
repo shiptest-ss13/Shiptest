@@ -232,7 +232,7 @@
 				)
 			)
 			if(prob(30))
-				l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
+				l_pocket = /obj/item/food/meat/steak/goliath
 			if(prob(20))
 				r_pocket = /obj/item/spacecash/bundle/smallrand
 
@@ -256,7 +256,7 @@
 				)
 			)
 			if(prob(20))
-				l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
+				l_pocket = /obj/item/food/meat/steak/goliath
 			else if(prob(60))
 				l_pocket = /obj/item/ammo_box/a762_stripper
 			if(prob(20))

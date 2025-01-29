@@ -7,7 +7,7 @@
 	name = "Meat bread"
 	reqs = list(
 		/obj/item/food/bread/plain = 1,
-		/obj/item/reagent_containers/food/snacks/meat/cutlet/plain = 3,
+		/obj/item/food/meat/cutlet/plain = 3,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 3
 	)
 	result = /obj/item/food/bread/meat
@@ -17,7 +17,7 @@
 	name = "Xenomeat bread"
 	reqs = list(
 		/obj/item/food/bread/plain = 1,
-		/obj/item/reagent_containers/food/snacks/meat/cutlet/xeno = 3,
+		/obj/item/food/meat/cutlet/xeno = 3,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 3
 	)
 	result = /obj/item/food/bread/xenomeat
@@ -27,7 +27,7 @@
 	name = "Spidermeat bread"
 	reqs = list(
 		/obj/item/food/bread/plain = 1,
-		/obj/item/reagent_containers/food/snacks/meat/cutlet/spider = 3,
+		/obj/item/food/meat/cutlet/spider = 3,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 3
 	)
 	result = /obj/item/food/bread/spidermeat
@@ -48,7 +48,7 @@
 	name = "Tofu bread"
 	reqs = list(
 		/obj/item/food/bread/plain = 1,
-		/obj/item/reagent_containers/food/snacks/tofu = 3,
+		/obj/item/food/tofu = 3,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 3
 	)
 	result = /obj/item/food/bread/tofu

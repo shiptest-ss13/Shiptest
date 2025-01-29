@@ -493,10 +493,10 @@
 	icon_state = "nuggetbox"
 	base_icon_state = "nuggetbox"
 	contents_tag = "nugget"
-	spawn_type = /obj/item/reagent_containers/food/snacks/nugget
+	spawn_type = /obj/item/food/nugget
 
 /obj/item/storage/fancy/nugget_box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/nugget))
+	STR.set_holdable(list(/obj/item/food/nugget))

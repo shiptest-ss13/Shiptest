@@ -205,7 +205,7 @@
 		/obj/item/organ/brain = 1,
 		/obj/item/organ/heart = 1,
 		/obj/item/reagent_containers/food/snacks/butter = 10,
-		/obj/item/reagent_containers/food/snacks/meat/slab = 5,
+		/obj/item/food/meat/slab = 5,
 		/datum/reagent/blood = 50,
 		/datum/reagent/teslium = 1 //To shock the whole thing into life
 	)
@@ -218,7 +218,7 @@
 		/obj/item/food/doughslice = 1,
 		/datum/reagent/consumable/cream = 5,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/meat/rawcrab = 1
+		/obj/item/food/meat/rawcrab = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/crab_rangoon
 	subcategory = CAT_MISCFOOD
@@ -252,7 +252,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
 		/obj/item/reagent_containers/food/snacks/grown/potato = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/vegetariansushiroll
+	result = /obj/item/food/vegetariansushiroll
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/onigiri
@@ -261,5 +261,5 @@
 		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/onigiri
+	result = /obj/item/food/onigiri
 	subcategory = CAT_MISCFOOD

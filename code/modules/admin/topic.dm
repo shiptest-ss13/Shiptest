@@ -1203,7 +1203,7 @@
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
 		// WS - More fun with cookies - Start
 		else if(islizard(H))
-			cookiealt = /obj/item/reagent_containers/food/snacks/nugget
+			cookiealt = /obj/item/food/nugget
 		if(H.recieve_gift(cookiealt))
 			log_admin("[key_name(H)] got their [cookiealt], spawned by [key_name(src.owner)].")
 			message_admins("[key_name(H)] got their [cookiealt], spawned by [key_name(src.owner)].")

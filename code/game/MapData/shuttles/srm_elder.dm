@@ -106,7 +106,7 @@
 		/obj/item/reagent_containers/glass/bowl/mushroom_bowl = 1,
 		/obj/item/pestle = 1,
 		/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3,
+		/obj/item/food/meat/slab/bear = 3,
 		/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf = 3,
 	)
 	generate_items_inside(items_inside, src)

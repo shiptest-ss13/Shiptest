@@ -17,7 +17,7 @@
 	speak_chance = 1
 	turns_per_move = 10
 	icon = 'icons/mob/penguins.dmi'
-	butcher_results = list(/obj/item/organ/ears/penguin = 1, /obj/item/reagent_containers/food/snacks/meat/slab/penguin = 3)
+	butcher_results = list(/obj/item/organ/ears/penguin = 1, /obj/item/food/meat/slab/penguin = 3)
 
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
@@ -32,7 +32,7 @@
 	icon_state = "penguin"
 	icon_living = "penguin"
 	icon_dead = "penguin_dead"
-	butcher_results = list(/obj/item/organ/ears/penguin = 1, /obj/item/reagent_containers/food/snacks/meat/slab/penguin = 3)
+	butcher_results = list(/obj/item/organ/ears/penguin = 1, /obj/item/food/meat/slab/penguin = 3)
 
 /mob/living/simple_animal/pet/penguin/baby
 	speak = list("gah", "noot noot", "noot!", "noot", "squeee!", "noo!")
@@ -45,4 +45,4 @@
 	density = FALSE
 	pass_flags = PASSMOB
 	mob_size = MOB_SIZE_SMALL
-	butcher_results = list(/obj/item/organ/ears/penguin = 1, /obj/item/reagent_containers/food/snacks/meat/slab/penguin = 1)
+	butcher_results = list(/obj/item/organ/ears/penguin = 1, /obj/item/food/meat/slab/penguin = 1)

@@ -81,7 +81,7 @@ SUBSYSTEM_DEF(traumas)
 
 		"skeletons" = typecacheof(list(
 			/obj/item/organ/tongue/bone, /obj/item/clothing/suit/armor/bone, /obj/item/stack/sheet/bone,
-			/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton,
+			/obj/item/food/meat/slab/human/mutant/skeleton,
 			/obj/effect/decal/remains/human)),
 
 		"conspiracies" = typecacheof(list(
@@ -141,7 +141,7 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/clothing/suit/toggle/owlwings, /obj/item/clothing/under/costume/owl, /obj/item/clothing/mask/gas/owl_mask)),
 
 		"anime" = typecacheof(list(
-			/obj/item/clothing/under/costume/schoolgirl, /obj/item/reagent_containers/food/snacks/sashimi,
+			/obj/item/clothing/under/costume/schoolgirl, /obj/item/food/sashimi,
 			/obj/item/reagent_containers/food/snacks/chawanmushi,
 			/obj/item/reagent_containers/food/drinks/bottle/sake, /obj/item/throwing_star,
 			/obj/item/clothing/suit/space/space_ninja,

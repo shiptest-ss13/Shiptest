@@ -72,8 +72,8 @@
 					/obj/item/reagent_containers/condiment/soymilk,
 					/obj/item/reagent_containers/condiment/sugar,
 					/obj/item/storage/fancy/egg_box,
-					/obj/item/reagent_containers/food/snacks/meat/slab,
-					/obj/item/reagent_containers/food/snacks/meat/slab,
+					/obj/item/food/meat/slab,
+					/obj/item/food/meat/slab,
 					/obj/item/reagent_containers/condiment/enzyme)
 	crate_name = "food crate"
 	crate_type = /obj/structure/closet/crate/freezer
@@ -96,15 +96,15 @@
 	name = "Exotic Meat Crate"
 	desc = "The best cuts in the whole sector. Probably."
 	cost = 500
-	contains = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime,
-					/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
-					/obj/item/reagent_containers/food/snacks/meat/slab/bear,
-					/obj/item/reagent_containers/food/snacks/meat/slab/xeno,
-					/obj/item/reagent_containers/food/snacks/meat/slab/spider,
-					/obj/item/reagent_containers/food/snacks/meat/slab/penguin,
-					/obj/item/reagent_containers/food/snacks/spiderleg,
-					/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-					/obj/item/reagent_containers/food/snacks/meat/slab/human
+	contains = list(/obj/item/food/meat/slab/human/mutant/slime,
+					/obj/item/food/meat/slab/killertomato,
+					/obj/item/food/meat/slab/bear,
+					/obj/item/food/meat/slab/xeno,
+					/obj/item/food/meat/slab/spider,
+					/obj/item/food/meat/slab/penguin,
+					/obj/item/food/spiderleg,
+					/obj/item/food/fishmeat/carp,
+					/obj/item/food/meat/slab/human
 	)
 	crate_name = "meat crate"
 	crate_type = /obj/structure/closet/crate/freezer
@@ -119,11 +119,11 @@
 	name = "Standard Meat Crate"
 	desc = "Less interesting, yet filling cuts of meat."
 	cost = 300
-	contains = list(/obj/item/reagent_containers/food/snacks/meat/slab,
-					/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
-					/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
-					/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-					/obj/item/reagent_containers/food/snacks/meatball
+	contains = list(/obj/item/food/meat/slab,
+					/obj/item/food/meat/slab/chicken,
+					/obj/item/food/meat/slab/synthmeat,
+					/obj/item/food/meat/rawbacon,
+					/obj/item/food/meatball
 	)
 	crate_name = "meat crate"
 	crate_type = /obj/structure/closet/crate/freezer
