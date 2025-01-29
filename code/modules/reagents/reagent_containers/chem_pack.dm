@@ -41,5 +41,5 @@
 /obj/item/reagent_containers/chem_pack/dimorlin
 	name = "dimorlin mixture bag"
 	desc = "A plastic pressure bag filled with a semi-safe mixture of Dimorlin and Saline-Glucose, for surgical usage."
-	list_reagents = list(/datum/reagent/drug/dimorlin = 20, /datum/reagent/medicine/salglu_solution = 80)
+	list_reagents = list(/datum/reagent/medicine/dimorlin = 20, /datum/reagent/medicine/salglu_solution = 80)
 	sealed = TRUE
