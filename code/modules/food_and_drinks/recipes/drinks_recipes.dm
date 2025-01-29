@@ -637,6 +637,18 @@
 	required_container = /obj/structure/fermenting_barrel/distiller
 	mix_sound ='sound/items/welder.ogg'
 
+/datum/chemical_reaction/force_wine
+	results = list(/datum/reagent/consumable/ethanol/trickwine/force_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/tequila = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/comet_trail = 1)
+	required_container = /obj/structure/fermenting_barrel/distiller
+	mix_sound ='sound/magic/forcewall.ogg'
+
+/datum/chemical_reaction/prism_wine
+	results = list(/datum/reagent/consumable/ethanol/trickwine/prism_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/gin = 3, /datum/reagent/toxin/plasma = 1, /datum/reagent/consumable/tinlux = 1)
+	required_container = /obj/structure/fermenting_barrel/distiller
+	mix_sound ='sound/weapons/laser.ogg'
+
 /datum/chemical_reaction/molten_bubbles
 	results = list(/datum/reagent/consumable/molten = 30)
 	required_reagents = list(/datum/reagent/clf3 = 10, /datum/reagent/consumable/space_cola = 20, /datum/reagent/medicine/leporazine = 1, /datum/reagent/medicine/lavaland_extract = 1)

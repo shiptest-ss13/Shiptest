@@ -484,7 +484,7 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 
 /obj/item/gun/ballistic/shotgun/hellfire
 	name = "HP Hellfire"
-	desc = "A hefty pump-action riot shotgun with a seven-round tube, manufactured by Hunter's Pride. Especially popular among the Frontier's police forces. Chambered in 12g."
+	desc = "A hefty pump-action riot shotgun with an eight-round tube, manufactured by Hunter's Pride. Especially popular among the Frontier's police forces. Chambered in 12g."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -505,7 +505,7 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
-		tube.max_ammo = 5 //this makes the gun so much worse
+		tube.max_ammo = 5 //this makes it so much worse
 
 		weapon_weight = WEAPON_MEDIUM
 		wield_slowdown = wield_slowdown-0.1

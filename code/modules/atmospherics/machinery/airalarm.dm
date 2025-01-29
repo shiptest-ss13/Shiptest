@@ -264,6 +264,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		if(2)
 			. += "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"] the interface.</span>"
 
+/obj/machinery/airalarm/examine_more(mob/user)
+	. = ..()
+	if(buildstage == 2)
+		ui_interact(user)
+
+
 /obj/machinery/airalarm/ui_status(mob/user)
 	if(user.has_unlimited_silicon_privilege && aidisabled)
 		to_chat(user, "AI control has been disabled.")
@@ -277,10 +283,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 	if(!ui)
 		ui = new(user, src, "AirAlarm", name)
 		ui.open()
-
-/obj/machinery/airalarm/examine_more(mob/user)
-	ui_interact(user)
-	return ..()
 
 /obj/machinery/airalarm/ui_data(mob/user)
 	var/data = list(

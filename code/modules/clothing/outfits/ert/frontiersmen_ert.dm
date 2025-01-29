@@ -186,7 +186,7 @@
 	back = /obj/item/storage/backpack/satchel/leather
 	suit = /obj/item/clothing/suit/armor/frontier
 	suit_store = null
-	belt = /obj/item/gun/ballistic/automatic/pistol/deagle
+	belt = /obj/item/gun/ballistic/automatic/pistol/mauler
 
 	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/ammo_box/magazine/m50=2, /obj/item/binoculars=1, /obj/item/melee/knife/survival)
 
@@ -196,8 +196,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
 	mask = /obj/item/clothing/mask/breath
-	belt = /obj/item/gun/ballistic/automatic/pistol/deagle/gold // daring today aren't we
-
+	belt = /obj/item/gun/ballistic/automatic/pistol/mauler
 	backpack = /obj/item/minigunpack
 	satchel = /obj/item/minigunpack
 	courierbag = /obj/item/minigunpack

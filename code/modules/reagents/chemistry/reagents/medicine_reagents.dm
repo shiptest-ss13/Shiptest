@@ -57,7 +57,7 @@
 	M.stuttering = 0
 	M.slurring = 0
 	M.confused = 0
-	M.SetSleeping(0)
+	M.set_sleeping(0)
 	M.jitteriness = 0
 	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
 		M.blood_volume = BLOOD_VOLUME_NORMAL
