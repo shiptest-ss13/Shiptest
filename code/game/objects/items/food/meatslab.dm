@@ -523,12 +523,6 @@
 	tastes = list("juicy chicken" = 3, "scales" = 1)
 	foodtypes = MEAT
 
-/obj/item/food/meat/steak/plain/human/psyphoza
-	name = "psyphoza steak"
-	icon_state = "psyphoza_meat_cooked"
-	tastes = list("dirt" = 3, "wood" = 1)
-	foodtypes = VEGETABLES
-
 /obj/item/food/meat/steak/meatproduct
 	name = "thermally processed meat product"
 	//icon_state = "meatproductsteak"
