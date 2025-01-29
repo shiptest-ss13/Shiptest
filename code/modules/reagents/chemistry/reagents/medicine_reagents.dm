@@ -853,7 +853,7 @@
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_light, name)
 	switch(current_cycle)
 		if(60)
-			to_chat(M, "<span class='warning'>You feel drowsy...</span>" )
+			to_chat(M, span_warning("You feel drowsy..."))
 		if(61 to INFINITY)
 			M.drowsyness += 1
 	..()

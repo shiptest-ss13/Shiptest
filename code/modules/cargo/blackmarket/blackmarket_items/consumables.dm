@@ -300,5 +300,15 @@
 	price_min = 600
 	price_max = 1000
 	stock_max = 4
-	availability_prob = 30
+	availability_prob = 40
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/shoalmix
+	name = "Shoaljuice Vial"
+	desc = "Our guy in back has been working on whipping up some pretty mean syrums. Says that this one is a blend he learned from a Vox. Says that it'll get the heart going on anyone."
+	item = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/combat_drug
+	price_min = 1000
+	price_max = 2000
+	stock_max = 3
+	availability_prob = 10
 	spawn_weighting = FALSE

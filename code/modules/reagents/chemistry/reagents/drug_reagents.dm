@@ -523,7 +523,8 @@
 	L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shoalmix)
 	if(!isvox(L))
-		L.adjustOrganLoss(ORGAN_SLOT_HEART, 15)
+		M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+		M.adjustOrganLoss(ORGAN_SLOT_HEART, 6)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.do_after_speed += 1
@@ -545,7 +546,7 @@
 	M.adjustStaminaLoss(-18, 0)
 	if(prob(30) && !isvox(M))
 		M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
-		M.adjustOrganLoss(ORGAN_SLOT_HEART, 1)
+		M.adjustOrganLoss(ORGAN_SLOT_HEART, 3)
 	if(prob(20))
 		to_chat(M, span_boldwarning("MOVE!! MOVE!! MOVE!!"))
 

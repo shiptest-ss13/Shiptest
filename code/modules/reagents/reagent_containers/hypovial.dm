@@ -168,6 +168,12 @@
 	amount_per_transfer_from_this = 5
 	comes_with = list(/datum/reagent/medicine/chitosan = 60)
 
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/combat_drug
+	name = "hypovial (shoal juice)"
+	icon_state = "hypovial-b"
+	amount_per_transfer_from_this = 10
+	comes_with = list(/datum/reagent/drug/shoalmix = 20, /datum/reagent/medicine/bicaridinep = 10, /datum/reagent/medicine/dermaline = 10, /datum/reagent/medicine/synaptizine = 20)
+
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/CMO
 	name = "deluxe hypovial"
 	icon_state = "hypoviallarge-cmos"
