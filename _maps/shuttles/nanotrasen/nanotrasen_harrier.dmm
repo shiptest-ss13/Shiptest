@@ -1229,10 +1229,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage/eva)
 "gq" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = 12
-	},
+/obj/machinery/vending/wardrobe/chef_wardrobe,
 /turf/open/floor/holofloor/wood,
 /area/ship/crew/canteen)
 "gA" = (
@@ -1522,6 +1519,11 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm)
+"hJ" = (
+/obj/structure/table/reinforced,
+/obj/machinery/chem_dispenser/drinks,
+/turf/open/floor/holofloor/wood,
+/area/ship/crew/canteen)
 "hL" = (
 /obj/structure/chair{
 	dir = 1
@@ -1632,7 +1634,7 @@
 /obj/item/reagent_containers/food/snacks/ration/side/crackers,
 /obj/item/reagent_containers/food/snacks/ration/side/crackers,
 /obj/item/reagent_containers/food/snacks/ration/side/crackers,
-/turf/open/floor/plasteel/freezer,
+/turf/open/floor/holofloor/wood,
 /area/ship/crew/canteen)
 "iz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2036,6 +2038,7 @@
 	pixel_x = -5;
 	pixel_y = 0
 	},
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ky" = (
@@ -2497,6 +2500,12 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"nu" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/comfy/grey,
+/turf/open/floor/holofloor/wood,
+/area/ship/crew/canteen)
 "nv" = (
 /obj/machinery/deepfryer,
 /obj/effect/turf_decal/corner/opaque/white{
@@ -2794,8 +2803,7 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
-/obj/machinery/chem_dispenser/drinks/beer,
-/obj/structure/table,
+/obj/machinery/gibber,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "qf" = (
@@ -2884,6 +2892,7 @@
 	pixel_x = 5
 	},
 /obj/structure/table,
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "qx" = (
@@ -3043,18 +3052,20 @@
 /turf/open/floor/plasteel,
 /area/ship/storage/eva)
 "rr" = (
-/obj/machinery/door/window/southright{
-	dir = 8;
-	name = "Freezer";
-	req_access_txt = "28"
-	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/item/storage/backpack/messenger,
 /obj/item/clothing/suit/apron/chef,
 /obj/item/clothing/head/chefhat,
 /obj/item/clothing/under/rank/civilian/chef,
 /obj/item/clothing/shoes/sneakers/black,
-/turf/open/floor/plasteel/freezer,
+/obj/structure/closet/wall/directional/north,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding,
+/turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ru" = (
 /obj/structure/cable/yellow{
@@ -3261,6 +3272,11 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/dormtwo)
+"sz" = (
+/obj/structure/table/reinforced,
+/obj/machinery/chem_dispenser/drinks/beer,
+/turf/open/floor/holofloor/wood,
+/area/ship/crew/canteen)
 "sD" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -3456,7 +3472,18 @@
 /mob/living/simple_animal/mouse/brown/Tom{
 	dir = 8
 	},
-/turf/open/floor/plasteel/freezer,
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = 12
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding,
+/turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "tQ" = (
 /obj/machinery/igniter{
@@ -3762,12 +3789,6 @@
 /turf/open/floor/carpet/cyan,
 /area/ship/medical)
 "uI" = (
-/obj/effect/turf_decal/siding{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/structure/closet/secure_closet/freezer/kitchen/mining,
 /obj/item/storage/fancy/egg_box,
 /obj/item/reagent_containers/condiment/flour,
@@ -3782,7 +3803,7 @@
 /obj/item/reagent_containers/condiment/soymilk,
 /obj/item/reagent_containers/condiment/soymilk,
 /obj/item/reagent_containers/condiment/soymilk,
-/turf/open/floor/plasteel/freezer,
+/turf/open/floor/holofloor/wood,
 /area/ship/crew/canteen)
 "uS" = (
 /obj/machinery/door/airlock{
@@ -4942,8 +4963,7 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
-/obj/machinery/chem_dispenser/drinks,
-/obj/structure/table,
+/obj/machinery/grill,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Ax" = (
@@ -11292,7 +11312,7 @@ MZ
 uG
 qw
 Eg
-xK
+sz
 jK
 xn
 BY
@@ -11331,7 +11351,7 @@ MZ
 uG
 kr
 pd
-YW
+nu
 KQ
 Pm
 Bj
@@ -11370,7 +11390,7 @@ MZ
 qI
 qI
 pQ
-xK
+hJ
 OK
 HC
 bu
