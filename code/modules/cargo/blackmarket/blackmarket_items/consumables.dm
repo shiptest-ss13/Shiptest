@@ -283,7 +283,7 @@
 	availability_prob = 5
 	spawn_weighting = FALSE
 
-/datum/blackmarket_item/consumable/goliath
+/datum/blackmarket_item/consumable/shoalmix
 	name = "Combat Cocktail"
 	desc = "Last freighter we hit was a whole medical freighter. Had a bunch of crates with a beak spraypainted on. We knacked it and found these cocktail injectors inside."
 	item = /obj/item/reagent_containers/hypospray/medipen/combat_drug
@@ -291,4 +291,14 @@
 	price_max = 1200
 	stock_max = 8
 	availability_prob = 25
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/finobranc
+	name = "Finobranc Tablets"
+	desc = "So get this, I know a Solarian Tgirl over the intranet, and we're chatting, and she sends me these things to try. I figure, hell yeah, try them, and got 5 days work done in one day. Now I'm sellin them. Miracle product I tell ya"
+	item = /obj/item/storage/pill_bottle/finobranc
+	price_min = 600
+	price_max = 1000
+	stock_max = 4
+	availability_prob = 30
 	spawn_weighting = FALSE

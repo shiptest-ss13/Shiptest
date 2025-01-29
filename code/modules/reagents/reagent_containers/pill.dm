@@ -280,6 +280,12 @@
 	icon_state = "pill21"
 	list_reagents = list(/datum/reagent/three_eye = 25)
 
+/obj/item/reagent_containers/pill/finobranc
+	name = "finobranc tablet"
+	desc = "In an ideal world, you'd be snorting this. We don't live in an ideal world."
+	icon_state = "pill18"
+	list_reagents = list(/datum/reagent/drug/finobranc = 5)
+
 /*WS Begin - No Cobbychem
 
 /obj/item/reagent_containers/pill/c2/probital

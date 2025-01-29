@@ -481,3 +481,12 @@
 /obj/item/storage/pill_bottle/licarb/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/licarb(src)
+
+/obj/item/storage/pill_bottle/finobranc
+	name = "bottle of finobranc tablets"
+	desc = "Party in the Solar Cantons, tonight."
+	custom_price = 50
+
+/obj/item/storage/pill_bottle/finobranc/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/finobranc(src)
