@@ -178,6 +178,8 @@ RSF
 	else
 		to_chat(user, "<span class='warning'>You reset [src]'s reagent safety checker!</span>")
 
+/*
+//Sleepy cookie doesn't exist and I don't feel like coding one to fix this stupidly rare occurance
 /obj/item/rsf/cookiesynth/attack_self(mob/user)
 	var/mob/living/silicon/robot/P = null
 	if(iscyborg(user))
@@ -190,7 +192,7 @@ RSF
 		toxin = FALSE
 		to_dispense = /obj/item/food/cookie
 		to_chat(user, "<span class='notice'>Cookie Synthesizer reset.</span>")
-
+*/
 /obj/item/rsf/cookiesynth/process()
 	matter = min(matter + 1, max_matter) //We add 1 up to a point
 	if(matter >= max_matter)

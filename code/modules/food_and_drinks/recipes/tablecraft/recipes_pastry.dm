@@ -334,7 +334,7 @@
 		/obj/item/food/pastrybase = 1,
 		/obj/item/reagent_containers/food/snacks/grown/cannabis = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/dankpocket
+	result = /obj/item/food/dankpocket
 	subcategory = CAT_PASTRY
 
 /datum/crafting_recipe/food/donkpocket/spicy
@@ -378,16 +378,6 @@
 		/obj/item/reagent_containers/food/snacks/grown/berries = 1
 	)
 	result = /obj/item/food/donkpocket/berry
-	subcategory = CAT_PASTRY
-
-/datum/crafting_recipe/food/donkpocket/gondola
-	time = 15
-	name = "Gondola-pocket"
-	reqs = list(
-		/obj/item/food/pastrybase = 1,
-		/obj/item/reagent_containers/food/snacks/meatball = 1
-	)
-	result = /obj/item/food/donkpocket/gondola
 	subcategory = CAT_PASTRY
 
 ////////////////////////////////////////////////MUFFINS////////////////////////////////////////////////
@@ -543,37 +533,3 @@
 	)
 	result = /obj/item/food/honeybun
 	subcategory = CAT_PASTRY
-
-/datum/crafting_recipe/food/cannoli
-	name = "Cannoli"
-	reqs = list(
-		/obj/item/food/pastrybase = 1,
-		/datum/reagent/consumable/milk = 1,
-		/datum/reagent/consumable/sugar = 3,
-	)
-	result = /obj/item/reagent_containers/food/snacks/cannoli
-	subcategory = CAT_PASTRY
-
-/datum/crafting_recipe/food/donut/laugh
-	name = "Sweet Pea Donut"
-	reqs = list(
-		/datum/reagent/consumable/laughsyrup = 3,
-		/obj/item/food/donut/plain = 1
-	)
-	result = /obj/item/food/donut/laugh
-
-/datum/crafting_recipe/food/donut/jelly/laugh
-	name = "Sweet Pea Jelly Donut"
-	reqs = list(
-		/datum/reagent/consumable/laughsyrup = 3,
-		/obj/item/food/donut/jelly/plain = 1
-	)
-	result = /obj/item/food/donut/jelly/laugh
-
-/datum/crafting_recipe/food/donut/slimejelly/laugh
-	name = "Sweet Pea Jelly Donut"
-	reqs = list(
-		/datum/reagent/consumable/laughsyrup = 3,
-		/obj/item/food/donut/jelly/slimejelly/plain = 1
-	)
-	result = /obj/item/food/donut/jelly/slimejelly/laugh

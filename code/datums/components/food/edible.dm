@@ -436,7 +436,7 @@ Behavior that's still missing from this component that original food items had t
 		if(foodtypes & human_eater.dna.species.toxic_food)
 			to_chat(human_eater, "<span class='warning'>You don't feel so good...</span>")
 			human_eater.adjust_disgust(25 + 30 * fraction)
-	return // Later checks are irrelevant if you have ageusia
+		return // Later checks are irrelevant if you have ageusia
 
 	var/food_taste_reaction
 
@@ -444,11 +444,11 @@ Behavior that's still missing from this component that original food items had t
 		food_taste_reaction = check_liked.Invoke(fraction, human_eater)
 
 	if(!food_taste_reaction)
-		if(foodtypes & tongue.toxic_food)
+		if(foodtypes & human_eater.dna.species.toxic_food)
 			food_taste_reaction = FOOD_TOXIC
-		else if(foodtypes & tongue.disliked_food)
+		else if(foodtypes & human_eater.dna.species.disliked_food)
 			food_taste_reaction = FOOD_DISLIKED
-		else if(foodtypes & tongue.liked_food)
+		else if(foodtypes & human_eater.dna.species.liked_food)
 			food_taste_reaction = FOOD_LIKED
 
 	switch(food_taste_reaction)

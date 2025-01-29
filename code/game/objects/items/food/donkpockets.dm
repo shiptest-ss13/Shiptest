@@ -7,15 +7,14 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3)// immediately gets overwritten. This exists to not set off the edibility unit test.
 
 /obj/item/food/donkpocket/random/Initialize()
+	. = ..()
 	var/list/donkblock = list(
 	/obj/item/food/donkpocket/warm,
 	/obj/item/food/donkpocket/warm/spicy,
 	/obj/item/food/donkpocket/warm/teriyaki,
 	/obj/item/food/donkpocket/warm/pizza,
 	/obj/item/food/donkpocket/warm/honk,
-	/obj/item/food/donkpocket/warm/berry,
-	/obj/item/food/donkpocket/gondola,
-	/obj/item/food/donkpocket/warm/gondola,
+	/obj/item/food/donkpocket/warm/berry
 	)
 
 	var donk_type = pick(subtypesof(/obj/item/food/donkpocket) - donkblock)
@@ -29,8 +28,7 @@
 	microwaved_type = /obj/item/food/donkpocket/warm
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
-		/datum/reagent/consumable/nutriment/protein = 2, //uhhh lorewise microwaving donkpockets makes the proteins into omnizine or somethin idk
-		/datum/reagent/consumable/maltodextrin = 3
+		/datum/reagent/consumable/nutriment/protein = 2 //uhhh lorewise microwaving donkpockets makes the proteins into omnizine or somethin idk
 	)
 	tastes = list("meat" = 2, "dough" = 2, "laziness" = 1)
 	foodtypes = GRAIN
@@ -55,8 +53,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/consumable/nutriment/protein = 2,
-		/datum/reagent/medicine/omnizine = 6,
-		/datum/reagent/consumable/maltodextrin = 3
+		/datum/reagent/medicine/omnizine = 6
 	)
 	tastes = list("meat" = 2, "dough" = 2, "laziness" = 1)
 	foodtypes = GRAIN
@@ -74,8 +71,7 @@
 	food_reagents = list(
 		/datum/reagent/toxin/lipolicide = 3,
 		/datum/reagent/drug/space_drugs = 3,
-		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/consumable/maltodextrin = 4
+		/datum/reagent/consumable/nutriment = 4
 	)
 	tastes = list("meat" = 2, "dough" = 2)
 	foodtypes = GRAIN | VEGETABLES
@@ -87,8 +83,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/consumable/nutriment/protein = 2,
-		/datum/reagent/consumable/capsaicin = 2,
-		/datum/reagent/consumable/maltodextrin = 3
+		/datum/reagent/consumable/capsaicin = 2
 	)
 	tastes = list("meat" = 2, "dough" = 2, "spice" = 1)
 	foodtypes = GRAIN
@@ -104,8 +99,7 @@
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/consumable/nutriment/protein = 2,
 		/datum/reagent/medicine/omnizine = 2,
-		/datum/reagent/consumable/capsaicin = 5,
-		/datum/reagent/consumable/maltodextrin = 3
+		/datum/reagent/consumable/capsaicin = 5
 	)
 	tastes = list("meat" = 2, "dough" = 2, "weird spices" = 2)
 	foodtypes = GRAIN
@@ -117,8 +111,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/consumable/nutriment/protein = 2,
-		/datum/reagent/consumable/soysauce = 2,
-		/datum/reagent/consumable/maltodextrin = 3
+		/datum/reagent/consumable/soysauce = 2
 	)
 	tastes = list("meat" = 2, "dough" = 2, "soy sauce" = 2)
 	foodtypes = GRAIN
@@ -135,7 +128,6 @@
 		/datum/reagent/consumable/nutriment/protein = 3,
 		/datum/reagent/medicine/omnizine = 2,
 		/datum/reagent/consumable/soysauce = 2,
-		/datum/reagent/consumable/maltodextrin = 3
 	)
 	tastes = list("meat" = 2, "dough" = 2, "soy sauce" = 2)
 	foodtypes = GRAIN
@@ -147,8 +139,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/consumable/nutriment/protein = 2,
-		/datum/reagent/consumable/tomatojuice = 2,
-		/datum/reagent/consumable/maltodextrin = 3
+		/datum/reagent/consumable/tomatojuice = 2
 	)
 	tastes = list("meat" = 2, "dough" = 2, "cheese"= 2)
 	foodtypes = GRAIN
@@ -164,8 +155,7 @@
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/consumable/nutriment/protein = 2,
 		/datum/reagent/medicine/omnizine = 2,
-		/datum/reagent/consumable/tomatojuice = 2,
-		/datum/reagent/consumable/maltodextrin = 3
+		/datum/reagent/consumable/tomatojuice = 2
 	)
 	tastes = list("meat" = 2, "dough" = 2, "melty cheese"= 2)
 	foodtypes = GRAIN
@@ -176,8 +166,7 @@
 	icon_state = "donkpocketbanana"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/consumable/banana = 4,
-		/datum/reagent/consumable/maltodextrin = 4
+		/datum/reagent/consumable/banana = 4
 	)
 	tastes = list("banana" = 2, "dough" = 2, "children's antibiotics" = 1)
 	foodtypes = GRAIN
@@ -193,8 +182,7 @@
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/medicine/omnizine = 2,
 		/datum/reagent/consumable/banana = 4,
-		/datum/reagent/consumable/laughter = 6,
-		/datum/reagent/consumable/maltodextrin = 4
+		/datum/reagent/consumable/laughter = 6
 	)
 	tastes = list("banana" = 2, "dough" = 2, "children's antibiotics" = 1)
 	foodtypes = GRAIN
@@ -205,8 +193,7 @@
 	icon_state = "donkpocketberry"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/consumable/berryjuice = 3,
-		/datum/reagent/consumable/maltodextrin = 4
+		/datum/reagent/consumable/berryjuice = 3
 	)
 	tastes = list("dough" = 2, "jam" = 2)
 	foodtypes = GRAIN
@@ -221,38 +208,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/medicine/omnizine = 2,
-		/datum/reagent/consumable/berryjuice = 3,
-		/datum/reagent/consumable/maltodextrin = 4
+		/datum/reagent/consumable/berryjuice = 3
 	)
 	tastes = list("dough" = 2, "warm jam" = 2)
-	foodtypes = GRAIN
-
-/obj/item/food/donkpocket/gondola
-	name = "\improper Gondola-pocket"
-	desc = "The choice to use real gondola meat in the recipe is controversial, to say the least." //Only a monster would craft this.
-	icon_state = "donkpocketgondola"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 3,
-		/datum/reagent/consumable/nutriment/protein = 2,
-		/datum/reagent/tranquility = 5,
-		/datum/reagent/consumable/maltodextrin = 3
-	)
-	tastes = list("meat" = 2, "dough" = 2, "inner peace" = 1)
-	foodtypes = GRAIN
-
-	//warm_type = /obj/item/food/donkpocket/warm/gondola
-	microwaved_type = /obj/item/food/donkpocket/warm/gondola
-
-/obj/item/food/donkpocket/warm/gondola
-	name = "warm Gondola-pocket"
-	desc = "The choice to use real gondola meat in the recipe is controversial, to say the least."
-	icon_state = "donkpocketgondola"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 3,
-		/datum/reagent/consumable/nutriment/protein = 2,
-		/datum/reagent/medicine/omnizine = 2,
-		/datum/reagent/tranquility = 10,
-		/datum/reagent/consumable/maltodextrin = 3
-	)
-	tastes = list("meat" = 2, "dough" = 2, "inner peace" = 1)
 	foodtypes = GRAIN

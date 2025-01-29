@@ -34,7 +34,6 @@
 	name = "moffin"
 	icon_state = "moffin_1"
 	base_icon_state = "moffin"
-	icon_state_preview = "moffin_1"
 	desc = "A delicious and spongy little cake."
 	tastes = list("muffin" = 3, "dust" = 1, "lint" = 1)
 	foodtypes = CLOTH | GRAIN | SUGAR | BREAKFAST
@@ -49,12 +48,8 @@
 		return
 
 	var/mob/living/carbon/human/moffin_observer = user
-	var/obj/item/organ/tongue/tongue = moffin_observer.getorganslot(ORGAN_SLOT_TONGUE)
 
-	if(!tongue) ///no tongue means no taste
-		return
-
-	if(tongue.liked_food & CLOTH)
+	if(moffin_observer.dna.species.liked_food & CLOTH)
 		to_chat(moffin_observer,"<span class='nicegreen'>Ooh! It's even got bits of clothes on it! Yummy!</span>")
 	else
 		to_chat(moffin_observer,"<span class='warning'>You're not too sure what's on top though...</span>")
@@ -283,17 +278,4 @@
 	)
 	tastes = list("pastry" = 1, "sweetness" = 1)
 	foodtypes = GRAIN | SUGAR
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/food/ravtart
-	name = "Rav'tart"
-	desc = "A brass colored tart with a red filling. Originally baked by TRNE Corp, it is supposedly blessed by a certain eldritch god."
-	icon_state = "ravtart"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 7,
-		/datum/reagent/consumable/nutriment/vitamin = 3,
-		/datum/reagent/consumable/ratlight = 8
-	)
-	tastes = list("pastry" = 1, "sweetness" = 1)
-	foodtypes = GRAIN | FRUIT
 	w_class = WEIGHT_CLASS_SMALL

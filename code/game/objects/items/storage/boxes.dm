@@ -507,11 +507,6 @@
 	icon_state = "donkpocketboxpizza"
 	donktype = /obj/item/food/donkpocket/pizza
 
-/obj/item/storage/box/donkpockets/donkpocketgondola
-	name = "box of gondola-flavoured donk-pockets"
-	icon_state = "donkpocketboxgondola"
-	donktype = /obj/item/food/donkpocket/gondola
-
 /obj/item/storage/box/donkpockets/donkpocketberry
 	name = "box of berry-flavoured donk-pockets"
 	icon_state = "donkpocketboxberry"
