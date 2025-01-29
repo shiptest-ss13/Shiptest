@@ -39,6 +39,15 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/bodycamera
+	name = "Body Camera Crate"
+	desc = "Contains two portable cameras, designed to help keep track of a working group at all times."
+	cost = 250
+	contains = list(/obj/item/bodycamera,
+					/obj/item/bodycamera,
+					/obj/item/paper/guides/bodycam)
+	crate_name = "bodycamera crate"
+
 /datum/supply_pack/tools/assbelt
 	name = "Assault Belt"
 	desc = "Contains an assault belt, with not one, not two, but six pockets."
@@ -62,16 +71,16 @@
 /datum/supply_pack/tools/mining
 	name = "Basic Mining Crate"
 	desc = "Contains two pickaxes, two ore bags, and two manual mining scanners."
-	cost = 1000
+	cost = 500 //cheaper to send your legions to war (mining) (also you can just print all this asides the scanners so what's the point anyway)
 	contains = list(
 		/obj/item/pickaxe,
 		/obj/item/pickaxe/mini,
 		/obj/item/storage/bag/ore,
 		/obj/item/storage/bag/ore,
 		/obj/item/mining_scanner,
-		/obj/item/mining_scanner
-	)
+		/obj/item/mining_scanner)
 	crate_name = "basic mining crate"
+	faction = /datum/faction/nt/ns_logi
 
 /datum/supply_pack/tools/jackhammer
 	name = "Jackhammer Crate"

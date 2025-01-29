@@ -3,6 +3,9 @@
 ////////////////////////////////
 /datum/component/construction/mecha
 	var/base_icon
+	// if we need to override the icon for a different one from the base. Step determines when the override occurs.
+	var/override_icon
+	var/override_step = list()
 
 	// Component typepaths.
 	// most must be defined unless
@@ -52,6 +55,11 @@
 	// "[base_icon][index - 1]"
 	// For example, Ripley's step 1 icon_state is "ripley0".
 	var/atom/parent_atom = parent
+	if(override_icon && ((index-1) in override_step))
+		if(!steps[index]["icon_state"] && base_icon)
+			parent_atom.icon_state = "[override_icon][index - 1]"
+			return
+
 	if(!steps[index]["icon_state"] && base_icon)
 		parent_atom.icon_state = "[base_icon][index - 1]"
 
@@ -419,6 +427,24 @@
 
 	outer_plating=/obj/item/mecha_parts/part/gygax_armor
 	outer_plating_amount=1
+
+/datum/component/construction/unordered/mecha_chassis/mpgygax
+	result = /datum/component/construction/mecha/gygax/mp
+	steps = list(
+		/obj/item/mecha_parts/part/gygax_torso,
+		/obj/item/mecha_parts/part/gygax_left_arm,
+		/obj/item/mecha_parts/part/gygax_right_arm,
+		/obj/item/mecha_parts/part/gygax_left_leg,
+		/obj/item/mecha_parts/part/gygax_right_leg,
+		/obj/item/mecha_parts/part/gygax_head
+	)
+
+/datum/component/construction/mecha/gygax/mp
+	result = /obj/mecha/combat/gygax/charger/mp
+
+	outer_plating = /obj/item/mecha_parts/part/mpgygax_armor
+	override_icon = "mpgygax"
+	override_step = list(21,22)
 
 /datum/component/construction/mecha/gygax/action(datum/source, atom/used_atom, mob/user)
 	return INVOKE_ASYNC(src, PROC_REF(check_step), used_atom, user)

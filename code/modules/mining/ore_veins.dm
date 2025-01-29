@@ -38,7 +38,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/drop_rate_amount_max = 20
 	//Mob spawning variables
 	var/spawner_attached = FALSE //Probably a drastically less sloppy way of doing this, but it technically works
-	var/spawning_started = FALSE
+	///is the spawner currently spawning mobs?
+	var/currently_spawning = FALSE
 	var/max_mobs = 6
 	var/spawn_time = 150 //15 seconds
 	var/mob_types = list(
@@ -91,9 +92,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	return..()
 
 /obj/structure/vein/proc/begin_spawning()
-	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime)
+	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime, vein_class)
 	spawner_attached = TRUE
-	spawning_started = TRUE
+	currently_spawning = TRUE
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
@@ -110,7 +111,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	visible_message("<span class='boldannounce'>[src] collapses!</span>")
 
 /obj/structure/vein/proc/toggle_spawning()
-	spawning_started = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, spawning_started)
+	currently_spawning = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, currently_spawning)
 
 
 //
