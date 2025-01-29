@@ -15,6 +15,8 @@ SUBSYSTEM_DEF(lag_switch)
 	var/veto_timer_id
 	/// Cooldown between say verb uses when slowmode is enabled
 	var/slowmode_cooldown = 3 SECONDS
+	/// Overload lag switch measures
+	var/overload_measures = TRUE
 
 /datum/controller/subsystem/lag_switch/Initialize(start_timeofday)
 	for(var/i = 1, i <= measures.len, i++)
@@ -24,6 +26,9 @@ SUBSYSTEM_DEF(lag_switch)
 		auto_switch = TRUE
 		trigger_pop = auto_switch_pop
 		RegisterSignal(SSdcs, COMSIG_GLOB_CLIENT_CONNECT, PROC_REF(client_connected))
+	/// Overload lag switch measures
+	if(overload_measures)
+		SSlag_switch.set_measure(DISABLE_PLANETDEL, !SSlag_switch.measures[DISABLE_PLANETDEL])
 	return ..()
 
 /datum/controller/subsystem/lag_switch/proc/client_connected(datum/source, client/connected)
