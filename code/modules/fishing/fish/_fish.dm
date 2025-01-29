@@ -213,11 +213,11 @@
 	else
 		stop_flopping()
 
-/obj/item/fish/process(seconds_per_tick)
+/obj/item/fish/process(delta_time)
 	if(in_stasis || status != FISH_ALIVE)
 		return
 
-	process_health(seconds_per_tick)
+	process_health(delta_time)
 	if(ready_to_reproduce())
 		try_to_reproduce()
 
@@ -261,7 +261,7 @@
 		return FALSE
 	return TRUE
 
-/obj/item/fish/proc/process_health(seconds_per_tick)
+/obj/item/fish/proc/process_health(delta_time)
 	var/health_change_per_second = 0
 
 	if(!proper_environment())

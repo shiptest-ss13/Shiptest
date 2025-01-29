@@ -41,7 +41,7 @@
 	// Get the value from our atom
 	return
 
-/obj/effect/countdown/process(seconds_per_tick)
+/obj/effect/countdown/process(delta_time)
 	if(!attached_to || QDELETED(attached_to))
 		qdel(src)
 	forceMove(get_turf(attached_to))

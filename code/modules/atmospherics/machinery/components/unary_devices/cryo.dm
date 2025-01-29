@@ -176,7 +176,7 @@
 	else //Turned on
 		begin_processing()
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/process(seconds_per_tick)
+/obj/machinery/atmospherics/components/unary/cryo_cell/process(delta_time)
 	..()
 
 	if(!on)
@@ -215,7 +215,7 @@
 
 	return 1
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos(seconds_per_tick)
+/obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos(delta_time)
 	..()
 
 	if(!on)

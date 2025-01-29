@@ -28,8 +28,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	heat = 1000
 	grind_results = list(/datum/reagent/phosphorus = 2)
 
-/obj/item/match/process(seconds_per_tick)
-	smoketime -= seconds_per_tick
+/obj/item/match/process(delta_time)
+	smoketime -= delta_time
 	if(smoketime <= 0)
 		matchburnout()
 	else
@@ -255,12 +255,12 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				return
 		reagents.remove_any(to_smoke)
 
-/obj/item/clothing/mask/cigarette/process(seconds_per_tick)
+/obj/item/clothing/mask/cigarette/process(delta_time)
 	var/turf/location = get_turf(src)
 	var/mob/living/M = loc
 	if(isliving(loc))
 		M.IgniteMob()
-	smoketime -= seconds_per_tick
+	smoketime -= delta_time
 	if(smoketime <= 0)
 		new type_butt(location)
 		if(ismob(loc))
@@ -478,9 +478,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/item/clothing/mask/cigarette/pipe/process(seconds_per_tick)
+/obj/item/clothing/mask/cigarette/pipe/process(delta_time)
 	var/turf/location = get_turf(src)
-	smoketime -= seconds_per_tick
+	smoketime -= delta_time
 	if(smoketime <= 0)
 		new /obj/effect/decal/cleanable/ash(location)
 		if(ismob(loc))
@@ -685,7 +685,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	else
 		..()
 
-/obj/item/lighter/process(seconds_per_tick)
+/obj/item/lighter/process(delta_time)
 	open_flame()
 
 /obj/item/lighter/get_temperature()
@@ -1006,13 +1006,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				return
 		reagents.remove_any(REAGENTS_METABOLISM)
 
-/obj/item/clothing/mask/vape/process(seconds_per_tick)
+/obj/item/clothing/mask/vape/process(delta_time)
 	var/mob/living/M = loc
 
 	if(isliving(loc))
 		M.IgniteMob()
 
-	vapetime += seconds_per_tick
+	vapetime += delta_time
 
 	if(!reagents.total_volume)
 		if(ismob(loc))

@@ -92,9 +92,9 @@
 #define ROOT(n, x) ((x) ** (1 / (n)))
 
 /// Low-pass filter a value to smooth out high frequent peaks. This can be thought of as a moving average filter as well.
-/// seconds_per_tick is how many seconds since we last ran this command. RC is the filter constant, high RC means more smoothing
+/// delta_time is how many seconds since we last ran this command. RC is the filter constant, high RC means more smoothing
 /// See https://en.wikipedia.org/wiki/Low-pass_filter#Simple_infinite_impulse_response_filter for the maths
-#define LPFILTER(memory, signal, seconds_per_tick, RC) (seconds_per_tick / (RC + seconds_per_tick)) * signal + (1 - seconds_per_tick / (RC + seconds_per_tick)) * memory
+#define LPFILTER(memory, signal, delta_time, RC) (delta_time / (RC + delta_time)) * signal + (1 - delta_time / (RC + delta_time)) * memory
 
 // The quadratic formula. Returns a list with the solutions, or an empty list
 // if they are imaginary.
@@ -287,10 +287,10 @@
 //Magnitude. used for ship velocity
 #define MAGNITUDE(a, b) (sqrt(a ** 2 + b ** 2))
 
-/// Converts a probability/second chance to probability/seconds_per_tick chance
+/// Converts a probability/second chance to probability/delta_time chance
 /// For example, if you want an event to happen with a 10% per second chance, but your proc only runs every 5 seconds, do `if(prob(100*SPT_PROB_RATE(0.1, 5)))`
-#define SPT_PROB_RATE(prob_per_second, seconds_per_tick) (1 - (1 - (prob_per_second)) ** (seconds_per_tick))
+#define SPT_PROB_RATE(prob_per_second, delta_time) (1 - (1 - (prob_per_second)) ** (delta_time))
 
 /// Like SPT_PROB_RATE but easier to use, simply put `if(SPT_PROB(10, 5))`
-#define SPT_PROB(prob_per_second_percent, seconds_per_tick) (prob(100*SPT_PROB_RATE((prob_per_second_percent)/100, (seconds_per_tick))))
+#define SPT_PROB(prob_per_second_percent, delta_time) (prob(100*SPT_PROB_RATE((prob_per_second_percent)/100, (delta_time))))
 

@@ -452,12 +452,12 @@
 		playsound(src, 'sound/vehicles/rocketlaunch.ogg', 100, TRUE)
 	return ..()
 
-/obj/structure/carp_rift/process(seconds_per_tick)
-	time_charged = min(time_charged + seconds_per_tick, max_charge + 1)
+/obj/structure/carp_rift/process(delta_time)
+	time_charged = min(time_charged + delta_time, max_charge + 1)
 	update_check()
 	for(var/mob/living/simple_animal/hostile/hostilehere in loc)
 		if("carp" in hostilehere.faction)
-			hostilehere.adjustHealth(-5 * seconds_per_tick)
+			hostilehere.adjustHealth(-5 * delta_time)
 			var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal(get_turf(hostilehere))
 			H.color = "#0000FF"
 	if(time_charged < max_charge)
@@ -469,7 +469,7 @@
 			icon_state = "carp_rift_carpspawn"
 			light_color = LIGHT_COLOR_PURPLE
 	else
-		if(SPT_PROB(1.25, seconds_per_tick))
+		if(SPT_PROB(1.25, delta_time))
 			new /mob/living/simple_animal/hostile/carp(loc)
 
 /obj/structure/carp_rift/attack_ghost(mob/user)

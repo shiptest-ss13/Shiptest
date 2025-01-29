@@ -131,7 +131,7 @@
  * The processing of our trait. Heats up the mob ([held_mob]) currently holding the source plant ([our_chili]).
  * Stops processing if we're no longer being held by [held mob].
  */
-/datum/plant_gene/trait/backfire/chili_heat/process(seconds_per_tick)
+/datum/plant_gene/trait/backfire/chili_heat/process(delta_time)
 	var/mob/living/carbon/our_mob = held_mob?.resolve()
 	var/obj/item/our_plant = our_chili?.resolve()
 
@@ -140,8 +140,8 @@
 		stop_backfire_effect()
 		return
 
-	our_mob.adjust_bodytemperature(7.5 * TEMPERATURE_DAMAGE_COEFFICIENT * seconds_per_tick)
-	if(SPT_PROB(5, seconds_per_tick))
+	our_mob.adjust_bodytemperature(7.5 * TEMPERATURE_DAMAGE_COEFFICIENT * delta_time)
+	if(SPT_PROB(5, delta_time))
 		to_chat(our_mob, span_warning("Your hand holding [our_plant] burns!"))
 
 /// Bluespace Tomato squashing on the user on backfire

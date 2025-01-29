@@ -85,13 +85,13 @@
 		return
 	current_tick_amount += amount
 
-/obj/item/clothing/head/helmet/space/hardsuit/process(seconds_per_tick)
-	radiation_count = LPFILTER(radiation_count, current_tick_amount, seconds_per_tick, RAD_GEIGER_RC)
+/obj/item/clothing/head/helmet/space/hardsuit/process(delta_time)
+	radiation_count = LPFILTER(radiation_count, current_tick_amount, delta_time, RAD_GEIGER_RC)
 
 	if(current_tick_amount)
 		grace = RAD_GEIGER_GRACE_PERIOD
 	else
-		grace -= seconds_per_tick
+		grace -= delta_time
 		if(grace <= 0)
 			radiation_count = 0
 
@@ -814,7 +814,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/clothing/suit/space/hardsuit/shielded/process(seconds_per_tick)
+/obj/item/clothing/suit/space/hardsuit/shielded/process(delta_time)
 	if(world.time > recharge_cooldown && current_charges < max_charges)
 		current_charges = clamp((current_charges + recharge_rate), 0, max_charges)
 		playsound(loc, 'sound/magic/charge.ogg', 50, TRUE)

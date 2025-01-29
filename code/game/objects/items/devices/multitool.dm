@@ -76,7 +76,7 @@
 	if(hud_on)
 		remove_hud(user)
 
-/obj/item/multitool/ai_detect/process(seconds_per_tick)
+/obj/item/multitool/ai_detect/process(delta_time)
 	if(track_cooldown > world.time)
 		return
 	detect_state = PROXIMITY_NONE

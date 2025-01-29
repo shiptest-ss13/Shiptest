@@ -76,7 +76,7 @@
 			return
 	..()
 
-/obj/machinery/grill/process(seconds_per_tick)
+/obj/machinery/grill/process(delta_time)
 	..()
 	if(grill_fuel <= 0)
 		return PROCESS_KILL
@@ -88,8 +88,8 @@
 			grilled_item.forceMove(loc)
 			finish_grill()
 		return
-	grill_time += seconds_per_tick
-	grill_fuel -= GRILL_FUELUSAGE_ACTIVE * seconds_per_tick
+	grill_time += delta_time
+	grill_fuel -= GRILL_FUELUSAGE_ACTIVE * delta_time
 	if(prob(1))
 		var/datum/effect_system/smoke_spread/bad/smoke = new
 		smoke.set_up(1, loc)

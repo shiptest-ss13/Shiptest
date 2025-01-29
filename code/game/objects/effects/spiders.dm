@@ -90,10 +90,10 @@
 	START_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/structure/spider/eggcluster/process(seconds_per_tick)
-	amount_grown += rand(0,1) * seconds_per_tick
+/obj/structure/spider/eggcluster/process(delta_time)
+	amount_grown += rand(0,1) * delta_time
 	if(amount_grown >= 100)
-		var/num = round(rand(1.5, 6) * seconds_per_tick)
+		var/num = round(rand(1.5, 6) * delta_time)
 		for(var/i=0, i<num, i++)
 			var/obj/structure/spider/spiderling/S = new /obj/structure/spider/spiderling(src.loc)
 			S.faction = faction.Copy()
@@ -180,7 +180,7 @@
 	forceMove(exit_vent.loc)
 	entry_vent = null
 
-/obj/structure/spider/spiderling/process(seconds_per_tick)
+/obj/structure/spider/spiderling/process(delta_time)
 	if(travelling_in_vent)
 		if(isturf(loc))
 			travelling_in_vent = 0

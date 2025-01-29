@@ -40,7 +40,7 @@
 	if(materials.insert_item(S))
 		qdel(S)
 
-/obj/machinery/mineral/mint/process(seconds_per_tick)
+/obj/machinery/mineral/mint/process(delta_time)
 	if(processing)
 		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 		var/datum/material/M = chosen

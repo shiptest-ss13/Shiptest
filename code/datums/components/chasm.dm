@@ -35,7 +35,7 @@
 	START_PROCESSING(SSobj, src)
 	drop_stuff(arrived)
 
-/datum/component/chasm/process(seconds_per_tick)
+/datum/component/chasm/process(delta_time)
 	if (!drop_stuff())
 		STOP_PROCESSING(SSobj, src)
 

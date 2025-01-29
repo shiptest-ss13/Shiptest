@@ -78,7 +78,7 @@
 	SetInitDirections()
 	update_adjacent_engines()
 
-/obj/machinery/atmospherics/components/unary/shuttle/heater/process_atmos(seconds_per_tick)
+/obj/machinery/atmospherics/components/unary/shuttle/heater/process_atmos(delta_time)
 	if(!use_tank)
 		update_parents()
 
@@ -249,7 +249,7 @@
 	SetInitDirections()
 	update_adjacent_engines()
 
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/process_atmos(seconds_per_tick)
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/process_atmos(delta_time)
 	var/datum/gas_mixture/air_contents = airs[1]
 	var/pressure = air_contents.return_pressure()
 	if(pressure > PRESSURE_LIMIT)

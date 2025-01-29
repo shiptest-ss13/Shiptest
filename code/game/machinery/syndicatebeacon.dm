@@ -85,7 +85,7 @@
 	return ..()
 
 //stealth direct power usage
-/obj/machinery/power/singularity_beacon/process(seconds_per_tick)
+/obj/machinery/power/singularity_beacon/process(delta_time)
 	if(!active)
 		return
 

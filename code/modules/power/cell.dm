@@ -55,9 +55,9 @@
 				STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/item/stock_parts/cell/process(seconds_per_tick)
+/obj/item/stock_parts/cell/process(delta_time)
 	if(self_recharge)
-		give(chargerate * 0.125 * seconds_per_tick)
+		give(chargerate * 0.125 * delta_time)
 	else
 		return PROCESS_KILL
 

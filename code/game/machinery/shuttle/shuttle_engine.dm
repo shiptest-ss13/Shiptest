@@ -20,7 +20,7 @@
  * Uses up a specified percentage of the fuel cost, and returns the amount of thrust if successful.
  * * percentage - The percentage of total thrust that should be used
  */
-/obj/machinery/power/shuttle/engine/proc/burn_engine(percentage = 100, seconds_per_tick)
+/obj/machinery/power/shuttle/engine/proc/burn_engine(percentage = 100, delta_time)
 	update_icon_state()
 	return FALSE
 

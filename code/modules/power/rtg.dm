@@ -23,7 +23,7 @@
 	. = ..()
 	connect_to_network()
 
-/obj/machinery/power/rtg/process(seconds_per_tick)
+/obj/machinery/power/rtg/process(delta_time)
 	..()
 	add_avail(power_gen)
 	if(panel_open && irradiate)

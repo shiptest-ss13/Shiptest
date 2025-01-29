@@ -140,7 +140,7 @@
 			return TRUE
 	return FALSE
 
-/obj/structure/transit_tube/station/process(seconds_per_tick)
+/obj/structure/transit_tube/station/process(delta_time)
 	if(!pod_moving)
 		launch_pod()
 

@@ -46,7 +46,7 @@
 
 	..()
 
-/obj/machinery/atmospherics/components/unary/heat_exchanger/process_atmos(seconds_per_tick)
+/obj/machinery/atmospherics/components/unary/heat_exchanger/process_atmos(delta_time)
 	..()
 	if(!partner || SSair.times_fired <= update_cycle)
 		return

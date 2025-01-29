@@ -118,9 +118,9 @@
 		. += "<span class='notice'>Its output port is jammed and needs cleaning.</span>"
 
 
-/obj/machinery/fax/process(seconds_per_tick)
+/obj/machinery/fax/process(delta_time)
 	if(seconds_electrified > MACHINE_NOT_ELECTRIFIED)
-		seconds_electrified -= seconds_per_tick
+		seconds_electrified -= delta_time
 
 /obj/machinery/fax/attack_hand(mob/user)
 	if(seconds_electrified && !(machine_stat & NOPOWER))

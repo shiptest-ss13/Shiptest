@@ -115,7 +115,7 @@
 		var/mob/living/carbon/C = A
 		C.mothdust -= 10;
 
-/obj/machinery/shower/process(seconds_per_tick)
+/obj/machinery/shower/process(delta_time)
 	if(on)
 		wash_atom(loc)
 		for(var/am in loc)

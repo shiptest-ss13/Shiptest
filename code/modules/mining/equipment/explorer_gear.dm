@@ -76,10 +76,10 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/clothing/suit/space/hostile_environment/process(seconds_per_tick)
+/obj/item/clothing/suit/space/hostile_environment/process(delta_time)
 	var/mob/living/carbon/C = loc
-	if(istype(C) && SPT_PROB(1, seconds_per_tick)) //cursed by bubblegum
-		if(SPT_PROB(7.5, seconds_per_tick))
+	if(istype(C) && SPT_PROB(1, delta_time)) //cursed by bubblegum
+		if(SPT_PROB(7.5, delta_time))
 			new /datum/hallucination/oh_yeah(C)
 			to_chat(C, "<span class='colossus'><b>[pick("I AM IMMORTAL.","I SHALL TAKE BACK WHAT'S MINE.","I SEE YOU.","YOU CANNOT ESCAPE ME FOREVER.","DEATH CANNOT HOLD ME.")]</b></span>")
 		else

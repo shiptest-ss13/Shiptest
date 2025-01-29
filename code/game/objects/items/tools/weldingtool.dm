@@ -74,7 +74,7 @@
 		. += "[initial(icon_state)]-on"
 
 
-/obj/item/weldingtool/process(seconds_per_tick)
+/obj/item/weldingtool/process(delta_time)
 	switch(welding)
 		if(0)
 			force = 3
@@ -87,7 +87,7 @@
 		if(1)
 			force = 15
 			damtype = "fire"
-			burned_fuel_for += seconds_per_tick
+			burned_fuel_for += delta_time
 			if(burned_fuel_for >= WELDER_FUEL_BURN_INTERVAL)
 				use(1)
 			update_appearance()
@@ -337,7 +337,7 @@
 	change_icons = 0
 	wall_decon_damage = 500
 
-/obj/item/weldingtool/abductor/process(seconds_per_tick)
+/obj/item/weldingtool/abductor/process(delta_time)
 	if(get_fuel() <= max_fuel)
 		reagents.add_reagent(/datum/reagent/fuel, 1)
 	..()

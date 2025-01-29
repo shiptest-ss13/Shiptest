@@ -111,8 +111,8 @@
 	to_chat(user, "<span class='notice'>You set the condenser switch to the '[refill_enabled ? "ON" : "OFF"]' position.</span>")
 	playsound(user, 'sound/machines/click.ogg', 30, TRUE)
 
-/obj/item/mop/advanced/process(seconds_per_tick)
-	var/amadd = min(mopcap - reagents.total_volume, refill_rate * seconds_per_tick)
+/obj/item/mop/advanced/process(delta_time)
+	var/amadd = min(mopcap - reagents.total_volume, refill_rate * delta_time)
 	if(amadd > 0)
 		reagents.add_reagent(refill_reagent, amadd)
 

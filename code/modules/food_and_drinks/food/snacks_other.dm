@@ -454,12 +454,12 @@
 				return
 		reagents.remove_any(REAGENTS_METABOLISM)
 
-/obj/item/reagent_containers/food/snacks/chewable/process(seconds_per_tick)
+/obj/item/reagent_containers/food/snacks/chewable/process(delta_time)
 	if(iscarbon(loc))
 		if(succ_dur <= 0)
 			qdel(src)
 			return
-		succ_dur -= seconds_per_tick
+		succ_dur -= delta_time
 		if((reagents && reagents.total_volume) && (next_succ <= world.time))
 			handle_reagents()
 			next_succ = world.time + succ_int
@@ -553,7 +553,7 @@
 	list_reagents = list(/datum/reagent/blood = 15)
 	tastes = list("hell" = 1)
 
-/obj/item/reagent_containers/food/snacks/chewable/bubblegum/bubblegum/process(seconds_per_tick)
+/obj/item/reagent_containers/food/snacks/chewable/bubblegum/bubblegum/process(delta_time)
 	. = ..()
 	if(iscarbon(loc))
 		hallucinate(loc)

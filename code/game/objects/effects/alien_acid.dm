@@ -35,7 +35,7 @@
 	target = null
 	return ..()
 
-/obj/effect/acid/process(seconds_per_tick)
+/obj/effect/acid/process(delta_time)
 	. = 1
 	if(!target)
 		qdel(src)
@@ -75,7 +75,7 @@
 	var/target_strength = 30
 
 
-/obj/effect/acid/alien/process(seconds_per_tick)
+/obj/effect/acid/alien/process(delta_time)
 	. = ..()
 	if(.)
 		if(prob(45))

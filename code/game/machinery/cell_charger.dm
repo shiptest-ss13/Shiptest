@@ -118,13 +118,13 @@
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		charge_rate *= C.rating
 
-/obj/machinery/cell_charger/process(seconds_per_tick)
+/obj/machinery/cell_charger/process(delta_time)
 	if(!charging || !anchored || (machine_stat & (BROKEN|NOPOWER)))
 		return
 
 	if(charging.percent() >= 100)
 		return
-	use_power(charge_rate * seconds_per_tick)
-	charging.give(charge_rate * seconds_per_tick)	//this is 2558, efficient batteries exist
+	use_power(charge_rate * delta_time)
+	charging.give(charge_rate * delta_time)	//this is 2558, efficient batteries exist
 
 	update_appearance()

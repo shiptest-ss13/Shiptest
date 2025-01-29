@@ -124,14 +124,14 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 	else
 		on = FALSE
 
-/obj/machinery/telecomms/process(seconds_per_tick)
+/obj/machinery/telecomms/process(delta_time)
 	update_power()
 
 	// Update the icon
 	update_appearance()
 
 	if(traffic > 0)
-		traffic -= netspeed * seconds_per_tick
+		traffic -= netspeed * delta_time
 
 /obj/machinery/telecomms/emp_act(severity)
 	. = ..()

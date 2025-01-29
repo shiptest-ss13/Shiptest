@@ -58,7 +58,7 @@
 
 #define GENRATE 800		// generator output coefficient from Q
 
-/obj/machinery/power/generator/process_atmos(seconds_per_tick)
+/obj/machinery/power/generator/process_atmos(delta_time)
 
 	if(!cold_circ || !hot_circ)
 		return
@@ -103,7 +103,7 @@
 
 	src.updateDialog()
 
-/obj/machinery/power/generator/process(seconds_per_tick)
+/obj/machinery/power/generator/process(delta_time)
 	//Setting this number higher just makes the change in power output slower, it doesnt actualy reduce power output cause **math**
 	var/power_output = round(lastgen / 10)
 	add_avail(power_output)

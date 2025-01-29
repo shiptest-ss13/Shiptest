@@ -320,7 +320,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/advanced_airlock_controller/internal,
 
 // Handles the vents and pressurization/depressurization
 
-/obj/machinery/advanced_airlock_controller/process_atmos(seconds_per_tick)
+/obj/machinery/advanced_airlock_controller/process_atmos(delta_time)
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
 		update_icon(ALL, TRUE)
 		return

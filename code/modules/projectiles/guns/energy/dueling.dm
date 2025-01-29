@@ -60,7 +60,7 @@
 	STOP_PROCESSING(SSobj,src)
 	state = DUEL_IDLE
 
-/datum/duel/process(seconds_per_tick)
+/datum/duel/process(delta_time)
 	switch(state)
 		if(DUEL_PREPARATION)
 			if(check_positioning())

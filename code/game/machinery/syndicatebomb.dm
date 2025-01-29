@@ -47,7 +47,7 @@
 	if(!try_detonate())
 		..()
 
-/obj/machinery/syndicatebomb/process(seconds_per_tick)
+/obj/machinery/syndicatebomb/process(delta_time)
 	if(!active)
 		end_processing()
 		detonation_timer = null

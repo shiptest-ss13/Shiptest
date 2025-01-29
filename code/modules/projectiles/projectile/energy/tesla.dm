@@ -12,7 +12,7 @@
 	tesla_zap(src, zap_range, power, zap_flags)
 	qdel(src)
 
-/obj/projectile/energy/tesla/process(seconds_per_tick)
+/obj/projectile/energy/tesla/process(delta_time)
 	. = ..()
 	//Many coders have given their blood for this speed
 	tesla_zap(src, zap_range, power, zap_flags)

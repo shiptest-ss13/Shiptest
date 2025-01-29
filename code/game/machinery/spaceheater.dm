@@ -69,7 +69,7 @@
 	if(panel_open)
 		. += "[base_icon_state]-open"
 
-/obj/machinery/space_heater/process_atmos(seconds_per_tick) //TODO figure out seconds_per_tick
+/obj/machinery/space_heater/process_atmos(delta_time) //TODO figure out delta_time
 	if(!on || !is_operational)
 		if (on) // If it's broken, turn it off too
 			on = FALSE
@@ -100,7 +100,7 @@
 
 		var/heat_capacity = env.heat_capacity()
 		var/requiredEnergy = abs(env.return_temperature() - targetTemperature) * heat_capacity
-		requiredEnergy = min(requiredEnergy, heatingPower * seconds_per_tick)
+		requiredEnergy = min(requiredEnergy, heatingPower * delta_time)
 
 		if(requiredEnergy < 1)
 			return

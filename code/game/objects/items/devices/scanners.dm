@@ -48,7 +48,7 @@ GENE SCANNER
 		return
 	toggle_on()
 
-/obj/item/t_scanner/process(seconds_per_tick)
+/obj/item/t_scanner/process(delta_time)
 	if(!on)
 		STOP_PROCESSING(SSobj, src)
 		return null
