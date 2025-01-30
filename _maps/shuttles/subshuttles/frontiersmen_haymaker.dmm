@@ -305,22 +305,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"F" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "G" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -329,6 +313,12 @@
 	dir = 9
 	},
 /obj/structure/chair/handrail,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
 "H" = (
@@ -419,10 +409,6 @@
 /area/ship/bridge)
 "M" = (
 /obj/machinery/power/smes/engineering,
-/obj/machinery/power/terminal,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
@@ -433,6 +419,9 @@
 	pixel_x = -22;
 	name = "engine shutters";
 	id = "h3"
+	},
+/obj/structure/cable{
+	icon_state = "0-6"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
@@ -516,6 +505,12 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
 "U" = (
@@ -526,7 +521,7 @@
 /area/ship/bridge)
 "V" = (
 /obj/machinery/power/smes/shuttle/precharged{
-	dir = 2
+	dir = 4
 	},
 /obj/structure/railing{
 	dir = 8
@@ -599,7 +594,7 @@ w
 a
 V
 M
-F
+V
 a
 w
 "}
