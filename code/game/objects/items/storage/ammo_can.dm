@@ -6,6 +6,7 @@
 	item_state = "ammobox"
 	drop_sound = 'sound/items/handling/ammobox_drop.ogg'
 	pickup_sound =  'sound/items/handling/ammobox_pickup.ogg'
+	supports_variations = null
 	material_flags = NONE
 	has_latches = FALSE
 	w_class = WEIGHT_CLASS_BULKY
@@ -26,6 +27,16 @@
 		/obj/item/grenade,
 		/obj/item/stock_parts/cell/gun
 		))
+	unique_reskin = list(
+		"None" = "ammobox",
+		"8x50mmR" = "ammobox_850",
+		"7.62x40mm CLIP" = "ammobox_762",
+		".308" = "ammobox_308",
+		".45" = "ammobox_45",
+		".9mm" = "ammobox_9mm",
+		"10mm" = "ammobox_10mm",
+		"12ga Buckshot" = "ammobox_12ga",
+		)
 
 /obj/item/storage/toolbox/ammo/a850r/PopulateContents()
 	name = "ammo can (8x50mmR)"
