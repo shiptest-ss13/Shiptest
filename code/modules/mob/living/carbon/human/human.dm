@@ -948,6 +948,7 @@
 
 /mob/living/carbon/human/vv_auto_rename_override(new_name)
 	name_override = new_name
+	real_name = new_name
 
 /mob/living/carbon/human/vv_do_topic(list/href_list)
 	. = ..()
