@@ -1,17 +1,23 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /turf/closed/wall/mineral/titanium,
-/area/space)
+/area/ship/bridge)
 "e" = (
 /obj/structure/chair/handrail,
+/obj/structure/cable/cyan{
+	icon_state = "6-9"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono/white,
-/area/space)
+/area/ship/bridge)
 "i" = (
 /obj/structure/chair/handrail{
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/space)
+/area/ship/bridge)
 "o" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -19,12 +25,15 @@
 /obj/structure/platform/ship_two{
 	dir = 5
 	},
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
 	id = "bam2"
 	},
 /turf/open/floor/engine/hull/reinforced,
-/area/space)
+/area/ship/bridge)
 "q" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8;
@@ -39,8 +48,24 @@
 	dir = 1
 	},
 /obj/machinery/door/window/brigdoor/eastleft,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned/brushed,
-/area/space)
+/area/ship/bridge)
+"r" = (
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_cw,
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_ccw{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
 "v" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -52,60 +77,12 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/engine/hull/reinforced,
-/area/space)
-"A" = (
-/turf/open/space/basic,
-/area/space)
-"C" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "bam"
-	},
-/turf/open/floor/plating,
-/area/space)
-"E" = (
-/obj/machinery/power/terminal,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning/fulltile{
-	color = "#FFFFFF"
-	},
-/obj/machinery/computer/helm{
-	dir = 4;
-	pixel_x = -8
-	},
-/obj/structure/railing/thin,
-/obj/structure/railing/thin{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/space)
-"I" = (
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_cw,
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_ccw{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/space)
-"L" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 2
-	},
-/obj/structure/platform/ship_two{
-	dir = 6
-	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "bam2"
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull/reinforced,
-/area/space)
-"P" = (
-/turf/open/floor/plasteel/mono/white,
-/area/space)
-"R" = (
+/area/ship/bridge)
+"y" = (
 /obj/machinery/stasis{
 	dir = 1
 	},
@@ -119,13 +96,124 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/space)
+/area/ship/bridge)
+"A" = (
+/turf/template_noop,
+/area/template_noop)
+"C" = (
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "bam"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"E" = (
+/obj/effect/turf_decal/industrial/warning/fulltile{
+	color = "#FFFFFF"
+	},
+/obj/machinery/computer/helm{
+	dir = 4;
+	pixel_x = -8
+	},
+/obj/structure/railing/thin,
+/obj/structure/railing/thin{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"G" = (
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/cyan,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"I" = (
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_cw,
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/arrow_ccw{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"L" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
+/obj/structure/platform/ship_two{
+	dir = 6
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "bam2"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"P" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"R" = (
+/obj/machinery/stasis{
+	dir = 1
+	},
+/obj/structure/platform/ship_two{
+	dir = 8
+	},
+/obj/structure/curtain/cloth{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/end{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"S" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-9"
+	},
+/obj/structure/cable/cyan,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "bam"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "U" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 8;
 	icon = 'icons/obj/stairs.dmi'
 	},
-/area/space)
+/area/ship/bridge)
 "X" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -134,8 +222,17 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/patterned/brushed,
-/area/space)
+/area/ship/bridge)
 
 (1,1,1) = {"
 A
@@ -155,19 +252,19 @@ a
 a
 X
 q
-X
+G
 a
 "}
 (4,1,1) = {"
 a
 R
 U
-R
+y
 a
 "}
 (5,1,1) = {"
 a
-I
+r
 P
 I
 a
@@ -183,6 +280,6 @@ a
 A
 a
 C
-C
+S
 a
 "}
