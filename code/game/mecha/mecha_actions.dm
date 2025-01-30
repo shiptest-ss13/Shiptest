@@ -19,6 +19,9 @@
 	lights_action.Remove(user)
 	stats_action.Remove(user)
 	strafing_action.Remove(user)
+	if(zoom_action)
+		zoom_action.Remove(user)
+		user.client.view_size.zoomIn()
 
 
 /datum/action/innate/mecha
@@ -81,7 +84,7 @@
 		send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 		button_icon_state = "mech_cycle_equip_on"
 		UpdateButtonIcon()
-		chassis.autofire_check()
+		chassis.equipment_check()
 		return
 	var/number = 0
 	for(var/A in available_equipment)
@@ -96,7 +99,7 @@
 				chassis.occupant_message("<span class='notice'>You switch to [chassis.selected].</span>")
 				button_icon_state = "mech_cycle_equip_on"
 			send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
-			chassis.autofire_check()
+			chassis.equipment_check()
 			UpdateButtonIcon()
 			return
 
@@ -226,10 +229,10 @@
 		chassis.log_message("Toggled zoom mode.", LOG_MECHA)
 		chassis.occupant_message("<font color='[chassis.zoom_mode?"blue":"red"]'>Zoom mode [chassis.zoom_mode?"en":"dis"]abled.</font>")
 		if(chassis.zoom_mode)
-			owner.client.view_size.setTo(4.5)
+			owner.client.view_size.zoomOut(chassis.zoom_out_mod, chassis.zoom_mod, chassis.dir)
 			SEND_SOUND(owner, sound('sound/mecha/imag_enh.ogg',volume=50))
 		else
-			owner.client.view_size.resetToDefault() //Let's not let this stack shall we?
+			owner.client.view_size.zoomIn()
 		UpdateButtonIcon()
 
 /datum/action/innate/mecha/mech_switch_damtype

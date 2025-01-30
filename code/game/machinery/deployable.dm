@@ -81,6 +81,8 @@
 
 /obj/structure/barricade/wooden/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
+	if(.)
+		return FALSE
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	if (I.use_tool(src, user, 2 SECONDS, volume=0))

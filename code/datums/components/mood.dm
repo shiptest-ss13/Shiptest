@@ -92,7 +92,7 @@
 			msg += "[event.description]\n" // now we dont have to put \n in every moodlet description
 	else
 		msg += "<span class='nicegreen'>I don't have much of a reaction to anything right now.</span>\n"
-	to_chat(user, examine_block(msg))
+	to_chat(user, boxed_message(msg))
 
 ///Called after moodevent/s have been added/removed.
 /datum/component/mood/proc/update_mood()

@@ -247,7 +247,7 @@
 		var/datum/skill/the_skill = i
 		msg += "[initial(the_skill.name)] - [get_skill_level_name(the_skill)]\n"
 	msg += "</span>"
-	to_chat(user, examine_block(msg))
+	to_chat(user, boxed_message(msg))
 
 /datum/mind/proc/set_death_time()
 	SIGNAL_HANDLER

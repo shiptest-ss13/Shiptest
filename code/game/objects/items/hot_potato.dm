@@ -73,7 +73,7 @@
 			var/mob/living/L = loc
 			L.SetStun(0)
 			L.SetKnockdown(0)
-			L.SetSleeping(0)
+			L.set_sleeping(0)
 			L.SetImmobilized(0)
 			L.SetParalyzed(0)
 			L.SetUnconscious(0)
