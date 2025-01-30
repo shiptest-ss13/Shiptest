@@ -945,6 +945,10 @@
 	VV_DROPDOWN_OPTION(VV_HK_SET_SPECIES, "Set Species")
 	VV_DROPDOWN_OPTION(VV_HK_PURRBATION, "Toggle Purrbation")
 
+
+/mob/living/carbon/human/vv_auto_rename_override(new_name)
+	name_override = new_name
+
 /mob/living/carbon/human/vv_do_topic(list/href_list)
 	. = ..()
 	if(href_list[VV_HK_COPY_OUTFIT])

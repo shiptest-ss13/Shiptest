@@ -1151,6 +1151,11 @@
 		if(newname)
 			vv_auto_rename(newname)
 
+	if(href_list[VV_HK_AUTO_RENAME_OVERRIDE] && check_rights(R_VAREDIT))
+		var/newname = input(usr, "What override name do you want to give this?", "Set Override Name") as null|text
+		if(newname)
+			vv_auto_rename_override(newname)
+
 	if(href_list[VV_HK_EDIT_FILTERS] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT)) //This needs to be like this due to the fact that I'm not coding a fucking UI state for R_VV for ONE BUTTON.
 		var/client/C = usr.client
 		C?.open_filter_editor(src)
@@ -1161,6 +1166,15 @@
 /atom/vv_get_header()
 	. = ..()
 	var/refid = REF(src)
+
+///Add Override Name for change it if it is a human
+	if(istype(src,/mob/living/carbon/human))
+		var/mob/living/carbon/human/H = src
+		var/name_override_text = "EMPTY"
+		if(!(H.name_override == null))
+			name_override_text = H.name_override
+		. += "[VV_HREF_TARGETREF(refid, VV_HK_AUTO_RENAME_OVERRIDE, "<b id='name_override'>[name_override_text]</b><br>")]"
+
 	. += "[VV_HREF_TARGETREF(refid, VV_HK_AUTO_RENAME, "<b id='name'>[src]</b>")]"
 	. += "<br><font size='1'><a href='?_src_=vars;[HrefToken()];rotatedatum=[refid];rotatedir=left'><<</a> <a href='?_src_=vars;[HrefToken()];datumedit=[refid];varnameedit=dir' id='dir'>[dir2text(dir) || dir]</a> <a href='?_src_=vars;[HrefToken()];rotatedatum=[refid];rotatedir=right'>>></a></font>"
 
@@ -1172,6 +1186,9 @@
 	return L.AllowDrop() ? L : L.drop_location()
 
 /atom/proc/vv_auto_rename(newname)
+	name = newname
+
+/atom/proc/vv_auto_rename_override(newname)
 	name = newname
 
 /**

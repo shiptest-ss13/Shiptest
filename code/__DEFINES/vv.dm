@@ -125,6 +125,7 @@
 #define VV_HK_CURE_TRAUMA "cure_trauma"
 
 // /mob/living/carbon/human
+#define VV_HK_AUTO_RENAME_OVERRIDE "auto_rename_override"
 #define VV_HK_COPY_OUTFIT "copy_outfit"
 #define VV_HK_MOD_MUTATIONS "quirkmut"
 #define VV_HK_MOD_QUIRKS "quirkmod"
