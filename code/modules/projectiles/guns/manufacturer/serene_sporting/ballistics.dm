@@ -99,7 +99,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 
 /obj/item/ammo_box/magazine/m20_auto_elite
 	name = "Model 20 magazine (.44 Roumain)"
-	desc = "A 10-round magazine designed for the Model 20 pistol. These rounds do good damage, and fare better against armor."
+	desc = "A nine-round magazine designed for the Model 20 pistol. These rounds do good damage, and fare better against armor."
 	icon_state = "cm23_mag-1"
 	base_icon_state = "cm23_mag"
 	ammo_type = /obj/item/ammo_casing/a44roum
