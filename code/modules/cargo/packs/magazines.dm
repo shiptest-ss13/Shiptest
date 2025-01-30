@@ -91,7 +91,7 @@
 	contains = list(/obj/item/ammo_box/magazine/m23/empty)
 	cost = 200
 
-/datum/supply_pack/magazine/woodsman_mag
+/datum/supply_pack/magazine/woodsman_mag_extended
 	name = "Woodsman Magazine Crate"
 	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/m23/extended/empty)
