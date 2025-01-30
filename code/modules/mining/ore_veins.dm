@@ -87,9 +87,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	GLOB.ore_veins -= src
 	return ..()
 
-/obj/structure/vein/deconstruct(disassembled)
+/obj/structure/vein/Destroy()
+	. = ..()
 	destroy_effect()
-	return..()
 
 /obj/structure/vein/proc/begin_spawning()
 	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime, vein_class)
