@@ -224,23 +224,27 @@
 	name = "beige utility cover"
 	desc = "A flat beige utility cover, unbranded. Just the right color for those sandy planetoids."
 	icon_state = "patrolbeigesoft"
+	unique_reskin = null
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/utility_black
 	name = "black utility cover"
 	desc = "A flat black utility cover, unbranded. Night Vision Goggles sold separately."
 	icon_state = "patrolblacksoft"
+	unique_reskin = null
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/utility_olive
 	name = "miskilamao cap"
 	desc = "An olive utility cover emblazoned with the Miskilamo Shipbreaking logo. The material feels cheap."
 	icon_state = "patrololivesoft"
+	unique_reskin = null
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/utility_navy
 	name = "navy utility cover"
 	desc = "A navy blue utility cover, unbranded. Perfect for Seamen on long voyages."
 	icon_state = "patrolnavysoft"
+	unique_reskin = null
 	dog_fashion = null
 //recompile icons comment!!!!!

@@ -133,6 +133,7 @@
 	current_skin = "frontiersoft"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	unique_reskin = null
 
 /obj/item/clothing/head/beret/sec/frontier
 	name = "\improper Frontiersmen beret"
