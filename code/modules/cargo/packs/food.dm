@@ -132,14 +132,14 @@
 	name = "Vegetables Crate"
 	desc = "Grown in the finest hydroponic vats."
 	cost = 100
-	contains = list(/obj/item/reagent_containers/food/snacks/grown/chili,
-					/obj/item/reagent_containers/food/snacks/grown/corn,
-					/obj/item/reagent_containers/food/snacks/grown/tomato,
-					/obj/item/reagent_containers/food/snacks/grown/potato,
-					/obj/item/reagent_containers/food/snacks/grown/carrot,
-					/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle,
-					/obj/item/reagent_containers/food/snacks/grown/onion,
-					/obj/item/reagent_containers/food/snacks/grown/pumpkin
+	contains = list(/obj/item/food/grown/chili,
+					/obj/item/food/grown/corn,
+					/obj/item/food/grown/tomato,
+					/obj/item/food/grown/potato,
+					/obj/item/food/grown/carrot,
+					/obj/item/food/grown/mushroom/chanterelle,
+					/obj/item/food/grown/onion,
+					/obj/item/food/grown/pumpkin
 	)
 	crate_name = "food crate"
 	crate_type = /obj/structure/closet/crate/freezer
@@ -148,13 +148,13 @@
 	name = "Fruit Crate"
 	desc = "Rich of vitamins, may contain oranges."
 	cost = 100
-	contains = list(/obj/item/reagent_containers/food/snacks/grown/citrus/lime,
-					/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
-					/obj/item/reagent_containers/food/snacks/grown/citrus/lemon,
-					/obj/item/reagent_containers/food/snacks/grown/watermelon,
-					/obj/item/reagent_containers/food/snacks/grown/apple,
-					/obj/item/reagent_containers/food/snacks/grown/berries,
-					/obj/item/reagent_containers/food/snacks/grown/banana
+	contains = list(/obj/item/food/grown/citrus/lime,
+					/obj/item/food/grown/citrus/orange,
+					/obj/item/food/grown/citrus/lemon,
+					/obj/item/food/grown/watermelon,
+					/obj/item/food/grown/apple,
+					/obj/item/food/grown/berries,
+					/obj/item/food/grown/banana
 	)
 	crate_name = "food crate"
 	crate_type = /obj/structure/closet/crate/freezer
@@ -163,12 +163,12 @@
 	name = "Grains Crate"
 	desc = "A crate full of various grains. How interesting."
 	cost = 100
-	contains = list(/obj/item/reagent_containers/food/snacks/grown/wheat,
-					/obj/item/reagent_containers/food/snacks/grown/wheat,
-					/obj/item/reagent_containers/food/snacks/grown/wheat, //Weighted to be more common
-					/obj/item/reagent_containers/food/snacks/grown/oat,
-					/obj/item/reagent_containers/food/snacks/grown/rice,
-					/obj/item/reagent_containers/food/snacks/grown/soybeans
+	contains = list(/obj/item/food/grown/wheat,
+					/obj/item/food/grown/wheat,
+					/obj/item/food/grown/wheat, //Weighted to be more common
+					/obj/item/food/grown/oat,
+					/obj/item/food/grown/rice,
+					/obj/item/food/grown/soybeans
 	)
 	crate_name = "food crate"
 	crate_type = /obj/structure/closet/crate/freezer

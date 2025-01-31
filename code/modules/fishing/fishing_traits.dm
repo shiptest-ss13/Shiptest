@@ -78,5 +78,5 @@
 /datum/fishing_trait/vegan/catch_weight_mod(obj/item/fishing_rod/rod, mob/fisherman)
 	. = ..()
 	.[MULTIPLICATIVE_FISHING_MOD] = 0
-	if(rod.bait && istype(rod.bait, /obj/item/reagent_containers/food/snacks/grown))
+	if(rod.bait && istype(rod.bait, /obj/item/food/grown))
 		.[MULTIPLICATIVE_FISHING_MOD] = 1

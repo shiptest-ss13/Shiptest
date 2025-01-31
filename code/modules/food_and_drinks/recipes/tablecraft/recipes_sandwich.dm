@@ -68,8 +68,8 @@
 	reqs = list(
 		/obj/item/food/breadslice/plain = 2,
 		/obj/item/food/meat/bacon = 2,
-		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
-		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
+		/obj/item/food/grown/cabbage = 1,
+		/obj/item/food/grown/tomato = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/blt
 	subcategory = CAT_SANDWICH

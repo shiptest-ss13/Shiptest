@@ -90,17 +90,17 @@
 /datum/mission/acquire/true_love/puce
 	name = "Puce crystal needed (urgent!!)"
 	weight = 1
-	objective_type = /obj/item/reagent_containers/food/snacks/grown/ash_flora/puce
+	objective_type = /obj/item/food/grown/ash_flora/puce
 
 /datum/mission/acquire/true_love/fireblossom
 	name = "Fireblossom needed (urgent!!)"
 	weight = 1
-	objective_type = /obj/item/reagent_containers/food/snacks/grown/ash_flora/fireblossom
+	objective_type = /obj/item/food/grown/ash_flora/fireblossom
 
 /datum/mission/acquire/true_love/icepepper
 	name = "Icepepper needed (urgent!!)"
 	weight = 1
-	objective_type = /obj/item/reagent_containers/food/snacks/grown/icepepper
+	objective_type = /obj/item/food/grown/icepepper
 
 /datum/mission/acquire/true_love/strange_crystal
 	name = "Strange crystal needed (urgent!!!)"

@@ -343,6 +343,15 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ANXIOUS "anxious"
 #define TRAIT_ANALGESIA "congenital_analgesia"
 
+///Trait for dryable items
+#define TRAIT_DRYABLE "trait_dryable"
+///Trait for dried items
+#define TRAIT_DRIED "trait_dried"
+/// Trait for customizable reagent holder
+//#define TRAIT_CUSTOMIZABLE_REAGENT_HOLDER "customizable_reagent_holder"
+/// Trait for allowing an item that isn't food into the customizable reagent holder
+//#define TRAIT_ODD_CUSTOMIZABLE_FOOD_INGREDIENT "odd_customizable_food_ingredient"
+
 /// Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"
 
@@ -486,3 +495,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Trait granted by [mob/living/silicon/ai]
 /// Applied when the ai anchors itself
 #define AI_ANCHOR_TRAIT "ai_anchor"
+
+/// Trait applied by element
+#define ELEMENT_TRAIT(source) "element_trait_[source]"

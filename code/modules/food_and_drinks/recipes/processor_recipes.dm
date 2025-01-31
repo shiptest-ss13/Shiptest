@@ -14,19 +14,19 @@
 	output = /obj/item/food/meat/rawbacon
 
 /datum/food_processor_process/sweetpotato
-	input = /obj/item/reagent_containers/food/snacks/grown/potato/sweet
+	input = /obj/item/food/grown/potato/sweet
 	output = /obj/item/reagent_containers/food/snacks/yakiimo
 
 /datum/food_processor_process/potato
-	input = /obj/item/reagent_containers/food/snacks/grown/potato
+	input = /obj/item/food/grown/potato
 	output = /obj/item/reagent_containers/food/snacks/fries
 
 /datum/food_processor_process/carrot
-	input = /obj/item/reagent_containers/food/snacks/grown/carrot
+	input = /obj/item/food/grown/carrot
 	output = /obj/item/reagent_containers/food/snacks/carrotfries
 
 /datum/food_processor_process/soybeans
-	input = /obj/item/reagent_containers/food/snacks/grown/soybeans
+	input = /obj/item/food/grown/soybeans
 	output = /obj/item/reagent_containers/food/snacks/soydope
 
 /datum/food_processor_process/spaghetti
@@ -34,7 +34,7 @@
 	output = /obj/item/food/spaghetti/raw
 
 /datum/food_processor_process/corn
-	input = /obj/item/reagent_containers/food/snacks/grown/corn
+	input = /obj/item/food/grown/corn
 	output = /obj/item/food/tortilla
 
 /datum/food_processor_process/tortilla
@@ -42,7 +42,7 @@
 	output = /obj/item/reagent_containers/food/snacks/cornchips
 
 /datum/food_processor_process/parsnip
-	input = /obj/item/reagent_containers/food/snacks/grown/parsnip
+	input = /obj/item/food/grown/parsnip
 	output = /obj/item/reagent_containers/food/snacks/roastparsnip
 
 /datum/food_processor_process/towercap

@@ -251,7 +251,7 @@
 	name = "spider meat"
 	desc = "A slab of spider meat. That is so Kafkaesque."
 	icon_state = "spidermeat"
-	microwaved_type = /obj/item/food/meat/steak/xeno
+	microwaved_type = /obj/item/food/meat/steak/spider
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment/protein = 5,
 		/datum/reagent/toxin = 3,
@@ -337,14 +337,6 @@
 	)
 	tastes = list("bacon" = 1)
 	foodtypes = MEAT | BREAKFAST
-
-/*
-/obj/item/food/meat/slab/gondola/make_microwaveable()
-	AddElement(/datum/element/microwavable, /obj/item/food/meat/steak/gondola)
-*/
-
-/obj/item/food/meat/slab/gondola/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/gondola, 3, 30)
 
 /obj/item/food/meat/slab/penguin
 	name = "penguin meat"
@@ -618,6 +610,7 @@
 	name = "raw killer tomato cutlet"
 	tastes = list("tomato" = 1)
 	foodtypes = FRUIT
+	microwaved_type = /obj/item/food/meat/cutlet/killertomato
 
 /*
 /obj/item/food/meat/rawcutlet/killertomato/make_microwaveable()
@@ -627,6 +620,7 @@
 /obj/item/food/meat/rawcutlet/bear
 	name = "raw bear cutlet"
 	tastes = list("meat" = 1, "salmon" = 1)
+	microwaved_type = /obj/item/food/meat/cutlet/bear
 
 /*
 /obj/item/food/meat/rawcutlet/bear/make_microwaveable()
@@ -636,6 +630,7 @@
 /obj/item/food/meat/rawcutlet/xeno
 	name = "raw xeno cutlet"
 	tastes = list("meat" = 1, "acid" = 1)
+	microwaved_type = /obj/item/food/meat/cutlet/xeno
 
 /*
 /obj/item/food/meat/rawcutlet/xeno/make_microwaveable()
@@ -645,24 +640,17 @@
 /obj/item/food/meat/rawcutlet/spider
 	name = "raw spider cutlet"
 	tastes = list("cobwebs" = 1)
+	microwaved_type = /obj/item/food/meat/cutlet/spider
 
 /*
 /obj/item/food/meat/rawcutlet/spider/make_microwaveable()
 	AddElement(/datum/element/microwavable, /obj/item/food/meat/cutlet/spider)
 */
 
-/obj/item/food/meat/rawcutlet/gondola
-	name = "raw gondola cutlet"
-	tastes = list("meat" = 1, "tranquility" = 1)
-
-/*
-/obj/item/food/meat/rawcutlet/gondola/make_microwaveable()
-	AddElement(/datum/element/microwavable, /obj/item/food/meat/cutlet/gondola)
-*/
-
 /obj/item/food/meat/rawcutlet/penguin
 	name = "raw penguin cutlet"
 	tastes = list("beef" = 1, "cod fish" = 1)
+	microwaved_type = /obj/item/food/meat/cutlet/penguin
 
 /*
 /obj/item/food/meat/rawcutlet/penguin/make_microwaveable()
@@ -672,6 +660,7 @@
 /obj/item/food/meat/rawcutlet/chicken
 	name = "raw chicken cutlet"
 	tastes = list("chicken" = 1)
+	microwaved_type = /obj/item/food/meat/cutlet/chicken
 
 /*
 /obj/item/food/meat/rawcutlet/chicken/make_microwaveable()
@@ -690,6 +679,7 @@
 	bite_consumption = 1
 	tastes = list("slime" = 1, "grub" = 1)
 	foodtypes = RAW | MEAT | TOXIC
+	microwaved_type = /obj/item/food/meat/cutlet/grub
 
 /*
 /obj/item/food/meat/rawcutlet/grub/make_microwaveable()

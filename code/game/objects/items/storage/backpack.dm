@@ -293,9 +293,9 @@
 	var/static/list/contraband = list(
 		/obj/item/poster/random_contraband,
 		/obj/item/poster/random_contraband,
-		/obj/item/reagent_containers/food/snacks/grown/cannabis,
-		/obj/item/reagent_containers/food/snacks/grown/cannabis/rainbow,
-		/obj/item/reagent_containers/food/snacks/grown/cannabis/white,
+		/obj/item/food/grown/cannabis,
+		/obj/item/food/grown/cannabis/rainbow,
+		/obj/item/food/grown/cannabis/white,
 		/obj/item/storage/box/fireworks/dangerous,
 		/obj/item/storage/pill_bottle/zoom,
 		/obj/item/storage/pill_bottle/happy,
