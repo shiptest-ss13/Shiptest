@@ -284,9 +284,7 @@
 	icon_state = "puce"
 	seed = /obj/item/seeds/lavaland/puce
 	wine_power = 0		// It's a crystal
-
-/obj/item/food/grown/ash_flora/puce/make_edible()
-	return FALSE
+	foodtypes = TOXIC | GROSS
 
 //SEEDS
 
