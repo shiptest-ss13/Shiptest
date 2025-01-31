@@ -1,26 +1,26 @@
 /obj/item/clothing/head/soft
-	name = "baseball cap"
-	desc = "It's a baseball cap. Waow."
+	name = "cap"
+	desc = "It's a baseball cap."
 	icon_state = "whitesoft"
 	item_state = "helmet"
 	cuttable = TRUE
 	clothamnt = 2
-	unique_reskin = list("white baseball cap" = "whitesoft",
-						"grey baseball cap" = "greysoft",
-						"black baseball cap" = "blacksoft",
-						"red baseball cap" = "redsoft",
-						"maroon baseball cap" = "maroonsoft",
-						"orange baseball cap" = "orangesoft",
-						"yellow baseball cap" = "yellowsoft",
-						"green baseball cap" = "greensoft",
-						"dark green baseball cap" = "darkgreensoft",
-						"teal baseball cap" = "tealsoft",
-						"blue baseball cap" = "bluesoft",
-						"dark baseball blue cap" = "darkbluesoft",
-						"purple baseball cap" = "purplesoft",
-						"pink baseball cap" = "pinksoft",
-						"brown baseball cap" = "brownsoft",
-						"light brown baseball cap" = "lightbrownsoft"
+	unique_reskin = list("white cap" = "whitesoft",
+						"grey cap" = "greysoft",
+						"black cap" = "blacksoft",
+						"red cap" = "redsoft",
+						"maroon cap" = "maroonsoft",
+						"orange cap" = "orangesoft",
+						"yellow cap" = "yellowsoft",
+						"green cap" = "greensoft",
+						"dark green cap" = "darkgreensoft",
+						"teal cap" = "tealsoft",
+						"blue cap" = "bluesoft",
+						"dark blue cap" = "darkbluesoft",
+						"purple cap" = "purplesoft",
+						"pink cap" = "pinksoft",
+						"brown cap" = "brownsoft",
+						"light brown cap" = "lightbrownsoft"
 						)
 	var/flipped = 0
 	//we can't use initial for procs because we need to account for unique_reskin, so this stores the skin of the hat we use.
@@ -82,97 +82,97 @@
 	name = "white cap"
 	desc = "It's a baseball hat in a tasteful white colour."
 	icon_state = "whitesoft"
-	current_skin = "whitesoft"
+	current_skin = "white cap"
 
 /obj/item/clothing/head/soft/grey
 	name = "grey cap"
 	desc = "It's a baseball hat in a tasteful grey colour."
 	icon_state = "greysoft"
-	current_skin = "greysoft"
+	current_skin = "grey cap"
 
 /obj/item/clothing/head/soft/black
 	name = "black cap"
 	desc = "It's a baseball hat in a tasteful black colour."
 	icon_state = "blacksoft"
-	current_skin = "blacksoft"
+	current_skin = "black cap"
 
 /obj/item/clothing/head/soft/red
 	name = "red cap"
 	desc = "It's a baseball hat in a tasteful red colour."
 	icon_state = "redsoft"
-	current_skin = "redsoft"
+	current_skin = "red cap"
 
 /obj/item/clothing/head/soft/maroon
 	name = "maroon cap"
 	desc = "It's a baseball hat in a tasteful maroon colour."
 	icon_state = "maroonsoft"
-	current_skin = "maroonsoft"
+	current_skin = "maroon cap"
 
 /obj/item/clothing/head/soft/orange
 	name = "orange cap"
 	desc = "It's a baseball hat in a tasteful orange colour."
 	icon_state = "orangesoft"
-	current_skin = "orangesoft"
+	current_skin = "orange cap"
 
 /obj/item/clothing/head/soft/yellow
 	name = "yellow cap"
 	desc = "It's a baseball hat in a tasteful yellow colour."
 	icon_state = "yellowsoft"
-	current_skin = "yellowsoft"
+	current_skin = "yellow cap"
 
 /obj/item/clothing/head/soft/green
 	name = "green cap"
 	desc = "It's a baseball hat in a tasteful green colour."
 	icon_state = "greensoft"
-	current_skin = "greensoft"
+	current_skin = "green cap"
 
 /obj/item/clothing/head/soft/darkgreen
 	name = "dark green cap"
 	desc = "It's a baseball hat in a tasteful dark green colour."
 	icon_state = "darkgreensoft"
-	current_skin = "darkgreensoft"
+	current_skin = "dark green cap"
 
 /obj/item/clothing/head/soft/teal
 	name = "teal cap"
 	desc = "It's a baseball hat in a tasteful teal colour."
 	icon_state = "tealsoft"
-	current_skin = "tealsoft"
+	current_skin = "teal cap"
 
 /obj/item/clothing/head/soft/blue
 	name = "blue cap"
 	desc = "It's a baseball hat in a tasteful blue colour."
 	icon_state = "bluesoft"
-	current_skin = "bluesoft"
+	current_skin = "blue cap"
 
 /obj/item/clothing/head/soft/darkblue
 	name = "dark blue cap"
 	desc = "It's a baseball hat in a tasteful dark blue colour."
 	icon_state = "darkbluesoft"
-	current_skin = "darkbluesoft"
+	current_skin = "dark blue cap"
 
 /obj/item/clothing/head/soft/purple
 	name = "purple cap"
 	desc = "It's a baseball hat in a tasteful purple colour."
 	icon_state = "purplesoft"
-	current_skin = "purplesoft"
+	current_skin = "purple cap"
 
 /obj/item/clothing/head/soft/pink
 	name = "pink cap"
 	desc = "It's a baseball hat in a tasteful pink colour."
 	icon_state = "pinksoft"
-	current_skin = "pinksoft"
+	current_skin = "pink cap"
 
 /obj/item/clothing/head/soft/brown
 	name = "brown cap"
 	desc = "It's a baseball hat in a tasteful brown colour."
 	icon_state = "brownsoft"
-	current_skin = "brownsoft"
+	current_skin = "brown cap"
 
 /obj/item/clothing/head/soft/lightbrown
 	name = "light brown cap"
 	desc = "It's a baseball hat in a tasteful light brown colour."
 	icon_state = "lightbrownsoft"
-	current_skin = "lightbrownsoft"
+	current_skin = "light brown cap"
 
 /obj/item/clothing/head/soft/sec
 	name = "security cap"
