@@ -1161,7 +1161,7 @@
 	name = "8x50 Stripper Clip"
 	id = "IllestrenStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/magazine/illestren_a850r/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1169,7 +1169,7 @@
 	name = ".300 Scout Stripper Clip"
 	id = "ScoutStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a300/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1177,7 +1177,7 @@
 	name = "7.62 Stripper Clip"
 	id = "PolymerStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a762_stripper/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1185,7 +1185,7 @@
 	name = ".308 Stripper Clip"
 	id = "VicklandStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/vickland_a308/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1193,7 +1193,7 @@
 	name = "8x58 Stripper Clip"
 	id = "SSGStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a858/empty
 	category = list("initial", "Security", "Ammo")
 
