@@ -376,6 +376,8 @@
 	if(!allow_post_reskins)
 		current_skin = pick
 	icon_state = unique_reskin[pick]
+	if(change_name)
+		name = pick
 	to_chat(M, "[src] is now skinned as '[pick].'")
 	update_appearance()
 
