@@ -5,7 +5,8 @@
 	icon_state = "flapwhite"
 	cuttable = TRUE
 	clothamnt = 2
-	unique_reskin = list("grey Betzu-il cap" = "flapgrey",
+	unique_reskin = list("white Betzu-il cap" = "flapwhite",
+						"grey Betzu-il cap" = "flapgrey",
 						"black Betzu-il cap" = "flapblack",
 						"red Betzu-il cap" = "flapred",
 						"maroon Betzu-il cap" = "flapmaroon",
@@ -21,6 +22,11 @@
 						"brown Betzu-il cap" = "flapbrown",
 						"light brown Betzu-il cap" = "flaplightbrown"
 						)
+
+/obj/item/clothing/head/flap/white
+	name = "white Betzu-il cap"
+	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. This one is white."
+	icon_state = "flapwhite"
 
 /obj/item/clothing/head/flap/grey
 	name = "grey Betzu-il cap"
