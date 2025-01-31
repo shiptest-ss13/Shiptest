@@ -814,7 +814,7 @@
 /proc/pie_smite(mob/living/target)
 	if(QDELETED(target))
 		return
-	var/obj/item/reagent_containers/food/snacks/pie/cream/creamy = new(get_turf(target))
+	var/obj/item/food/pie/cream/creamy = new(get_turf(target))
 	creamy.splat(target)
 
 /client/proc/toggle_hub()
