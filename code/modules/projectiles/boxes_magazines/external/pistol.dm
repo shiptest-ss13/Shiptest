@@ -55,16 +55,6 @@
 /obj/item/ammo_box/magazine/pistol556mm/empty
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/m50
-	name = "handgun magazine (.50 AE)"
-	desc = "An oversized, 7-round handgun magazine for the Desert Eagle handgun. These rounds do significant damage with average performance against armor."
-	icon_state = "deagle_mag-7"
-	base_icon_state = "deagle_mag"
-	ammo_type = /obj/item/ammo_casing/a50AE
-	caliber = ".50 AE"
-	max_ammo = 7
-	multiple_sprites = AMMO_BOX_PER_BULLET
-
 /obj/item/ammo_box/magazine/disposable
 	name = "part of a disposable gun"
 	desc = "You ripped out part of the gun, somehow, rendering it unusuable. I hope you're happy."

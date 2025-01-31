@@ -290,7 +290,7 @@
 
 /datum/supply_pack/gun/hellfire_shotgun
 	name = "Hellfire Shotgun Crate"
-	desc = "For when you need to deal with 8 hooligans. Contains a pump shotgun, with a 8-round capacity."
+	desc = "For when you need to deal with a riot's worth of hooligans. Contains a pump shotgun, with a 9-round capacity."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/hellfire)
 	crate_name = "shotgun crate"
@@ -306,7 +306,7 @@
 
 /datum/supply_pack/gun/buckmaster
 	name = "Buckmaster Shotgun Crate"
-	desc = "For when you need to deal with 8 hooligans and can't be arsed to pump. Contains a semi-auto shotgun with an 8 round tube."
+	desc = "For when you need to deal with 7 hooligans and can't be arsed to pump. Contains a semi-auto shotgun with a 7-round capacity."
 	contains = list(/obj/item/storage/guncase/buckmaster)
 	cost = 3000
 	crate_name = "shotgun crate"

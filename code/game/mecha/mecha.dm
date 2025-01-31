@@ -178,7 +178,7 @@
 
 /obj/mecha/Destroy()
 	if(occupant && iscarbon(occupant))
-		occupant.SetSleeping(destruction_sleep_duration)
+		occupant.set_sleeping(destruction_sleep_duration)
 	go_out()
 	var/mob/living/silicon/ai/AI
 	for(var/mob/M in src) //Let's just be ultra sure
