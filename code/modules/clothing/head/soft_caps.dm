@@ -5,22 +5,22 @@
 	item_state = "helmet"
 	cuttable = TRUE
 	clothamnt = 2
-	unique_reskin = list("whitesoft" = "white cap",
-						"greysoft" = "grey cap",
-						"blacksoft" = "black cap",
-						"redsoft" = "red cap",
-						"maroonsoft" = "maroon cap",
-						"orangesoft" = "orange cap",
-						"yellowsoft" = "yellow cap",
-						"greensoft" = "green cap",
-						"darkgreensoft" = "dark green cap",
-						"tealsoft" = "teal cap",
-						"bluesoft" = "blue cap",
-						"darkbluesoft" = "dark blue cap",
-						"purplesoft" = "purple cap",
-						"pinksoft" = "pink cap",
-						"brownsoft" = "brown cap",
-						"lightbrownsoft" = "light brown cap"
+	unique_reskin = list("white cap" = "whitesoft",
+						"grey cap" = "greysoft",
+						"black cap" = "blacksoft",
+						"red cap" = "redsoft",
+						"maroon cap" = "maroonsoft",
+						"orange cap" = "orangesoft",
+						"yellow cap" = "yellowsoft",
+						"green cap" = "greensoft",
+						"dark green cap" = "dark greensoft",
+						"teal cap" = "tealsoft",
+						"blue cap" = "bluesoft",
+						"dark blue cap" = "dark bluesoft",
+						"purple cap" = "purplesoft",
+						"pink cap" = "pinksoft",
+						"brown cap" = "brownsoft",
+						"light brown cap" = "light brownsoft"
 						)
 	var/flipped = 0
 	//we can't use initial for procs because we need to account for unique_reskin, so this stores the skin of the hat we use.
