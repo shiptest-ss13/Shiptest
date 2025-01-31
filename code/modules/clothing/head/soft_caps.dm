@@ -13,14 +13,14 @@
 						"orange cap" = "orangesoft",
 						"yellow cap" = "yellowsoft",
 						"green cap" = "greensoft",
-						"dark green cap" = "dark greensoft",
+						"dark green cap" = "darkgreensoft",
 						"teal cap" = "tealsoft",
 						"blue cap" = "bluesoft",
-						"dark blue cap" = "dark bluesoft",
+						"dark blue cap" = "darkbluesoft",
 						"purple cap" = "purplesoft",
 						"pink cap" = "pinksoft",
 						"brown cap" = "brownsoft",
-						"light brown cap" = "light brownsoft"
+						"light brown cap" = "lightbrownsoft"
 						)
 	var/flipped = 0
 	//we can't use initial for procs because we need to account for unique_reskin, so this stores the skin of the hat we use.
