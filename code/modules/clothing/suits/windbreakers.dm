@@ -10,6 +10,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	togglename = "zipper"
 	allowed = list(	/obj/item/flashlight,
 					/obj/item/tank/internals/emergency_oxygen,
 					/obj/item/tank/internals/plasmaman,
