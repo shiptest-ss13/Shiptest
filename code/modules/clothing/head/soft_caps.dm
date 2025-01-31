@@ -5,21 +5,22 @@
 	item_state = "helmet"
 	cuttable = TRUE
 	clothamnt = 2
-	unique_reskin = list("grey cap" = "greysoft",
-						"black cap" = "blacksoft",
-						"red cap" = "redsoft",
-						"maroon cap" = "maroonsoft",
-						"orange cap" = "orangesoft",
-						"yellow cap" = "yellowsoft",
-						"green cap" = "greensoft",
-						"dark green cap" = "darkgreensoft",
-						"teal cap" = "tealsoft",
-						"blue cap" = "bluesoft",
-						"dark blue cap" = "darkbluesoft",
-						"purple cap" = "purplesoft",
-						"pink cap" = "pinksoft",
-						"brown cap" = "brownsoft",
-						"light brown cap" = "lightbrownsoft"
+	unique_reskin = list("white baseball cap" = "whitesoft",
+						"grey baseball cap" = "greysoft",
+						"black baseball cap" = "blacksoft",
+						"red baseball cap" = "redsoft",
+						"maroon baseball cap" = "maroonsoft",
+						"orange baseball cap" = "orangesoft",
+						"yellow baseball cap" = "yellowsoft",
+						"green baseball cap" = "greensoft",
+						"dark green baseball cap" = "darkgreensoft",
+						"teal baseball cap" = "tealsoft",
+						"blue baseball cap" = "bluesoft",
+						"dark baseball blue cap" = "darkbluesoft",
+						"purple baseball cap" = "purplesoft",
+						"pink baseball cap" = "pinksoft",
+						"brown baseball cap" = "brownsoft",
+						"light brown baseball cap" = "lightbrownsoft"
 						)
 	var/flipped = 0
 	//we can't use initial for procs because we need to account for unique_reskin, so this stores the skin of the hat we use.
@@ -76,6 +77,12 @@
 /obj/item/clothing/head/soft/examine(mob/user)
 	. = ..()
 	. += span_notice("Alt-click the cap to flip it [flipped ? "forwards" : "backwards"].")
+
+/obj/item/clothing/head/soft/white
+	name = "white cap"
+	desc = "It's a baseball hat in a tasteful white colour."
+	icon_state = "whitesoft"
+	current_skin = "whitesoft"
 
 /obj/item/clothing/head/soft/grey
 	name = "grey cap"
@@ -217,27 +224,23 @@
 	name = "beige utility cover"
 	desc = "A flat beige utility cover, unbranded. Just the right color for those sandy planetoids."
 	icon_state = "patrolbeigesoft"
-	soft_type = "patrolbeige"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/utility_black
 	name = "black utility cover"
 	desc = "A flat black utility cover, unbranded. Night Vision Goggles sold separately."
 	icon_state = "patrolblacksoft"
-	soft_type = "patrolblack"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/utility_olive
 	name = "miskilamao cap"
 	desc = "An olive utility cover emblazoned with the Miskilamo Shipbreaking logo. The material feels cheap."
 	icon_state = "patrololivesoft"
-	soft_type = "patrololive"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/utility_navy
 	name = "navy utility cover"
 	desc = "A navy blue utility cover, unbranded. Perfect for Seamen on long voyages."
 	icon_state = "patrolnavysoft"
-	soft_type = "patrolnavy"
 	dog_fashion = null
 //recompile icons comment!!!!!
