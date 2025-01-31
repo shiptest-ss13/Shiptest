@@ -87,7 +87,7 @@
 
 /datum/supply_pack/magazine/m20_auto_elite
 	name = "Auto Elite Magazine Crate"
-	desc = "Contains a .44 Roumain magazine for the Auto Elite pistol, with a capacity of ten rounds."
+	desc = "Contains a .44 Roumain magazine for the Auto Elite pistol, with a capacity of nine rounds."
 	contains = list(/obj/item/ammo_box/magazine/m20_auto_elite/empty)
 	cost = 250
 

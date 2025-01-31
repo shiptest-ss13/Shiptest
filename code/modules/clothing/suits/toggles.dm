@@ -114,7 +114,8 @@
 
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
 	..()
-	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
+		reskin_obj(user, TRUE)
 		return
 	else
 		suit_toggle(user)
