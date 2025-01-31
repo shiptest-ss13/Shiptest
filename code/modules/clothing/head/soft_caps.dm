@@ -97,7 +97,7 @@
 	current_skin = "blacksoft"
 
 /obj/item/clothing/head/soft/red
-	name = "gred cap"
+	name = "red cap"
 	desc = "It's a baseball hat in a tasteful red colour."
 	icon_state = "redsoft"
 	current_skin = "redsoft"

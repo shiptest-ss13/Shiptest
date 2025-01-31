@@ -81,7 +81,7 @@
 //Soft caps
 
 /datum/gear/hat/softcap
-	display_name = "cap, white"
+	display_name = "cap, recolorable"
 	path = /obj/item/clothing/head/soft
 
 /datum/gear/hat/utility_black
@@ -169,5 +169,5 @@
 	path = /obj/item/clothing/head/plastic_flower
 
 /datum/gear/hat/flap
-	display_name = "flap cap, white"
+	display_name = "flap cap, recolorable"
 	path = /obj/item/clothing/head/flap
