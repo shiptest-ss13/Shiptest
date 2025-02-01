@@ -32,6 +32,13 @@
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	kepori_override_icon = 'icons/mob/clothing/back/backpacks_kepori.dmi'
 
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_BACK
+	equip_delay_other = EQUIP_DELAY_BACK * 1.5
+	strip_delay = EQUIP_DELAY_BACK * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
+
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -39,15 +46,19 @@
 	STR.max_volume = STORAGE_VOLUME_BACKPACK
 	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
 	STR.use_sound = 'sound/items/storage/unzip.ogg'
+	STR.worn_access = FALSE
+
+/obj/item/storage/backpack/examine(mob/user)
+	. = ..()
+	var/datum/component/storage/bpack = GetComponent(/datum/component/storage)
+	if(bpack.worn_access == FALSE)
+		. += span_notice("You won't be able to open this once it's on your back.")
+	if(bpack.carry_access == FALSE)
+		. +=  span_notice("You'll have to set this down on the floor if you want to open it.")
 
 /*
  * Backpack Types
  */
-
-/obj/item/storage/backpack/old/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 12
 
 /obj/item/storage/backpack/holding
 	name = "bag of holding"
@@ -181,11 +192,18 @@
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
 
+	equipping_sound = null
+	unequipping_sound = null
+	equip_delay_self = null
+	equip_delay_other = EQUIP_DELAY_BACK
+	strip_delay = EQUIP_DELAY_BACK
+
 /obj/item/storage/backpack/satchel/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_volume = STORAGE_VOLUME_BACKPACK
+	STR.max_volume = STORAGE_VOLUME_SATCHEL
 	STR.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
+	STR.worn_access = TRUE
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
@@ -316,6 +334,13 @@
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(15, 16), list(19, 13), list(13, 18))
 
+/obj/item/storage/backpack/messenger/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_volume = STORAGE_VOLUME_SATCHEL
+	STR.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
+	STR.worn_access = TRUE
+
 /obj/item/storage/backpack/messenger/chem
 	name = "chemistry messenger bag"
 	desc = "A sterile backpack worn over one shoulder. This one is in Chemistry colors."
@@ -396,6 +421,7 @@
 	STR.max_w_class = MAX_WEIGHT_CLASS_DUFFEL
 	LAZYINITLIST(STR.exception_hold) // This code allows you to fit one mob holder into a duffel bag
 	STR.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
+	STR.carry_access = FALSE
 
 /obj/item/storage/backpack/duffelbag/captain
 	name = "captain's duffel bag"

@@ -124,7 +124,7 @@
 			"<span class='notice'>You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)].</span>")
 	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
 		return TRUE
-	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0)
+	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0, integrity_loss = 5)
 	return TRUE
 
 /obj/item/weldingtool/afterattack(atom/O, mob/user, proximity)
@@ -350,29 +350,6 @@
 
 /obj/item/weldingtool/hugetank/empty
 	start_full = FALSE
-
-/obj/item/weldingtool/experimental
-	name = "experimental welding tool"
-	desc = "An experimental welder capable of self-fuel generation and less harmful to the eyes."
-	icon_state = "exwelder"
-	item_state = "exwelder"
-	max_fuel = 40
-	custom_materials = list(/datum/material/iron=70, /datum/material/glass=120)
-	/*WS Begin - Better Tool sprites
-	change_icons = 0
-	WS End */
-	can_off_process = 1
-	light_range = 1
-	toolspeed = 0.5
-	wall_decon_damage = 100
-	var/last_gen = 0
-	var/nextrefueltick = 0
-
-/obj/item/weldingtool/experimental/process()
-	..()
-	if(get_fuel() < max_fuel && nextrefueltick < world.time)
-		nextrefueltick = world.time + 10
-		reagents.add_reagent(/datum/reagent/fuel, 1)
 
 /obj/item/weldingtool/old
 	desc = "A standard edition welder provided by Nanotrasen. This one seems to leak a little bit."

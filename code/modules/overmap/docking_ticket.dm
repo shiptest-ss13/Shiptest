@@ -37,7 +37,7 @@
 	target.current_docking_ticket = src
 
 
-/datum/docking_ticket/Destroy(force, ...)
+/datum/docking_ticket/Destroy(force)
 	if(target)
 		target.current_docking_ticket = null
 		target = null

@@ -17,6 +17,8 @@
 	near_miss_sound = 'sound/weapons/gun/hit/energy_miss1.ogg'
 	ricochet_sound = 'sound/weapons/gun/hit/energy_ricochet1.ogg'
 
+	bullet_identifier = "laser"
+
 	flag = "laser"
 	eyeblur = 2
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
@@ -83,6 +85,10 @@
 /obj/projectile/beam/weaker
 	damage = 10
 
+/obj/projectile/beam/weak/low_range
+	damage = 10
+	range = 9
+
 /obj/projectile/beam/weak/penetrator
 	armour_penetration = 50
 
@@ -99,10 +105,17 @@
 	damage = 0
 	nodamage = TRUE
 
+/obj/projectile/beam/laser/slug
+	name = "laser slug"
+	icon_state = "heavylaser"
+	damage = 20
+	armour_penetration = 40
+
 /obj/projectile/beam/scatter
 	name = "laser pellet"
 	icon_state = "scatterlaser"
 	damage = 5
+	range = 7
 
 /obj/projectile/beam/xray
 	name = "\improper X-ray beam"

@@ -282,7 +282,7 @@
 	if(target && cooldown < world.time)
 		if(I.get_temperature())
 			to_chat(target, "<span class='userdanger'>You suddenly feel very hot!</span>")
-			target.adjust_bodytemperature(50)
+			target.adjust_bodytemperature(10)
 			GiveHint(target)
 		else if(is_pointed(I))
 			to_chat(target, "<span class='userdanger'>You feel a stabbing pain in [parse_zone(user.zone_selected)]!</span>")

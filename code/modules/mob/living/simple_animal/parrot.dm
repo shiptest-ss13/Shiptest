@@ -259,8 +259,8 @@
 						switch(ch)
 							if(RADIO_CHANNEL_NANOTRASEN)
 								available_channels.Add(RADIO_TOKEN_NANOTRASEN)
-							if(RADIO_CHANNEL_COMMAND)
-								available_channels.Add(RADIO_TOKEN_COMMAND)
+							if(RADIO_CHANNEL_EMERGENCY)
+								available_channels.Add(RADIO_TOKEN_EMERGENCY)
 							if(RADIO_CHANNEL_MINUTEMEN)
 								available_channels.Add(RADIO_TOKEN_MINUTEMEN)
 							if(RADIO_CHANNEL_INTEQ)
@@ -648,7 +648,7 @@
 					item = I
 					break
 		if(item)
-			if(!AStar(src, get_turf(item), /turf/proc/Distance_cardinal))
+			if(!get_path_to(src, item))
 				item = null
 				continue
 			return item

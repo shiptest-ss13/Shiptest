@@ -170,6 +170,51 @@
 	light_power = 0.6
 	light_color = COLOR_ROCKPLANET_LIGHT
 
+/turf/open/floor/concrete/slab_1/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_1/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_2/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_2/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_3/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_3/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_4/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_4/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/pavement/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/pavement/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
 ///titanium
 
 /turf/open/floor/mineral/titanium/tiled/rockplanet

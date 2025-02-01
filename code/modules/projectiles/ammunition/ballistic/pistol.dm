@@ -99,19 +99,6 @@
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c45/rubber
 
-// .50 AE (Desert Eagle)
-
-/obj/item/ammo_casing/a50AE
-	name = ".50 AE bullet casing"
-	desc = "A .50 AE bullet casing."
-	caliber = ".50 AE"
-	projectile_type = /obj/projectile/bullet/a50AE
-
-/obj/item/ammo_casing/a50AE/hp
-	name = ".50 AE hollow point bullet casing"
-	desc = "A .50 AE hollow point bullet casing."
-	projectile_type = /obj/projectile/bullet/a50AE/hp
-
 // .22 LR (Himehabu, Pounder)
 
 /obj/item/ammo_casing/c22lr

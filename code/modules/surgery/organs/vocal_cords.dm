@@ -253,7 +253,7 @@
 		cooldown = COOLDOWN_DAMAGE
 		for(var/V in listeners)
 			var/mob/living/L = V
-			L.SetSleeping(0)
+			L.set_sleeping(0)
 
 	//HEAL
 	else if((findtext(message, heal_words)))
@@ -288,14 +288,14 @@
 		cooldown = COOLDOWN_DAMAGE
 		for(var/V in listeners)
 			var/mob/living/L = V
-			L.adjust_bodytemperature(50 * power_multiplier)
+			L.adjust_bodytemperature(5 * power_multiplier)
 
 	//COLD
 	else if((findtext(message, cold_words)))
 		cooldown = COOLDOWN_DAMAGE
 		for(var/V in listeners)
 			var/mob/living/L = V
-			L.adjust_bodytemperature(-50 * power_multiplier)
+			L.adjust_bodytemperature(-5 * power_multiplier)
 
 	//REPULSE
 	else if((findtext(message, repulse_words)))

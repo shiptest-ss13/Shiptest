@@ -142,6 +142,31 @@
 	icon_state = "hypovial"
 	comes_with = list(/datum/reagent/medicine/tricordrazine = 60)
 
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/morphine
+	name = "hypovial (morphine)"
+	icon_state = "hypovial-pink"
+	comes_with = list(/datum/reagent/medicine/morphine = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/atropine
+	name = "hypovial (atropine)"
+	icon_state = "hypovial-t"
+	comes_with = list(/datum/reagent/medicine/atropine = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/erp //its not what it looks like i swear
+	name = "hypovial (radiation purgant)"
+	icon_state = "hypovial-k"
+	comes_with = list(/datum/reagent/medicine/anti_rad = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/salclu
+	name = "hypovial (SalGlu Solution)"
+	icon_state = "hypovial"
+	comes_with = list(/datum/reagent/medicine/salglu_solution = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/chitosan
+	name = "hypovial (chitosan)"
+	icon_state = "hypovial-b"
+	comes_with = list(/datum/reagent/medicine/chitosan = 60)
+
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/CMO
 	name = "deluxe hypovial"
 	icon_state = "hypoviallarge-cmos"

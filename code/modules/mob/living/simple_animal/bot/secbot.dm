@@ -10,8 +10,7 @@
 	damage_coeff = list(BRUTE = 0.5, BURN = 0.7, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	pass_flags = PASSMOB
 
-	radio_key = /obj/item/encryptionkey/secbot //AI Priv + Security
-	radio_channel = RADIO_CHANNEL_COMMAND //Security channel
+	radio_channel = RADIO_CHANNEL_EMERGENCY //Security channel
 	bot_type = SEC_BOT
 	model = "Securitron"
 	bot_core_type = /obj/machinery/bot_core/secbot
@@ -71,7 +70,6 @@
 /mob/living/simple_animal/bot/secbot/pingsky
 	name = "Officer Pingsky"
 	desc = "It's Officer Pingsky! Delegated to satellite guard duty for harbouring anti-human sentiment."
-	radio_channel = RADIO_CHANNEL_AI_PRIVATE
 
 /mob/living/simple_animal/bot/secbot/Initialize()
 	. = ..()

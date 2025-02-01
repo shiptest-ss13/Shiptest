@@ -2,6 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Harrier-class Exploration Cruiser",
 	"prefix": "NTSV",
+	"manufacturer": "Nanotrasen Spaceworks",
 	"faction": "/datum/faction/nt",
 	"namelists": [
 		"NANOTRASEN",
@@ -59,12 +60,12 @@
 			"outfit": "/datum/outfit/job/nanotrasen/cargo_tech",
 			"slots": 1
 		},
-		"Cook": {
-			"outfit": "/datum/outfit/job/independent/cook",
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/nanotrasen/miner/no_equipment",
 			"slots": 1
 		},
-		"Janitor": {
-			"outfit": "/datum/outfit/job/nanotrasen/janitor",
+		"Cook": {
+			"outfit": "/datum/outfit/job/independent/cook",
 			"slots": 1
 		},
 		"Assistant": {

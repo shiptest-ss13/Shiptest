@@ -30,23 +30,11 @@ SUBSYSTEM_DEF(shuttle)
 
 	/// Whether express consoles are blocked from ordering anything or not
 	var/supplyBlocked = FALSE
-	/// Order number given to next cargo order
-	var/ordernum = 1
-	/// List of all singleton supply pack instances
-	var/list/supply_packs = list()
 
 	/// Stops ALL shuttles from being able to move
 	var/lockdown = FALSE
 
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
-	ordernum = rand(1, 9000)
-
-	for(var/pack in subtypesof(/datum/supply_pack))
-		var/datum/supply_pack/P = new pack()
-		if(!P.contains)
-			continue
-		supply_packs[P.type] = P
-
 	for(var/obj/docking_port/stationary/stationary_port as anything in stationary)
 		stationary_port.load_roundstart()
 		CHECK_TICK
@@ -91,6 +79,8 @@ SUBSYSTEM_DEF(shuttle)
 
 	jump_timer = addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), jump_completion_time, TIMER_STOPPABLE)
 	priority_announce("Jump initiated. ETA: [jump_completion_time / (1 MINUTES)] minutes.", null, null, "Priority")
+
+	INVOKE_ASYNC(SSticker, TYPE_PROC_REF(/datum/controller/subsystem/ticker,poll_hearts))
 
 /datum/controller/subsystem/shuttle/proc/request_transit_dock(obj/docking_port/mobile/M)
 	if(!istype(M))
@@ -193,10 +183,7 @@ SUBSYSTEM_DEF(shuttle)
 		transit_requesters = SSshuttle.transit_requesters
 	if (istype(SSshuttle.transit_request_failures))
 		transit_request_failures = SSshuttle.transit_request_failures
-	if (istype(SSshuttle.supply_packs))
-		supply_packs = SSshuttle.supply_packs
 
-	ordernum = SSshuttle.ordernum
 	lockdown = SSshuttle.lockdown
 
 /datum/controller/subsystem/shuttle/proc/is_in_shuttle_bounds(atom/A)
