@@ -2157,7 +2157,7 @@
 "rL" = (
 /obj/machinery/telecomms/server/presets/nanotrasen{
 	autolinkers = list("nanotrasen","broadcasterA","hub");
-	freq_listening = list(1353,1447,1459);
+	freq_listening = list(1353,1351,1459);
 	network = "nt_commnet"
 	},
 /turf/open/floor/circuit,
@@ -4707,7 +4707,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/telecomms/bus/preset_four{
 	autolinkers = list("hub","processor4","bus");
-	freq_listening = list(1353,1447,1459);
+	freq_listening = list(1353,1351,1459);
 	id = "Nanotrasen Communications Bus";
 	network = "nt_commnet"
 	},
@@ -5417,7 +5417,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/telecomms/receiver/preset_right{
 	autolinkers = list("receiverB","hub");
-	freq_listening = list(1353,1447,1459);
+	freq_listening = list(1353,1351,1459);
 	network = "nt_commnet"
 	},
 /turf/open/floor/circuit,
