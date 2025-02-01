@@ -71,18 +71,18 @@
 
 // turns out shrinking an industrial laser to this size is kinda dangerous
 /obj/item/gun/energy/laser/e50/clip/underbarrel/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
-	. = ..()
-	var/prot = FALSE
-	var/mob/living/carbon/human/shooter = user
-	if(shooter.gloves)
-		var/obj/item/clothing/gloves/shooter_glove = shooter.gloves
-		if(shooter_glove.max_heat_protection_temperature)
-			prot = (shooter_glove.max_heat_protection_temperature > 360)
-	if(HAS_TRAIT(user, TRAIT_RESISTHEAT) || HAS_TRAIT(user, TRAIT_RESISTHEATHANDS))
-		prot = TRUE
-	var/obj/item/bodypart/affected_hand = shooter.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
-	if(prot == FALSE)
-		if(affected_hand && affected_hand.receive_damage(0, 25))
-			shooter.drop_all_held_items()
-			to_chat(shooter,span_danger("The [src] violently heats up as it fires, burning your hand!"))
+	if(..())
+		var/prot = FALSE
+		var/mob/living/carbon/human/shooter = user
+		if(shooter.gloves)
+			var/obj/item/clothing/gloves/shooter_glove = shooter.gloves
+			if(shooter_glove.max_heat_protection_temperature)
+				prot = (shooter_glove.max_heat_protection_temperature > 360)
+		if(HAS_TRAIT(user, TRAIT_RESISTHEAT) || HAS_TRAIT(user, TRAIT_RESISTHEATHANDS))
+			prot = TRUE
+		var/obj/item/bodypart/affected_hand = shooter.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
+		if(prot == FALSE)
+			if(affected_hand && affected_hand.receive_damage(0, 25))
+				shooter.drop_all_held_items()
+				to_chat(shooter,span_danger("The [src] violently heats up as it fires, burning your hand!"))
 
