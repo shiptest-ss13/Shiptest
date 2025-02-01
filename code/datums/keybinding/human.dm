@@ -41,7 +41,7 @@
 	name = "aim_down_sights"
 	full_name = "Aim down sighs"
 	description = "Aim down the sights of the currently wielded weapon."
-	keybind_signal = COMSIG_KB_HUMAN_UNIQUEACTION
+	keybind_signal = COMSIG_KB_HUMAN_ADS
 
 /datum/keybinding/human/ads/down(client/user)
 	. = ..()
