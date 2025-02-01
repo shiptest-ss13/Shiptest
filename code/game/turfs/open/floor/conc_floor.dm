@@ -1,7 +1,9 @@
 /turf/open/floor/concrete
 	name = "concrete floor"
 	desc = "Cold, bare concrete flooring."
-	icon_state = "conc_smooth"
+	icon = 'icons/turf/floors/concrete.dmi'
+	icon_state = "conc_smooth_1"
+	base_icon_state = "conc_smooth"
 	broken_states = list("concdam_1", "concdam_2", "concdam_3", "concdam_4")
 	floor_tile = null
 	tiled_dirt = FALSE
@@ -15,6 +17,7 @@
 	// fraction ranging from 0 to 1 -- 0 is fully soft, 1 is fully hardened
 	// don't change this in subtypes unless you want them to spawn in soft on maps
 	var/harden_lvl = 1
+	var/has_variation = TRUE
 
 	var/shape_types = list(
 		/turf/open/floor/concrete,
@@ -31,6 +34,8 @@
 
 /turf/open/floor/concrete/Initialize()
 	. = ..()
+	if(has_variation)
+		icon_state = "[base_icon_state]_[rand(1,4)]"
 	check_harden()
 	update_appearance()
 
@@ -198,19 +203,24 @@
 
 /turf/open/floor/concrete/slab_1
 	icon_state = "conc_slab_1"
+	has_variation = FALSE
 
 /turf/open/floor/concrete/slab_2
 	icon_state = "conc_slab_2"
+	has_variation = FALSE
 
 /turf/open/floor/concrete/slab_3
 	icon_state = "conc_slab_3"
+	has_variation = FALSE
 
 /turf/open/floor/concrete/slab_4
 	icon_state = "conc_slab_4"
 	tiled_dirt = TRUE
+	has_variation = FALSE
 
 /turf/open/floor/concrete/tiles
 	icon_state = "conc_tiles"
+	has_variation = FALSE
 
 /turf/open/floor/concrete/reinforced
 	name = "hexacrete floor"
@@ -218,6 +228,7 @@
 	icon = 'icons/turf/floors/hexacrete.dmi'
 	icon_state = "hexacrete-0"
 	base_icon_state = "hexacrete"
+	has_variation = FALSE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_FLOOR_HEXACRETE)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_HEXACRETE)
@@ -273,7 +284,8 @@
 /turf/open/floor/concrete/pavement
 	name = "pavement"
 	desc = "The hot, coarse, and somewhat pavement. Vehicles driven on this are generally quiter than on traditional concrete, and is prefered for roadways."
-	icon_state = "pavement"
+	icon_state = "pavement_1"
+	base_icon_state = "pavement"
 	broken_states = null
 	shape_types = list(
 		/turf/open/floor/concrete/pavement,
