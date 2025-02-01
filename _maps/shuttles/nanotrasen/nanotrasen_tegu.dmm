@@ -594,6 +594,7 @@
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/storage/belt/utility/full/engi,
 /obj/item/gear_pack/anglegrinder,
+/obj/item/cartridge/ce,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "dZ" = (
@@ -1417,6 +1418,7 @@
 	req_access = list(48);
 	name = "field technician's locker"
 	},
+/obj/item/cartridge/atmos,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
 "lU" = (
@@ -2042,6 +2044,7 @@
 	pixel_x = 8;
 	pixel_y = -20
 	},
+/obj/item/cartridge/quartermaster,
 /turf/open/floor/carpet/orange,
 /area/ship/crew/crewtwo)
 "qW" = (
@@ -2065,6 +2068,7 @@
 	req_access = list(48);
 	name = "field technician's locker"
 	},
+/obj/item/cartridge/atmos,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
 "qX" = (
@@ -3129,10 +3133,6 @@
 	pixel_y = -10;
 	layer = 2.9
 	},
-/obj/item/stamp/qm{
-	pixel_x = -4;
-	pixel_y = -9
-	},
 /obj/machinery/button/door{
 	pixel_y = -4;
 	name = "Hallway Door Control";
@@ -3147,6 +3147,14 @@
 	id = "tegus_office_lockdown";
 	dir = 8;
 	pixel_x = 8
+	},
+/obj/item/stamp/nanotrasen/ns/supply{
+	pixel_x = -6;
+	pixel_y = -6
+	},
+/obj/item/stamp/nanotrasen{
+	pixel_y = 7;
+	pixel_x = -7
 	},
 /turf/open/floor/wood,
 /area/ship/cargo/office)
@@ -3972,6 +3980,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/item/stamp/nanotrasen/captain{
+	pixel_x = -5
+	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/crewfour)
 "Ie" = (
@@ -4246,6 +4257,7 @@
 /obj/item/ammo_box/magazine/smgm9mm,
 /obj/item/ammo_box/magazine/smgm9mm,
 /obj/item/clothing/glasses/hud/security/sunglasses,
+/obj/item/cartridge/hos,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "KK" = (
