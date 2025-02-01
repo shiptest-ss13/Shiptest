@@ -347,14 +347,6 @@
 	qdel(B)
 	qdel(src)
 
-/obj/item/bombcore/badmin/summon/clown
-	summon_path = /mob/living/simple_animal/hostile/retaliate/clown
-	amt_summon 	= 50
-
-/obj/item/bombcore/badmin/summon/clown/defuse()
-	playsound(src, 'sound/misc/sadtrombone.ogg', 50)
-	..()
-
 /obj/item/bombcore/large
 	name = "large bomb payload"
 	range_heavy = 5
