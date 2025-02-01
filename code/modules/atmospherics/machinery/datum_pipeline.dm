@@ -119,6 +119,8 @@
 		var/obj/machinery/atmospherics/pipe/P = A
 		if(P.parent)
 			merge(P.parent)
+		else
+			P.parent = src
 		var/list/adjacent = P.pipeline_expansion()
 		for(var/obj/machinery/atmospherics/pipe/I in adjacent)
 			if(I.parent == src)
@@ -126,7 +128,7 @@
 			var/datum/pipeline/E = I.parent
 			merge(E)
 		if(!(P in members))
-			P.setPipenet(src, N)
+			P.parent = src
 			air.set_volume(air.return_volume() + P.volume)
 	else
 		A.setPipenet(src, N)
@@ -137,7 +139,11 @@
 		return
 	air.set_volume(air.return_volume() + E.air.return_volume())
 	for(var/obj/machinery/atmospherics/pipe/S in E.members)
-		S.setPipenet(src, S)
+		S.parent = src
+		members += S
+		if(S.air_temporary)
+			air.merge(S.air_temporary)
+			S.air_temporary = null
 	air.merge(E.air)
 	for(var/obj/machinery/atmospherics/components/C in E.other_atmosmch)
 		C.replacePipenet(E, src)

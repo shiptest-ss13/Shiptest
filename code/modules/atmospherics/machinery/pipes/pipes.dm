@@ -37,7 +37,7 @@
 /obj/machinery/atmospherics/pipe/get_rebuild_targets()
 	if(!QDELETED(parent))
 		return
-	setPipenet(new /datum/pipeline, src)
+	parent = new
 	return list(parent)
 
 /obj/machinery/atmospherics/pipe/proc/releaseAirToTurf()
@@ -81,10 +81,8 @@
 
 /obj/machinery/atmospherics/pipe/setPipenet(datum/pipeline/reference, obj/machinery/atmospherics/connection)
 	if(!QDELETED(parent))
-		parent.members -= list(parent)
 		qdel(parent)
 	parent = reference
-	parent.members += list(parent)
 
 /obj/machinery/atmospherics/pipe/Destroy()
 	QDEL_NULL(parent)
