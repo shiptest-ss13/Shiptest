@@ -64,6 +64,9 @@
 	default_ammo_type = /obj/item/stock_parts/cell/gun
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun,
+		/obj/item/stock_parts/cell/gun/upgraded,
+		/obj/item/stock_parts/cell/gun/empty,
+		/obj/item/stock_parts/cell/gun/upgraded/empty,
 	)
 
 // turns out shrinking an industrial laser to this size is kinda dangerous
