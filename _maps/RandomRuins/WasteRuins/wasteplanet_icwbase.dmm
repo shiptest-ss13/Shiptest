@@ -199,7 +199,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "aE" = (
 /obj/structure/frame/computer,
@@ -377,7 +377,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer2{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "bz" = (
 /obj/effect/turf_decal/industrial/warning/dust/corner,
@@ -550,7 +550,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "ch" = (
 /obj/structure/cable{
@@ -576,7 +576,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "cn" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner,
@@ -644,7 +644,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "cA" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "cB" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercee,
@@ -881,7 +881,7 @@
 	pixel_x = -10;
 	pixel_y = 5
 	},
-/turf/open/floor/plating{
+/turf/open/floor/plating/wasteplanet/lit{
 	icon_state = "plastitanium_dam2"
 	},
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
@@ -933,6 +933,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/weather,
+/obj/item/toy/beach_ball/holoball{
+	pixel_x = 0;
+	pixel_y = 17
+	},
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "dE" = (
@@ -1015,7 +1019,7 @@
 	pixel_y = 0
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "dW" = (
 /obj/machinery/door/airlock/external{
@@ -1034,7 +1038,7 @@
 "dX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "ed" = (
 /obj/structure/cable{
@@ -1407,6 +1411,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/end,
 /obj/effect/turf_decal/weather,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/frontier/internals,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ft" = (
@@ -2173,7 +2178,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/syndicateemblem/bottom/middle,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "ia" = (
 /obj/effect/decal/cleanable/blood/tracks,
@@ -2644,7 +2649,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/internals,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "kr" = (
@@ -2882,7 +2886,6 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "lt" = (
-/obj/structure/closet/crate/solarpanel_small,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 8
 	},
@@ -3012,6 +3015,10 @@
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/vault,
 /area/ruin/wasteplanet/wasteplanet_icwbase/vault)
+"lY" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "ma" = (
 /obj/item/ammo_casing/spent,
 /obj/effect/decal/cleanable/dirt,
@@ -3294,7 +3301,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "nf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3735,7 +3742,7 @@
 /obj/structure/salvageable/computer{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "oN" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -4172,7 +4179,7 @@
 	},
 /obj/effect/spawner/random/decoration,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "qe" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4354,6 +4361,7 @@
 	dir = 9
 	},
 /obj/structure/table/chem,
+/obj/item/clothing/neck/stethoscope,
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "qK" = (
@@ -4464,7 +4472,7 @@
 /obj/machinery/holopad/secure,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "rf" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -4648,7 +4656,7 @@
 	pixel_x = 6;
 	pixel_y = 3
 	},
-/turf/open/floor/plating{
+/turf/open/floor/plating/wasteplanet/lit{
 	icon_state = "plastitanium_dam5"
 	},
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
@@ -4803,6 +4811,10 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/suit/radiation,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "sE" = (
@@ -5017,8 +5029,8 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "ts" = (
-/obj/effect/spawner/random/structure/crate_abandoned,
-/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "tu" = (
@@ -5277,10 +5289,10 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass/plastitanium,
 /obj/machinery/light/small/broken/directional/north,
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "un" = (
 /obj/effect/turf_decal/borderfloorblack,
@@ -5531,7 +5543,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "vH" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -6011,7 +6023,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "xx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -6069,7 +6081,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "xG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6253,10 +6265,6 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "yn" = (
 /obj/structure/closet/crate/rations,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/turf_decal/road/line/edge/transparent/syndiered{
 	dir = 1
 	},
@@ -6515,7 +6523,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "zu" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -6568,10 +6576,10 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/mapping_helpers/airlock/welded,
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "zD" = (
 /obj/structure/cable{
@@ -6656,8 +6664,11 @@
 /turf/open/floor/engine/waste/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "zU" = (
-/obj/structure/closet/crate/secure/loot,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/spawner/random/structure/crate_abandoned,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "zW" = (
@@ -6853,7 +6864,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "AC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7328,6 +7339,7 @@
 	pixel_y = -1
 	},
 /obj/machinery/light/dim/directional/south,
+/obj/structure/closet/crate/secure/loot,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "CE" = (
@@ -7342,7 +7354,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 2
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "CJ" = (
 /obj/structure/chair/plastic{
@@ -7438,7 +7450,7 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "CU" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -7455,7 +7467,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "CX" = (
 /obj/structure/salvageable/machine,
@@ -7628,7 +7640,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "DH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7720,6 +7732,10 @@
 	},
 /obj/effect/turf_decal/borderfloorblack/corner,
 /obj/effect/decal/cleanable/cobweb,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/suit/radiation,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "Ec" = (
@@ -7754,7 +7770,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "Eh" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -7897,7 +7913,7 @@
 /obj/item/gun/ballistic/automatic/smg/sidewinder/no_mag,
 /obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
 /obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "ER" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -8077,13 +8093,13 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "FP" = (
-/obj/effect/spawner/random/structure/crate_abandoned,
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 4
 	},
+/obj/structure/closet/crate/solarpanel_small,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "FS" = (
@@ -8507,22 +8523,12 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "HD" = (
-/obj/structure/closet/crate/radiation,
 /obj/effect/turf_decal/corner/opaque/nsorange/borderfull,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/head/radiation,
-/obj/item/clothing/head/radiation,
-/obj/item/clothing/head/radiation,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/storage/firstaid/radiation,
 /obj/machinery/light/directional/north,
+/obj/item/storage/firstaid/radiation,
+/obj/item/storage/firstaid/toxin,
+/obj/structure/rack,
+/obj/item/radio/weather_monitor,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "HE" = (
@@ -8567,6 +8573,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/east,
 /obj/structure/closet/crate/medical,
+/obj/effect/spawner/random/medical/medkit,
+/obj/effect/spawner/random/medical/medkit,
+/obj/effect/spawner/random/medical/medkit,
+/obj/effect/spawner/random/medical/beaker,
+/obj/effect/spawner/random/medical/beaker,
+/obj/effect/spawner/random/medical/chem_jug,
+/obj/effect/spawner/random/medical/supplies,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "HV" = (
@@ -8590,7 +8603,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/crate/secure/loot,
+/obj/structure/mecha_wreckage/ripley/mkii,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "HY" = (
@@ -8726,6 +8739,14 @@
 	icon_state = "damaged4"
 	},
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"IC" = (
+/obj/effect/turf_decal/road/line/opaque/syndiered{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "ID" = (
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/blood/footprints{
@@ -8789,6 +8810,7 @@
 	},
 /obj/effect/turf_decal/weather,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/frontier/internals,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "IP" = (
@@ -9028,7 +9050,7 @@
 	},
 /obj/structure/salvageable/machine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "JI" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -9323,7 +9345,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "KG" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -9370,7 +9392,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/light/broken/directional/east,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "KM" = (
 /obj/machinery/iv_drip,
@@ -9855,6 +9877,10 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/suit/radiation,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "MW" = (
@@ -9871,6 +9897,7 @@
 	dir = 5
 	},
 /obj/structure/table/chem,
+/obj/effect/spawner/random/medical/minor_healing,
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Nb" = (
@@ -10526,7 +10553,7 @@
 "PO" = (
 /obj/effect/spawner/random/salvage/half,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "PS" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -10559,7 +10586,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/west,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "Qd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10989,7 +11016,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "RW" = (
 /obj/structure/flippedtable{
@@ -11149,7 +11176,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/broken/directional/east,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "Sz" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -11171,7 +11198,7 @@
 /obj/structure/salvageable/computer{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "SC" = (
 /obj/machinery/light/directional/west,
@@ -11442,6 +11469,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
+"TD" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/structure/crate_abandoned,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "TE" = (
 /obj/structure/table/survival_pod,
 /obj/machinery/computer/camera_advanced{
@@ -11509,7 +11544,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 2
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "TN" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -11692,7 +11727,8 @@
 	},
 /obj/structure/safe,
 /obj/item/spacecash/bundle/loadsamoney,
-/turf/open/floor/plasteel/dark,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "UE" = (
 /obj/effect/turf_decal/industrial/warning/dust{
@@ -11877,7 +11913,7 @@
 /obj/structure/salvageable/destructive_analyzer{
 	name = "broken laser drill"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "Vj" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered,
@@ -12056,11 +12092,8 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "VX" = (
-/obj/effect/turf_decal/road/line/opaque/syndiered{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/mecha_wreckage/ripley/mkii,
+/obj/effect/spawner/random/structure/crate_abandoned,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "VZ" = (
@@ -12127,7 +12160,6 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = -21
 	},
@@ -12139,6 +12171,7 @@
 	pixel_x = -4;
 	pixel_y = 5
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/wasteplanet{
 	icon_state = "damaged3"
 	},
@@ -12315,8 +12348,7 @@
 /turf/open/floor/engine/waste/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "WO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/secure/loot,
+/obj/effect/spawner/random/structure/crate_abandoned,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "WP" = (
@@ -12805,7 +12837,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "YP" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -13099,11 +13131,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "ZI" = (
-/obj/effect/spawner/random/structure/crate_abandoned,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 4
 	},
 /obj/machinery/light/dim/directional/east,
+/obj/structure/closet/crate/solarpanel_small,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "ZJ" = (
@@ -16635,7 +16667,7 @@ QZ
 Dj
 Ni
 lt
-lt
+TD
 tZ
 pw
 yr
@@ -16751,8 +16783,8 @@ MN
 cH
 Wm
 jB
+ts
 gF
-zU
 Ff
 Sz
 Fp
@@ -16815,10 +16847,10 @@ DZ
 yh
 Kl
 Wf
-VX
+Wf
 AR
 Gm
-kd
+VX
 hl
 pw
 yr
@@ -16873,13 +16905,13 @@ xG
 Vs
 jG
 xu
-id
+IC
 kI
 ZE
 id
 yn
-kx
-ts
+WO
+kd
 GJ
 pw
 yr
@@ -16934,13 +16966,13 @@ xX
 dy
 SU
 ji
-HW
 zP
+HW
 zP
 OJ
 uh
 Rx
-uh
+zU
 oo
 pw
 Zb
@@ -16999,7 +17031,7 @@ gQ
 gQ
 gQ
 bj
-WO
+kd
 kd
 kd
 CD
@@ -17784,7 +17816,7 @@ cA
 DF
 cg
 hZ
-cA
+lY
 CU
 NO
 TS
