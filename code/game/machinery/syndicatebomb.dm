@@ -225,13 +225,6 @@
 	desc = "Oh god what is in this thing?"
 	payload = /obj/item/bombcore/badmin/summon
 
-/obj/machinery/syndicatebomb/badmin/clown
-	name = "clown bomb"
-	icon_state = "clown-bomb"
-	desc = "HONK."
-	payload = /obj/item/bombcore/badmin/summon/clown
-	beepsound = 'sound/items/bikehorn.ogg'
-
 /obj/machinery/syndicatebomb/empty
 	name = "bomb"
 	icon_state = "base-bomb"
