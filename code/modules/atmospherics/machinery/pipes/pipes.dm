@@ -37,7 +37,7 @@
 /obj/machinery/atmospherics/pipe/get_rebuild_targets()
 	if(!QDELETED(parent))
 		return
-	setPipenet(new, null)
+	setPipenet(new /datum/pipeline, src)
 	return list(parent)
 
 /obj/machinery/atmospherics/pipe/proc/releaseAirToTurf()
