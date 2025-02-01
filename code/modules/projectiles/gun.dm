@@ -997,12 +997,13 @@
 		human_holder = src
 	for(var/obj/item/gun/at_risk in get_all_contents())
 		var/chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM * at_risk.safety_multiplier)
+		var/bodyzone = pick_weight(list(BODY_ZONE_HEAD = 1, BODY_ZONE_CHEST = 15, BODY_ZONE_L_ARM = 8, BODY_ZONE_R_ARM = 8, BODY_ZONE_L_LEG = 34, BODY_ZONE_R_LEG = 34))
 		if(human_holder)
 			// gun is less likely to go off in a holster
 			if(at_risk == human_holder.s_store)
 				chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW * at_risk.safety_multiplier)
+				bodyzone = pick_weight(list(BODY_ZONE_CHEST = 16, BODY_ZONE_L_LEG = 42, BODY_ZONE_R_LEG = 42))
 		if(at_risk.safety == FALSE && prob(chance_to_fire))
-			var/bodyzone = pick_weight(list(BODY_ZONE_HEAD = 6, BODY_ZONE_CHEST = 12, BODY_ZONE_L_ARM = 9, BODY_ZONE_R_ARM = 9, BODY_ZONE_L_LEG = 32, BODY_ZONE_R_LEG = 32))
 			if(at_risk.process_fire(src,src,FALSE, null, bodyzone) == TRUE)
 				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
 				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s [get_bodypart(bodyzone)]!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your [get_bodypart(bodyzone)]!"))
