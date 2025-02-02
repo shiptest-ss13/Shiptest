@@ -306,7 +306,6 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset/headset_sec/alt
-	belt = /obj/item/gun/ballistic/automatic/pistol/commander
 	mask = /obj/item/clothing/mask/gas/vigilitas
 	head = /obj/item/clothing/head/nanotrasen/cap/security
 	back = /obj/item/storage/backpack/messenger
