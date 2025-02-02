@@ -2,9 +2,6 @@
 "a" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
-"d" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
 "e" = (
 /obj/structure/chair/handrail,
 /obj/structure/cable/cyan{
@@ -148,6 +145,9 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	id = "bams"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "E" = (
@@ -250,6 +250,9 @@
 	id = "bams";
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "U" = (
@@ -298,53 +301,56 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
+"Y" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
 
 (1,1,1) = {"
 A
 v
-d
+Y
 v
 A
 "}
 (2,1,1) = {"
-d
+Y
 L
 E
 o
-d
+Y
 "}
 (3,1,1) = {"
-d
+Y
 X
 q
 G
-d
+Y
 "}
 (4,1,1) = {"
-d
+Y
 R
 U
 y
-d
+Y
 "}
 (5,1,1) = {"
-d
+Y
 r
 P
 I
-d
+Y
 "}
 (6,1,1) = {"
 a
-d
+Y
 e
 i
-d
+Y
 "}
 (7,1,1) = {"
 A
 a
 C
 S
-d
+Y
 "}
