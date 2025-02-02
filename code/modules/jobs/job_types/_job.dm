@@ -35,10 +35,9 @@
 	name = new_name
 	outfit = new_outfit
 
-	var/datum/job/outfit_job = new_outfit.jobtype
+	var/datum/job/outfit_job = new new_outfit.jobtype
 	if(outfit_job)
-		access = outfit_job.access
-		minimal_access = outfit_job.minimal_access
+		access = outfit_job.get_access()
 
 	register()
 
