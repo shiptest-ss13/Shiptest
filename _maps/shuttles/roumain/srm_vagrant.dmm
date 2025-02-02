@@ -726,9 +726,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "vagrantwindowshuts"
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/medical)
 "kZ" = (
@@ -1068,20 +1066,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ship/roumain)
-"qI" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = "airlockshutters"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/electrical)
 "qK" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/railing/corner{
@@ -1676,6 +1660,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "BY" = (
@@ -1794,6 +1779,13 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "airlockshutters"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "Fa" = (
@@ -2127,9 +2119,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "vagrantwindowshuts"
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/crew/cryo)
 "Lb" = (
@@ -2166,9 +2156,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "vagrantwindowshuts"
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/security)
 "LM" = (
@@ -2401,6 +2389,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "airlockshutters"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "Ob" = (
@@ -2430,6 +2421,17 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/security)
+"OI" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "airlockshutters"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/electrical)
 "OJ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -3344,10 +3346,10 @@ bF
 (16,1,1) = {"
 bF
 Cb
-EM
+OI
 fT
 ps
-qI
+EM
 Yr
 nr
 uV
