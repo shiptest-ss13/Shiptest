@@ -57,7 +57,7 @@
 
 /obj/item/storage/guncase/firestorm
 	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
-	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+	mag_type = /obj/item/ammo_box/magazine/c44_firestorm_mag
 
 /obj/item/storage/guncase/vickland
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/vickland
@@ -156,6 +156,10 @@
 /obj/item/storage/guncase/pistol/m17
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/m17
 	mag_type = /obj/item/ammo_box/magazine/m17
+
+/obj/item/storage/guncase/pistol/m20_auto_elite
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite
+	mag_type = /obj/item/ammo_box/magazine/m20_auto_elite
 
 /obj/item/storage/guncase/m12
 	gun_type = /obj/item/gun/ballistic/automatic/m12_sporter
@@ -298,6 +302,10 @@
 /obj/item/storage/guncase/commissioner
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 	mag_type = /obj/item/ammo_box/magazine/co9mm
+
+/obj/item/storage/guncase/pistol/pinscher
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite/inteq
+	mag_type = /obj/item/ammo_box/magazine/m20_auto_elite
 
 /obj/item/storage/guncase/mongrel
 	gun_type = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq

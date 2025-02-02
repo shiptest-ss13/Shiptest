@@ -241,6 +241,8 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 ///the obj is deconstructed into pieces, whether through careful disassembly or when destroyed.
 /obj/proc/deconstruct(disassembled = TRUE)
+	if(resistance_flags & INDESTRUCTIBLE) //really sod off
+		return
 	SEND_SIGNAL(src, COMSIG_OBJ_DECONSTRUCT, disassembled)
 	qdel(src)
 
@@ -250,6 +252,8 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 ///what happens when the obj's integrity reaches zero.
 /obj/proc/obj_destruction(damage_flag)
+	if(resistance_flags & INDESTRUCTIBLE) //sod off
+		return
 	if(damage_flag == "acid")
 		acid_melt()
 	else if(damage_flag == "fire")

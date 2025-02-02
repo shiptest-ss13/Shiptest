@@ -1,0 +1,39 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Arke-class Surveying Ship",
+	"prefix": "CLSV",
+	"namelists": [
+		"GENERAL",
+		"CLIP MINUTEMEN",
+		"NATURAL"
+	],
+	"description": "The Arke-Class is a relatively new appearance in the Frontier, continuing it's use as a planet surveying ship for CLIP-LAND's colony development. The Arke is lightly equipped and crewed, specializing in gathering data to relay to allied ships in the sector. Despite it's size, it boasts a telecommunications array for sharing data and communication with other ships. Descending from the Proteus-Class, designed for low-cost manufacturing and modularity, the Arke is deployed into the frontier with a specific goal, but remains able to adapt with it's relatively spaceful cargo bay.",
+	"tags": [
+		"Telecomms",
+		"Specialist"
+	],
+	"map_short_name": "Arke-class",
+	"faction": "/datum/faction/clip",
+	"map_path": "_maps/shuttles/minutemen/minutemen_arke.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/clip/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/clip/mechanic",
+			"slots": 1
+		},
+		"Medical Technician": {
+			"outfit": "/datum/outfit/job/clip/medtech",
+			"slots": 1
+		},
+		"Surveyor": {
+			"outfit": "/datum/outfit/job/clip/assistant/surveyor",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

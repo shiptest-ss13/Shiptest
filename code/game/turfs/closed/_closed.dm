@@ -271,6 +271,9 @@
 
 /turf/closed/deconstruct_act(mob/living/user, obj/item/I)
 	var/act_duration = breakdown_duration
+	if(breakdown_duration == -1)
+		to_chat(user, span_warning("[src] cannot be deconstructed!"))
+		return FALSE
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")

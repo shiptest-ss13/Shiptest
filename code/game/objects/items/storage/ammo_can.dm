@@ -23,7 +23,8 @@
 		/obj/item/ammo_box/magazine/ammo_stack,
 		/obj/item/ammo_casing,
 		/obj/item/mine,
-		/obj/item/grenade
+		/obj/item/grenade,
+		/obj/item/stock_parts/cell/gun
 		))
 
 /obj/item/storage/toolbox/ammo/a850r/PopulateContents()

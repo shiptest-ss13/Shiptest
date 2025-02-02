@@ -151,7 +151,7 @@
 	return gun_properties
 
 /obj/machinery/porta_turret/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	id = "[text_ref(port)][initial(id)]"
+	id = "[text_ref(port)][id]"
 	port.turret_list |= WEAKREF(src)
 
 /obj/machinery/porta_turret/proc/toggle_on(set_to)
@@ -513,9 +513,6 @@
 		if(!is_type_in_typecache(target_mob, dangerous_fauna))
 			return FALSE
 
-		if(ismonkey(target_mob))
-			var/mob/living/carbon/monkey/monke = target_mob
-			return monke.mode == MONKEY_HUNT && target(target_mob)
 		if(istype(target_mob, /mob/living/simple_animal/hostile/retaliate))
 			var/mob/living/simple_animal/hostile/retaliate/target_animal = target_mob
 			return length(target_animal.enemies) && target(target_mob)
@@ -613,14 +610,11 @@
 	if(current_target)
 		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(set_target))
 
-/obj/machinery/porta_turret/proc/set_state(on, new_mode, new_flags)
-	if(locked)
-		return
-
+/obj/machinery/porta_turret/proc/set_state(on, new_lethal, new_flags)
 	if(!isnull(new_flags))
 		turret_flags = new_flags
 
-	lethal = new_mode
+	lethal = new_lethal
 	toggle_on(on)
 	power_change()
 
