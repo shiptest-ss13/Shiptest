@@ -17,7 +17,7 @@
 	icon_state = "floor6-old"
 	},
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "ac" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -148,7 +148,7 @@
 	dir = 8
 	},
 /obj/structure/chair/comfy/blue/corpo/directional/east,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "az" = (
 /obj/effect/decal/cleanable/blood{
@@ -158,7 +158,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "aA" = (
 /obj/structure/table/chem,
@@ -174,7 +174,7 @@
 	},
 /obj/effect/spawner/random/maintenance,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "aB" = (
 /obj/effect/turf_decal/industrial/warning/dust{
@@ -338,7 +338,7 @@
 "be" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "bh" = (
 /obj/effect/turf_decal/weather,
@@ -360,7 +360,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 10
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "bp" = (
 /obj/structure/table/glass,
@@ -501,12 +501,12 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
 /obj/machinery/power/smes/engineering{
 	input_level = 200000;
 	output_level = 200000
+	},
+/obj/structure/cable{
+	icon_state = "0-10"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
@@ -565,7 +565,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "cm" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -644,7 +644,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "cA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -683,7 +683,7 @@
 	default_raw_text = "LEAVE THE FUCKING PILE OF CORPSES ALONE STOP TRYING TO USE IT AS A SURGICAL LOCATION FOR FUCKS SAKE";
 	name = "harshly penned note"
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "cE" = (
 /obj/effect/turf_decal/weather,
@@ -726,7 +726,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "cM" = (
 /obj/effect/decal/cleanable/dirt,
@@ -988,7 +988,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 9
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "dO" = (
 /obj/structure/cable{
@@ -1082,7 +1082,7 @@
 	pixel_y = 2
 	},
 /obj/effect/turf_decal/corner/opaque/cybersunteal/bordercee,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "ej" = (
 /obj/effect/turf_decal/techfloor/orange/corner,
@@ -1121,7 +1121,7 @@
 /obj/structure/table/chem,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line,
 /obj/machinery/light/directional/south,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "ev" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
@@ -1365,7 +1365,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "fh" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1619,7 +1619,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "gg" = (
 /obj/effect/turf_decal/industrial/warning/dust{
@@ -1666,7 +1666,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "gp" = (
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "gq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1678,7 +1678,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "gr" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -1718,7 +1718,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "gw" = (
 /turf/open/floor/plating/wasteplanet/rust/lit,
@@ -1740,7 +1740,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "gz" = (
 /obj/item/ammo_casing/spent,
@@ -1908,7 +1908,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "hh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1972,7 +1972,7 @@
 	dir = 8
 	},
 /obj/machinery/iv_drip,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "ho" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1999,11 +1999,11 @@
 	pixel_x = 0;
 	pixel_y = -27
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "hs" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "hv" = (
 /obj/effect/turf_decal/industrial/warning/dust/corner{
@@ -2303,7 +2303,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "iJ" = (
 /obj/effect/turf_decal/borderfloorblack,
@@ -2367,7 +2367,7 @@
 	dir = 8
 	},
 /obj/machinery/iv_drip,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "iX" = (
 /obj/effect/turf_decal/industrial/warning/dust{
@@ -2470,7 +2470,7 @@
 	icon_state = "gib3"
 	},
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "jD" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -2780,7 +2780,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "kY" = (
 /obj/structure/cable{
@@ -2832,7 +2832,7 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "lo" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -2886,7 +2886,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "ly" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -2950,10 +2950,10 @@
 /obj/effect/spawner/random/engineering/tool/sydnie,
 /obj/effect/spawner/random/engineering,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/light/directional/north,
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
 "lN" = (
@@ -2964,7 +2964,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "lO" = (
 /obj/structure/table/chem,
@@ -3008,12 +3008,6 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "mc" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/machinery/light/directional/north,
 /obj/item/storage/firstaid/radiation,
 /obj/item/tank/internals/emergency_oxygen/double,
@@ -3025,6 +3019,9 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/structure/closet/radiation/empty,
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
 "me" = (
@@ -3104,7 +3101,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "mt" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -3237,7 +3234,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/corner{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "mS" = (
 /obj/effect/turf_decal/industrial/warning/dust{
@@ -3251,7 +3248,7 @@
 "mT" = (
 /obj/structure/table/chem,
 /obj/structure/sink/chem,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "mW" = (
 /obj/structure/cable{
@@ -3289,10 +3286,7 @@
 "nf" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered,
-/obj/machinery/airalarm/kitchen_cold_room{
-	pixel_x = 0;
-	pixel_y = -35
-	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "ng" = (
@@ -3351,7 +3345,7 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "nq" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
@@ -3686,7 +3680,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 9
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "oH" = (
 /obj/effect/decal/cleanable/blood{
@@ -3696,7 +3690,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/corner{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "oJ" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border,
@@ -3737,7 +3731,7 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal/bordercorner{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "oR" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -3825,7 +3819,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 8
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "pf" = (
 /obj/structure/cable{
@@ -3885,7 +3879,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "pm" = (
 /obj/structure/salvageable/machine,
@@ -3953,7 +3947,7 @@
 	icon_state = "floor5-old"
 	},
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "pu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3994,7 +3988,7 @@
 	icon_state = "4-8"
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals/neuter,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "pE" = (
 /obj/structure/table/wood/fancy/purple,
@@ -4024,7 +4018,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/spawner/random/medical/supplies,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "pL" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -4211,7 +4205,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 8
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "qr" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -4324,7 +4318,7 @@
 /obj/machinery/light/directional/north,
 /obj/structure/table/chem,
 /obj/machinery/microwave,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "qH" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -4349,7 +4343,7 @@
 	},
 /obj/structure/table/chem,
 /obj/item/clothing/neck/stethoscope,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "qK" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
@@ -4462,7 +4456,7 @@
 /obj/machinery/door/airlock/medical{
 	name = "Treatment Bay"
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "rl" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -4526,7 +4520,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "rF" = (
 /obj/effect/turf_decal/borderfloorblack,
@@ -4683,7 +4677,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/footprints,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "si" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line,
@@ -4751,7 +4745,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "sA" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -4805,7 +4799,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "sJ" = (
 /obj/effect/turf_decal/techfloor/orange/corner{
@@ -4989,7 +4983,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "tr" = (
 /obj/machinery/light/directional/north,
@@ -4997,7 +4991,7 @@
 	name = "Non-functional Experimental Lifeform Stasis Unit";
 	desc = "A not so comfortable looking bed with some nozzles at the top and bottom. It will keep someone in stasis. It seems like it has been sitting here for ages. This one seems to be broken, and has been rendered non-functional by age and wear."
 	},
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "ts" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -5041,7 +5035,7 @@
 	dir = 10
 	},
 /obj/machinery/airalarm/directional/west,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "tC" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -5128,7 +5122,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 5
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "tT" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -5568,7 +5562,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "vS" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -5695,7 +5689,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "wg" = (
 /obj/structure/fluff/oldturret,
@@ -5857,7 +5851,7 @@
 "wU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/window/brigdoor/northleft,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "wX" = (
 /obj/effect/turf_decal/industrial/warning/dust{
@@ -5942,7 +5936,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "xr" = (
 /obj/item/ammo_casing/spent,
@@ -6010,7 +6004,7 @@
 	icon_state = "0-1"
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "xB" = (
 /obj/structure/cable{
@@ -6089,7 +6083,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "xP" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -6169,7 +6163,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "yb" = (
 /obj/structure/cable{
@@ -6184,7 +6178,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "ye" = (
 /obj/structure/frame,
@@ -6503,7 +6497,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "zx" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
@@ -6593,7 +6587,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "zP" = (
 /obj/structure/cable{
@@ -6845,7 +6839,7 @@
 "AE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "AH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6894,7 +6888,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "AR" = (
 /obj/structure/closet/crate/chem,
@@ -7195,7 +7189,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Cg" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -7237,7 +7231,7 @@
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer2,
 /obj/effect/spawner/random/medical/supplies,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Cp" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/warning,
@@ -7642,7 +7636,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 5
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "DW" = (
 /obj/machinery/door/airlock/external{
@@ -8004,7 +7998,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "FA" = (
 /obj/effect/turf_decal/weather,
@@ -8260,7 +8254,7 @@
 	pixel_y = 7;
 	icon_state = "floor6-old"
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "GP" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
@@ -8293,7 +8287,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/corner{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "GU" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -8637,7 +8631,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/corner{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "In" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -8809,7 +8803,7 @@
 	icon_state = "floor3-old"
 	},
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "IW" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
@@ -9282,7 +9276,7 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal/bordercorner{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "KC" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -9364,7 +9358,7 @@
 /obj/machinery/iv_drip,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "KN" = (
 /obj/effect/turf_decal/weather,
@@ -9413,7 +9407,7 @@
 /obj/machinery/airalarm/directional/west,
 /obj/structure/chair/sofa/blue/corpo/right/directional/east,
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "KW" = (
 /obj/effect/turf_decal/borderfloorblack,
@@ -9591,7 +9585,7 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 10
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "LP" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -9619,7 +9613,7 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 2
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "LW" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -9660,7 +9654,7 @@
 	dir = 1
 	},
 /obj/effect/spawner/random/medical/patient_stretcher,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Mo" = (
 /obj/effect/turf_decal/industrial/warning/dust{
@@ -9863,7 +9857,7 @@
 	},
 /obj/structure/table/chem,
 /obj/effect/spawner/random/medical/minor_healing,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Nb" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line,
@@ -9872,7 +9866,7 @@
 	},
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/effect/spawner/random/medical/patient_stretcher,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Nc" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -10041,7 +10035,7 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 2
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "NO" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -10074,12 +10068,12 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 9
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
 /obj/machinery/power/smes/engineering{
 	input_level = 200000;
 	output_level = 200000
+	},
+/obj/structure/cable{
+	icon_state = "0-6"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
@@ -10197,7 +10191,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "OE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10208,7 +10202,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "OI" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -10355,14 +10349,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/machinery/power/terminal{
 	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -10605,7 +10593,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Qj" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -10767,7 +10755,7 @@
 "QU" = (
 /obj/structure/chair/comfy/blue/corpo/directional/west,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "QW" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -11089,7 +11077,7 @@
 	pixel_x = 0;
 	pixel_y = 27
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Sp" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals,
@@ -11101,7 +11089,7 @@
 /obj/item/food/breadslice/moldy,
 /obj/item/food/breadslice/moldy,
 /obj/item/reagent_containers/food/drinks/bottle/moonshine,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "St" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11113,7 +11101,7 @@
 	dir = 8
 	},
 /obj/machinery/iv_drip,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Sv" = (
 /obj/effect/turf_decal/syndicateemblem/top/middle{
@@ -11559,7 +11547,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 6
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Ud" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -11605,7 +11593,7 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Up" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
@@ -11889,7 +11877,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Vq" = (
 /obj/machinery/door/airlock/external{
@@ -11952,7 +11940,7 @@
 	dir = 9
 	},
 /obj/structure/chair/sofa/blue/corpo/corner/directional/east,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "VE" = (
 /obj/machinery/light/directional/north,
@@ -11988,7 +11976,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 9
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "VN" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -12018,7 +12006,7 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/effect/spawner/random/medical/patient_stretcher,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "VU" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -12162,7 +12150,7 @@
 /obj/effect/spawner/random/medical/supplies,
 /obj/effect/spawner/random/medical/supplies,
 /obj/effect/spawner/random/medical/supplies,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Wr" = (
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
@@ -12270,7 +12258,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "WM" = (
 /obj/effect/turf_decal/borderfloorblack,
@@ -12407,16 +12395,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /obj/machinery/power/terminal{
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/west,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -12539,7 +12521,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "XV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12560,14 +12542,14 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/footprints,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "XY" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 1
 	},
 /obj/structure/closet/crate/freezer/blood,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Ye" = (
 /obj/structure/cable,
@@ -12637,7 +12619,7 @@
 	},
 /obj/structure/table/chem,
 /obj/machinery/computer/med_data/laptop,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Yo" = (
 /obj/structure/cable{
@@ -12690,7 +12672,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Ys" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12720,7 +12702,7 @@
 	dir = 8
 	},
 /obj/machinery/iv_drip,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Yz" = (
 /obj/effect/turf_decal/industrial/caution{
@@ -12746,14 +12728,14 @@
 	icon_state = "trails_2";
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "YB" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "YK" = (
 /obj/item/ammo_casing/spent,
@@ -12894,7 +12876,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "Zk" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Zl" = (
 /obj/effect/turf_decal/weather,
@@ -12979,7 +12961,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Zy" = (
 /obj/machinery/telecomms/relay,
@@ -13004,7 +12986,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/footprints,
-/turf/open/floor/hangar/plasteel/white,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "ZB" = (
 /obj/effect/decal/cleanable/food/flour,
