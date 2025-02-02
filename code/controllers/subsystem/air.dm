@@ -362,10 +362,11 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 				net.merge(item.parent)
 				continue
 
-			item.setPipenet(net, borderline)
-
+			net.members += item
 			border += item
+
 			net.air.set_volume(net.air.return_volume() + item.volume)
+			item.parent = net
 
 			if(item.air_temporary)
 				net.air.merge(item.air_temporary)

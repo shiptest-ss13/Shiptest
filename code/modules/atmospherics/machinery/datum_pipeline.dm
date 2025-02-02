@@ -93,10 +93,11 @@
 					merge(item.parent)
 					continue
 
-				item.setPipenet(src, borderline)
+				members += item
 
 				possible_expansions += item
 				volume += item.volume
+				item.parent = src
 
 				if(item.air_temporary)
 					air.merge(item.air_temporary)
@@ -128,7 +129,6 @@
 			var/datum/pipeline/E = I.parent
 			merge(E)
 		if(!(P in members))
-			P.parent = src
 			air.set_volume(air.return_volume() + P.volume)
 	else
 		A.setPipenet(src, N)
