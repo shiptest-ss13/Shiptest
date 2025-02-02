@@ -54,6 +54,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "r" = (
@@ -95,6 +96,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/end{
 	dir = 8
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "A" = (
@@ -142,6 +144,7 @@
 	dir = 8
 	},
 /obj/structure/cable/cyan,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "I" = (
@@ -192,6 +195,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "S" = (
@@ -230,6 +234,18 @@
 	},
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
+	},
+/obj/item/radio/intercom/wideband/directional/north,
+/obj/item/paper_bin{
+	pixel_x = 5
+	},
+/obj/item/clipboard{
+	pixel_y = 6;
+	pixel_x = -5
+	},
+/obj/item/pen/sleepy{
+	pixel_y = 6;
+	pixel_x = -5
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
