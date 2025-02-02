@@ -1454,6 +1454,21 @@
 "ln" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/ccommons)
+"lF" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "cbridge";
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-1"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "lN" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -2365,14 +2380,17 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
@@ -2806,6 +2824,9 @@
 	pixel_x = 11;
 	pixel_y = 20
 	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "Dd" = (
@@ -3217,6 +3238,9 @@
 /obj/machinery/light_switch{
 	pixel_x = 11;
 	pixel_y = 20
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
@@ -6168,7 +6192,7 @@ fR
 fR
 fR
 Nm
-SE
+lF
 SE
 uH
 Bk
