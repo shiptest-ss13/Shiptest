@@ -27,8 +27,8 @@
 	#define PREFIX_NS_LOGI list("NSSV")
 	#define PREFIX_VIGILITAS list("VISV")
 #define PREFIX_FRONTIERSMEN list("FFV")
-#define PREFIX_PGF list("PGF", "PGFMC", "PGFN")
-#define PREFIX_INDEPENDENT list("SV", "IMV", "ISV")
+#define PREFIX_PGF list("PGF", "PGFMC", "PGFN", "PGFS")
+#define PREFIX_INDEPENDENT list("SV", "IMV", "ISV", "MSV")
 #define PREFIX_NONE list()
 
 #define FACTION_SORT_DEFAULT 0
