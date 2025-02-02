@@ -1,0 +1,45 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "447 Cirrus-class Medical Carrack",
+	"faction": "/datum/faction/syndicate/cybersun",
+	"prefix": "CSSV",
+	"manufacturer": "ISF Spacecraft",
+	"map_short_name": "Cirrus-Class",
+	"description": "",
+	"starting_funds": 5000,
+	"tags": [
+		"Medical",
+		"Subshuttle",
+		"Specialist"
+	],
+	"map_path": "_maps/shuttles/cybersun/cybersun_cirrus.dmm",
+	"namelists": [
+		"SPACE",
+		"BEASTS"
+	],
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Director": {
+			"outfit": "/datum/outfit/job/syndicate/cmo",
+			"officer": true,
+			"slots": 1
+		},
+		"Doctor": {
+			"outfit": "/datum/outfit/job/syndicate/paramedic/cybersun",
+			"slots": 2
+		},
+		"Trauma Team Technician": {
+			"outfit": "/datum/outfit/job/syndicate/paramedic/cybersun",
+			"slots": 2
+		},
+		"Ship's Aide": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

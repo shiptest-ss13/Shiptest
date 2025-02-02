@@ -2,6 +2,9 @@
 "a" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
+"d" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
 "e" = (
 /obj/structure/chair/handrail,
 /obj/structure/cable/cyan{
@@ -9,6 +12,16 @@
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	id = "bam";
+	pixel_y = 23;
+	pixel_x = 9;
+	name = "blast shutter control"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 22;
+	id = "bams"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
@@ -65,6 +78,15 @@
 /obj/structure/cable/cyan{
 	icon_state = "6-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	dir = 2;
+	pixel_x = -12;
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "v" = (
@@ -109,11 +131,24 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "bam"
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "Trauma Team Bambulance";
+	port_direction = 2;
+	preferred_direction = 8
 	},
-/turf/open/floor/plating,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bam";
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	color = "#FFFFFF"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "bams"
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "E" = (
 /obj/effect/turf_decal/industrial/warning/fulltile{
@@ -203,11 +238,19 @@
 	icon_state = "4-9"
 	},
 /obj/structure/cable/cyan,
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "bam"
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bam";
+	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	color = "#FFFFFF"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "bams";
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "U" = (
 /obj/structure/cable/cyan{
@@ -247,55 +290,61 @@
 	pixel_y = 6;
 	pixel_x = -5
 	},
+/obj/machinery/button/door{
+	id = "bam2";
+	pixel_y = 23;
+	pixel_x = -15;
+	name = "engine shutter control"
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 
 (1,1,1) = {"
 A
 v
-a
+d
 v
 A
 "}
 (2,1,1) = {"
-a
+d
 L
 E
 o
-a
+d
 "}
 (3,1,1) = {"
-a
+d
 X
 q
 G
-a
+d
 "}
 (4,1,1) = {"
-a
+d
 R
 U
 y
-a
+d
 "}
 (5,1,1) = {"
-a
+d
 r
 P
 I
-a
+d
 "}
 (6,1,1) = {"
 a
-a
+d
 e
 i
-a
+d
 "}
 (7,1,1) = {"
 A
 a
 C
 S
-a
+d
 "}
