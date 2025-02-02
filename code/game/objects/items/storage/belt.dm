@@ -168,7 +168,7 @@
 	icon_state = "medicwebbing"
 	item_state = "medicwebbing"
 	custom_premium_price = 900
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/storage/belt/medical/ComponentInitialize()
 	. = ..()
@@ -448,7 +448,7 @@
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
 	resistance_flags = FIRE_PROOF
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 	unique_reskin = list(
 		"None" = "militarywebbing",

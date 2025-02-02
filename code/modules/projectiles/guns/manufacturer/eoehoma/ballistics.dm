@@ -55,7 +55,7 @@
 /obj/item/gun/ballistic/automatic/assault/e40/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode != FIREMODE_OTHER)
-		if(!secondary.latch_closed && prob(65))
+		if(!secondary.latch_closed && secondary.cell && prob(65))
 			to_chat(user, span_warning("[src]'s cell falls out!"))
 			secondary.eject_cell()
 		return ..()
