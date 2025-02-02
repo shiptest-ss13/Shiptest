@@ -130,7 +130,7 @@
 	light_power = 0.6
 	light_color = COLOR_WASTEPLANET_LIGHT
 
-	/turf/open/floor/engine/hull/waste
+/turf/open/floor/engine/hull/waste
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/engine/waste/lit
