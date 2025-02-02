@@ -13,6 +13,7 @@
 	dual_wield_spread = 60
 	wield_slowdown = LASER_RIFLE_SLOWDOWN
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/energy/e_gun/empty_cell
 	spawn_no_ammo = TRUE
@@ -84,13 +85,13 @@
 	name = "modified antique laser gun"
 	desc = "It's somehow modified to have more firemodes."
 	icon_state = "capgun_brazil_hos"
-	item_state = "hoslaser"
+	item_state = "hoslaserkill0"
 	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/e_gun/hos/brazil/true
 	desc = "This genuine antique laser gun, modified with an experimental suite of alternative firing modes based on the X-01 MultiPhase Energy Gun, is now truly one of the finest weapons in the frontier."
 	icon_state = "capgun_hos"
-	item_state = "hoslaser"
+	item_state = "hoslaserkill0"
 	selfcharge = 1
 	manufacturer = MANUFACTURER_SHARPLITE
 
@@ -111,21 +112,32 @@
 
 /obj/item/gun/energy/e_gun/turret
 	name = "hybrid turret gun"
-	desc = "A heavy hybrid energy cannon with two settings: Stun and kill."
+	desc = "A heavy hybrid energy cannon with two settings: Stun and kill. ...It doesn't seem have a trigger, seems it can only be used as a turret."
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	icon_state = "turretlaser"
 	item_state = "turretlaser"
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
+	default_ammo_type = null
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)
 	weapon_weight = WEAPON_HEAVY
 	trigger_guard = TRIGGER_GUARD_NONE
 	ammo_x_offset = 2
+
+/obj/item/gun/energy/e_gun/turret/pre_fire(atom/target, mob/living/user, message, flag, params, zone_override, bonus_spread, dual_wielded_gun)
+	to_chat(user, span_notice("[src] is not designed to be fired by hand."))
+	return FALSE
 
 /obj/item/gun/energy/e_gun/nuclear
 	name = "advanced energy gun"
 	desc = "An energy gun with an experimental miniaturized nuclear reactor that automatically charges the internal power cell."
 	icon_state = "nucgun"
 	item_state = "nucgun"
+
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
+
 	charge_delay = 5
 	can_charge = FALSE
 	internal_magazine = TRUE
@@ -235,26 +247,7 @@
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
 	shaded_charge = TRUE
-	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
+	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
-
-/obj/item/gun/energy/e_gun/e11
-	name = "E-11 hybrid energy rifle"
-	desc = "A hybrid energy gun fondly remembered as one of the worst weapons ever made. It hurts, but that's only if it manages to hit its target."
-	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
-	icon_state = "e11"
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/eoehoma)
-	ammo_x_offset = 0
-	spread = 80
-	spread_unwielded = 140
-	dual_wield_spread = 140
-	shaded_charge = TRUE
-	manufacturer = MANUFACTURER_EOEHOMA
-
-/obj/item/gun/energy/e_gun/e11/empty_cell
-	spawn_no_ammo = TRUE

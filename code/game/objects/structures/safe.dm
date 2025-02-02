@@ -42,8 +42,9 @@ FLOOR SAFES
 	. = ..()
 
 	// Combination generation
-	for(var/i in 1 to number_of_tumblers)
-		tumblers.Add(rand(0, 99))
+	if(!tumblers.len)
+		for(var/i in 1 to number_of_tumblers)
+			tumblers.Add(rand(0, 99))
 
 	if(!mapload)
 		return
@@ -78,7 +79,7 @@ FLOOR SAFES
 
 		else if(I.tool_behaviour == TOOL_DECONSTRUCT)
 			user.visible_message("<span class='warning'>[user] begin to cut through the lock of \the [src].</span>","<span class='notice'>You start cutting trough the lock of [src].</span>")
-			if(I.use_tool(src, user, 60 SECONDS))
+			if(I.use_tool(src, user, 45 SECONDS))
 				broken = TRUE
 				user.visible_message("<span class='warning'>[user] successfully cuts trough the lock of \the [src].</span>","<span class='notice'>You successfully cut trough the lock of [src].</span>")
 

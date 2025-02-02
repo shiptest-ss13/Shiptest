@@ -57,7 +57,7 @@
 
 /obj/item/storage/guncase/firestorm
 	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
-	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+	mag_type = /obj/item/ammo_box/magazine/c44_firestorm_mag
 
 /obj/item/storage/guncase/vickland
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/vickland
@@ -121,6 +121,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
 
+/obj/item/storage/guncase/saw80
+	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/lmg
+	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra/extended
+
 /obj/item/storage/guncase/taipan
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/taipan
 	mag_type = /obj/item/ammo_box/magazine/sniper_rounds
@@ -152,6 +156,10 @@
 /obj/item/storage/guncase/pistol/m17
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/m17
 	mag_type = /obj/item/ammo_box/magazine/m17
+
+/obj/item/storage/guncase/pistol/m20_auto_elite
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite
+	mag_type = /obj/item/ammo_box/magazine/m20_auto_elite
 
 /obj/item/storage/guncase/m12
 	gun_type = /obj/item/gun/ballistic/automatic/m12_sporter
@@ -216,6 +224,12 @@
 /obj/item/storage/guncase/energy/egun
 	gun_type = /obj/item/gun/energy/e_gun
 
+/obj/item/storage/guncase/energy/ultima
+	gun_type = /obj/item/gun/energy/e_gun/iot
+
+/obj/item/storage/guncase/energy/etar
+	gun_type = /obj/item/gun/energy/e_gun/smg
+
 /obj/item/storage/guncase/energy/iongun
 	gun_type = /obj/item/gun/energy/ionrifle
 
@@ -271,6 +285,10 @@
 	gun_type = /obj/item/gun/ballistic/shotgun/cm15
 	mag_type = /obj/item/ammo_box/magazine/cm15_12g
 
+/obj/item/storage/guncase/cm24
+	gun_type = /obj/item/gun/ballistic/automatic/assault/skm/cm24
+	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+
 /obj/item/storage/guncase/cmf90
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/f90
 	mag_type = /obj/item/ammo_box/magazine/f90
@@ -288,6 +306,10 @@
 /obj/item/storage/guncase/commissioner
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 	mag_type = /obj/item/ammo_box/magazine/co9mm
+
+/obj/item/storage/guncase/pistol/pinscher
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite/inteq
+	mag_type = /obj/item/ammo_box/magazine/m20_auto_elite
 
 /obj/item/storage/guncase/mongrel
 	gun_type = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
@@ -319,3 +341,8 @@
 /obj/item/storage/guncase/skm_lmg
 	gun_type = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40/drum
+
+/* Eoehoma */
+
+/obj/item/storage/guncase/energy/e10
+	gun_type = /obj/item/gun/energy/laser/e10

@@ -501,7 +501,8 @@
 	var/dam_force = 30
 	harmful = TRUE
 	tool_behaviour = TOOL_DECONSTRUCT
-	toolspeed = 0.5
+	toolspeed = 0.3
+	wall_decon_damage = 400
 	var/datum/effect_system/spark_spread/spark_system
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/can_attach(obj/mecha/M as obj)
@@ -512,7 +513,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/attach()
 	..()
-	toolspeed = 0.5
+	toolspeed = 0.3
 	return
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/detach()
@@ -532,10 +533,13 @@
 		target.add_overlay(GLOB.cutting_effect)
 		if(target.deconstruct_act(chassis.occupant, src))
 			do_sparks(2, TRUE, src)
-			chassis.stopped--
 		target.cut_overlay(GLOB.cutting_effect)
 		if(!chassis.stopped)
 			occupant_message("[src] finishes cutting, allowing movement again.")
+	if(chassis.stopped > 0)
+		chassis.stopped--
+	else
+		chassis.stopped = 0
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/tool_start_check(user, amount)
 	if(!chassis.stopped)
@@ -658,7 +662,13 @@
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
 	name = "IRMG Basenji Conversion Kit"
-	desc = "An IRMG-custom conversion kit for a Gygax combat exosuit, to convert it to the specialized Pyrnese breaching exosuit."
+	desc = "An IRMG-custom conversion kit for a 500 Series combat exosuit, to convert it to the specialized Basenji breaching exosuit."
 	source_mech = list(/obj/mecha/combat/gygax,/obj/mecha/combat/gygax/dark)
-	result_mech = /obj/mecha/combat/gygax/inteq
+	result_mech = /obj/mecha/combat/gygax/charger/inteq
+
+/obj/item/mecha_parts/mecha_equipment/conversion_kit/mp_gygax
+	name = "NT-501p-MP Conversion Kit"
+	desc = "A NT made conversion kit for a 501p combat exosuit, to convert it to the lightweight NT-501p-MP skirmishing exosuit."
+	source_mech = list(/obj/mecha/combat/gygax,/obj/mecha/combat/gygax/dark)
+	result_mech = /obj/mecha/combat/gygax/charger/mp
 

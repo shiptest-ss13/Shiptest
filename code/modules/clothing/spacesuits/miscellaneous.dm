@@ -500,7 +500,7 @@ Contains:
 	desc = "The integrated helmet of the combat medic hardsuit, this has a bright, glowing facemask."
 	icon_state = "hardsuit0-combatmedic"
 	item_state = "hardsuit0-combatmedic"
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
 	hardsuit_type = "combatmedic"
 
 /obj/item/clothing/suit/space/hardsuit/combatmedic
@@ -509,7 +509,7 @@ Contains:
 	icon_state = "combatmedic"
 	item_state = "combatmedic"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/combatmedic
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
 	allowed = list(/obj/item/gun, /obj/item/melee/baton, /obj/item/circular_saw, /obj/item/tank/internals, /obj/item/storage/box/pillbottles,\
 	/obj/item/storage/firstaid, /obj/item/stack/medical/gauze, /obj/item/stack/medical/suture, /obj/item/stack/medical/mesh, /obj/item/storage/bag/chemistry)
 
@@ -536,6 +536,7 @@ Contains:
 	desc = "A lightly armored space suit for IRMG personnel for EVA operations, it seems more flexible than most space suits."
 	item_state = "space-inteq"
 	icon_state = "space-inteq"
+	slowdown = 0.8
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	w_class = WEIGHT_CLASS_NORMAL
 
