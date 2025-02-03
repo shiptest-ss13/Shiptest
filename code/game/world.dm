@@ -297,7 +297,7 @@ GLOBAL_VAR(restart_counter)
 	if(config)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
-			s += "<b>[server_name]</b> SECTOR: " // &#8212;
+			s += "<b>[server_name]</b> <u>SECTOR: " // &#8212;
 		hostedby = CONFIG_GET(string/hostedby)
 
 	var/discord_url
@@ -309,7 +309,7 @@ GLOBAL_VAR(restart_counter)
 		discord_url = CONFIG_GET(string/discordurl)
 		github_url = CONFIG_GET(string/githuburl)
 
-	s += "<b>[station_name()]</b>"
+	s += "<b>[station_name()]</b></u>"
 	s += " ("
 	s += "<a href=\"[discord_url]\">" //Change this to wherever you want the hub to link to.
 	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
@@ -326,7 +326,7 @@ GLOBAL_VAR(restart_counter)
 	var/popcaptext = ""
 	var/popcap = max(CONFIG_GET(number/extreme_popcap), CONFIG_GET(number/hard_popcap), CONFIG_GET(number/soft_popcap))
 
-	features += "Event status: [CONFIG_GET(flag/eventstatus) ? "<b style=\"color:green;\"> Yes </b>" : "<b style=\"color:red;\"> No </b>"]"
+	features += "Event status: [CONFIG_GET(flag/eventstatus) ? "<b style=\"color:green;\">Yes</b>" : "<b style=\"color:red;\">No</b>"]"
 
 	features += "Round Time: <b>[SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]</b>"
 
