@@ -320,27 +320,29 @@ GLOBAL_VAR(restart_counter)
 	s += "<a href=\"[github_url]\">"
 	s += "Github"
 	s += "</a>"
-	s += ")"
+	s += ")]"
 
 	var/players = GLOB.clients.len
 
 	var/popcaptext = ""
 	var/popcap = max(CONFIG_GET(number/extreme_popcap), CONFIG_GET(number/hard_popcap), CONFIG_GET(number/soft_popcap))
-	if (popcap)
-		popcaptext = "/[popcap]"
 
-	if (players > 1)
-		features += "[players][popcaptext] players"
-	else if (players > 0)
-		features += "[players][popcaptext] player"
+	features += "<br>Time: <b>[time]</b>"
+
+	if (popcap)
+		popcaptext = "<br>Popcap: <b>/[popcap]</b>"
+
+	features += "<br>Players: <b>[players][popcaptext]</b>"
 
 	game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
 
 	if (!host && hostedby)
-		features += "hosted by <b>[hostedby]</b>"
+		features += "<br>Hosted by <b>[hostedby]</b>"
 
 	if (features)
-		s += ": [jointext(features, ", ")]"
+		s += "<br>[jointext(features, ", ")]"
+
+	s += "<img src=\"https://i.postimg.cc/prfJQqNP/gg13.png\">"
 
 	status = s
 
