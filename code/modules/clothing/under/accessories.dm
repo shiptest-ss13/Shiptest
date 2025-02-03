@@ -481,3 +481,46 @@
 	var/mob/living/L = user
 	if(HAS_TRAIT(L, TRAIT_FAN_RILENA))
 		SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "rilena_pin")
+
+/////////////
+//RANK PINS//
+/////////////
+
+/obj/item/clothing/accessory/rank_pin
+	name = "generic rank pin"
+	desc = "A pin designed to be clipped to a uniform as a designator of the wearer's rank in an organised military. If you're seeing this, something has probably gone wrong."
+	icon_state =
+	above_suit = FALSE
+	attachment_slot = null
+	resistance_flags = FIRE_PROOF
+
+// Inteq
+
+/obj/item/clothing/accessory/rank_pin/inteq_recruit
+	name = "rank pins - IE-1"
+	desc = "A silver pin shaped into XXX, designating the wearer as a recruit of the Inteq Risk Management Group."
+
+/obj/item/clothing/accessory/rank_pin/inteq_enforcer
+	name = "rank pins - IE-2"
+	desc = "A silver pin shaped into XXX. This designates the wearer as an Enforcer of the Inteq Risk Management Group."
+
+/obj/item/clothing/accessory/rank_pin/inteq_artificer
+	name = "rank pins - IE-2"
+	desc = "A silver pin shaped into XXX, designating the wearer as an Artificer of the Inteq Risk Management Group."
+
+/obj/item/clothing/accessory/rank_pin/inteq_corpsman
+	name = "rank pins - IE-3"
+	desc = "A silver pin shaped XXX. This designates the wearer as a Corpsman of the Inteq Risk Management Group."
+
+/obj/item/clothing/accessory/rank_pin/inteq_maa
+	name = "rank pins - IO-1"
+	desc = "A golden pin shaped into XXX. This designates the wearer as a Master at Arms of the Inteq Risk Management Group."
+
+/obj/item/clothing/accessory/rank_pin/inteq_pilot
+	name = "rank pins - IO-1"
+	desc = "A golden pin shaped into XXX, designating the wearer as a shuttle pilot of the Inteq Risk Management Group."
+
+/obj/item/clothing/accessory/rank_pin/inteq_vanguard
+	name = "rank pins - IO-2"
+	desc = "A golden pin shaped into the iconic Inteq shield. This designates the wearer as the Vanguard of an Inteq Risk Management Group vessel."
+
