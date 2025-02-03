@@ -1655,7 +1655,8 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock{
 	dir = 4;
-	name = "Restroom"
+	name = "Restroom";
+	id_tag = "cock_bathroom"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -1685,6 +1686,12 @@
 /mob/living/simple_animal/hostile/cockroach,
 /obj/effect/decal/cleanable/vomit/old{
 	pixel_x = -5
+	},
+/obj/machinery/button{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -20;
+	id = "cock_bathroom"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)

@@ -3943,12 +3943,19 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/cobweb,
+/obj/machinery/button{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 10;
+	id = "ranger_bathroom"
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "BI" = (
 /obj/machinery/door/airlock/wood{
 	name = "Toilets";
-	req_ship_access = 0
+	req_ship_access = 0;
+	id_tag = "ranger_bathroom"
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)

@@ -261,7 +261,8 @@
 "eB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/grunge{
-	name = "Bathroom"
+	name = "Bathroom";
+	id_tag = "atlas_bathroom"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -3889,6 +3890,12 @@
 	},
 /obj/item/clothing/head/wig/random{
 	pixel_x = 11
+	},
+/obj/machinery/button{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = -10;
+	id = "atlas_bathroom"
 	},
 /turf/open/floor/plastic,
 /area/ship/crew)

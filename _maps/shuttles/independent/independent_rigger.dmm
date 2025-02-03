@@ -1125,6 +1125,12 @@
 	pixel_x = -5;
 	pixel_y = -20
 	},
+/obj/machinery/button{
+	dir = 1;
+	pixel_x = 4;
+	pixel_y = -21;
+	id = "rigg_bathroom"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "oz" = (
@@ -2628,7 +2634,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock{
-	name = "Head"
+	name = "Head";
+	id_tag = "rigg_bathroom"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
