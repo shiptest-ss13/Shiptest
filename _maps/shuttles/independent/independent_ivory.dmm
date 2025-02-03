@@ -175,6 +175,10 @@
 	pixel_y = 5
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/item/toy/seashell{
+	pixel_y = 2;
+	pixel_x = 8
+	},
 /turf/open/floor/light{
 	currentcolor = "#FFFFFF"
 	},
@@ -567,7 +571,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "jL" = (
-/obj/structure/cabinet/scout{
+/obj/structure/cabinet/m23{
 	dir = 4;
 	pixel_x = -21;
 	pixel_y = 0
@@ -1702,7 +1706,7 @@
 	req_access_txt = "1"
 	},
 /obj/item/storage/box/ammo/a357,
-/obj/item/storage/box/ammo/a300,
+/obj/item/storage/box/ammo/a8_50r,
 /obj/item/storage/box/ammo/c556mm,
 /obj/effect/mapping_helpers/crate_shelve,
 /obj/machinery/firealarm/directional/west,
@@ -1710,9 +1714,8 @@
 	dir = 1;
 	color = "#FFFFFF"
 	},
-/obj/item/ammo_box/a300/empty,
-/obj/item/ammo_box/a300/empty,
-/obj/item/ammo_box/a300/empty,
+/obj/item/ammo_box/magazine/m23/empty,
+/obj/item/ammo_box/magazine/m23/empty,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Ef" = (
@@ -2314,9 +2317,9 @@
 	pixel_x = -5;
 	pixel_y = 1
 	},
-/obj/item/toy/seashell{
-	pixel_y = -2;
-	pixel_x = -1
+/obj/item/melee/knife/survival{
+	pixel_x = 6;
+	pixel_y = -1
 	},
 /turf/open/floor/suns/hatch{
 	color = "#792f27"

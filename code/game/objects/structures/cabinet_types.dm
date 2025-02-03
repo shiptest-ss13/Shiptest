@@ -15,11 +15,11 @@
 	allowed_type = /obj/item/gun/ballistic/rocketlauncher/oneshot
 	req_one_access_txt = "3"
 
-/obj/structure/cabinet/scout
+/obj/structure/cabinet/m23
 	name = "\improper rifle display"
 	desc = "A wooden board used to proudly display your favourite rifles. This one is made specifically to fit an HP Scout."
-	icon_state = "scoutcase"
-	stored_sprite = "scout"
-	allowed_type = /obj/item/gun/ballistic/rifle/scout
+	icon_state = "woodsman"
+	stored_sprite = "m23"
+	allowed_type = /obj/item/gun/ballistic/automatic/marksman/woodsman
 	locked = TRUE
 	open = TRUE
