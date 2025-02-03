@@ -298,7 +298,7 @@ GLOBAL_VAR(restart_counter)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
 			s += "<b>[server_name]</b> &#8212; "
-		features += "[CONFIG_GET(flag/norespawn) ? "no " : ""]respawn"
+		features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No " : ""]Respawn</b>"
 		hostedby = CONFIG_GET(string/hostedby)
 
 	var/discord_url
@@ -327,7 +327,7 @@ GLOBAL_VAR(restart_counter)
 	var/popcaptext = ""
 	var/popcap = max(CONFIG_GET(number/extreme_popcap), CONFIG_GET(number/hard_popcap), CONFIG_GET(number/soft_popcap))
 
-	features += "<br>Time: <b>[time]</b>"
+	features += "<br>Time: <b>[SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]</b>"
 
 	if (popcap)
 		popcaptext = "<br>Popcap: <b>/[popcap]</b>"
@@ -342,7 +342,7 @@ GLOBAL_VAR(restart_counter)
 	if (features)
 		s += "<br>[jointext(features, ", ")]"
 
-	s += "<img src=\"https://i.postimg.cc/prfJQqNP/gg13.png\">"
+	s += "<br><center><img src=\"https://i.postimg.cc/prfJQqNP/gg13.png\"></center>"
 
 	status = s
 
