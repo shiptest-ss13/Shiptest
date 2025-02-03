@@ -27,6 +27,8 @@
 	ears = /obj/item/radio/headset
 	r_pocket = /obj/item/radio
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/recruit
+
 ///captains
 
 /datum/outfit/job/inteq/captain
@@ -45,6 +47,8 @@
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	shoes = /obj/item/clothing/shoes/combat
+
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/vanguard
 
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
@@ -78,6 +82,8 @@
 	belt = /obj/item/storage/belt/military/assault
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/vanguard_hon
+
 ///Chief Engineer
 
 /datum/outfit/job/inteq/ce
@@ -100,6 +106,8 @@
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/artificer_hon
+
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1)
 
 ///paramedic
@@ -116,6 +124,8 @@
 	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	ears = /obj/item/radio/headset/headset_medsec/alt
+
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/corpsman
 
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/roller=1)
@@ -147,6 +157,8 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	gloves = /obj/item/clothing/gloves/combat
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/enforcer
+
 	backpack = /obj/item/storage/backpack/messenger/inteq
 	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
@@ -171,6 +183,8 @@
 	glasses = null
 	gloves = /obj/item/clothing/gloves/color/evening
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/enforcer
+
 	backpack = /obj/item/storage/backpack/messenger/inteq
 	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
@@ -189,6 +203,8 @@
 	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/storage/belt/utility/full/engi
 	r_pocket = /obj/item/t_scanner
+
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/artificer
 
 //wardens
 
@@ -210,6 +226,8 @@
 	gloves = /obj/item/clothing/gloves/combat
 	suit_store = null
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/maa
+
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/melee/classic_baton=1)
 
@@ -223,6 +241,8 @@
 	belt = null
 	mask = /obj/item/clothing/mask/breath
 	gloves = /obj/item/clothing/gloves/fingerless
+
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/pilot
 
 // cmo
 
@@ -240,6 +260,8 @@
 	alt_suit = /obj/item/clothing/suit/armor/inteq/corpsman
 	dcoat = /obj/item/clothing/suit/armor/hos/inteq
 	r_pocket = /obj/item/pda/medical
+
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/corpsman_hon
 
 	chameleon_extras = null
 
