@@ -298,7 +298,8 @@ GLOBAL_VAR(restart_counter)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
 			s += "<b>[server_name]</b> &#8212; "
-		features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No " : ""]Respawn</b>"
+		features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No" : "Yes"]</b>"
+		features += "Event status: [CONFIG_GET(flag/eventstatus) ? "<b style=\"color:red;\">No</b>" : "<b style=\"color:green;\"Yes</b>"]"
 		hostedby = CONFIG_GET(string/hostedby)
 
 	var/discord_url
@@ -327,20 +328,20 @@ GLOBAL_VAR(restart_counter)
 	var/popcaptext = ""
 	var/popcap = max(CONFIG_GET(number/extreme_popcap), CONFIG_GET(number/hard_popcap), CONFIG_GET(number/soft_popcap))
 
-	features += "<br>Time: <b>[SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]</b>"
+	features += "Round Time: <b>[SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]</b>"
 
 	if (popcap)
-		popcaptext = "<br>Popcap: <b>/[popcap]</b>"
+		popcaptext = "Popcap: <b>/[popcap]</b>"
 
-	features += "<br>Players: <b>[players][popcaptext]</b>"
+	features += "Players: <b>[players][popcaptext]</b>"
 
 	game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
 
-	if (!host && hostedby)
-		features += "<br>Hosted by <b>[hostedby]</b>"
+	if (hostedby)
+		features += "Hosted by <b>[hostedby]</b>"
 
 	if (features)
-		s += "<br>[jointext(features, ", ")]"
+		s += "<br>[jointext(features, ",<br>")]"
 
 	s += "<br><center><img src=\"https://i.postimg.cc/prfJQqNP/gg13.png\"></center>"
 

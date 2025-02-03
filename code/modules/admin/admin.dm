@@ -658,6 +658,20 @@
 
 /datum/admins/proc/toggleaban()
 	set category = "Server"
+	set desc="Event status"
+	set name="Toggle Event Status"
+	var/new_eventstatus = !CONFIG_GET(flag/eventstatus)
+	CONFIG_SET(flag/eventstatus, new_eventstatus)
+	if (!new_eventstatus)
+		to_chat(world, "<B>Event Status: ON.</B>", confidential = TRUE)
+	else
+		to_chat(world, "<B>Event Status: OFF.</B>", confidential = TRUE)
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] toggled event status to [!new_eventstatus ? "On" : "Off"].</span>")
+	log_admin("[key_name(usr)] toggled event status to [!new_eventstatus ? "On" : "Off"].")
+	world.update_status()
+
+/datum/admins/proc/toogleevent()
+	set category = "Server"
 	set desc="Respawn basically"
 	set name="Toggle Respawn"
 	var/new_nores = !CONFIG_GET(flag/norespawn)

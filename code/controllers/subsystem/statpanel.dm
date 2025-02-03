@@ -40,6 +40,8 @@ SUBSYSTEM_DEF(statpanels)
 		src.currentrun = GLOB.clients.Copy()
 		mc_data = null
 
+	world.update_status() //Update HUB preview
+
 	var/list/currentrun = src.currentrun
 	while(length(currentrun))
 		var/client/target = currentrun[length(currentrun)]
