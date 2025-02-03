@@ -327,7 +327,7 @@ GLOBAL_VAR(restart_counter)
 	var/popcaptext = ""
 	var/popcap = max(CONFIG_GET(number/extreme_popcap), CONFIG_GET(number/hard_popcap), CONFIG_GET(number/soft_popcap))
 
-	features += "Event status: [CONFIG_GET(flag/eventstatus) ? "<b style=\"color:green;\"Yes</b>" : "<b style=\"color:red;\">No</b>"]"
+	features += "Event status: [CONFIG_GET(flag/eventstatus) ? "<b style=\"color:green;\" Yes </b>" : "<b style=\"color:red;\"> No </b>"]"
 
 	features += "Round Time: <b>[SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]</b>"
 
