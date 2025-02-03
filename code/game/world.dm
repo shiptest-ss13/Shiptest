@@ -292,13 +292,12 @@ GLOBAL_VAR(restart_counter)
 	if(LAZYACCESS(SSlag_switch.measures, DISABLE_NON_OBSJOBS))
 		features += "closed"
 
-	var/s = ""
+	var/s = "["
 	var/hostedby
 	if(config)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
-			s += "<b>[server_name]</b> &#8212; "
-		features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No" : "Yes"]</b>"
+			s += "<b>[server_name]</b> &#8212; SECTOR: " // &#8212;
 		hostedby = CONFIG_GET(string/hostedby)
 
 	var/discord_url
@@ -333,6 +332,8 @@ GLOBAL_VAR(restart_counter)
 
 	if(GLOB.master_mode)
 		features += "Mode: <b>[GLOB.master_mode]</b>"
+
+	features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No" : "Yes"]</b>"
 
 	if (popcap)
 		popcaptext = "<b>/[popcap]</b>"

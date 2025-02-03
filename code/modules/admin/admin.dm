@@ -661,7 +661,7 @@
 	set desc="Event status"
 	set name="Toggle Event Status"
 	var/new_eventstatus = !CONFIG_GET(flag/eventstatus)
-	CONFIG_SET(flag/eventstatus, new_eventstatus)
+	CONFIG_SET(flag/eventstatus, !new_eventstatus)
 	if (!new_eventstatus)
 		to_chat(world, "<B>Event Status: ON.</B>", confidential = TRUE)
 	else
