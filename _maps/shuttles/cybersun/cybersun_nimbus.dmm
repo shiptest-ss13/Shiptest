@@ -2207,11 +2207,6 @@
 	pixel_y = 6
 	},
 /obj/item/soap/deluxe,
-/obj/machinery/button{
-	pixel_x = -12;
-	pixel_y = 20;
-	id = "bus_bathroom"
-	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/cargo)
 "NU" = (
@@ -2475,8 +2470,7 @@
 /area/ship/crew/ccommons)
 "SN" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Restroom";
-	id_tag = "bus_bathroom"
+	name = "Restroom"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/white,
 /turf/open/floor/plasteel/tech,
