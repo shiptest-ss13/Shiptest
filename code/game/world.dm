@@ -299,7 +299,6 @@ GLOBAL_VAR(restart_counter)
 		if (server_name)
 			s += "<b>[server_name]</b> &#8212; "
 		features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No" : "Yes"]</b>"
-		features += "Event status: [CONFIG_GET(flag/eventstatus) ? "<b style=\"color:red;\">No</b>" : "<b style=\"color:green;\"Yes</b>"]"
 		hostedby = CONFIG_GET(string/hostedby)
 
 	var/discord_url
@@ -328,10 +327,15 @@ GLOBAL_VAR(restart_counter)
 	var/popcaptext = ""
 	var/popcap = max(CONFIG_GET(number/extreme_popcap), CONFIG_GET(number/hard_popcap), CONFIG_GET(number/soft_popcap))
 
+	features += "Event status: [CONFIG_GET(flag/eventstatus) ? "<b style=\"color:green;\"Yes</b>" : "<b style=\"color:red;\">No</b>"]"
+
 	features += "Round Time: <b>[SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]</b>"
 
+	if(GLOB.master_mode)
+		features += "Mode: <b>[GLOB.master_mode]</b>"
+
 	if (popcap)
-		popcaptext = "Popcap: <b>/[popcap]</b>"
+		popcaptext = "<b>/[popcap]</b>"
 
 	features += "Players: <b>[players][popcaptext]</b>"
 
@@ -341,7 +345,7 @@ GLOBAL_VAR(restart_counter)
 		features += "Hosted by <b>[hostedby]</b>"
 
 	if (features)
-		s += "<br>[jointext(features, ",<br>")]"
+		s += "<br>[jointext(features, "<br>")]"
 
 	s += "<br><center><img src=\"https://i.postimg.cc/prfJQqNP/gg13.png\"></center>"
 
