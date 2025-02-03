@@ -4,6 +4,7 @@
 	icon = 'icons/turf/walls.dmi'
 	explosion_block = 50
 	max_integrity = 10000000
+	breakdown_duration = -1
 
 /turf/closed/indestructible/TerraformTurf(path, new_baseturf, flags, defer_change = FALSE, ignore_air = FALSE)
 	return

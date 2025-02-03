@@ -218,7 +218,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		playsound(src, close_sound, 40)
 
 /obj/machinery/cryopod/proc/apply_effects_to_mob(mob/living/carbon/sleepyhead)
-	sleepyhead.SetSleeping(50)
+	sleepyhead.set_sleeping(50)
 	to_chat(sleepyhead, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
 
 /obj/machinery/cryopod/open_machine()
@@ -443,14 +443,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 /obj/machinery/cryopod/apply_effects_to_mob(mob/living/carbon/sleepyhead)
 	//it always sucks a little to get up
 	sleepyhead.set_nutrition(200)
-	sleepyhead.SetSleeping(60)
+	sleepyhead.set_sleeping(60)
 
 	var/wakeupmessage = "The cryopod shudders as the pneumatic seals separating you and the waking world let out a hiss."
 	if(prob(60))
 		wakeupmessage += " A sickly feeling along with the pangs of hunger greet you upon your awakening."
 		sleepyhead.set_nutrition(100)
 		sleepyhead.apply_effect(rand(3,10), EFFECT_DROWSY)
-	to_chat(sleepyhead, span_danger(examine_block(wakeupmessage)))
+	to_chat(sleepyhead, span_danger(boxed_message(wakeupmessage)))
 
 /obj/machinery/cryopod/syndicate
 	icon_state = "sleeper_s-open"
@@ -463,7 +463,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 /obj/machinery/cryopod/poor/apply_effects_to_mob(mob/living/carbon/sleepyhead)
 	sleepyhead.set_nutrition(200)
-	sleepyhead.SetSleeping(80)
+	sleepyhead.set_sleeping(80)
 	if(prob(90)) //suffer
 		sleepyhead.apply_effect(rand(5,15), EFFECT_DROWSY)
 	if(prob(75))

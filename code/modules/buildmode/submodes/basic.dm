@@ -2,7 +2,7 @@
 	key = "basic"
 
 /datum/buildmode_mode/basic/show_help(client/target_client)
-	to_chat(target_client, span_purple(examine_block(
+	to_chat(target_client, span_purple(boxed_message(
 		"[span_bold("Construct / Upgrade")] -> Left Mouse Button\n\
 		[span_bold("Deconstruct / Delete / Downgrade")] -> Right Mouse Button\n\
 		[span_bold("R-Window")] -> Left Mouse Button + Ctrl\n\

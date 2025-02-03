@@ -41,3 +41,6 @@
 
 /obj/effect/projectile/muzzle/pgf/rifle
 	icon_state = "muzzle_pgf_rifle"
+
+/obj/effect/projectile/muzzle/gauss
+	icon_state = "muzzle_gauss_rifle"
