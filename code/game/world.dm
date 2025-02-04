@@ -329,31 +329,30 @@ GLOBAL_VAR(restart_counter)
 	s += ")"
 
 	var/players = GLOB.clients.len
-
 	var/popcaptext = ""
 	var/popcap = max(CONFIG_GET(number/extreme_popcap), CONFIG_GET(number/hard_popcap), CONFIG_GET(number/soft_popcap))
 
-	features += "Event status: [CONFIG_GET(flag/eventstatus) ? "<b style=\"color:green;\">Yes</b>" : "<b style=\"color:red;\">No</b>"]"
-
-	features += "Round Time: <b>[ROUND_REALTIMEOFDAY]</b>" // [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]
-
-	if(GLOB.master_mode)
-		features += "Mode: <b>[GLOB.master_mode]</b>"
-
-	features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No" : "Yes"]</b>"
-
-	if (popcap)
-		popcaptext = "<b>/[popcap]</b>"
-
-	features += "Players: <b>[players][popcaptext]</b>"
-
-	game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
-
-	if (hostedby)
-		features += "Hosted by <b>[hostedby]</b>"
-
 	if (features)
-		s += ": [jointext(features, ", ")]"
+		features += "Event status: \[[CONFIG_GET(flag/eventstatus) ? "<b style=\"color:green;\">Yes</b>" : "<b style=\"color:red;\">No</b>"]\]"
+
+		features += "Round Time: <b>[ROUND_REALTIMEOFDAY]</b>" // [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]
+
+		if(GLOB.master_mode)
+			features += "Mode: <b>[GLOB.master_mode]</b>"
+
+		features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No" : "Yes"]</b>"
+
+		if (popcap)
+			popcaptext = "<b>/[popcap]</b>"
+
+		features += "Players: <b>[players][popcaptext]</b>"
+
+		game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
+
+		if (hostedby)
+			features += "Hosted by <b>[hostedby]</b>"
+
+		s += "[jointext(features, "<br>")]"
 
 	s += "<br><center><img src=\"https://i.postimg.cc/prfJQqNP/gg13.png\"></center>"
 
