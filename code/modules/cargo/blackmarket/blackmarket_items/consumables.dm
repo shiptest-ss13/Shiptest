@@ -97,10 +97,10 @@
 	price_max = 500
 	availability_prob = 50
 
-/datum/blackmarket_item/consumable/morphine
-	name = "Morphine Bottle"
-	desc = "Medicinal? Recreational? You can decide with this 30u bottle of morphine!"
-	item = /obj/item/reagent_containers/glass/bottle/morphine
+/datum/blackmarket_item/consumable/dimorlin
+	name = "Dimorlin Bottle"
+	desc = "Medicinal? Recreational? You can decide with this 30u bottle of dimorlin!"
+	item = /obj/item/reagent_containers/glass/bottle/dimorlin
 
 	price_min = 50
 	price_max = 150
@@ -283,3 +283,32 @@
 	availability_prob = 5
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/consumable/shoalmix
+	name = "Combat Cocktail"
+	desc = "Last freighter we hit was a whole medical freighter. Had a bunch of crates with a beak spraypainted on. We knacked it and found these cocktail injectors inside."
+	item = /obj/item/reagent_containers/hypospray/medipen/combat_drug
+	price_min = 400
+	price_max = 1200
+	stock_max = 8
+	availability_prob = 25
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/finobranc
+	name = "Finobranc Tablets"
+	desc = "So get this, I know a Solarian Tgirl over the intranet, and we're chatting, and she sends me these things to try. I figure, hell yeah, try them, and got 5 days work done in one day. Now I'm sellin them. Miracle product I tell ya"
+	item = /obj/item/storage/pill_bottle/finobranc
+	price_min = 600
+	price_max = 1000
+	stock_max = 4
+	availability_prob = 40
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/shoalmix
+	name = "Shoaljuice Vial"
+	desc = "Our guy in back has been working on whipping up some pretty mean syrums. Says that this one is a blend he learned from a Vox. Says that it'll get the heart going on anyone."
+	item = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/combat_drug
+	price_min = 1000
+	price_max = 2000
+	stock_max = 3
+	availability_prob = 10
+	spawn_weighting = FALSE
