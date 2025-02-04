@@ -45,8 +45,6 @@
 			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
 		else if((ingredients.len >= ingMax) || (reagents.total_volume >= volume))
 			to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
-		else if(istype(I, /obj/item/reagent_containers/food/snacks/pizzaslice/custom))
-			to_chat(user, "<span class='warning'>Adding [I.name] to [src] would make a mess.</span>")
 		else
 			if(!user.transferItemToLoc(I, src))
 				return
@@ -74,8 +72,8 @@
 			customname = "custom"
 			break
 	if(ingredients.len == 1) //first ingredient
-		if(istype(S, /obj/item/reagent_containers/food/snacks/meat))
-			var/obj/item/reagent_containers/food/snacks/meat/M = S
+		if(istype(S, /obj/item/food/meat))
+			var/obj/item/food/meat/M = S
 			if(M.subjectname)
 				customname = "[M.subjectname]"
 			else if(M.subjectjob)
@@ -161,14 +159,6 @@
 //////////////      Customizable Food Types     /////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
-/obj/item/reagent_containers/food/snacks/customizable/burger
-	name = "burger"
-	desc = "A timeless classic."
-	ingredients_placement = INGREDIENTS_STACKPLUSTOP
-	icon = 'icons/obj/food/burgerbread.dmi'
-	icon_state = "custburg"
-	foodtype = GRAIN
-
 
 /obj/item/reagent_containers/food/snacks/customizable/kebab
 	name = "kebab"
@@ -185,18 +175,6 @@
 	ingMax = 6
 	icon = 'icons/obj/food/piecake.dmi'
 	icon_state = "pie"
-	foodtype = GRAIN | DAIRY
-
-
-/obj/item/reagent_containers/food/snacks/customizable/pizza
-	name = "pizza"
-	desc = "A personalized pan pizza meant for only one person."
-	ingredients_placement = INGREDIENTS_SCATTER
-	ingMax = 8
-	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/custom
-	slices_num = 6
-	icon = 'icons/obj/food/pizzaspaghetti.dmi'
-	icon_state = "pizzamargherita"
 	foodtype = GRAIN | DAIRY
 
 

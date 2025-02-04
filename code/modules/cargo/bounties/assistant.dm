@@ -75,14 +75,14 @@
 	description = "CentCom's security forces are facing heavy losses against the Syndicate. Ship donuts to raise morale."
 	reward = 3000
 	required_count = 10
-	wanted_types = list(/obj/item/reagent_containers/food/snacks/donut)
+	wanted_types = list(/obj/item/food/donut)
 
 /datum/bounty/item/assistant/donkpocket
 	name = "Donk-Pockets"
 	description = "Consumer safety recall: Warning. Donk-Pockets manufactured in the past year contain hazardous lizard biomatter. Return units to CentCom immediately."
 	reward = 3000
 	required_count = 10
-	wanted_types = list(/obj/item/reagent_containers/food/snacks/donkpocket)
+	wanted_types = list(/obj/item/food/donkpocket)
 
 /datum/bounty/item/assistant/briefcase
 	name = "Briefcase"
@@ -123,14 +123,14 @@
 	description = "Commander Zot has the hots for Commander Zena. Send a shipment of geraniums - her favorite flower - and he'll happily reward you."
 	reward = 4000
 	required_count = 3
-	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/poppy/geranium)
+	wanted_types = list(/obj/item/food/grown/poppy/geranium)
 
 /datum/bounty/item/assistant/poppy
 	name = "Poppies"
 	description = "Commander Zot really wants to sweep Security Officer Olivia off her feet. Send a shipment of Poppies - her favorite flower - and he'll happily reward you."
 	reward = 1000
 	required_count = 3
-	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/poppy)
+	wanted_types = list(/obj/item/food/grown/poppy)
 	include_subtypes = FALSE
 
 /datum/bounty/item/assistant/potted_plants
@@ -158,7 +158,7 @@
 	description = "Due to a recent genetics accident, Central Command is in serious need of monkeys. Your mission is to ship monkey cubes."
 	reward = 2000
 	required_count = 3
-	wanted_types = list(/obj/item/reagent_containers/food/snacks/monkeycube)
+	wanted_types = list(/obj/item/food/monkeycube)
 
 /datum/bounty/item/assistant/chainsaw
 	name = "Chainsaw"
@@ -189,7 +189,7 @@
 	name = "Raw Corgi Meat"
 	description = "The Syndicate recently stole all of CentCom's Corgi meat. Ship out a replacement immediately."
 	reward = 3000
-	wanted_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/corgi)
+	wanted_types = list(/obj/item/food/meat/slab/corgi)
 
 /datum/bounty/item/assistant/corgifarming
 	name = "Corgi Hides"

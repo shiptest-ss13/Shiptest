@@ -27,9 +27,9 @@
 	var/list/categories = list(SPECIES_HUMAN,SPECIES_SARATHI,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ELZUOSE,SPECIES_RACHNID,SPECIES_KEPORI,SPECIES_VOX,"other")
 	//yogs grower a little different because we're going to allow meats to be converted to synthflesh because hugbox
 	var/list/accepted_biomass = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/monkey = 25,
-		/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat = 34,
-		/obj/item/reagent_containers/food/snacks/meat/slab/human = 50,
+		/obj/item/food/meat/slab/monkey = 25,
+		/obj/item/food/meat/slab/synthmeat = 34,
+		/obj/item/food/meat/slab/human = 50,
 		/obj/item/stack/sheet/animalhide/human = 50
 		)
 	var/biomass_per_slab = 20
@@ -143,7 +143,7 @@
 			biomass += accepted_biomass[user_item.type] // changes biomass to whatever slab it picked
 			handle_biomass(user_item, biomass, user)
 		return
-	else if(istype(user_item, /obj/item/reagent_containers/food/snacks/meat/slab)) // If no special slab was picked it reverts to var/biomass_per_slab
+	else if(istype(user_item, /obj/item/food/meat/slab)) // If no special slab was picked it reverts to var/biomass_per_slab
 		busy = TRUE
 		biomass += biomass_per_slab
 		handle_biomass(user_item, biomass, user)

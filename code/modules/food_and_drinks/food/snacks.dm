@@ -185,7 +185,7 @@ All foods are distributed among various categories. Use common sense.
 			if(W.w_class > WEIGHT_CLASS_SMALL)
 				to_chat(user, span_warning("[S] is too big for [src]!"))
 				return FALSE
-			if(!S.customfoodfilling || istype(W, /obj/item/reagent_containers/food/snacks/customizable) || istype(W, /obj/item/reagent_containers/food/snacks/pizzaslice/custom))
+			if(!S.customfoodfilling || istype(W, /obj/item/reagent_containers/food/snacks/customizable))
 				to_chat(user, span_warning("[src] can't be filled with [S]!"))
 				return FALSE
 			if(contents.len >= 20)

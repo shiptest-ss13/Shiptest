@@ -1194,7 +1194,7 @@
 			return
 		//let's keep it simple
 		//milk to plasmemes and skeletons, meat to lizards, electricity bars to ethereals, cookies to everyone else
-		var/obj/item/reagent_containers/food/cookiealt = /obj/item/reagent_containers/food/snacks/cookie
+		var/obj/item/reagent_containers/food/cookiealt = /obj/item/food/cookie
 		if(isskeleton(H))
 			cookiealt = /obj/item/reagent_containers/condiment/milk
 		else if(isplasmaman(H))
@@ -1203,7 +1203,7 @@
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
 		// WS - More fun with cookies - Start
 		else if(islizard(H))
-			cookiealt = /obj/item/reagent_containers/food/snacks/nugget
+			cookiealt = /obj/item/food/nugget
 		if(H.recieve_gift(cookiealt))
 			log_admin("[key_name(H)] got their [cookiealt], spawned by [key_name(src.owner)].")
 			message_admins("[key_name(H)] got their [cookiealt], spawned by [key_name(src.owner)].")
