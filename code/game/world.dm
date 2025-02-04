@@ -305,11 +305,11 @@ GLOBAL_VAR(restart_counter)
 	var/telegram_url
 	if(isnull(config))
 		discord_url = "https://galaxygate13.ru/discord"
-		github_url = "https://github.com/galaxygate-ss13/Shiptest"
+		// github_url = "https://github.com/galaxygate-ss13/Shiptest"
 		telegram_url = "https://t.me/galaxygate13"
 	else
 		discord_url = CONFIG_GET(string/discordurl)
-		github_url = CONFIG_GET(string/githuburl)
+		// github_url = CONFIG_GET(string/githuburl)
 		telegram_url = CONFIG_GET(string/telegramurl)
 
 	s += "<br>"
@@ -317,10 +317,10 @@ GLOBAL_VAR(restart_counter)
 	s += "<a href=\"[discord_url]\">" //Change this to wherever you want the hub to link to.
 	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
-	s += "|"
-	s += "<a href=\"[github_url]\">"
-	s += "Github"
-	s += "</a>"
+	// s += "|"
+	// s += "<a href=\"[github_url]\">"
+	// s += "Github"
+	// s += "</a>"
 	s += "|"
 	s += "<a href=\"[telegram_url]\">"
 	s += "Telegram"
