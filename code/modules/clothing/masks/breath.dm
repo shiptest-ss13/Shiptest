@@ -49,4 +49,3 @@
 	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot! This one is a variataion commonly used by the IRMG to protect it's members idenites."
 	icon_state = "inteq_balaclava"
 	item_state = "inteq_balaclava"
-	supports_variations = KEPORI_VARIATION | VOX_VARIATION
