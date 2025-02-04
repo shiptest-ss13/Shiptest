@@ -10,7 +10,6 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 		/obj/machinery/nuclearbomb/syndicate,
 		/obj/machinery/syndicatebomb,
 		/obj/machinery/syndicatebomb/badmin,
-		/obj/machinery/syndicatebomb/badmin/clown,
 		/obj/machinery/syndicatebomb/empty,
 		/obj/machinery/syndicatebomb/self_destruct,
 		/obj/machinery/syndicatebomb/training

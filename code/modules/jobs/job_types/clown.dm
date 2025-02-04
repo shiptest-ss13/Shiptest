@@ -19,7 +19,6 @@
 	job_icon = "clown"
 	jobtype = /datum/job/clown
 
-	belt = /obj/item/pda/clown
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/clown
 	alt_uniform = /obj/item/clothing/under/rank/civilian/clown/green
