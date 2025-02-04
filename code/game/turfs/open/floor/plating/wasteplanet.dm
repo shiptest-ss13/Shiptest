@@ -114,7 +114,32 @@
 	planetary_atmos = TRUE
 	light_color = COLOR_WASTEPLANET_LIGHT
 
+/turf/open/floor/engine/hull/waste
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 
+/turf/open/floor/engine/hull/waste/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_WASTEPLANET_LIGHT
+
+/turf/open/floor/engine/hull/reinforced/waste
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/engine/hull/reinforced/waste/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_WASTEPLANET_LIGHT
+
+/turf/open/floor/engine/hull/waste
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/engine/waste/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_WASTEPLANET_LIGHT
+
+/turf/open/floor/engine/waste
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 
 
 ///liquids
