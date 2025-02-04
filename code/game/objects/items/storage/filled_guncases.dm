@@ -270,6 +270,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm357
 	mag_type = /obj/item/ammo_box/magazine/cm357
 
+/obj/item/storage/guncase/cm1
+	gun_type = /obj/item/gun/energy/kalix/clip
+	mag_type = /obj/item/stock_parts/cell/gun
+
 /obj/item/storage/guncase/cm5
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cm5
 	mag_type = /obj/item/ammo_box/magazine/cm5_9mm
