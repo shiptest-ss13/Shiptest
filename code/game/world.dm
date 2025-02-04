@@ -353,9 +353,9 @@ GLOBAL_VAR(restart_counter)
 		if (hostedby)
 			features += "Hosted:<b>[hostedby]</b>"
 
-		s += "[jointext(features, "|")]"
+		s += "[jointext(features, " ")]"
 
-	s += "<br><img src=\"https://i.postimg.cc/KYgZ9mLf/gg13.png\">"
+	s += "<br><img src=\"https://i.postimg.cc/250059wB/gg13.png\">"
 
 	s += "</center>"
 
