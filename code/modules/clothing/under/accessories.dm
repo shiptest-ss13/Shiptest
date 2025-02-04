@@ -500,7 +500,7 @@
 /obj/item/clothing/accessory/rank_pin/inteq
 	name = "generic Inteq rank pin"
 	desc = "You really shouldn't be seeing this!"
-	icon_state = "pin_inteq_onbody"
+	icon_state = "pin_inteq_recruit" // lazymaxxing
 
 /obj/item/clothing/accessory/rank_pin/inteq/recruit
 	name = "rank pins - IE-1"
