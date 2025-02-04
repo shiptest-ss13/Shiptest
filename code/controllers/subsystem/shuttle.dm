@@ -404,11 +404,6 @@ SUBSYSTEM_DEF(shuttle)
 	for(var/obj/docking_port/mobile/M as anything in mobile)
 		var/list/L = list()
 
-		if(M.current_ship)
-			L["type"] = "[M.current_ship.source_template ? (M.current_ship.source_template.short_name ? M.current_ship.source_template.short_name : M.current_ship.source_template.name) : "Custom"]"
-		else
-			L["type"] = "???"
-
 		L["name"] = M.name
 		L["id"] = REF(M)
 		L["timer"] = M.timer
@@ -417,11 +412,13 @@ SUBSYSTEM_DEF(shuttle)
 			L["mode"] = capitalize(M.mode)
 
 		if(M.current_ship)
+			L["type"] = M.current_ship.source_template.short_name
 			if(M.current_ship.docked_to)
 				L["position"] = "Docked at [M.current_ship.docked_to.name] ([M.current_ship.docked_to.x], [M.current_ship.docked_to.y])"
 			else
 				L["position"] = "Flying At ([M.current_ship.x], [M.current_ship.y])"
 		else
+			L["type"] = "???"
 			L["position"] = "???"
 
 		data["shuttles"] += list(L)
