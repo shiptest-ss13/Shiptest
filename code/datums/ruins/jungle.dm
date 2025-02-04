@@ -26,11 +26,11 @@
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE, RUIN_TAG_HAZARDOUS)
 
 /datum/map_template/ruin/jungle/airbase
-	name = "Bombed Airbase"
+	name = "Abandoned Airbase"
 	id = "airbase"
-	description = "A bombed out airbase from the ICW, taken back over by nature"
+	description = "An abandoned airbase dating back to the ICW, partially scuttled, and moved right back into by the Ramzi Clique."
 	suffix = "jungle_bombed_starport.dmm"
-	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE)
+	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE)
 
 /datum/map_template/ruin/jungle/medtech
 	name = "MedTech facility"
