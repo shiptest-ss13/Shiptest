@@ -356,7 +356,7 @@ GLOBAL_VAR(restart_counter)
 
 		s += "[jointext(features, "<br>")]"
 
-	s += "<br><center><img src=\"https://i.postimg.cc/prfJQqNP/gg13.png\"></center>"
+	s += "<br><center><img src=\"https://i.postimg.cc/KYgZ9mLf/gg13.png\"></center>"
 
 	status = s
 
