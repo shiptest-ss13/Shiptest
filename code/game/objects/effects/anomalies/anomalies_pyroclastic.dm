@@ -7,7 +7,7 @@
 	pulse_delay = 10 SECONDS
 	core = /obj/item/assembly/signaler/anomaly/pyro
 
-/obj/effect/anomaly/pyro/anomalyEffect(seconds_per_tick)
+/obj/effect/anomaly/pyro/anomalyEffect(delta_time)
 	..()
 
 	for(var/mob/living/carbon/nearby in range(effectrange, src))
@@ -65,7 +65,7 @@
 	transform *= 2
 
 
-/obj/effect/anomaly/pyro/big/anomalyEffect(seconds_per_tick)
+/obj/effect/anomaly/pyro/big/anomalyEffect(delta_time)
 	. = ..()
 
 	if(!.)
