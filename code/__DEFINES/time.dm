@@ -5,6 +5,8 @@
 #define ROUND_TIME ( "[world.time - SSticker.round_start_time > MIDNIGHT_ROLLOVER ? "[round((world.time - SSticker.round_start_time)/MIDNIGHT_ROLLOVER)]:[game_timestamp()]" : game_timestamp()]" )
 ///same as above, but based on real time of day
 #define ROUND_REALTIMEOFDAY ( "[REALTIMEOFDAY - SSticker.round_start_timeofday > MIDNIGHT_ROLLOVER ? "[round((REALTIMEOFDAY - SSticker.round_start_timeofday)/MIDNIGHT_ROLLOVER)]:[time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm:ss", 0)]" : time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm:ss", 0)]" )
+#define ROUND_REALTIMEOFDAY_MINUTES ( "[REALTIMEOFDAY - SSticker.round_start_timeofday > MIDNIGHT_ROLLOVER ? "[round((REALTIMEOFDAY - SSticker.round_start_timeofday)/MIDNIGHT_ROLLOVER)]:[time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm", 0)]" : time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm", 0)]" )
+
 
 #define JANUARY 1
 #define FEBRUARY 2

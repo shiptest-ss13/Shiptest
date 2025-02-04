@@ -335,9 +335,9 @@ GLOBAL_VAR(restart_counter)
 
 		s += "<br>"
 
-		features += "Event: [CONFIG_GET(flag/eventstatus) ? "<b>Yes</b>" : "<b>No</b>"]"
+		features += "Event:[CONFIG_GET(flag/eventstatus) ? "<b>Yes</b>" : "<b>No</b>"]"
 
-		// features += "Time: <b>[ROUND_REALTIMEOFDAY]</b>" // [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]
+		features += "Time: <b>[SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY_MINUTES : "Not started"]</b>"
 
 		// if(GLOB.master_mode)
 		// 	features += "Mode: <b>[GLOB.master_mode]</b>"
@@ -352,7 +352,7 @@ GLOBAL_VAR(restart_counter)
 		game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
 
 		if (hostedby)
-			features += "Hosted by <b>[hostedby]</b>"
+			features += "Hosted:<b>[hostedby]</b>"
 
 		s += "[jointext(features, "<br>")]"
 
