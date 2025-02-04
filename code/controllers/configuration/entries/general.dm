@@ -233,22 +233,25 @@
 /datum/config_entry/string/banappeals
 
 /datum/config_entry/string/wikiurl
-	config_entry_value = "https://shiptest.net/wiki/"
+	config_entry_value = "https://galaxygate.ru/wiki/"
 
 /datum/config_entry/string/loreurl
-	config_entry_value = "https://shiptest.net/wiki/Lore_Primer"
+	config_entry_value = "https://galaxygate.ru/wiki/Lore_Primer"
 
 /datum/config_entry/string/rulesurl
-	config_entry_value = "https://shiptest.net/wiki/Rules"
+	config_entry_value = "https://galaxygate.ru/wiki/Rules"
 
 /datum/config_entry/string/githuburl
-	config_entry_value = "https://github.com/shiptest-ss13/Shiptest"
+	config_entry_value = "https://github.com/galaxygate-ss13/Shiptest"
 
 /datum/config_entry/string/discordurl
-	config_entry_value = "https://shiptest.net/discord"
+	config_entry_value = "https://galaxygate.ru/discord"
+
+/datum/config_entry/string/telegramurl
+	config_entry_value = "https://galaxygate.ru/telegram"
 
 /datum/config_entry/string/mapviewerurl
-	config_entry_value = "https://shiptest.net/map"
+	config_entry_value = "https://galaxygate.ru/map"
 
 /datum/config_entry/string/centcom_ban_db	// URL for the CentCom Galactic Ban DB API
 
