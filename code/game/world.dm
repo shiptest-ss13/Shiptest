@@ -312,7 +312,7 @@ GLOBAL_VAR(restart_counter)
 		github_url = CONFIG_GET(string/githuburl)
 		telegram_url = CONFIG_GET(string/telegramurl)
 
-	s += "<b>[station_name()]</b></u>]"
+	s += "<b>[station_name()]</b></u>"
 	s += "<br>"
 	s += "("
 	s += "<a href=\"[discord_url]\">" //Change this to wherever you want the hub to link to.
