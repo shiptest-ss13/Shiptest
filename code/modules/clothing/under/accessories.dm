@@ -545,7 +545,7 @@
 /obj/item/clothing/accessory/rank_pin/inteq/inspector
 	name = "rank pins - IO-1"
 	desc = "A golden pin designating the wearer as an Inpsector of the IRMG. I assume all your papers are in order?"
-	icon_state = "pin_inteq_pilot" // i can't decide whether inspectors warrant their own pin or not
+	icon_state = "pin_inteq_inspector"
 
 /obj/item/clothing/accessory/rank_pin/inteq/maa
 	name = "rank pins - IO-2"
