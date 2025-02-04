@@ -1,0 +1,7 @@
+# repaths chaplain's stamp, tweaks HOP stamp, removes clown mime and law stamps
+
+/obj/item/stamp/chaplain : /obj/item/stamp/roumain {@OLD}
+/obj/item/stamp/head_of_personnel : /obj/item/stamp/officer {@OLD}
+/obj/item/stamp/clown : @DELETE
+/obj/item/stamp/mime : @DELETE
+/obj/item/stamp/law : @DELETE

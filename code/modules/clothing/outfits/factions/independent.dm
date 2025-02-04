@@ -198,7 +198,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/head_of_personnel)
+	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/officer)
 
 /datum/outfit/job/independent/hop/western
 	name = "Independent - Head of Personnel (Western)"
@@ -720,8 +720,6 @@
 	l_hand = /obj/item/storage/briefcase/lawyer
 	l_pocket = /obj/item/clothing/accessory/lawyers_badge
 
-	chameleon_extras = /obj/item/stamp/law
-
 // Curator
 
 /datum/outfit/job/independent/curator
@@ -771,14 +769,11 @@
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/chaplain
 	backpack_contents = list(
-		/obj/item/stamp/chap = 1,
 		/obj/item/camera/spooky = 1
 		)
 
 	backpack = /obj/item/storage/backpack/cultpack
 	satchel = /obj/item/storage/backpack/cultpack
-
-	chameleon_extras = /obj/item/stamp/chap
 
 // Chemist
 
