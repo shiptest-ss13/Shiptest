@@ -335,9 +335,9 @@ GLOBAL_VAR(restart_counter)
 
 		s += "<br>"
 
-		features += "Event: [CONFIG_GET(flag/eventstatus) ? "<b style=\"color:green;\">Yes</b>" : "<b style=\"color:red;\">No</b>"]"
+		features += "Event: [CONFIG_GET(flag/eventstatus) ? "<b>Yes</b>" : "<b>No</b>"]"
 
-		features += "Round Time: <b>[ROUND_REALTIMEOFDAY]</b>" // [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]
+		features += "Time: <b>[ROUND_REALTIMEOFDAY]</b>" // [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]
 
 		if(GLOB.master_mode)
 			features += "Mode: <b>[GLOB.master_mode]</b>"
