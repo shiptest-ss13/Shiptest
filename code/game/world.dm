@@ -344,10 +344,10 @@ GLOBAL_VAR(restart_counter)
 
 		// features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No" : "Yes"]</b>"
 
-		if (popcap)
-			popcaptext = "<b>/[popcap]</b>"
+		// if (popcap)
+			// popcaptext = "<b>/[popcap]</b>"
 
-		features += "Players: <b>[players][popcaptext]</b>"
+		// features += "Players: <b>[players][popcaptext]</b>"
 
 		game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
 
@@ -356,7 +356,7 @@ GLOBAL_VAR(restart_counter)
 
 		s += "[jointext(features, "<br>")]"
 
-	s += "<br><center><img src=\"https://i.postimg.cc/KYgZ9mLf/gg13.png\"></center>"
+	s += "<br><img src=\"https://i.postimg.cc/KYgZ9mLf/gg13.png\">"
 
 	status = s
 
