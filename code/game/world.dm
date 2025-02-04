@@ -292,7 +292,7 @@ GLOBAL_VAR(restart_counter)
 	if(LAZYACCESS(SSlag_switch.measures, DISABLE_NON_OBSJOBS))
 		features += "closed"
 
-	var/s = ""
+	var/s = "<center>"
 	var/hostedby
 	if(config)
 		var/server_name = CONFIG_GET(string/servername)
@@ -312,8 +312,7 @@ GLOBAL_VAR(restart_counter)
 		// github_url = CONFIG_GET(string/githuburl)
 		telegram_url = CONFIG_GET(string/telegramurl)
 
-	s += "<br>"
-	s += "("
+	s += " ("
 	s += "<a href=\"[discord_url]\">" //Change this to wherever you want the hub to link to.
 	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
@@ -323,7 +322,7 @@ GLOBAL_VAR(restart_counter)
 	// s += "</a>"
 	s += "|"
 	s += "<a href=\"[telegram_url]\">"
-	s += "Telegram"
+	s += "TG"
 	s += "</a>"
 	s += ")"
 
@@ -337,7 +336,7 @@ GLOBAL_VAR(restart_counter)
 
 		features += "Event:[CONFIG_GET(flag/eventstatus) ? "<b>Yes</b>" : "<b>No</b>"]"
 
-		features += "Time: <b>[SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY_MINUTES : "Not started"]</b>"
+		features += "Time:<b>[SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY_MINUTES : "Not started"]</b>"
 
 		// if(GLOB.master_mode)
 		// 	features += "Mode: <b>[GLOB.master_mode]</b>"
@@ -354,9 +353,11 @@ GLOBAL_VAR(restart_counter)
 		if (hostedby)
 			features += "Hosted:<b>[hostedby]</b>"
 
-		s += "[jointext(features, "<br>")]"
+		s += "[jointext(features, "|")]"
 
 	s += "<br><img src=\"https://i.postimg.cc/KYgZ9mLf/gg13.png\">"
+
+	s += "</center>"
 
 	status = s
 
