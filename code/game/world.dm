@@ -297,7 +297,7 @@ GLOBAL_VAR(restart_counter)
 	if(config)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
-			s += "<b>[server_name]</b>" // &#8212;
+			s += "<b style=\"color:red\">[server_name]</b>" // &#8212;
 		hostedby = CONFIG_GET(string/hostedby)
 
 	var/discord_url
@@ -322,7 +322,7 @@ GLOBAL_VAR(restart_counter)
 	// s += "</a>"
 	s += "|"
 	s += "<a href=\"[telegram_url]\">"
-	s += "TG"
+	s += "Telegram"
 	s += "</a>"
 	s += ")"
 
