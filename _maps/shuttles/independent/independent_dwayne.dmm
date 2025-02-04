@@ -109,6 +109,15 @@
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	pixel_x = -20;
+	pixel_y = -10;
+	dir = 4;
+	id = "falmouth_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "bb" = (
@@ -479,11 +488,14 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/button{
-	dir = 4;
-	pixel_x = -20;
+/obj/machinery/button/door{
+	pixel_x = -21;
 	pixel_y = -13;
-	id = "dwayne_bathroom"
+	dir = 4;
+	id = "dwayne_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
@@ -706,6 +718,15 @@
 /obj/effect/decal/cleanable/food/tomato_smudge,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
+	},
+/obj/machinery/button/door{
+	pixel_x = -20;
+	pixel_y = -10;
+	dir = 4;
+	id = "falmouth_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
@@ -2218,6 +2239,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/cyan{
 	icon_state = "1-10"
+	},
+/obj/machinery/button/door{
+	pixel_x = -20;
+	pixel_y = -10;
+	dir = 4;
+	id = "falmouth_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)

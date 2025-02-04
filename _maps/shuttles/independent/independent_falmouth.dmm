@@ -736,11 +736,14 @@
 	dir = 9
 	},
 /obj/effect/spawner/random/trash/mess,
-/obj/machinery/button{
+/obj/machinery/button/door{
 	pixel_x = -20;
 	pixel_y = -10;
 	dir = 4;
-	id = "falmouth_bathroom"
+	id = "falmouth_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/fore)

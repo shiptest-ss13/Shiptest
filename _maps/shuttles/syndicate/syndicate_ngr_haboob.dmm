@@ -1184,11 +1184,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/button{
-	pixel_x = -20;
-	pixel_y = 12;
+/obj/machinery/button/door{
+	pixel_x = -21;
+	pixel_y = -13;
 	dir = 4;
-	id = "boob_bathroom"
+	id = "boob_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm)

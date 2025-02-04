@@ -892,6 +892,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/machinery/button/door{
+	id = "rigg_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "jN" = (
@@ -1205,6 +1214,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"nz" = (
+/obj/machinery/button/door{
+	id = "rigg_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 4
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/toilet)
 "ob" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2943,6 +2964,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/button/door{
+	id = "rigg_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "EJ" = (
@@ -4089,6 +4119,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/button/door{
+	id = "rigg_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Sb" = (
@@ -4297,11 +4336,14 @@
 /obj/structure/mirror{
 	pixel_y = -32
 	},
-/obj/machinery/button{
+/obj/machinery/button/door{
+	id = "sus_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
 	dir = 1;
-	pixel_y = -20;
-	pixel_x = 10;
-	id = "sus_bathroom"
+	pixel_y = -21;
+	pixel_x = 10
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
@@ -5147,7 +5189,7 @@ gJ
 ek
 IS
 pt
-IS
+nz
 WF
 bN
 CG

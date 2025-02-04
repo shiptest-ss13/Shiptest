@@ -3891,11 +3891,14 @@
 /obj/item/clothing/head/wig/random{
 	pixel_x = 11
 	},
-/obj/machinery/button{
-	dir = 4;
+/obj/machinery/button/door{
 	pixel_x = -20;
 	pixel_y = -10;
-	id = "atlas_bathroom"
+	dir = 4;
+	id = "atlas_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
 	},
 /turf/open/floor/plastic,
 /area/ship/crew)

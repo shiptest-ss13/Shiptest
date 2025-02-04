@@ -1125,11 +1125,14 @@
 	pixel_x = -5;
 	pixel_y = -20
 	},
-/obj/machinery/button{
+/obj/machinery/button/door{
+	id = "rigg_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
 	dir = 1;
-	pixel_x = 4;
 	pixel_y = -21;
-	id = "rigg_bathroom"
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)

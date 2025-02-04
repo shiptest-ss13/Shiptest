@@ -1842,11 +1842,14 @@
 /obj/effect/turf_decal/spline/fancy/wood/corner{
 	dir = 4
 	},
-/obj/machinery/button{
-	dir = 4;
+/obj/machinery/button/door{
 	pixel_x = -20;
 	pixel_y = -10;
-	id = "elders_bathroom"
+	dir = 4;
+	id = "elders_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/medical)

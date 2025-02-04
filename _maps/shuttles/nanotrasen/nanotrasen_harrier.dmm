@@ -2098,10 +2098,13 @@
 	dir = 6
 	},
 /obj/machinery/light/small/directional/west,
-/obj/machinery/button{
-	pixel_x = -12;
+/obj/machinery/button/door{
+	id = "harrier_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
 	pixel_y = 20;
-	id = "harrier_bathroom"
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/bridge)

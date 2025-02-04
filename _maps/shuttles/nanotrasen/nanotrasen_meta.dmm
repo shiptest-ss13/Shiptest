@@ -3685,11 +3685,14 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/button{
-	pixel_x = 20;
-	pixel_y = 10;
+/obj/machinery/button/door{
 	dir = 8;
-	id = "meta_bathroom"
+	id = "meta_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	pixel_x = 20;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
