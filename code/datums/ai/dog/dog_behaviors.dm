@@ -101,7 +101,7 @@
 		controller.pawn.visible_message("<span class='notice'>[controller.pawn] delivers [carried_item] to [return_target].</span>")
 
 	carried_item.forceMove(get_turf(return_target))
-	controller.blackboard[BB_SIMPLE_CARRY_ITEM] = null
+	controller.blackboard -= BB_SIMPLE_CARRY_ITEM
 	return TRUE
 
 /// This behavior involves either eating a snack we can reach, or begging someone holding a snack
