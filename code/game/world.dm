@@ -323,7 +323,7 @@ GLOBAL_VAR(restart_counter)
 	s += "Github"
 	s += "</a>"
 	s += " | "
-	s += "<a href=\"[telegram_url]"
+	s += "<a href=\"[telegram_url]>"
 	s += "Telegram"
 	s += "</a>"
 	s += ")]"
