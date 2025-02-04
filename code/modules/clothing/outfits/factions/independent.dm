@@ -676,6 +676,9 @@
 
 /datum/outfit/job/independent/bartender
 	name = "Independent - Bartender"
+	job_icon = "bartender"
+	jobtype = /datum/job/bartender
+
 
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
 	ears = /obj/item/radio/headset/headset_srv
