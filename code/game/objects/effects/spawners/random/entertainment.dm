@@ -47,7 +47,7 @@
 	name = "coin spawner"
 	icon_state = "coin"
 	loot = list(
-		/obj/item/coin/iron = 5,
+		/obj/item/coin/iron = 10,
 		/obj/item/coin/plastic = 5,
 		/obj/item/coin/silver = 4,
 		/obj/item/coin/plasma = 4,
