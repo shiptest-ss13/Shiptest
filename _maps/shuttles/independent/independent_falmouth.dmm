@@ -495,7 +495,8 @@
 /area/ship/engineering/engines/starboard)
 "oa" = (
 /obj/machinery/door/airlock{
-	name = "Restroom"
+	name = "Restroom";
+	id_tag = "falmouth_bathroom"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plating,
@@ -735,6 +736,15 @@
 	dir = 9
 	},
 /obj/effect/spawner/random/trash/mess,
+/obj/machinery/button/door{
+	pixel_x = -20;
+	pixel_y = -10;
+	dir = 4;
+	id = "falmouth_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/fore)
 "up" = (

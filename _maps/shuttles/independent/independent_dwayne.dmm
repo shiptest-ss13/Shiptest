@@ -165,7 +165,9 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "bE" = (
-/obj/machinery/door/airlock/public,
+/obj/machinery/door/airlock/public{
+	id_tag = "dwayne_bathroom"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -477,6 +479,15 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	pixel_x = -21;
+	pixel_y = -13;
+	dir = 4;
+	id = "dwayne_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "hd" = (
