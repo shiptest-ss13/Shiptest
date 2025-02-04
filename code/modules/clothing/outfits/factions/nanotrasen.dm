@@ -100,7 +100,7 @@
 
 	chameleon_extras = list(
 						/obj/item/gun/energy/e_gun,
-						/obj/item/stamp/officer,
+						/obj/item/stamp/nanotrasen/officer,
 						)
 
 // Head of Security
