@@ -161,10 +161,21 @@
 	name = "E-50 Energy Emitter"
 	desc = "An Eoehoma Firearms E-50 Emitter cannon. For when you want a send a message. A really big message."
 	item = /obj/item/gun/energy/laser/e50
-	pair_item = (/datum/blackmarket_item/ammo/huge_weapon_cell)
+	pair_item = list(/datum/blackmarket_item/ammo/huge_weapon_cell)
 
 	price_min = 4000
 	price_max = 7000
+	stock_max = 2
+	availability_prob = 20
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/e50_underbarrel
+	name = "Underbarrel Energy Cannon"
+	desc = "The normal E-50 too big to handle for you? This underbarrel conversion cuts it down to a managable size with only a <i>minor<i> chance of painfully burning your hands."
+	item = /obj/item/attachment/gun/energy/e50
+
+	price_min = 4000
+	price_max = 5000
 	stock_max = 2
 	availability_prob = 20
 	spawn_weighting = FALSE

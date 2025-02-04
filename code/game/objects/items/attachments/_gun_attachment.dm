@@ -9,13 +9,15 @@
 	wield_delay = 0.1 SECONDS
 	var/weapon_type = /obj/item/gun/ballistic/shotgun/automatic
 	var/obj/item/gun/attached_gun
+	var/allow_hand_interaction = FALSE
 	//basically so the fire select shows the right icon
 	var/underbarrel_prefix = ""
 
-/obj/item/attachment/gun/Initialize()
+/obj/item/attachment/gun/Initialize(mapload, spawn_empty = FALSE)
 	. = ..()
 	if(weapon_type)
-		attached_gun = new weapon_type(src)
+		attached_gun = new weapon_type(src,spawn_empty)
+		attached_gun.interaction_flags_item = NONE
 
 /obj/item/attachment/gun/Destroy()
 	. = ..()
@@ -64,10 +66,25 @@
 /obj/item/attachment/gun/unique_action(mob/living/user)
 	attached_gun.unique_action(user)
 
+/obj/item/attachment/gun/on_attack_hand(obj/item/gun/gun, mob/user, list/examine_list)
+	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL && gun.loc == user && user.is_holding(gun) && allow_hand_interaction)
+		hand_attack_interaction(user)
+		return COMPONENT_NO_ATTACK_HAND
+	return
+
+/obj/item/attachment/gun/attack_hand(mob/user)
+	if(loc == user && user.is_holding(src) && allow_hand_interaction)
+		if(hand_attack_interaction(user))
+			return COMPONENT_NO_ATTACK_HAND
+	return ..()
+
+/obj/item/attachment/gun/proc/hand_attack_interaction(mob/user)
+	return COMPONENT_NO_ATTACK_HAND
+
 /obj/item/attachment/gun/on_unique_action(obj/item/gun/gun, mob/user)
 	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
 		attached_gun.unique_action(user)
-		return OVERIDE_UNIQUE_ACTION
+		return OVERRIDE_UNIQUE_ACTION
 
 /obj/item/attachment/gun/on_ctrl_click(obj/item/gun/gun, mob/user)
 	attached_gun.toggle_safety(user,TRUE)
