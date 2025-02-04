@@ -528,12 +528,12 @@
 	icon_state = "pin_inteq_enforcer_c1"
 
 /obj/item/clothing/accessory/rank_pin/inteq/artificer_c1 // unused in game
-	name = "rank pins - IE3"
+	name = "rank pins - IE-3"
 	desc = "A golden pin designating the wearer as an Artificer Clas One of the IRMG. The engine room is a temple raised to the God of the Engineer."
 	icon_state = "pin_inteq_artificer_c1"
 
 /obj/item/clothing/accessory/rank_pin/inteq/corpsman_c1 // unused in game
-	name = "rank pins - IE3"
+	name = "rank pins - IE-3"
 	desc = "A golden pin designating the wearer as a Corpsman Class One of the IRMG. Nobody has to die under your watch."
 	icon_state = "pin_inteq_corpsman_c1"
 
@@ -553,17 +553,17 @@
 	icon_state = "pin_inteq_maa"
 
 /obj/item/clothing/accessory/rank_pin/inteq/artificer_hon
-	name = "rank pins - IO3"
+	name = "rank pins - IO-3"
 	desc = "A golden pin designating the wearer as an Honourable Artificer of the IRMG. The Vanguard rules upon the bridge, and you reign here below."
 	icon_state = "pin_inteq_artificer_hon"
 
 /obj/item/clothing/accessory/rank_pin/inteq/corpsman_hon
-	name = "rank pins - IO3"
+	name = "rank pins - IO-3"
 	desc = "A golden pin designating the wearer as an Honourable Corpsman of the IRMG. You'll do your best, and run another test, and pour yourself another mug of brew."
 	icon_state = "pin_inteq_corpsman_hon"
 
 /obj/item/clothing/accessory/rank_pin/inteq/enforcer_hon
-	name = "rank pins - IO4"
+	name = "rank pins - IO-4"
 	desc = "A golden pin designating the wearer as an Enforcer Honour Guard of the IRMG. Someone important is in town - you better keep them safe."
 	icon_state = "pin_inteq_enforcer_hon"
 
