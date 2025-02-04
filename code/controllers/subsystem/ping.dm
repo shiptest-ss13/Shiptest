@@ -38,3 +38,5 @@ SUBSYSTEM_DEF(ping)
 
 		if (MC_TICK_CHECK)
 			return
+
+	world.update_status() // For Hub preview update
