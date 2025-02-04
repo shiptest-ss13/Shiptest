@@ -476,9 +476,7 @@
 /turf/closed/wall/r_wall/rust,
 /area/ship/hallway/central)
 "lj" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
 "mt" = (
@@ -1099,22 +1097,20 @@
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 1
 	},
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "zx" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "mudskipper_engine"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
