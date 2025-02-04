@@ -337,12 +337,12 @@ GLOBAL_VAR(restart_counter)
 
 		features += "Event: [CONFIG_GET(flag/eventstatus) ? "<b>Yes</b>" : "<b>No</b>"]"
 
-		features += "Time: <b>[ROUND_REALTIMEOFDAY]</b>" // [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]
+		// features += "Time: <b>[ROUND_REALTIMEOFDAY]</b>" // [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]
 
-		if(GLOB.master_mode)
-			features += "Mode: <b>[GLOB.master_mode]</b>"
+		// if(GLOB.master_mode)
+		// 	features += "Mode: <b>[GLOB.master_mode]</b>"
 
-		features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No" : "Yes"]</b>"
+		// features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No" : "Yes"]</b>"
 
 		if (popcap)
 			popcaptext = "<b>/[popcap]</b>"
