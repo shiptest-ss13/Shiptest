@@ -297,7 +297,7 @@ GLOBAL_VAR(restart_counter)
 	if(config)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
-			s += "<b>[server_name]</b> &#8212; Sector " // &#8212;
+			s += "<b>[server_name]</b> &#8212; Sector <u>" // &#8212;
 		hostedby = CONFIG_GET(string/hostedby)
 
 	var/discord_url
@@ -314,7 +314,7 @@ GLOBAL_VAR(restart_counter)
 
 	s += "<b>[station_name()]</b></u>]"
 	s += "<br>"
-	s += "("
+	s += "\[("
 	s += "<a href=\"[discord_url]\">" //Change this to wherever you want the hub to link to.
 	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
@@ -326,7 +326,7 @@ GLOBAL_VAR(restart_counter)
 	s += "<a href=\"[telegram_url]>"
 	s += "Telegram"
 	s += "</a>"
-	s += ")]"
+	s += ")\]"
 
 	var/players = GLOB.clients.len
 
@@ -353,7 +353,7 @@ GLOBAL_VAR(restart_counter)
 		features += "Hosted by <b>[hostedby]</b>"
 
 	if (features)
-		s += "<br>[jointext(features, "<br>")]"
+		s += "[jointext(features, "<br>")]"
 
 	s += "<br><center><img src=\"https://i.postimg.cc/prfJQqNP/gg13.png\"></center>"
 
