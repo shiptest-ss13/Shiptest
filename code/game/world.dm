@@ -297,29 +297,22 @@ GLOBAL_VAR(restart_counter)
 	if(config)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
-			s += "<b style=\"color:red\">[server_name]</b>" // &#8212;
+			s += "<b style=\"color:red\">[server_name]</b>"
 		hostedby = CONFIG_GET(string/hostedby)
 
 	var/discord_url
-	var/github_url
 	var/telegram_url
 	if(isnull(config))
 		discord_url = "https://galaxygate13.ru/discord"
-		// github_url = "https://github.com/galaxygate-ss13/Shiptest"
 		telegram_url = "https://t.me/galaxygate13"
 	else
 		discord_url = CONFIG_GET(string/discordurl)
-		// github_url = CONFIG_GET(string/githuburl)
 		telegram_url = CONFIG_GET(string/telegramurl)
 
 	s += " ("
-	s += "<a href=\"[discord_url]\">" //Change this to wherever you want the hub to link to.
-	s += "DS"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+	s += "<a href=\"[discord_url]\">"
+	s += "DS"
 	s += "</a>"
-	// s += "|"
-	// s += "<a href=\"[github_url]\">"
-	// s += "Github"
-	// s += "</a>"
 	s += "|"
 	s += "<a href=\"[telegram_url]\">"
 	s += "TG"
@@ -327,35 +320,21 @@ GLOBAL_VAR(restart_counter)
 	s += ")"
 
 	var/players = GLOB.clients.len
-	var/popcaptext = ""
-	var/popcap = max(CONFIG_GET(number/extreme_popcap), CONFIG_GET(number/hard_popcap), CONFIG_GET(number/soft_popcap))
 
 	if (features)
 
 		s += "<br>"
 
 		features += "Event:[CONFIG_GET(flag/eventstatus) ? "<b>Yes</b>" : "<b>No</b>"]"
-
-		features += "Time:<b>[SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY_MINUTES : "Not started"]</b>"
-
-		// if(GLOB.master_mode)
-		// 	features += "Mode: <b>[GLOB.master_mode]</b>"
-
-		// features += "Respawn: <b>[CONFIG_GET(flag/norespawn) ? "No" : "Yes"]</b>"
-
-		// if (popcap)
-			// popcaptext = "<b>/[popcap]</b>"
-
-		// features += "Players: <b>[players][popcaptext]</b>"
-
-		game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
-
+		features += "Time:<b>[SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY_MINUTES : "Prep"]</b>"
 		if (hostedby)
 			features += "Host:<b>[hostedby]</b>"
 
+		game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
+
 		s += "[jointext(features, " ")]"
 
-	s += "<br><img src=\"https://tinyurl.com/48rb4zzy\">"
+		s += "<br><img src=\"https://tinyurl.com/48rb4zzy\">"
 
 	s += "</center>"
 
