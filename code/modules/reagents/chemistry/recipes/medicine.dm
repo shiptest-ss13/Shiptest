@@ -235,8 +235,9 @@ WS End */
 	required_temp = 480
 
 /datum/chemical_reaction/tramal
-	results = list(/datum/reagent/medicine/tramal = 2)
-	required_reagents = list(/datum/reagent/nitrogen = 1, /datum/reagent/hydrogen = 2, /datum/reagent/oxygen = 1)
+	results = list(/datum/reagent/medicine/tramal = 2) // these make me kinda wish i knew irl chem so i could have better recipes.
+	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/oxygen = 1)
+	required_catalysts = list(/datum/reagent/ammonia = 2)
 	required_temp = 300
 
 /datum/chemical_reaction/dimorlin
