@@ -119,9 +119,17 @@
 			chambered = null
 		else if(empty_chamber)
 			chambered = null
-	if (chamber_next_round && (magazine?.max_ammo > 1))
+	if (chamber_next_round && (magazine?.max_ammo > 1) && !condition_check(from_firing))
 		chamber_round()
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
+
+/// Handles weapon condition. Returning TRUE prevents process_chamber from automatically loading a new round
+/obj/item/gun/ballistic/proc/condition_check(from_firing = TRUE)
+	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing) //The revolver is one of the most reliable firearm designs in the universe, and you of course need no more than 6 bullets for any purpose.
+		return FALSE
+	if(prob(100)) //PLACEHOLDER
+		bolt_locked = TRUE //*click*
+		return TRUE
 
 ///Used to chamber a new round and eject the old one
 /obj/item/gun/ballistic/proc/chamber_round(keep_bullet = FALSE)
