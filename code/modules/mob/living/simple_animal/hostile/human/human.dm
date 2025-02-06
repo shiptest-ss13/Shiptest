@@ -33,22 +33,45 @@
 	unsuitable_atmos_damage = 15
 	minbodytemp = 180
 	status_flags = CANPUSH
-	del_on_death = TRUE
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 	faction = list("hermit")
 
+	/// If we use stuff from dynamic human icon generation for loot
+	var/human_loot = TRUE
+	/// Path of the mob spawner we base the mob's visuals off of.
+	var/mob_spawner
+	/// Path of the right hand held item we give to the mob's visuals.
+	var/r_hand
+	/// Path of the left hand held item we give to the mob's visuals.
+	var/l_hand
+	// If we drop l and r hand loot
+	var/neutered = FALSE
+
 	///Steals the armor datum from this type of armor
 	var/obj/item/clothing/armor_base
 
-/mob/living/simple_animal/hostile/human/Initialize()
+/mob/living/simple_animal/hostile/human/Initialize(mapload)
 	. = ..()
+	if(mob_spawner)
+		apply_dynamic_human_appearance(src, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)
 	if(ispath(armor_base, /obj/item/clothing))
 		//sigh. if only we could get the initial() value of list vars
 		var/obj/item/clothing/instance = new armor_base()
 		armor = instance.armor
 		qdel(instance)
+
+/mob/living/simple_animal/hostile/human/drop_loot()
+	. = ..()
+	if(!human_loot)
+		return
+	if(mob_spawner)
+		new mob_spawner(loc)
+	if(r_hand && !neutered)
+		new r_hand(loc)
+	if(l_hand && !neutered)
+		new r_hand(loc)
 
 /mob/living/simple_animal/hostile/human/vv_edit_var(var_name, var_value)
 	switch(var_name)
