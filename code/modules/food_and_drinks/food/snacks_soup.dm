@@ -124,13 +124,13 @@
 	tastes = list("tomato" = 1, "mint" = 1)
 	foodtype = VEGETABLES | MEAT
 
-/obj/item/reagent_containers/food/snacks/soup/clownchili
-	name = "chili con carnival"
-	desc = "A delicious stew of meat, chiles, and salty, salty clown tears."
+/obj/item/reagent_containers/food/snacks/soup/meatchili
+	name = "chili con carne"
+	desc = "A delicious stew of meat and chiles."
 	icon_state = "clownchili"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/laughter = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/banana = 1)
-	tastes = list("tomato" = 1, "hot peppers" = 2, "clown feet" = 2, "kind of funny" = 2, "someone's parents" = 2)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("tomato" = 1, "hot peppers" = 2, "meat" = 2, "spice" = 2)
 	foodtype = VEGETABLES | MEAT
 
 /obj/item/reagent_containers/food/snacks/soup/monkeysdelight

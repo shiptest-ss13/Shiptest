@@ -20,7 +20,7 @@
 
 /obj/item/reagent_containers/food/snacks/pie/cream
 	name = "banana cream pie"
-	desc = "Just like back home, on clown planet! HONK!"
+	desc = "Just like back home."
 	icon_state = "pie"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
