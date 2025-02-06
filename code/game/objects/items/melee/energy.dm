@@ -142,6 +142,10 @@
 		return ..()
 	return 0
 
+/obj/item/melee/energy/sword/active/Initialize(mapload)
+	. = ..()
+	on_transform()
+
 /obj/item/melee/energy/sword/cyborg
 	sword_color = "red"
 	var/hitcost = 50
