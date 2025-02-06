@@ -116,7 +116,6 @@
 	faction = /datum/faction/syndicate/ngr
 	faction_discount = 10
 
-
 /datum/supply_pack/sec_supply/halberd
 	name = "Energy Halberd Crate"
 	desc = "Contains one Solarian Energy Halberd, for issue to your local Sonnensoldner battalion."
