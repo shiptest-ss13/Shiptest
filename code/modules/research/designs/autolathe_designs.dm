@@ -610,6 +610,22 @@
 	build_path = /obj/item/storage/pill_bottle
 	category = list("initial", "Medical", "Medical Designs")
 
+/datum/design/hypospray_vial
+	name = "Hypospray Vial"
+	id = "vial"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 100, /datum/material/glass = 500)
+	build_path = /obj/item/reagent_containers/glass/bottle/vial/small
+	category = list("initial", "Medical", "Medical Designs")
+
+/datum/design/chemical_bottle
+	name = "Glass Bottle"
+	id = "bottle"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 300)
+	build_path = /obj/item/reagent_containers/glass/bottle
+	category = list("initial", "Medical", "Medical Designs")
+
 /datum/design/chem_jug
 	name = "Chemical Jug"
 	id = "chem_jug"

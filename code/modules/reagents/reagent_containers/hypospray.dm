@@ -1,15 +1,15 @@
 #define HYPO_SPRAY 0
 #define HYPO_INJECT 1
 
-#define WAIT_SPRAY 25
-#define WAIT_INJECT 25
-#define SELF_SPRAY 15
-#define SELF_INJECT 15
+#define WAIT_SPRAY 15
+#define WAIT_INJECT 15
+#define SELF_SPRAY 10
+#define SELF_INJECT 10
 
-#define DELUXE_WAIT_SPRAY 15
-#define DELUXE_WAIT_INJECT 15
-#define DELUXE_SELF_SPRAY 10
-#define DELUXE_SELF_INJECT 10
+#define DELUXE_WAIT_SPRAY 7
+#define DELUXE_WAIT_INJECT 7
+#define DELUXE_SELF_SPRAY 4
+#define DELUXE_SELF_INJECT 4
 
 #define COMBAT_WAIT_SPRAY 0
 #define COMBAT_WAIT_INJECT 0
@@ -180,7 +180,13 @@
 	name = "morphine medipen"
 	desc = "A rapid way to get you out of a tight situation and fast! You'll feel rather drowsy, though."
 	list_reagents = list(/datum/reagent/medicine/morphine = 10)
-	custom_price = 75
+	custom_price = 50
+
+/obj/item/reagent_containers/hypospray/medipen/tramal
+	name = "tramal medipen"
+	desc = "A quick way to relieve persistant pain."
+	list_reagents = list(/datum/reagent/medicine/tramal = 10)
+	custom_price = 25
 
 /obj/item/reagent_containers/hypospray/medipen/oxandrolone
 	name = "oxandrolone medipen"
@@ -318,6 +324,16 @@
 	icon_state = "morphen"
 	base_icon_state = "morphen"
 	item_state = "morphen"
+
+/obj/item/reagent_containers/hypospray/medipen/combat_drug
+	name = "combat cocktail"
+	desc = "An injector filled with a potent combat drug mixture. Straight from the Shoal."
+	list_reagents = list(/datum/reagent/drug/combat_drug = 6, /datum/reagent/medicine/bicaridinep = 6, /datum/reagent/medicine/dermaline = 6)
+	volume = 18
+	amount_per_transfer_from_this = 18
+	icon_state = "syndipen"
+	base_icon_state = "syndipen"
+	item_state = "syndipen"
 
 //A vial-loaded hypospray. Cartridge-based!
 /obj/item/hypospray/mkii
