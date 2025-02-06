@@ -4423,14 +4423,6 @@
 	},
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid{
-	pixel_x = -10;
-	pixel_y = -1
-	},
-/obj/item/storage/firstaid{
-	pixel_x = -10;
-	pixel_y = 5
-	},
 /obj/item/storage/firstaid/radiation{
 	pixel_y = -1;
 	pixel_x = 6
@@ -4438,6 +4430,14 @@
 /obj/item/storage/firstaid/radiation{
 	pixel_y = 5;
 	pixel_x = 6
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_y = -1;
+	pixel_x = -9
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_y = 5;
+	pixel_x = -9
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -5004,7 +5004,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
 "xI" = (
-/obj/machinery/mineral/unloading_machine,
+/obj/machinery/mineral/unloading_machine{
+	input_dir = 4;
+	output_dir = 8
+	},
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
@@ -5991,6 +5994,11 @@
 	dir = 1;
 	pixel_x = -11;
 	pixel_y = -16
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "vela_furnaces";
+	pixel_x = -7;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
@@ -7648,13 +7656,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "IY" = (
-/obj/machinery/mineral/unloading_machine,
 /obj/machinery/door/firedoor/heavy,
 /obj/structure/platform/ship_four/corner{
 	dir = 1
 	},
 /obj/structure/railing/thin/corner{
 	dir = 8
+	},
+/obj/machinery/mineral/unloading_machine{
+	input_dir = 4;
+	output_dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
@@ -8121,6 +8132,10 @@
 /obj/item/mecha_parts/mecha_equipment/thrusters/ion,
 /obj/item/circuitboard/mecha/ripley/main,
 /obj/item/circuitboard/mecha/ripley/peripherals,
+/obj/item/mecha_parts/mecha_equipment/mining_scanner{
+	pixel_x = -7;
+	pixel_y = -9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Lx" = (
@@ -9077,7 +9092,7 @@
 /obj/machinery/door/airlock/mining{
 	dir = 4;
 	name = "Mech Bay";
-	req_access = list(31)
+	req_one_access = list(31,3)
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -10321,7 +10336,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/mineral/processing_unit_console{
 	pixel_y = -32;
-	machinedir = 2
+	machinedir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/transparent/orange/warning,
@@ -10619,7 +10634,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/mineral/processing_unit_console{
 	pixel_y = -32;
-	machinedir = 2
+	machinedir = 1
 	},
 /obj/item/paper_bin{
 	pixel_x = 6;
