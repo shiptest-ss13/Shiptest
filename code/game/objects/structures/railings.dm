@@ -216,3 +216,5 @@
 
 /obj/structure/railing/thin/corner
 	icon_state = "railing_thin_corner"
+	density = FALSE
+	climbable = FALSE
