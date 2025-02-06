@@ -15,7 +15,7 @@
 
 /datum/outfit/ramzi
 	name = "Ramzi Clique Corpse"
-	uniform = /obj/item/clothing/under/syndicate
+	uniform = /obj/item/clothing/under/syndicate/gorlex
 	suit = /obj/item/clothing/suit/armor/vest/syndie
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
