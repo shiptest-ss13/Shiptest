@@ -3,7 +3,6 @@
 /turf/open/floor/plasteel/dark/snowdin
 	initial_gas_mix = FROZEN_ATMOS
 	planetary_atmos = 1
-	initial_temperature = 180
 
 /turf/open/lava/plasma
 	name = "liquid plasma"
