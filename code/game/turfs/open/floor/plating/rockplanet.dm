@@ -11,6 +11,10 @@
 	digResult = /obj/item/stack/ore/glass/rockplanet
 	light_color = COLOR_ROCKPLANET_LIGHT
 
+/turf/open/floor/plating/asteroid/rockplanet/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
+
 /turf/open/floor/plating/asteroid/rockplanet/lit
 	light_range = 2
 	light_power = 0.6
@@ -28,9 +32,17 @@
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet/lit
 
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
+
 /turf/open/floor/plating/asteroid/rockplanet/wet
 	icon_state = "wet_soft0"
 	base_icon_state = "wet_soft"
+
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit
 	light_range = 2
@@ -40,6 +52,10 @@
 	name = "iron cracked sand"
 	icon_state = "wet_cracked0"
 	base_icon_state = "wet_cracked"
+
+/turf/open/floor/plating/asteroid/rockplanet/wet/cracked/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit
 	light_range = 2
