@@ -156,6 +156,7 @@
 	light_color = COLOR_SOFT_RED
 	var/obj/effect/light_emitter/red_energy_sword/sord
 	projectile_deflect_chance = 25
+	r_hand = /obj/item/melee/energy/sword/active
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/sword/Initialize()
@@ -192,6 +193,7 @@
 	projectile_deflect_chance = 50
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 	light_color = COLOR_SOFT_RED
+	r_hand = /obj/item/melee/energy/sword/active
 	var/obj/effect/light_emitter/red_energy_sword/sord
 	projectile_deflect_chance = 25
 
