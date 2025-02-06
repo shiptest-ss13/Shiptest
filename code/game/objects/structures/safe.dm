@@ -7,7 +7,7 @@ FLOOR SAFES
 /// Chance for a sound clue
 #define SOUND_CHANCE 10
 /// Explosion number threshold for opening safe
-#define BROKEN_THRESHOLD 3
+#define BROKEN_THRESHOLD 1
 
 //SAFES
 /obj/structure/safe
@@ -92,10 +92,6 @@ FLOOR SAFES
 		explosion_count++
 		switch(explosion_count)
 			if(1)
-				desc = initial(desc) + "\nIt looks a little banged up."
-			if(2)
-				desc = initial(desc) + "\nIt's pretty heavily damaged."
-			if(3)
 				desc = initial(desc) + "\nThe lock seems to be broken."
 
 /obj/structure/safe/ui_assets(mob/user)
