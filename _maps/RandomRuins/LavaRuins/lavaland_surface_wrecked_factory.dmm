@@ -160,6 +160,14 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis{
+	pixel_x = 8;
+	pixel_y = -2;
+	list_reagents = null
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis{
+	list_reagents = null
+	},
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "bE" = (
@@ -180,22 +188,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "ca" = (
@@ -333,10 +328,7 @@
 	icon_state = "pistol-steel-empty";
 	projectile_type = null
 	},
-/obj/item/ammo_casing/c45{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "dc" = (
@@ -376,10 +368,7 @@
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "du" = (
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "dA" = (
@@ -630,7 +619,11 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "gj" = (
 /obj/item/radio/intercom/directional/north,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space{
+	shoot_point_blank = 1;
+	minimum_distance = 1;
+	retreat_distance = 0
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/lavaland/factory/manager_office)
 "gk" = (
@@ -815,7 +808,9 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space{
+	shoot_point_blank = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/lavaland/factory/manager_office)
 "ih" = (
@@ -935,10 +930,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "jr" = (
 /obj/effect/turf_decal/trimline/opaque/beige/corner,
-/obj/item/ammo_casing/c45{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "ju" = (
@@ -1153,6 +1145,17 @@
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
+"ld" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor5"
+	},
+/obj/item/gun/ballistic/automatic/pistol/ringneck,
+/turf/open/floor/wood,
+/area/ruin/lavaland/factory/manager_office)
 "lf" = (
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 5
@@ -1415,30 +1418,11 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "nL" = (
 /obj/effect/turf_decal/siding/white,
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "nO" = (
@@ -1755,38 +1739,10 @@
 /obj/structure/flippedtable{
 	dir = 8
 	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "qo" = (
@@ -1914,10 +1870,7 @@
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "rI" = (
-/obj/item/ammo_casing/c45{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
 "rO" = (
@@ -1956,14 +1909,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "sm" = (
@@ -2187,6 +2135,17 @@
 "tV" = (
 /turf/open/floor/plating/grass/lava/purple,
 /area/overmap_encounter/planetoid/lava/explored)
+"ub" = (
+/obj/item/reagent_containers/hypospray/medipen/stimpack{
+	list_reagents = null;
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis{
+	list_reagents = null
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/lavaland/factory/manager_office)
 "uc" = (
 /obj/structure/flora/ausbushes/hell,
 /turf/open/floor/plating/asteroid/purple/lit,
@@ -2395,8 +2354,14 @@
 	name = "Manager";
 	environment_smash = 0;
 	health = 200;
-	maxHealth = 200
+	maxHealth = 200;
+	emote_taunt = list("Ramzi bastards, YOU WON'T TAKE ME ALIVE!", "DIE RAMZI SCUM!!");
+	taunt_chance = 100;
+	aggro_say_chance = 100;
+	on_aggro_say = list("I'll kill all you Ramzi scum! COME AND GET SOME!", "I'll kill every last one of you Ramzi bastards!", "Finally got the nerve to finish me off you scum sucking Ramzi assholes...  YOU WON'T GET ME TOO YOU BASTARDS!!");
+	speak_emote = list("rants","screams","sobs")
 	},
+/obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "vQ" = (
@@ -2541,18 +2506,13 @@
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 10
 	},
-/obj/item/ammo_casing/shotgun/buckshot{
-	icon_state = "buckshot-empty";
-	pixel_x = 10;
-	pixel_y = 11;
-	projectile_type = null
-	},
 /obj/machinery/button/door{
 	id = "sec";
 	pixel_y = -22;
 	name = "Security Lockdown";
 	dir = 1
 	},
+/obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
 "xZ" = (
@@ -2641,10 +2601,7 @@
 /area/ruin/lavaland/factory/adminstrative)
 "yX" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/c10mm{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "yY" = (
@@ -2679,12 +2636,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/ammo_casing/shotgun/buckshot{
-	icon_state = "buckshot-empty";
-	pixel_x = 5;
-	pixel_y = -13;
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
 "zk" = (
@@ -2743,10 +2695,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/c9mm{
-	icon_state = "pistol-brass-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "zJ" = (
@@ -2945,6 +2894,10 @@
 "Cc" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
+	},
+/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor5"
 	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/manager_office)
@@ -3583,18 +3536,8 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/shotgun/buckshot{
-	icon_state = "buckshot-empty";
-	pixel_x = -3;
-	pixel_y = -10;
-	projectile_type = null
-	},
-/obj/item/ammo_casing/shotgun/buckshot{
-	icon_state = "buckshot-empty";
-	pixel_x = 7;
-	pixel_y = 9;
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
 "IJ" = (
@@ -3956,6 +3899,10 @@
 "MY" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "trails_2";
+	dir = 10
 	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/manager_office)
@@ -4406,10 +4353,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/c45{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "RO" = (
@@ -4492,6 +4436,24 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
+"SH" = (
+/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis{
+	list_reagents = null;
+	pixel_y = 4;
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis{
+	pixel_x = 8;
+	pixel_y = -2;
+	list_reagents = null
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis{
+	list_reagents = null;
+	pixel_y = -7;
+	pixel_x = 2
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/lavaland/factory/manager_office)
 "SK" = (
 /obj/effect/turf_decal/corner/opaque/lime{
 	dir = 5
@@ -4577,26 +4539,15 @@
 /turf/open/floor/plasteel/white/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "Tn" = (
-/obj/item/ammo_casing/c45{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	icon_state = "pistol-steel-empty";
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
 "Tt" = (
@@ -4847,7 +4798,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/stormtrooper,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/stormtrooper{
+	shoot_point_blank = 1;
+	minimum_distance = 1;
+	retreat_distance = 0
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
 "VO" = (
@@ -6255,12 +6210,12 @@ LZ
 LZ
 Vn
 aM
-LP
+ub
 By
 Oc
 LP
 Wx
-LL
+ld
 MY
 yQ
 gj
@@ -6309,7 +6264,7 @@ LZ
 LZ
 Vn
 yq
-LP
+SH
 vP
 bz
 fB
