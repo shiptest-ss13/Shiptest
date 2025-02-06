@@ -280,8 +280,8 @@
 		outturf.air_update_turf()
 
 // Return the current thrust amount
-/obj/machinery/power/shuttle/engine/turbine/burn_engine(percentage, deltatime)
-	return thrust * deltatime * (percentage / 100)
+/obj/machinery/power/shuttle/engine/turbine/burn_engine(percentage, delta_time)
+	return thrust * delta_time * (percentage / 100)
 
 // Return the current power output
 /obj/machinery/power/shuttle/engine/turbine/return_fuel()

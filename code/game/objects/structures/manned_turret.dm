@@ -97,7 +97,7 @@
 		M.client.view_size.setTo(view_range)
 	START_PROCESSING(SSfastprocess, src)
 
-/obj/machinery/deployable_turret/process()
+/obj/machinery/deployable_turret/process(delta_time)
 	if (!update_positioning())
 		return PROCESS_KILL
 

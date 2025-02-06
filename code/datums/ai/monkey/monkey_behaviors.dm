@@ -145,7 +145,7 @@
 				break
 
 		// if the target has a weapon, chance to disarm them
-		if(W && DT_PROB(MONKEY_ATTACK_DISARM_PROB, delta_time))
+		if(W && SPT_PROB(MONKEY_ATTACK_DISARM_PROB, delta_time))
 			living_pawn.a_intent = INTENT_DISARM
 			monkey_attack(controller, target, delta_time)
 		else
@@ -203,7 +203,7 @@
 	if(controller.blackboard[BB_MONKEY_AGRESSIVE])
 		return
 
-	if(DT_PROB(MONKEY_HATRED_REDUCTION_PROB, delta_time))
+	if(SPT_PROB(MONKEY_HATRED_REDUCTION_PROB, delta_time))
 		controller.blackboard[BB_MONKEY_ENEMIES][target]--
 
 	// if we are not angry at our target, go back to idle
@@ -269,7 +269,7 @@
 		if(!HAS_AI_CONTROLLER_TYPE(L, /datum/ai_controller/monkey))
 			continue
 
-		if(!DT_PROB(MONKEY_RECRUIT_PROB, delta_time))
+		if(!SPT_PROB(MONKEY_RECRUIT_PROB, delta_time))
 			continue
 		var/datum/ai_controller/monkey/monkey_ai = L.ai_controller
 		var/atom/your_enemy = controller.blackboard[BB_MONKEY_CURRENT_ATTACK_TARGET]

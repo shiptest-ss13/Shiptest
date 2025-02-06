@@ -610,7 +610,7 @@
 			T.cell.give(S.e_cost * coeff)
 			T.update_appearance()
 		else
-			T.charge_tick = 0
+			T.charge_timer = 0
 
 /obj/item/robot_module/peacekeeper
 	name = "Peacekeeper"

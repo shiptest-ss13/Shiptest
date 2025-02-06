@@ -50,7 +50,7 @@
 	icon_state = "gsensor[on]"
 	return ..()
 
-/obj/machinery/air_sensor/process_atmos()
+/obj/machinery/air_sensor/process_atmos(delta_time)
 	if(on)
 		var/datum/gas_mixture/air_sample = return_air()
 

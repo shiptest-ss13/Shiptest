@@ -78,7 +78,7 @@
 /obj/item/melee/energy/get_sharpness()
 	return sharpness
 
-/obj/item/melee/energy/process(seconds_per_tick)
+/obj/item/melee/energy/process(delta_time)
 	if(heat)
 		open_flame()
 
@@ -185,7 +185,7 @@
 		sword_color = set_color
 		set_light_color(possible_colors[set_color])
 
-/obj/item/melee/energy/sword/saber/process()
+/obj/item/melee/energy/sword/saber/process(delta_time)
 	. = ..()
 	if(hacked)
 		var/set_color = pick(possible_colors)

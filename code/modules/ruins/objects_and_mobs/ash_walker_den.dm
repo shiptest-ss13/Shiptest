@@ -42,7 +42,7 @@
 	new /obj/item/assembly/signaler/anomaly (get_step(loc, pick(GLOB.alldirs)))
 	return ..()
 
-/obj/structure/lavaland/ash_walker/process()
+/obj/structure/lavaland/ash_walker/process(delta_time)
 	consume()
 	spawn_mob()
 
