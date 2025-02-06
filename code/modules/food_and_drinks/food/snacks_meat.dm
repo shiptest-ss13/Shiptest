@@ -15,7 +15,7 @@
 	tastes = list("fish" = 4, "batter" = 1, "hot peppers" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/fishmeat
+/obj/item/food/fishmeat
 	name = "fish fillet"
 	desc = "A fillet of fish meat."
 	icon_state = "fishfillet"
@@ -25,41 +25,9 @@
 	tastes = list("fish" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/fishmeat/Initialize()
+/obj/item/food/fishmeat/Initialize()
 	. = ..()
 	eatverb = pick("bite","chew","gnaw","swallow","chomp")
-
-/obj/item/reagent_containers/food/snacks/fishmeat/moonfish
-	name = "moonfish fillet"
-	desc = "A fillet of moonfish."
-	icon_state = "moonfish_fillet"
-
-/obj/item/reagent_containers/food/snacks/fishmeat/gunner_jellyfish
-	name = "filleted gunner jellyfish"
-	desc = "A gunner jellyfish with the stingers removed. Mildly hallucinogenic."
-	icon_state = "jellyfish_fillet"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/toxin/mindbreaker = 2)
-
-/obj/item/reagent_containers/food/snacks/fishmeat/armorfish
-	name = "cleaned armorfish"
-	desc = "An armorfish with its guts and shell removed, ready for use in cooking."
-	icon_state = "armorfish_fillet"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-
-/obj/item/reagent_containers/food/snacks/fishmeat/donkfish
-	name = "donkfillet"
-	desc = "The dreaded donkfish fillet. No sane spaceman would eat this, and it does not get better when cooked."
-	icon_state = "donkfillet"
-	list_reagents = list(/datum/reagent/yuck = 3)
-
-/obj/item/reagent_containers/food/snacks/fishmeat/carp
-	name = "carp fillet"
-	desc = "A fillet of spess carp meat."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/toxin/carpotoxin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-
-/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation
-	name = "imitation carp fillet"
-	desc = "Almost just like the real thing, kinda."
 
 /obj/item/reagent_containers/food/snacks/fishfingers
 	name = "fish fingers"
@@ -260,6 +228,16 @@
 	tastes = list("meat" = 1, "onions" = 1, "garlic" = 1)
 	foodtype = MEAT
 
+/obj/item/reagent_containers/food/snacks/meatbun
+	name = "meat bun"
+	desc = "Has the potential to not be Dog."
+	icon_state = "meatbun"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	filling_color = "#8B0000"
+	tastes = list("bun" = 3, "meat" = 2)
+	foodtype = GRAIN | MEAT | VEGETABLES
+
 /obj/item/reagent_containers/food/snacks/monkeycube
 	name = "monkey cube"
 	desc = "Just add water!"
@@ -297,17 +275,6 @@
 	list_reagents = list(/datum/reagent/monkey_powder = 30, /datum/reagent/medicine/strange_reagent = 5)
 	tastes = list("the jungle" = 1, "bananas" = 1, "jimmies" = 1)
 	spawned_mob = /mob/living/simple_animal/hostile/gorilla
-
-/obj/item/reagent_containers/food/snacks/enchiladas
-	name = "enchiladas"
-	desc = "Viva La Mexico!"
-	icon_state = "enchiladas"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
-	bitesize = 4
-	filling_color = "#FFA07A"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/capsaicin = 6)
-	tastes = list("hot peppers" = 1, "meat" = 3, "cheese" = 1, "sour cream" = 1)
-	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/stewedsoymeat
 	name = "stewed soy meat"

@@ -44,7 +44,7 @@
 
 	var/mutable_appearance/gutlunch_full_overlay
 
-	wanted_objects = list(/obj/effect/decal/cleanable/xenoblood/xgibs, /obj/effect/decal/cleanable/blood/gibs/, /obj/item/organ, /obj/item/reagent_containers/food/snacks/meat/slab)
+	wanted_objects = list(/obj/effect/decal/cleanable/xenoblood/xgibs, /obj/effect/decal/cleanable/blood/gibs/, /obj/item/organ, /obj/item/food/meat/slab)
 
 /mob/living/simple_animal/hostile/asteroid/gutlunch/Initialize()
 	. = ..()

@@ -447,7 +447,7 @@
 	desc = "A cook book that teaches you some more of the newest desserts. AI approved, and a best seller on Honkplanet."
 	crafting_recipe_types = list(
 		/datum/crafting_recipe/food/berrytart,
-		/datum/crafting_recipe/food/cocolavatart,
+		/datum/crafting_recipe/food/cocoalavatart,
 		/datum/crafting_recipe/food/vanillacake
 	)
 	icon_state = "cooking_learing_sweets"

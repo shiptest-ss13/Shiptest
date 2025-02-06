@@ -232,7 +232,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 			/obj/item/storage/box/donkpockets/donkpocketberry = 1,
 			/obj/item/storage/box/donkpockets/donkpockethonk = 1,
 			) = 1,
-		/obj/item/reagent_containers/food/snacks/monkeycube = 1,
+		/obj/item/food/monkeycube = 1,
 		/obj/effect/spawner/random/food_or_drink/ration = 1,
 		) = 8,
 
@@ -251,7 +251,6 @@ GLOBAL_LIST_INIT(oddity_loot, list(//oddity: strange or crazy items
 		/obj/item/dice/d20/fate/stealth/cursed = 1, 	//Only rolls 1
 		/obj/item/clothing/shoes/jackboots/fast = 1,
 		/obj/item/clothing/suit/armor/reactive/table = 1,
-		/obj/item/storage/box/donkpockets/donkpocketgondola = 1,
 		/obj/item/melee/sword/greyking = 1 //WS - Meth Sword
 	))
 

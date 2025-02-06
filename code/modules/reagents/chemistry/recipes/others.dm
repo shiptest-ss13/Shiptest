@@ -136,7 +136,7 @@
 /datum/chemical_reaction/meatification/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/meat/slab/meatproduct(location)
+		new /obj/item/food/meat/slab/meatproduct(location)
 	return
 
 /datum/chemical_reaction/carbondioxide
@@ -454,7 +454,7 @@
 	required_reagents = list(/datum/reagent/monkey_powder = 30, /datum/reagent/water = 1)
 
 /datum/chemical_reaction/monkey/on_reaction(datum/reagents/holder, created_volume)
-	var/obj/item/reagent_containers/food/snacks/monkeycube/cube = holder.my_atom
+	var/obj/item/food/monkeycube/cube = holder.my_atom
 	if(istype(cube))
 		cube.Expand()
 	else
@@ -545,7 +545,7 @@
 /datum/chemical_reaction/slimejelly
 	results = list(/datum/reagent/toxin/slimejelly = 5)
 	required_reagents = list(/datum/reagent/fuel/oil = 3, /datum/reagent/uranium/radium = 2, /datum/reagent/consumable/tinlux =1)
-	required_container = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom
+	required_container = /obj/item/food/grown/mushroom/glowshroom
 	mix_message = "The mushroom's insides bubble and pop and it becomes very limp."
 
 /datum/chemical_reaction/metalgen_imprint

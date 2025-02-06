@@ -41,9 +41,9 @@
 	speak_emote = list("sniffles","twitches")
 	emote_hear = list("hops.")
 	emote_see = list("hops around","bounces up and down")
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	butcher_results = list(/obj/item/food/meat/slab = 1)
 	egg_type = /obj/item/reagent_containers/food/snacks/egg/loaded
-	food_type = /obj/item/reagent_containers/food/snacks/grown/carrot
+	food_type = /obj/item/food/grown/carrot
 	eggsleft = 10
 	eggsFertile = FALSE
 	icon_prefix = "rabbit"
@@ -105,7 +105,7 @@
 
 /obj/item/reagent_containers/food/snacks/egg/proc/dispensePrize(turf/where)
 	var/won = pick(/obj/item/storage/backpack/satchel/bunnysatchel,
-	/obj/item/reagent_containers/food/snacks/grown/carrot,
+	/obj/item/food/grown/carrot,
 	/obj/item/toy/balloon,
 	/obj/item/toy/gun,
 	/obj/item/toy/sword,
@@ -174,7 +174,7 @@
 		/datum/reagent/consumable/sodiumchloride = 1,
 		/datum/reagent/consumable/blackpepper = 1,
 		/obj/item/reagent_containers/food/snacks/boiledegg = 1,
-		/obj/item/reagent_containers/food/snacks/meatball = 1
+		/obj/item/food/meatball = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/scotchegg
 	subcategory = CAT_MISCFOOD

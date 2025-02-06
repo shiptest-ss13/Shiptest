@@ -10,7 +10,7 @@
 	name = "Sandwich"
 	reqs = list(
 		/obj/item/food/breadslice/plain = 2,
-		/obj/item/reagent_containers/food/snacks/meat/steak = 1,
+		/obj/item/food/meat/steak = 1,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/sandwich
@@ -52,13 +52,24 @@
 	result = /obj/item/reagent_containers/food/snacks/notasandwich
 	subcategory = CAT_SANDWICH
 
+/datum/crafting_recipe/food/hotdog
+
+	name = "Hot dog"
+	reqs = list(
+		/datum/reagent/consumable/ketchup = 5,
+		/obj/item/food/bun = 1,
+		/obj/item/food/sausage = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/hotdog
+	subcategory = CAT_SANDWICH
+
 /datum/crafting_recipe/food/blt
 	name = "BLT"
 	reqs = list(
 		/obj/item/food/breadslice/plain = 2,
-		/obj/item/reagent_containers/food/snacks/meat/bacon = 2,
-		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
-		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
+		/obj/item/food/meat/bacon = 2,
+		/obj/item/food/grown/cabbage = 1,
+		/obj/item/food/grown/tomato = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/blt
 	subcategory = CAT_SANDWICH
