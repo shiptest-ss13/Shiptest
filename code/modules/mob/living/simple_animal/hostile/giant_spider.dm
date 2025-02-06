@@ -49,7 +49,6 @@
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
-	unique_name = 1
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	footstep_type = FOOTSTEP_MOB_CLAW
 	mob_size = MOB_SIZE_LARGE
@@ -81,12 +80,6 @@
 		to_chat(src, "<span class='spider'><b>[directive]</b></span>")
 		if(mind)
 			mind.store_memory("<span class='spider'><b>[directive]</b></span>")
-
-/mob/living/simple_animal/hostile/poison/giant_spider/attack_ghost(mob/user)
-	. = ..()
-	if(.)
-		return
-	humanize_spider(user)
 
 /mob/living/simple_animal/hostile/poison/giant_spider/proc/humanize_spider(mob/user)
 	if(key || !playable_spider || stat)//Someone is in it, it's dead, or the fun police are shutting it down
