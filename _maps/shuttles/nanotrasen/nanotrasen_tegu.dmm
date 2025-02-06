@@ -43,9 +43,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 2
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "am" = (
@@ -83,7 +80,7 @@
 /obj/item/folder/biscuit,
 /obj/item/folder/documents,
 /turf/open/floor/plasteel/patterned,
-/area/ship/storage)
+/area/ship/cargo/office)
 "aB" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -556,9 +553,6 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/east,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "dL" = (
@@ -599,6 +593,8 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/storage/belt/utility/full/engi,
+/obj/item/gear_pack/anglegrinder,
+/obj/item/cartridge/ce,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "dZ" = (
@@ -1155,11 +1151,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/tech,
-/area/ship/storage)
+/area/ship/cargo/office)
 "jL" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1175,6 +1168,10 @@
 	},
 /obj/structure/closet/emcloset/wall/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "jZ" = (
@@ -1421,6 +1418,7 @@
 	req_access = list(48);
 	name = "field technician's locker"
 	},
+/obj/item/cartridge/atmos,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
 "lU" = (
@@ -1556,7 +1554,11 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
-/obj/machinery/light/directional/west,
+/obj/item/toy/plush/moth/atlas,
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/open/floor/wood,
 /area/ship/cargo/office)
 "mG" = (
@@ -1962,7 +1964,7 @@
 	id = "tegus_cewindow"
 	},
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/cargo/office)
 "qK" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -2042,6 +2044,7 @@
 	pixel_x = 8;
 	pixel_y = -20
 	},
+/obj/item/cartridge/quartermaster,
 /turf/open/floor/carpet/orange,
 /area/ship/crew/crewtwo)
 "qW" = (
@@ -2065,6 +2068,7 @@
 	req_access = list(48);
 	name = "field technician's locker"
 	},
+/obj/item/cartridge/atmos,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
 "qX" = (
@@ -2132,6 +2136,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/west,
+/obj/structure/closet/firecloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "rJ" = (
@@ -2155,13 +2160,17 @@
 /area/ship/hallway/central)
 "rL" = (
 /obj/machinery/telecomms/server/presets/nanotrasen{
-	freq_listening = list(1351);
-	autolinkers = list("nanotrasen","broadcasterA","hub")
+	autolinkers = list("nanotrasen","broadcasterA","hub");
+	freq_listening = list(1353,1351,1459);
+	network = "nt_commnet"
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "rP" = (
-/obj/machinery/telecomms/broadcaster/preset_left,
+/obj/machinery/telecomms/broadcaster/preset_right{
+	autolinkers = list("broadcasterB","hub");
+	network = "nt_commnet"
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/door/firedoor/border_only{
@@ -2491,7 +2500,8 @@
 "uf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/telecomms/server/presets/common{
-	autolinkers = list("common","broadcasterA","hub")
+	autolinkers = list("common","broadcasterA","hub");
+	network = "nt_commnet"
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
@@ -2634,7 +2644,11 @@
 /area/ship/crew)
 "vS" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/telecomms/hub/preset,
+/obj/machinery/telecomms/hub{
+	autolinkers = list("hub","bus","relay","messaging","nanotrasen","broadcasterB","receiverB");
+	id = "Nanotrasen Communications Hub";
+	network = "nt_commnet"
+	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "vV" = (
@@ -2666,6 +2680,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"ws" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloor,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/patterned,
+/area/ship/hallway/central)
 "wt" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -2783,7 +2805,11 @@
 "xi" = (
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/telecomms/message_server/preset,
+/obj/machinery/telecomms/message_server/preset{
+	autolinkers = list("messaging","hub");
+	layer = 3.1;
+	network = "nt_commnet"
+	},
 /turf/open/floor/circuit/green,
 /area/ship/engineering/communications)
 "xj" = (
@@ -3107,10 +3133,6 @@
 	pixel_y = -10;
 	layer = 2.9
 	},
-/obj/item/stamp/qm{
-	pixel_x = -4;
-	pixel_y = -9
-	},
 /obj/machinery/button/door{
 	pixel_y = -4;
 	name = "Hallway Door Control";
@@ -3125,6 +3147,14 @@
 	id = "tegus_office_lockdown";
 	dir = 8;
 	pixel_x = 8
+	},
+/obj/item/stamp/nanotrasen/ns/supply{
+	pixel_x = -6;
+	pixel_y = -6
+	},
+/obj/item/stamp/nanotrasen{
+	pixel_y = 7;
+	pixel_x = -7
 	},
 /turf/open/floor/wood,
 /area/ship/cargo/office)
@@ -3257,6 +3287,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/pdapainter,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
 "BS" = (
@@ -3348,6 +3379,7 @@
 /obj/machinery/computer/cargo{
 	dir = 1
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/wood,
 /area/ship/cargo/office)
 "CE" = (
@@ -3682,6 +3714,9 @@
 /obj/structure/chair/handrail{
 	dir = 2
 	},
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/hallway/central)
 "FY" = (
@@ -3853,15 +3888,12 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/turf_decal/siding/white/end,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/storage)
+/area/ship/cargo/office)
 "Hi" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/suit_storage_unit/engine,
@@ -3947,6 +3979,9 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/item/stamp/nanotrasen/captain{
+	pixel_x = -5
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/crewfour)
@@ -4060,7 +4095,7 @@
 	},
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/closet/firecloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "Jp" = (
@@ -4111,9 +4146,6 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "JW" = (
@@ -4224,6 +4256,8 @@
 /obj/item/gun/ballistic/automatic/pistol/commander,
 /obj/item/ammo_box/magazine/smgm9mm,
 /obj/item/ammo_box/magazine/smgm9mm,
+/obj/item/clothing/glasses/hud/security/sunglasses,
+/obj/item/cartridge/hos,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "KK" = (
@@ -4298,16 +4332,12 @@
 /area/ship/cargo)
 "LB" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/effect/turf_decal/siding/white/end{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/plasteel/dark,
-/area/ship/storage)
+/area/ship/cargo/office)
 "LF" = (
 /obj/machinery/porta_turret/ship/nt{
 	dir = 5
@@ -4687,9 +4717,11 @@
 /area/ship/engineering/engines/starboard)
 "Ox" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/telecomms/bus/preset_two{
-	freq_listening = list();
-	autolinkers = list("processor2","nanotrasen","receiverB","messaging","hub")
+/obj/machinery/telecomms/bus/preset_four{
+	autolinkers = list("hub","processor4","bus");
+	freq_listening = list(1353,1351,1459);
+	id = "Nanotrasen Communications Bus";
+	network = "nt_commnet"
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
@@ -4774,9 +4806,7 @@
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/item/radio/intercom/directional/south,
-/obj/item/kirbyplants{
-	icon_state = "plant-21"
-	},
+/obj/machinery/vending/cigarette,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "Pl" = (
@@ -5397,7 +5427,11 @@
 /area/ship/hallway/central)
 "UA" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/telecomms/receiver/preset_left,
+/obj/machinery/telecomms/receiver/preset_right{
+	autolinkers = list("receiverB","hub");
+	freq_listening = list(1353,1351,1459);
+	network = "nt_commnet"
+	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "UF" = (
@@ -5509,7 +5543,7 @@
 	density = 0
 	},
 /turf/open/floor/plasteel/patterned,
-/area/ship/storage)
+/area/ship/cargo/office)
 "Vr" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -5596,9 +5630,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/port)
-"WC" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/storage)
 "WI" = (
 /obj/structure/sink/kitchen{
 	dir = 8
@@ -5653,8 +5684,11 @@
 /area/ship/engineering/communications/room)
 "Xn" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/telecomms/processor/preset_two{
-	autolinkers = list("processor2","hub")
+/obj/machinery/telecomms/processor/preset_four{
+	autolinkers = list("processor4","bus");
+	id = "Nanotrasen Communications Processor";
+	layer = 3.09;
+	network = "nt_commnet"
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
@@ -5870,6 +5904,10 @@
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset/wall/directional/south,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "Zb" = (
@@ -6607,7 +6645,7 @@ lJ
 Cv
 Rw
 GM
-Pu
+ws
 zh
 eZ
 cM
@@ -6860,7 +6898,7 @@ uF
 qF
 aA
 Vm
-WC
+Ij
 tz
 qR
 Yk
@@ -6909,7 +6947,7 @@ uF
 uF
 uF
 uF
-WC
+Ij
 PF
 PF
 PF
