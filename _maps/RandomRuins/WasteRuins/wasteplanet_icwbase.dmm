@@ -364,7 +364,6 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "bp" = (
 /obj/structure/table/glass,
-/obj/machinery/fax,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	pixel_x = 0;
 	pixel_y = -1
@@ -376,6 +375,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer2{
 	dir = 1
 	},
+/obj/machinery/fax/frontiersmen,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "bz" = (
@@ -1432,14 +1432,6 @@
 /obj/effect/spawner/random/anomaly/waste,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet)
-"fz" = (
-/obj/structure/salvageable/machine,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/borderfloorwhite{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "fA" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -1969,6 +1961,7 @@
 	dir = 8
 	},
 /obj/machinery/iv_drip,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "ho" = (
@@ -3951,7 +3944,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "pu" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/telecomms/bus,
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 4
@@ -5926,7 +5918,7 @@
 "xm" = (
 /obj/structure/salvageable/machine,
 /obj/effect/turf_decal/borderfloorwhite{
-	dir = 1
+	dir = 5
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
@@ -6144,8 +6136,9 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "xZ" = (
 /obj/machinery/telecomms/receiver,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/borderfloorwhite,
+/obj/effect/turf_decal/borderfloorwhite{
+	dir = 6
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "ya" = (
@@ -7330,7 +7323,7 @@
 /obj/structure/closet/crate/large{
 	name = "emergency scrubbing unit crate"
 	},
-/obj/machinery/portable_atmospherics/scrubber/huge,
+/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "CP" = (
@@ -10013,14 +10006,8 @@
 /turf/open/floor/engine/waste/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "NC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/salvageable/server,
-/obj/effect/turf_decal/borderfloorwhite,
-/obj/item/stack/ore/salvage/scrapgold/five{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/white,
+/obj/effect/turf_decal/borderfloorwhite/full,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "ND" = (
 /obj/effect/turf_decal/industrial/warning/dust{
@@ -11423,15 +11410,15 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "TE" = (
 /obj/structure/table/survival_pod,
-/obj/machinery/computer/camera_advanced{
-	icon_state = "tcstation";
-	pixel_x = 3;
-	pixel_y = 7
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/security{
+	icon_state = "tcstation";
+	pixel_x = 3;
+	pixel_y = 8
+	},
 /turf/open/floor/vault,
 /area/ruin/wasteplanet/wasteplanet_icwbase/vault)
 "TF" = (
@@ -12928,8 +12915,12 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Zs" = (
 /obj/effect/turf_decal/borderfloorwhite/corner,
-/obj/structure/salvageable/machine,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stack/ore/salvage/scrapgold/five{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/structure/salvageable/safe_server,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "Zt" = (
@@ -13865,7 +13856,7 @@ NC
 OO
 nt
 Jz
-fz
+NC
 xD
 gZ
 Nx
