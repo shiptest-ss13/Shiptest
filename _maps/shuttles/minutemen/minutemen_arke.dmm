@@ -768,7 +768,8 @@
 /area/ship/cargo)
 "ve" = (
 /obj/machinery/door/airlock/grunge{
-	name = "Bathroom"
+	name = "Bathroom";
+	id_tag = "arke_bathroom"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -1715,6 +1716,15 @@
 /obj/item/soap,
 /obj/item/towel,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	pixel_x = -20;
+	pixel_y = -10;
+	dir = 4;
+	id = "arke_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
+	},
 /turf/open/floor/plastic,
 /area/ship/crew)
 "UO" = (

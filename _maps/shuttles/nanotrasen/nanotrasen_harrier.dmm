@@ -1511,7 +1511,8 @@
 /area/ship/engineering)
 "hV" = (
 /obj/machinery/door/airlock/command{
-	name = "Restroom"
+	name = "Restroom";
+	id_tag = "harrier_bathroom"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2097,6 +2098,14 @@
 	dir = 6
 	},
 /obj/machinery/light/small/directional/west,
+/obj/machinery/button/door{
+	id = "harrier_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	pixel_y = 20;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/bridge)
 "lj" = (

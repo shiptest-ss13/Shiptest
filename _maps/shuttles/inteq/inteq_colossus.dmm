@@ -1996,7 +1996,8 @@
 /area/ship/crew/office)
 "vc" = (
 /obj/machinery/door/airlock{
-	name = "Head"
+	name = "Head";
+	id_tag = "sus_bathroom"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4295,6 +4296,15 @@
 	},
 /obj/structure/mirror{
 	pixel_y = -32
+	},
+/obj/machinery/button/door{
+	id = "sus_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 10
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
