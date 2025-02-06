@@ -2197,6 +2197,15 @@
 	pixel_y = 6
 	},
 /obj/item/soap/deluxe,
+/obj/machinery/button/door{
+	pixel_y = -20;
+	pixel_x = 22;
+	dir = 1;
+	name = "door lock";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	id = "nimbbath"
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/cargo)
 "NU" = (
@@ -2460,7 +2469,8 @@
 /area/ship/crew/ccommons)
 "SN" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Restroom"
+	name = "Restroom";
+	id_tag = "nimbbath"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/white,
 /turf/open/floor/plasteel/tech,
