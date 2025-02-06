@@ -19,39 +19,12 @@
 //Colored jumpsuits
 
 /datum/gear/uniform/color
-	subtype_path = /datum/gear/uniform/color
+	display_name = "jumpsuit, recolorable"
+	path = /obj/item/clothing/under/color
 
-/datum/gear/uniform/color/red
-	display_name = "jumpsuit, red"
-	path = /obj/item/clothing/under/color/red
-
-/datum/gear/uniform/color/green
-	display_name = "jumpsuit, green"
-	path = /obj/item/clothing/under/color/green
-
-/datum/gear/uniform/color/blue
-	display_name = "jumpsuit, blue"
-	path = /obj/item/clothing/under/color/blue
-
-/datum/gear/uniform/color/yellow
-	display_name = "jumpsuit, yellow"
-	path = /obj/item/clothing/under/color/yellow
-
-/datum/gear/uniform/color/pink
-	display_name = "jumpsuit, pink"
-	path = /obj/item/clothing/under/color/pink
-
-/datum/gear/uniform/color/black
-	display_name = "jumpsuit, black"
-	path = /obj/item/clothing/under/color/black
-
-/datum/gear/uniform/color/white
-	display_name = "jumpsuit, white"
-	path = /obj/item/clothing/under/color/white
-
-/datum/gear/uniform/color/random
-	display_name = "jumpsuit, random"
-	path = /obj/item/clothing/under/color/random //literally useless if grey assistants is off
+/datum/gear/uniform/color_skirt
+	display_name = "jumpskirt, recolorable"
+	path = /obj/item/clothing/under/color/jumpskirt
 
 //Shorts
 
