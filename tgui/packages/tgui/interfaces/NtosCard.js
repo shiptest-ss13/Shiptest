@@ -35,7 +35,7 @@ export const NtosCardContent = (props, context) => {
     have_printer,
     have_id_slot,
     id_name,
-    req_ship_access,
+    has_ship,
     id_has_ship_access,
     ship_has_unique_access,
   } = data;
@@ -111,7 +111,7 @@ export const NtosCardContent = (props, context) => {
           </Tabs>
           {tab === 1 && (
             <>
-              {req_ship_access === 1 && (
+              {has_ship === 1 && (
                 <Section
                   title={
                     'ID Ship Access: ' +
@@ -177,19 +177,21 @@ export const NtosCardContent = (props, context) => {
                 }
               />
               <Flex>
-                <Flex.Item>
-                  <Tabs vertical>
-                    {Object.keys(jobs).map((department) => (
-                      <Tabs.Tab
-                        key={department}
-                        selected={department === selectedDepartment}
-                        onClick={() => setSelectedDepartment(department)}
-                      >
-                        {department}
-                      </Tabs.Tab>
-                    ))}
-                  </Tabs>
-                </Flex.Item>
+                {Object.keys(jobs).length > 1 && (
+                  <Flex.Item>
+                    <Tabs vertical>
+                      {Object.keys(jobs).map((department) => (
+                        <Tabs.Tab
+                          key={department}
+                          selected={department === selectedDepartment}
+                          onClick={() => setSelectedDepartment(department)}
+                        >
+                          {department}
+                        </Tabs.Tab>
+                      ))}
+                    </Tabs>
+                  </Flex.Item>
+                )}
                 <Flex.Item grow={1}>
                   {departmentJobs.map((job) => (
                     <Button
@@ -207,7 +209,7 @@ export const NtosCardContent = (props, context) => {
               </Flex>
             </Section>
           )}
-          {tab === 3 && req_ship_access === 1 && (
+          {tab === 3 && has_ship === 1 && (
             <>
               <Section
                 title={
