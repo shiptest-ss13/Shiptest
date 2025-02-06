@@ -97,6 +97,7 @@
 	icon_state = "frontiersmanrangedelite"
 	maxHealth = 170
 	health = 170
+	shoot_point_blank = TRUE
 	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
@@ -218,7 +219,9 @@
 	icon_state = "frontiersmanofficer"
 	maxHealth = 65
 	health = 65
-	rapid = 4
+	rapid = 6
+	rapid_fire_delay = 1
+	shoot_point_blank = TRUE
 	projectilesound = 'sound/weapons/gun/pistol/mauler.ogg'
 	casingtype = /obj/item/ammo_casing/c9mm
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer
