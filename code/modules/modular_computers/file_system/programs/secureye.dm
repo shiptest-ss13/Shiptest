@@ -173,7 +173,11 @@
 
 	var/list/visible_turfs = list()
 
-	if(!active_camera.loc)
+	if(!active_camera)
+		show_camera_static()
+		return
+	else if (active_camera.loc == null)
+		show_camera_static()
 		return
 
 	var/cam_location = active_camera.loc
