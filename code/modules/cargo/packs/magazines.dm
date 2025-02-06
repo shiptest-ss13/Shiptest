@@ -376,7 +376,7 @@
 	faction = /datum/faction/pgf
 
 /datum/supply_pack/magazine/pgfcell
-	name = "PGF-Standard Etherbor Cell Crate"
+	name = "Military-Grade Etherbor Cell Crate"
 	desc = "Contains a military-grade Etherbor weapon cell produced for the PGFMC, compatible with Etherbor armaments with a significantly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/pgf)
 	cost = 1000
