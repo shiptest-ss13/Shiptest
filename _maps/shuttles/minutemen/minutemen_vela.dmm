@@ -734,12 +734,12 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/computer/card{
+/obj/machinery/newscaster/directional/west,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/computer/crew{
 	dir = 4;
 	icon_state = "computer-right"
 	},
-/obj/machinery/newscaster/directional/west,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "ds" = (
@@ -4184,8 +4184,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "tv" = (
-/obj/effect/turf_decal/industrial/hatch/blue,
-/obj/effect/turf_decal/rechargefloor,
 /obj/mecha/working/ripley/clip,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
@@ -4194,6 +4192,8 @@
 /obj/structure/railing/thin{
 	layer = 4
 	},
+/obj/effect/turf_decal/industrial/hatch/blue,
+/obj/effect/turf_decal/rechargefloor,
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
 "tA" = (
@@ -6270,7 +6270,7 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
-/obj/structure/bedsheetbin/empty,
+/obj/structure/bedsheetbin,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/janitor)
 "Dn" = (
@@ -8099,7 +8099,9 @@
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 8
 	},
-/obj/structure/closet/crate/engineering,
+/obj/structure/closet/crate/engineering{
+	name = "replacement mech crate"
+	},
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip,
 /obj/item/mecha_parts/part/ripley_left_arm,
 /obj/item/mecha_parts/part/ripley_left_leg,
@@ -8117,6 +8119,8 @@
 	},
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
 /obj/item/mecha_parts/mecha_equipment/thrusters/ion,
+/obj/item/circuitboard/mecha/ripley/main,
+/obj/item/circuitboard/mecha/ripley/peripherals,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Lx" = (
@@ -9970,8 +9974,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "TM" = (
-/obj/effect/turf_decal/industrial/hatch/blue,
-/obj/effect/turf_decal/rechargefloor,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
@@ -9979,6 +9981,8 @@
 /obj/structure/railing/thin{
 	layer = 4
 	},
+/obj/effect/turf_decal/industrial/hatch/blue,
+/obj/effect/turf_decal/rechargefloor,
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
 "TN" = (
@@ -10555,6 +10559,27 @@
 	pixel_y = 15
 	},
 /obj/machinery/light/directional/north,
+/obj/item/paper/paperslip{
+	pixel_x = -6;
+	pixel_y = -3;
+	name = "replacement";
+	default_raw_text = "Replacement mech is in the cargo bay. Hit up someone with access and ask for the mech crate."
+	},
+/obj/item/stock_parts/capacitor/adv{
+	pixel_y = 8
+	},
+/obj/item/stock_parts/cell/super{
+	pixel_y = -6;
+	pixel_x = 10
+	},
+/obj/item/stock_parts/cell/super{
+	pixel_y = -6;
+	pixel_x = 5
+	},
+/obj/item/stock_parts/scanning_module/adv{
+	pixel_x = -9;
+	pixel_y = 9
+	},
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
 "Ws" = (
