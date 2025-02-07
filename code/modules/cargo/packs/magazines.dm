@@ -49,16 +49,18 @@
 	faction = /datum/faction/srm
 
 /datum/supply_pack/magazine/firestorm_mag
+
 	name = "Firestorm Stick Magazine Crate"
-	desc = "Contains a 28-round magazine for the Hunter's Pride Firestorm SMG."
-	contains = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/empty)
+	desc = "Contains a 24-round magazine for the Hunter's Pride Firestorm SMG."
+	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/empty)
+
 	cost = 300
 	faction = /datum/faction/srm
 
 /datum/supply_pack/magazine/firestorm_mag
 	name = "Firestorm Pan Magazine Crate"
-	desc = "Contains a 50-round pan magazine for the Hunter's Pride Firestorm SMG."
-	contains = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/pan/empty)
+	desc = "Contains a 40-round pan magazine for the Hunter's Pride Firestorm SMG."
+	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/empty)
 	cost = 1000
 	faction = /datum/faction/srm
 
@@ -82,6 +84,24 @@
 	desc = "Contains a 5.56 CLIP magazine for the Super Sporter Rifle, with a capacity of 20 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m15/empty)
 	cost = 300
+
+/datum/supply_pack/magazine/woodsman_mag
+	name = "Woodsman Magazine Crate"
+	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of five rounds."
+	contains = list(/obj/item/ammo_box/magazine/m23/empty)
+	cost = 200
+
+/datum/supply_pack/magazine/woodsman_mag_extended
+	name = "Woodsman Magazine Crate"
+	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/m23/extended/empty)
+	cost = 500
+
+/datum/supply_pack/magazine/m20_auto_elite
+	name = "Auto Elite Magazine Crate"
+	desc = "Contains a .44 Roumain magazine for the Auto Elite pistol, with a capacity of nine rounds."
+	contains = list(/obj/item/ammo_box/magazine/m20_auto_elite/empty)
+	cost = 250
 
 /* Scarbie */
 
@@ -355,15 +375,15 @@
 
 /* etherbor */
 
-/datum/supply_pack/magazine/guncell/kalix
+/datum/supply_pack/magazine/kalixcell
 	name = "Etherbor Cell Crate"
 	desc = "Contains an Etherbor weapon cell, compatible with Etherbor armaments with a slightly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/kalix)
 	cost = 600
 	faction = /datum/faction/pgf
 
-/datum/supply_pack/magazine/guncell/pgf
-	name = "Etherbor Cell Crate"
+/datum/supply_pack/magazine/pgfcell
+	name = "Military-Grade Etherbor Cell Crate"
 	desc = "Contains a military-grade Etherbor weapon cell produced for the PGFMC, compatible with Etherbor armaments with a significantly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/pgf)
 	cost = 1000

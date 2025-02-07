@@ -19,7 +19,8 @@
 	var/near_miss_sound = ""
 	var/ricochet_sound = ""
 
-
+	///what we should call the fired bullet
+	var/bullet_identifier = null
 
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/def_zone = ""	//Aiming at
@@ -182,6 +183,8 @@
 	. = ..()
 	decayedRange = range
 	speed = speed + speed_mod
+	if(!bullet_identifier)
+		bullet_identifier = name
 	AddElement(/datum/element/connect_loc, projectile_connections)
 
 /obj/projectile/proc/Range()
@@ -694,6 +697,7 @@
 	trajectory_ignore_forcemove = FALSE
 	trajectory = new(starting.x, starting.y, starting.z, pixel_x, pixel_y, Angle, SSprojectiles.global_pixel_speed)
 	last_projectile_move = world.time
+	name = bullet_identifier
 	fired = TRUE
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_FIRE)
 	if(hitscan)

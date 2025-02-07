@@ -254,7 +254,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev
 	name = "HP Firestorm"
-	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .45."
+	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .44 Roumain."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -262,14 +262,14 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 	icon_state = "firestorm"
 	item_state = "firestorm"
-	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+	default_ammo_type = /obj/item/ammo_box/magazine/c44_firestorm_mag
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/c45_firestorm_mag,
+		/obj/item/ammo_box/magazine/c44_firestorm_mag,
 	)
 	unique_mag_sprites_for_variants = TRUE
 	burst_size = 1
 	actions_types = list()
-	fire_delay = 0.13 SECONDS
+	fire_delay = 0.22 SECONDS
 	bolt_type = BOLT_TYPE_OPEN
 	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
 	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
@@ -279,7 +279,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	wield_slowdown = SMG_SLOWDOWN
 
 /obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
-	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag/pan
+	default_ammo_type = /obj/item/ammo_box/magazine/c44_firestorm_mag/pan
 
 ///Shotguns
 
@@ -486,7 +486,7 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 
 /obj/item/gun/ballistic/shotgun/hellfire
 	name = "HP Hellfire"
-	desc = "A hefty pump-action riot shotgun with a seven-round tube, manufactured by Hunter's Pride. Especially popular among the Frontier's police forces. Chambered in 12g."
+	desc = "A hefty pump-action riot shotgun with an eight-round tube, manufactured by Hunter's Pride. Especially popular among the Frontier's police forces. Chambered in 12g."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -507,7 +507,7 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
-		tube.max_ammo = 5 //this makes the gun so much worse
+		tube.max_ammo = 5 //this makes it so much worse
 
 		weapon_weight = WEAPON_MEDIUM
 		wield_slowdown = wield_slowdown-0.1

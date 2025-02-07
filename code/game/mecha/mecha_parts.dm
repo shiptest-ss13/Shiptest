@@ -139,6 +139,16 @@
 	desc = "A set of armor plates designed for the 500 Series. Designed to effectively deflect damage with a lightweight construction."
 	icon_state = "gygax_armor"
 
+/obj/item/mecha_parts/chassis/mp_gygax
+	name = "\improper MP-Gygax chassis"
+	construct_type = /datum/component/construction/unordered/mecha_chassis/mpgygax
+
+/obj/item/mecha_parts/part/mpgygax_armor
+	gender = PLURAL
+	name = "\improper MP-Gygax armor plates"
+	desc = "A set of stripped down armor plates designed for the MP-Gygax. Designed to moderately deflect damage with a lightweight construction."
+	icon_state = "mpgygax_armor"
+
 
 //////////// Durand
 

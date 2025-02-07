@@ -100,7 +100,7 @@
 
 	chameleon_extras = list(
 						/obj/item/gun/energy/e_gun,
-						/obj/item/stamp/head_of_personnel,
+						/obj/item/stamp/nanotrasen/officer,
 						)
 
 // Head of Security
@@ -429,8 +429,6 @@
 	l_hand = /obj/item/storage/briefcase/lawyer
 	l_pocket = /obj/item/laser_pointer
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
-
-	chameleon_extras = /obj/item/stamp/law
 
 // Corp. Rep
 /datum/outfit/job/nanotrasen/lawyer/corporaterepresentative
