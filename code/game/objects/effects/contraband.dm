@@ -270,11 +270,6 @@
 	desc = "A old poster urging people to join the ACLF for not only the right cause, but to explore the galaxy. This is probably outdated."
 	icon_state = "poster_aclf_enlistment"
 
-/obj/structure/sign/poster/contraband/clown
-	name = "Clown"
-	desc = "A poster making fun of the 'clown planet incident' You almost cut yourself on the edge of this poster."
-	icon_state = "poster_honk"
-
 /obj/structure/sign/poster/contraband/smoke
 	name = "Smoke"
 	desc = "A poster advertising some brand of cigarettes."
