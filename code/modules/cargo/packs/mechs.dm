@@ -117,7 +117,7 @@ Build Your Own Suit
 	)
 	crate_name = "Durand Construction Kit"
 	faction = /datum/faction/clip
-	faction_discount = 33
+	faction_discount = 20
 
 /*
 Mech Equipment
