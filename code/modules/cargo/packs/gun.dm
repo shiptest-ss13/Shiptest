@@ -146,7 +146,7 @@
 /datum/supply_pack/gun/viperrevolver
 	name = "Viper-23 Revolver Crate"
 	desc = "Contains a civilian variant of the Viper revolver, chambered in .357 magnum."
-	cost = 1500
+	cost = 2500
 	contains = list(/obj/item/storage/guncase/pistol/viper)
 	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 5
@@ -154,7 +154,7 @@
 /datum/supply_pack/gun/a357
 	name = "R-23 'Viper' Revolver Crate"
 	desc = "Contains a double-action military variant of the Viper revolver, chambered in .357 magnum."
-	cost = 1750
+	cost = 3000
 	contains = list(/obj/item/storage/guncase/pistol/a357)
 	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 0
@@ -634,13 +634,6 @@
 	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 0
 	faction_locked = TRUE
-
-/datum/supply_pack/gun/woodsman
-	name = "Model 23 'Woodsman' Hunting Rifle"
-	desc = "Contains a semi-automatic hunting rifle chambered in 8x50mmR and produced by Serene Outdoors. Come with three magazines with a 5-round capacity."
-	cost = 3500
-	contains = list(/obj/item/storage/guncase/woodsman)
-	crate_name = "hunting rifle crate"
 
 /datum/supply_pack/gun/vickland
 	name = "Vickland Battle Rifle"

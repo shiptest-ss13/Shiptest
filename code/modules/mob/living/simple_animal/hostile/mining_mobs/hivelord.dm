@@ -152,8 +152,8 @@
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
 	//mob_trophy = /obj/item/mob_trophy/dwarf_skull
-	maxHealth = 75
-	health = 75
+	maxHealth = 150
+	health = 150
 	move_to_delay = 2
 	speed = 1 //much faster!
 	dwarf_mob = TRUE
