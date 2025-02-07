@@ -38,10 +38,10 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon
 	name = "Frontiersman Sawbones"
@@ -61,7 +61,7 @@
 	armor_base = /obj/item/clothing/suit/frontiersmen
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/neuter
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals
 	icon_state = "frontiersmansurgeon_mask"
@@ -69,7 +69,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/surgeon/internals
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals/neuter
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin
 	name = "Frontiersman Sharpshot"
@@ -86,10 +86,10 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper
 	name = "Frontiersman Doorkicker"
@@ -110,10 +110,10 @@
 	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame
 	name = "Frontiersman Scorcher"
@@ -143,7 +143,7 @@
 	ranged_cooldown = world.time + ranged_cooldown_time
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm
 	name = "Frontiersman Gunner"
@@ -163,10 +163,10 @@
 	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/neutured
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle
 	name = "Frontiersman Crackshot"
@@ -183,10 +183,10 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy
 	name = "Frontiersman Sweeper"
@@ -207,10 +207,10 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/internals
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer
 	name = "Frontiersman Boss"
@@ -231,7 +231,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals/neutered
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured
-	neutered = TRUE
+	weapon_drop_chance = 0
