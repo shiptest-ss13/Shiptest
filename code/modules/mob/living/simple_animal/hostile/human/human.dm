@@ -72,12 +72,12 @@
 		if(prob(weapon_drop_chance))
 			new r_hand(loc)
 		else
-			visible_message(span_danger("[src]'s [r_hand.name] is destroyed as they collapse!"))
+			visible_message(span_danger("[src]'s [r_hand] is destroyed as they collapse!"))
 	if(l_hand && weapon_drop_chance)
 		if(prob(weapon_drop_chance))
 			new l_hand(loc)
 		else
-			visible_message(span_danger("[src]'s [l_hand.name] is destroyed as they collapse!"))
+			visible_message(span_danger("[src]'s [l_hand] is destroyed as they collapse!"))
 
 
 /mob/living/simple_animal/hostile/human/vv_edit_var(var_name, var_value)
