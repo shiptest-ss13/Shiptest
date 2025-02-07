@@ -358,7 +358,7 @@
  * * M The mob choosing a reskin option
 */
 
-/obj/proc/reskin_obj(mob/M, change_name=FALSE)
+/obj/proc/reskin_obj(mob/M)
 	if(!LAZYLEN(unique_reskin))
 		return
 
@@ -376,8 +376,6 @@
 	if(!allow_post_reskins)
 		current_skin = pick
 	icon_state = unique_reskin[pick]
-	if(change_name)
-		name = pick
 	to_chat(M, "[src] is now skinned as '[pick].'")
 	update_appearance()
 

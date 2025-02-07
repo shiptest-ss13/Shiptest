@@ -26,14 +26,19 @@
 	icon_state = "stamp-qm"
 	dye_color = DYE_QM
 
+/obj/item/stamp/law
+	name = "law office's rubber stamp"
+	icon_state = "stamp-law"
+	dye_color = DYE_LAW
+
 /obj/item/stamp/captain
 	name = "captain's rubber stamp"
 	icon_state = "stamp-cap"
 	dye_color = DYE_CAPTAIN
 
-/obj/item/stamp/officer
-	name = "first officer's rubber stamp"
-	icon_state = "stamp-fo"
+/obj/item/stamp/head_of_personnel
+	name = "head of personnel's rubber stamp"
+	icon_state = "stamp-hop"
 	dye_color = DYE_FO
 
 /obj/item/stamp/hos
@@ -61,7 +66,17 @@
 	icon_state = "stamp-deny"
 	dye_color = DYE_REDCOAT
 
-/obj/item/stamp/roumain
+/obj/item/stamp/clown
+	name = "clown's rubber stamp"
+	icon_state = "stamp-clown"
+	dye_color = DYE_CLOWN
+
+/obj/item/stamp/mime
+	name = "mime's rubber stamp"
+	icon_state = "stamp-mime"
+	dye_color = DYE_MIME
+
+/obj/item/stamp/chap
 	name = "chaplain's rubber stamp"
 	icon_state = "stamp-chap"
 	dye_color = DYE_CHAP
