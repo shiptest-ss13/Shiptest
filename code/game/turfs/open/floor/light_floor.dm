@@ -98,7 +98,7 @@
 	set_light(0)
 	return ..()
 
-/turf/open/floor/light/screwdriver_act(mob/living/user, obj/item/I)
+/turf/open/floor/light/attack_hand(mob/user)
 	. = ..()
 	if(!can_modify_colour)
 		return
