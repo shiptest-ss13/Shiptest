@@ -270,7 +270,7 @@
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
 
-/mob/living/simple_animal/hostile/human/syndicate/ranged/space/Initialize()
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	set_light(4)
@@ -339,7 +339,7 @@
 
 ///////////////Misc////////////
 
-/mob/living/simple_animal/hostile/human/syndicate/civilian
+/mob/living/simple_animal/hostile/human/ramzi/civilian
 	name = "Ramzi Clique Technician"
 	desc = "A deserter from the Gorlex Marauders turned pirate. This one is not only unarmed, but a coward as well."
 	minimum_distance = 10
@@ -347,7 +347,7 @@
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
-/mob/living/simple_animal/hostile/human/syndicate/civilian/Aggro()
+/mob/living/simple_animal/hostile/human/ramzi/civilian/Aggro()
 	..()
 	summon_backup(15)
 	say("GUARDS!!")
