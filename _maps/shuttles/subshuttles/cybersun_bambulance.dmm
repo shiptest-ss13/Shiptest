@@ -26,6 +26,12 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "o" = (
@@ -42,7 +48,10 @@
 	dir = 4;
 	id = "bam2"
 	},
-/turf/open/floor/engine/hull/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "q" = (
 /obj/structure/chair/comfy/shuttle{
@@ -128,8 +137,7 @@
 /obj/docking_port/mobile{
 	dir = 8;
 	name = "Trauma Team Bambulance";
-	port_direction = 2;
-	preferred_direction = 8
+	preferred_direction = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "bam";
@@ -139,11 +147,11 @@
 	dir = 4;
 	color = "#FFFFFF"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	id = "bams"
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "bams"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -176,6 +184,10 @@
 	},
 /obj/structure/cable/cyan,
 /obj/item/radio/intercom/directional/south,
+/obj/item/megaphone/command{
+	pixel_x = -5;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "I" = (
@@ -202,7 +214,10 @@
 	dir = 4;
 	id = "bam2"
 	},
-/turf/open/floor/engine/hull/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "P" = (
 /obj/structure/cable/cyan{
@@ -242,12 +257,12 @@
 	dir = 4;
 	color = "#FFFFFF"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	id = "bams";
-	dir = 1
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "bams";
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)

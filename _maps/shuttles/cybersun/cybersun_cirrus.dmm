@@ -1395,6 +1395,10 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#E6D2BA"
 	},
+/obj/item/megaphone/command{
+	pixel_x = -5;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "kp" = (
@@ -1493,10 +1497,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
-"lg" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/engine/hull/interior,
-/area/ship/hangar)
 "ln" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/ccommons)
@@ -1680,6 +1680,10 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
+/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/structure/closet/body_bag{
+	opened = 1
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
 "nO" = (
@@ -1839,6 +1843,9 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner,
+/obj/item/clothing/gloves/color/latex/nitrile/evil{
+	pixel_y = -15
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
 "pr" = (
@@ -2337,8 +2344,8 @@
 /obj/structure/closet/crate/engineering{
 	name = "fuel crate"
 	},
-/obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/item/stack/sheet/mineral/uranium/twenty,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "wk" = (
@@ -2619,6 +2626,10 @@
 	id = "cwin7";
 	name = "shutter control"
 	},
+/obj/item/clothing/gloves/color/latex/nitrile/evil{
+	pixel_x = 5;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
 "Ae" = (
@@ -2662,7 +2673,8 @@
 "AJ" = (
 /obj/structure/table,
 /obj/structure/closet/wall/white/directional/south{
-	name = "doctor's locker"
+	name = "doctor's locker";
+	req_access_txt = "5"
 	},
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 9
@@ -3861,15 +3873,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/port_gen/pacman,
-/obj/item/stock_parts/micro_laser/high{
-	pixel_y = 6;
-	pixel_x = 5
-	},
-/obj/item/stock_parts/capacitor/adv{
-	pixel_x = -5;
-	pixel_y = -3
-	},
+/obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "OB" = (
@@ -4387,6 +4391,13 @@
 /obj/item/organ/stomach/cybernetic/tier3,
 /obj/item/organ/ears/cybernetic,
 /obj/item/organ/ears/cybernetic/upgraded,
+/obj/machinery/button/door{
+	pixel_y = 21;
+	pixel_x = -9;
+	dir = 2;
+	id = "cbay";
+	name = "storage shutter control"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "Tv" = (
@@ -4672,13 +4683,6 @@
 /obj/structure/bookcase,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
-	},
-/obj/machinery/button/door{
-	pixel_y = 11;
-	pixel_x = 21;
-	dir = 8;
-	name = "shutter control";
-	id = "cwin4"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -5030,7 +5034,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 5
 	},
-/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
 "YJ" = (
@@ -5170,11 +5173,11 @@ fR
 fR
 pS
 cs
-lg
 Yj
 Yj
 Yj
-lg
+Yj
+Yj
 cs
 Un
 fR
