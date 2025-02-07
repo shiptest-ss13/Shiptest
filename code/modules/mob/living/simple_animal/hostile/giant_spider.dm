@@ -36,8 +36,8 @@
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
 	response_disarm_simple = "gently push aside"
-	maxHealth = 200
-	health = 200
+	maxHealth = 60
+	health = 60
 	obj_damage = 60
 	melee_damage_lower = 15
 	melee_damage_upper = 20
