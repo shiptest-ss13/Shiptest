@@ -28,7 +28,6 @@
 	. = ..()
 	. += "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>"
 	. += "<span class='notice'>Use a multitool on it to change colors.</span>"
-	. += "<span class='notice'>Use a screwdriver to turn it off or on.</span>"
 	if(state) ///check if broken
 		. += "<span class='danger'>The light bulb seems fried!</span>"
 
