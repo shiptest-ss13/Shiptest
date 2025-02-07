@@ -32,5 +32,5 @@
 	)
 
 /obj/machinery/porta_turret/ship/syndicate/heavy/starport
-	faction = list(FACTION_SYNDICATE, FACTION_PLAYER_SYNDICATE, "turret")
+	faction = list(FACTION_SYNDICATE, "turret")
 	turret_flags = TURRET_FLAG_HOSTILE
