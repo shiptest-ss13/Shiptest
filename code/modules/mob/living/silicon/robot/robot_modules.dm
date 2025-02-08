@@ -745,7 +745,6 @@
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/toy/crayon/rainbow,
 		/obj/item/instrument/bikehorn,
-		/obj/item/stamp/clown,
 		/obj/item/bikehorn,
 		/obj/item/bikehorn/airhorn,
 		/obj/item/paint/anycolor,

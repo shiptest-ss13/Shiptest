@@ -8,12 +8,13 @@
 	extended_desc = "This program allows access to standard security camera networks."
 	requires_ntnet = TRUE
 	transfer_access = ACCESS_SECURITY
-	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP
+	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP | PROGRAM_TABLET
 	size = 5
 	tgui_id = "NtosSecurEye"
 	program_icon = "eye"
 
 	var/list/network = list("ss13")
+	var/temp_network = list("")
 	var/obj/machinery/camera/active_camera
 	/// The turf where the camera was last updated.
 	var/turf/last_camera_turf
@@ -96,22 +97,44 @@
 	var/list/cameras = get_available_cameras()
 	data["cameras"] = list()
 	for(var/i in cameras)
-		var/obj/machinery/camera/C = cameras[i]
-		data["cameras"] += list(list(
-			name = C.c_tag,
-		))
-
+		var/obj/C = cameras[i]
+		if(istype(C, /obj/machinery/camera))
+			var/obj/machinery/camera/C_cam = C
+			data["cameras"] += list(list(
+				name = C_cam.c_tag,
+			))
+		else if(istype(C, /obj/item/bodycamera))
+			var/obj/item/bodycamera/C_cam = C
+			data["cameras"] += list(list(
+				name = C_cam.c_tag,
+			))
 	return data
 
-/datum/computer_file/program/secureye/ui_act(action, params)
+//This is the only way to refresh the UI, from what I've found
+/datum/computer_file/program/secureye/proc/ui_refresh(mob/user, datum/tgui/ui)
+	ui.close()
+	ui_interact(user, ui)
+	show_camera_static()
+
+/datum/computer_file/program/secureye/ui_act(action, params, ui)
 	. = ..()
 	if(.)
 		return
 
+	if(action == "set_network")
+		network = temp_network
+		ui_refresh(usr, ui)
+
+	if(action == "set_temp_network")
+		temp_network = sanitize_filename(params["name"])
+
+	if(action == "refresh")
+		ui_refresh(usr, ui)
+
 	if(action == "switch_camera")
 		var/c_tag = params["name"]
 		var/list/cameras = get_available_cameras()
-		var/obj/machinery/camera/selected_camera = cameras[c_tag]
+		var/obj/selected_camera = cameras[c_tag]
 		active_camera = selected_camera
 		playsound(src, get_sfx("terminal_type"), 25, FALSE)
 
@@ -137,21 +160,34 @@
 
 /datum/computer_file/program/secureye/proc/update_active_camera_screen()
 	// Show static if can't use the camera
-	if(!active_camera?.can_use())
-		show_camera_static()
-		return
+	if(istype(active_camera, /obj/machinery/camera))
+		var/obj/machinery/camera/active_camera_S = active_camera
+		if(!active_camera_S?.can_use())
+			show_camera_static()
+			return
+	else if(istype(active_camera, /obj/item/bodycamera))
+		var/obj/item/bodycamera/active_camera_B = active_camera
+		if(!active_camera_B?.can_use())
+			show_camera_static()
+			return
 
 	var/list/visible_turfs = list()
 
-	// Is this camera located in or attached to a living thing? If so, assume the camera's loc is the living thing.
-	var/cam_location = isliving(active_camera.loc) ? active_camera.loc : active_camera
+	if(!active_camera.loc)
+		return
+
+	var/cam_location = active_camera.loc
+
+	if((istype(cam_location, /obj/item/clothing/suit)) || (istype(cam_location, /obj/item/clothing/head/helmet)) || istype(cam_location, /obj/item/storage/belt))
+		cam_location = active_camera.loc.loc
 
 	// If we're not forcing an update for some reason and the cameras are in the same location,
 	// we don't need to update anything.
 	// Most security cameras will end here as they're not moving.
-	var/newturf = get_turf(cam_location)
-	if(last_camera_turf == newturf)
-		return
+	if(istype(active_camera, /obj/machinery/camera))
+		var/newturf = get_turf(cam_location)
+		if(last_camera_turf == newturf)
+			return
 
 	// Cameras that get here are moving, and are likely attached to some moving atom such as cyborgs.
 	last_camera_turf = get_turf(cam_location)
@@ -177,19 +213,45 @@
 // Returns the list of cameras accessible from this computer
 /datum/computer_file/program/secureye/proc/get_available_cameras()
 	var/list/L = list()
-	for (var/obj/machinery/camera/cam as anything in GLOB.cameranet.cameras)
-		if(cam.virtual_z() != computer.virtual_z())//Only show cameras on the same level.
-			continue
+	for (var/obj/cam as anything in GLOB.cameranet.cameras)
+		if(istype(cam, /obj/machinery/camera))
+			var/obj/machinery/camera/cam_S = cam
+			if((cam_S.virtual_z() != computer.virtual_z()) || (cam_S.can_transmit_across_z_levels)) //Only show cameras on the same level.
+				if(cam_S.can_transmit_across_z_levels)
+					//let them transmit
+				else
+					continue
+		else if(istype(cam, /obj/item/bodycamera))
+			var/obj/machinery/camera/cam_B = cam
+			if((cam_B.virtual_z() != computer.virtual_z()) || (cam_B.can_transmit_across_z_levels)) //Only show cameras on the same level.
+				if(cam_B.can_transmit_across_z_levels)
+					//let them transmit
+				else
+					continue
 		L.Add(cam)
 	var/list/camlist = list()
-	for(var/obj/machinery/camera/cam as anything in L)
-		if(!cam.network)
-			stack_trace("Camera in a cameranet has no camera network")
-			continue
-		if(!(islist(cam.network)))
-			stack_trace("Camera in a cameranet has a non-list camera network")
-			continue
-		var/list/tempnetwork = cam.network & network
-		if(tempnetwork.len)
-			camlist["[cam.c_tag]"] = cam
+	for(var/obj/cam as anything in L)
+		if(istype(cam, /obj/machinery/camera))
+			var/obj/machinery/camera/cam_S = cam
+			if(!cam_S.network)
+				stack_trace("Camera in a cameranet has no camera network")
+				continue
+			if(!(islist(cam_S.network)))
+				stack_trace("Camera in a cameranet has a non-list camera network")
+				continue
+			var/list/tempnetwork = cam_S.network & network
+			if(tempnetwork.len)
+				camlist["[cam_S.c_tag]"] = cam
+
+		else if(istype(cam, /obj/item/bodycamera))
+			var/obj/machinery/camera/cam_B = cam
+			if(!cam_B.network)
+				stack_trace("Camera in a cameranet has no camera network")
+				continue
+			if(!(islist(cam_B.network)))
+				stack_trace("Camera in a cameranet has a non-list camera network")
+				continue
+			var/list/tempnetwork = cam_B.network & network
+			if(tempnetwork.len)
+				camlist["[cam_B.c_tag]"] = cam
 	return camlist
