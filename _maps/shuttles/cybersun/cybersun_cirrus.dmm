@@ -1891,8 +1891,6 @@
 /obj/item/clipboard,
 /obj/item/folder/syndicate,
 /obj/item/folder/syndicate,
-/obj/item/pen/edagger,
-/obj/item/pen/edagger,
 /obj/effect/turf_decal/siding/wood{
 	color = "#E6D2BA";
 	dir = 1
@@ -1909,6 +1907,8 @@
 	id = "cbridge2";
 	dir = 1
 	},
+/obj/item/pen,
+/obj/item/pen,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "pS" = (
@@ -2574,10 +2574,6 @@
 	pixel_y = -1;
 	pixel_x = -8
 	},
-/obj/item/pen/edagger{
-	pixel_x = 4;
-	pixel_y = 6
-	},
 /obj/item/storage/box/bodybags{
 	pixel_x = 2;
 	pixel_y = -5
@@ -2586,6 +2582,10 @@
 	pixel_y = 6;
 	pixel_x = 4;
 	default_raw_text = "No idea who the corpse is. Do whatever with it."
+	},
+/obj/item/pen{
+	pixel_y = 4;
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
@@ -3455,13 +3455,13 @@
 /area/ship/medical/surgery)
 "Kn" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/syndi/cybersun,
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 5
 	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#E6D2BA"
 	},
+/obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Kq" = (
@@ -4497,9 +4497,6 @@
 	dir = 1
 	},
 /obj/item/clothing/neck/stethoscope,
-/obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Ub" = (
@@ -6032,10 +6029,10 @@ rW
 rW
 rW
 rW
-rW
+ln
 Dd
 ei
-rW
+ln
 rW
 rW
 XV
