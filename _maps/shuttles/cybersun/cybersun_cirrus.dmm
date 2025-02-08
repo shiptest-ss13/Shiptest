@@ -26,7 +26,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "ay" = (
 /obj/structure/table/chem{
@@ -244,7 +244,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/light/directional/south,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "cM" = (
 /obj/structure/table/chem,
@@ -729,7 +729,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "gp" = (
 /obj/structure/grille,
@@ -1970,7 +1970,7 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 1
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "pW" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/corner{
@@ -2079,10 +2079,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Medical Compartment"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -2094,6 +2090,10 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "Medical Compartment"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
@@ -2529,7 +2529,8 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plasteel/mono/white,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "xY" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/corner,
@@ -2561,7 +2562,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "yF" = (
 /obj/machinery/door/airlock/external,
@@ -2709,7 +2710,7 @@
 	dir = 9
 	},
 /obj/machinery/airalarm/directional/north,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "AF" = (
 /obj/effect/turf_decal/corner/opaque/black{
@@ -2721,7 +2722,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 2
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "AJ" = (
 /obj/structure/table,
@@ -2975,7 +2976,6 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 8
 	},
-/obj/machinery/firealarm/directional/east,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = 11;
@@ -2984,7 +2984,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "Dd" = (
 /obj/effect/turf_decal/corner/opaque/black{
@@ -3187,7 +3187,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "Gb" = (
 /obj/structure/grille,
@@ -3542,6 +3542,19 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/ccommons)
+"Ky" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "Medical Compartment"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/aft)
 "KL" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/end{
 	dir = 4
@@ -3796,7 +3809,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "Nq" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -3850,7 +3863,7 @@
 	dir = 5
 	},
 /obj/machinery/light/directional/south,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "Nx" = (
 /obj/effect/turf_decal/siding/wood{
@@ -4474,7 +4487,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "TL" = (
 /turf/closed/wall/mineral/titanium,
@@ -4893,9 +4906,8 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 9
 	},
-/obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/black,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "WH" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
@@ -5604,7 +5616,7 @@ Fv
 Fv
 Fv
 Fv
-Cm
+Ky
 sb
 Qz
 Fv
