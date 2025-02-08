@@ -135,6 +135,8 @@
 	lethal_projectile = /obj/projectile/beam/weak/penetrator
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
+	scan_range = 7
+	shot_delay = 5
 
 /obj/machinery/porta_turret/ship/syndicate/heavy
 	name = "Heavy Laser Turret"
@@ -143,6 +145,8 @@
 	stun_projectile_sound = 'sound/weapons/taser.ogg'
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
+	scan_range = 12
+	shot_delay = 20
 	max_integrity = 300
 
 /* New Gorlex Republic Turrets */
