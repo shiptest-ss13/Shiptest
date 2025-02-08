@@ -241,7 +241,7 @@ WS End */
 	required_temp = 300
 
 /datum/chemical_reaction/dimorlin
-	results = list(/datum/reagent/medicine/dimorlin = 2)
+	results = list(/datum/reagent/medicine/dimorlin = 4)
 	required_reagents = list(/datum/reagent/carbon = 6, /datum/reagent/diethylamine = 2, /datum/reagent/oxygen = 2, /datum/reagent/phenol = 2,)
 	required_temp = 730
 	required_catalysts = list(/datum/reagent/hydrogen = 10)
