@@ -22,7 +22,7 @@
 	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration."
 	icon_state = "8x50mmbox-hp"
 
-/obj/item/storage/box/ammo/a8_50r_hp/PopulateContents()
+/obj/item/storage/box/ammo/a8_50r/hp/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a8_50r/hp = 4)
 	generate_items_inside(items_inside,src)
