@@ -374,9 +374,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/airalarm/directional/west{
-	pixel_y = 2
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -454,8 +451,7 @@
 "iB" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
-	name = "Helm";
-	pixel_x = 7
+	name = "Helm"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
@@ -651,7 +647,7 @@
 /area/ship/engineering)
 "mT" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "nc" = (
@@ -1105,6 +1101,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/railing,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "yy" = (
@@ -1470,6 +1467,22 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
+/obj/item/radio{
+	pixel_x = -1;
+	pixel_y = 9
+	},
+/obj/item/radio{
+	pixel_x = 8;
+	pixel_y = 9
+	},
+/obj/item/radio{
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/obj/item/radio{
+	pixel_x = 7;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "Dl" = (
@@ -1590,6 +1603,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/handrail,
+/obj/structure/railing{
+	dir = 6
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Gc" = (
@@ -1630,10 +1646,8 @@
 	},
 /area/ship/crew/dorm)
 "Gh" = (
-/obj/effect/turf_decal/corner/opaque/black/mono,
-/obj/structure/chair/handrail{
-	dir = 1
-	},
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/machinery/light/floor,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Gn" = (
@@ -1702,7 +1716,7 @@
 "Ha" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
+/obj/machinery/light/floor,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Hf" = (
@@ -1861,6 +1875,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/railing,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "IR" = (
@@ -2169,6 +2184,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/railing,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "NX" = (
@@ -3056,13 +3072,13 @@ XO
 XO
 XO
 XO
-XO
+FU
 nc
 jC
 dt
 jC
 yY
-XO
+FU
 XO
 XO
 XO
@@ -3139,7 +3155,7 @@ AP
 uu
 FU
 Lk
-Lk
+Ha
 II
 Zo
 iL
@@ -3147,7 +3163,7 @@ fa
 zx
 kZ
 IR
-FU
+Gh
 FU
 FU
 KV
@@ -3164,7 +3180,7 @@ XO
 eE
 fY
 FU
-FU
+Gh
 FU
 XO
 XO
@@ -3178,7 +3194,7 @@ IR
 XO
 XO
 FU
-FU
+Gh
 FU
 Tl
 sA
@@ -3217,7 +3233,7 @@ XO
 (8,1,1) = {"
 QB
 FU
-Lk
+Ha
 XO
 XO
 XO
@@ -3271,7 +3287,7 @@ IK
 XO
 "}
 (10,1,1) = {"
-Gh
+Hq
 Cj
 Cj
 Cj
