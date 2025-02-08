@@ -1000,7 +1000,9 @@
 /area/ship/bridge)
 "ie" = (
 /obj/structure/table/chem,
-/obj/machinery/door/window/brigdoor/westleft,
+/obj/machinery/door/window/brigdoor/westleft{
+	req_access_txt = "33"
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
@@ -1219,6 +1221,14 @@
 	pixel_y = -5
 	},
 /obj/item/radio/headset/alt,
+/obj/item/clothing/suit/armor/vest/trauma{
+	pixel_x = 8;
+	pixel_y = -7
+	},
+/obj/item/clothing/head/helmet/syndie{
+	pixel_x = 8;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
 "iR" = (
@@ -1278,6 +1288,14 @@
 	pixel_y = -5
 	},
 /obj/item/radio/headset/alt,
+/obj/item/clothing/suit/armor/vest/trauma{
+	pixel_x = 8;
+	pixel_y = -7
+	},
+/obj/item/clothing/head/helmet/syndie{
+	pixel_x = 8;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
 "ja" = (
@@ -1833,7 +1851,7 @@
 "pq" = (
 /obj/structure/table/glass,
 /obj/item/storage/case/surgery{
-	pixel_x = 0;
+	pixel_x = 5;
 	pixel_y = 3
 	},
 /obj/item/reagent_containers/spray/cleaner{
@@ -1853,6 +1871,13 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner,
 /obj/item/clothing/gloves/color/latex/nitrile/evil{
 	pixel_y = -15
+	},
+/obj/item/healthanalyzer{
+	pixel_y = 12;
+	pixel_x = -5
+	},
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = -26
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
@@ -2698,7 +2723,11 @@
 /obj/item/storage/belt/medical,
 /obj/structure/closet/secure_closet/wall/directional/south{
 	name = "doctor's locker";
-	req_access_txt = "5"
+	req_access_txt = "33"
+	},
+/obj/item/healthanalyzer{
+	pixel_x = 4;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
@@ -3759,9 +3788,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-8"
 	},
-/obj/structure/closet/wall/orange/directional/south{
-	name = "technician's closet"
-	},
 /obj/item/storage/belt/utility/syndicate{
 	pixel_y = -6
 	},
@@ -3781,6 +3807,11 @@
 	},
 /obj/item/clothing/under/syndicate/cybersun/research{
 	pixel_y = -2
+	},
+/obj/structure/closet/secure_closet/wall/directional/south{
+	name = "technican's locker";
+	req_access_txt = "11";
+	icon_state = "cargo_wall"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
@@ -4076,6 +4107,10 @@
 /obj/item/storage/box/hypospray{
 	pixel_y = -2;
 	pixel_x = 3
+	},
+/obj/item/healthanalyzer{
+	pixel_x = 4;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -4497,6 +4532,9 @@
 	dir = 1
 	},
 /obj/item/clothing/neck/stethoscope,
+/obj/item/healthanalyzer{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Ub" = (
