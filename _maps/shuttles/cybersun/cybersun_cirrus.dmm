@@ -2042,9 +2042,18 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "rs" = (
-/obj/machinery/door/firedoor/border_only,
-/turf/closed/wall/mineral/titanium,
-/area/ship/crew/dorm)
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "Medical Compartment"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/aft)
 "ry" = (
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 8
@@ -3089,19 +3098,6 @@
 	color = "#777777"
 	},
 /area/ship/cargo)
-"DU" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Medical Compartment"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/aft)
 "Et" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 4
@@ -5616,7 +5612,7 @@ Fv
 Fv
 Fv
 Fv
-DU
+rs
 sb
 Qz
 Fv
@@ -6016,7 +6012,7 @@ fR
 fR
 Rs
 Ti
-rs
+TL
 kX
 qW
 nD
