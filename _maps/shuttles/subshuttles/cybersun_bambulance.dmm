@@ -1,23 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "bam";
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4;
-	color = "#FFFFFF"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "bams"
-	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
 "e" = (
 /obj/structure/cable/cyan{
@@ -31,19 +14,7 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
-"i" = (
-/obj/structure/chair/handrail{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
-"j" = (
+"h" = (
 /obj/machinery/button/door{
 	id = "bam";
 	pixel_y = 23;
@@ -61,6 +32,18 @@
 	dir = 8
 	},
 /obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"i" = (
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "o" = (
@@ -123,6 +106,26 @@
 	pixel_y = 20
 	},
 /turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"u" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bam";
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	color = "#FFFFFF"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "bams"
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "v" = (
 /obj/machinery/power/shuttle/engine/electric{
@@ -302,9 +305,6 @@
 	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/bridge)
-"W" = (
-/turf/closed/wall/mineral/titanium,
-/area/template_noop)
 "X" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -383,14 +383,14 @@ Y
 "}
 (6,1,1) = {"
 Y
-j
+h
 e
 i
 Y
 "}
 (7,1,1) = {"
-W
 a
+u
 C
 S
 Y

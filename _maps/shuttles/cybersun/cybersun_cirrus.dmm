@@ -1224,9 +1224,9 @@
 	pixel_x = 8;
 	pixel_y = -7
 	},
-/obj/item/clothing/head/helmet/syndie{
-	pixel_x = 8;
-	pixel_y = 5
+/obj/item/clothing/head/helmet/medical{
+	pixel_x = 7;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
@@ -1315,9 +1315,9 @@
 	pixel_x = 8;
 	pixel_y = -7
 	},
-/obj/item/clothing/head/helmet/syndie{
-	pixel_x = 8;
-	pixel_y = 5
+/obj/item/clothing/head/helmet/medical{
+	pixel_x = 7;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
@@ -3089,6 +3089,19 @@
 	color = "#777777"
 	},
 /area/ship/cargo)
+"DU" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "Medical Compartment"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/aft)
 "Et" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 4
@@ -3542,19 +3555,6 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/ccommons)
-"Ky" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Medical Compartment"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/aft)
 "KL" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/end{
 	dir = 4
@@ -5616,7 +5616,7 @@ Fv
 Fv
 Fv
 Fv
-Ky
+DU
 sb
 Qz
 Fv
