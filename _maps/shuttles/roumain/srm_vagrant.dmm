@@ -223,45 +223,45 @@
 	pixel_y = 4;
 	pixel_x = 2
 	},
-/obj/item/candle{
-	layer = 2.9;
-	pixel_x = 7;
-	pixel_y = 18
-	},
-/obj/item/candle{
+/obj/item/candle/infinite{
 	layer = 5.1;
-	pixel_x = 11;
-	pixel_y = 17
+	pixel_y = 1;
+	pixel_x = 10
 	},
-/obj/item/candle{
+/obj/item/candle/infinite{
 	layer = 5.1;
-	pixel_x = -5;
-	pixel_y = 18
+	pixel_y = -1;
+	pixel_x = 6
 	},
-/obj/item/candle{
+/obj/item/candle/infinite{
 	layer = 5.1;
-	pixel_x = -9;
-	pixel_y = 17
+	pixel_y = -1;
+	pixel_x = -5
 	},
-/obj/item/candle{
+/obj/item/candle/infinite{
 	layer = 5.1;
-	pixel_x = 6;
-	pixel_y = -2
+	pixel_y = 0;
+	pixel_x = -9
 	},
-/obj/item/candle{
+/obj/item/candle/infinite{
 	layer = 5.1;
-	pixel_x = 10;
-	pixel_y = -1
+	pixel_y = 17;
+	pixel_x = 11
 	},
-/obj/item/candle{
+/obj/item/candle/infinite{
 	layer = 5.1;
-	pixel_x = -5;
-	pixel_y = -2
+	pixel_y = 18;
+	pixel_x = 7
 	},
-/obj/item/candle{
+/obj/item/candle/infinite{
 	layer = 5.1;
-	pixel_x = -9;
-	pixel_y = -1
+	pixel_y = 18;
+	pixel_x = -5
+	},
+/obj/item/candle/infinite{
+	layer = 5.1;
+	pixel_y = 17;
+	pixel_x = -9
 	},
 /turf/open/floor/grass/ship,
 /area/ship/roumain)
@@ -571,6 +571,17 @@
 /obj/item/stack/sheet/mineral/wood/twentyfive,
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
+"iO" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "airlockshutters"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/electrical)
 "iU" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell{
 	desc = "A sparse patch of grass without color.";
@@ -864,8 +875,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "mz" = (
-/obj/structure/flora/rock/rockplanet{
-	icon_state = "redrock3"
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ship/roumain)
@@ -961,25 +974,24 @@
 /obj/structure/flora/tree/srm{
 	bound_height = 32
 	},
-/obj/item/candle{
-	layer = 5.1;
-	pixel_x = -10;
-	pixel_y = -2
-	},
-/obj/item/candle{
+/obj/item/candle/infinite{
 	layer = 5.1;
 	pixel_x = 13;
 	pixel_y = -3
 	},
-/obj/item/candle{
+/obj/item/candle/infinite{
 	layer = 5.1;
-	pixel_x = 0;
 	pixel_y = -4
 	},
-/obj/item/candle{
+/obj/item/candle/infinite{
 	layer = 5.1;
 	pixel_x = -5;
 	pixel_y = -1
+	},
+/obj/item/candle/infinite{
+	layer = 5.1;
+	pixel_x = -10;
+	pixel_y = -2
 	},
 /turf/open/floor/grass/ship,
 /area/ship/roumain)
@@ -1040,6 +1052,10 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/item/trash/can/food/beans{
+	pixel_x = -8;
+	pixel_y = 13
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/engineering/electrical)
@@ -1372,9 +1388,8 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ship/roumain)
@@ -2057,10 +2072,8 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
 	},
-/obj/item/reagent_containers/glass/bucket/wooden{
-	pixel_x = 2;
-	pixel_y = 3
-	},
+/obj/structure/toilet,
+/obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/electrical)
 "Kx" = (
@@ -2421,17 +2434,6 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/security)
-"OI" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = "airlockshutters"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/electrical)
 "OJ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -3346,7 +3348,7 @@ bF
 (16,1,1) = {"
 bF
 Cb
-OI
+iO
 fT
 ps
 EM
