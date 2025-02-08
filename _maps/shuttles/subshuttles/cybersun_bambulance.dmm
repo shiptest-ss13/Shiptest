@@ -1,24 +1,33 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/closed/wall/mineral/titanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bam";
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	color = "#FFFFFF"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "bams"
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "e" = (
-/obj/structure/chair/handrail,
 /obj/structure/cable/cyan{
 	icon_state = "6-9"
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/machinery/button/door{
-	id = "bam";
-	pixel_y = 23;
-	pixel_x = 9;
-	name = "blast shutter control"
-	},
-/obj/machinery/button/shieldwallgen{
-	pixel_y = 22;
-	id = "bams"
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
@@ -32,6 +41,26 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
 	dir = 1
 	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
+"j" = (
+/obj/machinery/button/door{
+	id = "bam";
+	pixel_y = 23;
+	pixel_x = 9;
+	name = "blast shutter control"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 22;
+	id = "bams"
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 8
+	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "o" = (
@@ -150,9 +179,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "bams"
-	},
+/obj/structure/cable/cyan,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "E" = (
@@ -275,6 +302,9 @@
 	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/bridge)
+"W" = (
+/turf/closed/wall/mineral/titanium,
+/area/template_noop)
 "X" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -352,14 +382,14 @@ I
 Y
 "}
 (6,1,1) = {"
-a
 Y
+j
 e
 i
 Y
 "}
 (7,1,1) = {"
-A
+W
 a
 C
 S
