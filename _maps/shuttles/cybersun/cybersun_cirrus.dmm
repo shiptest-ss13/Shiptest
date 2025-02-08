@@ -256,19 +256,17 @@
 	},
 /obj/item/storage/box/beakers{
 	pixel_y = 2;
-	pixel_x = -3
+	pixel_x = 8
 	},
 /obj/item/storage/box/beakers{
 	pixel_y = 13;
-	pixel_x = -3
+	pixel_x = 7
 	},
-/obj/item/storage/box/syringes{
-	pixel_x = 6;
-	pixel_y = 2
-	},
-/obj/item/storage/box/syringes{
-	pixel_x = 6;
-	pixel_y = 13
+/obj/machinery/reagentgrinder{
+	pixel_y = 7;
+	pixel_x = -7;
+	name = "Mr. Blend";
+	desc = "From Cybersun Biodynamics. It better blend."
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
@@ -1234,9 +1232,33 @@
 /area/ship/storage/equip)
 "iR" = (
 /obj/structure/chair/bench/blue/directional/west,
-/obj/item/radio/intercom/directional/east,
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 8
+	},
+/obj/item/radio/intercom/directional/south,
+/obj/structure/closet/wall/white/directional/east,
+/obj/item/clothing/suit/hooded/wintercoat{
+	pixel_y = -3;
+	pixel_x = -7
+	},
+/obj/item/clothing/suit/hooded/wintercoat{
+	pixel_y = -3;
+	pixel_x = 10
+	},
+/obj/item/clothing/suit/hooded/wintercoat{
+	pixel_y = -3;
+	pixel_x = 1
+	},
+/obj/item/clothing/suit/hooded/wintercoat{
+	pixel_y = 5;
+	pixel_x = -7
+	},
+/obj/item/clothing/suit/hooded/wintercoat{
+	pixel_y = 5;
+	pixel_x = 9
+	},
+/obj/item/clothing/suit/hooded/wintercoat{
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
@@ -1876,9 +1898,6 @@
 /obj/item/healthanalyzer{
 	pixel_y = 12;
 	pixel_x = -5
-	},
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_x = -26
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
@@ -2763,6 +2782,9 @@
 	pixel_x = 2;
 	id = "cwin8";
 	name = "shutter control"
+	},
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = 26
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
