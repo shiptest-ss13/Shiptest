@@ -59,7 +59,7 @@
 	contains = list(/obj/item/attachment/scope)
 	crate_name = "scope crate"
 
-/datum/supply_pack/attachment/rail_light
+/datum/supply_pack/attachment/long_scope
 	name = "Long Scope Crate"
 	desc = "Contains a single high powered scope to be mounted on a firearm."
 	cost = 800
