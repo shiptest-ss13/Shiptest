@@ -56,6 +56,13 @@
 	. = ..()
 	if(mob_spawner)
 		apply_dynamic_human_appearance(src, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)
+		if(ispath(r_hand,/obj/item/gun))
+			var/obj/item/gun/our_gun = r_hand
+			spread = our_gun.spread
+		else if(ispath(l_hand, /obj/item/gun))
+			var/obj/item/gun/our_gun = l_hand
+			spread = our_gun.spread
+
 	if(ispath(armor_base, /obj/item/clothing))
 		//sigh. if only we could get the initial() value of list vars
 		var/obj/item/clothing/instance = new armor_base()
