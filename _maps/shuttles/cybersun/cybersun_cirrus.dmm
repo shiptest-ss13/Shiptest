@@ -1197,7 +1197,6 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
 	},
-/obj/item/storage/belt/medical/webbing/paramedic,
 /obj/machinery/airalarm/directional/north,
 /obj/item/storage/box/hypospray{
 	pixel_x = -6;
@@ -1214,6 +1213,10 @@
 /obj/item/reagent_containers/hypospray/medipen/badstop{
 	pixel_y = -5;
 	pixel_x = -8
+	},
+/obj/item/storage/belt/medical/webbing{
+	pixel_x = 4;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
@@ -1249,7 +1252,6 @@
 	pixel_y = -9;
 	pixel_x = 5
 	},
-/obj/item/storage/belt/medical/webbing/paramedic,
 /obj/item/storage/box/hypospray{
 	pixel_x = -6;
 	pixel_y = 7
@@ -1269,6 +1271,10 @@
 /obj/item/reagent_containers/hypospray/medipen/badstop{
 	pixel_y = -5;
 	pixel_x = -8
+	},
+/obj/item/storage/belt/medical/webbing{
+	pixel_x = 4;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
@@ -2672,10 +2678,6 @@
 /area/ship/hallway/aft)
 "AJ" = (
 /obj/structure/table,
-/obj/structure/closet/wall/white/directional/south{
-	name = "doctor's locker";
-	req_access_txt = "5"
-	},
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 9
 	},
@@ -2692,6 +2694,10 @@
 	},
 /obj/item/clothing/neck/stethoscope,
 /obj/item/storage/belt/medical,
+/obj/structure/closet/secure_closet/wall/directional/south{
+	name = "doctor's locker";
+	req_access_txt = "5"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "AS" = (
