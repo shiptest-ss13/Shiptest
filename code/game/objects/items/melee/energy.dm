@@ -142,9 +142,12 @@
 		return ..()
 	return 0
 
+/obj/item/melee/energy/sword/active
+	icon_state = "swordred"
+
 /obj/item/melee/energy/sword/active/Initialize(mapload)
 	. = ..()
-	on_transform()
+	on_transform(active=TRUE)
 
 /obj/item/melee/energy/sword/cyborg
 	sword_color = "red"
@@ -181,6 +184,9 @@
 /obj/item/melee/energy/sword/saber
 	var/list/possible_colors = list("red" = COLOR_SOFT_RED, "blue" = LIGHT_COLOR_LIGHT_CYAN, "green" = LIGHT_COLOR_GREEN, "purple" = LIGHT_COLOR_LAVENDER, "yellow" = COLOR_YELLOW)
 	var/hacked = FALSE
+
+/obj/item/melee/energy/sword/saber/active
+
 
 /obj/item/melee/energy/sword/saber/Initialize(mapload)
 	. = ..()

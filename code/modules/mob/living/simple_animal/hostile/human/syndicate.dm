@@ -16,6 +16,7 @@
 	maxbodytemp = 400
 	unsuitable_atmos_damage = 15
 	faction = list(FACTION_ANTAG_SYNDICATE)
+	loot = null
 	check_friendly_fire = TRUE
 	dodging = TRUE
 	rapid_melee = 2
@@ -48,7 +49,6 @@
 	icon_living = "syndicate_stormtrooper"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
-
 
 ///////////////Melee////////////
 
