@@ -8,6 +8,11 @@
 		spawn_no_ammo = TRUE;					\
 	}
 
+
+#define JAM_CHANCE_MINOR 10
+#define JAM_GRACE_MINOR 6
+#define JAM_CHANCE_MAJOR 20
+
 ///Subtype for any kind of ballistic gun
 ///This has a shitload of vars on it, and I'm sorry for that, but it does make making new subtypes really easy
 /obj/item/gun/ballistic
@@ -18,6 +23,16 @@
 	safety = TRUE
 	// when we load the gun, should it instantly chamber the next round?
 	var/always_chambers = FALSE
+	/// How utterly fucked the gun is. High gun_wear can cause failure to cycle rounds in some guns
+	var/gun_wear = 0
+	/// How much gun_wear is generated when we shoot. Increased when using surplus rounds
+	var/wear_rate = 1
+	/// Number of times we have successfully fired since the last time the the gun has jammed. Low but not abysmal condition will only jam so often.
+	var/last_jam = 0
+	/// Gun will start to jam at this % of condition
+	var/wear_minor_threshold = 50
+	/// Gun will start to jam A LOT at this condition
+	var/wear_major_threshold = 70
 
 	min_recoil = 0.1
 
@@ -127,9 +142,18 @@
 /obj/item/gun/ballistic/proc/condition_check(from_firing = TRUE)
 	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing) //The revolver is one of the most reliable firearm designs in the universe, and you of course need no more than 6 bullets for any purpose.
 		return FALSE
-	if(prob(100)) //PLACEHOLDER
+	if(gun_wear < wear_minor_threshold)
+		say("Jam roll failed due to high condition, new last_jam of [last_jam]")
+		return FALSE
+	say("Rolling jam attempt with [gun_wear]% damage")
+	if(gun_wear >= wear_major_threshold ?  prob(JAM_CHANCE_MAJOR) : prob(JAM_CHANCE_MINOR) && last_jam >= JAM_GRACE_MINOR) //PLACEHOLDER
 		bolt_locked = TRUE //*click*
+		last_jam = 0 // sighs and erases number on whiteboard
+		say("Jam roll succeeded")
 		return TRUE
+	last_jam++
+	say("Jam roll failed, new last_jam of [last_jam]")
+
 
 ///Used to chamber a new round and eject the old one
 /obj/item/gun/ballistic/proc/chamber_round(keep_bullet = FALSE)
