@@ -29,10 +29,10 @@
 	var/wear_rate = 1
 	/// Number of times we have successfully fired since the last time the the gun has jammed. Low but not abysmal condition will only jam so often.
 	var/last_jam = 0
-	/// Gun will start to jam at this % of condition
-	var/wear_minor_threshold = 50
-	/// Gun will start to jam A LOT at this condition
-	var/wear_major_threshold = 70
+	/// Gun will start to jam at this level of wear
+	var/wear_minor_threshold = 60
+	/// Gun will start to jam more at this level of wear. The grace period between jams is also removed, here, so it's worse than it looks
+	var/wear_major_threshold = 80
 
 	min_recoil = 0.1
 
@@ -372,6 +372,20 @@
 	. = ..()
 	var/count_chambered = !(bolt_type == BOLT_TYPE_NO_BOLT || bolt_type == BOLT_TYPE_OPEN)
 	. += "It has [get_ammo(count_chambered)] round\s remaining."
+	if(bolt_type != BOLT_TYPE_NO_BOLT)
+		var/conditionstr = span_red("abysmal dogshit")
+		switch(gun_wear)
+			if(0 to 19.9)
+				conditionstr = span_nicegreen("pristine")
+			if(20 to 39.9)
+				conditionstr = span_green("good")
+			if(40 to 59.9)
+				conditionstr = "decent"
+			if(60 to 79.9)
+				conditionstr = span_red("poor")
+			if(80 to 100)
+				conditionstr = span_warning("terrible")
+		. += "it is in [conditionstr] condition[gun_wear >= wear_minor_threshold ? gun_wear >= wear_major_threshold ? " and will suffer constant malfunctions" : " and will suffer from regular malfunctions" :""]."
 	if (!chambered)
 		. += "It does not seem to have a round chambered."
 	if (bolt_locked)
