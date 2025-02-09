@@ -625,8 +625,13 @@
 /turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "pK" = (
-/obj/item/reagent_containers/food/snacks/grown/random,
-/turf/open/floor/plating/grass/lava,
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/bowl/mushroom_bowl,
+/obj/item/reagent_containers/food/snacks/grown/meatwheat{
+	pixel_x = -15;
+	pixel_y = 4
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "qh" = (
 /obj/structure/stone_tile{
@@ -945,14 +950,9 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "wM" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/glass/bowl/mushroom_bowl,
-/obj/item/reagent_containers/food/snacks/grown/meatwheat{
-	pixel_x = -15;
-	pixel_y = 4
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/buried_shrine)
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
 "wS" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
@@ -1946,6 +1946,10 @@
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
+"Zd" = (
+/obj/item/reagent_containers/food/snacks/grown/random,
+/turf/open/floor/plating/grass/lava,
+/area/ruin/unpowered/buried_shrine)
 "Zk" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -2710,7 +2714,7 @@ WZ
 TO
 Qb
 Mt
-pK
+Zd
 Hv
 FC
 Qb
@@ -3703,7 +3707,7 @@ Eh
 nh
 aD
 nh
-nh
+wM
 nh
 nh
 nh
@@ -4064,7 +4068,7 @@ WZ
 WZ
 Yh
 Fw
-wM
+pK
 lJ
 WZ
 ta
@@ -4330,7 +4334,7 @@ Eh
 Eh
 nh
 nh
-nh
+wM
 aD
 nh
 nh
