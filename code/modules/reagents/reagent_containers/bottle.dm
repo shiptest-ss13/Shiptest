@@ -39,6 +39,21 @@
 	desc = "A small bottle of morphine."
 	list_reagents = list(/datum/reagent/medicine/morphine = 30)
 
+/obj/item/reagent_containers/glass/bottle/dimorlin
+	name = "dimorlin bottle"
+	desc = "A small bottle of dimorlin. Apply one dose at a time."
+	list_reagents = list(/datum/reagent/medicine/dimorlin = 30)
+
+/obj/item/reagent_containers/glass/bottle/tramal
+	name = "tramal bottle"
+	desc = "A small bottle of tramal."
+	list_reagents = list(/datum/reagent/medicine/tramal = 30)
+
+/obj/item/reagent_containers/glass/bottle/chitosan
+	name = "chitosan bottle"
+	desc = "A small bottle of chitosan."
+	list_reagents = list(/datum/reagent/medicine/chitosan = 30)
+
 /obj/item/reagent_containers/glass/bottle/painkiller_booze
 	name = "'painkiller' bottle"
 	desc = "A small bottle of an unmarked substance called 'painkiller.' Will this really work?"
