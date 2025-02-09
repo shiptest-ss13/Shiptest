@@ -167,3 +167,9 @@
 	icon_state = "ammobox_12ga"
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/a12g_buckshot(src)
+
+/obj/item/storage/toolbox/ammo/shotgun/PopulateContents()
+	name = "ammo can (.50BMG)"
+	icon_state = "ammobox_50"
+	for (var/i in 1 to 4)
+		new /obj/item/storage/box/ammo/a50box(src)
