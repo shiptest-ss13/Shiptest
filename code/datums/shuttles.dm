@@ -416,3 +416,14 @@
 	file_name = "nanotrasen_skink"
 	name = "Skink-class Cargo Runner"
 	prefix = "NTSV"
+
+
+/datum/map_template/shuttle/subshuttles/limnos
+	file_name = "independent_limnos"
+	name = "Limnos-Class Budget Shuttle"
+	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/limnos_d
+	file_name = "independent_limnos"
+	name = "Limnos(d)-Class Budget Shuttle"
+	prefix = "ISV"
