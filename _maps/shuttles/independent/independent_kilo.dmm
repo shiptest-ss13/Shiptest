@@ -479,9 +479,7 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = -21
-	},
+/obj/machinery/advanced_airlock_controller/directional/south,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/pink{
 	icon_state = "0-9"
@@ -912,8 +910,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "mz" = (
-/obj/structure/bed,
-/obj/effect/spawner/random/bedsheet,
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /obj/machinery/light_switch{
 	pixel_x = 7;
 	pixel_y = 20
@@ -1802,11 +1804,15 @@
 /turf/open/floor/plating/airless,
 /area/ship/crew)
 "Tn" = (
-/obj/structure/bed,
+/obj/structure/bed{
+	dir = 4
+	},
 /obj/structure/cable/pink{
 	icon_state = "1-6"
 	},
-/obj/effect/spawner/random/bedsheet,
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
