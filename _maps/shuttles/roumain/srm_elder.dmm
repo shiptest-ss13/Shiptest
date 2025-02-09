@@ -3027,10 +3027,7 @@
 /turf/closed/wall/r_wall,
 /area/ship/storage)
 "LS" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_x = -25;
-	pixel_y = 3
-	},
+/obj/machinery/advanced_airlock_controller/directional/west,
 /obj/effect/turf_decal/trimline/opaque/red/arrow_cw{
 	dir = 4
 	},
