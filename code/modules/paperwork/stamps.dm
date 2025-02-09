@@ -131,7 +131,6 @@
 	icon_state = "stamp-solgov"
 
 /obj/item/stamp/solgov/captain
-
 	name = "SolGov Captain's rubber stamp"
 	icon_state = "stamp-solgov_captain"
 
@@ -142,6 +141,10 @@
 /obj/item/stamp/solgov/denied
 	name = "SolGov DENIED rubber stamp"
 	icon_state = "stamp-solgov_deny"
+
+/obj/item/stamp/solgov/overseer
+	name = "SolGov Overseer's rubber stamp"
+	icon_state = "stamp-solgov_overseer"
 
 /obj/item/stamp/inteq
 	name = "Inteq rubber stamp"
