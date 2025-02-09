@@ -4067,14 +4067,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "ta" = (
-/obj/machinery/mineral/processing_unit{
-	pixel_y = 2;
-	input_dir = 4
-	},
 /obj/effect/turf_decal/industrial/outline/orange,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
+/obj/machinery/mineral/electrolyzer,
 /turf/open/floor/plating,
 /area/ship/storage)
 "tc" = (
@@ -5004,11 +5001,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
 "xI" = (
-/obj/machinery/mineral/unloading_machine{
-	input_dir = 4;
-	output_dir = 8
-	},
 /obj/machinery/door/firedoor/heavy,
+/obj/machinery/mineral/electrolyzer_unloader,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
 "xM" = (
@@ -10636,10 +10630,6 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/mineral/processing_unit_console{
-	pixel_y = -32;
-	machinedir = 1
-	},
 /obj/item/paper_bin{
 	pixel_x = 6;
 	pixel_y = 8
@@ -10657,6 +10647,9 @@
 /obj/item/pen/fourcolor{
 	pixel_x = -6;
 	pixel_y = 2
+	},
+/obj/machinery/computer/electrolyzer_console{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
