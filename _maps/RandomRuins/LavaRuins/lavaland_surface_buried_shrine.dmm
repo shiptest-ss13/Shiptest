@@ -625,10 +625,8 @@
 /turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "pK" = (
-/obj/structure/stone_tile/slab/cracked{
-	dir = 5
-	},
-/turf/open/floor/plating/moss,
+/obj/item/reagent_containers/food/snacks/grown/random,
+/turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered/buried_shrine)
 "qh" = (
 /obj/structure/stone_tile{
@@ -675,6 +673,7 @@
 	dir = 5
 	},
 /obj/structure/chair/wood,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "qT" = (
@@ -931,11 +930,10 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "wt" = (
-/obj/structure/stone_tile/slab/cracked,
-/obj/item/flashlight/flare/torch{
-	pixel_x = -18
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
 	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "wy" = (
 /obj/structure/stone_tile{
@@ -947,8 +945,13 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "wM" = (
-/obj/item/reagent_containers/food/snacks/grown/random,
-/turf/open/floor/plating/grass/lava,
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/bowl/mushroom_bowl,
+/obj/item/reagent_containers/food/snacks/grown/meatwheat{
+	pixel_x = -15;
+	pixel_y = 4
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "wS" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -1178,6 +1181,7 @@
 /obj/item/chair/wood/wings{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "CD" = (
@@ -1279,6 +1283,7 @@
 	dir = 1
 	},
 /obj/structure/chair/wood/wings,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "FC" = (
@@ -1689,11 +1694,9 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "RK" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/glass/bowl/mushroom_bowl,
-/obj/item/reagent_containers/food/snacks/grown/meatwheat{
-	pixel_x = -15;
-	pixel_y = 4
+/obj/structure/stone_tile/slab/cracked,
+/obj/item/flashlight/flare/torch{
+	pixel_x = -18
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
@@ -2707,7 +2710,7 @@ WZ
 TO
 Qb
 Mt
-wM
+pK
 Hv
 FC
 Qb
@@ -3977,7 +3980,7 @@ uP
 di
 zN
 Ad
-wt
+RK
 Ad
 BF
 yz
@@ -4061,7 +4064,7 @@ WZ
 WZ
 Yh
 Fw
-RK
+wM
 lJ
 WZ
 ta
@@ -4937,7 +4940,7 @@ Xr
 Fq
 Fq
 TO
-pK
+wt
 kp
 WZ
 Eh
