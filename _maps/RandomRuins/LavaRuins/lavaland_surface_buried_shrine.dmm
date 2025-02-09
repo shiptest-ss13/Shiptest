@@ -424,7 +424,7 @@
 "kp" = (
 /obj/structure/table_frame/wood,
 /obj/structure/stone_tile/slab,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "kt" = (
 /obj/structure/stone_tile/block{
@@ -625,11 +625,10 @@
 /turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "pK" = (
-/obj/structure/stone_tile/slab/cracked,
-/obj/item/flashlight/flare/torch{
-	pixel_x = -18
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
 	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "qh" = (
 /obj/structure/stone_tile{
@@ -899,7 +898,7 @@
 /obj/structure/table/wood,
 /obj/item/gun/ballistic/bow/ashen,
 /obj/structure/stone_tile/slab,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "vJ" = (
 /obj/structure/flora/ash/stem_shroom,
@@ -932,8 +931,11 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "wt" = (
-/obj/item/reagent_containers/food/snacks/grown/random,
-/turf/open/floor/plating/grass/lava,
+/obj/structure/stone_tile/slab/cracked,
+/obj/item/flashlight/flare/torch{
+	pixel_x = -18
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "wy" = (
 /obj/structure/stone_tile{
@@ -943,6 +945,10 @@
 	dir = 6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"wM" = (
+/obj/item/reagent_containers/food/snacks/grown/random,
+/turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered/buried_shrine)
 "wS" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -1536,7 +1542,7 @@
 	pixel_y = 12
 	},
 /obj/structure/stone_tile/slab,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "LW" = (
 /obj/structure/destructible/tribal_torch{
@@ -2701,7 +2707,7 @@ WZ
 TO
 Qb
 Mt
-wt
+wM
 Hv
 FC
 Qb
@@ -3046,7 +3052,7 @@ Td
 TO
 TO
 TO
-TO
+eI
 TO
 TO
 WZ
@@ -3102,8 +3108,8 @@ WZ
 WZ
 WZ
 TO
-TO
-TO
+eI
+eI
 WZ
 WZ
 WZ
@@ -3971,7 +3977,7 @@ uP
 di
 zN
 Ad
-pK
+wt
 Ad
 BF
 yz
@@ -4928,10 +4934,10 @@ TO
 Xr
 hn
 Xr
+Fq
+Fq
 TO
-TO
-TO
-Wd
+pK
 kp
 WZ
 Eh
@@ -4986,9 +4992,9 @@ TO
 TO
 TO
 TO
-TO
-TO
-TO
+BF
+Ws
+Ws
 LP
 WZ
 Eh
@@ -5159,7 +5165,7 @@ YK
 WZ
 WZ
 TO
-Fq
+Ws
 WZ
 DB
 yJ
