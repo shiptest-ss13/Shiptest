@@ -4071,7 +4071,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
-/obj/machinery/mineral/electrolyzer,
+/obj/machinery/mineral/electrolyzer{
+	input_dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "tc" = (
