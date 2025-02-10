@@ -101,7 +101,7 @@
 	name = "Mining Hardsuit Crate"
 	desc = "One independent-manufactured mining hardsuit, for when explorer suits just dont cut it."
 	cost = 1500
-	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/independent)
+	contains = list(/obj/item/clothing/suit/space/hardsuit/indie_mining)
 	crate_name = "mining hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -109,7 +109,7 @@
 	name = "Security Hardsuit Crate"
 	desc = "Contains one security hardsuit for light combat duty."
 	cost = 2000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent)
+	contains = list(/obj/item/clothing/suit/space/hardsuit/indie_sec)
 	crate_name = "security hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 
@@ -238,7 +238,7 @@
 	name = "Inteq Hardsuit Crate"
 	desc = "A bulky Mothership-native design with a monocular viewport. The Inteq Hardsuit provides decent protection and combat manueverability for members of IRMG."
 	cost = 3000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent/inteq)
+	contains = list(/obj/item/clothing/suit/space/hardsuit/inteq)
 	crate_name = "inteq hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/inteq

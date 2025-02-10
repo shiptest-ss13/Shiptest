@@ -164,7 +164,7 @@
 	storage_type = /obj/item/tank/internals/emergency_oxygen/engi
 
 /obj/machinery/suit_storage_unit/independent/security
-	suit_type = /obj/item/clothing/suit/space/hardsuit/security/independent
+	suit_type = /obj/item/clothing/suit/space/hardsuit/indie_sec
 	mask_type = /obj/item/clothing/mask/gas
 
 /obj/machinery/suit_storage_unit/independent/engineering
@@ -174,7 +174,7 @@
 	storage_type= /obj/item/clothing/shoes/magboots
 
 /obj/machinery/suit_storage_unit/independent/mining/eva
-	suit_type = /obj/item/clothing/suit/space/hardsuit/mining/independent
+	suit_type = /obj/item/clothing/suit/space/hardsuit/indie_mining
 	mask_type = /obj/item/clothing/mask/breath
 
 /obj/machinery/suit_storage_unit/independent/pilot
