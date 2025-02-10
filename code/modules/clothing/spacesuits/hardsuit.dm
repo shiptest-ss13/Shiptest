@@ -332,10 +332,11 @@
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
 	on = TRUE
 	var/obj/item/clothing/suit/space/hardsuit/syndi/linkedsuit = null
-	actions_types = list(/datum/action/item_action/toggle_helmet_mode)
+	actions_types = list(/datum/action/item_action/toggle_helmet_mode,/datum/action/item_action/toggle_combat_mode)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEEARS
 	visor_flags = STOPSPRESSUREDAMAGE
 	var/full_retraction = FALSE //whether or not our full face is revealed or not during combat mode
+
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/update_icon_state()
 	icon_state = "hardsuit[on]-[hardsuit_type]"
@@ -346,13 +347,21 @@
 	if(istype(loc, /obj/item/clothing/suit/space/hardsuit/syndi))
 		linkedsuit = loc
 
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/attack_self(mob/user) //Toggle Helmet
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/armor_assist(mob/living/carbon/human/user)
+	playsound(src.loc, 'sound/effects/armorassist.ogg', 50)
+	user.apply_status_effect(/datum/status_effect/armor_assist)
+	if(!on)
+	to_chat(user, span_notice("Your helmet automatically engages."))
+	attack_self(user,TRUE)
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/attack_self(mob/user, forced_on = FALSE) //Toggle Helmet
 	if(!isturf(user.loc))
-		to_chat(user, "<span class='warning'>You cannot toggle your helmet while in this [user.loc]!</span>" )
+		to_chat(user, span_notice("You cannot toggle your helmet while in this [user.loc]!") )
 		return
 	on = !on
-	if(on || force)
-		to_chat(user, "<span class='notice'>You switch your hardsuit to EVA mode, sacrificing speed for space protection.</span>")
+	if(on || force || forced_on)
+		if(!forced_on)
+			to_chat(user, span_notice("You engage your helmet's EVA mode, sealing your visor and protecting you from space."))
 		name = initial(name)
 		desc = initial(desc)
 		set_light_on(TRUE)
@@ -364,7 +373,7 @@
 			flags_cover |= HEADCOVERSMOUTH
 		flags_inv |= visor_flags_inv
 	else
-		to_chat(user, "<span class='notice'>You switch your hardsuit to combat mode, sacrificing space protection for improved speed.</span>")
+		to_chat(user, span_notice("You disengage your helment's EVA mode and open your visor, exposing you to environental conditions."))
 		name += " (combat)"
 		desc = alt_desc
 		set_light_on(FALSE)
@@ -421,6 +430,7 @@
 	jetpack = /obj/item/tank/jetpack/suit
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	slowdown = 0.5
+	var/combat_slowdown = 0
 	var/lightweight = 0 //used for flags when toggling
 
 //Ramzi Syndie suit
