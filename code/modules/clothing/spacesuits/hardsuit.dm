@@ -1000,7 +1000,7 @@
 ////Independents
 
 	//Security
-/obj/item/clothing/head/helmet/space/hardsuit/indie_sec
+/obj/item/clothing/head/helmet/space/hardsuit/security/independent
 	name = "security hardsuit helmet"
 	desc = "An obsolete, surplus helmet designed for work in hazardous, low pressure environments. Well-armored, if somewhat claustrophobic."
 	icon_state = "hardsuit0-independent-sec"
@@ -1009,7 +1009,7 @@
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	supports_variations = VOX_VARIATION | SNOUTED_VARIATION
 
-/obj/item/clothing/suit/space/hardsuit/indie_sec
+/obj/item/clothing/suit/space/hardsuit/security/independent
 	icon_state = "hardsuit-independent-sec"
 	name = "security hardsuit"
 	desc = "An obsolete, surplus suit that protects against hazardous, low pressure environments. Though bulky, it has significant armor protection for its age. <br> Dating from well before the war, old surplus suits such as this can be found in the service of various local police and private security organizations across known space."
@@ -1020,12 +1020,8 @@
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
 
-/obj/item/clothing/suit/space/hardsuit/indie_sec/Initialize()
-	. = ..()
-	allowed = GLOB.security_hardsuit_allowed
-
-	//Mining
-/obj/item/clothing/head/helmet/space/hardsuit/indie_mining
+//Mining
+/obj/item/clothing/head/helmet/space/hardsuit/mining/independent
 	name = "mining hardsuit helmet"
 	desc = "An inexpensive helmet designed for work in hazardous, low pressure environments. Its open cage design provides excellent visibility."
 	icon_state = "hardsuit0-independent-mining"
@@ -1033,7 +1029,7 @@
 	hardsuit_type = "independent-mining"
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 5, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75)
 
-/obj/item/clothing/suit/space/hardsuit/indie_mining
+/obj/item/clothing/suit/space/hardsuit/mining/independent
 	name = "mining hardsuit"
 	desc = "An inexpensive, widespread suit designed for work in hazardous, low pressure environments. Equipped with extra plating against blunt impacts and other common threats as well as a powerful shoulder-mounted floodlight. <br> Suits like this are a common sight among miners on the frontier, frequently equipped with additional improvised plating."
 	icon_state = "hardsuit0-independent-mining"
@@ -1045,7 +1041,7 @@
 
 //Inteq Hardsuit
 
-/obj/item/clothing/head/helmet/space/hardsuit/inteq
+/obj/item/clothing/head/helmet/space/hardsuit/security/inteq
 	name = "inteq hardsuit helmet"
 	desc = "A somewhat boxy, monocular visored helmet designed for hazardous, low pressure environments. It has the letters 'IRMG' imprinted onto the earpad."
 	icon_state = "hardsuit0-inteq"
@@ -1053,7 +1049,7 @@
 	hardsuit_type = "inteq"
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
-/obj/item/clothing/suit/space/hardsuit/inteq
+/obj/item/clothing/suit/space/hardsuit/security/inteq
 	name = "inteq hardsuit"
 	desc = "A heavy-duty looking suit that protects against hazardous, low pressure environments. It's bulk provides ample protection, if not a bit cumbersome to wear."
 	icon_state = "hardsuit-inteq"
@@ -1062,11 +1058,6 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/inteq
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-
-/obj/item/clothing/suit/space/hardsuit/inteq/Initialize()
-	. = ..()
-	allowed = GLOB.security_hardsuit_allowed
-
 
 //solarian
 
