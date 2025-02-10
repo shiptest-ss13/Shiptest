@@ -1020,6 +1020,10 @@
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
 
+/obj/item/clothing/suit/space/hardsuit/indie_sec/Initialize()
+	. = ..()
+	allowed = GLOB.security_hardsuit_allowed
+
 	//Mining
 /obj/item/clothing/head/helmet/space/hardsuit/indie_mining
 	name = "mining hardsuit helmet"
@@ -1058,6 +1062,11 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/inteq
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+
+/obj/item/clothing/suit/space/hardsuit/inteq/Initialize()
+	. = ..()
+	allowed = GLOB.security_hardsuit_allowed
+
 
 //solarian
 
