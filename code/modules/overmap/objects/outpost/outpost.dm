@@ -141,6 +141,7 @@
 	return "[person_name] [pick(GLOB.station_suffixes)]"
 
 /datum/overmap/outpost/proc/fill_missions()
+	max_missions = 15 + (SSovermap.controlled_ships.len * 5)
 	while(LAZYLEN(missions) < max_missions)
 		var/mission_type = get_weighted_mission_type()
 		var/datum/mission/M = new mission_type(src)
