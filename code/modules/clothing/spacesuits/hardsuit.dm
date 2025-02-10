@@ -350,9 +350,10 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/armor_assist(mob/living/carbon/human/user)
 	playsound(src.loc, 'sound/effects/armorassist.ogg', 50)
 	user.apply_status_effect(/datum/status_effect/armor_assist)
-	if(!on)
 	to_chat(user, span_notice("Your helmet automatically engages."))
 	attack_self(user,TRUE)
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/on_un
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/attack_self(mob/user, forced_on = FALSE) //Toggle Helmet
 	if(!isturf(user.loc))
@@ -430,7 +431,6 @@
 	jetpack = /obj/item/tank/jetpack/suit
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	slowdown = 0.5
-	var/combat_slowdown = 0
 	var/lightweight = 0 //used for flags when toggling
 
 //Ramzi Syndie suit
