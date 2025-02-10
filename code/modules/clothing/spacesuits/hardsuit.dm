@@ -1035,7 +1035,7 @@
 	icon_state = "hardsuit0-independent-mining"
 	item_state = "independent_mining_hardsuit"
 	hardsuit_type = "independent-mining"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/indie_mining
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/independent
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 5, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75)
 
 
@@ -1055,7 +1055,7 @@
 	icon_state = "hardsuit-inteq"
 	item_state = "hardsuit-inteq"
 	hardsuit_type = "inteq"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/inteq
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/inteq
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
