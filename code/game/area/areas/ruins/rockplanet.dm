@@ -100,6 +100,9 @@
 
 // Rust Base
 
+/area/ruin/rockplanet/rust_base
+	name = "Crashed Ship"
+
 /area/ruin/rockplanet/rust_base/hallway
 	name = "ISV Rust Base Hallway"
 
@@ -129,9 +132,6 @@
 
 /area/ruin/rockplanet/rust_base/armory
 	name = "ISV Rust Base Armory"
-
-/area/ruin/rockplanet/rust_base/outside
-	name = "Crashed Ship"
 
 /area/ruin/rockplanet/rust_base/tanto2
 	name = "Crashed Moonshiner"
