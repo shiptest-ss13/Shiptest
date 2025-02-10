@@ -91,7 +91,7 @@
 /area/ruin/rockplanet/rust_base)
 "aV" = (
 /obj/machinery/airalarm/directional/west,
-/turf/open/floor/plasteel/tech/tcomms,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "aZ" = (
 /obj/structure/table/chem,
@@ -157,7 +157,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/armory)
 "bC" = (
-/turf/open/floor/plasteel/tech/tcomms,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "bD" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -1415,7 +1415,8 @@
 /obj/structure/cable,
 /obj/machinery/porta_turret/ship/ngr/heavy{
 	dir = 8;
-	id = "rustguns"
+	id = "rustguns";
+	faction = list("Syndicate")
 	},
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/rust_base)
@@ -1994,7 +1995,7 @@
 "uQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/tech/tcomms,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "uU" = (
 /obj/structure/cable{
@@ -2219,7 +2220,8 @@
 	},
 /obj/machinery/porta_turret/ship/ngr/heavy{
 	dir = 8;
-	id = "rustguns"
+	id = "rustguns";
+	faction = list("Syndicate")
 	},
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/rust_base)
@@ -2401,7 +2403,7 @@
 /obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/plasteel/tech/tcomms,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "zR" = (
 /obj/machinery/door/airlock/hatch{
@@ -3042,7 +3044,7 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "FA" = (
 /obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/tech/tcomms,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "FE" = (
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg,
@@ -3271,19 +3273,20 @@
 	id = "rustarmory";
 	pixel_x = 0
 	},
-/turf/open/floor/plasteel/tech/tcomms,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "Hv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/tcomms,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "HB" = (
 /obj/machinery/porta_turret/ship/ngr/heavy{
 	dir = 4;
-	id = "rustguns"
+	id = "rustguns";
+	faction = list("Syndicate")
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/bridge)
@@ -3386,7 +3389,7 @@
 	id = "rustmech";
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/tcomms,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "IU" = (
 /obj/structure/chair/plastic{
@@ -3475,7 +3478,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
-/turf/open/floor/plasteel/tech/tcomms,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "JZ" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3904,7 +3907,6 @@
 /area/ruin/rockplanet/rust_base/mechbay)
 "Ox" = (
 /obj/effect/decal/cleanable/garbage,
-/obj/machinery/light/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/engine_one)
 "OE" = (
@@ -4552,7 +4554,8 @@
 	},
 /obj/machinery/porta_turret/ship/ngr/heavy{
 	dir = 4;
-	id = "rustguns"
+	id = "rustguns";
+	faction = list("Syndicate")
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -4589,7 +4592,8 @@
 	},
 /obj/machinery/porta_turret/ship/ngr/heavy{
 	dir = 4;
-	id = "rustguns"
+	id = "rustguns";
+	faction = list("Syndicate")
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base/armory)
@@ -4967,7 +4971,7 @@
 /obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
 	dir = 9
 	},
-/turf/open/floor/plasteel/tech/tcomms,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 
 (1,1,1) = {"
