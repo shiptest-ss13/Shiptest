@@ -39,7 +39,7 @@
 	if(in_range(src, user))
 		. += "<span class='notice'>The body camera is set to a nametag of '<b>[c_tag]</b>'.</span>"
 		. += "<span class='notice'>The body camera is set to transmit on the '<b>[network[1]]</b>' network.</span>"
-		. += "<span class='notice'>It looks like you can modify the camera settings by using a <b>multitool<b> on it.</span>"
+		. += "<span class='notice'>It looks like you can modify the camera settings by using a <b>multitool</b> on it.</span>"
 
 /obj/item/bodycamera/AltClick(mob/user)
 	. = ..()
