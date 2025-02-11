@@ -943,7 +943,11 @@
 /area/ruin/rockplanet/rust_base/mechbay)
 "jQ" = (
 /obj/machinery/holopad,
-/mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/stormtrooper,
+/mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/stormtrooper{
+	movespeed_modification = 1.25;
+	health = 150;
+	name = "Captain"
+	},
 /obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer2{
 	dir = 8
 	},
@@ -2277,7 +2281,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
 "yz" = (
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun{
+	minimum_distance = 0;
+	retreat_distance = 0;
+	shoot_point_blank = true
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
 "yG" = (
@@ -3707,7 +3715,11 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space{
+	retreat_distance = 0;
+	minimum_distance = 0;
+	shoot_point_blank = true
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/rockplanet/rust_base/mechbay)
 "MD" = (
@@ -4547,8 +4559,12 @@
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space{
+	retreat_distance = 0;
+	minimum_distance = 0;
+	shoot_point_blank = true
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/rust_base/armory)
 "VM" = (
@@ -5926,7 +5942,7 @@ wS
 Ri
 yK
 SL
-Or
+yz
 uU
 xM
 FO
@@ -5968,7 +5984,7 @@ Mr
 iq
 IU
 SL
-yz
+Or
 yw
 xM
 zF
