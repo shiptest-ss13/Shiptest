@@ -44,7 +44,7 @@
 							"<span class='userdanger'>You're knocked unconscious by [A]!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
 			to_chat(A, "<span class='danger'>You knock [D] out with a haymaker!</span>")
 			D.apply_effect(200,EFFECT_KNOCKDOWN,armor_block)
-			D.SetSleeping(100)
+			D.set_sleeping(100)
 			log_combat(A, D, "knocked out (boxing) ")
 	return 1
 

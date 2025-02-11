@@ -610,6 +610,22 @@
 	build_path = /obj/item/storage/pill_bottle
 	category = list("initial", "Medical", "Medical Designs")
 
+/datum/design/hypospray_vial
+	name = "Hypospray Vial"
+	id = "vial"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 100, /datum/material/glass = 500)
+	build_path = /obj/item/reagent_containers/glass/bottle/vial/small
+	category = list("initial", "Medical", "Medical Designs")
+
+/datum/design/chemical_bottle
+	name = "Glass Bottle"
+	id = "bottle"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 300)
+	build_path = /obj/item/reagent_containers/glass/bottle
+	category = list("initial", "Medical", "Medical Designs")
+
 /datum/design/chem_jug
 	name = "Chemical Jug"
 	id = "chem_jug"
@@ -1161,7 +1177,7 @@
 	name = "8x50 Stripper Clip"
 	id = "IllestrenStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/magazine/illestren_a850r/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1169,7 +1185,7 @@
 	name = ".300 Scout Stripper Clip"
 	id = "ScoutStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a300/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1177,7 +1193,7 @@
 	name = "7.62 Stripper Clip"
 	id = "PolymerStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a762_stripper/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1185,7 +1201,7 @@
 	name = ".308 Stripper Clip"
 	id = "VicklandStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/vickland_a308/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1193,7 +1209,7 @@
 	name = "8x58 Stripper Clip"
 	id = "SSGStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a858/empty
 	category = list("initial", "Security", "Ammo")
 
