@@ -229,15 +229,23 @@ WS End */
 	results = list(/datum/reagent/medicine/regen_jelly = 2)
 	required_reagents = list(/datum/reagent/medicine/omnizine = 1, /datum/reagent/toxin/slimejelly = 1)
 
-/*WS Begin
-/datum/chemical_reaction/higadrite
-	results = list(/datum/reagent/medicine/higadrite = 3)
-	required_reagents = list(/datum/reagent/phenol = 2, /datum/reagent/lithium = 1)
-WS End*/
 /datum/chemical_reaction/morphine
 	results = list(/datum/reagent/medicine/morphine = 2)
 	required_reagents = list(/datum/reagent/carbon = 2, /datum/reagent/hydrogen = 2, /datum/reagent/consumable/ethanol = 1, /datum/reagent/oxygen = 1)
 	required_temp = 480
+
+/datum/chemical_reaction/tramal
+	results = list(/datum/reagent/medicine/tramal = 2) // these make me kinda wish i knew irl chem so i could have better recipes.
+	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/oxygen = 1)
+	required_catalysts = list(/datum/reagent/ammonia = 2)
+	required_temp = 300
+
+/datum/chemical_reaction/dimorlin
+	results = list(/datum/reagent/medicine/dimorlin = 2)
+	required_reagents = list(/datum/reagent/carbon = 6, /datum/reagent/diethylamine = 2, /datum/reagent/oxygen = 2, /datum/reagent/phenol = 2,)
+	required_temp = 730
+	required_catalysts = list(/datum/reagent/hydrogen = 10)
+	mix_message = "The mixture rapidly incorporates, leaving a layer of liquid hydrogen atop!"
 
 /datum/chemical_reaction/modafinil
 	results = list(/datum/reagent/medicine/modafinil = 5)
@@ -247,14 +255,6 @@ WS End*/
 /datum/chemical_reaction/psicodine
 	results = list(/datum/reagent/medicine/psicodine = 5)
 	required_reagents = list(/datum/reagent/medicine/mannitol = 2, /datum/reagent/water = 2, /datum/reagent/impedrezene = 1)
-
-/*WS Begin - No Cobby
-
-/datum/chemical_reaction/granibitaluri
-	results = list(/datum/reagent/medicine/granibitaluri = 3)
-	required_reagents = list(/datum/reagent/acetone = 1, /datum/reagent/phenol = 1, /datum/reagent/nitrogen = 1)
-	required_catalysts = list(/datum/reagent/iron = 5)
-WS End */
 
 /datum/chemical_reaction/medsuture
 	required_reagents = list(/datum/reagent/cellulose = 10, /datum/reagent/toxin/formaldehyde = 20, /datum/reagent/medicine/polypyr = 15) //This might be a bit much, reagent cost should be reviewed after implementation.
@@ -325,6 +325,10 @@ WS End */
 /datum/chemical_reaction/chartreuse
 	results = list(/datum/reagent/medicine/chartreuse = 10)
 	required_reagents = list(/datum/reagent/medicine/puce_essence = 5, /datum/reagent/consumable/tinlux = 5, /datum/reagent/consumable/entpoly = 1)
+
+/datum/chemical_reaction/lithium_carbonate
+	results = list(/datum/reagent/medicine/lithium_carbonate = 3)
+	required_reagents = list(/datum/reagent/lithium = 1, /datum/reagent/carbon = 1, /datum/reagent/water = 1)
 
 /datum/chemical_reaction/chitosan
 	results = list(/datum/reagent/medicine/chitosan = 10)
