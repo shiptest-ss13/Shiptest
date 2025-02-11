@@ -113,12 +113,15 @@
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/hallway)
 "bj" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 5;
-	id = "rustguns"
+/obj/machinery/porta_turret/ship/ngr/heavy{
+	dir = 4;
+	id = "rustguns";
+	faction = list("Syndicate");
+	pixel_x = -32;
+	pixel_y = 0
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/rockplanet/rust_base/engine_one)
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/rust_base)
 "bn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2{
@@ -1275,11 +1278,13 @@
 /area/ruin/rockplanet/rust_base/hallway2)
 "no" = (
 /obj/machinery/porta_turret/syndicate/pod{
-	dir = 9;
-	id = "rustguns"
+	dir = 10;
+	id = "rustguns";
+	pixel_x = 64;
+	pixel_y = 0
 	},
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/rockplanet/rust_base/hallway)
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/rust_base)
 "nq" = (
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/engine/hull/rockplanet,
@@ -2200,10 +2205,12 @@
 "xp" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 6;
-	id = "rustguns"
+	id = "rustguns";
+	pixel_x = -33;
+	pixel_y = 0
 	},
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/rockplanet/rust_base/mechbay)
+/turf/open/floor/plating/dirt/rockplanet,
+/area/ruin/rockplanet/rust_base)
 "xq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
@@ -2904,6 +2911,7 @@
 	req_access = null
 	},
 /obj/item/storage/box/ammo/c45,
+/obj/item/storage/box/ammo/c57x39,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/mechbay)
 "DU" = (
@@ -2953,14 +2961,6 @@
 "Et" = (
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/engine/hull/rockplanet,
-/area/ruin/rockplanet/rust_base/armory)
-"Eu" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 9;
-	faction = list("frontiersman");
-	id = "rustguns"
-	},
-/turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/armory)
 "Ey" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -3121,11 +3121,13 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "Gf" = (
 /obj/machinery/porta_turret/syndicate/pod{
-	dir = 10;
-	id = "rustguns"
+	dir = 5;
+	id = "rustguns";
+	pixel_x = -32;
+	pixel_y = 0
 	},
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/rockplanet/rust_base/mechbay)
+/turf/open/floor/plating/dirt/rockplanet,
+/area/ruin/rockplanet/rust_base)
 "Gg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3283,13 +3285,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "HB" = (
-/obj/machinery/porta_turret/ship/ngr/heavy{
-	dir = 4;
+/obj/machinery/porta_turret/syndicate/pod{
+	dir = 5;
 	id = "rustguns";
-	faction = list("Syndicate")
+	pixel_x = -32;
+	pixel_y = 0
 	},
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/rockplanet/rust_base/bridge)
+/turf/open/floor/engine/hull/rockplanet,
+/area/ruin/rockplanet/rust_base)
 "HH" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -3649,11 +3652,13 @@
 /area/ruin/rockplanet/rust_base/dorms)
 "LT" = (
 /obj/machinery/porta_turret/syndicate/pod{
-	dir = 9;
-	id = "rustguns"
+	dir = 10;
+	id = "rustguns";
+	pixel_x = 33;
+	pixel_y = 0
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/rockplanet/rust_base/engine_one)
+/turf/open/floor/plating/dirt/rockplanet,
+/area/ruin/rockplanet/rust_base)
 "LY" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/dorms)
@@ -3669,13 +3674,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/dorms)
-"Mm" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 6;
-	id = "rustguns"
-	},
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/rockplanet/rust_base/armory)
 "Mr" = (
 /obj/machinery/light/directional/north,
 /turf/open/floor/carpet/red,
@@ -3799,11 +3797,13 @@
 /area/ruin/rockplanet/rust_base/armory)
 "Nx" = (
 /obj/machinery/porta_turret/syndicate/pod{
-	dir = 10;
-	id = "rustguns"
+	dir = 9;
+	id = "rustguns";
+	pixel_x = 32;
+	pixel_y = -1
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/rockplanet/rust_base/engine_two)
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/rust_base)
 "ND" = (
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway)
@@ -4033,12 +4033,15 @@
 /turf/open/floor/pod,
 /area/ruin/rockplanet/rust_base/tanto2)
 "Pv" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 5;
-	id = "rustguns"
+/obj/machinery/porta_turret/ship/ngr/heavy{
+	dir = 4;
+	id = "rustguns";
+	faction = list("Syndicate");
+	pixel_x = -31;
+	pixel_y = 0
 	},
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/rockplanet/rust_base/armory)
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/rust_base)
 "PM" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/item/reagent_containers/condiment/saltshaker,
@@ -4692,11 +4695,13 @@
 /area/ruin/rockplanet/rust_base/armory)
 "WV" = (
 /obj/machinery/porta_turret/syndicate/pod{
-	dir = 5;
-	id = "rustguns"
+	dir = 9;
+	id = "rustguns";
+	pixel_x = 32;
+	pixel_y = 0
 	},
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/rockplanet/rust_base/mechbay)
+/turf/open/floor/plating/dirt/rockplanet,
+/area/ruin/rockplanet/rust_base)
 "WW" = (
 /obj/structure/rack,
 /obj/item/mine/pressure/explosive/rusty{
@@ -5400,7 +5405,7 @@ aN
 aN
 aN
 NT
-MN
+WV
 tE
 df
 df
@@ -5410,7 +5415,7 @@ DU
 aN
 aN
 aN
-aN
+Nx
 Qg
 Qg
 Qg
@@ -5425,7 +5430,7 @@ Xb
 Xb
 Xb
 fj
-MN
+LT
 xl
 aN
 aN
@@ -5442,7 +5447,7 @@ aN
 aN
 aN
 Zf
-LT
+Df
 Df
 Nl
 Nl
@@ -5452,7 +5457,7 @@ aN
 aN
 aN
 aN
-no
+aL
 Qg
 Qg
 Qg
@@ -5467,7 +5472,7 @@ vz
 dw
 dw
 Fc
-Nx
+Fc
 DU
 aN
 aN
@@ -5778,7 +5783,7 @@ aN
 aN
 aN
 Qg
-bj
+Df
 Df
 AZ
 qt
@@ -5820,7 +5825,7 @@ Wt
 aN
 aN
 Qg
-Qg
+HB
 tE
 gH
 Yh
@@ -6475,7 +6480,7 @@ wG
 vH
 DI
 MP
-aN
+no
 aN
 aN
 aN
@@ -6492,7 +6497,7 @@ aN
 aN
 aN
 aN
-aN
+Nx
 rn
 KU
 Jl
@@ -6534,7 +6539,7 @@ aN
 QE
 QE
 aN
-Eu
+rn
 WS
 nK
 TP
@@ -6559,7 +6564,7 @@ lD
 nx
 JD
 qC
-Gf
+MP
 aN
 aN
 aN
@@ -6712,12 +6717,12 @@ WW
 rn
 aN
 aN
-HB
+Bs
 mp
 mp
 mp
 mp
-HB
+Bs
 aN
 aN
 MP
@@ -6754,12 +6759,12 @@ rP
 rn
 aN
 aN
+bj
 aN
 aN
 aN
 aN
-aN
-aN
+Pv
 aN
 aN
 MP
@@ -6912,14 +6917,14 @@ aN
 aN
 EC
 nZ
-Pv
+rn
 WS
 ky
 ky
 ky
 dv
 WS
-Mm
+rn
 sW
 aN
 dD
@@ -6930,14 +6935,14 @@ GG
 xl
 EC
 nZ
-WV
+MP
 qC
 iM
 nu
 EV
 sm
 qC
-xp
+MP
 nZ
 sW
 aN
@@ -6954,14 +6959,14 @@ aN
 aN
 NT
 MN
-MN
+Gf
 rn
 CP
 qN
 JL
 Ss
 rn
-MN
+xp
 xl
 aN
 aN
@@ -6972,14 +6977,14 @@ GG
 xl
 NT
 MN
-MN
+Gf
 MP
 oL
 UG
 MG
 CK
 MP
-MN
+xp
 MN
 xl
 aN
