@@ -4926,7 +4926,9 @@
 "Xy" = (
 /obj/structure/toilet,
 /obj/item/reagent_containers/condiment/saltshaker,
-/mob/living/simple_animal/hostile/human/syndicate/civilian,
+/mob/living/simple_animal/hostile/human/syndicate/civilian{
+	name = "Kaiser "Shy" Dan"
+	},
 /obj/effect/decal/cleanable/food/salt,
 /turf/open/floor/plating/rust/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
