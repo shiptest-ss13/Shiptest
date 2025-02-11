@@ -41,7 +41,7 @@
 		/obj/item/attachment/sling,
 	)
 	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1
+		ATTACHMENT_SLOT_RAIL = 1,
 		ATTACHMENT_SLOT_MUZZLE = 1
 	)
 	slot_offsets = list(
