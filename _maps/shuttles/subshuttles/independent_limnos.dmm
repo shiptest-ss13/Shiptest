@@ -2,7 +2,7 @@
 "a" = (
 /obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "e" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 6
@@ -16,24 +16,27 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "f" = (
 /turf/closed/wall/rust/yesdiag,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "i" = (
 /obj/effect/turf_decal/corner_techfloor_grid/full,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "j" = (
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "k" = (
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/structure/window/reinforced,
@@ -42,7 +45,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "n" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 9
@@ -53,17 +56,18 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "q" = (
 /turf/template_noop,
 /area/template_noop)
 "s" = (
 /turf/closed/wall/rust,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "t" = (
 /turf/closed/wall,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "u" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /obj/structure/catwalk/over/plated_catwalk,
@@ -74,8 +78,9 @@
 	dir = 1;
 	name = "decompression pump"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "z" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -86,20 +91,21 @@
 	},
 /obj/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "D" = (
 /obj/machinery/computer/helm{
 	dir = 8;
 	layer = 3.3;
 	pixel_x = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "E" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "F" = (
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/structure/window/reinforced{
@@ -110,7 +116,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "I" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced,
@@ -121,7 +127,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "L" = (
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 1
@@ -135,8 +141,9 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "M" = (
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 8
@@ -153,15 +160,16 @@
 	secure = 1;
 	locked = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "O" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	name = "engine fuel pump"
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "V" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
@@ -176,10 +184,10 @@
 	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/storage/eva)
+/area/ship/bridge)
 "W" = (
 /turf/closed/wall/yesdiag,
-/area/ship/storage/eva)
+/area/ship/bridge)
 
 (1,1,1) = {"
 q

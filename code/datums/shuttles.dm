@@ -421,9 +421,9 @@
 /datum/map_template/shuttle/subshuttles/limnos
 	file_name = "independent_limnos"
 	name = "Limnos-Class Budget Shuttle"
-	prefix = "ISV"
+	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/limnos_d
-	file_name = "independent_limnos"
+	file_name = "independent_limnos_d"
 	name = "Limnos(d)-Class Budget Shuttle"
-	prefix = "ISV"
+	prefix = "SV"
