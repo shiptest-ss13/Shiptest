@@ -91,6 +91,8 @@
 /area/ruin/rockplanet/rust_base)
 "aV" = (
 /obj/machinery/airalarm/directional/west,
+/obj/structure/table,
+/obj/item/radio/weather_monitor,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "aZ" = (
@@ -366,6 +368,7 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "dF" = (
 /obj/machinery/light/small/directional/east,
+/obj/structure/chair/bench/red/directional/west,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway2)
 "dL" = (
@@ -431,6 +434,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/cryopod/retro/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/cryo)
 "es" = (
@@ -570,6 +576,10 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/rust_base/hallway)
+"gh" = (
+/obj/structure/chair/handrail,
+/turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/hallway)
 "go" = (
 /obj/structure/rack,
@@ -953,7 +963,7 @@
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/stormtrooper{
 	movespeed_modification = 1.25;
 	health = 200;
-	name = "Captain"
+	name = "Captain Dwight"
 	},
 /obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer2{
 	dir = 8
@@ -1164,6 +1174,9 @@
 /obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/cryo)
 "mh" = (
@@ -1198,6 +1211,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway)
+"mA" = (
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/rockplanet/rust_base/dorms)
 "mB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1342,6 +1361,11 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
+"nG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/emcloset,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/rust_base/hallway)
 "nH" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -1422,6 +1446,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/rust_base/bridge)
+"os" = (
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/rust_base/hallway)
 "oC" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1460,6 +1490,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/siding/thinplating,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "oU" = (
@@ -1654,6 +1687,11 @@
 "qx" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/rockplanet/rust_base/dorms)
+"qA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/firecloset,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/rust_base/hallway)
 "qC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -2035,6 +2073,18 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
+"vd" = (
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/rust_base/hallway2)
 "vg" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
@@ -2080,6 +2130,10 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/rockplanet/rust_base/bridge)
+"vV" = (
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/rust_base/hallway)
 "vW" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -2547,6 +2601,12 @@
 /obj/effect/turf_decal/weather/dirt/corner,
 /turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base)
+"AS" = (
+/obj/structure/chair/handrail{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/rust_base/hallway2)
 "AV" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2877,6 +2937,15 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/rockplanet/rust_base/mechbay)
+"Dr" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/rockplanet/rust_base/armory)
 "Dz" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2937,6 +3006,10 @@
 /obj/item/storage/box/ammo/c57x39,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/mechbay)
+"DO" = (
+/obj/structure/chair/bench/red/directional/west,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/rust_base/hallway2)
 "DU" = (
 /obj/effect/turf_decal/weather/dirt/corner{
 	dir = 1
@@ -3067,6 +3140,7 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "FA" = (
 /obj/machinery/light/directional/west,
+/obj/structure/closet/emcloset,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "FE" = (
@@ -3297,11 +3371,17 @@
 	id = "rustarmory";
 	pixel_x = 0
 	},
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "Hv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/structure/chair/handrail{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -3399,6 +3479,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/hallway)
 "IO" = (
@@ -3413,6 +3494,7 @@
 	id = "rustmech";
 	dir = 1
 	},
+/obj/structure/closet/firecloset,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "IU" = (
@@ -3626,6 +3708,12 @@
 /obj/machinery/light/directional/east,
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/rust_base/hallway)
+"Lj" = (
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/hallway)
 "Lp" = (
 /obj/machinery/button/door{
@@ -4062,6 +4150,16 @@
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/mechbay)
+"PH" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ruin/rockplanet/rust_base/slop)
 "PM" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/item/reagent_containers/condiment/saltshaker,
@@ -4587,6 +4685,16 @@
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base/mechbay)
+"VN" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/rust_base/hallway)
 "VO" = (
 /obj/structure/closet/crate/medical,
 /obj/item/hatchet/wooden,
@@ -5570,7 +5678,7 @@ qj
 II
 pL
 dt
-tN
+Lj
 qj
 tc
 qj
@@ -5729,9 +5837,9 @@ ib
 XG
 jh
 Df
-ri
-ri
-ND
+qA
+nG
+os
 Ij
 Ge
 ND
@@ -5909,11 +6017,11 @@ xq
 sy
 AF
 qx
-Or
+vV
 oZ
 xM
 WB
-vW
+PH
 WB
 Tv
 Qg
@@ -5941,7 +6049,7 @@ rq
 Rk
 Yh
 wb
-eg
+VN
 qx
 Xs
 jG
@@ -6069,7 +6177,7 @@ WS
 jf
 WS
 qx
-yK
+mA
 AF
 AF
 zR
@@ -6077,7 +6185,7 @@ AF
 BM
 AF
 qx
-tN
+gh
 yw
 xM
 Ax
@@ -6406,12 +6514,12 @@ DB
 lW
 ZX
 Hc
-Hc
-fM
-Hc
+AS
+vd
+DO
 dF
 fM
-Hc
+AS
 Im
 oW
 rD
@@ -6528,7 +6636,7 @@ KU
 Jl
 kl
 VZ
-bA
+Dr
 rn
 aN
 Bs
