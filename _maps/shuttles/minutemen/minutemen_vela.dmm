@@ -544,7 +544,8 @@
 	},
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
-	name = "Ready Room"
+	name = "Ready Room";
+	req_one_access = list(1)
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3472,7 +3473,8 @@
 "qv" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/southleft{
-	dir = 4
+	dir = 4;
+	req_access = list(31)
 	},
 /obj/item/paper_bin{
 	pixel_y = 7;
@@ -3769,6 +3771,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar)
+"rw" = (
+/obj/machinery/door/airlock/mining{
+	dir = 4;
+	name = "Mech Bay";
+	req_one_access = list(31,3)
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/janitor)
 "rx" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6703,7 +6713,8 @@
 "EQ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/southright{
-	dir = 4
+	dir = 4;
+	req_access = list(31)
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -9087,8 +9098,7 @@
 	},
 /obj/machinery/door/airlock/mining{
 	dir = 4;
-	name = "Mech Bay";
-	req_one_access = list(31,3)
+	name = "Mech Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -12788,7 +12798,7 @@ dZ
 dZ
 We
 We
-Si
+rw
 Si
 Iz
 Ju
