@@ -1875,7 +1875,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/weather,
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
+	environment_smash = 0
+	},
 /turf/open/floor/engine/waste/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "he" = (
@@ -2245,7 +2247,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "il" = (
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/mob/living/simple_animal/hostile/human/frontier/internals{
+	environment_smash = 0
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -2596,13 +2600,13 @@
 	},
 /obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun,
 /obj/item/clothing/under/syndicate/cybersun/research,
-/obj/item/clothing/suit/armor/vest/capcarapace/cybersun,
-/obj/item/clothing/head/beret/cmo/cybersun,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = -21;
 	pixel_y = 11
 	},
+/obj/item/clothing/suit/armor/vest/capcarapace/cybersun,
+/obj/item/clothing/head/beret/cmo/cybersun,
 /turf/open/floor/carpet/purple,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "kn" = (
@@ -3204,7 +3208,9 @@
 "mN" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/dim/directional/north,
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
+	environment_smash = 0
+	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "mP" = (
@@ -3275,7 +3281,9 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "nf" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
+	environment_smash = 0
+	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
@@ -3980,7 +3988,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals/neuter,
+/mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals/neuter{
+	environment_smash = 0
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "pE" = (
@@ -5258,7 +5268,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "us" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ut" = (
@@ -7868,10 +7878,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/item/shovel{
-	pixel_x = 11;
-	pixel_y = 5
-	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ES" = (
@@ -8834,7 +8840,9 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered{
+	environment_smash = 0
+	},
 /turf/open/floor/engine/waste/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "IZ" = (
@@ -9463,13 +9471,14 @@
 	secure = 1;
 	name = "secure syndicate locker"
 	},
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
-/obj/item/clothing/suit/armor/vest/syndie,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
 /obj/item/documents/syndicate{
 	desc = "\"Top Secret\" documents from the ICW, dated over a decade past. The bulk of these pages are filled with codewords and ciphers, but in the many pages on pages of spilled papers, the rough message behind these is that this base was setup as an ACLF and Cybersun joint operation, with the last recorded transmission signal code being underlined in heavy red ink."
 	},
+/obj/item/clothing/suit/armor/vest/syndie,
 /obj/item/clothing/head/helmet/syndie,
+/obj/item/clothing/under/syndicate,
 /turf/open/floor/carpet/green,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "Le" = (
@@ -10619,7 +10628,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/broken/directional/west,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered{
+	environment_smash = 0
+	},
 /turf/open/floor/engine/waste/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Qr" = (
@@ -11073,7 +11084,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Sp" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals{
+	environment_smash = 0
+	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Sr" = (
@@ -11304,6 +11317,13 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/waste/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"Th" = (
+/obj/item/shovel{
+	pixel_x = 0;
+	pixel_y = 13
+	},
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Tl" = (
 /obj/effect/decal/cleanable/blood/footprints,
@@ -12988,7 +13008,9 @@
 "ZB" = (
 /obj/effect/decal/cleanable/food/flour,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame{
+	environment_smash = 0
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "ZD" = (
@@ -17503,7 +17525,7 @@ CR
 fi
 kS
 Dh
-Nx
+Th
 Nx
 Nx
 Nx
