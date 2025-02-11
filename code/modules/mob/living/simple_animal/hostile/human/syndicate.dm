@@ -86,9 +86,9 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 
-/mob/living/simple_animal/hostile/human/ramzi/melee/sword
-	name = "Ramzi Clique Duelist"
-	desc = "A deserter from the Gorlex Marauders turned pirate. They hold a glaring energy sword at half-guard."
+/mob/living/simple_animal/hostile/human/ramzi/melee/sledge
+	name = "Ramzi Clique Breaker"
+	desc = "A deserter from the Gorlex Marauders turned pirate. Their palms are twisted around the shaft of a crimson-black sledgehammer."
 
 	icon_state = "syndicate_sword"
 	icon_living = "syndicate_sword"
@@ -96,23 +96,25 @@
 	attack_verb_simple = "slice"
 	attack_sound = 'sound/weapons/blade1.ogg'
 
-	r_hand = /obj/item/melee/energy/sword/active
-	armour_penetration = 35
+	r_hand = /obj/item/melee/axe/sledgehammer/pre_wielded
+	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
 
+	attack_verb_continuous = "smashes"
+	attack_verb_simple = "smash"
 
 	light_color = COLOR_SOFT_RED
 	var/obj/effect/light_emitter/red_energy_sword/sord
 	projectile_deflect_chance = 25
 
-/mob/living/simple_animal/hostile/human/ramzi/melee/sword/Initialize()
+/mob/living/simple_animal/hostile/human/ramzi/melee/sledge/AttackingTarget()
 	. = ..()
-	set_light(2)
-
-/mob/living/simple_animal/hostile/human/ramzi/melee/sword/Destroy()
-	QDEL_NULL(sord)
-	return ..()
+	if(isliving(target))
+		var/mob/living/bonk = target
+		if(!bonk.anchored)
+			var/atom/throw_target = get_edge_target_turf(bonk, src.dir)
+			bonk.throw_at(throw_target, rand(1,2), 2, src, gentle = TRUE)
 
 /* Space Melee */
 
@@ -148,26 +150,28 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sword
-	name = "Ramzi Clique Duelist"
-	desc = "A deserter from the Gorlex Marauders turned pirate. Their decayed hardsuit still obeys as they hold their energy sword in counterpoint to your approach."
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge
+	name = "Ramzi Clique Hullsmasher"
+	desc = "A deserter from the Gorlex Marauders turned pirate. Their decayed hardsuit still obeys as they raise their sledgehammer in challenge."
 	icon_state = "syndicate_space_sword"
 	icon_living = "syndicate_space_sword"
-	light_color = COLOR_SOFT_RED
-	var/obj/effect/light_emitter/red_energy_sword/sord
-	projectile_deflect_chance = 25
-	r_hand = /obj/item/melee/energy/sword/active
+	armour_penetration = 40
+	melee_damage_lower = 30
+	melee_damage_upper = 30
+
+	attack_verb_continuous = "smashes"
+	attack_verb_simple = "smash"
+
+	r_hand = /obj/item/melee/axe/sledgehammer/pre_wielded
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sword/Initialize()
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge/AttackingTarget()
 	. = ..()
-	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
-	sord = new(src)
-	set_light(4)
-
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sword/Destroy()
-	QDEL_NULL(sord)
-	return ..()
+	if(isliving(target))
+		var/mob/living/bonk = target
+		if(!bonk.anchored)
+			var/atom/throw_target = get_edge_target_turf(bonk, src.dir)
+			bonk.throw_at(throw_target, rand(1,2), 2, src, gentle = FALSE)
 
 /* stormtroopers */
 
@@ -183,29 +187,28 @@
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 
-//these typepaths hurt
 
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sword
-	name = "Ramzi Clique Blademaster"
-	desc = "Carmine bladelight glares furiously off the contours of a sleek, black-red armored suit. Their body betrays precious little as they glide in perfect conservation of motion from one stance to the next."
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge
+	name = "Ramzi Clique Supercollider"
+	desc = "Rapid, practiced motions permeate the body underneath the crimson suit of this radiantly hateful being. Each one ripples to the surface, the eyes of a suit tracking you as it brings a sledgehammer to bear."
 	icon_state = "syndicate_stormtrooper_sword"
 	icon_living = "syndicate_stormtrooper_sword"
-	projectile_deflect_chance = 50
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
-	light_color = COLOR_SOFT_RED
-	r_hand = /obj/item/melee/energy/sword/active
-	var/obj/effect/light_emitter/red_energy_sword/sord
-	projectile_deflect_chance = 25
+	r_hand = /obj/item/melee/axe/sledgehammer/pre_wielded
+	armour_penetration = 40
+	melee_damage_lower = 30
+	melee_damage_upper = 30
+	rapid_melee = 2
+	attack_verb_continuous = "smashes"
+	attack_verb_simple = "smash"
 
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sword/Initialize()
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge/AttackingTarget()
 	. = ..()
-	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
-	sord = new(src)
-	set_light(4)
-
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sword/Destroy()
-	QDEL_NULL(sord)
-	return ..()
+	if(isliving(target))
+		var/mob/living/bonk = target
+		if(!bonk.anchored)
+			var/atom/throw_target = get_edge_target_turf(bonk, src.dir)
+			bonk.throw_at(throw_target, rand(1,3), 2, src, gentle = FALSE)
 
 ///////////////Guns////////////
 
