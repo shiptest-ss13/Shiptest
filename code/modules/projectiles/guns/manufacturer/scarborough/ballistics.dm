@@ -470,7 +470,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1,
-		ATTACHMENT_SLOT_STOCK = 1
+		ATTACHMENT_SLOT_STOCK = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -484,6 +485,10 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 		ATTACHMENT_SLOT_STOCK = list(
 			"x" = 17,
 			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 21,
+			"y" = 24,
 		)
 	)
 

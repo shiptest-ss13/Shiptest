@@ -25,6 +25,11 @@
 	muzzleflash_iconstate = "muzzle_flash_light"
 	light_range = 1
 
+	refused_attachments = list(
+		/obj/item/attachment/gun,
+		/obj/item/attachment/sling
+		)
+
 
 /obj/item/gun/ballistic/automatic/pistol/candor
 	name = "\improper Candor"
