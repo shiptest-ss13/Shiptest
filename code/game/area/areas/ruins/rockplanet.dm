@@ -129,11 +129,11 @@
 
 /area/ruin/rockplanet/rust_base/mechbay
 	name = "ISV Rust Base Mech Bay"
-	icon_state = "robotic"
+	icon_state = "medresearch"
 
 /area/ruin/rockplanet/rust_base/hallway2
 	name = "ISV Rust Base Port Primary Hallway"
-	icon_state = "hallB"
+	icon_state = "hallP"
 
 /area/ruin/rockplanet/rust_base/bridge
 	name = "ISV Rust Base Bridge"
@@ -145,3 +145,4 @@
 
 /area/ruin/rockplanet/rust_base/tanto2
 	name = "Crashed Moonshiner"
+	icon_state = "green"
