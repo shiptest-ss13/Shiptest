@@ -952,7 +952,7 @@
 /obj/machinery/holopad,
 /mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/stormtrooper{
 	movespeed_modification = 1.25;
-	health = 150;
+	health = 200;
 	name = "Captain"
 	},
 /obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer2{
@@ -1485,12 +1485,12 @@
 /area/ruin/rockplanet/rust_base/hallway2)
 "oX" = (
 /obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid,
 /obj/machinery/airalarm/directional/north,
 /obj/item/storage/firstaid/brute,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/mechbay)
 "oZ" = (
