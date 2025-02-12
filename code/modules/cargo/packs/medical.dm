@@ -277,7 +277,7 @@
 	)
 	crate_name = "atropine vial crate"
 
-/datum/supply_pack/medical/vials/atro_vial
+/datum/supply_pack/medical/vials/stas_vial
 	name = "Stasis Vial Crate"
 	desc = "Contains a spare stasis vial, for usage in a Hypospray."
 	cost = 800
