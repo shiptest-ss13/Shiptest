@@ -353,7 +353,9 @@
 	to_chat(user, span_notice("Your helmet automatically engages."))
 	attack_self(user,TRUE)
 
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/on_un
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/dropped(mob/user)
+	. = ..()
+	user.remove_status_effect(/datum/status_effect/armor_assist)
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/attack_self(mob/user, forced_on = FALSE) //Toggle Helmet
 	if(!isturf(user.loc))
