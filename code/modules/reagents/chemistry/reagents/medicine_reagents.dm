@@ -2358,7 +2358,7 @@
 	if(method != INJECT)
 		return
 	if(iscarbon(M))
-		var/stasis_duration = min(20 SECONDS * reac_volume, 300)
+		var/stasis_duration = min(20 SECONDS * reac_volume, 300 SECONDS)
 		to_chat(M, span_warning("Your body starts to slow down, sensation retreating from your limbs!"))
 		M.apply_status_effect(STATUS_EFFECT_STASIS, STASIS_DRUG_EFFECT)
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, remove_status_effect), STATUS_EFFECT_STASIS, STASIS_DRUG_EFFECT), stasis_duration, TIMER_UNIQUE)
