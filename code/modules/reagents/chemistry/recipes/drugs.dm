@@ -47,3 +47,14 @@
 	required_reagents = list(/datum/reagent/consumable/vitfro = 4, /datum/reagent/medicine/dimorlin = 1, /datum/reagent/medicine/atropine = 1)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
 	required_temp = 400
+
+/datum/chemical_reaction/stardrop
+	results = list(/datum/reagent/drug/stardrop = 5)
+	required_reagents = list(/datum/reagent/mercury = 1, /datum/reagent/acetone = 1, /datum/reagent/consumable/carrotjuice = 2)
+	required_catalysts = list(/datum/reagent/stable_plasma = 5)
+
+/datum/chemical_reaction/starlight
+	results = list(/datum/reagent/drug/starlight = 1)
+	required_reagents = list(/datum/reagent/drug/stardrop = 1, /datum/reagent/phenol = 1)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
+	mix_message = "The mixture concentrates into itself, taking on a deep coloration!"
