@@ -18,12 +18,12 @@
 	pixel_x = 11;
 	pixel_y = 22
 	},
-/obj/machinery/light/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/carpet/royalblue,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "aD" = (
 /obj/machinery/shower{
 	pixel_y = 19
@@ -220,8 +220,9 @@
 	pixel_x = 6;
 	pixel_y = 24
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/carpet/royalblue,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "cg" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
@@ -299,10 +300,8 @@
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "cH" = (
-/obj/structure/extinguisher_cabinet/directional/east,
-/obj/structure/chair/comfy/orange/directional/south,
 /turf/open/floor/carpet/royalblue,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "cJ" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -545,11 +544,33 @@
 	dir = 6;
 	color = "#332521"
 	},
-/obj/structure/bed,
-/obj/item/bedsheet/solgov,
-/obj/structure/curtain/cloth,
+/obj/structure/closet/secure_closet/security{
+	anchored = 1;
+	name = "sonnensöldners's locker";
+	populate = 0
+	},
+/obj/item/storage/box/ammo/c556mm,
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/clothing/suit/armor/vest/solgov,
+/obj/item/storage/backpack,
+/obj/item/radio/headset/solgov/alt,
+/obj/item/clothing/gloves/combat,
+/obj/item/storage/belt/sabre/solgov,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/under/solgov/dress,
+/obj/item/radio{
+	icon_state = "sec_radio"
+	},
+/obj/item/clothing/under/solgov/formal,
+/obj/item/clothing/head/solgov/sonnensoldner,
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/storage/box/ammo/c556mm,
+/obj/item/ammo_box/amagpellet_claris,
+/obj/item/ammo_box/amagpellet_claris,
+/obj/item/storage/box/ammo/ferropellet,
 /turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm/dormfour)
+/area/ship/security/armory)
 "fl" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -613,7 +634,7 @@
 /area/ship/hallway/port)
 "gj" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "gk" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -667,8 +688,20 @@
 	name = "shutter control";
 	pixel_x = -20
 	},
+/obj/item/folder/solgov{
+	pixel_x = -6;
+	pixel_y = -1
+	},
+/obj/item/paper_bin{
+	pixel_x = 9;
+	pixel_y = 0
+	},
+/obj/item/pen/solgov{
+	pixel_x = 9;
+	pixel_y = 2
+	},
 /turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm/dormfour)
+/area/ship/security/armory)
 "gQ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -920,12 +953,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
 "iW" = (
-/obj/machinery/door/airlock/solgov{
-	dir = 1;
-	id_tag = "sg_par_bolt";
-	name = "Overseer's Quarters";
-	req_one_access = list(20)
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/industrial/warning,
@@ -939,8 +966,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/security/glass/seclock{
+	name = "Sonnensoldner Chambers"
+	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/dorm/dormfour)
+/area/ship/security/armory)
 "iZ" = (
 /obj/structure/grille,
 /turf/open/floor/plating,
@@ -1164,30 +1194,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/port)
 "kU" = (
-/obj/item/clothing/neck/cloak/overseer,
-/obj/item/clothing/suit/armor/vest/solgov/overseer,
-/obj/structure/closet/secure_closet/head_of_personnel{
-	anchored = 1;
-	name = "\proper overseer's locker";
-	populate = 0
-	},
-/obj/item/clothing/gloves/combat,
-/obj/item/folder/solgov,
-/obj/item/folder/solgov,
-/obj/item/folder/documents/solgov,
-/obj/item/clothing/under/solgov/formal,
-/obj/item/clothing/head/solgov,
-/obj/item/storage/belt/sabre/solgov,
-/obj/item/storage/backpack,
-/obj/item/pen/solgov,
-/obj/item/clothing/under/solgov/dress,
-/obj/item/stamp/solgov,
-/obj/item/clothing/suit/armor/solgov_trenchcoat,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/structure/guncloset,
+/obj/item/gun/ballistic/automatic/pistol/solgov,
+/obj/item/gun/ballistic/automatic/powered/gauss/claris,
 /turf/open/floor/wood/ebony,
-/area/ship/crew/dorm/dormfour)
+/area/ship/security/armory)
 "kW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/suit_storage_unit/inherit,
@@ -1328,6 +1342,12 @@
 /obj/structure/table/optable,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
+"mz" = (
+/obj/item/bedsheet/solgov,
+/obj/structure/bed,
+/obj/structure/curtain/cloth,
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/office)
 "mH" = (
 /obj/machinery/light/directional/east,
 /obj/structure/table/wood,
@@ -1360,8 +1380,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/wood/ebony,
-/area/ship/crew/dorm/dormfour)
+/area/ship/security/armory)
 "nb" = (
 /obj/effect/turf_decal/solgov/all/bottom_left,
 /turf/open/floor/plasteel/mono,
@@ -1406,22 +1427,14 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "nG" = (
-/obj/machinery/airalarm/directional/west,
-/obj/structure/table/wood,
-/obj/item/paper_bin{
-	pixel_x = 9;
+/obj/structure/filingcabinet/double{
+	dir = 4;
+	pixel_x = -10;
 	pixel_y = 0
 	},
-/obj/item/pen/solgov{
-	pixel_x = 9;
-	pixel_y = 2
-	},
-/obj/item/folder/solgov{
-	pixel_x = -6;
-	pixel_y = -1
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/carpet/royalblue,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "nZ" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
@@ -1465,7 +1478,7 @@
 	dir = 5
 	},
 /turf/open/floor/wood/ebony,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "os" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -1500,7 +1513,7 @@
 	id = "sg_par_office"
 	},
 /turf/open/floor/plating,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "ow" = (
 /obj/structure/table,
 /obj/item/defibrillator/loaded{
@@ -1642,8 +1655,21 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "py" = (
+/obj/structure/table/wood,
+/obj/item/folder/solgov{
+	pixel_x = -6;
+	pixel_y = -1
+	},
+/obj/item/paper_bin{
+	pixel_x = 9;
+	pixel_y = 0
+	},
+/obj/item/pen/solgov{
+	pixel_x = 9;
+	pixel_y = 2
+	},
 /turf/open/floor/carpet/royalblue,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "pA" = (
 /obj/structure/fluff/hedge,
 /obj/machinery/light/directional/south,
@@ -2058,9 +2084,12 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/crewtwo)
 "sW" = (
-/obj/structure/chair/comfy/orange/directional/south,
+/obj/structure/chair/comfy/orange/directional/south{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/carpet/royalblue,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "sZ" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 1;
@@ -2171,7 +2200,7 @@
 	id = "sg_par_sonnen"
 	},
 /turf/open/floor/plating,
-/area/ship/crew/dorm/dormfour)
+/area/ship/security/armory)
 "uJ" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
@@ -2381,7 +2410,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "wm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/kirbyplants/random,
@@ -3008,7 +3037,7 @@
 	dir = 4
 	},
 /turf/open/floor/wood/ebony,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "Cn" = (
 /obj/effect/turf_decal/solgov/all/center,
 /turf/open/floor/plasteel/mono,
@@ -3092,7 +3121,7 @@
 /area/ship/hallway/port)
 "Dr" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/dorm/dormfour)
+/area/ship/security/armory)
 "Du" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -3311,29 +3340,9 @@
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/canteen)
 "EV" = (
-/obj/structure/closet/secure_closet/security{
-	anchored = 1;
-	name = "sonnensöldners's locker";
-	populate = 0
-	},
-/obj/item/clothing/head/solgov/sonnensoldner,
-/obj/item/clothing/under/solgov/formal,
-/obj/item/radio{
-	icon_state = "sec_radio"
-	},
-/obj/item/clothing/under/solgov/dress,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/shoes/workboots,
-/obj/item/storage/belt/sabre/solgov,
-/obj/item/clothing/gloves/combat,
-/obj/item/radio/headset/solgov/alt,
-/obj/item/storage/backpack,
-/obj/item/clothing/suit/armor/vest/solgov,
-/obj/item/ammo_box/magazine/pistol556mm,
-/obj/item/ammo_box/magazine/pistol556mm,
-/obj/item/storage/box/ammo/c556mm,
+/obj/structure/table/wood,
 /turf/open/floor/carpet/royalblue,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "Fe" = (
 /obj/machinery/iv_drip,
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/line,
@@ -3669,7 +3678,7 @@
 	pixel_y = 0
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/dorm/dormfour)
+/area/ship/security/armory)
 "IX" = (
 /obj/item/clothing/head/solgov/captain,
 /obj/item/clothing/suit/armor/vest/solgov/captain,
@@ -3976,7 +3985,7 @@
 	id = "sg_par_office"
 	},
 /turf/open/floor/plating,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "LJ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -4013,7 +4022,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "LS" = (
-/obj/structure/closet/secure_closet/personal/patient,
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/line,
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1
@@ -4030,6 +4038,7 @@
 /obj/item/clothing/shoes/sandal/slippers,
 /obj/item/tank/internals/anesthetic,
 /obj/item/clothing/mask/breath/medical,
+/obj/structure/closet/secure_closet/medical2,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "Mg" = (
@@ -4039,7 +4048,7 @@
 	},
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm/dormfour)
+/area/ship/security/armory)
 "Mi" = (
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/table/wood,
@@ -4225,8 +4234,13 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = -11
+	},
 /turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm/dormfour)
+/area/ship/security/armory)
 "NW" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -4376,7 +4390,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "OZ" = (
-/obj/structure/closet/secure_closet/personal/patient,
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/line,
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1
@@ -4390,6 +4403,7 @@
 /obj/item/clothing/shoes/sandal/slippers,
 /obj/item/tank/internals/anesthetic,
 /obj/item/clothing/mask/breath/medical,
+/obj/structure/closet/secure_closet/medical2,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "Pc" = (
@@ -4423,11 +4437,8 @@
 	pixel_x = 7;
 	pixel_y = -22
 	},
-/obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/pistol/solgov,
-/obj/item/gun/ballistic/automatic/pistol/solgov,
 /turf/open/floor/wood/ebony,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "Pj" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8;
@@ -4458,21 +4469,27 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Pp" = (
-/obj/structure/table/wood,
-/obj/item/folder/solgov{
-	pixel_x = -6;
-	pixel_y = -1
+/obj/structure/closet/secure_closet/head_of_personnel{
+	anchored = 1;
+	name = "\proper overseer's locker";
+	populate = 0
 	},
-/obj/item/paper_bin{
-	pixel_x = 9;
-	pixel_y = 0
-	},
-/obj/item/pen/solgov{
-	pixel_x = 9;
-	pixel_y = 2
-	},
+/obj/item/clothing/suit/armor/solgov_trenchcoat,
+/obj/item/stamp/solgov,
+/obj/item/clothing/under/solgov/dress,
+/obj/item/storage/backpack,
+/obj/item/pen/solgov,
+/obj/item/storage/belt/sabre/solgov,
+/obj/item/clothing/head/solgov,
+/obj/item/clothing/under/solgov/formal,
+/obj/item/folder/documents/solgov,
+/obj/item/folder/solgov,
+/obj/item/folder/solgov,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/suit/armor/vest/solgov/overseer,
+/obj/item/clothing/neck/cloak/overseer,
 /turf/open/floor/carpet/royalblue,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "Ps" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -4731,7 +4748,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/carpet/royalblue,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "RL" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/port)
@@ -4877,7 +4894,7 @@
 /area/ship/medical/surgery)
 "Td" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/crew/dorm/dormfour)
+/area/ship/security/armory)
 "Tm" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -5135,11 +5152,14 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/security/glass/seclock{
-	name = "Sonnensoldner Chambers"
+/obj/machinery/door/airlock/solgov{
+	dir = 1;
+	id_tag = "sg_par_bolt";
+	name = "Overseer's Quarters";
+	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "Wf" = (
 /obj/effect/turf_decal/techfloor,
 /obj/structure/cable{
@@ -5304,8 +5324,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/structure/table/wood,
+/obj/machinery/fax/solgov,
 /turf/open/floor/carpet/royalblue,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "Xt" = (
 /obj/structure/table/optable,
 /obj/machinery/defibrillator_mount{
@@ -5501,7 +5523,7 @@
 	id = "sg_par_psych"
 	},
 /turf/open/floor/plating,
-/area/ship/security/armory)
+/area/ship/crew/office)
 "YK" = (
 /obj/structure/table/wood,
 /obj/item/desk_flag/solgov{
@@ -6255,8 +6277,8 @@ XV
 SK
 wk
 Xe
-py
-EV
+cH
+mz
 ou
 wI
 "}
@@ -6317,11 +6339,11 @@ vk
 Ol
 FL
 he
-gj
-gj
-gj
-gj
-gj
+Td
+Td
+Td
+Td
+Td
 wI
 "}
 (23,1,1) = {"
