@@ -118,7 +118,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_items = 3
+	STR.max_items = 4
 	STR.max_combined_w_class = 24
 	STR.set_holdable(list(
 		/obj/item/crowbar,
@@ -133,7 +133,8 @@
 		/obj/item/analyzer,
 		/obj/item/geiger_counter,
 		/obj/item/stack/medical/structure,
-		/obj/item/extinguisher/mini
+		/obj/item/extinguisher/mini,
+		/obj/item/clothing/gloves
 		))
 
 /obj/item/storage/pouch/engi/PopulateContents()
@@ -142,6 +143,7 @@
 	var/static/items_inside = list(
 		/obj/item/crowbar = 1,
 		/obj/item/screwdriver = 1,
+		/obj/item/wrench,
 		/obj/item/weldingtool/mini = 1)
 	generate_items_inside(items_inside,src)
 
@@ -204,5 +206,6 @@
 		/obj/item/pen,
 		/obj/item/geiger_counter,
 		/obj/item/toy/crayon/spraycan,
-		/obj/item/stack/marker_beacon
+		/obj/item/stack/marker_beacon,
+		/obj/item/reagent_containers/glass/rag
 		))
