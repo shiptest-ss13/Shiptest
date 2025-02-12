@@ -288,8 +288,8 @@
 /obj/item/reagent_containers/syringe/contraband/methamphetamine
 	list_reagents = list(/datum/reagent/drug/methamphetamine = 15)
 
-/obj/item/reagent_containers/syringe/contraband/bath_salts
-	list_reagents = list(/datum/reagent/drug/bath_salts = 15)
+/obj/item/reagent_containers/syringe/contraband/mammoth
+	list_reagents = list(/datum/reagent/drug/mammoth = 15)
 
 /obj/item/reagent_containers/syringe/contraband/fentanyl
 	list_reagents = list(/datum/reagent/toxin/fentanyl = 15)
