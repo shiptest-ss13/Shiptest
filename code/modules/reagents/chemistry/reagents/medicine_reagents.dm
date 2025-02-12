@@ -2392,9 +2392,9 @@
 	if(current_cycle >= 3)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
 
-	if(M.health <= crit_threshold)
+	if(M.health <= M.crit_threshold)
 		if(prob(20))
-			M.AdjustOrganLoss(ORGAN_SLOT_HEART, 4)
+			M.adjustOrganLoss(ORGAN_SLOT_HEART, 4)
 		if(prob(40))
 			M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 	..()

@@ -185,7 +185,7 @@
 
 /datum/reagent/drug/mammoth
 	name = "Mammoth"
-	description = "A muscle stimulant said to turn the user into an unarmed fighting machine. Greatly increases stamina regeneration and allows the user to tackle.""
+	description = "A muscle stimulant said to turn the user into an unarmed fighting machine. Greatly increases stamina regeneration and allows the user to tackle."
 	reagent_state = LIQUID
 	color = "#FAFAFA"
 	overdose_threshold = 20

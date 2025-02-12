@@ -338,7 +338,7 @@
 /obj/item/reagent_containers/hypospray/medipen/rabbit
 	name = "rabbit injector"
 	desc = "An injector decorated with a chibi-stylized armored rabbitgirl, wielding what appears to be a Hydra DMR."
-	list_reagents = list(/datum/reagent/drug/starlight = 10, /datum/reagent/medicine/carfencadrizine = 6, /datum/reagent/medicine/stimulants = 8)
+	list_reagents = list(/datum/reagent/drug/stardrop/starlight = 10, /datum/reagent/medicine/carfencadrizine = 6, /datum/reagent/medicine/stimulants = 8)
 	volume = 24
 	amount_per_transfer_from_this = 24
 	icon_state = "stimpen"

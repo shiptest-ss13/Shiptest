@@ -347,6 +347,6 @@ WS End */
 
 /datum/chemical_reaction/carfen
 	results = list(/datum/reagent/medicine/carfencadrizine = 4)
-	required_reagents = list(/datum/reagent/medicine/dimorlin = 1, /datum/reagent/medicine/synaptizine = 1, /datum/reagent/sugar = 2)
+	required_reagents = list(/datum/reagent/medicine/dimorlin = 1, /datum/reagent/medicine/synaptizine = 1, /datum/reagent/consumable/sugar = 2)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 2)
 	required_temp = 127
