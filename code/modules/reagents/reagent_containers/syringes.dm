@@ -306,3 +306,9 @@
 	name = "syringe (charcoal)"
 	desc = "Contains charcoal."
 	list_reagents = list(/datum/reagent/medicine/charcoal = 15)
+
+/obj/item/reagent_containers/syringe/stasis
+	name = "syringe (stasis)"
+	desc = "Contains 3 shots of Stasis, for usage in medical emergencies."
+	list_reagents = list(/datum/reagent/medicine/stasis = 15)
+	custom_price = 100
