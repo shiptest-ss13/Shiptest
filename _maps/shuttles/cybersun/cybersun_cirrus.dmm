@@ -3512,15 +3512,20 @@
 	},
 /obj/item/reagent_containers/dropper{
 	pixel_y = 7;
-	pixel_x = -5
+	pixel_x = 8
 	},
 /obj/item/reagent_containers/dropper{
 	pixel_y = 10;
-	pixel_x = -5
+	pixel_x = 8
 	},
 /obj/item/stack/tape/industrial{
 	pixel_x = -4;
 	pixel_y = -4
+	},
+/obj/structure/sink/chem{
+	dir = 4;
+	pixel_y = 10;
+	pixel_x = -3
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
