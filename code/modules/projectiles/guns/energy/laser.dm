@@ -6,7 +6,7 @@
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=2000)
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
+	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/sharplite)
 	ammo_x_offset = 1
 	shaded_charge = TRUE
 	supports_variations = VOX_VARIATION
@@ -21,7 +21,7 @@
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
 	desc = "A modified version of the L-204 laser gun, this one fires less concentrated energy bolts designed for target practice."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/practice)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/practice/sharplite)
 	item_flags = NONE
 
 /obj/item/gun/energy/laser/retro

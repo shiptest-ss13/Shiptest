@@ -698,6 +698,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/sling,
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
 	)
@@ -854,6 +855,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/sling,
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
 	)
@@ -951,6 +953,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/sling,
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
 	)
