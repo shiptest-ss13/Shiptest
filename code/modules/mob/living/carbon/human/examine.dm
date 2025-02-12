@@ -102,6 +102,8 @@
 			. += "[t_He] [t_has] [glasses.get_examine_string(user)] covering [t_his] eyes."
 		else if(HAS_TRAIT(src, TRAIT_CLOUDED))
 			. += "[t_His] eyes are clouded in silver."
+		else if(HAS_TRAIT(src, TRAIT_PINPOINT_EYES))
+			. += "[t_His] pupils have diliated to pinpricks."
 
 	//ears
 	if(ears && !(ITEM_SLOT_EARS in obscured))

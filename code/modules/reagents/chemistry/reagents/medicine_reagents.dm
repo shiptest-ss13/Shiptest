@@ -791,6 +791,10 @@
 			. = 1
 	..()
 
+/datum/reagent/medicine/morphine/overdose_start(mob/living/M)
+	. = ..()
+	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
+
 /datum/reagent/medicine/morphine/overdose_process(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
@@ -858,6 +862,10 @@
 			M.drowsyness += 1
 	..()
 
+/datum/reagent/medicine/tramal/overdose_start(mob/living/M)
+	. = ..()
+	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
+
 /datum/reagent/medicine/tramal/overdose_process(mob/living/M)
 	if(prob(33))
 		M.Dizzy(2)
@@ -920,6 +928,10 @@
 	if(current_cycle >= 3)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
 	..()
+
+/datum/reagent/medicine/dimorlin/overdose_start(mob/living/M)
+	. = ..()
+	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
 
 /datum/reagent/medicine/dimorlin/overdose_process(mob/living/M)
 	if(prob(33))
@@ -2366,11 +2378,13 @@
 
 /datum/reagent/medicine/carfencadrizine/on_mob_metabolize(mob/living/L)
 	. = ..()
+	ADD_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	ADD_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 	ADD_TRAIT(L, TRAIT_NOHARDCRIT, type)
 
 /datum/reagent/medicine/carfencadrizine/on_mob_end_metabolize(mob/living/L)
 	. = ..()
+	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	REMOVE_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 	REMOVE_TRAIT(L, TRAIT_NOHARDCRIT, type)
 
@@ -2378,8 +2392,11 @@
 	if(current_cycle >= 3)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
 
-	if(M.health <= crit_threshold && prob(20))
-		M.AdjustOrganLoss(ORGAN_SLOT_HEART, 4)
+	if(M.health <= crit_threshold)
+		if(prob(20))
+			M.AdjustOrganLoss(ORGAN_SLOT_HEART, 4)
+		if(prob(40))
+			M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 	..()
 
 /datum/reagent/medicine/carfencadrizine/overdose_process(mob/living/M)
