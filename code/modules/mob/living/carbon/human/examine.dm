@@ -100,6 +100,8 @@
 	if(!(ITEM_SLOT_EYES in obscured))
 		if(glasses)
 			. += "[t_He] [t_has] [glasses.get_examine_string(user)] covering [t_his] eyes."
+		else if(HAS_TRAIT(src, TRAIT_CLOUDED))
+			. += "[t_His] eyes are clouded in silver."
 
 	//ears
 	if(ears && !(ITEM_SLOT_EARS in obscured))

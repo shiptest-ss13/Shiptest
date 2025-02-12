@@ -621,3 +621,79 @@
 	if(prob(2))
 		var/eepy_message = pick("You feel so, so tired.", "You stifle a yawn.", "You really ought to rest for a bit...", "It'd be nice to lay down a bit...","Being in a bed sounds wonderful, right now...","You shake your head to stay awake, but the feeling doesn't let up.","You really want to sleep next to someone...","You keep thinking about how nice a pillow would be, right now.")
 		to_chat(M, span_notice("[eepy_message]"))
+
+/datum/reagent/drug/stardrop
+	name = "Stardrop"
+	description = "A vision-enhancing chemical that originated as a performance aid for industrial miners."
+	reagent_state = LIQUID
+	color = "#df71c7" //yeah its kinda pinkruple
+	overdose_threshold = 30
+	addiction_threshold = 20
+	metabolization_rate = 0.1
+	var/vision_trait = TRAIT_NIGHT_VISION
+
+/datum/reagent/drug/stardrop/on_mob_metabolize(mob/living/L)
+	..()
+	if(iscarbon(L))
+		var/mob/living/carbon/drugged = L
+		ADD_TRAIT(drugged, vision_trait, type)
+		ADD_TRAIT(drugged, TRAIT_CLOUDED, type)
+		drugged.update_sight()
+
+
+/datum/reagent/drug/stardrop/on_mob_end_metabolize(mob/living/L)
+	if(iscarbon(L))
+		var/mob/living/carbon/drugged = L
+		REMOVE_TRAIT(drugged, vision_trait, type)
+		REMOVE_TRAIT(drugged, TRAIT_CLOUDED, type)
+		drugged.update_sight()
+
+/datum/reagent/drug/stardrop/on_mob_life(mob/living/carbon/M)
+	..()
+	if(prob(5))
+		M.blur_eyes(rand(5,12))
+
+/datum/reagent/drug/stardrop/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
+	if(prob(40))
+		M.blur_eyes(rand(3,12))
+
+/datum/reagent/drug/stardrop/addiction_act_stage1(mob/living/M)
+	if(prob(10))
+		M.blur_eyes(rand(5,12))
+	..()
+
+/datum/reagent/drug/stardrop/addiction_act_stage2(mob/living/M)
+	if(prob(10))
+		M.blur_eyes(rand(5,12))
+	if(prob(4))
+		M.confused += 10
+	..()
+
+/datum/reagent/drug/stardrop/addiction_act_stage3(mob/living/M)
+	if(prob(20))
+		M.blur_eyes(rand(5,12))
+	if(prob(4))
+		M.confused += 10
+	if(prob(1))
+		M.adjustOrganLoss(ORGAN_SLOT_EYES, 5)
+	..()
+
+/datum/reagent/drug/stardrop/addiction_act_stage4(mob/living/carbon/human/M)
+	if(prob(40))
+		M.blur_eyes(rand(5,12))
+	if(prob(8))
+		M.confused += 10
+	if(prob(5))
+		M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
+	..()
+
+/datum/reagent/drug/stardrop/starlight
+	name = "Starlight"
+	description = "A vision-enhancing chemical derived from stardrop. The original formula was a N+S recipe leaked by a GEC worker."
+	reagent_state = LIQUID
+	color = "#bc329e"
+	overdose_threshold = 17
+	addiction_threshold = 11
+	metabolization_rate = 0.2
+	vision_trait = TRAIT_THERMAL_VISION
