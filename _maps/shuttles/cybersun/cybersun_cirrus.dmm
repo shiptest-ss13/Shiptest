@@ -54,10 +54,6 @@
 /obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
 /obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
 /obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
-/obj/item/reagent_containers/food/snacks/grown/coffee,
-/obj/item/reagent_containers/food/snacks/grown/coffee,
-/obj/item/reagent_containers/food/snacks/grown/coffee,
-/obj/item/reagent_containers/food/snacks/grown/coffee,
 /obj/item/reagent_containers/condiment/soysauce{
 	pixel_x = 13;
 	pixel_y = 5
@@ -80,6 +76,18 @@
 /obj/item/reagent_containers/food/drinks/bottle/pineapplejuice{
 	pixel_x = -5;
 	pixel_y = 18
+	},
+/obj/item/reagent_containers/food/snacks/grown/coffee{
+	dry = 1
+	},
+/obj/item/reagent_containers/food/snacks/grown/coffee{
+	dry = 1
+	},
+/obj/item/reagent_containers/food/snacks/grown/coffee{
+	dry = 1
+	},
+/obj/item/reagent_containers/food/snacks/grown/coffee{
+	dry = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -1116,6 +1124,8 @@
 	pixel_y = 8;
 	pixel_x = 14
 	},
+/obj/item/modular_computer/laptop/preset/civilian,
+/obj/item/computer_hardware/card_slot,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "iq" = (
@@ -5050,6 +5060,13 @@
 	pixel_x = 5
 	},
 /obj/item/radio/intercom/wideband/directional/west,
+/obj/item/computer_hardware/card_slot,
+/obj/item/modular_computer/laptop/preset/civilian{
+	pixel_y = -9
+	},
+/obj/item/computer_hardware/card_slot{
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Yg" = (
