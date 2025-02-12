@@ -183,47 +183,47 @@
 	..()
 	. = 1
 
-/datum/reagent/drug/bath_salts
-	name = "Bath Salts"
-	description = "Makes you impervious to stuns and grants a stamina regeneration buff, but you will be a nearly uncontrollable tramp-bearded raving lunatic."
+/datum/reagent/drug/mammoth
+	name = "Mammoth"
+	description = "A muscle stimulant said to turn the user into an unarmed fighting machine. Greatly increases stamina regeneration and allows the user to tackle.""
 	reagent_state = LIQUID
 	color = "#FAFAFA"
 	overdose_threshold = 20
 	addiction_threshold = 10
-	taste_description = "salt" // because they're bathsalts?
-	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
+	taste_description = "chemical salts"
+	var/datum/brain_trauma/special/psychotic_brawling/mammoth/rage
 
-/datum/reagent/drug/bath_salts/on_mob_metabolize(mob/living/L)
+/datum/reagent/drug/mammoth/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
+	L.AddComponent(/datum/component/tackler, stamina_cost= 25, base_knockdown= 2 SECONDS, range=6, speed=1, skill_mod=2)
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
 		rage = new()
 		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
 
-/datum/reagent/drug/bath_salts/on_mob_end_metabolize(mob/living/L)
+/datum/reagent/drug/mammoth/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
+	if(L.GetComponent(/datum/component/tackler))
+		qdel(L.GetComponent(/datum/component/tackler))
 	if(rage)
 		QDEL_NULL(rage)
 	..()
 
-/datum/reagent/drug/bath_salts/on_mob_life(mob/living/carbon/M)
-	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
+/datum/reagent/drug/mammoth/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		var/high_message = pick("Flatten them", "Crush them", "Smash them", "Kill them") //flat it. crush it. smash it. bop it.
+		to_chat(M, span_boldwarning("[high_message]"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "salted", /datum/mood_event/stimulant_heavy, name)
-	M.adjustStaminaLoss(-5, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4)
+	M.adjustStaminaLoss(-10, 0)
+	if(prob(40))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	M.hallucination += 5
-	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
-		step(M, pick(GLOB.cardinals))
-		step(M, pick(GLOB.cardinals))
-	..()
 	. = 1
 
-/datum/reagent/drug/bath_salts/overdose_process(mob/living/M)
+/datum/reagent/drug/mammoth/overdose_process(mob/living/M)
 	M.hallucination += 5
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i in 1 to 8)
@@ -232,7 +232,7 @@
 		M.drop_all_held_items()
 	..()
 
-/datum/reagent/drug/bath_salts/addiction_act_stage1(mob/living/M)
+/datum/reagent/drug/mammoth/addiction_act_stage1(mob/living/M)
 	M.hallucination += 10
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 8, i++)
@@ -241,7 +241,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	..()
 
-/datum/reagent/drug/bath_salts/addiction_act_stage2(mob/living/M)
+/datum/reagent/drug/mammoth/addiction_act_stage2(mob/living/M)
 	M.hallucination += 20
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 8, i++)
@@ -251,7 +251,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	..()
 
-/datum/reagent/drug/bath_salts/addiction_act_stage3(mob/living/M)
+/datum/reagent/drug/mammoth/addiction_act_stage3(mob/living/M)
 	M.hallucination += 30
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 12, i++)
@@ -261,7 +261,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	..()
 
-/datum/reagent/drug/bath_salts/addiction_act_stage4(mob/living/carbon/human/M)
+/datum/reagent/drug/mammoth/addiction_act_stage4(mob/living/carbon/human/M)
 	M.hallucination += 30
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 16, i++)

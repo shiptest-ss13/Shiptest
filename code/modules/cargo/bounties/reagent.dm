@@ -165,7 +165,7 @@
 		/datum/reagent/medicine/pyroxadone,\
 		/datum/reagent/medicine/rezadone,\
 		/datum/reagent/medicine/regen_jelly,\
-		/datum/reagent/drug/bath_salts,\
+		/datum/reagent/drug/mammoth,\
 		/datum/reagent/hair_dye,\
 		/datum/reagent/consumable/honey,\
 		/datum/reagent/consumable/frostoil,\
