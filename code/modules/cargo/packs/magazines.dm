@@ -61,7 +61,7 @@
 	name = "Firestorm Pan Magazine Crate"
 	desc = "Contains a 40-round pan magazine for the Hunter's Pride Firestorm SMG."
 	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/empty)
-	cost = 1000
+	cost = 700
 	faction = /datum/faction/srm
 
 
@@ -89,12 +89,6 @@
 	name = "Woodsman Magazine Crate"
 	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of five rounds."
 	contains = list(/obj/item/ammo_box/magazine/m23/empty)
-	cost = 200
-
-/datum/supply_pack/magazine/woodsman_mag_extended
-	name = "Woodsman Magazine Crate"
-	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/m23/extended/empty)
 	cost = 500
 
 /datum/supply_pack/magazine/m20_auto_elite
@@ -189,7 +183,7 @@
 	name = "MSR-90 'Boomslang' Magazine Crate"
 	desc = "Contains a 6.5 CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/empty)
-	cost = 1500
+	cost = 1250
 	faction = /datum/faction/syndicate/scarborough_arms
 
 
@@ -242,7 +236,7 @@
 	name = "SKM Extended Magazine Crate"
 	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of fourty rounds."
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40/extended/empty)
-	cost = 1250
+	cost = 1000
 	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
@@ -336,7 +330,7 @@
 	name = "Bulldog Drum Magazine Crate"
 	desc = "Contains a 12-round 12ga drum magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty)
-	cost = 1500
+	cost = 1000
 	faction = /datum/faction/syndicate/scarborough_arms
 
 /* energy weapons */
