@@ -50,6 +50,7 @@
 		/obj/item/stack/medical/splint,
 		/obj/item/stack/medical/structure,
 		/obj/item/storage/pill_bottle,
+		/obj/item/reagent_containers/pill,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/reagent_containers/hypospray/medipen,
 		/obj/item/reagent_containers/glass/bottle/vial
