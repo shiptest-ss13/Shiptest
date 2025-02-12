@@ -465,7 +465,7 @@
 		mood.mood_modifier += 1
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed -= 0.5
+		drugged.physiology.do_after_speed -= 0.4
 
 /datum/reagent/drug/finobranc/on_mob_end_metabolize(mob/living/L)
 	..()
@@ -474,7 +474,7 @@
 		mood.mood_modifier -= 1
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed += 0.5
+		drugged.physiology.do_after_speed += 0.4
 
 /datum/reagent/drug/finobranc/overdose_process(mob/living/M)
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
@@ -527,7 +527,7 @@
 		L.adjustOrganLoss(ORGAN_SLOT_HEART, 6)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed -= 0.5
+		drugged.physiology.do_after_speed -= 0.4
 		drugged.physiology.damage_resistance += 10
 		drugged.physiology.hunger_mod += 1
 
@@ -536,7 +536,7 @@
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shoalmix)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed += 0.5
+		drugged.physiology.do_after_speed += 0.4
 		drugged.physiology.damage_resistance -= 10
 		drugged.physiology.hunger_mod -= 1
 
