@@ -1167,7 +1167,7 @@
 	. = 1
 
 /datum/reagent/medicine/stimulants
-	name = "Stimulants"
+	name = "Indoril"
 	description = "Increases stun resistance and movement speed in addition to restoring minor damage and weakness. Overdose causes weakness and toxin damage."
 	color = "#78008C"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
@@ -2334,3 +2334,24 @@
 	if(prob(5))
 		M.adjustToxLoss(1)
 	..()
+
+/datum/reagent/medicine/stasis
+	name = "Stasis"
+	description = "A liquid blue chemical that causes the body to enter a chemically induced stasis, irregardless of current state."
+	reagent_state = LIQUID
+	color = "#51b5cb" //a nice blue
+	overdose_threshold = 0
+
+/datum/reagent/medicine/stasis/expose_mob(mob/living/M, method=INJECT, reac_volume, show_message = 1)
+	if(method != INJECT)
+		return
+	if(iscarbon(M))
+		var/stasis_duration = 20 SECONDS * reac_volume
+		to_chat(M, span_warning("Your body starts to slow down, sensation retreating from your limbs!"))
+		M.apply_status_effect(STATUS_EFFECT_STASIS, STASIS_DRUG_EFFECT)
+		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, remove_status_effect), STATUS_EFFECT_STASIS, STASIS_DRUG_EFFECT), stasis_duration, TIMER_UNIQUE)
+
+/datum/reagent/medicine/stasis/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(1)
+	..()
+	. = 1
