@@ -2400,7 +2400,7 @@
 		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1)
 	..()
 
-/datum/reagent/medicine/dimorlin/addiction_act_stage2(mob/living/M)
+/datum/reagent/medicine/carfencadrizine/addiction_act_stage2(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.adjustToxLoss(1*REM, 0)
@@ -2412,7 +2412,7 @@
 		M.adjustOrganLoss(ORGAN_SLOT_HEART, 1)
 	..()
 
-/datum/reagent/medicine/dimorlin/addiction_act_stage3(mob/living/M)
+/datum/reagent/medicine/carfencadrizine/addiction_act_stage3(mob/living/M)
 	if(prob(50))
 		M.drop_all_held_items()
 		M.adjustToxLoss(1*REM, 0)
@@ -2424,7 +2424,7 @@
 		M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
 	..()
 
-/datum/reagent/medicine/dimorlin/addiction_act_stage4(mob/living/M)
+/datum/reagent/medicine/carfencadrizine/addiction_act_stage4(mob/living/M)
 	if(prob(60))
 		M.drop_all_held_items()
 		M.adjustToxLoss(1*REM, 0)
