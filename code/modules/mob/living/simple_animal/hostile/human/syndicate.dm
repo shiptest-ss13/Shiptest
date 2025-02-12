@@ -103,6 +103,7 @@
 
 	attack_verb_continuous = "smashes"
 	attack_verb_simple = "smash"
+	attack_sound = 'sound/weapons/genhit1.ogg'
 
 	light_color = COLOR_SOFT_RED
 	var/obj/effect/light_emitter/red_energy_sword/sord
@@ -161,6 +162,7 @@
 
 	attack_verb_continuous = "smashes"
 	attack_verb_simple = "smash"
+	attack_sound = 'sound/weapons/genhit1.ogg'
 
 	r_hand = /obj/item/melee/axe/sledgehammer/pre_wielded
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
@@ -201,6 +203,7 @@
 	rapid_melee = 2
 	attack_verb_continuous = "smashes"
 	attack_verb_simple = "smash"
+	attack_sound = 'sound/weapons/genhit1.ogg'
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge/AttackingTarget()
 	. = ..()
