@@ -14,12 +14,21 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	var/empty = FALSE
 
+
 /obj/item/storage/pouch/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.attack_hand_interact = TRUE
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 	STR.max_items = 2
 	STR.max_combined_w_class = 24
+
+/obj/item/storage/pouch/examine_more(mob/user)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR.can_hold_description)
+		. += span_notice("It can hold:")
+		. += STR.can_hold_description
 
 /obj/item/storage/pouch/medical
 	name = "IFAK pouch"
@@ -55,16 +64,6 @@
 		/obj/item/reagent_containers/hypospray/medipen,
 		/obj/item/reagent_containers/glass/bottle/vial
 		))
-
-/obj/item/storage/pouch/medical/examine_more(mob/user)
-	. = ..()
-	if(in_range(src, user) || isobserver(user))
-		. += "<span class='notice'>You examine [src] closer. It can hold: \
-		- Medical Gauze, Sutures, Bruise Packs, Meshes, and Ointments \
-		- Splints, Structural Reinforcements, Pill Bottles and Pills \
-		- Syringes, Medical Pens and Hypovials"
-	else
-		. += "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
 
 /obj/item/storage/pouch/medical/PopulateContents()
 	if(empty)
@@ -110,14 +109,6 @@
 		/obj/item/stock_parts/cell/gun
 		))
 
-/obj/item/storage/pouch/medical/examine_more(mob/user)
-	. = ..()
-	if(in_range(src, user) || isobserver(user))
-		. += "<span class='notice'>You examine [src] closer. It can hold: \
-		- Magazines, Loose Ammo, and Speedloaders"
-	else
-		. += "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
-
 /obj/item/storage/pouch/engi
 	name = "engineering pouch"
 	desc = "An orange pouch used to hold a small amount of tools or supplies, often used for emergency repair kits."
@@ -156,14 +147,6 @@
 		/obj/item/clothing/gloves
 		))
 
-/obj/item/storage/pouch/engi/examine_more(mob/user)
-	. = ..()
-	if(in_range(src, user) || isobserver(user))
-		. += "<span class='notice'>You examine [src] closer. It can hold: \
-		- Tools, Flashlights, Structural Supports, Spraycans and Gloves"
-	else
-		. += "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
-
 /obj/item/storage/pouch/engi/PopulateContents()
 	if(empty)
 		return
@@ -198,14 +181,6 @@
 		/obj/item/grenade
 		))
 
-/obj/item/storage/pouch/grenade/examine_more(mob/user)
-	. = ..()
-	if(in_range(src, user) || isobserver(user))
-		. += "<span class='notice'>You examine [src] closer. It can hold: \
-		- Handheld Grenades and C4"
-	else
-		. += "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
-
 /obj/item/storage/pouch/squad
 	name = "squad leader's pouch"
 	desc = "A light blue pouch used by squad leaders everywhere to hold command equipment."
@@ -238,18 +213,10 @@
 		/obj/item/paper_bin,
 		/obj/item/paper,
 		/obj/item/pen,
+		/obj/item/camera,
+		/obj/item/key/ship/shipkey,
 		/obj/item/geiger_counter,
 		/obj/item/toy/crayon/spraycan,
 		/obj/item/stack/marker_beacon,
 		/obj/item/reagent_containers/glass/rag
 		))
-
-/obj/item/storage/pouch/squad/examine_more(mob/user)
-	. = ..()
-	if(in_range(src, user) || isobserver(user))
-		. += "<span class='notice'>You examine [src] closer. It can hold: \
-		- Tablets, Radios, Megaphones, Signalers, Flashlights and Binoculars \
-		- Geiger Counters, Marker Beacons, and Spraycans \
-		- Paperwork Supplies"
-	else
-		. += "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
