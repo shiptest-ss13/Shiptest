@@ -238,7 +238,7 @@
 	name = "Inteq Hardsuit Crate"
 	desc = "A bulky Mothership-native design with a monocular viewport. The Inteq Hardsuit provides decent protection and combat manueverability for members of IRMG."
 	cost = 3000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent/inteq)
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/inteq)
 	crate_name = "inteq hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/inteq
