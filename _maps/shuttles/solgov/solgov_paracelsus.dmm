@@ -967,8 +967,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/security/glass/seclock{
-	name = "Sonnensoldner Chambers"
+/obj/machinery/door/airlock/security{
+	req_access_txt = "2";
+	name = "Sonnensoldner Armory"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -3686,7 +3687,6 @@
 /obj/item/clothing/under/solgov/formal/captain,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/gloves/combat,
-/obj/item/door_remote/captain,
 /obj/item/storage/belt/sabre/solgov,
 /obj/item/clothing/under/solgov,
 /obj/item/clothing/under/solgov/dress,
