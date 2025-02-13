@@ -85,7 +85,7 @@
 		shipkey.name = "ship key ([new_name])"
 	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
-	for(var/datum/weakref/stupid_fax in shuttle_port.fax_list)
+	for(var/datum/weakref/stupid_fax in shuttle_port?.fax_list)
 		var/obj/machinery/fax/our_fax = stupid_fax.resolve()
 		our_fax.fax_name = "[get_area_name(our_fax)] Fax Machine"
 	if(!force)
