@@ -681,6 +681,25 @@
 		I.unique_action(src)
 		update_inv_hands()
 
+/mob/verb/do_secondary_action()
+	set name = "Do Secondary Action"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		return
+
+	if(incapacitated())
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		if(I.pre_secondary_action(src))
+			update_inv_hands()
+			return
+		I.secondary_action(src)
+		update_inv_hands()
+
 /**
  * Get the notes of this mob
  *

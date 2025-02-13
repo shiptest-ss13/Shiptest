@@ -70,6 +70,17 @@
 	charge_sections = 2
 	slot_flags = 0
 
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+	)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
 /obj/item/gun/energy/disabler/e60
 	name = "E-60"
 	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
