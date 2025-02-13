@@ -21,6 +21,9 @@
 	if(!strafe && !occupant.client.keys_held["Alt"])
 		mechstep(direction) //agile mechs get to move and turn in the same step
 
+/obj/mecha/combat/gygax/set_up_unique_action()
+	mech_unique_action = overload_action
+
 /obj/mecha/combat/gygax/dark
 	desc = "A light combat exosuit manufactured by Cybersun Biodynamics. An exclusive variant of the 500 Series meant for use by Cybersun's own personnel and trusted parties, the 515 EX operates more efficiently in overload mode."
 	name = "\improper 515 EX Combat Exosuit"
@@ -55,6 +58,9 @@
 	charge_break_walls = TRUE
 	charge_toss_structures = TRUE
 	charge_toss_mobs = TRUE
+
+/obj/mecha/combat/gygax/charger/set_up_unique_action()
+	mech_unique_action = charge_action
 
 /obj/mecha/combat/gygax/charger/inteq
 	name = "\improper Basenji"
