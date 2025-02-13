@@ -579,6 +579,7 @@
 	overdose_threshold = 30
 	addiction_threshold = 20
 	metabolization_rate = 0.1
+	taste_description = "a distant earthiness"
 	var/vision_trait = TRAIT_NIGHT_VISION
 
 /datum/reagent/drug/stardrop/on_mob_metabolize(mob/living/L)
@@ -646,3 +647,4 @@
 	addiction_threshold = 11
 	metabolization_rate = 0.2
 	vision_trait = TRAIT_THERMAL_VISION
+	taste_description = "sulpheric sweetness"

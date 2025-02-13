@@ -295,7 +295,7 @@
 
 /datum/blackmarket_item/consumable/mammoth
 	name = "Mammoth Injector"
-	desc = "Found a bunch of kickass injectors hiding the corpse of a Cliquer. Don't ask bout how they became a corpse Iunno. Doesn't matter. These things boost your strength and keep you going way too damn long..."
+	desc = "Found a bunch of kickass injectors hiding under the corpse of a Cliquer. Don't ask bout how they became a corpse Iunno. Doesn't matter. These things boost your strength and keep you going way too damn long..."
 	item = /obj/item/reagent_containers/hypospray/medipen/mammoth
 	price_min = 500
 	price_max = 1000

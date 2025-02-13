@@ -55,6 +55,7 @@
 
 /datum/chemical_reaction/starlight
 	results = list(/datum/reagent/drug/stardrop/starlight = 1)
-	required_reagents = list(/datum/reagent/drug/stardrop = 1, /datum/reagent/phenol = 1)
+	required_reagents = list(/datum/reagent/drug/stardrop = 1, /datum/reagent/phenol = 1, /datum/reagent/sulfur = 1)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
 	mix_message = "The mixture concentrates into itself, taking on a deep coloration!"
+	required_temp = 150
