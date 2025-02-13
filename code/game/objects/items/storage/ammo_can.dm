@@ -40,16 +40,17 @@
 		"7.62x40mm CLIP" = "ammobox_762",
 		".44 Roumain" = "ammobox_44",
 		"8x50mmR" = "ammobox_850",
+		"8x58mm" = "ammobox_858",
 		".308" = "ammobox_308",
-		"12ga Slug" = "ammobox_slug",
 		"6.5mm CLIP" = "ammobox_65",
 		".300" = "ammobox_300",
 		".357" = "ammobox_357",
 		".299 Eoehoma" = "ammobox_299",
 		".45-70" = "ammobox_4570",
 		"Cell" = "ammobox_cell",
-		"PLT" = "ammobox_plt",
+		"Pellet" = "ammobox_plt",
 		".50BMG" = "ammobox_50",
+		"Slug" = "ammobox_slug",
 		"Lance" = "ammobox_lance",
 		"None" = "ammobox",
 		)
@@ -167,3 +168,9 @@
 	icon_state = "ammobox_12ga"
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/a12g_buckshot(src)
+
+/obj/item/storage/toolbox/ammo/shotgun/PopulateContents()
+	name = "ammo can (8x58mm)"
+	icon_state = "ammobox_858"
+	for (var/i in 1 to 4)
+		new /obj/item/storage/box/ammo/a858(src)
