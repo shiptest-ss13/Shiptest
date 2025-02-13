@@ -255,6 +255,7 @@
 	name = "Ramzi Clique Firestarter"
 	desc = "A deserter from the Gorlex Marauders turned pirate. Their finger twitches around the trigger of their combat shotgun."
 	casingtype = /obj/item/ammo_casing/shotgun/incendiary
+	rapid = 1
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/sniper
 	name = "Ramzi Clique Overwatch"
