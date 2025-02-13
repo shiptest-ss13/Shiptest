@@ -487,10 +487,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine/hull,
 /area/ship/storage/starboard)
-"eG" = (
-/obj/effect/landmark/start/assistant,
-/turf/template_noop,
-/area/template_noop)
 "eO" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-5"
@@ -504,10 +500,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
-"eT" = (
-/obj/effect/landmark/start/security_officer,
-/turf/template_noop,
-/area/template_noop)
 "eU" = (
 /obj/structure/bed/bunk{
 	dir = 4
@@ -737,10 +729,6 @@
 "hf" = (
 /turf/closed/wall,
 /area/ship/cargo)
-"hh" = (
-/obj/effect/landmark/start/head_of_personnel,
-/turf/template_noop,
-/area/template_noop)
 "hm" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
@@ -2091,10 +2079,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engine)
-"ui" = (
-/obj/effect/landmark/start/medical_doctor,
-/turf/template_noop,
-/area/template_noop)
 "un" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden,
 /obj/machinery/light/small/directional/south,
@@ -2954,10 +2938,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hangar/port)
-"AU" = (
-/obj/effect/landmark/start/captain,
-/turf/template_noop,
-/area/template_noop)
 "AV" = (
 /obj/structure/marker_beacon{
 	picked_color = "Yellow"
@@ -4712,10 +4692,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
-"OS" = (
-/obj/effect/landmark/start/shaft_miner,
-/turf/template_noop,
-/area/template_noop)
 "OX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5245,10 +5221,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
-"Td" = (
-/obj/effect/landmark/start/station_engineer,
-/turf/template_noop,
-/area/template_noop)
 "Tg" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -7800,9 +7772,9 @@ jH
 jH
 jH
 jH
-AU
-OS
-ui
+jH
+jH
+jH
 jH
 jH
 jH
@@ -7834,9 +7806,9 @@ jH
 jH
 jH
 jH
-hh
-OS
-eG
+jH
+jH
+jH
 jH
 jH
 jH
@@ -7868,9 +7840,9 @@ jH
 jH
 jH
 jH
-eT
-Td
-eG
+jH
+jH
+jH
 jH
 jH
 jH
@@ -7902,8 +7874,8 @@ jH
 jH
 jH
 jH
-eT
-Td
+jH
+jH
 jH
 jH
 jH
