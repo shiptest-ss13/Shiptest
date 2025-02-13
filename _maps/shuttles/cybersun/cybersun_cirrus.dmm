@@ -26,6 +26,9 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "ay" = (
@@ -96,6 +99,9 @@
 /obj/machinery/light/directional/west,
 /obj/machinery/holopad/emergency/medical{
 	pixel_x = 1
+	},
+/obj/structure/chair/handrail{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -1013,6 +1019,10 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
+/obj/item/hand_labeler{
+	pixel_x = 5;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "ig" = (
@@ -1238,6 +1248,9 @@
 	pixel_x = 7;
 	pixel_y = 6
 	},
+/obj/item/clothing/mask/gas/syndicate{
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
 "iR" = (
@@ -1328,6 +1341,9 @@
 /obj/item/clothing/head/helmet/medical{
 	pixel_x = 7;
 	pixel_y = 6
+	},
+/obj/item/clothing/mask/gas/syndicate{
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
@@ -1495,7 +1511,7 @@
 	color = "#E6D2BA"
 	},
 /obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag{
-	name = "PC-82 \"Himejoshi\"";
+	name = "PC-82 'Himejoshi'";
 	desc = "A limited production run of the \"Himehabu\" catered towards Cybersun Executives. It has an engraving of two women kissing each other across the handle."
 	},
 /obj/item/ammo_box/magazine/m22lr_himehabu,
@@ -1539,6 +1555,9 @@
 	},
 /obj/item/toy/plush/carpplushie{
 	pixel_y = 10
+	},
+/obj/structure/sign/poster/contraband/space_cube{
+	pixel_x = 30
 	},
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
@@ -1844,6 +1863,9 @@
 /area/ship/medical)
 "oV" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "pe" = (
@@ -1915,6 +1937,9 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
 "pr" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -2477,7 +2502,9 @@
 	dir = 9
 	},
 /obj/machinery/light/directional/east,
-/obj/structure/closet/crate/bin,
+/obj/structure/closet/crate/bin{
+	pixel_x = 4
+	},
 /obj/effect/spawner/random/trash,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/ccommons)
@@ -2529,6 +2556,9 @@
 	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
+	},
+/obj/structure/chair/handrail{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
@@ -2732,6 +2762,7 @@
 	dir = 9
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/aft)
 "AF" = (
@@ -2808,6 +2839,9 @@
 	},
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_x = 26
+	},
+/obj/structure/chair/handrail{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
@@ -3387,6 +3421,10 @@
 	pixel_x = -10;
 	pixel_y = 0
 	},
+/obj/item/hand_labeler{
+	pixel_x = 5;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "IU" = (
@@ -3541,6 +3579,9 @@
 	color = "#E6D2BA"
 	},
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed,
+/obj/item/clothing/mask/gas/syndicate{
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Kq" = (
@@ -3576,6 +3617,7 @@
 /obj/structure/closet/crate/freezer/blood,
 /obj/machinery/light/directional/east,
 /obj/machinery/iv_drip,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "KZ" = (
@@ -3745,9 +3787,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	id = "cbays"
-	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
 	id = "cbays"
@@ -3862,6 +3901,18 @@
 	name = "technican's locker";
 	req_access_txt = "11";
 	icon_state = "cargo_wall"
+	},
+/obj/item/storage/backpack/industrial{
+	pixel_y = 5;
+	pixel_x = 7
+	},
+/obj/item/clothing/suit/hazardvest{
+	pixel_y = 5;
+	pixel_x = 7
+	},
+/obj/item/clothing/under/syndicate/gec{
+	pixel_x = -12;
+	pixel_y = -9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
@@ -4585,6 +4636,7 @@
 /obj/item/healthanalyzer{
 	pixel_y = 4
 	},
+/obj/item/megaphone/command,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Ub" = (
