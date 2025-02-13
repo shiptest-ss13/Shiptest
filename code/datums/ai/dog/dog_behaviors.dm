@@ -120,7 +120,7 @@
 
 	if(isturf(snack.loc))
 		snack.attack_animal(living_pawn) // snack attack!
-	else if(iscarbon(snack.loc) && DT_PROB(10, delta_time))
+	else if(iscarbon(snack.loc) && SPT_PROB(10, delta_time))
 		living_pawn.manual_emote("stares at [snack.loc]'s [snack.name] with a sad puppy-face.")
 
 	if(QDELETED(snack)) // we ate it!
@@ -145,7 +145,7 @@
 			simple_pawn.transform = simple_pawn.transform.Turn(180)
 		simple_pawn.density = FALSE
 
-	if(DT_PROB(10, delta_time))
+	if(SPT_PROB(10, delta_time))
 		finish_action(controller, TRUE)
 
 /datum/ai_behavior/play_dead/finish_action(datum/ai_controller/controller, succeeded)
@@ -189,7 +189,7 @@
 	// subtypes of this behavior can change behavior for how eager/averse the pawn is to attack the target as opposed to falling back/making noise/getting help
 	if(in_range(living_pawn, living_target))
 		attack(controller, living_target)
-	else if(DT_PROB(50, delta_time))
+	else if(SPT_PROB(50, delta_time))
 		living_pawn.manual_emote("[pick("barks", "growls", "stares")] menacingly at [harass_target]!")
 
 /datum/ai_behavior/harass/finish_action(datum/ai_controller/controller, succeeded)

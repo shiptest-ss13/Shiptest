@@ -163,7 +163,7 @@
 	return
 
 //We use SSfastprocess for the program icon state because it runs faster than process_tick() does.
-/datum/computer_file/program/radar/process()
+/datum/computer_file/program/radar/process(delta_time)
 	if(computer.active_program != src)
 		STOP_PROCESSING(SSfastprocess, src) //We're not the active program, it's time to stop.
 		return

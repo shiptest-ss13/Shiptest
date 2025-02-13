@@ -184,7 +184,7 @@
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
-/obj/effect/brimbeam/process()
+/obj/effect/brimbeam/process(delta_time)
 	for(var/mob/living/hit_mob in get_turf(src))
 		damage(hit_mob)
 

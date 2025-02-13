@@ -6,7 +6,7 @@
 	pulse_delay = 10 SECONDS
 	core = /obj/item/assembly/signaler/anomaly/melter
 
-/obj/effect/anomaly/melter/anomalyEffect(seconds_per_tick)
+/obj/effect/anomaly/melter/anomalyEffect(delta_time)
 	..()
 
 

@@ -38,7 +38,7 @@
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
-	var/grace = RAD_GRACE_PERIOD
+	var/grace = RAD_GEIGER_GRACE_PERIOD
 	var/radiation_count = 0
 	var/current_tick_amount = 0
 	var/last_tick_amount = 0
@@ -212,7 +212,7 @@
 	radiation_count += current_tick_amount/RAD_MEASURE_SMOOTHING
 
 	if(current_tick_amount)
-		grace = RAD_GRACE_PERIOD
+		grace = RAD_GEIGER_GRACE_PERIOD
 		last_tick_amount = current_tick_amount
 	else
 		grace--

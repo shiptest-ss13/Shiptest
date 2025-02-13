@@ -39,7 +39,7 @@
 	add_fingerprint(M)
 	if(on)
 		START_PROCESSING(SSmachines, src)
-		process()
+		process(SSMACHINES_DT)
 		soundloop.start()
 	else
 		soundloop.stop()
@@ -115,7 +115,7 @@
 		var/mob/living/carbon/C = A
 		C.mothdust -= 10;
 
-/obj/machinery/shower/process()
+/obj/machinery/shower/process(delta_time)
 	if(on)
 		wash_atom(loc)
 		for(var/am in loc)

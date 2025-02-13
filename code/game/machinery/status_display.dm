@@ -71,7 +71,7 @@
 		index2 = 0
 
 // Timed process - performs default marquee action if so needed.
-/obj/machinery/status_display/process()
+/obj/machinery/status_display/process(delta_time)
 	if(machine_stat & NOPOWER)
 		// No power, no processing.
 		remove_display()
@@ -100,7 +100,7 @@
 
 /// Update the display and, if necessary, re-enable processing.
 /obj/machinery/status_display/proc/update()
-	if (process() != PROCESS_KILL)
+	if (process(SSMACHINES_DT) != PROCESS_KILL)
 		START_PROCESSING(SSmachines, src)
 
 /obj/machinery/status_display/power_change()
@@ -168,7 +168,7 @@
 	SSradio.remove_object(src,frequency)
 	return ..()
 
-/obj/machinery/status_display/evac/process()
+/obj/machinery/status_display/evac/process(delta_time)
 	if(machine_stat & NOPOWER)
 		// No power, no processing.
 		remove_display()
@@ -216,7 +216,7 @@
 	name = "shuttle display"
 	var/shuttle
 
-/obj/machinery/status_display/shuttle/process()
+/obj/machinery/status_display/shuttle/process(delta_time)
 	if(!shuttle || (machine_stat & NOPOWER))
 		// No power, no processing.
 		remove_display()
@@ -269,7 +269,7 @@
 	if(isAI(user))
 		user.ai_statuschange()
 
-/obj/machinery/status_display/ai/process()
+/obj/machinery/status_display/ai/process(delta_time)
 	if(mode == SD_BLANK || (machine_stat & NOPOWER))
 		remove_display()
 		return PROCESS_KILL
