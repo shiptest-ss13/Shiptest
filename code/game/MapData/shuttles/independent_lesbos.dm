@@ -5,8 +5,8 @@
 
 /obj/item/paper/pamphlet/lesbos/subshuttle
 	name = "AUXILIARY CRAFT PRE-FLIGHT SAFETY"
-	default_raw_text = 
+	default_raw_text = "PLACEHOLDER"
 
 /obj/item/paper/pamphlet/lesbos/comms
 	name = "COMMUNICATIONS, COORDINATION, AND CONTROL"
-	default_raw_text = 
+	default_raw_text = "PLACEHOLDER"
