@@ -312,6 +312,7 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
 	name = "Ramzi Clique Boiler"
 	desc = "A deserter from the Gorlex Marauders turned pirate. The hateful eyes of a hardsuit stare down the sight of a Bulldog shotgun, elegance in its movements."
+	rapid = 1
 	casingtype = /obj/item/ammo_casing/shotgun/incendiary
 
 /* ranged stormtroopers */
@@ -356,6 +357,8 @@
 	name = "Ramzi Clique Incinerator"
 	desc = "Crimson and darkness fill the mold of an armored commando, eyes rapidly switching targets as it strides. Its combat shotgun is raised, ready to let loose a roar that shall not be forgotten."
 	casingtype = /obj/item/ammo_casing/shotgun/dragonsbreath
+	rapid = 2
+	rapid_fire_delay = 7
 
 ///////////////Misc////////////
 
