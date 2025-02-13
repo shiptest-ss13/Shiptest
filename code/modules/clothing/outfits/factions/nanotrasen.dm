@@ -476,6 +476,8 @@
 /datum/outfit/job/nanotrasen/pilot
 	name = "Nanotrasen - Pilot"
 	id_assignment = "Pilot"
+	jobtype = /datum/job/head_of_personnel
+
 
 	uniform = /obj/item/clothing/under/rank/security/officer/military
 	suit = /obj/item/clothing/suit/jacket/leather/duster

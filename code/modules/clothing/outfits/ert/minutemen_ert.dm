@@ -110,6 +110,7 @@
 
 /datum/outfit/job/clip/minutemen/military_police
 	name = "ERT - C-MM Military Police"
+	jobtype = /datum/job/officer
 	id_assignment = "Military Police"
 	job_icon = "clip_cmm3"
 
