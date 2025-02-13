@@ -68,8 +68,11 @@
 	///How much stamina damage is subtracted per tile?
 	var/tile_dropoff_stamina = 1.5 //As above
 
+	var/ap_dropoff = 10
+	var/ap_dropoff_cutoff = -35
+
 	icon_state = "pellet"
-	armour_penetration = -35
+	armour_penetration = 0
 	speed = BULLET_SPEED_SHOTGUN
 	bullet_identifier = "pellet"
 
@@ -82,7 +85,7 @@
 	damage = 2.5
 	tile_dropoff = 0.15
 	stamina = 15
-	armour_penetration = -70
+	armour_penetration = -35
 	bullet_identifier = "rubber pellet"
 
 /obj/projectile/bullet/pellet/rubbershot/incapacitate
@@ -98,7 +101,9 @@
 		damage -= tile_dropoff
 	if(stamina > 0)
 		stamina -= tile_dropoff_stamina
-	if(damage < 0 && stamina < 0)
+	if(armour_penetration > ap_dropoff_cutoff)
+		armour_penetration -= ap_dropoff
+	if(damage <= 0 && stamina <= 0)
 		qdel(src)
 
 /obj/projectile/bullet/pellet/improvised
