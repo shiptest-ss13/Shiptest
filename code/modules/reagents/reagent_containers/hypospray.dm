@@ -325,6 +325,23 @@
 	base_icon_state = "morphen"
 	item_state = "morphen"
 
+/obj/item/reagent_containers/hypospray/medipen/badstop
+	name = "Stabilizer injector"
+	desc = "A 2-use injector filled with a mix of medical agents, designed to stabilize someone for immediate extraction."
+	list_reagents = list(/datum/reagent/medicine/chitosan = 5, /datum/reagent/medicine/morphine = 10, /datum/reagent/medicine/psicodine = 5, /datum/reagent/medicine/atropine = 10)
+	volume = 30
+	amount_per_transfer_from_this = 15
+	icon_state = "tbpen"
+	item_state = "tbpen"
+	base_icon_state = "tbpen"
+
+/obj/item/reagent_containers/hypospray/medipen/badstop/update_icon_state()
+	. = ..()
+	if(reagents.total_volume > 30)
+		icon_state = base_icon_state
+		return
+	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? 1 : 0]"
+
 /obj/item/reagent_containers/hypospray/medipen/combat_drug
 	name = "combat cocktail"
 	desc = "An injector filled with a potent combat drug mixture. Straight from the Shoal."
