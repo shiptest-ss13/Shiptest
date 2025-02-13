@@ -475,6 +475,30 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/engine_one)
+"eA" = (
+/obj/structure/table/chem,
+/obj/item/stock_parts/scanning_module{
+	pixel_x = -10;
+	pixel_y = 11
+	},
+/obj/item/stock_parts/scanning_module{
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/obj/item/stock_parts/micro_laser{
+	pixel_x = 1;
+	pixel_y = 8
+	},
+/obj/item/stock_parts/capacitor{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimulants{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/rockplanet/rust_base/engine_two)
 "eD" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable{
@@ -577,6 +601,17 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
+"gg" = (
+/obj/machinery/atmospherics/pipe/simple{
+	dir = 4
+	},
+/obj/structure/table/chem,
+/obj/item/flamethrower/full{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/rust_base/engine_two)
 "gh" = (
 /obj/structure/chair/handrail,
 /turf/open/floor/plating/rust,
@@ -698,6 +733,21 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
+"hR" = (
+/obj/machinery/atmospherics/pipe/simple{
+	dir = 4
+	},
+/obj/structure/table/chem,
+/obj/item/reagent_containers/glass/beaker/large/napalm{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/glass/beaker/large/napalm{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/rust_base/engine_two)
 "hW" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/broken_bottle{
@@ -827,6 +877,9 @@
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base/mechbay)
+"iQ" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/rockplanet/rust_base/armory)
 "iW" = (
 /obj/effect/turf_decal/weather/dirt/corner,
 /obj/effect/turf_decal/weather/dirt/corner{
@@ -883,6 +936,10 @@
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base/mechbay)
+"jq" = (
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/rust_base/hallway)
 "jw" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -980,6 +1037,21 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/bridge)
+"ki" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
+/obj/structure/sign/poster/contraband/c20r{
+	pixel_x = 31;
+	pixel_y = 0
+	},
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/rust_base/hallway)
 "kl" = (
 /obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
 	dir = 6
@@ -1046,6 +1118,10 @@
 "kH" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/rockplanet/rust_base/hallway2)
+"kM" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/ruin/rockplanet/rust_base)
 "kT" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/weather/dirt{
@@ -1205,10 +1281,6 @@
 "mz" = (
 /obj/machinery/light/directional/west,
 /obj/machinery/vending/cola/sodie,
-/obj/machinery/door/poddoor/preopen{
-	dir = 4;
-	id = "rustmech"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway)
 "mA" = (
@@ -1319,7 +1391,7 @@
 	id = "rustguns";
 	pixel_y = 0
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/mechbay)
 "nq" = (
 /obj/machinery/light/floor/hangar,
@@ -1424,6 +1496,9 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
 /obj/item/radio/intercom/directional/east,
+/obj/structure/chair{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
 "nW" = (
@@ -1501,7 +1576,7 @@
 	id = "rustguns";
 	pixel_y = 0
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/mechbay)
 "oW" = (
 /obj/structure/cable{
@@ -1764,7 +1839,7 @@
 "ru" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/hatch,
-/turf/open/floor/plating/rust/rockplanet/lit,
+/turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base)
 "rx" = (
 /obj/structure/cable{
@@ -2187,8 +2262,18 @@
 /obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway)
+"wj" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/rust_base)
 "wn" = (
 /obj/machinery/light/directional/north,
+/obj/structure/table/chem,
+/obj/structure/sink/chem,
+/obj/item/weldingtool/largetank{
+	pixel_x = -11;
+	pixel_y = 0
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/engine_two)
 "ws" = (
@@ -2204,6 +2289,19 @@
 /obj/machinery/button/door{
 	pixel_y = 21;
 	id = "rustenginetwo"
+	},
+/obj/structure/table/chem,
+/obj/item/stack/rods/ten{
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/obj/item/pipe{
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/obj/item/wrench{
+	pixel_x = -6;
+	pixel_y = -1
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/engine_two)
@@ -2283,7 +2381,7 @@
 	id = "rustguns";
 	pixel_y = 0
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/armory)
 "xq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2648,6 +2746,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
+"Bg" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/rockplanet/rust_base/hallway)
 "Bh" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2761,6 +2862,9 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/hallway)
+"Cd" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/rockplanet/rust_base/mechbay)
 "Cf" = (
 /obj/item/reagent_containers/glass/bucket{
 	pixel_y = 14;
@@ -3224,7 +3328,7 @@
 	id = "rustguns";
 	pixel_y = 0
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/armory)
 "Gg" = (
 /obj/structure/cable{
@@ -3304,6 +3408,10 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
+"GQ" = (
+/obj/structure/closet/firecloset,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/rust_base/hallway)
 "GY" = (
 /obj/structure/rack,
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot{
@@ -3364,6 +3472,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/rockplanet/rust_base/hallway)
 "Hp" = (
+/obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/rockplanet/rust_base/armory)
 "Hu" = (
@@ -3437,6 +3546,7 @@
 "Ij" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/west,
+/obj/structure/chair/bench/red/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway)
 "Im" = (
@@ -3559,6 +3669,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/mechbay)
+"JF" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/rockplanet/rust_base/bridge)
 "JG" = (
 /obj/structure/rack,
 /obj/item/storage/box/ammo/a12g_buckshot,
@@ -3784,6 +3897,12 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/dorms)
+"Mq" = (
+/obj/structure/chair/plastic{
+	dir = 1
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/rockplanet/rust_base/engine_two)
 "Mr" = (
 /obj/machinery/light/directional/north,
 /turf/open/floor/carpet/red,
@@ -3820,7 +3939,7 @@
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space{
 	retreat_distance = 0;
 	minimum_distance = 0;
-	shoot_point_blank = true
+	shoot_point_blank = 1
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -4193,6 +4312,10 @@
 /mob/living/simple_animal/hostile/human/syndicate/ranged/smg,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway)
+"PR" = (
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/ruin/rockplanet/rust_base)
 "PV" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
@@ -4441,6 +4564,10 @@
 	dir = 4
 	},
 /area/ruin/rockplanet/rust_base/armory)
+"ST" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/ruin/rockplanet/rust_base)
 "SV" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -4564,6 +4691,17 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
+"Up" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 4
+	},
+/obj/structure/flora/ash/garden/arid,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/rust_base)
+"Uq" = (
+/obj/structure/chair/bench/red/directional/east,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/rust_base/hallway)
 "Uu" = (
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/rust_base)
@@ -4671,10 +4809,14 @@
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space{
 	retreat_distance = 0;
 	minimum_distance = 0;
-	shoot_point_blank = true
+	shoot_point_blank = 1
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/rust_base/armory)
+"VK" = (
+/obj/structure/flora/ash/garden/arid,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/rust_base)
 "VM" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -4930,7 +5072,7 @@
 	name = "Kaiser "Shy" Dan"
 	},
 /obj/effect/decal/cleanable/food/salt,
-/turf/open/floor/plating/rust/rockplanet/lit,
+/turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base)
 "XA" = (
 /obj/machinery/airalarm/directional/north,
@@ -5171,7 +5313,7 @@ MN
 CN
 nZ
 sW
-aN
+VK
 aN
 aN
 aN
@@ -5261,7 +5403,7 @@ aN
 aN
 aN
 aN
-aN
+VK
 aN
 aN
 aN
@@ -5400,7 +5542,7 @@ aN
 aN
 aN
 aN
-aN
+VK
 aN
 aN
 aN
@@ -5539,7 +5681,7 @@ QE
 (11,1,1) = {"
 aN
 aN
-aN
+wj
 aN
 NT
 WV
@@ -5560,8 +5702,8 @@ uB
 Jw
 aN
 aN
-aN
-sM
+dD
+Zf
 fj
 Xb
 Xb
@@ -5647,8 +5789,8 @@ aL
 aN
 aN
 fj
-zX
-zX
+gg
+hR
 zX
 MA
 fj
@@ -5675,7 +5817,7 @@ hY
 ey
 tE
 aN
-qj
+Bg
 po
 Hm
 qj
@@ -5686,11 +5828,11 @@ Lj
 qj
 tc
 qj
-qj
+Bg
 aN
 fj
 wu
-BO
+Mq
 Nb
 BO
 fj
@@ -5773,7 +5915,7 @@ mV
 aL
 aN
 fj
-BO
+eA
 zg
 Mw
 tG
@@ -5853,9 +5995,9 @@ Ii
 BE
 ND
 zt
-ND
-ND
-ND
+Uq
+os
+GQ
 Fc
 nH
 pW
@@ -5911,16 +6053,16 @@ aN
 aN
 aN
 aN
-aN
+dD
 aN
 "}
 (20,1,1) = {"
 aN
 aN
-aN
+dD
 aN
 Qg
-Df
+tE
 Df
 AZ
 qt
@@ -5934,7 +6076,7 @@ nS
 Ye
 KL
 Sg
-KL
+ki
 tO
 ir
 dE
@@ -5945,7 +6087,7 @@ RR
 ca
 Vc
 Fc
-Fc
+fj
 Qg
 aN
 aN
@@ -5996,7 +6138,7 @@ aN
 aN
 aN
 aN
-aN
+VK
 "}
 (22,1,1) = {"
 aN
@@ -6116,10 +6258,10 @@ Qg
 Qg
 aN
 aN
-aN
-aN
-aN
-aN
+EC
+nZ
+nZ
+sW
 aN
 aN
 QE
@@ -6158,10 +6300,10 @@ Qg
 Qg
 aN
 aN
-aN
-aN
-aN
-aN
+NT
+MN
+PR
+xl
 aN
 aN
 QE
@@ -6200,10 +6342,10 @@ Qg
 aN
 Rr
 aN
-aN
-aN
-aN
-aN
+NT
+MN
+ze
+DU
 aN
 QE
 QE
@@ -6231,7 +6373,7 @@ qu
 yK
 AF
 qx
-Or
+jq
 zH
 xM
 PM
@@ -6242,9 +6384,9 @@ Qg
 aN
 aN
 aN
-aN
-aN
-aN
+Zf
+NG
+DU
 aN
 aN
 QE
@@ -6379,7 +6521,7 @@ QE
 (31,1,1) = {"
 aN
 aN
-aN
+VK
 aN
 aN
 rn
@@ -6770,12 +6912,12 @@ Pl
 rn
 aN
 Bs
-Bs
+JF
 YK
 Vh
 qe
 cF
-Bs
+JF
 Bs
 aN
 MP
@@ -7008,7 +7150,7 @@ aN
 "}
 (46,1,1) = {"
 aN
-aN
+VK
 aN
 aN
 aN
@@ -7084,7 +7226,7 @@ nZ
 sW
 aN
 aN
-aN
+VK
 aN
 aN
 aN
@@ -7095,14 +7237,14 @@ aN
 aN
 aN
 NT
-MN
+ST
 Gf
-rn
+iQ
 CP
 qN
 JL
 Ss
-rn
+iQ
 xp
 xl
 aN
@@ -7115,12 +7257,12 @@ xl
 NT
 MN
 oU
-MP
+Cd
 oL
 UG
 MG
 CK
-MP
+Cd
 no
 MN
 xl
@@ -7134,7 +7276,7 @@ aN
 "}
 (49,1,1) = {"
 aN
-aN
+dD
 aN
 NT
 MN
@@ -7171,7 +7313,7 @@ aN
 aN
 aN
 aN
-aN
+VK
 aN
 "}
 (50,1,1) = {"
@@ -7264,7 +7406,7 @@ Uu
 Uu
 Uu
 xl
-Zf
+Up
 hP
 MN
 MN
@@ -7322,7 +7464,7 @@ NG
 NG
 NG
 DU
-aN
+VK
 aN
 rH
 iW
@@ -7410,7 +7552,7 @@ wv
 GM
 NT
 MN
-MN
+PR
 MN
 ze
 TA
@@ -7428,20 +7570,20 @@ aN
 "}
 (56,1,1) = {"
 aN
+wj
 aN
 aN
 aN
 aN
 aN
 aN
-aN
-aN
+VK
 aN
 EC
 jK
 MN
 MN
-MN
+kM
 MN
 MN
 MN
@@ -7485,7 +7627,7 @@ MN
 Wc
 MN
 Wc
-FE
+MN
 MN
 Wc
 MN
@@ -7743,7 +7885,7 @@ aN
 aN
 aN
 aN
-aN
+dD
 aN
 aN
 aN
