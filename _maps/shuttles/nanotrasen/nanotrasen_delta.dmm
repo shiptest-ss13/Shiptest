@@ -2242,6 +2242,14 @@
 	dir = 8;
 	pixel_x = 12
 	},
+/obj/machinery/button/door{
+	id = "delta_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	pixel_y = 20;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/hallway/port)
 "Dq" = (
@@ -2429,7 +2437,8 @@
 /area/ship/cargo)
 "Jf" = (
 /obj/machinery/door/airlock{
-	name = "Restroom"
+	name = "Restroom";
+	id_tag = "delta_bathroom"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
