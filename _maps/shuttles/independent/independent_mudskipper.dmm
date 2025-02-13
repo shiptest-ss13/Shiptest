@@ -1414,8 +1414,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
 "Ft" = (
-/obj/structure/bed,
-/obj/effect/spawner/random/bedsheet,
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /obj/structure/curtain/bounty,
 /obj/machinery/light_switch{
 	dir = 1;
@@ -2110,8 +2114,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Vy" = (
-/obj/structure/bed,
-/obj/effect/spawner/random/bedsheet,
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /obj/structure/curtain/bounty,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/north,
