@@ -142,12 +142,6 @@
 		return ..()
 	return 0
 
-//the forever on energy sword is the best i've got so far.
-/obj/item/melee/energy/sword/active
-	icon_state = "swordred"
-	sword_color = "red"
-	base_icon_state = "sword"
-
 /obj/item/melee/energy/sword/cyborg
 	sword_color = "red"
 	var/hitcost = 50

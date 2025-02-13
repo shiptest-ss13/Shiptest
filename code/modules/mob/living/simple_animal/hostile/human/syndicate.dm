@@ -251,12 +251,17 @@
 	r_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog
 	shoot_point_blank = TRUE
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/incendiary
+	name = "Ramzi Clique Firestarter"
+	desc = "A deserter from the Gorlex Marauders turned pirate. Their finger twitches around the trigger of their combat shotgun."
+	casingtype = /obj/item/ammo_casing/shotgun/incendiary
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/sniper
 	name = "Ramzi Clique Overwatch"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They keep their eyes to the horizon, always ready to pull the trigger."
 	minimum_distance = 7
 	vision_range = 12
-	aggro_vision_range = 12
+	aggro_vision_range = 14
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/a65clip
@@ -301,8 +306,13 @@
 	rapid = 2
 	rapid_fire_delay = 6
 	retreat_distance = 2
-	minimum_distance = 4
+	minimum_distance = 2
 	shoot_point_blank = TRUE
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
+	name = "Ramzi Clique Boiler"
+	desc = "A deserter from the Gorlex Marauders turned pirate. The hateful eyes of a hardsuit stare down the sight of a Bulldog shotgun, elegance in its movements."
+	casingtype = /obj/item/ammo_casing/shotgun/incendiary
 
 /* ranged stormtroopers */
 
@@ -328,7 +338,6 @@
 	rapid_fire_delay = 1.5
 	casingtype = /obj/item/ammo_casing/c57x39mm
 
-
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun
 	name = "Ramzi Clique Executioner"
 	desc = "Ink and black glass poured into the shape of an armored commando, dripping menace with every step. Their combat shotgun follows you with lethal intent, promising a blizzard of buckshot in less than a blink."
@@ -340,8 +349,13 @@
 	rapid = 3
 	rapid_fire_delay = 5
 	retreat_distance = 2
-	minimum_distance = 4
+	minimum_distance = 2
 	shoot_point_blank = TRUE
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun/incendiary
+	name = "Ramzi Clique Incinerator"
+	desc = "Crimson and darkness fill the mold of an armored commando, eyes rapidly switching targets as it strides. Its combat shotgun is raised, ready to let loose a roar that shall not be forgotten."
+	casingtype = /obj/item/ammo_casing/shotgun/dragonsbreath
 
 ///////////////Misc////////////
 
