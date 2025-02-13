@@ -29,6 +29,7 @@
 	projectilesound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg
+	name = "\improper Vigilitas Watch"
 	desc = "A member of Vigilitas Interstellar, their eyes scan the horizon for motion, tracking flutters of the world with a WT-550."
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
@@ -38,7 +39,7 @@
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/shotgun
-	name = "Vigilitas Pointman"
+	name = "\improper Vigilitas Pointman"
 	desc = "A member of Vigilitas Interstellar, posture low to the ground. Their palms tightly grip onto the body of an HP Hellfire, ready to slam-fire."
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
@@ -48,6 +49,7 @@
 	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/laser
+	name = "\improper Vigilitas Defender"
 	desc = "A member of Vigilitas Interstellar, their hands are locked around a laser rifle, actively aiming it at potential threats."
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
@@ -70,6 +72,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_trooper
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/smg
+	name = "Vigilitas SMG Trooper"
 	desc = "A member of Vigilitas Interstellar. Eyes track motion as they saunter confidently, energy SMG at alert."
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
@@ -80,13 +83,13 @@
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/rifle
+	name = "\improper Vigilitas Rifleman"
 	desc = "A well-armed member of Vigilitas Interstellar. They stand at the ready with a Hades energy rifle, smirking underneath their gas mask."
 	rapid = 4
 	rapid_fire_delay = 4
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	r_hand = /obj/item/gun/energy/e_gun/hades
 	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
-
 
 /* the elite guy */
 
