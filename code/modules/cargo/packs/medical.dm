@@ -277,6 +277,15 @@
 	)
 	crate_name = "atropine vial crate"
 
+/datum/supply_pack/medical/vials/stas_vial
+	name = "Stasis Vial Crate"
+	desc = "Contains a spare stasis vial, for usage in a Hypospray."
+	cost = 800
+	contains = list(
+		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis,
+	)
+	crate_name = "stasis vial crate"
+
 /datum/supply_pack/medical/vials/erp_vial
 	name = "Radiation Purgant Vial Crate"
 	desc = "Contains 2 spare radiation purgant vials, for usage in a Hypospray."

@@ -138,6 +138,7 @@
 // Grouped effect sources, see also code/__DEFINES/traits.dm
 
 #define STASIS_MACHINE_EFFECT "stasis_machine"
+#define STASIS_DRUG_EFFECT "stasis_drug"
 
 // Stasis helpers
 
