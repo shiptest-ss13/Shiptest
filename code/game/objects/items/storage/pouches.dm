@@ -34,8 +34,6 @@
 	name = "aid pouch"
 	desc = "An individual first aid kit, for use preventing and treating battlefield injuries."
 	icon_state = "pouch_medical"
-	slot_flags = ITEM_SLOT_POCKETS
-	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/pouch/medical/ComponentInitialize()
 	. = ..()
@@ -72,8 +70,6 @@
 	name = "ammunition pouch"
 	desc = "An ammunition pouch, commonly used by soldiers to hold additional ammo in an accessible location."
 	icon_state = "pouch_ammo"
-	slot_flags = ITEM_SLOT_POCKETS
-	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/pouch/ammo/ComponentInitialize()
 	. = ..()
@@ -99,8 +95,6 @@
 	name = "technician pouch"
 	desc = "An orange pouch used to hold a small amount of tools or supplies, often used for emergency repair kits."
 	icon_state = "pouch_engi"
-	slot_flags = ITEM_SLOT_POCKETS
-	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/pouch/engi/ComponentInitialize()
 	. = ..()
@@ -140,8 +134,6 @@
 	name = "grenade pouch"
 	desc = "A row of small pouches intended for holding explosives safely, primarily grenades."
 	icon_state = "pouch_grenade"
-	slot_flags = ITEM_SLOT_POCKETS
-	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/pouch/grenade/ComponentInitialize()
 	. = ..()
@@ -157,8 +149,6 @@
 	name = "command pouch"
 	desc = "A light blue pouch used by squad leaders everywhere to hold command equipment."
 	icon_state = "pouch_squad"
-	slot_flags = ITEM_SLOT_POCKETS
-	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/pouch/squad/ComponentInitialize()
 	. = ..()
