@@ -88,7 +88,8 @@
 					/obj/item/reagent_containers/condiment/hotsauce,
 					/obj/item/reagent_containers/food/drinks/bottle/cream,
 					/obj/item/reagent_containers/condiment/mayonnaise,
-					/obj/item/reagent_containers/condiment/bbqsauce)
+					/obj/item/reagent_containers/condiment/bbqsauce,
+					/obj/item/reagent_containers/condiment/soysauce)
 	crate_name = "condiments crate"
 	crate_type = /obj/structure/closet/crate/freezer
 

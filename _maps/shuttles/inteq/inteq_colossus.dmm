@@ -1141,7 +1141,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
 /obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -1300,7 +1300,7 @@
 /obj/structure/sign/poster/contraband/twelve_gauge{
 	pixel_x = 32
 	},
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
 /obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -1996,7 +1996,8 @@
 /area/ship/crew/office)
 "vc" = (
 /obj/machinery/door/airlock{
-	name = "Head"
+	name = "Head";
+	id_tag = "sus_bathroom"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2569,7 +2570,7 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/west,
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
 /obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -2725,7 +2726,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
 /obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -3247,7 +3248,7 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
 /obj/item/tank/jetpack/oxygen,
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/yellow{
@@ -4296,6 +4297,15 @@
 /obj/structure/mirror{
 	pixel_y = -32
 	},
+/obj/machinery/button/door{
+	id = "sus_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "Um" = (
@@ -4407,7 +4417,7 @@
 /area/ship/cargo)
 "Wi" = (
 /obj/structure/rack,
-/obj/item/target/clown{
+/obj/item/target{
 	pixel_x = -5;
 	pixel_y = 10
 	},

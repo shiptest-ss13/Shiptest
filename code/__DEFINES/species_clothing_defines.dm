@@ -27,6 +27,9 @@
 #define VOX_GLOVES_PATH 'icons/mob/species/vox/onmob_hands_vox.dmi'
 #define VOX_GLASSES_PATH 'icons/mob/species/vox/onmob_eyes_vox.dmi'
 #define VOX_BELT_PATH 'icons/mob/species/vox/onmob_belt_vox.dmi'
+#define VOX_UNDERWEAR_TORSO_PATH 'icons/mob/clothing/underwear/species/vox/underwear_torso_vox.dmi'
+#define VOX_UNDERWEAR_LEGS_PATH 'icons/mob/clothing/underwear/species/vox/underwear_legs_vox.dmi'
+#define VOX_UNDERWEAR_SOCKS_PATH 'icons/mob/clothing/underwear/species/vox/underwear_socks_vox.dmi'
 
 ///KEPORI PATHS
 #define KEPORI_UNIFORM_PATH 'icons/mob/species/kepori/onmob_uniform_kepori.dmi'
