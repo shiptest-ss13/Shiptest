@@ -466,9 +466,11 @@
 	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
 	owner.add_overlay(overcharge)
 	owner.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/equipment_speedmod)
+	owner.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/gun)
 
 /datum/status_effect/armor_assist/on_remove()
 	. = ..()
 	owner.cut_overlay(overcharge)
 	owner.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/equipment_speedmod)
+	owner.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/gun)
 

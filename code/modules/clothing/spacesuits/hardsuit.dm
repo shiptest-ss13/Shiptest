@@ -338,9 +338,9 @@
 	var/full_retraction = FALSE //whether or not our full face is revealed or not during combat mode
 	var/helmet_light_on = FALSE
 
+	var/windup = 0
 	var/recharge_duration = 300
 	var/next_use = 0
-	var/last_use = 0
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/update_icon_state()
 	icon_state = "hardsuit[on]-[hardsuit_type]"
@@ -356,10 +356,15 @@
 	set_light_on(helmet_light_on)
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/armor_assist(mob/living/carbon/human/user)
-	//playsound(src.loc, 'sound/effects/armorassist.ogg', 50)
+	if(windup > 0)
+		to_chat(user,span_notice("The motors in your suit begin to groan to life..."))
+		playsound(user, 'sound/machines/creaking.ogg',50)
+		if(!do_after(user,windup))
+			return
 	SEND_SOUND(user, sound('sound/mecha/nominal.ogg',volume=50))
 	user.apply_status_effect(/datum/status_effect/armor_assist)
-	to_chat(user, span_notice("Your helmet automatically engages."))
+	if(!on)
+		to_chat(user, span_notice("Your helmet automatically engages as the armor assist activates."))
 	toggle_mode(user,TRUE)
 	next_use = world.time + recharge_duration
 
@@ -455,6 +460,7 @@
 	item_state = "hardsuit1-ramzi"
 	hardsuit_type = "ramzi"
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	windup = 30
 
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	name = "rust-red hardsuit"
