@@ -241,8 +241,8 @@ WS End */
 	required_temp = 340
 
 /datum/chemical_reaction/dimorlin
-	results = list(/datum/reagent/medicine/dimorlin = 2, /datum/reagent/hydrogen = 4)
-	required_reagents = list(/datum/reagent/carbon = 6, /datum/reagent/diethylamine = 2, /datum/reagent/oxygen = 2, /datum/reagent/phenol = 2,)
+	results = list(/datum/reagent/medicine/dimorlin = 2, /datum/reagent/hydrogen = 2)
+	required_reagents = list(/datum/reagent/carbon = 3, /datum/reagent/diethylamine = 1, /datum/reagent/oxygen = 1, /datum/reagent/phenol = 1)
 	required_temp = 730
 	mix_message = "The mixture rapidly incorporates, leaving a layer of liquid hydrogen atop!"
 
