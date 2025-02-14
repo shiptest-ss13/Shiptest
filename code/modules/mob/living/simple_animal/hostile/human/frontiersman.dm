@@ -12,6 +12,7 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier
 	r_hand = /obj/item/melee/knife/survival
+	dodging = TRUE
 
 /mob/living/simple_animal/hostile/human/frontier/internals
 	icon_state = "frontiersmanmelee_mask"
