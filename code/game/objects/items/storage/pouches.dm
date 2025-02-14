@@ -2,7 +2,7 @@
 /obj/item/storage/pouch
 	name = "basic pouch"
 	desc = "A small pouch for storing items."
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/pouches.dmi'
 	icon_state = "pouch"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
