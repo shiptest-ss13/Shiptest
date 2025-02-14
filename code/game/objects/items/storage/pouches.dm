@@ -214,7 +214,7 @@
 		/obj/item/paper,
 		/obj/item/pen,
 		/obj/item/camera,
-		/obj/item/key/ship/shipkey,
+		/obj/item/key/ship,
 		/obj/item/geiger_counter,
 		/obj/item/toy/crayon/spraycan,
 		/obj/item/stack/marker_beacon,
