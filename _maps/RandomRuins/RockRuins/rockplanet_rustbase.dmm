@@ -1644,10 +1644,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway)
-"po" = (
-/obj/item/radio/intercom/directional/west,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/rockplanet/rust_base/hallway)
 "pz" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/mask/gas/syndicate,
@@ -2453,7 +2449,7 @@
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun{
 	minimum_distance = 0;
 	retreat_distance = 0;
-	shoot_point_blank = true
+	shoot_point_blank = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
@@ -5818,7 +5814,7 @@ ey
 tE
 aN
 Bg
-po
+qj
 Hm
 qj
 II
