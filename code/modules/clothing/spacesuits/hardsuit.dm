@@ -375,7 +375,7 @@
 		on = TRUE
 	else
 		on = !on
-	if(on || force || forced_on)
+	if(on || force)
 		if(!forced_on)
 			to_chat(user, span_notice("You engage your helmet's EVA mode, sealing your visor and protecting you from space."))
 		name = initial(name)
