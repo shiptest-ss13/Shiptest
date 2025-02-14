@@ -15,13 +15,6 @@
 	var/atk_verb
 	switch(rand(1,8))
 		if(1)
-			D.help_shake_act(A)
-			atk_verb = "helped"
-		if(2)
-			A.emote("cry")
-			A.Stun(20)
-			atk_verb = "cried looking at"
-		if(3)
 			if(A.grab_state >= GRAB_AGGRESSIVE)
 				D.grabbedby(A, 1)
 			else
@@ -38,7 +31,7 @@
 					else
 						log_combat(A, D, "grabbed", addition="passively")
 						A.setGrabState(GRAB_PASSIVE)
-		if(4)
+		if(2)
 			A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 			atk_verb = "headbutt"
 			D.visible_message("<span class='danger'>[A] [atk_verb]s [D]!</span>", \
@@ -51,7 +44,7 @@
 				D.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5)
 			A.Stun(rand(10,45))
 			D.Stun(rand(5,30))
-		if(5,6)
+		if(3,4)
 			A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 			atk_verb = pick("kick", "hit", "slam")
 			D.visible_message("<span class='danger'>[A] [atk_verb]s [D] with such inhuman strength that it sends [D.p_them()] flying backwards!</span>", \
@@ -62,7 +55,7 @@
 			var/throwtarget = get_edge_target_turf(A, get_dir(A, get_step_away(D, A)))
 			D.throw_at(throwtarget, 4, 2, A)//So stuff gets tossed around at the same time.
 			D.Paralyze(60)
-		if(7,8)
+		else
 			return FALSE //Resume default behaviour
 
 	if(atk_verb)

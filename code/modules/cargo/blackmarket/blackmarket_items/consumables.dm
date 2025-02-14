@@ -293,6 +293,26 @@
 	availability_prob = 25
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/consumable/mammoth
+	name = "Mammoth Injector"
+	desc = "Found a bunch of kickass injectors hiding under the corpse of a Cliquer. Don't ask bout how they became a corpse Iunno. Doesn't matter. These things boost your strength and keep you going way too damn long..."
+	item = /obj/item/reagent_containers/hypospray/medipen/mammoth
+	price_min = 500
+	price_max = 1000
+	stock_max = 6
+	availability_prob = 40
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/rabbit
+	name = "Rabbit Injector"
+	desc = "We were bummin around towards CLIP space the other day, and saw this. Ahem. Business opportunity with a bun. Words came to words and after some serious business planning, I'm the distributer for this line for this line of designer injectors. Supposed to make you like a rabbit or somethin."
+	item = /obj/item/reagent_containers/hypospray/medipen/rabbit
+	price_min = 600
+	price_max = 800
+	stock_max = 6
+	availability_prob = 30
+	spawn_weighting = FALSE
+
 /datum/blackmarket_item/consumable/finobranc
 	name = "Finobranc Tablets"
 	desc = "So get this, I know a Solarian Tgirl over the intranet, and we're chatting, and she sends me these things to try. I figure, hell yeah, try them, and got 5 days work done in one day. Now I'm sellin them. Miracle product I tell ya"
