@@ -332,11 +332,15 @@
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
 	on = TRUE
 	var/obj/item/clothing/suit/space/hardsuit/syndi/linkedsuit = null
-	actions_types = list(/datum/action/item_action/toggle_helmet_mode,/datum/action/item_action/toggle_combat_mode)
+	actions_types = list(/datum/action/item_action/toggle_helmet_mode,/datum/action/item_action/toggle_helmet_light,/datum/action/item_action/toggle_armor_assist,)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEEARS
 	visor_flags = STOPSPRESSUREDAMAGE
 	var/full_retraction = FALSE //whether or not our full face is revealed or not during combat mode
+	var/helmet_light_on = FALSE
 
+	var/recharge_duration = 300
+	var/next_use = 0
+	var/last_use = 0
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/update_icon_state()
 	icon_state = "hardsuit[on]-[hardsuit_type]"
@@ -347,12 +351,17 @@
 	if(istype(loc, /obj/item/clothing/suit/space/hardsuit/syndi))
 		linkedsuit = loc
 
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/attack_self(mob/user)
+	helmet_light_on = !helmet_light_on
+	set_light_on(helmet_light_on)
+
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/armor_assist(mob/living/carbon/human/user)
 	//playsound(src.loc, 'sound/effects/armorassist.ogg', 50)
 	SEND_SOUND(user, sound('sound/mecha/nominal.ogg',volume=50))
 	user.apply_status_effect(/datum/status_effect/armor_assist)
 	to_chat(user, span_notice("Your helmet automatically engages."))
 	toggle_mode(user,TRUE)
+	next_use = world.time + recharge_duration
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/dropped(mob/living/carbon/human/user)
 	. = ..()
@@ -371,7 +380,6 @@
 			to_chat(user, span_notice("You engage your helmet's EVA mode, sealing your visor and protecting you from space."))
 		name = initial(name)
 		desc = initial(desc)
-		set_light_on(TRUE)
 		clothing_flags |= visor_flags
 		cold_protection |= HEAD
 		if(full_retraction)
@@ -383,7 +391,6 @@
 		to_chat(user, span_notice("You disengage your helment's EVA mode and open your visor, exposing you to environental conditions."))
 		name += " (combat)"
 		desc = alt_desc
-		set_light_on(FALSE)
 		clothing_flags &= ~visor_flags
 		cold_protection &= ~HEAD
 		if(full_retraction)
@@ -436,8 +443,8 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	jetpack = /obj/item/tank/jetpack/suit
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
-	slowdown = 0.5
-	var/lightweight = 0 //used for flags when toggling
+	slowdown = 0.7
+	var/lightweight = FALSE
 
 //Ramzi Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi

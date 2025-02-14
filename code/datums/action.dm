@@ -354,12 +354,15 @@
 		syndi_helmet.toggle_mode(owner)
 
 /datum/action/item_action/toggle_armor_assist
-	name = "Activate Combat Mode"
+	name = "Activate Armor Assist"
 
-/datum/action/item_action/toggle_combat_mode/Trigger()
+/datum/action/item_action/toggle_armor_assist/Trigger()
 	if(istype(target, /obj/item/clothing/head/helmet/space/hardsuit/syndi))
 		var/obj/item/clothing/head/helmet/space/hardsuit/syndi/syndi_helmet = target
-		syndi_helmet.armor_assist(owner)
+		if(world.time > syndi_helmet.next_use)
+			syndi_helmet.armor_assist(owner)
+		else
+			to_chat(owner,span_warning("The armor assist is still recharging! It will be ready in [DisplayTimeText(syndi_helmet.next_use - world.time)]."))
 
 
 /datum/action/item_action/crew_monitor
