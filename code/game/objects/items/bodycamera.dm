@@ -35,10 +35,10 @@
 
 /obj/item/bodycamera/examine(mob/user)
 	. += ..()
-	. += "The body camera is currently [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Alt-Click to toggle its status."
+	. += "The camera is currently [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Alt-Click to toggle its status."
 	if(in_range(src, user))
-		. += "<span class='notice'>The body camera is set to a nametag of '<b>[c_tag]</b>'.</span>"
-		. += "<span class='notice'>The body camera is set to transmit on the '<b>[network[1]]</b>' network.</span>"
+		. += "<span class='notice'>The camera is set to a nametag of '<b>[c_tag]</b>'.</span>"
+		. += "<span class='notice'>The camera is set to transmit on the '<b>[network[1]]</b>' network.</span>"
 		. += "<span class='notice'>It looks like you can modify the camera settings by using a <b>multitool</b> on it.</span>"
 
 /obj/item/bodycamera/AltClick(mob/user)
@@ -137,10 +137,31 @@
 	name = "Portable Camera Unit Users Guide"
 	default_raw_text = "<font face='serif'><font size=2><div align='center'><u><font size=5>Portable Camera Unit User's Guide</u>\n<div align='left'><font size=3> The Mark I Portable Camera unit is a versatile solution ⠀   for all of your project management needs.\n\n<font size=4><dl><dt> Features</dt><font size=3><dd> - Real-time visual data feedback </dd><dd> - Configurable EEPROM memory settings</dd><dd> - Passive thermal regulator</dd><dd> - Long-range millimeter-wave band antenna</dd><dd> - High-capacity self-recharging battery</dd><dd> - Easy to reach power button</dd></dl>\n\n To activate the camera, simply press and hold the\n power button for one second. You should hear a chime\n and a green status light should become lit.\n\n To deactivate the camera, depress the power button\n again for one second.\n\n In order to modify the settings of your portable camera\n unit, a ISO-standard multitool will be required.\n \n Simply connect the tool to the camera's settings port,\n and you should be able to modify the internal address\n of the camera, or the network configuration.\n\n You will also be able to save the network configuration\n of the camera and copy it to other Mark I Portable\n Camera units.\n\n We hope that our tools will provide the edge you need\n in order to ensure your team stays on-task."
 
+/obj/item/bodycamera/broadcast_camera
+	name = "broadcast camera"
+	desc = "A camera used by media agencies in order to broadcast video and audio to recievers across a sector."
+	icon_state = "bodycamera-off"
+	w_class = WEIGHT_CLASS_BULKY
+	view_range = 9
+	can_transmit_across_z_levels = TRUE
 
+	var/obj/item/radio/entertainment/radio
 
+/obj/item/bodycamera/broadcast_camera/Initialize()
+	. = ..()
+	radio = new(src)
+	radio.canhear_range = 2
 
+/obj/item/bodycamera/broadcast_camera/attack_hand(mob/user, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(loc == user)
+		if(user.a_intent == INTENT_HARM)
+			radio.ui_interact(user)
+		return
 
-
+/obj/item/bodycamera/examine(mob/user)
+	. += ..()
+	if(in_range(src, user))
+		. += "<span class='notice'>You can access the Internal Radio by interacting with harm intent.</span>"
 
 
