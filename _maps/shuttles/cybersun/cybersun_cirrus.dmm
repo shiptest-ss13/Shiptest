@@ -312,14 +312,14 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "dh" = (
-/obj/machinery/door/airlock/hatch{
-	name = "Chemistry";
-	req_access_txt = "33"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Chemistry";
+	req_access_txt = "33"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -2904,7 +2904,6 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "BS" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2,
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/box/white,
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
@@ -2912,6 +2911,7 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "Cd" = (
@@ -4123,7 +4123,6 @@
 	},
 /area/ship/cargo)
 "PN" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
@@ -4138,6 +4137,7 @@
 	icon_state = "2-4"
 	},
 /obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "PO" = (
