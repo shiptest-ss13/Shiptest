@@ -17,7 +17,7 @@
 
 /obj/structure/cabinet/m23
 	name = "\improper rifle display"
-	desc = "A wooden board used to proudly display your favourite rifles. This one is made specifically to fit an HP Scout."
+	desc = "A wooden board used to proudly display your favourite rifles. This one is made specifically to fit a Model 23 Woodsman."
 	icon_state = "woodsman"
 	stored_sprite = "m23"
 	allowed_type = /obj/item/gun/ballistic/automatic/marksman/woodsman
