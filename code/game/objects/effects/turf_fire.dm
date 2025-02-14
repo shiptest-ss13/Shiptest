@@ -142,7 +142,7 @@
 	open_turf.air_update_turf()
 	return TRUE
 
-/obj/effect/abstract/turf_fire/process()
+/obj/effect/abstract/turf_fire/process(delta_time)
 	var/turf/current_turf = loc
 	if(!isopenturf(current_turf)) //This can happen, how I'm not sure
 		qdel(src)

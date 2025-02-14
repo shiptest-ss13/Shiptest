@@ -42,7 +42,7 @@
 	. += "<span class='notice'>It appears to be powered via a cable connector.</span>"
 
 //Checks for cable connection, charges if possible.
-/obj/machinery/computer/vaultcontroller/process()
+/obj/machinery/computer/vaultcontroller/process(delta_time)
 	if(siphoned_power >= siphon_max)
 		return
 	update_cable()

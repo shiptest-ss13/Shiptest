@@ -143,7 +143,7 @@
 			return FALSE
 	return TRUE
 
-/obj/machinery/satellite/meteor_shield/process()
+/obj/machinery/satellite/meteor_shield/process(delta_time)
 	if(!active)
 		return
 	for(var/obj/effect/meteor/M in GLOB.meteor_list)

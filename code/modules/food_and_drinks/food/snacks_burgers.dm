@@ -150,7 +150,7 @@
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
-/obj/item/reagent_containers/food/snacks/burger/ghost/process()
+/obj/item/reagent_containers/food/snacks/burger/ghost/process(delta_time)
 	if(!isturf(loc)) //no floating out of bags
 		return
 	var/paranormal_activity = rand(100)

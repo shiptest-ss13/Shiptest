@@ -375,7 +375,7 @@
 	START_PROCESSING(SSfastprocess,src)
 	..()
 
-/obj/effect/hallucination/simple/securitron/process()
+/obj/effect/hallucination/simple/securitron/process(delta_time)
 	if(prob(60))
 		forceMove(get_step_towards(src, victim))
 		if(prob(5))

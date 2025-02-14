@@ -216,7 +216,7 @@
 
 	return remove_air(moles_needed)
 
-/obj/item/tank/process()
+/obj/item/tank/process(delta_time)
 	//Allow for reactions
 	air_contents.react()
 	check_status()

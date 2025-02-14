@@ -88,7 +88,7 @@
 	random_reagent = TRUE
 
 
-/obj/structure/beebox/process()
+/obj/structure/beebox/process(delta_time)
 	if(queen_bee)
 		if(bee_resources >= BEE_RESOURCE_HONEYCOMB_COST)
 			if(honeycombs.len < get_max_honeycomb())
