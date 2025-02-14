@@ -522,17 +522,17 @@
 	desc = "A golden pin designating the wearer as a Corpsman of the IRMG. You've probably grown used to the sight of gunshot wounds."
 	icon_state = "pin_inteq_corpsman"
 
-/obj/item/clothing/accessory/rank_pin/inteq/enforcer_c1 // unused in game
+/obj/item/clothing/accessory/rank_pin/inteq/enforcer_c1
 	name = "rank pins - IRMG-E3"
 	desc = "A golden pin designating the wearer as an Enforcer Class One of the IRMG. The pay bump is nice, isn't it?"
 	icon_state = "pin_inteq_enforcer_c1"
 
-/obj/item/clothing/accessory/rank_pin/inteq/artificer_c1 // unused in game
+/obj/item/clothing/accessory/rank_pin/inteq/artificer_c1
 	name = "rank pins - IRMG-E3"
-	desc = "A golden pin designating the wearer as an Artificer Clas One of the IRMG. The engine room is a temple raised to the God of the Engineer."
+	desc = "A golden pin designating the wearer as an Artificer Class One of the IRMG. The engine room is a temple raised to the God of the Engineer."
 	icon_state = "pin_inteq_artificer_c1"
 
-/obj/item/clothing/accessory/rank_pin/inteq/corpsman_c1 // unused in game
+/obj/item/clothing/accessory/rank_pin/inteq/corpsman_c1
 	name = "rank pins - IRMG-E3"
 	desc = "A golden pin designating the wearer as a Corpsman Class One of the IRMG. Nobody has to die under your watch."
 	icon_state = "pin_inteq_corpsman_c1"
@@ -544,27 +544,27 @@
 
 /obj/item/clothing/accessory/rank_pin/inteq/inspector
 	name = "rank pins - IRMG-O1"
-	desc = "A golden pin designating the wearer as an Inpsector of the IRMG. I assume all your papers are in order?"
+	desc = "A golden pin designating the wearer as an Inspector of the IRMG. I assume all your papers are in order?"
 	icon_state = "pin_inteq_inspector"
 
 /obj/item/clothing/accessory/rank_pin/inteq/maa
 	name = "rank pins - IRMG-O2"
-	desc = "A golden pin designating the wearer as a Master at Arms of the IRMG. The armoury is your home."
+	desc = "A golden pin designating the wearer as a Master at Arms of the IRMG. The armory is your home."
 	icon_state = "pin_inteq_maa"
 
 /obj/item/clothing/accessory/rank_pin/inteq/artificer_hon
 	name = "rank pins - IRMG-O3"
-	desc = "A golden pin designating the wearer as an Honourable Artificer of the IRMG. The Vanguard rules upon the bridge, and you reign here below."
+	desc = "A golden pin designating the wearer as an Honorable Artificer of the IRMG. The Vanguard rules upon the bridge, and you reign here below."
 	icon_state = "pin_inteq_artificer_hon"
 
 /obj/item/clothing/accessory/rank_pin/inteq/corpsman_hon
 	name = "rank pins - IRMG-O3"
-	desc = "A golden pin designating the wearer as an Honourable Corpsman of the IRMG. You'll do your best, and run another test, and pour yourself another mug of brew."
+	desc = "A golden pin designating the wearer as an Honorable Corpsman of the IRMG. You'll do your best, and run another test, and pour yourself another mug of brew."
 	icon_state = "pin_inteq_corpsman_hon"
 
 /obj/item/clothing/accessory/rank_pin/inteq/enforcer_hon
 	name = "rank pins - IRMG-O4"
-	desc = "A golden pin designating the wearer as an Enforcer Honour Guard of the IRMG. Someone important is in town - you better keep them safe."
+	desc = "A golden pin designating the wearer as an Enforcer Honor Guard of the IRMG. Someone important is in town - you better keep them safe."
 	icon_state = "pin_inteq_enforcer_hon"
 
 /obj/item/clothing/accessory/rank_pin/inteq/vanguard
@@ -574,5 +574,5 @@
 
 /obj/item/clothing/accessory/rank_pin/inteq/vanguard_hon
 	name = "rank pins - IRMG-O6"
-	desc = "A golden pin designating the wearer as an Honourable Vanguard of the IRMG. A title such as this demands respect."
+	desc = "A golden pin designating the wearer as an Honorable Vanguard of the IRMG. A title such as this demands respect."
 	icon_state = "pin_inteq_vanguard_hon"
