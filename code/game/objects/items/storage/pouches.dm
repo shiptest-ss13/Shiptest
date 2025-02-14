@@ -116,6 +116,7 @@
 		/obj/item/stack/medical/structure,
 		/obj/item/extinguisher/mini,
 		/obj/item/toy/crayon/spraycan,
+		/obj/item/stack/marker_beacon,
 		/obj/item/clothing/gloves
 		))
 
