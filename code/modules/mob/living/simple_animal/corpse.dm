@@ -84,6 +84,60 @@
 	back = /obj/item/tank/jetpack/oxygen/harness
 	id = /obj/item/card/id/syndicate
 
+/datum/outfit/syndicatecaptaincorpse
+	name = "Syndicate Captain Corpse"
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
+	shoes = /obj/item/clothing/shoes/combat/coldres
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/syndicate
+	head = /obj/item/clothing/head/HoS/syndicate
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/syndicatecaptain
+	name = "Syndicate Captain"
+	id_job = "Syndicate Base Commander"
+	outfit = /datum/outfit/syndicatecaptaincorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
+/datum/outfit/cybersunmedicaldirectorcorpse
+	name = "Cybersun Medical Director Corpse"
+	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/cybersun
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	ears = /obj/item/radio/headset/syndicate
+	belt = /obj/item/gun/ballistic/automatic/pistol/commander
+	head = /obj/item/clothing/head/soft/cybersun/medical
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/cybersunmedicaldirector
+	name = "Cybersun Medical Director Corpse"
+	id_job = "Cybersun Medical Director"
+	outfit = /datum/outfit/cybersunmedicaldirectorcorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
+/datum/outfit/cybersunfieldmediccorpse
+	name = "Cybersun Field Medic Corpse"
+	uniform = /obj/item/clothing/under/syndicate/medic
+	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	ears = /obj/item/radio/headset/syndicate
+	belt = /obj/item/storage/belt/medical/paramedic
+	head = /obj/item/clothing/head/soft/cybersun/medical
+	back = /obj/item/storage/backpack/messenger
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/cybersunfieldmedic
+	name = "Cybersun Field Medic"
+	id_job = "Cybersun Field Medic"
+	outfit = /datum/outfit/cybersunfieldmediccorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
 
 /obj/effect/mob_spawn/human/clown/corpse
 	roundstart = FALSE
@@ -168,6 +222,25 @@
 	head = /obj/item/clothing/head/helmet/swat/nanotrasen
 	back = /obj/item/storage/backpack/security
 	id = /obj/item/card/id
+
+/datum/outfit/vigilitasprivatetroopercorpse
+	name = "VI Private Trooper"
+	uniform = /obj/item/clothing/under/nanotrasen/security
+	suit = /obj/item/clothing/suit/armor/nanotrasen
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/color/black
+	ears = /obj/item/radio/headset/headset_sec/alt
+	mask = /obj/item/clothing/mask/gas/vigilitas
+	head = /obj/item/clothing/head/nanotrasen/cap/security
+	back = /obj/item/storage/backpack/messenger
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/vigilitasprivatetroopercorpse
+	name = "VI Private Trooper"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitasprivatetroopercorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
 
 /obj/effect/mob_spawn/human/corpse/cat_butcher
 	name = "The Cat Surgeon"

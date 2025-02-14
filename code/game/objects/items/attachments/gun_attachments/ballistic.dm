@@ -9,6 +9,12 @@
 	else
 		return ..()
 
+/obj/item/attachment/gun/ballistic/hand_attack_interaction(mob/user)
+	var/obj/item/gun/ballistic/ballistic_gun = attached_gun
+	if(ballistic_gun.magazine)
+		ballistic_gun.eject_magazine(user)
+		return ..()
+
 /obj/item/attachment/gun/ballistic/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	var/obj/item/gun/ballistic/ballistic_gun = attached_gun
 	var/gun_bolt = ballistic_gun.bolt_type
@@ -24,8 +30,7 @@
 /obj/item/gun/ballistic/shotgun/underbarrel
 	name = "underbarrel ballistic gun"
 	desc = "You shouldnt be seeing this."
-	semi_auto = TRUE
-	always_chambers = TRUE
+	semi_auto = FALSE
 	casing_ejector = TRUE
 	gunslinger_recoil_bonus = 0
 	default_ammo_type  = /obj/item/ammo_box/magazine/internal/shot/underbarrel
@@ -35,7 +40,7 @@
 
 /obj/item/attachment/gun/ballistic/shotgun
 	name = "underbarrel shotgun"
-	desc = "A single shot underbarrel shotgun for warding off anyone who gets too close for comfort."
+	desc = "A two shot pump underbarrel shotgun for warding off anyone who gets too close for comfort."
 	underbarrel_prefix = "sg_"
 	weapon_type = /obj/item/gun/ballistic/shotgun/underbarrel
 
@@ -49,9 +54,33 @@
 /obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher
 	name = "underbarrel grenade launcher"
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
+	always_chambers = TRUE
 	default_ammo_type  = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/grenadelauncher
 	)
+
+/obj/item/attachment/gun/ballistic/hognose
+	name = "PC-22 \"Hognose\""
+	desc = "A compact underbarrel pistol chambered in 22lr. Holds eight rounds."
+	icon_state = "hognose"
+	weapon_type = /obj/item/gun/ballistic/automatic/pistol/himehabu/underbarrel
+	allow_hand_interaction = TRUE
+
+/obj/item/gun/ballistic/automatic/pistol/himehabu/underbarrel
+	name = "PC-22 \"Hognose\""
+	desc = "You shouldn't be seeing this."
+	default_ammo_type = /obj/item/ammo_box/magazine/m22lr_himehabu/hognose
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m22lr_himehabu/hognose,
+	)
+
+/obj/item/ammo_box/magazine/m22lr_himehabu/hognose
+	name = "Hognose magazine (.22 LR)"
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty
+	start_empty = TRUE
+
 
 

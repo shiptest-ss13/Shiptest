@@ -51,6 +51,52 @@
 	crate_name = "camera console crate"
 
 /*
+		Pouches
+*/
+
+/datum/supply_pack/sec_supply/pouch
+	name = "Utility Pouch Crate"
+	desc = "Contains a small basic pouch for holding two small items of your choice."
+	cost = 150
+	contains = list(/obj/item/storage/pouch)
+	crate_name = "pouch crate"
+
+/datum/supply_pack/sec_supply/pouch_medical
+	name = "Medical Pouch Crate"
+	desc = "Contains a small IFAK for issuing to your crew for field triage. Comes pre-stocked with basic medical gear."
+	cost = 250
+	contains = list(/obj/item/storage/pouch/medical)
+	crate_name = "pouch crate"
+
+/datum/supply_pack/sec_supply/pouch_engi
+	name = "Engineering Pouch Crate"
+	desc = "Contains a small engineering pouch for holding various tools of your choice. Comes pre-stocked with emergency tools."
+	cost = 250
+	contains = list(/obj/item/storage/pouch/engi)
+	crate_name = "pouch crate"
+
+/datum/supply_pack/sec_supply/pouch_ammo
+	name = "Ammo Pouch Crate"
+	desc = "Contains a small pouch for holding either magazines or loose ammunition on the field. Remember, make them count!"
+	cost = 150
+	contains = list(/obj/item/storage/pouch/ammo)
+	crate_name = "pouch crate"
+
+/datum/supply_pack/sec_supply/pouch_grenade
+	name = "Explosives Pouch Crate"
+	desc = "Contains a pouch designed to hold frag grenades and C4 for use by demolitions experts across armed services."
+	cost = 150
+	contains = list(/obj/item/storage/pouch/grenade)
+	crate_name = "pouch crate"
+
+/datum/supply_pack/sec_supply/pouch_squad
+	name = "Communications & Command Pouch Crate"
+	desc = "Contains a medium command pouch for holding various items often used by commanders everywhere."
+	cost = 150
+	contains = list(/obj/item/storage/pouch/squad)
+	crate_name = "pouch crate"
+
+/*
 		Misc. weapons / protection
 */
 
@@ -71,8 +117,8 @@
 	crate_name = "survival knife crate"
 
 /datum/supply_pack/sec_supply/machete
-	name = "Stampted Steel Machete Crate"
-	desc = "Contains five mass produced machetes. A perfect choice for crews on a budget."
+	name = "Stamped Steel Machete Crate"
+	desc = "Contains two mass produced machetes. A perfect choice for crews on a budget."
 	cost = 500
 	contains = list(/obj/item/melee/sword/mass,
 					/obj/item/melee/sword/mass)

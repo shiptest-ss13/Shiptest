@@ -3407,7 +3407,8 @@
 /area/ship/cargo)
 "Rv" = (
 /obj/machinery/door/airlock{
-	name = "Bathroom"
+	name = "Bathroom";
+	id_tag = "meta_bathroom"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -3684,6 +3685,15 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	dir = 8;
+	id = "meta_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	pixel_x = 20;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "Zf" = (
