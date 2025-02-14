@@ -348,20 +348,24 @@
 		linkedsuit = loc
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/armor_assist(mob/living/carbon/human/user)
-	playsound(src.loc, 'sound/effects/armorassist.ogg', 50)
+	//playsound(src.loc, 'sound/effects/armorassist.ogg', 50)
+	SEND_SOUND(user, sound('sound/mecha/nominal.ogg',volume=50))
 	user.apply_status_effect(/datum/status_effect/armor_assist)
 	to_chat(user, span_notice("Your helmet automatically engages."))
-	attack_self(user,TRUE)
+	toggle_mode(user,TRUE)
 
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/dropped(mob/user)
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/dropped(mob/living/carbon/human/user)
 	. = ..()
 	user.remove_status_effect(/datum/status_effect/armor_assist)
 
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/attack_self(mob/user, forced_on = FALSE) //Toggle Helmet
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/toggle_mode(mob/user, forced_on = FALSE) //Toggle Helmet
 	if(!isturf(user.loc))
 		to_chat(user, span_notice("You cannot toggle your helmet while in this [user.loc]!") )
 		return
-	on = !on
+	if(forced_on)
+		on = TRUE
+	else
+		on = !on
 	if(on || force || forced_on)
 		if(!forced_on)
 			to_chat(user, span_notice("You engage your helmet's EVA mode, sealing your visor and protecting you from space."))

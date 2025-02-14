@@ -348,7 +348,12 @@
 /datum/action/item_action/toggle_helmet_mode
 	name = "Toggle Helmet Mode"
 
-/datum/action/item_action/toggle_combat_mode
+/datum/action/item_action/toggle_helmet_mode/Trigger()
+	if(istype(target, /obj/item/clothing/head/helmet/space/hardsuit/syndi))
+		var/obj/item/clothing/head/helmet/space/hardsuit/syndi/syndi_helmet = target
+		syndi_helmet.toggle_mode(owner)
+
+/datum/action/item_action/toggle_armor_assist
 	name = "Activate Combat Mode"
 
 /datum/action/item_action/toggle_combat_mode/Trigger()
