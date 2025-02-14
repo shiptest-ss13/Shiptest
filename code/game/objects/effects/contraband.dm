@@ -847,7 +847,7 @@
 	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons Nanotrasen stopped outsourcing their posters. It's partially signed by 'AspEv'."
 	icon_state = "poster_moth_pill"
 
-//Solgov poster pool. expect a focus on solarian based products and places. Expect these on solgov ships
+//SolGov poster pool. expect a focus on solarian based products and places. Expect these on solgov ships
 /obj/structure/sign/poster/solgov
 	poster_item_name = "solarian poster"
 	poster_item_desc = "A solarian based poster, made with natural paper! It comes with adhesive backing, for easy pinning to any vertical surface."
@@ -861,7 +861,7 @@
 	random_type = POSTER_SUBTYPES
 
 /obj/structure/sign/poster/solgov/solgov_logo
-	name = "Solgov"
+	name = "SolGov"
 	desc = "The seal of The Most Serene Solar and Intersolar Confederation, or more boringly known as SolGov. \"The State is a sapling: Waters of change may drown it, and rays of fear may wither it, but well-tended it will one day bear fruit.\""
 	icon_state = "poster-solgov"
 
