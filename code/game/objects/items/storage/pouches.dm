@@ -1,6 +1,6 @@
 //Pocket pouches, specialized storage expansions
 /obj/item/storage/pouch
-	name = "basic pouch"
+	name = "utility pouch"
 	desc = "A small pouch for storing items."
 	icon = 'icons/obj/storage/pouches.dmi'
 	icon_state = "pouch"
@@ -31,16 +31,9 @@
 		. += STR.can_hold_description
 
 /obj/item/storage/pouch/medical
-	name = "IFAK pouch"
+	name = "aid pouch"
 	desc = "An individual first aid kit, for use preventing and treating battlefield injuries."
-	icon = 'icons/obj/storage.dmi'
 	icon_state = "pouch_medical"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
-	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
-	throw_speed = 3
-	throw_range = 7
 	slot_flags = ITEM_SLOT_POCKETS
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -78,14 +71,7 @@
 /obj/item/storage/pouch/ammo
 	name = "ammunition pouch"
 	desc = "An ammunition pouch, commonly used by soldiers to hold additional ammo in an accessible location."
-	icon = 'icons/obj/storage.dmi'
 	icon_state = "pouch_ammo"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
-	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
-	throw_speed = 3
-	throw_range = 7
 	slot_flags = ITEM_SLOT_POCKETS
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -110,16 +96,9 @@
 		))
 
 /obj/item/storage/pouch/engi
-	name = "engineering pouch"
+	name = "technician pouch"
 	desc = "An orange pouch used to hold a small amount of tools or supplies, often used for emergency repair kits."
-	icon = 'icons/obj/storage.dmi'
 	icon_state = "pouch_engi"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
-	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
-	throw_speed = 3
-	throw_range = 7
 	slot_flags = ITEM_SLOT_POCKETS
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -160,14 +139,7 @@
 /obj/item/storage/pouch/grenade
 	name = "grenade pouch"
 	desc = "A row of small pouches intended for holding explosives safely, primarily grenades."
-	icon = 'icons/obj/storage.dmi'
 	icon_state = "pouch_grenade"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
-	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
-	throw_speed = 3
-	throw_range = 7
 	slot_flags = ITEM_SLOT_POCKETS
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -182,16 +154,9 @@
 		))
 
 /obj/item/storage/pouch/squad
-	name = "squad leader's pouch"
+	name = "command pouch"
 	desc = "A light blue pouch used by squad leaders everywhere to hold command equipment."
-	icon = 'icons/obj/storage.dmi'
 	icon_state = "pouch_squad"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
-	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
-	throw_speed = 3
-	throw_range = 7
 	slot_flags = ITEM_SLOT_POCKETS
 	w_class = WEIGHT_CLASS_NORMAL
 

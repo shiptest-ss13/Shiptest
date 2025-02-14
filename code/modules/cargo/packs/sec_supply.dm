@@ -57,14 +57,14 @@
 /datum/supply_pack/sec_supply/pouch
 	name = "General Pouch Crate"
 	desc = "Contains a small basic pouch for holding two small items of your choice."
-	cost = 250
+	cost = 150
 	contains = list(/obj/item/storage/pouch)
 	crate_name = "pouch crate"
 
 /datum/supply_pack/sec_supply/pouch_medical
 	name = "Medical Pouch Crate"
 	desc = "Contains a small IFAK for issuing to your crew for field triage. Comes pre-stocked with basic medical gear."
-	cost = 300
+	cost = 250
 	contains = list(/obj/item/storage/pouch/medical)
 	crate_name = "pouch crate"
 
@@ -78,21 +78,21 @@
 /datum/supply_pack/sec_supply/pouch_ammo
 	name = "Ammo Pouch Crate"
 	desc = "Contains a small pouch for holding either magazines or loose ammunition on the field. Remember, make them count!"
-	cost = 250
+	cost = 150
 	contains = list(/obj/item/storage/pouch/ammo)
 	crate_name = "pouch crate"
 
 /datum/supply_pack/sec_supply/pouch_grenade
 	name = "Explosives Pouch Crate"
 	desc = "Contains a pouch designed to hold frag grenades and C4 for use by demolitions experts across armed services."
-	cost = 250
+	cost = 150
 	contains = list(/obj/item/storage/pouch/grenade)
 	crate_name = "pouch crate"
 
 /datum/supply_pack/sec_supply/pouch_squad
 	name = "Communications & Command Pouch Crate"
-	desc = "Contains a medium squad leader's pouch for holding various items often used by commanders everywhere."
-	cost = 250
+	desc = "Contains a medium command pouch for holding various items often used by commanders everywhere."
+	cost = 150
 	contains = list(/obj/item/storage/pouch/squad)
 	crate_name = "pouch crate"
 
