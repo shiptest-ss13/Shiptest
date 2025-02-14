@@ -153,7 +153,7 @@
 	var/static/items_inside = list(
 		/obj/item/crowbar = 1,
 		/obj/item/screwdriver = 1,
-		/obj/item/wrench,
+		/obj/item/wrench = 1,
 		/obj/item/weldingtool/mini = 1)
 	generate_items_inside(items_inside,src)
 
