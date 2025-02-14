@@ -2065,7 +2065,9 @@
 /area/ruin/rockplanet/rust_base/engine_two)
 "tI" = (
 /mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/stormtrooper{
-	name = ""Armored" O. Ray"
+	name = ""Armored" O. Ray";
+	retreat_distance = 0;
+	shoot_point_blank = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
