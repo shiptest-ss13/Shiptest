@@ -14,7 +14,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	var/empty = FALSE
 
-
 /obj/item/storage/pouch/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
