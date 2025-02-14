@@ -77,7 +77,7 @@
 /datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
 	if(loading)
 		return new /datum/docking_ticket(_docking_error = "[src] is currently being scanned for suitable docking locations by another ship. Please wait.")
-	if(!load_level())
+	if(!load_level(dock_requester))
 		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 	else
 		var/dock_to_use = null
@@ -180,9 +180,9 @@
 
 /**
  * Load a level for a ship that's visiting the level.
- * * visiting shuttle - The docking port of the shuttle visiting the level.
+ * * dock_requester - The datum that initiated the load upon docking. Passed to spawn_dynamic_encounter to allow for progress reports.
  */
-/datum/overmap/dynamic/proc/load_level()
+/datum/overmap/dynamic/proc/load_level(datum/overmap/ship/controlled/dock_requester = null)
 	if(SSlag_switch.measures[DISABLE_PLANETGEN] && !(HAS_TRAIT(usr, TRAIT_BYPASS_MEASURES)))
 		return FALSE
 	if(mapzone)
@@ -193,7 +193,7 @@
 
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
 	var/selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
-	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin)
+	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin, dock_requester)
 	if(!length(dynamic_encounter_values))
 		return FALSE
 
