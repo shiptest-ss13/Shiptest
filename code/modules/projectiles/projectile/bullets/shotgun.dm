@@ -68,11 +68,11 @@
 	///How much stamina damage is subtracted per tile?
 	var/tile_dropoff_stamina = 1.5 //As above
 
-	var/ap_dropoff = 10
+	var/ap_dropoff = 5
 	var/ap_dropoff_cutoff = -35
 
 	icon_state = "pellet"
-	armour_penetration = 0
+	armour_penetration = -20
 	speed = BULLET_SPEED_SHOTGUN
 	bullet_identifier = "pellet"
 
@@ -108,7 +108,7 @@
 
 /obj/projectile/bullet/pellet/improvised
 	damage = 6
-	armour_penetration = -35
+	armour_penetration = -60
 	tile_dropoff = 0.6
 
 // Mech Scattershot
