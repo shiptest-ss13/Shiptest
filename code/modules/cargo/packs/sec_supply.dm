@@ -55,7 +55,7 @@
 */
 
 /datum/supply_pack/sec_supply/pouch
-	name = "General Pouch Crate"
+	name = "Utility Pouch Crate"
 	desc = "Contains a small basic pouch for holding two small items of your choice."
 	cost = 150
 	contains = list(/obj/item/storage/pouch)
