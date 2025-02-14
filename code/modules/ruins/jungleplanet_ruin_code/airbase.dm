@@ -34,3 +34,5 @@
 /obj/machinery/porta_turret/ship/syndicate/heavy/starport
 	faction = list(FACTION_SYNDICATE, "turret")
 	turret_flags = TURRET_FLAG_HOSTILE
+	req_ship_access = FALSE
+	turret_respects_id = FALSE
