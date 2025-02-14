@@ -330,20 +330,20 @@
 	item_state = "syndie_helm"
 	hardsuit_type = "syndi"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
-	on = TRUE
+	on = FALSE
 	var/obj/item/clothing/suit/space/hardsuit/syndi/linkedsuit = null
 	actions_types = list(/datum/action/item_action/toggle_helmet_mode,/datum/action/item_action/toggle_helmet_light,/datum/action/item_action/toggle_armor_assist,)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEEARS
 	visor_flags = STOPSPRESSUREDAMAGE
 	var/full_retraction = FALSE //whether or not our full face is revealed or not during travel mode
-	var/helmet_light_on = FALSE
+	var/eva_mode = TRUE
 
 	var/windup = 0
 	var/recharge_duration = 400
 	var/next_use = 0
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/update_icon_state()
-	icon_state = "hardsuit[on]-[hardsuit_type]"
+	icon_state = "hardsuit[eva_mode]-[hardsuit_type]"
 	return ..()
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/Initialize()
@@ -352,8 +352,8 @@
 		linkedsuit = loc
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/attack_self(mob/user)
-	helmet_light_on = !helmet_light_on
-	set_light_on(helmet_light_on)
+	on = !on
+	set_light_on(on)
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/armor_assist(mob/living/carbon/human/user)
 	if(windup > 0)
@@ -363,7 +363,7 @@
 			return
 	SEND_SOUND(user, sound('sound/mecha/nominal.ogg',volume=50))
 	user.apply_status_effect(/datum/status_effect/armor_assist)
-	if(!on)
+	if(!eva_mode)
 		to_chat(user, span_notice("Your helmet automatically engages as the armor assist activates."))
 	toggle_mode(user,TRUE)
 	next_use = world.time + recharge_duration
@@ -377,10 +377,10 @@
 		to_chat(user, span_notice("You cannot toggle your helmet while in this [user.loc]!") )
 		return
 	if(forced_on)
-		on = TRUE
+		eva_mode = TRUE
 	else
-		on = !on
-	if(on || force)
+		eva_mode = !eva_mode
+	if(eva_mode || force)
 		if(!forced_on)
 			to_chat(user, span_notice("You switch your hardsuit to EVA mode, sealing your visor and protecting you from space."))
 		name = initial(name)
@@ -416,7 +416,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/toggle_hardsuit_mode(mob/user) //Helmet Toggles Suit Mode
 	if(linkedsuit)
-		if(on)
+		if(eva_mode)
 			linkedsuit.name = initial(linkedsuit.name)
 			linkedsuit.desc = initial(linkedsuit.desc)
 			linkedsuit.clothing_flags |= STOPSPRESSUREDAMAGE
@@ -429,7 +429,7 @@
 			if(linkedsuit.lightweight)
 				linkedsuit.flags_inv &= ~(HIDEGLOVES | HIDESHOES | HIDEJUMPSUIT)
 
-		linkedsuit.icon_state = "hardsuit[on]-[hardsuit_type]"
+		linkedsuit.icon_state = "hardsuit[eva_mode]-[hardsuit_type]"
 		linkedsuit.update_appearance()
 		user.update_inv_wear_suit()
 		user.update_inv_w_uniform()
