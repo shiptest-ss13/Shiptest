@@ -901,17 +901,14 @@
 	dir = 9;
 	color = "#D5A66E"
 	},
-/obj/item/kirbyplants/random{
-	pixel_y = 20;
-	pixel_x = -10;
-	layer = 2.89
+/obj/structure/closet/crate/bin{
+	pixel_x = -7;
+	density = 0;
+	pixel_y = 19
 	},
-/obj/machinery/disposal/bin{
-	pixel_x = -8
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
+/obj/effect/spawner/random/trash/deluxe_garbage,
+/obj/effect/spawner/random/trash/deluxe_garbage,
+/obj/item/cigbutt/cigarbutt,
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "pa" = (
@@ -1368,16 +1365,6 @@
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
-"yp" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "ivory_commons"
-	},
-/obj/machinery/door/firedoor/window,
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plating,
-/area/ship/crew/ccommons)
 "yz" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 6
@@ -1541,17 +1528,6 @@
 	color = "#792f27"
 	},
 /area/ship/crew/dorm/captain)
-"Am" = (
-/obj/structure/disposaloutlet{
-	dir = 1;
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "Ar" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
@@ -2078,10 +2054,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
-"Oe" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "Op" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -2092,19 +2064,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"Ou" = (
-/obj/structure/chair/stool/bar{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#D5A66E"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/turf/open/floor/wood/birch,
-/area/ship/crew/ccommons)
 "OA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2304,11 +2263,6 @@
 "Vj" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/dorm/captain)
-"VI" = (
-/obj/effect/turf_decal/corner/opaque/black/diagonal,
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/ccommons)
 "VO" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -2424,7 +2378,6 @@
 "XM" = (
 /obj/machinery/vending/boozeomat,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
-/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "XX" = (
@@ -2453,17 +2406,6 @@
 	},
 /turf/open/floor/light,
 /area/ship/bridge)
-"Yi" = (
-/obj/structure/table/reinforced,
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/light,
-/area/ship/crew/ccommons)
-"Ys" = (
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "Yu" = (
 /obj/docking_port/mobile{
 	dir = 2;
@@ -2785,7 +2727,7 @@ hB
 hB
 iC
 Ue
-Am
+iC
 aR
 lc
 Ef
@@ -2810,14 +2752,14 @@ hB
 hB
 hB
 iC
-Ys
-Oe
-Oe
-yp
+iC
+iC
+iC
+yg
 XM
-VI
-Yi
-Ou
+xq
+Cl
+as
 HK
 aZ
 Gs
