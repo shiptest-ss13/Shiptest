@@ -84,6 +84,60 @@
 	back = /obj/item/tank/jetpack/oxygen/harness
 	id = /obj/item/card/id/syndicate
 
+/datum/outfit/syndicatecaptaincorpse
+	name = "Syndicate Captain Corpse"
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
+	shoes = /obj/item/clothing/shoes/combat/coldres
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/syndicate
+	head = /obj/item/clothing/head/HoS/syndicate
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/syndicatecaptain
+	name = "Syndicate Captain"
+	id_job = "Syndicate Base Commander"
+	outfit = /datum/outfit/syndicatecaptaincorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
+/datum/outfit/cybersunmedicaldirectorcorpse
+	name = "Cybersun Medical Director Corpse"
+	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/cybersun
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	ears = /obj/item/radio/headset/syndicate
+	belt = /obj/item/gun/ballistic/automatic/pistol/commander
+	head = /obj/item/clothing/head/soft/cybersun/medical
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/cybersunmedicaldirector
+	name = "Cybersun Medical Director Corpse"
+	id_job = "Cybersun Medical Director"
+	outfit = /datum/outfit/cybersunmedicaldirectorcorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
+/datum/outfit/cybersunfieldmediccorpse
+	name = "Cybersun Field Medic Corpse"
+	uniform = /obj/item/clothing/under/syndicate/medic
+	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	ears = /obj/item/radio/headset/syndicate
+	belt = /obj/item/storage/belt/medical/paramedic
+	head = /obj/item/clothing/head/soft/cybersun/medical
+	back = /obj/item/storage/backpack/messenger
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/cybersunfieldmedic
+	name = "Cybersun Field Medic"
+	id_job = "Cybersun Field Medic"
+	outfit = /datum/outfit/cybersunfieldmediccorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
 
 /obj/effect/mob_spawn/human/clown/corpse
 	roundstart = FALSE
@@ -115,82 +169,6 @@
 	name = "Pirate Gunner Corpse"
 	suit = /obj/item/clothing/suit/pirate
 	head = /obj/item/clothing/head/pirate
-
-
-/obj/effect/mob_spawn/human/corpse/frontier
-	name = "Frontiersman"
-	outfit = /datum/outfit/frontier
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
-
-/datum/outfit/frontier
-	name = "Frontiersman Corpse"
-	uniform = /obj/item/clothing/under/frontiersmen
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/beret/sec/frontier
-	gloves = /obj/item/clothing/gloves/color/black
-	neck = /obj/item/clothing/neck/dogtag/frontier
-
-/obj/effect/mob_spawn/human/corpse/frontier/ranged
-	outfit = /datum/outfit/frontier
-
-/obj/effect/mob_spawn/human/corpse/frontier/surgeon
-	outfit = /datum/outfit/job/frontiersmen/doctor/corpse
-
-/datum/outfit/job/frontiersmen/doctor/corpse
-	name = "Frontiersmen Surgeon Corpse"
-	r_pocket = null
-
-/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
-	outfit = /datum/outfit/frontier/trooper
-
-/datum/outfit/frontier/trooper
-	name = "Frontiersman Armored Corpse"
-	suit = /obj/item/clothing/suit/armor/vest/frontier
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-	ears = /obj/item/radio/headset
-	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
-
-
-/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer
-	name = "Frontiersman Officer"
-	outfit = /datum/outfit/frontier/officer
-
-/datum/outfit/frontier/officer
-	name = "Frontiersman Officer Corpse"
-	uniform = /obj/item/clothing/under/frontiersmen/officer
-	suit = /obj/item/clothing/suit/armor/frontier
-	shoes = /obj/item/clothing/shoes/combat
-	ears = /obj/item/radio/headset
-	head = /obj/item/clothing/head/frontier/peaked
-
-/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
-	outfit = /datum/outfit/frontier/trooper/heavy
-
-/datum/outfit/frontier/trooper/heavy
-	name = "Frontiersman Heavy Corpse"
-	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
-	head = /obj/item/clothing/head/beret/sec/frontier/officer
-	back = /obj/item/minigunpack
-
-/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless
-	outfit = /datum/outfit/frontier/trooper/heavy/gunless
-
-/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/flame
-	outfit = /datum/outfit/job/frontiersmen/ert/flamer/corpse
-
-/datum/outfit/job/frontiersmen/ert/flamer/corpse
-	name = "Frontiersman Flametrooper Corpse"
-	back = null
-	belt = /obj/item/storage/belt/security/military/frontiersmen
-	l_hand = null
-
-	backpack_contents = null
-
-/datum/outfit/frontier/trooper/heavy/gunless
-	name = "Frontiersman Heavy Corpse (Gunless)"
-	back = null
 
 /obj/effect/mob_spawn/human/corpse/wizard
 	name = "Space Wizard Corpse"
@@ -244,6 +222,25 @@
 	head = /obj/item/clothing/head/helmet/swat/nanotrasen
 	back = /obj/item/storage/backpack/security
 	id = /obj/item/card/id
+
+/datum/outfit/vigilitasprivatetroopercorpse
+	name = "VI Private Trooper"
+	uniform = /obj/item/clothing/under/nanotrasen/security
+	suit = /obj/item/clothing/suit/armor/nanotrasen
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/color/black
+	ears = /obj/item/radio/headset/headset_sec/alt
+	mask = /obj/item/clothing/mask/gas/vigilitas
+	head = /obj/item/clothing/head/nanotrasen/cap/security
+	back = /obj/item/storage/backpack/messenger
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/vigilitasprivatetroopercorpse
+	name = "VI Private Trooper"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitasprivatetroopercorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
 
 /obj/effect/mob_spawn/human/corpse/cat_butcher
 	name = "The Cat Surgeon"

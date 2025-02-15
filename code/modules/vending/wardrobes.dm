@@ -284,7 +284,7 @@
 					/obj/item/clothing/head/beret/service = 2,
 					/obj/item/clothing/accessory/waistcoat = 2,
 					/obj/item/clothing/suit/apron/chef = 3,
-					/obj/item/clothing/head/soft/mime = 2,
+					/obj/item/clothing/head/soft = 2,
 					/obj/item/storage/box/mousetraps = 2,
 					/obj/item/circuitboard/machine/dish_drive = 1,
 					/obj/item/clothing/suit/toggle/chef = 1,
