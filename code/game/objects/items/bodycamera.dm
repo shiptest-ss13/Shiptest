@@ -140,28 +140,61 @@
 /obj/item/bodycamera/broadcast_camera
 	name = "broadcast camera"
 	desc = "A camera used by media agencies in order to broadcast video and audio to recievers across a sector."
-	icon_state = "bodycamera-off"
+	icon = 'icons/obj/item/broadcasting.dmi'
+	icon_state = "broadcast"
+	lefthand_file = 'icons/mob/inhands/misc/broadcast_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/broadcast_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	view_range = 9
 	can_transmit_across_z_levels = TRUE
 
 	var/obj/item/radio/entertainment/radio
+	var/mob/listeningTo
 
 /obj/item/bodycamera/broadcast_camera/Initialize()
 	. = ..()
-	radio = new(src)
+	radio = new /obj/item/radio/entertainment(src)
 	radio.canhear_range = 2
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+
+/obj/item/bodycamera/broadcast_camera/Destroy()
+	listeningTo = null
+	return ..()
+
+/obj/item/bodycamera/broadcast_camera/equipped(mob/user)
+	. = ..()
+	if(listeningTo == user)
+		return
+	if(listeningTo)
+		UnregisterSignal(listeningTo)
+	listeningTo = user
 
 /obj/item/bodycamera/broadcast_camera/attack_hand(mob/user, datum/tgui/ui, datum/ui_state/state)
-	. = ..()
-	if(loc == user)
+	if(loc == user  && user.is_holding(src))
 		if(user.a_intent == INTENT_HARM)
-			radio.ui_interact(user)
+			radio.interact(user)
 		return
+	else
+		return ..()
 
-/obj/item/bodycamera/examine(mob/user)
+/obj/item/bodycamera/broadcast_camera/examine(mob/user)
 	. += ..()
 	if(in_range(src, user))
 		. += "<span class='notice'>You can access the Internal Radio by interacting with harm intent.</span>"
 
+/obj/item/bodycamera/broadcast_camera/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12)
 
+/obj/item/bodycamera/broadcast_camera/proc/on_wield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	user.visible_message("<span class='notice'>[user] raises the [src] over [user.p_their()] arms.</span>", "<span class='notice'>You raise [src] over your arms.</span>")
+	item_state = "broadcast_wielded"
+
+/obj/item/bodycamera/broadcast_camera/proc/on_unwield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	user.visible_message("<span class='notice'>[user] lowers [src].</span>", "<span class='notice'>You lower [src].</span>")
+	item_state = "broadcast"
