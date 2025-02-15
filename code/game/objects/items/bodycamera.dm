@@ -150,6 +150,7 @@
 
 	var/obj/item/radio/entertainment/radio
 	var/mob/listeningTo
+	actions_types = list(/datum/action/item_action/toggle_radio)
 
 /obj/item/bodycamera/broadcast_camera/Initialize()
 	. = ..()
@@ -173,15 +174,21 @@
 /obj/item/bodycamera/broadcast_camera/attack_hand(mob/user, datum/tgui/ui, datum/ui_state/state)
 	if(loc == user  && user.is_holding(src))
 		if(user.a_intent == INTENT_HARM)
-			radio.interact(user)
+			radio.ui_interact(usr, state = GLOB.deep_inventory_state)
 		return
 	else
 		return ..()
 
+/obj/item/bodycamera/broadcast_camera/unique_action(mob/living/user)
+	. = ..()
+	radio.broadcasting = !radio.broadcasting
+	user.visible_message("<span class='notice'>[user] toggles the [src] microphone.</span>", "<span class='notice'>You toggle the [src] microphone.</span>")
+
 /obj/item/bodycamera/broadcast_camera/examine(mob/user)
 	. += ..()
 	if(in_range(src, user))
-		. += "<span class='notice'>You can access the Internal Radio by interacting with harm intent.</span>"
+		. += "<span class='notice'>You can access the Internal Radio by <b>interacting with harm intent</b>.</span>"
+		. += "<span class='notice'>You can also use <b>Unique Action (default space)</b> to toggle the microphone.</span>"
 
 /obj/item/bodycamera/broadcast_camera/ComponentInitialize()
 	. = ..()
