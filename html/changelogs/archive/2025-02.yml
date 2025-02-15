@@ -129,3 +129,28 @@
   generalthrax:
   - rscadd: Bathroom locks to most ship private bathrooms
   - rscdel: Vaquero no longer requires a bathroom pass
+2025-02-15:
+  Erikafox:
+  - code_imp: neutered var on .../hostile/human removed in favor of weapon_drop_chance
+  - balance: default chance of a simple human dropping their gun is now 30%
+  - code_imp: repathed indie sec, indie mining, inteq plain hardsuits
+  Gristlebee:
+  - rscadd: Hognose, alof, underbarrel energy cannon
+  - rscadd: Underbarrel guns come in cases.
+  - rscadd: Secondary actions and hotkey.
+  - rscadd: Muzzle slot for eguns
+  - balance: Pistols can no longer take underbarrel guns.
+  - balance: Underbarrel shotgun holds two rounds, price increased to 1200
+  - bugfix: Fixes being unable to load underbarrel guns while gun bolts were closed.
+  - bugfix: slings being funky
+  - spellcheck: typos
+  - code_imp: new attachment lists, weapon_class_attachments, unique_attachments,
+      refused_attachments
+  - rscadd: You can use the unique action key to activate mech abilities.
+  firebudgy:
+  - rscadd: Pouches! Now purchasable in the outpost and attachable to your pockets.
+  generalthrax:
+  - bugfix: Nanotrasen, Vigilitas, and N+S sprites should work for sarathi again
+  - rscadd: You can now dry seaweed into seaweed sheets
+  - rscadd: Sushi now takes seaweed sheets
+  - rscadd: Soy sauce added to the condiments crate
