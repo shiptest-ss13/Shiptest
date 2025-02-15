@@ -333,3 +333,12 @@
 	price_max = 500
 	stock_min = 4
 	stock_max = 8
+
+/datum/blackmarket_item/ammo/swisscheesemagazine
+	name = "Swiss Cheese Box Magazine"
+	desc = "A 30-round box for the Swiss Cheese's Matter Autofire mode. Not made with actual cheese, despite it's look."
+	item = /obj/item/ammo_box/magazine/swiss
+	price_min = 400
+	price_max = 500
+	stock_min = 4
+	stock_max = 6
