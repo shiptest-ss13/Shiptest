@@ -1,8 +1,8 @@
-/obj/item/paper/pamphlet/lesbos
-	name = "ha, lesbos"
+/obj/item/paper/pamphlet/lesvos
+	name = "ha, lesvos"
 	default_raw_text = "you shouldn't be seeing this!"
 
-/obj/item/paper/pamphlet/lesbos/subshuttle
+/obj/item/paper/pamphlet/lesvos/subshuttle
 	name = "AUXILIARY CRAFT PRE-FLIGHT SAFETY"
 	default_raw_text = {"</head><body><table width="100%" bgcolor="#0B1C57" frame="below" style="table-layout:fixed" height="64px">
 <tbody><tr valign="top">
@@ -27,7 +27,7 @@ REVISED:<br>
 <br><br>
 <center>
 <font face="serif" size="4"> AUXILIARY CRAFT PRE-FLIGHT SAFETY <br>
-<font face="serif" size="5"> <b><u>LESBOS CLASS MINING CARRIER</u></b></font><br><font face="serif" size="4"> MISKILAMO SPACEFARING <br> <font face="serif" size="2"> <i> PV-AEV-C7C8 </i></center>
+<font face="serif" size="5"> <b><u>LESVOS CLASS MINING CARRIER</u></b></font><br><font face="serif" size="4"> MISKILAMO SPACEFARING <br> <font face="serif" size="2"> <i> PV-AEV-C7C8 </i></center>
 <br><br>
 <strong>Safety Inspection:</strong> Before launching either of your on board Auxiliary Excursion Vehicles (hereon referred to as "AEVs") it is vital that their spaceworthy status be checked and verified by completing the inspection checklist below.
 
@@ -52,7 +52,7 @@ REVISED:<br>
 
 With all safety inspections cleared and all emergency equipment loaded, your AEV is now ready for launch. Retain constant awareness of the condition of your AEVs and ensure any faults are addressed promptly."}
 
-/obj/item/paper/pamphlet/lesbos/comms
+/obj/item/paper/pamphlet/lesvos/comms
 	name = "COMMUNICATIONS, COORDINATION, AND CONTROL"
 	default_raw_text = {"</head><body><table width="100%" bgcolor="#0B1C57" frame="below" style="table-layout:fixed" height="64px">
 <tbody><tr valign="top">
@@ -77,13 +77,13 @@ REVISED:<br>
 <br><br>
 <center>
 <font face="serif" size="4"> COMMUNICATIONS, COORDINATION, AND CONTROL <br>
-<font face="serif" size="5"> <b><u>LESBOS CLASS MINING CARRIER</u></b></font><br><font face="serif" size="4"> MISKILAMO SPACEFARING <br> <font face="serif" size="2"> <i> PV-AEV-C7C8 </i></center>
+<font face="serif" size="5"> <b><u>LESVOS CLASS MINING CARRIER</u></b></font><br><font face="serif" size="4"> MISKILAMO SPACEFARING <br> <font face="serif" size="2"> <i> PV-AEV-C7C8 </i></center>
 <br><br>
 <strong>Your Station - Auxiliary Flight Control:</strong> Upon entering the bridge, to the port side, you will see the Auxiliary Flight Control Station; your vessel's brain and command center. Equipped with two modular computers, two shortwave intercoms, and one wideband relay, the Auxiliary Flight Control station has everything you need to safely and efficiently coordinate flights from your vessel.
 
-<strong>Maintaining Communication and Control:</strong> When Auxiliary Excursion Vehicles (hereon referred to as AEVs) are departed from their host vessel, in this case your Lesbos Class Mining Carrier, maintaining free and unobstructed communication becomes paramount. As your AEVs lack the means to operate independently, the reliable transmission of up to date information can make the difference between a successful excursion and a catastrophe. Covered in the following points are a number of recommended solutions and suggestions to help face the challenge of running a cohesive operation.
+<strong>Maintaining Communication and Control:</strong> When Auxiliary Excursion Vehicles (hereon referred to as AEVs) are departed from their host vessel, in this case your Lesvos Class Mining Carrier, maintaining free and unobstructed communication becomes paramount. As your AEVs lack the means to operate independently, the reliable transmission of up to date information can make the difference between a successful excursion and a catastrophe. Covered in the following points are a number of recommended solutions and suggestions to help face the challenge of running a cohesive operation.
 
-1.<u>Utilize Telecommunications Relays:</u> A worthwhile investment for any vessel, the double intercom system of the Lesbos Class Mining Carrier's Auxiliary Flight Control station lends perfectly to maintaining communication with two teams on separate radio frequencies.
+1.<u>Utilize Telecommunications Relays:</u> A worthwhile investment for any vessel, the double intercom system of the Lesvos Class Mining Carrier's Auxiliary Flight Control station lends perfectly to maintaining communication with two teams on separate radio frequencies.
 
 2.<u>Utilize Text-based Messaging:</u > If telecommunications are for some reason unavailable, long range communication becomes more complicated, but by no means impossible. By utilizing a text based messaging client on the Auxiliary Flight Control stations computers and PDAs on board your AEVs, you can remain in contact with your away teams with ease.
 

@@ -63,7 +63,7 @@
 	dir = 1;
 	pixel_y = -22;
 	pixel_x = 14;
-	id = "lesbos_windows";
+	id = "lesvos_windows";
 	name = "Window Shutters"
 	},
 /turf/open/floor/plating,
@@ -208,10 +208,10 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_hangar_starboard"
+	id = "lesvos_hangar_starboard"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "lesbos_starboard_holofield";
+	id = "lesvos_starboard_holofield";
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/ridged,
@@ -228,7 +228,7 @@
 	can_move_docking_ports = 1;
 	dir = 2;
 	launch_status = 0;
-	name = "lesbos";
+	name = "lesvos";
 	port_direction = 8;
 	preferred_direction = 4
 	},
@@ -305,11 +305,11 @@
 "dm" = (
 /obj/structure/cable/yellow,
 /obj/machinery/door/poddoor/shutters{
-	id = "lesbos_cargo"
+	id = "lesvos_cargo"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	id = "lesbos_holofield"
+	id = "lesvos_holofield"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
@@ -367,7 +367,7 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_engines"
+	id = "lesvos_engines"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engines/port)
@@ -548,7 +548,7 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_engines"
+	id = "lesvos_engines"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engines/starboard)
@@ -584,7 +584,7 @@
 /obj/machinery/door/window/eastright,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_engines"
+	id = "lesvos_engines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -905,7 +905,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "lesbos_windows"
+	id = "lesvos_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/hangar/starboard)
@@ -1197,7 +1197,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_hangar_port"
+	id = "lesvos_hangar_port"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hangar/port)
@@ -1301,13 +1301,13 @@
 	pixel_y = 8;
 	pixel_x = 22;
 	name = "Cargo Bay Door";
-	id = "lesbos_cargo";
+	id = "lesvos_cargo";
 	dir = 8
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_y = -3;
 	pixel_x = 21;
-	id = "lesbos_holofield";
+	id = "lesvos_holofield";
 	dir = 8;
 	name = "Cargo Bay Holofield"
 	},
@@ -1396,10 +1396,10 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_hangar_port"
+	id = "lesvos_hangar_port"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "lesbos_port_holofield";
+	id = "lesvos_port_holofield";
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/ridged,
@@ -1983,7 +1983,7 @@
 /obj/machinery/door/window/eastleft,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_engines"
+	id = "lesvos_engines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2292,11 +2292,11 @@
 	icon_state = "0-10"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "lesbos_starboard_holofield"
+	id = "lesvos_starboard_holofield"
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_hangar_starboard"
+	id = "lesvos_hangar_starboard"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hangar/starboard)
@@ -2719,7 +2719,7 @@
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_engines"
+	id = "lesvos_engines"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engines/starboard)
@@ -2820,7 +2820,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_hangar_port"
+	id = "lesvos_hangar_port"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hangar/port)
@@ -2849,24 +2849,24 @@
 /obj/machinery/button/shieldwallgen{
 	pixel_x = -5;
 	pixel_y = 10;
-	id = "lesbos_port_holofield";
+	id = "lesvos_port_holofield";
 	name = "port hangar holofield switch"
 	},
 /obj/machinery/button/door{
 	pixel_y = 11;
 	pixel_x = 3;
-	id = "lesbos_hangar_port";
+	id = "lesvos_hangar_port";
 	name = "port hangar door button"
 	},
 /obj/machinery/button/door{
 	pixel_y = 2;
 	pixel_x = -3;
-	id = "lesbos_hangar_starboard";
+	id = "lesvos_hangar_starboard";
 	name = "starboard hangar door button"
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_x = 5;
-	id = "lesbos_starboard_holofield";
+	id = "lesvos_starboard_holofield";
 	name = "starboard hangar holofield switch"
 	},
 /obj/machinery/newscaster/directional/north{
@@ -3014,7 +3014,7 @@
 	pixel_y = 7;
 	pixel_x = -22;
 	name = "Engine Blast Doors";
-	id = "lesbos_engines"
+	id = "lesvos_engines"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -3179,7 +3179,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "lesbos_windows"
+	id = "lesvos_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/hangar/port)
@@ -3298,7 +3298,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "lesbos_windows"
+	id = "lesvos_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -3385,7 +3385,7 @@
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_engines"
+	id = "lesvos_engines"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engines/port)
@@ -3489,7 +3489,7 @@
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_engines"
+	id = "lesvos_engines"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engines/port)
@@ -3612,7 +3612,7 @@
 	pixel_y = -15;
 	pixel_x = 22;
 	name = "Engine Blast Doors";
-	id = "lesbos_engines";
+	id = "lesvos_engines";
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -3671,7 +3671,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "lesbos_windows";
+	id = "lesvos_windows";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -4168,11 +4168,11 @@
 "Km" = (
 /obj/structure/cable/yellow,
 /obj/machinery/door/poddoor/shutters{
-	id = "lesbos_cargo"
+	id = "lesvos_cargo"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "lesbos_holofield"
+	id = "lesvos_holofield"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
@@ -4186,7 +4186,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "lesbos_windows"
+	id = "lesvos_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/cryo)
@@ -4285,11 +4285,11 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "lesbos_port_holofield"
+	id = "lesvos_port_holofield"
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_hangar_port"
+	id = "lesvos_hangar_port"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hangar/port)
@@ -4299,7 +4299,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_hangar_starboard"
+	id = "lesvos_hangar_starboard"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hangar/starboard)
@@ -4405,7 +4405,7 @@
 	pixel_y = -15;
 	pixel_x = 22;
 	name = "Engine Blast Doors";
-	id = "lesbos_engines";
+	id = "lesvos_engines";
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -4981,7 +4981,7 @@
 "Ra" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_hangar_starboard"
+	id = "lesvos_hangar_starboard"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hangar/starboard)
@@ -5560,7 +5560,7 @@
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "lesbos_engines"
+	id = "lesvos_engines"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engines/starboard)
