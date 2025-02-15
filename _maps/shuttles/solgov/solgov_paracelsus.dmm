@@ -214,12 +214,6 @@
 /area/ship/hallway/port)
 "cf" = (
 /obj/machinery/light/directional/east,
-/obj/machinery/button/door{
-	id = "sg_par_psych";
-	name = "sonnensoldner privacy shutters";
-	pixel_x = 6;
-	pixel_y = 24
-	},
 /obj/machinery/photocopier,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
@@ -968,8 +962,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/security{
-	req_access_txt = "2";
-	name = "Sonnensoldner Armory"
+	req_access_txt = "2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
