@@ -22,6 +22,7 @@
 	manufacturer = MANUFACTURER_NANOTRASEN
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
+	wear_rate = 0
 
 
 /obj/item/gun/ballistic/automatic/toy/pistol
@@ -74,6 +75,7 @@
 	pb_knockback = 0
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
+	wear_rate = 0
 
 /obj/item/gun/ballistic/shotgun/toy/process_chamber(empty_chamber = 0, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	. = ..()

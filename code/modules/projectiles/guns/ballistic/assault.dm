@@ -24,6 +24,7 @@
 	gunslinger_spread_bonus = 16
 
 	light_range = 2
+	wear_rate = 0.4 // TTD BALANCE THESE
 
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"

@@ -10,7 +10,7 @@
 
 
 #define JAM_CHANCE_MINOR 10
-#define JAM_GRACE_MINOR 6
+#define JAM_GRACE_MINOR 4
 #define JAM_CHANCE_MAJOR 20
 
 ///Subtype for any kind of ballistic gun
@@ -30,9 +30,9 @@
 	/// Number of times we have successfully fired since the last time the the gun has jammed. Low but not abysmal condition will only jam so often.
 	var/last_jam = 0
 	/// Gun will start to jam at this level of wear
-	var/wear_minor_threshold = 60
-	/// Gun will start to jam more at this level of wear. The grace period between jams is also removed, here, so it's worse than it looks
-	var/wear_major_threshold = 80
+	var/wear_minor_threshold = 80
+	/// Gun will start to jam more at this level of wear. The grace period between jams is also removed, so it's worse than it looks
+	var/wear_major_threshold = 130
 
 	min_recoil = 0.1
 
@@ -140,19 +140,20 @@
 
 /// Handles weapon condition. Returning TRUE prevents process_chamber from automatically loading a new round
 /obj/item/gun/ballistic/proc/condition_check(from_firing = TRUE)
-	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing) //The revolver is one of the most reliable firearm designs in the universe, and you of course need no more than 6 bullets for any purpose.
+	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing || !magazine.ammo_count(FALSE)) //The revolver is one of the most reliable firearms ever designed, as long as you don't need to fire any more than six bullets at something. Which you, of course, do not.
 		return FALSE
+	last_jam++
 	if(gun_wear < wear_minor_threshold)
-		say("Jam roll failed due to high condition, new last_jam of [last_jam]")
+		//say("Jam roll failed due to high condition, new last_jam of [last_jam]")
 		return FALSE
-	say("Rolling jam attempt with [gun_wear]% damage")
-	if(gun_wear >= wear_major_threshold ?  prob(JAM_CHANCE_MAJOR) : prob(JAM_CHANCE_MINOR) && last_jam >= JAM_GRACE_MINOR) //PLACEHOLDER
+	//say("Rolling jam attempt with [gun_wear]% damage")
+	if(gun_wear >= wear_major_threshold ?  prob(JAM_CHANCE_MAJOR) : prob(JAM_CHANCE_MINOR) && last_jam >= JAM_GRACE_MINOR) //PLACEHOLDER //LESS PLACEHOLDER NOW
 		bolt_locked = TRUE //*click*
 		last_jam = 0 // sighs and erases number on whiteboard
-		say("Jam roll succeeded")
+		playsound(src, 'sound/weapons/gun/general/dry_fire_old.ogg', 50, TRUE, -15) //click. uhoh.
+		//say("Jam roll succeeded")
 		return TRUE
-	last_jam++
-	say("Jam roll failed, new last_jam of [last_jam]")
+	//say("Jam roll failed, new last_jam of [last_jam]")
 
 
 ///Used to chamber a new round and eject the old one
@@ -372,26 +373,24 @@
 	. = ..()
 	var/count_chambered = !(bolt_type == BOLT_TYPE_NO_BOLT || bolt_type == BOLT_TYPE_OPEN)
 	. += "It has [get_ammo(count_chambered)] round\s remaining."
-	if(bolt_type != BOLT_TYPE_NO_BOLT)
-		var/conditionstr = span_red("abysmal dogshit")
-		switch(gun_wear)
-			if(0 to 19.9)
-				conditionstr = span_nicegreen("pristine")
-			if(20 to 39.9)
-				conditionstr = span_green("good")
-			if(40 to 59.9)
-				conditionstr = "decent"
-			if(60 to 79.9)
-				conditionstr = span_red("poor")
-			if(80 to 100)
-				conditionstr = span_warning("terrible")
-		. += "it is in [conditionstr] condition[gun_wear >= wear_minor_threshold ? gun_wear >= wear_major_threshold ? " and will suffer constant malfunctions" : " and will suffer from regular malfunctions" :""]."
 	if (!chambered)
 		. += "It does not seem to have a round chambered."
 	if (bolt_locked)
 		. += "The [bolt_wording] is locked back and needs to be released before firing."
 	if(bolt_type != BOLT_TYPE_NO_BOLT)
 		. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
+		var/conditionstr = span_boldwarning("critical")
+		var/minorhalf = wear_minor_threshold / 2
+		var/majorhalf = wear_minor_threshold + (wear_major_threshold-wear_minor_threshold) / 2
+		if(gun_wear <= minorhalf)
+			conditionstr = span_green("good")
+		else if(gun_wear <= wear_minor_threshold)
+			conditionstr = span_nicegreen("decent") //nicegreen is less neon than green so it looks less :)))
+		else if(gun_wear <= majorhalf)
+			conditionstr = span_red("poor")
+		else if(gun_wear <= wear_major_threshold) //TTD: switch doesn't play nice with variables but this sucks
+			conditionstr = span_warning("terrible")
+		. += "it is in [conditionstr] condition[gun_wear >= wear_minor_threshold ? gun_wear >= wear_major_threshold ? " and will suffer constant malfunctions" : " and will suffer from regular malfunctions" :""]."
 
 ///Gets the number of bullets in the gun
 /obj/item/gun/ballistic/proc/get_ammo(countchambered = TRUE)

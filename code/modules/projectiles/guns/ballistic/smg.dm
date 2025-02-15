@@ -27,6 +27,7 @@
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16
+	wear_rate = 0.5 //TTD BALANCE THESE
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"

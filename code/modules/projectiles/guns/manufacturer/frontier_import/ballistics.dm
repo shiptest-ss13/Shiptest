@@ -34,6 +34,7 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+	wear_rate = 0.4
 
 /obj/item/gun/ballistic/automatic/pistol/mauler/ComponentInitialize()
 	. = ..()

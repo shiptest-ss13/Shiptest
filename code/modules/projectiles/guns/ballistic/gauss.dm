@@ -32,3 +32,4 @@
 	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
 	wield_delay = 1 SECONDS
 	fire_select_icon_state_prefix = "pellet_"
+	wear_rate = 0.1 //TTD BALANCE THESE

@@ -41,6 +41,7 @@
 	/obj/structure/railing,
 	/obj/structure/flippedtable
 	)
+	wear_rate = 0.4 //TTD BALANCE THESE
 
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()
