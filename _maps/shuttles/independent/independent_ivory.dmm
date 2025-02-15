@@ -53,19 +53,6 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/slime/pet{
-	colour = "cerulean";
-	icon_living = "cerulean baby slime";
-	icon_state = "cerulean baby slime";
-	icon_dead = "cerulean baby slime dead";
-	faction = list("neutral");
-	mood = "aslime-:3";
-	name = "Searle";
-	pass_flags = 4;
-	desc = "A blue gelatinous blob commonly known as Searle. It seems happy!";
-	speak_emote = list("blorbles", "bounces around happily", "purrs");
-	speak_chance = 1
-	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "aP" = (
@@ -391,6 +378,19 @@
 /area/ship/engineering/engines/port)
 "fs" = (
 /obj/structure/chair/sofa/grey/left,
+/mob/living/simple_animal/slime/pet{
+	colour = "cerulean";
+	icon_living = "cerulean baby slime";
+	icon_state = "cerulean baby slime";
+	icon_dead = "cerulean baby slime dead";
+	faction = list("neutral");
+	mood = "aslime-:3";
+	name = "Searle";
+	pass_flags = 4;
+	desc = "A blue gelatinous blob commonly known as Searle. It seems happy!";
+	speak_emote = list("blorbles", "bounces around happily", "purrs");
+	speak_chance = 1
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
 "fx" = (
@@ -903,10 +903,14 @@
 	},
 /obj/item/kirbyplants/random{
 	pixel_y = 20;
-	pixel_x = -10
+	pixel_x = -10;
+	layer = 2.89
 	},
-/obj/structure/chair/stool/bar{
-	dir = 1
+/obj/machinery/disposal/bin{
+	pixel_x = -8
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
@@ -1364,6 +1368,16 @@
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
+"yp" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "ivory_commons"
+	},
+/obj/machinery/door/firedoor/window,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plating,
+/area/ship/crew/ccommons)
 "yz" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 6
@@ -1527,6 +1541,17 @@
 	color = "#792f27"
 	},
 /area/ship/crew/dorm/captain)
+"Am" = (
+/obj/structure/disposaloutlet{
+	dir = 1;
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Ar" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
@@ -2053,6 +2078,10 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
+"Oe" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Op" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -2063,6 +2092,19 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"Ou" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D5A66E"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/open/floor/wood/birch,
+/area/ship/crew/ccommons)
 "OA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2262,6 +2304,11 @@
 "Vj" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/dorm/captain)
+"VI" = (
+/obj/effect/turf_decal/corner/opaque/black/diagonal,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/ccommons)
 "VO" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -2316,6 +2363,7 @@
 /obj/effect/spawner/bunk_bed,
 /obj/machinery/light/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/railing/thin,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/dorm)
 "WL" = (
@@ -2376,6 +2424,7 @@
 "XM" = (
 /obj/machinery/vending/boozeomat,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "XX" = (
@@ -2404,6 +2453,17 @@
 	},
 /turf/open/floor/light,
 /area/ship/bridge)
+"Yi" = (
+/obj/structure/table/reinforced,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/light,
+/area/ship/crew/ccommons)
+"Ys" = (
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Yu" = (
 /obj/docking_port/mobile{
 	dir = 2;
@@ -2725,7 +2785,7 @@ hB
 hB
 iC
 Ue
-iC
+Am
 aR
 lc
 Ef
@@ -2750,14 +2810,14 @@ hB
 hB
 hB
 iC
-iC
-iC
-iC
-yg
+Ys
+Oe
+Oe
+yp
 XM
-xq
-Cl
-as
+VI
+Yi
+Ou
 HK
 aZ
 Gs
