@@ -152,7 +152,7 @@
 	crate_name = "frag grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
 
-/datum/supply_pack/sec_supply/frag_grenade
+/datum/supply_pack/sec_supply/c4duffel
 	name = "C-4 Demolitions Charge Crate"
 	desc = "Contains a duffel of C-4 demolitions charges, for use in scrapping and demolitions of large-scale structures."
 	cost = 1000
