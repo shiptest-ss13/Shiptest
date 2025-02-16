@@ -53,6 +53,21 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
+/mob/living/simple_animal/slime/pet{
+	colour = "cerulean";
+	icon_living = "cerulean baby slime";
+	icon_state = "cerulean baby slime";
+	icon_dead = "cerulean baby slime dead";
+	faction = list("neutral");
+	mood = "aslime-:3";
+	name = "Searle";
+	pass_flags = 4;
+	desc = "A blue gelatinous blob commonly known as Searle. It seems happy!";
+	speak_emote = list("blorbles", "bounces around happily", "purrs");
+	speak_chance = 1;
+	density = 0;
+	can_buckle = 1
+	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "aP" = (
@@ -383,21 +398,6 @@
 /area/ship/engineering/engines/port)
 "fs" = (
 /obj/structure/chair/sofa/grey/left,
-/mob/living/simple_animal/slime/pet{
-	colour = "cerulean";
-	icon_living = "cerulean baby slime";
-	icon_state = "cerulean baby slime";
-	icon_dead = "cerulean baby slime dead";
-	faction = list("neutral");
-	mood = "aslime-:3";
-	name = "Searle";
-	pass_flags = 4;
-	desc = "A blue gelatinous blob commonly known as Searle. It seems happy!";
-	speak_emote = list("blorbles", "bounces around happily", "purrs");
-	speak_chance = 1;
-	density = 0;
-	can_buckle = 1
-	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
 "fx" = (
