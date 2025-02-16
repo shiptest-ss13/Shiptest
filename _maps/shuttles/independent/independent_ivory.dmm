@@ -327,7 +327,8 @@
 "eM" = (
 /obj/structure/closet/secure_closet/freezer{
 	name = "fridge";
-	storage_capacity = 35
+	storage_capacity = 35;
+	anchored = 1
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab/chicken,
 /obj/item/reagent_containers/food/snacks/meat/slab/chicken,
@@ -593,7 +594,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/obj/structure/closet/cabinet,
+/obj/structure/closet/cabinet{
+	anchored = 1
+	},
 /obj/item/storage/backpack/satchel,
 /obj/item/storage/backpack,
 /obj/item/clothing/under/pants/black,
@@ -1503,7 +1506,8 @@
 	req_access_txt = "20";
 	close_sound = 'sound/machines/wooden_closet_close.ogg';
 	open_sound = 'sound/machines/wooden_closet_open.ogg';
-	desc = "It's a card-locked cabinet."
+	desc = "It's a card-locked cabinet.";
+	anchored = 1
 	},
 /obj/item/storage/backpack/satchel/cap,
 /obj/item/storage/backpack/captain,
