@@ -347,7 +347,7 @@
 /obj/item/reagent_containers/hypospray/medipen/mammoth
 	name = "mammoth injector"
 	desc = "An injector filled with an ICW-era mixture of aggression-enhancing stimulants."
-	list_reagents = list(/datum/reagent/drug/mammoth = 9, /datum/reagent/medicine/dimorlin = 4, /datum/reagent/medicine/carfencadrizine = 6)
+	list_reagents = list(/datum/reagent/drug/mammoth = 7, /datum/reagent/medicine/dimorlin = 6, /datum/reagent/medicine/carfencadrizine = 6)
 	volume = 19
 	amount_per_transfer_from_this = 19
 	icon_state = "syndipen"

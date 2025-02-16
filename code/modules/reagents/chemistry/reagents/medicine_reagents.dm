@@ -2372,7 +2372,7 @@
 	name = "Carfencadrizine"
 	description = "A highly potent synthetic painkiller held in a suspension of stimulating agents. Allows people to keep moving long beyond when they should."
 	color = "#859480"
-	overdose_threshold = 7
+	overdose_threshold = 8
 	addiction_threshold = 7
 	metabolization_rate = 0.1
 
