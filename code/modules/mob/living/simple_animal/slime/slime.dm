@@ -418,10 +418,14 @@
 	docile = 1
 
 /mob/living/simple_animal/slime/can_unbuckle()
-	return 0
+	if(!can_buckle)
+		return 0
+	. = ..()
 
 /mob/living/simple_animal/slime/can_buckle()
-	return 0
+	if(!can_buckle)
+		return 0
+	. = ..()
 
 /mob/living/simple_animal/slime/get_mob_buckling_height(mob/seat)
 	if(..())

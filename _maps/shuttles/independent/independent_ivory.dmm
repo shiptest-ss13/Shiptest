@@ -215,6 +215,11 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
+/obj/structure/table,
+/obj/item/storage/toolbox/emergency{
+	pixel_x = 2;
+	pixel_y = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "eu" = (
@@ -337,9 +342,9 @@
 /obj/item/reagent_containers/food/snacks/grown/tea/astra,
 /obj/item/reagent_containers/food/snacks/grown/tea/astra,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
-/obj/item/reagent_containers/food/snacks/grown/coffee/robusta,
-/obj/item/reagent_containers/food/snacks/grown/coffee/robusta,
-/obj/item/reagent_containers/food/snacks/grown/coffee/robusta,
+/obj/item/reagent_containers/food/snacks/grown/coffee,
+/obj/item/reagent_containers/food/snacks/grown/coffee,
+/obj/item/reagent_containers/food/snacks/grown/coffee,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "fa" = (
@@ -389,7 +394,9 @@
 	pass_flags = 4;
 	desc = "A blue gelatinous blob commonly known as Searle. It seems happy!";
 	speak_emote = list("blorbles", "bounces around happily", "purrs");
-	speak_chance = 1
+	speak_chance = 1;
+	density = 0;
+	can_buckle = 1
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
@@ -1139,6 +1146,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/structure/chair/stool,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
 "sE" = (
