@@ -1465,17 +1465,6 @@
 "ps" = (
 /turf/template_noop,
 /area/template_noop)
-"pw" = (
-/obj/effect/spawner/bunk_bed{
-	dir = 1
-	},
-/obj/structure/curtain/cloth,
-/obj/structure/window/reinforced{
-	dir = 2;
-	pixel_y = -1
-	},
-/turf/open/floor/carpet/blue,
-/area/ship/crew)
 "pE" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1776,11 +1765,10 @@
 	pixel_x = -7;
 	pixel_y = -12
 	},
-/obj/item/clothing/head/helmet/bulletproof/x11/clip{
-	pixel_y = 1;
-	pixel_x = -1
-	},
 /turf/open/floor/plasteel/dark,
+/area/ship/security)
+"sz" = (
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "sA" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/corner,
@@ -1917,6 +1905,17 @@
 /area/ship/crew/canteen)
 "us" = (
 /obj/machinery/airalarm/directional/west,
+/turf/open/floor/carpet/blue,
+/area/ship/crew)
+"ut" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 1
+	},
+/obj/structure/curtain/cloth,
+/obj/structure/window/reinforced{
+	dir = 2;
+	pixel_y = -1
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "ux" = (
@@ -3804,9 +3803,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
-"Pu" = (
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security)
 "Py" = (
 /obj/structure/closet/secure_closet/engineering_personal{
 	populate = 0
@@ -5454,7 +5450,7 @@ PK
 HW
 ZG
 fR
-pw
+ut
 zE
 di
 ps
@@ -5540,7 +5536,7 @@ ps
 ps
 gT
 bQ
-Pu
+sz
 sI
 gT
 gT
