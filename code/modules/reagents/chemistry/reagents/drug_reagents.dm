@@ -580,21 +580,21 @@
 	addiction_threshold = 20
 	metabolization_rate = 0.1
 	taste_description = "a distant earthiness"
-	var/vision_trait = TRAIT_NIGHT_VISION
+	var/vision_trait = TRAIT_CHEMICAL_NIGHTVISION
 
 /datum/reagent/drug/stardrop/on_mob_metabolize(mob/living/L)
 	..()
 	if(iscarbon(L))
 		var/mob/living/carbon/drugged = L
-		ADD_TRAIT(drugged, vision_trait, type)
 		ADD_TRAIT(drugged, TRAIT_CLOUDED, type)
+		ADD_TRAIT(drugged, TRAIT_CHEMICAL_NIGHTVISION, type)
 		drugged.update_sight()
 
 
 /datum/reagent/drug/stardrop/on_mob_end_metabolize(mob/living/L)
 	if(iscarbon(L))
 		var/mob/living/carbon/drugged = L
-		REMOVE_TRAIT(drugged, vision_trait, type)
+		REMOVE_TRAIT(drugged, TRAIT_CHEMICAL_NIGHTVISION, type)
 		REMOVE_TRAIT(drugged, TRAIT_CLOUDED, type)
 		drugged.update_sight()
 
@@ -646,5 +646,5 @@
 	overdose_threshold = 17
 	addiction_threshold = 11
 	metabolization_rate = 0.2
-	vision_trait = TRAIT_THERMAL_VISION
+	vision_trait = TRAIT_GOOD_CHEMICAL_NIGHTVISION
 	taste_description = "sulpheric sweetness"
