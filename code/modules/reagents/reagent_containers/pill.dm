@@ -312,7 +312,7 @@ WS End */
 	rename_with_volume = TRUE
 
 /obj/item/reagent_containers/pill/stardrop
-	name = "Stardrop Capsule"
+	name = "stardrop capsule"
 	desc = "A capsule of a vision enhancing compound known as Stardrop."
 	icon_state = "pill11"
 	list_reagents = list(/datum/reagent/drug/stardrop = 15)
