@@ -237,7 +237,7 @@
 	item_state = "ngr_facemask"
 	icon = 'icons/obj/clothing/faction/ngr/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/mask.dmi'
-	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION
 
 //////////
 //Neck//
@@ -262,6 +262,7 @@
 	item_state = "ngr_webbing"
 	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/storage/belt/security/webbing/ngr/cobra/PopulateContents()
 	. = ..()
@@ -273,3 +274,11 @@
 		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
 	new /obj/item/ammo_casing/a40mm(src)
 	new /obj/item/ammo_casing/a40mm(src)
+
+/obj/item/storage/belt/mining/ngr
+	name = "NGR industrial webbing"
+	desc = "A set of industrial webbing used primarily by salvagers of the New Gorlex Republic, capable of holding mining equipment."
+	icon_state = "ngr_webbing_tan"
+	item_state = "ngr_webbing_tan"
+	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'

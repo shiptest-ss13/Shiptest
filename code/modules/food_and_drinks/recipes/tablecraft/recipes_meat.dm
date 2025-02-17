@@ -85,7 +85,7 @@
 /datum/crafting_recipe/food/spicyfiletsushiroll
 	name = "Spicy sushi roll"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet = 1,
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
 		/obj/item/reagent_containers/food/snacks/fishmeat = 1,
 		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
@@ -97,7 +97,7 @@
 /datum/crafting_recipe/food/fishi
 	name = "Fi-shi roll"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/seaweed = 8,
+		/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet = 8,
 		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 4
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishi
@@ -106,7 +106,7 @@
 /datum/crafting_recipe/food/nigiri_sushi
 	name = "Nigiri sushi"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet = 1,
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
 		/obj/item/reagent_containers/food/snacks/fishmeat = 1,
 		/datum/reagent/consumable/soysauce = 2

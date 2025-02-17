@@ -261,7 +261,8 @@
 "eB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/grunge{
-	name = "Bathroom"
+	name = "Bathroom";
+	id_tag = "atlas_bathroom"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -3890,6 +3891,15 @@
 /obj/item/clothing/head/wig/random{
 	pixel_x = 11
 	},
+/obj/machinery/button/door{
+	pixel_x = -20;
+	pixel_y = -10;
+	dir = 4;
+	id = "atlas_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
+	},
 /turf/open/floor/plastic,
 /area/ship/crew)
 "Qt" = (
@@ -4255,7 +4265,11 @@
 /area/ship/crew/crewtwo)
 "Ti" = (
 /obj/machinery/light/directional/west,
-/turf/open/floor/engine/hull/interior,
+/obj/machinery/telecomms/relay/preset/minutemen,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
 "Tx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,

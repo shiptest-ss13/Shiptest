@@ -82,7 +82,8 @@
 		/obj/item/clothing/glasses/welding, //WS edit: ok mald sure I'll add the welding stuff to the. ok.
 		/obj/item/clothing/mask/gas/welding,
 		/obj/item/clothing/head/welding, //WS end
-		/obj/item/gun/energy/plasmacutter
+		/obj/item/gun/energy/plasmacutter,
+		/obj/item/bodycamera
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -168,6 +169,7 @@
 	icon_state = "medicwebbing"
 	item_state = "medicwebbing"
 	custom_premium_price = 900
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/storage/belt/medical/ComponentInitialize()
 	. = ..()
@@ -224,7 +226,8 @@
 		/obj/item/construction/plumbing,
 		/obj/item/plunger,
 		/obj/item/reagent_containers/spray,
-		/obj/item/shears
+		/obj/item/shears,
+		/obj/item/bodycamera
 		))
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()
@@ -296,6 +299,7 @@
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash/handheld,
 		/obj/item/clothing/glasses,
+		/obj/item/binoculars,
 		/obj/item/ammo_casing/shotgun,
 		/obj/item/ammo_box/magazine,
 		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
@@ -310,11 +314,14 @@
 		/obj/item/flashlight/seclite,
 		/obj/item/melee/classic_baton/telescopic,
 		/obj/item/radio,
+		/obj/item/attachment,
+		/obj/item/extinguisher/mini,
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola,
 		/obj/item/holosign_creator/security,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box/magazine/ammo_stack, //handfuls of bullets
+		/obj/item/bodycamera,
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()
@@ -400,7 +407,8 @@
 		/obj/item/storage/bag/plants,
 		/obj/item/stack/marker_beacon,
 		/obj/item/restraints/legcuffs/bola/watcher,
-		/obj/item/melee/sword/bone
+		/obj/item/melee/sword/bone,
+		/obj/item/bodycamera,
 		))
 
 
@@ -444,6 +452,7 @@
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
 	resistance_flags = FIRE_PROOF
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 	unique_reskin = list(
 		"None" = "militarywebbing",
@@ -902,7 +911,7 @@
 	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
 	icon_state = "inteq_webbing"
 	item_state = "inteq_webbing"
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
 	. = ..()

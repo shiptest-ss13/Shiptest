@@ -24,6 +24,14 @@
 	icon_state = "hl_officer"
 	item_state = "hl_officer"
 
+/obj/item/clothing/under/plasmaman/hardliners
+	name = "\improper Hardliner phorid envirosuit"
+	desc = "A button-up envirosuit with use intended for phorid Hardliners. Ensures they don't die of combustion."
+	icon_state = "hl_envirosuit"
+	item_state = "hl_envirosuit"
+	icon = 'icons/obj/clothing/faction/hardliners/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/uniforms.dmi'
+
 ////////////////////
 //Unarmored suits//
 ///////////////////
@@ -155,6 +163,14 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	jetpack = null
 
+/obj/item/clothing/head/helmet/space/plasmaman/hardliners
+	name = "Hardliner phorid envirosuit helmet"
+	desc = "An envirohelmet designed for phorid Hardliners, with intimidating white stripes."
+	icon_state = "hl_envirohelm"
+	item_state = "hl_envirohelm"
+	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
+
 /////////
 //Hats//
 ////////
@@ -220,6 +236,7 @@
 	item_state = "hl_webbing"
 	icon = 'icons/obj/clothing/faction/hardliners/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/belt.dmi'
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/storage/belt/security/webbing/hardliners/sidewinder/PopulateContents()
 	. = ..()

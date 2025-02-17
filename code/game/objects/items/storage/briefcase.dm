@@ -32,10 +32,6 @@
 /obj/item/storage/briefcase/lawyer
 	folder_path = /obj/item/folder/blue
 
-/obj/item/storage/briefcase/lawyer/PopulateContents()
-	new /obj/item/stamp/law(src)
-	..()
-
 /obj/item/storage/briefcase/sniperbundle
 	desc = "Its label reads \"genuine hardened Captain leather\", but suspiciously has no other tags or branding. Smells like L'Air du Temps."
 	force = 10
