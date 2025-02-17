@@ -1318,7 +1318,8 @@
 /area/ship/engineering)
 "dZ" = (
 /obj/machinery/porta_turret/ship/nt/light{
-	dir = 10
+	dir = 10;
+	id = "meta-turrets"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -1703,7 +1704,8 @@
 /area/ship/cargo)
 "hV" = (
 /obj/machinery/porta_turret/ship/nt/light{
-	dir = 5
+	dir = 5;
+	id = "meta-turrets"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -2185,7 +2187,8 @@
 /area/ship/crew/dorm/dormtwo)
 "mO" = (
 /obj/machinery/porta_turret/ship/nt/light{
-	dir = 6
+	dir = 6;
+	id = "meta-turrets"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -2719,7 +2722,8 @@
 /area/ship/crew)
 "tx" = (
 /obj/machinery/porta_turret/ship/nt/light{
-	dir = 9
+	dir = 9;
+	id = "meta-turrets"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -4700,7 +4704,8 @@
 /obj/machinery/turretid{
 	pixel_y = -24;
 	req_access = null;
-	locked = 0
+	locked = 0;
+	id = "meta-turrets"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
