@@ -103,7 +103,9 @@
 		stamina -= tile_dropoff_stamina
 	if(armour_penetration > ap_dropoff_cutoff)
 		armour_penetration -= ap_dropoff
-	if(damage <= 0 && stamina <= 0)
+	if(accuracy_mod < 3)
+		accuracy_mod += 0.3
+	if(damage < 0 && stamina < 0)
 		qdel(src)
 
 /obj/projectile/bullet/pellet/improvised
