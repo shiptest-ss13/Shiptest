@@ -100,11 +100,35 @@
 
 
 /datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
-	if(preserve_level)
+	if(!can_reset_dynamic())
 		return
+	lifespan = 60 SECONDS
+	death_time = world.time + lifespan
+	token.countdown = new /obj/effect/countdown/overmap_event(token)
+	token.countdown.color = COLOR_OFF_WHITE
+
+	token.countdown.start()
+	START_PROCESSING(SSfastprocess, src)
+
+/datum/overmap/dynamic/process()
+	if(death_time < world.time && lifespan)
+		reset_dynamic()
+
+/datum/overmap/dynamic/proc/can_reset_dynamic()
+	if(preserve_level)
+		return FALSE
 
 	if(length(mapzone?.get_mind_mobs()) || SSlag_switch.measures[DISABLE_PLANETDEL])
-		return //Dont fuck over stranded people
+		return FALSE //Dont fuck over stranded people
+	return TRUE
+
+//Evil proc that needs to be removed
+/datum/overmap/dynamic/proc/reset_dynamic()
+	QDEL_NULL(token.countdown)
+	STOP_PROCESSING(SSfastprocess, src)
+
+	if(!can_reset_dynamic())
+		return
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	var/list/results = SSovermap.get_unused_overmap_square()
