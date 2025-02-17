@@ -207,8 +207,8 @@
 	desc = "A horrifically still mass of plasteel and flesh. Its motions are filled with a deliberate and exacting malice. Its weapon is raised, and it prepares to pull the trigger."
 	icon_state = "frontiersmanrangedminigun"
 	projectilesound = 'sound/weapons/laser4.ogg'
-	rapid = 6
-	rapid_fire_delay = 1.5
+	rapid = 5
+	rapid_fire_delay = 2
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	r_hand = /obj/item/gun/ballistic/automatic/hmg/shredder
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless
