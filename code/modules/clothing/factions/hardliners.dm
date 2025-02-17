@@ -141,6 +141,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
 	jetpack = null
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/hl
 	name = "elite white-red hardsuit helmet"
@@ -162,6 +163,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	jetpack = null
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/plasmaman/hardliners
 	name = "Hardliner phorid envirosuit helmet"
