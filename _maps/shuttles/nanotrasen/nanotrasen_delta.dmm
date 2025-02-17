@@ -986,7 +986,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/lime,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 5
 	},
 /obj/structure/closet/wall/directional/west{
@@ -1190,7 +1190,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /obj/structure/table,
@@ -1250,7 +1250,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /obj/structure/table,
@@ -1287,7 +1287,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -1491,7 +1491,7 @@
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/north,
 /obj/item/radio/intercom/wideband/directional/west,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1499,7 +1499,7 @@
 "nf" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /obj/structure/rack,
 /obj/item/storage/belt/utility,
 /obj/item/storage/toolbox/mechanical{
@@ -1629,7 +1629,7 @@
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "ps" = (
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 5
 	},
 /obj/machinery/light_switch{
@@ -1667,7 +1667,7 @@
 /obj/effect/turf_decal/weather,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/number/two,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /obj/machinery/light/small/directional/east,
@@ -1928,7 +1928,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 10
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -2067,11 +2067,10 @@
 /obj/structure/table,
 /obj/machinery/recharger,
 /obj/machinery/turretid/ship{
-	pixel_y = -24
+	pixel_y = -24;
+	id = "delta_grid"
 	},
-/obj/machinery/fax/nanotrasen{
-	pixel_y = 6
-	},
+/obj/machinery/fax/nanotrasen,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Aw" = (
@@ -2469,7 +2468,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 10
 	},
 /obj/structure/railing{
@@ -2620,7 +2619,7 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white{
@@ -2695,7 +2694,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /obj/machinery/light/small/directional/east,
@@ -2878,7 +2877,7 @@
 /area/ship/hallway/central)
 "Wf" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /obj/machinery/light/small/directional/north,
 /obj/structure/railing{
 	dir = 4
