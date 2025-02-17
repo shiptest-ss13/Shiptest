@@ -41,6 +41,11 @@
 	/// The current docking ticket of this object, if any
 	var/datum/docking_ticket/current_docking_ticket
 
+	/// What's the lifespan of this event? If unset, effectively disables this features.
+	var/lifespan
+	/// The 'death time' of the object. Used for limited lifespan events.
+	var/death_time
+
 /datum/overmap/New(position, ...)
 	SHOULD_NOT_OVERRIDE(TRUE) // Use [/datum/overmap/proc/Initialize] instead.
 	if(!position)
@@ -77,7 +82,13 @@
 	token.parent = null
 	QDEL_NULL(token)
 	QDEL_LIST(contents)
+	if(lifespan)
+		STOP_PROCESSING(SSfastprocess, src)
 	return ..()
+
+/datum/overmap/process()
+	if(death_time < world.time && lifespan)
+		qdel(src)
 
 /**
  * This proc is called directly after New(). It's done after the basic creation and placement of the token and setup has been completed.
