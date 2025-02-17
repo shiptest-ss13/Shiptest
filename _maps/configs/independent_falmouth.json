@@ -1,0 +1,43 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Falmouth-class Light Freighter",
+	"map_short_name": "Falmouth-class",
+	"faction": "/datum/faction/independent",
+	"prefix": "ISV",
+	"manufacturer": "Miskilamo Spacefaring",
+	"description": "A small, cheap cargo ship most remarkable for its very high speed and maneuverability for a ship of its type. Marketed as a do-it-all light ship suitable for short-range runs and courier work, the Falmouth is extremely popular among smugglers and the occasional ambitious pirate; Falmouths operating on legitimate business are downright rare in some areas, particularly on the Frontier.",
+	"tags": [
+		"Specialist",
+		"Cargo",
+		"Combat"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"PIRATES"
+	],
+	"map_path": "_maps/shuttles/independent/independent_falmouth.dmm",
+	"limit": 1,
+	"starting_funds": 1250,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain/cheap",
+			"officer": true,
+			"slots": 1
+		},
+		"First Mate": {
+			"outfit": "/datum/outfit/job/independent/hop",
+			"officer": true,
+			"slots": 1
+		},
+		"Security Detail": {
+			"outfit": "/datum/outfit/job/independent/security/merc",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

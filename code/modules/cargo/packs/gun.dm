@@ -23,10 +23,17 @@
 	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/m17
-	name = "M17 pistol Crate"
-	desc = "A cheap target shooting pistol manufactured by Serene Outdoors. Chambered in .22lr"
+	name = "M17 Micro Target Pistol Crate"
+	desc = "A cheap target shooting pistol manufactured by Serene Outdoors. Chambered in .22 LR."
 	cost = 400
 	contains = list(/obj/item/storage/guncase/pistol/m17)
+	crate_name = "pistol crate"
+
+/datum/supply_pack/gun/m20_auto_elite
+	name = "M20 Auto Elite Pistol Crate"
+	desc = "Contains a heavy pistol manufactured by Serene Outdoors. Chambered in .44 Roumain."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pistol/m20_auto_elite)
 	crate_name = "pistol crate"
 
 /datum/supply_pack/gun/commanders
@@ -67,6 +74,16 @@
 	desc = "Contains a modified Commander pistol, adjusted to fit the IRMG's standards and painted in the brown and gold of all IRMG firearms."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/commissioner)
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/pinscher
+	name = "Pinscher Heavy Pistol Crate"
+	desc = "Contains a heavy pistol manufactured by Serene Outdoors and modified to fit IRMG's standards. Chambered in .44 Roumain."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pistol/pinscher)
+	crate_name = "pistol crate"
 	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
@@ -129,7 +146,7 @@
 /datum/supply_pack/gun/viperrevolver
 	name = "Viper-23 Revolver Crate"
 	desc = "Contains a civilian variant of the Viper revolver, chambered in .357 magnum."
-	cost = 2500
+	cost = 1500
 	contains = list(/obj/item/storage/guncase/pistol/viper)
 	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 5
@@ -137,7 +154,7 @@
 /datum/supply_pack/gun/a357
 	name = "R-23 'Viper' Revolver Crate"
 	desc = "Contains a double-action military variant of the Viper revolver, chambered in .357 magnum."
-	cost = 3000
+	cost = 1750
 	contains = list(/obj/item/storage/guncase/pistol/a357)
 	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 0
@@ -273,7 +290,7 @@
 
 /datum/supply_pack/gun/hellfire_shotgun
 	name = "Hellfire Shotgun Crate"
-	desc = "For when you need to deal with 8 hooligans. Contains a pump shotgun, with a 8-round capacity."
+	desc = "For when you need to deal with a riot's worth of hooligans. Contains a pump shotgun, with a 9-round capacity."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/hellfire)
 	crate_name = "shotgun crate"
@@ -289,7 +306,7 @@
 
 /datum/supply_pack/gun/buckmaster
 	name = "Buckmaster Shotgun Crate"
-	desc = "For when you need to deal with 8 hooligans and can't be arsed to pump. Contains a semi-auto shotgun with an 8 round tube."
+	desc = "For when you need to deal with 7 hooligans and can't be arsed to pump. Contains a semi-auto shotgun with a 7-round capacity."
 	contains = list(/obj/item/storage/guncase/buckmaster)
 	cost = 3000
 	crate_name = "shotgun crate"
@@ -398,7 +415,7 @@
 
 /datum/supply_pack/gun/firestorm
 	name = "Firestorm SMG Crate"
-	desc = "Contains a Hunter's Pride SMG, intended for internal use by hunters and chambered in .45"
+	desc = "Contains a Hunter's Pride SMG, intended for internal use by hunters and chambered in .44 Roumain."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/firestorm)
 	crate_name = "SMG crate"
@@ -618,6 +635,13 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/woodsman
+	name = "Model 23 'Woodsman' Hunting Rifle"
+	desc = "Contains a semi-automatic hunting rifle chambered in 8x50mmR and produced by Serene Outdoors. Come with three magazines with a 5-round capacity."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/woodsman)
+	crate_name = "hunting rifle crate"
+
 /datum/supply_pack/gun/vickland
 	name = "Vickland Battle Rifle"
 	desc = "Contains a high-powered semi-automatic battle rifle chambered in .308 and produced by Hunter's Pride. Fed via stripper clips with a 10 round capacity."
@@ -657,7 +681,7 @@
 	faction = /datum/faction/syndicate/scarborough_arms
 
 /datum/supply_pack/gun/boomslang10
-	name = "Boomslang-10 Sniper Rifle Crate"
+	name = "MSR-90 'Boomslang' Sniper Rifle Crate"
 	desc = "Contains a military variant of the Boomslang Sniper rifle equipped with an 8x sniper scope, for licenesed buyers only. Chambered in the powerful 6.5x57mm CLIP."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/boomslangmilitary)
@@ -686,7 +710,7 @@
 
 /datum/supply_pack/gun/ssg669
 	name = "SSG-669C Sniper Rifle Crate"
-	desc = "Contains a traditional scoped rifle to hunt wildlife and big game from a respectful distance. Chambered in powerful .300 Magnum."
+	desc = "Contains a traditional solarian marksman rifle chambered in 8x58mm Caseless."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/ssg669)
 	crate_name = "sniper rifle crate"

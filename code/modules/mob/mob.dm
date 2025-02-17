@@ -512,7 +512,7 @@
 		for(var/i in 1 to (length(result) - 1))
 			result[i] += "\n"
 
-	to_chat(src, examine_block("<span class='infoplain'>[result.Join()]</span>"))
+	to_chat(src, boxed_message("<span class='infoplain'>[result.Join()]</span>"))
 
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, examinify)
 
@@ -668,7 +668,8 @@
 	set src = usr
 
 	if(ismecha(loc))
-		return
+		var/obj/mecha/mech = loc
+		return mech.handle_unique_action(src)
 
 	if(incapacitated())
 		return
@@ -679,6 +680,25 @@
 			update_inv_hands()
 			return
 		I.unique_action(src)
+		update_inv_hands()
+
+/mob/verb/do_secondary_action()
+	set name = "Do Secondary Action"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		return
+
+	if(incapacitated())
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		if(I.pre_secondary_action(src))
+			update_inv_hands()
+			return
+		I.secondary_action(src)
 		update_inv_hands()
 
 /**

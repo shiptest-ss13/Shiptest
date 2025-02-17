@@ -83,7 +83,7 @@
 	new /obj/item/storage/bag/medical(src) //Medibags
 	new /obj/item/clothing/head/beret/cmo(src) //Berets
 	new /obj/item/clothing/under/rank/command(src) //Better command uniforms
-	new /obj/item/storage/box/hypospray/CMO(src) //Hypo mk. 2s
+	new /obj/item/storage/box/hypospray/mkiii(src) //Hypo mk. 2s
 	new /obj/item/clothing/neck/cloak/cmo(src)
 	new /obj/item/clothing/suit/bio_suit/cmo(src)
 	new /obj/item/clothing/head/bio_hood/cmo(src)

@@ -57,7 +57,7 @@
 
 /obj/item/storage/guncase/firestorm
 	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
-	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+	mag_type = /obj/item/ammo_box/magazine/c44_firestorm_mag
 
 /obj/item/storage/guncase/vickland
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/vickland
@@ -157,6 +157,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/m17
 	mag_type = /obj/item/ammo_box/magazine/m17
 
+/obj/item/storage/guncase/pistol/m20_auto_elite
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite
+	mag_type = /obj/item/ammo_box/magazine/m20_auto_elite
+
 /obj/item/storage/guncase/m12
 	gun_type = /obj/item/gun/ballistic/automatic/m12_sporter
 	mag_type = /obj/item/ammo_box/magazine/m12_sporter
@@ -169,6 +173,11 @@
 /obj/item/storage/guncase/m15
 	gun_type = /obj/item/gun/ballistic/automatic/m15
 	mag_type = /obj/item/ammo_box/magazine/m15
+
+/obj/item/storage/guncase/woodsman
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/woodsman
+	mag_type = /obj/item/ammo_box/magazine/m23
+	mag_count = 3
 
 /obj/item/storage/guncase/buckmaster
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/m11
@@ -299,6 +308,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 
+/obj/item/storage/guncase/pistol/pinscher
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite/inteq
+	mag_type = /obj/item/ammo_box/magazine/m20_auto_elite
+
 /obj/item/storage/guncase/mongrel
 	gun_type = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
 	mag_type = /obj/item/ammo_box/magazine/smgm10mm
@@ -334,3 +347,23 @@
 
 /obj/item/storage/guncase/energy/e10
 	gun_type = /obj/item/gun/energy/laser/e10
+
+/* underbarrel guns */
+/obj/item/storage/guncase/underbarrel_shotgun
+	gun_type = /obj/item/attachment/gun/ballistic/shotgun
+
+/obj/item/storage/guncase/underbarrel_riot_grenade
+	gun_type = /obj/item/attachment/gun/riot
+
+/obj/item/storage/guncase/underbarrel_flamethrower
+	gun_type = /obj/item/attachment/gun/flamethrower
+
+/obj/item/storage/guncase/underbarrel_flare
+	gun_type = /obj/item/attachment/gun/flare
+
+/obj/item/storage/guncase/underbarrel_hognose
+	gun_type = /obj/item/attachment/gun/ballistic/hognose
+	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu/hognose
+
+/obj/item/storage/guncase/energy/underbarrel_e_gun
+	gun_type = /obj/item/attachment/gun/energy/e_gun

@@ -49,10 +49,19 @@
 	faction = /datum/faction/srm
 
 /datum/supply_pack/magazine/firestorm_mag
-	name = "Firestorm Magazine Crate"
-	desc = "Contains a 28-round magazine for the Hunter's Pride Firestorm SMG."
-	contains = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/empty)
+
+	name = "Firestorm Stick Magazine Crate"
+	desc = "Contains a 24-round magazine for the Hunter's Pride Firestorm SMG."
+	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/empty)
+
 	cost = 300
+	faction = /datum/faction/srm
+
+/datum/supply_pack/magazine/firestorm_mag
+	name = "Firestorm Pan Magazine Crate"
+	desc = "Contains a 40-round pan magazine for the Hunter's Pride Firestorm SMG."
+	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/empty)
+	cost = 1000
 	faction = /datum/faction/srm
 
 
@@ -76,12 +85,37 @@
 	contains = list(/obj/item/ammo_box/magazine/m15/empty)
 	cost = 300
 
+/datum/supply_pack/magazine/woodsman_mag
+	name = "Woodsman Magazine Crate"
+	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of five rounds."
+	contains = list(/obj/item/ammo_box/magazine/m23/empty)
+	cost = 200
+
+/datum/supply_pack/magazine/woodsman_mag_extended
+	name = "Woodsman Magazine Crate"
+	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/m23/extended/empty)
+	cost = 500
+
+/datum/supply_pack/magazine/m20_auto_elite
+	name = "Auto Elite Magazine Crate"
+	desc = "Contains a .44 Roumain magazine for the Auto Elite pistol, with a capacity of nine rounds."
+	contains = list(/obj/item/ammo_box/magazine/m20_auto_elite/empty)
+	cost = 250
+
 /* Scarbie */
 
 /datum/supply_pack/magazine/himehabu_mag
 	name = "Himehabu Magazine Crate"
 	desc = "Contains a .22lr magazine for the Himehabu pistol, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu/empty)
+	cost = 100
+	faction = /datum/faction/syndicate/scarborough_arms
+
+/datum/supply_pack/magazine/hognose_mag
+	name = "Hognose Magazine Crate"
+	desc = "Contains a .22lr magazine for the Hognose underbarrel pistol, with a capacity of eight rounds."
+	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty)
 	cost = 100
 	faction = /datum/faction/syndicate/scarborough_arms
 
@@ -158,6 +192,14 @@
 	cost = 750
 	faction = /datum/faction/syndicate/scarborough_arms
 
+/datum/supply_pack/magazine/boomslang_mag_extended
+	name = "MSR-90 'Boomslang' Magazine Crate"
+	desc = "Contains a 6.5 CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/boomslang/empty)
+	cost = 1500
+	faction = /datum/faction/syndicate/scarborough_arms
+
+
 /* CM Lancaster */
 
 /datum/supply_pack/magazine/cm23_mag
@@ -202,6 +244,15 @@
 	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of twenty rounds."
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40/empty)
 	cost = 500
+
+/datum/supply_pack/magazine/skm_ammo_extended
+	name = "SKM Extended Magazine Crate"
+	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of fourty rounds."
+	contains = list(/obj/item/ammo_box/magazine/skm_762_40/extended/empty)
+	cost = 1250
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/magazine/f4_mag
 	name = "F4 Magazine Crate"
@@ -282,12 +333,18 @@
 /* Shotguns */
 
 /datum/supply_pack/magazine/bulldog
-	name = "Bulldog Magazine Crate"
+	name = "Bulldog Box Magazine Crate"
 	desc = "Contains an 8-round 12ga box magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/empty)
 	cost = 750
 	faction = /datum/faction/syndicate/scarborough_arms
 
+/datum/supply_pack/magazine/bulldog_12
+	name = "Bulldog Drum Magazine Crate"
+	desc = "Contains a 12-round 12ga drum magazine for the Bulldog weapons platform."
+	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty)
+	cost = 1500
+	faction = /datum/faction/syndicate/scarborough_arms
 
 /* energy weapons */
 
@@ -318,15 +375,15 @@
 
 /* etherbor */
 
-/datum/supply_pack/magazine/guncell/kalix
+/datum/supply_pack/magazine/kalixcell
 	name = "Etherbor Cell Crate"
 	desc = "Contains an Etherbor weapon cell, compatible with Etherbor armaments with a slightly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/kalix)
 	cost = 600
 	faction = /datum/faction/pgf
 
-/datum/supply_pack/magazine/guncell/pgf
-	name = "Etherbor Cell Crate"
+/datum/supply_pack/magazine/pgfcell
+	name = "Military-Grade Etherbor Cell Crate"
 	desc = "Contains a military-grade Etherbor weapon cell produced for the PGFMC, compatible with Etherbor armaments with a significantly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/pgf)
 	cost = 1000

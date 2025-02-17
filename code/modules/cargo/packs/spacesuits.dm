@@ -8,11 +8,12 @@
 
 /datum/supply_pack/spacesuits/spacesuit
 	name = "Space Suit Crate"
-	desc = "Contains one basic space suit. Although the technology is centuries old, it should protect you from the vacuum of space."
-	cost = 500
-	contains = list(/obj/item/clothing/suit/space,
-					/obj/item/clothing/head/helmet/space)
-	crate_name = "space suit crate"
+	desc = "Contains two basic space suits. Although the technology is centuries old, it should protect you from the vacuum of space."
+	cost = 500 //changed the suit type to be the one without pockets, making it more consistent with the rest of the EVA suits available
+	contains = list(/obj/item/clothing/suit/space/eva,
+					/obj/item/clothing/suit/space/eva,
+					/obj/item/clothing/head/helmet/space/eva,
+					/obj/item/clothing/head/helmet/space/eva)
 
 /datum/supply_pack/spacesuits/pilot_spacesuit
 	name = "Pilot Space Suit Crate"
@@ -237,7 +238,7 @@
 	name = "Inteq Hardsuit Crate"
 	desc = "A bulky Mothership-native design with a monocular viewport. The Inteq Hardsuit provides decent protection and combat manueverability for members of IRMG."
 	cost = 3000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent/inteq)
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/inteq)
 	crate_name = "inteq hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/inteq

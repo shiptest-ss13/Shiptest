@@ -97,8 +97,9 @@
 	for(var/obj/item/I in held_items)
 		if(I.IsReflect(def_zone))
 			return TRUE
-	///Granted by prismwine
-	if(HAS_TRAIT(src, TRAIT_REFLECTIVE) && prob(50))
+	if(SEND_SIGNAL(src, COMSIG_CHECK_REFLECT, def_zone))
+		return TRUE
+	if(HAS_TRAIT(src, TRAIT_REFLECTIVE))
 		return TRUE
 	return FALSE
 
@@ -334,7 +335,7 @@
 		var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
 		if(check_shields(M, damage, "the [M.name]", MELEE_ATTACK, M.armour_penetration))
 			return FALSE
-		var/dam_zone = dismembering_strike(M, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+		var/dam_zone = dismembering_strike(M, pick_weight(list(BODY_ZONE_HEAD = 4, BODY_ZONE_CHEST = 64, BODY_ZONE_L_ARM = 8, BODY_ZONE_R_ARM = 8, BODY_ZONE_L_LEG = 8, BODY_ZONE_R_LEG = 8)))
 		if(!dam_zone) //Dismemberment successful
 			return TRUE
 		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
@@ -763,9 +764,9 @@
 		if(LB.bodypart_disabled)
 			isdisabled = " is disabled"
 			if(no_damage)
-				isdisabled += " but otherwise "
+				isdisabled += " but otherwise"
 			else
-				isdisabled += " and "
+				isdisabled += " and"
 		combined_msg += "\t <span class='[no_damage ? "notice" : "warning"]'>Your [LB.name][isdisabled][self_aware ? " has " : " is "][status].</span>"
 
 		for(var/obj/item/I in LB.embedded_objects)
@@ -861,7 +862,7 @@
 	if(roundstart_quirks.len)
 		combined_msg += "<span class='notice'>You have these quirks: [get_trait_string()].</span>"
 
-	to_chat(src, examine_block(combined_msg.Join("\n")))
+	to_chat(src, boxed_message(combined_msg.Join("\n")))
 
 /mob/living/carbon/human/damage_clothes(damage_amount, damage_type = BRUTE, damage_flag = 0, def_zone)
 	if(damage_type != BRUTE && damage_type != BURN)

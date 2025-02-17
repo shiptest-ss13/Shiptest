@@ -1275,8 +1275,8 @@
 "jL" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
-	name = "Armory";
 	fast_close = 1;
+	name = "Armory";
 	req_access = list(3)
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2153,8 +2153,8 @@
 /area/ship/crew)
 "oc" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Bridge";
 	fast_close = 1;
+	name = "Bridge";
 	req_access_txt = "19"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2684,6 +2684,8 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "rz" = (
@@ -3132,8 +3134,8 @@
 "vl" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
-	name = "Armory";
 	fast_close = 1;
+	name = "Armory";
 	req_access = list(3)
 	},
 /obj/structure/cable{
@@ -3845,6 +3847,7 @@
 /obj/effect/turf_decal/industrial/outline{
 	color = "#791500"
 	},
+/obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/item/stack/sheet/mineral/uranium/ten,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
@@ -4179,6 +4182,7 @@
 	open = 0;
 	req_access_txt = "3"
 	},
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Ba" = (
@@ -4439,6 +4443,7 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/corner/opaque/red/mono,
+/obj/item/folder/syndicate,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "CK" = (
@@ -4887,7 +4892,8 @@
 /obj/item/clothing/neck/shemagh/ngr,
 /obj/item/clothing/mask/balaclava/ngr,
 /obj/item/clothing/suit/hooded/wintercoat/security/ngr,
-/obj/item/storage/belt/mining,
+/obj/item/storage/belt/mining/ngr,
+/obj/item/clothing/glasses/meson,
 /turf/open/floor/pod,
 /area/ship/hallway/fore)
 "FJ" = (
@@ -5507,8 +5513,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "Control Room";
 	fast_close = 1;
+	name = "Control Room";
 	req_access_txt = "10"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5833,8 +5839,8 @@
 /area/ship/hallway/fore)
 "MS" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Command Deck";
 	fast_close = 1;
+	name = "Command Deck";
 	req_access_txt = "19"
 	},
 /obj/structure/cable{
@@ -5873,8 +5879,8 @@
 "MU" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
-	name = "Engineering";
 	fast_close = 1;
+	name = "Engineering";
 	req_access_txt = "10"
 	},
 /obj/structure/cable{
@@ -6985,47 +6991,27 @@
 /obj/item/storage/box/ammo/c10mm{
 	pixel_x = -7
 	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = 14;
-	pixel_y = -7
-	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = 14;
-	pixel_y = -7
-	},
-/obj/item/ammo_box/magazine/m556_42_hydra/small{
-	pixel_x = 6;
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/m556_42_hydra/small{
-	pixel_x = 6;
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/m57_39_sidewinder{
-	pixel_x = 4;
-	pixel_y = -9
-	},
-/obj/item/ammo_box/magazine/m57_39_sidewinder{
-	pixel_x = 4;
-	pixel_y = -9
-	},
+/obj/item/ammo_box/magazine/m57_39_asp/empty,
+/obj/item/ammo_box/magazine/m57_39_asp/empty,
+/obj/item/ammo_box/magazine/m556_42_hydra/small/empty,
+/obj/item/ammo_box/magazine/m556_42_hydra/small/empty,
+/obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
+/obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
 /obj/effect/turf_decal/corner/opaque/red/half{
 	dir = 8
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = 14;
-	pixel_y = -7
-	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = 14;
-	pixel_y = -7
-	},
+/obj/item/ammo_box/magazine/m57_39_asp/empty,
+/obj/item/ammo_box/magazine/m57_39_asp/empty,
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_x = 32
 	},
+/obj/item/ammo_box/magazine/m12g_bulldog/empty,
+/obj/item/ammo_box/magazine/m12g_bulldog/empty,
+/obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/storage/box/ammo/a12g_buckshot,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "UM" = (
@@ -7588,8 +7574,8 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "Life Support";
 	fast_close = 1;
+	name = "Life Support";
 	req_access_txt = "10"
 	},
 /obj/machinery/door/firedoor/border_only,

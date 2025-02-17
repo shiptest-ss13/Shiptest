@@ -73,6 +73,8 @@
 
 /obj/structure/railing/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
+	if(.)
+		return FALSE
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	if (I.use_tool(src, user, 3 SECONDS, volume=0))
@@ -208,9 +210,15 @@
 
 /obj/structure/railing/thick/corner
 	icon_state = "railing_thick_corner"
+	density = FALSE
+	climbable = FALSE
+	buildstackamount = 1
 
 /obj/structure/railing/thin
 	icon_state = "railing_thin"
 
 /obj/structure/railing/thin/corner
 	icon_state = "railing_thin_corner"
+	density = FALSE
+	climbable = FALSE
+	buildstackamount = 1

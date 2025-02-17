@@ -1,15 +1,15 @@
 #define HYPO_SPRAY 0
 #define HYPO_INJECT 1
 
-#define WAIT_SPRAY 25
-#define WAIT_INJECT 25
-#define SELF_SPRAY 15
-#define SELF_INJECT 15
+#define WAIT_SPRAY 15
+#define WAIT_INJECT 15
+#define SELF_SPRAY 10
+#define SELF_INJECT 10
 
-#define DELUXE_WAIT_SPRAY 20
-#define DELUXE_WAIT_INJECT 20
-#define DELUXE_SELF_SPRAY 10
-#define DELUXE_SELF_INJECT 10
+#define DELUXE_WAIT_SPRAY 7
+#define DELUXE_WAIT_INJECT 7
+#define DELUXE_SELF_SPRAY 4
+#define DELUXE_SELF_INJECT 4
 
 #define COMBAT_WAIT_SPRAY 0
 #define COMBAT_WAIT_INJECT 0
@@ -180,7 +180,13 @@
 	name = "morphine medipen"
 	desc = "A rapid way to get you out of a tight situation and fast! You'll feel rather drowsy, though."
 	list_reagents = list(/datum/reagent/medicine/morphine = 10)
-	custom_price = 75
+	custom_price = 50
+
+/obj/item/reagent_containers/hypospray/medipen/tramal
+	name = "tramal medipen"
+	desc = "A quick way to relieve persistant pain."
+	list_reagents = list(/datum/reagent/medicine/tramal = 10)
+	custom_price = 25
 
 /obj/item/reagent_containers/hypospray/medipen/oxandrolone
 	name = "oxandrolone medipen"
@@ -310,7 +316,7 @@
 	item_state = "morphen"
 
 /obj/item/reagent_containers/hypospray/medipen/mannitol
-	name = "tricordrazine injector"
+	name = "mannitol injector"
 	desc = "An injector filled with mannitol, a restorative compound that targets the brain."
 	list_reagents = list(/datum/reagent/medicine/mannitol = 15)
 	volume = 15
@@ -319,12 +325,22 @@
 	base_icon_state = "morphen"
 	item_state = "morphen"
 
+/obj/item/reagent_containers/hypospray/medipen/combat_drug
+	name = "combat cocktail"
+	desc = "An injector filled with a potent combat drug mixture. Straight from the Shoal."
+	list_reagents = list(/datum/reagent/drug/combat_drug = 6, /datum/reagent/medicine/bicaridinep = 6, /datum/reagent/medicine/dermaline = 6)
+	volume = 18
+	amount_per_transfer_from_this = 18
+	icon_state = "syndipen"
+	base_icon_state = "syndipen"
+	item_state = "syndipen"
+
 //A vial-loaded hypospray. Cartridge-based!
 /obj/item/hypospray/mkii
 	name = "hypospray mk.II"
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "hypo2"
-	desc = "A new development from DeForest Medical, this hypospray takes 30-unit vials as the drug supply for easy swapping."
+	desc = "A medical product traditionally manufactured by Nanotrasen and Cybersun, this hypospray takes 30-unit vials as the drug supply for easy swapping."
 	w_class = WEIGHT_CLASS_TINY
 	var/list/allowed_containers = list(/obj/item/reagent_containers/glass/bottle/vial/tiny, /obj/item/reagent_containers/glass/bottle/vial/small)
 	var/mode = HYPO_INJECT
@@ -336,7 +352,7 @@
 	var/spray_self = SELF_SPRAY
 	var/inject_self = SELF_INJECT
 	var/quickload = FALSE
-	var/penetrates = FALSE
+	var/penetrates = TRUE
 
 /obj/item/hypospray/mkii/brute
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/bicaridine
@@ -353,11 +369,11 @@
 /obj/item/hypospray/mkii/tricord
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/tricord
 
-/obj/item/hypospray/mkii/CMO
-	name = "hypospray mk.II deluxe"
+/obj/item/hypospray/mkii/mkiii
+	name = "hypospray mk.III"
 	allowed_containers = list(/obj/item/reagent_containers/glass/bottle/vial/tiny, /obj/item/reagent_containers/glass/bottle/vial/small, /obj/item/reagent_containers/glass/bottle/vial/large)
 	icon_state = "cmo2"
-	desc = "The Deluxe Hypospray can take larger-size vials. It also acts faster and delivers more reagents per spray."
+	desc = "The mk.III Hypospray can take larger-size vials. It also acts faster and delivers more reagents per spray."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/CMO
 	inject_wait = DELUXE_WAIT_INJECT
@@ -365,7 +381,7 @@
 	spray_self = DELUXE_SELF_SPRAY
 	inject_self = DELUXE_SELF_INJECT
 
-/obj/item/hypospray/mkii/CMO/combat
+/obj/item/hypospray/mkii/mkiii/combat
 	name = "combat hypospray mk.II"
 	desc = "A combat-ready deluxe hypospray that acts almost instantly. It can be tactically reloaded by using a vial on it."
 	icon_state = "combat2"
@@ -375,7 +391,6 @@
 	spray_self = COMBAT_SELF_SPRAY
 	inject_self = COMBAT_SELF_INJECT
 	quickload = TRUE
-	penetrates = TRUE
 
 /obj/item/hypospray/mkii/Initialize()
 	. = ..()

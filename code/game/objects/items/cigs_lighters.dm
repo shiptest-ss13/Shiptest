@@ -333,11 +333,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	reagents?.add_reagent(/datum/reagent/toxin/carpotoxin , 3) // They lied
 
 /obj/item/clothing/mask/cigarette/syndicate
-	desc = "An obscure brand of cigarette."
+	desc = "An unknown brand cigarette."
 	chem_volume = 60
 	smoketime = 60
 	smoke_all = TRUE
-	list_reagents = list(/datum/reagent/drug/nicotine = 10, /datum/reagent/drug/aranesp = 5, /datum/reagent/medicine/synaptizine = 5)
+	list_reagents = list(/datum/reagent/drug/nicotine = 10, /datum/reagent/medicine/omnizine = 15)
 
 /obj/item/clothing/mask/cigarette/xeno
 	desc = "A Xeno Filtered brand cigarette."
@@ -371,10 +371,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	starts_lit = TRUE
 
 /obj/item/clothing/mask/cigarette/rollie/cannabis
-	list_reagents = list(/datum/reagent/drug/space_drugs = 15, /datum/reagent/toxin/lipolicide = 35)
+	list_reagents = list(/datum/reagent/drug/retukemi = 50)
 
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker
-	list_reagents = list(/datum/reagent/toxin/mindbreaker = 35, /datum/reagent/toxin/lipolicide = 15)
+	list_reagents = list(/datum/reagent/toxin/mindbreaker = 35, /datum/reagent/drug/retukemi = 15)
 
 /obj/item/clothing/mask/cigarette/candy
 	name = "Little Timmy's candy cigarette"
