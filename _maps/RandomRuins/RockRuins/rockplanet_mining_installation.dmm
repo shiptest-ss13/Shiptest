@@ -256,7 +256,7 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/trimline/opaque/vired/line,
 /obj/structure/cable,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/mining_base/armory)
 "bo" = (
@@ -749,7 +749,6 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/line{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/syndicate/melee/space/stormtrooper,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -1281,7 +1280,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/end,
-/mob/living/simple_animal/hostile/human/syndicate/melee/space,
+/mob/living/simple_animal/hostile/human/ramzi/melee,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
 "gy" = (
@@ -1395,6 +1394,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/sniper,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "gZ" = (
@@ -1699,10 +1699,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/syndicate/melee/space,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "iO" = (
@@ -3198,13 +3198,13 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "rc" = (
 /obj/machinery/power/apc/auto_name/directional/west,
-/mob/living/simple_animal/hostile/human/syndicate/melee/space,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/ash,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/mining_base/office)
 "re" = (
@@ -3535,7 +3535,7 @@
 /obj/effect/turf_decal/weather/rock{
 	dir = 9
 	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "tl" = (
@@ -4009,13 +4009,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
-"wc" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
-/turf/open/floor/plasteel/patterned/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "we" = (
 /obj/effect/radiation,
 /obj/effect/turf_decal/corner/transparent/orange{
@@ -4932,10 +4925,10 @@
 	dir = 4
 	},
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/end{
 	dir = 1
 	},
+/obj/effect/gibspawner/human,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
 "AN" = (
@@ -4968,7 +4961,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/stormtrooper,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/engineering)
 "AX" = (
@@ -5536,7 +5529,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Dq" = (
@@ -5640,7 +5633,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "DP" = (
@@ -6778,7 +6771,6 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/corner{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -6786,6 +6778,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
 "KY" = (
@@ -6939,7 +6932,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "LY" = (
@@ -6952,7 +6945,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/corner{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/syndicate/melee/space,
+/mob/living/simple_animal/hostile/human/ramzi/melee/space,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
@@ -7127,7 +7120,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Nc" = (
@@ -7547,6 +7540,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
 "Pu" = (
@@ -7820,7 +7814,7 @@
 "Ra" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Rb" = (
@@ -8021,7 +8015,7 @@
 /area/ruin/rockplanet/mining_base/refinery)
 "Sd" = (
 /obj/effect/turf_decal/nanotrasen/ns/center,
-/mob/living/simple_animal/hostile/human/syndicate/melee/sword/space/stormtrooper,
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge,
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
@@ -8248,7 +8242,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/mob/living/simple_animal/hostile/human/syndicate/melee/space,
+/mob/living/simple_animal/hostile/human/ramzi/melee/space,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
@@ -8498,7 +8492,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/rockplanet/mining_base/crew)
 "Ul" = (
@@ -9336,7 +9330,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/stormtrooper,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Yx" = (
@@ -11855,7 +11848,7 @@ al
 Sw
 cA
 Ww
-Do
+Jq
 at
 Eq
 QF
@@ -11927,7 +11920,7 @@ zr
 EY
 cA
 Ww
-Jq
+Do
 at
 Eq
 yI
@@ -12434,7 +12427,7 @@ XK
 Tv
 gX
 nJ
-wc
+Kj
 Kj
 Ql
 HK
