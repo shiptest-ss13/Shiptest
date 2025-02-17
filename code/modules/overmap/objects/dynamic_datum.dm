@@ -53,6 +53,7 @@
 
 /datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)
 	. = ..()
+	SSovermap.dynamic_datums += src
 
 	vlevel_height = CONFIG_GET(number/overmap_encounter_size)
 	vlevel_width = CONFIG_GET(number/overmap_encounter_size)
@@ -64,6 +65,7 @@
 		reserve_docks -= dock
 		qdel(dock)
 	ruin_turfs = null
+	SSovermap.dynamic_datums -= src
 	. = ..()
 	//This NEEDS to be last so any docked ships get deleted properly
 	if(mapzone)
@@ -131,18 +133,7 @@
 		return
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
-	var/list/results = SSovermap.get_unused_overmap_square()
-	overmap_move(results["x"], results["y"])
-
-	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
-		reserve_docks -= dock
-		qdel(dock)
-	reserve_docks = null
-	if(mapzone)
-		mapzone.clear_reservation()
-		QDEL_NULL(mapzone)
-
-	choose_level_type()
+	qdel(src)
 
 /**
  * Chooses a type of level for the dynamic level to use.
