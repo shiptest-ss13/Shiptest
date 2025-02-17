@@ -199,7 +199,7 @@
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/penetrator
 	r_hand = /obj/item/gun/energy/minigun
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/minigun
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy_shotgun
