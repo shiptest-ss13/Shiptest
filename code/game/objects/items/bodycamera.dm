@@ -147,19 +147,21 @@
 	lefthand_file = 'icons/mob/inhands/misc/broadcast_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/broadcast_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
-	view_range = 9
+	view_range = 5
 	can_transmit_across_z_levels = TRUE
 	network = list("thunder")
-	var/obj/item/radio/entertainment/radio
+	var/obj/item/radio/radio
 	var/mob/listeningTo
 	actions_types = list(/datum/action/item_action/toggle_radio)
 
 /obj/item/bodycamera/broadcast_camera/Initialize()
 	. = ..()
-	radio = new /obj/item/radio/entertainment(src)
-	radio.canhear_range = 2
+	radio = new /obj/item/radio(src)
+	radio.sectorwide = TRUE
+	radio.canhear_range = 3
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	c_tag = "Broadcast Camera - Unlabeled"
 
 /obj/item/bodycamera/broadcast_camera/Destroy()
 	listeningTo = null
@@ -184,7 +186,7 @@
 /obj/item/bodycamera/broadcast_camera/unique_action(mob/living/user)
 	. = ..()
 	radio.broadcasting = !radio.broadcasting
-	user.visible_message("<span class='notice'>[user] toggles the [src] microphone.</span>", "<span class='notice'>You toggle the [src] microphone.</span>")
+	user.visible_message(span_notice("[user] toggles the [src] microphone."), span_notice("<span class='notice'>You toggle the [src] microphone."))
 
 /obj/item/bodycamera/broadcast_camera/examine(mob/user)
 	. += ..()
@@ -199,11 +201,13 @@
 /obj/item/bodycamera/broadcast_camera/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	user.visible_message("<span class='notice'>[user] raises the [src] over [user.p_their()] arms.</span>", "<span class='notice'>You raise [src] over your arms.</span>")
+	user.visible_message(span_notice("[user] raises the [src] over [user.p_their()] arms."), span_notice("You raise [src] over your arms, giving it a better view."))
 	item_state = "broadcast_wielded"
+	view_range = 7
 
 /obj/item/bodycamera/broadcast_camera/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	user.visible_message("<span class='notice'>[user] lowers [src].</span>", "<span class='notice'>You lower [src].</span>")
+	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src], reducing it's view."))
 	item_state = "broadcast"
+	view_range = 3

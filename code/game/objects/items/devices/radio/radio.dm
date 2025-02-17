@@ -467,9 +467,3 @@
 	name = "old radio"
 	icon_state = "radio"
 	desc = "An old handheld radio. You could use it, if you really wanted to."
-
-/obj/item/radio/entertainment
-	name = "entertainment radio"
-	icon_state = "radio"
-	desc = "You shouldn't be seeing this!"
-	sectorwide = TRUE
