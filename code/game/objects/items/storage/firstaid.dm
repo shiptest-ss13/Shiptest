@@ -485,8 +485,16 @@
 /obj/item/storage/pill_bottle/finobranc
 	name = "bottle of finobranc tablets"
 	desc = "Party in the Solar Cantons, tonight."
-	custom_price = 50
 
 /obj/item/storage/pill_bottle/finobranc/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/finobranc(src)
+
+/obj/item/storage/pill_bottle/stardrop
+	name = "bottle of stardrop capsules"
+	desc = "Contains vision-enhancing pills."
+	custom_price = 300
+
+/obj/item/storage/pill_bottle/stardrop/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/stardrop(src)

@@ -143,7 +143,6 @@
 		/datum/reagent/medicine/pen_acid,\
 		/datum/reagent/medicine/atropine,\
 		/datum/reagent/drug/aranesp,\
-		/datum/reagent/drug/krokodil,\
 		/datum/reagent/drug/methamphetamine,\
 		/datum/reagent/teslium,\
 		/datum/reagent/toxin/anacea,\
@@ -166,7 +165,7 @@
 		/datum/reagent/medicine/pyroxadone,\
 		/datum/reagent/medicine/rezadone,\
 		/datum/reagent/medicine/regen_jelly,\
-		/datum/reagent/drug/bath_salts,\
+		/datum/reagent/drug/mammoth,\
 		/datum/reagent/hair_dye,\
 		/datum/reagent/consumable/honey,\
 		/datum/reagent/consumable/frostoil,\

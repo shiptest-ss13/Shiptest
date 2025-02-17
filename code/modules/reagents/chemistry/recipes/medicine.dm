@@ -338,3 +338,15 @@ WS End */
 	results = list(/datum/reagent/carbon = 1)
 	required_reagents = list(/datum/reagent/medicine/chitosan = 1)
 	required_temp = 405
+
+/datum/chemical_reaction/stasis
+	results = list(/datum/reagent/medicine/stasis = 5)
+	required_reagents = list(/datum/reagent/phenol = 1, /datum/reagent/copper = 1, /datum/reagent/medicine/salglu_solution = 3)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
+	required_temp = 207
+
+/datum/chemical_reaction/carfen
+	results = list(/datum/reagent/medicine/carfencadrizine = 4)
+	required_reagents = list(/datum/reagent/medicine/dimorlin = 1, /datum/reagent/medicine/synaptizine = 1, /datum/reagent/consumable/sugar = 2)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 2)
+	required_temp = 127
