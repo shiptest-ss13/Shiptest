@@ -42,6 +42,7 @@
 	. = ..()
 
 /datum/mission/ruin/signaled/kill/elite
+	value = 6000
 
 /datum/mission/ruin/signaled/kill/elite/generate_mission_details()
 	registered_type = pick(

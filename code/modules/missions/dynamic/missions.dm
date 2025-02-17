@@ -24,7 +24,7 @@
 /datum/mission/ruin/nt_files
 	name = "NT asset recovery"
 	desc = "Look- long story short, I need this folder retrieved. You don't ask why, I make sure you get paid."
-	value = 1250
+	value = 2500
 	mission_reward = list(
 		/obj/item/gun/energy/e_gun/old,
 		/obj/item/gun/energy/laser/retro,

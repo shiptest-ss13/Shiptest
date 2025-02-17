@@ -16,6 +16,7 @@ import { ButtonInput } from '../../components/Button';
 import { Window } from '../../layouts';
 
 export type OvermapData = {
+  admin_rights: Boolean;
   ref: string;
   name: string;
   ascii: string;
@@ -35,7 +36,7 @@ type NameAndRef = {
 
 export const OvermapInspect = (props, context) => {
   const { act, data } = useBackend<OvermapData>(context);
-  const { name, ascii, desc, x, y, dockedTo, docked = [] } = data;
+  const { admin_rights, name, ascii, desc, x, y, dockedTo, docked = [] } = data;
 
   return (
     <Window
@@ -46,7 +47,11 @@ export const OvermapInspect = (props, context) => {
       <Window.Content scrollable>
         <Section
           title={name}
-          buttons={<Button onClick={() => act('load')}>Load</Button>}
+          buttons={
+            admin_rights ? (
+              <Button onClick={() => act('load')}>Load</Button>
+            ) : null
+          }
         >
           <LabeledList>
             <LabeledList.Item label="Position">
@@ -103,12 +108,14 @@ export const OvermapInspect = (props, context) => {
             </LabeledList.Item>
             <LabeledList.Item label="Inactive Missions">
               {data.inactive_missions?.map((mission) => (
-                <Box>
+                <Box key={mission.ref}>
                   {mission.name}{' '}
-                  <Button
-                    icon="plus"
-                    onClick={() => act('load_mission', { ref: mission.ref })}
-                  ></Button>
+                  {admin_rights ? (
+                    <Button
+                      icon="plus"
+                      onClick={() => act('load_mission', { ref: mission.ref })}
+                    />
+                  ) : null}
                 </Box>
               ))}
             </LabeledList.Item>

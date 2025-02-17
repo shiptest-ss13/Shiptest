@@ -18,6 +18,7 @@
 
 /datum/overmap/ui_data(mob/user)
 	. = list()
+	.["admin_rights"] = check_rights_for(user.client, R_DEBUG)
 	. += basic_ui_data()
 	.["ascii"] = char_rep
 	.["desc"] = (isobj(token)) ? token.desc : ""
