@@ -70,7 +70,7 @@
 	var/atom/speaker = parent
 	speaker.update_appearance(UPDATE_ICON)
 
-/datum/component/weather_announcer/process(delta_time)
+/datum/component/weather_announcer/process(seconds_per_tick)
 	if (!enabled)
 		return
 
