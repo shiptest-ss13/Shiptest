@@ -1046,7 +1046,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/mecha_wreckage/gygax,
+/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "lh" = (
@@ -2907,7 +2907,7 @@
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "Ix" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/mecha_wreckage/gygax,
+/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Iy" = (
@@ -2948,7 +2948,7 @@
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "IJ" = (
 /obj/effect/decal/cleanable/oil,
-/obj/structure/mecha_wreckage/gygax,
+/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "IL" = (
@@ -3507,10 +3507,8 @@
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "PW" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/mecha/combat/gygax{
-	name = "\improper 501p #2"
-	},
 /obj/effect/decal/cleanable/blood/innards,
+/obj/mecha/combat/gygax/dark,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Qe" = (
