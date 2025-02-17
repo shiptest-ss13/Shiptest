@@ -132,10 +132,8 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/create_map()
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		spawn_events_in_orbits()
-		spawn_ruin_levels_in_orbits()
 	else
 		spawn_events()
-		spawn_ruin_levels()
 
 	spawn_outpost()
 	//spawn_initial_ships()
@@ -249,15 +247,6 @@ SUBSYSTEM_DEF(overmap)
 	ship_spawning = TRUE
 	. = new /datum/overmap/ship/controlled(ship_loc, template) //This statement SHOULDN'T runtime (not counting runtimes actually in the constructor) so ship_spawning should always be toggled.
 	ship_spawning = FALSE
-
-/**
- * Creates an overmap object for each ruin level, making them accessible.
- */
-/datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
-	return
-
-/datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
-	return
 
 /**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
