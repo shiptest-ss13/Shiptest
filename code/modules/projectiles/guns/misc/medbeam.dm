@@ -71,7 +71,7 @@
 
 	SSblackbox.record_feedback("tally", "gun_fired", 1, type)
 
-/obj/item/gun/medbeam/process(delta_time)
+/obj/item/gun/medbeam/process(seconds_per_tick)
 
 	if(!mounted && !isliving(loc))
 		LoseTarget()

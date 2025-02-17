@@ -78,7 +78,7 @@ Contents:
 	return ..()
 
 // Space Suit temperature regulation and power usage
-/obj/item/clothing/suit/space/space_ninja/process(delta_time)
+/obj/item/clothing/suit/space/space_ninja/process(seconds_per_tick)
 	var/mob/living/carbon/human/user = src.loc
 	if(!user || !ishuman(user) || !(user.wear_suit == src))
 		return
@@ -89,10 +89,10 @@ Contents:
 			terminate() // Kills the suit and attached objects.
 		else if(cell.charge > 0)
 			if(s_coold > 0)
-				s_coold -= delta_time // Checks for ability s_cooldown first.
-			cell.charge -= s_cost * delta_time // s_cost is the default energy cost each ntick, usually 5.
+				s_coold -= seconds_per_tick // Checks for ability s_cooldown first.
+			cell.charge -= s_cost * seconds_per_tick // s_cost is the default energy cost each ntick, usually 5.
 			if(stealth) // If stealth is active.
-				cell.charge -= s_acost * delta_time
+				cell.charge -= s_acost * seconds_per_tick
 		else
 			cell.charge = 0
 			cancel_stealth()

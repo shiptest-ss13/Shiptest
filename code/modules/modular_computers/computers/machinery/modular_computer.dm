@@ -91,11 +91,11 @@
 		return ..()
 
 // Process currently calls handle_power(), may be expanded in future if more things are added.
-/obj/machinery/modular_computer/process(delta_time)
+/obj/machinery/modular_computer/process(seconds_per_tick)
 	if(cpu)
 		// Keep names in sync.
 		cpu.name = name
-		cpu.process(delta_time)
+		cpu.process(seconds_per_tick)
 
 // Used in following function to reduce copypaste
 /obj/machinery/modular_computer/proc/power_failure(malfunction = 0)

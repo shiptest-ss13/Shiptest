@@ -309,7 +309,7 @@
 	if(contents.len)
 		. += "drying_rack_filled"
 
-/obj/machinery/smartfridge/drying_rack/process(delta_time)
+/obj/machinery/smartfridge/drying_rack/process(seconds_per_tick)
 	..()
 	if(drying)
 		if(rack_dry())//no need to update unless something got dried
@@ -409,12 +409,12 @@
 		max_n_of_items = 20 * B.rating
 		repair_rate = max(0, STANDARD_ORGAN_HEALING * (B.rating - 1) * 0.5)
 
-/obj/machinery/smartfridge/organ/process(delta_time)
+/obj/machinery/smartfridge/organ/process(seconds_per_tick)
 	for(var/organ in contents)
 		var/obj/item/organ/O = organ
 		if(!istype(O))
 			return
-		O.applyOrganDamage(-repair_rate * delta_time)
+		O.applyOrganDamage(-repair_rate * seconds_per_tick)
 
 /obj/machinery/smartfridge/organ/Exited(atom/movable/AM, atom/newLoc)
 	. = ..()

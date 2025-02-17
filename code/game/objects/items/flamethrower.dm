@@ -45,7 +45,7 @@
 		QDEL_NULL(beaker)
 	return ..()
 
-/obj/item/flamethrower/process(delta_time)
+/obj/item/flamethrower/process(seconds_per_tick)
 	if(!lit || !igniter)
 		STOP_PROCESSING(SSobj, src)
 		return null
