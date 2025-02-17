@@ -447,3 +447,14 @@
 	stock_max = 2
 	availability_prob = 15
 	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/swiss_cheese
+	name = "Swiss Cheese"
+	desc = "Buddy of mine cracked open a cache full of old Terran Regency assault rifles! They took a few bumps in transit, but it's sure to give a good backshot with it's burstfire."
+	item = /obj/item/gun/ballistic/automatic/assault/swiss_cheese
+	pair_item = list(/datum/blackmarket_item/ammo/swisscheesemagazine)
+
+	price_min = 4750
+	price_max = 5500
+	stock_max = 2
+	availability_prob = 25
