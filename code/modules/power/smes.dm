@@ -266,7 +266,7 @@
 /obj/machinery/power/smes/proc/chargedisplay()
 	return clamp(round(5.5*charge/capacity),0,5)
 
-/obj/machinery/power/smes/process()
+/obj/machinery/power/smes/process(delta_time)
 	if(machine_stat & BROKEN)
 		return
 
@@ -468,7 +468,7 @@
 	name = "magical power storage unit"
 	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit. Magically produces power."
 
-/obj/machinery/power/smes/magical/process()
+/obj/machinery/power/smes/magical/process(delta_time)
 	capacity = INFINITY
 	charge = INFINITY
 	..()

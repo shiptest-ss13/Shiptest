@@ -202,7 +202,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	update_appearance()
 	portal_visuals.reset_visuals()
 
-/obj/machinery/gateway/process()
+/obj/machinery/gateway/process(delta_time)
 	if((machine_stat & (NOPOWER)) && use_power)
 		if(target)
 			deactivate()

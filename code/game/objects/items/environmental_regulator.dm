@@ -36,7 +36,7 @@
 	. = ..()
 	owner = null
 
-/obj/item/environmental_regulator/process()
+/obj/item/environmental_regulator/process(delta_time)
 	if(!owner)
 		STOP_PROCESSING(SSprocessing, src)
 		return

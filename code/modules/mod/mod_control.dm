@@ -232,7 +232,7 @@
 	subtract_charge((charge_drain + malfunctioning_charge_drain)*delta_time)
 	update_charge_alert()
 	for(var/obj/item/mod/module/module as anything in modules)
-		if(malfunctioning && module.active && DT_PROB(5, delta_time))
+		if(malfunctioning && module.active && SPT_PROB(5, delta_time))
 			module.on_deactivation(display_message = TRUE)
 		module.on_process(delta_time)
 

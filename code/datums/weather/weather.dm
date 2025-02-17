@@ -115,7 +115,7 @@
 	my_controller = null
 	return ..()
 
-/datum/weather/process()
+/datum/weather/process(delta_time)
 	if(aesthetic || stage != MAIN_STAGE)
 		return
 	if(prob(thunder_chance))

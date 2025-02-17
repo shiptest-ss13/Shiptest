@@ -28,7 +28,7 @@
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
-/datum/proximity_monitor/advanced/peaceborg_dampener/process()
+/datum/proximity_monitor/advanced/peaceborg_dampener/process(delta_time)
 	if(!istype(projector))
 		qdel(src)
 		return

@@ -20,7 +20,7 @@
 	var/init_order = INIT_ORDER_DEFAULT
 
 	/// Time to wait (in deciseconds) between each call to fire(). Must be a positive integer.
-	var/wait = 20
+	var/wait = 2 SECONDS
 
 	/// Priority Weight: When mutiple subsystems need to run in the same tick, higher priority subsystems will be given a higher share of the tick before MC_TICK_CHECK triggers a sleep, higher priority subsystems also run before lower priority subsystems
 	var/priority = FIRE_PRIORITY_DEFAULT
