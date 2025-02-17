@@ -223,7 +223,7 @@
 	build_path = /obj/item/wallframe/light_switch
 	category = list("initial", "Misc")
 
-/datum/design/lightswitch_frame
+/datum/design/paper_roll
 	name = "Hand Labeler Paper Roll"
 	id = "handlabeler_refill"
 	build_type = AUTOLATHE
