@@ -21,10 +21,10 @@
 
 /obj/item/minigunpack/Initialize()
 	. = ..()
+	battery = new(src)
 	if(spawn_with_gun)
 		gun = new(src)
-	battery = new(src)
-	gun.cell = battery
+		gun.cell = battery
 	START_PROCESSING(SSobj, src)
 
 /obj/item/minigunpack/Destroy()
