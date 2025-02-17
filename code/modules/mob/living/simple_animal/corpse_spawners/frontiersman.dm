@@ -1,6 +1,7 @@
 /obj/effect/mob_spawn/human/corpse/frontier
 	name = "Frontiersman"
 	outfit = /datum/outfit/frontier
+	brute_damage = 150
 
 /obj/effect/mob_spawn/human/corpse/frontier/internals
 	outfit = /datum/outfit/frontier/internals
@@ -86,7 +87,7 @@
 	name = "Frontiersman Heavy Corpse"
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
-	back = /obj/item/minigunpack
+	back = /obj/item/minigunpack/no_gun
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/internals
 	outfit = /datum/outfit/frontier/trooper/heavy/internals
