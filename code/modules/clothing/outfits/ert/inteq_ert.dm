@@ -18,6 +18,8 @@
 	id = /obj/item/card/id
 	belt = /obj/item/storage/belt/security/webbing/inteq/skm
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/enforcer_c1
+
 	l_pocket = /obj/item/melee/knife/combat
 	r_pocket = /obj/item/flashlight/seclite
 
@@ -28,6 +30,8 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/enforcer_c1
+
 
 /datum/outfit/job/inteq/ert/shotgun
 	name = "ERT - Inteq Shotgunner"
@@ -35,12 +39,16 @@
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq
 	belt = /obj/item/storage/belt/security/webbing/inteq/alt/bulldog
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/enforcer_c1
+
 /datum/outfit/job/inteq/ert/shotgun/eva
 	name = "ERT - Inteq Shotgunner (EVA)"
 
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/enforcer_c1
 
 /datum/outfit/job/inteq/ert/engineer
 	name = "ERT - Inteq Artificer"
@@ -54,6 +62,8 @@
 	gloves = /obj/item/clothing/gloves/color/yellow
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/artificer_c1
+
 	backpack_contents = list(/obj/item/ammo_box/magazine/co9mm=2)
 
 /datum/outfit/job/inteq/ert/engineer/eva
@@ -61,6 +71,8 @@
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/artificer_c1
 
 /datum/outfit/job/inteq/ert/medic
 	name = "ERT - Inteq Corpsman"
@@ -74,6 +86,8 @@
 	suit = /obj/item/clothing/suit/armor/inteq/corpsman
 	suit_store = /obj/item/healthanalyzer
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/corpsman_c1
+
 	backpack_contents = list(/obj/item/storage/firstaid/medical=1)
 
 /datum/outfit/job/inteq/ert/medic/eva
@@ -83,6 +97,8 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	suit_store = null
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/corpsman_c1
 
 /datum/outfit/job/inteq/ert/leader
 	name = "ERT - Inteq Vanguard"
@@ -98,6 +114,8 @@
 	suit_store = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
 	id = /obj/item/card/id/gold
 
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/vanguard
+
 	backpack_contents = list(/obj/item/megaphone/sec)
 
 /datum/outfit/job/inteq/ert/leader/eva
@@ -106,6 +124,8 @@
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/vanguard
 
 /datum/outfit/job/inteq/ert/honor_guard
 	name = "ERT - Inteq Honor Guard"
@@ -124,6 +144,8 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	r_pocket = /obj/item/restraints/handcuffs
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
+
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/enforcer_hon
 
 	backpack_contents = list(/obj/item/gun/energy/taser)
 
@@ -147,5 +169,7 @@
 
 	r_pocket = /obj/item/pen/fourcolor
 	l_pocket = /obj/item/taperecorder
+
+	accessory = /obj/item/clothing/accessory/rank_pin/inteq/inspector
 
 	backpack_contents = list(/obj/item/stamp/inteq, /obj/item/folder, /obj/item/paper_bin/bundlenatural, /obj/item/hand_labeler)
