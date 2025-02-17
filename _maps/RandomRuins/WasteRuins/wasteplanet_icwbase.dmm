@@ -5660,7 +5660,9 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcommoni)
 "wd" = (
-/obj/structure/chair/sofa/red/corpo/right/directional/east,
+/obj/structure/chair/sofa/red/corpo/right/directional/east{
+	dir = 8
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 5
 	},
