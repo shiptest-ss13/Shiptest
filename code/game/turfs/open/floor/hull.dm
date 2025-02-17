@@ -4,7 +4,6 @@
 	desc = "Sturdy exterior hull plating that separates you from the uncaring vacuum of space."
 	icon_state = "regular_hull"
 	initial_gas_mix = AIRLESS_ATMOS
-	initial_temperature = TCMB
 
 /turf/open/floor/engine/hull/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode) //no rcd destroying this flooring
 	if(passed_mode == RCD_DECONSTRUCT)
@@ -21,9 +20,7 @@
 /turf/open/floor/engine/hull/interior
 	name = "interior hull plating"
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	initial_temperature = T20C
 
 /turf/open/floor/engine/hull/reinforced/interior
 	name = "interior reinforced hull plating"
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	initial_temperature = T20C
