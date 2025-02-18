@@ -1158,6 +1158,8 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	/obj/item/gun/energy/plasmacutter,
 	/obj/item/melee/energy,
 	/obj/item/gear_handle/anglegrinder,
+	/obj/item/circular_saw,
+	/obj/item/melee/knife
 	)))
 
 ///Handles all the logic of sawing off guns,
@@ -1175,7 +1177,12 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 		user.visible_message(span_danger("\The [src] goes off!"), span_danger("\The [src] goes off in your face!"))
 		return
 
-	if(do_after(user, 30, target = src))
+	var/additional_saw_time = 0
+	if(istype(saw, /obj/item/melee/knife) && !istype(saw, /obj/item/melee/knife/handsaw))
+		additional_saw_time = 30
+		user.visible_message(span_notice("\The [src] proves to be difficult to cut down with the knife's edge..."))
+
+	if(do_after(user, (30 + additional_saw_time), target = src))
 		user.visible_message(span_notice("[user] shortens \the [src]!"), span_notice("You shorten \the [src]."))
 		sawoff(user, saw)
 
