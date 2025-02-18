@@ -26,6 +26,30 @@
 	// handles behavior
 	var/datum/elevator_master/master_datum
 
+/obj/structure/elevator_platform/tile/
+	icon = 'icons/turf/floors/tiles.dmi'
+	icon_state = "tiled_gray"
+	base_icon_state = "tiled_gray"
+	smoothing_flags = null
+	smoothing_groups = null
+	canSmoothWith = null
+
+/obj/structure/elevator_platform/tile/tech
+	icon = 'icons/turf/floors/techfloor.dmi'
+	icon_state = "techfloor"
+	base_icon_state = "techfloor"
+	smoothing_flags = null
+	smoothing_groups = null
+	canSmoothWith = null
+
+/obj/structure/elevator_platform/tile/dark
+	icon = 'icons/turf/floors/tiles.dmi'
+	icon_state = "tiled_dark"
+	base_icon_state = "tiled_dark"
+	smoothing_flags = null
+	smoothing_groups = null
+	canSmoothWith = null
+
 /obj/structure/elevator_platform/Initialize(mapload)
 	. = ..()
 
