@@ -331,7 +331,7 @@
 		/obj/item/tank/internals,
 		/obj/item/paper
 	)
-	inbuilt_modules = list(/obj/item/mod/module/clamp/loader, /obj/item/mod/module/magnet)
+	inbuilt_modules = list(/obj/item/mod/module/clamp/loader, /obj/item/mod/module/magnet,/obj/item/mod/module/storage/large_capacity)
 	skins = list(
 		"loader" = list(
 			HELMET_FLAGS = list(

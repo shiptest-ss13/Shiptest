@@ -54,7 +54,6 @@
 /obj/item/mod/control/pre_equipped/loader
 	theme = /datum/mod_theme/loader
 	initial_modules = list(
-		/obj/item/mod/module/storage/large_capacity,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/paper_dispenser,
 		/obj/item/mod/module/stamp,
