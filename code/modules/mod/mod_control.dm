@@ -610,7 +610,7 @@
 	core.update_charge_alert()
 
 /obj/item/mod/control/proc/update_speed()
-	var/list/all_parts = mod_parts + src
+	var/list/all_parts = mod_parts
 	for(var/obj/item/part as anything in all_parts)
 		part.slowdown = (active ? slowdown_active : slowdown_inactive) / length(all_parts)
 	wearer?.update_equipment_speed_mods()

@@ -37,16 +37,18 @@
 		/obj/item/mod/module/welding,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/t_ray,
+		/obj/item/mod/module/thermal_regulator
 	)
 
 /obj/item/mod/control/pre_equipped/advanced
 	theme = /datum/mod_theme/advanced
 	applied_cell = /obj/item/stock_parts/cell/super
 	initial_modules = list(
-		/obj/item/mod/module/storage/large_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/welding,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/thermal_regulator
 	)
 
 /obj/item/mod/control/pre_equipped/loader
@@ -82,7 +84,7 @@
 	theme = /datum/mod_theme/rescue
 	applied_cell = /obj/item/stock_parts/cell/super
 	initial_modules = list(
-		/obj/item/mod/module/storage/large_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/health_analyzer,
 		/obj/item/mod/module/injector,
@@ -92,7 +94,7 @@
 	theme = /datum/mod_theme/research
 	applied_cell = /obj/item/stock_parts/cell/super
 	initial_modules = list(
-		/obj/item/mod/module/storage/large_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/welding,
 		/obj/item/mod/module/flashlight,
 		//obj/item/mod/module/circuit,
@@ -103,7 +105,6 @@
 	theme = /datum/mod_theme/security
 	initial_modules = list(
 		/obj/item/mod/module/storage,
-		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/holster
 	)
@@ -121,15 +122,16 @@
 
 /obj/item/mod/control/pre_equipped/magnate
 	theme = /datum/mod_theme/magnate
-	applied_cell = /obj/item/stock_parts/cell/hyper
+	applied_cell = /obj/item/stock_parts/cell
 	initial_modules = list(
-		/obj/item/mod/module/storage/large_capacity,
+		/obj/item/mod/module/storage,
+		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/hat_stabilizer,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/jetpack/advanced,
 	)
 
-/obj/item/mod/control/pre_equipped/traitor
+/obj/item/mod/control/pre_equipped/syndicate
 	theme = /datum/mod_theme/syndicate
 	applied_cell = /obj/item/stock_parts/cell/super
 	initial_modules = list(
@@ -138,7 +140,6 @@
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/jetpack,
 		/obj/item/mod/module/flashlight,
-		/obj/item/mod/module/dna_lock,
 	)
 
 /obj/item/mod/control/pre_equipped/traitor_elite
@@ -153,17 +154,6 @@
 		/obj/item/mod/module/dna_lock,
 	)
 
-/obj/item/mod/control/pre_equipped/nuclear
-	theme = /datum/mod_theme/syndicate
-	applied_cell = /obj/item/stock_parts/cell/hyper
-	initial_modules = list(
-		/obj/item/mod/module/storage/syndicate,
-		/obj/item/mod/module/emp_shield,
-		/obj/item/mod/module/magnetic_harness,
-		/obj/item/mod/module/jetpack/advanced,
-		/obj/item/mod/module/flashlight,
-	)
-
 /obj/item/mod/control/pre_equipped/elite
 	theme = /datum/mod_theme/elite
 	applied_cell = /obj/item/stock_parts/cell/bluespace
@@ -174,17 +164,6 @@
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/flashlight,
-	)
-
-/obj/item/mod/control/pre_equipped/elite/flamethrower
-	initial_modules = list(
-		/obj/item/mod/module/storage/syndicate,
-		/obj/item/mod/module/emp_shield,
-		/obj/item/mod/module/magnetic_harness,
-		/obj/item/mod/module/thermal_regulator,
-		/obj/item/mod/module/jetpack/advanced,
-		/obj/item/mod/module/flashlight,
-		/obj/item/mod/module/flamethrower,
 	)
 
 /obj/item/mod/control/pre_equipped/ninja

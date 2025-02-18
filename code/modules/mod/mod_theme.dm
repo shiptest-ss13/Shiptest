@@ -103,11 +103,11 @@
 /datum/mod_theme/engineering
 	name = "engineering"
 	default_skin = "engineering"
-	armor = list("melee" = 10, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 10, "bio" = 100, "fire" = 100, "acid" = 25)
+	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
 	resistance_flags = FIRE_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	siemens_coefficient = 0
-	slowdown_inactive = 1.5
+	slowdown_inactive = 0.5
 	slowdown_active = 1
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
@@ -146,10 +146,10 @@
 /datum/mod_theme/atmospheric
 	name = "atmospheric"
 	default_skin = "atmospheric"
-	armor = list("melee" = 10, "bullet" = 5, "laser" = 10, "energy" = 15, "bomb" = 10, "bio" = 100, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 25, "fire" = 100, "acid" = 75)
 	resistance_flags = FIRE_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	slowdown_inactive = 1.5
+	slowdown_inactive = 0.5
 	slowdown_active = 1
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
@@ -194,8 +194,8 @@
 	resistance_flags = FIRE_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	siemens_coefficient = 0
-	slowdown_inactive = 1
-	slowdown_active = 0.5
+	slowdown_inactive = 0.5
+	slowdown_active = 1
 	inbuilt_modules = list(/obj/item/mod/module/magboot/advanced)
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
@@ -238,11 +238,13 @@
 /datum/mod_theme/mining
 	name = "mining"
 	default_skin = "mining"
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 30, "bio" = 100, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 30, "bio" = 100, "fire" = 100, "acid" = 75)
 	resistance_flags = FIRE_PROOF|LAVA_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	complexity_max = DEFAULT_MAX_COMPLEXITY - 1
+	complexity_max = DEFAULT_MAX_COMPLEXITY - 2
 	charge_drain = DEFAULT_CHARGE_DRAIN
+	slowdown_inactive = 0.35
+	slowdown_active = 0.7
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
 		/obj/item/tank/internals,
@@ -352,7 +354,7 @@
 	default_skin = "medical"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
 	charge_drain = DEFAULT_CHARGE_DRAIN * 1.5
-	slowdown_inactive = 0.5
+	slowdown_inactive = 0.15
 	slowdown_active = 0.3
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
@@ -430,7 +432,7 @@
 	resistance_flags = FIRE_PROOF|ACID_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	charge_drain = DEFAULT_CHARGE_DRAIN * 1.5
-	slowdown_inactive = 0.75
+	slowdown_inactive = 0.2
 	slowdown_active = 0.25
 	inbuilt_modules = list(/obj/item/mod/module/quick_carry/advanced)
 	allowed_suit_storage = list(
@@ -486,8 +488,8 @@
 	atom_flags = PREVENT_CONTENTS_EXPLOSION_1
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	complexity_max = DEFAULT_MAX_COMPLEXITY + 5
-	slowdown_inactive = 1.75
-	slowdown_active = 1.25
+	slowdown_inactive = 0.5
+	slowdown_active = 1
 	inbuilt_modules = list(/obj/item/mod/module/reagent_scanner/advanced)
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
@@ -529,7 +531,7 @@
 	default_skin = "security"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	complexity_max = DEFAULT_MAX_COMPLEXITY - 3
-	slowdown_inactive = 0.75
+	slowdown_inactive = 0.25
 	slowdown_active = 0.5
 	allowed_suit_storage = list(
 	/obj/item/ammo_box,
@@ -577,7 +579,7 @@
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
 	resistance_flags = FIRE_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	slowdown_inactive = 0.75
+	slowdown_inactive = 0.25
 	slowdown_active = 0.5
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
@@ -625,7 +627,7 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	siemens_coefficient = 0
 	complexity_max = DEFAULT_MAX_COMPLEXITY + 5
-	slowdown_inactive = 0.75
+	slowdown_inactive = 0.25
 	slowdown_active = 0.5
 	allowed_suit_storage = list(
 		/obj/item/ammo_box,
@@ -674,7 +676,7 @@
 	atom_flags = PREVENT_CONTENTS_EXPLOSION_1
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	siemens_coefficient = 0
-	slowdown_inactive = 1
+	slowdown_inactive = 0.25
 	slowdown_active = 0.5
 	ui_theme = "syndicate"
 	inbuilt_modules = list(/obj/item/mod/module/armor_booster)
@@ -725,7 +727,7 @@
 	atom_flags = PREVENT_CONTENTS_EXPLOSION_1
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	siemens_coefficient = 0
-	slowdown_inactive = 1
+	slowdown_inactive = 0.25
 	slowdown_active = 0.5
 	ui_theme = "syndicate"
 	inbuilt_modules = list(/obj/item/mod/module/armor_booster)

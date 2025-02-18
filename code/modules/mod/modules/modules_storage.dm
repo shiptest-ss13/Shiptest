@@ -34,12 +34,12 @@
 
 /obj/item/mod/module/storage/large_capacity
 	name = "MOD expanded storage module"
-	desc = "Reverse engineered by Nakamura Engineering from Donk Corporation designs, this system of hidden compartments \
+	desc = "An advancement in the storage field, this system of hidden compartments \
 		is entirely within the suit, distributing items and weight evenly to ensure a comfortable experience for the user; \
 		whether smuggling, or simply hauling."
 	icon_state = "storage_large"
 	max_combined_w_class = 21
-	max_items = 14
+	max_items = 7
 
 /obj/item/mod/module/storage/syndicate
 	name = "MOD syndicate storage module"
@@ -48,7 +48,7 @@
 		essentially shrinking items for much easier and more portable storage."
 	icon_state = "storage_syndi"
 	max_combined_w_class = 30
-	max_items = 21
+	max_items = 9
 
 /obj/item/mod/module/storage/bluespace
 	name = "MOD bluespace storage module"
