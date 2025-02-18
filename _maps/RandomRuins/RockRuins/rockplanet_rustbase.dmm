@@ -9,10 +9,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/rust_base/mechbay)
 "ah" = (
-/obj/machinery/door/poddoor/preopen{
-	dir = 4;
-	id = "rustmech"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -529,11 +525,6 @@
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/rockplanet/rust_base/bridge)
-"eP" = (
-/obj/structure/barricade/sandbags,
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/ruin/rockplanet/rust_base)
 "eR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -5106,9 +5097,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /obj/machinery/power/smes/engineering,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/engine_two)
@@ -7666,7 +7654,7 @@ MN
 MN
 Wc
 FE
-eP
+Wc
 MN
 MN
 Wc
