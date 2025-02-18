@@ -92,7 +92,7 @@
 	overlay_state_inactive = "module_armorbooster_off"
 	overlay_state_active = "module_armorbooster_on"
 	use_mod_colors = TRUE
-	var/drain_per_step = 50
+	var/drain_per_step = 100
 
 /obj/item/mod/module/armor_assist/on_activation()
 	. = ..()
