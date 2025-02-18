@@ -3,6 +3,7 @@
 	damage = 40
 	armour_penetration = -10
 	speed = BULLET_SPEED_SHOTGUN
+	bullet_identifier = "large slug"
 
 /obj/projectile/bullet/slug/beanbag
 	name = "beanbag slug"
@@ -70,6 +71,7 @@
 	icon_state = "pellet"
 	armour_penetration = -35
 	speed = BULLET_SPEED_SHOTGUN
+	bullet_identifier = "pellet"
 
 /obj/projectile/bullet/pellet/buckshot
 	name = "buckshot pellet"
@@ -81,6 +83,7 @@
 	tile_dropoff = 0.15
 	stamina = 15
 	armour_penetration = -70
+	bullet_identifier = "rubber pellet"
 
 /obj/projectile/bullet/pellet/rubbershot/incapacitate
 	name = "incapacitating pellet"
@@ -95,6 +98,8 @@
 		damage -= tile_dropoff
 	if(stamina > 0)
 		stamina -= tile_dropoff_stamina
+	if(accuracy_mod < 3)
+		accuracy_mod += 0.3
 	if(damage < 0 && stamina < 0)
 		qdel(src)
 
@@ -114,6 +119,7 @@
 	damage = 30
 	armour_penetration = -25
 	tile_dropoff = 3
+	bullet_identifier = "massive pellet"
 
 /obj/projectile/bullet/pellet/blank
 	name = "blank"

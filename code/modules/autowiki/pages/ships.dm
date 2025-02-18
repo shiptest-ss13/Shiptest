@@ -12,16 +12,14 @@
 			continue
 
 		var/size = "Unknown"
-		var/longest_dimension = max(ship.width, ship.height)
-		switch(longest_dimension)
-			if(0 to 19)
+		var/ship_area = (ship.width * ship.height)
+		switch(ship_area)
+			if(0 to 749)
 				size = "Small"
-			if(20 to 39)
+			if(750 to 1249)
 				size = "Medium"
-			if(40 to 56)
+			if(1250 to INFINITY)
 				size = "Large"
-			if(57 to INFINITY)
-				size = "Undockable" //let's hope this is never the case
 
 		var/ship_name = escape_value(ship.name)
 		output[ship_name] = include_template("Autowiki/Ship", list(
@@ -81,7 +79,7 @@
 	wiki_dummy.wipe_state()
 
 	to_equip.equip(wiki_dummy, TRUE, FALSE)
-	COMPILE_OVERLAYS(wiki_dummy)
+	wiki_dummy.regenerate_icons()
 	var/icon/wiki_icon = icon(getFlatIcon(wiki_dummy), frame = 1)
 
 	//Make all icons 32x32 for wiki sizing consistency

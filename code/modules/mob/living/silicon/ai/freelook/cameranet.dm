@@ -118,18 +118,33 @@ GLOBAL_DATUM_INIT(cameranet, /datum/cameranet, new)
 	chunk.hasChanged()
 
 /// Removes a camera from a chunk.
-/datum/cameranet/proc/removeCamera(obj/machinery/camera/c)
-	majorChunkChange(c, 0)
+/datum/cameranet/proc/removeCamera(obj/C)
+	if((istype(C, /obj/machinery/camera))||(istype(C, /obj/item/bodycamera)))
+		majorChunkChange(C, 0)
 
 /// Add a camera to a chunk.
-/datum/cameranet/proc/addCamera(obj/machinery/camera/c)
-	if(c.can_use())
-		majorChunkChange(c, 1)
+/datum/cameranet/proc/addCamera(obj/C)
+	if(istype(C, /obj/machinery/camera))
+		var/obj/machinery/camera/cam = C
+		if(cam.can_use())
+			majorChunkChange(cam, 1)
+
+	if(istype(C, /obj/item/bodycamera))
+		var/obj/item/bodycamera/cam = C
+		if(cam.can_use())
+			majorChunkChange(cam, 1)
 
 /// Used for Cyborg cameras. Since portable cameras can be in ANY chunk.
-/datum/cameranet/proc/updatePortableCamera(obj/machinery/camera/c)
-	if(c.can_use())
-		majorChunkChange(c, 1)
+/datum/cameranet/proc/updatePortableCamera(obj/C)
+	if(istype(C, /obj/machinery/camera))
+		var/obj/machinery/camera/cam = C
+		if(cam.can_use())
+			majorChunkChange(cam, 1)
+
+	if(istype(C, /obj/item/bodycamera))
+		var/obj/item/bodycamera/cam = C
+		if(cam.can_use())
+			majorChunkChange(cam, 1)
 
 /// Never access this proc directly!!!!
 /// This will update the chunk and all the surrounding chunks.
