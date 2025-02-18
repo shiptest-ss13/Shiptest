@@ -41,6 +41,7 @@
 	/// entry in that list is a bool that determines if the mission should fail when the atom qdeletes; the second
 	/// is a callback to be invoked upon the atom's qdeletion.
 	var/list/atom/movable/bound_atoms
+	var/bound_left_location = FALSE
 
 /datum/mission/New(_location, _mission_index)
 	//source_outpost = _outpost
@@ -122,7 +123,7 @@
 	SIGNAL_HANDLER
 
 	// Status of mission is handled by items spawned in mission after this
-	UnregisterSignal(mission_location, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(mission_location, list(COMSIG_PARENT_QDELETING, COMSIG_OVERMAP_LOADED))
 	if(!active)
 		qdel(src)
 		return
@@ -229,6 +230,7 @@
 		do_sparks(3, FALSE, get_turf(bound))
 	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
 	RegisterSignal(bound, COMSIG_PARENT_QDELETING, PROC_REF(bound_deleted))
+	RegisterSignal(bound, COMSIG_ATOM_VIRTUAL_Z_CHANGE, PROC_REF(bound_z_change))
 	bound.AddComponent(/datum/component/mission_important, MISSION_IMPORTANCE_CRITICAL, src)
 	return bound
 
@@ -249,6 +251,7 @@
 /// Signal handler for the qdeletion of bound atoms.
 /datum/mission/proc/bound_deleted(atom/movable/bound, force)
 	SIGNAL_HANDLER
+
 	var/list/bound_info = bound_atoms[bound]
 	// first value in bound_info is whether to fail on item destruction
 	failed = bound_info[1]
@@ -258,6 +261,15 @@
 		CB.Invoke()
 	remove_bound(bound)
 
+/// Signal handler for when a bound object changes z level. Used to determine if the planet can be cleaned up when someone undocks.
+/datum/mission/proc/bound_z_change(atom/movable/bound, new_virtual_z, previous_virtual_z)
+	SIGNAL_HANDLER
+
+	if(istype(mission_location, /datum/overmap/dynamic))
+		var/datum/overmap/dynamic/dynamic_location = mission_location
+		if(!dynamic_location.mapzone.is_in_bounds(bound))
+			bound_left_location = TRUE
+
 /**
  * Removes the given bound atom from the list of bound atoms.
  * Does not invoke the associated callback or fail the mission.
@@ -266,7 +278,7 @@
  * * bound - The bound atom to remove.
  */
 /datum/mission/proc/remove_bound(atom/movable/bound)
-	UnregisterSignal(bound, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(bound, list(COMSIG_PARENT_QDELETING, COMSIG_ATOM_VIRTUAL_Z_CHANGE))
 	// delete the callback
 	qdel(LAZYACCESSASSOC(bound_atoms, bound, 2))
 	// remove info from our list

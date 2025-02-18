@@ -132,7 +132,7 @@
 		return FALSE //Dont fuck over stranded people
 
 	for(var/datum/mission/ruin/dynamic_mission in dynamic_missions)
-		if(dynamic_mission.active)
+		if(dynamic_mission.active && !dynamic_mission.bound_left_location)
 			return FALSE //Dont fuck over people trying to complete a mission.
 
 	return TRUE
