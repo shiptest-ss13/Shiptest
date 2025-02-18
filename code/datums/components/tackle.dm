@@ -281,7 +281,7 @@
 			defense_mod += 2
 
 		if(!isnull(T.getorgan(/obj/item/organ/tail)))
-			(T.dna.species.is_wagging_tail()) // stealth buff to people with tails? in my shiptest 13? it's more likely than you thought. joking
+			if(T.dna.species.is_wagging_tail()) // stealth buff to people with tails? in my shiptest 13? it's more likely than you thought
 				defense_mod += 1
 
 	// OF-FENSE
