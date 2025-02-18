@@ -746,6 +746,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/central)
 "dO" = (
@@ -2471,6 +2472,7 @@
 /area/outpost/maintenance/central)
 "me" = (
 /obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/central)
 "mi" = (
@@ -2750,6 +2752,9 @@
 /obj/structure/disposaloutlet{
 	dir = 1
 	},
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/central)
 "nS" = (
@@ -2994,6 +2999,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/central)
 "pd" = (
@@ -3379,6 +3385,14 @@
 /obj/structure/grille/broken,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit,
 /area/outpost/external)
+"rw" = (
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/obj/structure/plasticflaps/opaque,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/outpost/maintenance/central)
 "ry" = (
 /obj/structure/chair/bench/red{
 	dir = 4
@@ -3995,6 +4009,15 @@
 	},
 /turf/open/floor/plasteel/stairs,
 /area/outpost/cargo)
+"tN" = (
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/outpost/maintenance/central)
 "tP" = (
 /obj/effect/decal/fakelattice,
 /obj/structure/grille/broken,
@@ -4416,6 +4439,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
+"vJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/stairs/mid{
+	dir = 1;
+	color = "#2e2e2e"
+	},
+/area/outpost/maintenance/central)
 "vL" = (
 /obj/structure/sign/painting/library{
 	pixel_y = -32
@@ -5382,9 +5413,12 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "AA" = (
-/obj/effect/decal/fakelattice,
-/turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/outpost/hallway/central)
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/stairs/mid{
+	dir = 1;
+	color = "#2e2e2e"
+	},
+/area/outpost/maintenance/central)
 "AB" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
@@ -5581,6 +5615,7 @@
 /area/outpost/hallway/central)
 "BG" = (
 /obj/machinery/disposal/deliveryChute,
+/obj/structure/disposalpipe/trunk,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/central)
 "BI" = (
@@ -6401,6 +6436,13 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/outpost/maintenance/central)
+"Gl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/stairs/mid{
+	dir = 1;
+	color = "#2e2e2e"
+	},
+/area/outpost/maintenance/central)
 "Go" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/corner/opaque/beige/mono,
@@ -6445,6 +6487,9 @@
 "GC" = (
 /obj/structure/railing{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 10
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/central)
@@ -6528,6 +6573,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo)
+"GX" = (
+/obj/machinery/conveyor/auto{
+	dir = 1
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/outpost/maintenance/central)
 "GY" = (
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -6904,6 +6955,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/central)
 "Jd" = (
@@ -6954,6 +7006,11 @@
 "Ji" = (
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
+/area/outpost/maintenance/central)
+"Jk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/central)
 "Jl" = (
 /obj/machinery/mineral/unloading_machine{
@@ -7815,9 +7872,10 @@
 /area/outpost/operations)
 "Nf" = (
 /obj/structure/plasticflaps/opaque,
-/obj/machinery/conveyor{
+/obj/machinery/conveyor/auto{
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/central)
 "Ng" = (
@@ -8122,6 +8180,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/office)
 "Oy" = (
+/obj/item/toy/plush/lizardplushie,
 /turf/open/floor/plating,
 /area/outpost/crew/dorm)
 "OE" = (
@@ -8507,11 +8566,6 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = 7;
-	pixel_y = -19
-	},
 /turf/open/floor/pod/dark,
 /area/outpost/crew/lounge)
 "Re" = (
@@ -8669,8 +8723,9 @@
 /turf/open/floor/plating,
 /area/outpost/crew/bar)
 "RR" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/plastitanium/nodiagnonal,
+/obj/machinery/light/small/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/central)
 "RS" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9072,6 +9127,8 @@
 /area/outpost/hallway/central)
 "Uw" = (
 /obj/machinery/light/small/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/central)
 "Ux" = (
@@ -9381,6 +9438,11 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
+"WB" = (
+/obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/outpost/maintenance/central)
 "WC" = (
 /obj/effect/decal/fakelattice,
 /obj/structure/railing{
@@ -9506,6 +9568,15 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
+"Xg" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/outpost/maintenance/central)
 "Xi" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -9916,8 +9987,11 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "ZD" = (
-/obj/machinery/conveyor{
+/obj/machinery/conveyor/auto{
 	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 5
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/central)
@@ -11528,9 +11602,9 @@ zJ
 cj
 ZW
 kt
+sj
 Mz
-Mz
-Mz
+sj
 kt
 Tn
 nL
@@ -11623,7 +11697,7 @@ cj
 Qt
 kt
 as
-lC
+yv
 ZS
 kt
 tB
@@ -11717,8 +11791,8 @@ cj
 BY
 kt
 lC
-lC
-lC
+yv
+yv
 kt
 iQ
 gp
@@ -11810,7 +11884,7 @@ cj
 cj
 Ce
 kt
-Mz
+sj
 Mz
 Mz
 kt
@@ -11905,7 +11979,7 @@ mc
 Ic
 LU
 LU
-AA
+LU
 LU
 LU
 Np
@@ -12178,10 +12252,10 @@ kt
 BG
 Nf
 ZD
-ZD
-ZD
-ZD
-Nf
+GX
+GX
+tN
+rw
 nR
 kt
 Np
@@ -12274,7 +12348,7 @@ kt
 GC
 dM
 dM
-GC
+Xg
 kt
 kt
 kt
@@ -14085,7 +14159,7 @@ kt
 kt
 Np
 Np
-RR
+kt
 sk
 kt
 Tk
@@ -14175,12 +14249,12 @@ YO
 YO
 ID
 LU
-Ll
+AA
 Uw
-lC
-Ll
-Uw
-lC
+qy
+Gl
+RR
+yv
 GM
 Tk
 Tk
@@ -14269,12 +14343,12 @@ YO
 YO
 YO
 LU
-Ll
+Gl
 lC
+Jk
+vJ
 lC
-Ll
-lC
-lC
+yv
 GM
 Tk
 Tk
@@ -14363,12 +14437,12 @@ YO
 YO
 YO
 LU
-Ll
+AA
 me
-lC
+yv
 Ll
-me
-lC
+WB
+qy
 GM
 Tk
 Tk
