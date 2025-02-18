@@ -54,7 +54,7 @@
 /////////////////
 
 /obj/item/clothing/suit/armor/vest/frontier
-	name = "\improper shoddy Frontiersmen armor vest"
+	name = "\improper Frontiersmen armor vest"
 	desc = "A scrap piece of armor made of disused protective plates. This one was used to protect the squishy bits of a Frontiersman, once."
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
@@ -62,7 +62,7 @@
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/vest/bulletproof/frontier
-	name = "\improper Frontiersmen armor vest"
+	name = "\improper Frontiersmen reinforced armor vest"
 	desc = "A battletested piece of armor made of sturdy protective plates. This one is significantly tougher than similar vests."
 	icon_state = "frontier_armor"
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
