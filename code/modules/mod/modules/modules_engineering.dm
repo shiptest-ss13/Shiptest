@@ -179,5 +179,6 @@
 		/obj/item/crowbar/cyborg, /obj/item/wirecutters/cyborg, /obj/item/multitool/cyborg)
 	incompatible_modules = list(/obj/item/mod/module/toolset)
 	cooldown_time = 0
+	allowed_inactive = TRUE
 
 

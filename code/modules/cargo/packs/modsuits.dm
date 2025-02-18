@@ -35,7 +35,7 @@
 
 /datum/supply_pack/modsuits/loader
 	name = "Loader MODsuit"
-	desc = "Contains a cargo loader modsuit. Not atmospherically sealed."
+	desc = "Contains a cargo loader modsuit. Features ample carrying space, though not atmospherically sealed."
 	cost = 1500 // ripley at home
 	contains = list(/obj/item/mod/control/pre_equipped/loader)
 
@@ -48,13 +48,13 @@
 /datum/supply_pack/modsuits/medical
 	name = "Medical MODsuit"
 	desc = "Contains a lightweight medical modsuit for paramedic work on the ground, or in EVA."
-	cost = 1500
+	cost = 2000
 	contains = list(/obj/item/mod/control/pre_equipped/medical)
 
 /datum/supply_pack/modsuits/rescue
 	name = "Rescue Medical MODsuit"
 	desc = "Contains an advanced medical modsuit with next-gen integrated medical systems."
-	cost = 2500
+	cost = 3500
 	contains = list(/obj/item/mod/control/pre_equipped/rescue)
 	faction = /datum/faction/nt
 	faction_discount = 0

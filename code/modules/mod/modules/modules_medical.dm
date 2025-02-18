@@ -119,4 +119,5 @@
 	tools_to_create = list(/obj/item/retractor/augment, /obj/item/hemostat/augment, /obj/item/cautery/augment, /obj/item/surgicaldrill/augment, /obj/item/scalpel/augment, /obj/item/circular_saw/augment)
 	incompatible_modules = list(/obj/item/mod/module/opset)
 	cooldown_time = 0
+	allowed_inactive = TRUE
 
