@@ -91,7 +91,6 @@
 
 /obj/item/mod/control/pre_equipped/research
 	theme = /datum/mod_theme/research
-	applied_cell = /obj/item/stock_parts/cell/super
 	initial_modules = list(
 		/obj/item/mod/module/storage,
 		/obj/item/mod/module/welding,

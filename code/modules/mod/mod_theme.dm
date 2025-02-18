@@ -681,7 +681,7 @@
 	)
 
 /datum/mod_theme/syndicate
-	name = "syndicate"
+	name = "Blood-Red"
 	desc = "An experimental combat hardsuit designed for special combat operation. Initially developed to replace the original Blood-Red Hardsuit model, the ICW ended before any widespread adoption of this MODsuit among Coallition forces could take place."
 	default_skin = "syndicate"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
