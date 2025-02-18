@@ -147,6 +147,11 @@
 		SSblackbox.record_feedback("tally", "mission_turned_in", 1, src.type)
 		spawn_reward(item_to_turn_in.loc)
 		do_sparks(3, FALSE, get_turf(item_to_turn_in))
+		SSmissions.active_missions -= src
+		active = FALSE
+		if(istype(mission_location, /datum/overmap/dynamic))
+			var/datum/overmap/dynamic/dynamic_location = mission_location
+			dynamic_location.start_countdown()
 		qdel(item_to_turn_in)
 		qdel(src)
 

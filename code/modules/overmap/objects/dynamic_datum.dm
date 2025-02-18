@@ -107,6 +107,9 @@
 
 
 /datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
+	start_countdown()
+
+/datum/overmap/dynamic/proc/start_countdown()
 	if(!can_reset_dynamic())
 		return
 	lifespan = 60 SECONDS
