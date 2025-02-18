@@ -108,3 +108,15 @@
 	amount_per_transfer_from_this = 30
 	possible_transfer_amounts = list(5, 10, 15, 20, 30)
 	volume = 30
+
+/obj/item/mod/module/opset
+	name = "MOD mobile surgery module"
+	desc = "A module installed in the forearm of the suit, featuring a complete suite of integrated surgical tools."
+	module_type = MODULE_ACTIVE
+	complexity = 4
+	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
+	toolset = TRUE
+	tools_to_create = list(/obj/item/retractor/augment, /obj/item/hemostat/augment, /obj/item/cautery/augment, /obj/item/surgicaldrill/augment, /obj/item/scalpel/augment, /obj/item/circular_saw/augment)
+	incompatible_modules = list(/obj/item/mod/module/opset)
+	cooldown_time = 0
+

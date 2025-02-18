@@ -167,3 +167,17 @@
 /obj/item/extinguisher/mini/nozzle/mod
 	name = "MOD atmospheric mister"
 	desc = "An atmospheric resin mister with three modes, mounted as a module."
+
+/obj/item/mod/module/toolset
+	name = "MOD mobile toolset module"
+	desc = "A module installed in the forearm of the suit, featuring a complete suite of integrated engineering tools."
+	module_type = MODULE_ACTIVE
+	complexity = 4
+	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
+	toolset = TRUE
+	tools_to_create = list(/obj/item/screwdriver/cyborg, /obj/item/wrench/cyborg, /obj/item/weldingtool/largetank/cyborg,
+		/obj/item/crowbar/cyborg, /obj/item/wirecutters/cyborg, /obj/item/multitool/cyborg)
+	incompatible_modules = list(/obj/item/mod/module/toolset)
+	cooldown_time = 0
+
+

@@ -123,45 +123,16 @@
 	complexity = 2
 	use_power_cost = DEFAULT_CHARGE_DRAIN
 	incompatible_modules = list(/obj/item/mod/module/drill)
+	device = /obj/item/pickaxe/drill/mod
 	cooldown_time = 0.5 SECONDS
 	overlay_state_active = "module_drill"
 
-/obj/item/mod/module/drill/on_activation()
-	. = ..()
-	if(!.)
-		return
-	RegisterSignal(mod.wearer, COMSIG_MOVABLE_BUMP, PROC_REF(bump_mine))
-
-/obj/item/mod/module/drill/on_deactivation(display_message = TRUE, deleting = FALSE)
-	. = ..()
-	if(!.)
-		return
-	UnregisterSignal(mod.wearer, COMSIG_MOVABLE_BUMP)
-
-/obj/item/mod/module/drill/on_select_use(atom/target)
-	. = ..()
-	if(!.)
-		return
-	if(!mod.wearer.Adjacent(target))
-		return
-	if(istype(target, /turf/closed/mineral))
-		var/turf/closed/mineral/mineral_turf = target
-		mineral_turf.gets_drilled(mod.wearer)
-		drain_power(use_power_cost)
-	else if(istype(target, /turf/open/floor/plating/asteroid))
-		var/turf/open/floor/plating/asteroid/sand_turf = target
-		if(!sand_turf.can_dig(mod.wearer))
-			return
-		sand_turf.getDug()
-		drain_power(use_power_cost)
-
-/obj/item/mod/module/drill/proc/bump_mine(mob/living/carbon/human/bumper, atom/bumped_into, proximity)
-	SIGNAL_HANDLER
-	if(!istype(bumped_into, /turf/closed/mineral) || !drain_power(use_power_cost))
-		return
-	var/turf/closed/mineral/mineral_turf = bumped_into
-	mineral_turf.gets_drilled(mod.wearer)
-	return COMPONENT_CANCEL_ATTACK_CHAIN
+/obj/item/pickaxe/drill/mod
+	name = "MOD Integrated Drill"
+	desc = "An integrated drill, complete with self-cleaning bit and part replacements."
+	icon = 'icons/obj/clothing/modsuit/mod_modules.dmi'
+	toolspeed = 0.3
+	icon_state = "drill"
 
 ///Ore Bag - Lets you pick up ores and drop them from the suit.
 /obj/item/mod/module/orebag
