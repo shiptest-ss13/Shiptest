@@ -46,14 +46,14 @@
 
 /datum/status_effect/trickwine/on_apply()
 	owner.visible_message(span_notice("[owner] " + message_apply_others), span_notice(message_apply_self))
-	owner.add_filter(id, 2, drop_shadow_filter(x = 0, y = -1, size = 2, color = reagent_color))
+	//owner.add_filter(id, 2, drop_shadow_filter(x = 0, y = -1, size = 2, color = reagent_color))
 	if(trait)
 		ADD_TRAIT(owner, trait, id)
 	return ..()
 
 /datum/status_effect/trickwine/on_remove()
 	owner.visible_message(span_notice("[owner] " + message_remove_others), span_notice(message_remove_self))
-	owner.remove_filter(id)
+	//owner.remove_filter(id)
 	if(trait)
 		REMOVE_TRAIT(owner, trait, id)
 
@@ -141,20 +141,20 @@
 /datum/status_effect/trickwine/buff/ash
 	id = "ash_wine_buff"
 	trickwine_examine_text = "SUBJECTPRONOUN seems to be filled with energy and devotion. There eyes are dialated and they seem to be twitching."
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/ash
 	id = "ash_wine_debuff"
 	trickwine_examine_text = "SUBJECTPRONOUN seems to be covered in a thin layer of ash. They seem to be twitching and jittery."
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/ash/tick()
 	switch(pick("jitter", "dizzy", "drug"))
@@ -186,22 +186,22 @@
 
 /datum/status_effect/trickwine/buff/ice
 	id = "ice_wine_buff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 	trait = TRAIT_NOFIRE
 
 /datum/status_effect/trickwine/debuff/ice
 	id = "ice_wine_debuff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 	var/icon/cube
 
 /datum/status_effect/trickwine/debuff/ice/on_apply()
@@ -262,12 +262,12 @@
 
 /datum/status_effect/trickwine/debuff/shock
 	id = "shock_wine_debuff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/shock/tick()
 	if(rand(25))
@@ -295,22 +295,22 @@
 
 /datum/status_effect/trickwine/buff/hearth
 	id = "hearth_wine_buff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 	trait = TRAIT_RESISTCOLD
 
 /datum/status_effect/trickwine/debuff/hearth
 	id = "hearth_wine_debuff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/hearth/tick()
 	//owner.fire_act()
@@ -332,23 +332,23 @@
 
 /datum/status_effect/trickwine/buff/force
 	id = "force_wine_buff"
-	trickwine_examine_text = ""
+	//trickwine_examine_text = ""
 	message_apply_others =  "glows a dim grey aura."
-	message_apply_self = "You feel faster than lightning!"
+	//message_apply_self = "You feel faster than lightning!"
 	message_remove_others = "'s aura fades away."
-	message_remove_self = "You feel sluggish."
-	alert_desc = ""
+	//message_remove_self = "You feel sluggish."
+	//alert_desc = ""
 	// No shrapnel seems useful
 	trait = TRAIT_PIERCEIMMUNE
 
 /datum/status_effect/trickwine/debuff/force
 	id = "force_wine_debuff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/force/on_apply()
 	var/turf/turf = get_turf(owner)
@@ -374,12 +374,12 @@
 #define MAX_REFLECTS 3
 /datum/status_effect/trickwine/buff/prism
 	id = "prism_wine_buff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 	var/reflect_count = 0
 	var/recent_movement = FALSE
 
@@ -420,12 +420,12 @@
 
 /datum/status_effect/trickwine/debuff/prism
 	id = "prism_wine_debuff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/prism/on_apply()
 	if(ishuman(owner))
