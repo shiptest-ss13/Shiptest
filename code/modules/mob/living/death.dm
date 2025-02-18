@@ -70,7 +70,7 @@
 		add_to_dead_mob_list()
 	set_drugginess(0)
 	set_disgust(0)
-	SetSleeping(0, 0)
+	set_sleeping(0)
 	reset_perspective(null)
 	reload_fullscreen()
 	update_action_buttons_icon()

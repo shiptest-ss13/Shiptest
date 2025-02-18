@@ -7,6 +7,7 @@
 	visor_flags = ALLOWINTERNALS
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
 	visor_flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	alternate_worn_layer = BODY_LAYER
 	w_class = WEIGHT_CLASS_SMALL
 	gas_transfer_coefficient = 0.1
 	permeability_coefficient = 0.5

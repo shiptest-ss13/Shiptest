@@ -261,37 +261,17 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet{
-	icon_state = "armory";
-	name = "weapons locker";
+/obj/machinery/light/small/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null;
 	req_access_txt = "3"
 	},
-/obj/machinery/light/small/directional/north,
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_x = -5;
-	pixel_y = -5
-	},
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
-	},
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq{
 	pixel_y = -5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "fc" = (
@@ -391,7 +371,6 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "gh" = (
-/obj/machinery/photocopier,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
@@ -399,6 +378,7 @@
 	dir = 1
 	},
 /obj/machinery/computer/helm/viewscreen/directional/north,
+/obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "gl" = (
@@ -1834,7 +1814,6 @@
 	normaldoorcontrol = 1;
 	pixel_x = 10;
 	pixel_y = -20;
-	req_access_txt = "3";
 	specialfunctions = 4
 	},
 /obj/item/radio/intercom/directional/west,
@@ -1854,7 +1833,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Ci" = (
-/obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
@@ -1865,6 +1843,7 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Cl" = (
@@ -1974,6 +1953,36 @@
 /obj/machinery/firealarm/directional/south,
 /obj/structure/chair/handrail{
 	dir = 1
+	},
+/obj/structure/closet/crate/secure/gear{
+	req_access_txt = "1";
+	name = "ammo crate"
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = -5
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = -5
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/m12g_bulldog{
+	pixel_x = -5;
+	pixel_y = -5
+	},
+/obj/item/ammo_box/magazine/m12g_bulldog{
+	pixel_x = 5
+	},
+/obj/item/storage/toolbox/ammo/shotgun{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/storage/toolbox/ammo/c9mm{
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -2215,11 +2224,6 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Hw" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "equipment locker";
-	req_access_txt = "1"
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -2227,26 +2231,31 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
-/obj/item/clothing/suit/armor/vest/bulletproof,
-/obj/item/clothing/head/helmet/swat/inteq,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/balaclava/inteq,
-/obj/item/storage/belt/security/webbing/inteq,
-/obj/item/storage/belt/security/webbing/inteq/alt,
-/obj/item/melee/baton/loaded,
-/obj/item/storage/box/zipties,
 /obj/machinery/airalarm/directional/west,
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = 23
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/melee/knife/survival,
-/obj/item/melee/knife/survival,
-/obj/item/melee/knife/survival,
+/obj/structure/crate_shelf,
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/structure/closet/crate/secure/gear{
+	req_access_txt = "1"
+	},
 /obj/item/attachment/rail_light,
 /obj/item/attachment/rail_light,
 /obj/item/attachment/rail_light,
+/obj/item/storage/box/zipties,
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
+/obj/item/clothing/gloves/combat,
+/obj/item/melee/baton/loaded,
+/obj/item/storage/belt/security/webbing/inteq,
+/obj/item/clothing/mask/balaclava/inteq,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/head/helmet/swat/inteq,
+/obj/item/storage/belt/security/webbing/inteq/alt,
+/obj/item/clothing/suit/armor/vest/bulletproof,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "HN" = (
@@ -3102,7 +3111,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
 /obj/item/tank/jetpack/oxygen,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
@@ -3281,9 +3290,9 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
 /obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)

@@ -38,7 +38,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/drop_rate_amount_max = 20
 	//Mob spawning variables
 	var/spawner_attached = FALSE //Probably a drastically less sloppy way of doing this, but it technically works
-	var/spawning_started = FALSE
+	///is the spawner currently spawning mobs?
+	var/currently_spawning = FALSE
 	var/max_mobs = 6
 	var/spawn_time = 150 //15 seconds
 	var/mob_types = list(
@@ -83,17 +84,14 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		. += span_notice("This vein has been marked as a site of no interest, and will not show up on deep core scans.")
 
 /obj/structure/vein/Destroy()
+	destroy_effect()
 	GLOB.ore_veins -= src
 	return ..()
 
-/obj/structure/vein/deconstruct(disassembled)
-	destroy_effect()
-	return..()
-
 /obj/structure/vein/proc/begin_spawning()
-	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime)
+	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime, vein_class)
 	spawner_attached = TRUE
-	spawning_started = TRUE
+	currently_spawning = TRUE
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
@@ -110,7 +108,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	visible_message("<span class='boldannounce'>[src] collapses!</span>")
 
 /obj/structure/vein/proc/toggle_spawning()
-	spawning_started = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, spawning_started)
+	currently_spawning = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, currently_spawning)
 
 
 //
@@ -137,7 +135,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 1,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 5,
 		)
 
@@ -160,7 +158,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 10,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 10,
 		)
 
