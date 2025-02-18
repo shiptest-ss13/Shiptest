@@ -37,4 +37,4 @@
 	name = "resin"
 	icon_state = "atmos_resin"
 	CanAtmosPass = ATMOS_PASS_NO
-	timeleft = 50
+	timeleft = 1

@@ -303,6 +303,7 @@
 
 			</body>
 			</html>"}
+
 // Wiki books that are linked to the configured wiki link.
 
 // A book that links to the wiki

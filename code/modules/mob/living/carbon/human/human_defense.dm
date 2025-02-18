@@ -97,9 +97,8 @@
 	for(var/obj/item/I in held_items)
 		if(I.IsReflect(def_zone))
 			return TRUE
-	if(SEND_SIGNAL(src, COMSIG_CHECK_REFLECT, def_zone))
-		return TRUE
-	if(HAS_TRAIT(src, TRAIT_REFLECTIVE))
+	///Granted by prismwine
+	if(HAS_TRAIT(src, TRAIT_REFLECTIVE) && prob(50))
 		return TRUE
 	return FALSE
 
