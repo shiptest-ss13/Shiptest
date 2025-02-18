@@ -68,6 +68,7 @@
 		/obj/item/mod/module/orebag,
 		/obj/item/mod/module/clamp,
 		/obj/item/mod/module/drill,
+		/obj/item/mod/module/plasma_engine
 	)
 
 /obj/item/mod/control/pre_equipped/medical

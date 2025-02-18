@@ -183,6 +183,46 @@
 		ores -= ore
 	drain_power(use_power_cost)
 
+/obj/item/mod/module/plasma_engine
+	name = "MOD plasma engine module"
+	desc = "A minaturized plasma engine, capable of directly intaking raw and refined plasma to recharge the MODsuit's core in the field."
+	icon_state = "module"
+	module_type = MODULE_TOGGLE
+	complexity = 3
+	active_power_cost = 0
+	incompatible_modules = list(/obj/item/mod/module/plasma_engine)
+	cooldown_time = 0.5 SECONDS
+	allowed_inactive = TRUE
+	var/list/charger_list = list(/obj/item/stack/ore/plasma = 1500, /obj/item/stack/sheet/mineral/plasma = 3000)
+
+/obj/item/mod/module/plasma_engine/on_activation()
+	. = ..()
+	RegisterSignal(mod, COMSIG_PARENT_ATTACKBY, PROC_REF(on_attackby))
+	balloon_alert(mod.wearer, "Engine Online, insert plasma into core unit.")
+
+/obj/item/mod/module/plasma_engine/on_deactivation(display_message, deleting)
+	UnregisterSignal(mod, COMSIG_PARENT_ATTACKBY)
+	balloon_alert(mod.wearer, "Engine Offline")
+	return ..()
+
+/obj/item/mod/module/plasma_engine/proc/on_attackby(datum/source, obj/item/attacking_item, mob/user)
+	SIGNAL_HANDLER
+
+	if(charge_plasma(attacking_item, user))
+		return COMPONENT_NO_AFTERATTACK
+	return NONE
+
+/obj/item/mod/module/plasma_engine/proc/charge_plasma(obj/item/stack/plasma, mob/user)
+	var/charge_given = is_type_in_list(plasma, charger_list, zebra = TRUE)
+	if(!charge_given)
+		return FALSE
+	var/uses_needed = min(plasma.amount, ROUND_UP((mod.get_max_charge() - mod.get_charge()) / charge_given))
+	if(!plasma.use(uses_needed))
+		return FALSE
+	mod.add_charge(uses_needed * charge_given)
+	balloon_alert(user, "core refueled")
+	return TRUE
+
 /obj/item/mod/module/disposal_connector
 	name = "MOD disposal selector module"
 	desc = "A module that connects to the disposal pipeline, causing the user to go into their config selected disposal. \

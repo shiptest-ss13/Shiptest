@@ -689,7 +689,7 @@
 	slowdown_inactive = 0.75
 	slowdown_active = 0.5
 	ui_theme = "syndicate"
-	inbuilt_modules = list(/obj/item/mod/module/armor_booster)
+	inbuilt_modules = list(/obj/item/mod/module/armor_assist)
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
 		/obj/item/tank/internals,
@@ -740,7 +740,7 @@
 	slowdown_inactive = 0.25
 	slowdown_active = 0.5
 	ui_theme = "syndicate"
-	inbuilt_modules = list(/obj/item/mod/module/armor_booster)
+	inbuilt_modules = list(/obj/item/mod/module/armor_assist)
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
 		/obj/item/tank/internals,

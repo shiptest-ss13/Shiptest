@@ -257,8 +257,12 @@
 	return
 
 /// Drains power from the suit charge
-/obj/item/mod/module/proc/drain_power(amount)
+/obj/item/mod/module/proc/drain_power(amount, force_drain = FALSE)
 	if(!check_power(amount))
+		if(force_drain)
+			var/power_remaining = mod.get_charge()
+			mod.subtract_charge(power_remaining)
+			mod.update_charge_alert()
 		return FALSE
 	mod.subtract_charge(amount)
 	mod.update_charge_alert()

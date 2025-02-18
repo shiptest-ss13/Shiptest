@@ -92,12 +92,15 @@
 	overlay_state_inactive = "module_armorbooster_off"
 	overlay_state_active = "module_armorbooster_on"
 	use_mod_colors = TRUE
+	var/drain_per_step = 50
 
-/obj/item/mod/module/armor_booster/on_activation()
+/obj/item/mod/module/armor_assist/on_activation()
 	. = ..()
 	if(!.)
 		return
 	playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+	RegisterSignal(mod.wearer, COMSIG_MOVABLE_MOVED,PROC_REF(drain_on_step))
+	mod.wearer.apply_status_effect(/datum/status_effect/armor_assist)
 
 /obj/item/mod/module/armor_assist/on_deactivation(display_message = TRUE, deleting = FALSE)
 	. = ..()
@@ -105,11 +108,18 @@
 		return
 	if(!deleting)
 		playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+	UnregisterSignal(mod.wearer, COMSIG_MOVABLE_MOVED)
+	mod.wearer.remove_status_effect(/datum/status_effect/armor_assist)
+
+/obj/item/mod/module/armor_assist/proc/drain_on_step(mob/user)
+	SIGNAL_HANDLER
+	drain_power(drain_per_step, TRUE)
 
 /obj/item/mod/module/armor_assist/generate_worn_overlay(mutable_appearance/standing)
 	overlay_state_inactive = "[initial(overlay_state_inactive)]-[mod.skin]"
 	overlay_state_active = "[initial(overlay_state_active)]-[mod.skin]"
 	return ..()
+
 
 ///Energy Shield - Gives you a rechargeable energy shield that nullifies attacks.
 /obj/item/mod/module/energy_shield
