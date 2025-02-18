@@ -33,7 +33,7 @@
 	icon_state = "clamp"
 	module_type = MODULE_ACTIVE
 	complexity = 3
-	use_power_cost = DEFAULT_CHARGE_DRAIN
+	use_power_cost = MODULE_CHARGE_DRAIN_MEDIUM
 	incompatible_modules = list(/obj/item/mod/module/clamp)
 	cooldown_time = 0.5 SECONDS
 	overlay_state_inactive = "module_clamp"
@@ -121,7 +121,7 @@
 	icon_state = "drill"
 	module_type = MODULE_ACTIVE
 	complexity = 2
-	use_power_cost = DEFAULT_CHARGE_DRAIN
+	use_power_cost = MODULE_CHARGE_DRAIN_MEDIUM
 	incompatible_modules = list(/obj/item/mod/module/drill)
 	device = /obj/item/pickaxe/drill/mod
 	cooldown_time = 0.5 SECONDS
@@ -266,7 +266,7 @@
 	icon_state = "magnet_loader"
 	module_type = MODULE_ACTIVE
 	removable = FALSE
-	use_power_cost = DEFAULT_CHARGE_DRAIN*3
+	use_power_cost = MODULE_CHARGE_DRAIN_MASSIVE
 	incompatible_modules = list(/obj/item/mod/module/magnet)
 	cooldown_time = 1.5 SECONDS
 	overlay_state_active = "module_magnet"

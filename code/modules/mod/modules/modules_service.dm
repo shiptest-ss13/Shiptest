@@ -1,24 +1,5 @@
 //Service modules for MODsuits
 
-///Bike Horn - Plays a bike horn sound.
-/obj/item/mod/module/bikehorn
-	name = "MOD bike horn module"
-	desc = "A shoulder-mounted piece of heavy sonic artillery, this module uses the finest femto-manipulator technology to \
-		precisely deliver an almost lethal squeeze to... a bike horn, producing a significantly memorable sound."
-	icon_state = "bikehorn"
-	module_type = MODULE_USABLE
-	complexity = 1
-	use_power_cost = DEFAULT_CHARGE_DRAIN
-	incompatible_modules = list(/obj/item/mod/module/bikehorn)
-	cooldown_time = 1 SECONDS
-
-/obj/item/mod/module/bikehorn/on_use()
-	. = ..()
-	if(!.)
-		return
-	playsound(src, 'sound/items/bikehorn.ogg', 100, FALSE)
-	drain_power(use_power_cost)
-
 ///Microwave Beam - Microwaves items instantly.
 /obj/item/mod/module/microwave_beam
 	name = "MOD microwave beam module"
