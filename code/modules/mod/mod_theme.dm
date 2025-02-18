@@ -34,7 +34,7 @@
 	/// How much battery power the MOD uses by just being on
 	var/charge_drain = DEFAULT_CHARGE_DRAIN
 	/// Slowdown of the MOD when not active.
-	var/slowdown_inactive = 0,75
+	var/slowdown_inactive = 0.75
 	/// Slowdown of the MOD when active.
 	var/slowdown_active = 0.5
 	/// Theme used by the MOD TGUI.
@@ -241,7 +241,6 @@
 /datum/mod_theme/mining
 	name = "mining"
 	desc = "A recently developed MODsuit design, featurning integrated mining tools and impact plates to protect against Frontier fauna."
-	icon_state = "hardsuit-mining"
 	default_skin = "mining"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 30, "bio" = 100, "fire" = 100, "acid" = 75)
 	resistance_flags = FIRE_PROOF|LAVA_PROOF
@@ -317,7 +316,7 @@
 
 /datum/mod_theme/loader
 	name = "loader"
-	desc = "A motorized cargo loading harness based off the MODsuit system. It features powerful loading arms and additional storage space, though the modifications make it no longer space worthy.
+	desc = "A motorized cargo loading harness based off the MODsuit system. It features powerful loading arms and additional storage space, though the modifications make it no longer space worthy."
 	default_skin = "loader"
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 10, "bio" = 10, "fire" = 25, "acid" = 25)
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
@@ -537,7 +536,7 @@
 
 /datum/mod_theme/security
 	name = "security"
-	desc = desc = "A lightweight MODsuit that protects against hazardous, low pressure environments. Has an additional layer of armor."
+	desc = "A lightweight MODsuit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	default_skin = "security"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	complexity_max = DEFAULT_MAX_COMPLEXITY - 3
