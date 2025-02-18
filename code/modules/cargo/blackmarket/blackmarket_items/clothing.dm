@@ -92,7 +92,7 @@
 	return B
 
 /datum/blackmarket_item/clothing/frontiersmen_armor_set
-	name = "X-11 Armor Set"
+	name = "Bulletproof X-11 Armor Set"
 	desc = "We got a good deal on some extra armor from a Frontiersmen Quartermaster, and we're passing those savings onto you!"
 	item = /obj/item/storage/box
 
