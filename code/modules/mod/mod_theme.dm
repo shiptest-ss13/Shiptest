@@ -536,10 +536,10 @@
 
 /datum/mod_theme/security
 	name = "security"
-	desc = "A lightweight MODsuit that protects against hazardous, low pressure environments. Has an additional layer of armor."
+	desc = "A lightweight MODsuit that protects against hazardous, low pressure environments. Has an additional layer of armor at the cost of module capacity."
 	default_skin = "security"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	complexity_max = DEFAULT_MAX_COMPLEXITY - 3
+	complexity_max = DEFAULT_MAX_COMPLEXITY - 5
 	slowdown_inactive = 0.75
 	slowdown_active = 0.5
 	allowed_suit_storage = list(

@@ -15,11 +15,11 @@
 /datum/supply_pack/modsuits/engie
 	name = "Engineering MODsuit"
 	desc = "Contains a protective Engineering modsuit fitted for industrial work."
-	cost = 2000
+	cost = 2500
 	contains = list(/obj/item/mod/control/pre_equipped/engineering)
 
 /datum/supply_pack/modsuits/atmos
-	name = "MODsuit"
+	name = "Atmospheric MODsuit"
 	desc = "Contains an insulated atmospheric modsuit, capable of enduring absurd temperatures."
 	cost = 2500
 	contains = list(/obj/item/mod/control/pre_equipped/atmospheric)
