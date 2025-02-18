@@ -200,7 +200,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4
+	dir = 4;
+	name = "Starboard Nacelle"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -269,6 +270,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	req_access = list(3);
+	name = "Armory"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "hB" = (
@@ -312,7 +318,8 @@
 /obj/item/clothing/neck/shemagh/ngr,
 /obj/structure/closet/secure_closet/miner{
 	anchored = 1;
-	populate = 0
+	populate = 0;
+	name = "Wrecker's Equipment"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech,
@@ -331,7 +338,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 4
+	dir = 4;
+	name = "Cryogenics"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
@@ -505,7 +513,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4
+	dir = 4;
+	name = "Port Nacelle"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -588,11 +597,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/grunge{
-	dir = 4;
-	req_access = list(3);
-	name = "Armory"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -664,7 +668,9 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 4
+	dir = 4;
+	name = "Bathroom";
+	id_tag = "boob_bathroom"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
@@ -897,7 +903,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock/mining/glass,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Cargo Bay"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1059,7 +1067,8 @@
 /area/ship/crew/canteen)
 "vU" = (
 /obj/structure/closet/secure_closet/engineering_personal{
-	populate = 0
+	populate = 0;
+	name = "Mechanic's Locker"
 	},
 /obj/item/clothing/under/syndicate/ngr,
 /obj/item/storage/toolbox/syndicate,
@@ -1182,6 +1191,15 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
+	},
+/obj/machinery/button/door{
+	pixel_x = -21;
+	pixel_y = -13;
+	dir = 4;
+	id = "boob_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm)
@@ -1687,7 +1705,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	name = "Crew Quarters"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "JJ" = (
@@ -1759,7 +1779,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	name = "Mechanics Chambers"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
