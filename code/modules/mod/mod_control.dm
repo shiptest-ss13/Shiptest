@@ -215,6 +215,7 @@
 			. += span_notice("You could remove [ai] with an <b>intellicard</b>.")
 		else
 			. += span_notice("You could install an AI with an <b>intellicard</b>.")
+	. += span_notice("You could <b>ctrl-click<b> the [src] to quick activate or deactivate the suit.")
 
 /obj/item/mod/control/examine_more(mob/user)
 	. = ..()
@@ -711,3 +712,5 @@
 	if(overslot != overslotting_parts[source])
 		return
 	overslotting_parts[source] = null
+
+

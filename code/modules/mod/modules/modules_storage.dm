@@ -8,7 +8,7 @@
 	var/datum/component/storage/concrete/storage
 	var/max_w_class = WEIGHT_CLASS_NORMAL
 	var/max_combined_w_class = 15
-	var/max_items = 7
+	var/max_items = 5
 
 /obj/item/mod/module/storage/Initialize(mapload)
 	. = ..()

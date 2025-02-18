@@ -60,7 +60,7 @@
 
 /obj/item/mod/control/pre_equipped/mining
 	theme = /datum/mod_theme/mining
-	applied_core = /obj/item/mod/core/plasma
+	//applied_core = /obj/item/mod/core/plasma
 	initial_modules = list(
 		/obj/item/mod/module/storage,
 		/obj/item/mod/module/gps,
@@ -105,6 +105,7 @@
 		/obj/item/mod/module/storage,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/flashlight,
+		/obj/item/mod/module/holster
 	)
 
 /obj/item/mod/control/pre_equipped/safeguard
@@ -132,7 +133,7 @@
 	theme = /datum/mod_theme/syndicate
 	applied_cell = /obj/item/stock_parts/cell/super
 	initial_modules = list(
-		/obj/item/mod/module/storage/syndicate,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/emp_shield,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/jetpack,
@@ -144,7 +145,7 @@
 	theme = /datum/mod_theme/elite
 	applied_cell = /obj/item/stock_parts/cell/bluespace
 	initial_modules = list(
-		/obj/item/mod/module/storage/syndicate,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/emp_shield,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/jetpack/advanced,
@@ -155,7 +156,6 @@
 /obj/item/mod/control/pre_equipped/nuclear
 	theme = /datum/mod_theme/syndicate
 	applied_cell = /obj/item/stock_parts/cell/hyper
-	req_access = list(ACCESS_SYNDICATE)
 	initial_modules = list(
 		/obj/item/mod/module/storage/syndicate,
 		/obj/item/mod/module/emp_shield,
