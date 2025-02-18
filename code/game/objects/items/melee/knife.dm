@@ -206,7 +206,7 @@
 	name = "handsaw"
 	icon_state = "handsaw"
 	item_state = "handsaw"
-	desc = "A woodworker's handsaw, useful for cutting up wood into planks, thanks to its serrated edge. Can double as a butcher's tool for the survivalist."
+	desc = "A Woodworker's handsaw, useful for cutting up wood into planks, thanks to its serrated edge. Can double as a butchering tool in a pinch."
 	force = 5
 	throwforce = 5
 	custom_materials = list(/datum/material/iron=4000)
