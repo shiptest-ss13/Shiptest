@@ -61,7 +61,7 @@ SUBSYSTEM_DEF(jukeboxes)
 	if(activejukeboxes.len)
 		for(var/list/jukeinfo in activejukeboxes)
 			if(jukebox in jukeinfo)
-				return activejukeboxes.Find(jukeinfo)w
+				return activejukeboxes.Find(jukeinfo)
 	return FALSE
 
 /datum/controller/subsystem/jukeboxes/Initialize()
