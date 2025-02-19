@@ -3527,8 +3527,8 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "JD" = (
-/obj/structure/chair/sofa/red/corpo/right/directional/west,
 /obj/item/radio/intercom/directional/west,
+/obj/structure/chair/sofa/red/corpo/right/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "JF" = (
@@ -3913,6 +3913,10 @@
 /obj/item/clothing/under/syndicate/gec{
 	pixel_x = -12;
 	pixel_y = -9
+	},
+/obj/item/clothing/suit/toggle/industrial{
+	pixel_x = 7;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
