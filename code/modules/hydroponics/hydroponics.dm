@@ -9,37 +9,53 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_LOW
 	active_power_usage = ACTIVE_DRAW_HIGH
-	var/waterlevel = 100	//The amount of water in the tray (max 100)
-	var/maxwater = 100		//The maximum amount of water in the tray
-	var/nutridrain = 1      // How many units of nutrient will be drained in the tray
-	var/maxnutri = 10		//The maximum nutrient of water in the tray
-	var/pestlevel = 0		//The amount of pests in the tray (max 10)
-	var/weedlevel = 0		//The amount of weeds in the tray (max 10)
-	var/yieldmod = 1		//Nutriment's effect on yield
-	var/mutmod = 1			//Nutriment's effect on mutations
-	var/toxic = 0			//Toxicity in the tray?
-	var/age = 0				//Current age
-	var/dead = FALSE			//Is it dead?
-	var/plant_health		//Its health
-	var/lastproduce = 0		//Last time it was harvested
-	var/lastcycle = 0		//Used for timing of cycles.
+	///The amount of water in the tray (max 100)
+	var/waterlevel = 100
+	///The maximum amount of water in the tray
+	var/maxwater = 100
+	///How many units of nutrient will be drained in the tray
+	var/nutridrain = 1
+	///The maximum nutrient of water in the tray
+	var/maxnutri = 20
+	///The amount of pests in the tray (max 10)
+	var/pestlevel = 0
+	///The amount of weeds in the tray (max 10)
+	var/weedlevel = 0
+	///Nutriment's effect on yield
+	var/yieldmod = 1
+	///Nutriment's effect on mutations
+	var/mutmod = 1
+	///Toxicity in the tray?
+	var/toxic = 0
+	///Current age
+	var/age = 0
+	///Is it dead?
+	var/dead = FALSE
+	///Its health
+	var/plant_health
+	///Last time it was harvested
+	var/lastproduce = 0
+	///Used for timing of cycles.
+	var/lastcycle = 0
 	var/cycledelay = HYDROTRAY_CYCLE_DELAY
-	var/harvest = FALSE			//Ready to harvest?
-	var/obj/item/seeds/myseed = null	//The currently planted seed
+	///Ready to harvest?
+	var/harvest = FALSE
+	///The currently planted seed
+	var/obj/item/seeds/myseed = null
 	var/rating = 1
 	var/unwrenchable = TRUE
-	var/recent_bee_visit = FALSE //Have we been visited by a bee recently, so bees dont overpollinate one plant
-	var/datum/weakref/lastuser //Last user to add reagents to a tray. Mostly for logging.
-	var/self_sustaining = FALSE //If the tray generates nutrients and water on its own
+	///Have we been visited by a bee recently, so bees dont overpollinate one plant
+	var/recent_bee_visit = FALSE
+	///Last user to add reagents to a tray. Mostly for logging.
+	var/datum/weakref/lastuser
+	///If the tray generates nutrients and water on its own
+	var/self_sustaining = FALSE
 	///The icon state for the overlay used to represent that this tray is self-sustaining.
 	var/self_sustaining_overlay_icon_state = "gaia_blessing"
 
-	// Here lies irrigation. You won't be missed, because you were never used.
-
 /obj/machinery/hydroponics/Initialize()
-	//Here lies "nutrilevel", killed by ArcaneMusic 20??-2019. Finally, we strive for a better future. Please use "reagents" instead
-	create_reagents(20)
-	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, 10) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
+	create_reagents(maxnutri)
+	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, maxnutri/2) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
 	return ..()
 
 /obj/machinery/hydroponics/constructable
