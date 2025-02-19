@@ -61,7 +61,7 @@ SUBSYSTEM_DEF(jukeboxes)
 	if(activejukeboxes.len)
 		for(var/list/jukeinfo in activejukeboxes)
 			if(jukebox in jukeinfo)
-				return activejukeboxes.Find(jukeinfo)
+				return activejukeboxes.Find(jukeinfo)w
 	return FALSE
 
 /datum/controller/subsystem/jukeboxes/Initialize()
@@ -76,7 +76,7 @@ SUBSYSTEM_DEF(jukeboxes)
 			continue
 		T.song_name = L[1]
 		T.song_length = text2num(L[2])
-		T.song_beat = text2num(L[3])
+		T.song_beat = text2num(L[3]) / 600
 		songs |= T
 	for(var/i in CHANNEL_JUKEBOX_START to CHANNEL_JUKEBOX)
 		freejukeboxchannels |= i
