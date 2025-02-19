@@ -243,6 +243,10 @@
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "eg" = (
@@ -466,6 +470,10 @@
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/canister/air,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "gS" = (
@@ -848,6 +856,10 @@
 	icon_state = "1-4"
 	},
 /obj/structure/cable/cyan,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "nq" = (
@@ -958,6 +970,9 @@
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 8;
 	piping_layer = 2
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1205,6 +1220,9 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1819,6 +1837,7 @@
 	name = "mining supply crate"
 	},
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/item/storage/bag/ore,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
 /obj/item/radio/weather_monitor,
@@ -1880,7 +1899,8 @@
 	pixel_y = 17
 	},
 /obj/item/reagent_containers/glass/bottle/welding_fuel{
-	list_reagents = list(/datum/reagent/fuel = 5)
+	list_reagents = list(/datum/reagent/fuel = 5);
+	layer = 3.01
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
@@ -3119,6 +3139,9 @@
 	dir = 4
 	},
 /obj/item/clothing/gloves/color/yellow,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Po" = (
@@ -3376,6 +3399,10 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Sq" = (
@@ -3618,6 +3645,10 @@
 /obj/structure/railing,
 /obj/structure/closet/crate/radiation,
 /obj/item/stack/sheet/mineral/uranium/ten,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Vf" = (
