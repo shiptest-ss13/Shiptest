@@ -1,33 +1,47 @@
+#define SP_LINKED 1
+#define SP_READY 2
+#define SP_LAUNCH 3
+#define SP_UNLINK 4
+#define SP_UNREADY 5
+
 /obj/machinery/computer/cargo
-	name = "supply console"
-	desc = "Used to order supplies, approve requests, and control the shuttle."
-	icon_screen = "supply"
+	name = "outpost communications console"
+	desc = "This console allows the user to communicate with a nearby outpost to \
+			purchase supplies and manage missions. Purchases are delivered near-instantly."
+	icon_screen = "supply_express"
 	circuit = /obj/item/circuitboard/computer/cargo
 	light_color = COLOR_BRIGHT_ORANGE
 
-	var/requestonly = FALSE
+	/// The ship we reside on for ease of access
+	var/datum/overmap/ship/controlled/current_ship
 	var/contraband = FALSE
 	var/self_paid = FALSE
 	var/safety_warning = "For safety reasons, the automated supply shuttle \
 		cannot transport live organisms, human remains, classified nuclear weaponry, \
 		homing beacons or machinery housing any form of artificial intelligence."
-	var/blockade_warning = "Bluespace instability detected. Shuttle movement impossible."
-	/// radio used by the console to send messages on supply channel
-	var/obj/item/radio/headset/radio
 	/// var that tracks message cooldown
 	var/message_cooldown
 
-
-/obj/machinery/computer/cargo/request
-	name = "supply request console"
-	desc = "Used to request supplies from cargo."
-	icon_screen = "request"
-	circuit = /obj/item/circuitboard/computer/cargo/request
-	requestonly = TRUE
+	var/blockade_warning = "Bluespace instability detected. Delivery impossible."
+	var/message
+	/// Number of beacons printed. Used to determine beacon names.
+	var/printed_beacons = 0
+	var/list/supply_pack_data
+	/// The currently linked supplypod beacon
+	var/obj/item/supplypod_beacon/beacon
+	/// Area instance that cargo pods are sent to
+	var/area/landingzone
+	/// The pod type used to deliver orders
+	var/podType = /obj/structure/closet/supplypod/centcompod
+	/// Cooldown to prevent printing supplypod beacon spam
+	var/cooldown = 0
+	/// Is the console in beacon mode? exists to let beacon know when a pod may come in
+	var/use_beacon = FALSE
+	/// The account to charge purchases to, defaults to the cargo budget
+	var/datum/bank_account/charge_account
 
 /obj/machinery/computer/cargo/Initialize()
 	. = ..()
-	radio = new /obj/item/radio/headset/headset_cargo(src)
 	var/obj/item/circuitboard/computer/cargo/board = circuit
 	contraband = board.contraband
 	if (board.obj_flags & EMAGGED)
@@ -36,7 +50,8 @@
 		obj_flags &= ~EMAGGED
 
 /obj/machinery/computer/cargo/Destroy()
-	QDEL_NULL(radio)
+	if(beacon)
+		beacon.unlink_console()
 	return ..()
 
 /obj/machinery/computer/cargo/proc/get_export_categories()
@@ -62,70 +77,70 @@
 	board.obj_flags |= EMAGGED
 	update_static_data(user)
 
+/obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	current_ship = port.current_ship
+
 /obj/machinery/computer/cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "Cargo", name)
+		ui = new(user, src, "OutpostCommunications", name)
 		ui.open()
-
-/obj/machinery/computer/cargo/ui_data()
-	var/list/data = list()
-	data["location"] = SSshuttle.supply.getStatusText()
-	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
-	if(D)
-		data["points"] = D.account_balance
-	data["away"] = SSshuttle.supply.get_docked() == SSshuttle.supply_away_port
-	data["self_paid"] = self_paid
-	data["docked"] = SSshuttle.supply.mode == SHUTTLE_IDLE
-	var/message = "Remember to stamp and send back the supply manifests."
-	if(SSshuttle.centcom_message)
-		message = SSshuttle.centcom_message
-	if(SSshuttle.supplyBlocked)
-		message = blockade_warning
-	data["message"] = message
-	data["cart"] = list()
-	for(var/datum/supply_order/SO in SSshuttle.shoppinglist)
-		data["cart"] += list(list(
-			"object" = SO.pack.name,
-			"cost" = SO.pack.cost,
-			"id" = SO.id,
-			"orderer" = SO.orderer,
-			"paid" = !isnull(SO.paying_account) //paid by requester
-		))
-
-	data["requests"] = list()
-	for(var/datum/supply_order/SO in SSshuttle.requestlist)
-		data["requests"] += list(list(
-			"object" = SO.pack.name,
-			"cost" = SO.pack.cost,
-			"orderer" = SO.orderer,
-			"reason" = SO.reason,
-			"id" = SO.id
-		))
-
-	return data
+		if(!charge_account)
+			reconnect()
 
 /obj/machinery/computer/cargo/ui_static_data(mob/user)
+	. = ..()
+	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
+	if(outpost_docked)
+		generate_pack_data()
+	else
+		supply_pack_data = list()
+
+/obj/machinery/computer/cargo/ui_data(mob/user)
+	var/canBeacon = beacon && (isturf(beacon.loc) || ismob(beacon.loc))//is the beacon in a valid location?
 	var/list/data = list()
-	data["requestonly"] = requestonly
+
+	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
+
+	data["onShip"] = !isnull(current_ship)
+	data["numMissions"] = current_ship ? LAZYLEN(current_ship.missions) : 0
+	data["maxMissions"] = current_ship ? current_ship.max_missions : 0
+	data["outpostDocked"] = outpost_docked
+	data["points"] = charge_account ? charge_account.account_balance : 0
+	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
+	data["beaconZone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
+	data["usingBeacon"] = use_beacon //is the mode set to deliver to the beacon or the cargobay?
+	data["canBeacon"] = !use_beacon || canBeacon //is the mode set to beacon delivery, and is the beacon in a valid location?
+	data["canBuyBeacon"] = charge_account ? (cooldown <= 0) : FALSE
+	data["beaconError"] = use_beacon && !canBeacon ? "(BEACON ERROR)" : ""//changes button text to include an error alert if necessary
+	data["hasBeacon"] = beacon != null//is there a linked beacon?
+	data["beaconName"] = beacon ? beacon.name : "No Beacon Found"
+	data["printMsg"] = cooldown > 0 ? "Print Beacon ([cooldown])" : "Print Beacon"//buttontext for printing beacons
 	data["supplies"] = list()
-	for(var/pack in SSshuttle.supply_packs)
-		var/datum/supply_pack/P = SSshuttle.supply_packs[pack]
-		if(!data["supplies"][P.group])
-			data["supplies"][P.group] = list(
-				"name" = P.group,
-				"packs" = list()
-			)
-		if((P.hidden && !(obj_flags & EMAGGED)) || (P.contraband && !contraband) || (P.special && !P.special_enabled) || P.DropPodOnly)
-			continue
-		data["supplies"][P.group]["packs"] += list(list(
-			"name" = P.name,
-			"cost" = P.cost,
-			"id" = pack,
-			"desc" = P.desc || P.name, // If there is a description, use it. Otherwise use the pack's name.
-			"small_item" = P.small_item,
-			"access" = P.access
-		))
+	message = "Sales are near-instantaneous - please choose carefully."
+	if(SSshuttle.supplyBlocked)
+		message = blockade_warning
+	if(use_beacon && !beacon)
+		message = "BEACON ERROR: BEACON MISSING"//beacon was destroyed
+	else if (use_beacon && !canBeacon)
+		message = "BEACON ERROR: MUST BE EXPOSED"//beacon's loc/user's loc must be a turf
+	data["message"] = message
+
+	data["supplies"] = supply_pack_data
+	if (cooldown > 0)//cooldown used for printing beacons
+		cooldown--
+
+	data["shipMissions"] = list()
+	data["outpostMissions"] = list()
+
+	if(current_ship)
+		for(var/datum/mission/M as anything in current_ship.missions)
+			data["shipMissions"] += list(M.get_tgui_info())
+		if(outpost_docked)
+			var/datum/overmap/outpost/out = current_ship.docked_to
+			for(var/datum/mission/M as anything in out.missions)
+				data["outpostMissions"] += list(M.get_tgui_info())
+
 	return data
 
 /obj/machinery/computer/cargo/ui_act(action, params, datum/tgui/ui)
@@ -133,115 +148,168 @@
 	if(.)
 		return
 	switch(action)
-		if("send")
-			if(!SSshuttle.supply.canMove())
-				say(safety_warning)
+		if("withdrawCash")
+			var/val = text2num(params["value"])
+			// no giving yourself money
+			if(!charge_account || !val || val <= 0)
 				return
-			if(SSshuttle.supplyBlocked)
-				say(blockade_warning)
-				return
-			if(SSshuttle.supply.get_docked() == SSshuttle.supply_home_port)
-				SSshuttle.supply.export_categories = get_export_categories()
-				SSshuttle.moveShuttle(SSshuttle.supply, SSshuttle.supply_away_port, TRUE)
-				say("The supply shuttle is departing.")
-				investigate_log("[key_name(usr)] sent the supply shuttle away.", INVESTIGATE_CARGO)
-			else
-				investigate_log("[key_name(usr)] called the supply shuttle.", INVESTIGATE_CARGO)
-				say("The supply shuttle has been called and will arrive in [SSshuttle.supply.timeLeft(600)] minutes.")
-				SSshuttle.moveShuttle(SSshuttle.supply, SSshuttle.supply_home_port, TRUE)
-			. = TRUE
+			if(charge_account.adjust_money(-val, CREDIT_LOG_WITHDRAW))
+				var/obj/item/holochip/cash_chip = new /obj/item/holochip(drop_location(), val)
+				if(ishuman(usr))
+					var/mob/living/carbon/human/user = usr
+					user.put_in_hands(cash_chip)
+				playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
+				src.visible_message("<span class='notice'>[src] dispenses a holochip.</span>")
+			return TRUE
+
+		if("LZCargo")
+			use_beacon = FALSE
+			if (beacon)
+				beacon.update_status(SP_UNREADY) //ready light on beacon will turn off
+		if("LZBeacon")
+			use_beacon = TRUE
+			if (beacon)
+				beacon.update_status(SP_READY) //turns on the beacon's ready light
+		if("printBeacon")
+			cooldown = 300
+			var/obj/item/supplypod_beacon/C = new /obj/item/supplypod_beacon(drop_location())
+			C.link_console(src, usr)//rather than in beacon's Initialize(), we can assign the computer to the beacon by reusing this proc)
+			printed_beacons++//printed_beacons starts at 0, so the first one out will be called beacon # 1
+			beacon.name = "Supply Pod Beacon #[printed_beacons]"
 		if("add")
-			if(istype(src, /obj/machinery/computer/cargo/express))
-				return
-			var/id = text2path(params["id"])
-			var/datum/supply_pack/pack = SSshuttle.supply_packs[id]
-			if(!istype(pack))
-				return
-			if((pack.hidden && !(obj_flags & EMAGGED)) || (pack.contraband && !contraband) || pack.DropPodOnly)
-				return
-
-			var/name = "*None Provided*"
-			var/rank = "*None Provided*"
-			var/ckey = usr.ckey
-			if(ishuman(usr))
-				var/mob/living/carbon/human/H = usr
-				name = H.get_authentification_name()
-				rank = H.get_assignment(hand_first = TRUE)
-			else if(issilicon(usr))
-				name = usr.real_name
-				rank = "Silicon"
-
-			var/datum/bank_account/account
-			if(self_paid && ishuman(usr))
-				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-				if(!istype(id_card))
-					say("No ID card detected.")
-					return
-				account = id_card.registered_account
-				if(!istype(account))
-					say("Invalid bank account.")
+			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
+			if(istype(current_ship.docked_to))
+				var/datum/supply_pack/current_pack = locate(params["ref"]) in current_outpost.supply_packs
+				var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
+				var/total_cost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : current_pack.cost
+				if(!current_pack || !charge_account?.has_money(total_cost))
 					return
 
-			var/reason = ""
-			if(requestonly && !self_paid)
-				reason = stripped_input("Reason:", name, "")
-				if(isnull(reason) || ..())
+				var/turf/landing_turf
+				if(!isnull(beacon) && use_beacon) // prioritize beacons over landing in cargobay
+					landing_turf = get_turf(beacon)
+					beacon.update_status(SP_LAUNCH)
+				else if(!use_beacon)// find a suitable supplypod landing zone in cargobay
+					var/list/empty_turfs = list()
+					if(!landingzone)
+						reconnect()
+						if(!landingzone)
+							WARNING("[src] couldnt find a Ship/Cargo (aka cargobay) area on a ship, and as such it has set the supplypod landingzone to the area it resides in.")
+							landingzone = get_area(src)
+					for(var/turf/open/floor/T in landingzone.contents)//uses default landing zone
+						if(T.is_blocked_turf())
+							continue
+						empty_turfs += T
+						CHECK_TICK
+					landing_turf = pick(empty_turfs)
+
+				// note that, because of CHECK_TICK above, we aren't sure if we can
+				// afford the pack, even though we checked earlier. luckily adjust_money
+				// returns false if the account can't afford the price
+				if(landing_turf && charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
+					var/name = "*None Provided*"
+					var/rank = "*None Provided*"
+					if(ishuman(usr))
+						var/mob/living/carbon/human/H = usr
+						name = H.get_authentification_name()
+						rank = H.get_assignment(hand_first = TRUE)
+					else if(issilicon(usr))
+						name = usr.real_name
+						rank = "Silicon"
+					var/datum/supply_order/SO = new(current_pack, name, rank, usr.ckey, "", ordering_outpost = current_ship.docked_to)
+					new /obj/effect/pod_landingzone(landing_turf, podType, SO)
+					update_appearance() // ??????????????????
+					return TRUE
+
+		if("mission-act")
+			var/datum/mission/mission = locate(params["ref"])
+			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
+			var/datum/overmap/ship/controlled/ship = D.current_ship
+			var/datum/overmap/outpost/outpost = ship.docked_to
+			if(!istype(outpost) || mission.source_outpost != outpost) // important to check these to prevent href fuckery
+				return
+			if(!mission.accepted)
+				if(LAZYLEN(ship.missions) >= ship.max_missions)
 					return
+				mission.accept(ship, loc)
+				return TRUE
+			else if(mission.servant == ship)
+				if(mission.can_complete())
+					mission.turn_in()
+				else if(tgui_alert(usr, "Give up on [mission]?", src, list("Yes", "No")) == "Yes")
+					mission.give_up()
+				return TRUE
 
-			var/turf/T = get_turf(src)
-			var/datum/supply_order/SO = new(pack, name, rank, ckey, reason, account)
-			SO.generateRequisition(T)
-			if(requestonly && !self_paid)
-				SSshuttle.requestlist += SO
-			else
-				SSshuttle.shoppinglist += SO
-				if(self_paid)
-					say("Order processed. The price will be charged to [account.account_holder]'s bank account on delivery.")
-			if(requestonly && message_cooldown < world.time)
-				radio.talk_into(src, "A new order has been requested.", RADIO_CHANNEL_COMMAND)
-				message_cooldown = world.time + 30 SECONDS
-			. = TRUE
-		if("remove")
-			var/id = text2num(params["id"])
-			for(var/datum/supply_order/SO in SSshuttle.shoppinglist)
-				if(SO.id == id)
-					SSshuttle.shoppinglist -= SO
-					. = TRUE
-					break
-		if("clear")
-			SSshuttle.shoppinglist.Cut()
-			. = TRUE
-		if("approve")
-			var/id = text2num(params["id"])
-			for(var/datum/supply_order/SO in SSshuttle.requestlist)
-				if(SO.id == id)
-					SSshuttle.requestlist -= SO
-					SSshuttle.shoppinglist += SO
-					. = TRUE
-					break
-		if("deny")
-			var/id = text2num(params["id"])
-			for(var/datum/supply_order/SO in SSshuttle.requestlist)
-				if(SO.id == id)
-					SSshuttle.requestlist -= SO
-					. = TRUE
-					break
-		if("denyall")
-			SSshuttle.requestlist.Cut()
-			. = TRUE
-		if("toggleprivate")
-			self_paid = !self_paid
-			. = TRUE
-	if(.)
-		post_signal("supply")
+/obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	reconnect(port)
 
-/obj/machinery/computer/cargo/proc/post_signal(command)
-
-	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)
-
-	if(!frequency)
+/obj/machinery/computer/cargo/proc/reconnect(obj/docking_port/mobile/port)
+	if(!port)
+		var/area/ship/current_area = get_area(src)
+		if(!istype(current_area))
+			return
+		port = current_area.mobile_port
+	if(!port)
 		return
+	charge_account = port.current_ship.ship_account
+	landingzone = locate(/area/ship/cargo) in port.shuttle_areas
 
-	var/datum/signal/status_signal = new(list("command" = command))
-	frequency.post_signal(src, status_signal)
+/obj/machinery/computer/cargo/attackby(obj/item/W, mob/living/user, params)
+	var/value = W.get_item_credit_value()
+	if(value && charge_account)
+		charge_account.adjust_money(value, CREDIT_LOG_DEPOSIT)
+		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr.</span>")
+		qdel(W)
+		return TRUE
+	else if(istype(W, /obj/item/supplypod_beacon))
+		var/obj/item/supplypod_beacon/sb = W
+		if (sb.cargo_console != src)
+			sb.link_console(src, user)
+			return TRUE
+		else
+			to_chat(user, "<span class='alert'>[src] is already linked to [sb].</span>")
+	..()
+
+/obj/machinery/computer/cargo/proc/generate_pack_data()
+	supply_pack_data = list()
+
+	if(!current_ship.docked_to)
+		return supply_pack_data
+
+	var/datum/overmap/outpost/outpost_docked = current_ship.docked_to
+
+	if(!istype(outpost_docked))
+		return supply_pack_data
+
+	for(var/datum/supply_pack/current_pack as anything in outpost_docked.supply_packs)
+		if(!supply_pack_data[current_pack.group])
+			supply_pack_data[current_pack.group] = list(
+				"name" = current_pack.group,
+				"packs" = list()
+			)
+		if((current_pack.hidden))
+			continue
+		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
+		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
+		if(current_pack.faction_locked && !same_faction)
+			continue
+		supply_pack_data[current_pack.group]["packs"] += list(list(
+			"name" = current_pack.name,
+			"cost" = current_pack.cost,
+			"discountedcost" = discountedcost ? discountedcost : null,
+			"discountpercent" = current_pack.faction_discount,
+			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
+			"ref" = REF(current_pack),
+			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : "") // If there is a description, use it. Otherwise use the pack's name.
+		))
+
+/obj/machinery/computer/cargo/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/cargo/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov

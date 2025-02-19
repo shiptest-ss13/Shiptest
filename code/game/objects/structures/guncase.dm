@@ -1,5 +1,5 @@
 //GUNCASES//
-/obj/structure/guncase
+/obj/structure/guncloset
 	name = "gun locker"
 	desc = "A locker that holds guns."
 	icon = 'icons/obj/closet.dmi'
@@ -12,7 +12,7 @@
 	var/open = TRUE
 	var/capacity = 4
 
-/obj/structure/guncase/Initialize(mapload)
+/obj/structure/guncloset/Initialize(mapload)
 	. = ..()
 	if(mapload)
 		for(var/obj/item/I in loc.contents)
@@ -22,7 +22,7 @@
 				break
 	update_appearance()
 
-/obj/structure/guncase/update_overlays()
+/obj/structure/guncloset/update_overlays()
 	. = ..()
 	if(case_type && LAZYLEN(contents))
 		var/mutable_appearance/gun_overlay = mutable_appearance(icon, case_type)
@@ -31,7 +31,7 @@
 			. += new /mutable_appearance(gun_overlay)
 	. += "[icon_state]_[open ? "open" : "door"]"
 
-/obj/structure/guncase/attackby(obj/item/I, mob/user, params)
+/obj/structure/guncloset/attackby(obj/item/I, mob/user, params)
 	if(iscyborg(user) || isalien(user))
 		return
 	if(istype(I, gun_category) && open)
@@ -50,7 +50,7 @@
 	else
 		return ..()
 
-/obj/structure/guncase/attack_hand(mob/user)
+/obj/structure/guncloset/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
@@ -68,7 +68,7 @@
  * Arguments:
  * * user The mob to which we are showing the radial menu
  */
-/obj/structure/guncase/proc/show_menu(mob/user)
+/obj/structure/guncloset/proc/show_menu(mob/user)
 	if(!LAZYLEN(contents))
 		return
 
@@ -100,7 +100,7 @@
  * Arguments:
  * * user The mob interacting with a menu
  */
-/obj/structure/guncase/proc/check_menu(mob/living/carbon/human/user)
+/obj/structure/guncloset/proc/check_menu(mob/living/carbon/human/user)
 	if(!open)
 		return FALSE
 	if(!istype(user))
@@ -109,10 +109,10 @@
 		return FALSE
 	return TRUE
 
-/obj/structure/guncase/handle_atom_del(atom/A)
+/obj/structure/guncloset/handle_atom_del(atom/A)
 	update_appearance()
 
-/obj/structure/guncase/contents_explosion(severity, target)
+/obj/structure/guncloset/contents_explosion(severity, target)
 	for(var/atom/A in contents)
 		switch(severity)
 			if(EXPLODE_DEVASTATE)
@@ -122,13 +122,13 @@
 			if(EXPLODE_LIGHT)
 				SSexplosions.lowobj += A
 
-/obj/structure/guncase/shotgun
+/obj/structure/guncloset/shotgun
 	name = "shotgun locker"
 	desc = "A locker that holds shotguns."
 	case_type = "shotgun"
 	gun_category = /obj/item/gun/ballistic/shotgun
 
-/obj/structure/guncase/ecase
+/obj/structure/guncloset/ecase
 	name = "energy gun locker"
 	desc = "A locker that holds energy guns."
 	icon_state = "ecase"

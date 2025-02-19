@@ -10,6 +10,8 @@
 	filling_color = "#A0522D"
 	tastes = list("chocolate" = 4, "sweetness" = 1)
 	foodtype = JUNKFOOD | SUGAR
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/reagent_containers/food/snacks/egg
 	name = "egg"
@@ -18,7 +20,8 @@
 	list_reagents = list(/datum/reagent/consumable/eggyolk = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/boiledegg
 	filling_color = "#F0E68C"
-	foodtype = MEAT
+	foodtype = MEAT | RAW
+	w_class = WEIGHT_CLASS_TINY
 	grind_results = list()
 	var/static/chick_count = 0 //I copied this from the chicken_count (note the "en" in there) variable from chicken code.
 
@@ -54,11 +57,6 @@
 
 		to_chat(usr, "<span class='notice'>You colour [src] with [W].</span>")
 		icon_state = "egg-[clr]"
-	else if(istype(W, /obj/item/stamp/clown))
-		var/clowntype = pick("grock", "grimaldi", "rainbow", "chaos", "joker", "sexy", "standard", "bobble", "krusty", "bozo", "pennywise", "ronald", "jacobs", "kelly", "popov", "cluwne")
-		icon_state = "egg-clown-[clowntype]"
-		desc = "An egg that has been decorated with the grotesque, robustable likeness of a clown's face. "
-		to_chat(usr, "<span class='notice'>You stamp [src] with [W], creating an artistic and not remotely horrifying likeness of clown makeup.</span>")
 	else
 		..()
 
@@ -95,7 +93,7 @@
 	filling_color = "#FFFFF0"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	tastes = list("egg" = 4, "salt" = 1, "pepper" = 1)
-	foodtype = MEAT | FRIED | BREAKFAST
+	foodtype = MEAT | BREAKFAST
 
 /obj/item/reagent_containers/food/snacks/boiledegg
 	name = "boiled egg"
@@ -106,6 +104,8 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("egg" = 1)
 	foodtype = MEAT | BREAKFAST
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/reagent_containers/food/snacks/omelette	//FUCK THIS
 	name = "omelette du fromage"

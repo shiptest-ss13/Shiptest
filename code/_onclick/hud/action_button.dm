@@ -56,10 +56,16 @@
 		if(id && usr.client) //try to (un)remember position
 			usr.client.prefs.action_buttons_screen_locs["[name]_[id]"] = locked ? moved : null
 		return TRUE
+	var/trigger_flags
+	if(LAZYACCESS(modifiers, ALT_CLICK))
+		if(locked)
+			to_chat(usr, "<span class='warning'>Action button \"[name]\" is locked, unlock it first.</span>")
+			return TRUE
+		trigger_flags |= TRIGGER_SECONDARY_ACTION
 	if(usr.next_click > world.time)
 		return
 	usr.next_click = world.time + 1
-	linked_action.Trigger()
+	linked_action.Trigger(trigger_flags)
 	return TRUE
 
 //Hide/Show Action Buttons ... Button

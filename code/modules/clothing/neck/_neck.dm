@@ -11,7 +11,7 @@
 	greyscale_icon_state = "scarf"
 
 /obj/item/clothing/neck/worn_overlays(isinhands = FALSE)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		if(body_parts_covered & HEAD)
 			if(damaged_clothes)
@@ -167,6 +167,7 @@
 	desc = "An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing."
 	icon_state = "stethoscope"
 	cuttable = FALSE
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
 	if(ishuman(M) && isliving(user))
@@ -267,6 +268,7 @@
 	name = "shemagh"
 	desc = "An oversized shemagh, for those with a keen sense of fashion, or those operating tactically."
 	icon_state = "shemagh"
+	supports_variations = VOX_VARIATION
 
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
@@ -275,21 +277,25 @@
 	name = "striped red scarf"
 	icon_state = "stripedredscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedgreenscarf
 	name = "striped green scarf"
 	icon_state = "stripedgreenscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedbluescarf
 	name = "striped blue scarf"
 	icon_state = "stripedbluescarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedsolgovscarf
 	name = "striped solgov scarf"
 	icon_state = "stripedsolgovscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/petcollar
 	name = "pet collar"
@@ -303,6 +309,23 @@
 /obj/item/clothing/neck/petcollar/attack_self(mob/user)
 	tagname = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot", MAX_NAME_LEN)
 	name = "[initial(name)] - [tagname]"
+
+/obj/item/clothing/neck/dogtag
+	name = "dogtag"
+	desc = "A nondescript dogtag."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "dogtag"
+	resistance_flags = FIRE_PROOF
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
+
+/obj/item/clothing/neck/dogtag/frontier
+	name = "frontiersman dogtag"
+	desc = "A dogtag marked with the name and rank of a Frontiersmen pirate. You could turn this in to an outpost console contract for money."
+
+/obj/item/clothing/neck/dogtag/ramzi
+	name = "ramzi clique dogtag"
+	desc = "A dogtag marked with the name and rank of a Ramzi Clique pirate. You could turn this in to an outpost console contract for money."
 
 //////////////
 //DOPE BLING//
@@ -433,3 +456,9 @@
 	playsound(src,"shatter", 70)
 	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
 	return ..()
+
+/obj/item/clothing/neck/fangnecklace
+	name = "wolf fang necklace"
+	desc = "A necklace made out of a wolf's fang and some sinew. According to a common Frontier superstition, it brings good luck to its wearer."
+	icon_state = "fang_necklace"
+	cuttable = FALSE

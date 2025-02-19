@@ -14,9 +14,9 @@
 		TOOL_SCALPEL = 100,
 		TOOL_SAW = 100,
 		/obj/item/melee/arm_blade = 80,
-		/obj/item/fireaxe = 50,
+		/obj/item/melee/axe/fire = 50,
 		/obj/item/hatchet = 40,
-		/obj/item/kitchen/knife/butcher = 25)
+		/obj/item/melee/knife/butcher = 25)
 	time = 6.4 SECONDS
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/organ2.ogg'

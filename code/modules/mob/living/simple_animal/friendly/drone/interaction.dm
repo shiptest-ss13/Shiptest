@@ -17,7 +17,7 @@
 				if("Cannibalize")
 					if(D.health < D.maxHealth)
 						D.visible_message("<span class='notice'>[D] begins to cannibalize parts from [src].</span>", "<span class='notice'>You begin to cannibalize parts from [src]...</span>")
-						if(do_after(D, 60, 0, target = src))
+						if(do_after(D, 60, src, FALSE))
 							D.visible_message("<span class='notice'>[D] repairs itself using [src]'s remains!</span>", "<span class='notice'>You repair yourself using [src]'s remains.</span>")
 							D.adjustBruteLoss(-src.maxHealth)
 							new /obj/effect/decal/cleanable/oil/streak(get_turf(src))
@@ -79,7 +79,7 @@
 		to_chat(user, "<span class='warning'>You can't seem to find the [pick(faux_gadgets)]! Without it, [src] [pick(faux_problems)].</span>")
 		return
 	user.visible_message("<span class='notice'>[user] begins to reactivate [src].</span>", "<span class='notice'>You begin to reactivate [src]...</span>")
-	if(do_after(user, 30, 1, target = src))
+	if(do_after(user, 30, target = src))
 		revive(full_heal = TRUE, admin_revive = FALSE)
 		user.visible_message("<span class='notice'>[user] reactivates [src]!</span>", "<span class='notice'>You reactivate [src].</span>")
 		alert_drones(DRONE_NET_CONNECT)

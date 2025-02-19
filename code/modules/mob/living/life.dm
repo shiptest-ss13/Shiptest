@@ -38,6 +38,8 @@
 		if (QDELETED(src)) // diseases can qdel the mob via transformations
 			return
 
+		SEND_SIGNAL(src, COMSIG_MOB_LIFE)
+
 		if(stat != DEAD)
 			//Random events (vomiting etc)
 			handle_random_events()
@@ -120,7 +122,7 @@
 	return
 
 /mob/living/proc/handle_gravity()
-	var/gravity = mob_has_gravity()
+	var/gravity = has_gravity()
 	update_gravity(gravity)
 
 	if(gravity > STANDARD_GRAVITY)

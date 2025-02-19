@@ -237,7 +237,7 @@ Possible to do for anyone motivated enough:
 	for(var/I in holo_calls)
 		var/datum/holocall/HC = I
 		var/list/call_data = list(
-			caller = HC.user,
+			caller = HC.caller_location,
 			connected = HC.connected_holopad == src ? TRUE : FALSE,
 			ref = REF(HC)
 		)
@@ -378,7 +378,7 @@ Possible to do for anyone motivated enough:
 	for(var/I in holo_calls)
 		var/datum/holocall/HC = I
 		if(HC.connected_holopad != src)
-			caller_history = get_area_name(HC.calling_holopad)
+			caller_history = HC.caller_location
 			if(force_answer_call && world.time > (HC.call_start_time + (HOLOPAD_MAX_DIAL_TIME / 2)))
 				HC.Answer(src)
 				break
@@ -451,11 +451,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 
 /obj/machinery/holopad/proc/SetLightsAndPower()
 	var/total_users = LAZYLEN(masters) + LAZYLEN(holo_calls)
-	if(total_users > 0)
-		set_active_power()
-	else
-		set_idle_power()
-	active_power_usage = initial(active_power_usage) * total_users
+	//active_power_usage = initial(active_power_usage) * total_users
 	if(total_users || replay_mode)
 		set_light(2)
 	else

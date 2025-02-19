@@ -100,7 +100,7 @@
 
 /obj/item/strange_crystal/attackby(obj/item/item, mob/user, params)
 	. = ..()
-	if(!istype(item, /obj/item/kitchen/knife))
+	if(!istype(item, /obj/item/melee/knife))
 		return
 	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
 	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")
@@ -112,3 +112,8 @@
 	if(give_to_user)
 		user.put_in_hands(result)
 	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")
+
+/obj/item/paper/crumpled/muddy/fluff/distillery
+	name = "distillery instructions"
+	desc = "A crumpled note soaked in alcohol."
+	default_raw_text = "<center><h3>Moonshine Instructions</h3><BR>Alright, I know some of y'all ain't literate enough for this, but if I'm ever found dead or missing, <i>read this note.</i> Gotta keep the craft alive.</center><br><br>1. Fill the still with around 5 units of enzyme. We keep the whole supply in the green crate in the storeroom.<br>2. Grind a cob of corn into bits, and add the mash to the still.<br>3. Pour an equal amount of sugar into the still, and stir.<br>4. Now, you'll have to scoop the product out and filter it by hand. We used to have a better still that'd filter the product itself, until last year's incident. This has to do for now.<br>5. Evaluate your product. Good 'shine is clear like water, and burns blue. If it ain't good, dump it.<BR><BR><i>PS: If you've got some leftover sugar, mix it into bicaridine. Equal parts sugar, carbon, and oxygen makes a potent salve for your wounds.</i>"

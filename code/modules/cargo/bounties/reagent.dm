@@ -71,7 +71,7 @@
 		/datum/reagent/consumable/ethanol/syndicatebomb,\
 		/datum/reagent/consumable/ethanol/tequila_sunrise,\
 		/datum/reagent/consumable/ethanol/manly_dorf,\
-		/datum/reagent/consumable/ethanol/thirteenloko,\
+		/datum/reagent/consumable/ethanol/vimukti,\
 		/datum/reagent/consumable/triple_citrus,\
 		/datum/reagent/consumable/ethanol/vodkamartini,\
 		/datum/reagent/consumable/ethanol/whiskeysoda,\
@@ -100,10 +100,7 @@
 		/datum/reagent/consumable/ethanol/booger,\
 		/datum/reagent/consumable/ethanol/hippies_delight,\
 		/datum/reagent/consumable/ethanol/drunkenblumpkin,\
-		/datum/reagent/consumable/ethanol/fetching_fizz,\
 		/datum/reagent/consumable/ethanol/goldschlager,\
-		/datum/reagent/consumable/ethanol/manhattan_proj,\
-		/datum/reagent/consumable/ethanol/narsour,\
 		/datum/reagent/consumable/ethanol/neurotoxin,\
 		/datum/reagent/consumable/ethanol/patron,\
 		/datum/reagent/consumable/ethanol/quadruple_sec,\

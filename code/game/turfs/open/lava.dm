@@ -169,7 +169,7 @@
 		else if (isliving(thing))
 			. = 1
 			var/mob/living/L = thing
-			if(L.movement_type & FLYING)
+			if(L.movement_type & FLYING || L.throwing)
 				continue	//YOU'RE FLYING OVER IT
 			var/buckle_check = L.buckling
 			if(!buckle_check)
@@ -220,19 +220,13 @@
 /turf/open/lava/smooth/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
-/particles/lava
-	width = 700
-	height = 700
-	count = 1000
-	spawning = 1
-	lifespan = 3 SECONDS
-	fade = 2 SECONDS
-	position = generator("circle", 16, 24, NORMAL_RAND)
-	drift = generator("vector", list(-0.2, -0.2), list(0.2, 0.2))
-	velocity = generator("circle", -6, 6, NORMAL_RAND)
-	friction = 0.15
-	gradient = list(0,LIGHT_COLOR_FLARE , 0.75, COLOR_ALMOST_BLACK)
-	color_change = 0.125
+/obj/effect/particle_holder
+	name = ""
+	anchored = TRUE
+	mouse_opacity = 0
+
+/obj/effect/particle_emitter/Initialize(mapload, time)
+	. = ..()
 
 /obj/effect/particle_emitter/lava
-	particles = new/particles/lava
+	particles = new/particles/embers/lava

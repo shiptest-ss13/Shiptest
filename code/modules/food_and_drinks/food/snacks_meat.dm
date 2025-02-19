@@ -185,7 +185,7 @@
 
 /obj/item/reagent_containers/food/snacks/cornedbeef
 	name = "corned beef and cabbage"
-	desc = "Now you can feel like a real tourist vacationing in Ireland."
+	desc = "A nice hearty meal."
 	icon_state = "cornedbeef"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
@@ -211,6 +211,8 @@
 	filling_color = "#800000"
 	tastes = list("meat" = 1)
 	foodtype = MEAT
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/sausage
 	name = "sausage"
@@ -223,6 +225,7 @@
 	slices_num = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/salami
 	foodtype = MEAT | BREAKFAST
+	/*food_flags = FOOD_FINGER_FOOD*/
 	var/roasted = FALSE
 
 /obj/item/reagent_containers/food/snacks/sausage/Initialize()
@@ -266,9 +269,11 @@
 	filling_color = "#CD853F"
 	tastes = list("the jungle" = 1, "bananas" = 1)
 	foodtype = MEAT | SUGAR
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_TINY
 	var/faction
 	var/spawned_mob = /mob/living/carbon/monkey
-	custom_price = 300
+	custom_price = 5
 
 /obj/item/reagent_containers/food/snacks/monkeycube/proc/Expand()
 	var/mob/spammer = get_mob_by_key(fingerprintslast)
@@ -359,6 +364,8 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	tastes = list("\"chicken\"" = 1)
 	foodtype = MEAT
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/reagent_containers/food/snacks/nugget/Initialize()
 	. = ..()

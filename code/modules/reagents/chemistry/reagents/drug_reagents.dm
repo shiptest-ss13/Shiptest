@@ -21,8 +21,6 @@
 		if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED))
 			if(prob(10))
 				step(M, pick(GLOB.cardinals))
-	if(prob(7))
-		M.emote(pick("twitch","drool","moan","giggle"))
 	..()
 
 /datum/reagent/drug/space_drugs/overdose_start(mob/living/M)
@@ -166,7 +164,7 @@
 
 /datum/reagent/drug/methamphetamine
 	name = "Methamphetamine"
-	description = "Reduces stun times by about 300%, speeds the user up, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, laugh randomly, drop items and suffer from Toxin and Brain damage. If addicted the subject will constantly jitter and drool, before becoming dizzy and losing motor control and eventually suffer heavy toxin damage."
+	description = "Reduces stun times by about 300%, speeds the user up, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, drop items and suffer from Toxin and Brain damage. If addicted the subject will become dizzy, lose motor control and eventually suffer heavy toxin damage."
 	reagent_state = LIQUID
 	color = "#FAFAFA"
 	overdose_threshold = 20
@@ -192,10 +190,8 @@
 	M.AdjustParalyzed(-40)
 	M.AdjustImmobilized(-40)
 	M.adjustStaminaLoss(-2, 0)
-	M.Jitter(2)
+	M.adjust_jitter(2)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,4))
-	if(prob(5))
-		M.emote(pick("twitch", "shiver"))
 	..()
 	. = 1
 
@@ -203,8 +199,6 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i in 1 to 4)
 			step(M, pick(GLOB.cardinals))
-	if(prob(20))
-		M.emote("laugh")
 	if(prob(33))
 		M.visible_message("<span class='danger'>[M]'s hands flip out and flail everywhere!</span>")
 		M.drop_all_held_items()
@@ -214,37 +208,29 @@
 	. = 1
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage1(mob/living/M)
-	M.Jitter(5)
-	if(prob(20))
-		M.emote(pick("twitch","drool","moan"))
+	M.adjust_jitter(5, max = 150)
 	..()
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage2(mob/living/M)
-	M.Jitter(10)
+	M.adjust_jitter(10, max = 300)
 	M.Dizzy(10)
-	if(prob(30))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage3(mob/living/M)
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 4, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(15)
+	M.adjust_jitter(15, max = 600)
 	M.Dizzy(15)
-	if(prob(40))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage4(mob/living/carbon/human/M)
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(20)
+	M.adjust_jitter(20)
 	M.Dizzy(20)
 	M.adjustToxLoss(5, 0)
-	if(prob(50))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 	. = 1
 
@@ -293,8 +279,6 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i in 1 to 8)
 			step(M, pick(GLOB.cardinals))
-	if(prob(20))
-		M.emote(pick("twitch","drool","moan"))
 	if(prob(33))
 		M.drop_all_held_items()
 	..()
@@ -304,10 +288,8 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(5)
+	M.adjust_jitter(5, max = 150)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(20))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/bath_salts/addiction_act_stage2(mob/living/M)
@@ -315,11 +297,9 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(10)
+	M.adjust_jitter(10, max = 300)
 	M.Dizzy(10)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(30))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/bath_salts/addiction_act_stage3(mob/living/M)
@@ -327,11 +307,9 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 12, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(15)
+	M.adjust_jitter(15, max = 600)
 	M.Dizzy(15)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(40))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/bath_salts/addiction_act_stage4(mob/living/carbon/human/M)
@@ -339,12 +317,10 @@
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i = 0, i < 16, i++)
 			step(M, pick(GLOB.cardinals))
-	M.Jitter(50)
+	M.adjust_jitter(50)
 	M.Dizzy(50)
 	M.adjustToxLoss(5, 0)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(50))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 	. = 1
 
@@ -386,7 +362,7 @@
 	..()
 
 /datum/reagent/drug/happiness/on_mob_life(mob/living/carbon/M)
-	M.jitteriness = 0
+	M.adjust_jitter(-20)
 	M.confused = 0
 	M.disgust = 0
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2)
@@ -398,13 +374,10 @@
 		var/reaction = rand(1,3)
 		switch(reaction)
 			if(1)
-				M.emote("laugh")
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "happiness_drug", /datum/mood_event/happiness_drug_good_od)
 			if(2)
-				M.emote("sway")
 				M.Dizzy(25)
 			if(3)
-				M.emote("frown")
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "happiness_drug", /datum/mood_event/happiness_drug_bad_od)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5)
 	..()
@@ -413,33 +386,25 @@
 /datum/reagent/drug/happiness/addiction_act_stage1(mob/living/M)// all work and no play makes jack a dull boy
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(min(mood.sanity, SANITY_DISTURBED))
-	M.Jitter(5)
-	if(prob(20))
-		M.emote(pick("twitch","laugh","frown"))
+	M.adjust_jitter(5, max = 150)
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage2(mob/living/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(min(mood.sanity, SANITY_UNSTABLE))
-	M.Jitter(10)
-	if(prob(30))
-		M.emote(pick("twitch","laugh","frown"))
+	M.adjust_jitter(10, max = 300)
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage3(mob/living/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(min(mood.sanity, SANITY_CRAZY))
-	M.Jitter(15)
-	if(prob(40))
-		M.emote(pick("twitch","laugh","frown"))
+	M.adjust_jitter(15, max = 500)
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage4(mob/living/carbon/human/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(SANITY_INSANE)
-	M.Jitter(20)
-	if(prob(50))
-		M.emote(pick("twitch","laugh","frown"))
+	M.adjust_jitter(20)
 	..()
 	. = 1
 
@@ -460,7 +425,7 @@
 	..()
 
 /datum/reagent/drug/pumpup/on_mob_life(mob/living/carbon/M)
-	M.Jitter(5)
+	M.adjust_jitter(5)
 
 	if(prob(5))
 		to_chat(M, "<span class='notice'>[pick("Go! Go! GO!", "You feel ready...", "You feel invincible...")]</span>")
@@ -474,14 +439,185 @@
 	to_chat(M, "<span class='userdanger'>You can't stop shaking, your heart beats faster and faster...</span>")
 
 /datum/reagent/drug/pumpup/overdose_process(mob/living/M)
-	M.Jitter(5)
+	M.adjust_jitter(5)
 	if(prob(5))
 		M.drop_all_held_items()
-	if(prob(15))
-		M.emote(pick("twitch","drool"))
 	if(prob(20))
 		M.losebreath++
 		M.adjustStaminaLoss(4, 0)
 	if(prob(15))
 		M.adjustToxLoss(2, 0)
 	..()
+
+/datum/reagent/drug/finobranc
+	name = "Finobranc"
+	description = "A stimulant native to Sol. The seeds of the plant that serves as a precursor have spread throughout the frontier."
+	reagent_state = SOLID
+	color = "#FAFAFA"
+	overdose_threshold = 20
+	addiction_threshold = 11
+	taste_description = "a burst of energy"
+
+/datum/reagent/drug/finobranc/on_mob_metabolize(mob/living/L)
+	..()
+	var/datum/component/mood/mood = L.GetComponent(/datum/component/mood)
+	if(mood)
+		mood.mood_modifier += 1
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed -= 0.5
+
+/datum/reagent/drug/finobranc/on_mob_end_metabolize(mob/living/L)
+	..()
+	var/datum/component/mood/mood = L.GetComponent(/datum/component/mood)
+	if(mood)
+		mood.mood_modifier -= 1
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed += 0.5
+
+/datum/reagent/drug/finobranc/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
+	if(ishuman(M))
+		var/mob/living/carbon/human/uh_oh = M
+		if(prob(5) && uh_oh.can_heartattack())
+			uh_oh.set_heartattack(TRUE)
+	M.adjust_jitter(5)
+	if(prob(15))
+		M.drop_all_held_items()
+	..()
+
+/datum/reagent/drug/finobranc/addiction_act_stage1(mob/living/M)
+	M.adjust_jitter(5, max = 150)
+	..()
+
+/datum/reagent/drug/finobranc/addiction_act_stage2(mob/living/M)
+	M.adjust_jitter(15, max = 150)
+	..()
+
+/datum/reagent/drug/finobranc/addiction_act_stage3(mob/living/M)
+	M.adjust_jitter(15, max = 150)
+	M.Dizzy(10)
+	..()
+
+/datum/reagent/drug/finobranc/addiction_act_stage4(mob/living/carbon/human/M)
+	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
+		for(var/i = 0, i < 8, i++)
+			step(M, pick(GLOB.cardinals))
+	M.adjust_jitter(15, max = 150)
+	M.Dizzy(10)
+	..()
+
+/datum/reagent/drug/combat_drug
+	name = "Shoalmix"
+	description = "An extremely potent mix of stimulants, painkillers, and performance enhancers that originated within the Shoal."
+	reagent_state = SOLID
+	color = "#FAFAFA"
+	overdose_threshold = 12
+	addiction_threshold = 7
+	taste_description = "a metallic bitter permeating your flesh."
+
+/datum/reagent/drug/combat_drug/on_mob_metabolize(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
+	L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shoalmix)
+	if(!isvox(L))
+		L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+		L.adjustOrganLoss(ORGAN_SLOT_HEART, 6)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed -= 0.5
+		drugged.physiology.damage_resistance += 10
+		drugged.physiology.hunger_mod += 1
+
+/datum/reagent/drug/combat_drug/on_mob_end_metabolize(mob/living/L)
+	..()
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shoalmix)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed += 0.5
+		drugged.physiology.damage_resistance -= 10
+		drugged.physiology.hunger_mod -= 1
+
+/datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/M)
+	..()
+	M.adjust_jitter(10, max = 200)
+	M.adjustStaminaLoss(-18, 0)
+	if(prob(30) && !isvox(M))
+		M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+		M.adjustOrganLoss(ORGAN_SLOT_HEART, 3)
+	if(prob(20))
+		to_chat(M, span_boldwarning("MOVE!! MOVE!! MOVE!!"))
+
+/datum/reagent/drug/combat_drug/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 4)
+	if(ishuman(M))
+		var/mob/living/carbon/human/uh_oh = M
+		if(uh_oh.can_heartattack())
+			uh_oh.set_heartattack(TRUE)
+	M.adjust_jitter(80)
+	M.drop_all_held_items()
+	..()
+
+/datum/reagent/drug/combat_drug/addiction_act_stage1(mob/living/M)
+	M.adjust_jitter(5, max = 150)
+	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	mood.setSanity(min(mood.sanity, SANITY_DISTURBED))
+	..()
+
+/datum/reagent/drug/combat_drug/addiction_act_stage2(mob/living/M)
+	M.adjust_jitter(15, max = 150)
+	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	mood.setSanity(min(mood.sanity, SANITY_UNSTABLE))
+	..()
+
+/datum/reagent/drug/combat_drug/addiction_act_stage3(mob/living/M)
+	M.adjust_jitter(15, max = 150)
+	M.Dizzy(10)
+	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	mood.setSanity(min(mood.sanity, SANITY_CRAZY))
+	..()
+
+/datum/reagent/drug/combat_drug/addiction_act_stage4(mob/living/carbon/human/M)
+	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
+		for(var/i = 0, i < 8, i++)
+			step(M, pick(GLOB.cardinals))
+	M.adjust_jitter(15, max = 150)
+	M.Dizzy(20)
+	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	mood.setSanity(min(mood.sanity, SANITY_INSANE))
+	..()
+
+
+//comes from Uke-misikeci Rasi leaves
+/datum/reagent/drug/retukemi
+	name = "Retukemi"
+	description = "A marginally psychoactive compound commonly found in the leaves of the Uke-misikeci Rasi plant."
+	color = "#0ec84c"
+	overdose_threshold = INFINITY
+	metabolization_rate = 0.125 * REAGENTS_METABOLISM
+
+/datum/reagent/drug/retukemi/on_mob_metabolize(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "stoned", /datum/mood_event/stoned, name)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/retukemi)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.hunger_mod += 1.5
+
+/datum/reagent/drug/retukemi/on_mob_end_metabolize(mob/living/L)
+	..()
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/retukemi)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.hunger_mod -= 1.5
+
+/datum/reagent/drug/retukemi/on_mob_life(mob/living/carbon/M)
+	..()
+	if(prob(10))
+		var/smoke_message = pick("You feel relaxed.","You feel calmed.","Your mouth feels dry.","Your throat is warm and scratchy...","You could use some water.","You feel clumsy.","You crave junk food.","You notice you've been moving more slowly.","The world feels softer and warmer...","A humming warmth spreads across your entire body.","You get lost in your thoughts for a moment...","Everything feels a little more comfortable.","You catch yourself in the middle of smiling vacantly.")
+		to_chat(M, span_notice("[smoke_message]"))
+	if(prob(2))
+		var/eepy_message = pick("You feel so, so tired.", "You stifle a yawn.", "You really ought to rest for a bit...", "It'd be nice to lay down a bit...","Being in a bed sounds wonderful, right now...","You shake your head to stay awake, but the feeling doesn't let up.","You really want to sleep next to someone...","You keep thinking about how nice a pillow would be, right now.")
+		to_chat(M, span_notice("[eepy_message]"))

@@ -79,6 +79,16 @@ Simple datum which is instanced once per type and is used for every object of sa
 /atom/proc/mat_update_desc(/datum/material/mat)
 	return
 
+
+/**
+ * This proc is called when the mat is found in an item that's consumed by accident. see /obj/item/proc/on_accidental_consumption.
+ * Arguments
+ * * M - person consuming the mat
+ * * S - (optional) item the mat is contained in (NOT the item with the mat itself)
+ */
+/datum/material/proc/on_accidental_mat_consumption(mob/living/carbon/M, obj/item/S)
+	return FALSE
+
 ///This proc is called when the material is added to an object specifically.
 /datum/material/proc/on_applied_obj(obj/o, amount, material_flags)
 	if(material_flags & MATERIAL_AFFECT_STATISTICS)

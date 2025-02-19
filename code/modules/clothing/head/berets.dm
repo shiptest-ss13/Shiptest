@@ -5,18 +5,6 @@
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret
 
-/obj/item/clothing/head/beret/vintage
-	name = "vintage beret"
-	desc = "A well-worn beret."
-	icon_state = "vintageberet"
-	dog_fashion = null
-
-/obj/item/clothing/head/beret/archaic
-	name = "archaic beret"
-	desc = "An absolutely ancient beret."
-	icon_state = "archaicberet"
-	dog_fashion = null
-
 /obj/item/clothing/head/beret/black
 	name = "black beret"
 	desc = "A black beret."
@@ -213,19 +201,6 @@
 	name = "honorable vanguard beret"
 	desc = "A snow white beret with an air of distinction around it, emblazoned with the golden shield of the IRMG as the badge."
 	icon_state = "inteq_honorable_beret"
-
-// Frontier
-
-/obj/item/clothing/head/beret/sec/frontier
-	name = "\improper Frontiersmen beret"
-	desc = "A scratchy olive green beret, worn by Frontiersmen who want to look good while intimidating freighter crew."
-	icon_state = "frontier_beret"
-
-/obj/item/clothing/head/beret/sec/frontier/officer
-	name = "\improper Frontiersmen officer beret"
-	desc = "A scratchy olive green beret emblazoned with the Frontiersmen insignia, worn by Frontiersmen who want to look good while intimidating freighter captains."
-	icon_state = "frontier_officer_beret"
-
 
 // CentCom
 

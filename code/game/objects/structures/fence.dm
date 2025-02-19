@@ -111,11 +111,6 @@
 	cuttable = FALSE
 	var/open = FALSE
 
-/obj/structure/fence/door/Initialize()
-	. = ..()
-
-	update_door_status()
-
 /obj/structure/fence/door/opened
 	icon_state = "door_opened"
 	open = TRUE

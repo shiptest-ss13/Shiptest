@@ -96,7 +96,7 @@
 		. += tag_overlay
 
 /obj/item/pizzabox/worn_overlays(isinhands, icon_file)
-	. = list()
+	. = ..()
 	var/current_offset = 2
 	if(isinhands)
 		for(var/V in boxes) //add EXTRA BOX per box
@@ -341,13 +341,13 @@
 
 /obj/item/pizzabox/infinite/proc/attune_pizza(mob/living/carbon/human/noms) //tonight on "proc names I never thought I'd type"
 	if(!pizza_preferences[noms.ckey])
-		pizza_preferences[noms.ckey] = pickweight(pizza_types)
+		pizza_preferences[noms.ckey] = pick_weight(pizza_types)
 		if(noms.has_quirk(/datum/quirk/pineapple_liker))
 			pizza_preferences[noms.ckey] = /obj/item/reagent_containers/food/snacks/pizza/pineapple
 		else if(noms.has_quirk(/datum/quirk/pineapple_hater))
 			var/list/pineapple_pizza_liker = pizza_types.Copy()
 			pineapple_pizza_liker -= /obj/item/reagent_containers/food/snacks/pizza/pineapple
-			pizza_preferences[noms.ckey] = pickweight(pineapple_pizza_liker)
+			pizza_preferences[noms.ckey] = pick_weight(pineapple_pizza_liker)
 		else if(noms.mind && noms.mind.assigned_role == "Botanist")
 			pizza_preferences[noms.ckey] = /obj/item/reagent_containers/food/snacks/pizza/dank
 

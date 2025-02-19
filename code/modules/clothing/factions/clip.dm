@@ -140,10 +140,10 @@
 
 	icon_state = "clip_trenchcoat"
 	item_state = "trenchcoat_solgov"
-	body_parts_covered = CHEST|LEGS|ARMS
+	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
-	cold_protection = CHEST|LEGS|ARMS
-	heat_protection = CHEST|LEGS|ARMS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
@@ -156,12 +156,24 @@
 
 	icon_state = "clip_captaincoat"
 	item_state = "clip_captaincoat"
-	body_parts_covered = CHEST|LEGS|ARMS
+	body_parts_covered = CHEST
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 	cold_protection = CHEST|LEGS|ARMS
 	heat_protection = CHEST|LEGS|ARMS
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
+
+/obj/item/clothing/suit/armor/vest/clip_correspondent
+	name = "press armor vest"
+	desc = "A slim Type I armored vest that provides decent protection against most types of damage. The white letters on the front read \"PRESS\" in CLIP Kalixcian."
+
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
+
+	icon_state = "armor_correspondant"
+	item_state = "armor_correspondant"
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
 //spacesuits
 /obj/item/clothing/suit/space/hardsuit/clip_patroller
@@ -170,6 +182,8 @@
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+
+	slowdown = 0.2
 
 	icon_state = "hardsuit-clip-patrol"
 	hardsuit_type = "hardsuit-clip-patrol"
@@ -203,12 +217,12 @@
 	icon_state = "clip_spotter"
 	hardsuit_type = "clip_spotter"
 
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clip_spotter
-	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 
 	resistance_flags = null
-	slowdown = 1
+	slowdown = 1.25
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
@@ -222,7 +236,7 @@
 	icon_state = "hardsuit0-clip_spotter"
 	hardsuit_type = "clip_spotter"
 
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
 	resistance_flags = null
 
 	supports_variations = SNOUTED_VARIATION
@@ -230,7 +244,7 @@
 //hats
 /obj/item/clothing/head/clip
 	name = "\improper CLIP Minutemen service cap"
-	desc = "A standard issue soft cap dating back to the original Zohil colonial peroid. While usually given to recruits and volunteers, it's sometimes used by occasionally by some Minutemen."
+	desc = "A standard issue soft cap dating back to the original Zohil colonial peroid. While usually given to recruits and new volunteers, it's used occasionally by some Minutemen."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
@@ -309,6 +323,19 @@
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_HEAD))
 
+/obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
+	name = "CLIP War Correspondant M10 Helmet"
+	desc = "A light bulletproof helmet worn by War Correspondants of the CLIP."
+
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
+
+	icon_state = "clip_m10_correspondant"
+	item_state = "clip_m10_correspondant"
+
+	supports_variations = VOX_VARIATION
+
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen riot helmet"
 	desc = "Designed to protect against close range attacks. Mainly used by the CMM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
@@ -353,13 +380,22 @@
 
 	icon = 'icons/obj/clothing/faction/clip/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/mask.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip-gasmask"
 	strip_delay = 60
 
 	flags_inv = HIDEEARS|HIDEFACE|HIDEFACIALHAIR
 
-	supports_variations = SNOUTED_VARIATION
+	supports_variations = SNOUTED_VARIATION | VOX_VARIATION
+
+/obj/item/clothing/mask/balaclava/combat
+	name = "combat balaclava"
+	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot!"
+	icon_state = "combat_balaclava"
+	item_state = "combat_balaclava"
+	alternate_worn_layer = BODY_LAYER
+	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
 
 //gloves
 
@@ -394,36 +430,46 @@
 
 	supports_variations = VOX_VARIATION
 
-/obj/item/storage/belt/military/clip/p16/PopulateContents()
+/obj/item/storage/belt/military/clip/cm82/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/p16(src)
 	new /obj/item/grenade/frag(src)
 
-/obj/item/storage/belt/military/clip/gal/PopulateContents()
+/obj/item/storage/belt/military/clip/f4/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/gal(src)
+		new /obj/item/ammo_box/magazine/f4_308(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/military/clip/cm5/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/smgm9mm(src)
+		new /obj/item/ammo_box/magazine/cm5_9mm(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/military/clip/cm15/PopulateContents()
 	for(var/i in 1 to 5)
-		new /obj/item/ammo_box/magazine/cm15_mag(src)
+		new /obj/item/ammo_box/magazine/cm15_12g(src)
 	new /obj/item/grenade/frag(src)
 
-/obj/item/storage/belt/military/clip/e50/PopulateContents()
+/obj/item/storage/belt/military/clip/cm15_inc/PopulateContents()
 	for(var/i in 1 to 5)
+		new /obj/item/ammo_box/magazine/cm15_12g/incendiary(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/military/clip/e50/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/belt/military/clip/e50/PopulateContents()
+	for(var/i in 1 to 3)
 		new /obj/item/stock_parts/cell/gun/large(src)
 	new /obj/item/grenade/frag(src)
-	new /obj/item/screwdriver/nuke(src)
+	new /obj/item/screwdriver(src)
 
 /obj/item/storage/belt/military/clip/engi/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
-	new /obj/item/weldingtool/experimental(src)
+	new /obj/item/weldingtool/electric(src)
 	new /obj/item/multitool(src)
 	new /obj/item/construction/rcd/combat(src)
 	new /obj/item/extinguisher/mini(src)
@@ -432,7 +478,7 @@
 /obj/item/storage/belt/military/clip/flamer/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/glass/beaker/large/fuel(src)
-	new /obj/item/ammo_box/magazine/co9mm(src)
+	new /obj/item/ammo_box/magazine/cm23(src)
 
 /obj/item/storage/belt/medical/webbing/clip
 	name = "medical webbing"

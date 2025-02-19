@@ -174,7 +174,7 @@
 	desc = "A light white gown that allows easy access to any patient who wears this."
 	icon_state = "gownwhite"
 	item_state = "gownwhite"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical/gown/green

@@ -230,7 +230,7 @@
 /datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M) //TODO: code freezing into an ice cube
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
 		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.5)
-		M.adjust_bodytemperature(-15)
+		M.adjust_bodytemperature(-5)
 	..()
 
 /datum/reagent/cryostylane/expose_turf(turf/T, reac_volume)
@@ -251,7 +251,7 @@
 /datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M)
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
 		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.5)
-		M.adjust_bodytemperature(15)
+		M.adjust_bodytemperature(5)
 	..()
 
 /datum/reagent/teslium //Teslium. Causes periodic shocks, and makes shocks against the target much more effective.
@@ -299,10 +299,6 @@
 		shock_timer = 0 //immune to shocks
 		M.AdjustAllImmobility(-40)
 		M.adjustStaminaLoss(-2, 0)
-		if(isluminescent(M))
-			var/mob/living/carbon/human/H = M
-			var/datum/species/jelly/luminescent/L = H.dna.species
-			L.extract_cooldown = max(0, L.extract_cooldown - 20)
 	..()
 
 /datum/reagent/firefighting_foam

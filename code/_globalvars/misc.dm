@@ -11,6 +11,9 @@ GLOBAL_DATUM_INIT(data_core, /datum/datacore, new)
 GLOBAL_VAR_INIT(CELLRATE, 0.002)  // conversion ratio between a watt-tick and kilojoule
 GLOBAL_VAR_INIT(CHARGELEVEL, 0.001) // Cap for how fast cells charge, as a percentage-per-tick (.001 means cellcharge is capped to 1% per second)
 
+GLOBAL_VAR_INIT(total_merits_exchanged, 0)
+GLOBAL_VAR_INIT(hydrogen_stored, 0) // can be -/+, + meaning surplus
+
 GLOBAL_LIST_EMPTY(powernets)
 
 GLOBAL_VAR_INIT(bsa_unlock, FALSE)	//BSA unlocked by head ID swipes
@@ -26,3 +29,5 @@ GLOBAL_LIST_EMPTY(poll_options)
 GLOBAL_PROTECT(poll_options)
 
 GLOBAL_VAR_INIT(internal_tick_usage, 0.2 * world.tick_lag) //This var is updated every tick by a DLL if present, used to reduce lag
+
+GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)

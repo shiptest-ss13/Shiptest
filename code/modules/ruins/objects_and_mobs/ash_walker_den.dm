@@ -40,7 +40,6 @@
 
 /obj/structure/lavaland/ash_walker/deconstruct(disassembled)
 	new /obj/item/assembly/signaler/anomaly (get_step(loc, pick(GLOB.alldirs)))
-	new	/obj/effect/collapse(loc)
 	return ..()
 
 /obj/structure/lavaland/ash_walker/process()

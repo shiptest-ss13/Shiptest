@@ -83,7 +83,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 
 /obj/item/reagent_containers/food/snacks/ration/snack
-	icon_state = "ration_side"
+	icon_state = "ration_snack"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 3)
 
 /obj/item/reagent_containers/food/snacks/ration/bar
@@ -92,7 +92,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/condiment
 	name = "condiment pack"
-	desc = "Just your average condiment pacl."
+	desc = "Just your average condiment pack."
 	icon_state = "ration_condi"
 	volume = 10
 	amount_per_transfer_from_this = 10
@@ -126,7 +126,7 @@
 /obj/item/reagent_containers/food/snacks/ration/pack
 	name = "powder pack"
 	desc = "Mix into a bottle of water and shake."
-	icon_state = "ration_condi"
+	icon_state = "ration_pack"
 	volume = 10
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list()
@@ -742,84 +742,105 @@
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread
 	name = "cheese spread pack"
+	filling_color = "#ffcc00"
 	list_reagents = list(/datum/reagent/consumable/cheese_spread = 8)
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/hot_cheese_spread
 	name = "jalapeno cheddar cheese spread pack"
+	filling_color = "#ffaa00"
 	list_reagents = list(/datum/reagent/consumable/cheese_spread = 5 , /datum/reagent/consumable/capsaicin = 3)
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/garlic_cheese_spread
 	name = "garlic parmesan cheese spread pack"
+	filling_color = "#ffff00"
 	list_reagents = list(/datum/reagent/consumable/cheese_spread = 8)
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/bacon_cheddar_cheese_spread
 	name = "bacon cheddar cheese spread pack"
+	filling_color = "#ff9900"
 	list_reagents = list(/datum/reagent/consumable/cheese_spread = 8)
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/peanut_butter
 	name = "peanut butter pack"
+	filling_color = "#664400"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/peanut_butter = 5)
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/chunky_peanut_butter
 	name = "chunky peanut butter pack"
+	filling_color = "#663300"
 	list_reagents = list(/datum/reagent/consumable/peanut_butter = 10)
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/maple_syrup
 	name = "maple syrup pack"
+	filling_color = "#661100"
 	list_reagents = list(/datum/reagent/consumable/sugar = 10)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/chocolate_protein_beverage
 	name = "chocolate hazelnut protein drink powder pack"
+	filling_color = "#664400"
 	list_reagents = list(/datum/reagent/consumable/coco = 5, /datum/reagent/consumable/eggyolk = 5)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/fruit_beverage
 	name = "fruit punch beverage powder, carb-electrolyte pack"
+	filling_color = "#ff4400"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/applejuice = 2, /datum/reagent/consumable/orangejuice = 2)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/fruit_smoothie_beverage
 	name = "tropical blend fruit and vegetable smoothie powder pack"
+	filling_color = "#ffaa00"
 	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 3, /datum/reagent/consumable/orangejuice = 3, /datum/reagent/consumable/eggyolk = 3)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/grape_beverage
 	name = "grape beverage powder, carb-fortified pack"
+	filling_color = "#9900ff"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/grapejuice = 5)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/grape_beverage_sugar_free
 	name = "sugar-free grape beverage base powder"
+	filling_color = "#9900ff"
 	list_reagents = list(/datum/reagent/consumable/grapejuice = 10)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/lemonade_beverage
 	name = "lemonade drink powder pack"
+	filling_color = "#ffff80"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/lemonjuice = 5)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/lemonade_beverage_suger_free
 	name = "lemonade sugar-free beverage base pack"
+	filling_color = "#ffff00"
 	list_reagents = list(/datum/reagent/consumable/lemonjuice = 10)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/orange_beverage
 	name = "orange beverage powder, carb-fortified pack"
+	filling_color = "#ffbb00"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/orangejuice = 5)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/orange_beverage_sugar_free
 	name = "orange beverage base, sugar-free pack"
+	filling_color = "#ff9900"
 	list_reagents = list(/datum/reagent/consumable/orangejuice = 10)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/cherry_beverage
 	name = "cherry high-energy beverage powder pack"
+	filling_color = "#ff5555"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/cherryjelly = 5)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/pineapple_beverage
 	name = "pinapple fruit beverage base pack"
+	filling_color = "#fff111"
 	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 10)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_orange
 	name = "freeze-dried coffee flavored with orange pack"
+	filling_color = "#cc7400"
 	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/orangejuice = 3)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_chocolate
 	name = "freeze-dried coffee flavored with chocolate pack"
+	filling_color = "#803300"
 	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/coco = 3)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_hazelnut
 	name = "freeze-dried coffee flavored with hazelnut pack"
+	filling_color = "#553300"
 	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/coco = 3)

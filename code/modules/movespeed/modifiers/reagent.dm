@@ -13,7 +13,7 @@
 /datum/movespeed_modifier/reagent/badstims
 	multiplicative_slowdown = -0.45
 
-/datum/movespeed_modifier/reagent/monkey_energy
+/datum/movespeed_modifier/reagent/xeno_energy
 	multiplicative_slowdown = -0.35
 
 /datum/movespeed_modifier/reagent/changelinghaste
@@ -21,6 +21,12 @@
 
 /datum/movespeed_modifier/reagent/methamphetamine
 	multiplicative_slowdown = -0.65
+
+/datum/movespeed_modifier/reagent/retukemi
+	multiplicative_slowdown = 0.3
+
+/datum/movespeed_modifier/reagent/shoalmix
+	multiplicative_slowdown = -0.4
 
 /datum/movespeed_modifier/reagent/nitryl
 	multiplicative_slowdown = -0.65
@@ -38,4 +44,4 @@
 	multiplicative_slowdown = -0.45
 
 /datum/movespeed_modifier/reagent/shock_wine
-	multiplicative_slowdown = -0.40
+	multiplicative_slowdown = -0.30

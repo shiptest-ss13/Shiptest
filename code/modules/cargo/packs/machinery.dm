@@ -9,7 +9,7 @@
 /datum/supply_pack/machinery/lightbulbs
 	name = "Replacement Lights"
 	desc = "May the light of Aether shine upon this sector! Or at least, the light of forty two light tubes and twenty one light bulbs."
-	cost = 1000
+	cost = 500
 	contains = list(/obj/item/storage/box/lights/mixed,
 					/obj/item/storage/box/lights/mixed,
 					/obj/item/storage/box/lights/mixed)
@@ -43,7 +43,7 @@
 /datum/supply_pack/machinery/power
 	name = "Power Cell Crate"
 	desc = "Looking for power overwhelming? Look no further. Contains five high-voltage power cells."
-	cost = 1000
+	cost = 1500 //it should be a bit more expensive for a full ship recharge
 	contains = list(/obj/item/stock_parts/cell/high,
 					/obj/item/stock_parts/cell/high,
 					/obj/item/stock_parts/cell/high,
@@ -66,31 +66,28 @@
 /datum/supply_pack/machinery/thermomachine
 	name = "Thermomachine Crate"
 	desc = "Freeze or heat your air."
-	cost = 2000
-	contains = list(/obj/item/circuitboard/machine/thermomachine,
-					/obj/item/circuitboard/machine/thermomachine)
+	cost = 1000
+	contains = list(/obj/item/circuitboard/machine/thermomachine)
 	crate_name = "thermomachine crate"
 
 /datum/supply_pack/machinery/portapump
 	name = "Portable Air Pump Crate"
-	desc = "Want to drain a room of air without losing a drop? We've got you covered. Contains two portable air pumps."
-	cost = 3000
-	contains = list(/obj/machinery/portable_atmospherics/pump,
-					/obj/machinery/portable_atmospherics/pump)
+	desc = "Want to drain a room of air without losing a drop? We've got you covered. Contains a portable air pump."
+	cost = 750
+	contains = list(/obj/machinery/portable_atmospherics/pump)
 	crate_name = "portable air pump crate"
 
 /datum/supply_pack/machinery/portascrubber
 	name = "Portable Scrubber Crate"
-	desc = "Clean up that pesky plasma leak with your very own set of two portable scrubbers."
-	cost = 3000
-	contains = list(/obj/machinery/portable_atmospherics/scrubber,
-					/obj/machinery/portable_atmospherics/scrubber)
+	desc = "Clean up that pesky plasma leak with your very own portable scrubber."
+	cost = 750
+	contains = list(/obj/machinery/portable_atmospherics/scrubber)
 	crate_name = "portable scrubber crate"
 
 /datum/supply_pack/machinery/hugescrubber
 	name = "Huge Portable Scrubber Crate"
 	desc = "A huge portable scrubber for huge atmospherics mistakes."
-	cost = 5000
+	cost = 2000
 	contains = list(/obj/machinery/portable_atmospherics/scrubber/huge/movable/cargo)
 	crate_name = "huge portable scrubber crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -101,7 +98,7 @@
 
 /datum/supply_pack/machinery/mule
 	name = "MULEbot Crate"
-	desc = "Pink-haired Quartermaster not doing her job? Replace her with this tireless worker, today!"
+	desc = "A dilligent MULEbot from the N+S Factories, happy to carry everything you could possibly need, if it's a crate that is." //this description screamed TG. It has been changed.
 	cost = 2000
 	contains = list(/mob/living/simple_animal/bot/mulebot)
 	crate_name = "\improper MULEbot Crate"
@@ -155,11 +152,9 @@
 
 /datum/supply_pack/machinery/wall_shield_gen
 	name = "Shield Generator Crate"
-	desc = "These four shield wall generators are guaranteed to keep any unwanted lifeforms on the outside, where they belong! Not rated for containing singularities or tesla balls."
-	cost = 2000
+	desc = "These two shield wall generators are guaranteed to keep any unwanted lifeforms on the outside, where they belong! Not rated for containing singularities or tesla balls."
+	cost = 1000
 	contains = list(/obj/machinery/power/shieldwallgen,
-					/obj/machinery/power/shieldwallgen,
-					/obj/machinery/power/shieldwallgen,
 					/obj/machinery/power/shieldwallgen)
 	crate_name = "shield generators crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
@@ -172,30 +167,6 @@
 					/obj/item/circuitboard/machine/shieldwallgen/atmos)
 	crate_name = "holofield generator crate"
 	crate_type = /obj/structure/closet/crate/engineering
-
-/datum/supply_pack/machinery/blackmarket_telepad
-	name = "Black Market LTSRBT"
-	desc = "Need a faster and better way of transporting your illegal goods from and to the sector? Fear not, the Long-To-Short-Range-Bluespace-Transceiver (LTSRBT for short) is here to help. Contains a LTSRBT circuit, two bluespace crystals, and one ansible."
-	cost = 1000
-	contains = list(
-		/obj/item/circuitboard/machine/ltsrbt,
-		/obj/item/stack/ore/bluespace_crystal/artificial,
-		/obj/item/stack/ore/bluespace_crystal/artificial,
-		/obj/item/stock_parts/subspace/ansible
-	)
-	crate_type = /obj/structure/closet/crate/science
-
-/datum/supply_pack/machinery/shuttle_in_a_box
-	name = "Shuttle in a Box"
-	desc = "The bare minimum amount of machine and computer boards required to create a working spacecraft."
-	cost = 8000
-	contains = list(
-		/obj/item/circuitboard/computer/shuttle/helm,
-		/obj/item/circuitboard/machine/shuttle/smes,
-		/obj/item/circuitboard/machine/shuttle/engine/electric,
-		/obj/item/shuttle_creator
-	)
-	crate_name = "Shuttle in a Box"
 
 /datum/supply_pack/machinery/ion_thruster
 	name = "Ion Thruster Crate"
@@ -213,6 +184,15 @@
 	contains = list(/obj/item/circuitboard/machine/shuttle/heater,
 					/obj/item/circuitboard/machine/shuttle/engine/plasma)
 	crate_name = "plasma thruster crate"
+	crate_type = /obj/structure/closet/crate/engineering
+
+/datum/supply_pack/machinery/combustion_thruster
+	name = "Combustion Thruster Crate"
+	desc = "A crate containing a combustion thruster and its heater's electronics. For when you need complicated thrust."
+	cost = 2000
+	contains = list(/obj/item/circuitboard/machine/shuttle/fire_heater,
+					/obj/item/circuitboard/machine/shuttle/engine/fire)
+	crate_name = "combustion thruster crate"
 	crate_type = /obj/structure/closet/crate/engineering
 
 /datum/supply_pack/machinery/drill_crate

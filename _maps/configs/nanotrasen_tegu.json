@@ -1,0 +1,48 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Tegu-class Communications Freighter",
+	"faction": "/datum/faction/nt",
+	"prefix": "NTSV",
+	"manufacturer": "Nanotrasen Spaceworks",
+	"namelists": [
+		"NANOTRASEN",
+		"SPACE",
+		"MYTHOLOGICAL",
+		"WEAPONS"
+	],
+	"map_short_name": "Tegu-class",
+	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_tegu.dmm",
+	"description": "The Tegu-class network vessel has long been the backbone of Nanotrasen's interstellar telecommunications network. These ships are outfitted with a large communications array, allowing them to function as a mobile network hub both for corporate and civilian radio traffic. While the Tegu has been in service for decades, they have become quite abundant on the Frontier after the ICW, as the Frontier's already-sparse infrastructure was devastated by the fighting, leaving many systems with minimal to no organized telecommunications. In order to facilitate infrastructure reconstruction in an environment with poor shipping networks, the Tegu is also outfitted with mining equipment that allows it to procure materials in the field.",
+	"tags": ["Mining", "Construction", "Telecomms", "Subshuttle"],
+	"limit": 1,
+	"starting_funds": 6000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/nanotrasen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Supply Director": {
+			"outfit": "/datum/outfit/job/nanotrasen/quartermaster",
+			"officer": true,
+			"slots": 1
+		},
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/nanotrasen/security",
+			"slots": 1
+		},
+		"Field Technician": {
+			"outfit": "/datum/outfit/job/nanotrasen/miner/no_equipment",
+			"slots": 2
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

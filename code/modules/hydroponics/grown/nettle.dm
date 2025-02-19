@@ -9,9 +9,15 @@
 	endurance = 40 // tuff like a toiger
 	yield = 4
 	growthstages = 5
-	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy)
+	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy, /datum/plant_gene/trait/attack/nettle_attack, /datum/plant_gene/trait/backfire/nettle_burn)
 	mutatelist = list(/obj/item/seeds/nettle/death)
 	reagents_add = list(/datum/reagent/toxin/acid = 0.5)
+
+/obj/item/seeds/nettle/Initialize(mapload,nogenes)
+	. = ..()
+	if(!nogenes)
+		unset_mutability(/datum/plant_gene/trait/attack/nettle_attack, PLANT_GENE_REMOVABLE)
+		unset_mutability(/datum/plant_gene/trait/backfire/nettle_burn, PLANT_GENE_REMOVABLE)
 
 /obj/item/seeds/nettle/death
 	name = "pack of death-nettle seeds"
@@ -23,17 +29,23 @@
 	endurance = 25
 	maturation = 8
 	yield = 2
-	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy, /datum/plant_gene/trait/stinging)
+	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy, /datum/plant_gene/trait/stinging, /datum/plant_gene/trait/attack/nettle_attack/death, /datum/plant_gene/trait/backfire/nettle_burn/death)
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/toxin/acid/fluacid = 0.5, /datum/reagent/toxin/acid = 0.5)
 	rarity = 20
 	research = PLANT_RESEARCH_TIER_3
 
+/obj/item/seeds/nettle/death/Initialize(mapload,nogenes)
+	. = ..()
+	if(!nogenes)
+		unset_mutability(/datum/plant_gene/trait/attack/nettle_attack/death, PLANT_GENE_REMOVABLE)
+		unset_mutability(/datum/plant_gene/trait/backfire/nettle_burn/death, PLANT_GENE_REMOVABLE)
+
 /obj/item/reagent_containers/food/snacks/grown/nettle // "snack"
 	seed = /obj/item/seeds/nettle
 	name = "nettle"
 	desc = "It's probably <B>not</B> wise to touch it with bare hands..."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "nettle"
 	lefthand_file = 'icons/mob/inhands/weapons/plants_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/plants_righthand.dmi'
@@ -48,40 +60,6 @@
 	wine_power = 20
 	wine_flavor = "tingling itchiness" //WS edit: new wine flavors
 
-/obj/item/reagent_containers/food/snacks/grown/nettle/pickup(mob/living/user)
-	..()
-	if(!iscarbon(user))
-		return FALSE
-	var/mob/living/carbon/C = user
-	if(C.gloves)
-		return FALSE
-	if(HAS_TRAIT(C, TRAIT_PIERCEIMMUNE))
-		return FALSE
-	var/hit_zone = (C.held_index_to_dir(C.active_hand_index) == "l" ? "l_":"r_") + "arm"
-	var/obj/item/bodypart/affecting = C.get_bodypart(hit_zone)
-	if(affecting)
-		if(affecting.receive_damage(0, force))
-			C.update_damage_overlays()
-	to_chat(C, "<span class='userdanger'>The nettle burns your bare hand!</span>")
-	return TRUE
-
-/obj/item/reagent_containers/food/snacks/grown/nettle/afterattack(atom/A as mob|obj, mob/user,proximity)
-	. = ..()
-	if(!proximity)
-		return
-	if(force > 0)
-		force -= rand(1, (force / 3) + 1) // When you whack someone with it, leaves fall off
-	else
-		to_chat(usr, "<span class='warning'>All the leaves have fallen off the nettle from violent whacking.</span>")
-		qdel(src)
-
-/obj/item/reagent_containers/food/snacks/grown/nettle/basic
-	seed = /obj/item/seeds/nettle
-
-/obj/item/reagent_containers/food/snacks/grown/nettle/basic/add_juice()
-	..()
-	force = round((5 + seed.potency / 5), 1)
-
 /obj/item/reagent_containers/food/snacks/grown/nettle/death
 	seed = /obj/item/seeds/nettle/death
 	name = "deathnettle"
@@ -91,26 +69,3 @@
 	throwforce = 15
 	wine_power = 50
 	wine_flavor = "burning rage" //WS edit: new wine flavors
-
-/obj/item/reagent_containers/food/snacks/grown/nettle/death/add_juice()
-	..()
-	force = round((5 + seed.potency / 2.5), 1)
-
-/obj/item/reagent_containers/food/snacks/grown/nettle/death/pickup(mob/living/carbon/user)
-	if(..())
-		if(prob(50))
-			user.Paralyze(100)
-			to_chat(user, "<span class='userdanger'>You are stunned by [src] as you try picking it up!</span>")
-
-/obj/item/reagent_containers/food/snacks/grown/nettle/death/attack(mob/living/carbon/M, mob/user)
-	if(!..())
-		return
-	if(isliving(M))
-		to_chat(M, "<span class='danger'>You are stunned by the powerful acid of [src]!</span>")
-		log_combat(user, M, "attacked", src)
-
-		M.adjust_blurriness(force/7)
-		if(prob(20))
-			M.Unconscious(force / 0.3)
-			M.Paralyze(force / 0.75)
-		M.drop_all_held_items()

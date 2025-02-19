@@ -201,9 +201,9 @@
 		to_chat(user, "<span class='warning'>\The [src] can only be used on flooring.</span>")
 		return
 	if(color_disallowed.Find(decal_state))
-		F.AddElement(/datum/element/decal, 'icons/turf/decals.dmi', decal_state, decal_dir, FALSE, color, null, null, alpha)
+		F.AddElement(/datum/element/decal, 'icons/turf/decals/decals.dmi', decal_state, decal_dir, FALSE, color, null, null, alpha)
 	else
-		F.AddElement(/datum/element/decal, 'icons/turf/decals.dmi', decal_state, decal_dir, FALSE, decal_color, null, null, alpha)
+		F.AddElement(/datum/element/decal, 'icons/turf/decals/decals.dmi', decal_state, decal_dir, FALSE, decal_color, null, null, alpha)
 	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
 /obj/item/decal_painter/attack_self(mob/user)
@@ -215,7 +215,7 @@
 
 /obj/item/decal_painter/interact(mob/user as mob) //TODO: Make TGUI for this because ouch
 	if(!decal_icon)
-		decal_icon = icon('icons/turf/decals.dmi', decal_state, decal_dir)
+		decal_icon = icon('icons/turf/decals/decals.dmi', decal_state, decal_dir)
 	user << browse_rsc(decal_icon, "floor.png")
 	var/dat = {"
 		<center>
@@ -288,7 +288,7 @@
 				decal_color = chosen_colour
 
 
-	decal_icon = icon('icons/turf/decals.dmi', decal_state, decal_dir)
+	decal_icon = icon('icons/turf/decals/decals.dmi', decal_state, decal_dir)
 	if(usr)
 		attack_self(usr)
 

@@ -49,6 +49,7 @@
 	. = ..()
 	if(!.)
 		return
+	owner.trip_with_gun("knockdown")
 	ADD_TRAIT(owner, TRAIT_FLOORED, TRAIT_STATUS_EFFECT(id))
 
 /datum/status_effect/incapacitating/knockdown/on_remove()
@@ -79,6 +80,7 @@
 	. = ..()
 	if(!.)
 		return
+	owner.trip_with_gun("paralyze")
 	ADD_TRAIT(owner, TRAIT_INCAPACITATED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_FLOORED, TRAIT_STATUS_EFFECT(id))
@@ -251,19 +253,6 @@
 /datum/status_effect/pacify/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "status_effect")
 
-/datum/status_effect/cultghost //is a cult ghost and can't use manifest runes
-	id = "cult_ghost"
-	duration = -1
-	alert_type = null
-
-/datum/status_effect/cultghost/on_apply()
-	owner.see_invisible = SEE_INVISIBLE_OBSERVER
-	owner.see_in_dark = 2
-
-/datum/status_effect/cultghost/tick()
-	if(owner.reagents)
-		owner.reagents.del_reagent(/datum/reagent/water/holywater) //can't be deconverted
-
 /datum/status_effect/crusher_mark
 	id = "crusher_mark"
 	duration = 300 //if you leave for 30 seconds you lose the mark, deal with it
@@ -334,7 +323,8 @@
 
 /datum/status_effect/neck_slice/tick()
 	var/mob/living/carbon/human/H = owner
-	if(H.stat == DEAD || H.bleed_rate <= 8)
+	var/obj/item/bodypart/throat_in_question = H.get_bodypart(BODY_ZONE_HEAD)
+	if(H.stat == DEAD || throat_in_question?.bleeding <= 8)
 		H.remove_status_effect(/datum/status_effect/neck_slice)
 	if(prob(10))
 		H.emote(pick("gasp", "gag", "choke"))
@@ -578,7 +568,7 @@
 		var/obj/item/I = H.get_active_held_item()
 		if(I && H.dropItemToGround(I))
 			H.visible_message("<span class='notice'>[H]'s hand convulses, and they drop their [I.name]!</span>","<span class='userdanger'>Your hand convulses violently, and you drop what you were holding!</span>")
-			H.jitteriness += 5
+			H.adjust_jitter(5)
 
 /atom/movable/screen/alert/status_effect/convulsing
 	name = "Shaky Hands"

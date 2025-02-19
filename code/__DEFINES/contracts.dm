@@ -7,14 +7,6 @@
 #define CONTRACT_KNOWLEDGE "knowledge"
 #define CONTRACT_UNWILLING "unwilling"
 
-#define BANE_SALT "salt"
-#define BANE_LIGHT "light"
-#define BANE_IRON "iron"
-#define BANE_WHITECLOTHES "whiteclothes"
-#define BANE_SILVER "silver"
-#define BANE_HARVEST "harvest"
-#define BANE_TOOLBOX "toolbox"
-
 #define OBLIGATION_FOOD "food"
 #define OBLIGATION_FIDDLE "fiddle"
 #define OBLIGATION_DANCEOFF "danceoff"

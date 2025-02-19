@@ -29,7 +29,7 @@
 		return FALSE
 	if(occupant_amount() >= max_occupants)
 		return FALSE
-	if(do_after(M, get_enter_delay(M), FALSE, src, TRUE))
+	if(do_after(M, get_enter_delay(M), src, progress = TRUE, timed_action_flags = IGNORE_HELD_ITEM))
 		mob_enter(M)
 		return TRUE
 	return FALSE
@@ -89,9 +89,10 @@
 	user.put_in_hands(inserted_key)
 	inserted_key = null
 
-/obj/vehicle/sealed/Destroy()
+/obj/vehicle/sealed/deconstruct(disassembled = TRUE)
 	DumpMobs()
-	explosion(loc, 0, 1, 2, 3, 0)
+	if(!disassembled)
+		explosion(loc, 0, 1, 2, 3, 0)
 	return ..()
 
 /obj/vehicle/sealed/proc/DumpMobs(randomstep = TRUE)

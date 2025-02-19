@@ -29,25 +29,6 @@
 	juice_results = list(/datum/reagent/consumable/potato_juice = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/vodka
 
-/obj/item/reagent_containers/food/snacks/grown/potato/wedges
-	name = "potato wedges"
-	desc = "Slices of neatly cut potato."
-	icon_state = "potato_wedges"
-	filling_color = "#E9967A"
-	bitesize = 100
-
-
-/obj/item/reagent_containers/food/snacks/grown/potato/attackby(obj/item/W, mob/user, params)
-	if(W.get_sharpness())
-		to_chat(user, "<span class='notice'>You cut the potato into wedges with [W].</span>")
-		var/obj/item/reagent_containers/food/snacks/grown/potato/wedges/Wedges = new /obj/item/reagent_containers/food/snacks/grown/potato/wedges
-		remove_item_from_storage(user)
-		qdel(src)
-		user.put_in_hands(Wedges)
-	else
-		return ..()
-
-
 // Sweet Potato
 /obj/item/seeds/potato/sweet
 	name = "pack of sweet potato seeds"

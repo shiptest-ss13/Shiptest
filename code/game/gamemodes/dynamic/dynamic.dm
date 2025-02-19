@@ -435,7 +435,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 
 /// Picks a random roundstart rule from the list given as an argument and executes it.
 /datum/game_mode/dynamic/proc/picking_roundstart_rule(list/drafted_rules = list(), forced = FALSE)
-	var/datum/dynamic_ruleset/roundstart/starting_rule = pickweight(drafted_rules)
+	var/datum/dynamic_ruleset/roundstart/starting_rule = pick_weight(drafted_rules)
 	if(!starting_rule)
 		log_game("DYNAMIC: Couldn't pick a starting ruleset. No rulesets available")
 		return FALSE
@@ -450,7 +450,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 			if(drafted_rules.len <= 0)
 				log_game("DYNAMIC: Picking [starting_rule.name] failed due to blocking_rules and no more rulesets available. Report this.")
 				return FALSE
-			starting_rule = pickweight(drafted_rules)
+			starting_rule = pick_weight(drafted_rules)
 		// Check if the ruleset is highlander and if a highlander ruleset has been executed
 		else if(starting_rule.flags & HIGHLANDER_RULESET)	// Should already be filtered out, but making sure. Check filtering at end of proc if reported.
 			if(threat_level > GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
@@ -459,14 +459,14 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 					if(drafted_rules.len <= 0)
 						log_game("DYNAMIC: Picking [starting_rule.name] failed due to no highlander stacking and no more rulesets available. Report this.")
 						return FALSE
-					starting_rule = pickweight(drafted_rules)
+					starting_rule = pick_weight(drafted_rules)
 		// With low pop and high threat there might be rulesets that get executed with no valid candidates.
 		else if(!starting_rule.ready())	// Should already be filtered out, but making sure. Check filtering at end of proc if reported.
 			drafted_rules -= starting_rule
 			if(drafted_rules.len <= 0)
 				log_game("DYNAMIC: Picking [starting_rule.name] failed because there were not enough candidates and no more rulesets available. Report this.")
 				return FALSE
-			starting_rule = pickweight(drafted_rules)
+			starting_rule = pick_weight(drafted_rules)
 
 	log_game("DYNAMIC: Picked a ruleset: [starting_rule.name]")
 
@@ -512,7 +512,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 /// Picks a random midround OR latejoin rule from the list given as an argument and executes it.
 /// Also this could be named better.
 /datum/game_mode/dynamic/proc/picking_midround_latejoin_rule(list/drafted_rules = list(), forced = FALSE)
-	var/datum/dynamic_ruleset/rule = pickweight(drafted_rules)
+	var/datum/dynamic_ruleset/rule = pick_weight(drafted_rules)
 	if(!rule)
 		return FALSE
 
@@ -524,7 +524,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 			drafted_rules -= rule
 			if(drafted_rules.len <= 0)
 				return FALSE
-			rule = pickweight(drafted_rules)
+			rule = pick_weight(drafted_rules)
 		// Check if the ruleset is highlander and if a highlander ruleset has been executed
 		else if(rule.flags & HIGHLANDER_RULESET)
 			if(threat_level > GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
@@ -532,7 +532,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 					drafted_rules -= rule
 					if(drafted_rules.len <= 0)
 						return FALSE
-					rule = pickweight(drafted_rules)
+					rule = pick_weight(drafted_rules)
 
 	if(!rule.repeatable)
 		if(rule.ruletype == "Latejoin")

@@ -28,7 +28,7 @@
 
 	var/obj/item/radio/radio
 	var/radio_key = /obj/item/encryptionkey/headset_com
-	var/radio_channel = RADIO_CHANNEL_COMMAND
+	var/radio_channel = RADIO_CHANNEL_EMERGENCY
 
 	var/running_anim = FALSE
 
@@ -299,7 +299,7 @@
 			close_machine(target)
 	else
 		user.visible_message("<span class='notice'>[user] starts shoving [target] inside [src].</span>", "<span class='notice'>You start shoving [target] inside [src].</span>")
-		if (do_after(user, 25, target=target))
+		if (do_after(user, 25, target = target))
 			close_machine(target)
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/attackby(obj/item/I, mob/user, params)

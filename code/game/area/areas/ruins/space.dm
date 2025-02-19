@@ -11,28 +11,11 @@
 	requires_power = FALSE
 
 /////////////
-
-/area/ruin/space/way_home
-	name = "\improper Salvation"
-	icon_state = "away"
-	always_unpowered = FALSE
-
 // Onehalf Ruin
 
 /area/ruin/space/has_grav/onehalf
 	name = "Station Fragment"
 	icon_state = "away"
-
-//Dinner For Two
-
-/area/ruin/space/has_grav/powered/dinner_for_two
-	name = "Dinner for Two"
-
-//Aesthetic
-
-/area/ruin/space/has_grav/powered/aesthetic
-	name = "Aesthetic"
-	ambientsounds = list('sound/ambience/ambivapor1.ogg')
 
 //Ruin of Derelict Oupost
 
@@ -56,210 +39,6 @@
 	name = "Derelict Outpost Docked Ship"
 	icon_state = "red"
 
-//Ruin of Deep Storage
-
-/area/ruin/space/has_grav/deepstorage
-	name = "Deep Storage"
-	icon_state = "storage"
-
-/area/ruin/space/has_grav/deepstorage/airlock
-	name = "Deep Storage Airlock"
-	icon_state = "quart"
-
-/area/ruin/space/has_grav/deepstorage/power
-	name = "Deep Storage Power and Atmospherics Room"
-	icon_state = "engi_storage"
-
-/area/ruin/space/has_grav/deepstorage/hydroponics
-	name = "Deep Storage Hydroponics"
-	icon_state = "garden"
-
-/area/ruin/space/has_grav/deepstorage/armory
-	name = "Deep Storage Secure Storage"
-	icon_state = "armory"
-
-/area/ruin/space/has_grav/deepstorage/storage
-	name = "Deep Storage Storage"
-	icon_state = "storage_wing"
-
-/area/ruin/space/has_grav/deepstorage/dorm
-	name = "Deep Storage Dormitory"
-	icon_state = "crew_quarters"
-
-/area/ruin/space/has_grav/deepstorage/kitchen
-	name = "Deep Storage Kitchen"
-	icon_state = "kitchen"
-
-/area/ruin/space/has_grav/deepstorage/crusher
-	name = "Deep Storage Recycler"
-	icon_state = "storage"
-
-//DERELICT
-
-/area/ruin/space/derelict
-	name = "Derelict Station"
-	icon_state = "storage"
-
-/area/ruin/space/derelict/hallway/primary
-	name = "Derelict Primary Hallway"
-	icon_state = "hallP"
-
-/area/ruin/space/derelict/hallway/secondary
-	name = "Derelict Secondary Hallway"
-	icon_state = "hallS"
-
-/area/ruin/space/derelict/hallway/primary/port
-	name = "Derelict Port Hallway"
-	icon_state = "hallFP"
-
-/area/ruin/space/derelict/arrival
-	name = "Derelict Arrival Centre"
-	icon_state = "yellow"
-
-/area/ruin/space/derelict/storage/equipment
-	name = "Derelict Equipment Storage"
-
-/area/ruin/space/derelict/bridge
-	name = "Derelict Control Room"
-	icon_state = "bridge"
-
-/area/ruin/space/derelict/bridge/access
-	name = "Derelict Control Room Access"
-	icon_state = "auxstorage"
-
-/area/ruin/space/derelict/bridge/ai_upload
-	name = "Derelict Computer Core"
-	icon_state = "ai"
-
-/area/ruin/space/derelict/solar_control
-	name = "Derelict Solar Control"
-	icon_state = "engine"
-
-/area/ruin/space/derelict/se_solar
-	name = "South East Solars"
-	icon_state = "engine"
-
-/area/ruin/space/derelict/medical
-	name = "Derelict Medbay"
-	icon_state = "medbay"
-
-/area/ruin/space/derelict/medical/chapel
-	name = "Derelict Chapel"
-	icon_state = "chapel"
-
-/area/solar/derelict_starboard
-	name = "Derelict Starboard Solar Array"
-	icon_state = "panelsS"
-
-/area/solar/derelict_aft
-	name = "Derelict Aft Solar Array"
-	icon_state = "yellow"
-
-/area/ruin/space/derelict/singularity_engine
-	name = "Derelict Singularity Engine"
-	icon_state = "engine"
-
-/area/ruin/space/derelict/gravity_generator
-	name = "Derelict Gravity Generator Room"
-	icon_state = "red"
-
-/area/ruin/space/derelict/atmospherics
-	name = "Derelict Atmospherics"
-	icon_state = "red"
-
-//OLD AI SAT
-
-/area/tcommsat/oldaisat
-	name = "Abandoned Satellite"
-	icon_state = "tcomsatcham"
-
-//ABANDONED BOX WHITESHIP
-
-/area/ruin/space/has_grav/whiteship/box
-
-	name = "Abandoned Ship"
-	icon_state = "red"
-
-
-//SYNDICATE LISTENING POST STATION
-
-/area/ruin/space/has_grav/listeningstation
-	name = "Listening Post"
-	icon_state = "yellow"
-
-/area/ruin/space/has_grav/powered/ancient_shuttle
-	name = "Ancient Shuttle"
-	icon_state = "yellow"
-
-//HELL'S FACTORY OPERATING FACILITY
-
-/area/ruin/space/has_grav/hellfactory
-	name = "Hell Factory"
-	icon_state = "yellow"
-
-/area/ruin/space/has_grav/hellfactoryoffice
-	name = "Hell Factory Office"
-	icon_state = "red"
-	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | NOTELEPORT
-
-//Ruin of Transport 18
-
-/area/ruin/space/has_grav/transport18fore
-	name = "Booze Cruise Fore"
-	icon_state = "crew_quarters"
-
-/area/ruin/space/has_grav/transport18mid
-	name = "Booze Cruise Hold"
-	icon_state = "cargo_bay"
-
-/area/ruin/space/transport18aft
-	name = "Booze Cruise Aft"
-	icon_state = "engine"
-
-//Ruin of the rad ship. It's pretty rad.
-
-/area/ruin/space/has_grav/radship/Cargo1
-	name = "Cargo Bay 1"
-	icon_state = "cargo_bay"
-
-/area/ruin/space/has_grav/radship/Cargo2
-	name = "Cargo Bay 2"
-	icon_state = "cargo_bay"
-
-/area/ruin/space/has_grav/radship/Cargo3
-	name = "Cargo Bay 3"
-	icon_state = "cargo_bay"
-
-/area/ruin/space/has_grav/radship/Cargo4
-	name = "Cargo Bay 4"
-	icon_state = "cargo_bay"
-
-/area/ruin/space/has_grav/radship/EngineRoom
-	name = "Engine Room"
-	icon_state = "yellow"
-
-/area/ruin/space/has_grav/radship/Engineering
-	name = "Engineering"
-	icon_state = "engine"
-
-/area/ruin/space/has_grav/radship/MethLab
-	name = "Storage"
-	icon_state = "red"
-
-/area/ruin/space/has_grav/radship/CrewQuarters
-	name = "Crew Quarters"
-	icon_state = "green"
-
-/area/ruin/space/has_grav/radship/Hallway
-	name = "Hallway"
-	icon_state = "away"
-
-//MACSPACE
-
-/area/ruin/space/has_grav/powered/macspace
-	name = "Mac Space Restaurant"
-	icon_state = "yellow"
-
 //POWER PUZZLE
 
 /area/ruin/space/has_grav/powerpuzzle
@@ -273,20 +52,6 @@
 /area/ruin/space/has_grav/powerpuzzle/engineering
 	name = "Engineering Wing"
 	icon_state = "yellow"
-
-//scav_mining
-
-/area/ruin/space/has_grav/scav_mining/entrance
-	name = "Asteroid mine entrance"
-	icon_state = "red"
-
-/area/ruin/space/has_grav/scav_mining/core
-	name = "Asteroid mine core"
-	icon_state = "yellow"
-
-/area/ruin/space/has_grav/scav_mining/dorm
-	name = "Asteroid mine dorm"
-	icon_state = "blue"
 
 //astraeus
 
@@ -313,44 +78,6 @@
 /area/ruin/space/has_grav/astraeus/custodial
 	name = "Custodial Closet"
 	icon_state = "green"
-
-/area/ruin/space/has_grav/glade
-	name = "\improper Dark Glade"
-	icon_state = "away"
-	always_unpowered = FALSE
-
-//Syndie battle sphere
-
-/area/ruin/space/has_grav/syndicircle/halls
-	name = "Syndicate Battle Sphere Primary Hallway"
-	icon_state = "dk_yellow"
-	color = "#a5131388"
-
-/area/ruin/space/has_grav/syndicircle/spacewalk
-	name = "Syndicate Battle Sphere Shuttle Launch Site"
-	icon_state = "dk_yellow"
-	color = "#663cb488"
-
-/area/ruin/space/has_grav/syndicircle/research
-	name = "Syndicate Battle Sphere Laboratory"
-	icon_state = "dk_yellow"
-	color = "#228a2b88"
-
-/area/ruin/space/has_grav/syndicircle/escape
-	name = "Syndicate Battle Sphere Escape Shuttle"
-	icon_state = "dk_yellow"
-	color = "#92bb3388"
-
-/area/ruin/space/has_grav/syndicircle/winter
-	name = "Syndicate Battle Sphere Snow Outpost"
-	icon_state = "dk_yellow"
-	color = "#4341c488"
-
-/area/ruin/space/has_grav/syndicircle/training
-	name = "Syndicate Battle Sphere Training Grounds"
-	icon_state = "dk_yellow"
-	color = "#26773a88"
-
 
 //Singularity Lab
 

@@ -6,7 +6,6 @@
 	icon_state = "rifle-steel"
 	caliber = "7.12x82mm"
 	projectile_type = /obj/projectile/bullet/mm712x82
-	bullet_per_box = 100
 
 /obj/item/ammo_casing/mm712x82/ap
 	name = "7.12x82mm armor-piercing bullet casing"
@@ -19,12 +18,6 @@
 	desc = "A 7.12x82mm hollow point bullet casing."
 	projectile_type = /obj/projectile/bullet/mm712x82/hp
 	bullet_skin = "hollow"
-
-/obj/item/ammo_casing/mm712x82/inc
-	name = "7.12x82mm incendiary bullet casing"
-	desc = "A 7.12x82mm incendiary bullet casing."
-	projectile_type = /obj/projectile/bullet/incendiary/mm712x82
-	bullet_skin = "incen"
 
 /obj/item/ammo_casing/mm712x82/match
 	name = "7.12x82mm match bullet casing"

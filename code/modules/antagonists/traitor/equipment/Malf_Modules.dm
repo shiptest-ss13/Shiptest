@@ -10,7 +10,6 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 		/obj/machinery/nuclearbomb/syndicate,
 		/obj/machinery/syndicatebomb,
 		/obj/machinery/syndicatebomb/badmin,
-		/obj/machinery/syndicatebomb/badmin/clown,
 		/obj/machinery/syndicatebomb/empty,
 		/obj/machinery/syndicatebomb/self_destruct,
 		/obj/machinery/syndicatebomb/training
@@ -740,21 +739,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 				upgraded_cameras++
 
 	unlock_text = replacetext(unlock_text, "CAMSUPGRADED", "<b>[upgraded_cameras]</b>") //This works, since unlock text is called after upgrade()
-
-/// AI Turret Upgrade: Increases the health and damage of all turrets.
-/datum/AI_Module/upgrade/upgrade_turrets
-	name = "AI Turret Upgrade"
-	description = "Improves the power and health of all AI turrets. This effect is permanent. Upgrade is done immediately upon purchase."
-	cost = 30
-	upgrade = TRUE
-	unlock_text = "<span class='notice'>You establish a power diversion to your turrets, upgrading their health and damage.</span>"
-	unlock_sound = 'sound/items/rped.ogg'
-
-/datum/AI_Module/upgrade/upgrade_turrets/upgrade(mob/living/silicon/ai/AI)
-	for(var/obj/machinery/porta_turret/ai/turret in GLOB.machines)
-		turret.obj_integrity += 30
-		turret.lethal_projectile = /obj/projectile/beam/laser/heavylaser //Once you see it, you will know what it means to FEAR.
-		turret.lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 
 /// Enhanced Surveillance: Enables AI to hear conversations going on near its active vision.
 /datum/AI_Module/upgrade/eavesdrop

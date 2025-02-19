@@ -167,7 +167,7 @@
 	can_adjust = FALSE
 	resistance_flags = NONE
 
-/obj/item/clothing/under/costume/mech_suit
+/obj/item/clothing/under/costume/mech_suit //these still have "mech" in the name because they're costumes, not serious utility wear
 	name = "red mech pilot's suit"
 	desc = "A red mech pilot's suit. Might make your butt look big."
 	icon_state = "red_mech_suit"

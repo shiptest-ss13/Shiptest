@@ -74,7 +74,7 @@
 	var/emitterregen = 0.25
 	var/emittercd = 50
 	var/emitteroverloadcd = 100
-	var/emittersemicd = FALSE
+	var/emittercurrent_cooldown = FALSE
 
 	var/overload_ventcrawl = 0
 	var/overload_bulletblock = 0	//Why is this a good idea?
@@ -125,7 +125,7 @@
 
 	. = ..()
 
-	emittersemicd = TRUE
+	emittercurrent_cooldown = TRUE
 	addtimer(CALLBACK(src, PROC_REF(emittercool)), 600)
 
 	if(!holoform)

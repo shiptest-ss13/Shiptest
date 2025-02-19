@@ -41,9 +41,6 @@
 /turf/open/floor/wood/yew
 	color = WOOD_COLOR_YELLOW
 
-/turf/open/floor/wood/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air
-
 /turf/open/floor/wood/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>There's a few <b>screws</b> and a <b>small crack</b> visible.</span>"
@@ -138,7 +135,7 @@
 	icon_state = "fairygrass[rand(0,3)]"
 
 /turf/open/floor/grass/fairy/beach
-	baseturfs = /turf/open/floor/plating/beach/sand
+	baseturfs = /turf/open/floor/plating/asteroid/sand
 	planetary_atmos = TRUE
 
 /turf/open/floor/grass/snow

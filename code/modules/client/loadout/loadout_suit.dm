@@ -23,10 +23,6 @@
 	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
 
-/datum/gear/suit/jacket/leather/overcoat
-	display_name = "leather overcoat"
-	path = /obj/item/clothing/suit/jacket/leather/overcoat
-
 /datum/gear/suit/jacket/leather/duster
 	display_name = "leather duster"
 	path = /obj/item/clothing/suit/jacket/leather/duster
@@ -55,8 +51,6 @@
 	display_name = "suit jacket, charcoal"
 	path = /obj/item/clothing/suit/toggle/lawyer/charcoal
 
-/datum/gear/suit/jacket/navy //why is this blank? i dont know
-
 /datum/gear/suit/jacket/hoodie_black
 	display_name = "hoodie, black"
 	path = /obj/item/clothing/suit/hooded/hoodie/black
@@ -81,6 +75,10 @@
 	display_name = "hoodie, T4L1"
 	path = /obj/item/clothing/suit/hooded/hoodie/rilena
 
+/datum/gear/suit/jacket/hoodie_baw
+	display_name = "hoodie, black w grey hood"
+	path = /obj/item/clothing/suit/hooded/hoodie/blackwa
+
 /datum/gear/suit/jacket/highvis
 	display_name = "industrial jacket"
 	path = /obj/item/clothing/suit/toggle/industrial
@@ -89,11 +87,27 @@
 	display_name = "hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard
 
-//Misc
-/datum/gear/suit/grponcho
-	display_name = "poncho, green"
-	path = /obj/item/clothing/suit/poncho/green
+/datum/gear/suit/jacket/windbreaker
+	display_name = "windbreaker, colorable"
+	path = /obj/item/clothing/suit/toggle/windbreaker
 
+//Suspenders
+/datum/gear/suit/suspenders
+	subtype_path = /datum/gear/suit/suspenders
+
+/datum/gear/suit/suspenders/red
+	display_name = "suspenders, red"
+	path = /obj/item/clothing/suit/toggle/suspenders
+
+/datum/gear/suit/suspenders/blue
+	display_name = "suspenders, blue"
+	path = /obj/item/clothing/suit/toggle/suspenders/blue
+
+/datum/gear/suit/suspenders/gray
+	display_name = "suspenders, gray"
+	path = /obj/item/clothing/suit/toggle/suspenders/gray
+
+//Misc
 /datum/gear/suit/overalls
 	display_name = "overalls"
 	path = /obj/item/clothing/suit/apron/overalls
@@ -103,7 +117,7 @@
 	path = /obj/item/clothing/suit/toggle/labcoat
 
 /datum/gear/suit/raincoat
-	display_name = "Cybersun labcoat"
+	display_name = "translucent labcoat"
 	description = "Designer lab safety equipment. You're pretty sure this is just a raincoat."
 	path = /obj/item/clothing/suit/toggle/labcoat/raincoat
 
@@ -115,3 +129,11 @@
 	display_name = "floral shirt"
 	description = "From grills to guns, this shirt's seen it all."
 	path = /obj/item/clothing/suit/hawaiian
+
+/datum/gear/suit/hazardvest
+	display_name = "hazard vest"
+	path = /obj/item/clothing/suit/hazardvest
+
+/datum/gear/suit/longcoat
+	display_name = "longcoat"
+	path = /obj/item/clothing/suit/longcoat

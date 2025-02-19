@@ -27,6 +27,8 @@
 	var/ruin_type
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
+	/// list of ruin templates currently spawned on the planet.
+	var/list/spawned_ruins
 	/// Whether or not the level is currently loading.
 	var/loading = FALSE
 
@@ -126,7 +128,7 @@
 		probabilities = list()
 		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
 			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
-	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
+	planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 
 
 	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
@@ -190,7 +192,7 @@
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	var/selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE
@@ -198,6 +200,7 @@
 	mapzone = dynamic_encounter_values[1]
 	reserve_docks = dynamic_encounter_values[2]
 	ruin_turfs = dynamic_encounter_values[3]
+	spawned_ruins = dynamic_encounter_values[4]
 
 	loading = FALSE
 	return TRUE

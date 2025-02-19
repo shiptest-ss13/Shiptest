@@ -72,7 +72,7 @@
 /obj/machinery/door/firedoor/Destroy()
 	remove_from_areas()
 	density = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	affecting_areas.Cut()
 	return ..()
 
@@ -104,7 +104,7 @@
 	if(!welded && !operating && !(machine_stat & NOPOWER) && (!density || allow_hand_open(user)))
 		user.visible_message("[user] tries to open \the [src] manually.",
 								"You operate the manual lever on \the [src].")
-		if (!do_after(user, 30, TRUE, src))
+		if (!do_after(user, 30, src))
 			return FALSE
 		add_fingerprint(user)
 		if(density)
@@ -174,7 +174,7 @@
 		if(is_holding_pressure())
 			// tell the user that this is a bad idea, and have a do_after as well
 			to_chat(user, "<span class='warning'>As you begin crowbarring \the [src] a gush of air blows in your face... maybe you should reconsider?</span>")
-			if(!do_after(user, 20, TRUE, src)) // give them a few seconds to reconsider their decision.
+			if(!do_after(user, 20, src)) // give them a few seconds to reconsider their decision.
 				return
 			log_game("[key_name(user)] has opened a firelock with a pressure difference at [AREACOORD(loc)]")
 			user.log_message("has opened a firelock with a pressure difference at [AREACOORD(loc)]", LOG_ATTACK)
@@ -430,7 +430,7 @@
 	if(operating || welded)
 		return
 	density = TRUE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	do_animate("closing")
 	update_freelook_sight()
 	if(!(flags_1 & ON_BORDER_1))
@@ -467,6 +467,11 @@
 	explosion_block = 2
 	assemblytype = /obj/structure/firelock_frame/heavy
 	max_integrity = 550
+
+/obj/machinery/door/firedoor/heavy/closed
+	icon_state = "door_closed"
+	opacity = TRUE
+	density = TRUE
 
 /obj/machinery/door/firedoor/window
 	name = "firelock window shutter"

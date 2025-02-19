@@ -55,7 +55,7 @@
 	update_appearance()
 	return 1
 
-/obj/item/organ/heart/OnEatFrom(eater, feeder)
+/obj/item/organ/heart/on_eat_from(eater, feeder)
 	. = ..()
 	beating = FALSE
 	update_appearance()
@@ -77,7 +77,7 @@
 			H.stop_sound_channel(CHANNEL_HEARTBEAT)
 			beat = BEAT_NONE
 
-		if(H.jitteriness)
+		if(H.jitteriness > 100)
 			if(H.health > HEALTH_THRESHOLD_FULLCRIT && (!beat || beat == BEAT_SLOW))
 				H.playsound_local(get_turf(H),fastbeat,40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 				beat = BEAT_FAST

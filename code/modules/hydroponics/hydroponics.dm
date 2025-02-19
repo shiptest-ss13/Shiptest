@@ -191,7 +191,7 @@
 //Pests & Weeds//////////////////////////////////////////////////////////
 
 			if(pestlevel >= 8)
-				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+				if(!myseed.get_gene(/datum/plant_gene/trait/carnivory))
 					adjustHealth(-2 / rating)
 
 				else
@@ -199,7 +199,7 @@
 					adjustPests(-1 / rating)
 
 			else if(pestlevel >= 4)
-				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+				if(!myseed.get_gene(/datum/plant_gene/trait/carnivory))
 					adjustHealth(-1 / rating)
 
 				else
@@ -207,7 +207,7 @@
 					if(prob(50))
 						adjustPests(-1 / rating)
 
-			else if(pestlevel < 4 && myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+			else if(pestlevel < 4 && myseed.get_gene(/datum/plant_gene/trait/carnivory))
 				adjustHealth(-2 / rating)
 				if(prob(5))
 					adjustPests(-1 / rating)
@@ -255,7 +255,7 @@
 				adjustWeeds(1 / rating)
 
 		// Weeeeeeeeeeeeeeedddssss
-		if(weedlevel >= MAX_TRAY_WEEDS && prob(50)) // At this point the plant is kind of fucked. Weeds can overtake the plant spot.
+		if(weedlevel >= HYDRO_MAX_WEED && prob(50)) // At this point the plant is kind of fucked. Weeds can overtake the plant spot.
 			if(myseed)
 				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/weed_hardy) && !myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism)) // If a normal plant
 					weedinvasion()
@@ -266,10 +266,7 @@
 			update_appearance()
 
 		if(myseed && prob(5 * (11-myseed.production)))
-			for(var/g in myseed.genes)
-				if(istype(g, /datum/plant_gene/trait))
-					var/datum/plant_gene/trait/selectedtrait = g
-					selectedtrait.on_grow(src)
+			SEND_SIGNAL(myseed, COMSIG_SEED_ON_GROW, src)
 	return
 
 /obj/machinery/hydroponics/update_appearance(updates)
@@ -565,12 +562,12 @@
 					msg += "[span_notice("- [Gene.get_name()] -")]\n"
 		else
 			msg +=  "<B>No plant found.</B>\n"
-		msg += "Weed level: [span_notice("[weedlevel] / [MAX_TRAY_WEEDS]")]\n"
-		msg += "Pest level: [span_notice("[pestlevel] / [MAX_TRAY_PESTS]")]\n"
-		msg += "Toxicity level: [span_notice("[toxic] / [MAX_TRAY_TOXINS]")]\n"
+		msg += "Weed level: [span_notice("[weedlevel] / [HYDRO_MAX_WEED]")]\n"
+		msg += "Pest level: [span_notice("[pestlevel] / [HYDRO_MAX_PEST]")]\n"
+		msg += "Toxicity level: [span_notice("[toxic] / [HYDRO_MAX_TOXIC]")]\n"
 		msg += "Water level: [span_notice("[waterlevel] / [maxwater]")]\n"
 		msg += "Nutrition level: [span_notice("[reagents.total_volume] / [maxnutri]")]\n"
-		to_chat(user, examine_block(msg))
+		to_chat(user, boxed_message(msg))
 		return
 
 	else if(istype(O, /obj/item/cultivator))

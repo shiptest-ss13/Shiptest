@@ -11,9 +11,9 @@
 	new /obj/item/aicard(src)
 	new /obj/item/assembly/flash/handheld(src)
 	if(prob(50))
-		new /obj/item/ammo_box/magazine/m50(src)
-		new /obj/item/ammo_box/magazine/m50(src)
-		new /obj/item/gun/ballistic/automatic/pistol/deagle(src)
+		new /obj/item/ammo_box/magazine/cm357(src)
+		new /obj/item/ammo_box/magazine/cm357(src)
+		new /obj/item/gun/ballistic/automatic/pistol/cm357(src)
 	else
 		new /obj/item/ammo_box/a357(src)
 		new /obj/item/ammo_box/a357(src)
@@ -65,3 +65,7 @@
 	new /obj/item/storage/box/smart_metal_foam(src)
 	for(var/i in 1 to 3)
 		new /obj/item/rcd_ammo/large(src)
+
+/obj/structure/closet/secure_closet/suns
+	name = "SUNS locker"
+	icon_state = "suns"

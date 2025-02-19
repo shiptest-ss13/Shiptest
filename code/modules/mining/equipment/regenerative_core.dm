@@ -4,7 +4,7 @@
 	icon = 'icons/obj/chemical/medicine.dmi'
 	icon_state = "bottle19"
 	desc = "Inject certain types of monster organs with this stabilizer to preserve their healing powers indefinitely."
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_price = 400
 
 /obj/item/hivelordstabilizer/afterattack(obj/item/organ/M, mob/user, proximity)
@@ -27,6 +27,7 @@
 	icon_state = "roro core 2"
 	item_flags = NOBLUDGEON
 	slot = ORGAN_SLOT_REGENERATIVE_CORE
+	organ_flags = null
 	force = 0
 	actions_types = list(/datum/action/item_action/organ_action/use)
 	var/inert = 0
@@ -67,7 +68,7 @@
 		owner.adjustOxyLoss(-50)
 		owner.adjustToxLoss(-50)
 		if(owner.dna.species.id != SPECIES_IPC)
-			owner.adjustCloneLoss(10) //dont abuse it or take cloneloss (organic only)
+			owner.adjustCloneLoss(20) //dont abuse it or take cloneloss (organic only)
 	qdel(src)
 
 /obj/item/organ/regenerative_core/on_life()
@@ -79,21 +80,26 @@
 /obj/item/organ/regenerative_core/proc/applyto(atom/target, mob/user)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-		if(inert)
-			to_chat(user, "<span class='notice'>[src] has decayed and can no longer be used to heal.</span>")
+		if(H.dna.species.id == SPECIES_IPC)
+			to_chat(user, span_notice("[src] has no effect on silicate life."))
 			return
-		else
-			if(H.stat == DEAD)
-				to_chat(user, "<span class='notice'>[src] is useless on the dead.</span>")
-				return
+		if(inert)
+			to_chat(user, span_notice("[src] has decayed past usabality."))
+			return
+		if(H.stat == DEAD)
+			to_chat(user, span_notice("[src] is useless on the dead."))
+			return
+		if(do_after(user, 10, target))
 			if(H != user)
-				H.visible_message("<span class='notice'>[user] forces [H] to apply [src]... Black tendrils entangle and reinforce [H.p_them()]!</span>")
+				H.visible_message(span_notice("[user] smears [src] across [H]... malignant black tendrils entangle and reinforce [H.p_their()] flesh!"))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "other"))
 			else
-				to_chat(user, "<span class='notice'>You start to smear [src] on yourself. Disgusting tendrils hold you together and allow you to keep moving, but for how long?</span>")
+				to_chat(user, span_notice("You smear [src] across your body. Malignant black tendrils start to grow around the application site, reinforcing your flesh!"))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
 			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman) //Now THIS is a miner buff (fixed - nerf)
+			H.reagents.add_reagent(/datum/reagent/medicine/soulus,15)
+			H.force_scream()
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman)
 			qdel(src)
 
 /obj/item/organ/regenerative_core/afterattack(atom/target, mob/user, proximity_flag)
@@ -179,21 +185,21 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(inert)
-			to_chat(user, "<span class='notice'>[src] has broken and can no longer be used to heal.</span>")
+			to_chat(user, span_notice("[src] has decayed beyond usability."))
 			return
 		else
 			if(H.stat == DEAD)
-				to_chat(user, "<span class='notice'>[src] is useless on the dead.</span>")
+				to_chat(user, span_notice("[src] is useless on the dead."))
 				return
 			if(H != user)
-				H.visible_message("<span class='notice'>[user] forces [H] to apply [src]... Cancer like crystals grow on and reinforce [H.p_them()]!</span>")
+				H.visible_message(span_notice("[user] smears [src] across [H]... malignant crystals and cancerous tendrils grow on and reinforce [H.p_them()]!</span>"))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "other"))
 			else
-				to_chat(user, "<span class='notice'>You start to apply [src] on yourself. Cancer like crystals hold you together and add something to you to keep yourself moving, but for how long?</span>")
+				to_chat(user, span_notice("You smear [src] across yourself. malignant crystals and cancerous tendrils grow on you, toughening and healing where they touch."))
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
 			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
 			H.reagents.add_reagent(/datum/reagent/determination, 4)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman) //Now THIS is a miner buff (fixed - nerf)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman)
 			qdel(src)
 
 /obj/item/organ/regenerative_core/legion/crystal/update_icon_state()

@@ -32,20 +32,16 @@
 /obj/item/storage/briefcase/lawyer
 	folder_path = /obj/item/folder/blue
 
-/obj/item/storage/briefcase/lawyer/PopulateContents()
-	new /obj/item/stamp/law(src)
-	..()
-
 /obj/item/storage/briefcase/sniperbundle
 	desc = "Its label reads \"genuine hardened Captain leather\", but suspiciously has no other tags or branding. Smells like L'Air du Temps."
 	force = 10
 
 /obj/item/storage/briefcase/sniperbundle/PopulateContents()
 	..() // in case you need any paperwork done after your rampage
-	new /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate(src)
+	new /obj/item/gun/ballistic/automatic/marksman/taipan(src)
 	new /obj/item/clothing/neck/tie/red(src)
 	new /obj/item/clothing/under/syndicate/sniper(src)
 	new /obj/item/ammo_box/magazine/sniper_rounds/soporific(src)
 	new /obj/item/ammo_box/magazine/sniper_rounds/soporific(src)
-	new /obj/item/suppressor/specialoffer(src)
+	new /obj/item/attachment/silencer(src)
 

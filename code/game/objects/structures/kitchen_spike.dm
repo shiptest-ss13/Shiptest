@@ -64,7 +64,7 @@
 /obj/structure/kitchenspike/attack_hand(mob/user)
 	if(VIABLE_MOB_CHECK(user.pulling) && user.a_intent == INTENT_GRAB && !has_buckled_mobs())
 		var/mob/living/L = user.pulling
-		if(do_mob(user, src, 120))
+		if(do_after(user, 12 SECONDS, src))
 			if(has_buckled_mobs()) //to prevent spam/queing up attacks
 				return
 			if(L.buckled)
@@ -74,7 +74,7 @@
 			playsound(src.loc, 'sound/effects/splat.ogg', 25, TRUE)
 			L.visible_message("<span class='danger'>[user] slams [L] onto the meat spike!</span>", "<span class='userdanger'>[user] slams you onto the meat spike!</span>", "<span class='hear'>You hear a squishy wet noise.</span>")
 			L.forceMove(drop_location())
-			L.emote("scream")
+			L.force_scream()
 			L.add_splatter_floor()
 			L.adjustBruteLoss(30)
 			L.setDir(2)
@@ -128,7 +128,7 @@
 	M.adjustBruteLoss(30)
 	src.visible_message(text("<span class='danger'>[M] falls free of [src]!</span>"))
 	unbuckle_mob(M,force=1)
-	M.emote("scream")
+	M.force_scream()
 	M.AdjustParalyzed(20)
 
 /obj/structure/kitchenspike/Destroy()

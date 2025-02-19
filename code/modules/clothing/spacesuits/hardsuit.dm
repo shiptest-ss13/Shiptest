@@ -17,11 +17,16 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH	| PEPPERPROOF
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	var/rad_count = 0
 	var/rad_record = 0
 	var/grace_count = 0
 	var/datum/looping_sound/geiger/soundloop
+
+	//fuck you 15 year old hardsuit code
+	equip_delay_self = null
+	equip_delay_other = null
+	strip_delay = null
 
 /obj/item/clothing/head/helmet/space/hardsuit/Initialize()
 	. = ..()
@@ -105,7 +110,7 @@
 	max_integrity = 300
 	armor = list("melee" = 10, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 50, "acid" = 75)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
-	siemens_coefficient = 0
+	siemens_coefficient = 0.5
 	var/obj/item/clothing/head/helmet/space/hardsuit/helmet
 	actions_types = list(/datum/action/item_action/toggle_helmet)
 	var/helmettype = /obj/item/clothing/head/helmet/space/hardsuit
@@ -166,7 +171,7 @@
 		if(L.status)
 			to_chat(user, "<span class='warning'>This bulb is too damaged to use as a replacement!</span>")
 			return
-		if(do_after(user, 50, 1, src))
+		if(do_after(user, 50, src))
 			qdel(I)
 			helmet = new helmettype(src)
 			to_chat(user, "<span class='notice'>You have successfully repaired [src]'s helmet.</span>")
@@ -207,6 +212,7 @@
 	desc = "A special suit that protects against hazardous, low pressure environments. Has radiation shielding."
 	icon_state = "hardsuit-engineering"
 	item_state = "eng_hardsuit"
+	siemens_coefficient = 0
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine
@@ -220,7 +226,7 @@
 	item_state = "atmo_helm"
 	hardsuit_type = "atmospherics"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 25, "fire" = 100, "acid" = 75)
-	heat_protection = HEAD												//Uncomment to enable firesuit protection
+	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 
 /obj/item/clothing/suit/space/hardsuit/engine/atmos
@@ -228,8 +234,8 @@
 	desc = "A special suit that protects against hazardous, low pressure environments. Has thermal shielding."
 	icon_state = "hardsuit-atmospherics"
 	item_state = "atmo_hardsuit"
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 25, "fire" = 100, "acid" = 75)
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS					//Uncomment to enable firesuit protection
+	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 25, "fire" = 100, "acid" = 75)
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine/atmos
 
@@ -304,7 +310,6 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy
 	custom_price = 4500
-	slowdown = 0.5
 
 /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy
 	name = "heavy mining helmet"
@@ -386,13 +391,11 @@
 		if(on)
 			linkedsuit.name = initial(linkedsuit.name)
 			linkedsuit.desc = initial(linkedsuit.desc)
-			linkedsuit.slowdown = 1
 			linkedsuit.clothing_flags |= STOPSPRESSUREDAMAGE
 			linkedsuit.cold_protection |= CHEST | GROIN | LEGS | FEET | ARMS | HANDS
 		else
 			linkedsuit.name += " (combat)"
 			linkedsuit.desc = linkedsuit.alt_desc
-			linkedsuit.slowdown = linkedsuit.combat_slowdown
 			linkedsuit.clothing_flags &= ~STOPSPRESSUREDAMAGE
 			linkedsuit.cold_protection &= ~(CHEST | GROIN | LEGS | FEET | ARMS | HANDS)
 			if(linkedsuit.lightweight)
@@ -413,16 +416,16 @@
 	item_state = "syndie_hardsuit"
 	hardsuit_type = "syndi"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
-	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	jetpack = /obj/item/tank/jetpack/suit
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
-	var/combat_slowdown = 0 //slowdown when in combat mode
+	slowdown = 0.5
 	var/lightweight = 0 //used for flags when toggling
 
 //Ramzi Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
-	name = "rusted-red hardsuit helmet"
+	name = "rust-red hardsuit helmet"
 	desc = "A beat-up standardized dual-mode helmet derived from more advanced special operations helmets, its red rusted into a dirty brown. It is in EVA mode. Manufactured by Ramzi Clique."
 	alt_desc = "A beat-up standardized dual-mode helmet derived from more advanced special operations helmets, its red rusted into a dirty brown. It is in combat mode. Manufactured by Ramzi Clique."
 	icon_state = "hardsuit1-ramzi"
@@ -431,39 +434,17 @@
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
-	name = "rusted-red hardsuit"
+	name = "rust-red hardsuit"
 	desc = "A beat-up standardized dual-mode hardsuit derived from more advanced special operations hardsuits, its red rusted into a dirty brown. It is in EVA mode. Manufactured by Ramzi Clique."
 	alt_desc = "A beat-up standardized dual-mode hardsuit derived from more advanced special operations hardsuits, its red rusted into a dirty brown. It is in combat mode. Manufactured by Ramzi Clique."
 	icon_state = "hardsuit1-ramzi"
 	item_state = "hardsuit1-ramzi"
 	hardsuit_type = "ramzi"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
-	lightweight = 1
 	jetpack = null
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	combat_slowdown = 0.5
+	slowdown = 0.7
 	jetpack = null
-
-//Hardliner Syndie suit
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
-	name = "white-red hardsuit helmet"
-	desc = "An advanced dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by white. It is in EVA mode. Manufactured by Second Battlegroup."
-	alt_desc = "An advanced dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by white. It is in combat mode. Manufactured by Second Battlegroup."
-	icon_state = "hardsuit1-hl"
-	item_state = "hardsuit1-hl"
-	hardsuit_type = "hl"
-
-/obj/item/clothing/suit/space/hardsuit/syndi/hl
-	name = "white-red hardsuit"
-	desc = "An advanced dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by white. It is in EVA mode. Manufactured by Second Battlegroup."
-	alt_desc = "An advanced dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by white. It is in combat mode. Manufactured by the Second Battlegroup."
-	icon_state = "hardsuit1-hl"
-	item_state = "hardsuit1-hl"
-	hardsuit_type = "hl"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
-	lightweight = 1
-	jetpack = null
-
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -530,7 +511,6 @@
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
 	supports_variations = VOX_VARIATION
-	combat_slowdown = 0.4
 	jetpack = null
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
@@ -560,36 +540,6 @@
 	hardsuit_type = "pointman"
 	full_retraction = TRUE
 
-	//Wizard hardsuit
-/obj/item/clothing/head/helmet/space/hardsuit/wizard
-	name = "gem-encrusted hardsuit helmet"
-	desc = "A bizarre gem-encrusted helmet that radiates magical energies."
-	icon_state = "hardsuit0-wiz"
-	item_state = "wiz_helm"
-	hardsuit_type = "wiz"
-	resistance_flags = FIRE_PROOF | ACID_PROOF //No longer shall our kind be foiled by lone chemists with spray bottles!
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
-	heat_protection = HEAD												//Uncomment to enable firesuit protection
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-
-/obj/item/clothing/suit/space/hardsuit/wizard
-	name = "gem-encrusted hardsuit"
-	desc = "A bizarre gem-encrusted suit that radiates magical energies."
-	icon_state = "hardsuit-wiz"
-	item_state = "wiz_hardsuit"
-	w_class = WEIGHT_CLASS_NORMAL
-	resistance_flags = FIRE_PROOF | ACID_PROOF
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
-	allowed = list(/obj/item/teleportation_scroll, /obj/item/tank/internals)
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS					//Uncomment to enable firesuit protection
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/wizard
-
-/obj/item/clothing/suit/space/hardsuit/wizard/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, FALSE, FALSE, ITEM_SLOT_OCLOTHING, INFINITY, FALSE)
-
-
 	//Medical hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/medical
 	name = "medical hardsuit helmet"
@@ -609,7 +559,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/firstaid, /obj/item/healthanalyzer, /obj/item/stack/medical)
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/medical
-	slowdown = 0.5
+	slowdown = 0.3
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/medical/cmo
@@ -623,13 +573,13 @@
 
 	//Research Director hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/rd
-	name = "prototype hardsuit helmet"
+	name = "scientific hardsuit helmet"
 	desc = "A prototype helmet designed for research in a hazardous, low pressure environment. Scientific data flashes across the visor."
 	icon_state = "hardsuit0-rd"
 	hardsuit_type = "rd"
 	resistance_flags = ACID_PROOF | FIRE_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80)
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80)
 	var/explosion_detection_dist = 21
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SCAN_REAGENTS | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //WS Port - Cit Internals
 	actions_types = list(/datum/action/item_action/toggle_helmet_light, /datum/action/item_action/toggle_research_scanner)
@@ -660,7 +610,7 @@
 	display_visor_message("Explosion detected! Epicenter: [devastation_range], Outer: [heavy_impact_range], Shock: [light_impact_range]")
 
 /obj/item/clothing/suit/space/hardsuit/rd
-	name = "prototype hardsuit"
+	name = "scientific hardsuit"
 	desc = "A prototype suit that protects against hazardous, low pressure environments. Fitted with extensive plating for handling explosives and dangerous research materials."
 	icon_state = "hardsuit-rd"
 	item_state = "hardsuit-rd"
@@ -671,49 +621,50 @@
 		/obj/item/gun/energy/wormhole_projector,
 		/obj/item/hand_tele,
 		/obj/item/aicard)
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80)
+	slowdown = 1.5
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/rd
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
-	//Security hardsuit
+//Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security
 	name = "security hardsuit helmet"
 	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
 	icon_state = "hardsuit0-sec"
 	item_state = "sec_helm"
 	hardsuit_type = "sec"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /obj/item/clothing/suit/space/hardsuit/security
 	icon_state = "hardsuit-sec"
 	name = "security hardsuit"
 	desc = "A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	item_state = "sec_hardsuit"
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
+	slowdown = 0.5
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security/Initialize()
 	. = ..()
 	allowed = GLOB.security_hardsuit_allowed
 
-	//Head of Security hardsuit
+//Head of Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security/hos
-	name = "head of security's hardsuit helmet"
+	name = "heavy security hardsuit helmet"
 	desc = "A special bulky helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
 	icon_state = "hardsuit0-hos"
 	hardsuit_type = "hos"
-	armor = list("melee" = 45, "bullet" = 25, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
-
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
 	icon_state = "hardsuit-hos"
-	name = "head of security's hardsuit"
+	name = "heavy security hardsuit"
 	desc = "A special bulky suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
-	armor = list("melee" = 45, "bullet" = 25, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
+	slowdown = 0.7
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 	//SWAT MKII
@@ -759,23 +710,6 @@
 	icon_state = "caparmor"
 	item_state = "capspacesuit"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/swat/captain
-
-	//Clown
-/obj/item/clothing/head/helmet/space/hardsuit/clown
-	name = "cosmohonk hardsuit helmet"
-	desc = "A special helmet designed for work in a hazardous, low-humor environment. Has radiation shielding."
-	icon_state = "hardsuit0-clown"
-	item_state = "hardsuit0-clown"
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 30)
-	hardsuit_type = "clown"
-
-/obj/item/clothing/suit/space/hardsuit/clown
-	name = "cosmohonk hardsuit"
-	desc = "A special suit that protects against hazardous, low humor environments. Has radiation shielding. Only a true clown can wear it."
-	icon_state = "hardsuit-clown"
-	item_state = "clown_hardsuit"
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 30)
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clown
 
 	//Old Prototype
 /obj/item/clothing/head/helmet/space/hardsuit/ancient
@@ -889,7 +823,7 @@
 			C.update_inv_wear_suit()
 
 /obj/item/clothing/suit/space/hardsuit/shielded/worn_overlays(isinhands)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
 
@@ -962,9 +896,9 @@
 	item_state = "syndie_hardsuit"
 	hardsuit_type = "syndi"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi
-	slowdown = 0
+	slowdown = 0.5
 	shield_state = "shield-red"
 	shield_on = "shield-red"
 	jetpack = /obj/item/tank/jetpack/suit
@@ -1023,6 +957,8 @@
 
 ///////////////Shiptest Additions////////////////////
 
+//this 'shiptest' server really needs to just add new files
+
 //Softsuit helmet light framework
 /obj/item/clothing/head/helmet/space/light
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
@@ -1071,13 +1007,7 @@
 	item_state = "independent_sec_helm"
 	hardsuit_type = "independent-sec"
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	supports_variations = VOX_VARIATION
-
-/obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
-	name = "\improper Frontiersmen hardsuit helmet"
-	desc = "An old hardsuit helmet based on a even older hardsuit helmet. Used prolifically by the Frontiersmen pirate fleet."
-	icon_state = "hardsuit0-frontier"
-	hardsuit_type = "frontier"
+	supports_variations = VOX_VARIATION | SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security/independent
 	icon_state = "hardsuit-independent-sec"
@@ -1088,16 +1018,9 @@
 	hardsuit_type = "independent-sec"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
 
-/obj/item/clothing/suit/space/hardsuit/security/independent/frontier
-	name = "\improper Frontiersmen hardsuit"
-	desc = "An old hardsuit based on a even older hardsuit. Used prolifically by the Frontiersmen pirate fleet."
-	icon_state = "hardsuit_frontier"
-	hardsuit_type = "hardsuit_frontier"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
-
-	//Mining
+//Mining
 /obj/item/clothing/head/helmet/space/hardsuit/mining/independent
 	name = "mining hardsuit helmet"
 	desc = "An inexpensive helmet designed for work in hazardous, low pressure environments. Its open cage design provides excellent visibility."
@@ -1115,131 +1038,28 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/independent
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 5, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75)
 
-	//Engineer Softsuit
-/obj/item/clothing/suit/space/engineer
-	name = "engineering space suit"
-	icon_state = "space-independent-eng"
-	item_state = "space-independent-eng"
-	desc = "A civilian space suit designed for construction and salvage in hazardous, low-pressure environments. Has shielding against radiation and heat and abundant storage.<br>Though they lack the physical protection of more expensive hardsuits, this type of suit is extremely common wherever construction and salvage work must be done in open space."
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 20, "bomb" = 0, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/head/helmet/space/light/engineer
-	name = "engineering space helmet"
-	icon_state = "space-independent-eng"
-	item_state = "space-independent-eng"
-	desc = "A space helmet designed for construction and salvage in hazardous, low-pressure environments, with an integral hard hat and UV-shielded visor. Has shielding against radiation and heat."
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
-	resistance_flags = FIRE_PROOF
-	light_color = "#FFCC66"
-	light_power = 0.8
-	light_system = MOVABLE_LIGHT_DIRECTIONAL
-	light_range = 4
-	light_power = 1
-	light_on = FALSE
-	on = FALSE
-
-	//Pilot Softsuit
-/obj/item/clothing/suit/space/pilot
-	name = "pilot space suit"
-	icon_state = "space-pilot"
-	item_state = "space-pilot"
-	desc = "A lightweight, unarmored space suit designed for mech and fighter pilots. Special attachment points make mounting and dismounting from mechs much easier."
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | FAST_EMBARK
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
-
-/obj/item/clothing/head/helmet/space/pilot
-	name = "pilot helmet"
-	icon_state = "space-pilot-plain0"
-	item_state = "space-pilot-plain"
-	desc = "A specialized space helmet designed for mech and fighter pilots. Offers limited impact protection."
-	var/skin = "plain"
-	var/blurb = " Its simple design is quite ancient."
-	up = FALSE
-	actions_types = list(/datum/action/item_action/toggle_helmet)
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70)
-	visor_flags_inv = HIDEMASK
-	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS
-
-/obj/item/clothing/head/helmet/space/pilot/update_icon_state()
-	icon_state = "space-pilot-[skin][up]"
-	return ..()
-
-/obj/item/clothing/head/helmet/space/pilot/New()
-	..()
-	switch(skin)
-		if("plain")
-			blurb = " Its simple design is quite ancient."
-		if("shark")
-			blurb = " It bears a classic shark mouth decoration on both cheeks."
-		if("checker")
-			blurb = " A bold checker stripe runs over the top of the helmet."
-		if("ace")
-			blurb = " A large ace of spades decorates the back of the helmet."
-		if("mobius")
-			blurb = " There is an unusual blue ribbon painted on the back. Something about it is strangely inspiring."
-		if("viper")
-			blurb = " It bears a menacing orange \"V\" on the brow. Somebody has scratched \"Speed is life\" inside the helmet."
-		if("luke")
-			blurb = " Strange red trefoils are painted on either side of the helmet. Wearing it gives you a headache."
-		if("corvid")
-			blurb = " It is sloppily painted with thin teal and red paint. There are some dark stains on the lining..."
-
-	desc = "A specialized space helmet designed for mech and fighter pilots. Offers limited impact protection.[blurb]"
-	update_icon_state()
-
-/obj/item/clothing/head/helmet/space/pilot/random/New()
-	skin = pick(40;"plain", 20;"shark", 20;"checker", 20;"ace", 5;"mobius", 5;"viper", 5;"luke", 5;"corvid",)
-	..()
-
-/obj/item/clothing/head/helmet/space/pilot/attack_self(mob/user) //pilot helmet toggle
-	if(!isturf(user.loc))
-		to_chat(user, "<span class='warning'>You cannot toggle your helmet while in this [user.loc]!</span>" )
-		return
-	up = !up
-	if(!up || force)
-		to_chat(user, "<span class='notice'>You close your helmet's visor and breathing mask.</span>")
-		gas_transfer_coefficient = initial(gas_transfer_coefficient)
-		permeability_coefficient = initial(permeability_coefficient)
-		clothing_flags |= visor_flags
-		flags_cover |= HEADCOVERSEYES | HEADCOVERSMOUTH
-		flags_inv |= visor_flags_inv
-		cold_protection |= HEAD
-	else
-		to_chat(user, "<span class='notice'>You open your helmet's visor and breathing mask.</span>")
-		gas_transfer_coefficient = null
-		permeability_coefficient = null
-		clothing_flags &= ~visor_flags
-		flags_cover &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
-		flags_inv &= ~visor_flags_inv
-		cold_protection &= ~HEAD
-	update_appearance()
-	playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)
-	user.update_inv_head()
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		C.head_update(src, forced = 1)
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
 
 //Inteq Hardsuit
-/obj/item/clothing/head/helmet/space/hardsuit/security/independent/inteq
+
+/obj/item/clothing/head/helmet/space/hardsuit/security/inteq
 	name = "inteq hardsuit helmet"
 	desc = "A somewhat boxy, monocular visored helmet designed for hazardous, low pressure environments. It has the letters 'IRMG' imprinted onto the earpad."
 	icon_state = "hardsuit0-inteq"
 	item_state = "hardsuit-inteq"
 	hardsuit_type = "inteq"
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq
+/obj/item/clothing/suit/space/hardsuit/security/inteq
 	name = "inteq hardsuit"
 	desc = "A heavy-duty looking suit that protects against hazardous, low pressure environments. It's bulk provides ample protection, if not a bit cumbersome to wear."
 	icon_state = "hardsuit-inteq"
 	item_state = "hardsuit-inteq"
 	hardsuit_type = "inteq"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/inteq
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/inteq
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+
+//solarian
 
 /obj/item/clothing/head/helmet/space/hardsuit/solgov
 	name = "\improper SolGov hardsuit helmet"
@@ -1249,76 +1069,13 @@
 	hardsuit_type = "solgov"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75)
 
-/obj/item/clothing/suit/space/hardsuit/solgov
+/obj/item/clothing/suit/space/hardsuit/solgov //see this is a good path. not fucking /security/independant/inteq. its just /hardsuit/solgov
 	icon_state = "hardsuit_solgov"
 	name = "\improper SolGov hardsuit"
 	desc = "An armored spaceproof suit. A powered exoskeleton keeps the suit light and mobile."
 	item_state = "hardsuit_solgov"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov
-	slowdown = 0
+	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
+	slowdown = 0.2
 	supports_variations = DIGITIGRADE_VARIATION
-
-/obj/item/clothing/head/helmet/space/hardsuit/quixote
-	name = "\improper Quixote mobility hardsuit helmet"
-	desc = "The integrated helmet of a Quixote mobility hardsuit."
-	icon_state = "hardsuit0-quixote"
-	item_state = "quixote-helm"
-	max_integrity = 300
-	armor = list("melee" = 50, "bullet" = 40, "laser" = 40, "energy" = 25, "bomb" = 50, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 100)
-	hardsuit_type = "quixote"
-	max_heat_protection_temperature = 20000
-
-/obj/item/clothing/suit/space/hardsuit/quixote
-	name = "\improper Quixote mobility hardsuit"
-	desc = "The Quixote mobility suit is the magnum opus of Phorsman equipment, combining durable composite armor with high mobility thrusters."
-	icon_state = "quixotesuit"
-	item_state = "quixotesuit"
-	max_integrity = 300
-	armor = list("melee" = 50, "bullet" = 40, "laser" = 40, "energy" = 25, "bomb" = 50, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 100)
-	allowed = list(/obj/item/gun, /obj/item/flashlight, /obj/item/tank/internals, /obj/item/ammo_box)
-	actions_types = list(/datum/action/item_action/toggle_helmet)
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/quixote
-	jetpack = /obj/item/tank/jetpack/suit
-	slowdown = 0
-	max_heat_protection_temperature = 20000
-	var/datum/action/innate/quixotejump/jump
-
-/obj/item/clothing/suit/space/hardsuit/quixote/Initialize()
-	. = ..()
-	jump = new(src)
-
-/obj/item/clothing/suit/space/hardsuit/quixote/Destroy()
-	QDEL_NULL(jump)
-	return ..()
-
-/obj/item/clothing/suit/space/hardsuit/quixote/equipped(mob/user, slot)
-	. = ..()
-	if(slot == ITEM_SLOT_OCLOTHING)
-		jump.Grant(user)
-		user.update_icons()
-	else //If it is equipped in any slot except for our outer clothing, we can't dash
-		jump.Remove(user)
-		user.update_icons()
-
-/obj/item/clothing/suit/space/hardsuit/quixote/dropped(mob/user)
-	. = ..()
-	jump.Remove(user)
-	user.update_icons()
-
-/obj/item/clothing/suit/space/hardsuit/quixote/ui_action_click(mob/user, action)
-	if(action == /datum/action/innate/quixotejump)
-		jump.Activate()
-	else
-		return ..()
-
-/obj/item/clothing/head/helmet/space/hardsuit/quixote/dimensional
-	name = "\improper Quixote metaspacial hardsuit helmet"
-	desc = "The integrated helmet of a Quixote metaspace navigation hardsuit."
-	armor = list("melee" = 50, "bullet" = 40, "laser" = 40, "energy" = 35, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
-
-/obj/item/clothing/suit/space/hardsuit/quixote/dimensional
-	name = "\improper Quixote metaspacial hardsuit"
-	armor = list("melee" = 50, "bullet" = 40, "laser" = 40, "energy" = 35, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
-	desc = "The Quixote metaspacial mobility suit is the magnum opus of dimensional navigation equipment, combining durable composite armor with high mobility thrusters and defensive plating rated for all manner of exotic particles."
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/quixote/dimensional

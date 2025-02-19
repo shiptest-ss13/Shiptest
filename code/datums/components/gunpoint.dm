@@ -46,7 +46,7 @@
 
 	addtimer(CALLBACK(src, PROC_REF(update_stage), 2), GUNPOINT_DELAY_STAGE_2)
 
-/datum/component/gunpoint/Destroy(force, silent)
+/datum/component/gunpoint/Destroy(force)
 	var/mob/living/shooter = parent
 	shooter.remove_status_effect(STATUS_EFFECT_HOLDUP)
 	target.remove_status_effect(STATUS_EFFECT_HELDUP)
@@ -126,7 +126,7 @@
 	if(weapon.chambered && weapon.chambered.BB)
 		weapon.chambered.BB.damage *= damage_mult
 
-	weapon.process_fire(target, shooter)
+	weapon.pre_fire(target, shooter)
 	qdel(src)
 
 /datum/component/gunpoint/proc/cancel()

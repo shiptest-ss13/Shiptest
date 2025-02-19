@@ -131,7 +131,7 @@
 		user.visible_message("<span class='warning'>[user] starts climbing into [src].</span>", "<span class='notice'>You start climbing into [src]...</span>")
 	else
 		target.visible_message("<span class='danger'>[user] starts putting [target] into [src].</span>", "<span class='userdanger'>[user] starts putting you into [src]!</span>")
-	if(do_mob(user, target, 20))
+	if(do_after(user, 2 SECONDS, target))
 		if (!loc)
 			return
 		target.forceMove(src)
@@ -432,7 +432,7 @@
 	if(air_contents.return_pressure() >= SEND_PRESSURE)
 		full_pressure = TRUE
 		pressure_charging = FALSE
-		update_appearance()
+		update_appearance(UPDATE_OVERLAYS)
 	return
 
 /obj/machinery/disposal/bin/get_remote_view_fullscreens(mob/user)

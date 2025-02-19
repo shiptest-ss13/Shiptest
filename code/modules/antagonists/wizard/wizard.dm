@@ -172,7 +172,6 @@
 	antag_hud_name = "apprentice"
 	var/datum/mind/master
 	var/school = APPRENTICE_DESTRUCTION
-	outfit_type = /datum/outfit/wizard/apprentice
 	wiz_age = APPRENTICE_AGE_MIN
 
 /datum/antagonist/wizard/apprentice/greet()
@@ -204,7 +203,6 @@
 		if(APPRENTICE_HEALING)
 			owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/charge(null))
 			owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/forcewall(null))
-			H.put_in_hands(new /obj/item/gun/magic/staff/healing(H))
 			to_chat(owner, "<B>Your service has not gone unrewarded, however. Studying under [master.current.real_name], you have learned life-saving survival spells. You are able to cast charge and forcewall.")
 		if(APPRENTICE_ROBELESS)
 			owner.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock(null))
@@ -253,7 +251,6 @@
 
 /datum/antagonist/wizard/academy
 	name = "Academy Teacher"
-	outfit_type = /datum/outfit/wizard/academy
 	move_to_lair = FALSE
 
 /datum/antagonist/wizard/academy/equip_wizard()
