@@ -347,3 +347,23 @@
 
 /obj/item/storage/guncase/energy/e10
 	gun_type = /obj/item/gun/energy/laser/e10
+
+/* underbarrel guns */
+/obj/item/storage/guncase/underbarrel_shotgun
+	gun_type = /obj/item/attachment/gun/ballistic/shotgun
+
+/obj/item/storage/guncase/underbarrel_riot_grenade
+	gun_type = /obj/item/attachment/gun/riot
+
+/obj/item/storage/guncase/underbarrel_flamethrower
+	gun_type = /obj/item/attachment/gun/flamethrower
+
+/obj/item/storage/guncase/underbarrel_flare
+	gun_type = /obj/item/attachment/gun/flare
+
+/obj/item/storage/guncase/underbarrel_hognose
+	gun_type = /obj/item/attachment/gun/ballistic/hognose
+	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu/hognose
+
+/obj/item/storage/guncase/energy/underbarrel_e_gun
+	gun_type = /obj/item/attachment/gun/energy/e_gun

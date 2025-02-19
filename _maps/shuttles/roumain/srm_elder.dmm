@@ -1842,6 +1842,15 @@
 /obj/effect/turf_decal/spline/fancy/wood/corner{
 	dir = 4
 	},
+/obj/machinery/button/door{
+	pixel_x = -20;
+	pixel_y = -10;
+	dir = 4;
+	id = "elders_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
+	},
 /turf/open/floor/wood/mahogany,
 /area/ship/medical)
 "vX" = (
@@ -4128,7 +4137,8 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/wood{
-	name = "Restroom"
+	name = "Restroom";
+	id_tag = "elders_bathroom"
 	},
 /obj/effect/turf_decal/spline/fancy/wood/cee{
 	dir = 1
