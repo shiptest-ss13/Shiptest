@@ -268,8 +268,12 @@
 /*
  *  Attachment
 */
-	///The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED
+	///The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED.
 	var/list/valid_attachments = list()
+	///The types of attachments that are unique to this gun. Adds it to the base valid_attachments list. So if this gun takes a special stock, add it here.
+	var/list/unique_attachments = list()
+	///The types of attachments that aren't allowed. Removes it from the base valid_attachments list.
+	var/list/refused_attachments
 	///Number of attachments that can fit on a given slot
 	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
 	///Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
@@ -344,7 +348,14 @@
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/attachment_holder, slot_available, valid_attachments, slot_offsets, default_attachments)
+	var/list/attachment_list = valid_attachments
+	attachment_list += unique_attachments
+	if(refused_attachments)
+		for(var/to_remove in attachment_list)
+			if(refused_attachments.Find(to_remove))
+				attachment_list -= to_remove
+
+	AddComponent(/datum/component/attachment_holder, slot_available, attachment_list, slot_offsets, default_attachments)
 	AddComponent(/datum/component/two_handed)
 
 /// triggered on wield of two handed item
@@ -403,6 +414,9 @@
 	. = ..()
 	if(has_safety)
 		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
+
+	if(gun_firemodes.len > 1)
+		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
 
 	if(manufacturer)
 		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
@@ -1123,6 +1137,10 @@
 	update_appearance()
 	for(var/datum/action/current_action as anything in actions)
 		current_action.UpdateButtonIcon()
+
+/obj/item/gun/secondary_action(user)
+	if(gun_firemodes.len > 1)
+		fire_select(user)
 
 /datum/action/item_action/toggle_firemode/UpdateButtonIcon(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/our_gun = target

@@ -78,8 +78,6 @@
 
 				if(prob(pukeprob))
 					H.blur_eyes(3)
-					if(prob(25))
-						H.manual_emote(pick("tears up!", "whimpers!", "chokes!"))
 					H.vomit(20, 0, 1, 1, 1, 0)
 					H.confused += 2.5
 					H.stuttering += 1

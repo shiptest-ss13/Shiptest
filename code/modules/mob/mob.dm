@@ -669,7 +669,8 @@
 	set src = usr
 
 	if(ismecha(loc))
-		return
+		var/obj/mecha/mech = loc
+		return mech.handle_unique_action(src)
 
 	if(incapacitated())
 		return
@@ -688,8 +689,7 @@
 	set category = "Object"
 	set src = usr
 
-	if(ismecha(loc))
-		var/obj/mecha/mecha = loc
+	var/obj/mecha/mecha = loc
 		if(mecha.zoom_action)
 			mecha.zoom_action.Activate()
 			return
@@ -704,6 +704,23 @@
 		return
 	return
 
+/mob/verb/do_secondary_action()
+	set name = "Do Secondary Action"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		return
+	if(incapacitated())
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		if(I.pre_secondary_action(src))
+			update_inv_hands()
+			return
+		I.secondary_action(src)
+		update_inv_hands()
 
 /**
  * Get the notes of this mob
