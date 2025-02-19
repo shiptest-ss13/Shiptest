@@ -94,7 +94,7 @@
 	if(selection)
 		data["track_selected"] = selection.song_name
 		data["track_length"] = DisplayTimeText(selection.song_length)
-		data["track_beat"] = selection.song_beat
+		data["track_beat"] = selection.song_beat_deciseconds
 	data["volume"] = volume
 	return data
 
@@ -200,7 +200,7 @@
 /obj/machinery/jukebox/disco/proc/hierofunk()
 	for(var/i in 1 to 10)
 		spawn_atom_to_turf(/obj/effect/temp_visual/hierophant/telegraph/edge, src, 1, FALSE)
-		sleep(5)
+		sleep(0.5 SECONDS)
 		if(QDELETED(src))
 			return
 
@@ -223,7 +223,7 @@
 			if(25)
 				S.pixel_y = 7
 				S.forceMove(get_turf(src))
-		sleep(7)
+		sleep(0.7 SECONDS)
 	for(var/s in sparkles)
 		var/obj/effect/overlay/sparkles/reveal = s
 		reveal.alpha = 255
@@ -295,7 +295,7 @@
 					glow.even_cycle = !glow.even_cycle
 		if(prob(2))  // Unique effects for the dance floor that show up randomly to mix things up
 			INVOKE_ASYNC(src, PROC_REF(hierofunk))
-		sleep(selection.song_beat)
+		sleep(selection.song_beat_deciseconds)
 		if(QDELETED(src))
 			return
 

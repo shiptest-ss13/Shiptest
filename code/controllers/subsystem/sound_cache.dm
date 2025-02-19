@@ -4,7 +4,7 @@ SUBSYSTEM_DEF(sound_cache)
 	flags = SS_NO_FIRE
 
 	/// k:v list of file_path : length
-	VAR_PRIVATE/list/sound_lengths
+	VAR_PRIVATE/list/sound_lengths = list()
 
 	/// A list of sounds to cache upon initialize.
 	VAR_PRIVATE/list/sounds_to_precache = list()
