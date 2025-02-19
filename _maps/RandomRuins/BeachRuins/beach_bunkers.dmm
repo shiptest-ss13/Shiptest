@@ -77,6 +77,10 @@
 /obj/vehicle/ridden/atv,
 /turf/open/floor/concrete/pavement/beachplanet,
 /area/space)
+"dK" = (
+/obj/structure/closet/cabinet,
+/turf/open/floor/wood,
+/area/space)
 "eF" = (
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/space)
@@ -93,6 +97,13 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"gi" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/structure/table/wood/reinforced,
+/turf/open/floor/carpet,
 /area/space)
 "gu" = (
 /obj/structure/cable{
@@ -207,6 +218,17 @@
 "kJ" = (
 /turf/open/floor/plating/grass/beach,
 /area/space)
+"la" = (
+/obj/structure/dresser{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
+"lk" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet,
+/area/space)
 "lr" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -221,6 +243,14 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"lF" = (
+/obj/structure/bed/double{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
 /area/space)
 "lL" = (
 /obj/effect/turf_decal/road,
@@ -270,6 +300,20 @@
 	},
 /turf/open/floor/plating/dirt/beach/lit,
 /area/space)
+"ok" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/space)
+"oo" = (
+/obj/structure/toilet{
+	dir = 8;
+	pixel_x = 6
+	},
+/turf/open/space/basic,
+/area/space)
 "ot" = (
 /obj/structure/crate_shelf,
 /turf/open/floor/concrete/reinforced,
@@ -279,6 +323,16 @@
 	icon_state = "4-9"
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
+/area/space)
+"oJ" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/space)
+"pN" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken2"
+	},
 /area/space)
 "pS" = (
 /obj/effect/turf_decal/road/stripes{
@@ -353,11 +407,13 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
+"tQ" = (
+/obj/effect/spawner/bunk_bed,
+/turf/open/space/basic,
+/area/space)
 "tW" = (
-/obj/structure/cable{
-	icon_state = "5-9"
-	},
-/mob/living/simple_animal/hostile/human/frontier/ranged,
+/obj/effect/turf_decal/road,
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
 "ug" = (
@@ -394,6 +450,11 @@
 	},
 /turf/open/floor/concrete,
 /area/space)
+"uF" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken"
+	},
+/area/space)
 "vT" = (
 /obj/structure/cable{
 	icon_state = "5-8"
@@ -425,6 +486,11 @@
 	},
 /turf/open/floor/plating/dirt/beach,
 /area/space)
+"wX" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken6"
+	},
+/area/space)
 "wZ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -445,14 +511,23 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
+"xO" = (
+/obj/structure/catwalk/over,
+/turf/open/space/basic,
+/area/space)
 "yb" = (
 /turf/open/space/basic,
 /area/space)
 "yA" = (
 /turf/open/floor/plating/grass/beach/lit,
 /area/space)
+"yJ" = (
+/obj/structure/chair/sofa/olive/old/left/directional/north,
+/turf/open/space/basic,
+/area/space)
 "yM" = (
 /obj/structure/rack,
+/obj/item/key,
 /turf/open/floor/concrete/pavement/beachplanet,
 /area/space)
 "zB" = (
@@ -473,6 +548,11 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
+"Ad" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/carpet,
+/area/space)
 "AC" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -484,6 +564,10 @@
 	icon_state = "4-6"
 	},
 /turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/space)
+"AE" = (
+/mob/living/simple_animal/crab,
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/space)
 "AH" = (
 /obj/structure/cable{
@@ -510,10 +594,31 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
+"BC" = (
+/turf/open/floor/wood,
+/area/space)
 "BN" = (
 /obj/structure/guncloset,
 /obj/item/gun/ballistic/rifle/illestren/factory,
 /turf/open/floor/concrete/reinforced,
+/area/space)
+"BQ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/carpet,
+/area/space)
+"Cl" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/structure/curtain/cloth/fancy{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1,
 /area/space)
 "CC" = (
 /obj/structure/cable{
@@ -618,6 +723,10 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"Ja" = (
+/obj/item/toy/beach_ball,
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
 "Jd" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -710,6 +819,15 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"Mr" = (
+/obj/structure/mirror{
+	pixel_y = 28
+	},
+/obj/structure/sink{
+	pixel_y = 18
+	},
+/turf/open/space/basic,
+/area/space)
 "Mz" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -740,7 +858,15 @@
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"Oz" = (
+/obj/structure/toilet{
+	dir = 4;
+	pixel_x = -6
+	},
+/turf/open/space/basic,
 /area/space)
 "OF" = (
 /turf/open/floor/plating/asteroid/sand/dense/lit,
@@ -748,6 +874,10 @@
 "OX" = (
 /obj/structure/fence,
 /turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"Ph" = (
+/obj/structure/chair/sofa/olive/old/right/directional/west,
+/turf/open/space/basic,
 /area/space)
 "Pm" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -775,6 +905,10 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Pw" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood,
 /area/space)
 "QU" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -811,6 +945,12 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
+"Sa" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet,
+/area/space)
 "Sc" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -845,11 +985,20 @@
 	},
 /turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/space)
+"SS" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/space)
 "Ta" = (
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Tb" = (
+/obj/structure/chair/sofa/olive/old/directional/north,
+/turf/open/space/basic,
 /area/space)
 "Tx" = (
 /obj/structure/barricade/sandbags,
@@ -882,6 +1031,10 @@
 "UI" = (
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
+"Vz" = (
+/obj/structure/flora/rock/beach,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/space)
 "VE" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -911,6 +1064,12 @@
 	},
 /turf/open/floor/plating/grass/beach/lit,
 /area/space)
+"Wq" = (
+/obj/structure/filingcabinet/double/grey{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
 "Ws" = (
 /obj/structure/cable{
 	icon_state = "1-6"
@@ -926,11 +1085,19 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
+"Xv" = (
+/obj/structure/chair/sofa/olive/old/corner/directional/west,
+/turf/open/space/basic,
+/area/space)
 "XS" = (
 /turf/open/floor/concrete/tiles,
 /area/space)
 "YB" = (
 /turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"Zj" = (
+/mob/living/simple_animal/cow,
+/turf/open/floor/plating/grass/beach/lit,
 /area/space)
 "ZJ" = (
 /obj/structure/cable{
@@ -943,6 +1110,10 @@
 /area/space)
 
 (1,1,1) = {"
+yb
+yb
+yb
+yb
 yb
 yb
 yb
@@ -1016,6 +1187,10 @@ yb
 yb
 yb
 yb
+yb
+yb
+yb
+yb
 bW
 bW
 bW
@@ -1053,6 +1228,10 @@ yb
 yb
 "}
 (3,1,1) = {"
+yb
+yb
+yb
+yb
 yb
 yb
 yb
@@ -1124,6 +1303,10 @@ yb
 yb
 yb
 yb
+yb
+yb
+yb
+yb
 bW
 bW
 bW
@@ -1163,6 +1346,10 @@ yb
 yb
 "}
 (5,1,1) = {"
+yb
+yb
+yb
+yb
 yb
 yb
 yb
@@ -1230,6 +1417,10 @@ yb
 yb
 yb
 yb
+yb
+yb
+yb
+yb
 bW
 bW
 bW
@@ -1283,6 +1474,10 @@ yb
 yb
 yb
 yb
+yb
+yb
+yb
+yb
 bW
 bW
 bW
@@ -1321,13 +1516,17 @@ bW
 bW
 eF
 eF
-eF
+Vz
 eF
 yb
 yb
 yb
 "}
 (8,1,1) = {"
+yb
+yb
+yb
+yb
 yb
 yb
 yb
@@ -1389,6 +1588,10 @@ yb
 yb
 yb
 yb
+yb
+yb
+yb
+yb
 bW
 bW
 bW
@@ -1438,6 +1641,10 @@ yb
 yb
 "}
 (10,1,1) = {"
+yb
+yb
+yb
+yb
 yb
 yb
 yb
@@ -1505,6 +1712,10 @@ bW
 bW
 bW
 bW
+bW
+bW
+bW
+bW
 mn
 mn
 mn
@@ -1551,7 +1762,11 @@ yb
 yb
 yb
 yb
-yb
+bW
+bW
+bW
+bW
+bW
 bW
 bW
 bW
@@ -1615,6 +1830,10 @@ bW
 bW
 bW
 bW
+bW
+bW
+bW
+bW
 mn
 YB
 YB
@@ -1663,6 +1882,10 @@ yb
 bW
 bW
 bW
+rt
+rt
+rt
+rt
 bW
 bW
 bW
@@ -1716,9 +1939,13 @@ yb
 yb
 yb
 bW
-bW
-bW
-bW
+yb
+rt
+rt
+BC
+wX
+rt
+rt
 bW
 bW
 bW
@@ -1732,7 +1959,7 @@ YB
 YB
 UI
 UI
-tW
+rc
 YB
 UI
 TV
@@ -1771,9 +1998,13 @@ yb
 yb
 yb
 bW
-bW
-bW
-bW
+yb
+rt
+lF
+oJ
+uF
+dK
+rt
 bW
 bW
 bW
@@ -1805,7 +2036,7 @@ bW
 bW
 yA
 yA
-yA
+Zj
 yA
 yA
 yA
@@ -1825,13 +2056,17 @@ yb
 (17,1,1) = {"
 yb
 yb
+yb
+yb
+rt
+Pw
+pN
+BC
+la
+rt
 bW
 bW
-bW
-bW
-bW
-bW
-bW
+rt
 rt
 Ps
 TV
@@ -1879,14 +2114,18 @@ yb
 "}
 (18,1,1) = {"
 yb
-bW
-bW
-bW
-bW
-bW
-bW
-bW
-bW
+yb
+yb
+yb
+rt
+rt
+rt
+Cl
+rt
+rt
+rt
+rt
+rt
 rt
 rt
 Fu
@@ -1920,7 +2159,7 @@ yA
 yA
 YB
 YB
-yA
+Zj
 yA
 yA
 yA
@@ -1934,15 +2173,19 @@ yb
 "}
 (19,1,1) = {"
 yb
-bW
-bW
-bW
-bW
-bW
-bW
-bW
-bW
-bW
+yb
+yb
+yb
+rt
+yb
+rt
+yb
+yb
+no
+BC
+Sa
+Ad
+ok
 rt
 rt
 rt
@@ -1989,17 +2232,21 @@ yb
 "}
 (20,1,1) = {"
 yb
-bW
-bW
+yb
+yb
+yb
 rt
+yb
+yb
+yb
+yb
+no
+BC
+Sa
+lk
+BC
+Wq
 rt
-rt
-rt
-rt
-rt
-YB
-YB
-YB
 yA
 yA
 yA
@@ -2043,18 +2290,22 @@ yb
 yb
 "}
 (21,1,1) = {"
-bW
-bW
-bW
-rt
 yb
 yb
 yb
 yb
 rt
-YB
-YB
-YB
+yb
+rt
+rt
+yb
+no
+BC
+BQ
+gi
+BC
+Wq
+rt
 YB
 YB
 yA
@@ -2098,18 +2349,22 @@ yb
 yb
 "}
 (22,1,1) = {"
-bW
-bW
-bW
-rt
 yb
 yb
 yb
 yb
 rt
-YB
-YB
-YB
+rt
+rt
+rt
+yb
+no
+BC
+BC
+uF
+SS
+rt
+rt
 YB
 YB
 YB
@@ -2153,17 +2408,21 @@ yb
 yb
 "}
 (23,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 rt
-yb
-yb
-yb
-yb
+rt
+Ge
 rt
 rt
-KU
+rt
+rt
+rt
 KU
 KU
 KU
@@ -2208,12 +2467,16 @@ yb
 yb
 "}
 (24,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 rt
 yb
-yb
+no
 yb
 yb
 rt
@@ -2263,20 +2526,24 @@ yb
 yb
 "}
 (25,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 rt
 yb
-yb
-yb
-yb
+no
+TV
+TV
 Ge
 lL
 Rn
 qy
 qY
-av
+tW
 av
 av
 av
@@ -2318,14 +2585,18 @@ yb
 yb
 "}
 (26,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 rt
 yb
-yb
-yb
-yb
+no
+TV
+TV
 Ge
 RY
 rH
@@ -2373,12 +2644,16 @@ yb
 yb
 "}
 (27,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 rt
 yb
-yb
+no
 yb
 yb
 rt
@@ -2428,14 +2703,18 @@ yb
 yb
 "}
 (28,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 rt
 yb
+no
 yb
-yb
-yb
+yJ
 rt
 rt
 KU
@@ -2483,14 +2762,18 @@ yb
 yb
 "}
 (29,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 rt
 yb
+no
 yb
-yb
-yb
+Tb
 rt
 YB
 YB
@@ -2538,14 +2821,18 @@ yb
 yb
 "}
 (30,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 rt
 rt
+no
 yb
-yb
-yb
+Tb
 rt
 YB
 kJ
@@ -2565,7 +2852,7 @@ YB
 YB
 YB
 NU
-yA
+Ja
 yA
 yA
 YB
@@ -2593,14 +2880,18 @@ yb
 yb
 "}
 (31,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 bW
 rt
-yb
-yb
-yb
+no
+Ph
+Xv
 rt
 YB
 kJ
@@ -2648,6 +2939,10 @@ yb
 yb
 "}
 (32,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
@@ -2703,6 +2998,10 @@ yb
 yb
 "}
 (33,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 rt
@@ -2712,7 +3011,7 @@ yb
 yb
 rt
 rt
-yb
+xO
 rt
 rt
 kJ
@@ -2758,10 +3057,14 @@ yb
 yb
 "}
 (34,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 rt
-yb
+tQ
 yb
 yb
 yb
@@ -2813,6 +3116,10 @@ yb
 yb
 "}
 (35,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 rt
@@ -2868,10 +3175,14 @@ yb
 yb
 "}
 (36,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 rt
-yb
+tQ
 yb
 yb
 yb
@@ -2923,6 +3234,10 @@ bW
 yb
 "}
 (37,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 rt
@@ -2932,7 +3247,7 @@ yb
 yb
 rt
 rt
-yb
+xO
 rt
 rt
 YB
@@ -2978,10 +3293,14 @@ bW
 yb
 "}
 (38,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 rt
-yb
+tQ
 yb
 yb
 yb
@@ -3033,6 +3352,10 @@ bW
 bW
 "}
 (39,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 rt
@@ -3088,6 +3411,10 @@ yb
 yb
 "}
 (40,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 rt
@@ -3143,13 +3470,17 @@ yb
 yb
 "}
 (41,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 bW
 rt
-yb
-yb
+Mr
+Oz
 rt
 bW
 bW
@@ -3198,13 +3529,17 @@ yb
 yb
 "}
 (42,1,1) = {"
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 bW
 rt
 yb
-yb
+oo
 rt
 bW
 bW
@@ -3256,6 +3591,10 @@ yb
 yb
 yb
 yb
+yb
+yb
+yb
+yb
 bW
 rt
 rt
@@ -3283,7 +3622,7 @@ aY
 RB
 VU
 eF
-eF
+AE
 OF
 OF
 OF
@@ -3308,6 +3647,10 @@ yb
 yb
 "}
 (44,1,1) = {"
+yb
+yb
+yb
+yb
 yb
 yb
 yb
@@ -3338,7 +3681,7 @@ Lp
 eF
 VU
 eF
-eF
+Vz
 OF
 OF
 OF
@@ -3363,6 +3706,10 @@ yb
 yb
 "}
 (45,1,1) = {"
+yb
+yb
+yb
+yb
 yb
 yb
 yb
@@ -3425,6 +3772,10 @@ yb
 yb
 yb
 yb
+yb
+yb
+yb
+yb
 bW
 bW
 bW
@@ -3473,6 +3824,10 @@ yb
 yb
 "}
 (47,1,1) = {"
+yb
+yb
+yb
+yb
 yb
 yb
 yb
@@ -3541,13 +3896,17 @@ yb
 yb
 yb
 yb
+yb
+yb
+yb
+yb
 bW
 bW
 bW
 eF
 OF
 OF
-eF
+AE
 eF
 eF
 eF
@@ -3621,6 +3980,10 @@ yb
 yb
 yb
 yb
+yb
+yb
+yb
+yb
 yA
 yA
 YB
@@ -3638,6 +4001,10 @@ yb
 yb
 "}
 (50,1,1) = {"
+yb
+yb
+yb
+yb
 yb
 yb
 yb
