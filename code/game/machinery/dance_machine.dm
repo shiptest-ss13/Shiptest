@@ -90,11 +90,9 @@
 		data["songs"] += list(track_data)
 	data["track_selected"] = null
 	data["track_length"] = null
-	data["track_beat"] = null
 	if(selection)
 		data["track_selected"] = selection.song_name
 		data["track_length"] = DisplayTimeText(selection.song_length)
-		data["track_beat"] = selection.song_beat_deciseconds
 	data["volume"] = volume
 	return data
 
