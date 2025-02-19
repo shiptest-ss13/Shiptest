@@ -689,7 +689,8 @@
 	set category = "Object"
 	set src = usr
 
-	var/obj/mecha/mecha = loc
+	if(ismecha(loc))
+		var/obj/mecha/mecha = loc
 		if(mecha.zoom_action)
 			mecha.zoom_action.Activate()
 			return
