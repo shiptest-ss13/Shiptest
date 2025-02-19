@@ -70,6 +70,9 @@
 
 	var/list/target_faction = list("hostile")
 
+	/// does our turret give a flying fuck about what accesses someone has?
+	var/turret_respects_id = TRUE
+
 	/// The spark system, used for generating... sparks?
 	var/datum/effect_system/spark_spread/spark_system
 
@@ -522,8 +525,9 @@
 	//We know the target must be a human now
 	var/mob/living/carbon/human/target_carbon = target_mob
 
-	if(req_ship_access && (check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id)))
-		return FALSE
+	if(turret_respects_id)
+		if(req_ship_access && (check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id)))
+			return FALSE
 
 	if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
 		return target(target_carbon)

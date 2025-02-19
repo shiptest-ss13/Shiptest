@@ -384,7 +384,7 @@
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
 	if(!internal_magazine)
-		. += "The cell retainment latch is [latch_closed ? "<span class='green'>CLOSED</span>" : "<span class='red'>OPEN</span>"]. Alt-Click on <b>help</b> intent to toggle the latch."
+		. += "The cell retainment latch is [latch_closed ? "<span class='green'>CLOSED</span>" : "<span class='red'>OPEN</span>"]. Alt-Click to toggle the latch."
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	if(ammo_type.len > 1)
 		. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
