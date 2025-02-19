@@ -2304,9 +2304,9 @@
 		if(M.IsSleeping())
 			if(M.getBruteLoss() && M.getFireLoss())
 				if(prob(50))
-					M.adjustBruteLoss(0.5)
+					M.adjustBruteLoss(-0.5)
 				else
-					M.adjustFireLoss(0.5)
+					M.adjustFireLoss(-0.5)
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-0.2)
 		else if(M.getFireLoss())
