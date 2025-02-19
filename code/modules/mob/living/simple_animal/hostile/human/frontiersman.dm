@@ -238,7 +238,7 @@
 	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured
-	neutered = TRUE
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle
 	name = "Frontiersman Commander"
