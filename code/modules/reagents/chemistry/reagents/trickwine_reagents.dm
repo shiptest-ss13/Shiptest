@@ -48,7 +48,6 @@
 
 /datum/status_effect/trickwine/on_apply()
 	owner.visible_message(span_notice("[owner] " + message_apply_others), span_notice(message_apply_self))
-	//owner.add_filter(id, 2, drop_shadow_filter(x = 0, y = -1, size = 2, color = reagent_color))
 	if(trait)
 		ADD_TRAIT(owner, trait, id)
 	if(!particle_generator)
@@ -58,7 +57,6 @@
 
 /datum/status_effect/trickwine/on_remove()
 	owner.visible_message(span_notice("[owner] " + message_remove_others), span_notice(message_remove_self))
-	//owner.remove_filter(id)
 	if(trait)
 		REMOVE_TRAIT(owner, trait, id)
 	if(particle_generator)
