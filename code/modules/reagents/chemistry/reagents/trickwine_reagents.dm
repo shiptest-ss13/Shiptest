@@ -19,6 +19,7 @@
 	alert_type = /atom/movable/screen/alert/status_effect/trickwine
 	// Try to match normal reagent tick rate based on on_mob_life
 	tick_interval = 20
+	var/obj/effect/abstract/particle_holder/particle_generator
 	// Used to make icon for status_effect
 	var/flask_icon_state
 	var/flask_icon = 'icons/obj/drinks/drinks.dmi'
@@ -44,11 +45,15 @@
 		trickwine_alert.setup(trickwine_reagent)
 		trickwine_alert.desc = alert_desc
 
+
 /datum/status_effect/trickwine/on_apply()
 	owner.visible_message(span_notice("[owner] " + message_apply_others), span_notice(message_apply_self))
 	//owner.add_filter(id, 2, drop_shadow_filter(x = 0, y = -1, size = 2, color = reagent_color))
 	if(trait)
 		ADD_TRAIT(owner, trait, id)
+	if(!particle_generator)
+		particle_generator = new(owner, /particles/trickwine_drunk, PARTICLE_ATTACH_MOB)
+		particle_generator.particles.color = reagent_color
 	return ..()
 
 /datum/status_effect/trickwine/on_remove()
@@ -56,6 +61,8 @@
 	//owner.remove_filter(id)
 	if(trait)
 		REMOVE_TRAIT(owner, trait, id)
+	if(particle_generator)
+		QDEL_NULL(particle_generator)
 
 //////////
 // BUFF //
