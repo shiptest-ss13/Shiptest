@@ -537,6 +537,7 @@
 	desc = "A robust combat helmet commonly employed by cybersun medical trauma teams, with its distinctive turquoise."
 	icon_state = "traumahelm"
 	item_state = "traumahelm"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/bulletproof/m10
 	name = "\improper M10 pattern Helmet"
