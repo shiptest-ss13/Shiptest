@@ -564,7 +564,7 @@
 			msg +=  "<B>No plant found.</B>\n"
 		msg += "Weed level: [span_notice("[weedlevel] / [MAX_TRAY_WEEDS]")]\n"
 		msg += "Pest level: [span_notice("[pestlevel] / [MAX_TRAY_PESTS]")]\n"
-		msg += "Toxicity level: [span_notice("[toxic] / [MAX_TRAY_TOXICS]")]\n"
+		msg += "Toxicity level: [span_notice("[toxic] / [MAX_TRAY_TOXINS]")]\n"
 		msg += "Water level: [span_notice("[waterlevel] / [maxwater]")]\n"
 		msg += "Nutrition level: [span_notice("[reagents.total_volume] / [maxnutri]")]\n"
 		to_chat(user, boxed_message(msg))

@@ -1,6 +1,7 @@
+/// TOOLS AND TRAY
+
 #define TRAY_NAME_UPDATE name = myseed ? "[initial(name)] ([myseed.plantname])" : initial(name)
-#define YIELD_WEED_MINIMUM 3
-#define YIELD_WEED_MAXIMUM 10
+#define STATIC_NUTRIENT_CAPACITY 10
 /// Maximum amount of toxins a tray can reach.
 #define MAX_TRAY_TOXINS 100
 /// Maxumum pests a tray can reach.
@@ -21,6 +22,8 @@
 
 //Floral Somoray
 #define REVOLUTION_CHARGE 10000 // Default flora cell
+
+/// PLANTS
 
 //Seed flags.
 #define MUTATE_EARLY (1<<0)
