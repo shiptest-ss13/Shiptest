@@ -215,6 +215,11 @@
 "cf" = (
 /obj/machinery/light/directional/east,
 /obj/machinery/photocopier,
+/obj/machinery/button/door{
+	pixel_y = 22;
+	id = "sg_par_psych";
+	pixel_x = -10
+	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
 "cg" = (
@@ -677,12 +682,6 @@
 	color = "#332521"
 	},
 /obj/structure/table/wood,
-/obj/machinery/button/door{
-	dir = 4;
-	id = "sg_par_sonnen";
-	name = "shutter control";
-	pixel_x = -20
-	},
 /obj/item/folder/solgov{
 	pixel_x = -6;
 	pixel_y = -1
@@ -962,7 +961,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/security{
-	req_access_txt = "2"
+	req_access_txt = "2";
+	name = "Armory"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -2188,14 +2188,6 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
-"uD" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "sg_par_sonnen"
-	},
-/turf/open/floor/plating,
-/area/ship/security/armory)
 "uJ" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
@@ -6369,7 +6361,7 @@ iW
 mT
 NE
 gK
-uD
+Td
 wI
 "}
 (24,1,1) = {"
@@ -6401,7 +6393,7 @@ IP
 kU
 Mg
 fg
-uD
+Td
 wI
 "}
 (25,1,1) = {"
