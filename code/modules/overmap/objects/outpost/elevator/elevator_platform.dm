@@ -30,25 +30,25 @@
 	icon = 'icons/turf/floors/tiles.dmi'
 	icon_state = "tiled_gray"
 	base_icon_state = "tiled_gray"
-	smoothing_flags = null
-	smoothing_groups = null
-	canSmoothWith = null
+	smoothing_flags = false
+	smoothing_groups = false
+	canSmoothWith = false
 
 /obj/structure/elevator_platform/tile/tech
 	icon = 'icons/turf/floors/techfloor.dmi'
 	icon_state = "techfloor"
 	base_icon_state = "techfloor"
-	smoothing_flags = null
-	smoothing_groups = null
-	canSmoothWith = null
+	smoothing_flags = false
+	smoothing_groups = false
+	canSmoothWith = false
 
 /obj/structure/elevator_platform/tile/dark
 	icon = 'icons/turf/floors/tiles.dmi'
 	icon_state = "tiled_dark"
 	base_icon_state = "tiled_dark"
-	smoothing_flags = null
-	smoothing_groups = null
-	canSmoothWith = null
+	smoothing_flags = false
+	smoothing_groups = false
+	canSmoothWith = false
 
 /obj/structure/elevator_platform/Initialize(mapload)
 	. = ..()
@@ -126,7 +126,7 @@
 	// checks in AddItemOnPlat / RemoveItemOnPlat ensure no duplicates are added to lift_load
 	forceMove(destination)
 	for(var/atom/movable/thing as anything in things2move)
-		if(QDELETED(thing)) // if we let nulls stick around they fuck EVERYTHING
+		if(QDELETED(thing)) // if we let falses stick around they fuck EVERYTHING
 			lift_load -= thing
 			continue
 		thing.forceMove(destination)
