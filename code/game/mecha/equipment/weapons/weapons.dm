@@ -25,7 +25,7 @@
 		return FALSE
 	if(istype(M, /obj/mecha/combat))
 		return TRUE
-	if((locate(/obj/item/mecha_parts/concealed_weapon_bay) in M.contents) && !(locate(/obj/item/mecha_parts/mecha_equipment/weapon) in M.equipment))
+	if((locate(/obj/item/mecha_parts/weapon_bay) in M.contents) && !(locate(/obj/item/mecha_parts/mecha_equipment/weapon) in M.equipment))
 		return TRUE
 	return FALSE
 
