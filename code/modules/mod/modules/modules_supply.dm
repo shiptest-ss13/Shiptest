@@ -198,11 +198,11 @@
 /obj/item/mod/module/plasma_engine/on_activation()
 	. = ..()
 	RegisterSignal(mod, COMSIG_PARENT_ATTACKBY, PROC_REF(on_attackby))
-	balloon_alert(mod.wearer, "Engine Online, insert plasma into core unit.")
+	balloon_alert(mod.wearer, "engine Online, insert plasma into core unit.")
 
 /obj/item/mod/module/plasma_engine/on_deactivation(display_message, deleting)
 	UnregisterSignal(mod, COMSIG_PARENT_ATTACKBY)
-	balloon_alert(mod.wearer, "Engine Offline")
+	balloon_alert(mod.wearer, "engine Offline")
 	return ..()
 
 /obj/item/mod/module/plasma_engine/proc/on_attackby(datum/source, obj/item/attacking_item, mob/user)
