@@ -238,3 +238,12 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured
 	neutered = TRUE
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle
+	name = "Frontiersman Commander"
+	desc = "This Frontiersman sways through the world with a deliberate cadence. Their eyes stay up as they search for a target, rubbing at the bolt of their rifle."
+	casingtype = /obj/item/ammo_casing/a8_50r/match
+	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
+	r_hand = /obj/item/gun/ballistic/rifle/illestren
+	rapid = 2
+	rapid_fire_delay = 10
