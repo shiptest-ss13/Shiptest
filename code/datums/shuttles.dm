@@ -417,11 +417,6 @@
 	name = "Skink-class Cargo Runner"
 	prefix = "NTSV"
 
-/datum/map_template/shuttle/subshuttles/bambulance
-	file_name = "cybersun_bambulance"
-	name = "Gauze-class Ambulance Pod"
-	prefix = "CSSV"
-
 /datum/map_template/shuttle/subshuttles/limnos
 	file_name = "independent_limnos"
 	name = "Limnos-Class Budget Shuttle"
