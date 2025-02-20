@@ -4,9 +4,9 @@
 	id = SPECIES_VOX
 	default_color = "6060FF"
 	species_age_max = 280
-	species_traits = list(EYECOLOR)
-	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
-	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", "body_size" = "Normal")
+	species_traits = list(EYECOLOR, MUTCOLORS, MUTCOLORS_SECONDARY)
+	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills", "vox_chitin")
+	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", "vox_chitin" = "Plain", "body_size" = "Normal")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = GRAIN
 	liked_food = MEAT
@@ -16,7 +16,7 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	species_clothing_path = 'icons/mob/clothing/species/vox.dmi'
-	species_eye_path = 'icons/mob/species/vox/vox_parts.dmi'
+	species_eye_path = 'icons/mob/species/vox/vox_eyes.dmi'
 	punchdamagelow = 6
 	punchdamagehigh = 12
 	mutanttongue = /obj/item/organ/tongue/vox

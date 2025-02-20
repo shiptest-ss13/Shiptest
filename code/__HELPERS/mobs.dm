@@ -88,6 +88,8 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_head_quills, GLOB.vox_head_quills_list)
 	if(!GLOB.vox_neck_quills_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
+	if(!GLOB.vox_chitin_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_chitin, GLOB.vox_chitin_list)
 	if(!GLOB.elzu_horns_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/elzu_horns, GLOB.elzu_horns_list)
 	if(!GLOB.tails_list_elzu.len)
@@ -127,6 +129,7 @@
 		"tail_elzu" = pick(GLOB.tails_list_elzu),
 		"vox_head_quills" = pick(GLOB.vox_head_quills_list),
 		"vox_neck_quills" = pick(GLOB.vox_neck_quills_list),
+		"vox_chitin" = pick(GLOB.vox_chitin_list),
 		"wings" = "None",
 	)
 

@@ -882,6 +882,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["vox_neck_quills"] || H.dna.features["vox_neck_quills"] == "None")
 			bodyparts_to_add -= "vox_neck_quills"
 
+	if("vox_chitin" in mutant_bodyparts)
+		if(!H.dna.features["vox_chitin"] || H.dna.features["vox_chitin"] == "Plain")
+			bodyparts_to_add -= "vox_chitin"
+
 	////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE
 
 	///Digi handling
@@ -978,6 +982,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.vox_head_quills_list[H.dna.features["vox_head_quills"]]
 				if("vox_neck_quills")
 					S = GLOB.vox_neck_quills_list[H.dna.features["vox_neck_quills"]]
+				if("vox_chitin")
+					S = GLOB.vox_chitin_list[H.dna.features["vox_chitin"]]
 				if("elzu_horns")
 					S = GLOB.elzu_horns_list[H.dna.features["elzu_horns"]]
 				if("tail_elzu")

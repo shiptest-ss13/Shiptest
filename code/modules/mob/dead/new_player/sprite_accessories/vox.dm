@@ -4,7 +4,7 @@
 
 /datum/sprite_accessory/vox_head_quills
 	icon = 'icons/mob/species/vox/vox_quills.dmi'
-	color_src = null
+	color_src = MUTCOLORS_SECONDARY
 
 /datum/sprite_accessory/vox_head_quills/none
 	name = "None"
@@ -77,7 +77,7 @@
 
 /datum/sprite_accessory/vox_neck_quills
 	icon = 'icons/mob/species/vox/vox_quills.dmi'
-	color_src = null
+	color_src = MUTCOLORS_SECONDARY
 
 /datum/sprite_accessory/vox_neck_quills/none
 	name = "None"
@@ -109,3 +109,13 @@
 /datum/sprite_accessory/vox_neck_quills/ruffhawk
 	name = "Ruffhawk"
 	icon_state = "ruffhawk"
+
+//Start chitin
+
+/datum/sprite_accessory/vox_chitin
+	icon = 'icons/mob/species/vox/vox_chitin.dmi'
+	color_src = MUTCOLORS_SECONDARY
+
+/datum/sprite_accessory/vox_chitin/plain
+	name = "Plain"
+	icon_state = "plain"

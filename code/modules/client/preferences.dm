@@ -120,6 +120,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"kepori_tail_feathers" = "None",
 							"vox_head_quills" = "Plain",
 							"vox_neck_quills" = "Plain",
+							"vox_chitin" = "Plain",
 							"elzu_horns" = "None",
 							"elzu_tail" = "None",
 							"flavor_text" = "",
@@ -781,8 +782,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<h3>Vox Head Quills</h3>"
 				dat += "<a href='?_src_=prefs;preference=vox_head_quills;task=input'>[features["vox_head_quills"]]</a><BR>"
-				//dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
-				//dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIR_COLOR]'>[(randomise[RANDOM_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Change</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -795,13 +795,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<h3>Vox Neck Quills</h3>"
 				dat += "<a href='?_src_=prefs;preference=vox_neck_quills;task=input'>[features["vox_neck_quills"]]</a><BR>"
-				//dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
-				//dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Change</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
+			if("vox_chitin" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Vox Chitin</h3>"
+				dat += "<a href='?_src_=prefs;preference=vox_chitin;task=input'>[features["vox_chitin"]]</a><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Change</a><BR>"
 
 			if("tail_human" in pref_species.default_features)
 				if(!mutant_category)
@@ -2029,15 +2036,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("vox_head_quills")
 					var/new_vox_head_quills
-					new_vox_head_quills = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.vox_head_quills_list
+					new_vox_head_quills = input(user, "Choose your character's head quills:", "Character Preference") as null|anything in GLOB.vox_head_quills_list
 					if (new_vox_head_quills)
 						features["vox_head_quills"] = new_vox_head_quills
 
 				if("vox_neck_quills")
 					var/new_vox_neck_quills
-					new_vox_neck_quills = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.vox_neck_quills_list
+					new_vox_neck_quills = input(user, "Choose your character's neck quills:", "Character Preference") as null|anything in GLOB.vox_neck_quills_list
 					if (new_vox_neck_quills)
 						features["vox_neck_quills"] = new_vox_neck_quills
+
+				if("vox_chitin")
+					var/new_vox_chitin
+					new_vox_chitin = input(user, "Choose your character's chitin:", "Character Preference") as null|anything in GLOB.vox_chitin_list
+					if (new_vox_chitin)
+						features["vox_chitin"] = new_vox_chitin
 
 				if("elzu_horns")
 					var/new_elzu_horns
