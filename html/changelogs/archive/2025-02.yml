@@ -129,3 +129,80 @@
   generalthrax:
   - rscadd: Bathroom locks to most ship private bathrooms
   - rscdel: Vaquero no longer requires a bathroom pass
+2025-02-15:
+  Erikafox:
+  - code_imp: neutered var on .../hostile/human removed in favor of weapon_drop_chance
+  - balance: default chance of a simple human dropping their gun is now 30%
+  - code_imp: repathed indie sec, indie mining, inteq plain hardsuits
+  Gristlebee:
+  - rscadd: Hognose, alof, underbarrel energy cannon
+  - rscadd: Underbarrel guns come in cases.
+  - rscadd: Secondary actions and hotkey.
+  - rscadd: Muzzle slot for eguns
+  - balance: Pistols can no longer take underbarrel guns.
+  - balance: Underbarrel shotgun holds two rounds, price increased to 1200
+  - bugfix: Fixes being unable to load underbarrel guns while gun bolts were closed.
+  - bugfix: slings being funky
+  - spellcheck: typos
+  - code_imp: new attachment lists, weapon_class_attachments, unique_attachments,
+      refused_attachments
+  - rscadd: You can use the unique action key to activate mech abilities.
+  firebudgy:
+  - rscadd: Pouches! Now purchasable in the outpost and attachable to your pockets.
+  generalthrax:
+  - bugfix: Nanotrasen, Vigilitas, and N+S sprites should work for sarathi again
+  - rscadd: You can now dry seaweed into seaweed sheets
+  - rscadd: Sushi now takes seaweed sheets
+  - rscadd: Soy sauce added to the condiments crate
+2025-02-16:
+  Cloudbreak, FalloutFalcon:
+  - rscadd: Demolitions charges to Cargo
+  - balance: Safes only take one C-4 charge to explode
+  Gristlebee:
+  - bugfix: Attachments should no longer block interaction with energy gun latches
+      when they shouldnt.
+  Ratvarr:
+  - bugfix: Chat Clients now can be used for secure communication which cannot be
+      breached by players using one button.
+  - bugfix: Chat Clients no longer get messages from people with the wrong password.
+  - bugfix: The Haboob got it's airlocks named.
+  Sadhorizon:
+  - rscadd: The mudskipper now gets a wardrobe.
+  firebudgy:
+  - bugfix: Cargo listing for the SSG-669
+2025-02-17:
+  Erikafox:
+  - balance: you should get hit in the chest a lot more now. at a distance.
+2025-02-18:
+  Erikafox:
+  - bugfix: tesla lab and bombed airbase now avoid checking to see if you're some
+      sort of security-head before firing.
+  SomeguyManperson:
+  - tweak: mixing dimorlin now requires half the required reagents, meaning the same
+      amount makes twice as much
+  firebudgy:
+  - balance: Ancient goliaths are slightly rarer on C2 and C3 drills.
+  - bugfix: Ancient goliaths no longer turn into regular goliaths.
+  - rscdel: Removes the Delta
+  generalthrax:
+  - balance: Waste Mechbay 501p (Gygax) replaced with 515 EX (Dark Gygax)
+2025-02-19:
+  Gristlebee:
+  - balance: Baseline 515EXs dont spawn with bluespace cells.
+2025-02-20:
+  Erikafox:
+  - rscadd: Cirrus-Class Medical Carrack. Yet another attempt by Cybersun to excel
+      in a market frankly no one cares about. God they do that a lot.
+  - rscdel: Li-Tieguai
+  - rscadd: The Vela-Class industrial cruiser is BACK and WORSE THAN EVER
+  - rscadd: Ramzi Clique Mobs now use dynamic human icon gen
+  - balance: guerilla gloves are now insulated like their description says they are.
+      it's not perfect.
+  Sadhorizon:
+  - code_imp: Replaced the CMGSV prefix with CLSV.
+  - bugfix: Some sofa sprites are no longer backwards.
+  firebudgy:
+  - balance: Rattlesnake added to the Vaquero and Talos, Mastiff added to the Colossus.
+  - rscadd: Pinschers to all Vanguards.
+  ritorizo:
+  - bugfix: Melatonin being harmfull in some edge case.
