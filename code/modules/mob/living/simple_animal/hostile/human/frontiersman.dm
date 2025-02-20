@@ -44,6 +44,24 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/neutered
 	weapon_drop_chance = 0
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/pounder
+	name = "Frontiersman Slammer"
+	desc = "A member of the brutal Frontiersman terrorist fleet! This one gingerly stares forward, eager to pull the trigger on their antiquidated SMG."
+	icon_state = "frontiersmanranged"
+	retreat_distance = 3
+	minimum_distance = 2
+	rapid = 10
+	rapid_fire_delay = 1
+	projectilesound = 'sound/weapons/gun/smg/pounder.ogg'
+	casingtype = /obj/item/ammo_casing/c22lr
+	r_hand = /obj/item/gun/ballistic/automatic/smg/pounder
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/pounder/internals
+	icon_state = "frontiersmanranged_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon
 	name = "Frontiersman Sawbones"
 	desc = "A member of the brutal Frontiersman terrorist fleet! They appear to be a \"doctor\" of some sort, nervously swinging about some kind of makeshift syringe launcher."

@@ -1,8 +1,18 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ac" = (
+/obj/structure/rack,
+/obj/item/mop{
+	name = "concrete brush";
+	desc = "You're fairly certain this is just a mop."
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "ah" = (
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/concrete/slab_1,
 /area/space)
 "ao" = (
@@ -22,6 +32,26 @@
 /obj/effect/turf_decal/road,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
+"aC" = (
+/obj/structure/cable{
+	icon_state = "5-6"
+	},
+/obj/structure/cable{
+	icon_state = "9-10"
+	},
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/space)
 "aE" = (
 /obj/structure/fence{
 	dir = 4
@@ -32,18 +62,11 @@
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/space)
-"aW" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/obj/structure/catwalk/over,
-/obj/machinery/door/window/southleft{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/open/floor/plating,
+"aR" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
 /area/space)
 "aY" = (
 /obj/structure/cable{
@@ -51,20 +74,46 @@
 	},
 /turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/space)
-"bC" = (
-/obj/structure/cable{
-	icon_state = "1-9"
+"ba" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "4-5"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 10
 	},
-/obj/effect/turf_decal/siding/wood{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_2,
 /area/space)
+"bu" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "guy";
+	pixel_y = 18;
+	pixel_x = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
 "bW" = (
 /turf/closed/mineral/random/beach,
+/area/space)
+"bY" = (
+/obj/structure/rack,
+/obj/item/reagent_containers/glass/bucket{
+	pixel_y = 12;
+	pixel_x = 9
+	},
+/obj/item/reagent_containers/glass/bucket{
+	pixel_y = 6;
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/glass/bucket{
+	pixel_y = -2;
+	pixel_x = 9
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
 /area/space)
 "cb" = (
 /obj/effect/turf_decal/solarpanel,
@@ -74,26 +123,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
-"cd" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
+"cu" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	dir = 8;
+	pixel_x = -5;
+	pixel_y = 3
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
+/obj/item/radio/intercom/table{
+	dir = 8;
+	pixel_x = -5;
+	pixel_y = -10
 	},
-/turf/open/floor/concrete/slab_4,
-/area/space)
-"ci" = (
-/obj/machinery/shower{
-	dir = 4
-	},
-/obj/structure/catwalk/over,
-/obj/machinery/door/window/southleft{
-	dir = 4
-	},
-/obj/structure/window/reinforced,
-/turf/open/floor/plating,
+/turf/open/floor/wood,
 /area/space)
 "cx" = (
 /obj/structure/cable{
@@ -101,19 +143,34 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
-"cC" = (
-/obj/structure/chair/office,
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
+"cE" = (
+/obj/structure/closet/crate/secure/weapon{
+	name = "ammo crate"
 	},
-/turf/open/floor/carpet,
+/obj/item/ammo_box/magazine/skm_762_40/empty{
+	pixel_x = 4
+	},
+/obj/item/ammo_box/magazine/skm_762_40/empty{
+	pixel_x = -7
+	},
+/turf/open/floor/concrete/slab_1,
 /area/space)
-"cN" = (
-/obj/structure/rack,
-/obj/item/storage/bottles/moonshine{
-	pixel_y = 4
+"cO" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
-/turf/open/floor/concrete/reinforced,
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
 /area/space)
 "cS" = (
 /obj/structure/cable{
@@ -121,11 +178,15 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
-"cT" = (
-/obj/structure/cable{
-	icon_state = "5-6"
+"cV" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
-/turf/open/floor/plating/dirt/beach/lit,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_2,
 /area/space)
 "db" = (
 /obj/structure/fence{
@@ -147,33 +208,31 @@
 /obj/structure/closet/cabinet,
 /turf/open/floor/wood,
 /area/space)
-"dY" = (
-/obj/effect/turf_decal/road{
-	dir = 1
+"ex" = (
+/obj/structure/cable{
+	icon_state = "5-9"
 	},
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor3"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"em" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/turf/open/floor/carpet,
-/area/space)
-"eB" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/glass/concrete_bag{
-	pixel_x = -6
-	},
-/obj/item/reagent_containers/glass/concrete_bag{
-	pixel_x = 7
-	},
-/turf/open/floor/concrete/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
 /area/space)
 "eF" = (
 /turf/open/floor/plating/asteroid/sand/lit,
+/area/space)
+"eR" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/door/airlock/hatch,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"eS" = (
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
 /area/space)
 "fa" = (
 /obj/structure/fence,
@@ -189,13 +248,37 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/dirt/beach/lit,
 /area/space)
-"gd" = (
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "guy";
-	pixel_y = 18;
-	pixel_x = 1
+"fr" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
-/turf/open/floor/concrete/slab_1,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet,
+/area/space)
+"ft" = (
+/obj/structure/chair/office,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet,
+/area/space)
+"fQ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"ge" = (
+/obj/structure/table,
+/obj/item/melee/knife/pizza_cutter{
+	pixel_y = 6
+	},
+/turf/open/floor/plating/dirt/beach,
 /area/space)
 "gi" = (
 /obj/effect/turf_decal/siding/wood{
@@ -203,6 +286,21 @@
 	},
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/carpet,
+/area/space)
+"gl" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
 /area/space)
 "gu" = (
 /obj/structure/cable{
@@ -219,16 +317,6 @@
 	},
 /turf/open/floor/plating/dirt/beach/lit,
 /area/space)
-"gK" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/obj/structure/cable{
-	icon_state = "0-10"
-	},
-/turf/open/floor/wood,
-/area/space)
 "hf" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -237,6 +325,23 @@
 	icon_state = "5-10"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"hg" = (
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/confetti,
+/obj/effect/decal/cleanable/generic,
+/obj/structure/sign/poster/official/no_erp{
+	pixel_x = 29
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_y = -5;
+	pixel_x = -8
+	},
+/turf/open/floor/concrete/slab_1,
 /area/space)
 "ht" = (
 /obj/item/pickaxe/improvised{
@@ -254,54 +359,53 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
-"hD" = (
-/obj/structure/chair/office,
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 4
-	},
-/turf/open/floor/carpet,
-/area/space)
 "hN" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
 /turf/open/floor/concrete/slab_1,
 /area/space)
-"hO" = (
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/turf/open/floor/wood,
-/area/space)
-"hT" = (
-/obj/structure/rack,
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"id" = (
+"hR" = (
 /obj/structure/cable{
 	icon_state = "5-6"
 	},
-/obj/structure/cable{
-	icon_state = "9-10"
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"hT" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/storage/box/ammo/a762_40{
+	pixel_y = 7
 	},
-/obj/structure/cable{
-	icon_state = "6-10"
+/obj/item/storage/box/ammo/a762_40{
+	pixel_y = -5
 	},
-/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"ig" = (
+/obj/structure/cable{
+	icon_state = "8-10"
+	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 1
+	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/concrete/slab_2,
 /area/space)
 "ii" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
 /turf/open/floor/concrete/slab_1,
 /area/space)
-"iC" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
+"im" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"it" = (
+/obj/structure/cable{
+	icon_state = "1-9"
 	},
-/turf/open/floor/concrete/slab_2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/wood,
 /area/space)
 "iI" = (
 /turf/open/floor/concrete/pavement/beachplanet,
@@ -338,6 +442,22 @@
 	},
 /turf/open/floor/plating/dirt/beach/lit,
 /area/space)
+"iZ" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"jP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/wood,
+/area/space)
 "jT" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
@@ -351,11 +471,11 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
-"kf" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/guncloset{
-	pixel_y = 5
+"ki" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/space)
 "kp" = (
@@ -367,12 +487,37 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
-"kC" = (
+"kr" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"kF" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/concrete/slab_1,
+/area/space)
+"kH" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/carpet,
+/area/space)
+"kI" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
 "kJ" = (
 /turf/open/floor/plating/grass/beach,
@@ -383,12 +528,6 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
-	},
-/turf/open/floor/wood,
-/area/space)
-"li" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
 	},
 /turf/open/floor/wood,
 /area/space)
@@ -403,1396 +542,7 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
-"ly" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"lF" = (
-/obj/structure/bed/double{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood,
-/obj/item/bedsheet/double/brown{
-	dir = 1
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/space)
-"lL" = (
-/obj/effect/turf_decal/road,
-/obj/structure/cable{
-	icon_state = "4-6"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"lR" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"mj" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"mn" = (
-/turf/open/floor/plating/dirt/beach,
-/area/space)
-"mA" = (
-/obj/structure/cable{
-	icon_state = "4-5"
-	},
-/obj/structure/cable{
-	icon_state = "5-6"
-	},
-/turf/open/floor/wood,
-/area/space)
-"mN" = (
-/obj/structure/cable{
-	icon_state = "9-10"
-	},
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"nn" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/paper_bin{
-	pixel_x = -4;
-	pixel_y = 8
-	},
-/turf/open/floor/wood,
-/area/space)
-"no" = (
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"nu" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"nD" = (
-/obj/structure/closet/cabinet,
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "heart";
-	pixel_y = -24;
-	pixel_x = 6
-	},
-/turf/open/floor/wood,
-/area/space)
-"nT" = (
-/obj/structure/table/wood,
-/turf/open/floor/carpet,
-/area/space)
-"nZ" = (
-/obj/structure/cable{
-	icon_state = "6-10"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"oa" = (
-/obj/effect/turf_decal/steeldecal/steel_decals6{
-	dir = 6
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals6{
-	dir = 5
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"oh" = (
-/obj/structure/reagent_dispensers/watertank/high,
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"ok" = (
-/obj/structure/table/wood/reinforced,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/item/documents/frontier/logistics,
-/obj/structure/sign/poster/contraband/eoehoma{
-	pixel_x = -32
-	},
-/turf/open/floor/carpet,
-/area/space)
-"oo" = (
-/obj/structure/toilet{
-	dir = 8;
-	pixel_x = 6
-	},
-/obj/effect/decal/cleanable/vomit{
-	pixel_x = 6
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"ot" = (
-/obj/structure/crate_shelf,
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"oI" = (
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
-"oJ" = (
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/space)
-"pG" = (
-/obj/structure/table/wood/reinforced,
-/turf/open/floor/wood,
-/area/space)
-"pI" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"pN" = (
-/turf/open/floor/carpet,
-/area/space)
-"pS" = (
-/obj/effect/turf_decal/road/stripes{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"qv" = (
-/obj/structure/cable{
-	icon_state = "1-9"
-	},
-/turf/open/floor/wood,
-/area/space)
-"qy" = (
-/obj/effect/turf_decal/road,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"qF" = (
-/obj/item/paper/crumpled{
-	pixel_x = -14;
-	default_raw_text = "Stop asking about the rats. I'm not hiding rats. I don't have rats. I don't know why you fuckers are OBSESSED with rats. Just. Stop.";
-	name = "re: Rats"
-	},
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"qI" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"qJ" = (
-/obj/structure/rack,
-/obj/item/storage/box/ammo/a8_50r{
-	pixel_y = 0
-	},
-/obj/item/storage/box/ammo/a8_50r{
-	pixel_y = 9
-	},
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"qY" = (
-/obj/effect/turf_decal/road,
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"rc" = (
-/obj/structure/cable{
-	icon_state = "5-9"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"rf" = (
-/obj/effect/turf_decal/industrial/warning/full,
-/turf/open/floor/concrete,
-/area/space)
-"rg" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/radio/intercom/wideband/table{
-	dir = 8;
-	pixel_x = -5;
-	pixel_y = 3
-	},
-/turf/open/floor/wood,
-/area/space)
-"ro" = (
-/obj/effect/spawner/bunk_bed,
-/turf/open/floor/wood,
-/area/space)
-"rt" = (
-/turf/closed/wall/concrete,
-/area/space)
-"rx" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"rH" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "8-9"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"rI" = (
-/obj/item/towel{
-	pixel_x = -6;
-	pixel_y = 10
-	},
-/obj/item/towel{
-	pixel_x = 6;
-	pixel_y = 10
-	},
-/obj/item/towel{
-	pixel_x = -6
-	},
-/obj/item/towel{
-	pixel_x = 5
-	},
-/obj/structure/rack,
-/obj/item/soap{
-	pixel_y = 7;
-	pixel_x = -1
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"sf" = (
-/obj/structure/cable{
-	icon_state = "4-5"
-	},
-/obj/structure/cable{
-	icon_state = "8-9"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"sg" = (
-/obj/structure/closet/cabinet,
-/obj/structure/cable{
-	icon_state = "8-10"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/wood,
-/area/space)
-"sj" = (
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"tH" = (
-/obj/structure/cable{
-	icon_state = "5-9"
-	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken6"
-	},
-/area/space)
-"tK" = (
-/obj/effect/spawner/bunk_bed,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/wood,
-/area/space)
-"tO" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"tQ" = (
-/obj/effect/spawner/bunk_bed,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/wood,
-/area/space)
-"tS" = (
-/obj/structure/rack,
-/obj/item/shovel/spoon,
-/obj/item/shovel{
-	pixel_y = 8;
-	pixel_x = 1
-	},
-/obj/item/shovel{
-	pixel_y = -3;
-	pixel_x = 9
-	},
-/obj/item/shovel{
-	pixel_y = 0;
-	pixel_x = 1
-	},
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"tW" = (
-/obj/effect/turf_decal/road,
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle,
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"tZ" = (
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor7"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"ug" = (
-/obj/structure/rack,
-/obj/item/ammo_box/magazine/illestren_a850r/empty{
-	pixel_y = 10;
-	pixel_x = -6
-	},
-/obj/item/ammo_box/magazine/illestren_a850r/empty{
-	pixel_y = 10;
-	pixel_x = 2
-	},
-/obj/item/ammo_box/magazine/illestren_a850r/empty{
-	pixel_y = 10;
-	pixel_x = 10
-	},
-/obj/item/ammo_box/magazine/illestren_a850r/empty{
-	pixel_y = -5;
-	pixel_x = -6
-	},
-/obj/item/ammo_box/magazine/illestren_a850r/empty{
-	pixel_y = -5;
-	pixel_x = 2
-	},
-/obj/item/ammo_box/magazine/illestren_a850r/empty{
-	pixel_y = -5;
-	pixel_x = 10
-	},
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"uz" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/turf/open/floor/concrete,
-/area/space)
-"uF" = (
-/turf/open/floor/wood{
-	icon_state = "wood-broken"
-	},
-/area/space)
-"vc" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"vT" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"vY" = (
-/obj/structure/cable{
-	icon_state = "8-9"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"vZ" = (
-/obj/structure/cable{
-	icon_state = "2-10"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"wA" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"wE" = (
-/obj/structure/cable{
-	icon_state = "4-6"
-	},
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"wU" = (
-/obj/structure/fluff/beach_umbrella{
-	pixel_x = 7;
-	pixel_y = -18
-	},
-/turf/open/floor/plating/dirt/beach,
-/area/space)
-"wX" = (
-/obj/structure/chair/comfy/olive/old/directional/north,
-/turf/open/floor/carpet,
-/area/space)
-"wZ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"xf" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
-	environment_smash = 0;
-	wander = 0
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"xn" = (
-/obj/effect/turf_decal/road,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"xo" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/concrete/slab_4,
-/area/space)
-"xO" = (
-/obj/effect/turf_decal/road,
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"yb" = (
-/turf/open/space/basic,
-/area/space)
-"yl" = (
-/obj/structure/chair/comfy/olive/old/directional/north,
-/turf/open/floor/wood,
-/area/space)
-"yA" = (
-/turf/open/floor/plating/grass/beach/lit,
-/area/space)
-"yD" = (
-/obj/structure/chair/sofa/olive/old/directional/north,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/turf/open/floor/carpet,
-/area/space)
-"yJ" = (
-/obj/structure/chair/sofa/olive/old/left/directional/north,
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/turf/open/floor/carpet,
-/area/space)
-"yM" = (
-/obj/structure/rack,
-/obj/item/key,
-/turf/open/floor/concrete/pavement/beachplanet,
-/area/space)
-"za" = (
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"zj" = (
-/obj/machinery/shower{
-	dir = 4
-	},
-/obj/structure/catwalk/over,
-/obj/machinery/door/window/southleft{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/vomit,
-/turf/open/floor/plating,
-/area/space)
-"zB" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"zD" = (
-/obj/effect/turf_decal/road,
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"zL" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "9-10"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Ad" = (
-/obj/structure/table/wood/reinforced,
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/item/radio/intercom/wideband/table{
-	dir = 1;
-	pixel_y = 3;
-	pixel_x = -4
-	},
-/turf/open/floor/carpet,
-/area/space)
-"AA" = (
-/obj/structure/cable{
-	icon_state = "5-6"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"AC" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-6"
-	},
-/turf/open/floor/plating/asteroid/sand/dense/lit,
-/area/space)
-"AE" = (
-/mob/living/simple_animal/crab,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
-"AH" = (
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"AJ" = (
-/obj/effect/turf_decal/road/slow{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Ba" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"Bm" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/glass/bucket{
-	pixel_y = 12;
-	pixel_x = 9
-	},
-/obj/item/reagent_containers/glass/bucket{
-	pixel_y = 6;
-	pixel_x = -4
-	},
-/obj/item/reagent_containers/glass/bucket{
-	pixel_y = -2;
-	pixel_x = 9
-	},
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"Br" = (
-/obj/structure/table/wood/reinforced,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/turf/open/floor/carpet,
-/area/space)
-"Bv" = (
-/obj/structure/table,
-/obj/item/paper_bin{
-	pixel_y = 4;
-	pixel_x = -6
-	},
-/obj/item/pen{
-	pixel_y = 6;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
-	pixel_y = -4
-	},
-/obj/item/paper/crumpled{
-	pixel_x = 5;
-	pixel_y = 0
-	},
-/obj/item/paper/crumpled{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"BA" = (
-/obj/structure/cable{
-	icon_state = "4-5"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"BC" = (
-/turf/open/floor/wood,
-/area/space)
-"BK" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"BN" = (
-/obj/structure/guncloset,
-/obj/item/gun/ballistic/rifle/illestren/factory,
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"BQ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/turf/open/floor/carpet,
-/area/space)
-"Ce" = (
-/obj/structure/cable{
-	icon_state = "2-10"
-	},
-/obj/structure/cable{
-	icon_state = "2-6"
-	},
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"Cl" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4
-	},
-/obj/structure/curtain/cloth/fancy{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"Cq" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/taperecorder{
-	pixel_x = -11;
-	pixel_y = 3
-	},
-/obj/item/tape/random{
-	pixel_x = 5;
-	pixel_y = -3
-	},
-/obj/item/tape/random{
-	pixel_x = 5;
-	pixel_y = 7
-	},
-/turf/open/floor/wood,
-/area/space)
-"Cw" = (
-/obj/structure/table/wood/reinforced,
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 8
-	},
-/turf/open/floor/carpet,
-/area/space)
-"CC" = (
-/obj/structure/cable{
-	icon_state = "6-10"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"CF" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/concrete/slab_4,
-/area/space)
-"CI" = (
-/obj/structure/toilet{
-	dir = 8;
-	pixel_x = 6
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"CJ" = (
-/obj/item/reagent_containers/food/snacks/deadmouse{
-	pixel_x = 5;
-	pixel_y = 9
-	},
-/obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/confetti,
-/obj/effect/decal/cleanable/generic,
-/obj/structure/sign/poster/official/no_erp{
-	pixel_x = 29
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"Dc" = (
-/obj/structure/cable{
-	icon_state = "5-6"
-	},
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"Do" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"DC" = (
-/turf/open/floor/plasteel,
-/area/space)
-"DP" = (
-/obj/machinery/door/airlock/hatch,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"Em" = (
-/obj/structure/cable{
-	icon_state = "1-9"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Et" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "6-10"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"EP" = (
-/obj/structure/cable{
-	icon_state = "4-5"
-	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/neutured,
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"Fq" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "6-9"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Ft" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle{
-	wander = 0;
-	environment_smash = 0
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Fu" = (
-/obj/structure/rack,
-/obj/item/storage/box/ammo/a8_50r/trac{
-	pixel_y = 1
-	},
-/obj/item/storage/box/ammo/a8_50r/trac{
-	pixel_y = 9
-	},
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"Fz" = (
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"FW" = (
-/obj/structure/cable{
-	icon_state = "5-9"
-	},
-/turf/open/floor/wood,
-/area/space)
-"Gc" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Ge" = (
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"GG" = (
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"GT" = (
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Hh" = (
-/obj/structure/guncloset{
-	pixel_y = 5
-	},
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/concrete/slab_4,
-/area/space)
-"HB" = (
-/obj/effect/turf_decal/road,
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"HK" = (
-/obj/effect/turf_decal/road,
-/obj/structure/cable{
-	icon_state = "5-6"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"HQ" = (
-/turf/open/floor/concrete,
-/area/space)
-"Ia" = (
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/turf/open/floor/plating/grass/beach/lit,
-/area/space)
-"Il" = (
-/obj/structure/cable{
-	icon_state = "6-10"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"ID" = (
-/obj/structure/rack,
-/obj/item/mop{
-	name = "concrete brush";
-	desc = "You're fairly certain this is just a mop."
-	},
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"Ja" = (
-/obj/item/toy/beach_ball,
-/turf/open/floor/plating/grass/beach/lit,
-/area/space)
-"Jd" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "8-10"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Jf" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"Jk" = (
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/obj/structure/cable{
-	icon_state = "2-6"
-	},
-/turf/open/floor/plating/grass/beach/lit,
-/area/space)
-"Jl" = (
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"Jp" = (
-/obj/structure/chair/plastic{
-	dir = 2
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"Jy" = (
-/obj/machinery/door/airlock/hatch,
-/obj/structure/curtain/cloth/fancy{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"JP" = (
-/obj/structure/table/wood/reinforced,
-/turf/open/space/basic,
-/area/space)
-"JX" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Kf" = (
-/obj/effect/decal/cleanable/oil/slippery,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"Km" = (
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"Kv" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"KT" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"KU" = (
-/obj/structure/fence{
-	dir = 1
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"Ln" = (
-/obj/structure/grille,
-/obj/structure/cable,
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"Lp" = (
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
-"Ls" = (
-/obj/structure/cable{
-	icon_state = "9-10"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"Lz" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
-	environment_smash = 0;
-	wander = 0;
-	stop_automated_movement = 1
-	},
-/obj/structure/chair/plastic{
-	dir = 2
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"LF" = (
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"LS" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"Mr" = (
-/obj/structure/mirror{
-	pixel_y = 28
-	},
-/obj/structure/sink{
-	pixel_y = 18
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"Mz" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Ni" = (
-/obj/effect/turf_decal/road/stripes{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "5-9"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Np" = (
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "heart";
-	pixel_y = -24;
-	pixel_x = -8
-	},
-/turf/open/floor/wood,
-/area/space)
-"NA" = (
-/obj/effect/turf_decal/solarpanel,
-/obj/machinery/power/tracker,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel,
-/area/space)
-"NT" = (
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_4,
-/area/space)
-"NU" = (
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/mob/living/simple_animal/hostile/human/frontier,
-/turf/open/floor/plating/grass/beach/lit,
-/area/space)
-"NW" = (
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/wood,
-/area/space)
-"NX" = (
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "toilet";
-	pixel_x = 23;
-	pixel_y = -3
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_4,
-/area/space)
-"Os" = (
-/obj/structure/table,
-/obj/structure/table,
-/turf/open/floor/carpet,
-/area/space)
-"Oz" = (
-/obj/structure/toilet{
-	dir = 4;
-	pixel_x = -6
-	},
-/obj/effect/decal/cleanable/insectguts,
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"OF" = (
-/turf/open/floor/plating/asteroid/sand/dense/lit,
-/area/space)
-"OX" = (
-/obj/structure/fence,
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"Ph" = (
-/obj/structure/chair/sofa/olive/old/right/directional/west,
-/turf/open/floor/wood,
-/area/space)
-"Pm" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/turf/open/floor/concrete,
-/area/space)
-"Pr" = (
-/obj/structure/cable{
-	icon_state = "0-10"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"Ps" = (
-/obj/structure/rack,
-/obj/item/storage/box/ammo/a8_50r/match,
-/obj/item/storage/box/ammo/a8_50r/match{
-	pixel_y = 10
-	},
-/turf/open/floor/concrete/reinforced,
-/area/space)
-"Pt" = (
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor3"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Pw" = (
-/obj/structure/table/wood,
-/obj/effect/turf_decal/siding/wood,
-/obj/item/flashlight/lamp/green{
-	pixel_y = 13;
-	pixel_x = -5
-	},
-/obj/item/reagent_containers/condiment/milk{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken"
-	},
-/area/space)
-"Qc" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"Qo" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"Qu" = (
-/obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/wood,
-/area/space)
-"QU" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/concrete,
-/area/space)
-"Re" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "8-10"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Rn" = (
-/obj/effect/turf_decal/road,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "5-9"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"RB" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
-"RY" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "9-10"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Sa" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/carpet,
-/area/space)
-"Sc" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/concrete,
-/area/space)
-"Sp" = (
-/obj/effect/turf_decal/road/stripes{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Sq" = (
-/obj/effect/turf_decal/road,
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"St" = (
-/obj/structure/cable{
-	icon_state = "2-10"
-	},
-/turf/open/floor/plating/grass/beach/lit,
-/area/space)
-"Sz" = (
-/obj/structure/chair/plastic{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/confetti,
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"SF" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating/asteroid/sand/dense/lit,
-/area/space)
-"SS" = (
-/turf/open/floor/wood{
-	icon_state = "wood-broken4"
-	},
-/area/space)
-"Ta" = (
-/obj/structure/cable{
-	icon_state = "6-9"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
-"Tb" = (
-/obj/structure/chair/sofa/olive/old/directional/north,
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/carpet,
-/area/space)
-"Tp" = (
-/obj/structure/cable{
-	icon_state = "8-9"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_2,
-/area/space)
-"Tt" = (
-/obj/structure/closet/cabinet,
-/obj/structure/cable{
-	icon_state = "4-6"
-	},
-/turf/open/floor/wood,
-/area/space)
-"Tx" = (
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"TO" = (
-/obj/structure/cable{
-	icon_state = "5-9"
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
-"TP" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/open/floor/wood,
-/area/space)
-"TV" = (
-/turf/open/floor/concrete/slab_4,
-/area/space)
-"TX" = (
+"ls" = (
 /obj/structure/closet/cabinet,
 /obj/item/reagent_containers/food/snacks/deadmouse{
 	pixel_x = 5;
@@ -1834,7 +584,1696 @@
 	icon_state = "wood-broken4"
 	},
 /area/space)
-"Uz" = (
+"lv" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"ly" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"lF" = (
+/obj/structure/bed/double{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/item/bedsheet/double/brown{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/space)
+"lG" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"lL" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "4-6"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"lO" = (
+/obj/structure/table/wood,
+/turf/open/floor/carpet,
+/area/space)
+"lR" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"mj" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"mk" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"mn" = (
+/turf/open/floor/plating/dirt/beach,
+/area/space)
+"mo" = (
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
+/obj/structure/cable{
+	icon_state = "5-6"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"mE" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/door/window/southleft{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating,
+/area/space)
+"mN" = (
+/obj/structure/cable{
+	icon_state = "9-10"
+	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"mV" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "toilet";
+	pixel_x = 23;
+	pixel_y = -3
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"mW" = (
+/obj/structure/chair/comfy/olive/old/directional/north,
+/turf/open/floor/wood,
+/area/space)
+"nh" = (
+/obj/structure/chair/plastic,
+/turf/open/floor/plating/dirt/beach,
+/area/space)
+"no" = (
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"nu" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"nB" = (
+/obj/effect/spawner/bunk_bed,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"nU" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/guncloset{
+	pixel_y = 5
+	},
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"nZ" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"oa" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"ok" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/item/documents/frontier/logistics,
+/obj/structure/sign/poster/contraband/eoehoma{
+	pixel_x = -32
+	},
+/turf/open/floor/carpet,
+/area/space)
+"ol" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet,
+/area/space)
+"oo" = (
+/obj/structure/toilet{
+	dir = 8;
+	pixel_x = 6
+	},
+/obj/effect/decal/cleanable/vomit{
+	pixel_x = 6
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"ot" = (
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"oI" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/space)
+"oJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/space)
+"oL" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"po" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/wood,
+/area/space)
+"pz" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"pG" = (
+/obj/structure/reagent_dispensers/watertank/high,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"pM" = (
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken6"
+	},
+/area/space)
+"pN" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/carpet,
+/area/space)
+"pS" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"pU" = (
+/obj/item/towel{
+	pixel_x = -6;
+	pixel_y = 10
+	},
+/obj/item/towel{
+	pixel_x = 6;
+	pixel_y = 10
+	},
+/obj/item/towel{
+	pixel_x = -6
+	},
+/obj/item/towel{
+	pixel_x = 5
+	},
+/obj/structure/rack,
+/obj/item/soap{
+	pixel_y = 7;
+	pixel_x = -1
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"pW" = (
+/obj/structure/table/wood/reinforced,
+/turf/open/space/basic,
+/area/space)
+"qy" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"qF" = (
+/obj/structure/toilet{
+	dir = 8;
+	pixel_x = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"qI" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"qJ" = (
+/obj/structure/rack,
+/obj/item/storage/box/ammo/a8_50r{
+	pixel_y = 0
+	},
+/obj/item/storage/box/ammo/a8_50r{
+	pixel_y = 9
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"qO" = (
+/obj/structure/rack,
+/obj/item/storage/bottles/moonshine{
+	pixel_y = 4
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"qY" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"rc" = (
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"rf" = (
+/obj/effect/turf_decal/industrial/warning/full,
+/turf/open/floor/concrete,
+/area/space)
+"ri" = (
+/obj/structure/catwalk/over,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/washing_machine{
+	pixel_x = 8
+	},
+/turf/open/floor/plating,
+/area/space)
+"rt" = (
+/turf/closed/wall/concrete,
+/area/space)
+"rH" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "8-9"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"rX" = (
+/obj/machinery/atmospherics/components/unary/passive_vent/layer4,
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"sf" = (
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
+/obj/structure/cable{
+	icon_state = "8-9"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"sv" = (
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 10;
+	id = "bunk2";
+	name = "shutter control"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"sx" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood{
+	icon_state = "wood-broken6"
+	},
+/area/space)
+"sE" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "bunk_2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"ta" = (
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"tv" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"tx" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/grass/beach,
+/area/space)
+"tJ" = (
+/obj/structure/cable{
+	icon_state = "1-9"
+	},
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"tO" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"tQ" = (
+/obj/effect/spawner/bunk_bed,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"tW" = (
+/obj/effect/turf_decal/road,
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"ug" = (
+/obj/structure/rack,
+/obj/item/ammo_box/magazine/illestren_a850r/empty{
+	pixel_y = 10;
+	pixel_x = -6
+	},
+/obj/item/ammo_box/magazine/illestren_a850r/empty{
+	pixel_y = 10;
+	pixel_x = 2
+	},
+/obj/item/ammo_box/magazine/illestren_a850r/empty{
+	pixel_y = 10;
+	pixel_x = 10
+	},
+/obj/item/ammo_box/magazine/illestren_a850r/empty{
+	pixel_y = -5;
+	pixel_x = -6
+	},
+/obj/item/ammo_box/magazine/illestren_a850r/empty{
+	pixel_y = -5;
+	pixel_x = 2
+	},
+/obj/item/ammo_box/magazine/illestren_a850r/empty{
+	pixel_y = -5;
+	pixel_x = 10
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"ur" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/paper_bin{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/turf/open/floor/wood,
+/area/space)
+"uw" = (
+/obj/structure/grille,
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"uz" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/concrete,
+/area/space)
+"uF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood{
+	icon_state = "wood-broken"
+	},
+/area/space)
+"uR" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/door/window/southleft{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/space)
+"vF" = (
+/obj/structure/closet/cabinet,
+/obj/structure/cable{
+	icon_state = "8-10"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/wood,
+/area/space)
+"vJ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"vT" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"vY" = (
+/obj/structure/cable{
+	icon_state = "8-9"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"vZ" = (
+/obj/structure/cable{
+	icon_state = "2-10"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"wE" = (
+/obj/structure/cable{
+	icon_state = "4-6"
+	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"wU" = (
+/obj/structure/fluff/beach_umbrella{
+	pixel_x = 7;
+	pixel_y = -18
+	},
+/turf/open/floor/plating/dirt/beach,
+/area/space)
+"wX" = (
+/obj/structure/chair/comfy/olive/old/directional/north,
+/turf/open/floor/carpet,
+/area/space)
+"wZ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"xf" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+	environment_smash = 0;
+	wander = 0
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"xn" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"xp" = (
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor7"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"xw" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet,
+/area/space)
+"xJ" = (
+/obj/structure/guncloset{
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"xO" = (
+/obj/structure/closet/crate/secure/gear,
+/obj/item/storage/belt/security/military/frontiersmen{
+	pixel_y = -9
+	},
+/obj/item/storage/belt/security/military/frontiersmen{
+	pixel_y = -4
+	},
+/obj/item/storage/belt/security/military/frontiersmen{
+	pixel_y = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"xU" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/space)
+"xV" = (
+/obj/machinery/door/airlock/hatch,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"yb" = (
+/turf/template_noop,
+/area/template_noop)
+"yo" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "bunk1"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"yw" = (
+/obj/structure/cable{
+	icon_state = "2-10"
+	},
+/obj/structure/cable{
+	icon_state = "2-6"
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"yx" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/item/paper/crumpled{
+	pixel_y = 6;
+	pixel_x = 5
+	},
+/turf/open/floor/carpet,
+/area/space)
+"yA" = (
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"yJ" = (
+/obj/structure/chair/sofa/olive/old/left/directional/north,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet,
+/area/space)
+"yM" = (
+/obj/structure/rack,
+/obj/item/key,
+/turf/open/floor/concrete/pavement/beachplanet,
+/area/space)
+"yQ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"zp" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"zw" = (
+/obj/effect/spawner/bunk_bed,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/space)
+"zB" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"zH" = (
+/obj/structure/table,
+/obj/structure/table,
+/turf/open/floor/carpet,
+/area/space)
+"zJ" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"zL" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "9-10"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Ad" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/item/radio/intercom/wideband/table{
+	dir = 1;
+	pixel_y = 3;
+	pixel_x = -4
+	},
+/turf/open/floor/carpet,
+/area/space)
+"Ar" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/filingcabinet/double/grey,
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"AC" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-6"
+	},
+/turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/space)
+"AE" = (
+/mob/living/simple_animal/crab,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/space)
+"AH" = (
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"AI" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "bunk_2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"AJ" = (
+/obj/effect/turf_decal/road/slow{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"AM" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/curtain/cloth/fancy{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Ba" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"Be" = (
+/obj/machinery/door/airlock/grunge,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"Bn" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"BA" = (
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"BC" = (
+/turf/open/floor/wood,
+/area/space)
+"BK" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"BN" = (
+/obj/structure/guncloset,
+/obj/item/gun/ballistic/rifle/illestren/factory,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"BQ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/carpet,
+/area/space)
+"BV" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"Ca" = (
+/obj/effect/spawner/bunk_bed,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/wood,
+/area/space)
+"Cc" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1;
+	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
+	widenet = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Ci" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/taperecorder{
+	pixel_x = -11;
+	pixel_y = 3
+	},
+/obj/item/tape/random{
+	pixel_x = 5;
+	pixel_y = -3
+	},
+/obj/item/tape/random{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/wood,
+/area/space)
+"Cl" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/structure/curtain/cloth/fancy{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Cu" = (
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/machinery/door/airlock/hatch,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"CC" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"CV" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/wood,
+/area/space)
+"Db" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"Do" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"DC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"El" = (
+/obj/machinery/door/airlock/grunge,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"Em" = (
+/obj/structure/cable{
+	icon_state = "1-9"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Eo" = (
+/obj/structure/closet/crate/secure/gear,
+/obj/item/clothing/head/helmet/bulletproof/x11/frontier{
+	pixel_y = 5;
+	pixel_x = 8
+	},
+/obj/item/clothing/head/helmet/bulletproof/x11/frontier{
+	pixel_y = 5;
+	pixel_x = -5
+	},
+/obj/item/clothing/suit/armor/vest/frontier{
+	pixel_y = -5;
+	pixel_x = 7
+	},
+/obj/item/clothing/suit/armor/vest/frontier{
+	pixel_y = -5;
+	pixel_x = -6
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Ew" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"EM" = (
+/obj/structure/closet/cabinet,
+/obj/structure/cable{
+	icon_state = "4-6"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"EP" = (
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/neutured,
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"ES" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Fe" = (
+/obj/structure/rack,
+/obj/item/shovel/spoon,
+/obj/item/shovel{
+	pixel_y = 8;
+	pixel_x = 1
+	},
+/obj/item/shovel{
+	pixel_y = -3;
+	pixel_x = 9
+	},
+/obj/item/shovel{
+	pixel_y = 0;
+	pixel_x = 1
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"Fq" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Ft" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle{
+	wander = 0;
+	environment_smash = 0
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Fu" = (
+/obj/structure/rack,
+/obj/item/storage/box/ammo/a8_50r/trac{
+	pixel_y = 1
+	},
+/obj/item/storage/box/ammo/a8_50r/trac{
+	pixel_y = 9
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"Fz" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "bunk1"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"FQ" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Gc" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Ge" = (
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Gh" = (
+/obj/structure/cable{
+	icon_state = "8-10"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"GO" = (
+/obj/item/paper/crumpled{
+	pixel_x = -14;
+	default_raw_text = "Stop asking about the rats. I'm not hiding rats. I don't have rats. I don't know why you fuckers are OBSESSED with rats. Just. Stop.";
+	name = "re: Rats"
+	},
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"Hf" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"Hp" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/space)
+"HB" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"HF" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"HK" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "5-6"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"HQ" = (
+/turf/open/floor/concrete,
+/area/space)
+"Ia" = (
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"Il" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "bunk_2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"IA" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"IF" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"IL" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"IZ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/table,
+/turf/open/floor/carpet,
+/area/space)
+"Ja" = (
+/obj/item/toy/beach_ball,
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"Jd" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "8-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Jf" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"Jk" = (
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/cable{
+	icon_state = "2-6"
+	},
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"Jl" = (
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"Jp" = (
+/obj/structure/chair/plastic{
+	dir = 2
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"JX" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Kg" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Km" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"KJ" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"KL" = (
+/obj/structure/chair/office,
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet,
+/area/space)
+"KU" = (
+/obj/structure/fence{
+	dir = 1
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"Lp" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/space)
+"Ls" = (
+/obj/structure/cable{
+	icon_state = "9-10"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"Lz" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+	environment_smash = 0;
+	wander = 0;
+	stop_automated_movement = 1
+	},
+/obj/structure/chair/plastic{
+	dir = 2
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"LE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"LF" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"LS" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Mi" = (
+/obj/machinery/atmospherics/components/unary/passive_vent/layer2,
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"Mr" = (
+/obj/structure/mirror{
+	pixel_y = 28
+	},
+/obj/structure/sink{
+	pixel_y = 18
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Mz" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"MH" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"MS" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/carpet,
+/area/space)
+"MX" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/confetti,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Ni" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Nn" = (
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor3"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"NA" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/tracker,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"NU" = (
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/mob/living/simple_animal/hostile/human/frontier,
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"Od" = (
+/obj/structure/table/wood/reinforced,
+/turf/open/floor/wood,
+/area/space)
+"Ow" = (
+/obj/structure/chair/sofa/olive/old/directional/north,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/carpet,
+/area/space)
+"Oz" = (
+/obj/structure/toilet{
+	dir = 4;
+	pixel_x = -6
+	},
+/obj/effect/decal/cleanable/insectguts,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"OF" = (
+/turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/space)
+"ON" = (
+/obj/structure/table,
+/obj/machinery/jukebox/boombox{
+	pixel_x = -2;
+	pixel_y = -2;
+	name = "Mr. Jams";
+	desc = "How the hell did the Frontiersmen get /this/. It's brand new!"
+	},
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"OW" = (
+/obj/structure/rack,
+/obj/item/reagent_containers/glass/concrete_bag{
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/glass/concrete_bag{
+	pixel_x = 7
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"OX" = (
+/obj/structure/fence,
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"Pb" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_2,
+/area/space)
+"Ph" = (
+/obj/structure/chair/sofa/olive/old/right/directional/west,
+/turf/open/floor/wood,
+/area/space)
+"Pm" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/concrete,
+/area/space)
+"Pr" = (
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Ps" = (
+/obj/structure/rack,
+/obj/item/storage/box/ammo/a8_50r/match,
+/obj/item/storage/box/ammo/a8_50r/match{
+	pixel_y = 10
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"Pt" = (
+/obj/machinery/button/door{
+	dir = 2;
+	pixel_y = 22;
+	pixel_x = -9;
+	id = "bunk1";
+	name = "shutter control"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Pw" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood,
+/obj/item/flashlight/lamp/green{
+	pixel_y = 13;
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/condiment/milk{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken"
+	},
+/area/space)
+"PB" = (
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = -10;
+	pixel_x = -23;
+	id = "bunk2";
+	name = "shutter control"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"Qc" = (
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = -10;
+	pixel_x = 22;
+	id = "bunk1";
+	name = "shutter control"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"Qv" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/carpet,
+/area/space)
+"Qx" = (
+/mob/living/simple_animal/hostile/human/frontier,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"QK" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"QQ" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"QU" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/concrete,
+/area/space)
+"QV" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor3"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"QZ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet,
+/area/space)
+"Re" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "8-10"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Rm" = (
 /obj/machinery/shower{
 	dir = 4;
 	pixel_y = 0
@@ -1850,12 +2289,177 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
-"UF" = (
+"Rn" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Rr" = (
+/obj/structure/cable{
+	icon_state = "5-6"
+	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/concrete/slab_1,
+/area/space)
+"Ry" = (
+/obj/machinery/door/airlock/grunge,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"RB" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/space)
+"RT" = (
+/turf/open/floor/carpet,
+/area/space)
+"RY" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "9-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Sa" = (
 /obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet,
+/area/space)
+"Sc" = (
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/table,
+/turf/open/floor/concrete,
+/area/space)
+"Sp" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Sq" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"St" = (
+/obj/structure/cable{
+	icon_state = "2-10"
+	},
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"SF" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/space)
+"SI" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/space)
+"SS" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/space)
+"Ta" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Tb" = (
+/obj/structure/chair/sofa/olive/old/directional/north,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet,
+/area/space)
+"Tx" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"TD" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/pizza/meat,
+/turf/open/floor/plating/dirt/beach,
+/area/space)
+"TF" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/space)
+"TO" = (
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/space)
+"TV" = (
+/turf/open/floor/concrete/slab_4,
+/area/space)
+"TY" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"Ub" = (
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_y = 4;
+	pixel_x = -6
+	},
+/obj/item/pen{
+	pixel_y = 6;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+	pixel_y = -4
+	},
+/obj/item/paper/crumpled{
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/item/paper/crumpled{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/turf/open/floor/concrete/slab_1,
 /area/space)
 "UH" = (
 /obj/effect/turf_decal/road{
@@ -1875,21 +2479,58 @@
 "UI" = (
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
-"Vg" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
+"UL" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/storage/box/ammo/a44roum{
+	pixel_y = 6;
+	pixel_x = -8
 	},
-/turf/open/floor/concrete/slab_4,
+/obj/item/storage/box/ammo/a44roum{
+	pixel_y = 6;
+	pixel_x = 6
+	},
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"Vb" = (
+/obj/structure/closet/cabinet,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "heart";
+	pixel_y = -24;
+	pixel_x = 6
+	},
+/turf/open/floor/wood,
 /area/space)
 "Vz" = (
 /obj/structure/flora/rock/beach,
 /turf/open/floor/plating/asteroid/sand/lit,
+/area/space)
+"VA" = (
+/obj/structure/cable{
+	icon_state = "5-6"
+	},
+/turf/open/floor/plating/dirt/beach/lit,
 /area/space)
 "VE" = (
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
 /turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"VF" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1,
 /area/space)
 "VI" = (
 /obj/structure/barricade/sandbags,
@@ -1899,6 +2540,7 @@
 /obj/structure/guncloset,
 /obj/item/gun/ballistic/rifle/illestren/sawn,
 /obj/item/gun/ballistic/rifle/illestren/sawn,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/concrete/reinforced,
 /area/space)
 "VU" = (
@@ -1907,16 +2549,15 @@
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/space)
-"VZ" = (
-/obj/structure/table/wood/reinforced,
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
+"Wc" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4
 	},
-/obj/item/paper/crumpled{
-	pixel_y = 6;
-	pixel_x = 5
+/obj/structure/cable{
+	icon_state = "1-10"
 	},
-/turf/open/floor/carpet,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
 /area/space)
 "Wd" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
@@ -1925,9 +2566,19 @@
 	},
 /turf/open/floor/plating/grass/beach/lit,
 /area/space)
-"Wj" = (
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/concrete/slab_2,
+"Wk" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/door/window/southleft{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/vomit,
+/turf/open/floor/plating,
 /area/space)
 "Wq" = (
 /obj/structure/filingcabinet/double/grey{
@@ -1935,11 +2586,25 @@
 	},
 /turf/open/floor/wood,
 /area/space)
+"Wr" = (
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 6
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 5
+	},
+/turf/open/floor/concrete/slab_1,
+/area/space)
 "Ws" = (
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
 /turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"WB" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
 /area/space)
 "WG" = (
 /obj/effect/turf_decal/road/slow{
@@ -1950,75 +2615,133 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/space)
-"WN" = (
+"Xh" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /obj/effect/turf_decal/siding/wood,
-/obj/structure/filingcabinet/double/grey,
-/turf/open/floor/concrete/slab_4,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
 /area/space)
 "Xv" = (
 /obj/structure/chair/sofa/olive/old/corner/directional/west,
 /turf/open/floor/wood,
 /area/space)
-"XB" = (
+"XA" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/space)
+"XE" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/frontier,
+/turf/open/floor/plating/dirt/beach,
+/area/space)
+"XM" = (
+/obj/structure/cable{
+	icon_state = "8-9"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/carpet,
-/area/space)
-"XF" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/obj/structure/catwalk/over,
-/obj/machinery/door/window/southleft{
-	dir = 8
-	},
-/obj/structure/window/reinforced,
-/obj/effect/decal/cleanable/greenglow,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
 /area/space)
 "XS" = (
-/turf/open/floor/concrete/tiles,
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/frontier,
+/turf/open/floor/plating/dirt/beach,
 /area/space)
 "YB" = (
 /turf/open/floor/plating/dirt/beach/lit,
 /area/space)
-"YZ" = (
-/obj/structure/table,
-/obj/machinery/jukebox/boombox{
-	pixel_x = -2;
-	pixel_y = -2;
-	name = "Mr. Jams";
-	desc = "How the hell did the Frontiersmen get /this/. It's brand new!"
+"YG" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
 	},
-/obj/effect/decal/cleanable/glass,
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/concrete/slab_1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_2,
 /area/space)
-"Zd" = (
-/obj/structure/cable{
-	icon_state = "2-5"
+"YL" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/storage/bottles/moonshine{
+	pixel_y = 4
 	},
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"YW" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "heart";
+	pixel_y = -24;
+	pixel_x = -8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1;
+	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
+	widenet = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/wood/reinforced,
+/obj/structure/bedsheetbin,
 /turf/open/floor/wood,
 /area/space)
 "Zj" = (
 /mob/living/simple_animal/cow,
 /turf/open/floor/plating/grass/beach/lit,
 /area/space)
-"Zt" = (
-/obj/structure/cable{
-	icon_state = "8-10"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
+"Zq" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/pounder{
+	weapon_drop_chance = 20
 	},
 /turf/open/floor/concrete/slab_2,
 /area/space)
-"ZB" = (
-/obj/structure/cable{
-	icon_state = "5-8"
+"Zu" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/space)
+"ZD" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
 /area/space)
 "ZJ" = (
 /obj/structure/cable{
@@ -2038,12 +2761,12 @@ yb
 yb
 yb
 yb
-at
-HQ
 yb
-Km
-XS
-DC
+yb
+yb
+yb
+yb
+yb
 yb
 yb
 yb
@@ -2508,7 +3231,7 @@ yb
 yb
 yb
 yb
-yb
+bW
 yb
 yb
 yb
@@ -2523,9 +3246,9 @@ bW
 bW
 mn
 rt
-hT
-Ge
-Ge
+UL
+cE
+Eo
 Ge
 hT
 rt
@@ -2541,7 +3264,7 @@ bW
 mn
 mn
 mn
-mn
+XS
 mn
 bW
 bW
@@ -2567,8 +3290,8 @@ yb
 yb
 yb
 yb
-yb
-yb
+bW
+bW
 yb
 yb
 bW
@@ -2582,10 +3305,10 @@ bW
 mn
 mn
 rt
-hT
+UL
 Ge
 EP
-Ge
+xO
 hT
 rt
 mn
@@ -2598,9 +3321,9 @@ bW
 bW
 bW
 bW
-mn
-mn
-mn
+nh
+TD
+ge
 mn
 mn
 mn
@@ -2644,7 +3367,7 @@ rt
 rt
 Pr
 vT
-Ge
+sv
 rt
 rt
 mn
@@ -2658,7 +3381,7 @@ bW
 bW
 bW
 mn
-mn
+XE
 mn
 mn
 mn
@@ -2698,15 +3421,15 @@ bW
 bW
 mn
 mn
-YB
-YB
+mn
+mn
 rt
 Il
-no
-Ge
+sE
+AI
 rt
-YB
-YB
+mn
+mn
 mn
 mn
 mn
@@ -2756,16 +3479,16 @@ bW
 bW
 bW
 mn
-YB
-YB
-YB
-YB
+mn
+mn
+mn
+PB
 UI
 cS
 UI
 YB
-YB
-YB
+mn
+mn
 rt
 rt
 rt
@@ -2816,8 +3539,8 @@ rt
 rt
 rt
 rt
-YB
-YB
+mn
+mn
 YB
 UI
 cx
@@ -2826,8 +3549,8 @@ YB
 YB
 rt
 rt
-cN
-cN
+qO
+qO
 rt
 rt
 yM
@@ -2860,10 +3583,10 @@ yb
 yb
 yb
 bW
-yb
+bW
 rt
 rt
-nT
+lO
 wX
 rt
 rt
@@ -2883,11 +3606,11 @@ UI
 rc
 YB
 UI
+Be
 TV
 TV
 TV
-TV
-hT
+YL
 rt
 iI
 iI
@@ -2900,7 +3623,7 @@ YB
 YB
 yA
 yA
-yA
+Km
 yA
 yA
 yA
@@ -2917,14 +3640,14 @@ yb
 "}
 (16,1,1) = {"
 yb
-yb
 bW
-yb
+bW
+bW
 rt
 lF
-pN
-pN
-TX
+RT
+RT
+ls
 rt
 bW
 bW
@@ -2934,7 +3657,7 @@ ug
 TV
 TV
 TV
-TV
+El
 UI
 YB
 UI
@@ -2942,11 +3665,11 @@ vZ
 lr
 UI
 UI
+Be
 TV
 TV
 TV
-TV
-hT
+YL
 rt
 dk
 iI
@@ -2962,7 +3685,7 @@ yA
 yA
 yA
 yA
-yA
+Km
 yA
 yA
 YB
@@ -2976,13 +3699,13 @@ yb
 "}
 (17,1,1) = {"
 yb
-yb
-yb
-yb
+bW
+bW
+bW
 rt
 Pw
 pN
-pN
+MS
 la
 rt
 bW
@@ -2993,7 +3716,7 @@ Ps
 TV
 TV
 TV
-TV
+El
 UI
 UI
 UI
@@ -3003,8 +3726,8 @@ YB
 YB
 rt
 rt
-hT
-hT
+YL
+YL
 rt
 rt
 rt
@@ -3034,10 +3757,10 @@ yb
 yb
 "}
 (18,1,1) = {"
-yb
-yb
-yb
-yb
+bW
+bW
+bW
+bW
 rt
 rt
 rt
@@ -3073,7 +3796,7 @@ YB
 YB
 at
 yA
-yA
+Km
 yA
 yA
 yA
@@ -3082,7 +3805,7 @@ YB
 YB
 Zj
 yA
-yA
+Km
 yA
 yA
 bW
@@ -3094,15 +3817,15 @@ yb
 "}
 (19,1,1) = {"
 yb
-yb
-yb
-yb
+bW
+bW
+bW
 rt
-Uz
+Rm
 rt
-BC
-BC
-rx
+jP
+oJ
+Xh
 BC
 Sa
 Ad
@@ -3133,7 +3856,7 @@ YB
 aE
 yA
 yA
-yA
+Km
 yA
 YB
 YB
@@ -3153,19 +3876,19 @@ yb
 "}
 (20,1,1) = {"
 yb
-yb
-yb
-yb
+bW
+bW
+bW
 rt
 Mr
-Jy
-BK
-BK
-cd
-BC
+AM
+Db
+fQ
+lv
+DC
 Sa
 lk
-yl
+mW
 Wq
 rt
 yA
@@ -3212,17 +3935,17 @@ yb
 "}
 (21,1,1) = {"
 yb
-yb
-yb
-yb
+bW
+bW
+bW
 rt
-CI
+qF
 rt
 rt
-BC
-rx
-BC
-BQ
+WB
+cO
+Qx
+xw
 gi
 BC
 Wq
@@ -3231,8 +3954,8 @@ YB
 YB
 yA
 yA
-YB
-CC
+rX
+oa
 UI
 UI
 YB
@@ -3247,7 +3970,7 @@ yA
 UI
 UI
 YB
-yA
+Km
 aE
 yA
 yA
@@ -3270,18 +3993,18 @@ yb
 yb
 "}
 (22,1,1) = {"
-yb
-yb
-yb
+bW
+bW
+bW
 rt
 rt
 rt
 rt
 rt
-BC
-rx
-BC
-BC
+po
+gl
+DC
+DC
 uF
 SS
 rt
@@ -3290,8 +4013,8 @@ YB
 YB
 YB
 yA
-YB
-UI
+rX
+Bn
 Ta
 UI
 YB
@@ -3329,16 +4052,16 @@ yb
 yb
 "}
 (23,1,1) = {"
-yb
-yb
+bW
+bW
 rt
 rt
-rg
-Cw
-nn
+cu
+xU
+ur
 rt
 rt
-Kv
+VF
 rt
 rt
 rt
@@ -3362,10 +4085,10 @@ KU
 at
 YB
 YB
-tZ
+xp
 UI
 YB
-cT
+VA
 at
 YB
 YB
@@ -3388,29 +4111,29 @@ yb
 yb
 "}
 (24,1,1) = {"
-yb
-yb
+bW
+bW
 rt
-WN
-Qu
-hD
-Cq
+Ar
+sx
+KL
+Ci
 rt
-BC
-qF
-mA
-BC
+CV
+GO
+mo
+DC
 rt
-AA
+hR
 UI
 UI
 UI
 UI
 UI
 UI
-Pt
+Nn
 UI
-Gc
+zp
 UI
 UI
 UI
@@ -3447,19 +4170,19 @@ yb
 yb
 "}
 (25,1,1) = {"
-yb
-yb
+bW
+bW
 rt
-Wj
-NW
+tv
+kr
+Zq
 no
-no
-kC
-Vg
-NT
-Tp
-bC
-Dc
+kF
+ki
+ta
+XM
+tJ
+Rr
 lL
 Rn
 qy
@@ -3469,7 +4192,7 @@ av
 av
 av
 av
-xn
+kI
 HK
 av
 Sq
@@ -3483,8 +4206,8 @@ av
 av
 av
 jT
-zD
-xO
+pz
+ES
 av
 jT
 HB
@@ -3506,26 +4229,26 @@ yb
 yb
 "}
 (26,1,1) = {"
-yb
-yb
+bW
+bW
 rt
-Wj
-NW
-no
-no
-sj
-xo
-CF
-Zt
-Zt
-pI
+IF
+TF
+aR
+aR
+Cu
+BV
+IA
+Gh
+ig
+eR
 RY
 rH
-jX
-jX
-JX
+IL
+IL
+XA
 Do
-jX
+BK
 Mz
 ly
 Jd
@@ -3546,7 +4269,7 @@ zB
 jX
 zL
 Re
-dY
+QV
 Re
 jX
 QU
@@ -3565,32 +4288,32 @@ yb
 yb
 "}
 (27,1,1) = {"
-yb
-yb
+bW
+bW
 rt
-Hh
-li
-TP
-gK
+xJ
+QK
+LE
+Zu
 rt
-KT
+Pb
 SS
-BC
+QQ
 oJ
 rt
 UI
-Pt
+Nn
 UI
 UI
 UI
-UI
+yQ
 mN
 UI
 UI
 UI
 UI
 UI
-tZ
+xp
 UI
 UI
 YB
@@ -3624,17 +4347,17 @@ yb
 yb
 "}
 (28,1,1) = {"
-yb
-yb
+bW
+bW
 rt
-kf
-em
-cC
-pG
+nU
+Qv
+ft
+Od
 rt
-KT
-em
-XB
+Pb
+ol
+fr
 yJ
 rt
 rt
@@ -3642,7 +4365,7 @@ KU
 KU
 KU
 at
-pS
+iZ
 WG
 pS
 at
@@ -3683,25 +4406,25 @@ yb
 yb
 "}
 (29,1,1) = {"
-yb
-yb
+bW
+bW
 rt
 rt
-VZ
-Br
-JP
+yx
+kH
+pW
 rt
-KT
-Sa
-Os
+vJ
+QZ
+zH
 Tb
 rt
 YB
 YB
 kJ
 YB
-YB
-UI
+Mi
+TY
 tO
 UI
 YB
@@ -3712,7 +4435,7 @@ db
 YB
 YB
 yA
-yA
+Km
 yA
 qI
 yA
@@ -3743,24 +4466,24 @@ yb
 "}
 (30,1,1) = {"
 yb
-yb
-yb
+bW
+bW
 rt
 rt
 rt
 rt
 rt
-za
+Hf
 BQ
-UF
-yD
+IZ
+Ow
 rt
 YB
 kJ
+tx
 kJ
-kJ
-YB
-CC
+Mi
+zJ
 UI
 UI
 YB
@@ -3775,7 +4498,7 @@ YB
 NU
 Ja
 yA
-yA
+Km
 YB
 YB
 yA
@@ -3802,15 +4525,15 @@ yb
 "}
 (31,1,1) = {"
 yb
-yb
-yb
-yb
+bW
+bW
+bW
 bW
 bW
 bW
 rt
-Wj
-tH
+YG
+pM
 Ph
 Xv
 rt
@@ -3837,7 +4560,7 @@ yA
 yA
 yA
 YB
-yA
+Km
 aE
 yA
 UI
@@ -3862,21 +4585,21 @@ yb
 (32,1,1) = {"
 yb
 yb
-yb
-yb
 bW
 bW
 bW
+bW
+bW
 rt
-Et
+Ew
 rt
 rt
 rt
 rt
+tx
 kJ
 kJ
-kJ
-kJ
+tx
 YB
 YB
 wZ
@@ -3885,8 +4608,8 @@ YB
 YB
 rt
 rt
-eB
-eB
+OW
+OW
 rt
 rt
 YB
@@ -3922,13 +4645,13 @@ yb
 yb
 yb
 yb
-yb
-yb
-yb
+bW
+bW
+bW
 rt
 rt
-iC
-hO
+ba
+ZD
 dK
 rt
 rt
@@ -3938,15 +4661,15 @@ rt
 kJ
 YB
 YB
-GT
+oL
 UI
 UI
 UI
+Ry
 TV
 TV
 TV
-TV
-oh
+pG
 rt
 Jf
 YB
@@ -3969,7 +4692,7 @@ YB
 YB
 yA
 yA
-yA
+Km
 yA
 yA
 db
@@ -3980,19 +4703,19 @@ yb
 (34,1,1) = {"
 yb
 yb
-yb
-yb
-yb
-yb
+bW
+bW
+bW
+bW
 rt
-ro
-vc
-ZB
-ro
+nB
+HF
+KJ
+nB
 rt
-ci
-YZ
-zj
+uR
+ON
+Wk
 rt
 YB
 YB
@@ -4001,11 +4724,11 @@ tO
 rc
 UI
 UI
+Ry
 TV
 TV
 TV
-TV
-ID
+ac
 rt
 VE
 YB
@@ -4038,20 +4761,20 @@ yb
 "}
 (35,1,1) = {"
 yb
-yb
-yb
-yb
-yb
-yb
+bW
+bW
+bW
+bW
+bW
 rt
-Tt
-Ce
-qv
-BC
-wA
-Ge
-Ge
-oa
+EM
+yw
+it
+SI
+xV
+im
+Cc
+Wr
 rt
 YB
 YB
@@ -4062,11 +4785,11 @@ YB
 YB
 rt
 rt
-tS
-Bm
+Fe
+bY
 rt
 rt
-yA
+Km
 dh
 YB
 rt
@@ -4097,20 +4820,20 @@ yb
 "}
 (36,1,1) = {"
 yb
-yb
-yb
-yb
-yb
-yb
+bW
+bW
+bW
+bW
+bW
 rt
-tK
-id
-BC
-ro
+tQ
+aC
+DC
+zw
 rt
-XF
-rI
-aW
+mE
+pU
+ri
 rt
 YB
 YB
@@ -4136,7 +4859,7 @@ rt
 at
 yA
 YB
-yA
+Km
 yA
 yA
 YB
@@ -4157,22 +4880,22 @@ yb
 (37,1,1) = {"
 yb
 yb
-yb
-yb
+bW
+bW
 bW
 bW
 rt
-sg
-vc
-FW
-nD
+vF
+cV
+ex
+Vb
 rt
 rt
 rt
 rt
 rt
 YB
-YB
+Qc
 UI
 cS
 UI
@@ -4182,7 +4905,7 @@ YB
 YB
 YB
 YB
-yA
+Km
 yA
 yA
 ZJ
@@ -4221,20 +4944,20 @@ yb
 bW
 bW
 rt
-tQ
-Qo
-BC
-Zd
-DP
-Kf
-Ln
+Ca
+lG
+Hp
+eS
+Kg
+FQ
+uw
 rt
 YB
 YB
 rt
-Ge
+yo
 Fz
-Ge
+yo
 rt
 YB
 YB
@@ -4276,22 +4999,22 @@ bW
 yb
 yb
 yb
-yb
+bW
 bW
 bW
 rt
 dK
-NX
-GG
-Np
+mV
+MH
+YW
 rt
-Sz
-Bv
+MX
+Ub
 rt
 mn
 rt
 rt
-Ge
+Pt
 no
 ah
 rt
@@ -4335,25 +5058,25 @@ yb
 yb
 yb
 yb
-yb
 bW
 bW
+bW
 rt
 rt
 rt
-Qc
+Wc
 rt
 rt
-CJ
+hg
 rt
 rt
 mn
 rt
-hT
+mk
 Ge
 no
 Ge
-hT
+mk
 rt
 YB
 YB
@@ -4393,8 +5116,8 @@ yb
 (41,1,1) = {"
 yb
 yb
-yb
-yb
+bW
+bW
 bW
 bW
 bW
@@ -4408,11 +5131,11 @@ rt
 mn
 mn
 rt
-hT
+mk
 Ge
 Ge
 Ge
-hT
+mk
 rt
 YB
 yA
@@ -4441,7 +5164,7 @@ YB
 YB
 yA
 yA
-yA
+Km
 yA
 YB
 YB
@@ -4459,7 +5182,7 @@ bW
 bW
 bW
 rt
-gd
+bu
 oo
 rt
 bW
@@ -4514,8 +5237,8 @@ yb
 yb
 yb
 yb
-yb
-yb
+bW
+bW
 bW
 rt
 rt
@@ -4550,14 +5273,14 @@ OF
 YB
 Tx
 YB
-yA
+Km
 yA
 YB
 UI
 UI
 UI
 YB
-yA
+Km
 yA
 xf
 Tx
@@ -4573,10 +5296,10 @@ yb
 yb
 yb
 yb
-yb
-yb
-yb
-yb
+bW
+bW
+bW
+bW
 bW
 bW
 bW
@@ -4633,9 +5356,9 @@ yb
 yb
 yb
 yb
-yb
-yb
-yb
+bW
+bW
+bW
 bW
 bW
 bW
@@ -4693,8 +5416,8 @@ yb
 yb
 yb
 yb
-yb
-yb
+bW
+bW
 yb
 yb
 bW
@@ -4795,7 +5518,7 @@ UI
 YB
 YB
 yA
-yA
+Km
 yb
 yb
 yb
@@ -4846,7 +5569,7 @@ yb
 yb
 yb
 yA
-yA
+Km
 yA
 YB
 UI
@@ -4970,7 +5693,7 @@ yA
 yA
 yA
 yA
-yA
+Km
 yA
 yb
 yb
