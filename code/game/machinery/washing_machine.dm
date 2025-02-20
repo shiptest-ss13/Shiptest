@@ -349,5 +349,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine/open_machine(drop = 1)
 	..()
-	density = TRUE //because machinery/open_machine() sets it to 0
+	if(initial(density))
+		density = TRUE //because machinery/open_machine() sets it to 0
 	color_source = null

@@ -329,7 +329,7 @@
 			say("Vein depleted.")
 			active = FALSE
 			soundloop.stop()
-			our_vein.deconstruct()
+			our_vein.Destroy()
 			our_vein = null
 			update_icon_state()
 			update_overlays()

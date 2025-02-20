@@ -212,14 +212,6 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/rubber = 4)
 	generate_items_inside(items_inside,src)
 
-// .50 AE (Desert Eagle)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/a50AE
-	ammo_type = /obj/item/ammo_casing/a50AE
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/a50AE/hp
-	ammo_type = /obj/item/ammo_casing/a50AE/hp
-
 // .22 LR (Himehabu, Pounder)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr
