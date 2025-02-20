@@ -416,3 +416,8 @@
 	file_name = "nanotrasen_skink"
 	name = "Skink-class Cargo Runner"
 	prefix = "NTSV"
+
+/datum/map_template/shuttle/subshuttles/bambulance
+	file_name = "cybersun_bambulance"
+	name = "Gauze-class Ambulance Pod"
+	prefix = "CSSV"
