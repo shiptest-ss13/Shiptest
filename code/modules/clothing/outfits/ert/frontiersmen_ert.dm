@@ -1,5 +1,6 @@
 /datum/outfit/job/frontiersmen/ert //most basic of grunts
 	name = "ERT - Frontiersman Basic"
+	jobtype = /datum/job/officer
 
 	head = /obj/item/clothing/head/beret/sec/frontier
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
