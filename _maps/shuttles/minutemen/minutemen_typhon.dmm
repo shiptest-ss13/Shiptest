@@ -84,10 +84,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "bp" = (
-/obj/structure/closet/crate/secure/science{
-	req_access_txt = "48";
-	name = "equipment crate"
-	},
+/obj/structure/closet/crate/science,
 /obj/item/mecha_parts/mecha_equipment/thrusters/ion,
 /obj/item/mecha_parts/mecha_equipment/salvage_saw,
 /obj/effect/mapping_helpers/crate_shelve,
@@ -254,7 +251,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -1185,9 +1181,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/minutemen/pilot{
-	req_access_txt = "48"
-	},
+/obj/machinery/suit_storage_unit/minutemen/pilot,
 /obj/effect/turf_decal/box{
 	color = "#75A2BB"
 	},
@@ -2696,13 +2690,13 @@
 /area/ship/hangar)
 "Jy" = (
 /obj/structure/rack,
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc{
+/obj/item/clothing/head/helmet/bulletproof/x11/clip{
 	pixel_x = -6;
-	pixel_y = 10
+	pixel_y = 9
 	},
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc{
+/obj/item/clothing/head/helmet/bulletproof/x11/clip{
 	pixel_x = -6;
-	pixel_y = 1
+	pixel_y = -1
 	},
 /obj/item/clothing/suit/armor/vest/bulletproof{
 	pixel_x = 8;
@@ -3697,7 +3691,6 @@
 /obj/item/clothing/suit/space/syndicate/blue,
 /obj/item/clothing/head/helmet/space/syndicate/blue,
 /obj/item/clothing/shoes/magboots,
-/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Vf" = (
