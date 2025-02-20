@@ -1164,9 +1164,12 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/storage/eva)
 "kN" = (
-/obj/structure/sign/solgov_seal,
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/sign/solgov_seal{
+	pixel_x = 0;
+	pixel_y = -1
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/external/dark)
 "kO" = (
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
@@ -1634,7 +1637,7 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_y = -24
 	},
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "pn" = (
 /obj/effect/turf_decal/techfloor{
@@ -4272,6 +4275,10 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "NY" = (
+/obj/structure/sign/solgov_seal{
+	pixel_x = -1;
+	pixel_y = -1
+	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/external/dark)
 "Ol" = (
@@ -5882,7 +5889,7 @@ vB
 vB
 ym
 NY
-kN
+wI
 "}
 (9,1,1) = {"
 wI
@@ -6009,8 +6016,8 @@ Vr
 sC
 ph
 ym
-NY
 kN
+wI
 "}
 (13,1,1) = {"
 wI
