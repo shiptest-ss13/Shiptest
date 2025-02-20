@@ -99,7 +99,7 @@
 			to_chat(user, span_notice("The [src] already has an igniter!"))
 			return
 		if(I.secured)
-			to_chat(user, span_notice("You need to unsecure \the [igniter] with a screwdriver first!"))
+			to_chat(user, span_notice("You need to unsecure \the [I] with a screwdriver first!"))
 			return
 		if(!user.transferItemToLoc(W, src))
 			return
@@ -147,7 +147,7 @@
 		if(!igniter)
 			to_chat(user, span_notice("The [src] needs an igniter to function!"))
 		else if (!igniter.secured)
-			to_chat(user, span_notice("Secure the igniter first!"))
+			to_chat(user, span_notice("Secure the igniter with a screwdriver first!"))
 		return
 	to_chat(user, "<span class='notice'>You [lit ? "extinguish" : "ignite"] [src]!</span>")
 	lit = !lit
