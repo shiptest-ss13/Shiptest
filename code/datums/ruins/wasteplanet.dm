@@ -31,3 +31,11 @@
 	suffix = "wasteplanet_yard.dmm"
 
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+
+/datum/map_template/ruin/wasteplanet/icwbase
+	name = "ICW Era Comms and Medical base."
+	description = "A former Syndicate Coalition base during the ICW, left to waste. It seems it has some new residents.."
+	id = "wasteplanet_icwbase"
+	suffix = "wasteplanet_icwbase.dmm"
+
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)

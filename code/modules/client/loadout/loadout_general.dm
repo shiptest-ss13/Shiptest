@@ -46,6 +46,14 @@
 	display_name = "Clockwork Zippo"
 	path = /obj/item/lighter/clockwork
 
+/datum/gear/matches
+	display_name = "matchbox"
+	path = /obj/item/storage/box/matches
+
+/datum/gear/candles
+	display_name = "candle pack"
+	path = /obj/item/storage/fancy/candle_box
+
 /datum/gear/cards
 	display_name = "toy, deck of cards"
 	path = /obj/item/toy/cards/deck
@@ -53,6 +61,10 @@
 /datum/gear/kotahi
 	display_name = "toy, deck of KOTAHI cards"
 	path = /obj/item/toy/cards/deck/kotahi
+
+/datum/gear/tarot_cards
+	display_name = "toy, deck of tarot cards"
+	path = /obj/item/toy/cards/deck/tarot
 
 /datum/gear/eightball
 	display_name = "toy, magic eight ball"
@@ -91,6 +103,14 @@
 	display_name = "paper bin"
 	path = /obj/item/paper_bin
 
+/datum/gear/spraycan
+	display_name = "spray can"
+	path = /obj/item/toy/crayon/spraycan
+
+/datum/gear/crayons
+	display_name = "box of crayons"
+	path = /obj/item/storage/crayons
+
 /datum/gear/cane
 	display_name = "cane"
 	path = /obj/item/cane
@@ -106,6 +126,22 @@
 /datum/gear/moth
 	display_name = "toy, moth plushie"
 	path = /obj/item/toy/plush/moth
+
+/datum/gear/bee
+	display_name = "toy, bee plushie"
+	path = /obj/item/toy/plush/beeplushie
+
+/datum/gear/spider
+	display_name = "toy, spider plushie"
+	path = /obj/item/toy/plush/spider
+
+/datum/gear/flushed
+	display_name = "toy, flushed plushie"
+	path = /obj/item/toy/plush/flushed
+
+/datum/gear/blahaj
+	display_name = "toy, Solarian Marine Society mascot plushie"
+	path = /obj/item/toy/plush/blahaj
 
 /datum/gear/hornet
 	display_name = "toy, marketable hornet plushie"
@@ -132,6 +168,10 @@
 	display_name = "toy, suspicious pill plushie"
 	path = /obj/item/toy/plush/among
 
+/datum/gear/dice_bag
+	display_name = "toy, bag of die"
+	path = /obj/item/storage/pill_bottle/dice
+
 /datum/gear/amongus/New()
 	. = ..()
 	var/obj/item/toy/plush/among/temp = new path()
@@ -147,6 +187,10 @@
 	path = /obj/item/colorsalve
 
 /datum/gear/tablebell
+	display_name = "table bell"
+	path = /obj/item/table_bell
+
+/datum/gear/brasstablebell
 	display_name = "table bell, brass"
 	path = /obj/item/table_bell/brass
 
@@ -166,3 +210,7 @@
 /datum/gear/camera
 	display_name = "polaroid camera"
 	path = /obj/item/camera
+
+/datum/gear/hourglass
+	display_name = "hourglass"
+	path = /obj/item/hourglass

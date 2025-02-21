@@ -23,6 +23,10 @@
 	if(prob(floor_variance))
 		add_overlay("rockalt_[rand(1,max_icon_states)]")
 
+/turf/open/floor/plating/asteroid/rockplanet/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
+
 /turf/open/floor/plating/asteroid/rockplanet/lit
 	light_color = COLOR_ROCKPLANET_LIGHT
 	light_range = 2
@@ -46,9 +50,17 @@
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet/lit
 
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
+
 /turf/open/floor/plating/asteroid/rockplanet/wet
 	icon = 'icons/turf/floors/rockplanet_wet.dmi'
 	smooth_icon = 'icons/turf/floors/rockplanet_wet.dmi'
+
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit
 	light_range = 2
@@ -57,6 +69,10 @@
 //TODO: unused, remove
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked
 	name = "iron cracked sand"
+
+/turf/open/floor/plating/asteroid/rockplanet/wet/cracked/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit
 	light_range = 2
@@ -183,6 +199,51 @@
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/concrete/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_1/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_1/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_2/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_2/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_3/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_3/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_4/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_4/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/pavement/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/pavement/rockplanet/lit
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_ROCKPLANET_LIGHT

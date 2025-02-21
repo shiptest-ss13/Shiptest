@@ -3886,15 +3886,6 @@
 /obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/singularitylab/cargo)
-"pl" = (
-/obj/structure/chair{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/retaliate/clown/longface{
-	dir = 8
-	},
-/turf/open/floor/engine,
-/area/ruin/space/has_grav/singularitylab/lab)
 "pp" = (
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -10116,6 +10107,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
+"Nq" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/netherworld/asteroid,
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/singularitylab/lab)
 "Nr" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
@@ -19438,7 +19436,7 @@ id
 id
 lK
 pe
-pl
+Nq
 rO
 lK
 pe

@@ -350,21 +350,21 @@
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
-	name = "Pill-Class Torture Device"
+	name = "Pill-class Torture Device"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pillb
 	file_name = "independent_blackpill"
-	name = "Blackpill-Class Manned Torpedo"
+	name = "Blackpill-class Manned Torpedo"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pills
 	file_name = "independent_superpill"
-	name = "Superpill-Class Experimental Engineering Platform"
+	name = "Superpill-class Experimental Engineering Platform"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
@@ -391,7 +391,7 @@
 
 /datum/map_template/shuttle/subshuttles/ancon
 	file_name = "nanotrasen_ancon"
-	name = "Nanotrasen Ancon-Class Command Ship"
+	name = "Nanotrasen Ancon-class Command Ship"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NTSV"
 	name_categories = list("GENERAL", "SPACE")
@@ -404,14 +404,14 @@
 
 /datum/map_template/shuttle/subshuttles/anvil
 	file_name = "inteq_anvil"
-	name = "Anvil-Class Dropship"
+	name = "Anvil-class Dropship"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/runner
 	file_name = "syndicate_runner"
-	name = "Runner-Class Ambulance"
+	name = "Runner-class Ambulance"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
@@ -444,3 +444,8 @@
 	name = "Skink-class Cargo Runner"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NTSV"
+
+/datum/map_template/shuttle/subshuttles/bambulance
+	file_name = "cybersun_bambulance"
+	name = "Gauze-class Ambulance Pod"
+	prefix = "CSSV"

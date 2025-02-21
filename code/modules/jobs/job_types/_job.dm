@@ -28,11 +28,18 @@
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
 
-/datum/job/New(new_name, datum/outfit/new_outfit)
-	if(new_name)
-		name = new_name
-		outfit = new_outfit
-		register()
+/datum/job/New(new_name, datum/outfit/job/new_outfit)
+	if(!new_name)
+		return
+
+	name = new_name
+	outfit = new_outfit
+
+	var/datum/job/outfit_job = new new_outfit.jobtype
+	if(outfit_job)
+		access = outfit_job.get_access()
+
+	register()
 
 /datum/job/proc/register()
 	GLOB.occupations += src
@@ -176,7 +183,7 @@
 /datum/outfit/job
 	name = "Standard Gear"
 
-	var/jobtype = null
+	var/datum/job/jobtype = null
 
 	uniform = /obj/item/clothing/under/color/grey
 	wallet = /obj/item/storage/wallet

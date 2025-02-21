@@ -16,8 +16,6 @@
 	var/shield_type = /obj/durand_shield
 	var/shield_passive_drain = 300
 
-
-
 /obj/mecha/combat/durand/clip
 	desc = "An aging combat exosuit specially modified for the CMM-BARD anti-xenofauna division. Features improved close-combat armor and a modified defence grid able to electrocute melee attackers, at the cost of its ability to block projectiles."
 	name = "\improper Paladin"
@@ -33,6 +31,8 @@
 	shield = new shield_type(loc, src, layer, dir)
 	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, PROC_REF(relay))
 
+/obj/mecha/combat/durand/set_up_unique_action()
+	mech_unique_action = defense_action
 
 /obj/mecha/combat/durand/Destroy()
 	if(shield)

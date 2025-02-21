@@ -55,7 +55,7 @@
 /datum/crafting_recipe/food/eggrolls
 	name = "Eggrolls"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet = 1,
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
 		/obj/item/reagent_containers/food/snacks/friedegg = 1
 	)
