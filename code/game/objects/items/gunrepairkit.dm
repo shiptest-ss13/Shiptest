@@ -24,8 +24,8 @@
 	playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
 	user.visible_message("<span class='notice'>[user] starts to wipe down [fixable] with [src]!</span>", "<span class='notice'>You start to wipe down [fixable] with [src]...</span>")
 	if(!do_after(user, 20 SECONDS, target = target, extra_checks = CALLBACK(src, PROC_REF(accidents_happen), fixable, user)))
-		return
 		user.visible_message("<span class='notice'>[user] finishes cleaning [fixable]!</span>", "<span class='notice'>You clean [fixable].</span>")
+		return
 	fixable.gun_wear = clamp(fixable.gun_wear - wear_reduction, 0, 200)
 	uses--
 
