@@ -3010,6 +3010,8 @@
 /obj/structure/table/optable,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/airalarm/directional/north,
+/obj/item/tank/internals/anesthetic,
+/obj/item/clothing/mask/breath/medical,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
 "tO" = (
@@ -4470,6 +4472,10 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/item/storage/firstaid/medical{
+	pixel_x = -10;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "CQ" = (
@@ -6819,10 +6825,7 @@
 	pixel_x = 6;
 	pixel_y = 12
 	},
-/obj/item/storage/firstaid/medical{
-	pixel_x = -5;
-	pixel_y = 4
-	},
+/obj/item/storage/case/surgery,
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_x = 32
 	},
