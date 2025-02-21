@@ -204,9 +204,9 @@
 
 /obj/item/melee/knife/handsaw
 	name = "handsaw"
+	world_file = null
 	icon_state = "handsaw"
-	item_state = "handsaw"
-	desc = "A Woodworker's handsaw, useful for cutting up wood into planks, thanks to its serrated edge. Can double as a butchering tool in a pinch."
+	desc = "A serrated handsaw. This one has a TPI rating that makes it useful for both cutting up wood into planks, or sawing through the barrel of a gun."
 	force = 5
 	throwforce = 5
 	custom_materials = list(/datum/material/iron=4000)
