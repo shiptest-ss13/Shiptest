@@ -214,3 +214,75 @@
 /datum/gear/hourglass
 	display_name = "hourglass"
 	path = /obj/item/hourglass
+
+/datum/gear/moth/monarch 
+	display_name = "toy, moth plushie (monarch)"
+	path = /obj/item/toy/plush/monarch
+
+/datum/gear/moth/luna 
+	display_name = "toy, moth plushie (luna)"
+	path = /obj/item/toy/plush/luna 
+
+/datum/gear/moth/atlas
+	display_name = "toy, moth plushie (atlas)"
+	path = /obj/item/toy/plush/atlas
+
+/datum/gear/moth/redish
+	display_name = "toy, moth plushie (redish)"
+	path = /obj/item/toy/plush/redish
+
+/datum/gear/moth/royal
+	display_name = "toy, moth plushie (royal)"
+	path = /obj/item/toy/plush/royal
+
+/datum/gear/moth/gothic
+	display_name = "toy, moth plushie (gothic)"
+	path = /obj/item/toy/plush/gothic
+
+/datum/gear/moth/lovers
+	display_name = "toy, moth plushie (lovers)"
+	path = /obj/item/toy/plush/lovers 
+
+/datum/gear/moth/whitefly
+	display_name = "toy, moth plushie (white)"
+	path = /obj/item/toy/plush/whitefly 
+
+/datum/gear/moth/punished
+	display_name = "toy, moth plushie (punished)"
+	path = /obj/item/toy/plush/punished
+
+/datum/gear/moth/firewatch
+	display_name = "toy, moth plushie (firewatch)"
+	path = /obj/item/toy/plush/firewatch
+
+/datum/gear/moth/deadhead
+	display_name = "toy, moth plushie (deadhead)"
+	path = /obj/item/toy/plush/deadhead 
+
+/datum/gear/moth/poison
+	display_name = "toy, moth plushie (poison)"
+	path = /obj/item/toy/plush/poison
+
+/datum/gear/moth/ragged
+	display_name = "toy, moth plushie (ragged)"
+	path = /obj/item/toy/plush/ragged 
+
+/datum/gear/moth/snow
+	display_name = "toy, moth plushie (snow)"
+	path = /obj/item/toy/plush/snow 
+
+/datum/gear/moth/clockwork
+	display_name = "toy, moth plushie (clockwork)"
+	path = /obj/item/toy/plush/clockwork
+
+/datum/gear/moth/moonfly
+	display_name = "toy, moth plushie (moonfly)"
+	path = /obj/item/toy/plush/moonfly
+
+/datum/gear/moth/error
+	display_name = "toy, moth plushie (error)"
+	path = /obj/item/toy/plush/error
+
+/datum/gear/moth/rainbow
+	display_name = "toy, moth plushie (rainbow)"
+	path = /obj/item/toy/plush/rainbow
