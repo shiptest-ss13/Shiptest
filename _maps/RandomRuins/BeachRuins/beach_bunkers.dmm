@@ -7,14 +7,17 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "ah" = (
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/rations,
+/obj/item/reagent_containers/food/drinks/bottle/moonshine,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "ao" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -23,15 +26,23 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/ruin/beach/bunker/side_two)
+"ar" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "at" = (
 /turf/closed/wall/concrete/reinforced,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "av" = (
 /obj/effect/turf_decal/road,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "aC" = (
 /obj/structure/cable{
 	icon_state = "5-6"
@@ -50,30 +61,34 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stack/sheet/cotton/cloth{
+	pixel_y = 13;
+	pixel_x = -8
+	},
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/living)
 "aE" = (
 /obj/structure/fence{
 	dir = 4
 	},
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "aG" = (
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "aR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "aY" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /turf/open/floor/plating/asteroid/sand/dense/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ba" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -86,7 +101,14 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/living)
+"br" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "bu" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "guy";
@@ -94,10 +116,13 @@
 	pixel_x = 1
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
+"bv" = (
+/turf/closed/wall/concrete,
+/area/ruin/beach/bunker)
 "bW" = (
 /turf/closed/mineral/random/beach,
-/area/space)
+/area/overmap_encounter/planetoid/cave/explored)
 "bY" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/glass/bucket{
@@ -113,8 +138,10 @@
 	pixel_x = 9
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "cb" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
@@ -122,7 +149,13 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"cf" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/rations,
+/obj/item/reagent_containers/food/drinks/bottle/moonshine,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/bunker/side_two)
 "cu" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/radio/intercom/wideband/table{
@@ -135,14 +168,22 @@
 	pixel_x = -5;
 	pixel_y = -10
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
 "cx" = (
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"cz" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "cE" = (
 /obj/structure/closet/crate/secure/weapon{
 	name = "ammo crate"
@@ -153,8 +194,9 @@
 /obj/item/ammo_box/magazine/skm_762_40/empty{
 	pixel_x = -7
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "cO" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -171,13 +213,19 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/office)
+"cP" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/beach/bunker/office)
 "cS" = (
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "cV" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -187,37 +235,67 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/living)
 "db" = (
 /obj/structure/fence{
 	dir = 4
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"dc" = (
+/obj/structure/flora/ausbushes/genericbush,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "dh" = (
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "dk" = (
-/obj/vehicle/ridden/atv,
-/turf/open/floor/concrete/pavement/beachplanet,
-/area/space)
+/obj/structure/hazard/electrical/electrified_water,
+/turf/open/floor/plating/ship/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"dw" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "dK" = (
 /obj/structure/closet/cabinet,
+/obj/machinery/light/small/directional/east,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen/deckhand,
+/obj/item/clothing/shoes/combat{
+	pixel_y = -10
+	},
+/obj/item/clothing/head/soft/frontiersmen{
+	pixel_y = 5
+	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
+"dV" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "b";
+	pixel_y = -26;
+	pixel_x = -6
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "2";
+	pixel_y = -25;
+	pixel_x = 4
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ex" = (
 /obj/structure/cable{
 	icon_state = "5-9"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
 "eF" = (
 /turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "eR" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -226,18 +304,18 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker)
 "eS" = (
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
 "fa" = (
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid/sand/dense/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "fd" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -247,21 +325,28 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "fr" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
 "ft" = (
 /obj/structure/chair/office,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
+"fw" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/concrete/pavement/beachplanet,
+/area/ruin/beach/bunker/side_one)
+"fB" = (
+/turf/open/floor/concrete/pavement/beachplanet,
+/area/ruin/beach/bunker/side_one)
 "fQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -272,21 +357,31 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/office)
 "ge" = (
 /obj/structure/table,
 /obj/item/melee/knife/pizza_cutter{
 	pixel_y = 6
 	},
 /turf/open/floor/plating/dirt/beach,
-/area/space)
+/area/overmap_encounter/planetoid/cave/explored)
 "gi" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
 /obj/structure/table/wood/reinforced,
+/obj/item/paper_bin{
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_y = 6
+	},
+/obj/item/candle{
+	pixel_x = -8;
+	pixel_y = 9
+	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker/office)
 "gl" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -301,7 +396,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/office)
 "gu" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -310,13 +405,13 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "gF" = (
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "hf" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -325,7 +420,7 @@
 	icon_state = "5-10"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "hg" = (
 /obj/item/reagent_containers/food/snacks/deadmouse{
 	pixel_x = 5;
@@ -335,21 +430,22 @@
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/generic,
 /obj/structure/sign/poster/official/no_erp{
-	pixel_x = 29
+	pixel_x = 29;
+	layer = 3
 	},
 /obj/effect/decal/cleanable/ash{
 	pixel_y = -5;
 	pixel_x = -8
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "ht" = (
 /obj/item/pickaxe/improvised{
 	pixel_x = 6;
 	pixel_y = -7
 	},
 /turf/open/floor/plating/dirt/beach,
-/area/space)
+/area/overmap_encounter/planetoid/cave/explored)
 "hz" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -357,19 +453,21 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "hN" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "hR" = (
 /obj/structure/cable{
 	icon_state = "5-6"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "hT" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -379,8 +477,9 @@
 /obj/item/storage/box/ammo/a762_40{
 	pixel_y = -5
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "ig" = (
 /obj/structure/cable{
 	icon_state = "8-10"
@@ -390,26 +489,48 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "ii" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "im" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "it" = (
 /obj/structure/cable{
 	icon_state = "1-9"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
+"iv" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"iC" = (
+/obj/item/paper/crumpled{
+	pixel_y = -5;
+	pixel_x = -3
+	},
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
+"iH" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "trade";
+	pixel_x = -27
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "iI" = (
+/obj/machinery/light/small/directional/east,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/concrete/pavement/beachplanet,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "iJ" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -417,8 +538,9 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "iU" = (
 /obj/structure/table,
 /obj/item/binoculars{
@@ -441,7 +563,7 @@
 	pixel_x = 8
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "iZ" = (
 /obj/effect/turf_decal/road/stripes{
 	dir = 8
@@ -449,35 +571,54 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"jk" = (
+/obj/effect/decal/cleanable/crayon{
+	pixel_y = 26
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "jP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/office)
+"jR" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "jT" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
 	icon_state = "4-5"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "jX" = (
 /obj/effect/turf_decal/road{
 	dir = 1
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"kd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/wood,
+/area/ruin/beach/bunker/office)
 "ki" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker)
 "kp" = (
 /obj/machinery/power/solar_control{
 	dir = 8
@@ -485,8 +626,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "kr" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -494,21 +636,52 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
+"ks" = (
+/mob/living/simple_animal/hostile/rat,
+/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+	pixel_y = 3;
+	pixel_x = -8
+	},
+/obj/effect/decal/cleanable/garbage{
+	pixel_y = 4;
+	pixel_x = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/gibs{
+	pixel_y = -5
+	},
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_one)
+"kw" = (
+/obj/effect/spawner/bunk_bed,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/bedsheet/black{
+	pixel_y = 14
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/wood,
+/area/ruin/beach/bunker/living)
 "kF" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker)
 "kH" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/item/radio/intercom/directional/east,
+/obj/item/reagent_containers/food/drinks/sillycup/smallcarton{
+	pixel_y = 10;
+	pixel_x = 5
+	},
+/obj/item/food/breadslice/creamcheese,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
 "kI" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
@@ -517,11 +690,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "kJ" = (
 /turf/open/floor/plating/grass/beach,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "la" = (
 /obj/structure/dresser{
 	dir = 1
@@ -529,19 +703,28 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/item/kirbyplants{
+	icon_state = "plant-22";
+	pixel_y = 16;
+	pixel_x = 5
+	},
+/obj/item/clothing/head/frontier/peaked{
+	pixel_y = 9;
+	pixel_x = -7
+	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/office)
 "lk" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker/office)
 "lr" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ls" = (
 /obj/structure/closet/cabinet,
 /obj/item/reagent_containers/food/snacks/deadmouse{
@@ -573,17 +756,29 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/item/clothing/head/frontier/peaked{
-	pixel_y = 13
-	},
 /obj/item/clothing/under/frontiersmen/officer,
 /obj/item/clothing/suit/armor/frontier,
 /obj/machinery/light/small/directional/south,
 /obj/item/clothing/gloves/combat,
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = 16;
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = 14;
+	pixel_x = -3
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
-/area/space)
+/area/ruin/beach/bunker/office)
+"lu" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "safe";
+	pixel_y = -27
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "lv" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -600,7 +795,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker/office)
 "ly" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -609,8 +804,22 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"lD" = (
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = 14;
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = -6;
+	pixel_x = -13
+	},
+/obj/effect/decal/cleanable/vomit,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_one)
 "lF" = (
 /obj/structure/bed/double{
 	dir = 1
@@ -623,7 +832,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/space)
+/area/ruin/beach/bunker/office)
 "lG" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -637,39 +846,67 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/living)
 "lL" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
 	icon_state = "4-6"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "lO" = (
 /obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/colocup/lean{
+	name = "Commander's sleep aid";
+	pixel_x = -6;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/drinks/colocup/lean{
+	name = "Commander's sleep aid";
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/drinks/colocup/lean{
+	name = "Commander's sleep aid";
+	pixel_x = 7;
+	pixel_y = -1
+	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker/office)
 "lR" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "mj" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/obj/structure/hazard/electrical/electrified_water,
+/turf/open/floor/plating/ship/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "mk" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/east,
+/obj/item/paint/paint_remover{
+	pixel_y = 5;
+	pixel_x = -5
+	},
+/obj/item/paint/paint_remover{
+	pixel_x = 8
+	},
+/obj/item/paint/paint_remover{
+	pixel_y = -4;
+	pixel_x = -2
+	},
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "mn" = (
-/turf/open/floor/plating/dirt/beach,
-/area/space)
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "mo" = (
 /obj/structure/cable{
 	icon_state = "4-5"
@@ -678,8 +915,19 @@
 	icon_state = "5-6"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/soda_cans/cola{
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/food/drinks/soda_cans/cola{
+	pixel_x = -5
+	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
+"mD" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "mE" = (
 /obj/machinery/shower{
 	dir = 8
@@ -691,7 +939,7 @@
 /obj/structure/window/reinforced,
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/bunker/living)
 "mN" = (
 /obj/structure/cable{
 	icon_state = "9-10"
@@ -700,7 +948,7 @@
 	icon_state = "4-10"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "mV" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "toilet";
@@ -721,43 +969,86 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker/living)
 "mW" = (
 /obj/structure/chair/comfy/olive/old/directional/north,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/office)
+"na" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "nh" = (
 /obj/structure/chair/plastic,
 /turf/open/floor/plating/dirt/beach,
-/area/space)
+/area/overmap_encounter/planetoid/cave/explored)
+"nm" = (
+/obj/effect/decal/cleanable/blood/splatter/over_window{
+	icon_state = "floor7";
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/effect/decal/cleanable/blood/splatter/over_window{
+	icon_state = "floor7";
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/effect/decal/cleanable/blood/splatter/over_window{
+	icon_state = "floor7";
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/effect/decal/cleanable/blood/splatter/over_window{
+	icon_state = "floor7";
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/effect/decal/cleanable/blood/splatter/over_window{
+	icon_state = "floor7";
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/effect/decal/cleanable/blood/splatter/over_window{
+	icon_state = "floor7";
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/turf/closed/wall/concrete,
+/area/ruin/beach/bunker/living)
 "no" = (
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "nu" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "nB" = (
 /obj/effect/spawner/bunk_bed,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/west,
+/obj/effect/mob_spawn/human/corpse/frontier,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
 "nU" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/guncloset{
 	pixel_y = 5
 	},
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker)
 "nZ" = (
 /obj/structure/cable{
 	icon_state = "6-10"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "oa" = (
 /obj/structure/cable{
 	icon_state = "6-10"
@@ -766,7 +1057,10 @@
 	dir = 5
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"oj" = (
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
 "ok" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood{
@@ -776,15 +1070,23 @@
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_x = -32
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker/office)
 "ol" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
+"om" = (
+/obj/item/paper/crumpled{
+	pixel_y = 13;
+	pixel_x = 1
+	},
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
 "oo" = (
 /obj/structure/toilet{
 	dir = 8;
@@ -794,25 +1096,46 @@
 	pixel_x = 6
 	},
 /obj/machinery/light/small/directional/east,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
+"oq" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_one)
 "ot" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_one)
+"ow" = (
+/mob/living/simple_animal/hostile/rat,
+/obj/effect/turf_decal/steeldecal/steel_decals3,
+/obj/item/paper/crumpled{
+	pixel_y = 8;
+	pixel_x = 5
+	},
+/obj/item/paper/crumpled{
+	pixel_y = -6;
+	pixel_x = -6
+	},
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
 "oI" = (
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "oJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/rat,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/space)
+/area/ruin/beach/bunker)
 "oL" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -821,23 +1144,29 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "po" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/office)
 "pz" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"pE" = (
+/obj/structure/flora/ausbushes/fernybush,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "pG" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "pM" = (
 /obj/structure/cable{
 	icon_state = "5-9"
@@ -845,17 +1174,20 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
-/area/space)
+/area/ruin/beach/bunker)
 "pN" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/light/small/directional/east,
+/mob/living/simple_animal/hostile/rat,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker/office)
 "pS" = (
 /obj/effect/turf_decal/road/stripes{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "pU" = (
 /obj/item/towel{
 	pixel_x = -6;
@@ -878,32 +1210,54 @@
 	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "pW" = (
 /obj/structure/table/wood/reinforced,
-/turf/open/space/basic,
-/area/space)
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/beach/bunker)
+"qh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin/beach/bunker/office)
+"qs" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/beach/bunker/office)
 "qy" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "qF" = (
 /obj/structure/toilet{
 	dir = 8;
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/north,
+/obj/structure/chair/handrail,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/office)
 "qI" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/obj/structure/hazard/electrical/electrified_water,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/obj/effect/mob_spawn/human/corpse/frontier,
+/turf/open/floor/plating/ship/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "qJ" = (
 /obj/structure/rack,
 /obj/item/storage/box/ammo/a8_50r{
@@ -913,33 +1267,42 @@
 	pixel_y = 9
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "qO" = (
 /obj/structure/rack,
 /obj/item/storage/bottles/moonshine{
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "qY" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "rc" = (
 /obj/structure/cable{
 	icon_state = "5-9"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"rd" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/west,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_two)
 "rf" = (
 /obj/effect/turf_decal/industrial/warning/full,
-/turf/open/floor/concrete,
-/area/space)
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ri" = (
 /obj/structure/catwalk/over,
 /obj/structure/window/reinforced{
@@ -949,10 +1312,20 @@
 	pixel_x = 8
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/bunker/living)
+"rr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/bunker/side_one)
 "rt" = (
 /turf/closed/wall/concrete,
-/area/space)
+/area/ruin/beach/bunker/office)
+"rw" = (
+/obj/vehicle/ridden/atv{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/beachplanet,
+/area/ruin/beach/bunker/side_one)
 "rH" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -962,12 +1335,25 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"rN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_two)
+"rR" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "rX" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4,
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "sf" = (
 /obj/structure/cable{
 	icon_state = "4-5"
@@ -976,7 +1362,7 @@
 	icon_state = "8-9"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "sv" = (
 /obj/machinery/button/door{
 	dir = 1;
@@ -986,14 +1372,14 @@
 	name = "shutter control"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "sx" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
-/area/space)
+/area/ruin/beach/bunker)
 "sE" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
@@ -1003,7 +1389,7 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "ta" = (
 /obj/structure/cable{
 	icon_state = "5-10"
@@ -1022,16 +1408,26 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker)
+"td" = (
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_two)
+"to" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/rat,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/beach/bunker/side_two)
 "tv" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "tx" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/beach,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "tJ" = (
 /obj/structure/cable{
 	icon_state = "1-9"
@@ -1042,27 +1438,33 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "tO" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "tQ" = (
-/obj/effect/spawner/bunk_bed,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/north,
+/obj/item/reagent_containers/food/snacks/pizza/meat{
+	pixel_y = 13;
+	layer = 4
+	},
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
 "tW" = (
 /obj/effect/turf_decal/road,
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ug" = (
 /obj/structure/rack,
 /obj/item/ammo_box/magazine/illestren_a850r/empty{
@@ -1091,34 +1493,49 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "ur" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/paper_bin{
 	pixel_x = -4;
 	pixel_y = 8
 	},
+/obj/machinery/light/small/directional/west,
+/obj/item/pen{
+	pixel_y = 6
+	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
 "uw" = (
 /obj/structure/grille,
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "uz" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/turf/open/floor/concrete,
-/area/space)
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "uF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
-/area/space)
+/area/ruin/beach/bunker/office)
+"uH" = (
+/obj/item/paper/crumpled{
+	pixel_y = 6;
+	pixel_x = 12
+	},
+/obj/item/paper/crumpled{
+	pixel_y = 13;
+	pixel_x = 1
+	},
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
 "uR" = (
 /obj/machinery/shower{
 	dir = 4
@@ -1128,8 +1545,24 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
+/obj/item/toy/plush/moth/lovers{
+	pixel_y = 2;
+	pixel_x = -2
+	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/bunker/living)
+"vb" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"vs" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "electricdanger";
+	pixel_x = 3;
+	pixel_y = 8
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "vF" = (
 /obj/structure/closet/cabinet,
 /obj/structure/cable{
@@ -1138,8 +1571,17 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen/deckhand,
+/obj/item/clothing/shoes/combat{
+	pixel_y = -10
+	},
+/obj/item/clothing/head/soft/frontiersmen{
+	pixel_y = 5
+	},
+/obj/item/storage/backpack/duffelbag,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
 "vJ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1152,26 +1594,46 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/garbage{
+	pixel_y = 13
+	},
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
+"vN" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "vT" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "vY" = (
 /obj/structure/cable{
 	icon_state = "8-9"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "vZ" = (
 /obj/structure/cable{
 	icon_state = "2-10"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"ws" = (
+/obj/structure/rack,
+/obj/item/storage/bottles/moonshine{
+	pixel_y = 4
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_one)
 "wE" = (
 /obj/structure/cable{
 	icon_state = "4-6"
@@ -1179,59 +1641,101 @@
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"wH" = (
+/obj/machinery/light/small/directional/west,
+/obj/structure/rack,
+/obj/item/weldingtool/empty,
+/turf/open/floor/concrete/pavement/beachplanet,
+/area/ruin/beach/bunker/side_one)
+"wR" = (
+/obj/item/paint/green{
+	pixel_y = 3;
+	pixel_x = 7
+	},
+/obj/structure/closet/crate/secure/gear,
+/obj/item/paint/green{
+	pixel_x = -7;
+	pixel_y = 3
+	},
+/obj/item/paint/green{
+	pixel_y = 3
+	},
+/obj/item/toy/crayon/spraycan{
+	pixel_x = -12
+	},
+/obj/item/toy/crayon/spraycan{
+	pixel_x = -6
+	},
+/obj/item/toy/crayon/spraycan{
+	pixel_x = 1
+	},
+/obj/item/toy/crayon/spraycan{
+	pixel_x = 8
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/bunker/side_two)
 "wU" = (
 /obj/structure/fluff/beach_umbrella{
 	pixel_x = 7;
 	pixel_y = -18
 	},
 /turf/open/floor/plating/dirt/beach,
-/area/space)
+/area/overmap_encounter/planetoid/cave/explored)
 "wX" = (
 /obj/structure/chair/comfy/olive/old/directional/north,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker/office)
 "wZ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"xd" = (
+/mob/living/simple_animal/hostile/rat,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_two)
 "xf" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
 	environment_smash = 0;
 	wander = 0
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "xn" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "xp" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor7"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"xu" = (
+/obj/structure/flora/ausbushes/leafybush,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "xw" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker/office)
 "xJ" = (
 /obj/structure/guncloset{
 	pixel_y = 5
 	},
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker)
 "xO" = (
 /obj/structure/closet/crate/secure/gear,
 /obj/item/storage/belt/security/military/frontiersmen{
@@ -1243,20 +1747,29 @@
 /obj/item/storage/belt/security/military/frontiersmen{
 	pixel_y = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "xU" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 8
 	},
+/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+	pixel_y = 3;
+	pixel_x = -8
+	},
+/obj/item/paper/crumpled{
+	pixel_y = 1;
+	pixel_x = 5
+	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
 "xV" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "yb" = (
 /turf/template_noop,
 /area/template_noop)
@@ -1269,7 +1782,7 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "yw" = (
 /obj/structure/cable{
 	icon_state = "2-10"
@@ -1286,7 +1799,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/living)
 "yx" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood{
@@ -1296,30 +1809,37 @@
 	pixel_y = 6;
 	pixel_x = 5
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
 "yA" = (
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"yD" = (
+/obj/structure/flora/ausbushes/reedbush,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "yJ" = (
 /obj/structure/chair/sofa/olive/old/left/directional/north,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
 "yM" = (
 /obj/structure/rack,
 /obj/item/key,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/concrete/pavement/beachplanet,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "yQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "zp" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -1327,14 +1847,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "zw" = (
 /obj/effect/spawner/bunk_bed,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/space)
+/area/ruin/beach/bunker/living)
 "zB" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -1342,13 +1864,19 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "zH" = (
 /obj/structure/table,
 /obj/structure/table,
+/obj/item/newspaper,
+/obj/item/radio/old{
+	pixel_x = 8;
+	pixel_y = 9
+	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
 "zJ" = (
 /obj/structure/cable{
 	icon_state = "6-10"
@@ -1357,7 +1885,7 @@
 	dir = 9
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "zL" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -1366,7 +1894,15 @@
 	icon_state = "9-10"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"zQ" = (
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_one)
 "Ad" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood/corner,
@@ -1375,13 +1911,50 @@
 	pixel_y = 3;
 	pixel_x = -4
 	},
+/obj/machinery/button/door{
+	pixel_y = 8;
+	pixel_x = -23;
+	dir = 4;
+	id = "b3";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "cargo shed lock"
+	},
+/obj/machinery/button/door{
+	pixel_y = -14;
+	pixel_x = -23;
+	dir = 4;
+	id = "ba";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "cargo shed lock"
+	},
+/obj/machinery/button/door{
+	pixel_y = -3;
+	pixel_x = -23;
+	dir = 4;
+	id = "b2";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "cargo shed lock"
+	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker/office)
 "Ar" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/filingcabinet/double/grey,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen{
+	pixel_y = 6
+	},
+/obj/item/pen{
+	pixel_y = 6
+	},
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker)
 "AC" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1393,17 +1966,17 @@
 	icon_state = "4-6"
 	},
 /turf/open/floor/plating/asteroid/sand/dense/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "AE" = (
 /mob/living/simple_animal/crab,
 /turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "AH" = (
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "AI" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
@@ -1413,7 +1986,7 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "AJ" = (
 /obj/effect/turf_decal/road/slow{
 	dir = 4
@@ -1421,64 +1994,84 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "AM" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/curtain/cloth/fancy{
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/office)
 "Ba" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Be" = (
-/obj/machinery/door/airlock/grunge,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/grunge{
+	id_tag = "b2"
+	},
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker/side_one)
+"Bm" = (
+/obj/item/toy/plush/landmine,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_one)
 "Bn" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Bu" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_one)
 "BA" = (
 /obj/structure/cable{
 	icon_state = "4-5"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "BC" = (
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/office)
 "BK" = (
 /obj/effect/turf_decal/road{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "BN" = (
 /obj/structure/guncloset,
 /obj/item/gun/ballistic/rifle/illestren/factory,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "BQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
+"BS" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "BV" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -1498,22 +2091,25 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker)
 "Ca" = (
 /obj/effect/spawner/bunk_bed,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/bedsheet/black,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
 "Cc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1;
 	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
 	widenet = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "Ci" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/taperecorder{
@@ -1530,7 +2126,7 @@
 	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
 "Cl" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -1545,7 +2141,29 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/office)
+"Cn" = (
+/obj/structure/rack,
+/obj/item/reagent_containers/glass/concrete_bag{
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/glass/concrete_bag{
+	pixel_x = 7
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_two)
+"Cr" = (
+/obj/structure/mirror{
+	pixel_y = 28
+	},
+/obj/structure/sink{
+	pixel_y = 18
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/bunker/office)
 "Cu" = (
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -1554,17 +2172,56 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker)
 "CC" = (
 /obj/structure/cable{
 	icon_state = "6-10"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"CL" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet,
+/area/ruin/beach/bunker/side_one)
 "CV" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/machinery/light/small/directional/north,
+/obj/item/radio/intercom/directional/west,
+/obj/item/kirbyplants{
+	icon_state = "plant-21";
+	pixel_y = 4;
+	pixel_x = -1
+	},
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = 13;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = 16;
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = 6;
+	pixel_x = -2
+	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
+"CY" = (
+/obj/structure/closet/cabinet,
+/obj/machinery/light/small/directional/west,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen/deckhand,
+/obj/item/clothing/shoes/combat{
+	pixel_y = -10
+	},
+/obj/item/clothing/head/soft/frontiersmen{
+	pixel_y = 5
+	},
+/turf/open/floor/wood,
+/area/ruin/beach/bunker/living)
+"Da" = (
+/turf/closed/wall/concrete,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Db" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -1575,8 +2232,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/office)
 "Do" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -1588,24 +2246,68 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Dv" = (
+/obj/structure/flora/ausbushes/palebush,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "DC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
+"Ea" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/storage/fancy/cigarettes/cigpack_uplift{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_uplift{
+	pixel_y = -6;
+	pixel_x = -8
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_uplift,
+/obj/item/storage/fancy/cigarettes/cigpack_uplift{
+	pixel_x = 11;
+	pixel_y = -3
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_uplift{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_uplift{
+	pixel_x = 6;
+	pixel_y = 1
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_two)
+"Eg" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/storage/bottles/moonshine{
+	pixel_y = 4
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_one)
 "El" = (
-/obj/machinery/door/airlock/grunge,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/grunge{
+	id_tag = "ba"
+	},
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "Em" = (
 /obj/structure/cable{
 	icon_state = "1-9"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Eo" = (
 /obj/structure/closet/crate/secure/gear,
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier{
@@ -1624,8 +2326,16 @@
 	pixel_y = -5;
 	pixel_x = -6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_one)
+"Er" = (
+/obj/item/flashlight/lantern{
+	pixel_y = 18;
+	pixel_x = -11
+	},
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ew" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -1640,22 +2350,67 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker)
+"Ex" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"EB" = (
+/obj/structure/filingcabinet/double/grey{
+	dir = 1
+	},
+/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen{
+	pixel_y = 6
+	},
+/obj/item/pen{
+	pixel_y = 6
+	},
+/turf/open/floor/wood,
+/area/ruin/beach/bunker/office)
+"EC" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/west,
+/obj/item/kirbyplants{
+	icon_state = "plant-13";
+	pixel_x = -10;
+	pixel_y = -2
+	},
+/turf/open/floor/carpet,
+/area/ruin/beach/bunker/office)
 "EM" = (
 /obj/structure/closet/cabinet,
 /obj/structure/cable{
 	icon_state = "4-6"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen/deckhand,
+/obj/item/clothing/shoes/combat{
+	pixel_y = -10
+	},
+/obj/item/clothing/head/soft/frontiersmen{
+	pixel_y = 5
+	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
 "EP" = (
 /obj/structure/cable{
 	icon_state = "4-5"
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/neutured,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "ES" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
@@ -1664,8 +2419,12 @@
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"EW" = (
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/bunker/side_one)
 "Fe" = (
 /obj/structure/rack,
 /obj/item/shovel/spoon,
@@ -1682,8 +2441,10 @@
 	pixel_x = 1
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/north,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "Fq" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -1692,14 +2453,14 @@
 	icon_state = "6-9"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ft" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle{
 	wander = 0;
 	environment_smash = 0
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Fu" = (
 /obj/structure/rack,
 /obj/item/storage/box/ammo/a8_50r/trac{
@@ -1709,8 +2470,9 @@
 	pixel_y = 9
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "Fz" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -1723,7 +2485,19 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/side_two)
+"FD" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/south,
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/wood,
+/area/ruin/beach/bunker)
+"FF" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/west,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_one)
 "FQ" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/structure/cable{
@@ -1731,16 +2505,17 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "Gc" = (
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ge" = (
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "Gh" = (
 /obj/structure/cable{
 	icon_state = "8-10"
@@ -1752,8 +2527,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "GO" = (
 /obj/item/paper/crumpled{
 	pixel_x = -14;
@@ -1773,7 +2549,11 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
+"Hc" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Hf" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -1785,21 +2565,22 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/rat,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "Hp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
-/area/space)
+/area/ruin/beach/bunker/living)
 "HB" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "HF" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -1810,17 +2591,26 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/living)
 "HK" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
 	icon_state = "5-6"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "HQ" = (
-/turf/open/floor/concrete,
-/area/space)
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"HS" = (
+/mob/living/simple_animal/hostile/human/frontier,
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"HX" = (
+/obj/structure/flora/tree/dead/barren,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ia" = (
 /obj/structure/cable{
 	icon_state = "1-6"
@@ -1830,7 +2620,7 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Il" = (
 /obj/structure/cable{
 	icon_state = "6-10"
@@ -1843,7 +2633,7 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "IA" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -1856,12 +2646,12 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker)
 "IF" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "IL" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -1869,18 +2659,49 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"IP" = (
+/turf/closed/wall/concrete,
+/area/ruin/beach/bunker/side_one)
 "IZ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /obj/structure/table,
+/obj/item/storage/fancy/cigarettes/cigpack_uplift{
+	pixel_y = 6;
+	pixel_x = 5
+	},
+/obj/item/lighter/greyscale{
+	pixel_x = -7;
+	pixel_y = 1
+	},
+/obj/item/lighter/greyscale{
+	pixel_x = 8;
+	pixel_y = -3
+	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
 "Ja" = (
+/obj/structure/hazard/electrical/electrified_water,
 /obj/item/toy/beach_ball,
-/turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/turf/open/floor/plating/ship/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Jb" = (
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = -3;
+	pixel_x = -10
+	},
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = 14;
+	pixel_x = -2
+	},
+/obj/effect/decal/cleanable/blood/innards{
+	pixel_y = -5;
+	pixel_x = -3
+	},
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_one)
 "Jd" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -1894,14 +2715,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Jf" = (
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Jk" = (
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -1910,19 +2732,19 @@
 	icon_state = "2-6"
 	},
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Jl" = (
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Jp" = (
 /obj/structure/chair/plastic{
 	dir = 2
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "JX" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -1931,7 +2753,7 @@
 	icon_state = "2-9"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Kg" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/cable{
@@ -1939,18 +2761,33 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
+"Kl" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/grass/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Km" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Kt" = (
+/mob/living/simple_animal/hostile/rat,
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/vomit{
+	icon_state = "vomit_3"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_one)
 "KJ" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
 "KL" = (
 /obj/structure/chair/office,
 /obj/effect/turf_decal/siding/wood/end{
@@ -1958,59 +2795,86 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
 "KU" = (
 /obj/structure/fence{
 	dir = 1
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Lp" = (
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ls" = (
 /obj/structure/cable{
 	icon_state = "9-10"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Lz" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
 	environment_smash = 0;
 	wander = 0;
-	stop_automated_movement = 1
+	stop_automated_movement = 1;
+	aggro_vision_range = 14;
+	vision_range = 14
 	},
 /obj/structure/chair/plastic{
 	dir = 2
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "LE" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
 "LF" = (
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"LI" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+	environment_smash = 0;
+	wander = 0;
+	stop_automated_movement = 1;
+	aggro_vision_range = 14;
+	vision_range = 14
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "LS" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_two)
+"Me" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/storage/box/ammo/a44roum{
+	pixel_y = 6;
+	pixel_x = -8
+	},
+/obj/item/storage/box/ammo/a44roum{
+	pixel_y = 6;
+	pixel_x = 6
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_one)
 "Mi" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2,
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Mr" = (
 /obj/structure/mirror{
 	pixel_y = 28
@@ -2020,7 +2884,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "Mz" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -2029,8 +2893,9 @@
 	icon_state = "2-5"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "MH" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -2041,20 +2906,20 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/living)
 "MS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker/office)
 "MX" = (
 /obj/structure/chair/plastic{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/confetti,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "Ni" = (
 /obj/effect/turf_decal/road/stripes{
 	dir = 4
@@ -2063,13 +2928,13 @@
 	icon_state = "5-9"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Nn" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor3"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "NA" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/tracker,
@@ -2077,25 +2942,96 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"NC" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "electricdanger";
+	pixel_x = 3;
+	pixel_y = 8
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "NU" = (
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
-/mob/living/simple_animal/hostile/human/frontier,
-/turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/obj/structure/hazard/electrical/electrified_water,
+/turf/open/floor/plating/ship/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"NW" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = 10;
+	pixel_x = -2
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = 10;
+	pixel_x = 5
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = 10;
+	pixel_x = 12
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = 10;
+	pixel_x = -9
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = 1;
+	pixel_x = -9
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = 1;
+	pixel_x = -2
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = 1;
+	pixel_x = 5
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = 1;
+	pixel_x = 12
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = -8;
+	pixel_x = -9
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = -8;
+	pixel_x = -2
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = -8;
+	pixel_x = 5
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_y = -8;
+	pixel_x = 12
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_two)
 "Od" = (
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
+"Oo" = (
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = -3;
+	pixel_x = -10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_two)
 "Ow" = (
 /obj/structure/chair/sofa/olive/old/directional/north,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
 "Oz" = (
 /obj/structure/toilet{
 	dir = 4;
@@ -2103,11 +3039,14 @@
 	},
 /obj/effect/decal/cleanable/insectguts,
 /obj/machinery/light/small/directional/west,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "OF" = (
 /turf/open/floor/plating/asteroid/sand/dense/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ON" = (
 /obj/structure/table,
 /obj/machinery/jukebox/boombox{
@@ -2119,7 +3058,7 @@
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "OW" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/glass/concrete_bag{
@@ -2129,12 +3068,14 @@
 	pixel_x = 7
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/north,
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "OX" = (
 /obj/structure/fence,
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Pb" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2146,25 +3087,44 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "Ph" = (
 /obj/structure/chair/sofa/olive/old/right/directional/west,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
 "Pm" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/turf/open/floor/concrete,
-/area/space)
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Pr" = (
 /obj/structure/cable{
 	icon_state = "0-10"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/closet/crate/secure/gear,
+/obj/item/clothing/head/hardhat/frontier{
+	pixel_y = 4;
+	pixel_x = 4
+	},
+/obj/item/clothing/head/hardhat/frontier{
+	pixel_x = -7;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/frontiersmen/deckhand{
+	pixel_y = -5;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/frontiersmen/deckhand{
+	pixel_x = 5;
+	pixel_y = -5
+	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "Ps" = (
 /obj/structure/rack,
 /obj/item/storage/box/ammo/a8_50r/match,
@@ -2172,8 +3132,9 @@
 	pixel_y = 10
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "Pt" = (
 /obj/machinery/button/door{
 	dir = 2;
@@ -2183,7 +3144,7 @@
 	name = "shutter control"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "Pw" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood,
@@ -2193,12 +3154,14 @@
 	},
 /obj/item/reagent_containers/condiment/milk{
 	pixel_x = 5;
-	pixel_y = 4
+	pixel_y = 4;
+	name = "rat milk";
+	desc = "This probably isn't good to drink"
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
-/area/space)
+/area/ruin/beach/bunker/office)
 "PB" = (
 /obj/machinery/button/door{
 	dir = 4;
@@ -2208,7 +3171,18 @@
 	name = "shutter control"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"PW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table,
+/obj/item/paper/crumpled{
+	default_raw_text = "So help me god. If you don't fix the wire. You KNOW what's wrong. So help me by Rawk and all that Juice. I will have your FUCKING head. On a pike. In my office. For the rats to eat.";
+	name = "re: Wires";
+	pixel_y = 3;
+	pixel_x = -3
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/bunker/side_two)
 "Qc" = (
 /obj/machinery/button/door{
 	dir = 8;
@@ -2218,36 +3192,45 @@
 	name = "shutter control"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Qv" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
+"Qw" = (
+/turf/closed/wall/concrete,
+/area/ruin/beach/bunker/living)
 "Qx" = (
 /mob/living/simple_animal/hostile/human/frontier,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/office)
+"QF" = (
+/obj/effect/turf_decal/road,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "QK" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
 "QQ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
 "QU" = (
 /obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/concrete,
-/area/space)
+/obj/structure/cable,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "QV" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -2256,14 +3239,18 @@
 	icon_state = "floor3"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "QZ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
+"Rb" = (
+/obj/item/flashlight/lantern,
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
 "Re" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -2272,7 +3259,11 @@
 	icon_state = "8-10"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Rh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/bunker/side_two)
 "Rm" = (
 /obj/machinery/shower{
 	dir = 4;
@@ -2287,8 +3278,9 @@
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/office)
 "Rn" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
@@ -2297,8 +3289,22 @@
 /obj/structure/cable{
 	icon_state = "5-9"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Ro" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "b";
+	pixel_y = 22;
+	pixel_x = -4
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "a";
+	pixel_y = 22;
+	pixel_x = 7
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Rr" = (
 /obj/structure/cable{
 	icon_state = "5-6"
@@ -2308,21 +3314,45 @@
 	},
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker)
 "Ry" = (
-/obj/machinery/door/airlock/grunge,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/grunge{
+	id_tag = "b3"
+	},
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker/side_two)
 "RB" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"RG" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/beach/bunker)
+"RM" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "food";
+	pixel_y = -28
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "RT" = (
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker/office)
 "RY" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -2336,38 +3366,46 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Sa" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker/office)
 "Sc" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/turf/open/floor/concrete,
-/area/space)
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Sp" = (
 /obj/effect/turf_decal/road/stripes{
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Sq" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "St" = (
 /obj/structure/cable{
 	icon_state = "2-10"
 	},
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Sw" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Sx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/beach/bunker/side_two)
 "SF" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2376,17 +3414,17 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/sand/dense/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "SI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
 "SS" = (
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
-/area/space)
+/area/ruin/beach/bunker)
 "Ta" = (
 /obj/structure/cable{
 	icon_state = "6-9"
@@ -2394,22 +3432,23 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Tb" = (
 /obj/structure/chair/sofa/olive/old/directional/north,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/bunker)
 "Tx" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "TD" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/pizza/meat,
 /turf/open/floor/plating/dirt/beach,
-/area/space)
+/area/overmap_encounter/planetoid/cave/explored)
 "TF" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -2420,20 +3459,25 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/space)
+/area/ruin/beach/bunker)
+"TK" = (
+/mob/living/simple_animal/hostile/rat,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_two)
 "TO" = (
 /obj/structure/cable{
 	icon_state = "5-9"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "TV" = (
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "TY" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ub" = (
 /obj/structure/table,
 /obj/item/paper_bin{
@@ -2459,8 +3503,9 @@
 	pixel_x = 5;
 	pixel_y = 8
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "UH" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -2475,10 +3520,10 @@
 	icon_state = "6-10"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "UI" = (
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/turf/closed/wall/concrete,
+/area/ruin/beach/bunker/side_two)
 "UL" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -2490,8 +3535,9 @@
 	pixel_y = 6;
 	pixel_x = 6
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "Vb" = (
 /obj/structure/closet/cabinet,
 /obj/effect/decal/cleanable/crayon{
@@ -2499,24 +3545,41 @@
 	pixel_y = -24;
 	pixel_x = 6
 	},
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen/deckhand,
+/obj/item/clothing/shoes/combat{
+	pixel_y = -10
+	},
+/obj/item/clothing/head/soft/frontiersmen{
+	pixel_y = 5
+	},
+/obj/item/storage/backpack/duffelbag,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
+"Ve" = (
+/obj/effect/turf_decal/road,
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Vz" = (
 /obj/structure/flora/rock/beach,
 /turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "VA" = (
 /obj/structure/cable{
 	icon_state = "5-6"
 	},
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "VE" = (
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "VF" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -2531,24 +3594,26 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/office)
 "VI" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "VJ" = (
 /obj/structure/guncloset,
 /obj/item/gun/ballistic/rifle/illestren/sawn,
 /obj/item/gun/ballistic/rifle/illestren/sawn,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "VU" = (
 /obj/structure/fence{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Wc" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -2558,14 +3623,14 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "Wd" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
 	environment_smash = 0;
 	wander = 0
 	},
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Wk" = (
 /obj/machinery/shower{
 	dir = 4
@@ -2579,13 +3644,38 @@
 	},
 /obj/effect/decal/cleanable/vomit,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/bunker/living)
+"Wn" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "trade";
+	pixel_x = 28
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Wp" = (
+/mob/living/simple_animal/hostile/rat,
+/obj/item/paper/crumpled{
+	pixel_y = -6;
+	pixel_x = 7
+	},
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
 "Wq" = (
 /obj/structure/filingcabinet/double/grey{
 	dir = 1
 	},
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen{
+	pixel_y = 6
+	},
+/obj/item/pen{
+	pixel_y = 6
+	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/office)
 "Wr" = (
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 6
@@ -2594,18 +3684,26 @@
 	dir = 5
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/bunker/living)
 "Ws" = (
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "WB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/office)
+"WF" = (
+/obj/machinery/door/airlock/grunge{
+	id_tag = "ba"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_one)
 "WG" = (
 /obj/effect/turf_decal/road/slow{
 	dir = 8
@@ -2613,8 +3711,17 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Xc" = (
+/obj/item/reagent_containers/food/snacks/deadmouse{
+	pixel_y = 1;
+	pixel_x = 6
+	},
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_one)
 "Xh" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -2627,11 +3734,12 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker/office)
 "Xv" = (
 /obj/structure/chair/sofa/olive/old/corner/directional/west,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker)
 "XA" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -2642,14 +3750,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "XE" = (
 /obj/structure/chair/plastic{
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plating/dirt/beach,
-/area/space)
+/area/overmap_encounter/planetoid/cave/explored)
 "XM" = (
 /obj/structure/cable{
 	icon_state = "8-9"
@@ -2662,17 +3770,24 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "XS" = (
 /obj/structure/chair/plastic{
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plating/dirt/beach,
-/area/space)
+/area/overmap_encounter/planetoid/cave/explored)
+"XZ" = (
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor3"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "YB" = (
 /turf/open/floor/plating/dirt/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "YG" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -2681,8 +3796,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "YL" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -2690,7 +3806,7 @@
 	pixel_y = 4
 	},
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/beach/bunker/side_one)
 "YW" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "heart";
@@ -2705,18 +3821,23 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood/reinforced,
 /obj/structure/bedsheetbin,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/bunker/living)
 "Zj" = (
-/mob/living/simple_animal/cow,
+/mob/living/simple_animal/cow{
+	faction = list("Frontiersmen");
+	name = "frontiersmen cow";
+	desc = "You get the feeling that somehow, this cow wishes they'd hit Luna-Town again."
+	},
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Zq" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/pounder{
 	weapon_drop_chance = 20
 	},
 /turf/open/floor/concrete/slab_2,
-/area/space)
+/area/ruin/beach/bunker)
 "Zu" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -2729,7 +3850,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
-/area/space)
+/area/ruin/beach/bunker)
 "ZD" = (
 /obj/structure/cable{
 	icon_state = "4-9"
@@ -2742,7 +3863,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
-/area/space)
+/area/ruin/beach/bunker/living)
 "ZJ" = (
 /obj/structure/cable{
 	icon_state = "5-6"
@@ -2751,7 +3872,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plating/grass/beach/lit,
-/area/space)
+/area/overmap_encounter/planetoid/beachplanet/explored)
 
 (1,1,1) = {"
 yb
@@ -3032,9 +4153,9 @@ bW
 bW
 bW
 bW
+oj
 mn
-mn
-xf
+LI
 Tx
 VI
 eF
@@ -3090,8 +4211,8 @@ bW
 bW
 bW
 bW
-mn
-mn
+oj
+oj
 mn
 mn
 YB
@@ -3128,11 +4249,11 @@ bW
 bW
 bW
 bW
-rt
-rt
-rt
-rt
-rt
+IP
+IP
+IP
+IP
+IP
 bW
 bW
 bW
@@ -3150,8 +4271,8 @@ bW
 bW
 bW
 bW
-mn
-mn
+oj
+oj
 mn
 mn
 mn
@@ -3186,15 +4307,15 @@ bW
 bW
 bW
 bW
-rt
-rt
+IP
+IP
 ot
 ot
 ot
-rt
-rt
-mn
-mn
+IP
+IP
+oj
+oj
 bW
 bW
 bW
@@ -3204,14 +4325,14 @@ bW
 bW
 bW
 bW
-mn
-mn
-mn
+oj
+oj
+oj
 bW
 bW
 bW
-mn
-mn
+oj
+oj
 bW
 bW
 bW
@@ -3244,33 +4365,33 @@ bW
 bW
 bW
 bW
-mn
-rt
+oj
+IP
 UL
 cE
 Eo
-Ge
-hT
-rt
-mn
-mn
-mn
+EW
+FF
+IP
+oj
+oj
+oj
 bW
 bW
 bW
 bW
 bW
 bW
-mn
-mn
-mn
+oj
+oj
+Er
 XS
-mn
+oj
 bW
 bW
 bW
-mn
-mn
+oj
+oj
 bW
 bW
 bW
@@ -3302,19 +4423,19 @@ bW
 bW
 bW
 bW
-mn
-mn
-rt
-UL
-Ge
+oj
+oj
+IP
+Me
+rr
 EP
 xO
 hT
-rt
-mn
-mn
-mn
-mn
+IP
+oj
+oj
+oj
+oj
 bW
 bW
 bW
@@ -3324,14 +4445,14 @@ bW
 nh
 TD
 ge
-mn
-mn
-mn
+oj
+oj
+oj
 ht
-mn
-mn
-mn
-mn
+oj
+oj
+oj
+oj
 bW
 bW
 bW
@@ -3360,40 +4481,40 @@ bW
 bW
 bW
 bW
-mn
-mn
-mn
-rt
-rt
+oj
+oj
+oj
+IP
+IP
 Pr
 vT
 sv
-rt
-rt
-mn
-mn
-mn
-mn
+IP
+IP
+oj
+oj
+Wp
+uH
 bW
 bW
 bW
 bW
 bW
 bW
-mn
+oj
 XE
-mn
-mn
-mn
-mn
-mn
-mn
-mn
-mn
-mn
-mn
-mn
-mn
+oj
+oj
+oj
+oj
+oj
+oj
+Rb
+oj
+oj
+oj
+oj
+oj
 YB
 Tx
 Tx
@@ -3419,40 +4540,40 @@ bW
 bW
 bW
 bW
-mn
-mn
-mn
-mn
-rt
+oj
+oj
+oj
+oj
+IP
 Il
 sE
 AI
-rt
-mn
-mn
-mn
-mn
-mn
-mn
+IP
+oj
+oj
+oj
+iC
+ow
+om
 bW
 bW
 bW
 bW
 bW
 bW
-mn
-mn
-mn
-mn
-mn
-mn
+oj
+oj
+oj
+oj
+oj
+oj
 YB
 YB
 YB
-mn
-mn
-mn
-mn
+oj
+oj
+oj
+oj
 wU
 Lz
 Tx
@@ -3478,31 +4599,31 @@ bW
 bW
 bW
 bW
-mn
-mn
-mn
-mn
+oj
+oj
+oj
+oj
 PB
-UI
-cS
-UI
-YB
-mn
-mn
-rt
-rt
-rt
-rt
-rt
-rt
-rt
-rt
-rt
+Hc
+jR
+HQ
+iH
+oj
+oj
+IP
+IP
+IP
+IP
+IP
+IP
+IP
+IP
+IP
 bW
 bW
 bW
-mn
-mn
+oj
+oj
 YB
 YB
 YB
@@ -3512,7 +4633,7 @@ YB
 YB
 mn
 mn
-mn
+oj
 iU
 Tx
 eF
@@ -3535,36 +4656,36 @@ bW
 bW
 bW
 bW
-rt
-rt
-rt
-rt
-mn
-mn
+IP
+IP
+IP
+IP
+oj
+oj
 YB
-UI
-cx
-UI
+Hc
+br
+HQ
 YB
-YB
-rt
-rt
+RM
+IP
+IP
+ws
 qO
-qO
-rt
-rt
+IP
+IP
 yM
-iI
-iI
-rt
+rw
+wH
+IP
 bW
 bW
 bW
-mn
+oj
 YB
 YB
 yA
-yA
+Dv
 yA
 yA
 yA
@@ -3593,29 +4714,29 @@ rt
 bW
 bW
 bW
-rt
-rt
+IP
+IP
 BN
 VJ
-rt
-rt
+IP
+IP
+Ro
 YB
-YB
-UI
-UI
+HQ
+Hc
 rc
 YB
-UI
+HQ
 Be
-TV
-TV
-TV
+zQ
+lD
+Jb
 YL
-rt
-iI
-iI
-iI
-rt
+IP
+fB
+CL
+fB
+IP
 bW
 bW
 bW
@@ -3625,7 +4746,7 @@ yA
 yA
 Km
 yA
-yA
+Sw
 yA
 yA
 YB
@@ -3652,34 +4773,34 @@ rt
 bW
 bW
 bW
-rt
+IP
 ug
+oq
+oq
 TV
-TV
-TV
-El
-UI
+WF
+HQ
 YB
-UI
+HQ
 vZ
 lr
-UI
-UI
+Hc
+Hc
 Be
-TV
-TV
-TV
+Xc
+ks
+Kt
 YL
-rt
-dk
+IP
 iI
-iI
-rt
+CL
+fw
+IP
 bW
 bW
 bW
 yA
-yA
+BS
 Zj
 yA
 yA
@@ -3711,42 +4832,42 @@ rt
 bW
 bW
 rt
-rt
+IP
 Ps
-TV
-TV
-TV
+oq
+oq
+Bm
 El
-UI
-UI
-UI
-UI
+HQ
+HQ
+Hc
+Hc
 tO
 YB
+dV
+IP
+IP
+Bu
+Eg
+IP
+IP
+IP
+CL
+IP
+IP
+bW
+bW
+bW
+yA
+yA
+BS
+yA
+pE
+yA
 YB
-rt
-rt
-YL
-YL
-rt
-rt
-rt
-iI
-iI
-rt
-bW
-bW
-bW
 yA
-yA
-yA
-yA
-yA
-yA
-YB
-yA
-yA
-yA
+Zj
+pE
 yA
 bW
 bW
@@ -3770,40 +4891,40 @@ rt
 rt
 rt
 rt
-rt
-rt
+IP
+IP
 Fu
 qJ
-rt
-rt
-YB
+IP
+IP
+jk
 YB
 YB
 Gc
-UI
+HQ
 YB
 YB
 YB
-rt
-rt
-rt
-rt
+IP
+IP
+IP
+IP
 YB
 YB
-UI
-UI
+Hc
+Hc
 YB
 YB
 at
 yA
 Km
 yA
-yA
+BS
 yA
 yA
 YB
 YB
-Zj
+yA
 yA
 Km
 yA
@@ -3824,22 +4945,22 @@ rt
 Rm
 rt
 jP
-oJ
+qh
 Xh
 BC
-Sa
+EC
 Ad
 ok
 rt
-rt
-rt
-rt
+IP
+IP
+IP
 yA
 YB
 YB
 YB
-wZ
-UI
+Ex
+HQ
 YB
 YB
 YB
@@ -3849,8 +4970,8 @@ yA
 db
 YB
 YB
-UI
-UI
+HQ
+Hc
 YB
 YB
 aE
@@ -3865,7 +4986,7 @@ YB
 YB
 YB
 yA
-yA
+mD
 yA
 YB
 YB
@@ -3880,40 +5001,40 @@ bW
 bW
 bW
 rt
-Mr
+Cr
 AM
 Db
 fQ
 lv
-DC
+qs
 Sa
 lk
 mW
-Wq
+EB
 rt
 yA
 yA
-yA
+xu
 yA
 YB
 YB
-tO
-UI
+cz
+Hc
 YB
 YB
 yA
 yA
-yA
+HX
 yA
 db
 YB
 YB
-UI
-UI
+HQ
+Hc
 YB
 yA
 aE
-yA
+pE
 yA
 yA
 yA
@@ -3956,8 +5077,8 @@ yA
 yA
 rX
 oa
-UI
-UI
+HQ
+HQ
 YB
 YB
 yA
@@ -3967,17 +5088,17 @@ yA
 db
 YB
 yA
-UI
-UI
+HQ
+Hc
 YB
 Km
 aE
 yA
-yA
+Dv
 yA
 YB
 YB
-QU
+dw
 HQ
 HQ
 HQ
@@ -3996,27 +5117,27 @@ yb
 bW
 bW
 bW
-rt
-rt
-rt
-rt
-rt
+bv
+bv
+bv
+bv
+bv
 po
 gl
-DC
-DC
+qs
+kd
 uF
-SS
+cP
 rt
 rt
 YB
 YB
 YB
-yA
+xu
 rX
 Bn
 Ta
-UI
+HQ
 YB
 YB
 YB
@@ -4026,8 +5147,8 @@ YB
 db
 YB
 yA
-UI
-UI
+HQ
+HQ
 YB
 yA
 aE
@@ -4036,7 +5157,7 @@ yA
 YB
 YB
 YB
-QU
+dw
 HQ
 HQ
 HQ
@@ -4054,12 +5175,12 @@ yb
 (23,1,1) = {"
 bW
 bW
-rt
-rt
+bv
+bv
 cu
 xU
 ur
-rt
+bv
 rt
 VF
 rt
@@ -4086,7 +5207,7 @@ at
 YB
 YB
 xp
-UI
+HQ
 YB
 VA
 at
@@ -4095,7 +5216,7 @@ YB
 YB
 YB
 YB
-QU
+dw
 HQ
 HQ
 HQ
@@ -4113,48 +5234,48 @@ yb
 (24,1,1) = {"
 bW
 bW
-rt
+bv
 Ar
 sx
 KL
 Ci
-rt
+bv
 CV
 GO
 mo
-DC
-rt
+FD
+bv
 hR
-UI
-UI
-UI
-UI
-UI
-UI
+Hc
+Hc
+HQ
+HQ
+HQ
+HQ
 Nn
-UI
+HQ
 zp
-UI
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
+iv
 YB
 YB
-UI
-UI
-UI
+HQ
+Hc
+Hc
 CC
-UI
+HQ
 cS
-UI
-UI
-UI
+HQ
+HQ
+HQ
 BA
-UI
-QU
+HQ
+dw
 HQ
 HQ
 HQ
@@ -4172,7 +5293,7 @@ yb
 (25,1,1) = {"
 bW
 bW
-rt
+bv
 tv
 kr
 Zq
@@ -4191,21 +5312,21 @@ tW
 av
 av
 av
-av
+QF
 kI
 HK
-av
+QF
 Sq
-qY
-av
-av
+rR
+QF
+QF
+HK
+QF
 HK
 av
-HK
+QF
 av
-av
-av
-jT
+Ve
 pz
 ES
 av
@@ -4231,7 +5352,7 @@ yb
 (26,1,1) = {"
 bW
 bW
-rt
+bv
 IF
 TF
 aR
@@ -4252,15 +5373,15 @@ BK
 Mz
 ly
 Jd
-jX
+ar
 zL
-jX
-jX
+ar
+ar
 JX
 UH
 jX
 zL
-jX
+ar
 Fq
 jX
 hf
@@ -4272,7 +5393,7 @@ Re
 QV
 Re
 jX
-QU
+dw
 HQ
 HQ
 HQ
@@ -4290,48 +5411,48 @@ yb
 (27,1,1) = {"
 bW
 bW
-rt
+bv
 xJ
 QK
 LE
 Zu
-rt
+bv
 Pb
 SS
 QQ
 oJ
-rt
-UI
-Nn
-UI
-UI
-UI
+bv
+HQ
+XZ
+Hc
+Hc
+Hc
 yQ
 mN
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+Hc
+HQ
 xp
-UI
-UI
-YB
+HQ
+HQ
+HS
 gF
 YB
-UI
-UI
+vs
+HQ
 Ls
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
-UI
-UI
-UI
-QU
+HQ
+HQ
+HQ
+dw
 HQ
 HQ
 HQ
@@ -4349,18 +5470,18 @@ yb
 (28,1,1) = {"
 bW
 bW
-rt
+bv
 nU
 Qv
 ft
 Od
-rt
-Pb
+bv
+RG
 ol
 fr
 yJ
-rt
-rt
+bv
+bv
 KU
 KU
 KU
@@ -4379,15 +5500,15 @@ YB
 YB
 Jl
 mj
+dk
 YB
-YB
-YB
+NC
 YB
 YB
 at
 YB
 YB
-UI
+HQ
 Ft
 YB
 YB
@@ -4408,25 +5529,25 @@ yb
 (29,1,1) = {"
 bW
 bW
-rt
-rt
+bv
+bv
 yx
 kH
 pW
-rt
+bv
 vJ
 QZ
 zH
 Tb
-rt
+bv
 YB
 YB
 kJ
 YB
 Mi
 TY
-tO
-UI
+cz
+HQ
 YB
 kJ
 YB
@@ -4436,18 +5557,18 @@ YB
 YB
 yA
 Km
-yA
+dk
 qI
-yA
-yA
-YB
+dk
+dk
+dk
 YB
 YB
 aE
-yA
-UI
-UI
-UI
+Km
+HQ
+HQ
+HQ
 YB
 YB
 HQ
@@ -4468,24 +5589,24 @@ yb
 yb
 bW
 bW
-rt
-rt
-rt
-rt
-rt
+bv
+bv
+bv
+bv
+bv
 Hf
 BQ
 IZ
 Ow
-rt
+bv
 YB
 kJ
 tx
 kJ
 Mi
 zJ
-UI
-UI
+HQ
+Hc
 YB
 kJ
 kJ
@@ -4497,18 +5618,18 @@ YB
 YB
 NU
 Ja
-yA
-Km
-YB
+dk
+dk
+dk
 YB
 yA
 aE
 yA
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
-QU
+dw
 HQ
 HQ
 HQ
@@ -4531,41 +5652,41 @@ bW
 bW
 bW
 bW
-rt
+bv
 YG
 pM
 Ph
 Xv
-rt
+bv
 YB
-kJ
+Kl
 kJ
 kJ
 YB
-UI
+HQ
 cS
 YB
 YB
 kJ
 kJ
-rt
-rt
-rt
-rt
+UI
+UI
+UI
+UI
 YB
 nZ
-yA
-yA
-yA
-yA
-yA
+dk
+dk
+dk
+dk
+YB
 YB
 Km
-aE
+vN
 yA
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
 Pm
@@ -4590,12 +5711,12 @@ bW
 bW
 bW
 bW
-rt
+bv
 Ew
-rt
-rt
-rt
-rt
+bv
+bv
+bv
+bv
 tx
 kJ
 kJ
@@ -4605,27 +5726,27 @@ YB
 wZ
 YB
 YB
-YB
-rt
-rt
+dV
+UI
+UI
 OW
-OW
-rt
-rt
+Cn
+UI
+UI
 YB
 TO
+dk
+dk
 YB
-YB
-yA
 YB
 YB
 yA
 aE
 yA
-UI
-UI
-UI
-yA
+HQ
+HQ
+HQ
+Km
 YB
 YB
 YB
@@ -4635,7 +5756,7 @@ yA
 YB
 YB
 yA
-yA
+vb
 db
 yb
 yb
@@ -4648,29 +5769,29 @@ yb
 bW
 bW
 bW
-rt
-rt
+Qw
+Qw
 ba
 ZD
-dK
-rt
-rt
-rt
-rt
-rt
+CY
+Qw
+Qw
+Qw
+Qw
+Qw
 kJ
 YB
 YB
 oL
-UI
-UI
-UI
+Hc
+Hc
+HQ
 Ry
-TV
-TV
-TV
+xd
+rN
+Oo
 pG
-rt
+UI
 Jf
 YB
 YB
@@ -4680,14 +5801,14 @@ YB
 YB
 YB
 aE
-yA
-UI
-UI
-UI
-UI
-UI
-UI
-UI
+BS
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 YB
 YB
 yA
@@ -4707,29 +5828,29 @@ bW
 bW
 bW
 bW
-rt
+Qw
 nB
 HF
 KJ
-nB
-rt
+kw
+Qw
 uR
 ON
 Wk
-rt
+Qw
 YB
 YB
-UI
-tO
+HQ
+cz
 rc
-UI
-UI
+Hc
+HQ
 Ry
-TV
-TV
-TV
+rN
+rN
+TK
 ac
-rt
+UI
 VE
 YB
 YB
@@ -4741,17 +5862,17 @@ YB
 aE
 YB
 YB
-UI
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 YB
 YB
 yA
-yA
+dc
 yA
 YB
 db
@@ -4766,7 +5887,7 @@ bW
 bW
 bW
 bW
-rt
+Qw
 EM
 yw
 it
@@ -4775,38 +5896,38 @@ xV
 im
 Cc
 Wr
-rt
+Qw
 YB
 YB
 wE
-CC
+na
+HQ
+YB
+lu
 UI
-YB
-YB
-rt
-rt
+UI
 Fe
 bY
-rt
-rt
+UI
+UI
 Km
 dh
 YB
-rt
-rt
-rt
-rt
+UI
+UI
+UI
+UI
 YB
 aE
 YB
 YB
-UI
-UI
+HQ
+HQ
 YB
 YB
-UI
-UI
-UI
+iv
+HQ
+HQ
 YB
 yA
 yA
@@ -4825,16 +5946,16 @@ bW
 bW
 bW
 bW
-rt
+Qw
 tQ
 aC
 DC
 zw
-rt
+Qw
 mE
 pU
 ri
-rt
+Qw
 YB
 YB
 cx
@@ -4843,10 +5964,10 @@ Em
 YB
 YB
 YB
-rt
-rt
-rt
-rt
+UI
+UI
+UI
+UI
 yA
 yA
 yA
@@ -4854,18 +5975,18 @@ Jl
 LS
 hN
 iJ
-rt
-rt
+UI
+Da
 at
-yA
+BS
 YB
 Km
-yA
+Dv
 yA
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
 YB
@@ -4884,22 +6005,22 @@ bW
 bW
 bW
 bW
-rt
+Qw
 vF
 cV
 ex
 Vb
-rt
-rt
-rt
-rt
-rt
+Qw
+Qw
+Qw
+Qw
+Qw
 YB
 Qc
-UI
+HQ
 cS
-UI
-YB
+HQ
+Wn
 YB
 YB
 YB
@@ -4907,13 +6028,13 @@ YB
 YB
 Km
 yA
-yA
+HX
 ZJ
 gu
 lR
 ao
 nu
-rt
+UI
 bW
 bW
 bW
@@ -4922,9 +6043,9 @@ yA
 YB
 YB
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
 YB
@@ -4943,7 +6064,7 @@ yb
 yb
 bW
 bW
-rt
+Qw
 Ca
 lG
 Hp
@@ -4951,14 +6072,14 @@ eS
 Kg
 FQ
 uw
-rt
+Qw
 YB
 YB
-rt
+UI
 yo
 Fz
 yo
-rt
+UI
 YB
 YB
 YB
@@ -4969,10 +6090,10 @@ Ws
 St
 Ia
 sf
-Ge
+PW
 kp
 ii
-rt
+UI
 bW
 bW
 bW
@@ -4981,9 +6102,9 @@ at
 OX
 OX
 at
-UI
-UI
-UI
+HQ
+HQ
+HQ
 at
 OX
 OX
@@ -5002,23 +6123,23 @@ yb
 bW
 bW
 bW
-rt
+Qw
 dK
 mV
 MH
 YW
-rt
+Qw
 MX
 Ub
-rt
-mn
-rt
-rt
+Qw
+oj
+UI
+UI
 Pt
-no
+Sx
 ah
-rt
-rt
+UI
+UI
 YB
 YB
 YB
@@ -5028,10 +6149,10 @@ LF
 Ls
 Jf
 vY
-rt
-rt
-rt
-rt
+UI
+UI
+UI
+UI
 bW
 bW
 bW
@@ -5040,9 +6161,9 @@ bW
 YB
 yA
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
 YB
@@ -5061,23 +6182,23 @@ yb
 bW
 bW
 bW
-rt
-rt
-rt
+Qw
+Qw
+Qw
 Wc
-rt
-rt
+Qw
+Qw
 hg
-rt
-rt
-mn
-rt
-mk
-Ge
-no
-Ge
-mk
-rt
+Qw
+Qw
+oj
+UI
+rd
+wR
+to
+Rh
+NW
+UI
 YB
 YB
 cb
@@ -5096,14 +6217,14 @@ bW
 bW
 bW
 bW
-yA
+yD
 YB
 YB
 YB
-UI
+HQ
 YB
 YB
-yA
+vb
 yA
 yA
 yA
@@ -5122,21 +6243,21 @@ bW
 bW
 bW
 bW
-rt
+Qw
 Mr
 Oz
-rt
-rt
-rt
-mn
-mn
-rt
+Qw
+nm
+Qw
+oj
+oj
+UI
 mk
 Ge
+cf
 Ge
-Ge
-mk
-rt
+Ea
+UI
 YB
 yA
 cb
@@ -5159,11 +6280,11 @@ YB
 YB
 YB
 YB
-UI
+HQ
 YB
 YB
 yA
-yA
+HX
 Km
 yA
 YB
@@ -5181,21 +6302,21 @@ bW
 bW
 bW
 bW
-rt
+Qw
 bu
 oo
-rt
+Qw
 bW
 bW
 bW
-mn
-rt
-rt
-ot
-ot
-ot
-rt
-rt
+oj
+UI
+UI
+td
+td
+td
+UI
+UI
 yA
 yA
 cb
@@ -5217,11 +6338,11 @@ YB
 YB
 yA
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
-yA
+Zj
 yA
 yA
 yA
@@ -5240,20 +6361,20 @@ yb
 bW
 bW
 bW
-rt
-rt
-rt
-rt
+Qw
+Qw
+Qw
+Qw
 bW
 bW
 bW
-mn
+oj
 bW
-rt
-rt
-rt
-rt
-rt
+UI
+UI
+UI
+UI
+UI
 YB
 yA
 yA
@@ -5276,9 +6397,9 @@ YB
 Km
 yA
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 Km
 yA
@@ -5335,8 +6456,8 @@ Tx
 Wd
 yA
 YB
-UI
-UI
+HQ
+HQ
 YB
 YB
 yA
@@ -5394,13 +6515,13 @@ Tx
 Tx
 yA
 YB
-UI
-UI
+HQ
+HQ
 YB
 YB
 yA
 yA
-yA
+BS
 yA
 YB
 yb
@@ -5450,16 +6571,16 @@ eF
 eF
 yA
 yA
-yA
+yD
 yA
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
 yA
-yA
+BS
 yA
 yb
 yb
@@ -5508,13 +6629,13 @@ eF
 eF
 yb
 yb
-yA
-yA
+BS
+BS
 yA
 YB
 YB
-UI
-UI
+HQ
+HQ
 YB
 YB
 yA
@@ -5572,7 +6693,7 @@ yA
 Km
 yA
 YB
-UI
+HQ
 YB
 YB
 YB
