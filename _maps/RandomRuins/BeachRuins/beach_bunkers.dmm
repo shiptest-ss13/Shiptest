@@ -702,6 +702,12 @@
 	pixel_x = 5;
 	pixel_y = -11
 	},
+/obj/item/paper/crumpled{
+	pixel_y = 8;
+	pixel_x = -6;
+	name = "to-do";
+	default_raw_text = "1. Refill the shadow <br> 2. Take stock of who has what gun. <br> 3. Clean desk."
+	},
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
 "kI" = (
@@ -1922,17 +1928,13 @@
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/living)
 "yx" = (
-/obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/item/paper/crumpled{
-	pixel_y = 6;
-	pixel_x = 5;
-	name = "to-do";
-	default_raw_text = "1. Refill the shadow <br> 2. Take stock of who has what gun. <br> 3. Clean desk."
-	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/modular_computer/console/preset/civilian{
+	dir = 8
+	},
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
 "yA" = (
