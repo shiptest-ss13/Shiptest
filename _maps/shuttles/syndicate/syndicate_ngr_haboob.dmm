@@ -2132,15 +2132,17 @@
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/south,
 /obj/machinery/button/door{
-	name = "Window Shutters";
+	name = "Cargo Shutters";
 	id = "haboobcargo";
-	pixel_x = -8;
-	pixel_y = 8
+	pixel_x = 22;
+	pixel_y = 8;
+	dir = 8
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_x = 1;
-	pixel_y = 6;
-	id = "boobfield"
+	pixel_x = 21;
+	pixel_y = -1;
+	id = "boobfield";
+	dir = 8
 	},
 /obj/item/hand_labeler{
 	pixel_x = 5;
