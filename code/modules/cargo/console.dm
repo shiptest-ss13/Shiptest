@@ -40,6 +40,7 @@
 	COOLDOWN_DECLARE(beacon_cooldown)
 	/// Is the console in beacon mode? exists to let beacon know when a pod may come in
 	var/use_beacon = FALSE
+
 /obj/machinery/computer/cargo/Initialize()
 	. = ..()
 	var/obj/item/circuitboard/computer/cargo/board = circuit
