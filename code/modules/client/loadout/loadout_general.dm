@@ -215,13 +215,13 @@
 	display_name = "hourglass"
 	path = /obj/item/hourglass
 
-/datum/gear/moth/monarch 
+/datum/gear/moth/monarch
 	display_name = "toy, moth plushie (monarch)"
 	path = /obj/item/toy/plush/moth/monarch
 
-/datum/gear/moth/luna 
+/datum/gear/moth/luna
 	display_name = "toy, moth plushie (luna)"
-	path = /obj/item/toy/plush/moth/luna 
+	path = /obj/item/toy/plush/moth/luna
 
 /datum/gear/moth/atlas
 	display_name = "toy, moth plushie (atlas)"
@@ -241,11 +241,11 @@
 
 /datum/gear/moth/lovers
 	display_name = "toy, moth plushie (lovers)"
-	path = /obj/item/toy/plush/moth/lovers 
+	path = /obj/item/toy/plush/moth/lovers
 
 /datum/gear/moth/whitefly
 	display_name = "toy, moth plushie (white)"
-	path = /obj/item/toy/plush/moth/whitefly 
+	path = /obj/item/toy/plush/moth/whitefly
 
 /datum/gear/moth/punished
 	display_name = "toy, moth plushie (punished)"
@@ -257,7 +257,7 @@
 
 /datum/gear/moth/deadhead
 	display_name = "toy, moth plushie (deadhead)"
-	path = /obj/item/toy/plush/moth/deadhead 
+	path = /obj/item/toy/plush/moth/deadhead
 
 /datum/gear/moth/poison
 	display_name = "toy, moth plushie (poison)"
@@ -265,11 +265,11 @@
 
 /datum/gear/moth/ragged
 	display_name = "toy, moth plushie (ragged)"
-	path = /obj/item/toy/plush/moth/ragged 
+	path = /obj/item/toy/plush/moth/ragged
 
 /datum/gear/moth/snow
 	display_name = "toy, moth plushie (snow)"
-	path = /obj/item/toy/plush/moth/snow 
+	path = /obj/item/toy/plush/moth/snow
 
 /datum/gear/moth/clockwork
 	display_name = "toy, moth plushie (clockwork)"
