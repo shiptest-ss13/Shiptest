@@ -270,11 +270,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/airlock/grunge{
-	dir = 4;
-	req_access = list(3);
-	name = "Armory"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "hB" = (
@@ -605,6 +600,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	req_access = list(3);
+	name = "Armory"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
