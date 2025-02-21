@@ -1944,6 +1944,10 @@
 	pixel_y = 4;
 	name = "bridge shutters"
 	},
+/obj/item/megaphone/command{
+	pixel_y = -7;
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "uG" = (
@@ -3789,6 +3793,19 @@
 /obj/machinery/suit_storage_unit/minutemen,
 /turf/open/floor/pod/dark,
 /area/ship/crew/canteen)
+"Pj" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/item/clothing/head/cone{
+	pixel_y = -8;
+	pixel_x = -13
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "Pk" = (
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 4
@@ -4062,13 +4079,13 @@
 /area/ship/hallway/central)
 "QM" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/weather_monitor{
-	pixel_x = -6;
-	pixel_y = 20
-	},
 /obj/item/radio/intercom/table{
 	dir = 4;
 	pixel_y = 3
+	},
+/obj/item/radio/weather_monitor{
+	pixel_x = -6;
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -5238,7 +5255,7 @@ ps
 pp
 eW
 My
-bK
+Pj
 PU
 jY
 jY
