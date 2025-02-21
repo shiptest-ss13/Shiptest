@@ -5660,7 +5660,9 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcommoni)
 "wd" = (
-/obj/structure/chair/sofa/red/corpo/right/directional/east,
+/obj/structure/chair/sofa/red/corpo/right/directional/east{
+	dir = 8
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 5
 	},
@@ -6880,7 +6882,6 @@
 	icon_state = "dirty_mattress"
 	},
 /obj/effect/decal/cleanable/blood/old,
-/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
 /obj/item/reagent_containers/food/snacks/bait/worm{
 	pixel_x = 4;
 	pixel_y = -9
@@ -8552,7 +8553,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/generic,
-/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
 /obj/effect/decal/cleanable/garbage,
 /obj/item/organ/heart{
 	pixel_x = -7;
