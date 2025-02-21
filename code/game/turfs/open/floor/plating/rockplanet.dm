@@ -1,6 +1,6 @@
 /turf/open/floor/plating/asteroid/rockplanet
 	name = "iron sand"
-	icon = 'icons/turf/planetary/rockplanet.dmi'
+	icon = 'icons/turf/floors/rockplanet_dry.dmi'
 	icon_state = "rock-255"
 	base_icon_state = "rock"
 	floor_variance = 80
@@ -57,8 +57,6 @@
 //TODO: unused, remove
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked
 	name = "iron cracked sand"
-	icon_state = "wet_cracked0"
-	base_icon_state = "wet_cracked"
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit
 	light_range = 2

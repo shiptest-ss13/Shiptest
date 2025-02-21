@@ -40,7 +40,7 @@
 /turf/open/floor/plating/asteroid/purple
 	name = "volcanic sand"
 	desc = "Sand, filled with a wide array of volcanic minerals have turned it a soft black color. Suprisingly good for plants, all things considered"
-	icon = 'icons/turf/lavaland_purple.dmi'
+	icon = 'icons/turf/floors/volcanicsand.dmi'
 	smooth_icon = 'icons/turf/floors/volcanicsand.dmi'
 
 	icon_state = "sand-255"

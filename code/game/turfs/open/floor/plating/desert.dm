@@ -4,7 +4,7 @@
 	desc = "It's coarse and gets everywhere."
 	baseturfs = /turf/open/floor/plating/asteroid/desert
 	icon = 'icons/turf/floors/desertsand.dmi'
-	icon_state = "sand"
+	icon_state = "sand-255"
 	base_icon_state = "sand"
 	layer = SAND_TURF_LAYER
 	footstep = FOOTSTEP_SAND

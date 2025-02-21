@@ -5,8 +5,8 @@
 	name = "regolith"
 	desc = "Supposedly poisonous to humanoids."
 	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark
-	icon = 'icons/turf/planetary/moon.dmi'
-	icon_state = "sand"
+	icon = 'icons/turf/floors/moonsand.dmi'
+	icon_state = "sand-255"
 	base_icon_state = "sand"
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND

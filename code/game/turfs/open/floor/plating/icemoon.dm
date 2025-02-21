@@ -2,9 +2,9 @@
 	gender = PLURAL
 	name = "snow"
 	desc = "Looks cold."
-	icon = 'icons/turf/planetary/icemoon.dmi'
+	icon = 'icons/turf/floors/snow.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
-	icon_state = "snow_0"
+	icon_state = "snow-255"
 	icon_plating = null
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	slowdown = 1.05
