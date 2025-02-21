@@ -193,7 +193,6 @@
 	suit_type = /obj/item/clothing/suit/space/pilot
 	helmet_type = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
 	mask_type = /obj/item/clothing/mask/breath
-	storage_type = /obj/item/tank/internals/emergency_oxygen/engi
 
 //End shiptest suits
 
