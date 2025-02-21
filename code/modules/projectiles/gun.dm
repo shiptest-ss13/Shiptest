@@ -34,6 +34,7 @@
 
 	light_range = 3
 	light_color = COLOR_VERY_SOFT_YELLOW
+	light_on = FALSE
 
 	///Icon state of the muzzle flash effect.
 	var/muzzleflash_iconstate
@@ -136,6 +137,8 @@
 	var/wielded_fully = FALSE
 	///Slowdown for wielding
 	var/wield_slowdown = 0.1
+	///slowdown for aiming whilst wielding
+	var/aimed_wield_slowdown = 0.1
 	///How long between wielding and firing in tenths of seconds
 	var/wield_delay	= 0.4 SECONDS
 	///Storing value for above
@@ -215,6 +218,8 @@
 
 	///Used if the guns recoil is lower then the min, it clamps the highest recoil
 	var/min_recoil = 0
+	///if we want a min recoil (or lack of it) whilst aiming
+	var/min_recoil_aimed = 0
 
 	var/gunslinger_recoil_bonus = 0
 	var/gunslinger_spread_bonus = 0
@@ -269,12 +274,13 @@
 	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
 	///Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
 	var/list/slot_offsets = list()
+	var/underbarrel_prefix = "" // so the action has the right icon for underbarrel gun
 
 /*
  *  Zooming
 */
 	///Whether the gun generates a Zoom action on creation
-	var/zoomable = FALSE
+	var/zoomable = TRUE
 	//Zoom toggle
 	var/zoomed = FALSE
 	///Distance in TURFs to move the user's screen forward (the "zoom" effect)
@@ -315,7 +321,7 @@
 	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
 	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
 	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
-	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire")
+	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire", FIREMODE_UNDERBARREL = "underbarrel weapon")
 	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
 	var/fire_select_icon_state_prefix = ""
 	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
@@ -400,6 +406,11 @@
 
 	if(manufacturer)
 		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
+
+/obj/item/gun/attackby(obj/item/I, mob/living/user, params)
+	. = ..()
+	if(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL)
+		return TRUE
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
@@ -873,7 +884,7 @@
 	var/atom/movable/flash_loc = user
 	if(!light_on)
 		set_light_on(TRUE)
-		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light_on), FALSE), 1 SECONDS)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light_on), FALSE), 3)
 
 	//Offset the pixels.
 	switch(firing_angle)
@@ -999,7 +1010,7 @@
 
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom
-	name = "Toggle Scope"
+	name = "Aim Down Sights"
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
@@ -1010,6 +1021,7 @@
 
 	var/obj/item/gun/gun = target
 	gun.zoom(owner, owner.dir)
+	gun.min_recoil = gun.min_recoil_aimed
 
 /datum/action/toggle_scope_zoom/Remove(mob/user)
 	if(!istype(target, /obj/item/gun))
@@ -1035,17 +1047,23 @@
 		if((!zoomed && wielded_fully) || zoomed)
 			zoomed = !zoomed
 		else
-			to_chat(user, "<span class='danger'>You can't look down the scope without wielding [src]!</span>")
+			to_chat(user, span_danger("You can't look down the sights without wielding [src]!"))
 			zoomed = FALSE
 	else
 		zoomed = forced_zoom
 
 	if(zoomed)
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate))
+		ADD_TRAIT(user, TRAIT_AIMING, ref(src))
 		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direc)
+		min_recoil = min_recoil_aimed
+		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/aiming, multiplicative_slowdown = aimed_wield_slowdown)
 	else
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
+		REMOVE_TRAIT(user, TRAIT_AIMING, ref(src))
 		user.client.view_size.zoomIn()
+		min_recoil = initial(min_recoil)
+		user.remove_movespeed_modifier(/datum/movespeed_modifier/aiming)
 	return zoomed
 
 //Proc, so that gun accessories/scopes/etc. can easily add zooming.
@@ -1058,8 +1076,11 @@
 
 /obj/item/gun/proc/build_firemodes()
 	if(FIREMODE_FULLAUTO in gun_firemodes)
-		AddComponent(/datum/component/automatic_fire, fire_delay)
+		if(!GetComponent(/datum/component/automatic_fire))
+			AddComponent(/datum/component/automatic_fire, fire_delay)
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+	for(var/datum/action/item_action/toggle_firemode/old_firemode in actions)
+		old_firemode.Destroy()
 	var/datum/action/item_action/our_action
 
 	if(gun_firemodes.len > 1)
@@ -1109,7 +1130,10 @@
 	var/current_firemode = our_gun.gun_firemodes[our_gun.firemode_index]
 	//tldr; if we have adjust_fire_select_icon_state_on_safety as true, we append "safety_" to the prefix, otherwise nothing.
 	var/safety_prefix = "[our_gun.adjust_fire_select_icon_state_on_safety ? "[our_gun.safety ? "safety_" : ""]" : ""]"
-	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
+	if(current_firemode == FIREMODE_UNDERBARREL)
+		button_icon_state = "[safety_prefix][our_gun.underbarrel_prefix][current_firemode]"
+	else
+		button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(

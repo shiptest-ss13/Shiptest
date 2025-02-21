@@ -883,7 +883,7 @@
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > 10 && prob(15))
 		to_chat(M, "<span class='warning'>You feel unstable...</span>")
-		M.Jitter(2)
+		M.adjust_jitter(2)
 		current_cycle = 1
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, bluespace_shuffle)), 30)
 	..()
@@ -1019,7 +1019,7 @@
 	taste_description = "numbness"
 
 /datum/reagent/impedrezene/on_mob_life(mob/living/carbon/M)
-	M.jitteriness = max(M.jitteriness-5,0)
+	M.adjust_jitter(5)
 	if(prob(80))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
 	if(prob(50))
@@ -2310,7 +2310,7 @@
 
 		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
 
-		H.Jitter(rand(0,2))
+		H.adjust_jitter(rand(0,2))
 		H.Dizzy(rand(0,2))
 
 
@@ -2412,7 +2412,7 @@
 		worthy = TRUE
 		L.visible_message("<span class='danger'><font size = 6>Grips their head and dances around, collapsing to the floor!</font></span>", \
 		"<span class='danger'><font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font></span>")
-		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, SetSleeping), 40 SECONDS), 10 SECONDS)
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
 
@@ -2424,7 +2424,7 @@
 	for(var/datum/reagent/medicine/mannitol/chem in M.reagents.reagent_list)
 		M.reagents.remove_reagent(chem.type, chem.volume)
 
-	M.Jitter(3)
+	M.adjust_jitter(3)
 	M.Dizzy(3)
 	if(prob(0.1) && ishuman(M))
 		var/mob/living/carbon/human/H = M

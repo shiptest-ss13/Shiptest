@@ -167,21 +167,23 @@
 				if(R.independent && R.can_receive(frequency, map_zones))
 					radios += R
 
+	// Sound thats played on radios
+	var/radiosound
 	// Next, we'll have each radio play a small sound effect except for the one that broadcasted it.
 	for(var/obj/item/radio/radio in radios)
 		var/interference_level
 		if(transmission_method == TRANSMISSION_SUPERSPACE && !(radio == virt.radio))
 			interference_level = SSovermap.get_overmap_interference(radio)
+
 		if(data["interference"])
 			interference_level += data["interference"]
 
-		if(radio.last_chatter_time + 1 SECONDS < world.time && source != radio)
-			if(data["sfx"])
-				if(interference_level >= INTERFERENCE_LEVEL_RADIO_STATIC_SOUND)
-					playsound(radio, 'sound/effects/overmap/heavy_interference.ogg' , 20, FALSE)
-				else
-					playsound(radio, data["sfx"], 20, FALSE)
-			radio.last_chatter_time = world.time
+		if(data["sfx"])
+			if(interference_level >= INTERFERENCE_LEVEL_RADIO_STATIC_SOUND)
+				radiosound = 'sound/effects/overmap/heavy_interference.ogg'
+			else
+				radiosound = data["sfx"]
+
 		if(radio.log)
 			var/name = data["name"]
 			var/list/log_details = list()
@@ -218,16 +220,21 @@
 	var/list/message_mods = data["mods"]
 	var/rendered = virt.compose_message(virt, language, message, frequency, spans)
 	for(var/atom/movable/hearer in receive)
-		var/interference_level //very sorry, i can't think of a better way to do this without altering this code too much, please let me know if you do know a way
+		//very sorry, i can't think of a better way to do this without altering this code too much, please let me know if you do know a way
+		var/interference_level
 		if(transmission_method == TRANSMISSION_SUPERSPACE)
 			interference_level = SSovermap.get_overmap_interference(hearer)
+
 		if(data["interference"])
 			interference_level += data["interference"]
-			if(isobserver(hearer)) //give observers the true message
+			///If we are an observer, we get the unaltered messsage along with a % of how much of the message is corrupted to non-ghosts.
+			if(isobserver(hearer))
 				var/temp_message = message + " ([data["interference"]]% interference)"
 				var/temp_rendered = virt.compose_message(virt, language, message, frequency, spans)
-				hearer.Hear(temp_rendered, virt, language, temp_message, frequency, spans, message_mods)
+				hearer.Hear(temp_rendered, virt, language, temp_message, frequency, spans, message_mods, radiosound)
 				continue
+
+		//If not, we jumble the message
 		if(interference_level && !isobserver(hearer))
 			var/temp_message = Gibberish(message, TRUE, interference_level)
 			var/temp_rendered = virt.compose_message(virt, language, message, frequency, spans)
@@ -237,9 +244,9 @@
 			if(interference_level >= INTERFERENCE_LEVEL_RADIO_PREVENT_ID)
 				temp_virt.name = "Unknown"
 
-			hearer.Hear(temp_rendered, temp_virt, language, temp_message, frequency, spans, message_mods)
+			hearer.Hear(temp_rendered, temp_virt, language, temp_message, frequency, spans, message_mods, radiosound)
 		else
-			hearer.Hear(rendered, virt, language, message, frequency, spans, message_mods)
+			hearer.Hear(rendered, virt, language, message, frequency, spans, message_mods, radiosound)
 
 
 	// This following recording is intended for research and feedback in the use of department radio channels

@@ -34,9 +34,11 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"cg" = (
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/asteroid/sand/dense/lit,
+"ch" = (
+/mob/living/simple_animal/crab{
+	name = "\improper Crab"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "cj" = (
 /obj/structure/cable{
@@ -85,10 +87,16 @@
 	light_range = 2
 	},
 /area/ruin/unpowered)
-"cW" = (
-/obj/structure/radioactive,
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+"dy" = (
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/effect/turf_decal/weather/sand{
+	dir = 1
+	},
+/obj/structure/hazard/radioactive,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered)
 "dG" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
@@ -129,9 +137,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"fe" = (
-/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach,
-/turf/open/floor/plating/asteroid/sand/dense/lit,
+"fd" = (
+/obj/structure/hazard/radioactive/waste,
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "fj" = (
 /obj/effect/decal/cleanable/oil,
@@ -143,28 +152,18 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"fI" = (
-/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "fT" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered)
-"gr" = (
-/obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"gv" = (
-/obj/item/geiger_counter,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "gx" = (
 /obj/structure/girder,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"hs" = (
-/obj/machinery/atmospherics/components/binary/valve,
+"gH" = (
+/mob/living/simple_animal/hostile/abandoned_minebot{
+	name = "\improper Abandoned Tony"
+	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "hA" = (
@@ -234,21 +233,22 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"kK" = (
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/obj/effect/turf_decal/weather/sand{
-	dir = 1
-	},
-/obj/structure/radioactive,
-/turf/open/floor/plating/rust,
+"kH" = (
+/obj/item/book/manual/wiki/construction,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"kP" = (
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "kR" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
 /turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"lk" = (
+/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach,
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "lR" = (
 /obj/machinery/power/floodlight,
@@ -301,12 +301,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"mX" = (
-/obj/structure/cable{
-	icon_state = "0-5"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "ni" = (
 /obj/structure/closet/secure_closet/personal/cabinet{
 	anchored = 1
@@ -320,17 +314,6 @@
 /obj/item/clothing/gloves/color/plasmaman/engineer,
 /obj/item/clothing/head/helmet/space/plasmaman/engineering,
 /obj/item/binoculars,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered)
-"nk" = (
-/obj/item/stack/ore/salvage/scrapbluespace/five,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/weldingtool/hugetank,
-/obj/structure/table,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered)
 "oy" = (
@@ -387,9 +370,9 @@
 "qD" = (
 /turf/closed/wall,
 /area/ruin/unpowered)
-"qE" = (
+"qH" = (
 /obj/structure/cable{
-	icon_state = "0-6"
+	icon_state = "6-9"
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -398,6 +381,12 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"qZ" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "rt" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
@@ -413,6 +402,16 @@
 /obj/item/wirecutters,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"sm" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"sv" = (
+/obj/machinery/atmospherics/components/binary/valve,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "sA" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -422,6 +421,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered)
+"sB" = (
+/obj/item/book/manual/wiki/engineering,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "sN" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/oil,
@@ -434,6 +437,12 @@
 /turf/open/floor/plating{
 	light_range = 2
 	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"ts" = (
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ty" = (
 /obj/effect/turf_decal/weather/sand{
@@ -453,8 +462,15 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered)
-"ul" = (
-/obj/item/book/manual/wiki/construction,
+"uk" = (
+/obj/structure/hazard/radioactive,
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"um" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "uw" = (
@@ -468,9 +484,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"wz" = (
-/turf/open/floor/plating/asteroid/sand/dense/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "wC" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
@@ -478,21 +491,6 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"wM" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"wR" = (
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "xA" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/fulltile,
@@ -500,14 +498,10 @@
 	light_range = 2
 	},
 /area/ruin/unpowered)
-"xW" = (
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"yb" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
+"xV" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "yc" = (
 /obj/effect/turf_decal/atmos/plasma,
@@ -553,26 +547,13 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
-"zk" = (
-/obj/structure/radioactive/waste,
-/obj/effect/decal/cleanable/greenglow,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"zP" = (
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ac" = (
 /obj/structure/girder,
 /turf/open/floor/plating{
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"Ad" = (
-/obj/item/shovel,
-/obj/item/stack/ore/glass/beach,
+"Ae" = (
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ah" = (
@@ -581,9 +562,15 @@
 /obj/structure/window/plasma/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"Au" = (
+"An" = (
 /obj/structure/cable{
-	icon_state = "0-9"
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"At" = (
+/obj/structure/cable{
+	icon_state = "5-10"
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -601,10 +588,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"AY" = (
-/obj/item/book/manual/wiki/engineering,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Bg" = (
 /obj/effect/turf_decal/radiation,
 /obj/effect/turf_decal/box/corners,
@@ -641,17 +624,36 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered)
+"CC" = (
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "CW" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/ancient,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered)
-"Df" = (
-/obj/item/pickaxe/improvised,
+"DB" = (
+/obj/item/stack/cable_coil/red,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "DC" = (
 /turf/open/water/beach/deep,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"DI" = (
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"DO" = (
+/obj/structure/flora/tree/palm,
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "DU" = (
 /obj/structure/cable{
@@ -659,11 +661,9 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"EE" = (
-/obj/structure/cable{
-	icon_state = "6-9"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
+"Ei" = (
+/obj/structure/hazard/radioactive,
+/turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "EP" = (
 /obj/item/banner/engineering{
@@ -687,12 +687,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"Ff" = (
-/mob/living/simple_animal/crab{
-	name = "\improper Crab"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Fp" = (
 /obj/effect/turf_decal/weather/sand,
 /turf/open/water/beach,
@@ -713,15 +707,28 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"FY" = (
-/mob/living/simple_animal/hostile/abandoned_minebot{
-	name = "\improper Abandoned Tony"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
+"FP" = (
+/obj/item/stack/ore/salvage/scrapbluespace/five,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/weldingtool/hugetank,
+/obj/structure/table,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered)
+"Gj" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Gl" = (
 /turf/closed/wall/rust,
 /area/ruin/unpowered)
+"GE" = (
+/obj/structure/hazard/radioactive/stack,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "GJ" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -740,6 +747,16 @@
 	light_range = 2
 	},
 /area/ruin/unpowered)
+"Hp" = (
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"HH" = (
+/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach,
+/turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "HK" = (
 /obj/structure/closet/secure_closet/engineering_welding,
 /turf/open/floor/plating,
@@ -754,6 +771,11 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"Ir" = (
+/obj/item/shovel,
+/obj/item/stack/ore/glass/beach,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "IZ" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -767,12 +789,6 @@
 "JE" = (
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered)
-"JI" = (
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "JW" = (
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
@@ -825,12 +841,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"KO" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 10
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Lo" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/effect/turf_decal/weather/sand{
@@ -847,6 +857,10 @@
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"LI" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ms" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
@@ -856,6 +870,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"Na" = (
+/obj/item/pickaxe/improvised,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Nh" = (
 /obj/structure/cable{
 	icon_state = "4-9"
@@ -873,25 +891,16 @@
 /obj/item/tank/internals/plasmaman,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered)
-"NO" = (
-/obj/item/stack/cable_coil/red,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "NZ" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/unpowered)
-"Oi" = (
-/obj/structure/radioactive/stack,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Om" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"Oy" = (
-/obj/effect/decal/cleanable/glass,
-/obj/item/shard,
-/turf/open/floor/plating/asteroid/sand/dense/lit,
+"Ot" = (
+/obj/item/geiger_counter,
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "OI" = (
 /obj/effect/turf_decal/weather/sand{
@@ -930,12 +939,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"Qb" = (
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Qd" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/grass/beach/lit,
@@ -951,6 +954,15 @@
 /area/ruin/unpowered)
 "Qw" = (
 /turf/open/floor/plating,
+/area/ruin/unpowered)
+"QB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "QQ" = (
 /obj/structure/cable{
@@ -989,13 +1001,8 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered)
-"Sf" = (
-/obj/structure/flora/tree/palm,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"So" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/asteroid/sand/lit,
+"RD" = (
+/turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Sx" = (
 /obj/structure/cable{
@@ -1006,6 +1013,10 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"SE" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/ruin/unpowered)
 "SF" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1027,6 +1038,12 @@
 	},
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Ta" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Tf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1040,29 +1057,17 @@
 /obj/item/stack/cable_coil/cut/orange,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"TA" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "TB" = (
 /obj/effect/spawner/structure/window/hollow/directional{
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered)
-"TW" = (
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/ruin/unpowered)
-"Ua" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"Uf" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "Uk" = (
 /turf/open/floor/plating/grass/beach/lit,
@@ -1104,16 +1109,10 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"Vi" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+"Wg" = (
+/obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"Wf" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/ruin/unpowered)
 "Wn" = (
 /obj/machinery/computer/arcade/orion_trail{
 	dir = 8;
@@ -1152,11 +1151,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"Xc" = (
-/obj/structure/radioactive,
-/obj/effect/decal/cleanable/greenglow,
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Xi" = (
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 1
@@ -1171,6 +1165,12 @@
 /obj/effect/turf_decal/weather/sand,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"XB" = (
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Yh" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
@@ -1194,9 +1194,9 @@
 /obj/structure/closet/secure_closet/engineering_electrical,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"Zr" = (
+"ZE" = (
 /obj/structure/cable{
-	icon_state = "0-10"
+	icon_state = "1-10"
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -1211,15 +1211,15 @@ ys
 ys
 ys
 ys
-xW
-xW
-xW
-xW
-xW
-So
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+Ae
+Wg
+Ae
+Ae
+Ae
 Uk
 fB
 Uk
@@ -1243,16 +1243,16 @@ ys
 ys
 ys
 ys
-xW
-xW
-Sf
-xW
+Ae
+Ae
+DO
+Ae
 Bl
 mM
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
 Uk
 Uk
 Uk
@@ -1276,17 +1276,17 @@ ys
 (3,1,1) = {"
 ys
 ys
-xW
-So
-xW
-xW
+Ae
+Wg
+Ae
+Ae
 Bl
 dX
 dX
 mM
-zk
-xW
-xW
+fd
+Ae
+Ae
 Uk
 Uk
 Uk
@@ -1310,19 +1310,19 @@ ys
 (4,1,1) = {"
 ys
 ys
-xW
-xW
-xW
+Ae
+Ae
+Ae
 Bl
 dX
 DC
-cW
+Ei
 dX
 mM
-gr
-xW
-xW
-xW
+LI
+Ae
+Ae
+Ae
 Uk
 Uk
 Uk
@@ -1344,8 +1344,8 @@ ys
 (5,1,1) = {"
 ys
 ys
-Sf
-xW
+DO
+Ae
 Bl
 dX
 DC
@@ -1353,13 +1353,13 @@ DC
 DC
 dX
 Fp
-Oi
-xW
-xW
-xW
-So
-xW
-xW
+GE
+Ae
+Ae
+Ae
+Wg
+Ae
+Ae
 Uk
 Uk
 Uk
@@ -1378,8 +1378,8 @@ ys
 (6,1,1) = {"
 ys
 ys
-xW
-xW
+Ae
+Ae
 Rf
 DC
 IZ
@@ -1387,15 +1387,15 @@ Kl
 DC
 dX
 Fp
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-Ff
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+ch
 Uk
 Uk
 Uk
@@ -1411,9 +1411,9 @@ ys
 "}
 (7,1,1) = {"
 ys
-xW
-xW
-xW
+Ae
+Ae
+Ae
 Rf
 DC
 UU
@@ -1421,17 +1421,17 @@ DC
 DC
 dX
 Fp
-Sf
-xW
-xW
-xW
+DO
+Ae
+Ae
+Ae
 mU
 Kf
-xW
-xW
+Ae
+Ae
 ET
-xW
-xW
+Ae
+Ae
 Uk
 Uk
 ys
@@ -1445,9 +1445,9 @@ ys
 "}
 (8,1,1) = {"
 ys
-xW
+Ae
 FN
-xW
+Ae
 Rf
 dX
 DC
@@ -1455,9 +1455,9 @@ DC
 Lv
 dX
 Yh
-xW
-xW
-xW
+Ae
+Ae
+Ae
 qD
 qD
 ij
@@ -1465,9 +1465,9 @@ qD
 Gl
 qD
 qD
-xW
-xW
-xW
+Ae
+Ae
+Ae
 ys
 ys
 ys
@@ -1479,18 +1479,18 @@ ys
 "}
 (9,1,1) = {"
 ys
-xW
+Ae
 Pw
-xW
+Ae
 Uz
-Xc
+uk
 dX
 dX
 dX
 Yh
-gv
-xW
-xW
+Ot
+Ae
+Ae
 Gl
 qD
 HK
@@ -1500,9 +1500,9 @@ Qw
 Qw
 qD
 qD
-xW
-xW
-xW
+Ae
+Ae
+Ae
 ys
 ys
 ys
@@ -1513,19 +1513,19 @@ ys
 "}
 (10,1,1) = {"
 ys
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
 Uz
 WH
 WH
 Yh
-xW
-xW
-So
-xW
-xW
+Ae
+Ae
+Wg
+Ae
+Ae
 ty
 wu
 qK
@@ -1534,9 +1534,9 @@ Tf
 hM
 JW
 qD
-xW
-xW
-xW
+Ae
+Ae
+Ae
 ys
 ys
 ys
@@ -1547,19 +1547,19 @@ ys
 "}
 (11,1,1) = {"
 ys
-xW
-xW
+Ae
+Ae
 gx
-xW
-xW
-So
-xW
-xW
-xW
-Sf
-xW
-xW
-xW
+Ae
+Ae
+Wg
+Ae
+Ae
+Ae
+DO
+Ae
+Ae
+Ae
 Qt
 kF
 Qw
@@ -1568,10 +1568,10 @@ rW
 Qw
 Qw
 qD
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
 ys
 ys
 ys
@@ -1581,31 +1581,31 @@ ys
 "}
 (12,1,1) = {"
 ys
-xW
-xW
-xW
+Ae
+Ae
+Ae
 Ie
-TW
-TW
-TW
+kP
+kP
+kP
 Ie
-xW
-xW
-xW
-xW
-xW
-xW
-kK
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+dy
 jP
 zh
 Qw
 FF
 Qw
 uw
-xW
-xW
-So
-xW
+Ae
+Ae
+Wg
+Ae
 ys
 ys
 ys
@@ -1615,8 +1615,8 @@ ys
 "}
 (13,1,1) = {"
 ys
-xW
-xW
+Ae
+Ae
 tn
 Ie
 cO
@@ -1624,22 +1624,22 @@ tB
 Kc
 Ie
 Ie
-xW
-xW
-xW
+Ae
+Ae
+Ae
 Ac
-JI
+At
 ty
 YD
 cr
 zc
-TW
+kP
 qD
 qD
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
 ys
 ys
 ys
@@ -1649,33 +1649,33 @@ ys
 "}
 (14,1,1) = {"
 ys
-xW
-xW
-xW
+Ae
+Ae
+Ae
 Ie
 mH
 Bg
 fa
 Ie
 tB
-xW
-xW
-xW
-Zr
-xW
+Ae
+Ae
+Ae
+XB
+Ae
 Gl
 qD
-Uf
+QB
 ye
 Ms
 qD
-xW
-xW
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
 ys
 ys
 ys
@@ -1683,254 +1683,254 @@ ys
 "}
 (15,1,1) = {"
 ys
-xW
-xW
-xW
+Ae
+Ae
+Ae
 Ih
 Wp
 pD
 Pa
 Ie
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-yb
-EE
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ta
+qH
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
 ys
 ys
 ys
 "}
 (16,1,1) = {"
 ys
-xW
-xW
-xW
-Wf
+Ae
+Ae
+Ae
+SE
 UM
 QQ
 Cp
 tB
-xW
-xW
-mX
-xW
-xW
-xW
-xW
-JI
-xW
-xW
-EE
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+ts
+Ae
+Ae
+Ae
+Ae
+At
+Ae
+Ae
+qH
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
 ys
 ys
 "}
 (17,1,1) = {"
 ys
-xW
-xW
-xW
+Ae
+Ae
+Ae
 wC
 ZW
 Nh
 ug
 AT
-wM
-zP
-xW
-xW
-xW
+TA
+ZE
+Ae
+Ae
+Ae
 lR
-wR
-xW
-xW
-So
-xW
-EE
-xW
-xW
-xW
-xW
-So
-xW
-xW
+CC
+Ae
+Ae
+Wg
+Ae
+qH
+Ae
+Ae
+Ae
+Ae
+Wg
+Ae
+Ae
 EP
-xW
-xW
+Ae
+Ae
 ys
 "}
 (18,1,1) = {"
 ys
-xW
-xW
-xW
+Ae
+Ae
+Ae
 tB
 pp
 BF
 Yw
 Xx
-xW
-xW
-xW
-ul
-xW
-Ua
-xW
-xW
-xW
-xW
-xW
-xW
-Au
-NO
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+kH
+Ae
+sm
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+DI
+DB
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
 ys
 "}
 (19,1,1) = {"
 ys
-xW
-xW
-xW
+Ae
+Ae
+Ae
 tB
 CW
 QQ
 ug
 cj
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+Ae
 SF
-xW
-xW
-xW
-xW
-Ad
-xW
-xW
-gr
-xW
-xW
-qE
-xW
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+Ir
+Ae
+Ae
+LI
+Ae
+Ae
+Hp
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
 "}
 (20,1,1) = {"
 ys
 ys
-xW
-xW
+Ae
+Ae
 tB
 JE
 QQ
 yA
 tB
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
 OI
 Sx
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-Sf
-xW
-EE
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+DO
+Ae
+qH
+Ae
+Ae
+Ae
+Ae
+Ae
 "}
 (21,1,1) = {"
 ys
 ys
-wz
-wz
+RD
+RD
 iZ
 fT
 Kp
 tB
 tB
-xW
-xW
-xW
+Ae
+Ae
+Ae
 qD
 ma
 cq
 iC
 qD
 cc
-xW
-Df
-xW
-xW
-So
-xW
-xW
-xW
-xW
-EE
-xW
-xW
-AY
-xW
+Ae
+Na
+Ae
+Ae
+Wg
+Ae
+Ae
+Ae
+Ae
+qH
+Ae
+Ae
+sB
+Ae
 "}
 (22,1,1) = {"
 ys
 ys
-xW
-wz
+Ae
+RD
 ij
 tX
 PR
 dG
 tB
-wz
-wz
+RD
+RD
 qD
 qD
 Om
@@ -1939,32 +1939,32 @@ Qw
 qD
 qD
 cc
-xW
-FY
-xW
-xW
-xW
-xW
-xW
-So
-xW
-Qb
-xW
-xW
-xW
+Ae
+gH
+Ae
+Ae
+Ae
+Ae
+Ae
+Wg
+Ae
+An
+Ae
+Ae
+Ae
 "}
 (23,1,1) = {"
 ys
 ys
-xW
-wz
-wz
+Ae
+RD
+RD
 SZ
 Wn
 Qw
 tB
-wz
-wz
+RD
+RD
 qD
 ni
 Qw
@@ -1974,31 +1974,31 @@ dO
 qD
 Fd
 QY
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-Vi
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+um
+Ae
+Ae
+Ae
 "}
 (24,1,1) = {"
 ys
 ys
 ys
-wz
-wz
-cg
+RD
+RD
+Gj
 rt
 kR
-wz
-wz
-wz
+RD
+RD
+RD
 qD
 Rj
 JW
@@ -2007,32 +2007,32 @@ sA
 mz
 qD
 dM
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
 OI
 cc
-xW
-xW
-xW
-Vi
-xW
-xW
-xW
+Ae
+Ae
+Ae
+um
+Ae
+Ae
+Ae
 "}
 (25,1,1) = {"
 ys
 ys
 ys
-wz
-wz
-wz
-wz
-Oy
-wz
-So
-xW
+RD
+RD
+RD
+RD
+xV
+RD
+Wg
+Ae
 qD
 Nz
 yf
@@ -2041,53 +2041,53 @@ UT
 fj
 qD
 iy
-xW
-Sf
-xW
+Ae
+DO
+Ae
 Vb
 kA
 NZ
 NZ
 NZ
 NZ
-Vi
-fI
-xW
-xW
+um
+lk
+Ae
+Ae
 "}
 (26,1,1) = {"
 ys
 ys
 ys
 ys
-wz
-fe
-wz
-wz
-xW
-xW
-xW
+RD
+HH
+RD
+RD
+Ae
+Ae
+Ae
 qD
 qD
 hL
-nk
+FP
 sN
 qD
 qD
-xW
-xW
-xW
-xW
-KO
+Ae
+Ae
+Ae
+Ae
+qZ
 KL
 Ah
 Xi
 xA
 GJ
 bh
-xW
-xW
-xW
+Ae
+Ae
+Ae
 "}
 (27,1,1) = {"
 ys
@@ -2095,33 +2095,33 @@ ys
 ys
 ys
 ys
-xW
-xW
-xW
-gr
-xW
-xW
-xW
+Ae
+Ae
+Ae
+LI
+Ae
+Ae
+Ae
 qD
 TB
 TB
 TB
 qD
-xW
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
 tn
 hA
 yc
 oy
 yM
 iH
-xW
-xW
-xW
+Ae
+Ae
+Ae
 "}
 (28,1,1) = {"
 ys
@@ -2130,31 +2130,31 @@ ys
 ys
 ys
 ys
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
 Xa
-hs
+sv
 Lo
 Ah
 Ko
 NZ
 oV
 QV
-xW
-xW
+Ae
+Ae
 ys
 "}
 (29,1,1) = {"
@@ -2165,30 +2165,30 @@ ys
 ys
 ys
 ys
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-So
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Wg
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
 NZ
 NZ
 NZ
 NZ
 oS
-xW
-xW
+Ae
+Ae
 ys
 "}
 (30,1,1) = {"
@@ -2200,28 +2200,28 @@ ys
 ys
 ys
 ys
-xW
-xW
-xW
-xW
-Sf
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-fI
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+DO
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+lk
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
 ys
 ys
 "}
@@ -2235,26 +2235,26 @@ ys
 ys
 ys
 ys
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-So
-xW
-xW
-xW
-xW
-xW
-xW
-xW
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Wg
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
 ys
 ys
 ys
@@ -2272,20 +2272,20 @@ ys
 ys
 ys
 ys
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-gr
-xW
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
+LI
+Ae
 ys
 ys
 ys

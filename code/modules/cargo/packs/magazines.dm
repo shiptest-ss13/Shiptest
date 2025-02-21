@@ -9,7 +9,7 @@
 
 /datum/supply_pack/magazine/co9mm_mag
 	name = "9mm Commander Magazine Crate"
-	desc = "Contains a 9mm magazine for the standard-issue Commander pistol, with a capacity of ten rounds."
+	desc = "Contains a 9mm magazine for the standard-issue Commander pistol, with a capacity of twelve rounds."
 	contains = list(/obj/item/ammo_box/magazine/co9mm/empty)
 	cost = 150
 	faction = /datum/faction/nt
@@ -49,10 +49,19 @@
 	faction = /datum/faction/srm
 
 /datum/supply_pack/magazine/firestorm_mag
-	name = "Firestorm Magazine Crate"
-	desc = "Contains a 28-round magazine for the Hunter's Pride Firestorm SMG."
-	contains = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/empty)
+
+	name = "Firestorm Stick Magazine Crate"
+	desc = "Contains a 24-round magazine for the Hunter's Pride Firestorm SMG."
+	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/empty)
+
 	cost = 300
+	faction = /datum/faction/srm
+
+/datum/supply_pack/magazine/firestorm_mag
+	name = "Firestorm Pan Magazine Crate"
+	desc = "Contains a 40-round pan magazine for the Hunter's Pride Firestorm SMG."
+	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/empty)
+	cost = 1000
 	faction = /datum/faction/srm
 
 
@@ -76,6 +85,12 @@
 	contains = list(/obj/item/ammo_box/magazine/m15/empty)
 	cost = 300
 
+/datum/supply_pack/magazine/m20_auto_elite
+	name = "Auto Elite Magazine Crate"
+	desc = "Contains a .44 Roumain magazine for the Auto Elite pistol, with a capacity of ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/m20_auto_elite/empty)
+	cost = 250
+
 /* Scarbie */
 
 /datum/supply_pack/magazine/himehabu_mag
@@ -94,7 +109,7 @@
 
 /datum/supply_pack/magazine/m10mm_mag
 	name = "Ringneck Magazine Crate"
-	desc = "Contains a 10mm magazine for the Ringneck pistol, with a capacity of ten rounds."
+	desc = "Contains a 10mm magazine for the Ringneck pistol, with a capacity of eight rounds."
 	contains = list(/obj/item/ammo_box/magazine/m10mm_ringneck/empty)
 	cost = 150
 	faction = /datum/faction/syndicate/scarborough_arms
@@ -158,6 +173,14 @@
 	cost = 750
 	faction = /datum/faction/syndicate/scarborough_arms
 
+/datum/supply_pack/magazine/boomslang_mag_extended
+	name = "MSR-90 'Boomslang' Magazine Crate"
+	desc = "Contains a 6.5 CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/boomslang/empty)
+	cost = 1500
+	faction = /datum/faction/syndicate/scarborough_arms
+
+
 /* CM Lancaster */
 
 /datum/supply_pack/magazine/cm23_mag
@@ -202,6 +225,15 @@
 	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of twenty rounds."
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40/empty)
 	cost = 500
+
+/datum/supply_pack/magazine/skm_ammo_extended
+	name = "SKM Extended Magazine Crate"
+	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of fourty rounds."
+	contains = list(/obj/item/ammo_box/magazine/skm_762_40/extended/empty)
+	cost = 1250
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/magazine/f4_mag
 	name = "F4 Magazine Crate"
@@ -282,12 +314,18 @@
 /* Shotguns */
 
 /datum/supply_pack/magazine/bulldog
-	name = "Bulldog Magazine Crate"
+	name = "Bulldog Box Magazine Crate"
 	desc = "Contains an 8-round 12ga box magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/empty)
 	cost = 750
 	faction = /datum/faction/syndicate/scarborough_arms
 
+/datum/supply_pack/magazine/bulldog_12
+	name = "Bulldog Drum Magazine Crate"
+	desc = "Contains a 12-round 12ga drum magazine for the Bulldog weapons platform."
+	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty)
+	cost = 1500
+	faction = /datum/faction/syndicate/scarborough_arms
 
 /* energy weapons */
 

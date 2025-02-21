@@ -457,7 +457,7 @@
 		return
 	else
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
-			SetSleeping(400) //Short nap
+			set_sleeping(400) //Short nap
 
 
 /mob/proc/get_contents()
@@ -673,7 +673,7 @@
 	SetKnockdown(0)
 	SetImmobilized(0)
 	SetParalyzed(0)
-	SetSleeping(0)
+	set_sleeping(0)
 	setStaminaLoss(0)
 	SetUnconscious(0)
 
@@ -706,6 +706,7 @@
 	cure_blind()
 	cure_husk()
 	hallucination = 0
+	heal_overall_integrity(INFINITY, null, TRUE) //heal all limb integrity, so that you can...
 	heal_overall_damage(INFINITY, INFINITY, INFINITY, null, TRUE) //heal brute and burn dmg on both organic and robotic limbs, and update health right away.
 	ExtinguishMob()
 	fire_stacks = 0
@@ -1124,7 +1125,7 @@
 	if(G.trigger_guard == TRIGGER_GUARD_NONE)
 		to_chat(src, "<span class='warning'>You are unable to fire this!</span>")
 		return FALSE
-	if(G.trigger_guard != TRIGGER_GUARD_ALLOW_ALL && !IsAdvancedToolUser())
+	if(G.trigger_guard != TRIGGER_GUARD_ALLOW_ALL && (!IsAdvancedToolUser(src) && !HAS_TRAIT(src, TRAIT_GUN_NATURAL)))
 		to_chat(src, "<span class='warning'>You try to fire [G], but can't use the trigger!</span>")
 		return FALSE
 	return TRUE
@@ -1866,7 +1867,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		var/howfuck = rand(8,16)
 		AdjustParalyzed(howfuck)
 		AdjustKnockdown(howfuck)
-		Jitter(rand(150,200))
+		set_jitter(rand(150,200))
 
 /**
  * Sets the mob's speed variable and then calls update_living_varspeed().

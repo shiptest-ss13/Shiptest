@@ -26,6 +26,8 @@
 	var/token_icon_state = "ship_generic"
 	/// The prefix of the ship's name.
 	var/prefix = "ISV"
+	/// The name of the ship's manufacturer.
+	var/manufacturer = "Unknown"
 	/// The full name of the ship's faction.
 	var/faction_name = "Independent"
 	var/faction_path = /datum/faction/independent

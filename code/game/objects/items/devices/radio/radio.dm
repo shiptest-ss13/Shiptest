@@ -28,9 +28,6 @@
 	var/emped = 0
 	///It can be used for hotkeys
 	var/headset = FALSE
-	///The time since we last played a radio chatter sound.
-	var/last_chatter_time
-
 	///Whether the radio will transmit dialogue it hears nearby.
 	var/broadcasting = FALSE
 	///Whether the radio is currently receiving.
@@ -278,12 +275,6 @@
 	signal.data["interference"] = interference_level
 	signal.data["sfx"] = 'sound/effects/radio_chatter.ogg'
 
-	var/talkie_sound = 'sound/effects/walkietalkie.ogg'
-
-	//If the interference is extremely high we play this alt sound effect
-	if(interference_level >= INTERFERENCE_LEVEL_RADIO_STATIC_SOUND)
-		talkie_sound = 'sound/effects/overmap/heavy_interference.ogg'
-
 	// Independent radios, on the CentCom frequency, reach all independent radios
 	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))
 		signal.data["compression"] = 0
@@ -291,14 +282,10 @@
 		signal.map_zones = list(0)  // reaches all Z-levels
 		signal.data["sfx"] = 'sound/effects/overmap/wideband.ogg'
 		signal.broadcast()
-		playsound(src, talkie_sound, 20, FALSE)
 		return
 
 	// All radios make an attempt to use the subspace system first
 	signal.send_to_receivers()
-
-	//At this point the signal was transmitted so play a sound			//WS Edit - Radio chatter
-	playsound(src, talkie_sound, 20, FALSE)			//WS Edit - Radio chatter
 
 	// If the radio is subspace-only, that's all it can do
 	if (subspace_transmission)

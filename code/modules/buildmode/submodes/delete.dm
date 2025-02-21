@@ -2,7 +2,7 @@
 	key = "delete"
 
 /datum/buildmode_mode/delete/show_help(client/target_client)
-	to_chat(target_client, span_purple(examine_block(
+	to_chat(target_client, span_purple(boxed_message(
 		"[span_bold("Delete an object")] -> Left Mouse Button on obj/turf/mob\n\
 		[span_bold("Delete all objects of a type")] -> Right Mouse Button on obj/turf/mob"))
 	)

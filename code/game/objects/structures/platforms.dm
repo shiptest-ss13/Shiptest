@@ -21,8 +21,8 @@
 
 /obj/structure/platform/update_appearance(updates)
 	. = ..()
-	if(dir == 1)
-		layer = 2.89
+	if(dir == (1 || 5 || 9))
+		layer = 2.76
 	else
 		layer = 3.08
 
@@ -127,6 +127,8 @@
 
 /obj/structure/platform/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
+	if(.)
+		return FALSE
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	if(I.use_tool(src, user, 3 SECONDS, volume=0))

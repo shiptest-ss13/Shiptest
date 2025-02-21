@@ -285,11 +285,11 @@
 	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/kelotane(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/dexalin(src)
 
-/obj/item/storage/box/hypospray/CMO
-	name = "advanced hypospray mk. II kit"
+/obj/item/storage/box/hypospray/mkiii
+	name = "hypospray mk. III kit"
 
-/obj/item/storage/box/hypospray/CMO/PopulateContents()
-	new /obj/item/hypospray/mkii/CMO(src)
+/obj/item/storage/box/hypospray/mkiii/PopulateContents()
+	new /obj/item/hypospray/mkii/mkiii(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/bicaridine(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/antitoxin(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/kelotane(src)
@@ -802,27 +802,6 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, "rustle", 50, TRUE, -5)
 	user.visible_message("<span class='notice'>[user] hugs \the [src].</span>","<span class='notice'>You hug \the [src].</span>")
-
-/////clown box & honkbot assembly
-/obj/item/storage/box/clown
-	name = "clown box"
-	desc = "A colorful cardboard box for the clown"
-	illustration = "clown"
-
-/obj/item/storage/box/clown/attackby(obj/item/I, mob/user, params)
-	if((istype(I, /obj/item/bodypart/l_arm/robot)) || (istype(I, /obj/item/bodypart/r_arm/robot)))
-		if(contents.len) //prevent accidently deleting contents
-			to_chat(user, "<span class='warning'>You need to empty [src] out first!</span>")
-			return
-		if(!user.temporarilyRemoveItemFromInventory(I))
-			return
-		qdel(I)
-		to_chat(user, "<span class='notice'>You add some wheels to the [src]! You've got a honkbot assembly now! Honk!</span>")
-		var/obj/item/bot_assembly/honkbot/A = new
-		qdel(src)
-		user.put_in_hands(A)
-	else
-		return ..()
 
 //////
 /obj/item/storage/box/hug/medical/PopulateContents()

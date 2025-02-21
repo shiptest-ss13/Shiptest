@@ -221,7 +221,7 @@ GENE SCANNER
 	// Body part damage report
 	if(iscarbon(M) && mode == SCANNER_VERBOSE)
 		var/mob/living/carbon/C = M
-		var/list/damaged = C.get_damaged_bodyparts(1,1)
+		var/list/damaged = C.get_damaged_bodyparts(1,1,ignore_integrity=TRUE)
 		if(length(damaged)>0 || oxy_loss>0 || tox_loss>0 || fire_loss>0)
 			var/dmgreport = "<span class='info ml-1'>General status:</span>\
 							<table class='ml-2'><tr><font face='Verdana'>\
@@ -381,7 +381,7 @@ GENE SCANNER
 	SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, FALSE)
 
 	// we handled the last <br> so we don't need handholding
-	to_chat(user, examine_block(jointext(render_list, "")), trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
+	to_chat(user, boxed_message(jointext(render_list, "")), trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
 
 /proc/chemscan(mob/living/user, mob/living/M)
 	if(istype(M) && M.reagents)
@@ -399,7 +399,7 @@ GENE SCANNER
 		else
 			render_list += "<span class='notice ml-1'>Subject is not addicted to any reagents.</span>\n"
 		// we handled the last <br> so we don't need handholding
-		to_chat(user, examine_block(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
+		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
 
 /obj/item/healthanalyzer/verb/toggle_mode()
 	set name = "Switch Verbosity"
@@ -612,7 +612,7 @@ GENE SCANNER
 						\n<span class='notice'>Instability of the last fusion reaction: [round(cached_scan_results["fusion"], 0.01)].</span>"
 
 	// we let the join apply newlines so we do need handholding
-	to_chat(user, examine_block(jointext(render_list, "\n")), type = MESSAGE_TYPE_INFO)
+	to_chat(user, boxed_message(jointext(render_list, "\n")), type = MESSAGE_TYPE_INFO)
 	return TRUE
 
 /obj/item/nanite_scanner

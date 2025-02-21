@@ -160,7 +160,10 @@
 			UnarmedAttack(A,1)
 	else
 		if(W)
-			W.afterattack(A,src,0,params)
+			if(W.pre_attack(A,src,params))
+				return
+			else
+				W.afterattack(A,src,0,params)
 		else
 			RangedAttack(A,params)
 
@@ -342,7 +345,9 @@
 	A.AltClick(src)
 
 /atom/proc/AltClick(mob/user)
-	SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
+	. = SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
+	if(. & COMPONENT_CANCEL_CLICK_ALT)
+		return
 	var/turf/T = get_turf(src)
 	if(T && (isturf(loc) || isturf(src)) && user.TurfAdjacent(T))
 		user.set_listed_turf(T)
@@ -378,7 +383,7 @@
 
 /// Simple helper to face what you clicked on, in case it should be needed in more than one place
 /mob/proc/face_atom(atom/A)
-	if(buckled || stat != CONSCIOUS || !A || !x || !y || !A.x || !A.y)
+	if(buckled || stat != CONSCIOUS || !A || !x || !y || !A.x || !A.y || HAS_TRAIT(src, TRAIT_AIMING))
 		return
 	var/dx = A.x - x
 	var/dy = A.y - y
@@ -443,10 +448,10 @@
 		var/mob/living/carbon/C = usr
 		C.swap_hand()
 	else
-		var/turf/T = params2turf(LAZYACCESS(modifiers, SCREEN_LOC), get_turf(usr.client ? usr.client.eye : usr), usr.client)
-		params += "&catcher=1"
-		if(T)
-			T.Click(location, control, params)
+		var/turf/click_turf = parse_caught_click_modifiers(modifiers, get_turf(usr.client ? usr.client.eye : usr), usr.client)
+		if (click_turf)
+			modifiers["catcher"] = TRUE
+			click_turf.Click(click_turf, control, list2params(modifiers))
 	. = 1
 
 /// MouseWheelOn

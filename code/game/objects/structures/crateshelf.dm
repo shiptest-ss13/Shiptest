@@ -15,6 +15,7 @@
 	var/capacity = DEFAULT_SHELF_CAPACITY
 	var/max_capacity = DEFAULT_SHELF_MAX_CAPACITY
 	var/use_delay = DEFAULT_SHELF_USE_DELAY
+	var/pickup_crates = TRUE
 	var/list/shelf_contents
 
 /obj/structure/crate_shelf/built
@@ -23,8 +24,12 @@
 /obj/structure/crate_shelf/debug
 	capacity = 12
 
-/obj/structure/crate_shelf/Initialize()
+/obj/structure/crate_shelf/Initialize(mapload)
 	. = ..()
+
+	if (mapload && pickup_crates)
+		. = INITIALIZE_HINT_LATELOAD
+
 	shelf_contents = new/list(capacity) // Initialize our shelf's contents list, this will be used later.
 	var/stack_layer // This is used to generate the sprite layering of the shelf pieces.
 	var/stack_offset // This is used to generate the vertical offset of the shelf pieces.
@@ -36,6 +41,10 @@
 		stack_offset = DEFAULT_SHELF_VERTICAL_OFFSET * i // Make each shelf piece physically above the last.
 		overlays += image(icon = 'icons/obj/objects.dmi', icon_state = "shelf_stack", layer = stack_layer, pixel_y = stack_offset)
 	return
+
+/obj/structure/crate_shelf/LateInitialize()
+	load_crates(src)
+	return ..()
 
 /obj/structure/crate_shelf/Destroy()
 	QDEL_LIST(shelf_contents)
@@ -112,9 +121,10 @@
 /obj/structure/crate_shelf/proc/load(obj/structure/closet/crate/crate, mob/user)
 	var/next_free = shelf_contents.Find(null) // Find the first empty slot in the shelf.
 	if(!next_free) // If we don't find an empty slot, return early.
-		balloon_alert(user, "shelf full!")
+		if(ismob(user))
+			balloon_alert(user, "shelf full!")
 		return FALSE
-	if(do_after(user, use_delay, target = crate))
+	if(!user || do_after(user, use_delay, target = crate)) // Skip do_after if called with no mob
 		if(shelf_contents[next_free] != null)
 			return FALSE // Something has been added to the shelf while we were waiting, abort!
 		if(crate.opened) // If the crate is open, try to close it.
@@ -178,6 +188,12 @@
 			transfer_fingerprints_to(new_metal)
 		transfer_fingerprints_to(new_parts)
 	return ..()
+
+/obj/structure/crate_shelf/proc/load_crates(atom/movable/holder)
+	for(var/obj/structure/closet/crate/crate in loc)
+		if(!load(crate))
+			log_mapping("[src] failed to shelve a crate at [AREACOORD(src)]")
+			break
 
 /obj/item/rack_parts/shelf
 	name = "crate shelf parts"

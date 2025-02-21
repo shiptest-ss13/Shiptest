@@ -138,6 +138,9 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /mob/living/carbon/attack_hand(mob/living/carbon/human/user)
 
+	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_HAND, user) & COMPONENT_CANCEL_ATTACK_CHAIN)
+		. = TRUE
+
 	for(var/datum/surgery/S in surgeries)
 		if(body_position != LYING_DOWN && S.lying_required)
 			continue
@@ -387,8 +390,8 @@
 	var/should_stun = (!(flags & SHOCK_TESLA) || siemens_coeff > 0.5) && !(flags & SHOCK_NOSTUN)
 	if(should_stun)
 		Paralyze(40)
-	//Jitter and other fluff.
-	jitteriness += 1000
+	//jitter and other fluff.
+	adjust_jitter(1000, max = 1500)
 	do_jitter_animation(jitteriness)
 	stuttering += 2
 	addtimer(CALLBACK(src, PROC_REF(secondary_shock), should_stun), 20)

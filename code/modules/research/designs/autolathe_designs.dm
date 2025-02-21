@@ -476,6 +476,22 @@
 	build_path = /obj/item/reagent_containers/food/drinks/modglass/large
 	category = list("initial", "Dinnerware")
 
+/datum/design/glassbottle
+	name = "Glass Bottle"
+	id = "glass_bottle"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=2500)
+	build_path = /obj/item/reagent_containers/food/drinks/bottle
+	category = list("initial", "Dinnerware")
+
+/datum/design/glassbottle_small
+	name = "Small Glass Bottle"
+	id = "glass_bottle_small"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=500)
+	build_path = /obj/item/reagent_containers/food/drinks/bottle/small
+	category = list("initial", "Dinnerware")
+
 /datum/design/shaker
 	name = "Shaker"
 	id = "shaker"
@@ -1164,7 +1180,7 @@
 	name = "8x50 Stripper Clip"
 	id = "IllestrenStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/magazine/illestren_a850r/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1172,7 +1188,7 @@
 	name = ".300 Scout Stripper Clip"
 	id = "ScoutStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a300/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1180,7 +1196,7 @@
 	name = "7.62 Stripper Clip"
 	id = "PolymerStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a762_stripper/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1188,7 +1204,7 @@
 	name = ".308 Stripper Clip"
 	id = "VicklandStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/vickland_a308/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1196,7 +1212,7 @@
 	name = "8x58 Stripper Clip"
 	id = "SSGStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a858/empty
 	category = list("initial", "Security", "Ammo")
 

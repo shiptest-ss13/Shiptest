@@ -8,7 +8,7 @@
 			Operation of the core sampling drill is extremely dangerous, caution is advised. "
 	value = 2500
 	duration = 90 MINUTES
-	weight = 12
+	weight = 11
 
 	var/datum/planet_type/selected_planet
 	var/list/available_planets = list(
@@ -98,15 +98,15 @@
 
 /datum/mission/drill/classtwo
 	name = "Class 2 core sample mission"
-	value = 4000
-	weight = 10
+	value = 4500
+	weight = 9
 	class_wanted = 2
 	num_wanted = 6
 
 /datum/mission/drill/classthree
 	name = "Class 3 core sample mission"
-	value = 5500
-	weight = 6
+	value = 8000
+	weight = 5
 	duration = 120 MINUTES
 	class_wanted = 3
 	num_wanted = 8
@@ -196,10 +196,10 @@
 	. += "<span class='notice'>The drill contains [num_current] of the [num_wanted] samples needed.</span>"
 
 /obj/machinery/drill/mission/start_mining()
-	if(!istype(mining, orevein_wanted))
-		say("Error: Incorrect planet for operation.")
+	if(!istype(our_vein, orevein_wanted))
+		say("Error: Incorrect class of planetiod for operation.")
 		return
-	if(mining.vein_class < mission_class && mining)
+	if(our_vein.vein_class < mission_class && our_vein)
 		say("Error: A vein class of [mission_class] or greater is required for operation.")
 		return
 	return ..()
