@@ -34,6 +34,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "e" = (
@@ -182,6 +185,9 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "t" = (
@@ -387,6 +393,9 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 6
 	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "L" = (
@@ -460,6 +469,9 @@
 "P" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/autolathe,
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Q" = (
@@ -496,6 +508,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/ert_shuttle_spawn,
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "T" = (
