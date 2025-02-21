@@ -83,6 +83,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker)
+"aX" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "aY" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -102,6 +107,20 @@
 	},
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/living)
+"bf" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
+	environment_smash = 0;
+	wander = 0;
+	stop_automated_movement = 1;
+	aggro_vision_range = 14;
+	vision_range = 14
+	},
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"bj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/beach/bunker/office)
 "bu" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "guy";
@@ -111,20 +130,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/living)
-"bR" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/mirror{
-	pixel_y = 28;
-	icon_state = "mirror_broke"
-	},
-/obj/structure/sink{
-	pixel_y = 18
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/beach/bunker/living)
-"bT" = (
-/turf/closed/wall/concrete,
-/area/ruin/beach/bunker/side_two)
 "bW" = (
 /turf/closed/mineral/random/beach,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -180,6 +185,7 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "cz" = (
@@ -229,7 +235,6 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "cV" = (
@@ -262,6 +267,28 @@
 /obj/structure/hazard/electrical/electrified_water,
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"dC" = (
+/obj/effect/decal/cleanable/garbage{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/paper/crumpled{
+	pixel_y = 9;
+	pixel_x = 5
+	},
+/obj/item/paper/crumpled{
+	pixel_y = 0;
+	pixel_x = 14
+	},
+/obj/item/food/breadslice/moldy{
+	pixel_y = 7;
+	pixel_x = -4
+	},
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
+"dE" = (
+/turf/closed/wall/concrete,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "dK" = (
 /obj/structure/closet/cabinet,
 /obj/machinery/light/small/directional/east,
@@ -275,12 +302,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/beach/bunker/living)
-"dU" = (
-/obj/machinery/light/small/directional/west,
-/obj/structure/rack,
-/obj/item/weldingtool/empty,
-/turf/open/floor/concrete/pavement/beachplanet,
-/area/ruin/beach/bunker/side_one)
 "dV" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "b";
@@ -301,11 +322,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/bunker/living)
-"ez" = (
-/obj/structure/crate_shelf,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/beach/bunker/side_two)
 "eF" = (
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -353,13 +369,6 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
-"fE" = (
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
-/obj/structure/hazard/electrical/electrified_water,
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "fQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -493,6 +502,9 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
+"hU" = (
+/turf/closed/wall/concrete,
+/area/ruin/beach/bunker/living)
 "ig" = (
 /obj/structure/cable{
 	icon_state = "8-10"
@@ -540,6 +552,8 @@
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "iI" = (
+/obj/machinery/light/small/directional/east,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/concrete/pavement/beachplanet,
 /area/ruin/beach/bunker/side_one)
 "iJ" = (
@@ -938,6 +952,10 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/beach/bunker)
+"ms" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "mE" = (
 /obj/machinery/shower{
 	dir = 8
@@ -950,10 +968,6 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating,
 /area/ruin/beach/bunker/living)
-"mI" = (
-/obj/structure/flora/tree/dead/barren,
-/turf/open/floor/plating/grass/beach/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "mN" = (
 /obj/structure/cable{
 	icon_state = "9-10"
@@ -1051,6 +1065,9 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood,
 /area/ruin/beach/bunker/living)
+"nE" = (
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/bunker/side_one)
 "nU" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/guncloset{
@@ -1123,12 +1140,12 @@
 "oq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
-/area/ruin/beach/bunker/side_two)
+/area/ruin/beach/bunker/side_one)
 "ot" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/concrete/reinforced,
-/area/ruin/beach/bunker/side_one)
+/area/ruin/beach/bunker/side_two)
 "ow" = (
 /mob/living/simple_animal/hostile/rat,
 /obj/effect/turf_decal/steeldecal/steel_decals3,
@@ -1253,6 +1270,18 @@
 	pixel_y = 10;
 	pixel_x = -6
 	},
+/obj/item/paper_bin{
+	pixel_x = 8;
+	pixel_y = -3
+	},
+/obj/item/pen{
+	pixel_y = -1;
+	pixel_x = 7
+	},
+/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+	pixel_y = -4;
+	pixel_x = -10
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
@@ -1264,6 +1293,10 @@
 	icon_state = "wood-broken5"
 	},
 /area/ruin/beach/bunker/office)
+"qi" = (
+/obj/structure/flora/tree/dead/barren,
+/turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "qy" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
@@ -1345,22 +1378,22 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/bunker/living)
-"rr" = (
-/obj/item/paper/crumpled{
-	pixel_y = -17;
-	pixel_x = 12
+"rp" = (
+/obj/structure/mirror{
+	pixel_y = 28
 	},
-/turf/open/floor/plating/dirt/beach,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/sink{
+	pixel_y = 18
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/bunker/office)
+"rr" = (
+/turf/closed/wall/concrete,
+/area/ruin/beach/bunker/office)
 "rt" = (
 /turf/closed/wall/concrete,
 /area/ruin/beach/bunker/side_one)
-"rv" = (
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "rw" = (
 /obj/vehicle/ridden/atv{
 	dir = 4
@@ -1427,6 +1460,9 @@
 	},
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/side_one)
+"sS" = (
+/turf/closed/wall/concrete,
+/area/ruin/beach/bunker/side_two)
 "ta" = (
 /obj/structure/cable{
 	icon_state = "5-10"
@@ -1451,13 +1487,6 @@
 /mob/living/simple_animal/hostile/rat,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/side_two)
-"tq" = (
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "tv" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -1467,6 +1496,10 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"tA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/bunker/side_two)
 "tJ" = (
 /obj/structure/cable{
 	icon_state = "1-9"
@@ -1533,6 +1566,14 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
+"ui" = (
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_one)
+"um" = (
+/turf/closed/wall/concrete,
+/area/ruin/beach/bunker)
 "ur" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/paper_bin{
@@ -1545,16 +1586,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/beach/bunker)
-"us" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
-	environment_smash = 0;
-	wander = 0;
-	stop_automated_movement = 1;
-	aggro_vision_range = 14;
-	vision_range = 14
-	},
-/turf/open/floor/plating/dirt/beach/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "uw" = (
 /obj/structure/grille,
 /obj/structure/cable,
@@ -1694,9 +1725,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"wa" = (
-/turf/open/floor/concrete/slab_1,
-/area/ruin/beach/bunker/side_two)
+"wk" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_one)
 "ws" = (
 /obj/structure/rack,
 /obj/item/storage/bottles/moonshine{
@@ -1705,6 +1738,10 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/concrete/reinforced,
+/area/ruin/beach/bunker/side_one)
+"wv" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/concrete/pavement/beachplanet,
 /area/ruin/beach/bunker/side_one)
 "wE" = (
 /obj/structure/cable{
@@ -1831,15 +1868,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/side_one)
-"xQ" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/beach/bunker/side_one)
-"xT" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_4,
-/area/ruin/beach/bunker/side_one)
 "xU" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood/end{
@@ -1863,14 +1891,6 @@
 "yb" = (
 /turf/template_noop,
 /area/template_noop)
-"yg" = (
-/mob/living/simple_animal/cow{
-	faction = list("Frontiersmen");
-	name = "frontiersmen cow";
-	desc = "You get the feeling that somehow, this cow wishes they'd hit Luna-Town again."
-	},
-/turf/open/floor/plating/grass/beach/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "yo" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
@@ -1881,6 +1901,9 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/side_two)
+"yq" = (
+/turf/open/floor/concrete/pavement/beachplanet,
+/area/ruin/beach/bunker/side_one)
 "yw" = (
 /obj/structure/cable{
 	icon_state = "2-10"
@@ -1913,7 +1936,6 @@
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
 "yA" = (
-/obj/structure/flora/ausbushes/palebush,
 /turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "yD" = (
@@ -1941,9 +1963,6 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"zn" = (
-/turf/open/floor/plating/dirt/beach/lit,
-/area/overmap_encounter/planetoid/cave/explored)
 "zp" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -1953,9 +1972,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"zt" = (
-/turf/closed/wall/concrete,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "zw" = (
 /obj/effect/spawner/bunk_bed,
@@ -2273,6 +2289,12 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_two)
+"Cq" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Cu" = (
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -2328,10 +2350,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/beach/bunker/living)
-"Da" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
-/area/ruin/beach/bunker/living)
 "Db" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2362,7 +2380,7 @@
 "DC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/beach/bunker/office)
+/area/ruin/beach/bunker/living)
 "Ea" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -2619,7 +2637,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ge" = (
 /turf/open/floor/concrete/slab_1,
-/area/ruin/beach/bunker/side_one)
+/area/ruin/beach/bunker/side_two)
 "Gh" = (
 /obj/structure/cable{
 	icon_state = "8-10"
@@ -2634,15 +2652,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker)
-"Gq" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable,
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"Gs" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/beach/bunker/side_two)
 "GO" = (
 /obj/item/paper/crumpled{
 	pixel_x = -14;
@@ -2664,8 +2673,8 @@
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker)
 "Hc" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/pavement/beachplanet/lit,
+/obj/structure/flora/ausbushes/palebush,
+/turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Hf" = (
 /obj/structure/cable{
@@ -2687,11 +2696,6 @@
 	icon_state = "wood-broken4"
 	},
 /area/ruin/beach/bunker/living)
-"Hr" = (
-/obj/machinery/light/small/directional/east,
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/concrete/pavement/beachplanet,
-/area/ruin/beach/bunker/side_one)
 "HB" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
@@ -2725,8 +2729,8 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "HQ" = (
-/turf/closed/wall/concrete,
-/area/ruin/beach/bunker)
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "HS" = (
 /mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plating/dirt/beach/lit,
@@ -2767,25 +2771,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/bunker)
-"IC" = (
-/obj/effect/decal/cleanable/garbage{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/item/paper/crumpled{
-	pixel_y = 9;
-	pixel_x = 5
-	},
-/obj/item/paper/crumpled{
-	pixel_y = 0;
-	pixel_x = 14
-	},
-/obj/item/food/breadslice/moldy{
-	pixel_y = 7;
-	pixel_x = -4
-	},
-/turf/open/floor/plating/dirt/beach,
-/area/overmap_encounter/planetoid/cave/explored)
 "IF" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
@@ -2945,10 +2930,6 @@
 	},
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"La" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Lp" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -2987,6 +2968,9 @@
 	},
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"LL" = (
+/turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "LS" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2994,6 +2978,13 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/side_two)
+"LT" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Me" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -3013,15 +3004,16 @@
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Mr" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/mirror{
-	pixel_y = 28
+	pixel_y = 28;
+	icon_state = "mirror_broke"
 	},
 /obj/structure/sink{
 	pixel_y = 18
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/beach/bunker/office)
+/area/ruin/beach/bunker/living)
 "Mz" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -3057,9 +3049,6 @@
 /obj/effect/decal/cleanable/confetti,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/living)
-"Nd" = (
-/turf/closed/wall/concrete,
-/area/ruin/beach/bunker/living)
 "Ni" = (
 /obj/effect/turf_decal/road/stripes{
 	dir = 4
@@ -3075,6 +3064,13 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Nw" = (
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/obj/structure/hazard/electrical/electrified_water,
+/turf/open/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "NA" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/tracker,
@@ -3083,17 +3079,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"NB" = (
-/obj/item/reagent_containers/glass/bucket/wooden{
-	pixel_y = 6;
-	pixel_x = 8
-	},
-/obj/item/shovel/spade{
-	pixel_y = -7;
-	pixel_x = 3
-	},
-/turf/open/floor/plating/dirt/beach,
-/area/overmap_encounter/planetoid/cave/explored)
 "NC" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "electricdanger";
@@ -3166,6 +3151,10 @@
 /area/ruin/beach/bunker/side_two)
 "Od" = (
 /obj/structure/table/wood/reinforced,
+/obj/item/documents/frontier{
+	pixel_y = 5;
+	pixel_x = 3
+	},
 /turf/open/floor/wood,
 /area/ruin/beach/bunker)
 "Oo" = (
@@ -3489,10 +3478,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker)
-"RJ" = (
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/concrete/pavement/beachplanet,
-/area/ruin/beach/bunker/side_one)
 "RM" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "food";
@@ -3590,14 +3575,6 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
-"Tm" = (
-/obj/item/flashlight/lantern{
-	pixel_y = 18;
-	pixel_x = -7;
-	on = 1
-	},
-/turf/open/floor/plating/dirt/beach,
-/area/overmap_encounter/planetoid/cave/explored)
 "Tx" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/dirt/beach/lit,
@@ -3664,6 +3641,14 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/living)
+"Up" = (
+/obj/item/flashlight/lantern{
+	pixel_y = 18;
+	pixel_x = -7;
+	on = 1
+	},
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
 "UH" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -3680,6 +3665,7 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "UI" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "UL" = (
@@ -3885,9 +3871,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"WN" = (
-/turf/closed/wall/concrete,
-/area/ruin/beach/bunker/office)
 "Xc" = (
 /obj/item/reagent_containers/food/snacks/deadmouse{
 	pixel_y = 1;
@@ -3932,6 +3915,10 @@
 /mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plating/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
+"XH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_two)
 "XM" = (
 /obj/structure/cable{
 	icon_state = "8-9"
@@ -3945,6 +3932,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker)
+"XO" = (
+/obj/item/paper/crumpled{
+	pixel_y = -17;
+	pixel_x = 12
+	},
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
 "XS" = (
 /obj/structure/chair/plastic{
 	dir = 4
@@ -3959,6 +3953,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Yg" = (
+/obj/item/reagent_containers/glass/bucket/wooden{
+	pixel_y = 6;
+	pixel_x = 8
+	},
+/obj/item/shovel/spade{
+	pixel_y = -7;
+	pixel_x = 3
+	},
+/turf/open/floor/plating/dirt/beach,
+/area/overmap_encounter/planetoid/cave/explored)
 "YB" = (
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -3999,6 +4004,11 @@
 /turf/open/floor/wood,
 /area/ruin/beach/bunker/living)
 "Zj" = (
+/mob/living/simple_animal/cow{
+	faction = list("Frontiersmen");
+	name = "frontiersmen cow";
+	desc = "You get the feeling that somehow, this cow wishes they'd hit Luna-Town again."
+	},
 /turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Zq" = (
@@ -4042,6 +4052,12 @@
 	},
 /turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"ZX" = (
+/obj/machinery/light/small/directional/west,
+/obj/structure/rack,
+/obj/item/weldingtool/empty,
+/turf/open/floor/concrete/pavement/beachplanet,
+/area/ruin/beach/bunker/side_one)
 
 (1,1,1) = {"
 yb
@@ -4323,8 +4339,8 @@ bW
 bW
 bW
 mn
-zn
-us
+LL
+bf
 Tx
 VI
 eF
@@ -4381,9 +4397,9 @@ bW
 bW
 bW
 mn
-Tm
-zn
-zn
+Up
+LL
+LL
 YB
 Tx
 bW
@@ -4442,9 +4458,9 @@ bW
 bW
 mn
 mn
-zn
-zn
-zn
+LL
+LL
+LL
 bW
 bW
 bW
@@ -4478,9 +4494,9 @@ bW
 bW
 rt
 rt
-ot
-ot
-ot
+ui
+ui
+ui
 rt
 rt
 mn
@@ -4539,7 +4555,7 @@ rt
 UL
 cE
 Eo
-Ge
+nE
 FF
 rt
 mn
@@ -4603,8 +4619,8 @@ hT
 rt
 mn
 mn
-rr
-IC
+XO
+dC
 bW
 bW
 bW
@@ -4621,7 +4637,7 @@ ht
 mn
 mn
 mn
-Tm
+Up
 bW
 bW
 bW
@@ -4773,9 +4789,9 @@ mn
 mn
 mn
 PB
-Hc
-cS
 UI
+LT
+HQ
 iH
 mn
 mn
@@ -4800,8 +4816,8 @@ YB
 YB
 YB
 YB
-zn
-zn
+LL
+LL
 mn
 iU
 Tx
@@ -4816,10 +4832,10 @@ yb
 bW
 bW
 bW
-WN
-WN
-WN
-WN
+rr
+rr
+rr
+rr
 bW
 bW
 bW
@@ -4832,9 +4848,9 @@ rt
 mn
 mn
 YB
-Hc
-tq
 UI
+cx
+HQ
 YB
 RM
 rt
@@ -4845,7 +4861,7 @@ rt
 rt
 yM
 rw
-dU
+ZX
 rt
 bW
 bW
@@ -4853,15 +4869,15 @@ bW
 mn
 YB
 YB
-Zj
 yA
-Zj
-Zj
-Zj
+Hc
+yA
+yA
+yA
 YB
 YB
-zn
-zn
+LL
+LL
 Jp
 Tx
 eF
@@ -4874,12 +4890,12 @@ yb
 yb
 bW
 bW
-WN
-WN
+rr
+rr
 lO
 wX
-WN
-WN
+rr
+rr
 bW
 bW
 bW
@@ -4891,36 +4907,36 @@ rt
 rt
 Ro
 YB
+HQ
 UI
-Hc
 rc
 YB
-UI
+HQ
 Be
 zQ
 lD
 Jb
-xQ
+wk
 rt
-iI
+yq
 CL
-iI
+yq
 rt
 bW
 bW
 bW
 YB
 YB
-Zj
-Zj
+yA
+yA
 Km
-Zj
+yA
 Sw
-Zj
-Zj
+yA
+yA
 YB
 YB
-zn
+LL
 Tx
 Tx
 eF
@@ -4933,51 +4949,51 @@ yb
 bW
 bW
 bW
-WN
+rr
 lF
 RT
 RT
 ls
-WN
+rr
 bW
 bW
 bW
 rt
 ug
-xT
-xT
+oq
+oq
 TV
 WF
-UI
+HQ
 YB
-UI
+HQ
 vZ
 lr
-Hc
-Hc
+UI
+UI
 Be
 Xc
 ks
 Kt
 YL
 rt
-Hr
+iI
 CL
-RJ
+wv
 rt
 bW
 bW
 bW
-Zj
+yA
 BS
-yg
 Zj
-Zj
-Zj
-Zj
+yA
+yA
+yA
+yA
 Km
-Zj
-Zj
+yA
+yA
 YB
 bW
 bW
@@ -4992,25 +5008,25 @@ yb
 bW
 bW
 bW
-WN
+rr
 Pw
 pN
 MS
 la
-WN
+rr
 bW
 bW
-WN
+rr
 rt
 Ps
-xT
-xT
+oq
+oq
 Bm
 El
+HQ
+HQ
 UI
 UI
-Hc
-Hc
 tO
 YB
 dV
@@ -5027,17 +5043,17 @@ rt
 bW
 bW
 bW
-Zj
-Zj
+yA
+yA
 BS
-Zj
+yA
 pE
-Zj
+yA
 YB
+yA
 Zj
-yg
 pE
-Zj
+yA
 bW
 bW
 bW
@@ -5051,15 +5067,15 @@ bW
 bW
 bW
 bW
-WN
-WN
-WN
+rr
+rr
+rr
 Cl
-WN
-WN
-WN
-WN
-WN
+rr
+rr
+rr
+rr
+rr
 rt
 rt
 Fu
@@ -5070,34 +5086,34 @@ jk
 YB
 YB
 Gc
+HQ
+YB
+YB
+YB
+rt
+rt
+rt
+rt
+YB
+YB
+UI
 UI
 YB
 YB
-YB
-rt
-rt
-rt
-rt
-YB
-YB
-Hc
-Hc
-YB
-YB
 at
-Zj
+yA
 Km
-Zj
+yA
 BS
-Zj
-Zj
+yA
+yA
 YB
 YB
-Zj
-Zj
+yA
+yA
 Km
-Zj
-Zj
+yA
+yA
 bW
 bW
 at
@@ -5110,9 +5126,9 @@ yb
 bW
 bW
 bW
-WN
+rr
 Rm
-WN
+rr
 jP
 qh
 Xh
@@ -5120,43 +5136,43 @@ BC
 EC
 Ad
 ok
-WN
+rr
 rt
 rt
 rt
-Zj
+yA
 YB
 YB
 YB
 Ex
-UI
+HQ
 YB
 YB
 YB
-Zj
-Zj
-Zj
+yA
+yA
+yA
 db
 YB
 YB
+HQ
 UI
-Hc
 YB
 YB
 aE
-Zj
-Zj
+yA
+yA
 Km
-Zj
+yA
 YB
 YB
 YB
 YB
 YB
 YB
-Zj
-La
-Zj
+yA
+ms
+yA
 YB
 YB
 db
@@ -5169,44 +5185,44 @@ yb
 bW
 bW
 bW
-WN
-Mr
+rr
+rp
 AM
 Db
 fQ
 lv
-DC
+bj
 Sa
 lk
 mW
 EB
-WN
-Zj
-Zj
+rr
+yA
+yA
 xu
-Zj
+yA
 YB
 YB
 cz
-Hc
+UI
 YB
 YB
-Zj
-Zj
-mI
-Zj
+yA
+yA
+qi
+yA
 db
 YB
 YB
+HQ
 UI
-Hc
 YB
-Zj
+yA
 aE
 pE
-Zj
-Zj
-Zj
+yA
+yA
+yA
 YB
 rf
 Sc
@@ -5228,10 +5244,10 @@ yb
 bW
 bW
 bW
-WN
+rr
 qF
-WN
-WN
+rr
+rr
 WB
 cO
 Qx
@@ -5239,41 +5255,41 @@ xw
 gi
 BC
 Wq
-WN
+rr
 YB
 YB
-Zj
-Zj
+yA
+yA
 rX
 oa
-UI
-UI
+HQ
+HQ
 YB
 YB
-Zj
-Zj
-Zj
-Zj
+yA
+yA
+yA
+yA
 db
 YB
-Zj
+yA
+HQ
 UI
-Hc
 YB
 Km
 aE
-Zj
 yA
-Zj
+Hc
+yA
 YB
 YB
 QU
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 uz
 YB
 YB
@@ -5286,19 +5302,19 @@ yb
 bW
 bW
 bW
-HQ
-HQ
-HQ
-HQ
-HQ
+um
+um
+um
+um
+um
 po
 gl
-DC
+bj
 kd
 uF
 cP
-WN
-WN
+rr
+rr
 YB
 YB
 YB
@@ -5306,33 +5322,33 @@ xu
 rX
 Bn
 Ta
-UI
+HQ
 YB
 YB
 YB
-Zj
-Zj
+yA
+yA
 YB
 db
 YB
-Zj
-UI
-UI
+yA
+HQ
+HQ
 YB
-Zj
+yA
 aE
-Zj
-Zj
+yA
+yA
 YB
 YB
 YB
 QU
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 uz
 YB
 YB
@@ -5344,19 +5360,19 @@ yb
 (23,1,1) = {"
 bW
 bW
-HQ
-HQ
+um
+um
 cu
 xU
 ur
-HQ
-WN
+um
+rr
 VF
-WN
-WN
-WN
-WN
-WN
+rr
+rr
+rr
+rr
+rr
 KU
 KU
 KU
@@ -5376,7 +5392,7 @@ at
 YB
 YB
 xp
-UI
+HQ
 YB
 VA
 at
@@ -5386,12 +5402,12 @@ YB
 YB
 YB
 QU
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 YB
 YB
 YB
@@ -5403,54 +5419,54 @@ yb
 (24,1,1) = {"
 bW
 bW
-HQ
+um
 Ar
 sx
 KL
 Ci
-HQ
+um
 CV
 GO
 mo
 FD
-HQ
+um
 hR
-Hc
-Hc
 UI
 UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
 Nn
-UI
+HQ
 zp
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 iv
 YB
 YB
+HQ
 UI
-Hc
-Hc
+UI
 CC
-UI
-rv
-UI
-UI
-UI
+HQ
+cS
+HQ
+HQ
+HQ
 BA
-UI
+HQ
 QU
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 YB
 YB
 YB
@@ -5462,7 +5478,7 @@ yb
 (25,1,1) = {"
 bW
 bW
-HQ
+um
 tv
 kr
 Zq
@@ -5503,13 +5519,13 @@ jT
 HB
 xn
 Sq
-Gq
-UI
-UI
-UI
-UI
-UI
-UI
+aX
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 YB
 YB
 YB
@@ -5521,7 +5537,7 @@ yb
 (26,1,1) = {"
 bW
 bW
-HQ
+um
 IF
 TF
 aR
@@ -5563,12 +5579,12 @@ QV
 Re
 jX
 QU
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 YB
 YB
 YB
@@ -5580,54 +5596,54 @@ yb
 (27,1,1) = {"
 bW
 bW
-HQ
+um
 xJ
 QK
 LE
 Zu
-HQ
+um
 Pb
 SS
 QQ
 oJ
+um
 HQ
-UI
 XZ
-Hc
-Hc
-Hc
+UI
+UI
+UI
 yQ
 mN
+HQ
+HQ
+HQ
 UI
-UI
-UI
-Hc
-UI
+HQ
 xp
-UI
-UI
+HQ
+HQ
 HS
 gF
 YB
 vs
-UI
+HQ
 Ls
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 QU
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 YB
 YB
 YB
@@ -5639,18 +5655,18 @@ yb
 (28,1,1) = {"
 bW
 bW
-HQ
+um
 nU
 Qv
 ft
 Od
-HQ
+um
 RG
 ol
 fr
 yJ
-HQ
-HQ
+um
+um
 KU
 KU
 KU
@@ -5667,7 +5683,7 @@ YB
 YB
 YB
 YB
-fE
+Nw
 mj
 dk
 YB
@@ -5677,16 +5693,16 @@ YB
 at
 YB
 YB
-UI
+HQ
 Ft
 YB
 YB
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 uz
 YB
 YB
@@ -5698,17 +5714,17 @@ yb
 (29,1,1) = {"
 bW
 bW
-HQ
-HQ
+um
+um
 yx
 kH
 pW
-HQ
+um
 vJ
 QZ
 zH
 Tb
-HQ
+um
 YB
 YB
 kJ
@@ -5716,7 +5732,7 @@ YB
 Mi
 TY
 cz
-UI
+HQ
 YB
 kJ
 YB
@@ -5724,7 +5740,7 @@ YB
 db
 YB
 YB
-Zj
+yA
 Km
 dk
 qI
@@ -5735,17 +5751,17 @@ YB
 YB
 aE
 Km
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 uz
 YB
 YB
@@ -5758,24 +5774,24 @@ yb
 yb
 bW
 bW
-HQ
-HQ
-HQ
-HQ
-HQ
+um
+um
+um
+um
+um
 Hf
 BQ
 IZ
 Ow
-HQ
+um
 YB
 kJ
 tx
 kJ
 Mi
 zJ
+HQ
 UI
-Hc
 YB
 kJ
 kJ
@@ -5791,20 +5807,20 @@ dk
 dk
 dk
 YB
-Zj
+yA
 aE
-Zj
-UI
-UI
-UI
+yA
+HQ
+HQ
+HQ
 YB
 QU
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 uz
 YB
 YB
@@ -5821,27 +5837,27 @@ bW
 bW
 bW
 bW
-HQ
+um
 YG
 pM
 Ph
 Xv
-HQ
+um
 YB
 Kl
 kJ
 kJ
 YB
-UI
-rv
+HQ
+cS
 YB
 YB
 kJ
 kJ
-bT
-bT
-bT
-bT
+sS
+sS
+sS
+sS
 YB
 nZ
 dk
@@ -5852,10 +5868,10 @@ YB
 YB
 Km
 vN
-Zj
-UI
-UI
-UI
+yA
+HQ
+HQ
+HQ
 YB
 YB
 Pm
@@ -5880,12 +5896,12 @@ bW
 bW
 bW
 bW
-HQ
+um
 Ew
-HQ
-HQ
-HQ
-HQ
+um
+um
+um
+um
 tx
 kJ
 kJ
@@ -5896,12 +5912,12 @@ wZ
 YB
 YB
 dV
-bT
-bT
+sS
+sS
 OW
 Cn
-bT
-bT
+sS
+sS
 YB
 TO
 dk
@@ -5909,22 +5925,22 @@ dk
 YB
 YB
 YB
-Zj
+yA
 aE
-Zj
-UI
-UI
-UI
+yA
+HQ
+HQ
+HQ
 Km
 YB
 YB
 YB
 YB
 YB
-Zj
+yA
 YB
 YB
-Zj
+yA
 vb
 db
 yb
@@ -5938,29 +5954,29 @@ yb
 bW
 bW
 bW
-Nd
-Nd
+hU
+hU
 ba
 ZD
 CY
-Nd
-Nd
-Nd
-Nd
-Nd
+hU
+hU
+hU
+hU
+hU
 kJ
 YB
 YB
 oL
-Hc
-Hc
 UI
+UI
+HQ
 Ry
 xd
-oq
+XH
 Oo
 pG
-bT
+sS
 Jf
 YB
 YB
@@ -5971,20 +5987,20 @@ YB
 YB
 aE
 BS
-UI
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 YB
 YB
-Zj
-Zj
+yA
+yA
 Km
-Zj
-Zj
+yA
+yA
 db
 yb
 yb
@@ -5997,29 +6013,29 @@ bW
 bW
 bW
 bW
-Nd
+hU
 nB
 HF
 KJ
 kw
-Nd
+hU
 uR
 ON
 Wk
-Nd
+hU
 YB
 YB
-UI
+HQ
 cz
 rc
-Hc
 UI
+HQ
 Ry
-oq
-oq
+XH
+XH
 TK
 ac
-bT
+sS
 VE
 YB
 YB
@@ -6031,18 +6047,18 @@ YB
 aE
 YB
 YB
-UI
-UI
-UI
-UI
-UI
-UI
-UI
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
+HQ
 YB
 YB
-Zj
+yA
 dc
-Zj
+yA
 YB
 db
 yb
@@ -6056,7 +6072,7 @@ bW
 bW
 bW
 bW
-Nd
+hU
 EM
 yw
 it
@@ -6065,41 +6081,41 @@ xV
 im
 Cc
 Wr
-Nd
+hU
 YB
 YB
 wE
 na
-UI
+HQ
 YB
 lu
-bT
-bT
+sS
+sS
 Fe
 bY
-bT
-bT
+sS
+sS
 Km
 dh
 YB
-bT
-bT
-bT
-bT
+sS
+sS
+sS
+sS
 YB
 aE
 YB
 YB
-UI
-UI
+HQ
+HQ
 YB
 YB
 iv
-UI
-UI
+HQ
+HQ
 YB
-Zj
-Zj
+yA
+yA
 YB
 YB
 bW
@@ -6115,47 +6131,47 @@ bW
 bW
 bW
 bW
-Nd
+hU
 tQ
 aC
-Da
+DC
 zw
-Nd
+hU
 mE
 pU
 ri
-Nd
+hU
 YB
 YB
-cx
+Cq
 AH
 Em
 YB
 YB
 YB
-bT
-bT
-bT
-bT
-Zj
-Zj
-Zj
+sS
+sS
+sS
+sS
+yA
+yA
+yA
 Jl
 LS
 hN
 iJ
-bT
-zt
+sS
+dE
 at
 BS
 YB
 Km
+Hc
 yA
-Zj
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
 YB
@@ -6174,21 +6190,21 @@ bW
 bW
 bW
 bW
-Nd
+hU
 vF
 cV
 ex
 Vb
-Nd
-Nd
-Nd
-Nd
-Nd
+hU
+hU
+hU
+hU
+hU
 YB
 Qc
-UI
-rv
-UI
+HQ
+cS
+HQ
 Wn
 YB
 YB
@@ -6196,25 +6212,25 @@ YB
 YB
 YB
 Km
-Zj
-mI
+yA
+qi
 ZJ
 gu
 lR
 ao
 nu
-bT
+sS
 bW
 bW
 bW
 YB
-Zj
+yA
 YB
 YB
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
 YB
@@ -6233,7 +6249,7 @@ yb
 yb
 bW
 bW
-Nd
+hU
 Ca
 lG
 Hp
@@ -6241,14 +6257,14 @@ eS
 Kg
 FQ
 uw
-Nd
+hU
 YB
 YB
-bT
+sS
 yo
 Fz
 yo
-bT
+sS
 YB
 YB
 YB
@@ -6262,7 +6278,7 @@ sf
 PW
 kp
 ii
-bT
+sS
 bW
 bW
 bW
@@ -6271,9 +6287,9 @@ at
 OX
 OX
 at
-UI
-UI
-UI
+HQ
+HQ
+HQ
 at
 OX
 OX
@@ -6292,23 +6308,23 @@ yb
 bW
 bW
 bW
-Nd
+hU
 dK
 mV
 MH
 YW
-Nd
+hU
 MX
 Ub
-Nd
+hU
 mn
-bT
-bT
+sS
+sS
 Pt
 Sx
 ah
-bT
-bT
+sS
+sS
 YB
 YB
 YB
@@ -6318,21 +6334,21 @@ LF
 Ls
 Jf
 vY
-bT
-bT
-bT
-bT
+sS
+sS
+sS
+sS
 bW
 bW
 bW
 bW
 bW
 YB
-Zj
+yA
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
 YB
@@ -6351,23 +6367,23 @@ yb
 bW
 bW
 bW
-Nd
-Nd
-Nd
+hU
+hU
+hU
 Wc
-Nd
-Nd
+hU
+hU
 hg
-Nd
-Nd
+hU
+hU
 mn
-bT
+sS
 rd
 wR
 to
-Gs
+tA
 NW
-bT
+sS
 YB
 YB
 cb
@@ -6390,14 +6406,14 @@ yD
 YB
 YB
 YB
-UI
+HQ
 YB
 YB
 vb
-Zj
-Zj
-Zj
-Zj
+yA
+yA
+yA
+yA
 YB
 YB
 yb
@@ -6412,23 +6428,23 @@ bW
 bW
 bW
 bW
-Nd
-bR
+hU
+Mr
 Oz
-Nd
+hU
 nm
-Nd
+hU
 mn
 mn
-bT
+sS
 mk
-wa
+Ge
 cf
-wa
+Ge
 Ea
-bT
+sS
 YB
-Zj
+yA
 cb
 fd
 cb
@@ -6449,13 +6465,13 @@ YB
 YB
 YB
 YB
-UI
+HQ
 YB
 YB
-Zj
-mI
+yA
+qi
 Km
-Zj
+yA
 YB
 YB
 YB
@@ -6471,23 +6487,23 @@ bW
 bW
 bW
 bW
-Nd
+hU
 bu
 oo
-Nd
+hU
 bW
 bW
 bW
 mn
-bT
-bT
-ez
-ez
-ez
-bT
-bT
-Zj
-Zj
+sS
+sS
+ot
+ot
+ot
+sS
+sS
+yA
+yA
 cb
 fd
 cb
@@ -6505,16 +6521,16 @@ OF
 YB
 YB
 YB
-Zj
+yA
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
-yg
 Zj
-Zj
-Zj
+yA
+yA
+yA
 Tx
 YB
 YB
@@ -6530,23 +6546,23 @@ yb
 bW
 bW
 bW
-Nd
-Nd
-Nd
-Nd
+hU
+hU
+hU
+hU
 bW
 bW
 bW
-NB
+Yg
 bW
-bT
-bT
-bT
-bT
-bT
+sS
+sS
+sS
+sS
+sS
 YB
-Zj
-Zj
+yA
+yA
 cb
 fd
 cb
@@ -6564,14 +6580,14 @@ YB
 Tx
 YB
 Km
-Zj
+yA
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 Km
-Zj
+yA
 xf
 Tx
 Tx
@@ -6603,7 +6619,7 @@ eF
 eF
 eF
 eF
-Zj
+yA
 YB
 YB
 cb
@@ -6623,14 +6639,14 @@ YB
 Tx
 Tx
 Wd
-Zj
+yA
 YB
-UI
-UI
+HQ
+HQ
 YB
 YB
-Zj
-Zj
+yA
+yA
 Tx
 Tx
 YB
@@ -6682,16 +6698,16 @@ YB
 YB
 Tx
 Tx
-Zj
+yA
 YB
-UI
-UI
+HQ
+HQ
 YB
 YB
-Zj
-Zj
+yA
+yA
 BS
-Zj
+yA
 YB
 yb
 yb
@@ -6738,19 +6754,19 @@ eF
 eF
 eF
 eF
-Zj
-Zj
+yA
+yA
 yD
-Zj
+yA
 YB
-UI
-UI
-UI
+HQ
+HQ
+HQ
 YB
 YB
-Zj
+yA
 BS
-Zj
+yA
 yb
 yb
 yb
@@ -6800,14 +6816,14 @@ yb
 yb
 BS
 BS
-Zj
+yA
 YB
 YB
-UI
-UI
+HQ
+HQ
 YB
 YB
-Zj
+yA
 Km
 yb
 yb
@@ -6858,17 +6874,17 @@ yb
 yb
 yb
 yb
-Zj
+yA
 Km
-Zj
+yA
 YB
-UI
+HQ
 YB
 YB
 YB
-Zj
-Zj
-Zj
+yA
+yA
+yA
 yb
 yb
 yb
@@ -6918,15 +6934,15 @@ yb
 yb
 yb
 yb
-Zj
-Zj
+yA
+yA
 YB
 YB
 YB
 YB
-Zj
-Zj
-Zj
+yA
+yA
+yA
 yb
 yb
 yb
@@ -6978,13 +6994,13 @@ yb
 yb
 yb
 yb
-Zj
-Zj
-Zj
-Zj
-Zj
+yA
+yA
+yA
+yA
+yA
 Km
-Zj
+yA
 yb
 yb
 yb
