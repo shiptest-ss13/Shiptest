@@ -1161,6 +1161,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
+"rc" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered{
+	aggro_vision_range = 12
+	},
+/turf/open/floor/wood/icemoon{
+	icon_state = "wood-broken4"
+	},
+/area/overmap_encounter/planetoid/cave/explored)
 "rm" = (
 /turf/open/floor/ship/dirt/dark,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -1736,9 +1744,6 @@
 "xk" = (
 /obj/effect/turf_decal/spline/fancy/wood,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered{
-	aggro_vision_range = 12
-	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "xu" = (
@@ -5042,7 +5047,7 @@ Vz
 Vz
 xk
 Ws
-Mt
+rc
 cd
 GD
 ou
