@@ -11,5 +11,6 @@
 		"een", "aar", "het", "ver", "van", "gen", "oor", "ee", "an", "et", "aa", "oo", "ve", "ing", //dutch/afrikaans syllables
 		"ali", "kuw", "uwa", "kwa", "ati", "iku", "wa", "ku", "na", "ka", "li", "ma", //swahili syllables
 		"ent", "que", "nte", "par", "ara", "ra", "ar", "es", //portuguese(brazilian) syllables
+		"ang", "kan," "dan", "nga", "ng", "ya", //indonesian syllables
 	)
 	icon_state = "solarian"
