@@ -376,7 +376,7 @@
 /datum/supply_pack/gun/c20r
 	name = "C-20r 'Cobra' SMG Crate"
 	desc = "Contains a military variant of the Cobra SMG, chambered in .45"
-	cost = 2800 // Same price as above, as it's literally the same gun right now. No discount tho.
+	cost = 2800 // 100 more than the civ variant (counting it's discount), because they are literally the same right now.
 	contains = list(/obj/item/storage/guncase/c20r)
 	crate_name = "SMG crate"
 	faction = /datum/faction/syndicate/scarborough_arms
