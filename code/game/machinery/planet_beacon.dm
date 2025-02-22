@@ -34,7 +34,7 @@
 	if(!C && powernet)
 		disconnect_from_network()
 		change_state(BEACON_ANCHORED)
-	if(state > BEACON_IDLE ) // If active or sending distress, use active_power_usage
+	if(state > BEACON_IDLE) // If active or sending distress, use active_power_usage
 		if(avail(active_power_usage))
 			add_load(active_power_usage)
 		else
