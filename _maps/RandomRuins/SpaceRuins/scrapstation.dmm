@@ -2600,6 +2600,17 @@
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck)
+"oU" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 6
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/starboard)
 "oY" = (
 /obj/structure/lattice,
 /obj/item/stack/tile/plasteel/dark,
@@ -3347,6 +3358,10 @@
 /area/ruin/space/pgf_wreck/bridge)
 "tg" = (
 /obj/structure/chair/office,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
+	minimum_distance = 1;
+	retreat_distance = null
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "tl" = (
@@ -8764,16 +8779,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "VL" = (
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 6
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/ramzi_station/starboard)
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/pgf_wreck/cargo)
 "VM" = (
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
 /obj/structure/sink/kitchen{
@@ -9116,9 +9124,12 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/powered/ramzi_station/toilet)
 "XD" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
-/turf/open/floor/plasteel/mono,
-/area/ruin/space/pgf_wreck/cargo)
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun{
+	minimum_distance = 1;
+	retreat_distance = null
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "XG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -11589,7 +11600,7 @@ xN
 zW
 jl
 jl
-jl
+XD
 jl
 Pu
 yn
@@ -11936,7 +11947,7 @@ Un
 yM
 Am
 Me
-XD
+VL
 ua
 tE
 BO
@@ -11977,7 +11988,7 @@ jA
 Ak
 Qq
 Sl
-VL
+oU
 gq
 bZ
 Ll
