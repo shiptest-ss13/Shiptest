@@ -266,7 +266,8 @@
 "dk" = (
 /obj/structure/hazard/electrical/electrified_water{
 	random_sparks = 0;
-	contact_sparks = 1
+	contact_sparks = 1;
+	id = "pond"
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -923,7 +924,8 @@
 	},
 /obj/structure/hazard/electrical/electrified_water{
 	random_sparks = 0;
-	contact_sparks = 1
+	contact_sparks = 1;
+	id = "pond"
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -1337,7 +1339,8 @@
 /obj/effect/mob_spawn/human/corpse/frontier,
 /obj/structure/hazard/electrical/electrified_water{
 	random_sparks = 0;
-	contact_sparks = 1
+	contact_sparks = 1;
+	id = "pond"
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -1549,7 +1552,9 @@
 /area/ruin/beach/bunker/living)
 "tW" = (
 /obj/effect/turf_decal/road,
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle,
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle{
+	aggro_vision_range = 14
+	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ug" = (
@@ -2472,6 +2477,10 @@
 	},
 /turf/open/floor/plating/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
+"Et" = (
+/mob/living/simple_animal/hostile/human/frontier,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ew" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -2588,11 +2597,8 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ft" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle{
-	wander = 0;
-	environment_smash = 0
-	},
-/turf/open/floor/concrete/pavement/beachplanet/lit,
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Fu" = (
 /obj/structure/rack,
@@ -2743,7 +2749,9 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "HS" = (
-/mob/living/simple_animal/hostile/human/frontier,
+/obj/effect/decal/cleanable/oil/slippery{
+	icon_state = "floor6"
+	},
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ia" = (
@@ -2818,7 +2826,8 @@
 /obj/item/toy/beach_ball,
 /obj/structure/hazard/electrical/electrified_water{
 	random_sparks = 0;
-	contact_sparks = 1
+	contact_sparks = 1;
+	id = "pond"
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -2962,7 +2971,8 @@
 	wander = 0;
 	stop_automated_movement = 1;
 	aggro_vision_range = 14;
-	vision_range = 14
+	vision_range = 14;
+	retreat_distance = 0
 	},
 /obj/structure/chair/plastic{
 	dir = 2
@@ -2990,6 +3000,10 @@
 	icon_state = "1-2"
 	},
 /obj/structure/reagent_dispensers/fueltank,
+/obj/structure/hazard_shutoff/electrical_shutoff{
+	pixel_x = -32;
+	dir = 8
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/side_two)
 "LT" = (
@@ -3076,6 +3090,7 @@
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor3"
 	},
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Nw" = (
@@ -3084,7 +3099,8 @@
 	},
 /obj/structure/hazard/electrical/electrified_water{
 	random_sparks = 0;
-	contact_sparks = 1
+	contact_sparks = 1;
+	id = "pond"
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -3110,7 +3126,8 @@
 	},
 /obj/structure/hazard/electrical/electrified_water{
 	random_sparks = 0;
-	contact_sparks = 1
+	contact_sparks = 1;
+	id = "pond"
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -3214,7 +3231,7 @@
 	pixel_x = -2;
 	pixel_y = -2;
 	name = "Mr. Jams";
-	desc = "How the hell did the Frontiersmen get /this/. It's brand new!"
+	desc = "How the hell did the Frontiersmen get this. It's brand new!"
 	},
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/light/small/directional/west,
@@ -3236,6 +3253,10 @@
 "OX" = (
 /obj/structure/fence,
 /turf/open/floor/plating/dirt/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"OZ" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Pb" = (
 /obj/structure/cable{
@@ -5409,9 +5430,9 @@ KU
 KU
 KU
 at
+HS
 YB
-YB
-xp
+HQ
 HQ
 YB
 VA
@@ -5635,27 +5656,27 @@ UI
 yQ
 mN
 HQ
-HQ
+Et
 HQ
 UI
 HQ
 xp
 HQ
 HQ
-HS
+YB
 gF
 YB
 vs
 HQ
 Ls
-YB
+Ft
 HQ
 HQ
 HQ
 YB
 YB
 HQ
-HQ
+OZ
 HQ
 QU
 HQ
@@ -5714,7 +5735,7 @@ at
 YB
 YB
 HQ
-Ft
+HQ
 YB
 YB
 HQ
