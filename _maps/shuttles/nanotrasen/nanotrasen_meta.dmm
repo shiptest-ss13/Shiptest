@@ -20,21 +20,6 @@
 /obj/machinery/firealarm/directional/west{
 	pixel_y = 5
 	},
-/obj/structure/closet/crate/secure/exo,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/shovel,
-/obj/item/shovel,
-/obj/item/flashlight{
-	pixel_y = -6
-	},
-/obj/item/flashlight{
-	pixel_y = -6
-	},
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/mining_scanner,
-/obj/item/mining_scanner,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "ag" = (
@@ -1322,7 +1307,7 @@
 	id = "meta-turrets"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/engineering)
 "eb" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1708,7 +1693,7 @@
 	id = "meta-turrets"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/crew/dorm)
 "ib" = (
 /obj/effect/decal/cleanable/ash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2191,7 +2176,7 @@
 	id = "meta-turrets"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/cargo)
 "nb" = (
 /obj/structure/chair/plastic{
 	dir = 8
@@ -2336,6 +2321,7 @@
 /obj/item/reagent_containers/food/drinks/soda_cans/sol_dry{
 	pixel_y = 10
 	},
+/obj/item/reagent_containers/food/snacks/eggrolls,
 /turf/open/floor/wood/yew,
 /area/ship/crew)
 "ph" = (
@@ -2632,6 +2618,23 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"sE" = (
+/obj/effect/turf_decal/industrial/hatch/orange,
+/obj/structure/closet/secure_closet/miningcloset{
+	anchored = 1;
+	populate = 0
+	},
+/obj/item/storage/bag/ore,
+/obj/item/mining_scanner,
+/obj/item/shovel,
+/obj/item/pickaxe,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/flashlight/seclite{
+	pixel_y = -10;
+	pixel_x = 3
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/cargo)
 "sF" = (
 /obj/structure/railing{
 	dir = 9
@@ -2726,7 +2729,7 @@
 	id = "meta-turrets"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/engineering)
 "tA" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2792,6 +2795,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#332521"
+	},
+/obj/item/fish_feed,
+/obj/item/modular_computer/tablet/preset/advanced{
+	icon_state = "tablet-brown"
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/cargo/office)
@@ -3228,6 +3235,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
+"yf" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 5;
+	id = "meta-turrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/office/lobby)
 "yh" = (
 /obj/structure/sign/nanotrasen/ns,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -3235,6 +3249,13 @@
 "ys" = (
 /obj/structure/chair/sofa/brown/corpo/left/directional/east,
 /turf/open/floor/carpet/nanoweave/orange,
+/area/ship/crew)
+"yx" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 10;
+	id = "meta-turrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
 "yS" = (
 /obj/structure/sink{
@@ -3421,6 +3442,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
+"AD" = (
+/obj/machinery/power/smes/engineering{
+	charge = 2e+006
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "AT" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -3460,6 +3490,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
+"BI" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 6;
+	id = "meta-turrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm/dormtwo)
 "Cd" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3667,6 +3704,13 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"Fa" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 5;
+	id = "meta-turrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "Fb" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/warning{
@@ -4486,6 +4530,13 @@
 /obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
+"Or" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 6;
+	id = "meta-turrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/office/lobby)
 "Ov" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -4699,8 +4750,6 @@
 /area/ship/bridge)
 "RM" = (
 /obj/effect/turf_decal/corner/opaque/blue,
-/obj/item/radio/intercom/table,
-/obj/structure/table/reinforced,
 /obj/machinery/turretid{
 	pixel_y = -24;
 	req_access = null;
@@ -4827,25 +4876,12 @@
 /obj/structure/table/reinforced,
 /obj/item/gps{
 	gpstag = "NSREC1";
-	pixel_x = 9;
-	pixel_y = 7
+	pixel_x = -9;
+	pixel_y = -2
 	},
 /obj/machinery/recharger{
 	pixel_x = -8;
 	pixel_y = 9
-	},
-/obj/item/clothing/mask/cigarette/cigar{
-	pixel_x = -5
-	},
-/obj/item/clothing/mask/cigarette/cigar{
-	pixel_x = -2
-	},
-/obj/item/clothing/mask/cigarette/cigar{
-	pixel_x = 1
-	},
-/obj/item/lighter{
-	pixel_y = -6;
-	pixel_x = 11
 	},
 /obj/machinery/button/door{
 	pixel_y = 24;
@@ -4860,6 +4896,10 @@
 	id = "meta_windows"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/item/radio/intercom/table{
+	pixel_x = 10;
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "SQ" = (
@@ -5359,10 +5399,10 @@
 "XH" = (
 /obj/effect/turf_decal/box/white/corners,
 /obj/structure/closet/crate/secure/weapon{
-	req_one_access = list(20)
+	req_one_access = list(20);
+	name = "refunded weapons crate"
 	},
-/obj/item/ammo_box/magazine/m22lr_himehabu,
-/obj/item/gun/ballistic/automatic/pistol/himehabu,
+/obj/item/storage/guncase/pistol/m17,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "XR" = (
@@ -5658,7 +5698,7 @@ ac
 Xn
 cY
 el
-dK
+AD
 ac
 aa
 aa
@@ -6046,7 +6086,7 @@ aa
 ad
 YW
 Fi
-Uk
+sE
 qs
 MU
 jJ
@@ -6071,7 +6111,7 @@ aa
 (20,1,1) = {"
 aa
 aa
-hV
+Fa
 YW
 pm
 bC
@@ -6334,7 +6374,7 @@ aQ
 ed
 ed
 ai
-dZ
+yx
 aa
 aa
 "}
@@ -6612,13 +6652,13 @@ aa
 aa
 aa
 aa
-hV
+yf
 bA
 bA
 bA
 bA
 bA
-mO
+Or
 aa
 aa
 aa
@@ -6684,7 +6724,7 @@ uk
 lH
 mp
 mp
-mO
+BI
 aa
 aa
 aa
