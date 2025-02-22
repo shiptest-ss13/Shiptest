@@ -5321,7 +5321,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper,
 /turf/open/floor/plating/airless,
 /area/ruin/space)
 "DS" = (
@@ -8112,14 +8112,9 @@
 /turf/open/space/basic,
 /area/ruin/space)
 "SE" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating/airless,
+/obj/structure/lattice,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper,
+/turf/open/space/basic,
 /area/ruin/space)
 "SG" = (
 /obj/effect/turf_decal/etherbor/center,
@@ -12792,7 +12787,7 @@ Fm
 Fm
 kt
 kt
-kt
+SE
 kt
 kt
 Fm
@@ -13351,7 +13346,7 @@ jR
 jR
 jR
 jR
-SE
+DQ
 Fm
 Fm
 Fm

@@ -372,7 +372,7 @@
 	rapid = 2
 	rapid_fire_delay = 7
 
-/mob/living/simple_animal/hostile/human/ramzi/ranged/sniper
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/sniper
 	name = "Ramzi Clique Cleaner"
 	desc = "Black and red, black and red, and you're dead all over. They've already seen you, and are training their next shot with practiced distaste."
 	minimum_distance = 7
