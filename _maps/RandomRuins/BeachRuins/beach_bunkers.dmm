@@ -264,7 +264,10 @@
 /turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "dk" = (
-/obj/structure/hazard/electrical/electrified_water,
+/obj/structure/hazard/electrical/electrified_water{
+	random_sparks = 0;
+	contact_sparks = 1
+	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "dC" = (
@@ -918,7 +921,10 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/structure/hazard/electrical/electrified_water,
+/obj/structure/hazard/electrical/electrified_water{
+	random_sparks = 0;
+	contact_sparks = 1
+	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "mk" = (
@@ -1325,11 +1331,14 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/obj/structure/hazard/electrical/electrified_water,
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
 /obj/effect/mob_spawn/human/corpse/frontier,
+/obj/structure/hazard/electrical/electrified_water{
+	random_sparks = 0;
+	contact_sparks = 1
+	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "qJ" = (
@@ -2806,8 +2815,11 @@
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
 "Ja" = (
-/obj/structure/hazard/electrical/electrified_water,
 /obj/item/toy/beach_ball,
+/obj/structure/hazard/electrical/electrified_water{
+	random_sparks = 0;
+	contact_sparks = 1
+	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Jb" = (
@@ -3070,7 +3082,10 @@
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
-/obj/structure/hazard/electrical/electrified_water,
+/obj/structure/hazard/electrical/electrified_water{
+	random_sparks = 0;
+	contact_sparks = 1
+	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "NA" = (
@@ -3093,7 +3108,10 @@
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
-/obj/structure/hazard/electrical/electrified_water,
+/obj/structure/hazard/electrical/electrified_water{
+	random_sparks = 0;
+	contact_sparks = 1
+	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "NW" = (
