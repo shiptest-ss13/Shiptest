@@ -68,10 +68,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"aQ" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
-/turf/template_noop,
-/area/template_noop)
 "aW" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable/yellow{
@@ -97,6 +93,10 @@
 "bd" = (
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel,
+/area/ship/hallway)
+"br" = (
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/hallway)
 "bs" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -135,7 +135,6 @@
 /area/ship/crew/canteen)
 "bK" = (
 /obj/structure/railing/thick,
-/obj/machinery/light/small/directional/north,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "bN" = (
@@ -447,6 +446,7 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/item/storage/belt/mining,
+/obj/item/clothing/suit/armor/vest/alt,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "ex" = (
@@ -796,14 +796,21 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
 "ii" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/structure/chair/handrail{
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/hangar/port)
+/turf/open/floor/engine/hull,
+/area/ship/storage/port)
 "im" = (
 /obj/structure/railing{
 	dir = 8
@@ -1591,6 +1598,7 @@
 	},
 /obj/structure/closet/emcloset/wall/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/tank/internals/emergency_oxygen/double,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "pj" = (
@@ -2157,12 +2165,11 @@
 /area/ship/engineering/engines/starboard)
 "us" = (
 /obj/machinery/light/directional/north,
-/obj/structure/ore_box,
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 5
+/obj/structure/railing{
+	dir = 8
 	},
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 10
+/obj/structure/railing{
+	dir = 4
 	},
 /turf/open/floor/engine/hull,
 /area/ship/storage/port)
@@ -3241,7 +3248,7 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/engineer,
 /obj/item/clothing/head/helmet/space/pilot/random,
-/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/double,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "CB" = (
@@ -4167,21 +4174,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "JO" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 6
-	},
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/industrial/warning{
+/obj/structure/chair/handrail{
 	dir = 1
 	},
-/turf/open/floor/engine/hull,
-/area/ship/storage/port)
+/turf/open/floor/plasteel/patterned,
+/area/ship/hangar/port)
 "JP" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/office)
@@ -5036,6 +5036,7 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/item/storage/belt/mining,
+/obj/item/clothing/suit/armor/vest/alt,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "QQ" = (
@@ -5727,10 +5728,6 @@
 /obj/item/binoculars,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
-"Wt" = (
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/hallway)
 "Wu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -5784,6 +5781,7 @@
 /obj/structure/railing/thick/corner{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/north,
 /obj/structure/catwalk,
 /turf/open/floor/plating,
 /area/ship/external/dark)
@@ -6758,7 +6756,7 @@ Kz
 zM
 zM
 Kz
-Wt
+br
 VL
 mN
 bd
@@ -6881,7 +6879,7 @@ LU
 LU
 Pa
 ZU
-Cb
+je
 bK
 jH
 jH
@@ -6930,7 +6928,7 @@ HZ
 AS
 BK
 US
-ii
+JO
 Jz
 Ih
 MZ
@@ -7341,7 +7339,7 @@ jH
 jH
 jH
 jH
-aQ
+jH
 jH
 jH
 jH
@@ -7642,7 +7640,7 @@ jH
 Tm
 sQ
 Gh
-JO
+ii
 jV
 jH
 jH
@@ -7676,7 +7674,7 @@ jH
 Tm
 sQ
 us
-JO
+ii
 JB
 hR
 jH
@@ -7710,7 +7708,7 @@ jH
 Tm
 sQ
 Gh
-JO
+ii
 pa
 jH
 jH

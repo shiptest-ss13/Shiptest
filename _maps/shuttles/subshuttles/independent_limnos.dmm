@@ -17,6 +17,12 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	pixel_y = -23;
+	name = "Window Shutters";
+	id = "limnos_windows";
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/bridge)
 "f" = (
@@ -109,6 +115,9 @@
 "E" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "limnos_windows"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "F" = (
@@ -166,6 +175,7 @@
 	locked = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stack/sheet/mineral/plasma/ten,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "O" = (
@@ -194,6 +204,15 @@
 /area/ship/bridge)
 "W" = (
 /turf/closed/wall/yesdiag,
+/area/ship/bridge)
+"Z" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "limnos_windows";
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 
 (1,1,1) = {"
@@ -240,8 +259,8 @@ q
 "}
 (7,1,1) = {"
 q
-E
-E
-E
+Z
+Z
+Z
 q
 "}
