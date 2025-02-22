@@ -313,6 +313,13 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"bi" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 6;
+	id = "meta-turrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/office/lobby)
 "bj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -450,6 +457,16 @@
 /obj/structure/railing{
 	dir = 6
 	},
+/obj/structure/closet/crate/wooden{
+	name = "wooden fishing crate"
+	},
+/obj/item/storage/toolbox/fishing,
+/obj/item/storage/toolbox/fishing,
+/obj/item/bait_can/worm,
+/obj/item/bait_can,
+/obj/item/book/fish_catalog,
+/obj/item/storage/fish_case,
+/obj/item/storage/fish_case,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "bG" = (
@@ -1418,6 +1435,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"eB" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 5;
+	id = "meta-turrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm)
 "eF" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1693,7 +1717,7 @@
 	id = "meta-turrets"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/dorm)
+/area/ship/crew/office/lobby)
 "ib" = (
 /obj/effect/decal/cleanable/ash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2176,7 +2200,7 @@
 	id = "meta-turrets"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/cargo)
+/area/ship/crew/dorm/dormtwo)
 "nb" = (
 /obj/structure/chair/plastic{
 	dir = 8
@@ -2386,6 +2410,13 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"py" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 10;
+	id = "meta-turrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew)
 "pA" = (
 /obj/structure/sign/nanotrasen/ns,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -2618,23 +2649,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
-"sE" = (
-/obj/effect/turf_decal/industrial/hatch/orange,
-/obj/structure/closet/secure_closet/miningcloset{
-	anchored = 1;
-	populate = 0
-	},
-/obj/item/storage/bag/ore,
-/obj/item/mining_scanner,
-/obj/item/shovel,
-/obj/item/pickaxe,
-/obj/item/clothing/suit/hooded/explorer,
-/obj/item/flashlight/seclite{
-	pixel_y = -10;
-	pixel_x = 3
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/cargo)
 "sF" = (
 /obj/structure/railing{
 	dir = 9
@@ -2738,6 +2752,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/stairs/mid,
+/area/ship/cargo)
+"tF" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 5;
+	id = "meta-turrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "tS" = (
 /obj/structure/cable{
@@ -3235,13 +3256,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
-"yf" = (
-/obj/machinery/porta_turret/ship/nt/light{
-	dir = 5;
-	id = "meta-turrets"
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/office/lobby)
 "yh" = (
 /obj/structure/sign/nanotrasen/ns,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -3249,13 +3263,6 @@
 "ys" = (
 /obj/structure/chair/sofa/brown/corpo/left/directional/east,
 /turf/open/floor/carpet/nanoweave/orange,
-/area/ship/crew)
-"yx" = (
-/obj/machinery/porta_turret/ship/nt/light{
-	dir = 10;
-	id = "meta-turrets"
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
 "yS" = (
 /obj/structure/sink{
@@ -3442,15 +3449,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
-"AD" = (
-/obj/machinery/power/smes/engineering{
-	charge = 2e+006
-	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "AT" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -3490,13 +3488,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
-"BI" = (
-/obj/machinery/porta_turret/ship/nt/light{
-	dir = 6;
-	id = "meta-turrets"
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/dorm/dormtwo)
 "Cd" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3704,13 +3695,6 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/cargo)
-"Fa" = (
-/obj/machinery/porta_turret/ship/nt/light{
-	dir = 5;
-	id = "meta-turrets"
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "Fb" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/warning{
@@ -4317,6 +4301,23 @@
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
+"MD" = (
+/obj/effect/turf_decal/industrial/hatch/orange,
+/obj/structure/closet/secure_closet/miningcloset{
+	anchored = 1;
+	populate = 0
+	},
+/obj/item/storage/bag/ore,
+/obj/item/mining_scanner,
+/obj/item/shovel,
+/obj/item/pickaxe,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/flashlight/seclite{
+	pixel_y = -10;
+	pixel_x = 3
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/cargo)
 "MG" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4530,13 +4531,6 @@
 /obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
-"Or" = (
-/obj/machinery/porta_turret/ship/nt/light{
-	dir = 6;
-	id = "meta-turrets"
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/office/lobby)
 "Ov" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -4962,6 +4956,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"TG" = (
+/obj/machinery/power/smes/engineering{
+	charge = 2e+006
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "TM" = (
 /obj/item/toy/crayon/spraycan{
 	pixel_x = 12;
@@ -5413,6 +5416,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
+"XT" = (
+/obj/machinery/porta_turret/ship/nt/light{
+	dir = 6;
+	id = "meta-turrets"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
 "Yk" = (
 /obj/structure/chair,
 /obj/item/radio/intercom/directional/north,
@@ -5698,7 +5708,7 @@ ac
 Xn
 cY
 el
-AD
+TG
 ac
 aa
 aa
@@ -6086,7 +6096,7 @@ aa
 ad
 YW
 Fi
-sE
+MD
 qs
 MU
 jJ
@@ -6111,7 +6121,7 @@ aa
 (20,1,1) = {"
 aa
 aa
-Fa
+tF
 YW
 pm
 bC
@@ -6131,7 +6141,7 @@ pm
 cO
 hU
 YW
-mO
+XT
 aa
 aa
 "}
@@ -6374,7 +6384,7 @@ aQ
 ed
 ed
 ai
-yx
+py
 aa
 aa
 "}
@@ -6652,13 +6662,13 @@ aa
 aa
 aa
 aa
-yf
+hV
 bA
 bA
 bA
 bA
 bA
-Or
+bi
 aa
 aa
 aa
@@ -6718,13 +6728,13 @@ aa
 aa
 aa
 aa
-hV
+eB
 uk
 uk
 lH
 mp
 mp
-BI
+mO
 aa
 aa
 aa
