@@ -2,6 +2,10 @@
 	projectile_type = /obj/projectile/beam/laser
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/sharplite
+	projectile_type = /obj/projectile/beam/laser/sharplite
+	select_name = "kill"
+
 /obj/item/ammo_casing/energy/laser/underbarrel
 	projectile_type = /obj/projectile/beam/laser
 	e_cost =  1250
@@ -25,6 +29,12 @@
 	delay = 2
 	e_cost = 666 //30 per upgraded cell
 
+/obj/item/ammo_casing/energy/laser/assault/sharplite
+	projectile_type = /obj/projectile/beam/laser/assault/sharplite
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	delay = 2
+	e_cost = 666 //30 per upgraded cell
+
 /obj/item/ammo_casing/energy/laser/eoehoma/e50
 	projectile_type = /obj/projectile/beam/emitter/hitscan
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
@@ -33,6 +43,11 @@
 
 /obj/item/ammo_casing/energy/lasergun
 	projectile_type = /obj/projectile/beam/laser
+	e_cost = 830
+	select_name = "kill"
+
+/obj/item/ammo_casing/energy/lasergun/sharplite
+	projectile_type = /obj/projectile/beam/laser/sharplite
 	e_cost = 830
 	select_name = "kill"
 
@@ -46,16 +61,27 @@
 	select_name = "kill"
 	delay = 0.13 SECONDS
 
+/obj/item/ammo_casing/energy/laser/sharplite/smg
+	projectile_type = /obj/projectile/beam/weak/sharplite
+	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
+	select_name = "kill"
+	delay = 0.13 SECONDS
+
 /obj/item/ammo_casing/energy/lasergun/old
 	projectile_type = /obj/projectile/beam/laser
 	e_cost = 2000
 	select_name = "kill"
 
-/obj/item/ammo_casing/energy/laser/hos
+/obj/item/ammo_casing/energy/laser/sharplite/hos
 	e_cost = 1200
 
 /obj/item/ammo_casing/energy/laser/practice
 	projectile_type = /obj/projectile/beam/practice
+	select_name = "practice"
+	harmful = FALSE
+
+/obj/item/ammo_casing/energy/laser/practice/sharplite
+	projectile_type = /obj/projectile/beam/practice/sharplite
 	select_name = "practice"
 	harmful = FALSE
 
