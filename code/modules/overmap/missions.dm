@@ -72,9 +72,9 @@
 	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "succeeded"))
 	SSblackbox.record_feedback("nested tally", "mission", value, list(name, "payout"))
 	var/remaining_value = value
+	var/payment = floor(value*servant.crew_share)
 	for(var/datum/weakref/account in servant.crew_bank_accounts)
 		var/datum/bank_account/target_account = account.resolve()
-		var/payment = value*servant.crew_share
 		target_account.adjust_money(payment, CREDIT_LOG_MISSION)
 		remaining_value = remaining_value - payment
 	servant.ship_account.adjust_money(remaining_value, CREDIT_LOG_MISSION)
