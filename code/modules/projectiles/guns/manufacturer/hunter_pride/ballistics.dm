@@ -364,6 +364,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/attackby(obj/item/A, mob/user, params)
 	if (!bolt_locked)
+		if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
+			return TRUE
 		to_chat(user, "<span class='notice'>The [bolt_wording] is shut closed!</span>")
 		return
 	return ..()
@@ -399,7 +401,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 
 // sawn off beforehand
 /obj/item/gun/ballistic/shotgun/doublebarrel/presawn
-	name = "sawn-off double-barreled shotgun"
+	//init gives it the sawn_off name
+	name = "double-barreled shotgun"
 	desc = "A break action shotgun cut down to the size of a sidearm. While the recoil is even harsher, it offers a lot of power in a very small package. Chambered in 12g."
 	sawn_off = TRUE
 	weapon_weight = WEAPON_MEDIUM
@@ -612,12 +615,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 		/obj/item/ammo_box/magazine/illestren_a850r,
 	)
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/sling,
+	unique_attachments = list(
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
 	)
@@ -693,12 +691,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	wield_slowdown = RIFLE_SLOWDOWN
 	wield_delay = 0.65 SECONDS
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/sling,
+	unique_attachments = list(
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
 	)
@@ -850,15 +843,11 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/sling,
+	unique_attachments = list(
+		/obj/item/attachment/alof,
 		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope,
-	)
+		/obj/item/attachment/long_scope)
+
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1,
@@ -895,7 +884,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 //pre sawn off beacon
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn
-	name = "sawn-off HP Beacon"
+	name = "HP Beacon"
 	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
 	sawn_off = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
@@ -948,12 +937,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	recoil_unwielded = 4
 	wield_slowdown = DMR_SLOWDOWN
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/sling,
+	unique_attachments = list(
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
 	)

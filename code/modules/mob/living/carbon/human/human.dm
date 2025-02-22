@@ -1245,7 +1245,7 @@
 
 /mob/living/carbon/human/do_after_coefficent()
 	. = ..()
-	. *= physiology.do_after_speed
+	return max(. *= physiology.do_after_speed, 0.1)
 
 /mob/living/carbon/human/updatehealth()
 	. = ..()

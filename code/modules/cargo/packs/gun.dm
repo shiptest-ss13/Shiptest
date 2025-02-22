@@ -710,7 +710,7 @@
 
 /datum/supply_pack/gun/ssg669
 	name = "SSG-669C Sniper Rifle Crate"
-	desc = "Contains a traditional scoped rifle to hunt wildlife and big game from a respectful distance. Chambered in powerful .300 Magnum."
+	desc = "Contains a traditional solarian marksman rifle chambered in 8x58mm Caseless."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/ssg669)
 	crate_name = "sniper rifle crate"
