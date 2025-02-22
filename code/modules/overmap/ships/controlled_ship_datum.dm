@@ -34,7 +34,7 @@
 	///Crew Owned Bank Accounts.
 	var/list/crew_bank_accounts = list()
 	///magic number for telling us how much of a mission goes into each crew member's bank account
-	var/crew_share = 0.05
+	var/crew_share = 0.02
 
 	/// List of currently-accepted missions.
 	var/list/datum/mission/missions
