@@ -26,7 +26,7 @@
 
 /obj/machinery/power/planet_beacon/Initialize()
 	. = ..()
-	AddComponent(/datum/component/gps/item, "EHF"+rand(0,9))
+	AddComponent(/datum/component/gps, "EHF" + num2text(rand(0,9)))
 
 /obj/machinery/power/planet_beacon/process()
 	var/turf/T = get_turf(src)
