@@ -68,6 +68,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"aQ" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/turf/template_noop,
+/area/template_noop)
 "aW" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable/yellow{
@@ -514,10 +518,10 @@
 /obj/structure/bed/bunk/top{
 	dir = 4
 	},
-/obj/structure/curtain/bounty{
-	layer = 4.1
-	},
 /obj/structure/railing,
+/obj/structure/curtain/cloth/black{
+	color = "#2e2e2e"
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "fb" = (
@@ -563,9 +567,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/external/glass,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway)
 "fn" = (
@@ -794,12 +796,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
 "ii" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/airlock/external/glass,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/hangar/port)
 "im" = (
 /obj/structure/railing{
 	dir = 8
@@ -851,11 +855,11 @@
 /obj/structure/bed/bunk/top{
 	dir = 4
 	},
-/obj/structure/curtain/bounty{
-	layer = 4.1
-	},
 /obj/structure/railing,
 /obj/machinery/light/directional/west,
+/obj/structure/curtain/cloth/black{
+	color = "#2e2e2e"
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "iQ" = (
@@ -1354,12 +1358,16 @@
 /turf/open/floor/plating,
 /area/ship/hangar/port)
 "nj" = (
-/obj/structure/curtain/cloth/fancy,
 /obj/structure/railing{
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/structure/curtain/cloth/grey{
+	color = "#7d1930";
+	name = "maroon curtains";
+	desc = "A sleek, maroon set of curtains which will keep prying eyes away from whatever youre doing inside..."
 	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi'
@@ -1443,7 +1451,6 @@
 /turf/open/floor/plating,
 /area/ship/hallway)
 "oa" = (
-/obj/structure/curtain/cloth/fancy,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
@@ -1451,6 +1458,11 @@
 	dir = 1
 	},
 /obj/machinery/vending/cigarette,
+/obj/structure/curtain/cloth/grey{
+	color = "#7d1930";
+	name = "maroon curtains";
+	desc = "A sleek, maroon set of curtains which will keep prying eyes away from whatever youre doing inside..."
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "oi" = (
@@ -1545,7 +1557,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway)
 "oZ" = (
-/obj/structure/chair/handrail,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/hallway)
 "pa" = (
@@ -1681,10 +1695,14 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "pZ" = (
-/obj/structure/curtain/cloth/fancy,
 /obj/structure/table,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/structure/curtain/cloth/grey{
+	color = "#7d1930";
+	name = "maroon curtains";
+	desc = "A sleek, maroon set of curtains which will keep prying eyes away from whatever youre doing inside..."
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
@@ -1755,10 +1773,13 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "qu" = (
-/obj/structure/chair/handrail{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plasteel/dark,
 /area/ship/hallway)
 "qv" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
@@ -3867,10 +3888,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway)
-"HR" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
-/turf/template_noop,
-/area/template_noop)
 "HZ" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 9
@@ -4398,15 +4415,6 @@
 /turf/open/floor/plasteel/mono{
 	dir = 1
 	},
-/area/ship/hangar/port)
-"LE" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/chair/handrail{
-	dir = 1
-	},
-/turf/open/floor/plasteel/patterned,
 /area/ship/hangar/port)
 "LG" = (
 /obj/structure/cable/yellow{
@@ -5622,7 +5630,6 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "VS" = (
-/obj/structure/curtain/cloth/fancy,
 /obj/structure/railing{
 	dir = 4
 	},
@@ -5635,6 +5642,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/structure/curtain/cloth/grey{
+	color = "#7d1930";
+	name = "maroon curtains";
+	desc = "A sleek, maroon set of curtains which will keep prying eyes away from whatever youre doing inside..."
 	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi'
@@ -5715,6 +5727,10 @@
 /obj/item/binoculars,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
+"Wt" = (
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/hallway)
 "Wu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -5890,7 +5906,6 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "Yl" = (
-/obj/structure/curtain/cloth/fancy,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 1
 	},
@@ -5899,6 +5914,11 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/structure/curtain/cloth/grey{
+	color = "#7d1930";
+	name = "maroon curtains";
+	desc = "A sleek, maroon set of curtains which will keep prying eyes away from whatever youre doing inside..."
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -6738,7 +6758,7 @@ Kz
 zM
 zM
 Kz
-oZ
+Wt
 VL
 mN
 bd
@@ -6755,7 +6775,7 @@ LL
 bd
 Xe
 pw
-qu
+oZ
 zM
 Kz
 Kz
@@ -6771,7 +6791,7 @@ xD
 Rd
 bv
 dF
-fl
+qu
 Ic
 Ln
 HP
@@ -6790,7 +6810,7 @@ kH
 aW
 ip
 rm
-ii
+fl
 DR
 EM
 Rd
@@ -6823,7 +6843,7 @@ II
 II
 YV
 oX
-qu
+oZ
 Kz
 Kz
 Kz
@@ -6910,7 +6930,7 @@ HZ
 AS
 BK
 US
-LE
+ii
 Jz
 Ih
 MZ
@@ -7321,7 +7341,7 @@ jH
 jH
 jH
 jH
-HR
+aQ
 jH
 jH
 jH
