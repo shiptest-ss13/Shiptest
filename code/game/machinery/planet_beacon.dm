@@ -12,6 +12,7 @@
 	icon_state = "beacon"
 	name = "EHF point beacon"
 	desc = "A long-range radio beacon for marking planetoids and points of interest for revisiting."
+	density = TRUE
 	anchored = FALSE
 	clicksound = "terminal_type"
 	use_power = NO_POWER_USE
