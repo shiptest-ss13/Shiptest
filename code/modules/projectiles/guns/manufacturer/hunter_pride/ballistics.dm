@@ -401,7 +401,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 
 // sawn off beforehand
 /obj/item/gun/ballistic/shotgun/doublebarrel/presawn
-	name = "sawn-off double-barreled shotgun"
+	//init gives it the sawn_off name
+	name = "double-barreled shotgun"
 	desc = "A break action shotgun cut down to the size of a sidearm. While the recoil is even harsher, it offers a lot of power in a very small package. Chambered in 12g."
 	sawn_off = TRUE
 	weapon_weight = WEAPON_MEDIUM
@@ -883,7 +884,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 //pre sawn off beacon
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn
-	name = "sawn-off HP Beacon"
+	name = "HP Beacon"
 	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
 	sawn_off = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
