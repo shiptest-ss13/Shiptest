@@ -43,11 +43,11 @@
 	/// Path of the mob spawner we base the mob's visuals off of.
 	var/mob_spawner
 	/// Path of the right hand held item we give to the mob's visuals.
-	var/r_hand
+	var/obj/r_hand
 	/// Path of the left hand held item we give to the mob's visuals.
-	var/l_hand
-	// If we drop l and r hand loot
-	var/neutered = FALSE
+	var/obj/l_hand
+	// Prob of us dropping l/r hand loot.
+	var/weapon_drop_chance = 30
 
 	///Steals the armor datum from this type of armor
 	var/obj/item/clothing/armor_base
@@ -75,10 +75,17 @@
 		return
 	if(mob_spawner)
 		new mob_spawner(loc)
-	if(r_hand && !neutered)
-		new r_hand(loc)
-	if(l_hand && !neutered)
-		new r_hand(loc)
+	if(r_hand && weapon_drop_chance)
+		if(prob(weapon_drop_chance))
+			new r_hand(loc)
+		else
+			visible_message(span_danger("[src]'s [r_hand.name] is destroyed as they collapse!"))
+	if(l_hand && weapon_drop_chance)
+		if(prob(weapon_drop_chance))
+			new l_hand(loc)
+		else
+			visible_message(span_danger("[src]'s [l_hand.name] is destroyed as they collapse!"))
+
 
 /mob/living/simple_animal/hostile/human/vv_edit_var(var_name, var_value)
 	switch(var_name)

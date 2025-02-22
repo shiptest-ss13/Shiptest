@@ -632,6 +632,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"eK" = (
+/obj/machinery/button/door{
+	pixel_x = -21;
+	pixel_y = -13;
+	dir = 4;
+	id = "dwayne_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
+	},
+/turf/closed/wall,
+/area/ship/hallway/central)
 "eN" = (
 /obj/machinery/light/directional/west,
 /obj/structure/crate_shelf,
@@ -1254,6 +1266,15 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 6
 	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "cock_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	pixel_x = 20;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "zH" = (
@@ -1652,7 +1673,8 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock{
 	dir = 4;
-	name = "Restroom"
+	name = "Restroom";
+	id_tag = "cock_bathroom"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -2282,7 +2304,7 @@ bA
 Ew
 xk
 xk
-xk
+eK
 nO
 "}
 (17,1,1) = {"
