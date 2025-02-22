@@ -336,19 +336,19 @@
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
-	name = "Pill-Class Torture Device"
+	name = "Pill-class Torture Device"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pillb
 	file_name = "independent_blackpill"
-	name = "Blackpill-Class Manned Torpedo"
+	name = "Blackpill-class Manned Torpedo"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pills
 	file_name = "independent_superpill"
-	name = "Superpill-Class Experimental Engineering Platform"
+	name = "Superpill-class Experimental Engineering Platform"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
@@ -371,7 +371,7 @@
 
 /datum/map_template/shuttle/subshuttles/ancon
 	file_name = "nanotrasen_ancon"
-	name = "Nanotrasen Ancon-Class Command Ship"
+	name = "Nanotrasen Ancon-class Command Ship"
 	prefix = "NTSV"
 	name_categories = list("GENERAL", "SPACE")
 
@@ -382,13 +382,13 @@
 
 /datum/map_template/shuttle/subshuttles/anvil
 	file_name = "inteq_anvil"
-	name = "Anvil-Class Dropship"
+	name = "Anvil-class Dropship"
 	prefix = "IRMV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/runner
 	file_name = "syndicate_runner"
-	name = "Runner-Class Ambulance"
+	name = "Runner-class Ambulance"
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
 
@@ -412,7 +412,17 @@
 	name = "Brawler-class Dropship"
 	prefix = "SV"
 
+/datum/map_template/shuttle/subshuttles/haymaker
+	file_name = "frontiersmen_haymaker"
+	name = "Haymaker-class Command Post"
+	prefix = "SV"
+
 /datum/map_template/shuttle/subshuttles/skink
 	file_name = "nanotrasen_skink"
 	name = "Skink-class Cargo Runner"
 	prefix = "NTSV"
+
+/datum/map_template/shuttle/subshuttles/bambulance
+	file_name = "cybersun_bambulance"
+	name = "Gauze-class Ambulance Pod"
+	prefix = "CSSV"

@@ -852,11 +852,6 @@
 	pixel_y = 16;
 	pixel_x = -32
 	},
-/obj/machinery/washing_machine{
-	pixel_y = 18;
-	pixel_x = 9;
-	density = 0
-	},
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
 	},
@@ -977,6 +972,10 @@
 	dir = 8;
 	pixel_x = 20;
 	pixel_y = -12
+	},
+/obj/item/megaphone/command{
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -1332,6 +1331,22 @@
 /obj/item/clothing/glasses/welding{
 	pixel_y = 13;
 	pixel_x = -6
+	},
+/obj/item/storage/backpack/industrial{
+	pixel_y = 5;
+	pixel_x = 7
+	},
+/obj/item/clothing/suit/hazardvest{
+	pixel_y = 5;
+	pixel_x = 7
+	},
+/obj/item/clothing/under/syndicate/gec{
+	pixel_x = -12;
+	pixel_y = -9
+	},
+/obj/item/clothing/suit/toggle/industrial{
+	pixel_x = 7;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
