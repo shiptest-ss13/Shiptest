@@ -479,6 +479,10 @@
 	pixel_x = -2;
 	pixel_y = -2
 	},
+/obj/item/storage/toolbox/ammo/shotgun{
+	pixel_x = -4;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "fN" = (
@@ -2760,6 +2764,8 @@
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/storage/belt/military/assault,
 /obj/item/clothing/head/inteq_peaked,
+/obj/item/storage/box/ammo/a44roum,
+/obj/item/storage/guncase/pistol/pinscher,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "Dq" = (
@@ -2855,23 +2861,26 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -5
 	},
 /obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -5
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
-	pixel_y = 5
 	},
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
+/obj/item/ammo_box/magazine/m12g_bulldog{
+	pixel_x = 10;
+	pixel_y = 1
+	},
+/obj/item/ammo_box/magazine/m12g_bulldog{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq{
+	pixel_x = -1;
+	pixel_y = -12
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Eq" = (
@@ -4119,9 +4128,6 @@
 /obj/item/storage/lockbox/medal/sec{
 	pixel_y = 5
 	},
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/effect/turf_decal/corner/opaque/brown{
