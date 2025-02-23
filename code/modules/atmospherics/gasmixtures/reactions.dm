@@ -292,7 +292,9 @@
 /datum/gas_reaction/freonfire/init_reqs()
 	min_requirements = list(
 		GAS_O2 = MINIMUM_MOLE_COUNT,
-		GAS_FREON = MINIMUM_MOLE_COUNT
+		GAS_FREON = MINIMUM_MOLE_COUNT,
+		"TEMP" = FREON_LOWER_TEMPERATURE,
+		"MAX_TEMP" = FREON_MAXIMUM_BURN_TEMPERATURE
 		)
 
 /datum/gas_reaction/freonfire/react(datum/gas_mixture/air, datum/holder)
@@ -533,7 +535,8 @@
 		GAS_O2 = 10,
 		GAS_N2 = 20,
 		GAS_BZ = 5,
-		"TEMP" = 200
+		"TEMP" = 200,
+		"MAX_TEMP" = 250
 	)
 
 /datum/gas_reaction/nitrousformation/react(datum/gas_mixture/air)
@@ -542,8 +545,6 @@
 	var/heat_efficency = min(temperature/(FIRE_MINIMUM_TEMPERATURE_TO_EXIST*100), air.get_moles(GAS_O2) ,air.get_moles(GAS_N2))
 	var/energy_used = heat_efficency * NITROUS_FORMATION_ENERGY
 	if ((air.get_moles(GAS_O2) - heat_efficency < 0)|| (air.get_moles(GAS_N2) - heat_efficency < 0)) //Shouldn't produce gas from nothing.
-		return NO_REACTION
-	if (temperature > 250) //maximum allowed temperature for the reaction
 		return NO_REACTION
 	air.adjust_moles(GAS_O2, -heat_efficency)
 	air.adjust_moles(GAS_N2, -heat_efficency * 2)

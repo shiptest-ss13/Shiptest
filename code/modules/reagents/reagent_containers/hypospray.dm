@@ -352,6 +352,25 @@
 	base_icon_state = "syndipen"
 	item_state = "syndipen"
 
+/obj/item/reagent_containers/hypospray/medipen/rabbit
+	name = "rabbit injector"
+	desc = "An injector decorated with a chibi-stylized armored rabbitgirl, wielding what appears to be a Hydra DMR."
+	list_reagents = list(/datum/reagent/drug/stardrop/starlight = 10, /datum/reagent/medicine/carfencadrizine = 6, /datum/reagent/medicine/stimulants = 8)
+	volume = 24
+	amount_per_transfer_from_this = 24
+	icon_state = "stimpen"
+	base_icon_state = "stimpen"
+
+/obj/item/reagent_containers/hypospray/medipen/mammoth
+	name = "mammoth injector"
+	desc = "An injector filled with an ICW-era mixture of aggression-enhancing stimulants."
+	list_reagents = list(/datum/reagent/drug/mammoth = 7, /datum/reagent/medicine/dimorlin = 6, /datum/reagent/medicine/carfencadrizine = 6)
+	volume = 19
+	amount_per_transfer_from_this = 19
+	icon_state = "syndipen"
+	base_icon_state = "syndipen"
+	item_state = "syndipen"
+
 //A vial-loaded hypospray. Cartridge-based!
 /obj/item/hypospray/mkii
 	name = "hypospray mk.II"
