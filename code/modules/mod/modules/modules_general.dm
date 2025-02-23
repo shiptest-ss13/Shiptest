@@ -9,7 +9,7 @@
 	icon_state = "jetpack"
 	module_type = MODULE_TOGGLE
 	complexity = 3
-	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.5
+	active_power_cost = MODULE_CHARGE_DRAIN_HIGH
 	use_power_cost = DEFAULT_CHARGE_DRAIN
 	incompatible_modules = list(/obj/item/mod/module/jetpack)
 	cooldown_time = 0.5 SECONDS
@@ -117,7 +117,7 @@
 		However, it will take from the suit's power to do so. Luckily, your PDA already has one of these."
 	icon_state = "empshield"
 	complexity = 1
-	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
+	idle_power_cost = MODULE_CHARGE_DRAIN_MEDIUM
 	incompatible_modules = list(/obj/item/mod/module/emp_shield)
 
 /obj/item/mod/module/emp_shield/on_install()
@@ -146,7 +146,7 @@
 	icon_state = "flashlight"
 	module_type = MODULE_TOGGLE
 	complexity = 1
-	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
+	active_power_cost = MODULE_CHARGE_DRAIN_LOW
 	incompatible_modules = list(/obj/item/mod/module/flashlight)
 	cooldown_time = 0.5 SECONDS
 	overlay_state_inactive = "module_light"
@@ -227,7 +227,7 @@
 	icon_state = "regulator"
 	module_type = MODULE_TOGGLE
 	complexity = 2
-	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
+	active_power_cost = MODULE_CHARGE_DRAIN_LOW
 	incompatible_modules = list(/obj/item/mod/module/thermal_regulator)
 	cooldown_time = 0.5 SECONDS
 	/// The temperature we are regulating to.
