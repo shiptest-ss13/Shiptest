@@ -456,6 +456,12 @@
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
+"bQ" = (
+/obj/structure/salvageable/machine,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "bV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -953,6 +959,13 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"dT" = (
+/obj/structure/spacevine,
+/obj/structure/salvageable/machine,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "dX" = (
 /obj/structure/railing{
 	dir = 4
@@ -1226,6 +1239,11 @@
 /obj/item/flashlight/seclite,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
+"fc" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/salvageable/machine,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "fd" = (
 /obj/effect/turf_decal/corner/transparent/orange/border,
 /obj/effect/turf_decal/corner/transparent/orange/border{
@@ -3481,16 +3499,16 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "nJ" = (
-/obj/machinery/rnd/server,
 /obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/salvageable/server,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/singularitylab/lab)
 "nS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
-/obj/machinery/computer/cargo,
+/obj/structure/salvageable/computer,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "nT" = (
@@ -3992,7 +4010,7 @@
 	},
 /area/ruin/space/has_grav/singularitylab)
 "pL" = (
-/obj/machinery/computer/rdconsole/experiment{
+/obj/structure/salvageable/computer{
 	dir = 8
 	},
 /turf/open/floor/engine,
@@ -4925,7 +4943,7 @@
 	},
 /area/ruin/space/has_grav/singularitylab)
 "uc" = (
-/obj/machinery/rnd/experimentor,
+/obj/structure/salvageable/machine,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
 "ul" = (
@@ -9163,6 +9181,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"JQ" = (
+/obj/structure/spacevine/dense,
+/obj/structure/salvageable/machine,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "JS" = (
 /obj/structure/sign/warning/radiation{
 	pixel_x = 32
@@ -10816,10 +10841,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "PI" = (
-/obj/machinery/computer/rdconsole{
+/obj/machinery/light/small/directional/north,
+/obj/structure/salvageable/computer{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/north,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/space/has_grav/singularitylab/lab)
 "PJ" = (
@@ -11649,8 +11674,8 @@
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
 "SQ" = (
-/obj/machinery/rnd/production/protolathe/department/engineering,
 /obj/structure/spacevine,
+/obj/structure/salvageable/protolathe,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "SR" = (
@@ -11940,7 +11965,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "TL" = (
-/obj/machinery/rnd/production/circuit_imprinter/department/engi,
+/obj/structure/salvageable/circuit_imprinter,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "TM" = (
@@ -19628,8 +19653,8 @@ Op
 ty
 iW
 KC
-KC
-Ik
+dT
+JQ
 Ik
 Ik
 Up
@@ -20092,7 +20117,7 @@ yh
 KC
 KC
 KC
-WO
+bQ
 zA
 Ba
 id
@@ -21207,7 +21232,7 @@ id
 IB
 Oa
 IB
-Oa
+fc
 IB
 IB
 SK
