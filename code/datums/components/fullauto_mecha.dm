@@ -35,7 +35,7 @@
 	autofire_off()
 	return ..()
 
-/datum/component/automatic_fire_mecha/process(delta_time)
+/datum/component/automatic_fire_mecha/process(seconds_per_tick)
 	if(autofire_stat != AUTOFIRE_STAT_FIRING)
 		STOP_PROCESSING(SSprojectiles, src)
 		return

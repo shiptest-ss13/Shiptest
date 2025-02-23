@@ -42,7 +42,7 @@
 	opened = FALSE
 	update_icon_nopipes()
 
-/obj/machinery/atmospherics/components/binary/relief_valve/process_atmos()
+/obj/machinery/atmospherics/components/binary/relief_valve/process_atmos(seconds_per_tick)
 	..()
 
 	if(!is_operational)

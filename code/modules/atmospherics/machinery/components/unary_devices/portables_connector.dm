@@ -33,7 +33,7 @@
 		var/image/cap = getpipeimage(icon, "connector_cap", initialize_directions)
 		add_overlay(cap)
 
-/obj/machinery/atmospherics/components/unary/portables_connector/process_atmos()
+/obj/machinery/atmospherics/components/unary/portables_connector/process_atmos(seconds_per_tick)
 	if(!connected_device)
 		return
 	update_parents()

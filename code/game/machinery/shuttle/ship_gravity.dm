@@ -29,7 +29,7 @@
 	if(anchored)
 		connect_to_network()
 
-/obj/machinery/power/ship_gravity/process()
+/obj/machinery/power/ship_gravity/process(seconds_per_tick)
 	if(charging && (!active_power_usage || surplus() >= active_power_usage))
 		add_load(active_power_usage)
 		charge = min(charge+1, 5)

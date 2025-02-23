@@ -23,7 +23,7 @@
 	. = ..()
 	START_PROCESSING(SSobj,src)
 
-/obj/effect/wind/process()
+/obj/effect/wind/process(seconds_per_tick)
 	var/turf/open/T = get_turf(src)
 	if(istype(T))
 		T.consider_pressure_difference(get_step(T,dir),strength)

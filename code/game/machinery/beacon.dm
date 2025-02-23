@@ -21,7 +21,7 @@
 	QDEL_NULL(Beacon)
 	return ..()
 
-/obj/machinery/bluespace_beacon/process()
+/obj/machinery/bluespace_beacon/process(seconds_per_tick)
 	if(QDELETED(Beacon)) //Don't move it out of nullspace BACK INTO THE GAME for the love of god
 		var/turf/T = loc
 		Beacon = new(T)

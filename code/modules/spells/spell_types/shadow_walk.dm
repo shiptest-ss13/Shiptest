@@ -80,7 +80,7 @@
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/effect/dummy/phased_mob/shadow/process()
+/obj/effect/dummy/phased_mob/shadow/process(seconds_per_tick)
 	if(!jaunter)
 		qdel(src)
 	if(jaunter.loc != src)

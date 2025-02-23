@@ -66,7 +66,7 @@
 	STOP_PROCESSING(SSfastprocess, src)
 	. = ..()
 
-/obj/structure/chair/comfy/shuttle/bronze/process()
+/obj/structure/chair/comfy/shuttle/bronze/process(seconds_per_tick)
 	setDir(turn(dir,-90))
 	playsound(src, 'sound/effects/servostep.ogg', 50, FALSE)
 	turns++

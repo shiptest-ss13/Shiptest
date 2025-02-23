@@ -116,7 +116,7 @@
 		return
 	LAZYREMOVE(immune_weakrefs, A.weak_reference)
 
-/datum/component/lockon_aiming/process()
+/datum/component/lockon_aiming/process(seconds_per_tick)
 	if(update_disabled)
 		return
 	if(!last_location)

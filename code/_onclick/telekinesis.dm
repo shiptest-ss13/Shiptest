@@ -89,7 +89,7 @@
 	tk_user = null
 	return ..()
 
-/obj/item/tk_grab/process()
+/obj/item/tk_grab/process(seconds_per_tick)
 	if(check_if_focusable(focus)) //if somebody grabs your thing, no waiting for them to put it down and hitting them again.
 		update_appearance()
 
