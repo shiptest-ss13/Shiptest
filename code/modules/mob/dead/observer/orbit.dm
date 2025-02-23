@@ -240,6 +240,7 @@
 	if(istype(atom_poi, /obj/machinery/computer/helm))
 		var/obj/machinery/computer/helm/helm_poi = atom_poi
 		if(helm_poi.current_ship)
+			misc["full_name"] = helm_poi.current_ship.name
 			misc["extra"] = "Ship: [helm_poi.current_ship.name]"
 
 		return list(misc, critical)
