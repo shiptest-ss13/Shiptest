@@ -110,7 +110,7 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 		"Lanchester Special" = "shadow_lanchester"
 		)
 
-	recoil = 0 //weaker than normal revolver, no recoil
+	recoil = 0
 	spread_unwielded = 10
 
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
@@ -152,7 +152,7 @@ EMPTY_GUN_HELPER(revolver/shadow)
 	w_class = WEIGHT_CLASS_SMALL
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
-	recoil = 0 //weaker than normal revolver, no recoil
+	recoil = 0
 	fire_delay = 0.2 SECONDS
 
 EMPTY_GUN_HELPER(revolver/detective)
