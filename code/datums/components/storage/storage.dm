@@ -549,7 +549,13 @@
 	if(force || M.CanReach(parent, view_only = TRUE))
 		if(use_sound && !silent)
 			playsound(A, use_sound, 50, TRUE, -5)
+			handle_on_found()
 		ui_show(M)
+
+/datum/component/storage/proc/handle_on_found()
+	var/found_contents = accessible_items()
+	for(var/obj/item/thing in found_contents)
+		thing.on_found()
 
 /datum/component/storage/proc/mousedrop_receive(datum/source, atom/movable/O, mob/M)
 	SIGNAL_HANDLER
@@ -780,6 +786,7 @@
 			to_chat(user, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		else
 			ui_show(user)
+			handle_on_found()
 			if(use_sound)
 				playsound(A, use_sound, 50, TRUE, -5)
 
