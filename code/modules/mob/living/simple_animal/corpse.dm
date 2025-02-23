@@ -142,46 +142,8 @@
 	head = /obj/item/clothing/head/wizard
 
 
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier
-	name = "\improper Nanotrasen Private Security Officer"
-	id_job = "Private Security Force"
-	outfit = /datum/outfit/nanotrasensoldiercorpse2
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
-
-/datum/outfit/nanotrasensoldiercorpse2
-	name = "NT Private Security Officer Corpse"
-	uniform = /obj/item/clothing/under/rank/security/officer
-	suit = /obj/item/clothing/suit/armor/vest
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-	ears = /obj/item/radio/headset
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	head = /obj/item/clothing/head/helmet/swat/nanotrasen
-	back = /obj/item/storage/backpack/security
-	id = /obj/item/card/id
-
-/obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier
-	name = "Nanotrasen Private Security Officer"
-	id_job = "Nanotrasen Assault Force"
-	outfit = /datum/outfit/nanotrasenassaultsoldiercorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
-
-/datum/outfit/nanotrasenassaultsoldiercorpse
-	name = "NT Assault Officer Corpse"
-	uniform = /obj/item/clothing/under/syndicate
-	suit = /obj/item/clothing/suit/armor/vest
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-	ears = /obj/item/radio/headset
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	head = /obj/item/clothing/head/helmet/swat/nanotrasen
-	back = /obj/item/storage/backpack/security
-	id = /obj/item/card/id
-
-/datum/outfit/vigilitasprivatetroopercorpse
-	name = "VI Private Trooper"
+/datum/outfit/vigilitas
+	name = "VI Corpse"
 	uniform = /obj/item/clothing/under/nanotrasen/security
 	suit = /obj/item/clothing/suit/armor/nanotrasen
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -192,12 +154,36 @@
 	back = /obj/item/storage/backpack/messenger
 	id = /obj/item/card/id
 
-/obj/effect/mob_spawn/human/corpse/vigilitasprivatetroopercorpse
-	name = "VI Private Trooper"
+/datum/outfit/vigilitas/private
+	name = "VI Private"
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_private
+	name = "VI Private"
+	id_job = "Vigilitas Interstellar"
+	outfit = /datum/outfit/vigilitas/private
+
+/datum/outfit/vigilitas/trooper
+	name = "VI Trooper"
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/helmet/sec
+	back = /obj/item/storage/backpack/security
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_trooper
+	name = "VI Trooper"
 	id_job = "Vigilitas Assault Force"
-	outfit = /datum/outfit/vigilitasprivatetroopercorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
+	outfit = /datum/outfit/vigilitas/trooper
+
+/datum/outfit/vigilitas/elite
+	name = "VI Response Team"
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/sec
+	head = /obj/item/clothing/head/helmet/space/hardsuit/ert/sec
+	back = /obj/item/storage/backpack/security
+	gloves = /obj/item/clothing/gloves/combat
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_elite
+	name = "VI Response Team"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitas/elite
 
 /obj/effect/mob_spawn/human/corpse/cat_butcher
 	name = "The Cat Surgeon"
