@@ -31,6 +31,10 @@
 	var/helm_locked = FALSE
 	///Shipwide bank account used for cargo consoles and bounty payouts.
 	var/datum/bank_account/ship/ship_account
+	///Crew Owned Bank Accounts.
+	var/list/crew_bank_accounts = list()
+	///magic number for telling us how much of a mission goes into each crew member's bank account
+	var/crew_share = 0.02
 
 	/// List of currently-accepted missions.
 	var/list/datum/mission/missions
@@ -141,6 +145,7 @@
 	if(!QDELETED(shipkey))
 		QDEL_NULL(shipkey)
 	manifest.Cut()
+	crew_bank_accounts.Cut()
 	job_holder_refs.Cut()
 	job_slots.Cut()
 	blacklisted.Cut()
@@ -313,6 +318,8 @@
 	if(!(human_job in job_holder_refs))
 		job_holder_refs[human_job] = list()
 	job_holder_refs[human_job] += WEAKREF(H)
+	if(H.account_id)
+		crew_bank_accounts += WEAKREF(H.get_bank_account())
 
 /**
  * adds a mob's real name to a crew's guestbooks
