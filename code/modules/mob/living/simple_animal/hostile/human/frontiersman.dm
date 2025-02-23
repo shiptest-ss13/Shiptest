@@ -96,8 +96,6 @@
 	name = "Frontiersman Doorkicker"
 	desc = "A member of the brutal Frontiersman terrorist fleet! Bedecked in military-grade armor, they swagger their shotgun about with a boldness uncommon even among other Frontiersmen."
 	icon_state = "frontiersmanrangedelite"
-	maxHealth = 170
-	health = 170
 	shoot_point_blank = TRUE
 	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
@@ -155,6 +153,9 @@
 	rapid = 4
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/a762_40
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
+				/obj/item/gun/ballistic/automatic/assault/skm)
+	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals
@@ -176,6 +177,7 @@
 	icon_state = "frontiersmanrangedmosin"
 	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
+	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 	r_hand = /obj/item/gun/ballistic/rifle/illestren
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals
@@ -218,8 +220,6 @@
 	name = "Frontiersman Boss"
 	desc = "This Frontiersman moves with what could almost pass for discipline among the infamously ragtag terrorists. They leer at their underlings, one hand resting consciously over the machine pistol at their hip."
 	icon_state = "frontiersmanofficer"
-	maxHealth = 65
-	health = 65
 	rapid = 6
 	rapid_fire_delay = 1
 	shoot_point_blank = TRUE
@@ -227,6 +227,7 @@
 	casingtype = /obj/item/ammo_casing/c9mm
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/mauler
+	armor_base = /obj/item/clothing/suit/armor/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
 	icon_state = "frontiersmanofficer_mask"
