@@ -244,6 +244,7 @@
 	name = "maid headband"
 	desc = "Just like from one of those chinese cartoons!"
 	icon_state = "maid_headband"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/cowboy
 	name = "cowboy hat"

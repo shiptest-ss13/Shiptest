@@ -264,3 +264,4 @@
 	desc = "Cylindrical looking tubes that go over your arm, weird."
 	icon_state = "maid_arms"
 	item_state = "lgloves"
+	supports_variations = VOX_VARIATION
