@@ -86,6 +86,11 @@ if $grep -i'centcomm' $map_files; then
     echo -e "${RED}ERROR: Misspelling(s) of CentCom detected in maps, please remove the extra M(s).${NC}"
     st=1
 fi;
+if $grep -- '-Class' $map_files; then
+	echo
+	echo -e "${RED}ERROR: Misspellings(s) of -class detected in maps, please uncapitalize the C(s).${NC}"
+	st=1
+fi;
 
 section "whitespace issues"
 part "space indentation"
