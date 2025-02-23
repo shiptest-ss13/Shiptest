@@ -311,6 +311,12 @@ WS End */
 	list_reagents = list(/datum/reagent/medicine/trophazole = 15)
 	rename_with_volume = TRUE
 
+/obj/item/reagent_containers/pill/stardrop
+	name = "stardrop capsule"
+	desc = "A capsule of a vision enhancing compound known as Stardrop."
+	icon_state = "pill11"
+	list_reagents = list(/datum/reagent/drug/stardrop = 15)
+
 /obj/item/reagent_containers/spray/rhigoxane
 	name = "medical spray (rhigoxane)"
 	desc = "A medical spray bottle.This one contains rhigoxane, it is used to treat burns and cool down temperature if applied with spray."
