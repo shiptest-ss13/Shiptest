@@ -80,9 +80,19 @@
 /turf/open/floor/plasteel/patterned
 	icon_state = "tile_full"
 	base_icon_state = "tile_full"
+/turf/open/floor/plasteel/patterned/external
+	initial_gas_mix = AIRLESS_ATMOS
+	initial_temperature = TCMB
+/turf/open/floor/plasteel/patterned/external/handle_decompression_floor_rip(sum)
+	return
 /turf/open/floor/plasteel/patterned/cargo_one
 	icon_state = "cargo_one_full"
 	base_icon_state = "cargo_one_full"
+/turf/open/floor/plasteel/patterned/cargo_one/external
+	initial_gas_mix = AIRLESS_ATMOS
+	initial_temperature = TCMB
+/turf/open/floor/plasteel/patterned/cargo_one/external/handle_decompression_floor_rip(sum)
+	return
 /turf/open/floor/plasteel/patterned/brushed
 	icon_state = "kafel_full"
 	base_icon_state = "kafel_full"
