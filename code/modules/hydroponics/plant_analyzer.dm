@@ -33,8 +33,12 @@
 
 /obj/item/plant_analyzer/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
-	if(isobj(target))
+	if(can_scan_target(target))
 		change_target(target, user)
+
+/obj/item/plant_analyzer/proc/can_scan_target(atom/target)
+	if(istype(target, /obj/machinery/hydroponics) || istype(target, /obj/item/seeds) || istype(target, /obj/item/reagent_containers/food/snacks/grown))
+		return TRUE
 
 /obj/item/plant_analyzer/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -115,6 +119,11 @@
 			var/seed = params["mutation_type"]
 			if(seed)
 				change_target(seed, usr)
+
+/obj/item/plant_analyzer/ui_status(mob/user)
+	if(isobj(scan_target) && !can_scan_target(scan_target))
+		return UI_CLOSE
+	. = ..()
 
 /obj/item/plant_analyzer/proc/change_target(target, mob/user)
 	if(target != scan_target)

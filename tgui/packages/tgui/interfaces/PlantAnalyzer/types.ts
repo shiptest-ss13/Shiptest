@@ -2,7 +2,6 @@ export type PlantAnalyzerData = {
   scan_target: string;
   tray: TrayData;
   seed: SeedData;
-  product: ProductData;
   cycle_seconds: number;
   trait_db: TraitData[];
 };

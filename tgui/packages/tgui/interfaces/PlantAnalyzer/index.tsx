@@ -16,7 +16,7 @@ import { PlantAnalyzerData } from './types';
 
 export const PlantAnalyzer = (props, context) => {
   const { act, data } = useBackend<PlantAnalyzerData>(context);
-  const { tray, seed, product } = data;
+  const { tray, seed } = data;
   return (
     <Window width={500} height={600} resizable>
       <Window.Content scrollable>
@@ -237,9 +237,6 @@ const Level = (props) => {
       }
     >
       <AnimatedNumber
-        style={{
-          textShadow: '1px 1px 0 black',
-        }}
         value={props.value}
       ></AnimatedNumber>
       {' / '}
