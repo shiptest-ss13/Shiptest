@@ -20,7 +20,7 @@
 	desc = "I WANT MY FUCKIN PUSHIE BACK KILL HIM AND ILL PAY!"
 	author = "I FUCKING WANT HIM HUNG."
 	mission_reward = /obj/item/poster/random_rilena
-	registered_type = /mob/living/simple_animal/hostile/human/syndicate
+	registered_type = /mob/living/simple_animal/hostile/human/ramzi
 	setpiece_item = list(
 		/obj/item/toy/plush/rilena,
 		/obj/item/toy/plush/tali,
