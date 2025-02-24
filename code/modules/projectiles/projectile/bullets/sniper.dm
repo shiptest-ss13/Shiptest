@@ -4,8 +4,7 @@
 	name = ".50 BMG bullet"
 	speed = BULLET_SPEED_SNIPER
 	damage = 70
-	knockdown = 100
-	dismemberment = 50
+	knockdown = 50
 	armour_penetration = 60
 	var/breakthings = TRUE
 	bullet_identifier = "huge bullet"
