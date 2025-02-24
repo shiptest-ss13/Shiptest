@@ -412,6 +412,11 @@
 	name = "Brawler-class Dropship"
 	prefix = "SV"
 
+/datum/map_template/shuttle/subshuttles/haymaker
+	file_name = "frontiersmen_haymaker"
+	name = "Haymaker-class Command Post"
+	prefix = "SV"
+
 /datum/map_template/shuttle/subshuttles/skink
 	file_name = "nanotrasen_skink"
 	name = "Skink-class Cargo Runner"
