@@ -26,3 +26,18 @@
 	power_usage = 40
 	icon_state = "datadisk3"
 	max_capacity = 256
+
+/obj/item/computer_hardware/hard_drive/portable/lifeline_install
+
+/obj/item/computer_hardware/hard_drive/portable/lifeline_install/install_default_programs()
+	store_file(new/datum/computer_file/program/radar/lifeline(src))
+
+/obj/item/computer_hardware/hard_drive/portable/secureye_install
+
+/obj/item/computer_hardware/hard_drive/portable/secureye_install/install_default_programs()
+	store_file(new/datum/computer_file/program/secureye(src))
+
+/obj/item/computer_hardware/hard_drive/portable/ntnetmonitor_install
+
+/obj/item/computer_hardware/hard_drive/portable/ntnetmonitor_install/install_default_programs()
+	store_file(new/datum/computer_file/program/ntnetmonitor(src))

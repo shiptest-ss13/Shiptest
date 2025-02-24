@@ -212,7 +212,8 @@
 	extended_desc = "This program allows for tracking of crew members via their suit sensors."
 	requires_ntnet = TRUE
 	transfer_access = ACCESS_MEDICAL
-	available_on_ntnet = TRUE
+	available_on_ntnet = FALSE
+	drm = TRUE
 	program_icon = "heartbeat"
 
 /datum/computer_file/program/radar/lifeline/find_atom()
