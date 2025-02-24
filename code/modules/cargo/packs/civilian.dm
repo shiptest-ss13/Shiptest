@@ -255,12 +255,12 @@
 
 /datum/supply_pack/civilian/lifeline
 	name = "A portable drive containing a new install of lifeline"
-	desc = "Contains a highly resistant DRM."
-	cost = 1000
+	desc = "Contains a highly resistant digital rights managment..."
+	cost = 250
 	contains = list(/obj/item/computer_hardware/hard_drive/portable/lifeline_install)
 
 /datum/supply_pack/civilian/secureye
 	name = "A portable drive containing a new install of secureye"
-	desc = "Contains a highly resistant DRM."
-	cost = 1000
+	desc = "Contains a highly resistant digital rights managment..."
+	cost = 250
 	contains = list(/obj/item/computer_hardware/hard_drive/portable/secureye_install)
