@@ -146,7 +146,7 @@
 /datum/supply_pack/gun/viperrevolver
 	name = "Viper-23 Revolver Crate"
 	desc = "Contains a civilian variant of the Viper revolver, chambered in .357 magnum."
-	cost = 2500
+	cost = 1500
 	contains = list(/obj/item/storage/guncase/pistol/viper)
 	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 5
@@ -154,7 +154,7 @@
 /datum/supply_pack/gun/a357
 	name = "R-23 'Viper' Revolver Crate"
 	desc = "Contains a double-action military variant of the Viper revolver, chambered in .357 magnum."
-	cost = 3000
+	cost = 1750
 	contains = list(/obj/item/storage/guncase/pistol/a357)
 	faction = /datum/faction/syndicate/scarborough_arms
 	faction_discount = 0
@@ -710,7 +710,7 @@
 
 /datum/supply_pack/gun/ssg669
 	name = "SSG-669C Sniper Rifle Crate"
-	desc = "Contains a traditional scoped rifle to hunt wildlife and big game from a respectful distance. Chambered in powerful .300 Magnum."
+	desc = "Contains a traditional solarian marksman rifle chambered in 8x58mm Caseless."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/ssg669)
 	crate_name = "sniper rifle crate"
