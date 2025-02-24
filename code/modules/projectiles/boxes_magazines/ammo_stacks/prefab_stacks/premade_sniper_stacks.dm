@@ -1,6 +1,18 @@
 // .50 BMG (Sniper)
+
+/obj/item/storage/box/ammo/a50box
+	name = "box of .50BMG ammo"
+	desc = "A box of standard .50BMG ammo."
+	icon_state = "a50box"
+
+/obj/item/storage/box/ammo/a50box/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/p50 = 4)
+	generate_items_inside(items_inside,src)
+
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/p50
 	ammo_type = /obj/item/ammo_casing/p50
+	max_ammo = 5
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/p50/soporific
 	ammo_type = /obj/item/ammo_casing/p50/soporific
