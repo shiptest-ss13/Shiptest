@@ -10,6 +10,8 @@ import {
 } from '../../components';
 import { Window } from '../../layouts';
 
+import { capitalizeFirst } from 'common/string';
+
 import { PLANTSTATUS2COLOR } from './constants';
 
 import { PlantAnalyzerData } from './types';
@@ -36,7 +38,7 @@ const TrayContent = (props, context) => {
         <Stack.Item>
           Plant Status:{' '}
           <Button backgroundColor={PLANTSTATUS2COLOR[tray.status]}>
-            {tray.status}
+            {capitalizeFirst(tray.status)}
           </Button>
         </Stack.Item>
         <Stack fill>
