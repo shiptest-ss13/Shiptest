@@ -223,6 +223,14 @@
 	build_path = /obj/item/wallframe/light_switch
 	category = list("initial", "Misc")
 
+/datum/design/paper_roll
+	name = "Hand Labeler Paper Roll"
+	id = "handlabeler_refill"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 50)
+	build_path = /obj/item/hand_labeler_refill
+	category = list("initial", "Misc")
+
 /datum/design/camera
 	name = "Camera"
 	id = "camera"
@@ -802,6 +810,14 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/restraints/handcuffs
+	category = list("initial", "Security")
+
+/datum/design/evidencebag
+	name = "Evidence Bag"
+	id = "evidencebag"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 500)
+	build_path = /obj/item/evidencebag
 	category = list("initial", "Security")
 
 /datum/design/receiver
