@@ -42,31 +42,31 @@ const TrayContent = (props, context) => {
           </Button>
         </Stack.Item>
         <Stack fill>
-          <Stack.Item style="width 50%">
+          <Stack.Item style={{ width: '50%' }}>
             Water:
-            <Level value={tray.water} max={tray.maxwater}></Level>
+            <Level value={tray.water} max={tray.maxwater} />
           </Stack.Item>
-          <Stack.Item style="width 50%">
+          <Stack.Item style={{ width: '50%' }}>
             Nutrients:
-            <Level value={tray.nutrients} max={tray.maxnutri}></Level>
+            <Level value={tray.nutrients} max={tray.maxnutri} />
           </Stack.Item>
         </Stack>
         <Stack fill>
-          <Stack.Item style="width 33%">
+          <Stack.Item style={{ width: '33%' }}>
             Weeds:
-            <Level value={tray.weeds} max={10} reverse></Level>
+            <Level value={tray.weeds} max={10} reverse />
           </Stack.Item>
-          <Stack.Item style="width 33%">
+          <Stack.Item style={{ width: '33%' }}>
             Pests:
-            <Level value={tray.pests} max={10} reverse></Level>
+            <Level value={tray.pests} max={10} reverse />
           </Stack.Item>
-          <Stack.Item style="width 33%">
+          <Stack.Item style={{ width: '33%' }}>
             Toxic:
-            <Level value={tray.toxic} max={100} reverse></Level>
+            <Level value={tray.toxic} max={100} reverse />
           </Stack.Item>
         </Stack>
         <Stack.Item>
-          Plant Age: <AnimatedNumber value={tray.age}></AnimatedNumber>
+          Plant Age: <AnimatedNumber value={tray.age} />
         </Stack.Item>
         <Stack.Item>
           Self-Sustaining: {tray.self_sustaining ? 'Yes' : 'No'}
@@ -83,7 +83,7 @@ const SeedContent = (props, context) => {
     <Section title={seed.name}>
       <Stack vertical fill>
         <Stack fill>
-          <Stack.Item style="width 20%">
+          <Stack.Item style={{ width: '20%' }}>
             <LevelWithTooltip
               name="Potency: "
               value={seed.potency}
@@ -91,7 +91,7 @@ const SeedContent = (props, context) => {
               tooltip="Potency: Determines product mass, reagent volume and strength of effects."
             />
           </Stack.Item>
-          <Stack.Item style="width 20%">
+          <Stack.Item style={{ width: '20%' }}>
             <LevelWithTooltip
               name="Yield: "
               value={seed.yield}
@@ -99,7 +99,7 @@ const SeedContent = (props, context) => {
               tooltip="Yield: The number of products gathered in a single harvest."
             />
           </Stack.Item>
-          <Stack.Item style="width 20%">
+          <Stack.Item style={{ width: '20%' }}>
             <LevelWithTooltip
               name="Endurance: "
               value={seed.endurance}
@@ -107,7 +107,7 @@ const SeedContent = (props, context) => {
               tooltip="Endurance: The health pool of the plant that delays death."
             />
           </Stack.Item>
-          <Stack.Item style="width 20%">
+          <Stack.Item style={{ width: '20%' }}>
             <LevelWithTooltip
               name="Lifespan: "
               value={seed.lifespan}
@@ -115,7 +115,7 @@ const SeedContent = (props, context) => {
               tooltip={`Lifespan: The age at which the plant starts decaying, in ${data.cycle_seconds} second long cycles. Improves quality of resulting food & drinks.`}
             />
           </Stack.Item>
-          <Stack.Item style="width 20%">
+          <Stack.Item style={{ width: '20%' }}>
             <LevelWithTooltip
               name="Instability: "
               value={seed.instability}
@@ -129,8 +129,7 @@ const SeedContent = (props, context) => {
             content={`Maturation: The age required for the first harvest, in ${data.cycle_seconds} second long cycles.`}
           >
             <Box>
-              Maturation Speed:{' '}
-              <AnimatedNumber value={seed.maturation}></AnimatedNumber>
+              Maturation Speed: <AnimatedNumber value={seed.maturation} />
             </Box>
           </Tooltip>
         </Stack.Item>
@@ -139,21 +138,18 @@ const SeedContent = (props, context) => {
             content={`Production: The period of product regrowth, in ${data.cycle_seconds} second long cycles.`}
           >
             <Box>
-              Production Speed:{' '}
-              <AnimatedNumber value={seed.production}></AnimatedNumber>
+              Production Speed: <AnimatedNumber value={seed.production} />
             </Box>
           </Tooltip>
         </Stack.Item>
         <Stack.Item>
-          Weed Rate: <AnimatedNumber value={seed.weed_rate}></AnimatedNumber>
+          Weed Rate: <AnimatedNumber value={seed.weed_rate} />
         </Stack.Item>
         <Stack.Item>
-          Weed Chance:{' '}
-          <AnimatedNumber value={seed.weed_chance}></AnimatedNumber>
+          Weed Chance: <AnimatedNumber value={seed.weed_chance} />
         </Stack.Item>
         <Stack.Item>
-          Species Discovery Value:{' '}
-          <AnimatedNumber value={seed.rarity}></AnimatedNumber>
+          Species Discovery Value: <AnimatedNumber value={seed.rarity} />
         </Stack.Item>
         <Stack.Item>
           {seed.genes && seed.genes.length > 0 && (
@@ -168,7 +164,7 @@ const SeedContent = (props, context) => {
           {seed.mutatelist && seed.mutatelist.length > 0 && (
             <Section title="Mutations">
               {seed.mutatelist?.map((mutation, index) => (
-                <Tooltip content={mutation.desc}>
+                <Tooltip key={index} content={mutation.desc}>
                   <Box index={index}>
                     {mutation.name}
                     <Button
@@ -194,7 +190,7 @@ const SeedContent = (props, context) => {
           {seed.grind_results && seed.grind_results.length > 0 && (
             <Section>
               {seed.grind_results.map((result, index) => (
-                <Tooltip content={result.desc}>
+                <Tooltip key={index} content={result.desc}>
                   <Stack.Item key={index}>
                     {result.name}: {result.amount}
                   </Stack.Item>
@@ -238,7 +234,7 @@ const Level = (props) => {
             }
       }
     >
-      <AnimatedNumber value={props.value}></AnimatedNumber>
+      <AnimatedNumber value={props.value} />
       {' / '}
       {props.max}
     </ProgressBar>
@@ -250,7 +246,7 @@ const LevelWithTooltip = (props) => {
     <Tooltip content={props.tooltip}>
       <Box>
         {props.name}
-        <Level value={props.value} max={props.max}></Level>
+        <Level value={props.value} max={props.max} />
       </Box>
     </Tooltip>
   );
