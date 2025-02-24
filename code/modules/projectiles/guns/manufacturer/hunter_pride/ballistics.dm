@@ -925,7 +925,6 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	zoomable = FALSE //no scope on it
 
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 
@@ -944,6 +943,21 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1,
 		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 47,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 13,
+			"y" = 23,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 19,
+		)
 	)
 
 	default_attachments = list(/obj/item/attachment/scope)
