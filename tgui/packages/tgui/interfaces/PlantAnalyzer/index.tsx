@@ -238,9 +238,7 @@ const Level = (props) => {
             }
       }
     >
-      <AnimatedNumber
-        value={props.value}
-      ></AnimatedNumber>
+      <AnimatedNumber value={props.value}></AnimatedNumber>
       {' / '}
       {props.max}
     </ProgressBar>

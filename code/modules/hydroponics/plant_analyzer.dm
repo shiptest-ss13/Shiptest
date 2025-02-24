@@ -107,7 +107,7 @@
 		var/trait_data = list(list(
 			"path" = trait.type,
 			"name" = trait.name,
-			"description" = trait.examine_line
+			"description" = trait.description
 		))
 		data["trait_db"] += trait_data
 	return data
