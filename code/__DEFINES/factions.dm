@@ -37,7 +37,7 @@
 #define PREFIX_SOLGOV list("SCSV")
 #define PREFIX_SRM list("SRSV")
 #define PREFIX_INTEQ list("IRMV")
-#define PREFIX_CLIP list("CMSV", "CMGSV")
+#define PREFIX_CLIP list("CMSV", "CLSV")
 #define PREFIX_NT list("NTSV")
 	#define PREFIX_NS_LOGI list("NSSV")
 	#define PREFIX_VIGILITAS list("VISV")

@@ -7,7 +7,6 @@
 	name = "\proper space"
 	intact = 0
 
-	initial_temperature = TCMB
 	thermal_conductivity = 0
 	heat_capacity = 700000
 	initial_gas_mix = AIRLESS_ATMOS
