@@ -4,7 +4,6 @@
 
 	icon = 'icons/obj/modular_console.dmi'
 	icon_state = "computer"
-	icon_state_powered = "computer"
 	screen_icon_state_menu = "menu"
 	hardware_flag = PROGRAM_CONSOLE
 	density = TRUE
