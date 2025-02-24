@@ -28,7 +28,7 @@
 	max_capacity = 256
 
 /obj/item/computer_hardware/hard_drive/portable/installer
-	name = "data disk lifeline installer"
+	name = "data disk program installer"
 	desc = "Contains a highly resistant digital rights managment..."
 	var/datum/computer_file/program/preinstalled_program
 
