@@ -249,6 +249,7 @@
 		/obj/item/toy/plush/spider,
 		/obj/item/toy/plush/tali,
 		/obj/item/toy/plush/xader,
+		/obj/item/toy/plush/frederick,
 		/obj/effect/spawner/random/entertainment/plushie/moth // fair chances
 	)
 
