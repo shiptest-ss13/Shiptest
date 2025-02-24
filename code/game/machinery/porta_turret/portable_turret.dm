@@ -70,6 +70,9 @@
 
 	var/list/target_faction = list("hostile")
 
+	/// does our turret give a flying fuck about what accesses someone has?
+	var/turret_respects_id = TRUE
+
 	/// The spark system, used for generating... sparks?
 	var/datum/effect_system/spark_spread/spark_system
 
@@ -508,9 +511,9 @@
 		if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
 			return target(target_mob)
 
-		//this is gross
+		//this is still a bit gross, but less gross than before
 		var/static/list/dangerous_fauna = typecacheof(list(/mob/living/simple_animal/hostile, /mob/living/carbon/alien, /mob/living/carbon/monkey))
-		if(!is_type_in_typecache(target_mob, dangerous_fauna))
+		if(!is_type_in_typecache(target_mob, dangerous_fauna) || faction_check("neutral", target_mob.faction))
 			return FALSE
 
 		if(istype(target_mob, /mob/living/simple_animal/hostile/retaliate))
@@ -522,8 +525,9 @@
 	//We know the target must be a human now
 	var/mob/living/carbon/human/target_carbon = target_mob
 
-	if(req_ship_access && (check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id)))
-		return FALSE
+	if(turret_respects_id)
+		if(req_ship_access && (check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id)))
+			return FALSE
 
 	if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
 		return target(target_carbon)

@@ -112,3 +112,16 @@
 	name = "CLIP Minuteman Spawner"
 	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed
 	mob_gender = FEMALE
+
+
+/obj/machinery/porta_turret/ship/frontiersmen/tesla_lab
+	faction = list(FACTION_ANTAG_FRONTIERSMEN, "turret")
+	turret_flags = TURRET_FLAG_HOSTILE
+	req_ship_access = FALSE
+	turret_respects_id = FALSE
+
+/obj/machinery/porta_turret/ship/frontiersmen/light/tesla_lab
+	faction = list(FACTION_ANTAG_FRONTIERSMEN, "turret")
+	turret_flags = TURRET_FLAG_HOSTILE
+	req_ship_access = FALSE
+	turret_respects_id = FALSE
