@@ -54,3 +54,7 @@
 	var/atom/throw_target = get_edge_target_turf(target, user.dir)
 	if(!target.anchored)
 		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
+
+// its for dynamic gen mobs okay
+/obj/item/melee/sledgehammer/gorlex/pre_wielded
+	icon_state = "sledgehammer_w"

@@ -24,6 +24,14 @@
 	icon_state = "hl_officer"
 	item_state = "hl_officer"
 
+/obj/item/clothing/under/plasmaman/hardliners
+	name = "\improper Hardliner phorid envirosuit"
+	desc = "A button-up envirosuit with use intended for phorid Hardliners. Ensures they don't die of combustion."
+	icon_state = "hl_envirosuit"
+	item_state = "hl_envirosuit"
+	icon = 'icons/obj/clothing/faction/hardliners/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/uniforms.dmi'
+
 ////////////////////
 //Unarmored suits//
 ///////////////////
@@ -71,6 +79,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	blood_overlay_type = "armor"
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //ngr armor reskin - same statline
 
 /obj/item/clothing/suit/armor/hardliners/jacket
 	name = "hardliners armored kutte"
@@ -80,6 +89,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	blood_overlay_type = "armor"
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //its not like they cover your arms.
 
 /obj/item/clothing/suit/armor/hardliners/sergeant
 	name = "hardliners sergeant jacket"
@@ -131,6 +141,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
 	jetpack = null
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/hl
 	name = "elite white-red hardsuit helmet"
@@ -152,6 +163,15 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	jetpack = null
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/head/helmet/space/plasmaman/hardliners
+	name = "Hardliner phorid envirosuit helmet"
+	desc = "An envirohelmet designed for phorid Hardliners, with intimidating white stripes."
+	icon_state = "hl_envirohelm"
+	item_state = "hl_envirohelm"
+	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
 
 /////////
 //Hats//
@@ -218,6 +238,7 @@
 	item_state = "hl_webbing"
 	icon = 'icons/obj/clothing/faction/hardliners/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/belt.dmi'
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/storage/belt/security/webbing/hardliners/sidewinder/PopulateContents()
 	. = ..()

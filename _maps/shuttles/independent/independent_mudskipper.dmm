@@ -228,7 +228,7 @@
 	dir = 10
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "eu" = (
 /obj/structure/railing{
@@ -710,7 +710,7 @@
 	icon_state = "2-5"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "qN" = (
 /obj/machinery/cryopod{
@@ -984,7 +984,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "xo" = (
-/obj/structure/dresser,
+/obj/structure/closet/cabinet,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light_switch{
@@ -992,6 +992,16 @@
 	pixel_x = 22;
 	pixel_y = -6
 	},
+/obj/item/storage/backpack,
+/obj/item/storage/backpack/satchel,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/utility,
+/obj/item/clothing/under/utility,
+/obj/item/clothing/under/utility/skirt,
+/obj/item/clothing/under/utility/skirt,
+/obj/item/clothing/head/soft/utility_olive,
+/obj/item/clothing/head/soft/utility_olive,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "xp" = (
@@ -1404,8 +1414,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
 "Ft" = (
-/obj/structure/bed,
-/obj/effect/spawner/random/bedsheet,
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /obj/structure/curtain/bounty,
 /obj/machinery/light_switch{
 	dir = 1;
@@ -1460,7 +1474,7 @@
 	icon_state = "2-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Id" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2068,11 +2082,16 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "UZ" = (
-/obj/structure/table,
+/obj/structure/dresser{
+	dir = 4;
+	pixel_x = -4
+	},
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/flashlight/lamp/green{
-	pixel_y = 4
+	pixel_y = 11;
+	pixel_x = -4;
+	layer = 3.41
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -2095,8 +2114,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Vy" = (
-/obj/structure/bed,
-/obj/effect/spawner/random/bedsheet,
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /obj/structure/curtain/bounty,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/north,

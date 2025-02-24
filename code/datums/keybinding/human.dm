@@ -36,6 +36,36 @@
 	current_human.do_unique_action()
 	return TRUE
 
+/datum/keybinding/human/ads
+	hotkey_keys = list("ShiftZ")
+	name = "aim_down_sights"
+	full_name = "Aim down sighs"
+	description = "Aim down the sights of the currently wielded weapon."
+	keybind_signal = COMSIG_KB_HUMAN_ADS
+
+/datum/keybinding/human/ads/down(client/user)
+	. = ..()
+	if(.)
+		return
+	var/mob/living/carbon/human/current_human = user.mob
+	current_human.do_zoom()
+	return TRUE
+
+/datum/keybinding/human/secondary_action
+	hotkey_keys = list("ShiftSpace")
+	name = "secondary_action"
+	full_name = "Perform secondary action"
+	description = ""
+	keybind_signal = COMSIG_KB_HUMAN_SECONDARYACTION
+
+/datum/keybinding/human/secondary_action/down(client/user)
+	. = ..()
+	if(.)
+		return
+	var/mob/living/carbon/human/current_human = user.mob
+	current_human.do_secondary_action()
+	return TRUE
+
 /datum/keybinding/human/quick_equip_belt
 	hotkey_keys = list("ShiftE")
 	name = "quick_equip_belt"

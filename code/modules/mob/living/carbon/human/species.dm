@@ -149,9 +149,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	/// Minimum amount of kelvin moved toward normal body temperature per tick.
 	var/bodytemp_autorecovery_min = HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM
 	/// The maximum temperature the species is comfortable at. Going above this does not apply any effects, but warns players that the temperture is hot
-	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL) //20 c will always be below human bodytemp, this just makes it so when it can sustain that its higher
+	var/max_temp_comfortable = (HUMAN_BODYTEMP_NORMAL + 7) //20 c will always be below human bodytemp, this just makes it so when it can sustain that its higher
 	/// The minimum temperature the species is comfortable at. Going below this does not apply any effects, but warns players that the temperture is chilly
-	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 1)
+	var/min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 5)
 	/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery.
 	var/bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR
 	///Similar to the autorecovery_divsor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to lose bodytemp faster.
@@ -744,6 +744,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				var/icon_file = underwear.icon
 				if((H.dna.species.bodytype & BODYTYPE_KEPORI))
 					icon_file = KEPORI_UNDERWEAR_LEGS_PATH
+				if((H.dna.species.bodytype & BODYTYPE_VOX))
+					icon_file = VOX_UNDERWEAR_LEGS_PATH
 				if(underwear.has_digitigrade && (H.dna.species.bodytype & BODYTYPE_DIGITIGRADE))
 					icon_state += "_d"
 				underwear_overlay = mutable_appearance(icon_file, icon_state, -BODY_LAYER)
@@ -758,6 +760,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				var/icon_file = undershirt.icon
 				if((H.dna.species.bodytype & BODYTYPE_KEPORI))
 					icon_file = KEPORI_UNDERWEAR_TORSO_PATH
+				if((H.dna.species.bodytype & BODYTYPE_VOX))
+					icon_file = VOX_UNDERWEAR_TORSO_PATH
 				undershirt_overlay = mutable_appearance(icon_file, undershirt.icon_state, -BODY_LAYER)
 				if(!undershirt.use_static)
 					undershirt_overlay.color = "#" + H.undershirt_color
@@ -773,6 +777,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					icon_state += "_d"
 				if((H.dna.species.bodytype & BODYTYPE_KEPORI))
 					icon_file = KEPORI_UNDERWEAR_SOCKS_PATH
+				if((H.dna.species.bodytype & BODYTYPE_VOX))
+					icon_file = VOX_UNDERWEAR_SOCKS_PATH
 				socks_overlay = mutable_appearance(icon_file, icon_state, -BODY_LAYER)
 				if(!socks.use_static)
 					socks_overlay.color = "#" + H.socks_color
@@ -1431,13 +1437,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(radiation > RAD_MOB_VOMIT && prob(RAD_MOB_VOMIT_PROB))
 		H.vomit(10, TRUE)
 
-	if(radiation > RAD_MOB_MUTATE)
-		if(prob(1))
-			to_chat(H, "<span class='danger'>You mutate!</span>")
-			H.easy_randmut(NEGATIVE+MINOR_NEGATIVE)
-			H.emote("gasp")
-			H.domutcheck()
-
 	if(radiation > RAD_MOB_HAIRLOSS)
 		if(prob(15) && !(H.hairstyle == "Bald") && (HAIR in species_traits))
 			to_chat(H, "<span class='danger'>Your hair starts to fall out in clumps...</span>")
@@ -1955,13 +1954,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					else
 						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 3)
 
-		//Stay hydrated.
-		if(!(H.mob_biotypes & MOB_ROBOTIC) && H.reagents.has_reagent(/datum/reagent/water) && H.stat != DEAD)
-			burn_damage -= clamp(H.reagents.get_reagent_amount(/datum/reagent/water) /10, 0, 2)
-		// if youre dead, no need to sweat?
-		if(H.stat != DEAD)
-			burn_damage -= (max(burn_damage - 2.5, 0))
-
 		// Apply species and physiology modifiers to heat damage
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
 
@@ -2016,7 +2008,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		firemodifier = min(firemodifier, 0)
 
 	// this can go below 5 at log 2.5
-	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 2,0)
+	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 5,0)
 	return burn_damage
 
 /// Handle the air pressure of the environment

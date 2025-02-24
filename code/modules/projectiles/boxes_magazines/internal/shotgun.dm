@@ -29,7 +29,7 @@
 /obj/item/ammo_box/magazine/internal/shot/riot
 	name = "riot shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	max_ammo = 7
+	max_ammo = 8
 
 /obj/item/ammo_box/magazine/internal/shot/bounty
 	name = "triple-barrel shotgun internal magazine"
@@ -64,7 +64,7 @@
 /obj/item/ammo_box/magazine/internal/shot/underbarrel
 	name = "underbarrel shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	max_ammo = 1
+	max_ammo = 2
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/internal/shot/sex

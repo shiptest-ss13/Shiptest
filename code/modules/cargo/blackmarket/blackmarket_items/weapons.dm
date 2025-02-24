@@ -161,10 +161,21 @@
 	name = "E-50 Energy Emitter"
 	desc = "An Eoehoma Firearms E-50 Emitter cannon. For when you want a send a message. A really big message."
 	item = /obj/item/gun/energy/laser/e50
-	pair_item = (/datum/blackmarket_item/ammo/huge_weapon_cell)
+	pair_item = list(/datum/blackmarket_item/ammo/huge_weapon_cell)
 
 	price_min = 4000
 	price_max = 7000
+	stock_max = 2
+	availability_prob = 20
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/e50_underbarrel
+	name = "Underbarrel Energy Cannon"
+	desc = "The normal E-50 too big to handle for you? This underbarrel conversion cuts it down to a managable size with only a <i>minor<i> chance of painfully burning your hands."
+	item = /obj/item/attachment/gun/energy/e50
+
+	price_min = 4000
+	price_max = 5000
 	stock_max = 2
 	availability_prob = 20
 	spawn_weighting = FALSE
@@ -257,7 +268,7 @@
 
 /datum/blackmarket_item/weapon/mecha_weapon_bay
 	name = "Concealed Weapons Bay"
-	desc = "Ripley with a laser cannon? Odysseus with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
+	desc = "Ripley with a laser cannon? 200 Series with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
 	item = /obj/item/mecha_parts/concealed_weapon_bay
 
 	price_min = 1000
@@ -268,7 +279,7 @@
 
 /datum/blackmarket_item/weapon/mecha_syringe_gun
 	name = "Mounted Syringe Gun"
-	desc = "We ripped this off an old Nanotrasen exosuit. It's a real advanced piece of equipment. Exosuit not included."
+	desc = "We ripped this off an old Cybersun exosuit. It's a real advanced piece of equipment. Exosuit not included."
 	item = /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
 
 	price_min = 5000

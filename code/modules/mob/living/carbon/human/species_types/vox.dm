@@ -4,7 +4,7 @@
 	id = SPECIES_VOX
 	default_color = "6060FF"
 	species_age_max = 280
-	species_traits = list(EYECOLOR, NO_UNDERWEAR)
+	species_traits = list(EYECOLOR)
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", "body_size" = "Normal")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
@@ -26,7 +26,7 @@
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
-	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 1
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 10
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 20
 
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 10

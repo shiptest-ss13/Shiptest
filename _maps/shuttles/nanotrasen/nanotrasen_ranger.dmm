@@ -2851,13 +2851,6 @@
 /area/ship/hallway/starboard)
 "up" = (
 /obj/structure/table/reinforced,
-/obj/item/screwdriver{
-	pixel_x = -7;
-	pixel_y = 7
-	},
-/obj/item/screwdriver{
-	pixel_x = -7
-	},
 /obj/item/hand_labeler{
 	pixel_x = 8;
 	pixel_y = 13
@@ -3950,12 +3943,22 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/cobweb,
+/obj/machinery/button/door{
+	dir = 8;
+	id = "ranger_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	pixel_x = 20;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "BI" = (
 /obj/machinery/door/airlock/wood{
 	name = "Toilets";
-	req_ship_access = 0
+	req_ship_access = 0;
+	id_tag = "ranger_bathroom"
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
@@ -5733,7 +5736,6 @@
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/melee/knife/survival,
 /obj/item/gps,
-/obj/item/screwdriver,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 7;

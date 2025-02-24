@@ -254,7 +254,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev
 	name = "HP Firestorm"
-	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .45."
+	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .44 Roumain."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -262,14 +262,14 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 	icon_state = "firestorm"
 	item_state = "firestorm"
-	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
+	default_ammo_type = /obj/item/ammo_box/magazine/c44_firestorm_mag
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/c45_firestorm_mag,
+		/obj/item/ammo_box/magazine/c44_firestorm_mag,
 	)
 	unique_mag_sprites_for_variants = TRUE
 	burst_size = 1
 	actions_types = list()
-	fire_delay = 0.13 SECONDS
+	fire_delay = 0.22 SECONDS
 	bolt_type = BOLT_TYPE_OPEN
 	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
 	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
@@ -279,7 +279,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	wield_slowdown = SMG_SLOWDOWN
 
 /obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
-	default_ammo_type = /obj/item/ammo_box/magazine/c45_firestorm_mag/pan
+	default_ammo_type = /obj/item/ammo_box/magazine/c44_firestorm_mag/pan
 
 ///Shotguns
 
@@ -364,6 +364,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/attackby(obj/item/A, mob/user, params)
 	if (!bolt_locked)
+		if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
+			return TRUE
 		to_chat(user, "<span class='notice'>The [bolt_wording] is shut closed!</span>")
 		return
 	return ..()
@@ -399,7 +401,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 
 // sawn off beforehand
 /obj/item/gun/ballistic/shotgun/doublebarrel/presawn
-	name = "sawn-off double-barreled shotgun"
+	//init gives it the sawn_off name
+	name = "double-barreled shotgun"
 	desc = "A break action shotgun cut down to the size of a sidearm. While the recoil is even harsher, it offers a lot of power in a very small package. Chambered in 12g."
 	sawn_off = TRUE
 	weapon_weight = WEAPON_MEDIUM
@@ -484,7 +487,7 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 
 /obj/item/gun/ballistic/shotgun/hellfire
 	name = "HP Hellfire"
-	desc = "A hefty pump-action riot shotgun with a seven-round tube, manufactured by Hunter's Pride. Especially popular among the Frontier's police forces. Chambered in 12g."
+	desc = "A hefty pump-action riot shotgun with an eight-round tube, manufactured by Hunter's Pride. Especially popular among the Frontier's police forces. Chambered in 12g."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -505,7 +508,7 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
-		tube.max_ammo = 5 //this makes the gun so much worse
+		tube.max_ammo = 5 //this makes it so much worse
 
 		weapon_weight = WEAPON_MEDIUM
 		wield_slowdown = wield_slowdown-0.1
@@ -611,6 +614,17 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/illestren_a850r,
 	)
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
 	empty_autoeject = TRUE
 	eject_sound_vary = FALSE
 	can_be_sawn_off = TRUE
@@ -676,6 +690,16 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 
 	wield_slowdown = RIFLE_SLOWDOWN
 	wield_delay = 0.65 SECONDS
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
 
 	spread = -5
 	spread_unwielded = 7
@@ -819,6 +843,17 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
+	unique_attachments = list(
+		/obj/item/attachment/alof,
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -849,7 +884,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 //pre sawn off beacon
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn
-	name = "sawn-off HP Beacon"
+	name = "HP Beacon"
 	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
 	sawn_off = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
@@ -901,6 +936,18 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	recoil = 0
 	recoil_unwielded = 4
 	wield_slowdown = DMR_SLOWDOWN
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	default_attachments = list(/obj/item/attachment/scope)
 
 /obj/item/gun/ballistic/rifle/scout
 	name = "HP Scout"

@@ -70,6 +70,9 @@
 
 	var/list/target_faction = list("hostile")
 
+	/// does our turret give a flying fuck about what accesses someone has?
+	var/turret_respects_id = TRUE
+
 	/// The spark system, used for generating... sparks?
 	var/datum/effect_system/spark_spread/spark_system
 
@@ -151,7 +154,7 @@
 	return gun_properties
 
 /obj/machinery/porta_turret/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	id = "[text_ref(port)][initial(id)]"
+	id = "[text_ref(port)][id]"
 	port.turret_list |= WEAKREF(src)
 
 /obj/machinery/porta_turret/proc/toggle_on(set_to)
@@ -508,14 +511,11 @@
 		if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
 			return target(target_mob)
 
-		//this is gross
+		//this is still a bit gross, but less gross than before
 		var/static/list/dangerous_fauna = typecacheof(list(/mob/living/simple_animal/hostile, /mob/living/carbon/alien, /mob/living/carbon/monkey))
-		if(!is_type_in_typecache(target_mob, dangerous_fauna))
+		if(!is_type_in_typecache(target_mob, dangerous_fauna) || faction_check("neutral", target_mob.faction))
 			return FALSE
 
-		if(ismonkey(target_mob))
-			var/mob/living/carbon/monkey/monke = target_mob
-			return monke.mode == MONKEY_HUNT && target(target_mob)
 		if(istype(target_mob, /mob/living/simple_animal/hostile/retaliate))
 			var/mob/living/simple_animal/hostile/retaliate/target_animal = target_mob
 			return length(target_animal.enemies) && target(target_mob)
@@ -525,8 +525,9 @@
 	//We know the target must be a human now
 	var/mob/living/carbon/human/target_carbon = target_mob
 
-	if(req_ship_access && (check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id)))
-		return FALSE
+	if(turret_respects_id)
+		if(req_ship_access && (check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id)))
+			return FALSE
 
 	if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
 		return target(target_carbon)
@@ -613,14 +614,11 @@
 	if(current_target)
 		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(set_target))
 
-/obj/machinery/porta_turret/proc/set_state(on, new_mode, new_flags)
-	if(locked)
-		return
-
+/obj/machinery/porta_turret/proc/set_state(on, new_lethal, new_flags)
 	if(!isnull(new_flags))
 		turret_flags = new_flags
 
-	lethal = new_mode
+	lethal = new_lethal
 	toggle_on(on)
 	power_change()
 

@@ -438,8 +438,9 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(drowsyness)
 		drowsyness = max(drowsyness - restingpwr, 0)
 		blur_eyes(2)
-		if(prob(5))
-			AdjustSleeping(100)
+		if(drowsyness > 20)
+			if(prob(round(drowsyness/10)))
+				AdjustSleeping(drowsyness)
 
 	//jitteriness
 	if(jitteriness)
@@ -583,7 +584,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				natural_change = (1 / (thermal_protection + 1)) * natural_change
 
 	// Apply the natural stabilization changes
-	adjust_bodytemperature(natural_change)
+	adjust_bodytemperature(natural_change, use_insulation=FALSE)
 
 /**
  * Get the insulation that is appropriate to the temperature you're being exposed to.
@@ -635,7 +636,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
  * * use_steps (optional) Use the body temp divisors and max change rates
  * * hardsuit_fix (optional) num HUMAN_BODYTEMP_NORMAL - H.bodytemperature Use hardsuit override until hardsuits fix is done...
  */
-/mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=INFINITY, use_insulation=FALSE, use_steps=FALSE, \
+/mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=INFINITY, use_insulation=TRUE, use_steps=FALSE, \
 											hardsuit_fix=FALSE)
 	// apply insulation to the amount of change
 	if(use_insulation)
