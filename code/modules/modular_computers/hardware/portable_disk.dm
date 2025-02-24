@@ -33,7 +33,8 @@
 	var/datum/computer_file/program/preinstalled_program
 
 /obj/item/computer_hardware/hard_drive/portable/installer/install_default_programs()
-	store_file(new preinstalled_program(src))
+	if(preinstalled_program)
+		store_file(new preinstalled_program(src))
 
 /obj/item/computer_hardware/hard_drive/portable/installer/lifeline
 	preinstalled_program = /datum/computer_file/program/radar/lifeline
