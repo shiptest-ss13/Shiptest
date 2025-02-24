@@ -72,8 +72,7 @@
 
 	if(cpu && cpu.obj_integrity <= cpu.integrity_failure * cpu.max_integrity)
 		. += "bsod"
-		. += "broken"
-		SSvis_overlays.add_vis_overlay(src, icon, "[icon_state]_broken", layer, plane, dir)
+		. += "computer_broken"
 
 /obj/machinery/modular_computer/AltClick(mob/user)
 	if(cpu)
