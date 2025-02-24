@@ -410,7 +410,7 @@
 		/obj/item/melee/sword/bone,
 		/obj/item/bodycamera,
 		/obj/item/binoculars,
-		/obj/item/emergency_oxygen,
+		/obj/item/tank/internals/emergency_oxygen,
 		))
 
 
