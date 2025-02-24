@@ -611,3 +611,57 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	chain_rate = 4
 	strength = 60
 
+
+
+///METEOR STORMS - explodes your ship if you go too fast
+/datum/overmap/event/meteor/debris
+	name = "debris field (moderate)"
+	desc = "An area full of scrap metal, going fast through here could prove dangerous"
+	base_icon_state = "debris_medium_"
+	default_color = "#b8ccbf"
+	chance_to_affect = 15
+	spread_chance = 50
+	chain_rate = 4
+	interference_power = 25
+	var/blocks_sight = TRUE
+
+	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
+
+/datum/overmap/event/meteor/debris/alter_token_appearance()
+	. = ..()
+	if(blocks_sight)
+		token.opacity = TRUE
+	current_overmap.post_edit_token_state(src)
+
+
+/datum/overmap/event/meteor/debris/minor
+	name = "debris field (minor)"
+	base_icon_state = "debris_light_"
+	chain_rate = 3
+	interference_power = 15
+
+	mountain_height_override = 0.85
+
+	blocks_sight = FALSE
+
+	meteor_types = list(
+		/obj/effect/meteor/dust=12,
+		/obj/effect/meteor/medium=4,
+	)
+
+	safe_speed = 5
+
+/datum/overmap/event/meteor/debris/major
+	name = "debris field (major)"
+	base_icon_state = "debris_major_"
+	spread_chance = 25
+	chain_rate = 6
+	interference_power = 35
+
+	mountain_height_override = 0.5
+
+	meteor_types = list(
+		/obj/effect/meteor/medium=50,
+		/obj/effect/meteor/big=25,
+		/obj/effect/meteor/flaming=10,
+	)

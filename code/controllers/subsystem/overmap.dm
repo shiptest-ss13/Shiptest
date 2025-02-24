@@ -52,7 +52,7 @@ SUBSYSTEM_DEF(overmap)
 	outposts = list()
 	events = list()
 
-	default_system = create_new_star_system(new /datum/overmap_star_system/shiptest)
+	default_system = create_new_star_system(new /datum/overmap_star_system/safezone)
 	return ..()
 
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)
