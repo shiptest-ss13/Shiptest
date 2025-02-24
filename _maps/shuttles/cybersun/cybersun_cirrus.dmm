@@ -997,7 +997,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ia" = (
-/obj/structure/table/glass,
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 6
 	},
@@ -1005,9 +1004,8 @@
 	color = "#E6D2BA";
 	dir = 1
 	},
-/obj/item/radio/intercom/wideband/table{
-	pixel_x = 4;
-	pixel_y = -1
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -1127,15 +1125,22 @@
 	dir = 1
 	},
 /obj/item/paper_bin{
-	pixel_y = 6;
-	pixel_x = 15
+	pixel_y = 7;
+	pixel_x = 11
 	},
 /obj/item/pen/sleepy{
 	pixel_y = 8;
-	pixel_x = 14
+	pixel_x = 13
 	},
-/obj/item/modular_computer/laptop/preset/civilian,
+/obj/item/modular_computer/laptop/preset/civilian{
+	pixel_x = -14;
+	pixel_y = 3
+	},
 /obj/item/computer_hardware/card_slot,
+/obj/item/radio/intercom/wideband/table{
+	pixel_x = 5;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "iq" = (
@@ -1251,6 +1256,10 @@
 /obj/item/clothing/mask/gas/syndicate{
 	pixel_x = 6
 	},
+/obj/item/healthanalyzer{
+	pixel_y = -9;
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
 "iR" = (
@@ -1344,6 +1353,10 @@
 	},
 /obj/item/clothing/mask/gas/syndicate{
 	pixel_x = 6
+	},
+/obj/item/healthanalyzer{
+	pixel_y = -9;
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
@@ -1512,7 +1525,7 @@
 	},
 /obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag{
 	name = "PC-82 'Himejoshi'";
-	desc = "A limited production run of the \"Himehabu\" catered towards Cybersun Executives. It has an engraving of two women kissing each other across the handle."
+	desc = "A limited production run of the 'Himehabu' catered towards Cybersun Executives. It has an engraving of two women kissing each other across the handle."
 	},
 /obj/item/ammo_box/magazine/m22lr_himehabu,
 /obj/item/ammo_box/magazine/m22lr_himehabu,
@@ -3527,8 +3540,8 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "JD" = (
-/obj/structure/chair/sofa/red/corpo/right/directional/west,
 /obj/item/radio/intercom/directional/west,
+/obj/structure/chair/sofa/red/corpo/right/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "JF" = (
@@ -3913,6 +3926,10 @@
 /obj/item/clothing/under/syndicate/gec{
 	pixel_x = -12;
 	pixel_y = -9
+	},
+/obj/item/clothing/suit/toggle/industrial{
+	pixel_x = 7;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)

@@ -70,9 +70,8 @@
 						/datum/reagent/lithium = 0.15,
 						/datum/reagent/medicine/atropine = 0.15,
 						/datum/reagent/drug/methamphetamine = 0.15,
-						/datum/reagent/drug/bath_salts = 0.15,
+						/datum/reagent/drug/mammoth = 0.15,
 						/datum/reagent/drug/crank = 0.15,
-						/datum/reagent/drug/krokodil = 0.15,
 						/datum/reagent/toxin/lipolicide = 0.15,
 						/datum/reagent/drug/nicotine = 0.1)
 	rarity = 69
