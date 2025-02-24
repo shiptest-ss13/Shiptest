@@ -7,6 +7,9 @@
 	nodamage = FALSE
 	flag = "bullet"
 
+	light_system = MOVABLE_LIGHT //we turn this off when gun is silenced
+	light_color = COLOR_VERY_SOFT_YELLOW
+
 	hitsound = "bullet_hit"
 	hitsound_non_living = "bullet_impact"
 	hitsound_glass = "bullet_hit_glass"

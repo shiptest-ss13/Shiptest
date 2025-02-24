@@ -386,6 +386,16 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
+/obj/item/gun/ballistic/automatic/marksman/f4/indie
+	name = "F3"
+	desc = "An older model of the F4 that was used in very early CLIP service. Sold off as surplus in the mid 470s. Chambered in .308."
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	icon_state = "f4_indie"
+	item_state = "f4_indie"
+
 /obj/item/gun/ballistic/automatic/marksman/f4/inteq
 	name = "\improper SsG-04"
 	desc = "An F4 rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."

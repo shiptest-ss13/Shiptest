@@ -333,3 +333,14 @@
 	price_max = 500
 	stock_min = 4
 	stock_max = 8
+
+/datum/blackmarket_item/ammo/f4_magazine
+	name = "F4 Magazine"
+	desc = "10 round .308 magazine for use in the F4 rifle and it's predecessor, the F3."
+	item = /obj/item/ammo_box/magazine/f4_308
+
+	price_min = 450
+	price_max = 650
+	stock_min = 2
+	stock_max = 6
+	availability_prob = 0
