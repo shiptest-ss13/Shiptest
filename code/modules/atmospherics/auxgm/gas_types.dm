@@ -205,7 +205,7 @@
 	specific_heat = 22
 	name = "Sulfur Dioxide"
 	flags = GAS_FLAG_DANGEROUS
-	moles_visible = MOLES_GAS_VISIBLE * 40
+	moles_visible = MOLES_GAS_VISIBLE * 60
 	gas_overlay = "generic"
 	color = "#d4cb28"
 	enthalpy = -296800
