@@ -300,6 +300,7 @@
 	icon_state = "clip_x11"
 	allow_post_reskins = FALSE
 	unique_reskin = null
+	can_flashlight = TRUE
 
 	supports_variations = VOX_VARIATION
 
@@ -314,6 +315,7 @@
 	icon_state = "clip_m10_vc"
 	allow_post_reskins = FALSE
 	unique_reskin = null
+	can_flashlight = TRUE
 
 	supports_variations = VOX_VARIATION
 
@@ -331,6 +333,7 @@
 
 	icon_state = "clip_m10_correspondant"
 	item_state = "clip_m10_correspondant"
+	can_flashlight = TRUE
 
 	supports_variations = VOX_VARIATION
 
