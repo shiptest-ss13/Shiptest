@@ -26,9 +26,11 @@
 	/// Bitflags (PROGRAM_CONSOLE, PROGRAM_LAPTOP, PROGRAM_TABLET combination) or PROGRAM_ALL
 	var/usage_flags = PROGRAM_ALL
 	/// Whether the program can be downloaded from NTNet. Set to 0 to disable.
-	var/available_on_ntnet = 1
+	var/available_on_ntnet = TRUE
 	/// Whether the program can be downloaded from SyndiNet (accessible via emagging the computer). Set to 1 to enable.
-	var/available_on_syndinet = 0
+	var/available_on_syndinet = FALSE
+	/// If the program deletes itself on clone
+	var/drm = FALSE
 	/// Name of the tgui interface
 	var/tgui_id
 	/// Example: "something.gif" - a header image that will be rendered in computer's UI when this program is running at background. Images are taken from /icons/program_icons. Be careful not to use too large images!
@@ -59,6 +61,8 @@
 	temp.requires_ntnet = requires_ntnet
 	temp.requires_ntnet_feature = requires_ntnet_feature
 	temp.usage_flags = usage_flags
+	if(drm)
+		qdel(src)
 	return temp
 
 // Relays icon update to the computer.

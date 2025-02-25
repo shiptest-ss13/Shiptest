@@ -26,3 +26,21 @@
 	power_usage = 40
 	icon_state = "datadisk3"
 	max_capacity = 256
+
+/obj/item/computer_hardware/hard_drive/portable/installer
+	name = "data disk program installer"
+	desc = "Contains a highly resistant digital rights managment..."
+	var/datum/computer_file/program/preinstalled_program
+
+/obj/item/computer_hardware/hard_drive/portable/installer/install_default_programs()
+	if(preinstalled_program)
+		store_file(new preinstalled_program(src))
+
+/obj/item/computer_hardware/hard_drive/portable/installer/lifeline
+	preinstalled_program = /datum/computer_file/program/radar/lifeline
+
+/obj/item/computer_hardware/hard_drive/portable/installer/secureye
+	preinstalled_program = /datum/computer_file/program/secureye
+
+/obj/item/computer_hardware/hard_drive/portable/installer/ntnetmonitor
+	preinstalled_program = /datum/computer_file/program/ntnetmonitor

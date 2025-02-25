@@ -252,3 +252,15 @@
 					/obj/item/clothing/shoes/sneakers/black)
 	crate_name = "spare jumpsuits crate"
 	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/civilian/lifeline
+	name = "A portable drive containing a new install of lifeline"
+	desc = "Contains a highly resistant digital rights managment..."
+	cost = 250
+	contains = list(/obj/item/computer_hardware/hard_drive/portable/installer/lifeline)
+
+/datum/supply_pack/civilian/secureye
+	name = "A portable drive containing a new install of secureye"
+	desc = "Contains a highly resistant digital rights managment..."
+	cost = 250
+	contains = list(/obj/item/computer_hardware/hard_drive/portable/installer/secureye)
