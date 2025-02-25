@@ -238,13 +238,12 @@ WS End */
 	results = list(/datum/reagent/medicine/tramal = 2) // these make me kinda wish i knew irl chem so i could have better recipes.
 	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/oxygen = 1)
 	required_catalysts = list(/datum/reagent/ammonia = 2)
-	required_temp = 300
+	required_temp = 340
 
 /datum/chemical_reaction/dimorlin
-	results = list(/datum/reagent/medicine/dimorlin = 2)
-	required_reagents = list(/datum/reagent/carbon = 6, /datum/reagent/diethylamine = 2, /datum/reagent/oxygen = 2, /datum/reagent/phenol = 2,)
+	results = list(/datum/reagent/medicine/dimorlin = 2, /datum/reagent/hydrogen = 2)
+	required_reagents = list(/datum/reagent/carbon = 3, /datum/reagent/diethylamine = 1, /datum/reagent/oxygen = 1, /datum/reagent/phenol = 1)
 	required_temp = 730
-	required_catalysts = list(/datum/reagent/hydrogen = 10)
 	mix_message = "The mixture rapidly incorporates, leaving a layer of liquid hydrogen atop!"
 
 /datum/chemical_reaction/modafinil
@@ -339,3 +338,15 @@ WS End */
 	results = list(/datum/reagent/carbon = 1)
 	required_reagents = list(/datum/reagent/medicine/chitosan = 1)
 	required_temp = 405
+
+/datum/chemical_reaction/stasis
+	results = list(/datum/reagent/medicine/stasis = 5)
+	required_reagents = list(/datum/reagent/phenol = 1, /datum/reagent/copper = 1, /datum/reagent/medicine/salglu_solution = 3)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
+	required_temp = 207
+
+/datum/chemical_reaction/carfen
+	results = list(/datum/reagent/medicine/carfencadrizine = 4)
+	required_reagents = list(/datum/reagent/medicine/dimorlin = 1, /datum/reagent/medicine/synaptizine = 1, /datum/reagent/consumable/sugar = 2)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 2)
+	required_temp = 127

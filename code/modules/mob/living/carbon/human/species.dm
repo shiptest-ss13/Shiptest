@@ -744,6 +744,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				var/icon_file = underwear.icon
 				if((H.dna.species.bodytype & BODYTYPE_KEPORI))
 					icon_file = KEPORI_UNDERWEAR_LEGS_PATH
+				if((H.dna.species.bodytype & BODYTYPE_VOX))
+					icon_file = VOX_UNDERWEAR_LEGS_PATH
 				if(underwear.has_digitigrade && (H.dna.species.bodytype & BODYTYPE_DIGITIGRADE))
 					icon_state += "_d"
 				underwear_overlay = mutable_appearance(icon_file, icon_state, -BODY_LAYER)
@@ -758,6 +760,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				var/icon_file = undershirt.icon
 				if((H.dna.species.bodytype & BODYTYPE_KEPORI))
 					icon_file = KEPORI_UNDERWEAR_TORSO_PATH
+				if((H.dna.species.bodytype & BODYTYPE_VOX))
+					icon_file = VOX_UNDERWEAR_TORSO_PATH
 				undershirt_overlay = mutable_appearance(icon_file, undershirt.icon_state, -BODY_LAYER)
 				if(!undershirt.use_static)
 					undershirt_overlay.color = "#" + H.undershirt_color
@@ -773,6 +777,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					icon_state += "_d"
 				if((H.dna.species.bodytype & BODYTYPE_KEPORI))
 					icon_file = KEPORI_UNDERWEAR_SOCKS_PATH
+				if((H.dna.species.bodytype & BODYTYPE_VOX))
+					icon_file = VOX_UNDERWEAR_SOCKS_PATH
 				socks_overlay = mutable_appearance(icon_file, icon_state, -BODY_LAYER)
 				if(!socks.use_static)
 					socks_overlay.color = "#" + H.socks_color

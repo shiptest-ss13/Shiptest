@@ -141,6 +141,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ngr
 	jetpack = null
 	greyscale_colors = list("#33353a", "#d9ad82", "#8c1a34")
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/plasmaman/ngr
 	name = "NGR phorid envirosuit helmet"
@@ -231,7 +232,6 @@
 	item_state = "ngr_balaclava"
 	icon = 'icons/obj/clothing/faction/ngr/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/mask.dmi'
-	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/mask/breath/ngr
 	name = "NGR face mask"

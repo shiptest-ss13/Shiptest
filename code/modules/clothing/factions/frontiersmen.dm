@@ -62,6 +62,15 @@
 	blood_overlay_type = "armor"
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	name = "\improper Frontiersmen reinforced armor vest"
+	desc = "A battletested piece of armor made of sturdy protective plates. This one is significantly tougher than similar vests."
+	icon_state = "frontier_armor"
+	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	blood_overlay_type = "armor"
+	supports_variations = VOX_VARIATION
+
 /obj/item/clothing/suit/armor/vest/marine/frontier
 	name = "light tactical armor vest"
 	desc = "A bulky set of stamped plasteel armor plates, coated with the intimidating grey of the Frontiersmen. If you have the time to inspect this vest, either you are about to die, or you have killed the one who wore it originally."

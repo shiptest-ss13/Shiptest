@@ -245,6 +245,7 @@
 	icon_living = "ancient_goliath"
 	icon_aggro = "ancient_goliath_alert"
 	icon_dead = "ancient_goliath_dead"
+	pre_attack_icon = "ancient_goliath_preattack"
 	maxHealth = 180
 	health = 180
 	speed = 4
