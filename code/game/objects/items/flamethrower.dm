@@ -87,32 +87,19 @@
 			flame_turf(target)
 
 /obj/item/flamethrower/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour == TOOL_WRENCH && !status)//Taking this apart
-		var/turf/T = get_turf(src)
-		if(weldtool)
-			weldtool.forceMove(T)
-			weldtool = null
-		if(igniter)
-			igniter.forceMove(T)
-			igniter = null
-		if(beaker)
-			beaker.forceMove(T)
-			beaker = null
-		new /obj/item/stack/rods(T)
-		qdel(src)
-		return
-
-	else if(W.tool_behaviour == TOOL_SCREWDRIVER && igniter && !lit)
+	if(W.tool_behaviour == TOOL_SCREWDRIVER && igniter && !lit)
 		status = !status
-		to_chat(user, "<span class='notice'>[igniter] is now [status ? "secured" : "unsecured"]!</span>")
+		to_chat(user, span_notice("[igniter] is now [status ? "secured" : "unsecured"]!"))
 		update_appearance()
 		return
 
 	else if(isigniter(W))
 		var/obj/item/assembly/igniter/I = W
-		if(I.secured)
-			return
 		if(igniter)
+			to_chat(user, span_notice("The [src] already has an igniter!"))
+			return
+		if(I.secured)
+			to_chat(user, span_notice("You need to unsecure \the [I] with a screwdriver first!"))
 			return
 		if(!user.transferItemToLoc(W, src))
 			return
@@ -157,7 +144,10 @@
 		to_chat(user, "<span class='notice'>Attach a fuel container first!</span>")
 		return
 	if(!status)
-		to_chat(user, "<span class='notice'>Secure the igniter first!</span>")
+		if(!igniter)
+			to_chat(user, span_notice("The [src] needs an igniter to function!"))
+		else if (!igniter.secured)
+			to_chat(user, span_notice("Secure the igniter with a screwdriver first!"))
 		return
 	to_chat(user, "<span class='notice'>You [lit ? "extinguish" : "ignite"] [src]!</span>")
 	lit = !lit
