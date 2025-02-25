@@ -50,6 +50,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"co" = (
+/obj/structure/cable,
+/obj/structure/salvageable/circuit_imprinter,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered)
 "cq" = (
 /obj/structure/curtain/cloth/grey,
 /obj/structure/cable{
@@ -87,16 +92,10 @@
 	light_range = 2
 	},
 /area/ruin/unpowered)
-"dy" = (
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/obj/effect/turf_decal/weather/sand{
-	dir = 1
-	},
+"cW" = (
 /obj/structure/hazard/radioactive,
-/turf/open/floor/plating/rust,
-/area/ruin/unpowered)
+/turf/open/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "dG" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
@@ -115,11 +114,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"dO" = (
-/obj/structure/cable,
-/obj/machinery/rnd/production/circuit_imprinter/department,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered)
 "dX" = (
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -137,11 +131,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"fd" = (
-/obj/structure/hazard/radioactive/waste,
-/obj/effect/decal/cleanable/greenglow,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "fj" = (
 /obj/effect/decal/cleanable/oil,
 /obj/structure/cable,
@@ -237,6 +226,16 @@
 /obj/item/book/manual/wiki/construction,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"kK" = (
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/effect/turf_decal/weather/sand{
+	dir = 1
+	},
+/obj/structure/hazard/radioactive,
+/turf/open/floor/plating/rust,
+/area/ruin/unpowered)
 "kP" = (
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
@@ -268,13 +267,6 @@
 "ma" = (
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plating,
-/area/ruin/unpowered)
-"mz" = (
-/obj/structure/cable,
-/obj/machinery/computer/rdconsole/core{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered)
 "mH" = (
 /obj/machinery/power/smes/shuttle/precharged{
@@ -358,6 +350,13 @@
 /obj/item/clothing/head/hardhat,
 /obj/item/multitool,
 /turf/open/floor/plasteel/dark,
+/area/ruin/unpowered)
+"pB" = (
+/obj/structure/cable,
+/obj/structure/salvageable/computer{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered)
 "pD" = (
 /obj/structure/cable{
@@ -462,11 +461,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered)
-"uk" = (
-/obj/structure/hazard/radioactive,
-/obj/effect/decal/cleanable/greenglow,
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "um" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -483,6 +477,17 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
+/area/ruin/unpowered)
+"wA" = (
+/obj/item/stack/ore/salvage/scrapbluespace/five,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/weldingtool/hugetank,
+/obj/structure/table,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered)
 "wC" = (
 /obj/effect/turf_decal/weather/sand{
@@ -661,10 +666,17 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"Ei" = (
-/obj/structure/hazard/radioactive,
-/turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+"EK" = (
+/obj/machinery/door/airlock/command/glass{
+	dir = 4;
+	name = "Bridge"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/carpet/nanoweave/orange,
+/area/ruin/unpowered)
 "EP" = (
 /obj/item/banner/engineering{
 	light_range = 2
@@ -707,17 +719,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"FP" = (
-/obj/item/stack/ore/salvage/scrapbluespace/five,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/stack/ore/hematite,
-/obj/item/weldingtool/hugetank,
-/obj/structure/table,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered)
 "Gj" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/asteroid/sand/dense/lit,
@@ -725,10 +726,6 @@
 "Gl" = (
 /turf/closed/wall/rust,
 /area/ruin/unpowered)
-"GE" = (
-/obj/structure/hazard/radioactive/stack,
-/turf/open/floor/plating/asteroid/sand/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "GJ" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -820,17 +817,6 @@
 	dir = 1
 	},
 /turf/open/floor/engine/airless,
-/area/ruin/unpowered)
-"Kp" = (
-/obj/machinery/door/airlock/command/glass{
-	name = "Bridge";
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/unpowered)
 "KL" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
@@ -1004,6 +990,10 @@
 "RD" = (
 /turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Sl" = (
+/obj/structure/hazard/radioactive/stack,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Sx" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1069,6 +1059,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"TI" = (
+/obj/structure/hazard/radioactive/waste,
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Uk" = (
 /turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -1150,6 +1145,11 @@
 	dir = 8
 	},
 /turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Xc" = (
+/obj/structure/hazard/radioactive,
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Xi" = (
 /obj/machinery/atmospherics/components/unary/passive_vent{
@@ -1284,7 +1284,7 @@ Bl
 dX
 dX
 mM
-fd
+TI
 Ae
 Ae
 Uk
@@ -1316,7 +1316,7 @@ Ae
 Bl
 dX
 DC
-Ei
+cW
 dX
 mM
 LI
@@ -1353,7 +1353,7 @@ DC
 DC
 dX
 Fp
-GE
+Sl
 Ae
 Ae
 Ae
@@ -1483,7 +1483,7 @@ Ae
 Pw
 Ae
 Uz
-uk
+Xc
 dX
 dX
 dX
@@ -1595,7 +1595,7 @@ Ae
 Ae
 Ae
 Ae
-dy
+kK
 jP
 zh
 Qw
@@ -1892,7 +1892,7 @@ RD
 RD
 iZ
 fT
-Kp
+EK
 tB
 tB
 Ae
@@ -1970,7 +1970,7 @@ ni
 Qw
 yf
 cy
-dO
+co
 qD
 Fd
 QY
@@ -2004,7 +2004,7 @@ Rj
 JW
 Qw
 sA
-mz
+pB
 qD
 dM
 Ae
@@ -2070,7 +2070,7 @@ Ae
 qD
 qD
 hL
-FP
+wA
 sN
 qD
 qD
