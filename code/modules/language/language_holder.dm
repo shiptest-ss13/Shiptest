@@ -378,6 +378,12 @@ Key procs
 							/datum/language/spider = list(LANGUAGE_ATOM),
 							/datum/language/buzzwords = list(LANGUAGE_ATOM))
 
+/datum/language_holder/human
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+								/datum/language/solarian = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+							/datum/language/solarian = list(LANGUAGE_ATOM))
+
 /datum/language_holder/empty
 	understood_languages = list()
 	spoken_languages = list()
