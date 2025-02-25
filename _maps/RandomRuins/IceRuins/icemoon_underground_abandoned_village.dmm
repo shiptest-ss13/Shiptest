@@ -23,9 +23,7 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/black,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "cB" = (
@@ -78,6 +76,16 @@
 "hI" = (
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/plating/ice/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
+"hY" = (
+/obj/structure/vein/ice/classthree{
+	vein_class = 4;
+	mining_charges = 30
+	},
+/obj/effect/landmark/mission_poi/main/drill{
+	mission_index = 2
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "iz" = (
 /obj/structure/fence/door/opened{
@@ -138,6 +146,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/mission_poi/main{
+	mission_index = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/powered)
 "mI" = (
@@ -204,9 +215,7 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/black,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "tg" = (
@@ -248,9 +257,7 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/black,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "us" = (
@@ -476,6 +483,13 @@
 /obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/carpet,
 /area/ruin/powered)
+"OI" = (
+/obj/effect/landmark/mission_poi/guard{
+	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals;
+	mission_index = 2
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "Pp" = (
 /obj/effect/spawner/random/vending/snack,
 /turf/open/floor/holofloor/wood,
@@ -981,7 +995,7 @@ Og
 Og
 Og
 zT
-Og
+OI
 Og
 zT
 Og
@@ -1070,9 +1084,9 @@ Vn
 Og
 zT
 Og
-Og
-Og
 Bq
+Og
+hY
 Og
 Og
 Og
