@@ -952,9 +952,7 @@
 
 	uniform = /obj/item/clothing/under/syndicate/ngr
 	belt = /obj/item/storage/belt/security/webbing/ngr
-	suit = /obj/item/clothing/suit/armor/ngr
 	gloves = /obj/item/clothing/gloves/color/black
-	head = /obj/item/clothing/head/helmet/ngr
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
