@@ -1316,7 +1316,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/landmark/observer_start,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -5466,21 +5465,9 @@
 /obj/structure/sign/poster/retro/lasergun_new{
 	pixel_x = -32
 	},
-/obj/item/storage/guncase/inherit{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
-/obj/item/ammo_box/magazine/m12g_bulldog,
-/obj/item/ammo_box/magazine/m12g_bulldog,
-/obj/item/storage/guncase/inherit{
-	pixel_x = -2;
-	pixel_y = 2
-	},
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
-/obj/item/ammo_box/magazine/m12g_bulldog,
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_y = -1
+/obj/item/storage/guncase/mastiff,
+/obj/item/storage/guncase/mastiff{
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -7662,10 +7649,7 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/guncase/pistol/inherit,
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
+/obj/item/storage/guncase/commissioner,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Ws" = (
@@ -8043,6 +8027,8 @@
 /obj/item/storage/belt/security/webbing/inteq/alt,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/clothing/head/inteq_peaked,
+/obj/item/storage/guncase/pistol/pinscher,
+/obj/item/storage/box/ammo/a44roum,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "YC" = (
