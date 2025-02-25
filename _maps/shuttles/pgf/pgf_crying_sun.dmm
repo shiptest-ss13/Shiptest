@@ -161,6 +161,12 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hangar/starboard)
+"bv" = (
+/obj/structure/chair/bench/blue{
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
 "bB" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/door/firedoor/border_only{
@@ -346,6 +352,9 @@
 "cQ" = (
 /obj/effect/spawner/bunk_bed,
 /obj/structure/curtain/cloth/grey,
+/obj/effect/turf_decal/corner_steel_grid/full{
+	dir = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "cR" = (
@@ -2087,13 +2096,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "rd" = (
+/obj/structure/curtain/cloth/grey,
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
 	},
 /obj/effect/spawner/bunk_bed{
-	dir = 4
+	dir = 1
 	},
-/obj/structure/curtain/cloth/grey,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "rj" = (
@@ -3630,6 +3639,14 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/mono,
 /area/ship/hangar/starboard)
+"Ed" = (
+/obj/effect/spawner/bunk_bed,
+/obj/structure/curtain/cloth/grey,
+/obj/effect/turf_decal/corner_steel_grid/full{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "Eg" = (
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
@@ -4831,6 +4848,14 @@
 /obj/effect/turf_decal/etherbor/right,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
+"MK" = (
+/obj/effect/spawner/bunk_bed,
+/obj/structure/curtain/cloth/grey,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "ML" = (
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 4
@@ -5534,13 +5559,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Ri" = (
+/obj/structure/chair/bench/blue{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 4
 	},
-/obj/effect/spawner/bunk_bed{
-	dir = 4
-	},
-/obj/structure/curtain/cloth/grey,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "Rl" = (
@@ -7105,8 +7129,8 @@ uJ
 "}
 (12,1,1) = {"
 eE
-cQ
-cQ
+Ed
+MK
 cQ
 Vp
 wm
@@ -7217,7 +7241,7 @@ xz
 "}
 (16,1,1) = {"
 xz
-xz
+bv
 eR
 Ps
 ow
