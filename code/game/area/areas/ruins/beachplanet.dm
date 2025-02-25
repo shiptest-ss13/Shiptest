@@ -1,27 +1,4 @@
-//tropical ruins here
-
-//Beachside Town
-
-/area/ruin/beach/oceantown
-	name = "Beachside Town"
-	icon_state = "dk_yellow"
-	mood_bonus = 10
-	mood_message = "<span class='nicegreen''>I feel serene. This place is so peaceful. </span>\n"
-	always_unpowered = FALSE
-
-/area/ruin/beach/oceantown/hotel
-	name = "Beachside Hotel"
-	icon_state = "green"
-
-/area/ruin/beach/oceantown/bar
-	name = "Beachside bar"
-	icon_state = "crew_quarters"
-
-/area/ruin/beach/oceantown/shop
-	name = "Beachside Shop"
-	icon_state = "red"
-
-/area/ruin/beach/oceantown/house
+//beach ruins here
 
 //Ancient Complex
 
@@ -57,13 +34,20 @@
 	name = "Pirate Cavern"
 	icon_state = "purple"
 
-//beach_float_resort --> keeping resort open for a land based ruin
+// bunkerg
 
-/area/ruin/beach/float_resort
-	name = "Beach Resort"
-	icon_state = "yellow"
-	always_unpowered = FALSE
+/area/ruin/beach/bunker
+	name = "Frontiersmen Bunker"
+	icon_state = "hallC"
 
-/area/ruin/beach/float_resort/villa
-	name = "Resort Villa"
+/area/ruin/beach/bunker/office
+	icon_state = "purple"
+
+/area/ruin/beach/bunker/living
+	icon_state = "crew_quarters"
+
+/area/ruin/beach/bunker/side_one
+	icon_state = "red"
+
+/area/ruin/beach/bunker/side_two
 	icon_state = "green"

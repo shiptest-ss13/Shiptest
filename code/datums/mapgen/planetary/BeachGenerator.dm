@@ -17,7 +17,7 @@
 			BIOME_LOW_HUMIDITY = /datum/biome/ocean,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/beach,
 			BIOME_HIGH_HUMIDITY = /datum/biome/grass/dense,
-			BIOME_HIGHEST_HUMIDITY = /datum/biome/jungle/dense
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/beach_jungle
 		),
 		BIOME_WARM = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/ocean/deep,
@@ -200,3 +200,26 @@
 		/mob/living/simple_animal/slime/pet = 1,
 		/mob/living/simple_animal/hostile/lightgeist = 1
 	)
+
+/datum/biome/beach_jungle
+	flora_spawn_chance = 100
+	open_turf_types = list(/turf/open/floor/plating/grass/beach/lit = 1, /turf/open/floor/plating/dirt/beach/lit = 9)
+	flora_spawn_list = list(
+		/obj/structure/flora/grass/jungle = 1,
+		/obj/structure/flora/grass/jungle/b = 1,
+		/obj/structure/flora/tree/jungle = 5,
+		/obj/structure/flora/rock/jungle = 1,
+		/obj/structure/flora/junglebush = 1,
+		/obj/structure/flora/junglebush/b = 1,
+		/obj/structure/flora/junglebush/c = 1,
+		/obj/structure/flora/junglebush/large = 1,
+		/obj/structure/spacevine/dense = 20,
+		/obj/structure/flora/ash/garden = 1,
+	)
+	mob_spawn_chance = 0.6
+	mob_spawn_list = list(
+		/mob/living/simple_animal/hostile/gorilla = 1,
+		/mob/living/carbon/monkey = 6,
+		/mob/living/simple_animal/hostile/retaliate/chicken = 4,
+		/obj/effect/spawner/random/chicken/jungle/flock = 1
+		)
