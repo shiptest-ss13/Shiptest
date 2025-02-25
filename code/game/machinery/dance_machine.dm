@@ -448,7 +448,7 @@
 	QDEL_LIST(spotlights)
 	QDEL_LIST(sparkles)
 
-/obj/machinery/jukebox/process()
+/obj/machinery/jukebox/process(seconds_per_tick)
 	if(active && world.time >= stop) //WS Edit Cit #7367
 		active = FALSE
 		dance_over()
@@ -456,7 +456,7 @@
 		update_appearance()
 		stop = world.time + 100
 
-/obj/machinery/jukebox/disco/process()
+/obj/machinery/jukebox/disco/process(seconds_per_tick)
 	. = ..()
 	if(active)
 		for(var/mob/living/dancer in rangers)

@@ -16,7 +16,7 @@
 		if(bomb.timing)
 			. += "Extreme danger. Arming signal detected. Time remaining: [bomb.get_time_left()]."
 
-/obj/item/pinpointer/nuke/process()
+/obj/item/pinpointer/nuke/process(seconds_per_tick)
 	..()
 	if(active) // If shit's going down
 		for(var/obj/machinery/nuclearbomb/bomb in GLOB.nuke_list)

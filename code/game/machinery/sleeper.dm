@@ -109,7 +109,7 @@
 		target.remove_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
 		playsound(src, 'sound/machines/synth_no.ogg', 50, TRUE, frequency = rand(5120, 8800))
 
-/obj/machinery/sleeper/process()
+/obj/machinery/sleeper/process(seconds_per_tick)
 	if(!occupant || !isliving(occupant))
 		if(use_static_power != IDLE_POWER_USE)
 			set_idle_power()

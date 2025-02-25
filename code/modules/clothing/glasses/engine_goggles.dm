@@ -74,7 +74,7 @@
 /obj/item/clothing/glasses/meson/engine/attack_self(mob/user)
 	toggle_mode(user, TRUE)
 
-/obj/item/clothing/glasses/meson/engine/process()
+/obj/item/clothing/glasses/meson/engine/process(seconds_per_tick)
 	if(!ishuman(loc))
 		return
 	var/mob/living/carbon/human/user = loc

@@ -24,7 +24,7 @@
 	start_time = world.time
 	QDEL_IN(src, 5 SECONDS) // vanishes after 5 seconds
 
-/obj/singularity/boh_tear/process()
+/obj/singularity/boh_tear/process(seconds_per_tick)
 	//Backup to catch timerss errors
 	if(start_time + (10 SECONDS) < world.time)
 		stack_trace("The timer subsytem isn't firing properly, yell at your local coders posthaste")

@@ -352,7 +352,7 @@
 	if(mech_unique_action)
 		. += "This mech has a special action you can activate by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 //processing internal damage, temperature, air regulation, alert updates, lights power use.
-/obj/mecha/process()
+/obj/mecha/process(seconds_per_tick)
 	var/internal_temp_regulation = 1
 
 	if(internal_damage)

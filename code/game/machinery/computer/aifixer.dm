@@ -76,7 +76,7 @@
 			to_chat(occupier, "<span class='warning'>Your Subspace Transceiver has been enabled!</span>")
 	return occupier.health < 100
 
-/obj/machinery/computer/aifixer/process()
+/obj/machinery/computer/aifixer/process(seconds_per_tick)
 	if(..())
 		if(restoring)
 			var/oldstat = occupier.stat

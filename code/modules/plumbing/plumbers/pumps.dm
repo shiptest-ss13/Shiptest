@@ -13,8 +13,8 @@
 	rcd_cost = 30
 	rcd_delay = 40
 
-	///units we pump per process (2 seconds)
-	var/pump_power = 2
+	///units we pump per process
+	var/pump_power = 1
 	///set to true if the loop couldnt find a geyser in process, so it remembers and stops checking every loop until moved. more accurate name would be absolutely_no_geyser_under_me_so_dont_try
 	var/geyserless = FALSE
 	///The geyser object
@@ -34,7 +34,7 @@
 		update_appearance()
 		geyserless = FALSE //we switched state, so lets just set this back aswell
 
-/obj/machinery/plumbing/liquid_pump/process()
+/obj/machinery/plumbing/liquid_pump/process(seconds_per_tick)
 	if(!anchored || panel_open || geyserless)
 		return
 
@@ -48,13 +48,13 @@
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 50)
 			return
 
-	pump()
+	pump(seconds_per_tick)
 
 ///pump up that sweet geyser nectar
-/obj/machinery/plumbing/liquid_pump/proc/pump()
+/obj/machinery/plumbing/liquid_pump/proc/pump(seconds_per_tick)
 	if(!geyser || !geyser.reagents)
 		return
-	geyser.reagents.trans_to(src, pump_power)
+	geyser.reagents.trans_to(src, pump_power * seconds_per_tick)
 
 /obj/machinery/plumbing/liquid_pump/update_icon_state()
 	if(geyser)

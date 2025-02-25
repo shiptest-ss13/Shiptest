@@ -48,12 +48,12 @@
 /datum/radiation_wave/proc/is_valid_rad_turf(turf/r_turf)
 	return r_turf && !r_turf.rad_fullblocker
 
-/datum/radiation_wave/process()
+/datum/radiation_wave/process(seconds_per_tick)
 	master_turf = get_step(master_turf, move_dir)
 	if(!is_valid_rad_turf(master_turf))
 		qdel(src)
 		return
-	steps++
+	steps += seconds_per_tick
 
 	var/strength
 	if(steps>1)

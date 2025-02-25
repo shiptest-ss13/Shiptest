@@ -197,10 +197,10 @@ Class Procs:
 /obj/machinery/proc/locate_machinery()
 	return
 
-/obj/machinery/process()//If you dont use process or power why are you here
+/obj/machinery/process(seconds_per_tick)//If you dont use process or power why are you here
 	return PROCESS_KILL
 
-/obj/machinery/proc/process_atmos()//If you dont use process why are you here
+/obj/machinery/proc/process_atmos(seconds_per_tick)//If you dont use process why are you here
 	return PROCESS_KILL
 
 

@@ -1,4 +1,5 @@
-#define WELDER_FUEL_BURN_INTERVAL 13
+/// How many seconds between each fuel depletion tick ("use" proc)
+#define WELDER_FUEL_BURN_INTERVAL 26
 /obj/item/weldingtool
 	name = "welding tool"
 	desc = "A standard welder, used for cutting through metal."
@@ -73,7 +74,7 @@
 		. += "[initial(icon_state)]-on"
 
 
-/obj/item/weldingtool/process()
+/obj/item/weldingtool/process(seconds_per_tick)
 	switch(welding)
 		if(0)
 			force = 3
@@ -86,7 +87,7 @@
 		if(1)
 			force = 15
 			damtype = "fire"
-			++burned_fuel_for
+			burned_fuel_for += seconds_per_tick
 			if(burned_fuel_for >= WELDER_FUEL_BURN_INTERVAL)
 				use(1)
 			update_appearance()
@@ -186,8 +187,9 @@
 	if(!isOn() || !check_fuel())
 		return FALSE
 
-	if(used)
+	if(used > 0)
 		burned_fuel_for = 0
+
 	if(get_fuel() >= used)
 		reagents.remove_reagent(/datum/reagent/fuel, used)
 		check_fuel()
@@ -335,7 +337,7 @@
 	change_icons = 0
 	wall_decon_damage = 500
 
-/obj/item/weldingtool/abductor/process()
+/obj/item/weldingtool/abductor/process(seconds_per_tick)
 	if(get_fuel() <= max_fuel)
 		reagents.add_reagent(/datum/reagent/fuel, 1)
 	..()
