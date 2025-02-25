@@ -101,3 +101,9 @@
 		cam_background.icon_state = "clear"
 		cam_background.fill_rect(1, 1, size_x, size_y)
 		return TRUE
+
+/obj/overmap/examine()
+	. = ..()
+	var/datum/overmap/dynamic/OE = parent
+	if(istype(OE) && !OE.preserve_level)
+		. += "<span class='notice'>It may not still be here if you leave it.</span>"
