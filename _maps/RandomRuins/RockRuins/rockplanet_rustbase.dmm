@@ -2049,7 +2049,8 @@
 /area/ruin/rockplanet/rust_base/engine_two)
 "tI" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
-	name = "'Armored' O. Ray"
+	name = "'Armored' O. Ray";
+	deathsound = 'sound/creatures/newtype.ogg'
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
