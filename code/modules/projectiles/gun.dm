@@ -216,11 +216,6 @@
 	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
 	var/recoil_deviation = 22.5
 
-	///Used if the guns recoil is lower then the min, it clamps the highest recoil
-	var/min_recoil = 0
-	///if we want a min recoil (or lack of it) whilst aiming
-	var/min_recoil_aimed = 0
-
 	var/gunslinger_recoil_bonus = 0
 	var/gunslinger_spread_bonus = 0
 
@@ -853,7 +848,7 @@
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
-	return clamp(recoil_bonus, min_recoil , INFINITY)
+	return clamp(recoil_bonus, 0 , INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0
@@ -1036,7 +1031,6 @@
 
 	var/obj/item/gun/gun = target
 	gun.zoom(owner, owner.dir)
-	gun.min_recoil = gun.min_recoil_aimed
 
 /datum/action/toggle_scope_zoom/Remove(mob/user)
 	if(!istype(target, /obj/item/gun))
@@ -1071,13 +1065,11 @@
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate))
 		ADD_TRAIT(user, TRAIT_AIMING, ref(src))
 		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direc)
-		min_recoil = min_recoil_aimed
 		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/aiming, multiplicative_slowdown = aimed_wield_slowdown)
 	else
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		REMOVE_TRAIT(user, TRAIT_AIMING, ref(src))
 		user.client.view_size.zoomIn()
-		min_recoil = initial(min_recoil)
 		user.remove_movespeed_modifier(/datum/movespeed_modifier/aiming)
 	return zoomed
 

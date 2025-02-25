@@ -224,7 +224,7 @@
 	suit = /obj/item/clothing/suit/frontiersmen
 	suit_store = null
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/storage/firstaid/regular, /obj/item/ammo_box/magazine/m9mm_mauler = 2, /obj/item/gun/ballistic/automatic/pistol/mauler)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/storage/firstaid/regular, /obj/item/ammo_box/magazine/m9mm_mauler/extended = 2, /obj/item/gun/ballistic/automatic/pistol/mauler)
 
 /datum/outfit/job/frontiersmen/ert/medic/heavy
 	name = "ERT - Frontiersman Medic (Shock Troop)"
@@ -236,7 +236,7 @@
 	belt = /obj/item/storage/belt/medical/webbing/frontiersmen/combat
 	glasses = /obj/item/clothing/glasses/hud/health
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/storage/firstaid/medical=1, /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 3, /obj/item/ammo_box/magazine/m9mm_mauler=2)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/storage/firstaid/medical=1, /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 3, /obj/item/ammo_box/magazine/m9mm_mauler/extended=2)
 
 /datum/outfit/job/frontiersmen/ert/engineer
 	name = "ERT - Frontiersman Engineer"

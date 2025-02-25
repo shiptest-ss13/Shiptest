@@ -67,6 +67,10 @@
 	select_name = "kill"
 	delay = 0.13 SECONDS
 
+/obj/item/ammo_casing/energy/laser/sharplite/smg/wasp
+	delay = 0.1 SECONDS
+	fire_sound = 'sound/weapons/laser4.ogg'
+
 /obj/item/ammo_casing/energy/lasergun/old
 	projectile_type = /obj/projectile/beam/laser
 	e_cost = 2000

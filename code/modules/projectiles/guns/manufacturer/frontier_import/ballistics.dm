@@ -6,19 +6,22 @@
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 
-	icon_state = "mauler"
+	icon_state = "mauler_mp"
 	item_state = "hp_generic"
-	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler/extended
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_mauler,
+		/obj/item/ammo_box/magazine/m9mm_mauler/extended,
 	)
 	fire_delay = 0.06 SECONDS
 
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
-	spread = 25
-	spread_unwielded = 50
+	show_magazine_on_sprite = FALSE //hard coded
+
+	spread = 24
+	spread_unwielded = 44
 	recoil = 1
 	recoil_unwielded = 4
 	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
@@ -51,15 +54,43 @@
 		)
 	)
 
-/obj/item/gun/ballistic/automatic/pistol/mauler/ComponentInitialize()
+/obj/item/gun/ballistic/automatic/pistol/mauler/update_overlays()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.06 SECONDS)
+	if (magazine)
+		. += "mauler_mag_[magazine.base_icon_state]"
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/regular
+	name = "Mauler pistol"
+	desc = "A toned down semi-auto version of the Mauler. Still fast to fire still with better accuracy than it's auto counterpart, but it's still innaccurate compared to most modern pistols. Chambered in 9mm."
+
+	icon_state = "mauler"
+
+	spread = 8
+	spread_unwielded = 15
+	recoil = 0
+	recoil_unwielded = 4
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler
+
+	fire_delay = 0.12 SECONDS
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
 
 /obj/item/ammo_box/magazine/m9mm_mauler
-	name = "mauler machine pistol magazine (9mm)"
-	desc = "A 12-round magazine designed for the Mauler machine pistol."
+	name = "mauler pistol magazine (9mm)"
+	desc = "A 8-round magazine designed for the Mauler pistol."
 	icon_state = "mauler_mag-1"
 	base_icon_state = "mauler_mag"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/m9mm_mauler/extended
+	name = "mauler machine pistol extended magazine (9mm)"
+	desc = "A 12-round magazine designed for the Mauler machine pistol."
+	icon_state = "mauler_extended_mag-1"
+	base_icon_state = "mauler_extended_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 12

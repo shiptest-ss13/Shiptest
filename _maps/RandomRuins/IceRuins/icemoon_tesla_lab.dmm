@@ -1,10 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ab" = (
-/obj/machinery/porta_turret/ruin/frontiersmen{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/icemoon/tesla_lab/turrets)
 "ac" = (
 /obj/effect/decal/cleanable/blood/splatter/over_window{
 	icon_state = "floor2"
@@ -1962,6 +1956,20 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo)
+"hM" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/item/spacecash/bundle/mediumrand,
+/obj/item/spacecash/bundle/mediumrand,
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 8
+	},
+/obj/item/ammo_box/magazine/m9mm_mauler/extended,
+/obj/item/ammo_box/magazine/m9mm_mauler/extended,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/icemoon/tesla_lab/haymaker)
 "hN" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 1
@@ -2375,10 +2383,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
-"jM" = (
-/obj/machinery/porta_turret/ruin/frontiersmen/light,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/icemoon/tesla_lab/turrets)
 "jV" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 8
@@ -6029,6 +6033,12 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
+"yr" = (
+/obj/machinery/porta_turret/ruin/frontiersmen{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/tesla_lab/turrets)
 "ys" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -9351,6 +9361,10 @@
 "Ly" = (
 /turf/open/floor/pod/dark,
 /area/ruin/icemoon/tesla_lab/cargo)
+"Lz" = (
+/obj/machinery/porta_turret/ruin/frontiersmen,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/tesla_lab/turrets)
 "LA" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line,
 /obj/machinery/light/directional/south,
@@ -9755,6 +9769,10 @@
 /obj/structure/platform/industrial/corner,
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
+"NE" = (
+/obj/machinery/porta_turret/ruin/frontiersmen/light,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/tesla_lab/turrets)
 "NG" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 4
@@ -12548,10 +12566,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
-"YV" = (
-/obj/machinery/porta_turret/ruin/frontiersmen,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/icemoon/tesla_lab/turrets)
 "YY" = (
 /obj/effect/turf_decal/trimline/opaque/purple/line{
 	dir = 1
@@ -12614,20 +12628,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
-"Zd" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/item/spacecash/bundle/mediumrand,
-/obj/item/spacecash/bundle/mediumrand,
-/obj/structure/filingcabinet/double{
-	dir = 8;
-	pixel_x = 8
-	},
-/obj/item/ammo_box/magazine/m9mm_mauler,
-/obj/item/ammo_box/magazine/m9mm_mauler,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/icemoon/tesla_lab/haymaker)
 "Zi" = (
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -13001,7 +13001,7 @@ Fv
 FE
 Bi
 PH
-ab
+yr
 PH
 Fv
 Xl
@@ -13261,7 +13261,7 @@ tC
 Kb
 Fv
 Fv
-jM
+NE
 PH
 Pd
 TM
@@ -13767,7 +13767,7 @@ SK
 SK
 SK
 cM
-YV
+Lz
 PH
 Pd
 cM
@@ -14647,7 +14647,7 @@ vV
 Mo
 SD
 Fv
-YV
+Lz
 PH
 Ro
 cM
@@ -15523,7 +15523,7 @@ TT
 dm
 He
 gd
-Zd
+hM
 CB
 Bb
 dm

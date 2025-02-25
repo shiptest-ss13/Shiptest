@@ -264,7 +264,7 @@
 
 /obj/item/storage/belt/security/military/frontiersmen/mauler_mp_ammo/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m9mm_mauler(src)
+		new /obj/item/ammo_box/magazine/m9mm_mauler/extended(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/spitter_ammo/PopulateContents()

@@ -19,8 +19,6 @@
 	// when we load the gun, should it instantly chamber the next round?
 	var/always_chambers = FALSE
 
-	min_recoil = 0.1
-
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,
