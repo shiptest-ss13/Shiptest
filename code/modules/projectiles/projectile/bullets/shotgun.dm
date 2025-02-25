@@ -98,6 +98,8 @@
 		damage -= tile_dropoff
 	if(stamina > 0)
 		stamina -= tile_dropoff_stamina
+	if(accuracy_mod < 3)
+		accuracy_mod += 0.3
 	if(damage < 0 && stamina < 0)
 		qdel(src)
 

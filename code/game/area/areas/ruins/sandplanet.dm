@@ -9,15 +9,15 @@
 
 //the pubby slop crash
 /area/ruin/whitesands/pubbycrash
-	name = "Pubby-Class Wreckage"
+	name = "Pubby-class Wreckage"
 	icon_state = "bluenew"
 
 /area/ruin/whitesands/pubbycrash/engine_room
-	name = "Pubby-Class Engine Room"
+	name = "Pubby-class Engine Room"
 	icon_state = "green"
 
 /area/ruin/whitesands/pubbycrash/split
-	name = "Pubby-Class Chunk"
+	name = "Pubby-class Chunk"
 	icon_state = "red"
 
 //e-11 manufactory
