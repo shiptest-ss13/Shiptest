@@ -381,7 +381,15 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/closet/crate,
+/obj/structure/closet/crate{
+	name = "boarding saw crate"
+	},
+/obj/item/gear_pack/anglegrinder,
+/obj/item/radio/headset/pgf/alt,
+/obj/item/clothing/glasses/welding{
+	pixel_y = -1;
+	pixel_x = 1
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "S" = (
