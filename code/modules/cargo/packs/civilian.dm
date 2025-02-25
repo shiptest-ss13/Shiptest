@@ -252,3 +252,11 @@
 					/obj/item/clothing/shoes/sneakers/black)
 	crate_name = "spare jumpsuits crate"
 	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/civilian/broadcast_camera
+	name = "Broadcast Camera Crate"
+	desc = "Lights, Camera, Action! This consumer-grade broadcasting camera automatically streams to entertainment monitors across the sector. Not rated for use in actual combat."
+	cost = 500
+	contains = list(/obj/item/bodycamera/broadcast_camera)
+	crate_name = "broadcast camera crate"
+	crate_type = /obj/structure/closet/crate
