@@ -908,7 +908,6 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/syndicate
-	r_pocket = /obj/item/melee/knife/survival
 	back = /obj/item/storage/backpack
 	id = /obj/item/card/id/syndicate_command/crew_id
 
