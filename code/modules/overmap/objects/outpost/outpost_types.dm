@@ -25,6 +25,8 @@
 /datum/map_template/outpost/elevator_ice
 	name = "elevator_ice"
 
+/datum/map_template/outpost/elevator_ocean
+	name = "elevator_ocean"
 
 /*
 	Independent Space Outpost //creative name!
@@ -89,6 +91,38 @@
 	dock_height = 40
 
 /*
+	Independent Ocean Outpost //is water wet?
+*/
+/datum/map_template/outpost/inteq_ocean
+	name = "inteq_ocean"
+
+/datum/map_template/outpost/hangar/inteq_ocean_20x20
+	name = "hangar/inteq_ocean_20x20"
+	dock_width = 20
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/inteq_ocean_40x20
+	name = "hangar/inteq_ocean_40x20"
+	dock_width = 40
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/inteq_ocean_40x40
+	name = "hangar/inteq_ocean_40x40"
+	dock_width = 40
+	dock_height = 40
+
+/datum/map_template/outpost/hangar/inteq_ocean_56x20
+	name = "hangar/inteq_ocean_56x20"
+	dock_width = 56
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/inteq_ocean_56x40
+	name = "hangar/inteq_ocean_56x40"
+	dock_width = 56
+	dock_height = 40
+
+
+/*
 	/datum/overmap/outpost subtypes
 */
 
@@ -110,6 +144,18 @@
 		/datum/map_template/outpost/hangar/nt_ice_56x40
 	)
 	faction = /datum/faction/nt
+
+/datum/overmap/outpost/inteq_ocean
+	token_icon_state = "station_asteroid_0"
+	main_template = /datum/map_template/outpost/inteq_ocean
+	elevator_template = /datum/map_template/outpost/elevator_ocean
+	hangar_templates = list(
+		/datum/map_template/outpost/hangar/inteq_ocean_20x20,
+		/datum/map_template/outpost/hangar/inteq_ocean_40x20,
+		/datum/map_template/outpost/hangar/inteq_ocean_40x40,
+		/datum/map_template/outpost/hangar/inteq_ocean_56x20,
+		/datum/map_template/outpost/hangar/inteq_ocean_56x40
+	)
 
 /datum/overmap/outpost/no_main_level // For example and adminspawn.
 	main_template = null
