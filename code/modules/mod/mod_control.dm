@@ -215,10 +215,12 @@
 			. += span_notice("You could remove [ai] with an <b>intellicard</b>.")
 		else
 			. += span_notice("You could install an AI with an <b>intellicard</b>.")
+	. += span_notice("You could <b>ctrl-click<b> the [src] to quick activate or deactivate the suit.")
 
 /obj/item/mod/control/examine_more(mob/user)
 	. = ..()
-	. += "<i>[extended_desc]</i>"
+	if(extended_desc)
+		. += "<i>[extended_desc]</i>"
 
 /obj/item/mod/control/process(delta_time)
 	if(seconds_electrified > MACHINE_NOT_ELECTRIFIED)
@@ -609,7 +611,7 @@
 	core.update_charge_alert()
 
 /obj/item/mod/control/proc/update_speed()
-	var/list/all_parts = mod_parts + src
+	var/list/all_parts = mod_parts
 	for(var/obj/item/part as anything in all_parts)
 		part.slowdown = (active ? slowdown_active : slowdown_inactive) / length(all_parts)
 	wearer?.update_equipment_speed_mods()
@@ -711,3 +713,5 @@
 	if(overslot != overslotting_parts[source])
 		return
 	overslotting_parts[source] = null
+
+
