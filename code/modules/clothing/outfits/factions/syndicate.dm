@@ -908,15 +908,11 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/syndicate
-	r_pocket = /obj/item/melee/knife/survival
-	belt = /obj/item/storage/belt/military
 	back = /obj/item/storage/backpack
-	suit = /obj/item/clothing/suit/armor/vest
 	id = /obj/item/card/id/syndicate_command/crew_id
 
 	ears = /obj/item/radio/headset/alt
 	gloves = /obj/item/clothing/gloves/color/black
-	head = /obj/item/clothing/head/helmet/sec
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
@@ -930,10 +926,7 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/syndicate/hardliners
-	belt = /obj/item/storage/belt/security/webbing/hardliners
-	suit = /obj/item/clothing/suit/armor/hardliners
 	gloves = /obj/item/clothing/gloves/color/black
-	head = /obj/item/clothing/head/helmet/hardliners
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
@@ -951,10 +944,7 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/syndicate/ngr
-	belt = /obj/item/storage/belt/security/webbing/ngr
-	suit = /obj/item/clothing/suit/armor/ngr
 	gloves = /obj/item/clothing/gloves/color/black
-	head = /obj/item/clothing/head/helmet/ngr
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
