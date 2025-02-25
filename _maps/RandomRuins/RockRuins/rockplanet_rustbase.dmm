@@ -112,7 +112,8 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "bj" = (
 /obj/machinery/porta_turret/ship/ramzi/heavy{
-	id = "rustguns"
+	id = "rustguns";
+	lethal = 1
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/bridge)
@@ -1526,7 +1527,8 @@
 "oF" = (
 /obj/structure/cable,
 /obj/machinery/porta_turret/ship/ramzi/heavy{
-	id = "rustguns"
+	id = "rustguns";
+	lethal = 1
 	},
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/rust_base)
@@ -2047,7 +2049,7 @@
 /area/ruin/rockplanet/rust_base/engine_two)
 "tI" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
-	name = "\"Armored\" O. Ray"
+	name = "\ "Armored\ " O. Ray"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
@@ -2376,7 +2378,8 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/porta_turret/ship/ramzi/heavy{
-	id = "rustguns"
+	id = "rustguns";
+	lethal = 1
 	},
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/rust_base)
@@ -4794,7 +4797,8 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/porta_turret/ship/ramzi/heavy{
-	id = "rustguns"
+	id = "rustguns";
+	lethal = 1
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -4840,7 +4844,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/porta_turret/ship/ramzi/heavy{
-	id = "rustguns"
+	id = "rustguns";
+	lethal = 1
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base/armory)
@@ -5036,7 +5041,7 @@
 /obj/item/reagent_containers/condiment/saltshaker,
 /obj/effect/decal/cleanable/food/salt,
 /mob/living/simple_animal/hostile/human/ramzi/civilian{
-	name = "Kaiser \"Shy\" Dan"
+	name = "Kaiser \ "Shy\ " Dan"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base)
