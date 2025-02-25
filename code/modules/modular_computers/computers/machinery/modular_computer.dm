@@ -62,10 +62,6 @@
 	. = ..()
 	set_light(cpu?.enabled ? light_strength : 0)
 
-/obj/machinery/modular_computer/update_icon_state()
-	icon_state = (cpu?.enabled || (!(machine_stat & NOPOWER) && cpu?.use_power())) ? icon_state_powered : icon_state_unpowered
-	return ..()
-
 /obj/machinery/modular_computer/update_overlays()
 	. = ..()
 	if(!cpu?.enabled)
@@ -76,7 +72,7 @@
 
 	if(cpu && cpu.obj_integrity <= cpu.integrity_failure * cpu.max_integrity)
 		. += "bsod"
-		. += "broken"
+		. += "computer_broken"
 
 /obj/machinery/modular_computer/AltClick(mob/user)
 	if(cpu)
