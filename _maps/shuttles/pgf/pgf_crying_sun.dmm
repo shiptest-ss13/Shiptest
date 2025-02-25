@@ -161,12 +161,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hangar/starboard)
-"bv" = (
-/obj/structure/chair/bench/blue{
-	dir = 4
-	},
-/turf/template_noop,
-/area/template_noop)
 "bB" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/door/firedoor/border_only{
@@ -350,10 +344,11 @@
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "cQ" = (
-/obj/effect/spawner/bunk_bed,
-/obj/structure/curtain/cloth/grey,
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 2
+	},
+/obj/structure/chair/bench/blue{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -410,6 +405,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"dk" = (
+/obj/effect/spawner/bunk_bed,
+/obj/structure/curtain/cloth/grey,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "dv" = (
 /obj/structure/cable/blue{
 	icon_state = "0-4"
@@ -3639,14 +3642,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/mono,
 /area/ship/hangar/starboard)
-"Ed" = (
-/obj/effect/spawner/bunk_bed,
-/obj/structure/curtain/cloth/grey,
-/obj/effect/turf_decal/corner_steel_grid/full{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/dorm)
 "Eg" = (
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
@@ -4848,14 +4843,6 @@
 /obj/effect/turf_decal/etherbor/right,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
-"MK" = (
-/obj/effect/spawner/bunk_bed,
-/obj/structure/curtain/cloth/grey,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 9
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/dorm)
 "ML" = (
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 4
@@ -5559,12 +5546,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Ri" = (
-/obj/structure/chair/bench/blue{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 4
 	},
+/obj/effect/spawner/bunk_bed{
+	dir = 1
+	},
+/obj/structure/curtain/cloth/grey,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "Rl" = (
@@ -6623,6 +6611,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"YV" = (
+/obj/effect/spawner/bunk_bed,
+/obj/structure/curtain/cloth/grey,
+/obj/effect/turf_decal/corner_steel_grid/full{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "YY" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 1
@@ -7129,8 +7125,8 @@ uJ
 "}
 (12,1,1) = {"
 eE
-Ed
-MK
+YV
+dk
 cQ
 Vp
 wm
@@ -7241,7 +7237,7 @@ xz
 "}
 (16,1,1) = {"
 xz
-bv
+xz
 eR
 Ps
 ow
