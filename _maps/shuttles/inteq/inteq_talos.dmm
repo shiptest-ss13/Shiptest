@@ -381,7 +381,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "cp" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cq" = (
@@ -1281,7 +1281,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
 	},
@@ -2966,7 +2966,7 @@
 /area/ship/maintenance/starboard)
 "rA" = (
 /obj/structure/closet/crate/large,
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "rB" = (
@@ -5741,8 +5741,8 @@
 	icon_state = "8-9"
 	},
 /obj/structure/catwalk/over,
-/obj/structure/closet/crate,
-/obj/effect/spawner/random/maintenance/two,
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/plastic/twenty,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ju" = (
@@ -6004,8 +6004,7 @@
 /area/ship/engineering)
 "KS" = (
 /obj/structure/catwalk/over,
-/obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/plastic/twenty,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "KY" = (
@@ -6210,7 +6209,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Mg" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -8133,7 +8132,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Zs" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Zu" = (
