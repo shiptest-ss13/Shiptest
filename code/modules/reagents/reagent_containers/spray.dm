@@ -343,7 +343,9 @@
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	volume = 100
-	unique_reskin = list("Red" = "sprayer_med_red",
-						"Yellow" = "sprayer_med_yellow",
-						"Blue" = "sprayer_med_blue")
+	unique_reskin = list(
+		"Red" = "sprayer_med_red",
+		"Yellow" = "sprayer_med_yellow",
+		"Blue" = "sprayer_med_blue"
+	)
 	unique_reskin_changes_inhand = TRUE

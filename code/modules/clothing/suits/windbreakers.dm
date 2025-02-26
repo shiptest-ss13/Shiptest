@@ -12,32 +12,34 @@
 	supports_variations = VOX_VARIATION
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	togglename = "zipper"
-	allowed = list(	/obj/item/flashlight,
-					/obj/item/tank/internals/emergency_oxygen,
-					/obj/item/tank/internals/plasmaman,
-					/obj/item/toy,
-					/obj/item/storage/fancy/cigarettes,
-					/obj/item/lighter,
-					/obj/item/radio,
-					/obj/item/storage/pill_bottle
-					)
-	unique_reskin = list("white windbreaker" = "jacketwhite",
-						"grey windbreaker" = "jacketgrey",
-						"black windbreaker" = "jacketblack",
-						"red windbreaker" = "jacketred",
-						"maroon windbreaker" = "jacketmaroon",
-						"orange windbreaker" = "jacketorange",
-						"yellow windbreaker" = "jacketyellow",
-						"green windbreaker" = "jacketgreen",
-						"dark green windbreaker" = "jacketdarkgreen",
-						"teal windbreaker" = "jacketteal",
-						"blue windbreaker" = "jacketblue",
-						"dark blue windbreaker" = "jacketdarkblue",
-						"purple windbreaker" = "jacketpurple",
-						"pink windbreaker" = "jacketpink",
-						"brown windbreaker" = "jacketbrown",
-						"light brown windbreaker" = "jacketlightbrown"
-						)
+	allowed = list(
+		/obj/item/flashlight,
+		/obj/item/tank/internals/emergency_oxygen,
+		/obj/item/tank/internals/plasmaman,
+		/obj/item/toy,
+		/obj/item/storage/fancy/cigarettes,
+		/obj/item/lighter,
+		/obj/item/radio,
+		/obj/item/storage/pill_bottle
+	)
+	unique_reskin = list(
+		"white windbreaker" = "jacketwhite",
+		"grey windbreaker" = "jacketgrey",
+		"black windbreaker" = "jacketblack",
+		"red windbreaker" = "jacketred",
+		"maroon windbreaker" = "jacketmaroon",
+		"orange windbreaker" = "jacketorange",
+		"yellow windbreaker" = "jacketyellow",
+		"green windbreaker" = "jacketgreen",
+		"dark green windbreaker" = "jacketdarkgreen",
+		"teal windbreaker" = "jacketteal",
+		"blue windbreaker" = "jacketblue",
+		"dark blue windbreaker" = "jacketdarkblue",
+		"purple windbreaker" = "jacketpurple",
+		"pink windbreaker" = "jacketpink",
+		"brown windbreaker" = "jacketbrown",
+		"light brown windbreaker" = "jacketlightbrown"
+	)
 	unique_reskin_changes_inhand = TRUE
 
 /obj/item/clothing/suit/toggle/windbreaker/Initialize()

@@ -229,4 +229,3 @@
 	icon_state = "patrolnavysoft"
 	unique_reskin = null
 	dog_fashion = null
-//recompile icons comment!!!!!
