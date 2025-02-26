@@ -250,6 +250,7 @@
 /// Lacking anesthetic, a surgery has a chance to cause Complications, which is handled here
 /datum/surgery_step/proc/commit_malpractice(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/ouchie_mod = 1
+	var/fuckup_mod = 1
 	ouchie_mod *= clamp(1-target.drunkenness/SURGERY_DRUNK_MOD, 0, 1) // Drunkenness up to 40% (points? idk) will improve chances of avoiding horrible pain and suffering
 	if(target.stat == UNCONSCIOUS) // Being "normally" asleep will SLIGHTLY improve your chances since it's intuitive behavior barring access to anything else
 		ouchie_mod *= target.getOxyLoss() >= 50 ? 0.6 : 0.8 // Being choked out will slightly improve chances on top of that. Emergent gameplay! (people already do this)
@@ -257,5 +258,7 @@
 	if(!prob(final_ouchie_chance))
 		return
 	. = TRUE
+	if(target.pulledby?.grab_state >= GRAB_AGGRESSIVE || HAS_TRAIT(target, TRAIT_RESTRAINED)) // Actively being restrained reduces the damage caused by a flinch since it's harder to mess things up if you can't move well
+		fuckup_mod = 0.5
 	user.visible_message(span_boldwarning("[target] flinches, bumping [user]'s [tool ? tool.name : "hand"] into something important!"), span_boldwarning("[target]  flinches, bumping your [tool ? tool.name : "hand"] into something important!"))
 	target.apply_damage(fuckup_damage, fuckup_damage_type, target_zone)
