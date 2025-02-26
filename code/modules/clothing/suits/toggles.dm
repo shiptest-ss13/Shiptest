@@ -14,10 +14,11 @@
 	equip_delay_self = EQUIP_DELAY_COAT
 	equip_delay_other = EQUIP_DELAY_COAT * 1.5
 	strip_delay = EQUIP_DELAY_COAT * 1.5
-	var/hoodie_icon
 
 /obj/item/clothing/suit/hooded/Initialize()
 	. = ..()
+	if(!base_icon_state)
+		base_icon_state = icon_state
 	MakeHood()
 
 /obj/item/clothing/suit/hooded/Destroy()
@@ -56,14 +57,6 @@
 			var/datum/action/A = X
 			A.UpdateButtonIcon()
 	//Might need an update aperance here
-
-/obj/item/clothing/suit/hooded/reskin_obj(mob/M, change_name)
-	. = ..()
-	base_icon_state = unique_reskin[current_skin]
-	if(hood)
-		hood.icon_state = base_icon_state
-	update_appearance()
-	return
 
 /obj/item/clothing/suit/hooded/update_appearance(updates)
 	if(suittoggled)
