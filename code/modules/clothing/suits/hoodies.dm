@@ -1,7 +1,10 @@
 /obj/item/clothing/suit/hooded/hoodie
 	name = "hoodie"
-	desc = "HOW"
-	icon_state = null
+	desc = "A hoodie. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodiewhite"
+	item_state = "hoodiewhite"
+	icon = 'icons/obj/clothing/suits/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood
 	body_parts_covered = CHEST|ARMS
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
@@ -16,69 +19,261 @@
 					)
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //it's just a hoodie.
 	supports_variations = KEPORI_VARIATION
+	unique_reskin = list("white hoodie" = "hoodiewhite",
+						"grey hoodie" = "hoodiegrey",
+						"black hoodie" = "hoodieblack",
+						"red hoodie" = "hoodiered",
+						"maroon hoodie" = "hoodiemaroon",
+						"orange hoodie" = "hoodieorange",
+						"yellow hoodie" = "hoodieyellow",
+						"green hoodie" = "hoodiegreen",
+						"dark green hoodie" = "hoodiedarkgreen",
+						"teal hoodie" = "hoodieteal",
+						"blue hoodie" = "hoodieblue",
+						"dark blue hoodie" = "hoodiedarkblue",
+						"purple hoodie" = "hoodiepurple",
+						"pink hoodie" = "hoodiepink",
+						"brown hoodie" = "hoodiebrown",
+						"light brown hoodie" = "hoodielightbrown"
+						)
+	var/hoodie_icon
+
+/obj/item/clothing/suit/hooded/hoodie/Initialize()
+	. = ..()
+	hoodie_icon = icon_state
+
+/obj/item/clothing/suit/hooded/hoodie/examine(mob/user)
+	. = ..()
+	if(unique_reskin && !current_skin)
+		. += "You can <b>Alt-Click</b> [src] to apply a new skin to it."
+
+/obj/item/clothing/suit/hooded/hoodie/reskin_obj(mob/M, change_name)
+	. = ..()
+	item_state = icon_state
+	hoodie_icon = icon_state
+	if(hood)
+		hood.icon_state = icon_state
+	return
 
 /obj/item/clothing/head/hooded/hood
 	name = "hood"
-	desc = "HOW"
-	icon_state = null
-	icon = 'icons/obj/clothing/head/winterhood.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/head/winterhood.dmi'
+	desc = "A hood for your hoodie."
+	icon_state = "hoodiewhite"
+	item_state = "hoodiewhite"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //it's just a hoodie.
 	supports_variations = KEPORI_VARIATION
 
+/obj/item/clothing/suit/hooded/hoodie/white
+	name = "white hoodie"
+	desc = "A hoodie that is white. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodiewhite"
+	item_state = "hoodiewhite"
+	hoodtype = /obj/item/clothing/head/hooded/hood/white
+
+/obj/item/clothing/head/hooded/hood/white
+	name = "white hood"
+	desc = "A white hood for your white hoodie."
+	icon_state = "hoodiewhite"
+	item_state = "hoodiewhite"
+
+/obj/item/clothing/suit/hooded/hoodie/gray
+	name = "grey hoodie"
+	desc = "A hoodie that is grey. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodiegrey"
+	item_state = "hoodiegrey"
+	hoodtype = /obj/item/clothing/head/hooded/hood/gray
+
+/obj/item/clothing/head/hooded/hood/gray
+	name = "grey hood"
+	desc = "A grey hood for your grey hoodie."
+	icon_state = "hoodiegrey"
+	item_state = "hoodiegrey"
+
 /obj/item/clothing/suit/hooded/hoodie/black
 	name = "black hoodie"
 	desc = "A hoodie that is black. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodie_black"
-	item_state = "hoodie_black"
+	icon_state = "hoodieblack"
+	item_state = "hoodieblack"
 	hoodtype = /obj/item/clothing/head/hooded/hood/black
 
 /obj/item/clothing/head/hooded/hood/black
 	name = "black hood"
 	desc = "A black hood for your black hoodie."
-	icon_state = "hoodie_black"
-	item_state = "hoodie_black"
+	icon_state = "hoodieblack"
+	item_state = "hoodieblack"
 
 /obj/item/clothing/suit/hooded/hoodie/red
 	name = "red hoodie"
 	desc = "A hoodie that is red. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodie_red"
-	item_state = "hoodie_red"
+	icon_state = "hoodiered"
+	item_state = "hoodiered"
 	hoodtype = /obj/item/clothing/head/hooded/hood/red
 
 /obj/item/clothing/head/hooded/hood/red
 	name = "red hood"
 	desc = "A red hood for your red hoodie."
-	icon_state = "hoodie_red"
-	item_state = "hoodie_red"
+	icon_state = "hoodiered"
+	item_state = "hoodiered"
+
+/obj/item/clothing/suit/hooded/hoodie/maroon
+	name = "maroon hoodie"
+	desc = "A hoodie that is maroon. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodiemaroon"
+	item_state = "hoodiemaroon"
+	hoodtype = /obj/item/clothing/head/hooded/hood/maroon
+
+/obj/item/clothing/head/hooded/hood/maroon
+	name = "maroon hood"
+	desc = "A maroon hood for your maroon hoodie."
+	icon_state = "hoodiemaroon"
+	item_state = "hoodiemaroon"
+
+/obj/item/clothing/suit/hooded/hoodie/orange
+	name = "orange hoodie"
+	desc = "A hoodie that is orange. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodieorange"
+	item_state = "hoodieorange"
+	hoodtype = /obj/item/clothing/head/hooded/hood/orange
+
+/obj/item/clothing/head/hooded/hood/orange
+	name = "orange hood"
+	desc = "A orange hood for your orange hoodie."
+	icon_state = "hoodieorange"
+	item_state = "hoodieorange"
+
+/obj/item/clothing/suit/hooded/hoodie/yellow
+	name = "yellow hoodie"
+	desc = "A hoodie that is yellow. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodieyellow"
+	item_state = "hoodieyellow"
+	hoodtype = /obj/item/clothing/head/hooded/hood/yellow
+
+/obj/item/clothing/head/hooded/hood/yellow
+	name = "yellow hood"
+	desc = "A yellow hood for your yellow hoodie."
+	icon_state = "hoodieyellow"
+	item_state = "hoodieyellow"
+
+/obj/item/clothing/suit/hooded/hoodie/green
+	name = "green hoodie"
+	desc = "A hoodie that is green. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodiegreen"
+	item_state = "hoodiegreen"
+	hoodtype = /obj/item/clothing/head/hooded/hood/green
+
+/obj/item/clothing/head/hooded/hood/green
+	name = "green hood"
+	desc = "A green hood for your green hoodie."
+	icon_state = "hoodiegreen"
+	item_state = "hoodiegreen"
+
+/obj/item/clothing/suit/hooded/hoodie/darkgreen
+	name = "dark green hoodie"
+	desc = "A hoodie that is dark green. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodiedarkgreen"
+	item_state = "hoodiedarkgreen"
+	hoodtype = /obj/item/clothing/head/hooded/hood/darkgreen
+
+/obj/item/clothing/head/hooded/hood/darkgreen
+	name = "dark green hood"
+	desc = "A dark green hood for your dark green hoodie."
+	icon_state = "hoodiedarkgreen"
+	item_state = "hoodiedarkgreen"
+
+/obj/item/clothing/suit/hooded/hoodie/teal
+	name = "teal hoodie"
+	desc = "A hoodie that is teal. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodieteal"
+	item_state = "hoodieteal"
+	hoodtype = /obj/item/clothing/head/hooded/hood/teal
+
+/obj/item/clothing/head/hooded/hood/teal
+	name = "teal hood"
+	desc = "A teal hood for your teal hoodie."
+	icon_state = "hoodieteal"
+	item_state = "hoodieteal"
 
 /obj/item/clothing/suit/hooded/hoodie/blue
 	name = "blue hoodie"
 	desc = "A hoodie that is blue. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodie_blue"
-	item_state = "hoodie_blue"
+	icon_state = "hoodieblue"
+	item_state = "hoodieblue"
 	hoodtype = /obj/item/clothing/head/hooded/hood/blue
 
 /obj/item/clothing/head/hooded/hood/blue
 	name = "blue hood"
 	desc = "A blue hood for your blue hoodie."
-	icon_state = "hoodie_blue"
-	item_state = "hoodie_blue"
+	icon_state = "hoodieblue"
+	item_state = "hoodieblue"
 
-/obj/item/clothing/suit/hooded/hoodie/gray
-	name = "gray hoodie"
-	desc = "A hoodie that is gray. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodie_gray"
-	item_state = "hoodie_gray"
-	hoodtype = /obj/item/clothing/head/hooded/hood/gray
+/obj/item/clothing/suit/hooded/hoodie/darkblue
+	name = "dark blue hoodie"
+	desc = "A hoodie that is dark blue. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodiedarkblue"
+	item_state = "hoodiedarkblue"
+	hoodtype = /obj/item/clothing/head/hooded/hood/darkblue
 
-/obj/item/clothing/head/hooded/hood/gray
-	name = "gray hood"
-	desc = "A gray hood for your gray hoodie."
-	icon_state = "hoodie_gray"
-	item_state = "hoodie_gray"
+/obj/item/clothing/head/hooded/hood/darkblue
+	name = "dark blue hood"
+	desc = "A dark blue hood for your darkblue hoodie."
+	icon_state = "hoodiedarkblue"
+	item_state = "hoodiedarkblue"
+
+/obj/item/clothing/suit/hooded/hoodie/purple
+	name = "purple hoodie"
+	desc = "A hoodie that is purple. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodiepurple"
+	item_state = "hoodiepurple"
+	hoodtype = /obj/item/clothing/head/hooded/hood/purple
+
+/obj/item/clothing/head/hooded/hood/purple
+	name = "purple hood"
+	desc = "A purple hood for your purple hoodie."
+	icon_state = "hoodiepurple"
+	item_state = "hoodiepurple"
+
+/obj/item/clothing/suit/hooded/hoodie/pink
+	name = "pink hoodie"
+	desc = "A hoodie that is pink. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodiepink"
+	item_state = "hoodiepink"
+	hoodtype = /obj/item/clothing/head/hooded/hood/pink
+
+/obj/item/clothing/head/hooded/hood/pink
+	name = "pink hood"
+	desc = "A pink hood for your pink hoodie."
+	icon_state = "hoodiepink"
+	item_state = "hoodiepink"
+
+/obj/item/clothing/suit/hooded/hoodie/brown
+	name = "brown hoodie"
+	desc = "A hoodie that is brown. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodiebrown"
+	item_state = "hoodiebrown"
+	hoodtype = /obj/item/clothing/head/hooded/hood/brown
+
+/obj/item/clothing/head/hooded/hood/brown
+	name = "brown hood"
+	desc = "A brown hood for your brown hoodie."
+	icon_state = "hoodiebrown"
+	item_state = "hoodiebrown"
+
+/obj/item/clothing/suit/hooded/hoodie/lightbrown
+	name = "light brown hoodie"
+	desc = "A hoodie that is light brown. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodielightbrown"
+	item_state = "hoodielightbrown"
+	hoodtype = /obj/item/clothing/head/hooded/hood/lightbrown
+
+/obj/item/clothing/head/hooded/hood/lightbrown
+	name = "light brown hood"
+	desc = "A light brown hood for your light brown hoodie."
+	icon_state = "hoodielightbrown"
+	item_state = "hoodielightbrown"
 
 /obj/item/clothing/suit/hooded/hoodie/fbp
 	name = "\improper FBP kepori hoodie"

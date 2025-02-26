@@ -3,53 +3,143 @@
 
 //Plus a bobble hat, lets be inclusive!!
 
-/obj/item/clothing/head/beanie //Default is white, this is meant to be seen
+/obj/item/clothing/head/beanie
+	name = "beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	icon_state = "beaniewhite"
+	item_state = "beaniewhite"
+	custom_price = 60
+	unique_reskin = list("white beanie" = "beaniewhite",
+						"grey beanie" = "beaniegrey",
+						"black beanie" = "beanieblack",
+						"red beanie" = "beaniered",
+						"maroon beanie" = "beaniemaroon",
+						"orange beanie" = "beanieorange",
+						"yellow beanie" = "beanieyellow",
+						"green beanie" = "beaniegreen",
+						"dark green beanie" = "beaniedarkgreen",
+						"teal beanie" = "beanieteal",
+						"blue beanie" = "beanieblue",
+						"dark blue beanie" = "beaniedarkblue",
+						"purple beanie" = "beaniepurple",
+						"pink beanie" = "beaniepink",
+						"brown beanie" = "beaniebrown",
+						"light brown beanie" = "beanielightbrown"
+						)
+	var/beanie_icon
+
+/obj/item/clothing/head/beanie/Initialize()
+	. = ..()
+	beanie_icon = icon_state
+
+/obj/item/clothing/head/beanie/examine(mob/user)
+	. = ..()
+	if(unique_reskin && !current_skin)
+		. += "You can <b>Alt-Click</b> [src] to apply a new skin to it."
+
+/obj/item/clothing/head/beanie/reskin_obj(mob/M, change_name)
+	. = ..()
+	item_state = icon_state
+	beanie_icon = icon_state
+	return
+
+/obj/item/clothing/head/beanie/white
 	name = "white beanie"
 	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
-	icon_state = "beanie" //Default white
-	custom_price = 60
-	cuttable = TRUE
-	clothamnt = 3
+	icon_state = "beaniewhite"
+	current_skin = "beaniewhite"
+
+/obj/item/clothing/head/beanie/grey
+	name = "grey beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beaniegrey"
+	current_skin = "beaniegrey"
 
 /obj/item/clothing/head/beanie/black
 	name = "black beanie"
-	icon_state = "beanie"
-	color = "#4A4A4B" //Grey but it looks black
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beanieblack"
+	current_skin = "beanieblack"
 
 /obj/item/clothing/head/beanie/red
 	name = "red beanie"
-	icon_state = "beanie"
-	color = "#D91414" //Red
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beaniered"
+	current_skin = "beaniered"
 
-/obj/item/clothing/head/beanie/green
-	name = "green beanie"
-	icon_state = "beanie"
-	color = "#5C9E54" //Green
-
-/obj/item/clothing/head/beanie/darkblue
-	name = "dark blue beanie"
-	icon_state = "beanie"
-	color = "#1E85BC" //Blue
-
-/obj/item/clothing/head/beanie/purple
-	name = "purple beanie"
-	icon_state = "beanie"
-	color = "#9557C5" //purple
-
-/obj/item/clothing/head/beanie/yellow
-	name = "yellow beanie"
-	icon_state = "beanie"
-	color = "#E0C14F" //Yellow
+/obj/item/clothing/head/beanie/maroon
+	name = "maroon beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beaniemaroon"
+	current_skin = "beaniemaroon"
 
 /obj/item/clothing/head/beanie/orange
 	name = "orange beanie"
-	icon_state = "beanie"
-	color = "#C67A4B" //orange
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beanieorange"
+	current_skin = "beanieorange"
 
-/obj/item/clothing/head/beanie/cyan
-	name = "cyan beanie"
-	icon_state = "beanie"
-	color = "#54A3CE" //Cyan (Or close to it)
+/obj/item/clothing/head/beanie/yellow
+	name = "yellow beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beanieyellow"
+	current_skin = "beanieyellow"
+
+/obj/item/clothing/head/beanie/green
+	name = "green beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beaniegreen"
+	current_skin = "beaniegreen"
+
+/obj/item/clothing/head/beanie/darkgreen
+	name = "dark green beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beaniedarkgreen"
+	current_skin = "beaniedarkgreen"
+
+/obj/item/clothing/head/beanie/teal
+	name = "teal beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beanieteal"
+	current_skin = "beanieteal"
+
+/obj/item/clothing/head/beanie/blue
+	name = "blue beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beanieblue"
+	current_skin = "beanieblue"
+
+/obj/item/clothing/head/beanie/darkblue
+	name = "dark blue beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beaniedarkblue"
+	current_skin = "beaniedarkblue"
+
+/obj/item/clothing/head/beanie/purple
+	name = "purple beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beaniepurple"
+	current_skin = "beaniepurple"
+
+/obj/item/clothing/head/beanie/pink
+	name = "beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beaniepink"
+	current_skin = "beaniepink"
+
+/obj/item/clothing/head/beanie/brown
+	name = "brown beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beaniebrown"
+	current_skin = "beaniebrown"
+
+/obj/item/clothing/head/beanie/lightbrown
+	name = "light brown beanie"
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	icon_state = "beanielightbrown"
+	current_skin = "beanielightbrown"
 
 //Striped Beanies have unique sprites
 
