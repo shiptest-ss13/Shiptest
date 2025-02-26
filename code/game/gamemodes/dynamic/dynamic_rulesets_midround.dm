@@ -337,29 +337,6 @@
 
 //////////////////////////////////////////////
 //                                          //
-//              BLOB (GHOST)                //
-//                                          //
-//////////////////////////////////////////////
-
-/datum/dynamic_ruleset/midround/from_ghosts/blob
-	name = "Blob"
-	antag_datum = /datum/antagonist/blob
-	antag_flag = ROLE_BLOB
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
-	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
-	required_candidates = 1
-	weight = 4
-	cost = 10
-	requirements = list(101,101,101,80,60,50,30,20,10,10)
-	high_population_requirement = 50
-	repeatable = TRUE
-
-/datum/dynamic_ruleset/midround/from_ghosts/blob/generate_ruleset_body(mob/applicant)
-	var/body = applicant.become_overmind()
-	return body
-
-//////////////////////////////////////////////
-//                                          //
 //           XENOMORPH (GHOST)              //
 //                                          //
 //////////////////////////////////////////////

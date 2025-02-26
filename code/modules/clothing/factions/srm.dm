@@ -21,7 +21,7 @@
 	desc = "A coat made from hard leather. Meant to withstand long hunts in harsh wilderness."
 	icon_state = "armor_rouma"
 	item_state = "rouma_coat"
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN
 	cold_protection = CHEST|GROIN|ARMS
 	heat_protection = CHEST|GROIN|ARMS
 	icon = 'icons/obj/clothing/faction/srm/suits.dmi'
@@ -41,7 +41,7 @@
 	icon = 'icons/obj/clothing/faction/srm/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/suits.dmi'
 	icon_state = "rouma_med_coat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
 	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/hazardvest/roumain
@@ -51,7 +51,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/suits.dmi'
 	icon_state = "armor_rouma_machinist"
 	item_state = "rouma_coat"
-	armor = list("melee" = 30, "bullet" = 20, "laser" = 20, "energy" = 40, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 20, "energy" = 40, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 
 /obj/item/clothing/suit/armor/roumain/flamebearer
 	name = "saint-roumain flamebearer robes"
@@ -64,7 +64,7 @@
 	desc = "A well-maintained hard leather coat typically worn to denote the rank of Colligne, a trainee Hunter Montagne. It is treated with bullet-resistant materials, and lined with the dark fur of Illestrian dire wolves."
 	icon_state = "armor_rouma_colligne"
 	item_state = "rouma_coat"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	body_parts_covered = CHEST|GROIN
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	supports_variations = KEPORI_VARIATION
@@ -74,8 +74,8 @@
 	desc = "A stylish red coat to indicate that you are, in fact, a Hunter Montagne. Made of extra hard exotic leather, treated with bullet-resistant materials, and lined with the fur of some unidentifiable creature."
 	icon_state = "armor_rouma_montagne"
 	item_state = "rouma_montagne_coat"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	supports_variations = KEPORI_VARIATION
@@ -95,7 +95,7 @@
 	worn_y_offset = 4
 	supports_variations = KEPORI_VARIATION
 
-/obj/item/clothing/suit/space/hardsuit/solgov/roumain
+/obj/item/clothing/suit/space/hardsuit/solgov/roumain //i swear to fuck whoever is subtyping these. you will face my wrath.
 	name = "\improper roumain hardsuit"
 	desc = "A hand-crafted suit of armor either modified from a set of normal plate armor or designed to resemble one. A powered exoskeleton has been cleverly integrated into the design and, surprisingly, it is completely vacuum-proof. Suits like this are a testament to what the master craftsmen of Hunter's Pride are capable of."
 	icon = 'icons/obj/clothing/faction/srm/suits.dmi'

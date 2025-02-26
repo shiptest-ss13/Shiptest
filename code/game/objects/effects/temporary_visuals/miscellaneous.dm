@@ -207,16 +207,6 @@
 	icon_state = "blspell"
 	duration = 5
 
-/obj/effect/temp_visual/guardian
-	randomdir = 0
-
-/obj/effect/temp_visual/guardian/phase
-	duration = 5
-	icon_state = "phasein"
-
-/obj/effect/temp_visual/guardian/phase/out
-	icon_state = "phaseout"
-
 /obj/effect/temp_visual/decoy
 	desc = "It's a decoy!"
 	duration = 15
@@ -345,13 +335,6 @@
 /obj/effect/temp_visual/explosion/fast
 	icon_state = "explosionfast"
 	duration = 4
-
-/obj/effect/temp_visual/blob
-	name = "blob"
-	icon_state = "blob_attack"
-	alpha = 140
-	randomdir = 0
-	duration = 6
 
 /obj/effect/temp_visual/desynchronizer
 	name = "desynchronizer field"

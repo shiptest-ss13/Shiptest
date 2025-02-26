@@ -62,7 +62,7 @@
 "bc" = (
 /obj/structure/closet/cardboard,
 /obj/item/paicard,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "bi" = (
@@ -239,10 +239,10 @@
 	populate = 0
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/sugar,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
@@ -276,14 +276,13 @@
 /area/ship/crew/canteen)
 "ee" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/landmark/observer_start,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "eu" = (
 /obj/structure/closet/crate,
 /obj/machinery/airalarm/directional/north,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "eF" = (
@@ -430,7 +429,7 @@
 	dir = 1
 	},
 /obj/structure/bed,
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/bounty,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
@@ -654,7 +653,6 @@
 	dir = 4
 	},
 /obj/structure/closet/wall/directional/east{
-	icon_door = "white_wall";
 	name = "medical closet"
 	},
 /obj/item/storage/backpack/satchel/med,
@@ -1102,7 +1100,7 @@
 "nU" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "od" = (
@@ -1125,6 +1123,15 @@
 	dir = 1;
 	pixel_x = -5;
 	pixel_y = -20
+	},
+/obj/machinery/button/door{
+	id = "rigg_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
@@ -1160,7 +1167,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "oX" = (
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "ph" = (
@@ -1179,7 +1186,7 @@
 "pv" = (
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/structure/table,
-/obj/item/kitchen/knife,
+/obj/item/melee/knife/kitchen,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "pD" = (
@@ -1422,7 +1429,6 @@
 /area/ship/external)
 "sq" = (
 /obj/structure/closet/wall/directional/north{
-	icon_door = "red_wall";
 	name = "security closet"
 	},
 /obj/item/storage/backpack/security,
@@ -1596,7 +1602,6 @@
 	},
 /obj/structure/catwalk/over,
 /obj/structure/closet/wall/directional/north{
-	icon_door = "yellow_wall";
 	name = "engineering closet"
 	},
 /obj/item/storage/backpack/industrial,
@@ -2463,7 +2468,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "DG" = (
@@ -2593,7 +2598,7 @@
 /obj/item/folder/blue{
 	pixel_x = 3
 	},
-/obj/item/stamp/head_of_personnel{
+/obj/item/stamp/officer{
 	name = "first mate's rubber stamp";
 	pixel_x = 8;
 	pixel_y = 7
@@ -2616,7 +2621,7 @@
 	},
 /obj/structure/closet/crate,
 /obj/machinery/firealarm/directional/west,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Fu" = (
@@ -2631,7 +2636,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock{
-	name = "Head"
+	name = "Head";
+	id_tag = "rigg_bathroom"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
@@ -3240,7 +3246,7 @@
 /area/ship/medical)
 "Ne" = (
 /obj/structure/bed,
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /obj/structure/curtain/bounty,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
@@ -3552,7 +3558,7 @@
 /area/ship/maintenance/central)
 "Qv" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel,
 /area/ship/construction)
 "QB" = (
@@ -3680,7 +3686,7 @@
 	},
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
 "Sj" = (
@@ -3791,13 +3797,13 @@
 	dir = 1
 	},
 /obj/structure/crate_shelf,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
 	pixel_x = 1;
 	pixel_y = -3
@@ -3903,7 +3909,7 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/structure/closet/crate/bin,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Ug" = (
@@ -4132,7 +4138,7 @@
 	name = "ammunition locker";
 	req_access_txt = "1"
 	},
-/obj/item/ammo_box/c38_box,
+/obj/item/storage/box/ammo/c38,
 /obj/item/ammo_box/magazine/m45/rubber,
 /obj/item/ammo_box/magazine/m45/rubber,
 /obj/item/ammo_box/magazine/m45,
@@ -4398,10 +4404,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/structure/table,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -7
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -14
 	},
 /turf/open/floor/plasteel/white,
@@ -4410,9 +4416,9 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/construction)
 "ZI" = (
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_x = -3;
-	pixel_y = 13
+/obj/item/storage/case/surgery{
+	pixel_x = 0;
+	pixel_y = 3
 	},
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/structure/table/glass,
@@ -4468,6 +4474,8 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/belt/utility,
 /obj/item/clothing/glasses/welding,
+/obj/item/gear_pack/anglegrinder,
+/obj/item/radio/headset/alt,
 /turf/open/floor/plating,
 /area/ship/engineering)
 

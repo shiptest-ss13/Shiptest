@@ -285,9 +285,5 @@
 /obj/structure/chrono_field/ex_act()
 	return
 
-/obj/structure/chrono_field/blob_act(obj/structure/blob/B)
-	return
-
-
 #undef CHRONO_BEAM_RANGE
 #undef CHRONO_FRAME_COUNT

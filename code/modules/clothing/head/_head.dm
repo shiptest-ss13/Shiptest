@@ -12,6 +12,14 @@
 	greyscale_icon_state = "hat"
 	greyscale_colors = list(list(16,26))
 	supports_variations = VOX_VARIATION
+	blood_overlay_type = "helmet"
+
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_HAT
+	equip_delay_other = EQUIP_DELAY_HAT * 1.5
+	strip_delay = EQUIP_DELAY_HAT * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT
 
 ///Special throw_impact for hats to frisbee hats at people to place them on their heads/attempt to de-hat them.
 /obj/item/clothing/head/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
@@ -43,7 +51,7 @@
 			///if the hat manages to knock something off
 			if(H.dropItemToGround(WH))
 				H.visible_message("<span class='warning'>[src] knocks [WH] off [H]'s head!</span>", "<span class='warning'>[WH] is suddenly knocked off your head by [src]!</span>")
-		if(H.equip_to_slot_if_possible(src, ITEM_SLOT_HEAD, 0, 1, 1))
+		if(H.equip_to_slot_if_possible(src, ITEM_SLOT_HEAD, 0, 1, 1, TRUE))
 			H.visible_message("<span class='notice'>[src] lands neatly on [H]'s head!</span>", "<span class='notice'>[src] lands perfectly onto your head!</span>")
 		return
 	if(iscyborg(hit_atom))
@@ -65,9 +73,7 @@
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedhelmet")
 		if(HAS_BLOOD_DNA(src))
-			var/mutable_appearance/bloody_helmet = mutable_appearance('icons/effects/blood.dmi', "helmetblood")
-			bloody_helmet.color = get_blood_dna_color(return_blood_DNA())
-			. += bloody_helmet
+			. += setup_blood_overlay()
 
 /obj/item/clothing/head/update_clothes_damaged_state(damaging = TRUE)
 	..()

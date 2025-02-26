@@ -190,11 +190,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 				return
 	return ..()
 
-/obj/structure/light_construct/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		qdel(src)
-
-
 /obj/structure/light_construct/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		new /obj/item/stack/sheet/metal(loc, sheets_refunded)
@@ -639,7 +634,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 		visible_message("<span class='warning'>[src] short-circuits from too powerful of a power cell!</span>")
 		burn_out()
 		return FALSE
-	cell.use(pwr)
+	cell.use(pwr, FALSE)
 	set_light(brightness * bulb_emergency_brightness_mul, max(bulb_emergency_pow_min, bulb_emergency_pow_mul * (cell.charge / cell.maxcharge)), bulb_emergency_colour)
 	return TRUE
 
@@ -942,6 +937,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	layer = 2.5
 	light_type = /obj/item/light/bulb
 	fitting = "bulb"
+	no_emergency = TRUE
 
 #undef LIGHT_DRAIN_TIME  //WS Edit -- Ethereal Charge Scaling
 #undef LIGHT_POWER_GAIN  //WS Edit -- Ethereal Charge Scaling

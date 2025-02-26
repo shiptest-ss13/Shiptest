@@ -4,18 +4,13 @@
 	reward = 7500
 	wanted_types = list(/obj/item/tank)
 	var/moles_required = 20 // A full tank is 28 moles, but CentCom ignores that fact.
-	var/gas_type = GAS_PLUOXIUM
+	var/gas_type = GAS_O3
 
 /datum/bounty/item/engineering/gas/applies_to(obj/O)
 	if(!..())
 		return FALSE
 	var/obj/item/tank/T = O
 	return T.air_contents.get_moles(gas_type) >= moles_required
-
-/datum/bounty/item/engineering/gas/nitryl_tank
-	name = "Full Tank of Nitryl"
-	description = "The non-human staff of Station 88 has been volunteered to test performance enhancing drugs. Ship them a tank full of Nitryl so they can get started."
-	gas_type = GAS_NITRYL
 
 /datum/bounty/item/engineering/gas/freon_tank
 	name = "Full Tank of Freon"

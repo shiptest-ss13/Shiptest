@@ -10,14 +10,7 @@
 	description = "A Solarian frontier research facility created by the Pionierskompanien \
 	This one seems to simulate the wintery climate of the northern provinces, including a sauna!"
 	suffix = "lavaland_surface_biodome_winter.dmm"
-
-/datum/map_template/ruin/lavaland/elephant_graveyard
-	name = "Elephant Graveyard"
-	id = "Graveyard"
-	description = "An abandoned graveyard, calling to those unable to continue."
-	suffix = "lavaland_surface_elephant_graveyard.dmm"
-	allow_duplicates = FALSE
-	cost = 10
+	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_SHELTER)
 
 /datum/map_template/ruin/lavaland/buried_shrine
 	name = "Buried Shrine"

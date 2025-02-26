@@ -185,7 +185,7 @@
 
 /obj/item/reagent_containers/food/snacks/cornedbeef
 	name = "corned beef and cabbage"
-	desc = "Now you can feel like a real tourist vacationing in Ireland."
+	desc = "A nice hearty meal."
 	icon_state = "cornedbeef"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
@@ -273,7 +273,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	var/faction
 	var/spawned_mob = /mob/living/carbon/monkey
-	custom_price = 300
+	custom_price = 5
 
 /obj/item/reagent_containers/food/snacks/monkeycube/proc/Expand()
 	var/mob/spammer = get_mob_by_key(fingerprintslast)

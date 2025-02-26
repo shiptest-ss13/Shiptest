@@ -11,19 +11,19 @@
 	stock = 1
 	availability_prob = 20
 
-/datum/blackmarket_item/tool/syndi_toolbox
-	name = "Syndicate Toolbox"
-	desc = "A set of specialized tools, built to precision perfection and certified by the GEC."
-	item = /obj/item/storage/toolbox/syndicate
+/datum/blackmarket_item/tool/surgery_duffel
+	name = "Cybersun Advanced Surgical Kit"
+	desc = "You might say it's morally wrong to steal. I say it's justified when it's Cybersun."
+	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
 
-	price_min = 500
-	price_max = 2000
+	price_min = 2500
+	price_max = 5000
 	stock = 1
-	availability_prob = 30
+	availability_prob = 25
 
 /datum/blackmarket_item/tool/binoculars
 	name = "Binoculars"
-	desc = "Increase your sight by 150% with this handy Tool!"
+	desc = "Twice as effective as a monocular for seeing across long distances."
 	item = /obj/item/binoculars
 
 	price_min = 50
@@ -31,6 +31,28 @@
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 70
+
+/datum/blackmarket_item/tool/whetstone
+	name = "Whetstone"
+	desc = "Your blades not making the cut? This whetstone will give you the edge you need!"
+	item = /obj/item/sharpener
+
+	price_min = 100
+	price_max = 300
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 50
+
+/datum/blackmarket_item/tool/cham_stamp
+	name = "Chameleon Stamp"
+	desc = "Can't find a forger? Look no further than these handy chameleon stamps, capable of replicating all manner of offical or government seals."
+	item = /obj/item/stamp/chameleon
+
+	price_min = 50
+	price_max = 200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 80
 
 /datum/blackmarket_item/tool/riot_shield
 	name = "Riot Shield"
@@ -47,8 +69,8 @@
 	desc = "30u of Thermite to assist in creating a quick access point or get away!"
 	item = /obj/item/reagent_containers/glass/bottle/thermite
 
-	price_min = 100
-	price_max = 600
+	price_min = 75
+	price_max = 300
 	stock_max = 10
 	availability_prob = 50
 
@@ -58,7 +80,7 @@
 	item = /obj/item/reagent_containers/glass/chem_jug/thermite
 
 	price_min = 400
-	price_max = 1500
+	price_max = 1200
 	stock_max = 3
 	availability_prob = 20
 
@@ -80,7 +102,8 @@
 	price_min = 1000
 	price_max = 3000
 	stock = 1
-	availability_prob = 20
+	availability_prob = 10
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tool/jumpboots
 	name = "Jump Boots"
@@ -101,16 +124,7 @@
 	price_max = 2000
 	stock_max = 3
 	availability_prob = 30
-
-/datum/blackmarket_item/tool/chem_master
-	name = "Chem Master Board"
-	desc = "A Chem Master board, capable of seperating and packaging reagents. Perfect for any aspiring at home chemist."
-	item = /obj/item/circuitboard/machine/chem_master
-
-	price_min = 1000
-	price_max = 3000
-	stock = 1
-	availability_prob = 30
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tool/rcd
 	name = "Rapid Construction Device"
@@ -128,7 +142,7 @@
 	item = /obj/item/attachment/silencer
 
 	price_min = 100
-	price_max = 700
+	price_max = 300
 	stock_min = 3
 	stock_max = 6
 	availability_prob = 60
@@ -148,28 +162,19 @@
 	desc = "A lovingly handcrafted jetpack built by our salvage techs. For the frugal space explorer."
 	item = /obj/item/tank/jetpack/improvised
 
-	price_min = 500
-	price_max = 1000
+	price_min = 100
+	price_max = 500
 	stock_min = 3
 	stock_max = 6
 	availability_prob = 70
-
-/datum/blackmarket_item/tool/jet_harness
-	name = "Jet Harness"
-	desc = "A compact oxygen filled jet harness for tactical EVA insertions and extractions."
-	item = /obj/item/tank/jetpack/oxygen/harness
-
-	price_min = 1250
-	price_max = 3500
-	stock_max = 3
-	availability_prob = 30
 
 /datum/blackmarket_item/tool/jetpack_upgrade
 	name = "Hardsuit Jetpack Upgrade"
 	desc = "A modular jetpack compatible with most hardsuits. If the screws feel a bit loose, it's because the last suit it was attached to was beyond recovery."
 	item = /obj/item/tank/jetpack/suit
 
-	price_min = 1750
+	price_min = 1250
 	price_max = 3000
-	stock = 1
+	stock_min = 1
+	stock_max = 3
 	availability_prob = 25

@@ -123,3 +123,8 @@
 	. = ..()
 	if(!user.canUseTopic(src, !issilicon(user)) || !is_operational)
 		return
+
+/obj/machinery/computer/examine_more(mob/user)
+	. = ..()
+	ui_interact(user)
+	return

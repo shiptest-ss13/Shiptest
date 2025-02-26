@@ -61,5 +61,5 @@
 		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/blt
-	category = CAT_SANDWICH
+	subcategory = CAT_SANDWICH
 

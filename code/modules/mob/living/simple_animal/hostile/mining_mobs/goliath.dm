@@ -226,7 +226,6 @@
 			D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
 			D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
 			D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
-			D.keytype = /obj/item/key/lasso
 			D.drive_verb = "ride"
 		else
 			user.visible_message("<span class='warning'>[src] is rocking around! You can't put the saddle on!</span>")
@@ -246,6 +245,7 @@
 	icon_living = "ancient_goliath"
 	icon_aggro = "ancient_goliath_alert"
 	icon_dead = "ancient_goliath_dead"
+	pre_attack_icon = "ancient_goliath_preattack"
 	maxHealth = 180
 	health = 180
 	speed = 4

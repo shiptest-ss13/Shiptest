@@ -40,7 +40,7 @@
 "fD" = (
 /obj/structure/bed,
 /obj/effect/decal/cleanable/blood/bubblegum,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "fQ" = (
@@ -242,9 +242,9 @@
 /obj/item/reagent_containers/food/snacks/fishmeat/carp,
 /obj/item/reagent_containers/food/snacks/fishmeat/carp,
 /obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
+/obj/item/reagent_containers/condiment/pack/ketchup,
+/obj/item/reagent_containers/condiment/pack/ketchup,
+/obj/item/reagent_containers/condiment/pack/ketchup,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
@@ -332,7 +332,7 @@
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/reagent_containers/glass/bottle/venom,
 /obj/item/reagent_containers/glass/bottle/curare,
-/obj/item/kitchen/knife/combat/survival,
+/obj/item/melee/knife/survival,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
@@ -383,8 +383,8 @@
 "EF" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /obj/structure/safe,
-/obj/item/ammo_box/a12g/slug,
-/obj/item/kitchen/knife/combat,
+/obj/item/storage/box/ammo/a12g_slug,
+/obj/item/melee/knife/combat,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
@@ -459,7 +459,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "LZ" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Nq" = (
@@ -477,7 +477,7 @@
 /turf/open/floor/carpet,
 /area/ruin/powered)
 "Pp" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/holofloor/wood,
 /area/ruin/powered)
 "PQ" = (
@@ -554,7 +554,7 @@
 "WH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Ze" = (

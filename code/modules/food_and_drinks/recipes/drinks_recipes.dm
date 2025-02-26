@@ -633,7 +633,7 @@
 
 /datum/chemical_reaction/hearth_wine
 	results = list(/datum/reagent/consumable/ethanol/trickwine/hearth_wine = 5)
-	required_reagents = list(/datum/reagent/consumable/ethanol/hcider = 3, /datum/reagent/consumable/pyre_elementum = 1, /datum/reagent/fuel = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/hcider = 3, /datum/reagent/consumable/pyre_elementum = 1, /datum/reagent/phosphorus = 1)
 	required_container = /obj/structure/fermenting_barrel/distiller
 	mix_sound ='sound/items/welder.ogg'
 
@@ -663,3 +663,8 @@
 
 /datum/chemical_reaction/sand_bubbles/plasma			// Subbing plasma bubbles for reg
 	required_reagents = list(/datum/reagent/consumable/molten/plasma_fizz = 3, /datum/reagent/silicon = 2)
+
+/datum/chemical_reaction/eudamonia
+	results = list(/datum/reagent/consumable/ethanol/eudamonia = 2)
+	required_reagents = list(/datum/reagent/medicine/lithium_carbonate = 2, /datum/reagent/consumable/ethanol/hcider = 2)
+	mix_message = "The LiCarb dust incorporates into the cider, producing a pleasant chemical coloration!"

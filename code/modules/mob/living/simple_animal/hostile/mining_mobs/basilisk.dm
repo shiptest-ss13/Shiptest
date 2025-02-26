@@ -1,5 +1,3 @@
-#define BULLET_SHELL_DAMAGE 1
-
 //A beast that fire freezing blasts.
 /mob/living/simple_animal/hostile/asteroid/basilisk
 	name = "basilisk"
@@ -20,8 +18,8 @@
 	throw_message = "does nothing against the hard shell of"
 	vision_range = 2
 	speed = 3
-	maxHealth = 175
-	health = 175
+	maxHealth = 90
+	health = 90
 	harm_intent_damage = 5
 	obj_damage = 60
 	melee_damage_lower = 7
@@ -32,7 +30,6 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	aggro_vision_range = 9
 	turns_per_move = 5
-	gold_core_spawnable = HOSTILE_SPAWN
 	loot = list(/obj/item/stack/ore/diamond{layer = ABOVE_MOB_LAYER},
 				/obj/item/stack/ore/diamond{layer = ABOVE_MOB_LAYER})
 	var/lava_drinker = TRUE
@@ -45,10 +42,10 @@
 	damage_type = BURN
 	nodamage = TRUE
 	flag = "energy"
-	temperature = -50 // Cools you down! per hit!
+	temperature = -25 // Cools you down! per hit!
 
 /obj/projectile/temp/basilisk/super
-	temperature = -100
+	temperature = -50
 	damage = 5
 	nodamage = FALSE
 
@@ -56,7 +53,7 @@
 	. = ..()
 	if(isliving(target))
 		var/mob/living/living_target = target
-		living_target.Jitter(5)
+		living_target.adjust_jitter(5)
 
 /obj/projectile/temp/basilisk/heated
 	name = "energy blast"
@@ -159,7 +156,7 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/bullet_act(obj/projectile/P)
-	shell_damage(BULLET_SHELL_DAMAGE)
+	shell_damage(P.damage/4)
 	if(has_shell)
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 85, TRUE)
 		visible_message("<span class='notice'>The [P] is absorbed by the [src]'s shell, dealing minimal damage!</span>") //make it less confusing when bullets do no damage
@@ -167,7 +164,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(istype(AM, /obj/item))
-		shell_damage(BULLET_SHELL_DAMAGE)
+		shell_damage(AM.throwforce/4)
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/drop_loot()
@@ -202,8 +199,6 @@
 	name = "glowing basilisk"
 	projectiletype = /obj/projectile/temp/basilisk/heated
 
-#undef BULLET_SHELL_DAMAGE
-
 //Watcher
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher
 	name = "watcher"
@@ -229,7 +224,6 @@
 	robust_searching = 1
 	attack_same = TRUE		// So we'll fight basilisks
 	//mob_trophy = /obj/item/mob_trophy/watcher_wing
-	gold_core_spawnable = NO_SPAWN
 	loot = list()
 	butcher_results = list(/obj/item/stack/ore/diamond = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
 	lava_drinker = FALSE

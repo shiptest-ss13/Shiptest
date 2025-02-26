@@ -77,7 +77,7 @@
 	if(prob(probability))
 		zone = check_zone(zone)
 	else
-		zone = pickweight(list(BODY_ZONE_HEAD = 1, BODY_ZONE_CHEST = 1, BODY_ZONE_L_ARM = 4, BODY_ZONE_R_ARM = 4, BODY_ZONE_L_LEG = 4, BODY_ZONE_R_LEG = 4))
+		zone = pick_weight(list(BODY_ZONE_HEAD = 4, BODY_ZONE_CHEST = 64, BODY_ZONE_L_ARM = 8, BODY_ZONE_R_ARM = 8, BODY_ZONE_L_LEG = 8, BODY_ZONE_R_LEG = 8))
 	return zone
 
 ///Would this zone be above the neck
@@ -134,11 +134,6 @@
 				newletter = "oo"
 			else if(lowerletter == "c")
 				newletter = "k"
-		if(rand(1, 20) == 20)
-			if(newletter == " ")
-				newletter = "...huuuhhh..."
-			else if(newletter == ".")
-				newletter = " *BURP*."
 		switch(rand(1, 20))
 			if(1)
 				newletter += "'"
@@ -147,7 +142,7 @@
 			if(20)
 				newletter += "[newletter][newletter]"
 			else
-				// do nothing
+				EMPTY_BLOCK_GUARD
 		. += "[newletter]"
 	return sanitize(.)
 
@@ -192,7 +187,7 @@
 			if(5)
 				newletter = "glor"
 			else
-				// do nothing
+				EMPTY_BLOCK_GUARD
 		. += newletter
 	return sanitize(.)
 
@@ -379,9 +374,6 @@
 		return FALSE
 	if(M.mind && M.mind.special_role)//If they have a mind and special role, they are some type of traitor or antagonist.
 		switch(SSticker.mode.config_tag)
-			if("cult")
-				if(M.mind in SSticker.mode.cult)
-					return 2
 			if("nuclear")
 				if(M.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE))
 					return 2
@@ -455,7 +447,7 @@
 /**
  * Heal a robotic body part on a mob
  */
-/proc/item_heal_robotic(mob/living/carbon/human/H, mob/user, brute_heal, burn_heal)
+/proc/item_heal_robotic(mob/living/carbon/human/H, mob/user, brute_heal, burn_heal, integrity_loss=0)
 	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
 	if(affecting && (!IS_ORGANIC_LIMB(affecting)))
 		var/dam //changes repair text based on how much brute/burn was supplied
@@ -464,6 +456,18 @@
 		else
 			dam = 0
 		if((brute_heal > 0 && affecting.brute_dam > 0) || (burn_heal > 0 && affecting.burn_dam > 0))
+			if(affecting.uses_integrity)
+				var/integrity_damage_incurred = (affecting.get_curable_damage() >= affecting.integrity_threshold) || (affecting.max_damage - affecting.integrity_loss >= affecting.integrity_threshold)
+				if(affecting.get_curable_damage(integrity_damage_incurred ? integrity_loss : 0) <= 0)
+					var/limb_hp_loss = affecting.integrity_loss-affecting.integrity_ignored
+					if(limb_hp_loss+integrity_loss >= affecting.max_damage)
+						to_chat(user, "<span class='warning'>[affecting] is destroyed! It needs structural repairs to be repaired any further.</span>")
+					else
+						to_chat(user, "<span class='warning'>[affecting] has taken too much structural damage, and needs surgery to improve any further.</span>")
+					return
+				if (integrity_damage_incurred)
+					affecting.take_integrity_damage(integrity_loss)
+
 			if(affecting.heal_damage(brute_heal, burn_heal, 0, BODYTYPE_ROBOTIC))
 				H.update_damage_overlays()
 			user.visible_message("[user] has fixed some of the [dam ? "dents on" : "burnt wires in"] [H]'s [parse_zone(affecting.body_zone)].", \

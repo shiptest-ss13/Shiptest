@@ -162,26 +162,6 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
-/obj/item/clothing/glasses/hud/security/sunglasses/gars
-	name = "\improper HUD gar glasses"
-	desc = "GAR glasses with a HUD."
-	icon_state = "gars"
-	item_state = "garb"
-	force = 10
-	throwforce = 10
-	throw_speed = 4
-	attack_verb = list("sliced")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP
-
-/obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars
-	name = "giga HUD gar glasses"
-	desc = "GIGA GAR glasses with a HUD."
-	icon_state = "supergars"
-	item_state = "garb"
-	force = 12
-	throwforce = 12
-
 /obj/item/clothing/glasses/hud/toggle
 	name = "Toggle HUD"
 	desc = "A hud with multiple functions."

@@ -270,11 +270,6 @@
 	desc = "A old poster urging people to join the ACLF for not only the right cause, but to explore the galaxy. This is probably outdated."
 	icon_state = "poster_aclf_enlistment"
 
-/obj/structure/sign/poster/contraband/clown
-	name = "Clown"
-	desc = "A poster making fun of the 'clown planet incident' You almost cut yourself on the edge of this poster."
-	icon_state = "poster_honk"
-
 /obj/structure/sign/poster/contraband/smoke
 	name = "Smoke"
 	desc = "A poster advertising some brand of cigarettes."
@@ -387,8 +382,8 @@
 	icon_state = "poster_dday" // human sprite by quin
 
 /obj/structure/sign/poster/contraband/stechkin
-	name = "Stechkin Pistol"
-	desc = "A poster advertising the Scarborough Arms Stechkin conealable pistol. It has a silencer attached, showing off the stealth capablities, while also looking badass as all hell."
+	name = "Ringneck Pistol"
+	desc = "A poster advertising the Scarborough Arms Ringneck conealable pistol. It has a silencer attached, showing off the stealth capablities, while also looking badass as all hell."
 	icon_state = "poster_stechkin"
 
 /obj/structure/sign/poster/contraband/energy_swords
@@ -519,7 +514,7 @@
 /obj/structure/sign/poster/contraband/m90
 	name = "M90 SMG"
 	desc = "A poster advertising the Scarborough M90. Burst action with a grenade launcher, for some reason."
-	icon_state = "poster-bulldog"
+	icon_state = "poster-m90"
 
 /obj/structure/sign/poster/contraband/inteq_nt
 	name = "Inteq Recruitment"

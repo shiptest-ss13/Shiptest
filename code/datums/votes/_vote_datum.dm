@@ -10,7 +10,7 @@
 	/// If supplied, an override question will be displayed instead of the name of the vote.
 	var/override_question
 	/// The sound effect played to everyone when this vote is initiated.
-	var/vote_sound = 'sound/misc/compiler-stage2.ogg'
+	var/vote_sound = 'sound/misc/announce_dig.ogg'
 	/// A list of default choices we have for this vote.
 	var/list/default_choices
 	/// What message do we want to pass to the player-side vote panel as a tooltip?
@@ -156,7 +156,7 @@
 
 /// Gets the winner of the vote, selecting a random choice from all choices based on their vote count.
 /datum/vote/proc/get_random_winner()
-	var/winner = pickweight(choices)
+	var/winner = pick_weight(choices)
 	return winner ? list(winner) : list()
 
 /**
@@ -169,13 +169,14 @@
  * Return a formatted string of text to be displayed to everyone.
  */
 /datum/vote/proc/get_result_text(list/all_winners, real_winner, list/non_voters)
+	var/title_text = ""
 	var/returned_text = ""
 	if(override_question)
-		returned_text += span_bold(override_question)
+		title_text += span_bold(override_question)
 	else
-		returned_text += span_bold("[capitalize(name)] Vote")
+		title_text += span_bold("[capitalize(name)] Vote")
 
-	returned_text += "\nWinner Selection: "
+	returned_text += "Winner Selection: "
 	switch(winner_method)
 		if(VOTE_WINNER_METHOD_NONE)
 			returned_text += "None"
@@ -215,7 +216,7 @@
 	returned_text += "\n"
 	returned_text += get_winner_text(all_winners, real_winner, non_voters)
 
-	return returned_text
+	return fieldset_block(title_text, returned_text, "boxed_message purple_box")
 
 /**
  * Gets the text that displays the winning options within the result text.

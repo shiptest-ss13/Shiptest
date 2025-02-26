@@ -49,7 +49,7 @@
 	satchel = /obj/item/storage/backpack/cultpack
 
 	backpack_contents = list(/obj/item/book/manual/srmlore=1,
-		/obj/item/stamp/chap = 1,
+		/obj/item/stamp/roumain = 1,
 		/obj/item/melee/classic_baton/telescopic=1,
 	)
 	chameleon_extras = null
@@ -75,7 +75,7 @@
 	satchel = /obj/item/storage/backpack/cultpack
 
 	backpack_contents = list(/obj/item/book/manual/srmlore=1,
-		/obj/item/stamp/chap = 1,
+		/obj/item/stamp/roumain = 1,
 		/obj/item/melee/classic_baton/telescopic=1,
 	)
 	chameleon_extras = null
@@ -84,7 +84,7 @@
 	name = "Saint-Roumain Militia - Hunter"
 	id_assignment = "Hunter"
 	jobtype = /datum/job/officer
-	job_icon = "hsrm_hunter"
+	job_icon = "srm_hunter"
 
 	uniform = /obj/item/clothing/under/suit/roumain
 	alt_uniform = null
@@ -164,5 +164,5 @@
 	satchel = /obj/item/storage/backpack/cultpack
 
 	backpack_contents = list(/obj/item/book/manual/srmlore=1,
-		/obj/item/stamp/chap = 1,
+		/obj/item/stamp/roumain = 1,
 	)

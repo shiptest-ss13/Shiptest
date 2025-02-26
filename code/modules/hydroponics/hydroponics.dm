@@ -194,7 +194,7 @@
 //Pests & Weeds//////////////////////////////////////////////////////////
 
 			if(pestlevel >= 8)
-				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+				if(!myseed.get_gene(/datum/plant_gene/trait/carnivory))
 					adjustHealth(-2 / rating)
 
 				else
@@ -202,7 +202,7 @@
 					adjustPests(-1 / rating)
 
 			else if(pestlevel >= 4)
-				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+				if(!myseed.get_gene(/datum/plant_gene/trait/carnivory))
 					adjustHealth(-1 / rating)
 
 				else
@@ -210,7 +210,7 @@
 					if(prob(50))
 						adjustPests(-1 / rating)
 
-			else if(pestlevel < 4 && myseed.get_gene(/datum/plant_gene/trait/plant_type/carnivory))
+			else if(pestlevel < 4 && myseed.get_gene(/datum/plant_gene/trait/carnivory))
 				adjustHealth(-2 / rating)
 				if(prob(5))
 					adjustPests(-1 / rating)
@@ -269,10 +269,7 @@
 			update_appearance()
 
 		if(myseed && prob(5 * (11-myseed.production)))
-			for(var/g in myseed.genes)
-				if(istype(g, /datum/plant_gene/trait))
-					var/datum/plant_gene/trait/selectedtrait = g
-					selectedtrait.on_grow(src)
+			SEND_SIGNAL(myseed, COMSIG_SEED_ON_GROW, src)
 	return
 
 /obj/machinery/hydroponics/update_appearance(updates)
@@ -573,7 +570,7 @@
 		msg += "Toxicity level: [span_notice("[toxic] / [HYDRO_MAX_TOXIC]")]\n"
 		msg += "Water level: [span_notice("[waterlevel] / [maxwater]")]\n"
 		msg += "Nutrition level: [span_notice("[reagents.total_volume] / [maxnutri]")]\n"
-		to_chat(user, examine_block(msg))
+		to_chat(user, boxed_message(msg))
 		return
 
 	else if(istype(O, /obj/item/cultivator))

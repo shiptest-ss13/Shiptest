@@ -26,7 +26,7 @@ Contents:
 	var/datum/effect_system/spark_spread/spark_system
 	var/datum/techweb/stored_research
 	var/obj/item/disk/tech_disk/t_disk//To copy design onto disk.
-	var/obj/item/energy_katana/energyKatana //For teleporting the katana back to the ninja (It's an ability)
+	var/obj/item/melee/sword/energy_katana/energyKatana //For teleporting the katana back to the ninja (It's an ability)
 
 	//Other articles of ninja gear worn together, used to easily reference them after initializing.
 	var/obj/item/clothing/head/helmet/space/space_ninja/n_hood

@@ -22,7 +22,7 @@
 	name = "incise heart"
 	implements = list(
 		TOOL_SCALPEL = 90,
-		/obj/item/kitchen/knife = 40,
+		/obj/item/melee/knife = 40,
 		/obj/item/shard = 33)
 	time = 1.6 SECONDS
 	preop_sound = 'sound/surgery/scalpel1.ogg'

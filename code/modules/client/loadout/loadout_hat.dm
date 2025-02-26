@@ -80,25 +80,26 @@
 
 //Soft caps
 
-/datum/gear/hat/softcap/red
-	display_name = "cap, red"
-	path = /obj/item/clothing/head/soft/red
+/datum/gear/hat/softcap
+	display_name = "cap, recolorable"
+	path = /obj/item/clothing/head/soft
 
-/datum/gear/hat/softcap/blue
-	display_name = "cap, blue"
-	path = /obj/item/clothing/head/soft/blue
+/datum/gear/hat/utility_black
+	display_name = "utility cover, black"
+	path = /obj/item/clothing/head/soft/utility_black
 
-/datum/gear/hat/softcap/grey
-	display_name = "cap, grey"
-	path = /obj/item/clothing/head/soft/grey
+/datum/gear/hat/utility_olive
+	display_name = "utility cover, olive"
+	path = /obj/item/clothing/head/soft/utility_olive
 
-/datum/gear/hat/softcap/white
-	display_name = "cap, white"
-	path = /obj/item/clothing/head/soft/mime
+/datum/gear/hat/utility_beige
+	display_name = "utility cover, beige"
+	path = /obj/item/clothing/head/soft/utility_beige
 
-/datum/gear/hat/softcap/black
-	display_name = "cap, black"
-	path = /obj/item/clothing/head/soft/black
+/datum/gear/hat/utility_navy
+	display_name = "utility cover, navy"
+	path = /obj/item/clothing/head/soft/utility_navy
+
 
 //Beanies
 
@@ -130,10 +131,6 @@
 	display_name = "beanie, orange"
 	path = /obj/item/clothing/head/beanie/orange
 //Misc
-
-/datum/gear/hat/bowler
-	display_name = "bowler hat"
-	path = /obj/item/clothing/head/bowler
 
 /datum/gear/hat/that
 	display_name = "top hat"
@@ -170,3 +167,7 @@
 /datum/gear/hat/flowers
 	display_name = "plastic flower, pickable"
 	path = /obj/item/clothing/head/plastic_flower
+
+/datum/gear/hat/flap
+	display_name = "flap cap, recolorable"
+	path = /obj/item/clothing/head/flap

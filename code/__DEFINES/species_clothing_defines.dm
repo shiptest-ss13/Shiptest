@@ -12,7 +12,7 @@
 #define DEFAULT_HEAD_PATH 'icons/mob/clothing/head.dmi'
 #define DEFAULT_NECK_PATH 'icons/mob/clothing/neck.dmi'
 #define DEFAULT_GLOVES_PATH 'icons/mob/clothing/hands.dmi'
-#define DEFAULT_GLASSES_PATH 'icons/mob/clothing/eyes.dmi'
+#define DEFAULT_GLASSES_PATH 'icons/mob/clothing/eyes/eyes.dmi'
 #define DEFAULT_BELT_PATH 'icons/mob/clothing/belt.dmi'
 
 ///VOX PATHS
@@ -27,9 +27,13 @@
 #define VOX_GLOVES_PATH 'icons/mob/species/vox/onmob_hands_vox.dmi'
 #define VOX_GLASSES_PATH 'icons/mob/species/vox/onmob_eyes_vox.dmi'
 #define VOX_BELT_PATH 'icons/mob/species/vox/onmob_belt_vox.dmi'
+#define VOX_UNDERWEAR_TORSO_PATH 'icons/mob/clothing/underwear/species/vox/underwear_torso_vox.dmi'
+#define VOX_UNDERWEAR_LEGS_PATH 'icons/mob/clothing/underwear/species/vox/underwear_legs_vox.dmi'
+#define VOX_UNDERWEAR_SOCKS_PATH 'icons/mob/clothing/underwear/species/vox/underwear_socks_vox.dmi'
 
 ///KEPORI PATHS
 #define KEPORI_UNIFORM_PATH 'icons/mob/species/kepori/onmob_uniform_kepori.dmi'
+#define KEPORI_BACK_PATH 'icons/mob/species/kepori/onmob_back_kepori.dmi'
 #define KEPORI_SHOES_PATH 'icons/mob/species/kepori/onmob_feet_kepori.dmi'
 #define KEPORI_SUIT_PATH 'icons/mob/species/kepori/onmob_suit_kepori.dmi'
 #define KEPORI_EARS_PATH 'icons/mob/species/kepori/onmob_ears_kepori.dmi'

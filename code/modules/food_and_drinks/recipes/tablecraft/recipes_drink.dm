@@ -86,28 +86,6 @@
 
 ////////////////////// Non-alcoholic recipes ///////////////////
 
-/datum/crafting_recipe/holybottle
-	name = "Holy Water Flask"
-	time = 30
-	reqs = list(
-		/obj/item/reagent_containers/food/drinks/bottle = 1,
-		/datum/reagent/water/holywater = 100
-	)
-	result = /obj/item/reagent_containers/food/drinks/bottle/holywater
-	category = CAT_DRINK
-
-//flask of unholy water is a beaker for some reason, I will try making it a bottle and add it here once the antag freeze is over. t. kryson
-
-/datum/crafting_recipe/nothingbottle
-	name = "Nothing Bottle"
-	time = 30
-	reqs = list(
-		/obj/item/reagent_containers/food/drinks/bottle = 1,
-		/datum/reagent/consumable/nothing = 100
-	)
-	result = /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing
-	category = CAT_DRINK
-
 /datum/crafting_recipe/smallcarton
 	name = "Small Carton"
 	result = /obj/item/reagent_containers/food/drinks/sillycup/smallcarton
@@ -121,15 +99,6 @@
 	time = 30
 	reqs = list(/datum/reagent/consumable/ethanol/whiskey = 100,
 				/obj/item/reagent_containers/food/snacks/candy_corn = 1,
-				/obj/item/reagent_containers/food/drinks/bottle = 1)
-	category = CAT_DRINK
-
-/datum/crafting_recipe/kong
-	name = "Kong"
-	result = /obj/item/reagent_containers/food/drinks/bottle/kong
-	time = 30
-	reqs = list(/datum/reagent/consumable/ethanol/whiskey = 100,
-				/obj/item/reagent_containers/food/snacks/monkeycube = 1,
 				/obj/item/reagent_containers/food/drinks/bottle = 1)
 	category = CAT_DRINK
 

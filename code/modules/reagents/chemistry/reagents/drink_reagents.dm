@@ -63,7 +63,7 @@
 	M.adjust_blindness(-1)
 	switch(current_cycle)
 		if(1 to 20)
-			//nothing
+			EMPTY_BLOCK_GUARD //nothing
 		if(21 to INFINITY)
 			if(prob(current_cycle-10))
 				M.cure_nearsighted(list(EYE_DAMAGE))
@@ -249,7 +249,7 @@
 	glass_desc = "Black coffee, served straight. It'll be pretty bitter without anything else in it!"
 
 /datum/reagent/consumable/coffee/overdose_process(mob/living/M)
-	M.Jitter(5)
+	M.adjust_jitter(5, max = 200)
 	..()
 
 /datum/reagent/consumable/coffee/on_mob_life(mob/living/carbon/M)
@@ -257,7 +257,7 @@
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
 	//310.15 is the normal bodytemp.
-	M.adjust_bodytemperature(25 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
+	M.adjust_bodytemperature(3 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
 	if(holder.has_reagent(/datum/reagent/consumable/frostoil))
 		holder.remove_reagent(/datum/reagent/consumable/frostoil, 5)
 	..()
@@ -276,11 +276,11 @@
 /datum/reagent/consumable/tea/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-2)
 	M.drowsyness = max(0,M.drowsyness-1)
-	M.jitteriness = max(0,M.jitteriness-3)
+	M.adjust_jitter(max(0,M.jitteriness-3))
 	M.AdjustSleeping(-20)
 	if(M.getToxLoss() && prob(20))
 		M.adjustToxLoss(-1, 0)
-	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
+	M.adjust_bodytemperature(2 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
 	..()
 	. = 1
 
@@ -323,14 +323,14 @@
 	glass_desc = "Iced black coffee. It's still going to be pretty bitter on it's own, though!"
 
 /datum/reagent/consumable/icecoffee/overdose_process(mob/living/M)
-	M.Jitter(5)
+	M.adjust_jitter(5)
 	..()
 
 /datum/reagent/consumable/icecoffee/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 	. = 1
 
@@ -347,14 +347,14 @@
 	glass_desc = "The wonders of fusion mixed into a cup of coffee, resulting in an extremely hot-cold drink."
 
 /datum/reagent/consumable/hot_ice_coffee/overdose_process(mob/living/M)
-	M.Jitter(5)
+	M.adjust_jitter(5, max = 200)
 	..()
 
 /datum/reagent/consumable/hot_ice_coffee/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-60)
-	M.adjust_bodytemperature(-20 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	M.adjustToxLoss(1*REM, 0)
 	..()
 	. = TRUE
@@ -375,7 +375,7 @@
 	M.AdjustSleeping(-40)
 	if(M.getToxLoss() && prob(20))
 		M.adjustToxLoss(-1, 0)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 	. = 1
 
@@ -390,7 +390,7 @@
 
 /datum/reagent/consumable/space_cola/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-5)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/crosstalk
@@ -412,11 +412,11 @@
 	..()
 
 /datum/reagent/consumable/crosstalk/on_mob_life(mob/living/carbon/M)
-	M.Jitter(20)
+	M.adjust_jitter(10, max = 200)
 	M.dizziness +=1
 	M.drowsyness = 0
 	M.AdjustSleeping(-40)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	..()
 
 /datum/reagent/consumable/comet_trail
@@ -431,8 +431,8 @@
 /datum/reagent/consumable/comet_trail/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-7)
 	M.AdjustSleeping(-20)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
-	M.Jitter(5)
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
+	M.adjust_jitter(5, max = 100)
 	..()
 	. = 1
 
@@ -447,7 +447,7 @@
 
 /datum/reagent/consumable/tadrixx/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-6)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/space_up
@@ -461,7 +461,7 @@
 
 
 /datum/reagent/consumable/space_up/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/molten
@@ -476,9 +476,9 @@
 /datum/reagent/consumable/molten/on_mob_life(mob/living/carbon/M)
 	M.heal_bodypart_damage(1,1,0)
 	if(M.bodytemperature > M.get_body_temp_normal(apply_change=FALSE))
-		M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(apply_change=FALSE))
+		M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(apply_change=FALSE), FALSE)
 	else if(M.bodytemperature < (M.get_body_temp_normal(apply_change=FALSE) + 1))
-		M.adjust_bodytemperature(10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE))
+		M.adjust_bodytemperature(2 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE), FALSE)
 	..()
 
 /datum/reagent/consumable/molten/plasma_fizz
@@ -509,7 +509,7 @@
 
 
 /datum/reagent/consumable/lemon_lime/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 
 
@@ -530,7 +530,7 @@
 		You feel as though a great secret of the universe has been made known to you...</span>")
 
 /datum/reagent/consumable/pacfuel/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	if(prob(10))
 		M?.mind.adjust_experience(/datum/skill/gaming, 5)
 	..()
@@ -545,7 +545,7 @@
 	glass_desc = "It's hard to imagine all those fruits getting condensed into a cup like this."
 
 /datum/reagent/consumable/shoal_punch/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 /datum/reagent/consumable/sodawater
 	name = "Soda Water"
@@ -559,7 +559,7 @@
 /datum/reagent/consumable/sodawater/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/tonic
@@ -575,7 +575,7 @@
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 	. = 1
 
@@ -590,11 +590,11 @@
 	glass_desc = "A glass of Xeno Energy. It seems to swirl and roil outside of the can..."
 
 /datum/reagent/consumable/xeno_energy/on_mob_life(mob/living/carbon/M)
-	M.Jitter(20)
+	M.adjust_jitter(10, max = 200)
 	M.dizziness +=1
 	M.drowsyness = 0
 	M.AdjustSleeping(-40)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/xeno_energy/on_mob_metabolize(mob/living/L)
@@ -617,7 +617,7 @@
 	glass_desc = "Generally, you're supposed to put something else in there, too..."
 
 /datum/reagent/consumable/ice/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/soy_latte
@@ -632,14 +632,14 @@
 	glass_desc = "A nice and refreshing beverage. It goes well with a book, if you have the time to read."
 
 /datum/reagent/consumable/soy_latte/overdose_process(mob/living/M)
-	M.Jitter(5)
+	M.adjust_jitter(2, max = 100)
 	..()
 
 /datum/reagent/consumable/soy_latte/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
-	M.SetSleeping(0)
-	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
+	M.set_sleeping(0)
+	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
 	..()
@@ -657,14 +657,14 @@
 	glass_desc = "A nice, strong and refreshing beverage. It goes well with a book, if you have the time to read."
 
 /datum/reagent/consumable/cafe_latte/overdose_process(mob/living/M)
-	M.Jitter(5)
+	M.adjust_jitter(5, max = 200)
 	..()
 
 /datum/reagent/consumable/cafe_latte/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
-	M.SetSleeping(0)
-	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
+	M.set_sleeping(0)
+	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
 	..()
@@ -788,7 +788,7 @@
 	glass_desc = "It's grape soda!"
 
 /datum/reagent/consumable/grape_soda/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/milk/chocolate_milk
@@ -817,7 +817,7 @@
 	glass_desc = "A favorite winter drink from the Solar Confederation. Good for warming yourself up."
 
 /datum/reagent/consumable/hot_coco/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
+	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/hot_coco/on_mob_life(mob/living/carbon/M)
@@ -884,7 +884,7 @@
 	glass_desc = "A classic vanilla flavored soft drink."
 
 /datum/reagent/consumable/cream_soda/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/sol_dry
