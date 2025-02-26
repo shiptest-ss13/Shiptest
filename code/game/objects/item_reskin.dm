@@ -37,7 +37,8 @@
 	SHOULD_CALL_PARENT(FALSE)
 
 	if(current_skin)
-		update_item_skin()
+		if(LAZYLEN(unique_reskin))
+			update_item_skin()
 
 	if(!check_setup_reskinning())
 		return
