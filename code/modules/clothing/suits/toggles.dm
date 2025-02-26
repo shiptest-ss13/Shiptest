@@ -19,21 +19,21 @@
 	. = ..()
 	if(!base_icon_state)
 		base_icon_state = icon_state
-	MakeHood()
+	make_hood()
 
 /obj/item/clothing/suit/hooded/Destroy()
 	. = ..()
 	qdel(hood)
 	hood = null
 
-/obj/item/clothing/suit/hooded/proc/MakeHood()
+/obj/item/clothing/suit/hooded/proc/make_hood()
 	if(!hood)
 		var/obj/item/clothing/head/hooded/W = new hoodtype(src)
 		W.suit = src
 		hood = W
 
 /obj/item/clothing/suit/hooded/ui_action_click()
-	ToggleHood()
+	toggle_hood()
 
 /obj/item/clothing/suit/hooded/item_action_slot_check(slot, mob/user)
 	if(slot == ITEM_SLOT_OCLOTHING)
@@ -41,10 +41,10 @@
 
 /obj/item/clothing/suit/hooded/equipped(mob/user, slot)
 	if(slot != ITEM_SLOT_OCLOTHING)
-		RemoveHood()
+		remove_hood()
 	..()
 
-/obj/item/clothing/suit/hooded/proc/RemoveHood()
+/obj/item/clothing/suit/hooded/proc/remove_hood()
 	suittoggled = FALSE
 	if(hood)
 		if(ishuman(hood.loc))
@@ -69,9 +69,9 @@
 
 /obj/item/clothing/suit/hooded/dropped()
 	..()
-	RemoveHood()
+	remove_hood()
 
-/obj/item/clothing/suit/hooded/proc/ToggleHood()
+/obj/item/clothing/suit/hooded/proc/toggle_hood()
 	if(!suittoggled)
 		if(ishuman(src.loc))
 			var/mob/living/carbon/human/H = src.loc
@@ -89,7 +89,7 @@
 					A.UpdateButtonIcon()
 				//Might need an update aperance here
 	else
-		RemoveHood()
+		remove_hood()
 
 /obj/item/clothing/head/hooded
 	var/obj/item/clothing/suit/hooded/suit
@@ -101,13 +101,13 @@
 /obj/item/clothing/head/hooded/dropped()
 	..()
 	if(suit)
-		suit.RemoveHood()
+		suit.remove_hood()
 
 /obj/item/clothing/head/hooded/equipped(mob/user, slot)
 	..()
 	if(slot != ITEM_SLOT_HEAD)
 		if(suit)
-			suit.RemoveHood()
+			suit.remove_hood()
 		else
 			qdel(src)
 
