@@ -409,13 +409,13 @@
 	ADD_TRAIT(L, TRAIT_ANALGESIA, type)
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
-		C.hal_screwyhud = SCREWYHUD_HEALTHY
+		C.set_screwyhud(SCREWYHUD_HEALTHY)
 
 /datum/reagent/medicine/mine_salve/on_mob_end_metabolize(mob/living/M)
 	if(iscarbon(M))
 		var/mob/living/carbon/N = M
 		REMOVE_TRAIT(N, TRAIT_ANALGESIA, type)
-		N.hal_screwyhud = SCREWYHUD_NONE
+		N.set_screwyhud(SCREWYHUD_NONE)
 	..()
 
 /datum/reagent/medicine/synthflesh
@@ -915,6 +915,9 @@
 /datum/reagent/medicine/dimorlin/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_ANALGESIA, type)
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		C.set_screwyhud(SCREWYHUD_HEALTHY)
 	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
@@ -922,6 +925,9 @@
 
 /datum/reagent/medicine/dimorlin/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_ANALGESIA, type)
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		C.set_screwyhud(SCREWYHUD_NONE)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
@@ -929,6 +935,7 @@
 	..()
 
 /datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/M)
+	C.set_screwyhud(SCREWYHUD_HEALTHY)
 	if(current_cycle >= 3)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
 	..()
