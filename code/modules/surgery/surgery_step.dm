@@ -124,10 +124,10 @@
 			if(failure(user, target, target_zone, tool, surgery, fail_prob))
 				play_failure_sound(user, target, target_zone, tool, surgery)
 				advance = TRUE
-		if(!(HAS_TRAIT(target, TRAIT_PAIN_RESIST) || HAS_TRAIT(target, TRAIT_ANALGESIA)) && target.stat != DEAD && !IS_IN_STASIS(target) && fuckup_damage) //not under the effects of anaesthetics or a strong painkiller
+		if(!(HAS_TRAIT(target, TRAIT_PAIN_RESIST) || HAS_TRAIT(target, TRAIT_ANALGESIA)) && target.stat >= HARD_CRIT && !IS_IN_STASIS(target) && fuckup_damage) //not under the effects of anaesthetics or a strong painkiller
 			var/obj/item/bodypart/operated_bodypart = target.get_bodypart(target_zone) ? target.get_bodypart(target_zone) : target.get_bodypart(BODY_ZONE_CHEST)
 			if(operated_bodypart?.bodytype & BODYPART_ORGANIC) //robot limbs are built to be opened and stuff
-				commit_malpractice(user, target, target_zone, tool, surgery, advance)
+				commit_malpractice(user, target, target_zone, tool, surgery)
 
 		if(chem_check_result && !advance)
 			return .(user, target, target_zone, tool, surgery, try_to_fail) //automatically re-attempt if failed for reason other than lack of required chemical
@@ -247,21 +247,15 @@
 	user.visible_message(detailed_message, self_message, vision_distance = 1, ignored_mobs = target_detailed ? null : target)
 	user.visible_message(vague_message, "", ignored_mobs = detailed_mobs)
 
-/// Lacking anesthetic, a surgery has a chance to cause Complications, which this handles
-/datum/surgery_step/proc/commit_malpractice(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, success)
+/// Lacking anesthetic, a surgery has a chance to cause Complications, which is handled here
+/datum/surgery_step/proc/commit_malpractice(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/ouchie_mod = 1
-	ouchie_mod *= clamp(1-target.drunkenness/SURGERY_DRUNK_MOD, 0, 1) //Drunkenness up to 50% (points? idk) will improve chances of avoiding horrible pain and suffering
-	if(target.stat == UNCONSCIOUS) //Being "normally" asleep (or getting choked out) will SLIGHTLY improve your chances since it's intuitive behavior barring access to anything else
-		ouchie_mod *= 0.8
-	if(!success) //Failing the surgery increases the chance of causing harm significantly
-		ouchie_mod *= 1.5
+	ouchie_mod *= clamp(1-target.drunkenness/SURGERY_DRUNK_MOD, 0, 1) // Drunkenness up to 40% (points? idk) will improve chances of avoiding horrible pain and suffering
+	if(target.stat == UNCONSCIOUS) // Being "normally" asleep will SLIGHTLY improve your chances since it's intuitive behavior barring access to anything else
+		ouchie_mod *= target.getOxyLoss() >= 50 ? 0.6 : 0.8 // Being choked out will slightly improve chances on top of that. Emergent gameplay! (people already do this)
 	var/final_ouchie_chance = SURGERY_FUCKUP_CHANCE * ouchie_mod
 	if(!prob(final_ouchie_chance))
 		return
 	. = TRUE
 	user.visible_message(span_boldwarning("[target] flinches, bumping [user]'s [tool ? tool.name : "hand"] into something important!"), span_boldwarning("[target]  flinches, bumping your [tool ? tool.name : "hand"] into something important!"))
 	target.apply_damage(fuckup_damage, fuckup_damage_type, target_zone)
-	if(istype(target) && fuckup_damage_type == BRUTE)
-		var/obj/item/bodypart/BP = target.get_bodypart(check_zone(surgery.location))
-		if(BP)
-			BP.adjust_bleeding(min(fuckup_damage * BLOOD_LOSS_DAMAGE_BASE, BLOOD_LOSS_DAMAGE_MAXIMUM)) //Increased bleeding because you are getting stabbed on the inside

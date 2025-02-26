@@ -20,7 +20,7 @@
 		TOOL_WRENCH = 40)
 	preop_sound = 'sound/surgery/bone1.ogg'
 	success_sound = 'sound/surgery/bone3.ogg'
-	fuckup_damage = 20 //meowzers
+	fuckup_damage = 10
 
 /datum/surgery_step/set_bone/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(target_zone == BODY_ZONE_HEAD)
