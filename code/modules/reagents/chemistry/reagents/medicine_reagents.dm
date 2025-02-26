@@ -914,14 +914,14 @@
 
 /datum/reagent/medicine/dimorlin/on_mob_metabolize(mob/living/L)
 	..()
-	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
+	ADD_TRAIT(L, TRAIT_ANALGESIA, type)
 	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance += 15
 
 /datum/reagent/medicine/dimorlin/on_mob_end_metabolize(mob/living/L)
-	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
+	REMOVE_TRAIT(L, TRAIT_ANALGESIA, type)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
