@@ -217,7 +217,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 27,
 			"y" = 17,
-		)
+		),
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 12,
 			"y" = 23,
@@ -499,7 +499,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 29,
 			"y" = 17,
-		)
+		),
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 15,
 			"y" = 24,
@@ -571,7 +571,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 	//you get the rail slot back when the bipod is an attachment
 	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1
+		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
@@ -666,7 +666,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 44,
 			"y" = 19,
-		)
+		),
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 21,
 			"y" = 25,

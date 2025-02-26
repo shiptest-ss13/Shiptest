@@ -74,7 +74,7 @@
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 33,
 			"y" = 15,
-		)
+		),
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 16,
 			"y" = 22,
