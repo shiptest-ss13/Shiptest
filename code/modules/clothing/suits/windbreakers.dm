@@ -38,22 +38,11 @@
 						"brown windbreaker" = "jacketbrown",
 						"light brown windbreaker" = "jacketlightbrown"
 						)
-	var/jacket_icon
+	unique_reskin_changes_inhand = TRUE
 
 /obj/item/clothing/suit/toggle/windbreaker/Initialize()
 	. = ..()
-	jacket_icon = icon_state
-
-/obj/item/clothing/suit/toggle/windbreaker/examine(mob/user)
-	. = ..()
-	if(unique_reskin && !current_skin)
-		. += "You can <b>Alt-Click</b> [src] to apply a new skin to it."
-
-/obj/item/clothing/suit/toggle/windbreaker/reskin_obj(mob/M, change_name)
-	. = ..()
-	item_state = icon_state
-	jacket_icon = icon_state
-	return
+	base_icon_state = icon_state
 
 /obj/item/clothing/suit/toggle/windbreaker/suit_toggle()
 	set src in usr
@@ -63,10 +52,10 @@
 
 	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
 	if(src.suittoggled)
-		src.icon_state = "[jacket_icon]"
+		src.icon_state = "[base_icon_state]"
 		src.suittoggled = FALSE
 	else if(!src.suittoggled)
-		src.icon_state = "[jacket_icon]_t"
+		src.icon_state = "[base_icon_state]_t"
 		src.suittoggled = TRUE
 	usr.update_inv_wear_suit()
 	for(var/X in actions)

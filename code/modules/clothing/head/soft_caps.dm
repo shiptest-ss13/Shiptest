@@ -26,9 +26,9 @@
 	unique_reskin_changes_name = TRUE
 	var/flipped = TRUE
 
-/obj/item/clothing/head/soft/dropped()
-	flipped = FALSE
-	..()
+/obj/item/clothing/head/soft/Initialize()
+	. = ..()
+	base_icon_state = icon_state
 
 /obj/item/clothing/head/soft/verb/flipcap()
 	set category = "Object"
@@ -36,13 +36,14 @@
 
 	flip(usr)
 
-
 /obj/item/clothing/head/soft/AltClick(mob/user)
-	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return FALSE
+	if(unique_reskin && !current_skin)
+		reskin_obj(user)
 	else
 		flip(user)
-		return TRUE
+	return TRUE
 
 /obj/item/clothing/head/soft/proc/flip(mob/user)
 	if(!user.incapacitated())

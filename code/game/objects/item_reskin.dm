@@ -35,6 +35,10 @@
  */
 /obj/item/proc/setup_reskinning()
 	SHOULD_CALL_PARENT(FALSE)
+
+	if(current_skin)
+		update_item_skin()
+
 	if(!check_setup_reskinning())
 		return
 
@@ -72,11 +76,22 @@
 	if(unique_reskin_changes_name)
 		name = pick
 
-	update_appearance()
+	update_item_skin()
 
 	to_chat(user, "[src] is now skinned as '[pick].'")
 	SEND_SIGNAL(src, COMSIG_ITEM_RESKIN, user, pick)
 
+/obj/item/proc/update_item_skin()
+	icon_state = unique_reskin[current_skin]
+
+	if (unique_reskin_changes_base_icon_state)
+		base_icon_state = icon_state
+	if (unique_reskin_changes_inhand)
+		item_state = icon_state
+	if(unique_reskin_changes_name)
+		name = current_skin
+
+	update_appearance()
 
 /**
  * Checks if we are allowed to interact with a radial menu for reskins
