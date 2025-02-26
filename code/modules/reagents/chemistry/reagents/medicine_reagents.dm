@@ -382,7 +382,7 @@
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/mine_salve/on_mob_life(mob/living/carbon/C)
-	C.hal_screwyhud = SCREWYHUD_HEALTHY
+	C.set_screwyhud(SCREWYHUD_HEALTHY)
 	C.adjustBruteLoss(-0.25*REM, 0)
 	C.adjustFireLoss(-0.25*REM, 0)
 	..()
@@ -407,6 +407,9 @@
 /datum/reagent/medicine/mine_salve/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_ANALGESIA, type)
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		C.hal_screwyhud = SCREWYHUD_HEALTHY
 
 /datum/reagent/medicine/mine_salve/on_mob_end_metabolize(mob/living/M)
 	if(iscarbon(M))
@@ -911,14 +914,14 @@
 
 /datum/reagent/medicine/dimorlin/on_mob_metabolize(mob/living/L)
 	..()
-	ADD_TRAIT(L, TRAIT_ANALGESIA, type)
+	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
 	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance += 15
 
 /datum/reagent/medicine/dimorlin/on_mob_end_metabolize(mob/living/L)
-	REMOVE_TRAIT(L, TRAIT_ANALGESIA, type)
+	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
