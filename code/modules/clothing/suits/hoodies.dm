@@ -36,24 +36,12 @@
 						"brown hoodie" = "hoodiebrown",
 						"light brown hoodie" = "hoodielightbrown"
 						)
-	var/hoodie_icon
 
-/obj/item/clothing/suit/hooded/hoodie/Initialize()
-	. = ..()
-	hoodie_icon = icon_state
 
 /obj/item/clothing/suit/hooded/hoodie/examine(mob/user)
 	. = ..()
 	if(unique_reskin && !current_skin)
 		. += "You can <b>Alt-Click</b> [src] to apply a new skin to it."
-
-/obj/item/clothing/suit/hooded/hoodie/reskin_obj(mob/M, change_name)
-	. = ..()
-	item_state = icon_state
-	hoodie_icon = icon_state
-	if(hood)
-		hood.icon_state = icon_state
-	return
 
 /obj/item/clothing/head/hooded/hood
 	name = "hood"
