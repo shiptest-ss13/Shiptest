@@ -381,9 +381,6 @@
 	color = "#6D6374"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/mine_salve/on_mob_metabolize(mob/living/L)
-	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
-
 /datum/reagent/medicine/mine_salve/on_mob_life(mob/living/carbon/C)
 	C.hal_screwyhud = SCREWYHUD_HEALTHY
 	C.adjustBruteLoss(-0.25*REM, 0)
@@ -409,14 +406,13 @@
 
 /datum/reagent/medicine/mine_salve/on_mob_metabolize(mob/living/L)
 	..()
-	ADD_TRAIT(L, TRAIT_SURGERY_PREPARED, type)
+	ADD_TRAIT(L, TRAIT_ANALGESIA, type)
 
 /datum/reagent/medicine/mine_salve/on_mob_end_metabolize(mob/living/M)
 	if(iscarbon(M))
 		var/mob/living/carbon/N = M
-		REMOVE_TRAIT(N, TRAIT_PAIN_RESIST, type)
+		REMOVE_TRAIT(N, TRAIT_ANALGESIA, type)
 		N.hal_screwyhud = SCREWYHUD_NONE
-	REMOVE_TRAIT(M, TRAIT_SURGERY_PREPARED, type)
 	..()
 
 /datum/reagent/medicine/synthflesh

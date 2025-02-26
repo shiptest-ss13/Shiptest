@@ -124,11 +124,10 @@
 			if(failure(user, target, target_zone, tool, surgery, fail_prob))
 				play_failure_sound(user, target, target_zone, tool, surgery)
 				advance = TRUE
-		if(!HAS_TRAIT(target, TRAIT_SURGERY_PREPARED) && target.stat != DEAD && !IS_IN_STASIS(target) && fuckup_damage) //not under the effects of anaesthetics or a strong painkiller
-			if(!HAS_TRAIT(user, TRAIT_SURGEON)) // The patient needs more mouse bites
-				var/obj/item/bodypart/operated_bodypart = target.get_bodypart(target_zone) ? target.get_bodypart(target_zone) : target.get_bodypart(BODY_ZONE_CHEST)
-				if(operated_bodypart?.bodytype & BODYPART_ORGANIC) //robot limbs are built to be opened and stuff
-					commit_malpractice(user, target, target_zone, tool, surgery, advance)
+		if(!(HAS_TRAIT(target, TRAIT_PAIN_RESIST) || HAS_TRAIT(target, TRAIT_ANALGESIA)) && target.stat != DEAD && !IS_IN_STASIS(target) && fuckup_damage) //not under the effects of anaesthetics or a strong painkiller
+			var/obj/item/bodypart/operated_bodypart = target.get_bodypart(target_zone) ? target.get_bodypart(target_zone) : target.get_bodypart(BODY_ZONE_CHEST)
+			if(operated_bodypart?.bodytype & BODYPART_ORGANIC) //robot limbs are built to be opened and stuff
+				commit_malpractice(user, target, target_zone, tool, surgery, advance)
 
 		if(chem_check_result && !advance)
 			return .(user, target, target_zone, tool, surgery, try_to_fail) //automatically re-attempt if failed for reason other than lack of required chemical
