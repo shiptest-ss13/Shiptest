@@ -67,9 +67,10 @@
 
 	if (unique_reskin_changes_base_icon_state)
 		base_icon_state = icon_state
-
 	if (unique_reskin_changes_inhand)
 		item_state = icon_state
+	if(unique_reskin_changes_name)
+		name = pick
 
 	update_appearance()
 

@@ -104,6 +104,7 @@
 /obj/item/clothing/suit/toggle
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
+	unique_reskin_changes_name = TRUE
 
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
@@ -114,7 +115,7 @@
 
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
 	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		reskin_obj(user, TRUE)
+		reskin_obj(user)
 		return
 	else
 		suit_toggle(user)

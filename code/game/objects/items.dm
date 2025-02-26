@@ -233,6 +233,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/unique_reskin_changes_base_icon_state = FALSE
 	/// If reskins change inhands as well
 	var/unique_reskin_changes_inhand = FALSE
+	var/unique_reskin_changes_name = FALSE
 
 /obj/item/Initialize()
 
@@ -363,7 +364,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/examine(mob/user)
 	. = ..()
 
-	if(unique_reskin && !current_skin)\
+	if(unique_reskin && !current_skin)
 		. += "<span class='notice'>Alt-click it to reskin it.</span>"
 
 	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
