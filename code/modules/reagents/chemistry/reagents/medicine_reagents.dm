@@ -934,7 +934,7 @@
 		drugged.physiology.damage_resistance -= 15
 	..()
 
-/datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/C)
 	C.set_screwyhud(SCREWYHUD_HEALTHY)
 	if(current_cycle >= 3)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
