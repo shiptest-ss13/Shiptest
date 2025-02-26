@@ -97,3 +97,13 @@
 
 /area/ruin/rockplanet/mining_base/rig_two
 	name = "Mining Platform #2"
+
+//River Valley Stash
+
+/area/ruin/rockplanet/river_valley_stash/shuttle
+	name = "Frontiersmen Shuttle"
+	icon_state = "shuttle"
+
+/area/ruin/rockplanet/river_valley_stash/hut
+	name = "Frontiersmen Hut"
+	icon_state = "red"
