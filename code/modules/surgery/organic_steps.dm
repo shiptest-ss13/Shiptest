@@ -172,7 +172,7 @@
 		/obj/item = 'sound/surgery/scalpel1.ogg',
 	)
 	success_sound = 'sound/surgery/bone3.ogg'
-	fuckup_damage = 10
+	fuckup_damage = 15
 
 /datum/surgery_step/saw/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin to saw through the bone in [target]'s [parse_zone(target_zone)]...</span>",
