@@ -261,4 +261,4 @@
 	if(target.pulledby?.grab_state >= GRAB_AGGRESSIVE || HAS_TRAIT(target, TRAIT_RESTRAINED)) // Actively being restrained reduces the damage caused by a flinch since it's harder to mess things up if you can't move well
 		fuckup_mod = 0.5
 	user.visible_message(span_boldwarning("[target] flinches, bumping [user]'s [tool ? tool.name : "hand"] into something important!"), span_boldwarning("[target]  flinches, bumping your [tool ? tool.name : "hand"] into something important!"))
-	target.apply_damage(fuckup_damage, fuckup_damage_type, target_zone)
+	target.apply_damage(fuckup_damage * fuckup_mod, fuckup_damage_type, target_zone)
