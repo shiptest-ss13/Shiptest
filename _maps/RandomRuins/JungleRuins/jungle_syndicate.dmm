@@ -300,10 +300,10 @@
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 10;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ship/ramzi{
+	req_ship_access = 0;
+	turret_respects_id = 0;
+	dir = 10
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort/jerry)
@@ -804,10 +804,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 4;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ship/ramzi{
+	req_ship_access = 0;
+	turret_respects_id = 0;
+	dir = 6
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort/jerry)
@@ -1190,10 +1190,10 @@
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 6;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ship/ramzi{
+	req_ship_access = 0;
+	turret_respects_id = 0;
+	dir = 6
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort/jerry)
@@ -1551,10 +1551,10 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 9;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ship/ramzi{
+	req_ship_access = 0;
+	turret_respects_id = 0;
+	dir = 9
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort/jerry)
