@@ -114,7 +114,8 @@
 /obj/machinery/porta_turret/ship/ramzi/heavy{
 	id = "rustguns";
 	lethal = 1;
-	dir = 5
+	dir = 5;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/bridge)
@@ -317,7 +318,8 @@
 /obj/machinery/porta_turret/ship/ramzi{
 	lethal = 1;
 	id = "rustguns";
-	dir = 6
+	dir = 6;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/engine_two)
@@ -1309,7 +1311,8 @@
 /obj/machinery/porta_turret/ship/ramzi{
 	lethal = 1;
 	id = "rustguns";
-	dir = 8
+	dir = 8;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/hallway)
@@ -1378,7 +1381,8 @@
 /obj/machinery/porta_turret/ship/ramzi{
 	lethal = 1;
 	id = "rustguns";
-	dir = 6
+	dir = 6;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -1532,7 +1536,8 @@
 /obj/machinery/porta_turret/ship/ramzi/heavy{
 	id = "rustguns";
 	lethal = 1;
-	dir = 8
+	dir = 8;
+	turret_respects_id = 0
 	},
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/rust_base)
@@ -1562,7 +1567,8 @@
 /obj/machinery/porta_turret/ship/ramzi{
 	lethal = 1;
 	id = "rustguns";
-	dir = 5
+	dir = 5;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -2364,7 +2370,8 @@
 /obj/machinery/porta_turret/ship/ramzi{
 	lethal = 1;
 	id = "rustguns";
-	dir = 6
+	dir = 6;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/armory)
@@ -2385,7 +2392,8 @@
 /obj/machinery/porta_turret/ship/ramzi/heavy{
 	id = "rustguns";
 	lethal = 1;
-	dir = 8
+	dir = 8;
+	turret_respects_id = 0
 	},
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/rust_base)
@@ -3309,7 +3317,8 @@
 /obj/machinery/porta_turret/ship/ramzi{
 	lethal = 1;
 	id = "rustguns";
-	dir = 5
+	dir = 5;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/armory)
@@ -3395,7 +3404,8 @@
 /obj/machinery/porta_turret/ship/ramzi/heavy{
 	id = "rustguns";
 	lethal = 1;
-	dir = 6
+	dir = 6;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/bridge)
@@ -3492,7 +3502,8 @@
 /obj/machinery/porta_turret/ship/ramzi{
 	lethal = 1;
 	id = "rustguns";
-	dir = 5
+	dir = 5;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/engine_one)
@@ -3869,7 +3880,8 @@
 /obj/machinery/porta_turret/ship/ramzi{
 	lethal = 1;
 	id = "rustguns";
-	dir = 10
+	dir = 10;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/engine_two)
@@ -4022,7 +4034,8 @@
 /obj/machinery/porta_turret/ship/ramzi{
 	lethal = 1;
 	id = "rustguns";
-	dir = 9
+	dir = 9;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/armory)
@@ -4258,7 +4271,8 @@
 /obj/machinery/porta_turret/ship/ramzi{
 	lethal = 1;
 	id = "rustguns";
-	dir = 10
+	dir = 10;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -4814,7 +4828,8 @@
 /obj/machinery/porta_turret/ship/ramzi/heavy{
 	id = "rustguns";
 	lethal = 1;
-	dir = 4
+	dir = 4;
+	turret_respects_id = 0
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -4862,7 +4877,8 @@
 /obj/machinery/porta_turret/ship/ramzi/heavy{
 	id = "rustguns";
 	lethal = 1;
-	dir = 4
+	dir = 4;
+	turret_respects_id = 0
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base/armory)
@@ -4963,7 +4979,8 @@
 /obj/machinery/porta_turret/ship/ramzi{
 	lethal = 1;
 	id = "rustguns";
-	dir = 9
+	dir = 9;
+	turret_respects_id = 0
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/engine_one)
