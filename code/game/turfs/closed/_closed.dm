@@ -156,7 +156,7 @@
 	else if(I.tool_behaviour == TOOL_MINING)
 		dam *= (4/3)
 	else if (I.tool_behaviour == TOOL_SLEDGEHAMMER)
-		dam = 200
+		dam = 150
 	else
 		switch(I.damtype)
 			if(BRUTE)
