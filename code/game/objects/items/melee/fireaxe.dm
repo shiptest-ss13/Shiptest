@@ -68,8 +68,6 @@ Blunt
 	hitsound = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg')
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = IS_BLUNT
-	toolspeed = 0.5
-	wall_decon_damage = MINERAL_WALL_INTEGRITY
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	var/wielded = FALSE
 

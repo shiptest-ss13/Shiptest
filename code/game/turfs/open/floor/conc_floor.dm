@@ -55,7 +55,7 @@
 	. = ..()
 	if(.)
 		return
-	if(C.tool_behaviour == TOOL_MINING || TOOL_SLEDGEHAMMER)
+	if(C.tool_behaviour == TOOL_MINING)
 		to_chat(user, "<span class='notice'>You start smashing [src]...</span>")
 		var/adj_time = (broken || burnt) ? smash_time/2 : smash_time
 		if(C.use_tool(src, user, adj_time, volume=30))

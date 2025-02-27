@@ -79,7 +79,7 @@
 
 /turf/closed/mineral/try_decon(obj/item/I, mob/user, turf/T)
 	var/act_duration = breakdown_duration
-	if(I.tool_behaviour == TOOL_MINING || TOOL_SLEDGEHAMMER)
+	if(I.tool_behaviour == TOOL_MINING)
 		if(!I.tool_start_check(user, amount=0))
 			return FALSE
 
@@ -152,7 +152,7 @@
 	..()
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
-		var/obj/item/I = H.is_holding_tool_quality(TOOL_MINING || TOOL_SLEDGEHAMMER)
+		var/obj/item/I = H.is_holding_tool_quality(TOOL_MINING)
 		if(I)
 			if(last_act + (40 * I.toolspeed) > world.time)//prevents message spam
 				return
