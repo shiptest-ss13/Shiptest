@@ -27,7 +27,7 @@
 /datum/supply_pack/machinery/t2
 	name = "T2 parts crate"
 	desc = "A bundle of advanced machine parts, containing 2 of each common part type."
-	cost = 500
+	cost = 750
 	contains = list(/obj/item/storage/box/stockparts/t2)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/science
@@ -35,7 +35,7 @@
 /datum/supply_pack/machinery/t2_laser
 	name = "T2 lasers crate"
 	desc = "A bundle of advanced machine lasers, containing 10 parts."
-	cost = 500
+	cost = 750
 	contains = list(/obj/item/storage/box/stockparts/t2/laser)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/science
@@ -43,7 +43,7 @@
 /datum/supply_pack/machinery/t2_matter
 	name = "T2 matter bins crate"
 	desc = "A bundle of advanced machine parts, containing 10 parts."
-	cost = 500
+	cost = 750
 	contains = list(/obj/item/storage/box/stockparts/t2/matter)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/science
@@ -51,7 +51,7 @@
 /datum/supply_pack/machinery/t2_manipulator
 	name = "T2 manipulators crate"
 	desc = "A bundle of advanced machine parts, containing 10 parts."
-	cost = 500
+	cost = 750
 	contains = list(/obj/item/storage/box/stockparts/t2/manipulator)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/science
@@ -59,7 +59,7 @@
 /datum/supply_pack/machinery/t2_scan
 	name = "T2 scanning modules crate"
 	desc = "A bundle of advanced machine parts, containing 10 parts."
-	cost = 500
+	cost = 750
 	contains = list(/obj/item/storage/box/stockparts/t2/scan)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/science
@@ -67,7 +67,7 @@
 /datum/supply_pack/machinery/t2_capacitor
 	name = "T2 capacitors crate"
 	desc = "A bundle of advanced machine parts, containing 10 parts."
-	cost = 500
+	cost = 750
 	contains = list(/obj/item/storage/box/stockparts/t2/capacitor)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/science
