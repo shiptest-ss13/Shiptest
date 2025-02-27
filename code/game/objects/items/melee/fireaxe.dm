@@ -28,7 +28,7 @@
 	if(!proximity)
 		return
 	if(HAS_TRAIT(src, TRAIT_WIELDED)) //destroys windows and grilles in one hit
-		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
+		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille) || istype(A, /obj/structure/girder))
 			var/obj/structure/W = A
 			W.obj_destruction("axe")
 
@@ -85,7 +85,7 @@ Blunt
 /obj/item/melee/axe/sledgehammer/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	tool_behaviour = TOOL_SLEDGEHAMMER || TOOL_MINING
+	tool_behaviour = TOOL_SLEDGEHAMMER
 	wielded = TRUE
 
 /obj/item/melee/axe/sledgehammer/proc/on_unwield(obj/item/source, mob/user)
@@ -93,15 +93,6 @@ Blunt
 
 	tool_behaviour = null
 	wielded = FALSE
-
-/obj/item/melee/axe/sledgehammer/afterattack(atom/A, mob/user, proximity)
-	. = ..()
-	if(!proximity)
-		return
-	if(HAS_TRAIT(src, TRAIT_WIELDED)) //destroys windows and grilles in one hit
-		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille) || istype(A, /obj/structure/girder))
-			var/obj/structure/W = A
-			W.obj_destruction("axe")
 
 /obj/item/melee/axe/sledgehammer/attack(mob/living/target, mob/living/user)
 	. = ..()
