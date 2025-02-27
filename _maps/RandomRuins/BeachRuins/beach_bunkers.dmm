@@ -3002,7 +3002,8 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/structure/hazard_shutoff/electrical_shutoff{
 	pixel_x = -32;
-	dir = 8
+	dir = 8;
+	id = "pond"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/side_two)
@@ -3310,9 +3311,6 @@
 "Ps" = (
 /obj/structure/rack,
 /obj/item/storage/box/ammo/a8_50r/match,
-/obj/item/storage/box/ammo/a8_50r/match{
-	pixel_y = 10
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/reinforced,
