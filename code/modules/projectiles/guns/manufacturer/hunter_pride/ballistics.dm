@@ -811,6 +811,18 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		recoil = 0
 		recoil_unwielded = 3
 
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/factory
+	desc = "A large lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 8 round ammunition capacity. More powerful than the Flaming Arrow, the Absolution is a popular pick for hunting larger fauna like bears and goliaths, especially when a bolt action's slower rate of fire would be a liability. This example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in .357."
+	icon_state = "absolution_factory"
+	base_icon_state = "absolution_factory"
+	item_state = "absolution_factory"
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/factory/sawoff(forced = FALSE)
+	. = ..()
+	if(.)
+		item_state = "absolution_factory_sawn"
+		mob_overlay_state = item_state
+
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
 	name = "HP Beacon"
