@@ -32,7 +32,7 @@
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
 
 /datum/map_template/ruin/rockplanet/river_valley_stash
-	prefix = "River Valley Stash"
+	name = "River Valley Stash"
 	description = "A frontiersman drug stash in the midst of being buried."
 	id = "rockplanet_river_valley_stash"
 	suffix = "rockplanet_river_valley_stash.dmm"
