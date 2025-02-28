@@ -397,8 +397,8 @@ EMPTY_GUN_HELPER(automatic/m15)
 
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 
-	spread = 4
-	spread_unwielded = 16
+	spread = 3
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 4
 	wield_slowdown = SHOTGUN_SLOWDOWN

@@ -896,8 +896,8 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 
-	spread = 4
-	spread_unwielded = 16
+	spread = 3
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 4
 	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
