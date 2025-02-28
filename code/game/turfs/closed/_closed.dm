@@ -233,7 +233,7 @@
 		playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 		return TRUE
 	log_combat(user, src, "attacked", used_item)
-	user.visible_message(span_danger("[user] hits [src] with [W]!"), \
+	user.visible_message(span_danger("[user] hits [src] with [used_item]!"), \
 				span_danger("You hit [src] with [used_item]!</span>"), null, COMBAT_MESSAGE_RANGE)
 	switch(used_item.damtype)
 		if(BRUTE)
