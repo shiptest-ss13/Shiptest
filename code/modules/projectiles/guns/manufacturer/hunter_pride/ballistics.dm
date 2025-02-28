@@ -360,11 +360,13 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	burst_size = 2
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
+	unique_attachments = list(/obj/item/attachment/scope)
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_SCOPE = 1,
 	)
+
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 48,
@@ -565,8 +567,8 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 48,
-			"y" = 17,
+			"x" = 45,
+			"y" = 18,
 		)
 	)
 
