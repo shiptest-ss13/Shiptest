@@ -153,8 +153,6 @@
 	var/dam = I.force
 	if(istype(I, /obj/item/clothing/gloves/gauntlets))
 		dam = 20
-	else if(I.tool_behaviour == TOOL_MINING)
-		dam *= (4/3)
 	else
 		switch(I.damtype)
 			if(BRUTE)
@@ -235,8 +233,7 @@
 
 // catch-all for using most items on the closed turf -- attempt to smash
 /turf/closed/proc/try_destroy(obj/item/used_item, mob/user, turf/T)
-	var/base_damage = get_item_damage(used_item)
-	var/total_damage = base_damage*w.demolition_mod
+	var/total_damage = get_item_damage(used_item)*used_item.demolition_mod
 	user.do_attack_animation(src)
 	if(total_damage >= 0)
 		to_chat(user, "<span class='warning'>[used_item] isn't strong enough to damage [src]!</span>")
