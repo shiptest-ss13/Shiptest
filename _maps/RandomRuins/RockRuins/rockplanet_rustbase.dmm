@@ -316,12 +316,12 @@
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/rockplanet/rust_base/mechbay)
 "do" = (
-/obj/machinery/porta_turret/ship/ramzi{
-	lethal = 1;
+/obj/machinery/porta_turret/ship/ramzi/light{
+	dir = 4;
 	id = "rustguns";
-	dir = 6;
 	turret_respects_id = 0;
-	turret_flags = 62
+	turret_flags = 62;
+	lethal = 1
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/engine_two)
@@ -1310,12 +1310,12 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
 "mF" = (
-/obj/machinery/porta_turret/ship/ramzi{
-	lethal = 1;
-	id = "rustguns";
+/obj/machinery/porta_turret/ship/ramzi/light{
 	dir = 8;
+	id = "rustguns";
 	turret_respects_id = 0;
-	turret_flags = 62
+	turret_flags = 62;
+	lethal = 1
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/hallway)
@@ -1380,16 +1380,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/hallway2)
-"no" = (
-/obj/machinery/porta_turret/ship/ramzi{
-	lethal = 1;
-	id = "rustguns";
-	dir = 6;
-	turret_respects_id = 0;
-	turret_flags = 62
-	},
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/rockplanet/rust_base/mechbay)
 "nq" = (
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/engine/hull/rockplanet,
@@ -1569,12 +1559,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "oU" = (
-/obj/machinery/porta_turret/ship/ramzi{
-	lethal = 1;
+/obj/machinery/porta_turret/ship/ramzi/light{
+	dir = 4;
 	id = "rustguns";
-	dir = 5;
 	turret_respects_id = 0;
-	turret_flags = 62
+	turret_flags = 62;
+	lethal = 1
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -2373,12 +2363,12 @@
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/hallway2)
 "xp" = (
-/obj/machinery/porta_turret/ship/ramzi{
-	lethal = 1;
+/obj/machinery/porta_turret/ship/ramzi/light{
+	dir = 4;
 	id = "rustguns";
-	dir = 6;
 	turret_respects_id = 0;
-	turret_flags = 62
+	turret_flags = 62;
+	lethal = 1
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/rockplanet/rust_base/armory)
@@ -3321,16 +3311,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway)
-"Gf" = (
-/obj/machinery/porta_turret/ship/ramzi{
-	lethal = 1;
-	id = "rustguns";
-	dir = 5;
-	turret_respects_id = 0;
-	turret_flags = 62
-	},
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/rockplanet/rust_base/armory)
 "Gg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3509,12 +3489,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
 "HB" = (
-/obj/machinery/porta_turret/ship/ramzi{
-	lethal = 1;
-	id = "rustguns";
+/obj/machinery/porta_turret/ship/ramzi/light{
 	dir = 5;
+	id = "rustguns";
 	turret_respects_id = 0;
-	turret_flags = 62
+	turret_flags = 62;
+	lethal = 1
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/engine_one)
@@ -3888,13 +3868,6 @@
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/dorms)
 "LT" = (
-/obj/machinery/porta_turret/ship/ramzi{
-	lethal = 1;
-	id = "rustguns";
-	dir = 10;
-	turret_respects_id = 0;
-	turret_flags = 62
-	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/engine_two)
 "LY" = (
@@ -4043,12 +4016,12 @@
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/armory)
 "Nx" = (
-/obj/machinery/porta_turret/ship/ramzi{
-	lethal = 1;
+/obj/machinery/porta_turret/ship/ramzi/light{
+	dir = 8;
 	id = "rustguns";
-	dir = 9;
 	turret_respects_id = 0;
-	turret_flags = 62
+	turret_flags = 62;
+	lethal = 1
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/armory)
@@ -4281,12 +4254,12 @@
 /turf/open/floor/pod,
 /area/ruin/rockplanet/rust_base/tanto2)
 "Pv" = (
-/obj/machinery/porta_turret/ship/ramzi{
-	lethal = 1;
+/obj/machinery/porta_turret/ship/ramzi/light{
+	dir = 8;
 	id = "rustguns";
-	dir = 10;
 	turret_respects_id = 0;
-	turret_flags = 62
+	turret_flags = 62;
+	lethal = 1
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -4992,13 +4965,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/rockplanet/rust_base/armory)
 "WV" = (
-/obj/machinery/porta_turret/ship/ramzi{
-	lethal = 1;
-	id = "rustguns";
-	dir = 9;
-	turret_respects_id = 0;
-	turret_flags = 62
-	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/rockplanet/rust_base/engine_one)
 "WW" = (
@@ -7257,7 +7223,7 @@ aN
 aN
 NT
 ST
-Gf
+xp
 iQ
 CP
 qN
@@ -7282,7 +7248,7 @@ UG
 MG
 CK
 Cd
-no
+oU
 MN
 xl
 aN
