@@ -60,7 +60,7 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/modsuits/
+/datum/supply_pack/modsuits/research
 	name = "Research MODsuit"
 	desc = "Contains a high tech Research modsuit with onboard scanning systems and protective padding for fieldwork and handling hazardous materials."
 	cost = 2500
@@ -105,7 +105,7 @@
 	cost = 750
 	contains = list(/obj/item/mod/module/magboot)
 
-/datum/supply_pack/modsuits/
+/datum/supply_pack/modsuits/tether
 	name = "MOD Tether Module"
 	desc = "Contains a grappling tether module for emergency movement in zero-g."
 	cost = 250
@@ -177,7 +177,7 @@
 	cost = 500
 	contains = list(/obj/item/mod/module/magnetic_harness)
 
-/datum/supply_pack/modsuits/
+/datum/supply_pack/modsuits/holster
 	name = "MOD Holster Module"
 	desc = "Contains a holster module for secure carrying of your firearms."
 	cost = 500
