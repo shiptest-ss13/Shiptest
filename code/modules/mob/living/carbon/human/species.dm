@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///Whether or not the race has sexual characteristics (biological genders). At the moment this is only FALSE for skeletons and shadows
 	var/sexes = TRUE
 	///Minimum species_age
-	var/species_age_min = 17
+	var/species_age_min = 18
 	///Maximum species age
 	var/species_age_max = 85
 
