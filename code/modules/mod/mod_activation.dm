@@ -20,7 +20,7 @@
 	if(!istype(part) || user.incapacitated())
 		return
 	if((active && part != helmet) || activating)
-		balloon_alert(user, "deactivate the suit first!")
+		to_chat(user, span_warning("Deactivate the suit first!"))
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return
 	var/parts_to_check = mod_parts - part
@@ -42,7 +42,7 @@
 /// Quickly deploys all parts (or retracts if all are on the wearer)
 /obj/item/mod/control/proc/quick_deploy(mob/user)
 	if(active || activating)
-		balloon_alert(user, "deactivate the suit first!")
+		to_chat(user, span_warning(user, "Deactivate the suit first!"))
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
 	var/deploy = FALSE
@@ -66,7 +66,7 @@
 	if(part.loc != src)
 		if(!user)
 			return FALSE
-		balloon_alert(user, "[part.name] already deployed!")
+		to_chat(user, span_warning("\The [part.name] already deployed!"))
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 	if(part in overslotting_parts)
 		var/obj/item/overslot = wearer.get_item_by_slot(part.slot_flags)
@@ -86,7 +86,7 @@
 	else
 		if(!user)
 			return FALSE
-		balloon_alert(user, "bodypart clothed!")
+		to_chat(user, span_warning("The [part.name] can't deploy over the [wearer.get_item_by_slot(part.slot_flags)]"))
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 	return FALSE
 
