@@ -28,6 +28,10 @@
 	if(!proximity)
 		return
 	if(HAS_TRAIT(src, TRAIT_WIELDED)) //destroys windows and grilles in one hit
+		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
+			var/obj/structure/W = A
+			W.obj_destruction("axe")
+	if(tool_behaviour == TOOL_SLEDGEHAMMER)
 		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille) || istype(A, /obj/structure/girder))
 			var/obj/structure/W = A
 			W.obj_destruction("axe")
