@@ -27,6 +27,9 @@
 	///List of options to reskin.
 	var/list/unique_reskin
 
+	/// A multiplier to an objecet's force when used against a stucture, vechicle, machine, or robot.
+	var/demolition_mod = 1
+
 	// Access levels, used in modules\jobs\access.dm
 	var/list/req_access
 	var/req_access_txt = "0"
