@@ -149,19 +149,12 @@
 		add_dent(WALL_DENT_SHOT)
 		alter_integrity(-dam, shooter)
 
-/turf/closed/proc/get_item_damage(obj/item/I, t_min = min_dam)
-	var/dam = I.force
-	if(istype(I, /obj/item/clothing/gloves/gauntlets))
+/turf/closed/proc/get_item_damage(obj/item/used_item, t_min = min_dam)
+	var/dam = used_item.force
+	if(istype(used_item, /obj/item/clothing/gloves/gauntlets))
 		dam = 20
 	else
-		switch(I.damtype)
-			if(BRUTE)
-				if(I.get_sharpness())
-					dam *= 2/3
-			if(BURN)
-				dam *= burn_mod
-			else
-				return 0
+		damage = damage * used_item.demolition_mod
 	// if dam is below t_min, then the hit has no effect
 	return (dam < t_min ? 0 : dam)
 
@@ -233,7 +226,7 @@
 
 // catch-all for using most items on the closed turf -- attempt to smash
 /turf/closed/proc/try_destroy(obj/item/used_item, mob/user, turf/T)
-	var/total_damage = get_item_damage(used_item)*used_item.demolition_mod
+	var/total_damage = get_item_damage(used_item)
 	user.do_attack_animation(src)
 	if(total_damage >= 0)
 		to_chat(user, "<span class='warning'>[used_item] isn't strong enough to damage [src]!</span>")
