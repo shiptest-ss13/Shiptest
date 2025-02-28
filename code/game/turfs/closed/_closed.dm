@@ -150,13 +150,13 @@
 		alter_integrity(-dam, shooter)
 
 /turf/closed/proc/get_item_damage(obj/item/used_item, t_min = min_dam)
-	var/dam = used_item.force
+	var/damage = used_item.force
 	if(istype(used_item, /obj/item/clothing/gloves/gauntlets))
-		dam = 20
+		damage = 20
 	else
 		damage = damage * used_item.demolition_mod
 	// if dam is below t_min, then the hit has no effect
-	return (dam < t_min ? 0 : dam)
+	return (damage < t_min ? 0 : damage)
 
 /turf/closed/proc/get_proj_damage(obj/projectile/P, t_min = min_dam)
 	var/dam = P.damage

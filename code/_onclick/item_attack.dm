@@ -161,12 +161,12 @@
 	log_combat(user, src, "attacked", attacking_item)
 
 /mob/living/attacked_by(obj/item/attacking_item, mob/living/user)
-	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = I.armour_penetration)		//WS Edit - Simplemobs can have armor
-	send_item_attack_message(I, user)
+	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = attacking_item.armour_penetration)		//WS Edit - Simplemobs can have armor
+	send_item_attack_message(attacking_item, user)
 	if(!attacking_item.force)
 		return FALSE
 	apply_damage(attacking_item.force, attacking_item.damtype, break_modifier = attacking_item.force, blocked = armor_value, sharpness = attacking_item.get_sharpness()) //Bone break modifier = item force
-	if(I.damtype == BRUTE && prob(33))
+	if(attacking_item.damtype == BRUTE && prob(33))
 		attacking_item.add_mob_blood(src)
 		var/turf/location = get_turf(src)
 		add_splatter_floor(location)
