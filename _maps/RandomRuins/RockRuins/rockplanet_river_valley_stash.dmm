@@ -27,8 +27,8 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/ruin/rockplanet/river_valley_stash/hut)
 "aZ" = (
-/obj/structure/flora/grass/rockplanet,
-/turf/open/floor/plating/grass/rockplanet,
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
 "bd" = (
 /obj/structure/flora/grass/jungle,
@@ -102,11 +102,9 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "du" = (
 /obj/effect/turf_decal/sand/plating,
-/obj/item/flashlight/lantern{
-	on = 1
-	},
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/ruin/rockplanet/river_valley_stash/hut)
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/plating/grass/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "dy" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/bedsheetbin,
@@ -159,15 +157,16 @@
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "iu" = (
-/obj/item/stack/cable_coil/cut/red{
-	pixel_x = 6;
-	pixel_y = 14
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
 	},
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/handrail{
+	dir = 4
 	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/platform/industrial/corner,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/rockplanet/river_valley_stash/shuttle)
 "jg" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/machinery/button/door{
@@ -187,11 +186,11 @@
 	},
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "jl" = (
-/obj/effect/mob_spawn/human/corpse/indie,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor2";
 	pixel_x = 6
 	},
+/obj/effect/mob_spawn/human/miner,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "jB" = (
@@ -225,6 +224,7 @@
 /obj/effect/mob_spawn/human/corpse/frontier/internals,
 /obj/effect/decal/cleanable/vomit,
 /obj/machinery/light/dim/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "kK" = (
@@ -297,15 +297,16 @@
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/ruin/rockplanet/river_valley_stash/hut)
 "pG" = (
-/obj/effect/turf_decal/industrial/traffic{
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "gudgeshutters";
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/handrail{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
 	},
-/obj/structure/platform/industrial/corner,
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/engine/hull/interior,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "pQ" = (
 /obj/machinery/power/terminal,
@@ -360,11 +361,11 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "rs" = (
-/obj/effect/mob_spawn/human/corpse/indie,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor2";
 	pixel_x = 6
 	},
+/obj/effect/mob_spawn/human/miner,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "rw" = (
@@ -392,12 +393,9 @@
 /turf/open/floor/plating/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "rP" = (
-/obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/flora/grass/rockplanet,
+/turf/open/floor/plating/grass/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "rQ" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/decal/cleanable/blood/gibs,
@@ -413,6 +411,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "sH" = (
@@ -510,9 +509,15 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
 "wB" = (
-/obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/plating/grass/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/water/jungle/lit{
+	initial_gas_mix = "ROCKPLANET_ATMOS";
+	light_power = 0.6
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "wI" = (
 /obj/item/pickaxe/drill,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
@@ -521,9 +526,12 @@
 /turf/closed/wall/mineral/wood,
 /area/ruin/rockplanet/river_valley_stash/hut)
 "wP" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter,
-/turf/open/water/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/effect/turf_decal/sand/plating,
+/obj/item/flashlight/lantern{
+	on = 1
+	},
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/ruin/rockplanet/river_valley_stash/hut)
 "xa" = (
 /obj/effect/turf_decal/sand/plating,
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered,
@@ -543,13 +551,18 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "xO" = (
-/obj/effect/mob_spawn/human/corpse/indie,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor2";
 	pixel_x = 6
 	},
+/obj/effect/mob_spawn/human/miner,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"xT" = (
+/obj/structure/flora/grass/rockplanet,
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/overmap_encounter/planetoid/cave/explored)
 "yn" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/item/grown/log/tree{
@@ -591,6 +604,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/techfloor,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "zH" = (
@@ -647,6 +663,16 @@
 /obj/item/mine/pressure/explosive/rusty/live,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"BQ" = (
+/obj/item/stack/cable_coil/cut/red{
+	pixel_x = 6;
+	pixel_y = 14
+	},
+/turf/open/floor/plating/grass/rockplanet{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "BX" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -660,13 +686,12 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
-"Cc" = (
-/obj/structure/flora/grass/jungle,
+"Cm" = (
+/obj/structure/flora/grass/rockplanet,
 /obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Ct" = (
-/obj/item/mine/pressure/explosive/rusty/live,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit,
 /area/overmap_encounter/planetoid/cave/explored)
 "CW" = (
@@ -841,11 +866,6 @@
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/ruin/rockplanet/river_valley_stash/hut)
-"Kr" = (
-/obj/effect/turf_decal/sand/plating,
-/obj/effect/decal/cleanable/oil/slippery,
-/turf/open/floor/plating/grass/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "Kw" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/item/bodypart/l_arm/skeleton,
@@ -877,6 +897,9 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "Lw" = (
@@ -979,6 +1002,13 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
+"PA" = (
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plating/grass/rockplanet{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "PG" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/item/stack/sheet/mineral/wood/twentyfive,
@@ -1001,6 +1031,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "Qj" = (
@@ -1012,10 +1043,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
-"Qk" = (
-/obj/effect/decal/cleanable/oil/slippery,
-/turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
 "Qm" = (
 /obj/structure/flora/grass/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
@@ -1025,15 +1052,11 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Rh" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+	dir = 4
 	},
-/turf/open/water/jungle/lit{
-	initial_gas_mix = "ROCKPLANET_ATMOS";
-	light_power = 0.6
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/turf/open/floor/engine/hull/interior,
+/area/ruin/rockplanet/river_valley_stash/shuttle)
 "RZ" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/bed/double/maint,
@@ -1044,6 +1067,11 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/item/bodypart/r_arm/skeleton,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/overmap_encounter/planetoid/cave/explored)
+"SO" = (
+/obj/structure/flora/grass/jungle,
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plating/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "To" = (
 /obj/effect/decal/cleanable/blood/gibs,
@@ -1130,6 +1158,10 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"WP" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter,
+/turf/open/water/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "WQ" = (
 /obj/structure/spawner/burrow/rock_plant,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
@@ -1168,9 +1200,8 @@
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Xc" = (
-/obj/structure/flora/grass/rockplanet,
 /obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/plating/asteroid/rockplanet/wet,
+/turf/open/floor/plating/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Xk" = (
 /obj/structure/flora/rock/pile/rockplanet,
@@ -1984,7 +2015,7 @@ yB
 yB
 bN
 Ad
-Lw
+yB
 kO
 kO
 kO
@@ -2040,13 +2071,13 @@ kO
 kO
 kO
 kO
-yB
+Lw
 yB
 yB
 yB
 Ad
 yB
-kO
+Lw
 kO
 kO
 kO
@@ -3123,7 +3154,7 @@ kO
 le
 vm
 wL
-du
+wP
 LI
 LI
 vm
@@ -3342,7 +3373,7 @@ kO
 kO
 yB
 bN
-yB
+Lw
 kO
 kO
 kO
@@ -3398,7 +3429,7 @@ kO
 kO
 kO
 kO
-wf
+Ad
 bN
 kO
 kO
@@ -3525,7 +3556,7 @@ vm
 xo
 lr
 xo
-xo
+Rh
 qU
 qU
 kK
@@ -3582,7 +3613,7 @@ xo
 lr
 lr
 lr
-lr
+pG
 lr
 qU
 vb
@@ -3809,7 +3840,7 @@ lr
 lr
 lr
 VC
-pG
+iu
 BX
 BX
 Im
@@ -3872,9 +3903,9 @@ to
 lr
 lr
 jg
-Rh
-Rh
-Rh
+wB
+wB
+wB
 kK
 wL
 zO
@@ -3927,7 +3958,7 @@ WR
 pQ
 Qj
 zR
-iu
+BQ
 TC
 TC
 TC
@@ -3937,7 +3968,7 @@ aC
 vO
 LI
 Jb
-du
+wP
 nq
 vm
 vm
@@ -4379,7 +4410,7 @@ qU
 kR
 TC
 TC
-rP
+PA
 vb
 kK
 kK
@@ -4432,7 +4463,7 @@ kO
 kO
 kO
 kO
-rP
+PA
 kR
 TC
 TC
@@ -4496,7 +4527,7 @@ Xb
 wL
 ac
 vO
-du
+wP
 nq
 vm
 vm
@@ -4561,7 +4592,7 @@ vm
 LI
 LI
 LI
-du
+wP
 ko
 nq
 vm
@@ -4602,7 +4633,7 @@ kO
 kO
 kO
 kO
-Kr
+du
 KA
 TC
 TC
@@ -4887,7 +4918,7 @@ kO
 kO
 kO
 gU
-wB
+Xc
 KA
 kO
 kO
@@ -5173,7 +5204,7 @@ kO
 kO
 kO
 gU
-LF
+rP
 KA
 kO
 kO
@@ -5229,8 +5260,8 @@ kO
 kO
 kO
 kO
-yB
-wB
+aZ
+Xc
 KA
 kO
 kO
@@ -5343,9 +5374,9 @@ kO
 kO
 kO
 kO
-Ad
+xT
 yB
-Cc
+SO
 KA
 KA
 kO
@@ -5403,7 +5434,7 @@ kO
 Ct
 yB
 gU
-aZ
+rP
 KA
 KA
 kO
@@ -5459,7 +5490,7 @@ kO
 kO
 yB
 bN
-yB
+Lw
 PJ
 KA
 KA
@@ -5516,8 +5547,8 @@ kO
 kO
 kO
 bN
+Cm
 Xc
-wB
 Pf
 KA
 KA
@@ -5574,9 +5605,9 @@ kO
 kO
 yB
 bN
-Qk
+bN
 rO
-aZ
+rP
 KA
 KA
 KA
@@ -5637,7 +5668,7 @@ rO
 PJ
 Pf
 KA
-wP
+WP
 KA
 KA
 KA
