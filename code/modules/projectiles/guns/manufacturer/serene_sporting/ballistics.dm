@@ -276,6 +276,7 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 	)
 
 EMPTY_GUN_HELPER(automatic/marksman/woodsman)
+NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 
 /obj/item/ammo_box/magazine/m23
 	name = "Model 23 magazine (8x50mmR)"
