@@ -18,6 +18,7 @@
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
 	wall_decon_damage = MINERAL_WALL_INTEGRITY
+	demolition_mod = 1.15
 
 /obj/item/pickaxe/rusted
 	name = "rusty pickaxe"
@@ -101,6 +102,7 @@
 	desc = "The epitome of conventional rock-smashing technology, invented by NT and cost-optimized by EXOCOM. Smashes rocks, objects, and unfortunate wildlife with sonic blasts."
 	force = 25
 	attack_verb = list("blasted", "smashed", "slammed", "hammered")
+	demolition_mod = 2
 
 // //back in my day, our jackhammers used nothing but rattlin' drill bits! And we liked it!
 /obj/item/pickaxe/drill/jackhammer/old
@@ -111,6 +113,7 @@
 	desc = "The old fashioned solution to a stubborn wall- used heavily all over known space until the onset of sonic deconstruction technology and Rapid Construction Devices."
 	force = 20
 	armour_penetration = 15
+	demolition_mod = 2
 
 /obj/item/pickaxe/drill/jackhammer/Initialize(mapload)
 	. = ..()
