@@ -18,7 +18,6 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/cm23,
 	)
-//	can_suppress = FALSE
 	fire_sound = 'sound/weapons/gun/pistol/cm23.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
@@ -40,6 +39,10 @@
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 19,
 			"y" = 18,
+		),
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 29,
+			"y" = 20,
 		)
 	)
 
@@ -77,7 +80,6 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_cm70,
 	)
-//	can_suppress = FALSE
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
@@ -92,6 +94,22 @@
 
 	spread = 8
 	spread_unwielded = 20
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 23,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 31,
+			"y" = 21,
+		)
+	)
 
 /obj/item/ammo_box/magazine/m9mm_cm70
 	name = "CM-70 machine pistol magazine (9mm)"
@@ -138,6 +156,17 @@
 	recoil_unwielded = 4
 	recoil = 1
 
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 23,
+			"y" = 16,
+		)
+	)
+
 NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 
 /obj/item/ammo_box/magazine/cm357
@@ -182,12 +211,16 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 37,
+			"x" = 38,
 			"y" = 20,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 27,
 			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 12,
+			"y" = 23,
 		)
 	)
 
@@ -228,6 +261,11 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	spread_unwielded = 20
 
 	fire_delay = 0.1 SECONDS
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -387,6 +425,17 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 16,
+		),
+	)
+
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
 
@@ -441,6 +490,21 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 47,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 29,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 15,
+			"y" = 24,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/assault/skm/cm24
 	name = "\improper CM-24"
@@ -505,6 +569,24 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 	has_bipod = TRUE
 
+	//you get the rail slot back when the bipod is an attachment
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 12,
+			"y" = 25,
+		)
+	)
+
 	deploy_recoil_bonus = -2
 	deploy_spread_bonus = -6
 
@@ -539,8 +621,6 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 
-
-
 	icon_state = "cm15"
 	item_state = "cm15"
 
@@ -550,7 +630,6 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	manufacturer = MANUFACTURER_MINUTEMAN
 
 	weapon_weight = WEAPON_MEDIUM
-//	can_suppress = FALSE
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/cm15_12g,
@@ -564,15 +643,13 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	internal_magazine = FALSE
 	casing_ejector = TRUE
 	tac_reloads = TRUE
-	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
+	pickup_sound = 'sound/items/handling/rifle_pickup.ogg'
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
-
 	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
 	eject_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
-
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 
 	spread = 3
@@ -582,6 +659,20 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
 	wield_delay = 0.65 SECONDS
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 34,
+			"y" = 15,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 44,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 21,
+			"y" = 25,
+		)
+	)
 
 /obj/item/gun/ballistic/shotgun/cm15/incendiary
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary
