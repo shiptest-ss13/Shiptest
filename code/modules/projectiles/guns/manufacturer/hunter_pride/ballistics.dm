@@ -15,7 +15,6 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 15
 	recoil = 0
-	internal_magazine = TRUE
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
 	allowed_ammo_types = list(
@@ -42,7 +41,6 @@ EMPTY_GUN_HELPER(revolver/montagne)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/cylinder/rev4570,
 	)
-	internal_magazine = TRUE
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	rack_sound = 'sound/weapons/gun/revolver/viper_prime.ogg'
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -72,7 +70,6 @@ EMPTY_GUN_HELPER(revolver/montagne)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/cylinder/pepperbox,
 	)
-	internal_magazine = TRUE
 	spread = 20
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 50
@@ -98,7 +95,6 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44,
 	)
-	internal_magazine = TRUE
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE
@@ -143,7 +139,6 @@ EMPTY_GUN_HELPER(revolver/shadow)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/cylinder/rev38,
 	)
-	internal_magazine = TRUE
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE //double action
 	safety_wording = "safety"

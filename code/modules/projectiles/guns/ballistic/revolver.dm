@@ -22,7 +22,7 @@
 	fire_sound_volume = 90
 	dry_fire_sound = 'sound/weapons/gun/revolver/dry_fire.ogg'
 	casing_ejector = FALSE
-	internal_magazine = FALSE
+	internal_magazine = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
 	tac_reloads = FALSE
 	var/spin_delay = 10
@@ -76,7 +76,7 @@
 	return ..()
 
 /obj/item/gun/ballistic/revolver/attack_hand(mob/user)
-	if(loc == user && user.is_holding(src))
+	if(loc == user && user.is_holding(src) && internal_magazine)
 		var/num_unloaded = unload_all_ammo(user)
 		if (num_unloaded)
 			to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
@@ -94,6 +94,7 @@
 
 /obj/item/gun/ballistic/revolver/proc/unload_all_ammo(mob/living/user)
 	var/num_unloaded = 0
+
 	if(!magazine)
 		return num_unloaded
 	if(!gate_loaded) //"normal" revolvers
