@@ -559,6 +559,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	empty_indicator = FALSE
 	unique_mag_sprites_for_variants = FALSE
 
+	show_magazine_on_sprite = TRUE
 	semi_auto = TRUE
 	internal_magazine = FALSE
 	casing_ejector = TRUE
@@ -574,8 +575,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 
-	spread = 4
-	spread_unwielded = 16
+	spread = 3
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 4
 	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
