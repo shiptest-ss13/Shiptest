@@ -130,14 +130,73 @@
 "aZ" = (
 /turf/template_noop,
 /area/template_noop)
+"dy" = (
+/obj/machinery/disposal/deliveryChute{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ey" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"hG" = (
+/obj/structure/sign/departments/cargo,
+/turf/closed/indestructible/reinforced,
+/area/hangar)
 "jJ" = (
 /obj/effect/landmark/outpost/elevator,
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
 /area/hangar)
+"jM" = (
+/obj/machinery/conveyor/auto{
+	dir = 2;
+	operating = 1
+	},
+/obj/structure/plasticflaps/opaque,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"mA" = (
+/obj/effect/turf_decal/industrial/loading,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "mX" = (
 /turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"nN" = (
+/obj/machinery/conveyor/auto{
+	dir = 5;
+	operating = 1;
+	verted = -1
+	},
+/obj/structure/plasticflaps/opaque,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"pb" = (
+/obj/machinery/conveyor/auto{
+	dir = 8;
+	operating = 1
+	},
+/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -148,11 +207,115 @@
 	},
 /turf/open/floor/hangar/plasteel,
 /area/hangar)
+"vJ" = (
+/obj/machinery/conveyor/auto{
+	dir = 8;
+	operating = 1
+	},
+/obj/structure/plasticflaps/opaque,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "vM" = (
 /obj/effect/turf_decal/arrows{
 	dir = 8
 	},
 /turf/open/floor/hangar/plasteel,
+/area/hangar)
+"yG" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/chair,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Dg" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/closed/indestructible/reinforced,
+/area/hangar)
+"EQ" = (
+/obj/machinery/conveyor/auto{
+	dir = 2;
+	operating = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Gq" = (
+/obj/machinery/conveyor/auto{
+	dir = 6;
+	operating = 1;
+	verted = -1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"JO" = (
+/obj/structure/railing/corner{
+	dir = 1;
+	layer = 4.1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"KJ" = (
+/obj/machinery/conveyor/auto{
+	dir = 10;
+	operating = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"LN" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"QO" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Rt" = (
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"VM" = (
+/obj/effect/turf_decal/arrows{
+	dir = 8
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ZU" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/disposal/deliveryChute{
+	dir = 1
+	},
+/obj/machinery/conveyor/auto{
+	dir = 1;
+	operating = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 
 (1,1,1) = {"
@@ -1387,8 +1550,8 @@ aZ
 aZ
 aZ
 ag
-an
-aB
+LN
+mA
 aJ
 aN
 aN
@@ -1422,8 +1585,8 @@ aZ
 aZ
 aZ
 ag
+pb
 an
-vM
 aJ
 al
 aN
@@ -1457,8 +1620,8 @@ aZ
 aZ
 aZ
 ag
-an
-aB
+pb
+Rt
 aJ
 aN
 aN
@@ -1488,12 +1651,12 @@ ag
 (39,1,1) = {"
 aZ
 aZ
-aZ
-aZ
-aZ
 ag
-an
-aB
+ag
+ag
+ag
+pb
+QO
 aI
 aN
 aN
@@ -1523,12 +1686,12 @@ ag
 (40,1,1) = {"
 aZ
 aZ
-aZ
-aZ
-aZ
 ag
-an
-aB
+nN
+jM
+jM
+KJ
+ey
 aJ
 aN
 aN
@@ -1558,12 +1721,12 @@ ag
 (41,1,1) = {"
 aZ
 aZ
-aZ
-aZ
-aZ
 ag
-an
-aB
+vJ
+ag
+hG
+yG
+JO
 aJ
 aN
 aN
@@ -1593,12 +1756,12 @@ ag
 (42,1,1) = {"
 aZ
 aZ
-aZ
-aZ
-aZ
 ag
-an
-vM
+Gq
+ZU
+ag
+Rt
+VM
 aJ
 al
 aN
@@ -1628,11 +1791,11 @@ ag
 (43,1,1) = {"
 aZ
 aZ
-aZ
-aZ
-aZ
 ag
-an
+ag
+Dg
+ag
+Rt
 aB
 aJ
 aN
@@ -1663,11 +1826,11 @@ ag
 (44,1,1) = {"
 aZ
 aZ
-aZ
-aZ
-aZ
 ag
-an
+EQ
+dy
+ag
+Rt
 aB
 aJ
 aN
@@ -1698,11 +1861,11 @@ ag
 (45,1,1) = {"
 aZ
 aZ
-aZ
-aZ
-aZ
 ag
-an
+ag
+ag
+ag
+Rt
 aB
 aJ
 aN

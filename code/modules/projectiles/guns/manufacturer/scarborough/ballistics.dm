@@ -180,7 +180,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	dry_fire_sound = 'sound/weapons/gun/revolver/dry_fire.ogg'
 
-	fire_delay = 0.5 SECONDS
+	fire_delay = 0.35 SECONDS
+
+	spread = 3
+	recoil = 1
+	recoil_unwielded = 2
 
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
@@ -197,6 +201,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	semi_auto = FALSE //not double action
 	safety_wording = "hammer"
+
+	fire_delay = 0.4 SECONDS
+	spread = 4
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()
