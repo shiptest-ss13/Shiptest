@@ -158,14 +158,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "bS" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "colossus_thrusters"
 	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/maintenance/starboard)
 "cq" = (
@@ -620,14 +618,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "hc" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins{
-	dir = 1;
-	piping_layer = 1
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer1{
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/number/three{
 	dir = 8
 	},
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "hh" = (
@@ -838,10 +836,9 @@
 /turf/open/floor/carpet/black,
 /area/ship/crew)
 "jo" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins{
-	piping_layer = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer1,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "jw" = (
@@ -945,7 +942,6 @@
 /area/ship/hallway/port)
 "kn" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/structure/reagent_dispensers/watertank,
 /obj/machinery/button/door{
 	id = "colossus_thrusters";
 	name = "Thruster Shield Control";
@@ -1279,9 +1275,7 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew)
 "oO" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fueled,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/maintenance/port)
 "oT" = (
@@ -2552,6 +2546,7 @@
 	},
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/oil/streak,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "Bs" = (
@@ -3340,7 +3335,6 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "JO" = (
@@ -3495,14 +3489,12 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Ls" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "colossus_thrusters"
 	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/maintenance/port)
 "Lx" = (
@@ -3756,9 +3748,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering)
 "OG" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fueled,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/maintenance/starboard)
 "OV" = (
@@ -4189,10 +4179,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/advanced_airlock_controller{
-	pixel_x = 25;
-	req_access = null
-	},
+/obj/machinery/advanced_airlock_controller/directional/east,
 /obj/item/radio/intercom/directional/west,
 /obj/structure/chair/handrail{
 	dir = 4
