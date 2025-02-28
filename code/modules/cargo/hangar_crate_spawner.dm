@@ -19,6 +19,8 @@ and then spawns a crate at the spawner's turf
 	name = "crate delivery chute"
 	icon = 'icons/effects/mapping/mapping_helpers.dmi'
 	icon_state = "adder"
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 
 /obj/hangar_crate_spawner/proc/handle_order(datum/supply_order/order)
 	order.generate(get_turf(src))
