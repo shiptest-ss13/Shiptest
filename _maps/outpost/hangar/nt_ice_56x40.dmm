@@ -363,11 +363,10 @@
 	},
 /area/hangar)
 "gI" = (
-/obj/machinery/conveyor/auto{
-	dir = 8;
-	operating = 1
+/obj/structure/plasticflaps/outpost,
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
 	},
-/obj/structure/plasticflaps/opaque,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "hT" = (
@@ -453,9 +452,8 @@
 	},
 /area/hangar)
 "kT" = (
-/obj/machinery/conveyor/auto{
-	dir = 8;
-	operating = 1
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
@@ -511,11 +509,8 @@
 	},
 /area/hangar)
 "mK" = (
-/obj/machinery/conveyor/auto{
-	dir = 2;
-	operating = 1
-	},
-/obj/structure/plasticflaps/opaque,
+/obj/machinery/conveyor/auto/outpost,
+/obj/structure/plasticflaps/outpost,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "mP" = (
@@ -638,10 +633,7 @@
 	},
 /area/hangar)
 "rb" = (
-/obj/machinery/conveyor/auto{
-	dir = 2;
-	operating = 1
-	},
+/obj/machinery/conveyor/auto/outpost,
 /obj/effect/landmark/outpost/hangar_crate_spawner,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
@@ -756,9 +748,8 @@
 	},
 /area/hangar)
 "vD" = (
-/obj/machinery/conveyor/auto{
-	dir = 10;
-	operating = 1
+/obj/machinery/conveyor/auto/outpost{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
@@ -826,12 +817,11 @@
 	},
 /area/hangar)
 "Bu" = (
-/obj/machinery/conveyor/auto{
+/obj/structure/plasticflaps/outpost,
+/obj/machinery/conveyor/auto/outpost{
 	dir = 5;
-	operating = 1;
 	verted = -1
 	},
-/obj/structure/plasticflaps/opaque,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "BN" = (
@@ -1198,12 +1188,11 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/conveyor/auto/outpost{
 	dir = 1
 	},
-/obj/machinery/conveyor/auto{
-	dir = 1;
-	operating = 1
+/obj/machinery/disposal/deliveryChute{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
@@ -1382,9 +1371,8 @@
 	},
 /area/hangar)
 "So" = (
-/obj/machinery/conveyor/auto{
+/obj/machinery/conveyor/auto/outpost{
 	dir = 6;
-	operating = 1;
 	verted = -1
 	},
 /turf/open/floor/plasteel/tech,
@@ -1429,11 +1417,10 @@
 	},
 /area/hangar)
 "UR" = (
-/obj/machinery/conveyor/auto{
-	dir = 8;
-	operating = 1
-	},
 /obj/machinery/light/dim/directional/north,
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "UZ" = (

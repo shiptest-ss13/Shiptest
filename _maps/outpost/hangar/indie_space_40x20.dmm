@@ -133,9 +133,8 @@
 /turf/open/floor/hangar/plasteel,
 /area/hangar)
 "cQ" = (
-/obj/machinery/conveyor/auto{
+/obj/machinery/conveyor/auto/outpost{
 	dir = 6;
-	operating = 1;
 	verted = -1
 	},
 /turf/open/floor/plasteel{
@@ -143,10 +142,7 @@
 	},
 /area/hangar)
 "hn" = (
-/obj/machinery/conveyor/auto{
-	dir = 2;
-	operating = 1
-	},
+/obj/machinery/conveyor/auto/outpost,
 /obj/effect/landmark/outpost/hangar_crate_spawner,
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
@@ -161,6 +157,12 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"le" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
 "nS" = (
 /obj/effect/turf_decal/arrows{
 	dir = 8
@@ -170,21 +172,17 @@
 	},
 /area/hangar)
 "qs" = (
-/obj/machinery/conveyor/auto{
-	dir = 2;
-	operating = 1
-	},
-/obj/structure/plasticflaps/opaque,
+/obj/machinery/conveyor/auto/outpost,
+/obj/structure/plasticflaps/outpost,
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
 "xU" = (
-/obj/machinery/conveyor/auto{
-	dir = 8;
-	operating = 1
+/obj/structure/plasticflaps/outpost,
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
 	},
-/obj/structure/plasticflaps/opaque,
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
@@ -223,9 +221,8 @@
 	},
 /area/hangar)
 "Mh" = (
-/obj/machinery/conveyor/auto{
-	dir = 8;
-	operating = 1
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
 	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
@@ -262,12 +259,11 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/conveyor/auto/outpost{
 	dir = 1
 	},
-/obj/machinery/conveyor/auto{
-	dir = 1;
-	operating = 1
+/obj/machinery/disposal/deliveryChute{
+	dir = 1
 	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
@@ -278,9 +274,8 @@
 /turf/open/floor/hangar/plasteel,
 /area/hangar)
 "Ur" = (
-/obj/machinery/conveyor/auto{
-	dir = 10;
-	operating = 1
+/obj/machinery/conveyor/auto/outpost{
+	dir = 10
 	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
@@ -308,12 +303,11 @@
 	},
 /area/hangar)
 "ZK" = (
-/obj/machinery/conveyor/auto{
+/obj/structure/plasticflaps/outpost,
+/obj/machinery/conveyor/auto/outpost{
 	dir = 5;
-	operating = 1;
 	verted = -1
 	},
-/obj/structure/plasticflaps/opaque,
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
@@ -1446,7 +1440,7 @@ aP
 aP
 aP
 ab
-Mh
+le
 Ht
 aL
 aD
