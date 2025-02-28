@@ -71,34 +71,6 @@
 	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	max_integrity = 250
 
-/* Syndicate Turrets */
-
-/obj/machinery/porta_turret/ship/syndicate
-	faction = list(FACTION_PLAYER_SYNDICATE, "turret")
-	icon_state = "standard_lethal"
-	base_icon_state = "standard"
-
-/obj/machinery/porta_turret/ship/syndicate/weak
-	name = "Light Laser Turret"
-	desc = "A low powered turret designed by the Gorlex Maurauders during the ICW. Effectively weaponizes mining equipment."
-	stun_projectile = /obj/projectile/beam/disabler/weak
-	lethal_projectile = /obj/projectile/beam/weak/penetrator
-	icon_state = "syndie_off"
-	base_icon_state = "syndie"
-	scan_range = 7
-	shot_delay = 5
-
-/obj/machinery/porta_turret/ship/syndicate/heavy
-	name = "Heavy Laser Turret"
-	desc = "Produced by Cybersun, this turret is a duel mount of a propietary heavy laser, and crowd control taser system."
-	stun_projectile = /obj/projectile/energy/electrode
-	stun_projectile_sound = 'sound/weapons/taser.ogg'
-	lethal_projectile = /obj/projectile/beam/laser/heavylaser
-	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
-	scan_range = 12
-	shot_delay = 20
-	max_integrity = 300
-
 /* New Gorlex Republic Turrets */
 // Midline ballistic turrets
 
