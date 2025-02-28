@@ -165,9 +165,6 @@
 	send_item_attack_message(I, user)
 	if(!attacking_item.force)
 		return FALSE
-	var/damage = attacking_item.force
-	if(mob_biotypes & MOB_ROBOTIC)
-		damage *= attacking_item.demolition_mod
 	apply_damage(attacking_item.force, attacking_item.damtype, break_modifier = attacking_item.force, blocked = armor_value, sharpness = attacking_item.get_sharpness()) //Bone break modifier = item force
 	if(I.damtype == BRUTE && prob(33))
 		attacking_item.add_mob_blood(src)
