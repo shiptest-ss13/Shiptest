@@ -572,7 +572,6 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 		)
 	)
 
-
 /obj/item/gun/ballistic/shotgun/hellfire/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -715,7 +714,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 			"y" = 18,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 24,
+			"x" = 18,
 			"y" = 20,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
@@ -812,7 +811,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 			"y" = 16,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 26,
+			"x" = 15,
 			"y" = 18,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
@@ -912,7 +911,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 			"y" = 19,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 29,
+			"x" = 18,
 			"y" = 21,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
@@ -1001,7 +1000,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 			"y" = 18,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 27,
+			"x" = 15,
 			"y" = 20,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
@@ -1104,7 +1103,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 			"y" = 17,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 28,
+			"x" = 17,
 			"y" = 21,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
