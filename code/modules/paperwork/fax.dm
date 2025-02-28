@@ -338,7 +338,7 @@
 			else
 				to_show = ". They sent [thing_to_send.name]"
 
-			to_chat(GLOB.admins, "<span class='adminnotice'>[icon2html(src.icon, GLOB.admins)]<b><font color=green>FAX REQUEST: </font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'>sent a fax message from [fax_name]/[fax_id][ADMIN_FLW(src)] to [html_encode(params["name"])]</span> [to_show]")
+			to_chat(GLOB.admins, "<span class='adminnotice'>[icon2html(src.icon, GLOB.admins)]<b><font color=green>FAX REQUEST: </font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'>sent a fax message from [fax_name]/[fax_id][ADMIN_FLW(src)] to [html_encode(params["name"])][to_show]</span>")
 			log_fax(thing_to_send, params["id"], params["name"])
 			loaded_item_ref = null
 
