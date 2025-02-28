@@ -111,6 +111,9 @@
 	var/datum/action/innate/mecha/mech_toggle_phasing/phasing_action = new
 	var/datum/action/innate/mecha/strafe/strafing_action = new
 
+	// for mechs with unique actions
+	var/datum/action/innate/mecha/mech_unique_action
+
 	//Action vars
 	var/obj/item/mecha_parts/mecha_equipment/thrusters/active_thrusters
 	var/defense_mode = FALSE
@@ -166,6 +169,7 @@
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	update_part_values()
 	AddComponent(/datum/component/automatic_fire_mecha,0.5)
+	set_up_unique_action()
 
 /obj/mecha/update_icon_state()
 	if(silicon_pilot && silicon_icon_state)
@@ -345,7 +349,8 @@
 					if(istype(O, /obj/item/gun))
 						. += "<span class='warning'>It looks like you can hit the pilot directly if you target the center or above.</span>"
 						break //in case user is holding two guns
-
+	if(mech_unique_action)
+		. += "This mech has a special action you can activate by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 //processing internal damage, temperature, air regulation, alert updates, lights power use.
 /obj/mecha/process()
 	var/internal_temp_regulation = 1
@@ -539,6 +544,13 @@
 
 
 /obj/mecha/proc/range_action(atom/target)
+	return
+
+/obj/mecha/proc/set_up_unique_action(mob/user)
+	return
+
+/obj/mecha/proc/handle_unique_action(mob/user)
+	mech_unique_action.Activate()
 	return
 
 
@@ -877,7 +889,7 @@
 
 
 //An actual AI (simple_animal mecha pilot) entering the mech
-/obj/mecha/proc/aimob_enter_mech(mob/living/simple_animal/hostile/human/syndicate/mecha_pilot/pilot_mob)
+/obj/mecha/proc/aimob_enter_mech(mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/pilot_mob)
 	if(pilot_mob && pilot_mob.Adjacent(src))
 		if(occupant)
 			return
@@ -887,7 +899,7 @@
 		pilot_mob.forceMove(src)
 		GrantActions(pilot_mob)//needed for checks, and incase a badmin puts somebody in the mob
 
-/obj/mecha/proc/aimob_exit_mech(mob/living/simple_animal/hostile/human/syndicate/mecha_pilot/pilot_mob)
+/obj/mecha/proc/aimob_exit_mech(mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/pilot_mob)
 	if(occupant == pilot_mob)
 		occupant = null
 	if(pilot_mob.mecha == src)

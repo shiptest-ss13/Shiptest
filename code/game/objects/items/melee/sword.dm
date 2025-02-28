@@ -58,12 +58,13 @@
 
 /obj/item/melee/sword/mass
 	name = "mass produced machete"
-	desc = "A middle ground between a machete and a short sword. A simple construction of stamped steel but its so cheap its hard to complain. Its right between being a one hand and two handed weapon"
+	desc = "A mass-produced machete made of stamped steel, with a faux-leather grip for ease of handling. Right between that of a one-handed and two-handed weapon."
 	icon_state = "machete"
 	base_icon_state = "machete"
 	force = 20
 	throwforce = 15
 	max_integrity = 50
+	supports_variations = VOX_VARIATION
 
 /obj/item/melee/sword/mass/ComponentInitialize()
 	. = ..()
@@ -289,7 +290,7 @@
 		/datum/reagent/drug/space_drugs = 10,
 		/datum/reagent/drug/crank = 5,
 		/datum/reagent/drug/methamphetamine = 5,
-		/datum/reagent/drug/bath_salts = 5,
+		/datum/reagent/drug/mammoth = 5,
 		/datum/reagent/drug/aranesp = 5,
 		/datum/reagent/drug/pumpup = 10,
 		/datum/reagent/medicine/omnizine = 10,

@@ -8,81 +8,48 @@
 
 //List of different corpse types
 
-/obj/effect/mob_spawn/human/corpse/syndicatesoldier
-	name = "Syndicate Operative"
+/obj/effect/mob_spawn/human/corpse/ramzi
+	name = "Ramzi Operative"
 	id_job = "Operative"
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
-	outfit = /datum/outfit/syndicatesoldiercorpse
+	outfit = /datum/outfit/ramzi
 
-/datum/outfit/syndicatesoldiercorpse
-	name = "Syndicate Operative Corpse"
-	uniform = /obj/item/clothing/under/syndicate
-	suit = /obj/item/clothing/suit/armor/vest
+/datum/outfit/ramzi
+	name = "Ramzi Clique Corpse"
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	suit = /obj/item/clothing/suit/armor/vest/syndie
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	ears = /obj/item/radio/headset
-	mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/swat
+	ears = /obj/item/radio/headset/alt
+	mask = /obj/item/clothing/mask/gas/syndicate
+	head = /obj/item/clothing/head/helmet/syndie
 	back = /obj/item/storage/backpack
+	neck = /obj/item/clothing/neck/dogtag/ramzi
 	id = /obj/item/card/id/syndicate
 
-/obj/effect/mob_spawn/human/corpse/syndicatecommando
-	name = "Syndicate Commando"
-	id_job = "Operative"
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
-	outfit = /datum/outfit/syndicatecommandocorpse
+/obj/effect/mob_spawn/human/corpse/ramzi/space
+	name = "Ramzi Hardsuit"
+	outfit = /datum/outfit/ramzi/commando
 
-/datum/outfit/syndicatecommandocorpse
-	name = "Syndicate Commando Corpse"
-	uniform = /obj/item/clothing/under/syndicate
-	suit = /obj/item/clothing/suit/space/hardsuit/syndi
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	ears = /obj/item/radio/headset
-	mask = /obj/item/clothing/mask/gas/syndicate
-	back = /obj/item/tank/jetpack/oxygen
-	r_pocket = /obj/item/tank/internals/emergency_oxygen
-	id = /obj/item/card/id/syndicate
-
-/obj/effect/mob_spawn/human/corpse/syndicateramzi
-	name = "Ramzi Clique Commando"
-	id_job = "Cutthroat"
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
-	outfit = /datum/outfit/syndicateramzicorpse
-
-/datum/outfit/syndicateramzicorpse
-	name = "Ramzi Clique Commando Corpse"
+/datum/outfit/ramzi/commando
+	name = "Ramzi Clique Space Corpse"
 	uniform = /obj/item/clothing/under/syndicate/combat
+	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/color/black
-	ears = /obj/item/radio/headset
-	mask = /obj/item/clothing/mask/gas/syndicate
 	back = /obj/item/tank/jetpack/oxygen
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
-	id = /obj/item/card/id/syndicate_command/crew_id
 
-
-/obj/effect/mob_spawn/human/corpse/syndicatestormtrooper
-	name = "Syndicate Stormtrooper"
+/obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
+	name = "Ramzi Clique Trooper"
 	id_job = "Operative"
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
-	outfit = /datum/outfit/syndicatestormtroopercorpse
+	outfit = /datum/outfit/ramzi/stormtrooper
 
-/datum/outfit/syndicatestormtroopercorpse
-	name = "Syndicate Stormtrooper Corpse"
-	uniform = /obj/item/clothing/under/syndicate
-	suit = /obj/item/clothing/suit/space/hardsuit/syndi/elite
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-	ears = /obj/item/radio/headset
+/datum/outfit/ramzi/stormtrooper
+	name = "Ramzi Clique Trooper Corpse"
+	uniform = /obj/item/clothing/under/syndicate/combat
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi
+	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	mask = /obj/item/clothing/mask/gas/syndicate
 	back = /obj/item/tank/jetpack/oxygen/harness
-	id = /obj/item/card/id/syndicate
 
 /datum/outfit/syndicatecaptaincorpse
 	name = "Syndicate Captain Corpse"
@@ -139,19 +106,9 @@
 	facial_hairstyle = "Shaved"
 
 
-/obj/effect/mob_spawn/human/clown/corpse
-	roundstart = FALSE
-	instant = TRUE
-	skin_tone = "caucasian1"
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
-
 /obj/effect/mob_spawn/human/corpse/pirate
 	name = "Pirate"
-	skin_tone = "caucasian1" //all pirates are white because it's easier that way
 	outfit = /datum/outfit/piratecorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
 
 /datum/outfit/piratecorpse
 	name = "Pirate Corpse"
@@ -185,46 +142,8 @@
 	head = /obj/item/clothing/head/wizard
 
 
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier
-	name = "\improper Nanotrasen Private Security Officer"
-	id_job = "Private Security Force"
-	outfit = /datum/outfit/nanotrasensoldiercorpse2
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
-
-/datum/outfit/nanotrasensoldiercorpse2
-	name = "NT Private Security Officer Corpse"
-	uniform = /obj/item/clothing/under/rank/security/officer
-	suit = /obj/item/clothing/suit/armor/vest
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-	ears = /obj/item/radio/headset
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	head = /obj/item/clothing/head/helmet/swat/nanotrasen
-	back = /obj/item/storage/backpack/security
-	id = /obj/item/card/id
-
-/obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier
-	name = "Nanotrasen Private Security Officer"
-	id_job = "Nanotrasen Assault Force"
-	outfit = /datum/outfit/nanotrasenassaultsoldiercorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
-
-/datum/outfit/nanotrasenassaultsoldiercorpse
-	name = "NT Assault Officer Corpse"
-	uniform = /obj/item/clothing/under/syndicate
-	suit = /obj/item/clothing/suit/armor/vest
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-	ears = /obj/item/radio/headset
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	head = /obj/item/clothing/head/helmet/swat/nanotrasen
-	back = /obj/item/storage/backpack/security
-	id = /obj/item/card/id
-
-/datum/outfit/vigilitasprivatetroopercorpse
-	name = "VI Private Trooper"
+/datum/outfit/vigilitas
+	name = "VI Corpse"
 	uniform = /obj/item/clothing/under/nanotrasen/security
 	suit = /obj/item/clothing/suit/armor/nanotrasen
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -235,12 +154,36 @@
 	back = /obj/item/storage/backpack/messenger
 	id = /obj/item/card/id
 
-/obj/effect/mob_spawn/human/corpse/vigilitasprivatetroopercorpse
-	name = "VI Private Trooper"
+/datum/outfit/vigilitas/private
+	name = "VI Private"
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_private
+	name = "VI Private"
+	id_job = "Vigilitas Interstellar"
+	outfit = /datum/outfit/vigilitas/private
+
+/datum/outfit/vigilitas/trooper
+	name = "VI Trooper"
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/helmet/sec
+	back = /obj/item/storage/backpack/security
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_trooper
+	name = "VI Trooper"
 	id_job = "Vigilitas Assault Force"
-	outfit = /datum/outfit/vigilitasprivatetroopercorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
+	outfit = /datum/outfit/vigilitas/trooper
+
+/datum/outfit/vigilitas/elite
+	name = "VI Response Team"
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/sec
+	head = /obj/item/clothing/head/helmet/space/hardsuit/ert/sec
+	back = /obj/item/storage/backpack/security
+	gloves = /obj/item/clothing/gloves/combat
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_elite
+	name = "VI Response Team"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitas/elite
 
 /obj/effect/mob_spawn/human/corpse/cat_butcher
 	name = "The Cat Surgeon"

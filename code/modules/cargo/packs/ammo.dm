@@ -415,6 +415,14 @@
 	contains = list(/obj/item/storage/box/ammo/a858)
 	cost = 400
 
+/* .50 BMG */
+
+/datum/supply_pack/ammo/a50
+	name = ".50 BMG Ammo Box Crate"
+	desc = "Contains a twenty-round .50 BMG ammo box for the Taipan Anti-Material Rifle. Make them count, they aren't cheap."
+	contains = list(/obj/item/storage/box/ammo/a50box)
+	cost = 1000
+
 
 /* ferro pellets */
 
