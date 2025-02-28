@@ -72,7 +72,7 @@ Blunt
 	toolspeed = 0.5
 	wall_decon_damage = MINERAL_WALL_INTEGRITY
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
-	demolition_mod = 3
+	demolition_mod = 2
 	var/wielded = FALSE
 
 /obj/item/melee/axe/sledgehammer/ComponentInitialize()

@@ -100,24 +100,24 @@
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	hitsound = 'sound/weapons/sonic_jackhammer.ogg'
 	desc = "The epitome of conventional rock-smashing technology, invented by NT and cost-optimized by EXOCOM. Smashes rocks, objects, and unfortunate wildlife with sonic blasts."
-	force = 25
+	force = 20
+	armour_penetration = 15
 	attack_verb = list("blasted", "smashed", "slammed", "hammered")
-	demolition_mod = 2
+	demolition_mod = 6
 
 // //back in my day, our jackhammers used nothing but rattlin' drill bits! And we liked it!
 /obj/item/pickaxe/drill/jackhammer/old
 	name = "blastwave jackhammer"
 	icon_state = "jackhammerold"
 	item_state = "jackhammerold"
-	toolspeed = 0.5//meh
+	toolspeed = 0.4//meh
 	desc = "The old fashioned solution to a stubborn wall- used heavily all over known space until the onset of sonic deconstruction technology and Rapid Construction Devices."
-	force = 20
+	force = 15
 	armour_penetration = 15
-	demolition_mod = 2
 
 /obj/item/pickaxe/drill/jackhammer/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/knockback, 2, FALSE, FALSE)
+	AddComponent(/datum/component/knockback, 1, FALSE, FALSE)
 
 //The fist of justice
 /obj/item/pickaxe/drill/jackhammer/brigador
