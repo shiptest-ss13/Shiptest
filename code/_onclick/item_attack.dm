@@ -145,7 +145,12 @@
 	if(!attacking_item.force)
 		return
 
-	var/total_force = (attacking_item.force * attacking_item.demolition_mod)
+	var/total_force
+	if(istype(src, /obj/structure))
+		total_force = (attacking_item.force * attacking_item.demolition_mod)
+
+	else
+		total_force = (attacking_item.force)
 
 	var/damage = take_damage(total_force, attacking_item.damtype, "melee", 1)
 
