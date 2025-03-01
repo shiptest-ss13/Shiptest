@@ -14,7 +14,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
-/obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ai" = (
@@ -110,9 +109,11 @@
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer5{
 	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/purple/hidden/layer1{
+	dir = 4
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
@@ -398,7 +399,7 @@
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/port)
 "dq" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/engine/hull,
 /area/ship/maintenance/port)
 "dB" = (
@@ -487,12 +488,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "es" = (
-/obj/effect/turf_decal/atmos/plasma,
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer5,
-/obj/machinery/atmospherics/pipe/simple/purple/visible/layer1,
+/obj/effect/turf_decal/atmos/hydrogen,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "et" = (
@@ -831,7 +831,7 @@
 /turf/open/floor/plating,
 /area/ship/medical)
 "gS" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/engine/hull,
 /area/ship/maintenance/starboard)
 "gV" = (
@@ -1393,8 +1393,11 @@
 /turf/closed/wall,
 /area/ship/cargo)
 "lz" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output,
-/turf/open/floor/engine/plasma,
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos{
+	id_tag = "hydrogen_out";
+	name = "hydrogen tank output inlet"
+	},
+/turf/open/floor/engine/hydrogen,
 /area/ship/engineering)
 "lF" = (
 /obj/structure/railing,
@@ -1617,9 +1620,7 @@
 /turf/closed/wall,
 /area/ship/bridge)
 "od" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_x = -25
-	},
+/obj/machinery/advanced_airlock_controller/directional/west,
 /obj/structure/chair/handrail{
 	dir = 4
 	},
@@ -1749,6 +1750,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer1{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "oY" = (
@@ -2486,9 +2490,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
 "uM" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_x = -25
-	},
+/obj/machinery/advanced_airlock_controller/directional/west,
 /obj/structure/chair/handrail{
 	dir = 4
 	},
@@ -4199,8 +4201,8 @@
 	icon_state = "1-6"
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
 "Jb" = (
@@ -4585,16 +4587,16 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer5,
-/obj/machinery/atmospherics/pipe/manifold/purple/hidden/layer1{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
+	dir = 10
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Mb" = (
@@ -4807,8 +4809,11 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "NR" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxin_input,
-/turf/open/floor/engine/plasma,
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
+	name = "hydrogen tank input injector";
+	id = "hydrogen_in"
+	},
+/turf/open/floor/engine/hydrogen,
 /area/ship/engineering)
 "NT" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
@@ -4952,11 +4957,11 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Pj" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
 	name = "Cooling to TEG"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Pk" = (
@@ -5056,16 +5061,16 @@
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "PP" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "shetportthrusters"
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "shetportthrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -5132,11 +5137,11 @@
 /obj/effect/turf_decal/miskilamo_big/seven{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -5226,16 +5231,16 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "QV" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "shetstarboardengine"
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "shetstarboardengine"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -5402,8 +5407,13 @@
 	},
 /obj/machinery/atmospherics/components/trinary/mixer/flipped{
 	dir = 4;
-	name = "Chamber Mixer";
+	name = "Fuel Mixer";
 	piping_layer = 5
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 4;
+	name = "Fuel to Thrusters";
+	piping_layer = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -6143,7 +6153,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Zj" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/plasma{
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/hydrogen{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer1{
