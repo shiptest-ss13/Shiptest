@@ -232,6 +232,23 @@ EMPTY_GUN_HELPER(revolver/detective)
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	show_magazine_on_sprite = TRUE
 
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 31,
+			"y" = 23,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 21,
+			"y" = 18,
+		)
+	)
+
+
 NO_MAG_GUN_HELPER(automatic/pistol/candor)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
@@ -277,6 +294,22 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	wield_slowdown = SMG_SLOWDOWN
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 47,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 34,
+			"y" = 13,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
 	default_ammo_type = /obj/item/ammo_box/magazine/c44_firestorm_mag/pan
@@ -327,6 +360,21 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	burst_size = 2
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 24,
+			"y" = 21,
+		)
+	)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/unique_action(mob/living/user)
 	if (bolt_locked == FALSE)
@@ -465,6 +513,15 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
 	rack_delay = 0.2 SECONDS
 
 	can_be_sawn_off = TRUE
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 40,
+			"y" = 18,
+		)
+	)
 
 
 /obj/item/gun/ballistic/shotgun/brimstone/sawoff(forced = FALSE)
@@ -503,6 +560,16 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 	can_be_sawn_off = TRUE
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
 	fire_delay = 0.1 SECONDS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 17,
+		)
+	)
+
 
 /obj/item/gun/ballistic/shotgun/hellfire/sawoff(forced = FALSE)
 	. = ..()
@@ -534,6 +601,21 @@ EMPTY_GUN_HELPER(shotgun/hellfire)
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/winchester/conflagration,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 47,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 26,
+			"y" = 22,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 34,
+			"y" = 16,
+		)
 	)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/sawoff(forced = FALSE)
@@ -625,6 +707,21 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 24,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 37,
+			"y" = 15,
+		)
+	)
+
 	empty_autoeject = TRUE
 	eject_sound_vary = FALSE
 	can_be_sawn_off = TRUE
@@ -706,6 +803,21 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 
 	recoil = 0
 	recoil_unwielded = 2
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 45,
+			"y" = 16,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 26,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 25,
+			"y" = 13,
+		)
+	)
 
 EMPTY_GUN_HELPER(shotgun/flamingarrow)
 
@@ -792,6 +904,21 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		/obj/item/ammo_box/magazine/internal/shot/winchester/absolution,
 	)
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 29,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 33,
+			"y" = 15,
+		)
+	)
+
 /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -866,6 +993,21 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 27,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 31,
+			"y" = 16,
+		)
+	)
+
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -938,7 +1080,6 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	zoomable = FALSE //no scope on it
 
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 
@@ -949,17 +1090,26 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	recoil_unwielded = 4
 	wield_slowdown = DMR_SLOWDOWN
 
-	unique_attachments = list(
-		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope,
-	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1,
 		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
-	default_attachments = list(/obj/item/attachment/scope)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 28,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 38,
+			"y" = 14,
+		)
+	)
 
 /obj/item/gun/ballistic/rifle/scout
 	name = "HP Scout"
@@ -991,3 +1141,13 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 32,
+			"y" = 14,
+		)
+	)
