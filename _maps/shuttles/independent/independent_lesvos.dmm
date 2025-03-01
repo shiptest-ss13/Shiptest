@@ -616,6 +616,17 @@
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"fs" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/floordetail/traction,
+/turf/open/floor/plasteel/patterned,
+/area/ship/hangar/starboard)
 "fA" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -731,22 +742,12 @@
 	},
 /area/ship/storage/starboard)
 "gw" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 9
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 6
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/conveyor_switch/oneway{
-	id = "lesvos_smelter"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/storage/starboard)
+/obj/effect/turf_decal/floordetail/traction,
+/turf/open/floor/plasteel/patterned,
+/area/ship/hangar/starboard)
 "gz" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1329,17 +1330,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
-"lR" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/floordetail/traction,
-/turf/open/floor/plasteel/patterned,
-/area/ship/hangar/starboard)
 "lV" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2292,14 +2282,20 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engine)
-"ug" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible,
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+"ub" = (
+/obj/structure/platform/industrial{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 9
+	},
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
-/area/ship/hallway)
+/area/ship/engineering/engine)
 "un" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden,
 /obj/machinery/light/directional/south,
@@ -2370,6 +2366,10 @@
 	},
 /obj/item/paper/pamphlet/lesvos/subshuttle{
 	pixel_x = 6
+	},
+/obj/item/folder/blue{
+	pixel_x = -3;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
@@ -3272,6 +3272,16 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/storage/starboard)
+"Bn" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway)
 "Bo" = (
 /obj/machinery/light/directional/south,
 /obj/machinery/button/door{
@@ -4496,9 +4506,8 @@
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
 	},
-/obj/item/folder/blue{
-	pixel_x = -3;
-	pixel_y = -1
+/obj/machinery/turretid/ship{
+	id = "lesvos_turret"
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
@@ -4539,7 +4548,9 @@
 /turf/open/floor/plating,
 /area/ship/crew/cryo)
 "KD" = (
-/obj/machinery/porta_turret/ship/weak,
+/obj/machinery/porta_turret/ship/weak{
+	id = "lesvos_turret"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/storage/starboard)
 "KE" = (
@@ -5250,20 +5261,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"PQ" = (
-/obj/structure/platform/industrial{
-	dir = 8
-	},
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner/opaque/orange{
-	dir = 9
-	},
-/obj/structure/table,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/engine)
 "PS" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -5478,9 +5475,7 @@
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway)
 "Rf" = (
@@ -5837,10 +5832,22 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway)
 "Um" = (
-/obj/effect/turf_decal/corner/opaque/orange,
-/obj/effect/turf_decal/steeldecal/steel_decals8,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/engine)
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/conveyor_switch/oneway{
+	id = "lesvos_smelter"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/storage/starboard)
 "Uq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -5970,6 +5977,11 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"Vk" = (
+/obj/effect/turf_decal/corner/opaque/orange,
+/obj/effect/turf_decal/steeldecal/steel_decals8,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/engine)
 "Vl" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 8
@@ -6233,13 +6245,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
-"Xy" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/effect/turf_decal/floordetail/traction,
-/turf/open/floor/plasteel/patterned,
-/area/ship/hangar/starboard)
 "XE" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -6286,7 +6291,9 @@
 /turf/open/floor/carpet/green,
 /area/ship/crew/specialized/cargo)
 "XU" = (
-/obj/machinery/porta_turret/ship/weak,
+/obj/machinery/porta_turret/ship/weak{
+	id = "lesvos_turret"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/storage/port)
 "Yb" = (
@@ -6806,7 +6813,7 @@ Dr
 Uw
 vL
 Zf
-Um
+Vk
 Lr
 ro
 ld
@@ -6877,7 +6884,7 @@ pj
 CA
 QR
 QR
-PQ
+ub
 ce
 KF
 hf
@@ -7201,7 +7208,7 @@ jH
 jH
 jH
 xD
-ug
+Rd
 bv
 dF
 fl
@@ -7226,7 +7233,7 @@ rm
 ii
 DR
 EM
-Rd
+Bn
 qc
 jH
 jH
@@ -7458,13 +7465,13 @@ DD
 jH
 jH
 je
-lR
+fs
 Dz
 km
 km
 km
 wa
-Xy
+gw
 je
 jH
 jH
@@ -8072,7 +8079,7 @@ jH
 jH
 jH
 iO
-gw
+Um
 OZ
 tR
 aN
