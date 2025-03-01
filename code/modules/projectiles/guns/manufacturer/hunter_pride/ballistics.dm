@@ -376,7 +376,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 24,
 			"y" = 21,
-		)
+		),
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 40,
 			"y" = 17,
@@ -528,7 +528,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 40,
 			"y" = 18,
-		)
+		),
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 36,
 			"y" = 17,
@@ -580,7 +580,7 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 45,
 			"y" = 18,
-		)
+		),
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 33,
 			"y" = 13,
