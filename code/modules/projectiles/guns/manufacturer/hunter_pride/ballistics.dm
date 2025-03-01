@@ -365,6 +365,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_SCOPE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
 	)
 
 	slot_offsets = list(
@@ -375,6 +376,10 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 24,
 			"y" = 21,
+		)
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 40,
+			"y" = 17,
 		)
 	)
 
@@ -517,11 +522,16 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
 	can_be_sawn_off = TRUE
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 40,
 			"y" = 18,
+		)
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 36,
+			"y" = 17,
 		)
 	)
 
@@ -564,11 +574,16 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 	fire_delay = 0.1 SECONDS
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 45,
 			"y" = 18,
+		)
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 33,
+			"y" = 13,
 		)
 	)
 
