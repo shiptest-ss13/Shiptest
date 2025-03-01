@@ -24,8 +24,6 @@
 
 	var/blockade_warning = "Bluespace instability detected. Delivery impossible."
 	var/message
-	/// Number of beacons printed. Used to determine beacon names.
-	var/printed_beacons = 0
 	var/list/supply_pack_data
 	/// The currently linked supplypod beacon
 	var/obj/item/supplypod_beacon/beacon
@@ -33,12 +31,15 @@
 	var/area/landingzone
 	/// The pod type used to deliver orders
 	var/podType = /obj/structure/closet/supplypod/centcompod
-	/// Cooldown to prevent printing supplypod beacon spam
-	var/cooldown = 0
-	/// Is the console in beacon mode? exists to let beacon know when a pod may come in
-	var/use_beacon = FALSE
 	/// The account to charge purchases to, defaults to the cargo budget
 	var/datum/bank_account/charge_account
+
+	/// Number of beacons printed. Used to determine beacon names.
+	var/printed_beacons = 0
+	/// Cooldown to prevent printing supplypod beacon spam
+	COOLDOWN_DECLARE(beacon_cooldown)
+	/// Is the console in beacon mode? exists to let beacon know when a pod may come in
+	var/use_beacon = FALSE
 
 /obj/machinery/computer/cargo/Initialize()
 	. = ..()
@@ -111,11 +112,11 @@
 	data["beaconZone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
 	data["usingBeacon"] = use_beacon //is the mode set to deliver to the beacon or the cargobay?
 	data["canBeacon"] = !use_beacon || canBeacon //is the mode set to beacon delivery, and is the beacon in a valid location?
-	data["canBuyBeacon"] = charge_account ? (cooldown <= 0) : FALSE
+	data["canBuyBeacon"] = charge_account ? COOLDOWN_FINISHED(src, beacon_cooldown) : FALSE
 	data["beaconError"] = use_beacon && !canBeacon ? "(BEACON ERROR)" : ""//changes button text to include an error alert if necessary
 	data["hasBeacon"] = beacon != null//is there a linked beacon?
 	data["beaconName"] = beacon ? beacon.name : "No Beacon Found"
-	data["printMsg"] = cooldown > 0 ? "Print Beacon ([cooldown])" : "Print Beacon"//buttontext for printing beacons
+	data["printMsg"] = COOLDOWN_FINISHED(src, beacon_cooldown) ? "Print Beacon" : "Print Beacon ([DisplayTimeText(COOLDOWN_TIMELEFT(src, beacon_cooldown), 1)])" //buttontext for printing beacons
 	data["supplies"] = list()
 	message = "Sales are near-instantaneous - please choose carefully."
 	if(SSshuttle.supplyBlocked)
@@ -127,8 +128,6 @@
 	data["message"] = message
 
 	data["supplies"] = supply_pack_data
-	if (cooldown > 0)//cooldown used for printing beacons
-		cooldown--
 
 	data["shipMissions"] = list()
 	data["outpostMissions"] = list()
@@ -171,11 +170,13 @@
 			if (beacon)
 				beacon.update_status(SP_READY) //turns on the beacon's ready light
 		if("printBeacon")
-			cooldown = 300
+			if(!COOLDOWN_FINISHED(src, beacon_cooldown))
+				return
 			var/obj/item/supplypod_beacon/C = new /obj/item/supplypod_beacon(drop_location())
 			C.link_console(src, usr)//rather than in beacon's Initialize(), we can assign the computer to the beacon by reusing this proc)
 			printed_beacons++//printed_beacons starts at 0, so the first one out will be called beacon # 1
 			beacon.name = "Supply Pod Beacon #[printed_beacons]"
+			COOLDOWN_START(src, beacon_cooldown, 300 SECONDS)
 		if("add")
 			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
 			if(istype(current_ship.docked_to))

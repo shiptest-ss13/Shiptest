@@ -270,11 +270,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/airlock/grunge{
-	dir = 4;
-	req_access = list(3);
-	name = "Armory"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "hB" = (
@@ -370,6 +365,12 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
+/obj/item/attachment/rail_light{
+	pixel_y = -10
+	},
+/obj/item/attachment/rail_light{
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "ja" = (
@@ -605,6 +606,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	req_access = list(3);
+	name = "Armory"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -2132,15 +2138,17 @@
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/south,
 /obj/machinery/button/door{
-	name = "Window Shutters";
+	name = "Cargo Shutters";
 	id = "haboobcargo";
-	pixel_x = -8;
-	pixel_y = 8
+	pixel_x = 22;
+	pixel_y = 8;
+	dir = 8
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_x = 1;
-	pixel_y = 6;
-	id = "boobfield"
+	pixel_x = 21;
+	pixel_y = -1;
+	id = "boobfield";
+	dir = 8
 	},
 /obj/item/hand_labeler{
 	pixel_x = 5;

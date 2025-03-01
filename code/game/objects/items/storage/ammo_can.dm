@@ -169,6 +169,12 @@
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/a12g_buckshot(src)
 
+/obj/item/storage/toolbox/ammo/c50bmg/PopulateContents()
+	name = "ammo can (.50BMG)"
+	icon_state = "ammobox_50"
+	for (var/i in 1 to 4)
+		new /obj/item/storage/box/ammo/a50box(src)
+
 /obj/item/storage/toolbox/ammo/a858/PopulateContents()
 	name = "ammo can (8x58mm)"
 	icon_state = "ammobox_858"
