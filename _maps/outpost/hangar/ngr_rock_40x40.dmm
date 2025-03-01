@@ -34,7 +34,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "ez" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -45,7 +45,7 @@
 	},
 /area/hangar)
 "eN" = (
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "eU" = (
 /obj/effect/landmark/outpost/elevator,
@@ -84,7 +84,7 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "kB" = (
 /turf/open/floor/plasteel/stairs/mid{
@@ -104,17 +104,23 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "qm" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "re" = (
-/obj/effect/turf_decal/corner/opaque/bar/three_quarters,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters,
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 6
+	},
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "rH" = (
 /turf/open/floor/plasteel/tech{
@@ -125,11 +131,14 @@
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/hangar)
 "tB" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
 	},
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "tU" = (
 /turf/open/floor/plasteel/elevatorshaft{
@@ -137,15 +146,19 @@
 	},
 /area/hangar)
 "uf" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "uk" = (
-/obj/effect/turf_decal/corner/opaque/bar/half,
-/obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "uO" = (
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit,
@@ -165,9 +178,7 @@
 /obj/structure/marker_beacon{
 	picked_color = "Teal"
 	},
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "zM" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
@@ -209,12 +220,15 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "BD" = (
 /obj/machinery/light/floor/hangar,
-/obj/effect/turf_decal/corner/opaque/bar/half,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "CY" = (
 /obj/structure/flora/rock/rockplanet,
@@ -225,10 +239,13 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit,
 /area/hangar)
 "ED" = (
-/obj/effect/turf_decal/corner/opaque/bar/three_quarters{
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw{
+	dir = 1
+	},
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "Hi" = (
 /obj/structure/flora/rock/pile/rockplanet,
@@ -253,9 +270,7 @@
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "IB" = (
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "II" = (
 /obj/structure/flora/tree/cactus,
@@ -287,13 +302,16 @@
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/suit/hooded/wintercoat,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "Mg" = (
-/obj/effect/turf_decal/corner/opaque/bar/three_quarters{
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw{
+	layer = 2.032
+	},
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "Nr" = (
 /obj/effect/decal/fakelattice,
@@ -302,34 +320,44 @@
 	},
 /area/hangar)
 "Og" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "Op" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "Pv" = (
-/obj/effect/turf_decal/corner/opaque/bar/half,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "PD" = (
-/obj/effect/turf_decal/corner/opaque/bar{
+/obj/effect/turf_decal/corner/opaque/tan{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/trimline/opaque/bar/corner{
+	dir = 1
+	},
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "RA" = (
-/obj/effect/turf_decal/corner/opaque/bar/half{
-	dir = 8
-	},
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 4
+	},
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "Sg" = (
 /turf/open/floor/plating/asteroid/snow/safe/lit,
@@ -342,31 +370,30 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "Tv" = (
 /obj/effect/landmark/outpost/hangar_dock,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "TB" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating{
-	planetary_atmos = 1
-	},
+/turf/open/floor/hangar,
 /area/hangar)
 "VK" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "Xg" = (
-/obj/effect/turf_decal/corner/opaque/bar{
+/obj/effect/turf_decal/corner/opaque/tan{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/trimline/opaque/bar/corner{
+	dir = 8
+	},
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "XF" = (
 /obj/structure/flora/grass/rockplanet/dead,
@@ -382,13 +409,6 @@
 	dir = 1;
 	color = "#2e2e2e"
 	},
-/area/hangar)
-"ZD" = (
-/obj/machinery/light/floor/hangar,
-/obj/effect/turf_decal/corner/opaque/bar/half{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
 /area/hangar)
 
 (1,1,1) = {"
@@ -585,7 +605,7 @@ zl
 zl
 zl
 ED
-Og
+uk
 Mg
 bV
 bV
@@ -628,7 +648,7 @@ bV
 bV
 bV
 ED
-Og
+uk
 Mg
 zl
 zl
@@ -1054,7 +1074,7 @@ IB
 IB
 IB
 IB
-ZD
+tB
 TB
 Pv
 cX
@@ -1623,7 +1643,7 @@ zl
 zl
 qm
 TB
-uk
+BD
 IB
 IB
 IB
@@ -2233,7 +2253,7 @@ zl
 zl
 qm
 TB
-uk
+BD
 IB
 IB
 IB
@@ -2884,7 +2904,7 @@ IB
 IB
 IB
 IB
-ZD
+tB
 TB
 Pv
 Sg
@@ -3146,7 +3166,7 @@ zl
 zl
 zl
 zl
-qm
+zl
 TB
 Pv
 IB
@@ -3207,14 +3227,13 @@ zl
 zl
 zl
 zl
-zl
+cX
 eN
 Xg
 Og
 Og
 Og
 Og
-RA
 Og
 Og
 Og
@@ -3224,7 +3243,6 @@ Og
 Og
 Og
 Og
-RA
 Og
 Og
 Og
@@ -3234,7 +3252,6 @@ Og
 Og
 Og
 Og
-RA
 Og
 Og
 Og
@@ -3244,7 +3261,10 @@ Og
 Og
 Og
 Og
-RA
+Og
+Og
+Og
+Og
 Og
 Og
 Og
@@ -3333,6 +3353,7 @@ eh
 uf
 uf
 uf
+RA
 uf
 uf
 uf
@@ -3349,6 +3370,10 @@ uf
 uf
 uf
 uf
+RA
+uf
+uf
+RA
 uf
 uf
 uf
@@ -3365,12 +3390,7 @@ uf
 uf
 uf
 uf
-uf
-uf
-uf
-uf
-uf
-uf
+RA
 uf
 uf
 uf
