@@ -272,6 +272,8 @@
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "cF" = (
@@ -296,6 +298,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "cT" = (
@@ -603,13 +606,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "fD" = (
-/obj/machinery/power/smes/shuttle/micro/precharged{
-	dir = 4
-	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/machinery/door/window/eastright,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id = "lesvos_engines"
@@ -636,6 +640,16 @@
 /obj/machinery/vending/coffee,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
+"fN" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway)
 "fO" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -698,11 +712,9 @@
 	},
 /area/ship/storage/starboard)
 "gw" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/turf/closed/wall,
-/area/ship/cargo)
+/obj/effect/turf_decal/corner/opaque/orange,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/engine)
 "gz" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -781,6 +793,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engine)
 "hO" = (
@@ -1127,9 +1140,6 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/structure/closet/wall/directional/south{
-	name = "medical closet"
-	},
 /obj/item/roller,
 /obj/item/storage/firstaid/ancient,
 /obj/item/storage/firstaid/medical{
@@ -1137,6 +1147,9 @@
 	},
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/wall/med/directional/south{
+	name = "Medical Closet"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/dorm)
 "kK" = (
@@ -1244,6 +1257,9 @@
 /obj/machinery/atmospherics/pipe/simple/brown/hidden{
 	dir = 9
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/hallway)
 "lw" = (
@@ -1321,6 +1337,9 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/westright{
 	req_access_txt = "1"
+	},
+/obj/machinery/cell_charger{
+	pixel_y = 14
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
@@ -1812,22 +1831,14 @@
 "qo" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/table/reinforced,
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = 10
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_y = 11;
-	pixel_x = -9
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_y = 2;
-	pixel_x = -9
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/brown{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "qr" = (
@@ -2120,13 +2131,14 @@
 /turf/open/floor/plating,
 /area/ship/hallway)
 "sU" = (
-/obj/machinery/power/smes/shuttle/micro/precharged{
-	dir = 4
-	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/machinery/door/window/eastleft,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id = "lesvos_engines"
@@ -2292,7 +2304,18 @@
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
 	},
-/obj/machinery/computer/cargo,
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/table{
+	dir = 1;
+	pixel_y = 12;
+	pixel_x = 12
+	},
+/obj/item/paper/pamphlet/lesvos/comms{
+	pixel_x = -3
+	},
+/obj/item/paper/pamphlet/lesvos/subshuttle{
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "uz" = (
@@ -2316,7 +2339,8 @@
 /area/ship/external/dark)
 "uQ" = (
 /obj/machinery/conveyor/inverted{
-	dir = 10
+	dir = 10;
+	id = "lesvos_smelter"
 	},
 /obj/structure/railing/thick/corner{
 	dir = 1;
@@ -2457,11 +2481,6 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "5-6"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/opaque/orange{
-	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -2670,6 +2689,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "xC" = (
@@ -3441,10 +3461,6 @@
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 1
 	},
-/obj/machinery/mineral/processing_unit_console{
-	dir = 8;
-	pixel_x = 20
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 8
 	},
@@ -3456,9 +3472,6 @@
 "Dr" = (
 /obj/effect/turf_decal/miskilamo_big/one{
 	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/orange{
-	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -3633,9 +3646,9 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Fb" = (
-/obj/structure/reagent_dispensers/watertank,
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/pipedispenser,
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engine)
 "Ff" = (
@@ -3652,13 +3665,11 @@
 /obj/structure/platform/industrial{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/binary/pump{
-	name = "waste pump"
-	},
 /obj/structure/railing{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/binary/pump,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Fj" = (
@@ -3831,6 +3842,23 @@
 "Gr" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced,
+/area/ship/storage/starboard)
+"Gs" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/conveyor_switch/oneway{
+	id = "lesvos_smelter"
+	},
+/turf/open/floor/engine/hull,
 /area/ship/storage/starboard)
 "Gy" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -4052,6 +4080,7 @@
 "Ia" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/borderfloor,
+/obj/machinery/holopad,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "Ib" = (
@@ -4391,21 +4420,15 @@
 	pixel_x = -1;
 	layer = 3.21
 	},
-/obj/item/folder/blue{
-	pixel_x = -6;
-	pixel_y = 3
-	},
-/obj/item/paper/pamphlet/lesvos/comms{
-	pixel_x = -3
-	},
-/obj/item/paper/pamphlet/lesvos/subshuttle{
-	pixel_x = 6
-	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
+	},
+/obj/item/folder/blue{
+	pixel_x = -3;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
@@ -4509,7 +4532,8 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/machinery/conveyor{
-	dir = 4
+	dir = 4;
+	id = "lesvos_smelter"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/storage/starboard)
@@ -5018,7 +5042,8 @@
 	pixel_y = 6
 	},
 /obj/machinery/conveyor{
-	dir = 4
+	dir = 4;
+	id = "lesvos_smelter"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/storage/starboard)
@@ -5241,8 +5266,8 @@
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
 	},
-/obj/machinery/modular_computer/console/preset/command,
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/computer/cargo,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "QM" = (
@@ -5353,6 +5378,7 @@
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway)
 "Rf" = (
@@ -5756,9 +5782,6 @@
 /obj/effect/turf_decal/miskilamo_big/two{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/orange{
-	dir = 6
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Uy" = (
@@ -5802,6 +5825,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/trashcart,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "UM" = (
@@ -6254,7 +6278,9 @@
 	req_access_txt = "1"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/reinforced,
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "YL" = (
@@ -6334,9 +6360,6 @@
 "Zf" = (
 /obj/effect/turf_decal/miskilamo_big/four{
 	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/orange{
-	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -6428,9 +6451,13 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/hangar/starboard)
 "ZY" = (
-/obj/machinery/mineral/processing_unit,
+/obj/machinery/mineral/processing_unit{
+	output_dir = 4;
+	input_dir = 8
+	},
 /obj/machinery/conveyor{
-	dir = 4
+	dir = 4;
+	id = "lesvos_smelter"
 	},
 /obj/structure/railing/thick{
 	dir = 1;
@@ -6660,7 +6687,7 @@ Dr
 Uw
 vL
 Zf
-ld
+gw
 Lr
 ro
 ld
@@ -6735,8 +6762,8 @@ QR
 ce
 KF
 hf
-gw
-gw
+hf
+hf
 by
 Em
 lE
@@ -7080,7 +7107,7 @@ rm
 ii
 DR
 EM
-Rd
+fN
 qc
 jH
 jH
@@ -7926,7 +7953,7 @@ jH
 jH
 jH
 iO
-eF
+Gs
 OZ
 tR
 aN
