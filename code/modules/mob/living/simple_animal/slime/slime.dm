@@ -77,7 +77,7 @@
 	"gold", "green", "adamantine", "oil", "light pink", "bluespace",
 	"cerulean", "sepia", "black", "pyrite")
 
-/mob/living/simple_animal/slime/Initialize(mapload, new_colour="grey", new_is_adult=FALSE)
+/mob/living/simple_animal/slime/Initialize(mapload, new_colour=null, new_is_adult=FALSE)
 	var/datum/action/innate/slime/feed/F = new
 	F.Grant(src)
 
@@ -92,7 +92,8 @@
 		var/datum/action/innate/slime/evolve/E = new
 		E.Grant(src)
 	create_reagents(100)
-	set_colour(new_colour)
+	if(new_colour)
+		set_colour(new_colour)
 	. = ..()
 	set_nutrition(700)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_SLIME, 0)
@@ -417,10 +418,14 @@
 	docile = 1
 
 /mob/living/simple_animal/slime/can_unbuckle()
-	return 0
+	if(!can_buckle)
+		return 0
+	. = ..()
 
 /mob/living/simple_animal/slime/can_buckle()
-	return 0
+	if(!can_buckle)
+		return 0
+	. = ..()
 
 /mob/living/simple_animal/slime/get_mob_buckling_height(mob/seat)
 	if(..())

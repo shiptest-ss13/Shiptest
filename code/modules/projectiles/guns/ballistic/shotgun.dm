@@ -36,8 +36,8 @@
 
 	zoom_amt = SHOTGUN_ZOOM
 
-	spread = 4
-	spread_unwielded = 10
+	spread = 3
+	spread_unwielded = 9
 	recoil = 1
 	recoil_unwielded = 4
 
@@ -58,8 +58,8 @@
 
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
-	spread = 4
-	spread_unwielded = 16
+	spread = 3
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 4
 	wield_delay = 0.65 SECONDS
