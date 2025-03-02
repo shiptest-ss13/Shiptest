@@ -360,7 +360,7 @@
 /obj/structure/closet/wall/white/directional/south{
 	name = "Seeds Storage";
 	color = "#50C878";
-	storage_capacity = 38
+	storage_capacity = 40
 	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 8
@@ -1355,6 +1355,7 @@
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/box,
+/obj/item/storage/fancy/egg_box,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "qj" = (
@@ -1813,7 +1814,7 @@
 	},
 /obj/effect/spawner/random/entertainment/plushie{
 	pixel_y = 8;
-	pixel_x = 1
+	pixel_x = 4
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
