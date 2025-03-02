@@ -605,6 +605,14 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
 	AddElement(/datum/element/update_icon_updates_onmob)
 
+/obj/item/gun/ballistic/automatic/hmg/cm40/before_firing(atom/target, mob/user)
+	. = ..()
+	if(chambered.BB)
+		chambered.BB.icon_state = "redtrac"
+		chambered.BB.light_system = MOVABLE_LIGHT
+		chambered.BB.set_light_color(COLOR_SOFT_RED)
+		chambered.BB.set_light_range(2)
+
 /obj/item/ammo_box/magazine/cm40_762_40_box
 	name = "CM-40 box magazine (7.62x40mm CLIP)"
 	desc = "An 80 round box magazine for CM-40 light machine gun. These rounds do good damage with good armor penetration."
