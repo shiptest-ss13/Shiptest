@@ -253,6 +253,9 @@
 /obj/effect/turf_decal/atmos/mix
 	icon_state = "mix"
 
+/obj/effect/turf_decal/atmos/hydrogen
+	icon_state = "hydrogen"
+
 /**
  * Returns a subtype of /obj/effect/turf_decal/number according to the arguments num and shift_mode.
  *

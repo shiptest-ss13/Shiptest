@@ -92,10 +92,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/comms)
-"aG" = (
-/obj/effect/decal/cleanable/greenglow,
-/turf/open/floor/plating/asteroid/waterplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "aJ" = (
 /obj/structure/railing/corner{
 	color = "#A47449";
@@ -450,9 +446,6 @@
 	icon_state = "lattice-8"
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
-"cN" = (
-/turf/open/floor/plating/asteroid/waterplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "cP" = (
 /obj/machinery/computer/telecomms/server{
@@ -1139,14 +1132,6 @@
 	},
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
-"gX" = (
-/obj/structure/hazard/radioactive{
-	pixel_x = 7;
-	pixel_y = 9
-	},
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "hc" = (
 /obj/machinery/suit_storage_unit/mining,
 /obj/effect/turf_decal/industrial/warning{
@@ -1375,19 +1360,6 @@
 	},
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
-"iD" = (
-/obj/item/stack/ore/glass{
-	amount = 30;
-	pixel_x = -5;
-	pixel_y = 4
-	},
-/obj/item/stack/ore/hematite{
-	amount = 15;
-	pixel_x = 7;
-	pixel_y = -6
-	},
-/turf/open/floor/concrete/slab_3,
-/area/ruin/jungle/paradise/construction)
 "iH" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1751,6 +1723,12 @@
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"kr" = (
+/obj/structure/geyser/random,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/asteroid/waterplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "ks" = (
 /obj/effect/mob_spawn/human/corpse,
 /obj/effect/decal/cleanable/blood{
@@ -1948,6 +1926,22 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/cargo)
+"lD" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/obj/effect/mob_spawn/human/corpse/vigilitas_private,
+/obj/effect/decal/cleanable/vomit/old,
+/obj/item/food/breadslice/moldy{
+	pixel_x = -4;
+	pixel_y = 16
+	},
+/obj/item/reagent_containers/food/snacks/grown/berries/poison{
+	pixel_x = 2;
+	pixel_y = 19
+	},
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "lG" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -2079,6 +2073,11 @@
 	dir = 4
 	},
 /turf/open/water/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
+"mr" = (
+/obj/machinery/light/directional/north,
+/obj/structure/hazard/radioactive/stack,
+/turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "mt" = (
 /obj/machinery/mineral/unloading_machine{
@@ -2553,6 +2552,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
+"pd" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/structure/hazard/radioactive/stack,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/paradise/cargo)
 "pg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine{
@@ -2575,12 +2584,6 @@
 	dir = 9
 	},
 /turf/open/floor/plating/rust,
-/area/overmap_encounter/planetoid/cave/explored)
-"pl" = (
-/obj/structure/geyser/random,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/waterplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "pp" = (
 /obj/structure/geyser/random,
@@ -2807,6 +2810,19 @@
 	},
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/jungle/explored)
+"qv" = (
+/obj/item/stack/ore/glass{
+	amount = 30;
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/stack/ore/hematite{
+	amount = 15;
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/turf/open/floor/concrete/slab_3,
+/area/ruin/jungle/paradise/construction)
 "qx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3387,6 +3403,14 @@
 	icon_state = "panelscorched"
 	},
 /area/overmap_encounter/planetoid/cave/explored)
+"uB" = (
+/obj/structure/hazard/radioactive{
+	pixel_x = 7;
+	pixel_y = 9
+	},
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating/dirt/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "uE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/sand/plating,
@@ -3701,6 +3725,9 @@
 /obj/effect/decal/cleanable/garbage,
 /turf/open/floor/mineral/titanium,
 /area/overmap_encounter/planetoid/cave/explored)
+"wR" = (
+/turf/open/floor/plating/asteroid/waterplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "wT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/jungle/b{
@@ -3759,11 +3786,6 @@
 	name = "vines"
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
-"xo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/greenglow,
-/turf/open/floor/plating/asteroid/waterplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "xq" = (
 /obj/machinery/conveyor_switch/oneway{
@@ -4321,6 +4343,10 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
+"AQ" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/waterplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "AS" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -5132,6 +5158,10 @@
 	icon_state = "panelscorched"
 	},
 /area/overmap_encounter/planetoid/cave/explored)
+"Gh" = (
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating/asteroid/waterplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Gi" = (
 /obj/machinery/vending/wallmed{
 	name = "Emergency NanoMed";
@@ -5304,6 +5334,10 @@
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/mineral/titanium,
+/area/overmap_encounter/planetoid/cave/explored)
+"HK" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/asteroid/waterplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "HL" = (
 /obj/effect/turf_decal/sand/plating,
@@ -6219,8 +6253,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/jungle/paradise/construction)
-"NE" = (
-/obj/structure/flora/grass/jungle/b,
+"NG" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/waterplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "NK" = (
@@ -6981,12 +7017,6 @@
 /obj/effect/turf_decal/techfloor/corner,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/comms)
-"Ta" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/waterplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "Tf" = (
 /obj/structure/flora/ausbushes/fullgrass{
 	pixel_x = 10;
@@ -7004,10 +7034,6 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
-/area/overmap_encounter/planetoid/cave/explored)
-"Tk" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/waterplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Tm" = (
 /obj/structure/lattice{
@@ -7149,16 +7175,6 @@
 /obj/machinery/status_display/evac,
 /turf/closed/wall/mineral/titanium,
 /area/overmap_encounter/planetoid/cave/explored)
-"Us" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/obj/structure/hazard/radioactive/stack,
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/jungle/paradise/cargo)
 "Uu" = (
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -7505,22 +7521,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
-"WB" = (
-/obj/structure/chair/plastic{
-	dir = 8
-	},
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
-/obj/effect/decal/cleanable/vomit/old,
-/obj/item/food/breadslice/moldy{
-	pixel_x = -4;
-	pixel_y = 16
-	},
-/obj/item/reagent_containers/food/snacks/grown/berries/poison{
-	pixel_x = 2;
-	pixel_y = 19
-	},
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/overmap_encounter/planetoid/cave/explored)
 "WD" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/grass/jungle,
@@ -7635,11 +7635,6 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
-"Xk" = (
-/obj/machinery/light/directional/north,
-/obj/structure/hazard/radioactive/stack,
-/turf/open/floor/plating/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "Xm" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -7722,6 +7717,11 @@
 	pixel_y = 5
 	},
 /turf/open/floor/plating/dirt/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
+"XN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating/asteroid/waterplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "XO" = (
 /obj/effect/turf_decal/siding/wood{
@@ -8774,7 +8774,7 @@ Iw
 Iw
 Iw
 Iw
-Us
+pd
 fW
 Ej
 dY
@@ -9840,7 +9840,7 @@ Iw
 Iw
 Iw
 Iw
-gX
+uB
 es
 es
 VW
@@ -9908,7 +9908,7 @@ Iw
 Iw
 Iw
 lX
-Xk
+mr
 es
 es
 BG
@@ -10084,7 +10084,7 @@ KL
 es
 Id
 Id
-WB
+lD
 Iw
 Iw
 Iw
@@ -11014,8 +11014,8 @@ Iw
 Iw
 WY
 BK
-aG
-NE
+Gh
+AQ
 Iw
 ZV
 ZV
@@ -11082,7 +11082,7 @@ Iw
 Mu
 OW
 pr
-cN
+wR
 ZV
 ZV
 ZV
@@ -11478,7 +11478,7 @@ Iw
 Iw
 Iw
 Iw
-xo
+XN
 WY
 HV
 mx
@@ -11546,7 +11546,7 @@ Iw
 Iw
 Iw
 Iw
-Tk
+HK
 Nn
 eC
 Ep
@@ -11554,7 +11554,7 @@ FQ
 zM
 Jt
 QT
-cN
+wR
 Iw
 Iw
 Iw
@@ -11614,15 +11614,15 @@ Iw
 Iw
 Iw
 Iw
-pl
+kr
 eC
 eC
 fm
 eC
 Fw
 eC
-cN
-cN
+wR
+wR
 Iw
 Iw
 Iw
@@ -11682,14 +11682,14 @@ Iw
 Iw
 Iw
 Iw
-Tk
-cN
+HK
+wR
 eC
 eC
 eC
 eC
 eC
-cN
+wR
 Iw
 Iw
 Iw
@@ -11702,7 +11702,7 @@ aj
 DI
 Iw
 Iw
-iD
+qv
 mt
 HQ
 OT
@@ -11750,14 +11750,14 @@ Iw
 Iw
 Iw
 Iw
-Tk
-Ta
+HK
+NG
 HP
 eC
-cN
-cN
-cN
-cN
+wR
+wR
+wR
+wR
 Iw
 Iw
 Iw
@@ -11818,11 +11818,11 @@ Iw
 Iw
 Iw
 Iw
-cN
+wR
 Xw
 zU
 CX
-Tk
+HK
 zU
 mu
 BE
@@ -11890,7 +11890,7 @@ yK
 zU
 es
 mu
-Tk
+HK
 es
 Jh
 dx

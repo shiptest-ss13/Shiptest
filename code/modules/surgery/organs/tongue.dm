@@ -21,7 +21,8 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/ratvar
+		/datum/language/ratvar,
+		/datum/language/solarian
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)
