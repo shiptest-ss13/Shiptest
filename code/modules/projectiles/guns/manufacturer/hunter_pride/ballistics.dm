@@ -360,11 +360,14 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	burst_size = 2
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
+	unique_attachments = list(/obj/item/attachment/scope)
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_SCOPE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
 	)
+
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 48,
@@ -373,6 +376,10 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 24,
 			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 40,
+			"y" = 17,
 		)
 	)
 
@@ -515,11 +522,16 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
 	can_be_sawn_off = TRUE
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 40,
 			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 36,
+			"y" = 17,
 		)
 	)
 
@@ -562,14 +574,18 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 	fire_delay = 0.1 SECONDS
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 48,
-			"y" = 17,
+			"x" = 45,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 33,
+			"y" = 13,
 		)
 	)
-
 
 /obj/item/gun/ballistic/shotgun/hellfire/sawoff(forced = FALSE)
 	. = ..()
@@ -713,7 +729,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 			"y" = 18,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 24,
+			"x" = 18,
 			"y" = 20,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
@@ -810,7 +826,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 			"y" = 16,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 26,
+			"x" = 15,
 			"y" = 18,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
@@ -910,7 +926,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 			"y" = 19,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 29,
+			"x" = 18,
 			"y" = 21,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
@@ -999,7 +1015,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 			"y" = 18,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 27,
+			"x" = 15,
 			"y" = 20,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
@@ -1102,7 +1118,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 			"y" = 17,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 28,
+			"x" = 17,
 			"y" = 21,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
