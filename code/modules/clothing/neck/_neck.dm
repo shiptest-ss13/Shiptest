@@ -106,6 +106,7 @@
 	name = "maid neck cover"
 	desc = "A neckpiece for a maid costume, it smells faintly of disappointment."
 	icon_state = "maid_neck"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/tie/trans
 	name = "transgender tie"

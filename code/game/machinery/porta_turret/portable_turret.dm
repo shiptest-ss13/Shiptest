@@ -513,7 +513,7 @@
 
 		//this is still a bit gross, but less gross than before
 		var/static/list/dangerous_fauna = typecacheof(list(/mob/living/simple_animal/hostile, /mob/living/carbon/alien, /mob/living/carbon/monkey))
-		if(!is_type_in_typecache(target_mob, dangerous_fauna) || faction_check("neutral", target_mob.faction))
+		if(!is_type_in_typecache(target_mob, dangerous_fauna) || faction_check(list("neutral"), target_mob.faction))
 			return FALSE
 
 		if(istype(target_mob, /mob/living/simple_animal/hostile/retaliate))
