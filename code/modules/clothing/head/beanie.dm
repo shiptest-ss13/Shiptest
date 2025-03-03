@@ -11,39 +11,24 @@
 	icon_state = "beaniewhite"
 	item_state = "beaniewhite"
 	custom_price = 60
-	unique_reskin = list("white beanie" = "beaniewhite",
-						"grey beanie" = "beaniegrey",
-						"black beanie" = "beanieblack",
-						"red beanie" = "beaniered",
-						"maroon beanie" = "beaniemaroon",
-						"orange beanie" = "beanieorange",
-						"yellow beanie" = "beanieyellow",
-						"green beanie" = "beaniegreen",
-						"dark green beanie" = "beaniedarkgreen",
-						"teal beanie" = "beanieteal",
-						"blue beanie" = "beanieblue",
-						"dark blue beanie" = "beaniedarkblue",
-						"purple beanie" = "beaniepurple",
-						"pink beanie" = "beaniepink",
-						"brown beanie" = "beaniebrown",
-						"light brown beanie" = "beanielightbrown"
-						)
-	var/beanie_icon
-
-/obj/item/clothing/head/beanie/Initialize()
-	. = ..()
-	beanie_icon = icon_state
-
-/obj/item/clothing/head/beanie/examine(mob/user)
-	. = ..()
-	if(unique_reskin && !current_skin)
-		. += "You can <b>Alt-Click</b> [src] to apply a new skin to it."
-
-/obj/item/clothing/head/beanie/reskin_obj(mob/M, change_name)
-	. = ..()
-	item_state = icon_state
-	beanie_icon = icon_state
-	return
+	unique_reskin = list(
+		"white beanie" = "beaniewhite",
+		"grey beanie" = "beaniegrey",
+		"black beanie" = "beanieblack",
+		"red beanie" = "beaniered",
+		"maroon beanie" = "beaniemaroon",
+		"orange beanie" = "beanieorange",
+		"yellow beanie" = "beanieyellow",
+		"green beanie" = "beaniegreen",
+		"dark green beanie" = "beaniedarkgreen",
+		"teal beanie" = "beanieteal",
+		"blue beanie" = "beanieblue",
+		"dark blue beanie" = "beaniedarkblue",
+		"purple beanie" = "beaniepurple",
+		"pink beanie" = "beaniepink",
+		"brown beanie" = "beaniebrown",
+		"light brown beanie" = "beanielightbrown"
+	)
 
 /obj/item/clothing/head/beanie/white
 	name = "white beanie"
