@@ -161,7 +161,7 @@
 		/obj/item/toy/plush/moth/firewatch,
 		/obj/item/toy/plush/moth/gothic,
 		/obj/item/toy/plush/moth/lovers,
-		/obj/item/toy/plush/moth/lunna,
+		/obj/item/toy/plush/moth/luna,
 		/obj/item/toy/plush/moth/monarch,
 		/obj/item/toy/plush/moth/moonfly,
 		/obj/item/toy/plush/moth/poison,
