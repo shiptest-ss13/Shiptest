@@ -21,33 +21,35 @@
 
 /obj/item/clothing/neck/tie
 	name = "tie"
-	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
-	unique_reskin = list("red tie" = "redtie",
-						"orange tie" = "orangetie",
-						"green tie" = "greentie",
-						"light blue tie" = "lightbluetie",
-						"blue tie" = "bluetie",
-						"purple tie" = "purpletie",
-						"black tie" = "blacktie",
-						"orange tie" = "orangetie",
-						"light blue tie" = "lightbluetie",
-						"purple tie" = "purpletie",
-						"green tie" = "greentie",
-						"brown tie" = "browntie",
-						"rainbow tie" = "rainbow_tie",
-						"horrible tie" = "horribletie",
-						"transgender tie" = "transgender",
-						"pansexual tie" = "pansexual",
-						"nonbinary tie" = "nonbinary",
-						"bisexual tie" = "bisexual",
-						"lesbian tie" = "lesbian",
-						"intersex tie" = "intersex",
-						"gay tie" = "gay",
-						"genderfluid tie" = "genderfluid",
-						"asexual tie" = "asexual",
-						"genderfae tie" = "genderfae",
-						"ally tie" = "ally_tie"
-						)
+	desc = "A neosilk clip-on tie. Special material allows it to be reskinned, but only once."
+	unique_reskin = list(
+		"red tie" = "redtie",
+		"orange tie" = "orangetie",
+		"green tie" = "greentie",
+		"light blue tie" = "lightbluetie",
+		"blue tie" = "bluetie",
+		"purple tie" = "purpletie",
+		"black tie" = "blacktie",
+		"orange tie" = "orangetie",
+		"light blue tie" = "lightbluetie",
+		"purple tie" = "purpletie",
+		"green tie" = "greentie",
+		"brown tie" = "browntie",
+		"rainbow tie" = "rainbow_tie",
+		"horrible tie" = "horribletie",
+		"transgender tie" = "transgender",
+		"pansexual tie" = "pansexual",
+		"nonbinary tie" = "nonbinary",
+		"bisexual tie" = "bisexual",
+		"lesbian tie" = "lesbian",
+		"intersex tie" = "intersex",
+		"gay tie" = "gay",
+		"genderfluid tie" = "genderfluid",
+		"asexual tie" = "asexual",
+		"genderfae tie" = "genderfae",
+		"ally tie" = "ally_tie"
+	)
+	unique_reskin_changes_name = TRUE
 	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL

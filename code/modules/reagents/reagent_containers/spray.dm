@@ -343,21 +343,9 @@
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	volume = 100
-	unique_reskin = list("Red" = "sprayer_med_red",
-						"Yellow" = "sprayer_med_yellow",
-						"Blue" = "sprayer_med_blue")
-
-/obj/item/reagent_containers/spray/medical/AltClick(mob/user)
-	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		reskin_obj(user)
-
-/obj/item/reagent_containers/spray/medical/reskin_obj(mob/M)
-	..()
-	switch(icon_state)
-		if("sprayer_med_red")
-			item_state = "sprayer_med_red"
-		if("sprayer_med_yellow")
-			item_state = "sprayer_med_yellow"
-		if("sprayer_med_blue")
-			item_state = "sprayer_med_blue"
-	M.update_inv_hands()
+	unique_reskin = list(
+		"Red" = "sprayer_med_red",
+		"Yellow" = "sprayer_med_yellow",
+		"Blue" = "sprayer_med_blue"
+	)
+	unique_reskin_changes_inhand = TRUE
