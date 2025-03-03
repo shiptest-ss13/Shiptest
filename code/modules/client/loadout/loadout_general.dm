@@ -124,8 +124,8 @@
 	path = /obj/item/toy/plush/snakeplushie
 
 /datum/gear/moth
-	display_name = "toy, moth plushie"
-	path = /obj/item/toy/plush/moth
+	display_name = "toy, moth plushie box"
+	path = /obj/item/choice_beacon/mothplushies
 
 /datum/gear/bee
 	display_name = "toy, bee plushie"
@@ -214,75 +214,3 @@
 /datum/gear/hourglass
 	display_name = "hourglass"
 	path = /obj/item/hourglass
-
-/datum/gear/moth/monarch
-	display_name = "toy, moth plushie (monarch)"
-	path = /obj/item/toy/plush/moth/monarch
-
-/datum/gear/moth/luna
-	display_name = "toy, moth plushie (luna)"
-	path = /obj/item/toy/plush/moth/luna
-
-/datum/gear/moth/atlas
-	display_name = "toy, moth plushie (atlas)"
-	path = /obj/item/toy/plush/moth/atlas
-
-/datum/gear/moth/redish
-	display_name = "toy, moth plushie (redish)"
-	path = /obj/item/toy/plush/moth/redish
-
-/datum/gear/moth/royal
-	display_name = "toy, moth plushie (royal)"
-	path = /obj/item/toy/plush/moth/royal
-
-/datum/gear/moth/gothic
-	display_name = "toy, moth plushie (gothic)"
-	path = /obj/item/toy/plush/moth/gothic
-
-/datum/gear/moth/lovers
-	display_name = "toy, moth plushie (lovers)"
-	path = /obj/item/toy/plush/moth/lovers
-
-/datum/gear/moth/whitefly
-	display_name = "toy, moth plushie (white)"
-	path = /obj/item/toy/plush/moth/whitefly
-
-/datum/gear/moth/punished
-	display_name = "toy, moth plushie (punished)"
-	path = /obj/item/toy/plush/moth/punished
-
-/datum/gear/moth/firewatch
-	display_name = "toy, moth plushie (firewatch)"
-	path = /obj/item/toy/plush/moth/firewatch
-
-/datum/gear/moth/deadhead
-	display_name = "toy, moth plushie (deadhead)"
-	path = /obj/item/toy/plush/moth/deadhead
-
-/datum/gear/moth/poison
-	display_name = "toy, moth plushie (poison)"
-	path = /obj/item/toy/plush/moth/poison
-
-/datum/gear/moth/ragged
-	display_name = "toy, moth plushie (ragged)"
-	path = /obj/item/toy/plush/moth/ragged
-
-/datum/gear/moth/snow
-	display_name = "toy, moth plushie (snow)"
-	path = /obj/item/toy/plush/moth/snow
-
-/datum/gear/moth/clockwork
-	display_name = "toy, moth plushie (clockwork)"
-	path = /obj/item/toy/plush/moth/clockwork
-
-/datum/gear/moth/moonfly
-	display_name = "toy, moth plushie (moonfly)"
-	path = /obj/item/toy/plush/moth/moonfly
-
-/datum/gear/moth/error
-	display_name = "toy, moth plushie (error)"
-	path = /obj/item/toy/plush/moth/error
-
-/datum/gear/moth/rainbow
-	display_name = "toy, moth plushie (rainbow)"
-	path = /obj/item/toy/plush/moth/rainbow
