@@ -26,6 +26,12 @@
 	qdel(hood)
 	hood = null
 
+/obj/item/clothing/suit/hooded/reskin_obj(mob/M, change_name)
+	. = ..()
+	if(hood)
+		hood.icon_state = base_icon_state
+	return
+
 /obj/item/clothing/suit/hooded/proc/make_hood()
 	if(!hood)
 		var/obj/item/clothing/head/hooded/W = new hoodtype(src)

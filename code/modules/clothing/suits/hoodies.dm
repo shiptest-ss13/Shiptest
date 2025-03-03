@@ -39,42 +39,6 @@
 		"light brown hoodie" = "hoodielightbrown"
 	)
 
-	unique_reskin = list("white hoodie" = "hoodiewhite",
-						"grey hoodie" = "hoodiegrey",
-						"black hoodie" = "hoodieblack",
-						"red hoodie" = "hoodiered",
-						"maroon hoodie" = "hoodiemaroon",
-						"orange hoodie" = "hoodieorange",
-						"yellow hoodie" = "hoodieyellow",
-						"green hoodie" = "hoodiegreen",
-						"dark green hoodie" = "hoodiedarkgreen",
-						"teal hoodie" = "hoodieteal",
-						"blue hoodie" = "hoodieblue",
-						"dark blue hoodie" = "hoodiedarkblue",
-						"purple hoodie" = "hoodiepurple",
-						"pink hoodie" = "hoodiepink",
-						"brown hoodie" = "hoodiebrown",
-						"light brown hoodie" = "hoodielightbrown"
-						)
-	var/hoodie_icon
-
-/obj/item/clothing/suit/hooded/hoodie/Initialize()
-	. = ..()
-	hoodie_icon = icon_state
-
-/obj/item/clothing/suit/hooded/hoodie/examine(mob/user)
-	. = ..()
-	if(unique_reskin && !current_skin)
-		. += "You can <b>Alt-Click</b> [src] to apply a new skin to it."
-
-/obj/item/clothing/suit/hooded/hoodie/reskin_obj(mob/M, change_name)
-	. = ..()
-	item_state = icon_state
-	hoodie_icon = icon_state
-	if(hood)
-		hood.icon_state = icon_state
-	return
-
 /obj/item/clothing/head/hooded/hood
 	name = "hood"
 	desc = "A hood for your hoodie."
