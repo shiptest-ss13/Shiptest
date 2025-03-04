@@ -234,51 +234,6 @@
 	add_charge(amount)
 	mod.update_charge_alert()
 
-/obj/item/mod/core/ethereal
-	name = "MOD ethereal core"
-	icon_state = "mod-core-ethereal"
-	desc = "A reverse engineered core of a Modular Outerwear Device. Using natural liquid electricity from Ethereals, \
-		preventing the need to use external sources to convert electric charge."
-	/// A modifier to all charge we use, ethereals don't need to spend as much energy as normal suits.
-	var/charge_modifier = 0.1
-
-/obj/item/mod/core/ethereal/charge_source()
-	var/obj/item/organ/stomach/ethereal/ethereal_stomach = mod.wearer.getorganslot(ORGAN_SLOT_STOMACH)
-	if(!istype(ethereal_stomach))
-		return
-	return ethereal_stomach
-
-/obj/item/mod/core/ethereal/charge_amount()
-	var/obj/item/organ/stomach/ethereal/charge_source = charge_source()
-	return charge_source?.crystal_charge || ELZUOSE_CHARGE_NONE
-
-/obj/item/mod/core/ethereal/max_charge_amount()
-	return ELZUOSE_CHARGE_FULL
-
-/obj/item/mod/core/ethereal/add_charge(amount)
-	var/obj/item/organ/stomach/ethereal/charge_source = charge_source()
-	if(!charge_source)
-		return FALSE
-	charge_source.adjust_charge(amount*charge_modifier)
-	return TRUE
-
-/obj/item/mod/core/ethereal/subtract_charge(amount)
-	var/obj/item/organ/stomach/ethereal/charge_source = charge_source()
-	if(!charge_source)
-		return FALSE
-	charge_source.adjust_charge(-amount*charge_modifier)
-	return TRUE
-
-/obj/item/mod/core/ethereal/check_charge(amount)
-	return charge_amount() >= amount*charge_modifier
-
-/obj/item/mod/core/ethereal/update_charge_alert()
-	var/obj/item/organ/stomach/ethereal/charge_source = charge_source()
-	if(charge_source)
-		mod.wearer.clear_alert("mod_charge")
-		return
-	mod.wearer.throw_alert("mod_charge", /atom/movable/screen/alert/nocell)
-
 /obj/item/mod/core/plasma
 	name = "MOD plasma core"
 	icon_state = "mod-core-plasma"

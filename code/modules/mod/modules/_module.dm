@@ -23,6 +23,12 @@
 	var/obj/item/mod/control/mod
 	/// If we're an active module, what item are we?
 	var/obj/item/device
+	/// Is the device a toolset?
+	var/toolset = FALSE
+	/// What tools does this have?
+	var/list/tools_to_create = list()
+	/// the list of generated tools
+	var/list/tools_list = list()
 	/// Overlay given to the user when the module is inactive
 	var/overlay_state_inactive
 	/// Overlay given to the user when the module is active
@@ -57,6 +63,10 @@
 		ADD_TRAIT(device, TRAIT_NODROP, MOD_TRAIT)
 		RegisterSignal(device, COMSIG_PARENT_QDELETING, PROC_REF(on_device_deletion))
 		RegisterSignal(src, COMSIG_ATOM_EXITED, PROC_REF(on_exit))
+	if(toolset)
+		for(var/typepath in tools_to_create)
+			var/atom/new_item = new typepath(src)
+			tools_list += WEAKREF(new_item)
 
 /obj/item/mod/module/Destroy()
 	mod?.uninstall(src)
@@ -104,6 +114,8 @@
 		if(mod.selected_module && !mod.selected_module.on_deactivation(display_message = FALSE))
 			return FALSE
 		mod.selected_module = src
+		if(toolset)
+			return ui_action_click()
 		if(device)
 			if(mod.wearer.put_in_hands(device))
 				balloon_alert(mod.wearer, "[device] extended")
@@ -122,6 +134,35 @@
 	mod.wearer.update_inv_back(mod.slot_flags)
 	SEND_SIGNAL(src, COMSIG_MODULE_ACTIVATED)
 	return TRUE
+
+/obj/item/mod/module/ui_action_click()
+	if(!device || (device in src))
+		device = null
+		var/list/choice_list = list()
+		for(var/datum/weakref/tool_ref in tools_list)
+			var/obj/item/tool_item = tool_ref.resolve()
+			if(!tool_item)
+				tools_list -= tool_ref
+				continue
+			choice_list[tool_item] = image(tool_item)
+		var/obj/item/choice = show_radial_menu(mod.wearer, mod.wearer, choice_list)
+		if(mod.wearer && mod.wearer == usr && mod.wearer.stat != DEAD && !device && (choice in contents))
+			if(!choice)
+				return FALSE
+			device = choice
+			if(mod.wearer.put_in_hands(device))
+				balloon_alert(mod.wearer, "[device] extended")
+				RegisterSignal(mod.wearer, COMSIG_ATOM_EXITED, PROC_REF(on_exit))
+				RegisterSignal(mod.wearer, COMSIG_KB_MOB_DROPITEM_DOWN, PROC_REF(dropkey))
+			else
+				balloon_alert(mod.wearer, "can't extend [device]!")
+				mod.wearer.transferItemToLoc(device, src, force = TRUE)
+				return FALSE
+		active = TRUE
+		COOLDOWN_START(src, cooldown_timer, cooldown_time)
+		mod.wearer.update_inv_back(mod.slot_flags)
+		SEND_SIGNAL(src, COMSIG_MODULE_ACTIVATED)
+		return TRUE
 
 /// Called when the module is deactivated
 /obj/item/mod/module/proc/on_deactivation(display_message = TRUE, deleting = FALSE)
@@ -216,8 +257,12 @@
 	return
 
 /// Drains power from the suit charge
-/obj/item/mod/module/proc/drain_power(amount)
+/obj/item/mod/module/proc/drain_power(amount, force_drain = FALSE)
 	if(!check_power(amount))
+		if(force_drain)
+			var/power_remaining = mod.get_charge()
+			mod.subtract_charge(power_remaining)
+			mod.update_charge_alert()
 		return FALSE
 	mod.subtract_charge(amount)
 	mod.update_charge_alert()
