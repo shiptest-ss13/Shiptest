@@ -53,10 +53,12 @@
 	unit_name = "cm3 of titanium"
 	material_id = /datum/material/titanium
 
+/*
 /datum/export/material/hellstone
 	cost = 125
 	unit_name = "cm3 of hellstone"
 	material_id = /datum/material/hellstone
+*/
 
 /datum/export/material/bscrystal
 	unit_name = "of bluespace crystals"

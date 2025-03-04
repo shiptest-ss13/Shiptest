@@ -5,7 +5,7 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 /proc/gen_outpost_exports()
 	var/ret_list = list()
 
-	for(var/datum/export/o_b in subtypesof(/datum/export))
+	for(var/datum/export/o_b as anything in subtypesof(/datum/export))
 		if(!(o_b::unit_name)) //If it has no name lets assume its bad or a parent type
 			continue
 		ret_list += new o_b()
