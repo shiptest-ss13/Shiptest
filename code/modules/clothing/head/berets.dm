@@ -71,97 +71,97 @@
 	name = "white beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretwhite"
-	current_skin = "beretwhite"
+	current_skin = "white beret"
 
 /obj/item/clothing/head/beret/color/grey
 	name = "grey beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretgrey"
-	current_skin = "beretgrey"
+	current_skin = "grey beret"
 
 /obj/item/clothing/head/beret/color/black
 	name = "black beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretblack"
-	current_skin = "beretblack"
+	current_skin = "black beret"
 
 /obj/item/clothing/head/beret/color/red
 	name = "red beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretred"
-	current_skin = "beretred"
+	current_skin = "red beret"
 
 /obj/item/clothing/head/beret/color/maroon
 	name = "maroon beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretmaroon"
-	current_skin = "beretmaroon"
+	current_skin = "maroon beret"
 
 /obj/item/clothing/head/beret/color/orange
 	name = "orange beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretorange"
-	current_skin = "beretorange"
+	current_skin = "orange beret"
 
 /obj/item/clothing/head/beret/color/yellow
 	name = "yellow beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretyellow"
-	current_skin = "beretyellow"
+	current_skin = "yellow beret"
 
 /obj/item/clothing/head/beret/color/green
 	name = "green beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretgreen"
-	current_skin = "beretgreen"
+	current_skin = "green beret"
 
 /obj/item/clothing/head/beret/color/darkgreen
 	name = "dark green beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretdarkgreen"
-	current_skin = "beretdarkgreen"
+	current_skin = "dark green beret"
 
 /obj/item/clothing/head/beret/color/teal
 	name = "teal beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretteal"
-	current_skin = "beretteal"
+	current_skin = "teal beret"
 
 /obj/item/clothing/head/beret/color/blue
 	name = "blue beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretblue"
-	current_skin = "beretblue"
+	current_skin = "blue beret"
 
 /obj/item/clothing/head/beret/color/darkblue
 	name = "dark blue beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretdarkblue"
-	current_skin = "beretdarkblue"
+	current_skin = "dark blue beret"
 
 /obj/item/clothing/head/beret/color/purple
 	name = "purple beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretpurple"
-	current_skin = "beretpurple"
+	current_skin = "purple beret"
 
 /obj/item/clothing/head/beret/color/pink
-	name = "beret"
+	name = "pink beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretpink"
-	current_skin = "beretpink"
+	current_skin = "pink beret"
 
 /obj/item/clothing/head/beret/color/brown
 	name = "brown beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretbrown"
-	current_skin = "beretbrown"
+	current_skin = "brown beret"
 
 /obj/item/clothing/head/beret/color/lightbrown
 	name = "light brown beret"
 	desc = "A stylish beret. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "beretlightbrown"
-	current_skin = "beretlightbrown"
+	current_skin = "light brown beret"
 
 //Civilian
 /obj/item/clothing/head/beret/grey
