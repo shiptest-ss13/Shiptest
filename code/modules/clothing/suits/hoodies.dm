@@ -8,52 +8,36 @@
 	hoodtype = /obj/item/clothing/head/hooded/hood
 	body_parts_covered = CHEST|ARMS
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
-	allowed = list(	/obj/item/flashlight,
-					/obj/item/tank/internals/emergency_oxygen,
-					/obj/item/tank/internals/plasmaman,
-					/obj/item/toy,
-					/obj/item/storage/fancy/cigarettes,
-					/obj/item/lighter,
-					/obj/item/radio,
-					/obj/item/storage/pill_bottle
-					)
+	allowed = list(
+		/obj/item/flashlight,
+		/obj/item/tank/internals/emergency_oxygen,
+		/obj/item/tank/internals/plasmaman,
+		/obj/item/toy,
+		/obj/item/storage/fancy/cigarettes,
+		/obj/item/lighter,
+		/obj/item/radio,
+		/obj/item/storage/pill_bottle
+	)
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //it's just a hoodie.
 	supports_variations = KEPORI_VARIATION
-	unique_reskin = list("white hoodie" = "hoodiewhite",
-						"grey hoodie" = "hoodiegrey",
-						"black hoodie" = "hoodieblack",
-						"red hoodie" = "hoodiered",
-						"maroon hoodie" = "hoodiemaroon",
-						"orange hoodie" = "hoodieorange",
-						"yellow hoodie" = "hoodieyellow",
-						"green hoodie" = "hoodiegreen",
-						"dark green hoodie" = "hoodiedarkgreen",
-						"teal hoodie" = "hoodieteal",
-						"blue hoodie" = "hoodieblue",
-						"dark blue hoodie" = "hoodiedarkblue",
-						"purple hoodie" = "hoodiepurple",
-						"pink hoodie" = "hoodiepink",
-						"brown hoodie" = "hoodiebrown",
-						"light brown hoodie" = "hoodielightbrown"
-						)
-	var/hoodie_icon
-
-/obj/item/clothing/suit/hooded/hoodie/Initialize()
-	. = ..()
-	hoodie_icon = icon_state
-
-/obj/item/clothing/suit/hooded/hoodie/examine(mob/user)
-	. = ..()
-	if(unique_reskin && !current_skin)
-		. += "You can <b>Alt-Click</b> [src] to apply a new skin to it."
-
-/obj/item/clothing/suit/hooded/hoodie/reskin_obj(mob/M, change_name)
-	. = ..()
-	item_state = icon_state
-	hoodie_icon = icon_state
-	if(hood)
-		hood.icon_state = icon_state
-	return
+	unique_reskin = list(
+		"white hoodie" = "hoodiewhite",
+		"grey hoodie" = "hoodiegrey",
+		"black hoodie" = "hoodieblack",
+		"red hoodie" = "hoodiered",
+		"maroon hoodie" = "hoodiemaroon",
+		"orange hoodie" = "hoodieorange",
+		"yellow hoodie" = "hoodieyellow",
+		"green hoodie" = "hoodiegreen",
+		"dark green hoodie" = "hoodiedarkgreen",
+		"teal hoodie" = "hoodieteal",
+		"blue hoodie" = "hoodieblue",
+		"dark blue hoodie" = "hoodiedarkblue",
+		"purple hoodie" = "hoodiepurple",
+		"pink hoodie" = "hoodiepink",
+		"brown hoodie" = "hoodiebrown",
+		"light brown hoodie" = "hoodielightbrown"
+	)
 
 /obj/item/clothing/head/hooded/hood
 	name = "hood"
