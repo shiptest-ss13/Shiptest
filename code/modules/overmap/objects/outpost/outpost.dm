@@ -67,7 +67,11 @@
 		shaft_datums += new /datum/hangar_shaft("A", null)
 
 	// doing this after the main level is loaded means that the outpost areas are all renamed for us
+#ifdef UNIT_TESTS
+	Rename(main_template ? main_template.name : "No Main Level")
+#else
 	Rename(gen_outpost_name())
+#endif
 
 	fill_missions()
 	populate_cargo()
