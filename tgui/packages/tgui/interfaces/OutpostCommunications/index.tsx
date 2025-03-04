@@ -79,38 +79,11 @@ export const OutpostCommunications = (props, context) => {
 
 const CargoExpressContent = (props, context) => {
   const { act, data } = useBackend<Data>(context);
-  const {
-    beaconZone,
-    beaconName,
-    hasBeacon,
-    usingBeacon,
-    printMsg,
-    canBuyBeacon,
-    message,
-  } = data;
+  const { message } = data;
   return (
     <>
       <Section title="Cargo Express">
         <LabeledList>
-          <LabeledList.Item label="Landing Location">
-            <Button
-              content="Cargo Bay"
-              selected={!usingBeacon}
-              onClick={() => act('LZCargo')}
-            />
-            <Button
-              selected={usingBeacon}
-              disabled={!hasBeacon}
-              onClick={() => act('LZBeacon')}
-            >
-              {beaconZone} ({beaconName})
-            </Button>
-            <Button
-              content={printMsg}
-              disabled={!canBuyBeacon}
-              onClick={() => act('printBeacon')}
-            />
-          </LabeledList.Item>
           <LabeledList.Item label="Notice">{message}</LabeledList.Item>
         </LabeledList>
       </Section>

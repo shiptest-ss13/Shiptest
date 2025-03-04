@@ -11,6 +11,13 @@
 /obj/structure/plasticflaps/opaque
 	opacity = TRUE
 
+/obj/structure/plasticflaps/outpost
+	opacity = TRUE
+	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | ACID_PROOF | LAVA_PROOF
+
+/obj/structure/plasticflaps/outpost/attackby(obj/item/I, mob/user, params)
+	return
+
 /obj/structure/plasticflaps/Initialize()
 	. = ..()
 	alpha = 0
