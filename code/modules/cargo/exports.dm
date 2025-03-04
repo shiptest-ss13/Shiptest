@@ -90,6 +90,7 @@
 	true_cost *= (1 - elasticity_coeff)**(-1 * wait/(recovery_ds))
 	if(true_cost > cost)
 		true_cost = cost
+		STOP_PROCESSING(SSprocessing, src)
 
 // Checks the cost. 0 cost items are skipped in export.
 /datum/export/proc/get_cost(obj/O, apply_elastic = TRUE)
@@ -145,6 +146,7 @@
 		if(apply_elastic)
 			true_cost *= (1 - elasticity_coeff)**amount
 		SSblackbox.record_feedback("nested tally", "export_sold_cost", 1, list("[O.type]", "[the_cost]"))
+	START_PROCESSING(SSprocessing, src)
 	return the_cost
 
 GLOBAL_LIST_EMPTY(exports_list)

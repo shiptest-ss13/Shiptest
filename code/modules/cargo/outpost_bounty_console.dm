@@ -28,33 +28,27 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 /obj/machinery/computer/outpost_export_console
 	name = "outpost bounty console"
 	#warn fix
-	desc = " blah blah blah "
+	desc = "A console used to interact with the exports and bounty database."
 
 	var/obj/machinery/outpost_selling_pad/linked_pad
 	var/list/cached_valid_exports = list()
 
+/obj/machinery/computer/outpost_export_console/LateInitialize()
+	. = ..()
+	if(istype(get_area(src.loc), /area/outpost))
+		var/obj/machinery/outpost_selling_pad/pad = locate() in range(2,src)
+		linked_pad = pad
+	desc += "This one is not linked to any outpost."
 
-/*
-	name = "hydrogen pump"
-	desc = "Lets you use merits to buy hydrogen."
-	icon = 'icons/obj/atmos.dmi'
-	icon_state = "hydrogen_pump"
-
-	use_power = IDLE_POWER_USE
-	idle_power_usage = 50
-	active_power_usage = 1000
-
-	density = TRUE
-	max_integrity = 400
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 30)
-	layer = OBJ_LAYER
-	showpipe = TRUE
-	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
-	var/not_processing_bug = TRUE//remove when fixed
-	var/merit
-*/
-
-
+/obj/machinery/computer/outpost_export_console/proc/cache_valid_exports()
+	cached_valid_exports = list()
+	if(linked_pad)
+		var/items_on_pad = linked_pad.get_other_atoms()
+		for(var/datum/export/exp in GLOB.outpost_exports)
+			cached_valid_exports[exp] = list()
+			for(var/atom/exp_atom in items_on_pad)
+				if(exp.applies_to(exp_atom))
+					cached_valid_exports[exp] += exp_atom
 
 
 #warn probably most similar to the traitor uplink, except there are no "buy" buttons
@@ -67,6 +61,9 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 /obj/machinery/computer/outpost_export_console/ui_data(mob/user)
 	var/list/data = list()
 
+	#warn temp. we should run this on like, atom entered or other signals instead
+	cache_valid_exports()
+
 	data["redeemExports"] = list()
 
 	for(var/datum/export/cached_exp as anything in cached_valid_exports)
@@ -76,7 +73,7 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 		cached_exp_data["type"] = cached_exp.type
 		cached_exp_data["name"] = cached_exp.unit_name
 		cached_exp_data["desc"] = cached_exp.desc
-		cached_exp_data["value"] = cached_exp.calc_total_payout(atoms_list)
+		cached_exp_data["value"] = cached_exp.cost //cached_exp.calc_total_payout(atoms_list)
 
 		cached_exp_data["exportAtoms"] = list()
 		for(var/atom/exp_atom as anything in atoms_list)
@@ -88,12 +85,12 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 	var/list/data = list()
 
 	data["allExports"] = list()
-	for(var/datum/export/exp as anything in GLOB.exports_list)
+	for(var/datum/export/exp as anything in GLOB.outpost_exports)
 		var/list/exp_data = list()
 
 		exp_data["type"] = exp.type
 		exp_data["name"] = exp.unit_name
-		exp_data["value"] = exp.get_payout_text()
+		exp_data["value"] = exp.cost //exp.get_payout_text()
 		exp_data["desc"] = exp.desc
 		exp_data["exportAtoms"] = list()
 
@@ -109,7 +106,7 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 	switch(action)
 		if("redeem")
 			var/datum/export/redeemed_exp = locate(text2path(params["redeem_type"])) in cached_valid_exports
-			if(redeemed_exp == null || len(cached_valid_exports[redeemed_exp]) == 0)
+			if(redeemed_exp == null || length(cached_valid_exports[redeemed_exp]) == 0)
 				#warn there was an error
 			else
 				redeem_export(redeemed_exp)
