@@ -21,33 +21,35 @@
 
 /obj/item/clothing/neck/tie
 	name = "tie"
-	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
-	unique_reskin = list("red tie" = "redtie",
-						"orange tie" = "orangetie",
-						"green tie" = "greentie",
-						"light blue tie" = "lightbluetie",
-						"blue tie" = "bluetie",
-						"purple tie" = "purpletie",
-						"black tie" = "blacktie",
-						"orange tie" = "orangetie",
-						"light blue tie" = "lightbluetie",
-						"purple tie" = "purpletie",
-						"green tie" = "greentie",
-						"brown tie" = "browntie",
-						"rainbow tie" = "rainbow_tie",
-						"horrible tie" = "horribletie",
-						"transgender tie" = "transgender",
-						"pansexual tie" = "pansexual",
-						"nonbinary tie" = "nonbinary",
-						"bisexual tie" = "bisexual",
-						"lesbian tie" = "lesbian",
-						"intersex tie" = "intersex",
-						"gay tie" = "gay",
-						"genderfluid tie" = "genderfluid",
-						"asexual tie" = "asexual",
-						"genderfae tie" = "genderfae",
-						"ally tie" = "ally_tie"
-						)
+	desc = "A neosilk clip-on tie. Special material allows it to be reskinned, but only once."
+	unique_reskin = list(
+		"red tie" = "redtie",
+		"orange tie" = "orangetie",
+		"green tie" = "greentie",
+		"light blue tie" = "lightbluetie",
+		"blue tie" = "bluetie",
+		"purple tie" = "purpletie",
+		"black tie" = "blacktie",
+		"orange tie" = "orangetie",
+		"light blue tie" = "lightbluetie",
+		"purple tie" = "purpletie",
+		"green tie" = "greentie",
+		"brown tie" = "browntie",
+		"rainbow tie" = "rainbow_tie",
+		"horrible tie" = "horribletie",
+		"transgender tie" = "transgender",
+		"pansexual tie" = "pansexual",
+		"nonbinary tie" = "nonbinary",
+		"bisexual tie" = "bisexual",
+		"lesbian tie" = "lesbian",
+		"intersex tie" = "intersex",
+		"gay tie" = "gay",
+		"genderfluid tie" = "genderfluid",
+		"asexual tie" = "asexual",
+		"genderfae tie" = "genderfae",
+		"ally tie" = "ally_tie"
+	)
+	unique_reskin_changes_name = TRUE
 	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
@@ -337,41 +339,6 @@
 	desc = "Damn, it feels good to be a gangster."
 	icon_state = "bling"
 	cuttable = FALSE
-
-/obj/item/clothing/neck/necklace/dope/merchant
-	desc = "Don't ask how it works, the proof is in the holochips!"
-	/// scales the amount received in case an admin wants to emulate taxes/fees.
-	var/profit_scaling = 1
-	/// toggles between sell (TRUE) and get price post-fees (FALSE)
-	var/selling = FALSE
-
-/obj/item/clothing/neck/necklace/dope/merchant/attack_self(mob/user)
-	. = ..()
-	selling = !selling
-	to_chat(user, "<span class='notice'>[src] has been set to [selling ? "'Sell'" : "'Get Price'"] mode.</span>")
-
-/obj/item/clothing/neck/necklace/dope/merchant/afterattack(obj/item/I, mob/user, proximity)
-	. = ..()
-	if(!proximity)
-		return
-	var/datum/export_report/ex = export_item_and_contents(I, allowed_categories = (ALL), dry_run=TRUE)
-	var/price = 0
-	for(var/x in ex.total_amount)
-		price += ex.total_value[x]
-
-	if(price)
-		var/true_price = round(price*profit_scaling)
-		to_chat(user, "<span class='notice'>[selling ? "Sold" : "Getting the price of"] [I], value: <b>[true_price]</b> credits[I.contents.len ? " (exportable contents included)" : ""].[profit_scaling < 1 && selling ? "<b>[round(price-true_price)]</b> credit\s taken as processing fee\s." : ""]</span>")
-		if(selling)
-			new /obj/item/holochip(get_turf(user),true_price)
-			for(var/i in ex.exported_atoms_ref)
-				var/atom/movable/AM = i
-				if(QDELETED(AM))
-					continue
-				qdel(AM)
-	else
-		to_chat(user, "<span class='warning'>There is no export value for [I] or any items within it.</span>")
-
 
 /obj/item/clothing/neck/neckerchief
 	icon = 'icons/obj/clothing/masks.dmi' //In order to reuse the bandana sprite

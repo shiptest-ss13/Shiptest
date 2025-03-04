@@ -1,3 +1,5 @@
+#warn remove
+/*
 /datum/export/organ
 	include_subtypes = FALSE	//CentCom doesn't need organs from non-humans.
 	export_category = EXPORT_CONTRABAND
@@ -36,3 +38,4 @@
 	cost = 5
 	unit_name = "humanoid tounge"
 	export_types = list(/obj/item/organ/tongue)
+*/
