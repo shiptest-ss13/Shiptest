@@ -2595,6 +2595,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 10
 	},
+/obj/machinery/outpost_selling_pad,
 /turf/open/floor/plasteel/mono{
 	dir = 1
 	},
@@ -5434,6 +5435,9 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 6
 	},
+/obj/machinery/computer/outpost_export_console{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono{
 	dir = 1
 	},
@@ -7533,13 +7537,8 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/maintenance/central)
 "Mj" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
 /obj/structure/noticeboard,
-/turf/open/floor/plasteel/mono{
-	dir = 1
-	},
+/turf/closed/indestructible/reinforced,
 /area/outpost/cargo)
 "Mm" = (
 /obj/effect/decal/cleanable/dirt,
@@ -18421,7 +18420,7 @@ TB
 Zb
 Lo
 dc
-Mj
+dc
 mF
 UT
 Nn
@@ -18538,7 +18537,7 @@ iO
 dk
 ka
 vw
-Uw
+Mj
 jo
 TB
 Zb

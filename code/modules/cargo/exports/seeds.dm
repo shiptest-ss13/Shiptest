@@ -1,3 +1,4 @@
+/*
 /datum/export/seed
 	cost = 50 // Gets multiplied by potency
 	k_elasticity = 1	//price inelastic/quantity elastic, only need to export a few samples
@@ -36,3 +37,4 @@
 	var/potDiff = (S.potency - discoveredPlants[S.type])
 
 	return round(..() * potDiff)
+*/

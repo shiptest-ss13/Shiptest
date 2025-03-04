@@ -1,3 +1,4 @@
+/*
 /datum/export/large/reagent_dispenser
 	cost = 100 // +0-400 depending on amount of reagents left
 	var/contents_cost = 400
@@ -100,3 +101,4 @@
 	worth += C.air_contents.get_moles(GAS_BZ)*2
 	worth += C.air_contents.get_moles(GAS_TRITIUM)*4
 	return worth
+*/

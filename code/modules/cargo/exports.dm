@@ -64,7 +64,7 @@
 	var/elasticity_coeff = 0
 	/// The amount of time it takes for the sale price of the export to recover from a single unit sold.
 	/// If set to 0, the price will never recover.
-	var/recovery_ds = 10 MINUTES
+	var/recovery_ds = 5 MINUTES
 
 	var/list/export_types = list()	// Type of the exported object. If none, the export datum is considered base type.
 	var/include_subtypes = TRUE		// Set to FALSE to make the datum apply only to a strict type.
@@ -90,7 +90,7 @@
 	true_cost *= (1 - elasticity_coeff)**(-1 * wait/(recovery_ds))
 	if(true_cost > cost)
 		true_cost = cost
-		STOP_PROCESSING(SSprocessing, src)
+		return PROCESS_KILL
 
 // Checks the cost. 0 cost items are skipped in export.
 /datum/export/proc/get_cost(obj/O, apply_elastic = TRUE)
@@ -148,6 +148,18 @@
 		SSblackbox.record_feedback("nested tally", "export_sold_cost", 1, list("[O.type]", "[the_cost]"))
 	START_PROCESSING(SSprocessing, src)
 	return the_cost
+
+/datum/export/proc/calc_total_payout(atoms_list = list())
+	var/total_payout = 0
+	for(var/atom/priced_atom in atoms_list)
+		total_payout += get_cost(priced_atom)
+	return total_payout
+
+/datum/export/proc/get_payout_text()
+	if(true_cost != cost)
+		return "[true_cost]/[cost]"
+	else
+		return "[true_cost]"
 
 GLOBAL_LIST_EMPTY(exports_list)
 #warn this needs to be called

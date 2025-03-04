@@ -557,7 +557,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
-/obj/structure/closet/crate,
+/obj/machinery/outpost_selling_pad,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "dM" = (
@@ -6773,7 +6773,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
-/obj/structure/closet/crate,
+/obj/machinery/computer/outpost_export_console{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "Sz" = (

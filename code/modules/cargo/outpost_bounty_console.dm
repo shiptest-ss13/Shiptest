@@ -23,11 +23,12 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 	for(var/atom/movable/AM in get_turf(src))
 		if(AM == src)
 			continue
+		if(AM.anchored)
+			continue
 		. += AM
 
 /obj/machinery/computer/outpost_export_console
 	name = "outpost bounty console"
-	#warn fix
 	desc = "A console used to interact with the exports and bounty database."
 
 	var/obj/machinery/outpost_selling_pad/linked_pad
@@ -45,10 +46,11 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 	if(linked_pad)
 		var/items_on_pad = linked_pad.get_other_atoms()
 		for(var/datum/export/exp in GLOB.outpost_exports)
-			cached_valid_exports[exp] = list()
 			for(var/atom/exp_atom in items_on_pad)
 				if(exp.applies_to(exp_atom))
-					cached_valid_exports[exp] += exp_atom
+					if(!cached_valid_exports[exp])
+						cached_valid_exports[exp] = list()
+					cached_valid_exports[exp] += list(exp_atom)
 
 
 #warn probably most similar to the traitor uplink, except there are no "buy" buttons
@@ -73,13 +75,15 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 		cached_exp_data["type"] = cached_exp.type
 		cached_exp_data["name"] = cached_exp.unit_name
 		cached_exp_data["desc"] = cached_exp.desc
-		cached_exp_data["value"] = cached_exp.cost //cached_exp.calc_total_payout(atoms_list)
+		cached_exp_data["value"] = cached_exp.calc_total_payout(atoms_list)
 
 		cached_exp_data["exportAtoms"] = list()
 		for(var/atom/exp_atom as anything in atoms_list)
 			cached_exp_data["exportAtoms"] += exp_atom.name
 
 		data["redeemExports"] += list(cached_exp_data) // gotta wrap it in a list because byond sucks
+
+	return data
 
 /obj/machinery/computer/outpost_export_console/ui_static_data(mob/user)
 	var/list/data = list()
@@ -90,13 +94,15 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 
 		exp_data["type"] = exp.type
 		exp_data["name"] = exp.unit_name
-		exp_data["value"] = exp.cost //exp.get_payout_text()
+		exp_data["value"] = exp.get_payout_text()
 		exp_data["desc"] = exp.desc
 		exp_data["exportAtoms"] = list()
 
 		data["allExports"] += list(exp_data) // need to wrap with an extra list because byond sucks
 
-/obj/machinery/computer/outpost_export_console/ui_act(action, params)
+	return data
+
+/obj/machinery/computer/outpost_export_console/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -110,6 +116,7 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 				#warn there was an error
 			else
 				redeem_export(redeemed_exp)
+			update_static_data(usr, ui)
 			return TRUE
 
 /obj/machinery/computer/outpost_export_console/proc/redeem_export(datum/export/exp)
@@ -128,14 +135,10 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 
 	cached_valid_exports -= exp
 
-	#warn create cash or whatever. it should also make a sound
+	do_sparks(5, 0, src)
+	new /obj/item/spacecash/bundle(loc, total_payout)
+	#warn also make sound
 	return TRUE
-
-
-
-
-
-
 
 /*
 /obj/machinery/computer/hydrogen_exchange/ui_interact(mob/user, datum/tgui/ui)
@@ -361,7 +364,4 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 	sell_pad.icon_state = "lpad-idle-o"
 	deltimer(sending_timer)
 */
-
-
-
 

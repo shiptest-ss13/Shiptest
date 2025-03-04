@@ -1,7 +1,15 @@
 import { createSearch, decodeHtmlEntities } from 'common/string';
 import { useBackend, useLocalState } from '../../backend';
-import { Box, Button, Input, Section, Table, NoticeBox } from '../../components';
+import {
+  Box,
+  Button,
+  Input,
+  Section,
+  Table,
+  NoticeBox,
+} from '../../components';
 import { Window } from '../../layouts';
+import { formatMoney } from '../../format';
 
 const MAX_SEARCH_RESULTS = 25;
 
@@ -57,7 +65,7 @@ const GenericExport = (props, context) => {
         <ExportList
           compactMode={false}
           currencySymbol={'cr'}
-          items={redeemExports}
+          exportList={redeemExports}
           redeemable
         />
       </Section>
@@ -78,12 +86,12 @@ const GenericExport = (props, context) => {
             <Button
               icon={compactMode ? 'list' : 'info'}
               content={compactMode ? 'Compact' : 'Detailed'}
-              onClick={() => setCompactMode(true)}
+              onClick={() => setCompactMode(!compactMode)}
             />
           </>
         }
       >
-        {items.length === 0 && (
+        {allExports.length === 0 && (
           <NoticeBox>
             {searchText.length === 0
               ? 'No bounties are available.'
@@ -93,7 +101,7 @@ const GenericExport = (props, context) => {
         <ExportList
           compactMode={searchText.length > 0 || compactMode}
           currencySymbol={'cr'}
-          items={allExports}
+          exportList={allExports}
         />
       </Section>
     </>
@@ -101,7 +109,12 @@ const GenericExport = (props, context) => {
 };
 
 const ExportList = (props, context) => {
-  const { compactMode, currencySymbol, redeemable = false } = props;
+  const {
+    compactMode,
+    currencySymbol,
+    exportList = [],
+    redeemable = false,
+  } = props;
   const { act } = useBackend(context);
   const [hoveredItem, setHoveredItem] = useLocalState(
     context,
@@ -110,18 +123,19 @@ const ExportList = (props, context) => {
   );
 
   // append some extra data depending on whether we're in redeemable mode
-  const items = props.items.map((item) => {
+  const items = exportList.map((item) => {
+    let disabled = false;
     if (redeemable) {
       const notSameItem = hoveredItem && hoveredItem.name !== item.name;
       let foundOverlap = false;
       item.exportAtoms.forEach((element) => {
-        if (hoveredItem.exportAtoms.includes(element)) {
+        if (hoveredItem && hoveredItem.exportAtoms && hoveredItem.exportAtoms.includes(element)) {
           foundOverlap = true;
         }
       });
-      const disabled = notSameItem && foundOverlap;
+      disabled = notSameItem && foundOverlap;
     } else {
-      const disabled = true;
+      disabled = true;
     }
     return {
       ...item,
@@ -146,7 +160,7 @@ const ExportList = (props, context) => {
                 onmouseout={() => setHoveredItem({})}
                 onClick={() =>
                   act('redeem', {
-                    name: item.type,
+                    redeem_type: item.type,
                   })
                 }
               />
@@ -171,7 +185,7 @@ const ExportList = (props, context) => {
           onmouseout={() => setHoveredItem({})}
           onClick={() =>
             act('redeem', {
-              name: item.type,
+              redeem_type: item.type,
             })
           }
         />

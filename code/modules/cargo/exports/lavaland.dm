@@ -1,3 +1,5 @@
+
+
 #warn remove
 /*
 //Tendril chest artifacts and ruin loot. Includes ash drake loot since they drop two sets of armor + random item
@@ -47,40 +49,6 @@
 						/obj/item/mayhem,
 						/obj/item/blood_contract,
 						)
-/*
-/datum/export/lavaland/trophycommon
-	cost = 1500
-	unit_name = "common hunting trophy"
-	export_types = list(/obj/item/mob_trophy/legion_skull,
-						/obj/item/mob_trophy/wolf_ear,
-						/obj/item/mob_trophy/bear_paw,
-						/obj/item/mob_trophy/goliath_tentacle,
-						/obj/item/mob_trophy/watcher_wing)
-
-/datum/export/lavaland/trophyrare
-	cost = 5000
-	unit_name = "rare hunting trophy"
-	export_types = list(/obj/item/mob_trophy/dwarf_skull,
-						/obj/item/mob_trophy/fang,
-						/obj/item/mob_trophy/war_paw,
-						/obj/item/mob_trophy/elder_tentacle,
-						/obj/item/mob_trophy/ice_crystal,
-						/obj/item/mob_trophy/magma_wing,
-						/obj/item/mob_trophy/tail_spike,
-						/obj/item/mob_trophy/ice_wing)
-
-/datum/export/lavaland/trophymega
-	cost = 10000
-	unit_name = "big game hunting trophy"
-	export_types = list(/obj/item/mob_trophy/legionnaire_spine,
-						/obj/item/mob_trophy/ash_spike,
-						/obj/item/mob_trophy/demon_claws,
-						/obj/item/mob_trophy/broodmother_tongue,
-						/obj/item/mob_trophy/ice_block_talisman,
-						/obj/item/mob_trophy/miner_eye,
-						/obj/item/mob_trophy/vortex_talisman,
-						/obj/item/mob_trophy/blaster_tubes)
-*/
 
 /datum/export/lavaland/megafauna/total_printout(datum/export_report/ex, notes = TRUE) //in the unlikely case a miner feels like selling megafauna loot
 	. = ..()

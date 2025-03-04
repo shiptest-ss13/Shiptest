@@ -1,3 +1,4 @@
+/*
 /datum/export/gear
 
 /datum/export/gear/sec_helmet
@@ -89,3 +90,4 @@
 	unit_name = "ebony die"
 	export_types = list(/obj/item/dice/d6/ebony)
 
+*/
