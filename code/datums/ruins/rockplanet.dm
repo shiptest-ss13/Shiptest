@@ -23,6 +23,7 @@
 	description = "A former pre-ICW era Nanotrasen outpost converted into a moonshine distillery by Frontiersman bootleggers."
 	id = "rockplanet_distillery"
 	suffix = "rockplanet_distillery.dmm"
+	ruin_mission_types = list(/datum/mission/ruin/signaled/kill/frontiersmen)
 
 /datum/map_template/ruin/rockplanet/mining_base
 	name = "N+S Mining Installation"

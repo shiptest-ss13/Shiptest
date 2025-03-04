@@ -351,10 +351,10 @@
 
 //Supply
 
-/obj/item/circuitboard/computer/bounty
-	name = "\improper Nanotrasen Bounty Console (Computer Board)"
+/obj/item/circuitboard/computer/mission
+	name = "\improper Outpost Mission Console (Computer Board)"
 	icon_state = "supply"
-	build_path = /obj/machinery/computer/bounty
+	build_path = /obj/machinery/computer/mission
 
 /obj/item/circuitboard/computer/cargo
 	name = "Outpost Comms Console (Computer Board)"
@@ -381,10 +381,13 @@
 	icon_state = "supply"
 	build_path = /obj/machinery/computer/security/mining
 
+#warn remove
+/*
 /obj/item/circuitboard/computer/selling_pad_control
 	name = "Cargo hold control terminal (Computer Board)"
 	icon_state = "supply"
 	build_path = /obj/machinery/computer/selling_pad_control
+*/
 
 //Shiptesting
 

@@ -1,6 +1,6 @@
 /datum/mission/research
 	name = "Electrical storm research mission"
-	desc = "We require data on the behavior of electrical storms in the system for an ongoing study. \
+	desc = " require data on the behavior of electrical storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms.\
 			It must be powered to collect the data. "
 	value = 3000 // base value, before adding bonus for number of things to fly through
@@ -11,10 +11,13 @@
 	var/obj/machinery/mission_scanner/scanner
 	var/num_current = 0
 	var/num_wanted = 5
+	var/researcher_name
 
 /datum/mission/research/New(...)
+	researcher_name = get_researcher_name()
 	num_wanted = rand(num_wanted - 1, num_wanted + 1)
 	value += num_wanted * 150
+	desc = researcher_name + desc
 	return ..()
 
 /datum/mission/research/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
@@ -56,6 +59,7 @@
 	if(!over_obj || !scanner.is_operational || scanner_port?.current_ship != servant)
 		return
 	num_current++
+
 /* commented out until ion storms aren't literal torture
 /datum/mission/research/ion
 	name = "Ion storm research mission"
@@ -65,9 +69,10 @@
 	value = 3500
 	objective_type = /datum/overmap/event/emp
 */
+
 /datum/mission/research/meteor
 	name = "Asteroid field research mission"
-	desc = "We require data on the behavior of asteroid fields in the system for an ongoing study. \
+	desc = " require data on the behavior of asteroid fields in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
 	value = 4000
@@ -76,7 +81,7 @@
 
 /datum/mission/research/carp
 	name = "Carp migration research mission"
-	desc = "We require data on the migration patterns of space carp for an ongoing study. \
+	desc = " require data on the migration patterns of space carp for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
 	value = 2000
@@ -86,7 +91,7 @@
 
 /datum/mission/research/dust
 	name = "dust research mission"
-	desc = "We require data on the density of space dust for updated navcharts. \
+	desc = " require data on the density of space dust for updated navcharts. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
 	value = 1000
