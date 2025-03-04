@@ -1,3 +1,5 @@
+#warn remove
+/*
 //Pad & Pad Terminal
 /obj/machinery/selling_pad
 	name = "cargo hold pad"
@@ -182,3 +184,4 @@
 	status_report = "Ready for delivery."
 	sell_pad.icon_state = "lpad-idle-o"
 	deltimer(sending_timer)
+*/

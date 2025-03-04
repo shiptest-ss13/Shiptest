@@ -1,3 +1,5 @@
+#warn remove
+/*
 /datum/export/material
 	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of April 2016.
 	message = "cm3 of developer's tears. Please, report this on github"
@@ -92,3 +94,4 @@
 	message = "cm3 of Hot Ice"
 	material_id = /datum/material/hot_ice
 	export_types = /obj/item/stack/sheet/hot_ice
+*/

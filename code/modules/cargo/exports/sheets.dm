@@ -1,3 +1,5 @@
+#warn remove
+/*
 /datum/export/stack
 	unit_name = "sheet"
 
@@ -72,3 +74,4 @@
 	cost = 1000
 	message = "of alien alloy"
 	export_types = list(/obj/item/stack/sheet/mineral/abductor)
+*/
