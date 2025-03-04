@@ -27,3 +27,10 @@
 	unit_name = "miscellaneous computer part"
 	export_types = list(/obj/item/computer_hardware)
 	include_subtypes = TRUE
+
+/* if only
+/datum/export/stack/cable
+	cost = 0.1
+	unit_name = "copper wire"
+	export_types = list(/obj/item/garnish/wire)
+*/
