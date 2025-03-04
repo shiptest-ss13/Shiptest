@@ -137,8 +137,8 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 
 	cached_valid_exports -= exp
 
-	do_sparks(5, 0, src)
-	new /obj/item/spacecash/bundle(loc, total_payout)
+	do_sparks(5, 0, linked_pad.loc)
+	new /obj/item/spacecash/bundle(linked_pad.loc, total_payout)
 	#warn also make sound
 	return TRUE
 

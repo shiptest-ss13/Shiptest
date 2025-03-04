@@ -12,7 +12,7 @@
 	export_types = list(/obj/item/solar_assembly)
 
 /datum/export/solar/tracker_board
-	cost = 100
+	cost = 150
 	unit_name = "solar tracker board"
 	export_types = list(/obj/item/electronics/tracker)
 

@@ -2,8 +2,11 @@
 	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of April 2016.
 	var/material_id = null
 	export_types = list(
-		/obj/item/stack/sheet, /obj/item/stack/tile,
-		/obj/item/stack/ore, /obj/item/coin)
+		/obj/item/stack/sheet,
+		/obj/item/stack/tile,
+		/obj/item/stack/ore,
+		/obj/item/coin
+	)
 // Yes, it's a base type containing export_types.
 // But it has no material_id, so any applies_to check will return false, and these types reduce amount of copypasta a lot
 
@@ -61,13 +64,13 @@
 */
 
 /datum/export/material/bscrystal
-	unit_name = "of bluespace crystals"
+	unit_name = "bluespace crystals"
 	cost = 75
 	material_id = /datum/material/bluespace
 
 /datum/export/material/plastic
 	unit_name = "cm3 of plastic"
-	cost = 5
+	cost = 2
 	material_id = /datum/material/plastic
 
 /datum/export/material/metal
@@ -75,12 +78,19 @@
 	cost = 2
 	material_id = /datum/material/iron
 	export_types = list(
-		/obj/item/stack/sheet/metal, /obj/item/stack/tile/plasteel,
-		/obj/item/stack/rods, /obj/item/stack/ore, /obj/item/coin)
+		/obj/item/stack/sheet/metal,
+		/obj/item/stack/tile/plasteel,
+		/obj/item/stack/rods,
+		/obj/item/stack/ore,
+		/obj/item/coin
+	)
 
 /datum/export/material/glass
 	unit_name = "cm3 of glass"
 	cost = 2
 	material_id = /datum/material/glass
-	export_types = list(/obj/item/stack/sheet/glass, /obj/item/stack/ore,
-		/obj/item/shard)
+	export_types = list(
+		/obj/item/stack/sheet/glass,
+		/obj/item/stack/ore,
+		/obj/item/shard
+	)
