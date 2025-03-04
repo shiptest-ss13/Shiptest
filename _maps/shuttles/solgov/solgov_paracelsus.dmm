@@ -442,9 +442,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/westright{
 	dir = 4
 	},
@@ -514,9 +512,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/westright{
 	dir = 4
 	},
@@ -1214,9 +1210,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/westright{
 	dir = 4
 	},
@@ -1548,9 +1542,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/westright{
 	dir = 4
 	},
@@ -2140,7 +2132,6 @@
 /area/ship/crew/cryo)
 "tv" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
-	dir = 2;
 	name = "atmos waste outlet injector"
 	},
 /turf/open/floor/plating,
@@ -2431,9 +2422,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/medical)
 "ww" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -2778,10 +2767,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
-"zE" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/mineral/titanium,
-/area/ship/maintenance/port)
 "zG" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -4172,9 +4157,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/storage/eva)
 "MW" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -4501,9 +4484,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/westright{
 	dir = 4
 	},
@@ -4603,9 +4584,7 @@
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/storage/firstaid/o2{
-	pixel_y = 0
-	},
+/obj/item/storage/firstaid/o2,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/medical/surgery)
 "QP" = (
@@ -4794,9 +4773,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/westright{
 	dir = 4
 	},
@@ -5771,7 +5748,7 @@ Xy
 gw
 Bc
 hA
-zE
+RL
 wI
 wI
 wI

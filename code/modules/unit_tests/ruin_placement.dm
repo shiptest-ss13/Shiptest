@@ -12,6 +12,7 @@
 				ruin.height
 			)
 
+			log_test("Testing [ruin_name]")
 			ruin.load(vlevel.get_unreserved_bottom_left_turf())
 
 			var/list/errors = atmosscan(TRUE, TRUE)
