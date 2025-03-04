@@ -31,6 +31,10 @@
 		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
 			var/obj/structure/W = A
 			W.obj_destruction("axe")
+	if(tool_behaviour == TOOL_SLEDGEHAMMER)
+		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille) || istype(A, /obj/structure/girder))
+			var/obj/structure/W = A
+			W.obj_destruction("axe")
 
 /obj/item/melee/axe/fire  // DEM AXES MAN, marker -Agouri
 	name = "fire axe"
@@ -61,15 +65,13 @@ Blunt
 	icon_state = "sledgehammer"
 	base_icon_state = "sledgehammer"
 	name = "breaching sledgehammer"
-	desc = "A large hammer used by the Gorlex Marauder splinters. As powerful as a weapon as it is a shipbreaking and mining tool."
+	desc = "A large hammer used by the Gorlex Marauder splinters. As powerful as a weapon as it is a shipbreaking tool."
 	force = 5
 	armour_penetration = 40
 	attack_verb = list("bashed", "smashed", "crushed", "smacked")
 	hitsound = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg')
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = IS_BLUNT
-	toolspeed = 0.5
-	wall_decon_damage = MINERAL_WALL_INTEGRITY
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	var/wielded = FALSE
 
@@ -85,7 +87,7 @@ Blunt
 /obj/item/melee/axe/sledgehammer/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	tool_behaviour = TOOL_MINING
+	tool_behaviour = TOOL_SLEDGEHAMMER
 	wielded = TRUE
 
 /obj/item/melee/axe/sledgehammer/proc/on_unwield(obj/item/source, mob/user)

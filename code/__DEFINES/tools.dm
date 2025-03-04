@@ -7,6 +7,7 @@
 #define TOOL_WELDER "welder"
 #define TOOL_ANALYZER "analyzer"
 #define TOOL_MINING "mining"
+#define TOOL_SLEDGEHAMMER "sledgehammer"
 #define TOOL_SHOVEL "shovel"
 #define TOOL_RETRACTOR "retractor"
 #define TOOL_HEMOSTAT "hemostat"
