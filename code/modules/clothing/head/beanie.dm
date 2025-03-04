@@ -126,24 +126,6 @@
 	icon_state = "beanielightbrown"
 	current_skin = "beanielightbrown"
 
-//Striped Beanies have unique sprites
-
-/obj/item/clothing/head/beanie/striped
-	name = "striped beanie"
-	icon_state = "beaniestriped"
-
-/obj/item/clothing/head/beanie/stripedred
-	name = "red striped beanie"
-	icon_state = "beaniestripedred"
-
-/obj/item/clothing/head/beanie/stripedblue
-	name = "blue striped beanie"
-	icon_state = "beaniestripedblue"
-
-/obj/item/clothing/head/beanie/stripedgreen
-	name = "green striped beanie"
-	icon_state = "beaniestripedgreen"
-
 /obj/item/clothing/head/beanie/durathread
 	name = "durathread beanie"
 	desc = "A beanie made from durathread, its resilient fibres provide some protection to the wearer."
