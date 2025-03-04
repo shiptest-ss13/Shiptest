@@ -83,6 +83,7 @@
 	sharpness = IS_SHARP		//WS Edit - Makes the Drill sharp
 	tool_behaviour = TOOL_DRILL
 	toolspeed = 1
+	demolition_mod = 0.5
 
 /obj/item/surgicaldrill/Initialize()		//WS Edit Start - Trying to butcher with a drill is a bad idea
 	. = ..()
@@ -118,6 +119,7 @@
 	sharpness = IS_SHARP_ACCURATE
 	tool_behaviour = TOOL_SCALPEL
 	toolspeed = 1
+	demolition_mod = 0.25
 
 /obj/item/scalpel/Initialize()
 	. = ..()
