@@ -28,7 +28,7 @@
 	var/bomb_defused = TRUE // If the bomb is inert.
 	var/bomb_timer = 1 // How long before blowing the bomb.
 	var/const/BOMB_TIMER_MIN = 1
-	var/const/BOMB_TIMER_MAX = 10
+	var/const/BOMB_TIMER_MAX = 20
 
 /obj/item/pizzabox/Initialize()
 	. = ..()
@@ -220,10 +220,10 @@
 		to_chat(user, "<span class='warning'>That's not a pizza!</span>")
 	..()
 
-/obj/item/pizzabox/process()
+/obj/item/pizzabox/process(seconds_per_tick)
 	if(bomb_active && !bomb_defused && (bomb_timer > 0))
 		playsound(loc, 'sound/items/timer.ogg', 50, FALSE)
-		bomb_timer--
+		bomb_timer -= seconds_per_tick
 	if(bomb_active && !bomb_defused && (bomb_timer <= 0))
 		if(bomb in src)
 			bomb.detonate()

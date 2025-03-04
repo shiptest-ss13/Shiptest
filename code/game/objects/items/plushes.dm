@@ -564,7 +564,7 @@
 	. = ..()
 	START_PROCESSING(SSprocessing, src)
 
-/obj/item/toy/plush/goatplushie/angry/process()
+/obj/item/toy/plush/goatplushie/angry/process(seconds_per_tick)
 	if (prob(25) && !target)
 		var/list/targets_to_pick_from = list()
 		for(var/mob/living/carbon/C in view(7, src))

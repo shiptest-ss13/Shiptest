@@ -199,7 +199,7 @@
 		. = clamp(round(., 0.01), 0, 1)
 	sunfrac = .
 
-/obj/machinery/power/solar/process()
+/obj/machinery/power/solar/process(seconds_per_tick)
 	if(machine_stat & BROKEN)
 		return
 	if(control && (!powernet || control.powernet != powernet))
@@ -221,7 +221,7 @@
 	. = ..()
 	UnregisterSignal(SSsun, COMSIG_SUN_MOVED)
 
-/obj/machinery/power/solar/fake/process()
+/obj/machinery/power/solar/fake/process(seconds_per_tick)
 	return PROCESS_KILL
 
 //
@@ -481,7 +481,7 @@
 	if(.)
 		playsound(loc, 'sound/effects/glassbr3.ogg', 100, TRUE)
 
-/obj/machinery/power/solar_control/process()
+/obj/machinery/power/solar_control/process(seconds_per_tick)
 	lastgen = gen
 	gen = 0
 

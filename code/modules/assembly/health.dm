@@ -45,7 +45,7 @@
 		alarm_health = HEALTH_THRESHOLD_CRIT
 		to_chat(user, "<span class='notice'>You toggle [src] to \"detect critical state\" mode.</span>")
 
-/obj/item/assembly/health/process()
+/obj/item/assembly/health/process(seconds_per_tick)
 	if(!scanning || !secured)
 		return
 

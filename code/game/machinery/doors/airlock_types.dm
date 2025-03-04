@@ -207,7 +207,7 @@
 	has_hatch = FALSE
 	var/last_event = 0
 
-/obj/machinery/door/airlock/uranium/process()
+/obj/machinery/door/airlock/uranium/process(seconds_per_tick)
 	if(world.time > last_event+20)
 		if(prob(50))
 			radiate()

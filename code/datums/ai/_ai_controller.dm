@@ -126,12 +126,12 @@ multiple modular subtrees with behaviors
 	return TRUE
 
 /// Generates a plan and see if our existing one is still valid.
-/datum/ai_controller/process(delta_time)
+/datum/ai_controller/process(seconds_per_tick)
 	if(!able_to_run())
 		walk(pawn, 0) //stop moving
 		return //this should remove them from processing in the future through event-based stuff.
 	if(!LAZYLEN(current_behaviors))
-		PerformIdleBehavior(delta_time) //Do some stupid shit while we have nothing to do
+		PerformIdleBehavior(seconds_per_tick) //Do some stupid shit while we have nothing to do
 		return
 
 	if(current_movement_target && get_dist(pawn, current_movement_target) > max_target_distance) //The distance is out of range
@@ -148,22 +148,22 @@ multiple modular subtrees with behaviors
 			if(current_behavior.required_distance >= get_dist(pawn, current_movement_target)) ///Are we close enough to engage?
 				if(ai_movement.moving_controllers[src] == current_movement_target) //We are close enough, if we're moving stop.else
 					ai_movement.stop_moving_towards(src)
-				ProcessBehavior(delta_time, current_behavior)
+				ProcessBehavior(seconds_per_tick, current_behavior)
 				return
 
 			else if(ai_movement.moving_controllers[src] != current_movement_target) //We're too far, if we're not already moving start doing it.
 				ai_movement.start_moving_towards(src, current_movement_target) //Then start moving
 
 			if(current_behavior.behavior_flags & AI_BEHAVIOR_MOVE_AND_PERFORM) //If we can move and perform then do so.
-				ProcessBehavior(delta_time, current_behavior)
+				ProcessBehavior(seconds_per_tick, current_behavior)
 				return
 		else //No movement required
-			ProcessBehavior(delta_time, current_behavior)
+			ProcessBehavior(seconds_per_tick, current_behavior)
 			return
 
 
 ///Move somewhere using dumb movement (byond base)
-/datum/ai_controller/proc/MoveTo(delta_time)
+/datum/ai_controller/proc/MoveTo(seconds_per_tick)
 	var/current_loc = get_turf(pawn)
 	var/atom/movable/movable_pawn = pawn
 
@@ -178,11 +178,11 @@ multiple modular subtrees with behaviors
 
 
 ///Perform some dumb idle behavior.
-/datum/ai_controller/proc/PerformIdleBehavior(delta_time)
+/datum/ai_controller/proc/PerformIdleBehavior(seconds_per_tick)
 	return
 
 ///This is where you decide what actions are taken by the AI.
-/datum/ai_controller/proc/SelectBehaviors(delta_time)
+/datum/ai_controller/proc/SelectBehaviors(seconds_per_tick)
 	SHOULD_NOT_SLEEP(TRUE) //Fuck you don't sleep in procs like this.
 	if(!COOLDOWN_FINISHED(src, failed_planning_cooldown))
 		return FALSE
@@ -191,7 +191,7 @@ multiple modular subtrees with behaviors
 
 	if(LAZYLEN(planning_subtrees))
 		for(var/datum/ai_planning_subtree/subtree as anything in planning_subtrees)
-			if(subtree.SelectBehaviors(src, delta_time) == SUBTREE_RETURN_FINISH_PLANNING)
+			if(subtree.SelectBehaviors(src, seconds_per_tick) == SUBTREE_RETURN_FINISH_PLANNING)
 				break
 
 ///This proc handles changing ai status, and starts/stops processing if required.
@@ -225,8 +225,8 @@ multiple modular subtrees with behaviors
 	if(length(arguments))
 		behavior_args[behavior_type] = arguments
 
-/datum/ai_controller/proc/ProcessBehavior(delta_time, datum/ai_behavior/behavior)
-	var/list/arguments = list(delta_time, src)
+/datum/ai_controller/proc/ProcessBehavior(seconds_per_tick, datum/ai_behavior/behavior)
+	var/list/arguments = list(seconds_per_tick, src)
 	var/list/stored_arguments = behavior_args[behavior.type]
 	if(stored_arguments)
 		arguments += stored_arguments

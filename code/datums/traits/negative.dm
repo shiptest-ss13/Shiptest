@@ -9,7 +9,7 @@
 	lose_text = "<span class='notice'>Your back feels better.</span>"
 	medical_record_text = "Patient scans indicate severe and chronic back pain."
 
-/datum/quirk/badback/on_process()
+/datum/quirk/badback/on_process(seconds_per_tick)
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H.back && istype(H.back, /obj/item/storage/backpack))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "back_pain", /datum/mood_event/back_pain)
@@ -24,13 +24,13 @@
 	lose_text = "<span class='notice'>You feel vigorous again.</span>"
 	medical_record_text = "Patient requires regular treatment for blood loss due to low production of blood."
 
-/datum/quirk/blooddeficiency/on_process()
+/datum/quirk/blooddeficiency/on_process(seconds_per_tick)
 	var/mob/living/carbon/human/H = quirk_holder
 	if(NOBLOOD in H.dna.species.species_traits) //can't lose blood if your species doesn't have any
 		return
 	else
 		if (H.blood_volume > (BLOOD_VOLUME_SAFE - 25)) // just barely survivable without treatment
-			H.blood_volume -= 0.275
+			H.blood_volume -= 0.275 * seconds_per_tick
 
 /datum/quirk/blindness
 	name = "Blind"
@@ -58,8 +58,8 @@
 	lose_text = "<span class='notice'>You feel wrinkled again.</span>"
 	medical_record_text = "Patient has a tumor in their brain that is slowly driving them to brain death."
 
-/datum/quirk/brainproblems/on_process()
-	quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2)
+/datum/quirk/brainproblems/on_process(seconds_per_tick)
+	quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2 * seconds_per_tick)
 
 /datum/quirk/deafness
 	name = "Deaf"
@@ -80,8 +80,8 @@
 	medical_record_text = "Patient has a mild mood disorder causing them to experience acute episodes of depression."
 	mood_quirk = TRUE
 
-/datum/quirk/depression/on_process()
-	if(prob(0.05))
+/datum/quirk/depression/on_process(seconds_per_tick)
+	if(SPT_PROB(0.05, seconds_per_tick))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "depression_mild", /datum/mood_event/depression_mild)
 
 /datum/quirk/family_heirloom
@@ -202,7 +202,7 @@
 
 	heirloom.AddComponent(/datum/component/heirloom, quirk_holder.mind, family_name)
 
-/datum/quirk/family_heirloom/on_process()
+/datum/quirk/family_heirloom/on_process(seconds_per_tick)
 	if(heirloom in quirk_holder.GetAllContents())
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "family_heirloom_missing")
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "family_heirloom", /datum/mood_event/family_heirloom)
@@ -329,7 +329,7 @@
 	value = -1
 	medical_record_text = "Patient demonstrates a fear of the dark. (Seriously?)"
 
-/datum/quirk/nyctophobia/on_process()
+/datum/quirk/nyctophobia/on_process(seconds_per_tick)
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H.dna.species.id in list("shadow", "nightmare"))
 		return //we're tied with the dark, so we don't get scared of it; don't cleanse outright to avoid cheese
@@ -420,11 +420,11 @@
 	lose_text = "<span class='notice'>You feel in tune with the world again.</span>"
 	medical_record_text = "Patient suffers from acute Reality Dissociation Syndrome and experiences vivid hallucinations."
 
-/datum/quirk/insanity/on_process()
+/datum/quirk/insanity/on_process(seconds_per_tick)
 	if(quirk_holder.reagents.has_reagent(/datum/reagent/toxin/mindbreaker, needs_metabolizing = TRUE))
 		quirk_holder.hallucination = 0
 		return
-	if(prob(2)) //we'll all be mad soon enough
+	if(SPT_PROB(2, seconds_per_tick)) //we'll all be mad soon enough
 		madness()
 
 /datum/quirk/insanity/proc/madness()
@@ -449,7 +449,7 @@
 	if(quirk_holder)
 		UnregisterSignal(quirk_holder, list(COMSIG_MOB_EYECONTACT, COMSIG_MOB_EXAMINATE))
 
-/datum/quirk/social_anxiety/on_process()
+/datum/quirk/social_anxiety/on_process(seconds_per_tick)
 	var/nearby_people = 0
 	if(HAS_TRAIT(quirk_holder, TRAIT_FEARLESS))
 		return
@@ -563,7 +563,7 @@
 /datum/quirk/junkie/proc/announce_drugs()
 	to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] of [initial(reagent_type.name)] [where_drug]. Better hope you don't run out...</span>")
 
-/datum/quirk/junkie/on_process()
+/datum/quirk/junkie/on_process(seconds_per_tick)
 	var/mob/living/carbon/human/H = quirk_holder
 	if(world.time > next_process)
 		next_process = world.time + process_interval
@@ -629,7 +629,7 @@
 		return
 	to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], and a [initial(accessory_type.name)] [where_accessory]. Make sure you get your favorite brand when you run out.</span>")
 
-/datum/quirk/junkie/smoker/on_process()
+/datum/quirk/junkie/smoker/on_process(seconds_per_tick)
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/I = H.get_item_by_slot(ITEM_SLOT_MASK)

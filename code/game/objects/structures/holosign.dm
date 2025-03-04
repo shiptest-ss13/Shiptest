@@ -37,7 +37,7 @@
 			countdown.color = countdown_color
 		countdown.start()
 
-/obj/structure/holosign/process()
+/obj/structure/holosign/process(seconds_per_tick)
 	if(countdown.invisibility && death_time < (world.time + 60 SECONDS))
 		countdown.invisibility = 0
 		playsound(src, 'sound/machines/triple_beep.ogg', 50, TRUE)
