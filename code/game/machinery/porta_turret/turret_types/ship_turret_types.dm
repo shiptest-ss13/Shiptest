@@ -1,53 +1,3 @@
-
-/obj/machinery/porta_turret/syndicate
-	circuit = /obj/item/circuitboard/machine/turret/ship
-	use_power = NO_POWER_USE
-	scan_range = 9
-	req_access = list(ACCESS_SYNDICATE)
-	lethal = TRUE
-	stun_projectile = /obj/projectile/bullet
-	lethal_projectile = /obj/projectile/bullet
-	lethal_projectile_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	stun_projectile_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	icon_state = "syndie_off"
-	base_icon_state = "syndie"
-	faction = list(ROLE_SYNDICATE)
-	turret_flags = TURRET_FLAG_HOSTILE
-	desc = "A ballistic machine gun auto-turret."
-
-/obj/machinery/porta_turret/syndicate/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
-
-/obj/machinery/porta_turret/syndicate/energy
-	icon_state = "standard_lethal"
-	base_icon_state = "standard"
-	stun_projectile = /obj/projectile/energy/electrode
-	stun_projectile_sound = 'sound/weapons/taser.ogg'
-	lethal_projectile = /obj/projectile/beam/laser
-	lethal_projectile_sound = 'sound/weapons/laser.ogg'
-	desc = "An energy blaster auto-turret."
-
-/obj/machinery/porta_turret/syndicate/energy/heavy
-	icon_state = "standard_lethal"
-	base_icon_state = "standard"
-	stun_projectile = /obj/projectile/energy/electrode
-	stun_projectile_sound = 'sound/weapons/taser.ogg'
-	lethal_projectile = /obj/projectile/beam/laser/heavylaser
-	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
-	desc = "An energy blaster auto-turret."
-
-/obj/machinery/porta_turret/syndicate/energy/raven
-	stun_projectile =  /obj/projectile/beam/laser
-	stun_projectile_sound = 'sound/weapons/laser.ogg'
-	faction = list("neutral","silicon","turret")
-
-/obj/machinery/porta_turret/syndicate/pod
-	integrity_failure = 0.5
-	max_integrity = 40
-	stun_projectile = /obj/projectile/bullet/syndicate_turret
-	lethal_projectile = /obj/projectile/bullet/syndicate_turret
-
 /obj/machinery/porta_turret/ship
 	circuit = /obj/item/circuitboard/machine/turret/ship
 	scan_range = 9
@@ -120,34 +70,6 @@
 	lethal_projectile = /obj/projectile/beam/pulse/sharplite_turret
 	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	max_integrity = 250
-
-/* Syndicate Turrets */
-
-/obj/machinery/porta_turret/ship/syndicate
-	faction = list(FACTION_PLAYER_SYNDICATE, "turret")
-	icon_state = "standard_lethal"
-	base_icon_state = "standard"
-
-/obj/machinery/porta_turret/ship/syndicate/weak
-	name = "Light Laser Turret"
-	desc = "A low powered turret designed by the Gorlex Maurauders during the ICW. Effectively weaponizes mining equipment."
-	stun_projectile = /obj/projectile/beam/disabler/weak
-	lethal_projectile = /obj/projectile/beam/weak/penetrator
-	icon_state = "syndie_off"
-	base_icon_state = "syndie"
-	scan_range = 7
-	shot_delay = 5
-
-/obj/machinery/porta_turret/ship/syndicate/heavy
-	name = "Heavy Laser Turret"
-	desc = "Produced by Cybersun, this turret is a duel mount of a propietary heavy laser, and crowd control taser system."
-	stun_projectile = /obj/projectile/energy/electrode
-	stun_projectile_sound = 'sound/weapons/taser.ogg'
-	lethal_projectile = /obj/projectile/beam/laser/heavylaser
-	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
-	scan_range = 12
-	shot_delay = 20
-	max_integrity = 300
 
 /* New Gorlex Republic Turrets */
 // Midline ballistic turrets
