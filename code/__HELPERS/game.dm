@@ -156,7 +156,7 @@ block( \
 	else
 		outer = circlerangeturfs(center, outer_range)
 		inner = circlerangeturfs(center, inner_range)
-	for(var/turf/possible_spawn in outer)
+	for(var/turf/possible_spawn as anything in outer)
 		if(possible_spawn in inner)
 			continue
 		if(istype(possible_spawn, /turf/closed))
