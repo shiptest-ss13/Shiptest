@@ -549,6 +549,8 @@
 	category = list ("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
+#warn remove
+/*
 /datum/design/board/selling_pad
 	name = "Machine Design (Cargo Hold Pad)"
 	desc = "The circuit board for a Cargo Hold Pad."
@@ -556,6 +558,7 @@
 	build_path = /obj/item/circuitboard/machine/selling_pad
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+*/
 
 /datum/design/board/paystand
 	name = "Machine Design (Pay Stand)"

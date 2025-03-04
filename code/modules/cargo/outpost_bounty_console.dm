@@ -31,7 +31,7 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 	desc = " blah blah blah "
 
 	var/obj/machinery/outpost_selling_pad/linked_pad
-
+	var/list/cached_valid_exports = list()
 
 
 /*
