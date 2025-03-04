@@ -45,9 +45,3 @@
 	elasticity_coeff = 0.05
 	unit_name = "ramzi dogtags"
 	export_types = list(/obj/item/clothing/neck/dogtag/ramzi)
-
-/datum/export/landmine
-	cost = 750
-	elasticity_coeff = 0.1
-	unit_name = "defused landmines"
-	export_types = list(/obj/item/mine/pressure/explosive)
