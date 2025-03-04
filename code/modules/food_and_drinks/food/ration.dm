@@ -25,7 +25,6 @@
 	for(var/tag in tags)
 		. += " - [tag]"
 
-
 /obj/item/reagent_containers/food/snacks/ration/update_overlays()
 	. = ..()
 	var/mutable_appearance/ration_overlay
