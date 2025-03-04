@@ -3206,8 +3206,27 @@
 	pixel_y = 4
 	},
 /obj/structure/table,
-/obj/item/screwdriver,
+/obj/item/screwdriver{
+	pixel_y = 3;
+	pixel_x = 10
+	},
 /obj/effect/turf_decal/corner/opaque/red/mono,
+/obj/item/attachment/rail_light{
+	pixel_x = 2;
+	pixel_y = -5
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = 1;
+	pixel_y = 0
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = -4;
+	pixel_y = -5
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = -4;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "vP" = (
@@ -3306,7 +3325,7 @@
 "ws" = (
 /obj/structure/table,
 /obj/item/storage/guncase{
-	pixel_y = 4
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/corner/opaque/red/mono,
 /turf/open/floor/plasteel/dark,
@@ -4981,6 +5000,7 @@
 /obj/item/storage/belt/military/assault,
 /obj/item/storage/guncase/pistol/asp,
 /obj/item/megaphone,
+/obj/item/clothing/accessory/holster,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "GD" = (
