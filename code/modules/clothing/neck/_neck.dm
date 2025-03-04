@@ -248,97 +248,97 @@
 	name = "white scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfwhite"
-	current_skin = "scarfwhite"
+	current_skin = "white scarf"
 
 /obj/item/clothing/neck/scarf/grey
 	name = "grey scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfgrey"
-	current_skin = "scarfgrey"
+	current_skin = "grey scarf"
 
 /obj/item/clothing/neck/scarf/black
 	name = "black scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfblack"
-	current_skin = "scarfblack"
+	current_skin = "black scarf"
 
 /obj/item/clothing/neck/scarf/red
 	name = "red scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfred"
-	current_skin = "scarfred"
+	current_skin = "red scarf"
 
 /obj/item/clothing/neck/scarf/maroon
 	name = "maroon scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfmaroon"
-	current_skin = "scarfmaroon"
+	current_skin = "maroon scarf"
 
 /obj/item/clothing/neck/scarf/orange
 	name = "orange scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarforange"
-	current_skin = "scarforange"
+	current_skin = "orange scarf"
 
 /obj/item/clothing/neck/scarf/yellow
 	name = "yellow scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfyellow"
-	current_skin = "scarfyellow"
+	current_skin = "yellow scarf"
 
 /obj/item/clothing/neck/scarf/green
 	name = "green scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfgreen"
-	current_skin = "scarfgreen"
+	current_skin = "green scarf"
 
 /obj/item/clothing/neck/scarf/darkgreen
 	name = "dark green scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfdarkgreen"
-	current_skin = "scarfdarkgreen"
+	current_skin = "dark green scarf"
 
 /obj/item/clothing/neck/scarf/teal
 	name = "teal scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfteal"
-	current_skin = "scarfteal"
+	current_skin = "teal scarf"
 
 /obj/item/clothing/neck/scarf/blue
 	name = "blue scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfblue"
-	current_skin = "scarfblue"
+	current_skin = "blue scarf"
 
 /obj/item/clothing/neck/scarf/darkblue
 	name = "dark blue scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfdarkblue"
-	current_skin = "scarfdarkblue"
+	current_skin = "dark blue scarf"
 
 /obj/item/clothing/neck/scarf/purple
 	name = "purple scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfpurple"
-	current_skin = "scarfpurple"
+	current_skin = "purple scarf"
 
 /obj/item/clothing/neck/scarf/pink
 	name = "scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfpink"
-	current_skin = "scarfpink"
+	current_skin = "pink scarf"
 
 /obj/item/clothing/neck/scarf/brown
 	name = "brown scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarfbrown"
-	current_skin = "scarfbrown"
+	current_skin = "brown scarf"
 
 /obj/item/clothing/neck/scarf/lightbrown
 	name = "light brown scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon_state = "scarflightbrown"
-	current_skin = "scarflightbrown"
+	current_skin = "light brown scarf"
 
 //Shemaghs to operate tactically in a operational tactical situation
 
