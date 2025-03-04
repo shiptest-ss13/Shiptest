@@ -201,3 +201,14 @@
 						"Boxcutter" = "letter_opener_b",
 						"Corporate" = "letter_opener_a"
 						)
+
+/obj/item/melee/knife/handsaw
+	name = "handsaw"
+	world_file = null
+	icon_state = "handsaw"
+	desc = "A serrated handsaw. This one has a TPI rating that makes it useful for both cutting up wood into planks, or sawing through the barrel of a gun."
+	force = 5
+	throwforce = 5
+	custom_materials = list(/datum/material/iron=4000)
+	attack_verb = list("sawed", "cut","sliced", "stabbed")
+	sharpness = IS_SHARP
