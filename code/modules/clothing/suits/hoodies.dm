@@ -264,8 +264,8 @@
 	desc = "A hoodie themed to look like a kepori in a Full Body Prosthetic. It has a comfy pocket for keeping your hands warm."
 	icon_state = "hoodie_fbp"
 	item_state = "hoodie_fbp"
-	icon = 'icons/obj/clothing/suits/wintercoat.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suits/wintercoat.dmi'
+	icon = 'icons/obj/clothing/suits/hooded.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/hooded.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood/fbp
 
 /obj/item/clothing/head/hooded/hood/fbp
@@ -281,8 +281,8 @@
 	desc = "A hoodie themed to look like K4L1 from the popular webseries RILENA. It has a comfy pocket for keeping your hands warm."
 	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
-	icon = 'icons/obj/clothing/suits/wintercoat.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suits/wintercoat.dmi'
+	icon = 'icons/obj/clothing/suits/hooded.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/hooded.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood/rilena
 
 /obj/item/clothing/suit/hooded/hoodie/rilena/equipped(mob/user, slot)
@@ -312,6 +312,6 @@
 	desc = "A hoodie that is black, with a white hood. It has a comfy pocket for keeping your hands warm."
 	icon_state = "hoodie_bwa"
 	item_state = "hoodie_bwa"
-	icon = 'icons/obj/clothing/suits/wintercoat.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suits/wintercoat.dmi'
+	icon = 'icons/obj/clothing/suits/hooded.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/hooded.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood/gray
