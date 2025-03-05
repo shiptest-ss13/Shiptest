@@ -3425,14 +3425,16 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "qc" = (
-/obj/machinery/conveyor_switch{
-	id = "outpost2";
-	layer = 3.11;
-	pixel_y = 9;
-	pixel_x = -2
-	},
 /obj/structure/railing/thin{
 	dir = 9
+	},
+/obj/effect/turf_decal/industrial/shutoff{
+	dir = 4
+	},
+/obj/machinery/conveyor_switch/oneway{
+	pixel_y = 8;
+	layer = 3.09;
+	id = "outpost2"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
@@ -9598,17 +9600,6 @@
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
-"UR" = (
-/obj/structure/table/reinforced,
-/obj/machinery/conveyor_switch{
-	id = "outpost1";
-	layer = 3.11;
-	pixel_y = 4;
-	pixel_x = 5
-	},
-/obj/structure/railing/thin,
-/turf/open/floor/plasteel/patterned,
-/area/outpost/cargo)
 "UT" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -10025,6 +10016,14 @@
 /obj/structure/railing/thin,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/effect/turf_decal/industrial/shutoff{
+	dir = 4
+	},
+/obj/machinery/conveyor_switch/oneway{
+	pixel_y = 8;
+	layer = 3.09;
+	id = "outpost1"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
@@ -19545,7 +19544,7 @@ Va
 QJ
 CV
 CV
-UR
+kp
 SK
 pc
 Uw
