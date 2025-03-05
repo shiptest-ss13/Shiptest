@@ -75,7 +75,9 @@ SUBSYSTEM_DEF(jukeboxes)
 		T.song_length = SSsound_cache.get_sound_length(T.song_path)
 		var/list/L = splittext(S,"+")
 		T.song_name = L[1]
-		var/bpm = text2num(L[2])
+		var/bpm
+		if(L.len > 1)
+			bpm = text2num(L[2])
 		if(isnum(bpm))
 			T.song_beat_deciseconds = 600 / bpm
 		songs |= T
