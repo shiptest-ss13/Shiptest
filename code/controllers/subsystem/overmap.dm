@@ -435,13 +435,17 @@ SUBSYSTEM_DEF(overmap)
 				return D
 
 /datum/controller/subsystem/overmap/proc/ship_crew_percentage()
-	var/ship_percentages
+	var/ship_percentages = 0
+	var/counted_ships = 0
 	for(var/datum/overmap/ship/controlled/ship_datum in controlled_ships)
-		var/slot_count
+		var/slot_count = 0
+		if(!ship_datum.source_template)
+			continue
 		for(var/job_slot in ship_datum.source_template.job_slots)
 			slot_count += ship_datum.source_template.job_slots[job_slot]
 		ship_percentages += ((length(ship_datum.manifest) / slot_count) * 100)
-	var/total_percentages = ship_percentages / length(controlled_ships)
+		counted_ships++
+	var/total_percentages = ship_percentages / counted_ships
 	return round(total_percentages)
 
 /datum/controller/subsystem/overmap/proc/ship_locking_percentage()
