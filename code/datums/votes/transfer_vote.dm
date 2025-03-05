@@ -1,3 +1,6 @@
+#define CHOICE_TRANSFER "Initiate Bluespace Jump"
+#define CHOICE_CONTINUE "Continue Playing"
+
 /datum/vote/transfer_vote
 	name = "Transfer"
 	default_choices = list(
