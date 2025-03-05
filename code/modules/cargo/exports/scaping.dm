@@ -5,7 +5,7 @@
 	export_types = list(/obj/item/mine/pressure/explosive)
 
 /datum/export/anomaly
-	unit_name = "defused anomaly"
+	unit_name = "stabilized anomaly core"
 	cost = 3000
 	elasticity_coeff = 0.1
 	export_types = list(/obj/item/assembly/signaler/anomaly)
@@ -26,6 +26,11 @@
 	cost = 150
 	unit_name = "solar panel control board"
 	export_types = list(/obj/item/circuitboard/computer/solar_control)
+
+/datum/export/thruster_ion
+	cost = 500
+	unit_name = "ion thruster"
+	export_types = list(/obj/machinery/power/shuttle/engine/electric)
 
 //Computer Tablets and Parts
 /datum/export/modular_part

@@ -1,7 +1,22 @@
+/obj/machinery/mission_pad
+	name = "outpost mission redemption pad"
+	icon = 'icons/obj/telescience.dmi'
+	icon_state = "pad-idle"
+	light_color = COLOR_BRIGHT_ORANGE
+
+/obj/machinery/mission_pad/proc/get_other_atoms()
+	. = list()
+	for(var/atom/movable/AM in get_turf(src))
+		if(AM == src)
+			continue
+		if(AM.anchored)
+			continue
+		. += AM
+
 /obj/machinery/computer/mission
-	name = "\improper Outpost mission board"
+	name = "outpost mission board"
 	desc = "Used to check and claim missions offered by the outpost."
-	icon_screen = "bounty"
+	icon_screen = "request"
 	circuit = /obj/item/circuitboard/computer/mission
 	light_color = COLOR_BRIGHT_ORANGE
 	var/datum/weakref/pad_ref
@@ -84,7 +99,7 @@
 
 /obj/machinery/computer/mission/proc/turn_in(datum/mission/ruin/mission)
 	var/obj/machinery/mission_pad/pad = pad_ref?.resolve()
-	for(var/atom/movable/item_on_pad as anything in get_turf(pad))
+	for(var/atom/movable/item_on_pad as anything in pad.get_other_atoms())
 		if(item_on_pad == pad)
 			continue
 		if(mission.can_turn_in(item_on_pad))
@@ -118,11 +133,6 @@
 	data["pad"] = pad_ref?.resolve() ? TRUE : FALSE
 	data["id_inserted"] = inserted_scan_id ? TRUE : FALSE
 	return data
-
-/obj/machinery/mission_pad
-	name = "\improper Outpost mission turn-in pad"
-	icon = 'icons/obj/telescience.dmi'
-	icon_state = "pad-idle"
 
 /obj/machinery/mission_viewer
 	name = "mission viewer"

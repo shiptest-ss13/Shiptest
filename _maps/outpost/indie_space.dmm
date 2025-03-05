@@ -1639,6 +1639,13 @@
 /obj/effect/spawner/random/trash/decal,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
+"iF" = (
+/obj/effect/turf_decal/corner/opaque/neutral/half,
+/obj/machinery/computer/mission{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/operations)
 "iH" = (
 /obj/machinery/light/dim/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2195,6 +2202,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/security)
+"kL" = (
+/obj/effect/turf_decal/corner/opaque/neutral/half{
+	dir = 1
+	},
+/obj/machinery/computer/outpost_export_console,
+/turf/open/floor/plasteel/dark,
+/area/outpost/operations)
 "kM" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -4898,6 +4912,11 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/central)
+"xJ" = (
+/obj/effect/turf_decal/corner/opaque/neutral/half,
+/obj/machinery/mission_pad,
+/turf/open/floor/plasteel/dark,
+/area/outpost/operations)
 "xK" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -6545,6 +6564,13 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
+"FU" = (
+/obj/effect/turf_decal/corner/opaque/neutral/half{
+	dir = 1
+	},
+/obj/machinery/outpost_selling_pad,
+/turf/open/floor/plasteel/dark,
+/area/outpost/operations)
 "FW" = (
 /obj/machinery/firealarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -16489,7 +16515,7 @@ Pr
 Pr
 lJ
 TK
-Bm
+iF
 SE
 HD
 HD
@@ -16612,7 +16638,7 @@ Tc
 kw
 lJ
 kn
-JY
+xJ
 SE
 HD
 HD
@@ -16726,7 +16752,7 @@ aI
 pG
 ky
 SE
-ES
+FU
 qM
 dY
 AC
@@ -16849,7 +16875,7 @@ aI
 HL
 Sr
 yn
-kq
+kL
 nI
 Gv
 xY

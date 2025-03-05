@@ -12,9 +12,9 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 	return ret_list
 
 /obj/machinery/outpost_selling_pad
-	name = "bounty redemption pad"
+	name = "outpost bounty redemption pad"
 	icon = 'icons/obj/telescience.dmi'
-	icon_state = "lpad-idle-o"
+	icon_state = "lpad-idle"
 
 /obj/machinery/outpost_selling_pad/proc/get_other_atoms()
 	. = list()
@@ -27,8 +27,9 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 
 /obj/machinery/computer/outpost_export_console
 	name = "outpost bounty console"
-	desc = "A console used to interact with the exports and bounty database."
-
+	desc = "A console used to interact with the outposts exports and bounty database."
+	icon_screen = "bounty"
+	light_color = COLOR_BRIGHT_ORANGE
 	var/obj/machinery/outpost_selling_pad/linked_pad
 	var/list/cached_valid_exports = list()
 
@@ -132,6 +133,6 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 	cached_valid_exports -= exp
 
 	do_sparks(5, 0, linked_pad.loc)
-	new /obj/item/spacecash/bundle(linked_pad.loc, total_payout)
-	playsound(linked_pad.loc, pick(list('sound/machines/coindrop.ogg', 'sound/machines/coindrop2.ogg')), 40, TRUE)
+	new /obj/item/spacecash/bundle(loc, total_payout)
+	playsound(src, pick(list('sound/machines/coindrop.ogg', 'sound/machines/coindrop2.ogg')), 40, TRUE)
 	return TRUE
