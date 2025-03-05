@@ -11,7 +11,7 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 		ret_list += new o_b()
 	return ret_list
 
-#warn remove /obj/machinery/computer/bounty, /obj/machinery/bounty_board, /datum/bounty, /datum/computer_file/program/bounty_board, associated circuits,
+#warn remove /obj/machinery/computer/bounty, /obj/machinery/mission_board, /datum/bounty, /datum/computer_file/program/mission_board, associated circuits,
 
 /obj/machinery/outpost_selling_pad
 	name = "bounty redemption pad"

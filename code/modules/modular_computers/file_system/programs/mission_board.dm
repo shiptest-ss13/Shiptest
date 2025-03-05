@@ -1,7 +1,7 @@
 ///I will work on reimplmenting player bounties!
-/datum/computer_file/program/bounty_board
-	filename = "bountyboard"
-	filedesc = "Bounty Network Viewer"
+/datum/computer_file/program/mission_board
+	filename = "missionboard"
+	filedesc = "Mission Network Viewer"
 	program_icon_state = "bountyboard"
 	extended_desc = "A multi-platform network for placing requests across the sector, modular software cant handle item transfer so this is only for viewing."
 	requires_ntnet = TRUE
@@ -9,7 +9,7 @@
 	available_on_ntnet = TRUE
 	tgui_id = "NtosMission"
 
-/datum/computer_file/program/bounty_board/ui_data(mob/user)
+/datum/computer_file/program/mission_board/ui_data(mob/user)
 	var/list/data = get_header_data()
 	data["missions"] = list()
 	for(var/datum/mission/ruin/M as anything in SSmissions.active_missions)

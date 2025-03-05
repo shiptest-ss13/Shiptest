@@ -762,7 +762,7 @@
 	build_path = /obj/item/wallframe/newscaster
 	category = list("initial", "Construction")
 
-/datum/design/bounty_board_frame
+/datum/design/mission_board_frame
 	name = "Bounty Board Frame"
 	id = "bountyboard_frame"
 	build_type = AUTOLATHE

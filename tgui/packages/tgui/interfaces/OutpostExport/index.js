@@ -64,7 +64,6 @@ const GenericExport = (props, context) => {
       >
         <ExportList
           compactMode={false}
-          currencySymbol={'cr'}
           exportList={redeemExports}
           redeemable
         />
@@ -100,7 +99,6 @@ const GenericExport = (props, context) => {
         )}
         <ExportList
           compactMode={searchText.length > 0 || compactMode}
-          currencySymbol={'cr'}
           exportList={allExports}
         />
       </Section>
@@ -111,7 +109,6 @@ const GenericExport = (props, context) => {
 const ExportList = (props, context) => {
   const {
     compactMode,
-    currencySymbol,
     exportList = [],
     redeemable = false,
   } = props;
@@ -152,7 +149,7 @@ const ExportList = (props, context) => {
             <Table.Cell collapsing textAlign="right">
               <Button
                 fluid
-                content={formatMoney(item.value) + ' ' + currencySymbol}
+                content={formatMoney(item.value) + ' cr'}
                 disabled={item.disabled}
                 tooltip={item.desc}
                 tooltipPosition="left"
@@ -179,7 +176,7 @@ const ExportList = (props, context) => {
       level={2}
       buttons={
         <Button
-          content={formatMoney(item.value) + ' ' + currencySymbol}
+          content={formatMoney(item.value) + ' cr'}
           disabled={item.disabled}
           onmouseover={() => setHoveredItem(item)}
           onmouseout={() => setHoveredItem({})}

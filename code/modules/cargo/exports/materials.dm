@@ -87,7 +87,7 @@
 
 /datum/export/material/glass
 	unit_name = "cm3 of glass"
-	cost = 2
+	cost = 1
 	material_id = /datum/material/glass
 	export_types = list(
 		/obj/item/stack/sheet/glass,
