@@ -3,6 +3,8 @@
 	desc = "It's a baseball cap."
 	icon_state = "whitesoft"
 	item_state = "helmet"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 	cuttable = TRUE
 	clothamnt = 2
 	unique_reskin = list("white cap" = "whitesoft",
