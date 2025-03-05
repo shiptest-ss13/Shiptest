@@ -186,18 +186,6 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-//general syndicate
-
-/datum/supply_pack/spacesuits/op_hardsuit //pls nerf
-	name = "Blood Red Hardsuit Crate"
-	desc = "The terrifying visage of a Blood-red Hardsuit has heralded the end of many corporate rats. This is most likely due to favorable survivablity onion ratings in its design."
-	cost = 5000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi)
-	crate_name = "blood-red hardsuit crate"
-	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate
-	faction_locked = TRUE
-
 //cybersun breaker
 
 /datum/supply_pack/spacesuits/neutron_hardsuit

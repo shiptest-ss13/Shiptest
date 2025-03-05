@@ -95,6 +95,17 @@ EMPTY_GUN_HELPER(automatic/pistol/m17)
 	recoil_unwielded = 4
 	recoil = 1
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 33,
+			"y" = 22,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 17,
+		)
+	)
+
 NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 
 /obj/item/ammo_box/magazine/m20_auto_elite
@@ -276,6 +287,7 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 	)
 
 EMPTY_GUN_HELPER(automatic/marksman/woodsman)
+NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 
 /obj/item/ammo_box/magazine/m23
 	name = "Model 23 magazine (8x50mmR)"
@@ -396,8 +408,8 @@ EMPTY_GUN_HELPER(automatic/m15)
 
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 
-	spread = 4
-	spread_unwielded = 16
+	spread = 3
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 4
 	wield_slowdown = SHOTGUN_SLOWDOWN
@@ -416,8 +428,8 @@ EMPTY_GUN_HELPER(automatic/m15)
 			"y" = 18,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 16,
-			"y" = 22,
+			"x" = 35,
+			"y" = 17,
 		)
 	)
 

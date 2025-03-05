@@ -643,7 +643,7 @@
 
 /obj/item/toy/plush/moth/lovers
 	name = "lovers moth plushie"
-	desc = "An adorable mothperson plushy. It's a loveley bug!"
+	desc = "An adorable mothperson plushy. It's a lovely bug!"
 	icon_state = "moffplush_lovers"
 
 /obj/item/toy/plush/moth/whitefly

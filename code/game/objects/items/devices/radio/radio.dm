@@ -59,6 +59,8 @@
 	var/translate_binary = FALSE
 	///If true, can say/hear on the special CentCom channel.
 	var/independent = FALSE
+	// If true, can broadcast across z-levels but not recieve across z-levels.
+	var/sectorwide = FALSE
 	///Map from name (see communications.dm) to on/off. First entry is current department (:h)
 	var/list/channels = list()
 	var/list/secure_radio_connections
@@ -116,6 +118,8 @@
 /obj/item/radio/AltClick(mob/user)
 	if(headset)
 		. = ..()
+	else if(sectorwide == TRUE) // prevents incompatibility with broadcast cameras
+		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		broadcasting = !broadcasting
 		to_chat(user, "<span class='notice'>You toggle broadcasting [broadcasting ? "on" : "off"].</span>")
@@ -123,6 +127,8 @@
 /obj/item/radio/CtrlShiftClick(mob/user)
 	if(headset)
 		. = ..()
+	else if(sectorwide == TRUE) // prevents incompatibility with broadcast cameras
+		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		listening = !listening
 		to_chat(user, "<span class='notice'>You toggle speaker [listening ? "on" : "off"].</span>")
@@ -274,6 +280,14 @@
 	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
+		signal.map_zones = list(0)  // reaches all Z-levels
+		signal.broadcast()
+		return
+
+	// News Broadcast Radios and Similar, for devices you want to transmit across z-levels but not recieve across.
+	if (sectorwide)
+		signal.data["compression"] = 0
+		signal.transmission_method = TRANSMISSION_SECTOR
 		signal.map_zones = list(0)  // reaches all Z-levels
 		signal.broadcast()
 		return

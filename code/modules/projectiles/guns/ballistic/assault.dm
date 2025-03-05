@@ -66,6 +66,21 @@
 		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 33,
+			"y" = 15,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 22,
+		)
+	)
+
 	spread = 1
 	wield_delay = 0.7 SECONDS
 
