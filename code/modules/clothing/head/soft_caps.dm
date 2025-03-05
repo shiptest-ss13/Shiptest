@@ -164,10 +164,14 @@
 	icon_state = "secsoft"
 	unique_reskin = null
 	dog_fashion = null
+	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/soft/sec/brig_phys
 	name = "security medic cap"
 	icon_state = "secsoft"
+	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/soft/paramedic
 	name = "paramedic cap"
@@ -175,6 +179,8 @@
 	icon_state = "paramedicsoft"
 	unique_reskin = null
 	dog_fashion = null
+	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/soft/cybersun
 	name = "cybersun agent cap"
