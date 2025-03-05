@@ -14,8 +14,7 @@
 
 /obj/structure/guncloset/examine(mob/user)
 	. = ..()
-	if (open)
-		. += span_notice("Alt-click to close it")
+	. += span_notice("Alt-click to [open ? "close" : "open"] it.")
 
 /obj/structure/guncloset/Initialize(mapload)
 	. = ..()
