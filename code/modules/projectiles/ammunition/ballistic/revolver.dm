@@ -28,7 +28,7 @@
 	caliber = ".45-70"
 	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a4570
-	stack_size = 5
+	stack_size = 6
 
 /obj/item/ammo_casing/a4570/match
 	name = ".45-70 match bullet casing"

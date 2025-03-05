@@ -210,9 +210,15 @@
 
 /obj/structure/railing/thick/corner
 	icon_state = "railing_thick_corner"
+	density = FALSE
+	climbable = FALSE
+	buildstackamount = 1
 
 /obj/structure/railing/thin
 	icon_state = "railing_thin"
 
 /obj/structure/railing/thin/corner
 	icon_state = "railing_thin_corner"
+	density = FALSE
+	climbable = FALSE
+	buildstackamount = 1

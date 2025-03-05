@@ -18,11 +18,8 @@
 	name = "9mm SMG Magazine Crate"
 	desc = "Contains a 9mm magazine for the Vector and Saber SMGs, with a capacity of thirty rounds."
 	contains = list(/obj/item/ammo_box/magazine/smgm9mm/empty)
-	cost = 300
+	cost = 250
 	faction = /datum/faction/nt
-	faction_discount = 0
-	faction_locked = TRUE
-
 
 /* Hunter's Pride */
 
@@ -109,6 +106,13 @@
 	name = "Himehabu Magazine Crate"
 	desc = "Contains a .22lr magazine for the Himehabu pistol, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu/empty)
+	cost = 100
+	faction = /datum/faction/syndicate/scarborough_arms
+
+/datum/supply_pack/magazine/hognose_mag
+	name = "Hognose Magazine Crate"
+	desc = "Contains a .22lr magazine for the Hognose underbarrel pistol, with a capacity of eight rounds."
+	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty)
 	cost = 100
 	faction = /datum/faction/syndicate/scarborough_arms
 
@@ -368,15 +372,15 @@
 
 /* etherbor */
 
-/datum/supply_pack/magazine/guncell/kalix
+/datum/supply_pack/magazine/kalixcell
 	name = "Etherbor Cell Crate"
 	desc = "Contains an Etherbor weapon cell, compatible with Etherbor armaments with a slightly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/kalix)
 	cost = 600
 	faction = /datum/faction/pgf
 
-/datum/supply_pack/magazine/guncell/pgf
-	name = "Etherbor Cell Crate"
+/datum/supply_pack/magazine/pgfcell
+	name = "Military-Grade Etherbor Cell Crate"
 	desc = "Contains a military-grade Etherbor weapon cell produced for the PGFMC, compatible with Etherbor armaments with a significantly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/pgf)
 	cost = 1000
