@@ -8,26 +8,14 @@
 /obj/item/grenade/c4/satchel_charge/cave_base/Initialize()
 	. = ..()
 	AddElement(/datum/element/undertile, TRAIT_T_RAY_VISIBLE, INVISIBILITY_OBSERVER, use_anchor = TRUE)
-	wires.attach_assembly_init(/obj/item/assembly/signaler/preset/cave_base)
-
-/obj/item/assembly_holder/premade/cave_base
-	a_left = /obj/item/assembly/signaler/preset/cave_base
-	a_right = /obj/item/assembly/prox_sensor/preset/cave_base
+	wires.attach_assembly_init(/obj/item/assembly/prox_sensor/preset/cave_base)
 
 /obj/item/grenade/c4/cave_base
 
 /obj/item/grenade/c4/cave_base/Initialize()
 	. = ..()
 	AddElement(/datum/element/undertile, TRAIT_T_RAY_VISIBLE, INVISIBILITY_OBSERVER, use_anchor = TRUE)
-	wires.attach_assembly_init(/obj/item/assembly/voice/preset/cave_base)
-
-/obj/item/assembly/signaler/preset/cave_base
-	code = 44
-	frequency = 1451
-
-/obj/item/assembly/voice/preset/cave_base
-	mode = 1
-	recorded = "Goodbye~"
+	wires.attach_assembly_init(/obj/item/assembly/prox_sensor/preset/cave_base)
 
 /obj/item/assembly/prox_sensor/preset/cave_base
 
