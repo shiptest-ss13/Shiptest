@@ -57,7 +57,7 @@
 	var/burst_delay = 5
 
 	/// turret spread.
-	var/spread = 0
+	var/spread = 5
 
 	/// Cooldown until we can shoot again
 	COOLDOWN_DECLARE(fire_cooldown)
@@ -544,6 +544,9 @@
 
 	//Not dangerous if you can't hold anything
 	if(target_carbon.handcuffed || !(target_carbon.mobility_flags & MOBILITY_USE))
+		return FALSE
+
+	if(target_carbon.stat = SOFT_CRIT)
 		return FALSE
 
 	if(target_carbon.is_holding_item_of_type(/obj/item/gun) || target_carbon.is_holding_item_of_type(/obj/item/melee))

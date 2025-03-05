@@ -105,6 +105,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	lethal_projectile = /obj/projectile/bullet/a65clip
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	burst_size = 1
 	scan_range = 14
 	shot_delay = 30
 
@@ -139,9 +140,9 @@
 	name = "Acquittal Turret"
 	desc = "A heavy turret often found mounted as an after-market modification on mercenary vessels."
 	stun_projectile = /obj/projectile/bullet/a308/rubber
-	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	stun_projectile_sound = 'sound/weapons/gun/rifle/f4.ogg'
 	lethal_projectile = /obj/projectile/bullet/a308
-	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	lethal_projectile_sound = 'sound/weapons/gun/rifle/f4.ogg'
 	scan_range = 14
 	shot_delay = 30
 	burst_delay = 3
@@ -189,6 +190,7 @@
 	shot_delay = 20
 	max_integrity = 300
 	integrity_failure = 0.6
+	burst_size = 1
 
 /obj/machinery/porta_turret/ship/ramzi/super_heavy
 	name = "Rebellion Turret"
@@ -201,6 +203,7 @@
 	shot_delay = 30
 	max_integrity = 350
 	integrity_failure = 0.7
+	burst_size = 1
 
 /* Inteq Turrets */
 //slower rof, higher damage + range
