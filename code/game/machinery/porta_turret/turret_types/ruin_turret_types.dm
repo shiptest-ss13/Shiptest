@@ -85,6 +85,7 @@
 	shot_delay = 15
 	burst_size = 4
 	burst_delay = 3
+	spread = 30
 
 /obj/machinery/porta_turret/ruin/frontiersmen/light
 	name = "Pounder Turret"
@@ -96,6 +97,7 @@
 	shot_delay = 15
 	burst_delay = 1
 	burst_size = 10
+	spread = 45
 
 /obj/machinery/porta_turret/ruin/frontiersmen/heavy
 	name = "Mulcher Turret"

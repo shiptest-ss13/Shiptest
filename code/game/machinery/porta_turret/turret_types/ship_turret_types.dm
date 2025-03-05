@@ -347,6 +347,7 @@
 	shot_delay = 15
 	burst_size = 4
 	burst_delay = 3
+	spread = 30
 
 	turret_flags = TURRET_FLAG_HOSTILE
 
@@ -360,6 +361,7 @@
 	shot_delay = 15
 	burst_delay = 1
 	burst_size = 10
+	spread = 45
 
 /obj/machinery/porta_turret/ship/frontiersmen/heavy
 	name = "Mulcher Turret"
