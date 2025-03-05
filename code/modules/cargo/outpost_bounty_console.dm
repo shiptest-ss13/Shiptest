@@ -1,7 +1,7 @@
 
 GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 
-#warn remove, use /datum/export code
+#warn should be properly handled inside a outpost
 /proc/gen_outpost_exports()
 	var/ret_list = list()
 
@@ -10,8 +10,6 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 			continue
 		ret_list += new o_b()
 	return ret_list
-
-#warn remove /obj/machinery/computer/bounty, /obj/machinery/mission_board, /datum/bounty, /datum/computer_file/program/mission_board, associated circuits,
 
 /obj/machinery/outpost_selling_pad
 	name = "bounty redemption pad"
@@ -113,7 +111,7 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 		if("redeem")
 			var/datum/export/redeemed_exp = locate(text2path(params["redeem_type"])) in cached_valid_exports
 			if(redeemed_exp == null || length(cached_valid_exports[redeemed_exp]) == 0)
-				#warn there was an error
+				CRASH("passed a bad export type through ui_act of [src]")
 			else
 				redeem_export(redeemed_exp)
 			update_static_data(usr, ui)
@@ -121,13 +119,11 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 
 /obj/machinery/computer/outpost_export_console/proc/redeem_export(datum/export/exp)
 	if(!(exp in cached_valid_exports))
-		#warn fuck
-		return FALSE
+		CRASH("somehow [exp] is not in cached_valid_exports")
 	var/total_payout = 0
 	for(var/atom/exp_atom as anything in cached_valid_exports[exp])
 		if(!exp.applies_to(exp_atom))
-			#warn fuck
-			return FALSE
+			CRASH("tried to sell [exp_atom] with [exp] but it no longer applies to it")
 		total_payout += exp.sell_object(exp_atom, dry_run = FALSE, apply_elastic = TRUE)
 
 		cached_valid_exports[exp] -= exp_atom

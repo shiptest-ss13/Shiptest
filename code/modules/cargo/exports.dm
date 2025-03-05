@@ -70,10 +70,8 @@
 	var/include_subtypes = TRUE		// Set to FALSE to make the datum apply only to a strict type.
 	var/list/exclude_types = list()	// Types excluded from export
 
-#warn stop these from processing all the time just because they have elasticity -- should wait until something is sold
 /datum/export/New()
 	..()
-	START_PROCESSING(SSprocessing, src)
 	true_cost = cost
 
 	export_types = typecacheof(export_types, FALSE, !include_subtypes)
@@ -146,7 +144,8 @@
 		if(apply_elastic)
 			true_cost *= (1 - elasticity_coeff)**amount
 		SSblackbox.record_feedback("nested tally", "export_sold_cost", 1, list("[O.type]", "[the_cost]"))
-	START_PROCESSING(SSprocessing, src)
+	if(true_cost != cost)
+		START_PROCESSING(SSprocessing, src)
 	return the_cost
 
 /datum/export/proc/calc_total_payout(atoms_list = list())
@@ -160,11 +159,3 @@
 		return "[true_cost]/[cost]"
 	else
 		return "[true_cost]"
-
-GLOBAL_LIST_EMPTY(exports_list)
-#warn this needs to be called
-/proc/setupExports()
-	for(var/subtype in subtypesof(/datum/export))
-		var/datum/export/E = new subtype
-		if(E.export_types && E.export_types.len) // Exports without a type are invalid/base types
-			GLOB.exports_list += E
