@@ -4,6 +4,12 @@
 	unit_name = "defused landmines"
 	export_types = list(/obj/item/mine/pressure/explosive)
 
+/datum/export/anomaly
+	unit_name = "defused anomaly"
+	cost = 3000
+	elasticity_coeff = 0.1
+	export_types = list(/obj/item/assembly/signaler/anomaly)
+
 // Circuit boards, spare parts, etc.
 
 /datum/export/solar/assembly

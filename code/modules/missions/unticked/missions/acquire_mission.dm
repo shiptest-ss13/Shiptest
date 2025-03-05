@@ -66,40 +66,6 @@
 	recall_bound(container)
 
 /*
-	Acquire: True Love
-*/
-
-/datum/mission/acquire/true_love
-	name = "Diamond needed (urgent!!)"
-	weight = 3
-	value = 700
-	duration = 40 MINUTES
-	dur_mod_range = 0.2
-	container_type = /obj/item/storage/box/true_love
-	objective_type = /obj/item/stack/sheet/mineral/diamond
-	num_wanted = 1
-
-/datum/mission/acquire/true_love/New(...)
-	var/datum/species/beloved = pick(subtypesof(/datum/species))
-
-	desc = "I was going to gift \a [initial(objective_type.name)] to my [pick("beautiful", "handsome", "lovely")] \
-			[initial(beloved.name)] [pick("boyfriend", "girlfriend", "lover", "SO", "spouse", "husband", "wife", "boywife")], \
-			but I just lost it! Could you please find me a replacement? I don't have long!"
-	. = ..()
-
-/datum/mission/acquire/true_love/strange_crystal
-	name = "Strange crystal needed (urgent!!!)"
-	value = 4000
-	weight = 1
-	objective_type = /obj/item/strange_crystal
-
-/*
-Acquire: Anomaly
-*/
-
-
-
-/*
 		Acquire: The Creature
 */
 
@@ -149,61 +115,8 @@ Acquire: Anomaly
 	creature_name = "mi-go"
 
 /*
-		Acquire: Salvage
-*/
-
-/datum/mission/acquire/landmine
-	name = "Defuse landmines"
-	desc = "CLIP and Gezena have assigned us to offer a bounty to turn in disarmed ordnance for future ventures. We'll pay you well, but we're not responsible for any accidents."
-	weight = 6
-	value = 1500
-	duration = 80 MINUTES
-	dur_mod_range = 0.4
-	container_type = /obj/item/storage/toolbox/bounty
-	objective_type = /obj/item/mine/pressure/explosive
-	num_wanted = 2
-
-/datum/mission/acquire/bounty
-	name = "Hunt down Dogtags"
-	desc = "CLIP has posted several bounties for wanted members of both the Frontiersman and the Clique. Bring back their tags, we'll reward you well."
-	weight = 4
-	value = 4000
-	duration = 120 MINUTES
-	dur_mod_range = 0.1
-	container_type = /obj/item/storage/toolbox/bounty/hunt
-	objective_type = /obj/item/clothing/neck/dogtag
-	num_wanted = 3
-
-/*
-		Acquire: Fishing
-*/
-
-/datum/mission/acquire/fish
-	name = "Fish needed for my meal"
-	weight = 2
-	duration = 60 MINUTES
-	val_mod_range = 0.2
-	objective_type = /obj/item/fish
-	container_type = /obj/item/storage/fish_case/mission
-
-/datum/mission/acquire/fish/New(...)
-	num_wanted = rand(1,3)
-	desc = "I am a chef in need of [num_wanted] fish for my latest dish. Any fish will do, just make sure they're not filleted!"
-	value = (500*num_wanted)
-	. = ..()
-
-/datum/mission/acquire/fish/alive/atom_effective_count(atom/movable/target)
-	. = ..()
-	if(!.)
-		return
-	var/mob/creature = target
-	if(creature.stat == DEAD)
-		return 0
-
-/*
 		Acquiry mission containers
 */
-
 /obj/structure/closet/mob_capture
 	name = "\improper Lifeform Containment Unit"
 	desc = "A large closet-like container, used to capture hostile lifeforms for retrieval and analysis. The interior is heavily armored, preventing animals from breaking out while inside."
@@ -222,45 +135,3 @@ Acquire: Anomaly
 	if(M.loc == src)
 		return FALSE
 	return ..()
-
-/obj/item/storage/box/true_love
-	name = "gift box"
-	desc = "A cardboard box covered in gift wrap. Looks like it was wrapped in a hurry."
-	icon_state = "giftdeliverypackage3"
-	item_state = "gift"
-	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-	foldable = null
-
-/obj/item/storage/box/true_love/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_items = 1
-
-/obj/item/storage/fish_case/mission
-	name = "fish delivery case"
-	desc = "A specialized container for the delivering of large quatities of fish. Guarantees they stay fresh during delivery!."
-
-/obj/item/storage/fish_case/mission/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 3
-
-/obj/item/storage/box/anomaly
-	name = "anomaly case"
-	desc = "A metallic box made to store anomaly cores. They aren't always the safest to lug around."
-	icon = 'icons/obj/nuke_tools.dmi'
-	icon_state = "core_container_sealed" //it'd be neat if I could figure out how to make this seal but that's a problem for me in 6 months
-	item_state = "tile"
-	lefthand_file = 'icons/mob/inhands/misc/tiles_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/tiles_righthand.dmi'
-	foldable = null
-
-/obj/item/storage/box/anomaly/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_items = 1
