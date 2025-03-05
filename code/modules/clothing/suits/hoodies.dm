@@ -203,7 +203,7 @@
 
 /obj/item/clothing/head/hooded/hood/darkblue
 	name = "dark blue hood"
-	desc = "A dark blue hood for your darkblue hoodie."
+	desc = "A dark blue hood for your dark blue hoodie."
 	icon_state = "hoodiedarkblue"
 	item_state = "hoodiedarkblue"
 
@@ -264,11 +264,15 @@
 	desc = "A hoodie themed to look like a kepori in a Full Body Prosthetic. It has a comfy pocket for keeping your hands warm."
 	icon_state = "hoodie_fbp"
 	item_state = "hoodie_fbp"
+	icon = 'icons/obj/clothing/suits/wintercoat.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/wintercoat.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood/fbp
 
 /obj/item/clothing/head/hooded/hood/fbp
 	name = "\improper FBP kepori hood"
 	desc = "A hood for your FBP hoodie."
+	icon = 'icons/obj/clothing/head/winterhood.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/winterhood.dmi'
 	icon_state = "hoodie_fbp"
 	item_state = "hoodie_fbp"
 
@@ -277,6 +281,8 @@
 	desc = "A hoodie themed to look like K4L1 from the popular webseries RILENA. It has a comfy pocket for keeping your hands warm."
 	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
+	icon = 'icons/obj/clothing/suits/wintercoat.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/wintercoat.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood/rilena
 
 /obj/item/clothing/suit/hooded/hoodie/rilena/equipped(mob/user, slot)
@@ -296,6 +302,8 @@
 /obj/item/clothing/head/hooded/hood/rilena
 	name = "RILENA: LMR K4L1 hood"
 	desc = "A hood for your RILENA themed hoodie."
+	icon = 'icons/obj/clothing/head/winterhood.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/winterhood.dmi'
 	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
 
@@ -304,4 +312,6 @@
 	desc = "A hoodie that is black, with a white hood. It has a comfy pocket for keeping your hands warm."
 	icon_state = "hoodie_bwa"
 	item_state = "hoodie_bwa"
+	icon = 'icons/obj/clothing/suits/wintercoat.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/wintercoat.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood/gray

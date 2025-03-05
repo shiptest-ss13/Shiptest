@@ -88,7 +88,7 @@
 	icon_state = unique_reskin[current_skin]
 
 	if(!icon_state)
-		CRASH("The current skin of [src] does not exist in its list of reskins.")
+		WARNING("The current skin of [src] does not exist in its list of reskins.")
 	if (unique_reskin_changes_base_icon_state)
 		base_icon_state = icon_state
 	if (unique_reskin_changes_inhand)
