@@ -247,23 +247,6 @@ EMPTY_GUN_HELPER(revolver/detective)
 	)
 
 
-	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_RAIL = 1,
-	)
-
-	slot_offsets = list(
-		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 31,
-			"y" = 23,
-		),
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 21,
-			"y" = 18,
-		)
-	)
-
-
 NO_MAG_GUN_HELPER(automatic/pistol/candor)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
