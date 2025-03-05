@@ -1,11 +1,12 @@
 /obj/machinery/porta_turret/ruin
-	circuit = /obj/item/circuitboard/machine/turret
+	circuit = /obj/item/circuitboard/machine/turret/ruin
 	scan_range = 9
 	req_ship_access = FALSE
 	turret_respects_id = FALSE
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
 	turret_flags = TURRET_FLAG_HOSTILE
+	lethal = 1
 
 /* Ramzi Turrets */
 
@@ -18,6 +19,9 @@
 	lethal_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	faction = list(FACTION_SYNDICATE, "turret")
 	max_integrity = 180
+	shot_delay = 16
+	burst_delay = 8
+	burst_size = 2
 	integrity_failure = 0.6
 
 /obj/machinery/porta_turret/ruin/ramzi/light
@@ -28,7 +32,9 @@
 	lethal_projectile = /obj/projectile/bullet/c45
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	scan_range = 8
-	shot_delay = 8
+	shot_delay = 16
+	burst_delay = 6
+	burst_size = 2
 	max_integrity = 140
 	integrity_failure = 0.6
 
@@ -41,6 +47,7 @@
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	scan_range = 12
 	shot_delay = 20
+	burst_size = 1
 	max_integrity = 300
 	integrity_failure = 0.6
 
@@ -75,8 +82,9 @@
 	lethal_projectile_sound = 'sound/weapons/gun/smg/spitter.ogg'
 	shot_delay = 2
 	scan_range = 6
-
-
+	shot_delay = 15
+	burst_size = 4
+	burst_delay = 3
 
 /obj/machinery/porta_turret/ruin/frontiersmen/light
 	name = "Pounder Turret"
@@ -85,7 +93,9 @@
 	stun_projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
 	lethal_projectile = /obj/projectile/bullet/c22lr
 	lethal_projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
-	shot_delay = 1
+	shot_delay = 15
+	burst_delay = 1
+	burst_size = 10
 
 /obj/machinery/porta_turret/ruin/frontiersmen/heavy
 	name = "Mulcher Turret"
@@ -94,5 +104,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/hmg/shredder.ogg'
 	lethal_projectile = /obj/projectile/bullet/slug
 	lethal_projectile_sound = 'sound/weapons/gun/hmg/shredder.ogg'
-	shot_delay = 3
+	shot_delay = 20
 	scan_range = 8
+	burst_size = 6
+	burst_delay = 2
