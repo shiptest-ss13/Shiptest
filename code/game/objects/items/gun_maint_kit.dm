@@ -1,4 +1,4 @@
-/obj/item/gun_fixer
+/obj/item/gun_maint_kit
 	name = "firearm maintenance kit"
 	desc = "A toolkit containing everything needed to scrub the frontier-gunk out of a gun and return it to a mostly-usable state. Chemicals included in the kit are expended in a cleaning cycle, preventing re-use more than a few times."
 	icon = 'icons/obj/improvised.dmi'
@@ -10,11 +10,11 @@
 	/// Number of times this gun fixer can be used
 	var/uses = 5
 
-/obj/item/gun_fixer/examine(mob/user)
+/obj/item/gun_maint_kit/examine(mob/user)
 	. = ..()
 	. += "it can be used [uses] more times."
 
-/obj/item/gun_fixer/afterattack(atom/target, mob/user, proximity)
+/obj/item/gun_maint_kit/afterattack(atom/target, mob/user, proximity)
 	if(!proximity)
 		return
 	if(!uses)
