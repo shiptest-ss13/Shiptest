@@ -31,10 +31,12 @@
 
 /datum/export/material/diamond
 	cost = 125
+	unit_name = "cm3 of diamond"
 	material_id = /datum/material/diamond
 
 /datum/export/material/plasma
 	cost = 25
+	unit_name = "cm3 of plasma"
 	material_id = /datum/material/plasma
 
 /datum/export/material/uranium
