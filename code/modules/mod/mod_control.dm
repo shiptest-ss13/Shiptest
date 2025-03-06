@@ -273,7 +273,7 @@
 		return ..()
 	for(var/obj/item/part as anything in mod_parts)
 		if(part.loc != src)
-			to_chat(user,span_warning(user,"Retract parts first!"))
+			to_chat(user,span_warning("Retract parts first!"))
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, FALSE, SILENCED_SOUND_EXTRARANGE)
 			return FALSE
 
@@ -301,7 +301,7 @@
 			to_chat(user,span_warning("No core installed!!"))
 			return TRUE
 		wrench.play_tool_sound(src, 100)
-		to_chat(user,span_notice(user,"You begin removing the mod core..."))
+		to_chat(user,span_notice("You begin removing the mod core..."))
 		if(!wrench.use_tool(src, user, 3 SECONDS) || !open)
 			return TRUE
 		wrench.play_tool_sound(src, 100)
@@ -322,7 +322,7 @@
 	screwdriver.play_tool_sound(src, 100)
 	if(screwdriver.use_tool(src, user, 1 SECONDS))
 		if(active || activating)
-			to_chat(user,span_warning(user,"Deactivate the suit first!"))
+			to_chat(user,span_warning("Deactivate the suit first!"))
 		screwdriver.play_tool_sound(src, 100)
 		to_chat(user, span_notice("You [open ? "close" : "open"] the cover"))
 		open = !open
