@@ -1710,8 +1710,7 @@
 "wU" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
 	retreat_distance = null;
-	minimum_distance = 1;
-	shoot_point_blank = 1
+	minimum_distance = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -2926,8 +2925,7 @@
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
 	retreat_distance = null;
-	minimum_distance = 1;
-	shoot_point_blank = 1
+	minimum_distance = 1
 	},
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken4"
@@ -3410,7 +3408,6 @@
 	},
 /obj/effect/mob_spawn/human/corpse/srm/montagne,
 /obj/effect/landmark/mission_poi/main{
-	mission_index = 1;
 	already_spawned = 1
 	},
 /turf/open/floor/wood/maple,

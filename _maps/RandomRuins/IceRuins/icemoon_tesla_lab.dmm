@@ -1561,8 +1561,7 @@
 /area/ruin/icemoon/tesla_lab/haymaker)
 "gf" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
-	minimum_distance = 1;
-	shoot_point_blank = 1
+	minimum_distance = 1
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -9268,7 +9267,6 @@
 /area/ruin/icemoon/tesla_lab/lobby)
 "Ln" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
-	shoot_point_blank = 1;
 	minimum_distance = 1
 	},
 /turf/open/floor/plating/asteroid/icerock,
@@ -10067,6 +10065,9 @@
 	name = "Backup Blackbox Recorder";
 	desc = "Some kind of machine backup."
 	},
+/obj/effect/landmark/mission_poi/main/blackbox{
+	mission_index = 2
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/armory)
 "OY" = (
@@ -10173,7 +10174,6 @@
 	dir = 1
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
-	shoot_point_blank = 1;
 	minimum_distance = 1
 	},
 /obj/item/storage/toolbox/mechanical{
@@ -10311,7 +10311,6 @@
 /obj/effect/mapping_helpers/turf/burnt,
 /obj/item/ammo_casing/spent/slug/buck,
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
-	shoot_point_blank = 1;
 	minimum_distance = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -12002,7 +12001,6 @@
 	dir = 10
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
-	shoot_point_blank = 1;
 	minimum_distance = 1
 	},
 /obj/effect/decal/cleanable/blood/footprints{
@@ -12528,9 +12526,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
 "YV" = (
-/obj/machinery/porta_turret/ship/frontiersmen/light/tesla_lab{
-	dir = 2
-	},
+/obj/machinery/porta_turret/ship/frontiersmen/light/tesla_lab,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/tesla_lab/turrets)
 "YY" = (

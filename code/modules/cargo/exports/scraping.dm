@@ -13,9 +13,8 @@
 
 /datum/export/anomaly/New(...)
 	. = ..()
-	desc = "[SSmissions.get_researcher_name()] has requested that a ship [pick(list("procure", "grab", "acquire", "find", "locate"))] \
-	an anomaly core for [pick(list("research", "analysis", "technical development", "closer inspection", "some reason"))]. \
-	They've offered to pay well, so we're relaying this mission to you"
+	desc = "[SSmissions.get_researcher_name()] has requested that we [pick(list("procure", "grab", "acquire", "find", "locate"))] \
+	anomaly cores for [pick(list("research", "analysis", "technical development", "closer inspection", "some reason"))]."
 
 // Circuit boards, spare parts, etc.
 
