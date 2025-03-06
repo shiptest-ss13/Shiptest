@@ -140,21 +140,16 @@
 
 /// Handles weapon condition. Returning TRUE prevents process_chamber from automatically loading a new round
 /obj/item/gun/ballistic/proc/condition_check(from_firing = TRUE)
-	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing || !magazine.ammo_count(FALSE)) //The revolver is one of the most reliable firearms ever designed, as long as you don't need to fire any more than six bullets at something. Which you, of course, do not.
+	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing || !magazine.ammo_count(FALSE)) //The revolver is one of the most reliable firearms ever designed, as long as you don't need to fire any more than six bullets at something. Which, of course, you do not.
 		return FALSE
 	last_jam++
 	if(gun_wear < wear_minor_threshold)
-		//say("Jam roll failed due to high condition, new last_jam of [last_jam]")
 		return FALSE
-	//say("Rolling jam attempt with [gun_wear]% damage")
-	if(gun_wear >= wear_major_threshold ?  prob(JAM_CHANCE_MAJOR) : prob(JAM_CHANCE_MINOR) && last_jam >= JAM_GRACE_MINOR) //PLACEHOLDER //LESS PLACEHOLDER NOW
-		bolt_locked = TRUE //*click*
+	if(gun_wear >= wear_major_threshold ?  prob(JAM_CHANCE_MAJOR) : prob(JAM_CHANCE_MINOR) && last_jam >= JAM_GRACE_MINOR)
+		bolt_locked = TRUE
 		last_jam = 0 // sighs and erases number on whiteboard
 		playsound(src, 'sound/weapons/gun/general/dry_fire_old.ogg', 50, TRUE, -15) //click. uhoh.
-		//say("Jam roll succeeded")
 		return TRUE
-	//say("Jam roll failed, new last_jam of [last_jam]")
-
 
 ///Used to chamber a new round and eject the old one
 /obj/item/gun/ballistic/proc/chamber_round(keep_bullet = FALSE)
