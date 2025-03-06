@@ -11,4 +11,3 @@
 	min_recoil = 0.1
 
 	light_range = 2
-	wear_rate = 0.6 //TTD BALANCE THESE

@@ -11,7 +11,7 @@
 
 #define JAM_CHANCE_MINOR 10
 #define JAM_GRACE_MINOR 4
-#define JAM_CHANCE_MAJOR 20
+#define JAM_CHANCE_MAJOR 30
 
 ///Subtype for any kind of ballistic gun
 ///This has a shitload of vars on it, and I'm sorry for that, but it does make making new subtypes really easy
@@ -26,13 +26,13 @@
 	/// How utterly fucked the gun is. High gun_wear can cause failure to cycle rounds in some guns
 	var/gun_wear = 0
 	/// How much gun_wear is generated when we shoot. Increased when using surplus rounds
-	var/wear_rate = 1
+	var/wear_rate = 1 // 60 to malfunction, 180 to critical
 	/// Number of times we have successfully fired since the last time the the gun has jammed. Low but not abysmal condition will only jam so often.
 	var/last_jam = 0
 	/// Gun will start to jam at this level of wear
-	var/wear_minor_threshold = 80
-	/// Gun will start to jam more at this level of wear. The grace period between jams is also removed, so it's worse than it looks
-	var/wear_major_threshold = 130
+	var/wear_minor_threshold = 60
+	/// Gun will start to jam more at this level of wear. The grace period between jams is also removed for extra fun
+	var/wear_major_threshold = 180
 
 	min_recoil = 0.1
 

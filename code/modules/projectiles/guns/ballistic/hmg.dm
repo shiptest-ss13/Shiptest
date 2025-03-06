@@ -41,7 +41,7 @@
 	/obj/structure/railing,
 	/obj/structure/flippedtable
 	)
-	wear_rate = 0.4 //TTD BALANCE THESE
+	wear_rate = 0.2 //300 to malfunction, 900 to critical
 
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()

@@ -36,7 +36,6 @@
 	recoil_unwielded = 4
 	wield_slowdown = RIFLE_SLOWDOWN
 	wield_delay = 1.2 SECONDS
-	wear_rate = 0.6 //TTD BALANCE THESE
 
 /obj/item/gun/ballistic/rifle/update_overlays()
 	. = ..()

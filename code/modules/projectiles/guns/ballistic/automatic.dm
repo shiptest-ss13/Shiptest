@@ -20,7 +20,6 @@
 	recoil = 0
 	recoil_unwielded = 4
 	wield_slowdown = PDW_SLOWDOWN
-	wear_rate = 0.3 //TTD BALANCE THESE
 
 /obj/item/gun/ballistic/automatic/zip_pistol
 	name = "makeshift pistol"
@@ -34,4 +33,4 @@
 	actions_types = list()
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_LIGHT
-	wear_rate = 0.8 //TTD BALANCE THESE //it's a. piece of shit.
+	wear_rate = 5 //it's a. piece of shit.

@@ -24,7 +24,7 @@
 	gunslinger_spread_bonus = 16
 
 	light_range = 2
-	wear_rate = 0.4 // TTD BALANCE THESE
+	wear_rate = 0.6 // 100 to malfunction, 300 to critical
 
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
@@ -97,6 +97,7 @@
 	icon_state = "skm_pirate"
 	item_state = "skm_pirate"
 	manufacturer = MANUFACTURER_NONE
+	wear_rate = 1.2 // 50 to malfunction, 150 to critical
 
 /obj/item/gun/ballistic/automatic/assault/skm/inteq
 	name = "\improper SKM-44"

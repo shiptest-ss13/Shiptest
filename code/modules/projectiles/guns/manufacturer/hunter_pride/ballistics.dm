@@ -228,7 +228,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	show_magazine_on_sprite = TRUE
-	wear_rate = 0.2 //HP weapons are more resistant to general wear
+	wear_rate = 0.66 //HP weapons are more resistant to wear
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -252,7 +252,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor)
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
 	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
 	item_state = "hp_generic_fresh"
-	wear_rate = 0.1 //factory guns are now OBJECTIVELY better. if they happen to be candors.
+	wear_rate = 0.6 //factory guns are now OBJECTIVELY better. if they happen to be candors.
 
 NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
@@ -1127,7 +1127,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 		)
 	)
 
-	wear_rate = 0.5 //HP weapons are more resistant to wear
+	wear_rate = 0.8 //HP weapons are more resistant to wear
 
 /obj/item/gun/ballistic/rifle/scout
 	name = "HP Scout"

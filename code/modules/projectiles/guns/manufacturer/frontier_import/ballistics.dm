@@ -34,7 +34,8 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
-	wear_rate = 0.4
+
+	wear_rate = 2 // 30 to malfunction, 90 to critical
 
 
 	slot_available = list(
@@ -106,6 +107,8 @@
 	load_empty_sound = 'sound/weapons/gun/smg/spitter_reload.ogg'
 	eject_sound = 'sound/weapons/gun/smg/spitter_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/spitter_unload.ogg'
+
+	wear_rate = 2 // 30 to malfunction, 90 to critical
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
@@ -179,6 +182,8 @@
 	eject_sound = 'sound/weapons/gun/smg/pounder_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/pounder_unload.ogg'
 
+	wear_rate = 1
+
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
@@ -251,6 +256,8 @@
 	load_empty_sound = 'sound/weapons/gun/hmg/shredder_reload.ogg'
 	eject_sound = 'sound/weapons/gun/hmg/shredder_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/hmg/shredder_unload.ogg'
+
+	wear_rate = 3 // 20 to malfunction, 60 to critical
 
 	manufacturer = MANUFACTURER_IMPORT
 	has_bipod = FALSE

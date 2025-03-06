@@ -44,7 +44,7 @@
 	gunslinger_recoil_bonus = -1
 
 	min_recoil = 0.1
-	wear_rate = 0.8 //TTD BALANCE THESE
+	wear_rate = 2 //30 to malfunction, 90 to critical
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
