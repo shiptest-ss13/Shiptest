@@ -426,15 +426,15 @@
 		return
 	if(internal_magazine && !magazine.ammo_count(TRUE))
 		return
-	if(prob(2)) //this gets called I think once per decisecond so we don't really want a high chance here
+	if(prob(1)) //this gets called I think once per decisecond so we don't really want a high chance here
 		if(safety)
-			safety = FALSE
+			toggle_safety(darwin)
 			to_chat(darwin, span_warning("You bump the safety-"))
 			return
 		if(!chambered)
-			to_chat(darwin, span_warning("You accidentally [bolt_wording] [src]-"))
+			to_chat(darwin, span_warning("You accidentally rack the [bolt_wording] of [src]-"))
 			chamber_round()
 			return
-		to_chat(darwin, span_warning("The trigger on [src] gets caught-"))
+		to_chat(darwin, span_boldwarning("The trigger on [src] gets caught-"))
 		unsafe_shot(darwin)
 		return FALSE
