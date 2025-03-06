@@ -201,6 +201,19 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
+"eo" = (
+/obj/structure/sign/directions/supply{
+	dir = 1;
+	pixel_x = 32;
+	pixel_y = -5;
+	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
 "ez" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -4452,7 +4465,7 @@ aG
 aG
 aG
 aG
-aG
+eo
 ap
 aG
 aG
@@ -4494,7 +4507,7 @@ aG
 aG
 NE
 KH
-aG
+ag
 aG
 aG
 NE

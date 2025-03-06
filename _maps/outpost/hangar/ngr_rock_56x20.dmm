@@ -438,6 +438,21 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"Qz" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 4
+	},
+/obj/structure/sign/directions/supply{
+	dir = 1;
+	pixel_x = 32;
+	pixel_y = -5;
+	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
+	},
+/turf/open/floor/hangar/plasteel/dark,
+/area/hangar)
 "Ry" = (
 /obj/machinery/light/floor/hangar,
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -3188,7 +3203,7 @@ Ry
 DU
 DU
 DU
-DU
+Qz
 DU
 DU
 DU
@@ -3229,7 +3244,7 @@ rA
 rA
 rA
 rA
-rA
+YS
 lf
 xL
 sE

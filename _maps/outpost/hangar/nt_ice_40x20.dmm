@@ -1296,6 +1296,19 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"WV" = (
+/obj/structure/sign/directions/supply{
+	dir = 1;
+	pixel_x = 32;
+	pixel_y = -5;
+	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
 "Xz" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/sprayweb{
@@ -3770,7 +3783,7 @@ aO
 aO
 aO
 aO
-aO
+WV
 as
 aO
 aO
@@ -3812,7 +3825,7 @@ aO
 aO
 al
 pv
-aO
+ab
 aO
 aO
 al

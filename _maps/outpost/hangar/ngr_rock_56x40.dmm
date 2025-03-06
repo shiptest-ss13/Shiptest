@@ -30,6 +30,21 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
+"fm" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 4
+	},
+/obj/structure/sign/directions/supply{
+	dir = 1;
+	pixel_x = 32;
+	pixel_y = -5;
+	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
+	},
+/turf/open/floor/hangar/plasteel/dark,
+/area/hangar)
 "fs" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
@@ -4468,7 +4483,7 @@ vR
 Bw
 Bw
 Bw
-Bw
+fm
 Bw
 Bw
 Bw
@@ -4529,7 +4544,7 @@ zD
 zD
 zD
 zD
-zD
+if
 HD
 Pk
 KC

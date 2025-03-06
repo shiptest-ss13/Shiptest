@@ -903,6 +903,19 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"Do" = (
+/obj/structure/sign/directions/supply{
+	dir = 1;
+	pixel_x = 32;
+	pixel_y = -5;
+	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
 "Ec" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/siding/white{
@@ -5147,7 +5160,7 @@ ac
 ac
 ac
 ac
-ac
+Do
 ak
 ac
 ac
@@ -5209,7 +5222,7 @@ aC
 aQ
 ac
 ab
-ac
+aa
 ac
 ac
 ac
@@ -5220,7 +5233,7 @@ ac
 ac
 ac
 ac
-ac
+Do
 Rk
 an
 Px
@@ -5271,7 +5284,7 @@ ac
 ab
 ac
 ac
-aC
+ac
 ac
 ab
 ac
@@ -5282,7 +5295,7 @@ aT
 aT
 as
 aT
-aT
+aa
 Rk
 hI
 cy
@@ -5334,7 +5347,7 @@ ac
 ac
 ak
 ac
-ac
+aC
 aa
 aS
 aS

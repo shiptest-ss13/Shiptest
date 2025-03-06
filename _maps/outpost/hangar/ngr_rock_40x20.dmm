@@ -431,6 +431,21 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/hangar,
 /area/hangar)
+"Mf" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 4
+	},
+/obj/structure/sign/directions/supply{
+	dir = 1;
+	pixel_x = 32;
+	pixel_y = -5;
+	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
+	},
+/turf/open/floor/hangar/plasteel/dark,
+/area/hangar)
 "Op" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -2532,7 +2547,7 @@ tH
 vZ
 vZ
 vZ
-vZ
+Mf
 vZ
 vZ
 vZ
@@ -2573,7 +2588,7 @@ KV
 KV
 KV
 KV
-KV
+JI
 wV
 xD
 Sk
