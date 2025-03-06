@@ -82,12 +82,12 @@
 	if(.)
 		return
 	var/obj/machinery/mission_pad/pad = pad_ref?.resolve()
-	if(!pad)
-		return
 	switch(action)
 		if("recalc")
 			recalc()
 		if("send")
+			if(!pad)
+				return
 			var/datum/mission/ruin/mission = locate(params["mission"])
 			if(!istype(mission, /datum/mission/ruin))
 				return

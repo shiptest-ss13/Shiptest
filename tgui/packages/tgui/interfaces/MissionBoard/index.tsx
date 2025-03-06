@@ -94,25 +94,28 @@ const MissionsList = (props, context) => {
           <LabeledList.Item label="Rewards">{reward}</LabeledList.Item>
           {pad ? (
             <LabeledList.Item label="Turn In">
-              <Button
-                icon={'arrow-up'}
-                tooltip={'Turn in mission'}
-                disabled={!canTurnIn || !pad || !id_inserted}
-                onClick={() => act('send', { mission: ref })}
-              >
-                Turn in
-              </Button>
               <LabeledList.Divider />
               {validItems.map((validItem: string) => (
                 <Box key={validItem}>{validItem}</Box>
               ))}
             </LabeledList.Item>
           ) : null}
-          <Button
-            onClick={() => act('dibs', { mission: ref })}
-          >
-            {'Dibs ' + mission.dibs}
-          </Button>
+          <LabeledList.Item>
+            <Button
+              tooltip={'An informal system of claiming missions.'}
+              onClick={() => act('dibs', { mission: ref })}
+            >
+              {'Dibs ' + mission.dibs}
+            </Button>
+            <Button
+              icon={'arrow-up'}
+              tooltip={'Turn in mission. Requires an ID'}
+              disabled={!canTurnIn || !pad || !id_inserted}
+              onClick={() => act('send', { mission: ref })}
+            >
+              Turn in
+            </Button>
+          </LabeledList.Item>
         </LabeledList>
       </Box>
     );

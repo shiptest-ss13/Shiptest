@@ -62,11 +62,7 @@ const GenericExport = (props, context) => {
           </Box>
         }
       >
-        <ExportList
-          compactMode={false}
-          exportList={redeemExports}
-          redeemable
-        />
+        <ExportList compactMode={false} exportList={redeemExports} redeemable />
       </Section>
       <Section
         title={
@@ -81,6 +77,11 @@ const GenericExport = (props, context) => {
               value={searchText}
               onInput={(e, value) => setSearchText(value)}
               mx={1}
+            />
+            <Button
+              icon={'sync'}
+              tooltip={'Refresh'}
+              onClick={() => act('recalc')}
             />
             <Button
               icon={compactMode ? 'list' : 'info'}
@@ -107,11 +108,7 @@ const GenericExport = (props, context) => {
 };
 
 const ExportList = (props, context) => {
-  const {
-    compactMode,
-    exportList = [],
-    redeemable = false,
-  } = props;
+  const { compactMode, exportList = [], redeemable = false } = props;
   const { act } = useBackend(context);
   const [hoveredItem, setHoveredItem] = useLocalState(
     context,
@@ -126,7 +123,11 @@ const ExportList = (props, context) => {
       const notSameItem = hoveredItem && hoveredItem.name !== item.name;
       let foundOverlap = false;
       item.exportAtoms.forEach((element) => {
-        if (hoveredItem && hoveredItem.exportAtoms && hoveredItem.exportAtoms.includes(element)) {
+        if (
+          hoveredItem &&
+          hoveredItem.exportAtoms &&
+          hoveredItem.exportAtoms.includes(element)
+        ) {
           foundOverlap = true;
         }
       });

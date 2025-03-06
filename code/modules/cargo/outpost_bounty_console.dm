@@ -107,6 +107,8 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 		return
 
 	switch(action)
+		if("recalc")
+			update_static_data(usr, ui)
 		if("redeem")
 			var/datum/export/redeemed_exp = locate(text2path(params["redeem_type"])) in cached_valid_exports
 			if(redeemed_exp == null || length(cached_valid_exports[redeemed_exp]) == 0)

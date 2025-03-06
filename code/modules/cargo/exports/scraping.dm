@@ -1,7 +1,8 @@
 /datum/export/landmine
+	unit_name = "defused landmines"
+	desc = "CLIP and Gezena have assigned us to offer a bounty to turn in disarmed ordnance for future ventures. We'll pay you well, but we're not responsible for any accidents."
 	cost = 750
 	elasticity_coeff = 0.1
-	unit_name = "defused landmines"
 	export_types = list(/obj/item/mine/pressure/explosive)
 
 /datum/export/anomaly
@@ -9,6 +10,12 @@
 	cost = 3000
 	elasticity_coeff = 0.1
 	export_types = list(/obj/item/assembly/signaler/anomaly)
+
+/datum/export/anomaly/New(...)
+	. = ..()
+	desc = "[SSmissions.get_researcher_name()] has requested that a ship [pick(list("procure", "grab", "acquire", "find", "locate"))] \
+	an anomaly core for [pick(list("research", "analysis", "technical development", "closer inspection", "some reason"))]. \
+	They've offered to pay well, so we're relaying this mission to you"
 
 // Circuit boards, spare parts, etc.
 
@@ -37,7 +44,6 @@
 	cost = 15
 	unit_name = "miscellaneous computer part"
 	export_types = list(/obj/item/computer_hardware)
-	include_subtypes = TRUE
 
 /* if only
 /datum/export/stack/cable

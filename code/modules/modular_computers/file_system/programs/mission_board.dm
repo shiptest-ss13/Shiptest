@@ -9,6 +9,17 @@
 	available_on_ntnet = TRUE
 	tgui_id = "NtosMission"
 
+/datum/computer_file/program/mission_board/ui_act(action, list/params, datum/tgui/ui)
+	. = ..()
+	if(.)
+		return
+	switch(action)
+		if("dibs")
+			var/datum/mission/ruin/mission = locate(params["mission"])
+			if(!istype(mission, /datum/mission/ruin))
+				return
+			mission.dibs++
+
 /datum/computer_file/program/mission_board/ui_data(mob/user)
 	var/list/data = get_header_data()
 	data["missions"] = list()
