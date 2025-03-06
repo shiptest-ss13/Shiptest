@@ -38,7 +38,7 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 	if(istype(get_area(src.loc), /area/outpost))
 		var/obj/machinery/outpost_selling_pad/pad = locate() in range(2,src)
 		linked_pad = pad
-	desc += "This one is not linked to any outpost."
+	desc += " This one is not linked to any outpost."
 
 /obj/machinery/computer/outpost_export_console/proc/cache_valid_exports()
 	cached_valid_exports = list()

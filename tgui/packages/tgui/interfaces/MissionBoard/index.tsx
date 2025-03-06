@@ -109,7 +109,6 @@ const MissionsList = (props, context) => {
             </LabeledList.Item>
           ) : null}
           <Button
-            disabled={!pad || !id_inserted}
             onClick={() => act('dibs', { mission: ref })}
           >
             {'Dibs ' + mission.dibs}

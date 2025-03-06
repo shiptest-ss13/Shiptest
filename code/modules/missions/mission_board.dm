@@ -27,7 +27,7 @@
 	if(istype(get_area(src.loc), /area/outpost))
 		var/obj/machinery/mission_pad/pad = locate() in range(2,src)
 		pad_ref = WEAKREF(pad)
-	desc += "This one is not linked to any outpost."
+	desc += " This one is not linked to any outpost."
 
 /obj/machinery/computer/mission/attackby(obj/item/I, mob/living/user, params)
 	if(isidcard(I))
