@@ -1,6 +1,7 @@
 /datum/export/material
 	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of April 2016.
-	recovery_ds = 1 MINUTES
+	desc = "Credit value is equal to 2000 cm3 of material. The standard sheet printing volume."
+	recovery_ds = 0.1 MINUTES
 	var/material_id = null
 	export_types = list(
 		/obj/item/stack/sheet,

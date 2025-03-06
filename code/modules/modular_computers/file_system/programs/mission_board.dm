@@ -2,7 +2,7 @@
 /datum/computer_file/program/mission_board
 	filename = "missionboard"
 	filedesc = "Mission Network Viewer"
-	program_icon_state = "bountyboard"
+	program_icon_state = "bounty"
 	extended_desc = "A multi-platform network for placing requests across the sector, modular software cant handle item transfer so this is only for viewing."
 	requires_ntnet = TRUE
 	size = 10

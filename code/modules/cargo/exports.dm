@@ -81,11 +81,10 @@
 	STOP_PROCESSING(SSprocessing, src)
 	return ..()
 
-/datum/export/process(wait)
-	. = ..()
+/datum/export/process(seconds_per_tick = 2)
 	if(!elasticity_coeff || !recovery_ds)
 		return PROCESS_KILL
-	true_cost *= (1 - elasticity_coeff)**(-1 * wait/(recovery_ds))
+	true_cost *= (1 - elasticity_coeff)**(-1 * seconds_per_tick/(recovery_ds))
 	if(true_cost > cost)
 		true_cost = cost
 		return PROCESS_KILL
@@ -156,6 +155,6 @@
 
 /datum/export/proc/get_payout_text()
 	if(true_cost != cost)
-		return "[round(true_cost)]/[cost]"
+		return "[round(true_cost, cost/1000)]/[cost]"
 	else
 		return "[true_cost]"

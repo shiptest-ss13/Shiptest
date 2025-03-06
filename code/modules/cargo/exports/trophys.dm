@@ -41,13 +41,13 @@
 	)
 
 /datum/export/dogtag_frontiersmen
-	cost = 1000
+	cost = 750
 	elasticity_coeff = 0.05
 	unit_name = "frontiersmen dogtags"
 	export_types = list(/obj/item/clothing/neck/dogtag/frontier)
 
 /datum/export/dogtag_ramzi
-	cost = 1000
+	cost = 750
 	elasticity_coeff = 0.05
 	unit_name = "ramzi dogtags"
 	export_types = list(/obj/item/clothing/neck/dogtag/ramzi)
