@@ -31,7 +31,7 @@
 
 /obj/item/reagent_containers/food/snacks/fishmeat/moonfish
 	name = "moonfish fillet"
-	desc = "A more fillet of moonfish, native to Kalxicis and notable for its unique hue and texture."
+	desc = "A fillet of moonfish, native to Kalxicis and notable for its unique hue and texture."
 	icon_state = "moonfish_fillet"
 
 /obj/item/reagent_containers/food/snacks/fishmeat/gunner_jellyfish

@@ -582,7 +582,7 @@
 
 /obj/item/reagent_containers/food/snacks/fortunecookie
 	name = "fortune cookie"
-	desc = "Originating from Earth, the fortune cookie is a small, sweet pastry contains a written slip of paper with a little platitude written on it."
+	desc = "Originating from Terra, the fortune cookie is a small, sweet pastry contains a written slip of paper with a little platitude written on it."
 	icon_state = "fortune_cookie"
 	trash = /obj/item/paper/paperslip
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)

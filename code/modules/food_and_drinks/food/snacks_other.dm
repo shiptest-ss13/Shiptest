@@ -633,7 +633,7 @@
 
 /obj/item/reagent_containers/food/snacks/butter
 	name = "stick of butter"
-	desc = "A stick of rendered, churned cream. Used for many recipes"
+	desc = "A stick of rendered, churned cream. Used for many recipes."
 	icon_state = "butter"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	filling_color = "#FFD700"
@@ -738,7 +738,7 @@
 
 /obj/item/reagent_containers/food/snacks/canned/peaches
 	name = "canned peaches"
-	desc = "Acan of ripe peaches, suspended in syrup."
+	desc = "A can of ripe peaches, suspended in syrup."
 	icon_state = "peachcan"
 	trash = /obj/item/trash/can/food/peaches
 	list_reagents = list(/datum/reagent/consumable/peachjuice = 20, /datum/reagent/consumable/sugar = 8, /datum/reagent/consumable/nutriment = 2)

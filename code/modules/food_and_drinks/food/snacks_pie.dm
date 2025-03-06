@@ -76,7 +76,7 @@
 /obj/item/reagent_containers/food/snacks/pie/meatpie
 	name = "meat pie"
 	icon_state = "meatpie"
-	desc = "A pie crust, filled with meat and other savory ingredients. A source of culinary debate between which culture on Earth and Kalixcis invented it first still goes on today, with both early species having used ancient recipes to use pie dough to allow cooked meat to be held and eaten thousands of years ago."
+	desc = "A pie crust, filled with meat and other savory ingredients. A source of culinary debate between which culture on Terra and Kalixcis invented it first still goes on today, with both early species having used ancient recipes to use pie dough to allow cooked meat to be held and eaten thousands of years ago."
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("pie" = 1, "meat" = 1)
 	foodtype = GRAIN | MEAT

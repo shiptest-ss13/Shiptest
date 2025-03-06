@@ -128,7 +128,7 @@
 
 /obj/item/reagent_containers/food/snacks/salad/gumbo
 	name = "black eyed gumbo"
-	desc = "A specific form of stew consisting of a strongly flavored, thickened stock along with a celery, bell peppers, and onions. While Gumbo also includes some specific inclusions for tradition, this one seems to lack both."
+	desc = "A specific form of stew consisting of a strongly flavored, thickened stock along with a celery, bell peppers, and onions. While gumbo also includes some specific inclusions for tradition, this one seems to lack both."
 	icon_state = "gumbo"
 	trash = /obj/item/reagent_containers/glass/bowl
 	list_reagents = list(/datum/reagent/consumable/capsaicin = 2, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/nutriment = 5)
