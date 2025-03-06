@@ -108,7 +108,7 @@
 
 /obj/item/reagent_containers/food/snacks/soup/hotchili
 	name = "hot chili"
-	desc = "A spicy stew consisting of chili peppers, beef, tomatoes, and beans. Often prepared and eaten by colonists and other frontiersfolk out of tradition."
+	desc = "A spicy stew consisting of chili peppers, beef, tomatoes, and beans. Often prepared and eaten by colonists and other frontiersfolk out of tradition. This one's incredibly spicy!"
 	icon_state = "hotchili"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -124,13 +124,12 @@
 	tastes = list("tomato" = 1, "mint" = 1)
 	foodtype = VEGETABLES | MEAT
 
-/obj/item/reagent_containers/food/snacks/soup/clownchili
-	name = "shoe leather chili"
-	desc = "A form of chili with the inclusion of a pair of shoes. Odd."
-	icon_state = "clownchili"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/laughter = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/banana = 1)
-	tastes = list("tomato" = 1, "hot peppers" = 2, "shoe leather" = 2)
+/obj/item/reagent_containers/food/snacks/soup/meatchili
+	name = "chili con carne"
+	desc = "A spicy stew consisting of chili peppers, beef, tomatoes, and beans. Often prepared and eaten by colonists and other frontiersfolk out of tradition."
+bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("tomato" = 1, "hot peppers" = 2, "meat" = 2, "spice" = 2)
 	foodtype = VEGETABLES | MEAT
 
 /obj/item/reagent_containers/food/snacks/soup/monkeysdelight
