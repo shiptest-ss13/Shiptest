@@ -373,7 +373,7 @@
 		. += "It does not seem to have a round chambered."
 	if (bolt_locked)
 		. += "The [bolt_wording] is locked back and needs to be released before firing."
-	if(bolt_type != BOLT_TYPE_NO_BOLT)
+	if(bolt_type != BOLT_TYPE_NO_BOLT && wear_rate)
 		. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 		var/conditionstr = span_boldwarning("critical")
 		var/minorhalf = wear_minor_threshold / 2
