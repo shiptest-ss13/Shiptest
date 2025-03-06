@@ -21,6 +21,7 @@
 	light_color = COLOR_BRIGHT_ORANGE
 	var/datum/weakref/pad_ref
 	var/obj/item/card/id/inserted_scan_id
+	COOLDOWN_DECLARE(dibs_cooldown)
 
 /obj/machinery/computer/mission/LateInitialize()
 	. = ..()
@@ -93,10 +94,15 @@
 				return
 			turn_in(mission)
 		if("dibs")
+			if(!COOLDOWN_FINISHED(src, dibs_cooldown))
+				say("The dibs function is on cooldown.")
+				playsound(src, 'sound/machines/buzz-two.ogg', 10, FALSE, FALSE)
+				return
 			var/datum/mission/ruin/mission = locate(params["mission"])
 			if(!istype(mission, /datum/mission/ruin))
 				return
 			mission.dibs++
+			COOLDOWN_START(src, dibs_cooldown, 5 SECONDS)
 		if("eject")
 			id_eject(usr, inserted_scan_id)
 			inserted_scan_id = null

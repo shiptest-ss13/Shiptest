@@ -8,6 +8,7 @@
 	size = 10
 	available_on_ntnet = TRUE
 	tgui_id = "NtosMission"
+	COOLDOWN_DECLARE(dibs_cooldown)
 
 /datum/computer_file/program/mission_board/ui_act(action, list/params, datum/tgui/ui)
 	. = ..()
@@ -15,10 +16,15 @@
 		return
 	switch(action)
 		if("dibs")
+			if(!COOLDOWN_FINISHED(src, dibs_cooldown))
+				computer.say("The dibs function is on cooldown.")
+				playsound(computer, 'sound/machines/buzz-two.ogg', 10, FALSE, FALSE)
+				return
 			var/datum/mission/ruin/mission = locate(params["mission"])
 			if(!istype(mission, /datum/mission/ruin))
 				return
 			mission.dibs++
+			COOLDOWN_START(src, dibs_cooldown, 5 SECONDS)
 
 /datum/computer_file/program/mission_board/ui_data(mob/user)
 	var/list/data = get_header_data()
