@@ -310,6 +310,12 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"kN" = (
+/obj/machinery/porta_turret/cave_base{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/overmap_encounter/planetoid/cave/explored)
 "lw" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -467,12 +473,6 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/grass,
 /area/ruin/whitesands/cave_base)
-"qr" = (
-/obj/machinery/porta_turret/cave_base{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_1/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "qK" = (
 /obj/structure/cable{
 	icon_state = "6-9"
@@ -886,6 +886,9 @@
 /obj/item/clothing/head/helmet/space/fragile,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base)
+"Ev" = (
+/turf/closed/mineral/random/whitesands,
+/area/ruin/whitesands/cave_base)
 "EL" = (
 /turf/open/floor/plating/asteroid/whitesands/grass/dead,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1005,9 +1008,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
-"HF" = (
-/turf/closed/mineral/random/whitesands,
-/area/ruin/whitesands/cave_base)
 "IG" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1793,9 +1793,9 @@ mh
 tX
 tX
 tX
-qr
+kN
 qR
-HF
+Ev
 mh
 FS
 FS
@@ -1860,7 +1860,7 @@ tX
 tX
 tX
 FS
-nw
+CP
 nw
 nw
 nw
@@ -1922,7 +1922,7 @@ tX
 FS
 nw
 nw
-nw
+CP
 nw
 nw
 nw
@@ -2033,7 +2033,7 @@ tX
 FS
 FS
 FS
-qr
+kN
 qR
 FS
 tX
@@ -2388,7 +2388,7 @@ tX
 tX
 FS
 mh
-HF
+Ev
 mh
 mh
 mh
@@ -2809,7 +2809,7 @@ qR
 FS
 FS
 FS
-FS
+qR
 FS
 FS
 FS
@@ -2871,7 +2871,7 @@ FS
 FS
 FS
 FS
-FS
+qR
 FS
 tX
 tX
