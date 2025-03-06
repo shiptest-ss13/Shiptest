@@ -1,5 +1,6 @@
 /datum/export/material
 	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of April 2016.
+	recovery_ds = 1 MINUTES
 	var/material_id = null
 	export_types = list(
 		/obj/item/stack/sheet,

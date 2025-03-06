@@ -156,6 +156,6 @@
 
 /datum/export/proc/get_payout_text()
 	if(true_cost != cost)
-		return "[true_cost]/[cost]"
+		return "[round(true_cost)]/[cost]"
 	else
 		return "[true_cost]"

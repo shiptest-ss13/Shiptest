@@ -106,8 +106,6 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 	if(.)
 		return
 
-	#warn we need a redeem button per-export and an "eject" button (for all export items, maybe, but easier if it's just one)
-	#warn all other behavior should be handled locally by the tgui instance
 	switch(action)
 		if("redeem")
 			var/datum/export/redeemed_exp = locate(text2path(params["redeem_type"])) in cached_valid_exports
