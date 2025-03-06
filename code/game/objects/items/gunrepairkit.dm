@@ -1,7 +1,8 @@
 /obj/item/gun_fixer
 	name = "firearm maintenance kit"
 	desc = "A toolkit containing everything needed to scrub the frontier-gunk out of a gun and return it to a mostly-usable state. Chemicals included in the kit are expended in a cleaning cycle, preventing re-use more than a few times."
-	icon_state = "paint_neutral"
+	icon = 'icons/obj/improvised.dmi'
+	icon_state = "kitsuitcase"
 	w_class = WEIGHT_CLASS_BULKY //no carrying these around, sorry :(
 	custom_materials = list(/datum/material/iron = 500)
 	/// Amount of wear removed from a gun on use
@@ -36,5 +37,3 @@
 	fixable.gun_wear = clamp(fixable.gun_wear - wear_reduction, 0, 300)
 	user.visible_message(span_notice("[user] finishes cleaning [fixable]!"), span_notice("You finish cleaning [fixable], [fixable.gun_wear < wear_reduction ? "and it's in pretty good condition" : "though it would benefit from another cycle"]."))
 	uses--
-	if(!uses)
-		icon_state = "paint_empty"
