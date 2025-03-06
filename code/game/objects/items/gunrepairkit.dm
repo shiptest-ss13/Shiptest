@@ -26,30 +26,10 @@
 	fixable.add_overlay(GLOB.cleaning_bubbles)
 	playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
 	user.visible_message(span_notice("[user] starts to wipe down [fixable] with [src]!"), span_notice("You start to wipe down [fixable] with [src]..."))
-	if(!do_after(user, 20 SECONDS, target = target, extra_checks = CALLBACK(src, PROC_REF(accidents_happen), fixable, user)))
+	if(!do_after(user, 20 SECONDS, target = target, extra_checks = CALLBACK(fixable, TYPE_PROC_REF(/obj/item/gun/ballistic, accidents_happen), user)))
 		user.visible_message(span_notice("[user] finishes cleaning [fixable]!"), span_notice("You clean [fixable]."))
 		return
 	fixable.gun_wear = clamp(fixable.gun_wear - wear_reduction, 0, 300)
 	uses--
 	if(!uses)
 		icon_state = "paint_empty"
-
-/// Remember: you can always trust a loaded gun to go off at least once.
-/obj/item/gun_fixer/proc/accidents_happen(obj/item/gun/ballistic/whoops, mob/darwin)
-	. = TRUE
-	if(!whoops.magazine)
-		return
-	if(whoops.internal_magazine && !whoops.magazine.ammo_count(TRUE))
-		return
-	if(prob(2)) //this gets called I think once per decisecond so we don't really want a high chance here
-		if(whoops.safety)
-			whoops.safety = FALSE
-			to_chat(darwin, span_warning("You bump the safety-"))
-			return
-		if(!whoops.chambered)
-			to_chat(darwin, span_warning("You accidentally [whoops.bolt_wording] [whoops]-"))
-			whoops.chamber_round()
-			return
-		to_chat(darwin, span_warning("The trigger on [whoops] gets caught-"))
-		whoops.unsafe_shot(darwin)
-		return FALSE
