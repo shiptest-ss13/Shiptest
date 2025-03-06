@@ -23,5 +23,6 @@ export type Mission = {
   timeStr: string;
   canTurnIn: Boolean;
   validItems: Array<string>;
+  dibs: number;
 };
 

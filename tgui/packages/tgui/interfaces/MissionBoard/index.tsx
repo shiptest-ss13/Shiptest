@@ -1,11 +1,10 @@
-import { useBackend, useSharedState } from '../../backend';
+import { useBackend } from '../../backend';
 import {
   ProgressBar,
   Section,
   Button,
   LabeledList,
   Box,
-  AnimatedNumber,
 } from '../../components';
 import { Window } from '../../layouts';
 
@@ -61,7 +60,7 @@ const MissionsList = (props, context) => {
         bad: [0, 0.25],
       }}
       value={mission.remaining / mission.duration}
-    ></ProgressBar>
+    />
   );
 
   const missionJSX = missionsArray.map((mission: Mission) => {
@@ -79,37 +78,44 @@ const MissionsList = (props, context) => {
       validItems,
     } = mission;
     return (
-      <LabeledList>
-        <LabeledList.Divider />
-        <LabeledList.Item label="Title">{name}</LabeledList.Item>
-        <LabeledList.Item label="Cords">{location}</LabeledList.Item>
-        <LabeledList.Item label="Author">{author}</LabeledList.Item>
-        <LabeledList.Item label="Faction">{faction}</LabeledList.Item>
-        <LabeledList.Item label="Description">{desc}</LabeledList.Item>
-        <LabeledList.Item label="Time">
-          <Box>Issued: {timeIssued} minutes ago.</Box>
-          {duration && <Box>Duration Left: {missionTimer(mission)}</Box>}
-        </LabeledList.Item>
-        <LabeledList.Item label="Rewards">{reward}</LabeledList.Item>
-        {pad ? (
-          <LabeledList.Item label="Turn In">
-            <Button
-              icon={'arrow-up'}
-              tooltip={'Turn in mission'}
-              disabled={!canTurnIn || !pad || !id_inserted}
-              onClick={() => act('send', { mission: ref })}
-            >
-              Turn in
-            </Button>
-            <LabeledList.Divider />
-            {validItems.map((validItem: string) => (
-              <Box>{validItem}</Box>
-            ))}
+      <Box key={ref}>
+        <LabeledList>
+          <LabeledList.Divider />
+          <LabeledList.Item label="Title">{name}</LabeledList.Item>
+          <LabeledList.Item label="Cords">{location}</LabeledList.Item>
+          <LabeledList.Item label="Author">{author}</LabeledList.Item>
+          <LabeledList.Item label="Faction">{faction}</LabeledList.Item>
+          <LabeledList.Item label="Description">{desc}</LabeledList.Item>
+          <LabeledList.Item label="Time">
+            <Box>Issued: {timeIssued} minutes ago.</Box>
+            {duration && <Box>Duration Left: {missionTimer(mission)}</Box>}
           </LabeledList.Item>
-        ) : null}
-      </LabeledList>
+          <LabeledList.Item label="Rewards">{reward}</LabeledList.Item>
+          {pad ? (
+            <LabeledList.Item label="Turn In">
+              <Button
+                icon={'arrow-up'}
+                tooltip={'Turn in mission'}
+                disabled={!canTurnIn || !pad || !id_inserted}
+                onClick={() => act('send', { mission: ref })}
+              >
+                Turn in
+              </Button>
+              <LabeledList.Divider />
+              {validItems.map((validItem: string) => (
+                <Box key={validItem}>{validItem}</Box>
+              ))}
+            </LabeledList.Item>
+          ) : null}
+          <Button
+            tooltip={'Claim ' + mission.dibs}
+            disabled={!pad || !id_inserted}
+            onClick={() => act('dibs', { mission: ref })}
+          />
+        </LabeledList>
+      </Box>
     );
   });
 
-  return <>{missionJSX}</>;
+  return <Box>{missionJSX}</Box>;
 };

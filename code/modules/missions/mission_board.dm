@@ -92,6 +92,11 @@
 			if(!istype(mission, /datum/mission/ruin))
 				return
 			turn_in(mission)
+		if("dibs")
+			var/datum/mission/ruin/mission = locate(params["mission"])
+			if(!istype(mission, /datum/mission/ruin))
+				return
+			mission.dibs++
 		if("eject")
 			id_eject(usr, inserted_scan_id)
 			inserted_scan_id = null

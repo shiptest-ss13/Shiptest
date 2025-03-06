@@ -164,41 +164,6 @@
 /datum/mission/proc/can_complete()
 	return !failed
 
-/datum/mission/proc/get_tgui_info(list/items_on_pad = list())
-	var/time_remaining = max(dur_timer ? timeleft(dur_timer) : duration, 0)
-
-	var/act_str = ""
-	if(can_complete())
-		act_str = "Turn in"
-
-	var/can_turn_in = FALSE
-	var/list/acceptable_items = list()
-	for(var/atom/movable/item_on_pad in items_on_pad)
-		if(can_turn_in(item_on_pad))
-			acceptable_items += list(item_on_pad.name)
-			can_turn_in = TRUE
-			break
-
-	return list(
-		"ref" = REF(src),
-		"name" = src.name,
-		"author" = src.author,
-		"desc" = src.desc,
-		"reward" = src.reward_flavortext(),
-		"faction" = SSfactions.faction_name(src.faction),
-		"location" = "X[mission_location.x]/Y[mission_location.y]: [mission_location.name]",
-		"x" = mission_location.x,
-		"y" = mission_location.y,
-		"timeIssued" = time2text(station_time() - time_issued, "mm"),
-		"duration" = src.duration,
-		"remaining" = time_remaining,
-		"timeStr" = time2text(time_remaining, "mm:ss"),
-		"progressStr" = get_progress_string(),
-		"actStr" = act_str,
-		"canTurnIn" = can_turn_in,
-		"validItems" = acceptable_items
-	)
-
 /datum/mission/proc/get_progress_string()
 	return "null"
 
