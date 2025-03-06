@@ -7,7 +7,7 @@
 /obj/machinery/computer/cargo
 	name = "outpost communications console"
 	desc = "This console allows the user to communicate with a nearby outpost to \
-			purchase supplies and manage missions. Purchases are delivered near-instantly."
+			purchase supplies and manage missions. Purchases will be delivered to your hangar's delivery zone."
 	icon_screen = "supply_express"
 	circuit = /obj/item/circuitboard/computer/cargo
 	light_color = COLOR_BRIGHT_ORANGE
@@ -91,7 +91,7 @@
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
 	data["supplies"] = list()
-	message = "Sales are near-instantaneous - please choose carefully."
+	message = "Purchases will be delivered to your hangar's delivery zone."
 	if(SSshuttle.supplyBlocked)
 		message = blockade_warning
 	data["message"] = message
