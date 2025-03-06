@@ -76,6 +76,7 @@ const MissionsList = (props, context) => {
       duration,
       canTurnIn,
       validItems,
+      dibs,
     } = mission;
     return (
       <Box key={ref}>
@@ -108,10 +109,11 @@ const MissionsList = (props, context) => {
             </LabeledList.Item>
           ) : null}
           <Button
-            tooltip={'Claim ' + mission.dibs}
             disabled={!pad || !id_inserted}
             onClick={() => act('dibs', { mission: ref })}
-          />
+          >
+            {'Dibs ' + mission.dibs}
+          </Button>
         </LabeledList>
       </Box>
     );
