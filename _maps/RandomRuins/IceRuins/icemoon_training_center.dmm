@@ -2756,7 +2756,9 @@
 /area/ruin/icemoon/training_facility/office_2)
 "oj" = (
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
-/obj/mecha/combat/gygax/dark/ramzi,
+/obj/mecha/combat/gygax/dark/ramzi{
+	name = "\improper 515 EX 'Hammer Down'"
+	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/training_facility/course)
 "ok" = (
