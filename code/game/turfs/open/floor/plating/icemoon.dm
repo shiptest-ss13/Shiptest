@@ -110,6 +110,13 @@
 	initial_gas_mix = FROZEN_ATMOS
 	planetary_atmos = FALSE
 
+/turf/open/floor/plating/asteroid/snow/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+
+/turf/open/floor/plating/asteroid/snow/safe/lit
+	light_range = 2
+	light_power = 0.6
+
 /turf/open/floor/plating/asteroid/snow/under
 	icon_state = "snow_dug"
 	planetary_atmos = TRUE
