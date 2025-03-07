@@ -39,6 +39,8 @@
 	if(current_skin)
 		if(LAZYLEN(unique_reskin))
 			update_item_skin()
+		else
+			stack_trace("[src] is initilized with a current skin while having an empty reskin list.")
 
 	if(!check_setup_reskinning())
 		return
@@ -85,6 +87,8 @@
 /obj/item/proc/update_item_skin()
 	icon_state = unique_reskin[current_skin]
 
+	if(!icon_state)
+		WARNING("The current skin of [src] does not exist in its list of reskins.")
 	if (unique_reskin_changes_base_icon_state)
 		base_icon_state = icon_state
 	if (unique_reskin_changes_inhand)

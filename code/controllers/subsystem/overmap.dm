@@ -15,10 +15,10 @@ SUBSYSTEM_DEF(overmap)
 	///List of spawned outposts. The default spawn location is the first index.
 	var/list/outposts
 
-	///List of all events
-	var/list/events
 	///List of dynamic encounters, just planets rn.
 	var/list/dynamic_encounters
+	///List of all events
+	var/list/events
 
 	///Map of tiles at each radius (represented by index) around the sun
 	var/list/list/radius_positions
@@ -50,6 +50,7 @@ SUBSYSTEM_DEF(overmap)
 	overmap_objects = list()
 	controlled_ships = list()
 	outposts = list()
+	dynamic_datums = list()
 	events = list()
 	dynamic_encounters = list()
 

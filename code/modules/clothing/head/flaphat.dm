@@ -3,6 +3,8 @@
 	name = "Betzu-il cap"
 	desc = "A common cap popular among Kalixcian travellers. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
 	icon_state = "flapwhite"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 	cuttable = TRUE
 	supports_variations = VOX_VARIATION
 	clothamnt = 2
