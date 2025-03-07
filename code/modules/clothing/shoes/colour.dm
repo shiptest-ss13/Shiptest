@@ -28,22 +28,8 @@
 						"brown shoes" = "brown",
 						"light brown shoes" = "lightbrown"
 						)
-	var/shoes_icon
-
-/obj/item/clothing/shoes/sneakers/Initialize()
-	. = ..()
-	shoes_icon = icon_state
-
-/obj/item/clothing/shoes/sneakers/examine(mob/user)
-	. = ..()
-	if(unique_reskin && !current_skin)
-		. += "You can <b>Alt-Click</b> [src] to apply a new skin to it."
-
-/obj/item/clothing/shoes/sneakers/reskin_obj(mob/M, change_name)
-	. = ..()
-	item_state = icon_state
-	shoes_icon = icon_state
-	return
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/shoes/sneakers/white
 	name = "white shoes"
