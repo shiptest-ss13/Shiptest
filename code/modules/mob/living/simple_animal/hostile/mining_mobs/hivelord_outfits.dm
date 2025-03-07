@@ -95,10 +95,7 @@
 			/obj/item/clothing/neck/scarf/red = 1,
 			/obj/item/clothing/neck/scarf/green = 1,
 			/obj/item/clothing/neck/scarf/darkblue = 1,
-			/obj/item/clothing/neck/shemagh = 1,
-			/obj/item/clothing/neck/stripedredscarf = 1,
-			/obj/item/clothing/neck/stripedgreenscarf = 1,
-			/obj/item/clothing/neck/stripedbluescarf = 1
+			/obj/item/clothing/neck/shemagh = 1
 			)
 		)
 	ears = pick(/obj/item/radio/headset, /obj/item/radio/headset/alt)
