@@ -89,30 +89,38 @@ export const OvermapInspect = (props, context) => {
                 ))}
               </LabeledList.Item>
             )}
-            <LabeledList.Item label="Active Missions">
-              {data.active_missions?.map((mission) => (
-                <Box key={mission.ref}>
-                  {mission.name}{' '}
-                  <Button
-                    icon="info "
-                    onClick={() => act('inspect_mission', { ref: mission.ref })}
-                  />
-                </Box>
-              ))}
-            </LabeledList.Item>
-            <LabeledList.Item label="Inactive Missions">
-              {data.inactive_missions?.map((mission) => (
-                <Box key={mission.ref}>
-                  {mission.name}{' '}
-                  {admin_rights ? (
-                    <Button
-                      icon="plus"
-                      onClick={() => act('load_mission', { ref: mission.ref })}
-                    />
-                  ) : null}
-                </Box>
-              ))}
-            </LabeledList.Item>
+            {admin_rights ? (
+              <Box>
+                <LabeledList.Item label="Active Missions">
+                  {data.active_missions?.map((mission) => (
+                    <Box key={mission.ref}>
+                      {mission.name}{' '}
+                      <Button
+                        icon="info "
+                        onClick={() =>
+                          act('inspect_mission', { ref: mission.ref })
+                        }
+                      />
+                    </Box>
+                  ))}
+                </LabeledList.Item>
+                <LabeledList.Item label="Inactive Missions">
+                  {data.inactive_missions?.map((mission) => (
+                    <Box key={mission.ref}>
+                      {mission.name}{' '}
+                      {admin_rights ? (
+                        <Button
+                          icon="plus"
+                          onClick={() =>
+                            act('load_mission', { ref: mission.ref })
+                          }
+                        />
+                      ) : null}
+                    </Box>
+                  ))}
+                </LabeledList.Item>
+              </Box>
+            ) : null}
           </LabeledList>
         </Section>
       </Window.Content>
