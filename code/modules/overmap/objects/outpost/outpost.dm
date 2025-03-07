@@ -69,7 +69,9 @@
 	// doing this after the main level is loaded means that the outpost areas are all renamed for us
 	Rename(gen_outpost_name())
 
+	fill_missions()
 	populate_cargo()
+	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
 	// cleanup our data structures. behavior here is currently relatively restrained; may be made more expansive in the future
@@ -139,6 +141,13 @@
 			if(4)
 				person_name = vox_name()
 	return person_name
+
+/datum/overmap/outpost/proc/fill_missions()
+	max_missions = 10 + (SSovermap.controlled_ships.len * 5)
+	while(LAZYLEN(missions) < max_missions)
+		var/mission_type = SSmissions.get_weighted_mission_type()
+		var/datum/mission/basic/M = new mission_type(src)
+		LAZYADD(missions, M)
 
 /datum/overmap/outpost/proc/populate_cargo()
 	ordernum = rand(1, 99000)

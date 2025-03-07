@@ -1,14 +1,8 @@
-/datum/mission
+/datum/mission/basic
 	/// The outpost that issued this mission. Passed in New().
 	var/datum/overmap/outpost/source_outpost
-	/// The ship that accepted this mission. Passed in accept().
-	var/datum/overmap/ship/controlled/servant
 
-	var/accepted = FALSE
-	var/failed = FALSE
-	var/dur_timer
-
-/datum/mission/New(_outpost)
+/datum/mission/basic/New(_outpost)
 	var/old_dur = duration
 	var/val_mod = value * val_mod_range
 	var/dur_mod = duration * dur_mod_range
@@ -20,7 +14,7 @@
 	RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	return ..()
 
-/datum/mission/proc/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
+/datum/mission/basic/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "accepted"))
 	accepted = TRUE
 	servant = acceptor
@@ -29,10 +23,10 @@
 	RegisterSignal(servant, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 
-/datum/mission/proc/on_vital_delete()
+/datum/mission/basic/on_vital_delete()
 	qdel(src)
 
-/datum/mission/Destroy()
+/datum/mission/basic/Destroy()
 	UnregisterSignal(source_outpost, COMSIG_PARENT_QDELETING)
 	LAZYREMOVE(source_outpost.missions, src)
 	source_outpost = null
@@ -45,7 +39,7 @@
 	deltimer(dur_timer)
 	return ..()
 
-/datum/mission/proc/turn_in()
+/datum/mission/basic/turn_in()
 	if(QDELING(src))
 		return
 	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "succeeded"))
@@ -53,16 +47,16 @@
 	servant.ship_account.adjust_money(value, CREDIT_LOG_MISSION)
 	qdel(src)
 
-/datum/mission/proc/give_up()
+/datum/mission/basic/proc/give_up()
 	if(QDELING(src))
 		return
 	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "abandoned"))
 	qdel(src)
 
-/datum/mission/proc/can_complete()
+/datum/mission/basic/can_complete()
 	return !failed
 
-/datum/mission/proc/get_tgui_info()
+/datum/mission/basic/proc/get_tgui_info()
 	var/time_remaining = max(dur_timer ? timeleft(dur_timer) : duration, 0)
 
 	var/act_str = "Give up"
@@ -83,7 +77,7 @@
 		"actStr" = act_str
 	)
 
-/datum/mission/proc/get_progress_string()
+/datum/mission/basic/get_progress_string()
 	return "null"
 
 /**
@@ -100,7 +94,7 @@
  * * fail_on_delete - Bool; whether the mission should fail when the bound atom is qdeleted. Default TRUE.
  * * sparks - Whether to spawn sparks after spawning the bound atom. Default TRUE.
  */
-/datum/mission/proc/spawn_bound(atom/movable/a_type, a_loc, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
+/datum/mission/basic/spawn_bound(atom/movable/a_type, a_loc, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
 	if(!ispath(a_type, /atom/movable))
 		CRASH("[src] attempted to spawn bound atom of invalid type [a_type]!")
 	var/atom/movable/bound = new a_type(a_loc)
@@ -118,14 +112,14 @@
  * * bound - The bound atom to recall.
  * * sparks - Whether to spawn sparks on the turf the bound atom is located on. Default TRUE.
  */
-/datum/mission/proc/recall_bound(atom/movable/bound, sparks = TRUE)
+/datum/mission/basic/recall_bound(atom/movable/bound, sparks = TRUE)
 	if(sparks)
 		do_sparks(3, FALSE, get_turf(bound))
 	remove_bound(bound)
 	qdel(bound)
 
 /// Signal handler for the qdeletion of bound atoms.
-/datum/mission/proc/bound_deleted(atom/movable/bound, force)
+/datum/mission/basic/bound_deleted(atom/movable/bound, force)
 	SIGNAL_HANDLER
 	var/list/bound_info = bound_atoms[bound]
 	// first value in bound_info is whether to fail on item destruction
@@ -143,7 +137,7 @@
  * Arguments:
  * * bound - The bound atom to remove.
  */
-/datum/mission/proc/remove_bound(atom/movable/bound)
+/datum/mission/basic/remove_bound(atom/movable/bound)
 	UnregisterSignal(bound, COMSIG_PARENT_QDELETING)
 	// delete the callback
 	qdel(LAZYACCESSASSOC(bound_atoms, bound, 2))

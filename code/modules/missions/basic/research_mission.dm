@@ -1,4 +1,4 @@
-/datum/mission/research
+/datum/mission/basic/research
 	name = "Electrical storm research mission"
 	desc = " require data on the behavior of electrical storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms.\
@@ -13,41 +13,41 @@
 	var/num_wanted = 5
 	var/researcher_name
 
-/datum/mission/research/New(...)
-	researcher_name = get_researcher_name()
+/datum/mission/basic/research/New(...)
+	researcher_name = SSmissions.get_researcher_name()
 	num_wanted = rand(num_wanted - 1, num_wanted + 1)
 	value += num_wanted * 150
 	desc = researcher_name + desc
 	return ..()
 
-/datum/mission/research/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
+/datum/mission/basic/research/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	scanner = spawn_bound(/obj/machinery/mission_scanner, accept_loc, VARSET_CALLBACK(src, scanner, null))
 	RegisterSignal(servant, COMSIG_OVERMAP_MOVED, PROC_REF(ship_moved))
 
-/datum/mission/research/Destroy()
+/datum/mission/basic/research/Destroy()
 	scanner = null
 	return ..()
 
-/datum/mission/research/turn_in()
+/datum/mission/basic/research/turn_in()
 	recall_bound(scanner)
 	return ..()
 
-/datum/mission/research/give_up()
+/datum/mission/basic/research/give_up()
 	recall_bound(scanner)
 	return ..()
 
-/datum/mission/research/get_progress_string()
+/datum/mission/basic/research/get_progress_string()
 	return "[num_current]/[num_wanted]"
 
-/datum/mission/research/can_complete()
+/datum/mission/basic/research/can_complete()
 	. = ..()
 	if(!.)
 		return
 	var/obj/docking_port/mobile/scanner_port = SSshuttle.get_containing_shuttle(scanner)
 	return . && (num_current >= num_wanted) && (scanner_port?.current_ship == servant)
 
-/datum/mission/research/proc/ship_moved(datum/overmap/ship/controlled/ship, old_x, old_y)
+/datum/mission/basic/research/proc/ship_moved(datum/overmap/ship/controlled/ship, old_x, old_y)
 	SIGNAL_HANDLER
 
 	var/datum/overmap/over_obj
@@ -61,7 +61,7 @@
 	num_current++
 
 /* commented out until ion storms aren't literal torture
-/datum/mission/research/ion
+/datum/mission/basic/research/ion
 	name = "Ion storm research mission"
 	desc = "We require data on the behavior of ion storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms. \
@@ -70,7 +70,7 @@
 	objective_type = /datum/overmap/event/emp
 */
 
-/datum/mission/research/meteor
+/datum/mission/basic/research/meteor
 	name = "Asteroid field research mission"
 	desc = " require data on the behavior of asteroid fields in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
@@ -79,7 +79,7 @@
 	weight = 4
 	objective_type = /datum/overmap/event/meteor
 
-/datum/mission/research/carp
+/datum/mission/basic/research/carp
 	name = "Carp migration research mission"
 	desc = " require data on the migration patterns of space carp for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
@@ -89,7 +89,7 @@
 	num_wanted = 3
 	objective_type = /datum/overmap/event/meteor/carp
 
-/datum/mission/research/dust
+/datum/mission/basic/research/dust
 	name = "dust research mission"
 	desc = " require data on the density of space dust for updated navcharts. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \

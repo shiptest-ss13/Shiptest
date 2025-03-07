@@ -1,4 +1,4 @@
-/datum/mission/acquire
+/datum/mission/basic/acquire
 	desc = "Get me some things."
 
 	/// The type of container to be spawned when the mission is accepted.
@@ -11,34 +11,34 @@
 	var/allow_subtypes = TRUE
 	var/count_stacks = TRUE
 
-/datum/mission/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
+/datum/mission/basic/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	container = spawn_bound(container_type, accept_loc, VARSET_CALLBACK(src, container, null))
 	container.name += " ([capitalize(objective_type.name)])"
 
-/datum/mission/acquire/Destroy()
+/datum/mission/basic/acquire/Destroy()
 	container = null
 	return ..()
 
-/datum/mission/acquire/can_complete()
+/datum/mission/basic/acquire/can_complete()
 	. = ..()
 	if(!.)
 		return
 	var/obj/docking_port/mobile/cont_port = SSshuttle.get_containing_shuttle(container)
 	return . && (current_num() >= num_wanted) && (cont_port?.current_ship == servant)
 
-/datum/mission/acquire/get_progress_string()
+/datum/mission/basic/acquire/get_progress_string()
 	return "[current_num()]/[num_wanted]"
 
-/datum/mission/acquire/turn_in()
+/datum/mission/basic/acquire/turn_in()
 	del_container()
 	return ..()
 
-/datum/mission/acquire/give_up()
+/datum/mission/basic/acquire/give_up()
 	del_container()
 	return ..()
 
-/datum/mission/acquire/proc/current_num()
+/datum/mission/basic/acquire/proc/current_num()
 	if(!container)
 		return 0
 	var/num = 0
@@ -48,7 +48,7 @@
 			return num
 	return num
 
-/datum/mission/acquire/proc/atom_effective_count(atom/movable/target)
+/datum/mission/basic/acquire/proc/atom_effective_count(atom/movable/target)
 	if(allow_subtypes ? !istype(target, objective_type) : target.type != objective_type)
 		return 0
 	if(count_stacks && istype(target, /obj/item/stack))
@@ -56,7 +56,7 @@
 		return target_stack.amount
 	return 1
 
-/datum/mission/acquire/proc/del_container()
+/datum/mission/basic/acquire/proc/del_container()
 	var/turf/cont_loc = get_turf(container)
 	for(var/atom/movable/target in container.contents)
 		if(atom_effective_count(target))
@@ -69,7 +69,7 @@
 		Acquire: The Creature
 */
 
-/datum/mission/acquire/creature
+/datum/mission/basic/acquire/creature
 	name = ""
 	desc = ""
 	value = 1500
@@ -81,7 +81,7 @@
 	count_stacks = FALSE
 	var/creature_name = "goliath"
 
-/datum/mission/acquire/creature/New(...)
+/datum/mission/basic/acquire/creature/New(...)
 	if(!name)
 		name = "Capture a [creature_name]"
 	if(!desc)
@@ -89,7 +89,7 @@
 				Lifeform Containment Unit and return it to me and you will be paid handsomely."
 	. = ..()
 
-/datum/mission/acquire/creature/atom_effective_count(atom/movable/target)
+/datum/mission/basic/acquire/creature/atom_effective_count(atom/movable/target)
 	. = ..()
 	if(!.)
 		return
@@ -97,18 +97,18 @@
 	if(creature.stat == DEAD)
 		return 0
 
-/datum/mission/acquire/creature/legion
+/datum/mission/basic/acquire/creature/legion
 	value = 1300
 	objective_type = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 	creature_name = "legion"
 
-/datum/mission/acquire/creature/ice_whelp
+/datum/mission/basic/acquire/creature/ice_whelp
 	value = 1700
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
 	creature_name = "ice whelp"
 
-/datum/mission/acquire/creature/migo
+/datum/mission/basic/acquire/creature/migo
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
