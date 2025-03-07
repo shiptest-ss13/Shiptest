@@ -12,48 +12,39 @@
 	supports_variations = VOX_VARIATION
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	togglename = "zipper"
-	allowed = list(	/obj/item/flashlight,
-					/obj/item/tank/internals/emergency_oxygen,
-					/obj/item/tank/internals/plasmaman,
-					/obj/item/toy,
-					/obj/item/storage/fancy/cigarettes,
-					/obj/item/lighter,
-					/obj/item/radio,
-					/obj/item/storage/pill_bottle
-					)
-	unique_reskin = list("white windbreaker" = "jacketwhite",
-						"grey windbreaker" = "jacketgrey",
-						"black windbreaker" = "jacketblack",
-						"red windbreaker" = "jacketred",
-						"maroon windbreaker" = "jacketmaroon",
-						"orange windbreaker" = "jacketorange",
-						"yellow windbreaker" = "jacketyellow",
-						"green windbreaker" = "jacketgreen",
-						"dark green windbreaker" = "jacketdarkgreen",
-						"teal windbreaker" = "jacketteal",
-						"blue windbreaker" = "jacketblue",
-						"dark blue windbreaker" = "jacketdarkblue",
-						"purple windbreaker" = "jacketpurple",
-						"pink windbreaker" = "jacketpink",
-						"brown windbreaker" = "jacketbrown",
-						"light brown windbreaker" = "jacketlightbrown"
-						)
-	var/jacket_icon
+	allowed = list(
+		/obj/item/flashlight,
+		/obj/item/tank/internals/emergency_oxygen,
+		/obj/item/tank/internals/plasmaman,
+		/obj/item/toy,
+		/obj/item/storage/fancy/cigarettes,
+		/obj/item/lighter,
+		/obj/item/radio,
+		/obj/item/storage/pill_bottle
+	)
+	unique_reskin = list(
+		"white windbreaker" = "jacketwhite",
+		"grey windbreaker" = "jacketgrey",
+		"black windbreaker" = "jacketblack",
+		"red windbreaker" = "jacketred",
+		"maroon windbreaker" = "jacketmaroon",
+		"orange windbreaker" = "jacketorange",
+		"yellow windbreaker" = "jacketyellow",
+		"green windbreaker" = "jacketgreen",
+		"dark green windbreaker" = "jacketdarkgreen",
+		"teal windbreaker" = "jacketteal",
+		"blue windbreaker" = "jacketblue",
+		"dark blue windbreaker" = "jacketdarkblue",
+		"purple windbreaker" = "jacketpurple",
+		"pink windbreaker" = "jacketpink",
+		"brown windbreaker" = "jacketbrown",
+		"light brown windbreaker" = "jacketlightbrown"
+	)
+	unique_reskin_changes_inhand = TRUE
 
 /obj/item/clothing/suit/toggle/windbreaker/Initialize()
 	. = ..()
-	jacket_icon = icon_state
-
-/obj/item/clothing/suit/toggle/windbreaker/examine(mob/user)
-	. = ..()
-	if(unique_reskin && !current_skin)
-		. += "You can <b>Alt-Click</b> [src] to apply a new skin to it."
-
-/obj/item/clothing/suit/toggle/windbreaker/reskin_obj(mob/M, change_name)
-	. = ..()
-	item_state = icon_state
-	jacket_icon = icon_state
-	return
+	base_icon_state = icon_state
 
 /obj/item/clothing/suit/toggle/windbreaker/suit_toggle()
 	set src in usr
@@ -63,10 +54,10 @@
 
 	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
 	if(src.suittoggled)
-		src.icon_state = "[jacket_icon]"
+		src.icon_state = "[base_icon_state]"
 		src.suittoggled = FALSE
 	else if(!src.suittoggled)
-		src.icon_state = "[jacket_icon]_t"
+		src.icon_state = "[base_icon_state]_t"
 		src.suittoggled = TRUE
 	usr.update_inv_wear_suit()
 	for(var/X in actions)
@@ -74,97 +65,49 @@
 		A.UpdateButtonIcon()
 
 /obj/item/clothing/suit/toggle/windbreaker/white
-	name = "white windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is white."
-	icon_state = "jacketwhite"
-	current_skin = "jacketwhite"
+	current_skin = "white windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/grey
-	name = "grey windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is grey."
-	icon_state = "jacketgrey"
-	current_skin = "jacketgrey"
+	current_skin = "grey windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/black
-	name = "black windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is black."
-	icon_state = "jacketblack"
-	current_skin = "jacketblack"
+	current_skin = "black windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/red
-	name = "red windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is red."
-	icon_state = "jacketred"
-	current_skin = "jacketred"
+	current_skin = "red windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/maroon
-	name = "maroon windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is maroon."
-	icon_state = "jacketmaroon"
-	current_skin = "jacketmaroon"
+	current_skin = "maroon windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/orange
-	name = "orange windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is orange."
-	icon_state = "jacketorange"
-	current_skin = "jacketorange"
+	current_skin = "orange windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/yellow
-	name = "yellow windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is yellow."
-	icon_state = "jacketyellow"
-	current_skin = "jacketyellow"
+	current_skin = "yellow windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/green
-	name = "green windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is green."
-	icon_state = "jacketgreen"
-	current_skin = "jacketgreen"
+	current_skin = "green windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/darkgreen
-	name = "dark green windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is dark green."
-	icon_state = "jacketdarkgreen"
-	current_skin = "jacketdarkgreen"
+	current_skin = "dark green windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/teal
-	name = "teal windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is teal."
-	icon_state = "jacketteal"
-	current_skin = "jacketteal"
+	current_skin = "teal windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/blue
-	name = "blue windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is blue."
-	icon_state = "jacketblue"
-	current_skin = "jacketblue"
+	current_skin = "blue windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/darkblue
-	name = "dark blue windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is dark blue."
-	icon_state = "jacketdarkblue"
-	current_skin = "jacketdarkblue"
+	current_skin = "dark blue windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/purple
-	name = "purple windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is purple."
-	icon_state = "jacketpurple"
-	current_skin = "jacketpurple"
+	current_skin = "purple windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/pink
-	name = "pink windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is pink."
-	icon_state = "jacketpink"
-	current_skin = "jacketpink"
+	current_skin = "pink windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/brown
-	name = "brown windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is brown."
-	icon_state = "jacketbrown"
-	current_skin = "jacketbrown"
+	current_skin = "brown windbreaker"
 
 /obj/item/clothing/suit/toggle/windbreaker/lightbrown
-	name = "light brown windbreaker"
-	desc = "Sometimes called a windcheater, this is a simple jacket made of synthetic materials. Good for keeping the chilly wind off of you. This one is light brown."
-	icon_state = "jacketlightbrown"
-	current_skin = "jacketlightbrown"
+	current_skin = "light brown windbreaker"

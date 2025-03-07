@@ -1,7 +1,7 @@
 /obj/item/attachment/long_scope
 	name = "long range scope"
 	desc = "An attachment for the scope of a weapon. Allows one to aim down the sight."
-	icon_state = "silencer"
+	icon_state = "scope"
 
 	slot = ATTACHMENT_SLOT_SCOPE
 	pixel_shift_x = 1

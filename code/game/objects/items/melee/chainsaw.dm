@@ -10,6 +10,7 @@
 	flags_1 = CONDUCT_1
 	force = 13
 	var/active_force = 24
+	demolition_mod = 1.5
 	w_class = WEIGHT_CLASS_HUGE
 	throwforce = 13
 	throw_speed = 2

@@ -10,6 +10,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	faction = list(ROLE_DEATHSQUAD)
 	check_friendly_fire = TRUE
+	loot = list()
 	dodging = TRUE
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_private
 	armor_base = /obj/item/clothing/suit/armor/nanotrasen

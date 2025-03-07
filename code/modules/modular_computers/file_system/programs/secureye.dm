@@ -7,7 +7,6 @@
 	program_icon_state = "generic"
 	extended_desc = "This program allows access to standard security camera networks."
 	requires_ntnet = TRUE
-	transfer_access = ACCESS_SECURITY
 	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP | PROGRAM_TABLET
 	size = 5
 	tgui_id = "NtosSecurEye"
@@ -110,12 +109,6 @@
 			))
 	return data
 
-//This is the only way to refresh the UI, from what I've found
-/datum/computer_file/program/secureye/proc/ui_refresh(mob/user, datum/tgui/ui)
-	ui.close()
-	ui_interact(user, ui)
-	show_camera_static()
-
 /datum/computer_file/program/secureye/ui_act(action, params, ui)
 	. = ..()
 	if(.)
@@ -123,13 +116,13 @@
 
 	if(action == "set_network")
 		network = temp_network
-		ui_refresh(usr, ui)
+		update_static_data_for_all_viewers()
 
 	if(action == "set_temp_network")
 		temp_network = sanitize_filename(params["name"])
 
 	if(action == "refresh")
-		ui_refresh(usr, ui)
+		update_static_data_for_all_viewers()
 
 	if(action == "switch_camera")
 		var/c_tag = params["name"]
