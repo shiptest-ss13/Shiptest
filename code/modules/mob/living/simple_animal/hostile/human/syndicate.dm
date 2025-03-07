@@ -292,6 +292,7 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. Green hardsuit optics glint as they sweep their submachinegun across the room, scanning for threats."
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
+	r_hand = /obj/item/gun/ballistic/automatic/smg/cobra
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c45
 

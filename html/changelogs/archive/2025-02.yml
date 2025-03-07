@@ -227,3 +227,62 @@
   - rscadd: Added surgical equipment to the Kali Andhi
   - rscadd: Added additional half masks for the wreckers and the mechanic aboard the
       Derecho
+2025-02-23:
+  Erikafox:
+  - rscadd: Ramzi turrets, for mappers
+  - bugfix: Admins can now spawn the haymaker-class
+  - rscadd: Stasis Drug - a chemical which induces stasis in a person once it's administered.
+  - rscadd: Starlight/stardrop. two chemicals that enhance the user's vision.
+  - No Problem: null
+    rscadd: Carfencadrizine. No Crit
+  - rscadd: more injectors/syringes for people to buy.
+  - rscadd: replace bath salts with mammoth. a generic strength enhancer.
+  - rscdel: krokodil and krokodil zombies. byeeee
+  - balance: nerf finobranc/combat drug do_after bonuses
+  generalthrax:
+  - balance: Frontier armour vests are bulletproof again.
+  - balance: Simple mobs drop a version of the vest that has normal armour vest values,
+      player pirates and the black market version are unaffected. Frontie mobs inherit
+      this armour.
+  - balance: The Rusted Red hardsuit has increased armour. Ramzi mobs are tougher
+      as a result.
+  - bugfix: Revert some of the health changes from Dynamic Mobs
+  kaylexis:
+  - rscadd: New digitigrade hardsuit sprites
+2025-02-24:
+  Cloudbreak, Ryerice:
+  - rscadd: 50BMG ammo boxes to cargo for 1000 credits.
+  - balance: 50BMG doesn't instantly delimb you anymore.
+  Erikafox:
+  - balance: misfire targetting is now weighed towards the legs
+  Ical92:
+  - code_imp: added a linter for ship class capitilzation
+2025-02-25:
+  Apogee-dev:
+  - rscdel: Removed guaranteed RND from ruins
+  Aquidu:
+  - rscadd: Added 31 new preference adjectives.
+  Ical92:
+  - bugfix: NT Ice Outpost and the Harrier-class now have working cameras
+  - bugfix: turrets no longer target neutral mobs when set to shoot dangerous mobs
+  Sadhorizon:
+  - bugfix: Minuteman role on the Vela-class uses the correct outfit now.
+2025-02-27:
+  Erikafox:
+  - balance: reduce mil viper spread and increase fire rate
+  - balance: 5.7 does less damage
+  FalloutFalcon:
+  - bugfix: fixes a flaky test runtime from a a string not being wrapped in a list
+      in portable_turret.dm
+  firebudgy:
+  - rscadd: New sprites for the Mass Produced Machete
+  generalthrax:
+  - bugfix: Ammo cans of 12g no longer spawn with 80 rounds of .50 bmg
+2025-02-28:
+  MemeSnorfer and Moffball:
+  - rscadd: Corona-class Touring Vessel
+  Sadhorizon:
+  - spellcheck: Ivory's name is now capitalized correctly.
+  - rscadd: Added the F-80 Ivory-class Yacht.
+  - imageadd: Added a /factory variant of the Absolution.
+  - tweak: Light tiles can now be turned off without any tools.

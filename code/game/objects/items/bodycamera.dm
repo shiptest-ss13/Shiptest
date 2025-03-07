@@ -35,10 +35,10 @@
 
 /obj/item/bodycamera/examine(mob/user)
 	. += ..()
-	. += "The body camera is currently [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Alt-Click to toggle its status."
+	. += "The camera is currently [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Alt-Click to toggle its status."
 	if(in_range(src, user))
-		. += "<span class='notice'>The body camera is set to a nametag of '<b>[c_tag]</b>'.</span>"
-		. += "<span class='notice'>The body camera is set to transmit on the '<b>[network[1]]</b>' network.</span>"
+		. += "<span class='notice'>The camera is set to a nametag of '<b>[c_tag]</b>'.</span>"
+		. += "<span class='notice'>The camera is set to transmit on the '<b>[network[1]]</b>' network.</span>"
 		. += "<span class='notice'>It looks like you can modify the camera settings by using a <b>multitool</b> on it.</span>"
 
 /obj/item/bodycamera/AltClick(mob/user)
@@ -137,10 +137,77 @@
 	name = "Portable Camera Unit Users Guide"
 	default_raw_text = "<font face='serif'><font size=2><div align='center'><u><font size=5>Portable Camera Unit User's Guide</u>\n<div align='left'><font size=3> The Mark I Portable Camera unit is a versatile solution ⠀   for all of your project management needs.\n\n<font size=4><dl><dt> Features</dt><font size=3><dd> - Real-time visual data feedback </dd><dd> - Configurable EEPROM memory settings</dd><dd> - Passive thermal regulator</dd><dd> - Long-range millimeter-wave band antenna</dd><dd> - High-capacity self-recharging battery</dd><dd> - Easy to reach power button</dd></dl>\n\n To activate the camera, simply press and hold the\n power button for one second. You should hear a chime\n and a green status light should become lit.\n\n To deactivate the camera, depress the power button\n again for one second.\n\n In order to modify the settings of your portable camera\n unit, a ISO-standard multitool will be required.\n \n Simply connect the tool to the camera's settings port,\n and you should be able to modify the internal address\n of the camera, or the network configuration.\n\n You will also be able to save the network configuration\n of the camera and copy it to other Mark I Portable\n Camera units.\n\n We hope that our tools will provide the edge you need\n in order to ensure your team stays on-task."
 
+// Broadcast Camera - For Journalism
 
+/obj/item/bodycamera/broadcast_camera
+	name = "broadcast camera"
+	desc = "A camera used by media agencies in order to broadcast video and audio to recievers across a sector."
+	icon = 'icons/obj/item/broadcasting.dmi'
+	icon_state = "broadcast"
+	lefthand_file = 'icons/mob/inhands/misc/broadcast_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/broadcast_righthand.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+	view_range = 5
+	can_transmit_across_z_levels = TRUE
+	network = list("thunder")
+	var/obj/item/radio/radio
+	var/mob/listeningTo
+	actions_types = list(/datum/action/item_action/toggle_radio)
 
+/obj/item/bodycamera/broadcast_camera/Initialize()
+	. = ..()
+	radio = new /obj/item/radio(src)
+	radio.sectorwide = TRUE
+	radio.canhear_range = 3
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	c_tag = "Broadcast Camera - Unlabeled"
 
+/obj/item/bodycamera/broadcast_camera/Destroy()
+	listeningTo = null
+	return ..()
 
+/obj/item/bodycamera/broadcast_camera/equipped(mob/user)
+	. = ..()
+	if(listeningTo == user)
+		return
+	if(listeningTo)
+		UnregisterSignal(listeningTo)
+	listeningTo = user
 
+/obj/item/bodycamera/broadcast_camera/attack_hand(mob/user, datum/tgui/ui, datum/ui_state/state)
+	if(loc == user  && user.is_holding(src))
+		if(user.a_intent == INTENT_HARM)
+			radio.ui_interact(usr, state = GLOB.deep_inventory_state)
+		return
+	else
+		return ..()
 
+/obj/item/bodycamera/broadcast_camera/unique_action(mob/living/user)
+	. = ..()
+	radio.broadcasting = !radio.broadcasting
+	user.visible_message(span_notice("[user] toggles the [src] microphone."), span_notice("<span class='notice'>You toggle the [src] microphone."))
 
+/obj/item/bodycamera/broadcast_camera/examine(mob/user)
+	. += ..()
+	if(in_range(src, user))
+		. += "<span class='notice'>You can access the Internal Radio by <b>interacting with harm intent</b>.</span>"
+		. += "<span class='notice'>You can also use <b>Unique Action (default space)</b> to toggle the microphone.</span>"
+
+/obj/item/bodycamera/broadcast_camera/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12)
+
+/obj/item/bodycamera/broadcast_camera/proc/on_wield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	user.visible_message(span_notice("[user] raises the [src] over [user.p_their()] arms."), span_notice("You raise [src] over your arms, giving it a better view."))
+	item_state = "broadcast_wielded"
+	view_range = 7
+
+/obj/item/bodycamera/broadcast_camera/proc/on_unwield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src], reducing it's view."))
+	item_state = "broadcast"
+	view_range = 3

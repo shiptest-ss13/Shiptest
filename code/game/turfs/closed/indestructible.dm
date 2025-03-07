@@ -132,13 +132,21 @@
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
 
-/turf/closed/indestructible/syndicate
+/turf/closed/indestructible/plastitanium
+	name = "wall"
+	desc = "A durable wall made of an alloy of plasma and titanium. Effectively impervious to conventional methods of destruction."
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'
 	icon_state = "plastitanium_wall-0"
 	base_icon_state = "plastitanium_wall"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_PLASTITANIUM_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
+
+/turf/closed/indestructible/plastitanium/nodiagnonal
+	icon = 'icons/turf/walls/plastitanium_wall.dmi'
+	icon_state = "map-shuttle_nd"
+	base_icon_state = "plastitanium_wall"
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SYNDICATE_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_SYNDICATE_WALLS, SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
 
 /turf/closed/indestructible/riveted/uranium
 	icon = 'icons/turf/walls/uranium_wall.dmi'
@@ -251,6 +259,21 @@
 	icon_state = "icerock_wall-0"
 	base_icon_state = "icerock_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	pixel_x = -4
+	pixel_y = -4
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null
+
+
+/turf/closed/indestructible/rock/rockplanet
+	name = "dense hematite"
+	desc = "Extremely densely-packed rock. The iron grit rusts softly, bringing forth a crimson hue."
+	icon = 'icons/turf/walls/red_wall.dmi'
+	icon_state = "red_wall-0"
+	base_icon_state = "red_wall"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	pixel_x = -4

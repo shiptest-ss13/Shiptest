@@ -104,6 +104,8 @@
 /obj/item/clothing/suit/toggle
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
 
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
@@ -113,12 +115,13 @@
 	strip_delay = EQUIP_DELAY_COAT * 1.5
 
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
-	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		reskin_obj(user, TRUE)
-		return
+	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
+		return FALSE
+	if(unique_reskin && !current_skin)
+		reskin_obj(user)
 	else
 		suit_toggle(user)
-	..()
+	return TRUE
 
 /obj/item/clothing/suit/toggle/ui_action_click()
 	suit_toggle()
