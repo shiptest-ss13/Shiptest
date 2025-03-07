@@ -139,7 +139,7 @@
 	var/list/data = list()
 	data["missions"] = list()
 	var/list/items_on_pad = recalc()
-	for(var/datum/mission/ruin/M as anything in SSmissions.active_missions)
+	for(var/datum/mission/ruin/M in SSmissions.active_missions)
 		data["missions"] += list(M.get_tgui_info(items_on_pad))
 	data["pad"] = pad_ref?.resolve() ? TRUE : FALSE
 	data["id_inserted"] = inserted_scan_id ? TRUE : FALSE
@@ -183,7 +183,7 @@
 /obj/machinery/mission_viewer/ui_data(mob/user)
 	var/list/data = list()
 	data["missions"] = list()
-	for(var/datum/mission/ruin/M as anything in SSmissions.active_missions)
+	for(var/datum/mission/ruin/M in SSmissions.active_missions)
 		data["missions"] += list(M.get_tgui_info())
 	data["pad"] = FALSE
 	data["id_inserted"] = FALSE

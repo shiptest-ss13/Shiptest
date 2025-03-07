@@ -12,6 +12,17 @@
 	/// The amount of clicks to "claim" a mission
 	var/dibs = 0
 
+/datum/mission/ruin/New(_location, _mission_index)
+	SSmissions.inactive_missions += list(src)
+	. = ..()
+
+/datum/mission/ruin/Destroy()
+	if(active)
+		SSmissions.active_missions -= src
+	else
+		SSmissions.inactive_missions -= src
+	. = ..()
+
 /datum/mission/ruin/generate_mission_details()
 	. = ..()
 	setpiece_item = pick(setpiece_item)

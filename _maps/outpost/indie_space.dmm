@@ -1930,6 +1930,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/bar)
+"jL" = (
+/obj/structure/table,
+/obj/item/radio/intercom/wideband/table{
+	dir = 4;
+	pixel_y = 15
+	},
+/obj/item/radio/intercom/table{
+	dir = 4;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/outpost/operations)
 "jN" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -4313,6 +4325,10 @@
 /obj/machinery/bookbinder,
 /turf/open/floor/wood,
 /area/outpost/crew/library)
+"uz" = (
+/obj/machinery/holopad,
+/turf/open/floor/plasteel/grimy,
+/area/outpost/operations)
 "uE" = (
 /obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7074,10 +7090,31 @@
 	},
 /turf/open/floor/plating,
 /area/outpost/crew/bar)
+"HY" = (
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_y = 5;
+	pixel_x = 3;
+	layer = 2.9
+	},
+/obj/item/pen{
+	pixel_y = 6;
+	pixel_x = 3
+	},
+/turf/open/floor/plasteel/grimy,
+/area/outpost/operations)
 "Ib" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 4
+	},
+/obj/item/paper_bin{
+	pixel_y = 1;
+	pixel_x = -3
+	},
+/obj/item/pen{
+	pixel_y = 2;
+	pixel_x = -3
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
@@ -16508,10 +16545,10 @@ SE
 kq
 Ff
 dY
-Pr
-Pr
-Pr
-Pr
+uz
+HY
+jL
+uz
 lJ
 TK
 iF

@@ -47,7 +47,6 @@
 	//source_outpost = _outpost
 	//RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	mission_index = _mission_index
-	SSmissions.inactive_missions += list(src)
 
 	if(location_specific)
 		mission_location = _location
@@ -62,10 +61,6 @@
 	//UnregisterSignal(source_outpost, COMSIG_PARENT_QDELETING)
 	if(location_specific)
 		UnregisterSignal(mission_location, COMSIG_PARENT_QDELETING, COMSIG_OVERMAP_LOADED)
-	if(active)
-		SSmissions.active_missions -= src
-	else
-		SSmissions.inactive_missions -= src
 	//LAZYREMOVE(source_outpost.missions, src)
 	//source_outpost = null
 	for(var/bound in bound_atoms)
