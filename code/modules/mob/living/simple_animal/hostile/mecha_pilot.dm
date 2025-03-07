@@ -19,8 +19,8 @@ Featuring:
 */
 
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot
-	name = "Syndicate Exosuit Pilot"
-	desc = "Death to Nanotrasen. This variant comes in MECHA DEATH flavour."
+	name = "Ramzi Clique Exowarrior"
+	desc = "A highly-trained pilot of the Clique, specialized in Exosuit operations."
 	wanted_objects = list()
 	search_objects = 0
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
@@ -29,6 +29,7 @@ Featuring:
 	var/obj/mecha/mecha //Ref to pilot's mecha instance
 	var/required_mecha_charge = 7500 //If the pilot doesn't have a mecha, what charge does a potential Grand Theft Mecha need? (Defaults to half a battery)
 	var/mecha_charge_evacuate = 50 //Amount of charge at which the pilot tries to abandon the mecha
+	var/mecha_bail_threshold = 0.3 //Amount of integrity left at which the pilot tries to eject
 
 	//Vars that control when the pilot uses their mecha's abilities (if the mecha has that ability)
 	var/threat_use_mecha_smoke = 5 //5 mobs is enough to engage crowd control
@@ -217,7 +218,7 @@ Featuring:
 				return
 
 			//Too Much Damage - Eject
-			if(mecha.obj_integrity < mecha.max_integrity*0.1)
+			if(mecha.obj_integrity < mecha.max_integrity*mecha_bail_threshold)
 				exit_mecha(mecha)
 				return
 
