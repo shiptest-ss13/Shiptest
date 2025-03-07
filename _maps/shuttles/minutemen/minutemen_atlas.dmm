@@ -56,7 +56,85 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "aI" = (
-/obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/closet/wall/blue/directional/east{
+	name = "uniforms locker"
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -8;
+	pixel_x = 12
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -8;
+	pixel_x = 10
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -8;
+	pixel_x = 8
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -8;
+	pixel_x = 6
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -8;
+	pixel_x = 4
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = -7;
+	pixel_y = -11
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = -7;
+	pixel_y = -9
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = -7;
+	pixel_y = -5
+	},
+/obj/item/clothing/head/clip{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/item/storage/backpack/satchel/sec/clip{
+	pixel_y = 14;
+	pixel_x = -6
+	},
+/obj/item/storage/backpack/satchel/sec/clip{
+	pixel_y = 13;
+	pixel_x = -8
+	},
+/obj/item/storage/backpack/security/clip{
+	pixel_y = 13;
+	pixel_x = 12
+	},
+/obj/item/storage/backpack/security/clip{
+	pixel_y = 12;
+	pixel_x = 10
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 14;
+	pixel_y = 3
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 11;
+	pixel_y = 3
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 8;
+	pixel_y = 3
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 2;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "aS" = (
@@ -868,10 +946,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/recharger{
-	pixel_y = 1;
-	pixel_x = -7
-	},
 /obj/structure/closet/wall/red/directional/north{
 	name = "field supply cabinet"
 	},
@@ -1961,25 +2035,7 @@
 /obj/structure/table,
 /obj/item/clipboard{
 	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/storage/fancy/cigarettes{
-	pixel_x = -1;
 	pixel_y = 3
-	},
-/obj/item/storage/fancy/cigarettes{
-	pixel_x = -5
-	},
-/obj/item/clothing/mask/cigarette{
-	pixel_x = 7;
-	pixel_y = 1
-	},
-/obj/item/storage/fancy/cigarettes{
-	pixel_x = 2;
-	pixel_y = -1
-	},
-/obj/item/clothing/mask/cigarette{
-	pixel_x = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 5
@@ -2366,9 +2422,6 @@
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "yo" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
 	},
@@ -2379,66 +2432,32 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/closet/crate{
-	name = "spare uniform crate"
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = -8;
-	pixel_y = 11
-	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = -1;
-	pixel_y = 9
-	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 6;
-	pixel_y = 11
-	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 12;
-	pixel_y = 9
-	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = 0;
-	pixel_x = -8
-	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = 0;
-	pixel_x = -5
-	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = 0;
-	pixel_x = -1
-	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = 0;
-	pixel_x = 5
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_x = -11;
-	pixel_y = -6
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_x = -6;
-	pixel_y = -7
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -6
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_x = 7;
-	pixel_y = -8
-	},
-/obj/item/clothing/mask/gas/clip{
+/obj/structure/table,
+/obj/machinery/recharger{
+	pixel_y = 6;
 	pixel_x = -7
 	},
-/obj/item/clothing/mask/gas/clip{
-	pixel_x = -1
+/obj/item/storage/fancy/cigarettes{
+	pixel_x = 10;
+	pixel_y = 10
 	},
-/obj/item/clothing/mask/gas/clip{
-	pixel_x = 5
+/obj/item/storage/fancy/cigarettes{
+	pixel_x = 6;
+	pixel_y = 8
 	},
-/obj/item/clothing/mask/gas/clip{
+/obj/item/storage/fancy/cigarettes{
+	pixel_x = 9;
+	pixel_y = 6
+	},
+/obj/item/clothing/mask/cigarette{
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/obj/effect/spawner/random/entertainment/lighter{
+	pixel_y = -1;
 	pixel_x = 11
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -3960,6 +3979,7 @@
 /area/ship/engineering)
 "Qb" = (
 /obj/machinery/recharge_station,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Qg" = (
@@ -4489,21 +4509,24 @@
 "Uh" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
-/obj/item/clothing/head/clip{
-	pixel_x = -6;
-	pixel_y = 8
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/obj/item/clothing/head/clip{
-	pixel_x = -9;
-	pixel_y = 3
+/obj/item/clothing/gloves/combat{
+	pixel_y = 8;
+	pixel_x = -9
 	},
-/obj/item/clothing/head/clip{
-	pixel_x = -9;
-	pixel_y = -3
+/obj/item/clothing/gloves/combat{
+	pixel_y = 3;
+	pixel_x = -11
 	},
-/obj/item/clothing/head/clip{
-	pixel_x = -7;
-	pixel_y = -8
+/obj/item/clothing/gloves/combat{
+	pixel_y = -1;
+	pixel_x = -8
+	},
+/obj/item/clothing/gloves/combat{
+	pixel_y = -5;
+	pixel_x = -10
 	},
 /obj/item/storage/belt/military/clip{
 	pixel_y = 14;
@@ -4520,9 +4543,6 @@
 /obj/item/storage/belt/military/clip{
 	pixel_y = -2;
 	pixel_x = 7
-	},
-/obj/structure/window/reinforced{
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
