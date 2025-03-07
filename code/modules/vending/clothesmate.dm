@@ -103,7 +103,7 @@
 		/obj/item/clothing/under/dress/blacktango = 1,
 		/obj/item/clothing/under/dress/one_shoulder = 1,
 		/obj/item/clothing/under/dress/white_dress = 1,
-		/obj/item/clothing/shoes/sneakers = 2,
+		/obj/item/clothing/shoes/sneakers/black = 2,
 		/obj/item/clothing/shoes/laceup = 2,
 		/obj/item/clothing/shoes/sandal = 2,
 		/obj/item/clothing/shoes/jackboots = 2,
