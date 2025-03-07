@@ -146,7 +146,7 @@
 /obj/item/circuitboard/computer/solar_control
 	name = "Solar Control (Computer Board)"  //name fixed 250810
 	icon_state = "engineering"
-	build_path = /obj/machinery/power/solar_control
+	build_path = /obj/machinery/computer/solar_control
 
 /obj/item/circuitboard/computer/stationalert
 	name = "Station Alerts (Computer Board)"
