@@ -1,54 +1,5 @@
-#warn remove these
-/*
-// Simple holder datum to pass export results around
-/datum/export_report
-	var/list/exported_atoms = list()	//names of atoms sold/deleted by export
-	var/list/total_amount = list()		//export instance => total count of sold objects of its type, only exists if any were sold
-	var/list/total_value = list()		//export instance => total value of sold objects
-	var/list/exported_atoms_ref = list()	//if they're not deleted they go in here for use.
-
-// external_report works as "transaction" object, pass same one in if you're doing more than one export in single go
-/proc/export_item_and_contents(atom/movable/AM, allowed_categories = EXPORT_CARGO, apply_elastic = TRUE, delete_unsold = TRUE, dry_run=FALSE, datum/export_report/external_report)
-	if(!GLOB.exports_list.len)
-		setupExports()
-
-	var/profit_ratio = 1 //Percentage that gets sent to the seller, rest goes to cargo.
-
-	var/list/contents = AM.GetAllContents()
-
-	var/datum/export_report/report = external_report
-
-	if(!report) //If we don't have any longer transaction going on
-		report = new
-
-	// We go backwards, so it'll be innermost objects sold first
-	for(var/i in reverseRange(contents))
-		var/atom/movable/thing = i
-		var/sold = FALSE
-		if(QDELETED(thing))
-			continue
-
-		for(var/datum/export/E in GLOB.exports_list)
-			if(!E)
-				continue
-			if(E.applies_to(thing, allowed_categories, apply_elastic))
-				sold = E.sell_object(thing, report, dry_run, allowed_categories , apply_elastic, profit_ratio)
-				report.exported_atoms += " [thing.name]"
-				if(!QDELETED(thing))
-					report.exported_atoms_ref += thing
-				break
-		if(!dry_run && (sold || delete_unsold))
-			if(ismob(thing))
-				thing.investigate_log("deleted through cargo export",INVESTIGATE_CARGO)
-	if(!dry_run)
-		qdel(AM)
-
-	return report
-*/
-
-#warn redocument
 /datum/export
-	var/unit_name = ""				// Unit name. Only used in "Received [total_amount] [name]s [message]." message
+	var/unit_name = ""
 	var/desc = ""
 	/// The base amount of money gained when selling a "unit" of this item, as determined by get_amount().
 	/// The actual sale value may change if this export has elasticity, and is controlled by the variable true_cost.
@@ -130,14 +81,9 @@
 
 	if(amount <= 0 || the_cost <= 0)
 		return null
-	if(dry_run == FALSE)
-		#warn remove this shit too
-		if(SEND_SIGNAL(O, COMSIG_ITEM_SOLD, item_value = the_cost) & COMSIG_ITEM_SPLIT_VALUE)
-			profit_ratio = SEND_SIGNAL(O, COMSIG_ITEM_SPLIT_PROFIT_DRY)
-			the_cost = the_cost * ((100 - profit_ratio) * 0.01)
-	else
-		profit_ratio = SEND_SIGNAL(O, COMSIG_ITEM_SPLIT_PROFIT)
-		the_cost = the_cost * ((100 - profit_ratio) * 0.01)
+
+	profit_ratio = SEND_SIGNAL(O, COMSIG_ITEM_SPLIT_PROFIT)
+	the_cost = the_cost * ((100 - profit_ratio) * 0.01)
 
 	if(!dry_run)
 		if(apply_elastic)

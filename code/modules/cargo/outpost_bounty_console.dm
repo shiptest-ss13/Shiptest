@@ -51,8 +51,6 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 						cached_valid_exports[exp] = list()
 					cached_valid_exports[exp] += list(exp_atom)
 
-
-#warn probably most similar to the traitor uplink, except there are no "buy" buttons
 /obj/machinery/computer/outpost_export_console/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -62,7 +60,7 @@ GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 /obj/machinery/computer/outpost_export_console/ui_data(mob/user)
 	var/list/data = list()
 
-	#warn temp. we should run this on like, atom entered or other signals instead
+	// Need to move this somewhere else at some point
 	cache_valid_exports()
 
 	data["redeemExports"] = list()
