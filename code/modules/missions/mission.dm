@@ -115,7 +115,7 @@
 	SSmissions.inactive_missions -= src
 	active = TRUE
 	time_issued = station_time()
-	if(duration)
+	if(duration && !istype(src, /datum/mission/basic))
 		dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 	SSmissions.active_missions += src
 

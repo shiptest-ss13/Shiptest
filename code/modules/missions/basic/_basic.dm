@@ -74,9 +74,6 @@
 		"actStr" = act_str
 	)
 
-/datum/mission/basic/get_progress_string()
-	return "null"
-
 /**
  * Spawns a "bound" atom of the given type at the given location. When the "bound" atom
  * is qdeleted, the passed-in callback is invoked, and, by default, the mission fails.
@@ -100,43 +97,3 @@
 	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
 	RegisterSignal(bound, COMSIG_PARENT_QDELETING, PROC_REF(bound_deleted))
 	return bound
-
-/**
- * Removes the given atom from the mission's bound items, then qdeletes it.
- * Does not invoke the callback or fail the mission; optionally creates sparks.
- *
- * Arguments:
- * * bound - The bound atom to recall.
- * * sparks - Whether to spawn sparks on the turf the bound atom is located on. Default TRUE.
- */
-/datum/mission/basic/recall_bound(atom/movable/bound, sparks = TRUE)
-	if(sparks)
-		do_sparks(3, FALSE, get_turf(bound))
-	remove_bound(bound)
-	qdel(bound)
-
-/// Signal handler for the qdeletion of bound atoms.
-/datum/mission/basic/bound_deleted(atom/movable/bound, force)
-	SIGNAL_HANDLER
-	var/list/bound_info = bound_atoms[bound]
-	// first value in bound_info is whether to fail on item destruction
-	failed = bound_info[1]
-	// second value is callback to fire on atom destruction
-	if(bound_info[2] != null)
-		var/datum/callback/CB = bound_info[2]
-		CB.Invoke()
-	remove_bound(bound)
-
-/**
- * Removes the given bound atom from the list of bound atoms.
- * Does not invoke the associated callback or fail the mission.
- *
- * Arguments:
- * * bound - The bound atom to remove.
- */
-/datum/mission/basic/remove_bound(atom/movable/bound)
-	UnregisterSignal(bound, COMSIG_PARENT_QDELETING)
-	// delete the callback
-	qdel(LAZYACCESSASSOC(bound_atoms, bound, 2))
-	// remove info from our list
-	LAZYREMOVE(bound_atoms, bound)
