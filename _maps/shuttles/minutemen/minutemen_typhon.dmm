@@ -1189,7 +1189,7 @@
 	dir = 1
 	},
 /obj/machinery/suit_storage_unit/minutemen/pilot,
-/obj/effect/turf_decal/box{
+/obj/effect/turf_decal/industrial/outline{
 	color = "#75A2BB"
 	},
 /obj/machinery/door/window/eastright{
@@ -2486,8 +2486,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Hc" = (
-/obj/effect/turf_decal/box{
-	color = "#75A2BB"
+/obj/effect/turf_decal/industrial/outline{
+	color = "#75A2BB";
+	alpha = 140\
 	},
 /obj/machinery/suit_storage_unit/minutemen,
 /obj/machinery/door/firedoor/border_only{
@@ -3871,7 +3872,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/effect/turf_decal/box{
+/obj/effect/turf_decal/industrial/outline{
 	color = "#75A2BB"
 	},
 /obj/machinery/suit_storage_unit/minutemen,
