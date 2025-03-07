@@ -24,6 +24,115 @@
 	icon_state = "beretdurathread"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 5, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 15, "acid" = 5)
 
+//Color (I'll find a better solution later)
+/obj/item/clothing/head/beret/color
+	name = "beret"
+	desc = "A stylish beret that can be worn in a variety of charming colors!"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	icon_state = "beretwhite"
+	item_state = "beretwhite"
+	custom_price = 60
+	unique_reskin = list("white beret" = "beretwhite",
+						"grey beret" = "beretgrey",
+						"black beret" = "beretblack",
+						"red beret" = "beretred",
+						"maroon beret" = "beretmaroon",
+						"orange beret" = "beretorange",
+						"yellow beret" = "beretyellow",
+						"green beret" = "beretgreen",
+						"dark green beret" = "beretdarkgreen",
+						"teal beret" = "beretteal",
+						"blue beret" = "beretblue",
+						"dark blue beret" = "beretdarkblue",
+						"purple beret" = "beretpurple",
+						"pink beret" = "beretpink",
+						"brown beret" = "beretbrown",
+						"light brown beret" = "beretlightbrown"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/head/beret/color/white
+	name = "white beret"
+	icon_state = "beretwhite"
+	current_skin = "white beret"
+
+/obj/item/clothing/head/beret/color/grey
+	name = "grey beret"
+	icon_state = "beretgrey"
+	current_skin = "grey beret"
+
+/obj/item/clothing/head/beret/color/black
+	name = "black beret"
+	icon_state = "beretblack"
+	current_skin = "black beret"
+
+/obj/item/clothing/head/beret/color/red
+	name = "red beret"
+	icon_state = "beretred"
+	current_skin = "red beret"
+
+/obj/item/clothing/head/beret/color/maroon
+	name = "maroon beret"
+	icon_state = "beretmaroon"
+	current_skin = "maroon beret"
+
+/obj/item/clothing/head/beret/color/orange
+	name = "orange beret"
+	icon_state = "beretorange"
+	current_skin = "orange beret"
+
+/obj/item/clothing/head/beret/color/yellow
+	name = "yellow beret"
+	icon_state = "beretyellow"
+	current_skin = "yellow beret"
+
+/obj/item/clothing/head/beret/color/green
+	name = "green beret"
+	icon_state = "beretgreen"
+	current_skin = "green beret"
+
+/obj/item/clothing/head/beret/color/darkgreen
+	name = "dark green beret"
+	icon_state = "beretdarkgreen"
+	current_skin = "dark green beret"
+
+/obj/item/clothing/head/beret/color/teal
+	name = "teal beret"
+	icon_state = "beretteal"
+	current_skin = "teal beret"
+
+/obj/item/clothing/head/beret/color/blue
+	name = "blue beret"
+	icon_state = "beretblue"
+	current_skin = "blue beret"
+
+/obj/item/clothing/head/beret/color/darkblue
+	name = "dark blue beret"
+	icon_state = "beretdarkblue"
+	current_skin = "dark blue beret"
+
+/obj/item/clothing/head/beret/color/purple
+	name = "purple beret"
+	icon_state = "beretpurple"
+	current_skin = "purple beret"
+
+/obj/item/clothing/head/beret/color/pink
+	name = "pink beret"
+	icon_state = "beretpink"
+	current_skin = "pink beret"
+
+/obj/item/clothing/head/beret/color/brown
+	name = "brown beret"
+	icon_state = "beretbrown"
+	current_skin = "brown beret"
+
+/obj/item/clothing/head/beret/color/lightbrown
+	name = "light brown beret"
+	icon_state = "beretlightbrown"
+	current_skin = "light brown beret"
+
 //Civilian
 /obj/item/clothing/head/beret/grey
 	name = "grey beret"
