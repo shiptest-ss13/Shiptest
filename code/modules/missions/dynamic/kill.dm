@@ -19,7 +19,7 @@
 	return mission_string
 
 /datum/mission/ruin/signaled/kill/frontiersmen
-	value = 3500
+	value = 4500
 	mission_reward = list(
 		/obj/item/gun/ballistic/automatic/pistol/mauler,
 		/obj/item/gun/ballistic/automatic/pistol/spitter
@@ -28,7 +28,8 @@
 	setpiece_item = /obj/item/clothing/neck/dogtag/frontier
 
 /datum/mission/ruin/signaled/kill/syndi_docs
-	value = 4000
+	value = 5000
+	faction = /datum/faction/syndicate
 	registered_type = /mob/living/simple_animal/hostile/human/nanotrasen/elite
 	setpiece_item = /obj/item/folder/documents/syndicate
 
