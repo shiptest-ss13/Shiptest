@@ -320,11 +320,11 @@
 /obj/machinery/computer/solar_control
 	name = "solar panel control"
 	desc = "A controller for solar panel arrays."
-	icon_state = "computer"
 	density = TRUE
 	icon_screen = "solar"
 	icon_keyboard = "power_key"
-	var/id = 0
+	circuit = /obj/item/circuitboard/computer/solar_control
+
 	var/gen = 0
 	var/lastgen = 0
 	var/azimuth_target = 0
