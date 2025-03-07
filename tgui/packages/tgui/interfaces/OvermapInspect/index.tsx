@@ -1,18 +1,12 @@
-import { useBackend, useLocalState } from '../../backend';
+import { useBackend } from '../../backend';
 
 import {
   Button,
   Box,
-  Divider,
-  Flex,
-  Icon,
-  Input,
   Section,
   LabeledList,
-  ProgressBar,
   AnimatedNumber,
 } from '../../components';
-import { ButtonInput } from '../../components/Button';
 import { Window } from '../../layouts';
 
 export type OvermapData = {
@@ -77,10 +71,10 @@ export const OvermapInspect = (props, context) => {
                 </Box>
               </LabeledList.Item>
             )}
-            {docked.length != 0 && (
+            {docked.length !== 0 && (
               <LabeledList.Item label="Docked">
                 {docked.map((docked_datum) => (
-                  <Box>
+                  <Box key={docked_datum.ref}>
                     {docked_datum.name}{' '}
                     <Button
                       onClick={() =>
@@ -97,12 +91,12 @@ export const OvermapInspect = (props, context) => {
             )}
             <LabeledList.Item label="Active Missions">
               {data.active_missions?.map((mission) => (
-                <Box>
+                <Box key={mission.ref}>
                   {mission.name}{' '}
                   <Button
                     icon="info "
                     onClick={() => act('inspect_mission', { ref: mission.ref })}
-                  ></Button>
+                  />
                 </Box>
               ))}
             </LabeledList.Item>
