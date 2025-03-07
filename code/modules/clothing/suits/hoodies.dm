@@ -54,210 +54,178 @@
 /obj/item/clothing/suit/hooded/hoodie/white
 	name = "white hoodie"
 	desc = "A hoodie that is white. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodiewhite"
-	item_state = "hoodiewhite"
+	current_skin = "white hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/white
 
 /obj/item/clothing/head/hooded/hood/white
 	name = "white hood"
 	desc = "A white hood for your white hoodie."
-	icon_state = "hoodiewhite"
-	item_state = "hoodiewhite"
+	current_skin = "white hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/gray
 	name = "grey hoodie"
 	desc = "A hoodie that is grey. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodiegrey"
-	item_state = "hoodiegrey"
+	current_skin = "grey hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/gray
 
 /obj/item/clothing/head/hooded/hood/gray
 	name = "grey hood"
 	desc = "A grey hood for your grey hoodie."
-	icon_state = "hoodiegrey"
-	item_state = "hoodiegrey"
+	current_skin = "grey hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/black
 	name = "black hoodie"
 	desc = "A hoodie that is black. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodieblack"
-	item_state = "hoodieblack"
+	current_skin = "black hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/black
 
 /obj/item/clothing/head/hooded/hood/black
 	name = "black hood"
 	desc = "A black hood for your black hoodie."
-	icon_state = "hoodieblack"
-	item_state = "hoodieblack"
+	current_skin = "black hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/red
 	name = "red hoodie"
 	desc = "A hoodie that is red. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodiered"
-	item_state = "hoodiered"
+	current_skin = "red hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/red
 
 /obj/item/clothing/head/hooded/hood/red
 	name = "red hood"
 	desc = "A red hood for your red hoodie."
-	icon_state = "hoodiered"
-	item_state = "hoodiered"
+	current_skin = "red hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/maroon
 	name = "maroon hoodie"
 	desc = "A hoodie that is maroon. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodiemaroon"
-	item_state = "hoodiemaroon"
+	current_skin = "maroon hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/maroon
 
 /obj/item/clothing/head/hooded/hood/maroon
 	name = "maroon hood"
 	desc = "A maroon hood for your maroon hoodie."
-	icon_state = "hoodiemaroon"
-	item_state = "hoodiemaroon"
+	current_skin = "maroon hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/orange
 	name = "orange hoodie"
 	desc = "A hoodie that is orange. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodieorange"
-	item_state = "hoodieorange"
+	current_skin = "orange hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/orange
 
 /obj/item/clothing/head/hooded/hood/orange
 	name = "orange hood"
 	desc = "A orange hood for your orange hoodie."
-	icon_state = "hoodieorange"
-	item_state = "hoodieorange"
+	current_skin = "orange hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/yellow
 	name = "yellow hoodie"
 	desc = "A hoodie that is yellow. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodieyellow"
-	item_state = "hoodieyellow"
+	current_skin = "yellow hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/yellow
 
 /obj/item/clothing/head/hooded/hood/yellow
 	name = "yellow hood"
 	desc = "A yellow hood for your yellow hoodie."
-	icon_state = "hoodieyellow"
-	item_state = "hoodieyellow"
+	current_skin = "yellow hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/green
 	name = "green hoodie"
 	desc = "A hoodie that is green. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodiegreen"
-	item_state = "hoodiegreen"
+	current_skin = "green hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/green
 
 /obj/item/clothing/head/hooded/hood/green
 	name = "green hood"
 	desc = "A green hood for your green hoodie."
-	icon_state = "hoodiegreen"
-	item_state = "hoodiegreen"
+	current_skin = "green hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/darkgreen
 	name = "dark green hoodie"
 	desc = "A hoodie that is dark green. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodiedarkgreen"
-	item_state = "hoodiedarkgreen"
+	current_skin = "dark green hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/darkgreen
 
 /obj/item/clothing/head/hooded/hood/darkgreen
 	name = "dark green hood"
 	desc = "A dark green hood for your dark green hoodie."
-	icon_state = "hoodiedarkgreen"
-	item_state = "hoodiedarkgreen"
+	current_skin = "dark green hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/teal
 	name = "teal hoodie"
 	desc = "A hoodie that is teal. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodieteal"
-	item_state = "hoodieteal"
+	current_skin = "teal hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/teal
 
 /obj/item/clothing/head/hooded/hood/teal
 	name = "teal hood"
 	desc = "A teal hood for your teal hoodie."
-	icon_state = "hoodieteal"
-	item_state = "hoodieteal"
+	current_skin = "teal hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/blue
 	name = "blue hoodie"
 	desc = "A hoodie that is blue. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodieblue"
-	item_state = "hoodieblue"
+	current_skin = "blue hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/blue
 
 /obj/item/clothing/head/hooded/hood/blue
 	name = "blue hood"
 	desc = "A blue hood for your blue hoodie."
-	icon_state = "hoodieblue"
-	item_state = "hoodieblue"
+	current_skin = "blue hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/darkblue
 	name = "dark blue hoodie"
 	desc = "A hoodie that is dark blue. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodiedarkblue"
-	item_state = "hoodiedarkblue"
+	current_skin = "dark blue hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/darkblue
 
 /obj/item/clothing/head/hooded/hood/darkblue
 	name = "dark blue hood"
 	desc = "A dark blue hood for your dark blue hoodie."
-	icon_state = "hoodiedarkblue"
-	item_state = "hoodiedarkblue"
+	current_skin = "dark blue hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/purple
 	name = "purple hoodie"
 	desc = "A hoodie that is purple. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodiepurple"
-	item_state = "hoodiepurple"
+	current_skin = "purple hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/purple
 
 /obj/item/clothing/head/hooded/hood/purple
 	name = "purple hood"
 	desc = "A purple hood for your purple hoodie."
-	icon_state = "hoodiepurple"
-	item_state = "hoodiepurple"
+	current_skin = "purple hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/pink
 	name = "pink hoodie"
 	desc = "A hoodie that is pink. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodiepink"
-	item_state = "hoodiepink"
+	current_skin = "pink hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/pink
 
 /obj/item/clothing/head/hooded/hood/pink
 	name = "pink hood"
 	desc = "A pink hood for your pink hoodie."
-	icon_state = "hoodiepink"
-	item_state = "hoodiepink"
+	current_skin = "pink hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/brown
 	name = "brown hoodie"
 	desc = "A hoodie that is brown. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodiebrown"
-	item_state = "hoodiebrown"
+	current_skin = "brown hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/brown
 
 /obj/item/clothing/head/hooded/hood/brown
 	name = "brown hood"
 	desc = "A brown hood for your brown hoodie."
-	icon_state = "hoodiebrown"
-	item_state = "hoodiebrown"
+	current_skin = "brown hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/lightbrown
 	name = "light brown hoodie"
 	desc = "A hoodie that is light brown. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodielightbrown"
-	item_state = "hoodielightbrown"
+	current_skin = "light brown hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/lightbrown
 
 /obj/item/clothing/head/hooded/hood/lightbrown
 	name = "light brown hood"
 	desc = "A light brown hood for your light brown hoodie."
-	icon_state = "hoodielightbrown"
-	item_state = "hoodielightbrown"
+	current_skin = "light brown hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/fbp
 	name = "\improper FBP kepori hoodie"
