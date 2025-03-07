@@ -221,3 +221,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station/armory
 	name = "Station Armory"
 	icon_state = "security"
+
+/area/ruin/space/has_grav/powered/ramzi_station/solars
+	name = "Solars"
+	icon_state = "panelsAP"

@@ -96,7 +96,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "aF" = (
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/item/chair,
@@ -680,15 +680,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "dL" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/turf_decal/solarpanel,
 /obj/structure/cable/yellow{
-	icon_state = "2-4"
+	icon_state = "0-2"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
+/obj/machinery/power/solar,
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "dN" = (
 /obj/structure/closet/crate/engineering,
 /obj/item/stack/sheet/plasteel/twenty,
@@ -718,7 +716,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
 "ec" = (
 /obj/structure/lattice/catwalk,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge,
 /turf/open/space/basic,
 /area/ruin/space)
 "ee" = (
@@ -1177,7 +1175,7 @@
 /obj/item/solar_assembly,
 /obj/item/shard,
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "gH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -1205,7 +1203,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "gS" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -1344,7 +1342,6 @@
 "hM" = (
 /obj/item/stack/tile/plasteel/dark,
 /obj/item/stack/cable_coil/cut/red,
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge,
 /turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/external)
 "hN" = (
@@ -1545,7 +1542,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "jb" = (
 /obj/structure/crate_shelf,
 /obj/machinery/light/directional/north,
@@ -1630,7 +1627,7 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "jS" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/structure/cable/yellow{
@@ -1638,7 +1635,7 @@
 	},
 /obj/machinery/power/solar,
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "jW" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1671,7 +1668,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "kb" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1732,7 +1729,9 @@
 /obj/machinery/computer/secure_data/laptop{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters/preopen,
+/obj/machinery/door/poddoor/shutters{
+	id = "office_s"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "kz" = (
@@ -1990,7 +1989,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "lI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2158,12 +2157,12 @@
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "na" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "office_a"
+/obj/machinery/door/poddoor/shutters{
+	id = "office_s"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
@@ -2440,6 +2439,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/pgf_wreck/cargo)
 "ok" = (
@@ -2990,6 +2992,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "re" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
 "ri" = (
@@ -3159,6 +3162,7 @@
 	icon_state = "4-8"
 	},
 /obj/item/stack/tile/plasteel/dark,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
 /turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "sq" = (
@@ -4135,7 +4139,6 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/layer4,
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "xr" = (
@@ -4217,7 +4220,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "xU" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 8
@@ -4449,7 +4452,7 @@
 	},
 /obj/structure/railing/corner,
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "yX" = (
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4460,7 +4463,7 @@
 	picked_color = "burgundy"
 	},
 /turf/open/floor/engine/hull/reinforced,
-/area/template_noop)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "zc" = (
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
@@ -4471,7 +4474,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "zj" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -4507,6 +4510,16 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
+"zz" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow,
+/obj/machinery/porta_turret/ship/ramzi/heavy,
+/obj/effect/decal/cleanable/glass,
+/obj/item/solar_assembly{
+	layer = 2.8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "zA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4822,7 +4835,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "AR" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -5314,16 +5327,18 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
 "DQ" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "DS" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
@@ -5453,6 +5468,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
+"Et" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/effect/decal/cleanable/glass,
+/obj/item/solar_assembly{
+	layer = 2.8
+	},
+/obj/machinery/porta_turret/ship/ramzi/heavy,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Ez" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5612,7 +5639,7 @@
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Fx" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 4
@@ -6050,7 +6077,7 @@
 	icon_state = "small"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Ii" = (
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6673,7 +6700,7 @@
 	},
 /obj/structure/railing,
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Li" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
@@ -6813,7 +6840,7 @@
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/tracker,
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "LM" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/structure/cable/yellow{
@@ -6825,7 +6852,7 @@
 	icon_state = "medium"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "LO" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7309,19 +7336,17 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "Oy" = (
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 9
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 4
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun{
-	minimum_distance = 1;
-	retreat_distance = null
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/ramzi_station)
+/obj/item/storage/toolbox/ammo/c65,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Oz" = (
 /obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -7342,7 +7367,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "OE" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -7424,9 +7449,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/space/pgf_wreck/cargo)
@@ -7946,7 +7968,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "RK" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/machinery/light/directional/west,
@@ -8537,10 +8559,7 @@
 "UE" = (
 /obj/structure/lattice,
 /obj/item/stack/cable_coil/cut,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun{
-	retreat_distance = null;
-	minimum_distance = 1
-	},
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/machete,
 /turf/open/space/basic,
 /area/ruin/space)
 "UG" = (
@@ -8753,7 +8772,9 @@
 	dir = 4
 	},
 /obj/machinery/door/window/southleft,
-/obj/machinery/door/poddoor/shutters/preopen,
+/obj/machinery/door/poddoor/shutters{
+	id = "office_s"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "VK" = (
@@ -8841,7 +8862,7 @@
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space,
 /turf/open/floor/plating/airless,
-/area/ruin/space)
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Wc" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -8856,6 +8877,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "Wj" = (
@@ -9119,12 +9141,10 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/powered/ramzi_station/toilet)
 "XD" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun{
-	minimum_distance = 1;
-	retreat_distance = null
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/ramzi_station/foreman)
+/obj/structure/lattice/catwalk,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
+/turf/open/space/basic,
+/area/ruin/space)
 "XG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -9992,7 +10012,7 @@ Fm
 Fm
 Fm
 mo
-ec
+XD
 mo
 Fm
 Fm
@@ -10556,7 +10576,7 @@ pa
 gU
 UL
 dJ
-Oy
+dJ
 yz
 Du
 Vc
@@ -11595,7 +11615,7 @@ xN
 zW
 jl
 jl
-XD
+jl
 jl
 Pu
 yn
@@ -11993,7 +12013,7 @@ Ll
 Ll
 Ll
 Na
-Yd
+Na
 kt
 Fm
 Fm
@@ -12057,7 +12077,7 @@ Jc
 aT
 Ll
 Na
-Yd
+Na
 kt
 kt
 kt
@@ -12122,7 +12142,7 @@ TQ
 xd
 Ll
 Na
-Yd
+Na
 kt
 kt
 kt
@@ -12186,8 +12206,8 @@ Lz
 Yj
 xd
 Ll
-Yd
-Yd
+Na
+Na
 kt
 kt
 Fm
@@ -12252,7 +12272,7 @@ mN
 nf
 Ll
 Na
-Yd
+Na
 Yd
 kt
 Fm
@@ -12391,8 +12411,8 @@ kt
 Fm
 kt
 WD
-ec
 WD
+ec
 kt
 Fm
 Qd
@@ -12462,7 +12482,7 @@ kt
 Fm
 Qd
 kt
-kt
+SE
 kt
 Qd
 kt
@@ -12787,7 +12807,7 @@ Fm
 Fm
 kt
 kt
-SE
+kt
 kt
 kt
 Fm
@@ -13072,9 +13092,9 @@ Fm
 Fm
 Fm
 Fm
-Fm
-Fm
-dL
+Et
+aD
+gR
 gR
 gR
 gR
@@ -13087,8 +13107,8 @@ jR
 jR
 jR
 DQ
-Fm
-Fm
+aD
+zz
 Fm
 Fm
 Fm
@@ -13275,7 +13295,7 @@ jS
 jS
 jS
 Fm
-OD
+Oy
 Fm
 RI
 RI
@@ -13332,9 +13352,9 @@ Fm
 Fm
 Fm
 Fm
-Fm
-Fm
 dL
+aD
+gR
 gR
 gR
 gR
@@ -13346,9 +13366,9 @@ jR
 jR
 jR
 jR
-DQ
-Fm
-Fm
+jR
+aD
+zz
 Fm
 Fm
 Fm
