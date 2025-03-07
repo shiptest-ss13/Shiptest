@@ -60,6 +60,7 @@
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster
 	ME.attach(src)
+	max_ammo()
 
 /obj/mecha/combat/gygax/dark/ramzi/add_cell(obj/item/stock_parts/cell/C=null)
 	if(C)
