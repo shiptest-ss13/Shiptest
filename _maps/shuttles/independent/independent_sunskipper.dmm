@@ -1353,9 +1353,9 @@
 /area/ship/crew/canteen)
 "pT" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
-/obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/box,
 /obj/item/storage/fancy/egg_box,
+/obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "qj" = (
@@ -3443,13 +3443,13 @@
 /area/ship/crew/canteen/kitchen)
 "Qp" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
-/obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/box,
 /obj/item/reagent_containers/condiment/rice,
 /obj/item/reagent_containers/condiment/sugar,
 /obj/item/reagent_containers/condiment/sugar,
 /obj/item/reagent_containers/condiment/rice,
 /obj/item/reagent_containers/condiment/flour,
+/obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "QB" = (
@@ -3685,9 +3685,6 @@
 /area/ship/crew/office/lobby)
 "Uc" = (
 /obj/structure/closet/secure_closet/freezer/meat/open,
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 1
-	},
 /obj/effect/turf_decal/box,
 /obj/item/radio/intercom/directional/east,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
@@ -3699,6 +3696,9 @@
 /obj/item/reagent_containers/food/snacks/fishmeat,
 /obj/item/reagent_containers/food/snacks/fishmeat,
 /obj/item/reagent_containers/food/snacks/fishmeat,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "Ug" = (
@@ -3900,7 +3900,7 @@
 	pixel_x = -3;
 	pixel_y = 4
 	},
-/obj/item/storage/pill_bottle/charcoal/less{
+/obj/item/storage/pill_bottle/charcoal{
 	pixel_x = -8;
 	pixel_y = 5
 	},
