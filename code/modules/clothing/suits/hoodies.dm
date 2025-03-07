@@ -46,6 +46,7 @@
 	item_state = "hoodiewhite"
 	icon = 'icons/obj/clothing/head/color.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	current_skin = "white hoodie"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //it's just a hoodie.
