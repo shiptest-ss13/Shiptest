@@ -11,7 +11,6 @@
 	value = round(rand(value-val_mod, value+val_mod) * (dur_value_scaling ? old_dur / duration : 1), 50)
 
 	source_outpost = _outpost
-	RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	return ..()
 
 /datum/mission/basic/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
@@ -20,14 +19,12 @@
 	servant = acceptor
 	LAZYREMOVE(source_outpost.missions, src)
 	LAZYADD(servant.missions, src)
-	RegisterSignal(servant, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 
 /datum/mission/basic/on_vital_delete()
 	qdel(src)
 
 /datum/mission/basic/Destroy()
-	UnregisterSignal(source_outpost, COMSIG_PARENT_QDELETING)
 	LAZYREMOVE(source_outpost.missions, src)
 	source_outpost = null
 	if(servant)
