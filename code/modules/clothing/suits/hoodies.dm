@@ -46,7 +46,6 @@
 	item_state = "hoodiewhite"
 	icon = 'icons/obj/clothing/head/color.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
-	current_skin = "white hoodie"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //it's just a hoodie.
@@ -61,7 +60,6 @@
 /obj/item/clothing/head/hooded/hood/white
 	name = "white hood"
 	desc = "A white hood for your white hoodie."
-	current_skin = "white hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/gray
 	name = "grey hoodie"
@@ -72,7 +70,6 @@
 /obj/item/clothing/head/hooded/hood/gray
 	name = "grey hood"
 	desc = "A grey hood for your grey hoodie."
-	current_skin = "grey hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/black
 	name = "black hoodie"
@@ -83,7 +80,6 @@
 /obj/item/clothing/head/hooded/hood/black
 	name = "black hood"
 	desc = "A black hood for your black hoodie."
-	current_skin = "black hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/red
 	name = "red hoodie"
@@ -94,7 +90,6 @@
 /obj/item/clothing/head/hooded/hood/red
 	name = "red hood"
 	desc = "A red hood for your red hoodie."
-	current_skin = "red hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/maroon
 	name = "maroon hoodie"
@@ -105,7 +100,6 @@
 /obj/item/clothing/head/hooded/hood/maroon
 	name = "maroon hood"
 	desc = "A maroon hood for your maroon hoodie."
-	current_skin = "maroon hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/orange
 	name = "orange hoodie"
@@ -116,7 +110,6 @@
 /obj/item/clothing/head/hooded/hood/orange
 	name = "orange hood"
 	desc = "A orange hood for your orange hoodie."
-	current_skin = "orange hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/yellow
 	name = "yellow hoodie"
@@ -127,7 +120,6 @@
 /obj/item/clothing/head/hooded/hood/yellow
 	name = "yellow hood"
 	desc = "A yellow hood for your yellow hoodie."
-	current_skin = "yellow hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/green
 	name = "green hoodie"
@@ -138,7 +130,6 @@
 /obj/item/clothing/head/hooded/hood/green
 	name = "green hood"
 	desc = "A green hood for your green hoodie."
-	current_skin = "green hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/darkgreen
 	name = "dark green hoodie"
@@ -149,7 +140,6 @@
 /obj/item/clothing/head/hooded/hood/darkgreen
 	name = "dark green hood"
 	desc = "A dark green hood for your dark green hoodie."
-	current_skin = "dark green hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/teal
 	name = "teal hoodie"
@@ -160,7 +150,6 @@
 /obj/item/clothing/head/hooded/hood/teal
 	name = "teal hood"
 	desc = "A teal hood for your teal hoodie."
-	current_skin = "teal hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/blue
 	name = "blue hoodie"
@@ -171,7 +160,6 @@
 /obj/item/clothing/head/hooded/hood/blue
 	name = "blue hood"
 	desc = "A blue hood for your blue hoodie."
-	current_skin = "blue hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/darkblue
 	name = "dark blue hoodie"
@@ -182,7 +170,6 @@
 /obj/item/clothing/head/hooded/hood/darkblue
 	name = "dark blue hood"
 	desc = "A dark blue hood for your dark blue hoodie."
-	current_skin = "dark blue hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/purple
 	name = "purple hoodie"
@@ -193,7 +180,6 @@
 /obj/item/clothing/head/hooded/hood/purple
 	name = "purple hood"
 	desc = "A purple hood for your purple hoodie."
-	current_skin = "purple hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/pink
 	name = "pink hoodie"
@@ -204,7 +190,6 @@
 /obj/item/clothing/head/hooded/hood/pink
 	name = "pink hood"
 	desc = "A pink hood for your pink hoodie."
-	current_skin = "pink hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/brown
 	name = "brown hoodie"
@@ -215,7 +200,6 @@
 /obj/item/clothing/head/hooded/hood/brown
 	name = "brown hood"
 	desc = "A brown hood for your brown hoodie."
-	current_skin = "brown hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/lightbrown
 	name = "light brown hoodie"
@@ -226,7 +210,6 @@
 /obj/item/clothing/head/hooded/hood/lightbrown
 	name = "light brown hood"
 	desc = "A light brown hood for your light brown hoodie."
-	current_skin = "light brown hoodie"
 
 /obj/item/clothing/suit/hooded/hoodie/fbp
 	name = "\improper FBP kepori hoodie"
