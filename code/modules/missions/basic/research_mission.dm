@@ -1,7 +1,7 @@
 /datum/mission/basic/research
 	name = "Electrical storm research mission"
 	desc = " require data on the behavior of electrical storms in the system for an ongoing study. \
-			Please anchor the attached sensor array to your ship and fly it through the storms.\
+			Please anchor the attached sensor array to your ship and fly it through the storms. \
 			It must be powered to collect the data. "
 	value = 3000 // base value, before adding bonus for number of things to fly through
 	duration = 60 MINUTES
