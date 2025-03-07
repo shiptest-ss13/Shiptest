@@ -6,23 +6,25 @@
 	cuttable = TRUE
 	supports_variations = VOX_VARIATION
 	clothamnt = 2
-	unique_reskin = list("white Betzu-il cap" = "flapwhite",
-						"grey Betzu-il cap" = "flapgrey",
-						"black Betzu-il cap" = "flapblack",
-						"red Betzu-il cap" = "flapred",
-						"maroon Betzu-il cap" = "flapmaroon",
-						"orange Betzu-il cap" = "flaporange",
-						"yellow Betzu-il cap" = "flapyellow",
-						"green Betzu-il cap" = "flapgreen",
-						"dark green Betzu-il cap" = "flapdarkgreen",
-						"teal Betzu-il cap" = "flapteal",
-						"blue Betzu-il cap" = "flapblue",
-						"dark Betzu-il cap" = "flapdarkblue",
-						"purple Betzu-il cap" = "flappurple",
-						"pink Betzu-il cap" = "flappink",
-						"brown Betzu-il cap" = "flapbrown",
-						"light brown Betzu-il cap" = "flaplightbrown"
-						)
+	unique_reskin = list(
+		"white Betzu-il cap" = "flapwhite",
+		"grey Betzu-il cap" = "flapgrey",
+		"black Betzu-il cap" = "flapblack",
+		"red Betzu-il cap" = "flapred",
+		"maroon Betzu-il cap" = "flapmaroon",
+		"orange Betzu-il cap" = "flaporange",
+		"yellow Betzu-il cap" = "flapyellow",
+		"green Betzu-il cap" = "flapgreen",
+		"dark green Betzu-il cap" = "flapdarkgreen",
+		"teal Betzu-il cap" = "flapteal",
+		"blue Betzu-il cap" = "flapblue",
+		"dark Betzu-il cap" = "flapdarkblue",
+		"purple Betzu-il cap" = "flappurple",
+		"pink Betzu-il cap" = "flappink",
+		"brown Betzu-il cap" = "flapbrown",
+		"light brown Betzu-il cap" = "flaplightbrown"
+	)
+	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/head/flap/white
 	name = "white Betzu-il cap"

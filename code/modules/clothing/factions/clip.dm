@@ -300,7 +300,6 @@
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_x11"
-	allow_post_reskins = FALSE
 	unique_reskin = null
 	can_flashlight = TRUE
 
@@ -315,7 +314,6 @@
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_m10_vc"
-	allow_post_reskins = FALSE
 	unique_reskin = null
 	can_flashlight = TRUE
 
