@@ -161,14 +161,15 @@
 
 /datum/mission/proc/turn_in(atom/movable/item_to_turn_in)
 	if(can_turn_in(item_to_turn_in))
-		SSblackbox.record_feedback("tally", "mission_turned_in", 1, src.type)
+		SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "succeeded"))
+		SSblackbox.record_feedback("nested tally", "mission", value, list(name, "payout"))
 		spawn_reward(item_to_turn_in.loc)
 		do_sparks(3, FALSE, get_turf(item_to_turn_in))
 		SSmissions.active_ruin_missions -= src
 		active = FALSE
 		if(istype(mission_location, /datum/overmap/dynamic))
 			var/datum/overmap/dynamic/dynamic_location = mission_location
-			dynamic_location.start_countdown()
+			dynamic_location.start_countdown(30 SECONDS)
 		qdel(item_to_turn_in)
 		qdel(src)
 

@@ -109,13 +109,16 @@
 /datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
 	start_countdown()
 
-/datum/overmap/dynamic/proc/start_countdown()
+/datum/overmap/dynamic/proc/start_countdown(_lifespan = 60 SECONDS, _color = COLOR_OFF_WHITE)
+	if(token.countdown) //We already have a countdown. dont start a new one.
+		return
+	if(_lifespan)
+		lifespan = _lifespan
 	if(!can_reset_dynamic())
 		return
-	lifespan = 60 SECONDS
 	death_time = world.time + lifespan
 	token.countdown = new /obj/effect/countdown/overmap_event(token)
-	token.countdown.color = COLOR_OFF_WHITE
+	token.countdown.color = _color
 
 	token.countdown.start()
 	START_PROCESSING(SSfastprocess, src)

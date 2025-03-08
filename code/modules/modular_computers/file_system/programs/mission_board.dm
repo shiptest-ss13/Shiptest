@@ -23,7 +23,20 @@
 			var/datum/mission/ruin/mission = locate(params["mission"])
 			if(!istype(mission, /datum/mission/ruin))
 				return
-			mission.dibs_string = "unknown claimer - [station_time_timestamp()]"
+			var/obj/item/computer_hardware/card_slot/card_slot
+			var/obj/item/card/id/inserted_scan_id
+			if(computer)
+				card_slot = computer.all_components[MC_CARD]
+			if(computer && card_slot)
+				inserted_scan_id = card_slot.stored_card
+			if(inserted_scan_id)
+				var/datum/overmap/ship/controlled/ship = locate(/datum/overmap/ship/controlled) in inserted_scan_id.ship_access
+				var/ship_name
+				if(ship)
+					ship_name = "[ship.name]"
+				mission.dibs_string = "[inserted_scan_id.registered_name] - [inserted_scan_id.assignment] - [ship_name] - [station_time_timestamp()]"
+			else
+				mission.dibs_string = "unknown claimer - [station_time_timestamp()]"
 			COOLDOWN_START(src, dibs_cooldown, 5 SECONDS)
 
 /datum/computer_file/program/mission_board/ui_data(mob/user)
