@@ -423,10 +423,10 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 4;
-	id = innerdoor
+	id = "innerdoor"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = innershutter
+	id = "innershutter"
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/icemoon/training_facility/garage)
@@ -1471,7 +1471,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = outershutter
+	id = "outershutter"
 	},
 /turf/open/floor/concrete/pavement/icemoon,
 /area/ruin/icemoon/training_facility/garage)
@@ -1685,7 +1685,7 @@
 /area/ruin/icemoon/training_facility/garage)
 "iu" = (
 /obj/machinery/door/poddoor/shutters{
-	id = garageshutter
+	id = "garageshutter"
 	},
 /obj/effect/turf_decal,
 /turf/open/floor/plating,
@@ -3769,7 +3769,7 @@
 	dir = 8;
 	pixel_x = -9;
 	pixel_y = 2;
-	id = garageshutter
+	id = "garageshutter"
 	},
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/mech_garage)
@@ -3792,13 +3792,13 @@
 	dir = 4;
 	pixel_x = -36;
 	pixel_y = -10;
-	id = outerdoor
+	id = "outerdoor"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
 	pixel_x = -23;
 	pixel_y = -10;
-	id = innerdoor
+	id = "innerdoor"
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
@@ -3875,7 +3875,7 @@
 	dir = 8;
 	pixel_x = 21;
 	pixel_y = 10;
-	id = mechgarage
+	id = "mechgarage"
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/mech_garage)
@@ -4718,10 +4718,10 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 8;
-	id = mechgarage
+	id = "mechgarage"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = garageshutter
+	id = "garageshutter"
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/mech_garage)
@@ -4912,10 +4912,10 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 8;
-	id = outerdoor
+	id = "outerdoor"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = outershutter
+	id = "outershutter"
 	},
 /turf/open/floor/concrete/pavement/icemoon,
 /area/ruin/icemoon/training_facility/garage)
@@ -5120,10 +5120,10 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 4;
-	id = outerdoor
+	id = "outerdoor"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = outershutter
+	id = "outershutter"
 	},
 /turf/open/floor/concrete/pavement/icemoon,
 /area/ruin/icemoon/training_facility/garage)
@@ -5253,10 +5253,10 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 8;
-	id = innerdoor
+	id = "innerdoor"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = innershutter
+	id = "innershutter"
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/icemoon/training_facility/garage)
@@ -7481,13 +7481,13 @@
 	dir = 4;
 	pixel_x = 7;
 	pixel_y = -2;
-	id = innershutter
+	id = "innershutter"
 	},
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -6;
 	pixel_y = -2;
-	id = outershutter
+	id = "outershutter"
 	},
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/lobby)
@@ -8168,7 +8168,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = innershutter
+	id = "innershutter"
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/icemoon/training_facility/garage)
@@ -8644,10 +8644,10 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 4;
-	id = mechgarage
+	id = "mechgarage"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = garageshutter
+	id = "garageshutter"
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/mech_garage)
