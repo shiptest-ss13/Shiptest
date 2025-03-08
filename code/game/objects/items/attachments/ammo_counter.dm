@@ -36,5 +36,6 @@
 	if(gun::empty_alarm)
 		return
 	gun.empty_alarm = !gun.empty_alarm
+	gun.empty_alarm_vary = !gun.empty_alarm_vary
 
 
