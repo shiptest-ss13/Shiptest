@@ -15,7 +15,7 @@
 	/// Only needed if you have multipe missions that use the same poi's on the map. Set at new.
 	var/mission_index
 
-	var/location_specific = TRUE
+	var/location_specific = FALSE
 	/// The location the mission is relient on, often pulling varibles from it or will delete itself if the mission_location is deleted. Passed in New().
 	var/datum/overmap/mission_location
 
@@ -34,8 +34,12 @@
 	var/failed = FALSE
 	var/dur_timer
 
+	///Used to determine if it shows up as an acceptable mission instead of public.
+	var/acceptable = FALSE
 	// If the mission has been accepted by a ship.
 	var/accepted = FALSE
+	/// The outpost that issued this mission. Passed in New().
+	var/datum/overmap/outpost/source_outpost
 	/// The ship that accepted this mission. Passed in accept().
 	var/datum/overmap/ship/controlled/servant
 
@@ -54,6 +58,10 @@
 		mission_location = _location
 		RegisterSignal(mission_location, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 		RegisterSignal(mission_location, COMSIG_OVERMAP_LOADED, PROC_REF(on_planet_load))
+		if(active)
+			SSmissions.active_ruin_missions += src
+		else
+			SSmissions.inactive_ruin_missions += src
 
 	generate_mission_details()
 	regex_mission_text()
@@ -63,6 +71,11 @@
 	//UnregisterSignal(source_outpost, COMSIG_PARENT_QDELETING)
 	if(location_specific)
 		UnregisterSignal(mission_location, COMSIG_PARENT_QDELETING, COMSIG_OVERMAP_LOADED)
+		if(active)
+			SSmissions.active_ruin_missions -= src
+		else
+			SSmissions.inactive_ruin_missions -= src
+
 	//LAZYREMOVE(source_outpost.missions, src)
 	//source_outpost = null
 	for(var/bound in bound_atoms)
@@ -110,12 +123,12 @@
 
 /datum/mission/proc/start_mission()
 	SSblackbox.record_feedback("tally", "mission_started", 1, src.type)
-	SSmissions.inactive_missions -= src
+	SSmissions.inactive_ruin_missions -= src
 	active = TRUE
 	time_issued = station_time()
-	if(duration && !istype(src, /datum/mission/basic))
+	if(duration && !istype(src, /datum/mission/outpost))
 		dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
-	SSmissions.active_missions += src
+	SSmissions.active_ruin_missions += src
 
 /datum/mission/proc/on_planet_load(datum/overmap/dynamic/planet)
 	SIGNAL_HANDLER
@@ -136,7 +149,12 @@
 	return
 
 /datum/mission/proc/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
-	return
+	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "accepted"))
+	accepted = TRUE
+	servant = acceptor
+	LAZYREMOVE(source_outpost.missions, src)
+	LAZYADD(servant.missions, src)
+	dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 
 /datum/mission/proc/can_turn_in(atom/movable/item_to_check)
 	return
@@ -146,7 +164,7 @@
 		SSblackbox.record_feedback("tally", "mission_turned_in", 1, src.type)
 		spawn_reward(item_to_turn_in.loc)
 		do_sparks(3, FALSE, get_turf(item_to_turn_in))
-		SSmissions.active_missions -= src
+		SSmissions.active_ruin_missions -= src
 		active = FALSE
 		if(istype(mission_location, /datum/overmap/dynamic))
 			var/datum/overmap/dynamic/dynamic_location = mission_location
@@ -246,3 +264,9 @@
 	qdel(LAZYACCESSASSOC(bound_atoms, bound, 2))
 	// remove info from our list
 	LAZYREMOVE(bound_atoms, bound)
+
+/datum/mission/proc/get_tgui_info(list/items_on_pad = list())
+	return list()
+
+/datum/mission/proc/get_turn_in_info(list/items_on_pad = list())
+	return

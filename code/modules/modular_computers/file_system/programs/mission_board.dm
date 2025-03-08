@@ -29,7 +29,7 @@
 /datum/computer_file/program/mission_board/ui_data(mob/user)
 	var/list/data = get_header_data()
 	data["missions"] = list()
-	for(var/datum/mission/ruin/M in SSmissions.active_missions)
+	for(var/datum/mission/M in SSmissions.active_ruin_missions)
 		data["missions"] += list(M.get_tgui_info())
 	data["pad"] = FALSE
 	data["id_inserted"] = FALSE

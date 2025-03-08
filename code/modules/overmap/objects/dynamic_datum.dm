@@ -252,16 +252,16 @@
 
 /datum/overmap/dynamic/ui_data(mob/user)
 	. = ..()
-	.["active_missions"] = list()
-	.["inactive_missions"] = list()
+	.["active_ruin_missions"] = list()
+	.["inactive_ruin_missions"] = list()
 	for(var/datum/mission/ruin/mission as anything in dynamic_missions)
 		if(mission.active)
-			.["active_missions"] += list(list(
+			.["active_ruin_missions"] += list(list(
 				"ref" = REF(mission),
 				"name" = mission.name,
 			))
 		else
-			.["inactive_missions"] += list(list(
+			.["inactive_ruin_missions"] += list(list(
 				"ref" = REF(mission),
 				"name" = mission.name,
 			))

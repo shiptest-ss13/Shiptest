@@ -19,8 +19,8 @@ export type OvermapData = {
   y: number;
   dockedTo: NameAndRef;
   docked: NameAndRef[];
-  active_missions: NameAndRef[] | null;
-  inactive_missions: NameAndRef[] | null;
+  active_ruin_missions: NameAndRef[] | null;
+  inactive_ruin_missions: NameAndRef[] | null;
 };
 
 type NameAndRef = {
@@ -92,7 +92,7 @@ export const OvermapInspect = (props, context) => {
             {admin_rights ? (
               <Box>
                 <LabeledList.Item label="Active Missions">
-                  {data.active_missions?.map((mission) => (
+                  {data.active_ruin_missions?.map((mission) => (
                     <Box key={mission.ref}>
                       {mission.name}{' '}
                       <Button
@@ -105,7 +105,7 @@ export const OvermapInspect = (props, context) => {
                   ))}
                 </LabeledList.Item>
                 <LabeledList.Item label="Inactive Missions">
-                  {data.inactive_missions?.map((mission) => (
+                  {data.inactive_ruin_missions?.map((mission) => (
                     <Box key={mission.ref}>
                       {mission.name}{' '}
                       {admin_rights ? (

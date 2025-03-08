@@ -2,6 +2,7 @@
 	value = 2000
 	duration = null
 	desc = "Find my notes. (Placeholder)"
+	location_specific = TRUE
 	/// Which landmark we will search for in spawned_mission_pois of the planet
 	var/setpiece_poi = /obj/effect/landmark/mission_poi/main
 	/// Item that will be spawned at the setpiece_poi
@@ -12,17 +13,6 @@
 	var/atom/movable/required_item
 	#warn redocument
 	var/dibs_string
-
-/datum/mission/ruin/New(_location, _mission_index)
-	SSmissions.inactive_missions += list(src)
-	. = ..()
-
-/datum/mission/ruin/Destroy()
-	if(active)
-		SSmissions.active_missions -= src
-	else
-		SSmissions.inactive_missions -= src
-	. = ..()
 
 /datum/mission/ruin/generate_mission_details()
 	. = ..()
@@ -86,7 +76,8 @@
 			if(istype(item_to_check, required_item.type))
 				return TRUE
 
-/datum/mission/ruin/proc/get_tgui_info(list/items_on_pad = list())
+/datum/mission/ruin/get_tgui_info(list/items_on_pad = list())
+	. = ..()
 	var/time_remaining = max(dur_timer ? timeleft(dur_timer) : duration, 0)
 
 	var/act_str = ""
@@ -101,7 +92,7 @@
 			can_turn_in = TRUE
 			break
 
-	return list(
+	. += list(
 		"ref" = REF(src),
 		"name" = src.name,
 		"author" = src.author,

@@ -57,8 +57,7 @@
 /obj/structure/table,
 /obj/item/storage/cans/sixbeer,
 /obj/effect/landmark/mission_poi/main{
-	blocks_emissive = 1;
-	mission_index = 1
+	blocks_emissive = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
@@ -163,7 +162,6 @@
 "eU" = (
 /obj/structure/chair/plastic,
 /obj/effect/landmark/mission_poi/guard{
-	mission_index = 1;
 	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged
 	},
 /turf/open/floor/plating,
@@ -775,7 +773,6 @@
 	pixel_x = 32
 	},
 /obj/effect/landmark/mission_poi/guard{
-	mission_index = 1;
 	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi
 	},
 /turf/open/floor/plating,
@@ -958,7 +955,6 @@
 /obj/structure/chair/plastic,
 /obj/machinery/light/small/directional/north,
 /obj/effect/landmark/mission_poi/guard{
-	mission_index = 1;
 	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi
 	},
 /turf/open/floor/plating/rust,

@@ -95,11 +95,11 @@
 	data["outpostMissions"] = list()
 
 	if(current_ship)
-		for(var/datum/mission/basic/M as anything in current_ship.missions)
+		for(var/datum/mission/outpost/M as anything in current_ship.missions)
 			data["shipMissions"] += list(M.get_tgui_info())
 		if(outpost_docked)
 			var/datum/overmap/outpost/out = current_ship.docked_to
-			for(var/datum/mission/basic/M as anything in out.missions)
+			for(var/datum/mission/outpost/M as anything in out.missions)
 				data["outpostMissions"] += list(M.get_tgui_info())
 
 	return data
@@ -151,7 +151,7 @@
 					update_appearance() // ??????????????????
 					return TRUE
 		if("mission-act")
-			var/datum/mission/basic/mission = locate(params["ref"])
+			var/datum/mission/outpost/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
 			var/datum/overmap/ship/controlled/ship = D.current_ship
 			var/datum/overmap/outpost/outpost = ship.docked_to
