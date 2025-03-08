@@ -3564,7 +3564,9 @@
 /area/ship/security)
 "Tw" = (
 /obj/structure/table,
-/obj/effect/spawner/random/entertainment/deck,
+/obj/effect/spawner/random/entertainment/deck{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "TH" = (
