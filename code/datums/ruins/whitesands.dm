@@ -40,17 +40,6 @@
 	description = "An old Eoehoma Firearms manufacturing plant dedicated to assembly of the beloved-by-many E-11 rifle."
 	suffix = "whitesands_surface_e11_manufactory.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_HAZARDOUS)
-	ruin_mission_types = (
-		/datum/mission/ruin/mothroach
-	)
-
-/datum/mission/ruin/mothroach
-	name = "Important pet recover"
-	desc = "They took my fucking mothroach"
-	setpiece_item = /mob/living/simple_animal/pet/mothroach/croquette
-
-/mob/living/simple_animal/pet/mothroach/croquette
-	name = "Croquette"
 
 /datum/map_template/ruin/whitesands/brazillian_lab
 	name = "Hermit Weapons-Testing Compound"
