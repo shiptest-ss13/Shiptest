@@ -39,3 +39,10 @@
 	suffix = "beach_treasure_cove.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 	ruin_mission_types = list(/datum/mission/ruin/signaled/kill/frontiersmen)
+
+/datum/map_template/ruin/beachplanet/frontiersmen_depot
+	name = "Frontiersmen Depot"
+	id = "beach_bunkers"
+	description = "A poorly constructed jumble of bunkers, currently held by the Frontiersmen Fleet for usage as a supply depot."
+	suffix = "beach_bunkers.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
