@@ -551,7 +551,7 @@
 /atom/movable/proc/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	SHOULD_NOT_SLEEP(TRUE)
 	SHOULD_CALL_PARENT(TRUE)
-	SEND_SIGNAL(src, COMSIG_ATOM_VIRTUAL_Z_CHANGE, new_virtual_z, previous_virtual_z)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_VIRTUAL_Z_CHANGE, new_virtual_z, previous_virtual_z)
 
 /mob/living/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	. = ..()
