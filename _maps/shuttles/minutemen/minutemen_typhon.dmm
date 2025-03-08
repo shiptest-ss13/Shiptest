@@ -3555,7 +3555,9 @@
 /obj/structure/guncloset,
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag,
-/obj/item/gun/ballistic/automatic/smg/cm5/compact/no_mag,
+/obj/item/gun/ballistic/automatic/smg/cm5/compact/no_mag{
+	desc = "A modification of the CM-5 featuring a dramatically shortened barrel and removed stock. Designed for CLIP-GOLD, but often issued to C-MM exosuit pilots and tank crews due to its relative ease of carrying. Chambered in 9mm."
+	},
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag,
 /turf/open/floor/plasteel/dark,
