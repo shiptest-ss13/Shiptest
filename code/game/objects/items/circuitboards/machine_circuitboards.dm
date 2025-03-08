@@ -705,6 +705,7 @@
 	req_components = list(
 		/obj/item/stack/sheet/glass = 1,
 		/obj/item/vending_refill/donksoft = 1)
+
 /obj/item/circuitboard/machine/fax
 	name = "Fax Machine"
 	build_path = /obj/machinery/fax
