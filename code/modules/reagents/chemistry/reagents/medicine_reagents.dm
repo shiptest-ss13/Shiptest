@@ -381,11 +381,8 @@
 	color = "#6D6374"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/mine_salve/on_mob_metabolize(mob/living/L)
-	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
-
 /datum/reagent/medicine/mine_salve/on_mob_life(mob/living/carbon/C)
-	C.hal_screwyhud = SCREWYHUD_HEALTHY
+	C.set_screwyhud(SCREWYHUD_HEALTHY)
 	C.adjustBruteLoss(-0.25*REM, 0)
 	C.adjustFireLoss(-0.25*REM, 0)
 	..()
@@ -407,11 +404,18 @@
 				to_chat(M, "<span class='danger'>You feel your wounds fade away to nothing!</span>" )
 	..()
 
+/datum/reagent/medicine/mine_salve/on_mob_metabolize(mob/living/L)
+	..()
+	ADD_TRAIT(L, TRAIT_ANALGESIA, type)
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		C.set_screwyhud(SCREWYHUD_HEALTHY)
+
 /datum/reagent/medicine/mine_salve/on_mob_end_metabolize(mob/living/M)
 	if(iscarbon(M))
 		var/mob/living/carbon/N = M
-		REMOVE_TRAIT(N, TRAIT_PAIN_RESIST, type)
-		N.hal_screwyhud = SCREWYHUD_NONE
+		REMOVE_TRAIT(N, TRAIT_ANALGESIA, type)
+		N.set_screwyhud(SCREWYHUD_NONE)
 	..()
 
 /datum/reagent/medicine/synthflesh
@@ -911,6 +915,9 @@
 /datum/reagent/medicine/dimorlin/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_ANALGESIA, type)
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		C.set_screwyhud(SCREWYHUD_HEALTHY)
 	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
@@ -918,15 +925,19 @@
 
 /datum/reagent/medicine/dimorlin/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_ANALGESIA, type)
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		C.set_screwyhud(SCREWYHUD_NONE)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance -= 15
 	..()
 
-/datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/C)
+	C.set_screwyhud(SCREWYHUD_HEALTHY)
 	if(current_cycle >= 3)
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
+		SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
 	..()
 
 /datum/reagent/medicine/dimorlin/overdose_start(mob/living/M)
