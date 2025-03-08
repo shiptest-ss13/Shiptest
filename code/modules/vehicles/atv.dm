@@ -28,45 +28,6 @@
 		cut_overlay(atvcover)
 	return ..()
 
-//TURRETS!
-/obj/vehicle/ridden/atv/turret
-	var/obj/machinery/porta_turret/syndicate/vehicle_turret/turret = null
-
-/obj/machinery/porta_turret/syndicate/vehicle_turret
-	name = "mounted turret"
-	scan_range = 7
-	density = FALSE
-
-/obj/vehicle/ridden/atv/turret/Initialize()
-	. = ..()
-	turret = new(loc)
-
-/obj/vehicle/ridden/atv/turret/Moved()
-	. = ..()
-	if(!turret)
-		return
-	var/turf/our_turf = get_turf(src)
-	if(!our_turf)
-		return
-	turret.forceMove(our_turf)
-	switch(dir)
-		if(NORTH)
-			turret.pixel_x = base_pixel_x
-			turret.pixel_y = base_pixel_y + 4
-			turret.layer = ABOVE_MOB_LAYER
-		if(EAST)
-			turret.pixel_x = base_pixel_x - 12
-			turret.pixel_y = base_pixel_y + 4
-			turret.layer = OBJ_LAYER
-		if(SOUTH)
-			turret.pixel_x = base_pixel_x
-			turret.pixel_y = base_pixel_y + 4
-			turret.layer = OBJ_LAYER
-		if(WEST)
-			turret.pixel_x = base_pixel_x + 12
-			turret.pixel_y = base_pixel_y + 4
-			turret.layer = OBJ_LAYER
-
 /obj/vehicle/ridden/atv/attackby(obj/item/W as obj, mob/user as mob, params)
 	if(W.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HARM)
 		if(obj_integrity < max_integrity)
