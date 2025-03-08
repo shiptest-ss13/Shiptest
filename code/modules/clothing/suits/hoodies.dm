@@ -228,7 +228,6 @@
 	mob_overlay_icon = 'icons/mob/clothing/head/winterhood.dmi'
 	icon_state = "hoodie_fbp"
 	item_state = "hoodie_fbp"
-	unique_reskin = null
 
 /obj/item/clothing/suit/hooded/hoodie/rilena
 	name = "K4L1 hoodie"
@@ -261,7 +260,6 @@
 	mob_overlay_icon = 'icons/mob/clothing/head/winterhood.dmi'
 	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
-	unique_reskin = null
 
 /obj/item/clothing/suit/hooded/hoodie/blackwa
 	name = "black and white hoodie"
