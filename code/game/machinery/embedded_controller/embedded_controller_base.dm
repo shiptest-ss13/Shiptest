@@ -18,7 +18,7 @@
 /datum/computer/file/embedded_program/proc/receive_signal(datum/signal/signal)
 	return null
 
-/datum/computer/file/embedded_program/process()
+/datum/computer/file/embedded_program/process(seconds_per_tick)
 	return 0
 
 /obj/machinery/embedded_controller
@@ -61,9 +61,9 @@
 	usr.set_machine(src)
 	addtimer(CALLBACK(src, PROC_REF(updateDialog)), 5)
 
-/obj/machinery/embedded_controller/process()
+/obj/machinery/embedded_controller/process(seconds_per_tick)
 	if(program)
-		program.process()
+		program.process(seconds_per_tick)
 
 	update_appearance()
 	src.updateDialog()

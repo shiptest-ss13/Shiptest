@@ -133,7 +133,7 @@
 	broadcast_status()
 	..()
 
-/obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos()
+/obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos(seconds_per_tick)
 	..()
 
 	if(welded || !on || !is_operational)
@@ -149,20 +149,20 @@
 		return FALSE
 
 	var/turf/location = loc
-	scrub(location)
+	scrub(location, seconds_per_tick)
 	if(widenet)
 		for(var/turf/tile as anything in location.atmos_adjacent_turfs)
-			scrub(tile)
+			scrub(tile, seconds_per_tick)
 	return TRUE
 
-/obj/machinery/atmospherics/components/unary/vent_scrubber/proc/scrub(turf/tile)
+/obj/machinery/atmospherics/components/unary/vent_scrubber/proc/scrub(turf/tile, seconds_per_tick = 0.5)
 	var/datum/gas_mixture/environment = tile.return_air()
 
 	if(scrubbing & SCRUBBING)
-		environment.scrub_into(airs[1], volume_rate / environment.return_volume(), filter_types)
+		environment.scrub_into(airs[1], volume_rate * seconds_per_tick / environment.return_volume(), filter_types)
 
 	else //Just siphoning all air
-		environment.transfer_ratio_to(airs[1], volume_rate / environment.return_volume())
+		environment.transfer_ratio_to(airs[1], volume_rate * seconds_per_tick / environment.return_volume())
 
 	tile.air_update_turf()
 	update_parents()

@@ -9,7 +9,7 @@
 		return 1
 	return 0
 
-/obj/item/computer_hardware/recharger/process()
+/obj/item/computer_hardware/recharger/process(seconds_per_tick)
 	..()
 	var/obj/item/computer_hardware/battery/battery_module = holder.all_components[MC_CELL]
 	if(!holder || !battery_module || !battery_module.battery)

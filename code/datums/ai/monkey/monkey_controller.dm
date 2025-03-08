@@ -168,14 +168,14 @@ have ways of interacting with a specific mob and control it.
 	return FALSE
 
 //When idle just kinda fuck around.
-/datum/ai_controller/monkey/PerformIdleBehavior(delta_time)
+/datum/ai_controller/monkey/PerformIdleBehavior(seconds_per_tick)
 	var/mob/living/living_pawn = pawn
 
-	if(DT_PROB(25, delta_time) && (living_pawn.mobility_flags & MOBILITY_MOVE) && isturf(living_pawn.loc) && !living_pawn.pulledby)
+	if(SPT_PROB(25, seconds_per_tick) && (living_pawn.mobility_flags & MOBILITY_MOVE) && isturf(living_pawn.loc) && !living_pawn.pulledby)
 		step(living_pawn, pick(GLOB.cardinals))
-	else if(DT_PROB(5, delta_time))
+	else if(SPT_PROB(5, seconds_per_tick))
 		INVOKE_ASYNC(living_pawn, TYPE_PROC_REF(/mob, emote), pick("screech"))
-	else if(DT_PROB(1, delta_time))
+	else if(SPT_PROB(1, seconds_per_tick))
 		INVOKE_ASYNC(living_pawn, TYPE_PROC_REF(/mob, emote), pick("scratch","jump","roll","tail"))
 
 ///Reactive events to being hit

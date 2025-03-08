@@ -24,7 +24,7 @@
 	/// Current recharge progress.
 	var/recharge_cooldown = 0
 	/// Base recharge time which is used to get recharge_time.
-	var/base_recharge_time = 10
+	var/base_recharge_time = 20
 	/// Current /datum/blackmarket_purchase being recieved.
 	var/recieving
 	/// Current /datum/blackmarket_purchase being sent to the target uplink.
@@ -73,12 +73,12 @@
 		return
 	queue += purchase
 
-/obj/machinery/ltsrbt/process()
+/obj/machinery/ltsrbt/process(seconds_per_tick)
 	if(machine_stat & NOPOWER)
 		return
 
-	if(recharge_cooldown)
-		recharge_cooldown--
+	if(recharge_cooldown > 0)
+		recharge_cooldown -= seconds_per_tick
 		return
 
 	var/turf/T = get_turf(src)

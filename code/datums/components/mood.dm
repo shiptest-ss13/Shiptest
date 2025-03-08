@@ -174,26 +174,26 @@
 			break
 
 ///Called on SSmood process
-/datum/component/mood/process()
+/datum/component/mood/process(seconds_per_tick)
 	switch(mood_level)
 		if(1)
-			setSanity(sanity-0.3, SANITY_INSANE)
+			setSanity(sanity-0.3*seconds_per_tick, SANITY_INSANE)
 		if(2)
-			setSanity(sanity-0.15, SANITY_INSANE)
+			setSanity(sanity-0.15*seconds_per_tick, SANITY_INSANE)
 		if(3)
-			setSanity(sanity-0.1, SANITY_CRAZY)
+			setSanity(sanity-0.1*seconds_per_tick, SANITY_CRAZY)
 		if(4)
-			setSanity(sanity-0.05, SANITY_UNSTABLE)
+			setSanity(sanity-0.05*seconds_per_tick, SANITY_UNSTABLE)
 		if(5)
 			setSanity(sanity, SANITY_UNSTABLE) //This makes sure that mood gets increased should you be below the minimum.
 		if(6)
-			setSanity(sanity+0.2, SANITY_UNSTABLE)
+			setSanity(sanity+0.2*seconds_per_tick, SANITY_UNSTABLE)
 		if(7)
-			setSanity(sanity+0.3, SANITY_UNSTABLE)
+			setSanity(sanity+0.3*seconds_per_tick, SANITY_UNSTABLE)
 		if(8)
-			setSanity(sanity+0.4, SANITY_NEUTRAL, SANITY_MAXIMUM)
+			setSanity(sanity+0.4*seconds_per_tick, SANITY_NEUTRAL, SANITY_MAXIMUM)
 		if(9)
-			setSanity(sanity+0.6, SANITY_NEUTRAL, SANITY_MAXIMUM)
+			setSanity(sanity+0.6*seconds_per_tick, SANITY_NEUTRAL, SANITY_MAXIMUM)
 	HandleNutrition()
 
 ///Sets sanity to the specified amount and applies effects.

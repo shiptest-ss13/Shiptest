@@ -427,7 +427,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 /obj/machinery/power/supermatter_crystal/proc/call_explode()
 	explode()
 
-/obj/machinery/power/supermatter_crystal/process_atmos()
+/obj/machinery/power/supermatter_crystal/process_atmos(seconds_per_tick)
 	var/turf/T = loc
 
 	if(isnull(T))// We have a null turf...something is wrong, stop processing this entity.

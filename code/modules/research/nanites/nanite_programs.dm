@@ -165,7 +165,7 @@
 	if(timer_restart)
 		timer_restart_next = world.time + timer_restart
 
-/datum/nanite_program/proc/on_process()
+/datum/nanite_program/proc/on_process(seconds_per_tick)
 	if(!activated)
 		if(timer_restart_next && world.time > timer_restart_next)
 			activate()

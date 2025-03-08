@@ -52,7 +52,7 @@
 
 	STOP_PROCESSING(SSdcs, src)
 
-/datum/component/manual_breathing/process()
+/datum/component/manual_breathing/process(seconds_per_tick)
 	var/mob/living/carbon/C = parent
 
 	var/next_text = initial(next_breath_type.key)
