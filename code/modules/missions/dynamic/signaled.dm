@@ -24,9 +24,11 @@
 /obj/effect/landmark/mission_poi/main/drill
 
 /datum/mission/ruin/signaled/drill
-	name = "drill mission"
-	desc = "get this drill back up and running and send us proof"
-	value = 8000
+	name = "drill reinstallment"
+	desc = "We have a drill we want turned back on before we send people to get this outpost back up and running. \
+			Its a industrial level drill resting ontop of a class 4 vein. \
+			We want the seismograph readout it prints out when its done as proof."
+	value = 15000
 	faction = list(
 		/datum/faction/nt,
 		/datum/faction/nt/ns_logi,
@@ -67,14 +69,13 @@
 /obj/machinery/drill/mission/ruin
 	name = "industrial grade mining drill"
 	desc = "A large scale laser drill. It's able to mine vast amounts of minerals from near-surface ore pockets, this one is designed for mining outposts."
-	anchored = TRUE
 	mission_class = 4
-	num_wanted = 15
+	num_wanted = 10
 
 /obj/item/drill_readout
-	name = "drill debug information"
+	name = "industrial drill seismograph"
 	desc = "Created by a mining outpost drill."
 	icon = 'icons/obj/bureaucracy.dmi'
-	icon_state = "paper"
+	icon_state = "cpaper_words"
 	item_state = "paper"
 	w_class = WEIGHT_CLASS_SMALL

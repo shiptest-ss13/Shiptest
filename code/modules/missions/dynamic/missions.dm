@@ -18,21 +18,6 @@
 
 /datum/mission/ruin/blackbox
 	name = "blackbox recovery"
-	desc = "Recover some lost logs from this ruin's blackbox recorder."
+	desc = "We lost communication with this planet. Investigate the planet, clear it of hostiles if you find any. Recover the lost logs from its blackbox recorder as proof of completion."
 	setpiece_item = /obj/machinery/blackbox_recorder
-
-/datum/mission/ruin/nt_files
-	name = "NT asset recovery"
-	desc = "Look- long story short, I need this folder retrieved. You don't ask why, I make sure you get paid."
-	value = 2500
-	mission_reward = list(
-		/obj/item/gun/energy/e_gun/old,
-		/obj/item/gun/energy/laser/retro,
-	)
-	faction = /datum/faction/nt
-	setpiece_item = /obj/item/documents/nanotrasen
-
-/datum/mission/ruin/nt_files/generate_mission_details()
-	. = ..()
-	author = "Captain [random_species_name()]"
 

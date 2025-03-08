@@ -15,10 +15,26 @@
 		/datum/mission/ruin/signaled/kill/jerry
 	)
 
+/datum/mission/ruin/nt_files
+	name = "NT asset recovery"
+	desc = "Look- long story short, I need this folder retrieved. You don't ask why, I make sure you get paid."
+	value = 2500
+	mission_reward = list(
+		/obj/item/gun/energy/e_gun/old,
+		/obj/item/gun/energy/laser/retro,
+	)
+	faction = /datum/faction/nt
+	setpiece_item = /obj/item/documents/nanotrasen
+
+/datum/mission/ruin/nt_files/generate_mission_details()
+	. = ..()
+	author = "Captain [random_species_name()]"
+
 /datum/mission/ruin/signaled/kill/jerry
 	name = "FUCKING KIL JERRY THAT SUNOFA BITCH STOLE BY GODDAMN RELINA PLUSHIE!!"
 	desc = "I WANT MY FUCKIN PUSHIE BACK KILL HIM AND ILL PAY!"
 	author = "I FUCKING WANT HIM HUNG."
+	faction = /datum/faction/independent
 	mission_reward = /obj/item/poster/random_rilena
 	registered_type = /mob/living/simple_animal/hostile/human/ramzi
 	setpiece_item = list(

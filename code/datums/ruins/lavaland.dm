@@ -28,7 +28,7 @@
 /datum/map_template/ruin/lavaland/wrecked_factory
 	name = "Wrecked Factory"
 	id = "wreck_factory"
-	description = "A  Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
+	description = "A Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
 	suffix = "lavaland_surface_wrecked_factory.dmm"
 	ruin_mission_types = list(
 		/datum/mission/ruin/nanotrasen_docs,
@@ -37,18 +37,23 @@
 	)
 
 /datum/mission/ruin/nanotrasen_docs
-	name = "recover some nanotrasen files."
-	value = 2500
+	name = "Nanotrasen confidentail information recovery."
+	desc = "A set of documents containing valuble company secrets was lost at one of our facilitys. We lost contact with it and need those documents back."
+	faction = /datum/faction/nt
+	value = 3500
 	setpiece_item = /obj/item/documents/nanotrasen
 
 /datum/mission/ruin/captain_medal
 	name = "recover my lost medal."
-	value = 1250
+	desc = "I lost my medal at an old facility I used to work, but i need it for a ceremony this week. I'll pay good cash to get it back ASAP."
+	faction = /datum/faction/nt
+	value = 2250
 	setpiece_item = /obj/item/documents/nanotrasen
 
 /datum/mission/ruin/brainchip
 	name = "brainchip recovery"
-	desc = "one of our cargo techs died with some important tech in his head. get it back"
+	desc = "One of our cargo techs died with some important tech in his head. Get it back."
+	faction = /datum/faction/nt
 	setpiece_item = /mob/living/carbon/human
 
 /obj/effect/landmark/mission_poi/main/implanted
