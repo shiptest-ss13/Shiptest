@@ -546,7 +546,7 @@
 	if(target_carbon.handcuffed || !(target_carbon.mobility_flags & MOBILITY_USE))
 		return FALSE
 
-	if(target_carbon.stat == SOFT_CRIT)
+	if(target_carbon.stat != CONSCIOUS)
 		return FALSE
 
 	if(target_carbon.is_holding_item_of_type(/obj/item/gun) || target_carbon.is_holding_item_of_type(/obj/item/melee))
