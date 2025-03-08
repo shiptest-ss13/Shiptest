@@ -174,7 +174,7 @@
 		qdel(src)
 
 /datum/mission/proc/spawn_reward(loc)
-	new /obj/item/spacecash/bundle(loc, value * 1.2)
+	new /obj/item/spacecash/bundle(loc, value)
 	if(ispath(mission_reward))
 		new mission_reward(loc)
 
