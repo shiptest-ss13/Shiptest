@@ -113,7 +113,7 @@
 	playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 
 /// Starts the activation sequence, where parts of the suit activate one by one until the whole suit is on
-/obj/item/mod/control/proc/toggle_activate(mob/user, force_deactivate = FALSE)
+/obj/item/mod/control/proc/toggle_activate(mob/user, force_deactivate = FALSE, force_retract = FALSE)
 	if(!wearer)
 		if(!force_deactivate)
 			balloon_alert(user, "put suit on back!")
@@ -178,6 +178,8 @@
 		else
 			playsound(src, 'sound/machines/synth_no.ogg', 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE, frequency = 6000)
 	activating = FALSE
+	if(force_retract)
+		quick_deploy(user)
 	return TRUE
 
 ///Seals or unseals the given part
@@ -242,3 +244,17 @@
 
 /obj/item/mod/control/proc/has_wearer()
 	return wearer
+
+/obj/item/mod/control/CtrlClick(mob/user)
+	. = ..()
+	quick_toggle(user)
+
+// quickly deploys/retracts the suit and activate/deactives
+/obj/item/mod/control/proc/quick_toggle(mob/user)
+	if(!active)
+		quick_deploy(user)
+		toggle_activate(user)
+	else
+		toggle_activate(user, TRUE, TRUE)
+
+

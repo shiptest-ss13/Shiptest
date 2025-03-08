@@ -93,6 +93,13 @@
 	/// Person wearing the MODsuit.
 	var/mob/living/carbon/human/wearer
 
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_BACK
+	equip_delay_other = EQUIP_DELAY_BACK * 1.5
+	strip_delay = EQUIP_DELAY_BACK * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
+
 /obj/item/mod/control/Initialize(mapload, datum/mod_theme/new_theme, new_skin, obj/item/mod/core/new_core)
 	. = ..()
 	if(new_theme)
@@ -215,10 +222,12 @@
 			. += span_notice("You could remove [ai] with an <b>intellicard</b>.")
 		else
 			. += span_notice("You could install an AI with an <b>intellicard</b>.")
+	. += span_notice("You could <b>ctrl-click<b> the [src] to quick activate or deactivate the suit.")
 
 /obj/item/mod/control/examine_more(mob/user)
 	. = ..()
-	. += "<i>[extended_desc]</i>"
+	if(extended_desc)
+		. += "<i>[extended_desc]</i>"
 
 /obj/item/mod/control/process(delta_time)
 	if(seconds_electrified > MACHINE_NOT_ELECTRIFIED)
@@ -609,7 +618,7 @@
 	core.update_charge_alert()
 
 /obj/item/mod/control/proc/update_speed()
-	var/list/all_parts = mod_parts + src
+	var/list/all_parts = mod_parts
 	for(var/obj/item/part as anything in all_parts)
 		part.slowdown = (active ? slowdown_active : slowdown_inactive) / length(all_parts)
 	wearer?.update_equipment_speed_mods()
@@ -711,3 +720,5 @@
 	if(overslot != overslotting_parts[source])
 		return
 	overslotting_parts[source] = null
+
+
