@@ -37,7 +37,8 @@
 	)
 
 /datum/mission/ruin/nanotrasen_docs
-	name = "Nanotrasen confidentail information recovery."
+	name = "Nanotrasen confidential information recovery."
+	author = "Nanotrasen Recovery Program"
 	desc = "A set of documents containing valuble company secrets was lost at one of our facilitys. We lost contact with it and need those documents back."
 	faction = /datum/faction/nt
 	value = 3500
@@ -52,6 +53,7 @@
 
 /datum/mission/ruin/brainchip
 	name = "brainchip recovery"
+	author = "Nanotrasen Recovery Program"
 	desc = "One of our cargo techs died with some important tech in his head. Get it back."
 	faction = /datum/faction/nt
 	setpiece_item = /mob/living/carbon/human

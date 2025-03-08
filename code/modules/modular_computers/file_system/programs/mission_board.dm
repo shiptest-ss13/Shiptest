@@ -15,15 +15,15 @@
 	if(.)
 		return
 	switch(action)
-		if("dibs")
+		if("claim")
 			if(!COOLDOWN_FINISHED(src, dibs_cooldown))
-				computer.say("The dibs function is on cooldown.")
+				computer.say("The claim function is on cooldown.")
 				playsound(computer, 'sound/machines/buzz-two.ogg', 10, FALSE, FALSE)
 				return
 			var/datum/mission/ruin/mission = locate(params["mission"])
 			if(!istype(mission, /datum/mission/ruin))
 				return
-			mission.dibs++
+			mission.dibs_string = "unknown claimer - [station_time_timestamp()]"
 			COOLDOWN_START(src, dibs_cooldown, 5 SECONDS)
 
 /datum/computer_file/program/mission_board/ui_data(mob/user)

@@ -76,7 +76,7 @@ const MissionsList = (props, context) => {
       duration,
       canTurnIn,
       validItems,
-      dibs,
+      claim,
     } = mission;
     return (
       <Box key={ref}>
@@ -103,9 +103,9 @@ const MissionsList = (props, context) => {
           <LabeledList.Item>
             <Button
               tooltip={'An informal system of claiming missions.'}
-              onClick={() => act('dibs', { mission: ref })}
+              onClick={() => act('claim', { mission: ref })}
             >
-              {'Dibs ' + mission.dibs}
+              {'>Claim: ' + mission.claim}
             </Button>
             <Button
               icon={'arrow-up'}

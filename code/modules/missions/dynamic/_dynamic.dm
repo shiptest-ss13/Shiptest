@@ -10,8 +10,8 @@
 	var/specific_item = TRUE
 	/// The item that you can turn in to complete the mission. If specific_item is false it uses the type of the item.
 	var/atom/movable/required_item
-	/// The amount of clicks to "claim" a mission
-	var/dibs = 0
+	#warn redocument
+	var/dibs_string
 
 /datum/mission/ruin/New(_location, _mission_index)
 	SSmissions.inactive_missions += list(src)
@@ -119,5 +119,5 @@
 		"actStr" = act_str,
 		"canTurnIn" = can_turn_in,
 		"validItems" = acceptable_items,
-		"dibs" = dibs
+		"claim" = dibs_string
 	)
