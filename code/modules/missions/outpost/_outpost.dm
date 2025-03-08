@@ -6,23 +6,6 @@
 	RegisterSignal(mission_location, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	return ..()
 
-/datum/mission/outpost/generate_mission_details()
-	. = ..()
-	var/old_dur = duration
-	var/val_mod = value * val_mod_range
-	var/dur_mod = duration * dur_mod_range
-	// new duration is between
-	duration = round(rand(duration-dur_mod, duration+dur_mod), 30 SECONDS)
-	value = round(rand(value-val_mod, value+val_mod) * (dur_value_scaling ? old_dur / duration : 1), 50)
-
-/datum/mission/outpost/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
-	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "accepted"))
-	accepted = TRUE
-	servant = acceptor
-	LAZYREMOVE(source_outpost.missions, src)
-	LAZYADD(servant.missions, src)
-	dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
-
 /datum/mission/outpost/Destroy()
 	UnregisterSignal(source_outpost, COMSIG_PARENT_QDELETING, COMSIG_OVERMAP_LOADED)
 	LAZYREMOVE(source_outpost.missions, src)

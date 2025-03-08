@@ -24,7 +24,7 @@
 	/// Should mission value scale proportionally to the deviation from the mission's base duration?
 	var/dur_value_scaling = FALSE
 	/// The maximum deviation of the mission's true value from the base value, as a proportion.
-	var/val_mod_range = 0.3
+	var/val_mod_range = 0.1
 	/// The maximum deviation of the mission's true duration from the base value, as a proportion.
 	var/dur_mod_range = 0.1
 
