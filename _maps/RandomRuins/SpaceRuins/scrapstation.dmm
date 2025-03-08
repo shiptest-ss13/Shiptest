@@ -4513,7 +4513,9 @@
 "zz" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/structure/cable/yellow,
-/obj/machinery/porta_turret/ship/ramzi/heavy,
+/obj/machinery/porta_turret/ship/ramzi/heavy{
+	turret_respects_id = 0
+	},
 /obj/effect/decal/cleanable/glass,
 /obj/item/solar_assembly{
 	layer = 2.8
@@ -5477,7 +5479,9 @@
 /obj/item/solar_assembly{
 	layer = 2.8
 	},
-/obj/machinery/porta_turret/ship/ramzi/heavy,
+/obj/machinery/porta_turret/ship/ramzi/heavy{
+	turret_respects_id = 0
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Ez" = (
