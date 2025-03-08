@@ -2773,8 +2773,7 @@
 /area/ship/engineering/atmospherics)
 "wV" = (
 /obj/machinery/computer/helm{
-	dir = 8;
-	icon_state = "computer-left"
+	dir = 8
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -3505,9 +3504,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "Dq" = (
@@ -4955,9 +4952,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /obj/structure/closet/emcloset/wall/directional/west,
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "RU" = (
@@ -5462,9 +5457,8 @@
 /turf/open/floor/pod/dark,
 /area/ship/hallway/central)
 "Vq" = (
-/obj/machinery/computer/card{
-	dir = 8;
-	icon_state = "computer-right"
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 8
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
