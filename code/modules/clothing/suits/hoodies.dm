@@ -219,6 +219,7 @@
 	icon = 'icons/obj/clothing/suits/hooded.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/hooded.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood/fbp
+	unique_reskin = null
 
 /obj/item/clothing/head/hooded/hood/fbp
 	name = "\improper FBP kepori hood"
@@ -236,6 +237,7 @@
 	icon = 'icons/obj/clothing/suits/hooded.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/hooded.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood/rilena
+	unique_reskin = null
 
 /obj/item/clothing/suit/hooded/hoodie/rilena/equipped(mob/user, slot)
 	. = ..()
@@ -267,3 +269,4 @@
 	icon = 'icons/obj/clothing/suits/hooded.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/hooded.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood/gray
+	unique_reskin = null
