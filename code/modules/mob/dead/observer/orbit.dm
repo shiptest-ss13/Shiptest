@@ -240,7 +240,9 @@
 	if(istype(atom_poi, /obj/machinery/computer/helm))
 		var/obj/machinery/computer/helm/helm_poi = atom_poi
 		if(helm_poi.current_ship)
-			misc["extra"] = "Ship: [helm_poi.current_ship.name]"
+			var/datum/overmap/ship/controlled/helm_ship = helm_poi.current_ship
+			misc["full_name"] = helm_ship.name
+			misc["extra"] = "Crew Size: [length(helm_ship.manifest)]"
 
 		return list(misc, critical)
 
