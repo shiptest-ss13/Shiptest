@@ -1,4 +1,4 @@
-#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/scope, /obj/item/attachment/gun)
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/scope, /obj/item/attachment/gun, /obj/item/attachment/sling)
 #define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 //########### PISTOLS ###########//
@@ -180,7 +180,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	dry_fire_sound = 'sound/weapons/gun/revolver/dry_fire.ogg'
 
-	fire_delay = 0.5 SECONDS
+	fire_delay = 0.35 SECONDS
+
+	spread = 3
+	recoil = 1
+	recoil_unwielded = 2
 
 	semi_auto = TRUE //double action
 	safety_wording = "safety"
@@ -197,6 +201,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	semi_auto = FALSE //not double action
 	safety_wording = "hammer"
+
+	fire_delay = 0.4 SECONDS
+	spread = 4
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()
@@ -463,18 +470,15 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 	show_ammo_capacity_on_magazine_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/gun,
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(
 		/obj/item/attachment/foldable_stock/sidewinder
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1,
-		ATTACHMENT_SLOT_STOCK = 1
+		ATTACHMENT_SLOT_STOCK = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -488,6 +492,10 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 		ATTACHMENT_SLOT_STOCK = list(
 			"x" = 17,
 			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 21,
+			"y" = 24,
 		)
 	)
 
@@ -888,8 +896,8 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 
-	spread = 4
-	spread_unwielded = 16
+	spread = 3
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 4
 	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN

@@ -411,12 +411,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
 "bq" = (
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier{
-	head = null;
-	id_job = "Tradepost Officer";
-	name = "Tradeport Officer";
-	random = 1
-	},
+/obj/effect/mob_spawn/human/corpse/vigilitas_private,
 /obj/item/paper/crumpled/ruins/bigderelict1/coward,
 /obj/effect/decal/cleanable/blood/old{
 	name = "dried blood splatter";
@@ -2183,8 +2178,8 @@
 "Zt" = (
 /obj/structure/closet/crate,
 /obj/item/target/syndicate,
-/obj/item/target/clown,
-/obj/item/target/clown,
+/obj/item/target,
+/obj/item/target,
 /obj/item/target/alien,
 /obj/item/target,
 /obj/machinery/light/directional/north,

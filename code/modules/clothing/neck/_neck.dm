@@ -21,33 +21,35 @@
 
 /obj/item/clothing/neck/tie
 	name = "tie"
-	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
-	unique_reskin = list("red tie" = "redtie",
-						"orange tie" = "orangetie",
-						"green tie" = "greentie",
-						"light blue tie" = "lightbluetie",
-						"blue tie" = "bluetie",
-						"purple tie" = "purpletie",
-						"black tie" = "blacktie",
-						"orange tie" = "orangetie",
-						"light blue tie" = "lightbluetie",
-						"purple tie" = "purpletie",
-						"green tie" = "greentie",
-						"brown tie" = "browntie",
-						"rainbow tie" = "rainbow_tie",
-						"horrible tie" = "horribletie",
-						"transgender tie" = "transgender",
-						"pansexual tie" = "pansexual",
-						"nonbinary tie" = "nonbinary",
-						"bisexual tie" = "bisexual",
-						"lesbian tie" = "lesbian",
-						"intersex tie" = "intersex",
-						"gay tie" = "gay",
-						"genderfluid tie" = "genderfluid",
-						"asexual tie" = "asexual",
-						"genderfae tie" = "genderfae",
-						"ally tie" = "ally_tie"
-						)
+	desc = "A neosilk clip-on tie. Special material allows it to be reskinned, but only once."
+	unique_reskin = list(
+		"red tie" = "redtie",
+		"orange tie" = "orangetie",
+		"green tie" = "greentie",
+		"light blue tie" = "lightbluetie",
+		"blue tie" = "bluetie",
+		"purple tie" = "purpletie",
+		"black tie" = "blacktie",
+		"orange tie" = "orangetie",
+		"light blue tie" = "lightbluetie",
+		"purple tie" = "purpletie",
+		"green tie" = "greentie",
+		"brown tie" = "browntie",
+		"rainbow tie" = "rainbow_tie",
+		"horrible tie" = "horribletie",
+		"transgender tie" = "transgender",
+		"pansexual tie" = "pansexual",
+		"nonbinary tie" = "nonbinary",
+		"bisexual tie" = "bisexual",
+		"lesbian tie" = "lesbian",
+		"intersex tie" = "intersex",
+		"gay tie" = "gay",
+		"genderfluid tie" = "genderfluid",
+		"asexual tie" = "asexual",
+		"genderfae tie" = "genderfae",
+		"ally tie" = "ally_tie"
+	)
+	unique_reskin_changes_name = TRUE
 	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
@@ -106,6 +108,7 @@
 	name = "maid neck cover"
 	desc = "A neckpiece for a maid costume, it smells faintly of disappointment."
 	icon_state = "maid_neck"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/tie/trans
 	name = "transgender tie"
@@ -199,68 +202,113 @@
 //SCARVES//
 ///////////
 
-/obj/item/clothing/neck/scarf //Default white color, same functionality as beanies.
-	name = "white scarf"
-	icon_state = "scarf"
+/obj/item/clothing/neck/scarf
+	name = "scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
-	dog_fashion = /datum/dog_fashion/head
+	icon = 'icons/obj/clothing/neck/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck/color.dmi'
+	icon_state = "scarfwhite"
+	item_state = "scarfwhite"
 	custom_price = 60
+	unique_reskin = list("white scarf" = "scarfwhite",
+						"grey scarf" = "scarfgrey",
+						"black scarf" = "scarfblack",
+						"red scarf" = "scarfred",
+						"maroon scarf" = "scarfmaroon",
+						"orange scarf" = "scarforange",
+						"yellow scarf" = "scarfyellow",
+						"green scarf" = "scarfgreen",
+						"dark green scarf" = "scarfdarkgreen",
+						"teal scarf" = "scarfteal",
+						"blue scarf" = "scarfblue",
+						"dark blue scarf" = "scarfdarkblue",
+						"purple scarf" = "scarfpurple",
+						"pink scarf" = "scarfpink",
+						"brown scarf" = "scarfbrown",
+						"light brown scarf" = "scarflightbrown"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/neck/scarf/white
+	name = "white scarf"
+	icon_state = "scarfwhite"
+	current_skin = "white scarf"
+
+/obj/item/clothing/neck/scarf/grey
+	name = "grey scarf"
+	icon_state = "scarfgrey"
+	current_skin = "grey scarf"
 
 /obj/item/clothing/neck/scarf/black
 	name = "black scarf"
-	icon_state = "scarf"
-	color = "#4A4A4B" //Grey but it looks black
-
-/obj/item/clothing/neck/scarf/pink
-	name = "pink scarf"
-	icon_state = "scarf"
-	color = "#F699CD" //Pink
+	icon_state = "scarfblack"
+	current_skin = "black scarf"
 
 /obj/item/clothing/neck/scarf/red
 	name = "red scarf"
-	icon_state = "scarf"
-	color = "#D91414" //Red
+	icon_state = "scarfred"
+	current_skin = "red scarf"
 
-/obj/item/clothing/neck/scarf/green
-	name = "green scarf"
-	icon_state = "scarf"
-	color = "#5C9E54" //Green
-
-/obj/item/clothing/neck/scarf/darkblue
-	name = "dark blue scarf"
-	icon_state = "scarf"
-	color = "#1E85BC" //Blue
-
-/obj/item/clothing/neck/scarf/purple
-	name = "purple scarf"
-	icon_state = "scarf"
-	color = "#9557C5" //Purple
-
-/obj/item/clothing/neck/scarf/yellow
-	name = "yellow scarf"
-	icon_state = "scarf"
-	color = "#E0C14F" //Yellow
+/obj/item/clothing/neck/scarf/maroon
+	name = "maroon scarf"
+	icon_state = "scarfmaroon"
+	current_skin = "maroon scarf"
 
 /obj/item/clothing/neck/scarf/orange
 	name = "orange scarf"
-	icon_state = "scarf"
-	color = "#C67A4B" //Orange
+	icon_state = "scarforange"
+	current_skin = "orange scarf"
 
-/obj/item/clothing/neck/scarf/cyan
-	name = "cyan scarf"
-	icon_state = "scarf"
-	color = "#54A3CE" //Cyan
+/obj/item/clothing/neck/scarf/yellow
+	name = "yellow scarf"
+	icon_state = "scarfyellow"
+	current_skin = "yellow scarf"
 
+/obj/item/clothing/neck/scarf/green
+	name = "green scarf"
+	icon_state = "scarfgreen"
+	current_skin = "green scarf"
 
-//Striped scarves get their own icons
+/obj/item/clothing/neck/scarf/darkgreen
+	name = "dark green scarf"
+	icon_state = "scarfdarkgreen"
+	current_skin = "dark green scarf"
 
-/obj/item/clothing/neck/scarf/zebra
-	name = "zebra scarf"
-	icon_state = "zebrascarf"
+/obj/item/clothing/neck/scarf/teal
+	name = "teal scarf"
+	icon_state = "scarfteal"
+	current_skin = "teal scarf"
 
-/obj/item/clothing/neck/scarf/christmas
-	name = "christmas scarf"
-	icon_state = "christmasscarf"
+/obj/item/clothing/neck/scarf/blue
+	name = "blue scarf"
+	icon_state = "scarfblue"
+	current_skin = "blue scarf"
+
+/obj/item/clothing/neck/scarf/darkblue
+	name = "dark blue scarf"
+	icon_state = "scarfdarkblue"
+	current_skin = "dark blue scarf"
+
+/obj/item/clothing/neck/scarf/purple
+	name = "purple scarf"
+	icon_state = "scarfpurple"
+	current_skin = "purple scarf"
+
+/obj/item/clothing/neck/scarf/pink
+	name = "scarf"
+	icon_state = "scarfpink"
+	current_skin = "pink scarf"
+
+/obj/item/clothing/neck/scarf/brown
+	name = "brown scarf"
+	icon_state = "scarfbrown"
+	current_skin = "brown scarf"
+
+/obj/item/clothing/neck/scarf/lightbrown
+	name = "light brown scarf"
+	icon_state = "scarflightbrown"
+	current_skin = "light brown scarf"
 
 //Shemaghs to operate tactically in a operational tactical situation
 
