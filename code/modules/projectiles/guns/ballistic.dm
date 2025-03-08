@@ -422,11 +422,11 @@
 /// Remember: you can always trust a loaded gun to go off at least once.
 /obj/item/gun/ballistic/proc/accidents_happen(mob/darwin)
 	. = TRUE
-	if(!magazine)
+	if(!magazine && !chambered)
 		return
 	if(internal_magazine && !magazine.ammo_count(TRUE))
 		return
-	if(prob(1)) //this gets called I think once per decisecond so we don't really want a high chance here
+	if(prob(0.5)) //this gets called I think once per decisecond so we don't really want a high chance here
 		if(safety)
 			toggle_safety(darwin)
 			to_chat(darwin, span_warning("You bump the safety-"))
