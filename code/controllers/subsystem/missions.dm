@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(missions)
 	return ..()
 
 /datum/controller/subsystem/missions/fire(resumed)
-	if(active_ruin_missions.len < CONFIG_GET(number/max_dynamic_missions) + (SSovermap.controlled_ships.len * CONFIG_GET(number/max_dynamic_missions)))
+	if(active_ruin_missions.len < 5 + (SSovermap.controlled_ships.len * CONFIG_GET(number/max_dynamic_missions)))
 		for(var/i in 1 to inactive_ruin_missions.len)
 			//Make sure we dont ONLY take the one of the top.
 			if(prob(50))

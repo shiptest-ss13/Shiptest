@@ -384,7 +384,7 @@
 	min_val = 127
 
 /datum/config_entry/number/max_dynamic_missions
-	config_entry_value = 4
+	config_entry_value = 2
 	min_val = 0
 
 /datum/config_entry/number/commendation_percent_poll
