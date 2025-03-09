@@ -1848,7 +1848,9 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security)
 "wp" = (
-/obj/structure/chair/bench/blue/directional/east,
+/obj/structure/chair/stool{
+	dir = 4
+	},
 /obj/machinery/button/door{
 	id = "typhon_dorms";
 	name = "shutter control";
@@ -3817,7 +3819,7 @@
 	color = "#474747"
 	},
 /obj/structure/closet{
-	name = "wardrobe";
+	name = "uniform locker";
 	icon_door = "blue"
 	},
 /obj/item/storage/backpack/satchel/sec/clip{
@@ -3830,7 +3832,7 @@
 	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = -7;
-	pixel_x = -6
+	pixel_x = -5
 	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = -7;
@@ -3841,12 +3843,12 @@
 	pixel_y = 0
 	},
 /obj/item/clothing/under/clip/minutemen{
-	pixel_x = 6;
+	pixel_x = 1;
 	pixel_y = 0
 	},
 /obj/item/clothing/head/clip{
 	pixel_y = 8;
-	pixel_x = -9
+	pixel_x = -6
 	},
 /obj/item/clothing/head/clip{
 	pixel_y = 8;
@@ -3854,7 +3856,15 @@
 	},
 /obj/item/clothing/head/clip{
 	pixel_y = 8;
-	pixel_x = 11
+	pixel_x = 8
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -7;
+	pixel_x = 7
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 8;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/patterned{
 	color = "#777777"
@@ -4265,7 +4275,7 @@ Bb
 Bb
 Bb
 Bb
-zr
+Lv
 "}
 (7,1,1) = {"
 Bb
