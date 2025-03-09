@@ -566,7 +566,7 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "je" = (
 /obj/structure/table/wood,
-/obj/item/modular_computer/laptop,
+/obj/item/modular_computer/laptop/preset,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "jk" = (
@@ -1165,10 +1165,8 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered{
 	aggro_vision_range = 12
 	},
-/turf/open/floor/wood/icemoon{
-	icon_state = "wood-broken4"
-	},
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/icemoon/lodge/montagne_office)
 "rm" = (
 /turf/open/floor/ship/dirt/dark,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -5044,10 +5042,10 @@ Tj
 fw
 Se
 Vz
-Vz
+rc
 xk
 Ws
-rc
+Mt
 cd
 GD
 ou
