@@ -748,6 +748,10 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/east,
+/obj/item/flashlight/lamp/green{
+	pixel_x = 0;
+	pixel_y = 12
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "eN" = (
@@ -4483,14 +4487,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
-"zG" = (
-/obj/structure/curtain/bounty,
-/obj/structure/sign/poster/contraband/lusty_xenomorph{
-	pixel_x = -32
-	},
-/obj/effect/spawner/bunk_bed,
-/turf/open/floor/carpet/black,
-/area/ship/crew/dorm)
 "zH" = (
 /obj/structure/sign/poster/random{
 	pixel_y = -32
@@ -8100,8 +8096,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "YC" = (
-/obj/structure/table,
-/obj/item/flashlight/lamp/green,
+/obj/effect/spawner/bunk_bed,
+/obj/structure/curtain/bounty,
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	pixel_x = -32
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "YK" = (
@@ -8638,7 +8637,7 @@ sV
 sW
 sW
 sW
-zG
+sW
 YC
 yb
 sW
