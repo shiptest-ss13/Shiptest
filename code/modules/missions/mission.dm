@@ -84,7 +84,7 @@
 	return ..()
 
 /datum/mission/proc/on_vital_delete()
-	SSblackbox.record_feedback("tally", "mission_vital_delete", 1, src.type)
+	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "vital_delete"))
 	qdel(src)
 
 /datum/mission/proc/generate_mission_details()
@@ -122,7 +122,7 @@
 	return reward_string
 
 /datum/mission/proc/start_mission()
-	SSblackbox.record_feedback("tally", "mission_started", 1, src.type)
+	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "mission_started"))
 	SSmissions.inactive_ruin_missions -= src
 	active = TRUE
 	time_issued = station_time()
