@@ -778,7 +778,12 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "ms" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/brimstone,
+/obj/item/storage/box/techshot{
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/shotgun/brimstone{
+	pixel_y = -5
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "mz" = (
@@ -1163,7 +1168,9 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "rc" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered{
-	aggro_vision_range = 12
+	aggro_vision_range = 12;
+	loot = list(/obj/item/storage/box/ammo/pulseslug);
+	casingtype = /obj/item/ammo_casing/shotgun/pulseslug
 	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
@@ -1516,11 +1523,14 @@
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = 10
 	},
-/obj/item/gun/ballistic/automatic/zip_pistol,
 /obj/item/chisel{
 	pixel_x = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/shotgun/techshell{
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "uM" = (
@@ -1952,11 +1962,20 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "AO" = (
 /obj/structure/table/wood,
-/obj/item/weaponcrafting/stock,
-/obj/item/weaponcrafting/receiver{
-	pixel_y = 6
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/capacitor,
+/obj/item/stock_parts/capacitor{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/stock_parts/micro_laser{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/stock_parts/cell/empty{
+	pixel_x = 10;
+	pixel_y = -3
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "AX" = (
