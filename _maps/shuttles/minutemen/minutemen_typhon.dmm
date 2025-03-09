@@ -341,8 +341,9 @@
 /area/ship/cargo)
 "eG" = (
 /obj/structure/reagent_dispensers/watertank,
-/obj/effect/turf_decal/box{
-	color = "#75A2BB"
+/obj/effect/turf_decal/industrial/outline{
+	color = "#75A2BB";
+	alpha = 140
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
@@ -713,6 +714,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
+	},
+/obj/effect/turf_decal/industrial/caution/red{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -1193,7 +1197,8 @@
 	},
 /obj/machinery/suit_storage_unit/minutemen/pilot,
 /obj/effect/turf_decal/industrial/outline{
-	color = "#75A2BB"
+	color = "#75A2BB";
+	alpha = 140
 	},
 /obj/machinery/door/window/eastright{
 	req_access_txt = "48"
@@ -1205,7 +1210,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/loading/stripes{
-	color = "#75A2BB";
 	dir = 1
 	},
 /obj/structure/cable/cyan{
@@ -1265,8 +1269,9 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/hangar)
 "qy" = (
-/obj/effect/turf_decal/box{
-	color = "#75A2BB"
+/obj/effect/turf_decal/industrial/outline{
+	color = "#75A2BB";
+	alpha = 140
 	},
 /obj/effect/spawner/random/trash/box,
 /obj/machinery/light/dim/directional/south,
@@ -1472,6 +1477,15 @@
 /obj/machinery/light/small/directional/south,
 /obj/structure/chair/handrail{
 	dir = 1
+	},
+/obj/machinery/button/door{
+	pixel_y = -20;
+	dir = 1;
+	id = "typhon_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "door lock";
+	pixel_x = 10
 	},
 /turf/open/floor/plastic,
 /area/ship/crew)
@@ -1833,8 +1847,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "vS" = (
-/obj/effect/turf_decal/box{
-	color = "#75A2BB"
+/obj/effect/turf_decal/industrial/outline{
+	color = "#75A2BB";
+	alpha = 140
 	},
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/machinery/light/dim/directional/north,
@@ -1867,7 +1882,8 @@
 	},
 /obj/machinery/door/airlock/grunge{
 	name = "Bathroom";
-	dir = 4
+	dir = 4;
+	id_tag = "typhon_bathroom"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -2295,8 +2311,9 @@
 /area/ship/hallway/central)
 "CN" = (
 /obj/structure/reagent_dispensers/fueltank,
-/obj/effect/turf_decal/box{
-	color = "#75A2BB"
+/obj/effect/turf_decal/industrial/outline{
+	color = "#75A2BB";
+	alpha = 140
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -2359,7 +2376,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/loading/stripes{
-	color = "#75A2BB";
 	dir = 8
 	},
 /obj/structure/cable/cyan{
@@ -2390,7 +2406,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/loading/stripes{
-	color = "#75A2BB";
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2761,7 +2776,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/loading/stripes{
-	color = "#75A2BB";
 	dir = 8
 	},
 /obj/effect/turf_decal/minutemen/edge{
@@ -2970,6 +2984,9 @@
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/industrial/caution{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
@@ -3516,7 +3533,6 @@
 	name = "Armory"
 	},
 /obj/effect/turf_decal/industrial/loading/stripes{
-	color = "#75A2BB";
 	dir = 8
 	},
 /obj/structure/cable/cyan{
@@ -3657,6 +3673,9 @@
 	icon_state = "4-9"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/caution{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "UL" = (
@@ -3911,7 +3930,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/outline{
-	color = "#75A2BB"
+	color = "#75A2BB";
+	alpha = 140
 	},
 /obj/machinery/suit_storage_unit/minutemen,
 /obj/machinery/light/dim/directional/south,
