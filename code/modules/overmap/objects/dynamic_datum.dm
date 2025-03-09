@@ -122,6 +122,7 @@
 
 	token.countdown.start()
 	START_PROCESSING(SSfastprocess, src)
+	return TRUE
 
 /datum/overmap/dynamic/process()
 	if(death_time < world.time && lifespan)

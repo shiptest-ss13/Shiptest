@@ -89,8 +89,13 @@ SUBSYSTEM_DEF(overmap)
 		#warn need to make this have a weight for older planets
 		var/datum/overmap/dynamic/picked_encounter = pick(dynamic_encounters)
 		if(picked_encounter)
-			picked_encounter.start_countdown(10 MINUTES, COLOR_SOFT_RED)
-		COOLDOWN_START(src, dynamic_despawn_cooldown, 5 MINUTES)
+			//If we manage to start a countdown, 5 minute timer, else, try again in a minute.
+			//Cant run this first section of the fire too hot as we still need MC_TICK_CHECK to not run out for events.
+			//This should probally moved to its own fire or just otherwise handled better.
+			if(picked_encounter.start_countdown(10 MINUTES, COLOR_SOFT_RED))
+				COOLDOWN_START(src, dynamic_despawn_cooldown, 5 MINUTES)
+			else
+				COOLDOWN_START(src, dynamic_despawn_cooldown, 1 MINUTES)
 
 	if(events_enabled)
 		for(var/datum/overmap/event/E as anything in events)
