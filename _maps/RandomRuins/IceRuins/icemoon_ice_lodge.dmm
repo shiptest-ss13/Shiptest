@@ -1167,10 +1167,8 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "rc" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered{
-	aggro_vision_range = 12;
-	loot = list(/obj/item/storage/box/ammo/pulseslug);
-	casingtype = /obj/item/ammo_casing/shotgun/pulseslug
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/ice_lodge{
+	environment_smash = 0
 	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
