@@ -18,6 +18,8 @@
 		if(!ammo_gun.ammo_counter)
 			ammo_gun.ammo_counter = TRUE
 			gun.empty_alarm_sound = alarm_sound_path
+			var/datum/component/ammo_hud/counter/our_counter = gun.AddComponent(/datum/component/ammo_hud/counter)
+			our_counter.wake_up(user = user)
 			return TRUE
 		to_chat(user, span_notice("[gun] already has an ammo counter installed!"))
 		return FALSE
@@ -29,6 +31,9 @@
 		if(ammo_gun.ammo_counter)
 			ammo_gun.ammo_counter = FALSE
 			gun.empty_alarm_sound = gun::empty_alarm_sound
+			var/datum/component/ammo_hud/counter/our_counter = gun.GetComponent(/datum/component/ammo_hud/counter)
+			our_counter.turn_off()
+			qdel(our_counter)
 			return TRUE
 
 /obj/item/attachment/ammo_counter/toggle_attachment(obj/item/gun/gun, mob/user)
