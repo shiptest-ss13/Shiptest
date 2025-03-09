@@ -1241,7 +1241,9 @@
 	layer = 3.1
 	},
 /obj/structure/sign/warning/hottemp{
-	pixel_x = 32
+	pixel_x = 32;
+	name = "\improper WASTE VENT sign";
+	desc = "A sign that warns of potentially hazardous waste gas in the vicinity."
 	},
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-6"
