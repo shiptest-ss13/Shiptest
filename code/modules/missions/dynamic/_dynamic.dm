@@ -92,6 +92,14 @@
 			can_turn_in = TRUE
 			break
 
+	var/location_x
+	var/location_y
+	var/location_name
+	if(mission_location)
+		location_x = mission_location.x
+		location_y = mission_location.y
+		location_name = mission_location.name
+
 	. += list(
 		"ref" = REF(src),
 		"name" = src.name,
@@ -99,9 +107,9 @@
 		"desc" = src.desc,
 		"reward" = src.reward_flavortext(),
 		"faction" = SSfactions.faction_name(src.faction),
-		"location" = "X[mission_location.x]/Y[mission_location.y]: [mission_location.name]",
-		"x" = mission_location.x,
-		"y" = mission_location.y,
+		"location" = "X[location_x]/Y[location_y]: [location_name]",
+		"x" = location_x,
+		"y" = location_y,
 		"timeIssued" = time2text(station_time() - time_issued, "mm"),
 		"duration" = src.duration,
 		"remaining" = time_remaining,
