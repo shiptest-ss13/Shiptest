@@ -17,6 +17,7 @@
 	id = "buried_shrine"
 	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
 	suffix = "lavaland_surface_buried_shrine.dmm"
+	ruin_mission_types = list(/datum/mission/ruin/signaled/kill/elite)
 
 /datum/map_template/ruin/lavaland/lava_canyon
 	name = "Lava Canyon"
@@ -27,17 +28,56 @@
 /datum/map_template/ruin/lavaland/wrecked_factory
 	name = "Wrecked Factory"
 	id = "wreck_factory"
-	description = "A  Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
+	description = "A Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
 	suffix = "lavaland_surface_wrecked_factory.dmm"
+	ruin_mission_types = list(
+		/datum/mission/ruin/nanotrasen_docs,
+		/datum/mission/ruin/captain_medal,
+		/datum/mission/ruin/brainchip
+	)
+
+/datum/mission/ruin/nanotrasen_docs
+	name = "Nanotrasen confidential information recovery."
+	author = "Nanotrasen Recovery Program"
+	desc = "A set of documents containing valuble company secrets was lost at one of our facilitys. We lost contact with it and need those documents back."
+	faction = /datum/faction/nt
+	value = 3500
+	setpiece_item = /obj/item/documents/nanotrasen
+
+/datum/mission/ruin/captain_medal
+	name = "recover my lost medal."
+	desc = "I lost my medal at an old facility I used to work, but i need it for a ceremony this week. I'll pay good cash to get it back ASAP."
+	faction = /datum/faction/nt
+	value = 2250
+	setpiece_item = /obj/item/documents/nanotrasen
+
+/datum/mission/ruin/brainchip
+	name = "brainchip recovery"
+	author = "Nanotrasen Recovery Program"
+	desc = "One of our cargo techs died with some important tech in his head. Get it back."
+	faction = /datum/faction/nt
+	setpiece_item = /mob/living/carbon/human
+
+/obj/effect/landmark/mission_poi/main/implanted
+	var/implant_type = /obj/item/organ/cyberimp/brain/datachip
+
+/obj/effect/landmark/mission_poi/main/implanted/use_poi(_type_to_spawn)
+	var/mob/living/carbon/human/implanted = ..()
+	if(istype(implanted, /mob/living/carbon/human))
+		var/obj/item/organ/implant = new implant_type()
+		implant.Insert(implanted)
+		return implant
 
 /datum/map_template/ruin/lavaland/fallenstar
 	name = "Crashed Starwalker"
 	id = "crashed_star"
 	description = "A crashed pirate ship. It would seem that it's crew died a while ago."
 	suffix = "lavaland_crashed_starwalker.dmm"
+	ruin_mission_types = list(/datum/mission/ruin/blackbox)
 
 /datum/map_template/ruin/lavaland/abandonedlisteningpost
 	name = "Abandoned Listening Post"
 	id = "abandonedlistening"
 	description = "An abandoned Cybersun listening post. Seems like the Ramzi Clique has an interest in the site."
 	suffix = "lavaland_abandonedlisteningpost.dmm"
+	ruin_mission_types = list(/datum/mission/ruin/blackbox)

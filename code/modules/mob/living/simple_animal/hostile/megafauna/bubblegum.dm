@@ -56,7 +56,7 @@ Difficulty: Hard
 	pixel_x = -32
 	base_pixel_x = -32
 	del_on_death = TRUE
-	//mob_trophy = /obj/item/mob_trophy/demon_claws
+	mob_trophy = /obj/item/mob_trophy/demon_claws
 	loot = list(/obj/structure/closet/crate/necropolis/bubblegum)
 	blood_volume = BLOOD_VOLUME_MAXIMUM //BLEED FOR ME
 	var/charging = FALSE

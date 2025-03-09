@@ -112,9 +112,7 @@
 	dir = 8
 	},
 /obj/machinery/power/smes/shuttle,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ruin/space/has_grav/derelictoutpost/dockedship)
 "ay" = (
@@ -125,9 +123,7 @@
 	dir = 4
 	},
 /obj/machinery/power/smes/shuttle,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ruin/space/has_grav/derelictoutpost/dockedship)
 "az" = (
@@ -692,7 +688,6 @@
 /area/ruin/space/has_grav/derelictoutpost)
 "ck" = (
 /obj/machinery/power/apc{
-	dir = 2;
 	name = "Tradepost APC";
 	pixel_y = -25;
 	start_charge = 0
