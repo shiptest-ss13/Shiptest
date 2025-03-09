@@ -42,10 +42,12 @@
 
 /datum/export/dogtag
 	desc = "CLIP has posted several bounties for wanted members of both the Frontiersman and the Clique. Bring back their tags, we'll reward you well."
-	cost = 750
-	elasticity_coeff = 0.05
+	cost = 700
+	elasticity_coeff = 0.02
+	recovery_ds = 2 MINUTES
 
 /datum/export/dogtag/frontiersmen
+	cost = 500
 	unit_name = "frontiersmen dogtags"
 	export_types = list(/obj/item/clothing/neck/dogtag/frontier)
 
