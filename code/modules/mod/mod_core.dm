@@ -71,11 +71,7 @@
 /obj/item/mod/core/standard
 	name = "MOD standard core"
 	icon_state = "mod-core-standard"
-	desc = "Growing in the most lush, fertile areas of the planet Sprout, there is a crystal known as the Heartbloom. \
-		These rare, organic piezoelectric crystals are of incredible cultural significance to the artist castes of the \
-		Ethereals, owing to their appearance; which is exactly similar to that of an Ethereal's heart.\n\
-		Which one you have in your suit is unclear, but either way, \
-		it's been repurposed to be an internal power source for a Modular Outerwear Device."
+	desc = "A MOD core designed to operate systems of a modsuit."
 	/// Installed cell.
 	var/obj/item/stock_parts/cell/cell
 
