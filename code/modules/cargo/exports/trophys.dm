@@ -47,7 +47,7 @@
 	recovery_ds = 2 MINUTES
 
 /datum/export/dogtag/frontiersmen
-	cost = 500
+	cost = 600
 	unit_name = "frontiersmen dogtags"
 	export_types = list(/obj/item/clothing/neck/dogtag/frontier)
 
