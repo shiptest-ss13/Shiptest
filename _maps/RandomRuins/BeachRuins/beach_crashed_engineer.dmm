@@ -1153,7 +1153,9 @@
 /obj/item/melee/axe/fire{
 	name = "rusty fire axe"
 	},
-/obj/effect/landmark/mission_poi/main,
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1
+	},
 /turf/open/floor/engine/airless,
 /area/ruin/unpowered)
 "Xx" = (
