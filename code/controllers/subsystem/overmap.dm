@@ -17,6 +17,7 @@ SUBSYSTEM_DEF(overmap)
 
 	///List of dynamic encounters, just planets rn.
 	var/list/dynamic_encounters
+	COOLDOWN_DECLARE(dynamic_despawn_cooldown)
 	///List of all events
 	var/list/events
 
@@ -84,6 +85,13 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/fire()
 	if(length(dynamic_encounters) < CONFIG_GET(number/max_overmap_dynamic_events))
 		spawn_ruin_level()
+	if(COOLDOWN_FINISHED(src, dynamic_despawn_cooldown))
+		#warn need to make this have a weight for older planets
+		var/datum/overmap/dynamic/picked_encounter = pick(dynamic_encounters)
+		if(picked_encounter)
+			picked_encounter.start_countdown(10 MINUTES, COLOR_SOFT_RED)
+		COOLDOWN_START(src, dynamic_despawn_cooldown, 5 MINUTES)
+
 	if(events_enabled)
 		for(var/datum/overmap/event/E as anything in events)
 			if(E.get_nearby_overmap_objects())
