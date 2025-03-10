@@ -1,5 +1,5 @@
 
-/datum/ai_behavior/resist/perform(delta_time, datum/ai_controller/controller)
+/datum/ai_behavior/resist/perform(seconds_per_tick, datum/ai_controller/controller)
 	. = ..()
 	var/mob/living/living_pawn = controller.pawn
 	living_pawn.resist()
@@ -9,7 +9,7 @@
 	///List of possible screeches the behavior has
 	var/list/screeches
 
-/datum/ai_behavior/battle_screech/perform(delta_time, datum/ai_controller/controller)
+/datum/ai_behavior/battle_screech/perform(seconds_per_tick, datum/ai_controller/controller)
 	var/mob/living/living_pawn = controller.pawn
 	INVOKE_ASYNC(living_pawn, TYPE_PROC_REF(/mob, emote), pick(screeches))
 	finish_action(controller, TRUE)
@@ -18,7 +18,7 @@
 /datum/ai_behavior/use_in_hand
 	behavior_flags = AI_BEHAVIOR_MOVE_AND_PERFORM
 
-/datum/ai_behavior/use_in_hand/perform(delta_time, datum/ai_controller/controller)
+/datum/ai_behavior/use_in_hand/perform(seconds_per_tick, datum/ai_controller/controller)
 	. = ..()
 	var/mob/living/pawn = controller.pawn
 	var/obj/item/held = pawn.get_item_by_slot(pawn.get_active_hand())
@@ -33,7 +33,7 @@
 	required_distance = 1
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT
 
-/datum/ai_behavior/use_on_object/perform(delta_time, datum/ai_controller/controller)
+/datum/ai_behavior/use_on_object/perform(seconds_per_tick, datum/ai_controller/controller)
 	. = ..()
 	var/mob/living/pawn = controller.pawn
 	var/obj/item/held_item = pawn.get_item_by_slot(pawn.get_active_hand())
@@ -56,7 +56,7 @@
 	required_distance = 1
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT
 
-/datum/ai_behavior/give/perform(delta_time, datum/ai_controller/controller)
+/datum/ai_behavior/give/perform(seconds_per_tick, datum/ai_controller/controller)
 	. = ..()
 	var/mob/living/pawn = controller.pawn
 	var/obj/item/held_item = pawn.get_item_by_slot(pawn.get_active_hand())
@@ -94,7 +94,7 @@
 	. = ..()
 	controller.current_movement_target = target
 
-/datum/ai_behavior/consume/perform(delta_time, datum/ai_controller/controller, obj/item/target)
+/datum/ai_behavior/consume/perform(seconds_per_tick, datum/ai_controller/controller, obj/item/target)
 	. = ..()
 	var/mob/living/pawn = controller.pawn
 

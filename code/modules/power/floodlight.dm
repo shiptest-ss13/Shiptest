@@ -69,7 +69,7 @@
 	var/light_power_coefficient = 200
 	var/setting = FLOODLIGHT_OFF
 
-/obj/machinery/power/floodlight/process()
+/obj/machinery/power/floodlight/process(seconds_per_tick)
 	var/turf/T = get_turf(src)
 	var/obj/structure/cable/C = locate() in T
 	if(!C && powernet)

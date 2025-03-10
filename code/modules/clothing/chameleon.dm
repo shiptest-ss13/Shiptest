@@ -266,7 +266,7 @@
 	if(new_value > emp_timer)
 		emp_timer = new_value
 
-/datum/action/item_action/chameleon/change/process()
+/datum/action/item_action/chameleon/change/process(seconds_per_tick)
 	if(world.time > emp_timer)
 		STOP_PROCESSING(SSprocessing, src)
 		return

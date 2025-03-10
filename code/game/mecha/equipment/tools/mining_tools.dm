@@ -173,7 +173,7 @@
 	. = ..()
 	START_PROCESSING(SSfastprocess, src)
 
-/obj/item/mecha_parts/mecha_equipment/mining_scanner/process()
+/obj/item/mecha_parts/mecha_equipment/mining_scanner/process(seconds_per_tick)
 	if(!loc)
 		STOP_PROCESSING(SSfastprocess, src)
 		qdel(src)

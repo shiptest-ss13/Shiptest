@@ -49,7 +49,7 @@
 		STOP_PROCESSING(SSfastprocess, src)
 	update_appearance()
 
-/obj/item/pinpointer/process()
+/obj/item/pinpointer/process(seconds_per_tick)
 	if(!active)
 		return PROCESS_KILL
 	if(process_scan)

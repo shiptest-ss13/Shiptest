@@ -109,8 +109,8 @@
 	//Can it be charged in a recharger?
 	var/can_charge = TRUE
 	var/selfcharge = FALSE
-	var/charge_tick = 0
-	var/charge_delay = 4
+	var/charge_timer = 0
+	var/charge_delay = 8
 	//whether the gun's cell drains the cyborg user's cell to recharge
 	var/use_cyborg_cell = FALSE
 	//Time it takes to unscrew the cell

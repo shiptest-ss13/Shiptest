@@ -53,6 +53,6 @@
 	mod_type = BIOWARE_CORTEX
 	can_process = TRUE
 
-/datum/bioware/cortex_imprint/process()
+/datum/bioware/cortex_imprint/process(seconds_per_tick)
 	owner.cure_trauma_type(resilience = TRAUMA_RESILIENCE_BASIC)
 

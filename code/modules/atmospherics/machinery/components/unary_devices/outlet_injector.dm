@@ -13,7 +13,7 @@
 
 	var/injecting = 0
 
-	var/volume_rate = 50
+	var/volume_rate = 100
 
 	var/frequency = 0
 	var/id = null
@@ -54,7 +54,7 @@
 	else
 		icon_state = "inje_on"
 
-/obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos()
+/obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos(seconds_per_tick)
 	..()
 
 	injecting = TRUE
@@ -206,7 +206,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos
 	frequency = FREQ_ATMOS_STORAGE
 	on = TRUE
-	volume_rate = 200
+	volume_rate = 400
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste
 	name = "atmos waste outlet injector"

@@ -6,7 +6,7 @@
 /obj/singularity/academy/admin_investigate_setup()
 	return
 
-/obj/singularity/academy/process()
+/obj/singularity/academy/process(seconds_per_tick)
 	eat()
 	if(prob(1))
 		mezzer()
@@ -32,7 +32,7 @@
 		STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/structure/academy_wizard_spawner/process()
+/obj/structure/academy_wizard_spawner/process(seconds_per_tick)
 	if(next_check < world.time)
 		if(!current_wizard)
 			for(var/mob/living/L in GLOB.player_list)

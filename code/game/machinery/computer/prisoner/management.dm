@@ -73,7 +73,7 @@
 	else
 		return ..()
 
-/obj/machinery/computer/prisoner/management/process()
+/obj/machinery/computer/prisoner/management/process(seconds_per_tick)
 	if(!..())
 		src.updateDialog()
 	return
