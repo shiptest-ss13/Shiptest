@@ -98,7 +98,7 @@
 	for(var/mob/living/mob in target.get_all_contents())
 		if(mob.mob_size < MOB_SIZE_HUMAN)
 			continue
-		to_chat(mod.wearer,span_warning("\The crate is too heavy!"))
+		to_chat(mod.wearer,span_warning("\The [target] is too heavy!"))
 		return FALSE
 	return TRUE
 
