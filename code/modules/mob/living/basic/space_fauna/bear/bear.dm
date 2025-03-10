@@ -1,5 +1,5 @@
 //Space bears!
-/mob/living/simple_animal/hostile/bear
+/mob/living/basic/bear
 	name = "space bear"
 	desc = "You don't need to be faster than a space bear, you just need to outrun your crewmates."
 	icon_state = "bear"

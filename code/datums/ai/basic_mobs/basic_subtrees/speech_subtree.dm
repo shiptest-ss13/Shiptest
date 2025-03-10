@@ -43,3 +43,8 @@
 	speak = list("Squeak!", "SQUEAK!", "Squeak?")
 	emote_hear = list("squeaks.")
 	emote_see = list("runs in a circle.", "shakes.")
+
+/datum/ai_planning_subtree/random_speech/bear
+	speech_chance = 5
+	emote_hear = list("rawrs.","grumbles.","grawls.", "stomps!")
+	emote_see = list("stares ferociously.")
