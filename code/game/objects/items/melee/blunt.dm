@@ -1,6 +1,7 @@
 /obj/item/melee/sledgehammer
 	name = "sledgehammer"
 	icon_state = "sledgehammer"
+	base_icon_state = "sledgehammer"
 	icon = 'icons/obj/weapon/blunt.dmi'
 	//lefthand_file = 'icons/mob/inhands/weapons/blunt_lefthand.dmi'
 	//righthand_file = 'icons/mob/inhands/weapons/blunt_righthand.dmi'
@@ -23,7 +24,7 @@
 	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 30, icon_wielded="[base_icon_state]_w")
 
 /obj/item/melee/sledgehammer/gorlex
-	icon_state = "sledgehammer"
+	icon_state = "gorlex_sledgehammer"
 	base_icon_state = "gorlex_sledgehammer"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
