@@ -16,12 +16,14 @@
 
 /obj/item/mod/module/gps/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/gps/item, "MOD0")
+	AddComponent(/datum/component/gps/item, "MOD0", TRUE)
 
 /obj/item/mod/module/gps/on_use()
 	. = ..()
 	if(!.)
 		return
+	// var/datum/component/gps/item/internal_gps = GetComponent(/datum/component/gps/item)
+	// internal_gps.ui_interact(mod.wearer)
 	attack_self(mod.wearer)
 
 ///Hydraulic Clamp - Lets you pick up and drop crates.
