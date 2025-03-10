@@ -29,6 +29,16 @@
 	fire_sound = 'sound/weapons/gun/laser/e40_bal.ogg'
 	manufacturer = MANUFACTURER_EOEHOMA
 
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 45,
+			"y" = 20,
+		),
+	)
+
 /obj/item/gun/ballistic/automatic/assault/e40/Initialize()
 	. = ..()
 	secondary = new /obj/item/gun/energy/laser/e40_laser_secondary(src)

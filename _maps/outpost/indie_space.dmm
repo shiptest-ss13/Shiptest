@@ -1009,7 +1009,6 @@
 	},
 /obj/machinery/elevator_call_button{
 	dir = 4;
-	pixel_y = 0;
 	pixel_x = -22
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -2982,7 +2981,6 @@
 	},
 /obj/structure/sign/directions/supply{
 	dir = 1;
-	pixel_y = 0;
 	pixel_x = 28
 	},
 /obj/structure/sign/directions/security{
@@ -3307,14 +3305,16 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "qc" = (
-/obj/machinery/conveyor_switch{
-	id = "outpost2";
-	layer = 3.11;
-	pixel_y = 9;
-	pixel_x = -2
-	},
 /obj/structure/railing/thin{
 	dir = 9
+	},
+/obj/effect/turf_decal/industrial/shutoff{
+	dir = 4
+	},
+/obj/machinery/conveyor_switch/oneway{
+	pixel_y = 8;
+	layer = 3.09;
+	id = "outpost2"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
@@ -3406,9 +3406,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "qz" = (
-/obj/structure/chair{
-	dir = 8
-	},
+/obj/machinery/vending/clothing,
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = -7
 	},
@@ -3700,7 +3698,6 @@
 	dir = 4
 	},
 /obj/structure/sign/poster/random{
-	pixel_y = 0;
 	pixel_x = -28
 	},
 /turf/open/floor/wood,
@@ -3803,7 +3800,6 @@
 /obj/structure/noticeboard{
 	name = "refinery notice board";
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = 26
 	},
 /obj/effect/turf_decal/corner/opaque/white{
@@ -4439,7 +4435,6 @@
 /area/outpost/cargo)
 "wa" = (
 /obj/structure/sign/painting/library{
-	pixel_y = 0;
 	pixel_x = -26
 	},
 /obj/effect/decal/cleanable/wrapping,
@@ -4519,7 +4514,6 @@
 "ws" = (
 /obj/structure/sink{
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = 14
 	},
 /obj/structure/mirror{
@@ -4934,7 +4928,6 @@
 /area/outpost/crew/bar)
 "yH" = (
 /obj/structure/railing/wood{
-	dir = 2;
 	color = "#792f27"
 	},
 /turf/open/floor/plasteel/stairs/wood{
@@ -5457,9 +5450,7 @@
 /turf/open/floor/carpet/green,
 /area/outpost/crew/bar)
 "Bg" = (
-/obj/structure/closet/crate/bin{
-	pixel_y = 0
-	},
+/obj/structure/closet/crate/bin,
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/insectguts,
 /obj/item/reagent_containers/syringe{
@@ -6314,7 +6305,6 @@
 "FK" = (
 /obj/structure/toilet{
 	dir = 4;
-	pixel_y = 0;
 	pixel_x = -6
 	},
 /obj/structure/mirror{
@@ -6359,7 +6349,6 @@
 "FY" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "electricdanger";
-	pixel_y = 0;
 	pixel_x = 30
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10,
@@ -6475,12 +6464,10 @@
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "f";
-	pixel_y = 0;
 	pixel_x = -19
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "f";
-	pixel_y = 0;
 	pixel_x = -19
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -6751,7 +6738,6 @@
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "f";
-	pixel_y = 0;
 	pixel_x = -19
 	},
 /obj/effect/decal/cleanable/crayon{
@@ -6918,6 +6904,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/landmark/observer_start,
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
 "ID" = (
@@ -7460,8 +7447,7 @@
 	},
 /obj/structure/sign/directions/medical{
 	pixel_y = -12;
-	pixel_x = -28;
-	dir = 2
+	pixel_x = -28
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -7529,7 +7515,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/crayon{
-	icon_state = "firedanger";
 	pixel_y = -28
 	},
 /turf/open/floor/plating,
@@ -7753,7 +7738,6 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/kitchen/fork{
-	pixel_y = 0;
 	pixel_x = -7
 	},
 /obj/item/kitchen/fork{
@@ -9214,7 +9198,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/sign/directions/medical{
 	pixel_x = 28;
-	dir = 2;
 	pixel_y = -10
 	},
 /obj/structure/cable/yellow{
@@ -9245,17 +9228,6 @@
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
-"UR" = (
-/obj/structure/table/reinforced,
-/obj/machinery/conveyor_switch{
-	id = "outpost1";
-	layer = 3.11;
-	pixel_y = 4;
-	pixel_x = 5
-	},
-/obj/structure/railing/thin,
-/turf/open/floor/plasteel/patterned,
-/area/outpost/cargo)
 "UT" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -9663,6 +9635,14 @@
 /obj/structure/railing/thin,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/effect/turf_decal/industrial/shutoff{
+	dir = 4
+	},
+/obj/machinery/conveyor_switch/oneway{
+	pixel_y = 8;
+	layer = 3.09;
+	id = "outpost1"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
@@ -10205,8 +10185,7 @@
 	pixel_y = 32
 	},
 /obj/structure/sign/directions/medical{
-	pixel_y = 38;
-	dir = 2
+	pixel_y = 38
 	},
 /obj/structure/sign/directions/service{
 	pixel_y = 20;
@@ -19165,7 +19144,7 @@ Va
 QJ
 CV
 CV
-UR
+kp
 SK
 pc
 Uw

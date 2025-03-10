@@ -540,6 +540,7 @@
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	full_retraction = TRUE
+	supports_variations = VOX_VARIATION
 
 	//Medical hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/medical
@@ -1049,6 +1050,7 @@
 	item_state = "hardsuit-inteq"
 	hardsuit_type = "inteq"
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security/inteq
 	name = "inteq hardsuit"
