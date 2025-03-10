@@ -1268,6 +1268,41 @@
 		/obj/item/stock_parts/matter_bin/adv = 2)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/stockparts/t2/capacitor
+
+/obj/item/storage/box/stockparts/t2/capacitor/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/adv = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/scan
+
+/obj/item/storage/box/stockparts/t2/scan/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/scanning_module/adv = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/manipulator
+
+/obj/item/storage/box/stockparts/t2/manipulator/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/manipulator/nano = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/laser
+
+/obj/item/storage/box/stockparts/t2/laser/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/micro_laser/high = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/matter
+
+/obj/item/storage/box/stockparts/t2/matter/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/matter_bin/adv = 10)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/box/stockparts/t3
 	name = "box of T3 stock parts"
 	desc = "Contains a variety of super stock parts."
@@ -1279,6 +1314,41 @@
 		/obj/item/stock_parts/manipulator/pico = 2,
 		/obj/item/stock_parts/micro_laser/ultra = 2,
 		/obj/item/stock_parts/matter_bin/super = 2)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/capacitor
+
+/obj/item/storage/box/stockparts/t3/capacitor/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/super = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/scan
+
+/obj/item/storage/box/stockparts/t3/scan/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/scanning_module/phasic = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/manipulator
+
+/obj/item/storage/box/stockparts/t3/manipulator/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/manipulator/pico = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/laser
+
+/obj/item/storage/box/stockparts/t3/laser/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/micro_laser/ultra = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/matter
+
+/obj/item/storage/box/stockparts/t3/matter/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/matter_bin/super = 10)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/stockparts/deluxe
