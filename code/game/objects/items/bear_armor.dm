@@ -21,7 +21,6 @@
 	bear_target.armour_penetration += 20
 	bear_target.melee_damage_lower += 3
 	bear_target.melee_damage_upper += 5
-	bear_target.wound_bonus += 5
 	bear_target.update_icons()
 	to_chat(user, span_info("You strap the armor plating to [bear_target] and sharpen [bear_target.p_their()] claws with the nail filer. This was a great idea."))
 	qdel(src)

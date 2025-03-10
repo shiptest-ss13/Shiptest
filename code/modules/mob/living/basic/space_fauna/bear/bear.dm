@@ -7,63 +7,67 @@
 	icon_dead = "bear_dead"
 	icon_gib = "bear_gib"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	see_in_dark = 6
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1)
+
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
 	response_disarm_simple = "gently push aside"
+
 	maxHealth = 60
 	health = 60
 	speed = 0
-	mob_size = MOB_SIZE_LARGE
+
 	obj_damage = 60
-	melee_damage_lower = 20
-	melee_damage_upper = 30
+	melee_damage_lower = 15
+	melee_damage_upper = 15
+	sharpness = IS_SHARP
 	attack_verb_continuous = "claws"
 	attack_verb_simple = "claw"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
+	attack_vis_effect = ATTACK_EFFECT_CLAW
 	friendly_verb_continuous = "bear hugs"
 	friendly_verb_simple = "bear hug"
 
-	//Space bears aren't affected by cold.
-	atmos_requirements = IMMUNE_ATMOS_REQS
-	minbodytemp = 0
-	maxbodytemp = 1500
-
 	faction = list("mining")
 
-	footstep_type = FOOTSTEP_MOB_CLAW
-
+	habitable_atmos = list("min_oxy" = 0, "max_oxy" = 0, "min_plas" = 0, "max_plas" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	minimum_survivable_temperature = TCMB
+	maximum_survivable_temperature = T0C + 1500
+	ai_controller = /datum/ai_controller/basic_controller/bear
+	/// is the bear wearing a armor?
 	var/armored = FALSE
-	var/rideable = FALSE
 
-/mob/living/basic/bear/Initialize()
+/mob/living/basic/bear/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
+	AddElement(/datum/element/ai_retaliate)
+	AddComponent(/datum/component/tree_climber, climbing_distance = 15)
 
-/mob/living/basic/bear/Life()
+/mob/living/basic/bear/Login()
 	. = ..()
-	if(!rideable && mind)
-		can_buckle = TRUE
-		buckle_lying = FALSE
-		var/datum/component/riding/D = LoadComponent(/datum/component/riding)
-		D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(1, 8), TEXT_SOUTH = list(1, 8), TEXT_EAST = list(-3, 6), TEXT_WEST = list(3, 6)))
-		D.set_vehicle_dir_layer(SOUTH, ABOVE_MOB_LAYER)
-		D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
-		D.set_vehicle_dir_layer(EAST, ABOVE_MOB_LAYER)
-		D.set_vehicle_dir_layer(WEST, ABOVE_MOB_LAYER)
-		rideable = TRUE
+	if(!. || !client)
+		return FALSE
+
+	//AddElement(/datum/element/ridable, /datum/component/riding/creature/bear)
+	can_buckle = TRUE
+	buckle_lying = 0
 
 /mob/living/basic/bear/update_icons()
 	..()
 	if(armored)
 		add_overlay("armor_bear")
 
-
+/mob/living/basic/bear/proc/extract_combs(obj/structure/beebox/hive)
+	if(!length(hive.honeycombs))
+		return
+	var/obj/item/reagent_containers/honeycomb/honey_food = pick_n_take(hive.honeycombs)
+	if(isnull(honey_food))
+		return
+	honey_food.forceMove(get_turf(src))
 
 //SPACE BEARS! SQUEEEEEEEE~     OW! FUCK! IT BIT MY HAND OFF!!
-/mob/living/basic/bear/Hudson
+/mob/living/basic/bear/hudson
 	name = "Hudson"
 	gender = MALE
 	desc = "Feared outlaw, this guy is one bad news bear." //I'm sorry...
@@ -74,8 +78,10 @@
 	icon_living = "snowbear"
 	icon_dead = "snowbear_dead"
 	desc = "It's a polar bear, in space, but not actually in space."
-	environment_smash = ENVIRONMENT_SMASH_MINERALS
-	weather_immunities = list("snow")
+
+/mob/living/basic/bear/snow/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_SNOWSTORM_IMMUNE, INNATE_TRAIT)
 
 /mob/living/basic/bear/frontier
 	name = "combat bear"
@@ -91,14 +97,3 @@
 	health = 120
 	maxHealth = 120
 	armored = TRUE
-
-/mob/living/basic/bear/cave
-	name = "brown bear"
-	desc = "A ferocious brown bear, ready to maul."
-	icon_state = "brownbear"
-	icon_living = "brownbear"
-	icon_dead = "brownbear_dead"
-	icon_gib = "brownbear_gib"
-	maxHealth = 70
-	health = 70
-	faction = list("mining")
