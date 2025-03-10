@@ -29,7 +29,7 @@
 	else
 		return ..()
 
-/obj/item/nuke_core/process()
+/obj/item/nuke_core/process(seconds_per_tick)
 	if(cooldown < world.time - 60)
 		cooldown = world.time
 		flick(pulseicon, src)
