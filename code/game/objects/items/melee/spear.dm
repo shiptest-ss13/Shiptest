@@ -22,6 +22,7 @@
 	species_exception = list(/datum/species/kepori)
 	var/icon_prefix = "spearglass"
 	var/force_wielded = 18
+	demolition_mod = 0.75
 
 /obj/item/melee/spear/ComponentInitialize()
 	. = ..()

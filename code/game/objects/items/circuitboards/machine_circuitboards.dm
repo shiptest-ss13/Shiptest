@@ -1522,3 +1522,6 @@
 	name = "Ship-mounted Turret"
 	//We don't want to let people take the gun out of the turret
 	def_components = list(/obj/item/gun/energy = /obj/item/stack/sheet/metal)
+
+/obj/item/circuitboard/machine/turret/ruin
+	def_components = list(/obj/item/gun/energy = /obj/item/stack/sheet/metal)

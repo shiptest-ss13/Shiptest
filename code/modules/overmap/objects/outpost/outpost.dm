@@ -153,7 +153,7 @@
 	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
 		current_pack = new current_pack()
 		if(current_pack.faction)
-			current_pack.faction = new current_pack.faction()
+			current_pack.faction = SSfactions.faction_path_to_datum(current_pack.faction)
 		if(!current_pack.contains)
 			continue
 		supply_packs += current_pack
@@ -363,7 +363,10 @@
 		if(!vlevel.is_in_bounds(num_mark))
 			continue
 		num_mark.write_number(hangar_num) // deletes the mark
-
+	for(var/obj/effect/landmark/outpost/hangar_crate_spawner/crate_spawner_mark in GLOB.outpost_landmarks)
+		if(!vlevel.is_in_bounds(crate_spawner_mark))
+			continue
+		h_dock.crate_spawner = crate_spawner_mark.create_spawner()
 	if(!shaft.shaft_elevator)
 		// if there's no elevator in this shaft, then delete the landmarks
 		for(var/obj/effect/landmark/outpost/mark as anything in GLOB.outpost_landmarks)

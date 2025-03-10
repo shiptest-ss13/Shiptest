@@ -184,7 +184,7 @@
 
 /obj/machinery/suit_storage_unit/minutemen
 	suit_type = /obj/item/clothing/suit/space/hardsuit/clip_patroller
-	mask_type = /obj/item/clothing/mask/breath
+	mask_type = /obj/item/clothing/mask/gas/clip
 
 /obj/machinery/suit_storage_unit/minutemen/spotter
 	suit_type = /obj/item/clothing/suit/space/hardsuit/clip_spotter
