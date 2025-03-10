@@ -92,7 +92,7 @@
 
 /obj/item/mod/module/tether/on_use()
 	if(mod.wearer.has_gravity(get_turf(src)))
-		to_chat(user,span_warning("The tether flops uselessly to the ground in the gravity!"))
+		to_chat(mod.wearer,span_warning("The tether flops uselessly to the ground in the gravity!"))
 		playsound(src, 'sound/weapons/gun/general/dry_fire.ogg', 25, TRUE)
 		return FALSE
 	return ..()

@@ -137,7 +137,7 @@
 		if(CORE_STEP)
 			if(part.tool_behaviour == TOOL_SCREWDRIVER) //Construct
 				if(part.use_tool(src, user, 0, volume=30))
-					to_chat(user, span_notice("You secure the core.")
+					to_chat(user, span_notice("You secure the core."))
 				step = SCREWED_CORE_STEP
 			else if(part.tool_behaviour == TOOL_CROWBAR) //Deconstruct
 				if(part.use_tool(src, user, 0, volume=30))

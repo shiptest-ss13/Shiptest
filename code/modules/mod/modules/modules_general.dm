@@ -212,7 +212,7 @@
 		return FALSE
 	var/obj/item/dispensed = new dispense_type(mod.wearer.loc)
 	mod.wearer.put_in_hands(dispensed)
-	to_chat(user,span_notice("You dispense \a [dispensed]"))
+	to_chat(mod.wearer,span_notice("You dispense \a [dispensed]"))
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 	drain_power(use_power_cost)
 	return dispensed
@@ -280,7 +280,7 @@
 	if(!.)
 		return
 	dna = mod.wearer.dna.unique_enzymes
-	to_chat(user,span_notice("Biometrics updated."))
+	to_chat(mod.wearer,span_notice("Biometrics updated."))
 	drain_power(use_power_cost)
 
 /obj/item/mod/module/dna_lock/emp_act(severity)

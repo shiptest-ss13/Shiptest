@@ -282,7 +282,7 @@
 		return ..()
 	for(var/obj/item/part as anything in mod_parts)
 		if(part.loc != src)
-			to_chat(user,span_warning("Retract parts first!"))
+			to_chat(wearer,span_warning("Retract parts first!"))
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, FALSE, SILENCED_SOUND_EXTRARANGE)
 			return
 	if(!wearer.incapacitated())

@@ -50,7 +50,7 @@
 	if(!mod.wearer.equip_to_slot_if_possible(item, ITEM_SLOT_SUITSTORE, qdel_on_fail = FALSE, disable_warning = TRUE))
 		return
 	playsound(src, 'sound/items/modsuit/magnetic_harness.ogg', 50, TRUE)
-	to_chat(user,span_notice("\The harness automatically reattaches \the [item]."))
+	to_chat(mod.wearer,span_notice("\The harness automatically reattaches \the [item]."))
 	drain_power(use_power_cost)
 
 ///Holster - Instantly holsters any not huge gun.
@@ -89,7 +89,7 @@
 		to_chat(mod.wearer,span_warning("You draw \the [holstered]."))
 		playsound(src, 'sound/weapons/gun/revolver/empty.ogg', 100, TRUE)
 	else
-		o_chat(mod.wearer,span_warning("The holster is full!"))
+		to_chat(mod.wearer,span_warning("The holster is full!"))
 
 /obj/item/mod/module/holster/on_uninstall(deleting = FALSE)
 	if(holstered)

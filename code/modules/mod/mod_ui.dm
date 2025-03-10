@@ -56,16 +56,16 @@
 	if(.)
 		return
 	if(locked && !allowed(usr))
-		to_chat(user,span_warning("Insufficient access!"))
+		to_chat(wearer,span_warning("Insufficient access!"))
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return
 	if(malfunctioning && prob(75))
-		to_chat(user,span_warning("The button malfunctions!"))
+		to_chat(wearer,span_warning("The button malfunctions!"))
 		return
 	switch(action)
 		if("lock")
 			locked = !locked
-			to_chat(user,span_notice("You [locked ? "lock" : "unlock"] the suit."))
+			to_chat(wearer,span_notice("You [locked ? "lock" : "unlock"] the suit."))
 		if("activate")
 			toggle_activate(usr)
 		if("select")

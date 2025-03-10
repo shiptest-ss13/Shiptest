@@ -104,7 +104,7 @@
 
 	var/obj/structure/table/nearby_table = locate() in range(1, mod.wearer)
 	playsound(get_turf(src), 'sound/machines/click.ogg', 50, TRUE)
-	to_chat(user,span_notice("You dispense the paper[nearby_table ? " onto the table.":"."]"))
+	to_chat(mod.wearer,span_notice("You dispense the paper[nearby_table ? " onto the table.":"."]"))
 
 	mod.wearer.put_in_hands(crisp_paper)
 	if(nearby_table)

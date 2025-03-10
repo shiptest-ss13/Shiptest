@@ -111,7 +111,7 @@
 		return
 	var/turf/open/target_turf = get_turf(target)
 	if(!istype(target_turf) || target_turf.is_blocked_turf() || !(target_turf in view(mod.wearer)))
-		to_chat(user,span_warning("\The [target_turf] is an invalid target!"))
+		to_chat(mod.wearer,span_warning("\The [target_turf] is an invalid target!"))
 		return
 	var/matrix/pre_matrix = matrix()
 	pre_matrix.Scale(4, 0.25)
