@@ -486,7 +486,7 @@ SUBSYSTEM_DEF(overmap)
  * Spawns a new dynamic encounter when old one is deleted. Called by dynamic encounters being deleted.
  */
 /datum/overmap_star_system/proc/replace_dynamic_datum()
-	if(length(dynamic_datums) < CONFIG_GET(number/max_overmap_dynamic_events))
+	if(length(dynamic_datums) < max_overmap_dynamic_events)
 		var/list/results = get_unused_overmap_square()
 		new /datum/overmap/dynamic(results, src)
 

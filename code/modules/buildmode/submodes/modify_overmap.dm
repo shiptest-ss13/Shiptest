@@ -12,7 +12,7 @@
 		[span_bold("Copy datum type")] -> Left Mouse Button + Alt on Overmap Token\n\
 		[span_bold("Place datum")] -> Left Mouse Button on  Overmap Token\n\
 		[span_bold("Delete datum")] -> Right Mouse Button on Overmap Token\n\
-		[span_bold("Mass delete datum (DANGER)")] -> Right Mouse Button + Alt Button on Overmap Token"))
+		[span_bold("Mass delete datum on current overmap (DANGER)")] -> Right Mouse Button + Alt Button on Overmap Token"))
 	)
 
 /datum/buildmode_mode/modify_overmap/change_settings(client/target_client)
@@ -39,7 +39,7 @@ the parameters are from the client, meaning object is what they clicked on, not 
 	var/alt_click = LAZYACCESS(modifiers, ALT_CLICK)
 	var/turf/current_turf = get_turf(object)
 	if(!istype(current_turf.loc,/area/overmap))
-		to_chat(target_client, "<span class='warning'>Please only ever use this tool on the overmap, please.</span>")
+		to_chat(target_client, "<span class='warning'>Please only use this tool on the overmap.</span>")
 		return FALSE
 
 	if(left_click && alt_click)
@@ -82,10 +82,10 @@ the parameters are from the client, meaning object is what they clicked on, not 
 			if(action_type == "Cancel" || !action_type)
 				return
 
-			if(alert("Are you really sure you want to delete all instances of type [selected_overmap_datum.type]? THIS MAY BREAK SHIT. YOU HAVE BEEN WARNED.",,"Yes","No") != "Yes")
+			if(alert("Are you really sure you want to delete all instances of type [selected_overmap_datum.type]? THIS MAY BREAK THE ROUND. MAKE SURE THIS ISN'T THE MAIN OVERMAP.",,"Yes","No") != "Yes")
 				return
 
-			if(alert("Second confirmation required. Delete? I REALLY MEAN IT BY THIS MAY BREAK SHIT!! DARE I SAY WILL BREAK SHIT! ARE YOU SURE?",,"Yes","No") != "Yes")
+			if(alert("Second confirmation required. Delete EVERYTHING on current overmap? ARE YOU SURE?",,"Yes","No") != "Yes")
 				return
 
 			var/O_type = selected_overmap_datum.type
