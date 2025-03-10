@@ -331,7 +331,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HEAVY_SLEEPER "heavy_sleeper"
 #define TRAIT_NIGHT_VISION "night_vision"
 #define TRAIT_LIGHT_STEP "light_step"
-#define TRAIT_SPIRITUAL "spiritual"
 #define TRAIT_FAN_RILENA "fan_rilena"
 #define TRAIT_VORACIOUS "voracious"
 #define TRAIT_SELF_AWARE "self_aware"
@@ -352,6 +351,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BADTOUCH "bad_touch"
 #define TRAIT_ANXIOUS "anxious"
 #define TRAIT_ANALGESIA "congenital_analgesia"
+#define TRAIT_CLOUDED "clouded_eyes"
+#define TRAIT_PINPOINT_EYES "pinpoint_eyes"
+#define TRAIT_CHEMICAL_NIGHTVISION "chemical_nightvision"
+#define TRAIT_GOOD_CHEMICAL_NIGHTVISION "good_chemical_nightvision"
 
 /// Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"

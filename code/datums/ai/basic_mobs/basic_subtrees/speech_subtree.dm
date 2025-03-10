@@ -18,7 +18,7 @@
 		emote_see = string_list(emote_see)
 
 /datum/ai_planning_subtree/random_speech/SelectBehaviors(datum/ai_controller/controller, delta_time)
-	if(DT_PROB(speech_chance, delta_time))
+	if(SPT_PROB(speech_chance, delta_time))
 		var/audible_emotes_length = emote_hear?.len
 		var/non_audible_emotes_length = emote_see?.len
 		var/speak_lines_length = speak?.len

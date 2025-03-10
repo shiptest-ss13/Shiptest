@@ -22,7 +22,7 @@
 	hunt_targets = typecacheof(hunt_targets)
 
 /datum/ai_planning_subtree/find_and_hunt_target/SelectBehaviors(datum/ai_controller/controller, delta_time)
-	if(!DT_PROB(hunt_chance, delta_time))
+	if(!SPT_PROB(hunt_chance, delta_time))
 		return
 	if(controller.blackboard[BB_HUNTING_COOLDOWN] >= world.time)
 		return

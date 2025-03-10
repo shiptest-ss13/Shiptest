@@ -26,7 +26,7 @@
 /obj/machinery/computer/pod/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[REF(port)][id]"
 
-/obj/machinery/computer/pod/process(delta_time)
+/obj/machinery/computer/pod/process(seconds_per_tick)
 	if(COOLDOWN_FINISHED(src, massdriver_countdown))
 		timing = FALSE
 		// alarm() sleeps, so we want to end processing first and can't rely on return PROCESS_KILL

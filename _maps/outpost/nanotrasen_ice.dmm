@@ -9,7 +9,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "am" = (
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/snow/temperatre{
@@ -303,7 +303,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -637,7 +637,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 1
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/canister{
@@ -779,7 +779,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 5
 	},
 /obj/machinery/newscaster/security_unit/directional/west,
@@ -931,7 +931,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/newscaster/directional/south,
 /obj/item/newspaper,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/west,
@@ -960,7 +960,7 @@
 	pixel_x = -7;
 	pixel_y = 3
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 5
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -1011,7 +1011,7 @@
 	color = "#543C30"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /turf/open/floor/concrete/tiles,
@@ -1727,7 +1727,7 @@
 	},
 /area/outpost/exterior)
 "my" = (
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 5
 	},
 /turf/open/floor/plating/asteroid/snow/temperatre{
@@ -2020,7 +2020,7 @@
 	pixel_x = -15
 	},
 /obj/machinery/recharger,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 1
 	},
 /obj/structure/sign/poster/official/random{
@@ -2229,6 +2229,7 @@
 /obj/structure/noticeboard{
 	pixel_y = 28
 	},
+/obj/machinery/vending/clothing,
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
 	light_range = 2
@@ -2412,7 +2413,7 @@
 /area/outpost/security/checkpoint)
 "pJ" = (
 /obj/structure/flora/rock/pile/icy,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 9
 	},
 /turf/open/floor/plating/asteroid/snow/temperatre{
@@ -2557,7 +2558,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 6
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2954,7 +2955,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "tk" = (
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 1;
 	pixel_x = 12
 	},
@@ -3040,7 +3041,7 @@
 "tI" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/shop)
 "tJ" = (
@@ -4431,7 +4432,7 @@
 	},
 /obj/effect/decal/cleanable/vomit/old,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 9
 	},
 /obj/structure/sign/poster/retro/random{
@@ -5797,7 +5798,7 @@
 	},
 /area/outpost/exterior)
 "Mi" = (
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/snow/temperatre{
@@ -5823,7 +5824,7 @@
 	},
 /area/outpost/exterior)
 "Ms" = (
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/south,
@@ -5879,7 +5880,7 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -6460,7 +6461,7 @@
 /area/outpost/maintenance/fore)
 "QL" = (
 /obj/structure/table/reinforced,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 1
 	},
 /obj/structure/sign/poster/official/random{
@@ -6496,7 +6497,7 @@
 "QU" = (
 /obj/machinery/cryopod,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
 	light_range = 2

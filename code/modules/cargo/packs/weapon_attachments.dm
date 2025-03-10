@@ -38,6 +38,15 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/attachment/alof
+	name = "Alof Tube Crate"
+	desc = "Contains an antiquated spring operated magazine attachment for the HP Beacon. Has a capacity of three rounds."
+	cost = 1000
+	contains = list(/obj/item/attachment/alof)
+	crate_name = "alof crate"
+	faction = /datum/faction/srm
+	faction_discount = 10
+
 /datum/supply_pack/attachment/silencer
 	name = "Suppressor Crate"
 	desc = "Contains a single suppressor to be mounted on a firearm."
@@ -59,7 +68,7 @@
 	contains = list(/obj/item/attachment/scope)
 	crate_name = "scope crate"
 
-/datum/supply_pack/attachment/rail_light
+/datum/supply_pack/attachment/long_scope
 	name = "Long Scope Crate"
 	desc = "Contains a single high powered scope to be mounted on a firearm."
 	cost = 800
@@ -68,30 +77,37 @@
 
 /datum/supply_pack/attachment/shotgun
 	name = "Underbarrel Shotgun Crate"
-	desc = "Contains a single shot underbarrel shotgun to be mounted on a firearm."
-	cost = 750
-	contains = list(/obj/item/attachment/gun/ballistic/shotgun)
+	desc = "Contains a two shot underbarrel pump shotgun to be mounted on a firearm."
+	cost = 1200
+	contains = list(/obj/item/storage/guncase/underbarrel_shotgun)
 	crate_name = "underbarrel shotgun crate"
+
+/datum/supply_pack/attachment/hognose
+	name = "Underbarrel Hognose Crate"
+	desc = "Contains an eight shot underbarrel 22lr pistol to be mounted on a firearm."
+	cost = 500
+	contains = list(/obj/item/storage/guncase/underbarrel_hognose)
+	crate_name = "underbarrel hognose crate"
 
 /datum/supply_pack/attachment/flamethrower
 	name = "Underbarrel Flamethrower Crate"
 	desc = "Contains a compact underbarrel flamethrower to be mounted on a firearm."
 	cost = 750
-	contains = list(/obj/item/attachment/gun/flamethrower)
+	contains = list(/obj/item/storage/guncase/underbarrel_flamethrower)
 	crate_name = "underbarrel flamethrower crate"
 
 /datum/supply_pack/attachment/e_gun
 	name = "Underbarrel Energy Gun Crate"
 	desc = "Contains an underbarrel energy gun to be mounted on a firearm."
 	cost = 750
-	contains = list(/obj/item/attachment/gun/energy/e_gun)
+	contains = list(/obj/item/storage/guncase/energy/underbarrel_e_gun)
 	crate_name = "underbarrel energy gun crate"
 
 /datum/supply_pack/attachment/riot_launcher
 	name = "Underbarrel Riot Grenade Launcher Crate"
 	desc = "Contains a single shot underbarrel riot grenade launcher to be mounted on a firearm."
 	cost = 750
-	contains = list(/obj/item/attachment/gun/riot)
+	contains = list(/obj/item/storage/guncase/underbarrel_riot_grenade)
 	crate_name = "underbarrel riot grenade launcher crate"
 
 /datum/supply_pack/attachment/flare

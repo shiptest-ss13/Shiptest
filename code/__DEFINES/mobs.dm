@@ -105,7 +105,6 @@
 #define SPECIES_VAMPIRE "vampire"
 #define SPECIES_VOX "vox"
 #define SPECIES_ZOMBIE "zombie"
-#define SPECIES_GOOFZOMBIE "krokodil_zombie"
 #define SPECIES_XENOMORPH "xenomorph"
 
 #define DIGITIGRADE_NEVER 0
@@ -457,3 +456,6 @@
 #define NPC_DEFAULT_MIN_TEMP 250
 /// Default maximum body temperature mobs can exist in before taking damage
 #define NPC_DEFAULT_MAX_TEMP 350
+
+/// In dynamic human icon gen we don't replace the held item.
+#define NO_REPLACE 0

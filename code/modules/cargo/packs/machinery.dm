@@ -19,7 +19,7 @@
 /datum/supply_pack/machinery/t1
 	name = "T1 parts crate"
 	desc = "A bundle of basic machine parts, containing 3 of each common part type for when you're too lazy to print them yourself."
-	cost = 500
+	cost = 100
 	contains = list(/obj/item/storage/box/stockparts/basic)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate
@@ -27,16 +27,96 @@
 /datum/supply_pack/machinery/t2
 	name = "T2 parts crate"
 	desc = "A bundle of advanced machine parts, containing 2 of each common part type."
-	cost = 1500
+	cost = 750
 	contains = list(/obj/item/storage/box/stockparts/t2)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/machinery/t2_laser
+	name = "T2 lasers crate"
+	desc = "A bundle of advanced machine lasers, containing 10 parts."
+	cost = 750
+	contains = list(/obj/item/storage/box/stockparts/t2/laser)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/machinery/t2_matter
+	name = "T2 matter bins crate"
+	desc = "A bundle of advanced machine parts, containing 10 parts."
+	cost = 750
+	contains = list(/obj/item/storage/box/stockparts/t2/matter)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/machinery/t2_manipulator
+	name = "T2 manipulators crate"
+	desc = "A bundle of advanced machine parts, containing 10 parts."
+	cost = 750
+	contains = list(/obj/item/storage/box/stockparts/t2/manipulator)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/machinery/t2_scan
+	name = "T2 scanning modules crate"
+	desc = "A bundle of advanced machine parts, containing 10 parts."
+	cost = 750
+	contains = list(/obj/item/storage/box/stockparts/t2/scan)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/machinery/t2_capacitor
+	name = "T2 capacitors crate"
+	desc = "A bundle of advanced machine parts, containing 10 parts."
+	cost = 750
+	contains = list(/obj/item/storage/box/stockparts/t2/capacitor)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/science
 
 /datum/supply_pack/machinery/t3
 	name = "T3 parts crate"
 	desc = "A bundle of high-tech machine parts, containing 2 of each common part type."
-	cost = 3000
+	cost = 1500
 	contains = list(/obj/item/storage/box/stockparts/t3)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t3_capacitor
+	name = "T3 capacitors crate"
+	desc = "A bundle of high-tech machine parts, containing 10 parts."
+	cost = 1500
+	contains = list(/obj/item/storage/box/stockparts/t3/capacitor)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t3_scan
+	name = "T3 scanning module crate"
+	desc = "A bundle of high-tech machine parts, containing 10 parts"
+	cost = 1500
+	contains = list(/obj/item/storage/box/stockparts/t3/scan)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t3_manipulator
+	name = "T3 manipulators crate"
+	desc = "A bundle of high-tech machine parts, containing 10 parts."
+	cost = 1500
+	contains = list(/obj/item/storage/box/stockparts/t3/manipulator)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t3_laser
+	name = "T3 lasers crate"
+	desc = "A bundle of high-tech machine parts, containing 10."
+	cost = 1500
+	contains = list(/obj/item/storage/box/stockparts/t3/laser)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t3_matter
+	name = "T3 matter bins crate"
+	desc = "A bundle of high-tech machine parts, containing 2 of each common part type."
+	cost = 1500
+	contains = list(/obj/item/storage/box/stockparts/t3/matter)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 

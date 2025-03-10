@@ -82,7 +82,8 @@
 		/obj/item/clothing/glasses/welding, //WS edit: ok mald sure I'll add the welding stuff to the. ok.
 		/obj/item/clothing/mask/gas/welding,
 		/obj/item/clothing/head/welding, //WS end
-		/obj/item/gun/energy/plasmacutter
+		/obj/item/gun/energy/plasmacutter,
+		/obj/item/bodycamera
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -225,7 +226,8 @@
 		/obj/item/construction/plumbing,
 		/obj/item/plunger,
 		/obj/item/reagent_containers/spray,
-		/obj/item/shears
+		/obj/item/shears,
+		/obj/item/bodycamera
 		))
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()
@@ -319,6 +321,7 @@
 		/obj/item/holosign_creator/security,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box/magazine/ammo_stack, //handfuls of bullets
+		/obj/item/bodycamera,
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()
@@ -404,7 +407,10 @@
 		/obj/item/storage/bag/plants,
 		/obj/item/stack/marker_beacon,
 		/obj/item/restraints/legcuffs/bola/watcher,
-		/obj/item/melee/sword/bone
+		/obj/item/melee/sword/bone,
+		/obj/item/bodycamera,
+		/obj/item/binoculars,
+		/obj/item/tank/internals/emergency_oxygen,
 		))
 
 
@@ -457,18 +463,6 @@
 		"Snow" = "militarywebbing_snow",
 		"Urban" = "militarywebbing_urban",
 		)
-
-//this might seem obtuse instead of setting allow_post_reskins to TRUE, but reskin menu would open every time on alt click, which is not good for this
-/obj/item/storage/belt/military/examine(mob/user)
-	. = ..()
-	if(unique_reskin && current_skin)
-		. += "You can <b>Ctrl-Click</b> [src] to reskin it again after skinning it."
-
-/obj/item/storage/belt/military/CtrlClick(mob/user)
-	. = ..()
-	if(isliving(user) && in_range(src, user))
-		current_skin = null
-		to_chat(user, "You can reskin [src] again wtih <b>Alt-Click</b>.")
 
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()

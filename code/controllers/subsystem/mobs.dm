@@ -26,7 +26,7 @@ SUBSYSTEM_DEF(mobs)
 	cust["processing"] = length(GLOB.mob_living_list)
 	.["custom"] = cust
 
-/datum/controller/subsystem/mobs/fire(resumed = 0)
+/datum/controller/subsystem/mobs/fire(resumed = FALSE)
 	if (!resumed)
 		src.currentrun = GLOB.mob_living_list.Copy()
 

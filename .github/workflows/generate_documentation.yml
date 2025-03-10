@@ -38,11 +38,11 @@ jobs:
           echo codedocs.shiptest.net > dmdoc/CNAME
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           # Upload output directory
           path: "dmdoc/"
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4

@@ -94,10 +94,16 @@
 
 /obj/item/reagent_containers/pill/morphine
 	name = "morphine pill"
-	desc = "Commonly used to treat insomnia."
+	desc = "Commonly used to treat pain and restlessness."
 	icon_state = "pill8"
-	list_reagents = list(/datum/reagent/medicine/morphine = 15)
+	list_reagents = list(/datum/reagent/medicine/morphine = 10)
 	rename_with_volume = TRUE
+
+/obj/item/reagent_containers/pill/tramal
+	name = "tramal pill"
+	desc = "Commonly used to treat insomnia."
+	icon_state = "pill9"
+	list_reagents = list(/datum/reagent/medicine/tramal = 10)
 
 /obj/item/reagent_containers/pill/stimulant
 	name = "stimulant pill"
@@ -182,6 +188,20 @@
 	icon_state = "pill22"
 	rename_with_volume = TRUE
 
+/obj/item/reagent_containers/pill/licarb
+	name = "lithium carbonate pill"
+	desc = "Used to treat depression."
+	list_reagents = list(/datum/reagent/medicine/lithium_carbonate = 10)
+	icon_state = "pill22"
+	rename_with_volume = TRUE
+
+/obj/item/reagent_containers/pill/hsh
+	name = "HSH pill"
+	desc = "A pill of Human Sleep Hormone."
+	list_reagents = list(/datum/reagent/medicine/melatonin = 10)
+	icon_state = "pill22"
+	rename_with_volume = TRUE
+
 ///////////////////////////////////////// Psychologist inventory pills
 /obj/item/reagent_containers/pill/happinesspsych
 	name = "mood stabilizer pill"
@@ -260,6 +280,12 @@
 	icon_state = "pill21"
 	list_reagents = list(/datum/reagent/three_eye = 25)
 
+/obj/item/reagent_containers/pill/finobranc
+	name = "finobranc tablet"
+	desc = "In an ideal world, you'd be snorting this. We don't live in an ideal world."
+	icon_state = "pill18"
+	list_reagents = list(/datum/reagent/drug/finobranc = 5)
+
 /*WS Begin - No Cobbychem
 
 /obj/item/reagent_containers/pill/c2/probital
@@ -284,6 +310,12 @@ WS End */
 	icon_state = "pill12"
 	list_reagents = list(/datum/reagent/medicine/trophazole = 15)
 	rename_with_volume = TRUE
+
+/obj/item/reagent_containers/pill/stardrop
+	name = "stardrop capsule"
+	desc = "A capsule of a vision enhancing compound known as Stardrop."
+	icon_state = "pill11"
+	list_reagents = list(/datum/reagent/drug/stardrop = 15)
 
 /obj/item/reagent_containers/spray/rhigoxane
 	name = "medical spray (rhigoxane)"
