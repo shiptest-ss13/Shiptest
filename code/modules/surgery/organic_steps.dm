@@ -151,6 +151,7 @@
 	name = "saw bone"
 	implements = list(
 		TOOL_SAW = 100,
+		/obj/item/melee/knife/handsaw = 50,
 		/obj/item/melee/axe/fire = 50,
 		/obj/item/gear_handle/anglegrinder = 50,
 		/obj/item/melee/arm_blade = 40,
