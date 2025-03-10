@@ -132,7 +132,7 @@
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
 	if(!get_charge() && !force_deactivate)
-		to_chat(user, span_warning("s\The [src] is not powered!"))
+		to_chat(user, span_warning("\The [src] is not powered!"))
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
 	if(open && !force_deactivate)
@@ -141,7 +141,7 @@
 		return FALSE
 	if(activating)
 		if(!force_deactivate)
-			to_chat(user, span_warning("The [src] is already [active ? "shutting down" : "starting up"]!"))
+			to_chat(user, span_warning("\The [src] is already [active ? "shutting down" : "starting up"]!"))
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
 	for(var/obj/item/mod/module/module as anything in modules)
@@ -251,7 +251,10 @@
 
 // quickly deploys/retracts the suit and activate/deactives
 /obj/item/mod/control/proc/quick_toggle(mob/user)
-	if(!active)
+	if(activating)
+		to_chat(user, span_warning("\The [src] is already [active ? "shutting down" : "starting up"]!"))
+		return
+	else if(!active)
 		quick_deploy(user)
 		toggle_activate(user)
 	else

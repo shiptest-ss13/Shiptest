@@ -193,7 +193,7 @@
 					to_chat(user, span_notice("You add the boots."))
 					return
 				playsound(src, 'sound/machines/click.ogg', 30, TRUE)
-				to_chat(user, span_notice("You fit \the you fit [part] onto [src]."))
+				to_chat(user, span_notice("You fit \the [part] onto [src]."))
 				boots = part
 				step = BOOTS_STEP
 			else if(part.tool_behaviour == TOOL_CROWBAR) //Deconstruct
