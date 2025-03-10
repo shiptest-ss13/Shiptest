@@ -380,7 +380,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/side/baked_cheddarcheese_chips
 	name = "baked cheddar cheese chips"
-	desc = "A small packet of cheddar cheese-flavored potato chips, though some of them have gone soft."
+	desc = "A small packet of thin cheddar cheese chips, though some of them have gone soft."
 	filling_color = "#ffcc00"
 	tastes = list("artificial cheddar cheese" = 1, "chips" = 1)
 	foodtype = DAIRY
@@ -420,7 +420,7 @@
 	desc = "Dry hash browns paired with equally dry strips of bacon, salted heavily."
 	filling_color = "#ffcc00"
 	tastes = list("stiff hash brown" = 1, "crumbly bacon" = 1)
-	foodtype = GRAIN | MEAT
+	foodtype = GRAIN | MEAT | VEGETABLES
 	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/granola_milk_blueberries
@@ -591,7 +591,7 @@
 	desc = "A small chocolate snack cake square, imparted with a very artificial mint flavoring."
 	filling_color = "#00cc66"
 	tastes = list("mint" = 1, "chocolate" = 1, "cake" = 1)
-	foodtype = SUGAR
+	foodtype = SUGAR | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/snack/strawberry_preserves
 	name = "strawberry preserves"
