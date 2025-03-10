@@ -96,7 +96,7 @@
 	attack_verb_simple = "slice"
 	attack_sound = 'sound/weapons/blade1.ogg'
 
-	r_hand = /obj/item/melee/axe/sledgehammer/pre_wielded
+	r_hand = /obj/item/melee/sledgehammer/gorlex/pre_wielded
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -164,7 +164,7 @@
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'
 
-	r_hand = /obj/item/melee/axe/sledgehammer/pre_wielded
+	r_hand = /obj/item/melee/sledgehammer/gorlex/pre_wielded
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge/AttackingTarget()
@@ -196,7 +196,7 @@
 	icon_state = "syndicate_stormtrooper_sword"
 	icon_living = "syndicate_stormtrooper_sword"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
-	r_hand = /obj/item/melee/axe/sledgehammer/pre_wielded
+	r_hand = /obj/item/melee/sledgehammer/gorlex/pre_wielded
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
