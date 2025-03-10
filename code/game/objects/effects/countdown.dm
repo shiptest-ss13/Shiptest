@@ -192,14 +192,14 @@
 		return completion
 
 /obj/effect/countdown/overmap_event
-	name = "overmap event countdown"
+	name = "overmap token countdown"
 	mouse_opacity = FALSE
 	invisibility = 0
 	text_size = 2
 
 /obj/effect/countdown/overmap_event/get_value()
 	var/obj/overmap/token = attached_to
-	var/datum/overmap/event/attached_datum
+	var/datum/overmap/attached_datum
 	if(!istype(token))
 		return
 	attached_datum = token.parent

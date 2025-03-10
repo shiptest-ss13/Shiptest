@@ -19,10 +19,6 @@
 	var/datum/map_generator/empty_space_mapgen
 	/// Override the mountain value of the mapgen to this value.
 	var/mountain_height_override
-	/// What's the lifespan of this event? If unset, effectively disables this features.
-	var/lifespan
-	/// The 'death time' of the object. Used for limited lifespan events.
-	var/death_time
 
 /datum/overmap/event/Initialize(position, datum/overmap_star_system/system_spawned_in, set_lifespan,...)
 	. = ..()

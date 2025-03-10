@@ -3,6 +3,8 @@
 	desc = "It's a baseball cap."
 	icon_state = "whitesoft"
 	item_state = "helmet"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 	cuttable = TRUE
 	clothamnt = 2
 	unique_reskin = list("white cap" = "whitesoft",
@@ -22,28 +24,13 @@
 						"brown cap" = "brownsoft",
 						"light brown cap" = "lightbrownsoft"
 						)
-	var/flipped = 0
-	//we can't use initial for procs because we need to account for unique_reskin, so this stores the skin of the hat we use.
-	var/hat_icon
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	var/flipped = TRUE
 
 /obj/item/clothing/head/soft/Initialize()
 	. = ..()
-	hat_icon = icon_state
-
-/obj/item/clothing/head/soft/examine(mob/user)
-	. = ..()
-	if(unique_reskin && !current_skin)
-		. += "You can <b>Alt-Click</b> [src] to apply a new skin to it."
-
-/obj/item/clothing/head/soft/reskin_obj(mob/M, change_name)
-	. = ..()
-	hat_icon = icon_state
-	return
-
-/obj/item/clothing/head/soft/dropped()
-	icon_state = hat_icon
-	flipped=0
-	..()
+	base_icon_state = icon_state
 
 /obj/item/clothing/head/soft/verb/flipcap()
 	set category = "Object"
@@ -51,26 +38,23 @@
 
 	flip(usr)
 
-
 /obj/item/clothing/head/soft/AltClick(mob/user)
-	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		reskin_obj(user, TRUE)
-		return TRUE
+	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
+		return FALSE
+	if(unique_reskin && !current_skin)
+		reskin_obj(user)
 	else
-		if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-			return FALSE
-		else
-			flip(user)
-			return TRUE
+		flip(user)
+	return TRUE
 
 /obj/item/clothing/head/soft/proc/flip(mob/user)
 	if(!user.incapacitated())
 		flipped = !flipped
 		if(src.flipped)
-			icon_state = "[icon_state]_flipped"
+			icon_state = "[base_icon_state]_flipped"
 			to_chat(user, span_notice("You flip the hat backwards."))
 		else
-			icon_state = hat_icon
+			icon_state = base_icon_state
 			to_chat(user, span_notice("You flip the hat back in normal position."))
 		usr.update_inv_head()	//so our mob-overlays update
 
@@ -82,97 +66,97 @@
 	name = "white cap"
 	desc = "It's a baseball hat in a tasteful white colour."
 	icon_state = "whitesoft"
-	current_skin = "whitesoft"
+	current_skin = "white cap"
 
 /obj/item/clothing/head/soft/grey
 	name = "grey cap"
 	desc = "It's a baseball hat in a tasteful grey colour."
 	icon_state = "greysoft"
-	current_skin = "greysoft"
+	current_skin = "grey cap"
 
 /obj/item/clothing/head/soft/black
 	name = "black cap"
 	desc = "It's a baseball hat in a tasteful black colour."
 	icon_state = "blacksoft"
-	current_skin = "blacksoft"
+	current_skin = "black cap"
 
 /obj/item/clothing/head/soft/red
 	name = "red cap"
 	desc = "It's a baseball hat in a tasteful red colour."
 	icon_state = "redsoft"
-	current_skin = "redsoft"
+	current_skin = "red cap"
 
 /obj/item/clothing/head/soft/maroon
 	name = "maroon cap"
 	desc = "It's a baseball hat in a tasteful maroon colour."
 	icon_state = "maroonsoft"
-	current_skin = "maroonsoft"
+	current_skin = "maroon cap"
 
 /obj/item/clothing/head/soft/orange
 	name = "orange cap"
 	desc = "It's a baseball hat in a tasteful orange colour."
 	icon_state = "orangesoft"
-	current_skin = "orangesoft"
+	current_skin = "orange cap"
 
 /obj/item/clothing/head/soft/yellow
 	name = "yellow cap"
 	desc = "It's a baseball hat in a tasteful yellow colour."
 	icon_state = "yellowsoft"
-	current_skin = "yellowsoft"
+	current_skin = "yellow cap"
 
 /obj/item/clothing/head/soft/green
 	name = "green cap"
 	desc = "It's a baseball hat in a tasteful green colour."
 	icon_state = "greensoft"
-	current_skin = "greensoft"
+	current_skin = "green cap"
 
 /obj/item/clothing/head/soft/darkgreen
 	name = "dark green cap"
 	desc = "It's a baseball hat in a tasteful dark green colour."
 	icon_state = "darkgreensoft"
-	current_skin = "darkgreensoft"
+	current_skin = "dark green cap"
 
 /obj/item/clothing/head/soft/teal
 	name = "teal cap"
 	desc = "It's a baseball hat in a tasteful teal colour."
 	icon_state = "tealsoft"
-	current_skin = "tealsoft"
+	current_skin = "teal cap"
 
 /obj/item/clothing/head/soft/blue
 	name = "blue cap"
 	desc = "It's a baseball hat in a tasteful blue colour."
 	icon_state = "bluesoft"
-	current_skin = "bluesoft"
+	current_skin = "blue cap"
 
 /obj/item/clothing/head/soft/darkblue
 	name = "dark blue cap"
 	desc = "It's a baseball hat in a tasteful dark blue colour."
 	icon_state = "darkbluesoft"
-	current_skin = "darkbluesoft"
+	current_skin = "dark blue cap"
 
 /obj/item/clothing/head/soft/purple
 	name = "purple cap"
 	desc = "It's a baseball hat in a tasteful purple colour."
 	icon_state = "purplesoft"
-	current_skin = "purplesoft"
+	current_skin = "purple cap"
 
 /obj/item/clothing/head/soft/pink
 	name = "pink cap"
 	desc = "It's a baseball hat in a tasteful pink colour."
 	icon_state = "pinksoft"
-	current_skin = "pinksoft"
+	current_skin = "pink cap"
 
 /obj/item/clothing/head/soft/brown
 	name = "brown cap"
 	desc = "It's a baseball hat in a tasteful brown colour."
 	icon_state = "brownsoft"
-	current_skin = "brownsoft"
+	current_skin = "brown cap"
 
 /obj/item/clothing/head/soft/lightbrown
 	name = "light brown cap"
 	desc = "It's a baseball hat in a tasteful light brown colour."
 	icon_state = "lightbrownsoft"
-	current_skin = "lightbrownsoft"
+	current_skin = "light brown cap"
 
 /obj/item/clothing/head/soft/sec
 	name = "security cap"
@@ -180,10 +164,14 @@
 	icon_state = "secsoft"
 	unique_reskin = null
 	dog_fashion = null
+	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/soft/sec/brig_phys
 	name = "security medic cap"
 	icon_state = "secsoft"
+	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/soft/paramedic
 	name = "paramedic cap"
@@ -191,6 +179,8 @@
 	icon_state = "paramedicsoft"
 	unique_reskin = null
 	dog_fashion = null
+	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/soft/cybersun
 	name = "cybersun agent cap"
@@ -247,4 +237,3 @@
 	icon_state = "patrolnavysoft"
 	unique_reskin = null
 	dog_fashion = null
-//recompile icons comment!!!!!

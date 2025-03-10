@@ -167,8 +167,15 @@
 				if(R.independent && R.can_receive(frequency, map_zones))
 					radios += R
 
+		if (TRANSMISSION_SECTOR)
+			// Newscasting
+			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
+				if(R.can_receive(frequency, map_zones))
+					radios += R
+
 	// Sound thats played on radios
 	var/radiosound
+
 	// Next, we'll have each radio play a small sound effect except for the one that broadcasted it.
 	for(var/obj/item/radio/radio in radios)
 		var/interference_level

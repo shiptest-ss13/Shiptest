@@ -14,6 +14,9 @@ SUBSYSTEM_DEF(overmap)
 	var/list/controlled_ships = list()
 	///List of spawned outposts. The default spawn location is the first index.
 	var/list/outposts = list()
+
+	///List of all dynamic overmap datums
+	var/list/dynamic_datums  = list()
 	///List of all events
 	var/list/events = list()
 
@@ -50,6 +53,7 @@ SUBSYSTEM_DEF(overmap)
 	overmap_objects = list()
 	controlled_ships = list()
 	outposts = list()
+	dynamic_datums = list()
 	events = list()
 
 	default_system = create_new_star_system(new /datum/overmap_star_system/safezone)
@@ -238,6 +242,8 @@ SUBSYSTEM_DEF(overmap)
 	var/list/controlled_ships = list()
 	///List of spawned outposts in the star system
 	var/list/outposts = list()
+	///List of all dynamic overmap datums in the star system.
+	var/list/dynamic_datums  = list()
 	///List of all events in the star system.
 	var/list/events = list()
 
@@ -476,6 +482,13 @@ SUBSYSTEM_DEF(overmap)
 			if(nearby_event.interference_power)
 				qdel(nearby_event)
 	return
+/**
+ * Spawns a new dynamic encounter when old one is deleted. Called by dynamic encounters being deleted.
+ */
+/datum/overmap_star_system/proc/replace_dynamic_datum()
+	if(length(dynamic_datums) < CONFIG_GET(number/max_overmap_dynamic_events))
+		var/list/results = get_unused_overmap_square()
+		new /datum/overmap/dynamic(results, src)
 
 /**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.

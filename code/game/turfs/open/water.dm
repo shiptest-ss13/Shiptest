@@ -106,6 +106,7 @@
 	light_range = 2
 	light_power = 0.80
 	light_color = LIGHT_COLOR_BLUE
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 
 /turf/open/water/beach/underground
 	light_range = 0

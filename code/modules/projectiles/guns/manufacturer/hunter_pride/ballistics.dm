@@ -98,6 +98,7 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE
+
 	unique_reskin = list(\
 		"Shadow" = "shadow",
 		"Cattleman" = "shadow_cattleman",
@@ -109,6 +110,7 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 		"Cavalry" = "shadow_cavalry",
 		"Lanchester Special" = "shadow_lanchester"
 		)
+	unique_reskin_changes_inhand = TRUE
 
 	recoil = 0
 	spread_unwielded = 10
@@ -116,11 +118,6 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
-
-/obj/item/gun/ballistic/revolver/shadow/reskin_obj(mob/M)
-	. = ..()
-	if(current_skin)
-		item_state = unique_reskin[current_skin]
 
 EMPTY_GUN_HELPER(revolver/shadow)
 

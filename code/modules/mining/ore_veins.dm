@@ -55,7 +55,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/spawn_distance_min = 4
 	var/spawn_distance_max = 6
 	var/wave_length = 2 MINUTES
-	var/wave_downtime = 30 SECONDS
+	var/wave_downtime = 1 MINUTES
 
 
 //Generates amount of ore able to be pulled from the vein (mining_charges) and types of ore within it (vein_contents)
@@ -140,7 +140,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
 	max_mobs = 6
-	spawn_time = 100
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
