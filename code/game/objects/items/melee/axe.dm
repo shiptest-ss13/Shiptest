@@ -5,6 +5,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 5
 	throwforce = 15
+	demolition_mod = 1.25
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	attack_cooldown = HEAVY_WEAPON_CD
