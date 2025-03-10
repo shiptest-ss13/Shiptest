@@ -4515,7 +4515,8 @@
 /obj/structure/cable/yellow,
 /obj/machinery/porta_turret/ship/ramzi/heavy{
 	turret_respects_id = 0;
-	turret_flags = 62
+	turret_flags = 62;
+	lethal = 1
 	},
 /obj/effect/decal/cleanable/glass,
 /obj/item/solar_assembly{
@@ -5482,7 +5483,8 @@
 	},
 /obj/machinery/porta_turret/ship/ramzi/heavy{
 	turret_respects_id = 0;
-	turret_flags = 62
+	turret_flags = 62;
+	lethal = 1
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/ramzi_station/solars)
