@@ -123,3 +123,9 @@
 #define BB_BASIC_MOB_CURRENT_TARGET "BB_basic_current_target"
 #define BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION "BB_basic_current_target_hiding_location"
 #define BB_TARGETTING_DATUM "targetting_datum"
+
+///bear keys
+///the hive with honey that we will steal from
+#define BB_FOUND_HONEY "BB_found_honey"
+///the tree that we will climb
+#define BB_CLIMBED_TREE "BB_climbed_tree"
