@@ -78,9 +78,11 @@
 
 /// Hunts down a specific atom type.
 /datum/ai_behavior/hunt_target
-	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT
+	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_REQUIRE_REACH
 	/// How long do we have to wait after a successful hunt?
 	var/hunt_cooldown = 5 SECONDS
+	/// Do we reset the target after attacking something, so we can check for status changes.
+	var/always_reset_target = FALSE
 
 /datum/ai_behavior/hunt_target/setup(datum/ai_controller/controller, hunting_target_key, hunting_cooldown_key)
 	. = ..()
@@ -118,6 +120,8 @@
 	if(succeeded)
 		controller.blackboard[hunting_cooldown_key] = world.time + hunt_cooldown
 	else if(hunting_target_key)
+		controller.blackboard[hunting_target_key] = null
+	if(always_reset_target && hunting_target_key)
 		controller.blackboard[hunting_target_key] = null
 
 /datum/ai_behavior/hunt_target/unarmed_attack_target

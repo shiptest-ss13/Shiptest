@@ -31,4 +31,4 @@
 /datum/ai_behavior/climb_tree/finish_action(datum/ai_controller/controller, succeeded, target_key)
 	. = ..()
 	if(succeeded)
-		controller.clear_blackboard_key(target_key)
+		controller.blackboard[target_key] = null

@@ -3,7 +3,6 @@
  */
 /datum/element/tree_climber
 	element_flags = ELEMENT_BESPOKE
-	argument_hash_start_idx = 2
 	///the distance to climb up and down
 	var/climbing_distance = 20
 	///are we on a tree
