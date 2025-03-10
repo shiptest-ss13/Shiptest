@@ -411,6 +411,11 @@
 	return ..()
 
 /obj/item/gun/examine(mob/user)
+	if(manufacturer)
+		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
+	. = ..()
+
+/obj/item/gun/examine_more(mob/user)
 	. = ..()
 	if(has_safety)
 		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
@@ -418,8 +423,6 @@
 	if(gun_firemodes.len > 1)
 		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
 
-	if(manufacturer)
-		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
 
 /obj/item/gun/attackby(obj/item/I, mob/living/user, params)
 	. = ..()

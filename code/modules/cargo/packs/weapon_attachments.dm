@@ -54,6 +54,13 @@
 	contains = list(/obj/item/attachment/silencer)
 	crate_name = "suppressor crate"
 
+/datum/supply_pack/attachment/counter
+	name = "Ammo Counter Crate"
+	desc = "Contains a single ammo counter to mount on a firearm."
+	cost = 100
+	contains = list(/obj/item/attachment/ammo_counter)
+	crate_name = "ammo counter crate"
+
 /datum/supply_pack/attachment/sling
 	name = "Shoulder Sling Crate"
 	desc = "Contains a single shoulder sling to be mounted on a firearm for easy carrying without armor holsters. Only compatible with longarms."

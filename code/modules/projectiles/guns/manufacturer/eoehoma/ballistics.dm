@@ -25,6 +25,7 @@
 	slot_flags = ITEM_SLOT_BACK
 
 	show_magazine_on_sprite = TRUE
+	ammo_counter = TRUE
 	empty_indicator = TRUE
 	fire_sound = 'sound/weapons/gun/laser/e40_bal.ogg'
 	manufacturer = MANUFACTURER_EOEHOMA
