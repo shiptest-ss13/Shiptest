@@ -209,11 +209,10 @@
 	if(!.)
 		return
 	if(dispense_time && !do_after(mod.wearer, dispense_time, target = mod))
-		balloon_alert(mod.wearer, "interrupted!")
 		return FALSE
 	var/obj/item/dispensed = new dispense_type(mod.wearer.loc)
 	mod.wearer.put_in_hands(dispensed)
-	balloon_alert(mod.wearer, "[dispensed] dispensed")
+	to_chat(user,span_notice("You dispense \a [dispensed]"))
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 	drain_power(use_power_cost)
 	return dispensed
@@ -281,7 +280,7 @@
 	if(!.)
 		return
 	dna = mod.wearer.dna.unique_enzymes
-	balloon_alert(mod.wearer, "dna updated")
+	to_chat(user,span_notice("Biometrics updated."))
 	drain_power(use_power_cost)
 
 /obj/item/mod/module/dna_lock/emp_act(severity)
@@ -300,7 +299,7 @@
 	var/mob/living/carbon/carbon_user = user
 	if(!dna  || (carbon_user.has_dna() && carbon_user.dna.unique_enzymes == dna))
 		return TRUE
-	balloon_alert(user, "dna locked!")
+	to_chat(user,span_warning("The suit is DNA locked and won't activate!"))
 	return FALSE
 
 /obj/item/mod/module/dna_lock/proc/on_emp(datum/source, severity)
@@ -409,17 +408,17 @@
 	if(!istype(hitting_item, /obj/item/clothing/head))
 		return
 	if(!mod.active)
-		balloon_alert(user, "suit must be active!")
+		to_chat(user,span_warning("The suit must be active!"))
 		return
 	if(!is_type_in_typecache(hitting_item, attachable_hats_list))
-		balloon_alert(user, "this hat won't fit!")
+		to_chat(user,span_warning("This hat won't fit!"))
 		return
 	if(attached_hat)
-		balloon_alert(user, "hat already attached!")
+		to_chat(user,span_warning("There's a hat already attached!"))
 		return
 	if(mod.wearer.transferItemToLoc(hitting_item, src, force = FALSE, silent = TRUE))
 		attached_hat = hitting_item
-		balloon_alert(user, "hat attached, alt-click to remove")
+		to_chat(user,span_notice("You attached the hat, alt-click to remove"))
 		mod.wearer.update_inv_back(mod.slot_flags)
 
 /obj/item/mod/module/hat_stabilizer/generate_worn_overlay()
@@ -433,9 +432,5 @@
 	if(!attached_hat)
 		return
 	attached_hat.forceMove(drop_location())
-	if(user.put_in_active_hand(attached_hat))
-		balloon_alert(user, "hat removed")
-	else
-		balloon_alert_to_viewers("the hat falls to the floor!")
 	attached_hat = null
 	mod.wearer.update_inv_back(mod.slot_flags)

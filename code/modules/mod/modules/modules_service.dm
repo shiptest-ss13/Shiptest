@@ -20,7 +20,7 @@
 	if(!istype(target, /obj/item))
 		return
 	if(!isturf(target.loc))
-		balloon_alert(mod.wearer, "must be on the floor!")
+		to_chat(mod.wearer,span_warning("\The [target] must be on the floor!"))
 		return
 	var/obj/item/microwave_target = target
 	var/datum/effect_system/spark_spread/spark_effect = new()
@@ -30,7 +30,7 @@
 	if(microwave_target.microwave_act())
 		playsound(src, 'sound/machines/microwave/microwave-end.ogg', 50, FALSE)
 	else
-		balloon_alert(mod.wearer, "can't be microwaved!")
+		to_chat(mod.wearer,span_warning("\The [microwave_target] can't be microwaved!"))
 	var/datum/effect_system/spark_spread/spark_effect_two = new()
 	spark_effect_two.set_up(2, 1, microwave_target)
 	spark_effect_two.start()

@@ -32,7 +32,7 @@
  *
  * user - The person trying to take out the pAI from the MODsuit.
  * forced - Whether or not we skip the checks and just eject the pAI. Defaults to FALSE.
- * feedback - Whether to give feedback via balloon alerts or not. Defaults to TRUE.
+ * feedback - Whether to give feedback via alerts or not. Defaults to TRUE.
  */
 /obj/item/mod/control/proc/extract_pai(mob/user, forced = FALSE, feedback = TRUE)
 	if(!ai)
@@ -60,7 +60,7 @@
  * Simple proc that handles the safe removal of the pAI from a MOD control unit.
  *
  * Arguments:
- * * feedback - Whether or not we want to give balloon alert feedback to the ai. Defaults to FALSE.
+ * * feedback - Whether or not we want to give feedback to the ai. Defaults to FALSE.
  */
 /obj/item/mod/control/proc/remove_pai(feedback = FALSE)
 	if(!ispAI(ai))
@@ -75,7 +75,7 @@
 			action.Remove(pai)
 
 	if(feedback)
-		balloon_alert(pai, "removed from a suit")
+		to_chat(user ,span_notice("You remove the pAI."))
 	pai.remote_control = null
 	pai.canholo = TRUE
 	pai = null

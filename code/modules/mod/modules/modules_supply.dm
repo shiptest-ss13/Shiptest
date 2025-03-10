@@ -57,13 +57,12 @@
 			return
 		playsound(src, 'sound/mecha/hydraulic.ogg', 25, TRUE)
 		if(!do_after(mod.wearer, load_time, target = target))
-			balloon_alert(mod.wearer, "interrupted!")
 			return
 		if(!check_crate_pickup(picked_crate))
 			return
 		stored_crates += picked_crate
 		picked_crate.forceMove(src)
-		balloon_alert(mod.wearer, "picked up [picked_crate]")
+		to_chat(mod.wearer,span_notice("You pick up \the [picked_crate]."))
 		drain_power(use_power_cost)
 		mod.wearer.update_inv_back()
 	else if(length(stored_crates))
@@ -72,17 +71,16 @@
 			return
 		playsound(src, 'sound/mecha/hydraulic.ogg', 25, TRUE)
 		if(!do_after(mod.wearer, load_time, target = target))
-			balloon_alert(mod.wearer, "interrupted!")
 			return
 		if(target_turf.is_blocked_turf())
 			return
 		var/atom/movable/dropped_crate = pop(stored_crates)
 		dropped_crate.forceMove(target_turf)
-		balloon_alert(mod.wearer, "dropped [dropped_crate]")
+		to_chat(mod.wearer,span_notice("You drop \the [dropped_crate]"))
 		drain_power(use_power_cost)
 		mod.wearer.update_inv_back()
 	else
-		balloon_alert(mod.wearer, "invalid target!")
+		to_chat(mod.wearer,span_warning("Invalid target!"))
 
 /obj/item/mod/module/clamp/on_suit_deactivation(deleting = FALSE)
 	if(deleting)
@@ -93,12 +91,12 @@
 
 /obj/item/mod/module/clamp/proc/check_crate_pickup(atom/movable/target)
 	if(length(stored_crates) >= max_crates)
-		balloon_alert(mod.wearer, "too many crates!")
+		to_chat(mod.wearer,span_warning("The suit crate storage is full! Clear out some space!"))
 		return FALSE
 	for(var/mob/living/mob in target.get_all_contents())
 		if(mob.mob_size < MOB_SIZE_HUMAN)
 			continue
-		balloon_alert(mod.wearer, "crate too heavy!")
+		to_chat(mod.wearer,span_warning("\The crate is too heavy!"))
 		return FALSE
 	return TRUE
 
@@ -223,7 +221,7 @@
 	if(!plasma.use(uses_needed))
 		return FALSE
 	mod.add_charge(uses_needed * charge_given)
-	balloon_alert(user, "core refueled")
+	to_chat(user,span_notice("You refuel the core."))
 	return TRUE
 
 /obj/item/mod/module/disposal_connector
@@ -286,11 +284,11 @@
 		locker.throw_at(target, range = 7, speed = 4, thrower = mod.wearer)
 		return
 	if(!istype(target, /obj/structure/closet) || !(target in view(mod.wearer)))
-		balloon_alert(mod.wearer, "invalid target!")
+		to_chat(mod.wearer,span_warning("Invalid target!"))
 		return
 	var/obj/structure/closet/locker = target
 	if(locker.anchored || locker.move_resist >= MOVE_FORCE_OVERPOWERING)
-		balloon_alert(mod.wearer, "target anchored!")
+		to_chat(mod.wearer,span_warning("\The [locker] is anchored to the ground!"))
 		return
 	new /obj/effect/temp_visual/mook_dust(get_turf(locker))
 	playsound(locker, 'sound/effects/gravhit.ogg', 75, TRUE)

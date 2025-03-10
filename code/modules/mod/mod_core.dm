@@ -180,13 +180,12 @@
 
 /obj/item/mod/core/standard/proc/mod_uninstall_cell(mob/living/user)
 	if(!cell)
-		mod.balloon_alert(user, "no cell!")
+		to_chat(user,span_warning("No cell installed!"))
 		return
-	mod.balloon_alert(user, "removing cell...")
+	to_chat(user,span_notice("You begin removing the cell..."))
 	if(!do_after(user, 1.5 SECONDS, target = mod))
-		mod.balloon_alert(user, "interrupted!")
 		return
-	mod.balloon_alert(user, "cell removed")
+	to_chat(user,span_notice("You remove the cell"))
 	playsound(mod, 'sound/machines/click.ogg', 50, TRUE, SILENCED_SOUND_EXTRARANGE)
 	var/obj/item/cell_to_move = cell
 	cell_to_move.forceMove(drop_location())
@@ -198,15 +197,15 @@
 
 	if(istype(attacking_item, /obj/item/stock_parts/cell))
 		if(!mod.open)
-			mod.balloon_alert(user, "open the cover first!")
+			to_chat(user,span_warning("Open the cover first!"))
 			playsound(mod, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 			return NONE
 		if(cell)
-			mod.balloon_alert(user, "cell already installed!")
+			to_chat(user,span_warning("There's a cell already installed!"))
 			playsound(mod, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 			return COMPONENT_NO_AFTERATTACK
 		install_cell(attacking_item)
-		mod.balloon_alert(user, "cell installed")
+		to_chat(user,span_notice("Cell installed"))
 		playsound(mod, 'sound/machines/click.ogg', 50, TRUE, SILENCED_SOUND_EXTRARANGE)
 		mod.update_charge_alert()
 		return COMPONENT_NO_AFTERATTACK
@@ -304,5 +303,5 @@
 	if(!plasma.use(uses_needed))
 		return FALSE
 	add_charge(uses_needed * charge_given)
-	balloon_alert(user, "core refueled")
+	to_chat(user, span_notice("core refueled"))
 	return TRUE
