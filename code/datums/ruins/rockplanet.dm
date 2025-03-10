@@ -30,3 +30,9 @@
 	id = "rockplanet_mining_base"
 	suffix = "rockplanet_mining_installation.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
+
+/datum/map_template/ruin/rockplanet/river_valley_stash
+	name = "River Valley Stash"
+	description = "A frontiersman drug stash in the midst of being buried."
+	id = "rockplanet_river_valley_stash"
+	suffix = "rockplanet_river_valley_stash.dmm"
