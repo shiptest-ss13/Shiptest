@@ -133,6 +133,10 @@
 		bank_account.adjust_money(officer ? 250 : 100, CREDIT_LOG_STARTING_MONEY) //just a little bit of money for you
 		H.account_id = bank_account.account_id
 
+		var/obj/item/card/id/idcard = H.get_idcard(TRUE)
+		if(idcard)
+			idcard.officer = officer
+
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
 
