@@ -17,7 +17,7 @@ SUBSYSTEM_DEF(fire_burning)
 	cust["processing"] = length(processing)
 	.["custom"] = cust
 
-/datum/controller/subsystem/fire_burning/fire(resumed = 0)
+/datum/controller/subsystem/fire_burning/fire(resumed = FALSE)
 	if (!resumed)
 		src.currentrun = processing.Copy()
 

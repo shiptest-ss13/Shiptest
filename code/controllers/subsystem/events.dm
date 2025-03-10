@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(events)
 	return ..()
 
 
-/datum/controller/subsystem/events/fire(resumed = 0)
+/datum/controller/subsystem/events/fire(resumed = FALSE)
 	if(!resumed)
 		checkEvent() //only check these if we aren't resuming a paused fire
 		src.currentrun = running.Copy()

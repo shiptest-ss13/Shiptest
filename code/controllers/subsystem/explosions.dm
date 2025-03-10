@@ -454,7 +454,7 @@ SUBSYSTEM_DEF(explosions)
 
 		.[T] = current_exp_block
 
-/datum/controller/subsystem/explosions/fire(resumed = 0)
+/datum/controller/subsystem/explosions/fire(resumed = FALSE)
 	if (!is_exploding())
 		return
 	var/timer
