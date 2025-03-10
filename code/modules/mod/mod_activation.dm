@@ -102,7 +102,7 @@
 	if(overslotting_parts[part])
 		UnregisterSignal(part, COMSIG_ATOM_EXITED)
 		var/obj/item/overslot = overslotting_parts[part]
-		if(!wearer.equip_to_slot_if_possible(overslot, overslot.slot_flags, qdel_on_fail = FALSE, disable_warning = TRUE))
+		if(!wearer.equip_to_slot_if_possible(overslot, overslot.slot_flags, qdel_on_fail = FALSE, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
 			wearer.dropItemToGround(overslot, force = TRUE, silent = TRUE)
 		overslotting_parts[part] = null
 	if(!user)
