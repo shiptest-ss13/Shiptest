@@ -28,7 +28,7 @@
 	icon_state = "tray"
 	module_type = MODULE_TOGGLE
 	complexity = 1
-	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.5
+	active_power_cost = MODULE_CHARGE_DRAIN_LOW
 	incompatible_modules = list(/obj/item/mod/module/t_ray)
 	cooldown_time = 0.5 SECONDS
 	/// T-ray scan range.
@@ -47,7 +47,7 @@
 	icon_state = "magnet"
 	module_type = MODULE_TOGGLE
 	complexity = 2
-	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.5
+	active_power_cost = MODULE_CHARGE_DRAIN_MEDIUM
 	incompatible_modules = list(/obj/item/mod/module/magboot)
 	cooldown_time = 0.5 SECONDS
 	/// Slowdown added onto the suit.
@@ -86,13 +86,13 @@
 	icon_state = "tether"
 	module_type = MODULE_ACTIVE
 	complexity = 3
-	use_power_cost = DEFAULT_CHARGE_DRAIN
+	use_power_cost = MODULE_CHARGE_DRAIN_LOW
 	incompatible_modules = list(/obj/item/mod/module/tether)
 	cooldown_time = 1.5 SECONDS
 
 /obj/item/mod/module/tether/on_use()
 	if(mod.wearer.has_gravity(get_turf(src)))
-		balloon_alert(mod.wearer, "too much gravity!!")
+		to_chat(mod.wearer,span_warning("The tether flops uselessly to the ground in the gravity!"))
 		playsound(src, 'sound/weapons/gun/general/dry_fire.ogg', 25, TRUE)
 		return FALSE
 	return ..()
@@ -142,7 +142,7 @@
 	icon_state = "mister"
 	module_type = MODULE_ACTIVE
 	complexity = 2
-	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
+	active_power_cost = MODULE_CHARGE_DRAIN_LOW
 	device = /obj/item/reagent_containers/spray/mister
 	incompatible_modules = list(/obj/item/mod/module/mister)
 	cooldown_time = 0.5 SECONDS
@@ -167,3 +167,18 @@
 /obj/item/extinguisher/mini/nozzle/mod
 	name = "MOD atmospheric mister"
 	desc = "An atmospheric resin mister with three modes, mounted as a module."
+
+/obj/item/mod/module/toolset
+	name = "MOD mobile toolset module"
+	desc = "A module installed in the forearm of the suit, featuring a complete suite of integrated engineering tools."
+	module_type = MODULE_ACTIVE
+	complexity = 4
+	active_power_cost = MODULE_CHARGE_DRAIN_LOW
+	toolset = TRUE
+	tools_to_create = list(/obj/item/screwdriver/cyborg, /obj/item/wrench/cyborg, /obj/item/weldingtool/largetank/cyborg,
+		/obj/item/crowbar/cyborg, /obj/item/wirecutters/cyborg, /obj/item/multitool/cyborg)
+	incompatible_modules = list(/obj/item/mod/module/toolset)
+	cooldown_time = 0
+	allowed_inactive = TRUE
+
+
