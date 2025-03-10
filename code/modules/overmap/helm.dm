@@ -49,8 +49,6 @@
 
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-	if(!viewer)
-		SSpoints_of_interest.make_point_of_interest(src)
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
 	ntnet_relay = new(src)
 
@@ -111,6 +109,8 @@
 	qdel(current_ship)
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	if(!viewer)
+		SSpoints_of_interest.make_point_of_interest(src)
 	if(current_ship && current_ship != port.current_ship)
 		current_ship.helms -= src
 	current_ship = port.current_ship
