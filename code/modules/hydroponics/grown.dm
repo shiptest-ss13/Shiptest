@@ -167,6 +167,15 @@
 		reagents.del_reagent(/datum/reagent/consumable/nutriment)
 		reagents.del_reagent(/datum/reagent/consumable/nutriment/vitamin)
 
+/obj/item/reagent_containers/food/snacks/grown/proc/get_tgui_info()
+	var/list/data = list()
+	var/datum/reagent/product_distill_reagent = distill_reagent
+	data["distill_reagent"] = initial(product_distill_reagent.name)
+	data["juice_result"] = list()
+	for(var/datum/reagent/reagent as anything in juice_results)
+		data["juice_result"] += initial(reagent.name)
+	return data
+
 /*
  * Attack self for growns
  *
