@@ -41,7 +41,7 @@
 	if(connected_port)
 		. += "siphon-connector"
 
-/obj/machinery/portable_atmospherics/pump/process_atmos()
+/obj/machinery/portable_atmospherics/pump/process_atmos(seconds_per_tick)
 	..()
 	if(!on)
 		pump.airs[1] = null
