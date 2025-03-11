@@ -1168,34 +1168,37 @@
 /datum/action/innate/brain_undeployment/Trigger(trigger_flags)
 	if(!..())
 		return FALSE
-	var/obj/item/mmi/posibrain/ai/shell_to_disconnect = (/obj/item/mmi/posibrain/ai)
+	var/obj/item/organ/brain/cybernetic/ai/shell_to_disconnect = (/obj/item/organ/brain/cybernetic/ai)
 
 	shell_to_disconnect.undeploy()
 	return TRUE
 
-/obj/item/mmi/posibrain/ai
-	name = "AI-uplink brain"
+/obj/item/organ/brain/cybernetic/ai
+	name = "Remote uplink positronic frame controller"
 	desc = "Can be inserted into an I.P.C. without a controlling positronic brain to allow stationary positronic interface cores to control it."
+	icon = 'icons/obj/assemblies.dmi' ///so its not a fucking brain
+	icon_state = "posibrain"
+	base_icon_state = "posibrain"
 	/// if connected, our AI
 	var/mob/living/silicon/ai/mainframe
 	/// action for undeployment
 	var/datum/action/innate/brain_undeployment/undeployment_action = new
 
-/obj/item/mmi/posibrain/ai/Destroy()
+/obj/item/organ/brain/cybernetic/ai/Destroy()
 	. = ..()
 	undeploy()
 	mainframe = null
 	QDEL_NULL(undeployment_action)
 
 
-/obj/item/mmi/posibrain/ai/proc/get_status_tab_item(mob/living/source, list/items)
+/obj/item/organ/brain/cybernetic/ai/proc/get_status_tab_item(mob/living/source, list/items)
 	SIGNAL_HANDLER
 	if(!mainframe)
 		return
 	items += mainframe.get_status_tab_items()
 
 
-/obj/item/mmi/posibrain/ai/proc/owner_clicked(datum/source, atom/location, control, params, mob/user)
+/obj/item/organ/brain/cybernetic/ai/proc/owner_clicked(datum/source, atom/location, control, params, mob/user)
 	SIGNAL_HANDLER
 	if(!isAI(user))
 		return
@@ -1210,7 +1213,7 @@
 
 	to_chat(user, boxed_message(jointext(lines, "\n")), type = MESSAGE_TYPE_INFO)
 
-/obj/item/mmi/posibrain/ai/Topic(href, href_list)
+/obj/item/organ/brain/cybernetic/ai/Topic(href, href_list)
 	..()
 	if(!href_list["ai_take_control"] || !is_sufficiently_augmented())
 		return
@@ -1231,14 +1234,14 @@
 	deploy_init(AI)
 	AI.mind.transfer_to(owner)
 
-/obj/item/mmi/posibrain/ai/proc/deploy_init(mob/living/silicon/ai/AI)
+/obj/item/organ/brain/cybernetic/ai/proc/deploy_init(mob/living/silicon/ai/AI)
 	//todo camera maybe
 	mainframe = AI
 	RegisterSignal(AI, PROC_REF(ai_deleted))
 	undeployment_action.Grant(owner)
 	to_chat(owner, span_bold("You are operating through a remote uplink system to this frame, and remain the same mind."))
 
-/obj/item/mmi/posibrain/ai/proc/undeploy(datum/source)
+/obj/item/organ/brain/cybernetic/ai/proc/undeploy(datum/source)
 	SIGNAL_HANDLER
 	if(!owner?.mind || !mainframe)
 		return
@@ -1253,20 +1256,15 @@
 		mainframe.eyeobj.setLoc(loc)
 	mainframe = null
 
-/obj/item/mmi/posibrain/ai/proc/is_sufficiently_augmented()
+/obj/item/organ/brain/cybernetic/ai/proc/is_sufficiently_augmented()
 	. = TRUE
 	if(/mob/living/carbon/human/species/ipc)
 		return
 	else
 		return FALSE
 
-/obj/item/mmi/posibrain/ai/proc/on_organ_gain(datum/source, obj/item/organ/new_organ, special)
-	SIGNAL_HANDLER
-	if(!is_sufficiently_augmented())
-		to_chat(owner, span_danger("Connection failure. Organics detected."))
-		undeploy()
 
-/obj/item/mmi/posibrain/ai/proc/ai_deleted(datum/source)
+/obj/item/organ/brain/cybernetic/ai/proc/ai_deleted(datum/source)
 	SIGNAL_HANDLER
 	to_chat(owner, span_danger("Your core has been rendered inoperable..."))
 	undeploy()
