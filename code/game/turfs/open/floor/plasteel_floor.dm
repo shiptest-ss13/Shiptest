@@ -199,11 +199,13 @@
 	base_icon_state = "stairs-old"
 
 /turf/open/floor/plasteel/stairs/wood
-	color = "#5B3E1D"
+	color = WOOD_COLOR_GENERIC
 	icon_state = "stairs-wood"
 	base_icon_state = "stairs-wood"
+	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
-	footstep = FOOTSTEP_WOOD_CLAW
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plasteel/stairs/wood/left
 	icon_state = "stairs-wood-l"

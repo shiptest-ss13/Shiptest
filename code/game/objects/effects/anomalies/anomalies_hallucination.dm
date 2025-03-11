@@ -4,15 +4,15 @@
 	icon_state = "hallucination"
 	desc = "A shimmering mirage suspended above the ground, never in the same place as it was a second ago."
 	core = /obj/item/assembly/signaler/anomaly/hallucination
-	/// Time passed since the last effect, increased by delta_time of the SSobj
+	/// Time passed since the last effect, increased by seconds_per_tick of the SSobj
 	var/ticks = 0
 	/// How many seconds between each small hallucination pulses
 	pulse_delay = 5 SECONDS
 	effectrange = 5
 
-/obj/effect/anomaly/hallucination/anomalyEffect(delta_time)
+/obj/effect/anomaly/hallucination/anomalyEffect(seconds_per_tick)
 	. = ..()
-	ticks += delta_time
+	ticks += seconds_per_tick
 	if(ticks < pulse_delay)
 		return
 	ticks -= pulse_delay
