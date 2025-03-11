@@ -1258,7 +1258,7 @@
 
 /obj/item/organ/brain/cybernetic/ai/proc/is_sufficiently_augmented()
 	. = TRUE
-	if(/mob/living/carbon/human/species/ipc)
+	if((isipc(/mob/living/carbon/human/species/ipc)))
 		return
 	else
 		return FALSE
