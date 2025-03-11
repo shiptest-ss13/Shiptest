@@ -38,6 +38,8 @@
 	light_power = 0.80
 
 /turf/open/floor/plating/asteroid/sand/dense
+	icon = 'icons/turf/floors/beachsand_wet.dmi'
+	smooth_icon = 'icons/turf/floors/beachsand_wet.dmi'
 	planetary_atmos = TRUE
 
 /turf/open/floor/plating/asteroid/sand/dense/lit

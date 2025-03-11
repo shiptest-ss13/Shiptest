@@ -78,6 +78,15 @@
 	tiled_dirt = FALSE
 	has_grass = TRUE
 
+/turf/open/floor/plating/asteroid/dirt/grass/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	if(prob(floor_variance))
+		add_overlay("grassalt_[rand(1,max_icon_states)]")
+
+/turf/open/floor/plating/asteroid/dirt/grass/dark
+	icon = 'icons/turf/floors/darkgrass.dmi'
+	smooth_icon = 'icons/turf/floors/darkgrass.dmi'
+
 /turf/open/floor/plating/asteroid/dirt/grass/fairy
 	light_range = 2
 	light_power = 0.80

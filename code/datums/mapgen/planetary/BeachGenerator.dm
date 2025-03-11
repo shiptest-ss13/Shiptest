@@ -113,6 +113,12 @@
 	)
 	mob_spawn_chance = 1
 
+
+	feature_spawn_chance = 0.8
+	feature_spawn_list = list(
+		/obj/effect/greeble_spawner/grass_patch_spawner/dark = 1,
+	)
+
 /datum/biome/grass/dense
 	flora_spawn_chance = 70
 	mob_spawn_list = list(
@@ -123,6 +129,8 @@
 	)
 	mob_spawn_chance = 2
 	feature_spawn_chance = 0.1
+
+	feature_spawn_chance = 1.2
 
 /datum/biome/beach
 	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/lit = 1)

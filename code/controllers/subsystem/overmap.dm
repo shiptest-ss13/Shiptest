@@ -258,6 +258,8 @@ SUBSYSTEM_DEF(overmap)
 	var/list/list/radius_positions
 	///Width/height of the overmap "zlevel"
 	var/size
+	///The maximum amount of dynamic events that can spawn in this sector.
+	var/max_overmap_dynamic_events
 	///Do we have a outpost in this system?
 	var/has_outpost = FALSE
 	/// Our faction of the outpost
@@ -316,6 +318,8 @@ SUBSYSTEM_DEF(overmap)
 		generator_type = CONFIG_GET(string/overmap_generator_type)
 	if(!size)
 		size = CONFIG_GET(number/overmap_size)
+	if(!max_overmap_dynamic_events)
+		max_overmap_dynamic_events = CONFIG_GET(number/max_overmap_dynamic_events)
 
 	overmap_container = new/list(size, size, 0)
 
@@ -425,11 +429,11 @@ SUBSYSTEM_DEF(overmap)
  * Creates an overmap object for each ruin level, making them accessible.
  */
 /datum/overmap_star_system/proc/spawn_ruin_levels()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
+	for(var/i in 1 to max_overmap_dynamic_events)
 		new /datum/overmap/dynamic(system_spawned_in = src)
 
 /datum/overmap_star_system/proc/spawn_ruin_levels_in_orbits()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
+	for(var/i in 1 to max_overmap_dynamic_events)
 		new /datum/overmap/dynamic(system_spawned_in = src)
 
 /**

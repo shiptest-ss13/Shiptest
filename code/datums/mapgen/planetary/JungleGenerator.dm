@@ -91,11 +91,11 @@
 		/obj/structure/flora/junglebush/b = 1,
 		/obj/structure/flora/junglebush/c = 1,
 		/obj/structure/flora/junglebush/large = 1,
-		/obj/structure/spacevine/dense = 5,
+		/obj/structure/spacevine/dense = 8,
 		/obj/structure/spacevine/dense = 2,
 		/obj/structure/flora/ash/garden = 1,
 	)
-	flora_spawn_chance = 90
+	flora_spawn_chance = 75
 	mob_spawn_chance = 0.3
 	mob_spawn_list = list(
 		/mob/living/carbon/monkey = 10,
@@ -103,8 +103,17 @@
 		/obj/effect/spawner/random/chicken/jungle/flock = 1
 		)
 
+	feature_spawn_chance = 1.4
+	feature_spawn_list = list(
+		/obj/structure/vein/jungle = 2,
+		/obj/structure/vein/jungle/classtwo = 4,
+		/obj/structure/vein/jungle/classthree = 1,
+		/obj/effect/greeble_spawner/grass_patch_spawner/dark_jungle = 20,
+		/obj/effect/greeble_spawner/grass_patch_spawner/yellow_jungle = 50,
+	)
+
 /datum/biome/jungle/dense
-	flora_spawn_chance = 100
+	flora_spawn_chance = 85
 	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/jungle = 1, /turf/open/floor/plating/asteroid/dirt/jungle/dark = 9)
 	flora_spawn_list = list(
 		/obj/structure/flora/grass/jungle = 1,
@@ -125,6 +134,7 @@
 		/mob/living/simple_animal/hostile/retaliate/chicken = 4,
 		/obj/effect/spawner/random/chicken/jungle/flock = 1
 		)
+	feature_spawn_chance = 2
 
 /datum/biome/jungle/plains
 	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/jungle = 1)
@@ -162,6 +172,7 @@
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/carp = 1)
 	flora_spawn_chance = 1
 	flora_spawn_list = list(/obj/structure/flora/rock = 1)
+	feature_spawn_chance = 0
 
 /datum/biome/cave/jungle
 	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/jungle = 10, /turf/open/floor/plating/asteroid/dirt/jungle/dark = 10)
