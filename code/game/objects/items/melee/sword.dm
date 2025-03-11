@@ -204,7 +204,7 @@
 	START_PROCESSING(SSobj, src)
 	visible_message("<span class='warning'>[src] appears, balanced ever so perfectly on its hilt. This isn't ominous at all.</span>")
 
-/obj/item/melee/sword/supermatter/process()
+/obj/item/melee/sword/supermatter/process(seconds_per_tick)
 	if(balanced || throwing || ismob(src.loc) || isnull(src.loc))
 		return
 	if(!isturf(src.loc))

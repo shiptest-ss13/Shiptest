@@ -64,7 +64,7 @@
 			return
 	return FALSE
 
-/obj/machinery/transformer/process()
+/obj/machinery/transformer/process(seconds_per_tick)
 	if(cooldown && (cooldown_timer <= world.time))
 		cooldown = FALSE
 		update_appearance()
