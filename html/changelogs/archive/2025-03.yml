@@ -127,3 +127,17 @@
 2025-03-10:
   firebudgy:
   - balance: The Talos-class now has Two Enforcers.
+2025-03-11:
+  FalloutFalcon, Donkie, optimumtact:
+  - code_imp: Process procs now properly utilize seconds_per_tick when implementing
+      rates, timers and probabilities, which paves way for easier subsystem tickrate
+      adjustments.
+  Ical92:
+  - bugfix: fills in missing autowiki details
+  - bugfix: fixed ghost access to duffels and backpacks
+  Zevotech:
+  - bugfix: Adjusted the cargo delivery chutes so that crates can no longer travel
+      backwards and clog the system
+  generalthrax:
+  - rscadd: Added specific parts boxes for T2 and T3 parts, 10 parts each
+  - balance: Reduced the price of T2 parts by 750 and the price of T3 parts by 1500
