@@ -95,7 +95,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "bc" = (
-/turf/open/floor/wood,
+/turf/open/floor/plasteel/stairs/right{
+	dir = 4
+	},
 /area/space)
 "bf" = (
 /obj/structure/chair/bench/blue/directional/east{
@@ -227,6 +229,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
+"dg" = (
+/turf/open/floor/plasteel/stairs/left{
+	dir = 4
+	},
+/area/space)
 "dU" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue/half{
 	dir = 8
@@ -243,6 +250,19 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/space)
+"er" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/half{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/corner/opaque/solgovblue/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "eu" = (
 /turf/open/floor/plasteel/white,
 /area/space)
@@ -253,6 +273,12 @@
 	},
 /obj/effect/turf_decal/techfloor/orange,
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"eA" = (
+/obj/structure/platform/ship{
+	dir = 9
+	},
+/turf/open/space/basic,
 /area/space)
 "eD" = (
 /obj/structure/table/wood,
@@ -383,17 +409,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "gt" = (
-/obj/effect/turf_decal/corner/opaque/solgovgold/half{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/solgovblue/border{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
+/obj/structure/fluff/hedge/opaque,
+/obj/structure/fluff/hedge/opaque,
+/turf/open/space/basic,
 /area/space)
 "gK" = (
 /turf/open/floor/plating,
@@ -425,6 +443,19 @@
 	},
 /turf/open/floor/circuit/green,
 /area/ship/engineering)
+"ha" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/half{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/solgovblue/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "hc" = (
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
@@ -666,22 +697,12 @@
 /obj/structure/fluff/hedge/opaque,
 /turf/open/floor/wood/walnut,
 /area/space)
-"ml" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
-	},
-/obj/effect/turf_decal/corner/opaque/solgovgold/half,
-/obj/effect/turf_decal/corner/opaque/solgovblue/border,
-/turf/open/floor/plasteel/white,
-/area/space)
 "mz" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "mP" = (
-/obj/machinery/autolathe,
-/turf/open/space/basic,
+/turf/open/floor/ship/dirt,
 /area/space)
 "mR" = (
 /obj/structure/filingcabinet/double/grey{
@@ -752,6 +773,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"oL" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/wood,
+/area/space)
 "oY" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 6
@@ -840,6 +865,15 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/space)
+"sj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/corner/opaque/solgovgold/half,
+/obj/effect/turf_decal/corner/opaque/solgovblue/border,
+/turf/open/floor/plasteel/white,
+/area/space)
 "sn" = (
 /obj/structure/table/wood,
 /obj/item/storage/fancy/cigarettes/cigpack_robust{
@@ -855,11 +889,6 @@
 "sz" = (
 /turf/open/floor/plating,
 /area/ship/engineering)
-"sD" = (
-/obj/structure/fluff/hedge/opaque,
-/obj/structure/fluff/hedge/opaque,
-/turf/open/space/basic,
-/area/space)
 "sM" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible/layer2,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
@@ -939,8 +968,10 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/space)
 "uc" = (
-/obj/machinery/vending/coffee,
-/turf/open/floor/wood,
+/obj/structure/platform/ship/corner{
+	dir = 4
+	},
+/turf/open/space/basic,
 /area/space)
 "ui" = (
 /obj/structure/platform/wood{
@@ -1124,8 +1155,9 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/space)
-"wM" = (
-/turf/open/floor/ship/dirt,
+"wT" = (
+/obj/machinery/autolathe,
+/turf/open/space/basic,
 /area/space)
 "wW" = (
 /obj/effect/turf_decal/corner/opaque/solgovgold{
@@ -1172,19 +1204,6 @@
 /obj/item/folder/documents/solgov,
 /turf/open/floor/carpet/royalblue,
 /area/space)
-"yq" = (
-/obj/effect/turf_decal/corner/opaque/solgovgold{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 10
-	},
-/obj/effect/turf_decal/corner/opaque/solgovblue/bordercorner{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/space)
 "yu" = (
 /obj/machinery/door/airlock/solgov,
 /turf/open/floor/plasteel/tech,
@@ -1210,6 +1229,19 @@
 /obj/structure/railing/thin/corner,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
+"yE" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/solgovgold{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/solgovblue/bordercorner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "zh" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/effect/turf_decal/techfloor/orange{
@@ -1378,14 +1410,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2,
 /turf/open/floor/engine/o2,
 /area/ship/engineering/engine)
-"BJ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#543C30"
-	},
-/obj/structure/dresser,
-/turf/open/floor/carpet/royalblue,
-/area/space)
 "BP" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30"
@@ -1561,6 +1585,10 @@
 /obj/structure/chair/sofa/brown/right/directional/north,
 /turf/open/floor/carpet/green,
 /area/space)
+"FO" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/wood,
+/area/space)
 "FR" = (
 /obj/effect/turf_decal/corner/opaque/solgovgold,
 /obj/effect/turf_decal/corner/opaque/solgovblue/bordercorner,
@@ -1729,14 +1757,14 @@
 /turf/open/floor/plasteel/white,
 /area/space)
 "KM" = (
-/obj/effect/turf_decal/corner/opaque/solgovgold/half{
+/obj/effect/turf_decal/corner/opaque/solgovgold{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#543C30"
+	color = "#543C30";
+	dir = 10
 	},
-/obj/effect/turf_decal/corner/opaque/solgovblue/border{
+/obj/effect/turf_decal/corner/opaque/solgovblue/bordercorner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
@@ -1761,8 +1789,7 @@
 /turf/open/floor/wood/ebony,
 /area/space)
 "Ll" = (
-/obj/machinery/disposal/bin,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/wood,
 /area/space)
 "Lm" = (
 /obj/effect/turf_decal/industrial/stand_clear/red{
@@ -1932,17 +1959,10 @@
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "OZ" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 6
+/obj/structure/platform/ship{
+	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/solgovgold{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/solgovblue/bordercorner{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
+/turf/open/space/basic,
 /area/space)
 "Pb" = (
 /obj/effect/turf_decal/techfloor{
@@ -2131,10 +2151,6 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/space)
-"Te" = (
-/obj/machinery/vending/cigarette,
-/turf/open/floor/wood,
-/area/space)
 "Tk" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 5
@@ -2274,6 +2290,14 @@
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering/engine)
+"WZ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#543C30"
+	},
+/obj/structure/dresser,
+/turf/open/floor/carpet/royalblue,
+/area/space)
 "Xe" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/yellow,
@@ -2426,6 +2450,10 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
+/area/space)
+"ZU" = (
+/obj/machinery/disposal/bin,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "ZY" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -3069,9 +3097,9 @@ ZO
 ZO
 Jn
 kN
-wM
-wM
-wM
+mP
+mP
+mP
 kN
 Jn
 bB
@@ -3105,10 +3133,10 @@ eu
 eu
 yu
 kN
-wM
+mP
 eE
-wM
-wM
+mP
+mP
 Jn
 bB
 hg
@@ -3140,11 +3168,11 @@ cU
 eu
 eu
 Jn
-wM
-wM
+mP
+mP
 eE
 eE
-wM
+mP
 Jn
 bB
 hg
@@ -3240,9 +3268,9 @@ Gd
 Zt
 Zt
 Zt
+er
+er
 KM
-KM
-yq
 yu
 kN
 eu
@@ -3272,12 +3300,12 @@ Jn
 DD
 DD
 At
-ml
+sj
 fq
 nF
 nF
-gt
-gt
+ha
+ha
 bm
 Jn
 kN
@@ -3309,8 +3337,8 @@ Jn
 Jn
 Jn
 jd
-OZ
-Ll
+yE
+ZU
 Jn
 Jn
 Jn
@@ -3329,7 +3357,7 @@ Jn
 zM
 mR
 Jn
-vm
+Jn
 vm
 Jn
 Jn
@@ -3349,7 +3377,7 @@ Jn
 Jn
 Jn
 ME
-sD
+gt
 QW
 Jn
 Jn
@@ -3376,12 +3404,12 @@ kN
 (27,1,1) = {"
 kN
 Jn
-BJ
+WZ
 kk
 Jn
-bc
-bc
-bc
+Ll
+Ll
+Ll
 Jn
 ya
 if
@@ -3404,7 +3432,7 @@ Jn
 kN
 kN
 kN
-mP
+wT
 Jn
 kN
 kN
@@ -3415,9 +3443,9 @@ Jn
 Bc
 zM
 JM
-bc
-bc
-bc
+Ll
+Ll
+Ll
 Jn
 Qy
 if
@@ -3451,9 +3479,9 @@ Jn
 Jn
 Jn
 Jn
-bc
-bc
-bc
+Ll
+Ll
+Ll
 Jn
 RC
 if
@@ -3486,10 +3514,10 @@ Jn
 Jn
 vN
 Jn
-bc
-bc
-bc
-Te
+Ll
+Ll
+Ll
+FO
 Jn
 ZO
 ZO
@@ -3509,11 +3537,11 @@ fr
 zH
 Fe
 ZO
-kN
-kN
-kN
-kN
-kN
+bc
+dg
+eA
+OZ
+uc
 Jn
 Jn
 "}
@@ -3522,10 +3550,10 @@ Jn
 XO
 kk
 Jn
-bc
-bc
-bc
-uc
+Ll
+Ll
+Ll
+oL
 Jn
 kN
 kN
@@ -3558,9 +3586,9 @@ Jn
 io
 zM
 yu
-bc
-bc
-bc
+Ll
+Ll
+Ll
 Jn
 Jn
 kN
