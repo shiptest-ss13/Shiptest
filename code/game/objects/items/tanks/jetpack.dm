@@ -222,7 +222,7 @@
 	cur_user = null
 	..()
 
-/obj/item/tank/jetpack/suit/process()
+/obj/item/tank/jetpack/suit/process(seconds_per_tick)
 	if(!istype(loc, /obj/item/clothing/suit/space/hardsuit) || !ishuman(loc.loc))
 		turn_off(cur_user)
 		return

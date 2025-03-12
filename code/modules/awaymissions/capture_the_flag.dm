@@ -46,7 +46,7 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed)
 
-/obj/item/ctf/process()
+/obj/item/ctf/process(seconds_per_tick)
 	if(is_ctf_target(loc)) //don't reset from someone's hands.
 		return PROCESS_KILL
 	if(world.time > reset_cooldown)
@@ -201,7 +201,7 @@
 	SSpoints_of_interest.remove_point_of_interest(src)
 	return ..()
 
-/obj/machinery/capture_the_flag/process()
+/obj/machinery/capture_the_flag/process(seconds_per_tick)
 	for(var/i in spawned_mobs)
 		// Anyone in crit, automatically reap
 		var/mob/living/living_participant = i
@@ -211,9 +211,8 @@
 		else
 			// The changes that you've been hit with no shield but not
 			// instantly critted are low, but have some healing.
-			living_participant.adjustBruteLoss(-5)
-			living_participant.adjustFireLoss(-5)
-
+			living_participant.adjustBruteLoss(-2.5 * seconds_per_tick)
+			living_participant.adjustFireLoss(-2.5 * seconds_per_tick)
 
 /obj/machinery/capture_the_flag/red
 	name = "Red CTF Controller"
@@ -706,11 +705,11 @@
 	resistance_flags = INDESTRUCTIBLE
 	var/obj/machinery/capture_the_flag/controlling
 	var/team = "none"
-	var/point_rate = 1
+	var/point_rate = 0.5
 
-/obj/machinery/control_point/process()
+/obj/machinery/control_point/process(seconds_per_tick)
 	if(controlling)
-		controlling.control_points += point_rate
+		controlling.control_points += point_rate * seconds_per_tick
 		if(controlling.control_points >= controlling.control_points_to_win)
 			controlling.victory()
 
