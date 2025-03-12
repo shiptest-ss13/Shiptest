@@ -113,7 +113,7 @@
 		new /obj/item/stack/sheet/metal(loc)
 	qdel(src)
 
-/obj/machinery/iv_drip/process()
+/obj/machinery/iv_drip/process(seconds_per_tick)
 	if(!attached)
 		return PROCESS_KILL
 
@@ -134,7 +134,7 @@
 				if(istype(beaker, /obj/item/reagent_containers/blood))
 					// speed up transfer on blood packs
 					transfer_amount *= 2
-				beaker.reagents.trans_to(attached, transfer_amount, method = INJECT, show_message = FALSE) //make reagents reacts, but don't spam messages
+				beaker.reagents.trans_to(attached, transfer_amount * seconds_per_tick * 0.5, method = INJECT, show_message = FALSE) //make reagents reacts, but don't spam messages
 				update_appearance()
 
 		// Take blood

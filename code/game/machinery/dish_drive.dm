@@ -80,7 +80,7 @@
 		suction_enabled = board.suction
 		transmit_enabled = board.transmit
 
-/obj/machinery/dish_drive/process()
+/obj/machinery/dish_drive/process(seconds_per_tick)
 	if(time_since_dishes <= world.time && transmit_enabled)
 		do_the_dishes()
 	if(!suction_enabled)

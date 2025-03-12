@@ -564,7 +564,7 @@
 	. = ..()
 	START_PROCESSING(SSprocessing, src)
 
-/obj/item/toy/plush/goatplushie/angry/process()
+/obj/item/toy/plush/goatplushie/angry/process(seconds_per_tick)
 	if (prob(25) && !target)
 		var/list/targets_to_pick_from = list()
 		for(var/mob/living/carbon/C in view(7, src))
@@ -643,7 +643,7 @@
 
 /obj/item/toy/plush/moth/lovers
 	name = "lovers moth plushie"
-	desc = "An adorable mothperson plushy. It's a loveley bug!"
+	desc = "An adorable mothperson plushy. It's a lovely bug!"
 	icon_state = "moffplush_lovers"
 
 /obj/item/toy/plush/moth/whitefly

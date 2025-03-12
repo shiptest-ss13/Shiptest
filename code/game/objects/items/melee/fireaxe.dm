@@ -41,6 +41,7 @@
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
 	icon_state = "fireaxe"
 	base_icon_state = "fireaxe"
+	demolition_mod = 1.25
 
 /obj/item/melee/axe/bone  // Blatant imitation of the fireaxe, but made out of bone.
 	name = "bone axe"
@@ -73,6 +74,7 @@ Blunt
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = IS_BLUNT
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
+	demolition_mod = 2
 	var/wielded = FALSE
 
 /obj/item/melee/axe/sledgehammer/ComponentInitialize()
