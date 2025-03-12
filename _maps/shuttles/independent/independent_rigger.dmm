@@ -276,7 +276,6 @@
 /area/ship/crew/canteen)
 "ee" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/landmark/observer_start,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
@@ -766,7 +765,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "jy" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner,
@@ -1087,9 +1086,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4{
 	dir = 1
 	},
-/obj/machinery/advanced_airlock_controller{
-	pixel_x = -25
-	},
+/obj/machinery/advanced_airlock_controller/directional/west,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
@@ -1735,7 +1732,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "wg" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner{
@@ -1798,7 +1795,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "wB" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
+/obj/machinery/power/shuttle/engine/fire{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -2372,7 +2369,7 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/cryo)
 "Cw" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
+/obj/machinery/power/shuttle/engine/fire{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -2535,10 +2532,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Er" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins{
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "EB" = (
@@ -2911,11 +2909,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "HW" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ic" = (

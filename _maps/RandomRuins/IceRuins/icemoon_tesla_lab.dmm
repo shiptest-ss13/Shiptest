@@ -1,9 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	dir = 8;
-	reqpower = 0;
-	faction = list("Frontiersmen")
+/obj/machinery/porta_turret/ruin/frontiersmen{
+	dir = 8
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/tesla_lab/turrets)
@@ -2378,10 +2376,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
 "jM" = (
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen")
-	},
+/obj/machinery/porta_turret/ruin/frontiersmen/light,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/tesla_lab/turrets)
 "jV" = (
@@ -4526,15 +4521,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/icemoon/lit,
 /area/overmap_encounter/planetoid/ice/explored)
-"sw" = (
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	dir = 10;
-	id = "haymaker";
-	lethal = 1;
-	faction = list("Frontiersmen")
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/icemoon/tesla_lab/haymaker)
 "sx" = (
 /obj/structure/table,
 /obj/item/folder/blue{
@@ -4553,15 +4539,6 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/office_two)
-"sF" = (
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	dir = 9;
-	id = "haymaker";
-	lethal = 1;
-	faction = list("Frontiersmen")
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/icemoon/tesla_lab/haymaker)
 "sJ" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
@@ -5263,10 +5240,6 @@
 	pixel_x = 11;
 	pixel_y = -10
 	},
-/obj/item/reagent_containers/syringe/contraband/bath_salts{
-	pixel_y = 13;
-	pixel_x = 6
-	},
 /obj/item/reagent_containers/hypospray/medipen/survival{
 	pixel_y = -12;
 	pixel_x = -4
@@ -5274,6 +5247,10 @@
 /obj/item/reagent_containers/pill/floorpill{
 	pixel_x = -7;
 	pixel_y = 9
+	},
+/obj/item/reagent_containers/syringe/contraband/mammoth{
+	pixel_y = 11;
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/icemoon/tesla_lab/medbay)
@@ -10937,15 +10914,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/containment)
-"RS" = (
-/obj/machinery/porta_turret/ship/frontiersmen{
-	dir = 6;
-	id = "haymaker";
-	lethal = 1;
-	faction = list("Frontiersmen")
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/icemoon/tesla_lab/haymaker)
 "RT" = (
 /obj/effect/turf_decal/trimline/opaque/purple/filled/warning{
 	dir = 8
@@ -11000,15 +10968,6 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
-"RZ" = (
-/obj/machinery/porta_turret/ship/frontiersmen{
-	dir = 5;
-	id = "haymaker";
-	lethal = 1;
-	faction = list("Frontiersmen")
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/icemoon/tesla_lab/haymaker)
 "Sd" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 9
@@ -12590,11 +12549,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
 "YV" = (
-/obj/machinery/porta_turret/ship/frontiersmen/light{
-	dir = 2;
-	reqpower = 0;
-	faction = list("Frontiersmen")
-	},
+/obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/tesla_lab/turrets)
 "YY" = (
@@ -13812,7 +13767,7 @@ SK
 SK
 SK
 cM
-RC
+YV
 PH
 Pd
 cM
@@ -14380,7 +14335,7 @@ rM
 rM
 cM
 cM
-jM
+RC
 PH
 cM
 cM
@@ -15124,13 +15079,13 @@ rp
 In
 nN
 SZ
-sF
+dm
 dm
 zV
 oD
 AD
 dm
-sw
+dm
 ax
 Rl
 cM
@@ -15628,13 +15583,13 @@ ee
 Xr
 AE
 Cm
-RZ
+dm
 dm
 wE
 wE
 wE
 dm
-RS
+dm
 ax
 Rl
 cM

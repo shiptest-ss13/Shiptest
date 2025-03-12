@@ -222,7 +222,7 @@
 		update_appearance()
 	updateUsrDialog()
 
-/obj/machinery/doorButtons/airlock_controller/process()
+/obj/machinery/doorButtons/airlock_controller/process(seconds_per_tick)
 	if(machine_stat & NOPOWER)
 		return
 	if(busy == CYCLE_EXTERIOR)

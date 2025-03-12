@@ -93,6 +93,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	mag_type = /obj/item/ammo_box/magazine/m45_cobra
 
+/obj/item/storage/guncase/c20r
+	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra
+	mag_type = /obj/item/ammo_box/magazine/m45_cobra
+
 /obj/item/storage/guncase/boomslang
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
 	mag_type = /obj/item/ammo_box/magazine/boomslang/short
@@ -269,6 +273,10 @@
 /obj/item/storage/guncase/pistol/cm357
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm357
 	mag_type = /obj/item/ammo_box/magazine/cm357
+
+/obj/item/storage/guncase/cm1
+	gun_type = /obj/item/gun/energy/kalix/clip
+	mag_type = /obj/item/stock_parts/cell/gun
 
 /obj/item/storage/guncase/cm5
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cm5

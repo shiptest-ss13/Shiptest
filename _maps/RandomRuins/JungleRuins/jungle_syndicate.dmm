@@ -123,7 +123,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort)
 "ef" = (
-/mob/living/simple_animal/hostile/human/syndicate{
+/mob/living/simple_animal/hostile/human/ramzi{
 	desc = "God dammit Jerry! Why the fuck are you barricading yourself in with all of our weapon supplies?";
 	name = "Jerry";
 	unsuitable_atmos_damage = 0
@@ -180,7 +180,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "fS" = (
-/mob/living/simple_animal/hostile/human/syndicate{
+/mob/living/simple_animal/hostile/human/ramzi{
 	unsuitable_atmos_damage = 0
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -300,10 +300,8 @@
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 10;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ruin/ramzi{
+	dir = 10
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort/jerry)
@@ -531,10 +529,10 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/jungle/syndifort)
 "rg" = (
-/mob/living/simple_animal/hostile/human/syndicate/space,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
@@ -804,10 +802,8 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 4;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ruin/ramzi{
+	dir = 6
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort/jerry)
@@ -1100,9 +1096,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "HR" = (
 /obj/structure/chair/plastic,
-/mob/living/simple_animal/hostile/human/syndicate/ranged{
-	unsuitable_atmos_damage = 0
-	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Il" = (
@@ -1192,10 +1186,8 @@
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 6;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ruin/ramzi{
+	dir = 6
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort/jerry)
@@ -1363,7 +1355,7 @@
 /area/ruin/jungle/syndifort)
 "Qs" = (
 /obj/structure/cable,
-/mob/living/simple_animal/hostile/human/syndicate{
+/mob/living/simple_animal/hostile/human/ramzi{
 	unsuitable_atmos_damage = 0
 	},
 /obj/machinery/light/directional/north,
@@ -1553,10 +1545,8 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 9;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ruin/ramzi{
+	dir = 9
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort/jerry)
