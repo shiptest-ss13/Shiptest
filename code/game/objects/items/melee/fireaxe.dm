@@ -31,7 +31,7 @@
 		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
 			var/obj/structure/W = A
 			W.obj_destruction("axe")
-	if(tool_behaviour == TOOL_SLEDGEHAMMER)
+	if(tool_behaviour == TOOL_MINING)
 		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille) || istype(A, /obj/structure/girder))
 			var/obj/structure/W = A
 			W.obj_destruction("axe")
@@ -41,7 +41,6 @@
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
 	icon_state = "fireaxe"
 	base_icon_state = "fireaxe"
-	demolition_mod = 1.25
 
 /obj/item/melee/axe/bone  // Blatant imitation of the fireaxe, but made out of bone.
 	name = "bone axe"
@@ -69,12 +68,14 @@ Blunt
 	desc = "A large hammer used by the Gorlex Marauder splinters. As powerful as a weapon as it is a shipbreaking tool."
 	force = 5
 	armour_penetration = 40
+	demolition_mod = 2
+	toolspeed = 0.5
+	wall_decon_damage = MINERAL_WALL_INTEGRITY
 	attack_verb = list("bashed", "smashed", "crushed", "smacked")
 	hitsound = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg')
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = IS_BLUNT
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
-	demolition_mod = 2
 	var/wielded = FALSE
 
 /obj/item/melee/axe/sledgehammer/ComponentInitialize()
@@ -89,7 +90,7 @@ Blunt
 /obj/item/melee/axe/sledgehammer/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	tool_behaviour = TOOL_SLEDGEHAMMER
+	tool_behaviour = TOOL_MINING
 	wielded = TRUE
 
 /obj/item/melee/axe/sledgehammer/proc/on_unwield(obj/item/source, mob/user)
