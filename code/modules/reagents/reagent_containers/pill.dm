@@ -321,7 +321,7 @@ WS End */
 	name = "starlight capsule"
 	desc = "A capsule of a night-vision inducing compound known as Starlight."
 	icon_state = "pill11"
-	list_reagents = list(/datum/reagent/drug/starlight = 10)
+	list_reagents = list(/datum/reagent/drug/stardrop/starlight = 10)
 
 /obj/item/reagent_containers/spray/rhigoxane
 	name = "medical spray (rhigoxane)"
