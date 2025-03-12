@@ -155,6 +155,9 @@
 			if(!istype(checked_turf))
 				possible_dirs -= checked_dir
 				continue
+			if(!isopenturf(checked_turf))
+				possible_dirs -= checked_dir
+				continue
 			if(!big_brush && istype(checked_turf, turf_to_spread))
 				possible_dirs -= checked_dir
 				continue
