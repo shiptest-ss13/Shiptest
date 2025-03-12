@@ -89,8 +89,8 @@
 	baseturfs = /turf/open/floor/plating/asteroid/purple/lit
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
-	icon = 'icons/turf/floors/crimsongrass.dmi'
-	smooth_icon = 'icons/turf/floors/crimsongrass.dmi'
+	icon = 'icons/turf/floors/redgrass.dmi'
+	smooth_icon = 'icons/turf/floors/redgrass.dmi'
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
@@ -104,8 +104,8 @@
 	icon_state = "grass-255"
 	base_icon_state = "grass"
 	planetary_atmos = TRUE
-	icon = 'icons/turf/floors/crimsongrass.dmi'
-	smooth_icon = 'icons/turf/floors/crimsongrass.dmi'
+	icon = 'icons/turf/floors/redgrass.dmi'
+	smooth_icon = 'icons/turf/floors/redgrass.dmi'
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
