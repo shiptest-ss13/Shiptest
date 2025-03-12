@@ -114,7 +114,7 @@
 
 /datum/supply_pack/machinery/t3_matter
 	name = "T3 matter bins crate"
-	desc = "A bundle of high-tech machine parts, containing 2 of each common part type."
+	desc = "A bundle of high-tech machine parts, containing 10 parts."
 	cost = 1500
 	contains = list(/obj/item/storage/box/stockparts/t3/matter)
 	crate_name = "\improper stock parts crate"
