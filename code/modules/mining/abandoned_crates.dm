@@ -226,7 +226,8 @@
 			new /mob/living/simple_animal/hostile/mimic/crate(src)
 			qdel_on_open = TRUE
 		if(95)
-			new /obj/item/toy/plush/nukeplushie(src)
+			for(var/i in 1 to 15)
+				new /obj/item/reagent_containers/food/snacks/energybar(src)
 		if(96)
 			for(var/i in 1 to 3)
 				new /obj/item/mine/pressure/sound(src)
