@@ -243,9 +243,54 @@
 	shot_delay = 20
 
 /* Solcon Turrets */
+/* Gauss with no non-lethal option */
+/* Effective at long range */
 
-/obj/machinery/porta_turret/ship/solgov
+/obj/machinery/porta_turret/ship/solcon
+	name = "Solar Armories "
+	desc = ""
 	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	stun_projectile = /obj/projectile/bullet/gauss/hc
+	stun_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	lethal_projectile = /obj/projectile/bullet/gauss
+	lethal_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	max_integrity = 200
+	integrity_failure = 0.6
+	scan_range = 14
+	shot_delay = 40
+	burst_size = 4
+	burst_delay = 3
+	spread = 10
+
+/obj/machinery/porta_turret/ship/solcon/slug
+	name = "Solar Armories "
+	desc = ""
+	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	stun_projectile = /obj/projectile/bullet/gauss/slug/hc
+	stun_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	lethal_projectile = /obj/projectile/bullet/gauss/slug
+	lethal_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	max_integrity = 300
+	integrity_failure = 0.6
+	scan_range = 8
+	shot_delay = 25
+	burst_size = 2
+	burst_delay = 5
+
+/obj/machinery/porta_turret/ship/solcon/lance
+	name = "Solar Armories "
+	desc = ""
+	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	stun_projectile = /obj/projectile/bullet/gauss/lance/hc
+	stun_projectile_sound = 'sound/weapons/gun/gauss/gar.ogg'
+	lethal_projectile = /obj/projectile/bullet/gauss/lance
+	lethal_projectile_sound = 'sound/weapons/gun/gauss/gar.ogg'
+	max_integrity = 300
+	integrity_failure = 0.5
+	scan_range = 16
+	shot_delay = 50
+	burst_size = 3
+	burst_delay = 4
 
 /* Pan Gezena Federation Turrets */
 //midline but hitscan
