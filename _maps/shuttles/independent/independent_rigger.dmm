@@ -254,15 +254,14 @@
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "dJ" = (
-/obj/machinery/atmospherics/pipe/manifold/cyan/visible/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2,
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
 "dU" = (
 /obj/structure/cable{
@@ -468,11 +467,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "hE" = (
-/obj/structure/grille,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -1411,8 +1410,8 @@
 /area/ship/maintenance/port)
 "sa" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible/layer4,
-/obj/machinery/atmospherics/components/binary/valve/digital,
 /obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "sb" = (
@@ -1790,8 +1789,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "wp" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer4,
-/obj/machinery/atmospherics/components/binary/valve/digital/on/layer2,
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	name = "Distro to Waste"
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	dir = 1;
+	name = "Air to Distro"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "wB" = (
@@ -2164,14 +2168,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "zJ" = (
-/obj/machinery/atmospherics/components/binary/pump/on/layer2{
-	dir = 1;
-	name = "Air to Distro"
-	},
-/obj/item/multitool,
-/obj/machinery/atmospherics/components/binary/pump/layer4{
-	name = "Distro to Waste"
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "zS" = (
@@ -3006,13 +3006,10 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "Jj" = (
-/obj/item/analyzer,
-/obj/machinery/atmospherics/components/binary/pump/layer2{
-	name = "Input to Air"
-	},
-/obj/machinery/atmospherics/components/binary/pump/layer4{
-	name = "Input to Waste"
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Jk" = (
@@ -3522,7 +3519,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "PV" = (
-/obj/machinery/atmospherics/components/unary/passive_vent/layer2{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
 	dir = 1
 	},
 /turf/open/floor/engine/air,
@@ -3600,8 +3597,13 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "QI" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	name = "Input to Air"
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	name = "Input to Waste"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "QQ" = (
@@ -4354,6 +4356,8 @@
 	pixel_x = -32
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/item/analyzer,
+/obj/item/multitool,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "YZ" = (
@@ -5505,8 +5509,8 @@ GM
 lf
 GT
 bB
-wp
 xg
+wp
 zJ
 hE
 va
