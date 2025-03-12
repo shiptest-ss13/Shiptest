@@ -13,15 +13,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/central_hall)
-"ad" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/icemoon/training_facility/central_hall)
 "ag" = (
 /obj/machinery/vending/toyliberationstation,
 /obj/effect/turf_decal/techfloor{
@@ -180,8 +171,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating/rust,
@@ -193,13 +184,10 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/killship)
 "aT" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/classroom)
 "aV" = (
@@ -220,7 +208,7 @@
 /area/ruin/icemoon/training_facility/dorms)
 "aZ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
+/obj/machinery/atmospherics/components/unary/outlet_injector/layer4{
 	dir = 4
 	},
 /obj/machinery/light/dim/directional/north,
@@ -327,9 +315,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -434,7 +419,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "innershutter"
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "cq" = (
 /obj/structure/door_assembly/door_assembly_wood{
@@ -570,10 +555,7 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -605,9 +587,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/syndiered/border,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
@@ -720,7 +699,6 @@
 /area/ruin/icemoon/training_facility/garage)
 "dw" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
@@ -1222,7 +1200,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
@@ -1501,7 +1478,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "outershutter"
 	},
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "hD" = (
 /obj/effect/turf_decal/techfloor{
@@ -1889,9 +1866,6 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
@@ -1960,7 +1934,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
@@ -2039,7 +2012,7 @@
 /area/ruin/icemoon/training_facility/office_2)
 "jZ" = (
 /obj/effect/turf_decal/road/stripes,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "kd" = (
 /obj/machinery/door/airlock/hatch{
@@ -2161,9 +2134,11 @@
 /area/ruin/icemoon/training_facility/course)
 "kG" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/advanced_airlock_controller/directional/east,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/garage)
 "kM" = (
@@ -2184,7 +2159,7 @@
 /obj/effect/turf_decal/road/stripes{
 	dir = 1
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "lb" = (
 /obj/structure/fluff/hedge,
@@ -2639,7 +2614,6 @@
 "nA" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
@@ -2698,7 +2672,7 @@
 	},
 /obj/effect/turf_decal/road,
 /obj/effect/turf_decal/road/stripes,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "nL" = (
 /obj/effect/turf_decal/trimline/opaque/brown/filled/warning{
@@ -2839,10 +2813,8 @@
 "or" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/effect/mapping_helpers/airlock/sealed,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/garage)
 "ow" = (
@@ -2860,7 +2832,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -2909,15 +2880,15 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/lobby)
 "oS" = (
@@ -2991,7 +2962,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
 "pi" = (
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
+/obj/machinery/atmospherics/components/unary/outlet_injector/layer4{
 	dir = 8
 	},
 /obj/machinery/light/dim/directional/north,
@@ -3548,7 +3519,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/garage)
 "rC" = (
@@ -3911,9 +3881,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/advanced_airlock_controller/directional/east,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/central_hall)
 "tl" = (
@@ -4211,16 +4180,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
 "uS" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 4
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/classroom)
 "uU" = (
@@ -4361,11 +4327,7 @@
 /area/ruin/icemoon/training_facility/lobby)
 "vI" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/light/small/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/lobby)
 "vL" = (
@@ -4421,6 +4383,10 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/dorms)
+"wa" = (
+/obj/item/mine/pressure/sound/live,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/training_facility/demo_course)
 "wb" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -4559,6 +4525,9 @@
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/training_facility)
+"wD" = (
+/turf/open/floor/concrete/pavement/icemoon/lit,
+/area/ruin/icemoon/training_facility/garage)
 "wH" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
@@ -4569,9 +4538,6 @@
 /obj/effect/turf_decal/corner/transparent/syndiered/border,
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -4702,7 +4668,7 @@
 /obj/effect/turf_decal/road/line{
 	dir = 8
 	},
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility)
 "xb" = (
 /obj/structure/flora/rock/icy,
@@ -4922,7 +4888,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
@@ -4937,12 +4902,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)
 "yi" = (
-/obj/machinery/door/airlock/external,
 /obj/effect/turf_decal,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/sealed,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/garage)
 "yk" = (
@@ -4971,6 +4937,10 @@
 /obj/structure/table,
 /obj/item/mine/pressure/training,
 /obj/machinery/airalarm/directional/north,
+/obj/item/mine/pressure/sound{
+	pixel_x = -3;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/training_facility/demo_course)
 "yv" = (
@@ -5046,7 +5016,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "outershutter"
 	},
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "yM" = (
 /obj/effect/turf_decal/techfloor{
@@ -5148,7 +5118,6 @@
 "zs" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/mapping_helpers/airlock/sealed,
@@ -5257,7 +5226,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "outershutter"
 	},
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "zR" = (
 /obj/effect/turf_decal/trimline/opaque/blue/filled/arrow_cw{
@@ -5294,7 +5263,7 @@
 /area/ruin/icemoon/training_facility/garage)
 "Ac" = (
 /obj/effect/turf_decal/road/stop,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "Af" = (
 /obj/machinery/door/airlock/external{
@@ -5357,14 +5326,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/classroom)
 "AB" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/advanced_airlock_controller/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/dorms)
 "AC" = (
@@ -5390,7 +5356,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "innershutter"
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "AI" = (
 /obj/structure/table/reinforced,
@@ -6001,10 +5967,18 @@
 /obj/structure/table,
 /obj/item/mine/pressure/training,
 /obj/item/mine/pressure/training{
-	pixel_y = 6;
-	pixel_x = 16
+	pixel_y = 10;
+	pixel_x = 11
 	},
 /obj/machinery/light/dim/directional/north,
+/obj/item/mine/pressure/sound{
+	pixel_x = -7;
+	pixel_y = 9
+	},
+/obj/item/mine/pressure/sound{
+	pixel_x = 15;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/training_facility/demo_course)
 "DG" = (
@@ -6380,8 +6354,10 @@
 /area/ruin/icemoon/training_facility/classroom)
 "FJ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/lobby)
 "FT" = (
@@ -6517,8 +6493,9 @@
 /area/ruin/icemoon/training_facility/course)
 "GK" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/central_hall)
 "GL" = (
@@ -6617,7 +6594,7 @@
 /obj/effect/turf_decal/road/stripes{
 	dir = 1
 	},
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility)
 "Hi" = (
 /obj/structure/table,
@@ -6694,13 +6671,13 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/icemoon/training_facility/dorms)
 "HE" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/dorms)
 "HF" = (
@@ -6754,13 +6731,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/lobby)
 "HW" = (
-/obj/machinery/door/airlock/external,
 /obj/effect/turf_decal,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/sealed,
+/obj/machinery/door/airlock/external,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/garage)
 "HY" = (
@@ -7029,16 +7005,17 @@
 /obj/effect/turf_decal/road/line{
 	dir = 4
 	},
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility)
 "Jp" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/south,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/dorms)
 "Jq" = (
@@ -7049,9 +7026,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
@@ -7254,9 +7228,11 @@
 /area/ruin/icemoon/training_facility/office_2)
 "JW" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/small/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/garage)
 "JX" = (
@@ -7440,9 +7416,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -7710,7 +7683,7 @@
 /obj/effect/turf_decal/road/stop{
 	dir = 1
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "Mp" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -7861,11 +7834,10 @@
 /area/ruin/icemoon/training_facility/cafeteria)
 "Nk" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/lobby)
 "Nl" = (
@@ -8155,9 +8127,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
@@ -8341,7 +8310,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "secoffice"
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "Py" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -8465,13 +8434,13 @@
 /obj/effect/turf_decal/corner/transparent/syndiered/border{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/central_hall)
 "PV" = (
@@ -8620,7 +8589,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/dorms)
 "QJ" = (
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
+/obj/machinery/atmospherics/components/unary/outlet_injector/layer4{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
@@ -8654,11 +8623,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/dorms)
@@ -8806,6 +8775,7 @@
 /obj/structure/railing/thin/corner{
 	dir = 1
 	},
+/obj/machinery/bluespace_beacon,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/training_facility/garage)
 "Rm" = (
@@ -8881,9 +8851,6 @@
 	},
 /obj/effect/turf_decal/techfloor/corner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
@@ -9106,6 +9073,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/item/hourglass{
+	pixel_x = -7;
+	pixel_y = -4
+	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
 "Sq" = (
@@ -9253,9 +9224,6 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -9278,20 +9246,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/road,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
-"Te" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/advanced_airlock_controller/directional/east,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/icemoon/training_facility/lobby)
 "Tg" = (
 /obj/machinery/door/airlock/security,
 /turf/open/floor/plating,
@@ -9332,11 +9288,12 @@
 /area/ruin/icemoon/training_facility/classroom)
 "Tp" = (
 /obj/item/mine/proximity/explosive/sting{
-	pixel_x = 15
+	pixel_x = 16;
+	pixel_y = -10
 	},
 /obj/item/mine/proximity/explosive/sting{
-	pixel_y = -4;
-	pixel_x = 33
+	pixel_y = 9;
+	pixel_x = 42
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/demo_course)
@@ -9372,17 +9329,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/lobby)
 "TJ" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/light/small/directional/south,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/classroom)
 "TK" = (
@@ -9467,9 +9421,9 @@
 "Uu" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/effect/mapping_helpers/airlock/sealed,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/garage)
 "Uv" = (
@@ -9633,14 +9587,10 @@
 /turf/open/floor/plasteel/stairs,
 /area/ruin/icemoon/training_facility/killship)
 "Vc" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/light/small/directional/north,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/dorms)
 "Ve" = (
@@ -9848,14 +9798,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/central_hall)
 "VP" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/advanced_airlock_controller/directional/north,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/classroom)
 "VS" = (
@@ -10088,7 +10035,7 @@
 /obj/effect/turf_decal/road/stop{
 	dir = 1
 	},
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility)
 "WS" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
@@ -10150,9 +10097,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -10202,7 +10146,7 @@
 /area/ruin/icemoon/training_facility/killship/bridge)
 "Xr" = (
 /obj/effect/turf_decal/road,
-/turf/open/floor/concrete/pavement/icemoon,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility)
 "Xs" = (
 /obj/machinery/door/airlock/engineering{
@@ -10259,9 +10203,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/garage)
 "XH" = (
-/obj/item/mine/pressure/training{
-	armed = 1
-	},
+/obj/item/mine/pressure/sound/live,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/training_facility/demo_course)
 "XI" = (
@@ -10404,7 +10346,7 @@
 /obj/effect/turf_decal/road/stripes{
 	dir = 1
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility/garage)
 "YC" = (
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -12729,7 +12671,7 @@ wJ
 Jq
 yd
 tj
-ad
+GK
 wI
 Oj
 MA
@@ -12755,7 +12697,7 @@ it
 fj
 co
 Mk
-it
+wD
 jZ
 zP
 WP
@@ -12805,7 +12747,7 @@ jD
 Yq
 sG
 eC
-Te
+vI
 Nk
 jF
 wH
@@ -12891,7 +12833,7 @@ it
 EC
 AF
 kW
-it
+wD
 Ac
 yK
 Hg
@@ -13671,7 +13613,7 @@ bx
 JI
 yr
 Hd
-sE
+wa
 cE
 Xv
 On
