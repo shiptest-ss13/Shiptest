@@ -20,8 +20,8 @@
 	speak_emote = list("bellows")
 	speed = 3
 	throw_deflection = 10
-	maxHealth = 150
-	health = 150
+	maxHealth = 140
+	health = 140
 	armor = list("melee" = 0, "bullet" = 0, "laser" = -50, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10) //Large and fleshy. Thick fat resists explosives, reacts poorly to lasers.
 	harm_intent_damage = 0
 	obj_damage = 100
