@@ -624,7 +624,7 @@
 
 /obj/item/reagent_containers/food/snacks/branrequests
 	name = "Bran Appeal Cereal"
-	desc = "A box of cereal, consisting mainly of brain and raisins for the fiber content. Salt has been added for... some reason?"
+	desc = "A box of cereal, consisting mainly of bran and raisins for the fiber content. Salt has been added for... some reason?"
 	icon_state = "bran_requests"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/sodiumchloride = 5)
 	bonus_reagents = list(/datum/reagent/consumable/sodiumchloride = 10)

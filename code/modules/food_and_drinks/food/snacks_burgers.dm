@@ -30,7 +30,7 @@
 	var/subjectname = ""
 	var/subjectjob = null
 	name = "human burger"
-	desc = "A hamburger prepared with oddly lean cut of meat. Something feels off..."
+	desc = "A hamburger prepared with an oddly lean cut of meat. Something feels off..."
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 4)
 	tastes = list("bun" = 2, "long pork" = 4)
 	foodtype = MEAT | GRAIN | GORE

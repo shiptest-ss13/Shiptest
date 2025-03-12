@@ -522,7 +522,7 @@
 
 /obj/item/reagent_containers/food/snacks/donkpocket/berry
 	name = "\improper Berry-pocket"
-	desc = "A microwave-prepared turnover filled with a variety of fillings, made by Donk! Corporation under their many flagship shell companies. Popularly eaten among students and spacers. This one's marketed as a desert item..."
+	desc = "A microwave-prepared turnover filled with a variety of fillings, made by Donk! Corporation under their many flagship shell companies. Popularly eaten among students and spacers. This one's marketed as a dessert item..."
 	icon_state = "donkpocketberry"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/berryjuice = 3)
 	cooked_type = /obj/item/reagent_containers/food/snacks/donkpocket/warm/berry
@@ -532,7 +532,7 @@
 
 /obj/item/reagent_containers/food/snacks/donkpocket/warm/berry
 	name = "warm Berry-pocket"
-	desc = "A microwave-prepared turnover filled with a variety of fillings, made by Donk! Corporation under their many flagship shell companies. Popularly eaten among students and spacers. This one's marketed as a desert item..."
+	desc = "A microwave-prepared turnover filled with a variety of fillings, made by Donk! Corporation under their many flagship shell companies. Popularly eaten among students and spacers. This one's marketed as a dessert item..."
 	icon_state = "donkpocketberry"
 	bonus_reagents = list(/datum/reagent/medicine/omnizine = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/medicine/omnizine = 1, /datum/reagent/consumable/berryjuice = 3)
@@ -582,7 +582,7 @@
 
 /obj/item/reagent_containers/food/snacks/fortunecookie
 	name = "fortune cookie"
-	desc = "Originating from Terra, the fortune cookie is a small, sweet pastry contains a written slip of paper with a little platitude written on it."
+	desc = "Originating from Terra, the fortune cookie is a small, sweet pastry that contains a written slip of paper with a little platitude written on it."
 	icon_state = "fortune_cookie"
 	trash = /obj/item/paper/paperslip
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)

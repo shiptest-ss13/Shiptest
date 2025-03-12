@@ -262,7 +262,7 @@
 
 /obj/item/reagent_containers/food/snacks/monkeycube
 	name = "monkey cube"
-	desc = "Specially created by for use in research lab, this cube contains a lifeform \"technically considered adjacent enough to qualify as\" the Terran chimpanzee. Just add water!"
+	desc = "Specially created by for use in research labs by the Student-Union Association of Naturalistic Sciences, this cube contains a lifeform \"technically considered adjacent enough to qualify as\" the Terran chimpanzee. Just add water!"
 	icon_state = "monkeycube"
 	bitesize = 12
 	list_reagents = list(/datum/reagent/monkey_powder = 30)
@@ -292,7 +292,7 @@
 
 /obj/item/reagent_containers/food/snacks/monkeycube/gorilla
 	name = "gorilla cube"
-	desc = "Specially created by for use in research lab, this cube contains a lifeform \"technically considered adjacent enough to qualify as\" the Terran silverback gorilla. These ones are often seen deployed in combat situations."
+	desc = "Specially created by for use in research labs by the The Student-Union Association of Naturalistic Sciences (then modified by an unscruplus third party), this cube contains a lifeform \"technically considered adjacent enough to qualify as\" the Terran silverback gorilla. These ones are often seen deployed in combat situations."
 	bitesize = 20
 	list_reagents = list(/datum/reagent/monkey_powder = 30, /datum/reagent/medicine/strange_reagent = 5)
 	tastes = list("hypercompressed matter" = 1, "bananas" = 1, "rage" = 1)
@@ -439,7 +439,7 @@
 
 /obj/item/reagent_containers/food/snacks/kebab/rat
 	name = "rat-kebab"
-	desc = "A body of a rat that have been cooked and served on a skewer. Not for the faint of heart."
+	desc = "A body of a rat that has been cooked and served on a skewer. Not for the faint of heart."
 	icon_state = "ratkebab"
 	w_class = WEIGHT_CLASS_NORMAL
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
