@@ -348,13 +348,13 @@
 		. += span_notice("It has <b>[get_ammo(count_chambered)]</b> round\s remaining.")
 
 /obj/item/gun/ballistic/examine_more(mob/user)
-	if (!chambered)
+	. = ..()
+	if(!chambered)
 		. += "It does not seem to have a round chambered."
 	if(bolt_locked)
 		. += "The [bolt_wording] is locked back and needs to be released before firing."
 	if(bolt_type != BOLT_TYPE_NO_BOLT)
 		. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
-	. = ..()
 
 ///Gets the number of bullets in the gun
 /obj/item/gun/ballistic/proc/get_ammo(countchambered = TRUE)
