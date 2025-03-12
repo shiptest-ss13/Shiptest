@@ -582,9 +582,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/chair/plastic{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/cafeteria)
@@ -687,9 +684,28 @@
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/training_facility)
 "dt" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee,
-/obj/structure/chair/plastic,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 3;
+	pixel_x = 0
+	},
+/obj/item/reagent_containers/food/snacks/bait/worm{
+	pixel_x = 2;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/snacks/bait/worm{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/bait/worm{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/bait/worm{
+	pixel_x = 7;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/cafeteria)
 "du" = (
@@ -888,6 +904,11 @@
 /obj/effect/turf_decal/corner/transparent/syndiered/border,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/lobby)
+"eJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/plastic,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/icemoon/training_facility/cafeteria)
 "eL" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
@@ -3435,6 +3456,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/killship/cargo)
+"rc" = (
+/obj/structure/chair/plastic{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/icemoon/training_facility/cafeteria)
 "re" = (
 /obj/structure/cable{
 	icon_state = "2-9"
@@ -4582,6 +4609,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/central_hall)
+"wK" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/ramzi/melee,
+/obj/structure/chair/plastic{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/icemoon/training_facility/cafeteria)
 "wN" = (
 /obj/structure/cable{
 	icon_state = "5-10"
@@ -6039,10 +6074,9 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/structure/chair/plastic{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/plastic,
+/mob/living/simple_animal/hostile/human/ramzi/melee,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/cafeteria)
 "Eh" = (
@@ -6367,9 +6401,6 @@
 /area/ruin/icemoon/training_facility/lobby)
 "Gf" = (
 /obj/structure/railing/thin,
-/obj/structure/chair/plastic{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
@@ -7770,7 +7801,6 @@
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/dorms)
 "MQ" = (
-/obj/structure/table,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -7820,31 +7850,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
 "Ni" = (
-/obj/structure/table,
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 3;
-	pixel_x = 0
-	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
-	pixel_x = 7;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
-	pixel_x = -7;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
-	pixel_x = 2;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
-	pixel_x = -3;
-	pixel_y = 5
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/plastic{
+	dir = 1
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/cafeteria)
 "Nk" = (
@@ -8429,10 +8441,6 @@
 /obj/effect/mapping_helpers/airlock/sealed,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/dorms)
-"PM" = (
-/obj/structure/chair/plastic,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/icemoon/training_facility/cafeteria)
 "PP" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -8886,6 +8894,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/west,
+/obj/structure/chair/plastic{
+	dir = 4
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/cafeteria)
 "RA" = (
@@ -10172,11 +10183,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/central_hall)
 "Xe" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee,
 /obj/structure/railing/thin,
-/obj/structure/chair/plastic{
-	dir = 1
-	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/cafeteria)
 "Xn" = (
@@ -10290,13 +10297,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/lobby)
-"XS" = (
-/obj/structure/chair/plastic{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/icemoon/training_facility/cafeteria)
 "XU" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/item/pickaxe,
@@ -11167,10 +11167,10 @@ je
 je
 QQ
 Ss
-JP
-XS
-JP
-ZX
+rc
+zw
+Ss
+wK
 Xe
 Cc
 rY
@@ -11237,8 +11237,8 @@ kf
 GU
 JP
 QG
-JP
 xc
+JP
 ht
 Cc
 EA
@@ -11372,8 +11372,8 @@ je
 BW
 Zw
 JP
-zw
-PM
+eJ
+Ss
 MQ
 ht
 Cc
@@ -11439,7 +11439,7 @@ je
 je
 TZ
 ZX
-JP
+rc
 Eb
 dt
 Ni
