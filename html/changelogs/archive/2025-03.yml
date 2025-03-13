@@ -100,3 +100,47 @@
   - rscdel: Miscellaneous outfits that have barely seen any use.
   Sadhorizon:
   - rscadd: Added a Hardliners stamp.
+2025-03-09:
+  DIB-DOG:
+  - rscadd: Atlas Armory has been redesigned.
+  - balance: Atlas starting funds increased to 4000
+  Erikafox:
+  - rscadd: hardliner turrets
+  - rscadd: turrets now have a burst functionality and spread
+  - rscdel: Removed old syndicate turret types. the rusty onessss
+  - code_imp: some /ruin turret types for mapping.
+  - rscadd: Someone spilt the beans about a frontiersman fleet depot on a nearby beach
+      world. suckers..
+  - rscadd: the crew now gets a cut of any mission paycheck. Let them go out into
+      the outpost to spend their enrichmentbucks.
+  - bugfix: some walls now smooth properly on the cirrus, among other niceties
+  Ical92:
+  - bugfix: borg lights are no longer always visibly on
+  firebudgy:
+  - rscadd: Telescopic Riot Shields to Cargo
+  - balance: Strobe Shields no longer require unobtainable wall flashers.
+  - rscadd: ClothesMate units to Nanotrasen Ice and Indie Space outposts
+  - balance: Clothes are now cheaper
+  - rscadd: Various new items to the ClothesMate
+  generalthrax:
+  - balance: Changed C4 minimum timer from 10 to 0
+2025-03-10:
+  firebudgy:
+  - balance: The Talos-class now has Two Enforcers.
+2025-03-11:
+  FalloutFalcon, Donkie, optimumtact:
+  - code_imp: Process procs now properly utilize seconds_per_tick when implementing
+      rates, timers and probabilities, which paves way for easier subsystem tickrate
+      adjustments.
+  Ical92:
+  - bugfix: fills in missing autowiki details
+  - bugfix: fixed ghost access to duffels and backpacks
+  Zevotech:
+  - bugfix: Adjusted the cargo delivery chutes so that crates can no longer travel
+      backwards and clog the system
+  generalthrax:
+  - rscadd: Added specific parts boxes for T2 and T3 parts, 10 parts each
+  - balance: Reduced the price of T2 parts by 750 and the price of T3 parts by 1500
+2025-03-12:
+  FalloutFalcon:
+  - bugfix: walls can now be meleed again
