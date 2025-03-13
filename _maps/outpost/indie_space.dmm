@@ -119,12 +119,6 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /turf/open/floor/plasteel,
 /area/outpost/vacant_rooms)
-"ax" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 9
-	},
-/turf/open/floor/plasteel/dark,
-/area/outpost/external)
 "ay" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
@@ -132,7 +126,7 @@
 "az" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/outpost/external)
+/area/outpost/hallway/central)
 "aB" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -4073,7 +4067,6 @@
 	},
 /obj/machinery/button/door{
 	pixel_y = 21;
-	dir = 2;
 	pixel_x = -9;
 	name = "door lock";
 	id = "gnome";
@@ -9046,7 +9039,7 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
-/area/outpost/operations)
+/area/outpost/hallway/central)
 "Ms" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -9400,7 +9393,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/outpost/external)
+/area/outpost/hallway/central)
 "NU" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -9802,9 +9795,6 @@
 "PG" = (
 /obj/structure/cable/yellow{
 	icon_state = "8-9"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "8-10"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "8-10"
@@ -18505,8 +18495,8 @@ oY
 SE
 SE
 SE
-SE
-em
+Yd
+Yd
 HD
 HD
 HD
@@ -18629,7 +18619,7 @@ SE
 KP
 Vj
 Mr
-em
+Yd
 HD
 HD
 HD
@@ -18874,7 +18864,7 @@ hv
 hv
 nF
 hv
-ax
+hv
 aG
 HD
 HD
