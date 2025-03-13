@@ -93,7 +93,6 @@
 		/obj/structure/flora/ash/fern = 5,
 		/obj/structure/flora/ash/fireblossom = 1,
 		/obj/structure/flora/ash/puce = 5,
-		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
@@ -152,6 +151,7 @@
 		/obj/structure/flora/ausbushes/ywflowers/hell = 1,
 		/obj/structure/flora/ausbushes/grassybush/hell = 4,
 		/obj/structure/flora/firebush = 1
+		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 	flora_spawn_chance = 15
 
@@ -248,7 +248,6 @@
 		/obj/structure/flora/ash/tall_shroom = 2,
 		/obj/structure/flora/ash/fern = 2,
 		/obj/structure/flora/ash/puce = 2,
-		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 
 /datum/biome/cave/lavaland/rocky
@@ -269,8 +268,7 @@
 		/obj/structure/flora/ash/cap_shroom = 2,
 		/obj/structure/flora/ash/stem_shroom = 2,
 		/obj/structure/flora/ash/cacti = 1,
-		/obj/structure/flora/ash/tall_shroom = 2
-		/obj/item/mine/pressure/explosive/rusty/live = 1,
+		/obj/structure/flora/ash/tall_shroom = 2,
 	)
 
 /datum/biome/cave/lavaland/lava
