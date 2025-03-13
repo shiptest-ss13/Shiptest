@@ -125,6 +125,7 @@
 		"stamp-ngr_fore" = 'icons/stamp_icons/large_stamp-ngr_foreman.png',
 		"stamp-ngr_lieu" = 'icons/stamp_icons/large_stamp-ngr_lieutenant.png',
 		"stamp-ngr_ensign" = 'icons/stamp_icons/large_stamp-ngr_ensign.png',
+		"stamp-hardliners" = 'icons/stamp_icons/large_stamp-hardliners.png',
 		"stamp-nt" = 'icons/stamp_icons/large_stamp-nt_generic.png',
 		"stamp-nt_cap" = 'icons/stamp_icons/large_stamp-nt_captain.png',
 		"stamp-nt_fo" = 'icons/stamp_icons/large_stamp-nt_officer.png',

@@ -1,7 +1,7 @@
 //A slow but strong beast that tries to stun using its tentacles
 /mob/living/simple_animal/hostile/asteroid/goliath
 	name = "goliath"
-	desc = "A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions."
+	desc = "A territorial species of megaherbivore mysteriously found throughout the Frontier that uses its burrowing tendrils to unearth roots, fungus, and occasional minerals. When agitated, it uses these tendrils to ensnare, and subsequently pulverize, perceived threats. CLIP-BARD recommends maintaining a very healthy distance."
 	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
 	icon_state = "ancient_goliath"
 	icon_living = "ancient_goliath"
@@ -20,9 +20,9 @@
 	speak_emote = list("bellows")
 	speed = 3
 	throw_deflection = 10
-	maxHealth = 80
-	health = 80
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 25, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10) //Thick carapace, weak to AP ammo.
+	maxHealth = 140
+	health = 140
+	armor = list("melee" = 0, "bullet" = 0, "laser" = -50, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10) //Large and fleshy. Thick fat resists explosives, reacts poorly to lasers.
 	harm_intent_damage = 0
 	obj_damage = 100
 	melee_damage_lower = 12
@@ -30,7 +30,7 @@
 	attack_verb_continuous = "pulverizes"
 	attack_verb_simple = "pulverize"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	throw_message = "does nothing to the rocky hide of the"
+	throw_message = "does nothing to the thick hide of the"
 	vision_range = 5
 	aggro_vision_range = 9
 	move_resist = MOVE_FORCE_VERY_STRONG
@@ -117,17 +117,17 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/pup
 	name = "goliath pup"
-	desc = "A small goliath pup. It's tendrils have not yet fully grown."
+	desc = "An immature goliath. Goliaths at this stage of life lack fully-developed tendrils, and are reliant on their parents to unearth and supply food."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "goliath_baby"
 	icon_living = "goliath_baby"
 	icon_aggro = "goliath_baby"
 	icon_dead = "goliath_baby_dead"
-	throw_message = "does nothing to the tough hide of the"
+	throw_message = "does nothing to the hide of the"
 	pre_attack_icon = "goliath_baby"
 	maxHealth = 60
 	health = 60
-	armor = list("melee" = 0, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = -5, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	harm_intent_damage = 0
 	obj_damage = 100
 	melee_damage_lower = 2
@@ -139,13 +139,13 @@
 //Lavaland Goliath
 /mob/living/simple_animal/hostile/asteroid/goliath/beast
 	name = "goliath"
-	desc = "A hulking, armor-plated beast with long tendrils arching from its back."
+	desc = "A territorial species of megaherbivore mysteriously found throughout the Frontier that uses its burrowing tendrils to unearth roots, fungus, and occasional minerals. When agitated, it uses these tendrils to ensnare, and subsequently pulverize, perceived threats. CLIP-BARD recommends maintaining a very healthy distance."
 	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
 	icon_state = "goliath"
 	icon_living = "goliath"
 	icon_aggro = "goliath"
 	icon_dead = "goliath_dead"
-	throw_message = "does nothing to the tough hide of the"
+	throw_message = "does nothing to the thick hide of the"
 	pre_attack_icon = "goliath_preattack"
 	//mob_trophy = /obj/item/mob_trophy/goliath_tentacle
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
@@ -369,7 +369,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal
 	name = "crystal goliath"
-	desc = "Once a goliath, it is now an abomination composed of undead flesh and crystals that sprout throughout it's decomposing body."
+	desc = "Once a goliath, now an abominable mass of twisted flesh and crystals that sprout throughout its decomposing body."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "crystal_goliath"
 	icon_living = "crystal_goliath"
@@ -377,7 +377,7 @@
 	icon_dead = "crystal_goliath_dead"
 	pixel_x = 0
 	base_pixel_x = 0
-	throw_message = "does nothing to the tough hide of the"
+	throw_message = "does nothing to the calcified hide of the"
 	pre_attack_icon = "crystal_goliath2"
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10, /obj/item/strange_crystal = 2)
 	tentacle_type = /obj/effect/temp_visual/goliath_tentacle/crystal
@@ -437,7 +437,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet
 	name = "gruboid"
-	desc = "A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions."
+	desc = "What appears to be a tremendous burrowing worm. Its burrowing tendrils ensnare prey, leaving them helpless."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "gruboid2"
 	icon_living = "gruboid2"

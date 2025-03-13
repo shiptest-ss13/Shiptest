@@ -1,53 +1,3 @@
-
-/obj/machinery/porta_turret/syndicate
-	circuit = /obj/item/circuitboard/machine/turret/ship
-	use_power = NO_POWER_USE
-	scan_range = 9
-	req_access = list(ACCESS_SYNDICATE)
-	lethal = TRUE
-	stun_projectile = /obj/projectile/bullet
-	lethal_projectile = /obj/projectile/bullet
-	lethal_projectile_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	stun_projectile_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	icon_state = "syndie_off"
-	base_icon_state = "syndie"
-	faction = list(ROLE_SYNDICATE)
-	turret_flags = TURRET_FLAG_HOSTILE
-	desc = "A ballistic machine gun auto-turret."
-
-/obj/machinery/porta_turret/syndicate/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
-
-/obj/machinery/porta_turret/syndicate/energy
-	icon_state = "standard_lethal"
-	base_icon_state = "standard"
-	stun_projectile = /obj/projectile/energy/electrode
-	stun_projectile_sound = 'sound/weapons/taser.ogg'
-	lethal_projectile = /obj/projectile/beam/laser
-	lethal_projectile_sound = 'sound/weapons/laser.ogg'
-	desc = "An energy blaster auto-turret."
-
-/obj/machinery/porta_turret/syndicate/energy/heavy
-	icon_state = "standard_lethal"
-	base_icon_state = "standard"
-	stun_projectile = /obj/projectile/energy/electrode
-	stun_projectile_sound = 'sound/weapons/taser.ogg'
-	lethal_projectile = /obj/projectile/beam/laser/heavylaser
-	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
-	desc = "An energy blaster auto-turret."
-
-/obj/machinery/porta_turret/syndicate/energy/raven
-	stun_projectile =  /obj/projectile/beam/laser
-	stun_projectile_sound = 'sound/weapons/laser.ogg'
-	faction = list("neutral","silicon","turret")
-
-/obj/machinery/porta_turret/syndicate/pod
-	integrity_failure = 0.5
-	max_integrity = 40
-	stun_projectile = /obj/projectile/bullet/syndicate_turret
-	lethal_projectile = /obj/projectile/bullet/syndicate_turret
-
 /obj/machinery/porta_turret/ship
 	circuit = /obj/item/circuitboard/machine/turret/ship
 	scan_range = 9
@@ -121,34 +71,6 @@
 	lethal_projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	max_integrity = 250
 
-/* Syndicate Turrets */
-
-/obj/machinery/porta_turret/ship/syndicate
-	faction = list(FACTION_PLAYER_SYNDICATE, "turret")
-	icon_state = "standard_lethal"
-	base_icon_state = "standard"
-
-/obj/machinery/porta_turret/ship/syndicate/weak
-	name = "Light Laser Turret"
-	desc = "A low powered turret designed by the Gorlex Maurauders during the ICW. Effectively weaponizes mining equipment."
-	stun_projectile = /obj/projectile/beam/disabler/weak
-	lethal_projectile = /obj/projectile/beam/weak/penetrator
-	icon_state = "syndie_off"
-	base_icon_state = "syndie"
-	scan_range = 7
-	shot_delay = 5
-
-/obj/machinery/porta_turret/ship/syndicate/heavy
-	name = "Heavy Laser Turret"
-	desc = "Produced by Cybersun, this turret is a duel mount of a propietary heavy laser, and crowd control taser system."
-	stun_projectile = /obj/projectile/energy/electrode
-	stun_projectile_sound = 'sound/weapons/taser.ogg'
-	lethal_projectile = /obj/projectile/beam/laser/heavylaser
-	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
-	scan_range = 12
-	shot_delay = 20
-	max_integrity = 300
-
 /* New Gorlex Republic Turrets */
 // Midline ballistic turrets
 
@@ -159,7 +81,10 @@
 	stun_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
 	lethal_projectile = /obj/projectile/bullet/c57x39mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
-	faction = list(FACTION_NGR, FACTION_PLAYER_SYNDICATE, "turret") //player_syndicate is just to be safe
+	faction = list(FACTION_NGR, "turret")
+	shot_delay = 20
+	burst_delay = 3
+	burst_size = 3
 
 /obj/machinery/porta_turret/ship/ngr/light
 	name = "Sonoran Turret"
@@ -169,7 +94,9 @@
 	lethal_projectile = /obj/projectile/bullet/c45
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	scan_range = 7
-	shot_delay = 10
+	shot_delay = 12
+	burst_delay = 4
+	burst_size = 2
 
 /obj/machinery/porta_turret/ship/ngr/heavy
 	name = "Cliff Turret"
@@ -178,9 +105,48 @@
 	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	lethal_projectile = /obj/projectile/bullet/a65clip
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	burst_size = 1
 	scan_range = 14
 	shot_delay = 30
 
+/* Hardliner Turrets */
+/* Same as NGR turrets (mostly) until we get cybersun weapons */
+
+/obj/machinery/porta_turret/ship/hardliners
+	name = "Verdict Turret"
+	desc = "A turret traditionally found mounted on mercenary vessels in the frontier. Reported to be of good make by Turret Lover Monthly (December, 502FSC)"
+	stun_projectile = /obj/projectile/bullet/c57x39mm/rubber
+	stun_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
+	lethal_projectile = /obj/projectile/bullet/c57x39mm
+	lethal_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
+	faction = list(FACTION_HARDLINERS, "turret")
+	shot_delay = 25
+	burst_delay = 5
+	burst_size = 4
+
+/obj/machinery/porta_turret/ship/hardliners/light
+	name = "Discharge Turret" //prime candidate to be a weird cybersun electro-gun toy.
+	desc = "A light turret typically found mounted on mercenary and independent vessels as a cheap, aftermarket modification." //do not put these on indie vessels
+	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
+	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
+	scan_range = 7
+	shot_delay = 12
+	burst_delay = 4
+	burst_size = 2
+
+/obj/machinery/porta_turret/ship/hardliners/heavy
+	name = "Acquittal Turret"
+	desc = "A heavy turret often found mounted as an after-market modification on mercenary vessels."
+	stun_projectile = /obj/projectile/bullet/a308/rubber
+	stun_projectile_sound = 'sound/weapons/gun/rifle/f4.ogg'
+	lethal_projectile = /obj/projectile/bullet/a308
+	lethal_projectile_sound = 'sound/weapons/gun/rifle/f4.ogg'
+	scan_range = 14
+	shot_delay = 30
+	burst_delay = 3
+	burst_size = 2
 
 /* Ramzi Turrets */
 /* Near NGR turrets in power. Easier to destroy */
@@ -194,6 +160,9 @@
 	lethal_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	faction = list(FACTION_SYNDICATE, "turret")
 	max_integrity = 180
+	shot_delay = 16
+	burst_delay = 8
+	burst_size = 2
 	integrity_failure = 0.6
 
 /obj/machinery/porta_turret/ship/ramzi/light
@@ -204,7 +173,9 @@
 	lethal_projectile = /obj/projectile/bullet/c45
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	scan_range = 8
-	shot_delay = 8
+	shot_delay = 16
+	burst_delay = 6
+	burst_size = 2
 	max_integrity = 140
 	integrity_failure = 0.6
 
@@ -219,6 +190,7 @@
 	shot_delay = 20
 	max_integrity = 300
 	integrity_failure = 0.6
+	burst_size = 1
 
 /obj/machinery/porta_turret/ship/ramzi/super_heavy
 	name = "Rebellion Turret"
@@ -231,6 +203,7 @@
 	shot_delay = 30
 	max_integrity = 350
 	integrity_failure = 0.7
+	burst_size = 1
 
 /* Inteq Turrets */
 //slower rof, higher damage + range
@@ -255,7 +228,9 @@
 	lethal_projectile = /obj/projectile/bullet/c10mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 	scan_range = 5
-	shot_delay = 5
+	burst_size = 4
+	burst_delay = 5
+	shot_delay = 20
 
 /obj/machinery/porta_turret/ship/inteq/heavy
 	name = "Vanguard Overwatch Turret"
@@ -333,6 +308,8 @@
 
 	scan_range = 6
 	shot_delay = 10
+	burst_delay = 4
+	burst_size = 2
 	max_integrity = 200
 	integrity_failure = 0.4
 
@@ -369,8 +346,11 @@
 	stun_projectile_sound = 'sound/weapons/gun/smg/spitter.ogg'
 	lethal_projectile = /obj/projectile/bullet/c9mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/spitter.ogg'
-	shot_delay = 2
 	scan_range = 6
+	shot_delay = 15
+	burst_size = 4
+	burst_delay = 3
+	spread = 30
 
 	turret_flags = TURRET_FLAG_HOSTILE
 
@@ -381,7 +361,10 @@
 	stun_projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
 	lethal_projectile = /obj/projectile/bullet/c22lr
 	lethal_projectile_sound = 'sound/weapons/gun/smg/pounder.ogg'
-	shot_delay = 1
+	shot_delay = 15
+	burst_delay = 1
+	burst_size = 10
+	spread = 45
 
 /obj/machinery/porta_turret/ship/frontiersmen/heavy
 	name = "Mulcher Turret"
@@ -390,5 +373,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/hmg/shredder.ogg'
 	lethal_projectile = /obj/projectile/bullet/slug
 	lethal_projectile_sound = 'sound/weapons/gun/hmg/shredder.ogg'
-	shot_delay = 3
+	shot_delay = 20
 	scan_range = 8
+	burst_size = 6
+	burst_delay = 2
