@@ -412,7 +412,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
 	id = "innerdoor"
 	},
@@ -511,6 +511,10 @@
 	icon_state = "5-9"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/gloves/color/fyellow/old{
+	pixel_x = 0;
+	pixel_y = 10
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/locker_room)
 "cC" = (
@@ -2260,11 +2264,10 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/icemoon/training_facility/killship/medical)
 "lD" = (
-/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 8
 	},
-/obj/effect/mob_spawn/human/corpse/damaged,
 /obj/structure/railing/thin,
 /obj/structure/railing/thin{
 	dir = 1
@@ -2797,7 +2800,7 @@
 /area/ruin/icemoon/training_facility/range)
 "ol" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/effect/spawner/random/structure/crate_abandoned,
+/obj/structure/closet/crate/secure/loot,
 /obj/structure/railing/thin/corner,
 /obj/structure/railing/thin/corner{
 	dir = 4
@@ -4801,7 +4804,7 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	id = "mechgarage"
+	id = "outerdoor"
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "garageshutter"
@@ -5007,7 +5010,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
 	id = "outerdoor"
 	},
@@ -5217,9 +5220,9 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "outerdoor"
+	id = "innerdoor"
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "outershutter"
@@ -5347,7 +5350,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
 	id = "innerdoor"
 	},
@@ -9264,6 +9267,8 @@
 	pixel_x = 11;
 	pixel_y = -8
 	},
+/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/locker_room)
 "Tl" = (
