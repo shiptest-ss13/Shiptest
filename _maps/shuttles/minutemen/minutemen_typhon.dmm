@@ -37,6 +37,42 @@
 "bf" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
+/obj/item/ammo_box/magazine/cm23{
+	pixel_y = 4;
+	pixel_x = -5
+	},
+/obj/item/ammo_box/magazine/cm23{
+	pixel_y = 4;
+	pixel_x = -5
+	},
+/obj/item/ammo_box/magazine/cm23{
+	pixel_y = 4;
+	pixel_x = -5
+	},
+/obj/item/ammo_box/magazine/cm23{
+	pixel_y = 4;
+	pixel_x = -5
+	},
+/obj/item/ammo_box/magazine/cm5_9mm{
+	pixel_y = 3;
+	pixel_x = -8
+	},
+/obj/item/ammo_box/magazine/cm5_9mm{
+	pixel_y = 3;
+	pixel_x = -8
+	},
+/obj/item/ammo_box/magazine/cm5_9mm{
+	pixel_y = 3;
+	pixel_x = -8
+	},
+/obj/item/ammo_box/magazine/cm5_9mm{
+	pixel_y = 3;
+	pixel_x = -8
+	},
+/obj/item/storage/box/ammo/c9mm{
+	pixel_y = 11;
+	pixel_x = 5
+	},
 /obj/item/storage/box/ammo/c9mm{
 	pixel_y = 8;
 	pixel_x = 5
@@ -48,34 +84,6 @@
 /obj/item/storage/box/ammo/c10mm{
 	pixel_y = 2;
 	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/cm23{
-	pixel_y = 4;
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/cm23{
-	pixel_y = 4;
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/cm23{
-	pixel_y = 4;
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/cm23{
-	pixel_y = 4;
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_y = 3;
-	pixel_x = -8
-	},
-/obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_y = 3;
-	pixel_x = -8
-	},
-/obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_y = 3;
-	pixel_x = -8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3569,9 +3577,7 @@
 /obj/structure/guncloset,
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag,
-/obj/item/gun/ballistic/automatic/smg/cm5/compact/no_mag{
-	desc = "A modification of the CM-5 featuring a dramatically shortened barrel and removed stock. Designed for CLIP-GOLD, but often issued to C-MM exosuit pilots and tank crews due to its relative ease of carrying. Chambered in 9mm."
-	},
+/obj/item/gun/ballistic/automatic/smg/cm5,
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag,
 /turf/open/floor/plasteel/dark,
