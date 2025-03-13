@@ -134,12 +134,13 @@
 	)
 	flora_spawn_chance = 40
 	flora_spawn_list = list(
-		/obj/structure/flora/ausbushes/fullgrass = 1,
-		/obj/structure/flora/ausbushes/sparsegrass = 1,
-		/obj/structure/flora/ausbushes = 1,
-		/obj/structure/flora/ausbushes/ppflowers = 1,
-		/obj/structure/flora/ausbushes/lavendergrass = 1,
-		/obj/structure/flora/ash/garden/frigid = 1,
+		/obj/structure/flora/ausbushes/fullgrass = 2,
+		/obj/structure/flora/ausbushes/sparsegrass = 2,
+		/obj/structure/flora/ausbushes = 2,
+		/obj/structure/flora/ausbushes/ppflowers = 2,
+		/obj/structure/flora/ausbushes/lavendergrass = 2,
+		/obj/structure/flora/ash/garden/frigid = 2,
+		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 
 /datum/biome/snow/forest
@@ -243,6 +244,7 @@
 		/obj/structure/flora/ash/stem_shroom = 2,
 		/obj/structure/flora/ash/puce = 2,
 		/obj/structure/flora/ash/garden/frigid = 2,
+		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 	closed_turf_types = list(
 		/turf/closed/mineral/random/snow = 1
