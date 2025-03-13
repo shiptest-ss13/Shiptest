@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "447 Cirrus-class Medical Carrack",
+	"faction": "/datum/faction/syndicate/cybersun",
+	"prefix": "CSSV",
+	"manufacturer": "ISF Spacecraft",
+	"map_short_name": "Cirrus-class",
+	"description": "The Cirrus-class is a Cybersun design originally drafted in 467 FSC, and was put to production by ISF Spacecraft the following year. The original design served faithfully as a transport for Cybersun Executives, but the current revision has been billed as 'Trauma Team Response Vehicle'. A docking port for a Gauze-class subshuttle allows rapid response to medical emergencies, and priority treatment for those in Cybersun's graces.",
+	"starting_funds": 3000,
+	"limit": 1,
+	"tags": [
+		"Medical",
+		"Subshuttle",
+		"Specialist"
+	],
+	"map_path": "_maps/shuttles/cybersun/cybersun_cirrus.dmm",
+	"namelists": [
+		"SPACE",
+		"BEASTS"
+	],
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Director": {
+			"outfit": "/datum/outfit/job/syndicate/cmo",
+			"officer": true,
+			"slots": 1
+		},
+		"Technician": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/cybersun",
+			"slots": 1
+		},
+		"Doctor": {
+			"outfit": "/datum/outfit/job/syndicate/doctor/cybersun",
+			"slots": 1
+		},
+		"Trauma Team Technician": {
+			"outfit": "/datum/outfit/job/syndicate/paramedic/cybersun",
+			"slots": 2
+		},
+		"Ship's Aide": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

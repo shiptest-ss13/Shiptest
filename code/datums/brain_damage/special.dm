@@ -203,7 +203,7 @@
 
 /datum/brain_trauma/special/psychotic_brawling
 	name = "Violent Psychosis"
-	desc = "Patient fights in unpredictable ways, ranging from helping his target to hitting them with brutal strength."
+	desc = "Patient fights in unpredictable ways due to re-arranged neural pathways."
 	scan_desc = "violent psychosis"
 	gain_text = "<span class='warning'>You feel unhinged...</span>"
 	lose_text = "<span class='notice'>You feel more balanced.</span>"
@@ -221,7 +221,7 @@
 	psychotic_brawling.remove(owner)
 	QDEL_NULL(psychotic_brawling)
 
-/datum/brain_trauma/special/psychotic_brawling/bath_salts
+/datum/brain_trauma/special/psychotic_brawling/mammoth
 	name = "Chemical Violent Psychosis"
 
 /datum/brain_trauma/special/tenacity
@@ -375,7 +375,7 @@
 	START_PROCESSING(SSfastprocess,src)
 	..()
 
-/obj/effect/hallucination/simple/securitron/process()
+/obj/effect/hallucination/simple/securitron/process(seconds_per_tick)
 	if(prob(60))
 		forceMove(get_step_towards(src, victim))
 		if(prob(5))

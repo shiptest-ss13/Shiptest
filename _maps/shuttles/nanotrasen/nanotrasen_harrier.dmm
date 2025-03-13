@@ -770,7 +770,7 @@
 /obj/effect/turf_decal/trimline/opaque/vired/corner{
 	dir = 4
 	},
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -1511,7 +1511,8 @@
 /area/ship/engineering)
 "hV" = (
 /obj/machinery/door/airlock/command{
-	name = "Restroom"
+	name = "Restroom";
+	id_tag = "harrier_bathroom"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2097,6 +2098,14 @@
 	dir = 6
 	},
 /obj/machinery/light/small/directional/west,
+/obj/machinery/button/door{
+	id = "harrier_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	pixel_y = 20;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/bridge)
 "lj" = (
@@ -3753,7 +3762,7 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/arrow_ccw{
 	dir = 4
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /obj/structure/chair/handrail{
@@ -4585,7 +4594,7 @@
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer1{
 	dir = 8
 	},
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "zr" = (
@@ -4617,7 +4626,7 @@
 "zv" = (
 /obj/effect/turf_decal/trimline/opaque/blue/line,
 /obj/structure/closet/emcloset/wall/directional/south,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 10
 	},
 /turf/open/floor/plasteel/white,
@@ -4844,7 +4853,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/carpet/cyan,
 /area/ship/medical)
@@ -5172,7 +5181,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 6
 	},
 /turf/open/floor/plasteel,
@@ -5733,7 +5742,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono,
@@ -6861,7 +6870,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 10
 	},
 /turf/open/floor/plasteel/mono,
@@ -6988,7 +6997,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "Mu" = (
@@ -7149,7 +7158,7 @@
 "Nk" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/light/directional/north,
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "Nl" = (
@@ -7222,7 +7231,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/north,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 6
 	},
 /turf/open/floor/plasteel/patterned,
@@ -7629,7 +7638,7 @@
 	dir = 1;
 	id = "harrier_packagesort"
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -8480,7 +8489,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "TZ" = (
@@ -8914,7 +8923,7 @@
 	pixel_x = -5;
 	pixel_y = -20
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 10
 	},
 /obj/item/stamp/nanotrasen{
@@ -8958,7 +8967,7 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 1
 	},
-/obj/machinery/camera,
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Wj" = (
@@ -9327,7 +9336,7 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 4
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -9492,7 +9501,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 1
 	},
 /turf/open/floor/carpet/royalblue,
@@ -9556,7 +9565,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/camera{
+/obj/machinery/camera/autoname{
 	dir = 8
 	},
 /obj/structure/chair/handrail{

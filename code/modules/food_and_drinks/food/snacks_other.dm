@@ -436,8 +436,8 @@
 
 /obj/item/reagent_containers/food/snacks/chewable
 	slot_flags = ITEM_SLOT_MASK
-	///How long it lasts before being deleted
-	var/succ_dur = 180
+	///How long it lasts before being deleted in seconds
+	var/succ_dur = 360
 	///The delay between each time it will handle reagents
 	var/succ_int = 100
 	///Stores the time set for the next handle_reagents
@@ -454,12 +454,12 @@
 				return
 		reagents.remove_any(REAGENTS_METABOLISM)
 
-/obj/item/reagent_containers/food/snacks/chewable/process()
+/obj/item/reagent_containers/food/snacks/chewable/process(seconds_per_tick)
 	if(iscarbon(loc))
-		if(succ_dur < 1)
+		if(succ_dur <= 0)
 			qdel(src)
 			return
-		succ_dur--
+		succ_dur -= seconds_per_tick
 		if((reagents && reagents.total_volume) && (next_succ <= world.time))
 			handle_reagents()
 			next_succ = world.time + succ_int
@@ -484,7 +484,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/iron = 10, /datum/reagent/consumable/sugar = 5, /datum/reagent/medicine/omnizine = 2)	//Honk
 	var/mutable_appearance/head
 	var/headcolor = rgb(0, 0, 0)
-	succ_dur = 180
+	succ_dur = 15 * 60
 	succ_int = 100
 	next_succ = 0
 	tastes = list("candy" = 1)
@@ -553,7 +553,7 @@
 	list_reagents = list(/datum/reagent/blood = 15)
 	tastes = list("hell" = 1)
 
-/obj/item/reagent_containers/food/snacks/chewable/bubblegum/bubblegum/process()
+/obj/item/reagent_containers/food/snacks/chewable/bubblegum/bubblegum/process(seconds_per_tick)
 	. = ..()
 	if(iscarbon(loc))
 		hallucinate(loc)
