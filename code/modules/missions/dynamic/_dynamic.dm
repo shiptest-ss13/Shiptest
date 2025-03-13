@@ -11,7 +11,6 @@
 	var/specific_item = TRUE
 	/// The item that you can turn in to complete the mission. If specific_item is false it uses the type of the item.
 	var/atom/movable/required_item
-	#warn redocument
 	var/dibs_string
 
 /datum/mission/ruin/generate_mission_details()
