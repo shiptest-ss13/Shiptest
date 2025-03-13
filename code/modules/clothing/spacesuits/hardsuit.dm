@@ -359,8 +359,7 @@
 		return
 	eva_mode = !eva_mode
 	if(eva_mode || force)
-		if(!forced_on)
-			to_chat(user, span_notice("You switch your hardsuit to EVA mode, sealing your visor and protecting you from space."))
+		to_chat(user, span_notice("You switch your hardsuit to EVA mode, sealing your visor and protecting you from space."))
 		name = initial(name)
 		desc = initial(desc)
 		clothing_flags |= visor_flags
