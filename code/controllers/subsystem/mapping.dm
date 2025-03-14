@@ -16,6 +16,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/ruin_types_probabilities = list()
 	var/list/ruins_templates = list()
 	var/list/planet_types = list()
+	var/list/mission_pois = list()
 
 	var/list/maplist
 	var/list/ship_purchase_list

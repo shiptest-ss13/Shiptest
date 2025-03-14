@@ -113,8 +113,9 @@
 	if(ishuman(user))
 		var/obj/item/card/id/D
 		var/obj/item/computer_hardware/card_slot/card_slot
-		if(computer && card_slot)
+		if(computer)
 			card_slot = computer.all_components[MC_CARD]
+		if(card_slot)
 			D = card_slot.GetID()
 		var/mob/living/carbon/human/h = user
 		var/obj/item/card/id/I = h.get_idcard(TRUE)
