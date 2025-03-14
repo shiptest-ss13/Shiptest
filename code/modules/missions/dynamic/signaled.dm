@@ -24,10 +24,11 @@
 /obj/effect/landmark/mission_poi/main/drill
 
 /datum/mission/ruin/signaled/drill
-	name = "drill reinstallment"
-	desc = "We have a drill we want turned back on before we send people to get this outpost back up and running. \
-			Its a industrial level drill resting ontop of a class 4 vein. \
-			We want the seismograph readout it prints out when its done as proof."
+	name = "Drill Activation"
+	desc = "An industrial drill has been deployed for prospecting efforts on this world. \
+			The drill was disabled by local fauna, and our staff were unable to complete the prospecting operation. \
+			Go to the site, activate the drill, and complete the initial sampling run. \
+			Return the data that the drill produces for your reward."
 	value = 15000
 	faction = list(
 		/datum/faction/nt,
@@ -73,9 +74,9 @@
 	num_wanted = 10
 
 /obj/item/drill_readout
-	name = "industrial drill seismograph"
-	desc = "Created by a mining outpost drill."
+	name = "geological sampling data"
+	desc = "A lengthy report on the geological conditions of the world."
 	icon = 'icons/obj/bureaucracy.dmi'
-	icon_state = "cpaper_words"
+	icon_state = "docs_part"
 	item_state = "paper"
 	w_class = WEIGHT_CLASS_SMALL

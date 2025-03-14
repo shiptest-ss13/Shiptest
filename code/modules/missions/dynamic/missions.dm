@@ -1,6 +1,6 @@
-/datum/mission/ruin/data_reterival
-	name = "data recovery"
-	desc = "We are looking for %MISSION_REQUIRED"
+/datum/mission/ruin/data_retrieval
+	name = "Data Recovery"
+	desc = "We would like %MISSION_REQUIRED retrieved from a site of interest."
 	setpiece_item = list(
 		/obj/item/research_notes/loot,
 		/obj/item/documents
@@ -17,7 +17,7 @@
 			return recorder.stored
 
 /datum/mission/ruin/blackbox
-	name = "blackbox recovery"
-	desc = "We lost communication with this planet. Investigate the planet, clear it of hostiles if you find any. Recover the lost logs from its blackbox recorder as proof of completion."
+	name = "Blackbox Recovery"
+	desc = "Communication has recently been lost with this world. Investigate the site, engage hostiles at your discretion, and recover the %MISSION_REQUIRED so we can plan a course of action."
 	setpiece_item = /obj/machinery/blackbox_recorder
 
