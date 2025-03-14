@@ -1,7 +1,6 @@
 
 GLOBAL_LIST_INIT(outpost_exports, gen_outpost_exports())
 
-#warn should be properly handled inside a outpost
 /proc/gen_outpost_exports()
 	var/ret_list = list()
 
