@@ -48,5 +48,16 @@
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 	ruin_mission_types = list(
 		/datum/mission/ruin/data_retrieval,
-		/datum/mission/ruin/signaled/kill/frontiersmen
+		/datum/mission/ruin/signaled/kill/frontiersmen,
+		/datum/mission/ruin/multiple/moonshine_crates
 	)
+
+/datum/mission/ruin/multiple/moonshine_crates
+	name = "Retrieve Booze"
+	desc = "So... Uh.. I'm looking for someone to go pick up the alcohol I bought from a local brewer. They said they deliver - but it's been like 3 weeks, and I really need this for a party... Can you go and pick it up from them? "
+	author = "Guy Raelman"
+	faction = /datum/faction/independent
+	value = 1750
+	setpiece_item = /obj/item/storage/bottles/moonshine/sealed
+	specific_item = FALSE
+	required_count = 3
