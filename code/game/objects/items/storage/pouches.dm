@@ -174,4 +174,5 @@
 		/obj/item/toy/crayon/spraycan,
 		/obj/item/stack/marker_beacon,
 		/obj/item/reagent_containers/glass/rag
+		/obj/item/taperecorder
 		))
