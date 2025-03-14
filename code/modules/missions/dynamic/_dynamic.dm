@@ -1,12 +1,12 @@
 /datum/mission/ruin
 	value = 2000
 	duration = null
-	desc = "Find my notes. (Placeholder)"
+	desc = "Find my pages. (Please report if you cannot locate pages)"
 	location_specific = TRUE
 	/// Which landmark we will search for in spawned_mission_pois of the planet
 	var/setpiece_poi = /obj/effect/landmark/mission_poi/main
 	/// Item that will be spawned at the setpiece_poi
-	var/setpiece_item
+	var/obj/setpiece_item
 	/// Specific item uses an exact item, if false it will allow type or any subtype
 	var/specific_item = TRUE
 	/// The item that you can turn in to complete the mission. If specific_item is false it uses the type of the item.

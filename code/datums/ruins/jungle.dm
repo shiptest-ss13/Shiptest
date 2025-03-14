@@ -16,7 +16,7 @@
 	)
 
 /datum/mission/ruin/nt_files
-	name = "NT asset recovery"
+	name = "Discrete Asset Recovery"
 	desc = "Look- long story short, I need this folder retrieved. You don't ask why, I make sure you get paid."
 	value = 2500
 	mission_reward = list(
@@ -31,9 +31,9 @@
 	author = "Captain [random_species_name()]"
 
 /datum/mission/ruin/signaled/kill/jerry
-	name = "FUCKING KIL JERRY THAT SUNOFA BITCH STOLE BY GODDAMN RELINA PLUSHIE!!"
-	desc = "I WANT MY FUCKIN PUSHIE BACK KILL HIM AND ILL PAY!"
-	author = "I FUCKING WANT HIM HUNG."
+	name = "Re: Jerry"
+	desc = "THIS MOTHERFUCKING WEASEL BOY TOOK MY LIMITED EDITION RILENA PLUSH. THAT THING WAS FUCKING EXPENSIVE. I WANT IT BACK. I WANT HIM BLOWN UP. I WANT YOU TO DO IT."
+	author = "SHOOT HIM IN THE DICK"
 	faction = /datum/faction/independent
 	mission_reward = /obj/item/poster/random_rilena
 	registered_type = /mob/living/simple_animal/hostile/human/ramzi
@@ -83,5 +83,5 @@
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE, RUIN_TAG_MAJOR_LOOT)
 	ruin_mission_types = list(
 		/datum/mission/ruin/signaled/kill/frontiersmen,
-		/datum/mission/ruin/data_reterival
+		/datum/mission/ruin/data_retrieval
 	)

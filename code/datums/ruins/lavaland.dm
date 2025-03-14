@@ -37,24 +37,38 @@
 	)
 
 /datum/mission/ruin/nanotrasen_docs
-	name = "Nanotrasen confidential information recovery."
+	name = "Nanotrasen Asset Recovery Program."
 	author = "Nanotrasen Recovery Program"
-	desc = "A set of documents containing valuble company secrets was lost at one of our facilitys. We lost contact with it and need those documents back."
-	faction = /datum/faction/nt
+	desc = "We've recently lost contact with a processing facility within the purview of this outpost. Nanotrasen is interested in the retrieval of sensitive assets located within the facility."
+	faction = list(
+		/datum/faction/nt,
+		/datum/faction/syndicate/cybersun
+	)
 	value = 3500
 	setpiece_item = /obj/item/documents/nanotrasen
 
+/datum/mission/ruin/nanotrasen_docs/generate_mission_details()
+	. = ..()
+	if(faction == /datum/faction/nt)
+		name = "Nanotrasen Asset Recovery Program"
+		author = "Nanotrasen Recovery Program"
+		desc = "Nanotrasen Corporate has recently lost contact with a processing facility within the purview of this outpost. Nanotrasen is interested in the retrieval of sensitive assets located within the facility."
+	if(faction == /datum/faction/syndicate/cybersun)
+		name = "Cybersun Capture Program."
+		author = "Cybersun Virtual Solutions"
+		desc = "Cybersun VS is extremely interested in the contents of a documents package located at a Nanotrasen facility recently hit by the Ramzi Clique. Retrieve it for us, and we'll pay handsomely."
+
 /datum/mission/ruin/captain_medal
-	name = "recover my lost medal."
-	desc = "I lost my medal at an old facility I used to work, but i need it for a ceremony this week. I'll pay good cash to get it back ASAP."
+	name = "Recover War Medal."
+	desc = "A few months back, I lost my medal for \"Valiant Command Under Fire\". I've managed to track it down to a world in this system, and I'd like it retrieved."
 	faction = /datum/faction/nt
 	value = 2250
-	setpiece_item = /obj/item/documents/nanotrasen
+	setpiece_item = /obj/item/clothing/accessory/medal/gold/captain
 
 /datum/mission/ruin/brainchip
-	name = "brainchip recovery"
+	name = "Nanotrasen Asset Recovery Program"
 	author = "Nanotrasen Recovery Program"
-	desc = "One of our cargo techs died with some important tech in his head. Get it back."
+	desc = "Retrieve an implant from an employee who has failed to report proper usage of the system as stipulated by contract."
 	faction = /datum/faction/nt
 	setpiece_item = /mob/living/carbon/human
 

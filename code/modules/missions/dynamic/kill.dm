@@ -1,8 +1,8 @@
 /obj/effect/landmark/mission_poi/main/kill
 
 /datum/mission/ruin/signaled/kill
-	name = "%MISSION_TARGET termination"
-	desc = "Bounty for a high ranking %MISSION_TARGET residing on this planet. They should have identifying dogtags."
+	name = "%MISSION_TARGET Termination"
+	desc = "This is a bounty for the elimination of a %MISSION_TARGET. Return their %MISSION_ITEM to claim the reward."
 	setpiece_poi = /obj/effect/landmark/mission_poi/main/kill
 	setpiece_item = /obj/item/clothing/neck/dogtag
 	mission_main_signal = COMSIG_MOB_DEATH
@@ -16,6 +16,7 @@
 	if(ispath(registered_type))
 		var/atom/target = registered_type
 		mission_string = replacetext(mission_string, "%MISSION_TARGET", "[target::name]")
+		mission_string = replacetext(mission_string, "%MISSION_ITEM", "[setpiece_item::name]")
 	return mission_string
 
 /datum/mission/ruin/signaled/kill/frontiersmen

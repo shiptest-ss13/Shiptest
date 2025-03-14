@@ -13,8 +13,8 @@
 	ruin_mission_types = list(/datum/mission/ruin/lost_axe)
 
 /datum/mission/ruin/lost_axe
-	name = "I lost my axe!"
-	desc = "I left my axe on a beachplanet but forgot to take it when i got recused!"
+	name = "Axe Retrieval"
+	desc = "I recently lost a heirloom axe - produced by a very fine Syebenaltch Guild. I was unable to retrieve it when my vessel crashed, and I was rescued. Please bring it home to me."
 	setpiece_item = /obj/item/melee/axe/fire
 
 /datum/map_template/ruin/beachplanet/ancient
@@ -46,3 +46,7 @@
 	description = "A poorly constructed jumble of bunkers, currently held by the Frontiersmen Fleet for usage as a supply depot."
 	suffix = "beach_bunkers.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
+	ruin_mission_types = list(
+		/datum/mission/ruin/data_retrieval,
+		/datum/mission/ruin/signaled/kill/frontiersmen
+	)
