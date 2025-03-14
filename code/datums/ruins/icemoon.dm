@@ -46,7 +46,8 @@
 	suffix = "icemoon_tesla_lab.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
 	ruin_mission_types = list(
-		/datum/mission/ruin/blackbox
+		/datum/mission/ruin/blackbox,
+		/datum/mission/ruin/daughter
 	)
 
 /datum/mission/ruin/daughter

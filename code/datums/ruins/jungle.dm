@@ -67,6 +67,17 @@
 	description = "An abandoned airbase dating back to the ICW, partially scuttled, and moved right back into by the Ramzi Clique."
 	suffix = "jungle_bombed_starport.dmm"
 	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE)
+	ruin_mission_types = list(
+		/datum/mission/ruin/signaled/kill/ramzi,
+		/datum/mission/ruin/icw_documents
+	)
+
+/datum/mission/ruin/icw_documents
+	name = "Syndicate Battleplans Retrieval"
+	desc = "Our Final Project for the ICW-Era Preservation is to find a new piece of ICW history and preserve it. My group has gotten word that Syndicate Battleplans can be found at this site. Please see if they're there, and retrieve them for us."
+	faction = /datum/faction/syndicate/suns
+	author = "HIS455 \"ICW-era Preservation\""
+	setpiece_item = /obj/item/folder/documents/syndicate/red
 
 /datum/map_template/ruin/jungle/medtech
 	name = "MedTech facility"
