@@ -1361,6 +1361,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/killship)
+"gE" = (
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "splatter6"
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/ruin/icemoon/training_facility/course)
 "gG" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 9
@@ -7745,6 +7751,13 @@
 	},
 /turf/open/floor/concrete/pavement/icemoon/lit,
 /area/ruin/icemoon/training_facility)
+"Mn" = (
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/wood/icemoon,
+/area/ruin/icemoon/training_facility/course)
 "Mp" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -8574,6 +8587,10 @@
 /area/ruin/icemoon/training_facility/garage)
 "Qt" = (
 /obj/item/ammo_box/magazine/m22lr_himehabu/empty,
+/obj/effect/decal/cleanable/blood/squirt,
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "floor7"
+	},
 /turf/open/floor/wood/icemoon,
 /area/ruin/icemoon/training_facility/course)
 "Qu" = (
@@ -8887,6 +8904,12 @@
 /obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/dorms)
+"RD" = (
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "floor6"
+	},
+/turf/open/floor/wood/icemoon,
+/area/ruin/icemoon/training_facility/course)
 "RE" = (
 /obj/item/kirbyplants/dead{
 	desc = "It doesn't look very healthy...";
@@ -15117,7 +15140,7 @@ Rn
 oU
 TY
 KG
-KG
+gE
 Vw
 pj
 CF
@@ -15265,7 +15288,7 @@ Rn
 Rn
 uj
 AR
-Vw
+Mn
 Vw
 on
 Jt
@@ -15340,7 +15363,7 @@ EG
 KG
 LN
 KG
-Vw
+RD
 xA
 sW
 EG
