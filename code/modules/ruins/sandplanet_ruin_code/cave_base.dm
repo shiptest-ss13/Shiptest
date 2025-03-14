@@ -27,7 +27,7 @@
 	network = list("ForwardPost")
 
 //turret
-/obj/machinery/porta_turret/cave_base
+/obj/machinery/porta_turret/ruin/cave_base
 	max_integrity = 100
 	faction = list("turret", "Forward_Ops_Post")
 	stun_projectile = /obj/projectile/beam/laser/heavylaser
