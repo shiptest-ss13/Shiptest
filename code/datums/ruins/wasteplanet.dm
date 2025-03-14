@@ -60,3 +60,24 @@
 	suffix = "wasteplanet_icwbase.dmm"
 
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+	ruin_mission_types = list(
+		/datum/mission/ruin/multiple/notes,
+		/datum/mission/ruin/signaled/kill/kitt
+	)
+
+/* Aurora wrote these */
+
+/datum/mission/ruin/multiple/notes
+	name = "recover a stash of Eoehoma weapons"
+	desc = "Hello, on behalf of Cybersun Biodynamics, we are offering an active bounty on the return of the research notes of Dr. Margret Kithin, located in a former base of operations of which we lost contact with in recent years. Last we saw, the facility had been claimed by pirate elements, who seemed keen on desecrating the facility. We only care about our research being returned."
+	faction = /datum/faction/syndicate/cybersun
+	value = 8000
+	setpiece_item = /obj/item/documents/syndicate/cybersun/biodynamics
+	required_count = 2
+
+/datum/mission/ruin/signaled/kill/kitt
+	name = "Kill Her"
+	desc = "What do you do when a normal person wrongs you? You get revenge. What do you do when a fellow pirate wrongs you? You spent months tracking them, watching them from the shadows and even beneath their own fucking nose, alright? Her name is Kitt. I want her stupid bitch face buried ten feet in the ground and some proof, and the payment is yours. Call me spiteful, but I lost a good friend to her. Make her pay."
+	author = "Not Important"
+	faction = /datum/faction/independent
+	value = 4000

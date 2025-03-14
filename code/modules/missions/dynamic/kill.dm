@@ -28,6 +28,18 @@
 	registered_type = /mob/living/simple_animal/hostile/human/frontier/ranged/officer
 	setpiece_item = /obj/item/clothing/neck/dogtag/frontier
 
+/datum/mission/ruin/signaled/kill/ramzi
+	value = 3000
+	mission_reward = list(
+		/obj/item/gun/ballistic/automatic/smg/cobra,
+		/obj/item/gun/ballistic/automatic/smg/sidewinder,
+	)
+	registered_type = /mob/living/simple_animal/hostile/human/ramzi
+	setpiece_item = /obj/item/clothing/neck/dogtag/ramzi
+
+/datum/mission/ruin/signaled/kill/ramzi/airbase
+	registered_type = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun/incendiary
+
 /datum/mission/ruin/signaled/kill/syndi_docs
 	value = 5000
 	faction = /datum/faction/syndicate
