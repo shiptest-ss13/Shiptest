@@ -54,3 +54,9 @@
 		/datum/faction/nt/ns_logi,
 	)
 	setpiece_item = /mob/living/carbon/human
+
+/datum/map_template/ruin/rockplanet/rust_base
+	name = "ISV Rust Base"
+	description = "A crashed Ramzi Clique vessel that has since become an isolated pirate outpost."
+	id = "rockplanet_rustbase"
+	suffix = "rockplanet_rustbase.dmm"
