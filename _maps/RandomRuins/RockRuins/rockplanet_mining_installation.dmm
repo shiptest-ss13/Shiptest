@@ -277,7 +277,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/vein/classfour,
 /obj/machinery/drill/mission/ruin,
-/obj/effect/landmark/mission_poi/main/drill,
+/obj/effect/landmark/mission_poi/main/drill{
+	already_spawned = 1
+	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/mining_base/rig_two)
 "bC" = (
@@ -6254,7 +6256,8 @@
 	dir = 5
 	},
 /obj/effect/landmark/mission_poi/main{
-	already_spawned = 1
+	already_spawned = 1;
+	mission_index = 2
 	},
 /turf/open/floor/carpet,
 /area/ruin/rockplanet/mining_base/office)

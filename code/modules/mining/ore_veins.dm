@@ -219,7 +219,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 	max_mobs = 6
 
-/obj/structure/vein/ice/class_four
+/obj/structure/vein/ice/classfour
 	mining_charges = 30
 	vein_class = 4
 
