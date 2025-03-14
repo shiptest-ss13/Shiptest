@@ -148,3 +148,95 @@
 /area/ruin/space/has_grav/spacemall/shuttle
 	name = "Space Mall Supply Shuttle"
 	icon_state = "blue"
+
+///Radioactive Waste Disposal Site/station
+
+/area/ruin/space/has_grav/powered/nuclearwaste
+	name = "Waste Disposal Station Bathroom"
+	icon_state = "restrooms"
+	sound_environment = SOUND_ENVIRONMENT_BATHROOM
+
+/area/ruin/space/has_grav/powered/nuclearwaste/dorms
+	name = "Waste Disposal Station Dorms"
+	icon_state = "Lounge"
+
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1
+	name = "Radioactive Storage Site 01"
+	icon_state = "amaint"
+	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_2
+	name = "Radioactive Storage Site 02"
+	icon_state = "fmaint"
+	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3
+	name = "Radioactive Storage Site 03"
+	icon_state = "smaint"
+	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4
+	name = "Radioactive Storage Site 04"
+	icon_state = "pmaint"
+	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_outer
+	name = "Radioactive Storage Site Outer Hall 01"
+	icon_state = "hallA"
+	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_outer
+	name = "Radioactive Storage Site Outer Hall 02"
+	icon_state = "hallF"
+	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner
+	name = "Radioactive Storage Site Outer Hall 03"
+	icon_state = "hallS"
+	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner
+	name = "Radioactive Storage Site Outer Hall 04"
+	icon_state = "hallP"
+	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/ruin/space/has_grav/powered/nuclearwaste/medbay
+	name = "Waste Disposal Station Medbay"
+	icon_state = "medbay3"
+
+/area/ruin/space/has_grav/powered/nuclearwaste/navcom
+	name = "Waste Disposal Station NavCom"
+	icon_state = "bridge"
+
+/area/ruin/space/has_grav/powered/nuclearwaste/shuttle
+	name = "Waste Supply Shuttle"
+	icon_state = "bridge"
+
+/area/ruin/space/has_grav/powered/nuclearwaste/north_hall
+	name = "Waste Disposal Station Northern section"
+	icon_state = "blue"
+
+/area/ruin/space/has_grav/powered/nuclearwaste/south_hall
+	name = "Waste Disposal Station Northern section"
+	icon_state = ""
+
+/area/ruin/space/has_grav/powered/nuclearwaste/this_is_not_a_place_of_honor
+	name "Long-term Nuclear Waste Warning Marker Room"
+	icon_state "yellow"
+	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+
+/area/ruin/space/has_grav/powered/nuclearwaste/recreation
+	name = "Waste Disposal Station Crew-room"
+	icon_state = "maintcentral"
+
+/area/ruin/space/has_grav/powered/nuclearwaste/engineering
+	name = "Waste Disposal Station Engineering" //engi-nearing my limits ami  right  guysz
+	icon_state "yellow"
+
+/area/ruin/space/has_grav/powered/nuclearwaste/cargo_left
+	name = "Waste Disposal Station Leftside Shuttle Side"
+	icon_state = "storage"
+
+/area/ruin/space/has_grav/powered/nuclearwaste/cargo_right
+	name = "Waste Disposal Station Rightside Shuttle Side"
+	icon_state = "storage"

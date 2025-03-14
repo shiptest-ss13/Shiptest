@@ -458,6 +458,16 @@
 	mob_species = /datum/species/skeleton
 	mob_color = "#454545"
 
+//in honor of the ISV Magic School Bus's hero, the fucking skeleton named Trooper
+/obj/effect/mob_spawn/human/corpse/charredskeleton/trooper
+	name = "charred skeletal remains named trooper"
+	burn_damage = 1000
+	mob_name = "trooper"
+	mob_gender = NEUTER
+	husk = FALSE
+	mob_species = /datum/species/skeleton
+	mob_color = "#454545"
+
 //Legion infested mobs
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/dwarf/equip(mob/living/carbon/human/H)
