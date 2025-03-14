@@ -1,4 +1,3 @@
-#warn reimplement
 /obj/item/export_scanner
 	name = "export scanner"
 	desc = "A device used to check objects against exports and bounty database."

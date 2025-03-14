@@ -86,8 +86,7 @@ SUBSYSTEM_DEF(overmap)
 	if(length(dynamic_encounters) < CONFIG_GET(number/max_overmap_dynamic_events))
 		spawn_ruin_level()
 	else if(COOLDOWN_FINISHED(src, dynamic_despawn_cooldown))
-		//var/list/weighted_encounters = list()
-		#warn need to make this have a weight for older planets
+		//need to make this have a weight for older planets at some point soon
 		var/datum/overmap/dynamic/picked_encounter = pick(dynamic_encounters)
 		if(picked_encounter)
 			//If we manage to start a countdown, 5 minute timer, else, try again in a minute.
