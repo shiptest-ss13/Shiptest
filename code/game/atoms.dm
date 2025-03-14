@@ -1159,9 +1159,8 @@
 		var/client/C = usr.client
 		C?.open_filter_editor(src)
 
-	#warn fix
-	//if(href_list[VV_HK_SELL] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT))
-	//	export_item_and_contents(src, allowed_categories = ALL, apply_elastic = FALSE)
+	if(href_list[VV_HK_SELL] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT))
+		export_item_and_contents(src, apply_elastic = FALSE)
 
 /atom/vv_get_header()
 	. = ..()
