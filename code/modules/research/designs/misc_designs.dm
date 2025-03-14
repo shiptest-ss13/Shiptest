@@ -544,7 +544,7 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/evidencebag
+/datum/design/evidence
 	name = "Evidence Bag"
 	desc = "An empty evidence bag."
 	id = "evidencebag"
