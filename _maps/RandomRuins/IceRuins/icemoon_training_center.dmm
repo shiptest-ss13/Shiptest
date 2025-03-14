@@ -574,6 +574,12 @@
 /obj/structure/filingcabinet/double/grey{
 	pixel_y = 14
 	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = -9;
+	id = "office"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/office_2)
 "cE" = (
@@ -2103,6 +2109,10 @@
 "kq" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "office";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/office_2)
 "kr" = (
@@ -4359,6 +4369,15 @@
 /obj/structure/railing/thin,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/cafeteria)
+"vB" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "office";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/training_facility/classroom)
 "vC" = (
 /obj/machinery/computer/apc_control{
 	dir = 1
@@ -4413,7 +4432,7 @@
 	dir = 8;
 	pixel_x = 24;
 	pixel_y = 0;
-	id = "shutter"
+	id = "office"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/classroom)
@@ -14466,7 +14485,7 @@ OU
 KG
 NO
 qP
-aT
+vB
 aT
 aT
 qP
