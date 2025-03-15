@@ -76,6 +76,9 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/stock_parts/cell/gun/upgraded,
 /obj/structure/safe,
+/obj/effect/landmark/mission_poi/main{
+	type_to_spawn = /obj/item/documents/nanotrasen
+	},
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "aW" = (
@@ -158,9 +161,6 @@
 /obj/structure/table/wood,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
-	},
-/obj/effect/landmark/mission_poi/main{
-	type_to_spawn = /obj/item/documents/nanotrasen
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
