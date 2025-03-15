@@ -24,7 +24,6 @@
 
 	muzzleflash_iconstate = "muzzle_flash_light"
 	light_range = 1
-	wear_rate = 1
 
 	refused_attachments = list(
 		/obj/item/attachment/gun,

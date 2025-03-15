@@ -27,7 +27,9 @@
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16
-	wear_rate = 0.5 // 120 to malfunction, 360 to critical
+	wear_minor_threshold = 120
+	wear_major_threshold = 360
+	wear_maximum = 600
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
@@ -103,7 +105,7 @@
 	wield_delay = 0.6 SECONDS
 	wield_slowdown = SMG_SLOWDOWN
 
-	wear_rate = 0.8 //75 to malfunction, 225 to critical
+	wear_rate = 1.6
 
 	unique_attachments = list(
 		/obj/item/attachment/foldable_stock
