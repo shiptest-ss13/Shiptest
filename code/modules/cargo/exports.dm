@@ -131,6 +131,7 @@
 		if(apply_elastic)
 			true_cost *= (1 - elasticity_coeff)**amount
 		SSblackbox.record_feedback("nested tally", "export_sold_cost", 1, list("[O.type]", "[the_cost]"))
+		SSblackbox.record_feedback("tally", "export_sold_cost_total", the_cost, O.type)
 	if(true_cost != cost)
 		START_PROCESSING(SSprocessing, src)
 	return the_cost
