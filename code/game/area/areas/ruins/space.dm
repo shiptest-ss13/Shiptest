@@ -218,12 +218,11 @@
 
 /area/ruin/space/has_grav/powered/nuclearwaste/south_hall
 	name = "Waste Disposal Station Northern section"
-	icon_state = ""
+	icon_state = "purple"
 
 /area/ruin/space/has_grav/powered/nuclearwaste/this_is_not_a_place_of_honor
-	name "Long-term Nuclear Waste Warning Marker Room"
-	icon_state "yellow"
-	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+	name = "Long Term Nuclear Waste Warning Marker Room"
+	icon_state = "yellow"
 
 /area/ruin/space/has_grav/powered/nuclearwaste/recreation
 	name = "Waste Disposal Station Crew-room"
@@ -231,7 +230,7 @@
 
 /area/ruin/space/has_grav/powered/nuclearwaste/engineering
 	name = "Waste Disposal Station Engineering" //engi-nearing my limits ami  right  guysz
-	icon_state "yellow"
+	icon_state ="yellow"
 
 /area/ruin/space/has_grav/powered/nuclearwaste/cargo_left
 	name = "Waste Disposal Station Leftside Shuttle Side"
