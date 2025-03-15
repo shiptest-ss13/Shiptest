@@ -160,6 +160,7 @@
 	var/registered_age = 18 // default age for ss13 players
 	var/job_icon
 	var/faction_icon
+	var/officer = FALSE // Whether the ID belongs to an officer, set in /datum/job/proc/equip
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
