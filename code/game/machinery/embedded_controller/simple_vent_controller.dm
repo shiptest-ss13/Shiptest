@@ -27,7 +27,7 @@
 				"power" = 1
 			)))
 
-/datum/computer/file/embedded_program/simple_vent_controller/process()
+/datum/computer/file/embedded_program/simple_vent_controller/process(seconds_per_tick)
 	return 0
 
 
