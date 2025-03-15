@@ -45,7 +45,7 @@
 	ME.attach(src)
 	max_ammo()
 
-/obj/mecha/combat/gygax/dark/add_cell(obj/item/stock_parts/cell/C=null)
+/obj/mecha/combat/gygax/dark/loaded/add_cell(obj/item/stock_parts/cell/C=null)
 	if(C)
 		C.forceMove(src)
 		cell = C

@@ -103,6 +103,7 @@
 	attack_verb = list("beat", "smacked")
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 3.5)
 	w_class = WEIGHT_CLASS_HUGE
+	demolition_mod = 1.25
 	var/homerun_ready = FALSE
 	var/homerun_able = FALSE
 

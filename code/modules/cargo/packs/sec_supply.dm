@@ -101,11 +101,18 @@
 */
 
 /datum/supply_pack/sec_supply/riotshields
-	name = "Riot Shields Crate"
+	name = "Riot Shield Crate"
 	desc = "Contains a riot shield, effective at holding back hostile fauna, xenofauna, or large crowds."
 	cost = 600
 	contains = list(/obj/item/shield/riot)
-	crate_name = "riot shields crate"
+	crate_name = "riot shield crate"
+
+/datum/supply_pack/sec_supply/teleriotshields
+	name = "Telescopic Riot Shield Crate"
+	desc = "Contains a telescopic riot shield, effective at holding back hostile fauna, xenofauna, or large crowds in tight spaces."
+	cost = 750
+	contains = list(/obj/item/shield/riot/tele)
+	crate_name = "riot shield crate"
 
 /datum/supply_pack/sec_supply/survknives
 	name = "Survival Knives Crate"
@@ -152,7 +159,7 @@
 	crate_name = "frag grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
 
-/datum/supply_pack/sec_supply/frag_grenade
+/datum/supply_pack/sec_supply/c4duffel
 	name = "C-4 Demolitions Charge Crate"
 	desc = "Contains a duffel of C-4 demolitions charges, for use in scrapping and demolitions of large-scale structures."
 	cost = 1000

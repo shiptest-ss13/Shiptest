@@ -125,8 +125,7 @@
 	return FALSE
 
 /obj/item/attachment/proc/on_alt_click(obj/item/gun/gun, mob/user, list/examine_list)
-	AltClick(user)
-	return TRUE
+	return FALSE
 
 /obj/item/attachment/examine(mob/user)
 	. = ..()

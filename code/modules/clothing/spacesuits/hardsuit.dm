@@ -18,9 +18,9 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH	| PEPPERPROOF
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
-	var/rad_count = 0
-	var/rad_record = 0
-	var/grace_count = 0
+	var/current_tick_amount = 0
+	var/radiation_count = 0
+	var/grace = RAD_GEIGER_GRACE_PERIOD
 	var/datum/looping_sound/geiger/soundloop
 
 	//fuck you 15 year old hardsuit code
@@ -79,23 +79,25 @@
 	if(msg && ishuman(wearer))
 		wearer.show_message("[icon2html(src, wearer)]<b><span class='robot'>[msg]</span></b>", MSG_VISUAL)
 
-/obj/item/clothing/head/helmet/space/hardsuit/rad_act(severity)
+/obj/item/clothing/head/helmet/space/hardsuit/rad_act(amount)
 	. = ..()
-	rad_count += severity
-
-/obj/item/clothing/head/helmet/space/hardsuit/process()
-	if(!rad_count)
-		grace_count++
-		if(grace_count == 2)
-			soundloop.last_radiation = 0
+	if(amount <= RAD_BACKGROUND_RADIATION)
 		return
+	current_tick_amount += amount
 
-	grace_count = 0
-	rad_record -= rad_record/5
-	rad_record += rad_count/5
-	rad_count = 0
+/obj/item/clothing/head/helmet/space/hardsuit/process(seconds_per_tick)
+	radiation_count = LPFILTER(radiation_count, current_tick_amount, seconds_per_tick, RAD_GEIGER_RC)
 
-	soundloop.last_radiation = rad_record
+	if(current_tick_amount)
+		grace = RAD_GEIGER_GRACE_PERIOD
+	else
+		grace -= seconds_per_tick
+		if(grace <= 0)
+			radiation_count = 0
+
+	current_tick_amount = 0
+
+	soundloop.last_radiation = radiation_count
 
 /obj/item/clothing/head/helmet/space/hardsuit/emp_act(severity)
 	. = ..()
@@ -431,7 +433,7 @@
 	icon_state = "hardsuit1-ramzi"
 	item_state = "hardsuit1-ramzi"
 	hardsuit_type = "ramzi"
-	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	name = "rust-red hardsuit"
@@ -442,9 +444,10 @@
 	hardsuit_type = "ramzi"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
 	jetpack = null
-	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	slowdown = 0.7
 	jetpack = null
+	supports_variations = DIGITIGRADE_VARIATION
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -529,7 +532,7 @@
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/inteq
-	supports_variations = VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/inteq
@@ -539,6 +542,7 @@
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	full_retraction = TRUE
+	supports_variations = VOX_VARIATION
 
 	//Medical hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/medical
@@ -810,7 +814,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/clothing/suit/space/hardsuit/shielded/process()
+/obj/item/clothing/suit/space/hardsuit/shielded/process(seconds_per_tick)
 	if(world.time > recharge_cooldown && current_charges < max_charges)
 		current_charges = clamp((current_charges + recharge_rate), 0, max_charges)
 		playsound(loc, 'sound/magic/charge.ogg', 50, TRUE)
@@ -1048,6 +1052,7 @@
 	item_state = "hardsuit-inteq"
 	hardsuit_type = "inteq"
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security/inteq
 	name = "inteq hardsuit"

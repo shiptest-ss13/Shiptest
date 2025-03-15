@@ -115,12 +115,12 @@
 		update_appearance()
 	return ..()
 
-/obj/item/gun/energy/process()
+/obj/item/gun/energy/process(seconds_per_tick)
 	if(selfcharge && cell && cell.percent() < 100)
-		charge_tick++
-		if(charge_tick < charge_delay)
+		charge_timer += seconds_per_tick
+		if(charge_timer < charge_delay)
 			return
-		charge_tick = 0
+		charge_timer = 0
 		cell.give(1000) //WS Edit - Egun energy cells
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
@@ -384,7 +384,7 @@
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
 	if(!internal_magazine)
-		. += "The cell retainment latch is [latch_closed ? "<span class='green'>CLOSED</span>" : "<span class='red'>OPEN</span>"]. Alt-Click on <b>help</b> intent to toggle the latch."
+		. += "The cell retainment latch is [latch_closed ? "<span class='green'>CLOSED</span>" : "<span class='red'>OPEN</span>"]. Alt-Click to toggle the latch."
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	if(ammo_type.len > 1)
 		. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"

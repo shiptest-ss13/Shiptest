@@ -57,7 +57,7 @@
 		if("abort")
 			target_state = AIRLOCK_STATE_CLOSED
 
-/datum/computer/file/embedded_program/airlock_controller/process()
+/datum/computer/file/embedded_program/airlock_controller/process(seconds_per_tick)
 	var/process_again = 1
 	while(process_again)
 		process_again = 0

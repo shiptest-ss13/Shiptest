@@ -48,7 +48,7 @@ GENE SCANNER
 		return
 	toggle_on()
 
-/obj/item/t_scanner/process()
+/obj/item/t_scanner/process(seconds_per_tick)
 	if(!on)
 		STOP_PROCESSING(SSobj, src)
 		return null
@@ -816,15 +816,16 @@ GENE SCANNER
 	if(!isnull(A.reagents))
 		if(A.reagents.reagent_list.len > 0)
 			var/reagents_length = A.reagents.reagent_list.len
-			to_chat(user, "<span class='notice'>[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found.</span>")
+			var/reagents_temp =	A.reagents.chem_temp
+			to_chat(user, span_notice("[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found at [reagents_temp]°K."))
 			for (var/re in A.reagents.reagent_list)
 				var/datum/reagent/R = re
 				var/amount = R.volume
-				to_chat(user, "<span class='notice'>\t [amount] units of [re].</span>")
+				to_chat(user, span_notice("\t [amount] units of [re]."))
 		else
-			to_chat(user, "<span class='notice'>No active chemical agents found in [A].</span>")
+			to_chat(user, span_notice("No active chemical agents found in [A]."))
 	else
-		to_chat(user, "<span class='notice'>No significant chemical agents found in [A].</span>")
+		to_chat(user, span_notice("No significant chemical agents found in [A]."))
 
 #undef SCANMODE_HEALTH
 #undef SCANMODE_CHEMICAL
