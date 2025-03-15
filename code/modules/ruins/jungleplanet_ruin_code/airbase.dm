@@ -11,7 +11,7 @@
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/stack/ore/salvage/scraptitanium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
-		/obj/effect/spawner/random/salvage_manipulator = 30,
+		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 		/obj/item/stack/sheet/metal/five = 10,
 		/obj/item/stack/sheet/plasteel/five = 30,
 		/obj/item/gun/ballistic/rocketlauncher = 10
@@ -25,8 +25,8 @@
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/stack/ore/salvage/scraptitanium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
-		/obj/effect/spawner/random/salvage_manipulator = 30,
-		/obj/effect/spawner/random/salvage_manipulator = 30,
+		/obj/effect/spawner/random/salvage/part/manipulator = 30,
+		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 		/obj/item/stack/sheet/metal/five = 10,
 		/obj/item/stack/sheet/plasteel/five = 30,
 	)
