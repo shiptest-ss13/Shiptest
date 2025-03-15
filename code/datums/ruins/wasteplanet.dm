@@ -80,4 +80,5 @@
 	desc = "What do you do when a normal person wrongs you? You get revenge. What do you do when a fellow pirate wrongs you? You spent months tracking them, watching them from the shadows and even beneath their own fucking nose, alright? Her name is Kitt. I want her stupid bitch face buried ten feet in the ground and some proof, and the payment is yours. Call me spiteful, but I lost a good friend to her. Make her pay."
 	author = "Not Important"
 	faction = /datum/faction/independent
+	registered_type = /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered
 	value = 4000
