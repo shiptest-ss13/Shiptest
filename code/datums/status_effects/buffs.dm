@@ -451,4 +451,3 @@
 
 /datum/movespeed_modifier/status_speed_boost
 	multiplicative_slowdown = -0.5
-
