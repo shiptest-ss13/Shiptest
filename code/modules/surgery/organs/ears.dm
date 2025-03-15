@@ -93,7 +93,6 @@
 	name = "cat ears"
 	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "kitty"
-	damage_multiplier = 2
 
 /obj/item/organ/ears/cat/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -152,7 +151,6 @@
 
 /obj/item/organ/ears/fox
 	name = "fox ears"
-	damage_multiplier = 2
 
 /obj/item/organ/ears/fox/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -172,7 +170,6 @@
 
 /obj/item/organ/ears/rabbit
 	name = "rabbit ears"
-	damage_multiplier = 2
 
 /obj/item/organ/ears/rabbit/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -224,7 +221,6 @@
 
 /obj/item/organ/ears/dog
 	name = "dog ears"
-	damage_multiplier = 2
 
 /obj/item/organ/ears/dog/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -244,7 +240,6 @@
 
 /obj/item/organ/ears/elf
 	name = "elf ears"
-	damage_multiplier = 1.5
 
 /obj/item/organ/ears/elf/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
