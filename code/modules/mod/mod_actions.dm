@@ -34,7 +34,7 @@
 		return FALSE
 	var/obj/item/mod/control/mod = target
 	if(mod.malfunctioning && prob(75))
-		mod.balloon_alert(usr, "button malfunctions!")
+		to_chat(owner, span_warning("The button malfunctions!"))
 		return FALSE
 	return TRUE
 
