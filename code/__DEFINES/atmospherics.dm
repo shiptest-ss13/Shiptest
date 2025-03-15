@@ -1,5 +1,6 @@
 //ATMOS
 //stuff you should probably leave well alone!
+#define MOLES 1
 /// kPa*L/(K*mol)
 #define R_IDEAL_GAS_EQUATION 8.31
 /// kPa

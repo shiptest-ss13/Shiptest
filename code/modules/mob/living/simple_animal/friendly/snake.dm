@@ -51,7 +51,7 @@
 	var/list/mice = list()
 	for (var/HM in .)
 		//Yum a tasty mouse
-		if(istype(HM, /mob/living/simple_animal/mouse))
+		if(istype(HM, /mob/living/basic/mouse))
 			mice += HM
 		if(isliving(HM))
 			living_mobs += HM
@@ -63,7 +63,7 @@
 	return mice
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/AttackingTarget()
-	if(istype(target, /mob/living/simple_animal/mouse))
+	if(istype(target, /mob/living/basic/mouse))
 		visible_message("<span class='notice'>[name] consumes [target] in a single gulp!</span>", "<span class='notice'>You consume [target] in a single gulp!</span>")
 		QDEL_NULL(target)
 		adjustBruteLoss(-2)
@@ -209,7 +209,7 @@
 			else
 				say("I've already read that one.")
 				return
-	if(istype(O, /obj/item/reagent_containers/food/snacks/deadmouse))
+	if(istype(O, /obj/item/food/deadmouse))
 		if(speak_chance >= 75)
 			user.visible_message("[src] doesn't seem to want the [O]...")
 		else

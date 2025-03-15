@@ -239,7 +239,7 @@
 		target = scan(/obj/item/cigbutt)
 
 	if(!target && trash) //Search for dead mices.
-		target = scan(/obj/item/reagent_containers/food/snacks/deadmouse)
+		target = scan(/obj/item/food/deadmouse)
 
 	if(!target && auto_patrol) //Search for cleanables it can see.
 		if(mode == BOT_IDLE || mode == BOT_START_PATROL)
@@ -305,8 +305,8 @@
 
 	if(pests)
 		target_types += list(
-		/mob/living/simple_animal/hostile/cockroach,
-		/mob/living/simple_animal/mouse,
+		/mob/living/basic/cockroach,
+		/mob/living/basic/mouse,
 		)
 
 	if(drawn)
@@ -317,7 +317,7 @@
 	if(trash)
 		target_types += list(
 		/obj/item/trash,
-		/obj/item/reagent_containers/food/snacks/deadmouse,
+		/obj/item/food/deadmouse,
 		/obj/item/cigbutt,
 		)
 
@@ -344,7 +344,7 @@
 		playsound(src, 'sound/effects/spray2.ogg', 50, TRUE, -6)
 		A.acid_act(100, 10)
 		target = null
-	else if(istype(A, /mob/living/simple_animal/hostile/cockroach) || istype(A, /mob/living/simple_animal/mouse))
+	else if(istype(A, /mob/living/basic/cockroach) || istype(A, /mob/living/basic/mouse))
 		var/mob/living/simple_animal/M = target
 		if(!M.stat)
 			visible_message("<span class='danger'>[src] smashes [target] with its mop!</span>")
