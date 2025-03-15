@@ -45,6 +45,7 @@
 		/datum/faction/syndicate/cybersun
 	)
 	value = 3500
+	mission_limit = 1
 	setpiece_item = /obj/item/documents/nanotrasen
 
 /datum/mission/ruin/nanotrasen_docs/generate_mission_details()
@@ -63,6 +64,7 @@
 	desc = "A few months back, I lost my medal for \"Valiant Command Under Fire\". I've managed to track it down to a world in this system, and I'd like it retrieved."
 	faction = /datum/faction/nt
 	value = 2250
+	mission_limit = 1
 	setpiece_item = /obj/item/clothing/accessory/medal/gold/captain
 
 /datum/mission/ruin/brainchip
@@ -70,6 +72,7 @@
 	author = "Nanotrasen Recovery Program"
 	desc = "Retrieve an implant from cargo technician who has failed to report proper usage of the system as stipulated by contract."
 	faction = /datum/faction/nt
+	mission_limit = 1
 	setpiece_item = /mob/living/carbon/human
 
 /obj/effect/landmark/mission_poi/main/implanted

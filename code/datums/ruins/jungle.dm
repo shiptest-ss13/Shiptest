@@ -19,6 +19,7 @@
 	name = "Discrete Asset Recovery"
 	desc = "Look- long story short, I need this folder retrieved. You don't ask why, I make sure you get paid."
 	value = 2500
+	mission_limit = 1
 	mission_reward = list(
 		/obj/item/gun/energy/e_gun/old,
 		/obj/item/gun/energy/laser/retro,
@@ -34,6 +35,7 @@
 	name = "Re: Jerry"
 	desc = "THIS MOTHERFUCKING WEASEL BOY TOOK MY LIMITED EDITION RILENA PLUSH. THAT THING WAS FUCKING EXPENSIVE. I WANT IT BACK. I WANT HIM BLOWN UP. I WANT YOU TO DO IT."
 	author = "SHOOT HIM IN THE DICK"
+	mission_limit = 1
 	faction = /datum/faction/independent
 	mission_reward = /obj/item/poster/random_rilena
 	registered_type = /mob/living/simple_animal/hostile/human/ramzi
@@ -72,11 +74,16 @@
 		/datum/mission/ruin/icw_documents
 	)
 
+/datum/mission/ruin/signaled/kill/ramzi/airbase
+	mission_limit = 1
+	registered_type = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun/incendiary
+
 /datum/mission/ruin/icw_documents
 	name = "Syndicate Battleplans Retrieval"
 	desc = "Our Final Project for the ICW-Era Preservation is to find a new piece of ICW history and preserve it. My group has gotten word that Syndicate Battleplans can be found at this site. Please see if they're there, and retrieve them for us."
 	faction = /datum/faction/syndicate/suns
 	author = "HIS455 \"ICW-era Preservation\""
+	mission_limit = 1
 	setpiece_item = /obj/item/folder/documents/syndicate/red
 
 /datum/map_template/ruin/jungle/medtech

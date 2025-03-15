@@ -30,6 +30,7 @@
 			Go to the site, activate the drill, and complete the initial sampling run. \
 			Return the data that the drill produces for your reward."
 	value = 15000
+	mission_limit = 5
 	faction = list(
 		/datum/faction/nt,
 		/datum/faction/nt/ns_logi,

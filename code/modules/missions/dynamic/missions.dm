@@ -1,6 +1,7 @@
 /datum/mission/ruin/data_retrieval
 	name = "Data Recovery"
 	desc = "We would like %MISSION_REQUIRED retrieved from a site of interest."
+	mission_limit = 2
 	setpiece_item = list(
 		/obj/item/research_notes/loot,
 		/obj/item/documents
@@ -19,5 +20,6 @@
 /datum/mission/ruin/blackbox
 	name = "Blackbox Recovery"
 	desc = "Communication has recently been lost with this world. Investigate the site, engage hostiles at your discretion, and recover the %MISSION_REQUIRED so we can plan a course of action."
+	mission_limit = 2
 	setpiece_item = /obj/machinery/blackbox_recorder
 

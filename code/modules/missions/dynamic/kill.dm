@@ -21,6 +21,7 @@
 
 /datum/mission/ruin/signaled/kill/frontiersmen
 	value = 4500
+	mission_limit = 3
 	mission_reward = list(
 		/obj/item/gun/ballistic/automatic/pistol/mauler,
 		/obj/item/gun/ballistic/automatic/pistol/spitter
@@ -30,6 +31,7 @@
 
 /datum/mission/ruin/signaled/kill/ramzi
 	value = 3000
+	mission_limit = 3
 	mission_reward = list(
 		/obj/item/gun/ballistic/automatic/smg/cobra,
 		/obj/item/gun/ballistic/automatic/smg/sidewinder,
@@ -37,16 +39,15 @@
 	registered_type = /mob/living/simple_animal/hostile/human/ramzi
 	//setpiece_item = /obj/item/clothing/neck/dogtag/ramzi
 
-/datum/mission/ruin/signaled/kill/ramzi/airbase
-	registered_type = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun/incendiary
-
 /datum/mission/ruin/signaled/kill/syndi_docs
 	value = 5000
+	mission_limit = 1
 	faction = /datum/faction/syndicate
 	registered_type = /mob/living/simple_animal/hostile/human/nanotrasen/elite
 	setpiece_item = /obj/item/folder/documents/syndicate
 
 /datum/mission/ruin/signaled/kill/megafauna
+	mission_limit = 2
 
 /datum/mission/ruin/signaled/kill/megafauna/generate_mission_details()
 	registered_type = pick(
@@ -57,6 +58,7 @@
 
 /datum/mission/ruin/signaled/kill/elite
 	value = 6000
+	mission_limit = 2
 
 /datum/mission/ruin/signaled/kill/elite/generate_mission_details()
 	registered_type = pick(

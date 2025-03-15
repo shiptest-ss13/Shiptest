@@ -15,6 +15,7 @@
 /datum/mission/ruin/lost_axe
 	name = "Axe Retrieval"
 	desc = "I recently lost a heirloom axe - produced by a very fine Syebenaltch Guild. I was unable to retrieve it when my vessel crashed, and I was rescued. Please bring it home to me."
+	mission_limit = 1
 	setpiece_item = /obj/item/melee/axe/fire
 
 /datum/map_template/ruin/beachplanet/ancient
@@ -58,6 +59,7 @@
 	author = "Guy Raelman"
 	faction = /datum/faction/independent
 	value = 1750
+	mission_limit = 1
 	setpiece_item = /obj/item/storage/bottles/moonshine/sealed
 	specific_item = FALSE
 	required_count = 3

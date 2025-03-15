@@ -35,6 +35,7 @@
 	name = "dark signal investigation"
 	desc = "A hunting lodge located on an ice-world in system has recently ceased communication. We suspect they may have been assulted by pirates. If this is the case, and they have fallen, bring the Montague's corpse, so they may be buried properly."
 	value = 3000
+	mission_limit = 1
 	mission_reward = /obj/structure/fermenting_barrel/trickwine
 	faction = /datum/faction/srm
 	setpiece_item = /mob/living/carbon/human
@@ -54,6 +55,7 @@
 	name = "find our daughter!"
 	desc = "Our daughter was recently deployed out to the Frontier - and we haven't heard from her, or the Minutemen - or anyone in weeks! Please find her and make sure she's okay..."
 	value = 4000
+	mission_limit = 1
 	author = "Concerned Parents"
 	faction = /datum/faction/clip
 	mission_reward = /obj/item/gun/ballistic/automatic/smg/cm5/compact
