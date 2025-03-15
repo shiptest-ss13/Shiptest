@@ -1011,12 +1011,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/item/storage/guncase/m15{
-	mag_count = 3
-	},
 /obj/item/storage/guncase/m12{
 	mag_count = 3
 	},
+/obj/item/gun/energy/e_gun/iot,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "mJ" = (
@@ -4171,8 +4169,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/item/storage/toolbox/ammo/c556,
 /obj/item/storage/box/ammo/c22lr,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "WH" = (
