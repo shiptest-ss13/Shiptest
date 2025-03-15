@@ -50,6 +50,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"co" = (
+/obj/structure/cable,
+/obj/structure/salvageable/circuit_imprinter,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered)
 "cq" = (
 /obj/structure/curtain/cloth/grey,
 /obj/structure/cable{
@@ -109,11 +114,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"dO" = (
-/obj/structure/cable,
-/obj/structure/salvageable/circuit_imprinter,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered)
 "dX" = (
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -268,13 +268,6 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"mz" = (
-/obj/structure/cable,
-/obj/structure/salvageable/computer{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered)
 "mH" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -358,6 +351,13 @@
 /obj/item/multitool,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered)
+"pB" = (
+/obj/structure/cable,
+/obj/structure/salvageable/computer{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered)
 "pD" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -365,17 +365,6 @@
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard,
 /turf/open/floor/plating,
-/area/ruin/unpowered)
-"pM" = (
-/obj/item/stack/ore/salvage/scrapbluespace/five,
-/obj/item/stack/ore/iron,
-/obj/item/stack/ore/iron,
-/obj/item/stack/ore/iron,
-/obj/item/stack/ore/iron,
-/obj/item/stack/ore/iron,
-/obj/item/weldingtool/hugetank,
-/obj/structure/table,
-/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered)
 "qD" = (
 /turf/closed/wall,
@@ -488,6 +477,17 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
+/area/ruin/unpowered)
+"wA" = (
+/obj/item/stack/ore/salvage/scrapbluespace/five,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/stack/ore/hematite,
+/obj/item/weldingtool/hugetank,
+/obj/structure/table,
+/turf/open/floor/plasteel/tech,
 /area/ruin/unpowered)
 "wC" = (
 /obj/effect/turf_decal/weather/sand{
@@ -666,6 +666,17 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"EK" = (
+/obj/machinery/door/airlock/command/glass{
+	dir = 4;
+	name = "Bridge"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/carpet/nanoweave/orange,
+/area/ruin/unpowered)
 "EP" = (
 /obj/item/banner/engineering{
 	light_range = 2
@@ -806,17 +817,6 @@
 	dir = 1
 	},
 /turf/open/floor/engine/airless,
-/area/ruin/unpowered)
-"Kp" = (
-/obj/machinery/door/airlock/command/glass{
-	dir = 4;
-	name = "Bridge"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/unpowered)
 "KL" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
@@ -1892,7 +1892,7 @@ RD
 RD
 iZ
 fT
-Kp
+EK
 tB
 tB
 Ae
@@ -1970,7 +1970,7 @@ ni
 Qw
 yf
 cy
-dO
+co
 qD
 Fd
 QY
@@ -2004,7 +2004,7 @@ Rj
 JW
 Qw
 sA
-mz
+pB
 qD
 dM
 Ae
@@ -2070,7 +2070,7 @@ Ae
 qD
 qD
 hL
-pM
+wA
 sN
 qD
 qD

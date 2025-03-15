@@ -25,6 +25,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST|MOB_REPTILE
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
+	maxbodytemp = T20C + 80
 	var/static/list/edibles = typecacheof(list(/mob/living/simple_animal/butterfly, /mob/living/simple_animal/hostile/cockroach)) //list of atoms, however turfs won't affect AI, but will affect consumption.
 
 /mob/living/simple_animal/hostile/lizard/CanAttack(atom/the_target)//Can we actually attack a possible target?

@@ -41,6 +41,9 @@
 		if(prob(10))
 			carbon.emote("cough")
 
+/datum/weather/sandstorm/desert
+	weather_overlay = "sandstorm-sand"
+
 /datum/weather/sandstorm/rockplanet //for rock games ! !
 	name = "severe sandstorm"
 	desc = "My battery is low and it's getting dark."

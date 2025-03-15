@@ -836,7 +836,7 @@
 	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
 		return
 
-	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", DYNAMIC_WORLD_LIST_ALL, 60 SECONDS)
+	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", subtypesof(/datum/planet_type/), 60 SECONDS)
 	if(!planet_type)
 		return
 
@@ -865,18 +865,27 @@
 					ruin_target = select_from[selected_ruin]
 
 	var/list/position = list()
+	var/datum/overmap_star_system/selected_system //the star system we are
+
+	if(length(SSovermap.tracked_star_systems) > 1)
+		selected_system = tgui_input_list(usr, "Which star system do you want to spawn it in?", "Spawn Planet/Ruin", SSovermap.tracked_star_systems)
+	else
+		selected_system = SSovermap.tracked_star_systems[1]
+	if(!selected_system)
+		return //if selected_system didnt get selected, we nope out, this is very bad
+
 	if(tgui_alert(usr, "Where do you want to spawn your Planet/Ruin?", "Spawn Planet/Ruin", list("Pick a location", "Random")) == "Pick a location")
-		position["x"] = input(usr, "Choose your X coordinate", "Pick a location", rand(1,SSovermap.size)) as num
-		position["y"] = input(usr, "Choose your Y coordinate", "Pick a location", rand(1,SSovermap.size)) as num
-		if(locate(/datum/overmap) in SSovermap.overmap_container[position["x"]][position["y"]] && tgui_alert(usr, "There is already an overmap object in that location! Continue anyway?","Pick a location", list("Yes","No"), 10 SECONDS) != "Yes")
+		position["x"] = input(usr, "Choose your X coordinate", "Pick a location", rand(1,selected_system.size)) as num
+		position["y"] = input(usr, "Choose your Y coordinate", "Pick a location", rand(1,selected_system.size)) as num
+		if(locate(/datum/overmap) in selected_system.overmap_container[position["x"]][position["y"]] && tgui_alert(usr, "There is already an overmap object in that location! Continue anyway?","Pick a location", list("Yes","No"), 10 SECONDS) != "Yes")
 			return
 	else
-		position = SSovermap.get_unused_overmap_square()
+		position = selected_system.get_unused_overmap_square()
 
 	message_admins("Generating a new Planet with ruin: [ruin_target], this may take some time!")
 	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
 		return
-	var/datum/overmap/dynamic/encounter = new(position, FALSE)
+	var/datum/overmap/dynamic/encounter = new(position, selected_system, FALSE)
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
@@ -890,6 +899,105 @@
 	for(var/ruin in encounter.ruin_turfs)
 		var/turf/ruin_turf = encounter.ruin_turfs[ruin]
 		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
+
+/client/proc/spawn_overmap()
+	set name = "Spawn Overmap"
+	set category = "Fun"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	var/overmap_type = tgui_input_list(usr, "What type of Star System?", "Spawn Overmap", typesof(/datum/overmap_star_system/), 60 SECONDS)
+	var/datum/overmap_star_system/nova
+	if(!overmap_type)
+		return
+
+	if(tgui_alert(usr, "Edit spawn parameters?", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		var/inputed
+		nova = new overmap_type(FALSE)
+
+		inputed = input(usr, "Choose sector size", "Spawn Overmap", nova.size) as num
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		nova.size = inputed
+
+		inputed = tgui_input_list(usr, "Choose Map Generator", "Spawn Overmap", list(OVERMAP_GENERATOR_SOLAR, OVERMAP_GENERATOR_RANDOM, OVERMAP_GENERATOR_NONE))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		nova.generator_type = inputed
+
+		inputed = tgui_alert(usr, "Have an outpost generate immediatey in this sector?", "Spawn Overmap", list("Yes", "No"))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		switch(inputed)
+			if("Yes")
+				nova.has_outpost = TRUE
+			if("No")
+				nova.has_outpost = FALSE
+
+		inputed = tgui_alert(usr, "Should players be able to jump to this sector?", "Spawn Overmap", list("Yes", "No"))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		switch(inputed)
+			if("Yes")
+				nova.has_outpost = TRUE
+			if("No")
+				nova.has_outpost = FALSE
+
+	if(tgui_alert(usr, "Edit Overmap Colors?", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		if(!nova)
+			nova = new overmap_type(FALSE)
+
+		nova.override_object_colors = TRUE
+		var/inputed
+		inputed = input(usr, "Set Primary Color (Planets):", nova.primary_color) as color|null
+		if(inputed)
+			nova.primary_color = inputed
+		inputed = input(usr, "Set Secondary Color (Background):", nova.secondary_color) as color|null
+		if(inputed)
+			nova.secondary_color = inputed
+
+
+		inputed = tgui_alert(usr, "Set a primary hazard color (Dangerous Hazards)? If no then primary hazard color will be set to the color of the sun.", "Spawn Overmap", list("Yes", "No"), 10 SECONDS)
+		switch(inputed)
+			if("Yes")
+				inputed = input(usr, "Set Primary Hazard Color (Dangerous Hazards):", nova.hazard_primary_color) as color|null
+				if(inputed)
+					nova.hazard_primary_color = inputed
+			if("No")
+				nova.hazard_primary_color = null
+		inputed = input(usr, "Set Secondary Hazard Color (Less Dangerous Hazards):", nova.secondary_color) as color|null
+		if(inputed)
+			nova.hazard_secondary_color = inputed
+
+		inputed = input(usr, "Set Primary Structure Color (Ships):", nova.primary_structure_color) as color|null
+		if(inputed)
+			nova.primary_structure_color = inputed
+
+		inputed = input(usr, "Set Secondary Structure Color (Outposts):", nova.secondary_structure_color) as color|null
+		if(inputed)
+			nova.secondary_structure_color = inputed
+
+		inputed = tgui_input_list(usr, "Choose Background sprite", "Spawn Overmap", list("overmap", "overmap_dark", "overmap_black_bg"))
+		if(inputed)
+			nova.overmap_icon_state = inputed
+
+	if(tgui_alert(usr, "Give sector custom name? If no inherits from basetype or picks randomly", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		nova.name = input(usr, "Set Sector name:", "Spawn Overmap") as text|null
+
+	message_admins("Generating Star System type: [overmap_type], this may take some time!")
+	if(nova)
+		nova.setup_system()
+		nova = SSovermap.spawn_new_star_system(nova)
+	else
+		nova = SSovermap.spawn_new_star_system(overmap_type)
+	if(!nova)
+		message_admins("Failed to generate Star System [overmap_type]!")
+		return
+	message_admins(span_big("Overmap [nova.name] successfully generated!"))
 
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"
