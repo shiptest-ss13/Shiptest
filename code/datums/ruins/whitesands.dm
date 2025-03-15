@@ -47,6 +47,7 @@
 	desc = "My first mate found a Eoehoma document detailing a production plant for energy weapons in the sector, we'll pay well if you can recover and deliver 6 guns back to us."
 	faction = /datum/faction/independent
 	value = 2750
+	mission_limit = 1
 	setpiece_item = /obj/item/gun/energy/e_gun/e11
 	required_count = 6
 

@@ -122,6 +122,7 @@
 	return reward_string
 
 /datum/mission/proc/start_mission()
+	testing("starting [src][ADMIN_VV(src)].")
 	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "mission_started"))
 	SSmissions.inactive_ruin_missions -= src
 	active = TRUE

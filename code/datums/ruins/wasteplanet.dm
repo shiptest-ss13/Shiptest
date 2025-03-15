@@ -27,6 +27,7 @@
 	desc = "Lemme tell you a quick lil story - back when the ICW was winding down, I was stationed out in a waste world, ready to scramble out with the rest of my lance at a moment's notice. Word never came, and eventually, we all went home. But. I still have that longing to pilot in me. Can you go check these coords, and see if my suit, Lucky #2, is still there? If she is, I want her back."
 	author = "Bernard Lytton"
 	value = 15000
+	mission_limit = 1
 	setpiece_item = /obj/mecha/combat/gygax/dark
 
 /datum/map_template/ruin/wasteplanet/tradepost
@@ -72,6 +73,7 @@
 	desc = "Hello, on behalf of Cybersun Biodynamics, we are offering an active bounty on the return of the research notes of Dr. Margret Kithin, located in a former base of operations of which we lost contact with in recent years. Last we saw, the facility had been claimed by pirate elements, who seemed keen on desecrating the facility. We only care about our research being returned."
 	faction = /datum/faction/syndicate/cybersun
 	value = 8000
+	mission_limit = 1
 	setpiece_item = /obj/item/documents/syndicate/cybersun/biodynamics
 	required_count = 2
 
@@ -80,5 +82,7 @@
 	desc = "What do you do when a normal person wrongs you? You get revenge. What do you do when a fellow pirate wrongs you? You spent months tracking them, watching them from the shadows and even beneath their own fucking nose, alright? Her name is Kitt. I want her stupid bitch face buried ten feet in the ground and some proof, and the payment is yours. Call me spiteful, but I lost a good friend to her. Make her pay."
 	author = "Not Important"
 	faction = /datum/faction/independent
-	registered_type = /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered
 	value = 4000
+	mission_limit = 1
+	registered_type = /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered
+

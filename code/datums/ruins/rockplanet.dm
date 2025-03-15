@@ -42,6 +42,7 @@
 	name = "Assess and Retrieve Booze Supply"
 	desc = "One of the main suppliers of my store's moonshine has stopped shipping out our orders, and we still have several outstanding! Find our sealed crates of booze and bring them back."
 	author = "Tallymere Party Store"
+	mission_limit = 1
 	value = 2500
 
 /datum/map_template/ruin/rockplanet/mining_base

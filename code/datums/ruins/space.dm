@@ -43,6 +43,7 @@
 	desc = "There is a Singularity Generator Signature emitting from this location of space. This is incredibly dangerous. We are willing to pay top dollar to whoever can locate and secure this thing. God help us if a black hole opens up in the system."
 	author = "The Outpost"
 	value = 15000
+	mission_limit = 1
 	setpiece_item = /obj/machinery/the_singularitygen
 
 /datum/map_template/ruin/space/spacemall

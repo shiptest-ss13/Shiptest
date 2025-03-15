@@ -28,6 +28,7 @@ SUBSYSTEM_DEF(missions)
 						if(mission_to_start.type == mission_to_count.type)
 							existing_count++
 					if(existing_count >= mission_to_start.mission_limit)
+						//testing("skipping [mission_to_start][ADMIN_VV(mission_to_start)] because too many matching types exist already.")
 						break
 				mission_to_start.start_mission()
 				break
