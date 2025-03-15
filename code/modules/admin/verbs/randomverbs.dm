@@ -881,6 +881,7 @@
 	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
 		return
 	var/datum/overmap/dynamic/encounter = new(position, FALSE)
+	message_admins("new Planet token: [ADMIN_JMP(encounter.token)]. new Planet datum: [ADMIN_VV(encounter)]")
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)

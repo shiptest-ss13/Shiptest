@@ -73,6 +73,7 @@ const MissionsList = (props, context) => {
       faction,
       location,
       timeIssued,
+      actStr,
       duration,
       canTurnIn,
       validItems,
@@ -105,7 +106,7 @@ const MissionsList = (props, context) => {
               tooltip={'An informal system of claiming missions.'}
               onClick={() => act('claim', { mission: ref })}
             >
-              {'>Claim: ' + mission.claim}
+              {'>Claim: ' + claim}
             </Button>
             <Button
               icon={'arrow-up'}
@@ -113,7 +114,7 @@ const MissionsList = (props, context) => {
               disabled={!canTurnIn || !pad || !id_inserted}
               onClick={() => act('send', { mission: ref })}
             >
-              Turn in
+              {actStr}
             </Button>
           </LabeledList.Item>
         </LabeledList>
