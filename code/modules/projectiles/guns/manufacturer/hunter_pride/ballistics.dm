@@ -202,6 +202,17 @@ EMPTY_GUN_HELPER(revolver/detective)
 			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
 	return TRUE
 
+/obj/item/gun/ballistic/revolver/serpent
+	name = "\improper HP Serpent"
+	desc = "getest handjun ever ade"
+
+	default_ammo_type = /obj/item/ammo_box/magazine/serpent38
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/serpent38,
+	)
+	internal_magazine = FALSE
+	gate_loaded = TRUE
+
 ///pistols
 
 /obj/item/gun/ballistic/automatic/pistol/candor
