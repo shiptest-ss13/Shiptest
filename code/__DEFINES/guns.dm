@@ -81,7 +81,7 @@
 #define SHOTGUN_ZOOM 2
 #define SMG_ZOOM 2
 #define RIFLE_ZOOM 2
-#define DMR_ZOOM 4
+#define DMR_ZOOM 6
 
 //ads slowdown
 #define PISTOL_AIM_SLOWDOWN 0.1
