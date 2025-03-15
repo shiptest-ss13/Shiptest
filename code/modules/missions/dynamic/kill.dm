@@ -4,7 +4,7 @@
 	name = "%MISSION_TARGET Termination"
 	desc = "This is a bounty for the elimination of a %MISSION_TARGET. Return their %MISSION_ITEM to claim the reward."
 	setpiece_poi = /obj/effect/landmark/mission_poi/main/kill
-	setpiece_item = /obj/item/clothing/neck/dogtag
+	setpiece_item = /obj/item/clothing/neck/dogtag/gold
 	mission_main_signal = COMSIG_MOB_DEATH
 
 /datum/mission/ruin/signaled/kill/generate_mission_details()
@@ -26,7 +26,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/spitter
 	)
 	registered_type = /mob/living/simple_animal/hostile/human/frontier/ranged/officer
-	setpiece_item = /obj/item/clothing/neck/dogtag/frontier
+	//setpiece_item = /obj/item/clothing/neck/dogtag/frontier
 
 /datum/mission/ruin/signaled/kill/ramzi
 	value = 3000
@@ -35,7 +35,7 @@
 		/obj/item/gun/ballistic/automatic/smg/sidewinder,
 	)
 	registered_type = /mob/living/simple_animal/hostile/human/ramzi
-	setpiece_item = /obj/item/clothing/neck/dogtag/ramzi
+	//setpiece_item = /obj/item/clothing/neck/dogtag/ramzi
 
 /datum/mission/ruin/signaled/kill/ramzi/airbase
 	registered_type = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun/incendiary

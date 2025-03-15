@@ -3,6 +3,7 @@ SUBSYSTEM_DEF(missions)
 	flags = SS_NO_INIT
 	priority = FIRE_PRIORITY_MISSIONS
 	wait = 10 SECONDS
+	var/default_mission_count = 5
 	var/list/obj/effect/landmark/mission_poi/unallocated_pois = list()
 	var/list/datum/mission/ruin/inactive_ruin_missions = list()
 	var/list/datum/mission/ruin/active_ruin_missions = list()
@@ -15,7 +16,7 @@ SUBSYSTEM_DEF(missions)
 	return ..()
 
 /datum/controller/subsystem/missions/fire(resumed)
-	if(active_ruin_missions.len < 5 + (SSovermap.controlled_ships.len * CONFIG_GET(number/max_dynamic_missions)))
+	if(active_ruin_missions.len < default_mission_count + (SSovermap.controlled_ships.len * CONFIG_GET(number/max_dynamic_missions)))
 		for(var/i in 1 to inactive_ruin_missions.len)
 			//Make sure we dont ONLY take the one of the top.
 			if(prob(50))

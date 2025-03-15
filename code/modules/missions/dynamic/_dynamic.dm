@@ -79,9 +79,7 @@
 	. = ..()
 	var/time_remaining = max(dur_timer ? timeleft(dur_timer) : duration, 0)
 
-	var/act_str = ""
-	if(can_complete())
-		act_str = "Turn in"
+	var/act_str = get_act_string()
 
 	var/can_turn_in = FALSE
 	var/list/acceptable_items = list()
@@ -119,3 +117,12 @@
 		"validItems" = acceptable_items,
 		"claim" = dibs_string
 	)
+
+/datum/mission/ruin/proc/get_act_string()
+	return "Turn in"
+
+/datum/mission/ruin/vv_edit_var(var_name, var_value)
+	if(var_name == NAMEOF(src, required_item))
+		remove_bound(required_item)
+		set_bound(var_value)
+	return ..()

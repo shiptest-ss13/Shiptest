@@ -68,7 +68,7 @@
 /* Aurora wrote these */
 
 /datum/mission/ruin/multiple/notes
-	name = "recover a stash of Eoehoma weapons"
+	name = "recover research notes"
 	desc = "Hello, on behalf of Cybersun Biodynamics, we are offering an active bounty on the return of the research notes of Dr. Margret Kithin, located in a former base of operations of which we lost contact with in recent years. Last we saw, the facility had been claimed by pirate elements, who seemed keen on desecrating the facility. We only care about our research being returned."
 	faction = /datum/faction/syndicate/cybersun
 	value = 8000

@@ -67,11 +67,13 @@
 	icon_state = "main_thing"
 
 /obj/effect/landmark/mission_poi/guard
+	name = "mission guard spawner"
 	icon_state = "guard"
 
 /obj/effect/landmark/mission_poi/remover
+	name = "mission obj remover"
 
-/obj/effect/landmark/mission_poi/remover/use_poi(_type_to_spawn)
+/obj/effect/landmark/mission_poi/remover/use_poi(_type_to_spawn, datum/mission/mission)
 	if(!ispath(type_to_spawn))
 		type_to_spawn = _type_to_spawn
 	if(!ispath(type_to_spawn))
@@ -83,3 +85,17 @@
 				return
 	stack_trace("[src] didnt remove anything somehow")
 
+/obj/effect/landmark/mission_poi/relevent
+	name = "mission releventor"
+
+/obj/effect/landmark/mission_poi/relevent/use_poi(_type_to_spawn, datum/mission/mission)
+	if(!ispath(type_to_spawn))
+		type_to_spawn = _type_to_spawn
+	if(!ispath(type_to_spawn))
+		stack_trace("[src] didnt get passed a type.")
+	if(already_spawned) //Search for the item
+		for(var/atom/movable/item_in_poi as anything in get_turf(src))
+			if(istype(item_in_poi, type_to_spawn))
+				item_in_poi.AddComponent(/datum/component/mission_important, MISSION_IMPORTANCE_RELEVENT, mission)
+				return
+	stack_trace("[src] didnt mark anything somehow")

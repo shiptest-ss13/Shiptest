@@ -367,6 +367,10 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
 
+/obj/item/clothing/neck/dogtag/gold
+	icon_state = "dogtag_gold"
+	desc = "The characters are engraved with gold."
+
 /obj/item/clothing/neck/dogtag/frontier
 	name = "frontiersman dogtag"
 	desc = "A dogtag marked with the name and rank of a Frontiersmen pirate. You could turn this in to an outpost console contract for money."
