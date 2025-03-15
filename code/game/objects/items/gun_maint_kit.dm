@@ -12,7 +12,8 @@
 
 /obj/item/gun_maint_kit/examine(mob/user)
 	. = ..()
-	. += "it can be used [uses] more times."
+	. += "A warning label on the side notes that firearms should be fully unloaded before being cleaned, to avoid risk of accidental discharge."
+	. += "It can be used [uses] more times."
 
 /obj/item/gun_maint_kit/afterattack(atom/target, mob/user, proximity)
 	if(!proximity)
