@@ -1,6 +1,5 @@
 /datum/language/vox_pidgin
 	name = "Vox-Pidgin"
-	//Copy-paste of bay stuff basically
 	desc = "The common tongue of the various Vox ships making up the Shoal. It sounds like chaotic shrieking to everyone else."
 	speech_verb = "shrieks"
 	ask_verb = "creels"
