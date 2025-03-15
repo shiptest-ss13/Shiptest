@@ -68,7 +68,7 @@
 /datum/mission/ruin/brainchip
 	name = "Nanotrasen Asset Recovery Program"
 	author = "Nanotrasen Recovery Program"
-	desc = "Retrieve an implant from an employee who has failed to report proper usage of the system as stipulated by contract."
+	desc = "Retrieve an implant from cargo technician who has failed to report proper usage of the system as stipulated by contract."
 	faction = /datum/faction/nt
 	setpiece_item = /mob/living/carbon/human
 

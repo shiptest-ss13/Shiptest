@@ -22,6 +22,13 @@ SUBSYSTEM_DEF(missions)
 			if(prob(50))
 				//Has the pleasnt result of grabbing the most recent mission, idealy this means a freshly created planet
 				var/datum/mission/ruin/mission_to_start = inactive_ruin_missions[inactive_ruin_missions.len - (i - 1)]
+				if(mission_to_start.mission_limit)
+					var/existing_count = 0
+					for(var/datum/mission/ruin/mission_to_count in active_ruin_missions)
+						if(mission_to_start.type == mission_to_count.type)
+							existing_count++
+					if(existing_count >= mission_to_start.mission_limit)
+						break
 				mission_to_start.start_mission()
 				break
 

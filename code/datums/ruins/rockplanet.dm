@@ -18,7 +18,7 @@
 	id = "rockplanet_shippingdock"
 	suffix = "rockplanet_shippingdock.dmm"
 	ruin_mission_types = list(
-		/datum/mission/ruin/signaled/kill/frontiersmen,
+		/datum/mission/ruin/bitch_wife,
 	)
 
 /datum/mission/ruin/bitch_wife

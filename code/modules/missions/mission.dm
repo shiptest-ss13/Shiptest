@@ -10,7 +10,8 @@
 	/// The relative probability of this mission being selected. 0-weight missions are never selected.
 	var/weight = 0
 	/// How many missions of this type are allowed to be active. Blank or 0 for unlimited.
-	var/mission_limit
+	var/mission_limit = 1
+	#warn remind me that this should prob be emtpy by default
 
 	/// Only needed if you have multipe missions that use the same poi's on the map. Set at new.
 	var/mission_index
