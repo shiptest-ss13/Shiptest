@@ -3,6 +3,7 @@
 	duration = null
 	desc = "Find my pages. (Please report if you cannot locate pages)"
 	location_specific = TRUE
+	blackbox_prefix = "ruin_"
 	/// Which landmark we will search for in spawned_mission_pois of the planet
 	var/setpiece_poi = /obj/effect/landmark/mission_poi/main
 	/// Item that will be spawned at the setpiece_poi

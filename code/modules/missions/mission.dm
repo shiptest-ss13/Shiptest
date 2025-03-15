@@ -49,6 +49,8 @@
 	var/list/atom/movable/bound_atoms
 	var/bound_left_location = FALSE
 
+	var/blackbox_prefix = ""
+
 /datum/mission/New(_location, _mission_index)
 	//source_outpost = _outpost
 	//RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
@@ -84,7 +86,7 @@
 	return ..()
 
 /datum/mission/proc/on_vital_delete()
-	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "vital_delete"))
+	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", 1, list(name, "vital_delete"))
 	qdel(src)
 
 /datum/mission/proc/generate_mission_details()
@@ -123,11 +125,11 @@
 
 /datum/mission/proc/start_mission()
 	testing("starting [src][ADMIN_VV(src)].")
-	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "mission_started"))
+	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", 1, list(name, "accepted"))
 	SSmissions.inactive_ruin_missions -= src
 	active = TRUE
 	time_issued = station_time()
-	if(duration && !istype(src, /datum/mission/outpost))
+	if(duration && !acceptable)
 		dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 	SSmissions.active_ruin_missions += src
 
@@ -150,7 +152,7 @@
 	return
 
 /datum/mission/proc/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
-	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "accepted"))
+	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", 1, list(name, "accepted"))
 	accepted = TRUE
 	servant = acceptor
 	LAZYREMOVE(source_outpost.missions, src)
@@ -162,8 +164,8 @@
 
 /datum/mission/proc/turn_in(atom/movable/item_to_turn_in)
 	if(can_turn_in(item_to_turn_in))
-		SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "succeeded"))
-		SSblackbox.record_feedback("nested tally", "mission", value, list(name, "payout"))
+		SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", 1, list(name, "succeeded"))
+		SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", value, list(name, "payout"))
 		spawn_reward(item_to_turn_in.loc)
 		do_sparks(3, FALSE, get_turf(item_to_turn_in))
 		SSmissions.active_ruin_missions -= src

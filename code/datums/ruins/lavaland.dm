@@ -55,12 +55,12 @@
 		author = "Nanotrasen Recovery Program"
 		desc = "Nanotrasen Corporate has recently lost contact with a processing facility within the purview of this outpost. Nanotrasen is interested in the retrieval of sensitive assets located within the facility."
 	if(faction == /datum/faction/syndicate/cybersun)
-		name = "Cybersun Capture Program."
+		name = "Cybersun Capture Program"
 		author = "Cybersun Virtual Solutions"
 		desc = "Cybersun VS is extremely interested in the contents of a documents package located at a Nanotrasen facility recently hit by the Ramzi Clique. Retrieve it for us, and we'll pay handsomely."
 
 /datum/mission/ruin/captain_medal
-	name = "Recover War Medal."
+	name = "Recover War Medal"
 	desc = "A few months back, I lost my medal for \"Valiant Command Under Fire\". I've managed to track it down to a world in this system, and I'd like it retrieved."
 	faction = /datum/faction/nt
 	value = 2250

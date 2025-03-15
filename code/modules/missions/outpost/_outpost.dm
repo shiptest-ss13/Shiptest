@@ -22,8 +22,8 @@
 /datum/mission/outpost/turn_in()
 	if(QDELING(src))
 		return
-	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "succeeded"))
-	SSblackbox.record_feedback("nested tally", "mission", value, list(name, "payout"))
+	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", 1, list(name, "succeeded"))
+	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", value, list(name, "payout"))
 	var/remaining_value = value
 	var/payment = floor(value*servant.crew_share)
 	for(var/datum/weakref/account in servant.crew_bank_accounts)
@@ -36,7 +36,7 @@
 /datum/mission/outpost/proc/give_up()
 	if(QDELING(src))
 		return
-	SSblackbox.record_feedback("nested tally", "mission", 1, list(name, "abandoned"))
+	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", 1, list(name, "abandoned"))
 	qdel(src)
 
 /datum/mission/outpost/can_complete()
