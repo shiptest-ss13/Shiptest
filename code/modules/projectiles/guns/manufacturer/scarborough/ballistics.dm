@@ -264,6 +264,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
+	wear_rate = 0.5 //120 to malfunction, 360 to critical
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
 
