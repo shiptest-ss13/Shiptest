@@ -79,7 +79,7 @@
 	charge_power_consume = 100
 	charge_windup = 0
 
-/obj/mecha/combat/gygax/charger/nt/loaded/Initialize()
+/obj/mecha/combat/gygax/charger/mp/loaded/Initialize()
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser(src)
 	ME.attach(src)
