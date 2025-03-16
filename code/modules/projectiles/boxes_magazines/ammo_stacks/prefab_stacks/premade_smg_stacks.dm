@@ -50,7 +50,7 @@
 	desc = "A box of standard 4.6x30mm rubber ammo."
 	icon_state = "46x30mmbox-rubbershot"
 
-/obj/item/storage/box/ammo/c46x30mm/hp/PopulateContents()
+/obj/item/storage/box/ammo/c46x30mm/rubber/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/rubber = 4)
 	generate_items_inside(items_inside,src)
