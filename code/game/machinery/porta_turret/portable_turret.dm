@@ -458,7 +458,7 @@
 		power_change()
 		spark_system.start()	//creates some sparks because they look cool
 
-/obj/machinery/porta_turret/process()
+/obj/machinery/porta_turret/process(seconds_per_tick)
 	if(!on || (machine_stat & (NOPOWER|BROKEN)) || manual_control)
 		return PROCESS_KILL
 

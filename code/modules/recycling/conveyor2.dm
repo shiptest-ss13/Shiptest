@@ -130,7 +130,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 // machine process
 // move items to the target location
-/obj/machinery/conveyor/process()
+/obj/machinery/conveyor/process(seconds_per_tick)
 	if(machine_stat & (BROKEN | NOPOWER))
 		return
 
