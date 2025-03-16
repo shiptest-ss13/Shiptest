@@ -106,7 +106,7 @@
 		to_chat(user, "<span class='warning'>[src] needs to be firmly secured to the floor first!</span>")
 		return TRUE
 
-/obj/machinery/power/bluespace_miner/process()
+/obj/machinery/power/bluespace_miner/process(seconds_per_tick)
 	if(!materials?.silo || materials?.on_hold())
 		active = FALSE
 		return

@@ -22,7 +22,7 @@
 	var/mode = HEATER_MODE_STANDBY
 	var/setMode = "auto" // Anything other than "heat" or "cool" is considered auto.
 	var/targetTemperature = T20C
-	var/heatingPower = 40000
+	var/heatingPower = 20000
 	var/efficiency = 20000
 	var/temperatureTolerance = 1
 	var/settableTemperatureMedian = 30 + T0C
@@ -69,7 +69,7 @@
 	if(panel_open)
 		. += "[base_icon_state]-open"
 
-/obj/machinery/space_heater/process_atmos() //TODO figure out delta_time
+/obj/machinery/space_heater/process_atmos(seconds_per_tick) //TODO figure out seconds_per_tick
 	if(!on || !is_operational)
 		if (on) // If it's broken, turn it off too
 			on = FALSE
@@ -99,19 +99,19 @@
 			return
 
 		var/heat_capacity = env.heat_capacity()
-		var/requiredPower = abs(env.return_temperature() - targetTemperature) * heat_capacity
-		requiredPower = min(requiredPower, heatingPower)
+		var/requiredEnergy = abs(env.return_temperature() - targetTemperature) * heat_capacity
+		requiredEnergy = min(requiredEnergy, heatingPower * seconds_per_tick)
 
-		if(requiredPower < 1)
+		if(requiredEnergy < 1)
 			return
 
-		var/deltaTemperature = requiredPower / heat_capacity
+		var/deltaTemperature = requiredEnergy / heat_capacity
 		if(mode == HEATER_MODE_COOL)
 			deltaTemperature *= -1
 		if(deltaTemperature)
 			env.set_temperature(env.return_temperature() + deltaTemperature)
 			air_update_turf()
-		cell.use(requiredPower / efficiency)
+		cell.use(requiredEnergy / efficiency)
 	else
 		on = FALSE
 		update_appearance()
@@ -125,7 +125,7 @@
 	for(var/obj/item/stock_parts/capacitor/M in component_parts)
 		cap += M.rating
 
-	heatingPower = laser * 40000
+	heatingPower = laser * 20000
 
 	settableTemperatureRange = cap * 30
 	efficiency = (cap + 1) * 10000

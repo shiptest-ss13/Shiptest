@@ -1,7 +1,7 @@
 /// This divisor controls how fast body temperature changes to match the environment
 #define BODYTEMP_DIVISOR 8
 
-/mob/living/proc/Life(seconds, times_fired)
+/mob/living/proc/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	set waitfor = FALSE
 	set invisibility = 0
 

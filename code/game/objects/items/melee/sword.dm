@@ -13,6 +13,7 @@
 	sharpness = IS_SHARP
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
+	demolition_mod = 0.75
 
 /obj/item/melee/sword/ComponentInitialize()
 	. = ..()
@@ -58,12 +59,13 @@
 
 /obj/item/melee/sword/mass
 	name = "mass produced machete"
-	desc = "A middle ground between a machete and a short sword. A simple construction of stamped steel but its so cheap its hard to complain. Its right between being a one hand and two handed weapon"
+	desc = "A mass-produced machete made of stamped steel, with a faux-leather grip for ease of handling. Right between that of a one-handed and two-handed weapon."
 	icon_state = "machete"
 	base_icon_state = "machete"
 	force = 20
 	throwforce = 15
 	max_integrity = 50
+	supports_variations = VOX_VARIATION
 
 /obj/item/melee/sword/mass/ComponentInitialize()
 	. = ..()
@@ -202,7 +204,7 @@
 	START_PROCESSING(SSobj, src)
 	visible_message("<span class='warning'>[src] appears, balanced ever so perfectly on its hilt. This isn't ominous at all.</span>")
 
-/obj/item/melee/sword/supermatter/process()
+/obj/item/melee/sword/supermatter/process(seconds_per_tick)
 	if(balanced || throwing || ismob(src.loc) || isnull(src.loc))
 		return
 	if(!isturf(src.loc))

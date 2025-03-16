@@ -264,3 +264,11 @@
 	desc = "Contains a highly resistant digital rights managment..."
 	cost = 250
 	contains = list(/obj/item/computer_hardware/hard_drive/portable/installer/secureye)
+
+/datum/supply_pack/civilian/broadcast_camera
+	name = "Broadcast Camera Crate"
+	desc = "Lights, Camera, Action! This consumer-grade broadcasting camera automatically streams to entertainment monitors across the sector. Not rated for use in actual combat."
+	cost = 500
+	contains = list(/obj/item/bodycamera/broadcast_camera)
+	crate_name = "broadcast camera crate"
+	crate_type = /obj/structure/closet/crate
