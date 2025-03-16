@@ -69,3 +69,101 @@
   - rscadd: A considerable amount of new moth plushies may now be brought with you
       out of cryogenic storage.
   - bugfix: Minor typo on the lovers moth plushie.
+2025-03-06:
+  Erikafox:
+  - balance: buckshot now loses ap as it travels. starts at -20 ap
+  - rscadd: rations now tell you what food groups are in them so you can avoid eating
+      food that you might not want to eat
+  Ical92:
+  - bugfix: wooden stairs no longer absorb footstep noises
+  - bugfix: unloading machines no longer pick up ice
+  ritorizo:
+  - rscadd: Reagent scanner now give the temperature of the reagent.
+2025-03-07:
+  Erikafox, itseasytosee:
+  - rscadd: Ports Demolition Mod from tg
+  - rscadd: some items now deal more damage when attacking structures.
+  HelmCrab, Zevo:
+  - rscadd: Crates ordered from the outpost now arrive via conveyor to the hangar
+      of the ship that ordered them.
+  - rscadd: Indestructible outpost variants of conveyors and plastic flaps
+  - rscdel: Removed cargo delivery beacons
+2025-03-08:
+  FalloutFalcon:
+  - rscadd: 1 minute timer before planets delete
+  - refactor: planets now acctually delete themselves
+  - rscadd: SRM have a box again. no watching your crew rot to death cause you don't
+      come with a pen.
+  PositiveEntropy:
+  - imageadd: Adds new recolorable scarves, hoodies, sneakers, berets and beanies!
+      Simply select it on loadout.
+  - rscdel: Miscellaneous outfits that have barely seen any use.
+  Sadhorizon:
+  - rscadd: Added a Hardliners stamp.
+2025-03-09:
+  DIB-DOG:
+  - rscadd: Atlas Armory has been redesigned.
+  - balance: Atlas starting funds increased to 4000
+  Erikafox:
+  - rscadd: hardliner turrets
+  - rscadd: turrets now have a burst functionality and spread
+  - rscdel: Removed old syndicate turret types. the rusty onessss
+  - code_imp: some /ruin turret types for mapping.
+  - rscadd: Someone spilt the beans about a frontiersman fleet depot on a nearby beach
+      world. suckers..
+  - rscadd: the crew now gets a cut of any mission paycheck. Let them go out into
+      the outpost to spend their enrichmentbucks.
+  - bugfix: some walls now smooth properly on the cirrus, among other niceties
+  Ical92:
+  - bugfix: borg lights are no longer always visibly on
+  firebudgy:
+  - rscadd: Telescopic Riot Shields to Cargo
+  - balance: Strobe Shields no longer require unobtainable wall flashers.
+  - rscadd: ClothesMate units to Nanotrasen Ice and Indie Space outposts
+  - balance: Clothes are now cheaper
+  - rscadd: Various new items to the ClothesMate
+  generalthrax:
+  - balance: Changed C4 minimum timer from 10 to 0
+2025-03-10:
+  firebudgy:
+  - balance: The Talos-class now has Two Enforcers.
+2025-03-11:
+  FalloutFalcon, Donkie, optimumtact:
+  - code_imp: Process procs now properly utilize seconds_per_tick when implementing
+      rates, timers and probabilities, which paves way for easier subsystem tickrate
+      adjustments.
+  Ical92:
+  - bugfix: fills in missing autowiki details
+  - bugfix: fixed ghost access to duffels and backpacks
+  Zevotech:
+  - bugfix: Adjusted the cargo delivery chutes so that crates can no longer travel
+      backwards and clog the system
+  generalthrax:
+  - rscadd: Added specific parts boxes for T2 and T3 parts, 10 parts each
+  - balance: Reduced the price of T2 parts by 750 and the price of T3 parts by 1500
+2025-03-12:
+  FalloutFalcon:
+  - bugfix: walls can now be meleed again
+2025-03-14:
+  Apogee-dev:
+  - balance: Removed armor from Goliaths, gave them more health.
+  Erikafox:
+  - rscadd: ammunition counter attachment
+  - bugfix: guns now display less info on a basic examine.
+  Ratvarr:
+  - bugfix: T3 Matter Bin crate tells you the right amount of parts it gives you.
+  tyeagg:
+  - rscadd: different sounds for different explosion types
+2025-03-15:
+  kaylexis:
+  - bugfix: fixed decal on ngr_rock
+  thearbiber, generalthrax:
+  - rscadd: Added the ISV Rust Base, a crashlanded Ramzi Clique combat freighter to
+      rock worlds
+2025-03-16:
+  Gristlebee:
+  - rscadd: 515 Conversion kit
+  - bugfix: Loaded MP charger path
+  - spellcheck: Removed a few instances of Gygax
+  generalthrax:
+  - balance: Boosts .22lr's damage very slightly. AP is still abysmal dogshit.

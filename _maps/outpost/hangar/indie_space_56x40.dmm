@@ -132,11 +132,132 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"eN" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ir" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/closed/indestructible/reinforced,
+/area/hangar)
+"kQ" = (
+/obj/structure/railing/corner{
+	dir = 1;
+	layer = 4.1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"mA" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 10
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"nM" = (
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"nZ" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 6;
+	verted = -1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"pf" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"pP" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
+"sc" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/conveyor/auto/outpost{
+	dir = 1
+	},
+/obj/structure/disposaloutlet{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"xB" = (
+/obj/effect/turf_decal/industrial/loading,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"zU" = (
+/obj/machinery/disposal/deliveryChute{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"DO" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/chair,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"EQ" = (
+/obj/machinery/conveyor/auto/outpost,
+/obj/structure/plasticflaps/outpost,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"FW" = (
+/obj/structure/plasticflaps/outpost,
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "MN" = (
 /obj/machinery/door/airlock,
 /obj/effect/landmark/outpost/elevator_machine,
 /obj/structure/lattice/catwalk,
 /turf/open/floor/engine,
+/area/hangar)
+"Nm" = (
+/obj/effect/turf_decal/arrows{
+	dir = 8
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Qi" = (
 /obj/effect/landmark/outpost/elevator,
@@ -144,13 +265,50 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"RD" = (
+/obj/structure/sign/departments/cargo,
+/turf/closed/indestructible/reinforced,
+/area/hangar)
 "RV" = (
 /obj/effect/landmark/outpost/hangar_numbers,
 /turf/open/floor/hangar/plasteel,
 /area/hangar)
+"Ur" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Vs" = (
+/obj/structure/plasticflaps/outpost,
+/obj/machinery/conveyor/auto/outpost{
+	dir = 5;
+	verted = -1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"VK" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "Yz" = (
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Zi" = (
+/obj/machinery/conveyor/auto/outpost,
+/obj/effect/landmark/outpost/hangar_crate_spawner,
+/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -2087,8 +2245,8 @@ aV
 aV
 aV
 aH
-aA
-aN
+eN
+xB
 aP
 aM
 aM
@@ -2142,8 +2300,8 @@ aV
 aV
 aV
 aH
+VK
 aA
-aD
 aP
 aE
 aM
@@ -2197,8 +2355,8 @@ aV
 aV
 aV
 aH
-aA
-aN
+pP
+nM
 aP
 aM
 aM
@@ -2248,12 +2406,12 @@ aH
 (39,1,1) = {"
 aV
 aV
-aV
-aV
-aV
 aH
-aA
-aN
+aH
+aH
+aH
+VK
+Ur
 am
 aM
 aM
@@ -2303,12 +2461,12 @@ aH
 (40,1,1) = {"
 aV
 aV
-aV
-aV
-aV
 aH
-aA
-aN
+Vs
+EQ
+EQ
+mA
+pf
 aP
 aM
 aM
@@ -2358,12 +2516,12 @@ aH
 (41,1,1) = {"
 aV
 aV
-aV
-aV
-aV
 aH
-aA
-aN
+FW
+aH
+RD
+DO
+kQ
 aP
 aM
 aM
@@ -2413,12 +2571,12 @@ aH
 (42,1,1) = {"
 aV
 aV
-aV
-aV
-aV
 aH
-aA
-aD
+nZ
+sc
+aH
+nM
+Nm
 aP
 aE
 aM
@@ -2468,11 +2626,11 @@ aH
 (43,1,1) = {"
 aV
 aV
-aV
-aV
-aV
 aH
-aA
+aH
+ir
+aH
+nM
 aN
 aP
 aM
@@ -2523,11 +2681,11 @@ aH
 (44,1,1) = {"
 aV
 aV
-aV
-aV
-aV
 aH
-aA
+Zi
+zU
+aH
+nM
 aN
 aP
 aM
@@ -2578,11 +2736,11 @@ aH
 (45,1,1) = {"
 aV
 aV
-aV
-aV
-aV
 aH
-aA
+aH
+aH
+aH
+nM
 aN
 aP
 aM
