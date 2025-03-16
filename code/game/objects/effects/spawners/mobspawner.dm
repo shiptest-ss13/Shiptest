@@ -77,3 +77,11 @@
 	)
 	spawn_loot_count = 7
 	spawn_loot_double = TRUE
+
+/obj/effect/spawner/random/hermit
+	name = "hermit spawner"
+	loot = list(
+		/mob/living/simple_animal/hostile/human/hermit/survivor = 55,
+		/mob/living/simple_animal/hostile/human/hermit/ranged/hunter = 35,
+		/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger = 10
+	)
