@@ -5,10 +5,28 @@
 /datum/design/healthanalyzer
 	name = "Health Analyzer"
 	id = "healthanalyzer"
-	build_type =  PROTOLATHE
+	build_type =  PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
 	build_path = /obj/item/healthanalyzer
+	category = list("Medical Designs", "Imported")
+
+/datum/design/healthanalyzer_advanced
+	name = "Advanced Health Analyzer"
+	desc = "A hand-held body scanner able to distinguish vital signs of the subject with high accuracy."
+	id = "healthanalyzer_advanced"
+	build_path = /obj/item/healthanalyzer/advanced
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 2500, /datum/material/silver = 2000, /datum/material/gold = 1500)
 	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/reagentanalyzer
+	name = "Reagent Analyzer"
+	id = "reagentanalyzer"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
+	build_path = /obj/item/reagent_scanner
+	category = list("Medical Designs", "Imported")
 
 /datum/design/mmi
 	name = "Man-Machine Interface"
@@ -55,20 +73,29 @@
 /datum/design/xlarge_beaker
 	name = "X-large Beaker"
 	id = "xlarge_beaker"
-	build_type = PROTOLATHE
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-	materials = list(/datum/material/glass = 2500, /datum/material/plastic = 3000)
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/glass = 2500, /datum/material/plastic = 3000, /datum/material/silver = 1000)
 	build_path = /obj/item/reagent_containers/glass/beaker/plastic
-	category = list("Medical Designs")
+	category = list("Medical Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/meta_beaker
 	name = "Metamaterial Beaker"
 	id = "meta_beaker"
 	build_type = PROTOLATHE
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 	materials = list(/datum/material/glass = 2500, /datum/material/plastic = 3000, /datum/material/gold = 1000, /datum/material/titanium = 1000)
 	build_path = /obj/item/reagent_containers/glass/beaker/meta
 	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/seperatory_funnel
+	name = "Seperatory Funnel"
+	id = "sepetoryfunnel"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/glass = 2500)
+	build_path = /obj/item/reagent_containers/glass/filter
+	category = list("Medical Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/bluespacesyringe
 	name = "Bluespace Syringe"
@@ -109,15 +136,14 @@
 	build_path = /obj/item/extinguisher_refill
 	category = list("Medical Designs")
 
-
 /datum/design/crewpinpointer
 	name = "Crew Pinpointer"
 	desc = "Allows tracking of someone's location if their suit sensors are turned to tracking beacon."
 	id = "crewpinpointer"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1500, /datum/material/gold = 500)
 	build_path = /obj/item/pinpointer/crew
-	category = list("Medical Designs")
+	category = list("Medical Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/crewpinpointerprox
@@ -134,20 +160,20 @@
 	name = "Defibrillator"
 	desc = "A portable defibrillator, used for resuscitating recently deceased crew."
 	id = "defibrillator"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	build_path = /obj/item/defibrillator
 	materials = list(/datum/material/iron = 8000, /datum/material/glass = 4000, /datum/material/silver = 3000, /datum/material/gold = 1500)
-	category = list("Medical Designs")
+	category = list("Medical Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/defibrillator_mount
 	name = "Defibrillator Wall Mount"
 	desc = "A mounted frame for holding defibrillators, providing easy security."
 	id = "defibmountdefault"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000)
 	build_path = /obj/item/wallframe/defib_mount
-	category = list("Medical Designs")
+	category = list("Medical Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/defibrillator_mount_charging
@@ -186,10 +212,73 @@
 	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap."
 	id = "medigel"
 	build_path = /obj/item/reagent_containers/medigel
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 2500, /datum/material/glass = 500)
-	category = list("Medical Designs")
+	category = list("Medical Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/pillbottle
+	name = "Pill Bottle"
+	id = "pillbottle"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/plastic = 20, /datum/material/glass = 100)
+	build_path = /obj/item/storage/pill_bottle
+	category = list("Medical Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/scalpel
+	name = "Scalpel"
+	id = "scalpel"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/iron = 4000, /datum/material/glass = 1000, /datum/material/silver = 500)
+	build_path = /obj/item/scalpel
+	category = list("Tool Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/circular_saw
+	name = "Circular Saw"
+	id = "circular_saw"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 6000, /datum/material/silver = 2000)
+	build_path = /obj/item/circular_saw
+	category = list("Tool Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/retractor
+	name = "Retractor"
+	id = "retractor"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/iron = 6000, /datum/material/glass = 3000, /datum/material/silver = 1000)
+	build_path = /obj/item/retractor
+	category = list("Tool Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/cautery
+	name = "Cautery"
+	id = "cautery"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/iron = 2500, /datum/material/glass = 750, /datum/material/silver = 1000)
+	build_path = /obj/item/cautery
+	category = list("Tool Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/hemostat
+	name = "Hemostat"
+	id = "hemostat"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 2500, /datum/material/silver = 1000)
+	build_path = /obj/item/hemostat
+	category = list("Tool Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/surgicaldrill
+	name = "Surgical Drill"
+	id = "surgicaldrill"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 6000, /datum/material/silver = 2000)
+	build_path = /obj/item/surgicaldrill
+	category = list("Tool Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/laserscalpel
 	name = "Laser Scalpel"
@@ -225,21 +314,21 @@
 	name = "Medical Spray Bottle"
 	desc = "A traditional spray bottle used to generate a fine mist. Not to be confused with a medspray."
 	id = "med_spray_bottle"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 	materials = list(/datum/material/plastic = 2000)
 	build_path = /obj/item/reagent_containers/spray/medical
-	category = list("Medical Designs")
+	category = list("Medical Designs", "Imported")
 
 /datum/design/chem_pack
 	name = "Intravenous Medicine Bag"
 	desc = "A plastic pressure bag for IV administration of drugs."
 	id = "chem_pack"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 	materials = list(/datum/material/plastic = 2000)
 	build_path = /obj/item/reagent_containers/chem_pack
-	category = list("Medical Designs")
+	category = list("Medical Designs", "Imported")
 
 /datum/design/blood_pack
 	name = "Blood Pack"
@@ -507,11 +596,11 @@
 	name = "Basic Cybernetic Liver"
 	desc = "A basic cybernetic liver."
 	id = "cybernetic_liver"
-	build_type = PROTOLATHE | MECHFAB
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
 	construction_time = 40
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/liver/cybernetic
-	category = list("Misc", "Medical Designs")
+	category = list("Prosthetics", "Medical Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cybernetic_liver/tier2
@@ -533,11 +622,11 @@
 	name = "Basic Cybernetic Heart"
 	desc = "A basic cybernetic heart."
 	id = "cybernetic_heart"
-	build_type = PROTOLATHE | MECHFAB
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
 	construction_time = 40
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/heart/cybernetic
-	category = list("Misc", "Medical Designs")
+	category = list("Prosthetics", "Medical Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cybernetic_heart/tier2
@@ -559,11 +648,11 @@
 	name = "Basic Cybernetic Lungs"
 	desc = "A basic pair of cybernetic lungs."
 	id = "cybernetic_lungs"
-	build_type = PROTOLATHE | MECHFAB
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
 	construction_time = 40
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/lungs/cybernetic
-	category = list("Misc", "Medical Designs")
+	category = list("Prosthetics", "Medical Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cybernetic_lungs/tier2
@@ -585,11 +674,11 @@
 	name = "Basic Cybernetic Stomach"
 	desc = "A basic cybernetic stomach."
 	id = "cybernetic_stomach"
-	build_type = PROTOLATHE | MECHFAB
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
 	construction_time = 40
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/stomach/cybernetic
-	category = list("Misc", "Medical Designs")
+	category = list("Prosthetics", "Medical Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cybernetic_stomach/tier2
@@ -611,23 +700,95 @@
 	name = "Cybernetic Ears"
 	desc = "A pair of cybernetic ears."
 	id = "cybernetic_ears"
-	build_type = PROTOLATHE | MECHFAB
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
 	construction_time = 30
 	materials = list(/datum/material/iron = 250, /datum/material/glass = 400)
 	build_path = /obj/item/organ/ears/cybernetic
-	category = list("Misc", "Medical Designs")
+	category = list("Prosthetics", "Medical Designs", "Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cybernetic_ears_u
 	name = "Upgraded Cybernetic Ears"
 	desc = "A pair of upgraded cybernetic ears."
 	id = "cybernetic_ears_u"
-	build_type = PROTOLATHE | MECHFAB
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
 	construction_time = 40
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver = 500)
 	build_path = /obj/item/organ/ears/cybernetic/upgraded
-	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	category = list("Prosthetics", "Medical Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+// IPC Replacement Parts
+
+/datum/design/robotic_liver
+	name = "Substance Processor"
+	id = "robotic_liver"
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
+	build_path = /obj/item/organ/liver/cybernetic/upgraded/ipc
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000)
+	construction_time = 100
+	category = list("Misc", "Medical Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/robotic_eyes
+	name = "Basic Robotic Eyes"
+	id = "robotic_eyes"
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
+	build_path = /obj/item/organ/eyes/robotic
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 2000)
+	construction_time = 100
+	category = list("Misc", "Medical Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/robotic_tongue
+	name = "Robotic Voicebox"
+	id = "robotic_tongue"
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
+	build_path = /obj/item/organ/tongue/robot
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000)
+	construction_time = 100
+	category = list("Misc", "Medical Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/robotic_heart
+	name = "Coolant Pump"
+	id = "robotic_heart"
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
+	build_path = /obj/item/organ/heart/cybernetic/ipc
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000, /datum/material/silver = 500)
+	construction_time = 100
+	category = list("Misc", "Medical Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/robotic_stomach
+	name = "Micro-cell"
+	id = "robotic_stomach"
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
+	build_path = /obj/item/organ/stomach/cell
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000, /datum/material/plasma = 200)
+	construction_time = 100
+	category = list("Misc", "Medical Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/robotic_ears
+	name = "Auditory Sensors"
+	id = "robotic_ears"
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
+	build_path = /obj/item/organ/ears/robot
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000)
+	construction_time = 100
+	category = list("Misc", "Medical Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/power_cord
+	name = "Recharging Electronics"
+	id = "power_cord"
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
+	build_path = /obj/item/organ/cyberimp/arm/power_cord
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000)
+	construction_time = 100
+	category = list("Misc", "Medical Designs", "Imported")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /////////////////////
 ///Surgery Designs///
