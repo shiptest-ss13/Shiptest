@@ -202,7 +202,7 @@
 		/obj/effect/spawner/random/maintenance/four = 20,
 		/obj/structure/flora/ash/garden/waste = 300,
 		/obj/structure/flora/ash/glowshroom = 1800,
-		/obj/item/mine/pressure/explosive/shrapnel/live = 30,
+		/obj/item/mine/pressure/explosive/rusty/live = 30,
 		/obj/effect/spawner/random/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -248,7 +248,7 @@
 		/obj/effect/spawner/random/waste/atmos_can = 180,
 		/obj/effect/spawner/random/waste/atmos_can/rare = 1,
 		/obj/effect/spawner/random/waste/salvageable = 300,
-		/obj/item/mine/pressure/explosive/rad/live = 30,
+		/obj/item/mine/pressure/explosive/rusty/live = 30,
 		/obj/effect/spawner/random/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -308,7 +308,7 @@
 		/obj/effect/spawner/random/waste/salvageable = 400,
 		/obj/structure/flora/ash/garden/waste = 70,
 		/obj/structure/flora/ash/glowshroom = 400, //more common in caves
-		/obj/item/mine/pressure/explosive/rad/live = 10,
+		/obj/item/mine/pressure/explosive/rusty/live = 10,
 		/obj/effect/spawner/random/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -364,7 +364,7 @@
 		/obj/effect/spawner/random/maintenance/three = 100,
 		/obj/effect/spawner/random/maintenance/four = 200,
 		/obj/structure/flora/ash/glowshroom = 1800,
-		/obj/item/mine/pressure/explosive/rad/live = 30,
+		/obj/item/mine/pressure/explosive/rusty/live = 30,
 		/obj/effect/spawner/random/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
