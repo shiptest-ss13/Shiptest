@@ -2773,7 +2773,8 @@
 /area/ship/engineering/atmospherics)
 "wV" = (
 /obj/machinery/computer/helm{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-left"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -5458,7 +5459,8 @@
 /area/ship/hallway/central)
 "Vq" = (
 /obj/machinery/modular_computer/console/preset/command{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-right"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4

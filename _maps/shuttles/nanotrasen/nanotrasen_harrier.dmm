@@ -2068,7 +2068,8 @@
 /area/ship/hallway/central)
 "la" = (
 /obj/machinery/computer/crew{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-right"
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -4791,7 +4792,8 @@
 /area/ship/cargo)
 "Ao" = (
 /obj/machinery/modular_computer/console/preset/command{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-left"
 	},
 /obj/structure/cable{
 	icon_state = "2-4"

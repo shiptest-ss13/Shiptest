@@ -15,7 +15,8 @@
 	dir = 8
 	},
 /obj/machinery/modular_computer/console/preset/command{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -401,7 +402,8 @@
 /area/ship/bridge)
 "Vu" = (
 /obj/machinery/computer/helm{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-left"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
