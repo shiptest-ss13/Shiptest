@@ -321,13 +321,18 @@
 	},
 /obj/item/clothing/suit/toggle/solgov/terragov{
 	pixel_y = 7;
-	name = "\improper tattered Terragov coat"
+	name = "\improper tattered Terragov coat";
+	pixel_x = -6
 	},
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/under/solgov/formal/terragov{
+	pixel_x = 7;
+	pixel_y = 6
+	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
 "bA" = (
