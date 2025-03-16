@@ -435,6 +435,8 @@ SUBSYSTEM_DEF(overmap)
 			continue
 		for(var/job_slot in ship_datum.source_template.job_slots)
 			slot_count += ship_datum.source_template.job_slots[job_slot]
+		if(!slot_count)
+			continue
 		ship_percentages += ((length(ship_datum.manifest) / slot_count) * 100)
 		counted_ships++
 	if(ship_percentages && counted_ships)
