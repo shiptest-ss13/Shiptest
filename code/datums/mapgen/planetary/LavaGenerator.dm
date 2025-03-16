@@ -150,7 +150,7 @@
 		/obj/structure/flora/ausbushes/sparsegrass/hell = 35,
 		/obj/structure/flora/ausbushes/ywflowers/hell = 1,
 		/obj/structure/flora/ausbushes/grassybush/hell = 4,
-		/obj/structure/flora/firebush = 1
+		/obj/structure/flora/firebush = 1,
 		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 	flora_spawn_chance = 15
