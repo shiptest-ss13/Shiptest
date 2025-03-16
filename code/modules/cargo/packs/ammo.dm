@@ -302,7 +302,7 @@
 	name = "5.56 Caseless Ammo Box Crate"
 	desc = "Contains a 48-round 5.56mm caseless box for SolGov sidearms like the Pistole C."
 	contains = list(/obj/item/storage/box/ammo/c556mm)
-	cost = 168 //3.84 ammo efficiency at 20 damage
+	cost = 168 //5.7 ammo efficiency at 20 damage
 
 /datum/supply_pack/ammo/c556mmHITPap_ammo_box
 	name = "5.56 caseless AP Ammo Box Crate"
@@ -336,19 +336,19 @@
 	name = "8x50mm Ammo Box Crate"
 	desc = "Contains a 40-round 8x50mm ammo box for rifles such as the Illestren."
 	contains = list(/obj/item/storage/box/ammo/a8_50r)
-	cost = 291 //4.8 ammo efficiency at 35 damage
+	cost = 291 //4.8 ammo efficiency at 35 damage //TTD 37 damage 308 cr DMR buff
 
 /datum/supply_pack/ammo/c8x50mm_boxhp_boxcrate
 	name = "8x50mm Hollow Point Crate"
 	desc = "Contains a 40-round 8x50mm ammo box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/a8_50r/hp)
-	cost = 363
+	cost = 363 //TTD 385
 
 /datum/supply_pack/ammo/c8x50mm_tracbox
 	name = "8x50mm Tracker Crate"
 	desc = "Contains a 30-round 8x50mm ammo box loaded with tracker ammo, great for sustained hunts."
 	contains = list(/obj/item/storage/box/ammo/a8_50r/trac)
-	cost = 363
+	cost = 363 //TTD 385
 
 
 /* .300 */
@@ -357,13 +357,13 @@
 	name = ".300 Ammo Box Crate"
 	desc = "Contains a twenty-round .300 Magnum ammo box for sniper rifles such as the HP Scout."
 	contains = list(/obj/item/storage/box/ammo/a300)
-	cost = 200 //4 ammo efficiency at 40 damage
+	cost = 200 //4 ammo efficiency at 40 damage //TTD 50 damage 250 cr DMR buff
 
 /datum/supply_pack/ammo/a300_trac
 	name = ".300 Trac Ammo Box Crate"
 	desc = "Contains a ten-round .300 TRAC ammo box for sniper rifles such as the HP Scout."
 	contains = list(/obj/item/storage/box/ammo/a300/trac)
-	cost = 250
+	cost = 250 //TTD 312
 
 
 /* .308 */
@@ -372,19 +372,19 @@
 	name = "308 Ammo Box Crate"
 	desc = "Contains a thirty-round .308 box for DMRs such as the SsG-04 and CM-GAL-S."
 	contains = list(/obj/item/storage/box/ammo/a308)
-	cost = 187 //4.8 ammo efficiency at 30 damage
+	cost = 187 //4.8 ammo efficiency at 30 damage //TTD 35 damage 218 cr DMR buff
 
 /datum/supply_pack/ammo/a308_ap
 	name = "308 Armour Piercing Ammo Box Crate"
 	desc = "Contains a thirty-round .308 armour piercing box for DMRs such as the SsG-04 and CM-GAL-S."
 	contains = list(/obj/item/storage/box/ammo/a308/ap)
-	cost = 233
+	cost = 233 //TTD 272
 
 /datum/supply_pack/ammo/a308_hp
 	name = "308 Hollow Point Ammo Box Crate"
 	desc = "Contains a thirty-round .308 hollow point box for DMRs such as the SsG-04 and CM-GAL-S."
 	contains = list(/obj/item/storage/box/ammo/a308/hp)
-	cost = 233
+	cost = 233 //TTD 272
 
 /* 6.5 */
 
@@ -406,7 +406,7 @@
 	name = "8x58mm Ammo Box Crate"
 	desc = "Contains a twenty-round 8x58 ammo box for Solarian-manufactured sniper rifles, such as the SSG-69."
 	contains = list(/obj/item/storage/box/ammo/a858)
-	cost = 200 //4 ammo efficiency at 40 damage
+	cost = 200 //4 ammo efficiency at 40 damage //TTD 225
 
 /* .50 BMG */
 
