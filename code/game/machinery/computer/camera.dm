@@ -157,12 +157,6 @@
 			))
 	return data
 
-//This is the only way to refresh the UI, from what I've found
-/obj/machinery/computer/security/proc/ui_refresh(mob/user, datum/tgui/ui)
-	ui.close()
-	ui_interact(user, ui)
-	show_camera_static()
-
 /obj/machinery/computer/security/ui_act(action, params, ui)
 	. = ..()
 	if(.)
@@ -170,13 +164,13 @@
 
 	if(action == "set_network")
 		network = temp_network
-		ui_refresh(usr, ui)
+		update_static_data_for_all_viewers()
 
 	if(action == "set_temp_network")
 		temp_network = sanitize_filename(params["name"])
 
 	if(action == "refresh")
-		ui_refresh(usr, ui)
+		update_static_data_for_all_viewers()
 
 	if(action == "switch_camera")
 		var/c_tag = params["name"]

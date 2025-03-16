@@ -153,7 +153,7 @@
 	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
 		current_pack = new current_pack()
 		if(current_pack.faction)
-			current_pack.faction = new current_pack.faction()
+			current_pack.faction = SSfactions.faction_path_to_datum(current_pack.faction)
 		if(!current_pack.contains)
 			continue
 		supply_packs += current_pack
@@ -250,7 +250,7 @@
 		dock_requester.shuttle_port.docked, // source: controls the physical space the message originates from. the docking port is in the mapzone so we use it
 		FREQ_COMMON, // frequency: Common
 		v_speaker, // speaker: a weird dummy atom not used for much of import but which will cause runtimes if omitted or improperly initialized.
-		/datum/language/common, // language: Common
+		/datum/language/galactic_common, // language: Common
 		"[dock_requester.name] confirmed touchdown at [dock_requester.shuttle_port.docked].", // the message itself
 		list(SPAN_ROBOT), // message font
 		list(MODE_CUSTOM_SAY_EMOTE = "coldly states") // custom say verb, consistent with robots
@@ -276,7 +276,7 @@
 		message_src,
 		FREQ_COMMON,
 		v_speaker,
-		/datum/language/common,
+		/datum/language/galactic_common,
 		"[dock_requester.name] has departed from [src].",
 		list(SPAN_ROBOT),
 		list(MODE_CUSTOM_SAY_EMOTE = "coldly states")
@@ -362,7 +362,10 @@
 		if(!vlevel.is_in_bounds(num_mark))
 			continue
 		num_mark.write_number(hangar_num) // deletes the mark
-
+	for(var/obj/effect/landmark/outpost/hangar_crate_spawner/crate_spawner_mark in GLOB.outpost_landmarks)
+		if(!vlevel.is_in_bounds(crate_spawner_mark))
+			continue
+		h_dock.crate_spawner = crate_spawner_mark.create_spawner()
 	if(!shaft.shaft_elevator)
 		// if there's no elevator in this shaft, then delete the landmarks
 		for(var/obj/effect/landmark/outpost/mark as anything in GLOB.outpost_landmarks)

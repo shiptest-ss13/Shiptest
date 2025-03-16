@@ -30,3 +30,9 @@
 	id = "rockplanet_mining_base"
 	suffix = "rockplanet_mining_installation.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
+
+/datum/map_template/ruin/rockplanet/rust_base
+	name = "ISV Rust Base"
+	description = "A crashed Ramzi Clique vessel that has since become an isolated pirate outpost."
+	id = "rockplanet_rustbase"
+	suffix = "rockplanet_rustbase.dmm"
