@@ -221,7 +221,7 @@
 /datum/supply_pack/ammo/slugs
 	name = "Shotgun Slug Crate"
 	desc = "Contains a box of 32 slug shells for use in lethal persuasion."
-	cost = 220 //5.81 ammo efficiency at 40 damage
+	cost = 221 //5.6 ammo efficiency at 40 damage
 	contains = list(/obj/item/storage/box/ammo/a12g_slug)
 
 /datum/supply_pack/ammo/blank_shells
