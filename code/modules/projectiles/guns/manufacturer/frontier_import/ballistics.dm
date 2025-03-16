@@ -21,7 +21,7 @@
 	spread_unwielded = 50
 	recoil = 1
 	recoil_unwielded = 4
-	safety_multiplier = 2 //this means its twice as safe right?
+	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
 
 	fire_sound = 'sound/weapons/gun/pistol/mauler.ogg'
 
@@ -34,6 +34,22 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 44,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 19,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/mauler/ComponentInitialize()
 	. = ..()
@@ -169,6 +185,24 @@
 	wield_slowdown = SMG_SLOWDOWN
 	safety_multiplier = 2
 
+	refused_attachments = list(/obj/item/attachment/gun)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 46,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 40,
+			"y" = 17,
+		)
+	)
+
+
 /obj/item/ammo_box/magazine/c22lr_pounder_pan
 	name = "pan magazine (.22 LR)"
 	desc = "A 50-round pan magazine for the Pounder submachine gun."
@@ -219,6 +253,10 @@
 
 	manufacturer = MANUFACTURER_IMPORT
 	has_bipod = FALSE
+
+	refused_attachments = list(/obj/item/attachment)
+
+	slot_available = list()
 
 /obj/item/ammo_box/magazine/m12_shredder
 	name = "belt box (12g)"

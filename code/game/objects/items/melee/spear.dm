@@ -21,6 +21,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
 	species_exception = list(/datum/species/kepori)
 	var/icon_prefix = "spearglass"
+	demolition_mod = 0.75
 
 /obj/item/melee/spear/ComponentInitialize()
 	. = ..()

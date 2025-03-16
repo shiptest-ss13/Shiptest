@@ -8,6 +8,9 @@
 	var/hoodtype = /obj/item/clothing/head/hooded/winterhood //so the chaplain hoodie or other hoodies can override this
 	pocket_storage_component_path = FALSE
 
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
 	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
@@ -17,21 +20,29 @@
 
 /obj/item/clothing/suit/hooded/Initialize()
 	. = ..()
-	MakeHood()
+	if(!base_icon_state)
+		base_icon_state = icon_state
+	make_hood()
 
 /obj/item/clothing/suit/hooded/Destroy()
 	. = ..()
 	qdel(hood)
 	hood = null
 
-/obj/item/clothing/suit/hooded/proc/MakeHood()
+/obj/item/clothing/suit/hooded/reskin_obj(mob/M, change_name)
+	. = ..()
+	if(hood)
+		hood.icon_state = base_icon_state
+	return
+
+/obj/item/clothing/suit/hooded/proc/make_hood()
 	if(!hood)
 		var/obj/item/clothing/head/hooded/W = new hoodtype(src)
 		W.suit = src
 		hood = W
 
 /obj/item/clothing/suit/hooded/ui_action_click()
-	ToggleHood()
+	toggle_hood()
 
 /obj/item/clothing/suit/hooded/item_action_slot_check(slot, mob/user)
 	if(slot == ITEM_SLOT_OCLOTHING)
@@ -39,11 +50,10 @@
 
 /obj/item/clothing/suit/hooded/equipped(mob/user, slot)
 	if(slot != ITEM_SLOT_OCLOTHING)
-		RemoveHood()
+		remove_hood()
 	..()
 
-/obj/item/clothing/suit/hooded/proc/RemoveHood()
-	src.icon_state = "[initial(icon_state)]"
+/obj/item/clothing/suit/hooded/proc/remove_hood()
 	suittoggled = FALSE
 	if(hood)
 		if(ishuman(hood.loc))
@@ -55,12 +65,22 @@
 		for(var/X in actions)
 			var/datum/action/A = X
 			A.UpdateButtonIcon()
+	//Might need an update aperance here
+
+/obj/item/clothing/suit/hooded/update_appearance(updates)
+	if(suittoggled)
+		icon_state = "[base_icon_state]_t"
+	else
+		icon_state = base_icon_state
+	if(isobj(hood))
+		hood.icon_state = base_icon_state
+	. = ..()
 
 /obj/item/clothing/suit/hooded/dropped()
 	..()
-	RemoveHood()
+	remove_hood()
 
-/obj/item/clothing/suit/hooded/proc/ToggleHood()
+/obj/item/clothing/suit/hooded/proc/toggle_hood()
 	if(!suittoggled)
 		if(ishuman(src.loc))
 			var/mob/living/carbon/human/H = src.loc
@@ -72,13 +92,13 @@
 				return
 			else if(H.equip_to_slot_if_possible(hood,ITEM_SLOT_HEAD,0,0,1))
 				suittoggled = TRUE
-				src.icon_state = "[initial(icon_state)]_t"
 				H.update_inv_wear_suit()
 				for(var/X in actions)
 					var/datum/action/A = X
 					A.UpdateButtonIcon()
+				//Might need an update aperance here
 	else
-		RemoveHood()
+		remove_hood()
 
 /obj/item/clothing/head/hooded
 	var/obj/item/clothing/suit/hooded/suit
@@ -90,13 +110,13 @@
 /obj/item/clothing/head/hooded/dropped()
 	..()
 	if(suit)
-		suit.RemoveHood()
+		suit.remove_hood()
 
 /obj/item/clothing/head/hooded/equipped(mob/user, slot)
 	..()
 	if(slot != ITEM_SLOT_HEAD)
 		if(suit)
-			suit.RemoveHood()
+			suit.remove_hood()
 		else
 			qdel(src)
 
@@ -104,6 +124,8 @@
 /obj/item/clothing/suit/toggle
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
 
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
@@ -113,12 +135,13 @@
 	strip_delay = EQUIP_DELAY_COAT * 1.5
 
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
-	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		reskin_obj(user, TRUE)
-		return
+	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
+		return FALSE
+	if(unique_reskin && !current_skin)
+		reskin_obj(user)
 	else
 		suit_toggle(user)
-	..()
+	return TRUE
 
 /obj/item/clothing/suit/toggle/ui_action_click()
 	suit_toggle()

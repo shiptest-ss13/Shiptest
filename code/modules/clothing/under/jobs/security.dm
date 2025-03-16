@@ -278,7 +278,6 @@
 	icon_state = "camo"
 	item_state = "fatigues"
 	can_adjust = FALSE
-	allow_post_reskins = TRUE
 	unique_reskin = list("Urban" = "camo",
 		"Desert" = "camo_desert",
 		"Woodland" = "camo_woodland",

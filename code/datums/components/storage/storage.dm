@@ -239,7 +239,7 @@
 	if(!isitem(O) || !click_gather || SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE))
 		return FALSE
 	. = COMPONENT_NO_ATTACK
-	if(!access_check())
+	if(!access_check(M))
 		return FALSE
 	if(locked)
 		to_chat(M, "<span class='warning'>[parent] [locked_flavor]</span>")
@@ -319,7 +319,7 @@
 	var/atom/A = parent
 	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated())
 		return
-	if(!access_check())
+	if(!access_check(M))
 		return FALSE
 	if(locked)
 		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
@@ -438,7 +438,7 @@
 	var/atom/A = parent
 	var/atom/dump_destination = dest_object.get_dumping_location()
 	if(M.CanReach(A) && dump_destination && M.CanReach(dump_destination))
-		if(!access_check())
+		if(!access_check(M))
 			return FALSE
 		if(locked)
 			to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
@@ -541,10 +541,10 @@
 	if(!istype(M))
 		return FALSE
 	A.add_fingerprint(M)
-	if(locked && !force)
+	if(!force && locked)
 		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return FALSE
-	if(!access_check())
+	if(!force && !access_check(M))
 		return FALSE
 	if(force || M.CanReach(parent, view_only = TRUE))
 		if(use_sound && !silent)
@@ -574,7 +574,7 @@
 	if(real_location == I.loc)
 		return FALSE //Means the item is already in the storage item
 	if(!bypass_access)//For stuff like setting up outfits, setting up roundstart backpacks, etc.
-		if(!access_check())
+		if(!access_check(M))
 			return FALSE
 	if(locked)
 		if(M && !stop_messages)
@@ -774,7 +774,7 @@
 
 	if(A.loc == user)
 		. = COMPONENT_NO_ATTACK_HAND
-		if(!access_check())
+		if(!access_check(user))
 			return FALSE
 		if(locked)
 			to_chat(user, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
@@ -821,7 +821,7 @@
 /datum/component/storage/proc/on_alt_click_async(datum/source, mob/user)
 	if(!isliving(user) || !user.CanReach(parent) || user.incapacitated())
 		return
-	if(!access_check())
+	if(!access_check(user))
 		return FALSE
 	if(locked)
 		to_chat(user, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
@@ -864,26 +864,25 @@
 	return max_volume || AUTO_SCALE_STORAGE_VOLUME(max_w_class, max_combined_w_class)
 
 //checks for mob-related storage access conditions
-/datum/component/storage/proc/access_check(message = TRUE)
-	var/atom/ourparent = parent
-	var/datum/component/storage/otherstorage
+/datum/component/storage/proc/access_check(mob/user, message = TRUE)
+	var/atom/parent_atom = parent
 
-	//if we are inside another storage object, let's move up and check access there instead
-	if(istype(ourparent.loc, /obj/item/storage))
-		ourparent = ourparent.loc
-		//get our parent's storage component so we can check their access vars
-		otherstorage = ourparent.GetComponent(/datum/component/storage)
+	//if we are inside another storage object, check access there recursively
+	var/atom/container_atom = parent_atom.loc
+	var/datum/component/storage/container_storage = container_atom.GetComponent(/datum/component/storage)
+	if(container_storage && !container_storage.access_check(user))
+		return FALSE // If we can't access the storage we're in, we can't access us, message is handled by recursion
 
-	if(ismob(ourparent.loc))
-		var/mob/holder = ourparent.loc
+	if(ismob(container_atom))
+		var/mob/holder = container_atom
 
-		if(otherstorage? !otherstorage.carry_access : !carry_access)
+		if(!carry_access)
 			if(message)
-				to_chat(holder, span_warning( "[ourparent] is too cumbersome to open inhand, you're going to have to set it down!"))
+				to_chat(user, span_warning("[parent_atom] is too cumbersome to open inhand, you're going to have to set it down!"))
 			return FALSE
 
-		if((otherstorage? !otherstorage.worn_access : !worn_access) && !holder.held_items.Find(ourparent))
+		if(!worn_access && !holder.held_items.Find(parent_atom))
 			if(message)
-				to_chat(holder, span_warning( "Your arms aren't long enough to reach [ourparent] while it's on your back!"))
+				to_chat(user, span_warning("Your arms aren't long enough to reach [parent_atom] while it's on your back!"))
 			return FALSE
 	return TRUE

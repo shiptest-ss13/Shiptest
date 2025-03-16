@@ -23,7 +23,7 @@
 	var/stored_energy = 0
 	var/active = 0
 	var/locked = FALSE
-	var/drainratio = 1
+	var/drainratio = 0.5
 	var/powerproduction_drain = 0.001
 
 	var/bitcoinproduction_drain = 0.15
@@ -44,7 +44,7 @@
 	linked_techweb = null
 	return ..()
 
-/obj/machinery/power/rad_collector/process()
+/obj/machinery/power/rad_collector/process(seconds_per_tick)
 	if(!loaded_tank)
 		return
 	if(!bitcoinmining)
@@ -53,7 +53,7 @@
 			playsound(src, 'sound/machines/ding.ogg', 50, TRUE)
 			eject()
 		else
-			var/gasdrained = min(powerproduction_drain*drainratio,loaded_tank.air_contents.get_moles(GAS_PLASMA))
+			var/gasdrained = min(powerproduction_drain*drainratio*seconds_per_tick,loaded_tank.air_contents.get_moles(GAS_PLASMA))
 			loaded_tank.air_contents.adjust_moles(GAS_PLASMA, -gasdrained)
 			loaded_tank.air_contents.adjust_moles(GAS_TRITIUM, gasdrained)
 
@@ -65,7 +65,7 @@
 			playsound(src, 'sound/machines/ding.ogg', 50, TRUE)
 			eject()
 		else
-			var/gasdrained = bitcoinproduction_drain*drainratio
+			var/gasdrained = bitcoinproduction_drain*drainratio*seconds_per_tick
 			loaded_tank.air_contents.adjust_moles(GAS_TRITIUM, -gasdrained)
 			loaded_tank.air_contents.adjust_moles(GAS_O2, -gasdrained)
 			loaded_tank.air_contents.adjust_moles(GAS_CO2, gasdrained*2)
