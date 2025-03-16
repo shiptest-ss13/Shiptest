@@ -150,11 +150,7 @@
 		alter_integrity(-dam, shooter)
 
 /turf/closed/proc/get_item_damage(obj/item/used_item, t_min = min_dam)
-	var/damage = used_item.force
-	if(istype(used_item, /obj/item/clothing/gloves/gauntlets))
-		damage = 20
-	else
-		damage = damage * used_item.demolition_mod
+	var/damage = used_item.force * used_item.demolition_mod
 	// if dam is below t_min, then the hit has no effect
 	return (damage < t_min ? 0 : damage)
 
@@ -228,7 +224,7 @@
 /turf/closed/proc/try_destroy(obj/item/used_item, mob/user, turf/T)
 	var/total_damage = get_item_damage(used_item)
 	user.do_attack_animation(src)
-	if(total_damage >= 0)
+	if(total_damage <= 0)
 		to_chat(user, "<span class='warning'>[used_item] isn't strong enough to damage [src]!</span>")
 		playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 		return TRUE

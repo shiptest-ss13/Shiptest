@@ -1,4 +1,4 @@
-#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/scope, /obj/item/attachment/gun, /obj/item/attachment/sling)
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/scope, /obj/item/attachment/gun, /obj/item/attachment/sling, /obj/item/attachment/ammo_counter)
 #define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 //########### PISTOLS ###########//
@@ -587,8 +587,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang)
 	icon_state = "boomslang90"
 	item_state = "boomslang90"
 
-	zoom_amt = 3 //Long range, enough to see in front of you, but no tiles behind you.
-	zoom_out_amt = 0
+	zoom_amt = 6
+	zoom_out_amt = 2
 
 NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 
@@ -800,6 +800,8 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 	wield_slowdown = DMR_SLOWDOWN //dmrrrr
 	wield_delay = 0.85 SECONDS //above
 	zoomable = TRUE
+	zoom_amt = 6
+	zoom_out_amt = 2
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
 
 NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
