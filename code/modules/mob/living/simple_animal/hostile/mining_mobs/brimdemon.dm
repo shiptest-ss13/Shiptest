@@ -184,7 +184,7 @@
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
-/obj/effect/brimbeam/process()
+/obj/effect/brimbeam/process(seconds_per_tick)
 	for(var/mob/living/hit_mob in get_turf(src))
 		damage(hit_mob)
 
@@ -225,7 +225,7 @@
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
 
-/obj/item/ore_sensor/process(delta_time)
+/obj/item/ore_sensor/process(seconds_per_tick)
 	if(!COOLDOWN_FINISHED(src, ore_sensing_cooldown))
 		return
 	COOLDOWN_START(src, ore_sensing_cooldown, cooldown)
@@ -239,9 +239,9 @@
 	taste_description = "sulfurous flame"
 	can_synth = TRUE
 
-/datum/reagent/brimdust/on_mob_life(mob/living/carbon/carbon, delta_time, times_fired)
+/datum/reagent/brimdust/on_mob_life(mob/living/carbon/carbon, seconds_per_tick, times_fired)
 	. = ..()
-	carbon.adjustFireLoss((ispodperson(carbon) ? -1 : 1) * delta_time)
+	carbon.adjustFireLoss((ispodperson(carbon) ? -1 : 1) * seconds_per_tick)
 	carbon.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, carbon.get_body_temp_normal())
 
 /datum/reagent/brimdust/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
