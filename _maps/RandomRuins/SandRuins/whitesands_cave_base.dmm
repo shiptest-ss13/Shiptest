@@ -9,12 +9,10 @@
 	},
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/official/focus{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/whitesands/cave_base/engi)
-"al" = (
-/obj/structure/catwalk,
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/plating,
 /area/ruin/whitesands/cave_base/engi)
 "ar" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -54,16 +52,12 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base)
-"aR" = (
-/obj/structure/cable{
-	icon_state = "5-8"
+"bl" = (
+/obj/item/disk/holodisk/ruin/cave_base/one{
+	pixel_x = -3;
+	pixel_y = -6
 	},
-/obj/item/kirbyplants{
-	icon_state = "plant-24";
-	pixel_y = 10;
-	pixel_x = 1
-	},
-/turf/open/floor/concrete/slab_1/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
 "bu" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -108,11 +102,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/overmap_encounter/planetoid/cave/explored)
-"cc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/grenade/c4/cave_base,
-/turf/open/floor/concrete/slab_1/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
 "cd" = (
 /obj/structure/flora/ash/tall_shroom,
@@ -178,6 +167,32 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
+"do" = (
+/obj/machinery/porta_turret/ruin/cave_base{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/whitesands/cave_base/engi)
+"dq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/item/paper{
+	pixel_x = 11;
+	pixel_y = -5
+	},
+/obj/item/paper{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/ash/large{
+	pixel_y = 3;
+	pixel_x = -4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/whitesands/cave_base)
 "dB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
@@ -243,10 +258,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/disk/holodisk/ruin/cave_base/one{
-	pixel_x = -3;
-	pixel_y = -6
-	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
 "dP" = (
@@ -279,6 +290,14 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/cave_base)
+"ee" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/cave_base/engi)
 "eh" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
@@ -289,9 +308,8 @@
 	pixel_y = 7;
 	pixel_x = 2
 	},
-/obj/item/disk/holodisk/ruin/cave_base/six{
-	pixel_y = 2;
-	pixel_x = -7
+/obj/structure/sign/poster/rilena/ri{
+	pixel_x = 30
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/whitesands/cave_base)
@@ -320,6 +338,7 @@
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base)
 "em" = (
@@ -337,6 +356,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
+"ew" = (
+/turf/closed/wall/concrete,
+/area/ruin/whitesands/cave_base/engi)
 "eC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -437,6 +459,7 @@
 "fq" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base/engi)
 "fu" = (
@@ -461,6 +484,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base/engi)
 "fT" = (
@@ -540,16 +564,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base/engi)
-"gD" = (
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 5
-	},
-/obj/machinery/porta_turret/ruin/cave_base{
-	dir = 2
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/whitesands/cave_base)
 "gF" = (
 /obj/machinery/computer/telecomms/monitor{
 	icon_state = "computer-middle"
@@ -605,10 +619,6 @@
 	pixel_x = -6;
 	pixel_y = 8
 	},
-/obj/item/disk/holodisk/ruin/cave_base/four{
-	pixel_y = -7;
-	pixel_x = 4
-	},
 /obj/item/ammo_casing/p50,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
@@ -620,13 +630,20 @@
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
 "hy" = (
-/obj/structure/cable{
-	icon_state = "1-6"
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/ash/large{
+	pixel_y = -7;
+	pixel_x = -9
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/structure/chair{
+	dir = 4;
+	name = "Immolation Chair";
+	desc = "Your final duty. Sit in the chair until it is done."
 	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor3"
+	},
+/turf/open/floor/plating,
 /area/overmap_encounter/planetoid/cave/explored)
 "hz" = (
 /obj/effect/turf_decal/corner_techfloor_gray/full,
@@ -734,11 +751,27 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
-"iu" = (
-/obj/effect/decal/cleanable/glass,
+"im" = (
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/cave_base/engi)
+"iu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/chair{
+	pixel_y = -5;
+	pixel_x = 2
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/whitesands/cave_base/engi)
 "iF" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -791,18 +824,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
-"jG" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor6"
-	},
-/turf/open/floor/plating,
-/area/ruin/whitesands/cave_base/engi)
 "kk" = (
 /obj/structure/rack,
 /obj/item/towel{
 	pixel_y = 5
+	},
+/obj/item/toy/plush/flushed{
+	pixel_x = 6;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
@@ -813,6 +842,7 @@
 "kv" = (
 /obj/structure/salvageable/autolathe,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/cave_base)
 "kM" = (
@@ -915,14 +945,7 @@
 /area/ruin/whitesands/cave_base/engi)
 "mc" = (
 /obj/effect/decal/cleanable/glass,
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/item/kirbyplants{
-	icon_state = "plant-24";
-	pixel_y = 10;
-	pixel_x = 1
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
 "mg" = (
@@ -966,6 +989,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/cave_base)
+"mH" = (
+/obj/effect/gibspawner/generic/animal,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/overmap_encounter/planetoid/cave/explored)
 "mJ" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -981,17 +1009,21 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/cave_base/engi)
+"mN" = (
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/overmap_encounter/planetoid/cave/explored)
 "mP" = (
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
-"mQ" = (
-/obj/machinery/blackbox_recorder,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/whitesands/cave_base/engi)
 "mV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1010,6 +1042,11 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base/engi)
+"ng" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/grenade/c4/cave_base,
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/overmap_encounter/planetoid/cave/explored)
 "ni" = (
 /obj/structure/railing{
 	dir = 10;
@@ -1090,6 +1127,7 @@
 /obj/machinery/door/airlock/hatch,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base)
 "nT" = (
@@ -1122,12 +1160,12 @@
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/disk/holodisk/ruin/cave_base/four{
+	pixel_y = -7;
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
-"nW" = (
-/obj/effect/gibspawner/generic/animal,
-/turf/open/floor/plating/asteroid/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "od" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/whitesands/cave_base)
@@ -1161,6 +1199,17 @@
 	pixel_x = -6;
 	pixel_y = -10
 	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/cave_base)
+"oi" = (
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 6
+	},
+/obj/structure/flippedtable{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "oP" = (
@@ -1218,12 +1267,17 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
+"pi" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/whitesands/cave_base/engi)
 "pk" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "pp" = (
@@ -1258,30 +1312,9 @@
 	},
 /obj/item/stack/sheet/bone,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
-"pT" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/item/paper{
-	pixel_x = 11;
-	pixel_y = -5
-	},
-/obj/item/paper{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/paper{
-	pixel_x = -6;
-	pixel_y = 8
-	},
-/obj/effect/decal/cleanable/ash/large{
-	pixel_y = 3;
-	pixel_x = -4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/whitesands/cave_base)
 "pV" = (
 /obj/machinery/camera/cave_base{
 	dir = 10
@@ -1397,14 +1430,6 @@
 /obj/structure/flora/ash/fern,
 /turf/open/floor/plating/asteroid/whitesands/grass,
 /area/overmap_encounter/planetoid/cave/explored)
-"rl" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor3"
-	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/overmap_encounter/planetoid/cave/explored)
 "rx" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1427,10 +1452,6 @@
 	pixel_x = 3
 	},
 /obj/machinery/light/directional/south,
-/obj/item/disk/holodisk/ruin/cave_base/two{
-	pixel_y = -4;
-	pixel_x = -8
-	},
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/cave_base)
 "rL" = (
@@ -1464,6 +1485,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
+"sv" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor6"
+	},
+/turf/open/floor/plating,
+/area/ruin/whitesands/cave_base/engi)
 "sz" = (
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/item/light/tube/broken,
@@ -1523,6 +1552,14 @@
 	},
 /turf/open/water/acid/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
+"sX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor6"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/whitesands/cave_base/engi)
 "th" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
@@ -1566,23 +1603,15 @@
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/cave_base)
 "tM" = (
-/obj/machinery/blackbox_recorder,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/north,
-/obj/item/radio/intercom/directional/west,
+/obj/machinery/blackbox_recorder{
+	empty = 1
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base/engi)
-"tW" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/layer2{
-	dir = 1
-	},
-/obj/machinery/portable_atmospherics/canister/toxins{
-	icon_state = "blue";
-	name = "oxygen canister";
-	desc = "Oxygen. Necessary for human life."
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/newscaster/directional/south,
+"tU" = (
+/obj/structure/catwalk,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base/engi)
 "tX" = (
@@ -1647,6 +1676,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base/engi)
 "us" = (
@@ -1788,6 +1818,13 @@
 /obj/item/ammo_casing/p50/penetrator,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
+"vG" = (
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/cave_base/engi)
 "vP" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -1822,12 +1859,6 @@
 /obj/item/ammo_casing/spent/big_steel,
 /turf/open/floor/plating/asteroid/whitesands/grass,
 /area/overmap_encounter/planetoid/cave/explored)
-"wd" = (
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor3"
-	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/overmap_encounter/planetoid/cave/explored)
 "wh" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 4
@@ -1837,14 +1868,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
-"wl" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast{
-	health = 0;
-	stat = 4;
-	icon_state = "goliath_dead"
-	},
-/turf/open/floor/plating/asteroid/whitesands/grass,
 /area/overmap_encounter/planetoid/cave/explored)
 "wu" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
@@ -1859,14 +1882,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
-/area/ruin/whitesands/cave_base/engi)
-"wx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor6"
-	},
-/turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
 "wz" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
@@ -1893,12 +1908,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/generic,
-/obj/item/disk/holodisk/ruin/cave_base/five{
-	pixel_y = -2;
-	pixel_x = 4
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
+"wE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor3"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/overmap_encounter/planetoid/cave/explored)
 "wO" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast{
 	health = 0;
@@ -1967,6 +1986,19 @@
 /obj/structure/flora/ash/puce,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
+"xX" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/layer2{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/toxins{
+	icon_state = "blue";
+	name = "oxygen canister";
+	desc = "Oxygen. Necessary for human life."
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/newscaster/directional/south,
+/turf/open/floor/plating,
+/area/ruin/whitesands/cave_base/engi)
 "yd" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -2028,6 +2060,10 @@
 	pixel_x = -9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/disk/holodisk/ruin/cave_base/six{
+	pixel_y = 2;
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "yA" = (
@@ -2062,7 +2098,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base)
 "yD" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/item/kirbyplants{
+	icon_state = "plant-24";
+	pixel_y = 18;
+	pixel_x = -8
+	},
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
 "yE" = (
@@ -2141,6 +2181,17 @@
 "zv" = (
 /turf/open/floor/plating/asteroid/whitesands/grass,
 /area/overmap_encounter/planetoid/cave/explored)
+"zy" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-24";
+	pixel_y = 10;
+	pixel_x = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/overmap_encounter/planetoid/cave/explored)
 "zL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
@@ -2207,24 +2258,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
-"AD" = (
-/obj/machinery/porta_turret/ruin/cave_base{
-	dir = 2
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/effect/turf_decal/industrial/outline/orange,
-/turf/open/floor/concrete/slab_1/whitesands,
-/area/ruin/whitesands/cave_base)
-"AG" = (
-/obj/machinery/porta_turret/ruin/cave_base{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/whitesands/cave_base/engi)
 "AH" = (
 /obj/machinery/telecomms/relay{
 	pixel_y = 14;
@@ -2266,6 +2299,10 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
+/obj/item/paper{
+	pixel_x = -6;
+	pixel_y = 8
+	},
 /obj/effect/decal/cleanable/ash/large{
 	pixel_y = 3;
 	pixel_x = -4
@@ -2295,6 +2332,27 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
+"BD" = (
+/obj/machinery/syndicatebomb{
+	name = "low yield fusion bomb";
+	payload = /obj/item/bombcore/large;
+	desc = "Are you sure you want to do this, tovai?";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/ash/large{
+	pixel_y = -7;
+	pixel_x = -9
+	},
+/obj/effect/decal/cleanable/ash/large{
+	pixel_y = 8;
+	pixel_x = 4
+	},
+/obj/structure/sign/poster/retro/smile{
+	pixel_x = 28
+	},
+/turf/open/floor/plating,
+/area/overmap_encounter/planetoid/cave/explored)
 "BG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
@@ -2401,6 +2459,7 @@
 	icon_state = "2-5"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "Cp" = (
@@ -2418,7 +2477,7 @@
 /area/ruin/whitesands/cave_base)
 "Cy" = (
 /obj/item/clothing/head/papersack/smiley,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating,
 /area/ruin/whitesands/cave_base)
 "Cz" = (
 /obj/structure/cable/yellow{
@@ -2547,6 +2606,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/door/airlock/hatch,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base/engi)
 "Eh" = (
@@ -2604,6 +2664,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/whitesands/cave_base/engi)
+"Et" = (
+/obj/structure/catwalk,
+/obj/item/disk/holodisk/ruin/cave_base/five{
+	pixel_y = -2;
+	pixel_x = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/whitesands/cave_base/engi)
 "Ev" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -2616,10 +2684,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base/engi)
-"Ex" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/whitesands/cave_base/engi)
 "EG" = (
 /obj/item/shard{
 	pixel_y = -12;
@@ -2629,6 +2693,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
+"EJ" = (
+/obj/machinery/porta_turret/ruin/cave_base{
+	dir = 2
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/industrial/outline/orange,
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/cave_base)
 "EL" = (
 /turf/open/floor/plating/asteroid/whitesands/grass/dead,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2683,6 +2757,9 @@
 "Fk" = (
 /obj/structure/chair/bench/grey/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/cave_base)
 "Fo" = (
@@ -2845,6 +2922,20 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
+"GF" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/hatch,
+/obj/structure/hazard/electrical/wire_mess{
+	id = "ipcbase"
+	},
+/obj/effect/mapping_helpers/airlock/sealed,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/whitesands/cave_base)
 "GH" = (
 /obj/machinery/camera/cave_base{
 	dir = 6
@@ -2896,6 +2987,18 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base/engi)
+"He" = (
+/obj/effect/decal/cleanable/glass,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-24";
+	pixel_y = 10;
+	pixel_x = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/overmap_encounter/planetoid/cave/explored)
 "Hk" = (
 /obj/effect/turf_decal/corner_techfloor_gray/full{
 	dir = 8
@@ -2956,6 +3059,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base)
 "Hw" = (
@@ -2996,14 +3100,6 @@
 "Ib" = (
 /obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/plating/asteroid/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
-"Ij" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-24";
-	pixel_y = 18;
-	pixel_x = -8
-	},
-/turf/open/floor/concrete/slab_1/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
 "Im" = (
 /obj/machinery/washing_machine,
@@ -3048,22 +3144,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/cave_base)
-"IU" = (
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/toolbox/mechanical{
-	pixel_y = 8;
-	pixel_x = 2
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/whitesands/cave_base/engi)
 "IY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/chair{
-	pixel_y = -5;
-	pixel_x = 2
+/obj/structure/flippedtable{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
@@ -3075,6 +3159,15 @@
 	dir = 4
 	},
 /area/ruin/whitesands/cave_base)
+"Jm" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/whitesands/cave_base/engi)
+"Jo" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/overmap_encounter/planetoid/cave/explored)
 "JC" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 10
@@ -3142,20 +3235,6 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin/whitesands/cave_base)
-"Ke" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/hatch,
-/obj/structure/hazard/electrical/wire_mess{
-	id = "ipcbase"
-	},
-/obj/effect/mapping_helpers/airlock/sealed,
-/turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base)
 "Ko" = (
 /obj/item/melee/knife/butcher{
@@ -3257,12 +3336,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base/engi)
-"Ln" = (
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/overmap_encounter/planetoid/cave/explored)
 "Lz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
@@ -3284,11 +3357,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/whitesands/cave_base)
-"LD" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/whitesands/cave_base/engi)
 "LF" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -3299,6 +3367,7 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
 "LK" = (
@@ -3334,11 +3403,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/concrete,
 /area/ruin/whitesands/cave_base)
-"Mc" = (
-/obj/effect/gibspawner/generic/animal,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "Me" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -3375,15 +3439,18 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "Mi" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/effect/turf_decal/industrial/outline/orange,
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor2"
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/ruin/whitesands/cave_base)
+/area/overmap_encounter/planetoid/cave/explored)
+"Ml" = (
+/obj/machinery/blackbox_recorder{
+	empty = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/north,
+/obj/item/radio/intercom/directional/west,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/whitesands/cave_base/engi)
 "Mo" = (
 /obj/machinery/camera/cave_base{
 	dir = 1
@@ -3398,6 +3465,16 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
+/area/ruin/whitesands/cave_base)
+"MB" = (
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 5
+	},
+/obj/machinery/porta_turret/ruin/cave_base{
+	dir = 2
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "MP" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
@@ -3424,6 +3501,10 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base/engi)
+"Nf" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/mineral/random/whitesands,
+/area/overmap_encounter/planetoid/cave/explored)
 "Nj" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -3447,10 +3528,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base/engi)
-"Nn" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/concrete/slab_1/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "Nu" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 10
@@ -3491,13 +3568,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/whitesands/cave_base/engi)
-"NJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flippedtable{
-	dir = 8
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
 "Oa" = (
@@ -3565,10 +3635,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/cave_base/engi)
-"Oy" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "OG" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 10
@@ -3650,6 +3716,13 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
+"OV" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/decal/cleanable/glass,
+/obj/structure/barricade/wooden,
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/overmap_encounter/planetoid/cave/explored)
 "OW" = (
 /obj/machinery/telecomms/bus,
 /obj/machinery/light/small/directional/east,
@@ -3679,6 +3752,21 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
+"Pj" = (
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 6
+	},
+/obj/item/chair{
+	pixel_y = -5;
+	pixel_x = 2
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/pen/blue{
+	pixel_y = 6;
+	pixel_x = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/cave_base)
 "Pv" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/techfloor,
@@ -3686,26 +3774,6 @@
 /obj/structure/railing,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
-"PH" = (
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/whitesands/cave_base/engi)
-"PL" = (
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/whitesands/cave_base/engi)
 "PS" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 9
@@ -3733,6 +3801,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
+"Qe" = (
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 8;
+	pixel_x = 2
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/whitesands/cave_base/engi)
 "Qf" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
@@ -3753,6 +3832,12 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/whitesands/cave_base)
+"Qp" = (
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/overmap_encounter/planetoid/cave/explored)
 "Qq" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3834,6 +3919,11 @@
 /obj/structure/flora/ash/cap_shroom,
 /turf/open/floor/plating/asteroid/whitesands/grass/dead,
 /area/overmap_encounter/planetoid/cave/explored)
+"Ru" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/whitesands/cave_base/engi)
 "Rz" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast{
 	health = 0;
@@ -3852,9 +3942,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base/engi)
+"RF" = (
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor3"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/overmap_encounter/planetoid/cave/explored)
 "RM" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base/engi)
 "Sn" = (
@@ -3948,6 +4045,7 @@
 /area/ruin/whitesands/cave_base)
 "TF" = (
 /obj/machinery/door/airlock/hatch,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base/engi)
 "TO" = (
@@ -3997,6 +4095,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
+"Uf" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast{
+	health = 0;
+	stat = 4;
+	icon_state = "goliath_dead"
+	},
+/turf/open/floor/plating/asteroid/whitesands/grass,
+/area/overmap_encounter/planetoid/cave/explored)
 "Uh" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/cable/yellow{
@@ -4038,21 +4144,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clipboard{
 	pixel_y = 11;
-	pixel_x = 5
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/whitesands/cave_base)
-"UQ" = (
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 6
-	},
-/obj/item/chair{
-	pixel_y = -5;
-	pixel_x = 2
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/pen/blue{
-	pixel_y = 6;
 	pixel_x = 5
 	},
 /turf/open/floor/plasteel/dark,
@@ -4140,6 +4231,9 @@
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/fragile,
 /obj/item/clothing/head/helmet/space/fragile,
+/obj/structure/sign/poster/official/wtf_is_co2{
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "Vz" = (
@@ -4167,6 +4261,10 @@
 	pixel_x = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/melee/axe/sledgehammer{
+	pixel_y = -14;
+	name = "emergency access hammer"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base/engi)
 "VM" = (
@@ -4196,17 +4294,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
-"Wd" = (
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 6
-	},
-/obj/structure/flippedtable{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/radio/intercom/directional/east,
-/turf/open/floor/plasteel/dark,
-/area/ruin/whitesands/cave_base)
 "Wf" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -4239,6 +4326,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base/engi)
 "WD" = (
@@ -4289,12 +4377,15 @@
 /turf/open/floor/plating/asteroid/whitesands/grass,
 /area/overmap_encounter/planetoid/cave/explored)
 "Xe" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/effect/decal/cleanable/glass,
-/obj/structure/barricade/wooden,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/industrial/outline/orange,
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor2"
+	},
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/whitesands/cave_base)
 "Xf" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -4384,6 +4475,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/cave_base)
 "Yy" = (
@@ -4416,6 +4508,17 @@
 	},
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/whitesands/cave_base)
+"YN" = (
+/obj/effect/gibspawner/generic/animal,
+/turf/open/floor/plating/asteroid/whitesands,
+/area/overmap_encounter/planetoid/cave/explored)
+"YO" = (
+/obj/item/disk/holodisk/ruin/cave_base/two{
+	pixel_y = -4;
+	pixel_x = -8
+	},
+/turf/open/floor/plating/asteroid/whitesands/grass,
+/area/overmap_encounter/planetoid/cave/explored)
 "YV" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -4453,15 +4556,6 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
-"Zx" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 6
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/dark,
-/area/ruin/whitesands/cave_base/engi)
 "ZJ" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 9
@@ -4910,7 +5004,7 @@ CP
 vn
 Ch
 Xu
-PL
+im
 FO
 CP
 mh
@@ -4959,9 +5053,9 @@ zj
 sz
 lz
 eE
-iu
-yD
-yD
+mc
+Mi
+Mi
 LK
 CP
 TZ
@@ -4970,7 +5064,7 @@ Hb
 ei
 VN
 qm
-NJ
+IY
 dD
 CP
 CP
@@ -5017,7 +5111,7 @@ hN
 zj
 zj
 ig
-yD
+Mi
 VZ
 Ua
 qv
@@ -5029,8 +5123,8 @@ yd
 CP
 dE
 xq
-AG
-IY
+do
+iu
 Cf
 DY
 pE
@@ -5079,7 +5173,7 @@ zj
 ig
 jB
 EN
-yD
+Mi
 KZ
 LW
 Gd
@@ -5089,12 +5183,12 @@ CP
 CP
 QO
 eD
-LD
-Ex
+Jm
+pi
 wu
 CP
 MP
-fq
+Ru
 mm
 YX
 CP
@@ -5154,9 +5248,9 @@ Oa
 JN
 CP
 Er
-jG
+sv
 aN
-tW
+xX
 CP
 qR
 mh
@@ -5210,7 +5304,7 @@ vR
 Kw
 uV
 Ko
-Ex
+pi
 lN
 CP
 cY
@@ -5260,7 +5354,7 @@ mh
 mh
 mh
 Dz
-yD
+Mi
 tX
 tX
 tX
@@ -5320,10 +5414,10 @@ mh
 mh
 BG
 kQ
-yD
+Mi
 tX
 tX
-nW
+YN
 Ib
 Ev
 nT
@@ -5331,7 +5425,7 @@ uK
 vb
 wO
 wO
-PH
+vG
 CP
 fu
 Dp
@@ -5379,8 +5473,8 @@ mh
 mh
 mh
 vj
-yD
-yD
+Mi
+Mi
 tX
 zj
 zj
@@ -5439,8 +5533,8 @@ mh
 mh
 zL
 dB
-cc
-yD
+ng
+Mi
 mh
 CP
 CP
@@ -5499,7 +5593,7 @@ mh
 tX
 Dz
 zp
-yD
+Mi
 mh
 CP
 CP
@@ -5510,10 +5604,10 @@ mg
 gg
 Fa
 CP
+Ml
 tM
-mQ
 CP
-IU
+Qe
 ij
 kU
 CP
@@ -5558,13 +5652,13 @@ mh
 tX
 tX
 Dz
-yD
-yD
+Mi
+Mi
 mh
 CP
 Lm
 eZ
-al
+tU
 CP
 HZ
 sK
@@ -5618,8 +5712,8 @@ mh
 tX
 tX
 Dz
-iu
-yD
+mc
+Mi
 mh
 CP
 Di
@@ -5635,7 +5729,7 @@ Hr
 CP
 VM
 CN
-wx
+sX
 TF
 EG
 Bj
@@ -5679,11 +5773,11 @@ tX
 WR
 eC
 em
-yD
+Mi
 qR
 CP
 OW
-eZ
+Et
 eZ
 CP
 gB
@@ -5738,8 +5832,8 @@ qR
 mh
 tX
 Dz
-yD
-iu
+Mi
+mc
 dX
 CP
 CP
@@ -5750,8 +5844,8 @@ gF
 JO
 Oq
 vP
-CP
-mh
+ew
+hy
 CP
 LF
 Ol
@@ -5798,8 +5892,8 @@ mh
 mh
 tX
 Dz
-yD
-yD
+Mi
+Mi
 tv
 mh
 CP
@@ -5811,14 +5905,14 @@ Sn
 VL
 KL
 CP
-mh
+BD
 CP
 At
 DJ
 LN
 CP
-Zx
 pk
+ee
 CP
 CP
 mh
@@ -5858,7 +5952,7 @@ od
 od
 od
 Am
-yD
+Mi
 tX
 tX
 mh
@@ -5918,7 +6012,7 @@ Vv
 hL
 qj
 iY
-yD
+Mi
 tX
 tX
 mh
@@ -5970,15 +6064,15 @@ Dn
 FR
 Ty
 od
-gD
+MB
 EV
 Pe
-Ke
+GF
 Qq
 fX
 od
 Ob
-yD
+Mi
 tX
 tX
 mh
@@ -6038,8 +6132,8 @@ od
 od
 od
 Dz
-yD
-yD
+Mi
+Mi
 tX
 mh
 od
@@ -6098,8 +6192,8 @@ DX
 Fs
 ns
 UU
-yD
-yD
+Mi
+Mi
 tX
 qR
 od
@@ -6149,21 +6243,21 @@ Cp
 od
 us
 FF
+dq
 Bk
-pT
 yl
 XJ
 od
 od
 od
-yD
+Mi
 YV
-yD
-yD
+Mi
+Mi
 yH
-Nn
-Nn
-aR
+Jo
+Jo
+zy
 Zr
 tX
 HA
@@ -6209,21 +6303,21 @@ ZK
 Dj
 yh
 UE
-UQ
-Wd
+Pj
+oi
 wz
 Hs
 od
 mh
 mh
 tX
-yD
+Mi
 np
 qv
 iF
-Xe
-mc
-Ij
+OV
+He
+yD
 ib
 dC
 tX
@@ -6278,9 +6372,9 @@ od
 mh
 tX
 tX
-Mc
-yD
-yD
+mH
+Mi
+Mi
 Vz
 yZ
 tq
@@ -6412,7 +6506,7 @@ qR
 mh
 mh
 qZ
-zv
+YO
 mh
 mh
 mh
@@ -6803,7 +6897,7 @@ mh
 mh
 tX
 BZ
-rl
+wE
 Pv
 Wf
 zb
@@ -7041,7 +7135,7 @@ mh
 iP
 tX
 tX
-tX
+bl
 tX
 tX
 tX
@@ -7227,11 +7321,11 @@ tX
 mh
 mh
 tX
-wd
+RF
 mP
 tX
 od
-Mi
+Xe
 ib
 tX
 tX
@@ -7289,8 +7383,8 @@ mh
 tX
 tX
 tX
-Ln
-hy
+Qp
+mN
 pg
 pr
 tX
@@ -7411,7 +7505,7 @@ tX
 tX
 tX
 od
-AD
+EJ
 ib
 tX
 zv
@@ -7466,7 +7560,7 @@ tX
 mh
 mh
 mh
-Oy
+Nf
 hN
 tX
 tX
@@ -7658,7 +7752,7 @@ zv
 zv
 qZ
 vZ
-wl
+Uf
 qZ
 zv
 mh

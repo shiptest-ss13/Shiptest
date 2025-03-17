@@ -37,6 +37,12 @@
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	turret_flags = TURRET_FLAG_HOSTILE
 	turret_respects_id = FALSE
+	integrity_failure = 0
+	scan_range = 16
+	shot_delay = 50
+	burst_delay = 7
+	burst_size = 3
+
 
 //gut wrenching content
 
