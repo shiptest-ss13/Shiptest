@@ -111,6 +111,11 @@
 	icon_state = "stamp-ngr_ensign"
 	dye_color = DYE_QM
 
+/obj/item/stamp/hardliners
+	name = "Hardliners rubber stamp"
+	icon_state = "stamp-hardliners"
+	dye_color = DYE_SYNDICATE
+
 /obj/item/stamp/solgov
 	name = "SolGov rubber stamp"
 	icon_state = "stamp-solgov"

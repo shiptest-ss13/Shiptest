@@ -68,7 +68,7 @@
 		. += "<span class='notice'>The status display reads: Efficiency <b>[(heat_capacity/5000)*100]%</b>.</span>"
 		. += "<span class='notice'>Temperature range <b>[min_temperature]K - [max_temperature]K ([(T0C-min_temperature)*-1]C - [(T0C-max_temperature)*-1]C)</b>.</span>"
 
-/obj/machinery/atmospherics/components/unary/thermomachine/process_atmos()
+/obj/machinery/atmospherics/components/unary/thermomachine/process_atmos(seconds_per_tick)
 	..()
 	if(!on || !nodes[1])
 		return
