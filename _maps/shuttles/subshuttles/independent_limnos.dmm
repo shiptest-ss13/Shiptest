@@ -63,11 +63,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/button/door{
-	pixel_y = 23;
-	name = "Door Bolts";
-	id = "limnosdoor"
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/bridge)
 "q" = (
@@ -189,8 +184,7 @@
 "V" = (
 /obj/machinery/door/airlock/external{
 	dir = 4;
-	req_ship_access = 0;
-	id_tag = "limnosdoor"
+	req_ship_access = 0
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
