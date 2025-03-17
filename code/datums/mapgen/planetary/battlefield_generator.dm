@@ -98,6 +98,7 @@
 	)
 	flora_spawn_chance = 70
 	mob_spawn_chance = 0
+	feature_spawn_chance = 0
 
 /datum/biome/jungle/battlefield/dense
 	flora_spawn_chance = 80
