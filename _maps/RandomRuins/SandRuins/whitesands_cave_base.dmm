@@ -1371,7 +1371,6 @@
 	dir = 8
 	},
 /obj/machinery/space_heater,
-/obj/machinery/space_heater,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
@@ -2502,6 +2501,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
 "CP" = (
@@ -4318,9 +4318,6 @@
 /area/ruin/whitesands/cave_base/engi)
 "Wv" = (
 /obj/machinery/door/airlock/hatch{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
