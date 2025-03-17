@@ -11,6 +11,7 @@
 	wires.attach_assembly_init(/obj/item/assembly/prox_sensor/preset/cave_base)
 
 /obj/item/grenade/c4/cave_base
+	det_time = 5
 
 /obj/item/grenade/c4/cave_base/Initialize()
 	. = ..()
