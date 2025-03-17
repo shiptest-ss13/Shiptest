@@ -109,7 +109,7 @@
 	req_one_access = list(61,11)
 	},
 /turf/open/floor/circuit/green,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "aV" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/effect/turf_decal/techfloor{
@@ -152,7 +152,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "bu" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/effect/turf_decal/industrial/warning{
@@ -313,6 +313,9 @@
 	dir = 4
 	},
 /obj/structure/fluff/hedge,
+/obj/structure/railing/wood{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/space)
 "eU" = (
@@ -481,7 +484,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "ha" = (
 /obj/effect/turf_decal/corner/opaque/solgovgold/half{
 	dir = 8
@@ -670,7 +673,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "kI" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -695,7 +698,7 @@
 "kT" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters,
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "kU" = (
 /obj/effect/turf_decal/corner/opaque/solgovgold{
 	dir = 9
@@ -784,7 +787,7 @@
 	req_one_access = list(61,11)
 	},
 /turf/open/floor/circuit/green,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "mP" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
@@ -860,7 +863,7 @@
 	dir = 8
 	},
 /turf/open/floor/circuit,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "of" = (
 /turf/open/floor/plasteel/mono,
 /area/space)
@@ -890,7 +893,7 @@
 /obj/effect/landmark/start/station_engineer,
 /obj/structure/chair/office,
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "oL" = (
 /turf/open/floor/plasteel/patterned,
 /area/space)
@@ -968,7 +971,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "sc" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -1088,7 +1091,7 @@
 	},
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/circuit,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "tQ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/space)
@@ -1197,7 +1200,7 @@
 	network = "SolNet"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "ve" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/effect/turf_decal/industrial/warning{
@@ -1329,7 +1332,7 @@
 	dir = 4
 	},
 /turf/open/floor/circuit,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "xI" = (
 /obj/effect/turf_decal/industrial/stand_clear/red,
 /turf/open/floor/plasteel/mono,
@@ -1531,11 +1534,11 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "AB" = (
 /obj/machinery/autolathe,
 /turf/closed/wall/mineral/titanium,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "AH" = (
 /obj/effect/turf_decal/corner/opaque/solgovgold{
 	dir = 4
@@ -1560,7 +1563,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "Ba" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#E3994E";
@@ -1703,7 +1706,20 @@
 /obj/effect/turf_decal/techfloor/corner,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
+/area/ship/engineering/engine)
+"Cy" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 4
+	},
+/obj/structure/fluff/hedge{
+	layer = 3.1
+	},
+/obj/structure/railing/wood{
+	dir = 9
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
 "Cz" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -1718,7 +1734,7 @@
 	},
 /obj/machinery/disposal/bin,
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "Dy" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -1893,7 +1909,7 @@
 	pixel_y = -16
 	},
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "GF" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/solgov,
@@ -1942,7 +1958,7 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "Iq" = (
 /obj/structure/closet/secure_closet/medical2{
 	populate = 0
@@ -1978,7 +1994,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "IU" = (
 /obj/structure/fluff/hedge,
 /obj/effect/turf_decal/siding/wood/end{
@@ -2012,7 +2028,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "JJ" = (
 /obj/effect/turf_decal/solgov/all/center_left,
 /turf/open/floor/wood/walnut,
@@ -2034,7 +2050,7 @@
 	},
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "JP" = (
 /obj/structure/crate_shelf{
 	capacity = 2
@@ -2164,7 +2180,7 @@
 	network = "SolNet"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "Mh" = (
 /obj/structure/filingcabinet/double/grey{
 	dir = 1
@@ -2557,7 +2573,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "TE" = (
 /obj/effect/turf_decal/techfloor,
 /obj/structure/window/reinforced{
@@ -2593,7 +2609,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "Ut" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -2686,6 +2702,17 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
+"VX" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 4
+	},
+/obj/structure/fluff/hedge,
+/obj/structure/railing/wood{
+	dir = 10
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
 "Wn" = (
 /obj/machinery/atmospherics/components/binary/pump/layer4{
 	dir = 8;
@@ -2902,7 +2929,7 @@
 	dir = 1
 	},
 /turf/open/floor/circuit/red,
-/area/ship/engineering/engine)
+/area/ship/engineering)
 "ZX" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -3191,11 +3218,11 @@ kN
 kN
 gK
 kN
-AN
-jz
+Xm
+So
 uU
 AV
-AN
+Xm
 AN
 Cu
 kI
@@ -3228,12 +3255,12 @@ gK
 gK
 gK
 gK
-AN
+Xm
 Mg
 oH
 Gw
-jz
-jz
+So
+So
 Xm
 So
 Rb
@@ -3265,7 +3292,7 @@ kN
 kN
 gK
 kN
-AN
+Xm
 nZ
 IH
 Tk
@@ -3302,7 +3329,7 @@ kN
 kN
 gK
 kN
-AN
+Xm
 JN
 kz
 Ax
@@ -3339,7 +3366,7 @@ kN
 kN
 gK
 gK
-AN
+Xm
 xj
 bs
 kT
@@ -3376,11 +3403,11 @@ kN
 Jn
 Jn
 nb
-AN
-jz
+Xm
+So
 ZU
 tC
-jz
+So
 sa
 Zw
 PV
@@ -3413,10 +3440,10 @@ kN
 Jn
 JP
 Rn
-AN
-AN
-AN
-AN
+Xm
+Xm
+Xm
+Xm
 AB
 Dh
 tp
@@ -3454,10 +3481,10 @@ Jn
 Jb
 hY
 PF
-AN
-AN
+Xm
+Xm
 TS
-AN
+Xm
 Xm
 Xm
 Xm
@@ -3641,9 +3668,9 @@ cU
 FO
 Jn
 wW
+Cy
 eE
-eE
-eE
+VX
 gU
 Jn
 bB
