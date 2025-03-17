@@ -94,6 +94,7 @@
 	Initialize(arglist(args))
 
 /datum/overmap/Destroy(force)
+	SSovermap.overmap_objects -= src
 	current_overmap.overmap_objects -= src
 	if(current_docking_ticket)
 		QDEL_NULL(current_docking_ticket)
