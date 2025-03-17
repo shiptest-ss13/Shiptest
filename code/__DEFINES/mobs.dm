@@ -105,7 +105,6 @@
 #define SPECIES_VAMPIRE "vampire"
 #define SPECIES_VOX "vox"
 #define SPECIES_ZOMBIE "zombie"
-#define SPECIES_GOOFZOMBIE "krokodil_zombie"
 #define SPECIES_XENOMORPH "xenomorph"
 
 #define DIGITIGRADE_NEVER 0
@@ -356,6 +355,13 @@
 #define ELZUOSE_CHARGE_FACTOR (0.05 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
 #define REAGENTS_METABOLISM 0.4 //How many units of reagent are consumed per tick, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4) // By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
+///Greater numbers mean that less alcohol has greater intoxication potential
+#define ALCOHOL_THRESHOLD_MODIFIER 1
+///The rate at which alcohol affects you
+#define ALCOHOL_RATE 0.005
+///The exponent applied to boozepwr to make higher volume alcohol at least a little bit damaging to the liver
+#define ALCOHOL_EXPONENT 1.6
+#define ETHANOL_METABOLISM 0.5 * REAGENTS_METABOLISM
 
 // Eye protection
 #define FLASH_PROTECTION_SENSITIVE -1
@@ -437,3 +443,6 @@
 
 //Saves a proc call, life is suffering. If who has no targets_from var, we assume it's just who
 #define GET_TARGETS_FROM(who) (who.targets_from ? who.get_targets_from() : who)
+
+/// In dynamic human icon gen we don't replace the held item.
+#define NO_REPLACE 0

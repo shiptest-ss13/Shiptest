@@ -220,7 +220,7 @@
 	var/caller_name = "Unknown" //Caller name
 	var/image/caller_image
 	var/list/entries = list()
-	var/language = /datum/language/common //Initial language, can be changed by HOLORECORD_LANGUAGE entries
+	var/language = /datum/language/galactic_common //Initial language, can be changed by HOLORECORD_LANGUAGE entries
 
 /datum/holorecord/proc/set_caller_image(mob/user)
 	var/olddir = user.dir
@@ -324,7 +324,6 @@
 		if(outfit_type)
 			mannequin.equipOutfit(outfit_type,TRUE)
 		mannequin.setDir(SOUTH)
-		COMPILE_OVERLAYS(mannequin)
 		. = image(mannequin)
 		unset_busy_human_dummy("HOLODISK_PRESET")
 
@@ -338,14 +337,13 @@
 	SAY He wanted to get to the other side!
 	SOUND clownstep
 	DELAY 30
-	LANGUAGE /datum/language/narsie
 	SAY Helped him get there!
 	DELAY 10
 	SAY ALSO IM SECRETLY A GORILLA
 	DELAY 10
 	PRESET /datum/preset_holoimage/gorilla
 	NAME Gorilla
-	LANGUAGE /datum/language/common
+	LANGUAGE /datum/language/galactic_common
 	SAY OOGA
 	DELAY 20"}
 
@@ -365,7 +363,7 @@
 	outfit_type = /datum/outfit/job/captain
 
 /datum/preset_holoimage/nanotrasenprivatesecurity
-	outfit_type = /datum/outfit/nanotrasensoldiercorpse2
+	outfit_type = /datum/outfit/vigilitas/trooper
 
 /datum/preset_holoimage/gorilla
 	nonhuman_mobtype = /mob/living/simple_animal/hostile/gorilla
@@ -450,11 +448,10 @@
 	SAY Oh, shit!
 	DELAY 10
 	PRESET /datum/preset_holoimage/engineer/atmos/rig
-	LANGUAGE /datum/language/narsie
 	NAME Unknown
 	SAY RISE, MY LORD!!
 	DELAY 10
-	LANGUAGE /datum/language/common
+	LANGUAGE /datum/language/galactic_common
 	NAME Plastic
 	PRESET /datum/preset_holoimage/engineer/rig
 	SAY Fuck, fuck, fuck!

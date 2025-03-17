@@ -106,12 +106,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/lavaland/factory/lobby)
-"bl" = (
-/obj/effect/turf_decal/trimline/opaque/beige/warning,
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/warehouse)
 "bm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
@@ -312,6 +306,24 @@
 "cU" = (
 /obj/structure/flora/rock/hell,
 /turf/open/floor/plating/asteroid/purple/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"cW" = (
+/obj/effect/turf_decal/corner/opaque/ntblue{
+	dir = 9
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mob_spawn/human/corpse/vigilitas_private,
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/floor/plasteel/white/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "cX" = (
 /obj/structure/cable/yellow{
@@ -605,10 +617,6 @@
 "fE" = (
 /turf/template_noop,
 /area/template_noop)
-"ga" = (
-/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/cave/explored)
 "gc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/stand_clear{
@@ -628,11 +636,6 @@
 /obj/structure/flora/tree/dead/barren,
 /turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
-"gj" = (
-/obj/item/radio/intercom/directional/north,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
-/turf/open/floor/carpet/nanoweave,
-/area/ruin/lavaland/factory/manager_office)
 "gk" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/turf_decal/corner/opaque/ntblue,
@@ -811,13 +814,6 @@
 /obj/item/light/tube/broken,
 /turf/open/floor/concrete/slab_1/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"ia" = (
-/obj/effect/turf_decal/industrial/stand_clear{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/lavaland/factory/manager_office)
 "ih" = (
 /obj/structure/frame/machine,
 /obj/item/stack/ore/salvage/scrapmetal{
@@ -941,6 +937,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
+"jt" = (
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/lavaland/factory/manager_office)
 "ju" = (
 /obj/effect/turf_decal/corner/opaque/lime{
 	dir = 5
@@ -1378,16 +1381,6 @@
 	},
 /turf/open/floor/plating/rust/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"nA" = (
-/obj/effect/turf_decal/trimline/opaque/lime/warning,
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
-/obj/effect/decal/cleanable/blood{
-	icon_state = "trails_2";
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/dorms)
 "nD" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable/yellow{
@@ -1395,13 +1388,6 @@
 	},
 /turf/open/floor/plating/rust/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"nG" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
-/turf/open/floor/plasteel/mono,
-/area/ruin/lavaland/factory/warehouse)
 "nH" = (
 /obj/structure/flippedtable,
 /obj/item/gun/energy/e_gun,
@@ -1717,6 +1703,16 @@
 	},
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
+"pQ" = (
+/obj/effect/turf_decal/trimline/opaque/beige/warning{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/machete,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/warehouse)
 "pV" = (
 /obj/machinery/power/floodlight,
 /obj/structure/cable/yellow{
@@ -1928,6 +1924,13 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor3"
 	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
+"rS" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "rV" = (
@@ -2148,16 +2151,6 @@
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/lavaland/factory/manager_office)
-"tH" = (
-/obj/effect/turf_decal/trimline/opaque/lime/warning,
-/obj/effect/decal/cleanable/blood{
-	icon_state = "trails_2";
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space/stormtrooper,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/dorms)
 "tN" = (
 /obj/effect/turf_decal/trimline/opaque/lime/corner{
 	dir = 1
@@ -2191,16 +2184,6 @@
 /obj/structure/flora/ausbushes/hell,
 /turf/open/floor/plating/asteroid/purple/lit,
 /area/overmap_encounter/planetoid/lava/explored)
-"ud" = (
-/obj/effect/turf_decal/ntlogo{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
-/turf/open/floor/plasteel/white,
-/area/ruin/lavaland/factory/lobby)
 "ui" = (
 /obj/structure/flora/ash/leaf_shroom,
 /turf/open/floor/plating/moss,
@@ -2270,6 +2253,13 @@
 /obj/item/reagent_containers/glass/bottle/charcoal,
 /obj/item/clothing/neck/stethoscope,
 /obj/item/storage/firstaid/medical,
+/turf/open/floor/plasteel/mono,
+/area/ruin/lavaland/factory/warehouse)
+"uQ" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
 "uV" = (
@@ -2561,6 +2551,12 @@
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
+"yf" = (
+/obj/effect/turf_decal/trimline/opaque/beige/warning,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/warehouse)
 "yi" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/warning{
 	dir = 4
@@ -2600,16 +2596,6 @@
 	},
 /turf/open/floor/concrete/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"yG" = (
-/obj/effect/turf_decal/trimline/opaque/beige/warning{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/mob/living/simple_animal/hostile/human/syndicate/melee/space,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/warehouse)
 "yK" = (
 /obj/effect/turf_decal/trimline/opaque/beige/line{
 	dir = 5
@@ -2647,13 +2633,6 @@
 	},
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
-"yY" = (
-/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet/nanoweave,
-/area/ruin/lavaland/factory/manager_office)
 "zf" = (
 /obj/structure/bed/double{
 	dir = 1
@@ -2774,6 +2753,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/adminstrative)
+"Ag" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/turf_decal/siding/white,
+/obj/item/ammo_box/magazine/m10mm_ringneck{
+	start_empty = 1
+	},
+/obj/effect/mob_spawn/human/corpse/ramzi,
+/turf/open/floor/concrete/pavement/lava,
+/area/overmap_encounter/planetoid/lava/explored)
 "Ai" = (
 /obj/structure/table_frame,
 /obj/effect/decal/cleanable/blood/gibs/old,
@@ -2816,11 +2804,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/concrete/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"AG" = (
-/obj/effect/decal/cleanable/plastic,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space,
-/turf/open/floor/plasteel/dark/lava,
-/area/overmap_encounter/planetoid/cave/explored)
 "AI" = (
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
@@ -2901,13 +2884,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
-"Bs" = (
-/obj/effect/turf_decal/box/corners,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plasteel/mono,
-/area/ruin/lavaland/factory/warehouse)
 "Bv" = (
 /obj/effect/turf_decal/industrial/fire{
 	dir = 1
@@ -3183,6 +3159,14 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/manager_office)
+"EV" = (
+/obj/machinery/photocopier/ruin,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood,
+/area/ruin/lavaland/factory/manager_office)
 "EW" = (
 /obj/structure/crate_shelf,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3295,6 +3279,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/lobby)
+"Ge" = (
+/obj/item/radio/intercom/directional/north,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/lavaland/factory/manager_office)
 "Gj" = (
 /obj/structure/table,
 /obj/machinery/jukebox/boombox,
@@ -3448,13 +3437,6 @@
 /obj/structure/salvageable/computer,
 /turf/open/floor/plating/rust/lava,
 /area/overmap_encounter/planetoid/cave/explored)
-"HA" = (
-/obj/effect/turf_decal/trimline/opaque/lime/warning{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/dorms)
 "HJ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -3509,6 +3491,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/factory/lobby)
+"HQ" = (
+/obj/effect/turf_decal/box/corners,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel/mono,
+/area/ruin/lavaland/factory/warehouse)
 "HS" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -3559,6 +3547,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/manager_office)
+"IA" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning,
+/obj/effect/mob_spawn/human/corpse/vigilitas_private,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "trails_2";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
 "IG" = (
 /obj/structure/table,
 /obj/item/storage/pill_bottle/dice{
@@ -3625,10 +3623,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
-"Jc" = (
-/mob/living/simple_animal/hostile/human/syndicate/ranged/space,
-/turf/open/floor/carpet/nanoweave/blue,
-/area/ruin/lavaland/factory/lobby)
 "Jd" = (
 /obj/effect/turf_decal/trimline/opaque/beige/corner{
 	dir = 4
@@ -3694,14 +3688,6 @@
 /obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
-"Kg" = (
-/obj/machinery/photocopier/ruin,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/wood,
-/area/ruin/lavaland/factory/manager_office)
 "Km" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/lobby)
@@ -4007,15 +3993,6 @@
 	},
 /turf/closed/mineral/volcanic,
 /area/overmap_encounter/planetoid/cave/explored)
-"NG" = (
-/obj/structure/flippedtable,
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plasteel/white,
-/area/ruin/lavaland/factory/lobby)
 "NM" = (
 /turf/open/floor/plating/asteroid/purple/lit,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -4023,6 +4000,13 @@
 /obj/structure/lattice,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
+"NY" = (
+/obj/structure/chair/greyscale{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/dorms)
 "Oc" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
@@ -4074,6 +4058,16 @@
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
+"Os" = (
+/obj/effect/turf_decal/ntlogo{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/lobby)
 "Ou" = (
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -4119,6 +4113,16 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/lavaland/factory/adminstrative)
+"OR" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "trails_2";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/smg,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
 "OS" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -4132,12 +4136,22 @@
 	},
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
+"OZ" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "Pb" = (
 /obj/effect/turf_decal/corner/opaque/lime{
 	dir = 5
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
+"Pd" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/industrial/warning,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/turf/open/floor/plasteel/dark/lava,
+/area/overmap_encounter/planetoid/cave/explored)
 "Pf" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/warning{
 	dir = 4
@@ -4225,13 +4239,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
 /turf/open/floor/plasteel,
-/area/ruin/lavaland/factory/dorms)
-"PQ" = (
-/obj/structure/chair/greyscale{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
-/turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "PR" = (
 /obj/machinery/door/poddoor/shutters{
@@ -4437,6 +4444,10 @@
 /obj/structure/lattice,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
+"Sj" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/lavaland/factory/lobby)
 "Sm" = (
 /obj/structure/chair/greyscale{
 	dir = 8
@@ -4558,24 +4569,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
-"Tj" = (
-/obj/effect/turf_decal/corner/opaque/ntblue{
-	dir = 9
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
-/obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plasteel/white/lava,
-/area/overmap_encounter/planetoid/lava/explored)
 "Tn" = (
 /obj/item/ammo_casing/c45{
 	icon_state = "pistol-steel-empty";
@@ -4634,12 +4627,6 @@
 /obj/effect/decal/cleanable/blood/gibs/down,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
-"TP" = (
-/obj/structure/railing,
-/obj/effect/turf_decal/industrial/warning,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
-/turf/open/floor/plasteel/dark/lava,
-/area/overmap_encounter/planetoid/cave/explored)
 "TS" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "trails_2";
@@ -4843,13 +4830,6 @@
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
 /turf/open/floor/plasteel/white/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"VN" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun/space/stormtrooper,
-/turf/open/floor/plasteel/white,
-/area/ruin/lavaland/factory/adminstrative)
 "VO" = (
 /obj/effect/turf_decal/siding/white,
 /turf/open/floor/concrete/pavement/lava,
@@ -4899,6 +4879,11 @@
 "Wh" = (
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plating/lava,
+/area/overmap_encounter/planetoid/cave/explored)
+"Wv" = (
+/obj/effect/decal/cleanable/plastic,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
+/turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "Wx" = (
 /obj/effect/turf_decal/siding/wood{
@@ -5009,15 +4994,6 @@
 	},
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
-"Yl" = (
-/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
-/obj/effect/decal/cleanable/blood/old,
-/obj/effect/turf_decal/siding/white,
-/obj/item/ammo_box/magazine/m10mm_ringneck{
-	start_empty = 1
-	},
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/lava/explored)
 "Yo" = (
 /obj/machinery/light/directional/west,
 /obj/item/chair,
@@ -5163,6 +5139,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
+"Zr" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun,
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/adminstrative)
 "Zt" = (
 /obj/machinery/light/built/directional/west,
 /obj/item/light/tube/broken,
@@ -5191,6 +5174,15 @@
 "ZL" = (
 /turf/closed/wall/r_wall/rust,
 /area/overmap_encounter/planetoid/cave/explored)
+"ZM" = (
+/obj/structure/flippedtable,
+/obj/effect/mob_spawn/human/corpse/vigilitas_private,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/lobby)
 "ZN" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "foreman"
@@ -5834,7 +5826,7 @@ ax
 ax
 Zc
 ts
-VN
+Zr
 UY
 Zc
 Zc
@@ -5904,7 +5896,7 @@ qm
 Uh
 sv
 Rv
-nG
+uQ
 vH
 ca
 TC
@@ -6066,9 +6058,9 @@ qm
 Uh
 LK
 ch
-Bs
+HQ
 AB
-bl
+yf
 jV
 zQ
 cz
@@ -6168,7 +6160,7 @@ Mb
 ME
 jQ
 jQ
-Yl
+Ag
 Jt
 nK
 iP
@@ -6263,16 +6255,16 @@ Wx
 LL
 MY
 yQ
-gj
+Ge
 Qc
 LR
 sV
 LR
 KX
 XF
-ud
+Os
 LS
-NG
+ZM
 Gc
 Gc
 Zp
@@ -6317,7 +6309,7 @@ fB
 fB
 fB
 po
-yY
+hm
 cX
 hm
 pc
@@ -6375,7 +6367,7 @@ Gn
 hv
 JO
 ty
-ia
+jt
 KX
 hh
 HO
@@ -6434,7 +6426,7 @@ KX
 kJ
 Lv
 vy
-Jc
+Sj
 gt
 jQ
 jQ
@@ -6477,7 +6469,7 @@ yQ
 ab
 vQ
 LL
-Kg
+EV
 yQ
 Gw
 KX
@@ -6503,7 +6495,7 @@ ux
 oL
 NA
 vC
-yG
+pQ
 UF
 cE
 fc
@@ -6655,7 +6647,7 @@ nv
 hT
 hT
 Me
-Tj
+cW
 VV
 hT
 hT
@@ -6930,7 +6922,7 @@ GC
 aW
 Vp
 zC
-AG
+Wv
 bH
 eI
 gc
@@ -6971,7 +6963,7 @@ vS
 en
 SE
 vS
-HA
+rS
 tN
 TI
 vS
@@ -7041,7 +7033,7 @@ FZ
 UO
 Dk
 Ga
-TP
+Pd
 qe
 Rd
 yX
@@ -7082,7 +7074,7 @@ oi
 PL
 dY
 sj
-PQ
+NY
 qs
 Kp
 sZ
@@ -7405,7 +7397,7 @@ MH
 sZ
 gk
 PT
-tH
+OR
 of
 sZ
 MH
@@ -7459,7 +7451,7 @@ MH
 sZ
 YJ
 zz
-nA
+IA
 YJ
 sZ
 MH
@@ -7637,7 +7629,7 @@ MH
 jX
 ZD
 co
-ga
+OZ
 XU
 yN
 MH

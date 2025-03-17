@@ -628,18 +628,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"eD" = (
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -20;
-	pixel_y = 12
-	},
-/obj/machinery/photocopier/nanotrasen,
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/bridge)
 "eE" = (
 /obj/effect/turf_decal/ntspaceworks_small/left,
 /obj/structure/cable{
@@ -750,6 +738,27 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor/tatmos,
 /area/ship/engineering/communications)
+"fw" = (
+/obj/machinery/light/small/directional/east,
+/obj/structure/toilet{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	color = "#a8b2b6";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/cobweb,
+/obj/machinery/button/door{
+	dir = 8;
+	id = "ranger_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	pixel_x = 20;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ship/crew/toilet)
 "fy" = (
 /obj/item/newspaper,
 /obj/structure/table/reinforced{
@@ -1320,6 +1329,18 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"iO" = (
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
+/obj/machinery/photocopier/nanotrasen,
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
 "iS" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
@@ -1614,6 +1635,14 @@
 /obj/item/reagent_containers/food/snacks/donkpocket/warm,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/central)
+"kM" = (
+/obj/machinery/door/airlock/wood{
+	name = "Toilets";
+	req_ship_access = 0;
+	id_tag = "ranger_bathroom"
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ship/crew/toilet)
 "kO" = (
 /obj/structure/cable{
 	icon_state = "2-9"
@@ -3933,25 +3962,6 @@
 "Bv" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/specialized/cargo)
-"BA" = (
-/obj/machinery/light/small/directional/east,
-/obj/structure/toilet{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating{
-	color = "#a8b2b6";
-	dir = 1
-	},
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel/showroomfloor,
-/area/ship/crew/toilet)
-"BI" = (
-/obj/machinery/door/airlock/wood{
-	name = "Toilets";
-	req_ship_access = 0
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ship/crew/toilet)
 "BO" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/northleft{
@@ -7964,8 +7974,8 @@ MI
 zF
 gg
 Ut
-BI
-BA
+kM
+fw
 gg
 "}
 (20,1,1) = {"
@@ -8360,7 +8370,7 @@ az
 ZS
 JK
 eE
-eD
+iO
 Lk
 fd
 iN

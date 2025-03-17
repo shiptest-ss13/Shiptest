@@ -93,6 +93,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	mag_type = /obj/item/ammo_box/magazine/m45_cobra
 
+/obj/item/storage/guncase/c20r
+	gun_type = /obj/item/gun/ballistic/automatic/smg/cobra
+	mag_type = /obj/item/ammo_box/magazine/m45_cobra
+
 /obj/item/storage/guncase/boomslang
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
 	mag_type = /obj/item/ammo_box/magazine/boomslang/short
@@ -173,6 +177,11 @@
 /obj/item/storage/guncase/m15
 	gun_type = /obj/item/gun/ballistic/automatic/m15
 	mag_type = /obj/item/ammo_box/magazine/m15
+
+/obj/item/storage/guncase/woodsman
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/woodsman
+	mag_type = /obj/item/ammo_box/magazine/m23
+	mag_count = 3
 
 /obj/item/storage/guncase/buckmaster
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/m11
@@ -265,6 +274,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm357
 	mag_type = /obj/item/ammo_box/magazine/cm357
 
+/obj/item/storage/guncase/cm1
+	gun_type = /obj/item/gun/energy/kalix/clip
+	mag_type = /obj/item/stock_parts/cell/gun
+
 /obj/item/storage/guncase/cm5
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cm5
 	mag_type = /obj/item/ammo_box/magazine/cm5_9mm
@@ -342,3 +355,23 @@
 
 /obj/item/storage/guncase/energy/e10
 	gun_type = /obj/item/gun/energy/laser/e10
+
+/* underbarrel guns */
+/obj/item/storage/guncase/underbarrel_shotgun
+	gun_type = /obj/item/attachment/gun/ballistic/shotgun
+
+/obj/item/storage/guncase/underbarrel_riot_grenade
+	gun_type = /obj/item/attachment/gun/riot
+
+/obj/item/storage/guncase/underbarrel_flamethrower
+	gun_type = /obj/item/attachment/gun/flamethrower
+
+/obj/item/storage/guncase/underbarrel_flare
+	gun_type = /obj/item/attachment/gun/flare
+
+/obj/item/storage/guncase/underbarrel_hognose
+	gun_type = /obj/item/attachment/gun/ballistic/hognose
+	mag_type = /obj/item/ammo_box/magazine/m22lr_himehabu/hognose
+
+/obj/item/storage/guncase/energy/underbarrel_e_gun
+	gun_type = /obj/item/attachment/gun/energy/e_gun

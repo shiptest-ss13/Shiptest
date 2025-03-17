@@ -62,6 +62,15 @@
 	blood_overlay_type = "armor"
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	name = "\improper Frontiersmen reinforced armor vest"
+	desc = "A battletested piece of armor made of sturdy protective plates. This one is significantly tougher than similar vests."
+	icon_state = "frontier_armor"
+	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	blood_overlay_type = "armor"
+	supports_variations = VOX_VARIATION
+
 /obj/item/clothing/suit/armor/vest/marine/frontier
 	name = "light tactical armor vest"
 	desc = "A bulky set of stamped plasteel armor plates, coated with the intimidating grey of the Frontiersmen. If you have the time to inspect this vest, either you are about to die, or you have killed the one who wore it originally."
@@ -130,9 +139,11 @@
 	name = "frontiersman cap"
 	desc = "An olive-green and grey baseball hat, worn by cargo technicians working under the Frontiersmen. Even they have the rights for a cool cap!"
 	icon_state = "frontiersoft"
-	soft_type = "frontier"
+	current_skin = "frontiersoft"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	unique_reskin = null
+	current_skin = null
 
 /obj/item/clothing/head/beret/sec/frontier
 	name = "\improper Frontiersmen beret"
@@ -179,6 +190,7 @@
 	icon_state = "x11helm_frontier"
 	unique_reskin = null
 	supports_variations = VOX_VARIATION
+	can_flashlight = TRUE
 
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier/fireproof
 	name = "\improper fireproof frontiersmen X-11 helmet"
@@ -188,6 +200,7 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
+	can_flashlight = TRUE
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 
 /obj/item/clothing/head/helmet/frontier
@@ -202,6 +215,7 @@
 	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
+	can_flashlight = TRUE
 
 ////////////
 //Glasses//

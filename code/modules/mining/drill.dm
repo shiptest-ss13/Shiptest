@@ -25,7 +25,7 @@
 
 	var/malfunction
 	var/active = FALSE
-	var/obj/structure/vein/mining
+	var/obj/structure/vein/our_vein
 	var/datum/looping_sound/drill/soundloop
 	var/obj/item/stock_parts/cell/cell
 	var/preload_cell_type = /obj/item/stock_parts/cell
@@ -72,12 +72,14 @@
 			cell = new preload_cell_type(src)
 	soundloop = new(list(src), active)
 
-/obj/machinery/drill/process()
-	if(machine_stat & BROKEN || (active && !mining))
+/obj/machinery/drill/process(seconds_per_tick)
+	if(machine_stat & BROKEN || (active && !our_vein))
 		active = FALSE
 		soundloop.stop()
 		update_overlays()
 		update_icon_state()
+	if(!active && our_vein?.currently_spawning)
+		our_vein.toggle_spawning()
 
 /obj/machinery/drill/Destroy()
 	QDEL_NULL(soundloop)
@@ -86,10 +88,10 @@
 
 //Instead of being qdeled the drill requires mildly expensive repairs to use again
 /obj/machinery/drill/deconstruct(disassembled)
-	if(active && mining)
+	if(active && our_vein)
 		say("Drill integrity failure. Engaging emergency shutdown procedure.")
 		//Just to make sure mobs don't spawn infinitely from the vein and as a failure state for players
-		mining.deconstruct()
+		our_vein.deconstruct()
 	obj_break()
 	update_icon_state()
 	update_overlays()
@@ -137,7 +139,7 @@
 		if(!anchored && tool.use_tool(src, user, 30, volume=50))
 			to_chat(user, "<span class='notice'>You secure the [src] to the ore vein.</span>")
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
-			mining = vein
+			our_vein = vein
 			anchored = TRUE
 			update_icon_state()
 			return
@@ -146,9 +148,9 @@
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			anchored = FALSE
 
-			if(mining?.spawner_attached && mining?.spawning_started)
-				mining.toggle_spawning()
-			mining = null
+			if(our_vein?.spawner_attached && our_vein?.currently_spawning)
+				our_vein.toggle_spawning()
+			our_vein = null
 			update_icon_state()
 			return
 	if(default_deconstruction_screwdriver(user,icon_state,icon_state,tool))
@@ -217,16 +219,20 @@
 
 /obj/machinery/drill/AltClick(mob/user)
 	if(active)
-		to_chat(user, "<span class='notice'>You begin the manual shutoff process.</span>")
+		to_chat(user, span_notice("You begin the manual shutoff process."))
 		if(do_after(user, 10, src))
-			active = FALSE
-			soundloop.stop()
-			deltimer(current_timerid)
-			mining.toggle_spawning()
-			playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
-			say("Manual shutoff engaged, ceasing mining operations.")
-			update_icon_state()
-			update_overlays()
+			if(active)
+				active = FALSE
+				soundloop.stop()
+				deltimer(current_timerid)
+				if(our_vein?.currently_spawning)
+					our_vein.toggle_spawning()
+				playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
+				say("Manual shutoff engaged, ceasing mining operations.")
+				update_icon_state()
+				update_overlays()
+			else
+				to_chat(user, span_warning("The drill has already been turned off!"))
 		else
 			to_chat(user, "<span class='notice'>You cancel the manual shutoff process.</span>")
 
@@ -236,7 +242,7 @@
 	if(malfunction)
 		say("Please resolve existing malfunction before continuing mining operations.")
 		return
-	if(!mining)
+	if(!our_vein)
 		to_chat(user, "<span class='notice'>[src] isn't secured over an ore vein!</span>")
 		return
 	if(!active)
@@ -297,17 +303,17 @@
 		update_icon_state()
 		update_overlays()
 		return
-	if(mining.mining_charges >= 1)
+	if(our_vein.mining_charges >= 1)
 		var/mine_time
 		active = TRUE
 		soundloop.start()
-		if(!mining.spawner_attached)
-			mining.begin_spawning()
-		else if(!mining.spawning_started)
-			mining.toggle_spawning()
+		if(!our_vein.spawner_attached)
+			our_vein.begin_spawning()
+		else if(!our_vein.currently_spawning)
+			our_vein.toggle_spawning()
 		for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
-			mine_time = round((300/sqrt(laser.rating))*mining.mine_time_multiplier)
-		eta = mine_time*mining.mining_charges
+			mine_time = round((300/sqrt(laser.rating))*our_vein.mine_time_multiplier)
+		eta = mine_time*our_vein.mining_charges
 		cell.use(power_use)
 		current_timerid = addtimer(CALLBACK(src, PROC_REF(mine)), mine_time, TIMER_STOPPABLE)
 		say("Estimated time until vein depletion: [time2text(eta,"mm:ss")].")
@@ -316,20 +322,20 @@
 
 //Handles the process of withdrawing ore from the vein itself
 /obj/machinery/drill/proc/mine()
-	if(mining.mining_charges)
-		mining.mining_charges--
+	if(our_vein.mining_charges)
+		our_vein.mining_charges--
 		mine_success()
-		if(mining.mining_charges < 1)
+		if(our_vein.mining_charges < 1)
 			say("Vein depleted.")
 			active = FALSE
 			soundloop.stop()
-			mining.deconstruct()
-			mining = null
+			our_vein.Destroy()
+			our_vein = null
 			update_icon_state()
 			update_overlays()
 		else
 			start_mining()
-	else if(!mining.mining_charges) //Extra check to prevent vein related errors locking us in place
+	else if(!our_vein.mining_charges) //Extra check to prevent vein related errors locking us in place
 		say("Error: Vein Depleted")
 		active = FALSE
 		update_icon_state()
@@ -340,12 +346,12 @@
 	var/sensor_rating
 	for(var/obj/item/stock_parts/scanning_module/sensor in component_parts)
 		sensor_rating = round(sqrt(sensor.rating))
-	mining.drop_ore(sensor_rating, src)
+	our_vein.drop_ore(sensor_rating, src)
 
 //Overly long proc to handle the unique properties for each malfunction type
 /obj/machinery/drill/proc/malfunction(malfunction_type)
 	if(active)
-		mining.toggle_spawning() //turns mob spawning off after a malfunction
+		our_vein.toggle_spawning() //turns mob spawning off after a malfunction
 	switch(malfunction_type)
 		if(MALF_LASER)
 			say("Malfunction: Laser array damaged, please replace before continuing mining operations.")

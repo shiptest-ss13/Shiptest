@@ -81,7 +81,7 @@
 #define SHOTGUN_ZOOM 2
 #define SMG_ZOOM 2
 #define RIFLE_ZOOM 2
-#define DMR_ZOOM 4
+#define DMR_ZOOM 6
 
 //ads slowdown
 #define PISTOL_AIM_SLOWDOWN 0.1
@@ -137,6 +137,7 @@
 #define COMSIG_ATTACHMENT_UNIQUE_ACTION "attach-unique-action"
 #define COMSIG_ATTACHMENT_CTRL_CLICK "attach-ctrl-click"
 #define COMSIG_ATTACHMENT_ALT_CLICK "attach-alt-click"
+#define COMSIG_ATTACHMENT_ATTACK_HAND "attach-attack-hand"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 

@@ -47,7 +47,7 @@
 	name = "coin spawner"
 	icon_state = "coin"
 	loot = list(
-		/obj/item/coin/iron = 5,
+		/obj/item/coin/iron = 10,
 		/obj/item/coin/plastic = 5,
 		/obj/item/coin/silver = 4,
 		/obj/item/coin/plasma = 4,
@@ -249,6 +249,7 @@
 		/obj/item/toy/plush/spider,
 		/obj/item/toy/plush/tali,
 		/obj/item/toy/plush/xader,
+		/obj/item/toy/plush/frederick,
 		/obj/effect/spawner/random/entertainment/plushie/moth // fair chances
 	)
 

@@ -941,6 +941,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
+"dM" = (
+/obj/effect/turf_decal/box,
+/obj/effect/spawner/random/salvage/machine,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/shuttle)
 "dO" = (
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /obj/structure/spider/stickyweb,
@@ -2144,11 +2149,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
-"iu" = (
-/obj/effect/turf_decal/box,
-/obj/effect/spawner/random/salvage_machine,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shuttle)
 "iv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
@@ -4707,16 +4707,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
-"rE" = (
-/obj/effect/turf_decal/corner/transparent/lime,
-/obj/structure/sign/poster/contraband/clown{
-	pixel_x = 30
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 9
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/dorms)
 "rG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6525,6 +6515,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
+"yA" = (
+/obj/effect/turf_decal/corner/transparent/lime,
+/obj/structure/sign/poster/contraband/smoke{
+	pixel_x = 30
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/dorms)
 "yF" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7264,6 +7264,21 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
+"Bw" = (
+/obj/machinery/camera/autoname{
+	dir = 10;
+	network = list("mall")
+	},
+/obj/machinery/photocopier/ruin,
+/obj/effect/turf_decal/corner/transparent/lime{
+	dir = 8
+	},
+/obj/structure/noticeboard{
+	dir = 1;
+	pixel_y = -30
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall/dorms)
 "BC" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 4
@@ -10975,16 +10990,6 @@
 /obj/effect/turf_decal/corner/opaque/red/three_quarters,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
-"Pj" = (
-/obj/item/clothing/mask/gas/clown_hat{
-	pixel_y = 2;
-	pixel_x = 1;
-	name = "tainted clown wig and mask"
-	},
-/obj/effect/decal/remains/human,
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/spacemall/shop)
 "Pk" = (
 /obj/machinery/light/directional/south,
 /obj/item/trash/raisins{
@@ -12845,21 +12850,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
-"Wl" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
-	network = list("mall")
-	},
-/obj/machinery/photocopier/ruin,
-/obj/effect/turf_decal/corner/transparent/lime{
-	dir = 8
-	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -30
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/dorms)
 "Wm" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/red/three_quarters,
@@ -12931,6 +12921,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
+"WE" = (
+/obj/effect/decal/remains/human,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/spacemall/shop)
 "WG" = (
 /obj/effect/turf_decal/corner/transparent/lime,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -14109,7 +14104,7 @@ NB
 Pm
 Ew
 WG
-rE
+yA
 Hm
 bw
 Kh
@@ -14413,7 +14408,7 @@ lP
 EW
 UP
 fQ
-Wl
+Bw
 bw
 Kh
 Kh
@@ -15636,7 +15631,7 @@ Yo
 cs
 No
 pe
-Pj
+WE
 XM
 ZW
 pe
@@ -16984,7 +16979,7 @@ fZ
 aL
 IS
 TF
-iu
+dM
 fZ
 FM
 kj

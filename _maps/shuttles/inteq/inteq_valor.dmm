@@ -183,12 +183,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"bS" = (
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
-/obj/item/clothing/mask/gas/inteq,
-/turf/open/floor/carpet/orange,
-/area/ship/bridge)
 "cj" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -597,6 +591,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
+"fb" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
+/obj/item/clothing/mask/gas/inteq,
+/turf/open/floor/carpet/orange,
+/area/ship/bridge)
 "fe" = (
 /obj/structure/closet/crate{
 	name = "food crate"
@@ -775,15 +775,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"gt" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/landmark/observer_start,
-/obj/machinery/holopad/emergency/security,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "gI" = (
 /obj/structure/chair/handrail{
 	dir = 1
@@ -944,6 +935,29 @@
 /obj/machinery/computer/helm/viewscreen/directional/east,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"iv" = (
+/obj/structure/closet/secure_closet/wall/directional/west{
+	name = "honorable corpsman's locker";
+	req_access = list(19)
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/megaphone/command,
+/obj/item/clothing/under/syndicate/inteq/corpsman,
+/obj/item/clothing/under/syndicate/inteq/corpsman/skirt,
+/obj/item/clothing/suit/armor/hos/inteq,
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt,
+/obj/item/storage/backpack/messenger/med,
+/obj/item/clothing/head/beret/sec/brig_phys{
+	desc = "A beret made out of white reinforced fabric with a lue cross emblazoned on it. Smells faintly of blood and gauze.";
+	icon_state = "beret_med";
+	name = "honorable corpsman beret"
+	},
+/obj/item/clothing/glasses/hud/health/sunglasses,
+/obj/item/storage/box/hypospray/mkiii,
+/obj/item/stamp/inteq/corpsman,
+/obj/item/clothing/gloves/color/latex/nitrile/inteq,
+/turf/open/floor/carpet/blue,
+/area/ship/bridge)
 "ix" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 9
@@ -1169,6 +1183,20 @@
 "ka" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/canteen)
+"ke" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light/small/directional/north,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
+/obj/item/clothing/mask/gas/inteq,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "ko" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -1215,6 +1243,27 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"kz" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "med_secure";
+	name = "corpsman's locker";
+	req_access = list(5)
+	},
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/belt/medical/webbing,
+/obj/item/pinpointer/crew,
+/obj/item/storage/backpack/medic,
+/obj/item/storage/backpack/messenger/med,
+/obj/item/clothing/head/soft/inteq/corpsman,
+/obj/item/clothing/suit/armor/inteq/corpsman,
+/obj/item/clothing/under/syndicate/inteq/corpsman/skirt,
+/obj/item/clothing/under/syndicate/inteq/corpsman,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/item/clothing/gloves/color/latex/nitrile/inteq,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/medical)
 "kG" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -1231,21 +1280,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"kK" = (
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_y = 28
-	},
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
-/obj/item/clothing/mask/gas/inteq,
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "kL" = (
 /obj/machinery/light/directional/south,
 /obj/structure/rack,
@@ -1653,6 +1687,30 @@
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
+"oo" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "med_secure";
+	name = "corpsman's locker";
+	req_access = list(5)
+	},
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/belt/medical/webbing,
+/obj/item/pinpointer/crew,
+/obj/item/storage/backpack/medic,
+/obj/item/storage/backpack/messenger/med,
+/obj/item/clothing/head/soft/inteq/corpsman,
+/obj/item/clothing/suit/armor/inteq/corpsman,
+/obj/item/clothing/under/syndicate/inteq/corpsman/skirt,
+/obj/item/clothing/under/syndicate/inteq/corpsman,
+/obj/effect/turf_decal/box/white/corners{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 6
+	},
+/obj/item/clothing/gloves/color/latex/nitrile/inteq,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/medical)
 "ou" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -1689,6 +1747,30 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/ship/medical)
+"oF" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "med_secure";
+	name = "corpsman's locker";
+	req_access = list(5)
+	},
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/belt/medical/webbing,
+/obj/item/pinpointer/crew,
+/obj/item/storage/backpack/medic,
+/obj/item/storage/backpack/messenger/med,
+/obj/item/clothing/head/soft/inteq/corpsman,
+/obj/item/clothing/suit/armor/inteq/corpsman,
+/obj/item/clothing/under/syndicate/inteq/corpsman/skirt,
+/obj/item/clothing/under/syndicate/inteq/corpsman,
+/obj/effect/turf_decal/box/white/corners{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 5
+	},
+/obj/item/clothing/gloves/color/latex/nitrile/inteq,
+/turf/open/floor/plasteel/patterned/ridged,
 /area/ship/medical)
 "oL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1871,26 +1953,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"qe" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "med_secure";
-	name = "corpsman's locker";
-	req_access = list(5)
-	},
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/belt/medical/webbing,
-/obj/item/pinpointer/crew,
-/obj/item/storage/backpack/medic,
-/obj/item/storage/backpack/messenger/med,
-/obj/item/clothing/head/soft/inteq/corpsman,
-/obj/item/clothing/suit/armor/inteq/corpsman,
-/obj/item/clothing/under/syndicate/inteq/corpsman/skirt,
-/obj/item/clothing/under/syndicate/inteq/corpsman,
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/medical)
 "qk" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2255,27 +2317,6 @@
 "sZ" = (
 /obj/structure/weightmachine/weightlifter,
 /obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/cargo)
-"te" = (
-/obj/structure/rack,
-/obj/item/target/clown{
-	pixel_x = 9;
-	pixel_y = 5
-	},
-/obj/item/target/syndicate{
-	pixel_x = -8;
-	pixel_y = 3
-	},
-/obj/item/target/syndicate{
-	pixel_y = 5
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/structure/platform/ship_three/corner{
-	dir = 8
-	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "tf" = (
@@ -3017,6 +3058,21 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
+"Ar" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_y = 28
+	},
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
+/obj/item/clothing/mask/gas/inteq,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "Au" = (
 /obj/structure/closet/crate/freezer,
 /obj/item/reagent_containers/blood/universal,
@@ -3211,43 +3267,10 @@
 /obj/structure/punching_bag,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"Cr" = (
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/machinery/photocopier/inteq,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "Ct" = (
 /obj/structure/catwalk/over,
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
-"CC" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "med_secure";
-	name = "corpsman's locker";
-	req_access = list(5)
-	},
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/belt/medical/webbing,
-/obj/item/pinpointer/crew,
-/obj/item/storage/backpack/medic,
-/obj/item/storage/backpack/messenger/med,
-/obj/item/clothing/head/soft/inteq/corpsman,
-/obj/item/clothing/suit/armor/inteq/corpsman,
-/obj/item/clothing/under/syndicate/inteq/corpsman/skirt,
-/obj/item/clothing/under/syndicate/inteq/corpsman,
-/obj/effect/turf_decal/box/white/corners{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 5
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/medical)
 "CF" = (
 /obj/structure/table/optable,
 /obj/machinery/defibrillator_mount/loaded{
@@ -4275,29 +4298,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
-"LL" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "med_secure";
-	name = "corpsman's locker";
-	req_access = list(5)
-	},
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/belt/medical/webbing,
-/obj/item/pinpointer/crew,
-/obj/item/storage/backpack/medic,
-/obj/item/storage/backpack/messenger/med,
-/obj/item/clothing/head/soft/inteq/corpsman,
-/obj/item/clothing/suit/armor/inteq/corpsman,
-/obj/item/clothing/under/syndicate/inteq/corpsman/skirt,
-/obj/item/clothing/under/syndicate/inteq/corpsman,
-/obj/effect/turf_decal/box/white/corners{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 6
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/medical)
 "LR" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
@@ -4520,28 +4520,6 @@
 /obj/effect/turf_decal/trimline/opaque/brown/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
-"Oc" = (
-/obj/item/clothing/mask/balaclava/inteq,
-/obj/item/clothing/gloves/tackler/combat/insulated,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/megaphone/command,
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/item/clothing/suit/armor/hos/inteq,
-/obj/item/clothing/head/beret/sec/hos/inteq,
-/obj/structure/closet/secure_closet/wall/directional/west{
-	icon_door = "solgov_wall";
-	icon_state = "solgov_wall";
-	name = "vanguard's locker";
-	req_access = list(58)
-	},
-/obj/item/storage/lockbox/medal/sec,
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/head/inteq_peaked,
-/obj/item/stamp/inteq/vanguard,
-/turf/open/floor/carpet/orange,
-/area/ship/bridge)
 "Od" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -4705,6 +4683,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"Pv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/holopad/emergency/security,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "PJ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4918,29 +4904,6 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"RR" = (
-/obj/structure/closet/secure_closet/wall/directional/west{
-	name = "honorable corpsman's locker";
-	req_access = list(19)
-	},
-/obj/item/clothing/shoes/combat,
-/obj/item/megaphone/command,
-/obj/item/clothing/under/syndicate/inteq/corpsman,
-/obj/item/clothing/under/syndicate/inteq/corpsman/skirt,
-/obj/item/clothing/suit/armor/hos/inteq,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt,
-/obj/item/storage/backpack/messenger/med,
-/obj/item/clothing/head/beret/sec/brig_phys{
-	desc = "A beret made out of white reinforced fabric with a lue cross emblazoned on it. Smells faintly of blood and gauze.";
-	icon_state = "beret_med";
-	name = "honorable corpsman beret"
-	},
-/obj/item/clothing/glasses/hud/health/sunglasses,
-/obj/item/storage/box/hypospray/mkiii,
-/obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/stamp/inteq/corpsman,
-/turf/open/floor/carpet/blue,
-/area/ship/bridge)
 "RT" = (
 /obj/structure/toilet/secret{
 	dir = 8;
@@ -4998,6 +4961,16 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"Sr" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/machinery/photocopier/inteq,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "Sv" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5204,25 +5177,35 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"UX" = (
+/obj/item/clothing/mask/balaclava/inteq,
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/backpack/messenger/inteq,
+/obj/item/megaphone/command,
+/obj/item/clothing/under/syndicate/inteq/skirt,
+/obj/item/clothing/under/syndicate/inteq,
+/obj/item/clothing/suit/armor/hos/inteq,
+/obj/item/clothing/head/beret/sec/hos/inteq,
+/obj/structure/closet/secure_closet/wall/directional/west{
+	icon_door = "solgov_wall";
+	icon_state = "solgov_wall";
+	name = "vanguard's locker";
+	req_access = list(58)
+	},
+/obj/item/storage/lockbox/medal/sec,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/head/inteq_peaked,
+/obj/item/stamp/inteq/vanguard,
+/obj/item/storage/box/ammo/a44roum,
+/obj/item/storage/guncase/pistol/pinscher,
+/turf/open/floor/carpet/orange,
+/area/ship/bridge)
 "Ve" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
-"Vp" = (
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/light/small/directional/north,
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
-/obj/item/clothing/mask/gas/inteq,
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "Vy" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -5683,6 +5666,27 @@
 "Zu" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security)
+"Zw" = (
+/obj/structure/rack,
+/obj/item/target{
+	pixel_x = 9;
+	pixel_y = 5
+	},
+/obj/item/target/syndicate{
+	pixel_x = -8;
+	pixel_y = 3
+	},
+/obj/item/target/syndicate{
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/structure/platform/ship_three/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "ZF" = (
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -5977,7 +5981,7 @@ SL
 "}
 (9,1,1) = {"
 Zu
-kK
+Ar
 LR
 DQ
 FZ
@@ -6010,7 +6014,7 @@ SL
 "}
 (10,1,1) = {"
 Zu
-Vp
+ke
 rY
 CT
 XR
@@ -6120,7 +6124,7 @@ vh
 vh
 HC
 cI
-te
+Zw
 fe
 Ok
 Xf
@@ -6261,9 +6265,9 @@ DT
 DT
 DT
 LI
-CC
-qe
-LL
+oF
+kz
+oo
 LI
 Xg
 Uj
@@ -6450,7 +6454,7 @@ Td
 Td
 HK
 dM
-Cr
+Sr
 wA
 vi
 iQ
@@ -6552,7 +6556,7 @@ ah
 mj
 IN
 nB
-gt
+Pv
 oL
 IN
 wV
@@ -6716,9 +6720,9 @@ Nn
 ni
 nk
 AG
-Oc
+UX
 ND
-RR
+iv
 Wo
 nk
 nZ
@@ -6748,7 +6752,7 @@ HK
 AO
 QQ
 nk
-bS
+fb
 Am
 KY
 Kh

@@ -66,7 +66,7 @@
 	icon_state = "[base_icon]_[active]"
 	return ..()
 
-/obj/machinery/power/port_gen/process()
+/obj/machinery/power/port_gen/process(seconds_per_tick)
 	if(active)
 		if(!HasFuel() || !anchored)
 			TogglePower()

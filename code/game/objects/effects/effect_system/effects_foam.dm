@@ -31,7 +31,7 @@
 	slippery_foam = FALSE
 	var/absorbed_plasma = 0
 
-/obj/effect/particle_effect/foam/firefighting/process()
+/obj/effect/particle_effect/foam/firefighting/process(seconds_per_tick)
 	..()
 
 	var/turf/open/T = get_turf(src)
@@ -74,7 +74,7 @@
 	color = "#A6FAFF55"
 
 
-/obj/effect/particle_effect/foam/antirad/process()
+/obj/effect/particle_effect/foam/antirad/process(seconds_per_tick)
 	..()
 
 	var/turf/open/T = get_turf(src)
@@ -154,7 +154,7 @@
 	flick("[icon_state]-disolve", src)
 	QDEL_IN(src, 5)
 
-/obj/effect/particle_effect/foam/process()
+/obj/effect/particle_effect/foam/process(seconds_per_tick)
 	lifetime--
 	if(lifetime < 1)
 		kill_foam()
@@ -352,6 +352,22 @@
 			L.ExtinguishMob()
 		for(var/obj/item/Item in O)
 			Item.extinguish()
+
+/obj/structure/foamedmetal/forcewine
+	name = "resin"
+	desc = "It's rapidly decaying!"
+	opacity = FALSE
+	icon_state = "atmos_resin"
+	alpha = 120
+	max_integrity = 10
+	var/timeleft = 50
+
+/obj/structure/foamedmetal/forcewine/Initialize(mapload, new_timeleft)
+	. = ..()
+	if(new_timeleft)
+		timeleft = new_timeleft
+	if(timeleft)
+		QDEL_IN(src, timeleft)
 
 #undef ALUMINIUM_FOAM
 #undef IRON_FOAM

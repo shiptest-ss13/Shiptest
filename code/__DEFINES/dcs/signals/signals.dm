@@ -273,7 +273,10 @@
 #define COMSIG_CLICK_CTRL_SHIFT_RIGHT "ctrl_shift_right_click"
 /// from mob/ver/do_unique_action
 #define COMSIG_CLICK_UNIQUE_ACTION "unique_action"
-	#define OVERIDE_UNIQUE_ACTION 1
+	#define OVERRIDE_UNIQUE_ACTION 1
+/// from mob/ver/do_unique_action
+#define COMSIG_CLICK_SECONDARY_ACTION "secondary_action"
+	#define OVERRIDE_SECONDARY_ACTION 1
 //from base of atom/MouseDrop(): (/atom/over, /mob/user)
 #define COMSIG_MOUSEDROP_ONTO "mousedrop_onto"
 	#define COMPONENT_NO_MOUSEDROP 1
@@ -696,7 +699,7 @@
 #define COMSIG_OVERMAP_UNDOCK "overmap_undock"
 
 // /datum/component/spawner signals
-// Called by parent when pausing spawning, returns bool: (datum/source, spawning_started)
+// Called by parent when pausing spawning, returns bool: (datum/source, currently_spawning)
 #define COMSIG_SPAWNER_TOGGLE_SPAWNING "spawner_toggle"
 
 ///Beam Signals
@@ -748,6 +751,8 @@
 ///sent when the access on an id is changed/updated, ensures wallets get updated once ids generate there access
 #define COSMIG_ACCESS_UPDATED "acces_updated"
 
+///sent by carbons to check if they can reflect a projectile
+#define COMSIG_CHECK_REFLECT "check_reflect"
 // Point of interest signals
 /// Sent from base of /datum/controller/subsystem/points_of_interest/proc/on_poi_element_added : (atom/new_poi)
 #define COMSIG_ADDED_POINT_OF_INTEREST "added_point_of_interest"
