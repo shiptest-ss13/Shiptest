@@ -4,7 +4,7 @@
 	icon_state = "hydrotray"
 	density = TRUE
 	pixel_z = 1
-	pass_flags_self = PASSMACHINE | LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 	obj_flags = CAN_BE_HIT | UNIQUE_RENAME
 	circuit = /obj/item/circuitboard/machine/hydroponics
 	use_power = IDLE_POWER_USE
@@ -18,11 +18,11 @@
 	var/nutridrain = 1
 	///The maximum nutrient of water in the tray
 	var/maxnutri = 20
-	///The amount of pests in the tray (max 10)
+	///The amount of pests in the tray (max: MAX_TRAY_PESTS)
 	var/pestlevel = 0
-	///The amount of weeds in the tray (max 10)
+	///The amount of weeds in the tray (max: MAX_TRAY_WEEDS)
 	var/weedlevel = 0
-	///Nutriment's effect on yield
+	///The trays effect on yield
 	var/yieldmod = 1
 	///Nutriment's effect on mutations
 	var/mutmod = 1
@@ -60,7 +60,7 @@
 	if(density)
 		AddElement(/datum/element/climbable)
 	create_reagents(maxnutri)
-	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, maxnutri/2) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
+	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, maxnutri/2) //Half filled nutrient trays.
 	return ..()
 
 /obj/machinery/hydroponics/Destroy()
@@ -83,7 +83,9 @@
 	else
 		return ..()
 
-/obj/machinery/hydroponics/process()
+/obj/machinery/hydroponics/process(seconds_per_tick)
+	var/needs_update = FALSE // Checks if the icon needs updating so we don't redraw empty trays every time
+
 	if(!powered() && self_sustaining)
 		visible_message(span_warning("[name]'s auto-grow functionality shuts off!"))
 		set_idle_power()
@@ -94,7 +96,10 @@
 		adjustWeeds(-1)
 		adjustPests(-1)
 
-	var/needs_update = 0 // Checks if the icon needs updating so we don't redraw empty trays every time
+	if(isturf(loc))
+		var/turf/currentTurf = loc
+		light_level = currentTurf.get_lumcount()
+
 	if(world.time > (lastcycle + cycledelay))
 		lastcycle = world.time
 		if(myseed && !dead)
@@ -103,7 +108,7 @@
 			if(age < myseed.maturation)
 				lastproduce = age
 
-			needs_update = 1
+			needs_update = TRIE
 
 //Nutrients//////////////////////////////////////////////////////////////
 			// Nutrients deplete at a constant rate, since new nutrients can boost stats far easier.
@@ -119,15 +124,9 @@
 
 //Photosynthesis/////////////////////////////////////////////////////////
 			// Lack of light hurts non-mushrooms
-			if(isturf(loc))
-				var/turf/currentTurf = loc
-				var/lightAmt = currentTurf.get_lumcount()
-				if(myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
-					if(lightAmt < 0.2)
-						adjustHealth(-1 / rating)
-				else // Non-mushroom
-					if(lightAmt < 0.4)
-						adjustHealth(-2 / rating)
+			var/is_fungus = myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism)
+			if(light_level < (is_fungus ? 0.2 : 0.4))
+				adjust_plant_health((is_fungus ? -1 : -2) / rating)
 
 //Water//////////////////////////////////////////////////////////////////
 			// Drink random amount of water
