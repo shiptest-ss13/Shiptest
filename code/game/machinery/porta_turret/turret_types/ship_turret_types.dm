@@ -247,8 +247,8 @@
 /* Effective at long range */
 
 /obj/machinery/porta_turret/ship/solcon
-	name = "Solar Armories "
-	desc = ""
+	name = "Type Fauchard Emplacement" // <- women who cannot do solcon names good
+	desc = "A long range turret manufactured by the Solarbundswaffenkammer. It is rated for combat usage, and has a higher than average lethality index."
 	faction = list(FACTION_PLAYER_SOLCON, "turret")
 	stun_projectile = /obj/projectile/bullet/gauss/hc
 	stun_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
@@ -263,8 +263,8 @@
 	spread = 10
 
 /obj/machinery/porta_turret/ship/solcon/slug
-	name = "Solar Armories "
-	desc = ""
+	name = "Type Guisarme Emplacement"
+	desc = "A short range turret emplacement manufactured by the Solarbundswaffenkammer. The slug rounds used have given it a reputation for incredible effect against unarmored targets, and performance issues at range."
 	faction = list(FACTION_PLAYER_SOLCON, "turret")
 	stun_projectile = /obj/projectile/bullet/gauss/slug/hc
 	stun_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
@@ -278,8 +278,8 @@
 	burst_delay = 5
 
 /obj/machinery/porta_turret/ship/solcon/lance
-	name = "Solar Armories "
-	desc = ""
+	name = "Type Glaive Emplacement"
+	desc = "A heavy turret emplacement manufactured by the Solarbundswaffenkammer. Long cycle time between volleys is the only weakness attributed to the turret, as it is effective against targets up to exo-armor."
 	faction = list(FACTION_PLAYER_SOLCON, "turret")
 	stun_projectile = /obj/projectile/bullet/gauss/lance/hc
 	stun_projectile_sound = 'sound/weapons/gun/gauss/gar.ogg'
@@ -288,7 +288,7 @@
 	max_integrity = 300
 	integrity_failure = 0.5
 	scan_range = 16
-	shot_delay = 50
+	shot_delay = 60
 	burst_size = 3
 	burst_delay = 4
 
