@@ -30,7 +30,7 @@
 	fixable.add_overlay(GLOB.cleaning_bubbles)
 	playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
 	user.visible_message(span_notice("[user] starts to wipe down [fixable] with [src]!"), span_notice("You start to give [fixable] a deep clean with [src]..."))
-	if(!do_after(user, 20 SECONDS, target = target, extra_checks = CALLBACK(fixable, TYPE_PROC_REF(/obj/item/gun/ballistic, accidents_happen), user)))
+	if(!do_after(user, 10 SECONDS, target = target, extra_checks = CALLBACK(fixable, TYPE_PROC_REF(/obj/item/gun/ballistic, accidents_happen), user)))
 		fixable.cut_overlay(GLOB.cleaning_bubbles)
 		return
 	fixable.cut_overlay(GLOB.cleaning_bubbles)
