@@ -316,6 +316,16 @@ Mech Equipment
 		/obj/item/circuitboard/machine/mech_recharger
 	)
 
+/datum/supply_pack/mech/equipment/AI_mech_controller
+	name = "Exosuit R.P.C.P. Control Beacon "
+	desc = "A dual use tracking/remote control beacon for use with R.P.C.P. units."
+	cost = 750
+	contains = list(
+		/obj/item/mecha_parts/chassis/mp_gygax,
+	)
+	faction = /datum/faction/nt
+	faction_locked = TRUE
+
 /*
 weapons
 */

@@ -802,7 +802,7 @@
 			to_chat(user, "<span class='notice'>[icon2html(src, user)] Status of [name]:</span>\n[A.get_mecha_info()]")
 			break
 		if(!can_control_mech)
-			to_chat(user, "<span class='warning'>You cannot control exosuits without AI control beacons installed.</span>")
+			to_chat(user, "<span class='warning'>You cannot control exosuits without R.P.C.P. control beacons installed.</span>")
 			return
 		to_chat(user, "<a href='?src=[REF(user)];ai_take_control=[REF(src)]'><span class='boldnotice'>Take control of exosuit?</span></a><br>")
 
@@ -818,7 +818,7 @@
 				return
 			AI = occupant
 			if(!AI || !isAI(occupant)) //Mech does not have an AI for a pilot
-				to_chat(user, "<span class='warning'>No AI detected in the [name] onboard computer.</span>")
+				to_chat(user, "<span class='warning'>No Positronic Intelligence detected in the [name] onboard computer.</span>")
 				return
 			AI.ai_restore_power()//So the AI initially has power.
 			AI.control_disabled = TRUE
@@ -847,7 +847,7 @@
 		if(AI_TRANS_FROM_CARD) //Using an AI card to upload to a mech.
 			AI = card.AI
 			if(!AI)
-				to_chat(user, "<span class='warning'>There is no AI currently installed on this device.</span>")
+				to_chat(user, "<span class='warning'>There is no Positronic Intelligence currently installed on this device.</span>")
 				return
 			if(AI.deployed_shell) //Recall AI if shelled so it can be checked for a client
 				AI.disconnect_shell()

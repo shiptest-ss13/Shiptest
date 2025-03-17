@@ -42,30 +42,30 @@
 	availability_prob = 30
 
 /datum/blackmarket_item/tech/ai_core
-	name = "AI Core Board"
-	desc = "The future is now! Become one with your ship with this AI core board! (Some assembly required.)"
+	name = "R.P.C.P. Frame Board"
+	desc = "The future is now! Become one with your ship with this R.P.C.P. Frame board! (Some assembly required.)"
 	item = /obj/item/circuitboard/aicore
 	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg)
 
-	price_min = 5000
-	price_max = 8000
+	price_min = 4000
+	price_max = 7000
 	stock = 1
 	availability_prob = 5
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tech/boris
-	name = "B.O.R.I.S Module"
-	desc = "A Bluespace Optimi-blah blah blah, I'm bored already. This module will convert a cyborg frame into an AI compatible shell."
+	name = "R.S.C uplink module"
+	desc = "A remote something something connects a specialist positronic frame to something with an equally stupid name. idfk man."
 	item = /obj/item/borg/upgrade/ai
 
-	price_min = 500
-	price_max = 1000
+	price_min = 250
+	price_max = 750
 	stock = 1
 	availability_prob = 0
 
 /datum/blackmarket_item/tech/mmi
 	name = "Man Machine Interface"
-	desc = "Transcend the weakness of your flesh with this man machine interface, compatible with AIs, Cyborgs and Mechs!"
+	desc = "Transcend the weakness of your flesh with this man machine interface, able to be installed in most places a positronic brain can."
 	item = /obj/item/mmi
 	pair_item = list(/datum/blackmarket_item/tech/borg)
 
@@ -75,8 +75,8 @@
 	availability_prob = 40
 
 /datum/blackmarket_item/tech/borg
-	name = "Cyborg Construction Kit"
-	desc = "This durable and verastile cyborg frame is capable of fufilling a number of roles and survive situations that would kill the average person. Brain sold seperately."
+	name = "Specialist Positronic Frame Construction Kit"
+	desc = "This durable and verastile specialist positronic frame is capable of fufilling a number of roles and survive situations that would kill the average person. Positronic sold seperately."
 	item = /obj/structure/closet/crate/cyborg
 
 	price_min = 1000

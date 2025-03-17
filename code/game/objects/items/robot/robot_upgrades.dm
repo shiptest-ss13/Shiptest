@@ -484,15 +484,15 @@
 		R.module.remove_module(SP, TRUE)
 
 /obj/item/borg/upgrade/ai
-	name = "B.O.R.I.S. module"
-	desc = "Bluespace Optimized Remote Intelligence Synchronization. An uplink device which takes the place of an MMI in cyborg endoskeletons, creating a robotic shell controlled by an AI."
+	name = "R.S.C uplink module"
+	desc = "Remote Specialist Chassis Uplink Module. An remote controlling system for Specialist Chassis to be interfaced by Remote Positronic Connection Points."
 	icon_state = "boris"
 
 /obj/item/borg/upgrade/ai/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if(.)
 		if(R.shell)
-			to_chat(user, "<span class='warning'>This unit is already an AI shell!</span>")
+			to_chat(user, "<span class='warning'>This unit is already an R.P.C.P. shell!</span>")
 			return FALSE
 		if(R.key) //You cannot replace a player unless the key is completely removed.
 			to_chat(user, "<span class='warning'>Intelligence patterns detected in this [R.braintype]. Aborting.</span>")
@@ -618,7 +618,7 @@
 
 /obj/item/borg/upgrade/ship_access_chip
 	name = "silicon ship access chip"
-	desc = "A module that grants cyborgs and AI access to the ship this was printed from."
+	desc = "A module that grants specialist positronic frames and R.P.C.P. units access to the ship this was printed from."
 	icon_state = "card_mod"
 	var/datum/overmap/ship/controlled/ship
 
@@ -732,11 +732,11 @@
 			R.module.remove_module(E, TRUE)
 
 /obj/item/borg/upgrade/transform/commando
-	desc = "A module picking system, capable of using stored matter to build itself out into a fresh cyborg configuration. This one has no serial number, and no identifying marks, save a single piece of tape with the module's classification written in sharpie."
+	desc = "A module picking system, capable of using stored matter to build itself out into a fresh specialist positronic frame configuration. This one has no serial number, and no identifying marks, save a single piece of tape with the module's classification written in sharpie."
 	name = "MODPICK!1(BRIGADOR)PROTOTYPE"
 	new_module = /obj/item/robot_module/syndieproto
 
 /obj/item/borg/upgrade/transform/assault
 	name = "unknown cyborg module"
-	desc = "A module picking system, capable of using stored matter to build itself out into a fresh cyborg configuration. This one has no serial number, and no identifying marks."
+	desc = "A module picking system, capable of using stored matter to build itself out into a fresh specialist positronic frame configuration. This one has no serial number, and no identifying marks."
 	new_module = /obj/item/robot_module/syndicate

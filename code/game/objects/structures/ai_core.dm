@@ -1,10 +1,10 @@
 /obj/structure/AIcore
 	density = TRUE
 	anchored = FALSE
-	name = "\improper AI core"
+	name = "\improper Remote Positronic Connection Point unit"
 	icon = 'icons/mob/ai.dmi'
 	icon_state = "0"
-	desc = "The framework for an artificial intelligence core."
+	desc = "The framework for an Remote Positronic Connection Point."
 	max_integrity = 500
 	var/state = EMPTY_CORE
 	var/datum/ai_laws/laws
@@ -145,7 +145,7 @@
 							state = CABLED_CORE
 							update_appearance()
 					else
-						to_chat(user, "<span class='warning'>You need five lengths of cable to wire the AI core!</span>")
+						to_chat(user, "<span class='warning'>You need five lengths of cable to wire the R.P.C.P. frame!</span>")
 					return
 			if(CABLED_CORE)
 				if(P.tool_behaviour == TOOL_WIRECUTTER)
@@ -169,7 +169,7 @@
 							state = GLASS_CORE
 							update_appearance()
 					else
-						to_chat(user, "<span class='warning'>You need two sheets of reinforced glass to insert them into the AI core!</span>")
+						to_chat(user, "<span class='warning'>You need two sheets of reinforced glass to insert them into the R.P.C.P. frame!</span>")
 					return
 
 				if(istype(P, /obj/item/aiModule))
@@ -200,7 +200,7 @@
 
 				if(P.tool_behaviour == TOOL_CROWBAR && brain)
 					P.play_tool_sound(src)
-					to_chat(user, "<span class='notice'>You remove the brain.</span>")
+					to_chat(user, "<span class='notice'>You remove the [brain.name].</span>")
 					brain.forceMove(loc)
 					brain = null
 					update_appearance()
@@ -282,7 +282,7 @@
 	qdel(src)
 
 /obj/structure/AIcore/deactivated
-	name = "inactive AI"
+	name = "inactive R.P.C.P."
 	icon_state = "ai-empty"
 	anchored = TRUE
 	state = AI_READY_CORE
@@ -303,7 +303,7 @@ That prevents a few funky behaviors.
 /atom/proc/transfer_ai(interaction, mob/user, mob/living/silicon/ai/AI, obj/item/aicard/card)
 	if(istype(card))
 		if(card.flush)
-			to_chat(user, "<span class='alert'>ERROR: AI flush is in progress, cannot execute transfer protocol.</span>")
+			to_chat(user, "<span class='alert'>ERROR: Positronic Intelligence flush is in progress, cannot execute transfer protocol.</span>")
 			return FALSE
 	return TRUE
 
@@ -321,8 +321,8 @@ That prevents a few funky behaviors.
 		AI.battery = circuit.battery
 		qdel(src)
 	else //If for some reason you use an empty card on an empty AI terminal.
-		to_chat(user, "<span class='alert'>There is no AI loaded on this terminal.</span>")
+		to_chat(user, "<span class='alert'>There is no Positronic Intelligence loaded on this terminal.</span>")
 
 /obj/item/circuitboard/aicore
-	name = "AI core (AI Core Board)" //Well, duh, but best to be consistent
+	name = "R.P.C.P. unit (R.P.C.P. unit Board)" //Well, duh, but best to be consistent
 	var/battery = 200 //backup battery for when the AI loses power. Copied to/from AI mobs when carding, and placed here to avoid recharge via deconning the core
