@@ -148,7 +148,7 @@
 
 //Toxins/////////////////////////////////////////////////////////////////
 			// Too much toxins cause harm, but when the plant drinks the contaiminated water, the toxins disappear slowly
-			if(toxic >= 40 && toxic < 80)
+			if(toxic >= 50 && toxic < 80)
 				adjustHealth(-1 / rating)
 				adjustToxic(-rand(1,10) / rating)
 			else if(toxic >= 80) // I don't think it ever gets here tbh unless above is commented out
