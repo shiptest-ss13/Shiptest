@@ -18,7 +18,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother
 	name = "goliath broodmother"
-	desc = "An example of sexual dimorphism, this female goliath looks much different than the males of her species.  She is, however, just as dangerous, if not more."
+	desc = "Goliaths are sequential hermaphrodites, and will rarely enter an egg-bearing or \"female\" phase. As this specimen clearly demonstrates, Goliaths in this phase become significantly larger and more aggressive. These \"Broodmothers\" are even more dangerous than the common variety, and are best avoided entirely."
 	gender = FEMALE
 	icon = 'icons/mob/lavaland/lavaland_elites_64.dmi'
 	icon_state = "broodmother"
@@ -37,7 +37,7 @@
 	attack_verb_continuous = "beats down on"
 	attack_verb_simple = "beat down on"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	throw_message = "does nothing to the rocky hide of the"
+	throw_message = "does nothing to the thick hide of the"
 	speed = 2
 	move_to_delay = 5
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
@@ -166,7 +166,7 @@
 //The goliath's children.  Pretty weak, simple mobs which are able to put a single tentacle under their target when at range.
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child
 	name = "baby goliath"
-	desc = "A young goliath recently born from it's mother.  While they hatch from eggs, said eggs are incubated in the mother until they are ready to be born."
+	desc = "Goliaths are ovoviviparous; While egg-bearing, they incubate their eggs inside the mother. Newly-hatched Goliaths like this one are precocious and can defend themselves and their mother from the moment they hatch."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "goliath_baby"
 	icon_living = "goliath_baby"
@@ -180,7 +180,7 @@
 	attack_verb_continuous = "bashes against"
 	attack_verb_simple = "bash against"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	throw_message = "does nothing to the rocky hide of the"
+	throw_message = "does nothing to the hide of the"
 	speed = 2
 	move_to_delay = 5
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
@@ -247,7 +247,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet
 	name = "baby gruboid"
-	desc = "A young gruboid recently born. As a defense mechanism, they violently explode if killed."
+	desc = "A newly-born gruboid. As a defense mechanism, they violently explode if killed."
 	icon_state = "gruboid_baby"
 	icon_living = "gruboid_baby"
 	icon_aggro = "gruboid_baby"

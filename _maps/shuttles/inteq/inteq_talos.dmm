@@ -381,7 +381,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "cp" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cq" = (
@@ -1281,7 +1281,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
 	},
@@ -1316,7 +1316,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/landmark/observer_start,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -2967,7 +2966,7 @@
 /area/ship/maintenance/starboard)
 "rA" = (
 /obj/structure/closet/crate/large,
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "rB" = (
@@ -3760,10 +3759,15 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
-/obj/machinery/autolathe,
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 32
 	},
+/obj/machinery/suit_storage_unit/inherit{
+	req_access_txt = "1"
+	},
+/obj/item/clothing/mask/gas/inteq,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "wv" = (
@@ -5319,6 +5323,11 @@
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/clothing/head/helmet/inteq,
 /obj/item/clothing/gloves/combat,
+/obj/item/clothing/head/helmet/inteq,
+/obj/item/clothing/head/helmet/swat/inteq,
+/obj/item/clothing/head/helmet/swat/inteq,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/suit/armor/vest/alt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Gv" = (
@@ -5742,8 +5751,8 @@
 	icon_state = "8-9"
 	},
 /obj/structure/catwalk/over,
-/obj/structure/closet/crate,
-/obj/effect/spawner/random/maintenance/two,
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/plastic/twenty,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ju" = (
@@ -6005,8 +6014,7 @@
 /area/ship/engineering)
 "KS" = (
 /obj/structure/catwalk/over,
-/obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/plastic/twenty,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "KY" = (
@@ -6211,7 +6219,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Mg" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -7929,6 +7937,10 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/storage/box/handcuffs,
 /obj/item/storage/belt/security/webbing/inteq/alt,
+/obj/item/storage/belt/security/webbing/inteq,
+/obj/item/storage/belt/security/webbing/inteq/alt,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/mask/balaclava/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Ya" = (
@@ -8134,7 +8146,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Zs" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Zu" = (
