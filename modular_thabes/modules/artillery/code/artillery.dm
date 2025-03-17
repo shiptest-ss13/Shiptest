@@ -29,17 +29,17 @@
 	var/list/coords = our_vlevel.get_relative_coords(targloc)
 
 	to_chat(user, span_notice("COORDINATES: LONGITUDE [coords[1]]. LATITUDE [coords[2]]."))
-	playsound(src, 'sound/effects/binoctarget.ogg', 35)
+	playsound(src, 'modular_thabes/modules/artillery/sound/binoctarget.ogg', 35)
 
 
 /obj/machinery/artillery
 	name = "\improper howitzer"
 	desc = "A manual, crew-operated and towable howitzer, will rain down shells on any of your foes."
-	icon = 'modular_thabes/modules/shit_for_event/icons/howitzer.dmi'
+	icon = 'modular_thabes/modules/artillery/icons/howitzer.dmi'
 	icon_state = "howitzer_deployed"
-	var/fire_sound = 'sound/weapons/gun/fire/howitzer_fire.ogg'
-	var/reload_sound = 'sound/weapons/gun/interact/tat36_reload.ogg'
-	var/fall_sound = 'sound/weapons/gun/misc/howitzer_whistle.ogg'
+	var/fire_sound = 'modular_thabes/modules/artillery/sound/howitzer_fire.ogg'
+	var/reload_sound = 'modular_thabes/modules/artillery/sound/tat36_reload.ogg'
+	var/fall_sound = 'modular_thabes/modules/artillery/sound/howitzer_whistle.ogg'
 	obj_integrity = 400
 	max_integrity = 400
 
@@ -156,7 +156,7 @@
 		var/real_y = our_vlevel.low_y + target_y - 1
 
 		var/turf/target_turf = locate(real_x, real_y, z)
-		var/list/our_coords = our_vlevel.get_relative_coords(target_turf)
+		//var/list/our_coords = our_vlevel.get_relative_coords(target_turf)
 
 		var/max_offset = round(abs((get_dist_euclide(src,target_turf)))/offset_per_turfs)
 		var/firing_spread = max_offset + spread
@@ -206,13 +206,13 @@
 /obj/machinery/artillery/mortar
 	name = "\improper mortar"
 	desc = "A manual, crew-operated mortar system intended to rain down shells on anything it's aimed at. Less accurate than a howitzer, but still useful neverless. Needs to be set down first to fire. Ctrl+Click on a tile to deploy, drag the mortar's sprites to mob's sprite to undeploy."
-	icon = 'modular_thabes/modules/shit_for_event/icons/mortar.dmi'
+	icon = 'modular_thabes/modules/artillery/icons/mortar.dmi'
 	icon_state = "mortar_deployed"
 	obj_integrity = 200
 	max_integrity = 200
-	fire_sound = 'sound/weapons/gun/fire/mortar_fire.ogg'
-	reload_sound = 'sound/weapons/gun/interact/mortar_reload.ogg' // Our reload sound.
-	fall_sound = 'sound/weapons/gun/misc/mortar_long_whistle.ogg' //The sound the shell makes when falling.
+	fire_sound = 'modular_thabes/modules/artillery/sound/mortar_fire.ogg'
+	reload_sound = 'modular_thabes/modules/artillery/sound/mortar_reload.ogg' // Our reload sound.
+	fall_sound = 'modular_thabes/modules/artillery/sound/mortar_long_whistle.ogg' //The sound the shell makes when falling.
 	/// Max spread on target
 	max_spread = 5
 	/// Used for deconstruction and aiming sanity
@@ -234,7 +234,7 @@
 /obj/item/mortal_shell
 	name = "\improper 80mm mortar shell"
 	desc = "An unlabeled 80mm mortar shell, probably a casing."
-	icon = 'modular_thabes/modules/shit_for_event/icons/mortar.dmi'
+	icon = 'modular_thabes/modules/artillery/icons/mortar.dmi'
 	icon_state = "mortar_ammo_cas"
 	w_class = WEIGHT_CLASS_SMALL
 	///Ammo projectile typepath that the shell uses
@@ -262,7 +262,7 @@
 /obj/item/mortal_shell/howitzer
 	name = "\improper 150mm artillery shell"
 	desc = "An unlabeled 150mm shell, probably a casing."
-	icon = 'modular_thabes/modules/shit_for_event/icons/howitzer.dmi'
+	icon = 'modular_thabes/modules/artillery/icons/howitzer.dmi'
 	icon_state = "howitzer"
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -274,7 +274,7 @@
 
 /obj/projectile/bullet/mortar
 	name = "80mm shell"
-	icon = 'modular_thabes/modules/shit_for_event/icons/projectile.dmi'
+	icon = 'modular_thabes/modules/artillery/icons/projectile.dmi'
 	icon_state = "mortar"
 
 	movement_type = PHASING
