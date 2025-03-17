@@ -185,21 +185,21 @@
 
 /datum/supply_pack/ammo/c57x39mm_boxcrate
 	name = "5.7x39mm Ammo Box Crate"
-	desc = "Contains two 48-round 5.7x39mm box for PDWs such as the Sidewinder."
+	desc = "Contains one 48-round 5.7x39mm box for PDWs such as the Sidewinder."
 	contains = list(/obj/item/storage/box/ammo/c57x39)
-	cost = 355 //5.4 ammo efficiency at 20 damage
+	cost = 177 //5.4 ammo efficiency at 20 damage
 
 /datum/supply_pack/ammo/c57x39mm_ap
 	name = "5.7x39mm Armour Piercing Ammo Box Crate"
-	desc = "Contains two 48-round 5.7x39mm box for PDWs such as the Sidewinder."
+	desc = "Contains one 48-round 5.7x39mm box for PDWs such as the Sidewinder."
 	contains = list(/obj/item/storage/box/ammo/c57x39/ap)
-	cost = 443
+	cost = 221
 
 /datum/supply_pack/ammo/c57x39mm_hp
 	name = "5.7x39mm Hollow Point Ammo Box Crate"
-	desc = "Contains two 48-round 5.7x39mm Hollow Point boxes for PDWs such as the Sidewinder."
+	desc = "Contains one 48-round 5.7x39mm Hollow Point box for PDWs such as the Sidewinder."
 	contains = list(/obj/item/storage/box/ammo/c57x39/hp)
-	cost = 443
+	cost = 221
 
 /* 12 Gauge */
 
@@ -251,19 +251,19 @@
 
 /datum/supply_pack/ammo/a762_ammo_box
 	name = "7.62x40mm CLIP Ammo Box Crate"
-	desc = "Contains one 60-round 7.62x40mm CLIP boxes for the SKM rifles."
+	desc = "Contains one 60-round 7.62x40mm CLIP box for the SKM rifles."
 	contains = list(/obj/item/storage/box/ammo/a762_40)
 	cost = 360 //5 ammo efficiency at 30 damage
 
 /datum/supply_pack/ammo/a762_ap
 	name = "7.62x40mm CLIP Armour Piercing Ammo Box Crate"
-	desc = "Contains one 60-round 7.62x40mm CLIP Armour Piercing boxes for the SKM rifles."
+	desc = "Contains one 60-round 7.62x40mm CLIP Armour Piercing box for the SKM rifles."
 	contains = list(/obj/item/storage/box/ammo/a762_40/ap)
 	cost = 450
 
 /datum/supply_pack/ammo/a762_hp
 	name = "7.62x40mm CLIP Hollow Point Ammo Box Crate"
-	desc = "Contains one 60-round 7.62x40mm CLIP Hollow Point boxes for the SKM rifles."
+	desc = "Contains one 60-round 7.62x40mm CLIP Hollow Point box for the SKM rifles."
 	contains = list(/obj/item/storage/box/ammo/a762_40/hp)
 	cost = 450
 
@@ -271,19 +271,19 @@
 
 /datum/supply_pack/ammo/a556_ammo_box
 	name = "5.56x42mm CLIP Ammo Box Crate"
-	desc = "Contains one 60-round 5.56x42mm CLIP boxes for most newer rifles."
+	desc = "Contains one 60-round 5.56x42mm CLIP box for most newer rifles."
 	contains = list(/obj/item/storage/box/ammo/a556_42)
 	cost = 300 //5 ammo efficiency at 25 damage
 
 /datum/supply_pack/ammo/a556_ap
 	name = "5.56x42mm CLIP Armour Piercing Ammo Box Crate"
-	desc = "Contains one 60-round 5.56x42mm CLIP Armour Piercing boxes for most newer rifles."
+	desc = "Contains one 60-round 5.56x42mm CLIP Armour Piercing box for most newer rifles."
 	contains = list(/obj/item/storage/box/ammo/a556_42/ap)
 	cost = 375
 
 /datum/supply_pack/ammo/a556_hp
 	name = "5.56x42mm CLIP Hollow Point Ammo Box Crate"
-	desc = "Contains one 60-round 5.56x42mm CLIP Hollow Point boxes for most newer rifles."
+	desc = "Contains one 60-round 5.56x42mm CLIP Hollow Point box for most newer rifles."
 	contains = list(/obj/item/storage/box/ammo/a556_42/hp)
 	cost = 375
 
@@ -317,7 +317,7 @@
 
 /datum/supply_pack/ammo/c299
 	name = ".299 Eoehoma Caseless Ammo Box Crate"
-	desc = "Contains one 60-round boxes of .299 Caseless ammo from the defunct Eoehoma. Used for the E-40 Hybrid Rifle."
+	desc = "Contains one 60-round box of .299 Caseless ammo from the defunct Eoehoma. Used for the E-40 Hybrid Rifle."
 	contains = list(/obj/item/storage/box/ammo/c299)
 	cost = 222 //5.4 ammo efficiency at 20 damage
 
