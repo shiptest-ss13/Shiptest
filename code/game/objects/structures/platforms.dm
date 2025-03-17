@@ -6,6 +6,7 @@
 	flags_1 = ON_BORDER_1
 	layer = RAILING_LAYER
 	pass_flags_self = LETPASSTHROW
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
