@@ -36,7 +36,7 @@
 	bullet_identifier = "small rubber bullet"
 
 /obj/projectile/bullet/c38/dumdum
-	name = ".38 dum-dum bullet"
+	name = ".38 prism bullet"
 	damage = 20
 	armour_penetration = -40
 	ricochets_max = 0
@@ -70,7 +70,7 @@
 		var/mob/living/M = target
 		M.adjust_bodytemperature(((100-blocked)/100)*(temperature - M.bodytemperature))
 
-/obj/projectile/bullet/c38/ashwine //see /obj/projectile/temp for the original code
+/obj/projectile/bullet/c38/ashwine
 	name = ".38 hallucinogenic bullet"
 	ricochets_max = 0
 
@@ -78,17 +78,35 @@
 	. = ..()
 	if(isliving(target))
 		var/mob/living/M = target
-		M.apply_status_effect(/datum/status_effect/trickwine/debuff/ash, src, 40)
+		M.adjust_jitter(5)
+		M.Dizzy(5)
+		M.adjust_drugginess(10)
 
-/obj/projectile/bullet/c38/lightning //see /obj/projectile/temp for the original code
-	name = ".38 thunder bullet"
+/obj/projectile/bullet/c38/lightning
+	name = ".38 shock bullet"
 	ricochets_max = 0
+	var/zap_flags = ZAP_MOB_DAMAGE
 
 /obj/projectile/bullet/c38/lightning/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(isliving(target))
 		var/mob/living/M = target
 		do_sparks(5, FALSE, M)
+		M.electrocute_act(5, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
+	else
+		tesla_zap(src, 5, 5, zap_flags)
+
+/obj/projectile/bullet/c38/force
+	name = ".38 force bullet"
+	armour_penetration = 10
+	ricochets_max = 0
+
+/obj/projectile/bullet/c38/force/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(ismovable(target) && isliving(target))
+		var/atom/movable/M = target
+		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
+		M.safe_throw_at(throw_target, 3, 2)
 
 // .357 (Syndicate Revolver)
 

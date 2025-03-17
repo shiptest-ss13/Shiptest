@@ -165,6 +165,7 @@
 	breakaway_flask_icon_state = "baflaskashwine"
 	buff_effect = /datum/status_effect/trickwine/buff/ash
 	debuff_effect = /datum/status_effect/trickwine/debuff/ash
+	dip_ammo_type = /obj/item/ammo_casing/c38/ashwine
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine/on_mob_life(mob/living/M)
 	var/high_message = pick("You feel far more devoted to the cause", "You feel like you should go on a hunt")
@@ -275,6 +276,7 @@
 	breakaway_flask_icon_state = "baflaskshockwine"
 	buff_effect = /datum/status_effect/trickwine/buff/shock
 	debuff_effect = /datum/status_effect/trickwine/debuff/shock
+	dip_ammo_type = /obj/item/ammo_casing/c38/lightning
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)

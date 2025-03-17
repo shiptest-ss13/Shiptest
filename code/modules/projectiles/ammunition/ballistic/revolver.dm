@@ -103,10 +103,22 @@
 	projectile_type = /obj/projectile/bullet/c38/ashwine
 
 /obj/item/ammo_casing/c38/lightning
-	name = ".38 thunder bullet casing"
-	desc = "A .38 thunder bullet casing."
+	name = ".38 shock bullet casing"
+	desc = "A .38 shock bullet casing."
 	bullet_skin = "surplus"
-	projectile_type = /obj/projectile/bullet/c38/thunder
+	projectile_type = /obj/projectile/bullet/c38/lightning
+
+/obj/item/ammo_casing/c38/force
+	name = ".38 force bullet casing"
+	desc = "A .38 force bullet casing."
+	bullet_skin = "surplus"
+	projectile_type = /obj/projectile/bullet/c38/force
+
+/obj/item/ammo_casing/c38/prism
+	name = ".38 prism bullet casing"
+	desc = "A .38 prism bullet casing."
+	bullet_skin = "surplus"
+	projectile_type = /obj/projectile/bullet/c38/dumdum
 
 //44 Roumain (Montagne & Shadow)
 
