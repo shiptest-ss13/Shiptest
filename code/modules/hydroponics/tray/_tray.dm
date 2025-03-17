@@ -55,6 +55,8 @@
 	var/self_sustaining = FALSE
 	///The icon state for the overlay used to represent that this tray is self-sustaining.
 	var/self_sustaining_overlay_icon_state = "gaia_blessing"
+	///The light level on the tray tile
+	var/light_level = 0
 
 /obj/machinery/hydroponics/Initialize()
 	if(density)
@@ -108,7 +110,7 @@
 			if(age < myseed.maturation)
 				lastproduce = age
 
-			needs_update = TRIE
+			needs_update = TRUE
 
 //Nutrients//////////////////////////////////////////////////////////////
 			// Nutrients deplete at a constant rate, since new nutrients can boost stats far easier.
@@ -126,11 +128,11 @@
 			// Lack of light hurts non-mushrooms
 			var/is_fungus = myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 			if(light_level < (is_fungus ? 0.2 : 0.4))
-				adjust_plant_health((is_fungus ? -1 : -2) / rating)
+				adjustHealth((is_fungus ? -1 : -2) / rating)
 
 //Water//////////////////////////////////////////////////////////////////
 			// Drink random amount of water
-			adjustWater(-rand(1,6) / rating)
+			adjustWater(-rand(1,5) / rating)
 
 			// If the plant is dry, it loses health pretty fast, unless mushroom
 			if(waterlevel <= 10 && !myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
@@ -143,7 +145,7 @@
 				adjustHealth(rand(1,2) / rating)
 				if(myseed && prob(myseed.weed_chance))
 					adjustWeeds(myseed.weed_rate)
-				else if(prob(5))  //5 percent chance the weed population will increase
+				else if(prob(1))  //1 percent chance the weed population will increase
 					adjustWeeds(1 / rating)
 
 //Toxins/////////////////////////////////////////////////////////////////
@@ -215,6 +217,7 @@
 					lastproduce = age
 			if(prob(5))  // On each tick, there's a 5 percent chance the pest population will increase
 				adjustPests(1 / rating)
+		//No plant or dead
 		else
 			if(waterlevel > 10 && reagents.total_volume > 0 && prob(10))  // If there's no plant, the percentage chance is 10%
 				adjustWeeds(1 / rating)
