@@ -179,6 +179,7 @@
 	radio.canhear_range = 3
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	RegisterSignal(radio, COMSIG_RADIO_NEW_FREQUENCY, PROC_REF(adjust_name))
 	c_tag = "Broadcast Camera - Unlabeled"
 
 /obj/item/bodycamera/broadcast_camera/Destroy()
@@ -213,8 +214,13 @@
 		. += "<span class='notice'>You can also use <b>Unique Action (default space)</b> to toggle the microphone.</span>"
 
 /obj/item/bodycamera/broadcast_camera/set_name(camera_name)
+	if(camera_name != "")
+		camera_name = "[camera_name]@[radio.frequency/10]"
 	. = ..()
-	c_tag = "[c_tag]@[radio.frequency/10]"
+
+/obj/item/bodycamera/broadcast_camera/proc/adjust_name()
+	var/camera_name = splittext(c_tag, "@")
+	c_tag = "[camera_name[1]]@[radio.frequency/10]"
 
 /obj/item/bodycamera/broadcast_camera/ComponentInitialize()
 	. = ..()
