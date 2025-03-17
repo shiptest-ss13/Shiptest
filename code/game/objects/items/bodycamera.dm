@@ -216,7 +216,6 @@
 	. = ..()
 	c_tag = "[c_tag]@[radio.frequency/10]"
 
-
 /obj/item/bodycamera/broadcast_camera/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12)
