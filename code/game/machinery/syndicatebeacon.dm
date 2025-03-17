@@ -85,7 +85,7 @@
 	return ..()
 
 //stealth direct power usage
-/obj/machinery/power/singularity_beacon/process()
+/obj/machinery/power/singularity_beacon/process(seconds_per_tick)
 	if(!active)
 		return
 
@@ -132,11 +132,5 @@
 /obj/item/sbeacondrop/powersink
 	desc = "A label on it reads: <i>Warning: Activating this device will send a power draining device to your location</i>."
 	droptype = /obj/item/powersink
+s
 
-/obj/item/sbeacondrop/semiautoturret
-	desc = "A label on it reads: <i>Warning: Activating this device will send a semi-auto turret to your location</i>."
-	droptype = /obj/machinery/porta_turret/syndicate/pod
-
-/obj/item/sbeacondrop/heavylaserturret
-	desc = "A label on it reads: <i>Warning: Activating this device will send a heavy laser turret to your location</i>."
-	droptype = /obj/machinery/porta_turret/syndicate/energy/heavy

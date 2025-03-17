@@ -6,11 +6,16 @@
 	icon_state = "shotguncase"
 	anchored = FALSE
 	density = TRUE
+	drag_slowdown = 1.5
 	opacity = FALSE
 	var/case_type = ""
 	var/gun_category = /obj/item/gun
 	var/open = TRUE
 	var/capacity = 4
+
+/obj/structure/guncloset/examine(mob/user)
+	. = ..()
+	. += span_notice("Alt-click to [open ? "close" : "open"] it.")
 
 /obj/structure/guncloset/Initialize(mapload)
 	. = ..()
@@ -43,12 +48,42 @@
 		else
 			to_chat(user, "<span class='warning'>[src] is full.</span>")
 		return
-
-	else if(user.a_intent != INTENT_HARM)
-		open = !open
-		update_appearance()
 	else
 		return ..()
+
+/obj/structure/guncloset/tool_act(mob/living/user, obj/item/I)
+	. = TRUE
+	if (I.tool_behaviour == TOOL_WRENCH)
+		if(isinspace() && !anchored)
+			return
+		set_anchored(!anchored)
+		I.play_tool_sound(src, 75)
+		user.visible_message(span_notice("[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
+				span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
+				span_hear("You hear a ratchet.")
+		)
+		return
+	else if (I.tool_behaviour == TOOL_WELDER || I.tool_behaviour == TOOL_DECONSTRUCT)
+		if(contents.len)
+			to_chat(user, span_danger("\The [src] is not empty!"))
+			return
+		to_chat(user, span_notice("You begin cutting \the [src] apart..."))
+		if(I.use_tool(src, user, 40, volume=50))
+			user.visible_message(span_notice("[user] slices apart \the [src]."),
+					span_notice("You cut \the [src] apart with \the [I]."),
+					span_hear("You hear cutting."))
+			deconstruct(TRUE)
+	else
+		return FALSE
+
+/obj/structure/guncloset/deconstruct(disassembled = TRUE)
+	if (disassembled)
+		new /obj/item/stack/sheet/metal(loc, 10)
+	for(var/obj/stuff in contents)
+		stuff.forceMove(loc)
+
+	SEND_SIGNAL(src, COMSIG_OBJ_DECONSTRUCT, disassembled)
+	qdel(src)
 
 /obj/structure/guncloset/attack_hand(mob/user)
 	. = ..()
@@ -61,6 +96,14 @@
 	else
 		open = !open
 		update_appearance()
+
+
+/obj/structure/guncloset/AltClick(mob/user)
+	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
+		return FALSE
+	open = !open
+	update_appearance()
+	return TRUE
 
 /**
  * show_menu: Shows a radial menu to a user consisting of an available weaponry for taking
