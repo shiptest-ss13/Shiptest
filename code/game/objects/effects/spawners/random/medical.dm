@@ -1,5 +1,6 @@
 /obj/effect/spawner/random/medical
 	name = "medical loot spawner"
+	icon_state = "medkit"
 	desc = "Doc, gimmie something good."
 
 /obj/effect/spawner/random/medical/minor_healing
@@ -13,6 +14,7 @@
 
 /obj/effect/spawner/random/medical/organs
 	name = "ayylien organ spawner"
+	icon_state = "eyes"
 	loot = list(
 		/obj/item/organ/heart/gland/electric = 3,
 		/obj/item/organ/heart/gland/trauma = 4,

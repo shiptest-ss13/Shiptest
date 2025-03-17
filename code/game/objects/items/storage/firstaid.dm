@@ -498,3 +498,11 @@
 /obj/item/storage/pill_bottle/stardrop/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/stardrop(src)
+
+/obj/item/storage/pill_bottle/starlight
+	name = "bottle of starlight capsules"
+	desc = "Contains vision-enhancing pills."
+
+/obj/item/storage/pill_bottle/starlight/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/reagent_containers/pill/starlight(src)

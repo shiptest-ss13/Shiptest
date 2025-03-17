@@ -317,6 +317,12 @@ WS End */
 	icon_state = "pill11"
 	list_reagents = list(/datum/reagent/drug/stardrop = 15)
 
+/obj/item/reagent_containers/pill/starlight
+	name = "starlight capsule"
+	desc = "A capsule of a night-vision inducing compound known as Starlight."
+	icon_state = "pill11"
+	list_reagents = list(/datum/reagent/drug/stardrop/starlight = 10)
+
 /obj/item/reagent_containers/spray/rhigoxane
 	name = "medical spray (rhigoxane)"
 	desc = "A medical spray bottle.This one contains rhigoxane, it is used to treat burns and cool down temperature if applied with spray."
