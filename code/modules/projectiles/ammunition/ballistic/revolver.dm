@@ -96,6 +96,18 @@
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c38/iceblox
 
+/obj/item/ammo_casing/c38/ashwine
+	name = ".38 hallucinogenic bullet casing"
+	desc = "A .38 hallucinogenic bullet casing."
+	bullet_skin = "surplus"
+	projectile_type = /obj/projectile/bullet/c38/ashwine
+
+/obj/item/ammo_casing/c38/lightning
+	name = ".38 thunder bullet casing"
+	desc = "A .38 thunder bullet casing."
+	bullet_skin = "surplus"
+	projectile_type = /obj/projectile/bullet/c38/thunder
+
 //44 Roumain (Montagne & Shadow)
 
 /obj/item/ammo_casing/a44roum

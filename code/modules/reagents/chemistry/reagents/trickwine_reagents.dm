@@ -216,6 +216,7 @@
 	breakaway_flask_icon_state = "baflaskicewine"
 	buff_effect = /datum/status_effect/trickwine/buff/ice
 	debuff_effect = /datum/status_effect/trickwine/debuff/ice
+	dip_ammo_type = /obj/item/ammo_casing/c38/iceblox
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)

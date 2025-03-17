@@ -70,6 +70,26 @@
 		var/mob/living/M = target
 		M.adjust_bodytemperature(((100-blocked)/100)*(temperature - M.bodytemperature))
 
+/obj/projectile/bullet/c38/ashwine //see /obj/projectile/temp for the original code
+	name = ".38 hallucinogenic bullet"
+	ricochets_max = 0
+
+/obj/projectile/bullet/c38/ashwine/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		M.apply_status_effect(/datum/status_effect/trickwine/debuff/ash, src, 40)
+
+/obj/projectile/bullet/c38/lightning //see /obj/projectile/temp for the original code
+	name = ".38 thunder bullet"
+	ricochets_max = 0
+
+/obj/projectile/bullet/c38/lightning/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		do_sparks(5, FALSE, M)
+
 // .357 (Syndicate Revolver)
 
 /obj/projectile/bullet/a357
