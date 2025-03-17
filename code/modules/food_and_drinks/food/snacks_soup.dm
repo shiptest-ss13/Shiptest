@@ -179,6 +179,7 @@
 	name = "borscht"
 	desc = "A sour soup consisting of a meat stock with tomatoes and beetroots. Usually served hot or cold."
 	icon_state = "beetsoup"
+	tastes = list("sweet and tart beets" = 1, "rich broth" = 1)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 5)
 	foodtype = VEGETABLES
 

@@ -18,6 +18,13 @@
 	. = ..()
 	update_overlays()
 
+/obj/item/reagent_containers/food/snacks/ration/examine_more(mob/user)
+	. = ..()
+	var/list/tags = bitfield_to_list(foodtype, FOOD_FLAGS_IC)
+	. += span_notice("This ration pack contains the following food groups:")
+	for(var/tag in tags)
+		. += " - [tag]"
+
 /obj/item/reagent_containers/food/snacks/ration/update_overlays()
 	. = ..()
 	var/mutable_appearance/ration_overlay
