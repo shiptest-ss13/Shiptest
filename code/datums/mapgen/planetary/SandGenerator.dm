@@ -91,11 +91,12 @@
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
-		/obj/structure/geyser/random = 8,
+		/obj/structure/geyser/random = 4,
 		/obj/structure/vein = 8,
 		/obj/structure/vein/classtwo = 4,
 		/obj/structure/vein/classthree = 2,
-		/obj/effect/spawner/random/anomaly/sand = 1,
+		/obj/effect/spawner/random/anomaly/sand = 2,
+		/obj/effect/spawner/minefield = 1,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(

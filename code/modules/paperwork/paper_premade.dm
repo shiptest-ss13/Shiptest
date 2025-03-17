@@ -114,4 +114,6 @@
 
 //////////// Ruins
 
-
+/obj/item/paper/crumpled/fluff/abandoned_crate
+	name = "\improper Hastily Written Note"
+	default_raw_text = "SORRY NOTHING IOU ONE REWARD"
