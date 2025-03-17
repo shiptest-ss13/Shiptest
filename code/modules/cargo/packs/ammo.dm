@@ -185,21 +185,21 @@
 
 /datum/supply_pack/ammo/c57x39mm_boxcrate
 	name = "5.7x39mm Ammo Box Crate"
-	desc = "Contains one 48-round 5.7x39mm box for PDWs such as the Sidewinder."
+	desc = "Contains one 80-round 5.7x39mm box for PDWs such as the Sidewinder."
 	contains = list(/obj/item/storage/box/ammo/c57x39)
-	cost = 177 //5.4 ammo efficiency at 20 damage
+	cost = 296 //5.4 ammo efficiency at 20 damage
 
 /datum/supply_pack/ammo/c57x39mm_ap
 	name = "5.7x39mm Armour Piercing Ammo Box Crate"
-	desc = "Contains one 48-round 5.7x39mm box for PDWs such as the Sidewinder."
+	desc = "Contains one 80-round 5.7x39mm box for PDWs such as the Sidewinder."
 	contains = list(/obj/item/storage/box/ammo/c57x39/ap)
-	cost = 221
+	cost = 370
 
 /datum/supply_pack/ammo/c57x39mm_hp
 	name = "5.7x39mm Hollow Point Ammo Box Crate"
-	desc = "Contains one 48-round 5.7x39mm Hollow Point box for PDWs such as the Sidewinder."
+	desc = "Contains one 80-round 5.7x39mm Hollow Point box for PDWs such as the Sidewinder."
 	contains = list(/obj/item/storage/box/ammo/c57x39/hp)
-	cost = 221
+	cost = 370
 
 /* 12 Gauge */
 
@@ -212,7 +212,7 @@
 /datum/supply_pack/ammo/slugs
 	name = "Shotgun Slug Crate"
 	desc = "Contains a box of 32 slug shells for use in lethal persuasion."
-	cost = 221 //5.6 ammo efficiency at 40 damage
+	cost = 228 //5.6 ammo efficiency at 40 damage
 	contains = list(/obj/item/storage/box/ammo/a12g_slug)
 
 /datum/supply_pack/ammo/blank_shells
