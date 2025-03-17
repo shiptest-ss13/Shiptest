@@ -1245,7 +1245,9 @@
 	layer = 3.1
 	},
 /obj/structure/sign/warning/hottemp{
-	pixel_x = 32
+	pixel_x = 32;
+	name = "\improper WASTE VENT sign";
+	desc = "A sign that warns of potentially hazardous waste gas in the vicinity."
 	},
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-6"
@@ -1566,11 +1568,11 @@
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 4
 	},
-/obj/machinery/computer/monitor{
+/obj/item/radio/intercom/directional/west,
+/obj/machinery/modular_computer/console/preset/command{
 	dir = 1;
 	icon_state = "computer-right"
 	},
-/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "RB" = (
