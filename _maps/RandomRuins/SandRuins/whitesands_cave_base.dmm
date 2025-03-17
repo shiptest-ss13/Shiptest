@@ -1693,6 +1693,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "uu" = (
+/obj/effect/turf_decal/atmos/air,
+/obj/machinery/air_sensor{
+	id_tag = "gnome"
+	},
 /turf/open/floor/engine/vacuum,
 /area/ruin/whitesands/cave_base/engi)
 "ux" = (
@@ -3940,6 +3944,10 @@
 "RE" = (
 /obj/structure/window/plasma/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/atmos_control{
+	dir = 1;
+	sensors = list("gnome" = "Airmix Chamber")
+	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base/engi)
 "RF" = (
