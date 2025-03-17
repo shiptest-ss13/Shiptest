@@ -186,28 +186,19 @@
 /datum/supply_pack/ammo/c57x39mm_boxcrate
 	name = "5.7x39mm Ammo Box Crate"
 	desc = "Contains two 48-round 5.7x39mm box for PDWs such as the Sidewinder."
-	contains = list(
-		/obj/item/storage/box/ammo/c57x39,
-		/obj/item/storage/box/ammo/c57x39,
-	)
+	contains = list(/obj/item/storage/box/ammo/c57x39)
 	cost = 355 //5.4 ammo efficiency at 20 damage
 
 /datum/supply_pack/ammo/c57x39mm_ap
 	name = "5.7x39mm Armour Piercing Ammo Box Crate"
 	desc = "Contains two 48-round 5.7x39mm box for PDWs such as the Sidewinder."
-	contains = list(
-		/obj/item/storage/box/ammo/c57x39/ap,
-		/obj/item/storage/box/ammo/c57x39/ap,
-	)
+	contains = list(/obj/item/storage/box/ammo/c57x39/ap)
 	cost = 443
 
 /datum/supply_pack/ammo/c57x39mm_hp
 	name = "5.7x39mm Hollow Point Ammo Box Crate"
 	desc = "Contains two 48-round 5.7x39mm Hollow Point boxes for PDWs such as the Sidewinder."
-	contains = list(
-		/obj/item/storage/box/ammo/c57x39/hp,
-		/obj/item/storage/box/ammo/c57x39/hp,
-	)
+	contains = list(/obj/item/storage/box/ammo/c57x39/hp)
 	cost = 443
 
 /* 12 Gauge */
