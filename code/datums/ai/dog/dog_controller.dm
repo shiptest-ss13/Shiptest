@@ -14,7 +14,7 @@
 	COOLDOWN_DECLARE(heel_cooldown)
 	COOLDOWN_DECLARE(command_cooldown)
 
-/datum/ai_controller/dog/process(delta_time)
+/datum/ai_controller/dog/process(seconds_per_tick)
 	if(ismob(pawn))
 		var/mob/living/living_pawn = pawn
 		movement_delay = living_pawn.cached_multiplicative_slowdown
@@ -49,7 +49,7 @@
 	return simple_pawn.access_card
 
 
-/datum/ai_controller/dog/PerformIdleBehavior(delta_time)
+/datum/ai_controller/dog/PerformIdleBehavior(seconds_per_tick)
 	var/mob/living/living_pawn = pawn
 	if(!isturf(living_pawn.loc) || living_pawn.pulledby)
 		return
@@ -59,14 +59,14 @@
 		return
 
 	// if we're just ditzing around carrying something, occasionally print a message so people know we have something
-	if(blackboard[BB_SIMPLE_CARRY_ITEM] && DT_PROB(5, delta_time))
+	if(blackboard[BB_SIMPLE_CARRY_ITEM] && SPT_PROB(5, seconds_per_tick))
 		var/obj/item/carry_item = blackboard[BB_SIMPLE_CARRY_ITEM]
 		living_pawn.visible_message("<span class='notice'>[living_pawn] gently teethes on \the [carry_item] in [living_pawn.p_their()] mouth.</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 
-	if(DT_PROB(5, delta_time) && (living_pawn.mobility_flags & MOBILITY_MOVE))
+	if(SPT_PROB(5, seconds_per_tick) && (living_pawn.mobility_flags & MOBILITY_MOVE))
 		var/move_dir = pick(GLOB.alldirs)
 		living_pawn.Move(get_step(living_pawn, move_dir), move_dir)
-	else if(DT_PROB(10, delta_time))
+	else if(SPT_PROB(10, seconds_per_tick))
 		living_pawn.manual_emote(pick("dances around.","chases [living_pawn.p_their()] tail!"))
 		living_pawn.AddComponent(/datum/component/spinny)
 

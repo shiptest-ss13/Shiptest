@@ -92,9 +92,9 @@
 		self_sustaining = FALSE
 		update_appearance()
 	else if(self_sustaining)
-		adjustWater(rand(1,2))
-		adjustWeeds(-1)
-		adjustPests(-1)
+		adjustWater(rand(1,2) * seconds_per_tick * 0.5)
+		adjustWeeds(-0.5 * seconds_per_tick)
+		adjustPests(-0.5 * seconds_per_tick)
 
 	if(isturf(loc))
 		var/turf/currentTurf = loc
