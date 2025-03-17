@@ -63,8 +63,7 @@
 	pixel_y = -3
 	},
 /obj/item/storage/backpack{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/storage/backpack/satchel{
 	pixel_x = -4;
@@ -291,7 +290,6 @@
 /area/ship/engineering/engine)
 "fl" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
 	color = "#FFFFFF"
 	},
 /obj/structure/railing/thin{
@@ -634,8 +632,7 @@
 /obj/structure/grille,
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "zbridge";
-	dir = 2
+	id = "zbridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -745,7 +742,6 @@
 /area/ship/cargo)
 "ot" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
 	color = "#FFFFFF"
 	},
 /obj/structure/railing/thin{
@@ -952,7 +948,6 @@
 	pixel_x = 5
 	},
 /obj/item/clothing/suit/armor/vest/capcarapace/cybersun{
-	pixel_y = 0;
 	pixel_x = -5
 	},
 /obj/item/clothing/suit/cybersun_suit{
@@ -1210,8 +1205,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/atmospherics/pipe/simple/violet/hidden,
 /obj/machinery/door/poddoor/shutters{
-	id = "zengine2";
-	dir = 2
+	id = "zengine2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2201,7 +2195,6 @@
 	pixel_y = 28
 	},
 /obj/structure/sink{
-	dir = 2;
 	pixel_y = 16
 	},
 /obj/structure/closet/wall/directional/west,
@@ -2404,8 +2397,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/atmospherics/pipe/simple/violet/hidden,
 /obj/machinery/door/poddoor/shutters{
-	id = "zengine1";
-	dir = 2
+	id = "zengine1"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2458,7 +2450,6 @@
 /area/ship/crew/ccommons)
 "Sy" = (
 /obj/structure/sink{
-	dir = 2;
 	pixel_y = 21;
 	pixel_x = -8
 	},
@@ -2561,8 +2552,7 @@
 	populate = 0
 	},
 /obj/item/tank/internals/emergency_oxygen/engi{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/tank/internals/emergency_oxygen/engi{
 	pixel_x = 5;
@@ -2690,8 +2680,7 @@
 /obj/structure/grille,
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "zbridge";
-	dir = 2
+	id = "zbridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -2876,7 +2865,7 @@
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 6
 	},
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/command{
 	dir = 8;
 	icon_state = "computer-right"
 	},
