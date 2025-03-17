@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/obj/machinery/porta_turret/ship/solgov{
+/obj/machinery/porta_turret/ship/solcon{
 	id = "inkwell_grid";
 	dir = 6
 	},
@@ -70,7 +70,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "aB" = (
-/obj/machinery/porta_turret/ship/solgov{
+/obj/machinery/porta_turret/ship/solcon{
 	id = "inkwell_grid";
 	dir = 5
 	},
@@ -1060,9 +1060,9 @@
 /turf/open/floor/wood/maple,
 /area/ship/crew/dorm/dormtwo)
 "hk" = (
-/obj/machinery/porta_turret/ship/solgov{
-	id = "inkwell_grid";
-	dir = 6
+/obj/machinery/porta_turret/ship/solcon/slug{
+	dir = 6;
+	id = "inkwell_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/toilet)
@@ -1109,7 +1109,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "hE" = (
-/obj/machinery/porta_turret/ship/solgov{
+/obj/machinery/porta_turret/ship/solcon{
 	id = "inkwell_grid";
 	dir = 6
 	},
@@ -1645,9 +1645,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "kE" = (
-/obj/machinery/porta_turret/ship/solgov{
-	id = "inkwell_grid";
-	dir = 9
+/obj/machinery/porta_turret/ship/solcon/slug{
+	dir = 9;
+	id = "inkwell_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/starboard)
@@ -2170,9 +2170,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "nN" = (
-/obj/machinery/porta_turret/ship/solgov{
-	id = "inkwell_grid";
-	dir = 10
+/obj/machinery/porta_turret/ship/solcon/slug{
+	dir = 10;
+	id = "inkwell_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/starboard)
@@ -2587,9 +2587,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "qF" = (
-/obj/machinery/porta_turret/ship/solgov{
-	id = "inkwell_grid";
-	dir = 10
+/obj/machinery/porta_turret/ship/solcon/slug{
+	dir = 10;
+	id = "inkwell_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/port)
@@ -3618,7 +3618,7 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm/dormthree)
 "wn" = (
-/obj/machinery/porta_turret/ship/solgov{
+/obj/machinery/porta_turret/ship/solcon{
 	id = "inkwell_grid";
 	dir = 5
 	},
@@ -4399,9 +4399,9 @@
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "BN" = (
-/obj/machinery/porta_turret/ship/solgov{
-	id = "inkwell_grid";
-	dir = 9
+/obj/machinery/porta_turret/ship/solcon/slug{
+	dir = 9;
+	id = "inkwell_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/port)
@@ -4625,9 +4625,9 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "CY" = (
-/obj/machinery/porta_turret/ship/solgov{
-	id = "inkwell_grid";
-	dir = 5
+/obj/machinery/porta_turret/ship/solcon/slug{
+	dir = 5;
+	id = "inkwell_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/canteen/kitchen)
@@ -5267,13 +5267,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
-"Hl" = (
-/obj/machinery/porta_turret/ship/solgov{
-	id = "inkwell_grid";
-	dir = 1
-	},
-/turf/closed/wall/mineral/titanium,
-/area/ship/bridge)
 "Ho" = (
 /obj/structure/chair/comfy/grey/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -8120,7 +8113,7 @@ DH
 iG
 "}
 (7,1,1) = {"
-Hl
+RN
 XY
 DE
 Cq
