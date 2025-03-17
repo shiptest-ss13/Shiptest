@@ -95,6 +95,46 @@
 	name = "Trickwine"
 	var/datum/status_effect/trickwine/debuff_effect = null
 	var/datum/status_effect/trickwine/buff_effect = null
+	//the kind of ammo you get from dipping 38 in this
+	var/obj/item/ammo_casing/c38/dip_ammo_type = null
+	var/dip_consumption = 2
+
+/datum/reagent/consumable/ethanol/trickwine/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(!dip_ammo_type)
+		return
+	if(istype(I, /obj/item/ammo_casing/c38))
+		if(volume > dip_consumption)
+			var/obj/item/ammo_casing/c38/new_ammo = new dip_ammo_type(user.loc)
+			user.put_in_hands(new_ammo)
+			to_chat(user,span_notice("You dip \the [I] into the trickwine, suffusing it with it's effects."))
+			H.reagents.remove_reagent(src.type, dip_consumption)
+			qdel(I)
+			return TRUE
+		else
+			to_chat(user,span_warning("There's not enough trickwine left to soak \the [I]!"))
+			return FALSE
+
+	else if(istype(I, /obj/item/ammo_box/magazine/ammo_stack))
+		var/obj/item/ammo_box/magazine/ammo_stack/dip_stack = I
+		if(dip_stack.ammo_type == /obj/item/ammo_casing/c38)
+			var/trickwine_used = dip_consumption * dip_stack.ammo_count(FALSE)
+			if(volume > trickwine_used)
+				var/obj/item/ammo_box/magazine/ammo_stack/prefilled/new_stack
+				new_stack = new(user.loc, dip_stack.ammo_count(FALSE), dip_ammo_type)
+				user.put_in_hands(new_stack)
+				to_chat(user,span_notice("You dip \the [I] into the trickwine, suffusing it with it's effects."))
+				H.reagents.remove_reagent(src.type, trickwine_used)
+				qdel(I)
+				return TRUE
+			else
+				to_chat(user,span_warning("There's not enough trickwine left to soak \the [I]!"))
+				return FALSE
+		return FALSE
+	else
+		return FALSE
+
+
 
 /datum/reagent/consumable/ethanol/trickwine/on_mob_metabolize(mob/living/consumer)
 	if(buff_effect)
@@ -284,6 +324,7 @@
 	breakaway_flask_icon_state = "baflaskhearthwine"
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth
+	dip_ammo_type = /obj/item/ammo_casing/c38/hotshot
 
 //This needs a buff
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
