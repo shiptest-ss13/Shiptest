@@ -210,7 +210,7 @@
 /datum/supply_pack/machinery/ehf_beacon
 	name = "EHF point beacon"
 	desc = "A crate containing an EHF point beacon, used to mark points of interest and semi-permanent constructions."
-	cost = 2000 // This sounds reasonable? You'll still need everything else if you want to make an outpost
+	cost = 1000 // This sounds reasonable? You'll still need everything else if you want to make an outpost (Apparently it wasn't, and is cheaper now)
 	contains = list(
 		/obj/machinery/power/planet_beacon
 	)
