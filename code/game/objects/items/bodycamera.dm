@@ -68,7 +68,7 @@
 	switch(choice)
 		if("Modify the camera tag")
 			c_tag_addition = stripped_input(user, "Set a nametag for this camera. Ensure that it is no bigger than 32 characters long.", "Nametag Setup", max_length = 32)
-			c_tag = set_name(c_tag_addition)
+			set_name(c_tag_addition)
 			to_chat(user, "<span class='notice'>You set [src] nametag to '[c_tag]'.</span>")
 
 		if("Change the camera network")
@@ -87,10 +87,10 @@
 
 /obj/item/bodycamera/proc/set_name(camera_name)
 	if(camera_name == "")
-		camera_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+		c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
 	else
-		camera_tag = camera_name
-	return camera_tag
+		c_tag = camera_name
+	return
 
 
 /obj/item/bodycamera/proc/setViewRange(num = 5)
