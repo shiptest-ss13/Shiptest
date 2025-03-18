@@ -19,10 +19,14 @@
 	idle_power_usage = IDLE_DRAW_MINIMAL
 	active_power_usage = ACTIVE_DRAW_MINIMAL
 	light_power = 1.5
+	/// Current state of the beacon
 	var/state = BEACON_UNANCHORED
-	var/preserving = FALSE // Separate from state to prevent it being unpreserved on distress
+	/// If the current planet is being preserved. Separate from state to prevent it being unpreserved on distress
+	var/preserving = FALSE
+	/// Card inserted into the beacon, needed to call a distress and officer access needed for renaming
 	var/obj/item/card/id/inserted_id
-	var/distress_time = 0 // value to compare with world.time if a distress beacon can be sent according to DISTRESS_COOLDOWN
+	/// value to compare with world.time if a distress beacon can be sent according to DISTRESS_COOLDOWN
+	var/distress_time = 0
 
 /obj/machinery/power/planet_beacon/Initialize()
 	. = ..()
