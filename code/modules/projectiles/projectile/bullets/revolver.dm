@@ -38,7 +38,7 @@
 /obj/projectile/bullet/c38/dumdum
 	name = ".38 prism bullet"
 	damage = 20
-	armour_penetration = -40
+	armour_penetration = -30
 	ricochets_max = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/c38/dumdum
 
