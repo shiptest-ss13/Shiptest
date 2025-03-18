@@ -32,6 +32,9 @@
 ///AI flags
 #define STOP_MOVING_WHEN_PULLED (1<<0)
 
+///AI flags
+#define STOP_MOVING_WHEN_PULLED (1<<0)
+
 ///Subtree defines
 
 ///This subtree should cancel any further planning, (Including from other subtrees)

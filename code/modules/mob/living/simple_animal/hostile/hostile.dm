@@ -26,6 +26,9 @@
 	var/move_to_delay = 3
 	var/list/friends = list()
 
+	var/list/on_aggro_say = list()
+	var/aggro_say_chance = 0
+
 	var/list/emote_taunt = list()
 	var/taunt_chance = 0
 
@@ -376,6 +379,9 @@
 /mob/living/simple_animal/hostile/proc/Aggro()
 	vision_range = aggro_vision_range
 	if(target)
+		if(on_aggro_say.len && prob(aggro_say_chance))
+			say("[pick(on_aggro_say)]")
+			aggro_say_chance = max(taunt_chance-7,2)
 		if(emote_taunt.len && prob(taunt_chance))
 			manual_emote("[pick(emote_taunt)] at [target].")
 			taunt_chance = max(taunt_chance-7,2)
@@ -385,6 +391,7 @@
 	stop_automated_movement = 0
 	vision_range = initial(vision_range)
 	taunt_chance = initial(taunt_chance)
+	aggro_say_chance = initial(aggro_say_chance)
 
 /mob/living/simple_animal/hostile/proc/LoseTarget()
 	GiveTarget(null)

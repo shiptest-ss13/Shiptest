@@ -1050,7 +1050,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "ma" = (
-/obj/effect/spawner/random/salvage_machine,
+/obj/effect/spawner/random/salvage/machine,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "mr" = (
@@ -1417,7 +1417,7 @@
 /obj/structure/sign/poster/random{
 	pixel_x = 32
 	},
-/obj/effect/spawner/random/salvage_machine{
+/obj/effect/spawner/random/salvage/machine{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -3327,9 +3327,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-5"
 	},
-/obj/effect/spawner/random/salvage_machine{
-	dir = 1
-	},
+/obj/effect/spawner/random/salvage/machine,
 /obj/structure/railing{
 	dir = 4
 	},

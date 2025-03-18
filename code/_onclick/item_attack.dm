@@ -72,7 +72,8 @@
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
 		if(attempt_initiate_surgery(I, src, user))
 			return TRUE
-	user.changeNext_move(CLICK_CD_MELEE)
+	//This should really be in attack but 2 much logic doesnt call parent
+	user.changeNext_move(I.attack_cooldown)
 	return I.attack(src, user)
 
 /mob/living/attack_hand(mob/living/user)
@@ -126,14 +127,13 @@
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
 
-
 /// The equivalent of the standard version of [/obj/item/proc/attack] but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_OBJ, O, user) & COMPONENT_NO_ATTACK_OBJ)
 		return
 	if(item_flags & NOBLUDGEON)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(attack_cooldown)
 	user.do_attack_animation(O)
 	O.attacked_by(src, user)
 
