@@ -202,8 +202,6 @@
 	// If the new amount would move towards the acceptable range faster then use it instead
 	if(amount < minimum)
 		amount += clamp(minimum - amount, 0, 0.7)
-	if((!override && HAS_TRAIT(parent, TRAIT_UNSTABLE)) || amount > maximum)
-		amount = min(sanity, amount)
 	if(amount == sanity) //Prevents stuff from flicking around.
 		return
 	sanity = amount
@@ -366,14 +364,6 @@
 	if(A.outdoors) //if we're outside, we don't care.
 		clear_event(null, "area_beauty")
 		return FALSE
-	if(HAS_TRAIT(parent, TRAIT_SNOB))
-		switch(A.beauty)
-			if(-INFINITY to BEAUTY_LEVEL_HORRID)
-				add_event(null, "area_beauty", /datum/mood_event/horridroom)
-				return
-			if(BEAUTY_LEVEL_HORRID to BEAUTY_LEVEL_BAD)
-				add_event(null, "area_beauty", /datum/mood_event/badroom)
-				return
 	switch(A.beauty)
 		if(BEAUTY_LEVEL_BAD to BEAUTY_LEVEL_DECENT)
 			clear_event(null, "area_beauty")

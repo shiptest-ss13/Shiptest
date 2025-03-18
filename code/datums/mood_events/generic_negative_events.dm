@@ -52,11 +52,6 @@
 	mood_change = -10
 	timeout = 2 MINUTES
 
-/datum/mood_event/depression_mild
-	description = span_warning("I feel sad for no particular reason.")
-	mood_change = -12
-	timeout = 2 MINUTES
-
 /datum/mood_event/depression_moderate
 	description = span_warning("I feel miserable.")
 	mood_change = -14
@@ -103,14 +98,6 @@
 	description = span_warning("I should have paid attention to the epilepsy warning.")
 	mood_change = -3
 	timeout = 5 MINUTES
-
-/datum/mood_event/nyctophobia
-	description = span_warning("It sure is dark around here...")
-	mood_change = -3
-
-/datum/mood_event/family_heirloom_missing
-	description = span_warning("I'm missing my family heirloom...")
-	mood_change = -4
 
 /datum/mood_event/healsbadman
 	description = span_warning("I feel like something is moving through my veins, eating away at me!")
@@ -168,10 +155,6 @@
 	description = span_boldwarning("Some unexplainable sadness is consuming me...")
 	mood_change = -15
 	timeout = 90 SECONDS
-
-/datum/mood_event/back_pain
-	description = span_boldwarning("Bags never sit right on my back, this hurts like hell!")
-	mood_change = -15
 
 /datum/mood_event/sad_empath
 	description = span_warning("Someone seems upset...")
