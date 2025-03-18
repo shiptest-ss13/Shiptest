@@ -243,9 +243,54 @@
 	shot_delay = 20
 
 /* Solcon Turrets */
+/* Gauss with no non-lethal option */
+/* Effective at long range */
 
-/obj/machinery/porta_turret/ship/solgov
+/obj/machinery/porta_turret/ship/solcon
+	name = "Type Fauchard Emplacement" // <- women who cannot do solcon names good
+	desc = "A long range turret manufactured by the Solarbundswaffenkammer. It is rated for combat usage, and has a higher than average lethality index."
 	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	stun_projectile = /obj/projectile/bullet/gauss/hc
+	stun_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	lethal_projectile = /obj/projectile/bullet/gauss
+	lethal_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	max_integrity = 200
+	integrity_failure = 0.6
+	scan_range = 14
+	shot_delay = 40
+	burst_size = 4
+	burst_delay = 3
+	spread = 10
+
+/obj/machinery/porta_turret/ship/solcon/slug
+	name = "Type Guisarme Emplacement"
+	desc = "A short range turret emplacement manufactured by the Solarbundswaffenkammer. The slug rounds used have given it a reputation for incredible effect against unarmored targets, and performance issues at range."
+	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	stun_projectile = /obj/projectile/bullet/gauss/slug/hc
+	stun_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	lethal_projectile = /obj/projectile/bullet/gauss/slug
+	lethal_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	max_integrity = 300
+	integrity_failure = 0.6
+	scan_range = 8
+	shot_delay = 25
+	burst_size = 2
+	burst_delay = 5
+
+/obj/machinery/porta_turret/ship/solcon/lance
+	name = "Type Glaive Emplacement"
+	desc = "A heavy turret emplacement manufactured by the Solarbundswaffenkammer. Long cycle time between volleys is the only weakness attributed to the turret, as it is effective against targets up to exo-armor."
+	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	stun_projectile = /obj/projectile/bullet/gauss/lance/hc
+	stun_projectile_sound = 'sound/weapons/gun/gauss/gar.ogg'
+	lethal_projectile = /obj/projectile/bullet/gauss/lance
+	lethal_projectile_sound = 'sound/weapons/gun/gauss/gar.ogg'
+	max_integrity = 300
+	integrity_failure = 0.5
+	scan_range = 16
+	shot_delay = 60
+	burst_size = 3
+	burst_delay = 4
 
 /* Pan Gezena Federation Turrets */
 //midline but hitscan
