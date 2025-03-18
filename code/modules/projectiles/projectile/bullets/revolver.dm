@@ -94,7 +94,7 @@
 		do_sparks(5, FALSE, M)
 		M.electrocute_act(5, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
 	else
-		tesla_zap(target, 5, 1001, zap_flags)
+		tesla_zap(target, 5, 2000, zap_flags)
 
 /obj/projectile/bullet/c38/force
 	name = ".38 force bullet"
