@@ -29,3 +29,18 @@
 	client_range = 7
 	random_min = 0.5 SECONDS
 	random_max = 0.5 SECONDS
+
+/obj/structure/hazard/radioactive/active_radioactive_source
+	name = "active radiation source"
+	desc = "You probably should not see this.."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "radiation"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF //its not even a real thing
+	anchored = TRUE
+	rad_power = 1200
+	rad_range = 0.2
+	client_range = 7
+	random_min = 0.5 SECONDS
+	random_max = 0.5 SECONDS
+	invisibility = INVISIBILITY_ABSTRACT
+	density = 0
