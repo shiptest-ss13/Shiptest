@@ -65,6 +65,8 @@
 
 	alt_uniform = null
 
+	phorid_outfit = /datum/outfit/plasmaman/ngr
+
 /datum/outfit/job/syndicate/assistant/gec
 	name = "Syndicate - Deckhand (GEC)"
 	id_assignment = "Deckhand"
@@ -333,6 +335,8 @@
 	suit = /obj/item/clothing/suit/armor/ngr/captain
 	shoes = /obj/item/clothing/shoes/combat
 
+	phorid_outfit = /datum/outfit/plasmaman/ngr
+
 /datum/outfit/job/syndicate/captain/cybersun
 	name = "Syndicate - Captain (Cybersun)"
 
@@ -453,6 +457,8 @@
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/red/insulated
 
+	phorid_outfit = /datum/outfit/plasmaman/ngr
+
 
 //Chief Medical Officer
 
@@ -528,6 +534,8 @@
 	shoes = /obj/item/clothing/shoes/combat
 	glasses = null
 	gloves = null
+
+	phorid_outfit = /datum/outfit/plasmaman/ngr
 
 
 /datum/outfit/job/syndicate/head_of_personnel/cybersun
@@ -606,6 +614,8 @@
 	suit_store = null
 	gloves = /obj/item/clothing/gloves/color/black
 
+	phorid_outfit = /datum/outfit/plasmaman/ngr
+
 
 /datum/outfit/job/syndicate/hos/twink
 	name = "Syndicate - Lieutenant (Twinkleshine, NGR)"
@@ -633,6 +643,8 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	courierbag = /obj/item/storage/backpack/messenger/sec
+
+	phorid_outfit = /datum/outfit/plasmaman/ngr
 
 /datum/outfit/job/syndicate/hos/twink/post_equip(mob/living/carbon/human/H)
 	. = ..()
@@ -738,6 +750,8 @@
 	r_pocket = /obj/item/melee/knife/survival
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
+
+	phorid_outfit = /datum/outfit/plasmaman/ngr
 
 //paramedics
 
@@ -949,6 +963,8 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
 
+	phorid_outfit = /datum/outfit/plasmaman/ngr
+
 /datum/outfit/job/syndicate/security/ngr/pilot
 	name = "Syndicate - Pilot (New Gorlex Republic)"
 	id_assignment = "Pilot"
@@ -956,6 +972,8 @@
 
 	uniform = /obj/item/clothing/under/syndicate/ngr/fatigues
 	head = /obj/item/clothing/head/helmet/ngr/swat
+
+	phorid_outfit = /datum/outfit/plasmaman/ngr
 
 /datum/outfit/job/syndicate/security/twink
 	name = "Syndicate - Operative (Twinkleshine)"
@@ -1043,6 +1061,8 @@
 	accessory = /obj/item/clothing/accessory/armband/cargo
 	shoes = /obj/item/clothing/shoes/workboots
 	ears = /obj/item/radio/headset/alt
+
+	phorid_outfit = /datum/outfit/plasmaman/ngr
 
 /datum/outfit/job/syndicate/miner/twink
 	name = "Syndicate - Miner (Twinkleshine, SUNS)"
@@ -1151,6 +1171,8 @@
 	uniform = /obj/item/clothing/under/syndicate/ngr
 	shoes = /obj/item/clothing/shoes/workboots
 	glasses = null
+
+	phorid_outfit = /datum/outfit/plasmaman/ngr
 
 /datum/outfit/job/syndicate/engineer/twink
 	name = "Syndicate - Ship Engineer (Twinkleshine, GEC)"

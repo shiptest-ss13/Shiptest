@@ -1,3 +1,14 @@
+/datum/outfit/plasmaman
+	name = "Plasmaman"
+
+	head = /obj/item/clothing/head/helmet/space/plasmaman
+	uniform = /obj/item/clothing/under/plasmaman
+	r_hand= /obj/item/tank/internals/plasmaman/belt/full
+	mask = /obj/item/clothing/mask/breath
+	gloves = /obj/item/clothing/gloves/color/plasmaman
+
+	internals_slot = ITEM_SLOT_RPOCKET // overriding the right pocket is probably a better idea than the belt or hands (you drop it when you spawn in cryo)
+
 /datum/outfit/plasmaman/bar
 	name = "Bartender Plasmaman"
 
@@ -212,7 +223,7 @@
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	gloves = /obj/item/clothing/gloves/color/plasmaman/clown
 
-/datum/outfit/plasmaman/solgov //WS edit sgr
+/datum/outfit/plasmaman/solgov
 	name = "Plasmasolgov"
 	head = /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	uniform = /obj/item/clothing/under/plasmaman/solgov
@@ -224,7 +235,7 @@
 	uniform= /obj/item/clothing/under/plasmaman/ngr
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 
-/datum/outfit/plasmaman/Hardliners
+/datum/outfit/plasmaman/Hardliners // whoever capitalized this please explode
 	name = "Plasmahl"
 	head = /obj/item/clothing/head/helmet/space/plasmaman/hardliners
 	uniform = /obj/item/clothing/under/plasmaman/hardliners

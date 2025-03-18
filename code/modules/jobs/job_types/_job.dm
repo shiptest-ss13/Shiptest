@@ -204,8 +204,11 @@
 	var/faction_icon
 	// if there is an id, this will get automatically applied to an id's assignment variable
 	var/id_assignment
+	// if defined will be applied over the outfit if the mob is a phorid
+	var/phorid_outfit = /datum/outfit/plasmaman
 
 	var/alt_uniform
+	var/skirt_uniform = /obj/item/clothing/under/color/jumpskirt/grey
 
 	var/alt_suit = null
 	var/dcoat = /obj/item/clothing/suit/hooded/wintercoat
@@ -236,7 +239,7 @@
 	var/holder
 	switch(H.jumpsuit_style)
 		if(PREF_SKIRT)
-			holder = "[uniform]/skirt"
+			holder = "[skirt_uniform]"
 		if(PREF_ALTSUIT)
 			if(alt_uniform)
 				holder = "[alt_uniform]"
@@ -247,6 +250,9 @@
 
 	if(text2path(holder))
 		uniform = text2path(holder)
+
+	if(phorid_outfit && isplasmaman(H))
+		H.equipOutfit(phorid_outfit, visualsOnly)
 
 	if(holder && text2path(holder))
 		uniform = text2path(holder)
