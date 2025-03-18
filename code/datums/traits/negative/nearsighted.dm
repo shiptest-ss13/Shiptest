@@ -17,7 +17,7 @@
 
 	glasses_type = /obj/item/clothing/glasses/regular
 	glasses = new glasses_type(get_turf(quirk_holder))
-	
+
 	var/list/slots = list(
 		"on your face, silly!" = ITEM_SLOT_EYES,
 		"in your left pocket." = ITEM_SLOT_LPOCKET,
