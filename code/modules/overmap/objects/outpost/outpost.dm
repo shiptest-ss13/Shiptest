@@ -43,6 +43,11 @@
 	var/list/datum/mission/missions
 
 	var/datum/cargo_market/market
+	#warn remove
+	/// List of all of the things this outpost offers
+	var/list/supply_packs = list()
+	/// our 'Order number'
+	var/ordernum = 1
 
 	/// Our faction of the outpost
 	var/datum/faction/faction

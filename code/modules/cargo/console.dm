@@ -130,6 +130,7 @@
 				src.visible_message("<span class='notice'>[src] dispenses a holochip.</span>")
 			return TRUE
 
+		/*
 		if("add")
 			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
 			if(istype(current_ship.docked_to))
@@ -157,6 +158,7 @@
 					crate_spawner.handle_order(SO)
 					update_appearance() // ??????????????????
 					return TRUE
+		*/
 
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
