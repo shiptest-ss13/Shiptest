@@ -82,19 +82,19 @@
 		M.Dizzy(5)
 		M.adjust_drugginess(10)
 
-/obj/projectile/bullet/c38/lightning
+/obj/projectile/bullet/c38/shock
 	name = ".38 shock bullet"
 	ricochets_max = 0
 	var/zap_flags = ZAP_MOB_DAMAGE
 
-/obj/projectile/bullet/c38/lightning/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/bullet/c38/shock/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(isliving(target))
 		var/mob/living/M = target
 		do_sparks(5, FALSE, M)
 		M.electrocute_act(5, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
 	else
-		tesla_zap(src, 5, 5, zap_flags)
+		tesla_zap(target, 5, 1001, zap_flags)
 
 /obj/projectile/bullet/c38/force
 	name = ".38 force bullet"
@@ -106,7 +106,7 @@
 	if(ismovable(target) && isliving(target))
 		var/atom/movable/M = target
 		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
-		M.safe_throw_at(throw_target, 3, 2)
+		M.safe_throw_at(throw_target, 2, 2)
 
 // .357 (Syndicate Revolver)
 

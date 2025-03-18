@@ -276,7 +276,7 @@
 	breakaway_flask_icon_state = "baflaskshockwine"
 	buff_effect = /datum/status_effect/trickwine/buff/shock
 	debuff_effect = /datum/status_effect/trickwine/debuff/shock
-	dip_ammo_type = /obj/item/ammo_casing/c38/lightning
+	dip_ammo_type = /obj/item/ammo_casing/c38/shock
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
@@ -373,6 +373,7 @@
 	breakaway_flask_icon_state = "baflaskforcewine"
 	buff_effect = /datum/status_effect/trickwine/buff/force
 	debuff_effect = /datum/status_effect/trickwine/debuff/force
+	dip_ammo_type = /obj/item/ammo_casing/c38/force
 
 /datum/status_effect/trickwine/buff/force
 	id = "force_wine_buff"
@@ -414,6 +415,7 @@
 	breakaway_flask_icon_state = "baflaskprismwine"
 	buff_effect = /datum/status_effect/trickwine/buff/prism
 	debuff_effect = /datum/status_effect/trickwine/debuff/prism
+	dip_ammo_type = /obj/item/ammo_casing/c38/dumdum
 
 #define MAX_REFLECTS 3
 /datum/status_effect/trickwine/buff/prism
