@@ -42,3 +42,8 @@
 	rad_power = 120
 	rad_delay = 8 SECONDS
 	rad_prob = 10
+
+/obj/effect/radiation/extreme //Do NOT use this without knowing what it does.
+	rad_power = 2500
+	rad_delay = 1 SECONDS
+	rad_prob = 50

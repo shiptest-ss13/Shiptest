@@ -42,3 +42,10 @@
 	name = "Space Mall"
 	description = "An old shopping centre, owned by a former member of Nanotrasen's board of directors.."
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
+
+/datum/map_template/ruin/space/waste_disposal
+	id = "nuclear_waste_station"
+	suffix = "nuclear_waste_disposal.dmm"
+	name = "Nuclear Waste Station"
+	description = "A long-abandoned nuclear waste site, which was left in a perfectly preserved state..."
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
