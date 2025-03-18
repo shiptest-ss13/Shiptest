@@ -114,7 +114,7 @@
 	desc = "Contains a .22lr magazine for the Hognose underbarrel pistol, with a capacity of eight rounds."
 	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty)
 	cost = 100
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/asp_mag
 	name = "Asp Magazine Crate"
