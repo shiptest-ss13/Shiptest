@@ -1,4 +1,5 @@
 #define MC_TICK_CHECK ((TICK_USAGE > Master.current_ticklimit || src.state != SS_RUNNING) ? pause() : 0)
+#define MC_PAUSE_IF_TRUE(value) (value ? pause() : 0)
 
 #define MC_TICK_REMAINING_MS ((Master.current_ticklimit - TICK_USAGE) * world.tick_lag)
 
@@ -117,3 +118,15 @@
 }\
 /datum/controller/subsystem/verb_manager/##X/fire() {..() /*just so it shows up on the profiler*/} \
 /datum/controller/subsystem/verb_manager/##X
+
+//If you use this, MAKE SURE that all shared data and calls in Fire() are on the main subsystem, otherwise, the background subsystem will do nothing.
+#define BACKGROUND_SUBSYSTEM_DEF(X) /datum/controller/subsystem/##X/background/New(){\
+	PreInit();\
+	ss_id="background_[#X]";\
+}\
+/datum/controller/subsystem/##X/background/fire() {\
+	if(SS##X.can_fire) { ..() }\
+}\
+/datum/controller/subsystem/##X/background/Recover(){}\
+/datum/controller/subsystem/##X/background/flags=SS_BACKGROUND|SS_NO_INIT;\
+/datum/controller/subsystem/##X/background

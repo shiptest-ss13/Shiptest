@@ -9,7 +9,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "am" = (
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/snow/temperatre{
@@ -303,7 +303,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -637,7 +637,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/canister{
@@ -779,7 +779,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 5
 	},
 /obj/machinery/newscaster/security_unit/directional/west,
@@ -931,7 +931,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/newscaster/directional/south,
 /obj/item/newspaper,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/west,
@@ -960,7 +960,7 @@
 	pixel_x = -7;
 	pixel_y = 3
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 5
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -1011,7 +1011,7 @@
 	color = "#543C30"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 8
 	},
 /turf/open/floor/concrete/tiles,
@@ -1030,9 +1030,6 @@
 "hG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
 /obj/structure/chair/stool/bar{
@@ -1727,7 +1724,7 @@
 	},
 /area/outpost/exterior)
 "my" = (
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 5
 	},
 /turf/open/floor/plating/asteroid/snow/temperatre{
@@ -2020,7 +2017,7 @@
 	pixel_x = -15
 	},
 /obj/machinery/recharger,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 1
 	},
 /obj/structure/sign/poster/official/random{
@@ -2085,7 +2082,7 @@
 	pixel_x = -9;
 	pixel_y = 4
 	},
-/obj/item/food/deadmouse{
+/obj/item/reagent_containers/food/snacks/deadmouse{
 	pixel_y = 2
 	},
 /turf/open/floor/plating/asteroid/icerock/temperate{
@@ -2229,7 +2226,6 @@
 /obj/structure/noticeboard{
 	pixel_y = 28
 	},
-/obj/machinery/vending/clothing,
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
 	light_range = 2
@@ -2354,12 +2350,6 @@
 	pixel_y = 28;
 	pixel_x = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 9
@@ -2413,7 +2403,7 @@
 /area/outpost/security/checkpoint)
 "pJ" = (
 /obj/structure/flora/rock/pile/icy,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 9
 	},
 /turf/open/floor/plating/asteroid/snow/temperatre{
@@ -2484,12 +2474,6 @@
 	pixel_x = 8;
 	pixel_y = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 10
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut,
@@ -2558,7 +2542,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 6
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2955,7 +2939,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "tk" = (
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 1;
 	pixel_x = 12
 	},
@@ -3008,17 +2992,20 @@
 	dir = 8;
 	pixel_x = -6
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 10
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
 "tx" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/portables_connector/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
 	light_range = 2
@@ -3041,7 +3028,7 @@
 "tI" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera,
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/shop)
 "tJ" = (
@@ -3946,6 +3933,26 @@
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
+"zi" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/ert{
+	dir = 8;
+	id = "ice_exterior_port"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/outpost/exterior)
 "zn" = (
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -4346,6 +4353,20 @@
 	light_range = 2
 	},
 /area/outpost/exterior)
+"BE" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/portables_connector/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "BL" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -4373,8 +4394,8 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken6"
@@ -4432,7 +4453,7 @@
 	},
 /obj/effect/decal/cleanable/vomit/old,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 9
 	},
 /obj/structure/sign/poster/retro/random{
@@ -5018,9 +5039,6 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
 	},
 /obj/item/trash/chips,
 /obj/effect/spawner/random/maintenance,
@@ -5798,7 +5816,7 @@
 	},
 /area/outpost/exterior)
 "Mi" = (
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/snow/temperatre{
@@ -5824,7 +5842,7 @@
 	},
 /area/outpost/exterior)
 "Ms" = (
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/south,
@@ -5880,7 +5898,7 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -6461,7 +6479,7 @@
 /area/outpost/maintenance/fore)
 "QL" = (
 /obj/structure/table/reinforced,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera{
 	dir = 1
 	},
 /obj/structure/sign/poster/official/random{
@@ -6497,7 +6515,7 @@
 "QU" = (
 /obj/machinery/cryopod,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera,
 /turf/open/floor/plasteel/patterned/brushed{
 	light_color = "#1B1D2E";
 	light_range = 2
@@ -6561,6 +6579,17 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/bathroom)
+"Re" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/portables_connector/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "Rg" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/mineral/electrolyzer{
@@ -6634,12 +6663,6 @@
 /obj/item/table_bell{
 	pixel_x = 8;
 	pixel_y = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 5
 	},
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
@@ -6924,8 +6947,6 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bathroom)
 "Tv" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
 	},
@@ -7429,7 +7450,7 @@
 	pixel_y = 10;
 	pixel_x = -12
 	},
-/obj/item/food/deadmouse{
+/obj/item/reagent_containers/food/snacks/deadmouse{
 	pixel_y = 14;
 	pixel_x = 12
 	},
@@ -7495,6 +7516,27 @@
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
+"WY" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/ert{
+	dir = 8;
+	id = "ice_exterior_starboard"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/outpost/exterior)
 "Xa" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -7752,6 +7794,17 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/starboard)
+"Ya" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/portables_connector/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "Yb" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/borderfloor{
@@ -10766,7 +10819,7 @@ cC
 Nh
 de
 Cy
-tx
+Ya
 UF
 ct
 Nh
@@ -10850,7 +10903,7 @@ cC
 Nh
 KD
 JN
-tx
+BE
 wL
 uy
 Nh
@@ -10934,7 +10987,7 @@ cC
 Nh
 Nh
 dh
-Ub
+zi
 Ub
 Nh
 Nh
@@ -14296,7 +14349,7 @@ Ak
 Ak
 Nh
 ZM
-Dx
+WY
 Dx
 Nh
 Nh
@@ -14464,7 +14517,7 @@ cC
 Nh
 ll
 vy
-tx
+Re
 Gg
 qK
 Nh

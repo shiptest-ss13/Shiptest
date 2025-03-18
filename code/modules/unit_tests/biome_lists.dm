@@ -1,6 +1,6 @@
 /datum/unit_test/biome_lists/Run()
-	for(var/biome_type as anything in SSmapping.biomes)
-		var/datum/biome/biome = SSmapping.biomes[biome_type]
+	for(var/biome_type as anything in SSmap_gen.biomes)
+		var/datum/biome/biome = SSmap_gen.biomes[biome_type]
 
 		validate_chance(biome.open_turf_types, "open turf", biome_type)
 		validate_chance(biome.mob_spawn_list, "mob spawn", biome_type)

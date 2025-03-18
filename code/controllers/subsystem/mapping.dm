@@ -29,9 +29,6 @@ SUBSYSTEM_DEF(mapping)
 
 	var/loading_ruins = FALSE
 
-	///All possible biomes in assoc list as type || instance
-	var/list/biomes = list()
-
 	// Z-manager stuff
 	var/station_start  // should only be used for maploading-related tasks
 	var/space_levels_so_far = 0
@@ -67,7 +64,6 @@ SUBSYSTEM_DEF(mapping)
 /datum/controller/subsystem/mapping/Initialize(timeofday)
 	if(initialized)
 		return
-	initialize_biomes()
 	InitializeDefaultZLevels()
 	repopulate_sorted_areas()
 	process_teleport_locs()			//Sets up the wizard teleport locations
@@ -120,7 +116,6 @@ SUBSYSTEM_DEF(mapping)
 
 	areas_in_z = SSmapping.areas_in_z
 	map_zones = SSmapping.map_zones
-	biomes = SSmapping.biomes
 	planet_types = SSmapping.planet_types
 
 	maplist = SSmapping.maplist
@@ -291,12 +286,6 @@ SUBSYSTEM_DEF(mapping)
 
 		shelter_templates[S.shelter_id] = S
 		map_templates[S.shelter_id] = S
-
-///Initialize all biomes, assoc as type || instance
-/datum/controller/subsystem/mapping/proc/initialize_biomes()
-	for(var/biome_path in subtypesof(/datum/biome))
-		var/datum/biome/biome_instance = new biome_path()
-		biomes[biome_path] += biome_instance
 
 /datum/controller/subsystem/mapping/proc/reg_in_areas_in_z(list/areas)
 	for(var/B in areas)

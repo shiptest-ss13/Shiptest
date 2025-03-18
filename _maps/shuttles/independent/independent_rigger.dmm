@@ -36,6 +36,9 @@
 "aw" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "ax" = (
@@ -215,6 +218,9 @@
 /obj/machinery/power/terminal,
 /obj/structure/cable,
 /obj/machinery/firealarm/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "db" = (
@@ -276,6 +282,7 @@
 /area/ship/crew/canteen)
 "ee" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/landmark/observer_start,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
@@ -765,7 +772,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "jy" = (
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner,
@@ -896,6 +903,9 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "lf" = (
@@ -1086,7 +1096,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4{
 	dir = 1
 	},
-/obj/machinery/advanced_airlock_controller/directional/west,
+/obj/machinery/advanced_airlock_controller{
+	pixel_x = -25
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
@@ -1121,15 +1133,6 @@
 	dir = 1;
 	pixel_x = -5;
 	pixel_y = -20
-	},
-/obj/machinery/button/door{
-	id = "rigg_bathroom";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	name = "Bathroom Lock";
-	dir = 1;
-	pixel_y = -21;
-	pixel_x = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
@@ -1732,7 +1735,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "wg" = (
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner{
@@ -1795,7 +1798,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "wB" = (
-/obj/machinery/power/shuttle/engine/fire{
+/obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -1880,6 +1883,9 @@
 "xH" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	name = "engine fuel pump"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2179,6 +2185,9 @@
 	pixel_x = -5;
 	pixel_y = 22
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "zV" = (
@@ -2369,7 +2378,7 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/cryo)
 "Cw" = (
-/obj/machinery/power/shuttle/engine/fire{
+/obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -2532,11 +2541,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Er" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/atmospherics/components/unary/portables_connector{
+/obj/machinery/atmospherics/components/unary/tank/toxins{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister/fuel,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "EB" = (
@@ -2597,7 +2605,7 @@
 /obj/item/folder/blue{
 	pixel_x = 3
 	},
-/obj/item/stamp/officer{
+/obj/item/stamp/head_of_personnel{
 	name = "first mate's rubber stamp";
 	pixel_x = 8;
 	pixel_y = 7
@@ -2635,8 +2643,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock{
-	name = "Head";
-	id_tag = "rigg_bathroom"
+	name = "Head"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
@@ -2670,6 +2677,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2909,12 +2920,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "HW" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/airalarm/directional/west,
-/obj/machinery/atmospherics/components/unary/portables_connector{
+/obj/machinery/atmospherics/components/unary/tank/toxins{
 	dir = 4
 	},
-/obj/machinery/portable_atmospherics/canister/fuel,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ic" = (
