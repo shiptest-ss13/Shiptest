@@ -4,8 +4,6 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "greenglow"
 	density = FALSE
-	//sticky like spiderwebs, very annoying.
-	var/sticky = true
-	//chance you get stuck instead of walking into the hazard
-	var/stick_chance = 50
+	sticky = TRUE
 	slowdown = 2
+	projectile_stick_chance = 0

@@ -67,7 +67,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "aL" = (
 /obj/machinery/suit_storage_unit,
@@ -78,9 +79,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_outer)
 "aT" = (
-/obj/machinery/power/shieldwallgen/atmos,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "SHTEAS"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "SHTHLFEAS"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
@@ -150,6 +157,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/radiation,
 /obj/effect/decal/cleanable/garbage,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "bF" = (
@@ -203,6 +211,7 @@
 "bO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/hazard/radioactive/stack,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "bR" = (
@@ -223,18 +232,32 @@
 "bX" = (
 /obj/structure/table/chem,
 /obj/machinery/button/door{
+	name = "Room Lockdown";
+	id = "CMD_BOLT";
+	dir = 1;
+	pixel_x = -9;
+	pixel_y = -3
+	},
+/obj/machinery/button/door{
+	name = "Right Hall Inner";
+	id = "CORER";
+	dir = 1;
+	pixel_x = -9;
+	pixel_y = 4
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = -9;
+	pixel_y = 11;
+	name = "Left Hall Inner";
+	id = "COREL"
+	},
+/obj/machinery/button/door{
 	id = "RES1";
 	pixel_x = 1;
 	pixel_y = -3;
 	dir = 1;
 	name = "South Entrance"
-	},
-/obj/machinery/button/door{
-	id = "RES2";
-	name = "North Entrance";
-	pixel_x = 11;
-	pixel_y = -3;
-	dir = 1
 	},
 /obj/machinery/button/door{
 	id = "RS3";
@@ -244,17 +267,24 @@
 	name = "Storage Cell 3"
 	},
 /obj/machinery/button/door{
-	id = "RS4";
-	name = "Storage Cell 4";
-	pixel_x = 11;
-	pixel_y = 4;
-	dir = 1
-	},
-/obj/machinery/button/door{
 	id = "RS1";
 	name = "Storage Cell 1";
 	pixel_x = 1;
 	pixel_y = 11;
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "RES2";
+	name = "North Entrance";
+	pixel_x = 11;
+	pixel_y = -3;
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "RS4";
+	name = "Storage Cell 4";
+	pixel_x = 11;
+	pixel_y = 4;
 	dir = 1
 	},
 /obj/machinery/button/door{
@@ -277,11 +307,16 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/south_hall)
 "cb" = (
-/obj/machinery/power/shieldwallgen/atmos{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "SHTWES"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "SHTHLFWES";
+	dir = 1
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
@@ -394,6 +429,7 @@
 /area/ruin/space/has_grav/powered/nuclearwaste/south_hall)
 "dd" = (
 /obj/effect/turf_decal/radiation,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "de" = (
@@ -449,7 +485,14 @@
 /obj/machinery/power/smes/shuttle/micro{
 	dir = 2
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
+"dw" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "SHTEAS"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "dD" = (
 /obj/machinery/door/airlock/highsecurity,
@@ -464,7 +507,7 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 1;
-	id = "CORES"
+	id = "CORE"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
@@ -684,6 +727,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "fC" = (
@@ -703,6 +747,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_outer)
 "fJ" = (
@@ -722,9 +767,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_outer)
 "fK" = (
-/obj/machinery/power/shieldwallgen/atmos,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "SHTWES"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "SHTHLFWES"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
@@ -745,7 +796,7 @@
 	pixel_y = -32
 	},
 /turf/open/space/basic,
-/area/space/nearstation)
+/area/space)
 "gh" = (
 /obj/structure/chair/wood/wings{
 	dir = 1
@@ -827,6 +878,11 @@
 "gM" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
+	},
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "CGL"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/cargo_right)
@@ -920,7 +976,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west,
-/obj/effect/radiation/extreme,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_outer)
 "hp" = (
@@ -930,7 +985,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/preopen{
+/obj/machinery/door/poddoor{
+	dir = 1;
 	id = "RES2"
 	},
 /turf/open/floor/plasteel/tech,
@@ -961,7 +1017,7 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 1;
-	id = "CORES"
+	id = "CORE"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
@@ -1005,13 +1061,20 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/engineering)
 "hQ" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
-	icon_state = "1-2"
+	icon_state = "4-8"
 	},
-/obj/machinery/button/door,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/nuclearwaste/cargo_right)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_outer)
 "hR" = (
 /obj/structure/window/reinforced/survival_pod,
 /obj/machinery/door/window/survival_pod{
@@ -1184,6 +1247,12 @@
 	network = list("NKRW")
 	},
 /obj/structure/hazard/radioactive/active_radioactive_source,
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/obj/item/geiger_counter{
+	pixel_x = 5;
+	pixel_y = -2;
+	scanning = 1
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
 "iF" = (
@@ -1429,6 +1498,17 @@
 /obj/structure/hazard/radioactive/waste,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
+"kP" = (
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "CGR"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/powered/nuclearwaste/cargo_left)
 "kS" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
@@ -1448,7 +1528,8 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "lu" = (
 /obj/structure/catwalk,
@@ -1635,6 +1716,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning/cee,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "mN" = (
@@ -1736,8 +1818,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "IBDS"
+/obj/machinery/door/poddoor{
+	dir = 1;
+	id = "IBDN"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
@@ -1747,11 +1830,16 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/nuclearwaste/medbay)
 "nz" = (
-/obj/machinery/power/shieldwallgen/atmos{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "SHTEAS"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 1;
+	id = "SHTHLFEAS"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
@@ -1770,7 +1858,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door,
 /obj/effect/radiation/waste/intense,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
@@ -1839,12 +1926,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
-	},
-/obj/machinery/button/door{
-	id = "IBDS";
-	dir = 8;
-	pixel_x = 21;
-	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_outer)
@@ -1956,11 +2037,15 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "oF" = (
-/obj/structure/sign/warning/longtermwaste{
-	pixel_y = 32
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/turf/open/space/basic,
-/area/space/nearstation)
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "oH" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -2006,6 +2091,13 @@
 /obj/effect/radiation/waste/intense,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/engineering)
+"oV" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "SHTWES"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "oW" = (
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/patterned/grid,
@@ -2068,7 +2160,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/preopen{
+/obj/machinery/door/poddoor{
 	dir = 4;
 	id = RES1
 	},
@@ -2125,7 +2217,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "qd" = (
@@ -2194,6 +2285,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/south_hall)
 "qU" = (
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /obj/machinery/nuclearbomb/syndicate{
 	deconstruction_state = NUKESTATE_CORE;
 	interior = "core-removed"
@@ -2218,12 +2310,18 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/nuclearwaste/north_hall)
 "rh" = (
-/obj/machinery/power/shieldwallgen/atmos/strong,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "CGR"
+	},
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
+	id = "HLFW"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/cargo_left)
@@ -2272,7 +2370,8 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "rC" = (
 /obj/structure/cable/yellow{
@@ -2295,6 +2394,7 @@
 	},
 /obj/machinery/light/floor,
 /obj/structure/hazard/radioactive/active_radioactive_source,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "rY" = (
@@ -2365,7 +2465,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/preopen{
+/obj/machinery/door/poddoor{
+	dir = 1;
 	id = "IBDN"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -2407,6 +2508,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/item/mop,
+/obj/structure/mopbucket,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/south_hall)
 "sA" = (
@@ -2427,6 +2530,17 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on,
 /turf/open/floor/engine/air,
 /area/ruin/space/has_grav/powered/nuclearwaste/engineering)
+"sT" = (
+/obj/effect/turf_decal/radiation,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "sX" = (
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/airlock/grunge,
@@ -2549,6 +2663,7 @@
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "tT" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /obj/machinery/nuclearbomb/syndicate,
 /obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/pod/dark,
@@ -2693,14 +2808,19 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/engineering)
 "uL" = (
-/obj/machinery/power/shieldwallgen/atmos/strong{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "CGR"
+	},
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
+	dir = 1;
+	id = "HLFW"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/cargo_left)
@@ -2743,26 +2863,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_outer)
 "vm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+/obj/effect/turf_decal/radiation,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/button/door{
-	pixel_x = 0;
-	pixel_y = 22;
-	id = "RES2"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_outer)
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "vq" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/fulltile,
@@ -2806,12 +2913,6 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
-	},
-/obj/machinery/button/door{
-	id = "CORE";
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = 0
 	},
 /obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
@@ -2916,8 +3017,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_outer)
 "wV" = (
-/turf/open/space/basic,
-/area/space/nearstation)
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "CGL"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/powered/nuclearwaste/cargo_right)
 "wY" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -2932,12 +3040,40 @@
 "xa" = (
 /obj/machinery/light/small/directional/south,
 /obj/structure/table/chem,
-/obj/machinery/button/door{
-	name = "Room Lockdown";
-	id = "CMD_BOLT";
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 3;
+	pixel_y = 5;
 	dir = 1;
-	pixel_x = -9;
-	pixel_y = -3
+	name = "West Cargo Holofield";
+	id = "HLFW"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 3;
+	pixel_y = 12;
+	dir = 1;
+	name = "East Cargo Holofield";
+	id = "HLFE"
+	},
+/obj/machinery/button/door{
+	id = "CORE";
+	name = "Central Secure Doors";
+	pixel_x = 11;
+	pixel_y = -4;
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "CGR";
+	name = "West Cargo Doors";
+	pixel_x = 11;
+	pixel_y = 3;
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "CGL";
+	name = "East Cargo Doors";
+	pixel_x = 11;
+	pixel_y = 11;
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/nuclearwaste/navcom)
@@ -3049,9 +3185,11 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "yr" = (
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /obj/machinery/power/rad_collector,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_2)
@@ -3084,6 +3222,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/north_hall)
+"yF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/hazard/radioactive,
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "yI" = (
 /obj/structure/table/optable,
 /obj/machinery/defibrillator_mount/loaded{
@@ -3273,6 +3417,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "As" = (
@@ -3321,6 +3466,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/hazard/radioactive/active_radioactive_source,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "AJ" = (
@@ -3415,6 +3561,7 @@
 	id = "RS3"
 	},
 /obj/effect/mapping_helpers/airlock/sealed,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "AU" = (
@@ -3461,12 +3608,6 @@
 	name = "broken long-wave television reciver";
 	desc = "The screen displays a constant /"MISSINGSIGNAL"/ on the screen, with soft static buzzing off of it. It is caked with dust and is stained with some kind of sause."
 	},
-/obj/item/paper{
-	pixel_x = 12;
-	pixel_y = -3;
-	name = "rushed note";
-	default_raw_text = "the tech wokring in the decommision section just died mid removal of the core. we decided to just run for it with our suits because were not taking our chances with the core going off"
-	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/space/has_grav/powered/nuclearwaste/recreation)
 "Bn" = (
@@ -3503,6 +3644,17 @@
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/space/has_grav/powered/nuclearwaste/this_is_not_a_place_of_honor)
+"Bq" = (
+/obj/effect/turf_decal/radiation,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "Bu" = (
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/space/has_grav/powered/nuclearwaste/this_is_not_a_place_of_honor)
@@ -3626,6 +3778,11 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/south_hall)
 "CN" = (
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "SHTEAS"
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "Df" = (
@@ -3645,6 +3802,7 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/structure/hazard/radioactive/active_radioactive_source,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "Dr" = (
@@ -3691,6 +3849,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/powered/nuclearwaste/recreation)
 "Eb" = (
@@ -3834,8 +3993,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "IBDS"
+/obj/machinery/door/poddoor{
+	dir = 1;
+	id = "IBDN"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
@@ -4101,9 +4261,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/preopen{
+/obj/machinery/door/poddoor{
 	dir = 4;
-	id = "CORELL"
+	id = "COREL"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
@@ -4193,11 +4353,12 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/south,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /obj/machinery/nuclearbomb/syndicate{
 	deconstruction_state = NUKESTATE_CORE;
 	interior = "core-removed"
 	},
-/obj/machinery/light/small/directional/south,
 /obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
@@ -4258,7 +4419,18 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/button,
+/obj/machinery/button/door{
+	id = "SHTEAS";
+	pixel_x = 0;
+	pixel_y = 22;
+	name = "Port Shutters"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 9;
+	pixel_y = 21;
+	id = "SHTHLFEAS";
+	name = "Port Holofields"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "Iq" = (
@@ -4267,7 +4439,7 @@
 	pixel_y = -32
 	},
 /turf/open/space/basic,
-/area/space/nearstation)
+/area/space)
 "Ir" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/small/directional/east,
@@ -4324,6 +4496,7 @@
 	dir = 2
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "IX" = (
@@ -4420,12 +4593,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door{
-	id = "CORE";
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = 0
-	},
 /obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
@@ -4610,12 +4777,18 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/powered/nuclearwaste/recreation)
 "Ld" = (
-/obj/machinery/power/shieldwallgen/atmos/strong,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "CGL"
+	},
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
+	id = "HLFE"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/cargo_right)
@@ -4646,6 +4819,7 @@
 /obj/structure/closet/crate/large{
 	name = "nuclear waste gas crate"
 	},
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "Ln" = (
@@ -4716,7 +4890,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/command{
 	dir = 4;
 	id_tag = CMD_BOLT;
@@ -4777,6 +4950,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_2)
 "Mt" = (
@@ -4927,12 +5101,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor{
 	dir = 1;
-	id = "CORES"
+	id = "CORE"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "NG" = (
 /obj/structure/hazard/radioactive/active_radioactive_source,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "NH" = (
@@ -4952,11 +5127,11 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/poddoor/preopen{
-	dir = 4;
-	id = "CORERR"
-	},
 /obj/effect/mapping_helpers/airlock/sealed,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "CORER"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "NI" = (
@@ -4998,7 +5173,7 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 1;
-	id = "CORES"
+	id = "CORE"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
@@ -5048,6 +5223,10 @@
 "Ob" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "CGR"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/cargo_left)
@@ -5099,6 +5278,7 @@
 "OA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/radiation,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "OC" = (
@@ -5114,14 +5294,19 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/cargo_left)
 "OE" = (
-/obj/machinery/power/shieldwallgen/atmos/strong{
-	dir = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "CGL"
+	},
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
+	id = "HLFE";
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/cargo_right)
@@ -5182,6 +5367,7 @@
 "Ps" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/cargo_right)
 "Pt" = (
@@ -5422,6 +5608,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/hazard/radioactive/active_radioactive_source,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "QY" = (
@@ -5455,6 +5642,7 @@
 /area/ruin/space/has_grav/powered/nuclearwaste/this_is_not_a_place_of_honor)
 "Rl" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
 "Rs" = (
@@ -5582,6 +5770,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "SE" = (
@@ -5787,6 +5976,7 @@
 	pixel_x = 7;
 	pixel_y = -3
 	},
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
 "TW" = (
@@ -5836,16 +6026,13 @@
 /area/ruin/space/has_grav/powered/nuclearwaste/north_hall)
 "Uv" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/button/door,
+/obj/machinery/light/directional/east,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/nuclearwaste/cargo_left)
+/area/ruin/space/has_grav/powered/nuclearwaste/cargo_right)
 "Uw" = (
 /obj/effect/decal/cleanable/greenglow/filled,
 /obj/structure/hazard/radioactive/stack,
@@ -5889,6 +6076,14 @@
 "UO" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/powered/nuclearwaste/south_hall)
+"UQ" = (
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "SHTWES"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "UR" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -6052,6 +6247,7 @@
 	scanning = 1
 	},
 /obj/structure/hazard/radioactive/active_radioactive_source,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "VJ" = (
@@ -6073,7 +6269,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/poddoor/preopen{
+/obj/machinery/door/poddoor{
+	dir = 1;
 	id = "IBDN"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -6096,6 +6293,14 @@
 /obj/effect/spawner/random/trash/garbage,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/powered/nuclearwaste/recreation)
+"VR" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/nuclearwaste/cargo_left)
 "VW" = (
 /obj/machinery/power/smes,
 /obj/structure/catwalk/over/plated_catwalk,
@@ -6192,6 +6397,10 @@
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/space/has_grav/powered/nuclearwaste/this_is_not_a_place_of_honor)
+"WQ" = (
+/obj/structure/hazard/slowdown/nuclear_sludge,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "WV" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -6283,6 +6492,7 @@
 	dir = 5
 	},
 /obj/structure/hazard/radioactive/active_radioactive_source,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "XY" = (
@@ -6295,7 +6505,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/command{
 	dir = 4;
 	id_tag = CMD_BOLT;
@@ -6307,6 +6516,23 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/navcom)
+"Yk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	id = "SHTWES";
+	pixel_y = 22;
+	name = "Starboard Shutters"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = -9;
+	pixel_y = 21;
+	id = "SHTHLFWES";
+	name = "Starboard Holofield"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "Yr" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -6331,6 +6557,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/radiation,
 /mob/living/basic/cockroach,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "YN" = (
@@ -6339,6 +6566,7 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/structure/hazard/radioactive/active_radioactive_source,
+/obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "YV" = (
@@ -6367,7 +6595,8 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/light/dim/directional/west,
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/shuttle)
 "Zy" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -7685,9 +7914,9 @@ GK
 pd
 rj
 GK
-wV
-wV
-wV
+Ux
+Ux
+Ux
 Fp
 Bp
 UX
@@ -7697,9 +7926,9 @@ UB
 tB
 LC
 Fp
-wV
-wV
-wV
+Ux
+Ux
+Ux
 UO
 IX
 qu
@@ -7747,9 +7976,9 @@ GK
 Ni
 Qc
 GK
-oF
-wV
-wV
+zf
+Ux
+Ux
 vq
 Fk
 xR
@@ -7759,8 +7988,8 @@ mk
 GO
 UC
 vq
-wV
-wV
+Ux
+Ux
 ge
 UO
 xJ
@@ -7809,9 +8038,9 @@ GK
 Uy
 VJ
 GK
-wV
-wV
-wV
+Ux
+Ux
+Ux
 vq
 Fk
 xR
@@ -7821,9 +8050,9 @@ KI
 GO
 UC
 vq
-wV
-wV
-wV
+Ux
+Ux
+Ux
 UO
 ZL
 IQ
@@ -7858,7 +8087,7 @@ mr
 bJ
 OC
 hs
-Uv
+PW
 Qt
 tC
 tq
@@ -7871,9 +8100,9 @@ re
 Wx
 Ut
 GK
-wV
-wV
-wV
+Ux
+Ux
+Ux
 Fp
 Bn
 xR
@@ -7883,9 +8112,9 @@ PK
 GO
 bR
 Fp
-wV
-wV
-wV
+Ux
+Ux
+Ux
 UO
 ZL
 EF
@@ -7918,7 +8147,7 @@ ys
 qA
 RV
 mB
-QY
+VR
 qA
 qA
 QY
@@ -7933,9 +8162,9 @@ sX
 pd
 rj
 GK
-wV
-wV
-wV
+Ux
+Ux
+Ux
 vq
 pG
 xR
@@ -7945,9 +8174,9 @@ mk
 GO
 SX
 vq
-wV
-wV
-wV
+Ux
+Ux
+Ux
 UO
 IX
 ks
@@ -7984,7 +8213,7 @@ Ob
 Ob
 Ob
 Ob
-Ob
+kP
 uL
 Et
 ys
@@ -7995,9 +8224,9 @@ GK
 pd
 kD
 GK
-wV
-wV
-wV
+Ux
+Ux
+Ux
 vq
 Fk
 xR
@@ -8007,9 +8236,9 @@ KI
 il
 UC
 vq
-wV
-wV
-wV
+Ux
+Ux
+Ux
 UO
 st
 Mx
@@ -8041,12 +8270,12 @@ dH
 dH
 dH
 fK
-CN
+oV
 cb
 dH
 dH
 fK
-CN
+UQ
 cb
 dH
 Ux
@@ -8057,9 +8286,9 @@ GK
 pd
 Oy
 GK
-wV
-wV
-wV
+Ux
+Ux
+Ux
 Fp
 Ce
 xR
@@ -8069,9 +8298,9 @@ Lg
 wg
 Ez
 Fp
-wV
-wV
-wV
+Ux
+Ux
+Ux
 UO
 Yr
 sz
@@ -8104,9 +8333,9 @@ du
 ry
 uj
 Be
-VZ
+sT
 BR
-BR
+vm
 VZ
 BR
 wc
@@ -8119,9 +8348,9 @@ GK
 Pt
 kD
 GK
-wV
-wV
-wV
+Ux
+Ux
+Ux
 vq
 Fk
 Bu
@@ -8131,9 +8360,9 @@ mk
 xR
 Fs
 Em
-wV
-wV
-wV
+Ux
+Ux
+Ux
 UO
 st
 IQ
@@ -8181,9 +8410,9 @@ GK
 pd
 rj
 GK
-wV
-wV
-wV
+Ux
+Ux
+Ux
 vq
 Fk
 Bu
@@ -8193,9 +8422,9 @@ KI
 xR
 Oh
 vq
-wV
-wV
-wV
+Ux
+Ux
+Ux
 UO
 IX
 IQ
@@ -8233,7 +8462,7 @@ dH
 dH
 dH
 dH
-Ip
+Yk
 MA
 dt
 dH
@@ -8243,9 +8472,9 @@ GK
 pd
 rj
 GK
-wV
-wV
-wV
+Ux
+Ux
+Ux
 Fp
 zs
 xR
@@ -8255,9 +8484,9 @@ PK
 xR
 bd
 Fp
-wV
-wV
-wV
+Ux
+Ux
+Ux
 UO
 ZL
 IQ
@@ -8295,8 +8524,8 @@ Ux
 Ux
 Ux
 dH
-yS
-MA
+oF
+WQ
 lX
 Kl
 Un
@@ -8305,9 +8534,9 @@ GK
 Uy
 VJ
 GK
-oF
-wV
-wV
+zf
+Ux
+Ux
 vq
 Fk
 xR
@@ -8317,8 +8546,8 @@ mk
 xR
 Oh
 Em
-wV
-wV
+Ux
+Ux
 Iq
 UO
 ZL
@@ -8367,9 +8596,9 @@ GK
 Ni
 Qc
 GK
-wV
-wV
-wV
+Ux
+Ux
+Ux
 Em
 pG
 xR
@@ -8379,9 +8608,9 @@ KI
 Bu
 Oh
 vq
-wV
-wV
-wV
+Ux
+Ux
+Ux
 UO
 wq
 wh
@@ -8429,9 +8658,9 @@ GK
 pd
 rj
 GK
-wV
-wV
-wV
+Ux
+Ux
+Ux
 Fp
 zn
 fL
@@ -8441,9 +8670,9 @@ yc
 FZ
 if
 Fp
-wV
-wV
-wV
+Ux
+Ux
+Ux
 UO
 hf
 qu
@@ -8539,9 +8768,9 @@ lg
 Km
 Be
 im
-BR
+vm
 Mt
-im
+Bq
 BR
 jn
 dH
@@ -8599,7 +8828,7 @@ dH
 dH
 dH
 aT
-CN
+dw
 nz
 dH
 dH
@@ -8661,12 +8890,12 @@ Ux
 Hg
 gs
 Ld
+wV
+wV
+wV
 gM
-gM
-gM
-gM
-gM
-gM
+wV
+wV
 OE
 Hg
 gs
@@ -8788,8 +9017,8 @@ do
 cW
 bF
 JA
-hQ
-cW
+bF
+Uv
 bF
 Hc
 gs
@@ -8858,7 +9087,7 @@ gs
 gs
 gs
 gs
-vm
+xN
 Ku
 HM
 Jb
@@ -9129,7 +9358,7 @@ gW
 Az
 Pv
 WX
-xz
+hQ
 mp
 Ux
 SS
@@ -9806,7 +10035,7 @@ Mj
 kM
 qf
 kM
-Ei
+yF
 KF
 Wj
 eU

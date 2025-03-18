@@ -36,11 +36,11 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "radiation"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF //its not even a real thing
+	client_range = 20 //I forsee nothing wrong happening here (clueless)
 	anchored = TRUE
 	rad_power = 1200
-	rad_range = 0.2
-	client_range = 7
+	rad_range = 9
 	random_min = 0.5 SECONDS
-	random_max = 0.5 SECONDS
-	invisibility = INVISIBILITY_ABSTRACT
-	density = 0
+	random_max = 5 SECONDS
+	invisibility = INVISIBILITY_OBSERVER
+	density = FALSE
