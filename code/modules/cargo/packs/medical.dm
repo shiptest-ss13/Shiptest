@@ -172,6 +172,7 @@
 	contains = list(/obj/machinery/iv_drip/saline)
 	crate_name = "saline glucose crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/medical/epipen_crate
 	name = "Bulk Epipen Crate"
