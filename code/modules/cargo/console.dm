@@ -130,11 +130,10 @@
 				src.visible_message("<span class='notice'>[src] dispenses a holochip.</span>")
 			return TRUE
 
-		/*
 		if("add")
 			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
 			if(istype(current_ship.docked_to))
-				var/datum/supply_pack/current_pack = locate(params["ref"]) in current_outpost.supply_packs
+				var/datum/supply_pack/current_pack = locate(params["ref"]) in current_outpost.market.supply_packs
 				var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
 				var/total_cost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : current_pack.cost
 				if(!current_pack || !charge_account?.has_money(total_cost))
@@ -158,7 +157,6 @@
 					crate_spawner.handle_order(SO)
 					update_appearance() // ??????????????????
 					return TRUE
-		*/
 
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
