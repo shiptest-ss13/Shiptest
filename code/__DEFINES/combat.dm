@@ -2,14 +2,46 @@
 
 //Damage and status effect defines
 
-//Damage defines //TODO: merge these down to reduce on defines
+/// Physical fracturing and warping of the material.
 #define BRUTE "brute"
+/// Scorching and charring of the material.
 #define BURN "fire"
+/// Poisoning. Mostly caused by reagents.
 #define TOX "toxin"
+/// Suffocation.
 #define OXY "oxygen"
 #define CLONE "clone"
+/// Exhaustion and nonlethal damage.
 #define STAMINA "stamina"
+/// Brain damage. Should probably be decommissioned and replaced with proper organ damage.
 #define BRAIN "brain"
+
+
+//Damage flag defines //
+
+/// Involves corrosive substances.
+#define ACID "acid"
+/// Involved in checking whether a disease can infect or spread. Also involved in xeno neurotoxin.
+#define BIO "bio"
+/// Involves a shockwave, usually from an explosion.
+#define BOMB "bomb"
+/// Involves a solid projectile.
+#define BULLET "bullet"
+/// Involves being eaten
+#define CONSUME "consume"
+/// Involves an EMP or energy-based projectile.
+#define ENERGY "energy"
+/// Involves fire or temperature extremes.
+#define FIRE "fire"
+/// Involves a laser.
+#define LASER "laser"
+/// Involves a melee attack or a thrown object.
+#define MELEE "melee"
+//someone should really port wounds...
+/// Involved in checking the likelihood of applying a wound to a mob.
+//#define WOUND "wound"
+
+#define ARMOR_ALL "all_damage_types"
 
 #define EFFECT_STUN "stun"
 #define EFFECT_KNOCKDOWN "knockdown"

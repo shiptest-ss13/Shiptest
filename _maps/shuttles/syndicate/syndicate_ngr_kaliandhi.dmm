@@ -266,7 +266,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "bX" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/command{
 	dir = 8;
 	icon_state = "computer-right"
 	},
@@ -3216,8 +3216,7 @@
 	pixel_y = -5
 	},
 /obj/item/attachment/rail_light{
-	pixel_x = 1;
-	pixel_y = 0
+	pixel_x = 1
 	},
 /obj/item/attachment/rail_light{
 	pixel_x = -4;
