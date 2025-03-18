@@ -865,6 +865,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "dV" = (
@@ -4537,7 +4538,9 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/north,
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "vI" = (
