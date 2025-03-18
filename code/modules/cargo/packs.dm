@@ -9,6 +9,7 @@
 	var/crate_type = /obj/structure/closet/crate
 	var/admin_spawned = FALSE
 	var/small_item = FALSE //Small items can be grouped into a single crate.
+	var/no_bundle = FALSE
 
 	var/datum/faction/faction
 	//what's the discount for buyers in our faction.

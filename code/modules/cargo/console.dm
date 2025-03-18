@@ -133,29 +133,41 @@
 
 		if("purchase")
 			var/list/purchasing = params["cart"]
+			var/total_cost = text2num(params["total"])
 			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
-			if(!istype(current_ship.docked_to))
+			if(!istype(current_ship.docked_to) || purchasing.len == 0)
 				return
 
-			for(var/list/current_item as anything in purchasing)
-				var/datum/supply_pack/current_pack = locate(current_item["ref"]) in current_outpost.supply_packs
-				CHECK_TICK
+			if(!charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
+				return
 
-			// if(charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
-			// 	var/name = "*None Provided*"
-			// 	var/rank = "*None Provided*"
-			// 	if(ishuman(usr))
-			// 		var/mob/living/carbon/human/H = usr
-			// 		name = H.get_authentification_name()
-			// 		rank = H.get_assignment(hand_first = TRUE)
-			// 	else if(issilicon(usr))
-			// 		name = usr.real_name
-			// 		rank = "Silicon"
-			// 	var/datum/supply_order/SO = new(current_pack, name, rank, usr.ckey, "", ordering_outpost = current_ship.docked_to)
-			// 	var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
-			// 	crate_spawner.handle_order(SO)
-			// 	update_appearance() // ??????????????????
-			// 	return TRUE
+			var/list/unprocessed_packs = list()
+			for(var/list/current_item as anything in purchasing)
+				unprocessed_packs += locate(current_item["ref"]) in current_outpost.supply_packs
+
+			while(unprocessed_packs.len > 0)
+				var/datum/supply_pack/initial_pack = unprocessed_packs[1]
+				if(istype(initial_pack.crate_type, /obj/structure/closet/crate/large))
+					if(!make_single_order(usr, initial_pack))
+						return
+					unprocessed_packs -= initial_pack
+					return TRUE
+
+				var/list/combo_packs = list()
+				var/combo_group = initial_pack.group
+				for(var/datum/supply_pack/current_pack in unprocessed_packs)
+					if(current_pack.group != combo_group)
+						continue
+					combo_packs += current_pack
+					unprocessed_packs -= current_pack
+
+				if(combo_packs.len == 1) // No items could be bundled with the initial pack, make a single order
+					make_single_order(usr, initial_pack)
+					unprocessed_packs -= initial_pack
+					continue
+
+				make_combo_order(usr, combo_packs)
+				unprocessed_packs -= combo_packs
 
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
@@ -175,6 +187,38 @@
 				else if(tgui_alert(usr, "Give up on [mission]?", src, list("Yes", "No")) == "Yes")
 					mission.give_up()
 				return TRUE
+
+/obj/machinery/computer/cargo/proc/make_single_order(mob/user, datum/supply_pack/pack)
+	var/name = "*None Provided*"
+	var/rank = "*None Provided*"
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		name = H.get_authentification_name()
+		rank = H.get_assignment(hand_first = TRUE)
+	else if(issilicon(user))
+		name = user.real_name
+		rank = "Silicon"
+	var/datum/supply_order/SO = new(pack, name, rank, user.ckey, "", ordering_outpost = current_ship.docked_to)
+	var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
+	crate_spawner.handle_order(SO)
+	update_appearance() // ??????????????????
+	return TRUE
+
+/obj/machinery/computer/cargo/proc/make_combo_order(mob/user, list/combo_packs)
+	var/name = "*None Provided*"
+	var/rank = "*None Provided*"
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		name = H.get_authentification_name()
+		rank = H.get_assignment(hand_first = TRUE)
+	else if(issilicon(user))
+		name = user.real_name
+		rank = "Silicon"
+	var/datum/supply_order/combo/SO = new(combo_packs, name, rank, user.ckey, "", ordering_outpost = current_ship.docked_to)
+	var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
+	crate_spawner.handle_order(SO)
+	update_appearance() // ??????????????????
+	return TRUE
 
 /obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()

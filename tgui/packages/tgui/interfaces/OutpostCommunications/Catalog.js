@@ -36,7 +36,8 @@ export const CargoCatalog = (props, context) => {
   const [cart, setCart] = useSharedState(context, 'cart', []);
 
   const cartTotal = cart.reduce(
-    (cartTotal, entry) => cartTotal + entry.cost,
+    (cartTotal, entry) =>
+      cartTotal + (entry.discountedcost ? entry.discountedcost : entry.cost),
     0
   );
 
@@ -61,7 +62,9 @@ export const CargoCatalog = (props, context) => {
           onClick={() => setCart([])}
         />
         <Button
-          color="green"
+          icon="times"
+          color="transparent"
+          content="Purchase"
           onClick={() =>
             act('purchase', {
               cart: cart,
