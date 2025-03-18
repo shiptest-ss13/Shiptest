@@ -147,16 +147,15 @@
 
 			while(unprocessed_packs.len > 0)
 				var/datum/supply_pack/initial_pack = unprocessed_packs[1]
-				if(istype(initial_pack.crate_type, /obj/structure/closet/crate/large))
-					if(!make_single_order(usr, initial_pack))
-						return
+				if(initial_pack.no_bundle)
+					make_single_order(usr, initial_pack)
 					unprocessed_packs -= initial_pack
-					return TRUE
+					continue
 
 				var/list/combo_packs = list()
 				var/combo_group = initial_pack.group
 				for(var/datum/supply_pack/current_pack in unprocessed_packs)
-					if(current_pack.group != combo_group)
+					if(current_pack.group != combo_group || current_pack.no_bundle)
 						continue
 					combo_packs += current_pack
 					unprocessed_packs -= current_pack

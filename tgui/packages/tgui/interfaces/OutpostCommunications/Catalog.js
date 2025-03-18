@@ -67,12 +67,13 @@ export const CargoCatalog = (props, context) => {
             <Button
               color="green"
               content="Purchase"
-              onClick={() =>
+              onClick={() => {
                 act('purchase', {
                   cart: cart,
                   total: cartTotal,
-                })
-              }
+                });
+                setCart([]);
+              }}
             />
           </>
         </>
@@ -158,9 +159,9 @@ export const CargoCatalog = (props, context) => {
             <Table>
               {activeSupply?.packs.map((pack) => {
                 const tags = [];
-                if (pack.no_bundle) {
-                  tags.push('No Grouping');
-                }
+                // if (pack.no_bundle) {
+                //   tags.push('No Grouping');
+                // }
                 if (pack.access) {
                   tags.push('Restricted');
                 }
