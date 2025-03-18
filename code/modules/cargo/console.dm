@@ -85,6 +85,7 @@
 	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
 
 	data["onShip"] = !isnull(current_ship)
+	data["shipFaction"] = current_ship.faction_datum.name
 	data["numMissions"] = current_ship ? LAZYLEN(current_ship.missions) : 0
 	data["maxMissions"] = current_ship ? current_ship.max_missions : 0
 	data["outpostDocked"] = outpost_docked
@@ -130,33 +131,31 @@
 				src.visible_message("<span class='notice'>[src] dispenses a holochip.</span>")
 			return TRUE
 
-		if("add")
+		if("purchase")
+			var/list/purchasing = params["cart"]
 			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
-			if(istype(current_ship.docked_to))
-				var/datum/supply_pack/current_pack = locate(params["ref"]) in current_outpost.supply_packs
-				var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.faction_datum) : FALSE
-				var/total_cost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : current_pack.cost
-				if(!current_pack || !charge_account?.has_money(total_cost))
-					return
+			if(!istype(current_ship.docked_to))
+				return
 
-				// note that, because of CHECK_TICK above, we aren't sure if we can
-				// afford the pack, even though we checked earlier. luckily adjust_money
-				// returns false if the account can't afford the price
-				if(charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
-					var/name = "*None Provided*"
-					var/rank = "*None Provided*"
-					if(ishuman(usr))
-						var/mob/living/carbon/human/H = usr
-						name = H.get_authentification_name()
-						rank = H.get_assignment(hand_first = TRUE)
-					else if(issilicon(usr))
-						name = usr.real_name
-						rank = "Silicon"
-					var/datum/supply_order/SO = new(current_pack, name, rank, usr.ckey, "", ordering_outpost = current_ship.docked_to)
-					var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
-					crate_spawner.handle_order(SO)
-					update_appearance() // ??????????????????
-					return TRUE
+			for(var/list/current_item as anything in purchasing)
+				var/datum/supply_pack/current_pack = locate(current_item["ref"]) in current_outpost.supply_packs
+				CHECK_TICK
+
+			// if(charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
+			// 	var/name = "*None Provided*"
+			// 	var/rank = "*None Provided*"
+			// 	if(ishuman(usr))
+			// 		var/mob/living/carbon/human/H = usr
+			// 		name = H.get_authentification_name()
+			// 		rank = H.get_assignment(hand_first = TRUE)
+			// 	else if(issilicon(usr))
+			// 		name = usr.real_name
+			// 		rank = "Silicon"
+			// 	var/datum/supply_order/SO = new(current_pack, name, rank, usr.ckey, "", ordering_outpost = current_ship.docked_to)
+			// 	var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
+			// 	crate_spawner.handle_order(SO)
+			// 	update_appearance() // ??????????????????
+			// 	return TRUE
 
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
