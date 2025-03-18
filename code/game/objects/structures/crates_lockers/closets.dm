@@ -8,6 +8,7 @@
 	max_integrity = 200
 	integrity_failure = 0.25
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60)
+	pass_flags_self = LETPASSCLICKS
 
 	var/icon_door = null
 	var/icon_door_override = FALSE //override to have open overlay use icon different to its base's
