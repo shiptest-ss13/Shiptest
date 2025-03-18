@@ -55,7 +55,7 @@
 	else if(item.tool_behaviour == TOOL_WRENCH)
 		var/datum/overmap/dynamic/overmap_object = get_overmap_location()
 		if(!istype(overmap_object) || !overmap_object.planet || istype(loc, /area/ship)) // Quick check to make sure we're actually *on* a planet, and will stay there
-			to_chat(user, span_warning("The [src] can only be deployed on planets!"))
+			to_chat(user, span_warning("The [src] can only be deployed on planets!")) // Technically, space ruins and asteroids are planets, not Pluto though
 			return
 		default_unfasten_wrench(user, item, time = 20)
 		if(anchored)
@@ -193,22 +193,10 @@
 	if(!inserted_id)
 		return FALSE
 
-	var/datum/overmap/dynamic/overmap_object = get_overmap_location()
 
-	var/text = "A distress beacon has been activated by [inserted_id.registered_name] at local sector co-ordinates [overmap_object.x]/[overmap_object.y]. No further information available."
-	priority_announce(text, null, 'sound/effects/alert.ogg', sender_override = "Outpost Distress Beacon System", zlevel = 0)
+	create_distress_beacon(get_overmap_location())
 	next_clicksound = world.time + DISTRESS_COOLDOWN
 	return TRUE
-
-/obj/machinery/power/planet_beacon/proc/get_overmap_location()
-	var/datum/map_zone/our_zone = get_map_zone()
-	for(var/datum/overmap/dynamic/overmap_object in SSovermap.overmap_objects)
-		if(!istype(overmap_object))
-			continue
-		if(!overmap_object.mapzone)
-			continue
-		if(overmap_object.mapzone == our_zone)
-			return overmap_object
 
 /obj/machinery/power/planet_beacon/proc/referesh_preservation()
 	var/datum/overmap/dynamic/overmap_object = get_overmap_location()
