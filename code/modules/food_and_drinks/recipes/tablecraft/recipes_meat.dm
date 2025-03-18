@@ -209,7 +209,7 @@
 	name = "Rat Kebab"
 	reqs = list(
 		/obj/item/stack/rods = 1,
-		/obj/item/reagent_containers/food/snacks/deadmouse = 1
+		/obj/item/food/deadmouse = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/kebab/rat
 	subcategory = CAT_MEAT
@@ -218,7 +218,7 @@
 	name = "Double Rat Kebab"
 	reqs = list(
 		/obj/item/stack/rods = 1,
-		/obj/item/reagent_containers/food/snacks/deadmouse = 2
+		/obj/item/food/deadmouse = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/kebab/rat/double
 	subcategory = CAT_MEAT
