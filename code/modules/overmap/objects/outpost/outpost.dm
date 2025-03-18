@@ -43,11 +43,6 @@
 	var/list/datum/mission/missions
 
 	var/datum/cargo_market/market
-	#warn remove
-	/// List of all of the things this outpost offers
-	var/list/supply_packs = list()
-	/// our 'Order number'
-	var/ordernum = 1
 
 	/// Our faction of the outpost
 	var/datum/faction/faction
@@ -77,7 +72,6 @@
 	if(!market)
 		market = new()
 	fill_missions()
-	populate_cargo()
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
@@ -154,17 +148,6 @@
 		var/mission_type = get_weighted_mission_type()
 		var/datum/mission/M = new mission_type(src)
 		LAZYADD(missions, M)
-
-/datum/overmap/outpost/proc/populate_cargo()
-	ordernum = rand(1, 99000)
-
-	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
-		current_pack = new current_pack()
-		if(current_pack.faction)
-			current_pack.faction = SSfactions.faction_path_to_datum(current_pack.faction)
-		if(!current_pack.contains)
-			continue
-		supply_packs += current_pack
 
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)

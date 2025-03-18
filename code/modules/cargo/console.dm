@@ -213,7 +213,7 @@
 	if(!istype(outpost_docked))
 		return supply_pack_data
 
-	for(var/datum/supply_pack/current_pack as anything in outpost_docked.supply_packs)
+	for(var/datum/supply_pack/current_pack as anything in outpost_docked.market.supply_packs)
 		if(!supply_pack_data[current_pack.group])
 			supply_pack_data[current_pack.group] = list(
 				"name" = current_pack.group,

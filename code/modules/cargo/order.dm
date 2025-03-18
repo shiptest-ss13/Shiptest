@@ -26,7 +26,7 @@
 	src.paying_account = paying_account
 	src.ordering_outpost = ordering_outpost
 	if(src.ordering_outpost)
-		id = src.ordering_outpost.ordernum++
+		id = src.ordering_outpost.market.ordernum++
 	if(pack)
 		SSblackbox.record_feedback("nested tally", "crate_ordered", 1, list(pack.name, "amount"))
 		SSblackbox.record_feedback("nested tally", "crate_ordered", pack.cost, list(pack.name, "cost"))
