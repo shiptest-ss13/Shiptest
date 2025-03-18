@@ -10,12 +10,12 @@
 
 /datum/quirk/lang_kalixcian/add()
 	var/mob/living/carbon/human/knower = quirk_holder
-	knower.grant_language(/datum/language/draconic, source = LANGUAGE_MIND)
+	knower.grant_language(/datum/language/kalixcian_common, source = LANGUAGE_MIND)
 
 /datum/quirk/lang_kalixcian/remove()
 	if(quirk_holder)
 		var/mob/living/carbon/human/knower = quirk_holder
-		knower.remove_language(/datum/language/draconic, source = LANGUAGE_MIND)
+		knower.remove_language(/datum/language/kalixcian_common, source = LANGUAGE_MIND)
 
 // Teceti Unified Standard
 /datum/quirk/lang_tuc
