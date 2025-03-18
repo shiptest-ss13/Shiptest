@@ -681,7 +681,7 @@
 		simulate_recoil(user, recoil, actual_angle)
 	else if(!wielded_fully)
 		var/recoil_temp = recoil_unwielded
-		var/obj/item/shield/riot/shield = user.get_inactive_held_item()
+		var/obj/item/shield/shield = user.get_inactive_held_item()
 		if(istype(shield))
 			recoil_temp += shield.recoil_bonus
 		simulate_recoil(user, recoil_temp, actual_angle)
