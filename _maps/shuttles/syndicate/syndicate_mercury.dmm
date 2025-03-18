@@ -137,13 +137,14 @@
 	icon_state = "sec_wall";
 	name = "ammunition locker"
 	},
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/storage/toolbox/ammo/c10mm,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/storage/box/ammo/c45,
+/obj/item/storage/box/ammo/c45,
 /turf/open/floor/suns/dark/plain,
 /area/ship/security)
 "cw" = (
@@ -992,9 +993,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/item/gun/ballistic/automatic/pistol/ringneck/indie/no_mag,
-/obj/item/gun/ballistic/automatic/pistol/ringneck/indie/no_mag,
 /obj/machinery/light/directional/east,
+/obj/item/gun/ballistic/automatic/smg/cobra/indie/no_mag,
+/obj/item/gun/ballistic/automatic/smg/cobra/indie/no_mag,
 /turf/open/floor/suns/grid,
 /area/ship/security)
 "qa" = (
@@ -2447,7 +2448,6 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "Nj" = (
-/obj/structure/closet/cabinet,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
@@ -2455,8 +2455,8 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/west,
-/obj/item/melee/duelenergy/halberd/purple,
-/obj/item/melee/duelenergy/halberd/purple,
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
 /turf/open/floor/suns/grid,
 /area/ship/security)
 "Nm" = (
