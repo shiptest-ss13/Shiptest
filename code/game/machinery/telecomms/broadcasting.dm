@@ -146,6 +146,9 @@
 	if(compression > 0)
 		message = Gibberish(message, compression >= 30)
 
+	if(0 in levels)
+		signal_reaches_every_z_level = RADIO_NO_Z_LEVEL_RESTRICTION
+
 	// Assemble the list of radios
 	var/list/radios = list()
 	switch (transmission_method)
