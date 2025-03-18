@@ -158,8 +158,8 @@ export const CargoCatalog = (props, context) => {
             <Table>
               {activeSupply?.packs.map((pack) => {
                 const tags = [];
-                if (pack.small_item) {
-                  tags.push('Small');
+                if (pack.no_bundle) {
+                  tags.push('No Grouping');
                 }
                 if (pack.access) {
                   tags.push('Restricted');

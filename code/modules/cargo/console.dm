@@ -273,7 +273,8 @@
 			"discountpercent" = current_pack.faction_discount,
 			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
 			"ref" = REF(current_pack),
-			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : "") // If there is a description, use it. Otherwise use the pack's name.
+			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : ""), // If there is a description, use it. Otherwise use the pack's name.
+			"no_bundle" = current_pack.no_bundle
 		))
 
 
