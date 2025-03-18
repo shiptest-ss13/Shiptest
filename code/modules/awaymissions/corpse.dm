@@ -175,6 +175,8 @@
 	var/facial_hairstyle
 	var/skin_tone
 
+	var/list/outfit_override
+
 /obj/effect/mob_spawn/human/Initialize()
 	if(ispath(outfit))
 		outfit = new outfit()
@@ -288,7 +290,7 @@
 
 /obj/effect/mob_spawn/mouse
 	name = "sleeper"
-	mob_type = 	/mob/living/simple_animal/mouse
+	mob_type = 	/mob/living/basic/mouse
 	death = FALSE
 	roundstart = FALSE
 	icon = 'icons/obj/machines/sleeper.dmi'

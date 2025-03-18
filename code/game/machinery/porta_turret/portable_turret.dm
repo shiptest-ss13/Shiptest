@@ -47,8 +47,18 @@
 	/// If the turret is currently manually controlled
 	var/manual_control = FALSE
 
-	/// Ticks until next shot If this needs to go below 5, use SSFastProcess
+	/// Ticks until next shot/burst If this needs to go below 5, use SSFastProcess
 	var/shot_delay = 1.5 SECONDS
+
+	/// How many shots a turret fires in one "burst"
+	var/burst_size = 1
+
+	/// time between shots in a burst.
+	var/burst_delay = 5
+
+	/// turret spread.
+	var/spread = 5
+
 	/// Cooldown until we can shoot again
 	COOLDOWN_DECLARE(fire_cooldown)
 
@@ -69,6 +79,9 @@
 	var/list/faction = list("neutral", "turret")
 
 	var/list/target_faction = list("hostile")
+
+	/// does our turret give a flying fuck about what accesses someone has?
+	var/turret_respects_id = TRUE
 
 	/// The spark system, used for generating... sparks?
 	var/datum/effect_system/spark_spread/spark_system
@@ -445,7 +458,7 @@
 		power_change()
 		spark_system.start()	//creates some sparks because they look cool
 
-/obj/machinery/porta_turret/process()
+/obj/machinery/porta_turret/process(seconds_per_tick)
 	if(!on || (machine_stat & (NOPOWER|BROKEN)) || manual_control)
 		return PROCESS_KILL
 
@@ -508,9 +521,9 @@
 		if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
 			return target(target_mob)
 
-		//this is gross
+		//this is still a bit gross, but less gross than before
 		var/static/list/dangerous_fauna = typecacheof(list(/mob/living/simple_animal/hostile, /mob/living/carbon/alien, /mob/living/carbon/monkey))
-		if(!is_type_in_typecache(target_mob, dangerous_fauna))
+		if(!is_type_in_typecache(target_mob, dangerous_fauna) || faction_check(list("neutral"), target_mob.faction))
 			return FALSE
 
 		if(istype(target_mob, /mob/living/simple_animal/hostile/retaliate))
@@ -522,8 +535,9 @@
 	//We know the target must be a human now
 	var/mob/living/carbon/human/target_carbon = target_mob
 
-	if(req_ship_access && (check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id)))
-		return FALSE
+	if(turret_respects_id)
+		if(req_ship_access && (check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id)))
+			return FALSE
 
 	if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
 		return target(target_carbon)
@@ -532,8 +546,17 @@
 	if(target_carbon.handcuffed || !(target_carbon.mobility_flags & MOBILITY_USE))
 		return FALSE
 
+	if(target_carbon.stat != CONSCIOUS)
+		return FALSE
+
 	if(target_carbon.is_holding_item_of_type(/obj/item/gun) || target_carbon.is_holding_item_of_type(/obj/item/melee))
 		return target(target_carbon)
+
+/obj/machinery/porta_turret/proc/in_faction(mob/target)
+	for(var/faction1 in faction)
+		if(faction1 in target.faction)
+			return TRUE
+	return FALSE
 
 //Returns whether or not we should stop searching for targets
 /obj/machinery/porta_turret/proc/target(mob/living/target)
@@ -580,6 +603,15 @@
 	COOLDOWN_START(src, fire_cooldown, shot_delay)
 
 	update_appearance(UPDATE_ICON_STATE)
+
+	//Shooting Code:
+	var/turf/target_turf = get_turf(target)
+	for(var/i = 1 to burst_size)
+		addtimer(CALLBACK(src, PROC_REF(turret_fire), our_turf, target_turf), burst_delay * (i - 1))
+
+	return TRUE
+
+/obj/machinery/porta_turret/proc/turret_fire(our_turf, target_turf)
 	var/obj/projectile/shot
 	//any lethaling turrets drain 2x the power and use a different projectile
 	if(lethal)
@@ -590,14 +622,11 @@
 		use_power(reqpower)
 		shot = new stun_projectile(our_turf)
 		playsound(loc, stun_projectile_sound, 75, TRUE)
-
-
-	//Shooting Code:
-	shot.preparePixelProjectile(target, our_turf)
+	shot.spread = spread
+	shot.preparePixelProjectile(target_turf, our_turf)
 	shot.firer = src
 	shot.fired_from = src
 	shot.fire()
-	return TRUE
 
 /obj/machinery/porta_turret/proc/set_target(atom/movable/target = null)
 	if(current_target)

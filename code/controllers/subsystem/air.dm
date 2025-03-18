@@ -2,7 +2,7 @@ SUBSYSTEM_DEF(air)
 	name = "Atmospherics"
 	init_order = INIT_ORDER_AIR
 	priority = FIRE_PRIORITY_AIR
-	wait = 5
+	wait = 0.5 SECONDS
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 
 	var/cost_turfs = 0
@@ -85,6 +85,8 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 		return
 	return ..()
 
+	var/lasttick = 0
+
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"
 	msg += "HP:[round(cost_highpressure,1)]|"
@@ -130,8 +132,9 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 	message_admins("Air reset done.")
 	SSair.can_fire = TRUE
 
-/datum/controller/subsystem/air/fire(resumed = 0)
+/datum/controller/subsystem/air/fire(resumed = FALSE)
 	var/timer
+	var/seconds_per_tick = wait * 0.1
 
 	if(length(SSair.rebuild_queue) || length(SSair.expansion_queue))
 		timer = TICK_USAGE_REAL
@@ -176,7 +179,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 
 	if(SSair.currentpart == SSAIR_PIPENETS)
 		timer = TICK_USAGE_REAL
-		MC_PAUSE_IF_TRUE(SSair.process_pipenets())
+		MC_PAUSE_IF_TRUE(SSair.process_pipenets(seconds_per_tick))
 		cost_pipenets = MC_AVERAGE(cost_pipenets, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -185,7 +188,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 	// This is only machinery like filters, mixers that don't interact with air
 	if(SSair.currentpart == SSAIR_ATMOSMACHINERY)
 		timer = TICK_USAGE_REAL
-		MC_PAUSE_IF_TRUE(SSair.process_atmos_machinery())
+		MC_PAUSE_IF_TRUE(SSair.process_atmos_machinery(seconds_per_tick))
 		cost_atmos_machinery = MC_AVERAGE(cost_atmos_machinery, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -201,7 +204,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 
 	if(SSair.currentpart == SSAIR_ATMOSMACHINERY_AIR)
 		timer = TICK_USAGE_REAL
-		MC_PAUSE_IF_TRUE(SSair.process_atmos_air_machinery())
+		MC_PAUSE_IF_TRUE(SSair.process_atmos_air_machinery(seconds_per_tick))
 		cost_atmos_machinery_air = MC_AVERAGE(cost_atmos_machinery_air, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -209,7 +212,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 
 	if(SSair.currentpart == SSAIR_HOTSPOTS)
 		timer = TICK_USAGE_REAL
-		MC_PAUSE_IF_TRUE(SSair.process_hotspots())
+		MC_PAUSE_IF_TRUE(SSair.process_hotspots(seconds_per_tick))
 		cost_hotspots = MC_AVERAGE(cost_hotspots, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -279,7 +282,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 		currentrun -= machine
 
 
-/datum/controller/subsystem/air/proc/process_pipenets()
+/datum/controller/subsystem/air/proc/process_pipenets(seconds_per_tick)
 	if (!incomplete)
 		src.currentrun = networks.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -288,7 +291,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 		var/datum/thing = currentrun[currentrun.len]
 		currentrun.len--
 		if(thing)
-			thing.process()
+			thing.process(seconds_per_tick)
 		else
 			networks.Remove(thing)
 		if(TICK_CHECK)
@@ -375,7 +378,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 		if (TICK_CHECK)
 			return TRUE
 
-/datum/controller/subsystem/air/proc/process_atmos_machinery()
+/datum/controller/subsystem/air/proc/process_atmos_machinery(seconds_per_tick)
 	var/seconds = wait * 0.1
 	if (!incomplete)
 		src.currentrun = atmos_machinery.Copy()
@@ -386,13 +389,13 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 		currentrun.len--
 		if(!M)
 			atmos_machinery -= M
-		if(M.process_atmos(seconds) == PROCESS_KILL)
+		if(M.process_atmos(seconds_per_tick) == PROCESS_KILL)
 			stop_processing_machine(M)
 		if(TICK_CHECK)
 			incomplete = TRUE
 			return TRUE
 
-/datum/controller/subsystem/air/proc/process_atmos_air_machinery()
+/datum/controller/subsystem/air/proc/process_atmos_air_machinery(seconds_per_tick)
 	var/seconds = wait * 0.1
 	if (!incomplete)
 		src.currentrun = atmos_air_machinery.Copy()
@@ -403,7 +406,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 		currentrun.len--
 		if(!M)
 			atmos_air_machinery -= M
-		if(M.process_atmos(seconds) == PROCESS_KILL)
+		if(M.process_atmos(seconds_per_tick) == PROCESS_KILL)
 			stop_processing_machine(M)
 		if(TICK_CHECK)
 			incomplete = TRUE
@@ -411,7 +414,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 
 /datum/controller/subsystem/air/proc/process_turf_heat()
 
-/datum/controller/subsystem/air/proc/process_hotspots()
+/datum/controller/subsystem/air/proc/process_hotspots(seconds_per_tick)
 	if (!incomplete)
 		src.currentrun = hotspots.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -420,7 +423,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 		var/obj/effect/hotspot/H = currentrun[currentrun.len]
 		currentrun.len--
 		if (H)
-			H.process()
+			H.process(seconds_per_tick)
 		else
 			hotspots -= H
 		if(TICK_CHECK)
@@ -428,7 +431,7 @@ BACKGROUND_SUBSYSTEM_DEF(air)
 			return TRUE
 
 
-/datum/controller/subsystem/air/proc/process_high_pressure_delta(resumed = 0)
+/datum/controller/subsystem/air/proc/process_high_pressure_delta(seconds_per_tick)
 	while (high_pressure_delta.len)
 		var/turf/open/T = high_pressure_delta[high_pressure_delta.len]
 		high_pressure_delta.len--

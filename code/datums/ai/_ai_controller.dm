@@ -13,12 +13,10 @@ multiple modular subtrees with behaviors
 	var/list/current_behaviors
 	///Current actions and their respective last time ran as an assoc list.
 	var/list/behavior_cooldowns = list()
-	///Current status of AI (OFF/ON/IDLE)
+	///Current status of AI (OFF/ON)
 	var/ai_status
 	///Current movement target of the AI, generally set by decision making.
 	var/atom/current_movement_target
-	///Delay between atom movements, if this is not a multiplication of the delay in
-	var/move_delay
 	///This is a list of variables the AI uses and can be mutated by actions. When an action is performed you pass this list and any relevant keys for the variables it can mutate.
 	var/list/blackboard = list()
 	///Stored arguments for behaviors given during their initial creation
@@ -33,6 +31,9 @@ multiple modular subtrees with behaviors
 	COOLDOWN_DECLARE(failed_planning_cooldown)
 	///All subtrees this AI has available, will run them in order, so make sure they're in the order you want them to run. On initialization of this type, it will start as a typepath(s) and get converted to references of ai_subtrees found in SSai_controllers when init_subtrees() is called
 	var/list/planning_subtrees
+
+	///The idle behavior this AI performs when it has no actions.
+	var/datum/idle_behavior/idle_behavior = null
 
 	// Movement related things here
 	///Reference to the movement datum we use. Is a type on initialize but becomes a ref afterwards.
@@ -53,11 +54,16 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/New(atom/new_pawn)
 	change_ai_movement_type(ai_movement)
 	init_subtrees()
+
+	if(idle_behavior)
+		idle_behavior = new idle_behavior()
+
 	PossessPawn(new_pawn)
 
 /datum/ai_controller/Destroy(force, ...)
 	set_ai_status(AI_STATUS_OFF)
 	UnpossessPawn(FALSE)
+	ai_movement.stop_moving_towards(src)
 	return ..()
 
 ///Overrides the current ai_movement of this controller with a new one
@@ -124,13 +130,14 @@ multiple modular subtrees with behaviors
 		return FALSE
 	return TRUE
 
-/// Generates a plan and see if our existing one is still valid.
-/datum/ai_controller/process(delta_time)
+
+///Runs any actions that are currently running
+/datum/ai_controller/process(seconds_per_tick)
 	if(!able_to_run())
 		walk(pawn, 0) //stop moving
 		return //this should remove them from processing in the future through event-based stuff.
-	if(!LAZYLEN(current_behaviors))
-		PerformIdleBehavior(delta_time) //Do some stupid shit while we have nothing to do
+	if(!LAZYLEN(current_behaviors) && idle_behavior)
+		idle_behavior.perform_idle_behavior(seconds_per_tick, src) //Do some stupid shit while we have nothing to do
 		return
 
 	if(current_movement_target && get_dist(pawn, current_movement_target) > max_target_distance) //The distance is out of range
@@ -140,48 +147,40 @@ multiple modular subtrees with behaviors
 	for(var/i in current_behaviors)
 		var/datum/ai_behavior/current_behavior = i
 
-		if(behavior_cooldowns[current_behavior] > world.time) //Still on cooldown
-			continue
+		// Convert the current behaviour action cooldown to realtime seconds from deciseconds.current_behavior
+		// Then pick the max of this and the seconds_per_tick passed to ai_controller.process()
+		// Action cooldowns cannot happen faster than seconds_per_tick, so seconds_per_tick should be the value used in this scenario.
+		var/action_seconds_per_tick = max(current_behavior.action_cooldown * 0.1, seconds_per_tick)
 
-		if(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT && current_movement_target) //Might need to move closer
+		if(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT) //Might need to move closer
+			if(!current_movement_target)
+				stack_trace("[pawn] wants to perform action type [current_behavior.type] which requires movement, but has no current movement target!")
+				return //This can cause issues, so don't let these slide.
 			if(current_behavior.required_distance >= get_dist(pawn, current_movement_target)) ///Are we close enough to engage?
-				if(ai_movement.moving_controllers[src] == current_movement_target) //We are close enough, if we're moving stop.else
+				if(ai_movement.moving_controllers[src] == current_movement_target) //We are close enough, if we're moving stop.
 					ai_movement.stop_moving_towards(src)
-				ProcessBehavior(delta_time, current_behavior)
+
+				if(behavior_cooldowns[current_behavior] > world.time) //Still on cooldown
+					continue
+				ProcessBehavior(action_seconds_per_tick, current_behavior)
 				return
 
 			else if(ai_movement.moving_controllers[src] != current_movement_target) //We're too far, if we're not already moving start doing it.
-				ai_movement.start_moving_towards(src, current_movement_target) //Then start moving
+				ai_movement.start_moving_towards(src, current_movement_target, current_behavior.required_distance) //Then start moving
 
 			if(current_behavior.behavior_flags & AI_BEHAVIOR_MOVE_AND_PERFORM) //If we can move and perform then do so.
-				ProcessBehavior(delta_time, current_behavior)
+				if(behavior_cooldowns[current_behavior] > world.time) //Still on cooldown
+					continue
+				ProcessBehavior(action_seconds_per_tick, current_behavior)
 				return
 		else //No movement required
-			ProcessBehavior(delta_time, current_behavior)
+			if(behavior_cooldowns[current_behavior] > world.time) //Still on cooldown
+				continue
+			ProcessBehavior(action_seconds_per_tick, current_behavior)
 			return
 
-
-///Move somewhere using dumb movement (byond base)
-/datum/ai_controller/proc/MoveTo(delta_time)
-	var/current_loc = get_turf(pawn)
-	var/atom/movable/movable_pawn = pawn
-
-	var/turf/target_turf = get_step_towards(movable_pawn, current_movement_target)
-
-	if(!is_type_in_typecache(target_turf, GLOB.dangerous_turfs))
-		movable_pawn.Move(target_turf, get_dir(current_loc, target_turf))
-	if(current_loc == get_turf(movable_pawn))
-		if(++pathing_attempts >= AI_MAX_PATH_LENGTH)
-			CancelActions()
-			pathing_attempts = 0
-
-
-///Perform some dumb idle behavior.
-/datum/ai_controller/proc/PerformIdleBehavior(delta_time)
-	return
-
 ///This is where you decide what actions are taken by the AI.
-/datum/ai_controller/proc/SelectBehaviors(delta_time)
+/datum/ai_controller/proc/SelectBehaviors(seconds_per_tick)
 	SHOULD_NOT_SLEEP(TRUE) //Fuck you don't sleep in procs like this.
 	if(!COOLDOWN_FINISHED(src, failed_planning_cooldown))
 		return FALSE
@@ -190,7 +189,7 @@ multiple modular subtrees with behaviors
 
 	if(LAZYLEN(planning_subtrees))
 		for(var/datum/ai_planning_subtree/subtree as anything in planning_subtrees)
-			if(subtree.SelectBehaviors(src, delta_time) == SUBTREE_RETURN_FINISH_PLANNING)
+			if(subtree.SelectBehaviors(src, seconds_per_tick) == SUBTREE_RETURN_FINISH_PLANNING)
 				break
 
 ///This proc handles changing ai status, and starts/stops processing if required.
@@ -211,7 +210,8 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/proc/PauseAi(time)
 	paused_until = world.time + time
 
-/datum/ai_controller/proc/AddBehavior(behavior_type, ...)
+///Call this to add a behavior to the stack.
+/datum/ai_controller/proc/queue_behavior(behavior_type, ...)
 	var/datum/ai_behavior/behavior = GET_AI_BEHAVIOR(behavior_type)
 	if(!behavior)
 		CRASH("Behavior [behavior_type] not found.")
@@ -223,9 +223,11 @@ multiple modular subtrees with behaviors
 	arguments.Cut(1, 2)
 	if(length(arguments))
 		behavior_args[behavior_type] = arguments
+	else
+		behavior_args -= behavior_type
 
-/datum/ai_controller/proc/ProcessBehavior(delta_time, datum/ai_behavior/behavior)
-	var/list/arguments = list(delta_time, src)
+/datum/ai_controller/proc/ProcessBehavior(seconds_per_tick, datum/ai_behavior/behavior)
+	var/list/arguments = list(seconds_per_tick, src)
 	var/list/stored_arguments = behavior_args[behavior.type]
 	if(stored_arguments)
 		arguments += stored_arguments
@@ -236,15 +238,21 @@ multiple modular subtrees with behaviors
 		return
 	for(var/i in current_behaviors)
 		var/datum/ai_behavior/current_behavior = i
-		current_behavior.finish_action(src, FALSE)
+		var/list/arguments = list(src, FALSE)
+		var/list/stored_arguments = behavior_args[current_behavior.type]
+		if(stored_arguments)
+			arguments += stored_arguments
+		current_behavior.finish_action(arglist(arguments))
 
 /datum/ai_controller/proc/on_sentience_gained()
+	SIGNAL_HANDLER
 	UnregisterSignal(pawn, COMSIG_MOB_LOGIN)
 	if(!continue_processing_when_client)
 		set_ai_status(AI_STATUS_OFF) //Can't do anything while player is connected
 	RegisterSignal(pawn, COMSIG_MOB_LOGOUT, PROC_REF(on_sentience_lost))
 
 /datum/ai_controller/proc/on_sentience_lost()
+	SIGNAL_HANDLER
 	UnregisterSignal(pawn, COMSIG_MOB_LOGOUT)
 	set_ai_status(AI_STATUS_ON) //Can't do anything while player is connected
 	RegisterSignal(pawn, COMSIG_MOB_LOGIN, PROC_REF(on_sentience_gained))

@@ -15,7 +15,9 @@
 	if(istype(target, /obj/structure/ore_box))
 		var/obj/structure/ore_box/box = target
 		for(var/obj/item/stack/ore/O in box)
-			unload_mineral(O)
+			if(!istype(O, /obj/item/stack/ore/ice)) // Doesn't automatically unload ice, other machines will still process (or melt) the ice normally.
+				unload_mineral(O)
 	else if(istype(target, /obj/item/stack/ore))
 		var/obj/item/stack/ore/O = target
-		unload_mineral(O)
+		if(!istype(O, /obj/item/stack/ore/ice))
+			unload_mineral(O)

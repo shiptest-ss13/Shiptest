@@ -72,7 +72,7 @@
 			cell = new preload_cell_type(src)
 	soundloop = new(list(src), active)
 
-/obj/machinery/drill/process()
+/obj/machinery/drill/process(seconds_per_tick)
 	if(machine_stat & BROKEN || (active && !our_vein))
 		active = FALSE
 		soundloop.stop()
@@ -329,7 +329,7 @@
 			say("Vein depleted.")
 			active = FALSE
 			soundloop.stop()
-			our_vein.deconstruct()
+			our_vein.Destroy()
 			our_vein = null
 			update_icon_state()
 			update_overlays()

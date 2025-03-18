@@ -49,7 +49,7 @@
 	RegisterSignal(parent, list(COMSIG_SPAWNER_TOGGLE_SPAWNING), PROC_REF(toggle_spawning))
 	START_PROCESSING(SSprocessing, src)
 
-/datum/component/spawner/process()
+/datum/component/spawner/process(seconds_per_tick)
 	try_spawn_mob()
 
 /datum/component/spawner/proc/stop_spawning(force)
@@ -96,6 +96,8 @@
 	COOLDOWN_START(src, spawn_delay, spawn_time)
 	var/to_spawn = clamp(spawn_amount, 1, max_mobs - length(spawned_mobs))
 	for(var/mob_index in 1 to to_spawn)
+		if(length(spawned_mobs) >= max_mobs)
+			return
 		if(spawn_distance_max > 1)
 			var/origin = spot
 			var/list/peel = turf_peel(spawn_distance_max, spawn_distance_min, origin, view_based = TRUE)

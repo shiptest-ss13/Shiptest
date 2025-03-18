@@ -10,11 +10,13 @@
 	flags_1 = CONDUCT_1
 	force = 13
 	var/active_force = 24
+	demolition_mod = 1.5
 	w_class = WEIGHT_CLASS_HUGE
 	throwforce = 13
 	throw_speed = 2
 	throw_range = 4
 	custom_materials = list(/datum/material/iron=13000)
+	attack_cooldown = HEAVY_WEAPON_CD
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 	hitsound = "swing_hit"
 	sharpness = IS_SHARP

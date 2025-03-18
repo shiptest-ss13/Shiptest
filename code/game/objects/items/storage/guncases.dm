@@ -26,7 +26,8 @@
 	var/holdable_items = list(
 		/obj/item/gun,
 		/obj/item/ammo_box,
-		/obj/item/stock_parts/cell/gun
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/attachment/gun
 	)
 
 /obj/item/storage/guncase/Initialize(mapload)

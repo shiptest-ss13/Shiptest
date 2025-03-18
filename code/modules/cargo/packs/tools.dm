@@ -39,6 +39,15 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/bodycamera
+	name = "Body Camera Crate"
+	desc = "Contains two portable cameras, designed to help keep track of a working group at all times."
+	cost = 250
+	contains = list(/obj/item/bodycamera,
+					/obj/item/bodycamera,
+					/obj/item/paper/guides/bodycam)
+	crate_name = "bodycamera crate"
+
 /datum/supply_pack/tools/assbelt
 	name = "Assault Belt"
 	desc = "Contains an assault belt, with not one, not two, but six pockets."
@@ -131,6 +140,16 @@
 	cost = 2500
 	contains = list(/obj/item/gun/energy/plasmacutter)
 	crate_name = "plasmacutter crate"
+
+/datum/supply_pack/tools/sledgehammer
+	name = "Sledgehammer Crate"
+	desc = "Contains a freshly fabricated Breaching Sledgehammer, capable of wrecking hull and flesh with ease."
+	cost = 1500
+	contains = list(/obj/item/melee/sledgehammer/gorlex)
+	crate_name = "sledgehammer crate"
+	faction = /datum/faction/syndicate/ngr
+	faction_locked = TRUE
+	faction_discount = 0
 
 /*
 		Liquid tanks
