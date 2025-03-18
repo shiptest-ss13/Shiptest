@@ -22,18 +22,12 @@ SUBSYSTEM_DEF(factions)
 		CRASH("Unknown ship prefix: [prefix]")
 	return faction_prefixes[prefix]
 
-/datum/controller/subsystem/factions/proc/faction_path_to_datum(path)
-	for(var/datum/faction/faction in factions)
-		if(faction.type == path)
-			return faction
-	stack_trace("we did not return any faction with path [path]")
-
 /datum/controller/subsystem/factions/proc/faction_name(path_or_type)
 	var/datum/faction/faction
 	if(istype(path_or_type, /datum/faction))
 		faction = path_or_type
 	else if(ispath(path_or_type))
-		faction = faction_path_to_datum(path_or_type)
+		faction = factions[path_or_type]
 	else
 		return "Unknown Faction"
 	return faction.name
