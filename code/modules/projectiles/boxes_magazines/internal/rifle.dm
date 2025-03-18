@@ -22,8 +22,8 @@
 
 /obj/item/ammo_box/magazine/internal/boltaction/polymer
 	name = "polymer bolt action rifle internal magazine"
-	ammo_type = /obj/item/ammo_casing/aac_300blk
-	caliber = ".300 BLK"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = "7.62x40mm"
 	max_ammo = 5
 
 /obj/item/ammo_box/magazine/internal/vickland

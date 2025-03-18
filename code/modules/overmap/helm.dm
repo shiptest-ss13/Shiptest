@@ -76,6 +76,7 @@
 	SStgui.close_uis(src)
 	ASSERT(length(concurrent_users) == 0)
 	QDEL_NULL(ntnet_relay)
+	SSpoints_of_interest.remove_point_of_interest(src)
 	if(current_ship)
 		current_ship.helms -= src
 		current_ship = null
@@ -108,6 +109,8 @@
 	qdel(current_ship)
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	if(!viewer)
+		SSpoints_of_interest.make_point_of_interest(src)
 	if(current_ship && current_ship != port.current_ship)
 		current_ship.helms -= src
 	current_ship = port.current_ship
@@ -357,7 +360,7 @@
 	// Unregister map objects
 	if(current_ship)
 		user.client?.clear_map(current_ship.token.map_name)
-		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer) // If accelerating with nobody else to stop it
+		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer && is_living) // If accelerating with nobody else to stop it
 			say("Pilot absence detected, engaging acceleration safeties.")
 			current_ship.change_heading(BURN_NONE)
 

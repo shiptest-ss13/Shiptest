@@ -23,7 +23,7 @@
 	. = ..()
 	connect_to_network()
 
-/obj/machinery/power/rtg/process()
+/obj/machinery/power/rtg/process(seconds_per_tick)
 	..()
 	add_avail(power_gen)
 	if(panel_open && irradiate)
@@ -83,9 +83,6 @@
 	if(!going_kaboom && istype(Proj) && !Proj.nodamage && ((Proj.damage_type == BURN) || (Proj.damage_type == BRUTE)))
 		log_bomber(Proj.firer, "triggered a", src, "explosion via projectile")
 		overload()
-
-/obj/machinery/power/rtg/abductor/blob_act(obj/structure/blob/B)
-	overload()
 
 /obj/machinery/power/rtg/abductor/ex_act()
 	if(going_kaboom)

@@ -260,41 +260,6 @@
 				S.healthanalyzer = healthanalyzer
 				qdel(src)
 
-
-//Honkbot Assembly
-/obj/item/bot_assembly/honkbot
-	name = "incomplete honkbot assembly"
-	desc = "The clown's up to no good once more"
-	icon_state = "honkbot_arm"
-	created_name = "Honkbot"
-
-/obj/item/bot_assembly/honkbot/attackby(obj/item/I, mob/user, params)
-	..()
-	switch(build_step)
-		if(ASSEMBLY_FIRST_STEP)
-			if(isprox(I))
-				if(!user.temporarilyRemoveItemFromInventory(I))
-					return
-				to_chat(user, "<span class='notice'>You add the [I] to [src]!</span>")
-				icon_state = "honkbot_proxy"
-				name = "incomplete Honkbot assembly"
-				qdel(I)
-				build_step++
-
-		if(ASSEMBLY_SECOND_STEP)
-			if(istype(I, /obj/item/bikehorn))
-				if(!can_finish_build(I, user))
-					return
-				to_chat(user, "<span class='notice'>You add the [I] to [src]! Honk!</span>")
-				var/mob/living/simple_animal/bot/honkbot/S = new(drop_location())
-				S.name = created_name
-				S.spam_flag = TRUE // only long enough to hear the first ping.
-				addtimer(CALLBACK (S, .mob/living/simple_animal/bot/honkbot/proc/react_ping), 5)
-				S.bikehorn = I.type
-				qdel(I)
-				qdel(src)
-
-
 //Secbot Assembly
 /obj/item/bot_assembly/secbot
 	name = "incomplete securitron assembly"
@@ -404,7 +369,7 @@
 						new /obj/item/toy/sword(Tsec)
 
 		if(ASSEMBLY_FIFTH_STEP)
-			if(istype(I, /obj/item/melee/transforming/energy/sword/saber))
+			if(istype(I, /obj/item/melee/energy/sword/saber))
 				if(swordamt < 3)
 					if(!user.temporarilyRemoveItemFromInventory(I))
 						return
@@ -429,7 +394,7 @@
 				icon_state = initial(icon_state)
 				to_chat(user, "<span class='notice'>You unbolt [src]'s energy swords.</span>")
 				for(var/IS in 1 to swordamt)
-					new /obj/item/melee/transforming/energy/sword/saber(Tsec)
+					new /obj/item/melee/energy/sword/saber(Tsec)
 
 
 //Firebot Assembly

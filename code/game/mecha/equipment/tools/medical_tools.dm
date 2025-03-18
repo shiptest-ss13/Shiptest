@@ -19,7 +19,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/mecha_parts/mecha_equipment/medical/process()
+/obj/item/mecha_parts/mecha_equipment/medical/process(seconds_per_tick)
 	if(!chassis)
 		STOP_PROCESSING(SSobj, src)
 		return 1
@@ -212,7 +212,7 @@
 /obj/item/mecha_parts/mecha_equipment/medical/sleeper/container_resist_act(mob/living/user)
 	go_out()
 
-/obj/item/mecha_parts/mecha_equipment/medical/sleeper/process()
+/obj/item/mecha_parts/mecha_equipment/medical/sleeper/process(seconds_per_tick)
 	if(..())
 		return
 	if(!chassis.has_charge(energy_drain))
@@ -490,7 +490,7 @@
 	update_equip_info()
 
 
-/obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/process()
+/obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/process(seconds_per_tick)
 	if(..())
 		return
 	if(!processed_reagents.len || reagents.total_volume >= reagents.maximum_volume || !chassis.has_charge(energy_drain))
@@ -525,10 +525,10 @@
 	qdel(medigun)
 	return ..()
 
-/obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/process()
+/obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/process(seconds_per_tick)
 	if(..())
 		return
-	medigun.process()
+	medigun.process(seconds_per_tick)
 
 /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/action(atom/target)
 	medigun.process_fire(target, loc)

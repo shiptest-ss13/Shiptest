@@ -71,7 +71,7 @@
 //Main door timer loop, if it's timing and time is >0 reduce time by 1.
 // if it's less than 0, open door, reset timer
 // update the door_timer window and the icon
-/obj/machinery/door_timer/process()
+/obj/machinery/door_timer/process(seconds_per_tick)
 	if(machine_stat & (NOPOWER|BROKEN))
 		return
 
@@ -115,8 +115,8 @@
 		return 0
 
 	if(!forced)
-		Radio.set_frequency(FREQ_COMMAND)
-		Radio.talk_into(src, "Timer has expired. Releasing prisoner.", FREQ_COMMAND)
+		Radio.set_frequency(FREQ_EMERGENCY)
+		Radio.talk_into(src, "Timer has expired. Releasing prisoner.", FREQ_EMERGENCY)
 
 	timing = FALSE
 	activation_time = null

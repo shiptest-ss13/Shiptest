@@ -1,0 +1,320 @@
+2025-01-04:
+  Erikafox:
+  - rscdel: kong drink
+  - rscadd: CLIP has lost contact with a facility in the system. Go find it. Go see
+      what happened. I dare you.
+  Ryll/Shaps:
+  - rscadd: Adds a config option for OOC kindness commendations! When enabled, a small
+      percentage of the crew gets asked if anyone made their round better, and those
+      people will get a little heart next to their name in OOC for 24h!
+  SomeguyManperson:
+  - bugfix: mech looping repairs loop now. For real.
+  Thera-Pissed:
+  - bugfix: spaghetti desc and food type updated
+  firebudgy:
+  - rscadd: New medal descriptions and renames.
+  rye-rice:
+  - rscadd: Touches up the ringneck and commander magazine sprites
+  - balance: Ringneck is now 8 rounds and commander is 12 rounds.
+2025-01-05:
+  Apogee-dev:
+  - bugfix: the Derecho's missing APCs have been replaced
+  Erikafox:
+  - bugfix: you should see the spur sprite a lot less
+  Thera-Pissed:
+  - bugfix: chem dispensers take refined bluespace instead of polycrystal
+  generalthrax:
+  - bugfix: SG-8 fits in the holster like all the other energy pistols
+2025-01-07:
+  Burning02:
+  - bugfix: Bigderelict1 now properly spawns instead of Corporate Mining
+  Erikafox:
+  - rscdel: Kansatsu-class Scout-Courier
+  - balance: migos make less noise
+  - rscdel: honkbots
+  - code_imp: jittering has been mildly refactored. please report any weird jitterings.
+  Gristlebee:
+  - rscadd: Mech Full Auto
+  - rscadd: Mech scattergun now has 7 pellets, and damage falloff.
+  - rscadd: Mech guns can now eject casings.
+  - rscadd: Solaris fires an emitter blast.
+  - rscadd: Downpour energy carbine
+  - rscdel: Immolator laser, Peacemaker disabler
+  - balance: Ammo capacity for UMG and Scattergun mech weapons. UMG ammo now costs
+      500 at the outpost.
+  Gristlebee, Rye-rice:
+  - rscadd: Underbarrel guns
+  - rscadd: Hand attachment removal is bound to alt-click on harm intent.
+  - bugfix: Grenade launcher code
+  - bugfix: Runtimes
+  Ical92:
+  - bugfix: fixed some wall closets missing doors
+  Kapu1178:
+  - rscadd: There is now a customizable delay for equipping and unequipping items
+      from clothing slots.
+  MarkSuckerberg:
+  - rscadd: A pref to totally disable radio crackle sounds.
+  - tweak: Radio crackle will only play if it's been 5 seconds since the last radio
+      message the mob has heard.
+  - tweak: The radio crackle will only play once a message has been successfully transmitted.
+  Sadhorizon:
+  - imageadd: Advanced airlock controllers now have directional sprites.
+  Thera-Pissed:
+  - rscadd: adds ruin hazards
+  kaylexis:
+  - bugfix: changes flavor text on entertainment monitor
+2025-01-08:
+  Erikafox:
+  - rscadd: you can now change how fast a door should close with the door electronics
+  Ical92:
+  - rscadd: Wiki ship templates now show ship manufacturers
+  Sun-Soaked:
+  - balance: Backpacks can now carry Bulky items, but can no longer be accessed while
+      on your back.
+  - balance: Duffel bags can now carry more, but must be placed on the ground to be
+      opened.
+2025-01-09:
+  Burning02:
+  - balance: The Hardliners captain jacket can hold firearms now
+  Erikafox:
+  - rscadd: N+S Mine ruin now has ice for mining
+  - bugfix: Mining Scanner feedback better
+2025-01-15:
+  Erikafox:
+  - bugfix: guns no longer glow in the dark
+2025-01-16:
+  Erikafox:
+  - bugfix: Doors are now bludgeoned by whatever you're holding less, and can actually
+      be deconstructed.
+  Ical92:
+  - bugfix: merge conflicts are now properly marked
+  MemeSnorfer:
+  - bugfix: Makes some changes to the Atoll-Class's map file. It should feel slightly
+      better to play on.
+  Sadhorizon:
+  - tweak: Talos maints were remapped. They are also no longer spaced.
+  - tweak: Scarab maints were tweaked a little.
+  generalthrax:
+  - rscadd: Improved Elder airlock and added a few small things to the Elder (Animal
+      pen, cargo bay area, more tobacco, eggs), and shifted docking ports around.
+2025-01-18:
+  Apogee-dev:
+  - code_imp: Renamed the Gygax and Odysseus and updated their lore
+  - rscadd: Dark Gygax (now 515 EX) has better efficiency when overloading its legs.
+  Erikafox:
+  - balance: Temperature Mechanics have been partially reverted. Please report any
+      weirdness
+  - balance: Temperature now defaults to respecting insulation instead of ignoring
+      it.
+  - balance: goldgrubs, fugu, and basilisks are now marginally less immune to bullets.
+  - rscadd: Scopes!!!
+  - rscadd: All guns now have an implicit ability to aim down sights.
+  - rscadd: aiming now slows you down.
+  - bugfix: 'fixes ported from /tg/: projectiles no longer sail into the ether when
+      you fire them at a distance'
+  - bugfix: aiming is now less jank
+  - rscadd: The asteroid outpost in the region has been somewhat renovated.
+  - rscadd: Outposts now stock a variety of medpens in a small medical area.
+  Martinpachu:
+  - rscdel: Removed certain screwdrivers, as they are no longer needed for reloading
+      energy weapons.
+  SomeguyManperson:
+  - bugfix: radioactive barrels are now 4k HD again
+  firebudgy:
+  - balance: Loot adjustments on waste planets.
+  - balance: Radiation no longer horribly mutates your DNA to make you Swedish. It
+      still causes cancer.
+  zimon9:
+  - code_imp: modifies the access requirements to the wrecker's equipment room aboard
+      the Derecho so that the Foreman can access it
+2025-01-19:
+  Apogee-dev:
+  - bugfix: fixed firestorm pan magazine capacity and crate
+  - rscadd: Added M20 Auto Elite and PO-20 Pinscher heavy pistols.
+  - balance: SRM's Firestorm SMG is now chambered in .44 Roumain.
+  Burning02:
+  - rscadd: Adds the Banshee-class Salvage Clipper as a playable Hardliner vessel
+  - rscadd: Adds a singular Sergeants vest to the Banshee Captains equipment
+  Erikafox:
+  - balance: Legion cores now do toxin damage instead of cloneloss.
+  Jedi-Toothpaste:
+  - balance: Many price reductions have occured, happy shopping.
+  - rscdel: Removed the mafia crate
+  Ratvarr:
+  - bugfix: The grill no longer grills your ears out. Rejoice, grillmasters.
+  TDHooligan:
+  - rscadd: Robotic body parts now have integrity, 1 'integrity loss' represents 1
+      HP of damage that cannot be healed/repaired.
+  - rscadd: New 'Replace Structure' surgery that allows a roboticist to restore limb
+      integrity.
+  - rscadd: New 'Structure Repair Kit' craft that restores limb integrity.
+  - balance: Robotic limbs start wearing out after multiple repairs, limiting their
+      repair potential.
+  - balance: Repair machinery is no longer self-operable.
+  firebudgy:
+  - balance: Cargo Incendiary Grenades have been removed and replaced with Frag Grenades.
+  - rscadd: SKM Extended Magazine, Bulldog Drum Magazine, Boomslang 10rnd Magazine
+      and Firestorm Pan Magazine to factional cargo.
+  - rscadd: N+S has deployed a new batch of Shaft Miners to Harrier-class vessels.
+  - rscdel: Janitors have been reassigned from the Harrier for retraining.
+2025-01-20:
+  Gristle, Rye-Rice:
+  - rscadd: MP Gygax
+  - rscadd: Mech conversion kits to cargo
+  - balance: MK-2 ripley upgrade now costs 500.
+  - bugfix: Mech charging sanity.
+  Gristlebee:
+  - rscadd: You can use a multitool for mechanical brain surgery on the fix brain
+      step.
+  - balance: You can no longer gain deep-rooted traumas from failed brain surgery
+      or natural damage.
+  Ical92:
+  - bugfix: gathering no longer has infinite reach
+  - bugfix: the outpost's crate shelvers have been trained to leave no evidence
+  Thera-Pissed:
+  - rscadd: Replaced Jump To Mob on ghost HUD with a respawn option.
+  firebudgy:
+  - rscdel: RnD retrieval missions
+  - balance: Dogtag missions take any kind of dogtag, both Frontiersman and Ramzi
+  generalthrax:
+  - rscadd: Glass bottles of the large and small variety added to the autolathe
+  - rscadd: Distiller added to the black market
+  - balance: Beekeeping crates pricing reduced
+  - bugfix: Fixes plating under some catwalks that aren't supposed to be there on
+      the Mudskipper
+  rye-rice:
+  - rscadd: Resprites everything eoehoma related!
+  - rscadd: E-11 is more accurate. This isn't saying much.
+  - bugfix: E-60's charge overlay should now work
+2025-01-21:
+  Aylong:
+  - rscadd: Added a blinking background icon to vote action buttons
+  - rscadd: Added boxed message blocks and fieldset message blocks
+  - rscadd: Added a boxed message block for votes and a fieldset message block for
+      vote results
+  Erikafox:
+  - rscadd: You can now purchase high conductivity gauss rounds from the outpost.
+  - bugfix: you can no longer grind down the outpost
+  FalloutFalcon:
+  - refactor: lightly refactors the get path section of the cleanbot ai. Has the byproduct
+      of stoping the linter fail.
+  Ical92:
+  - rscadd: Arke-Class Surveying Ship
+  - rscadd: The Atlas-Class now has a Telecomms Relay
+  zimon9:
+  - balance: The bone breakage damage proc now depends on the movement intent of a
+      carbon. Walking reduces the proc call probability
+2025-01-22:
+  Ahmedok:
+  - balance: added mesons in Kali-Adhil Wrecker locker
+  - imageadd: added NGR variant of mining webbing
+  Erikafox:
+  - rscadd: chitosan! a coagulant that you can make by mixing 1 silicon, 2 sugar,
+      1 cryptobiolin and warming it all up.
+  - rscadd: hyposprays and hypospray vials to cargo
+  - bugfix: mannitol pens now have their proper name
+  Gristlebee:
+  - rscadd: Mechs use the new zoom system
+  - rscadd: Solaris and Ez-Pulse cannon can zoom.
+  - rscdel: Zoom on the Marauder
+  Jedi-Toothpaste:
+  - bugfix: spacesuit crates are now correctly categorised
+  - bugfix: laser tag crates are 500 instead of 100
+  Ratvarr:
+  - bugfix: The Irish have been removed from corned beef.
+  Slim-Pickems:
+  - balance: moved combat medic hardsuit bullet protection from 10 to 20
+  Thera-Pissed:
+  - bugfix: broken closet in package wrap qdel contents bug
+  - bugfix: extra space in disabled bodypart text.
+  firebudgy:
+  - rscadd: Inteq Gas Mask sprites for Vox.
+  - balance: Vests now have pockets for binoculars, attachments and pocket fire extinguishers
+2025-01-23:
+  Apogee-dev:
+  - rscadd: added Miskilamo Falmouth-class Light Freighter
+  - rscdel: removed Libertatia-class Hauler
+  MemeSnorfer & Moffball:
+  - imageadd: Kepori will no longer be haunted by floating combat webbings and balaclavas.
+      Hurray!
+  - bugfix: Fixes a mistake concerning NGR balaclavas not fitting Sarathi snouts.
+2025-01-24:
+  firebudgy:
+  - bugfix: Inteq Balaclavas and other Vox Sprites
+  generalthrax:
+  - bugfix: Falmouth filename is now indie
+  zimon9:
+  - bugfix: updated cell latch descriptions
+  - bugfix: fixed a minor bug with cell latches on the E-40
+2025-01-25:
+  Erikafox:
+  - rscadd: Cybersun's newest doohickey, the Nimbus-Class Caravel, is now on sale
+      in the Frontier.
+  FalloutFalcon:
+  - refactor: SetSleeping to set_sleeping
+  - refactor: Removed redundant arg from set_sleeping call
+  Geoengi:
+  - rscadd: Roulette tables can be bought at cargo for the low price of 5000 credits!
+  - bugfix: Fixed persistent overlays on roulette tables and requires them to be powered
+      to function.
+  - bugfix: Roulette tables now pay out when betting zero.
+  - tweak: Owners of roulette tables are the only ones who can bolt or unbolt them.
+  - tweak: Slot machines don't announce who won a jackpot where.
+  - tweak: Replaced references to ID cards with cash cards where applicable.
+  - tweak: The roulette beacon now has an activation sound.
+  - spellcheck: The roulette beacon's description reads better.
+  - code_imp: Slot machines no longer accept material coins due to them nuking the
+      server if withdrawn.
+2025-01-27:
+  Erikafox:
+  - balance: Nimbus has more money now. Be a |rich| lesbian.
+  - balance: drills no longer spawn more mobs when more people are around.
+  - balance: drill missions now pay more money.
+  Ratvarr:
+  - rscadd: Nanotrasen no longer expects you to preform open heart surgery with no
+      anesthesia of any kind on the Harrier. Rejoice.
+  firebudgy:
+  - balance: Ammo cans can hold weapon cells now too.
+  zimon9:
+  - code_imp: applied some bugfixes to the interaction of examine_more with modular
+      computers and laptops
+  - rscadd: adds the ability to interact with a tablet using the examine_more function
+2025-01-28:
+  Erikafox:
+  - rscadd: Cargo Beacons are free now.
+  - rscadd: bullets now refuse to tell you their calibre
+  - rscdel: deagle
+  - balance: most cartridges have been lightly adjusted. please say something if firing
+      bullets feels weird.
+  Jedi-Toothpaste:
+  - bugfix: fixes misaligned floor decal
+2025-01-29:
+  Apogee-dev:
+  - rscdel: Launched the Komodo-class into a black hole
+  FalloutFalcon:
+  - rscadd: Readds prism and force, heavily reworked.
+  - rscadd: You can tell when someone is under the affects of a trickwine easier.
+  - balance: Alot of tweaks to the hostile effects because they can work off status
+      effects now.
+  - balance: Trickwines off the blackmarket are slighter rarer and more expensive.
+  - balance: The reflective trait now grants full reflection instead of a 50/50 chance.
+  - refactor: Refactored alot of trickwine code, they work off of effects now and
+      are easier to read.
+2025-01-30:
+  Ical92:
+  - bugfix: adjusted autowiki ship size calculations
+  Rye-Rice, Timberpoes:
+  - rscadd: Added bodycameras
+  - rscadd: Added the ability to set custom networks on cameras and camera consoles
+  - code_imp: Made camera consoles and SecurEye have better parity
+  Thera-Pissed:
+  - rscdel: fried eggs no longer fried foodtype
+  firebudgy:
+  - balance: Abandoned Listening Post has been slightly adjusted to have marginally
+      better loot.
+  generalthrax:
+  - balance: Morphine now requires more cycles to put you to sleep, giving more combat
+      utility
+2025-01-31:
+  Apogee-dev:
+  - bugfix: Auto Elite magazines now advertise the correct capacity

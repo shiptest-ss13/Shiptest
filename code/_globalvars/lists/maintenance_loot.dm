@@ -92,7 +92,7 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		/obj/item/clothing/suit/toggle/labcoat = 1,
 		/obj/item/clothing/under/color/grey = 1,
 		/obj/item/clothing/gloves/color/fyellow = 1,
-		/obj/effect/spawner/lootdrop/gloves = 1,
+		/obj/effect/spawner/random/clothing/gloves = 1,
 		/obj/item/storage/wallet/random = 1,
 		/obj/item/clothing/glasses/science = 1,
 		/obj/item/clothing/glasses/meson = 1,
@@ -101,7 +101,7 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		) = 1,
 
 	list(//construction and crafting
-		/obj/item/stack/cable_coil/random = 1, //Random from WS Smartwire Revert
+		/obj/item/stack/cable_coil/random = 1,
 		/obj/item/stock_parts/cell = 1,
 		/obj/item/stack/rods/twentyfive = 1,
 		/obj/item/stack/sheet/metal/twenty = 1,
@@ -148,7 +148,7 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 
 		//light sources
 		/obj/item/flashlight = 1,
-		/obj/effect/spawner/lootdrop/glowstick = 1,
+		/obj/effect/spawner/random/decoration/glowstick = 1,
 		/obj/item/clothing/head/hardhat/red = 1,
 		/obj/item/flashlight/flare = 1,
 		) = 1,
@@ -164,12 +164,12 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/roller = 1,
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/restraints/handcuffs/cable = 1,
-		/obj/item/spear = 1,
+		/obj/item/melee/spear = 1,
 		/obj/item/shield/riot/buckler = 1,
 		/obj/item/grenade/iedcasing/spawned = 1,
 		/obj/item/melee/baton/cattleprod = 1,
 		/obj/item/throwing_star = 1,
-		/obj/item/gun/ballistic/derringer = 1, //WS - Derringer
+		/obj/item/gun/ballistic/derringer = 1,
 		) = 8,
 
 	list(//equipment
@@ -230,37 +230,34 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 			/obj/item/storage/box/donkpockets/donkpocketteriyaki = 1,
 			/obj/item/storage/box/donkpockets/donkpocketpizza = 1,
 			/obj/item/storage/box/donkpockets/donkpocketberry = 1,
-			/obj/item/storage/box/donkpockets/donkpockethonk = 1,
 			) = 1,
 		/obj/item/reagent_containers/food/snacks/monkeycube = 1,
-		/obj/effect/spawner/lootdrop/ration = 1,
+		/obj/effect/spawner/random/food_or_drink/ration = 1,
 		) = 8,
-
-	list(//fakeout items, keep this list at low relative weight
-		/obj/item/dice/d20 = 1,	//To balance out the stealth die of fates in oddities
-		/obj/item/clothing/shoes/jackboots = 1,
-		) = 1,
 ))
 
 GLOBAL_LIST_INIT(oddity_loot, list(//oddity: strange or crazy items
-		/obj/effect/rune/teleport = 1,
 		/obj/item/clothing/gloves/color/yellow = 1,
-		/obj/item/clothing/head/helmet/abductor = 1,
-		/obj/item/clothing/head/helmet/justice =1,
-		/obj/item/clothing/suit/space/hardsuit/carp = 1,
-		/obj/item/dice/d20/fate/stealth/one_use = 1,	//Looks like a d20, keep the d20 in the uncommon pool.
-		/obj/item/dice/d20/fate/stealth/cursed = 1, 	//Only rolls 1
-		/obj/item/clothing/shoes/jackboots/fast = 1,
-		/obj/item/clothing/suit/armor/reactive/table = 1,
-		/obj/item/storage/box/donkpockets/donkpocketgondola = 1,
-		/obj/item/melee/greykingsword = 1 //WS - Meth Sword
+		/obj/item/toy/sprayoncan = 1,
+		/obj/item/clothing/head/helmet/justice/escape = 1,
+		/obj/item/clothing/suit/space/hardsuit/carp/old = 1,
+		/obj/item/clothing/suit/armor/reactive/repulse = 1,
+		/obj/item/melee/axe/fire = 1,
+		/obj/item/gun/ballistic/rocketlauncher/oneshot = 1,
+		/mob/living/simple_animal/crab = 1,
+		/obj/item/melee/baton/boomerang = 1,
+		/obj/item/circular_saw/best = 1,
+		/obj/item/gun/ballistic/shotgun/doublebarrel/brazil = 1,
+		/obj/item/toner/extreme = 1,
+		/obj/item/twenty_pounds_of_ice = 1,
+		/obj/item/toy/plush/among = 1,
 	))
 
 //Maintenance loot spawner pools
 #define maint_trash_weight 4499
 #define maint_common_weight 4500
 #define maint_uncommon_weight 1000
-#define maint_oddity_weight 1 //1 out of 10,000 would give metastation (180 spawns) a 2 in 111 chance of spawning an oddity per round, similar to xeno egg
+#define maint_oddity_weight 1 //1 out of 10,000
 
 //Loot pool used by default maintenance loot spawners
 GLOBAL_LIST_INIT(maintenance_loot, list(
@@ -269,21 +266,3 @@ GLOBAL_LIST_INIT(maintenance_loot, list(
 	GLOB.uncommon_loot = maint_uncommon_weight,
 	GLOB.oddity_loot = maint_oddity_weight,
 	))
-
-GLOBAL_LIST_INIT(ratking_trash, list(//Garbage: used by the regal rat mob when spawning garbage.
-			/obj/item/cigbutt,
-			/obj/item/trash/cheesie,
-			/obj/item/trash/candy,
-			/obj/item/trash/chips,
-			/obj/item/trash/pistachios,
-			/obj/item/trash/plate,
-			/obj/item/trash/popcorn,
-			/obj/item/trash/raisins,
-			/obj/item/trash/sosjerky,
-			/obj/item/trash/syndi_cakes))
-
-GLOBAL_LIST_INIT(ratking_coins, list(//Coins: Used by the regal rat mob when spawning coins.
-			/obj/item/coin/iron,
-			/obj/item/coin/silver,
-			/obj/item/coin/plastic,
-			/obj/item/coin/titanium))

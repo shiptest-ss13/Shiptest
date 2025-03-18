@@ -1,9 +1,9 @@
 /obj/effect/anomaly/pulsar
 	name = "pulsar"
 	icon_state = "pulsar"
-	desc = "A mysterious anomaly, endless electromagnetic disturbances roll out from it"
+	desc = "A near transparent shell hovering, containing a near constant electromagnetic turmoil."
 	density = TRUE
-	aSignal = /obj/item/assembly/signaler/anomaly/pulsar
+	core = /obj/item/assembly/signaler/anomaly/pulsar
 	effectrange = 4
 	pulse_delay = 15 SECONDS
 

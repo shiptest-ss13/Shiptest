@@ -22,7 +22,7 @@
 	name = "Bone Axe"
 	description = "Station 12 has had their fire axes stolen by marauding clowns. Ship them a bone axe as a replacement."
 	reward = 7500
-	wanted_types = list(/obj/item/fireaxe/boneaxe)
+	wanted_types = list(/obj/item/melee/axe/bone)
 
 /datum/bounty/item/mining/bone_armor
 	name = "Bone Armor"
@@ -48,7 +48,7 @@
 	description = "Central Command's canteen is undergoing budget cuts. Ship over some bone daggers so our Chef can keep working."
 	reward = 5000
 	required_count = 3
-	wanted_types = list(/obj/item/kitchen/knife/combat/bone)
+	wanted_types = list(/obj/item/melee/knife/bone)
 
 /datum/bounty/item/mining/polypore_mushroom
 	name = "Mushroom Bowl"

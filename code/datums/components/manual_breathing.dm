@@ -22,7 +22,7 @@
 		last_breath = world.time
 		to_chat(C, "<span class='notice'>You suddenly realize you're breathing manually.</span>")
 
-/datum/component/manual_breathing/Destroy(force, silent)
+/datum/component/manual_breathing/Destroy(force)
 	L = null
 	STOP_PROCESSING(SSdcs, src)
 	to_chat(parent, "<span class='notice'>You revert back to automatic breathing.</span>")
@@ -52,7 +52,7 @@
 
 	STOP_PROCESSING(SSdcs, src)
 
-/datum/component/manual_breathing/process()
+/datum/component/manual_breathing/process(seconds_per_tick)
 	var/mob/living/carbon/C = parent
 
 	var/next_text = initial(next_breath_type.key)

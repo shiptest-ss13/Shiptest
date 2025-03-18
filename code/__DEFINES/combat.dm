@@ -2,14 +2,46 @@
 
 //Damage and status effect defines
 
-//Damage defines //TODO: merge these down to reduce on defines
+/// Physical fracturing and warping of the material.
 #define BRUTE "brute"
+/// Scorching and charring of the material.
 #define BURN "fire"
+/// Poisoning. Mostly caused by reagents.
 #define TOX "toxin"
+/// Suffocation.
 #define OXY "oxygen"
 #define CLONE "clone"
+/// Exhaustion and nonlethal damage.
 #define STAMINA "stamina"
+/// Brain damage. Should probably be decommissioned and replaced with proper organ damage.
 #define BRAIN "brain"
+
+
+//Damage flag defines //
+
+/// Involves corrosive substances.
+#define ACID "acid"
+/// Involved in checking whether a disease can infect or spread. Also involved in xeno neurotoxin.
+#define BIO "bio"
+/// Involves a shockwave, usually from an explosion.
+#define BOMB "bomb"
+/// Involves a solid projectile.
+#define BULLET "bullet"
+/// Involves being eaten
+#define CONSUME "consume"
+/// Involves an EMP or energy-based projectile.
+#define ENERGY "energy"
+/// Involves fire or temperature extremes.
+#define FIRE "fire"
+/// Involves a laser.
+#define LASER "laser"
+/// Involves a melee attack or a thrown object.
+#define MELEE "melee"
+//someone should really port wounds...
+/// Involved in checking the likelihood of applying a wound to a mob.
+//#define WOUND "wound"
+
+#define ARMOR_ALL "all_damage_types"
 
 #define EFFECT_STUN "stun"
 #define EFFECT_KNOCKDOWN "knockdown"
@@ -40,7 +72,9 @@
 //Actual combat defines
 
 //click cooldowns, in tenths of a second, used for various combat actions
+#define HEAVY_WEAPON_CD 10
 #define CLICK_CD_MELEE 8
+#define LIGHT_WEAPON_CD 6
 #define CLICK_CD_RANGE 4
 #define CLICK_CD_RAPID 2
 #define CLICK_CD_CLICK_ABILITY 6
@@ -74,6 +108,8 @@
 #define PROJECTILE_ATTACK 3
 #define THROWN_PROJECTILE_ATTACK 4
 #define LEAP_ATTACK 5
+#define ALL_ATTACK_TYPES list(MELEE_ATTACK, UNARMED_ATTACK, PROJECTILE_ATTACK, THROWN_PROJECTILE_ATTACK, LEAP_ATTACK)
+#define NON_PROJECTILE_ATTACKS list(MELEE_ATTACK, UNARMED_ATTACK, LEAP_ATTACK)
 
 //attack visual effects
 #define ATTACK_EFFECT_PUNCH "punch"
@@ -168,3 +204,14 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 
 //We will round to this value in damage calculations.
 #define DAMAGE_PRECISION 0.1
+
+/// Alternate attack defines. Return these at the end of procs like afterattack_secondary.
+/// Calls the normal attack proc. For example, if returned in afterattack_secondary, will call afterattack.
+/// Will continue the chain depending on the return value of the non-alternate proc, like with normal attacks.
+#define SECONDARY_ATTACK_CALL_NORMAL 1
+
+/// Cancels the attack chain entirely.
+#define SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN 2
+
+/// Proceed with the attack chain, but don't call the normal methods.
+#define SECONDARY_ATTACK_CONTINUE_CHAIN 3

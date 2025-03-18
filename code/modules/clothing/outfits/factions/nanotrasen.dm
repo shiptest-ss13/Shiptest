@@ -100,7 +100,7 @@
 
 	chameleon_extras = list(
 						/obj/item/gun/energy/e_gun,
-						/obj/item/stamp/head_of_personnel,
+						/obj/item/stamp/nanotrasen/officer,
 						)
 
 // Head of Security
@@ -188,7 +188,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
 
-	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
+	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/m11
 
 // Engineering //
 
@@ -316,7 +316,7 @@
 
 	backpack_contents = list(
 						/obj/item/flashlight/seclite=1,
-						/obj/item/kitchen/knife/combat/survival=1,
+						/obj/item/melee/knife/survival=1,
 						/obj/item/stack/marker_beacon/ten=1,
 						/obj/item/radio/weather_monitor=1,
 						)
@@ -327,6 +327,12 @@
 	box = /obj/item/storage/box/survival/mining
 
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
+
+/datum/outfit/job/nanotrasen/miner/no_equipment
+	name = "Nanotrasen - Miner (No Equipment)"
+
+	r_pocket = null
+	backpack_contents = null
 
 // Cargo Tech
 /datum/outfit/job/nanotrasen/cargo_tech
@@ -401,6 +407,15 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	belt = /obj/item/pda
 
+// Janitor
+/datum/outfit/job/nanotrasen/janitor
+	name = "Nanotrasen - Janitor"
+	jobtype = /datum/job/janitor
+	job_icon = "janitor"
+
+	uniform = /obj/item/clothing/under/nanotrasen/janitor
+	head = /obj/item/clothing/head/nanotrasen/cap/janitor
+
 // Lawyer
 /datum/outfit/job/nanotrasen/lawyer
 	name = "Nanotrasen - Lawyer"
@@ -415,16 +430,12 @@
 	l_pocket = /obj/item/laser_pointer
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
-	chameleon_extras = /obj/item/stamp/law
-
 // Corp. Rep
 /datum/outfit/job/nanotrasen/lawyer/corporaterepresentative
 	name = "Nanotrasen - Corporate Representative"
 	id_assignment = "Corporate Representative"
 	job_icon = "nanotrasen"
 
-	uniform = /obj/item/clothing/under/rank/command/head_of_personnel/suit
-	suit = null
 	ears = /obj/item/radio/headset/headset_cent
 	l_hand = /obj/item/clipboard
 	r_pocket = /obj/item/pen/fountain
@@ -465,6 +476,8 @@
 /datum/outfit/job/nanotrasen/pilot
 	name = "Nanotrasen - Pilot"
 	id_assignment = "Pilot"
+	jobtype = /datum/job/head_of_personnel
+
 
 	uniform = /obj/item/clothing/under/rank/security/officer/military
 	suit = /obj/item/clothing/suit/jacket/leather/duster
@@ -472,10 +485,10 @@
 	accessory = /obj/item/clothing/accessory/holster
 	head = /obj/item/clothing/head/beret/command
 
-// Mech Pilot
+// Exosuit Pilot
 /datum/outfit/job/nanotrasen/security/mech_pilot
-	name = "Nanotrasen - Mech Pilot"
-	id_assignment = "Mech Pilot"
+	name = "Nanotrasen - Exosuit Pilot"
+	id_assignment = "Exosuit Pilot"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
 	head = /obj/item/clothing/head/beret/sec/officer
@@ -495,7 +508,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/lp
 	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/skirt/lp
-	dcoat = /obj/item/clothing/suit/jacket
+	dcoat = /obj/item/clothing/suit/armor/nanotrasen/sec_director
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/command
 
@@ -569,7 +582,7 @@
 	backpack = /obj/item/storage/backpack/ert/security
 	belt = /obj/item/storage/belt/military
 	id = /obj/item/card/id/ert/security
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
 
 /datum/outfit/job/nanotrasen/security/ert/engi
@@ -580,7 +593,7 @@
 	backpack = /obj/item/storage/backpack/ert/engineer
 	belt = /obj/item/storage/belt/utility/full/ert
 	id = /obj/item/card/id/ert/security
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
 	accessory = /obj/item/clothing/accessory/armband/engine
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
@@ -593,7 +606,7 @@
 	backpack = /obj/item/storage/backpack/ert/medical
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	id = /obj/item/card/id/ert/security
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
 	accessory = /obj/item/clothing/accessory/armband/med
 	glasses = /obj/item/clothing/glasses/hud/health/night

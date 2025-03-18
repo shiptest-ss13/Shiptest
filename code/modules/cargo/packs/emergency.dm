@@ -8,37 +8,34 @@
 
 /datum/supply_pack/emergency/internals
 	name = "Internals Crate"
-	desc = "Two gas masks, two breathing masks, and four empty oxygen tanks of varying size. Oxygen canister sold separately."
-	cost = 500
-	contains = list(/obj/item/clothing/mask/gas,
-					/obj/item/clothing/mask/gas,
+	desc = "Contains four breathing masks, three advanced emergency oxygen tanks and one large oxygen tank. Oxygen canister sold separately."
+	cost = 100
+	contains = list(/obj/item/clothing/mask/breath,
 					/obj/item/clothing/mask/breath,
 					/obj/item/clothing/mask/breath,
-					/obj/item/tank/internals/emergency_oxygen/empty,
-					/obj/item/tank/internals/emergency_oxygen/empty,
-					/obj/item/tank/internals/oxygen/empty,
-					/obj/item/tank/internals/oxygen/empty)
+					/obj/item/clothing/mask/breath,
+					/obj/item/tank/internals/emergency_oxygen/engi,
+					/obj/item/tank/internals/emergency_oxygen/engi,
+					/obj/item/tank/internals/emergency_oxygen/engi,
+					/obj/item/tank/internals/oxygen)
 	crate_name = "internals crate"
 
 /datum/supply_pack/emergency/plasmaman_tank
-	name = "Plasmaman Tank Kit"
-	desc = "Contains two empty plasmaman belt tanks, for when you just can't bear to refill a normal tank with plasma. Plasma canisters sold separately. Warranty void if filled with flammable gas."
-	cost = 500
-	contains = list(/obj/item/tank/internals/plasmaman/belt/empty,
-					/obj/item/tank/internals/plasmaman/belt/empty)
-	crate_name = "plasmaman tank kit"
+	name = "Phorid Internals Crate"
+	desc = "Contains two Phorid belt tanks, for when you just can't bear to refill a normal tank with plasma. Plasma canisters sold separately."
+	cost = 100
+	contains = list(/obj/item/tank/internals/plasmaman/belt/full,
+					/obj/item/tank/internals/plasmaman/belt/full)
+	crate_name = "phorid internals crate"
 
 /datum/supply_pack/emergency/plasmaman_suit
-	name = "Plasmaman Suit Kit"
-	desc = "Keep the Plasmaman in your life comfy with two sets of Plasmaman envirosuits. Each set contains a plasmaman jumpsuit and helmet; refills sold separately."
-	cost = 1000
+	name = "Phorid Suit Kit"
+	desc = "Keep the Phorid in your life comfy with a Phorid envirosuit. Refills sold seperately."
+	cost = 500 //halves the price, halves the equipment. It's unlikely you need to equip more than 1 phorid at a time anyway
 	contains = list(/obj/item/clothing/under/plasmaman,
-					/obj/item/clothing/under/plasmaman,
 					/obj/item/clothing/head/helmet/space/plasmaman,
-					/obj/item/clothing/head/helmet/space/plasmaman,
-					/obj/item/clothing/gloves/color/plasmaman,
 					/obj/item/clothing/gloves/color/plasmaman)
-	crate_name = "plasmaman supply kit"
+	crate_name = "phorid supply kit"
 
 /*
 		Niche protection
@@ -54,15 +51,11 @@
 
 /datum/supply_pack/emergency/firefighting
 	name = "Firefighting Crate"
-	desc = "Only you can prevent plasma fires. Partner up with two firefighter suits, gas masks, extinguishers, and hardhats!"
-	cost = 2000
+	desc = "Only you can prevent plasma fires. Contains a single set of firefighter's equipment."
+	cost = 500
 	contains = list(/obj/item/clothing/suit/fire/firefighter,
-					/obj/item/clothing/suit/fire/firefighter,
-					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas,
 					/obj/item/extinguisher,
-					/obj/item/extinguisher,
-					/obj/item/clothing/head/hardhat/red,
 					/obj/item/clothing/head/hardhat/red)
 	crate_name = "firefighting crate"
 	crate_type = /obj/structure/closet/crate/secure

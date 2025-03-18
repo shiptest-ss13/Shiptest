@@ -29,7 +29,7 @@
 		START_PROCESSING(SSobj, reactivate_turfs)
 	. = ..()
 
-/turf/open/indestructible/supermatter_cascade/process(delta_time)
+/turf/open/indestructible/supermatter_cascade/process(seconds_per_tick)
 	if(!COOLDOWN_FINISHED(src, spreading_cooldown))
 		return
 	COOLDOWN_START(src, spreading_cooldown, 3 SECONDS)
@@ -68,14 +68,6 @@
 		rip_u.Remove(jedi)
 		qdel(rip_u)
 	return
-
-/turf/open/indestructible/supermatter_cascade/blob_act(obj/structure/blob/blob)
-	if(!blob || isspaceturf(loc)) //does nothing in space
-		return
-	playsound(src, 'sound/effects/supermatter.ogg', 50, TRUE)
-	blob.visible_message("<span class='danger'>\The [blob] strikes at \the [src] and rapidly flashes to ash.</span>",
-		"<span class='danger'>You hear a loud crack as you are washed with a wave of heat.</span>")
-	Consume(blob)
 
 /turf/open/indestructible/supermatter_cascade/attack_paw(mob/user, list/modifiers)
 	dust_mob(user, cause = "monkey attack")

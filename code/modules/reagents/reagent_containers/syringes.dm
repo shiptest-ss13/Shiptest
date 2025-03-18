@@ -67,11 +67,7 @@
 		if(!L.can_inject(user, 1))
 			return
 
-	// chance of monkey retaliation
-	if(ismonkey(target) && prob(MONKEY_SYRINGE_RETALIATION_PROB))
-		var/mob/living/carbon/monkey/M
-		M = target
-		M.retaliate(user)
+	SEND_SIGNAL(target, COMSIG_LIVING_TRY_SYRINGE, user)
 
 	switch(mode)
 		if(SYRINGE_DRAW)
@@ -286,17 +282,14 @@
 /obj/item/reagent_containers/syringe/contraband/space_drugs
 	list_reagents = list(/datum/reagent/drug/space_drugs = 15)
 
-/obj/item/reagent_containers/syringe/contraband/krokodil
-	list_reagents = list(/datum/reagent/drug/krokodil = 15)
-
 /obj/item/reagent_containers/syringe/contraband/crank
 	list_reagents = list(/datum/reagent/drug/crank = 15)
 
 /obj/item/reagent_containers/syringe/contraband/methamphetamine
 	list_reagents = list(/datum/reagent/drug/methamphetamine = 15)
 
-/obj/item/reagent_containers/syringe/contraband/bath_salts
-	list_reagents = list(/datum/reagent/drug/bath_salts = 15)
+/obj/item/reagent_containers/syringe/contraband/mammoth
+	list_reagents = list(/datum/reagent/drug/mammoth = 15)
 
 /obj/item/reagent_containers/syringe/contraband/fentanyl
 	list_reagents = list(/datum/reagent/toxin/fentanyl = 15)
@@ -313,3 +306,9 @@
 	name = "syringe (charcoal)"
 	desc = "Contains charcoal."
 	list_reagents = list(/datum/reagent/medicine/charcoal = 15)
+
+/obj/item/reagent_containers/syringe/stasis
+	name = "syringe (stasis)"
+	desc = "Contains 3 shots of Stasis, for usage in medical emergencies."
+	list_reagents = list(/datum/reagent/medicine/stasis = 15)
+	custom_price = 100

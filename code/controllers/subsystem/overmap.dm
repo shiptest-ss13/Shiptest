@@ -2,7 +2,7 @@ SUBSYSTEM_DEF(overmap)
 	name = "Overmap"
 	wait = 10
 	init_order = INIT_ORDER_OVERMAP
-	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
+	flags = SS_KEEP_TIMING
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
 
 	///Defines which generator to use for the overmap
@@ -15,6 +15,8 @@ SUBSYSTEM_DEF(overmap)
 	///List of spawned outposts. The default spawn location is the first index.
 	var/list/outposts
 
+	///List of all dynamic overmap datums
+	var/list/dynamic_datums
 	///List of all events
 	var/list/events
 
@@ -48,6 +50,7 @@ SUBSYSTEM_DEF(overmap)
 	overmap_objects = list()
 	controlled_ships = list()
 	outposts = list()
+	dynamic_datums = list()
 	events = list()
 
 	generator_type = CONFIG_GET(string/overmap_generator_type)
@@ -79,6 +82,8 @@ SUBSYSTEM_DEF(overmap)
 	return ..()
 
 /datum/controller/subsystem/overmap/fire()
+	if(length(dynamic_datums) < CONFIG_GET(number/max_overmap_dynamic_events))
+		new /datum/overmap/dynamic()
 	if(events_enabled)
 		for(var/datum/overmap/event/E as anything in events)
 			if(E.get_nearby_overmap_objects())
@@ -127,10 +132,8 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/create_map()
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		spawn_events_in_orbits()
-		spawn_ruin_levels_in_orbits()
 	else
 		spawn_events()
-		spawn_ruin_levels()
 
 	spawn_outpost()
 	//spawn_initial_ships()
@@ -154,7 +157,7 @@ SUBSYSTEM_DEF(overmap)
 			return
 		if(!length(orbits))
 			break // Can't fit any more in
-		var/event_type = pickweight(GLOB.overmap_event_pick_list)
+		var/event_type = pick_weight(GLOB.overmap_event_pick_list)
 		var/selected_orbit = pick(orbits)
 
 		var/list/T = get_unused_overmap_square_in_radius(selected_orbit)
@@ -246,17 +249,6 @@ SUBSYSTEM_DEF(overmap)
 	ship_spawning = FALSE
 
 /**
- * Creates an overmap object for each ruin level, making them accessible.
- */
-/datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		new /datum/overmap/dynamic()
-
-/datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		new /datum/overmap/dynamic()
-
-/**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
  * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
  * * ruin_type - The type of ruin to spawn, or null if none should be placed.
@@ -270,6 +262,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/datum/map_generator/mapgen = new dynamic_datum.mapgen
 	var/datum/map_template/ruin/used_ruin = ispath(ruin_type) ? (new ruin_type) : ruin_type
+	SSblackbox.record_feedback("tally", "encounter_spawned", 1, "[dynamic_datum.mapgen]")
 
 	// name is random but PROBABLY unique
 	var/encounter_name = dynamic_datum.planet_name || "\improper Uncharted Space [dynamic_datum.x]/[dynamic_datum.y]-[rand(1111, 9999)]"
@@ -291,6 +284,7 @@ SUBSYSTEM_DEF(overmap)
 	mapgen.generate_turfs(vlevel.get_unreserved_block())
 
 	var/list/ruin_turfs = list()
+	var/list/ruin_templates = list()
 	if(used_ruin)
 		var/turf/ruin_turf = locate(
 			rand(
@@ -302,6 +296,7 @@ SUBSYSTEM_DEF(overmap)
 		)
 		used_ruin.load(ruin_turf)
 		ruin_turfs[used_ruin.name] = ruin_turf
+		ruin_templates[used_ruin.name] = used_ruin
 
 	// fill in the turfs, AFTER generating the ruin. this prevents them from generating within the ruin
 	// and ALSO prevents the ruin from being spaced when it spawns in
@@ -376,7 +371,7 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.dwidth = 0
 		docking_ports += quaternary_dock
 
-	return list(mapzone, docking_ports, ruin_turfs)
+	return list(mapzone, docking_ports, ruin_turfs, ruin_templates)
 
 /**
  * Returns a random, usually empty turf in the overmap
@@ -418,10 +413,10 @@ SUBSYSTEM_DEF(overmap)
  * Gets the parent overmap object (e.g. the planet the atom is on) for a given atom.
  * * source - The object you want to get the corresponding parent overmap object for.
  */
-/datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source)
+/datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source, exclude_ship = FALSE)
 	var/turf/T = get_turf(source)
 	var/area/ship/A = get_area(source)
-	while(istype(A) && A.mobile_port)
+	while(istype(A) && A.mobile_port && !exclude_ship)
 		if(A.mobile_port.current_ship)
 			return A.mobile_port.current_ship
 		A = A.mobile_port.underlying_turf_area[T]

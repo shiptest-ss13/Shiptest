@@ -1,9 +1,11 @@
 /// This divisor controls how fast body temperature changes to match the environment
 #define BODYTEMP_DIVISOR 8
 
-/mob/living/proc/Life(seconds, times_fired)
+/mob/living/proc/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	set waitfor = FALSE
 	set invisibility = 0
+
+	SEND_SIGNAL(src, COMSIG_LIVING_LIFE, seconds_per_tick, times_fired)
 
 	if((movement_type & FLYING) && !(movement_type & FLOATING))	//TODO: Better floating
 		float(on = TRUE)
@@ -31,7 +33,7 @@
 
 		if(stat != DEAD)
 			//Breathing, if applicable
-			handle_breathing(times_fired)
+			handle_breathing(seconds_per_tick, times_fired)
 
 		handle_diseases()// DEAD check is in the proc itself; we want it to spread even if the mob is dead, but to handle its disease-y properties only if you're not.
 
@@ -63,7 +65,8 @@
 	if(stat != DEAD)
 		return 1
 
-/mob/living/proc/handle_breathing(times_fired)
+/mob/living/proc/handle_breathing(seconds_per_tick, times_fired)
+	SEND_SIGNAL(src, COMSIG_LIVING_HANDLE_BREATHING, seconds_per_tick, times_fired)
 	return
 
 /mob/living/proc/handle_mutations_and_radiation()
@@ -122,7 +125,7 @@
 	return
 
 /mob/living/proc/handle_gravity()
-	var/gravity = mob_has_gravity()
+	var/gravity = has_gravity()
 	update_gravity(gravity)
 
 	if(gravity > STANDARD_GRAVITY)

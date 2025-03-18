@@ -32,10 +32,6 @@
 	if(severity == 1) // Very sturdy.
 		set_broken()
 
-/obj/machinery/gravity_generator/blob_act(obj/structure/blob/B)
-	if(prob(20))
-		set_broken()
-
 /obj/machinery/gravity_generator/zap_act(power, zap_flags)
 	..()
 	if(zap_flags & ZAP_MACHINE_EXPLOSIVE)
@@ -312,7 +308,7 @@
 
 // Charge/Discharge and turn on/off gravity when you reach 0/100 percent.
 // Also emit radiation and handle the overlays.
-/obj/machinery/gravity_generator/main/process()
+/obj/machinery/gravity_generator/main/process(seconds_per_tick)
 	if(machine_stat & BROKEN)
 		return
 	if(charging_state != POWER_IDLE)

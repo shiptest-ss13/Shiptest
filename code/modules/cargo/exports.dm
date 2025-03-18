@@ -59,7 +59,8 @@ then the player gets the profit from selling his own wasted time.
 		if(!dry_run && (sold || delete_unsold))
 			if(ismob(thing))
 				thing.investigate_log("deleted through cargo export",INVESTIGATE_CARGO)
-			qdel(thing)
+	if(!dry_run)
+		qdel(AM)
 
 	return report
 
@@ -89,7 +90,7 @@ then the player gets the profit from selling his own wasted time.
 	STOP_PROCESSING(SSprocessing, src)
 	return ..()
 
-/datum/export/process()
+/datum/export/process(seconds_per_tick)
 	. = ..()
 	if(!k_elasticity)
 		return PROCESS_KILL

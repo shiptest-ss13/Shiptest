@@ -58,7 +58,7 @@
 /obj/machinery/atmospherics/components/binary/volume_pump/update_icon_nopipes()
 	icon_state = on && is_operational ? "volpump_on-[set_overlay_offset(piping_layer)]" : "volpump_off-[set_overlay_offset(piping_layer)]"
 
-/obj/machinery/atmospherics/components/binary/volume_pump/process_atmos()
+/obj/machinery/atmospherics/components/binary/volume_pump/process_atmos(seconds_per_tick)
 //	..()
 	if(!on || !is_operational)
 		return

@@ -2,22 +2,25 @@
 /obj/effect/anomaly/hallucination
 	name = "hallucination anomaly"
 	icon_state = "hallucination"
-	aSignal = /obj/item/assembly/signaler/anomaly/hallucination
-	/// Time passed since the last effect, increased by delta_time of the SSobj
+	desc = "A shimmering mirage suspended above the ground, never in the same place as it was a second ago."
+	core = /obj/item/assembly/signaler/anomaly/hallucination
+	/// Time passed since the last effect, increased by seconds_per_tick of the SSobj
 	var/ticks = 0
 	/// How many seconds between each small hallucination pulses
 	pulse_delay = 5 SECONDS
 	effectrange = 5
 
-/obj/effect/anomaly/hallucination/anomalyEffect(delta_time)
+/obj/effect/anomaly/hallucination/anomalyEffect(seconds_per_tick)
 	. = ..()
-	ticks += delta_time
+	ticks += seconds_per_tick
 	if(ticks < pulse_delay)
 		return
 	ticks -= pulse_delay
 	var/turf/open/our_turf = get_turf(src)
 	if(istype(our_turf))
 		hallucination_pulse(our_turf, 5)
+	pixel_x = clamp(pixel_x + rand(-5, 5), -16, 16)
+	pixel_y = clamp(pixel_y + rand(-5, 5), -16, 16)
 
 /obj/effect/anomaly/hallucination/detonate()
 	var/turf/open/our_turf = get_turf(src)
@@ -42,7 +45,7 @@
 		var/list/messages = list(
 			"You feel your conscious mind fall apart!",
 			"Reality warps around you!",
-			"Something's wispering around you!",
+			"Something whispers around you!",
 			"You are going insane!",
 		)
 		to_chat(user, span_warning(pick(messages)))

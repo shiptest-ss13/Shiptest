@@ -5,8 +5,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	name = "Quirks"
 	init_order = INIT_ORDER_QUIRKS
 	flags = SS_BACKGROUND
-	wait = 10
 	runlevels = RUNLEVEL_GAME
+	wait = 1 SECONDS
 
 	var/list/quirks = list()			//Assoc. list of all roundstart quirk datum types; "name" = /path/
 	var/list/quirk_points = list()		//Assoc. list of quirk names and their "point cost"; positive numbers are good traits, and negative ones are bad
@@ -23,7 +23,9 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 							list("Ageusia","Vegetarian","Deviant Tastes"), \
 							list("Ananas Affinity","Ananas Aversion"), \
 							list("Alcohol Tolerance","Light Drinker"), \
-							list("Bad Touch", "Friendly"))
+							list("Bad Touch", "Friendly"), \
+							list("Self-Aware", "Congenital Analgesia")
+							)
 
 	species_blacklist = list("Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE))
 

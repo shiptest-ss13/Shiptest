@@ -85,35 +85,6 @@
 	desc = "You are being resurrected!"
 	icon_state = "wish_granter"
 
-/datum/status_effect/cult_master
-	id = "The Cult Master"
-	duration = -1
-	alert_type = null
-	on_remove_on_mob_delete = TRUE
-	var/alive = TRUE
-
-/datum/status_effect/cult_master/proc/deathrattle()
-	if(!QDELETED(GLOB.cult_narsie))
-		return //if Nar'Sie is alive, don't even worry about it
-	var/area/A = get_area(owner)
-	for(var/datum/mind/B in SSticker.mode.cult)
-		if(isliving(B.current))
-			var/mob/living/M = B.current
-			SEND_SOUND(M, sound('sound/hallucinations/veryfar_noise.ogg'))
-			to_chat(M, "<span class='cultlarge'>The Cult's Master, [owner], has fallen in \the [A]!</span>")
-
-/datum/status_effect/cult_master/tick()
-	if(owner.stat != DEAD && !alive)
-		alive = TRUE
-		return
-	if(owner.stat == DEAD && alive)
-		alive = FALSE
-		deathrattle()
-
-/datum/status_effect/cult_master/on_remove()
-	deathrattle()
-	. = ..()
-
 /datum/status_effect/blooddrunk
 	id = "blooddrunk"
 	duration = 10
@@ -418,7 +389,7 @@
 /datum/status_effect/good_music/tick()
 	if(owner.can_hear())
 		owner.dizziness = max(0, owner.dizziness - 2)
-		owner.jitteriness = max(0, owner.jitteriness - 2)
+		owner.adjust_jitter(owner.jitteriness - 2, max = 0)
 		owner.confused = max(0, owner.confused - 1)
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "goodmusic", /datum/mood_event/goodmusic)
 
@@ -435,14 +406,15 @@
 
 /datum/status_effect/regenerative_core/on_apply()
 	ADD_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, id)
-	owner.adjustBruteLoss(-25)
-	owner.adjustFireLoss(-25)
+	owner.adjustBruteLoss(-20)
+	owner.adjustFireLoss(-20)
 	owner.remove_CC()
 	owner.bodytemperature = owner.get_body_temp_normal()
 	return TRUE
 
 /datum/status_effect/regenerative_core/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, id)
+	to_chat(owner, span_warning("The tendrils of the regenerative core sink into your flesh, leaving dark markings where they dive."))
 
 /datum/status_effect/antimagic
 	id = "antimagic"

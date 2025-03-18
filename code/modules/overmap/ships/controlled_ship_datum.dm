@@ -31,6 +31,10 @@
 	var/helm_locked = FALSE
 	///Shipwide bank account used for cargo consoles and bounty payouts.
 	var/datum/bank_account/ship/ship_account
+	///Crew Owned Bank Accounts.
+	var/list/crew_bank_accounts = list()
+	///magic number for telling us how much of a mission goes into each crew member's bank account
+	var/crew_share = 0.02
 
 	/// List of currently-accepted missions.
 	var/list/datum/mission/missions
@@ -56,7 +60,7 @@
 	var/owner_check_timer_id
 
 	/// The ship's join mode. Controls whether players can join freely, have to apply, or can't join at all.
-	var/join_mode = SHIP_JOIN_MODE_OPEN
+	var/join_mode = SHIP_JOIN_MODE_CLOSED
 	/// Lazylist of /datum/ship_applications for this ship. Only used if join_mode == SHIP_JOIN_MODE_APPLY
 	var/list/datum/ship_application/applications
 
@@ -70,18 +74,24 @@
 	///Stations the ship has been blacklisted from landing at, associative station = reason
 	var/list/blacklisted = list()
 
+	var/datum/faction/faction_datum
+
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
 		return FALSE
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
 	log_admin("[key_name(src)] has renamed vessel '[oldname]' to '[new_name]'")
+	SSblackbox.record_feedback("text", "ship_renames", 1, new_name)
 	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
 	if(shipkey)
 		shipkey.name = "ship key ([new_name])"
 	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
+	for(var/datum/weakref/stupid_fax in shuttle_port?.fax_list)
+		var/obj/machinery/fax/our_fax = stupid_fax.resolve()
+		our_fax.fax_name = "[get_area_name(our_fax)] Fax Machine"
 	if(!force)
 		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
 		if(shuttle_port?.virtual_z() == null)
@@ -110,6 +120,7 @@
 
 			refresh_engines()
 		ship_account = new(name, source_template.starting_funds)
+		faction_datum = source_template.faction_datum
 
 #ifdef UNIT_TESTS
 	Rename("[source_template]", TRUE)
@@ -134,6 +145,7 @@
 	if(!QDELETED(shipkey))
 		QDEL_NULL(shipkey)
 	manifest.Cut()
+	crew_bank_accounts.Cut()
 	job_holder_refs.Cut()
 	job_slots.Cut()
 	blacklisted.Cut()
@@ -209,14 +221,14 @@
 	if(E) //Don't make this an else
 		Dock(E)
 
-/datum/overmap/ship/controlled/burn_engines(percentage = 100, deltatime)
+/datum/overmap/ship/controlled/burn_engines(percentage = 100, seconds_per_tick)
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
 	calculate_avg_fuel()
 	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
 		if(!real_engine.enabled)
 			continue
-		thrust_used += real_engine.burn_engine(percentage, deltatime)
+		thrust_used += real_engine.burn_engine(percentage, seconds_per_tick)
 
 	thrust_used = thrust_used / (shuttle_port.turf_count * 100)
 	est_thrust = thrust_used / percentage * 100 //cheeky way of rechecking the thrust, check it every time it's used
@@ -306,6 +318,8 @@
 	if(!(human_job in job_holder_refs))
 		job_holder_refs[human_job] = list()
 	job_holder_refs[human_job] += WEAKREF(H)
+	if(H.account_id)
+		crew_bank_accounts += WEAKREF(H.get_bank_account())
 
 /**
  * adds a mob's real name to a crew's guestbooks

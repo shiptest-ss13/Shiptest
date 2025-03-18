@@ -38,16 +38,21 @@
 
 	/// The maximum number of missions that may be offered by the outpost at one time.
 	/// Missions which have been accepted do not count against this limit.
-	var/max_missions = 15
+	var/max_missions = 10
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
+
 	var/datum/cargo_market/market
+
+	/// Our faction of the outpost
+	var/datum/faction/faction
 
 /datum/overmap/outpost/Initialize(position, ...)
 	. = ..()
 	// init our template vars with the correct singletons
 	main_template = SSmapping.outpost_templates[main_template]
 	elevator_template = SSmapping.outpost_templates[elevator_template]
+	SSpoints_of_interest.make_point_of_interest(token)
 
 	for(var/i in 1 to hangar_templates.len)
 		hangar_templates[i] = SSmapping.outpost_templates[hangar_templates[i]]
@@ -67,9 +72,11 @@
 	if(!market)
 		market = new()
 	fill_missions()
+	populate_cargo()
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
+	SSpoints_of_interest.make_point_of_interest(token)
 	// cleanup our data structures. behavior here is currently relatively restrained; may be made more expansive in the future
 	for(var/list/datum/hangar_shaft/h_shaft as anything in shaft_datums)
 		qdel(h_shaft)
@@ -137,10 +144,22 @@
 	return "[person_name] [pick(GLOB.station_suffixes)]"
 
 /datum/overmap/outpost/proc/fill_missions()
+	max_missions = 10 + (SSovermap.controlled_ships.len * 5)
 	while(LAZYLEN(missions) < max_missions)
 		var/mission_type = get_weighted_mission_type()
 		var/datum/mission/M = new mission_type(src)
 		LAZYADD(missions, M)
+
+/datum/overmap/outpost/proc/populate_cargo()
+	ordernum = rand(1, 99000)
+
+	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
+		current_pack = new current_pack()
+		if(current_pack.faction)
+			current_pack.faction = SSfactions.faction_path_to_datum(current_pack.faction)
+		if(!current_pack.contains)
+			continue
+		supply_packs += current_pack
 
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)
@@ -206,7 +225,6 @@
 		return FALSE
 
 	h_dock = ensure_hangar(h_template)
-
 	if(!h_dock)
 		stack_trace(
 			"Outpost [src] ([src.type]) [REF(src)] unable to create hangar [h_template] " +\
@@ -235,7 +253,7 @@
 		dock_requester.shuttle_port.docked, // source: controls the physical space the message originates from. the docking port is in the mapzone so we use it
 		FREQ_COMMON, // frequency: Common
 		v_speaker, // speaker: a weird dummy atom not used for much of import but which will cause runtimes if omitted or improperly initialized.
-		/datum/language/common, // language: Common
+		/datum/language/galactic_common, // language: Common
 		"[dock_requester.name] confirmed touchdown at [dock_requester.shuttle_port.docked].", // the message itself
 		list(SPAN_ROBOT), // message font
 		list(MODE_CUSTOM_SAY_EMOTE = "coldly states") // custom say verb, consistent with robots
@@ -261,7 +279,7 @@
 		message_src,
 		FREQ_COMMON,
 		v_speaker,
-		/datum/language/common,
+		/datum/language/galactic_common,
 		"[dock_requester.name] has departed from [src].",
 		list(SPAN_ROBOT),
 		list(MODE_CUSTOM_SAY_EMOTE = "coldly states")
@@ -347,7 +365,10 @@
 		if(!vlevel.is_in_bounds(num_mark))
 			continue
 		num_mark.write_number(hangar_num) // deletes the mark
-
+	for(var/obj/effect/landmark/outpost/hangar_crate_spawner/crate_spawner_mark in GLOB.outpost_landmarks)
+		if(!vlevel.is_in_bounds(crate_spawner_mark))
+			continue
+		h_dock.crate_spawner = crate_spawner_mark.create_spawner()
 	if(!shaft.shaft_elevator)
 		// if there's no elevator in this shaft, then delete the landmarks
 		for(var/obj/effect/landmark/outpost/mark as anything in GLOB.outpost_landmarks)

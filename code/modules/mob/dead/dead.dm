@@ -96,18 +96,17 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	return
 
 /mob/dead/Destroy()
-	for(var/level in SSmobs.dead_players_by_virtual_z)
-		LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, level, src)
-	// Forgive me for this one. This loop can be replaced by the line below by the one brave enough to fix
-	// observers not cleanly removing themselves from the dead_players_by_virtual_z /list when they should
-	//LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
+	//Observers should no longer be duplicating themselves across virtual z so it SHOULD be fine to only check its virtual z.
+	LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
 	return ..()
 
 /mob/dead/Login()
 	. = ..()
 	if(!client)
 		return
-	LAZYADDASSOCLIST(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
+	var/virt_z = virtual_z()
+	if(virt_z)
+		LAZYADDASSOCLIST(SSmobs.dead_players_by_virtual_z, "[virt_z]", src)
 
 /mob/dead/Logout()
 	. = ..()

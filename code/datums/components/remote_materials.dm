@@ -23,6 +23,7 @@ handles linking back and forth.
 	src.category = category
 	src.allow_standalone = allow_standalone
 
+	RegisterSignal(parent, COMSIG_OBJ_DECONSTRUCT, PROC_REF(OnDeconstruct))
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(OnAttackBy))
 	RegisterSignal(parent, COMSIG_ATOM_MULTITOOL_ACT, PROC_REF(OnMultitool))
 
@@ -35,11 +36,15 @@ handles linking back and forth.
 		silo.updateUsrDialog()
 		silo = null
 		mat_container = null
-	else if (mat_container)
+	mat_container = null
+	return ..()
+
+/datum/component/remote_materials/proc/OnDeconstruct(disassembled)
+	SIGNAL_HANDLER
+	if(!silo && mat_container)
 		// specify explicitly in case the other component is deleted first
 		var/atom/P = parent
 		mat_container.retrieve_all(P.drop_location())
-	return ..()
 
 /datum/component/remote_materials/proc/_MakeLocal()
 	silo = null
@@ -77,9 +82,11 @@ handles linking back and forth.
 /datum/component/remote_materials/proc/OnAttackBy(datum/source, obj/item/I, mob/user)
 	SIGNAL_HANDLER
 
-	if (silo && istype(I, /obj/item/stack))
-		if (silo.remote_attackby(parent, user, I))
-			return COMPONENT_NO_AFTERATTACK
+	if (!silo || !istype(I, /obj/item/stack))
+		return
+
+	if (silo.remote_attackby(parent, user, I))
+		return COMPONENT_NO_AFTERATTACK
 
 /datum/component/remote_materials/proc/OnMultitool(datum/source, mob/user, obj/item/I)
 	SIGNAL_HANDLER

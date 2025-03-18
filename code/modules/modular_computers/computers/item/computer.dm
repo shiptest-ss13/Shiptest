@@ -6,10 +6,15 @@
 	desc = "A small portable microcomputer."
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "laptop"
-	light_on = FALSE
 	integrity_failure = 0.5
 	max_integrity = 100
 	armor = list("melee" = 0, "bullet" = 20, "laser" = 20, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
+	light_range = 2.3
+	light_power = 0.6
+	light_color = "#FFFFFF"
+	light_on = FALSE
 
 	var/enabled = 0											// Whether the computer is turned on.
 	var/screen_on = 1										// Whether the computer is active/opened/it's screen is on.
@@ -43,9 +48,9 @@
 
 	var/list/idle_threads							// Idle programs on background. They still receive process calls but can't be interacted with.
 	var/obj/physical = null									// Object that represents our computer. It's used for Adjacent() and UI visibility checks.
-	var/has_light = FALSE						//If the computer has a flashlight/LED light/what-have-you installed
-	var/comp_light_luminosity = 3				//The brightness of that light
-	var/comp_light_color			//The color of that light
+
+	/// If the computer has a flashlight/LED light/what-have-you installed
+	var/has_light = FALSE
 
 
 /obj/item/modular_computer/Initialize()
@@ -53,7 +58,6 @@
 	START_PROCESSING(SSobj, src)
 	if(!physical)
 		physical = src
-	comp_light_color = "#FFFFFF"
 	idle_threads = list()
 	update_appearance()
 
@@ -208,7 +212,7 @@
 			to_chat(user, "<span class='warning'>You press the power button but \the [src] does not respond.</span>")
 
 // Process currently calls handle_power(), may be expanded in future if more things are added.
-/obj/item/modular_computer/process()
+/obj/item/modular_computer/process(seconds_per_tick)
 	if(!enabled) // The computer is turned off
 		last_power_usage = 0
 		return 0
@@ -227,7 +231,7 @@
 
 	if(active_program)
 		if(active_program.program_state != PROGRAM_STATE_KILLED)
-			active_program.process_tick()
+			active_program.process_tick(seconds_per_tick)
 			active_program.ntnet_status = get_ntnet_status()
 		else
 			active_program = null
@@ -235,12 +239,12 @@
 	for(var/I in idle_threads)
 		var/datum/computer_file/program/P = I
 		if(P.program_state != PROGRAM_STATE_KILLED)
-			P.process_tick()
+			P.process_tick(seconds_per_tick)
 			P.ntnet_status = get_ntnet_status()
 		else
 			idle_threads.Remove(P)
 
-	handle_power() // Handles all computer power interaction
+	handle_power(seconds_per_tick) // Handles all computer power interaction
 	//check_update_ui_need()
 
 /**

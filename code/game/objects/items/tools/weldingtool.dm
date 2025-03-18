@@ -1,4 +1,5 @@
-#define WELDER_FUEL_BURN_INTERVAL 13
+/// How many seconds between each fuel depletion tick ("use" proc)
+#define WELDER_FUEL_BURN_INTERVAL 26
 /obj/item/weldingtool
 	name = "welding tool"
 	desc = "A standard welder, used for cutting through metal."
@@ -39,6 +40,7 @@
 	var/acti_sound = 'sound/items/welderactivate.ogg'
 	var/deac_sound = 'sound/items/welderdeactivate.ogg'
 	var/start_full = TRUE
+	wall_decon_damage = 50
 
 /obj/item/weldingtool/empty
 	start_full = FALSE
@@ -72,9 +74,9 @@
 		. += "[initial(icon_state)]-on"
 
 
-/obj/item/weldingtool/process()
+/obj/item/weldingtool/process(seconds_per_tick)
 	switch(welding)
-		if(0)
+		if(FALSE)
 			force = 3
 			damtype = "brute"
 			update_appearance()
@@ -82,10 +84,10 @@
 				STOP_PROCESSING(SSobj, src)
 			return
 	//Welders left on now use up fuel, but lets not have them run out quite that fast
-		if(1)
+		if(TRUE)
 			force = 15
 			damtype = "fire"
-			++burned_fuel_for
+			burned_fuel_for += seconds_per_tick
 			if(burned_fuel_for >= WELDER_FUEL_BURN_INTERVAL)
 				use(1)
 			update_appearance()
@@ -96,8 +98,6 @@
 /obj/item/weldingtool/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		flamethrower_screwdriver(I, user)
-	else if(istype(I, /obj/item/stack/rods))
-		flamethrower_rods(I, user)
 	else
 		. = ..()
 	update_appearance()
@@ -125,7 +125,7 @@
 			"<span class='notice'>You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)].</span>")
 	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
 		return TRUE
-	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0)
+	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0, integrity_loss = 5)
 	return TRUE
 
 /obj/item/weldingtool/afterattack(atom/O, mob/user, proximity)
@@ -187,8 +187,9 @@
 	if(!isOn() || !check_fuel())
 		return FALSE
 
-	if(used)
+	if(used > 0)
 		burned_fuel_for = 0
+
 	if(get_fuel() >= used)
 		reagents.remove_reagent(/datum/reagent/fuel, used)
 		check_fuel()
@@ -281,23 +282,9 @@
 		to_chat(user, "<span class='notice'>You resecure [src] and close the fuel tank.</span>")
 		reagents.flags &= ~(OPENCONTAINER)
 	else
-		to_chat(user, "<span class='notice'>[src] can now be attached, modified, and refuelled.</span>")
+		to_chat(user, "<span class='notice'>[src] can now be refuelled.</span>")
 		reagents.flags |= OPENCONTAINER
 	add_fingerprint(user)
-
-/obj/item/weldingtool/proc/flamethrower_rods(obj/item/I, mob/user)
-	if(!status)
-		var/obj/item/stack/rods/R = I
-		if (R.use(1))
-			var/obj/item/flamethrower/F = new /obj/item/flamethrower(user.loc)
-			if(!remove_item_from_storage(F))
-				user.transferItemToLoc(src, F, TRUE)
-			F.weldtool = src
-			add_fingerprint(user)
-			to_chat(user, "<span class='notice'>You add a rod to a welder, starting to build a flamethrower.</span>")
-			user.put_in_hands(F)
-		else
-			to_chat(user, "<span class='warning'>You need one rod to start building a flamethrower!</span>")
 
 /obj/item/weldingtool/ignition_effect(atom/A, mob/user)
 	if(use_tool(A, user, 0, amount=1))
@@ -348,8 +335,9 @@
 	light_system = NO_LIGHT_SUPPORT
 	light_range = 0
 	change_icons = 0
+	wall_decon_damage = 500
 
-/obj/item/weldingtool/abductor/process()
+/obj/item/weldingtool/abductor/process(seconds_per_tick)
 	if(get_fuel() <= max_fuel)
 		reagents.add_reagent(/datum/reagent/fuel, 1)
 	..()
@@ -364,28 +352,6 @@
 
 /obj/item/weldingtool/hugetank/empty
 	start_full = FALSE
-
-/obj/item/weldingtool/experimental
-	name = "experimental welding tool"
-	desc = "An experimental welder capable of self-fuel generation and less harmful to the eyes."
-	icon_state = "exwelder"
-	item_state = "exwelder"
-	max_fuel = 40
-	custom_materials = list(/datum/material/iron=70, /datum/material/glass=120)
-	/*WS Begin - Better Tool sprites
-	change_icons = 0
-	WS End */
-	can_off_process = 1
-	light_range = 1
-	toolspeed = 0.5
-	var/last_gen = 0
-	var/nextrefueltick = 0
-
-/obj/item/weldingtool/experimental/process()
-	..()
-	if(get_fuel() < max_fuel && nextrefueltick < world.time)
-		nextrefueltick = world.time + 10
-		reagents.add_reagent(/datum/reagent/fuel, 1)
 
 /obj/item/weldingtool/old
 	desc = "A standard edition welder provided by Nanotrasen. This one seems to leak a little bit."

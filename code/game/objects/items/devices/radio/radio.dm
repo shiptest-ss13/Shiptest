@@ -16,34 +16,53 @@
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
-	custom_materials = list(/datum/material/iron=75, /datum/material/glass=25)
+	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
+	slot_flags = ITEM_SLOT_NECK //Allows to be worn on neck so it's not eating pocket slots.
 	obj_flags = USES_TGUI
 
 	var/on = TRUE
 	var/frequency = FREQ_COMMON
-	var/canhear_range = 3  // The range around the radio in which mobs can hear what it receives.
-	var/emped = 0  // Tracks the number of EMPs currently stacked.
-	var/headset = FALSE // It can be used for hotkeys
-	var/last_chatter_time // The time since we last played a radio chatter sound. (WS edit - Radio Chatter #434)
+	///The range around the radio in which mobs can hear what it receives.
+	var/canhear_range = 3
+	///Tracks the number of EMPs currently stacked.
+	var/emped = 0
+	///It can be used for hotkeys
+	var/headset = FALSE
+	///Whether the radio will transmit dialogue it hears nearby.
+	var/broadcasting = FALSE
+	///Whether the radio is currently receiving.
+	var/listening = FALSE
+	///If true, the transmit wire starts cut.
+	var/prison_radio = FALSE
+	///Whether wires are accessible. Toggleable by screwdrivering.
+	var/unscrewed = FALSE
+	///If true, the radio has access to the full spectrum.
+	var/freerange = FALSE
+	///If true, the radio transmits and receives on subspace exclusively.
+	var/subspace_transmission = FALSE
+	///If true, subspace_transmission can be toggled at will.
+	var/subspace_switchable = FALSE
+	///Frequency lock to stop the user from untuning specialist radios.
+	var/freqlock = FALSE
+	///If true, broadcasts will be large and BOLD.
+	var/use_command = FALSE
+	///If true, use_command can be toggled at will.
+	var/command = FALSE
+	///If true, the UI will display the voice log for the frequency
+	var/log = FALSE
+	///the voice log
+	var/list/loglist = list()
 
-	var/broadcasting = FALSE  // Whether the radio will transmit dialogue it hears nearby.
-	var/listening = FALSE  // Whether the radio is currently receiving.
-	var/prison_radio = FALSE  // If true, the transmit wire starts cut.
-	var/unscrewed = FALSE  // Whether wires are accessible. Toggleable by screwdrivering.
-	var/freerange = FALSE  // If true, the radio has access to the full spectrum.
-	var/subspace_transmission = FALSE  // If true, the radio transmits and receives on subspace exclusively.
-	var/subspace_switchable = FALSE  // If true, subspace_transmission can be toggled at will.
-	var/freqlock = FALSE  // Frequency lock to stop the user from untuning specialist radios.
-	var/use_command = FALSE  // If true, broadcasts will be large and BOLD.
-	var/command = FALSE  // If true, use_command can be toggled at will.
-	var/log = FALSE // If true, the UI will display the voice log for the frequency
-	var/list/loglist = list() //the voice log
-
-	// Encryption key handling
+	///Encryption key handling
 	var/obj/item/encryptionkey/keyslot
-	var/translate_binary = FALSE  // If true, can hear the special binary channel.
-	var/independent = FALSE  // If true, can say/hear on the special CentCom channel.
-	var/list/channels = list()  // Map from name (see communications.dm) to on/off. First entry is current department (:h)
+	///If true, can hear the special binary channel.
+	var/translate_binary = FALSE
+	///If true, can say/hear on the special CentCom channel.
+	var/independent = FALSE
+	// If true, can broadcast across z-levels but not recieve across z-levels.
+	var/sectorwide = FALSE
+	///Map from name (see communications.dm) to on/off. First entry is current department (:h)
+	var/list/channels = list()
 	var/list/secure_radio_connections
 
 	var/const/FREQ_LISTENING = 1
@@ -99,6 +118,8 @@
 /obj/item/radio/AltClick(mob/user)
 	if(headset)
 		. = ..()
+	else if(sectorwide == TRUE) // prevents incompatibility with broadcast cameras
+		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		broadcasting = !broadcasting
 		to_chat(user, "<span class='notice'>You toggle broadcasting [broadcasting ? "on" : "off"].</span>")
@@ -106,6 +127,8 @@
 /obj/item/radio/CtrlShiftClick(mob/user)
 	if(headset)
 		. = ..()
+	else if(sectorwide == TRUE) // prevents incompatibility with broadcast cameras
+		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		listening = !listening
 		to_chat(user, "<span class='notice'>You toggle speaker [listening ? "on" : "off"].</span>")
@@ -254,19 +277,23 @@
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))		//WS Edit - SolGov Rep
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.map_zones = list(0)  // reaches all Z-levels
 		signal.broadcast()
-		playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
+		return
+
+	// News Broadcast Radios and Similar, for devices you want to transmit across z-levels but not recieve across.
+	if (sectorwide)
+		signal.data["compression"] = 0
+		signal.transmission_method = TRANSMISSION_SECTOR
+		signal.map_zones = list(0)  // reaches all Z-levels
+		signal.broadcast()
 		return
 
 	// All radios make an attempt to use the subspace system first
 	signal.send_to_receivers()
-
-	//At this point the signal was transmitted so play a sound			//WS Edit - Radio chatter
-	playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
 
 	// If the radio is subspace-only, that's all it can do
 	if (subspace_transmission)

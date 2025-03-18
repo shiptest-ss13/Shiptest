@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Atoll-class Hospital Ship",
+	"map_short_name": "Atoll-class",
+	"description": "The Atoll-class is a large Ihejirika-built medical ship known for its unusually spacious and comfortable facilities and very respectable assortment of equipment and supplies. Atolls are favored by small medical companies and charity organizations dedicated to rendering welcome medical aid in an often harsh and unforgiving Frontier, making them a very welcome sight indeed.",
+	"tags": [
+		"Medical"
+	],
+	"map_path": "_maps/shuttles/independent/independent_atoll.dmm",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL"
+	],
+	"faction": "/datum/faction/independent",
+	"prefix": "IMV",
+	"manufacturer": "Ihejirika Civ. Manufacturing",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"slots": 1,
+			"officer": true
+		},
+		"Medical Administrator":{
+			"outfit": "/datum/outfit/job/independent/cmo",
+			"slots": 1,
+			"officer": true
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/independent/doctor",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/independent/paramedic",
+			"slots": 2
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

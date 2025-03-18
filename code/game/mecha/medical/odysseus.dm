@@ -1,6 +1,6 @@
 /obj/mecha/medical/odysseus
-	desc = "These exosuits are developed and produced by Vey-Med. (&copy; All rights reserved)."
-	name = "\improper Odysseus"
+	desc = "A high-end utility exosuit manufactured by Cybersun Biodynamics. The general medical variant of the 200 Series, the 202r features a high-speed leg design and advanced stabilization system to move patients safely over rough terrain."
+	name = "\improper 202r Medical exosuit"
 	icon_state = "odysseus"
 	step_in = 2
 	max_temperature = 15000
@@ -8,7 +8,7 @@
 	wreckage = /obj/structure/mecha_wreckage/odysseus
 	internal_damage_threshold = 35
 	deflect_chance = 15
-	step_energy_drain = 6
+	base_step_energy_drain = 11
 
 /obj/mecha/medical/odysseus/moved_inside(mob/living/carbon/human/H)
 	. = ..()
