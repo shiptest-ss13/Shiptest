@@ -53,6 +53,7 @@
 	// init our template vars with the correct singletons
 	main_template = SSmapping.outpost_templates[main_template]
 	elevator_template = SSmapping.outpost_templates[elevator_template]
+	SSpoints_of_interest.make_point_of_interest(token)
 
 	for(var/i in 1 to hangar_templates.len)
 		hangar_templates[i] = SSmapping.outpost_templates[hangar_templates[i]]
@@ -74,6 +75,7 @@
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
+	SSpoints_of_interest.make_point_of_interest(token)
 	// cleanup our data structures. behavior here is currently relatively restrained; may be made more expansive in the future
 	for(var/list/datum/hangar_shaft/h_shaft as anything in shaft_datums)
 		qdel(h_shaft)
@@ -153,7 +155,7 @@
 	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
 		current_pack = new current_pack()
 		if(current_pack.faction)
-			current_pack.faction = SSfactions.faction_path_to_datum(current_pack.faction)
+			current_pack.faction = SSfactions.factions[current_pack.faction]
 		if(!current_pack.contains)
 			continue
 		supply_packs += current_pack
@@ -222,7 +224,6 @@
 		return FALSE
 
 	h_dock = ensure_hangar(h_template)
-
 	if(!h_dock)
 		stack_trace(
 			"Outpost [src] ([src.type]) [REF(src)] unable to create hangar [h_template] " +\
