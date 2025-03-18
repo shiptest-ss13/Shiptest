@@ -430,7 +430,7 @@
 		/obj/item/reagent_containers/glass/bottle,
 		/obj/item/reagent_containers/blood,
 		/obj/item/reagent_containers/hypospray/medipen,
-		/obj/item/reagent_containers/food/snacks/deadmouse,
+		/obj/item/food/deadmouse,
 		/obj/item/reagent_containers/food/snacks/monkeycube,
 		/obj/item/organ,
 		/obj/item/bodypart

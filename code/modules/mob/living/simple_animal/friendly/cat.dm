@@ -30,7 +30,7 @@
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
 	var/turns_since_scan = 0
-	var/mob/living/simple_animal/mouse/movement_target
+	var/mob/living/basic/mouse/movement_target
 	///Limits how often cats can spam chasing mice.
 	var/emote_cooldown = 0
 	collar_type = "cat"
@@ -242,8 +242,8 @@
 	//MICE!
 	if((src.loc) && isturf(src.loc))
 		if(!stat && !resting && !buckled)
-			for(var/mob/living/simple_animal/mouse/M in view(1,src))
-				if(istype(M, /mob/living/simple_animal/mouse/brown/Tom) && (name == "Jerry")) //Turns out there's no jerry subtype.
+			for(var/mob/living/basic/mouse/M in view(1,src))
+				if(istype(M, /mob/living/basic/mouse/brown/tom) && (name == "Jerry")) //Turns out there's no jerry subtype.
 					if (emote_cooldown < (world.time - 600))
 						visible_message("<span class='warning'>[src] chases [M] around, to no avail!</span>")
 						step(M, pick(GLOB.cardinals))
@@ -275,7 +275,7 @@
 			if(!movement_target || !(movement_target.loc in oview(src, 3)))
 				movement_target = null
 				stop_automated_movement = 0
-				for(var/mob/living/simple_animal/mouse/snack in oview(src,3))
+				for(var/mob/living/basic/mouse/snack in oview(src,3))
 					if(isturf(snack.loc) && !snack.stat)
 						movement_target = snack
 						break
