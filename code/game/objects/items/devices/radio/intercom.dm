@@ -83,23 +83,13 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
 	return GLOB.physical_state // for other non-dexterous mobs give physical_state
 
-
-
-/obj/item/radio/intercom/can_receive(freq, map_zones)
-	if(!on)
-		return FALSE
-	if(wires.is_cut(WIRE_RX))
-		return FALSE
-	if(!(0 in map_zones))
+/obj/item/radio/intercom/can_receive(freq, list/levels)
+	if(levels != RADIO_NO_Z_LEVEL_RESTRICTION)
 		var/turf/position = get_turf(src)
-		var/datum/map_zone/mapzone = position.get_map_zone()
-		if(!position || !(mapzone in map_zones))
+		if(isnull(position) || !(position.z in levels))
 			return FALSE
-	if(!listening)
-		return FALSE
 
 	return TRUE
-
 
 /obj/item/radio/intercom/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, list/spans, list/message_mods = list())
 	if(message_mods[RADIO_EXTENSION] == MODE_INTERCOM)
@@ -131,9 +121,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 /obj/item/radio/intercom/proc/AreaPowerCheck(datum/source)
 	var/area/current_area = get_area(src)
 	if(!current_area)
-		on = FALSE
+		set_on(FALSE)
 	else
-		on = current_area.powered(AREA_USAGE_EQUIP) // set "on" to the equipment power status of our area.
+		set_on(current_area.powered(AREA_USAGE_EQUIP)) // set "on" to the equipment power status of our area.
 	update_appearance()
 
 /obj/item/radio/intercom/add_blood_DNA(list/blood_dna)
