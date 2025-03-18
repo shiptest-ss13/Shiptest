@@ -14,7 +14,7 @@
 	START_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/effect/radiation/process()
+/obj/effect/radiation/process(seconds_per_tick)
 	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
 		return ..()
 

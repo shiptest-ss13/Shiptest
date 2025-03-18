@@ -76,7 +76,7 @@
 	else
 		icon_state = pump_direction ? "vent_out" : "vent_in"
 
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/process_atmos()
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/process_atmos(seconds_per_tick)
 	..()
 
 	if(!on)

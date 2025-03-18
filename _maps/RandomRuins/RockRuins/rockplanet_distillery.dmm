@@ -607,22 +607,19 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	layer = 3.1;
-	pixel_x = 12;
-	pixel_y = 6
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_box/magazine/m9mm_mauler{
+	pixel_x = 2;
+	pixel_y = 3
 	},
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	layer = 3.1;
-	pixel_x = 6;
-	pixel_y = 6;
-	start_empty = 1
+/obj/item/ammo_box/magazine/m9mm_mauler{
+	pixel_x = 10;
+	pixel_y = 3
 	},
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
 /turf/open/floor/carpet,
 /area/ruin/rockplanet/distillery/office)
 "gM" = (
@@ -2196,7 +2193,8 @@
 "yW" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/item/gun/ballistic/rifle/illestren/factory,
+/obj/item/gun/ballistic/automatic/pistol/commander,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/office)
 "ze" = (
@@ -3069,21 +3067,8 @@
 /obj/structure/closet/crate/secure/weapon{
 	name = "ammo crate"
 	},
-/obj/item/ammo_box/a357{
-	pixel_x = -3
-	},
 /obj/item/ammo_box/magazine/illestren_a850r,
 /obj/item/storage/box/ammo/c9mm_ap,
-/obj/item/ammo_box/magazine/illestren_a850r,
-/obj/item/ammo_box/magazine/co9mm{
-	start_empty = 1
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	start_empty = 1
-	},
-/obj/item/ammo_box/a357{
-	pixel_x = 3
-	},
 /obj/machinery/button/door{
 	dir = 4;
 	id = "frontier_armory";
@@ -3093,6 +3078,10 @@
 	pixel_y = -6;
 	specialfunctions = 4
 	},
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/storage/box/ammo/a8_50r/match,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/office)
 "Jc" = (
@@ -4515,7 +4504,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 6
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	layer = 2.9;
 	pixel_x = 8;
 	pixel_y = 6
