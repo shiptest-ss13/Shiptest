@@ -2544,8 +2544,10 @@
 /obj/item/reagent_containers/food/snacks/fishmeat,
 /obj/item/reagent_containers/food/snacks/fishmeat,
 /obj/item/reagent_containers/food/snacks/fishmeat,
-/obj/item/reagent_containers/food/snacks/store/cheesewheel,
-/obj/item/reagent_containers/food/snacks/store/cheesewheel,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/storage/fancy/egg_box,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
 "Oo" = (
@@ -3042,6 +3044,14 @@
 /obj/item/reagent_containers/food/snacks/jellysandwich{
 	pixel_x = 0;
 	pixel_y = 8
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -6;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 6;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
