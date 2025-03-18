@@ -331,6 +331,7 @@
 	ruin_type = RUINTYPE_BATTLEFIELD // minor 'planets' have no ruins
 	mapgen = /datum/map_generator/planet_generator/battlefield
 	default_baseturf = /turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
+	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/toxic
 
 //superflat planets, intended for use in events
