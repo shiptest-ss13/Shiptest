@@ -832,7 +832,7 @@
 
 /client/proc/spawn_ruin()
 	set name = "Spawn Planet/Ruin"
-	set category = "Event.Spawning"
+	set category = "Event.Overmap"
 	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
 		return
 
@@ -873,23 +873,22 @@
 	else
 		position = SSovermap.get_unused_overmap_square()
 
-	message_admins("Generating a new Planet with ruin: [ruin_target], this may take some time!")
+	var/admin_load_instant = FALSE
+	if(tgui_alert(usr, "Instant admin load?", "Spawn Planet/Ruin", list("Yes", "No"), 10 SECONDS) == "Yes")
+		admin_load_instant = TRUE
+
+	message_admins("Creating a new Planet with ruin: [ruin_target].")
 	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
 		return
 	var/datum/overmap/dynamic/encounter = new(position, FALSE)
+	message_admins("new Planet token: [ADMIN_JMP(encounter.token)]. new Planet datum: [ADMIN_VV(encounter)]")
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
 	if(!ruin_target)
 		encounter.ruin_type = null
-	encounter.preserve_level = TRUE
-	encounter.load_level()
-
-	message_admins(span_big("Click here to jump to the overmap token: " + ADMIN_JMP(encounter.token)))
-	message_admins(span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(encounter.reserve_docks[1])))
-	for(var/ruin in encounter.ruin_turfs)
-		var/turf/ruin_turf = encounter.ruin_turfs[ruin]
-		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
+	if(admin_load_instant)
+		encounter.admin_load()
 
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"

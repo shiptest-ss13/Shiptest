@@ -62,14 +62,53 @@
 	desc = "A mass-produced machete made of stamped steel, with a faux-leather grip for ease of handling. Right between that of a one-handed and two-handed weapon."
 	icon_state = "machete"
 	base_icon_state = "machete"
+	supports_variations = VOX_VARIATION
 	force = 20
 	throwforce = 15
-	max_integrity = 50
-	supports_variations = VOX_VARIATION
+	max_integrity = 300
+	integrity_failure = 0.50
+	var/broken = FALSE
+
 
 /obj/item/melee/sword/mass/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=22)
+	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 22, icon_wielded = "[base_icon_state]_w")
+
+/obj/item/melee/sword/mass/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	. = ..()
+	if(.)
+		on_block(owner, hitby, attack_text, damage, attack_type)
+
+/obj/item/melee/sword/mass/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
+	take_damage(damage)
+
+/obj/item/melee/sword/mass/welder_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(broken)
+		if(I.use_tool(src, user, 0, volume = 40))
+			name = src::name
+			broken = FALSE
+			obj_integrity = max_integrity
+		return TRUE
+
+/obj/item/melee/sword/mass/obj_break(damage_flag)
+	. = ..()
+	if(!broken)
+		if(isliving(loc))
+			loc.balloon_alert(loc, "[src] cracks!")
+		name = "broken [src::name]"
+		broken = TRUE
+
+/obj/item/melee/sword/mass/examine(mob/user)
+	. = ..()
+	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
+	switch(healthpercent)
+		if(50 to 99)
+			. += span_info("It looks slightly damaged.")
+		if(25 to 50)
+			. += span_info("It appears heavily damaged.")
+		if(0 to 25)
+			. += span_warning("It's falling apart!")
 
 /obj/item/melee/sword/katana
 	name = "katana"
@@ -204,7 +243,7 @@
 	START_PROCESSING(SSobj, src)
 	visible_message("<span class='warning'>[src] appears, balanced ever so perfectly on its hilt. This isn't ominous at all.</span>")
 
-/obj/item/melee/sword/supermatter/process()
+/obj/item/melee/sword/supermatter/process(seconds_per_tick)
 	if(balanced || throwing || ismob(src.loc) || isnull(src.loc))
 		return
 	if(!isturf(src.loc))

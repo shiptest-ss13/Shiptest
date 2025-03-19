@@ -359,6 +359,11 @@
 /datum/action/item_action/toggle_helmet_mode
 	name = "Toggle Helmet Mode"
 
+/datum/action/item_action/toggle_helmet_mode/Trigger()
+	if(istype(target, /obj/item/clothing/head/helmet/space/hardsuit/syndi))
+		var/obj/item/clothing/head/helmet/space/hardsuit/syndi/syndi_helmet = target
+		syndi_helmet.toggle_mode(owner)
+
 /datum/action/item_action/crew_monitor
 	name = "Interface With Crew Monitor"
 
@@ -615,7 +620,7 @@
 	UpdateButtonIcon()
 	START_PROCESSING(SSfastprocess, src)
 
-/datum/action/cooldown/process()
+/datum/action/cooldown/process(seconds_per_tick)
 	if(!owner)
 		button.maptext = ""
 		STOP_PROCESSING(SSfastprocess, src)

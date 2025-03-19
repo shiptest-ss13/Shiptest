@@ -28,7 +28,9 @@ type OvermapDatumData = {
 
 type OvermapTokenManagerData = Record<OvermapDatumType, OvermapDatumData[]>;
 enum DatumType {
+  outpost = '/datum/overmap/outpost',
   ship = '/datum/overmap/ship',
+  dynamic = '/datum/overmap/dynamic',
   event = '/datum/overmap/event',
   star = '/datum/overmap/star',
   all = '***',
@@ -36,8 +38,12 @@ enum DatumType {
 
 const tokenTypeToName = (type: DatumType) => {
   switch (type) {
+    case DatumType.outpost:
+      return 'Outpost';
     case DatumType.ship:
       return 'Ship';
+    case DatumType.dynamic:
+      return 'Dynamic Event';
     case DatumType.event:
       return 'Event';
     case DatumType.star:

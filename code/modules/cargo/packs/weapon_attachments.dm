@@ -34,7 +34,7 @@
 	cost = 500
 	contains = list(/obj/item/attachment/energy_bayonet)
 	crate_name = "bayonet crate"
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -53,6 +53,13 @@
 	cost = 250
 	contains = list(/obj/item/attachment/silencer)
 	crate_name = "suppressor crate"
+
+/datum/supply_pack/attachment/counter
+	name = "Ammo Counter Crate"
+	desc = "Contains a single ammo counter to mount on a firearm."
+	cost = 100
+	contains = list(/obj/item/attachment/ammo_counter)
+	crate_name = "ammo counter crate"
 
 /datum/supply_pack/attachment/sling
 	name = "Shoulder Sling Crate"
