@@ -280,7 +280,7 @@
 	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
-		signal.map_zones = list(0)  // reaches all Z-levels
+		signal.virt_zs = list(0)  // reaches all Z-levels
 		signal.broadcast()
 		return
 
@@ -288,7 +288,7 @@
 	if (sectorwide)
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SECTOR
-		signal.map_zones = list(0)  // reaches all Z-levels
+		signal.virt_zs = list(0)  // reaches all Z-levels
 		signal.broadcast()
 		return
 
@@ -306,13 +306,13 @@
 /obj/item/radio/proc/backup_transmission(datum/signal/subspace/vocal/signal)
 	var/turf/T = get_turf(src)
 	var/datum/map_zone/mapzone = T.get_map_zone()
-	if (signal.data["done"] && (mapzone in signal.map_zones))
+	if (signal.data["done"] && (mapzone in signal.virt_zs))
 		return
 
 	// Okay, the signal was never processed, send a mundane broadcast.
 	signal.data["compression"] = 0
 	signal.transmission_method = TRANSMISSION_RADIO
-	signal.map_zones = list(mapzone)
+	signal.virt_zs = list(mapzone)
 	signal.broadcast()
 
 /obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
@@ -336,27 +336,19 @@
 	talk_into(speaker, raw_message, , spans, language=message_language, message_mods = filtered_mods)
 
 // Checks if this radio can receive on the given frequency.
-/obj/item/radio/proc/can_receive(freq, map_zones)
+/obj/item/radio/proc/can_receive(input_frequency, list/levels)
 	// deny checks
-	if (!on || !listening || wires.is_cut(WIRE_RX))
-		return FALSE
-	if (freq == FREQ_CENTCOM)
-		return independent  // hard-ignores the z-level check
-	if (!(0 in map_zones))
+	if (levels != RADIO_NO_Z_LEVEL_RESTRICTION)
 		var/turf/position = get_turf(src)
-		if(!position)
-			return FALSE
-		var/datum/map_zone/mapzone = position.get_map_zone()
-		if(!(mapzone in map_zones))
+		if(!position || !(position.virtual_z() in levels))
 			return FALSE
 
 	// allow checks: are we listening on that frequency?
-	if (freq == frequency)
+	if (input_frequency == frequency)
 		return TRUE
 	for(var/ch_name in channels)
 		if(channels[ch_name] & FREQ_LISTENING)
-			//the GLOB.radiochannels list is located in communications.dm
-			if(GLOB.radiochannels[ch_name] == text2num(freq))
+			if(GLOB.radiochannels[ch_name] == text2num(input_frequency))
 				return TRUE
 	return FALSE
 

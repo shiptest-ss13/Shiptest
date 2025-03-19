@@ -45,8 +45,8 @@
 		If 0, the signal is audible
 		If nonzero, the signal may be partially inaudible or just complete gibberish.
 
-	@param map_zones:
-		The list of map zones that the sending radio is broadcasting to.
+	@param virt_zs:
+		The list of virtual z levesl that the sending radio is broadcasting to.
 
 	@param freq
 		The frequency of the signal
@@ -59,7 +59,7 @@
 	var/server_type = /obj/machinery/telecomms/server
 	var/datum/signal/subspace/original
 	/// Map zones that this signal is reaching
-	var/list/map_zones
+	var/list/virt_zs
 	/// Whether it reaches all virtual levels
 	var/wideband = FALSE
 
@@ -70,7 +70,7 @@
 	var/datum/signal/subspace/copy = new
 	copy.original = src
 	copy.source = source
-	copy.map_zones = map_zones
+	copy.virt_zs = virt_zs
 	copy.frequency = frequency
 	copy.server_type = server_type
 	copy.transmission_method = transmission_method
@@ -123,14 +123,14 @@
 		"mods" = message_mods
 	)
 	var/turf/T = get_turf(source)
-	var/datum/map_zone/mapzone = T.get_map_zone()
-	map_zones = list(mapzone)
+	var/datum/virtual_level/virtual_z = T.get_virtual_level()
+	virt_zs = list(virtual_z)
 
 /datum/signal/subspace/vocal/copy()
 	var/datum/signal/subspace/vocal/copy = new(source, frequency, virt, language)
 	copy.original = src
 	copy.data = data.Copy()
-	copy.map_zones = map_zones
+	copy.virt_zs = virt_zs
 	copy.wideband = wideband
 	return copy
 
@@ -146,9 +146,9 @@
 	if(compression > 0)
 		message = Gibberish(message, compression >= 30)
 
-	var/list/signal_reaches_every_z_level = map_zones
+	var/list/signal_reaches_every_z_level = virt_zs
 
-	if(0 in map_zones)
+	if(0 in virt_zs)
 		signal_reaches_every_z_level = RADIO_NO_Z_LEVEL_RESTRICTION
 
 	// Assemble the list of radios
@@ -164,19 +164,19 @@
 
 		if (TRANSMISSION_RADIO)
 			for(var/obj/item/radio/non_subspace_radio in GLOB.all_radios["[frequency]"])
-				if(!non_subspace_radio.subspace_transmission && non_subspace_radio.can_receive(frequency, map_zones))
+				if(!non_subspace_radio.subspace_transmission && non_subspace_radio.can_receive(frequency, virt_zs))
 					radios += non_subspace_radio
 
 		if (TRANSMISSION_SUPERSPACE)
 			// Only radios which are independent
 			for(var/obj/item/radio/independent_radio in GLOB.all_radios["[frequency]"])
-				if(independent_radio.independent && independent_radio.can_receive(frequency, map_zones))
+				if(independent_radio.independent && independent_radio.can_receive(frequency, virt_zs))
 					radios += independent_radio
 
 		if (TRANSMISSION_SECTOR)
 			// Newscasting
 			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
-				if(R.can_receive(frequency, map_zones))
+				if(R.can_receive(frequency, virt_zs))
 					radios += R
 
 	// Next, we'll have each radio play a small sound effect except for the one that broadcasted it.
