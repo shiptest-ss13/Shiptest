@@ -652,6 +652,7 @@
 /atom/movable/Exited(atom/movable/gone, direction)
 	. = ..()
 
+	//Need to fully port https://github.com/tgstation/tgstation/pull/66709 if this runimes at all.
 	if(LAZYLEN(gone.important_recursive_contents))
 		var/list/nested_locs = get_nested_locs(src) + src
 		for(var/channel in gone.important_recursive_contents)

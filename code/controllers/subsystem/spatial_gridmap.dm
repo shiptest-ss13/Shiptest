@@ -137,7 +137,6 @@ SUBSYSTEM_DEF(spatial_grid)
 
 	pregenerate_more_oranges_ears(NUMBER_OF_PREGENERATED_ORANGES_EARS)
 
-	#warn add a new thing to register here
 	RegisterSignal(SSdcs, COMSIG_GLOB_NEW_VIRT_Z, PROC_REF(propogate_spatial_grid_to_new_z))
 	//RegisterSignal(SSdcs, COMSIG_GLOB_EXPANDED_WORLD_BOUNDS, PROC_REF(after_world_bounds_expanded))
 
@@ -231,42 +230,6 @@ SUBSYSTEM_DEF(spatial_grid)
 		turf_loc.assigned_oranges_ear = current_ear
 
 		. += current_ear
-
-#warn remove i think
-/*
-///adds cells to the grid for every z level when world.maxx or world.maxy is expanded after this subsystem is initialized. hopefully this is never needed.
-///because i never tested this.
-/datum/controller/subsystem/spatial_grid/proc/after_world_bounds_expanded(datum/controller/subsystem/processing/dcs/fucking_dcs, has_expanded_world_maxx, has_expanded_world_maxy)
-	SIGNAL_HANDLER
-	var/old_x_axis = cells_on_x_axis
-	var/old_y_axis = cells_on_y_axis
-
-	cells_on_x_axis = SPATIAL_GRID_CELLS_PER_SIDE(world.maxx)
-	cells_on_y_axis = SPATIAL_GRID_CELLS_PER_SIDE(world.maxy)
-
-	for(var/z_level in 1 to length(grids_by_z_level))
-		var/list/z_level_gridmap = grids_by_z_level[z_level]
-
-		for(var/cell_row_for_expanded_y_axis in 1 to cells_on_y_axis)
-
-			if(cell_row_for_expanded_y_axis > old_y_axis)//we are past the old length of the number of rows, so add to the list
-				z_level_gridmap += list(list())
-
-			//now we know theres a row at this position, so add cells to it that need to be added and update the ones that already exist
-			var/list/cell_row = z_level_gridmap[cell_row_for_expanded_y_axis]
-
-			for(var/grid_cell_for_expanded_x_axis in 1 to cells_on_x_axis)
-
-				if(grid_cell_for_expanded_x_axis > old_x_axis)
-					var/datum/spatial_grid_cell/new_cell_inserted = new(grid_cell_for_expanded_x_axis, cell_row_for_expanded_y_axis, z_level)
-					cell_row += new_cell_inserted
-					continue
-
-				//now we know the cell index we're at contains an already existing cell that needs its x and y values updated
-				var/datum/spatial_grid_cell/old_cell_that_needs_updating = cell_row[grid_cell_for_expanded_x_axis]
-				old_cell_that_needs_updating.cell_x = grid_cell_for_expanded_x_axis
-				old_cell_that_needs_updating.cell_y = cell_row_for_expanded_y_axis
-	*/
 
 ///the left or bottom side index of a box composed of spatial grid cells with the given actual center x or y coordinate
 #define BOUNDING_BOX_MIN(center_coord) max(ROUND_UP((center_coord - range) / SPATIAL_GRID_CELLSIZE), 1)
