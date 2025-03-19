@@ -204,3 +204,33 @@
   - rscdel: Removed the borscht misspelling system.
   - spellcheck: Fixed of typos and errors in multiple food descriptions. rewrote multiple
       food descriptions from the ground up.
+2025-03-19:
+  Erikafox:
+  - rscadd: broadcast cameras have gotten some minor improvements.
+  - imageadd: sprites for several types of specialist ammo
+  FalloutFalcon:
+  - rscdel: Removed some decals inside walls
+  - refactor: Adds basic mobs, a replacement for simple mobs that will hopefully destroy
+      the subtype. This is so far applied to cockroaches, mice, rats (and their variants)
+  - code_imp: the blackbox key "reagent expose mob" is now reagent_expose_mob
+  - rscadd: melee weapons now support varried cooldowns, we now have fast swinging
+      knives and slow swinging axes for example
+  - rscadd: stamped machetes can now break
+  - rscadd: expanded the range of the force string, toolboxes are now "medium" in
+      accordance to power creep
+  - balance: you now only take the block chance from your best weapon
+  - soundadd: alot of sounds ported from mojave sun
+  - refactor: halberds are now a simple subtype of dswords
+  - refactor: detached some shield code from shield/riot and ported from breaking
+      logic from tg
+  - refactor: gorlex sledgehammers no longer inherit behavoir from axes
+  MarkSuckerberg:
+  - rscadd: Autowiki ship table
+  - tweak: Ship Prefixes are now immutable.
+  - tweak: Crew manifest is prettier. In my opinion.
+  Ratvarr:
+  - bugfix: You can no longer place pipes anywhere you can see with an RPD. The grinch
+      is setback once more.
+  generalthrax:
+  - bugfix: Distillery now has Mauler mags.
+  - rscadd: Fancy Illestren in the Distillery armoury.
