@@ -40,7 +40,7 @@
 	///our y index in the list of cells. this is the index of our row list inside of our z level grid
 	var/cell_y
 	///which z level we belong to, corresponding to the index of our gridmap in SSspatial_grid.grids_by_z_level
-	var/cell_z
+	var/cell_virtual_z
 	//every data point in a grid cell is separated by usecase
 
 	//when empty, the contents lists of these grid cell datums are just references to a dummy list from SSspatial_grid
@@ -53,11 +53,11 @@
 	///every client possessed mob inside this cell
 	var/list/client_contents
 
-/datum/spatial_grid_cell/New(cell_x, cell_y, cell_z)
+/datum/spatial_grid_cell/New(cell_x, cell_y, cell_virtual_z)
 	. = ..()
 	src.cell_x = cell_x
 	src.cell_y = cell_y
-	src.cell_z = cell_z
+	src.cell_virtual_z = cell_virtual_z
 	//cache for sanic speed (lists are references anyways)
 	var/list/dummy_list = SSspatial_grid.dummy_list
 
@@ -120,9 +120,10 @@ SUBSYSTEM_DEF(spatial_grid)
 	cells_on_x_axis = SPATIAL_GRID_CELLS_PER_SIDE(world.maxx)
 	cells_on_y_axis = SPATIAL_GRID_CELLS_PER_SIDE(world.maxy)
 
-	for(var/datum/space_level/z_level as anything in SSmapping.z_list)
-		propogate_spatial_grid_to_new_z(null, z_level)
-		CHECK_TICK_HIGH_PRIORITY
+	for(var/datum/space_level/main_level as anything in SSmapping.z_list)
+		for(var/datum/virtual_level/z_level as anything in main_level.virtual_levels)
+			propogate_spatial_grid_to_new_z(null, z_level)
+			CHECK_TICK_HIGH_PRIORITY
 
 	//go through the pre init queue for anything waiting to be let in the grid
 	for(var/channel_type in waiting_to_add_by_type)
@@ -136,8 +137,9 @@ SUBSYSTEM_DEF(spatial_grid)
 
 	pregenerate_more_oranges_ears(NUMBER_OF_PREGENERATED_ORANGES_EARS)
 
-	RegisterSignal(SSdcs, COMSIG_GLOB_NEW_Z, PROC_REF(propogate_spatial_grid_to_new_z))
-	RegisterSignal(SSdcs, COMSIG_GLOB_EXPANDED_WORLD_BOUNDS, PROC_REF(after_world_bounds_expanded))
+	#warn add a new thing to register here
+	RegisterSignal(SSdcs, COMSIG_GLOB_NEW_VIRT_Z, PROC_REF(propogate_spatial_grid_to_new_z))
+	//RegisterSignal(SSdcs, COMSIG_GLOB_EXPANDED_WORLD_BOUNDS, PROC_REF(after_world_bounds_expanded))
 
 ///add a movable to the pre init queue for whichever type is specified so that when the subsystem initializes they get added to the grid
 /datum/controller/subsystem/spatial_grid/proc/enter_pre_init_queue(atom/movable/waiting_movable, type)
@@ -170,7 +172,7 @@ SUBSYSTEM_DEF(spatial_grid)
 	remove_from_pre_init_queue(movable_being_deleted, null)
 
 ///creates the spatial grid for a new z level
-/datum/controller/subsystem/spatial_grid/proc/propogate_spatial_grid_to_new_z(datum/controller/subsystem/processing/dcs/fucking_dcs, datum/space_level/z_level)
+/datum/controller/subsystem/spatial_grid/proc/propogate_spatial_grid_to_new_z(datum/controller/subsystem/processing/dcs/fucking_dcs, datum/virtual_level/z_level)
 	SIGNAL_HANDLER
 
 	var/list/new_cell_grid = list()
@@ -230,6 +232,8 @@ SUBSYSTEM_DEF(spatial_grid)
 
 		. += current_ear
 
+#warn remove i think
+/*
 ///adds cells to the grid for every z level when world.maxx or world.maxy is expanded after this subsystem is initialized. hopefully this is never needed.
 ///because i never tested this.
 /datum/controller/subsystem/spatial_grid/proc/after_world_bounds_expanded(datum/controller/subsystem/processing/dcs/fucking_dcs, has_expanded_world_maxx, has_expanded_world_maxy)
@@ -262,6 +266,7 @@ SUBSYSTEM_DEF(spatial_grid)
 				var/datum/spatial_grid_cell/old_cell_that_needs_updating = cell_row[grid_cell_for_expanded_x_axis]
 				old_cell_that_needs_updating.cell_x = grid_cell_for_expanded_x_axis
 				old_cell_that_needs_updating.cell_y = cell_row_for_expanded_y_axis
+	*/
 
 ///the left or bottom side index of a box composed of spatial grid cells with the given actual center x or y coordinate
 #define BOUNDING_BOX_MIN(center_coord) max(ROUND_UP((center_coord - range) / SPATIAL_GRID_CELLSIZE), 1)
@@ -295,7 +300,7 @@ SUBSYSTEM_DEF(spatial_grid)
 	var/cells_on_x_axis = src.cells_on_x_axis
 
 	//technically THIS list only contains lists, but inside those lists are grid cell datums and we can go without a SINGLE var init if we do this
-	var/list/datum/spatial_grid_cell/grid_level = grids_by_z_level[center_turf.z]
+	var/list/datum/spatial_grid_cell/grid_level = grids_by_z_level[center_turf.virtual_z()]
 	switch(type)
 		if(SPATIAL_GRID_CONTENTS_TYPE_CLIENTS)
 			for(var/row in BOUNDING_BOX_MIN(center_y) to BOUNDING_BOX_MAX(center_y, cells_on_y_axis))
@@ -317,7 +322,7 @@ SUBSYSTEM_DEF(spatial_grid)
 	if(!target_turf)
 		return
 
-	return grids_by_z_level[target_turf.z][ROUND_UP(target_turf.y / SPATIAL_GRID_CELLSIZE)][ROUND_UP(target_turf.x / SPATIAL_GRID_CELLSIZE)]
+	return grids_by_z_level[target_turf.virtual_z()][ROUND_UP(target_turf.y / SPATIAL_GRID_CELLSIZE)][ROUND_UP(target_turf.x / SPATIAL_GRID_CELLSIZE)]
 
 ///get all grid cells intersecting the bounding box around center with sides of length 2 * range
 /datum/controller/subsystem/spatial_grid/proc/get_cells_in_range(atom/center, range)
@@ -336,7 +341,7 @@ SUBSYSTEM_DEF(spatial_grid)
 	var/max_x = min(ROUND_UP((center_x + range) / SPATIAL_GRID_CELLSIZE), cells_on_x_axis)
 	var/max_y = min(ROUND_UP((center_y + range) / SPATIAL_GRID_CELLSIZE), cells_on_y_axis)
 
-	var/list/grid_level = grids_by_z_level[center_turf.z]
+	var/list/grid_level = grids_by_z_level[center_turf.virtual_z()]
 
 	for(var/row in min_y to max_y)
 		var/list/grid_row = grid_level[row]
@@ -354,7 +359,7 @@ SUBSYSTEM_DEF(spatial_grid)
 
 	var/x_index = ROUND_UP(target_turf.x / SPATIAL_GRID_CELLSIZE)
 	var/y_index = ROUND_UP(target_turf.y / SPATIAL_GRID_CELLSIZE)
-	var/z_index = target_turf.z
+	var/z_index = target_turf.virtual_z()
 
 	var/datum/spatial_grid_cell/intersecting_cell = grids_by_z_level[z_index][y_index][x_index]
 
@@ -382,7 +387,7 @@ SUBSYSTEM_DEF(spatial_grid)
 
 	var/x_index = ROUND_UP(target_turf.x / SPATIAL_GRID_CELLSIZE)
 	var/y_index = ROUND_UP(target_turf.y / SPATIAL_GRID_CELLSIZE)
-	var/z_index = target_turf.z
+	var/z_index = target_turf.virtual_z()
 
 	var/list/grid = grids_by_z_level[z_index]
 	var/datum/spatial_grid_cell/intersecting_cell = grid[y_index][x_index]
@@ -457,10 +462,10 @@ SUBSYSTEM_DEF(spatial_grid)
 
 	var/cell_coords = "the following cells contain [src]: "
 	for(var/datum/spatial_grid_cell/cell as anything in containing_cells)
-		cell_coords += "([cell.cell_x], [cell.cell_y], [cell.cell_z]), "
+		cell_coords += "([cell.cell_x], [cell.cell_y], [cell.cell_virtual_z]), "
 
 	message_admins(cell_coords)
-	message_admins("[src] is supposed to only be contained in the cell at indexes ([real_cell.cell_x], [real_cell.cell_y], [real_cell.cell_z]). but is contained at the cells at [cell_coords]")
+	message_admins("[src] is supposed to only be contained in the cell at indexes ([real_cell.cell_x], [real_cell.cell_y], [real_cell.cell_virtual_z]). but is contained at the cells at [cell_coords]")
 
 ///debug proc for finding how full the cells of src's z level are
 /atom/proc/find_grid_statistics_for_z_level(insert_clients = 0)

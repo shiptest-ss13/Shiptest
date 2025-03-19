@@ -3,6 +3,8 @@
 // start global signals with "!", this used to be necessary but now it's just a formatting choice
 /// from base of datum/controller/subsystem/mapping/proc/add_new_zlevel(): (list/args)
 #define COMSIG_GLOB_NEW_Z "!new_z"
+
+#define COMSIG_GLOB_NEW_VIRT_Z "!new_virt_z"
 /// sent after world.maxx and/or world.maxy are expanded: (has_exapnded_world_maxx, has_expanded_world_maxy)
 #define COMSIG_GLOB_EXPANDED_WORLD_BOUNDS "!expanded_world_bounds"
 /// called after a successful var edit somewhere in the world: (list/args)
