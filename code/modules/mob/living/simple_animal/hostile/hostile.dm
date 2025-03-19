@@ -380,7 +380,7 @@
 	vision_range = aggro_vision_range
 	if(target)
 		if(on_aggro_say.len && prob(aggro_say_chance))
-			say("[pick(on_aggro_say)]")
+			INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, say), "[pick(on_aggro_say)]")
 			aggro_say_chance = max(taunt_chance-7,2)
 		if(emote_taunt.len && prob(taunt_chance))
 			manual_emote("[pick(emote_taunt)] at [target].")

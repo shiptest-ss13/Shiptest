@@ -65,7 +65,7 @@
 	autolinkers = list("processor6")
 
 /obj/machinery/telecomms/processor/preset_seven
-	id = "Solgov Communications Processor"
+	id = "SolGov Communications Processor"
 	network = "tcommsat"
 	autolinkers = list("processor7")
 
