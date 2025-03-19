@@ -76,7 +76,7 @@
 	var/sectorwide = FALSE
 	///Map from name (see communications.dm) to on/off. First entry is current department (:h)
 	var/list/channels = list()
-	var/list/secure_radio_connections
+	var/list/secure_radio_connections = list()
 
 	var/const/FREQ_LISTENING = 1
 	//FREQ_BROADCASTING = 2
@@ -85,7 +85,6 @@
 	wires = new /datum/wires/radio(src)
 	if(prison_radio)
 		wires.cut(WIRE_TX) // OH GOD WHY
-	secure_radio_connections = list()
 	. = ..()
 
 	for(var/ch_name in channels)
