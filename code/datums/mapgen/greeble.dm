@@ -138,6 +138,8 @@
 			if(big_brush)
 				for(var/direction in GLOB.cardinals)
 					var/turf/open/turf_to_change = get_step(current_turf, direction)
+					if(!istype(turf_to_change) || !isopenturf(turf_to_change))
+						continue
 					turf_to_change.ChangeTurf(turf_to_spread, turf_to_spread::baseturfs, CHANGETURF_IGNORE_AIR|CHANGETURF_DEFER_CHANGE|CHANGETURF_DEFER_BATCH)
 			current_turfs_spawned++
 		else
