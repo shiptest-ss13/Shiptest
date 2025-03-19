@@ -1977,7 +1977,7 @@
 /area/ship/crew/ccommons)
 "nZ" = (
 /obj/machinery/telecomms/server/presets/solgov{
-	autolinkers = list("solgov","sproingle");
+	autolinkers = list("SolCon","sproingle");
 	network = "SolNet"
 	},
 /obj/machinery/door/window/brigdoor/northleft{
@@ -2548,7 +2548,7 @@
 	dir = 8
 	},
 /obj/machinery/telecomms/bus{
-	autolinkers = list("processor7","solgov");
+	autolinkers = list("processor7","SolCon");
 	id = "bus mainframe";
 	network = "SolNet"
 	},
@@ -4770,8 +4770,8 @@
 /area/ship/hallway/aft)
 "JN" = (
 /obj/machinery/telecomms/hub{
-	autolinkers = list("solgov","broadcasterA","receiverA","solgovPDA","SolHub");
-	id = "Solgov Hub";
+	autolinkers = list("SolCon","broadcasterA","receiverA","solgovPDA","SolHub");
+	id = "SolCon Hub";
 	network = "SolNet"
 	},
 /obj/structure/window/reinforced{
@@ -6878,7 +6878,7 @@
 	req_one_access = list(61,11)
 	},
 /obj/machinery/telecomms/message_server{
-	autolinkers = list("solgovPDA");
+	autolinkers = list("SolConPDA");
 	calibrating = 0;
 	network = "SolNet"
 	},
