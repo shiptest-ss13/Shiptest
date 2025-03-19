@@ -4,7 +4,6 @@
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "intercom"
 	anchored = TRUE
-	listening = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	canhear_range = 2
 	dog_fashion = null
@@ -17,6 +16,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	unscrewed = TRUE
 
 /obj/item/radio/intercom/Initialize(mapload, ndir, building)
+	set_listening(TRUE)
 	. = ..()
 	if(building)
 		setDir(turn(ndir,180))
@@ -160,7 +160,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	canhear_range = 3
 	keyslot = new /obj/item/encryptionkey/wideband
 	independent = TRUE
-	frequency = FREQ_WIDEBAND
 	freqlock = TRUE
 	freerange = TRUE
 	log = TRUE
