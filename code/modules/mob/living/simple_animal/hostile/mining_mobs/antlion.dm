@@ -9,8 +9,8 @@
 	emote_hear = list("clicks its mandibles")
 	emote_see = list("shakes the sand off itself")
 
-	health = 55
-	maxHealth = 55
+	health = 40
+	maxHealth = 40
 
 	melee_damage_lower = 10
 	melee_damage_upper = 10
