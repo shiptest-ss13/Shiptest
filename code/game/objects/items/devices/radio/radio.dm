@@ -26,16 +26,16 @@
 	VAR_PRIVATE/frequency = FREQ_COMMON
 
 	/// Whether the radio will transmit dialogue it hears nearby into its radio channel.
-	VAR_PRIVATE/broadcasting = TRUE
+	VAR_PRIVATE/broadcasting = FALSE
 	/// Whether the radio is currently receiving radio messages from its radio frequencies.
-	VAR_PRIVATE/listening = TRUE
+	VAR_PRIVATE/listening = FALSE
 
 	//the below three vars are used to track listening and broadcasting should they be forced off for whatever reason but "supposed" to be active
 	//eg player sets the radio to listening, but an emp or whatever turns it off, its still supposed to be activated but was forced off,
 	//when it wears off it sets listening to should_be_listening
 
 	///used for tracking what broadcasting should be in the absence of things forcing it off, eg its set to broadcast but gets emp'd temporarily
-	var/should_be_broadcasting = FALSE
+	var/should_be_broadcasting = TRUE
 	///used for tracking what listening should be in the absence of things forcing it off, eg its set to listen but gets emp'd temporarily
 	var/should_be_listening = TRUE
 
@@ -132,7 +132,7 @@
 	else if(sectorwide == TRUE) // prevents incompatibility with broadcast cameras
 		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
-		broadcasting = !broadcasting
+		set_broadcasting(!broadcasting)
 		to_chat(user, "<span class='notice'>You toggle broadcasting [broadcasting ? "on" : "off"].</span>")
 
 /obj/item/radio/CtrlShiftClick(mob/user)
@@ -141,7 +141,7 @@
 	else if(sectorwide == TRUE) // prevents incompatibility with broadcast cameras
 		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
-		listening = !listening
+		set_listening(!listening)
 		to_chat(user, "<span class='notice'>You toggle speaker [listening ? "on" : "off"].</span>")
 
 /obj/item/radio/interact(mob/user)
@@ -406,10 +406,10 @@
 			if(.)
 				set_frequency(sanitize_frequency(tune, freerange))
 		if("listen")
-			listening = !listening
+			set_listening(!listening)
 			. = TRUE
 		if("broadcast")
-			broadcasting = !broadcasting
+			set_broadcasting(!broadcasting)
 			. = TRUE
 		if("channel")
 			var/channel = params["channel"]
