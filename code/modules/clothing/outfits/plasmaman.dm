@@ -225,19 +225,19 @@
 	gloves = /obj/item/clothing/gloves/color/plasmaman/clown
 
 /datum/outfit/plasmaman/solgov
-	name = "Plasmasolgov"
+	name = "Plasma SolCon"
 	head = /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	uniform = /obj/item/clothing/under/plasmaman/solgov
 	gloves = /obj/item/clothing/gloves/color/plasmaman/white
 
 /datum/outfit/plasmaman/ngr
-	name = "Plasmangr"
+	name = "Plasma NGR"
 	head = /obj/item/clothing/head/helmet/space/plasmaman/ngr
 	uniform= /obj/item/clothing/under/plasmaman/ngr
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 
-/datum/outfit/plasmaman/Hardliners // whoever capitalized this please explode
-	name = "Plasmahl"
+/datum/outfit/plasmaman/hardliner
+	name = "Plasma Hardliner"
 	head = /obj/item/clothing/head/helmet/space/plasmaman/hardliners
 	uniform = /obj/item/clothing/under/plasmaman/hardliners
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black

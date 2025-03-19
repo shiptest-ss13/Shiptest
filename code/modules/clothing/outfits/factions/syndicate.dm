@@ -55,6 +55,8 @@
 	uniform = /obj/item/clothing/under/syndicate/hardliners
 	alt_uniform = /obj/item/clothing/under/syndicate/hardliners/jumpsuit
 
+	phorid_outfit = /datum/outfit/plasmaman/hardliner
+
 /datum/outfit/job/syndicate/assistant/ngr
 	name = "Syndicate - Initiate (New Gorlex Republic)"
 	id_assignment = "Initiate"
@@ -326,6 +328,8 @@
 	head = /obj/item/clothing/head/hardliners/peaked
 	suit = /obj/item/clothing/suit/toggle/armor/vest/hardliners
 	shoes = /obj/item/clothing/shoes/combat
+
+	phorid_outfit = /datum/outfit/plasmaman/hardliner
 
 /datum/outfit/job/syndicate/captain/ngr
 	name = "Syndicate - Captain (New Gorlex Republic)"
@@ -602,6 +606,8 @@
 	shoes = /obj/item/clothing/shoes/combat
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
 
+	phorid_outfit = /datum/outfit/plasmaman/hardliner
+
 /datum/outfit/job/syndicate/hos/ngr
 	name = "Syndicate - Lieutenant (New Gorlex Republic)"
 	id_assignment = "Lieutenant"
@@ -737,8 +743,9 @@
 	glasses = /obj/item/clothing/glasses/hud/health
 	r_pocket = /obj/item/melee/knife/survival
 	id = /obj/item/card/id/syndicate_command/crew_id
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
 	shoes = /obj/item/clothing/shoes/combat
+
+	phorid_outfit = /datum/outfit/plasmaman/hardliner
 
 /datum/outfit/job/syndicate/doctor/ngr
 	name = "Syndicate - Medical Doctor (New Gorlex Republic)"
@@ -945,6 +952,8 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
 
+	phorid_outfit = /datum/outfit/plasmaman/hardliner
+
 /datum/outfit/job/syndicate/security/gorlex/pilot
 	name = "Syndicate - Pilot (Hardliner)"
 	id_assignment = "Pilot"
@@ -1050,6 +1059,8 @@
 	accessory = /obj/item/clothing/accessory/armband/cargo
 	shoes = /obj/item/clothing/shoes/workboots
 	ears = /obj/item/radio/headset/alt
+
+	phorid_outfit = /datum/outfit/plasmaman/hardliner
 
 /datum/outfit/job/syndicate/miner/ngr
 	name = "Syndicate - Wrecker (New Gorlex Republic)"
@@ -1161,6 +1172,8 @@
 	uniform = /obj/item/clothing/under/syndicate/hardliners
 	shoes = /obj/item/clothing/shoes/workboots
 	glasses = null
+
+	phorid_outfit = /datum/outfit/plasmaman/hardliner
 
 /datum/outfit/job/syndicate/engineer/ngr
 	name = "Syndicate - Mechanic (New Gorlex Republic)"
