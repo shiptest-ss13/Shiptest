@@ -153,7 +153,7 @@
 
 	// Assemble the list of radios
 	var/list/radios = list()
-	switch (transmission_method)
+	switch(transmission_method)
 		if (TRANSMISSION_SUBSPACE)
 			var/list/all_radios_of_our_frequency = GLOB.all_radios["[frequency]"]
 			radios = all_radios_of_our_frequency.Copy()

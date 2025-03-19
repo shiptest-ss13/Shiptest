@@ -86,7 +86,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 /obj/item/radio/intercom/can_receive(freq, list/levels)
 	if(levels != RADIO_NO_Z_LEVEL_RESTRICTION)
 		var/turf/position = get_turf(src)
-		if(isnull(position) || !(position.z in levels))
+		if(isnull(position) || !(position.get_virtual_z() in levels))
 			return FALSE
 
 	return TRUE

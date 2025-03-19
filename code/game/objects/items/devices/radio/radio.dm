@@ -26,7 +26,7 @@
 	VAR_PRIVATE/frequency = FREQ_COMMON
 
 	/// Whether the radio will transmit dialogue it hears nearby into its radio channel.
-	VAR_PRIVATE/broadcasting = FALSE
+	VAR_PRIVATE/broadcasting = TRUE
 	/// Whether the radio is currently receiving radio messages from its radio frequencies.
 	VAR_PRIVATE/listening = TRUE
 
@@ -305,14 +305,14 @@
 
 /obj/item/radio/proc/backup_transmission(datum/signal/subspace/vocal/signal)
 	var/turf/T = get_turf(src)
-	var/datum/map_zone/mapzone = T.get_map_zone()
-	if (signal.data["done"] && (mapzone in signal.virt_zs))
+	var/datum/virtual_level/virtual_z = T.get_virtual_level()
+	if (signal.data["done"] && (virtual_z in signal.virt_zs))
 		return
 
 	// Okay, the signal was never processed, send a mundane broadcast.
 	signal.data["compression"] = 0
 	signal.transmission_method = TRANSMISSION_RADIO
-	signal.virt_zs = list(mapzone)
+	signal.virt_zs = list(virtual_z)
 	signal.broadcast()
 
 /obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
@@ -340,7 +340,7 @@
 	// deny checks
 	if (levels != RADIO_NO_Z_LEVEL_RESTRICTION)
 		var/turf/position = get_turf(src)
-		if(!position || !(position.virtual_z() in levels))
+		if(!position || !(position.get_virtual_z() in levels))
 			return FALSE
 
 	// allow checks: are we listening on that frequency?
