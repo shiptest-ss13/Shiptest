@@ -239,6 +239,7 @@
 	var/holder
 	switch(H.jumpsuit_style)
 		if(PREF_SKIRT)
+		if(skirt_uniform)
 			holder = "[skirt_uniform]"
 		if(PREF_ALTSUIT)
 			if(alt_uniform)

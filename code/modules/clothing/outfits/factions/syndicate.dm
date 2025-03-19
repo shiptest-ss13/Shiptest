@@ -4,6 +4,7 @@
 	name = "Syndicate - Base Outfit"
 
 	uniform = /obj/item/clothing/under/color/black
+	skirt_uniform = /obj/item/clothing/under/dress/skirt/color
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id/syndicate_command/crew_id
 

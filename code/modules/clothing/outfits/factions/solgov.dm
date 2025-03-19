@@ -2,6 +2,9 @@
 	name = "SolGov Base Outfit"
 
 	faction_icon = "bg_solgov"
+	uniform = /obj/item/clothing/under/solgov/formal
+	skirt_uniform = /obj/item/clothing/under/solgov/formal/skirt
+
 	phorid_outfit = /datum/outfit/plasmaman/solgov
 
 /datum/outfit/job/solgov/post_equip(mob/living/carbon/human/H, visualsOnly)

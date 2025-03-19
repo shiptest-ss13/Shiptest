@@ -1,5 +1,7 @@
 /datum/outfit/job/gezena
 	name = "PGF - Base Outfit"
+	uniform = /obj/item/clothing/under/gezena
+	skirt_uniform = null // NO military skirt for you young marine
 	// faction_icon = "bg_pgf"
 
 /datum/outfit/job/gezena/post_equip(mob/living/carbon/human/H, visualsOnly)
