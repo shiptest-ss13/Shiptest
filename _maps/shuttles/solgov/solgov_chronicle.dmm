@@ -78,6 +78,9 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ck1"
+	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
 "aA" = (
@@ -482,7 +485,9 @@
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -22;
-	pixel_x = 8
+	pixel_x = 8;
+	name = "shutter control";
+	id = "cb1"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -726,6 +731,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ca1";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "fR" = (
@@ -738,6 +747,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cc1"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
@@ -955,6 +967,10 @@
 	icon_state = "0-2"
 	},
 /obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "cb2";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "hV" = (
@@ -1581,6 +1597,10 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ca2";
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "ng" = (
@@ -1604,6 +1624,17 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
+"nk" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cb2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "nz" = (
 /obj/structure/table/wood/fancy,
 /obj/structure/cable{
@@ -1624,6 +1655,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
+"nG" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "cb2";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "nP" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood/ebony,
@@ -1652,6 +1693,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cc2"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "om" = (
@@ -1678,6 +1722,10 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cb1";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1817,6 +1865,10 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "ck1";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
 "qz" = (
@@ -1831,9 +1883,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "qK" = (
-/obj/structure/fluff/hedge/opaque,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/airalarm/directional/east,
+/obj/structure/bookcase/random,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
 "rq" = (
@@ -1915,6 +1967,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ck1";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
@@ -2189,6 +2245,10 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/external/dark)
+"uF" = (
+/obj/structure/bookcase/random,
+/turf/open/floor/wood/walnut,
+/area/ship/crew/ccommons)
 "uG" = (
 /obj/structure/chair/bench/blue/directional/west,
 /obj/machinery/light/dim/directional/east,
@@ -2202,6 +2262,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cb3"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -2272,11 +2335,25 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"uX" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cd2"
+	},
+/turf/open/floor/plating,
+/area/ship/crew)
 "va" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cb3"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -2345,12 +2422,16 @@
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -22;
-	pixel_x = -4
+	pixel_x = -4;
+	name = "interior shutter control";
+	id = "cb3"
 	},
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -22;
-	pixel_x = 7
+	pixel_x = 7;
+	id = "cb2";
+	name = "shutter control"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2364,6 +2445,10 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "cb1";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "wh" = (
@@ -2457,6 +2542,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cb3"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "wT" = (
@@ -2548,6 +2636,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cd1"
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
 "xI" = (
@@ -2558,6 +2649,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cc2"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
@@ -2677,6 +2771,10 @@
 	icon_state = "0-8"
 	},
 /obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "cd4";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/captain)
 "zb" = (
@@ -2722,6 +2820,10 @@
 	icon_state = "0-2"
 	},
 /obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "cb2";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "zq" = (
@@ -2772,6 +2874,10 @@
 /area/ship/hallway/central)
 "zz" = (
 /obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ca1";
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -2974,6 +3080,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cb1";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Bn" = (
@@ -2990,6 +3100,10 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "cd4";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/captain)
 "Bs" = (
@@ -3026,11 +3140,27 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
+"BG" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "co1";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "BM" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cd3";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -3117,11 +3247,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/item/kirbyplants{
-	icon_state = "plant-05";
-	pixel_x = 11;
-	pixel_y = -2
-	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/dorm/captain)
 "Ck" = (
@@ -3184,6 +3309,16 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/tech/techmaint,
+/area/ship/bridge)
+"CG" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters{
+	id = "co1";
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 "Db" = (
 /obj/machinery/porta_turret/ship/solcon/slug{
@@ -3280,6 +3415,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ck1"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
@@ -3595,6 +3733,10 @@
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "co1";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -3951,6 +4093,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cc1"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Lp" = (
@@ -4214,6 +4359,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cc1"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "NI" = (
@@ -4361,7 +4509,6 @@
 	pixel_x = 8
 	},
 /obj/machinery/shower{
-	dir = 2;
 	pixel_y = 8
 	},
 /obj/structure/curtain,
@@ -4517,6 +4664,10 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cd4";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/captain)
@@ -4714,6 +4865,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ca1";
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "SU" = (
@@ -4741,6 +4896,10 @@
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cb1";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -4837,6 +4996,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ck1"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
@@ -4955,6 +5117,9 @@
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ca2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
@@ -5265,6 +5430,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cc2"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "YP" = (
@@ -5419,6 +5587,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cb3"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -6213,7 +6384,7 @@ fn
 fn
 fn
 fn
-lZ
+uF
 qK
 MY
 kG
@@ -6226,9 +6397,9 @@ Fb
 Xg
 Fx
 Fx
-oC
+BG
 Hp
-wb
+CG
 Fx
 Fx
 WC
@@ -6577,7 +6748,7 @@ mR
 Iu
 "}
 (31,1,1) = {"
-xH
+uX
 qm
 Fq
 KZ
@@ -6636,10 +6807,10 @@ kN
 kN
 kN
 kN
-oC
+nk
 hy
 zk
-wb
+nG
 Fx
 gv
 kO
