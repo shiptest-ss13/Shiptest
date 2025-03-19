@@ -164,19 +164,19 @@
 
 		if (TRANSMISSION_RADIO)
 			for(var/obj/item/radio/non_subspace_radio in GLOB.all_radios["[frequency]"])
-				if(!non_subspace_radio.subspace_transmission && non_subspace_radio.can_receive(frequency, virt_zs))
+				if(!non_subspace_radio.subspace_transmission && non_subspace_radio.can_receive(frequency, signal_reaches_every_z_level))
 					radios += non_subspace_radio
 
 		if (TRANSMISSION_SUPERSPACE)
 			// Only radios which are independent
 			for(var/obj/item/radio/independent_radio in GLOB.all_radios["[frequency]"])
-				if(independent_radio.independent && independent_radio.can_receive(frequency, virt_zs))
+				if(independent_radio.independent && independent_radio.can_receive(frequency, signal_reaches_every_z_level))
 					radios += independent_radio
 
 		if (TRANSMISSION_SECTOR)
 			// Newscasting
 			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
-				if(R.can_receive(frequency, virt_zs))
+				if(R.can_receive(frequency, signal_reaches_every_z_level))
 					radios += R
 
 	// Next, we'll have each radio play a small sound effect except for the one that broadcasted it.
