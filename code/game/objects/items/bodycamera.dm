@@ -185,7 +185,7 @@
 
 /obj/item/bodycamera/broadcast_camera/unique_action(mob/living/user)
 	. = ..()
-	radio.broadcasting = !radio.broadcasting
+	radio.set_broadcasting(!radio.get_broadcasting())
 	user.visible_message(span_notice("[user] toggles the [src] microphone."), span_notice("<span class='notice'>You toggle the [src] microphone."))
 
 /obj/item/bodycamera/broadcast_camera/examine(mob/user)

@@ -87,7 +87,7 @@
 	radio.subspace_transmission = TRUE
 	radio.canhear_range = 0
 	// Override in subtypes // no
-	radio.on = TRUE
+	radio.set_on(TRUE)
 
 /obj/machinery/fax/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	port.fax_list |= WEAKREF(src)
