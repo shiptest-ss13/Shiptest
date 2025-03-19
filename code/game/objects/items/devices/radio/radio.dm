@@ -340,7 +340,7 @@
 	// deny checks
 	if (levels != RADIO_NO_Z_LEVEL_RESTRICTION)
 		var/turf/position = get_turf(src)
-		if(!position || !(position.get_virtual_z() in levels))
+		if(!position || !(position.get_virtual_level() in levels))
 			return FALSE
 
 	// allow checks: are we listening on that frequency?
