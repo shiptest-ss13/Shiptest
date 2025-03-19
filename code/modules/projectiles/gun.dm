@@ -109,8 +109,8 @@
 	//Can it be charged in a recharger?
 	var/can_charge = TRUE
 	var/selfcharge = FALSE
-	var/charge_tick = 0
-	var/charge_delay = 4
+	var/charge_timer = 0
+	var/charge_delay = 8
 	//whether the gun's cell drains the cyborg user's cell to recharge
 	var/use_cyborg_cell = FALSE
 	//Time it takes to unscrew the cell
@@ -411,6 +411,11 @@
 	return ..()
 
 /obj/item/gun/examine(mob/user)
+	if(manufacturer)
+		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
+	. = ..()
+
+/obj/item/gun/examine_more(mob/user)
 	. = ..()
 	if(has_safety)
 		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
@@ -418,8 +423,6 @@
 	if(gun_firemodes.len > 1)
 		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
 
-	if(manufacturer)
-		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
 
 /obj/item/gun/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
@@ -678,7 +681,7 @@
 		simulate_recoil(user, recoil, actual_angle)
 	else if(!wielded_fully)
 		var/recoil_temp = recoil_unwielded
-		var/obj/item/shield/riot/shield = user.get_inactive_held_item()
+		var/obj/item/shield/shield = user.get_inactive_held_item()
 		if(istype(shield))
 			recoil_temp += shield.recoil_bonus
 		simulate_recoil(user, recoil_temp, actual_angle)
@@ -1011,15 +1014,16 @@
 		human_holder = src
 	for(var/obj/item/gun/at_risk in get_all_contents())
 		var/chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM * at_risk.safety_multiplier)
+		var/bodyzone = pick_weight(list(BODY_ZONE_HEAD = 1, BODY_ZONE_CHEST = 9, BODY_ZONE_L_ARM = 4, BODY_ZONE_R_ARM = 4, BODY_ZONE_L_LEG = 41, BODY_ZONE_R_LEG = 41))
 		if(human_holder)
 			// gun is less likely to go off in a holster
 			if(at_risk == human_holder.s_store)
 				chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW * at_risk.safety_multiplier)
+				bodyzone = pick_weight(list(BODY_ZONE_CHEST = 10, BODY_ZONE_L_LEG = 45, BODY_ZONE_R_LEG = 45))
 		if(at_risk.safety == FALSE && prob(chance_to_fire))
-			var/bodyzone = pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)
 			if(at_risk.process_fire(src,src,FALSE, null, bodyzone) == TRUE)
 				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
-				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s [bodyzone]!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your [bodyzone]!"))
+				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s [get_bodypart(bodyzone)]!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your [get_bodypart(bodyzone)]!"))
 				human_holder.force_scream()
 
 //I need to refactor this into an attachment

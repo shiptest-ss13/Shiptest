@@ -83,12 +83,12 @@
 		qdel(src)
 
 
-/obj/item/clothing/gloves/color/fyellow                             //Cheap Chinese Crap
+/obj/item/clothing/gloves/color/fyellow
 	desc = "These gloves are cheap knockoffs of the coveted ones - no way this can end badly."
 	name = "budget insulated gloves"
 	icon_state = "yellow"
 	item_state = "ygloves"
-	siemens_coefficient = 1			//Set to a default of 1, gets overridden in Initialize()
+	siemens_coefficient = 1	//Set to a default of 1, gets overridden in Initialize()
 	permeability_coefficient = 0.05
 	resistance_flags = NONE
 
@@ -235,6 +235,11 @@
 	permeability_coefficient = 0.3
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
+/obj/item/clothing/gloves/color/latex/nitrile/inteq
+	name = "green nitrile gloves"
+	desc = "Thick sterile gloves that reach up to the elbows, colored in a pine green shade. Transfers combat medic knowledge into the user via nanochips."
+	icon_state = "nitrile_inteq"
+
 /obj/item/clothing/gloves/color/latex/engineering
 	name = "tinker's gloves"
 	desc = "Overdesigned engineering gloves that have automated construction subrutines dialed in, allowing for faster construction while worn."
@@ -264,3 +269,4 @@
 	desc = "Cylindrical looking tubes that go over your arm, weird."
 	icon_state = "maid_arms"
 	item_state = "lgloves"
+	supports_variations = VOX_VARIATION

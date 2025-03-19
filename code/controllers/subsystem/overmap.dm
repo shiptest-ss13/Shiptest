@@ -15,6 +15,8 @@ SUBSYSTEM_DEF(overmap)
 	///List of spawned outposts. The default spawn location is the first index.
 	var/list/outposts
 
+	///List of all dynamic overmap datums
+	var/list/dynamic_datums
 	///List of all events
 	var/list/events
 
@@ -48,6 +50,7 @@ SUBSYSTEM_DEF(overmap)
 	overmap_objects = list()
 	controlled_ships = list()
 	outposts = list()
+	dynamic_datums = list()
 	events = list()
 
 	generator_type = CONFIG_GET(string/overmap_generator_type)
@@ -79,6 +82,8 @@ SUBSYSTEM_DEF(overmap)
 	return ..()
 
 /datum/controller/subsystem/overmap/fire()
+	if(length(dynamic_datums) < CONFIG_GET(number/max_overmap_dynamic_events))
+		new /datum/overmap/dynamic()
 	if(events_enabled)
 		for(var/datum/overmap/event/E as anything in events)
 			if(E.get_nearby_overmap_objects())
@@ -127,10 +132,8 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/create_map()
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		spawn_events_in_orbits()
-		spawn_ruin_levels_in_orbits()
 	else
 		spawn_events()
-		spawn_ruin_levels()
 
 	spawn_outpost()
 	//spawn_initial_ships()
@@ -244,17 +247,6 @@ SUBSYSTEM_DEF(overmap)
 	ship_spawning = TRUE
 	. = new /datum/overmap/ship/controlled(ship_loc, template) //This statement SHOULDN'T runtime (not counting runtimes actually in the constructor) so ship_spawning should always be toggled.
 	ship_spawning = FALSE
-
-/**
- * Creates an overmap object for each ruin level, making them accessible.
- */
-/datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		new /datum/overmap/dynamic()
-
-/datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		new /datum/overmap/dynamic()
 
 /**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
@@ -447,6 +439,25 @@ SUBSYSTEM_DEF(overmap)
 		if(!Ship.source_template || Ship.source_template.category != "subshuttles")
 			ship_count++
 	return ship_count
+
+/datum/controller/subsystem/overmap/proc/get_fancy_manifest()
+	var/list/manifest_out = list()
+	for(var/datum/overmap/ship/controlled/ship as anything in controlled_ships)
+		if(!length(ship.manifest))
+			continue
+		var/list/data = list()
+		data["color"] = ship.source_template.faction.color
+		data["mode"] = ship.join_mode
+		for(var/crewmember in ship.manifest)
+			var/datum/job/crewmember_job = ship.manifest[crewmember]
+			data["crew"] += list(list(
+				"name" = crewmember,
+				"rank" = crewmember_job.name,
+				"officer" = crewmember_job.officer
+			))
+		manifest_out["[ship.name] ([ship.source_template.short_name])"] = data
+
+	return manifest_out
 
 /datum/controller/subsystem/overmap/proc/get_manifest()
 	var/list/manifest_out = list()

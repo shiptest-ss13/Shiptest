@@ -9,6 +9,8 @@
 	var/atom/movable/screen/map_view/cam_screen
 	var/atom/movable/screen/plane_master/lighting/cam_plane_master
 	var/atom/movable/screen/background/cam_background
+	/// Countdown we use in case it's needed
+	var/obj/effect/countdown/countdown
 
 /obj/overmap/rendered
 	render_map = TRUE
@@ -81,7 +83,7 @@
 		if(NAMEOF(src, y))
 			return parent.overmap_move(parent.x, var_value)
 		if(NAMEOF(src, name))
-			parent.Rename(var_value)
+			parent.Rename(var_value, TRUE)
 			return TRUE
 	return ..()
 /**

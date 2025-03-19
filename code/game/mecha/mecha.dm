@@ -352,7 +352,7 @@
 	if(mech_unique_action)
 		. += "This mech has a special action you can activate by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 //processing internal damage, temperature, air regulation, alert updates, lights power use.
-/obj/mecha/process()
+/obj/mecha/process(seconds_per_tick)
 	var/internal_temp_regulation = 1
 
 	if(internal_damage)
@@ -889,7 +889,7 @@
 
 
 //An actual AI (simple_animal mecha pilot) entering the mech
-/obj/mecha/proc/aimob_enter_mech(mob/living/simple_animal/hostile/human/syndicate/mecha_pilot/pilot_mob)
+/obj/mecha/proc/aimob_enter_mech(mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/pilot_mob)
 	if(pilot_mob && pilot_mob.Adjacent(src))
 		if(occupant)
 			return
@@ -899,7 +899,7 @@
 		pilot_mob.forceMove(src)
 		GrantActions(pilot_mob)//needed for checks, and incase a badmin puts somebody in the mob
 
-/obj/mecha/proc/aimob_exit_mech(mob/living/simple_animal/hostile/human/syndicate/mecha_pilot/pilot_mob)
+/obj/mecha/proc/aimob_exit_mech(mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/pilot_mob)
 	if(occupant == pilot_mob)
 		occupant = null
 	if(pilot_mob.mecha == src)
