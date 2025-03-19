@@ -29,7 +29,7 @@
 	loot = list(
 			/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 15,
 			/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 20,
-			/mob/living/simple_animal/hostile/human/hermit/survivor/random = 5,
+			/obj/effect/spawner/random/hermit = 5,
 		)
 
 	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'

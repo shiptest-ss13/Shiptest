@@ -495,7 +495,7 @@
 		return ..()
 	desc = {"
 	[span_boldnotice("IFF is reporting the following:")]
-	[span_bold("Affiliation: ")][ship.source_template.faction.name]
+	[span_bold("Affiliation: ")][source_template.faction.name]
 	[span_bold("Class: ")][source_template.short_name]
 	[span_bold("Velocity: ")][round(get_speed(), 0.1)] Gm/s
 	"}
