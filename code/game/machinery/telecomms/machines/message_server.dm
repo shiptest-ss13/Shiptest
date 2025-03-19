@@ -81,6 +81,7 @@
 	icon_state = "message_server"
 	name = "Messaging Server"
 	desc = "A machine that processes and routes PDA and request console messages."
+	telecomms_type = /obj/machinery/telecomms/message_server
 	density = TRUE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
@@ -167,15 +168,15 @@
 	source = init_source
 	data = init_data
 	var/turf/T = get_turf(source)
-	var/datum/map_zone/mapzone = T.get_map_zone()
-	map_zones = list(mapzone)
+	var/datum/map_zone/virtual_z = T.get_virtual_level()
+	virt_zs = list(virtual_z)
 	if(!("reject" in data))
 		data["reject"] = TRUE
 
 /datum/signal/subspace/messaging/copy()
 	var/datum/signal/subspace/messaging/copy = new type(source, data.Copy())
 	copy.original = src
-	copy.map_zones = map_zones
+	copy.virt_zs = virt_zs
 	return copy
 
 // PDA signal datum

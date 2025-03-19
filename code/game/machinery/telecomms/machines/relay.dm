@@ -10,6 +10,7 @@
 	name = "telecommunication relay"
 	icon_state = "relay"
 	desc = "A mighty piece of hardware used to send massive amounts of data far away."
+	telecomms_type = /obj/machinery/telecomms/relay
 	density = TRUE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
@@ -22,9 +23,9 @@
 /obj/machinery/telecomms/relay/receive_information(datum/signal/subspace/signal, obj/machinery/telecomms/machine_from)
 	// Add our map zones and send it back
 	var/turf/T = get_turf(src)
-	var/datum/map_zone/mapzone = T.get_map_zone()
-	if(can_send(signal) && mapzone)
-		signal.map_zones |= mapzone
+	var/datum/virtual_level/virtual_z = T.get_virtual_level()
+	if(can_send(signal) && virtual_z)
+		signal.virt_zs |= virtual_z
 
 // Checks to see if it can send/receive.
 

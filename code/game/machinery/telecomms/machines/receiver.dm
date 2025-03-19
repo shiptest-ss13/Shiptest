@@ -10,6 +10,7 @@
 	name = "subspace receiver"
 	icon_state = "broadcast receiver"
 	desc = "This machine has a dish-like shape and green lights. It is designed to detect and process subspace radio activity."
+	telecomms_type = /obj/machinery/telecomms/receiver
 	density = TRUE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
@@ -21,7 +22,7 @@
 	if(!is_freq_listening(signal))
 		return
 
-	signal.map_zones = list()
+	signal.virt_zs = list()
 
 	// send the signal to the hub if possible, or a bus otherwise
 	if(!relay_information(signal, /obj/machinery/telecomms/hub))
@@ -29,13 +30,13 @@
 
 /obj/machinery/telecomms/receiver/proc/check_receive_level(datum/signal/subspace/signal)
 	var/datum/map_zone/mapzone = get_map_zone()
-	if (mapzone in signal.map_zones)
+	if (mapzone in signal.virt_zs)
 		return TRUE
 
 	for(var/obj/machinery/telecomms/hub/H in links)
 		for(var/obj/machinery/telecomms/relay/R in H.links)
 			var/datum/map_zone/relay_mapzone = R.get_map_zone()
-			if(R.can_receive(signal) && (relay_mapzone in signal.map_zones))
+			if(R.can_receive(signal) && (relay_mapzone in signal.virt_zs))
 				return TRUE
 
 	return FALSE

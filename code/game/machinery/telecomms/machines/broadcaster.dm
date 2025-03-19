@@ -12,6 +12,7 @@ GLOBAL_VAR_INIT(message_delay, 0) // To make sure restarting the recentmessages 
 	name = "subspace broadcaster"
 	icon_state = "broadcaster"
 	desc = "A dish-shaped machine used to broadcast processed subspace signals."
+	telecomms_type = /obj/machinery/telecomms/broadcaster
 	density = TRUE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
@@ -33,9 +34,9 @@ GLOBAL_VAR_INIT(message_delay, 0) // To make sure restarting the recentmessages 
 		original.data["compression"] = signal.data["compression"]
 
 	var/turf/T = get_turf(src)
-	var/datum/map_zone/mapzone = T.get_map_zone()
-	if (mapzone)
-		signal.map_zones |= mapzone
+	var/datum/virtual_level/virtual_level = T.get_virtual_level()
+	if (virtual_level)
+		signal.virt_zs |= virtual_level
 
 	var/signal_message = "[signal.frequency]:[signal.data["message"]]:[signal.data["name"]]"
 	if(signal_message in GLOB.recentmessages)
