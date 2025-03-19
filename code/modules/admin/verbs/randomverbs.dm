@@ -902,7 +902,7 @@
 
 /client/proc/spawn_overmap()
 	set name = "Spawn Overmap"
-	set category = "Fun"
+	set category = "Event.Spawning"
 	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
 		return
 
@@ -920,6 +920,12 @@
 			QDEL_NULL(nova)
 			return
 		nova.size = inputed
+
+		inputed = input(usr, "Choose Maximum amount of Dynamic Events", "Spawn Overmap", nova.max_overmap_dynamic_events) as num
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		nova.max_overmap_dynamic_events = inputed
 
 		inputed = tgui_input_list(usr, "Choose Map Generator", "Spawn Overmap", list(OVERMAP_GENERATOR_SOLAR, OVERMAP_GENERATOR_RANDOM, OVERMAP_GENERATOR_NONE))
 		if(!inputed)
@@ -943,9 +949,9 @@
 			return
 		switch(inputed)
 			if("Yes")
-				nova.has_outpost = TRUE
+				nova.can_jump_to = TRUE
 			if("No")
-				nova.has_outpost = FALSE
+				nova.can_jump_to = FALSE
 
 	if(tgui_alert(usr, "Edit Overmap Colors?", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
 		if(!nova)
