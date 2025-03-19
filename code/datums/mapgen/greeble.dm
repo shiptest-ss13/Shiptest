@@ -17,7 +17,7 @@
 	icon_state = "x"
 	var/datum/map_template/greeble/template = /datum/map_template/greeble/moon/crater1
 	/// Amount of time before the mapgen gives up on loading this greeble
-	var/timeout = 10 SECONDS
+	var/timeout = 8 SECONDS
 
 /obj/effect/greeble_spawner/Destroy()
 	template = null // without this, capsules would be one use. per round.
