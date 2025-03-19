@@ -3,7 +3,6 @@
 
 	head = /obj/item/clothing/head/helmet/space/plasmaman
 	uniform = /obj/item/clothing/under/plasmaman
-	r_hand= /obj/item/tank/internals/plasmaman/belt/full
 	mask = /obj/item/clothing/mask/breath
 	gloves = /obj/item/clothing/gloves/color/plasmaman
 	r_pocket = /obj/item/tank/internals/plasmaman/belt/full
@@ -71,7 +70,6 @@
 
 	head = /obj/item/clothing/head/helmet/space/plasmaman/white
 	uniform = /obj/item/clothing/under/plasmaman/enviroslacks
-	ears = /obj/item/radio/headset/headset_sec
 	gloves = /obj/item/clothing/gloves/color/plasmaman/white
 
 /datum/outfit/plasmaman/warden
@@ -86,7 +84,6 @@
 
 	head = /obj/item/clothing/head/helmet/space/plasmaman/prisoner
 	uniform = /obj/item/clothing/under/plasmaman/prisoner
-	shoes = /obj/item/clothing/shoes/sneakers/black
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 
 /datum/outfit/plasmaman/cargo

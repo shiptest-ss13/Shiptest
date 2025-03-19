@@ -208,7 +208,7 @@
 	var/phorid_outfit = /datum/outfit/plasmaman
 
 	var/alt_uniform
-	var/skirt_uniform = /obj/item/clothing/under/color/jumpskirt/grey
+	var/skirt_uniform
 
 	var/alt_suit = null
 	var/dcoat = /obj/item/clothing/suit/hooded/wintercoat
@@ -239,8 +239,8 @@
 	var/holder
 	switch(H.jumpsuit_style)
 		if(PREF_SKIRT)
-		if(skirt_uniform)
-			holder = "[skirt_uniform]"
+			if(skirt_uniform)
+				holder = "[skirt_uniform]"
 		if(PREF_ALTSUIT)
 			if(alt_uniform)
 				holder = "[alt_uniform]"
