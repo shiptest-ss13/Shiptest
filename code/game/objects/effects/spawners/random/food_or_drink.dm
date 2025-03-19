@@ -282,3 +282,8 @@
 		/obj/item/seeds/berry/glow,
 		/obj/item/seeds/sunflower/moonflower
 	)
+
+/obj/effect/spawner/random/food_or_drink/soda_can
+	name = "soda can spawner"
+	icon_state = "can"
+	loot_type_path = /obj/item/reagent_containers/food/drinks/soda_cans

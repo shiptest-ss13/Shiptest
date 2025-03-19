@@ -48,12 +48,14 @@
 
 /datum/overmap/star/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	var/name = gen_star_name()
+	SSpoints_of_interest.make_point_of_interest(token)
 	Rename(name)
 	alter_token_appearance()
 	START_PROCESSING(SSprocessing, src)
 
 /datum/overmap/star/Destroy(force, ...)
 	. = ..()
+	SSpoints_of_interest.make_point_of_interest(token)
 	STOP_PROCESSING(SSprocessing, src)
 
 /datum/overmap/star/process()

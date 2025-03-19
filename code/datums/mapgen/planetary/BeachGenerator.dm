@@ -107,7 +107,7 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/butterfly = 1,
 		/mob/living/simple_animal/chicken/rabbit/normal = 1,
-		/mob/living/simple_animal/mouse = 1,
+		/mob/living/basic/mouse = 1,
 		/mob/living/simple_animal/cow = 1,
 		/mob/living/simple_animal/deer = 1
 	)
