@@ -21,6 +21,8 @@ have ways of interacting with a specific mob and control it.
 		BB_MONKEY_GUN_WORKED = TRUE,
 		BB_MONKEY_NEXT_HUNGRY = 0
 	)
+	idle_behavior = /datum/idle_behavior/idle_monkey
+
 /datum/ai_controller/monkey/angry
 
 /datum/ai_controller/monkey/angry/TryPossessPawn(atom/new_pawn)
@@ -155,7 +157,7 @@ have ways of interacting with a specific mob and control it.
 				continue
 			living_pawn.dropItemToGround(held)
 
-		AddBehavior(/datum/ai_behavior/consume, pick(food_candidates))
+		queue_behavior(/datum/ai_behavior/consume, pick(food_candidates))
 		return TRUE
 
 /datum/ai_controller/monkey/proc/IsEdible(obj/item/thing)
@@ -166,17 +168,6 @@ have ways of interacting with a specific mob and control it.
 		if(glass.reagents.total_volume) // The glass has something in it, time to drink the mystery liquid!
 			return TRUE
 	return FALSE
-
-//When idle just kinda fuck around.
-/datum/ai_controller/monkey/PerformIdleBehavior(delta_time)
-	var/mob/living/living_pawn = pawn
-
-	if(DT_PROB(25, delta_time) && (living_pawn.mobility_flags & MOBILITY_MOVE) && isturf(living_pawn.loc) && !living_pawn.pulledby)
-		step(living_pawn, pick(GLOB.cardinals))
-	else if(DT_PROB(5, delta_time))
-		INVOKE_ASYNC(living_pawn, TYPE_PROC_REF(/mob, emote), pick("screech"))
-	else if(DT_PROB(1, delta_time))
-		INVOKE_ASYNC(living_pawn, TYPE_PROC_REF(/mob, emote), pick("scratch","jump","roll","tail"))
 
 ///Reactive events to being hit
 /datum/ai_controller/monkey/proc/retaliate(mob/living/L)

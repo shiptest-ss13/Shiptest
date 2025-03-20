@@ -103,7 +103,6 @@
 	dir = 6
 	},
 /obj/structure/destructible/tribal_torch/lit{
-	pixel_y = 0;
 	pixel_x = 10
 	},
 /turf/open/floor/wood/ebony,
@@ -122,7 +121,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
-	pixel_y = 0;
 	pixel_x = 30
 	},
 /obj/item/reagent_containers/food/drinks/bottle/absinthe{
@@ -1712,8 +1710,7 @@
 "wU" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
 	retreat_distance = null;
-	minimum_distance = 1;
-	shoot_point_blank = 1
+	minimum_distance = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -1732,7 +1729,6 @@
 	pixel_x = 5
 	},
 /obj/item/storage/box/ammo/c38{
-	pixel_y = 0;
 	pixel_x = -11
 	},
 /obj/item/storage/box/ammo/c38{
@@ -2360,7 +2356,6 @@
 	pixel_x = 4
 	},
 /obj/item/candle/infinite{
-	pixel_y = 0;
 	pixel_x = 10
 	},
 /obj/item/candle/infinite{
@@ -2930,8 +2925,7 @@
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
 	retreat_distance = null;
-	minimum_distance = 1;
-	shoot_point_blank = 1
+	minimum_distance = 1
 	},
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken4"
@@ -3413,6 +3407,9 @@
 	range_light = 5
 	},
 /obj/effect/mob_spawn/human/corpse/srm/montagne,
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1
+	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Yo" = (
@@ -3431,7 +3428,6 @@
 	pixel_x = 1
 	},
 /obj/item/toy/cards/deck{
-	pixel_y = 0;
 	pixel_x = -4
 	},
 /obj/item/storage/pill_bottle/dice{

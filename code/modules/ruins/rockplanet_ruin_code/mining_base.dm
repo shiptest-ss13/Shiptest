@@ -1,8 +1,5 @@
 /obj/machinery/porta_turret/ship/nt/light/mining_base
-	req_ship_access = FALSE
-	turret_respects_id = FALSE
 	lethal = TRUE
-	turret_flags = TURRET_FLAG_SHOOT_FAUNA
 
 /obj/machinery/porta_turret/ship/nt/light/mining_base/Initialize()
 	. = ..()

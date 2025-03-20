@@ -1,6 +1,6 @@
 /client/proc/overmap_datum_token_manager()
 	set name = "Overmap Datum Token Manager"
-	set category = "Admin.Game"
+	set category = "Event.Overmap"
 	set desc = "Manage the tokens of the overmap datum."
 
 	var/static/datum/overmap_datum_token_manager/manager

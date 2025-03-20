@@ -9,15 +9,17 @@
 	volume = 10
 	possible_transfer_amounts = list(1,2,5,10)
 	obj_flags = UNIQUE_RENAME
-	unique_reskin = list("hypovial" = "hypovial",
-						"red hypovial" = "hypovial-b",
-						"blue hypovial" = "hypovial-d",
-						"green hypovial" = "hypovial-a",
-						"orange hypovial" = "hypovial-k",
-						"purple hypovial" = "hypovial-p",
-						"black hypovial" = "hypovial-t",
-						"pink hypovial" = "hypovial-pink"
-						)
+	unique_reskin = list(
+		"hypovial" = "hypovial",
+		"red hypovial" = "hypovial-b",
+		"blue hypovial" = "hypovial-d",
+		"green hypovial" = "hypovial-a",
+		"orange hypovial" = "hypovial-k",
+		"purple hypovial" = "hypovial-p",
+		"black hypovial" = "hypovial-t",
+		"pink hypovial" = "hypovial-pink"
+	)
+	unique_reskin_changes_name = TRUE
 	can_have_cap = FALSE
 	cap_icon_state = null
 	cap_on = FALSE
@@ -78,14 +80,16 @@
 	icon_state = "hypoviallarge"
 	volume = 120
 	possible_transfer_amounts = list(5,10,15,20)
-	unique_reskin = list("large hypovial" = "hypoviallarge",
-						"large red hypovial" = "hypoviallarge-b",
-						"large blue hypovial" = "hypoviallarge-d",
-						"large green hypovial" = "hypoviallarge-a",
-						"large orange hypovial" = "hypoviallarge-k",
-						"large purple hypovial" = "hypoviallarge-p",
-						"large black hypovial" = "hypoviallarge-t"
-						)
+	unique_reskin = list(
+		"large hypovial" = "hypoviallarge",
+		"large red hypovial" = "hypoviallarge-b",
+		"large blue hypovial" = "hypoviallarge-d",
+		"large green hypovial" = "hypoviallarge-a",
+		"large orange hypovial" = "hypoviallarge-k",
+		"large purple hypovial" = "hypoviallarge-p",
+		"large black hypovial" = "hypoviallarge-t"
+	)
+	unique_reskin_changes_name = TRUE
 
 /obj/item/reagent_containers/glass/bottle/vial/large/update_appearance()
 	cut_overlays()
