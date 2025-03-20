@@ -268,7 +268,7 @@
 
 			<h2> Trick Ammo </h2>
 			Among certain sects of Hunters, the practice of Trick Ammo has arisen. A union between the artful alchemy of Trickwines and the master craftmanship of the Hunters Pride, the Trick Ammo is created through the infusion of Trickwine into .38 casings. <br>
-			Dip the casings into the brew, and allow the mixture to to fully permeate it's being. A potent weapon, these casings carry a fragment of the offensive power harnessed by the Trickwine.
+			Dip the casings into the brew, and allow the mixture to to fully permeate its being. A potent weapon, these casings carry a fragment of the offensive power harnessed by the Trickwine.
 
 			<h2> The Bacteria Of Illestren </h2>
 			The world of Illestren gave birth to a bacterium that has formed the backbone of alchemical experimentation for countless years. It has given birth to countless fermentation methods, including the cycle of brewing a Trickwine.<br>
