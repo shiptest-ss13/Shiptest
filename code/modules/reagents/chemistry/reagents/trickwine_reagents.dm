@@ -123,7 +123,7 @@
 				var/obj/item/ammo_box/magazine/ammo_stack/prefilled/new_stack
 				new_stack = new(user.loc, dip_stack.ammo_count(FALSE), dip_ammo_type)
 				user.put_in_hands(new_stack)
-				to_chat(user,span_notice("You dip \the [I] into the trickwine, suffusing it with it's effects."))
+				to_chat(user,span_notice("You dip \the [I] into the trickwine, suffusing it with the wine's effects."))
 				H.reagents.remove_reagent(src.type, trickwine_used)
 				qdel(I)
 				return TRUE
