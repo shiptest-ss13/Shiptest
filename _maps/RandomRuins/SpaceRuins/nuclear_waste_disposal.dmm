@@ -210,8 +210,7 @@
 /area/ruin/space/has_grav/powered/nuclearwaste/recreation)
 "bO" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive/stack,
-/obj/structure/hazard/slowdown/nuclear_sludge,
+/obj/structure/hazard/radioactive/supermatter,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "bR" = (
@@ -374,7 +373,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/south_hall)
 "cK" = (
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
 "cM" = (
@@ -730,12 +728,6 @@
 /obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
-"fC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive,
-/obj/structure/hazard/radioactive/active_radioactive_source,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "fD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/techfloor{
@@ -938,7 +930,8 @@
 	id = "IBDN";
 	dir = 8;
 	pixel_x = 22;
-	pixel_y = 0
+	pixel_y = 0;
+	name = "Internal Radioactive Blast Doors"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_outer)
@@ -1246,7 +1239,6 @@
 	icon_state = "bodycamera-on";
 	network = list("NKRW")
 	},
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /obj/structure/hazard/slowdown/nuclear_sludge,
 /obj/item/geiger_counter{
 	pixel_x = 5;
@@ -1407,7 +1399,6 @@
 	pixel_x = -8;
 	pixel_y = -7
 	},
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
 "jH" = (
@@ -1760,7 +1751,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
 "mY" = (
@@ -1820,7 +1810,7 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 1;
-	id = "IBDN"
+	id = "IBDS"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
@@ -1927,6 +1917,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	id = "IBDS";
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 0;
+	name = "Internal Radioactive Blast Doors"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_outer)
 "nW" = (
@@ -1997,7 +1994,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/greenglow/filled,
 /obj/machinery/power/rad_collector,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_2)
 "ow" = (
@@ -2179,7 +2175,6 @@
 /area/ruin/space/has_grav/powered/nuclearwaste/this_is_not_a_place_of_honor)
 "pH" = (
 /obj/structure/hazard/radioactive/stack,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "pI" = (
@@ -2225,12 +2220,6 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/powered/nuclearwaste/recreation)
-"qf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive/waste,
-/obj/structure/hazard/radioactive/active_radioactive_source,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "qu" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -2294,7 +2283,6 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/south,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
 "re" = (
@@ -2393,8 +2381,8 @@
 	dir = 4
 	},
 /obj/machinery/light/floor,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /obj/structure/hazard/slowdown/nuclear_sludge,
+/obj/structure/hazard/radioactive/supermatter/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "rY" = (
@@ -2665,7 +2653,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/hazard/slowdown/nuclear_sludge,
 /obj/machinery/nuclearbomb/syndicate,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
 "tV" = (
@@ -2703,7 +2690,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
 "ud" = (
@@ -2914,7 +2900,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "vZ" = (
@@ -2997,7 +2982,6 @@
 /area/ruin/space/has_grav/powered/nuclearwaste/recreation)
 "wM" = (
 /obj/machinery/power/rad_collector,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_2)
 "wU" = (
@@ -3465,7 +3449,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
@@ -3606,7 +3589,7 @@
 	pixel_x = 0;
 	pixel_y = 8;
 	name = "broken long-wave television reciver";
-	desc = "The screen displays a constant /"MISSINGSIGNAL"/ on the screen, with soft static buzzing off of it. It is caked with dust and is stained with some kind of sause."
+	desc = "The screen displays a constant /"MISSINGSIGNAL"/ on the screen, with soft static buzzing off of it. It is caked with dust and is stained with some kind of sauce."
 	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/space/has_grav/powered/nuclearwaste/recreation)
@@ -3634,7 +3617,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/north,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "Bp" = (
@@ -3726,7 +3708,6 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "Ck" = (
@@ -3801,7 +3782,6 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/north,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
@@ -3815,7 +3795,7 @@
 	},
 /obj/machinery/light/floor,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
-/obj/structure/hazard/radioactive/active_radioactive_source,
+/obj/structure/hazard/radioactive/supermatter/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
 "DF" = (
@@ -3995,7 +3975,7 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 1;
-	id = "IBDN"
+	id = "IBDS"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
@@ -4103,7 +4083,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "FC" = (
@@ -4122,7 +4101,6 @@
 /obj/effect/turf_decal/industrial/warning/cee{
 	dir = 4
 	},
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
 "FK" = (
@@ -4242,7 +4220,6 @@
 	deconstruction_state = NUKESTATE_CORE;
 	interior = "core-removed"
 	},
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
 "GR" = (
@@ -4359,7 +4336,6 @@
 	deconstruction_state = NUKESTATE_CORE;
 	interior = "core-removed"
 	},
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
 "HM" = (
@@ -4574,7 +4550,11 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive/active_radioactive_source,
+/obj/item/geiger_counter{
+	pixel_x = 5;
+	pixel_y = 8;
+	scanning = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "JW" = (
@@ -4593,7 +4573,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
 "Kf" = (
@@ -4698,7 +4677,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_2)
 "KF" = (
@@ -4764,7 +4742,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
 "La" = (
@@ -4926,7 +4903,6 @@
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "Mj" = (
 /obj/structure/hazard/radioactive/waste,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "Mo" = (
@@ -5106,7 +5082,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
 "NG" = (
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
@@ -5607,7 +5582,6 @@
 "QU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
@@ -5810,13 +5784,8 @@
 "SR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/hazard/radioactive/stack,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
-"SS" = (
-/obj/structure/hazard/radioactive/active_radioactive_source,
-/turf/open/space/basic,
-/area/space)
 "SV" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -5925,7 +5894,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_2)
 "TU" = (
@@ -6036,7 +6004,6 @@
 "Uw" = (
 /obj/effect/decal/cleanable/greenglow/filled,
 /obj/structure/hazard/radioactive/stack,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "Ux" = (
@@ -6222,7 +6189,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/door_seal,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_north_inner)
 "VB" = (
@@ -6246,7 +6212,6 @@
 	pixel_y = 8;
 	scanning = 1
 	},
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
@@ -6491,15 +6456,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
-"XY" = (
-/obj/effect/turf_decal/radiation,
-/obj/structure/hazard/radioactive/active_radioactive_source,
-/turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
 "Yc" = (
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -6548,7 +6507,9 @@
 "Yz" = (
 /obj/structure/table,
 /obj/structure/reagent_dispensers/servingdish{
-	reagent_id = /datum/reagent/toxin/bad_food
+	reagent_id = /datum/reagent/toxin/bad_food;
+	desc = "A dish full of food slop for your bowl. It's thick, chunky and smells weird.";
+	name = "old serving dish"
 	},
 /obj/effect/turf_decal/borderfloorwhite,
 /turf/open/floor/plasteel/white,
@@ -6565,7 +6526,6 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/north,
-/obj/structure/hazard/radioactive/active_radioactive_source,
 /obj/structure/hazard/slowdown/nuclear_sludge,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
@@ -8989,7 +8949,7 @@ Kq
 bM
 mp
 Ux
-SS
+Ux
 Ux
 Ux
 Ux
@@ -9205,10 +9165,10 @@ Ux
 ZV
 Ux
 Ux
-SS
 Ux
 Ux
-SS
+Ux
+Ux
 Ux
 HM
 xN
@@ -9280,7 +9240,7 @@ Jb
 ai
 So
 cK
-XY
+oJ
 HK
 ai
 jg
@@ -9361,7 +9321,7 @@ WX
 hQ
 mp
 Ux
-SS
+Ux
 TE
 TE
 TE
@@ -9394,7 +9354,7 @@ Ux
 Rg
 Ux
 Ux
-SS
+Ux
 Ux
 HM
 xN
@@ -9580,7 +9540,7 @@ Ux
 Ux
 Ux
 Ux
-SS
+Ux
 Ux
 HM
 Ql
@@ -9609,7 +9569,7 @@ nU
 cX
 Pv
 Ux
-SS
+Ux
 TE
 TE
 TE
@@ -9766,10 +9726,10 @@ TE
 Ux
 Ux
 Ux
-SS
 Ux
 Ux
-SS
+Ux
+Ux
 Ux
 NW
 Ma
@@ -9792,10 +9752,10 @@ KF
 Wj
 nR
 Ux
-SS
+Ux
 Ux
 Rg
-SS
+Ux
 TE
 TE
 TE
@@ -9972,7 +9932,7 @@ VY
 Vr
 Oa
 wk
-fC
+Ei
 Mf
 VY
 Wj
@@ -10033,7 +9993,7 @@ Wj
 KF
 Mj
 kM
-qf
+kM
 kM
 yF
 KF
@@ -10141,7 +10101,7 @@ TE
 TE
 TE
 TE
-SS
+Ux
 Ux
 NW
 Ma
@@ -10226,7 +10186,7 @@ eU
 eU
 eU
 Ux
-SS
+Ux
 TE
 TE
 TE
