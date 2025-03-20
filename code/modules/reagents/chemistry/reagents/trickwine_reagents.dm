@@ -107,7 +107,7 @@
 		if(volume > dip_consumption)
 			var/obj/item/ammo_casing/c38/new_ammo = new dip_ammo_type(user.loc)
 			user.put_in_hands(new_ammo)
-			to_chat(user,span_notice("You dip \the [I] into the trickwine, suffusing it with it's effects."))
+			to_chat(user,span_notice("You dip \the [I] into the trickwine, suffusing it with the wine's effects."))
 			H.reagents.remove_reagent(src.type, dip_consumption)
 			qdel(I)
 			return TRUE
