@@ -246,5 +246,5 @@
 	. = ..()
 	if(status && world.time > detect_time + 20 SECONDS)
 		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
-			TV.notify(TRUE, "[c_tag] is now live on IntraNet!")
+			TV.notify(TRUE, "[c_tag] is now live on [network]!")
 			detect_time = world.time
