@@ -35,6 +35,6 @@
 		return
 	fixable.cut_overlay(GLOB.cleaning_bubbles)
 	fixable.wash(CLEAN_SCRUB)
-	fixable.gun_wear = clamp(fixable.gun_wear - wear_reduction, 0, fixable.wear_maximum)
+	fixable.adjust_wear(-wear_reduction)
 	user.visible_message(span_notice("[user] finishes cleaning [fixable]!"), span_notice("You finish cleaning [fixable], [fixable.gun_wear < wear_reduction ? "and it's in pretty good condition" : "though it would benefit from another cycle"]."))
 	uses--

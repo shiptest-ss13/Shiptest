@@ -27,6 +27,8 @@
 	var/gun_wear = 0
 	/// How much gun_wear is generated when we shoot. Increased when using surplus rounds
 	var/wear_rate = 1 // 60 to malfunction, 180 to critical
+	/// Multiplier for wear reduction
+	var/clean_rate
 	/// Number of times we have successfully fired since the last time the the gun has jammed. Low but not abysmal condition will only jam so often.
 	var/last_jam = 0
 	/// Gun will start to jam at this level of wear
@@ -428,6 +430,12 @@
 /obj/item/gun/ballistic/unsafe_shot(target, empty_chamber = TRUE)
 	. = ..()
 	process_chamber(empty_chamber,TRUE)
+
+/obj/item/gun/ballistic/proc/adjust_wear(amt)
+	if(amt > 0)
+		gun_wear = round(clamp(gun_wear + wear_rate * amt, 0, wear_maximum), 0.01)
+	else
+		gun_wear = round(clamp(gun_wear + clean_rate * amt, 0, wear_maximum), 0.01)
 
 /// Remember: you can always trust a loaded gun to go off at least once.
 /obj/item/gun/ballistic/proc/accidents_happen(mob/darwin)

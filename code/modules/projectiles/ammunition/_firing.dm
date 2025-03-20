@@ -22,7 +22,7 @@
 		user.newtonian_move(get_dir(target, user))
 	var/obj/item/gun/ballistic/foulmouth = fired_from
 	if(istype(foulmouth))
-		foulmouth.gun_wear = round(clamp(foulmouth.gun_wear + foulmouth.wear_rate * wear_modifier, 0, foulmouth.wear_maximum), 0.01)
+		foulmouth.adjust_wear(wear_modifier)
 	update_appearance()
 	return TRUE
 
