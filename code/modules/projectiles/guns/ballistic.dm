@@ -28,7 +28,7 @@
 	/// How much gun_wear is generated when we shoot. Increased when using surplus rounds
 	var/wear_rate = 1 // 60 to malfunction, 180 to critical
 	/// Multiplier for wear reduction
-	var/clean_rate
+	var/clean_rate = 1
 	/// Number of times we have successfully fired since the last time the the gun has jammed. Low but not abysmal condition will only jam so often.
 	var/last_jam = 0
 	/// Gun will start to jam at this level of wear
