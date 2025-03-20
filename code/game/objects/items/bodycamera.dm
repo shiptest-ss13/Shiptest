@@ -167,7 +167,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	view_range = 5
 	can_transmit_across_z_levels = TRUE
-	network = list("thunder")
+	network = list("IntraNet")
 	var/obj/item/radio/broadcast/radio
 	var/mob/listeningTo
 	actions_types = list(/datum/action/item_action/toggle_radio)

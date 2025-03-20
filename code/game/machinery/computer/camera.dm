@@ -380,7 +380,7 @@
 	desc = "A screen displaying various entertainment channels. I hope they have that new Gezenan sitcom on this."
 	icon = 'icons/obj/status_display.dmi'
 	icon_state = "entertainment_blank"
-	network = list("thunder")
+	network = list("IntraNet")
 	density = FALSE
 	circuit = null
 	interaction_flags_atom = NONE  // interact() is called by BigClick()
