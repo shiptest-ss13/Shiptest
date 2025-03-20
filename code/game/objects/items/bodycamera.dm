@@ -247,4 +247,4 @@
 	if(status && COOLDOWN_FINISHED(src, broadcast_announcement))
 		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
 			TV.notify(TRUE, "[c_tag] is now live on [network]!")
-			COOLDOWN_START(src, broadcast_announcement, 20 seconds)
+			COOLDOWN_START(src, broadcast_announcement, 20 SECONDS)
