@@ -171,7 +171,7 @@
 	var/obj/item/radio/broadcast/radio
 	var/mob/listeningTo
 	actions_types = list(/datum/action/item_action/toggle_radio)
-	var/detect_time = -1
+	COOLDOWN_DECLARE(broadcast_announcement)
 
 /obj/item/bodycamera/broadcast_camera/Initialize()
 	. = ..()
@@ -244,7 +244,7 @@
 
 /obj/item/bodycamera/broadcast_camera/AltClick(mob/user)
 	. = ..()
-	if(status && world.time > detect_time + 20 SECONDS)
+	if(status && COOLDOWN_FINISHED(src, broadcast_announcement))
 		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
 			TV.notify(TRUE, "[c_tag] is now live on [network]!")
-			detect_time = world.time
+			COOLDOWN_START(src, broadcast_announcement, 20 seconds)
