@@ -397,13 +397,9 @@
 
 	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom, interact), usr)
 
-/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on)
+/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on, string="helloooo please tell coders if you see me")
 	if(on && icon_state == icon_state_off)
-		say(pick(
-			"Feats of bravery live now at the thunderdome!",
-			"Two enter, one leaves! Tune in now!",
-			"Violence like you've never seen it before!",
-			"Spears! Camera! Action! LIVE NOW!"))
+		say(string)
 		icon_state = icon_state_on
 	else
 		icon_state = icon_state_off

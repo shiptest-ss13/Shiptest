@@ -171,6 +171,7 @@
 	var/obj/item/radio/broadcast/radio
 	var/mob/listeningTo
 	actions_types = list(/datum/action/item_action/toggle_radio)
+	var/detect_time = -1
 
 /obj/item/bodycamera/broadcast_camera/Initialize()
 	. = ..()
@@ -181,6 +182,7 @@
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	RegisterSignal(radio, COMSIG_RADIO_NEW_FREQUENCY, PROC_REF(adjust_name))
 	c_tag = "Broadcast Camera - Unlabeled"
+
 
 /obj/item/bodycamera/broadcast_camera/Destroy()
 	listeningTo = null
@@ -239,3 +241,10 @@
 	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src], reducing it's view."))
 	item_state = "broadcast"
 	view_range = 3
+
+/obj/item/bodycamera/broadcast_camera/AltClick(mob/user)
+	. = ..()
+	if(status && world.time > detect_time + 20 SECONDS)
+		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
+			TV.notify(TRUE, "[c_tag] is now live on IntraNet!")
+			detect_time = world.time
