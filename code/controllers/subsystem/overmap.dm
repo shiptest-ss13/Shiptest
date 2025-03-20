@@ -349,6 +349,13 @@ SUBSYSTEM_DEF(overmap)
 	overmap_vlevel.reserve_margin(MAP_EDGE_PAD)
 	overmap_vlevel.fill_in(/turf/open/overmap, /area/overmap)
 	overmap_vlevel.selfloop()
+	var/area/our_area = get_area(OVERMAP_TOKEN_TURF(1, 1, src))
+
+	our_area.rename_area ("[our_area.name] ([name])")
+	//before you ask, no, for some reason it doesnt add itself automatically
+	if(!(our_area in GLOB.sortedAreas))
+		GLOB.sortedAreas.Add(our_area)
+		sortTim(GLOB.sortedAreas, /proc/cmp_name_asc)
 
 	if (!generator_type) //TODO: maybe datumize these?
 		generator_type = OVERMAP_GENERATOR_RANDOM

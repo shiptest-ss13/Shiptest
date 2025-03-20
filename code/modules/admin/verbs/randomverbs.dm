@@ -1005,6 +1005,38 @@
 		return
 	message_admins(span_big("Overmap [nova.name] successfully generated!"))
 
+/client/proc/spawn_jump_point()
+	set name = "Spawn Overmap Jump Point"
+	set category = "Event.Spawning"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	var/datum/overmap_star_system/selected_system //the star system we are in
+	var/datum/overmap_star_system/selected_system_2 //the star system we are in
+	var/text_directions = list("NORTH", "NORTHEAST", "EAST", "SOUTHEAST", "SOUTH", "SOUTHWEST", "WEST", "NORTHWEST")
+	var/selected_dir
+	if(length(SSovermap.tracked_star_systems) > 1)
+		selected_system = tgui_input_list(usr, "Which star system should point A be in?", "Creating Jump Point", SSovermap.tracked_star_systems)
+	else
+		to_chat(usr, span_danger("There is only one overmap!"), confidential = TRUE)
+		return // if there's only one star system, ignore
+	if(!selected_system)
+		return //if selected_system didnt get selected, we nope out
+
+	selected_system_2 = tgui_input_list(usr, "Which star system should point B be in?", "Creating Jump Point", SSovermap.tracked_star_systems)
+	if(!selected_system_2)
+		return //if selected_system_2 didnt get selected, we nope out
+
+	selected_dir = tgui_input_list(usr, "Which direction should the jump point be (relative to point A)", "Creating Jump Point", text_directions)
+	if(!selected_dir)
+		return
+
+	var/datum/overmap/jump_point/point =selected_system.create_jump_point_link(selected_system_2, text2dir(selected_dir))
+	if(!point)
+		message_admins("Failed to generate jump point!")
+
+	message_admins(span_big("Click here to jump to the overmap Jump point: " + ADMIN_JMP(point.token)))
+
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"
 	set category = "Event.Fun"

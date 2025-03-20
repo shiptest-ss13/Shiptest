@@ -29,6 +29,9 @@
 	alter_token_appearance()
 	destination.alter_token_appearance()
 
+/datum/overmap/jump_point/get_jump_to_turf()
+	return get_turf(destination.token)
+
 /datum/overmap/jump_point/alter_token_appearance()
 	..()
 	if(current_overmap.override_object_colors)

@@ -1,4 +1,3 @@
-//if you read thos for whwatever reason, remind me after april 1st in the US to PR this proper as i actually need this for eventing outside of shitposting purposes
 /datum/buildmode_mode/modify_overmap
 	key = "modifyovermap"
 	var/datum/datum_holder = null
