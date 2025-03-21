@@ -151,11 +151,10 @@
 
 /datum/supply_pack/tools/jaws_of_life
 	name = "Jaws of Life"
-	desc = "Contains a single 'Jaws of Life', rescue equipment that doubles as both prying and cutting."
+	desc = "Contains a single 'Jaws of Life', rescue equipment that doubles for both prying and cutting tools."
 	cost = 850
 	contains = list(/obj/item/crowbar/power)
 	crate_name = "jaws of life crate"
-
 
 /datum/supply_pack/tools/plasmacutter
 	name = "Plasmacutter Crate"
