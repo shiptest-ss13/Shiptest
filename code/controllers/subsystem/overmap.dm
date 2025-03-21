@@ -549,16 +549,6 @@ SUBSYSTEM_DEF(overmap)
 				COOLDOWN_START(src, dynamic_despawn_cooldown, 1 MINUTES)
 
 /**
- * Creates an overmap object for each ruin level, making them accessible.
- */
-/datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		spawn_ruin_level()
-
-/datum/controller/subsystem/overmap/proc/spawn_ruin_level()
-	new /datum/overmap/dynamic()
-
-/**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
  * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
  * * ruin_type - The type of ruin to spawn, or null if none should be placed.

@@ -172,11 +172,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 10,
 		)
 
-/* TODO: populate all planet veins with class 4s
+// TODO: populate all planet veins with class 4s
 /obj/structure/vein/classfour
 	mining_charges = 30
 	vein_class = 4
-*/
+//
 // Ice planets
 
 /obj/structure/vein/ice
