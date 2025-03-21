@@ -132,6 +132,9 @@
 
 // Shamelessly cribbed from how Elite: Dangerous does station names.
 /datum/overmap/outpost/proc/gen_outpost_name()
+	return "[random_species_name()] [pick(GLOB.station_suffixes)]"
+
+/proc/random_species_name()
 	var/person_name
 	if(prob(40))
 		// fun fact: "Hutton" is in last_names
@@ -146,14 +149,13 @@
 				person_name = kepori_name()
 			if(4)
 				person_name = vox_name()
-
-	return "[person_name] [pick(GLOB.station_suffixes)]"
+	return person_name
 
 /datum/overmap/outpost/proc/fill_missions()
 	max_missions = 10 + (SSovermap.controlled_ships.len * 5)
 	while(LAZYLEN(missions) < max_missions)
-		var/mission_type = get_weighted_mission_type()
-		var/datum/mission/M = new mission_type(src)
+		var/mission_type = SSmissions.get_weighted_mission_type()
+		var/datum/mission/outpost/M = new mission_type(src)
 		LAZYADD(missions, M)
 
 /datum/overmap/outpost/proc/populate_cargo()
@@ -203,6 +205,8 @@
 
 	if(!shaft_lists.len)
 		stack_trace("No elevator shafts found while loading [main_template]! The map will be inaccessible!")
+
+	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
 
 	// now we get the machine landmarks (button, doors) and add them to the shaft list
 	for(var/obj/effect/landmark/outpost/elevator_machine/mach_mark in GLOB.outpost_landmarks)

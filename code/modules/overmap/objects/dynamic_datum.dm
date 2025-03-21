@@ -28,6 +28,12 @@
 	var/force_encounter
 	///Ruin types to generate
 	var/ruin_type
+	///Preditermined ruin made when the overmap is first created
+	var/selected_ruin
+	///Fetched before anything is loaded from the ruin datum
+	var/dynamic_missions = list()
+	///The list of mission pois once the planet has acctually loaded the ruin
+	var/list/obj/effect/landmark/mission_poi/spawned_mission_pois
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
 	/// list of ruin templates currently spawned on the planet.
@@ -58,8 +64,8 @@
 
 /datum/overmap/dynamic/Initialize(position, datum/overmap_star_system/system_spawned_in, load_now=TRUE, ...)
 	. = ..()
-	SSovermap.dynamic_datums += src
-	current_overmap.dynamic_datums += src
+	SSovermap.dynamic_encounters += src
+	current_overmap.dynamic_encounters += src
 
 	vlevel_height = CONFIG_GET(number/overmap_encounter_size)
 	vlevel_width = CONFIG_GET(number/overmap_encounter_size)
@@ -71,8 +77,8 @@
 		reserve_docks -= dock
 		qdel(dock)
 	ruin_turfs = null
-	SSovermap.dynamic_datums -= src
-	current_overmap.dynamic_datums -= src
+	SSovermap.dynamic_encounters -= src
+	current_overmap.dynamic_encounters -= src
 	. = ..()
 	//This NEEDS to be last so any docked ships get deleted properly
 	if(mapzone)
@@ -116,15 +122,22 @@
 
 
 /datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
+	start_countdown()
+
+/datum/overmap/dynamic/proc/start_countdown(_lifespan = 60 SECONDS, _color = COLOR_OFF_WHITE)
+	if(token.countdown) //We already have a countdown. dont start a new one.
+		return
+	if(_lifespan)
+		lifespan = _lifespan
 	if(!can_reset_dynamic())
 		return
-	lifespan = 60 SECONDS
 	death_time = world.time + lifespan
 	token.countdown = new /obj/effect/countdown/overmap_event(token)
-	token.countdown.color = COLOR_OFF_WHITE
+	token.countdown.color = _color
 
 	token.countdown.start()
 	START_PROCESSING(SSfastprocess, src)
+	return TRUE
 
 /datum/overmap/dynamic/process()
 	if(death_time < world.time && lifespan)
@@ -136,6 +149,11 @@
 
 	if(length(mapzone?.get_mind_mobs()) || SSlag_switch.measures[DISABLE_PLANETDEL])
 		return FALSE //Dont fuck over stranded people
+
+	for(var/datum/mission/ruin/dynamic_mission in dynamic_missions)
+		if(dynamic_mission.active && !dynamic_mission.bound_left_location)
+			return FALSE //Dont fuck over people trying to complete a mission.
+
 	return TRUE
 
 //Evil proc that needs to be removed
@@ -161,13 +179,11 @@
 	else
 		planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 
-	if(!ispath(planet, /datum/planet_type/asteroid) && !ispath(planet, /datum/planet_type/spaceruin)) //these aren't real planets
-		planet_name = "[gen_planet_name()]"
-		Rename(planet_name)
-		token.name = "[planet_name]" + " ([planet.name])"
 	if(!ispath(planet, /datum/planet_type/asteroid) || !ispath(planet, /datum/planet_type/spaceruin))
 		Rename(planet.name)
-		token.name = "[planet.name]"
+	else
+		planet_name = "[gen_planet_name()]"
+		Rename(planet_name)
 
 	alter_token_appearance()
 	ruin_type = planet.ruin_type
@@ -181,6 +197,13 @@
 	selfloop = planet.selfloop
 	interference_power = planet.interference_power
 
+	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
+	selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
+	if(istype(used_ruin))
+		for(var/mission_type in used_ruin.ruin_mission_types)
+			dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
+
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
 		token.icon_state = "sector"
@@ -191,6 +214,10 @@
 /datum/overmap/dynamic/alter_token_appearance()
 	if(!planet)
 		return ..()
+	if(!ispath(planet, /datum/planet_type/asteroid) || !ispath(planet, /datum/planet_type/spaceruin))
+		token.name = "[planet.name]"
+	else
+		token.name = "[planet_name]" + " ([planet.name])"
 	token_icon_state = planet.icon_state
 	desc = planet.desc
 	default_color = planet.color
@@ -239,8 +266,6 @@
 	loading = TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 
-	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	var/selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
 	var/list/dynamic_encounter_values = current_overmap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE
@@ -249,13 +274,42 @@
 	reserve_docks = dynamic_encounter_values[2]
 	ruin_turfs = dynamic_encounter_values[3]
 	spawned_ruins = dynamic_encounter_values[4]
+	spawned_mission_pois = dynamic_encounter_values[5]
 
 	var/datum/virtual_level/our_likely_vlevel = mapzone.virtual_levels[1]
 	if(istype(our_likely_vlevel) && selfloop)
 		our_likely_vlevel.selfloop()
 
+	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
 	loading = FALSE
 	return TRUE
+
+/datum/overmap/dynamic/admin_load()
+	preserve_level = TRUE
+	message_admins("Generating [src], this may take some time!")
+	load_level()
+
+	message_admins(span_big("Click here to jump to the overmap token: " + ADMIN_JMP(token)))
+	message_admins(span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(reserve_docks[1])))
+	for(var/ruin in ruin_turfs)
+		var/turf/ruin_turf = ruin_turfs[ruin]
+		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
+
+/datum/overmap/dynamic/ui_data(mob/user)
+	. = ..()
+	.["active_ruin_missions"] = list()
+	.["inactive_ruin_missions"] = list()
+	for(var/datum/mission/ruin/mission as anything in dynamic_missions)
+		if(mission.active)
+			.["active_ruin_missions"] += list(list(
+				"ref" = REF(mission),
+				"name" = mission.name,
+			))
+		else
+			.["inactive_ruin_missions"] += list(list(
+				"ref" = REF(mission),
+				"name" = mission.name,
+			))
 
 /datum/overmap/dynamic/empty
 	name = "Empty Space"

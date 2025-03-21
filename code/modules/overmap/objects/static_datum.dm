@@ -134,6 +134,7 @@
 	mapzone = static_encounter_values[1]
 	reserve_docks = static_encounter_values[2]
 
+	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
 	loading = FALSE
 	return TRUE
 

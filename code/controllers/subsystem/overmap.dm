@@ -16,7 +16,7 @@ SUBSYSTEM_DEF(overmap)
 	var/list/outposts = list()
 
 	///List of all dynamic overmap datums
-	var/list/dynamic_datums  = list()
+	var/list/dynamic_encounters  = list()
 	///List of all events
 	var/list/events = list()
 
@@ -53,7 +53,7 @@ SUBSYSTEM_DEF(overmap)
 	overmap_objects = list()
 	controlled_ships = list()
 	outposts = list()
-	dynamic_datums = list()
+	dynamic_encounters = list()
 	events = list()
 
 	default_system = create_new_star_system(new /datum/overmap_star_system/shiptest)
@@ -66,6 +66,13 @@ SUBSYSTEM_DEF(overmap)
 
 
 /datum/controller/subsystem/overmap/fire()
+	if(length(dynamic_encounters) < CONFIG_GET(number/max_overmap_dynamic_events))
+		spawn_ruin_level()
+	for(var/datum/overmap_star_system/current_system as anything in tracked_star_systems)
+		if(!current_system.mission_system_enabled)
+			continue
+		current_system.handle_dynamic_missions()
+
 	if(events_enabled)
 		for(var/datum/overmap/event/E as anything in events)
 			if(E.get_nearby_overmap_objects())
@@ -180,7 +187,9 @@ SUBSYSTEM_DEF(overmap)
 	overmap_objects = SSovermap.overmap_objects
 	controlled_ships = SSovermap.controlled_ships
 	events = SSovermap.events
+	dynamic_encounters = SSovermap.dynamic_encounters
 	outposts = SSovermap.outposts
+	tracked_star_systems = SSovermap.tracked_star_systems
 
 
 /datum/controller/subsystem/overmap/proc/get_random_star_system()
@@ -262,7 +271,7 @@ SUBSYSTEM_DEF(overmap)
 	///List of spawned outposts in the star system
 	var/list/outposts = list()
 	///List of all dynamic overmap datums in the star system.
-	var/list/dynamic_datums  = list()
+	var/list/dynamic_encounters  = list()
 	///List of all events in the star system.
 	var/list/events = list()
 
@@ -281,6 +290,8 @@ SUBSYSTEM_DEF(overmap)
 	var/max_overmap_dynamic_events
 	///Do we have a outpost in this system?
 	var/has_outpost = FALSE
+	///Do we modifiy our dynamic encounters every so often for missions? Disbaled on base type so non-main overmaps dont hog up missions(?)
+	var/mission_system_enabled = FALSE
 	/// Our faction of the outpost
 	var/faction
 
@@ -313,6 +324,8 @@ SUBSYSTEM_DEF(overmap)
 	var/can_jump_to = TRUE
 	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the pallete
 	var/can_be_selected_randomly = TRUE
+
+	COOLDOWN_DECLARE(dynamic_despawn_cooldown)
 
 /datum/overmap_star_system/New(generate_now=TRUE)
 	if(generate_now)
@@ -415,7 +428,6 @@ SUBSYSTEM_DEF(overmap)
 	if(has_outpost)
 		spawn_outpost()
 
-
 /**
  * VERY Simple random generation for overmap events, spawns the event in a random turf and sometimes spreads it out similar to ores
  */
@@ -516,9 +528,35 @@ SUBSYSTEM_DEF(overmap)
  * Spawns a new dynamic encounter when old one is deleted. Called by dynamic encounters being deleted.
  */
 /datum/overmap_star_system/proc/replace_dynamic_datum()
-	if(length(dynamic_datums) < max_overmap_dynamic_events)
+	if(length(dynamic_encounters) < max_overmap_dynamic_events)
 		var/list/results = get_unused_overmap_square()
 		new /datum/overmap/dynamic(results, src)
+
+/**
+ * Not sure what this does. Called everytime SSOvermap fires and overmap has mission_system_enabled enabled.
+ */
+/datum/overmap_star_system/proc/handle_dynamic_missions()
+	if(COOLDOWN_FINISHED(src, dynamic_despawn_cooldown))
+		//need to make this have a weight for older planets at some point soon
+		var/datum/overmap/dynamic/picked_encounter = pick(dynamic_encounters)
+		if(picked_encounter)
+			//If we manage to start a countdown, 5 minute timer, else, try again in a minute.
+			//Cant run this first section of the fire too hot as we still need MC_TICK_CHECK to not run out for events.
+			//This should probally moved to its own fire or just otherwise handled better.
+			if(picked_encounter.start_countdown(10 MINUTES, COLOR_SOFT_RED))
+				COOLDOWN_START(src, dynamic_despawn_cooldown, 5 MINUTES)
+			else
+				COOLDOWN_START(src, dynamic_despawn_cooldown, 1 MINUTES)
+
+/**
+ * Creates an overmap object for each ruin level, making them accessible.
+ */
+/datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
+	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
+		spawn_ruin_level()
+
+/datum/controller/subsystem/overmap/proc/spawn_ruin_level()
+	new /datum/overmap/dynamic()
 
 /**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
@@ -655,7 +693,16 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.adjust_dock_for_landing = TRUE
 		docking_ports += quaternary_dock
 
-	return list(mapzone, docking_ports, ruin_turfs, ruin_templates)
+	var/list/spawned_mission_pois = list()
+	for(var/obj/effect/landmark/mission_poi/mission_poi in SSmissions.unallocated_pois)
+		if(!vlevel.is_in_bounds(mission_poi))
+			continue
+
+		spawned_mission_pois += mission_poi
+		SSmissions.unallocated_pois -= mission_poi
+
+
+	return list(mapzone, docking_ports, ruin_turfs, ruin_templates, spawned_mission_pois)
 
 /**
  * Reserves a square dynamic encounter area then loads a map.
@@ -1030,6 +1077,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/shiptest
 	has_outpost = TRUE
 	can_be_selected_randomly = FALSE
+	mission_system_enabled = TRUE
 
 /datum/overmap_star_system/shiptest/New(generate_now=TRUE)
 	//1/10 rounds

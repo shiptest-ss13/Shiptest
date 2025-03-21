@@ -724,3 +724,5 @@
 		catch
 			to_chat(usr, span_bolddanger("fsck() Runtimed. This is very bad check runtimes now."))
 
+/datum/overmap/proc/admin_load()
+	return
