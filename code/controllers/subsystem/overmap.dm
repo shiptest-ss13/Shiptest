@@ -543,7 +543,7 @@ SUBSYSTEM_DEF(overmap)
 			//If we manage to start a countdown, 5 minute timer, else, try again in a minute.
 			//Cant run this first section of the fire too hot as we still need MC_TICK_CHECK to not run out for events.
 			//This should probally moved to its own fire or just otherwise handled better.
-			if(picked_encounter.start_countdown(10 MINUTES, hazard_primary_color))
+			if(picked_encounter.start_countdown(10 MINUTES, secondary_structure_color))
 				COOLDOWN_START(src, dynamic_despawn_cooldown, 5 MINUTES)
 			else
 				COOLDOWN_START(src, dynamic_despawn_cooldown, 1 MINUTES)
