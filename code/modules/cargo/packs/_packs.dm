@@ -10,6 +10,10 @@
 	var/crate_type = /obj/structure/closet/crate
 	var/admin_spawned = FALSE
 
+	var/restocks = FALSE
+	var/current_stock = INFINITY
+	var/max_stock = INFINITY
+
 	var/datum/faction/faction
 	//what's the discount for buyers in our faction.
 	var/faction_discount = 15

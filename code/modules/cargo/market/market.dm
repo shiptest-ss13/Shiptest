@@ -14,8 +14,10 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 
 // Hopefully this can be used for custom markets for events and stuff.
 /datum/cargo_market/proc/generate_supply_packs()
-	for(var/pack in subtypesof(/datum/supply_pack))
-		var/datum/supply_pack/P = new pack()
-		if(!P.contains)
+	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
+		current_pack = new current_pack()
+		if(current_pack.faction)
+			current_pack.faction = SSfactions.faction_path_to_datum(current_pack.faction)
+		if(!current_pack.contains)
 			continue
-		supply_packs += P
+		supply_packs += current_pack
