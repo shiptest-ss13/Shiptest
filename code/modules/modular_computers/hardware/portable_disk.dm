@@ -28,8 +28,8 @@
 	max_capacity = 256
 
 /obj/item/computer_hardware/hard_drive/portable/installer
-	name = "data disk program installer"
-	desc = "Contains a highly resistant digital rights managment..."
+	name = "program installation disc"
+	desc = "A small laser-etched disc loaded with a piece of software and the associated authorization keys to operate it."
 	var/datum/computer_file/program/preinstalled_program
 
 /obj/item/computer_hardware/hard_drive/portable/installer/install_default_programs()
