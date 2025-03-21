@@ -83,12 +83,12 @@
 		qdel(src)
 
 
-/obj/item/clothing/gloves/color/fyellow                             //Cheap Chinese Crap
+/obj/item/clothing/gloves/color/fyellow
 	desc = "These gloves are cheap knockoffs of the coveted ones - no way this can end badly."
 	name = "budget insulated gloves"
 	icon_state = "yellow"
 	item_state = "ygloves"
-	siemens_coefficient = 1			//Set to a default of 1, gets overridden in Initialize()
+	siemens_coefficient = 1	//Set to a default of 1, gets overridden in Initialize()
 	permeability_coefficient = 0.05
 	resistance_flags = NONE
 

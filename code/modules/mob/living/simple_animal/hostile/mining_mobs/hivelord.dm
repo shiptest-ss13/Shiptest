@@ -151,7 +151,7 @@
 	icon_living = "dwarf_legion"
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
-	//mob_trophy = /obj/item/mob_trophy/dwarf_skull
+	mob_trophy = /obj/item/mob_trophy/dwarf_skull
 	maxHealth = 75
 	health = 75
 	move_to_delay = 2
