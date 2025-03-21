@@ -15,14 +15,16 @@ export type SupplyPack = {
   name: string;
   group: string;
   cost: number;
-  base_cost: number;
+  discountedcost: number;
+  discountpercent: number;
+  faction_locked: Boolean;
   desc: string;
+  no_bundle: Boolean;
 };
 
 export type CartOrder = {
   ref: string;
   name: string;
   cost: number;
-  base_cost: number;
   count: number;
 };

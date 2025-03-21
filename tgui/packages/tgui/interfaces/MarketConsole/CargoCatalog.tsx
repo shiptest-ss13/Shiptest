@@ -165,8 +165,6 @@ export const CatalogList = (props: CatalogListProps, context) => {
         <Table.Cell>Cost</Table.Cell>
       </Table.Row>
       {packs.map((pack) => {
-        const discount: number =
-          ((pack.base_cost - pack.cost) / pack.base_cost) * 100;
         return (
           <Table.Row key={pack.ref} className="candystripe">
             <Table.Cell>{pack.name}</Table.Cell>
@@ -174,10 +172,12 @@ export const CatalogList = (props: CatalogListProps, context) => {
             <Table.Cell textAlign="right">
               <Button
                 fluid
-                icon={discount > 0 ? 'shopping-cart' : undefined}
-                tooltip={`${
-                  discount > 0 ? `${discount.toFixed(2)}% off\n` : ''
-                }${pack.desc}`}
+                tooltip={pack.desc}
+                color={
+                  pack.discountedcost || pack.faction_locked
+                    ? 'green'
+                    : 'default'
+                }
                 tooltipPosition="left"
                 onClick={() =>
                   act('add', {
@@ -185,7 +185,9 @@ export const CatalogList = (props: CatalogListProps, context) => {
                   })
                 }
               >
-                {formatMoney(pack.cost)}
+                {pack.discountedcost
+                  ? ' (-' + pack.discountpercent + '%) ' + pack.discountedcost
+                  : formatMoney(pack.cost)}
                 {' cr'}
               </Button>
             </Table.Cell>

@@ -6,6 +6,7 @@
 	var/list/shopping_cart = list()
 	/// The account to charge purchases to.
 	var/datum/bank_account/charge_account
+	var/datum/faction/current_faction
 
 /obj/machinery/computer/market/LateInitialize()
 	. = ..()
@@ -52,17 +53,22 @@
 	for(var/item in shopping_cart)
 		if(!istype(shopping_cart[item]["pack"], /datum/supply_pack))
 			continue
-		var/datum/supply_pack/pack = shopping_cart[item]["pack"]
+		var/datum/supply_pack/current_pack = shopping_cart[item]["pack"]
+		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_faction) : FALSE
+		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
 		data["shopping_cart"] += list(list(
-			"ref" = REF(pack),
-			"name" = pack.name,
+			"ref" = REF(current_pack),
+			"name" = current_pack.name,
 			"count" = shopping_cart[item]["count"],
-			"cost" = pack.cost,
-			"base_cost" = pack.base_cost
+			"cost" = discountedcost ? discountedcost :current_pack.cost,
 		))
 
-	data["account_holder"] = charge_account.account_holder
-	data["account_balance"] = charge_account.account_balance
+	if(charge_account)
+		data["account_holder"] = charge_account.account_holder
+		data["account_balance"] = charge_account.account_balance
+	else
+		data["account_holder"] = "Unknown User"
+		data["account_balance"] = 0
 
 	return data
 
@@ -70,19 +76,30 @@
 	var/list/data = list()
 	data["max_order"] = CARGO_MAX_ORDER
 	data["supply_packs"] = list()
-	for(var/datum/supply_pack/cargo_pack in get_cargo_packs())
-		if(!data["supply_packs"][cargo_pack.group])
-			data["supply_packs"][cargo_pack.group] = list(
-				"name" = cargo_pack.group,
+	for(var/datum/supply_pack/current_pack in get_cargo_packs())
+		if(!data["supply_packs"][current_pack.group])
+			data["supply_packs"][current_pack.group] = list(
+				"name" = current_pack.group,
 				"packs" = list()
 			)
-		data["supply_packs"][cargo_pack.group]["packs"] += list(list(
-			"ref" = REF(cargo_pack),
-			"name" = cargo_pack.name,
-			"group" = cargo_pack.group,
-			"cost" = cargo_pack.cost,
-			"base_cost" = cargo_pack.base_cost,
-			"desc" = cargo_pack.desc || cargo_pack.name, // If there is a description, use it. Otherwise use the pack's name.
+		if((current_pack.hidden))
+			continue
+		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_faction) : FALSE
+		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
+		if(current_pack.faction_locked && !same_faction)
+			continue
+		// If there is a description, use it. Otherwise use the pack's name.
+		var/desc = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : "")
+		data["supply_packs"][current_pack.group]["packs"] += list(list(
+			"ref" = REF(current_pack),
+			"name" = current_pack.name,
+			"group" = current_pack.group,
+			"cost" = current_pack.cost,
+			"discountedcost" = discountedcost ? discountedcost : null,
+			"discountpercent" = current_pack.faction_discount,
+			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
+			"desc" = desc,
+			"no_bundle" = current_pack.no_bundle
 		))
 	return data
 
@@ -138,18 +155,27 @@
 	if(!length(shopping_cart))
 		say("Shopping cart is empty!")
 		return
+
 	var/total_cost = 0
-	//var/datum/supply_order/incoming_order = new()
+	var/unprocessed_packs = list()
 	for(var/order in shopping_cart)
 		if(!istype(shopping_cart[order]["pack"], /datum/supply_pack))
 			continue
 		var/datum/supply_pack/pack = shopping_cart[order]["pack"]
 		total_cost += pack.cost * shopping_cart[order]["count"]
-	if(!charge_account?.has_money(total_cost))
+		for(var/i in 1 to shopping_cart[order]["count"])
+			unprocessed_packs += list(pack)
+
+	if(!charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
 		say("Insufficent funds!")
 		return
+
 	playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
 	say("Order incoming!")
+
+	market.make_order(usr, unprocessed_packs, cargo_lz)
+	shopping_cart = list()
+
 	return
 
 /*
@@ -162,20 +188,18 @@
 
 /obj/machinery/computer/market/ship
 	name = "ship market console"
+	/// The ship we reside on for ease of access
+	var/datum/overmap/ship/controlled/current_ship
 
 /obj/machinery/computer/market/ship/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
+	current_ship = port.current_ship
 	reconnect(port)
 
 /obj/machinery/computer/market/ship/reconnect(obj/docking_port/mobile/port)
-	if(!port)
-		var/area/ship/current_area = get_area(src)
-		if(!istype(current_area))
-			return
-		port = current_area.mobile_port
-	if(!port)
-		return
-	charge_account = port.current_ship.ship_account
+	if(current_ship)
+		current_faction = current_ship.source_template.faction
+		charge_account = current_ship.ship_account
 
 /obj/machinery/computer/market/ship/attackby(obj/item/the_cash, mob/living/user, params)
 	var/value = the_cash.get_item_credit_value()

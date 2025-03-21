@@ -14,6 +14,8 @@
 
 	/// The ship we reside on for ease of access
 	var/datum/overmap/ship/controlled/current_ship
+	var/datum/faction/current_faction
+
 	var/contraband = FALSE
 	var/self_paid = FALSE
 	var/safety_warning = "For safety reasons, the automated supply shuttle \
@@ -54,7 +56,14 @@
 	update_static_data(user)
 
 /obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
 	current_ship = port.current_ship
+	reconnect(port)
+
+/obj/machinery/computer/cargo/proc/reconnect(obj/docking_port/mobile/port)
+	if(current_ship)
+		current_faction = current_ship.source_template.faction
+		charge_account = current_ship.ship_account
 
 /obj/machinery/computer/cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -84,7 +93,6 @@
 	data["outpostDocked"] = outpost_docked
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
-	data["supplies"] = list()
 	message = "Purchases will be delivered to your hangar's delivery zone."
 	if(SSshuttle.supplyBlocked)
 		message = blockade_warning
@@ -140,28 +148,7 @@
 			for(var/list/current_item as anything in purchasing)
 				unprocessed_packs += locate(current_item["ref"]) in current_outpost.market.supply_packs
 
-			while(unprocessed_packs.len > 0)
-				var/datum/supply_pack/initial_pack = unprocessed_packs[1]
-				if(initial_pack.no_bundle)
-					make_order(usr, list(initial_pack), current_outpost.market)
-					unprocessed_packs -= initial_pack
-					continue
-
-				var/list/combo_packs = list()
-				var/combo_group = initial_pack.group
-				for(var/datum/supply_pack/current_pack in unprocessed_packs)
-					if(current_pack.group != combo_group || current_pack.no_bundle)
-						continue
-					combo_packs += current_pack
-					unprocessed_packs -= current_pack
-
-				if(combo_packs.len == 1) // No items could be bundled with the initial pack, make a single order
-					make_order(usr, list(initial_pack), current_outpost.market)
-					unprocessed_packs -= initial_pack
-					continue
-
-				make_order(usr, combo_packs, current_outpost.market)
-				unprocessed_packs -= combo_packs
+			current_outpost.market.make_order(usr, unprocessed_packs, return_crate_spawner())
 
 		if("mission-act")
 			var/datum/mission/outpost/mission = locate(params["ref"])
@@ -181,36 +168,6 @@
 				else if(tgui_alert(usr, "Give up on [mission]?", src, list("Yes", "No")) == "Yes")
 					mission.give_up()
 				return TRUE
-
-/obj/machinery/computer/cargo/proc/make_order(mob/user, list/packs, datum/cargo_market/current_market)
-	var/name = "*None Provided*"
-	var/rank = "*None Provided*"
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		name = H.get_authentification_name()
-		rank = H.get_assignment(hand_first = TRUE)
-	else if(issilicon(user))
-		name = user.real_name
-		rank = "Silicon"
-	//Including the ship bank account means you cant open the crate lol
-	//var/datum/supply_order/SO = new(packs, name, rank, user.ckey, charge_account, market = current_market)
-	var/datum/supply_order/order = new(packs, name, rank, user.ckey, market = current_market, landing_zone = return_crate_spawner())
-	SScargo.queue_item(order)
-	return TRUE
-
-/obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	. = ..()
-	reconnect(port)
-
-/obj/machinery/computer/cargo/proc/reconnect(obj/docking_port/mobile/port)
-	if(!port)
-		var/area/ship/current_area = get_area(src)
-		if(!istype(current_area))
-			return
-		port = current_area.mobile_port
-	if(!port)
-		return
-	charge_account = port.current_ship.ship_account
 
 /obj/machinery/computer/cargo/attackby(obj/item/W, mob/living/user, params)
 	var/value = W.get_item_credit_value()
@@ -240,7 +197,7 @@
 			)
 		if((current_pack.hidden))
 			continue
-		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.source_template.faction) : FALSE
+		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_faction) : FALSE
 		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
 		if(current_pack.faction_locked && !same_faction)
 			continue
