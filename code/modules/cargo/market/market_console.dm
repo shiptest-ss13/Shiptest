@@ -1,5 +1,5 @@
 /obj/machinery/computer/market
-	name = "Market Console"
+	name = "market console"
 	icon_screen = "supply_express"
 	var/atom/cargo_lz
 	var/datum/cargo_market/market
@@ -91,19 +91,6 @@
 	if(.)
 		return
 	switch(action)
-		if("withdraw")
-			var/val = text2num(params["value"])
-			// no giving yourself money
-			if(!charge_account || !val || val <= 0)
-				return
-			if(charge_account.adjust_money(-val))
-				var/obj/item/holochip/cash_chip = new /obj/item/holochip(drop_location(), val)
-				if(ishuman(usr))
-					var/mob/living/carbon/human/user = usr
-					user.put_in_hands(cash_chip)
-				playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
-				src.visible_message(span_notice("[src] dispenses a holochip."))
-			return TRUE
 		if("add")
 			return add_item(ui.user, params["ref"])
 		if("remove")
@@ -115,29 +102,8 @@
 		if("clear")
 			shopping_cart = list()
 
-
-/obj/machinery/computer/market/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	. = ..()
-	reconnect(port)
-
 /obj/machinery/computer/market/proc/reconnect(obj/docking_port/mobile/port)
-	if(!port)
-		var/area/ship/current_area = get_area(src)
-		if(!istype(current_area))
-			return
-		port = current_area.mobile_port
-	if(!port)
-		return
-	charge_account = port.current_ship.ship_account
-
-/obj/machinery/computer/market/attackby(obj/item/the_cash, mob/living/user, params)
-	var/value = the_cash.get_item_credit_value()
-	if(value && charge_account)
-		charge_account.adjust_money(value)
-		to_chat(user, span_notice("You deposit [the_cash]. The Vessel Budget is now [charge_account.account_balance] cr."))
-		qdel(the_cash)
-		return TRUE
-	..()
+	return
 
 /obj/machinery/computer/market/proc/add_item(mob/user, ref, amount = 1)
 	for(var/datum/supply_pack/pack in get_cargo_packs())
@@ -186,8 +152,55 @@
 	say("Order incoming!")
 	return
 
+/*
 /obj/machinery/computer/market/quick_testing/find_landing_zone()
 	if(cargo_lz)
 		return TRUE
 	cargo_lz = src
 	return TRUE
+*/
+
+/obj/machinery/computer/market/ship
+	name = "ship market console"
+
+/obj/machinery/computer/market/ship/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	reconnect(port)
+
+/obj/machinery/computer/market/ship/reconnect(obj/docking_port/mobile/port)
+	if(!port)
+		var/area/ship/current_area = get_area(src)
+		if(!istype(current_area))
+			return
+		port = current_area.mobile_port
+	if(!port)
+		return
+	charge_account = port.current_ship.ship_account
+
+/obj/machinery/computer/market/ship/attackby(obj/item/the_cash, mob/living/user, params)
+	var/value = the_cash.get_item_credit_value()
+	if(value && charge_account)
+		charge_account.adjust_money(value)
+		to_chat(user, span_notice("You deposit [the_cash]. The Vessel Budget is now [charge_account.account_balance] cr."))
+		qdel(the_cash)
+		return TRUE
+	..()
+
+/obj/machinery/computer/market/ship/ui_act(action, params, datum/tgui/ui)
+	. = ..()
+	if(.)
+		return
+	switch(action)
+		if("withdraw")
+			var/val = text2num(params["value"])
+			// no giving yourself money
+			if(!charge_account || !val || val <= 0)
+				return
+			if(charge_account.adjust_money(-val))
+				var/obj/item/holochip/cash_chip = new /obj/item/holochip(drop_location(), val)
+				if(ishuman(usr))
+					var/mob/living/carbon/human/user = usr
+					user.put_in_hands(cash_chip)
+				playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
+				src.visible_message(span_notice("[src] dispenses a holochip."))
+			return TRUE
