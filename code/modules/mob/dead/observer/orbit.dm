@@ -264,7 +264,7 @@
 				/mob/living/simple_animal/hostile/megafauna,
 				/mob/living/simple_animal/hostile/boss
 			))
-		if(!is_type_in_typecache(potential_mob_poi, mob_allowed_typecache) && !potential_mob_poi.GetComponent(/datum/component/deadchat_control))
+		if(!is_type_in_typecache(potential_mob_poi, mob_allowed_typecache) && !potential_mob_poi.GetComponent(/datum/component/deadchat_control) && !potential_mob_poi.GetComponent(/datum/component/mission_important))
 			return FALSE
 
 	return potential_poi.validate()
