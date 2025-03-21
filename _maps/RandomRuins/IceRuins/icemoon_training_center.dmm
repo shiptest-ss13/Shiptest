@@ -6862,10 +6862,13 @@
 /area/ruin/icemoon/training_facility/course)
 "Ib" = (
 /obj/structure/table,
-/obj/item/melee/axe/sledgehammer,
 /obj/item/mining_scanner{
 	pixel_y = 6;
 	pixel_x = -8
+	},
+/obj/item/melee/sledgehammer/gorlex{
+	pixel_x = 4;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/training_facility/demo_course)
