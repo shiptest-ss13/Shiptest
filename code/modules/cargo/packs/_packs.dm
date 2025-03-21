@@ -10,6 +10,8 @@
 	var/crate_type = /obj/structure/closet/crate
 	var/admin_spawned = FALSE
 
+	var/no_bundle = FALSE
+
 	var/restocks = FALSE
 	var/current_stock = INFINITY
 	var/max_stock = INFINITY
