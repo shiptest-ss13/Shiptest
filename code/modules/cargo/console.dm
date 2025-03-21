@@ -192,7 +192,9 @@
 	else if(issilicon(user))
 		name = user.real_name
 		rank = "Silicon"
-	var/datum/supply_order/SO = new(packs, name, rank, user.ckey, charge_account, market = current_market)
+	//Including the ship bank account means you cant open the crate lol
+	//var/datum/supply_order/SO = new(packs, name, rank, user.ckey, charge_account, market = current_market)
+	var/datum/supply_order/SO = new(packs, name, rank, user.ckey, market = current_market)
 	var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
 	crate_spawner.handle_order(SO)
 	update_appearance() // ??????????????????

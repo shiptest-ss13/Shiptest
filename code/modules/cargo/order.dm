@@ -83,18 +83,18 @@
 
 /datum/supply_order/proc/generate(atom/location)
 	var/account_holder
-	var/datum/supply_pack/initial_pack = packs[1]
+	var/datum/supply_pack/initial_pack = supply_packs[1]
 
 	var/obj/structure/closet/crate/order_crate
 	if(paying_account)
 		account_holder = paying_account.account_holder
 		order_crate = new /obj/structure/closet/crate/secure/owned(location, paying_account)
-		order_crate.name = "Crate - Purchased by [paying_account.account_holder]"
+		order_crate.name = "crate - Purchased by [paying_account.account_holder]"
 	else
 		account_holder = "Unknown"
 		order_crate = new initial_pack.crate_type(location)
 
-	for(var/datum/supply_pack/filling_pack in packs)
+	for(var/datum/supply_pack/filling_pack in supply_packs)
 		filling_pack.fill(order_crate)
 	generateManifest(order_crate, account_holder)
 	return order_crate
