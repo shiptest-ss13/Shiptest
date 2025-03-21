@@ -10,7 +10,7 @@ SUBSYSTEM_DEF(cargo)
 	while(length(queued_purchases))
 		var/datum/supply_order/purchase = queued_purchases[1]
 		if(istype(purchase.landing_zone, /obj/hangar_crate_spawner))
-			var/obj/hangar_crate_spawner/crate_spawner
+			var/obj/hangar_crate_spawner/crate_spawner = purchase.landing_zone
 			crate_spawner.handle_order(purchase)
 		else
 			purchase.generate(get_turf(purchase.landing_zone))

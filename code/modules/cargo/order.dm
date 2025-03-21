@@ -19,13 +19,14 @@
 
 	var/atom/landing_zone
 
-/datum/supply_order/New(list/supply_packs = list(), orderer, orderer_rank, orderer_ckey, paying_account, datum/cargo_market/market)
+/datum/supply_order/New(list/supply_packs = list(), orderer, orderer_rank, orderer_ckey, paying_account, datum/cargo_market/market, atom/landing_zone)
 	src.supply_packs = supply_packs
 	src.orderer = orderer
 	src.orderer_rank = orderer_rank
 	src.orderer_ckey = orderer_ckey
 	src.paying_account = paying_account
 	src.market = market
+	src.landing_zone = landing_zone
 	if(src.market)
 		id = src.market.ordernum++
 	for(var/datum/supply_pack/pack in src.supply_packs)
@@ -89,7 +90,7 @@
 	if(paying_account)
 		account_holder = paying_account.account_holder
 		order_crate = new /obj/structure/closet/crate/secure/owned(location, paying_account)
-		order_crate.name = "crate - Purchased by [paying_account.account_holder]"
+		order_crate.name = "crate - Purchased by [account_holder]"
 	else
 		account_holder = "Unknown"
 		order_crate = new initial_pack.crate_type(location)

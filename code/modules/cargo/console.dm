@@ -194,10 +194,8 @@
 		rank = "Silicon"
 	//Including the ship bank account means you cant open the crate lol
 	//var/datum/supply_order/SO = new(packs, name, rank, user.ckey, charge_account, market = current_market)
-	var/datum/supply_order/SO = new(packs, name, rank, user.ckey, market = current_market)
-	var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
-	crate_spawner.handle_order(SO)
-	update_appearance() // ??????????????????
+	var/datum/supply_order/order = new(packs, name, rank, user.ckey, market = current_market, landing_zone = return_crate_spawner())
+	SScargo.queue_item(order)
 	return TRUE
 
 /obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
