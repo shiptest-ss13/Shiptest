@@ -23,6 +23,7 @@
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
 	exotic_bloodtype = "Coolant"
 	damage_overlay_type = "synth"
+	heatmod = 1.5
 	siemens_coeff = 1.5
 	reagent_tag = PROCESS_SYNTHETIC
 	species_gibs = "robotic"
