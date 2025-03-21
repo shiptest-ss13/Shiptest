@@ -9,12 +9,14 @@ SUBSYSTEM_DEF(cargo)
 	while(length(queued_purchases))
 		var/datum/cargo_order/purchase = queued_purchases[1]
 		queued_purchases.Cut(1,2)
-	randomize_cargo()
+	//randomize_cargo()
 
+/*
 /datum/controller/subsystem/cargo/proc/randomize_cargo()
 	for(var/datum/cargo_market/market in markets)
 		var/datum/supply_pack/pack = pick(market.supply_packs)
 		pack.cost = round(pack.cost * rand(90, 110) * 0.01)
+*/
 
 /datum/controller/subsystem/cargo/proc/queue_item(datum/cargo_order/purchase)
 	queued_purchases += purchase

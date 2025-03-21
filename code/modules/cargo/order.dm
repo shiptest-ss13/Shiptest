@@ -97,3 +97,6 @@
 /datum/cargo_order
 	var/atom/landing_zone
 	var/list/datum/supply_pack/pack/supply_packs
+
+/datum/cargo_order/proc/send()
+	return
