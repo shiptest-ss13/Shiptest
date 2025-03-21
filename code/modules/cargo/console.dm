@@ -140,9 +140,11 @@
 				return
 
 			if(!charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
+				say("Insufficent funds!")
 				return
 
 			playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
+			say("Order incoming!")
 
 			var/list/unprocessed_packs = list()
 			for(var/list/current_item as anything in purchasing)

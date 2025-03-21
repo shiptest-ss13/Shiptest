@@ -1,6 +1,6 @@
 /obj/machinery/computer/market
 	name = "market console"
-	icon_screen = "supply_express"
+	icon_screen = "request"
 	var/atom/cargo_lz
 	var/datum/cargo_market/market
 	var/list/shopping_cart = list()
