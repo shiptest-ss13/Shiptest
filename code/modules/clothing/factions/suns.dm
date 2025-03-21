@@ -10,7 +10,7 @@
 	desc = "A fancy-looking tailored suit with purple slacks. Worn typically by students in the first half of their academic journey."
 	icon_state = "suns_uniform1"
 	item_state = "suns_uniwhite"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	can_adjust = TRUE
 	icon = 'icons/obj/clothing/faction/suns/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/uniforms.dmi'

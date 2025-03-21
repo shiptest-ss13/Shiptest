@@ -23,7 +23,7 @@
 	desc = "A tactical security jumpsuit for officers."
 	icon_state = "security"
 	item_state = "gy_suit"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 	strip_delay = 50
 	alt_covers_chest = TRUE
 	sensor_mode = SENSOR_COORDS
@@ -84,12 +84,12 @@
 // Brig Physician //
 /obj/item/clothing/under/rank/security/brig_phys
 	name = "brig physician jumpsuit"
-	desc = "A lightly armored jumpsuit, worn by practitioners entrusted to the care of prisoners around the frontier."
+	desc = "A umpsuit worn by practitioners entrusted to the care of prisoners around the frontier."
 	icon_state = "brig_phys"
 
 /obj/item/clothing/under/rank/security/brig_phys/skirt
 	name = "brig physician jumpskirt"
-	desc = "A lightly armored jumpskirt, worn by practitioners entrusted to the care of prisoners around the frontier."
+	desc = "A jumpskirt worn by practitioners entrusted to the care of prisoners around the frontier."
 	icon_state = "brig_phys_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
@@ -97,14 +97,14 @@
 
 /obj/item/clothing/under/rank/security/brig_phys/nt
 	name = "security medic's uniform"
-	desc = "A lightly armored uniform worn by members of Nanotrasen's Asset Protection Medical Corps."
+	desc = "A uniform worn by members of Nanotrasen's Asset Protection Medical Corps."
 	icon_state = "security_medic"
 	item_state = "r_suit"
 	mob_overlay_state = "rbrig_phys"
 
 /obj/item/clothing/under/rank/security/brig_phys/nt/skirt
 	name = "security medic's uniform"
-	desc = "A lightly armored uniform, with a skirt, worn by members of Nanotrasen's Asset Protection Medical Corps."
+	desc = "A uniform with a skirt, worn by members of Nanotrasen's Asset Protection Medical Corps."
 	icon_state = "security_medic_skirt"
 	mob_overlay_state = "rbrig_phys_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -116,7 +116,7 @@
 	name = "warden's security suit"
 	desc = "A formal security suit for wardens."
 	icon_state = "warden"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 	strip_delay = 50
 	alt_covers_chest = TRUE
 	sensor_mode = 3
@@ -148,7 +148,7 @@
 	name = "head of security's jumpsuit"
 	desc = "A security jumpsuit decorated for those few with the dedication to achieve the position of Head of Security."
 	icon_state = "hos"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60
 	alt_covers_chest = TRUE
 	sensor_mode = 3
@@ -265,7 +265,7 @@
 	desc = "A dark colored uniform worn by private military forces."
 	icon_state = "military"
 	item_state = "bl_suit"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "fire" = 50, "acid" = 40)
 
 /obj/item/clothing/under/rank/security/officer/military/eng
 	name = "tactical engineering uniform"
