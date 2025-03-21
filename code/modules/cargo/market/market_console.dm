@@ -164,10 +164,10 @@
 
 /obj/machinery/computer/market/proc/buy_items(mob/user)
 	if(!cargo_lz)
-		say("No landing zone idiot!")
+		say("No landing zone detected!")
 		return
 	if(!length(shopping_cart))
-		say("No items idiot!")
+		say("Shopping cart is empty!")
 		return
 	var/total_cost = 0
 	for(var/order in shopping_cart)
@@ -176,9 +176,9 @@
 		var/datum/supply_pack/pack = shopping_cart[order]["pack"]
 		total_cost += pack.cost * shopping_cart[order]["count"]
 	if(!charge_account?.has_money(total_cost))
-		say("broke! idiot!")
+		say("Insufficent funds!")
 		return
-	say("purchase good!")
+	say("Order incoming!")
 	return
 
 /obj/machinery/computer/market/quick_testing/find_landing_zone()
