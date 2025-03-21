@@ -182,6 +182,7 @@
 	if(!charge_account?.has_money(total_cost))
 		say("Insufficent funds!")
 		return
+	playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
 	say("Order incoming!")
 	return
 

@@ -134,6 +134,8 @@
 			if(!charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
 				return
 
+			playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
+
 			var/list/unprocessed_packs = list()
 			for(var/list/current_item as anything in purchasing)
 				unprocessed_packs += locate(current_item["ref"]) in current_outpost.market.supply_packs
@@ -141,7 +143,7 @@
 			while(unprocessed_packs.len > 0)
 				var/datum/supply_pack/initial_pack = unprocessed_packs[1]
 				if(initial_pack.no_bundle)
-					make_single_order(usr, initial_pack)
+					make_order(usr, list(initial_pack), current_outpost.market)
 					unprocessed_packs -= initial_pack
 					continue
 
@@ -154,11 +156,11 @@
 					unprocessed_packs -= current_pack
 
 				if(combo_packs.len == 1) // No items could be bundled with the initial pack, make a single order
-					make_single_order(usr, initial_pack)
+					make_order(usr, list(initial_pack), current_outpost.market)
 					unprocessed_packs -= initial_pack
 					continue
 
-				make_combo_order(usr, combo_packs)
+				make_order(usr, combo_packs, current_outpost.market)
 				unprocessed_packs -= combo_packs
 
 		if("mission-act")
@@ -180,7 +182,7 @@
 					mission.give_up()
 				return TRUE
 
-/obj/machinery/computer/cargo/proc/make_single_order(mob/user, datum/supply_pack/pack)
+/obj/machinery/computer/cargo/proc/make_order(mob/user, list/packs, datum/cargo_market/current_market)
 	var/name = "*None Provided*"
 	var/rank = "*None Provided*"
 	if(ishuman(user))
@@ -190,23 +192,7 @@
 	else if(issilicon(user))
 		name = user.real_name
 		rank = "Silicon"
-	var/datum/supply_order/SO = new(pack, name, rank, user.ckey, "", ordering_outpost = current_ship.docked_to)
-	var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
-	crate_spawner.handle_order(SO)
-	update_appearance() // ??????????????????
-	return TRUE
-
-/obj/machinery/computer/cargo/proc/make_combo_order(mob/user, list/combo_packs)
-	var/name = "*None Provided*"
-	var/rank = "*None Provided*"
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		name = H.get_authentification_name()
-		rank = H.get_assignment(hand_first = TRUE)
-	else if(issilicon(user))
-		name = user.real_name
-		rank = "Silicon"
-	var/datum/supply_order/combo/SO = new(combo_packs, name, rank, user.ckey, "", ordering_outpost = current_ship.docked_to)
+	var/datum/supply_order/SO = new(packs, name, rank, user.ckey, charge_account, market = current_market)
 	var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
 	crate_spawner.handle_order(SO)
 	update_appearance() // ??????????????????

@@ -69,9 +69,9 @@ export const CargoCart = (props, context) => {
         <TableRow color="gray">
           <Table.Cell>
             <Button content="Withdraw Cash" onClick={() => act('withdraw')} />
-            <Button>{`${account_holder}: ${formatMoney(
-              account_balance
-            )} cr`}</Button>
+            <Button>
+              {`${account_holder}: ${formatMoney(account_balance)} cr`}
+            </Button>
           </Table.Cell>
           <Table.Cell>
             <Box>{`Total cost: ${formatMoney(total)} cr`}</Box>

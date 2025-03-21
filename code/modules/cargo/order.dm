@@ -12,61 +12,57 @@
 	var/orderer
 	var/orderer_rank
 	var/orderer_ckey
-	var/reason
-	var/datum/supply_pack/pack
+	var/list/datum/supply_pack/supply_packs
+
 	var/datum/bank_account/paying_account
-	var/datum/overmap/outpost/ordering_outpost
+	var/datum/cargo_market/market
 
 	var/atom/landing_zone
-	var/list/datum/supply_pack/pack/supply_packs
 
-/datum/supply_order/New(datum/supply_pack/pack, orderer, orderer_rank, orderer_ckey, reason, paying_account, ordering_outpost)
-	src.pack = pack
+/datum/supply_order/New(list/supply_packs = list(), orderer, orderer_rank, orderer_ckey, paying_account, datum/cargo_market/market)
+	src.supply_packs = supply_packs
 	src.orderer = orderer
 	src.orderer_rank = orderer_rank
 	src.orderer_ckey = orderer_ckey
-	src.reason = reason
 	src.paying_account = paying_account
-	src.ordering_outpost = ordering_outpost
-	if(src.ordering_outpost)
-		id = src.ordering_outpost.market.ordernum++
-	if(pack)
+	src.market = market
+	if(src.market)
+		id = src.market.ordernum++
+	for(var/datum/supply_pack/pack in src.supply_packs)
 		SSblackbox.record_feedback("nested tally", "crate_ordered", 1, list(pack.name, "amount"))
 		SSblackbox.record_feedback("nested tally", "crate_ordered", pack.cost, list(pack.name, "cost"))
 
 /datum/supply_order/proc/generateRequisition(turf/T)
 	var/obj/item/paper/requisition_paper = new(T)
 
-	requisition_paper.name = "requisition form - #[id] ([pack.name])"
+	requisition_paper.name = "requisition form - #[id]"
 	var/requisition_text = "<h2>[station_name()] Supply Requisition</h2>"
 	requisition_text += "<hr/>"
 	requisition_text += "Order #[id]<br/>"
 	requisition_text += "Time of Order: [station_time_timestamp()]<br/>"
-	requisition_text += "Item: [pack.name]<br/>"
+	requisition_text += "Items:<br/>"
+	for(var/datum/supply_pack/pack in supply_packs)
+		requisition_text += "<li>[pack.name]</li>"
 	requisition_text += "Requested by: [orderer]<br/>"
 	if(paying_account)
 		requisition_text += "Paid by: [paying_account.account_holder]<br/>"
 	requisition_text += "Rank: [orderer_rank]<br/>"
-	requisition_text += "Comment: [reason]<br/>"
 
 	requisition_paper.add_raw_text(requisition_text)
 	requisition_paper.update_appearance()
 	return requisition_paper
 
-/datum/supply_order/proc/generateManifest(obj/structure/closet/crate/container, owner, packname) //generates-the-manifests.
+/datum/supply_order/proc/generateManifest(obj/structure/closet/crate/container, owner) //generates-the-manifests.
 	var/obj/item/paper/manifest/manifest_paper = new(container, id, 0)
 
-	manifest_paper.name = "shipping manifest - [packname?"#[id] ([pack.name])":"(Grouped Item Crate)"]"
+	manifest_paper.name = "shipping manifest - #[id]"
 
-	var/manifest_text = "<h2>[ordering_outpost.name] Shipping Manifest</h2>"
+	var/manifest_text = "<h2>[market.name] Shipping Manifest</h2>"
 	manifest_text += "<hr/>"
 	if(owner && !(owner == "Unknown"))
 		manifest_text += "Direct purchase from [owner]<br/>"
 		manifest_paper.name += " - Purchased by [owner]"
-	manifest_text += "Order[packname?"":"s"]: [id]<br/>"
-	manifest_text += "Destination: [ordering_outpost.name]<br/>"
-	if(packname)
-		manifest_text += "Item: [packname]<br/>"
+	manifest_text += "Destination: [market.name]<br/>"
 	manifest_text += "Contents: <br/>"
 	manifest_text += "<ul>"
 	var/container_contents = list() // Associative list with the format (item_name = nº of occurrences, ...)
@@ -87,39 +83,18 @@
 
 /datum/supply_order/proc/generate(atom/location)
 	var/account_holder
-	if(paying_account)
-		account_holder = paying_account.account_holder
-	else
-		account_holder = "Unknown"
-	var/obj/structure/closet/crate/order_crate = pack.generate(location, paying_account)
-	generateManifest(order_crate, account_holder, pack)
-	return order_crate
-
-/datum/supply_order/combo
-	var/list/packs
-
-/datum/supply_order/combo/New(list/packs, orderer, orderer_rank, orderer_ckey, reason, paying_account, ordering_outpost)
-	. = ..(null, orderer, orderer_rank, orderer_ckey, reason, paying_account, ordering_outpost)
-	src.packs = packs
-	for(var/datum/supply_pack/pack in packs)
-		SSblackbox.record_feedback("nested tally", "crate_ordered", 1, list(pack.name, "amount"))
-		SSblackbox.record_feedback("nested tally", "crate_ordered", pack.cost, list(pack.name, "cost"))
-
-/datum/supply_order/combo/generate(atom/location)
-	var/account_holder
 	var/datum/supply_pack/initial_pack = packs[1]
 
-	var/obj/structure/closet/crate/C
+	var/obj/structure/closet/crate/order_crate
 	if(paying_account)
 		account_holder = paying_account.account_holder
-		C = new /obj/structure/closet/crate/secure/owned(location, paying_account)
-		C.name = "Grouped Item Crate - Purchased by [paying_account.account_holder]"
+		order_crate = new /obj/structure/closet/crate/secure/owned(location, paying_account)
+		order_crate.name = "Crate - Purchased by [paying_account.account_holder]"
 	else
 		account_holder = "Unknown"
-		C = new initial_pack.crate_type(location)
-		C.name = "Grouped Item Crate"
+		order_crate = new initial_pack.crate_type(location)
 
 	for(var/datum/supply_pack/filling_pack in packs)
-		filling_pack.fill(C)
-	generateManifest(C, account_holder, pack)
-	return C
+		filling_pack.fill(order_crate)
+	generateManifest(order_crate, account_holder)
+	return order_crate
