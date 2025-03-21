@@ -66,8 +66,6 @@ SUBSYSTEM_DEF(overmap)
 
 
 /datum/controller/subsystem/overmap/fire()
-	if(length(dynamic_encounters) < CONFIG_GET(number/max_overmap_dynamic_events))
-		spawn_ruin_level()
 	for(var/datum/overmap_star_system/current_system as anything in tracked_star_systems)
 		if(!current_system.mission_system_enabled)
 			continue
@@ -463,16 +461,20 @@ SUBSYSTEM_DEF(overmap)
 				continue
 			new event_type(position, src)
 
+
+
 /**
  * Creates an overmap object for each ruin level, making them accessible.
  */
 /datum/overmap_star_system/proc/spawn_ruin_levels()
 	for(var/i in 1 to max_overmap_dynamic_events)
-		new /datum/overmap/dynamic(system_spawned_in = src)
+		spawn_ruin_level()
 
 /datum/overmap_star_system/proc/spawn_ruin_levels_in_orbits()
 	for(var/i in 1 to max_overmap_dynamic_events)
 		new /datum/overmap/dynamic(system_spawned_in = src)
+/datum/overmap_star_system/proc/spawn_ruin_level()
+	new /datum/overmap/dynamic(system_spawned_in = src)
 
 /**
  * See [/datum/controller/subsystem/overmap/proc/spawn_events], spawns "veins" (like ores) of events
@@ -536,6 +538,8 @@ SUBSYSTEM_DEF(overmap)
  * Not sure what this does. Called everytime SSOvermap fires and overmap has mission_system_enabled enabled.
  */
 /datum/overmap_star_system/proc/handle_dynamic_missions()
+	if(length(dynamic_encounters) < max_overmap_dynamic_events)
+		spawn_ruin_level()
 	if(COOLDOWN_FINISHED(src, dynamic_despawn_cooldown))
 		//need to make this have a weight for older planets at some point soon
 		var/datum/overmap/dynamic/picked_encounter = pick(dynamic_encounters)
