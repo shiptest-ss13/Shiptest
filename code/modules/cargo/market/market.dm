@@ -1,6 +1,13 @@
 GLOBAL_LIST_EMPTY(cargo_landing_zones)
 
 /datum/cargo_market
+	var/name = "huh?"
+
+	var/limited_stock = FALSE
+	var/stock_refresh = FALSE
+
+	var/price_varies = FALSE
+
 	var/supply_blocked = FALSE
 	/// Order number given to next cargo order
 	var/ordernum = 1
@@ -9,6 +16,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 
 /datum/cargo_market/New()
 	SScargo.markets += src
+
 	ordernum = rand(1, 9000)
 	generate_supply_packs()
 
@@ -21,3 +29,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 		if(!current_pack.contains)
 			continue
 		supply_packs += current_pack
+
+/datum/cargo_market/outpost
+
+/datum/cargo_market/black

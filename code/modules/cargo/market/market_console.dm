@@ -15,7 +15,7 @@
 /obj/machinery/computer/market/proc/find_landing_zone()
 	if(cargo_lz)
 		return TRUE
-	for(var/atom/landing_zone in GLOB.cargo_landing_zones)
+	for(var/atom/landing_zone in SScargo.cargo_landing_zones)
 		if(landing_zone.virtual_z() == src.virtual_z())
 			cargo_lz = landing_zone
 			return TRUE
@@ -40,7 +40,7 @@
 /obj/machinery/computer/market/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "OutpostCargo", name)
+		ui = new(user, src, "MarketConsole", name)
 		ui.open()
 		if(!charge_account)
 			reconnect()
@@ -186,12 +186,3 @@
 		return TRUE
 	cargo_lz = src
 	return TRUE
-
-/obj/effect/landmark/cargo
-	name = "cargo_lz"
-	icon_state = "cargo_landmark"
-	invisibility = INVISIBILITY_OBSERVER
-
-/obj/effect/landmark/cargo/Initialize()
-	. = ..()
-	GLOB.cargo_landing_zones += src

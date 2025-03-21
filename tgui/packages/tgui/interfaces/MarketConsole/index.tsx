@@ -19,7 +19,7 @@ import { CargoCart } from './CargoCart';
 import { CargoCatalog } from './CargoCatalog';
 import { CargoData, SupplyPack } from './types';
 
-export const OutpostCargo = (props, context) => {
+export const MarketConsole = (props, context) => {
   const { act, data } = useBackend<CargoData>(context);
   const { supply_packs = [] } = data;
   const [tab, setTab] = useSharedState(context, 'outpostTab', 'catalog');

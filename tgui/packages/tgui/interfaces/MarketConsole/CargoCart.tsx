@@ -86,10 +86,8 @@ export const CargoCart = (props, context) => {
           {' '}
           {count}
         </Button>
-      </Flex>
-      <Flex>
-        <Button>Cash: 111111</Button>
         <Button>Total cost: {total}</Button>
+        <Button>Cash: 111111</Button>
       </Flex>
     </Section>
   );

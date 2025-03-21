@@ -2,6 +2,7 @@ SUBSYSTEM_DEF(cargo)
 	name = "Cargo"
 	flags = SS_BACKGROUND
 	init_order = INIT_ORDER_DEFAULT
+	var/list/cargo_landing_zones = list()
 	var/list/datum/cargo_market/markets = list()
 	var/list/queued_purchases = list()
 

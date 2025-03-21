@@ -42,7 +42,7 @@
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
 
-	var/datum/cargo_market/market
+	var/datum/cargo_market/outpost/market
 
 	/// Our faction of the outpost
 	var/datum/faction/faction
@@ -71,6 +71,8 @@
 
 	if(!market)
 		market = new()
+		market.name = "[name] market"
+
 	fill_missions()
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
