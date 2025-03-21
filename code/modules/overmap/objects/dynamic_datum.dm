@@ -15,6 +15,8 @@
 	var/list/obj/docking_port/stationary/reserve_docks
 	///If the level should be preserved. Useful for if you want to build a colony or something.
 	var/preserve_level = FALSE
+	///If the level is able to be preserved. For example, by a planet_beacon
+	var/can_preserve = TRUE
 	///What kind of planet the level is, if it's a planet at all.
 	var/datum/planet_type/planet
 	///Planet's flavor name, if it is a planet.
@@ -199,10 +201,6 @@
 // 		load_level() //Load the level whenever it's randomised
 // #endif
 
-	if(!preserve_level)
-		token.desc += " It may not still be here if you leave it."
-		token.update_appearance()
-
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
 	switch(rand(1,10))
@@ -282,6 +280,11 @@
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	qdel(src)
 
+/datum/overmap/dynamic/proc/set_preservation(preserve)
+	if(!can_preserve)
+		return FALSE
+	preserve_level = preserve
+	return TRUE
 
 /*
 	OVERMAP ENCOUNTER AREAS

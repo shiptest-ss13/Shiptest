@@ -4,6 +4,11 @@
 /// Default cell drain per process on MODsuits
 #define DEFAULT_CHARGE_DRAIN 0.09
 
+#define MODULE_CHARGE_DRAIN_LOW 5
+#define MODULE_CHARGE_DRAIN_MEDIUM 10
+#define MODULE_CHARGE_DRAIN_HIGH 20
+#define MODULE_CHARGE_DRAIN_MASSIVE 50
+
 /// Default time for a part to seal
 #define MOD_ACTIVATION_STEP_TIME (2 SECONDS)
 
