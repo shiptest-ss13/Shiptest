@@ -142,20 +142,6 @@
 	contains = list(/obj/item/weldingtool/electric)
 	crate_name = "electric welder crate"
 
-/datum/supply_pack/tools/hand_drill
-	name = "Hand Drill"
-	desc = "Contains a single hand drill, with replacable drillbits for both screwing and wrenching."
-	cost = 850
-	contains = list(/obj/item/screwdriver/power)
-	crate_name = "hand drill crate"
-
-/datum/supply_pack/tools/jaws_of_life
-	name = "Jaws of Life"
-	desc = "Contains a single 'Jaws of Life', rescue equipment that doubles for both prying and cutting tools."
-	cost = 850
-	contains = list(/obj/item/crowbar/power)
-	crate_name = "jaws of life crate"
-
 /datum/supply_pack/tools/plasmacutter
 	name = "Plasmacutter Crate"
 	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
