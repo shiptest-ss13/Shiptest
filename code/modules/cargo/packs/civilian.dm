@@ -254,7 +254,7 @@
 	crate_type = /obj/structure/closet/crate/wooden
 
 /datum/supply_pack/civilian/lifeline
-	name = "A portable drive containing a new install of lifeline"
+	name = "Lifeline Disc"
 	desc = "Contains a highly resistant digital rights managment..."
 	cost = 250
 	contains = list(/obj/item/computer_hardware/hard_drive/portable/installer/lifeline)
