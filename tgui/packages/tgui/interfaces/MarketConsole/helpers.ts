@@ -11,10 +11,10 @@ import { SupplyPack, SupplyCategory } from './types';
  * @param {string} search The search term
  * @returns {SupplyPack[]} The flat list of supply packs.
  */
-export function searchForSupplies(
+export const searchForSupplies = (
   supplies: SupplyCategory[],
   search: string
-): SupplyPack[] {
+): SupplyPack[] => {
   const lowerSearch = search.toLowerCase();
 
   return flow([
@@ -29,4 +29,4 @@ export function searchForSupplies(
     // Just the first page
     (filtered: SupplyPack[]) => filtered.slice(0, 25),
   ])(supplies);
-}
+};

@@ -1,22 +1,14 @@
-import { sortBy } from 'common/collections';
-
 import { useBackend, useSharedState } from '../../backend';
 import {
-  Blink,
-  Box,
   Button,
-  Dimmer,
   Flex,
-  RestrictedInput,
   Icon,
   Input,
-  Modal,
   Stack,
   Section,
   Tabs,
   Table,
 } from '../../components';
-import { Window } from '../../layouts';
 import { formatMoney } from '../../format';
 
 import { searchForSupplies } from './helpers';
@@ -24,7 +16,6 @@ import { CargoData, SupplyPack, SupplyCategory } from './types';
 
 export const CargoCatalog = (props, context) => {
   const { act, data } = useBackend<CargoData>(context);
-  const {} = data;
 
   const supply_packs = Object.values(data.supply_packs);
 

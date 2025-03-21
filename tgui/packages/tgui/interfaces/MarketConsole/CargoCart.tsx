@@ -1,20 +1,12 @@
 import { useBackend } from '../../backend';
 import {
-  Blink,
   Box,
   Button,
-  Dimmer,
-  Flex,
   RestrictedInput,
-  Icon,
-  Input,
-  Modal,
   Section,
-  Tabs,
   Table,
 } from '../../components';
-import { TableCell, TableRow } from '../../components/Table';
-import { Window } from '../../layouts';
+import { TableRow } from '../../components/Table';
 import { formatMoney } from '../../format';
 
 import { CargoData } from './types';
