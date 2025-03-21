@@ -7,7 +7,7 @@
 
 ///Monkey checks
 #define SHOULD_RESIST(source) (source.on_fire || source.buckled || HAS_TRAIT(source, TRAIT_RESTRAINED) || (source.pulledby && source.pulledby.grab_state > GRAB_PASSIVE))
-#define IS_DEAD_OR_INCAP(source) (HAS_TRAIT(source, TRAIT_INCAPACITATED) || HAS_TRAIT(source, TRAIT_HANDS_BLOCKED) || IS_IN_STASIS(source))
+#define IS_DEAD_OR_INCAP(source) (source.incapacitated() || source.stat)
 
 ///For JPS pathing, the maximum length of a path we'll try to generate. Should be modularized depending on what we're doing later on
 #define AI_MAX_PATH_LENGTH 30 // 30 is possibly overkill since by default we lose interest after 14 tiles of distance, but this gives wiggle room for weaving around obstacles
@@ -23,10 +23,16 @@
 ///Does this task let you perform the action while you move closer? (Things like moving and shooting)
 #define AI_BEHAVIOR_MOVE_AND_PERFORM (1<<1)
 
+///AI flags
+#define STOP_MOVING_WHEN_PULLED (1<<0)
+
 ///Subtree defines
 
 ///This subtree should cancel any further planning, (Including from other subtrees)
 #define SUBTREE_RETURN_FINISH_PLANNING 1
+
+//Generic BB keys
+#define BB_CURRENT_MIN_MOVE_DISTANCE "min_move_distance"
 
 ///Monkey AI controller blackboard keys
 
@@ -39,10 +45,33 @@
 #define BB_MONKEY_PICKUPTARGET "BB_monkey_pickuptarget"
 #define BB_MONKEY_PICKPOCKETING "BB_monkey_pickpocketing"
 #define BB_MONKEY_CURRENT_ATTACK_TARGET "BB_monkey_current_attack_target"
+#define BB_MONKEY_CURRENT_PRESS_TARGET "BB_monkey_current_press_target"
+#define BB_MONKEY_CURRENT_GIVE_TARGET "BB_monkey_current_give_target"
 #define BB_MONKEY_TARGET_DISPOSAL "BB_monkey_target_disposal"
 #define BB_MONKEY_DISPOSING "BB_monkey_disposing"
 #define BB_MONKEY_RECRUIT_COOLDOWN "BB_monkey_recruit_cooldown"
 #define BB_MONKEY_NEXT_HUNGRY "BB_monkey_next_hungry"
+
+///Hostile AI controller blackboard keys
+#define BB_HOSTILE_ORDER_MODE "BB_HOSTILE_ORDER_MODE"
+#define BB_HOSTILE_FRIEND "BB_HOSTILE_FRIEND"
+#define BB_HOSTILE_ATTACK_WORD "BB_HOSTILE_ATTACK_WORD"
+#define BB_FOLLOW_TARGET "BB_FOLLOW_TARGET"
+#define BB_ATTACK_TARGET "BB_ATTACK_TARGET"
+#define BB_VISION_RANGE "BB_VISION_RANGE"
+
+/// Basically, what is our vision/hearing range.
+#define BB_HOSTILE_VISION_RANGE 10
+/// After either being given a verbal order or a pointing order, ignore further of each for this duration
+#define AI_HOSTILE_COMMAND_COOLDOWN 2 SECONDS
+
+// hostile command modes (what pointing at something/someone does depending on the last order the carp heard)
+/// Don't do anything (will still react to stuff around them though)
+#define HOSTILE_COMMAND_NONE 0
+/// Will attack a target.
+#define HOSTILE_COMMAND_ATTACK 1
+/// Will follow a target.
+#define HOSTILE_COMMAND_FOLLOW 2
 
 ///Dog AI controller blackboard keys
 
@@ -79,3 +108,18 @@
 #define COMMAND_FETCH "Fetch"
 #define COMMAND_ATTACK "Attack"
 #define COMMAND_DIE "Play Dead"
+
+//Hunting defines
+#define SUCCESFUL_HUNT_COOLDOWN 5 SECONDS
+
+///Hunting BB keys
+#define BB_CURRENT_HUNTING_TARGET "BB_current_hunting_target"
+#define BB_LOW_PRIORITY_HUNTING_TARGET "BB_low_priority_hunting_target"
+#define BB_HUNTING_COOLDOWN "BB_HUNTING_COOLDOWN"
+
+///Basic Mob Keys
+
+///Targetting subtrees
+#define BB_BASIC_MOB_CURRENT_TARGET "BB_basic_current_target"
+#define BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION "BB_basic_current_target_hiding_location"
+#define BB_TARGETTING_DATUM "targetting_datum"
