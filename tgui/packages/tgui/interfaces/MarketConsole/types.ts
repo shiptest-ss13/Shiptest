@@ -1,6 +1,8 @@
 export type CargoData = {
   supply_packs: Record<string, SupplyCategory>;
   shopping_cart: CartOrder[];
+  account_holder: string;
+  account_balance: number;
 };
 
 export type SupplyCategory = {

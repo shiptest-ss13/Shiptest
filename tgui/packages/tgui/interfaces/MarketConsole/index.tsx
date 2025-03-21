@@ -17,7 +17,7 @@ import { Window } from '../../layouts';
 
 import { CargoCart } from './CargoCart';
 import { CargoCatalog } from './CargoCatalog';
-import { CargoData, SupplyPack } from './types';
+import { CargoData } from './types';
 
 export const MarketConsole = (props, context) => {
   const { act, data } = useBackend<CargoData>(context);

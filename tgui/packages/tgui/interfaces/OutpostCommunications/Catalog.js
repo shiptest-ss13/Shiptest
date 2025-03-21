@@ -101,7 +101,7 @@ export const CargoCatalog = (props, context) => {
       </Section>
       <Section title="Catalog">
         <Flex>
-          <Flex.Item ml={-1} mr={1}>
+          <Flex.Item ml={-1} mr={1.5}>
             <Tabs vertical>
               <Tabs.Tab
                 key="search_results"

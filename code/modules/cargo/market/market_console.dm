@@ -47,9 +47,8 @@
 
 /obj/machinery/computer/market/ui_data(mob/user)
 	var/list/data = list()
+
 	data["shopping_cart"] = list()
-	if(!length(shopping_cart))
-		return
 	for(var/item in shopping_cart)
 		if(!istype(shopping_cart[item]["pack"], /datum/supply_pack))
 			continue
@@ -61,6 +60,10 @@
 			"cost" = pack.cost,
 			"base_cost" = pack.base_cost
 		))
+
+	data["account_holder"] = charge_account.account_holder
+	data["account_balance"] = charge_account.account_balance
+
 	return data
 
 /obj/machinery/computer/market/ui_static_data(mob/user)
@@ -170,6 +173,7 @@
 		say("Shopping cart is empty!")
 		return
 	var/total_cost = 0
+	//var/datum/supply_order/incoming_order = new()
 	for(var/order in shopping_cart)
 		if(!istype(shopping_cart[order]["pack"], /datum/supply_pack))
 			continue

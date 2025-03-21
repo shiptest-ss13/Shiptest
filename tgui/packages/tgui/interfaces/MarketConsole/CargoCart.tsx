@@ -17,11 +17,16 @@ import { TableCell, TableRow } from '../../components/Table';
 import { Window } from '../../layouts';
 import { formatMoney } from '../../format';
 
-import { CargoData, SupplyPack } from './types';
+import { CargoData } from './types';
 
 export const CargoCart = (props, context) => {
   const { act, data } = useBackend<CargoData>(context);
-  const { supply_packs = [], shopping_cart = [] } = data;
+  const {
+    supply_packs = [],
+    account_holder,
+    account_balance,
+    shopping_cart = [],
+  } = data;
 
   let total = 0;
   let count = 0;
@@ -64,26 +69,28 @@ export const CargoCart = (props, context) => {
         <TableRow color="gray">
           <Table.Cell>
             <Button content="Withdraw Cash" onClick={() => act('withdraw')} />
-            <Box>Cash: 111111</Box>
+            <Button>{`${account_holder}: ${formatMoney(
+              account_balance
+            )} cr`}</Button>
           </Table.Cell>
           <Table.Cell>
-            <Box>Total cost: {total}</Box>
+            <Box>{`Total cost: ${formatMoney(total)} cr`}</Box>
           </Table.Cell>
           <Table.Cell>
             <Button
               icon="shopping-cart"
               color="good"
-              content="Buy"
               onClick={() => act('buy')}
             >
+              {'Buy '}
               {count}
             </Button>
             <Button
               icon="times"
               color="transparent"
-              content="Clear"
               onClick={() => act('clear')}
             >
+              {'Clear '}
               {count}
             </Button>
           </Table.Cell>

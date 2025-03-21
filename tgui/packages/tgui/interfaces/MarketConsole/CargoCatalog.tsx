@@ -58,16 +58,18 @@ export const CargoCatalog = (props, context) => {
   return (
     <Section title="Catalog" fill scrollable>
       <Flex>
-        <CatalogTabs
-          activeSupplyName={activeSupplyName}
-          categories={supply_packs}
-          searchText={searchText}
-          setActiveSupplyName={setActiveSupplyName}
-          setSearchText={setSearchText}
-        />
-        <Box width="70%">
+        <Flex.Item ml={-1} mr={1.5}>
+          <CatalogTabs
+            activeSupplyName={activeSupplyName}
+            categories={supply_packs}
+            searchText={searchText}
+            setActiveSupplyName={setActiveSupplyName}
+            setSearchText={setSearchText}
+          />
+        </Flex.Item>
+        <Flex.Item grow={1}>
           <CatalogList packs={packs()} />
-        </Box>
+        </Flex.Item>
       </Flex>
     </Section>
   );
@@ -81,7 +83,7 @@ type CatalogTabsProps = {
   setSearchText: (text: string) => void;
 };
 
-function CatalogTabs(props: CatalogTabsProps) {
+export const CatalogTabs = (props: CatalogTabsProps) => {
   const {
     activeSupplyName,
     categories,
@@ -124,35 +126,35 @@ function CatalogTabs(props: CatalogTabsProps) {
         </Stack>
       </Tabs.Tab>
 
-        {categories.map((supply) => (
-          <Tabs.Tab
-            className="candystripe"
-            color={supply.name === activeSupplyName ? 'green' : undefined}
-            key={supply.name}
-            selected={supply.name === activeSupplyName}
-            onClick={() => {
-              setActiveSupplyName(supply.name);
-              setSearchText('');
-            }}
+      {categories.map((supply) => (
+        <Tabs.Tab
+          className="candystripe"
+          color={supply.name === activeSupplyName ? 'green' : undefined}
+          key={supply.name}
+          selected={supply.name === activeSupplyName}
+          onClick={() => {
+            setActiveSupplyName(supply.name);
+            setSearchText('');
+          }}
+        >
+          <Table.Row
+            style={{ display: 'flex', justifyContent: 'space-between' }}
           >
-            <Table.Row style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Table.Cell>{supply.name}</Table.Cell>
-              <Table.Cell> {supply.packs.length}</Table.Cell>
-             </Table.Row>
-          </Tabs.Tab>
-        ))}
-
+            <Table.Cell>{supply.name}</Table.Cell>
+            <Table.Cell> {supply.packs.length}</Table.Cell>
+          </Table.Row>
+        </Tabs.Tab>
+      ))}
     </Tabs>
   );
-}
+};
 
 type CatalogListProps = {
   packs: SupplyCategory['packs'];
 };
 
-function CatalogList(props: CatalogListProps, context) {
+export const CatalogList = (props: CatalogListProps, context) => {
   const { act, data } = useBackend<CargoData>(context);
-  const {} = data;
   const { packs = [] } = props;
 
   return (
@@ -167,9 +169,9 @@ function CatalogList(props: CatalogListProps, context) {
           ((pack.base_cost - pack.cost) / pack.base_cost) * 100;
         return (
           <Table.Row key={pack.ref} className="candystripe">
-            <Table.Cell width="70%">{pack.name}</Table.Cell>
-            <Table.Cell width="15%">1</Table.Cell>
-            <Table.Cell width="15%" collapsing textAlign="right">
+            <Table.Cell>{pack.name}</Table.Cell>
+            <Table.Cell>1</Table.Cell>
+            <Table.Cell textAlign="right">
               <Button
                 fluid
                 icon={discount > 0 ? 'shopping-cart' : undefined}
@@ -192,4 +194,4 @@ function CatalogList(props: CatalogListProps, context) {
       })}
     </Table>
   );
-}
+};
