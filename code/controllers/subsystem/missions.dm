@@ -16,22 +16,24 @@ SUBSYSTEM_DEF(missions)
 	return ..()
 
 /datum/controller/subsystem/missions/fire(resumed)
-	if(active_ruin_missions.len < default_mission_count + (SSovermap.controlled_ships.len * CONFIG_GET(number/max_dynamic_missions)))
-		for(var/i in 1 to inactive_ruin_missions.len)
-			//Make sure we dont ONLY take the one of the top.
-			if(prob(50))
-				//Has the pleasnt result of grabbing the most recent mission, idealy this means a freshly created planet
-				var/datum/mission/ruin/mission_to_start = inactive_ruin_missions[inactive_ruin_missions.len - (i - 1)]
-				if(mission_to_start.mission_limit)
-					var/existing_count = 0
-					for(var/datum/mission/ruin/mission_to_count in active_ruin_missions)
-						if(mission_to_start.type == mission_to_count.type)
-							existing_count++
-					if(existing_count >= mission_to_start.mission_limit)
-						//testing("skipping [mission_to_start][ADMIN_VV(mission_to_start)] because too many matching types exist already.")
-						break
-				mission_to_start.start_mission()
-				break
+	for(var/i in 1 to inactive_ruin_missions.len)
+		if(MC_TICK_CHECK)
+			return
+		if(!(active_ruin_missions.len < default_mission_count + (SSovermap.controlled_ships.len * CONFIG_GET(number/max_dynamic_missions))))
+			break
+		//Make sure we dont ONLY take the one of the top.
+		if(prob(50))
+			//Has the pleasnt result of grabbing the most recent mission, idealy this means a freshly created planet
+			var/datum/mission/ruin/mission_to_start = inactive_ruin_missions[inactive_ruin_missions.len - (i - 1)]
+			if(mission_to_start.mission_limit)
+				var/existing_count = 0
+				for(var/datum/mission/ruin/mission_to_count in active_ruin_missions)
+					if(mission_to_start.type == mission_to_count.type)
+						existing_count++
+				if(existing_count >= mission_to_start.mission_limit)
+					//testing("skipping [mission_to_start][ADMIN_VV(mission_to_start)] because too many matching types exist already.")
+					continue
+			mission_to_start.start_mission()
 
 
 // should probably come up with a better solution for this
