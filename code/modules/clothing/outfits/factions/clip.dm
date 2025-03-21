@@ -59,10 +59,10 @@
 
 	uniform = /obj/item/clothing/under/clip/formal
 	alt_uniform = /obj/item/clothing/under/clip/formal/with_shirt
-	suit = /obj/item/clothing/suit/toggle/lawyer/clip
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip/command
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
-	head = /obj/item/clothing/head/clip/slouch
+	head = /obj/item/clothing/head/clip/slouch/officer
 	id = /obj/item/card/id/gold
 	ears = /obj/item/radio/headset/clip/alt/captain
 	gloves = /obj/item/clothing/gloves/color/white
@@ -115,11 +115,11 @@
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/formal
 	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/clip/command
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	alt_suit = null
 
 	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/clip/slouch/officer
+	head = /obj/item/clothing/head/clip/slouch
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
@@ -138,13 +138,10 @@
 	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor
 
-	l_hand = /obj/item/storage/firstaid/medical
-
 	box = /obj/item/storage/box/survival/medical
 	chameleon_extras = /obj/item/gun/syringe
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/sneakers/white
-	head = /obj/item/clothing/head/beret/med
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
 	suit_store = /obj/item/flashlight/pen
@@ -159,13 +156,11 @@
 	job_icon = "paramedic"
 	jobtype = /datum/job/paramedic
 
-	l_hand = null
-
 	uniform = /obj/item/clothing/under/clip/medic
 	head = /obj/item/clothing/head/soft/paramedic
 	shoes = /obj/item/clothing/shoes/sneakers/blue
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
-	belt = /obj/item/storage/belt/medical/paramedic
+	belt = /obj/item/storage/belt/medical
 	l_pocket = /obj/item/flashlight/pen
 
 	backpack = /obj/item/storage/backpack/medic
@@ -388,7 +383,7 @@
 	jobtype = /datum/job/doctor
 
 	uniform = /obj/item/clothing/under/clip/medic
-	shoes = /obj/item/clothing/shoes/sneakers/white
+	shoes = /obj/item/clothing/shoes/combat
 	head = /obj/item/clothing/head/clip/corpsman
 	suit = null
 	suit_store = null
@@ -409,7 +404,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
 	uniform = /obj/item/clothing/under/clip
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/clip
 	suit = null
 
@@ -421,7 +416,7 @@
 
 	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
 	uniform = /obj/item/clothing/under/clip/minutemen
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/clip
 
 	suit = /obj/item/clothing/suit/armor/vest/alt
@@ -451,7 +446,7 @@
 
 	head = /obj/item/clothing/head/clip/slouch
 	uniform = /obj/item/clothing/under/clip/minutemen
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/hazardvest
 
 /datum/outfit/job/clip/minutemen/engineer

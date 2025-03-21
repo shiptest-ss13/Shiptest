@@ -259,7 +259,7 @@
 
 /obj/item/clothing/head/clip/slouch
 	name = "\improper Minutemen officer's slouch hat"
-	desc = "A commanding slouch hat, issued only to senior enlisted and junior officers of the Minutemen."
+	desc = "A commanding slouch hat, issued to senior enlisted and junior officers of the Minutemen."
 	icon_state = "clip_slouch_hat"
 
 	supports_variations = VOX_VARIATION
