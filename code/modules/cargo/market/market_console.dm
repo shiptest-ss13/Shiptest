@@ -31,7 +31,8 @@
 
 /obj/machinery/computer/market/proc/find_market()
 	var/datum/overmap/outpost/target_outpost = find_outpost()
-	market = target_outpost.market
+	if(target_outpost)
+		market = target_outpost.market
 
 /obj/machinery/computer/market/proc/get_cargo_packs()
 	if(!market)
