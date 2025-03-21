@@ -255,7 +255,7 @@
 
 /datum/supply_pack/civilian/lifeline
 	name = "Lifeline Disc"
-	desc = "Contains a highly resistant digital rights managment..."
+	desc = "Contains a copy of the Lifeline program, and all the associated authorization keys to install and run it."
 	cost = 250
 	contains = list(/obj/item/computer_hardware/hard_drive/portable/installer/lifeline)
 
