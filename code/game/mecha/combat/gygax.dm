@@ -70,10 +70,11 @@
 /obj/mecha/combat/gygax/charger/overclock
 	name = "\improper Overclocked 501p"
 	desc = "A lightweight security exosuit, which has been overclocked to have it's leg actuators launch the exosuit forward instead of enhanced speed."
-	charge_windup = 1.5
+	charge_windup = 1
 	charge_cooldown = 100
 	charge_power_consume = 250
 	charge_distance = 4
+	charge_break_walls = FALSE
 
 /obj/mecha/combat/gygax/charger/mp
 	name = "\improper NT-501p-MP"
