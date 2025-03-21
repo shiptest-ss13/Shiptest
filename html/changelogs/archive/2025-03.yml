@@ -234,3 +234,27 @@
   generalthrax:
   - bugfix: Distillery now has Mauler mags.
   - rscadd: Fancy Illestren in the Distillery armoury.
+2025-03-20:
+  FalloutFalcon:
+  - bugfix: a say() is now a invoke async cause it sleeps
+  FalloutFalcon, ErikaFox:
+  - rscadd: Dynamic missions! see about them in your local outpost.
+  - rscadd: A ModComp program to view and call dibs on missions.
+  - rscadd: You now need to head down to outpost cargo to view and turn in missions.
+  - rscadd: Adds multiple ruin specific missions, you can examine objects to see if
+      they are using in a mission.
+  - rscadd: You can examine planets and other overmap objects. (will eventually become
+      admin only)
+  - rscdel: Kills all old missions expect for drills, overmap scans, and capture.
+  - admin: Swaps the category on a few overmap related buttons.
+  - admin: You can now choose to not load a planet when spawning them.
+  - refactor: Planets now pick there ruin before they spawn. Used in missions to pick
+      a planet.
+  SomeguyManperson:
+  - rscadd: surgeries to organic limbs that are done without anesthetic or painkillers
+      now have a chance to cause extra damage
+  - balance: medical cyborgs now have access to morphine in their hypospray
+2025-03-21:
+  Erikafox:
+  - rscadd: entertainment monitors now tell you when someone starts their livestream.
+      don't miss today's episode of the scrapper show!
