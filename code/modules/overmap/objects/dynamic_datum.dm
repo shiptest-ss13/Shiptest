@@ -124,9 +124,11 @@
 /datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
 	start_countdown()
 
-/datum/overmap/dynamic/proc/start_countdown(_lifespan = 60 SECONDS, _color = COLOR_OFF_WHITE)
+/datum/overmap/dynamic/proc/start_countdown(_lifespan = 60 SECONDS, _color = null)
 	if(token.countdown) //We already have a countdown. dont start a new one.
 		return
+	if(!_color)
+		_color = current_overmap.hazard_secondary_color
 	if(_lifespan)
 		lifespan = _lifespan
 	if(!can_reset_dynamic())
