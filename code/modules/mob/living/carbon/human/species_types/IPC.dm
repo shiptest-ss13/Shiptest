@@ -63,6 +63,8 @@
 	)
 
 /datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
+	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface")
+		mutantbrain = /obj/item/organ/brain/mmi_holder
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
@@ -71,10 +73,6 @@
 			if(species_datum?.has_screen)
 				change_screen = new
 				change_screen.Grant(H)
-		if(H.dna.features["ipc_brain"] == "Man-Machine Interface")
-			mutantbrain = /obj/item/organ/brain/mmi_holder
-		else
-			mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
