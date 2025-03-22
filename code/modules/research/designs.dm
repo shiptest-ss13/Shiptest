@@ -139,8 +139,8 @@ other types of metals and chemistry for reagents).
 
 //Disks with content
 /obj/item/disk/design_disk/ammo_c10mm
-	design_name = "10mm Ammo"
-	desc = "A design disk containing the pattern for a refill box of standard 10mm ammo, used in Stechkin pistols."
+	design_name = "10x22mm Ammo"
+	desc = "A design disk containing the pattern for a refill box of standard 10x22mm ammo, used in several pistols."
 	starting_blueprints = (/datum/design/c10mm)
 
 /obj/item/disk/design_disk/disposable_gun
@@ -158,8 +158,8 @@ other types of metals and chemistry for reagents).
 	starting_blueprints = list(/datum/design/clip_ripley_upgrade, /datum/design/clip_durand_upgrade)
 
 /obj/item/disk/design_disk/ammo_c9mm
-	design_name = "9mm Ammo"
-	desc = "A design disk containing the pattern for a refill box of standard 9mm ammo, used in Commander pistols."
+	design_name = "9x18mm Ammo"
+	desc = "A design disk containing the pattern for a refill box of standard 9x18mm ammo, used in Commander pistols."
 	starting_blueprints = list(/datum/design/c9mmautolathe)
 
 /obj/item/disk/design_disk/ammo_c9mm/Initialize()

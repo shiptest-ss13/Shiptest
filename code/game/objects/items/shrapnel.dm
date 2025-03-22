@@ -57,7 +57,7 @@
 	name = "8x58mm Tracker"
 
 /obj/item/shrapnel/bullet/tracker/a65clip
-	name = "6.5x57mm Tracker"
+	name = "6.5x55mm Tracker"
 
 /obj/item/shrapnel/bullet/tracker/a308
 	name = ".308 Tracker"
