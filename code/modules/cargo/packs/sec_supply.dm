@@ -39,7 +39,7 @@
 /datum/supply_pack/sec_supply/smokebombs
 	name = "Smoke Grenades Crate"
 	desc = "Contains seven smoke grenades for screening unit movements and signalling."
-	cost = 750
+	cost = 500
 	contains = list(/obj/item/storage/box/smokebombs)
 	crate_name = "smoke grenades crate"
 
