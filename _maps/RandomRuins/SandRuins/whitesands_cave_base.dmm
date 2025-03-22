@@ -2384,6 +2384,10 @@
 /obj/structure/sign/poster/retro/smile{
 	pixel_x = 28
 	},
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1;
+	type_to_spawn = /obj/machinery/syndicatebomb
+	},
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/cave/explored)
 "BG" = (
@@ -4312,9 +4316,11 @@
 	pixel_x = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/melee/axe/sledgehammer{
-	pixel_y = -14;
-	name = "emergency access hammer"
+/obj/item/melee/sledgehammer{
+	pixel_x = -2;
+	pixel_y = 3;
+	name = "emergency wall removal tool";
+	desc = "A very blunt hammer, presumably for breaking concrete into tiny chunks."
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base/engi)
