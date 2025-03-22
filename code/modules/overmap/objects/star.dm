@@ -13,7 +13,7 @@
 	alter_token_appearance()
 
 /datum/overmap/star/Destroy(force)
-	SSpoints_of_interest.make_point_of_interest(token)
+	SSpoints_of_interest.remove_point_of_interest(token)
 	. = ..()
 
 /datum/overmap/star/proc/gen_star_name()

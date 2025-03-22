@@ -38,16 +38,16 @@ export const OrbitContent = (props, context) => {
       title: 'Ghosts',
     },
     {
+      content: data.ships,
+      title: 'Ships',
+    },
+    {
       content: data.misc,
       title: 'Misc',
     },
     {
       content: data.npcs,
       title: 'NPCs',
-    },
-    {
-      content: data.ships,
-      title: 'Ships',
     },
   ];
 

@@ -75,7 +75,7 @@
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
-	SSpoints_of_interest.make_point_of_interest(token)
+	SSpoints_of_interest.remove_point_of_interest(token)
 	// cleanup our data structures. behavior here is currently relatively restrained; may be made more expansive in the future
 	for(var/list/datum/hangar_shaft/h_shaft as anything in shaft_datums)
 		qdel(h_shaft)
