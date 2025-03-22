@@ -142,12 +142,12 @@
 			chambered = null
 		else if(empty_chamber)
 			chambered = null
-	if (chamber_next_round && (magazine?.max_ammo > 1) && !condition_check(from_firing))
+	if (chamber_next_round && (magazine?.max_ammo > 1) && !condition_check(from_firing, shooter))
 		chamber_round()
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 
 /// Handles weapon condition. Returning TRUE prevents process_chamber from automatically loading a new round
-/obj/item/gun/ballistic/proc/condition_check(from_firing = TRUE)
+/obj/item/gun/ballistic/proc/condition_check(from_firing = TRUE, atom/shooter)
 	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing || !magazine.ammo_count(FALSE)) //The revolver is one of the most reliable firearms ever designed, as long as you don't need to fire any more than six bullets at something. Which, of course, you do not.
 		return FALSE
 	last_jam++
@@ -156,6 +156,7 @@
 	if(gun_wear >= wear_major_threshold ?  prob(JAM_CHANCE_MAJOR) : prob(JAM_CHANCE_MINOR) && last_jam >= JAM_GRACE_MINOR)
 		bolt_locked = TRUE
 		last_jam = 0 // sighs and erases number on whiteboard
+		balloon_alert(shooter, "jammed!")
 		playsound(src, 'sound/weapons/gun/general/dry_fire_old.ogg', 50, TRUE, -15) //click. uhoh.
 		return TRUE
 
