@@ -1,0 +1,55 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Chronicle-class Outrider Frigate",
+	"faction": "/datum/faction/solgov",
+	"prefix": "SCSV",
+	"namelists": [
+		"SOLGOV",
+		"SPACE",
+		"BRITISH_NAVY",
+		"NATURAL"
+	],
+	"map_short_name": "Chronicle-class",
+	"map_path": "_maps/shuttles/solgov/solgov_chronicle.dmm",
+	"description": "The Chronicle-class Outrider Frigate is a upgrade package of Chronicle-class Sensory Frigates typically issued to Pionierskompanien. The vessel has had most of it's clerical equipment removed in exchange for a solid design capable of front-line engineering, independent operation, and limited orbital combat. Despite the retooling, the Chronicle Outrider maintains its telecommunication array, and some crews have been known to sell access to it.",
+	"tags": [
+		"Generalist",
+		"Combat",
+		"RP Focus",
+		"Telecomms"
+	],
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/solgov/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Overseer": {
+			"outfit": "/datum/outfit/job/solgov/overseer",
+			"officer": true,
+			"slots": 1
+		},
+		"Sonnensöldner": {
+			"outfit": "/datum/outfit/job/solgov/sonnensoldner",
+			"slots": 2
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/solgov/engineer",
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/solgov/doctor",
+			"slots": 1
+		},
+		"Field Engineer": {
+			"outfit": "/datum/outfit/job/solgov/miner",
+			"slots": 2
+		},
+		"Scribe": {
+			"outfit": "/datum/outfit/job/solgov/assistant",
+			"slots" : 1
+		}
+	},
+	"enabled": true
+}
