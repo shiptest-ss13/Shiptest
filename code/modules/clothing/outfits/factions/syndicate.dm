@@ -1002,6 +1002,14 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 
+/datum/outfit/job/syndicate/security/suns/alternate
+	name = "Syndicate - Peacekeeper - Casual(SUNS)"
+	id_assignment = "Peacekeeper"
+
+	suit = /obj/item/clothing/suit/toggle/suns/pkcoat
+	belt = null
+	head = null
+
 //Miners
 
 /datum/outfit/job/syndicate/miner

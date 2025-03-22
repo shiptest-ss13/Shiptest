@@ -79,6 +79,8 @@
 /obj/structure/closet/crate{
 	name = "prospecting utilities"
 	},
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "bb" = (
@@ -114,7 +116,8 @@
 	pixel_y = -21;
 	name = "bathroom lock";
 	dir = 1;
-	id = "ambrosiabathroom"
+	id = "ambrosiabathroom";
+	normaldoorcontrol = 1
 	},
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/suns/plain,
@@ -788,11 +791,11 @@
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid/regular,
 /obj/item/storage/firstaid/radiation,
 /obj/item/roller,
 /obj/item/clothing/gloves/color/latex/nitrile/suns,
 /obj/item/reagent_containers/glass/rag,
+/obj/item/storage/firstaid/medical,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "nu" = (
@@ -1395,11 +1398,11 @@
 /obj/item/clothing/shoes/jackboots/suns,
 /obj/item/clothing/suit/toggle/suns/workervest,
 /obj/item/storage/pouch/engi,
-/obj/item/radio/headset/syndicate/alt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
 /obj/machinery/newscaster/directional/west,
+/obj/item/radio/headset/alt,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "wj" = (
@@ -1783,8 +1786,7 @@
 	color = "#332521";
 	dir = 4
 	},
-/obj/machinery/newscaster/directional/north,
-/obj/machinery/light/directional/west,
+/obj/machinery/light/directional/north,
 /turf/open/floor/suns/diagonal{
 	color = "#543C30"
 	},
@@ -1927,10 +1929,6 @@
 /area/ship/crew/dorm)
 "CV" = (
 /obj/structure/chair/bench/orange/directional/east,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -30;
-	pixel_y = 0
-	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "Dg" = (
@@ -2031,7 +2029,10 @@
 /area/ship/crew/canteen)
 "Fi" = (
 /obj/structure/closet/crate/bin,
-/obj/item/radio/intercom/directional/east,
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = 30;
+	pixel_y = 6
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
 "Fk" = (
@@ -2083,7 +2084,7 @@
 /obj/structure/window/plasma/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = "ambrosiaswindow"
+	id = "mercuryswindow"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/captain)
@@ -2401,7 +2402,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/light/small/directional/south,
-/obj/machinery/computer/helm/viewscreen/directional/east,
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/suns/diagonal{
 	color = "#543C30"
 	},
@@ -2953,7 +2954,6 @@
 /obj/item/storage/belt/sabre/suns,
 /obj/item/clothing/shoes/jackboots/suns/long,
 /obj/item/clothing/under/syndicate/suns/pkuniform,
-/obj/item/clothing/suit/toggle/suns/pkcoat,
 /obj/item/clothing/under/syndicate/suns/uniform3,
 /obj/item/clothing/under/syndicate/suns/uniform3/alt,
 /obj/item/clothing/suit/armor/vest/suns,
@@ -2966,8 +2966,7 @@
 	},
 /obj/item/storage/pouch/ammo,
 /obj/item/clothing/gloves/tackler/dolphin/suns,
-/obj/item/radio/headset/syndicate/alt,
-/obj/item/clothing/accessory/holster,
+/obj/item/radio/headset/alt,
 /turf/open/floor/suns/grid,
 /area/ship/security)
 "To" = (
@@ -3400,7 +3399,6 @@
 /obj/item/storage/belt/sabre/suns,
 /obj/item/clothing/shoes/jackboots/suns/long,
 /obj/item/clothing/under/syndicate/suns/pkuniform,
-/obj/item/clothing/suit/toggle/suns/pkcoat,
 /obj/item/clothing/under/syndicate/suns/uniform3,
 /obj/item/clothing/under/syndicate/suns/uniform3/alt,
 /obj/item/clothing/suit/armor/vest/suns,
@@ -3413,9 +3411,8 @@
 	},
 /obj/item/storage/pouch/ammo,
 /obj/item/clothing/gloves/tackler/dolphin/suns,
-/obj/item/radio/headset/syndicate/alt,
-/obj/item/clothing/accessory/holster,
 /obj/machinery/airalarm/directional/south,
+/obj/item/radio/headset/alt,
 /turf/open/floor/suns/grid,
 /area/ship/security)
 "ZP" = (
@@ -3769,11 +3766,11 @@ Ek
 sQ
 Kz
 xT
-xT
 TU
 TU
 TU
-xT
+TU
+TU
 xT
 YS
 "}
