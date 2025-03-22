@@ -1213,12 +1213,12 @@
 	build_path = /obj/item/ammo_box/a762_stripper/empty
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/vickland_a308clip
-	name = ".308 Stripper Clip"
+/datum/design/vickland_a8_50rclip
+	name = "8x50mmR Stripper Clip"
 	id = "VicklandStripClip"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)
-	build_path = /obj/item/ammo_box/vickland_a308/empty
+	build_path = /obj/item/ammo_box/vickland_a8_50r/empty
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/a858clip
