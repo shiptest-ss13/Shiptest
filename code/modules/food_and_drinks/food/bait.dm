@@ -13,7 +13,7 @@
 
 /obj/item/reagent_containers/food/snacks/bait/worm
 	name = "worm"
-	desc = "It's a wriggling worm from a can of fishing bait. You're not going to eat it are you ?"
+	desc = "It's a wriggling worm from a can of fishing bait. You're not going to eat it... are you?"
 	icon = 'icons/obj/fishing.dmi'
 	icon_state = "worm"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
@@ -30,7 +30,7 @@
 
 /obj/item/reagent_containers/food/snacks/bait/doughball
 	name = "doughball"
-	desc = "Small piece of dough. Simple but effective fishing bait."
+	desc = "A small piece of dough. Simple but effective fishing bait."
 	icon = 'icons/obj/fishing.dmi'
 	icon_state = "doughball"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)

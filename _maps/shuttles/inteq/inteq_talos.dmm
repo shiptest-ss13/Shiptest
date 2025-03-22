@@ -572,7 +572,7 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm/dormtwo)
 "dQ" = (
-/obj/effect/spawner/random/salvage_machine{
+/obj/effect/spawner/random/salvage/machine{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -2663,7 +2663,7 @@
 /turf/open/floor/engine/air,
 /area/ship/engineering/engine)
 "pY" = (
-/mob/living/simple_animal/mouse{
+/mob/living/basic/mouse{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4278,7 +4278,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "zp" = (
-/obj/effect/spawner/random/salvage_machine{
+/obj/effect/spawner/random/salvage/machine{
 	dir = 8
 	},
 /obj/structure/sign/poster/random{
@@ -4452,6 +4452,9 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Ah" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
@@ -5385,7 +5388,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "GP" = (
-/obj/effect/spawner/random/salvage_machine{
+/obj/effect/spawner/random/salvage/machine{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -6434,7 +6437,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Nu" = (
-/obj/effect/spawner/random/salvage_machine{
+/obj/effect/spawner/random/salvage/machine{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -8199,6 +8202,25 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/ship/storage/port)
+"ZS" = (
+/obj/structure/closet/crate/medical,
+/obj/item/storage/backpack/satchel/med,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/storage/belt/medical/webbing,
+/obj/item/clothing/suit/armor/inteq/corpsman,
+/obj/item/clothing/head/soft/inteq/corpsman,
+/obj/item/clothing/under/syndicate/inteq/corpsman/skirt,
+/obj/item/clothing/under/syndicate/inteq/corpsman,
+/obj/item/clothing/gloves/color/latex/nitrile/inteq,
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "ZU" = (
 /obj/machinery/light/directional/west,
 /obj/machinery/telecomms/server/presets/inteq{
@@ -9009,7 +9031,7 @@ oi
 Oc
 iy
 qB
-Oc
+ZS
 HD
 hT
 VS

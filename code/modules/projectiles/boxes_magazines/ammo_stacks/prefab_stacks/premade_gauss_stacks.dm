@@ -43,7 +43,7 @@
 /obj/item/storage/box/ammo/ferroslug/hc
 	name = "box of high conductivity slugs"
 	desc = "A box of high conductivity slugs for gauss firearms."
-	icon_state = "ferroslugsbox"
+	icon_state = "ferroslugsbox-hc"
 
 /obj/item/storage/box/ammo/ferroslug/hc/PopulateContents()
 	var/static/items_inside = list(
@@ -56,7 +56,7 @@
 /obj/item/storage/box/ammo/ferrolance
 	name = "box of ferromagnetic lances"
 	desc = "A box of standard ferromagnetic lances for gauss firearms."
-	icon_state = "ferrolancesbox"
+	icon_state = "ferrolancesbox-hc"
 
 /obj/item/storage/box/ammo/ferrolance/PopulateContents()
 	var/static/items_inside = list(
@@ -69,7 +69,7 @@
 /obj/item/storage/box/ammo/ferrolance/hc
 	name = "box of high conductivity lances"
 	desc = "A box of high conductivity lances for gauss firearms."
-	icon_state = "ferrolancesbox"
+	icon_state = "ferrolancesbox-hc"
 
 /obj/item/storage/box/ammo/ferrolance/hc/PopulateContents()
 	var/static/items_inside = list(

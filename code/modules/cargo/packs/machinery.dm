@@ -114,7 +114,7 @@
 
 /datum/supply_pack/machinery/t3_matter
 	name = "T3 matter bins crate"
-	desc = "A bundle of high-tech machine parts, containing 2 of each common part type."
+	desc = "A bundle of high-tech machine parts, containing 10 parts."
 	cost = 1500
 	contains = list(/obj/item/storage/box/stockparts/t3/matter)
 	crate_name = "\improper stock parts crate"
@@ -287,6 +287,15 @@
 	crate_name = "laser mining drill crate"
 	crate_type = /obj/structure/closet/crate/engineering
 
+/datum/supply_pack/machinery/ehf_beacon
+	name = "EHF point beacon"
+	desc = "A crate containing an EHF point beacon, used to mark points of interest and semi-permanent constructions."
+	cost = 1000 // This sounds reasonable? You'll still need everything else if you want to make an outpost (Apparently it wasn't, and is cheaper now)
+	contains = list(
+		/obj/machinery/power/planet_beacon
+	)
+	crate_name = "point beacon crate"
+	crate_type = /obj/structure/closet/crate/engineering
 
 /*
 		Power generation machines
