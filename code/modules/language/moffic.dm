@@ -16,4 +16,3 @@
 	)
 	icon_state = "moth"
 	default_priority = 90
-
