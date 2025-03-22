@@ -462,6 +462,12 @@
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
+/datum/outfit/job/clip/minutemen/vehicle_pilot/disarmed
+	name = "CLIP Minutemen - Vehicle Pilot (Disarmed)"
+	head = null
+	suit = null
+	glasses = null
+
 /datum/outfit/job/clip/minutemen/vehicle_pilot/commander
 	name = "CLIP Minutemen - Vehicle Commander"
 	id_assignment = "Vehicle Commander"

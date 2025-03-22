@@ -286,6 +286,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 	var/obj/item/storage/briefcase/current_case
 
+NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
+
 /obj/item/gun/ballistic/automatic/smg/cm5/compact/attackby(obj/item/attacking_item, mob/user, params)
 	. = ..()
 	if(current_case)
