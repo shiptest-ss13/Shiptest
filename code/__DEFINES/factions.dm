@@ -13,6 +13,7 @@
 #define FACTION_FRONTIERSMEN "Frontiersmen Fleet"
 #define FACTION_PGF "Pan-Gezena Federation"
 #define FACTION_INDEPENDENT "Independent"
+#define FACTION_RAMZI "Ramzi Clique"
 
 #define PREFIX_SYNDICATE list("SEV", "SSV")
 	#define PREFIX_NGR list("NGRV")
