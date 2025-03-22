@@ -30,7 +30,7 @@
 #define PREFIX_FRONTIERSMEN list("FFV")
 #define PREFIX_PGF list("PGF", "PGFMC", "PGFN", "PGFS")
 #define PREFIX_INDEPENDENT list("SV", "IMV", "ISV", "MSV")
-#define PREFIX_RAMZI list("RSV", "ISV", "SV", "GMV")
+#define PREFIX_RAMZI list("RCSV")
 #define PREFIX_NONE list()
 
 #define FACTION_SORT_DEFAULT 0
