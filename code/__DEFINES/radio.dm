@@ -107,5 +107,10 @@
 #define REQ_DEP_TYPE_SUPPLIES (1<<1)
 #define REQ_DEP_TYPE_INFORMATION (1<<2)
 
+//Interference levels
+#define INTERFERENCE_LEVEL_BREAKUP_HOLOPADS 10
+#define INTERFERENCE_LEVEL_RADIO_PREVENT_ID 35
+#define INTERFERENCE_LEVEL_RADIO_STATIC_SOUND 45
+
 ///give this to can_receive to specify that there is no restriction on what virtual z level this signal is sent to
 #define RADIO_NO_Z_LEVEL_RESTRICTION 0

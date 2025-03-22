@@ -39,8 +39,8 @@
 	maxHealth = 60
 	health = 60
 	obj_damage = 60
-	melee_damage_lower = 15
-	melee_damage_upper = 20
+	melee_damage_lower = 5
+	melee_damage_upper = 15
 	faction = list("spiders")
 	var/busy = SPIDER_IDLE
 	pass_flags = PASSTABLE
@@ -157,8 +157,8 @@
 	icon_state = "hunter"
 	icon_living = "hunter"
 	icon_dead = "hunter_dead"
-	maxHealth = 80
-	health = 80
+	maxHealth = 50
+	health = 50
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	poison_per_bite = 5
@@ -171,8 +171,8 @@
 	icon_state = "viper"
 	icon_living = "viper"
 	icon_dead = "viper_dead"
-	maxHealth = 40
-	health = 40
+	maxHealth = 25
+	health = 25
 	melee_damage_lower = 3
 	melee_damage_upper = 8
 	poison_per_bite = 2
@@ -187,10 +187,10 @@
 	icon_state = "tarantula"
 	icon_living = "tarantula"
 	icon_dead = "tarantula_dead"
-	maxHealth = 150 // woah nelly
-	health = 150
-	melee_damage_lower = 25
-	melee_damage_upper = 35
+	maxHealth = 50 // woah nelly
+	health = 50
+	melee_damage_lower = 15
+	melee_damage_upper = 20
 	poison_per_bite = 0
 	move_to_delay = 8
 	speed = 9

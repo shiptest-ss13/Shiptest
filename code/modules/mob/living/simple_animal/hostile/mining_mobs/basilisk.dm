@@ -115,7 +115,7 @@
 	lava_drinker = FALSE
 	maxHealth = 40
 	health = 40
-	var/shell_health = 80 //Tough to crack, easy to kill.
+	var/shell_health = 60 //Tough to crack, easy to kill.
 	var/has_shell = TRUE
 	var/list/shell_loot = list(/obj/item/stack/ore/diamond, /obj/item/stack/ore/diamond)
 	var/shell_snap_message = FALSE
@@ -152,7 +152,7 @@
 	if(I.force)
 		if(shell_damage(I.force))			// Damage was absorbed by the shell, no need to go further
 			send_item_attack_message(I, user)
-			return TRUE
+			visible_message("<span class='notice'>[src]'s shell absorbs the damage, dealing minimal the [src] itself!</span>")
 	return ..()
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/bullet_act(obj/projectile/P)
