@@ -253,6 +253,18 @@
 	crate_name = "spare jumpsuits crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
+/datum/supply_pack/civilian/lifeline
+	name = "Lifeline Disc"
+	desc = "Contains a copy of the Lifeline program, and all the associated authorization keys to install and run it."
+	cost = 250
+	contains = list(/obj/item/computer_hardware/hard_drive/portable/installer/lifeline)
+
+/datum/supply_pack/civilian/secureye
+	name = "SecurEye Disc"
+	desc = "Contains a copy of the SecurEye camera monitoring program, and all the associated authorization keys to run it."
+	cost = 250
+	contains = list(/obj/item/computer_hardware/hard_drive/portable/installer/secureye)
+
 /datum/supply_pack/civilian/broadcast_camera
 	name = "Broadcast Camera Crate"
 	desc = "Lights, Camera, Action! This consumer-grade broadcasting camera automatically streams to entertainment monitors across the sector. Not rated for use in actual combat."

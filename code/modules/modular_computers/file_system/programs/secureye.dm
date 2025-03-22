@@ -7,6 +7,8 @@
 	program_icon_state = "generic"
 	extended_desc = "This program allows access to standard security camera networks."
 	requires_ntnet = TRUE
+	available_on_ntnet = FALSE
+	drm = TRUE
 	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP | PROGRAM_TABLET
 	size = 5
 	tgui_id = "NtosSecurEye"
