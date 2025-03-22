@@ -76,10 +76,12 @@
 	return ..()
 
 /obj/item/gun/ballistic/revolver/attack_hand(mob/user)
-	if(loc == user && user.is_holding(src))
+	if(loc == user && user.is_holding(src) && internal_magazine)
 		var/num_unloaded = unload_all_ammo(user)
 		if (num_unloaded)
 			to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
+			if(!magazine)
+				return FALSE
 			if(!gate_loaded)
 				playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
 			SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
@@ -93,6 +95,8 @@
 /obj/item/gun/ballistic/revolver/proc/unload_all_ammo(mob/living/user)
 	var/num_unloaded = 0
 
+	if(!magazine)
+		return num_unloaded
 	if(!gate_loaded) //"normal" revolvers
 		for(var/obj/item/ammo_casing/casing_to_eject in get_ammo_list(FALSE, TRUE))
 			if(!casing_to_eject)
@@ -141,6 +145,8 @@
 	casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_to_eject.bounce_sfx_override)
 
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
+	if(!magazine)
+		return FALSE
 	if(!gate_loaded)
 		magazine.stored_ammo[casing_index] = null
 		chamber_round(FALSE)
@@ -166,6 +172,8 @@
 	var/list/rounds = magazine.ammo_list()
 	var/obj/item/ammo_casing/slot = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
 	var/doafter_time = 0.4 SECONDS
+	if(!magazine)
+		return FALSE
 	if(!gate_loaded) //"normal" revolvers
 		for(var/i in 1 to magazine.stored_ammo.len)
 			var/obj/item/ammo_casing/casing_to_eject = magazine.stored_ammo[i]
@@ -218,6 +226,8 @@
 				to_chat(user, "<span class='warning'>There's no empty space in [src]!</span>")
 				return TRUE
 
+			if(!magazine)
+				return FALSE
 			if(!gate_loaded) //"normal" revolvers
 				var/i = 0
 				for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
@@ -324,7 +334,7 @@
 	if(!HAS_TRAIT(user, TRAIT_GUNSLINGER)) //only gunslingers are allowed to flip
 		chamber_options -= REVOLVER_FLIP
 
-	if(!gate_loaded) //these are completely redundant  if you can reload everything with a speedloader
+	if(!gate_loaded || !magazine) //these are completely redundant  if you can reload everything with a speedloader
 		chamber_options -= REVOLVER_AUTO_ROTATE_LEFT_LOADING
 		chamber_options -= REVOLVER_AUTO_ROTATE_RIGHT_LOADING
 		chamber_options -= REVOLVER_EJECT_CURRENT
