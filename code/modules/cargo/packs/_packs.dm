@@ -1,20 +1,30 @@
 /datum/supply_pack
 	var/name = "Crate"
-	var/group = "UNCATEGORIZED BULLSHIT"
+	var/group = "Unsorted"
 	var/hidden = FALSE
+	var/base_cost
 	var/cost = 700
 	var/list/contains = null
 	var/crate_name = "crate"
-	var/desc = ""//no desc by default
+	var/desc = ""
 	var/crate_type = /obj/structure/closet/crate
 	var/admin_spawned = FALSE
-	var/small_item = FALSE //Small items can be grouped into a single crate.
+
+	var/no_bundle = FALSE
+
+	var/restocks = FALSE
+	var/current_stock = INFINITY
+	var/max_stock = INFINITY
 
 	var/datum/faction/faction
 	//what's the discount for buyers in our faction.
 	var/faction_discount = 15
 	//are we locked to one faction and its subgroups
 	var/faction_locked = FALSE
+
+/datum/supply_pack/New()
+	. = ..()
+	base_cost = cost
 
 /datum/supply_pack/proc/generate(atom/A, datum/bank_account/paying_account)
 	var/obj/structure/closet/crate/C
