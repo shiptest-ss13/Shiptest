@@ -1,0 +1,53 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Lesvos-class Mining Carrier",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Miskilamo Spacefaring",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL"
+	],
+	"map_short_name": "Lesvos-class",
+	"description": "During and After the ICW, massive amounts of debris, wrecks, and material were generated, found, lost, and needed. While some shipyards built reasonable hulls, like the Scarab, Miskilamo's idea was simple - Build a ship, with ships, to gather other ships and raw resources. The Lesvos, sporting its massive shipbreaking gantry and refining resources, twin subshuttles, an impressive flight control station, accommodations for crew, and much more, was born. Now post-ICW, the Lesvos is commonly used by prospective captains to gather up materials faster than other crews thanks to it's ability to field several away teams at once, but also hosts a curse - the second subshuttle always wrecking itself just before or during trips out of sector.",
+	"tags": [
+		"Mining",
+		"Engineering",
+		"Combat",
+		"Subshuttle"
+	],
+	"starting_funds": 3000,
+	"limit": 1,
+	"map_path": "_maps/shuttles/independent/independent_lesvos.dmm",
+	"map_id": "independent_lesvos",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain/cheap",
+			"officer": true,
+			"slots": 1
+		},
+		"Deck Officer": {
+			"outfit": "/datum/outfit/job/independent/hop",
+			"officer": true,
+			"slots": 1
+		},
+		"Technician": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 2
+		},
+		"Asteroid Miner": {
+			"outfit": "/datum/outfit/job/independent/miner/hazard",
+			"slots": 2
+		},
+		"Security Detail": {
+			"outfit": "/datum/outfit/job/independent/security/western",
+			"slots": 2
+		},
+		"Greenhorn": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
