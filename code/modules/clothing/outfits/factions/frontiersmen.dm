@@ -4,6 +4,7 @@
 	// faction_icon = "bg_frontiersmen"
 
 	uniform = /obj/item/clothing/under/frontiersmen
+	skirt_uniform = null // NO military skirt for you young frontierswoman
 	r_pocket = /obj/item/radio
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/pirate
