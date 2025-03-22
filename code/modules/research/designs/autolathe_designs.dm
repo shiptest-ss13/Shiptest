@@ -540,60 +540,6 @@
 	category = list("initial","Misc", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
-/datum/design/scalpel
-	name = "Scalpel"
-	id = "scalpel"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000, /datum/material/glass = 1000)
-	build_path = /obj/item/scalpel
-	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/circular_saw
-	name = "Circular Saw"
-	id = "circular_saw"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/glass = 6000)
-	build_path = /obj/item/circular_saw
-	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/surgicaldrill
-	name = "Surgical Drill"
-	id = "surgicaldrill"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/glass = 6000)
-	build_path = /obj/item/surgicaldrill
-	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/retractor
-	name = "Retractor"
-	id = "retractor"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 6000, /datum/material/glass = 3000)
-	build_path = /obj/item/retractor
-	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/cautery
-	name = "Cautery"
-	id = "cautery"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2500, /datum/material/glass = 750)
-	build_path = /obj/item/cautery
-	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/hemostat
-	name = "Hemostat"
-	id = "hemostat"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 5000, /datum/material/glass = 2500)
-	build_path = /obj/item/hemostat
-	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/beaker
 	name = "Beaker"
 	id = "beaker"
@@ -608,14 +554,6 @@
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/glass = 2500)
 	build_path = /obj/item/reagent_containers/glass/beaker/large
-	category = list("initial", "Medical", "Medical Designs")
-
-/datum/design/pillbottle
-	name = "Pill Bottle"
-	id = "pillbottle"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/plastic = 20, /datum/material/glass = 100)
-	build_path = /obj/item/storage/pill_bottle
 	category = list("initial", "Medical", "Medical Designs")
 
 /datum/design/hypospray_vial
@@ -848,7 +786,7 @@
 	name = "Shotgun Blank"
 	id = "blank_shell"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 2000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_casing/shotgun/blank
 	category = list("Security", "Ammo")
 

@@ -24,7 +24,8 @@
 	var/hack_wire
 	var/disable_wire
 	var/shock_wire
-	var/obj/item/disk/design_disk/d_disk    //Stores the design disk.
+	//Stores the design disk.
+	var/obj/item/disk/design_disk/d_disk
 
 	var/busy = FALSE
 
@@ -51,7 +52,7 @@
 							)
 
 /obj/machinery/autolathe/Initialize()
-	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/plastic, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium, /datum/material/hellstone), 0, TRUE, null, null, CALLBACK(src, PROC_REF(AfterMaterialInsert)))
+	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/plastic, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium, /datum/material/diamond, /datum/material/bluespace, /datum/material/hellstone), 0, TRUE, null, null, CALLBACK(src, PROC_REF(AfterMaterialInsert)))
 	. = ..()
 
 	wires = new /datum/wires/autolathe(src)
@@ -269,7 +270,7 @@
 	materials.retrieve_all()
 
 /obj/machinery/autolathe/attackby(obj/item/O, mob/living/user, params)
-	if (busy)
+	if(busy)
 		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
 		return TRUE
 
@@ -307,12 +308,20 @@
 /obj/machinery/autolathe/proc/eject(mob/living/user)
 	if(!d_disk)
 		return
+	if(busy)
+		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+		return TRUE
 	if(!istype(user) || !Adjacent(user) || !user.put_in_active_hand(d_disk))
 		d_disk.forceMove(drop_location())
 	categories -= d_disk.name
 	d_disk = null
 
 /obj/machinery/autolathe/AltClick(mob/user)
+	if(!d_disk)
+		return
+	if(busy)
+		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+		return TRUE
 	if(d_disk && user.canUseTopic(src, !issilicon(user)))
 		to_chat(user, "<span class='notice'>You take out [d_disk] from [src].</span>")
 		playsound(src, 'sound/machines/click.ogg', 50, FALSE)
@@ -340,11 +349,19 @@
 
 	if(is_stack)
 		var/obj/item/stack/new_item = new being_built.build_path(A, multiplier, FALSE)
+		if(d_disk)
+			if(locate(being_built.type) in d_disk.blueprints)
+				d_disk.used_charges += multiplier
+				d_disk.check_charges()
 		new_item.update_appearance()
 		new_item.autolathe_crafted(src)
 		SSblackbox.record_feedback("nested tally", "item_printed", 1, list("[type]", "[new_item.type]"))
 	else
 		for(var/i=1, i<=multiplier, i++)
+			if(d_disk)
+				if(locate(being_built.type) in d_disk.blueprints)
+					d_disk.used_charges += 1
+					d_disk.check_charges()
 			var/obj/item/new_item = new being_built.build_path(A)
 			new_item.autolathe_crafted(src)
 			SSblackbox.record_feedback("nested tally", "item_printed", 1, list("[type]", "[new_item.type]"))
@@ -354,7 +371,6 @@
 					var/datum/material/M = x
 					if(!istype(M, /datum/material/glass) && !istype(M, /datum/material/iron))
 						user.client.give_award(/datum/award/achievement/misc/getting_an_upgrade, user)
-
 
 	icon_state = "autolathe"
 	busy = FALSE
