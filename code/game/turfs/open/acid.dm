@@ -110,7 +110,7 @@
 				object_to_melt.resistance_flags &= ~UNACIDABLE
 			if(object_to_melt.armor.acid == 100) //acid proof armor will probably be acid proof
 				continue
-			object_to_melt.acid_act(10, 20)
+			object_to_melt.acid_act(10, 1)
 
 		else if (isliving(thing))
 			. = TRUE

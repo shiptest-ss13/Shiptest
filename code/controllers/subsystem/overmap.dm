@@ -461,7 +461,17 @@ SUBSYSTEM_DEF(overmap)
 				continue
 			new event_type(position, src)
 
+/datum/overmap_star_system/proc/spawn_ruin_levels_in_orbits()
+	for(var/i in 1 to max_overmap_dynamic_events)
+		new /datum/overmap/dynamic(system_spawned_in = src)
 
+/**
+ * Spawns a new dynamic encounter when old one is deleted. Called by dynamic encounters being deleted.
+ */
+/datum/overmap_star_system/proc/replace_dynamic_datum()
+	if(length(dynamic_encounters) < max_overmap_dynamic_events)
+		var/list/results = get_unused_overmap_square()
+		new /datum/overmap/dynamic(results, src)
 
 /**
  * Creates an overmap object for each ruin level, making them accessible.
@@ -470,9 +480,7 @@ SUBSYSTEM_DEF(overmap)
 	for(var/i in 1 to max_overmap_dynamic_events)
 		spawn_ruin_level()
 
-/datum/overmap_star_system/proc/spawn_ruin_levels_in_orbits()
-	for(var/i in 1 to max_overmap_dynamic_events)
-		new /datum/overmap/dynamic(system_spawned_in = src)
+
 /datum/overmap_star_system/proc/spawn_ruin_level()
 	new /datum/overmap/dynamic(system_spawned_in = src)
 
@@ -526,16 +534,9 @@ SUBSYSTEM_DEF(overmap)
 			if(nearby_event.interference_power)
 				qdel(nearby_event)
 	return
-/**
- * Spawns a new dynamic encounter when old one is deleted. Called by dynamic encounters being deleted.
- */
-/datum/overmap_star_system/proc/replace_dynamic_datum()
-	if(length(dynamic_encounters) < max_overmap_dynamic_events)
-		var/list/results = get_unused_overmap_square()
-		new /datum/overmap/dynamic(results, src)
 
 /**
- * Not sure what this does. Called everytime SSOvermap fires and overmap has mission_system_enabled enabled.
+ * This is tangentily related to dynmaic missions, its doing the same despawn thing you added for overmap events. Its meant to cycle out planets very slowly.
  */
 /datum/overmap_star_system/proc/handle_dynamic_missions()
 	if(length(dynamic_encounters) < max_overmap_dynamic_events)

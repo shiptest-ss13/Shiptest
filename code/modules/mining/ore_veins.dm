@@ -71,6 +71,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 				ore_type_amount = rand(6,10)
 			if(3)
 				ore_type_amount = rand(8,14)
+			if(4)
+				ore_type_amount = rand(10,18)
 			else
 				ore_type_amount = 1
 		for(var/ore_count in 1 to ore_type_amount)
@@ -172,7 +174,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 10,
 		)
 
-// TODO: populate all planet veins with class 4s
+// TODO: populate all planet veins with class 4s ; this exact path should not be used, used as a templa
 /obj/structure/vein/classfour
 	mining_charges = 30
 	vein_class = 4
@@ -242,6 +244,24 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	max_mobs = 6
 	spawn_time = 8 SECONDS
 
+/obj/structure/vein/ice/classfour
+	mining_charges = 30
+	vein_class = 4
+	ore_list = list(
+		/obj/item/stack/ore/malachite = 10,
+		/obj/item/stack/ore/quartzite = 5,
+		/obj/item/stack/ore/hematite = 2,
+		/obj/item/stack/ore/gold = 5,
+		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/plasma = 5,
+		/obj/item/stack/ore/proustite = 5,
+		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/galena = 6,
+		/obj/item/stack/ore/bluespace_crystal = 4,
+		/obj/item/stack/ore/ice = 8,
+		)
+	max_mobs = 6
+	spawn_time = 8 SECONDS
 //Jungle
 
 /obj/structure/vein/jungle
@@ -452,6 +472,29 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	max_mobs = 6
 	spawn_time = 8 SECONDS
 
+/obj/structure/vein/rockplanet/classfour
+	mining_charges = 30
+	vein_class = 4
+
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet = 50,
+		/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet = 40,
+		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 5,
+		/mob/living/simple_animal/hostile/netherworld/asteroid = 5,
+		/mob/living/simple_animal/hostile/asteroid/fugu/asteroid = 5,
+		)
+
+	ore_list = list(
+		/obj/item/stack/ore/hematite = 20,
+		/obj/item/stack/ore/sulfur = 10,
+		/obj/item/stack/ore/malachite = 5,
+		/obj/item/stack/ore/galena = 5,
+		/obj/item/stack/ore/graphite = 5,
+		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/gold = 6,
+		/obj/item/stack/ore/diamond = 5,
+		/obj/item/stack/ore/bluespace_crystal = 4,
+		)
 //wasteplanet
 /obj/structure/vein/waste
 	// class 1 has easy mobs, the ones you find on the surface
@@ -536,6 +579,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//ditto
 	max_mobs = 7
 	spawn_time = 8 SECONDS
+
+/obj/structure/vein/waste/classfour
+	mining_charges = 30
+	vein_class = 4
 
 //moons, have a dupe of asteroid but less of an emphasis on  goliaths
 

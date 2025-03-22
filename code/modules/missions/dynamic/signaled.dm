@@ -59,7 +59,7 @@
 	. += "<span class='notice'>The drill contains [num_current] of the [num_wanted] samples needed.</span>"
 
 /obj/machinery/drill/mission/start_mining()
-	if(!istype(our_vein, orevein_wanted))
+	if(orevein_wanted && !istype(our_vein, orevein_wanted))
 		say("Error: Incorrect class of planetiod for operation.")
 		return
 	if(our_vein.vein_class < mission_class && our_vein)

@@ -450,7 +450,7 @@
 /datum/overmap/event/meteor/carp
 	name = "carp migration (moderate)"
 	desc = "A migratory school of space carp. They travel at high speeds, and flying through them may cause them to impact your ship"
-	base_icon_state = "carp"
+	base_icon_state = "carp_medium_"
 	default_color = "#7b1ca8"
 	chance_to_affect = 15
 	spread_chance = 50
@@ -472,6 +472,7 @@
 
 /datum/overmap/event/meteor/carp/minor
 	name = "carp migration (minor)"
+	base_icon_state = "carp_minor_"
 	chance_to_affect = 5
 	spread_chance = 25
 	chain_rate = 4
@@ -482,6 +483,7 @@
 
 /datum/overmap/event/meteor/carp/major
 	name = "carp migration (major)"
+	base_icon_state = "carp_major_"
 	chance_to_affect = 25
 	spread_chance = 25
 	chain_rate = 4
@@ -496,11 +498,11 @@
 	name = "dust cloud"
 	desc = "A cloud of spaceborne dust. Relatively harmless, unless you're travelling at relative speeds"
 	base_icon_state = "dust"
-	default_color = "#506469" //we should make these defines
+	default_color = "#506469"
 	chance_to_affect = 90
 	spread_chance = 50
 	chain_rate = 4
-	safe_speed = 3
+	safe_speed = 7
 	interference_power = 5
 	meteor_types = list(
 		/obj/effect/meteor/dust=3,

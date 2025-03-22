@@ -1,6 +1,5 @@
 /obj/overmap
 	icon = 'icons/misc/overmap.dmi'
-	mouse_opacity = 2
 	///~~If we need to render a map for cameras and helms for this object~~ basically can you look at and use this as a ship or station.
 	var/render_map = FALSE
 	/// The parent overmap datum for this overmap token that has all of the actual functionality.
@@ -136,6 +135,8 @@
 	return picked_token
 
 /obj/overmap/Click(location, control, params)
+	if(istype(usr.client.click_intercept,/datum/buildmode))
+		return ..()
 	var/obj/overmap/token = choose_token(usr)
 	if(!isobj(token))
 		return
