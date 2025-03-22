@@ -92,7 +92,7 @@
 /obj/item/ammo_box/a858/empty
 	start_empty = TRUE
 
-//8x50mmR Speedloader
+//8x50mmR Stripper Clip
 
 /obj/item/ammo_box/vickland_a8_50r
 	name = "stripper clip (8x50mmR)"
