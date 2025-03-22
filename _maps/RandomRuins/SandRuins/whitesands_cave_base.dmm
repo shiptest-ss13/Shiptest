@@ -229,6 +229,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/south,
+/obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "dE" = (
@@ -252,6 +253,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "dO" = (
@@ -330,6 +334,9 @@
 	icon_state = "1-10"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "ek" = (
@@ -518,6 +525,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "gt" = (
@@ -583,6 +593,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/head/soft/black,
 /obj/item/clothing/under/utility,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "gK" = (
@@ -656,7 +669,6 @@
 	pixel_y = -7;
 	pixel_x = -11
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/storage/toolbox/emergency{
 	pixel_y = -9;
 	pixel_x = -8
@@ -664,6 +676,10 @@
 /obj/item/rack_parts{
 	pixel_y = 7;
 	pixel_x = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
@@ -1080,6 +1096,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "ns" = (
@@ -1327,6 +1346,9 @@
 /obj/item/stack/sheet/bone,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/east,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "pV" = (
@@ -1704,6 +1726,9 @@
 	dir = 6
 	},
 /obj/structure/filingcabinet/double,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
@@ -1804,6 +1829,9 @@
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/north,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "vr" = (
@@ -1902,6 +1930,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "wz" = (
@@ -1929,6 +1960,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/generic,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "wE" = (
@@ -1958,6 +1990,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "xp" = (
@@ -2044,6 +2079,10 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "yl" = (
@@ -2483,6 +2522,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "Ch" = (
@@ -2781,6 +2821,9 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "Ff" = (
@@ -2852,6 +2895,7 @@
 	pixel_y = -22;
 	dir = 2
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "FF" = (
@@ -3055,6 +3099,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "Hr" = (
@@ -3185,6 +3235,9 @@
 	pixel_y = -5
 	},
 /obj/item/stack/ore/salvage/scrapmetal,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "IT" = (
@@ -3520,6 +3573,9 @@
 	},
 /obj/machinery/porta_turret/ruin/cave_base,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "MP" = (
@@ -3705,6 +3761,7 @@
 	pixel_x = -5;
 	pixel_y = 7
 	},
+/obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "OK" = (
@@ -3810,6 +3867,9 @@
 /obj/item/pen/blue{
 	pixel_y = 6;
 	pixel_x = 5
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
@@ -4075,6 +4135,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "Ty" = (
@@ -4201,6 +4264,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "UU" = (
@@ -4253,6 +4319,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "Vr" = (
@@ -4319,7 +4388,7 @@
 /obj/item/melee/sledgehammer{
 	pixel_x = -2;
 	pixel_y = 3;
-	name = "emergency wall removal tool";
+	name = "emergency access hammer";
 	desc = "A very blunt hammer, presumably for breaking concrete into tiny chunks."
 	},
 /turf/open/floor/plasteel/telecomms_floor,
