@@ -14,7 +14,7 @@
 	icon_state = "health"
 	module_type = MODULE_ACTIVE
 	complexity = 2
-	use_power_cost = DEFAULT_CHARGE_DRAIN
+	use_power_cost = MODULE_CHARGE_DRAIN_MEDIUM
 	incompatible_modules = list(/obj/item/mod/module/health_analyzer)
 	cooldown_time = 0.5 SECONDS
 	tgui_id = "health_analyzer"
@@ -96,7 +96,7 @@
 	icon_state = "injector"
 	module_type = MODULE_ACTIVE
 	complexity = 1
-	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
+	active_power_cost = MODULE_CHARGE_DRAIN_LOW
 	device = /obj/item/reagent_containers/syringe/mod
 	incompatible_modules = list(/obj/item/mod/module/injector)
 	cooldown_time = 0.5 SECONDS
@@ -108,3 +108,16 @@
 	amount_per_transfer_from_this = 30
 	possible_transfer_amounts = list(5, 10, 15, 20, 30)
 	volume = 30
+
+/obj/item/mod/module/opset
+	name = "MOD mobile surgery module"
+	desc = "A module installed in the forearm of the suit, featuring a complete suite of integrated surgical tools."
+	module_type = MODULE_ACTIVE
+	complexity = 4
+	active_power_cost = MODULE_CHARGE_DRAIN_MEDIUM
+	toolset = TRUE
+	tools_to_create = list(/obj/item/retractor/augment, /obj/item/hemostat/augment, /obj/item/cautery/augment, /obj/item/surgicaldrill/augment, /obj/item/scalpel/augment, /obj/item/circular_saw/augment)
+	incompatible_modules = list(/obj/item/mod/module/opset)
+	cooldown_time = 0
+	allowed_inactive = TRUE
+

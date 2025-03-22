@@ -330,7 +330,9 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 	return TRUE
 
 /obj/item/pipe_dispenser/pre_attack(atom/A, mob/user)
-	if(!user.IsAdvancedToolUser() || istype(A, /turf/open/space/transit))
+	if(!user.CanReach(A)) // so you cannot reverse Grinch pipes into anywhere
+		return
+	else if(!user.IsAdvancedToolUser() || istype(A, /turf/open/space/transit))
 		return ..()
 
 	//So that changing the menu settings doesn't affect the pipes already being built.

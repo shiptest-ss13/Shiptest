@@ -28,13 +28,23 @@
 	description = "an abandoned secure storage location. there is no power left in the batteries and the former ocupants locked it pretty tight before leaving.\
 	You will have to power areas to raise the bolts on the doors. look out for secrets."
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+	ruin_mission_types = list(/datum/mission/ruin/data_retrieval)
 
 /datum/map_template/ruin/space/singularitylab
 	id = "singularitylab"
 	suffix = "singularity_lab.dmm"
 	name = "Singularity Lab"
-	description = "An overgrown facility, home to an unstarted singularity and many plants"
+	description = "An overgrown facility, home to an inactive singularity and many plants"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
+	ruin_mission_types = list(/datum/mission/ruin/oh_fuck)
+
+/datum/mission/ruin/oh_fuck
+	name = "Singularity Generator Signature"
+	desc = "There is a Singularity Generator Signature emitting from this location of space. This is incredibly dangerous. We are willing to pay top dollar to whoever can locate and secure this thing. God help us if a black hole opens up in the system."
+	author = "The Outpost"
+	value = 15000
+	mission_limit = 1
+	setpiece_item = /obj/machinery/the_singularitygen
 
 /datum/map_template/ruin/space/spacemall
 	id = "spacemall"

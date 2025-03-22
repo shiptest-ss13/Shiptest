@@ -69,9 +69,9 @@
 	//FREQ_BROADCASTING = 2
 
 /obj/item/radio/proc/set_frequency(new_frequency)
-	SEND_SIGNAL(src, COMSIG_RADIO_NEW_FREQUENCY, args)
 	remove_radio(src, frequency)
 	frequency = add_radio(src, new_frequency)
+	SEND_SIGNAL(src, COMSIG_RADIO_NEW_FREQUENCY, args)
 
 /obj/item/radio/proc/recalculateChannels()
 	channels = list()
