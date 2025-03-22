@@ -177,9 +177,10 @@
 
 	id = /obj/item/card/id
 	gloves = /obj/item/clothing/gloves/color/white
-	uniform = /obj/item/clothing/under/suit/black_really
-	alt_uniform = /obj/item/clothing/under/suit/blacktwopiece
-	skirt_uniform = /obj/item/clothing/under/suit/black_really/skirt
+	uniform = /obj/item/clothing/under/rank/security/detective/grey
+	skirt_uniform = /obj/item/clothing/under/rank/security/detective/grey/skirt
+	suit = /obj/item/clothing/suit/toggle/lawyer/charcoal
+	neck = /obj/item/clothing/neck/tie/black
 	dcoat = null
 	glasses = /obj/item/clothing/glasses/sunglasses
 	head = null
