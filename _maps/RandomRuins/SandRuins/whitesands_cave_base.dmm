@@ -157,6 +157,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/broken/directional/north,
+/obj/item/grenade/c4/cave_base,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/whitesands/cave_base/engi)
 "dj" = (
@@ -255,6 +256,11 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "space";
+	pixel_y = 19;
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
@@ -786,6 +792,11 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "star";
+	pixel_x = 5;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "iu" = (
@@ -941,6 +952,18 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/asteroid/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
+"lE" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast{
+	health = 0;
+	stat = 4;
+	icon_state = "goliath_dead";
+	density = 0
+	},
+/obj/effect/gibspawner/generic/animal,
+/obj/effect/gibspawner/generic/animal,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/whitesands/cave_base/engi)
 "lF" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1361,6 +1384,9 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/grass,
 /area/ruin/whitesands/cave_base)
+"qh" = (
+/turf/closed/wall/concrete,
+/area/ruin/whitesands/cave_base)
 "qj" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -1741,7 +1767,7 @@
 /obj/machinery/air_sensor{
 	id_tag = "gnome"
 	},
-/turf/open/floor/engine/vacuum,
+/turf/open/floor/engine/air,
 /area/ruin/whitesands/cave_base/engi)
 "ux" = (
 /turf/template_noop,
@@ -1775,6 +1801,11 @@
 	pixel_y = -3
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "snake";
+	pixel_x = 6;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "vb" = (
@@ -1876,12 +1907,26 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "shotgun";
+	pixel_x = -6;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "vP" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/table,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "radiation";
+	pixel_y = -27
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "like";
+	pixel_y = -26;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base/engi)
 "vR" = (
@@ -1976,14 +2021,15 @@
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
 "wO" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast{
-	health = 0;
-	stat = 4;
-	icon_state = "goliath_dead"
-	},
 /obj/effect/gibspawner/generic/animal,
 /obj/effect/gibspawner/generic/animal,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/asteroid/goliath/beast{
+	health = 0;
+	stat = 4;
+	icon_state = "goliath_dead";
+	density = 0
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
 "wX" = (
@@ -2181,6 +2227,11 @@
 	},
 /obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "shotgun";
+	pixel_x = 3;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "yH" = (
@@ -2300,6 +2351,10 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "scroll";
+	pixel_y = 6
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/whitesands/cave_base/engi)
 "Am" = (
@@ -2413,7 +2468,8 @@
 	name = "low yield fusion bomb";
 	payload = /obj/item/bombcore/large;
 	desc = "Are you sure you want to do this, tovai?";
-	anchored = 1
+	anchored = 1;
+	can_unanchor = 0
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash/large{
@@ -3109,6 +3165,11 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "shop";
+	pixel_x = -28;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "Hr" = (
@@ -3166,18 +3227,14 @@
 /area/ruin/whitesands/cave_base)
 "Hw" = (
 /obj/effect/turf_decal/industrial/warning/corner,
-/mob/living/simple_animal/hostile/asteroid/goliath/beast{
-	health = 0;
-	stat = 4;
-	icon_state = "goliath_dead"
-	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
 "HA" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast{
 	health = 0;
 	stat = 4;
-	icon_state = "goliath_dead"
+	icon_state = "goliath_dead";
+	density = 0
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -3186,7 +3243,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/box,
-/turf/open/floor/engine/vacuum,
+/turf/open/floor/engine/air,
 /area/ruin/whitesands/cave_base/engi)
 "HZ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -3347,6 +3404,11 @@
 	pixel_x = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "skull";
+	pixel_x = 5;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
 "Kt" = (
@@ -3367,13 +3429,19 @@
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/cave_base)
 "Ku" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast{
-	health = 0;
-	stat = 4;
-	icon_state = "goliath_dead"
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "smallbrush";
+	pixel_y = 5;
+	pixel_x = 5
 	},
-/turf/open/floor/plating/asteroid/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "skull";
+	pixel_x = -7;
+	pixel_y = -6
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/whitesands/cave_base/engi)
 "Kw" = (
 /obj/effect/turf_decal/corner_techfloor_gray/full{
 	dir = 8
@@ -3780,6 +3848,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/broken/directional/west,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "danger";
+	pixel_x = -33;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "OL" = (
@@ -3787,7 +3860,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer4{
 	dir = 1
 	},
-/turf/open/floor/engine/vacuum,
+/turf/open/floor/engine/air,
 /area/ruin/whitesands/cave_base/engi)
 "OM" = (
 /obj/structure/filingcabinet/double{
@@ -4036,12 +4109,13 @@
 /turf/open/floor/plating/rust,
 /area/ruin/whitesands/cave_base/engi)
 "Rz" = (
+/obj/item/ammo_casing/spent/big_steel,
 /mob/living/simple_animal/hostile/asteroid/goliath/beast{
 	health = 0;
 	stat = 4;
-	icon_state = "goliath_dead"
+	icon_state = "goliath_dead";
+	density = 0
 	},
-/obj/item/ammo_casing/spent/big_steel,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
 "RC" = (
@@ -4218,7 +4292,8 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast{
 	health = 0;
 	stat = 4;
-	icon_state = "goliath_dead"
+	icon_state = "goliath_dead";
+	density = 0
 	},
 /turf/open/floor/plating/asteroid/whitesands/grass,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -4435,15 +4510,16 @@
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/cave_base)
 "Wu" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast{
-	health = 0;
-	stat = 4;
-	icon_state = "goliath_dead"
-	},
 /obj/effect/gibspawner/generic/animal,
 /obj/effect/gibspawner/generic/animal,
 /obj/effect/gibspawner/generic/animal,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/asteroid/goliath/beast{
+	health = 0;
+	stat = 4;
+	icon_state = "goliath_dead";
+	density = 0
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
 "Wv" = (
@@ -4835,11 +4911,11 @@ mh
 mh
 mh
 mh
-ux
-ux
-ux
-ux
-ux
+mh
+mh
+mh
+mh
+mh
 ux
 ux
 ux
@@ -4897,9 +4973,9 @@ mh
 mh
 mh
 mh
-ux
-ux
-ux
+mh
+mh
+mh
 ux
 ux
 ux
@@ -4959,9 +5035,9 @@ mh
 mh
 mh
 mh
-ux
-ux
-ux
+mh
+mh
+mh
 ux
 ux
 ux
@@ -5020,8 +5096,8 @@ mh
 mh
 mh
 mh
-ux
-ux
+mh
+mh
 ux
 ux
 ux
@@ -5058,7 +5134,7 @@ mh
 mh
 mh
 tX
-tX
+HA
 Hw
 CP
 CP
@@ -5080,9 +5156,9 @@ mh
 mh
 mh
 mh
-ux
-ux
-ux
+mh
+mh
+mh
 ux
 ux
 ux
@@ -5141,8 +5217,8 @@ mh
 qR
 mh
 mh
-ux
-ux
+mh
+mh
 ux
 ux
 ux
@@ -5201,8 +5277,8 @@ CP
 CP
 mh
 mh
-ux
-ux
+mh
+mh
 ux
 ux
 ux
@@ -5262,9 +5338,9 @@ CP
 CP
 mh
 mh
-ux
-ux
-ux
+mh
+mh
+mh
 ux
 ux
 ux
@@ -5322,9 +5398,9 @@ YX
 CP
 mh
 mh
-ux
-ux
-ux
+mh
+mh
+mh
 ux
 ux
 ux
@@ -5356,8 +5432,8 @@ mh
 tX
 tX
 tX
-Ku
-tX
+zj
+HA
 ZN
 kN
 CP
@@ -5382,9 +5458,9 @@ xX
 CP
 qR
 mh
-ux
-ux
-ux
+mh
+mh
+mh
 ux
 ux
 ux
@@ -5413,8 +5489,8 @@ mh
 mh
 mh
 tX
-HA
 tX
+HA
 tX
 tX
 tX
@@ -5432,7 +5508,7 @@ vR
 Kw
 uV
 Ko
-pi
+Ku
 lN
 CP
 cY
@@ -5442,9 +5518,9 @@ jx
 CP
 mh
 mh
-ux
-ux
-ux
+mh
+mh
+mh
 ux
 ux
 ux
@@ -5503,8 +5579,8 @@ CP
 qR
 mh
 mh
-ux
-ux
+mh
+mh
 ux
 ux
 ux
@@ -5551,7 +5627,7 @@ Ev
 nT
 uK
 vb
-wO
+lE
 wO
 vG
 CP
@@ -5563,9 +5639,9 @@ CP
 mh
 mh
 mh
-ux
-ux
-ux
+mh
+mh
+mh
 ux
 ux
 ux
@@ -5624,8 +5700,8 @@ mh
 mh
 mh
 mh
-ux
-ux
+mh
+mh
 ux
 ux
 ux
@@ -5685,7 +5761,7 @@ qR
 mh
 mh
 mh
-ux
+mh
 ux
 ux
 ux
@@ -5745,8 +5821,8 @@ CP
 mh
 mh
 mh
-ux
-ux
+mh
+mh
 ux
 ux
 ux
@@ -5805,8 +5881,8 @@ CP
 CP
 mh
 mh
-ux
-ux
+mh
+mh
 ux
 ux
 ux
@@ -6010,7 +6086,7 @@ od
 od
 od
 od
-od
+qh
 od
 BS
 Xk
@@ -6387,8 +6463,8 @@ Jo
 Jo
 zy
 Zr
-tX
 HA
+tX
 tX
 tX
 tX
@@ -6626,9 +6702,9 @@ mh
 od
 od
 Fv
+tX
+tX
 HA
-tX
-tX
 tX
 qR
 mh
