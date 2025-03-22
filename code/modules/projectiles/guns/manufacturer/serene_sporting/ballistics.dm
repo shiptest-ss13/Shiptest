@@ -264,7 +264,7 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 	spread_unwielded = 20
 	recoil = 1.25
 	recoil_unwielded = 6
-	fire_delay = 0.75 SECONDS
+	fire_delay = 0.5 SECONDS
 	wield_delay = 1.15 SECONDS //a little longer and less wieldy than other DMRs
 
 	can_be_sawn_off = FALSE
