@@ -40,6 +40,7 @@
 	integrity_failure = 0
 	scan_range = 16
 	shot_delay = 50
+	reaction_time = 15
 	burst_delay = 7
 	burst_size = 3
 
