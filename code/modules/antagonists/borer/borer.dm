@@ -573,7 +573,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	if(src.mind.language_holder)
 		var/datum/language_holder/language_holder = src.mind.language_holder
 		language_holder.remove_all_languages()
-		language_holder.grant_language(/datum/language/common)
+		language_holder.grant_language(/datum/language/galactic_common)
 
 	GrantBorerActions()
 	RemoveInfestActions()

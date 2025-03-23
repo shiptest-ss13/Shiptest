@@ -25,9 +25,20 @@
 	slot_flags = ITEM_SLOT_BACK
 
 	show_magazine_on_sprite = TRUE
+	ammo_counter = TRUE
 	empty_indicator = TRUE
 	fire_sound = 'sound/weapons/gun/laser/e40_bal.ogg'
 	manufacturer = MANUFACTURER_EOEHOMA
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 45,
+			"y" = 20,
+		),
+	)
 
 /obj/item/gun/ballistic/automatic/assault/e40/Initialize()
 	. = ..()
