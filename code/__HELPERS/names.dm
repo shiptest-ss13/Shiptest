@@ -21,6 +21,11 @@
 		. += pick(syllables)
 	. = capitalize(.)
 
+/proc/spider_name()
+	. = pick(GLOB.spider_names)
+	for (var/x = rand(0,4) to 0 step -1)
+		. += "'[pick(GLOB.spider_names)]"
+
 GLOBAL_VAR(command_name)
 /proc/command_name()
 	if (GLOB.command_name)
