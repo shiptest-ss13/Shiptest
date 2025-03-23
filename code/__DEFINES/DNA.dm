@@ -25,6 +25,7 @@
 #define STONER /datum/mutation/human/stoner
 #define UNINTELLIGIBLE /datum/mutation/human/unintelligible
 #define RADIOACTIVE /datum/mutation/human/radioactive
+#define MEDIEVAL /datum/mutation/human/medieval
 #define GLOWY /datum/mutation/human/glow
 #define ANTIGLOWY /datum/mutation/human/glow/anti
 #define TELEPATHY /datum/mutation/human/telepathy

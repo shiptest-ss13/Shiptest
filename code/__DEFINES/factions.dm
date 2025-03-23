@@ -10,7 +10,7 @@
 #define FACTION_NT "Nanotrasen"
 	#define FACTION_NS_LOGI "N+S Logistics"
 	#define FACTION_VIGILITAS "Vigilitas Interstellar"
-#define FACTION_FRONTIERSMEN "Frontiersmen Fleet"
+#define FACTION_FRONTIERSMEN "USCM"
 #define FACTION_PGF "Pan-Gezena Federation"
 #define FACTION_INDEPENDENT "Independent"
 #define FACTION_RAMZI "Ramzi Clique"
