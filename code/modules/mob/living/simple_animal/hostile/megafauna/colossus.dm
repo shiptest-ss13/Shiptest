@@ -50,7 +50,7 @@ Difficulty: Very Hard
 	achievement_type = /datum/award/achievement/boss/colossus_kill
 	crusher_achievement_type = /datum/award/achievement/boss/colossus_crusher
 	score_achievement_type = /datum/award/score/colussus_score
-	//mob_trophy = /obj/item/mob_trophy/blaster_tubes
+	mob_trophy = /obj/item/mob_trophy/blaster_tubes
 	loot = list(/obj/structure/closet/crate/necropolis/colossus)
 	deathmessage = "disintegrates, leaving a glowing core in its wake."
 	deathsound = 'sound/magic/demon_dies.ogg'
@@ -304,7 +304,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	GLOB.blackbox = src
 	ReadMemory()
 
-/obj/machinery/smartfridge/black_box/process()
+/obj/machinery/smartfridge/black_box/process(seconds_per_tick)
 	..()
 	if(!memory_saved && SSticker.current_state == GAME_STATE_FINISHED)
 		WriteMemory()
@@ -735,7 +735,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 				mobcheck = TRUE
 				break
 			if(!mobcheck)
-				new /mob/living/simple_animal/hostile/cockroach(get_step(src,dir)) //Just in case there aren't any animals on the station, this will leave you with a terrible option to possess if you feel like it //i found it funny that in the file for a giant angel beast theres a cockroach
+				new /mob/living/basic/cockroach(get_step(src,dir)) //Just in case there aren't any animals on the station, this will leave you with a terrible option to possess if you feel like it //i found it funny that in the file for a giant angel beast theres a cockroach
 
 /obj/structure/closet/stasis
 	name = "quantum entanglement stasis warp field"
@@ -746,7 +746,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	resistance_flags = FIRE_PROOF | ACID_PROOF | INDESTRUCTIBLE
 	var/mob/living/simple_animal/holder_animal
 
-/obj/structure/closet/stasis/process()
+/obj/structure/closet/stasis/process(seconds_per_tick)
 	if(holder_animal)
 		if(holder_animal.stat == DEAD)
 			dump_contents()

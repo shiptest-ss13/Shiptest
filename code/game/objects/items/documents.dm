@@ -58,12 +58,19 @@
 	desc = "\"Top Secret\" Eoehoma Firearms documents. Filled with weapon blueprints and eviction notices."
 	icon_state = "docs_blue"
 
+/obj/item/documents/frontier
+	desc = "\"Top Secret\" Frotiersmen Fleet documents. Filled with operational intelligence for the local area."
+	icon_state = "docs_olive"
+
+/obj/item/documents/frontier/logistics
+	desc = "\"Top Secret\" Frotiersmen Fleet documents. Filled with intelligence on local Frontiersmen supply lines, supply depot, and logistical infrastructure."
+
 /obj/item/documents/photocopy
 	desc = "A copy of some top-secret documents. Nobody will notice they aren't the originals... right?"
 	var/forgedseal = 0
 	var/copy_type = null
 
-/obj/item/documents/photocopy/New(loc, obj/item/documents/copy=null)
+/obj/item/documents/photocopy/New(loc, obj/item/documents/copy = null)
 	..()
 	if(copy)
 		copy_type = copy.type

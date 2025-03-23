@@ -34,11 +34,11 @@
 	W.access += list(ACCESS_KITCHEN)
 
 /datum/outfit/job/independent/assistant/fancy
-	name = "Independent - Assistant (Formal Uniform)"
+	name = "Independent - Assistant (Fancy)"
 
 	shoes = /obj/item/clothing/shoes/laceup
-	uniform = /obj/item/clothing/under/misc/assistantformal
-	head = /obj/item/clothing/head/beret/grey
+	uniform = /obj/item/clothing/under/suit/charcoal
+	accessory = /obj/item/clothing/accessory/waistcoat
 
 /datum/outfit/job/independent/assistant/pirate
 	name = "Independent - Assistant (Pirate)"
@@ -170,8 +170,9 @@
 
 	id = /obj/item/card/id
 	gloves = /obj/item/clothing/gloves/color/white
-	uniform = /obj/item/clothing/under/suit/black_really
-	alt_uniform = /obj/item/clothing/under/suit/blacktwopiece
+	uniform = /obj/item/clothing/under/rank/security/detective/grey
+	suit = /obj/item/clothing/suit/toggle/lawyer/charcoal
+	neck = /obj/item/clothing/neck/tie/black
 	dcoat = null
 	glasses = /obj/item/clothing/glasses/sunglasses
 	head = null
