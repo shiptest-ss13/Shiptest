@@ -222,7 +222,7 @@
 	. = ..()
 	if(smoothing_flags)
 		var/matrix/translation = new
-		translation.Translate(-9, -9)
+		translation.Translate(-19, -19)
 		transform = translation
 		icon = smooth_icon
 
