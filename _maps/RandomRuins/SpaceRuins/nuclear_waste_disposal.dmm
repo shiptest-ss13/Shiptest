@@ -1604,6 +1604,9 @@
 	},
 /mob/living/basic/mouse/rat,
 /mob/living/basic/mouse/rat,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/powered/nuclearwaste/recreation)
 "lX" = (
@@ -1954,6 +1957,7 @@
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/suit/radiation,
 /obj/item/clothing/head/radiation,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/dorms)
 "nX" = (
@@ -2985,7 +2989,6 @@
 /obj/structure/safe,
 /obj/item/folder/documents/solgov,
 /obj/item/spacecash/bundle/loadsamoney,
-/obj/effect/radiation/extreme,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "wq" = (
@@ -3030,6 +3033,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/cargo_right)
+"wX" = (
+/obj/structure/hazard/radioactive/waste,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_3)
 "wY" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -3482,53 +3489,53 @@
 "AJ" = (
 /obj/structure/table/chem,
 /obj/item/storage/pill_bottle/penacid{
-	pixel_x = -7;
+	pixel_x = -11;
 	pixel_y = -2
 	},
 /obj/item/storage/pill_bottle/charcoal{
-	pixel_x = 0;
-	pixel_y = 5
+	pixel_x = -5;
+	pixel_y = -2
 	},
 /obj/item/reagent_containers/pill/oxandrolone{
-	pixel_x = 6;
+	pixel_x = 1;
 	pixel_y = -2
 	},
 /obj/item/reagent_containers/pill/lsdpsych{
-	pixel_x = 8;
-	pixel_y = 10
+	pixel_x = 5;
+	pixel_y = -2
 	},
 /obj/item/reagent_containers/pill/finobranc{
-	pixel_x = -9;
-	pixel_y = 12
+	pixel_x = -10;
+	pixel_y = 13
 	},
 /obj/item/reagent_containers/pill/hsh{
-	pixel_x = 9;
-	pixel_y = 4
+	pixel_x = 2;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/pill/zoom{
-	pixel_x = 0;
+	pixel_x = 9;
 	pixel_y = -2
 	},
 /obj/item/reagent_containers/pill/three_eye{
-	pixel_x = 5;
-	pixel_y = 15
+	pixel_x = 2;
+	pixel_y = 13
 	},
 /obj/item/reagent_containers/pill/mutadone{
 	pixel_x = -9;
-	pixel_y = 6
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/pill/aranesp{
-	pixel_x = 11;
-	pixel_y = -7
+	pixel_x = 4;
+	pixel_y = 4
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/item/stamp/cmo{
-	pixel_x = -12;
-	pixel_y = -7
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 12;
+	pixel_y = 16
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/powered/nuclearwaste/medbay)
 "AN" = (
@@ -4755,6 +4762,22 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = -12;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 12;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_outer)
 "KX" = (
@@ -5824,6 +5847,7 @@
 /obj/item/clothing/under/color/random,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/shoes/workboots,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/dorms)
 "SH" = (
@@ -9370,7 +9394,7 @@ de
 MV
 MV
 bp
-de
+wX
 gW
 Az
 yF
