@@ -124,3 +124,11 @@
 	prefixes = PREFIX_INDEPENDENT
 	color = "#A0A0A0"
 	order = FACTION_SORT_INDEPENDENT
+
+/datum/faction/ramzi
+	name = FACTION_RAMZI
+	short_name = "RAM"
+	parent_faction =  /datum/faction/ramzi
+	prefixes = PREFIX_RAMZI
+	color = "#c45508"
+	check_prefix = FALSE
