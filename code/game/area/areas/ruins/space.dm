@@ -158,7 +158,7 @@
 
 /area/ruin/space/has_grav/powered/nuclearwaste/dorms
 	name = "Waste Disposal Station Dorms"
-	icon_state = "Lounge"
+	icon_state = "Sleep"
 
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1
 	name = "Radioactive Storage Site 01"
