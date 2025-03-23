@@ -397,7 +397,7 @@
 
 	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom, interact), usr)
 
-/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on, string="helloooo please tell coders if you see me")
+/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on, string="IntraNet is proud to present the latest in unique content!")
 	if(on && icon_state == icon_state_off)
 		say(string)
 		icon_state = icon_state_on
