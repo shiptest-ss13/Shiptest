@@ -1240,16 +1240,14 @@
 	pixel_x = 9;
 	pixel_y = -11
 	},
-/obj/item/bodycamera{
-	pixel_x = -13;
-	pixel_y = 7;
-	c_tag = "R-S-03";
-	network = list("NKRW")
-	},
 /obj/structure/hazard/slowdown/nuclear_sludge,
 /obj/item/geiger_counter{
 	pixel_x = 5;
 	pixel_y = -2
+	},
+/obj/item/bodycamera{
+	pixel_x = -14;
+	pixel_y = 8
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
