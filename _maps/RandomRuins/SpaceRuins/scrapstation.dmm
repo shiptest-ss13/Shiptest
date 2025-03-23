@@ -1018,7 +1018,7 @@
 "fR" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "foreman"
 	},
 /turf/open/floor/plating,
@@ -3364,7 +3364,12 @@
 /obj/structure/chair/office,
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
 	minimum_distance = 1;
-	retreat_distance = null
+	retreat_distance = null;
+	name = "Foreman Bonsha"
+	},
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
@@ -3406,7 +3411,6 @@
 "tx" = (
 /obj/structure/rack,
 /obj/machinery/light/directional/west,
-/obj/item/melee/axe/sledgehammer,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "tz" = (
@@ -6212,6 +6216,7 @@
 	pixel_x = -7;
 	pixel_y = 4
 	},
+/obj/item/melee/sledgehammer/gorlex,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "IY" = (
@@ -6719,6 +6724,9 @@
 /obj/structure/closet/body_bag,
 /obj/effect/mob_spawn/human/corpse/pgf/captain,
 /obj/item/storage/belt/sabre/pgf,
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
 "Ll" = (
