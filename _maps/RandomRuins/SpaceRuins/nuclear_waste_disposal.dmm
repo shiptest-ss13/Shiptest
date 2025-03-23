@@ -6,15 +6,11 @@
 /turf/open/floor/glass/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/south_hall)
 "ad" = (
-/obj/machinery/nuclearbomb/selfdestruct{
-	deconstruction_state = NUKESTATE_CORE_REMOVED;
-	name = "decommissioned station self-destruct terminal"
-	},
+/obj/effect/radiation/waste/intense,
 /obj/machinery/nuclearbomb/selfdestruct{
 	name = "decommissioned station self-destruct terminal";
 	interior = "core-removed"
 	},
-/obj/effect/radiation/waste/intense,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_1)
 "ae" = (
