@@ -2317,8 +2317,8 @@
 /area/ship/cargo)
 "oj" = (
 /obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/cockroach,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/basic/cockroach,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "oF" = (
@@ -4311,11 +4311,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
-"MG" = (
-/obj/effect/decal/cleanable/blood/old,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "MM" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -5682,7 +5677,7 @@ aa
 aa
 ac
 QM
-MG
+oj
 GH
 Lb
 ac
