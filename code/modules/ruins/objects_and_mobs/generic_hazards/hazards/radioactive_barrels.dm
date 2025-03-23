@@ -29,13 +29,3 @@
 	client_range = 7
 	random_min = 0.5 SECONDS
 	random_max = 0.5 SECONDS
-
-/obj/structure/hazard/radioactive/supermatter/active_radioactive_source
-	name = "active radiation source"
-	desc = "You probably should not see this.."
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "radiation"
-	client_range = 20 //I forsee nothing wrong happening here (clueless)
-	rad_range = 9
-	invisibility = INVISIBILITY_OBSERVER
-	density = FALSE
