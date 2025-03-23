@@ -623,7 +623,8 @@
 /obj/structure/closet/secure_closet{
 	icon_state = "cap";
 	name = "captain's locker";
-	req_access_txt = "20"
+	req_access_txt = "20";
+	anchored = 1
 	},
 /obj/item/storage/guncase/pistol/cm23,
 /obj/item/clothing/suit/armor/clip_capcoat{
@@ -1339,7 +1340,8 @@
 /obj/structure/closet/secure_closet{
 	icon_state = "hop";
 	name = "sergeant's locker";
-	req_access_txt = "3"
+	req_access_txt = "3";
+	anchored = 1
 	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = -8
@@ -3272,7 +3274,8 @@
 /area/ship/cargo)
 "OZ" = (
 /obj/structure/closet/secure_closet/engineering_personal{
-	populate = 0
+	populate = 0;
+	anchored = 1
 	},
 /obj/item/clothing/glasses/meson{
 	pixel_x = -1;
@@ -3977,7 +3980,8 @@
 	},
 /obj/structure/closet{
 	name = "uniform locker";
-	icon_door = "blue"
+	icon_door = "blue";
+	anchored = 1
 	},
 /obj/item/storage/backpack/satchel/sec/clip{
 	pixel_x = -12;
