@@ -1225,7 +1225,6 @@
 	pixel_y = 3
 	},
 /obj/effect/decal/cleanable/molten_object/large{
-	color = f90606;
 	pixel_x = 0;
 	pixel_y = 19
 	},
@@ -1244,9 +1243,7 @@
 /obj/item/bodycamera{
 	pixel_x = -13;
 	pixel_y = 7;
-	start_active = 1;
 	c_tag = "R-S-03";
-	icon_state = "bodycamera-on";
 	network = list("NKRW")
 	},
 /obj/structure/hazard/slowdown/nuclear_sludge,
