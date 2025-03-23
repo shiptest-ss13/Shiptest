@@ -15,7 +15,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	maxbodytemp = 400
 	unsuitable_atmos_damage = 15
-	faction = list(FACTION_ANTAG_SYNDICATE)
+	faction = list(FACTION_RAMZI)
 	loot = null
 	check_friendly_fire = TRUE
 	dodging = TRUE

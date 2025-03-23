@@ -291,6 +291,7 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "cape"
 	item_state = "blackcloth"
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/neck/cloak/gezena/lead
 	name = "marine officer's Azuilhauz"
