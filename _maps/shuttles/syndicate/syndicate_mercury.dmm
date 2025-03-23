@@ -195,11 +195,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/machinery/computer/crew{
+/obj/machinery/airalarm/directional/west,
+/obj/machinery/computer/cargo{
 	dir = 4;
 	icon_state = "computer-right"
 	},
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/suns/grid,
 /area/ship/bridge)
 "dt" = (
@@ -1703,15 +1703,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "AP" = (
-/obj/machinery/computer/cargo{
-	dir = 4;
-	icon_state = "computer-left"
-	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 4
 	},
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
+	},
+/obj/machinery/computer/crew{
+	dir = 4;
+	icon_state = "computer-left"
 	},
 /turf/open/floor/suns/grid,
 /area/ship/bridge)
