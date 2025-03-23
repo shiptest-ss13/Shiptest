@@ -168,7 +168,7 @@
 
 /datum/supply_pack/service/coffee_cartridge_fancy
 	name = "Premium Coffee Cartridge Resupply"
-	desc = "Contains five coffee cartridges of coffee, sourced from specialized Rachnid culinary guilds."
+	desc = "Contains an assortment of five high-quality coffee cartridges."
 	cost = 1250
 	contains = list(/obj/item/coffee_cartridge/fancy,
 					/obj/item/coffee_cartridge/fancy,

@@ -27,20 +27,20 @@
 	var/coffee_type = pick("blend", "blue_mountain", "kilimanjaro", "mocha")
 	switch(coffee_type)
 		if("blend")
-			name = "coffeemaker cartridge - Miscela di Piccione"
+			name = "coffeemaker cartridge - Miscela di Piccione" // North Teceti Blend
 			icon_state = "cartridge_blend"
 		if("blue_mountain")
-			name = "coffeemaker cartridge - Montagna Blu"
+			name = "coffeemaker cartridge - Montagna Blu" // Clover Speciality
 			icon_state = "cartridge_blue_mtn"
 		if("kilimanjaro")
-			name = "coffeemaker cartridge - Kilimangiaro"
+			name = "coffeemaker cartridge - Kilimangiaro" // Kalixcian-Grown
 			icon_state = "cartridge_kilimanjaro"
 		if("mocha")
-			name = "coffeemaker cartridge - Moka Arabica"
+			name = "coffeemaker cartridge - Moka Arabica" // Deu’Texe Guild
 			icon_state = "cartridge_mocha"
 
 /obj/item/coffee_cartridge/decaf
-	name = "coffeemaker cartridge - Caffè Decaffeinato"
+	name = "coffeemaker cartridge - Decaffeinated"
 	desc = "A decaf coffee cartridge manufactured by Piccionaia Coffee, for use with the Modello 3 system."
 	icon_state = "cartridge_decaf"
 	drink_type = list(/datum/reagent/consumable/soy_latte = 120)

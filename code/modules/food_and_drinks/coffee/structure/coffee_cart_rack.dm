@@ -4,8 +4,10 @@
 	desc = "A small rack for storing coffeemaker cartridges."
 	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "coffee_cartrack"
+	base_icon_state = "coffee_cartrack"
 	//icon_type = "coffee cartridge"
 	spawn_type = /obj/item/coffee_cartridge
+	contents_tag = "cartridge"
 
 /obj/item/storage/fancy/coffee_cart_rack/ComponentInitialize()
 	. = ..()

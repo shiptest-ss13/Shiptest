@@ -5,6 +5,7 @@
 	desc = "A neat small wooden box, holding all your favorite coffee condiments."
 	//icon_type = "coffee condiment"
 	is_open = TRUE
+	contents_tag = "condiment"
 
 /obj/item/storage/fancy/coffee_condi_display/Initialize(mapload)
 	. = ..()
@@ -16,7 +17,7 @@
 												/obj/item/reagent_containers/condiment/chocolate))
 	STR.can_hold = can_hold
 
-/obj/item/storage/fancy/coffee_cart_rack/Initialize()
+/obj/item/storage/fancy/coffee_condi_display/Initialize()
 	. = ..()
 	cut_overlays()
 	icon_state = "coffee_condi_display"
