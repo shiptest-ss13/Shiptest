@@ -13,17 +13,37 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "bA" = (
-/obj/machinery/porta_turret/syndicate/shuttle{
-	dir = 9
-	},
 /turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/area/ship/bridge)
 "bJ" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning,
 /obj/machinery/light/directional/south,
+/obj/structure/closet/crate/secure{
+	icon_state = "weaponcrate";
+	name = "DEMOLITIONS"
+	},
+/obj/item/reagent_containers/glass/chem_jug/thermite{
+	pixel_x = -9
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = -9;
+	pixel_x = -5
+	},
+/obj/machinery/syndicatebomb/empty{
+	pixel_x = 7
+	},
+/obj/item/bombcore/chemical{
+	pixel_y = -6;
+	layer = 3.8
+	},
+/obj/item/bombcore/large{
+	pixel_y = -6;
+	pixel_x = 8;
+	layer = 3.8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "bV" = (
@@ -57,11 +77,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "eC" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 5
-	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
 	dir = 4
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
 	},
 /turf/open/floor/engine/hydrogen_fuel,
 /area/ship/bridge)
@@ -110,12 +130,16 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "fA" = (
 /obj/machinery/power/port_gen/pacman/mrs,
-/obj/item/stack/sheet/mineral/diamond/twenty,
-/obj/item/wrench,
+/obj/item/wrench{
+	pixel_x = -3
+	},
 /obj/structure/railing{
 	color = "#818181"
 	},
@@ -124,42 +148,15 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/stack/sheet/mineral/diamond/twenty{
+	pixel_x = 6;
+	pixel_y = 9
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "fS" = (
-/obj/structure/closet,
-/obj/structure/railing{
-	dir = 8;
-	color = "#818181"
-	},
-/obj/structure/railing{
-	dir = 4;
-	color = "#818181"
-	},
-/obj/item/ammo_box/a357_box{
-	pixel_x = -4;
-	pixel_y = -6
-	},
-/obj/item/ammo_box/a357/hp{
-	pixel_x = 1;
-	pixel_y = -8
-	},
-/obj/item/ammo_box/a357/match{
-	pixel_y = -4
-	},
-/obj/item/gun/energy/pulse/pistol{
-	pixel_y = 3;
-	pixel_x = 5
-	},
-/obj/item/chameleon{
-	pixel_x = 4;
-	pixel_y = -10
-	},
-/obj/machinery/light/directional/south,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/grid,
+/obj/effect/turf_decal/spline/plain/opaque/black,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "gJ" = (
 /obj/structure/chair/comfy/shuttle{
@@ -192,6 +189,9 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "iy" = (
@@ -218,6 +218,81 @@
 /obj/structure/railing/modern,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 5
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"jV" = (
+/obj/structure/closet,
+/obj/structure/railing{
+	dir = 8;
+	color = "#818181"
+	},
+/obj/structure/railing{
+	dir = 4;
+	color = "#818181"
+	},
+/obj/item/ammo_box/a357_box{
+	pixel_x = -4;
+	pixel_y = -6
+	},
+/obj/item/ammo_box/a357/hp{
+	pixel_x = 1;
+	pixel_y = -8
+	},
+/obj/item/ammo_box/a357/match{
+	pixel_y = -4
+	},
+/obj/item/gun/energy/pulse/pistol{
+	pixel_y = 3;
+	pixel_x = 5
+	},
+/obj/item/chameleon{
+	pixel_x = 4;
+	pixel_y = -10
+	},
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/obj/item/hypospray/mkii/CMO/combat{
+	pixel_x = -9;
+	pixel_y = -4
+	},
+/obj/item/storage/box/hypospray{
+	pixel_x = 4;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/tricord{
+	pixel_x = 9;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/salglu{
+	pixel_y = 7;
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/synthflesh{
+	pixel_x = 10;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/dexalin{
+	pixel_y = 3;
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/kelotane{
+	pixel_x = 11;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/antitoxin{
+	pixel_x = 5;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/bicaridine{
+	pixel_x = 10;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/combat{
+	pixel_x = 5;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -280,6 +355,58 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
+/obj/structure/closet/crate/secure{
+	icon_state = "weaponcrate";
+	name = "REQUISITIONS"
+	},
+/obj/item/grenade/clusterbuster/emp{
+	pixel_y = 13;
+	pixel_x = 7;
+	name = "EMP CLUSTER"
+	},
+/obj/item/grenade/clusterbuster/teargas{
+	pixel_y = 8;
+	pixel_x = 7;
+	name = "GAS CLUSTER"
+	},
+/obj/item/grenade/clusterbuster/smoke{
+	pixel_x = 7;
+	pixel_y = 3;
+	name = "SMOKE CLUSTER"
+	},
+/obj/item/grenade/clusterbuster/metalfoam{
+	pixel_x = 7;
+	pixel_y = -2;
+	name = "FOAM CLUSTER"
+	},
+/obj/item/grenade/syndieminibomb{
+	pixel_x = -12;
+	pixel_y = 11;
+	name = "MINIBOMB"
+	},
+/obj/item/grenade/syndieminibomb{
+	pixel_x = -5;
+	pixel_y = 11;
+	name = "MINIBOMB"
+	},
+/obj/item/grenade/syndieminibomb{
+	pixel_x = -12;
+	pixel_y = 7;
+	name = "MINIBOMB"
+	},
+/obj/item/grenade/syndieminibomb{
+	pixel_x = -5;
+	pixel_y = 7;
+	name = "MINIBOMB"
+	},
+/obj/item/storage/belt/grenade{
+	pixel_x = -11;
+	pixel_y = -6
+	},
+/obj/item/storage/belt/grenade{
+	pixel_x = -11;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "pf" = (
@@ -540,6 +667,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/charcoal,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "AY" = (
@@ -548,9 +676,42 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Bl" = (
-/obj/structure/chair/comfy/shuttle,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 6
+/obj/structure/closet,
+/obj/structure/railing{
+	dir = 8;
+	color = "#818181"
+	},
+/obj/structure/railing{
+	dir = 4;
+	color = "#818181"
+	},
+/obj/item/ammo_box/a357_box{
+	pixel_x = -4;
+	pixel_y = -6
+	},
+/obj/item/ammo_box/a357/hp{
+	pixel_x = 1;
+	pixel_y = -8
+	},
+/obj/item/ammo_box/a357/match{
+	pixel_y = -4
+	},
+/obj/item/gun/energy/pulse/pistol{
+	pixel_y = 3;
+	pixel_x = 5
+	},
+/obj/item/chameleon{
+	pixel_x = 4;
+	pixel_y = -10
+	},
+/obj/effect/turf_decal/siding/wideplating/dark,
+/obj/item/gun/energy/minigun{
+	pixel_y = 11;
+	pixel_x = -1
+	},
+/obj/item/minigunpack{
+	pixel_x = -6;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -582,6 +743,9 @@
 /obj/machinery/turretid{
 	pixel_y = 22
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "DM" = (
@@ -593,11 +757,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "DS" = (
-/obj/machinery/porta_turret/syndicate/shuttle{
-	dir = 10
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/obj/mecha/working/ripley/deathripley/real,
+/obj/effect/turf_decal/siding/wideplating/dark,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
 "Gf" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 4;
@@ -616,7 +779,9 @@
 	},
 /obj/docking_port/mobile{
 	dir = 8;
-	name = "watchman dock"
+	name = "watchman dock";
+	port_direction = 2;
+	preferred_direction = 8
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -634,44 +799,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "KM" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 6
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber{
 	dir = 4
 	},
+/obj/structure/window/plasma/reinforced,
 /turf/open/floor/engine/hydrogen_fuel,
 /area/ship/bridge)
 "Lp" = (
-/obj/structure/closet,
-/obj/structure/railing{
-	dir = 8;
-	color = "#818181"
-	},
-/obj/structure/railing{
-	dir = 4;
-	color = "#818181"
-	},
-/obj/machinery/light/directional/north,
-/obj/item/ammo_box/a357_box{
-	pixel_x = -4;
-	pixel_y = -6
-	},
-/obj/item/ammo_box/a357/hp{
-	pixel_x = 1;
-	pixel_y = -8
-	},
-/obj/item/ammo_box/a357/match{
-	pixel_y = -4
-	},
-/obj/item/gun/energy/pulse/pistol{
-	pixel_y = 3;
-	pixel_x = 5
-	},
-/obj/item/chameleon{
-	pixel_x = 4;
-	pixel_y = -10
-	},
+/obj/machinery/mech_bay_recharge_port,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -695,9 +830,6 @@
 "Nw" = (
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/spline/plain/opaque/black{
-	dir = 1
 	},
 /obj/effect/turf_decal/spline/plain/opaque/black,
 /turf/open/floor/plasteel/mono/dark,
@@ -768,7 +900,6 @@
 /obj/effect/turf_decal/spline/plain/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/plain/opaque/black,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Rf" = (
@@ -818,9 +949,37 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "SS" = (
-/obj/structure/chair/comfy/shuttle,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 10
+/obj/structure/closet,
+/obj/structure/railing{
+	dir = 8;
+	color = "#818181"
+	},
+/obj/structure/railing{
+	dir = 4;
+	color = "#818181"
+	},
+/obj/item/ammo_box/a357_box{
+	pixel_x = -4;
+	pixel_y = -6
+	},
+/obj/item/ammo_box/a357/hp{
+	pixel_x = 1;
+	pixel_y = -8
+	},
+/obj/item/ammo_box/a357/match{
+	pixel_y = -4
+	},
+/obj/item/gun/energy/pulse/pistol{
+	pixel_y = 3;
+	pixel_x = 5
+	},
+/obj/item/chameleon{
+	pixel_x = 4;
+	pixel_y = -10
+	},
+/obj/effect/turf_decal/siding/wideplating/dark,
+/obj/item/storage/backpack/duffelbag/syndie/x4{
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -873,31 +1032,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "UC" = (
-/obj/structure/closet,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
-/obj/item/reagent_containers/glass/chem_jug/thermite{
-	pixel_x = -9
-	},
-/obj/machinery/syndicatebomb/empty{
-	pixel_x = 7
-	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_y = -9;
-	pixel_x = -5
-	},
-/obj/item/bombcore/chemical{
-	pixel_y = -6;
-	layer = 3.8
-	},
-/obj/item/bombcore/large{
-	pixel_y = -6;
-	pixel_x = 8;
-	layer = 3.8
-	},
 /obj/effect/turf_decal/spline/plain/opaque/black{
 	dir = 1
+	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -963,7 +1106,93 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"Zz" = (
+/obj/structure/closet,
+/obj/structure/railing{
+	dir = 8;
+	color = "#818181"
+	},
+/obj/structure/railing{
+	dir = 4;
+	color = "#818181"
+	},
+/obj/item/ammo_box/a357_box{
+	pixel_x = -4;
+	pixel_y = -6
+	},
+/obj/item/ammo_box/a357/hp{
+	pixel_x = 1;
+	pixel_y = -8
+	},
+/obj/item/ammo_box/a357/match{
+	pixel_y = -4
+	},
+/obj/item/gun/energy/pulse/pistol{
+	pixel_y = 3;
+	pixel_x = 5
+	},
+/obj/item/chameleon{
+	pixel_x = 4;
+	pixel_y = -10
+	},
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/obj/item/storage/belt/bandolier{
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/obj/item/gun/ballistic/shotgun/doublebarrel/twobore{
+	pixel_x = -1;
+	pixel_y = -13
+	},
+/obj/item/ammo_casing/shotgun/buckshot/twobore{
+	pixel_x = -10;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/shotgun/buckshot/twobore{
+	pixel_x = -8;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/shotgun/buckshot/twobore{
+	pixel_x = -8;
+	pixel_y = 0
+	},
+/obj/item/ammo_casing/shotgun/buckshot/twobore{
+	pixel_x = -11;
+	pixel_y = 0
+	},
+/obj/item/ammo_casing/shotgun/buckshot/twobore{
+	pixel_x = -11;
+	pixel_y = -3
+	},
+/obj/item/ammo_casing/shotgun/buckshot/twobore{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/item/ammo_casing/shotgun/buckshot/twobore{
+	pixel_x = -8;
+	pixel_y = -7
+	},
+/obj/item/ammo_casing/shotgun/buckshot/twobore{
+	pixel_x = -11;
+	pixel_y = -7
+	},
+/obj/item/ammo_casing/shotgun/buckshot/twobore{
+	pixel_x = -11;
+	pixel_y = -10
+	},
+/obj/item/ammo_casing/shotgun/buckshot/twobore{
+	pixel_x = -8;
+	pixel_y = -10
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 
 (1,1,1) = {"
@@ -1031,14 +1260,14 @@ Dz
 uD
 fA
 RG
-lO
-DS
+zV
+bA
 Rs
 Rs
 "}
 (6,1,1) = {"
 Rs
-Rs
+zV
 zV
 zV
 el
@@ -1047,36 +1276,36 @@ zV
 yM
 zV
 zV
-Rs
+zV
 Rs
 "}
 (7,1,1) = {"
 Rs
-bA
 zV
 Lp
+Pm
 Nw
 jk
 Bl
 Pm
 fS
+Zz
 zV
-DS
 Rs
 "}
 (8,1,1) = {"
-Rs
+bA
 zV
-zV
-Lp
+DS
+Pm
 Nw
 qM
 SS
 Pm
 fS
+jV
 zV
-zV
-Rs
+bA
 "}
 (9,1,1) = {"
 zV
@@ -1090,7 +1319,7 @@ eM
 zV
 zV
 zV
-lO
+zV
 "}
 (10,1,1) = {"
 zV
