@@ -13,7 +13,7 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 	var/smash_time = 3 SECONDS
-	var/time_to_harden = 50 SECONDS
+	var/time_to_harden = 20 SECONDS
 	// fraction ranging from 0 to 1 -- 0 is fully soft, 1 is fully hardened
 	// don't change this in subtypes unless you want them to spawn in soft on maps
 	var/harden_lvl = 1
@@ -234,7 +234,7 @@
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_HEXACRETE)
 
 	smash_time = 8 SECONDS
-	time_to_harden = 80 SECONDS
+	time_to_harden = 40 SECONDS
 	// so that you can remove the overlays
 	shape_types = list(/turf/open/floor/concrete/reinforced)
 

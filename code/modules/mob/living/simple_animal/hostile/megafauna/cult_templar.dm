@@ -418,7 +418,7 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 
-/obj/item/clothing/head/helmet/space/hardsuit/cult/enchanted/process()
+/obj/item/clothing/head/helmet/space/hardsuit/cult/enchanted/process(seconds_per_tick)
 	. = ..()
 	var/mob/living/carbon/C = loc
 	if(istype(C) && prob(4))

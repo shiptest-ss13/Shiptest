@@ -33,7 +33,7 @@
 	if(chambered && !chambered.BB && syringes_left)
 		chambered.newshot()
 
-/obj/item/gun/chem/process()
+/obj/item/gun/chem/process(seconds_per_tick)
 	if(syringes_left >= max_syringes)
 		return
 	if(world.time < last_synth+time_per_syringe)

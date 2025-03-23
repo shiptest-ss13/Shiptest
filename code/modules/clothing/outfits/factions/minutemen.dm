@@ -303,10 +303,13 @@
 	suit = /obj/item/clothing/suit/armor/vest/clip_correspondent
 	shoes = /obj/item/clothing/shoes/laceup
 
-	backpack = /obj/item/storage/backpack/satchel/leather
-	satchel = /obj/item/storage/backpack/satchel/leather
+	belt = /obj/item/bodycamera/broadcast_camera
+
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel
 
 	r_pocket = /obj/item/radio
+	l_pocket = /obj/item/multitool
 
 // Colonial League Minutemen
 

@@ -6,24 +6,23 @@
 	complexity = 3
 	incompatible_modules = list(/obj/item/mod/module/storage)
 	var/datum/component/storage/concrete/storage
-	var/max_w_class = WEIGHT_CLASS_NORMAL
-	var/max_combined_w_class = 15
-	var/max_items = 7
+	var/max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
+	var/max_vol = STORAGE_VOLUME_SATCHEL
 
 /obj/item/mod/module/storage/Initialize(mapload)
 	. = ..()
 	storage = AddComponent(/datum/component/storage/concrete)
+	storage.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
+	storage.max_volume = max_vol
 	storage.max_w_class = max_w_class
-	storage.max_combined_w_class = max_combined_w_class
-	storage.max_items = max_items
 	storage.allow_big_nesting = TRUE
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, TRUE)
 
 /obj/item/mod/module/storage/on_install()
 	var/datum/component/storage/modstorage = mod.AddComponent(/datum/component/storage, storage)
+	modstorage.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
 	modstorage.max_w_class = max_w_class
-	modstorage.max_combined_w_class = max_combined_w_class
-	modstorage.max_items = max_items
+	modstorage.max_volume = max_vol
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, FALSE)
 
 /obj/item/mod/module/storage/on_uninstall(deleting = FALSE)
@@ -34,12 +33,11 @@
 
 /obj/item/mod/module/storage/large_capacity
 	name = "MOD expanded storage module"
-	desc = "Reverse engineered by Nakamura Engineering from Donk Corporation designs, this system of hidden compartments \
+	desc = "An advancement in the storage field, this system of hidden compartments \
 		is entirely within the suit, distributing items and weight evenly to ensure a comfortable experience for the user; \
 		whether smuggling, or simply hauling."
 	icon_state = "storage_large"
-	max_combined_w_class = 21
-	max_items = 14
+	max_vol = STORAGE_VOLUME_BACKPACK
 
 /obj/item/mod/module/storage/syndicate
 	name = "MOD syndicate storage module"
@@ -47,8 +45,7 @@
 		esoteric technology to compress the physical matter of items put inside of them, \
 		essentially shrinking items for much easier and more portable storage."
 	icon_state = "storage_syndi"
-	max_combined_w_class = 30
-	max_items = 21
+	max_vol = STORAGE_VOLUME_DUFFLEBAG
 
 /obj/item/mod/module/storage/bluespace
 	name = "MOD bluespace storage module"
@@ -56,5 +53,5 @@
 		miniaturized bluespace pockets for the ultimate in storage technology; regardless of the weight of objects put inside."
 	icon_state = "storage_large"
 	max_w_class = WEIGHT_CLASS_GIGANTIC
-	max_combined_w_class = 60
-	max_items = 21
+	max_vol = STORAGE_VOLUME_BAG_OF_HOLDING
+
