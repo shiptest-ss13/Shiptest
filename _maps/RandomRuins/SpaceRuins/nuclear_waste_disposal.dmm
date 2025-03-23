@@ -1624,9 +1624,9 @@
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "lZ" = (
 /obj/structure/chair/sofa/purple/directional/west,
-/obj/effect/mob_spawn/human/corpse/charredskeleton/trooper,
 /obj/effect/mapping_helpers/chair/tim_buckley,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/glass/reinforced,
 /area/ruin/space/has_grav/powered/nuclearwaste/south_hall)
 "md" = (
@@ -3234,10 +3234,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/nuclearwaste/north_hall)
 "yF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/hazard/radioactive/waste,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
+/obj/structure/sign/warning/radiation/rad_area,
+/turf/closed/wall/r_wall/rust,
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_outer)
 "yI" = (
 /obj/structure/table/optable,
 /obj/machinery/defibrillator_mount/loaded{
@@ -4590,6 +4589,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_inner)
+"JV" = (
+/obj/structure/closet/crate/secure/plasma{
+	name = "nuclear core storage crate"
+	},
+/obj/item/nuke_core,
+/obj/item/nuke_core,
+/obj/effect/radiation/extreme,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_2)
 "JW" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -4750,9 +4758,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_outer)
 "KX" = (
-/obj/structure/sign/warning/radiation/rad_area,
-/turf/closed/wall/r_wall/rust,
-/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_south_outer)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/hazard/radioactive/waste,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_4)
 "KY" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/powered/nuclearwaste)
@@ -4873,10 +4882,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/space/has_grav/powered/nuclearwaste/this_is_not_a_place_of_honor)
-"LH" = (
-/obj/structure/sign/warning/radiation/rad_area,
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/powered/nuclearwaste/south_hall)
 "LL" = (
 /obj/machinery/shower{
 	dir = 8;
@@ -5318,14 +5323,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/nuclearwaste/cargo_right)
 "OP" = (
-/obj/structure/closet/crate/secure/plasma{
-	name = "nuclear core storage crate"
-	},
-/obj/item/nuke_core,
-/obj/item/nuke_core,
-/obj/effect/radiation/extreme,
-/turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/nuclearwaste/radioactive_2)
+/obj/structure/sign/warning/radiation/rad_area,
+/turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/powered/nuclearwaste/south_hall)
 "OW" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks,
@@ -8938,7 +8938,7 @@ LM
 UO
 UO
 UO
-LH
+OP
 mp
 zp
 gz
@@ -9249,7 +9249,7 @@ RT
 wm
 Ef
 Az
-KX
+yF
 Ln
 xz
 mp
@@ -9373,7 +9373,7 @@ bp
 de
 gW
 Az
-KX
+yF
 WX
 hQ
 mp
@@ -9801,9 +9801,9 @@ pY
 kS
 KF
 SR
-yF
+KX
 pH
-yF
+KX
 Ei
 KF
 Wj
@@ -9915,7 +9915,7 @@ Ux
 NW
 Ma
 ya
-OP
+JV
 ZT
 Mq
 NI
