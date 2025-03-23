@@ -674,9 +674,9 @@
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/leaper
 	name = "501p Overclock Kit"
-	desc = "A homebrew conversion kit for the 501p which overclocks it's leg actuators for launching instead of running."
+	desc = "A homebrew conversion kit for the 501p which overclocks it leg actuators for launching instead of running."
 	source_mech = list(/obj/mecha/combat/gygax)
-	result_mech = /obj/mecha/combat/gygax/charger/overclocked
+	result_mech = /obj/mecha/combat/gygax/charger/overclock
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/dark_gygax
 	name = "515 EX Conversion Kit"

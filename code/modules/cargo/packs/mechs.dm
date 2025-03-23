@@ -282,7 +282,7 @@ Mech Equipment
 
 /datum/supply_pack/mech/equipment/charger_upgrade
 	name = "501p overclock kit"
-	desc = "Contains a kit to overclock the 501p, allowing it to leap forward instead of it's enhanced speed."
+	desc = "Contains a kit to overclock the 501p, allowing it to leap forward instead of its enhanced speed."
 	cost = 1000
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/leaper
