@@ -705,6 +705,7 @@
 	req_components = list(
 		/obj/item/stack/sheet/glass = 1,
 		/obj/item/vending_refill/donksoft = 1)
+
 /obj/item/circuitboard/machine/fax
 	name = "Fax Machine"
 	build_path = /obj/machinery/fax
@@ -1342,17 +1343,6 @@
 	name = "\improper Departmental Techfab (Machine Board) - Cargo"
 	icon_state = "supply"
 	build_path = /obj/machinery/rnd/production/techfab/department/cargo
-
-/obj/item/circuitboard/machine/selling_pad
-	name = "Cargo hold pad (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/selling_pad
-	req_components = list(
-		/obj/item/stock_parts/subspace/amplifier = 2,
-		/obj/item/stock_parts/subspace/transmitter = 2,
-		/obj/item/stock_parts/subspace/crystal = 1,
-		/obj/item/stock_parts/scanning_module = 2,
-		/obj/item/stock_parts/micro_laser = 2)
 
 /obj/item/circuitboard/machine/abductor
 	name = "alien board (Report This)"

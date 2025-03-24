@@ -163,7 +163,7 @@
 
 /obj/item/reagent_containers/food/snacks/customizable/burger
 	name = "burger"
-	desc = "A timeless classic."
+	desc = "A Solarian culinary cornerstone - typically involving ingredients placed between a sliced bun or roll."
 	ingredients_placement = INGREDIENTS_STACKPLUSTOP
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "custburg"
@@ -172,7 +172,7 @@
 
 /obj/item/reagent_containers/food/snacks/customizable/kebab
 	name = "kebab"
-	desc = "Delicious food on a stick."
+	desc = "A meal consisting of ingredients cooked and served while skewered on a stick."
 	ingredients_placement = INGREDIENTS_LINE
 	trash = /obj/item/stack/rods
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
@@ -190,7 +190,7 @@
 
 /obj/item/reagent_containers/food/snacks/customizable/pizza
 	name = "pizza"
-	desc = "A personalized pan pizza meant for only one person."
+	desc = "A personalized pan pizza, meant for only one person."
 	ingredients_placement = INGREDIENTS_SCATTER
 	ingMax = 8
 	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/custom
@@ -202,7 +202,7 @@
 
 /obj/item/reagent_containers/food/snacks/customizable/salad
 	name = "salad"
-	desc = "Very tasty."
+	desc = "A bowl of salad, made of various ingredients tossed together."
 	trash = /obj/item/reagent_containers/glass/bowl
 	ingMax = 6
 	icon = 'icons/obj/food/soupsalad.dmi'
@@ -211,7 +211,7 @@
 
 /obj/item/reagent_containers/food/snacks/customizable/soup
 	name = "soup"
-	desc = "A bowl with liquid and... stuff in it."
+	desc = "A bowl full of broth, typically including other ingredients cooked in it."
 	trash = /obj/item/reagent_containers/glass/bowl
 	ingMax = 8
 	icon = 'icons/obj/food/soupsalad.dmi'
