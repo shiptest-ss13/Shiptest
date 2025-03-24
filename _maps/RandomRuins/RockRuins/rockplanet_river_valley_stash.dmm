@@ -27,12 +27,9 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/ruin/rockplanet/river_valley_stash/hut)
 "aZ" = (
-/obj/effect/turf_decal/sand/plating,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered{
-	wander = 0
-	},
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/ruin/rockplanet/river_valley_stash/hut)
+/obj/structure/punji_sticks,
+/turf/open/water/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "bd" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
@@ -126,6 +123,7 @@
 	dir = 4;
 	pixel_y = 0
 	},
+/obj/structure/flippedtable,
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
 	wander = 0
 	},
@@ -264,6 +262,15 @@
 "le" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"lk" = (
+/obj/structure/flora/ausbushes/grassybush,
+/mob/living/simple_animal/hostile/gorilla{
+	wander = 0;
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	name = "Big John"
+	},
+/turf/open/floor/plating/grass/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "lr" = (
 /turf/closed/wall/rust,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
@@ -282,6 +289,23 @@
 "lB" = (
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"lN" = (
+/obj/structure/platform/industrial{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/obj/structure/flippedtable,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
+	wander = 0
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/rockplanet/river_valley_stash/shuttle)
 "lX" = (
 /obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
@@ -305,9 +329,8 @@
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/ruin/rockplanet/river_valley_stash/hut)
 "mT" = (
-/obj/structure/punji_sticks,
-/turf/open/water/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/floor/engine/hull/interior,
+/area/ruin/rockplanet/river_valley_stash/shuttle)
 "nq" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/barricade/sandbags,
@@ -326,8 +349,18 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/box/ammo/c9mm_surplus,
+/obj/item/storage/box/ammo/c9mm_surplus,
+/obj/item/storage/box/ammo/c9mm_surplus,
+/obj/item/storage/box/ammo/c9mm_surplus,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
+"pd" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
+	wander = 0
+	},
+/turf/open/floor/plating/grass/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "ps" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -356,6 +389,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/automatic/pistol/spitter,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "qa" = (
@@ -461,10 +495,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "sH" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered{
 	wander = 0
 	},
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "sQ" = (
 /obj/structure/flora/stump,
@@ -559,12 +593,6 @@
 /obj/item/pickaxe/drill,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
-"wJ" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered{
-	wander = 0
-	},
-/turf/open/water/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "wL" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/rockplanet/river_valley_stash/hut)
@@ -580,11 +608,12 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "xa" = (
-/obj/machinery/porta_turret/ruin/frontiersmen{
-	dir = 6
+/obj/effect/turf_decal/sand/plating,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered{
+	wander = 0
 	},
-/turf/open/floor/engine/hull/interior,
-/area/ruin/rockplanet/river_valley_stash/shuttle)
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/ruin/rockplanet/river_valley_stash/hut)
 "xo" = (
 /turf/closed/mineral/random/rockplanet,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
@@ -794,9 +823,11 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/ruin/rockplanet/river_valley_stash/hut)
 "EW" = (
-/obj/projectile/energy/tesla,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/machinery/porta_turret/ruin/frontiersmen/heavy{
+	dir = 10
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ruin/rockplanet/river_valley_stash/shuttle)
 "Fh" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/item/reagent_containers/glass/bucket,
@@ -884,9 +915,6 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
-	wander = 0
-	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "Is" = (
@@ -960,6 +988,12 @@
 "KA" = (
 /turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
+"KK" = (
+/obj/machinery/porta_turret/ruin/frontiersmen/heavy{
+	dir = 6
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ruin/rockplanet/river_valley_stash/shuttle)
 "KR" = (
 /obj/structure/flora/rock/rockplanet{
 	icon_state = "redrock3"
@@ -1017,12 +1051,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/rockplanet/river_valley_stash/shuttle)
-"MU" = (
-/obj/machinery/porta_turret/ruin/frontiersmen{
-	dir = 10
-	},
-/turf/open/floor/engine/hull/interior,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "Nd" = (
 /obj/structure/flora/stump,
@@ -1090,6 +1118,10 @@
 /obj/item/storage/pill_bottle/neurine,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
+"Pc" = (
+/obj/projectile/energy/tesla,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Pf" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/grass/rockplanet,
@@ -1289,6 +1321,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/east,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/obj/item/ammo_box/magazine/spitter_9mm,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "WW" = (
@@ -2882,7 +2916,7 @@ vm
 vm
 vm
 wL
-wL
+Km
 Km
 TE
 vm
@@ -2997,7 +3031,7 @@ vm
 qY
 LI
 LI
-aZ
+xa
 nq
 vm
 vm
@@ -3110,7 +3144,7 @@ vm
 vm
 vm
 wL
-wL
+Km
 Km
 nq
 vm
@@ -3270,7 +3304,7 @@ le
 vm
 wL
 ko
-aZ
+xa
 nq
 vm
 lB
@@ -3674,7 +3708,7 @@ xo
 xW
 qU
 qU
-kK
+EW
 rX
 Xb
 TC
@@ -3730,8 +3764,8 @@ lr
 lr
 PQ
 lr
-MU
-rX
+mT
+mT
 rX
 TC
 TC
@@ -3911,9 +3945,9 @@ rX
 wL
 wL
 wL
-wL
-wL
-wL
+Km
+Km
+Km
 vm
 vm
 vm
@@ -3957,7 +3991,7 @@ lr
 VC
 wP
 BX
-BX
+lN
 Im
 NR
 rX
@@ -3970,7 +4004,7 @@ EH
 rz
 vO
 tW
-wL
+Km
 vm
 vm
 vm
@@ -4129,8 +4163,8 @@ lr
 lr
 lr
 lr
-xa
-Xb
+mT
+mT
 TC
 TC
 Wy
@@ -4151,7 +4185,7 @@ lB
 vm
 vm
 vm
-EW
+Pc
 vm
 vm
 vm
@@ -4187,7 +4221,7 @@ bV
 lr
 xo
 Wy
-TC
+KK
 TC
 TC
 Xb
@@ -4198,7 +4232,7 @@ uF
 uF
 RZ
 uF
-wL
+Km
 vm
 LQ
 vm
@@ -4253,9 +4287,9 @@ kK
 wL
 wL
 wL
-wL
-wL
-wL
+Km
+Km
+Km
 vm
 vm
 vm
@@ -4708,7 +4742,7 @@ eN
 LI
 LI
 ko
-aZ
+xa
 nq
 vm
 vm
@@ -4832,7 +4866,7 @@ vm
 vm
 vm
 vm
-EW
+Pc
 lB
 lB
 lB
@@ -4977,7 +5011,7 @@ kO
 kO
 rO
 Pf
-mT
+aZ
 kO
 kO
 kO
@@ -5206,7 +5240,7 @@ kO
 Ad
 PJ
 KA
-mT
+aZ
 kO
 kO
 kO
@@ -5492,7 +5526,7 @@ kO
 VA
 yB
 ZE
-mT
+aZ
 KA
 Rh
 kO
@@ -5566,7 +5600,7 @@ kO
 kO
 rO
 PJ
-PJ
+lk
 qF
 qa
 kO
@@ -5724,7 +5758,7 @@ bN
 rO
 Dj
 KA
-wJ
+sH
 KA
 KA
 KA
@@ -5775,11 +5809,11 @@ kO
 kO
 kO
 kO
-GY
+yB
 fx
 bN
 yB
-sH
+pd
 PJ
 Pf
 KA
@@ -5832,7 +5866,7 @@ kO
 kO
 kO
 GY
-LM
+GY
 kO
 Ad
 wI
@@ -5840,7 +5874,7 @@ yB
 gU
 cl
 rO
-wJ
+sH
 KA
 KA
 KA
