@@ -32,8 +32,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/eoehoma)
 	ammo_x_offset = 0
 	spread = 30
-	spread_unwielded = 50
-	dual_wield_spread = 50
+	spread_unwielded = 40
+	dual_wield_spread = 40
 	shaded_charge = TRUE
 	manufacturer = MANUFACTURER_EOEHOMA
 
