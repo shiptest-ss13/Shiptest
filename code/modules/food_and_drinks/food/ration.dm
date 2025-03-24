@@ -842,11 +842,7 @@
 	filling_color = "#cc7400"
 	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/orangejuice = 3)
 
-/obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_chocolate
-	name = "freeze-dried coffee flavored with chocolate pack"
-	filling_color = "#803300"
-	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/coco = 3)
-
+F
 /obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_hazelnut
 	name = "freeze-dried coffee flavored with hazelnut pack"
 	filling_color = "#553300"

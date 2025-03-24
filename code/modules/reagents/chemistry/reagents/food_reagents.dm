@@ -812,3 +812,15 @@
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	taste_description = "peanut"
 	reagent_state = SOLID
+
+/datum/reagent/consumable/tiris_sele
+	name = "Tiris-Sele"
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "gently blossoming umami"
+	reagent_state = SOLID
+
+/datum/reagent/consumable/tiris_sale
+	name = "Tiris-Sale"
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "bloody piercing umami"
+	reagent_state = SOLID

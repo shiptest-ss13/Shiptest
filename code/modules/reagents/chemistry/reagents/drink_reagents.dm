@@ -99,6 +99,33 @@
 	. = 1
 	..()
 
+/datum/reagent/consumable/dotejuice
+	name = "Dote Juice"
+	description = "A delicious juice made from Dote berries"
+	color = "#2359a0"
+	taste_description = "sweet berries"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of dote juice"
+	glass_desc = "Dote juice is good hot, cold, and anywhere between the poles."
+
+/datum/reagent/consumable/dotu_juice
+	name = "Dotu Juice"
+	description = "A neutral juice made from ripe Dote fruit."
+	color = "#2359a0"
+	taste_description = "bitter fruit"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of dotu juice"
+	glass_desc = "Dotu juice is said to be bitter, if not plain, but when it's used as a mixer? Anything can happen."
+
+/datum/reagent/consumable/refa_li
+	name = "Refa-Li Juice"
+	description = "Refa-Li is spicy, unless the seeds have been removed, in which case it takes on a more mellow, earthly tone"
+	color = "#d8702b"
+	taste_description = "pungent spice"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of refa-li juice"
+	glass_desc = "Refa-Li is spicy, unless the seeds have been removed, in which case it takes on a more mellow, earthly tone"
+
 /datum/reagent/consumable/watermelonjuice
 	name = "Watermelon Juice"
 	description = "Delicious juice made from watermelon."
