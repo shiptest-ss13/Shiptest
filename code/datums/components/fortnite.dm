@@ -147,7 +147,8 @@
 					damage_bonus = 5
 
 	if(current_gun.chambered.BB)
-		current_gun.chambered.BB.damage += damage_bonus//smiles
+		//unliked 2024, the damage bonus isnt damage, balance nowdays is more dependant on AP, also helps to not have
+		current_gun.chambered.BB.armour_penetration += damage_bonus//smiles
 
 //idk where else to put this so rest of the file is unrelated to the component
 
@@ -184,7 +185,7 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 	var/list/ignore_these = list(
 		/obj/item/gun/ballistic/automatic/sniper_rifle,
 		/obj/item/gun/ballistic/automatic/hmg,
-		/obj/item/gun/ballistic/automatic/pistol/deagle,
+		/obj/item/gun/ballistic/automatic/pistol/cm357,
 		/obj/item/gun/energy/laser/e50,
 		/obj/item/gun/energy/pulse
 		)
