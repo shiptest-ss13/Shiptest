@@ -259,7 +259,7 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/sniper
 	name = "Ramzi Clique Overwatch"
-	desc = "A deserter from the Gorlex Marauders turned pirate. They keep their eyes to the horizon, always ready to pull the trigger."
+	desc = "A deserter from the Gorlex Marauders turned pirate. They turn their eyes to the horizon, always ready to pull the trigger."
 	minimum_distance = 7
 	vision_range = 12
 	aggro_vision_range = 14
