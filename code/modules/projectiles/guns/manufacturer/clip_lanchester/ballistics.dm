@@ -398,7 +398,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/automatic/marksman/f90
 	name = "CM-F90"
-	desc = "A powerful sniper rifle used by vanishingly rare CLIP specialists, capable of impressive range and penetrating power. Chambered in 6.5x55mm CLIP."
+	desc = "A powerful sniper rifle used by vanishingly rare CLIP specialists, capable of impressive range and penetrating power. Chambered in 7.5x64mm CLIP cartridge."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -440,12 +440,12 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	zoom_out_amt = 5
 
 /obj/item/ammo_box/magazine/f90
-	name = "\improper CM-F90 Magazine (6.5x55mm CLIP)"
-	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
+	name = "\improper CM-F90 Magazine (7.5x64mm CLIP)"
+	desc = "A large 5-round box magazine for the CM-F90 sniper rifle. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
 	base_icon_state = "f90_mag"
 	icon_state = "f90_mag-1"
-	ammo_type = /obj/item/ammo_casing/a65clip
-	caliber = "6.5CLIP"
+	ammo_type = /obj/item/ammo_casing/a75clip
+	caliber = "7.5x64mm CLIP"
 	max_ammo = 5
 
 /obj/item/ammo_box/magazine/f90/update_icon_state()

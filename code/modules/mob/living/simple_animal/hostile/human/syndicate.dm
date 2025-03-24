@@ -265,7 +265,7 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
-	casingtype = /obj/item/ammo_casing/a65clip
+	casingtype = /obj/item/ammo_casing/a75clip
 	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 /* Space Ranged */

@@ -393,18 +393,18 @@
 	contains = list(/obj/item/storage/box/ammo/a308/hp)
 	cost = 500
 
-/* 6.5 */
+/* 7.5x64 */
 
-/datum/supply_pack/ammo/a65clip_box
-	name = "6.5x55mm CLIP Ammo Box Crate"
-	desc = "Contains a twenty-round 6.5x55mm CLIP ammo box for various sniper rifles such as the CM-F90 and the Boomslang series."
-	contains = list(/obj/item/storage/box/ammo/a65clip)
+/datum/supply_pack/ammo/a75clip_box
+	name = "7.5x64mm CLIP Ammo Box Crate"
+	desc = "Contains a twenty-round 7.5x64mm CLIP ammo box for various sniper rifles such as the CM-F90 and the Boomslang series."
+	contains = list(/obj/item/storage/box/ammo/a75clip)
 	cost = 400
 
-/datum/supply_pack/ammo/a65clip_trackers
-	name = "6.5x55mm CLIP Tracker Shell Crate"
-	desc = "Contains a 10-round 6.5x55mm CLIP tracker box for various sniper rifles such as the CM-F90 and the Boomslang series."
-	contains = list(/obj/item/storage/box/ammo/a65clip/trac)
+/datum/supply_pack/ammo/a75clip_trackers
+	name = "7.5x64mm CLIP Tracker Shell Crate"
+	desc = "Contains a 10-round 7.5x64mm CLIP tracker box for various sniper rifles such as the CM-F90 and the Boomslang series."
+	contains = list(/obj/item/storage/box/ammo/a75clip/trac)
 	cost = 600
 
 /* 8x58 */

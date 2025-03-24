@@ -41,9 +41,9 @@
 /obj/machinery/porta_turret/ruin/ramzi/heavy
 	name = "Revolt Turret"
 	desc = "A durable turret manufactured by the Gorlex Marauders during the ICW. Some reported examples used anti-vehicle munitions. Most surviving examples are poorly maintained."
-	stun_projectile = /obj/projectile/bullet/a65clip/rubber
+	stun_projectile = /obj/projectile/bullet/a75clip/rubber
 	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
-	lethal_projectile = /obj/projectile/bullet/a65clip
+	lethal_projectile = /obj/projectile/bullet/a75clip
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	scan_range = 12
 	shot_delay = 20
