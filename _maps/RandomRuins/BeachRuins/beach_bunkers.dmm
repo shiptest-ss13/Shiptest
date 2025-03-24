@@ -281,7 +281,6 @@
 	pixel_x = 5
 	},
 /obj/item/paper/crumpled{
-	pixel_y = 0;
 	pixel_x = 14
 	},
 /obj/item/food/breadslice/moldy{
@@ -448,7 +447,7 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "hg" = (
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_x = 5;
 	pixel_y = 9
 	},
@@ -660,7 +659,7 @@
 /turf/open/floor/wood,
 /area/ruin/beach/bunker)
 "ks" = (
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /obj/item/reagent_containers/food/drinks/bottle/moonshine{
 	pixel_y = 3;
 	pixel_x = -8
@@ -765,29 +764,29 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ls" = (
 /obj/structure/closet/cabinet,
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_x = 5;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 1;
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = -4;
 	pixel_x = -5
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	layer = 2.9;
 	pixel_x = -6;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	layer = 2.9;
 	pixel_x = 8;
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 8;
 	pixel_x = -6
 	},
@@ -798,11 +797,11 @@
 /obj/item/clothing/suit/armor/frontier,
 /obj/machinery/light/small/directional/south,
 /obj/item/clothing/gloves/combat,
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 16;
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 14;
 	pixel_x = -3
 	},
@@ -846,11 +845,11 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "lD" = (
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 14;
 	pixel_x = -3
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = -6;
 	pixel_x = -13
 	},
@@ -1111,11 +1110,14 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/item/documents/frontier/logistics,
+/obj/item/documents/frontier/logistics{
+	name = "Frontiersman Supply Reports"
+	},
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_x = -32
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker/office)
 "ol" = (
@@ -1161,7 +1163,7 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_two)
 "ow" = (
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /obj/effect/turf_decal/steeldecal/steel_decals3,
 /obj/item/paper/crumpled{
 	pixel_y = 8;
@@ -1188,7 +1190,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "oJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
@@ -1244,7 +1246,7 @@
 "pN" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/machinery/light/small/directional/east,
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker/office)
 "pS" = (
@@ -1346,9 +1348,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "qJ" = (
 /obj/structure/rack,
-/obj/item/storage/box/ammo/a8_50r{
-	pixel_y = 0
-	},
+/obj/item/storage/box/ammo/a8_50r,
 /obj/item/storage/box/ammo/a8_50r{
 	pixel_y = 9
 	},
@@ -1502,7 +1502,7 @@
 /area/ruin/beach/bunker)
 "to" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/side_two)
 "tv" = (
@@ -1554,6 +1554,9 @@
 /obj/effect/turf_decal/road,
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle{
 	aggro_vision_range = 14
+	},
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -1650,8 +1653,7 @@
 	pixel_y = 10;
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
-	pixel_y = 0;
+/obj/item/food/deadmouse{
 	pixel_x = -13
 	},
 /turf/open/floor/plating/dirt/beach,
@@ -1752,11 +1754,9 @@
 /area/ruin/beach/bunker/side_one)
 "ws" = (
 /obj/structure/rack,
-/obj/item/storage/bottles/moonshine{
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/north,
+/obj/item/storage/bottles/moonshine/sealed,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "wv" = (
@@ -1818,7 +1818,7 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "xd" = (
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/bunker/side_two)
 "xf" = (
@@ -1869,7 +1869,6 @@
 	pixel_y = 4
 	},
 /obj/item/ammo_box/a44roum_speedloader/empty{
-	pixel_y = 0;
 	pixel_x = -8
 	},
 /turf/open/floor/concrete/slab_4,
@@ -2034,7 +2033,7 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "zQ" = (
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_x = 5;
 	pixel_y = 9
 	},
@@ -2186,6 +2185,7 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/north,
+/obj/item/storage/bottles/moonshine,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "BA" = (
@@ -2339,15 +2339,15 @@
 	pixel_y = 4;
 	pixel_x = -1
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 13;
 	pixel_x = -7
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 16;
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 6;
 	pixel_x = -2
 	},
@@ -2428,10 +2428,8 @@
 "Eg" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/storage/bottles/moonshine{
-	pixel_y = 4
-	},
 /obj/machinery/light/small/directional/south,
+/obj/item/storage/bottles/moonshine/sealed,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "El" = (
@@ -2527,8 +2525,7 @@
 /obj/machinery/light/small/directional/west,
 /obj/item/kirbyplants{
 	icon_state = "plant-13";
-	pixel_x = -10;
-	pixel_y = 0
+	pixel_x = -10
 	},
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker/office)
@@ -2579,7 +2576,6 @@
 	pixel_x = 9
 	},
 /obj/item/shovel{
-	pixel_y = 0;
 	pixel_x = 1
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -2704,7 +2700,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker)
 "Hp" = (
@@ -2832,11 +2828,11 @@
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Jb" = (
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = -3;
 	pixel_x = -10
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 14;
 	pixel_x = -2
 	},
@@ -2872,7 +2868,7 @@
 /obj/structure/cable{
 	icon_state = "2-6"
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 14;
 	pixel_x = -3
 	},
@@ -2891,9 +2887,7 @@
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Jp" = (
-/obj/structure/chair/plastic{
-	dir = 2
-	},
+/obj/structure/chair/plastic,
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "JX" = (
@@ -2922,8 +2916,8 @@
 /turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Kt" = (
-/mob/living/simple_animal/hostile/rat,
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/mob/living/basic/mouse/rat,
+/obj/item/food/deadmouse{
 	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/vomit{
@@ -2974,9 +2968,7 @@
 	vision_range = 14;
 	retreat_distance = 0
 	},
-/obj/structure/chair/plastic{
-	dir = 2
-	},
+/obj/structure/chair/plastic,
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "LE" = (
@@ -3196,7 +3188,7 @@
 /turf/open/floor/wood,
 /area/ruin/beach/bunker)
 "Oo" = (
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = -3;
 	pixel_x = -10
 	},
@@ -3317,7 +3309,6 @@
 /area/ruin/beach/bunker/side_one)
 "Pt" = (
 /obj/machinery/button/door{
-	dir = 2;
 	pixel_y = 22;
 	pixel_x = -9;
 	id = "bunk1";
@@ -3440,12 +3431,10 @@
 /area/ruin/beach/bunker/side_one)
 "Rm" = (
 /obj/machinery/shower{
-	dir = 4;
-	pixel_y = 0
+	dir = 4
 	},
 /obj/structure/curtain/cloth/fancy{
 	dir = 4;
-	pixel_y = 0;
 	pixel_x = -2
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals6,
@@ -3635,7 +3624,7 @@
 	},
 /area/ruin/beach/bunker)
 "TK" = (
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/bunker/side_two)
@@ -3666,8 +3655,7 @@
 	pixel_y = -4
 	},
 /obj/item/paper/crumpled{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/paper/crumpled{
 	pixel_x = 8;
@@ -3761,7 +3749,7 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 14;
 	pixel_x = -3
 	},
@@ -3840,7 +3828,7 @@
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Wp" = (
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /obj/item/paper/crumpled{
 	pixel_y = -6;
 	pixel_x = 7
@@ -3911,7 +3899,7 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Xc" = (
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	pixel_y = 1;
 	pixel_x = 6
 	},
@@ -4020,9 +4008,7 @@
 "YL" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/storage/bottles/moonshine{
-	pixel_y = 4
-	},
+/obj/item/storage/bottles/moonshine/sealed,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "YW" = (

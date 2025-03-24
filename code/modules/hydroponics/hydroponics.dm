@@ -1,6 +1,3 @@
-#define HYDRO_MAX_PEST 10
-#define HYDRO_MAX_WEED 10
-#define HYDRO_MAX_TOXIC 100
 /obj/machinery/hydroponics
 	name = "hydroponics tray"
 	icon = 'icons/obj/hydroponics/equipment.dmi'
@@ -12,37 +9,53 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_LOW
 	active_power_usage = ACTIVE_DRAW_HIGH
-	var/waterlevel = 100	//The amount of water in the tray (max 100)
-	var/maxwater = 100		//The maximum amount of water in the tray
-	var/nutridrain = 1      // How many units of nutrient will be drained in the tray
-	var/maxnutri = 10		//The maximum nutrient of water in the tray
-	var/pestlevel = 0		//The amount of pests in the tray (max 10)
-	var/weedlevel = 0		//The amount of weeds in the tray (max 10)
-	var/yieldmod = 1		//Nutriment's effect on yield
-	var/mutmod = 1			//Nutriment's effect on mutations
-	var/toxic = 0			//Toxicity in the tray?
-	var/age = 0				//Current age
-	var/dead = FALSE			//Is it dead?
-	var/plant_health		//Its health
-	var/lastproduce = 0		//Last time it was harvested
-	var/lastcycle = 0		//Used for timing of cycles.
-	var/cycledelay = CYCLE_DELAY_DEFAULT
-	var/harvest = FALSE			//Ready to harvest?
-	var/obj/item/seeds/myseed = null	//The currently planted seed
+	///The amount of water in the tray (max 100)
+	var/waterlevel = 100
+	///The maximum amount of water in the tray
+	var/maxwater = 100
+	///How many units of nutrient will be drained in the tray
+	var/nutridrain = 1
+	///The maximum nutrient of water in the tray
+	var/maxnutri = 20
+	///The amount of pests in the tray (max 10)
+	var/pestlevel = 0
+	///The amount of weeds in the tray (max 10)
+	var/weedlevel = 0
+	///Nutriment's effect on yield
+	var/yieldmod = 1
+	///Nutriment's effect on mutations
+	var/mutmod = 1
+	///Toxicity in the tray?
+	var/toxic = 0
+	///Current age
+	var/age = 0
+	///Is it dead?
+	var/dead = FALSE
+	///Its health
+	var/plant_health
+	///Last time it was harvested
+	var/lastproduce = 0
+	///Used for timing of cycles.
+	var/lastcycle = 0
+	var/cycledelay = HYDROTRAY_CYCLE_DELAY
+	///Ready to harvest?
+	var/harvest = FALSE
+	///The currently planted seed
+	var/obj/item/seeds/myseed = null
 	var/rating = 1
 	var/unwrenchable = TRUE
-	var/recent_bee_visit = FALSE //Have we been visited by a bee recently, so bees dont overpollinate one plant
-	var/datum/weakref/lastuser //Last user to add reagents to a tray. Mostly for logging.
-	var/self_sustaining = FALSE //If the tray generates nutrients and water on its own
+	///Have we been visited by a bee recently, so bees dont overpollinate one plant
+	var/recent_bee_visit = FALSE
+	///Last user to add reagents to a tray. Mostly for logging.
+	var/datum/weakref/lastuser
+	///If the tray generates nutrients and water on its own
+	var/self_sustaining = FALSE
 	///The icon state for the overlay used to represent that this tray is self-sustaining.
 	var/self_sustaining_overlay_icon_state = "gaia_blessing"
 
-	// Here lies irrigation. You won't be missed, because you were never used.
-
 /obj/machinery/hydroponics/Initialize()
-	//Here lies "nutrilevel", killed by ArcaneMusic 20??-2019. Finally, we strive for a better future. Please use "reagents" instead
-	create_reagents(20)
-	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, 10) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
+	create_reagents(maxnutri)
+	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, maxnutri/2) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
 	return ..()
 
 /obj/machinery/hydroponics/constructable
@@ -258,7 +271,7 @@
 				adjustWeeds(1 / rating)
 
 		// Weeeeeeeeeeeeeeedddssss
-		if(weedlevel >= HYDRO_MAX_WEED && prob(50)) // At this point the plant is kind of fucked. Weeds can overtake the plant spot.
+		if(weedlevel >= MAX_TRAY_WEEDS && prob(50)) // At this point the plant is kind of fucked. Weeds can overtake the plant spot.
 			if(myseed)
 				if(!myseed.get_gene(/datum/plant_gene/trait/plant_type/weed_hardy) && !myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism)) // If a normal plant
 					weedinvasion()
@@ -565,9 +578,9 @@
 					msg += "[span_notice("- [Gene.get_name()] -")]\n"
 		else
 			msg +=  "<B>No plant found.</B>\n"
-		msg += "Weed level: [span_notice("[weedlevel] / [HYDRO_MAX_WEED]")]\n"
-		msg += "Pest level: [span_notice("[pestlevel] / [HYDRO_MAX_PEST]")]\n"
-		msg += "Toxicity level: [span_notice("[toxic] / [HYDRO_MAX_TOXIC]")]\n"
+		msg += "Weed level: [span_notice("[weedlevel] / [MAX_TRAY_WEEDS]")]\n"
+		msg += "Pest level: [span_notice("[pestlevel] / [MAX_TRAY_PESTS]")]\n"
+		msg += "Toxicity level: [span_notice("[toxic] / [MAX_TRAY_TOXINS]")]\n"
 		msg += "Water level: [span_notice("[waterlevel] / [maxwater]")]\n"
 		msg += "Nutrition level: [span_notice("[reagents.total_volume] / [maxnutri]")]\n"
 		to_chat(user, boxed_message(msg))
@@ -724,13 +737,13 @@
 		plant_health = clamp(plant_health + adjustamt, 0, myseed.endurance)
 
 /obj/machinery/hydroponics/proc/adjustToxic(adjustamt)
-	toxic = clamp(toxic + adjustamt, 0, HYDRO_MAX_TOXIC)
+	toxic = clamp(toxic + adjustamt, 0, MAX_TRAY_TOXINS)
 
 /obj/machinery/hydroponics/proc/adjustPests(adjustamt)
-	pestlevel = clamp(pestlevel + adjustamt, 0, HYDRO_MAX_PEST)
+	pestlevel = clamp(pestlevel + adjustamt, 0, MAX_TRAY_PESTS)
 
 /obj/machinery/hydroponics/proc/adjustWeeds(adjustamt)
-	weedlevel = clamp(weedlevel + adjustamt, 0, HYDRO_MAX_WEED)
+	weedlevel = clamp(weedlevel + adjustamt, 0, MAX_TRAY_WEEDS)
 
 /obj/machinery/hydroponics/proc/spawnplant() // why would you put strange reagent in a hydro tray you monster I bet you also feed them blood
 	var/list/livingplants = list(/mob/living/simple_animal/hostile/tree, /mob/living/simple_animal/hostile/killertomato)
@@ -738,6 +751,30 @@
 	var/mob/living/simple_animal/hostile/C = new chosen
 	C.faction = list("plants")
 
+/obj/machinery/hydroponics/proc/get_tgui_info()
+	var/list/data = list()
+	data["name"] = name
+	data["weeds"] = weedlevel
+	data["pests"] = pestlevel
+	data["toxic"] = toxic
+	data["water"] = waterlevel
+	data["maxwater"] = maxwater
+	data["nutrients"] = reagents.total_volume
+	data["maxnutri"] = maxnutri
+	data["age"] = age
+	data["status"] = get_plant_status()
+	data["self_sustaining"] = self_sustaining
+	return data
+
+/obj/machinery/hydroponics/proc/get_plant_status()
+	if(!myseed)
+		return HYDROTRAY_NO_PLANT
+	else if(dead)
+		return HYDROTRAY_PLANT_DEAD
+	else if(harvest)
+		return HYDROTRAY_PLANT_HARVESTABLE
+	else
+		return HYDROTRAY_PLANT_GROWING
 ///////////////////////////////////////////////////////////////////////////////
 /obj/machinery/hydroponics/soil //Not actually hydroponics at all! Honk!
 	name = "soil"
