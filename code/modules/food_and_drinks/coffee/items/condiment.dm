@@ -20,21 +20,12 @@
 	list_reagents = list(/datum/reagent/consumable/creamer = 5)
 	fill_icon_thresholds = null
 
-/obj/item/reagent_containers/condiment/creamer/update_icon_state()
-	icon_state = initial(icon_state)
-	return ..()
-
 /obj/item/reagent_containers/condiment/chocolate
 	name = "chocolate sprinkle pack"
 	desc = "The amount of sugar that's already there wasn't enough for you?"
 	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "condi_chocolate"
 	list_reagents = list(/datum/reagent/consumable/chocolatepudding = 10)
-
-
-/obj/item/reagent_containers/condiment/chocolate/update_icon_state()
-	icon_state = initial(icon_state)
-	return ..()
 
 /*
  *	Syrup bottles, basically a unspillable cup that transfers reagents upon clicking on it with a cup
