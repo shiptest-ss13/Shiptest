@@ -2771,6 +2771,13 @@
 /obj/machinery/air_sensor/atmos/air_tank,
 /turf/open/floor/engine/air,
 /area/ship/engineering/engine)
+"pY" = (
+/mob/living/basic/mouse{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "pZ" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -4404,6 +4411,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"zp" = (
+/obj/effect/spawner/random/salvage/machine{
+	dir = 8
+	},
+/obj/structure/sign/poster/random{
+	pixel_x = 32
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "zq" = (
 /obj/structure/catwalk/over,
 /obj/structure/closet/crate/large,
@@ -5582,6 +5598,8 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
 	icon_state = "2-4"
+/obj/effect/spawner/random/salvage/machine{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/hangar)
@@ -6708,6 +6726,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
+"Nu" = (
+/obj/effect/spawner/random/salvage/machine{
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
