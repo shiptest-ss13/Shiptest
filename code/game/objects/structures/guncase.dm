@@ -11,7 +11,7 @@
 	var/case_type = ""
 	var/gun_category = /obj/item/gun
 	var/open = TRUE
-	var/capacity = 4
+	var/capacity = 8
 
 /obj/structure/guncloset/examine(mob/user)
 	. = ..()
