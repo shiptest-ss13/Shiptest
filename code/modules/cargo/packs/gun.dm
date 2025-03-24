@@ -252,9 +252,19 @@
 /datum/supply_pack/gun/laser/bg16
 	name = "Etherbor BG-16 Beam Rifle Crate"
 	desc = "Contains a single BG-16 Beam Rifle, a military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
-	cost = 3500
+	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/bg16)
 	crate_name = "beam rifle crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/laser/bgc10
+	name = "Etherbor BGC-10 Beam Carbine Crate"
+	desc = "Contains a single BGC-10 Beam Carbine, an intermediate military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/energy/bgc10)
+	crate_name = "beam carbine crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
 	faction_locked = TRUE
