@@ -1,6 +1,6 @@
 /obj/machinery/coffeemaker
 	name = "coffeemaker"
-	desc = "A Modello 3 Coffeemaker that brews coffee and holds it at the perfect temperature of 176 fahrenheit. Made by Piccionaia Home Appliances."
+	desc = "An Attention model coffeemaker, manufactured by Delemont Food Co, and imported from various places within the Solarian Confederation, where it is extremely popular."
 	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "coffeemaker_nopot_nocart"
 	base_icon_state = "coffeemaker"

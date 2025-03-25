@@ -1,6 +1,6 @@
 /obj/item/storage/box/coffeepack/robusta
 	name = "robusta beans"
-	desc = "A bag containing fresh, dry coffee robusta beans. Ethically sourced and packaged by Waffle Corp."
+	desc = "A bag containing fresh, dry coffee robusta beans."
 	illustration = null
 	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "robusta_beans"
@@ -17,7 +17,7 @@
 
 /obj/item/storage/box/coffeepack/arabica
 	name = "arabica beans"
-	desc = "A bag containing fresh, dry coffee arabica beans. Ethically sourced and packaged by Waffle Corp."
+	desc = "A bag containing fresh, dry coffee arabica beans."
 	illustration = null
 	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "arabica_beans"

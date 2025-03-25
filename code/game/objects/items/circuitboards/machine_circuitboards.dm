@@ -1171,10 +1171,10 @@
 		/obj/item/stock_parts/micro_laser = 1,
 	)
 
-/obj/item/circuitboard/machine/coffeemaker/pendulum
-	name = "Pendulum Coffeemaker (Machine Board)"
+/obj/item/circuitboard/machine/coffeemaker/premium
+	name = "Premium Coffeemaker (Machine Board)"
 	icon_state = "service"
-	build_path = /obj/machinery/coffeemaker/pendulum
+	build_path = /obj/machinery/coffeemaker/premium
 	req_components = list(
 		/obj/item/stack/sheet/glass = 1,
 		/obj/item/reagent_containers/glass/beaker = 2,

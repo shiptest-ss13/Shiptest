@@ -156,7 +156,7 @@
 	crate_name = "Basic Coffee Supply Crate"
 
 /datum/supply_pack/service/coffee_cartridge
-	name = "Solarian Coffee Cartridge Resupply"
+	name = "Solar's Best Coffee Cartridge Resupply"
 	desc = "Contains five coffee cartridges for your coffee machine, imported from Sol."
 	cost = 750
 	contains = list(/obj/item/coffee_cartridge,
@@ -180,7 +180,7 @@
 /datum/supply_pack/service/coffeekit
 	name = "Coffee Shop Starter Crate"
 	desc = "All the basic equipment needed for enterprising coffee-selling spacefarers. Coffeemaker not included."
-	cost = 1500
+	cost = 1250
 	contains = list(/obj/item/storage/box/coffeepack/robusta,
 					/obj/item/storage/box/coffeepack/arabica,
 					/obj/item/reagent_containers/glass/coffeepot,
@@ -193,11 +193,19 @@
 	crate_name = "coffee equpment crate"
 
 /datum/supply_pack/service/coffeemaker
-	name = "Pendulum Coffeemaker Crate"
-	desc = "Contains one pre-assembled Pendulum model coffeemaker."
+	name = "Coffeemaker Crate"
+	desc = "Contains one pre-assembled Attention model coffeemaker."
 	cost = 1000
-	contains = list(/obj/machinery/coffeemaker/pendulum)
+	contains = list(/obj/machinery/coffeemaker)
 	crate_name = "coffeemaker crate"
+	crate_type = /obj/structure/closet/crate/large
+
+/datum/supply_pack/service/coffeemaker_premium
+	name = "Premium Coffeemaker Crate"
+	desc = "Contains one pre-assembled professional-grade Sirere model coffeemaker."
+	cost = 1500
+	contains = list(/obj/machinery/coffeemaker/premium)
+	crate_name = "premium coffeemaker crate"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/organic/syrup

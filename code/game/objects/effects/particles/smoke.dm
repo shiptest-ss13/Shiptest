@@ -35,7 +35,7 @@
 	velocity = list(0, 0.3, 0)
 	friction = 0.25
 
-/particles/smoke/steam/mild/pendulum
+/particles/smoke/steam/mild/coffeemaker_premium
 	position = list(-2, 1, 0)
 
 /particles/smoke/steam/mild/coffeemaker
