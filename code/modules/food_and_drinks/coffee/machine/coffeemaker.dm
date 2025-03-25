@@ -27,6 +27,7 @@
 	/// The amount of creamer packets left
 	var/creamer_packs = 10
 	var/max_creamer_packs = 10
+	var/coffeemaker_particle = /particles/smoke/steam/mild/coffeemaker
 
 	var/static/radial_examine = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_examine")
 	var/static/radial_brew = image(icon = 'icons/effects/radial_coffee.dmi', icon_state = "radial_brew")
@@ -70,56 +71,56 @@
 /obj/machinery/coffeemaker/examine(mob/user)
 	. = ..()
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += "<span class='warning'>You're too far away to examine [src]'s contents and display!</span>"
+		. += span_warning("You're too far away to examine [src]'s contents and display!")
 		return
 
 	if(brewing)
-		. += "<span class='warning'>\The [src] is brewing.</span>"
+		. += span_warning("The [src] is brewing.")
 		return
 
 	if(panel_open)
-		. += "<span class='warning'>[src]'s maintenance hatch is open!</span>"
+		. += span_warning("[src]'s maintenance hatch is open!")
 		return
 
 	if(coffeepot || cartridge)
-		. += "<span class='notice'>\The [src] contains:</span>"
+		. += span_notice("\The [src] contains:")
 		if(coffeepot)
-			. += "<span class='notice'>- \A [coffeepot].</span>"
+			. += span_notice("\A [coffeepot].")
 		if(cartridge)
-			. += "<span class='notice'>- \A [cartridge].</span>"
+			. += span_notice("\A [cartridge].")
 		return
 
 	if(!(machine_stat & (NOPOWER|BROKEN)))
-		. += "<span class='notice'>The status display reads:</span>\n"+\
-		"<span class='notice'>- Brewing coffee at <b>[speed*100]%</b> efficiency.</span>"
+		. += span_notice("The status display reads:</span>\n"+\)
+		span_notice("Brewing coffee at <b>[speed*100]%</b> efficiency.")
 		if(coffeepot)
 			for(var/datum/reagent/consumable/cawfee as anything in coffeepot.reagents.reagent_list)
-				. += "<span class='notice>- [cawfee.volume] units of coffee in pot.</span>"
+				. += span_notice("[cawfee.volume] units of coffee in pot.")
 		if(cartridge)
 			if(cartridge.charges < 1)
-				. += "<span class='notice'>- The grounds cartridge is empty.</span>"
+				. += span_notice("The grounds cartridge is empty.")
 			else
-				. += "<span class='notice'>- The grounds cartridge has [cartridge.charges] charges remaining.</span>"
+				. += span_notice("The grounds cartridge has [cartridge.charges] charges remaining.")
 
 	if(coffee_cups >= 1)
-		. += "<span class='notice'>There [coffee_cups == 1 ? "is" : "are"] [coffee_cups] coffee cup[coffee_cups != 1 && "s"] left.</span>"
+		. += span_notice("There [coffee_cups == 1 ? "is" : "are"] [coffee_cups] coffee cup[coffee_cups != 1 && "s"] left.")
 	else
-		. += "<span class='notice'>There are no cups left.</span>"
+		. += span_notice("There are no cups left.")
 
 	if(sugar_packs >= 1)
-		. += "<span class='notice'>There [sugar_packs == 1 ? "is" : "are"] [sugar_packs] packet[sugar_packs != 1 && "s"] of sugar left.</span>"
+		. += span_notice("There [sugar_packs == 1 ? "is" : "are"] [sugar_packs] packet[sugar_packs != 1 && "s"] of sugar left.")
 	else
-		. += "<span class='notice'>There is no sugar left.</span>"
+		. += span_notice("There is no sugar left.")
 
 	if(sweetener_packs >= 1)
-		. += "<span class='notice'>There [sweetener_packs == 1 ? "is" : "are"] [sweetener_packs] packet[sweetener_packs != 1 && "s"] of sweetener left.</span>"
+		. += span_notice("There [sweetener_packs == 1 ? "is" : "are"] [sweetener_packs] packet[sweetener_packs != 1 && "s"] of sweetener left.")
 	else
-		. += "<span class='notice'>There is no sweetener left.</span>"
+		. += span_notice("There is no sweetener left.")
 
 	if(creamer_packs > 1)
-		. += "<span class='notice'>There [creamer_packs == 1 ? "is" : "are"] [creamer_packs] packet[creamer_packs != 1 && "s"] of creamer left.</span>"
+		. += span_notice("There [creamer_packs == 1 ? "is" : "are"] [creamer_packs] packet[creamer_packs != 1 && "s"] of creamer left.")
 	else
-		. += "<span class='notice'>There is no creamer left.</span>"
+		. += span_notice("There is no creamer left.")
 
 /obj/machinery/coffeemaker/attack_hand(mob/living/user)
 	. = ..()
@@ -159,7 +160,7 @@
 		coffeepot = null
 	if(new_coffeepot)
 		coffeepot = new_coffeepot
-	balloon_alert(user, "replaced pot")
+	user.visible_message(span_notice("[user] replaces the coffeepot in [src]."), span_notice("You replace the coffeepot in [src]."))
 	update_icon()
 	return TRUE
 
@@ -268,7 +269,7 @@
 		if(!user.transferItemToLoc(new_cartridge, src))
 			return TRUE
 		replace_cartridge(user, new_cartridge)
-		balloon_alert(user, "added cartridge")
+								user.visible_message(span_notice("[user] adds a new cartridge to the [src]."), span_notice("You add the new cartridge to the [src]."))
 		update_icon()
 		return TRUE
 
@@ -402,7 +403,7 @@
 /obj/machinery/coffeemaker/proc/toggle_steam()
 	QDEL_NULL(particles)
 	if(brewing)
-		particles = new /particles/smoke/steam/mild/coffeemaker()
+		particles = new coffeemaker_particle()
 
 /obj/machinery/coffeemaker/proc/operate_for(time, silent = FALSE)
 	brewing = TRUE

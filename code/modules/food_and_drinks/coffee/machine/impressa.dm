@@ -19,6 +19,7 @@
 	//this type of coffeemaker takes fresh whole beans insted of cartidges
 	var/list/coffee = list()
 
+
 /obj/machinery/coffeemaker/premium/Initialize(mapload)
 	. = ..()
 	if(mapload)
@@ -41,7 +42,7 @@
 /obj/machinery/coffeemaker/premium/examine(mob/user)
 	. = ..()
 	if(coffee)
-		. += "<span class='notice'The internal grinder conatins [coffee.len] scoop\s of coffee beans.</span>"
+		. += span_notice("The internal grinder conatins [coffee.len] scoop\s of coffee beans.")
 	return
 
 /obj/machinery/coffeemaker/premium/update_overlays()
@@ -186,7 +187,7 @@
 			return TRUE
 		coffee += new_coffee
 		coffee_amount++
-		balloon_alert(user, "added coffee")
+		to_chat(usr, span_notice("You add the [attack_item] to the [src.name]."))
 
 	if (istype(attack_item, /obj/item/storage/box/coffeepack))
 		if(coffee_amount >= BEAN_CAPACITY)
@@ -200,7 +201,7 @@
 						coffee += new_coffee
 						coffee_amount++
 						new_coffee.forceMove(src)
-						balloon_alert(user, "added coffee")
+						user.visible_message(span_notice("[user] adds the [attack_item] pack to the [src]."), span_notice("You add the [attack_item] pack to the [src]."))
 						update_icon()
 					else
 						return TRUE
@@ -223,11 +224,6 @@
 	coffee_cups--
 	update_icon()
 
-/obj/machinery/coffeemaker/premium/toggle_steam()
-	QDEL_NULL(particles)
-	if(brewing)
-		particles = new /particles/smoke/steam/mild/coffeemaker_premium()
-
 /obj/machinery/coffeemaker/premium/brew()
 	power_change()
 	if(!can_brew())
@@ -237,3 +233,5 @@
 	coffee.Cut(1,2)
 	coffee_amount--
 	update_icon()
+
+#undef BEAN_CAPACITY
