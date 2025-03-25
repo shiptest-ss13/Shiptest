@@ -17,7 +17,7 @@
 
 /obj/item/coffee_cartridge/fancy
 	name = "coffeemaker cartridge - Solar's Bestest"
-	desc = "A high-quality coffee cartridge for use with the Attention model coffeemakers.
+	desc = "A high-quality coffee cartridge for use with the Attention model coffeemakers."
 	icon_state = "cartridge_blend"
 	drink_type = list(/datum/reagent/consumable/cafe_latte = 120)
 
