@@ -91,8 +91,7 @@
 		return
 
 	if(!(machine_stat & (NOPOWER|BROKEN)))
-		. += span_notice("The status display reads:</span>\n"+\)
-		span_notice("Brewing coffee at <b>[speed*100]%</b> efficiency.")
+		. += span_notice("The status display reads: Brewing coffee at <b>[speed*100]%</b> efficiency.")
 		if(coffeepot)
 			for(var/datum/reagent/consumable/cawfee as anything in coffeepot.reagents.reagent_list)
 				. += span_notice("[cawfee.volume] units of coffee in pot.")
@@ -269,7 +268,7 @@
 		if(!user.transferItemToLoc(new_cartridge, src))
 			return TRUE
 		replace_cartridge(user, new_cartridge)
-								user.visible_message(span_notice("[user] adds a new cartridge to the [src]."), span_notice("You add the new cartridge to the [src]."))
+		user.visible_message(span_notice("[user] adds a new cartridge to the [src]."), span_notice("You add the new cartridge to the [src]."))
 		update_icon()
 		return TRUE
 
