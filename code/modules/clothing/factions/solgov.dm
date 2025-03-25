@@ -1,8 +1,8 @@
 /obj/item/clothing/under/solgov
 	name = "\improper SolGov tunic"
 	desc = "Standard combat tunic used by Sonnensoldners."
-	icon = 'icons/obj/clothing/under/solgov.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/under/solgov.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/uniforms.dmi'
 	icon_state = "solgov_tunic"
 	item_state = "solgov_tunic"
 	armor = list("melee" = 10, "fire" = 30, "acid" = 30)
@@ -48,8 +48,8 @@
 /obj/item/clothing/under/plasmaman/solgov
 	name = "\improper SolGov envirosuit"
 	desc = "The pride of Solarian plasmamen everywhere- though this tends to be a somewhat exclusive club, due to Sol's agressive workplace safety regulations."
-	icon = 'icons/obj/clothing/under/solgov.dmi' //ogan i am going to kill you i stg
-	mob_overlay_icon = 'icons/mob/clothing/under/solgov.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/uniforms.dmi'
 	icon_state = "plasma_solgov"
 	item_state = "plasma_solgov"
 	can_adjust = FALSE
@@ -60,3 +60,10 @@
 	icon_state = "solgov_captain"
 	item_state = "solgov_captain"
 	can_adjust = FALSE
+
+/obj/item/clothing/accessory/waistcoat/solgov
+	name = "solgov waistcoat"
+	desc = "A standard issue waistcoat in solgov colors."
+	icon_state = "solgov_waistcoat"
+	icon = 'icons/obj/clothing/faction/solgov/accessory.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/accessory.dmi'
