@@ -7,6 +7,19 @@
 	var/automatic_charge_overlays = TRUE
 	allow_hand_interaction = TRUE
 
+/obj/item/attachment/gun/energy/Initialize(mapload, spawn_empty = FALSE)
+	. = ..()
+	var/obj/item/gun/energy/e_gun = attached_gun
+	e_gun.build_ammotypes()
+
+/obj/item/attachment/gun/energy/ui_action_click(mob/user, actiontype)
+	var/obj/item/gun/energy/e_gun = attached_gun
+	if (istype(actiontype, /datum/action/item_action/toggle_ammotype))
+		e_gun.select_fire(user)
+		update_appearance()
+	else
+		..()
+
 /obj/item/attachment/gun/energy/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/stock_parts/cell/gun))
 		attached_gun.attackby(I, user)
@@ -34,10 +47,6 @@
 	if(!e_gun.internal_magazine)
 		examine_list += span_notice("- The cell retainment latch is [e_gun.latch_closed ? "<span class='green'>CLOSED</span>" : "<span class='red'>OPEN</span>"]. Alt-Click to toggle the latch.")
 	return examine_list
-
-/obj/item/attachment/gun/energy/AltClick(mob/user)
-	. = ..()
-	attached_gun.AltClick(user)
 
 /obj/item/attachment/gun/energy/get_cell()
 	return attached_gun.cell
