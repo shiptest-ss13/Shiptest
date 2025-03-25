@@ -512,38 +512,3 @@ Contains:
 	armor = list("melee" = 35, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
 	allowed = list(/obj/item/gun, /obj/item/melee/baton, /obj/item/circular_saw, /obj/item/tank/internals, /obj/item/storage/box/pillbottles,\
 	/obj/item/storage/firstaid, /obj/item/stack/medical/gauze, /obj/item/stack/medical/suture, /obj/item/stack/medical/mesh, /obj/item/storage/bag/chemistry)
-
-/obj/item/clothing/head/helmet/space/solgov
-	name = "\improper SolGov Vacuum Helmet"
-	icon_state = "vachelmet_solgov"
-	desc = "This space-proof helmet is meant to be worn with a matching T-MA suit."
-	item_state = "vachelmet_solgov"
-	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
-
-/obj/item/clothing/suit/space/solgov
-	name = "\improper SolGov Vacuum Suit"
-	icon_state = "vacsuit_solgov"
-	desc = "Originally designed by independent contractors on Luna for the purposes of survival in hazardous environments, the lightweight Tortoise Microlite Armored Suit now sees widespread use by SolGov's exploration teams."
-	item_state = "vacsuit_solgov"
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy, /obj/item/tank/internals)
-	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
-	slowdown = 0.5
-	w_class = WEIGHT_CLASS_NORMAL
-	supports_variations = DIGITIGRADE_VARIATION
-
-/obj/item/clothing/suit/space/inteq
-	name = "inteq space suit"
-	desc = "A lightly armored space suit for IRMG personnel for EVA operations, it seems more flexible than most space suits."
-	item_state = "space-inteq"
-	icon_state = "space-inteq"
-	slowdown = 0.8
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/clothing/head/helmet/space/inteq
-	name = "inteq space helmet"
-	desc = "A black space helmet with an opaque yellow visor, there is a small 'IRMG' written on the earpad."
-	item_state = "space-inteq"
-	icon_state = "space-inteq"
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	w_class = WEIGHT_CLASS_NORMAL
