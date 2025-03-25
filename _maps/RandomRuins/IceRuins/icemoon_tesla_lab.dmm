@@ -2659,6 +2659,10 @@
 /obj/effect/mob_spawn/human/corpse/clip/minuteman/forcefem{
 	mob_name = "Alyssa Salata"
 	},
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1;
+	mission_index = 2
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/armory)
 "kO" = (
@@ -2857,6 +2861,12 @@
 /obj/effect/decal/cleanable/blood/squirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
+"lO" = (
+/obj/machinery/porta_turret/ruin/frontiersmen{
+	dir = 6
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/icemoon/tesla_lab/haymaker)
 "lQ" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2957,6 +2967,12 @@
 	},
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
+"mk" = (
+/obj/machinery/porta_turret/ruin/frontiersmen{
+	dir = 10
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/icemoon/tesla_lab/haymaker)
 "mp" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -4533,6 +4549,12 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
+"sN" = (
+/obj/machinery/porta_turret/ruin/frontiersmen{
+	dir = 9
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/icemoon/tesla_lab/haymaker)
 "sO" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
@@ -5530,6 +5552,12 @@
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/dorms)
+"wy" = (
+/obj/machinery/porta_turret/ruin/frontiersmen{
+	dir = 5
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/icemoon/tesla_lab/haymaker)
 "wA" = (
 /obj/structure/chair{
 	dir = 1
@@ -10052,6 +10080,7 @@
 	name = "Backup Blackbox Recorder";
 	desc = "Some kind of machine backup."
 	},
+/obj/effect/landmark/mission_poi/main/blackbox,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/armory)
 "OY" = (
@@ -15028,13 +15057,13 @@ rp
 In
 nN
 SZ
-dm
+sN
 dm
 zV
 oD
 AD
 dm
-dm
+mk
 ax
 Rl
 cM
@@ -15532,13 +15561,13 @@ ee
 Xr
 AE
 Cm
-dm
+wy
 dm
 wE
 wE
 wE
 dm
-dm
+lO
 ax
 Rl
 cM

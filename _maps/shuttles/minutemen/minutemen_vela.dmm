@@ -865,6 +865,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "dV" = (
@@ -4480,20 +4481,20 @@
 /obj/structure/closet/crate{
 	name = "crew treats"
 	},
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
-/obj/item/reagent_containers/food/drinks/soda_cans/random,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
+/obj/effect/spawner/random/food_or_drink/soda_can,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -4537,7 +4538,9 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/north,
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "vI" = (
