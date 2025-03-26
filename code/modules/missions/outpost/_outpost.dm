@@ -29,7 +29,7 @@
 	for(var/datum/weakref/account in servant.crew_bank_accounts)
 		var/datum/bank_account/target_account = account.resolve()
 		target_account.adjust_money(payment, CREDIT_LOG_MISSION)
-		target_account.bank_card_talk("[payment] credits deposited to account, balance is now [target_account.account_balance].")
+		target_account.bank_card_talk("[payment] credits deposited to account, balance is now [target_account.account_balance]cr.")
 		remaining_value = remaining_value - payment
 	servant.ship_account.adjust_money(remaining_value, CREDIT_LOG_MISSION)
 	qdel(src)
