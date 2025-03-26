@@ -889,7 +889,7 @@
 	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
 		return
 	var/datum/overmap/dynamic/encounter = new(position, selected_system, FALSE)
-	message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)], and here to go to the dock: [ADMIN_JMP(encounter.reserve_docks[1])]")
+
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
@@ -897,6 +897,9 @@
 		encounter.ruin_type = null
 	if(admin_load_instant)
 		encounter.admin_load()
+		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)], and here to go to the dock: [ADMIN_JMP(encounter.reserve_docks[1])]")
+	else
+		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)]")
 
 /client/proc/spawn_overmap()
 	set name = "Spawn Overmap"
