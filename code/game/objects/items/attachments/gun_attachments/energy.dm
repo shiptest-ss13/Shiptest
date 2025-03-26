@@ -9,8 +9,27 @@
 
 /obj/item/attachment/gun/energy/Initialize(mapload, spawn_empty = FALSE)
 	. = ..()
+	build_ammotypes()
+
+/obj/item/attachment/gun/energy/proc/build_ammotypes()
+	for(var/datum/action/item_action/toggle_ammotype/old_ammotype in actions)
+		old_ammotype.Destroy()
+	var/datum/action/item_action/our_action
+
 	var/obj/item/gun/energy/e_gun = attached_gun
-	e_gun.build_ammotypes()
+	if(e_gun.ammo_type.len > 1)
+		our_action = new /datum/action/item_action/toggle_ammotype(src)
+
+	for(var/i=1, i <= e_gun.ammo_type.len+1, i++)
+		if(e_gun.default_ammo_type == e_gun.ammo_type[i])
+			e_gun.ammotype_index = i
+			if(our_action)
+				our_action.UpdateButtonIcon()
+			return
+
+	e_gun.ammotype_index = 1
+	CRASH("default_ammo_type isn't in the ammo_type list of [src.type]!! Defaulting to 1!!")
+
 
 /obj/item/attachment/gun/energy/ui_action_click(mob/user, actiontype)
 	var/obj/item/gun/energy/e_gun = attached_gun
