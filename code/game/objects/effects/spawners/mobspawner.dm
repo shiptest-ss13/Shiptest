@@ -51,10 +51,10 @@
 /obj/effect/spawner/random/hermit
 	name = "hermit spawner"
 	loot = list(
-		/mob/living/simple_animal/hostile/human/hermit/survivor = 45,
+		/mob/living/simple_animal/hostile/human/hermit/survivor = 50,
 		/mob/living/simple_animal/hostile/human/hermit/ranged/hunter = 35,
-		/mob/living/simple_animal/hostile/human/hermit/ranged/e11 = 10,
-		/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger = 10
+		/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger = 10,
+		/mob/living/simple_animal/hostile/human/hermit/ranged/e11 = 5
 	)
 
 /obj/effect/spawner/random/thirtyfive_percent_borerspawner
