@@ -7,8 +7,10 @@
 	drop_sound = 'sound/items/handling/component_drop.ogg'
 	pickup_sound =  'sound/items/handling/component_pickup.ogg'
 	var/scanning = FALSE
+	///is the assembly arming itself?
 	var/timing = FALSE
-	var/time = 10
+	///seconds until the assembly arms itself
+	var/time = 20
 	var/sensitivity = 1
 	var/hearing_range = 3
 	///Proximity monitor associated with this atom, needed for it to work.
@@ -16,11 +18,12 @@
 
 /obj/item/assembly/prox_sensor/Initialize()
 	. = ..()
-	proximity_monitor = new(src, 0)
+	proximity_monitor = new(src, 0, FALSE)
 	START_PROCESSING(SSobj, src)
 
 /obj/item/assembly/prox_sensor/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	QDEL_NULL(proximity_monitor)
 	. = ..()
 
 /obj/item/assembly/prox_sensor/examine(mob/user)
@@ -36,6 +39,15 @@
 		scanning = FALSE
 	update_appearance()
 	return TRUE
+
+/obj/item/assembly/prox_sensor/on_attach()
+	.  = ..()
+	// Pick the first valid object in this list:
+	// Wiring datum's owner
+	// assembly holder's attached object
+	// assembly holder itself
+	// us
+	proximity_monitor.set_host(connected?.holder || holder?.master || holder || src, src)
 
 /obj/item/assembly/prox_sensor/on_detach()
 	. = ..()
@@ -59,7 +71,7 @@
 	return secured
 
 /obj/item/assembly/prox_sensor/HasProximity(atom/movable/AM as mob|obj)
-	if (istype(AM, /obj/effect/beam))
+	if(istype(AM, /obj/effect/beam) || istype(AM, /obj/projectile) || istype(AM, /obj/effect/projectile))
 		return
 	sense()
 
@@ -73,10 +85,10 @@
 	next_activate = world.time + 30
 	return TRUE
 
-/obj/item/assembly/prox_sensor/process()
+/obj/item/assembly/prox_sensor/process(seconds_per_tick)
 	if(!timing)
 		return
-	time--
+	time -= seconds_per_tick
 	if(time <= 0)
 		timing = FALSE
 		toggle_scan(TRUE)
@@ -153,3 +165,11 @@
 				value = round(time + value)
 				time = clamp(value, 0, 600)
 				. = TRUE
+
+/obj/item/assembly/prox_sensor/preset
+	sensitivity = 2
+	hearing_range = 3
+
+/obj/item/assembly/prox_sensor/preset/Initialize()
+	. = ..()
+	toggle_scan(!scanning)

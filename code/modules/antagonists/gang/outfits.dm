@@ -23,7 +23,6 @@
 	glasses = /obj/item/clothing/glasses/hud/spacecop
 	ears = /obj/item/radio/headset/headset_sec
 	mask = null
-	head = /obj/item/clothing/head/spacepolice
 	belt = /obj/item/gun/ballistic/automatic/pistol/candor
 	r_pocket = /obj/item/lighter
 	l_pocket = /obj/item/restraints/handcuffs
@@ -31,10 +30,7 @@
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
-	/obj/item/shield/riot/tele = 1,
-	/obj/item/ammo_box/magazine/m45 = 3,
-	/obj/item/ammo_box/c45 = 2)
-
+	/obj/item/shield/riot/tele = 1)
 
 /datum/outfit/families_police/beatcop/armored
 	name = "Families: Armored Beat Cop"
@@ -54,8 +50,7 @@
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
-	/obj/item/shield/riot/tele = 1,
-	/obj/item/storage/box/lethalshot = 2)
+	/obj/item/shield/riot/tele = 1)
 
 /datum/outfit/families_police/beatcop/fbi
 	name = "Families: Space FBI Officer"
@@ -66,8 +61,7 @@
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
 	/obj/item/shield/riot/tele = 1,
-	/obj/item/ammo_box/magazine/smgm9mm = 3,
-	/obj/item/ammo_box/c9mm = 2)
+	/obj/item/ammo_box/magazine/smgm9mm = 3)
 
 /datum/outfit/families_police/beatcop/military
 	name = "Families: Space Military"

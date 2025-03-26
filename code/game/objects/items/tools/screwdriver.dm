@@ -14,6 +14,7 @@
 	throw_speed = 3
 	throw_range = 5
 	custom_materials = list(/datum/material/iron=75)
+	attack_cooldown = LIGHT_WEAPON_CD
 	attack_verb = list("stabbed")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	usesound = list('sound/items/screwdriver.ogg', 'sound/items/screwdriver2.ogg')
@@ -23,6 +24,7 @@
 	drop_sound = 'sound/items/handling/screwdriver_drop.ogg'
 	pickup_sound =  'sound/items/handling/screwdriver_pickup.ogg'
 	item_flags = SURGICAL_TOOL | EYE_STAB //WS - Fix IPC surgery
+	demolition_mod = 0.5
 	var/random_color = TRUE //if the screwdriver uses random coloring
 	var/static/list/screwdriver_colors = list(
 		"blue" = "#8080ff",

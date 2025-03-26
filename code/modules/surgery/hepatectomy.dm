@@ -23,11 +23,12 @@
 	name = "remove damaged liver section"
 	implements = list(
 		TOOL_SCALPEL = 95,
-		/obj/item/melee/transforming/energy/sword = 33,
-		/obj/item/kitchen/knife = 40,
+		/obj/item/melee/energy/sword = 33,
+		/obj/item/melee/knife = 40,
 		/obj/item/shard = 25)
 	time = 52
 	experience_given = (MEDICAL_SKILL_ORGAN_FIX*0.8) //repeatable so not as much xp
+	fuckup_damage = 15
 
 /datum/surgery_step/hepatectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin to cut out a damaged peice of [target]'s liver...</span>",

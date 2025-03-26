@@ -1,6 +1,6 @@
 #define TRANSFORMATION_DURATION 22
 
-/mob/living/carbon/proc/monkeyize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG))
+/mob/living/carbon/proc/monkeyize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG| TR_KEEPAI))
 	if (notransform || transformation_timer)
 		return
 
@@ -150,6 +150,8 @@
 			changeling.purchasedpowers += hf
 			changeling.regain_powers()
 
+	if(tr_flags & TR_KEEPAI)
+		ai_controller.PossessPawn(O)
 
 	if (tr_flags & TR_DEFAULTMSG)
 		to_chat(O, "<B>You are now a monkey.</B>")
@@ -167,7 +169,7 @@
 //////////////////////////           Humanize               //////////////////////////////
 //Could probably be merged with monkeyize but other transformations got their own procs, too
 
-/mob/living/carbon/proc/humanize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG))
+/mob/living/carbon/proc/humanize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG | TR_KEEPAI))
 	if (notransform || transformation_timer)
 		return
 
@@ -328,6 +330,9 @@
 		O.set_species(O.dna.species)
 	else
 		O.set_species(/datum/species/human)
+
+	if(tr_flags & TR_KEEPAI)
+		ai_controller.PossessPawn(O)
 
 	O.a_intent = INTENT_HELP
 	if (tr_flags & TR_DEFAULTMSG)
@@ -617,9 +622,6 @@
 	if(!MP)
 		return 0	//Sanity, this should never happen.
 
-	if(ispath(MP, /mob/living/simple_animal/hostile/construct))
-		return 0 //Verbs do not appear for players.
-
 //Good mobs!
 	if(ispath(MP, /mob/living/simple_animal/pet/cat))
 		return 1
@@ -631,11 +633,9 @@
 		return 1
 	if(ispath(MP, /mob/living/simple_animal/hostile/mushroom))
 		return 1
-	if(ispath(MP, /mob/living/simple_animal/shade))
-		return 1
 	if(ispath(MP, /mob/living/simple_animal/hostile/killertomato))
 		return 1
-	if(ispath(MP, /mob/living/simple_animal/mouse))
+	if(ispath(MP, /mob/living/basic/mouse))
 		return 1 //It is impossible to pull up the player panel for mice (Fixed! - Nodrak)
 	if(ispath(MP, /mob/living/simple_animal/hostile/bear))
 		return 1 //Bears will auto-attack mobs, even if they're player controlled (Fixed! - Nodrak)

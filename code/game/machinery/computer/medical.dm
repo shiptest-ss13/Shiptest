@@ -168,7 +168,6 @@
 					else
 						dat += "<br>[bdat]"
 
-				else
 		else
 			dat += "<A href='?src=[REF(src)];login=1'>{Log In}</A>"
 	var/datum/browser/popup = new(user, "med_rec", "Medical Records Console", 600, 400)
@@ -375,7 +374,6 @@
 								if(istype(active1.fields["photo_side"], /obj/item/photo))
 									var/obj/item/photo/P = active1.fields["photo_side"]
 									P.show(usr)
-					else
 
 			else if(href_list["p_stat"])
 				if(active1)
@@ -488,16 +486,12 @@
 				for(var/datum/data/record/R in GLOB.data_core.medical)
 					if((lowertext(R.fields["name"]) == t1 || t1 == lowertext(R.fields["id"]) || t1 == lowertext(R.fields["b_dna"])))
 						active2 = R
-					else
-						//Foreach continue //goto(3229)
 				if(!(active2))
 					temp = text("Could not locate record [].", sanitize(t1))
 				else
 					for(var/datum/data/record/E in GLOB.data_core.general)
 						if((E.fields["name"] == active2.fields["name"] || E.fields["id"] == active2.fields["id"]))
 							active1 = E
-						else
-							//Foreach continue //goto(3334)
 					screen = 4
 
 			else if(href_list["print_p"])

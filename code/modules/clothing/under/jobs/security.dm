@@ -55,7 +55,6 @@
 	desc = "Someone who wears this means business."
 	icon_state = "detective"
 	item_state = "det"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 	strip_delay = 50
 	alt_covers_chest = TRUE
 	sensor_mode = 3
@@ -279,7 +278,6 @@
 	icon_state = "camo"
 	item_state = "fatigues"
 	can_adjust = FALSE
-	allow_post_reskins = TRUE
 	unique_reskin = list("Urban" = "camo",
 		"Desert" = "camo_desert",
 		"Woodland" = "camo_woodland",

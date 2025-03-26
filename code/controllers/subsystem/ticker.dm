@@ -62,6 +62,8 @@ SUBSYSTEM_DEF(ticker)
 	/// Why an emergency shuttle was called
 	var/emergency_reason
 
+	/// People who have been commended and will receive a heart
+	var/list/hearts
 
 /datum/controller/subsystem/ticker/Initialize(timeofday)
 	load_mode()
@@ -225,7 +227,7 @@ SUBSYSTEM_DEF(ticker)
 			if(!runnable_modes.len)
 				to_chat(world, "<B>Unable to choose playable game mode.</B> Reverting to pre-game lobby.")
 				return 0
-			mode = pickweight(runnable_modes)
+			mode = pick_weight(runnable_modes)
 			if(!mode)	//too few roundtypes all run too recently
 				mode = pick(runnable_modes)
 
@@ -349,7 +351,7 @@ SUBSYSTEM_DEF(ticker)
 			m = pick(memetips)
 
 	if(m)
-		to_chat(world, span_purple(examine_block("<span class='oocplain'><b>Tip of the round: </b>[html_encode(m)]</span>")))
+		to_chat(world, span_purple(boxed_message("<span class='oocplain'><b>Tip of the round: </b>[html_encode(m)]</span>")))
 
 /datum/controller/subsystem/ticker/proc/check_queue()
 	if(!queued_players.len)
@@ -442,12 +444,6 @@ SUBSYSTEM_DEF(ticker)
 				news_message = "[station_name()] has been evacuated after transmitting the following distress beacon:\n\n[emergency_reason]"
 			else
 				news_message = "The crew of [station_name()] has been evacuated amid unconfirmed reports of enemy activity."
-		if(CULT_ESCAPE)
-			news_message = "Security Alert: A group of religious fanatics have escaped from [station_name()]."
-		if(CULT_FAILURE)
-			news_message = "Following the dismantling of a restricted cult aboard [station_name()], we would like to remind all employees that worship outside of the Chapel is strictly prohibited, and cause for termination."
-		if(CULT_SUMMON)
-			news_message = "Company officials would like to clarify that [station_name()] was scheduled to be decommissioned following meteor damage earlier this year. Earlier reports of an unknowable eldritch horror were made in error."
 		if(NUKE_MISS)
 			news_message = "The Syndicate have bungled a terrorist attack [station_name()], detonating a nuclear weapon in empty space nearby."
 		if(OPERATIVES_KILLED)

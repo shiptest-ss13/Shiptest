@@ -78,7 +78,8 @@
 		to_chat(user, "<span class='notice'>You begin slicing through the [src].</span>")
 		while(W.use_tool(src,user,30,volume = 100))
 			to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
-			alter_integrity(-(W.wall_decon_damage))
+			if(!alter_integrity(-(W.wall_decon_damage)))
+				return TRUE
 		return 1
 
 	switch(d_state)
@@ -287,11 +288,6 @@
 	icon_state = "map-shuttle_nd"
 	base_icon_state = "plastitanium_wall"
 	smoothing_flags = SMOOTH_BITMASK
-
-/turf/closed/wall/r_wall/syndicate/nosmooth
-	icon = 'icons/turf/shuttle.dmi'
-	icon_state = "wall"
-	smoothing_flags = NONE
 
 /turf/closed/wall/r_wall/syndicate/overspace
 	icon_state = "map-overspace"

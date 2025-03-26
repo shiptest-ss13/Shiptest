@@ -175,6 +175,39 @@
 	amount_per_transfer_from_this = (amount_per_transfer_from_this == 10 ? 5 : 10)
 	to_chat(user, "<span class='notice'>You [amount_per_transfer_from_this == 10 ? "remove" : "fix"] the nozzle. You'll now use [amount_per_transfer_from_this] units per spray.</span>")
 
+//radiation cleanup pack
+
+/obj/item/watertank/anti_rad
+	name = "radiation foam pack"
+	desc = "A pressurized backpack tank with sprayer nozzle, intended to clean up radioactive hazards."
+	item_state = "waterbackpackatmos"
+	icon_state = "waterbackpackatmos"
+	volume = 200
+	slowdown = 0.3
+
+/obj/item/watertank/anti_rad/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/anti_radiation_foam, 200)
+
+
+/obj/item/reagent_containers/spray/mister/anti_rad
+	name = "spray nozzle"
+	desc = "A heavy duty nozzle attached to a radiation foam tank."
+	icon_state = "atmos_nozzle"
+	item_state = "nozzleatmos"
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list()
+	current_range = 6
+	spray_range = 6
+
+
+/obj/item/watertank/anti_rad/make_noz()
+	return new /obj/item/reagent_containers/spray/mister/anti_rad(src)
+
+/obj/item/reagent_containers/spray/mister/anti_rad/attack_self(mob/user)
+	amount_per_transfer_from_this = (amount_per_transfer_from_this == 10 ? 5 : 10)
+	to_chat(user, "<span class='notice'>You [amount_per_transfer_from_this == 10 ? "tigten" : "loosen"] the nozzle. You'll now use [amount_per_transfer_from_this] units per spray.</span>")
+
 //ATMOS FIRE FIGHTING BACKPACK
 
 #define EXTINGUISHER 0
@@ -348,7 +381,8 @@
 	var/on = FALSE
 	volume = 300
 	var/usage_ratio = 5 //5 unit added per 1 removed
-	var/injection_amount = 1
+	/// How much to inject per second
+	var/injection_amount = 0.5
 	amount_per_transfer_from_this = 5
 	reagent_flags = OPENCONTAINER
 	spillable = FALSE
@@ -406,7 +440,7 @@
 	if(ismob(loc))
 		to_chat(loc, "<span class='notice'>[src] turns off.</span>")
 
-/obj/item/reagent_containers/chemtank/process()
+/obj/item/reagent_containers/chemtank/process(seconds_per_tick)
 	if(!ishuman(loc))
 		turn_off()
 		return
@@ -418,8 +452,9 @@
 		turn_off()
 		return
 
-	var/used_amount = injection_amount/usage_ratio
-	reagents.trans_to(user,used_amount,multiplier=usage_ratio, method = INJECT)
+	var/inj_am = injection_amount * seconds_per_tick
+	var/used_amount = inj_am / usage_ratio
+	reagents.trans_to(user, used_amount, multiplier=usage_ratio, method = INJECT)
 	update_appearance()
 	user.update_inv_back() //for overlays update
 

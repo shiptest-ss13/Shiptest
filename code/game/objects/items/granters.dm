@@ -245,7 +245,7 @@
 	..()
 	to_chat(user,"<span class='warning'>You suddenly feel very solid!</span>")
 	user.Stun(40, ignore_canstun = TRUE)
-	user.petrify(30)
+	user.petrify(60)
 
 /obj/item/book/granter/spell/shapechange
 	spell = /obj/effect/proc_holder/spell/targeted/shapeshift
@@ -332,7 +332,7 @@
 
 /obj/item/book/granter/spell/random/Initialize()
 	. = ..()
-	var/static/banned_spells = list(/obj/item/book/granter/spell/mimery_blockade, /obj/item/book/granter/spell/mimery_guns)
+	var/static/banned_spells = list(/obj/item/book/granter/spell/mimery_blockade)
 	var/real_type = pick(subtypesof(/obj/item/book/granter/spell) - banned_spells)
 	new real_type(loc)
 	return INITIALIZE_HINT_QDEL
@@ -444,7 +444,7 @@
 
 /obj/item/book/granter/crafting_recipe/cooking_sweets_101
 	name = "Cooking Desserts 101"
-	desc = "A cook book that teaches you some more of the newest desserts. AI approved, and a best seller on Honkplanet."
+	desc = "A cook book that teaches you some more of the newest desserts. A best seller on Maxim."
 	crafting_recipe_types = list(
 		/datum/crafting_recipe/food/berrytart,
 		/datum/crafting_recipe/food/cocolavatart,

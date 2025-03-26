@@ -360,7 +360,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Bananium Energy Sword"
 	desc = "An energy sword that deals no damage, but will slip anyone it contacts, be it by melee attack, thrown \
 	impact, or just stepping on it. Beware friendly fire, as even anti-slip shoes will not protect against it."
-	item = /obj/item/melee/transforming/energy/sword/bananium
+	item = /obj/item/melee/energy/sword/bananium
 	cost = 3
 	surplus = 0
 	include_modes = list(/datum/game_mode/nuclear/clown_ops)
@@ -405,7 +405,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Double-Bladed Energy Sword"
 	desc = "The double-bladed energy sword does slightly more damage than a standard energy sword and will deflect \
 			all energy projectiles, but requires two hands to wield."
-	item = /obj/item/dualsaber
+	item = /obj/item/melee/duelenergy/saber
 	player_minimum = 25
 	cost = 16
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
@@ -417,7 +417,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Energy Sword"
 	desc = "The energy sword is an edged weapon with a blade of pure energy. The sword is small enough to be \
 			pocketed when inactive. Activating it produces a loud, distinctive noise."
-	item = /obj/item/melee/transforming/energy/sword/saber
+	item = /obj/item/melee/energy/sword/saber
 	cost = 8
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
@@ -444,16 +444,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "These gloves let the user punch people very fast. Does not improve weapon attack speed or the meaty fists of a hulk."
 	item = /obj/item/clothing/gloves/rapid
 	cost = 8
-
-/datum/uplink_item/dangerous/guardian
-	name = "Holoparasites"
-	desc = "Though capable of near sorcerous feats via use of hardlight holograms and nanomachines, they require an \
-			organic host as a home base and source of fuel. Holoparasites come in various types and share damage with their host."
-	item = /obj/item/storage/box/syndie_kit/guardian
-	cost = 18
-	surplus = 0
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
-	restricted = TRUE
 
 /datum/uplink_item/dangerous/machinegun
 	name = "L6 Squad Automatic Weapon"
@@ -537,24 +527,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/gun/ballistic/automatic/toy/pistol/riot
 	cost = 2
 	surplus = 10
-
-/datum/uplink_item/dangerous/semiautoturret
-	name = "Semi-Auto Turret"
-	desc = "An autoturret which shoots semi-automatic ballistic rounds. The turret is bulky \
-			and cannot be moved; upon ordering this item, a smaller beacon will be transported to you \
-			that will teleport the actual turret to it upon activation."
-	item = /obj/item/sbeacondrop/semiautoturret
-	cost = 8
-	include_modes = list(/datum/game_mode/nuclear)
-
-/datum/uplink_item/dangerous/heavylaserturret
-	name = "Heavy Laser Turret"
-	desc = "An autoturret which shoots heavy lasers. The turret is bulky \
-			and cannot be moved; upon ordering this item, a smaller beacon will be transported to you \
-			that will teleport the actual turret to it upon activation."
-	item = /obj/item/sbeacondrop/heavylaserturret
-	cost = 12
-	include_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/dangerous/weebstick
 	name = "Nanoforged Katana"
@@ -869,7 +841,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/ammo/toydarts
 	name = "Box of Riot Darts"
 	desc = "A box of 40 Donksoft riot darts, for reloading any compatible foam dart magazine. Don't forget to share!"
-	item = /obj/item/ammo_box/foambox/riot
+	item = /obj/item/storage/box/ammo/foam_darts/riot
 	cost = 2
 	surplus = 0
 	illegal_tech = FALSE
@@ -891,7 +863,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/ammo/mech/bag
 	name = "Exosuit Support Kit Bag"
-	desc = "A duffel bag containing ammo for four full reloads of the scattershot which is equipped on standard Dark Gygax and Touro exosuits. Also comes with some support equipment for maintaining the exosuit, including tools and an inducer."
+	desc = "A duffel bag containing ammo for four full reloads of the scattershot which is equipped on standard 515 EX and Touro exosuits. Also comes with some support equipment for maintaining the exosuit, including tools and an inducer."
 	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/mech
 	cost = 4
 	include_modes = list(/datum/game_mode/nuclear)
@@ -972,18 +944,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/storage/backpack/duffelbag/syndie/x4
 	cost = 4 //
 	cant_discount = TRUE
-
-/datum/uplink_item/explosives/clown_bomb_clownops
-	name = "Clown Bomb"
-	desc = "The Clown bomb is a hilarious device capable of massive pranks. It has an adjustable timer, \
-			with a minimum of 60 seconds, and can be bolted to the floor with a wrench to prevent \
-			movement. The bomb is bulky and cannot be moved; upon ordering this item, a smaller beacon will be \
-			transported to you that will teleport the actual bomb to it upon activation. Note that this bomb can \
-			be defused, and some crew may attempt to do so."
-	item = /obj/item/sbeacondrop/clownbomb
-	cost = 15
-	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/explosives/detomatix
 	name = "Detomatix PDA Cartridge"
@@ -1135,19 +1095,11 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	restricted = TRUE
 
 /datum/uplink_item/support/gygax
-	name = "Dark Gygax Exosuit"
+	name = "515 EX Exosuit"
 	desc = "A lightweight exosuit, painted in a dark scheme. Its speed and equipment selection make it excellent \
 			for hit-and-run style attacks. Features an incendiary carbine, flash bang launcher, teleporter, ion thrusters and a Tesla energy array."
 	item = /obj/mecha/combat/gygax/dark/loaded
 	cost = 80
-
-/datum/uplink_item/support/honker
-	name = "Dark H.O.N.K."
-	desc = "A clown combat mech equipped with bombanana peel and tearstache grenade launchers, as well as the ubiquitous HoNkER BlAsT 5000."
-	item = /obj/mecha/combat/honker/dark/loaded
-	cost = 80
-	include_modes = list(/datum/game_mode/nuclear/clown_ops)
-
 /datum/uplink_item/support/touro
 	name = "Touro Exosuit"
 	desc = "A well-armored and incredibly deadly military-grade exosuit. Features long-range targeting, thrust vectoring \
@@ -1199,16 +1151,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			This manual teaches you this Codespeak. You can also hit someone else with the manual in order to teach them. This is the deluxe edition, which has unlimited uses."
 	item = /obj/item/codespeak_manual/unlimited
 	cost = 3
-
-/datum/uplink_item/stealthy_tools/combatbananashoes
-	name = "Combat Banana Shoes"
-	desc = "While making the wearer immune to most slipping attacks like regular combat clown shoes, these shoes \
-		can generate a large number of synthetic banana peels as the wearer walks, slipping up would-be pursuers. They also \
-		squeak significantly louder."
-	item = /obj/item/clothing/shoes/clown_shoes/banana_shoes/combat
-	cost = 6
-	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/stealthy_tools/emplight
 	name = "EMP Flashlight"
@@ -1526,15 +1468,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/clothing/glasses/thermal/syndi
 	cost = 4
 
-/datum/uplink_item/device_tools/potion
-	name = "Syndicate Sentience Potion"
-	item = /obj/item/slimepotion/slime/sentience/nuclear
-	desc = "A potion recovered at great risk by undercover Syndicate operatives and then subsequently modified with Syndicate technology. \
-			Using it will make any animal sentient, and bound to serve you, as well as implanting an internal radio for communication and an internal ID card for opening doors."
-	cost = 4
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
-	restricted = TRUE
-
 /datum/uplink_item/device_tools/guerillagloves
 	name = "Guerilla Gloves"
 	desc = "A pair of highly robust combat gripper gloves that excels at performing takedowns at close range, with an added lining of insulation. Careful not to hit a wall!"
@@ -1742,17 +1675,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	restricted_roles = list("Medical Doctor", "Chief Medical Officer", "Roboticist")
 	cost = 5
 
-/datum/uplink_item/role_restricted/clown_bomb
-	name = "Clown Bomb"
-	desc = "The Clown bomb is a hilarious device capable of massive pranks. It has an adjustable timer, \
-			with a minimum of 60 seconds, and can be bolted to the floor with a wrench to prevent \
-			movement. The bomb is bulky and cannot be moved; upon ordering this item, a smaller beacon will be \
-			transported to you that will teleport the actual bomb to it upon activation. Note that this bomb can \
-			be defused, and some crew may attempt to do so."
-	item = /obj/item/sbeacondrop/clownbomb
-	cost = 15
-	restricted_roles = list("Clown")
-
 /datum/uplink_item/role_restricted/clumsinessinjector //clown ops can buy this too, but it's in the pointless badassery section for them
 	name = "Clumsiness Injector"
 	desc = "Inject yourself with this to become as clumsy as a clown... or inject someone ELSE with it to make THEM as clumsy as a clown. Useful for clowns who wish to reconnect with their former clownish nature or for clowns who wish to torment and play with their prey before killing them."
@@ -1801,13 +1723,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	restricted_roles = list("Curator")
 	limited_stock = 1 //please don't spam deadchat
 
-/datum/uplink_item/role_restricted/cultconstructkit
-	name = "Cult Construct Kit"
-	desc = "Recovered from an abandoned Nar'sie cult lair two construct shells and a stash of empty soulstones was found. These were purified to prevent occult contamination and have been put in a belt so they may be used as an accessible source of disposable minions. The construct shells have been packaged into two beacons for rapid and portable deployment."
-	item = /obj/item/storage/box/syndie_kit/cultconstructkit
-	cost = 20
-	restricted_roles = list("Chaplain")
-
 /datum/uplink_item/role_restricted/lawnmower
 	name = "Gas powered lawn mower"
 	desc = "A lawn mower is a machine utilizing one or more revolving blades to cut a grass surface to an even height, or bodies if that's your thing"
@@ -1851,14 +1766,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	limited_stock = 2 //you can't use more than two!
 	restricted_roles = list("Shaft Miner")
 
-/datum/uplink_item/role_restricted/magillitis_serum
-	name = "Magillitis Serum Autoinjector"
-	desc = "A single-use autoinjector which contains an experimental serum that causes rapid muscular growth in Hominidae. \
-			Side-affects may include hypertrichosis, violent outbursts, and an unending affinity for bananas."
-	item = /obj/item/reagent_containers/hypospray/medipen/magillitis
-	cost = 15
-	restricted_roles = list("Geneticist", "Chief Medical Officer")
-
 /datum/uplink_item/role_restricted/modified_syringe_gun
 	name = "Modified Syringe Gun"
 	desc = "A syringe gun that fires DNA injectors instead of normal syringes."
@@ -1873,15 +1780,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 12
 	restricted_roles = list("Chemist", "Chief Medical Officer")
 
-/datum/uplink_item/role_restricted/reverse_bear_trap
-	name = "Reverse Bear Trap"
-	desc = "An ingenious execution device worn on (or forced onto) the head. Arming it starts a 1-minute kitchen timer mounted on the bear trap. When it goes off, the trap's jaws will \
-	violently open, instantly killing anyone wearing it by tearing their jaws in half. To arm, attack someone with it while they're not wearing headgear, and you will force it onto their \
-	head after three seconds uninterrupted."
-	cost = 5
-	item = /obj/item/reverse_bear_trap
-	restricted_roles = list("Clown")
-
 /datum/uplink_item/role_restricted/laser_arm
 	name = "Laser Arm Implant"
 	desc = "An implant that grants you a recharging laser gun inside your arm. Weak to EMPs. Comes with a syndicate autosurgeon for immediate self-application."
@@ -1892,7 +1790,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/role_restricted/greykingsword
 	name = "Blade of The Grey Tide"
 	desc = "A weapon of legend, forged by the greatest crackheads of our generation."
-	item = /obj/item/melee/greykingsword
+	item = /obj/item/melee/sword/greyking
 	cost = 2
 	restricted_roles = list("Assistant", "Chemist")
 

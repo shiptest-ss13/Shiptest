@@ -136,7 +136,7 @@
 		playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
 
 	if(iscarbon(L) && L.stat == CONSCIOUS)
-		L.emote("scream")
+		L.force_scream()
 
 	// Instantly lie down, also go unconscious from the pain, before you die.
 	L.Unconscious(100)
@@ -174,7 +174,7 @@
 	if(not_processing_bug == TRUE)
 		. += "<span class='warning'>[src] is temporarily disabled. Check back later!</span>"
 
-/obj/machinery/atmospherics/components/unary/hydrogen_pump/process_atmos()
+/obj/machinery/atmospherics/components/unary/hydrogen_pump/process_atmos(seconds_per_tick)
 	..()
 	var/datum/gas_mixture/air = airs[1] //hydrogen out
 	not_processing_bug = FALSE

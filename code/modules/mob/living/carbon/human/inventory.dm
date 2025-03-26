@@ -121,7 +121,9 @@
 /mob/living/carbon/human/equip_to_slot(obj/item/I, slot, initial = FALSE, redraw_mob = FALSE, swap = FALSE)
 	if(!..()) //a check failed or the item has already found its slot
 		return
-
+	if(isclothing(I))//needs to be set very early, because clothing overlays need it assigned before update_inv calls
+		var/obj/item/clothing/ouritem = I
+		ouritem.wearer = WEAKREF(src)
 	var/current_equip
 	var/not_handled = FALSE //Added in case we make this type path deeper one day
 	switch(slot)
@@ -204,7 +206,9 @@
 			update_inv_s_store()
 		else
 			to_chat(src, "<span class='danger'>You are trying to equip this item to an unsupported inventory slot. Report this to a coder!</span>")
-
+			if(isclothing(I))//just in case
+				var/obj/item/clothing/ouritem = I
+				ouritem.wearer = null
 	if (current_equip)
 		put_in_active_hand(current_equip)
 
@@ -224,7 +228,7 @@
 		var/obj/item/thing = sloties
 		. += thing?.slowdown
 
-/mob/living/carbon/human/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE)
+/mob/living/carbon/human/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE, use_unequip_delay = FALSE)
 	var/index = get_held_index_of_item(I)
 	. = ..() //See mob.dm for an explanation on this and some rage about people copypasting instead of calling ..() like they should.
 	if(!. || !I)

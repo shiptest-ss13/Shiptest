@@ -17,7 +17,7 @@ SUBSYSTEM_DEF(acid)
 	cust["processing"] = length(processing)
 	.["custom"] = cust
 
-/datum/controller/subsystem/acid/fire(resumed = 0)
+/datum/controller/subsystem/acid/fire(resumed = FALSE)
 	if (!resumed)
 		src.currentrun = processing.Copy()
 
@@ -33,8 +33,7 @@ SUBSYSTEM_DEF(acid)
 				return
 			continue
 
-		if(O.acid_level && O.acid_processing())
-		else
+		if(!O.acid_level || !O.acid_processing())
 			O.update_appearance()
 			processing -= O
 

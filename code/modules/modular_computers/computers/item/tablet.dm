@@ -12,7 +12,6 @@
 	steel_sheet_cost = 1
 	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT
 	has_light = TRUE //LED flashlight!
-	comp_light_luminosity = 2.3 //Same as the PDA
 	custom_materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000) // WS Edit - Item Materials
 	var/has_variants = TRUE
 	var/finish_color = null
@@ -24,6 +23,11 @@
 		icon_state = icon_state_powered = icon_state_unpowered = "[base_icon_state]-[finish_color]"
 	return ..()
 
+/obj/item/modular_computer/tablet/examine_more(mob/user)
+	. = ..()
+	if(screen_on && enabled)
+		interact(user)
+
 /obj/item/modular_computer/tablet/syndicate_contract_uplink
 	name = "contractor tablet"
 	icon = 'icons/obj/contractor_tablet.dmi'
@@ -33,13 +37,13 @@
 	icon_state_menu = "assign"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT
-	comp_light_luminosity = 6.3
+	light_range = 6.3
 	has_variants = FALSE
 
 /// Given to Nuke Ops members.
 /obj/item/modular_computer/tablet/nukeops
 	icon_state = "tablet-syndicate"
-	comp_light_luminosity = 6.3
+	light_range = 6.3
 	has_variants = FALSE
 	device_theme = "syndicate"
 	light_color = COLOR_RED
@@ -61,7 +65,6 @@
 	icon_state_unpowered = "tablet-silicon"
 	base_icon_state = "tablet-silicon"
 	has_light = FALSE //tablet light button actually enables/disables the borg lamp
-	comp_light_luminosity = 0
 	has_variants = FALSE
 	///Ref to the borg we're installed in. Set by the borg during our creation.
 	var/mob/living/silicon/robot/borgo

@@ -130,7 +130,7 @@
 	icon_state = "cybersun_med"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/under/syndicate/medic/skirt
 	name = "Cybersun medical jumpskirt"
@@ -186,17 +186,6 @@
 	icon_state = "gec_ce"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 80, "acid" = 40)
 
-/obj/item/clothing/under/syndicate/skirt/maid
-	name = "tactical maid outfit"
-	desc = "A 'tactical' turtleneck fashioned to the likeness of a maid outfit. Why the Syndicate has these, you'll never know."
-	icon_state = "syndimaid"
-	item_state = "syndimaid"
-
-/obj/item/clothing/under/syndicate/skirt/maid/Initialize()
-	. = ..()
-	var/obj/item/clothing/accessory/maidapron/syndicate/A = new (src)
-	attach_accessory(A)
-
 /datum/outfit/syndicate/intern
 	name = "Syndicate Operative - Intern"
 
@@ -251,10 +240,11 @@
 	icon_state = "inteqeng"
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION
 
-/obj/item/clothing/under/syndicate/inteq/skirt/artificer
+/obj/item/clothing/under/syndicate/inteq/artificer/skirt
 	name = "inteq artificer overall skirt"
 	desc = "A black set of overalls in the likeness of a skirt atop a standard issue turtleneck, for the IRMG's support division Artificers."
 	icon_state = "inteqeng_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/corpsman
@@ -263,24 +253,12 @@
 	icon_state = "inteqmed"
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION
 
-/obj/item/clothing/under/syndicate/inteq/skirt/corpsman
+/obj/item/clothing/under/syndicate/inteq/corpsman/skirt
 	name = "inteq corpsman skirtleneck"
 	desc = "A sterile white turtleneck with a free flowing black skirt, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division Corpsmen."
 	icon_state = "inteqmed_skirt"
-	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
-
-/obj/item/clothing/under/syndicate/inteq/skirt/maid
-	name = "inteq tactical maid outfit"
-	desc = "A 'tactical' turtleneck fashioned to the likeness of a maid outfit. This one is lovingly knitted in the colors of the IRMG."
-	icon_state = "inteqmaid"
-	item_state = "inteqmaid"
-	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
-
-/obj/item/clothing/under/syndicate/inteq/skirt/maid/Initialize()
-	. = ..()
-	var/obj/item/clothing/accessory/maidapron/inteq/A = new (src)
-	attach_accessory(A)
 
 /obj/item/clothing/under/syndicate/inteq/honorable
 	name = "honorable vanguard turtleneck"

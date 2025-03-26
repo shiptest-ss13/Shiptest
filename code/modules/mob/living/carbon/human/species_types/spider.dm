@@ -7,28 +7,6 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	see_in_dark = 4
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 
-/obj/item/organ/tongue/spider
-	name = "inner mandible"
-	desc = "A set of soft, spoon-esque mandibles closer to the mouth opening, that allow for basic speech, and the ability to speak Rachnidian."
-	say_mod = "chitters"
-	var/static/list/languages_possible_arachnid = typecacheof(list(
-		/datum/language/common,
-		/datum/language/draconic,
-		/datum/language/codespeak,
-		/datum/language/monkey,
-		/datum/language/narsie,
-		/datum/language/beachbum,
-		/datum/language/aphasia,
-		/datum/language/piratespeak,
-		/datum/language/moffic,
-		/datum/language/spider,
-		/datum/language/buzzwords
-	))
-
-/obj/item/organ/tongue/spider/Initialize(mapload)
-	. = ..()
-	languages_possible = languages_possible_arachnid
-
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider
 	icon_state = "spidermeat"
@@ -56,7 +34,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	toxic_food = VEGETABLES | DAIRY | CLOTH
 	mutanteyes = /obj/item/organ/eyes/night_vision/spider
 	mutanttongue = /obj/item/organ/tongue/spider
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	species_language_holder = /datum/language_holder/spider
 	loreblurb = "Rachnids are aliens with coincidental physiological similarities to Sol's spiders. Despite visible adaptations that would make them excellent hunters, modern Rachnidian culture revolves around honing the skills and talents of oneself, treating them as forms of self-expression. Rachnids tend to focus on their work intensely, priding themselves on a job well done and languishing if they see themselves as underperforming in their field."
 	var/web_cooldown = 30

@@ -1,9 +1,13 @@
 GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("stool", /obj/structure/chair/stool, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("bar stool", /obj/structure/chair/stool/bar, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("bed", /obj/structure/bed, 2, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("double bed", /obj/structure/bed/double, 4, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
+	new/datum/stack_recipe_list("beds", list( \
+		new/datum/stack_recipe("bed", /obj/structure/bed, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("double bed", /obj/structure/bed/double, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("bottom bunk", /obj/structure/bed/bunk, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("top bunk", /obj/structure/bed/bunk/top, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		)), \
 	new/datum/stack_recipe_list("office chairs", list( \
 		new/datum/stack_recipe("gray office chair", /obj/structure/chair/office, 5, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("light office chair", /obj/structure/chair/office/light, 5, one_per_turf = TRUE, on_floor = TRUE), \
@@ -179,7 +183,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("radiation closet", /obj/structure/closet/radiation/empty, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE)
 		)),
 	null, \
-		new/datum/stack_recipe_list("crates", list(
+	new/datum/stack_recipe_list("crates", list(
 		new/datum/stack_recipe("crate", /obj/structure/closet/crate, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
 		new/datum/stack_recipe("internals crate", /obj/structure/closet/crate/internals, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
 		new/datum/stack_recipe("engineering crate", /obj/structure/closet/crate/engineering, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
@@ -187,6 +191,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("science crate", /obj/structure/closet/crate/science, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
 		new/datum/stack_recipe("hydroponics crate", /obj/structure/closet/crate/hydroponics, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE)
 		)),
+	new/datum/stack_recipe("gun locker", /obj/structure/guncloset, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe("canister", /obj/machinery/portable_atmospherics/canister, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
@@ -221,7 +226,6 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("firelock frame (fulltile)", /obj/structure/firelock_frame, 3, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("firelock frame (directional)", /obj/structure/firelock_frame/border, 1, time = 25, on_floor = TRUE), \
-	new/datum/stack_recipe("turret frame", /obj/machinery/porta_turret_construct, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("meatspike frame", /obj/structure/kitchenspike_frame, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("reflector frame", /obj/structure/reflector, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
@@ -238,7 +242,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("iron door", /obj/structure/mineral_door/iron, 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("floodlight frame", /obj/structure/floodlight_frame, 5, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("voting box", /obj/structure/votebox, 15, time = 50), \
+	new/datum/stack_recipe("voting box", /obj/structure/votebox, 5, time = 50), \
 	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/metal, 3), \
 	new/datum/stack_recipe("pestle", /obj/item/pestle, 1, time = 50), \
 	new/datum/stack_recipe("hygienebot assembly", /obj/item/bot_assembly/hygienebot, 2, time = 50), \

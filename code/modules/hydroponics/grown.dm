@@ -81,7 +81,7 @@
 
 		if(reag_txt)
 			msg += reag_txt
-		to_chat(user, examine_block(msg))
+		to_chat(user, boxed_message(msg))
 	else
 		if(seed)
 			for(var/datum/plant_gene/trait/T in seed.genes)
@@ -166,6 +166,15 @@
 			juice_results[juice_results[i]] = nutriment
 		reagents.del_reagent(/datum/reagent/consumable/nutriment)
 		reagents.del_reagent(/datum/reagent/consumable/nutriment/vitamin)
+
+/obj/item/reagent_containers/food/snacks/grown/proc/get_tgui_info()
+	var/list/data = list()
+	var/datum/reagent/product_distill_reagent = distill_reagent
+	data["distill_reagent"] = initial(product_distill_reagent.name)
+	data["juice_result"] = list()
+	for(var/datum/reagent/reagent as anything in juice_results)
+		data["juice_result"] += initial(reagent.name)
+	return data
 
 /*
  * Attack self for growns

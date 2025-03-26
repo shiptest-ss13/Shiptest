@@ -8,7 +8,7 @@
 				spread = round((rand() - 0.5) * distro)
 			else //Smart spread
 				spread = round(1 - 0.5) * distro
-		if(!throw_proj(target, targloc, user, params, spread))
+		if(!throw_proj(target, targloc, user, params, spread, fired_from))
 			return FALSE
 	else
 		if(isnull(BB))
@@ -45,7 +45,8 @@
 		reagents.trans_to(BB, reagents.total_volume, transfered_by = user) //For chemical darts/bullets
 		qdel(reagents)
 
-/obj/item/ammo_casing/proc/throw_proj(atom/target, turf/targloc, mob/living/user, params, spread)
+/obj/item/ammo_casing/proc/throw_proj(atom/target, turf/targloc, mob/living/user, params, spread, atom/fired_from)
+	var/modifiers = params2list(params)
 	var/turf/curloc
 	if(user)
 		curloc = get_turf(user)
@@ -66,9 +67,9 @@
 			direct_target = target
 	if(!direct_target)
 		if(user)
-			BB.preparePixelProjectile(target, user, params, spread)
+			BB.preparePixelProjectile(target, user, modifiers, spread)
 		else
-			BB.preparePixelProjectile(target, curloc, params, spread)
+			BB.preparePixelProjectile(target, curloc, modifiers, spread)
 	BB.fire(null, direct_target)
 	BB = null
 	return TRUE

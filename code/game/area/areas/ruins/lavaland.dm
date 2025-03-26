@@ -27,17 +27,6 @@
 	name = "Hierophant's Arena"
 	icon_state = "dk_yellow"
 
-
-//Elephant Graveyard
-
-/area/ruin/unpowered/elephant_graveyard
-	name = "Elephant Graveyard"
-	icon_state = "dk_yellow"
-
-/area/ruin/powered/graveyard_shuttle
-	name = "Elephant Graveyard"
-	icon_state = "green"
-
 //Lava Canyon
 
 /area/ruin/unpowered/scorched_hut

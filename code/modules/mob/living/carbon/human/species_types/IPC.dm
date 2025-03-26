@@ -23,16 +23,14 @@
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
 	exotic_bloodtype = "Coolant"
 	damage_overlay_type = "synth"
-	burnmod = 1.25
 	heatmod = 1.5
-	brutemod = 1
 	siemens_coeff = 1.5
 	reagent_tag = PROCESS_SYNTHETIC
 	species_gibs = "robotic"
 	attack_sound = 'sound/items/trayhit1.ogg'
 	deathsound = "sound/voice/borg_deathsound.ogg"
 	wings_icons = list("Robotic")
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	species_language_holder = /datum/language_holder/ipc
 	loreblurb = "Integrated Positronic Chassis or \"IPC\" for short, are synthetic lifeforms composed of an Artificial \
 	Intelligence program encased in a bipedal robotic shell. They are fragile, allergic to EMPs, and the butt of endless toaster jokes. \
@@ -65,6 +63,8 @@
 	)
 
 /datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
+	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface")
+		mutantbrain = /obj/item/organ/brain/mmi_holder
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
@@ -73,10 +73,6 @@
 			if(species_datum?.has_screen)
 				change_screen = new
 				change_screen.Grant(H)
-		if(H.dna.features["ipc_brain"] == "Man-Machine Interface")
-			mutantbrain = /obj/item/organ/brain/mmi_holder
-		else
-			mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)

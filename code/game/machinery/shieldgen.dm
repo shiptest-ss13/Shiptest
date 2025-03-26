@@ -43,27 +43,6 @@
 	if(.) //damage was dealt
 		new /obj/effect/temp_visual/impact_effect/ion(loc)
 
-/obj/structure/emergency_shield/sanguine
-	name = "sanguine barrier"
-	desc = "A potent shield summoned by cultists to defend their rites."
-	icon_state = "shield-red"
-	max_integrity = 60
-
-/obj/structure/emergency_shield/sanguine/emp_act(severity)
-	return
-
-/obj/structure/emergency_shield/invoker
-	name = "Invoker's Shield"
-	desc = "A weak shield summoned by cultists to protect them while they carry out delicate rituals."
-	color = "#FF0000"
-	max_integrity = 20
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	layer = ABOVE_MOB_LAYER
-
-/obj/structure/emergency_shield/invoker/emp_act(severity)
-	return
-
-
 /obj/machinery/shieldgen
 	name = "anti-breach shielding projector"
 	desc = "Used to seal minor hull breaches."
@@ -107,9 +86,9 @@
 	update_appearance()
 	QDEL_LIST(deployed_shields)
 
-/obj/machinery/shieldgen/process()
+/obj/machinery/shieldgen/process(seconds_per_tick)
 	if((machine_stat & BROKEN) && active)
-		if(deployed_shields.len && prob(5))
+		if(deployed_shields.len && SPT_PROB(2.5, seconds_per_tick))
 			qdel(pick(deployed_shields))
 
 
@@ -226,6 +205,7 @@
 	var/locked = TRUE
 	var/shield_range = 8
 	var/shocked = FALSE
+	var/crashing = FALSE
 	var/obj/structure/cable/attached // the attached cable
 
 /obj/machinery/power/shieldwallgen/xenobiologyaccess		//use in xenobiology containment
@@ -261,7 +241,7 @@
 /obj/machinery/power/shieldwallgen/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[REF(port)][id]"
 
-/obj/machinery/power/shieldwallgen/process()
+/obj/machinery/power/shieldwallgen/process(seconds_per_tick)
 	if(active)
 		if(active == ACTIVE_SETUPFIELDS)
 			var/fields = 0
@@ -273,15 +253,24 @@
 		if(!active_power_usage || surplus() >= active_power_usage)
 			add_load(active_power_usage)
 		else
-			visible_message(span_danger("The [src.name] shuts down due to lack of power!"), "If this message is ever seen, something is wrong.",span_hear("You hear heavy droning fade out.</"))
-			active = FALSE
-			log_game("[src] deactivated due to lack of power at [AREACOORD(src)]")
-			for(var/direction in GLOB.cardinals)
-				cleanup_field(direction)
+			if(!crashing)
+				balloon_alert_to_viewers("[src] blares an alarm!")
+				playsound(src, 'sound/machines/cryo_warning.ogg', 100)
+				crashing = TRUE
+				addtimer(CALLBACK(src, PROC_REF(kill_shield)), 6 SECONDS)
+
 	else
 		for(var/direction in GLOB.cardinals)
 			cleanup_field(direction)
 	update_appearance()
+
+/obj/machinery/power/shieldwallgen/proc/kill_shield()
+	visible_message(span_danger("The [src.name] shuts down due to lack of power!"), "If this message is ever seen, something is wrong.",span_hear("You hear heavy droning fade out."))
+	log_game("[src] deactivated due to lack of power at [AREACOORD(src)]")
+	active = FALSE
+	crashing = FALSE
+	for(var/direction in GLOB.cardinals)
+		cleanup_field(direction)
 
 /obj/machinery/power/shieldwallgen/update_icon_state()
 	if(active)
@@ -609,7 +598,7 @@
 	gen_secondary = null
 	return ..()
 
-/obj/machinery/shieldwall/process()
+/obj/machinery/shieldwall/process(seconds_per_tick)
 	if(needs_power)
 		if(!gen_primary || !gen_primary.active || !gen_secondary || !gen_secondary.active)
 			qdel(src)
@@ -618,7 +607,7 @@
 		drain_power(50)
 
 //Atmos shields suck more power
-/obj/machinery/shieldwall/atmos/process()
+/obj/machinery/shieldwall/atmos/process(seconds_per_tick)
 	if(needs_power)
 		if(!gen_primary || !gen_primary.active || !gen_secondary || !gen_secondary.active)
 			qdel(src)

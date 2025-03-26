@@ -28,7 +28,7 @@
 	var/bomb_defused = TRUE // If the bomb is inert.
 	var/bomb_timer = 1 // How long before blowing the bomb.
 	var/const/BOMB_TIMER_MIN = 1
-	var/const/BOMB_TIMER_MAX = 10
+	var/const/BOMB_TIMER_MAX = 20
 
 /obj/item/pizzabox/Initialize()
 	. = ..()
@@ -220,10 +220,10 @@
 		to_chat(user, "<span class='warning'>That's not a pizza!</span>")
 	..()
 
-/obj/item/pizzabox/process()
+/obj/item/pizzabox/process(seconds_per_tick)
 	if(bomb_active && !bomb_defused && (bomb_timer > 0))
 		playsound(loc, 'sound/items/timer.ogg', 50, FALSE)
-		bomb_timer--
+		bomb_timer -= seconds_per_tick
 	if(bomb_active && !bomb_defused && (bomb_timer <= 0))
 		if(bomb in src)
 			bomb.detonate()
@@ -341,13 +341,13 @@
 
 /obj/item/pizzabox/infinite/proc/attune_pizza(mob/living/carbon/human/noms) //tonight on "proc names I never thought I'd type"
 	if(!pizza_preferences[noms.ckey])
-		pizza_preferences[noms.ckey] = pickweight(pizza_types)
+		pizza_preferences[noms.ckey] = pick_weight(pizza_types)
 		if(noms.has_quirk(/datum/quirk/pineapple_liker))
 			pizza_preferences[noms.ckey] = /obj/item/reagent_containers/food/snacks/pizza/pineapple
 		else if(noms.has_quirk(/datum/quirk/pineapple_hater))
 			var/list/pineapple_pizza_liker = pizza_types.Copy()
 			pineapple_pizza_liker -= /obj/item/reagent_containers/food/snacks/pizza/pineapple
-			pizza_preferences[noms.ckey] = pickweight(pineapple_pizza_liker)
+			pizza_preferences[noms.ckey] = pick_weight(pineapple_pizza_liker)
 		else if(noms.mind && noms.mind.assigned_role == "Botanist")
 			pizza_preferences[noms.ckey] = /obj/item/reagent_containers/food/snacks/pizza/dank
 

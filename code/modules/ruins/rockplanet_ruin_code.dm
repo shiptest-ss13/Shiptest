@@ -58,7 +58,7 @@
 	. = ..()
 	is_open = FALSE
 
-/obj/machinery/door/poddoor/crusher/automatic/process(delta_time)
+/obj/machinery/door/poddoor/crusher/automatic/process(seconds_per_tick)
 	if(is_open)
 		close()
 	else
@@ -100,7 +100,7 @@
 
 /obj/item/strange_crystal/attackby(obj/item/item, mob/user, params)
 	. = ..()
-	if(!istype(item, /obj/item/kitchen/knife))
+	if(!istype(item, /obj/item/melee/knife))
 		return
 	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
 	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")

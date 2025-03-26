@@ -1,8 +1,9 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"map_name": "Valor-Class Field Care Cruiser",
+	"map_name": "Valor-class Field Care Cruiser",
 	"faction": "/datum/faction/inteq",
 	"prefix": "IRMV",
+	"manufacturer": "Hardline Salvage and Mining",
 	"description": "The Valor is the dedicated medical vessel of the Inteq fleet, suitable for treatment both for Inteq combat casualties, or paid treatment of outsiders. It's equipped with high-end medical equipment and a small ambulance for patient transport for this purpose.",
 	"tags": ["Medical", "Subshuttle"],
 	"namelists": [
@@ -40,6 +41,10 @@
 		"Enforcer": {
 			"outfit": "/datum/outfit/job/inteq/security/empty",
 			"slots": 2
+		},
+		"Artificer": {
+			"outfit": "/datum/outfit/job/inteq/engineer",
+			"slots": 1
 		},
 		"Recruit": {
 			"outfit": "/datum/outfit/job/inteq/assistant",

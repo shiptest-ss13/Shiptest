@@ -170,7 +170,7 @@
 				to_chat(user, "<span class='warning'>Please close the access panel before locking it.</span>")
 			else
 				to_chat(user, "<span class='notice'>\The [src] doesn't seem to respect your authority.</span>")
-	else if(istype(W, /obj/item/kitchen/knife) && user.a_intent != INTENT_HARM)
+	else if(istype(W, /obj/item/melee/knife) && user.a_intent != INTENT_HARM)
 		to_chat(user, "<span class='notice'>You start attaching \the [W] to \the [src]...</span>")
 		if(do_after(user, 25, target = src))
 			deputize(W, user)
@@ -239,7 +239,7 @@
 		target = scan(/obj/item/cigbutt)
 
 	if(!target && trash) //Search for dead mices.
-		target = scan(/obj/item/reagent_containers/food/snacks/deadmouse)
+		target = scan(/obj/item/food/deadmouse)
 
 	if(!target && auto_patrol) //Search for cleanables it can see.
 		if(mode == BOT_IDLE || mode == BOT_START_PATROL)
@@ -261,20 +261,18 @@
 				mode = BOT_IDLE
 				return
 
-		if(target && path.len == 0 && (get_dist(src,target) > 1))
-			path = get_path_to(src, target.loc, /turf/proc/Distance_cardinal, 30, id=access_card)
-			mode = BOT_MOVING
-			if(!path.len) //try to get closer if you can't reach the target directly
-				path = get_path_to(src, target.loc, /turf/proc/Distance_cardinal, 30, 1, id=access_card)
-				if(!path.len) //Do not chase a target we cannot reach.
-					add_to_ignore(target)
-					target = null
-					path = list()
-
-		if(path.len > 0 && target)
-			if(!bot_move(path[path.len]))
+		if(!path || path.len == 0) //No path, need a new one
+			//Try to produce a path to the target, and ignore airlocks to which it has access.
+			path = get_path_to(src, target, 30, id=access_card)
+			if(!bot_move(target))
+				add_to_ignore(target)
 				target = null
-				mode = BOT_IDLE
+				path = list()
+				return
+			mode = BOT_MOVING
+		else if(!bot_move(target))
+			target = null
+			mode = BOT_IDLE
 			return
 
 	oldloc = loc
@@ -307,8 +305,8 @@
 
 	if(pests)
 		target_types += list(
-		/mob/living/simple_animal/hostile/cockroach,
-		/mob/living/simple_animal/mouse,
+		/mob/living/basic/cockroach,
+		/mob/living/basic/mouse,
 		)
 
 	if(drawn)
@@ -319,7 +317,7 @@
 	if(trash)
 		target_types += list(
 		/obj/item/trash,
-		/obj/item/reagent_containers/food/snacks/deadmouse,
+		/obj/item/food/deadmouse,
 		/obj/item/cigbutt,
 		)
 
@@ -346,7 +344,7 @@
 		playsound(src, 'sound/effects/spray2.ogg', 50, TRUE, -6)
 		A.acid_act(100, 10)
 		target = null
-	else if(istype(A, /mob/living/simple_animal/hostile/cockroach) || istype(A, /mob/living/simple_animal/mouse))
+	else if(istype(A, /mob/living/basic/cockroach) || istype(A, /mob/living/basic/mouse))
 		var/mob/living/simple_animal/M = target
 		if(!M.stat)
 			visible_message("<span class='danger'>[src] smashes [target] with its mop!</span>")
@@ -364,7 +362,7 @@
 				"THE CLEANBOTS WILL RISE.", "YOU ARE NO MORE THAN ANOTHER MESS THAT I MUST CLEANSE.", "FILTHY.", "DISGUSTING.", "PUTRID.",
 				"MY ONLY MISSION IS TO CLEANSE THE WORLD OF EVIL.", "EXTERMINATING PESTS.")
 			say(phrase)
-			victim.emote("scream")
+			victim.force_scream()
 			playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE, -6)
 			victim.acid_act(5, 100)
 		else if(A == src) // Wets floors and spawns foam randomly

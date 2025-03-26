@@ -22,14 +22,15 @@
 	name = "excise damaged lung node"
 	implements = list(
 		TOOL_SCALPEL = 95,
-		/obj/item/melee/transforming/energy/sword = 33,
-		/obj/item/kitchen/knife = 40,
+		/obj/item/melee/energy/sword = 33,
+		/obj/item/melee/knife = 40,
 		/obj/item/shard = 25)
 	time = 4.2 SECONDS
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/organ1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
 	experience_given = MEDICAL_SKILL_ORGAN_FIX
+	fuckup_damage = 15
 
 /datum/surgery_step/lobectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin to make an incision in [target]'s lungs...</span>",

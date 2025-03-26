@@ -39,4 +39,8 @@
 
 	var/atom/bloodsource = source
 	Detach(source)
-	bloodsource.AddElement(/datum/element/decal/blood, bloodsource.icon, bloodsource.icon_state, _color = get_blood_dna_color(bloodsource.return_blood_DNA()))
+	var/icon_state_adj = bloodsource.icon_state
+	if(isbodypart(source))//bettericons :D
+		var/obj/item/bodypart/parent_part = source
+		icon_state_adj = parent_part.stored_icon_state
+	bloodsource.AddElement(/datum/element/decal/blood, bloodsource.icon, icon_state_adj, _color = get_blood_dna_color(bloodsource.return_blood_DNA()))

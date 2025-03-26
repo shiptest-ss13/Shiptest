@@ -30,23 +30,11 @@ SUBSYSTEM_DEF(shuttle)
 
 	/// Whether express consoles are blocked from ordering anything or not
 	var/supplyBlocked = FALSE
-	/// Order number given to next cargo order
-	var/ordernum = 1
-	/// List of all singleton supply pack instances
-	var/list/supply_packs = list()
 
 	/// Stops ALL shuttles from being able to move
 	var/lockdown = FALSE
 
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
-	ordernum = rand(1, 9000)
-
-	for(var/pack in subtypesof(/datum/supply_pack))
-		var/datum/supply_pack/P = new pack()
-		if(!P.contains)
-			continue
-		supply_packs[P.type] = P
-
 	for(var/obj/docking_port/stationary/stationary_port as anything in stationary)
 		stationary_port.load_roundstart()
 		CHECK_TICK
@@ -91,6 +79,8 @@ SUBSYSTEM_DEF(shuttle)
 
 	jump_timer = addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), jump_completion_time, TIMER_STOPPABLE)
 	priority_announce("Jump initiated. ETA: [jump_completion_time / (1 MINUTES)] minutes.", null, null, "Priority")
+
+	INVOKE_ASYNC(SSticker, TYPE_PROC_REF(/datum/controller/subsystem/ticker,poll_hearts))
 
 /datum/controller/subsystem/shuttle/proc/request_transit_dock(obj/docking_port/mobile/M)
 	if(!istype(M))
@@ -150,7 +140,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	mapzone.parallax_movedir = travel_dir
 
-	var/area/shuttle/transit/transit_area = new()
+	var/area/hyperspace/transit_area = new()
 
 	vlevel.fill_in(transit_path, transit_area)
 
@@ -193,10 +183,7 @@ SUBSYSTEM_DEF(shuttle)
 		transit_requesters = SSshuttle.transit_requesters
 	if (istype(SSshuttle.transit_request_failures))
 		transit_request_failures = SSshuttle.transit_request_failures
-	if (istype(SSshuttle.supply_packs))
-		supply_packs = SSshuttle.supply_packs
 
-	ordernum = SSshuttle.ordernum
 	lockdown = SSshuttle.lockdown
 
 /datum/controller/subsystem/shuttle/proc/is_in_shuttle_bounds(atom/A)
@@ -417,11 +404,6 @@ SUBSYSTEM_DEF(shuttle)
 	for(var/obj/docking_port/mobile/M as anything in mobile)
 		var/list/L = list()
 
-		if(M.current_ship)
-			L["type"] = "[M.current_ship.source_template ? (M.current_ship.source_template.short_name ? M.current_ship.source_template.short_name : M.current_ship.source_template.name) : "Custom"]"
-		else
-			L["type"] = "???"
-
 		L["name"] = M.name
 		L["id"] = REF(M)
 		L["timer"] = M.timer
@@ -430,11 +412,13 @@ SUBSYSTEM_DEF(shuttle)
 			L["mode"] = capitalize(M.mode)
 
 		if(M.current_ship)
+			L["type"] = M.current_ship.source_template.short_name
 			if(M.current_ship.docked_to)
 				L["position"] = "Docked at [M.current_ship.docked_to.name] ([M.current_ship.docked_to.x], [M.current_ship.docked_to.y])"
 			else
 				L["position"] = "Flying At ([M.current_ship.x], [M.current_ship.y])"
 		else
+			L["type"] = "???"
 			L["position"] = "???"
 
 		data["shuttles"] += list(L)
@@ -490,7 +474,7 @@ SUBSYSTEM_DEF(shuttle)
 					user.forceMove(new_ship.get_jump_to_turf())
 					message_admins("[key_name_admin(user)] loaded [new_ship] ([S]) with the shuttle manipulator.")
 					log_admin("[key_name(user)] loaded [new_ship] ([S]) with the shuttle manipulator.</span>")
-					SSblackbox.record_feedback("text", "shuttle_manipulator", 1, "[S]")
+					SSblackbox.record_feedback("tally", "shuttle_manipulator_spawned", 1, "[S]")
 
 		if("edit_template")
 			if(S)

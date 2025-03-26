@@ -18,31 +18,53 @@
 	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
 	to_chat(owner,missiondesc)
 
+/datum/antagonist/ert/frontier/skm
+	outfit = /datum/outfit/job/frontiersmen/ert/skm
+
+/datum/antagonist/ert/frontier/unarmed
+	outfit = /datum/outfit/job/frontiersmen/ert/unarmed
+
 /datum/antagonist/ert/frontier/random
 	outfit = /datum/outfit/job/frontiersmen/ert/random
+
+// officers
 
 /datum/antagonist/ert/frontier/leader
 	name = "Frontiersmen Officer"
 	outfit = /datum/outfit/job/frontiersmen/ert/leader
 	role = "Officer"
 
-/datum/antagonist/ert/frontier/leader/unnarmed
-	outfit = /datum/outfit/job/frontiersmen/ert/leader/unnarmed
+/datum/antagonist/ert/frontier/leader/heavy
+	outfit = /datum/outfit/job/frontiersmen/ert/leader/heavy
+
+/datum/antagonist/ert/frontier/leader/unarmed
+	outfit = /datum/outfit/job/frontiersmen/ert/leader/unarmed
+
+// doctors
 
 /datum/antagonist/ert/frontier/medic
 	name = "Frontiersmen Medic"
 	outfit = /datum/outfit/job/frontiersmen/ert/medic
 	role = "Stretcher-Bearer"
 
+/datum/antagonist/ert/frontier/medic/heavy
+	outfit = /datum/outfit/job/frontiersmen/ert/medic/heavy
+
+// engineers
+
 /datum/antagonist/ert/frontier/engineer
 	name = "Frontiersmen Engineer"
 	outfit = /datum/outfit/job/frontiersmen/ert/engineer
 	role = "Sapper"
 
-/datum/antagonist/ert/frontier/better
-	name = "Frontiersmen Grunt"
-	outfit = /datum/outfit/job/frontiersmen/ert/grunt/skm
+// heavy weapons guy
 
-/datum/antagonist/ert/frontier/unnarmed
-	name = "Frontiersmen Grunt"
-	outfit = /datum/outfit/job/frontiersmen/ert/grunt
+/datum/antagonist/ert/frontier/flamer
+	name = "Frontiersmen Flametrooper"
+	outfit = /datum/outfit/job/frontiersmen/ert/flamer
+	role = "Flametrooper"
+
+/datum/antagonist/ert/frontier/sentry
+	name = "Frontiersmen Sentry"
+	outfit = /datum/outfit/job/frontiersmen/ert/sentry
+	role = "Sentinel"

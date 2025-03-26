@@ -21,13 +21,6 @@
 	base_icon_state = "46x30mmtA"
 	ammo_type = /obj/item/ammo_casing/c46x30mm/ap
 
-/obj/item/ammo_box/magazine/wt550m9/inc
-	name = "wt550 magazine (4.6x30mm incendiary)"
-	desc = "A compact, 30-round top-loading magazine for the WT-550 Automatic Rifle. These incendiary rounds deal pitiful damage, but leave flaming trails which set targets ablaze."
-	icon_state = "46x30mmtI-30"
-	base_icon_state = "46x30mmtI"
-	ammo_type = /obj/item/ammo_casing/c46x30mm/inc
-
 /obj/item/ammo_box/magazine/smgm9mm
 	name = "SMG magazine (9mm)"
 	desc = "A 30-round magazine for 9mm submachine guns. These rounds do okay damage, but struggle against armor."
@@ -41,15 +34,13 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[ammo_count() ? 42 : 0]"
 
+/obj/item/ammo_box/magazine/smgm9mm/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/smgm9mm/ap
 	name = "SMG magazine (9mm AP)"
 	desc = "A 30-round magazine for 9mm submachine guns. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
-
-/obj/item/ammo_box/magazine/smgm9mm/inc
-	name = "SMG Magazine (9mm incendiary)"
-	desc = "A 30-round magazine for 9mm submachine guns. These incendiary rounds deal pitiful damage, but leave flaming trails which set targets ablaze."
-	ammo_type = /obj/item/ammo_casing/c9mm/inc
 
 /obj/item/ammo_box/magazine/smgm9mm/rubber
 	name = "SMG Magazine (9mm rubber)"
@@ -68,6 +59,9 @@
 /obj/item/ammo_box/magazine/smgm10mm/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
+
+/obj/item/ammo_box/magazine/smgm10mm/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/smgm10mm/rubber
 	name = "SMG magazine (10mm rubber)"
@@ -90,27 +84,33 @@
 /obj/item/ammo_box/magazine/m45_cobra/empty
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/c45_firestorm_mag
-	name = "stick magazine (.45)"
-	desc = "A 28-round stick magazine for the toploading Firestorm submachine gun. These rounds do moderate damage, but struggle against armor."
+/obj/item/ammo_box/magazine/c44_firestorm_mag
+	name = "stick magazine (.44 Roumain)"
+	desc = "A 24-round stick magazine for the toploading Firestorm submachine gun. These rounds do moderate damage, and perform adequately against armor."
 	icon_state = "firestorm_mag-1"
 	base_icon_state = "firestorm_mag"
-	ammo_type = /obj/item/ammo_casing/c45
-	caliber = ".45"
-	max_ammo = 28
+	ammo_type = /obj/item/ammo_casing/a44roum
+	caliber = ".44 Roumain"
+	max_ammo = 24
 
-/obj/item/ammo_box/magazine/c45_firestorm_mag/update_icon_state()
+/obj/item/ammo_box/magazine/c44_firestorm_mag/update_icon_state()
 	. = ..()
 	icon_state = "firestorm_mag-[!!ammo_count()]"
 
-/obj/item/ammo_box/magazine/c45_firestorm_mag/pan
-	name = "pan magazine (.45)"
-	desc = "A bulky, 50-round pan magazine for the toploading Firestorm submachine gun. These rounds struggle against armor, but with this many you could cut anyone down regardless."
+/obj/item/ammo_box/magazine/c44_firestorm_mag/empty
+	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/c44_firestorm_mag/pan
+	name = "pan magazine (.44 Roumain)"
+	desc = "A bulky, 40-round pan magazine for the toploading Firestorm submachine gun. The rate of fire may be low, but this much ammo can mow through anything."
 	icon_state = "firestorm_pan"
 	base_icon_state = "firestorm_pan"
-	max_ammo = 50
+	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/magazine/c45_firestorm_mag/pan/update_icon_state() //Causes the mag to NOT inherit the parent's update_icon oooh the misery
+/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/update_icon_state() //Causes the mag to NOT inherit the parent's update_icon oooh the misery
 	. = ..()
 	icon_state = "firestorm_pan"
+
+/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/empty
+	start_empty = TRUE

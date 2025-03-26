@@ -9,6 +9,7 @@
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
+	SSpoints_of_interest.make_point_of_interest(src)
 	if(speed)
 		update_living_varspeed()
 
@@ -456,7 +457,7 @@
 		return
 	else
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
-			SetSleeping(400) //Short nap
+			set_sleeping(400) //Short nap
 
 
 /mob/proc/get_contents()
@@ -483,7 +484,9 @@
 			if(!silent)
 				to_chat(src, "<span class='notice'>You will now lay down as soon as you are able to.</span>")
 		else
-			if(!silent)
+			if(!silent && m_intent == MOVE_INTENT_WALK)
+				to_chat(src, "<span class='notice'>You gently lay down.</span>")
+			else if(!silent)
 				to_chat(src, "<span class='notice'>You lay down.</span>")
 			set_lying_down()
 	else
@@ -670,7 +673,7 @@
 	SetKnockdown(0)
 	SetImmobilized(0)
 	SetParalyzed(0)
-	SetSleeping(0)
+	set_sleeping(0)
 	setStaminaLoss(0)
 	SetUnconscious(0)
 
@@ -703,6 +706,7 @@
 	cure_blind()
 	cure_husk()
 	hallucination = 0
+	heal_overall_integrity(INFINITY, null, TRUE) //heal all limb integrity, so that you can...
 	heal_overall_damage(INFINITY, INFINITY, INFINITY, null, TRUE) //heal brute and burn dmg on both organic and robotic limbs, and update health right away.
 	ExtinguishMob()
 	fire_stacks = 0
@@ -1121,7 +1125,7 @@
 	if(G.trigger_guard == TRIGGER_GUARD_NONE)
 		to_chat(src, "<span class='warning'>You are unable to fire this!</span>")
 		return FALSE
-	if(G.trigger_guard != TRIGGER_GUARD_ALLOW_ALL && !IsAdvancedToolUser())
+	if(G.trigger_guard != TRIGGER_GUARD_ALLOW_ALL && (!IsAdvancedToolUser(src) && !HAS_TRAIT(src, TRAIT_GUN_NATURAL)))
 		to_chat(src, "<span class='warning'>You try to fire [G], but can't use the trigger!</span>")
 		return FALSE
 	return TRUE
@@ -1131,24 +1135,6 @@
 
 /mob/living/carbon/alien/update_stamina()
 	return
-
-/mob/living/proc/owns_soul()
-	if(mind)
-		return mind.soulOwner == mind
-	return TRUE
-
-/mob/living/proc/return_soul()
-	hellbound = 0
-	if(mind)
-		var/datum/antagonist/devil/devilInfo = mind.soulOwner.has_antag_datum(/datum/antagonist/devil)
-		if(devilInfo)//Not sure how this could be null, but let's just try anyway.
-			devilInfo.remove_soul(mind)
-		mind.soulOwner = mind
-
-/mob/living/proc/check_acedia()
-	if(mind && mind.has_objective(/datum/objective/sintouched/acedia))
-		return TRUE
-	return FALSE
 
 /mob/living/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
 	stop_pulling()
@@ -1164,13 +1150,6 @@
 		mind.transfer_to(new_mob)
 	else
 		new_mob.key = key
-
-	for(var/para in hasparasites())
-		var/mob/living/simple_animal/hostile/guardian/G = para
-		G.summoner = new_mob
-		G.Recall()
-		to_chat(G, "<span class='holoparasite'>Your summoner has changed form!</span>")
-
 /mob/living/rad_act(amount)
 	. = ..()
 
@@ -1811,12 +1790,15 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 
 
 /// Changes the value of the [living/body_position] variable.
-/mob/living/proc/set_body_position(new_value)
+/mob/living/proc/set_body_position(new_value, fall_sound_played)
 	if(body_position == new_value)
 		return
 	. = body_position
 	body_position = new_value
 	if(new_value == LYING_DOWN) // From standing to lying down.
+		if(has_gravity() && m_intent != MOVE_INTENT_WALK)
+			playsound(src, "bodyfall", 50, TRUE) // Will play the falling sound if not walking
+			fall_sound_played = TRUE
 		on_lying_down()
 	else // From lying down to standing up.
 		on_standing_up()
@@ -1885,7 +1867,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		var/howfuck = rand(8,16)
 		AdjustParalyzed(howfuck)
 		AdjustKnockdown(howfuck)
-		Jitter(rand(150,200))
+		set_jitter(rand(150,200))
 
 /**
  * Sets the mob's speed variable and then calls update_living_varspeed().

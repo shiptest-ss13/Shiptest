@@ -16,6 +16,8 @@
 	desc = "You wear this on your back and put items into it."
 	icon_state = "backpack"
 	item_state = "backpack"
+	icon = 'icons/obj/clothing/back/backpacks.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back/backpacks.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	pickup_sound = "rustle"
@@ -26,7 +28,16 @@
 	max_integrity = 300
 	greyscale_icon_state = "backpack"
 	greyscale_colors = list(list(13, 17), list(12, 17), list(12, 21))
-	supports_variations = VOX_VARIATION
+
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/back/backpacks_kepori.dmi'
+
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_BACK
+	equip_delay_other = EQUIP_DELAY_BACK * 1.5
+	strip_delay = EQUIP_DELAY_BACK * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -35,15 +46,19 @@
 	STR.max_volume = STORAGE_VOLUME_BACKPACK
 	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
 	STR.use_sound = 'sound/items/storage/unzip.ogg'
+	STR.worn_access = FALSE
+
+/obj/item/storage/backpack/examine(mob/user)
+	. = ..()
+	var/datum/component/storage/bpack = GetComponent(/datum/component/storage)
+	if(bpack.worn_access == FALSE)
+		. += span_notice("You won't be able to open this once it's on your back.")
+	if(bpack.carry_access == FALSE)
+		. +=  span_notice("You'll have to set this down on the floor if you want to open it.")
 
 /*
  * Backpack Types
  */
-
-/obj/item/storage/backpack/old/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 12
 
 /obj/item/storage/backpack/holding
 	name = "bag of holding"
@@ -61,50 +76,11 @@
 	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
 	STR.max_volume = STORAGE_VOLUME_BAG_OF_HOLDING
 
-/obj/item/storage/backpack/santabag
-	name = "Santa's Gift Bag"
-	desc = "Space Santa uses this to deliver presents to all the nice children in space in Christmas! Wow, it's pretty big!"
-	icon_state = "giftbag0"
-	item_state = "giftbag"
-	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/storage/backpack/santabag/Initialize()
-	. = ..()
-	regenerate_presents()
-
-/obj/item/storage/backpack/santabag/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 60
-
-/obj/item/storage/backpack/santabag/proc/regenerate_presents()
-	addtimer(CALLBACK(src, PROC_REF(regenerate_presents)), 30 SECONDS)
-
-	var/mob/M = get(loc, /mob)
-	if(!istype(M))
-		return
-	if(M.mind && HAS_TRAIT(M.mind, TRAIT_CANNOT_OPEN_PRESENTS))
-		var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-		var/turf/floor = get_turf(src)
-		var/obj/item/I = new /obj/item/a_gift/anything(floor)
-		if(STR.can_be_inserted(I, stop_messages=TRUE))
-			STR.handle_item_insertion(I, prevent_warning=TRUE)
-		else
-			qdel(I)
-
-
 /obj/item/storage/backpack/cultpack
 	name = "trophy rack"
 	desc = "It's useful for both carrying extra gear and proudly declaring your insanity."
 	icon_state = "cultpack"
 	item_state = "backpack"
-
-/obj/item/storage/backpack/clown
-	name = "Giggles von Honkerton"
-	desc = "It's a backpack made by Honk! Co."
-	icon_state = "clownpack"
-	item_state = "clownpack"
 
 /obj/item/storage/backpack/explorer
 	name = "explorer bag"
@@ -215,18 +191,23 @@
 	item_state = "satchel-norm"
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
-	supports_variations = VOX_VARIATION
+
+	equipping_sound = null
+	unequipping_sound = null
+	equip_delay_self = null
+	equip_delay_other = EQUIP_DELAY_BACK
+	strip_delay = EQUIP_DELAY_BACK
 
 /obj/item/storage/backpack/satchel/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_volume = STORAGE_VOLUME_BACKPACK
+	STR.max_volume = STORAGE_VOLUME_SATCHEL
 	STR.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
+	STR.worn_access = TRUE
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
 	desc = "It's a very fancy satchel made with fine leather."
-	icon = 'icons/obj/storage.dmi'
 	icon_state = "satchel"
 	item_state = "satchel"
 
@@ -260,12 +241,6 @@
 	desc = "A sterile satchel with chemist colours."
 	icon_state = "satchel-chem"
 	item_state = "satchel-chem"
-
-/obj/item/storage/backpack/satchel/gen
-	name = "geneticist satchel"
-	desc = "A sterile satchel with geneticist colours."
-	icon_state = "satchel-gen"
-	item_state = "satchel-gen"
 
 /obj/item/storage/backpack/satchel/tox
 	name = "scientist satchel"
@@ -354,12 +329,17 @@
 /obj/item/storage/backpack/messenger
 	name = "messenger bag"
 	desc = "A sturdy backpack worn over one shoulder."
-	icon = 'icons/obj/storage.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "courierbag"
 	item_state = "courierbag"
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(15, 16), list(19, 13), list(13, 18))
+
+/obj/item/storage/backpack/messenger/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_volume = STORAGE_VOLUME_SATCHEL
+	STR.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
+	STR.worn_access = TRUE
 
 /obj/item/storage/backpack/messenger/chem
 	name = "chemistry messenger bag"
@@ -441,6 +421,7 @@
 	STR.max_w_class = MAX_WEIGHT_CLASS_DUFFEL
 	LAZYINITLIST(STR.exception_hold) // This code allows you to fit one mob holder into a duffel bag
 	STR.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
+	STR.carry_access = FALSE
 
 /obj/item/storage/backpack/duffelbag/captain
 	name = "captain's duffel bag"
@@ -528,7 +509,6 @@
 	desc = "A large duffel bag for holding extra tactical supplies."
 	icon_state = "duffel-syndie"
 	item_state = "duffel-syndieammo"
-	slowdown = 0
 	resistance_flags = FIRE_PROOF
 
 /obj/item/storage/backpack/duffelbag/syndie/ComponentInitialize()
@@ -642,7 +622,7 @@
 	new /obj/item/clothing/shoes/magboots/syndie(src)
 	new /obj/item/storage/firstaid/tactical(src)
 	new /obj/item/gun/ballistic/automatic/toy(src)
-	new /obj/item/ammo_box/foambox/riot(src)
+	new /obj/item/storage/box/ammo/foam_darts/riot(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/med/bioterrorbundle
 	desc = "A large duffel bag containing deadly chemicals, a handheld chem sprayer, Bioterror foam grenade, a Donksoft assault rifle, box of riot grade darts, a dart pistol, and a box of syringes."
@@ -653,10 +633,13 @@
 	new /obj/item/gun/syringe/syndicate(src)
 	new /obj/item/gun/ballistic/automatic/toy(src)
 	new /obj/item/storage/box/syringes(src)
-	new /obj/item/ammo_box/foambox/riot(src)
+	new /obj/item/storage/box/ammo/foam_darts/riot(src)
 	new /obj/item/grenade/chem_grenade/bioterrorfoam(src)
 	if(prob(5))
 		new /obj/item/reagent_containers/food/snacks/pizza/pineapple(src)
+
+/obj/item/storage/backpack/duffelbag/syndie/c4
+	name = "demolitions duffel bag"
 
 /obj/item/storage/backpack/duffelbag/syndie/c4/PopulateContents()
 	for(var/i in 1 to 10)
@@ -687,9 +670,7 @@
 	STR.silent = TRUE
 
 /obj/item/storage/backpack/duffelbag/clown/syndie/PopulateContents()
-	new /obj/item/pda/clown(src)
 	new /obj/item/clothing/under/rank/civilian/clown(src)
-	new /obj/item/clothing/shoes/clown_shoes(src)
 	new /obj/item/clothing/mask/gas/clown_hat(src)
 	new /obj/item/bikehorn(src)
 	new /obj/item/implanter/sad_trombone(src)

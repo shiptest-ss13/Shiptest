@@ -75,9 +75,6 @@
 	///Economy cost of item in premium vendor
 	var/custom_premium_price
 
-	//List of datums orbiting this atom
-	var/datum/component/orbiter/orbiters
-
 	/// Radiation insulation types
 	var/rad_insulation = RAD_NO_INSULATION
 
@@ -139,6 +136,9 @@
 	///List of smoothing groups this atom can smooth with. If this is null and atom is smooth, it smooths only with itself.
 	var/list/canSmoothWith = null
 
+	///AI controller that controls this atom. type on init, then turned into an instance during runtime
+	var/datum/ai_controller/ai_controller
+
 	/// The icon file of the connector to use when smoothing.
 	/// Use of connectors requires the smoothing flags SMOOTH_BITMASK and SMOOTH_CONNECTORS.
 	var/connector_icon = null
@@ -154,8 +154,6 @@
 	/// The current connector overlay appearance. Saved so that it can be cut when necessary.
 	var/connector_overlay
 
-	///Reference to atom being orbited
-	var/atom/orbit_target
 	///Default X pixel offset
 	var/base_pixel_x
 	///Default Y pixel offset
@@ -270,6 +268,7 @@
 	set_custom_materials(temp_list)
 
 	ComponentInitialize()
+	InitializeAIController()
 
 	return INITIALIZE_HINT_NORMAL
 
@@ -316,6 +315,7 @@
 	LAZYCLEARLIST(managed_overlays)
 
 	QDEL_NULL(light)
+	QDEL_NULL(ai_controller)
 
 	if(smoothing_flags & SMOOTH_QUEUED)
 		SSicon_smooth.remove_from_queues(src)
@@ -357,66 +357,6 @@
 	if(mover.throwing && (pass_flags_self & LETPASSTHROW))
 		return TRUE
 	return !density
-
-/**
- * Is this atom currently located on centcom
- *
- * Specifically, is it on the z level and within the centcom areas
- *
- * You can also be in a shuttleshuttle during endgame transit
- *
- * Used in gamemode to identify mobs who have escaped and for some other areas of the code
- * who don't want atoms where they shouldn't be
- */
-/atom/proc/onCentCom()
-	var/turf/T = get_turf(src)
-	if(!T)
-		return FALSE
-
-	if(is_reserved_level(T))
-		for(var/A in SSshuttle.mobile)
-			var/obj/docking_port/mobile/M = A
-			if(M.launch_status == ENDGAME_TRANSIT)
-				for(var/place in M.shuttle_areas)
-					var/area/shuttle/shuttle_area = place
-					if(T in shuttle_area)
-						return TRUE
-
-	if(!is_centcom_level(T))//if not, don't bother
-		return FALSE
-
-	//Check for centcom itself
-	if(istype(T.loc, /area/centcom))
-		return TRUE
-
-	//Check for centcom shuttles
-	for(var/A in SSshuttle.mobile)
-		var/obj/docking_port/mobile/M = A
-		if(M.launch_status == ENDGAME_LAUNCHED)
-			for(var/place in M.shuttle_areas)
-				var/area/shuttle/shuttle_area = place
-				if(T in shuttle_area)
-					return TRUE
-
-/**
- * Is the atom in any of the centcom syndicate areas
- *
- * Either in the syndie base on centcom, or any of their shuttles
- *
- * Also used in gamemode code for win conditions
- */
-/atom/proc/onSyndieBase()
-	var/turf/T = get_turf(src)
-	if(!T)
-		return FALSE
-
-	if(!is_centcom_level(T))//if not, don't bother
-		return FALSE
-
-	if(istype(T.loc, /area/shuttle/syndicate) || istype(T.loc, /area/syndicate_mothership))
-		return TRUE
-
-	return FALSE
 
 /**
  * Is the atom in an away mission
@@ -740,9 +680,13 @@
 			SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 
 		var/list/new_overlays = update_overlays()
-		if(managed_overlays)
-			cut_overlay(managed_overlays)
-			managed_overlays = null
+		if (managed_overlays)
+			if (length(overlays) == (islist(managed_overlays) ? length(managed_overlays) : 1))
+				overlays = null
+				POST_OVERLAY_CHANGE(src)
+			else
+				cut_overlay(managed_overlays)
+				managed_overlays = null
 		if(length(new_overlays))
 			managed_overlays = new_overlays
 			add_overlay(new_overlays)
@@ -802,6 +746,7 @@
  * throw lots of items around - singularity being a notable example)
  */
 /atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	SEND_SIGNAL(src, COMSIG_ATOM_HITBY, AM, skipcatch, hitpush, blocked, throwingdatum)
 	if(density && !has_gravity(AM)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
 		addtimer(CALLBACK(src, PROC_REF(hitby_react), AM), 2)
 
@@ -1132,6 +1077,8 @@
 	VV_DROPDOWN_OPTION(VV_HK_TRIGGER_EXPLOSION, "Explosion")
 	VV_DROPDOWN_OPTION(VV_HK_RADIATE, "Radiate")
 	VV_DROPDOWN_OPTION(VV_HK_EDIT_FILTERS, "Edit Filters")
+	VV_DROPDOWN_OPTION(VV_HK_SELL, "Export Item")
+	VV_DROPDOWN_OPTION(VV_HK_ADD_AI, "Add AI controller")
 
 /atom/vv_do_topic(list/href_list)
 	. = ..()
@@ -1176,6 +1123,15 @@
 		var/strength = input(usr, "Choose the radiation strength.", "Choose the strength.") as num|null
 		if(!isnull(strength))
 			AddComponent(/datum/component/radioactive, strength, src)
+
+	if(href_list[VV_HK_ADD_AI])
+		if(!check_rights(R_VAREDIT))
+			return
+		var/result = input(usr, "Choose the AI controller to apply to this atom WARNING: Not all AI works on all atoms.", "AI controller") as null|anything in subtypesof(/datum/ai_controller)
+		if(!result)
+			return
+		ai_controller = new result(src)
+
 	if(href_list[VV_HK_MODIFY_TRANSFORM] && check_rights(R_VAREDIT))
 		var/result = input(usr, "Choose the transformation to apply","Transform Mod") as null|anything in list("Scale","Translate","Rotate")
 		var/matrix/M = transform
@@ -1202,6 +1158,9 @@
 	if(href_list[VV_HK_EDIT_FILTERS] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT)) //This needs to be like this due to the fact that I'm not coding a fucking UI state for R_VV for ONE BUTTON.
 		var/client/C = usr.client
 		C?.open_filter_editor(src)
+
+	if(href_list[VV_HK_SELL] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT))
+		export_item_and_contents(src, apply_elastic = FALSE)
 
 /atom/vv_get_header()
 	. = ..()
@@ -1287,6 +1246,8 @@
 			. = welder_act(user, I)
 		if(TOOL_ANALYZER)
 			. = analyzer_act(user, I)
+		if(TOOL_DECONSTRUCT)
+			. |= deconstruct_act(user, I)
 	if(. || signal_result & COMPONENT_BLOCK_TOOL_ATTACK) //Either the proc or the signal handled the tool's events in some way.
 		return TRUE
 
@@ -1367,15 +1328,18 @@
 /atom/proc/analyzer_act(mob/living/user, obj/item/I)
 	return SEND_SIGNAL(src, COMSIG_ATOM_ANALYSER_ACT, user, I)
 
+///Deconstruct act
+/atom/proc/deconstruct_act(mob/living/user, obj/item/I)
+	if(flags_1 & NODECONSTRUCT_1)
+		return TRUE
+	return SEND_SIGNAL(src, COMSIG_ATOM_DECONSTRUCT_ACT, user, I)
+
 ///Generate a tag for this atom
 /atom/proc/GenerateTag()
 	return
 
 ///Connect this atom to a shuttle
 /atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	return
-
-/atom/proc/disconnect_from_shuttle(obj/docking_port/mobile/port)
 	return
 
 /// Generic logging helper
@@ -1658,10 +1622,9 @@
  * Produces a signal [COMSIG_PARENT_EXAMINE_MORE]
  */
 /atom/proc/examine_more(mob/user)
+	SHOULD_CALL_PARENT(TRUE)
 	. = list()
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE_MORE, user, .)
-	if(!LAZYLEN(.)) // lol ..length
-		return list("<span class='notice'><i>You examine [src] closer, but find nothing of interest...</i></span>")
 
 ///Passes Stat Browser Panel clicks to the game and calls client click on an atom
 /atom/Topic(href, list/href_list)
@@ -1767,3 +1730,12 @@
 */
 /atom/proc/setClosed()
 	return
+
+/**
+* Instantiates the AI controller of this atom. Override this if you want to assign variables first.
+*
+* This will work fine without manually passing arguments.
++*/
+/atom/proc/InitializeAIController()
+	if(ai_controller)
+		ai_controller = new ai_controller(src)

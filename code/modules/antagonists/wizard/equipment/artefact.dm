@@ -49,7 +49,7 @@
 	START_PROCESSING(SSobj, src)
 	return
 
-/obj/effect/rend/process()
+/obj/effect/rend/process(seconds_per_tick)
 	if(!spawn_fast)
 		if(locate(/mob) in loc)
 			return
@@ -72,24 +72,6 @@
 	activate_descriptor = "hunger"
 	rend_desc = "Reverberates with the sound of ten thousand moos."
 
-/obj/item/veilrender/honkrender
-	name = "honk render"
-	desc = "A wicked curved blade of alien origin, recovered from the ruins of a vast circus."
-	spawn_type = /mob/living/simple_animal/hostile/retaliate/clown
-	spawn_amt = 10
-	activate_descriptor = "depression"
-	rend_desc = "Gently wafting with the sounds of endless laughter."
-	icon_state = "clownrender"
-
-/obj/item/veilrender/honkrender/honkhulkrender
-	name = "superior honk render"
-	desc = "A wicked curved blade of alien origin, recovered from the ruins of a vast circus. This one gleams with a special light."
-	spawn_type = /mob/living/simple_animal/hostile/retaliate/clown/clownhulk
-	spawn_amt = 5
-	activate_descriptor = "depression"
-	rend_desc = "Gently wafting with the sounds of mirthful grunting."
-	icon_state = "clownrender"
-
 ////TEAR IN REALITY
 
 /obj/singularity/wizard
@@ -106,7 +88,7 @@
 	current_size = STAGE_FOUR
 	allowed_size = STAGE_FOUR
 
-/obj/singularity/wizard/process()
+/obj/singularity/wizard/process(seconds_per_tick)
 	move()
 	eat()
 	return
@@ -157,7 +139,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/scrying/process()
+/obj/item/scrying/process(seconds_per_tick)
 	var/mob/holder = get(loc, /mob)
 	if(current_owner && current_owner != holder)
 
@@ -257,10 +239,9 @@
 	var/hat = pick(/obj/item/clothing/head/helmet/roman, /obj/item/clothing/head/helmet/roman/legionnaire)
 	H.equip_to_slot_or_del(new hat(H), ITEM_SLOT_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/costume/roman(H), ITEM_SLOT_ICLOTHING)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), ITEM_SLOT_FEET)
 	H.put_in_hands(new /obj/item/shield/riot/roman(H), TRUE)
-	H.put_in_hands(new /obj/item/claymore(H), TRUE)
-	H.equip_to_slot_or_del(new /obj/item/spear(H), ITEM_SLOT_BACK)
+	H.put_in_hands(new /obj/item/melee/sword/claymore(H), TRUE)
+	H.equip_to_slot_or_del(new /obj/item/melee/spear(H), ITEM_SLOT_BACK)
 
 
 /obj/item/voodoo
@@ -283,7 +264,7 @@
 	if(target && cooldown < world.time)
 		if(I.get_temperature())
 			to_chat(target, "<span class='userdanger'>You suddenly feel very hot!</span>")
-			target.adjust_bodytemperature(50)
+			target.adjust_bodytemperature(10)
 			GiveHint(target)
 		else if(is_pointed(I))
 			to_chat(target, "<span class='userdanger'>You feel a stabbing pain in [parse_zone(user.zone_selected)]!</span>")

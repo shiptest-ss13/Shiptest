@@ -34,7 +34,7 @@
 
 /obj/item/greentext/Initialize(mapload)
 	. = ..()
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 	roundend_callback = CALLBACK(src, PROC_REF(check_winner))
 	SSticker.OnRoundend(roundend_callback)
 
@@ -73,7 +73,7 @@
 		resistance_flags |= ON_FIRE
 		qdel(src)
 
-/obj/item/greentext/process()
+/obj/item/greentext/process(seconds_per_tick)
 	if(last_holder && last_holder != new_holder) //Somehow it was swiped without ever getting dropped
 		to_chat(last_holder, "<span class='warning'>A sudden wave of failure washes over you...</span>")
 		last_holder.add_atom_colour("#FF0000", ADMIN_COLOUR_PRIORITY)
@@ -83,7 +83,7 @@
 	if(!(resistance_flags & ON_FIRE) && !force)
 		return QDEL_HINT_LETMELIVE
 
-	GLOB.poi_list.Remove(src)
+	SSpoints_of_interest.remove_point_of_interest(src)
 	LAZYREMOVE(SSticker.round_end_events, roundend_callback)
 	roundend_callback = null //This ought to free the callback datum, and prevent us from harddeling
 	for(var/i in GLOB.player_list)

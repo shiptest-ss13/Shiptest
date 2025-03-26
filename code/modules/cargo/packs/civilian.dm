@@ -7,11 +7,9 @@
 
 /datum/supply_pack/civilian/janitor
 	name = "Janitorial Supplies Crate"
-	desc = "Fight back against dirt and grime with these janitorial essentials. Contains three buckets, caution signs, and cleaner grenades. Also has a single mop, broom, spray cleaner, rag, and trash bag."
-	cost = 1000
+	desc = "Fight back against dirt and grime with these janitorial essentials. Contains a mop, pushbroom, a few wet-floor signs, a trash bag, and a cloth and spray."
+	cost = 100
 	contains = list(/obj/item/reagent_containers/glass/bucket,
-					/obj/item/reagent_containers/glass/bucket,
-					/obj/item/reagent_containers/glass/bucket,
 					/obj/item/mop,
 					/obj/item/pushbroom,
 					/obj/item/clothing/suit/caution,
@@ -19,34 +17,23 @@
 					/obj/item/clothing/suit/caution,
 					/obj/item/storage/bag/trash,
 					/obj/item/reagent_containers/spray/cleaner,
-					/obj/item/reagent_containers/glass/rag,
-					/obj/item/grenade/chem_grenade/cleaner,
-					/obj/item/grenade/chem_grenade/cleaner,
-					/obj/item/grenade/chem_grenade/cleaner)
+					/obj/item/reagent_containers/glass/rag)
 	crate_name = "janitorial supplies crate"
 
 /datum/supply_pack/civilian/janitank
 	name = "Janitor Backpack Crate"
 	desc = "Call forth divine judgement upon dirt and grime with this high capacity janitor backpack. Contains 500 units of filth-cleansing space cleaner."
-	cost = 1000
+	cost = 750
 	contains = list(/obj/item/watertank/janitor)
 	crate_name = "janitor backpack crate"
 
 /datum/supply_pack/civilian/janicart
 	name = "Janitorial Cart and Galoshes Crate"
 	desc = "The keystone to any successful janitor. As long as you have feet, this pair of galoshes will keep them firmly planted on the ground. Also contains a janitorial cart."
-	cost = 2000
+	cost = 400
 	contains = list(/obj/structure/janitorialcart,
 					/obj/item/clothing/shoes/galoshes)
 	crate_name = "janitorial cart crate"
-	crate_type = /obj/structure/closet/crate/large
-
-/datum/supply_pack/civilian/lawnmower
-	name = "Lawnmower"
-	desc = "Removing plant from your backyard now made easy with the brand new Donk! Co. TM Deluxe Lawnmower 3003."
-	cost = 800
-	contains = list(/obj/vehicle/ridden/lawnmower)
-	crate_name = "Donk! Co. TM Deluxe Lawnmower 3003"
 	crate_type = /obj/structure/closet/crate/large
 
 /*
@@ -82,24 +69,24 @@
 /datum/supply_pack/civilian/fountainpens
 	name = "Calligraphy Crate"
 	desc = "Sign death warrants in style with these seven executive fountain pens."
-	cost = 700
+	cost = 250
 	contains = list(/obj/item/storage/box/fountainpens)
 	crate_name = "calligraphy crate"
 	crate_type = /obj/structure/closet/crate/wooden
-	faction = FACTION_SOLGOV
+	faction = /datum/faction/solgov
 
 /datum/supply_pack/civilian/wrapping_paper
 	name = "Festive Wrapping Paper Crate"
-	desc = "Want to mail your loved ones gift-wrapped chocolates, stuffed animals, the Clown's severed head? You can do all that, with this crate full of wrapping paper."
-	cost = 1000
+	desc = "Want to mail your loved ones gift-wrapped chocolates, stuffed animals, flattened flowers? You can do all that, with this crate full of wrapping paper."
+	cost = 100
 	contains = list(/obj/item/stack/wrapping_paper)
 	crate_name = "festive wrapping paper crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
 /datum/supply_pack/civilian/paper
 	name = "Bureaucracy Crate"
-	desc = "High stacks of papers on your desk Are a big problem - make it Pea-sized with these bureaucratic supplies! Contains six pens, some camera film, hand labeler supplies, a paper bin, a carbon paper bin, three folders, a laser pointer, two clipboards and two stamps."//that was too forced
-	cost = 1000
+	desc = "High stacks of papers on your desk are a big problem - make it Pea-sized with these bureaucratic supplies! Contains six pens, some camera film, hand labeler supplies, a paper bin, a carbon paper bin, three folders, a laser pointer, two clipboards and two stamps."//that was too forced
+	cost = 250
 	contains = list(/obj/structure/filingcabinet/chestdrawer/wheeled,
 					/obj/item/camera_film,
 					/obj/item/hand_labeler,
@@ -126,7 +113,7 @@
 /datum/supply_pack/civilian/forensics
 	name = "Forensics Crate"
 	desc = "Stay hot on the criminal's heels with Nanotrasen's Detective Essentials(tm). Contains a forensics scanner, six evidence bags, camera, tape recorder, white crayon, and of course, a fedora."
-	cost = 2000
+	cost = 500
 	contains = list(/obj/item/detective_scanner,
 					/obj/item/storage/box/evidence,
 					/obj/item/camera,
@@ -138,7 +125,7 @@
 /datum/supply_pack/civilian/party
 	name = "Party Equipment"
 	desc = "Celebrate both life and death on the frontier with Nanotrasen's Party Essentials(tm)! Contains seven colored glowsticks, six beers, six sodas, two ales, and a bottle of patron, goldschlager, and shaker!"
-	cost = 2500
+	cost = 500
 	contains = list(/obj/item/storage/box/drinkingglasses,
 					/obj/item/reagent_containers/food/drinks/shaker,
 					/obj/item/reagent_containers/food/drinks/bottle/patron,
@@ -159,7 +146,7 @@
 /datum/supply_pack/civilian/bigband
 	name = "Big Band Instrument Collection"
 	desc = "Get your demoralized crew movin' and groovin' with this fine collection! Contains nine different instruments!"
-	cost = 5000
+	cost = 2500
 	contains = list(/obj/item/instrument/violin,
 					/obj/item/instrument/guitar,
 					/obj/item/instrument/glockenspiel,
@@ -179,7 +166,7 @@
 /datum/supply_pack/civilian/potted_plants
 	name = "Potted Plants Crate"
 	desc = "Spruce up the ship with these lovely plants! Contains a random assortment of five potted plants from Nanotrasen's potted plant research division. Warranty void if thrown."
-	cost = 700
+	cost = 350
 	contains = list(/obj/item/kirbyplants/random,
 					/obj/item/kirbyplants/random,
 					/obj/item/kirbyplants/random,
@@ -189,126 +176,87 @@
 
 /datum/supply_pack/civilian/artsupply
 	name = "Art Supplies"
-	desc = "Make some happy little accidents with a rapid cable layer, three spraycans, and lots of crayons!"
-	cost = 1000
-	contains = list(/obj/item/rcl,
-					/obj/item/storage/toolbox/artistic,
-					/obj/item/toy/crayon/spraycan,
-					/obj/item/toy/crayon/spraycan,
-					/obj/item/toy/crayon/spraycan,
+	desc = "Make some happy little accidents with an easel, and unlimited imagination! Imagination not included." //removed the rcl, shiptest doesn't have the space for wireart (literally)
+	cost = 750
+	contains = list(/obj/structure/easel,
+					/obj/item/canvas,
+					/obj/item/canvas,
+					/obj/item/canvas/twentythreeXtwentythree,
+					/obj/item/canvas/twentythreeXtwentythree,
+					/obj/item/canvas/nineteenXnineteen,
+					/obj/item/canvas/nineteenXnineteen,
+					/obj/item/canvas/twentythreeXnineteen,
+					/obj/item/canvas/twentythreeXnineteen,
 					/obj/item/storage/crayons,
-					/obj/item/toy/crayon/white,
-					/obj/item/toy/crayon/rainbow)
+					/obj/item/toy/crayon/spraycan,)
 	crate_name = "art supply crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
 /datum/supply_pack/civilian/carpet
 	name = "Standard Carpet Crate"
 	desc = "Plasteel floor tiles getting on your nerves? These stacks of extra soft carpet will tie any room together."
-	cost = 1000
+	cost = 350
 	contains = list(/obj/item/stack/tile/carpet/fifty,
-					/obj/item/stack/tile/carpet/fifty,
-					/obj/item/stack/tile/carpet/black/fifty,
 					/obj/item/stack/tile/carpet/black/fifty)
 	crate_name = "premium carpet crate"
 
 /datum/supply_pack/civilian/carpet_exotic
 	name = "Exotic Carpet Crate"
-	desc = "Exotic carpets for all your decorating needs. Contains 100 tiles each of 8 different flooring patterns."
-	cost = 3000
+	desc = "Exotic carpets for all your decorating needs. Contains 50 tiles each of 8 different flooring patterns."
+	cost = 750
 	contains = list(/obj/item/stack/tile/carpet/blue/fifty,
-					/obj/item/stack/tile/carpet/blue/fifty,
-					/obj/item/stack/tile/carpet/cyan/fifty,
 					/obj/item/stack/tile/carpet/cyan/fifty,
 					/obj/item/stack/tile/carpet/green/fifty,
-					/obj/item/stack/tile/carpet/green/fifty,
-					/obj/item/stack/tile/carpet/orange/fifty,
 					/obj/item/stack/tile/carpet/orange/fifty,
 					/obj/item/stack/tile/carpet/purple/fifty,
-					/obj/item/stack/tile/carpet/purple/fifty,
-					/obj/item/stack/tile/carpet/red/fifty,
 					/obj/item/stack/tile/carpet/red/fifty,
 					/obj/item/stack/tile/carpet/royalblue/fifty,
-					/obj/item/stack/tile/carpet/royalblue/fifty,
-					/obj/item/stack/tile/carpet/royalblack/fifty,
 					/obj/item/stack/tile/carpet/royalblack/fifty)
 	crate_name = "exotic carpet crate"
 
 /datum/supply_pack/civilian/noslipfloor
 	name = "High-traction Floor Tiles"
 	desc = "Make slipping a thing of the past with thirty industrial-grade anti-slip floortiles!"
-	cost = 2000
-	contains = list(/obj/item/stack/tile/noslip/thirty)
+	cost = 1000
+	contains = list(/obj/item/stack/tile/noslip/thirty,
+					/obj/item/stack/tile/noslip/thirty)
 	crate_name = "high-traction floor tiles crate"
 
 /datum/supply_pack/civilian/jukebox
 	name = "Jukebox"
 	desc = "Things a bit dull in the workplace? How about jamming out to some tunes!"
-	cost = 35000
+	cost = 1500
 	contains = list(/obj/machinery/jukebox)
 	crate_name = "Jukebox"
 
-/datum/supply_pack/civilian/fishingkit
-	name = "Fishing Starter Kit"
-	desc = "The bare necessities to get out there and catch some fish, all in one convenient box!"
-	cost = 500
-	contains = list(/obj/item/storage/toolbox/fishing,
-					/obj/item/book/fish_catalog,
-					/obj/item/reagent_containers/food/drinks/beer,
-					/obj/item/reagent_containers/food/drinks/beer)
-	crate_name = "fishing starter crate"
-	crate_type = /obj/structure/closet/crate/wooden
-
-/datum/supply_pack/civilian/fishstasis
-	name = "Fish Stasis Kit Supply Crate"
-	desc = "Contains four stasis cases meant to keep fish alive during transportation."
-	cost = 1000
-	contains = list(/obj/item/storage/fish_case,
-					/obj/item/storage/fish_case,
-					/obj/item/storage/fish_case,
-					/obj/item/storage/fish_case)
-	crate_name = "stasis case crate"
-
-/datum/supply_pack/civilian/premiumworms
-	name = "High Quality Worm Pack"
-	desc = "A selection of the system's finest worms, guaranteed to lure in only the largest of fish."
-	cost = 1000
-	contains = list(/obj/item/bait_can/worm/premium,
-					/obj/item/bait_can/worm/premium,
-					/obj/item/bait_can/worm/premium,
-					/obj/item/bait_can/worm/premium)
-	crate_name = "premium worm crate"
-
-/datum/supply_pack/civilian/masterworkpole
-	name = "Custom Made Masterwork Fishing Rod"
-	desc = "Fishing rod forged after grueling hours of labor by a master rodsmith, truly a work of fishing art. Required to catch size 2 fish."
+/datum/supply_pack/civilian/roulette
+	name = "Roulette Table"
+	desc = "Go all in with this premium, computerized roulette table! Requires a valid cash card to play."
 	cost = 5000
-	contains = list(/obj/item/fishing_rod/master)
-	crate_name = "masterwork fishing rod case"
+	contains = list(/obj/machinery/roulette)
+	crate_name = "roulette table crate"
+
+/datum/supply_pack/civilian/id_crate
+	name = "Box of Spare IDs"
+	desc = "A box of spare IDs for replacing a lost ID."
+	cost = 100
+	contains = list(/obj/item/storage/box/ids)
+
+/datum/supply_pack/civilian/spare_clothes
+	name = "Spare Jumpsuits Crate"
+	desc = "Contains a spare set of utility jumpsuits and shoes for those unfortunate accidents." //how did we not have this before
+	cost = 150
+	contains = list(/obj/item/clothing/under/utility,
+					/obj/item/clothing/under/utility/skirt,
+					/obj/item/clothing/shoes/sneakers/black,
+					/obj/item/clothing/shoes/sneakers/black)
+	crate_name = "spare jumpsuits crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
-/datum/supply_pack/civilian/fishinghooks
-	name = "Fishing Hook Variety Pack"
-	desc = "A variety of fishing hooks to allow for more specialized fishing."
-	cost = 1000
-	contains = list(/obj/item/storage/box/fishing_hooks)
-	crate_name = "fishing hook crate"
-	crate_type = /obj/structure/closet/crate/wooden
-
-/datum/supply_pack/civilian/fishinglines
-	name = "Fishing Line Pack"
-	desc = "Contains the necessary fishing lines for catching more exotic fish."
-	cost = 1000
-	contains = list(/obj/item/storage/box/fishing_lines,
-					/obj/item/storage/box/fishing_lines) //Comes with two boxes on account of these being more necessary than the hooks
-	crate_name = "fishing line crate"
-	crate_type = /obj/structure/closet/crate/wooden
-
-/datum/supply_pack/civilian/aquarium
-	name = "Aquarium Construction Kit"
-	desc = "Why seek rare fish if not to show them off? This all-in-one aquarium kit's all you'll ever need to keep a stable population of fish onboard your ship! (Building materials not included, Aquatech Ltd. is a limited liability company and not responsible for any fish related mishaps)"
-	cost = 2000
-	contains = list(/obj/item/aquarium_kit,
-					/obj/item/storage/box/aquarium_props,
-					/obj/item/fish_feed)
-	crate_name = "aquarium kit crate"
+/datum/supply_pack/civilian/broadcast_camera
+	name = "Broadcast Camera Crate"
+	desc = "Lights, Camera, Action! This consumer-grade broadcasting camera automatically streams to entertainment monitors across the sector. Not rated for use in actual combat."
+	cost = 500
+	contains = list(/obj/item/bodycamera/broadcast_camera)
+	crate_name = "broadcast camera crate"
+	crate_type = /obj/structure/closet/crate

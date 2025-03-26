@@ -115,7 +115,7 @@
 	name = "Improvised Pickaxe"
 	reqs = list(
 			/obj/item/crowbar = 1,
-			/obj/item/kitchen/knife = 1,
+			/obj/item/melee/knife/kitchen = 1,
 			/obj/item/stack/tape = 1)
 	result = /obj/item/pickaxe/improvised
 	category = CAT_MISC
@@ -147,6 +147,17 @@
 			/obj/item/stack/rods = 2,
 			/obj/item/stack/sheet/cotton/cloth = 4)
 	result = /obj/item/stack/medical/splint/ghetto
+	category = CAT_MISC
+
+
+/datum/crafting_recipe/replacement_structure
+	name = "Structure Repair Kit"
+	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER) //hole punching and scissors
+	reqs = list(
+			/obj/item/stack/rods = 3,
+			/obj/item/stack/sheet/mineral/titanium = 1,
+			/obj/item/stack/cable_coil = 2)
+	result = /obj/item/stack/medical/structure
 	category = CAT_MISC
 
 /datum/crafting_recipe/portableseedextractor

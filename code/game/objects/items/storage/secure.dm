@@ -173,7 +173,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.set_holdable(null, list(/obj/item/storage/secure/briefcase))
-	STR.max_w_class = 8						//??
+	STR.max_w_class = 8
 
 /obj/item/storage/secure/safe/PopulateContents()
 	new /obj/item/paper(src)
@@ -211,3 +211,20 @@
 /obj/item/storage/secure/safe/suns/PopulateContents()
 	. = ..()
 	new /obj/item/storage/belt/sabre/suns(src)
+
+/obj/item/storage/secure/safe/cybersun
+	name = "Captain's secure safe"
+	desc = "An electronic safe manufactured by Cybersun Virtual Solutions."
+
+/obj/item/storage/secure/safe/cybersun/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag(src)
+	new /obj/item/ammo_box/magazine/m22lr_himehabu(src)
+	new /obj/item/ammo_box/magazine/m22lr_himehabu(src)
+
+/obj/item/storage/secure/safe/cybersun/solutions/PopulateContents()
+	. = ..()
+	new /obj/item/folder/documents/syndicate/cybersun(src)
+
+/obj/item/storage/secure/safe/cybersun/biodynamics/PopulateContents()
+	. = ..()
+	new /obj/item/folder/documents/syndicate/cybersun/biodynamics(src)

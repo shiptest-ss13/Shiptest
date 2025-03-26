@@ -6,8 +6,6 @@ FLOOR SAFES
 
 /// Chance for a sound clue
 #define SOUND_CHANCE 10
-/// Explosion number threshold for opening safe
-#define BROKEN_THRESHOLD 3
 
 //SAFES
 /obj/structure/safe
@@ -35,15 +33,16 @@ FLOOR SAFES
 	var/current_tumbler_index = 1
 	/// The combined w_class of everything in the safe
 	var/space = 0
-	/// Tough, but breakable if explosion counts reaches set value
-	var/explosion_count = 0
+	/// The lock is broken if this is true
+	var/safe_broken = FALSE
 
 /obj/structure/safe/Initialize(mapload)
 	. = ..()
 
 	// Combination generation
-	for(var/i in 1 to number_of_tumblers)
-		tumblers.Add(rand(0, 99))
+	if(!tumblers.len)
+		for(var/i in 1 to number_of_tumblers)
+			tumblers.Add(rand(0, 99))
 
 	if(!mapload)
 		return
@@ -75,20 +74,22 @@ FLOOR SAFES
 		if(istype(I, /obj/item/clothing/neck/stethoscope))
 			attack_hand(user)
 			return
+
+		else if(I.tool_behaviour == TOOL_DECONSTRUCT)
+			user.visible_message("<span class='warning'>[user] begin to cut through the lock of \the [src].</span>","<span class='notice'>You start cutting trough the lock of [src].</span>")
+			if(I.use_tool(src, user, 45 SECONDS))
+				broken = TRUE
+				user.visible_message("<span class='warning'>[user] successfully cuts trough the lock of \the [src].</span>","<span class='notice'>You successfully cut trough the lock of [src].</span>")
+
 		else
 			to_chat(user, "<span class='warning'>You can't put [I] into the safe while it is closed!</span>")
 			return
 
 /obj/structure/safe/ex_act(severity, target)
-	if(((severity == 2 && target == src) || severity == 1) && explosion_count < BROKEN_THRESHOLD)
-		explosion_count++
-		switch(explosion_count)
-			if(1)
-				desc = initial(desc) + "\nIt looks a little banged up."
-			if(2)
-				desc = initial(desc) + "\nIt's pretty heavily damaged."
-			if(3)
-				desc = initial(desc) + "\nThe lock seems to be broken."
+	if(((severity == 2 && target == src) || severity == 1) && !safe_broken)
+		safe_broken = TRUE
+		if(safe_broken)
+			desc = initial(desc) + "\nThe lock seems to be broken."
 
 /obj/structure/safe/ui_assets(mob/user)
 	return list(
@@ -203,7 +204,7 @@ FLOOR SAFES
 * Checks if safe is considered in a broken state for force-opening the safe
 */
 /obj/structure/safe/proc/check_broken()
-	return broken || explosion_count >= BROKEN_THRESHOLD
+	return broken || safe_broken
 
 /**
 * Called every dial turn to determine whether the safe should unlock or not.
@@ -241,4 +242,3 @@ FLOOR SAFES
 	AddElement(/datum/element/undertile)
 
 #undef SOUND_CHANCE
-#undef BROKEN_THRESHOLD

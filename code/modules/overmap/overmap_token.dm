@@ -1,5 +1,6 @@
 /obj/overmap
 	icon = 'icons/misc/overmap.dmi'
+	mouse_opacity = 2
 	///~~If we need to render a map for cameras and helms for this object~~ basically can you look at and use this as a ship or station.
 	var/render_map = FALSE
 	/// The parent overmap datum for this overmap token that has all of the actual functionality.
@@ -9,6 +10,8 @@
 	var/atom/movable/screen/map_view/cam_screen
 	var/atom/movable/screen/plane_master/lighting/cam_plane_master
 	var/atom/movable/screen/background/cam_background
+	/// Countdown we use in case it's needed
+	var/obj/effect/countdown/countdown
 
 /obj/overmap/rendered
 	render_map = TRUE
@@ -46,13 +49,6 @@
 		QDEL_NULL(cam_background)
 	return ..()
 
-/obj/overmap/attack_ghost(mob/user)
-	. = ..()
-	var/turf/jump_to_turf = parent.get_jump_to_turf()
-	if(!jump_to_turf)
-		return
-	user.abstract_move(jump_to_turf)
-
 /obj/overmap/vv_edit_var(var_name, var_value)
 	switch(var_name)
 		if(NAMEOF(src, render_map))
@@ -81,9 +77,10 @@
 		if(NAMEOF(src, y))
 			return parent.overmap_move(parent.x, var_value)
 		if(NAMEOF(src, name))
-			parent.Rename(var_value)
+			parent.Rename(var_value, TRUE)
 			return TRUE
 	return ..()
+
 /**
  * Updates the screen object, which is displayed on all connected helms
  */
@@ -101,3 +98,43 @@
 		cam_background.icon_state = "clear"
 		cam_background.fill_rect(1, 1, size_x, size_y)
 		return TRUE
+
+/obj/overmap/proc/choose_token(mob/user)
+	var/nearby_objects = SSovermap.overmap_container[parent.x][parent.y]
+	if(length(nearby_objects) <= 1)
+		return src
+
+	var/list/choices_to_options = list() //Dict of object name | dict of object processing settings
+	var/list/choices = list()
+	for(var/datum/overmap/nearby_object in nearby_objects)
+		if(!nearby_object.token)
+			continue
+		var/obj/overmap/token = nearby_object.token
+		var/option_name = token.name
+		choices_to_options[option_name] = token
+		choices += list("[option_name]" = image(icon = token.icon, icon_state = token.icon_state))
+
+	var/picked = show_radial_menu(user, src, choices, radius = 42, require_near = FALSE)
+	var/obj/overmap/picked_token = choices_to_options[picked]
+	return picked_token
+
+/obj/overmap/Click(location, control, params)
+	var/obj/overmap/token = choose_token(usr)
+	if(!isobj(token))
+		return
+	if(token.flags_1 & INITIALIZED_1)
+		SEND_SIGNAL(token, COMSIG_CLICK, location, control, params, usr)
+
+		usr.ClickOn(token, params)
+
+/obj/overmap/attack_ghost(mob/user)
+	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_GHOST, user) & COMPONENT_NO_ATTACK_HAND)
+		return TRUE
+	var/turf/jump_to_turf = parent.get_jump_to_turf()
+	if(!jump_to_turf)
+		return
+	user.abstract_move(jump_to_turf)
+
+/obj/overmap/examine(mob/user)
+	. = ..()
+	parent.ui_interact(user)

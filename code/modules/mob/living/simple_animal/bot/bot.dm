@@ -8,7 +8,7 @@
 	wander = 0
 	healable = 0
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	maxbodytemp = INFINITY
 	minbodytemp = 0
 	has_unlimited_silicon_privilege = 1
@@ -457,7 +457,7 @@ Pass the desired type path itself, declaring a temporary var beforehand is not r
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
-	var/list/adjacent = T.GetAtmosAdjacentTurfs()
+	var/list/adjacent = T.get_atmos_adjacent_turfs()
 	if(shuffle)	//If we were on the same tile as another bot, let's randomize our choices so we dont both go the same way
 		adjacent = shuffle(adjacent)
 		shuffle = FALSE
@@ -564,7 +564,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 	var/datum/job/captain/All = new/datum/job/captain
 	all_access.access = All.get_access()
 
-	set_path(get_path_to(src, waypoint, /turf/proc/Distance_cardinal, 0, 200, id=all_access))
+	set_path(get_path_to(src, waypoint, 200, id=all_access))
 	calling_ai = caller //Link the AI to the bot!
 	ai_waypoint = waypoint
 
@@ -782,16 +782,16 @@ Pass a positive integer as an argument to override a bot's default speed.
 // given an optional turf to avoid
 /mob/living/simple_animal/bot/proc/calc_path(turf/avoid)
 	check_bot_access()
-	set_path(get_path_to(src, patrol_target, /turf/proc/Distance_cardinal, 0, 120, id=access_card, exclude=avoid))
+	set_path(get_path_to(src, patrol_target, 120, id=access_card, exclude=avoid))
 
 /mob/living/simple_animal/bot/proc/calc_summon_path(turf/avoid)
 	check_bot_access()
 	INVOKE_ASYNC(src, PROC_REF(do_calc_summon_path), avoid)
 
 /mob/living/simple_animal/bot/proc/do_calc_summon_path(turf/avoid)
-	set_path(get_path_to(src, summon_target, /turf/proc/Distance_cardinal, 0, 150, id=access_card, exclude=avoid))
+	set_path(get_path_to(src, summon_target, 150, id=access_card, exclude=avoid))
 	if(!length(path)) //Cannot reach target. Give up and announce the issue.
-		speak("Summon command failed, destination unreachable.",radio_channel)
+		speak("Summon command failed, destination unreachable.", radio_channel)
 		bot_reset()
 
 /mob/living/simple_animal/bot/proc/summon_step()
@@ -816,7 +816,9 @@ Pass a positive integer as an argument to override a bot's default speed.
 		calc_summon_path()
 
 /mob/living/simple_animal/bot/proc/summon_step_not_moved()
-	calc_summon_path()
+	//calc_summon_path()
+	speak("Summon command failed, destination unreachable.",radio_channel)
+	bot_reset()
 	tries = 0
 
 /mob/living/simple_animal/bot/Bump(atom/A) //Leave no door unopened!

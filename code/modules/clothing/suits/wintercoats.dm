@@ -65,28 +65,7 @@
 	icon_state = "coatmedical"
 	item_state = "coatmedical"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical
-	allowed = list(
-				/obj/item/analyzer,
-				/obj/item/sensor_device,
-				/obj/item/stack/medical,
-				/obj/item/dnainjector,
-				/obj/item/reagent_containers/dropper,
-				/obj/item/reagent_containers/syringe,
-				/obj/item/reagent_containers/hypospray,
-				/obj/item/healthanalyzer,
-				/obj/item/flashlight/pen,
-				/obj/item/reagent_containers/glass/bottle,
-				/obj/item/reagent_containers/glass/beaker,
-				/obj/item/reagent_containers/pill,
-				/obj/item/storage/pill_bottle,
-				/obj/item/paper,
-				/obj/item/melee/classic_baton/telescopic,
-				/obj/item/toy,
-				/obj/item/storage/fancy/cigarettes,
-				/obj/item/lighter,
-				/obj/item/tank/internals/emergency_oxygen,
-				/obj/item/tank/internals/plasmaman,
-				)
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/head/hooded/winterhood/medical
 	icon_state = "hood_medical"

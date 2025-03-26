@@ -21,12 +21,12 @@ Borg Hypospray
 	possible_transfer_amounts = list()
 	var/mode = 1
 	var/charge_cost = 50
-	var/charge_tick = 0
-	var/recharge_time = 5 //Time it takes for shots to recharge (in seconds)
+	var/charge_timer = 0
+	var/recharge_time = 10 //Time it takes for shots to recharge (in seconds)
 	var/bypass_protection = 0 //If the hypospray can go through armor or thick material
 
 	var/list/datum/reagents/reagent_list = list()
-	var/list/reagent_ids = list(/datum/reagent/medicine/dexalin, /datum/reagent/medicine/kelotane, /datum/reagent/medicine/bicaridine, /datum/reagent/medicine/antitoxin, /datum/reagent/medicine/epinephrine, /datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/salglu_solution)
+	var/list/reagent_ids = list(/datum/reagent/medicine/dexalin, /datum/reagent/medicine/kelotane, /datum/reagent/medicine/bicaridine, /datum/reagent/medicine/antitoxin, /datum/reagent/medicine/epinephrine, /datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/salglu_solution, /datum/reagent/medicine/morphine)
 	var/accepts_reagent_upgrades = TRUE //If upgrades can increase number of reagents dispensed.
 	var/list/modes = list() //Basically the inverse of reagent_ids. Instead of having numbers as "keys" and strings as values it has strings as keys and numbers as values.
 								//Used as list for input() in shakers.
@@ -47,11 +47,11 @@ Borg Hypospray
 	QDEL_LIST(reagent_list)
 	return ..()
 
-/obj/item/reagent_containers/borghypo/process() //Every [recharge_time] seconds, recharge some reagents for the cyborg
-	charge_tick++
-	if(charge_tick >= recharge_time)
+/obj/item/reagent_containers/borghypo/process(seconds_per_tick) //Every [recharge_time] seconds, recharge some reagents for the cyborg
+	charge_timer += seconds_per_tick
+	if(charge_timer >= recharge_time)
 		regenerate_reagents()
-		charge_tick = 0
+		charge_timer = 0
 
 	//update_appearance()
 	return 1

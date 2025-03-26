@@ -74,7 +74,7 @@
 		begin_processing()
 
 
-/obj/machinery/smoke_machine/process()
+/obj/machinery/smoke_machine/process(seconds_per_tick)
 	..()
 	if(reagents.total_volume == 0)
 		on = FALSE

@@ -24,6 +24,7 @@
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
 	experience_given = 0 // per_trauma
+	fuckup_damage = 15
 
 /datum/surgery/brain_surgery/can_start(mob/user, mob/living/carbon/target)
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
@@ -55,7 +56,7 @@
 			"<span class='warning'>[user] screws up, causing brain damage!</span>",
 			"<span class='notice'>[user] completes the surgery on [target]'s brain.</span>")
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60)
-		target.gain_trauma_type(BRAIN_TRAUMA_SEVERE, TRAUMA_RESILIENCE_LOBOTOMY)
+		target.gain_trauma_type(BRAIN_TRAUMA_SEVERE, TRAUMA_RESILIENCE_SURGERY)
 	else
 		user.visible_message("<span class='warning'>[user] suddenly notices that the brain [user.p_they()] [user.p_were()] working on is not there anymore.</span>", "<span class='warning'>You suddenly notice that the brain you were working on is not there anymore.</span>")
 	return FALSE

@@ -41,20 +41,30 @@
 //Unarmored suits//
 ///////////////////
 
-/obj/item/clothing/suit/frontiersmen
+/obj/item/clothing/suit/frontiersmen //Ideally, the basic suit model here should be turned into a placeholder model, and this item have "smock" or "apron" added on the end.
 	name = "frontiersmen smock"
 	desc = "A basic white surgical apron worn by the Frontiersmen. It seems it could stain very easily..."
 	icon_state = "frontier_surgery"
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 //////////////////
 //Armored suits//
 /////////////////
 
-/obj/item/clothing/suit/armor/vest/bulletproof/frontier
-	name = "\improper Frontiersmen bulletproof armor"
+/obj/item/clothing/suit/armor/vest/frontier
+	name = "\improper Frontiersmen armor vest"
 	desc = "A scrap piece of armor made of disused protective plates. This one was used to protect the squishy bits of a Frontiersman, once."
+	icon_state = "frontier_armor"
+	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	blood_overlay_type = "armor"
+	supports_variations = VOX_VARIATION
+
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	name = "\improper Frontiersmen reinforced armor vest"
+	desc = "A battletested piece of armor made of sturdy protective plates. This one is significantly tougher than similar vests."
 	icon_state = "frontier_armor"
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
@@ -129,9 +139,11 @@
 	name = "frontiersman cap"
 	desc = "An olive-green and grey baseball hat, worn by cargo technicians working under the Frontiersmen. Even they have the rights for a cool cap!"
 	icon_state = "frontiersoft"
-	soft_type = "frontiersmen"
+	current_skin = "frontiersoft"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	unique_reskin = null
+	current_skin = null
 
 /obj/item/clothing/head/beret/sec/frontier
 	name = "\improper Frontiersmen beret"
@@ -178,6 +190,7 @@
 	icon_state = "x11helm_frontier"
 	unique_reskin = null
 	supports_variations = VOX_VARIATION
+	can_flashlight = TRUE
 
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier/fireproof
 	name = "\improper fireproof frontiersmen X-11 helmet"
@@ -187,14 +200,22 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
+	can_flashlight = TRUE
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 
-/obj/item/clothing/head/helmet/marine/frontier
+/obj/item/clothing/head/helmet/frontier
 	name = "frontiersmen reinforced helmet"
 	desc = "A reinforced Frontiersmen X-11. The front plate has a small window to let the user see."
 	icon_state = "marine_frontier"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	armor = list("melee" = 35, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50)
+	slowdown = 0.1
+	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
+	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
+	can_flashlight = TRUE
 
 ////////////
 //Glasses//
@@ -230,24 +251,11 @@
 
 	unique_reskin = null
 
-/obj/item/storage/belt/medical/webbing/frontiersmen
-	name = "leather medical bandolier"
-	desc = "A rudimentary leather bandolier, utilized by both independents and frontiersmen alike. This one is painted white, usually to be worn by a medic."
-	icon_state = "frontiermedicalwebbing"
-	item_state = "frontiermedicalwebbing"
-	icon = 'icons/obj/clothing/faction/frontiersmen/belt.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/belt.dmi'
-
-/obj/item/storage/belt/medical/webbing/frontiersmen/surgery/PopulateContents()
-	new /obj/item/scalpel(src)
-	new /obj/item/circular_saw(src)
-	new /obj/item/surgicaldrill(src)
-	new /obj/item/retractor(src)
-	new /obj/item/cautery(src)
-	new /obj/item/hemostat(src)
-	new /obj/item/hypospray/mkii(src)
-	update_appearance()
-
+/obj/item/storage/belt/security/military/frontiersmen/illestren/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/illestren_a850r(src)
+	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/skm_ammo/PopulateContents()
 	for(var/i in 1 to 4)
@@ -268,3 +276,30 @@
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/glass/beaker/large/napalm(src)
 	new /obj/item/grenade/frag(src)
+
+
+/obj/item/storage/belt/medical/webbing/frontiersmen
+	name = "leather medical bandolier"
+	desc = "A rudimentary leather bandolier, utilized by both independents and frontiersmen alike. This one is painted white, usually to be worn by a medic."
+	icon_state = "frontiermedicalwebbing"
+	item_state = "frontiermedicalwebbing"
+	icon = 'icons/obj/clothing/faction/frontiersmen/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/belt.dmi'
+
+/obj/item/storage/belt/medical/webbing/frontiersmen/surgery/PopulateContents()
+	new /obj/item/scalpel(src)
+	new /obj/item/circular_saw(src)
+	new /obj/item/surgicaldrill(src)
+	new /obj/item/retractor(src)
+	new /obj/item/cautery(src)
+	new /obj/item/hemostat(src)
+	new /obj/item/hypospray/mkii(src)
+	update_appearance()
+
+/obj/item/storage/belt/medical/webbing/frontiersmen/combat/PopulateContents()
+	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
+	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/stack/medical/splint(src)

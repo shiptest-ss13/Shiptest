@@ -18,13 +18,19 @@
 	var/list/cant_hold								//if this is set, items, and their children, won't fit
 	var/list/exception_hold           //if set, these items will be the exception to the max size of object that can fit.
 	var/list/can_hold_trait							/// If set can only contain stuff with this single trait present.
+	var/list/can_hold_max_of_items 			// if set, storage can only hold up to the set amount of said item.
 
 	var/can_hold_description
 
 	var/list/mob/is_using							//lazy list of mobs looking at the contents of this storage.
 
 	var/locked = FALSE								//when locked nothing can see inside or use it.
-	var/locked_flavor = "locked"					//prevents tochat messages related to locked from sending
+	var/locked_flavor = "seems to be locked!"					//prevents tochat messages related to locked from sending
+
+	/// If the storage object can be accessed while equipped to slot by mob(e.g. backpack in back slot)
+	var/worn_access = TRUE
+	/// If the storage object can be accessed while being held anywhere on a mob
+	var/carry_access = TRUE
 
 	/// Storage flags, including what kinds of limiters we use for how many items we can hold
 	var/storage_flags = STORAGE_FLAGS_LEGACY_DEFAULT
@@ -109,6 +115,7 @@
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(preattack_intercept))
 	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(attack_self))
 	RegisterSignal(parent, COMSIG_ITEM_PICKUP, PROC_REF(signal_on_pickup))
+	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(signal_on_equip))
 
 	RegisterSignal(parent, COMSIG_MOVABLE_POST_THROW, PROC_REF(close_all))
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
@@ -221,7 +228,7 @@
 	SIGNAL_HANDLER
 
 	if(locked)
-		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
+		to_chat(M, "<span class='warning'>[parent] [locked_flavor]</span>")
 		return FALSE
 	if((M.get_active_held_item() == parent) && allow_quick_empty)
 		INVOKE_ASYNC(src, PROC_REF(quick_empty), M)
@@ -232,8 +239,10 @@
 	if(!isitem(O) || !click_gather || SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE))
 		return FALSE
 	. = COMPONENT_NO_ATTACK
+	if(!access_check(M))
+		return FALSE
 	if(locked)
-		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
+		to_chat(M, "<span class='warning'>[parent] [locked_flavor]</span>")
 		return FALSE
 	var/obj/item/I = O
 	if(collection_mode == COLLECT_ONE)
@@ -252,6 +261,8 @@
 	var/len = length(things)
 	if(!len)
 		to_chat(M, "<span class='warning'>You failed to pick up anything with [parent]!</span>")
+		return
+	if(!M.CanReach(I, src, TRUE)) // You can't steal things you can't see or reach
 		return
 	if(I.anchored)
 		to_chat(M, "<span class='warning'>\The [I] is stuck to the ground and cannot be picked up by [parent]!</span>")
@@ -308,6 +319,8 @@
 	var/atom/A = parent
 	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated())
 		return
+	if(!access_check(M))
+		return FALSE
 	if(locked)
 		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return FALSE
@@ -425,6 +438,8 @@
 	var/atom/A = parent
 	var/atom/dump_destination = dest_object.get_dumping_location()
 	if(M.CanReach(A) && dump_destination && M.CanReach(dump_destination))
+		if(!access_check(M))
+			return FALSE
 		if(locked)
 			to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 			return FALSE
@@ -517,7 +532,7 @@
 	playsound(A, "rustle", 50, TRUE, -5)
 	if(istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
-		M.putItemFromInventoryInHandIfPossible(A, H.held_index)
+		M.putItemFromInventoryInHandIfPossible(A, H.held_index, FALSE, TRUE)
 		return
 	A.add_fingerprint(M)
 
@@ -526,8 +541,10 @@
 	if(!istype(M))
 		return FALSE
 	A.add_fingerprint(M)
-	if(locked && !force)
+	if(!force && locked)
 		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
+		return FALSE
+	if(!force && !access_check(M))
 		return FALSE
 	if(force || M.CanReach(parent, view_only = TRUE))
 		if(use_sound && !silent)
@@ -547,7 +564,7 @@
 
 //This proc return 1 if the item can be picked up and 0 if it can't.
 //Set the stop_messages to stop it from printing messages
-/datum/component/storage/proc/can_be_inserted(obj/item/I, stop_messages = FALSE, mob/M)
+/datum/component/storage/proc/can_be_inserted(obj/item/I, stop_messages = FALSE, mob/M, bypass_access = FALSE)
 	if(!istype(I) || (I.item_flags & ABSTRACT))
 		return FALSE //Not an item
 	if(I == parent)
@@ -556,6 +573,9 @@
 	var/atom/host = parent
 	if(real_location == I.loc)
 		return FALSE //Means the item is already in the storage item
+	if(!bypass_access)//For stuff like setting up outfits, setting up roundstart backpacks, etc.
+		if(!access_check(M))
+			return FALSE
 	if(locked)
 		if(M && !stop_messages)
 			host.add_fingerprint(M)
@@ -566,6 +586,16 @@
 			if(!stop_messages)
 				to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
 			return FALSE
+	if(length(can_hold_max_of_items))
+		if(is_type_in_typecache(I,can_hold_max_of_items))
+			var/amount = 0
+			for(var/_item in contents())
+				if(is_type_in_typecache(_item,can_hold_max_of_items))
+					amount++
+			if(amount >= can_hold_max_of_items[I.type])
+				if(!stop_messages)
+					to_chat(M, "<span class='warning'>[host] cannot hold another [I]!</span>")
+					return FALSE
 	if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT) || (can_hold_trait && !HAS_TRAIT(I, can_hold_trait))) //Items which this container can't hold.
 		if(!stop_messages)
 			to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
@@ -649,17 +679,17 @@
 		var/obj/O = parent
 		O.update_appearance()
 
-/datum/component/storage/proc/signal_insertion_attempt(datum/source, obj/item/I, mob/M, silent = FALSE, force = FALSE)
+/datum/component/storage/proc/signal_insertion_attempt(datum/source, obj/item/I, mob/M, silent = FALSE, force = FALSE, bypass_access = FALSE)
 	SIGNAL_HANDLER
 
-	if((!force && !can_be_inserted(I, TRUE, M)) || (I == parent))
+	if((!force && !can_be_inserted(I, TRUE, M, bypass_access)) || (I == parent))
 		return FALSE
 	return handle_item_insertion(I, silent, M)
 
-/datum/component/storage/proc/signal_can_insert(datum/source, obj/item/I, mob/M, silent = FALSE)
+/datum/component/storage/proc/signal_can_insert(datum/source, obj/item/I, mob/M, silent = FALSE, bypass_access = FALSE)
 	SIGNAL_HANDLER
 
-	return can_be_inserted(I, silent, M)
+	return can_be_inserted(I, silent, M, bypass_access)
 
 /datum/component/storage/proc/show_to_ghost(datum/source, mob/dead/observer/M)
 	SIGNAL_HANDLER
@@ -744,6 +774,8 @@
 
 	if(A.loc == user)
 		. = COMPONENT_NO_ATTACK_HAND
+		if(!access_check(user))
+			return FALSE
 		if(locked)
 			to_chat(user, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		else
@@ -757,6 +789,12 @@
 	update_actions()
 	for(var/mob/M in can_see_contents() - user)
 		close(M)
+
+/datum/component/storage/proc/signal_on_equip(datum/source, mob/user)
+	SIGNAL_HANDLER
+
+	if(!worn_access)
+		close(user)
 
 /datum/component/storage/proc/signal_take_obj(datum/source, atom/movable/AM, new_loc, force = FALSE)
 	SIGNAL_HANDLER
@@ -783,6 +821,8 @@
 /datum/component/storage/proc/on_alt_click_async(datum/source, mob/user)
 	if(!isliving(user) || !user.CanReach(parent) || user.incapacitated())
 		return
+	if(!access_check(user))
+		return FALSE
 	if(locked)
 		to_chat(user, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return
@@ -822,3 +862,27 @@
 //Gets our max volume
 /datum/component/storage/proc/get_max_volume()
 	return max_volume || AUTO_SCALE_STORAGE_VOLUME(max_w_class, max_combined_w_class)
+
+//checks for mob-related storage access conditions
+/datum/component/storage/proc/access_check(mob/user, message = TRUE)
+	var/atom/parent_atom = parent
+
+	//if we are inside another storage object, check access there recursively
+	var/atom/container_atom = parent_atom.loc
+	var/datum/component/storage/container_storage = container_atom.GetComponent(/datum/component/storage)
+	if(container_storage && !container_storage.access_check(user))
+		return FALSE // If we can't access the storage we're in, we can't access us, message is handled by recursion
+
+	if(ismob(container_atom))
+		var/mob/holder = container_atom
+
+		if(!carry_access)
+			if(message)
+				to_chat(user, span_warning("[parent_atom] is too cumbersome to open inhand, you're going to have to set it down!"))
+			return FALSE
+
+		if(!worn_access && !holder.held_items.Find(parent_atom))
+			if(message)
+				to_chat(user, span_warning("Your arms aren't long enough to reach [parent_atom] while it's on your back!"))
+			return FALSE
+	return TRUE

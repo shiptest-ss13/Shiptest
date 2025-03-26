@@ -70,9 +70,9 @@
 			return
 		switch(sender)
 			if (RADIO_CHANNEL_SYNDICATE)
-				sender = input("From what branch?", "Syndicate") as null|anything in list("Syndicate High Command", "The Anti-Corporation Liberation Front", "The Gorlex Marauders", "Donk! Corporation", "Cybersun Virtual Solutions", "The Galactic Engineer's Concordat", "The Naturalienwissenschaftlicher Studentenverbindungs-Verband")
+				sender = input("From what faction?", "Syndicate") as null|anything in list("Liberation Front Leadership", "Gorlex Republic Military Command", "Cybersun Industries", "the Student-Union of Naturalistic Sciences")
 			if (RADIO_CHANNEL_MINUTEMEN)
-				sender = input("From what division?", "Minutemen") as null|anything in list("CLIP Minutemen Headquarters", "The Galactic Optium Labor Divison", "The Biohazard Assesment and Removal Division")
+				sender = input("From what division?", "Minutemen") as null|anything in list("the Colonial League Minutemen", "the Galactic Optium Labor Divison", "the Biohazard Assesment and Removal Division")
 			if (RADIO_CHANNEL_INTEQ)
 				sender = "Inteq Risk Management"
 			if ("Outpost")
@@ -360,19 +360,18 @@
 	message_admins("[key_name_admin(src)] has changed Central Command's name to [input]")
 	log_admin("[key_name(src)] has changed the Central Command name to: [input]")
 
-/client/proc/cmd_admin_distress_signal()
+/client/proc/cmd_admin_distress_signal(datum/overmap/overmap_location as anything in SSovermap.overmap_objects)
 	set category = "Event"
 	set name = "Create Distress Signal"
 
-	var/datum/overmap/ship/ship = SSshuttle.get_ship(usr)
-	if(!ship)
+	if(!istype(overmap_location)) // Sanity check
 		return
-	var/confirm = alert(src, "Do you want to create a distress signal for [ship.name]", "Distress Signal", "Yes", "Cancel")
+	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name]", "Distress Signal", "Yes", "No")
 
 	switch(confirm)
 		if("Yes")
-			create_distress_beacon(ship)
-		if("Cancel")
+			create_distress_beacon(overmap_location)
+		if("No")
 			return
 
 /client/proc/cmd_admin_delete(atom/A as obj|mob|turf in world)
@@ -832,7 +831,7 @@
 
 /client/proc/spawn_ruin()
 	set name = "Spawn Planet/Ruin"
-	set category = "Event.Spawning"
+	set category = "Event.Overmap"
 	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
 		return
 
@@ -854,7 +853,7 @@
 
 		switch(ruin_force)
 			if("Random")
-				//Can't use pickweight as it might be from "everything"
+				//Can't use pick_weight as it might be from "everything"
 				ruin_target = select_from[pick(select_from)]
 			else
 				var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
@@ -873,23 +872,22 @@
 	else
 		position = SSovermap.get_unused_overmap_square()
 
-	message_admins("Generating a new Planet with ruin: [ruin_target], this may take some time!")
+	var/admin_load_instant = FALSE
+	if(tgui_alert(usr, "Instant admin load?", "Spawn Planet/Ruin", list("Yes", "No"), 10 SECONDS) == "Yes")
+		admin_load_instant = TRUE
+
+	message_admins("Creating a new Planet with ruin: [ruin_target].")
 	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
 		return
 	var/datum/overmap/dynamic/encounter = new(position, FALSE)
+	message_admins("new Planet token: [ADMIN_JMP(encounter.token)]. new Planet datum: [ADMIN_VV(encounter)]")
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
 	if(!ruin_target)
 		encounter.ruin_type = null
-	encounter.preserve_level = TRUE
-	encounter.load_level()
-
-	message_admins(span_big("Click here to jump to the overmap token: " + ADMIN_JMP(encounter.token)))
-	message_admins(span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(encounter.reserve_docks[1])))
-	for(var/ruin in encounter.ruin_turfs)
-		var/turf/ruin_turf = encounter.ruin_turfs[ruin]
-		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
+	if(admin_load_instant)
+		encounter.admin_load()
 
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"

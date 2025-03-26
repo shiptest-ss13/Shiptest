@@ -7,6 +7,7 @@
 	var/t_him = p_them()
 	var/t_has = p_have()
 	var/t_is = p_are()
+	var/t_es = p_es()
 	var/obscure_name
 	var/list/obscured = check_obscured_slots()
 	var/skipface = ((wear_mask?.flags_inv & HIDEFACE) || (head?.flags_inv & HIDEFACE))
@@ -99,8 +100,10 @@
 	if(!(ITEM_SLOT_EYES in obscured))
 		if(glasses)
 			. += "[t_He] [t_has] [glasses.get_examine_string(user)] covering [t_his] eyes."
-		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
-			. += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>"
+		else if(HAS_TRAIT(src, TRAIT_CLOUDED))
+			. += span_notice("[t_His] eyes are clouded in silver.")
+		else if(HAS_TRAIT(src, TRAIT_PINPOINT_EYES))
+			. += span_warning("[t_His] pupils have diliated to pinpricks.")
 
 	//ears
 	if(ears && !(ITEM_SLOT_EARS in obscured))
@@ -115,14 +118,16 @@
 	if (length(status_examines))
 		. += status_examines
 
-	//Jitters
+	//jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
-			. += "<span class='warning'><B>[t_He] [t_is] convulsing violently!</B></span>"
+			. += span_boldwarning("[t_He] [t_is] convulsing violently!")
 		if(200 to 300)
-			. += "<span class='warning'>[t_He] [t_is] extremely jittery.</span>"
+			. += span_warning("[t_He] [t_is] extremely jittery.")
 		if(100 to 200)
-			. += "<span class='warning'>[t_He] [t_is] twitching ever so slightly.</span>"
+			. += span_warning("[t_He] [t_is] twitching ever so slightly.")
+		if(50 to 100)
+			. += span_warning("[t_He] [t_is] flinching lightly")
 
 	var/appears_dead = FALSE
 	var/just_sleeping = FALSE
@@ -167,6 +172,13 @@
 		if(BP.bodypart_disabled)
 			disabled += BP
 		missing -= BP.body_zone
+		if(BP.uses_integrity && (BP.integrity_loss-BP.integrity_ignored) > 0)
+			if ((BP.integrity_loss-BP.integrity_ignored) > BP.max_damage*0.66)
+				msg += "<B>[t_His] [BP.name] is [BP.heavy_integrity_msg]!</B>\n"
+			else if (BP.integrity_loss-BP.integrity_ignored > BP.max_damage*0.33)
+				msg += "[t_His] [BP.name] is [BP.medium_integrity_msg]!\n"
+			else
+				msg += "[t_His] [BP.name] is [BP.light_integrity_msg].\n"
 		for(var/obj/item/I in BP.embedded_objects)
 			if(I.isEmbedHarmless())
 				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] stuck to [t_his] [BP.name]!</B>\n"
@@ -323,6 +335,8 @@
 				if(HAS_TRAIT(src, TRAIT_DUMB))
 					msg += "[t_He] [t_has] a stupid expression on [t_his] face.\n"
 		if(getorgan(/obj/item/organ/brain))
+			if(ai_controller?.ai_status == AI_STATUS_ON)
+				msg += "<span class='deadsay'>[t_He] do[t_es]n't appear to be [t_him]self.</span>\n"
 			if(!key)
 				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
 			else if(!client)
@@ -432,4 +446,4 @@
 	if ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 		return
 	if(get_age())
-		. += list(span_notice("[p_they(TRUE)] appear[p_s()] to be [get_age()]."))
+		. += span_notice("[p_they(TRUE)] appear[p_s()] to be [get_age()].")

@@ -107,10 +107,6 @@
 		target.show_message(span_warning("You resist your inner urges to break out your best moves."), 2)
 		target.set_drugginess(5)
 		return
-	if(istype(target.get_item_by_slot(ITEM_SLOT_HEAD), /obj/item/clothing/head/foilhat))
-		to_chat(target, span_userdanger("BIG DISCO WON'T CORRUPT ME WITH THEIR POST ICW PSY-OP MUSIC!"))
-		target.emote("scream")
-		return
 
 	target.set_drugginess(10)
 	target.show_message(span_warning("You feel a strong rythme and your muscles spasm uncontrollably, you begin dancing and cannot move!"), 2)

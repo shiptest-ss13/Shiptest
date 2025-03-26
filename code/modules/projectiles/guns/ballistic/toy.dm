@@ -9,14 +9,17 @@
 
 	icon_state = "toysmg"
 	item_state = "toysmg"
-	mag_type = /obj/item/ammo_box/magazine/toy/smg
+	default_ammo_type = /obj/item/ammo_box/magazine/toy/smg
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/toy/smg,
+	)
 	fire_sound = 'sound/items/syringeproj.ogg'
 	force = 0
 	throwforce = 0
 	burst_size = 3
 	item_flags = NONE
 	casing_ejector = FALSE
-	manufacturer = MANUFACTURER_NANOTRASEN
+	manufacturer = MANUFACTURER_DONKCO
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
 
@@ -29,7 +32,10 @@
 	item_state = "toypistol"
 	bolt_type = BOLT_TYPE_LOCKING
 	w_class = WEIGHT_CLASS_SMALL
-	mag_type = /obj/item/ammo_box/magazine/toy/pistol
+	default_ammo_type = /obj/item/ammo_box/magazine/toy/pistol
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/toy/pistol,
+	)
 	fire_sound = 'sound/items/syringeproj.ogg'
 	burst_size = 1
 	fire_delay = 0.2 SECONDS
@@ -38,7 +44,7 @@
 	recoil_unwielded = -10
 
 /obj/item/gun/ballistic/automatic/toy/pistol/riot
-	mag_type = /obj/item/ammo_box/magazine/toy/pistol/riot
+	default_ammo_type = /obj/item/ammo_box/magazine/toy/pistol/riot
 
 /obj/item/gun/ballistic/automatic/toy/pistol/riot/Initialize()
 	magazine = new /obj/item/ammo_box/magazine/toy/pistol/riot(src)
@@ -58,10 +64,14 @@
 
 	force = 0
 	throwforce = 0
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/toy
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/toy,
+	)
 	fire_sound = 'sound/items/syringeproj.ogg'
 	item_flags = NONE
 	casing_ejector = FALSE
+	manufacturer = MANUFACTURER_DONKCO
 	pb_knockback = 0
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
@@ -76,10 +86,12 @@
 	desc = "A weapon favored by many overactive children. Ages 8 and up."
 	icon_state = "foamcrossbow"
 	item_state = "crossbow"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy/crossbow
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/toy/crossbow
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/toy/crossbow,
+	)
 	fire_sound = 'sound/items/syringeproj.ogg'
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
-	manufacturer = MANUFACTURER_DONKCO
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10

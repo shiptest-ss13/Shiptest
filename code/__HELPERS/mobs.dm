@@ -308,6 +308,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		drifting = TRUE
 
 	var/holding = user.get_active_held_item()
+	var/whichhand = user.active_hand_index
 
 	delay *= user.do_after_coefficent()
 
@@ -337,6 +338,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		// Check flags
 		if(QDELETED(user) \
 			|| (!(timed_action_flags & IGNORE_USER_LOC_CHANGE) && !drifting && user.loc != user_loc) \
+			|| (!(timed_action_flags & IGNORE_HAND_CHANGE) && user.active_hand_index != whichhand) \
 			|| (!(timed_action_flags & IGNORE_HELD_ITEM) && user.get_active_held_item() != holding) \
 			|| (!(timed_action_flags & IGNORE_INCAPACITATED) && HAS_TRAIT(user, TRAIT_INCAPACITATED)) \
 			|| (extra_checks && !extra_checks.Invoke()))
@@ -481,28 +483,6 @@ GLOBAL_LIST_EMPTY(species_list)
 			to_chat(M, rendered_message)
 		else
 			to_chat(M, message)
-
-//Used in chemical_mob_spawn. Generates a random mob based on a given gold_core_spawnable value.
-/proc/create_random_mob(spawn_location, mob_class = HOSTILE_SPAWN)
-	var/static/list/mob_spawn_meancritters = list() // list of possible hostile mobs
-	var/static/list/mob_spawn_nicecritters = list() // and possible friendly mobs
-
-	if(mob_spawn_meancritters.len <= 0 || mob_spawn_nicecritters.len <= 0)
-		for(var/T in typesof(/mob/living/simple_animal))
-			var/mob/living/simple_animal/SA = T
-			switch(initial(SA.gold_core_spawnable))
-				if(HOSTILE_SPAWN)
-					mob_spawn_meancritters += T
-				if(FRIENDLY_SPAWN)
-					mob_spawn_nicecritters += T
-
-	var/chosen
-	if(mob_class == FRIENDLY_SPAWN)
-		chosen = pick(mob_spawn_nicecritters)
-	else
-		chosen = pick(mob_spawn_meancritters)
-	var/mob/living/simple_animal/C = new chosen(spawn_location)
-	return C
 
 /proc/passtable_on(target, source)
 	var/mob/living/L = target

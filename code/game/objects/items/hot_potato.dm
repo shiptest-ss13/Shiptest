@@ -67,13 +67,13 @@
 		return
 	return ..()
 
-/obj/item/hot_potato/process()
+/obj/item/hot_potato/process(seconds_per_tick)
 	if(stimulant)
 		if(isliving(loc))
 			var/mob/living/L = loc
 			L.SetStun(0)
 			L.SetKnockdown(0)
-			L.SetSleeping(0)
+			L.set_sleeping(0)
 			L.SetImmobilized(0)
 			L.SetParalyzed(0)
 			L.SetUnconscious(0)
