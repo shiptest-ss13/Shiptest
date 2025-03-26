@@ -15,7 +15,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	maxbodytemp = 400
 	unsuitable_atmos_damage = 15
-	faction = list(FACTION_ANTAG_SYNDICATE)
+	faction = list(FACTION_RAMZI)
 	loot = null
 	check_friendly_fire = TRUE
 	dodging = TRUE
@@ -311,6 +311,17 @@
 	minimum_distance = 2
 	shoot_point_blank = TRUE
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper
+	name = "Ramzi Clique Deadeye"
+	desc = "A deserter from the Gorlex Marauders turned pirate. The cold expressionless helmet betrays nothing but contempt as they await their next target."
+	minimum_distance = 7
+	vision_range = 12
+	aggro_vision_range = 14
+	icon_state = "syndicate_space_shotgun"
+	icon_living = "syndicate__space_shotgun"
+	casingtype = /obj/item/ammo_casing/a65clip
+	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
 	name = "Ramzi Clique Boiler"
 	desc = "A deserter from the Gorlex Marauders turned pirate. The hateful eyes of a hardsuit stare down the sight of a Bulldog shotgun, elegance in its movements."
@@ -361,6 +372,17 @@
 	casingtype = /obj/item/ammo_casing/shotgun/dragonsbreath
 	rapid = 2
 	rapid_fire_delay = 7
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/sniper
+	name = "Ramzi Clique Cleaner"
+	desc = "Black and red, black and red, and you're dead all over. They've already seen you, and are training their next shot with practiced distaste."
+	minimum_distance = 7
+	vision_range = 20
+	aggro_vision_range = 14
+	icon_state = "syndicate_shotgun"
+	icon_living = "syndicate_shotgun"
+	casingtype = /obj/item/ammo_casing/a65clip
+	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 ///////////////Misc////////////
 
