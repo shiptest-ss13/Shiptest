@@ -594,7 +594,7 @@
 	name = "CM-24 Surplus Stockpile Rifle"
 	desc = "Contains a higher-powered rifle chambered in 7.62x40 CLIP based on the SKM-24 platform, formerly the main service rifle of the CMM. This one has been pulled from reservist stockpiles."
 	cost = 5000
-	contains = list(/obj/item/storage/guncase/cm82)
+	contains = list(/obj/item/storage/guncase/cm24)
 	crate_name = "rifle crate"
 	faction = /datum/faction/clip
 	faction_discount = 0
