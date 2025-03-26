@@ -47,6 +47,13 @@
 	item_state = "formal_terragov"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/solgov/formal/captain
+	name = "\improper SolGov captain uniform"
+	desc = "A formal SolGov uniform, utilized by captains of SolGov vessels."
+	icon_state = "solgov_captain"
+	item_state = "solgov_captain"
+	can_adjust = FALSE
+
 /obj/item/clothing/under/plasmaman/solgov
 	name = "\improper SolGov envirosuit"
 	desc = "The pride of Solarian plasmamen everywhere- though this tends to be a somewhat exclusive club, due to Sol's agressive workplace safety regulations."
@@ -59,28 +66,18 @@
 /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	name = "\improper SolGov envirosuit helmet"
 	desc = "A generic white envirohelmet with a secondary blue."
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
 	icon_state = "solgov_envirohelm"
 	item_state = "solgov_envirohelm"
-
-/obj/item/clothing/under/solgov/formal/captain
-	name = "\improper SolGov captain uniform"
-	desc = "A formal SolGov uniform, utilized by captains of SolGov vessels."
-	icon_state = "solgov_captain"
-	item_state = "solgov_captain"
-	can_adjust = FALSE
-
-/obj/item/clothing/accessory/waistcoat/solgov
-	name = "solgov waistcoat"
-	desc = "A standard issue waistcoat in solgov colors."
-	icon_state = "solgov_waistcoat"
-	icon = 'icons/obj/clothing/faction/solgov/accessory.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/accessory.dmi'
 
 // Oversuits
 
 /obj/item/clothing/suit/armor/vest/solgov
 	name = "\improper Sonnensoldner gambison"
 	desc = "A standard armor vest fielded for SolGov's Sonnensoldners."
+	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
 	icon_state = "solgov_gambison"
 	item_state = "solgov_gambison"
 	supports_variations = DIGITIGRADE_VARIATION
@@ -114,15 +111,19 @@
 
 /obj/item/clothing/head/helmet/space/solgov
 	name = "\improper SolGov Vacuum Helmet"
-	icon_state = "vachelmet_solgov"
 	desc = "This space-proof helmet is meant to be worn with a matching T-MA suit."
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon_state = "vachelmet_solgov"
 	item_state = "vachelmet_solgov"
 	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
 
 /obj/item/clothing/suit/space/solgov
 	name = "\improper SolGov Vacuum Suit"
-	icon_state = "vacsuit_solgov"
 	desc = "Originally designed by independent contractors on Luna for the purposes of survival in hazardous environments, the lightweight Tortoise Microlite Armored Suit now sees widespread use by SolGov's exploration teams."
+	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
+	icon_state = "vacsuit_solgov"
 	item_state = "vacsuit_solgov"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy, /obj/item/tank/internals)
 	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
@@ -133,15 +134,20 @@
 /obj/item/clothing/head/helmet/space/hardsuit/solgov
 	name = "\improper SolGov hardsuit helmet"
 	desc = "An armored spaceproof helmet, its visor is reminiscent of knights of yore."
+	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
 	icon_state = "hardsuit0-solgov"
 	item_state = "hardsuit0-solgov"
 	hardsuit_type = "solgov"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75)
 
 /obj/item/clothing/suit/space/hardsuit/solgov //see this is a good path. not fucking /security/independant/inteq. its just /hardsuit/solgov
-	icon_state = "hardsuit_solgov"
+
 	name = "\improper SolGov hardsuit"
 	desc = "An armored spaceproof suit. A powered exoskeleton keeps the suit light and mobile."
+	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
+	icon_state = "hardsuit_solgov"
 	item_state = "hardsuit_solgov"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov
@@ -152,6 +158,8 @@
 /obj/item/clothing/suit/hazardvest/solgov
 	name = "SolGov hazard vest"
 	desc = "A high-visibility vest used in work zones by solarian engineers."
+	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
 	icon_state = "hazard_solgov"
 	item_state = "hazard_solgov"
 	blood_overlay_type = "armor"
@@ -163,6 +171,8 @@
 	name = "SolGov robe"
 	desc = "A set of plain SolGov robes, commonly used by civilians."
 	body_parts_covered = CHEST|GROIN|ARMS
+	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
 	icon_state = "solgov_robe"
 	item_state = "solgov_robe"
 
@@ -205,6 +215,8 @@
 /obj/item/clothing/suit/toggle/solgov
 	name = "\improper SolGov coat"
 	desc = "An armored coat worn for special occasions. This one is dyed in SolGov blue."
+	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
 	body_parts_covered = CHEST|GROIN|ARMS|HANDS
 	icon_state = "coat_solgov"
 	item_state = "coat_solgov"
@@ -220,7 +232,9 @@
 
 /obj/item/clothing/suit/armor/solgov_trenchcoat
 	name = "\improper SolGov trenchcoat"
-	desc = "A solgov official's trenchcoat. Has a lot of pockets."
+	desc = "A SolGov official's trenchcoat. Has a lot of pockets."
+	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
 	icon_state = "armor_solgov_trenchcoat"
 	item_state = "trenchcoat_solgov"
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -231,6 +245,8 @@
 /obj/item/clothing/suit/hooded/wintercoat/solgov
 	name = "solgov winter coat"
 	desc = "An environment-resistant wintercoat in the colors of the Solarian Confederation."
+	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
 	icon_state = "coatsolgov"
 	item_state = "coatsolgov"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/solgov
@@ -245,6 +261,8 @@
 /obj/item/clothing/head/solgov
 	name = "\improper SolGov officer's cap"
 	desc = "A blue cap worn by high-ranking officers of SolGov."
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
 	icon_state = "cap_solgov"
 	item_state = "cap_solgov"
 	strip_delay = 80
@@ -334,3 +352,12 @@
 	name = "SolGov captain's cloak"
 	desc = "Worn by SolGov captains. It smells faintly of bureaucracy."
 	icon_state = "solgov_cap_cloak"
+
+// Accesories
+
+/obj/item/clothing/accessory/waistcoat/solgov
+	name = "solgov waistcoat"
+	desc = "A standard issue waistcoat in solgov colors."
+	icon_state = "solgov_waistcoat"
+	icon = 'icons/obj/clothing/faction/solgov/accessory.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/accessory.dmi'
