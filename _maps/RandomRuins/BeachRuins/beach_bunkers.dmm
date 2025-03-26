@@ -1555,7 +1555,9 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle{
 	aggro_vision_range = 14
 	},
-/obj/effect/landmark/mission_poi/main/kill,
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1
+	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ug" = (
@@ -1652,7 +1654,6 @@
 	pixel_x = 6
 	},
 /obj/item/food/deadmouse{
-	pixel_y = 0;
 	pixel_x = -13
 	},
 /turf/open/floor/plating/dirt/beach,
