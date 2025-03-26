@@ -142,6 +142,13 @@
 	contains = list(/obj/item/weldingtool/electric)
 	crate_name = "electric welder crate"
 
+/datum/supply_pack/tools/welding_goggles
+	name = "Welding Goggles"
+	desc = "Contains a single pair of welding goggles for protecting your eyes."
+	cost = 150
+	contains = list(/obj/item/clothing/glasses/welding)
+	crate_name = "welding goggles crate"
+
 /datum/supply_pack/tools/plasmacutter
 	name = "Plasmacutter Crate"
 	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
