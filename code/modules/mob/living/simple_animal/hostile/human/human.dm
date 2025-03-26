@@ -77,12 +77,16 @@
 		new mob_spawner(loc)
 	if(r_hand && weapon_drop_chance)
 		if(prob(weapon_drop_chance))
-			new r_hand(loc)
+			var/obj/item/gun/ballistic/cosmetic_damage = new r_hand(loc)
+			if(istype(cosmetic_damage))
+				cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum) //my free gun... it's bowowken...
 		else
 			visible_message(span_danger("[src]'s [r_hand.name] is destroyed as they collapse!"))
 	if(l_hand && weapon_drop_chance)
 		if(prob(weapon_drop_chance))
-			new l_hand(loc)
+			var/obj/item/gun/ballistic/cosmetic_damage = new l_hand(loc)
+			if(istype(cosmetic_damage))
+				cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum)
 		else
 			visible_message(span_danger("[src]'s [l_hand.name] is destroyed as they collapse!"))
 
