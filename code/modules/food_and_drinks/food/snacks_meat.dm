@@ -393,18 +393,14 @@
 	tastes = list("meat" = 3, "smokey sauce" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/meatclown
-	name = "meat clown"
-	desc = "A cylindrical slice of bologna, rendered into the expression of a clown. Its cheerful, meaty smile weakens you."
-	icon_state = "meatclown"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/banana = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
-	tastes = list("meat" = 5, "poor decisions" = 3, "discomfort" = 1)
-	foodtype = MEAT
-
-/obj/item/reagent_containers/food/snacks/meatclown/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/slippery, 30)
+/obj/item/reagent_containers/food/snacks/fishfry
+	name = "fish fry"
+	desc = "A plate full of pan-fried fish and vegetables. A side of fries would be nice."
+	icon_state = "fish_fry"
+	list_reagents = list (/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3)
+	filling_color = "#ee7676"
+	tastes = list("fish" = 1, "pan seared vegtables" = 1)
+	foodtype = MEAT | VEGETABLES | FRIED
 
 //////////////////////////////////////////// KEBABS AND OTHER SKEWERS ////////////////////////////////////////////
 
@@ -458,11 +454,13 @@
 	tastes = list("tex-mex" = 3, "cumin" = 2)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/capsaicin = 3)
 
-/obj/item/reagent_containers/food/snacks/fishfry
-	name = "fish fry"
-	desc = "A plate full of pan-fried fish and vegetables. A side of fries would be nice."
-	icon_state = "fish_fry"
-	list_reagents = list (/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3)
-	filling_color = "#ee7676"
-	tastes = list("fish" = 1, "pan seared vegtables" = 1)
-	foodtype = MEAT | VEGETABLES | FRIED
+// Erika's teceti breaker
+
+/obj/item/reagent_containers/food/snacks/kebab/miras
+	name = "miras-kebab"
+	desc = "An entire Miras, slightly cleaned up and roasted on a stick."
+	icon_state = ""
+	w_class = WEIGHT_CLASS_NORMAL
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("seared meat" = 1, "faint sweetness" = 1)
+	foodtype = MEAT | SUGAR | GORE

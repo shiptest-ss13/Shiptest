@@ -57,7 +57,7 @@
 	name = "tiris-sele "
 	desc = "An incredibly rich sauce made with the blood of a Tiris"
 	filling_color = "#c3bca0"
-	list_reagents = list(/datum/reagent/consumable/tiris_sale = 8)
+	list_reagents = list(/datum/reagent/consumable/tiris_sele = 8)
 
 /obj/item/reagent_containers/food/snacks/ration/pack/dote_juice
 	name = "dote juice powder"
