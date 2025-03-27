@@ -124,19 +124,21 @@
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/dead/tall/grey = 1,
 		/obj/structure/flora/tree/dead/barren = 1,
+		/obj/structure/flora/ausbushes/fullgrass/hell = 10,
+		/obj/structure/flora/ausbushes/sparsegrass/hell = 5
 	)
-	flora_spawn_chance = 70
+	flora_spawn_chance = 80
 
 /datum/biome/lavaland/forest/rocky
 	flora_spawn_list = list(
-		/obj/structure/flora/rock/pile/lava = 3,
-		/obj/structure/flora/rock/lava = 2,
+		/obj/structure/flora/rock/pile/lava = 5,
+		/obj/structure/flora/rock/lava = 4,
 		/obj/structure/flora/tree/dead/tall/grey = 10,
 		/obj/structure/flora/ausbushes/fullgrass/hell = 40,
 		/obj/structure/flora/ausbushes/sparsegrass/hell = 20,
-		/obj/structure/flora/ausbushes/hell = 2
+		/obj/structure/flora/ausbushes/hell = 4
 	)
-	flora_spawn_chance = 65
+	flora_spawn_chance = 75
 
 /datum/biome/lavaland/plains
 	open_turf_types = list(
