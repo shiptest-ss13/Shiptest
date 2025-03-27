@@ -471,7 +471,7 @@
 
 	maxHealth = 30
 	health = 30
-	armor = list("melee" = 65, "bullet" = 75, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	armor = list("melee" = 25, "bullet" = 45, "laser" = 35, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
 
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/proustite = 10)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
@@ -496,9 +496,9 @@
 	icon_living = "ws_ancient_goliath"
 	icon_aggro = "ws_ancient_goliath_alert"
 	icon_dead = "ws_ancient_goliath_dead"
-	maxHealth = 80
-	health = 80
-	armor = list("melee" = 60, "bullet" = 95, "laser" = 55, "energy" = 30, "bomb" = 60, "bio" = 30, "rad" = 50, "fire" = 30, "acid" = 50)
+	maxHealth = 70
+	health = 70
+	armor = list("melee" = 30, "bullet" = 65, "laser" = 55, "energy" = 30, "bomb" = 60, "bio" = 30, "rad" = 50, "fire" = 30, "acid" = 50)
 	move_to_delay = 3 SECONDS
 	speed = 3
 	//mob_trophy = /obj/item/mob_trophy/elder_tentacle

@@ -18,7 +18,7 @@
 	///the color of the event if it isn't overridden by the overmap
 	var/default_color
 	/// The icon state the token will be set to on init.
-	var/token_icon_state = "object"
+	var/token_icon_state = "signal_none"
 	/// The character that represents this overmap datum on the overmap in the admin ASCII mode.
 	var/char_rep
 

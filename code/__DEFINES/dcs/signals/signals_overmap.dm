@@ -1,6 +1,5 @@
 // /datum/overmap signals
 
-// /datum/overmap signals
 /// From overmap Move(): (old_x, old_y)
 #define COMSIG_OVERMAP_MOVED "overmap_moved"
 /// From overmap move_overmaps(): (datum/overmap, old_x, old_y)

@@ -1,7 +1,7 @@
 /datum/overmap/outpost
 	name = "outpost"
 	char_rep = "T"
-	token_icon_state = "station_0"
+	token_icon_state = "outpost_small"
 
 	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK)
 
@@ -53,6 +53,8 @@
 	var/ordernum = 1
 	/// Our faction of the outpost
 	var/datum/faction/faction
+	/// simple var that toggles the flag on/off, neant for eventing purposes
+	var/flag_overlay = TRUE
 
 /datum/overmap/outpost/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	. = ..()
@@ -419,6 +421,9 @@
 	. = ..()
 	token.icon_state = token_icon_state
 	token.color = current_overmap.secondary_structure_color
+	if(flag_overlay)
+		token.cut_overlays()
+		token.add_overlay("colonized")
 
 /*
 	Hangar shafts

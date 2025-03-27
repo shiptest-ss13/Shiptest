@@ -32,7 +32,7 @@
 /turf/open/floor/plating/asteroid/desert/lit
 	light_range = 2
 	light_power = 0.6
-	light_color = "#ffd2bd"
+	light_color = COLOR_DESERTPLANET_LIGHT
 	baseturfs = /turf/open/floor/plating/asteroid/desert/lit
 
 /turf/open/floor/plating/asteroid/dry_seafloor
@@ -71,5 +71,5 @@
 /turf/open/floor/plating/asteroid/dry_seafloor/lit
 	light_range = 2
 	light_power = 0.6
-	light_color = "#ffd2bd"
+	light_color = COLOR_DESERTPLANET_LIGHT
 	baseturfs = /turf/open/floor/plating/asteroid/dry_seafloor/lit
