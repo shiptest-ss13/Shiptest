@@ -2,7 +2,7 @@
 	name = "wet rocky ground"
 	desc = "The ground has water flowing through it."
 
-	icon = 'icons/turf/mining.dmi'
+	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "wateryrock"
 	base_icon_state = "rock"
 	gender = PLURAL
@@ -17,11 +17,13 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 	layer = SAND_TURF_LAYER
-	smooth_icon = 'icons/turf/floors/wateryrock.dmi'
-	smoothing_flags = SMOOTH_BITMASK
+	//smooth_icon = 'icons/turf/floors/wateryrock.dmi'
+	//smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
 	gender = PLURAL
+
+	floor_variance = 0
 
 
 /turf/open/water/stormy_planet_lit

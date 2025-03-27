@@ -6,6 +6,9 @@
 	broken_states = list("broken0", "broken1", "broken2")
 	burnt_states = list("burned0", "burned1", "burned2")
 
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
+	canSmoothWith = list(SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
+
 /turf/open/floor/plasteel/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>There's a <b>small crack</b> on the edge where you can pry it with a <b>crowbar</b>.</span>"

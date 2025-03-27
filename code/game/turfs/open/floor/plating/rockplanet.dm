@@ -15,7 +15,7 @@
 
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH, SMOOTH_GROUP_FLOOR_PLASTEEL)
 	smooth_icon = 'icons/turf/floors/rockplanet_dry.dmi'
 
 /turf/open/floor/plating/asteroid/rockplanet/Initialize(mapload, inherited_virtual_z)
@@ -39,7 +39,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY, SMOOTH_GROUP_FLOOR_PLASTEEL)
 	smooth_icon = 'icons/turf/floors/rockplanet_caves.dmi'
 
 	floor_variance = 0

@@ -752,11 +752,11 @@
 
 				<center><h3><font color="#ab9a61">Rutile</font></h3></center>
 						<ul>
-						    Rutile is a mineral typically formed by gravity over long periods of time, as well as in igneous rocks. These conditions have lead it to prominence in two types of worlds on the frontier, Lava-classes, where it is uncommon, and typically deep underground, and sand-covered worlds, such as a Salted Sand-Class, or within the dust of a Lunar-class world. It is highly reflective and often sees usage as a semiconductor once refined.
-						    <ul>
-						        <li>90-10 Titanium-Iron Composition<br></li>
+							Rutile is a mineral typically formed by gravity over long periods of time, as well as in igneous rocks. These conditions have lead it to prominence in two types of worlds on the frontier, Lava-classes, where it is uncommon, and typically deep underground, and sand-covered worlds, such as a Salted Sand-Class, or within the dust of a Lunar-class world. It is highly reflective and often sees usage as a semiconductor once refined.
+							<ul>
+								<li>90-10 Titanium-Iron Composition<br></li>
 							<li>1000cm^3 Ore Yield<br></li>
-						    </ul>
+							</ul>
 
 						</ul>
 						<br>
@@ -771,11 +771,11 @@
 
 				<center><h3><font color="#665b5b">Graphite</font></h3></center>
 						<ul>
-						    Graphite is unusually rare in the frontier. What is a somewhat common mineral with widespread uses in the Core Worlds is a rarity often substituted with synthetic alternatives. When it is found, it has usually been migrated away from where it might have become a diamond, and to the surface.
-						    <ul>
-						        <li>100% Carbon Composition<br></li>
+							Graphite is unusually rare in the frontier. What is a somewhat common mineral with widespread uses in the Core Worlds is a rarity often substituted with synthetic alternatives. When it is found, it has usually been migrated away from where it might have become a diamond, and to the surface.
+							<ul>
+								<li>100% Carbon Composition<br></li>
 							<li>1000cm^3 Ore Yield<br></li>
-						    </ul>
+							</ul>
 
 						</ul>
 						<br>
@@ -804,8 +804,8 @@
 
 				<center><h3><font color="#cfb4d1">Quartzite</font></h3></center>
 						<ul>
-						    Quartzite is the result of sandstone experiencing heat and pressure for extended periods of time, with the silicates within the sand becoming somewhat more pure over time. It typically has a dull-gray look, but when refined, is an excellent material for glass, laser equipment, and electronic circuits.
-						    <ul>
+							Quartzite is the result of sandstone experiencing heat and pressure for extended periods of time, with the silicates within the sand becoming somewhat more pure over time. It typically has a dull-gray look, but when refined, is an excellent material for glass, laser equipment, and electronic circuits.
+							<ul>
 							<li>100% Quartz Composition<br></li>
 							<li>1000cm^3 Ore Yield</li>
 							<li>Can be refined into Glass or Silicon<br></li>

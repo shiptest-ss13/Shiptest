@@ -36,6 +36,9 @@
 	/// smoothed icon in case we use it
 	var/smooth_icon
 
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR)
+	canSmoothWith = list(SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_TURF_OPEN)
+
 /turf/open/floor/plating/asteroid/Initialize(mapload, inherited_virtual_z)
 	var/proper_name = name
 	. = ..()
@@ -266,7 +269,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smooth_icon = 'icons/turf/floors/asteroid.dmi'
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY, SMOOTH_GROUP_FLOOR_PLASTEEL)
 
 	baseturfs = /turf/open/floor/plating/asteroid/smoothed
 	turf_type = /turf/open/floor/plating/asteroid/smoothed

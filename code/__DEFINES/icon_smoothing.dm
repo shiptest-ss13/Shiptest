@@ -49,38 +49,39 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_FLOOR_TRANSPARENT_GLASS S_TURF(3)	///turf/open/floor/glass
 
 #define SMOOTH_GROUP_OPEN_FLOOR S_TURF(4) ///turf/open/floor
+#define SMOOTH_GROUP_FLOOR_PLASTEEL S_TURF(5) ///turf/open/floor
 
-#define SMOOTH_GROUP_FLOOR_GRASS S_TURF(5) ///turf/open/floor/plating/grass
-#define SMOOTH_GROUP_FLOOR_ASH S_TURF(6) ///turf/open/floor/plating/ashplanet/ash
-#define SMOOTH_GROUP_FLOOR_ASH_ROCKY S_TURF(7) ///turf/open/floor/plating/ashplanet/rocky
-#define SMOOTH_GROUP_FLOOR_ICE S_TURF(8) ///turf/open/floor/plating/ice
-#define SMOOTH_GROUP_FLOOR_SNOWED S_TURF(9) ///turf/open/floor/plating/snowed
-#define SMOOTH_GROUP_FLOOR_HEXACRETE S_TURF(10) ///turf/open/floor/concrete/reinforced
+#define SMOOTH_GROUP_FLOOR_GRASS S_TURF(6) ///turf/open/floor/plating/grass
+#define SMOOTH_GROUP_FLOOR_ASH S_TURF(7) ///turf/open/floor/plating/ashplanet/ash
+#define SMOOTH_GROUP_FLOOR_ASH_ROCKY S_TURF(8) ///turf/open/floor/plating/ashplanet/rocky
+#define SMOOTH_GROUP_FLOOR_ICE S_TURF(9) ///turf/open/floor/plating/ice
+#define SMOOTH_GROUP_FLOOR_SNOWED S_TURF(10) ///turf/open/floor/plating/snowed
+#define SMOOTH_GROUP_FLOOR_HEXACRETE S_TURF(11) ///turf/open/floor/concrete/reinforced
 
-#define SMOOTH_GROUP_CARPET S_TURF(11) ///turf/open/floor/carpet
-#define SMOOTH_GROUP_CARPET_BLACK S_TURF(12) ///turf/open/floor/carpet/black
-#define SMOOTH_GROUP_CARPET_BLUE S_TURF(13) ///turf/open/floor/carpet/blue
-#define SMOOTH_GROUP_CARPET_CYAN S_TURF(14) ///turf/open/floor/carpet/cyan
-#define SMOOTH_GROUP_CARPET_GREEN S_TURF(15) ///turf/open/floor/carpet/green
-#define SMOOTH_GROUP_CARPET_ORANGE S_TURF(16) ///turf/open/floor/carpet/orange
-#define SMOOTH_GROUP_CARPET_PURPLE S_TURF(17) ///turf/open/floor/carpet/purple
-#define SMOOTH_GROUP_CARPET_RED S_TURF(18) ///turf/open/floor/carpet/red
-#define SMOOTH_GROUP_CARPET_ROYAL_BLACK S_TURF(19) ///turf/open/floor/carpet/royalblack
-#define SMOOTH_GROUP_CARPET_ROYAL_BLUE S_TURF(20) ///turf/open/floor/carpet/royalblue
-#define SMOOTH_GROUP_CARPET_EXECUTIVE S_TURF(21)	///turf/open/floor/carpet/executive
-#define SMOOTH_GROUP_CARPET_STELLAR S_TURF(22)	///turf/open/floor/carpet/stellar
-#define SMOOTH_GROUP_CARPET_DONK S_TURF(23) ///turf/open/floor/carpet/donk
-#define SMOOTH_GROUP_CARPET_RED_GOLD S_TURF(24) ///turf/open/floor/carpet/red_gold
-#define SMOOTH_GROUP_CARPET_NWDARK S_TURF(25) ///turf/open/floor/carpet/nanoweave
-#define SMOOTH_GROUP_CARPET_NWRED S_TURF(26) ///turf/open/floor/carpet/nanoweave/red
-#define SMOOTH_GROUP_CARPET_NWBLUE S_TURF(27) ///turf/open/floor/carpet/nanoweave/blue
-#define SMOOTH_GROUP_CARPET_NWPURPLE S_TURF(28) ///turf/open/floor/carpet/nanoweave/purple
-#define SMOOTH_GROUP_CARPET_NWORANGE S_TURF(29) ///turf/open/floor/carpet/nanoweave/orange
-#define SMOOTH_GROUP_CARPET_NWBEIGE S_TURF(30) ///turf/open/floor/carpet/nanoweave/beige
+#define SMOOTH_GROUP_CARPET S_TURF(12) ///turf/open/floor/carpet
+#define SMOOTH_GROUP_CARPET_BLACK S_TURF(13) ///turf/open/floor/carpet/black
+#define SMOOTH_GROUP_CARPET_BLUE S_TURF(14) ///turf/open/floor/carpet/blue
+#define SMOOTH_GROUP_CARPET_CYAN S_TURF(15) ///turf/open/floor/carpet/cyan
+#define SMOOTH_GROUP_CARPET_GREEN S_TURF(16) ///turf/open/floor/carpet/green
+#define SMOOTH_GROUP_CARPET_ORANGE S_TURF(17) ///turf/open/floor/carpet/orange
+#define SMOOTH_GROUP_CARPET_PURPLE S_TURF(18) ///turf/open/floor/carpet/purple
+#define SMOOTH_GROUP_CARPET_RED S_TURF(19) ///turf/open/floor/carpet/red
+#define SMOOTH_GROUP_CARPET_ROYAL_BLACK S_TURF(20) ///turf/open/floor/carpet/royalblack
+#define SMOOTH_GROUP_CARPET_ROYAL_BLUE S_TURF(21) ///turf/open/floor/carpet/royalblue
+#define SMOOTH_GROUP_CARPET_EXECUTIVE S_TURF(22)	///turf/open/floor/carpet/executive
+#define SMOOTH_GROUP_CARPET_STELLAR S_TURF(23)	///turf/open/floor/carpet/stellar
+#define SMOOTH_GROUP_CARPET_DONK S_TURF(24) ///turf/open/floor/carpet/donk
+#define SMOOTH_GROUP_CARPET_RED_GOLD S_TURF(25) ///turf/open/floor/carpet/red_gold
+#define SMOOTH_GROUP_CARPET_NWDARK S_TURF(26) ///turf/open/floor/carpet/nanoweave
+#define SMOOTH_GROUP_CARPET_NWRED S_TURF(27) ///turf/open/floor/carpet/nanoweave/red
+#define SMOOTH_GROUP_CARPET_NWBLUE S_TURF(28) ///turf/open/floor/carpet/nanoweave/blue
+#define SMOOTH_GROUP_CARPET_NWPURPLE S_TURF(29) ///turf/open/floor/carpet/nanoweave/purple
+#define SMOOTH_GROUP_CARPET_NWORANGE S_TURF(30) ///turf/open/floor/carpet/nanoweave/orange
+#define SMOOTH_GROUP_CARPET_NWBEIGE S_TURF(31) ///turf/open/floor/carpet/nanoweave/beige
 
-#define SMOOTH_GROUP_CLOSED_TURFS S_TURF(31) ///turf/closed
-#define SMOOTH_GROUP_MATERIAL_WALLS S_TURF(32) ///turf/closed/wall/material
-#define SMOOTH_GROUP_SYNDICATE_WALLS S_TURF(33) ///turf/closed/wall/r_wall/syndicate, turf/closed/indestructible/syndicate
+#define SMOOTH_GROUP_CLOSED_TURFS S_TURF(32) ///turf/closed
+#define SMOOTH_GROUP_MATERIAL_WALLS S_TURF(33) ///turf/closed/wall/material
+#define SMOOTH_GROUP_SYNDICATE_WALLS S_TURF(34) ///turf/closed/wall/r_wall/syndicate, turf/closed/indestructible/syndicate
 #define SMOOTH_GROUP_MINERAL_WALLS S_TURF(35) ///turf/closed/mineral, /turf/closed/indestructible
 #define SMOOTH_GROUP_BOSS_WALLS S_TURF(36) ///turf/closed/indestructible/riveted/boss
 #define SMOOTH_GROUP_SURVIVAL_TITANIUM_WALLS S_TURF(37)	///turf/closed/wall/mineral/titanium/survival

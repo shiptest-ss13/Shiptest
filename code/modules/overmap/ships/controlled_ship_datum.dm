@@ -493,6 +493,8 @@
 /datum/overmap/ship/controlled/alter_token_appearance()
 	if(!source_template)
 		return ..()
+	if(!name) //still loadding?
+		return ..()
 	desc = {"
 	[span_boldnotice("IFF is reporting the following:")]
 	[span_bold("Affiliation: ")][source_template.faction.name]

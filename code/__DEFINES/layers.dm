@@ -44,7 +44,7 @@
 #define SAND_TURF_LAYER 2.026 //sand
 #define STONE_TURF_LAYER 2.027 //stone
 #define GRASS_TURF_LAYER 2.028 //grass
-#define SNOW_TURF_LAYER 2.029 //snow
+#define SNOW_TURF_LAYER 2.4551 //snow should be 2.029, set to 2.4551 for testing
 
 #define HIGH_TURF_LAYER 2.03
 
