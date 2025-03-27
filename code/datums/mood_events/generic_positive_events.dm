@@ -109,10 +109,6 @@
 	mood_change = 3
 	hidden = TRUE
 
-/datum/mood_event/family_heirloom
-	description = span_nicegreen("My family heirloom is safe with me.")
-	mood_change = 1
-
 /datum/mood_event/rilena_fan
 	description = span_nicegreen("I love my RILENA merch!")
 	mood_change = 1
