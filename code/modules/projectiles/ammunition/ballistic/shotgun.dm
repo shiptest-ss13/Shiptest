@@ -50,6 +50,7 @@
 	desc = "A shell packed with powder but no projectile."
 	icon_state = "blank"
 	projectile_type = /obj/projectile/bullet/pellet/blank
+	wear_modifier = 0.1
 	custom_materials = list(/datum/material/iron=250)
 
 /obj/item/ammo_casing/shotgun/improvised
