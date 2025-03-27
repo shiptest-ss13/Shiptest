@@ -441,17 +441,15 @@
 /// Remember: you can always trust a loaded gun to go off at least once.
 /obj/item/gun/ballistic/proc/accidents_happen(mob/darwin)
 	. = TRUE
+	if(safety)
+		return FALSE
 	if(!magazine && !chambered)
 		return
 	if(internal_magazine && !magazine.ammo_count(TRUE))
 		return
 	if(prob(0.5)) //this gets called I think once per decisecond so we don't really want a high chance here
-		if(safety)
-			toggle_safety(darwin)
-			to_chat(darwin, span_warning("You bump the safety-"))
-			return
 		if(!chambered)
-			to_chat(darwin, span_warning("You accidentally rack the [bolt_wording] of [src]-"))
+			to_chat(darwin, span_warning("You accidentally chamber a round-"))
 			chamber_round()
 			return
 		to_chat(darwin, span_boldwarning("The trigger on [src] gets caught-"))
