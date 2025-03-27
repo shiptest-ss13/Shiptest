@@ -1538,12 +1538,7 @@
 	id = "cbridge"
 	},
 /obj/item/reagent_containers/food/drinks/bottle/fernet,
-/obj/item/reagent_containers/food/drinks/bottle/sake{
-	pixel_y = 2;
-	icon_state = "sakebottle_k";
-	name = "Fluffy Tail";
-	desc = "This particular brand's mascot is a human with nine fox tails - which is an impressive amount of genemodding."
-	},
+/obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "kJ" = (
@@ -3917,6 +3912,10 @@
 /obj/item/clothing/suit/toggle/industrial{
 	pixel_x = 7;
 	pixel_y = -8
+	},
+/obj/item/clothing/mask/gas/syndicate{
+	pixel_x = -4;
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
