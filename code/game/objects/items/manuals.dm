@@ -555,25 +555,25 @@
 				</head>
 				<body>
 				<center>
-				<h1>Materials and You:</h1>
-				<h2>An all in one Guide to materials for the aspiring scavenger</h2>
+				<h1>Frontier Ore Compendium:</h1>
+				<h2>A Short Guide On Minerals</h2>
 				</center>
-				<h2>Introduction</h2>
-					&emsp;Despite the longstanding familiarity with the base materials such as, iron, copper, and gold;
-					many people are also unaware of the ore these raw materials are mined from.
-					This guide aims to provide an easy and simple reference for which material are mined from
-					what ore.
+				<hr>
+				<h2><center>Introduction</center></h2>
+					&emsp;The Frontier is a famously material-rich region of space, and with these riches people are drawn in to exploit them. This is usually symied by the fact that a layman cannot identify most ores off visual alone - and in long haul situations, may neglect more valuable ores for ores they are aware of. With this book, you may be able to avoid making such a mistake.<br>
+					<hr>
+				<center><h2>Ores</h2></center>
 
-				<br>
-				<h2>Ores</h2>
-					&emsp;<b>Note:</b> Unless told otherwise, assume all ores yield 1000 cm^3 of their respective matierals
-					<h3><font color="#87423b">Hematite</font></h3>
+					<center><h3><font color="#87423b">Hematite</font></h3></center>
 						<ul>
-							<li>100% iron<br></li>
-							<li>1/2 of the usual ore yield<br></li>
+							Hematite is a red-brown crystal typically found within rocks or soil. It is ferric in nature. It is lower yield than most other ores due to impurities.
+							<ul>
+								&emsp;<li>500cm^3 average yield. </li>
+								<li>100% iron compositoin. </li>
+							</ul>
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Rock Worlds<br></li>
 							<li>Salty Sand Worlds<br></li>
@@ -583,92 +583,127 @@
 							<li>Lunar Surfaces<br></li>
 						</ul>
 					<br>
+					<hr>
+					<br>
 
-					<h3><font color="#73737b">Magnetite</font></h3>
+					<center><h3><font color="#73737b">Magnetite</font></h3></center>
 						<ul>
-							<li>100% iron<br></li>
+							Magnetite is a naturally magnetic composition of Iron. Due to its natural magnetism, chunks of it have seen usage as good luck charms, or 'lodestones'. Industrial exploitation of magnetite veins is profitable due to high purity.
+							<ul>
+								<li>1000cm^3 ore yield</li>
+								<li>100% iron composition</li>
+								</ul>
+
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Lava Worlds<br></li>
 							<li>Shrouded Worlds<br></li>
 						</ul>
 					<br>
+					<hr>
+					<br>
 
-					<h3><font color="#46b89b">Malachite</font></h3>
+					<center><h3><font color="#46b89b">Malachite</font></h3></center>
 						<ul>
-							<li>Not to be confused with magnetite<br></li>
-							<li>100% copper<br></li>
+							Malachite is a crystalline copper-carbonate typically found near the surface of worlds with an active water cycle. It is typically low grade, and requires either a smelting or leeching process to actually be of use.
+							<ul>
+								<li>Not to be confused with magnetite<br></li>
+								<li>1000cm^3 ore yield</li>
+								<li>100% copper composition</li>
+							</ul>
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Ice Worlds<br></li>
 							<li>Jungle Worlds<br></li>
 							<li>Ocean Worlds<br></li>
 						</ul>
 					<br>
-
-					<h3><font color="#596e67">Galena</font></h3>
+					<hr>
+					<br>
+					<center><h3><font color="#596e67">Galena</font></h3></center>
 						<ul>
-							<li>95% Lead<br></li>
-							<li>4% Sulfur<br></li>
-							<li>0.2% Silver<br></li>
+							Galena is a crystalline composition of lead, silver and sulfer found in most places, with a greater frequency near volcanic areas. Lower technology planets regularly exploit the mineral for usage in primative batteries. Higher technology worlds use the silver for electrical and medical equipment.
+							Galena in the frontier is unusually high in silver, which has driven many prospecting missions.
+							<ul>
+								<li>1000cm^3 ore yield</li>
+								<li>95-4-0.2% Lead-Sulfer-Silver Composition</li>
+							</ul>
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Lava Worlds<br></li>
 							<li>Waste Disposal Worlds<br></li>
 						</ul>
 					<br>
-
-					<h3><font color="#593441">Proustite</font></h3>
+					<hr>
+					<br>
+					<center><h3><font color="#593441">Proustite</font></h3></center>
 						<ul>
-							<li>100% Silver<br></li>
+							Also known as ruby silver ore, Proustite is a mineral rich in silver typically found near areas of hydrothermal activity. The odd processes of Jungle-class worlds in the Frontier have made them a hotbed for Proustite mining due to large naturally occuring deposits forming near riverbeds.
+							<ul>
+							<li>100% Silver Composition</li>
+							<li>1000cm^3 Ore Yield</li>
+							</ul>
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Jungle Worlds<br></li>
 						</ul>
 					<br>
+					<hr>
+					<br>
 
-				<h3><font color="#d2d46e">Autunite</font></h3>
+				<center><h3><font color="#d2d46e">Autunite</font></h3></center>
+												<center>☢ Warning: Radioactive ☢</center>
+
 						<ul>
-							<li>100% Uranium<br></li>
-							<li>1/2 of the usual ore yield<br></li>
-							<li>Warning: Radioactive<br></li>
+							Autunite is a mineral created by the oxidation of pure uranium minerals in most forms of rock. Due to being approximately half uranium by mass, it is radioactive. Waste Disposal worlds have recently garnered interest due to the discovery of extremely large autunite deposits resulting from the rampant dumping of fuel sources.
+							<ul>
+								<li>100% Uranium Composition<br></li>
+								<li>500cm^3 Ore Yield<br></li>
+
+							</ul>
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Waste Disposal Worlds<br></li>
 							<li>Shrouded Worlds<br></li>
 						</ul>
 					<br>
 
-				<h3><font color="#ffe88c">Gold Ore</font></h3>
+				<center><h3><font color="#ffe88c">Gold Ore</font></h3></center>
 						<ul>
-							<li>100% Gold<br></li>
+							Pure gold ore is an extremely rare phenomenae, with most gold extraction requiring the refinement of dilute ores to acquire the gold. Being a useful electronics component, as well as a symbol of wealth in some societies, the Frontier's pure gold stock is in high demand.
+							<li>100% Gold Composition<br></li>
+							<li>1000cm^3 Ore Yield</li>
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Ice Worlds<br></li>
 							<li>Jungle Worlds<br></li>
 							<li>Desert Worlds<br></li>
 						</ul>
 					<br>
-
-				<h3><font color="#ede218">Sulfur Dust</font></h3>
+<hr><br>
+				<center><h3><font color="#ede218">Sulfur Dust</font></h3></center>
+				<center> Warning: Flammable</center>
 						<ul>
-							<li>100% Sulfur<br></li>
-							<li>Warning: Flammable<br></li>
+							Sulfur dust is the result of the destruction of sulfer crystals. Short of precise, industrial mining equipment, the destruction of the crystals and creation of this extremely flammable powder is all but guarenteed. Some worlds in the Frontier are attempting to exploit sulfer to create a firearms industry, usually to middling success.
+							<li>100% Sulfur Composition<br></li>
+							<li>1000cm^3 ore yield</li>
+							<li><br></li>
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Lava Worlds<br></li>
 							<li>Ocean Worlds<br></li>
@@ -676,73 +711,108 @@
 							<li>Shrouded Worlds<br></li>
 						</ul>
 					<br>
+					<hr>
+					<br>
 
-				<h3><font color="#ede218">Pyrite</font></h3>
+				<center><h3><font color="#ede218">Pyrite</font></h3></center>
+				<center> Warning: Flammable</center>
 						<ul>
-							<li>Not to be confused with Sulfur Dust or Gold<br></li>
-							<li>49% Sulfur<br></li>
-							<li>49% Iron<br></li>
-							<li>1% Gold<br></li>
-							<li>Warning: Flammable<br></li>
+							Pyrite, known by Solarians as "Fool's gold, is a mineral composed of iron, sulfer, and trace amounts of gold. It typically grows into cuboid formations, which to the untrained eye, appear to be gold. The fact that Frontier Pyrite contains actual gold is a curiousity to many geologists, and has been attributed to the geologically rich processes of the worlds it is typically found on.
+							<ul>
+							<li>49-49-2 Sulfur-Iron-Gold Composition<br></li>
+							<li>1000cm^3 Ore Yield</li>
+
+							</ul>
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Lava Worlds<br></li>
 						</ul>
 
-				<h3><font color="#7a95c4">Diamond Ore</font></h3>
+<br><hr><br>
+
+				<center><h3><font color="#7a95c4">Diamond Ore</font></h3></center>
 						<ul>
-							<li>Is weak structurally<br></li>
-							<li>100% Diamond<br></li>
+							Diamond Ore is terminology for any formation containing diamonds. Traditional uses for the crystal include focusing arrays, super-tensile alloy-weaving, and jewelry. The demand is somewhat mitigated by the ability to create lab-grown diamonds being widespread.
+							<ul>
+								<li>100% Diamond Composition<br></li>
+							<li>1000cm^3 Ore Yield</li>
+							</ul>
+
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
-							<li>Jungle Worlds (Note: in small amounts however is more common on jungles than anywhere else)<br></li>
+							<li>Everywhere, rarely</li>
+							<li> Jungle Worlds<br></li>
 						</ul>
 
-				<h3><font color="#ab9a61">Rutile</font></h3>
+<br><hr><br>
+
+				<center><h3><font color="#ab9a61">Rutile</font></h3></center>
 						<ul>
-							<li>90% Titanium<br></li>
-							<li>10% Iron<br></li>
+						    Rutile is a mineral typically formed by gravity over long periods of time, as well as in igneous rocks. These conditions have lead it to prominence in two types of worlds on the frontier, Lava-classes, where it is uncommon, and typically deep underground, and sand-covered worlds, such as a Salted Sand-Class, or within the dust of a Lunar-class world. It is highly reflective and often sees usage as a semiconductor once refined.
+						    <ul>
+						        <li>90-10 Titanium-Iron Composition<br></li>
+							<li>1000cm^3 Ore Yield<br></li>
+						    </ul>
+
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Salty Sand Worlds<br></li>
 							<li>Lunar Surfaces<br></li>
 						</ul>
 					<br>
+					<hr>
+					<br>
 
-				<h3><font color="#665b5b">Graphite</font></h3>
+				<center><h3><font color="#665b5b">Graphite</font></h3></center>
 						<ul>
-							<li>100% Carbon<br></li>
+						    Graphite is unusually rare in the frontier. What is a somewhat common mineral with widespread uses in the Core Worlds is a rarity often substituted with synthetic alternatives. When it is found, it has usually been migrated away from where it might have become a diamond, and to the surface.
+						    <ul>
+						        <li>100% Carbon Composition<br></li>
+							<li>1000cm^3 Ore Yield<br></li>
+						    </ul>
+
 						</ul>
 						<br>
 						&emsp;<b>Can only be found in trace amounts on most planets</b>
 
-				<h3><font color="#665b5b">Coal</font></h3>
-						<ul>
-							<li>100% Carbon<br></li>
-							<li>Warning: Flammable<br></li>
-							<li>1/5 of the usual ore yield<br></li>
+<br><hr><br>
+
+				<center><h3><font color="#665b5b">Coal</font></h3></center>
+				<center>Warning: Flammable<br></center>
+							<ul>
+								Coal is a dark black mineral formed by the compression of decayed carbon over millions of years. While most power-systems have evolved past using it, some industrial plants on low-technology worlds use it by burning it to heat water. Most other worlds utilize it as a source of somewhat pure carbon.
+								<ul>
+									<li>100% Carbon Composition<br></li>
+									<li>200^3 Ore Yield<br></li>
+							</ul>
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Jungle Worlds<br></li>
 							<li>Desert Surfaces<br></li>
 						</ul>
 					<br>
+					<hr>
+					<br>
 
-				<h3><font color="#cfb4d1">Quartzite</font></h3>
+				<center><h3><font color="#cfb4d1">Quartzite</font></h3></center>
 						<ul>
-							<li>100% Quartz<br></li>
+						    Quartzite is the result of sandstone experiencing heat and pressure for extended periods of time, with the silicates within the sand becoming somewhat more pure over time. It typically has a dull-gray look, but when refined, is an excellent material for glass, laser equipment, and electronic circuits.
+						    <ul>
+							<li>100% Quartz Composition<br></li>
+							<li>1000cm^3 Ore Yield</li>
 							<li>Can be refined into Glass or Silicon<br></li>
+							</ul>
 						</ul>
 						<br>
-						&emsp;<b>Can be found in abundance at:</b>
+						&emsp;<b>Typically found on:</b>
 						<ul>
 							<li>Ice Worlds<br></li>
 							<li>Salty Sand Worlds<br></li>
@@ -750,6 +820,30 @@
 							<li>Lunar Surfaces<br></li>
 						</ul>
 					<br>
+					<hr>
+					<br>
+
+				<center><h3><font color="#dd4cc0">Phoron</font></h3></center>
+		<center>Warning: Flammable<br></center>
+		<center>Warning: Plasma-Exposure Risk</center>
+		<br>
+							<ul>
+								Phoron is a super-material native to the Frontier, with minor deposits being found all across the Orion Arm. Phoron is extremely corruptive of carbon-based matter, and oxidizes at a rate that surpasses most everything but fusion reactors. As such, plasma, be it gas from a Plasma Giant, or the crystalline compounds that permeate the surfaces of the frontier, is in high demand.
+								<ul>
+									<li>82-10-5-2.5 Plasma-Quartz-Carbon-Sulfer Composition<br></li>
+								<li>2000cm^3 Ore Yield<br></li>
+								</ul>
+
+							</ul>
+							<br>
+							&emsp;<b>Typically found on:</b>
+							<ul>
+								<li>Everywhere<br></li>
+								<li>Ice Worlds<br></li>
+								<li>Plasma Giants</li>
+							</ul>
+						<br>
+						<hr>
 
 				</body>
 
