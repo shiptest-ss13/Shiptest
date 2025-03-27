@@ -9744,8 +9744,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun/incendiary,
-/obj/effect/landmark/mission_poi/main/kill,
+/obj/effect/landmark/mission_poi/main/kill{
+	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
+	},
 /turf/open/floor/plating/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Py" = (
