@@ -192,9 +192,7 @@
 			use_power(active_power_usage)
 		// Register map objects
 		if(current_ship)
-			user.client.register_map_obj(current_ship.token.cam_screen)
-			user.client.register_map_obj(current_ship.token.cam_plane_master)
-			user.client.register_map_obj(current_ship.token.cam_background)
+			current_ship.token.cam_screen.display_to_client(user.client)
 			if(current_ship.cloaked_image)
 				user.client.images += current_ship.cloaked_image
 			current_ship.token.update_screen()
@@ -467,7 +465,7 @@
 	concurrent_users -= user_ref
 	// Unregister map objects
 	if(current_ship)
-		user.client?.clear_map(current_ship.token.map_name)
+		current_ship.token.cam_screen.hide_from_client(user.client)
 		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer && is_living) // If accelerating with nobody else to stop it
 			say("Pilot absence detected, engaging acceleration safeties.")
 			current_ship.change_heading(BURN_NONE)

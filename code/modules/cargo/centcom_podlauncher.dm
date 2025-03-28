@@ -52,11 +52,10 @@
 
 	// Stuff needed to render the map
 	var/map_name
-	var/atom/movable/screen/map_view/cam_screen
+	var/atom/movable/screen/map_view/camera/cam_screen
 	var/list/cam_plane_masters
-	var/atom/movable/screen/background/cam_background
 	var/tabIndex = 1
-	var/renderLighting = FALSE
+	var/render_lighting = FALSE
 
 /datum/centcom_podlauncher/New(user) //user can either be a client or a mob
 	if (user) //Prevents runtimes on datums being made without clients
@@ -88,27 +87,9 @@
 	map_name = "admin_supplypod_bay_[REF(src)]_map"
 	// Initialize map objects
 	cam_screen = new
-	cam_screen.name = "screen"
-	cam_screen.assigned_map = map_name
-	cam_screen.del_on_map_removal = TRUE
-	cam_screen.screen_loc = "[map_name]:1,1"
-	cam_plane_masters = list()
-	for(var/plane in subtypesof(/atom/movable/screen/plane_master))
-		var/atom/movable/screen/instance = new plane()
-		if (!renderLighting && instance.plane == LIGHTING_PLANE)
-			instance.alpha = 100
-		instance.assigned_map = map_name
-		instance.del_on_map_removal = TRUE
-		instance.screen_loc = "[map_name]:CENTER"
-		cam_plane_masters += instance
-	cam_background = new
-	cam_background.assigned_map = map_name
-	cam_background.del_on_map_removal = TRUE
+	cam_screen.generate_view(map_name, render_lighting)
+
 	refreshView()
-	holder.register_map_obj(cam_screen)
-	for(var/plane in cam_plane_masters)
-		holder.register_map_obj(plane)
-	holder.register_map_obj(cam_background)
 
 /datum/centcom_podlauncher/ui_state(mob/user)
 	if (SSticker.current_state >= GAME_STATE_FINISHED)
@@ -141,7 +122,7 @@
 	data["oldArea"] = (oldTurf ? get_area(oldTurf) : null) //Holds the name of the area that the user was in before using the teleportCentcom action
 	data["picking_dropoff_turf"] = picking_dropoff_turf //If we're picking or have picked a dropoff turf. Only works when pod is in reverse mode
 	data["customDropoff"] = customDropoff
-	data["renderLighting"] = renderLighting
+	data["renderLighting"] = render_lighting
 	data["launchClone"] = launchClone //Do we launch the actual items in the bay or just launch clones of them?
 	data["launchRandomItem"] = launchRandomItem //Do we launch a single random item instead of everything on the turf?
 	data["launchChoice"] = launchChoice //Launch turfs all at once (0), ordered (1), or randomly(1)
@@ -482,10 +463,9 @@
 			. = TRUE
 		if("refreshView")
 			initMap()
-			refreshView()
 			. = TRUE
 		if("renderLighting")
-			renderLighting = !renderLighting
+			render_lighting = !render_lighting
 			. = TRUE
 		if("setStyle")
 			var/chosenStyle = params["style"]
@@ -512,7 +492,6 @@
 	user.client?.clear_map(map_name)
 	QDEL_NULL(cam_screen)
 	QDEL_LIST(cam_plane_masters)
-	QDEL_NULL(cam_background)
 	qdel(src)
 
 /datum/centcom_podlauncher/proc/setupViewPod()
@@ -534,9 +513,7 @@
 	var/size_x = bbox[3] - bbox[1] + 1
 	var/size_y = bbox[4] - bbox[2] + 1
 
-	cam_screen.vis_contents = visible_turfs
-	cam_background.icon_state = "clear"
-	cam_background.fill_rect(1, 1, size_x, size_y)
+	cam_screen.show_camera(visible_turfs, size_x, size_y)
 
 /datum/centcom_podlauncher/proc/updateCursor(forceClear = FALSE) //Update the mouse of the user
 	if (!holder) //Can't update the mouse icon if the client doesnt exist!
@@ -774,7 +751,7 @@
 /datum/centcom_podlauncher/proc/loadData(list/dataToLoad)
 	bayNumber = dataToLoad["bayNumber"]
 	customDropoff = dataToLoad["customDropoff"]
-	renderLighting = dataToLoad["renderLighting"]
+	render_lighting = dataToLoad["renderLighting"]
 	launchClone = dataToLoad["launchClone"] //Do we launch the actual items in the bay or just launch clones of them?
 	launchRandomItem = dataToLoad["launchRandomItem"] //Do we launch a single random item instead of everything on the turf?
 	launchChoice = dataToLoad["launchChoice"] //Launch turfs all at once (0), ordered (1), or randomly(1)

@@ -1,3 +1,5 @@
+#define DEFAULT_MAP_SIZE 15
+
 /obj/machinery/computer/security
 	name = "security camera console"
 	desc = "Used to access the various cameras connected to a local network."
@@ -15,11 +17,7 @@
 
 	// Stuff needed to render the map
 	var/map_name
-	var/const/default_map_size = 15
-	var/atom/movable/screen/map_view/cam_screen
-	/// All the plane masters that need to be applied.
-	var/list/cam_plane_masters
-	var/atom/movable/screen/background/cam_background
+	var/atom/movable/screen/map_view/camera/cam_screen
 
 /obj/machinery/computer/security/retro
 	icon = 'icons/obj/machines/retro_computer.dmi'
@@ -43,25 +41,10 @@
 		network += lowertext(i)
 	// Initialize map objects
 	cam_screen = new
-	cam_screen.name = "screen"
-	cam_screen.assigned_map = map_name
-	cam_screen.del_on_map_removal = FALSE
-	cam_screen.screen_loc = "[map_name]:1,1"
-	cam_plane_masters = list()
-	for(var/plane in subtypesof(/atom/movable/screen/plane_master))
-		var/atom/movable/screen/instance = new plane()
-		instance.assigned_map = map_name
-		instance.del_on_map_removal = FALSE
-		instance.screen_loc = "[map_name]:CENTER"
-		cam_plane_masters += instance
-	cam_background = new
-	cam_background.assigned_map = map_name
-	cam_background.del_on_map_removal = FALSE
+	cam_screen.generate_view(map_name)
 
 /obj/machinery/computer/security/Destroy()
-	qdel(cam_screen)
-	QDEL_LIST(cam_plane_masters)
-	qdel(cam_background)
+	QDEL_NULL(cam_screen)
 	return ..()
 
 /obj/machinery/computer/security/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
@@ -95,14 +78,11 @@
 		if(length(concurrent_users) == 1 && is_living)
 			playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
 			use_power(active_power_usage)
-		// Register map objects
-		user.client.register_map_obj(cam_screen)
-		for(var/plane in cam_plane_masters)
-			user.client.register_map_obj(plane)
-		user.client.register_map_obj(cam_background)
 		// Open UI
 		ui = new(user, src, "CameraConsole", name)
 		ui.open()
+		// Register map objects
+		cam_screen.display_to(user, ui.window)
 
 /obj/machinery/computer/security/ui_data()
 	var/list/data = list()
@@ -197,75 +177,65 @@
 		use_power(0)
 
 /obj/machinery/computer/security/proc/update_active_camera_screen()
-	if(istype(active_camera, /obj/machinery/camera))
-		var/obj/machinery/camera/active_camera_S = active_camera
+	// Show static if can't use the camera
+	if(!active_camera?.can_use())
+		cam_screen.show_camera_static()
+		return
 
-		// Show static if can't use the camera
-		if(!active_camera_S?.can_use())
-			show_camera_static()
-			return TRUE
+	var/list/visible_turfs = list()
 
-		var/list/visible_turfs = list()
-		for(var/turf/T in (active_camera_S.isXRay() \
-				? range(active_camera_S.view_range, active_camera_S) \
-				: view(active_camera_S.view_range, active_camera_S)))
-			visible_turfs += T
+	// Get the camera's turf to correctly gather what's visible from its turf, in case it's located in a moving object (borgs / mechs)
+	var/new_cam_turf = get_turf(active_camera)
 
-		var/list/bbox = get_bbox_of_atoms(visible_turfs)
-		var/size_x = bbox[3] - bbox[1] + 1
-		var/size_y = bbox[4] - bbox[2] + 1
+	// If we're not forcing an update for some reason and the cameras are in the same location,
+	// we don't need to update anything.
+	// Most security cameras will end here as they're not moving.
+	if(last_camera_turf == new_cam_turf)
+		return
 
-		cam_screen.vis_contents = visible_turfs
-		cam_background.icon_state = "clear"
-		cam_background.fill_rect(1, 1, size_x, size_y)
+	// Cameras that get here are moving, and are likely attached to some moving atom such as cyborgs.
+	last_camera_turf = new_cam_turf
 
-	if(istype(active_camera, /obj/item/bodycamera))
-		var/obj/item/bodycamera/active_camera_B = active_camera
+	//Here we gather what's visible from the camera's POV based on its view_range and xray modifier if present
+	var/list/visible_things = active_camera.isXRay(ignore_malf_upgrades = TRUE) ? range(active_camera.view_range, new_cam_turf) : view(active_camera.view_range, new_cam_turf)
 
-		// Show static if can't use the camera
-		if(!active_camera_B?.can_use())
-			show_camera_static()
-			return TRUE
+	for(var/turf/visible_turf in visible_things)
+		visible_turfs += visible_turf
 
-		var/list/visible_turfs = list()
+	//Get coordinates for a rectangle area that contains the turfs we see so we can then clear away the static in the resulting rectangle area
+	var/list/bbox = get_bbox_of_atoms(visible_turfs)
+	var/size_x = bbox[3] - bbox[1] + 1
+	var/size_y = bbox[4] - bbox[2] + 1
 
-		if(!active_camera_B.loc)
-			return
+	cam_screen.show_camera(visible_turfs, size_x, size_y)
 
-		// Derived from https://github.com/tgstation/tgstation/pull/52767
-		// Is this camera located in or attached to a living thing? If so, assume the camera's loc is the living thing.
-		var/cam_location = active_camera_B.loc
+/atom/movable/screen/map_view/camera
+	/// All the plane masters that need to be applied.
+	var/atom/movable/screen/background/cam_background
 
-		// Is the camera in the following items? If so, let it transmit an image as normal
-		if(!((istype(cam_location, /obj/item/clothing/shoes)) || (isturf(cam_location))))
-			cam_location = active_camera_B.loc.loc
+/atom/movable/screen/map_view/camera/Destroy()
+	QDEL_NULL(cam_background)
+	return ..()
 
-		// If we're not forcing an update for some reason and the cameras are in the same location,
-		// we don't need to update anything.
-		// Most security cameras will end here as they're not moving.
-		if(istype(active_camera, /obj/machinery/camera))
-			return
+/atom/movable/screen/map_view/camera/generate_view(map_key)
+	. = ..()
+	cam_background = new
+	cam_background.del_on_map_removal = FALSE
+	cam_background.assigned_map = assigned_map
 
-		// Cameras that get here are moving, and are likely attached to some moving atom such as cyborgs.
-		last_camera_turf = get_turf(cam_location)
+/atom/movable/screen/map_view/camera/display_to_client(client/show_to)
+	show_to.register_map_obj(cam_background)
+	. = ..()
 
-		var/list/visible_things =  view(active_camera_B.view_range, cam_location)
+/atom/movable/screen/map_view/camera/proc/show_camera(list/visible_turfs, size_x, size_y)
+	vis_contents = visible_turfs
+	cam_background.icon_state = "clear"
+	cam_background.fill_rect(1, 1, size_x, size_y)
 
-		for(var/turf/visible_turf in visible_things)
-			visible_turfs += visible_turf
-
-		var/list/bbox = get_bbox_of_atoms(visible_turfs)
-		var/size_x = bbox[3] - bbox[1] + 1
-		var/size_y = bbox[4] - bbox[2] + 1
-
-		cam_screen.vis_contents = visible_turfs
-		cam_background.icon_state = "clear"
-		cam_background.fill_rect(1, 1, size_x, size_y)
-
-/obj/machinery/computer/security/proc/show_camera_static()
-	cam_screen.vis_contents.Cut()
+/atom/movable/screen/map_view/camera/proc/show_camera_static()
+	vis_contents.Cut()
 	cam_background.icon_state = "scanline2"
-	cam_background.fill_rect(1, 1, default_map_size, default_map_size)
+	cam_background.fill_rect(1, 1, DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE)
 
 /obj/machinery/computer/security/proc/get_available_cameras()
 	var/list/L = list()
@@ -313,7 +283,6 @@
 	return D
 
 // SECURITY MONITORS
-
 /obj/machinery/computer/security/wooden_tv
 	name = "security camera monitor"
 	desc = "An old TV hooked into a local camera network."
@@ -497,3 +466,5 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/entertai
 	name = "\improper AI upload monitor"
 	desc = "A telescreen that connects to the AI upload's camera network."
 	network = list("aiupload")
+
+#undef DEFAULT_MAP_SIZE
