@@ -3443,6 +3443,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "te" = (
@@ -5254,7 +5257,7 @@
 /area/ship/storage)
 "EG" = (
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "2-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
