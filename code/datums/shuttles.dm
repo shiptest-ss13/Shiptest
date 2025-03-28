@@ -344,6 +344,7 @@
 
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
+	faction = /datum/faction/independent
 	starting_funds = 0
 
 /datum/map_template/shuttle/subshuttles/pill
@@ -385,12 +386,14 @@
 	file_name = "minutemen_crux"
 	name = "Crux Dropship"
 	token_icon_state = "ship_tiny_generic"
+	faction = /datum/faction/clip
 	prefix = "CMSV"
 
 /datum/map_template/shuttle/subshuttles/ancon
 	file_name = "nanotrasen_ancon"
 	name = "Nanotrasen Ancon-class Command Ship"
 	token_icon_state = "ship_tiny_generic"
+	faction = /datum/faction/nt
 	prefix = "NTSV"
 	name_categories = list("GENERAL", "SPACE")
 
@@ -403,6 +406,7 @@
 /datum/map_template/shuttle/subshuttles/anvil
 	file_name = "inteq_anvil"
 	name = "Anvil-class Dropship"
+	faction = /datum/faction/inteq
 	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
 	name_categories = list("GENERAL", "SPACE")
@@ -410,6 +414,7 @@
 /datum/map_template/shuttle/subshuttles/runner
 	file_name = "syndicate_runner"
 	name = "Runner-class Ambulance"
+	faction = /datum/faction/syndicate/cybersun
 	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
@@ -417,12 +422,14 @@
 /datum/map_template/shuttle/subshuttles/haste
 	file_name = "inteq_haste"
 	name = "Haste-class Ambulance"
+	faction = /datum/faction/inteq
 	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
 
 /datum/map_template/shuttle/subshuttles/nail
 	file_name = "pgf_nail"
 	name = "Nail-class Boarding Vessel"
+	faction = /datum/faction/pgf
 	token_icon_state = "ship_tiny_generic"
 	prefix = "PGF"
 
@@ -445,10 +452,12 @@
 /datum/map_template/shuttle/subshuttles/skink
 	file_name = "nanotrasen_skink"
 	name = "Skink-class Cargo Runner"
+	faction = /datum/faction/nt
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NTSV"
 
 /datum/map_template/shuttle/subshuttles/bambulance
 	file_name = "cybersun_bambulance"
 	name = "Gauze-class Ambulance Pod"
+	faction = /datum/faction/syndicate/cybersun
 	prefix = "CSSV"

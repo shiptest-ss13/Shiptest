@@ -493,14 +493,10 @@
 /datum/overmap/ship/controlled/alter_token_appearance()
 	if(!source_template)
 		return ..()
-	if(!name) //still loadding?
-		return ..()
-	desc = {"
-	[span_boldnotice("IFF is reporting the following:")]
+	desc = {"[span_boldnotice("IFF is reporting the following:")]
 	[span_bold("Affiliation: ")][source_template.faction.name]
 	[span_bold("Class: ")][source_template.short_name]
-	[span_bold("Velocity: ")][round(get_speed(), 0.1)] Gm/s
-	"}
+	[span_bold("Velocity: ")][round(get_speed(), 0.1)] Gm/s"}
 	return ..()
 
 //when bluespace jumping gets moved to its own machine make this NOT look for non-vewscreen helms
