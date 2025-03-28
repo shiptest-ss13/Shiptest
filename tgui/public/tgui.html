@@ -292,7 +292,7 @@
     if (type === 'js') {
       var node = document.createElement('script');
       node.type = 'text/javascript';
-      node.crossOrigin = 'anonymous';      
+      node.crossOrigin = 'anonymous';
       node.src = url;
       if (sync) {
         node.defer = true;
@@ -313,7 +313,8 @@
     if (type === 'css') {
       var node = document.createElement('link');
       node.type = 'text/css';
-      node.rel = 'stylesheet';      
+      node.rel = 'stylesheet';
+      node.crossOrigin = 'anonymous';
       node.href = url;
       // Temporarily set media to something inapplicable
       // to ensure it'll fetch without blocking render
@@ -637,6 +638,6 @@ Thank you for your cooperation.
 // Signal tgui that we're ready to receive updates
 Byond.sendMessage('ready');
 </script>
-  
+
 </body>
 </html>
