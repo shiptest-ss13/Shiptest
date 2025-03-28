@@ -728,6 +728,10 @@
 /obj/effect/turf_decal/industrial/caution/red{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	layer = 2.456
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "jV" = (
@@ -3176,14 +3180,6 @@
 	pixel_y = 1;
 	pixel_x = -9
 	},
-/obj/item/melee/knife/survival{
-	pixel_x = 6;
-	pixel_y = 7
-	},
-/obj/item/melee/knife/survival{
-	pixel_x = 6;
-	pixel_y = 2
-	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
 /obj/item/flashlight/seclite{
 	pixel_x = 5;
@@ -3196,6 +3192,17 @@
 /obj/item/flashlight/seclite{
 	pixel_x = 5;
 	pixel_y = -4
+	},
+/obj/item/binoculars{
+	pixel_y = -2
+	},
+/obj/item/melee/knife/survival{
+	pixel_x = 1;
+	pixel_y = 7
+	},
+/obj/item/melee/knife/survival{
+	pixel_x = 10;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -4247,7 +4254,6 @@
 /obj/item/storage/bag/ore,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
-/obj/item/binoculars,
 /obj/item/radio/weather_monitor,
 /obj/item/radio/weather_monitor,
 /turf/open/floor/pod/dark,
