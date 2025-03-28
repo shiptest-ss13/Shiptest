@@ -626,6 +626,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 	show_magazine_on_sprite = TRUE
 	show_magazine_on_sprite_ammo = TRUE
+	mag_display_ammo = TRUE
 
 
 	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
@@ -660,6 +661,22 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	deploy_recoil_bonus = -3
 	deploy_spread_bonus = -10 //2 degree spread when deployed, making it VERY accurate for an lmg
 
+	valid_attachments = CLIP_ATTACHMENTS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 49,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 19,
+			"y" = 21,
+		)
+	)
 /obj/item/gun/ballistic/automatic/hmg/rottweiler/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
