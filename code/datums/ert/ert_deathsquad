@@ -1,0 +1,9 @@
+/datum/ert/deathsquad
+	teamsize = 4
+	leader_role = /datum/antagonist/ert/deathsquad/leader
+	roles = list(/datum/antagonist/ert/deathsquad, /datum/antagonist/ert/deathsquad/medic, /datum/antagonist/ert/inteq/demolitions)
+	mission = "."
+	rename_team = "Deathsquad Cleaning Team"
+	polldesc = "a Deathsquad cleanup crew"
+	ert_template = /datum/map_template/shuttle/subshuttles/anvil
+
