@@ -338,7 +338,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 
 //########### MARKSMAN ###########//
-/obj/item/gun/ballistic/automatic/marksman/f4
+/obj/item/gun/ballistic/automatic/marksman/A
 	name = "CM-F4"
 	desc = "CLIP's marksman rifle, used by both military and law enforcement units. Designed not long after the CM-24, the venerable F4 has adapted well to continued upgrades. Chambered in .308."
 
@@ -609,6 +609,77 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/cm40_762_40_box/empty
+	start_empty = TRUE
+
+/obj/item/gun/ballistic/automatic/hmg/rottweiler
+	name = "\improper Rottweiler"
+	desc = "Placeholder desc. Yell at MemeSnorfer if you see me!"
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+
+	icon_state = "rottweiler"
+	item_state = "rottweiler"
+
+	manufacturer = MANUFACTURER_INTEQ
+
+	show_magazine_on_sprite = TRUE
+	show_magazine_on_sprite_ammo = TRUE
+
+
+	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	fire_delay = 0.2 SECONDS //chunky machine gun
+
+	unique_mag_sprites_for_variants = TRUE
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	bolt_type = BOLT_TYPE_CLIP
+	tac_reloads = FALSE
+
+	default_ammo_type = /obj/item/ammo_box/magazine/rottweiler_308_box
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/rottweiler_308_box,
+		/obj/item/ammo_box/magazine/f4_308
+	)
+
+	spread = 12
+	spread_unwielded = 35
+
+	recoil = 3 //it's firing .308
+	recoil_unwielded = 8
+
+	has_bipod = TRUE
+
+	deploy_recoil_bonus = -3
+	deploy_spread_bonus = -10 //2 degree spread when deployed, making it VERY accurate for an lmg
+
+/obj/item/gun/ballistic/automatic/hmg/rottweiler/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/ammo_box/magazine/rottweiler_308_box
+	name = "Rottweiler box magazine (.308)"
+	desc = "A 50 round box magazine for Rottweiler machine gun. These rounds do good damage with significant armor penetration."
+	base_icon_state = "rottweiler_mag"
+	icon_state = "rottweiler_mag-1"
+	ammo_type = /obj/item/ammo_casing/a308
+	max_ammo = 50
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/rottweiler_308_box/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/rottweiler_308_box/empty
 	start_empty = TRUE
 
 //########### MISC ###########//
