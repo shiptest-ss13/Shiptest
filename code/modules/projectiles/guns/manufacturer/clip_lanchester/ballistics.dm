@@ -338,7 +338,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 
 //########### MARKSMAN ###########//
-/obj/item/gun/ballistic/automatic/marksman/A
+/obj/item/gun/ballistic/automatic/marksman/f4
 	name = "CM-F4"
 	desc = "CLIP's marksman rifle, used by both military and law enforcement units. Designed not long after the CM-24, the venerable F4 has adapted well to continued upgrades. Chambered in .308."
 
