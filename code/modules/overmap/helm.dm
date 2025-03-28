@@ -49,8 +49,6 @@
 
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-	if(!viewer)
-		SSpoints_of_interest.make_point_of_interest(src)
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
 	ntnet_relay = new(src)
 
@@ -111,6 +109,8 @@
 	qdel(current_ship)
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	if(!viewer)
+		SSpoints_of_interest.make_point_of_interest(src)
 	if(current_ship && current_ship != port.current_ship)
 		current_ship.helms -= src
 	current_ship = port.current_ship
@@ -170,6 +170,7 @@
 		return
 
 	.["calibrating"] = calibrating
+	.["canRename"] = COOLDOWN_FINISHED(current_ship, rename_cooldown)
 	.["otherInfo"] = list()
 	var/list/objects = current_ship.get_nearby_overmap_objects()
 	var/dequeue_pointer = 0
@@ -243,8 +244,9 @@
 	.["isViewer"] = viewer || (!allow_ai_control && issilicon(user))
 	.["mapRef"] = current_ship.token.map_name
 	.["shipInfo"] = list(
-		name = current_ship.name,
-		class = current_ship.source_template?.name,
+		name = current_ship.real_name,
+		prefixed = current_ship.name,
+		class = current_ship.source_template.name,
 		mass = current_ship.shuttle_port.turf_count,
 		sensor_range = 4
 	)
@@ -269,13 +271,16 @@
 			if(!new_name)
 				return
 			new_name = trim(new_name)
-			if (!length(new_name) || new_name == current_ship.name)
+			if (!length(new_name) || new_name == current_ship.real_name)
 				return
-			if(!reject_bad_text(new_name, MAX_CHARTER_LEN))
+			if(!reject_bad_text(new_name, MAX_CHARTER_LEN) || CHAT_FILTER_CHECK(new_name))
 				say("Error: Replacement designation rejected by system.")
+				return
+			if(tgui_alert(usr, "Are you sure you want to rename the ship to the \"[current_ship.source_template.prefix] [new_name]\"?", "Rename Confirmation", list("Yes", "No")) != "Yes")
 				return
 			if(!current_ship.Rename(new_name))
 				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed.")
+				return
 			update_static_data(usr, ui)
 			return
 		if("reload_ship")

@@ -45,7 +45,7 @@
 /datum/blackmarket_item/weapon/sledgehammer
 	name = "Breaching Sledgehammer"
 	desc = "A Clique outfit had to ditch a lot of equipment to evade a Gezenan assault. This little piece breaks legs and walls like no other. You want in?"
-	item = /obj/item/melee/axe/sledgehammer
+	item = /obj/item/melee/sledgehammer/gorlex
 
 	price_min = 2000
 	price_max = 3000

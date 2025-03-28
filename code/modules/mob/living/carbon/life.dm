@@ -61,7 +61,7 @@
 ///////////////
 
 //Start of a breath chain, calls breathe()
-/mob/living/carbon/handle_breathing(times_fired)
+/mob/living/carbon/handle_breathing(seconds_per_tick, times_fired)
 	var/next_breath = 4
 	var/obj/item/organ/lungs/L = getorganslot(ORGAN_SLOT_LUNGS)
 	var/obj/item/organ/heart/H = getorganslot(ORGAN_SLOT_HEART)
