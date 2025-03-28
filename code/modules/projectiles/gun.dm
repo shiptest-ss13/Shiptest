@@ -415,9 +415,9 @@
 	return ..()
 
 /obj/item/gun/examine(mob/user)
+	. = ..()
 	if(manufacturer)
 		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
-	. = ..()
 
 /obj/item/gun/examine_more(mob/user)
 	. = ..()
