@@ -18,6 +18,7 @@
 	open_sound_volume = 35
 	close_sound_volume = 50
 	drag_slowdown = 0
+	pass_flags_self = LETPASSCLICKS
 	var/obj/item/paper/fluff/jobs/cargo/manifest/manifest
 	var/shelve = FALSE
 	var/shelve_range = 0
