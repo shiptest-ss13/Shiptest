@@ -742,10 +742,14 @@
 /obj/structure/rack,
 /obj/machinery/light/directional/west,
 /obj/item/gun/energy/kalix/pgf/heavy/sniper{
-	pixel_x = -3;
-	pixel_y = 2
+	pixel_x = -4;
+	pixel_y = 4
 	},
 /obj/effect/turf_decal/corner/opaque/neutral/full,
+/obj/item/gun/energy/kalix/pgf/medium{
+	pixel_y = -4;
+	pixel_x = -2
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "gz" = (
@@ -4190,9 +4194,6 @@
 /area/ship/security/armory)
 "Ha" = (
 /obj/structure/rack,
-/obj/item/gun/energy/kalix/pgf{
-	pixel_y = 10
-	},
 /obj/item/gun/energy/kalix/pgf{
 	pixel_y = 5
 	},
