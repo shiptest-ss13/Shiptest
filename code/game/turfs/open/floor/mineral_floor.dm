@@ -81,6 +81,8 @@
 	icon_state = "titanium"
 	floor_tile = /obj/item/stack/tile/mineral/titanium
 	broken_states = list("titanium_dam1","titanium_dam2","titanium_dam3","titanium_dam4","titanium_dam5")
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
+	canSmoothWith = list(SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
 
 /turf/open/floor/mineral/titanium/airless
 	initial_gas_mix = AIRLESS_ATMOS

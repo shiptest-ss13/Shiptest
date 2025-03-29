@@ -17,6 +17,9 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
+	canSmoothWith = list(SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
+
 	FASTDMM_PROP(\
 		pipe_astar_cost = 1\
 	)

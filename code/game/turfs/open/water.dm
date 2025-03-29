@@ -3,12 +3,13 @@
 	name = "water"
 	desc = "Shallow water."
 	icon = 'icons/turf/floors.dmi'
-	icon_state = "riverwater_motion"
+	icon_state = "water"
 	baseturfs = /turf/open/water
 	planetary_atmos = TRUE
 	slowdown = 1
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null //needs a splashing sound one day.
+	layer = WATER_TURF_LAYER
 
 	footstep = FOOTSTEP_WATER
 	barefootstep = FOOTSTEP_WATER
@@ -17,6 +18,23 @@
 
 	var/datum/reagent/reagent_to_extract = /datum/reagent/water
 	var/extracted_reagent_visible_name = "water"
+
+/turf/open/water/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	var/area/overmap_encounter/selected_area = get_area(src)
+	if(!istype(selected_area))
+		return
+
+	RegisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(get_light))
+	if(istype(selected_area))
+		light_range = selected_area.light_range
+		light_range = selected_area.light_range
+		light_power = selected_area.light_power
+		update_light()
+
+/turf/open/water/Destroy()
+	. = ..()
+	UnregisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
 
 /turf/open/water/examine(mob/user)
 	. = ..()
@@ -66,10 +84,17 @@
 /turf/open/water/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent) //water? wet? not in this economy.
 	return
 
+/turf/open/water/proc/get_light(obj/item/source, target_light, target_power, target_color,)
+	light_range = target_light
+	light_power = target_power
+	light_color = target_color
+	update_light()
+
 /turf/open/water/jungle
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
+	color = "#617B64"
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 /turf/open/water/jungle/Initialize(mapload)
@@ -77,25 +102,84 @@
 	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_JUNGLE)
 
 /turf/open/water/beach
-	color = COLOR_CYAN
+	color = "#41a3ff"
 	light_range = 2
 	light_power = 0.80
 	light_color = LIGHT_COLOR_BLUE
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
+
+/turf/open/water/beach/underground
+	light_range = 0
 
 /turf/open/water/beach/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_BEACH)
 
 /turf/open/water/beach/deep
-	color = "#0099ff"
+	color = "#4566ad"
 	light_color = LIGHT_COLOR_DARK_BLUE
 
 /turf/open/water/tar
 	name = "tar pit"
 	desc = "Shallow tar. Will slow you down significantly."
-	color = "#473a3a"
+	color = "#574747"
 	light_range = 0
 	slowdown = 2
 	reagent_to_extract = /datum/reagent/asphalt
 	extracted_reagent_visible_name = "tar"
+
+
+/turf/open/water/whitesands
+
+	name = "sulfuric acid pool"
+	desc = "Shallow sulfuric acid. It isn't the best ideas to step in this, but you are able to without many short term consequnces."
+	baseturfs = /turf/open/water/whitesands
+	planetary_atmos = TRUE
+	color = "#57ffd5"
+
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+
+	reagent_to_extract = /datum/reagent/toxin/acid
+	extracted_reagent_visible_name = "acid"
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+	var/particle_to_spawn = /particles/smoke/steam/vent/high
+	var/obj/effect/particle_holder/part_hold
+
+/turf/open/water/whitesands/Initialize()
+	. = ..()
+	if(prob(5))
+		part_hold = new(get_turf(src))
+		part_hold.layer = EDGED_TURF_LAYER
+		part_hold.particles = new particle_to_spawn()
+		underlays.Cut()
+
+/turf/open/water/whitesands/Destroy()
+	. = ..()
+	QDEL_NULL(part_hold)
+
+/turf/open/water/oasis
+	name = "freshwater"
+	desc = "Nice and warm freshwater. Drinkable and bathable, it is highly valuable in scarce locations"
+	baseturfs = /turf/open/water/oasis
+	planetary_atmos = TRUE
+	color = "#8ac7e6"
+	light_range = 2
+	light_power = 0.80
+	light_color = "#9cdeff"
+
+	var/particle_to_spawn = /particles/smoke/steam/vent/low
+	var/obj/effect/particle_holder/part_hold
+
+/turf/open/water/oasis/Initialize()
+	. = ..()
+	part_hold = new(get_turf(src))
+	part_hold.layer = EDGED_TURF_LAYER
+	part_hold.particles = new particle_to_spawn()
+	underlays.Cut()
+
+/turf/open/water/oasis/Destroy()
+	. = ..()
+	QDEL_NULL(part_hold)
