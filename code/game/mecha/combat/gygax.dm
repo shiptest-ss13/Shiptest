@@ -67,6 +67,15 @@
 	desc = "A light security exosuit originally manufactured by Cybersun Biodynamics, extensively modified by IRMG artificers. The leg actuators have been maxed out, allowing for powerful short ranged charges capable of breaking walls and other obstacles."
 	icon_state = "inteqgygax"
 
+/obj/mecha/combat/gygax/charger/overclock
+	name = "\improper Overclocked 501p"
+	desc = "A lightweight security exosuit, which has been overclocked to have its leg actuators launch the exosuit forward instead of enhanced speed."
+	charge_windup = 1
+	charge_cooldown = 100
+	charge_power_consume = 250
+	charge_distance = 4
+	charge_break_walls = FALSE
+
 /obj/mecha/combat/gygax/charger/mp
 	name = "\improper NT-501p-MP"
 	desc = "An exosuit model derrived from the Cybersun 501p and modified for mass production. This model has had its armor plating reduced to reduce production costs. The leg actuators have been modified to take advantage of the consequently lighter frame, allowing for swift charges over moderate distances without heavily taxing the power supply."
