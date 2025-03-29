@@ -205,6 +205,7 @@
 					/obj/machinery/grill/unwrenched)
 	crate_name = "grilling starter kit crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/food/grillfuel
 	name = "Grilling Fuel Kit"
