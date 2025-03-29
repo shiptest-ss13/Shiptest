@@ -954,7 +954,7 @@
 
 	uniform = /obj/item/clothing/under/utility
 	shoes = /obj/item/clothing/shoes/workboots
-	gloves = /obj/item/clothing/mask/breath/suns
+	gloves = /obj/item/clothing/gloves/color/black
 
 /datum/outfit/job/independent/colonist/captain
 	name = "Independent - Colonist Leader"
