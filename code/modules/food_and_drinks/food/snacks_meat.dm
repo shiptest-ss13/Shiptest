@@ -355,7 +355,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/capsaicin = 5)
 	filling_color = "#FA8072"
 	tastes = list("fish" = 1, "tongue-searing heat" = 1)
-	foodtype = MEAT | TOXIC
+	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/nugget
 	name = "chicken nugget"
