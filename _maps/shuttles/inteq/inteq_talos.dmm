@@ -526,6 +526,7 @@
 	},
 /obj/item/cigbutt,
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "cT" = (
@@ -1422,6 +1423,10 @@
 	pixel_y = 8
 	},
 /obj/machinery/camera/autoname,
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = -1;
+	pixel_y = 29
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar)
 "iy" = (
@@ -4538,6 +4543,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "zC" = (
@@ -4624,9 +4632,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
-/obj/structure/chair/handrail{
-	dir = 1
-	},
+/obj/structure/table,
+/obj/machinery/fax/inteq,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "zT" = (
@@ -8097,7 +8104,8 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
-/obj/machinery/photocopier,
+/obj/structure/table/reinforced,
+/obj/machinery/fax/inteq,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "We" = (
