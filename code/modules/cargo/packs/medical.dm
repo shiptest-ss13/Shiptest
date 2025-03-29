@@ -107,7 +107,7 @@
 	name = "Operating Console Crate"
 	desc = "Contains a console board to construct an Operating Console. Required to install surgical disks and gives basic diagnostics on the patients vitals."
 	cost = 500
-	contains = list(/obj/item/circuitboard/operating)
+	contains = list(/obj/item/circuitboard/computer/operating)
 	crate_name = "surgical supplies crate"
 
 /datum/supply_pack/medical/anesthetic
