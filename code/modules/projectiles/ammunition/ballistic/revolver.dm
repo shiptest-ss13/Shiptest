@@ -79,8 +79,8 @@
 	projectile_type = /obj/projectile/bullet/c38/bouncy
 
 /obj/item/ammo_casing/c38/dumdum
-	name = ".38 dum-dum bullet casing"
-	desc = "A .38 dum-dum bullet casing."
+	name = ".38 prism bullet casing"
+	desc = "A .38 prism bullet casing."
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c38/dumdum
 
@@ -95,6 +95,24 @@
 	desc = "A .38 chilled bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c38/iceblox
+
+/obj/item/ammo_casing/c38/ashwine
+	name = ".38 hallucinogenic bullet casing"
+	desc = "A .38 hallucinogenic bullet casing."
+	bullet_skin = "ash"
+	projectile_type = /obj/projectile/bullet/c38/ashwine
+
+/obj/item/ammo_casing/c38/shock
+	name = ".38 shock bullet casing"
+	desc = "A .38 shock bullet casing."
+	bullet_skin = "shock"
+	projectile_type = /obj/projectile/bullet/c38/shock
+
+/obj/item/ammo_casing/c38/force
+	name = ".38 force bullet casing"
+	desc = "A .38 force bullet casing."
+	bullet_skin = "force"
+	projectile_type = /obj/projectile/bullet/c38/force
 
 //44 Roumain (Montagne & Shadow)
 
