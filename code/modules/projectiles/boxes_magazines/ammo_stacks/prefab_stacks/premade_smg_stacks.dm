@@ -129,6 +129,7 @@
 // 5.7x39mm (Asp and Sidewinder)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39
+	max_ammo = 20
 	ammo_type = /obj/item/ammo_casing/c57x39mm
 
 /obj/item/storage/box/ammo/c57x39
