@@ -292,6 +292,8 @@
 	icon_state = "cape"
 	item_state = "blackcloth"
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/neck/cloak/gezena/lead
 	name = "marine officer's Azuilhauz"

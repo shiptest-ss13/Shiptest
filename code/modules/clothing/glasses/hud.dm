@@ -234,14 +234,6 @@
 	icon_state = "sun"
 	item_state = "sunglasses"
 
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	name = "inteq ballistic HUD"
-	desc = "A snazzy looking pair of ballistic goggles with an integrated security hud. The opaque visor provides flash protection."
-	icon_state = "inteq_goggles"
-	item_state = "inteq_goggles"
-	supports_variations = KEPORI_VARIATION | VOX_VARIATION
-	glass_colour_type = /datum/client_colour/glass_colour/orange
-
 /obj/item/clothing/glasses/hud/health/prescription
 	name = "prescription health scanner HUD"
 	desc = "A heads-up display that scans the humanoids in view and provides accurate data about their health status. This pair also helps nearsighted doctors."

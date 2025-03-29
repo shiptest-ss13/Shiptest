@@ -137,11 +137,6 @@
 
 	dog_fashion = /datum/dog_fashion/head/cowboy
 
-/obj/item/clothing/head/warden/inteq
-	name = "master at arms' campaign hat"
-	desc = "A special brown campaign hat with the IRMG insignia emblazoned on it. For yelling at clueless recruits in style."
-	icon_state = "maahat"
-
 /obj/item/clothing/head/warden/drill
 	name = "warden's campaign hat"
 	desc = "A special campaign hat with the security insignia emblazoned on it."
