@@ -38,7 +38,7 @@
 
 	/// The maximum number of missions that may be offered by the outpost at one time.
 	/// Missions which have been accepted do not count against this limit.
-	var/max_missions = 10
+	var/max_missions
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
 	/// List of all of the things this outpost offers
@@ -145,7 +145,7 @@
 	return person_name
 
 /datum/overmap/outpost/proc/fill_missions()
-	max_missions = 10 + (SSovermap.controlled_ships.len * 5)
+	max_missions = min(10 + (SSovermap.controlled_ships.len * 2), 25)
 	while(LAZYLEN(missions) < max_missions)
 		var/mission_type = SSmissions.get_weighted_mission_type()
 		var/datum/mission/outpost/M = new mission_type(src)
