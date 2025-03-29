@@ -176,6 +176,9 @@ SUBSYSTEM_DEF(mapping)
 /datum/controller/subsystem/mapping/proc/load_ship_templates()
 	ship_purchase_list = list()
 	var/list/filelist = flist("_maps/configs/")
+
+	filelist = sortList(filelist)
+
 	for(var/filename in filelist)
 		var/file = file("_maps/configs/" + filename)
 		if(!file)
