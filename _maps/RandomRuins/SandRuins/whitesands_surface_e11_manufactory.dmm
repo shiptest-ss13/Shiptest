@@ -59,7 +59,9 @@
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/whitesands/e11manufactory/office)
 "aD" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/structure/fluff/paper/stack,
 /obj/structure/fluff/paper/stack{
 	dir = 1
@@ -349,7 +351,9 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "ch" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "cm" = (
@@ -499,7 +503,9 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/whitesands/e11manufactory/office)
@@ -881,7 +887,9 @@
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "hb" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -1099,7 +1107,9 @@
 /obj/structure/sign/poster/official/work_for_a_future{
 	pixel_y = 32
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
@@ -1292,7 +1302,6 @@
 	name = "Croquette's bed";
 	desc = "A comfy-looking mothroach bed."
 	},
-/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/whitesands/e11manufactory/office)
 "jT" = (
@@ -2128,7 +2137,7 @@
 /obj/structure/filingcabinet{
 	dir = 4
 	},
-/obj/item/documents/eoehoma,
+/obj/item/folder/documents/eoehoma,
 /obj/item/pen/fourcolor,
 /obj/item/clothing/neck/stethoscope{
 	w_class = 2
@@ -2858,7 +2867,9 @@
 /obj/effect/turf_decal/corner/opaque/red/diagonal{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -4099,7 +4110,9 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "GA" = (
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/sign/poster/official/bless_this_spess{
 	pixel_y = 32
@@ -4846,7 +4859,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
 "MC" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/barracks)
@@ -4887,7 +4902,9 @@
 /turf/closed/wall/rust,
 /area/ruin/whitesands/e11manufactory/security)
 "MY" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -5376,7 +5393,9 @@
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Qu" = (
@@ -5869,7 +5888,9 @@
 /turf/open/floor/plating/asteroid/whitesands/grass/dead/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Ub" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
 "Ug" = (
