@@ -5,7 +5,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/under/solgov.dmi'
 	icon_state = "solgov_tunic"
 	item_state = "solgov_tunic"
-	armor = list("melee" = 10, "fire" = 30, "acid" = 30)
+	armor = list("melee" = 0, "fire" = 30, "acid" = 30)
 	strip_delay = 50
 	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION
@@ -15,7 +15,7 @@
 	desc = "Specialized combat tunic utilized by Sonnensoldners serving the Terran Regency."
 	icon_state = "terragov_tunic"
 	item_state = "terragov_tunic"
-	armor = list("melee" = 15, "fire" = 30, "acid" = 30)
+	armor = list("melee" = 0, "fire" = 30, "acid" = 30)
 	can_adjust = FALSE
 
 /obj/item/clothing/under/solgov/dress
