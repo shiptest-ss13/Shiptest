@@ -10,6 +10,10 @@
 	if(isatom(parent))
 		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_atom_examine))
 
+	if(importance_level == MISSION_IMPORTANCE_CRITICAL)
+		SSpoints_of_interest.remove_point_of_interest(parent)
+		SSpoints_of_interest.make_point_of_interest(parent)
+
 /datum/component/mission_important/proc/on_atom_examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 

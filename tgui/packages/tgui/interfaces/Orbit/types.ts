@@ -10,9 +10,9 @@ export type OrbitData = {
   critical: Critical[];
   dead: Observable[];
   ghosts: Observable[];
+  ships: Observable[];
   misc: Observable[];
   npcs: Observable[];
-  ships: Observable[];
   orbiting: Observable | null;
   autoObserve: boolean;
 };
