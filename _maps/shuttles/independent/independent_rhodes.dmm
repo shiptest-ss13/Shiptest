@@ -397,19 +397,21 @@
 	},
 /obj/structure/crate_shelf,
 /obj/machinery/light/small/directional/south,
-/obj/structure/closet/crate,
-/obj/item/stack/sheet/metal/twenty,
-/obj/item/stack/sheet/glass/twenty,
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
+/obj/item/stack/sheet/plastic/five,
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/item/stack/sheet/plastic/five,
+/obj/structure/closet/crate/engineering{
+	name = "material crate"
+	},
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass/twenty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "qT" = (
@@ -1028,6 +1030,15 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/structure/closet/crate{
+	name = "mining gear crate"
+	},
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/storage/box/flares,
+/obj/item/pickaxe/mini,
+/obj/item/pickaxe/mini,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "XU" = (
