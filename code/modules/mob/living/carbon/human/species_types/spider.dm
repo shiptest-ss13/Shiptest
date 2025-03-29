@@ -1,6 +1,3 @@
-GLOBAL_LIST_INIT(spider_first, world.file2list("strings/names/spider_first.txt"))
-GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
-
 /obj/item/organ/eyes/night_vision/spider
 	name = "spider eyes"
 	desc = "These eyes seem to have increased sensitivity to bright light, offset by basic night vision."
@@ -48,26 +45,10 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	species_l_leg = /obj/item/bodypart/leg/left/rachnid
 	species_r_leg = /obj/item/bodypart/leg/right/rachnid
 
-/proc/random_unique_spider_name(attempts_to_find_unique_name=10)
-	for(var/i in 1 to attempts_to_find_unique_name)
-		. = capitalize(pick(GLOB.spider_first)) + " " + capitalize(pick(GLOB.spider_last))
-
-		if(!findname(.))
-			break
-
-/proc/spider_name()
-	return "[pick(GLOB.spider_first)] [pick(GLOB.spider_last)]"
-
 /datum/species/spider/random_name(gender,unique,lastname)
 	if(unique)
 		return random_unique_spider_name()
-
-	var/randname = spider_name()
-
-	if(lastname)
-		randname += " [lastname]"
-
-	return randname
+	return spider_name()
 
 /datum/species/spider/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(chem.type == /datum/reagent/toxin/pestkiller)
