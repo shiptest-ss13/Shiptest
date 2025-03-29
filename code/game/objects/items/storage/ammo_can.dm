@@ -10,13 +10,7 @@
 	material_flags = NONE
 	has_latches = FALSE
 	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/storage/toolbox/ammo/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_volume = STORAGE_VOLUME_BACKPACK
-	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
-	STR.set_holdable(list(
+	var/holdable_items = list(
 		/obj/item/storage/box/ammo,
 		/obj/item/mine,
 		/obj/item/grenade,
@@ -26,7 +20,15 @@
 		/obj/item/mine,
 		/obj/item/grenade,
 		/obj/item/stock_parts/cell/gun
-		))
+	)
+
+/obj/item/storage/toolbox/ammo/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 400
+	STR.set_holdable(holdable_items)
+
 	unique_reskin = list(
 		"EXPLOSIVE" = "ammobox_expl",
 		"12ga Buckshot" = "ammobox_12ga",
