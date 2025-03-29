@@ -80,3 +80,10 @@
 	mission_limit = 1
 	faction = /datum/faction/pgf
 	setpiece_item = /mob/living/carbon/human
+
+/datum/map_template/ruin/space/waste_disposal
+	id = "nuclear_waste_station"
+	suffix = "nuclear_waste_disposal.dmm"
+	name = "Nuclear Waste Station"
+	description = "A long-abandoned nuclear waste site, which was left in a perfectly preserved state..."
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)

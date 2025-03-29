@@ -57,3 +57,10 @@
 	rad_power = 120
 	rad_delay = 8 SECONDS
 	rad_prob = 10
+
+/obj/effect/radiation/extreme //DO!!! NOT!!!! PUT!!!! IN!!! RANDOM!!! SPAWNERS!!!! THIS WILL MELT SOMEONE!!!
+	name = "2000 reotgen"
+	rad_power = 2000
+	rad_delay = 1 SECONDS
+	rad_prob = 100
+	rad_spread = 5
