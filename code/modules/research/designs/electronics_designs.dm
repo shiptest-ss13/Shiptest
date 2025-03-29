@@ -22,7 +22,6 @@
 	build_path = /obj/item/paicard
 	category = list("Electronics")
 
-
 /datum/design/ai_cam_upgrade
 	name = "AI Surveillance Software Update"
 	desc = "A software package that will allow an artificial intelligence to 'hear' from its cameras via lip reading."
@@ -36,6 +35,7 @@
 ///////////////////////////////////
 //////////Nanite Devices///////////
 ///////////////////////////////////
+
 /datum/design/nanite_remote
 	name = "Nanite Remote"
 	desc = "Allows for the construction of a nanite remote."
@@ -70,13 +70,14 @@
 ////////////////////////////////////////
 //////////Disk Construction Disks///////
 ////////////////////////////////////////
+
 /datum/design/design_disk
 	name = "Design Storage Disk"
 	desc = "Produce additional disks for storing device designs."
 	id = "design_disk"
 	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
-	build_path = /obj/item/disk/design_disk
+	build_path = /obj/item/disk/design_disk/basic
 	category = list("Electronics")
 
 /datum/design/design_disk_adv
