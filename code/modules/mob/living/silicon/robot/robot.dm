@@ -1158,3 +1158,113 @@
 	var/datum/computer_file/program/robotact/program = modularInterface.get_robotact()
 	if(program)
 		program.force_full_update()
+
+/datum/action/innate/brain_undeployment
+	name = "Disconnect from shell"
+	desc = "Stop controlling your shell and resume normal core operations."
+	button_icon = 'icons/mob/actions/actions_AI.dmi'
+	button_icon_state = "ai_core"
+
+/datum/action/innate/brain_undeployment/Trigger(trigger_flags)
+	if(!..())
+		return FALSE
+	var/obj/item/organ/brain/cybernetic/ai/shell_to_disconnect = owner.get_organ_by_type(/obj/item/organ/brain/cybernetic/ai)
+
+	shell_to_disconnect.undeploy()
+	return TRUE
+
+/obj/item/organ/brain/cybernetic/ai
+	name = "Remote uplink positronic frame controller"
+	desc = "Can be inserted into an I.P.C. without a controlling positronic brain to allow stationary positronic interface cores to control it."
+	icon = 'icons/obj/assemblies.dmi' ///so its not a fucking brain
+	icon_state = "posibrain"
+	base_icon_state = "posibrain"
+	/// if connected, our AI
+	var/mob/living/silicon/ai/mainframe
+	/// action for undeployment
+	var/datum/action/innate/brain_undeployment/undeployment_action = new
+
+/obj/item/organ/brain/cybernetic/ai/Destroy()
+	. = ..()
+	undeploy()
+	mainframe = null
+	QDEL_NULL(undeployment_action)
+
+
+/obj/item/organ/brain/cybernetic/ai/proc/get_status_tab_item(mob/living/source, list/items)
+	SIGNAL_HANDLER
+	if(!mainframe)
+		return
+	items += mainframe.get_status_tab_items()
+
+
+/obj/item/organ/brain/cybernetic/ai/proc/owner_clicked(datum/source, atom/location, control, params, mob/user)
+	SIGNAL_HANDLER
+	if(!isAI(user))
+		return
+	var/list/lines = list()
+	lines += span_bold("[owner]")
+	lines += "Target is currently [!HAS_TRAIT(owner, TRAIT_INCAPACITATED) ? "functional" : "incapacitated"]"
+	lines += "Estimated frame integrity: [owner.health]"
+	if(is_sufficiently_augmented())
+		lines += "<a href='byond://?src=[REF(src)];ai_take_control=[REF(user)]'>[span_boldnotice("Take control?")]</a><br>"
+	else
+		lines += span_warning("Frame unable to be interfaced with, unable to enter remote uplink status.")
+
+	to_chat(user, boxed_message(jointext(lines, "\n")), type = MESSAGE_TYPE_INFO)
+
+/obj/item/organ/brain/cybernetic/ai/Topic(href, href_list)
+	..()
+	if(!href_list["ai_take_control"] || !is_sufficiently_augmented())
+		return
+	var/mob/living/silicon/ai/AI = locate(href_list["ai_take_control"]) in GLOB.silicon_mobs
+	if(isnull(AI))
+		return
+	/*if(AI.controlled_equipment)
+		to_chat(AI, span_warning("You are already loaded into an onboard computer!"))
+		return*/   ///this is because we do not have key parts of this and i dont wanna break the rest of this
+	if(!GLOB.cameranet.checkCameraVis(owner))
+		to_chat(AI, span_warning("Target is no longer near active cameras."))
+		return
+	if(!isturf(AI.loc))
+		to_chat(AI, span_warning("You aren't in your core!"))
+		return
+
+	AI.deployed_shell = owner
+	deploy_init(AI)
+	AI.mind.transfer_to(owner)
+
+/obj/item/organ/brain/cybernetic/ai/proc/deploy_init(mob/living/silicon/ai/AI)
+	//todo camera maybe
+	mainframe = AI
+	RegisterSignal(AI, PROC_REF(ai_deleted))
+	undeployment_action.Grant(owner)
+	to_chat(owner, span_bold("You are operating through a remote uplink system to this frame, and remain the same mind."))
+
+/obj/item/organ/brain/cybernetic/ai/proc/undeploy(datum/source)
+	SIGNAL_HANDLER
+	if(!owner?.mind || !mainframe)
+		return
+	mainframe.redeploy_action.Remove(mainframe)
+	mainframe.redeploy_action.last_used_shell = null
+	owner.mind.transfer_to(mainframe)
+	mainframe.deployed_shell = null
+	undeployment_action.Remove(owner)
+	if(mainframe.laws)
+		mainframe.laws.show_laws(mainframe)
+	if(mainframe.eyeobj)
+		mainframe.eyeobj.setLoc(loc)
+	mainframe = null
+
+/obj/item/organ/brain/cybernetic/ai/proc/is_sufficiently_augmented()
+	. = TRUE
+	if((isipc(/mob/living/carbon/human/species/ipc)))
+		return
+	else
+		return FALSE
+
+
+/obj/item/organ/brain/cybernetic/ai/proc/ai_deleted(datum/source)
+	SIGNAL_HANDLER
+	to_chat(owner, span_danger("Your core has been rendered inoperable..."))
+	undeploy()
