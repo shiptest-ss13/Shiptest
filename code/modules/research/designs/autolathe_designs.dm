@@ -367,6 +367,14 @@
 	build_path = /obj/item/melee/knife/kitchen
 	category = list("initial","Dinnerware")
 
+/datum/design/handsaw
+	name = "Hand Saw"
+	id = "handsaw"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/melee/knife/handsaw
+	category = list("initial","Tools", "Tool Designs")
+
 /datum/design/plastic_knife
 	name = "Plastic Knife"
 	id = "plastic_knife"
