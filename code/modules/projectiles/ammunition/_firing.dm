@@ -20,6 +20,9 @@
 			user.changeNext_move(click_cooldown_override)
 
 		user.newtonian_move(get_dir(target, user))
+	var/obj/item/gun/ballistic/foulmouth = fired_from
+	if(istype(foulmouth))
+		foulmouth.adjust_wear(wear_modifier)
 	update_appearance()
 	return TRUE
 

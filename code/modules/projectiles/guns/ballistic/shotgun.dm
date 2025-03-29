@@ -44,6 +44,7 @@
 	gunslinger_recoil_bonus = -1
 
 	min_recoil = 0.1
+	wear_rate = 0
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
@@ -67,6 +68,10 @@
 	semi_auto = TRUE
 
 	gunslinger_recoil_bonus = 1
+	wear_rate = 1
+	wear_minor_threshold = 30
+	wear_major_threshold = 90
+	wear_maximum = 150
 
 //Dual Feed Shotgun
 
