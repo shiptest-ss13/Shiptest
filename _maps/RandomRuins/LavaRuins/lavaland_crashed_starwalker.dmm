@@ -34,9 +34,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/cable/orange{
 	icon_state = "5-8"
@@ -2539,6 +2537,7 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/mission_poi/main/blackbox,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/crashed_starwalker)
 "PH" = (
@@ -3051,10 +3050,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/crashed_starwalker)
-"XJ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/unpowered/crashed_starwalker)
 "XK" = (
 /obj/structure/grille,
 /turf/template_noop,
@@ -3174,7 +3169,7 @@
 "YN" = (
 /obj/structure/grille,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "YT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3954,7 +3949,7 @@ QT
 Oi
 zW
 Vt
-XJ
+FZ
 FZ
 UG
 FZ

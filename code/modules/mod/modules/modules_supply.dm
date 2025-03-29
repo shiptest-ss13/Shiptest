@@ -16,12 +16,14 @@
 
 /obj/item/mod/module/gps/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/gps/item, "MOD0")
+	AddComponent(/datum/component/gps/item, "MOD0", TRUE)
 
 /obj/item/mod/module/gps/on_use()
 	. = ..()
 	if(!.)
 		return
+	// var/datum/component/gps/item/internal_gps = GetComponent(/datum/component/gps/item)
+	// internal_gps.ui_interact(mod.wearer)
 	attack_self(mod.wearer)
 
 ///Hydraulic Clamp - Lets you pick up and drop crates.
@@ -33,7 +35,7 @@
 	icon_state = "clamp"
 	module_type = MODULE_ACTIVE
 	complexity = 3
-	use_power_cost = DEFAULT_CHARGE_DRAIN
+	use_power_cost = MODULE_CHARGE_DRAIN_MEDIUM
 	incompatible_modules = list(/obj/item/mod/module/clamp)
 	cooldown_time = 0.5 SECONDS
 	overlay_state_inactive = "module_clamp"
@@ -57,13 +59,12 @@
 			return
 		playsound(src, 'sound/mecha/hydraulic.ogg', 25, TRUE)
 		if(!do_after(mod.wearer, load_time, target = target))
-			balloon_alert(mod.wearer, "interrupted!")
 			return
 		if(!check_crate_pickup(picked_crate))
 			return
 		stored_crates += picked_crate
 		picked_crate.forceMove(src)
-		balloon_alert(mod.wearer, "picked up [picked_crate]")
+		to_chat(mod.wearer,span_notice("You pick up \the [picked_crate]."))
 		drain_power(use_power_cost)
 		mod.wearer.update_inv_back()
 	else if(length(stored_crates))
@@ -72,17 +73,16 @@
 			return
 		playsound(src, 'sound/mecha/hydraulic.ogg', 25, TRUE)
 		if(!do_after(mod.wearer, load_time, target = target))
-			balloon_alert(mod.wearer, "interrupted!")
 			return
 		if(target_turf.is_blocked_turf())
 			return
 		var/atom/movable/dropped_crate = pop(stored_crates)
 		dropped_crate.forceMove(target_turf)
-		balloon_alert(mod.wearer, "dropped [dropped_crate]")
+		to_chat(mod.wearer,span_notice("You drop \the [dropped_crate]"))
 		drain_power(use_power_cost)
 		mod.wearer.update_inv_back()
 	else
-		balloon_alert(mod.wearer, "invalid target!")
+		to_chat(mod.wearer,span_warning("Invalid target!"))
 
 /obj/item/mod/module/clamp/on_suit_deactivation(deleting = FALSE)
 	if(deleting)
@@ -93,12 +93,12 @@
 
 /obj/item/mod/module/clamp/proc/check_crate_pickup(atom/movable/target)
 	if(length(stored_crates) >= max_crates)
-		balloon_alert(mod.wearer, "too many crates!")
+		to_chat(mod.wearer,span_warning("The suit crate storage is full! Clear out some space!"))
 		return FALSE
 	for(var/mob/living/mob in target.get_all_contents())
 		if(mob.mob_size < MOB_SIZE_HUMAN)
 			continue
-		balloon_alert(mod.wearer, "crate too heavy!")
+		to_chat(mod.wearer,span_warning("\The [target] is too heavy!"))
 		return FALSE
 	return TRUE
 
@@ -121,47 +121,18 @@
 	icon_state = "drill"
 	module_type = MODULE_ACTIVE
 	complexity = 2
-	use_power_cost = DEFAULT_CHARGE_DRAIN
+	use_power_cost = MODULE_CHARGE_DRAIN_MEDIUM
 	incompatible_modules = list(/obj/item/mod/module/drill)
+	device = /obj/item/pickaxe/drill/mod
 	cooldown_time = 0.5 SECONDS
 	overlay_state_active = "module_drill"
 
-/obj/item/mod/module/drill/on_activation()
-	. = ..()
-	if(!.)
-		return
-	RegisterSignal(mod.wearer, COMSIG_MOVABLE_BUMP, PROC_REF(bump_mine))
-
-/obj/item/mod/module/drill/on_deactivation(display_message = TRUE, deleting = FALSE)
-	. = ..()
-	if(!.)
-		return
-	UnregisterSignal(mod.wearer, COMSIG_MOVABLE_BUMP)
-
-/obj/item/mod/module/drill/on_select_use(atom/target)
-	. = ..()
-	if(!.)
-		return
-	if(!mod.wearer.Adjacent(target))
-		return
-	if(istype(target, /turf/closed/mineral))
-		var/turf/closed/mineral/mineral_turf = target
-		mineral_turf.gets_drilled(mod.wearer)
-		drain_power(use_power_cost)
-	else if(istype(target, /turf/open/floor/plating/asteroid))
-		var/turf/open/floor/plating/asteroid/sand_turf = target
-		if(!sand_turf.can_dig(mod.wearer))
-			return
-		sand_turf.getDug()
-		drain_power(use_power_cost)
-
-/obj/item/mod/module/drill/proc/bump_mine(mob/living/carbon/human/bumper, atom/bumped_into, proximity)
-	SIGNAL_HANDLER
-	if(!istype(bumped_into, /turf/closed/mineral) || !drain_power(use_power_cost))
-		return
-	var/turf/closed/mineral/mineral_turf = bumped_into
-	mineral_turf.gets_drilled(mod.wearer)
-	return COMPONENT_CANCEL_ATTACK_CHAIN
+/obj/item/pickaxe/drill/mod
+	name = "MOD Integrated Drill"
+	desc = "An integrated drill, complete with self-cleaning bit and part replacements."
+	icon = 'icons/obj/clothing/modsuit/mod_modules.dmi'
+	toolspeed = 0.3
+	icon_state = "drill"
 
 ///Ore Bag - Lets you pick up ores and drop them from the suit.
 /obj/item/mod/module/orebag
@@ -212,6 +183,49 @@
 		ores -= ore
 	drain_power(use_power_cost)
 
+/obj/item/mod/module/plasma_engine
+	name = "MOD plasma engine module"
+	desc = "A minaturized plasma engine, capable of directly intaking raw and refined plasma to recharge the MODsuit's core in the field."
+	icon_state = "module"
+	module_type = MODULE_TOGGLE
+	complexity = 3
+	active_power_cost = 0
+	incompatible_modules = list(/obj/item/mod/module/plasma_engine)
+	cooldown_time = 0.5 SECONDS
+	allowed_inactive = TRUE
+	var/list/charger_list = list(/obj/item/stack/ore/plasma = 1500, /obj/item/stack/sheet/mineral/plasma = 3000)
+
+/obj/item/mod/module/plasma_engine/on_activation()
+	. = ..()
+	RegisterSignal(mod, COMSIG_PARENT_ATTACKBY, PROC_REF(on_attackby))
+	to_chat(mod.wearer,span_notice("Engine online, insert plasma into core unit."))
+	playsound(mod,'sound/mecha/mech_shield_raise.ogg')
+
+/obj/item/mod/module/plasma_engine/on_deactivation(display_message, deleting)
+	UnregisterSignal(mod, COMSIG_PARENT_ATTACKBY)
+	to_chat(mod.wearer,span_notice("Engine offline."))
+	playsound(mod,'sound/mecha/mech_shield_drop.ogg')
+
+	return ..()
+
+/obj/item/mod/module/plasma_engine/proc/on_attackby(datum/source, obj/item/attacking_item, mob/user)
+	SIGNAL_HANDLER
+
+	if(charge_plasma(attacking_item, user))
+		return COMPONENT_NO_AFTERATTACK
+	return NONE
+
+/obj/item/mod/module/plasma_engine/proc/charge_plasma(obj/item/stack/plasma, mob/user)
+	var/charge_given = is_type_in_list(plasma, charger_list, zebra = TRUE)
+	if(!charge_given)
+		return FALSE
+	var/uses_needed = min(plasma.amount, ROUND_UP((mod.get_max_charge() - mod.get_charge()) / charge_given))
+	if(!plasma.use(uses_needed))
+		return FALSE
+	mod.add_charge(uses_needed * charge_given)
+	to_chat(user,span_notice("You refuel the core."))
+	return TRUE
+
 /obj/item/mod/module/disposal_connector
 	name = "MOD disposal selector module"
 	desc = "A module that connects to the disposal pipeline, causing the user to go into their config selected disposal. \
@@ -255,7 +269,7 @@
 	icon_state = "magnet_loader"
 	module_type = MODULE_ACTIVE
 	removable = FALSE
-	use_power_cost = DEFAULT_CHARGE_DRAIN*3
+	use_power_cost = MODULE_CHARGE_DRAIN_MASSIVE
 	incompatible_modules = list(/obj/item/mod/module/magnet)
 	cooldown_time = 1.5 SECONDS
 	overlay_state_active = "module_magnet"
@@ -272,11 +286,11 @@
 		locker.throw_at(target, range = 7, speed = 4, thrower = mod.wearer)
 		return
 	if(!istype(target, /obj/structure/closet) || !(target in view(mod.wearer)))
-		balloon_alert(mod.wearer, "invalid target!")
+		to_chat(mod.wearer,span_warning("Invalid target!"))
 		return
 	var/obj/structure/closet/locker = target
 	if(locker.anchored || locker.move_resist >= MOVE_FORCE_OVERPOWERING)
-		balloon_alert(mod.wearer, "target anchored!")
+		to_chat(mod.wearer,span_warning("\The [locker] is anchored to the ground!"))
 		return
 	new /obj/effect/temp_visual/mook_dust(get_turf(locker))
 	playsound(locker, 'sound/effects/gravhit.ogg', 75, TRUE)

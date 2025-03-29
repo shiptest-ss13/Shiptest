@@ -376,6 +376,10 @@
 
 /obj/item/gun/ballistic/examine(mob/user)
 	. = ..()
+	if(!chambered)
+		. += "It does not seem to have a round chambered."
+	if(bolt_locked)
+		. += "The [bolt_wording] is locked back and needs to be released before firing."
 	if(ammo_counter)
 		var/count_chambered = !(bolt_type == BOLT_TYPE_NO_BOLT || bolt_type == BOLT_TYPE_OPEN)
 		. += span_notice("It has <b>[get_ammo(count_chambered)]</b> round\s remaining.")

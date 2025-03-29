@@ -74,8 +74,11 @@
 		if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
 			SEND_SOUND(M, S)
 
-/proc/create_distress_beacon(datum/overmap/ship/ship)
-	if(!ship)
-		return
-	var/text = "A distress beacon has been launched by [ship.name], at local sector co-ordinates [ship.x || ship.docked_to.x]/[ship.y || ship.docked_to.y]. No further information available."
-	priority_announce(text, null, 'sound/effects/alert.ogg', sender_override = "Outpost Distress Beacon System", zlevel = 0)
+/proc/create_distress_beacon(datum/overmap/location)
+	var/message
+	var/datum/overmap/ship/ship = location
+	if(istype(ship))
+		message = "A distress beacon has been launched by [ship.name], at local sector co-ordinates [ship.x || ship.docked_to.x]/[ship.y || ship.docked_to.y]. No further information available."
+	else
+		message = "A distress beacon has been activated from [location.name] at local sector co-ordinates [location.x]/[location.y]. No further information available."
+	priority_announce(message, null, 'sound/effects/alert.ogg', sender_override = "Outpost Distress Beacon System", zlevel = 0)

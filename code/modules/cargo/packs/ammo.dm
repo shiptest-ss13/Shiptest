@@ -379,7 +379,7 @@
 	name = "308 Ammo Box Crate"
 	desc = "Contains a thirty-round .308 box for DMRs such as the SsG-04 and CM-GAL-S."
 	contains = list(/obj/item/storage/box/ammo/a308)
-	cost = 500
+	cost = 250
 
 /datum/supply_pack/ammo/a308_ap
 	name = "308 Armour Piercing Ammo Box Crate"

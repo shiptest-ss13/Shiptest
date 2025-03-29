@@ -552,6 +552,12 @@
 	if(target_carbon.is_holding_item_of_type(/obj/item/gun) || target_carbon.is_holding_item_of_type(/obj/item/melee))
 		return target(target_carbon)
 
+/obj/machinery/porta_turret/proc/in_faction(mob/target)
+	for(var/faction1 in faction)
+		if(faction1 in target.faction)
+			return TRUE
+	return FALSE
+
 //Returns whether or not we should stop searching for targets
 /obj/machinery/porta_turret/proc/target(mob/living/target)
 	if(!COOLDOWN_FINISHED(src, fire_cooldown))

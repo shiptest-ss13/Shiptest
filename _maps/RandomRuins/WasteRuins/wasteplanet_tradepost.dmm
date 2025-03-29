@@ -2034,8 +2034,7 @@
 /obj/machinery/light/small/broken/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/advanced_airlock_controller{
-	pixel_x = -26;
-	pixel_y = 0
+	pixel_x = -26
 	},
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/warehouse)
@@ -2548,6 +2547,9 @@
 	pixel_x = -4
 	},
 /obj/effect/mob_spawn/human/corpse/inteq/vanguard/tradepost,
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/tradepost/center)
 "Cq" = (

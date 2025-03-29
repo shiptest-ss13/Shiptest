@@ -26,15 +26,6 @@
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor
 	)
 
-/mob/living/simple_animal/hostile/human/hermit/survivor/random/Initialize()
-	. = ..()
-	if(prob(35))
-		new /mob/living/simple_animal/hostile/human/hermit/ranged/hunter(loc)
-		return INITIALIZE_HINT_QDEL
-	if(prob(10))
-		new /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger(loc)
-		return INITIALIZE_HINT_QDEL
-
 /mob/living/simple_animal/hostile/human/hermit/ranged
 	icon_state = "survivor_hunter"
 	icon_living = "survivor_hunter"

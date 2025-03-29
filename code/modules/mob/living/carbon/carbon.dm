@@ -581,9 +581,16 @@
 			see_invisible = max(G.invis_view, see_invisible)
 		if(!isnull(G.lighting_alpha))
 			lighting_alpha = min(lighting_alpha, G.lighting_alpha)
-
-	if(HAS_TRAIT(src, TRAIT_NIGHT_VISION))
-		lighting_alpha = min(lighting_alpha, LIGHTING_PLANE_ALPHA_NV_TRAIT)
+	if(head)
+		var/obj/item/clothing/head/headslot = head
+		sight |= headslot.vision_flags
+		see_in_dark = max(headslot.darkness_view, see_in_dark)
+		if(headslot.invis_override)
+			see_invisible = max(see_invisible, headslot.invis_override)
+		else
+			see_invisible = max(headslot.invis_view, see_invisible)
+		if(!isnull(headslot.lighting_alpha))
+			lighting_alpha = min(lighting_alpha, headslot.lighting_alpha)
 
 	if(HAS_TRAIT(src, TRAIT_CHEMICAL_NIGHTVISION))
 		lighting_alpha = min(lighting_alpha, LIGHTING_PLANE_ALPHA_NV_DRUG)

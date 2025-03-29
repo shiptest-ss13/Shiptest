@@ -19,7 +19,6 @@
 
 /obj/effect/spawner/random/xenospawner
 	name = "Xenomorph spawner"
-
 	loot = list(
 		/mob/living/simple_animal/hostile/alien = 0.3,
 		/mob/living/simple_animal/hostile/alien/drone = 0.2,
@@ -36,7 +35,6 @@
 
 /obj/effect/spawner/random/hivebotspawner
 	name = "Hivebot spawner"
-
 	loot = list(
 		/mob/living/simple_animal/hostile/hivebot/strong,
 		/mob/living/simple_animal/hostile/hivebot,
@@ -44,16 +42,22 @@
 
 /obj/effect/spawner/random/spiderspawner
 	name = "Spider spawner"
-
 	loot = list(
 		/mob/living/simple_animal/hostile/poison/giant_spider,
 		/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
 		/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
 	)
 
+/obj/effect/spawner/random/hermit
+	name = "hermit spawner"
+	loot = list(
+		/mob/living/simple_animal/hostile/human/hermit/survivor = 55,
+		/mob/living/simple_animal/hostile/human/hermit/ranged/hunter = 35,
+		/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger = 10
+	)
+
 /obj/effect/spawner/random/thirtyfive_percent_borerspawner
 	name = "35 percent neutered borer spawner"
-
 	loot = list(
 		/mob/living/simple_animal/borer/sterile = 0.35,
 		/obj/effect/spawner/random/maintenance = 0.65,

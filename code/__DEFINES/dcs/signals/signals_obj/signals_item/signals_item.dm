@@ -30,6 +30,8 @@
 	#define COMPONENT_BLOCK_MARK_RETRIEVAL 1
 #define COMSIG_ITEM_WEARERCROSSED "wearer_crossed" //called on item when crossed by something (): (/atom/movable, mob/living/crossed)
 
+#define COMSIG_ITEM_UNIQUE_ACTION "item_unique_action" //from base of obj/item/unique_action(): (mob/living/user)
+
 ///from base of item/sharpener/attackby(): (amount, max)
 #define COMSIG_ITEM_SHARPEN_ACT "sharpen_act"
 	#define COMPONENT_BLOCK_SHARPEN_APPLIED 1

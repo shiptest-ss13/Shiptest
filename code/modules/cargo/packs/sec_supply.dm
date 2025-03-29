@@ -180,7 +180,7 @@
 	name = "Energy Halberd Crate"
 	desc = "Contains one Solarian Energy Halberd, for issue to your local Sonnensoldner battalion."
 	cost = 1500
-	contains = list(/obj/item/energyhalberd)
+	contains = list(/obj/item/melee/duelenergy/halberd)
 	crate_name = "energy halberd crate"
 	faction = /datum/faction/solgov
 	faction_discount = 0
