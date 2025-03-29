@@ -1,6 +1,6 @@
 /obj/item/aicard
 	name = "intelliCard"
-	desc = "A storage device for AIs. Patent pending."
+	desc = "A storage device for uplinked Positronic intelligences. Patent under Nanotrasen."
 	icon = 'icons/obj/aicards.dmi'
 	icon_state = "aicard" // aicard-full
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
@@ -13,12 +13,12 @@
 
 /obj/item/aicard/aitater
 	name = "intelliTater"
-	desc = "A stylish upgrade (?) to the intelliCard."
+	desc = "Someone has somehow fit an IntelliCard into a solarian ground apple, or potatoe as it is commonly refered to. Has quite weaker power functionality due to it's downsizing."
 	icon_state = "aitater"
 
 /obj/item/aicard/aispook
 	name = "intelliLantern"
-	desc = "A spoOoOoky upgrade to the intelliCard."
+	desc = "You have to wonder, at what point should you stop trying to fit the IntelliCard into random items. Someone has placed it into a lantern, somehow. Probably has reduced power but even then you can't even tell."
 	icon_state = "aispook"
 
 /obj/item/aicard/afterattack(atom/target, mob/user, proximity)

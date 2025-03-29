@@ -3,7 +3,7 @@
 //The robot bodyparts have been moved to code/module/surgery/bodyparts/robot_bodyparts.dm
 
 /obj/item/robot_suit
-	name = "cyborg endoskeleton"
+	name = "specialist positronic endoskeleton"
 	desc = "A complex metal backbone with standard limb sockets and pseudomuscle anchors."
 	icon = 'icons/mob/augmentation/augments.dmi'
 	icon_state = "robo_suit"
