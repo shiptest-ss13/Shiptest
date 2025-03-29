@@ -612,8 +612,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/hmg/rottweiler
-	name = "\improper Rottweiler"
-	desc = "Placeholder desc. Yell at MemeSnorfer if you see me!"
+	name = "\improper KM-05 Rottweiler"
+	desc = "An F4 rifle purchased from CLIP and extensively modified into a belt fed machine gun. Heavy and firing a powerful cartridge, this weapon is unwieldy without a bipod support. Uniquely, the KM-05 Rottweiler can accept F4 magazines into the magazine well."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
