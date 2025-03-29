@@ -9,15 +9,13 @@ SUBSYSTEM_DEF(jukeboxes)
 	var/song_name = "generic"
 	var/song_path = null
 	var/song_length = 0
-	var/song_beat = 0
-	var/song_associated_id = null
+	var/song_beat_deciseconds = 120
 
-/datum/track/New(name, path, length, beat, assocID)
+/datum/track/New(name, path, length, beat)
 	song_name = name
 	song_path = path
 	song_length = length
-	song_beat = beat
-	song_associated_id = assocID
+	song_beat_deciseconds = beat
 
 /datum/controller/subsystem/jukeboxes/proc/addjukebox(obj/jukebox, datum/track/T, jukefalloff = 1)
 	if(!istype(T))
@@ -68,18 +66,20 @@ SUBSYSTEM_DEF(jukeboxes)
 
 /datum/controller/subsystem/jukeboxes/Initialize()
 	var/list/tracks = flist("[global.config.directory]/jukebox_music/sounds/")
+	//Cache all the sounds ahead of time so we minimize rust calls
+	SSsound_cache.cache_sounds(tracks)
 
 	for(var/S in tracks)
 		var/datum/track/T = new()
 		T.song_path = file("[global.config.directory]/jukebox_music/sounds/[S]")
+		T.song_length = SSsound_cache.get_sound_length(T.song_path)
 		var/list/L = splittext(S,"+")
-		if(L.len < 4)
-			log_config("Jukebox song [S] has invalid ID.")
-			continue
 		T.song_name = L[1]
-		T.song_length = text2num(L[2])
-		T.song_beat = text2num(L[3])
-		T.song_associated_id = L[4]
+		var/bpm
+		if(L.len > 1)
+			bpm = text2num(L[2])
+		if(isnum(bpm))
+			T.song_beat_deciseconds = 600 / bpm
 		songs |= T
 	for(var/i in CHANNEL_JUKEBOX_START to CHANNEL_JUKEBOX)
 		freejukeboxchannels |= i
