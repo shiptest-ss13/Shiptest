@@ -73,3 +73,13 @@
 	caliber = "9mm"
 	max_ammo = 4
 	custom_materials = list(/datum/material/iron = 20000)
+
+/obj/item/ammo_box/magazine/serpent38
+	name = "serpent revolver chamber"
+	desc = "mreoaoowwwww"
+	icon_state = "speedloader_38-6"
+	base_icon_state = "speedloader_38"
+	ammo_type = /obj/item/ammo_casing/c38
+	caliber = ".38"
+	max_ammo = 6
+	multiple_sprites = AMMO_BOX_PER_BULLET
