@@ -76,13 +76,11 @@
 		overlay_fullscreen("blind", /atom/movable/screen/fullscreen/blind)
 		// You are blind why should you be able to make out details like color, only shapes near you
 		add_client_colour(/datum/client_colour/monochrome/blind)
-		ADD_TRAIT(src, TRAIT_EYESCLOSED, STAT_TRAIT)
 		update_body()
 	else
 		clear_alert("blind")
 		clear_fullscreen("blind")
 		remove_client_colour(/datum/client_colour/monochrome/blind)
-		REMOVE_TRAIT(src, TRAIT_EYESCLOSED, STAT_TRAIT)
 		update_body()
 
 
