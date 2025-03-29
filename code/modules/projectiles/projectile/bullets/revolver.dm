@@ -74,7 +74,7 @@
 
 /obj/projectile/bullet/a357
 	name = ".357 bullet"
-	damage = 30
+	damage = 35
 
 	speed = BULLET_SPEED_REVOLVER
 	bullet_identifier = "medium bullet"
@@ -92,7 +92,7 @@
 
 /obj/projectile/bullet/a357/hp
 	name = ".357 hollow point bullet"
-	damage = 45
+	damage = 50
 	armour_penetration = -20
 	speed_mod = BULLET_SPEED_HP_MOD
 	ricochet_chance = 0
