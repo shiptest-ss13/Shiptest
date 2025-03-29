@@ -263,9 +263,12 @@
 	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it."
 	icon_state = "sakebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/sake = 100)
+	var/random = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/sake/Initialize()
 	. = ..()
+	if(!random)
+		return FALSE
 	if(prob(10))
 		name = "Fluffy Tail"
 		desc += "This particular brand's mascot is a human with nine fox tails - which is an impressive amount of genemodding."
@@ -274,6 +277,18 @@
 		name = "Inubashiri's Home Brew"
 		desc += "This particular brand's mascot is a human with vaguely canine ears and a tail."
 		icon_state = "sakebottle_i"
+
+/obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl
+	name = "Fluffy Tail"
+	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it. This particular brand's mascot is a human with vaguely canine ears and a tail."
+	icon_state = "sakebottle_k"
+	random = FALSE
+
+/obj/item/reagent_containers/food/drinks/bottle/sake/wolfgirl
+	name = "Inubashiri's Home Brew"
+	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it. This particular brand's mascot is a human with nine fox tails - which is an impressive amount of genemodding."
+	icon_state = "sakebottle_i"
+	random = FALSE
 
 /obj/item/reagent_containers/food/drinks/bottle/fernet
 	name = "Fernet Bronca"

@@ -429,3 +429,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(get_minds && mind)
 		return mind.get_language_holder()
 	. = ..()
+
+/mob/living/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_ATOM)
+	. = ..()
+	if(. && mind)
+		var/datum/language_holder/langauge_holder = get_language_holder()
+		if(langauge_holder.spoken_languages.len >= 4)
+			message_admins("[ADMIN_LOOKUPFLW(src)] knows [langauge_holder.spoken_languages.len] langauges!")
