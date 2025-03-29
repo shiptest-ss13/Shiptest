@@ -969,7 +969,8 @@
 /obj/structure/filingcabinet/double{
 	dir = 8;
 	pixel_x = 12;
-	pixel_y = 0
+	pixel_y = 0;
+	density = 0
 	},
 /obj/machinery/camera/autoname{
 	dir = 8
@@ -1478,7 +1479,8 @@
 /obj/structure/filingcabinet/double{
 	dir = 8;
 	pixel_x = 12;
-	pixel_y = 3
+	pixel_y = 0;
+	density = 0
 	},
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -1753,8 +1755,7 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
-	name = "Mech Operations";
-	fast_close = 1
+	name = "Mech Operations"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1764,6 +1765,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
@@ -2235,8 +2242,7 @@
 "mR" = (
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
-	name = "Mech Operations";
-	fast_close = 1
+	name = "Mech Operations"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2249,6 +2255,12 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/thin/corner{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -4427,6 +4439,10 @@
 /obj/machinery/door/airlock/engineering{
 	name = "Flight Control"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/hangar)
 "zb" = (
@@ -4876,6 +4892,10 @@
 /obj/machinery/door/poddoor{
 	dir = 1;
 	id = "talos_mech"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/hangar)
@@ -7173,6 +7193,10 @@
 	dir = 1;
 	id = "talos_mech"
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/hangar)
 "PX" = (
@@ -7302,6 +7326,10 @@
 /obj/machinery/door/poddoor{
 	dir = 1;
 	id = "talos_mech"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/hangar)
