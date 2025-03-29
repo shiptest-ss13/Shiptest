@@ -424,3 +424,8 @@
 	file_name = "cybersun_bambulance"
 	name = "Gauze-class Ambulance Pod"
 	prefix = "CSSV"
+
+/datum/map_template/shuttle/subshuttles/watchman
+	file_name = "deathsquad_watchman"
+	name = "Watchman Devastator"
+	prefix = "SV"

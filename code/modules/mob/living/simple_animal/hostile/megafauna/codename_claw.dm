@@ -21,7 +21,7 @@
 	ranged = TRUE
 	speed = 4
 	move_to_delay = 4
-	loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
+	loot = list(/obj/item/card/id/ert/deathsquad)
 	wander = FALSE
 	blood_volume = BLOOD_VOLUME_NORMAL
 	gps_name = "NTAF-V"
