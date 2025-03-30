@@ -1799,25 +1799,20 @@
 	dir = 8
 	},
 /obj/item/flashlight/lamp{
-	pixel_x = 6;
-	pixel_y = 13
-	},
-/obj/item/paper_bin{
-	pixel_y = 9;
-	pixel_x = -3
-	},
-/obj/item/pen,
-/obj/item/clipboard{
 	pixel_x = 5;
-	pixel_y = -13
+	pixel_y = 15
 	},
 /obj/item/stamp/denied{
 	pixel_x = 9;
-	pixel_y = 4
+	pixel_y = 7
+	},
+/obj/item/desk_flag{
+	pixel_y = 15;
+	pixel_x = -5
 	},
 /obj/item/stamp{
-	pixel_x = 9;
-	pixel_y = -1
+	pixel_y = 7;
+	pixel_x = -1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
@@ -4227,14 +4222,15 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/item/radio/intercom/table{
-	pixel_y = 2;
-	pixel_x = -4;
-	dir = 8
+/obj/item/paper_bin{
+	pixel_y = 4;
+	pixel_x = 2
 	},
-/obj/item/desk_flag{
-	pixel_y = 1;
-	pixel_x = -5
+/obj/item/pen,
+/obj/item/clipboard{
+	pixel_y = 9;
+	pixel_x = 5;
+	layer = 2.99
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
