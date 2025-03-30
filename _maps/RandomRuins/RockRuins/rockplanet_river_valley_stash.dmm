@@ -108,6 +108,15 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
+"dx" = (
+/obj/item/flashlight/glowstick{
+	on = 1
+	},
+/turf/open/floor/plating/grass/rockplanet{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "dy" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/bedsheetbin,
@@ -141,6 +150,18 @@
 /obj/effect/turf_decal/sand/plating,
 /turf/closed/wall/mineral/wood,
 /area/ruin/rockplanet/river_valley_stash/hut)
+"fh" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"fr" = (
+/obj/structure/flora/grass/rockplanet,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/overmap_encounter/planetoid/cave/explored)
 "fx" = (
 /obj/item/mine/directional/claymore/live,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
@@ -149,9 +170,15 @@
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
+"fN" = (
+/obj/machinery/porta_turret/ruin/frontiersmen/heavy{
+	dir = 6
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ruin/rockplanet/river_valley_stash/shuttle)
 "gl" = (
 /obj/effect/turf_decal/sand/plating,
-/obj/structure/flora/grass/rockplanet,
+/obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "gU" = (
@@ -175,6 +202,10 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"iX" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
+/area/overmap_encounter/planetoid/cave/explored)
 "jg" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/machinery/button/door{
@@ -193,10 +224,6 @@
 	light_range = 2
 	},
 /area/ruin/rockplanet/river_valley_stash/shuttle)
-"jj" = (
-/obj/structure/punji_sticks,
-/turf/open/water/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "jl" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor2";
@@ -270,7 +297,7 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "lr" = (
-/turf/closed/wall/rust,
+/turf/closed/wall/r_wall/rust,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "lv" = (
 /obj/machinery/power/shuttle/engine/electric{
@@ -291,6 +318,13 @@
 /obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"mj" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "mu" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/table/wood,
@@ -310,16 +344,25 @@
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/ruin/rockplanet/river_valley_stash/hut)
 "mT" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
+/obj/structure/punji_sticks,
+/turf/open/water/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
+"ne" = (
+/obj/effect/turf_decal/siding/wood,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered{
 	wander = 0
 	},
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/wood,
 /area/overmap_encounter/planetoid/cave/explored)
 "nq" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/ruin/rockplanet/river_valley_stash/hut)
+"ny" = (
+/obj/effect/anomaly/flux/planetary,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "nV" = (
 /obj/item/reagent_containers/food/drinks/breakawayflask{
 	pixel_x = 7;
@@ -473,14 +516,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "sH" = (
-/obj/structure/flora/ausbushes/grassybush,
-/mob/living/simple_animal/hostile/gorilla{
-	wander = 0;
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
-	name = "Big John"
-	},
-/turf/open/floor/plating/grass/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/barricade/sandbags,
+/turf/open/floor/engine/hull/interior,
+/area/ruin/rockplanet/river_valley_stash/shuttle)
 "sQ" = (
 /obj/structure/flora/stump,
 /turf/open/floor/plating/grass/rockplanet{
@@ -514,6 +552,23 @@
 /obj/structure/flora/grass/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
+"tx" = (
+/obj/structure/platform/industrial{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/obj/structure/flippedtable,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
+	wander = 0
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/rockplanet/river_valley_stash/shuttle)
 "tG" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
@@ -531,12 +586,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/ruin/rockplanet/river_valley_stash/hut)
-"uu" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered{
-	wander = 0
-	},
-/turf/open/water/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "uF" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/bed/double/maint,
@@ -549,6 +598,10 @@
 	light_range = 2
 	},
 /area/ruin/rockplanet/river_valley_stash/shuttle)
+"vc" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
+/area/overmap_encounter/planetoid/cave/explored)
 "vm" = (
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -576,6 +629,10 @@
 	light_power = 0.6
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"wF" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/rockplanet/wet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "wI" = (
 /obj/item/pickaxe/drill,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
@@ -595,11 +652,12 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "xa" = (
-/obj/machinery/porta_turret/ruin/frontiersmen/heavy{
-	dir = 10
+/obj/structure/barricade/sandbags,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
-/turf/open/floor/engine/hull/interior,
-/area/ruin/rockplanet/river_valley_stash/shuttle)
+/turf/open/floor/wood,
+/area/overmap_encounter/planetoid/cave/explored)
 "xo" = (
 /turf/closed/mineral/random/rockplanet,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
@@ -642,6 +700,11 @@
 	pixel_y = 7
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"yt" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "yB" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet,
@@ -727,6 +790,13 @@
 /obj/item/mine/pressure/explosive/rusty/live,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"BC" = (
+/obj/item/mine/pressure/explosive/rusty/live,
+/obj/item/flashlight/glowstick{
+	on = 1
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/overmap_encounter/planetoid/cave/explored)
 "BU" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/item/reagent_containers/food/drinks/bottle/rum{
@@ -763,12 +833,6 @@
 "Ct" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit,
 /area/overmap_encounter/planetoid/cave/explored)
-"Cv" = (
-/obj/machinery/porta_turret/ruin/frontiersmen/heavy{
-	dir = 6
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ruin/rockplanet/river_valley_stash/shuttle)
 "CM" = (
 /obj/effect/turf_decal/sand/plating,
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
@@ -795,6 +859,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
+"Dh" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/grass/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Dj" = (
 /obj/structure/flora/grass/rockplanet,
 /turf/open/floor/plating/grass/rockplanet,
@@ -809,14 +877,22 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
+"Et" = (
+/obj/effect/turf_decal/sand/plating,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered{
+	wander = 0
+	},
+/turf/open/floor/plating/grass/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "EH" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/closet/crate/rations,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/ruin/rockplanet/river_valley_stash/hut)
 "EW" = (
-/turf/open/floor/engine/hull/interior,
-/area/ruin/rockplanet/river_valley_stash/shuttle)
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Fh" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/item/reagent_containers/glass/bucket,
@@ -851,15 +927,34 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
+"GD" = (
+/turf/closed/wall/r_wall/rust,
+/area/overmap_encounter/planetoid/cave/explored)
 "GY" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
+"Hg" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/item/flashlight/glowstick{
+	on = 1
+	},
+/turf/open/floor/plating/grass/rockplanet{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Hm" = (
 /obj/structure/flora/rock/pile/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/cave/explored)
+"HF" = (
+/obj/machinery/porta_turret/ruin/frontiersmen/heavy{
+	dir = 10
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ruin/rockplanet/river_valley_stash/shuttle)
 "HJ" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/flora/stump,
@@ -931,6 +1026,12 @@
 /obj/structure/flora/grass/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Ju" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
+	wander = 0
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Kg" = (
 /obj/effect/decal/cleanable/blood/drip{
 	icon_state = "trails_2";
@@ -983,10 +1084,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"KT" = (
-/obj/effect/anomaly/flux/planetary,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Lh" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/barricade/sandbags,
@@ -1030,6 +1127,21 @@
 /obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Mh" = (
+/obj/effect/turf_decal/sand/plating,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/grass/rockplanet{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"MD" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "MT" = (
 /obj/item/storage/bottles/moonshine{
 	pixel_y = 6
@@ -1061,23 +1173,20 @@
 /obj/structure/cable,
 /turf/open/floor/engine/hull/interior,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
-"NT" = (
-/obj/structure/platform/industrial{
+"Od" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/grass/rockplanet{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"OR" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/handrail{
-	dir = 4
-	},
-/obj/structure/flippedtable,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
-	wander = 0
-	},
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/rockplanet/river_valley_stash/shuttle)
+/turf/open/floor/wood,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "OV" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/table/wood,
@@ -1342,9 +1451,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Xc" = (
 /obj/structure/flora/grass/jungle,
-/obj/item/flashlight/glowstick{
-	on = 1
-	},
+/obj/structure/barricade/sandbags,
 /turf/open/floor/plating/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Xk" = (
@@ -3651,8 +3758,8 @@ vm
 vm
 vm
 gl
-qU
-Wy
+wF
+Od
 Xb
 TC
 TC
@@ -3707,9 +3814,9 @@ lr
 xo
 xW
 qU
-qU
-xa
-rX
+wF
+HF
+Mh
 Xb
 TC
 TC
@@ -3764,9 +3871,9 @@ lr
 lr
 PQ
 lr
-EW
-EW
-rX
+sH
+sH
+Mh
 TC
 TC
 TC
@@ -3991,7 +4098,7 @@ lr
 VC
 wP
 BX
-NT
+tx
 Im
 NR
 rX
@@ -4163,9 +4270,9 @@ lr
 lr
 lr
 lr
-EW
-EW
-TC
+sH
+sH
+mj
 TC
 Wy
 Xb
@@ -4185,7 +4292,7 @@ lB
 vm
 vm
 vm
-KT
+ny
 vm
 vm
 vm
@@ -4220,9 +4327,9 @@ xo
 bV
 lr
 xo
-Wy
-Cv
-TC
+Od
+fN
+yt
 TC
 Xb
 kK
@@ -4241,7 +4348,7 @@ Xx
 vm
 vm
 vm
-LQ
+vm
 vm
 vm
 vm
@@ -4277,9 +4384,9 @@ xo
 xo
 lr
 Xb
-TC
-TC
-TC
+fh
+OR
+MD
 kR
 Xb
 kK
@@ -4332,7 +4439,7 @@ qU
 qU
 Xb
 Xb
-Xb
+dx
 TC
 TC
 TC
@@ -4417,7 +4524,7 @@ qU
 vm
 vm
 vm
-TQ
+vm
 vm
 vm
 vm
@@ -4500,7 +4607,7 @@ kO
 Xv
 qU
 rX
-kR
+Hg
 TC
 TC
 rX
@@ -4756,7 +4863,7 @@ qU
 qU
 vm
 vm
-ds
+vm
 vm
 vm
 vm
@@ -4866,7 +4973,7 @@ vm
 vm
 vm
 vm
-KT
+ny
 lB
 lB
 lB
@@ -4926,7 +5033,7 @@ vm
 lB
 lB
 vm
-KR
+vm
 vm
 vm
 lB
@@ -5011,7 +5118,7 @@ kO
 kO
 rO
 Pf
-jj
+mT
 kO
 kO
 kO
@@ -5240,7 +5347,7 @@ kO
 Ad
 PJ
 KA
-jj
+mT
 kO
 kO
 kO
@@ -5469,7 +5576,7 @@ kO
 yB
 PJ
 KA
-KA
+mT
 kO
 kO
 kO
@@ -5526,9 +5633,9 @@ kO
 VA
 yB
 ZE
-jj
 KA
-Rh
+xa
+GD
 kO
 kO
 kO
@@ -5584,9 +5691,9 @@ Ct
 yB
 gU
 Dj
-KA
-KA
-Rh
+xa
+vc
+GD
 kO
 kO
 kO
@@ -5600,7 +5707,7 @@ kO
 kO
 rO
 PJ
-sH
+PJ
 qF
 qa
 kO
@@ -5639,13 +5746,13 @@ kO
 kO
 yB
 bN
-Lw
+BC
 PJ
+xa
+ne
 KA
-KA
-KA
-Rh
-Rh
+GD
+GD
 kO
 kO
 kO
@@ -5699,14 +5806,14 @@ bN
 rP
 kh
 Xc
+vc
 KA
 KA
 KA
 KA
-KA
-Rh
-Rh
-Rh
+GD
+GD
+GD
 kO
 kO
 kO
@@ -5755,16 +5862,16 @@ kO
 yB
 bN
 bN
-rO
+Dh
 Dj
 KA
-uu
 KA
 KA
 KA
 KA
 KA
-Rh
+KA
+GD
 kO
 kO
 kO
@@ -5811,9 +5918,9 @@ kO
 kO
 yB
 fx
-bN
-yB
-mT
+iX
+EW
+rO
 PJ
 Pf
 KA
@@ -5822,7 +5929,7 @@ KA
 KA
 KA
 KA
-Rh
+GD
 kO
 kO
 kO
@@ -5868,18 +5975,18 @@ kO
 GY
 GY
 kO
-Ad
-wI
+fr
+Ju
 yB
-gU
+Et
 cl
 rO
-uu
 KA
 KA
 KA
 KA
-Rh
+KA
+GD
 kO
 kO
 kO
@@ -5927,7 +6034,7 @@ GY
 kO
 kO
 NG
-yB
+wI
 du
 Pb
 gU
@@ -5936,7 +6043,7 @@ KA
 KA
 KA
 KA
-Rh
+GD
 kO
 kO
 kO
@@ -5991,8 +6098,8 @@ fy
 yB
 rO
 KA
-Rh
-Rh
+GD
+GD
 kO
 kO
 kO
@@ -6042,12 +6149,12 @@ TJ
 kO
 kO
 kO
-Rh
-Rh
-Rh
-Rh
+GD
+GD
+GD
+GD
 kO
-Rh
+GD
 kO
 kO
 kO
