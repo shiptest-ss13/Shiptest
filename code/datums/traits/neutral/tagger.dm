@@ -1,7 +1,7 @@
 /datum/quirk/tagger
 	name = "Tagger"
 	desc = "You're an experienced artist. People will actually be impressed by your graffiti, and you can get twice as many uses out of drawing supplies."
-	value = 1
+	value = 0
 	mob_traits = list(TRAIT_TAGGER)
 	gain_text = "<span class='notice'>You know how to tag walls efficiently.</span>"
 	lose_text = "<span class='danger'>You forget how to tag walls properly.</span>"
