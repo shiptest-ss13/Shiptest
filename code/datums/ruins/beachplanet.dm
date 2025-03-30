@@ -60,6 +60,6 @@
 	faction = /datum/faction/independent
 	value = 1750
 	mission_limit = 1
-	setpiece_item = /obj/item/storage/bottles/moonshine/sealed
+	required_item = /obj/item/storage/bottles/moonshine/sealed
 	specific_item = FALSE
 	required_count = 3

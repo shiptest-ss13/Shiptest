@@ -33,6 +33,11 @@ SUBSYSTEM_DEF(missions)
 				mission_to_start.start_mission()
 				break
 
+//In case of emergency, pull lever
+/datum/controller/subsystem/missions/proc/kill_active_missions()
+	message_admins("All active missions have been deleted.")
+	QDEL_LIST(active_ruin_missions)
+	return TRUE
 
 // should probably come up with a better solution for this
 // hierarchical weighting? would need to distinguish between "real" and "fake" missions

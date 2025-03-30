@@ -146,7 +146,7 @@
 			if(1)
 				person_name = pick(prob(50) ? GLOB.lizard_names_male : GLOB.lizard_names_female)
 			if(2)
-				person_name = pick(GLOB.spider_last)
+				person_name = spider_name()
 			if(3)
 				person_name = kepori_name()
 			if(4)
