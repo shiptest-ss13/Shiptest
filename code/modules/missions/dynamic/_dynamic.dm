@@ -72,7 +72,9 @@
 		if(item_to_check == required_item)
 			return TRUE
 	else
-		if(istype(item_to_check, required_item.type) || istype(item_to_check, setpiece_item))
+		if(istype(item_to_check, setpiece_item))
+			return TRUE
+		else if(istype(required_item) && istype(item_to_check, required_item.type))
 			return TRUE
 
 /datum/mission/ruin/get_tgui_info(list/items_on_pad = list())
