@@ -266,6 +266,10 @@
 			While many vessels permeate the minds of alchemists, the Breakaway Flask is the instrument of choice for the rising talent. By taking the essence of plasma and infusing it within the body of glass - a most durable vessel is produced for the Trickwine. The glass remains firm lest it impacts upon a foe.<br>
 			Any who tinker will find the infusion of essence is done most easily with a flame. Something that burns with a flame most potent. Away from the furnaces of Illestren, the burn of a welder suffices to create the vessel.<br>
 
+			<h2> Trick Ammo </h2>
+			Among certain sects of Hunters, the practice of Trick Ammo has arisen. A union between the artful alchemy of Trickwines and the master craftmanship of the Hunters Pride, the Trick Ammo is created through the infusion of Trickwine into .38 casings. <br>
+			Dip the casings into the brew, and allow the mixture to to fully permeate its being. A potent weapon, these casings carry a fragment of the offensive power harnessed by the Trickwine.
+
 			<h2> The Bacteria Of Illestren </h2>
 			The world of Illestren gave birth to a bacterium that has formed the backbone of alchemical experimentation for countless years. It has given birth to countless fermentation methods, including the cycle of brewing a Trickwine.<br>
 			By use of a specialized distillery, the Illestren Bacteria can be maintained in amounts ideal to the fermentation of reagents from Trickwines to Beers. A talented brewer can create their own heritage by blending activating bacterium and reagent into a new concotion. <br>
