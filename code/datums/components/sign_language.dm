@@ -230,17 +230,15 @@
 		deltimer(tonal_timerid)
 	// Prioritize questions
 	if(question_found)
-		tonal_indicator = mutable_appearance('icons/mob/talk.dmi', "signlang1", RUNECHAT_PLANE)
+		tonal_indicator = mutable_appearance('icons/mob/talk.dmi', "signlang1", plane = RUNECHAT_PLANE)
 		carbon_parent.visible_message(span_notice("[carbon_parent] lowers [carbon_parent.p_their()] eyebrows."))
 	else if(exclamation_found)
-		tonal_indicator = mutable_appearance('icons/mob/talk.dmi', "signlang2", RUNECHAT_PLANE)
+		tonal_indicator = mutable_appearance('icons/mob/talk.dmi', "signlang2", plane = RUNECHAT_PLANE)
 		carbon_parent.visible_message(span_notice("[carbon_parent] raises [carbon_parent.p_their()] eyebrows."))
 	// If either an exclamation or question are found
-	if(!isnull(tonal_indicator) && carbon_parent.typing_indicator)
+	if(!isnull(tonal_indicator))
 		carbon_parent.add_overlay(tonal_indicator)
 		tonal_timerid = addtimer(CALLBACK(src, PROC_REF(remove_tonal_indicator)), 2.5 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE | TIMER_STOPPABLE | TIMER_DELETE_ME)
-	else // If we're not gonna use it, just be sure we get rid of it
-		tonal_indicator = null
 
 /// Removes the tonal indicator overlay completely
 /datum/component/sign_language/proc/remove_tonal_indicator()
