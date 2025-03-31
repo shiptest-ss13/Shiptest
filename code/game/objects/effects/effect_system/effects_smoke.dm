@@ -229,8 +229,13 @@
 /////////////////////////////////////////////
 
 /obj/effect/particle_effect/smoke/chem
+
 	lifetime = 10
 
+/obj/effect/particle_effect/smoke/chem/thin
+	alpha = 100
+	opaque = FALSE
+	opaque = TRUE
 
 /obj/effect/particle_effect/smoke/chem/process(seconds_per_tick)
 	if(..())
@@ -320,6 +325,8 @@
 	if(S.amount)
 		S.spread_smoke() //calling process right now so the smoke immediately attacks mobs.
 
+/datum/effect_system/smoke_spread/chem/dense
+	effect_type = /obj/effect/particle_effect/smoke/chem/dense
 
 /////////////////////////////////////////////
 // Transparent smoke
