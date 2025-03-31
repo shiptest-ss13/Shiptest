@@ -325,8 +325,8 @@
 	if(S.amount)
 		S.spread_smoke() //calling process right now so the smoke immediately attacks mobs.
 
-/datum/effect_system/smoke_spread/chem/dense
-	effect_type = /obj/effect/particle_effect/smoke/chem/dense
+/datum/effect_system/smoke_spread/chem/thin
+	effect_type = /obj/effect/particle_effect/smoke/chem/thin
 
 /////////////////////////////////////////////
 // Transparent smoke
