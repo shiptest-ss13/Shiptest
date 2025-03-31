@@ -9,6 +9,7 @@
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
+	climb_delay = 4 SECONDS
 
 /obj/structure/platform/Initialize()
 	. = ..()
