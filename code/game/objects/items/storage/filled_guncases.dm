@@ -147,6 +147,10 @@
 	gun_type = /obj/item/gun/energy/kalix/pgf
 	mag_type = /obj/item/stock_parts/cell/gun/pgf
 
+/obj/item/storage/guncase/energy/bgc10
+	gun_type = /obj/item/gun/energy/kalix/pgf/medium
+	mag_type = /obj/item/stock_parts/cell/gun/pgf
+
 /obj/item/storage/guncase/energy/hbg7
 	gun_type = /obj/item/gun/energy/kalix/pgf/heavy
 	mag_type = /obj/item/stock_parts/cell/gun/pgf
