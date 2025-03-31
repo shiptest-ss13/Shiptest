@@ -1,5 +1,5 @@
 /// Smelt amount per second
-#define SMELT_AMOUNT 5
+#define SMELT_AMOUNT 50
 
 /**********************Mineral processing unit console**************************/
 
