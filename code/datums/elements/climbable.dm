@@ -69,9 +69,11 @@
 
 	if(HAS_TRAIT(user, TRAIT_HANDS_BLOCKED)) //climbing takes twice as long without help from the hands.
 		adjusted_climb_time *= 2
+	//aliens are terrifyingly fast
 	if(isalien(user))
-		adjusted_climb_time *= 0.25 //aliens are terrifyingly fast
-	if(HAS_TRAIT(user, TRAIT_FREERUNNING)) //do you have any idea how fast I am???
+		adjusted_climb_time *= 0.25
+	//parkour....
+	if(HAS_TRAIT(user, TRAIT_FREERUNNING))
 		adjusted_climb_time *= 0.8
 		adjusted_climb_stun *= 0.8
 	LAZYADDASSOCLIST(current_climbers, climbed_thing, user)

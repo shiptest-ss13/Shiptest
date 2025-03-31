@@ -11,7 +11,7 @@
 	flags_1 = ON_BORDER_1
 	var/table_type = /obj/structure/table
 	climbable = TRUE
-	climb_delay = 1.5 SECONDS
+	climb_time = 1.5 SECONDS
 
 /obj/structure/flippedtable/Initialize()
 	. = ..()
