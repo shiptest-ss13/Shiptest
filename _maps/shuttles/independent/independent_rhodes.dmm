@@ -217,7 +217,8 @@
 "iX" = (
 /obj/machinery/door/airlock/command{
 	name = "Bridge";
-	dir = 4
+	dir = 4;
+	req_access = list(20)
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -456,10 +457,23 @@
 /area/ship/engineering)
 "tb" = (
 /obj/structure/table/reinforced,
-/obj/item/binoculars{
+/obj/machinery/light/small/directional/east,
+/obj/item/paper_bin{
+	pixel_y = 6;
+	pixel_x = 5
+	},
+/obj/item/pen{
+	pixel_x = 5;
+	pixel_y = 6
+	},
+/obj/item/stamp/denied{
+	pixel_x = -7;
+	pixel_y = 9
+	},
+/obj/item/stamp{
+	pixel_x = -7;
 	pixel_y = 2
 	},
-/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "tc" = (
@@ -487,20 +501,19 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
 "uO" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/grille,
-/obj/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
 	id = "rhodes_engines"
 	},
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "vr" = (
@@ -578,9 +591,9 @@
 /obj/item/radio/intercom/directional/north,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/large{
-	name = "large air canister crate"
+	name = "large oxygen canister crate"
 	},
-/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Bj" = (
@@ -631,6 +644,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/item/storage/bottles/moonshine/sealed{
+	pixel_y = 17;
+	pixel_x = 10
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -775,31 +792,34 @@
 	dir = 8;
 	pixel_x = 6;
 	id = "rhodes_port_field";
-	pixel_y = -3
+	pixel_y = -3;
+	name = "port holofield switch"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
 	pixel_x = -5;
 	id = "rhodes_starboard_field";
-	pixel_y = 8
+	pixel_y = 8;
+	name = "starboard holofield switch"
 	},
 /obj/machinery/button/door{
 	dir = 8;
 	pixel_x = 8;
 	pixel_y = 6;
-	id = "rhodes_port"
+	id = "rhodes_port";
+	name = "port bay doors"
 	},
 /obj/machinery/button/door{
 	dir = 8;
 	pixel_x = -3;
 	pixel_y = -1;
-	id = "rhodes_starboard"
+	id = "rhodes_starboard";
+	name = "starboard bay doors"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Mg" = (
 /obj/effect/turf_decal/industrial/loading/stripes,
-/obj/structure/closet/wall/directional/east,
 /obj/item/storage/box/ammo/c45,
 /obj/item/storage/box/ammo/c45{
 	pixel_y = 8
@@ -813,6 +833,10 @@
 /obj/item/ammo_box/magazine/m45/empty{
 	pixel_x = 5;
 	pixel_y = -1
+	},
+/obj/structure/closet/wall/directional/east{
+	req_access = list(20);
+	name = "ammunition locker"
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -877,8 +901,11 @@
 	},
 /obj/machinery/button/door{
 	pixel_y = 23;
-	pixel_x = -3
+	pixel_x = -3;
+	name = "bridge shutters button";
+	id = "rhodes_bridge"
 	},
+/obj/item/binoculars,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "PJ" = (
@@ -889,7 +916,6 @@
 /obj/structure/cable{
 	icon_state = "0-10"
 	},
-/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
 "Ql" = (
