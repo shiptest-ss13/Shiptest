@@ -443,10 +443,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	else if(message_mods[MODE_SING])
 		. = verb_sing
 	else if(stuttering)
-		if (HAS_TRAIT(src, TRAIT_SIGN_LANG))
-			. = "loosely signs"
+		if(HAS_TRAIT(src, TRAIT_SIGN_LANG))
+			. = "shakily signs"
 		else
-			. = "slurs"
+			. = "stammers"
 	else if(derpspeech)
 		if(HAS_TRAIT(src, TRAIT_SIGN_LANG))
 			. = "incoherently signs"
