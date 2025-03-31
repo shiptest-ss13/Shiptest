@@ -76,6 +76,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 			var/picked = pick_weight(ore_list)
 			vein_contents.Add(picked)
 			ore_list.Remove(picked)
+			if(!LAZYLEN(ore_list)
+				break
 	GLOB.ore_veins += src
 
 /obj/structure/vein/examine(mob/user)
