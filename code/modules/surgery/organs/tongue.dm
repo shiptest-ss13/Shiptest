@@ -52,9 +52,9 @@
 	modifies_speech = TRUE
 
 /obj/item/organ/tongue/lizard/handle_speech(datum/source, list/speech_args)
-	// Sarathi tongues don't hiss when speaking Kalixcian.
+	// Sarathi tongues don't hiss when speaking Kalixcian. Or when signing.
 	// we should make non-sarathi hiss in Kalixcian
-	if(speech_args[SPEECH_LANGUAGE] == /datum/language/kalixcian_common)
+	if((speech_args[SPEECH_LANGUAGE] == /datum/language/kalixcian_common) || HAS_TRAIT(usr, TRAIT_SIGN_LANG))
 		return
 
 	var/static/regex/lizard_hiss = new("s+", "g")
