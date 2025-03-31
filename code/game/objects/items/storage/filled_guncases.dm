@@ -61,7 +61,7 @@
 
 /obj/item/storage/guncase/vickland
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/vickland
-	mag_type = /obj/item/ammo_box/vickland_a308
+	mag_type = /obj/item/ammo_box/vickland_a8_50r
 
 /* Scarbourough */
 
