@@ -41,7 +41,7 @@
 
 /obj/item/ammo_casing/energy/laser/eoehoma/e50/clip
 	projectile_type = /obj/projectile/beam/emitter/hitscan/clip
-	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	fire_sound = 'sound/weapons/gun/laser/ecm50.wav'
 	e_cost = 6250
 	delay = 0.6 SECONDS
 

@@ -252,6 +252,10 @@
 	observer.stop_sound_channel(CHANNEL_LOBBYMUSIC)
 	QDEL_NULL(mind)
 	deadchat_broadcast(" has observed.", "<b>[observer.real_name]</b>", follow_target = observer, turf_target = get_turf(observer), message_type = DEADCHAT_DEATHRATTLE)
+	if(observer.client.holder)
+		for(var/mob/Mob as anything in GLOB.player_list)
+			Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[observer.client.holder.rank] [observer.client] has observed.</u>")
+			playsound(Mob, 'sound/misc/adminjoin.ogg', 50)
 	qdel(src)
 	return TRUE
 

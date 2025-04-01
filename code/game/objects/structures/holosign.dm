@@ -40,7 +40,7 @@
 /obj/structure/holosign/process(seconds_per_tick)
 	if(countdown.invisibility && death_time < (world.time + 60 SECONDS))
 		countdown.invisibility = 0
-		playsound(src, 'sound/machines/triple_beep.ogg', 50, TRUE)
+		playsound(src, 'sound/machines/ALERT2.wav', 50, TRUE)
 
 	if(death_time < world.time)
 		playsound(src, 'sound/effects/empulse.ogg', 50, TRUE)
