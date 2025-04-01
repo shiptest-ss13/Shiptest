@@ -835,15 +835,6 @@
 	},
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"mP" = (
-/obj/structure/closet/cabinet,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/head/frontier/peaked,
-/obj/item/clothing/suit/armor/frontier,
-/obj/item/clothing/under/frontiersmen/officer,
-/obj/item/ammo_box/magazine/m9mm_mauler,
-/turf/open/floor/wood/mahogany,
-/area/ruin/powered/icemoon/lodge/montagne_office)
 "nc" = (
 /obj/effect/turf_decal/stoneborder,
 /obj/effect/turf_decal/stoneborder{
@@ -2390,6 +2381,15 @@
 /obj/item/shovel,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
+"Is" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/head/frontier/peaked,
+/obj/item/clothing/suit/armor/frontier,
+/obj/item/clothing/under/frontiersmen/officer,
+/obj/item/ammo_box/magazine/m9mm_mauler/extended/extended,
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/icemoon/lodge/montagne_office)
 "Ix" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered{
 	check_friendly_fire = 1;
@@ -2731,16 +2731,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"NO" = (
-/obj/structure/safe,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/gun/ballistic/automatic/marksman/vickland,
-/obj/item/ammo_box/vickland_a8_50r/empty,
-/obj/item/ammo_box/vickland_a8_50r/empty,
-/turf/open/floor/wood/mahogany,
-/area/ruin/powered/icemoon/lodge/montagne_office)
 "Oa" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
@@ -3163,6 +3153,16 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
+"Ve" = (
+/obj/structure/safe,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/gun/ballistic/automatic/marksman/vickland,
+/obj/item/ammo_box/vickland_a8_50r/empty,
+/obj/item/ammo_box/vickland_a8_50r/empty,
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/icemoon/lodge/montagne_office)
 "Vo" = (
 /obj/item/storage/pill_bottle/floorpill/full{
 	pixel_y = 7;
@@ -5191,10 +5191,10 @@ Vo
 xM
 OH
 OH
-NO
+Ve
 HQ
 BL
-mP
+Is
 Ws
 Kg
 GD

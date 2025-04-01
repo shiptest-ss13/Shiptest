@@ -107,7 +107,7 @@
 #define DMR_SLOWDOWN 0.6
 #define SAW_SLOWDOWN 0.7
 #define SNIPER_SLOWDOWN 0.9
-#define HMG_SLOWDOWN 1
+#define HMG_SLOWDOWN 2
 #define AMR_SLOWDOWN 1
 
 

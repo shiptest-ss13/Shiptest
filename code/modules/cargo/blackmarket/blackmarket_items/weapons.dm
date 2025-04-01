@@ -447,3 +447,15 @@
 	stock_max = 2
 	availability_prob = 15
 	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/f4
+	name = "F3 Marksman Rifle"
+	desc = "A bunch of surplus marksman rifles from half a century ago. Chambered in .308."
+	item = /obj/item/gun/ballistic/automatic/marksman/f4/indie
+	pair_item = list(/datum/blackmarket_item/ammo/f4_magazine)
+
+	price_min = 3100
+	price_max = 3900
+	stock_max = 2
+	availability_prob = 50
+	spawn_weighting = FALSE

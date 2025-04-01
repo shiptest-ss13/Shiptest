@@ -48,6 +48,7 @@
 	icon_state = "traumavest"
 	desc = "A set of stamped plasteel armor plates decorated with a medical cross and colors associated with the medical division of Cybersun."
 
+//TODO: unfuck this, replace, or remove
 /obj/item/clothing/suit/armor/vest/marine
 	name = "tactical armor vest"
 	desc = "A heavy set of the finest mass-produced stamped plasteel armor plates money can buy."

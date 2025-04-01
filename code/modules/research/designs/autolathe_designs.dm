@@ -1229,6 +1229,22 @@
 	build_path = /obj/item/ammo_box/a858/empty
 	category = list("initial", "Security", "Ammo")
 
+/datum/design/guncase
+	name = "Guncase"
+	id = "guncase"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 1500)
+	build_path = /obj/item/storage/guncase
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/guncase_pistol
+	name = "Pistol Guncase"
+	id = "guncase-pitol"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/plastic = 1500)
+	build_path = /obj/item/storage/guncase/pistol
+	category = list("initial", "Security", "Ammo")
+
 /datum/design/control
 	name = "Blast Door Controller"
 	id = "blast"
