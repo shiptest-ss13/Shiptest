@@ -843,14 +843,14 @@
 	faction = /datum/faction/frontiersmen
 
 	cost = 1000
-
+/*
 /datum/supply_pack/gun/mecha_weapon_bay
 	name = "Concealed Weapons Bay"
 	desc = "Ripley with a laser cannon? 200 Series with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
 	contains = list(/obj/item/mecha_parts/concealed_weapon_bay)
 
 	cost = 2000
-
+*/
 /datum/supply_pack/gun/mecha_syringe_gun
 	name = "Mounted Syringe Gun"
 	desc = "We ripped this off an old Cybersun exosuit. It's a real advanced piece of equipment. Exosuit not included."
