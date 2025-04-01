@@ -35,8 +35,8 @@
 
 /datum/export/thruster_ion
 	cost = 500
-	unit_name = "ion thruster"
-	export_types = list(/obj/machinery/power/shuttle/engine/electric)
+	unit_name = "ion thruster board"
+	export_types = list(/obj/item/circuitboard/machine/shuttle/engine/electric)
 
 //Computer Tablets and Parts
 /datum/export/modular_part
