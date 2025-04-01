@@ -255,7 +255,7 @@
 	if(observer.client.holder)
 		for(var/mob/Mob as anything in GLOB.player_list)
 			Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[observer.client.holder.rank] [observer.client] has observed.</u>")
-			playsound(Mob, 'sound/misc/adminjoin.ogg', 50)
+			playsound(Mob, 'sound/misc/adminjoin.ogg', 30)
 	qdel(src)
 	return TRUE
 
