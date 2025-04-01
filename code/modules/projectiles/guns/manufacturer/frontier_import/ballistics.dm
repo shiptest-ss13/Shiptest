@@ -414,18 +414,14 @@
 		/obj/item/ammo_box/magazine/mower_lmg_308,
 	)
 
-	fire_delay = 0.24 SECONDS
+	fire_delay = 0.27 SECONDS
 
 	spread = 12
-	spread_unwielded = 35
+	spread_unwielded = 50
 
-	recoil = 2 //it's firing .308
-	recoil_unwielded = 8
+	recoil = 1
+	recoil_unwielded = 4
 
-	has_bipod = TRUE
-
-	deploy_recoil_bonus = -3
-	deploy_spread_bonus = -10 //2 degree spread when deployed, making it VERY accurate for an lmg
 	has_bipod = TRUE
 
 /obj/item/ammo_box/magazine/mower_lmg_308
