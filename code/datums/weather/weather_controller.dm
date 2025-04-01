@@ -172,6 +172,6 @@
 	possible_weathers = subtypesof(/datum/weather)
 	for(var/datum/weather/cur_weather in possible_weathers)
 		possible_weathers[cur_weather] = round(rand(10,80))
-		if(prob(95) && possible_weathers.len > 1)
+		if(prob(97) && possible_weathers.len > 1)
 			qdel(cur_weather)
 	roll_next_weather()

@@ -64,3 +64,6 @@
 /datum/map_generator/proc/populate_turf(turf/gen_turf)
 	SHOULD_NOT_SLEEP(TRUE)
 	return
+
+/datum/map_generator/proc/pass_2(list/turf/turfs)
+	return

@@ -284,6 +284,67 @@
 	if(istype(our_likely_vlevel) && selfloop)
 		our_likely_vlevel.selfloop()
 
+	if(GLOB.battle_royale_mode && planet)
+		var/datum/map_template/ruin
+		var/common_lootcrates = rand(planet.royale_common_lower,planet.royale_common_upper)
+		var/rare_lootcrates = rand(planet.royale_rare_lower, planet.royale_rare_upper)
+		//common
+		if(!selfloop)//if we are not a space level do not spawn in common loot
+			var/list/possible_turfs = our_likely_vlevel.get_block()
+			var/current_crate_count = 0
+			for(var/cycle in 1 to length(possible_turfs))
+				var/turf/open/potential_open_turf = pick_n_take(possible_turfs)
+				if(!istype(potential_open_turf))
+					continue
+				if(ischasm(potential_open_turf))
+					continue
+				if(islava(potential_open_turf))
+					var/turf/open/lava/potential_lava_floor = potential_open_turf
+					if(!potential_lava_floor.is_safe())
+						continue
+				if(istype(potential_open_turf, /turf/open/water/acid))
+					var/turf/open/water/acid/potential_acid_floor = potential_open_turf
+					if(!potential_acid_floor.is_safe_to_cross())
+						continue
+				if(potential_open_turf.is_blocked_turf())
+					continue
+				new /obj/effect/battle_royale/common(potential_open_turf)
+				current_crate_count++
+				message_admins("Common crate spawned: [ADMIN_COORDJMP(potential_open_turf)]. [current_crate_count]/[common_lootcrates].")
+				if(current_crate_count >= common_lootcrates)
+					break
+
+		//rare
+		for(var/possible_ruin in ruin_turfs)
+			var/current_crate_count = 0
+			var/turf/lowerbound = ruin_turfs[possible_ruin]
+			ruin = spawned_ruins[possible_ruin]
+			var/list/possible_ruin_turfs = our_likely_vlevel.get_block_portion(lowerbound.x,lowerbound.y,(lowerbound.x + ruin.width),(lowerbound.y + ruin.height))
+			for(var/cycle in 1 to length(possible_ruin_turfs))
+				var/potential_turf = pick_n_take(possible_ruin_turfs)
+				if(!isopenturf(potential_turf))
+					continue
+				var/turf/open/potential_open_turf = potential_turf
+				if(ischasm(potential_open_turf))
+					continue
+				if(islava(potential_open_turf))
+					var/turf/open/lava/potential_lava_floor = potential_open_turf
+					if(!potential_lava_floor.is_safe())
+						continue
+				if(istype(potential_open_turf, /turf/open/water/acid))
+					var/turf/open/water/acid/potential_acid_floor = potential_open_turf
+					if(!potential_acid_floor.is_safe_to_cross())
+						continue
+				if(potential_open_turf.is_blocked_turf())
+					continue
+
+				//yippee, there's a viable turf for the package to land on
+				new /obj/effect/battle_royale/rarer(potential_open_turf)
+				current_crate_count++
+				message_admins("Rare crate spawned: [ADMIN_COORDJMP(potential_open_turf)]. [current_crate_count]/[rare_lootcrates].")
+				if(current_crate_count >= rare_lootcrates)
+					break
+
 	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
 	loading = FALSE
 	return TRUE

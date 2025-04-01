@@ -32,6 +32,13 @@
 	///How much of a radio message we mess up on nearby or on landed/orbitting ships
 	var/interference_power = 0
 
+	var/royale_common_upper = 35
+	var/royale_common_lower = 15
+
+
+	var/royale_rare_upper = 6
+	var/royale_rare_lower = 3
+
 
 /datum/planet_type/lava
 	name = "lava planetoid"
@@ -54,6 +61,8 @@
 		/obj/item/stack/ore/plasma,
 		)
 
+	royale_common_lower = 25
+
 
 /datum/planet_type/ice
 	name = "frozen planetoid"
@@ -74,6 +83,13 @@
 		/obj/item/stack/ore/gold,
 		)
 
+	royale_common_upper = 40
+	royale_common_lower = 30
+
+
+	royale_rare_upper = 7
+	royale_rare_lower = 5
+
 /datum/planet_type/jungle
 	name = "jungle planetoid"
 	desc = "A densely forested world, filled with vines, animals, and underbrush. Surprisingly habitable with a machete."
@@ -92,6 +108,8 @@
 		/obj/item/stack/ore/gold,
 		/obj/item/stack/ore/diamond, //this isnt very common, but it's more common here than every other planet, so i list it here
 		)
+	royale_common_lower = 10
+	royale_common_upper = 20
 
 /datum/planet_type/rock
 	name = "rock planetoid"
@@ -144,6 +162,13 @@
 		/obj/item/stack/ore/plasma,
 		)
 
+	royale_common_upper = 25
+	royale_common_lower = 15
+
+
+	royale_rare_upper = 5
+	royale_rare_lower = 5
+
 /datum/planet_type/reebe
 	name = "???"
 	desc = "Some sort of strange portal. There's no identification of what this is."
@@ -179,6 +204,7 @@
 		/obj/item/stack/ore/malachite,
 		)
 
+
 /datum/planet_type/spaceruin
 	name = "weak energy signal"
 	desc = "A very weak energy signal originating from space."
@@ -191,9 +217,12 @@
 	ruin_type = RUINTYPE_SPACE
 	selfloop = TRUE
 
+	royale_rare_upper = 10
+	royale_rare_lower = 6
+
 /datum/planet_type/waste
 	name = "waste disposal planetoid"
-	desc = "A highly oxygenated world, coated in garbage, radiation, and rust."
+	desc = "A highly oxygenated world, coated in garbage, radiation, and rust. Over 2 generation of pill classers came and died here, and you will likely be next."
 	planet = DYNAMIC_WORLD_WASTEPLANET
 	icon_state = "waste"
 	color = "#a9883e"
@@ -210,6 +239,13 @@
 		/obj/item/stack/ore/autunite,
 		/obj/item/stack/ore/galena,
 		)
+
+	royale_common_upper = 40
+	royale_common_lower = 30
+
+
+	royale_rare_upper = 7
+	royale_rare_lower = 5
 
 
 /datum/planet_type/gas_giant

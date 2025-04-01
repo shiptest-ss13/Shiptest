@@ -10,6 +10,8 @@
 #define RARITY_TABLE_ALWAYS_RARE_TO_LEGEND_ONLY 3
 #define RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY 4
 
+GLOBAL_VAR_INIT(battle_royale_mode, FALSE)
+
 /**
  * Fortnite component
  *

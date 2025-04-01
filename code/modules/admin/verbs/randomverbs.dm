@@ -901,6 +901,17 @@
 	else
 		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)]")
 
+/client/proc/enable_royale_mode()
+	set name = "Enable Battle Royale Mode"
+	set category = "Event"
+	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
+		return
+	if(tgui_alert(usr, "Are you SURE? Do not turn this on until the event.", "Enable Battle Royale Mode", list("Yes", "No"), 10 SECONDS) == "No")
+		return
+	message_admins("Battle royale mode has been turned ON. Expect loot crates on planets.")
+	GLOB.battle_royale_mode = TRUE
+
+
 /client/proc/spawn_overmap()
 	set name = "Spawn Overmap"
 	set category = "Event.Spawning"
