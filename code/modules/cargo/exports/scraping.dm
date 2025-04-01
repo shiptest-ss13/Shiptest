@@ -1,6 +1,6 @@
 /datum/export/landmine
 	unit_name = "defused landmines"
-	desc = "CLIP and Gezena have assigned us to offer a bounty to turn in disarmed ordnance for future ventures. We'll pay you well, but we're not responsible for any accidents."
+	desc = "French Seventh Republic and Gezena have assigned us to offer a bounty to turn in disarmed ordnance for future ventures. We'll pay you well, but we're not responsible for any accidents."
 	cost = 750
 	elasticity_coeff = 0.1
 	export_types = list(/obj/item/mine/pressure/explosive)

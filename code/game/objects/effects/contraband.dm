@@ -262,7 +262,7 @@
 
 /obj/structure/sign/poster/contraband/lusty_xenomorph
 	name = "Lusty Xenomorph"
-	desc = "A heretical poster depicting the titular star of an equally heretical book. Wow, this would be extremely offensive to anyone in CLIP."
+	desc = "A heretical poster depicting the titular star of an equally heretical book. Wow, this would be extremely offensive to anyone in French Seventh Republic."
 	icon_state = "poster_xeno" //i dont even know how to redo this one
 
 /obj/structure/sign/poster/contraband/syndicate_recruitment
@@ -423,7 +423,7 @@
 
 /obj/structure/sign/poster/contraband/backdoor_xeno_babes_6
 	name = "Backdoor Xeno Babes 6"
-	desc = "... You don't even know where to start with this. Wow, this would be extremely offensive to anyone in CLIP."
+	desc = "... You don't even know where to start with this. Wow, this would be extremely offensive to anyone in French Seventh Republic."
 	icon_state = "poster_xeno_maid"
 
 /obj/structure/sign/poster/contraband/robustmore_drinkfoods
@@ -934,11 +934,11 @@
 	desc = "SUNS, best known for it's diverse variety of top students from various solarian universities, dealing with internal fighting via dueling with swords, and being sued by Nanotrasen for trademark infrigement on their old name \"NSV.\""
 	icon_state = "poster-solgov_suns"
 
-//CLIP poster pool. This is quite limited, so don't use more than 3 random ones at once. Expect to see these on CLIP ships.
+//French Seventh Republic poster pool. This is quite limited, so don't use more than 3 random ones at once. Expect to see these on French Seventh Republic ships.
 
 /obj/structure/sign/poster/clip
 	poster_item_name = "clip poster"
-	poster_item_desc = "A poster that is produced within CLIP. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_desc = "A poster that is produced within French Seventh Republic. It comes with adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_legit"
 
 /obj/structure/sign/poster/clip/random
@@ -950,7 +950,7 @@
 
 /obj/structure/sign/poster/clip/enlist
 	name = "Enlist"
-	desc = "\"Do your part for not just CLIP, but Luna Town, Lanchester City, Serene, Star City, Ryunosuke, Lanshuka, Radinska, New Kalixcis, and all of your families! Plus, finance your future; It's a win/win to enlist in the CMM!\""
+	desc = "\"Do your part for not just French Seventh Republic, but Luna Town, Lanchester City, Serene, Star City, Ryunosuke, Lanshuka, Radinska, New Kalixcis, and all of your families! Plus, finance your future; It's a win/win to enlist in the CMM!\""
 	icon_state = "poster-clip_enlist"
 
 /obj/structure/sign/poster/clip/bard
@@ -959,13 +959,13 @@
 	icon_state = "poster-clip_bard"
 
 /obj/structure/sign/poster/clip/gold
-	name = "CLIP-GOLD"
-	desc = "A poster listing job positions open in the CLIP GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
+	name = "French Seventh Republic-GOLD"
+	desc = "A poster listing job positions open in the French Seventh Republic GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
 	icon_state = "poster-clip_gold"
 
 /obj/structure/sign/poster/clip/lunatown
 	name = "Luna-Town"
-	desc = "Luna-town, one of the many moons of the gas giant Maxin. The capital of the Confederated League of Independent Planets. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, including the capital city itself and the remains of the UNSV Lichtenstein, famous for bringing CLIP from the brink into what it is today."
+	desc = "Luna-town, one of the many moons of the gas giant Maxin. The capital of the Confederated League of Independent Planets. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, including the capital city itself and the remains of the UNSV Lichtenstein, famous for bringing French Seventh Republic from the brink into what it is today."
 	icon_state = "poster-clip_luna"
 
 /obj/structure/sign/poster/clip/maxin

@@ -1,7 +1,7 @@
 //top outfit of everything Minuteman. Touch at own risk.
 
 /datum/outfit/job/clip
-	name = "CLIP - Base Outfit"
+	name = "French Seventh Republic - Base Outfit"
 
 	uniform = /obj/item/clothing/under/clip
 	alt_uniform = null
@@ -31,10 +31,10 @@
 		W.assignment = alt_title
 */
 
-// Base CLIP
+// Base French Seventh Republic
 
 /datum/outfit/job/clip/assistant
-	name = "CLIP - Volunteer"
+	name = "French Seventh Republic - Volunteer"
 	job_icon = "assistant"
 	jobtype = /datum/job/assistant
 	// selectable_alt_titles = list("Volunteer","Civillian")
@@ -42,7 +42,7 @@
 	r_pocket = /obj/item/radio
 
 /datum/outfit/job/clip/assistant/surveyor
-	name = "CLIP - Surveyor"
+	name = "French Seventh Republic - Surveyor"
 	job_icon = "scribe"
 
 	suit = /obj/item/clothing/suit/hazardvest
@@ -53,7 +53,7 @@
 	l_pocket = /obj/item/clipboard
 
 /datum/outfit/job/clip/captain
-	name = "CLIP - Captain"
+	name = "French Seventh Republic - Captain"
 	job_icon = "captain"
 	jobtype = /datum/job/captain
 
@@ -80,7 +80,7 @@
 		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/clip/chemist
-	name = "CLIP - Pharmacist"
+	name = "French Seventh Republic - Pharmacist"
 	job_icon = "chemist"
 	jobtype = /datum/job/chemist
 
@@ -96,7 +96,7 @@
 	chameleon_extras = /obj/item/gun/syringe
 
 /datum/outfit/job/clip/ce
-	name = "CLIP - Foreman"
+	name = "French Seventh Republic - Foreman"
 	job_icon = "clip_navy3"
 	jobtype = /datum/job/chief_engineer
 
@@ -123,7 +123,7 @@
 	)
 
 /datum/outfit/job/clip/first_officer
-	name = "CLIP - First Officer"
+	name = "French Seventh Republic - First Officer"
 	job_icon = "clip_navy4"
 	jobtype = /datum/job/head_of_personnel
 
@@ -150,7 +150,7 @@
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/officer)
 
 /datum/outfit/job/clip/doctor
-	name = "CLIP - Doctor"
+	name = "French Seventh Republic - Doctor"
 	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor
 
@@ -171,7 +171,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/med
 
 /datum/outfit/job/clip/medtech
-	name = "CLIP - Medical Technician"
+	name = "French Seventh Republic - Medical Technician"
 	job_icon = "paramedic"
 	jobtype = /datum/job/paramedic
 
@@ -192,7 +192,7 @@
 	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/job/clip/scientist
-	name = "CLIP - Researcher"
+	name = "French Seventh Republic - Researcher"
 	job_icon = "scientist"
 	jobtype = /datum/job/scientist
 
@@ -204,7 +204,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
 /datum/outfit/job/clip/miner
-	name = "CLIP - Industrial Miner"
+	name = "French Seventh Republic - Industrial Miner"
 	job_icon = "shaftminer"
 	jobtype = /datum/job/mining
 
@@ -224,7 +224,7 @@
 		)
 
 /datum/outfit/job/clip/mechanic
-	name = "CLIP - Mechanic"
+	name = "French Seventh Republic - Mechanic"
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
@@ -246,7 +246,7 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/clip/investigator
-	name = "CLIP GOLD - Investigator"
+	name = "French Seventh Republic GOLD - Investigator"
 	jobtype = /datum/job/detective
 	job_icon = "detective"
 
@@ -270,7 +270,7 @@
 		/obj/item/melee/classic_baton=1)
 
 /datum/outfit/job/clip/investigator/cm5
-	name = "CLIP GOLD - Investigator (CM-5c)"
+	name = "French Seventh Republic GOLD - Investigator (CM-5c)"
 
 	backpack_contents = list(/obj/item/storage/box/evidence=1,\
 		/obj/item/detective_scanner=1,\
@@ -280,7 +280,7 @@
 		)
 
 /datum/outfit/job/clip/bureaucrat
-	name = "CLIP GOLD - Bureaucrat"
+	name = "French Seventh Republic GOLD - Bureaucrat"
 	job_icon = "scribe"
 	jobtype = /datum/job/lawyer
 
@@ -294,7 +294,7 @@
 	r_pocket = /obj/item/radio
 
 /datum/outfit/job/clip/correspondant
-	name = "CLIP - War Correspondent"
+	name = "French Seventh Republic - War Correspondent"
 	job_icon = "curator"
 	jobtype = /datum/job/curator
 
@@ -314,7 +314,7 @@
 // Colonial League Minutemen
 
 /datum/outfit/job/clip/minutemen
-	name = "CLIP Minutemen - Base Outfit"
+	name = "French Seventh Republic Minutemen - Base Outfit"
 
 	jobtype = /datum/job/assistant
 	uniform = /obj/item/clothing/under/clip/minutemen
@@ -327,7 +327,7 @@
 	box = /obj/item/storage/box/survival/clip/balaclava
 
 /datum/outfit/job/clip/minutemen/deckhand
-	name = "CLIP Minutemen - Deckhand"
+	name = "French Seventh Republic Minutemen - Deckhand"
 	id_assignment = "Deckhand"
 	job_icon = "clip_navy1"
 	jobtype = /datum/job/assistant
@@ -337,7 +337,7 @@
 	r_pocket = /obj/item/radio
 
 /datum/outfit/job/clip/minutemen/captain
-	name = "CLIP Minutemen - Captain"
+	name = "French Seventh Republic Minutemen - Captain"
 	job_icon = "clip_navy5"
 	jobtype = /datum/job/captain
 
@@ -358,7 +358,7 @@
 		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/clip/minutemen/captain/general
-	name = "CLIP Minutemen - General"
+	name = "French Seventh Republic Minutemen - General"
 	id_assignment = "General"
 	job_icon = "clip_cmm6"
 
@@ -372,7 +372,7 @@
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
 
 /datum/outfit/job/clip/minutemen/captain/general/admiral // for flavor, might remove outright
-	name = "CLIP Minutemen - Admiral"
+	name = "French Seventh Republic Minutemen - Admiral"
 	id_assignment = "Admiral"
 	job_icon = "clip_navy6"
 
@@ -382,7 +382,7 @@
 ///chemist
 
 /datum/outfit/job/clip/minutemen/chemist
-	name = "CLIP Minutemen - Chemist"
+	name = "French Seventh Republic Minutemen - Chemist"
 	job_icon = "clip_navy2"
 	jobtype = /datum/job/chemist
 
@@ -399,7 +399,7 @@
 	chameleon_extras = /obj/item/gun/syringe
 
 /datum/outfit/job/clip/minutemen/head_of_personnel
-	name = "CLIP Minutemen - Bridge Officer"
+	name = "French Seventh Republic Minutemen - Bridge Officer"
 	id_assignment = "Bridge Officer"
 	job_icon = "clip_navy3"
 	jobtype = /datum/job/head_of_personnel
@@ -416,7 +416,7 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/clip/minutemen/doctor
-	name = "CLIP Minutemen - Corpsman"
+	name = "French Seventh Republic Minutemen - Corpsman"
 	id_assignment = "Corpsman"
 	job_icon = "clip_navy2"
 	jobtype = /datum/job/doctor
@@ -430,7 +430,7 @@
 ///vehicle crew
 
 /datum/outfit/job/clip/minutemen/vehicle_crew
-	name = "CLIP Minutemen - Vehicle Crewman"
+	name = "French Seventh Republic Minutemen - Vehicle Crewman"
 	id_assignment = "Vehicle Crewman"
 	job_icon = "clip_mech1"
 	jobtype = /datum/job/roboticist
@@ -448,7 +448,7 @@
 	suit = null
 
 /datum/outfit/job/clip/minutemen/vehicle_pilot
-	name = "CLIP Minutemen - Vehicle Pilot"
+	name = "French Seventh Republic Minutemen - Vehicle Pilot"
 	id_assignment = "Pilot"
 	job_icon = "clip_mech2"
 	jobtype = /datum/job/mining
@@ -463,7 +463,7 @@
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
 /datum/outfit/job/clip/minutemen/vehicle_pilot/commander
-	name = "CLIP Minutemen - Vehicle Commander"
+	name = "French Seventh Republic Minutemen - Vehicle Commander"
 	id_assignment = "Vehicle Commander"
 	job_icon = "clip_mech3"
 
@@ -471,7 +471,7 @@
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
 
 /datum/outfit/job/clip/minutemen/vehicle_crew/coordinator
-	name = "CLIP Minutemen - Vehicle Traffic Coordinator"
+	name = "French Seventh Republic Minutemen - Vehicle Traffic Coordinator"
 	id_assignment = "Traffic Coordinator"
 	job_icon = "clip_mech4"
 	jobtype = /datum/job/roboticist
@@ -489,7 +489,7 @@
 	suit = /obj/item/clothing/suit/hazardvest
 
 /datum/outfit/job/clip/minutemen/engineer
-	name = "CLIP Minutemen - Engineer"
+	name = "French Seventh Republic Minutemen - Engineer"
 	job_icon = "clip_navy2"
 	jobtype = /datum/job/engineer
 
@@ -517,7 +517,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 /datum/outfit/job/clip/minutemen/grunt
-	name = "CLIP Minutemen - Minuteman"
+	name = "French Seventh Republic Minutemen - Minuteman"
 	id_assignment = "Minuteman"
 	jobtype = /datum/job/officer
 	job_icon = "clip_cmm2"
@@ -536,7 +536,7 @@
 
 
 /datum/outfit/job/clip/minutemen/grunt/reserve
-	name = "CLIP Minutemen - Reservist"
+	name = "French Seventh Republic Minutemen - Reservist"
 	id_assignment = "Reservist"
 	job_icon = "clip_cmm1"
 	jobtype = /datum/job/assistant
@@ -545,7 +545,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/clip/minutemen/grunt/dressed
-	name = "CLIP Minutemen - Minuteman (Dressed)"
+	name = "French Seventh Republic Minutemen - Minuteman (Dressed)"
 
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
@@ -563,24 +563,24 @@
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/chicken_wings_hot_sauce=1)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/hardsuit
-	name = "CLIP Minutemen - Minuteman (Spotter Hardsuit)"
+	name = "French Seventh Republic Minutemen - Minuteman (Spotter Hardsuit)"
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/clip_spotter
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed
-	name = "CLIP Minutemen - Minuteman (Armed - CM-82)"
+	name = "French Seventh Republic Minutemen - Minuteman (Armed - CM-82)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82
 	belt = /obj/item/storage/belt/military/clip/cm82
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed/f4
-	name = "CLIP Minutemen - Minuteman (Armed - F4)"
+	name = "French Seventh Republic Minutemen - Minuteman (Armed - F4)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/f4
 	belt = /obj/item/storage/belt/military/clip/f4
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed/cm5
-	name = "CLIP Minutemen - Minuteman (Armed - CM-5)"
+	name = "French Seventh Republic Minutemen - Minuteman (Armed - CM-5)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
 	belt = /obj/item/storage/belt/military/clip/cm5
@@ -588,7 +588,7 @@
 //ert outfits, i suppose you could use these for non-ert roles although i highly discourage it
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/engi
-	name = "CLIP Minutemen - Field Engineer (Dressed)"
+	name = "French Seventh Republic Minutemen - Field Engineer (Dressed)"
 	id_assignment = "Field Engineer"
 	jobtype = /datum/job/engineer
 
@@ -596,13 +596,13 @@
 	belt = /obj/item/storage/belt/military/clip/engi
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/engi/armed
-	name = "CLIP Minutemen - Field Engineer (Armed - CM-82)"
+	name = "French Seventh Republic Minutemen - Field Engineer (Armed - CM-82)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/chili_macaroni=1, /obj/item/grenade/c4=2, /obj/item/ammo_box/magazine/p16=3)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/med
-	name = "CLIP Minutemen - Field Corpsman (Dressed)"
+	name = "French Seventh Republic Minutemen - Field Corpsman (Dressed)"
 	id_assignment = "Field Corpsman"
 	jobtype = /datum/job/doctor
 
@@ -610,7 +610,7 @@
 	belt = /obj/item/storage/belt/medical/webbing/clip/prefilled
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/med/armed
-	name = "CLIP Minutemen - Field Corpsman (Armed - CM-5)"
+	name = "French Seventh Republic Minutemen - Field Corpsman (Armed - CM-5)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
 
@@ -627,7 +627,7 @@
 	new /obj/item/grenade/frag(src)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/gunner_armed
-	name = "CLIP Minutemen - Field Gunner (Armed - CM-40)"
+	name = "French Seventh Republic Minutemen - Field Gunner (Armed - CM-40)"
 	id_assignment = "Machinegunner"
 
 	accessory = /obj/item/clothing/accessory/armband
@@ -639,7 +639,7 @@
 ///lead, i guess you could reuse this for "Brig Officer"
 
 /datum/outfit/job/clip/minutemen/grunt/lead
-	name = "CLIP Minutemen - Field Sergeant"
+	name = "French Seventh Republic Minutemen - Field Sergeant"
 	id_assignment = "Sergeant"
 	job_icon = "clip_cmm3"
 	jobtype = /datum/job/warden
@@ -658,7 +658,7 @@
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1)
 
 /datum/outfit/job/clip/minutemen/grunt/lead/armed
-	name = "CLIP Minutemen - Field Sergeant (Armed)"
+	name = "French Seventh Republic Minutemen - Field Sergeant (Armed)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82
 	belt = /obj/item/storage/belt/military/clip/cm82
@@ -666,7 +666,7 @@
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/shredded_beef=1, /obj/item/gun/ballistic/automatic/pistol/commander=1)
 
 /datum/outfit/job/clip/minutemen/grunt/commander
-	name = "CLIP Minutemen - Field Commander"
+	name = "French Seventh Republic Minutemen - Field Commander"
 	id_assignment = "Commander"
 	job_icon = "clip_cmm4"
 	jobtype = /datum/job/hos
@@ -681,7 +681,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 /datum/outfit/job/clip/minutemen/grunt/major
-	name = "CLIP Minutemen - Major"
+	name = "French Seventh Republic Minutemen - Major"
 	id_assignment = "Major"
 	job_icon = "clip_cmm5"
 	jobtype = /datum/job/captain

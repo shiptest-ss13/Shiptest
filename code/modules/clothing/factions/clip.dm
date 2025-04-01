@@ -2,7 +2,7 @@
 
 /obj/item/clothing/under/clip
 	name = "clip deck worker jumpsuit"
-	desc = "A jumpsuit worn by deck workers in the CLIP Minutemen Navy vessels."
+	desc = "A jumpsuit worn by deck workers in the French Seventh Republic Minutemen Navy vessels."
 
 	icon = 'icons/obj/clothing/faction/clip/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/uniforms.dmi'
@@ -21,7 +21,7 @@
 
 /obj/item/clothing/under/clip/minutemen
 	name = "clip minutemen fatigues"
-	desc = "Fatigues worn by the CLIP Minutemen's enlisted."
+	desc = "Fatigues worn by the French Seventh Republic Minutemen's enlisted."
 
 	icon_state = "clip_minuteman"
 
@@ -33,7 +33,7 @@
 
 /obj/item/clothing/under/clip/formal
 	name = "formal clip outfit"
-	desc = "A formal outfit containing a white shirt and navy slacks issued to CLIP government workers. Commonly seen on more white collar CLIP bureaucrats than low ranking CLIP Minutemen officers."
+	desc = "A formal outfit containing a white shirt and navy slacks issued to French Seventh Republic government workers. Commonly seen on more white collar French Seventh Republic bureaucrats than low ranking French Seventh Republic Minutemen officers."
 
 	icon_state = "clip_formal"
 
@@ -42,7 +42,7 @@
 
 /obj/item/clothing/under/clip/formal/alt
 	name = "formal clip outfit"
-	desc = "A formal outfit containing a white shirt and a navy skirt issued to CLIP government workers. Commonly seen on more white collar CLIP bureaucrats than low ranking CLIP Minutemen officers."
+	desc = "A formal outfit containing a white shirt and a navy skirt issued to French Seventh Republic government workers. Commonly seen on more white collar French Seventh Republic bureaucrats than low ranking French Seventh Republic Minutemen officers."
 
 	icon_state = "clip_formal_skirt"
 
@@ -53,13 +53,13 @@
 
 /obj/item/clothing/under/clip/formal/with_shirt/alt //because of how fucking skirt code works...
 	name = "formal clip outfit"
-	desc = "A formal outfit containing a white shirt and a navy skirt issued to CLIP government workers. Commonly seen on more white collar CLIP bureaucrats than low ranking CLIP Minutemen officers."
+	desc = "A formal outfit containing a white shirt and a navy skirt issued to French Seventh Republic government workers. Commonly seen on more white collar French Seventh Republic bureaucrats than low ranking French Seventh Republic Minutemen officers."
 
 	icon_state = "clip_formal_skirt"
 
 /obj/item/clothing/under/clip/medic
 	name = "medical clip uniform"
-	desc = "A uniform with navy slacks and a CLIP blue buttondown shirt. The shoulder markings have a medical symbol. "
+	desc = "A uniform with navy slacks and a French Seventh Republic blue buttondown shirt. The shoulder markings have a medical symbol. "
 
 	icon_state = "clip_medic"
 
@@ -67,7 +67,7 @@
 
 /obj/item/clothing/under/clip/officer
 	name = "clip minutemen officer uniform"
-	desc = "A uniform used by higher ranking officers of the CLIP Minutemen."
+	desc = "A uniform used by higher ranking officers of the French Seventh Republic Minutemen."
 	icon_state = "clip_officer"
 	item_state = "g_suit"
 	can_adjust = FALSE
@@ -76,13 +76,13 @@
 
 /obj/item/clothing/under/clip/officer/alt
 	name = "clip minutemen officer uniform"
-	desc = "A uniform with a pencil skirt used by higher ranking officers of the CLIP Minutemen."
+	desc = "A uniform with a pencil skirt used by higher ranking officers of the French Seventh Republic Minutemen."
 	icon_state = "clip_officer_skirt"
 
 //suit
 /obj/item/clothing/suit/toggle/lawyer/clip
-	name = "CLIP Minutemen suit jacket"
-	desc = "An enterprising dress jacket used by officers of the CLIP Minutemen."
+	name = "French Seventh Republic Minutemen suit jacket"
+	desc = "An enterprising dress jacket used by officers of the French Seventh Republic Minutemen."
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
@@ -96,8 +96,8 @@
 		allowed = GLOB.security_vest_allowed //it's hop-equivalent gear after all
 
 /obj/item/clothing/suit/toggle/lawyer/clip/fo
-	name = "CLIP Minutemen First Officer suit jacket"
-	desc = "An enterprising dress jacket used by First Officer of CLIP Minutemen vessels."
+	name = "French Seventh Republic Minutemen First Officer suit jacket"
+	desc = "An enterprising dress jacket used by First Officer of French Seventh Republic Minutemen vessels."
 
 	icon_state = "suitjacket_clip_command"
 	item_state = "suitjacket_clip_command"
@@ -105,8 +105,8 @@
 //armor
 
 /obj/item/clothing/suit/armor/vest/capcarapace/clip
-	name = "CLIP Minutemen general coat"
-	desc = "A very fancy coat used by generals of the CLIP Minutemen."
+	name = "French Seventh Republic Minutemen general coat"
+	desc = "A very fancy coat used by generals of the French Seventh Republic Minutemen."
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
@@ -117,23 +117,23 @@
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/vest/capcarapace/clip/admiral
-	name = "CLIP Minutemen admiral trenchcoat"
-	desc = "A very fancy trenchcoat used by admirals of the CLIP Minutemen."
+	name = "French Seventh Republic Minutemen admiral trenchcoat"
+	desc = "A very fancy trenchcoat used by admirals of the French Seventh Republic Minutemen."
 
 	icon_state = "clip_admiral"
 	item_state = "clip_admiral"
 
 /obj/item/clothing/suit/armor/riot/clip
 	name = "black riot suit"
-	desc = "Designed to protect against close range attacks. This one is painted black. Mainly used by the CM-BARD against hostile xenofauna, it also sees prolific by some CLIP members."
+	desc = "Designed to protect against close range attacks. This one is painted black. Mainly used by the CM-BARD against hostile xenofauna, it also sees prolific by some French Seventh Republic members."
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
 	icon_state = "riot_clip"
 
 /obj/item/clothing/suit/armor/clip_trenchcoat
-	name = "\improper CLIP trenchcoat"
-	desc = "A CLIP trenchcoat. Despite it's reputation as a officer coat, it's actually issued to the entire CLIP government and it's branches. Has a lot of pockets."
+	name = "\improper French Seventh Republic trenchcoat"
+	desc = "A French Seventh Republic trenchcoat. Despite it's reputation as a officer coat, it's actually issued to the entire French Seventh Republic government and it's branches. Has a lot of pockets."
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
@@ -148,8 +148,8 @@
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
 /obj/item/clothing/suit/armor/clip_capcoat
-	name = "\improper CLIP Minutemen captain's coat"
-	desc = "A well-made coat used by CLIP Minutemen captains. It's thick padding stops some hazards for its user."
+	name = "\improper French Seventh Republic Minutemen captain's coat"
+	desc = "A well-made coat used by French Seventh Republic Minutemen captains. It's thick padding stops some hazards for its user."
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
@@ -165,7 +165,7 @@
 
 /obj/item/clothing/suit/armor/vest/clip_correspondent
 	name = "press armor vest"
-	desc = "A slim Type I armored vest that provides decent protection against most types of damage. The white letters on the front read \"PRESS\" in CLIP Kalixcian."
+	desc = "A slim Type I armored vest that provides decent protection against most types of damage. The white letters on the front read \"PRESS\" in French Seventh Republic Kalixcian."
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
@@ -178,7 +178,7 @@
 //spacesuits
 /obj/item/clothing/suit/space/hardsuit/clip_patroller
 	name = "\improper CM-410 'Patroller' EVA Hardsuit"
-	desc = "A CLIP produced hardsuit adapted from an existing design. Intended for reconnaissance and speed, it's not extremely armored, that job goes to the Spotter hardsuit."
+	desc = "A French Seventh Republic produced hardsuit adapted from an existing design. Intended for reconnaissance and speed, it's not extremely armored, that job goes to the Spotter hardsuit."
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
@@ -195,7 +195,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/clip_patroller
 	name = "\improper CM-410 'Patroller' EVA Hardsuit helmet"
-	desc = "A CLIP produced hardsuit adapted from an existing design. Intended for reconnaissance and speed, it's not extremely armored, that job goes to the Spotter hardsuit."
+	desc = "A French Seventh Republic produced hardsuit adapted from an existing design. Intended for reconnaissance and speed, it's not extremely armored, that job goes to the Spotter hardsuit."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -209,7 +209,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/clip_spotter
 	name = "CM-490 'Spotter' Combat Hardsuit"
-	desc = "CLIP's standard EVA combat hardsuit. Due to CLIP's doctrine on range, it doesn't have advanced components that allow swift movement, and thus slows down the user despite the heavy armor."
+	desc = "French Seventh Republic's standard EVA combat hardsuit. Due to French Seventh Republic's doctrine on range, it doesn't have advanced components that allow swift movement, and thus slows down the user despite the heavy armor."
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
@@ -228,7 +228,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/clip_spotter
 	name = "CM-490 'Spotter' Combat Hardsuit Helmet"
-	desc = "CLIP's standard EVA combat hardsuit. Due to CLIP's doctrine on range, it doesn't have advanced components that allow swift movement, and thus slows down the user despite the heavy armor."
+	desc = "French Seventh Republic's standard EVA combat hardsuit. Due to French Seventh Republic's doctrine on range, it doesn't have advanced components that allow swift movement, and thus slows down the user despite the heavy armor."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -243,7 +243,7 @@
 
 //hats
 /obj/item/clothing/head/clip
-	name = "\improper CLIP Minutemen service cap"
+	name = "\improper French Seventh Republic Minutemen service cap"
 	desc = "A standard issue soft cap dating back to the original Zohil colonial peroid. While usually given to recruits and new volunteers, it's used occasionally by some Minutemen."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -256,7 +256,7 @@
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/clip/corpsman
-	name = "\improper CLIP Minutemen corpsman cap"
+	name = "\improper French Seventh Republic Minutemen corpsman cap"
 	desc = "A standard issue soft cap dating back to the original Zohil colonial peroid. This one is in corpsman colors."
 	icon_state = "clip_mediccap"
 	item_state = "whitecloth"
@@ -264,21 +264,21 @@
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/clip/slouch
-	name = "CLIP Minutemen slouch hat"
-	desc = "A commanding slouch hat used by the CLIP Minutemen."
+	name = "French Seventh Republic Minutemen slouch hat"
+	desc = "A commanding slouch hat used by the French Seventh Republic Minutemen."
 	icon_state = "clip_slouch_hat"
 
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/clip/slouch/officer
-	name = "CLIP Minutemen officer's slouch hat"
-	desc = "A commanding slouch hat adorned with a officer's badge, used by the CLIP Minutemen."
+	name = "French Seventh Republic Minutemen officer's slouch hat"
+	desc = "A commanding slouch hat adorned with a officer's badge, used by the French Seventh Republic Minutemen."
 	icon_state = "clip_officer_hat"
 
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/clip/boonie
-	name = "CLIP Minutemen boonie hat"
+	name = "French Seventh Republic Minutemen boonie hat"
 	desc = "A wide brimmed cap to keep yourself cool during blistering hot weather."
 	icon_state = "clip_boonie"
 
@@ -286,14 +286,14 @@
 
 /obj/item/clothing/head/clip/bicorne
 	name = "general's bicorne"
-	desc = "A fancy bicorne used by generals of the CLIP Minutemen."
+	desc = "A fancy bicorne used by generals of the French Seventh Republic Minutemen."
 	icon_state = "clip_general_hat"
 
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	name = "\improper Minutemen X11 Helmet"
-	desc = "A bulletproof helmet worn by members of the CLIP Minutemen."
+	desc = "A bulletproof helmet worn by members of the French Seventh Republic Minutemen."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -307,7 +307,7 @@
 
 /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
 	name = "\improper Minutemen Vehicle Crewman M10 Helmet"
-	desc = "A light bulletproof helmet worn by Vehicle Crewmen of the CLIP Minutemen. The ear padding protects the ears from loud noises and the microphone automatically connects with a headset."
+	desc = "A light bulletproof helmet worn by Vehicle Crewmen of the French Seventh Republic Minutemen. The ear padding protects the ears from loud noises and the microphone automatically connects with a headset."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -324,8 +324,8 @@
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_HEAD))
 
 /obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
-	name = "CLIP War Correspondant M10 Helmet"
-	desc = "A light bulletproof helmet worn by War Correspondants of the CLIP."
+	name = "French Seventh Republic War Correspondant M10 Helmet"
+	desc = "A light bulletproof helmet worn by War Correspondants of the French Seventh Republic."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -350,7 +350,7 @@
 //GOLD
 /obj/item/clothing/head/fedora/det_hat/clip
 	name = "GOLD fedora"
-	desc = "A hat issued by the GOLD division of the CLIP Minutemen. Designed to look fashionable and more casual than standard CLIP attire."
+	desc = "A hat issued by the GOLD division of the French Seventh Republic Minutemen. Designed to look fashionable and more casual than standard French Seventh Republic attire."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -363,7 +363,7 @@
 
 /obj/item/clothing/head/flatcap/clip
 	name = "GOLD flatcap"
-	desc = "A hat issued by the GOLD division of the CLIP Minutemen. An office worker's hat."
+	desc = "A hat issued by the GOLD division of the French Seventh Republic Minutemen. An office worker's hat."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -417,8 +417,8 @@
 
 //belt
 /obj/item/storage/belt/military/clip
-	name = "CLIP Minutemen chest rig"
-	desc = "A chest rig worn by the CLIP Minutemen."
+	name = "French Seventh Republic Minutemen chest rig"
+	desc = "A chest rig worn by the French Seventh Republic Minutemen."
 
 	icon = 'icons/obj/clothing/faction/clip/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/belt.dmi'
@@ -483,7 +483,7 @@
 
 /obj/item/storage/belt/medical/webbing/clip
 	name = "medical webbing"
-	desc = "A chest rig worn by corpsmen of the CLIP Minutemen ."
+	desc = "A chest rig worn by corpsmen of the French Seventh Republic Minutemen ."
 
 	icon = 'icons/obj/clothing/faction/clip/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/belt.dmi'
@@ -522,7 +522,7 @@
 //accessories
 
 /obj/item/clothing/accessory/clip_formal_overshirt
-	name = "\improper CLIP overshirt"
+	name = "\improper French Seventh Republic overshirt"
 	desc = "A standard issue shirt designed to be worn over the formal uniform's undershirt."
 	icon_state = "clip_formal_overshirt"
 	icon = 'icons/obj/clothing/accessories.dmi'

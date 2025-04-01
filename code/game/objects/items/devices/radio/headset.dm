@@ -165,13 +165,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 //clip
 /obj/item/radio/headset/clip
 	name = "minutemen radio headset"
-	desc = "Used by militias flying the five stars of the CLIP Minutemen."
+	desc = "Used by militias flying the five stars of the French Seventh Republic Minutemen."
 	icon_state = "clip_headset"
 	keyslot = new /obj/item/encryptionkey/minutemen
 
 /obj/item/radio/headset/clip/captain
 	name = "minuteman officer radio headset"
-	desc = "Used by the CLIP Minutemen's enlisted officers."
+	desc = "Used by the French Seventh Republic Minutemen's enlisted officers."
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 
@@ -184,7 +184,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/clip/alt/captain
 	name = "minuteman officer bowman headset"
-	desc = "Used by the CLIP Minutemen's enlisted officers. Protects ears from flashbangs."
+	desc = "Used by the French Seventh Republic Minutemen's enlisted officers. Protects ears from flashbangs."
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 

@@ -1,5 +1,5 @@
 /datum/species/kepori
-	name = "\improper Kepori"
+	name = "\improper Aftiks"
 	id = SPECIES_KEPORI
 	default_color = "6060FF"
 	species_traits = list(SCLERA, MUTCOLORS, EYECOLOR, MUTCOLORS_SECONDARY)

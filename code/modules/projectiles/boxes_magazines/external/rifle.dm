@@ -92,6 +92,9 @@
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/swiss/empty
+	start_empty = TRUE
+
 // 8x50mmR En Bloc Clip (Illestren Hunting Rifle)
 
 /obj/item/ammo_box/magazine/illestren_a850r //this is a magazine codewise do nothing breaks

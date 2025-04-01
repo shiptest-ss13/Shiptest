@@ -183,9 +183,11 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 
 /obj/effect/battle_royale/proc/extra_changes(obj/thing_to_check)
 	var/list/ignore_these = list(
-		/obj/item/gun/ballistic/automatic/sniper_rifle,
+		/obj/item/gun/ballistic/automatic/marksman/taipan,
+		/obj/item/gun/ballistic/automatic/assault/hydra/lmg,
+		/obj/item/gun/ballistic/automatic/marksman/boomslang,
 		/obj/item/gun/ballistic/automatic/hmg,
-		/obj/item/gun/ballistic/automatic/pistol/cm357,
+		/obj/item/gun/ballistic/automatic/pistol/m20_auto_elite,
 		/obj/item/gun/energy/laser/e50,
 		/obj/item/gun/energy/pulse
 		)
@@ -218,51 +220,49 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/datum/supply_pack/mech,
 		/datum/supply_pack/medical,
 		/datum/supply_pack/sec_supply,
-		/datum/supply_pack/spacesuit_armor,
+		/datum/supply_pack/spacesuits,
+		/datum/supply_pack/armor,
 		/datum/supply_pack/tools,
 		/datum/supply_pack/vendor_refill,
 		/datum/supply_pack/gun/skm_lmg,
-		/datum/supply_pack/gun/l6_saw,
+		/datum/supply_pack/gun/saw80,
 		/datum/supply_pack/gun/cm40,
 		/datum/supply_pack/gun/shredder,
-		/datum/supply_pack/gun/gal,
-		/datum/supply_pack/gun/gal_inteq,
-		/datum/supply_pack/gun/ebr,
+		/datum/supply_pack/gun/cmf4,
+		/datum/supply_pack/gun/ssg04,
+		/datum/supply_pack/gun/sbr80,
 		/datum/supply_pack/gun/vickland,
 		/datum/supply_pack/gun/swiss,
 		/datum/supply_pack/gun/skm,
-		/datum/supply_pack/gun/skm_pirate,
-		/datum/supply_pack/gun/skm_inteq,
-		/datum/supply_pack/gun/p16,
-		/datum/supply_pack/gun/gar_twink,
+		/datum/supply_pack/gun/inteq_skm,
+		/datum/supply_pack/gun/m15,
 		/datum/supply_pack/gun/gar,
-		/datum/supply_pack/gun/m90,
+		/datum/supply_pack/gun/hydra,
+		/datum/supply_pack/gun/sidewinder,
 		/datum/supply_pack/gun/wt550,
 		/datum/supply_pack/gun/amr,
 		/datum/supply_pack/gun/f90,
 		/datum/supply_pack/gun/ssg669,
 		/datum/supply_pack/gun/scout,
-		/datum/supply_pack/gun/illestren_scoped,
+//		/datum/supply_pack/gun/illestren_scoped,
 		/datum/supply_pack/gun/huntsman,
-		/datum/supply_pack/gun/combat_sg,
+		/datum/supply_pack/gun/m12,
 		/datum/supply_pack/gun/cm15,
-		/datum/supply_pack/gun/inteq_bulldog_sg,
-		/datum/supply_pack/gun/bulldog_sg,
-		/datum/supply_pack/gun/hb7,
-		/datum/supply_pack/gun/bg16,
+		/datum/supply_pack/gun/mastiff,
+		/datum/supply_pack/gun/bulldog,
+		/datum/supply_pack/gun/laser/hb7,
+		/datum/supply_pack/gun/laser/bg16,
 		/datum/supply_pack/gun/e40,
 		/datum/supply_pack/gun/hades,
 		/datum/supply_pack/gun/e50,
-		/datum/supply_pack/gun/captain,
-		/datum/supply_pack/gun/hos,
 		/datum/supply_pack/gun/model_h,
-		/datum/supply_pack/gun/model_h_twink,
 		/datum/supply_pack/gun/ashhand,
-		/datum/supply_pack/gun/deagle,
-		/datum/supply_pack/gun/deagle_gold,
-		/datum/supply_pack/gun/commander_2,
+		/datum/supply_pack/gun/m20_auto_elite,
+//		/datum/supply_pack/gun/commander_2,
 		/datum/supply_pack/gun/cm70,
 		/datum/supply_pack/gun/ion,
+		/datum/supply_pack/gun/oneshot,
+		/datum/supply_pack/gun/oneshot/hedp,
 		)
 	for(var/datum/checked_datum as anything in bad_types)
 		if(checking.type == checked_datum)
@@ -315,7 +315,8 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/datum/supply_pack/mech,
 		/datum/supply_pack/medical,
 		/datum/supply_pack/sec_supply,
-		/datum/supply_pack/spacesuit_armor,
+		/datum/supply_pack/spacesuits,
+		/datum/supply_pack/armor,
 		/datum/supply_pack/tools,
 		/datum/supply_pack/vendor_refill
 		)
@@ -340,9 +341,10 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 
 /obj/effect/battle_royale/rarer/extra_changes(obj/thing_to_check)
 	var/list/ignore_these = list(
-		/obj/item/gun/ballistic/automatic/sniper_rifle,
+		/obj/item/gun/ballistic/automatic/marksman/taipan,
 		/obj/item/gun/ballistic/automatic/hmg,
-		/obj/item/gun/ballistic/automatic/pistol/deagle,
+		/obj/item/gun/ballistic/automatic/assault/hydra/lmg,
+		/obj/item/gun/ballistic/automatic/pistol/m20_auto_elite,
 		/obj/item/gun/energy/laser/e50,
 		/obj/item/gun/energy/pulse
 		)
@@ -388,30 +390,33 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/datum/supply_pack/mech,
 		/datum/supply_pack/medical,
 		/datum/supply_pack/sec_supply,
-		/datum/supply_pack/spacesuit_armor,
+		/datum/supply_pack/spacesuits,
+		/datum/supply_pack/armor,
 		/datum/supply_pack/tools,
 		/datum/supply_pack/vendor_refill,
 		/datum/supply_pack/gun/disposable,
 		/datum/supply_pack/gun/commanders,
-		/datum/supply_pack/gun/commanders_inteq,
+		/datum/supply_pack/gun/commissioner,
 		/datum/supply_pack/gun/cm23,
-		/datum/supply_pack/gun/candor,
-		/datum/supply_pack/gun/makarovs,
-		/datum/supply_pack/gun/solgov,
+		/datum/supply_pack/gun/candors,
+		/datum/supply_pack/gun/ringneck,
+		/datum/supply_pack/gun/pc76,
+		/datum/supply_pack/gun/laser,
+		/datum/supply_pack/gun/pistolec,
 		/datum/supply_pack/gun/conflagration,
 		/datum/supply_pack/gun/himehabu,
 		/datum/supply_pack/gun/detrevolver,
-		/datum/supply_pack/gun/firebrand,
-		/datum/supply_pack/gun/laser,
-		/datum/supply_pack/gun/mini_laser,
+		/datum/supply_pack/gun/pepperbox,
 		/datum/supply_pack/gun/ion,
 		/datum/supply_pack/gun/e10,
-		/datum/supply_pack/gun/esg500,
-		/datum/supply_pack/gun/laser,
+		/datum/supply_pack/gun/ssg669,
 		/datum/supply_pack/gun/e11,
 		/datum/supply_pack/gun/hellfire_shotgun,
 		/datum/supply_pack/gun/brimstone_shotgun,
-		/datum/supply_pack/gun/winchester
+		/datum/supply_pack/gun/winchester,
+		/datum/supply_pack/gun/absolution,
+		/datum/supply_pack/gun/oneshot,
+		/datum/supply_pack/gun/oneshot/hedp
 		)
 	var/list/bad_subtypes = list(
 		/datum/supply_pack/costumes_toys,
@@ -445,10 +450,10 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 			var/obj/item/gun/ballistic/ballistic_to_check = gun_to_check
 			if(!ballistic_to_check.internal_magazine)
 				for(var/i in 1 to 2)
-					new ballistic_to_check.mag_type(thing_to_check)
+					new ballistic_to_check.default_ammo_type(thing_to_check)
 		else if(istype(gun_to_check,/obj/item/gun/energy))
 			var/obj/item/gun/energy/energy_to_check = gun_to_check
 			if(!energy_to_check.internal_cell)
 				for(var/i in 1 to 2)
-					new energy_to_check.cell_type(thing_to_check)
+					new energy_to_check.default_ammo_type(thing_to_check)
 

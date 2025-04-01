@@ -1,5 +1,5 @@
 /datum/species/human
-	name = "\improper Human"
+	name = "\improper Notails"
 	id = SPECIES_HUMAN
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,SCLERA,EMOTE_OVERLAY,SKINCOLORS)

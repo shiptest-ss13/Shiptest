@@ -53,7 +53,7 @@
 			<hr>
 			<br>
 			<p>1. The Office of Naval Deployment has seen fit to deploy you in command of an Woeful Cthonian class Patrol Cutter. Congratulations on your assignment. Due to the small size of this vessel, it is possible that it is your first command. If this is the case, the Office Of Naval Deployment recommends christening your vessel with the provided bottle of champagne.</p>
-			<p>2. A Cthonian-class Cutter's mission profile is traditionally; Patrol in contested and claimed space, assisting in CLIP anti-piracy operations, intercepting smugglers and other individual suspected of breaking the laws of the Federation, and providing information for larger vessels.</p>
+			<p>2. A Cthonian-class Cutter's mission profile is traditionally; Patrol in contested and claimed space, assisting in French Seventh Republic anti-piracy operations, intercepting smugglers and other individual suspected of breaking the laws of the Federation, and providing information for larger vessels.</p>
 			<p>3. The assignment issued to your vessel is as follows: Assume a standard "contested space" patrol within the system you are operating in. Maintain stand-off relations with other states unless ordered by a higher authority. Engage and destroy pirates within the system whenever possible.</p>
 			<p>4. The Office Of Naval Deployment directs that it is supplied with the following: reports on pirate hideouts in system, reports on conflict in area, reports on nations in area. Failure to supply pertinent reports in a timely fashion will lead to investigation of your command.</p>
 			<br>

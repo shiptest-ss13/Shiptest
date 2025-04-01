@@ -100,7 +100,7 @@ Build Your Own Suit
 
 /datum/supply_pack/mech/durand_parts
 	name = "Durand construction kit"
-	desc = "The kit to a bulky suit most frequently used by the CLIP Minutemen, older models tend to find themselves disassembled and sold off."
+	desc = "The kit to a bulky suit most frequently used by the French Seventh Republic Minutemen, older models tend to find themselves disassembled and sold off."
 	cost = 15000
 	contains = list(
 		/obj/item/mecha_parts/chassis/durand,
@@ -248,8 +248,8 @@ Mech Equipment
 	)
 
 /datum/supply_pack/mech/equipment/ripley_upgrade/clip
-	name = "CLIP Ripley MK-IV upgrade kit"
-	desc = "Contains a CLIP-custom APLU MK-IV upgrade kit. The upgrade will replace the cockpit with a lightweight spaceworthy canopy, and parts to overclock the leg servos. Maintains the speed of the MK-1, but consumes more power."
+	name = "French Seventh Republic Ripley MK-IV upgrade kit"
+	desc = "Contains a French Seventh Republic-custom APLU MK-IV upgrade kit. The upgrade will replace the cockpit with a lightweight spaceworthy canopy, and parts to overclock the leg servos. Maintains the speed of the MK-1, but consumes more power."
 	cost = 500
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
@@ -259,8 +259,8 @@ Mech Equipment
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/paladin_upgrade
-	name = "CLIP Durand Paladin upgrade kit"
-	desc = "Contains a CLIP-custom conversion kit for a Durand combat exosuit, to convert it to the specialized Paladin anti-xenofauna exosuit. Features an electrical replusion field that repels any melee attacks, but loses the ability to defend against ranged projectiles."
+	name = "French Seventh Republic Durand Paladin upgrade kit"
+	desc = "Contains a French Seventh Republic-custom conversion kit for a Durand combat exosuit, to convert it to the specialized Paladin anti-xenofauna exosuit. Features an electrical replusion field that repels any melee attacks, but loses the ability to defend against ranged projectiles."
 	cost = 500
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin

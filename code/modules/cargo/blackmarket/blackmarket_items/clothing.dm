@@ -259,7 +259,7 @@
 
 /datum/blackmarket_item/clothing/frontiersmen_hardsuit
 	name = "Frontiersmen Hardsuit"
-	desc = "An old but durable hardsuit typically used by the Frontiersmen. We accept no liability if you're shot by CLIP while wearing this."
+	desc = "An old but durable hardsuit typically used by the Frontiersmen. We accept no liability if you're shot by French Seventh Republic while wearing this."
 	item = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
 	price_min = 1000

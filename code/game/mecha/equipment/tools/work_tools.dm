@@ -647,15 +647,15 @@
 	result_mech = /obj/mecha/working/ripley/mkii
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
-	name = "CLIP Ripley MK-IV Conversion Kit"
-	desc = "A CLIP-custom lightweight canopy kit for an Autonomous Power Loader Unit \"Ripley\" MK-I mecha, to convert it to the mobile and spaceworthy Mk-IV design. This kit cannot be removed, once applied."
+	name = "French Seventh Republic Ripley MK-IV Conversion Kit"
+	desc = "A French Seventh Republic-custom lightweight canopy kit for an Autonomous Power Loader Unit \"Ripley\" MK-I mecha, to convert it to the mobile and spaceworthy Mk-IV design. This kit cannot be removed, once applied."
 	icon_state = "clipupgrade"
 	source_mech = list(/obj/mecha/working/ripley, /obj/mecha/working/ripley/mining)
 	result_mech = /obj/mecha/working/ripley/clip
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
-	name = "CLIP Paladin Conversion Kit"
-	desc = "A CLIP-custom conversion kit for a Durand combat exosuit, to convert it to the specialized Paladin anti-xenofauna exosuit."
+	name = "French Seventh Republic Paladin Conversion Kit"
+	desc = "A French Seventh Republic-custom conversion kit for a Durand combat exosuit, to convert it to the specialized Paladin anti-xenofauna exosuit."
 	icon_state = "clipupgrade"
 	source_mech = list(/obj/mecha/combat/durand)
 	result_mech = /obj/mecha/combat/durand/clip

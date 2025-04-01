@@ -41,7 +41,7 @@
 	)
 
 /datum/export/dogtag
-	desc = "CLIP has posted several bounties for wanted members of both the Frontiersman and the Clique. Bring back their tags, we'll reward you well."
+	desc = "French Seventh Republic has posted several bounties for wanted members of both the Frontiersman and the Clique. Bring back their tags, we'll reward you well."
 	cost = 500
 	elasticity_coeff = 0.02
 	recovery_ds = 0.5 MINUTES

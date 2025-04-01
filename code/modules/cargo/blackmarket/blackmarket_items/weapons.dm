@@ -394,7 +394,7 @@
 
 /datum/blackmarket_item/weapon/polymer
 	name = "Polymer Survivor Rifle"
-	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
+	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm French Seventh Republic."
 	item = /obj/item/gun/ballistic/rifle/polymer
 	pair_item = list(/datum/blackmarket_item/ammo/polymer_clip)
 
@@ -406,7 +406,7 @@
 
 /datum/blackmarket_item/weapon/skm_carbine
 	name = "SKM-24v Carbine"
-	desc = "Technically this is just a sawn down SKM-24 assault rifle, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
+	desc = "Technically this is just a sawn down SKM-24 assault rifle, but what's French Seventh Republic going to do? Sue us? Chambered in 4.6x30mm."
 	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	pair_item = list(/datum/blackmarket_item/ammo/carbine_mag)
 

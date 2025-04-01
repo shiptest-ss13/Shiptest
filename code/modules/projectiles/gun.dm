@@ -851,6 +851,8 @@
 
 //Happens before the actual projectile creation
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
+	SIGNAL_HANDLER
+	SEND_SIGNAL(src,COMSIG_GUN_BEFORE_FIRING)
 	return
 
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)

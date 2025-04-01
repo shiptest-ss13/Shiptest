@@ -167,8 +167,8 @@
 	scanner.attach(src)
 
 /obj/mecha/working/ripley/clip
-	desc = "An APLU utility exosuit, refitted with a lightweight pressurized cockpit and more powerful servos by the CLIP. While it preserves the Mk. I's speed, the overdriven motors tend to strain its power supply."
-	name = "\improper CLIP APLU Mk-IV \"Rogue\""
+	desc = "An APLU utility exosuit, refitted with a lightweight pressurized cockpit and more powerful servos by the French Seventh Republic. While it preserves the Mk. I's speed, the overdriven motors tend to strain its power supply."
+	name = "\improper French Seventh Republic APLU Mk-IV \"Rogue\""
 	icon_state = "clipripley"
 	base_icon_state = "clipripley"
 	base_step_energy_drain = 20 //overdriven servos are less efficient

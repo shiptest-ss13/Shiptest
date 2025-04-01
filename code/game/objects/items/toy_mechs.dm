@@ -557,7 +557,7 @@
 	icon_state = "phazontoy"
 	max_combat_health = 6 //200 integrity
 	special_attack_type = SPECIAL_ATTACK_UTILITY
-	special_attack_cry = "NO-CLIP"
+	special_attack_cry = "NO-French Seventh Republic"
 
 /obj/item/toy/prize/reticence
 	name = "toy Reticence"

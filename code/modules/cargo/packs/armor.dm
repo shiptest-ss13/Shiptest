@@ -77,7 +77,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/armor/clip_riot
-	name = "CLIP Riot Armor Crate"
+	name = "French Seventh Republic Riot Armor Crate"
 	desc = "One set of Clover Corp-manufactured Riot armor, traditionally issued to BARD for xenofauna removal, but available to League vessels deployed in the Frontier due to high Xenofauna density."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/armor/riot/clip,

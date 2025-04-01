@@ -449,3 +449,69 @@
 	desc = "Contains a 48-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/storage/box/ammo/ferrolance/hc)
 	cost = 360
+
+/datum/supply_pack/ammo/shotgun_dart
+	name = "Shotgun Dart"
+	desc = "These handy darts can be filled up with any chemical and be shot with a shotgun! \
+	Prank your friends by shooting them with laughter! \
+	Not recommended for comercial use."
+	contains = list(/obj/item/ammo_casing/shotgun/dart)
+
+	cost = 10
+
+
+/datum/supply_pack/ammo/mecha_hades_ammo
+	name = "FNX-99 Incediary Ammo"
+	desc = "A box of 24 incendiary shells for the FNX-99 mounted carbine."
+	contains = list(/obj/item/mecha_ammo/incendiary)
+
+	cost = 350
+
+
+/datum/supply_pack/ammo/a4570hp
+	name = ".45-70 Hollow Point Ammo Box"
+	desc = "Put the hollow in hollow point by blowing a crater in some random sod with this devastating .45-70 cartridge."
+	contains = list(/obj/item/storage/box/ammo/a4570_hp)
+
+
+
+/datum/supply_pack/ammo/a4570explo
+	name = "Single .45-70 Explosive Round"
+	desc = "If you need to fuck someone, hard, we got just the thing. Only one round, though, hope you got good aim."
+	contains = list(/obj/item/ammo_casing/a4570/explosive)
+
+	cost = 500
+
+
+/datum/supply_pack/ammo/c38hotshot
+	name = ".38 Hearth Ammo Box"
+	desc = "We got our ship cook to marinade some .38 in some hearthflame we pocketed off some hunters. It'll cook your targets to a nice well done."
+	contains = list(/obj/item/storage/box/ammo/c38_hotshot)
+
+	cost = 400
+
+/datum/supply_pack/ammo/c38iceblox
+	name = ".38 Chilled Ammo Box"
+	desc = "One of our runners accidentally spilled some .38 into a fucking pristine wine of ice shipment. It'll freeze your targets faster than our runner froze solid outside for making a mess."
+	contains = list(/obj/item/storage/box/ammo/c38_iceblox)
+
+	cost = 400
+
+/datum/supply_pack/ammo/a8x50match
+	name = "8x50mm Match Box"
+	desc = "We found this dead guy with a recording of him going \"Watch this!\", and richoetting something before crumbling over. This is the ammo he had!"
+	contains = list(/obj/item/storage/box/ammo/a8_50r/match)
+	cost = 1000
+
+/datum/supply_pack/ammo/c22rub
+	name = ".22lr Rubbers"
+	desc = "A 100 round box of .22 rubbershot from some godsforsaken frontier world. We're pretty sure the use-case is making someone think that they just pissed off a beehive"
+	contains = list(/obj/item/storage/box/ammo/c22lr/rubber)
+	cost = 800
+
+
+/datum/supply_pack/ammo/a8x58trac
+	name = "8x58mm Tracker"
+	desc = "We hot glued a GPS onto the inside of this 8x58mm shell! For the low low price of. Whatever the price is. You can have it!"
+	contains = list(/obj/item/ammo_casing/caseless/a858/trac)
+	cost = 50

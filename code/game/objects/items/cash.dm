@@ -102,25 +102,25 @@
 
 	if(coins_only)
 		if(value == 1)
-			name = "one credit coin"
+			name = "one shipcoin"
 			desc = "Heavier then it looks."
 			drop_sound = 'sound/items/handling/coin_drop.ogg'
 			pickup_sound =  'sound/items/handling/coin_pickup.ogg'
 		else
-			name = "[value] credits"
+			name = "[value] shipcoin2"
 			desc = "Heavier than they look."
 			gender = PLURAL
 			drop_sound = 'sound/items/handling/coin_drop.ogg'
 			pickup_sound =  'sound/items/handling/coin_pickup.ogg'
 	else
 		if(value <= 3000)
-			name = "[value] credits"
+			name = "[value] shipcoins"
 			gender = NEUTER
 			desc = "Some cold, hard cash."
 			drop_sound = 'sound/items/handling/dosh_drop.ogg'
 			pickup_sound =  'sound/items/handling/dosh_pickup.ogg'
 		else
-			name = "[value] credits"
+			name = "[value] shipcoins"
 			gender = NEUTER
 			desc = "That's a lot of dosh."
 			drop_sound = 'sound/items/handling/dosh_drop.ogg'

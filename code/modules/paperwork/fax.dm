@@ -603,7 +603,7 @@
 	admin_fax_id = "inteq"
 
 /obj/machinery/fax/admin/minutemen
-	name = "CLIP HiComm Fax Machine"
+	name = "French Seventh Republic HiComm Fax Machine"
 	fax_name = "Confederated League Leadership"
 	admin_fax_id = "minutemen"
 

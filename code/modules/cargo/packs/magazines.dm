@@ -389,3 +389,93 @@
 	faction_locked = TRUE
 
 /* Expand once the energy weapons have been actually expanded upon */
+
+/datum/supply_pack/magazine/e40_mag
+	name = "Eoehoma .299 Caseless Magazine"
+	desc = "A 30 round magazine for the E-40 Hybrid Rifle."
+	contains = list(/obj/item/ammo_box/magazine/e40)
+	cost = 750
+
+
+/datum/supply_pack/magazine/saber_mag
+	name = "Saber 9mm SMG Magazines"
+	desc = "Magazines for use in the Saber 9mm SMG. No, they don't work as swords."
+	contains = list(/obj/item/ammo_box/magazine/smgm9mm)
+
+	cost = 500
+
+/datum/supply_pack/magazine/sgg_stripper
+	name = "8x58mm Stripper Clip"
+	desc = "A five round 8x58mm stripper clip for use with the SGG-669C. Also doubles as a paperweight, because of course it does. Fucking Solarians."
+	contains = list(/obj/item/ammo_box/a858)
+
+	cost = 500
+
+/datum/supply_pack/magazine/pistole_c_mag
+	name = "5.56 Caseless Magazine"
+	desc = "A 12 round magazine for the Pistole Cheese."
+	contains = list(/obj/item/ammo_box/magazine/pistol556mm)
+
+	cost = 500
+
+
+
+/datum/supply_pack/magazine/polymer_clip
+	name = "7.62 Stripper Clip"
+	desc = "A 5 round stripper clip of 7.62x40mm CLIP."
+	contains = list(/obj/item/ammo_box/a762_stripper)
+
+	cost = 500
+
+/datum/supply_pack/magazine/carbine_mag
+	name = "SKM-24v Magazine"
+	desc = "A 30 round magazine of 4.6x30mm for the SKM-24v. A hermit classic."
+	contains = list(/obj/item/ammo_box/magazine/skm_46_30)
+
+	cost = 500
+
+/datum/supply_pack/magazine/skm_extended
+	name = "Extended SKM Magazine"
+	desc = "An extended 40 round 7.62x40mm CLIP magazine for the SKM family of assault rifles. Extra curves mean extra ammo."
+	contains = list(/obj/item/ammo_box/magazine/skm_762_40/extended)
+
+	cost = 2000
+
+/datum/supply_pack/magazine/skm_drum
+	name = "SKM Drum Magazine"
+	desc = "Do you have too much ammo on your hands? Do you have someone you really hate? \
+	Do you want them to be absolutely suppressed for the next 15 seconds? \
+	This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (SKM not included.)"
+	contains = list(/obj/item/ammo_box/magazine/skm_762_40/drum)
+
+	cost = 3000
+
+
+/datum/supply_pack/magazine/huge_weapon_cell
+	name = "Extra Large Weapon Power Cells"
+	desc = "We're way past double A now. These extra-large power cells (in both charge and size!) are purpose built for the most heavy duty energy weapons."
+	contains = list(/obj/item/stock_parts/cell/gun/large)
+
+	cost = 3000
+
+
+/datum/supply_pack/magazine/mauler_mag
+	name = "Mauler Magazine"
+	desc = "A 12 round 9mm magazine for the Mauler Machine Pistol."
+	contains = list(/obj/item/ammo_box/magazine/m9mm_mauler)
+	cost = 400
+
+
+/datum/supply_pack/magazine/spitter_mag
+	name = "Spitter Magazine"
+	desc = "A 30 round 9mm magazine for the Spitter submachine gun."
+	contains = list(/obj/item/ammo_box/magazine/spitter_9mm)
+
+	cost = 650
+
+/datum/supply_pack/magazine/pounder_mag
+	name = "Pounder Pan Magazine"
+	desc = "A 50 round pan magazine for the Pounder submachine gun. Heavy enough to double as an emergency melee weapon to beat off your enemies in a pinch."
+	contains = list(/obj/item/ammo_box/magazine/c22lr_pounder_pan)
+
+	cost = 750

@@ -305,7 +305,7 @@
 
 /datum/blackmarket_item/consumable/rabbit
 	name = "Rabbit Injector"
-	desc = "We were bummin around towards CLIP space the other day, and saw this. Ahem. Business opportunity with a bun. Words came to words and after some serious business planning, I'm the distributer for this line for this line of designer injectors. Supposed to make you like a rabbit or somethin."
+	desc = "We were bummin around towards French Seventh Republic space the other day, and saw this. Ahem. Business opportunity with a bun. Words came to words and after some serious business planning, I'm the distributer for this line for this line of designer injectors. Supposed to make you like a rabbit or somethin."
 	item = /obj/item/reagent_containers/hypospray/medipen/rabbit
 	price_min = 600
 	price_max = 800

@@ -180,11 +180,11 @@
 	satchel = /obj/item/shield/riot/flash
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/hardsuit
-	name = "CLIP Minutemen - Minuteman (Spotter Hardsuit)"
+	name = "French Seventh Republic Minutemen - Minuteman (Spotter Hardsuit)"
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/clip_spotter
 
 /datum/outfit/job/clip/minutemen/grunt/lead/armed/hardsuit
-	name = "CLIP Minutemen - Field Sergeant (Spotter Hardsuit)"
+	name = "French Seventh Republic Minutemen - Field Sergeant (Spotter Hardsuit)"
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/clip_spotter
