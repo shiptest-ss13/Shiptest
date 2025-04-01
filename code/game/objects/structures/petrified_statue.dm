@@ -5,7 +5,7 @@
 	density = TRUE
 	anchored = TRUE
 	max_integrity = 200
-	var/timer = 240 //eventually the person will be freed
+	var/timer = 480 //eventually the person will be freed
 	var/mob/living/petrified_mob
 
 /obj/structure/statue/petrified/New(loc, mob/living/L, statue_timer)
@@ -25,10 +25,10 @@
 		START_PROCESSING(SSobj, src)
 	..()
 
-/obj/structure/statue/petrified/process()
+/obj/structure/statue/petrified/process(seconds_per_tick)
 	if(!petrified_mob)
 		STOP_PROCESSING(SSobj, src)
-	timer--
+	timer -= seconds_per_tick
 	petrified_mob.Stun(40) //So they can't do anything while petrified
 	if(timer <= 0)
 		STOP_PROCESSING(SSobj, src)
@@ -58,6 +58,9 @@
 
 	if(petrified_mob)
 		petrified_mob.status_flags &= ~GODMODE
+		if(ishuman(petrified_mob))
+			var/mob/living/carbon/human/H = petrified_mob
+			H.bleedsuppress = FALSE
 		petrified_mob.forceMove(loc)
 		REMOVE_TRAIT(petrified_mob, TRAIT_MUTE, STATUE_MUTE)
 		petrified_mob.take_overall_damage((petrified_mob.health - obj_integrity + 100)) //any new damage the statue incurred is transfered to the mob
@@ -80,7 +83,7 @@
 		return 0
 	var/obj/structure/statue/petrified/S = new(loc, src, statue_timer)
 	S.name = "statue of [name]"
-	bleedsuppress = 1
+	bleedsuppress = TRUE
 	S.copy_overlays(src)
 	var/newcolor = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))
 	S.add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)

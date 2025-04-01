@@ -8,7 +8,6 @@
 	throw_range = 7
 	force = 4
 	custom_materials = list(/datum/material/iron=2000)
-	clumsy_check = 0
 	fire_sound = 'sound/items/syringeproj.ogg'
 	var/list/syringes = list()
 	var/max_syringes = 1
@@ -30,7 +29,7 @@
 /obj/item/gun/syringe/can_shoot()
 	return syringes.len
 
-/obj/item/gun/syringe/process_chamber()
+/obj/item/gun/syringe/process_chamber(atom/shooter)
 	if(chambered && !chambered.BB) //we just fired
 		recharge_newshot()
 
@@ -81,7 +80,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	force = 2 //Also very weak because it's smaller
 	suppressed = TRUE //Softer fire sound
-	can_unsuppress = FALSE //Permanently silenced
 
 /obj/item/gun/syringe/dna
 	name = "modified syringe gun"

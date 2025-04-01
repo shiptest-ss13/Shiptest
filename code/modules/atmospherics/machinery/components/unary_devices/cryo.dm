@@ -28,7 +28,7 @@
 
 	var/obj/item/radio/radio
 	var/radio_key = /obj/item/encryptionkey/headset_com
-	var/radio_channel = RADIO_CHANNEL_COMMAND
+	var/radio_channel = RADIO_CHANNEL_EMERGENCY
 
 	var/running_anim = FALSE
 
@@ -176,7 +176,7 @@
 	else //Turned on
 		begin_processing()
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/process()
+/obj/machinery/atmospherics/components/unary/cryo_cell/process(seconds_per_tick)
 	..()
 
 	if(!on)
@@ -215,7 +215,7 @@
 
 	return 1
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos()
+/obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos(seconds_per_tick)
 	..()
 
 	if(!on)
@@ -273,7 +273,7 @@
 	user.visible_message("<span class='notice'>You see [user] kicking against the glass of [src]!</span>", \
 		"<span class='notice'>You struggle inside [src], kicking the release with your foot... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
 		"<span class='hear'>You hear a thump from [src].</span>")
-	if(do_after(user, breakout_time, target = src))
+	if(do_after(user, breakout_time, target = src, hidden = TRUE))
 		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
 		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
@@ -299,7 +299,7 @@
 			close_machine(target)
 	else
 		user.visible_message("<span class='notice'>[user] starts shoving [target] inside [src].</span>", "<span class='notice'>You start shoving [target] inside [src].</span>")
-		if (do_after(user, 25, target=target))
+		if (do_after(user, 25, target = target))
 			close_machine(target)
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/attackby(obj/item/I, mob/user, params)

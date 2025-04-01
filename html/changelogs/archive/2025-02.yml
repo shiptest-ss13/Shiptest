@@ -1,0 +1,288 @@
+2025-02-01:
+  PositiveEntropy:
+  - imageadd: Concrete, hexacrete and pavement tile sprites and varieties have been
+      updated!
+  Thera-Pissed:
+  - bugfix: rockplanet shippindock ruin now has proper planetary atmos concrete.
+  firebudgy:
+  - balance: Vaquero now has ammo.
+2025-02-02:
+  Erikafox:
+  - bugfix: empty veins close themselves.
+  Gristlebee:
+  - bugfix: 8x50 HP ammo boxes spawn with the correct ammo
+2025-02-03:
+  Apogee-dev:
+  - rscadd: Model 23 Woodsman hunting rifle
+2025-02-04:
+  Ratvarr:
+  - bugfix: Floral shirts no longer take six whole seconds to put on, because that
+      is completely insane.
+2025-02-06:
+  Sadhorizon:
+  - bugfix: Captain's stamp no longer talks about stations.
+  - tweak: Replaced HOP's stamp with FO's stamp.
+  - code_imp: Repathed chaplain's stamp into roumain stamp - no other changes though.
+  - rscdel: Removed law, clown and mime stamps.
+2025-02-07:
+  Erikafox:
+  - bugfix: indie space is no longer missing numbers on the 56x40 hangar
+  FalloutFalcon, Fikou, a hood by Viro:
+  - refactor: Humanoid mobs automatically generate their sprites, they no longer will
+      be outdated.
+  - refactor: Ports some tg overlay improvments.
+  Moffball, MemeSnorfer, and Erikafox:
+  - rscadd: Colorable Windbreakers!
+  - rscadd: Colorable Flapcaps!
+  - imageadd: Resprites Softcaps, and makes them Colorable!
+  Sadhorizon:
+  - tweak: Replaced the selection of 16 jumpsuits in the loadout with a single re-skinnable
+      one.
+  - rscadd: Added a re-skinnable jumpskirt to the loadout too.
+  firebudgy:
+  - rscdel: clown.dm (hostile and hostile/retaliate)
+  - rscdel: clown spawner grenades
+  - rscdel: some clown references in halloween code
+  - rscdel: clown simplemobs on singulolab
+  - rscdel: clown and mime PDAs
+  - rscdel: clown/mime masks in the few places they appeared
+  - rscdel: clown poster
+  - rscdel: clown shooting targets from everywhere they appear
+2025-02-08:
+  Erikafox:
+  - rscadd: An assortment of new chems; Tramal & Dimorlin, painkillers; Shoalmix,,
+      a combat drug; Lithium Carbonate, an antidepressant; melatonin; a sleeping aid
+      for humans; finobranc powder, a potent stimulant; and retukemi, its not weed.
+  - balance: Painkillers now give slight damage resistance
+  - rscadd: dynamic simplemobs now add their spread to bullets.
+  - balance: frontiersmen officers now shoot faster and shoot more
+  - balance: frontiersmen shotgunners shoot pb. we cqc in this bitch.
+  - bugfix: some decal layering and grilles on indie_space have been fixed.
+  - bugfix: saunas are no longer burning hot
+  - rscadd: Bombed Airbase has been remapped.
+  - bugfix: CLIP bowman sprites, PGF bowman sound protection.
+  Jedi-Toothpaste:
+  - rscadd: allows you to reskin ammo cans
+  MemeSnorfer:
+  - balance: Lowers the price of the civilian Viper revolver to 1500cr (from 2500cr)
+      and the military Viper revolver to 1750cr (from 3000cr).
+  firebudgy:
+  - balance: Space Basilisks and Dwarf Legions are decently weaker.
+  - bugfix: Extra cargo listing
+  zimon9:
+  - balance: increased the projectile speed of sharplite weaponry
+2025-02-09:
+  Erikafox:
+  - balance: cybersun now gets discounts on cybersun mech designs. clip gets a discount
+      on the Durand for the same reason
+  - rscadd: nimbus bathroom lock
+  - bugfix: some washing machines no longer magically become dense
+  SomeguyManperson:
+  - bugfix: rail light is back
+  zimon9:
+  - bugfix: fixed securEye runtime
+  - bugfix: fixed bodycamera description typo
+2025-02-10:
+  Burning02:
+  - balance: Minor changes to the interior of the Banshee, along with a gun swap
+2025-02-12:
+  Erikafox:
+  - bugfix: updates recipes for dimorlin (so you can make it), shoalmix (so you can
+      make it) and tramal (so it works as intended)
+  Ratvarr:
+  - rscadd: Long range sensors have detected an unknown signal broadcasting over local
+      GPS on the local long-term waste-world...
+  Sadhorizon:
+  - bugfix: Flaming Arrow, Conflagation, Absolution, Beacon and Vickland can have
+      shoulder slings attached to them again.
+  firebudgy:
+  - bugfix: Balaclavas now layer correctly.
+2025-02-13:
+  Cazdon:
+  - rscadd: Added Hardliner phorid envirosuit and helmet sprites.
+  firebudgy:
+  - rscadd: Support for the War Correspondent Vest and M20 Gas Mask for Vox.
+  - rscadd: Undershirts and Socks for Vox!
+  - rscadd: Species compatibility for Trauma Team sprites
+  - rscadd: Vox Inteq Backpack Sprites
+  - rscadd: Minute Energy bar, replacing High Energy bars in vendors.
+  generalthrax:
+  - bugfix: Sarathi and elzu balaclavas work again
+2025-02-14:
+  Apogee-dev:
+  - balance: buffed Kali Andhi's starting funds, fuel, and weapons loadout
+  MassiveMen:
+  - rscdel: remove TRAIT_SPIRITUAL and all references
+  MemeSnorfer:
+  - rscadd: Added matchbox, candle pack, tarot card deck, spray can, crayon box, bee
+      plushie, spider plushie, flushed plushie, shark plushie, dice bag, table bell,
+      and hourglass to the general tab of the loadout screen.
+  Sadhorizon:
+  - rscadd: Added a Model 12 Sporter to the Sunskipper.
+  - tweak: Sunskipper's safe now has the combination written down on a piece of paper
+      - no longer do you need the stethoscope.
+  - bugfix: Fixed colors of Sunskipper's objects.
+  - tweak: A bunch of really minor tweaks and fixes to the Sunskipper.
+  firebudgy:
+  - balance: A number of changes have been made to the Tegu to modernize it, including
+      the addition of an angle grinder and a repaired telecommunications array.
+  generalthrax:
+  - rscadd: Bathroom locks to most ship private bathrooms
+  - rscdel: Vaquero no longer requires a bathroom pass
+2025-02-15:
+  Erikafox:
+  - code_imp: neutered var on .../hostile/human removed in favor of weapon_drop_chance
+  - balance: default chance of a simple human dropping their gun is now 30%
+  - code_imp: repathed indie sec, indie mining, inteq plain hardsuits
+  Gristlebee:
+  - rscadd: Hognose, alof, underbarrel energy cannon
+  - rscadd: Underbarrel guns come in cases.
+  - rscadd: Secondary actions and hotkey.
+  - rscadd: Muzzle slot for eguns
+  - balance: Pistols can no longer take underbarrel guns.
+  - balance: Underbarrel shotgun holds two rounds, price increased to 1200
+  - bugfix: Fixes being unable to load underbarrel guns while gun bolts were closed.
+  - bugfix: slings being funky
+  - spellcheck: typos
+  - code_imp: new attachment lists, weapon_class_attachments, unique_attachments,
+      refused_attachments
+  - rscadd: You can use the unique action key to activate mech abilities.
+  firebudgy:
+  - rscadd: Pouches! Now purchasable in the outpost and attachable to your pockets.
+  generalthrax:
+  - bugfix: Nanotrasen, Vigilitas, and N+S sprites should work for sarathi again
+  - rscadd: You can now dry seaweed into seaweed sheets
+  - rscadd: Sushi now takes seaweed sheets
+  - rscadd: Soy sauce added to the condiments crate
+2025-02-16:
+  Cloudbreak, FalloutFalcon:
+  - rscadd: Demolitions charges to Cargo
+  - balance: Safes only take one C-4 charge to explode
+  Gristlebee:
+  - bugfix: Attachments should no longer block interaction with energy gun latches
+      when they shouldnt.
+  Ratvarr:
+  - bugfix: Chat Clients now can be used for secure communication which cannot be
+      breached by players using one button.
+  - bugfix: Chat Clients no longer get messages from people with the wrong password.
+  - bugfix: The Haboob got it's airlocks named.
+  Sadhorizon:
+  - rscadd: The mudskipper now gets a wardrobe.
+  firebudgy:
+  - bugfix: Cargo listing for the SSG-669
+2025-02-17:
+  Erikafox:
+  - balance: you should get hit in the chest a lot more now. at a distance.
+2025-02-18:
+  Erikafox:
+  - bugfix: tesla lab and bombed airbase now avoid checking to see if you're some
+      sort of security-head before firing.
+  SomeguyManperson:
+  - tweak: mixing dimorlin now requires half the required reagents, meaning the same
+      amount makes twice as much
+  firebudgy:
+  - balance: Ancient goliaths are slightly rarer on C2 and C3 drills.
+  - bugfix: Ancient goliaths no longer turn into regular goliaths.
+  - rscdel: Removes the Delta
+  generalthrax:
+  - balance: Waste Mechbay 501p (Gygax) replaced with 515 EX (Dark Gygax)
+2025-02-19:
+  Gristlebee:
+  - balance: Baseline 515EXs dont spawn with bluespace cells.
+2025-02-20:
+  Erikafox:
+  - rscadd: Cirrus-Class Medical Carrack. Yet another attempt by Cybersun to excel
+      in a market frankly no one cares about. God they do that a lot.
+  - rscdel: Li-Tieguai
+  - rscadd: The Vela-Class industrial cruiser is BACK and WORSE THAN EVER
+  - rscadd: Ramzi Clique Mobs now use dynamic human icon gen
+  - balance: guerilla gloves are now insulated like their description says they are.
+      it's not perfect.
+  Sadhorizon:
+  - code_imp: Replaced the CMGSV prefix with CLSV.
+  - bugfix: Some sofa sprites are no longer backwards.
+  firebudgy:
+  - balance: Rattlesnake added to the Vaquero and Talos, Mastiff added to the Colossus.
+  - rscadd: Pinschers to all Vanguards.
+  ritorizo:
+  - bugfix: Melatonin being harmfull in some edge case.
+2025-02-21:
+  Burning02:
+  - balance: The outpost contract limit will now scale with the amount of vessels
+      in-round
+  Sadhorizon:
+  - spellcheck: The "-class" part of every ship name is now in lowercase.
+2025-02-22:
+  Erikafox:
+  - bugfix: mob items no longer show the path when dropping
+  - rscadd: the frontiersman lmg-man now carries a shredder instead of a laser minigun.
+      prepare yourself.
+  - rscadd: aiming hotkey. default bound is shift+z
+  generalthrax:
+  - bugfix: Derecho bathroom lock is no longer access restricted
+  ritorizo:
+  - rscadd: In game feedback about getting a flamethrower to work.
+  - rscdel: Can't deconstruct flamethrowers with a wrench.
+  zimon9:
+  - rscadd: Added surgical equipment to the Kali Andhi
+  - rscadd: Added additional half masks for the wreckers and the mechanic aboard the
+      Derecho
+2025-02-23:
+  Erikafox:
+  - rscadd: Ramzi turrets, for mappers
+  - bugfix: Admins can now spawn the haymaker-class
+  - rscadd: Stasis Drug - a chemical which induces stasis in a person once it's administered.
+  - rscadd: Starlight/stardrop. two chemicals that enhance the user's vision.
+  - No Problem: null
+    rscadd: Carfencadrizine. No Crit
+  - rscadd: more injectors/syringes for people to buy.
+  - rscadd: replace bath salts with mammoth. a generic strength enhancer.
+  - rscdel: krokodil and krokodil zombies. byeeee
+  - balance: nerf finobranc/combat drug do_after bonuses
+  generalthrax:
+  - balance: Frontier armour vests are bulletproof again.
+  - balance: Simple mobs drop a version of the vest that has normal armour vest values,
+      player pirates and the black market version are unaffected. Frontie mobs inherit
+      this armour.
+  - balance: The Rusted Red hardsuit has increased armour. Ramzi mobs are tougher
+      as a result.
+  - bugfix: Revert some of the health changes from Dynamic Mobs
+  kaylexis:
+  - rscadd: New digitigrade hardsuit sprites
+2025-02-24:
+  Cloudbreak, Ryerice:
+  - rscadd: 50BMG ammo boxes to cargo for 1000 credits.
+  - balance: 50BMG doesn't instantly delimb you anymore.
+  Erikafox:
+  - balance: misfire targetting is now weighed towards the legs
+  Ical92:
+  - code_imp: added a linter for ship class capitilzation
+2025-02-25:
+  Apogee-dev:
+  - rscdel: Removed guaranteed RND from ruins
+  Aquidu:
+  - rscadd: Added 31 new preference adjectives.
+  Ical92:
+  - bugfix: NT Ice Outpost and the Harrier-class now have working cameras
+  - bugfix: turrets no longer target neutral mobs when set to shoot dangerous mobs
+  Sadhorizon:
+  - bugfix: Minuteman role on the Vela-class uses the correct outfit now.
+2025-02-27:
+  Erikafox:
+  - balance: reduce mil viper spread and increase fire rate
+  - balance: 5.7 does less damage
+  FalloutFalcon:
+  - bugfix: fixes a flaky test runtime from a a string not being wrapped in a list
+      in portable_turret.dm
+  firebudgy:
+  - rscadd: New sprites for the Mass Produced Machete
+  generalthrax:
+  - bugfix: Ammo cans of 12g no longer spawn with 80 rounds of .50 bmg
+2025-02-28:
+  MemeSnorfer and Moffball:
+  - rscadd: Corona-class Touring Vessel
+  Sadhorizon:
+  - spellcheck: Ivory's name is now capitalized correctly.
+  - rscadd: Added the F-80 Ivory-class Yacht.
+  - imageadd: Added a /factory variant of the Absolution.
+  - tweak: Light tiles can now be turned off without any tools.

@@ -19,7 +19,7 @@
 			return list(y + 1 - min(bounds[2], bounds[4]), -(x - 1 - max(bounds[1], bounds[3])))
 
 /client/proc/check_atmos()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Check Atmospherics Piping"
 	if(!check_rights_for(src, R_DEBUG))
 		to_chat(src, "Only administrators may use this command.", confidential = TRUE)
@@ -54,7 +54,7 @@
 	return results
 
 /client/proc/check_wiring()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Check Power"
 	if(!check_rights_for(src, R_DEBUG))
 		to_chat(src, "Only administrators may use this command.", confidential = TRUE)

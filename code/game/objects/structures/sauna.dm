@@ -1,4 +1,4 @@
-#define SAUNA_H2O_TEMP T20C + 60
+#define SAUNA_H2O_TEMP T20C + 30
 #define SAUNA_LOG_FUEL 150
 #define SAUNA_MAXIMUM_FUEL 3000
 #define SAUNA_WATER_PER_WATER_UNIT 5
@@ -81,7 +81,7 @@
 			some fuel to [src].</span>")
 	return ..()
 
-/obj/structure/sauna_oven/process()
+/obj/structure/sauna_oven/process(seconds_per_tick)
 	if(water_amount)
 		var/used_amount = min(water_amount / 10, 20)
 		water_amount -= used_amount

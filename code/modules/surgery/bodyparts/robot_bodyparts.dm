@@ -23,6 +23,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -48,6 +49,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -73,6 +75,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -98,6 +101,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -122,6 +126,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -136,7 +141,6 @@
 
 	var/wired = FALSE
 	var/obj/item/stock_parts/cell/cell = null
-
 
 /obj/item/bodypart/chest/robot/handle_atom_del(atom/A)
 	if(A == cell)
@@ -191,7 +195,6 @@
 	cell.forceMove(drop_location())
 	cell = null
 
-
 /obj/item/bodypart/chest/robot/examine(mob/user)
 	. = ..()
 	if(cell)
@@ -214,7 +217,6 @@
 		cell = null
 	..()
 
-
 /obj/item/bodypart/head/robot
 	name = "cyborg head"
 	desc = "A standard reinforced braincase, with spine-plugged neural socket and sensor gimbals."
@@ -227,6 +229,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -304,7 +307,6 @@
 		to_chat(user, "<span class='warning'>There is no flash to remove from [src].</span>")
 	return TRUE
 
-
 /obj/item/bodypart/head/robot/drop_organs(mob/user, violent_removal)
 	if(flash1)
 		flash1.forceMove(user.loc)
@@ -313,9 +315,6 @@
 		flash2.forceMove(user.loc)
 		flash2 = null
 	..()
-
-
-
 
 /obj/item/bodypart/l_arm/robot/surplus
 	name = "surplus prosthetic left arm"

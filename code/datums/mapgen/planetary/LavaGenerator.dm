@@ -84,7 +84,7 @@
 
 /datum/biome/lavaland
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit = 1
+		/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit = 1,
 	)
 	flora_spawn_chance = 1
 	flora_spawn_list = list(
@@ -96,14 +96,15 @@
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
+		/obj/structure/flora/rock/hell = 20,
+		/obj/structure/geyser/random = 4,
+		/obj/effect/spawner/random/anomaly/lava = 2,
 		/obj/structure/flora/rock/hell = 14,
 		/obj/structure/vein = 5,
 		/obj/structure/vein/classtwo = 2,
-		/obj/structure/elite_tumor = 2,
 		/obj/structure/geyser/random = 2,
 		/obj/structure/vein/classthree = 1,
-		/obj/effect/spawner/lootdrop/anomaly/lava = 1,
-
+		/obj/effect/spawner/random/anomaly/lava = 1,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
@@ -115,9 +116,7 @@
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1,
-		/obj/structure/spawner/lavaland/low_threat = 8,
-		/obj/structure/spawner/lavaland/medium_threat = 3,
-		/obj/structure/spawner/lavaland/high_threat = 1,
+		/obj/structure/spawner/burrow/lava_planet = 10
 	)
 
 /datum/biome/lavaland/forest
@@ -151,7 +150,8 @@
 		/obj/structure/flora/ausbushes/sparsegrass/hell = 35,
 		/obj/structure/flora/ausbushes/ywflowers/hell = 1,
 		/obj/structure/flora/ausbushes/grassybush/hell = 4,
-		/obj/structure/flora/firebush = 1
+		/obj/structure/flora/firebush = 1,
+		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 	flora_spawn_chance = 15
 
@@ -164,7 +164,7 @@
 	feature_spawn_list = list(
 		/obj/structure/flora/tree/dead/barren = 50,
 		/obj/structure/flora/tree/dead/tall/grey = 45,
-		/obj/effect/spawner/lootdrop/anomaly/lava = 10,
+		/obj/effect/spawner/random/anomaly/lava = 10,
 		/obj/structure/vein = 5,
 		/obj/structure/vein/classtwo = 2,
 		/obj/structure/vein/classthree = 1,
@@ -237,10 +237,7 @@
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/obj/structure/spawner/lavaland/low_threat = 8,
-		/obj/structure/spawner/lavaland/medium_threat = 3,
-		/obj/structure/spawner/lavaland/high_threat = 2,
-		/obj/structure/spawner/lavaland/extreme_threat = 1
+		/obj/structure/spawner/burrow/lava_planet = 10
 	)
 	flora_spawn_chance = 1
 	flora_spawn_list = list(
@@ -250,14 +247,14 @@
 		/obj/structure/flora/ash/cacti = 1,
 		/obj/structure/flora/ash/tall_shroom = 2,
 		/obj/structure/flora/ash/fern = 2,
-		/obj/structure/flora/ash/puce = 2
+		/obj/structure/flora/ash/puce = 2,
 	)
 
 /datum/biome/cave/lavaland/rocky
 	open_turf_types = list(/turf/open/floor/plating/asteroid/purple = 1)
 	flora_spawn_list = list(
-		/obj/structure/flora/rock/pile/lava = 1,
-		/obj/structure/flora/rock/lava = 1
+		/obj/structure/flora/rock/pile/lava = 6,
+		/obj/structure/flora/rock/lava = 6,
 	)
 	flora_spawn_chance = 5
 
@@ -271,7 +268,7 @@
 		/obj/structure/flora/ash/cap_shroom = 2,
 		/obj/structure/flora/ash/stem_shroom = 2,
 		/obj/structure/flora/ash/cacti = 1,
-		/obj/structure/flora/ash/tall_shroom = 2
+		/obj/structure/flora/ash/tall_shroom = 2,
 	)
 
 /datum/biome/cave/lavaland/lava

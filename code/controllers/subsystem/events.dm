@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(events)
 	return ..()
 
 
-/datum/controller/subsystem/events/fire(resumed = 0)
+/datum/controller/subsystem/events/fire(resumed = FALSE)
 	if(!resumed)
 		checkEvent() //only check these if we aren't resuming a paused fire
 		src.currentrun = running.Copy()
@@ -39,7 +39,7 @@ SUBSYSTEM_DEF(events)
 		var/datum/thing = currentrun[currentrun.len]
 		currentrun.len--
 		if(thing)
-			thing.process()
+			thing.process(wait * 0.1)
 		else
 			running.Remove(thing)
 		if (MC_TICK_CHECK)
@@ -102,7 +102,7 @@ SUBSYSTEM_DEF(events)
 // Why the heck is this here! Took me so damn long to find!
 /client/proc/forceEvent()
 	set name = "Trigger Event"
-	set category = "Admin.Events"
+	set category = "Event"
 
 	if(!holder ||!check_rights(R_FUN))
 		return

@@ -36,7 +36,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/friedegg = 1,
 		/obj/item/reagent_containers/food/snacks/meat/steak = 1,
-		/obj/item/reagent_containers/food/snacks/breadslice/plain = 1,
+		/obj/item/food/breadslice/plain = 1,
 	)
 	result = /obj/item/reagent_containers/food/snacks/benedict
 	subcategory = CAT_EGG
@@ -55,7 +55,7 @@
 /datum/crafting_recipe/food/eggrolls
 	name = "Eggrolls"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet = 1,
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
 		/obj/item/reagent_containers/food/snacks/friedegg = 1
 	)

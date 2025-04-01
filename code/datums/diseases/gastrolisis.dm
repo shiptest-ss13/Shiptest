@@ -36,25 +36,15 @@
 				new_eyes.Insert(affected_mob, drop_if_replaced = TRUE)
 				affected_mob.visible_message("<span class='warning'>[affected_mob]'s eyes fall out, with snail eyes taking its place!</span>", \
 				"<span class='userdanger'>You scream in pain as your eyes are pushed out by your new snail eyes!</span>")
-				affected_mob.emote("scream")
+				affected_mob.force_scream()
 				return
-			var/obj/item/shell = affected_mob.get_item_by_slot(ITEM_SLOT_BACK)
-			if(!istype(shell, /obj/item/storage/backpack/snail))
-				shell = null
-			if(!shell && prob(5))
-				if(affected_mob.dropItemToGround(affected_mob.get_item_by_slot(ITEM_SLOT_BACK)))
-					affected_mob.equip_to_slot_or_del(new /obj/item/storage/backpack/snail(affected_mob), ITEM_SLOT_BACK)
-					affected_mob.visible_message("<span class='warning'>[affected_mob] grows a grotesque shell on their back!</span>", \
-					"<span class='userdanger'>You scream in pain as a shell pushes itself out from under your skin!</span>")
-					affected_mob.emote("scream")
-					return
 			var/obj/item/organ/tongue/tongue = locate(/obj/item/organ/tongue/snail) in affected_mob.internal_organs
 			if(!tongue && prob(5))
 				var/obj/item/organ/tongue/snail/new_tongue = new()
 				new_tongue.Insert(affected_mob)
 				to_chat(affected_mob, "<span class='userdanger'>You feel your speech slow down...</span>")
 				return
-			if(shell && eyes && tongue && prob(5))
+			if(eyes && tongue && prob(5))
 				affected_mob.set_species(/datum/species/snail)
 				affected_mob.client?.give_award(/datum/award/achievement/misc/snail, affected_mob)
 				affected_mob.visible_message("<span class='warning'>[affected_mob] turns into a snail!</span>", \
@@ -79,8 +69,3 @@
 		if(eyes)
 			var/obj/item/organ/eyes/new_eyes = new H.dna.species.mutanteyes ()
 			new_eyes.Insert(H)
-		var/obj/item/storage/backpack/bag = H.get_item_by_slot(ITEM_SLOT_BACK)
-		if(istype(bag, /obj/item/storage/backpack/snail))
-			bag.emptyStorage()
-			H.temporarilyRemoveItemFromInventory(bag, TRUE)
-			qdel(bag)

@@ -81,7 +81,7 @@
 
 	data["has_light"] = has_light
 	data["light_on"] = light_on
-	data["comp_light_color"] = comp_light_color
+	data["comp_light_color"] = light_color
 	return data
 
 
@@ -166,14 +166,14 @@
 			return 1
 
 		if("PC_toggle_light")
+			if(!has_light)
+				return FALSE
 			set_light_on(!light_on)
-			if(light_on)
-				set_light(comp_light_luminosity, 1, comp_light_color)
-			else
-				set_light(0)
 			return TRUE
 
 		if("PC_light_color")
+			if(!has_light)
+				return FALSE
 			var/mob/user = usr
 			var/new_color
 			while(!new_color)
@@ -183,9 +183,7 @@
 				if(color_hex2num(new_color) < 200) //Colors too dark are rejected
 					to_chat(user, "<span class='warning'>That color is too dark! Choose a lighter one.</span>")
 					new_color = null
-			comp_light_color = new_color
 			set_light_color(new_color)
-			update_light()
 			return TRUE
 
 		if("PC_Eject_Disk")

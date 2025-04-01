@@ -306,7 +306,7 @@
 		S = apply_status_effect(STATUS_EFFECT_SLEEPING, amount)
 	return S
 
-/mob/living/proc/SetSleeping(amount) //Sets remaining duration
+/mob/living/proc/set_sleeping(amount) //Sets remaining duration
 	if(SEND_SIGNAL(src, COMSIG_LIVING_STATUS_SLEEP, amount) & COMPONENT_NO_STUN)
 		return
 	var/datum/status_effect/incapacitating/sleeping/S = IsSleeping()
@@ -329,7 +329,7 @@
 		S = apply_status_effect(STATUS_EFFECT_SLEEPING, amount)
 	return S
 
-///Allows us to set a permanent sleep on a player (use with caution and remember to unset it with SetSleeping() after the effect is over)
+///Allows us to set a permanent sleep on a player (use with caution and remember to unset it with set_sleeping() after the effect is over)
 /mob/living/proc/PermaSleeping()
 	if(SEND_SIGNAL(src, COMSIG_LIVING_STATUS_SLEEP, -1) & COMPONENT_NO_STUN)
 		return
@@ -478,11 +478,11 @@
 		for(var/listed_type in slowdown_type)
 			if(ispath(listed_type))
 				listed_type = "[listed_type]" //Path2String
-			LAZYADDASSOC(movespeed_mod_immunities, listed_type, source)
+			LAZYADDASSOCLIST(movespeed_mod_immunities, listed_type, source)
 	else
 		if(ispath(slowdown_type))
 			slowdown_type = "[slowdown_type]" //Path2String
-		LAZYADDASSOC(movespeed_mod_immunities, slowdown_type, source)
+		LAZYADDASSOCLIST(movespeed_mod_immunities, slowdown_type, source)
 	if(update)
 		update_movespeed()
 

@@ -22,12 +22,13 @@
 	name = "incise heart"
 	implements = list(
 		TOOL_SCALPEL = 90,
-		/obj/item/kitchen/knife = 40,
+		/obj/item/melee/knife = 40,
 		/obj/item/shard = 33)
 	time = 1.6 SECONDS
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/scalpel2.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
+	fuckup_damage = 15
 
 /datum/surgery_step/incise_heart/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin to make an incision in [target]'s heart...</span>",
@@ -41,7 +42,8 @@
 			display_results(user, target, "<span class='notice'>Blood pools around the incision in [H]'s heart.</span>",
 				"<span class='notice'>Blood pools around the incision in [H]'s heart.</span>",
 				"")
-			H.bleed_rate += 10
+			var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
+			BP.adjust_bleeding(10)
 			target.apply_damage(15, BRUTE, "[target_zone]")
 	return ..()
 
@@ -51,7 +53,8 @@
 		display_results(user, target, "<span class='warning'>You screw up, cutting too deeply into the heart!</span>",
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest!</span>",
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest!</span>")
-		H.bleed_rate += 20
+		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
+		BP.adjust_bleeding(20)
 		H.adjustOrganLoss(ORGAN_SLOT_HEART, 10)
 		target.apply_damage(15, BRUTE, "[target_zone]")
 
@@ -67,6 +70,7 @@
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
 	experience_given = MEDICAL_SKILL_ORGAN_FIX
+	fuckup_damage = 15
 
 /datum/surgery_step/coronary_bypass/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin to graft a bypass onto [target]'s heart...</span>",
@@ -90,5 +94,6 @@
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest profusely!</span>",
 			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest profusely!</span>")
 		H.adjustOrganLoss(ORGAN_SLOT_HEART, 30)
-		H.bleed_rate += 30
+		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
+		BP.adjust_bleeding(30)
 	return FALSE

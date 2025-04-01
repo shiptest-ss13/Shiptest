@@ -109,21 +109,21 @@
 		if(1)
 			to_chat(owner, "<span class='warning'>You are paralyzed with fear!</span>")
 			owner.Stun(70)
-			owner.Jitter(8)
+			owner.set_jitter(8)
 		if(2)
 			owner.emote("scream")
-			owner.Jitter(5)
+			owner.set_jitter(5)
 			owner.say("AAAAH!!", forced = "phobia")
 			if(reason)
 				owner.pointed(reason)
 		if(3)
 			to_chat(owner, "<span class='warning'>You shut your eyes in terror!</span>")
-			owner.Jitter(5)
+			owner.set_jitter(5)
 			owner.blind_eyes(10)
 		if(4)
 			owner.dizziness += 10
 			owner.confused += 10
-			owner.Jitter(10)
+			owner.set_jitter(10)
 			owner.stuttering += 10
 
 // Defined phobia types for badminry, not included in the RNG trauma pool to avoid diluting.

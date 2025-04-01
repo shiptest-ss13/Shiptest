@@ -48,37 +48,48 @@
 /obj/item/organ/stomach/proc/handle_disgust(mob/living/carbon/human/H)
 	if(H.disgust)
 		var/pukeprob = 5 + 0.05 * H.disgust
-		if(H.disgust >= DISGUST_LEVEL_GROSS)
-			if(prob(10))
-				H.stuttering += 1
-				H.confused += 2
-			if(prob(10) && !H.stat)
-				to_chat(H, "<span class='warning'>You feel kind of iffy...</span>")
-			H.jitteriness = max(H.jitteriness - 3, 0)
-		if(H.disgust >= DISGUST_LEVEL_VERYGROSS)
-			if(prob(pukeprob)) //iT hAndLeS mOrE ThaN PukInG
-				H.confused += 2.5
-				H.stuttering += 1
-				H.vomit(10, 0, 1, 0, 1, 0)
-			H.Dizzy(5)
-		if(H.disgust >= DISGUST_LEVEL_DISGUSTED)
-			if(prob(25))
-				H.blur_eyes(3) //We need to add more shit down here
+		switch(H.disgust)
+			if(0 to DISGUST_LEVEL_GROSS)
+				//throw alerts
+				H.clear_alert("disgust")
+				SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "disgust")
+				//do our stupid bullshit
+				if(prob(10))
+					H.stuttering += 1
+					H.confused += 2
+					if(!H.stat)
+						to_chat(H, span_warning("You feel queasy..."))
+				H.adjust_jitter(-3)
+			if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
+				//throw alerts
+				H.throw_alert("disgust", /atom/movable/screen/alert/gross)
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/gross)
+				//do the nausea stuff
+				if(prob(pukeprob)) //iT hAndLeS mOrE ThaN PukInG
+					H.vomit(10, 0, 0, 0, 1, 0)
+					H.confused += 2.5
+					H.stuttering += 1
+					H.Dizzy(5)
+			if(DISGUST_LEVEL_VERYGROSS to DISGUST_LEVEL_DISGUSTED)
+				//do the thing
+				H.throw_alert("disgust", /atom/movable/screen/alert/verygross)
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/verygross)
+				//you're not gonna believe it we do the other thing too
+
+				if(prob(pukeprob))
+					H.blur_eyes(3)
+					H.vomit(20, 0, 1, 1, 1, 0)
+					H.confused += 2.5
+					H.stuttering += 1
+			if(DISGUST_LEVEL_DISGUSTED to DISGUST_LEVEL_MAXEDOUT)
+				H.throw_alert("disgust", /atom/movable/screen/alert/disgusted)
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/disgusted)
+
+				//profusely vomiting.
+				if(prob(pukeprob))
+					H.vomit(40, 0, 1, 1, 1, 0)
 
 		H.adjust_disgust(-0.5 * disgust_metabolism)
-	switch(H.disgust)
-		if(0 to DISGUST_LEVEL_GROSS)
-			H.clear_alert("disgust")
-			SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "disgust")
-		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
-			H.throw_alert("disgust", /atom/movable/screen/alert/gross)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/gross)
-		if(DISGUST_LEVEL_VERYGROSS to DISGUST_LEVEL_DISGUSTED)
-			H.throw_alert("disgust", /atom/movable/screen/alert/verygross)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/verygross)
-		if(DISGUST_LEVEL_DISGUSTED to INFINITY)
-			H.throw_alert("disgust", /atom/movable/screen/alert/disgusted)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/disgusted)
 
 /obj/item/organ/stomach/Remove(mob/living/carbon/M, special = 0)
 	var/mob/living/carbon/human/H = owner
@@ -100,12 +111,12 @@
 /obj/item/organ/stomach/ethereal
 	name = "biological battery"
 	icon_state = "stomach-p" //Welp. At least it's more unique in functionaliy.
-	desc = "A crystal-like organ that stores the electric charge of ethereals."
-	var/crystal_charge = ETHEREAL_CHARGE_FULL
+	desc = "A crystal-like organ that stores the electric charge of elzuosa."
+	var/crystal_charge = ELZUOSE_CHARGE_FULL
 
 /obj/item/organ/stomach/ethereal/on_life()
 	..()
-	adjust_charge(-ETHEREAL_CHARGE_FACTOR)
+	adjust_charge(-ELZUOSE_CHARGE_FACTOR)
 
 /obj/item/organ/stomach/ethereal/Insert(mob/living/carbon/organ_owner, special = 0)
 	..()
@@ -121,10 +132,10 @@
 
 /obj/item/organ/stomach/ethereal/proc/get_status_tab_item(mob/living/carbon/source, list/items)
 	SIGNAL_HANDLER
-	items += "Crystal Charge: [round((crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER), 0.1)]%"
+	items += "Crystal Charge: [round((crystal_charge / ELZUOSE_CHARGE_SCALING_MULTIPLIER), 0.1)]%"
 
 /obj/item/organ/stomach/ethereal/proc/charge(datum/source, amount, repairs)
-	adjust_charge((amount * ETHEREAL_CHARGE_SCALING_MULTIPLIER) / 70)      //WS Edit -- Ethereal Charge Scaling
+	adjust_charge((amount * ELZUOSE_CHARGE_SCALING_MULTIPLIER) / 70)      //WS Edit -- Ethereal Charge Scaling
 
 /obj/item/organ/stomach/ethereal/proc/on_electrocute(datum/source, shock_damage, siemens_coeff = 1, flags = NONE)
 	if(flags & SHOCK_ILLUSION)
@@ -133,7 +144,7 @@
 	to_chat(owner, "<span class='notice'>You absorb some of the shock into your body!</span>")
 
 /obj/item/organ/stomach/ethereal/proc/adjust_charge(amount)
-	crystal_charge = clamp(crystal_charge + amount, ETHEREAL_CHARGE_NONE, ETHEREAL_CHARGE_DANGEROUS)
+	crystal_charge = clamp(crystal_charge + amount, ELZUOSE_CHARGE_NONE, ELZUOSE_CHARGE_DANGEROUS)
 
 /obj/item/organ/stomach/cybernetic
 	name = "basic cybernetic stomach"

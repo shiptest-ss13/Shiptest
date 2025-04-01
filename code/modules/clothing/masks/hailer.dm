@@ -13,6 +13,7 @@
 	visor_flags_inv = HIDEFACIALHAIR | HIDEFACE
 	flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
 	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/mask/gas/sechailer/swat
 	name = "\improper SWAT mask"
@@ -27,13 +28,6 @@
 	desc = "A close-fitting tactical mask created in cooperation with a certain megacorporation, comes with an especially aggressive Compli-o-nator 3000."
 	icon_state = "spacepol"
 	item_state = "spacepol"
-
-/obj/item/clothing/mask/gas/sechailer/cyborg
-	name = "security hailer"
-	desc = "A set of recognizable pre-recorded messages for cyborgs to use when apprehending criminals."
-	icon = 'icons/obj/device.dmi'
-	icon_state = "taperecorder_idle"
-	mob_overlay_state = "sechailer"
 
 /obj/item/clothing/mask/gas/sechailer/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/adjust))
@@ -66,17 +60,3 @@
 	icon_state = "whistle"
 	item_state = "whistle"
 	blown_sound = 'sound/misc/trenchwhistle.ogg'
-
-/obj/item/clothing/mask/gas/sechailer/balaclava
-	name = "combat balaclava"
-	desc = "A surprisingly advanced balaclava. while it doesn't muffle your voice it has a miniature rebreather for internals. Comfy to boot!"
-	icon_state = "combat_balaclava"
-	item_state = "combat_balaclava"
-	strip_delay = 60
-	alternate_worn_layer = BODY_LAYER
-	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
-
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq
-	desc = "A surprisingly advanced balaclava. while it doesn't muffle your voice it has a miniature rebreather for internals. Comfy to boot! This one is a variataion commonly used by the IRMG to protect it's members idenites."
-	icon_state = "inteq_balaclava"
-	item_state = "inteq_balaclava"

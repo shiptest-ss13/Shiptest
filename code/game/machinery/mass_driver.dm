@@ -4,8 +4,8 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "mass_driver"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 2
-	active_power_usage = 50
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	var/power = 1
 	var/code = 1
 	var/id = 1

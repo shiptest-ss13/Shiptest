@@ -47,7 +47,7 @@
 		return
 	if(!isturf(user.loc))
 		return
-	if(!AStar(user, target.loc, /turf/proc/Distance, changeling.sting_range, simulated_only = FALSE))
+	if(!get_path_to(user, target, max_distance = changeling.sting_range, simulated_only = FALSE))
 		return
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/changeling))
 		sting_feedback(user, target)
@@ -106,7 +106,7 @@
 		C.real_name = NewDNA.real_name
 		NewDNA.transfer_identity(C)
 		if(ismonkey(C))
-			C.humanize(TR_KEEPITEMS | TR_KEEPIMPLANTS | TR_KEEPORGANS | TR_KEEPDAMAGE | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG)
+			C.humanize(TR_KEEPITEMS | TR_KEEPIMPLANTS | TR_KEEPORGANS | TR_KEEPDAMAGE | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG | TR_KEEPAI)
 		C.updateappearance(mutcolor_update=1)
 
 

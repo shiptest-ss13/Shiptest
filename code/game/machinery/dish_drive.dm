@@ -5,8 +5,8 @@
 	Or you can just drop your plates on the floor, like civilized folk."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "synthesizer"
-	idle_power_usage = 8 //5 with default parts
-	active_power_usage = 13 //10 with default parts
+	idle_power_usage = IDLE_DRAW_MINIMAL //lower
+	active_power_usage = ACTIVE_DRAW_MINIMAL //lower ingame because stockparts
 	density = FALSE
 	circuit = /obj/item/circuitboard/machine/dish_drive
 	pass_flags = PASSTABLE
@@ -80,7 +80,7 @@
 		suction_enabled = board.suction
 		transmit_enabled = board.transmit
 
-/obj/machinery/dish_drive/process()
+/obj/machinery/dish_drive/process(seconds_per_tick)
 	if(time_since_dishes <= world.time && transmit_enabled)
 		do_the_dishes()
 	if(!suction_enabled)

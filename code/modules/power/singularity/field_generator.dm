@@ -68,7 +68,7 @@ field_generator power level display
 	. = ..()
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
 
-/obj/machinery/field/generator/process()
+/obj/machinery/field/generator/process(seconds_per_tick)
 	if(active == FG_ONLINE)
 		calc_power()
 
@@ -164,12 +164,6 @@ field_generator power level display
 		..()
 	if(!anchored)
 		step(src, get_dir(M, src))
-
-/obj/machinery/field/generator/blob_act(obj/structure/blob/B)
-	if(active)
-		return 0
-	else
-		..()
 
 /obj/machinery/field/generator/bullet_act(obj/projectile/Proj)
 	if(Proj.flag != "bullet")
@@ -345,7 +339,7 @@ field_generator power level display
 	clean_up = 0
 	update_appearance()
 
-	//This is here to help fight the "hurr durr, release singulo cos nobody will notice before the
+	//This is here to help fight the "release singulo cos nobody will notice before the
 	//singulo eats the evidence". It's not fool-proof but better than nothing.
 	//I want to avoid using global variables.
 	INVOKE_ASYNC(src, PROC_REF(notify_admins))

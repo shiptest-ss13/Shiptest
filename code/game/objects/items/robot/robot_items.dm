@@ -176,7 +176,7 @@
 				return
 
 			to_chat(user, "<span class='notice'>You connect to [M]'s power line...</span>")
-			while(do_after(user, 15, target = M, progress = 0))
+			while(do_after(user, 15, target = M, progress = TRUE))
 				if(!user || !user.cell || mode != "draw")
 					return
 
@@ -210,7 +210,7 @@
 
 			to_chat(user, "<span class='notice'>You connect to [target]'s power port...</span>")
 
-			while(do_after(user, 15, target = target, progress = 0))
+			while(do_after(user, 15, target = target, progress = TRUE))
 				if(!user || !user.cell || mode != "draw")
 					return
 
@@ -248,7 +248,7 @@
 
 		to_chat(user, "<span class='notice'>You connect to [target]'s power port...</span>")
 
-		while(do_after(user, 15, target = target, progress = 0))
+		while(do_after(user, 15, target = target, progress = TRUE))
 			if(!user || !user.cell || mode != "charge")
 				return
 
@@ -321,12 +321,12 @@
 				if(1)
 					C.confused += 5
 					C.stuttering += 10
-					C.Jitter(10)
+					C.set_jitter(10)
 				if(2)
 					C.Paralyze(40)
 					C.confused += 10
 					C.stuttering += 15
-					C.Jitter(25)
+					C.set_jitter(25)
 		playsound(get_turf(src), 'sound/machines/warning-buzzer.ogg', 130, 3)
 		cooldown = world.time + 600
 		user.log_message("used an emagged Cyborg Harm Alarm in [AREACOORD(user)]", LOG_ATTACK)
@@ -545,15 +545,18 @@
 	icon_state = "shield0"
 	var/maxenergy = 1500
 	var/energy = 1500
-	var/energy_recharge = 7.5
+	/// Recharging rate in energy per second
+	var/energy_recharge = 37.5
 	var/energy_recharge_cyborg_drain_coefficient = 0.4
 	var/cyborg_cell_critical_percentage = 0.05
 	var/mob/living/silicon/robot/host = null
 	var/datum/proximity_monitor/advanced/peaceborg_dampener/dampening_field
 	var/projectile_damage_coefficient = 0.5
-	var/projectile_damage_tick_ecost_coefficient = 2	//Lasers get half their damage chopped off, drains 50 power/tick. Note that fields are processed 5 times per second.
+	/// Energy cost per tracked projectile damage amount per second
+	var/projectile_damage_tick_ecost_coefficient = 10
 	var/projectile_speed_coefficient = 1.5		//Higher the coefficient slower the projectile.
-	var/projectile_tick_speed_ecost = 15
+	/// Energy cost per tracked projectile per second
+	var/projectile_tick_speed_ecost = 75
 	var/list/obj/projectile/tracked
 	var/image/projectile_effect
 	var/field_radius = 3
@@ -593,7 +596,7 @@
 	to_chat(user, "<span class='boldnotice'>You [active? "activate":"deactivate"] [src].</span>")
 
 /obj/item/borg/projectile_dampen/update_icon_state()
-	icon_state = "[initial(icon_state)][active]"
+	icon_state = "shield[active]"
 	return ..()
 
 /obj/item/borg/projectile_dampen/proc/activate_field()
@@ -639,33 +642,33 @@
 	deactivate_field()
 	. = ..()
 
-/obj/item/borg/projectile_dampen/process()
-	process_recharge()
-	process_usage()
+/obj/item/borg/projectile_dampen/process(seconds_per_tick)
+	process_recharge(seconds_per_tick)
+	process_usage(seconds_per_tick)
 
-/obj/item/borg/projectile_dampen/proc/process_usage()
+/obj/item/borg/projectile_dampen/proc/process_usage(seconds_per_tick)
 	var/usage = 0
 	for(var/I in tracked)
 		var/obj/projectile/P = I
 		if(!P.stun && P.nodamage)	//No damage
 			continue
-		usage += projectile_tick_speed_ecost
-		usage += (tracked[I] * projectile_damage_tick_ecost_coefficient)
+		usage += projectile_tick_speed_ecost * seconds_per_tick
+		usage += tracked[I] * projectile_damage_tick_ecost_coefficient * seconds_per_tick
 	energy = clamp(energy - usage, 0, maxenergy)
 	if(energy <= 0)
 		deactivate_field()
 		visible_message("<span class='warning'>[src] blinks \"ENERGY DEPLETED\".</span>")
 
-/obj/item/borg/projectile_dampen/proc/process_recharge()
+/obj/item/borg/projectile_dampen/proc/process_recharge(seconds_per_tick)
 	if(!istype(host))
 		if(iscyborg(host.loc))
 			host = host.loc
 		else
-			energy = clamp(energy + energy_recharge, 0, maxenergy)
+			energy = clamp(energy + energy_recharge * seconds_per_tick, 0, maxenergy)
 			return
 	if(host.cell && (host.cell.charge >= (host.cell.maxcharge * cyborg_cell_critical_percentage)) && (energy < maxenergy))
-		host.cell.use(energy_recharge*energy_recharge_cyborg_drain_coefficient)
-		energy += energy_recharge
+		host.cell.use(energy_recharge * seconds_per_tick * energy_recharge_cyborg_drain_coefficient)
+		energy += energy_recharge * seconds_per_tick
 
 /obj/item/borg/projectile_dampen/proc/dampen_projectile(obj/projectile/P, track_projectile = TRUE)
 	if(tracked[P])
@@ -856,7 +859,6 @@
 	. = ..()
 	var/mutable_appearance/arm = mutable_appearance(icon = icon, icon_state = "borg_beaker_apparatus_arm")
 	if(stored)
-		COMPILE_OVERLAYS(stored)
 		stored.pixel_x = 0
 		stored.pixel_y = 0
 		var/mutable_appearance/stored_copy = new /mutable_appearance(stored)
@@ -886,7 +888,7 @@
 	desc = "A special apparatus for carrying drinks without spilling the contents. Alt-Z or right-click to drop the beaker."
 	icon_state = "borg_beaker_apparatus"
 	storable = list(/obj/item/reagent_containers/food/drinks/,
-				/obj/item/reagent_containers/food/condiment)
+				/obj/item/reagent_containers/condiment)
 
 /obj/item/borg/apparatus/beaker/service/Initialize()
 	. = ..()
@@ -913,7 +915,6 @@
 	. = ..()
 	var/mutable_appearance/arm = mutable_appearance(icon, "borg_hardware_apparatus_arm1")
 	if(stored)
-		COMPILE_OVERLAYS(stored)
 		stored.pixel_x = -3
 		stored.pixel_y = 0
 		if(!istype(stored, /obj/item/circuitboard))

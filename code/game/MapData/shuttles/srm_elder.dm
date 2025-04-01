@@ -1,14 +1,11 @@
-/obj/item/melee/transforming/cleaving_saw/old
+/obj/item/melee/cleaving_saw/old
 	name = "old cleaving saw"
 	desc = "This saw, old and rusted, is still an effective tool at bleeding beasts and monsters."
 	force = 10
-	force_on = 15 //force when active
+	active_force = 15 //force when active
 	throwforce = 15
-	throwforce_on = 15
-	faction_bonus_force = 5
-	nemesis_factions = list("mining", "boss")
+	active_throwforce = 15
 	bleed_stacks_per_hit = 1.5
-
 
 /obj/structure/closet/secure_closet/medicalsrm
 	name = "hunter doctor closet"
@@ -20,15 +17,38 @@
 	name = "shadow's locker"
 	desc = "The closet of equipment and attire for the aspiring shadow."
 	icon_state = "cabinet"
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+
+/obj/structure/closet/secure_closet/flamebearer
+	name = "flamebearer's locker"
+	desc = "The closet of equipment an ascetic Flamebearer would require."
+	icon_state = "cabinet"
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
 
 /obj/structure/closet/secure_closet/hunter
 	name = "hunter's locker"
 	desc = "Everything a hunter will need, held in one secure closet."
 	icon_state = "cabinet"
 	req_access = list(ACCESS_SECURITY)
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+
+/obj/structure/closet/secure_closet/machinist
+	name = "machinist's Locker"
+	desc = "The personal closet with tools of a Machinist."
+	req_access = list(ACCESS_ENGINE)
+	icon_state = "eng_secure"
+
+/obj/structure/closet/secure_closet/collignes
+	name = "\proper hunter colligne's locker"
+	desc = "The posessions of the Hunter Colligne aboard the vessel."
+	req_access = list(ACCESS_HOP)
+	icon_state = "hop"
 
 /obj/structure/closet/secure_closet/montagnes
-	name = "\proper Hunter Montagnes Locker"
+	name = "\proper hunter montagne's locker"
 	desc = "The posessions of the owning Hunter Montagnes."
 	req_access = list(ACCESS_HOS)
 	icon_state = "hos"
@@ -105,7 +125,7 @@
 			The SRM originated on the planet Illestren, a planet colonized early in the
 			expansionist period of space exploration by solgov colonists. Formed by large
 			group of hunters who banded together to form a sort of citizen's militia.
-			When these Solgov colonists came to Illestren, the brought with them the
+			When these SolGov colonists came to Illestren, the brought with them the
 			tales of the Ashen Hunter, a figure who came to be venerated by this militia.
 			The Ashen Huntsman is a religious figure venerated by the SRM, said to be able
 			to survive any conditions on their own, and fell any man, creature, or beast

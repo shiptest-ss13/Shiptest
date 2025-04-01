@@ -63,7 +63,7 @@ Bonus
 	if(bleed)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			H.bleed_rate += 5 * power
+			H.cause_bleeding(5 * power)
 	return 1
 
 /*

@@ -14,7 +14,7 @@
 	name = "soap"
 	desc = "A cheap bar of soap. Doesn't smell."
 	gender = PLURAL
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "soap"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
@@ -71,7 +71,8 @@
 /obj/item/soap/syndie
 	desc = "An untrustworthy bar of soap made of strong chemical agents that dissolve blood faster."
 	icon_state = "soapsyndie"
-	cleanspeed = 5 //faster than mop so it is useful for traitors who want to clean crime scenes
+	cleanspeed = 27 // ever so slightly better than NT
+	uses = 300
 
 /obj/item/soap/omega
 	name = "omega soap"
@@ -83,7 +84,7 @@
 /obj/item/paper/fluff/stations/soap
 	name = "ancient janitorial poem"
 	desc = "An old paper that has passed many hands."
-	default_raw_text = "The legend of the omega soap</B><BR><BR> Essence of <B>potato</B>. Juice, not grind.<BR><BR> A <B>cactus</B> brew, fermented into <B>wine</B>.<BR><BR> <B>powder of monkey</B>, to help the workload.<BR><BR> Some <B>Krokodil</B>, because meth would explode.<BR><BR> <B>Nitric acid</B> and <B>Baldium</B>, for organic dissolving.<BR><BR> A cup filled with <B>Hooch</B>, for sinful absolving<BR><BR> Some <B>Bluespace Dust</B>, for removal of stains.<BR><BR> A syringe full of <B>Pump-up</B>, it's security's bane.<BR><BR> Add a can of <B>Space Cola</B>, because we've been paid.<BR><BR> <B>Heat</B> as hot as you can, let the soap be your blade.<BR><BR> <B>Ten units of each regent create a soap that could topple all others.</B>"
+	default_raw_text = "The legend of the omega soap</B><BR><BR> Essence of <B>potato</B>. Juice, not grind.<BR><BR> A <B>cactus</B> brew, fermented into <B>wine</B>.<BR><BR> <B>powder of monkey</B>, to help the workload.<BR><BR> <B>Nitric acid</B> and <B>Baldium</B>, for organic dissolving.<BR><BR> A cup filled with <B>Hooch</B>, for sinful absolving<BR><BR> Some <B>Bluespace Dust</B>, for removal of stains.<BR><BR> A syringe full of <B>Pump-up</B>, it's security's bane.<BR><BR> Add a can of <B>Space Cola</B>, because we've been paid.<BR><BR> <B>Heat</B> as hot as you can, let the soap be your blade.<BR><BR> <B>Ten units of each regent create a soap that could topple all others.</B>"
 
 /obj/item/soap/proc/decreaseUses(mob/user)
 	var/skillcheck = user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)
@@ -150,7 +151,7 @@
 /obj/item/bikehorn
 	name = "bike horn"
 	desc = "A horn off of a bicycle."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "bike_horn"
 	item_state = "bike_horn"
 	lefthand_file = 'icons/mob/inhands/equipment/horns_lefthand.dmi'

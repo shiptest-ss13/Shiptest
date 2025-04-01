@@ -22,7 +22,7 @@
 		last_blink = world.time
 		to_chat(C, "<span class='notice'>You suddenly realize you're blinking manually.</span>")
 
-/datum/component/manual_blinking/Destroy(force, silent)
+/datum/component/manual_blinking/Destroy(force)
 	E = null
 	STOP_PROCESSING(SSdcs, src)
 	to_chat(parent, "<span class='notice'>You revert back to automatic blinking.</span>")
@@ -52,7 +52,7 @@
 
 	STOP_PROCESSING(SSdcs, src)
 
-/datum/component/manual_blinking/process()
+/datum/component/manual_blinking/process(seconds_per_tick)
 	var/mob/living/carbon/C = parent
 
 	if(world.time > (last_blink + check_every + grace_period))

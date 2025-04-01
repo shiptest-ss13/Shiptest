@@ -1,33 +1,8 @@
-GLOBAL_LIST_INIT(spider_first, world.file2list("strings/names/spider_first.txt"))
-GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
-
 /obj/item/organ/eyes/night_vision/spider
 	name = "spider eyes"
 	desc = "These eyes seem to have increased sensitivity to bright light, offset by basic night vision."
 	see_in_dark = 4
 	flash_protect = FLASH_PROTECTION_SENSITIVE
-
-/obj/item/organ/tongue/spider
-	name = "inner mandible"
-	desc = "A set of soft, spoon-esque mandibles closer to the mouth opening, that allow for basic speech, and the ability to speak Rachnidian."
-	say_mod = "chitters"
-	var/static/list/languages_possible_arachnid = typecacheof(list(
-		/datum/language/common,
-		/datum/language/draconic,
-		/datum/language/codespeak,
-		/datum/language/monkey,
-		/datum/language/narsie,
-		/datum/language/beachbum,
-		/datum/language/aphasia,
-		/datum/language/piratespeak,
-		/datum/language/moffic,
-		/datum/language/spider,
-		/datum/language/buzzwords
-	))
-
-/obj/item/organ/tongue/spider/Initialize(mapload)
-	. = ..()
-	languages_possible = languages_possible_arachnid
 
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider
@@ -56,7 +31,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	toxic_food = VEGETABLES | DAIRY | CLOTH
 	mutanteyes = /obj/item/organ/eyes/night_vision/spider
 	mutanttongue = /obj/item/organ/tongue/spider
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	species_language_holder = /datum/language_holder/spider
 	loreblurb = "Rachnids are aliens with coincidental physiological similarities to Sol's spiders. Despite visible adaptations that would make them excellent hunters, modern Rachnidian culture revolves around honing the skills and talents of oneself, treating them as forms of self-expression. Rachnids tend to focus on their work intensely, priding themselves on a job well done and languishing if they see themselves as underperforming in their field."
 	var/web_cooldown = 30
@@ -70,37 +45,16 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	species_l_leg = /obj/item/bodypart/leg/left/rachnid
 	species_r_leg = /obj/item/bodypart/leg/right/rachnid
 
-/proc/random_unique_spider_name(attempts_to_find_unique_name=10)
-	for(var/i in 1 to attempts_to_find_unique_name)
-		. = capitalize(pick(GLOB.spider_first)) + " " + capitalize(pick(GLOB.spider_last))
-
-		if(!findname(.))
-			break
-
-/proc/spider_name()
-	return "[pick(GLOB.spider_first)] [pick(GLOB.spider_last)]"
-
 /datum/species/spider/random_name(gender,unique,lastname)
 	if(unique)
 		return random_unique_spider_name()
-
-	var/randname = spider_name()
-
-	if(lastname)
-		randname += " [lastname]"
-
-	return randname
+	return spider_name()
 
 /datum/species/spider/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(chem.type == /datum/reagent/toxin/pestkiller)
 		H.adjustToxLoss(3)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 	return ..()
-
-/datum/species/spider/check_species_weakness(obj/item/weapon, mob/living/attacker)
-	if(istype(weapon, /obj/item/melee/flyswatter))
-		return 9 //flyswatters deal 10x damage to spiders
-	return 0
 
 /mob/living/carbon/human/species/spider
 	race = /datum/species/spider
@@ -152,7 +106,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	var/nutrition_threshold = NUTRITION_LEVEL_FED
 	if (H.nutrition >= nutrition_threshold)
 		to_chat(H, "<i>You begin spinning some web...</i>")
-		if(!do_after(H, 10 SECONDS, 1, T))
+		if(!do_after(H, 10 SECONDS, T, hidden = TRUE))
 			to_chat(H, "<span class='warning'>Your web spinning was interrupted!</span>")
 			return
 		if(prob(75))
@@ -213,7 +167,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 			to_chat(H, "<span class='warning'>You cannot wrap this.</span>")
 			return
 		H.visible_message("<span class='danger'>[H] starts to wrap [A] into a cocoon!</span>","<span class='warning'>You start to wrap [A] into a cocoon.</span>")
-		if(!do_after(H, 10 SECONDS, 1, A))
+		if(!do_after(H, 10 SECONDS, A, hidden = TRUE))
 			to_chat(H, "<span class='warning'>Your web spinning was interrupted!</span>")
 			return
 		H.adjust_nutrition(E.spinner_rate * -3.5)

@@ -17,7 +17,7 @@
 	. = ..()
 	logs = list()
 
-/obj/machinery/computer/apc_control/process()
+/obj/machinery/computer/apc_control/process(seconds_per_tick)
 	if(operator && (!operator.Adjacent(src) || machine_stat))
 		operator = null
 		if(active_apc)

@@ -14,6 +14,7 @@
 #define BLOCK_Z_OUT_UP (1<<10) //! Should this object block z uprise from loc?
 #define BLOCK_Z_IN_DOWN (1<<11) //! Should this object block z falling from above?
 #define BLOCK_Z_IN_UP (1<<12) //! Should this object block z uprise from below?
+#define INFINITE_RESKIN (1<<13) // We can reskin this item infinitely
 
 
 // If you add new ones, be sure to add them to /obj/Initialize as well for complete mapping support
@@ -33,13 +34,14 @@
 #define IN_STORAGE (1<<11) //is this item in the storage item, such as backpack? used for tooltips
 #define SURGICAL_TOOL (1<<12)	//Tool commonly used for surgery: won't attack targets in an active surgical operation on help intent (in case of mistakes)
 #define EYE_STAB (1<<13) /// Item can be used to eyestab
+#define NO_PIXEL_RANDOM_DROP (1<<14) //if dropped, it wont have a randomized pixel_x/pixel_y
 
 // Flags for the clothing_flags var on /obj/item/clothing
 
 #define LAVAPROTECT (1<<0)
 #define STOPSPRESSUREDAMAGE (1<<1)	//SUIT and HEAD items which stop pressure damage. To stop you taking all pressure damage you must have both a suit and head item with this flag.
 #define BLOCK_GAS_SMOKE_EFFECT (1<<2)	// blocks the effect that chemical clouds would have on a mob --glasses, mask and helmets ONLY!
-#define ALLOWINTERNALS (1<<3) // mask allows internals //WS Port - Changed Maskinternals to allowinternals
+#define ALLOWINTERNALS (1<<3) // mask allows internals
 #define NOSLIP (1<<4) //prevents from slipping on wet floors, in space etc
 #define NOSLIP_ICE (1<<5) //prevents from slipping on frozen floors
 #define THICKMATERIAL (1<<6)	//prevents syringes, parapens and hypos if the external suit or helmet (if targeting head) has this flag. Example: space suits, biosuit, bombsuits, thick suits that cover your body.
@@ -51,6 +53,7 @@
 #define ANTI_TINFOIL_MANEUVER (1<<12) //Hats with negative effects when worn (i.e the tinfoil hat).
 #define DANGEROUS_OBJECT (1<<13) //Clothes that cause a larger notification when placed on a person.
 #define FAST_EMBARK (1<<14) //Clothes that speed up mech and pod boarding.
+#define SEALS_EYES (1<<15) //Goggles and helmets that seal eyes from the enviroment
 /// Flags for the organ_flags var on /obj/item/organ
 
 #define ORGAN_SYNTHETIC (1<<0)	//Synthetic organs, or cybernetic organs. Reacts to EMPs and don't deteriorate or heal

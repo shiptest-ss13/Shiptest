@@ -1,8 +1,3 @@
-#define AB_CHECK_HANDS_BLOCKED (1<<0)
-#define AB_CHECK_IMMOBILE (1<<1)
-#define AB_CHECK_LYING (1<<2)
-#define AB_CHECK_CONSCIOUS (1<<3)
-
 /datum/action
 	var/name = "Generic Action"
 	var/desc = null
@@ -86,11 +81,12 @@
 	if(owner)
 		UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
 		owner = null
-	button.moved = FALSE //so the button appears in its normal position when given to another owner.
-	button.locked = FALSE
-	button.id = null
+	if(button)
+		button.moved = FALSE //so the button appears in its normal position when given to another owner.
+		button.locked = FALSE
+		button.id = null
 
-/datum/action/proc/Trigger()
+/datum/action/proc/Trigger(trigger_flags)
 	if(!IsAvailable())
 		return FALSE
 	if(SEND_SIGNAL(src, COMSIG_ACTION_TRIGGER, src) & COMPONENT_ACTION_BLOCK_TRIGGER)
@@ -202,11 +198,23 @@
 		return
 	..()
 
+/datum/action/item_action/toggle_radio
+	name = "Toggle Radio"
+
+/datum/action/item_action/toggle_radio/Trigger()
+	if(istype(target, /obj/item/bodycamera/broadcast_camera))
+		var/obj/item/bodycamera/broadcast_camera/cam = target
+		var/obj/item/radio/radio = cam.radio
+		radio.ui_interact(owner, state = GLOB.deep_inventory_state)
+		return
+	..()
+
 /datum/action/item_action/toggle_hood
 	name = "Toggle Hood"
 
 /datum/action/item_action/toggle_firemode
 	name = "Toggle Firemode"
+	icon_icon = 'icons/mob/actions/actions_items.dmi'
 
 /datum/action/item_action/rcl_col
 	name = "Change Cable Color"
@@ -251,6 +259,9 @@
 
 /datum/action/item_action/toggle_mister
 	name = "Toggle Mister"
+
+/datum/action/item_action/toggle_gear_handle
+	name = "Toggle Gear Handle"
 
 /datum/action/item_action/activate_injector
 	name = "Activate Injector"
@@ -348,6 +359,11 @@
 /datum/action/item_action/toggle_helmet_mode
 	name = "Toggle Helmet Mode"
 
+/datum/action/item_action/toggle_helmet_mode/Trigger()
+	if(istype(target, /obj/item/clothing/head/helmet/space/hardsuit/syndi))
+		var/obj/item/clothing/head/helmet/space/hardsuit/syndi/syndi_helmet = target
+		syndi_helmet.toggle_mode(owner)
+
 /datum/action/item_action/crew_monitor
 	name = "Interface With Crew Monitor"
 
@@ -366,16 +382,13 @@
 
 /datum/action/item_action/nano_picket_sign
 	name = "Retext Nano Picket Sign"
-	var/obj/item/picket_sign/S
-
-/datum/action/item_action/nano_picket_sign/New(Target)
-	..()
-	if(istype(Target, /obj/item/picket_sign))
-		S = Target
 
 /datum/action/item_action/nano_picket_sign/Trigger()
-	if(istype(S))
-		S.retext(owner)
+	if(!istype(target, /obj/item/picket_sign))
+		return
+
+	var/obj/item/picket_sign/sign = target
+	sign.retext(owner)
 
 /datum/action/item_action/adjust
 
@@ -472,44 +485,6 @@
 	..()
 	name = "Use [target.name]"
 	button.name = name
-
-/datum/action/item_action/cult_dagger
-	name = "Draw Blood Rune"
-	desc = "Use the ritual dagger to create a powerful blood rune"
-	icon_icon = 'icons/mob/actions/actions_cult.dmi'
-	button_icon_state = "draw"
-	buttontooltipstyle = "cult"
-	background_icon_state = "bg_demon"
-
-/datum/action/item_action/cult_dagger/Grant(mob/M)
-	if(iscultist(M))
-		..()
-		button.screen_loc = "6:157,4:-2"
-		button.moved = "6:157,4:-2"
-	else
-		Remove(owner)
-
-
-/datum/action/item_action/cult_dagger/Trigger()
-	for(var/obj/item/H in owner.held_items) //In case we were already holding another dagger
-		if(istype(H, /obj/item/melee/cultblade/dagger))
-			H.attack_self(owner)
-			return
-	var/obj/item/I = target
-	if(owner.can_equip(I, ITEM_SLOT_HANDS))
-		owner.temporarilyRemoveItemFromInventory(I)
-		owner.put_in_hands(I)
-		I.attack_self(owner)
-		return
-	if(!isliving(owner))
-		to_chat(owner, "<span class='warning'>You lack the necessary living force for this action.</span>")
-		return
-	var/mob/living/living_owner = owner
-	if (living_owner.usable_hands <= 0)
-		to_chat(living_owner, "<span class='warning'>You dont have any usable hands!</span>")
-	else
-		to_chat(living_owner, "<span class='warning'>Your hands are full!</span>")
-
 
 ///MGS BOX!
 /datum/action/item_action/agent_box
@@ -645,7 +620,7 @@
 	UpdateButtonIcon()
 	START_PROCESSING(SSfastprocess, src)
 
-/datum/action/cooldown/process()
+/datum/action/cooldown/process(seconds_per_tick)
 	if(!owner)
 		button.maptext = ""
 		STOP_PROCESSING(SSfastprocess, src)

@@ -10,6 +10,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
+	item_flags = NO_PIXEL_RANDOM_DROP
 	throwforce = 5
 	throw_speed = 1
 	throw_range = 2
@@ -121,7 +122,7 @@
 				"<span class='hear'>You hear a click.</span>")
 			set_mode(CLAMPED_OFF)
 
-/obj/item/powersink/process()
+/obj/item/powersink/process(seconds_per_tick)
 	if(!attached)
 		set_mode(DISCONNECTED)
 		return

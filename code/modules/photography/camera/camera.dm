@@ -4,7 +4,6 @@
 
 /obj/item/camera
 	name = "camera"
-	icon = 'icons/obj/items_and_weapons.dmi'
 	desc = "A polaroid camera."
 	icon_state = "camera"
 	item_state = "camera"
@@ -20,6 +19,7 @@
 	slot_flags = ITEM_SLOT_NECK
 	custom_materials = list(/datum/material/iron = 50, /datum/material/glass = 150)
 	custom_price = 120
+	supports_variations = VOX_VARIATION
 	var/flash_enabled = TRUE
 	var/state_on = "camera"
 	var/state_off = "camera_off"
@@ -234,7 +234,7 @@
 			customise = alert(user, "Do you want to customize the photo?", "Customization", "Yes", "No")
 		if(customise == "Yes")
 			var/name1 = stripped_input(user, "Set a name for this photo, or leave blank. 32 characters max.", "Name", max_length = 32)
-			var/desc1 = stripped_input(user, "Set a description to add to photo, or leave blank. 128 characters max.", "Caption", max_length = 128)
+			var/desc1 = stripped_input(user, "Set a description to add to photo, or leave blank. 256 characters max.", "Description", max_length = 256)
 			var/caption = stripped_input(user, "Set a caption for this photo, or leave blank. 256 characters max.", "Caption", max_length = 256)
 			if(name1)
 				picture.picture_name = name1

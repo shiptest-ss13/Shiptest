@@ -5,7 +5,6 @@ CONTAINS:
 T-RAY
 HEALTH ANALYZER
 GAS ANALYZER
-SLIME SCANNER
 NANITE SCANNER
 GENE SCANNER
 
@@ -49,7 +48,7 @@ GENE SCANNER
 		return
 	toggle_on()
 
-/obj/item/t_scanner/process()
+/obj/item/t_scanner/process(seconds_per_tick)
 	if(!on)
 		STOP_PROCESSING(SSobj, src)
 		return null
@@ -88,7 +87,7 @@ GENE SCANNER
 	item_flags = NOBLUDGEON
 	slot_flags = ITEM_SLOT_BELT
 	throwforce = 3
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 7
 	custom_materials = list(/datum/material/iron=200)
@@ -222,24 +221,24 @@ GENE SCANNER
 	// Body part damage report
 	if(iscarbon(M) && mode == SCANNER_VERBOSE)
 		var/mob/living/carbon/C = M
-		var/list/damaged = C.get_damaged_bodyparts(1,1)
+		var/list/damaged = C.get_damaged_bodyparts(1,1,ignore_integrity=TRUE)
 		if(length(damaged)>0 || oxy_loss>0 || tox_loss>0 || fire_loss>0)
 			var/dmgreport = "<span class='info ml-1'>General status:</span>\
 							<table class='ml-2'><tr><font face='Verdana'>\
-							<td style='width:7em;'><font color='#0000CC'>Damage:</font></td>\
+							<td style='width:7em;'><font color='#0d5cee'>Damage:</font></td>\
 							<td style='width:5em;'><font color='red'><b>Brute</b></font></td>\
 							<td style='width:4em;'><font color='orange'><b>Burn</b></font></td>\
 							<td style='width:4em;'><font color='green'><b>Toxin</b></font></td>\
 							<td style='width:8em;'><font color='purple'><b>Suffocation</b></font></td></tr>\
-							<tr><td><font color='#0000CC'>Overall:</font></td>\
+							<tr><td><font color='#1d63e6'>Overall:</font></td>\
 							<td><font color='red'>[CEILING(brute_loss,1)]</font></td>\
 							<td><font color='orange'>[CEILING(fire_loss,1)]</font></td>\
 							<td><font color='green'>[CEILING(tox_loss,1)]</font></td>\
-							<td><font color='blue'>[CEILING(oxy_loss,1)]</font></td></tr>"
+							<td><font color='#1d63e6'>[CEILING(oxy_loss,1)]</font></td></tr>"
 
 			for(var/o in damaged)
 				var/obj/item/bodypart/org = o //head, left arm, right arm, etc.
-				dmgreport += "<tr><td><font color='#0000CC'>[capitalize(parse_zone(org.body_zone))]:</font></td>\
+				dmgreport += "<tr><td><font color='#1d63e6'>[capitalize(parse_zone(org.body_zone))]:</font></td>\
 								<td><font color='red'>[(org.brute_dam > 0) ? "[CEILING(org.brute_dam,1)]" : "0"]</font></td>\
 								<td><font color='orange'>[(org.burn_dam > 0) ? "[CEILING(org.burn_dam,1)]" : "0"]</font></td></tr>"
 			dmgreport += "</font></table>"
@@ -290,9 +289,9 @@ GENE SCANNER
 			var/render = FALSE
 			var/toReport = "<span class='info ml-1'>Organs:</span>\
 				<table class='ml-2'><tr>\
-				<td style='width:6em;'><font color='#0000CC'><b>Organ</b></font></td>\
-				[advanced ? "<td style='width:3em;'><font color='#0000CC'><b>Dmg</b></font></td>" : ""]\
-				<td style='width:12em;'><font color='#0000CC'><b>Status</b></font></td>"
+				<td style='width:6em;'><font color='#1d63e6'><b>Organ</b></font></td>\
+				[advanced ? "<td style='width:3em;'><font color='#1d63e6'><b>Dmg</b></font></td>" : ""]\
+				<td style='width:12em;'><font color='#1d63e6'><b>Status</b></font></td>"
 
 			for(var/obj/item/organ/organ in H.internal_organs)
 				var/status = ""
@@ -301,8 +300,8 @@ GENE SCANNER
 				else if (organ.damage > organ.low_threshold) status = "<font color='#F28F1F'>Mildly Damaged</font>"
 				if (status != "")
 					render = TRUE
-					toReport += "<tr><td><font color='#0000CC'>[organ.name]</font></td>\
-						[advanced ? "<td><font color='#0000CC'>[CEILING(organ.damage,1)]</font></td>" : ""]\
+					toReport += "<tr><td><font color='#1d63e6'>[organ.name]</font></td>\
+						[advanced ? "<td><font color='#1d63e6'>[CEILING(organ.damage,1)]</font></td>" : ""]\
 						<td>[status]</td></tr>"
 
 			if (render)
@@ -312,12 +311,17 @@ GENE SCANNER
 		if(advanced && H.has_dna())
 			render_list += "<span class='info ml-1'>Genetic Stability: [H.dna.stability]%.</span>\n"
 
-		var/list/broken_stuff = list()		//WS Edit Begin - Adds bone breakage
+		var/list/broken_stuff = list()
+		var/list/damaged_structure = list()
 		for(var/obj/item/bodypart/B in H.bodyparts)
 			if(B.bone_status >= BONE_FLAG_BROKEN)		// Checks if bone is broken or splinted
-				broken_stuff += B.name
+				broken_stuff += B.plaintext_zone
+			if(B.integrity_loss)
+				damaged_structure += B.plaintext_zone
 		if(broken_stuff.len)
-			render_list += "\t<span class='alert'>Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!</span>\n"		//WS Edit End
+			render_list += "\t<span class='alert'>Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!</span>\n"
+		if(damaged_structure.len)
+			render_list+= "\t<span class='alert'>Structure rod damage detected. Subject's [english_list(damaged_structure)] [damaged_structure.len > 1 ? "rod require" : "rods requires"] replacement!</span>\n"
 
 		// Species and body temperature
 		var/datum/species/S = H.dna.species
@@ -357,7 +361,7 @@ GENE SCANNER
 		if(blood_id)
 			if(ishuman(C))
 				var/mob/living/carbon/human/H = C
-				if(H.bleed_rate)
+				if(LAZYLEN(H.get_bleeding_parts()))
 					render_list += "<span class='alert ml-1'><b>Subject is bleeding!</b></span>\n"
 			var/blood_percent =  round((C.blood_volume / BLOOD_VOLUME_NORMAL)*100)
 			var/blood_type = C.dna.blood_type.name
@@ -382,7 +386,7 @@ GENE SCANNER
 	SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, FALSE)
 
 	// we handled the last <br> so we don't need handholding
-	to_chat(user, examine_block(jointext(render_list, "")), trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
+	to_chat(user, boxed_message(jointext(render_list, "")), trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
 
 /proc/chemscan(mob/living/user, mob/living/M)
 	if(istype(M) && M.reagents)
@@ -400,7 +404,7 @@ GENE SCANNER
 		else
 			render_list += "<span class='notice ml-1'>Subject is not addicted to any reagents.</span>\n"
 		// we handled the last <br> so we don't need handholding
-		to_chat(user, examine_block(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
+		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
 
 /obj/item/healthanalyzer/verb/toggle_mode()
 	set name = "Switch Verbosity"
@@ -613,67 +617,8 @@ GENE SCANNER
 						\n<span class='notice'>Instability of the last fusion reaction: [round(cached_scan_results["fusion"], 0.01)].</span>"
 
 	// we let the join apply newlines so we do need handholding
-	to_chat(user, examine_block(jointext(render_list, "\n")), type = MESSAGE_TYPE_INFO)
+	to_chat(user, boxed_message(jointext(render_list, "\n")), type = MESSAGE_TYPE_INFO)
 	return TRUE
-
-//slime scanner
-
-/obj/item/slime_scanner
-	name = "slime scanner"
-	desc = "A device that analyzes a slime's internal composition and measures its stats."
-	icon = 'icons/obj/device.dmi'
-	icon_state = "adv_spectrometer"
-	item_state = "analyzer"
-	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
-	pickup_sound =  'sound/items/handling/device_pickup.ogg'
-	drop_sound = 'sound/items/handling/device_drop.ogg'
-	w_class = WEIGHT_CLASS_SMALL
-	flags_1 = CONDUCT_1
-	throwforce = 0
-	throw_speed = 3
-	throw_range = 7
-	custom_materials = list(/datum/material/iron=30, /datum/material/glass=20)
-
-/obj/item/slime_scanner/attack(mob/living/M, mob/living/user)
-	if(user.stat)
-		return
-	if (!isslime(M))
-		to_chat(user, "<span class='warning'>This device can only scan slimes!</span>")
-		return
-	var/mob/living/simple_animal/slime/T = M
-	slime_scan(T, user)
-
-/proc/slime_scan(mob/living/simple_animal/slime/T, mob/living/user)
-	var/to_render = "\n<b>Slime scan results:</b>\
-					\n<span class='notice'>[T.colour] [T.is_adult ? "adult" : "baby"] slime</span>\
-					\nNutrition: [T.nutrition]/[T.get_max_nutrition()]"
-	if (T.nutrition < T.get_starve_nutrition())
-		to_render += "\n<span class='warning'>Warning: slime is starving!</span>"
-	else if (T.nutrition < T.get_hunger_nutrition())
-		to_render += "\n<span class='warning'>Warning: slime is hungry</span>"
-	to_render += "\nElectric change strength: [T.powerlevel]\nHealth: [round(T.health/T.maxHealth,0.01)*100]%"
-	if (T.slime_mutation[4] == T.colour)
-		to_render += "\nThis slime does not evolve any further."
-	else
-		if (T.slime_mutation[3] == T.slime_mutation[4])
-			if (T.slime_mutation[2] == T.slime_mutation[1])
-				to_render += "\nPossible mutation: [T.slime_mutation[3]]\
-							\nGenetic destability: [T.mutation_chance/2] % chance of mutation on splitting"
-			else
-				to_render += "\nPossible mutations: [T.slime_mutation[1]], [T.slime_mutation[2]], [T.slime_mutation[3]] (x2)\
-							\nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
-		else
-			to_render += "\nPossible mutations: [T.slime_mutation[1]], [T.slime_mutation[2]], [T.slime_mutation[3]], [T.slime_mutation[4]]\
-						\nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
-	if (T.cores > 1)
-		to_render += "\nMultiple cores detected"
-	to_render += "\nGrowth progress: [T.amount_grown]/[SLIME_EVOLUTION_THRESHOLD]"
-	if(T.effectmod)
-		to_render += "\n<span class='notice'>Core mutation in progress: [T.effectmod]</span>\
-					\n<span class='notice'>Progress in core mutation: [T.applied] / [(SLIME_EXTRACT_CROSSING_REQUIRED * T.crossbreed_modifier)]</span>"
-	to_chat(user, examine_block(to_render))
-
 
 /obj/item/nanite_scanner
 	name = "nanite scanner"
@@ -862,7 +807,7 @@ GENE SCANNER
 	item_flags = NOBLUDGEON
 	slot_flags = ITEM_SLOT_BELT
 	throwforce = 3
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 7
 	custom_materials = list(/datum/material/iron=200)
@@ -876,15 +821,16 @@ GENE SCANNER
 	if(!isnull(A.reagents))
 		if(A.reagents.reagent_list.len > 0)
 			var/reagents_length = A.reagents.reagent_list.len
-			to_chat(user, "<span class='notice'>[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found.</span>")
+			var/reagents_temp =	A.reagents.chem_temp
+			to_chat(user, span_notice("[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found at [reagents_temp]°K."))
 			for (var/re in A.reagents.reagent_list)
 				var/datum/reagent/R = re
 				var/amount = R.volume
-				to_chat(user, "<span class='notice'>\t [amount] units of [re].</span>")
+				to_chat(user, span_notice("\t [amount] units of [re]."))
 		else
-			to_chat(user, "<span class='notice'>No active chemical agents found in [A].</span>")
+			to_chat(user, span_notice("No active chemical agents found in [A]."))
 	else
-		to_chat(user, "<span class='notice'>No significant chemical agents found in [A].</span>")
+		to_chat(user, span_notice("No significant chemical agents found in [A]."))
 
 #undef SCANMODE_HEALTH
 #undef SCANMODE_CHEMICAL

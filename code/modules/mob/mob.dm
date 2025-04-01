@@ -204,27 +204,34 @@
 	if(self_message)
 		hearers -= src
 
-	var/raw_msg = message
-	if(visible_message_flags & EMOTE_MESSAGE)
-		message = "<span class='emote'><b>[src]</b>[separation][message]</span>"
-
 	for(var/mob/M in hearers)
 		if(!M.client)
 			continue
 
-		//This entire if/else chain could be in two lines but isn't for readibilties sake.
 		var/msg = message
+
+		//This entire if/else chain could be in two lines but isn't for readibilties sake.
 		if(M.see_invisible < invisibility)//if src is invisible to M
 			msg = blind_message
 		else if(T != loc && T != src) //if src is inside something and not a turf.
 			msg = blind_message
 		else if(T.lighting_object && T.lighting_object.invisibility <= M.see_invisible && T.is_softly_lit()) //if it is too dark.
 			msg = blind_message
+		else if(visible_message_flags & EMOTE_MESSAGE)
+			var/shown_name = name
+			if(M.mind?.guestbook && ishuman(src))
+				var/mob/living/carbon/human/human_source = src
+				var/known_name = M.mind.guestbook.get_known_name(M, src, human_source.get_face_name())
+				if(known_name)
+					shown_name = known_name
+
+			msg = "<span class='emote'><b>[shown_name]</b>[separation][message]</span>"
+
 		if(!msg)
 			continue
 
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags))
-			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
+			M.create_chat_message(src, raw_message = message, runechat_flags = visible_message_flags)
 
 		M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
 
@@ -250,12 +257,24 @@
 	if(self_message)
 		hearers -= src
 	var/raw_msg = message
-	if(audible_message_flags & EMOTE_MESSAGE)
-		message = "<span class='emote'><b>[src]</b>[separation][message]</span>"
 	for(var/mob/M in hearers)
-		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags))
-			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
-		M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
+		var/msg = raw_msg
+
+		//emote handling
+		if(audible_message_flags & EMOTE_MESSAGE)
+			var/shown_name = name
+			if(M.mind?.guestbook && ishuman(src))
+				var/mob/living/carbon/human/human_source = src
+				var/known_name = M.mind.guestbook.get_known_name(M, src, human_source.GetVoice())
+				if(known_name)
+					shown_name = known_name
+
+			msg = "<span class='emote'><b>[shown_name]</b>[separation][message]</span>"
+
+			if(runechat_prefs_check(M, audible_message_flags) && M.can_hear())
+				M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
+
+		M.show_message(msg, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
 
 /**
  * Show a message to all mobs in earshot of this one
@@ -294,6 +313,14 @@
 /mob/proc/get_item_by_slot(slot_id)
 	return null
 
+/// Gets what slot the item on the mob is held in.
+/// Returns null if the item isn't in any slots on our mob.
+/// Does not check if the passed item is null, which may result in unexpected outcoms.
+/mob/proc/get_slot_by_item(obj/item/looking_for)
+	if(looking_for in held_items)
+		return ITEM_SLOT_HANDS
+
+	return null
 
 ///Is the mob incapacitated
 /mob/proc/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE)
@@ -425,8 +452,6 @@
 				else
 					client.eye = client.mob
 					client.perspective = MOB_PERSPECTIVE
-			else
-				//Do nothing
 		else
 			//Reset to common defaults: mob if on turf, otherwise current loc
 			if(isturf(loc))
@@ -435,7 +460,7 @@
 			else
 				client.perspective = EYE_PERSPECTIVE
 				client.eye = loc
-		return 1
+		return TRUE
 
 /// Show the mob's inventory to another mob
 /mob/proc/show_inv(mob/user)
@@ -477,14 +502,17 @@
 			handle_eye_contact(examinify)
 		else
 			result = examinify.examine_more(src)
+
+			if(!LAZYLEN(result))
+				result = list(span_notice("<i>You examine [examinify] closer, but find nothing of interest...</i>"))
 	else
 		result = examinify.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
-	if(result.len)
+	if(length(result))
 		for(var/i in 1 to (length(result) - 1))
 			result[i] += "\n"
 
-	to_chat(src, examine_block("<span class='infoplain'>[result.Join()]</span>"))
+	to_chat(src, boxed_message("<span class='infoplain'>[result.Join()]</span>"))
 
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, examinify)
 
@@ -503,16 +531,16 @@
 		to_chat(src, "<span class='warning'>You don't have a free hand to examine this!</span>")
 		return FALSE
 	//can only queue up one examine on something at a time
-	if(examined_thing in do_afters)
+	if(DOING_INTERACTION_WITH_TARGET(src, examined_thing))
 		return FALSE
 
 	to_chat(src, "<span class='notice'>You start feeling around for something...</span>")
 	visible_message("<span class='notice'> [name] begins feeling around for \the [examined_thing.name]...</span>")
 
 	/// how long it takes for the blind person to find the thing they're examining
-	var/examine_delay_length = rand(1 SECONDS, 2 SECONDS)
+	var/examine_delay_length = rand(0.5 SECONDS, 1 SECONDS)
 	if(client?.recent_examines && client?.recent_examines[examined_thing]) //easier to find things we just touched
-		examine_delay_length = 0.5 SECONDS
+		examine_delay_length = 0.25 SECONDS
 	else if(isobj(examined_thing))
 		examine_delay_length *= 1.5
 	else if(ismob(examined_thing) && examined_thing != src)
@@ -565,6 +593,15 @@
 		var/msg = "<span class='smallnotice'>[src] makes eye contact with you.</span>"
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), examined_mob, msg), 3)
 
+/**
+ * Called by using Activate Held Object with an empty hand/limb
+ *
+ * Does nothing by default. The intended use is to allow limbs to call their
+ * own attack_self procs. It is up to the individual mob to override this
+ * parent and actually use it.
+ */
+/mob/proc/limb_attack_self()
+	return
 
 ///Can this mob resist (default FALSE)
 /mob/proc/can_resist()
@@ -622,21 +659,68 @@
 	if(I)
 		I.attack_self(src)
 		update_inv_hands()
+		return
+	limb_attack_self()
 
+///proc to call unique action on whatever we're holding.
 /mob/verb/do_unique_action()
 	set name = "Do Unique Action"
 	set category = "Object"
 	set src = usr
 
 	if(ismecha(loc))
-		return
+		var/obj/mecha/mech = loc
+		return mech.handle_unique_action(src)
 
 	if(incapacitated())
 		return
 
 	var/obj/item/I = get_active_held_item()
 	if(I)
+		if(I.pre_unique_action(src))
+			update_inv_hands()
+			return
 		I.unique_action(src)
+		update_inv_hands()
+
+///proc to call zoom on whatever we're holding.
+/mob/verb/do_zoom()
+	set name = "Aim Down Sights"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		var/obj/mecha/mecha = loc
+		if(mecha.zoom_action)
+			mecha.zoom_action.Activate()
+			return
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(istype(I, /obj/item/gun))
+		var/obj/item/gun/our_gun = I
+		if(our_gun.wielded_fully)
+			our_gun.zoom(src, src.dir)
+		update_inv_hands()
+		return
+	return
+
+/mob/verb/do_secondary_action()
+	set name = "Do Secondary Action"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		return
+	if(incapacitated())
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		if(I.pre_secondary_action(src))
+			update_inv_hands()
+			return
+		I.secondary_action(src)
 		update_inv_hands()
 
 /**
@@ -669,6 +753,24 @@
 		mind.store_memory(msg)
 	else
 		to_chat(src, "You don't have a mind datum for some reason, so you can't add a note to it.")
+
+///Shows guestbook tgui window
+/mob/verb/guestbook()
+	set name = "Guestbook"
+	set category = "IC"
+	set desc = "View your character's Guestbook."
+	// the reason why there are two observer checks in here is because the mind datum sometimes carries over to ghosts.
+	// this is something i should probably fix instead of adding a fallback check, but...
+	if(isobserver(src))
+		to_chat(src, span_warning("You have to be in the current round to do that!"))
+		return
+	if(!mind)
+		var/fail_message = "You have no mind!"
+		if(isobserver(src))
+			fail_message += " You have to be in the current round at some point to have one."
+		to_chat(src, span_warning(fail_message))
+		return
+	mind.guestbook.ui_interact(usr)
 
 /**
  * Allows you to respawn, abandoning your current mob
@@ -773,8 +875,10 @@
 		src << browse(null, t1)
 
 	if(href_list["flavor_more"])
-		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(flavor_text, "\n", "<BR>")), text("window=[];size=500x200", name))
-		onclose(usr, "[name]")
+		var/datum/browser/popup = new(usr, "[name]'s flavor text", "[name]'s Flavor Text (expanded)", 500, 200)
+		popup.set_content(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", "[name]'s flavor text (expanded)", replacetext(flavor_text, "\n", "<BR>")))
+		popup.open()
+		return
 
 	if(user != src)
 		if(href_list["item"] && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
@@ -1152,6 +1256,7 @@
 	var/list/searching = GetAllContents()
 	var/search_id = 1
 	var/search_pda = 1
+	var/search_bankcard = 1
 
 	for(var/A in searching)
 		if(search_id && istype(A, /obj/item/card/id))
@@ -1159,18 +1264,24 @@
 			if(ID.registered_name == oldname)
 				ID.registered_name = newname
 				ID.update_label()
-				if(ID.registered_account?.account_holder == oldname)
-					ID.registered_account.account_holder = newname
-				if(!search_pda)
+				if(!search_pda || !search_bankcard)
 					break
 				search_id = 0
+
+		if(search_bankcard && istype(A, /obj/item/card/bank))
+			var/obj/item/card/bank/bank_card = A
+			if(bank_card.registered_account?.account_holder == oldname)
+				bank_card.registered_account.account_holder = newname
+				if(!search_id || !search_pda)
+					break
+				search_bankcard = 0
 
 		else if(search_pda && istype(A, /obj/item/pda))
 			var/obj/item/pda/PDA = A
 			if(PDA.owner == oldname)
 				PDA.owner = newname
 				PDA.update_label()
-				if(!search_id)
+				if(!search_id || !search_bankcard)
 					break
 				search_pda = 0
 
@@ -1251,6 +1362,9 @@
 
 ///Get the id card on this mob
 /mob/proc/get_idcard(hand_first)
+	return
+
+/mob/proc/get_bankcard()
 	return
 
 /mob/proc/get_id_in_hand()

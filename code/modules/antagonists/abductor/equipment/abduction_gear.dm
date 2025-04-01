@@ -110,7 +110,7 @@
 
 /obj/item/clothing/suit/armor/abductor/vest/proc/Adrenaline()
 	if(ishuman(loc))
-		if(combat_cooldown != initial(combat_cooldown))
+		if(combat_cooldown < initial(combat_cooldown))
 			to_chat(loc, "<span class='warning'>Combat injection is still recharging.</span>")
 			return
 		var/mob/living/carbon/human/M = loc
@@ -123,9 +123,9 @@
 		combat_cooldown = 0
 		START_PROCESSING(SSobj, src)
 
-/obj/item/clothing/suit/armor/abductor/vest/process()
-	combat_cooldown++
-	if(combat_cooldown==initial(combat_cooldown))
+/obj/item/clothing/suit/armor/abductor/vest/process(seconds_per_tick)
+	combat_cooldown += seconds_per_tick
+	if(combat_cooldown >= initial(combat_cooldown))
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/clothing/suit/armor/abductor/Destroy()
@@ -369,21 +369,10 @@
 		to_chat(user, "<span class='notice'>You send the message to your target.</span>")
 		log_directed_talk(user, L, message, LOG_SAY, "abductor whisper")
 
-
-/obj/item/firing_pin/abductor
-	name = "alien firing pin"
-	icon_state = "firing_pin_ayy"
-	desc = "This firing pin is slimy and warm; you can swear you feel it constantly trying to mentally probe you."
-	fail_message = "<span class='abductor'>Firing error, please contact Command.</span>"
-
-/obj/item/firing_pin/abductor/pin_auth(mob/living/user)
-	. = isabductor(user)
-
 /obj/item/gun/energy/alien
 	name = "alien pistol"
 	desc = "A complicated gun that fires bursts of high-intensity radiation."
 	ammo_type = list(/obj/item/ammo_casing/energy/declone)
-	pin = /obj/item/firing_pin/abductor
 	icon_state = "alienpistol"
 	item_state = "alienpistol"
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
@@ -394,8 +383,8 @@
 			That or it's just space magic. Either way, it shrinks stuff."
 	ammo_type = list(/obj/item/ammo_casing/energy/shrink)
 	item_state = "shrink_ray"
-	icon_state = "shrink_ray"
-	fire_delay = 30
+	icon_state = "alienpistol"
+	fire_delay = 3 SECONDS
 	selfcharge = 1//shot costs 200 energy, has a max capacity of 1000 for 5 shots. self charge returns 25 energy every couple ticks, so about 1 shot charged every 12~ seconds
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL// variable-size trigger, get it? (abductors need this to be set so the gun is usable for them)
 
@@ -588,9 +577,11 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	if(!C.handcuffed)
 		if(C.canBeHandcuffed())
 			playsound(src, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
-			C.visible_message("<span class='danger'>[user] begins restraining [C] with [src]!</span>", \
-									"<span class='userdanger'>[user] begins shaping an energy field around your hands!</span>")
-			if(do_mob(user, C, time_to_cuff) && C.canBeHandcuffed())
+			C.visible_message(
+				"<span class='danger'>[user] begins restraining [C] with [src]!</span>", \
+				"<span class='userdanger'>[user] begins shaping an energy field around your hands!</span>"
+				)
+			if(do_after(user, time_to_cuff, C) && C.canBeHandcuffed())
 				if(!C.handcuffed)
 					C.set_handcuffed(new /obj/item/restraints/handcuffs/energy/used(C))
 					C.update_handcuffed()
@@ -770,6 +761,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	icon = 'icons/obj/abductor.dmi'
 	buildstacktype = /obj/item/stack/sheet/mineral/abductor
 	icon_state = "bed"
+	swap_lying_with_dir = FALSE
 
 /obj/structure/table_frame/abductor
 	name = "alien table frame"
@@ -835,6 +827,8 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "bed"
 	can_buckle = 1
+	/// Amount to inject per second
+	var/inject_am = 0.5
 
 	var/static/list/injected_reagents = list(/datum/reagent/medicine/cordiolis_hepatico)
 
@@ -851,13 +845,13 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 		START_PROCESSING(SSobj, src)
 		to_chat(AM, "<span class='danger'>You feel a series of tiny pricks!</span>")
 
-/obj/structure/table/optable/abductor/process()
+/obj/structure/table/optable/abductor/process(seconds_per_tick)
 	. = PROCESS_KILL
 	for(var/mob/living/carbon/C in get_turf(src))
 		. = TRUE
 		for(var/chemical in injected_reagents)
-			if(C.reagents.get_reagent_amount(chemical) < 1)
-				C.reagents.add_reagent(chemical, 1)
+			if(C.reagents.get_reagent_amount(chemical) < inject_am * seconds_per_tick)
+				C.reagents.add_reagent(chemical, inject_am * seconds_per_tick)
 
 /obj/structure/table/optable/abductor/Destroy()
 	STOP_PROCESSING(SSobj, src)

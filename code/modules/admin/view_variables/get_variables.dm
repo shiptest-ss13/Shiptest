@@ -62,6 +62,7 @@
 				VV_DATUM_TYPE,
 				VV_TYPE,
 				VV_FILE,
+				VV_COLOR,
 				VV_NEW_ATOM,
 				VV_NEW_DATUM,
 				VV_NEW_TYPE,
@@ -186,6 +187,12 @@
 
 		if(VV_FILE)
 			.["value"] = input("Pick file:", "File") as null|file
+			if(.["value"] == null)
+				.["class"] = null
+				return
+
+		if(VV_COLOR)
+			.["value"] = input("Pick color:", "Color", current_value) as null|color
 			if(.["value"] == null)
 				.["class"] = null
 				return

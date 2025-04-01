@@ -490,7 +490,7 @@
 		victim.combat_health--
 
 /obj/item/toy/prize/gygax
-	name = "toy Gygax"
+	name = "toy 515p"
 	desc = "4/13"
 	icon_state = "gygaxtoy"
 	max_combat_health = 5 //250 integrity
@@ -535,16 +535,16 @@
 	special_attack_type = SPECIAL_ATTACK_DAMAGE
 	special_attack_cry = "ROCKET BARRAGE"
 
-/obj/item/toy/prize/mauler
-	name = "toy Mauler"
+/obj/item/toy/prize/touro
+	name = "toy Touro"
 	desc = "9/13"
-	icon_state = "maulertoy"
+	icon_state = "tourotoy"
 	max_combat_health = 7 //500 integrity
 	special_attack_type = SPECIAL_ATTACK_DAMAGE
 	special_attack_cry = "BULLET STORM"
 
 /obj/item/toy/prize/odysseus
-	name = "toy Odysseus"
+	name = "toy 202r"
 	desc = "10/13"
 	icon_state = "odysseustoy"
 	max_combat_health = 4 //120 integrity

@@ -9,9 +9,10 @@
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/smartfridge
+	integrity_failure = 0.4
 
 	var/max_n_of_items = 1500
 	var/allow_ai_retrieve = FALSE
@@ -40,7 +41,10 @@
 		. += "<span class='notice'>The status display reads: This unit can hold a maximum of <b>[max_n_of_items]</b> items.</span>"
 
 /obj/machinery/smartfridge/update_icon_state()
-	if(machine_stat)
+	if(machine_stat & BROKEN)
+		icon_state = "[initial(icon_state)]-broken"
+		return ..()
+	else if(!powered())
 		icon_state = "[initial(icon_state)]-off"
 		return ..()
 
@@ -53,10 +57,8 @@
 			icon_state = "[initial(icon_state)]"
 		if(1 to 25)
 			icon_state = "[initial(icon_state)]1"
-		if(26 to 75)
+		if(26 to INFINITY)
 			icon_state = "[initial(icon_state)]2"
-		if(76 to INFINITY)
-			icon_state = "[initial(icon_state)]3"
 	return ..()
 
 /obj/machinery/smartfridge/update_overlays()
@@ -245,8 +247,9 @@
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "drying_rack"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 200
+	circuit = null
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	visible_contents = FALSE
 	var/drying = FALSE
 
@@ -258,7 +261,6 @@
 
 /obj/machinery/smartfridge/drying_rack/on_deconstruction()
 	new /obj/item/stack/sheet/mineral/wood(drop_location(), 10)
-	..()
 
 /obj/machinery/smartfridge/drying_rack/RefreshParts()
 /obj/machinery/smartfridge/drying_rack/default_deconstruction_screwdriver()
@@ -307,7 +309,7 @@
 	if(contents.len)
 		. += "drying_rack_filled"
 
-/obj/machinery/smartfridge/drying_rack/process()
+/obj/machinery/smartfridge/drying_rack/process(seconds_per_tick)
 	..()
 	if(drying)
 		if(rack_dry())//no need to update unless something got dried
@@ -326,10 +328,10 @@
 /obj/machinery/smartfridge/drying_rack/proc/toggle_drying(forceoff)
 	if(drying || forceoff)
 		drying = FALSE
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 	else
 		drying = TRUE
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 	update_appearance()
 
 /obj/machinery/smartfridge/drying_rack/proc/rack_dry()
@@ -366,7 +368,7 @@
 /obj/machinery/smartfridge/drinks/accept_check(obj/item/O)
 	if(!istype(O, /obj/item/reagent_containers) || (O.item_flags & ABSTRACT) || !O.reagents || !O.reagents.reagent_list.len)
 		return FALSE
-	if(istype(O, /obj/item/reagent_containers/glass) || istype(O, /obj/item/reagent_containers/food/drinks) || istype(O, /obj/item/reagent_containers/food/condiment))
+	if(istype(O, /obj/item/reagent_containers/glass) || istype(O, /obj/item/reagent_containers/food/drinks) || istype(O, /obj/item/reagent_containers/condiment))
 		return TRUE
 
 // ----------------------------
@@ -379,23 +381,6 @@
 	if(istype(O, /obj/item/reagent_containers/food/snacks/))
 		return TRUE
 	return FALSE
-
-// -------------------------------------
-// Xenobiology Slime-Extract Smartfridge
-// -------------------------------------
-/obj/machinery/smartfridge/extract
-	name = "smart slime extract storage"
-	desc = "A refrigerated storage unit for slime extracts."
-
-/obj/machinery/smartfridge/extract/accept_check(obj/item/O)
-	if(istype(O, /obj/item/slime_extract))
-		return TRUE
-	if(istype(O, /obj/item/slime_scanner))
-		return TRUE
-	return FALSE
-
-/obj/machinery/smartfridge/extract/preloaded
-	initial_contents = list(/obj/item/slime_scanner = 2)
 
 // -------------------------
 // Organ Surgery Smartfridge
@@ -422,20 +407,29 @@
 /obj/machinery/smartfridge/organ/RefreshParts()
 	for(var/obj/item/stock_parts/matter_bin/B in component_parts)
 		max_n_of_items = 20 * B.rating
-		repair_rate = max(0, STANDARD_ORGAN_HEALING * (B.rating - 1))
+		repair_rate = max(0, STANDARD_ORGAN_HEALING * (B.rating - 1) * 0.5)
 
-/obj/machinery/smartfridge/organ/process()
+/obj/machinery/smartfridge/organ/process(seconds_per_tick)
 	for(var/organ in contents)
 		var/obj/item/organ/O = organ
 		if(!istype(O))
 			return
-		O.applyOrganDamage(-repair_rate)
+		O.applyOrganDamage(-repair_rate * seconds_per_tick)
 
 /obj/machinery/smartfridge/organ/Exited(atom/movable/AM, atom/newLoc)
 	. = ..()
 	if(isorgan(AM))
 		var/obj/item/organ/O = AM
 		O.organ_flags &= ~ORGAN_FROZEN
+
+/obj/machinery/smartfridge/organ/preloaded
+	initial_contents = list(
+		/obj/item/organ/stomach = 2,
+		/obj/item/organ/lungs = 1,
+		/obj/item/organ/liver = 2,
+		/obj/item/organ/eyes = 2,
+		/obj/item/organ/heart = 2,
+		/obj/item/organ/ears = 2)
 
 // -----------------------------
 // Chemistry Medical Smartfridge

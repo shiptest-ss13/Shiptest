@@ -1,8 +1,10 @@
-#define SMELT_AMOUNT 10
+/// Smelt amount per second
+#define SMELT_AMOUNT 50
 
 /**********************Mineral processing unit console**************************/
 
 /obj/machinery/mineral
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	processing_flags = START_PROCESSING_MANUALLY
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 	/// The current direction of `input_turf`, in relation to the machine.
@@ -142,7 +144,7 @@
 /obj/machinery/mineral/processing_unit/Initialize()
 	. = ..()
 	proximity_monitor = new(src, 1)
-	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/diamond, /datum/material/plasma, /datum/material/uranium, /datum/material/bananium, /datum/material/titanium, /datum/material/bluespace), INFINITY, TRUE, /obj/item/stack)
+	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/diamond, /datum/material/plasma, /datum/material/uranium, /datum/material/hellstone, /datum/material/titanium, /datum/material/bluespace), INFINITY, TRUE, /obj/item/stack)
 	stored_research = new /datum/techweb/specialized/autounlocking/smelter
 	selected_material = SSmaterials.GetMaterialRef(/datum/material/iron)
 
@@ -212,13 +214,13 @@
 	if(istype(target, /obj/item/stack/ore))
 		process_ore(target)
 
-/obj/machinery/mineral/processing_unit/process()
+/obj/machinery/mineral/processing_unit/process(seconds_per_tick)
 	if(on)
 		if(selected_material)
-			smelt_ore()
+			smelt_ore(seconds_per_tick)
 
 		else if(selected_alloy)
-			smelt_alloy()
+			smelt_alloy(seconds_per_tick)
 
 
 		if(CONSOLE)
@@ -226,11 +228,11 @@
 	else
 		end_processing()
 
-/obj/machinery/mineral/processing_unit/proc/smelt_ore()
+/obj/machinery/mineral/processing_unit/proc/smelt_ore(seconds_per_tick = 2)
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	var/datum/material/mat = selected_material
 	if(mat)
-		var/sheets_to_remove = (materials.materials[mat] >= (MINERAL_MATERIAL_AMOUNT * SMELT_AMOUNT)) ? SMELT_AMOUNT : round(materials.materials[mat] /  MINERAL_MATERIAL_AMOUNT)
+		var/sheets_to_remove = (materials.materials[mat] >= (MINERAL_MATERIAL_AMOUNT * SMELT_AMOUNT * seconds_per_tick)) ? SMELT_AMOUNT * seconds_per_tick : round(materials.materials[mat] / MINERAL_MATERIAL_AMOUNT)
 		if(!sheets_to_remove)
 			on = FALSE
 		else
@@ -238,13 +240,13 @@
 			materials.retrieve_sheets(sheets_to_remove, mat, out)
 
 
-/obj/machinery/mineral/processing_unit/proc/smelt_alloy()
+/obj/machinery/mineral/processing_unit/proc/smelt_alloy(seconds_per_tick = 2)
 	var/datum/design/alloy = stored_research.isDesignResearchedID(selected_alloy) //check if it's a valid design
 	if(!alloy)
 		on = FALSE
 		return
 
-	var/amount = can_smelt(alloy)
+	var/amount = can_smelt(alloy, seconds_per_tick)
 
 	if(!amount)
 		on = FALSE
@@ -255,11 +257,11 @@
 
 	generate_mineral(alloy.build_path, amount)
 
-/obj/machinery/mineral/processing_unit/proc/can_smelt(datum/design/D)
+/obj/machinery/mineral/processing_unit/proc/can_smelt(datum/design/D, seconds_per_tick = 2)
 	if(D.make_reagents.len)
 		return FALSE
 
-	var/build_amount = SMELT_AMOUNT
+	var/build_amount = SMELT_AMOUNT * seconds_per_tick
 
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 

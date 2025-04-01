@@ -2,14 +2,46 @@
 
 //Damage and status effect defines
 
-//Damage defines //TODO: merge these down to reduce on defines
+/// Physical fracturing and warping of the material.
 #define BRUTE "brute"
+/// Scorching and charring of the material.
 #define BURN "fire"
+/// Poisoning. Mostly caused by reagents.
 #define TOX "toxin"
+/// Suffocation.
 #define OXY "oxygen"
 #define CLONE "clone"
+/// Exhaustion and nonlethal damage.
 #define STAMINA "stamina"
+/// Brain damage. Should probably be decommissioned and replaced with proper organ damage.
 #define BRAIN "brain"
+
+
+//Damage flag defines //
+
+/// Involves corrosive substances.
+#define ACID "acid"
+/// Involved in checking whether a disease can infect or spread. Also involved in xeno neurotoxin.
+#define BIO "bio"
+/// Involves a shockwave, usually from an explosion.
+#define BOMB "bomb"
+/// Involves a solid projectile.
+#define BULLET "bullet"
+/// Involves being eaten
+#define CONSUME "consume"
+/// Involves an EMP or energy-based projectile.
+#define ENERGY "energy"
+/// Involves fire or temperature extremes.
+#define FIRE "fire"
+/// Involves a laser.
+#define LASER "laser"
+/// Involves a melee attack or a thrown object.
+#define MELEE "melee"
+//someone should really port wounds...
+/// Involved in checking the likelihood of applying a wound to a mob.
+//#define WOUND "wound"
+
+#define ARMOR_ALL "all_damage_types"
 
 #define EFFECT_STUN "stun"
 #define EFFECT_KNOCKDOWN "knockdown"
@@ -40,7 +72,9 @@
 //Actual combat defines
 
 //click cooldowns, in tenths of a second, used for various combat actions
+#define HEAVY_WEAPON_CD 10
 #define CLICK_CD_MELEE 8
+#define LIGHT_WEAPON_CD 6
 #define CLICK_CD_RANGE 4
 #define CLICK_CD_RAPID 2
 #define CLICK_CD_CLICK_ABILITY 6
@@ -74,6 +108,8 @@
 #define PROJECTILE_ATTACK 3
 #define THROWN_PROJECTILE_ATTACK 4
 #define LEAP_ATTACK 5
+#define ALL_ATTACK_TYPES list(MELEE_ATTACK, UNARMED_ATTACK, PROJECTILE_ATTACK, THROWN_PROJECTILE_ATTACK, LEAP_ATTACK)
+#define NON_PROJECTILE_ATTACKS list(MELEE_ATTACK, UNARMED_ATTACK, LEAP_ATTACK)
 
 //attack visual effects
 #define ATTACK_EFFECT_PUNCH "punch"
@@ -133,52 +169,6 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 #define EMBED_POINTY list("ignore_throwspeed_threshold" = TRUE)
 #define EMBED_POINTY_SUPERIOR list("embed_chance" = 100, "ignore_throwspeed_threshold" = TRUE)
 
-//Gun weapon weight
-/// Allows you to dual wield this gun and your offhand gun
-#define WEAPON_LIGHT 1
-/// Does not allow you to dual wield with this gun and your offhand gun
-#define WEAPON_MEDIUM 2
-/// You must wield the gun to fire this gun
-#define WEAPON_HEAVY 3
-//Gun trigger guards
-#define TRIGGER_GUARD_ALLOW_ALL -1
-#define TRIGGER_GUARD_NONE 0
-#define TRIGGER_GUARD_NORMAL 1
-//Gun bolt types
-///Gun has a bolt, it stays closed while not cycling. The gun must be racked to have a bullet chambered when a mag is inserted.
-/// Example: c20, shotguns, m90
-#define BOLT_TYPE_STANDARD 1
-///Gun has a bolt, it is open when ready to fire. The gun can never have a chambered bullet with no magazine, but the bolt stays ready when a mag is removed.
-/// Example: Some SMGs, the L6
-#define BOLT_TYPE_OPEN 2
-///Gun has no moving bolt mechanism, it cannot be racked. Also dumps the entire contents when emptied instead of a magazine.
-/// Example: Break action shotguns, revolvers
-#define BOLT_TYPE_NO_BOLT 3
-///Gun has a bolt, it locks back when empty. It can be released to chamber a round if a magazine is in.
-/// Example: Pistols with a slide lock, some SMGs
-#define BOLT_TYPE_LOCKING 4
-//Sawn off nerfs
-///accuracy penalty of sawn off guns
-#define SAWN_OFF_ACC_PENALTY 25
-///added recoil of sawn off guns
-#define SAWN_OFF_RECOIL 1
-
-//ammo box sprite defines
-///ammo box will always use provided icon state
-#define AMMO_BOX_ONE_SPRITE 0
-///ammo box will have a different state for each bullet; <icon_state>-<bullets left>
-#define AMMO_BOX_PER_BULLET 1
-///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
-#define AMMO_BOX_FULL_EMPTY 2
-
-#define SUPPRESSED_NONE 0
-#define SUPPRESSED_QUIET 1 ///standard suppressed
-#define SUPPRESSED_VERY 2 /// no message
-
-//Projectile Reflect
-#define REFLECT_NORMAL (1<<0)
-#define REFLECT_FAKEPROJECTILE (1<<1)
-
 //Object/Item sharpness
 #define IS_BLUNT 0
 #define IS_SHARP 1
@@ -188,7 +178,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 #define EXPLODE_DEVASTATE 1
 #define EXPLODE_HEAVY 2
 #define EXPLODE_LIGHT 3
-#define EXPLODE_GIB_THRESHOLD 50	//ex_act() with EXPLODE_DEVASTATE severity will gib mobs with less than this much bomb armor
+#define EXPLODE_GIB_THRESHOLD 50 //ex_act() with EXPLODE_DEVASTATE severity will gib mobs with less than this much bomb armor
 
 #define EMP_HEAVY 1
 #define EMP_LIGHT 2
@@ -215,29 +205,20 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 //We will round to this value in damage calculations.
 #define DAMAGE_PRECISION 0.1
 
-//bullet_act() return values
-#define BULLET_ACT_HIT "HIT" //It's a successful hit, whatever that means in the context of the thing it's hitting.
-#define BULLET_ACT_BLOCK "BLOCK" //It's a blocked hit, whatever that means in the context of the thing it's hitting.
-#define BULLET_ACT_FORCE_PIERCE "PIERCE"	//It pierces through the object regardless of the bullet being piercing by default.
-
-#define NICE_SHOT_RICOCHET_BONUS 10 //if the shooter has the NICE_SHOT trait and they fire a ricocheting projectile, add this to the ricochet chance and auto aim angle
-
-//Autofire component
-/// Compatible firemode is in the gun. Wait until it's held in the user hands.
-#define AUTOFIRE_STAT_IDLE (1<<0)
-/// Gun is active and in the user hands. Wait until user does a valid click.
-#define AUTOFIRE_STAT_ALERT (1<<1)
-/// Gun is shooting.
-#define AUTOFIRE_STAT_FIRING (1<<2)
-
-#define COMSIG_AUTOFIRE_ONMOUSEDOWN "autofire_onmousedown"
-	#define COMPONENT_AUTOFIRE_ONMOUSEDOWN_BYPASS (1<<0)
-#define COMSIG_AUTOFIRE_SHOT "autofire_shot"
-	#define COMPONENT_AUTOFIRE_SHOT_SUCCESS (1<<0)
-
 #define SWINGABLE_STAB			"stab"
 #define SWINGABLE_SWING			"swing"
 #define SWINGABLE_FLAIL			"flail"
 #define SWINGABLE_THRUST		"thrust"
 
 #define SWING_COOLDOWN_TIME		1 SECONDS
+
+/// Alternate attack defines. Return these at the end of procs like afterattack_secondary.
+/// Calls the normal attack proc. For example, if returned in afterattack_secondary, will call afterattack.
+/// Will continue the chain depending on the return value of the non-alternate proc, like with normal attacks.
+#define SECONDARY_ATTACK_CALL_NORMAL 1
+
+/// Cancels the attack chain entirely.
+#define SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN 2
+
+/// Proceed with the attack chain, but don't call the normal methods.
+#define SECONDARY_ATTACK_CONTINUE_CHAIN 3

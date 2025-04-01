@@ -255,9 +255,9 @@
 		if(path.len == 0)
 			if(!isturf(target))
 				var/turf/TL = get_turf(target)
-				path = get_path_to(src, TL, /turf/proc/Distance_cardinal, 0, 30, id=access_card,simulated_only = FALSE)
+				path = get_path_to(src, TL, 30, id=access_card,simulated_only = FALSE)
 			else
-				path = get_path_to(src, target, /turf/proc/Distance_cardinal, 0, 30, id=access_card,simulated_only = FALSE)
+				path = get_path_to(src, target, 30, id=access_card,simulated_only = FALSE)
 
 			if(!bot_move(target))
 				add_to_ignore(target)
@@ -280,7 +280,7 @@
 
 /mob/living/simple_animal/bot/floorbot/proc/is_hull_breach(turf/t) //Ignore space tiles not considered part of a structure, also ignores shuttle docking areas.
 	var/area/t_area = get_area(t)
-	if(istype(t_area, /area/space) || istype(t_area, /area/solar) || istype(t_area, /area/asteroid))
+	if(istype(t_area, /area/space) || istype(t_area, /area/asteroid))
 		return FALSE
 	else
 		return TRUE

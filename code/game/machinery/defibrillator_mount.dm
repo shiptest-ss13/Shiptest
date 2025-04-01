@@ -165,7 +165,7 @@
 	name = "PENLITE defibrillator mount"
 	desc = "Holds defibrillators. You can grab the paddles if one is mounted. This PENLITE variant also allows for slow, passive recharging of the defibrillator."
 	icon_state = "penlite_mount"
-	idle_power_usage = 1
+	idle_power_usage = 0
 	wallframe_type = /obj/item/wallframe/defib_mount/charging
 
 
@@ -182,13 +182,13 @@
 		begin_processing()
 
 
-/obj/machinery/defibrillator_mount/charging/process()
+/obj/machinery/defibrillator_mount/charging/process(seconds_per_tick)
 	var/obj/item/stock_parts/cell/C = get_cell()
 	if(!C || !is_operational)
 		return PROCESS_KILL
 	if(C.charge < C.maxcharge)
-		use_power(100)
-		C.give(80)
+		use_power(50 * seconds_per_tick)
+		C.give(40 * seconds_per_tick)
 		update_appearance()
 
 //wallframe, for attaching the mounts easily

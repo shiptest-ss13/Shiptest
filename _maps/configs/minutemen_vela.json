@@ -1,16 +1,12 @@
 	{
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Vela-class Industrial Cruiser",
-	"prefix": "CMGSV",
-	"namelists": ["GENERAL", "MYTHOLOGICAL", "BEASTS"],
-	"description": "The Vela-Class is the designation for a series of semi-modular industrial cruisers created by the CLIP Minutemen in the early 440s. While the original design was created almost exclusively for extracting minerals from asteroid belts, modern examples tend to take on a multi-mission role, with the most common configuration being a mech hanger, and research pod. The ship itself often sees long deployments that encourage modification, leading to Velas taking on a personality as their crews leave their mark.",
-	"tags": [
-		"Robotics",
-		"Construction",
-		"Science"
-	],
+	"prefix": "CLSV",
+	"namelists": ["GENERAL", "CLIP MINUTEMEN", "BEASTS"],
+	"description": "The Vela-class is Lunatown Orbital Work's most prolific hull, with the first to its name having been laid down in 443. The Vela is renowned for its easily reconfigurable profile - owning to external connectors which allow anything from bulk cargo pods to mech hangars to be bolted onto the hull. Most hulls ordered by CLIP are configured to carry a refinery, mechanized mining gear, light Minuteman compliment, and a hefty suite of amenities for the crew, leading to the designation as an Industrial Cruiser.",
+	"tags": ["Robotics", "Mining", "RP Focus"],
+	"faction": "/datum/faction/clip",
 	"map_short_name": "Vela-class",
-	"starting_funds": 1000,
 	"map_path": "_maps/shuttles/minutemen/minutemen_vela.dmm",
 	"limit": 1,
 	"job_slots": {
@@ -30,25 +26,29 @@
 			"slots": 1
 		},
 		"Mech Pilot": {
-			"outfit": "/datum/outfit/job/clip/minutemen/vehicle_pilot",
-			"slots": 4
-		},
-		"Minuteman": {
-			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
+			"outfit": "/datum/outfit/job/clip/miner",
 			"slots": 2
 		},
-		"Engineer": {
+		"Mechanic": {
 			"outfit": "/datum/outfit/job/clip/mechanic",
 			"slots": 2
 		},
-		"Researcher": {
-			"outfit": "/datum/outfit/job/clip/scientist",
-			"slots": 2
-		},
-		"Deckhand": {
-			"outfit": "/datum/outfit/job/clip/minutemen/deckhand",
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
 			"slots": 1
+		},
+		"Reservist": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/reserve",
+			"slots": 1
+		},
+		"Doctor":{
+			"outfit": "/datum/outfit/job/clip/doctor",
+			"slots": 1
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/clip/assistant",
+			"slots": 2
 		}
 	},
-	"enabled": false
+	"enabled": true
 }

@@ -14,7 +14,6 @@
 	desc = "It looks alien!"
 	icon_state = "alien"
 
-
 /obj/structure/closet/gimmick
 	name = "administrative supply closet"
 	desc = "It's a storage unit for things that have no right being here."
@@ -56,7 +55,7 @@
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/suit/armor/tdome/red(src)
 	for(var/i in 1 to 3)
-		new /obj/item/melee/transforming/energy/sword/saber(src)
+		new /obj/item/melee/energy/sword/saber(src)
 	for(var/i in 1 to 3)
 		new /obj/item/gun/energy/laser(src)
 	for(var/i in 1 to 3)
@@ -75,7 +74,7 @@
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/suit/armor/tdome/green(src)
 	for(var/i in 1 to 3)
-		new /obj/item/melee/transforming/energy/sword/saber(src)
+		new /obj/item/melee/energy/sword/saber(src)
 	for(var/i in 1 to 3)
 		new /obj/item/gun/energy/laser(src)
 	for(var/i in 1 to 3)

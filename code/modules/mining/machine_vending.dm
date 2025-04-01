@@ -1,7 +1,7 @@
 /* Mining Points Equipment Vendor */
 /obj/machinery/vending/mining_equipment
 	name = "frontier equipment vendor"
-	desc = "An equipment vendor for miners, prospectors, and all manner of far reach scroungers. Ore Redemption Points can be spent here to purchase rough-and-tumble goods. Sold by EXOCON."
+	desc = "An equipment vendor for miners, prospectors, and all manner of far reach scroungers. Ore Redemption Points can be spent here to purchase rough-and-tumble goods. Sold by EXOCOM."
 	icon_state = "mining"
 	icon_deny = "mining-deny"
 	max_integrity = 500 // A bit more durable than your average snack vendor
@@ -22,7 +22,6 @@
 		/obj/item/mining_scanner = 2,
 		/obj/item/t_scanner/adv_mining_scanner = 2,
 		/obj/item/hivelordstabilizer = 3,
-		/obj/item/clothing/glasses/meson/gar = 2,
 		/obj/item/kinetic_crusher = 1,
 		/obj/item/gun/energy/kinetic_accelerator = 2,
 		/obj/item/pickaxe/silver = 1,
@@ -106,7 +105,6 @@
 	icon_state = "mining_voucher"
 	w_class = WEIGHT_CLASS_TINY
 
-
 ///Conscript kit
 
 /obj/item/storage/backpack/duffelbag/mining_conscript
@@ -121,6 +119,6 @@
 	new /obj/item/clothing/suit/hooded/explorer(src)
 	new /obj/item/clothing/mask/gas/explorer(src)
 	new /obj/item/gun/energy/kinetic_accelerator(src)
-	new /obj/item/kitchen/knife/combat/survival(src)
+	new /obj/item/melee/knife/survival(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/gloves/explorer(src)

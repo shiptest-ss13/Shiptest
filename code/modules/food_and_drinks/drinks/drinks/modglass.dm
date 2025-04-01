@@ -35,7 +35,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	obj_flags = UNIQUE_RENAME
 	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
 	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
-	custom_price = 25
+	custom_price = 5
 	//rim defines the size of rim the glass has, used to decide which skins are available, and which garnish sprites to use
 	var/rim = RIM_MEDIUM
 	//stores the number of variations this glass sprite has to select from

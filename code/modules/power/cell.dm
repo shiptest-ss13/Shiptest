@@ -1,6 +1,6 @@
 #define CELL_DRAIN_TIME 35
-#define CELL_POWER_GAIN (3    * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define CELL_POWER_DRAIN (37.5 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+#define CELL_POWER_GAIN (3    * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define CELL_POWER_DRAIN (37.5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
 /obj/item/stock_parts/cell
 	name = "power cell"
@@ -19,7 +19,8 @@
 	var/maxcharge = 1000
 	custom_materials = list(/datum/material/iron=700, /datum/material/glass=50)
 	grind_results = list(/datum/reagent/lithium = 15, /datum/reagent/iron = 5, /datum/reagent/silicon = 5)
-	var/rigged = FALSE	// true if rigged to explode
+	var/rigged = FALSE	// true if rigged to
+	var/show_rigged = TRUE // whether if the cell shows it's fauly on examine.
 	var/chargerate = 100 //how much power is given every tick in a recharger
 	var/self_recharge = 0 //does it self recharge, over time, or not?
 	var/ratingdesc = TRUE
@@ -28,13 +29,15 @@
 /obj/item/stock_parts/cell/get_cell()
 	return src
 
-/obj/item/stock_parts/cell/Initialize(mapload, override_maxcharge)
+/obj/item/stock_parts/cell/Initialize(mapload, spawn_empty, override_maxcharge)
 	. = ..()
 	START_PROCESSING(SSobj, src)
 	create_reagents(5, INJECTABLE | DRAINABLE)
 	if (override_maxcharge)
 		maxcharge = override_maxcharge
 	charge = maxcharge
+	if(spawn_empty)
+		charge = 0
 	if(ratingdesc)
 		desc += " This one has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
 	update_appearance()
@@ -52,9 +55,9 @@
 				STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/item/stock_parts/cell/process()
+/obj/item/stock_parts/cell/process(seconds_per_tick)
 	if(self_recharge)
-		give(chargerate * 0.25)
+		give(chargerate * 0.125 * seconds_per_tick)
 	else
 		return PROCESS_KILL
 
@@ -73,14 +76,14 @@
 	return 100*charge/maxcharge
 
 // use power from a cell
-/obj/item/stock_parts/cell/use(amount)
+/obj/item/stock_parts/cell/use(amount, log = TRUE)
 	if(rigged && amount > 0)
 		explode()
 		return 0
 	if(charge < amount)
 		return 0
 	charge = (charge - amount)
-	if(!istype(loc, /obj/machinery/power/apc))
+	if(log)
 		SSblackbox.record_feedback("tally", "cell_used", 1, type)
 	return 1
 
@@ -97,7 +100,7 @@
 
 /obj/item/stock_parts/cell/examine(mob/user)
 	. = ..()
-	if(rigged)
+	if(rigged && show_rigged)
 		. += "<span class='danger'>This power cell seems to be faulty!</span>"
 	else
 		. += "The charge meter reads [round(src.percent())]%."
@@ -148,12 +151,11 @@
 				if(prob(25))
 					corrupt()
 
-//WS Begin -- Ethereal Charge Scaling
 /obj/item/stock_parts/cell/attack_self(mob/user)
-	if(isethereal(user))
+	if(iselzuose(user))
 		var/mob/living/carbon/human/H = user
-		var/datum/species/ethereal/E = H.dna.species
-		var/charge_limit = ETHEREAL_CHARGE_DANGEROUS - CELL_POWER_GAIN
+		var/datum/species/elzuose/E = H.dna.species
+		var/charge_limit = ELZUOSE_CHARGE_DANGEROUS - CELL_POWER_GAIN
 		if(E.drain_time > world.time)
 			return
 		if(charge < CELL_POWER_DRAIN)
@@ -175,10 +177,6 @@
 			else
 				to_chat(H, "<span class='warning'>You can't receive charge from [src]!</span>")
 		return
-//WS End
-
-/obj/item/stock_parts/cell/blob_act(obj/structure/blob/B)
-	SSexplosions.highobj += src
 
 /obj/item/stock_parts/cell/proc/get_electrocute_damage()
 	if(charge >= 1000)
@@ -346,18 +344,6 @@
 	custom_materials = null
 	grown_battery = TRUE //it has the overlays for wires
 
-/obj/item/stock_parts/cell/high/slime
-	name = "charged slime core"
-	desc = "A yellow slime core infused with plasma, it crackles with power."
-	icon = 'icons/mob/slimes.dmi'
-	icon_state = "yellow slime extract"
-	custom_materials = null
-	rating = 5 //self-recharge makes these desirable
-	self_recharge = 1 // Infused slime cores self-recharge, over time
-
-/*Hypercharged slime cell - located in /code/modules/research/xenobiology/crossbreeding/_misc.dm
-/obj/item/stock_parts/cell/high/slime/hypercharged */
-
 /obj/item/stock_parts/cell/emproof
 	name = "\improper EMP-proof cell"
 	desc = "An EMP-proof cell."
@@ -413,6 +399,8 @@
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
 	rating = 0 //Makes it incompatible with RPED
+
+/obj/item/stock_parts/cell/gun/empty
 
 /obj/item/stock_parts/cell/gun/empty/Initialize()
 	. = ..()

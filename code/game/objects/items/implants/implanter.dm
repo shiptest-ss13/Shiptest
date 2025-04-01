@@ -1,7 +1,7 @@
 /obj/item/implanter
 	name = "implanter"
 	desc = "A sterile automatic implant injector."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "implanter0"
 	item_state = "syringe_0"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
@@ -27,7 +27,7 @@
 			M.visible_message("<span class='warning'>[user] is attempting to implant [M].</span>")
 
 		var/turf/T = get_turf(M)
-		if(T && (M == user || do_mob(user, M, 50)))
+		if(T && (M == user || do_after(user, 5 SECONDS, M)))
 			if(src && imp)
 				if(imp.implant(M, user))
 					if (M == user)

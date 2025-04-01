@@ -12,7 +12,7 @@
 	desc = "This machine has a dish-like shape and green lights. It is designed to detect and process subspace radio activity."
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 30
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/telecomms/receiver
 
 /obj/machinery/telecomms/receiver/receive_signal(datum/signal/subspace/signal)
@@ -48,7 +48,7 @@
 	id = "Receiver A"
 	network = "tcommsat"
 	autolinkers = list("receiverA") // link to relay
-	freq_listening = list(FREQ_SOLGOV, FREQ_NANOTRASEN, FREQ_MINUTEMEN, FREQ_COMMAND, FREQ_COMMON)
+	freq_listening = list(FREQ_SOLGOV, FREQ_NANOTRASEN, FREQ_MINUTEMEN, FREQ_EMERGENCY, FREQ_COMMON)
 
 
 //--PRESET RIGHT--//

@@ -8,7 +8,7 @@
 	name = "reshape face"
 	implements = list(
 		TOOL_SCALPEL = 100,
-		/obj/item/kitchen/knife = 40,
+		/obj/item/melee/knife = 40,
 		TOOL_WIRECUTTER = 33)
 	time = 64
 	experience_given = MEDICAL_SKILL_MEDIUM

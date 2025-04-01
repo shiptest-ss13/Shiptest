@@ -17,6 +17,8 @@
 	toolspeed = 0.5
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
+	wall_decon_damage = MINERAL_WALL_INTEGRITY
+	demolition_mod = 1.15
 
 /obj/item/pickaxe/rusted
 	name = "rusty pickaxe"
@@ -24,6 +26,7 @@
 	attack_verb = list("ineffectively hit")
 	force = 1
 	throwforce = 1
+	wall_decon_damage = 50
 
 /obj/item/pickaxe/mini
 	name = "compact pickaxe"
@@ -53,6 +56,7 @@
 	force = 19
 	custom_price = 1500
 	custom_premium_price = 2000
+	custom_materials = list(/datum/material/diamond=2000)
 
 /obj/item/pickaxe/drill
 	name = "mining drill"
@@ -79,8 +83,9 @@
 	icon_state = "diamonddrill"
 	item_state = "diamonddrill"
 	toolspeed = 0.2
-	desc = "EXOCON's improvement on the NT autodrill design, featuring a premium diamond cutting head. Yours is the drill that will pierce the heavens!"
+	desc = "EXOCOM's improvement on the NT autodrill design, featuring a premium diamond cutting head. Yours is the drill that will pierce the heavens!"
 	force = 20
+	custom_materials = list(/datum/material/diamond=2000)
 
 /obj/item/pickaxe/drill/cyborg/diamond //This is the BORG version!
 	name = "diamond-tipped integrated mining drill" //To inherit the NODROP_1 flag, and easier to change borg specific drill mechanics.
@@ -94,23 +99,25 @@
 	toolspeed = 0.1 //the epitome of powertools. extremely fast mining
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	hitsound = 'sound/weapons/sonic_jackhammer.ogg'
-	desc = "The epitome of conventional rock-smashing technology, invented by NT and cost-optimized by EXOCON. Smashes rocks, objects, and unfortunate wildlife with sonic blasts."
-	force = 25
+	desc = "The epitome of conventional rock-smashing technology, invented by NT and cost-optimized by EXOCOM. Smashes rocks, objects, and unfortunate wildlife with sonic blasts."
+	force = 20
+	armour_penetration = 15
 	attack_verb = list("blasted", "smashed", "slammed", "hammered")
+	demolition_mod = 6
 
 // //back in my day, our jackhammers used nothing but rattlin' drill bits! And we liked it!
 /obj/item/pickaxe/drill/jackhammer/old
 	name = "blastwave jackhammer"
 	icon_state = "jackhammerold"
 	item_state = "jackhammerold"
-	toolspeed = 0.5//meh
+	toolspeed = 0.4//meh
 	desc = "The old fashioned solution to a stubborn wall- used heavily all over known space until the onset of sonic deconstruction technology and Rapid Construction Devices."
-	force = 20
+	force = 15
 	armour_penetration = 15
 
 /obj/item/pickaxe/drill/jackhammer/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/knockback, 2, FALSE, FALSE)
+	AddComponent(/datum/component/knockback, 1, FALSE, FALSE)
 
 //The fist of justice
 /obj/item/pickaxe/drill/jackhammer/brigador

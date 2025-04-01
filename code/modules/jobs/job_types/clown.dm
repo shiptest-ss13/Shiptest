@@ -19,15 +19,12 @@
 	job_icon = "clown"
 	jobtype = /datum/job/clown
 
-	belt = /obj/item/pda/clown
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/clown
-	alt_uniform = /obj/item/clothing/under/rank/civilian/clown/green //WS Edit - Alt Uniforms
-	shoes = /obj/item/clothing/shoes/clown_shoes
+	alt_uniform = /obj/item/clothing/under/rank/civilian/clown/green
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn
 	backpack_contents = list(
-		/obj/item/stamp/clown = 1,
 		/obj/item/reagent_containers/spray/waterflower = 1,
 		/obj/item/reagent_containers/food/snacks/grown/banana = 1,
 		/obj/item/instrument/bikehorn = 1,
@@ -35,13 +32,9 @@
 
 	implants = list(/obj/item/implant/sad_trombone)
 
-	backpack = /obj/item/storage/backpack/clown
-	satchel = /obj/item/storage/backpack/clown
 	duffelbag = /obj/item/storage/backpack/duffelbag/clown //strangely has a duffel
 
 	box = /obj/item/storage/box/hug/survival
-
-	chameleon_extras = /obj/item/stamp/clown
 
 /datum/outfit/job/clown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

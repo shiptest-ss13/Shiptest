@@ -93,7 +93,6 @@
 	name = "cat ears"
 	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "kitty"
-	damage_multiplier = 2
 
 /obj/item/organ/ears/cat/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -150,6 +149,9 @@
 		ear_owner.dna.species.mutant_bodyparts -= "ears"
 		ear_owner.update_body()
 
+/obj/item/organ/ears/fox
+	name = "fox ears"
+
 /obj/item/organ/ears/fox/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
 	if(istype(ear_owner))
@@ -166,9 +168,78 @@
 		ear_owner.dna.species.mutant_bodyparts -= "ears"
 		ear_owner.update_body()
 
+/obj/item/organ/ears/rabbit
+	name = "rabbit ears"
+
+/obj/item/organ/ears/rabbit/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.species.mutant_bodyparts |= "ears"
+		ear_owner.dna.features["ears"] = "Rabbit"
+		ear_owner.update_body()
+
+/obj/item/organ/ears/rabbit/Remove(mob/living/carbon/human/ear_owner,  special = 0)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.features["ears"] = "None"
+		ear_owner.dna.species.mutant_bodyparts -= "ears"
+		ear_owner.update_body()
+
+/obj/item/organ/ears/rabbit/bent/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.species.mutant_bodyparts |= "ears"
+		ear_owner.dna.features["ears"] = "Bent Rabbit"
+		ear_owner.update_body()
+
+/obj/item/organ/ears/rabbit/bent/Remove(mob/living/carbon/human/ear_owner,  special = 0)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.features["ears"] = "None"
+		ear_owner.dna.species.mutant_bodyparts -= "ears"
+		ear_owner.update_body()
+
+/obj/item/organ/ears/rabbit/floppy/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.species.mutant_bodyparts |= "ears"
+		ear_owner.dna.features["ears"] = "Floppy Rabbit"
+		ear_owner.update_body()
+
+/obj/item/organ/ears/floppy/Remove(mob/living/carbon/human/ear_owner,  special = 0)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.features["ears"] = "None"
+		ear_owner.dna.species.mutant_bodyparts -= "ears"
+		ear_owner.update_body()
+
+/obj/item/organ/ears/dog
+	name = "dog ears"
+
+/obj/item/organ/ears/dog/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.species.mutant_bodyparts |= "ears"
+		ear_owner.dna.features["ears"] = "Dog"
+		ear_owner.update_body()
+
+/obj/item/organ/ears/dog/Remove(mob/living/carbon/human/ear_owner,  special = 0)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.features["ears"] = "None"
+		ear_owner.dna.species.mutant_bodyparts -= "ears"
+		ear_owner.update_body()
+
 /obj/item/organ/ears/elf
 	name = "elf ears"
-	damage_multiplier = 1.5
 
 /obj/item/organ/ears/elf/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -219,13 +290,13 @@
 /obj/item/organ/ears/robot/emp_act(severity)
 	switch(severity)
 		if(1)
-			owner.Jitter(30)
+			owner.adjust_jitter(30)
 			owner.Dizzy(30)
 			owner.Knockdown(200)
 			deaf = 30
 			to_chat(owner, "<span class='warning'>Your robotic ears are ringing, uselessly.</span>")
 		if(2)
-			owner.Jitter(15)
+			owner.adjust_jitter(15)
 			owner.Dizzy(15)
 			owner.Knockdown(100)
 			to_chat(owner, "<span class='warning'>Your robotic ears buzz.</span>")

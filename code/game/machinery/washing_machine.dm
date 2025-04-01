@@ -9,7 +9,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_PURPLE = /obj/item/clothing/under/color/lightpurple,
 		DYE_BLACK = /obj/item/clothing/under/color/black,
 		DYE_WHITE = /obj/item/clothing/under/color/white,
-		DYE_RAINBOW = /obj/item/clothing/under/color/rainbow,
 		DYE_MIME = /obj/item/clothing/under/rank/civilian/mime,
 		DYE_CLOWN = /obj/item/clothing/under/rank/civilian/clown,
 		DYE_CHAP = /obj/item/clothing/under/rank/civilian/chaplain,
@@ -33,7 +32,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_PURPLE = /obj/item/clothing/under/color/jumpskirt/lightpurple,
 		DYE_BLACK = /obj/item/clothing/under/color/jumpskirt/black,
 		DYE_WHITE = /obj/item/clothing/under/color/jumpskirt/white,
-		DYE_RAINBOW = /obj/item/clothing/under/color/jumpskirt/rainbow,
 		DYE_MIME = /obj/item/clothing/under/rank/civilian/mime/skirt,
 		DYE_CHAP = /obj/item/clothing/under/rank/civilian/chaplain/skirt,
 		DYE_QM = /obj/item/clothing/under/rank/cargo/qm/skirt,
@@ -76,9 +74,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_PURPLE = /obj/item/clothing/shoes/sneakers/purple,
 		DYE_BLACK = /obj/item/clothing/shoes/sneakers/black,
 		DYE_WHITE = /obj/item/clothing/shoes/sneakers/white,
-		DYE_RAINBOW = /obj/item/clothing/shoes/sneakers/rainbow,
 		DYE_MIME = /obj/item/clothing/shoes/sneakers/black,
-		DYE_CLOWN = /obj/item/clothing/shoes/sneakers/rainbow,
 		DYE_QM = /obj/item/clothing/shoes/sneakers/brown,
 		DYE_CAPTAIN = /obj/item/clothing/shoes/sneakers/brown,
 		DYE_FO = /obj/item/clothing/shoes/sneakers/brown,
@@ -164,18 +160,18 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 	START_PROCESSING(SSfastprocess, src)
 
-/obj/machinery/washing_machine/process()
+/obj/machinery/washing_machine/process(seconds_per_tick)
 	if(!busy)
 		animate(src, transform=matrix(), time=2)
 		return PROCESS_KILL
 	if(anchored)
-		if(prob(5))
+		if(SPT_PROB(2.5, seconds_per_tick))
 			var/matrix/M = new
 			M.Translate(rand(-1, 1), rand(0, 1))
 			animate(src, transform=M, time=1)
 			animate(transform=matrix(), time=1)
 	else
-		if(prob(1))
+		if(SPT_PROB(0.5, seconds_per_tick))
 			step(src, pick(GLOB.cardinals))
 		var/matrix/M = new
 		M.Translate(rand(-3, 3), rand(-1, 3))
@@ -231,10 +227,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/item/stack/sheet/hairlesshide/machine_wash(obj/machinery/washing_machine/WM)
 	new /obj/item/stack/sheet/wethide(drop_location(), amount)
-	qdel(src)
-
-/obj/item/clothing/suit/hooded/ian_costume/machine_wash(obj/machinery/washing_machine/WM)
-	new /obj/item/reagent_containers/food/snacks/meat/slab/corgi(loc)
 	qdel(src)
 
 /mob/living/simple_animal/pet/machine_wash(obj/machinery/washing_machine/WM)
@@ -355,5 +347,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine/open_machine(drop = 1)
 	..()
-	density = TRUE //because machinery/open_machine() sets it to 0
+	if(initial(density))
+		density = TRUE //because machinery/open_machine() sets it to 0
 	color_source = null

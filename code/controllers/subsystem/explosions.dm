@@ -164,7 +164,7 @@ SUBSYSTEM_DEF(explosions)
 // 5 explosion power is a (0, 1, 3) explosion.
 // 1 explosion power is a (0, 0, 1) explosion.
 
-/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE)
+/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE, gentle = FALSE)
 	. = SSexplosions.explode(arglist(args))
 
 #define CREAK_DELAY 5 SECONDS //Time taken for the creak to play after explosion, if applicable.
@@ -177,7 +177,7 @@ SUBSYSTEM_DEF(explosions)
 #define FREQ_UPPER 40 //The upper limit for the randomly selected frequency.
 #define FREQ_LOWER 25 //The lower of the above.
 
-/datum/controller/subsystem/explosions/proc/explode(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke)
+/datum/controller/subsystem/explosions/proc/explode(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke, gentle)
 	epicenter = get_turf(epicenter)
 	if(!epicenter)
 		return
@@ -230,8 +230,8 @@ SUBSYSTEM_DEF(explosions)
 
 	if(!silent)
 		var/frequency = get_rand_frequency()
-		var/sound/explosion_sound = sound(get_sfx("explosion"))
-		var/sound/far_explosion_sound = sound('sound/effects/explosionfar.ogg')
+		var/sound/explosion_sound = sound(get_sfx("explosion_large"))
+		var/sound/far_explosion_sound = sound(get_sfx("explosion_large_distant"))
 		var/sound/creaking_explosion_sound = sound(get_sfx("explosion_creaking"))
 		var/sound/hull_creaking_sound = sound(get_sfx("hull_creaking"))
 		var/sound/explosion_echo_sound = sound('sound/effects/explosion_distant.ogg')
@@ -250,6 +250,13 @@ SUBSYSTEM_DEF(explosions)
 				var/baseshakeamount
 				if(orig_max_distance - dist > 0)
 					baseshakeamount = sqrt((orig_max_distance - dist)*0.1)
+				if(devastation_range)
+					explosion_sound = sound(get_sfx("explosion_large"))
+				else if(heavy_impact_range)
+					explosion_sound = sound(get_sfx("explosion_med"))
+				else if(light_impact_range)
+					explosion_sound = sound(get_sfx("explosion_small"))
+					far_explosion_sound = sound(get_sfx("explosion_small_distant"))
 				// If inside the blast radius + world.view - 2
 				if(dist <= round(max_range + world.view - 2, 1))
 					M.playsound_local(epicenter, null, 100, 1, frequency, S = explosion_sound)
@@ -454,7 +461,7 @@ SUBSYSTEM_DEF(explosions)
 
 		.[T] = current_exp_block
 
-/datum/controller/subsystem/explosions/fire(resumed = 0)
+/datum/controller/subsystem/explosions/fire(resumed = FALSE)
 	if (!is_exploding())
 		return
 	var/timer
@@ -550,6 +557,8 @@ SUBSYSTEM_DEF(explosions)
 			var/throw_dir = L[2]
 			var/max_range = L[3]
 			for(var/atom/movable/A in T)
+				if(QDELETED(A))
+					continue
 				if(!A.anchored && A.move_resist != INFINITY)
 					var/atom_throw_range = rand(throw_range, max_range)
 					var/turf/throw_at = get_ranged_target_turf(A, throw_dir, atom_throw_range)

@@ -10,7 +10,6 @@
 	throw_range = 7
 	force = 4
 	custom_materials = list(/datum/material/iron=2000)
-	clumsy_check = FALSE
 	fire_sound = 'sound/items/syringeproj.ogg'
 	var/time_per_syringe = 250
 	var/syringes_left = 4
@@ -30,11 +29,11 @@
 /obj/item/gun/chem/can_shoot()
 	return syringes_left
 
-/obj/item/gun/chem/process_chamber()
+/obj/item/gun/chem/process_chamber(atom/shooter)
 	if(chambered && !chambered.BB && syringes_left)
 		chambered.newshot()
 
-/obj/item/gun/chem/process()
+/obj/item/gun/chem/process(seconds_per_tick)
 	if(syringes_left >= max_syringes)
 		return
 	if(world.time < last_synth+time_per_syringe)

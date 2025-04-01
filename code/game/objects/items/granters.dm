@@ -12,7 +12,7 @@
 
 /obj/item/book/granter/proc/turn_page(mob/user)
 	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, TRUE)
-	if(do_after(user, 50, TRUE, src))
+	if(do_after(user, 50, src, hidden = TRUE))
 		if(remarks.len)
 			to_chat(user, "<span class='notice'>[pick(remarks)]</span>")
 		else
@@ -57,7 +57,7 @@
 			on_reading_stopped()
 			reading = FALSE
 			return
-	if(do_after(user, 50, TRUE, src))
+	if(do_after(user, 50, src, hidden = TRUE))
 		on_reading_finished(user)
 	reading = FALSE
 	return TRUE
@@ -245,20 +245,7 @@
 	..()
 	to_chat(user,"<span class='warning'>You suddenly feel very solid!</span>")
 	user.Stun(40, ignore_canstun = TRUE)
-	user.petrify(30)
-
-/obj/item/book/granter/spell/cards
-	spell = /obj/effect/proc_holder/spell/aimed/spell_cards
-	spellname = "spellcards"
-	icon_state ="bookspellcards"
-	desc = "The ultimate card trick, for users ten and up."
-	remarks = list("It's all about the razzmataz.", "...I don't think I'll actually be sawing anyone in half", "These are pretty flimsy, most armor would defeat them.", "They do burn damage? Weird.", "Why the dumb stance? It's just a flick of the hand...", "Are these cards? They feel stiffer then pages.", "Best performed using a top hat...")
-
-/obj/item/book/granter/spell/cards/recoil(mob/living/user)
-	..()
-	to_chat(user,"<span class='warning'>The cards are against you!</span>")
-	user.Stun(40, ignore_canstun = TRUE)
-	user.petrify(30)
+	user.petrify(60)
 
 /obj/item/book/granter/spell/shapechange
 	spell = /obj/effect/proc_holder/spell/targeted/shapeshift
@@ -345,7 +332,7 @@
 
 /obj/item/book/granter/spell/random/Initialize()
 	. = ..()
-	var/static/banned_spells = list(/obj/item/book/granter/spell/mimery_blockade, /obj/item/book/granter/spell/mimery_guns)
+	var/static/banned_spells = list(/obj/item/book/granter/spell/mimery_blockade)
 	var/real_type = pick(subtypesof(/obj/item/book/granter/spell) - banned_spells)
 	new real_type(loc)
 	return INITIALIZE_HINT_QDEL
@@ -457,12 +444,10 @@
 
 /obj/item/book/granter/crafting_recipe/cooking_sweets_101
 	name = "Cooking Desserts 101"
-	desc = "A cook book that teaches you some more of the newest desserts. AI approved, and a best seller on Honkplanet."
+	desc = "A cook book that teaches you some more of the newest desserts. A best seller on Maxim."
 	crafting_recipe_types = list(
-		/datum/crafting_recipe/food/mimetart,
 		/datum/crafting_recipe/food/berrytart,
 		/datum/crafting_recipe/food/cocolavatart,
-		/datum/crafting_recipe/food/clowncake,
 		/datum/crafting_recipe/food/vanillacake
 	)
 	icon_state = "cooking_learing_sweets"

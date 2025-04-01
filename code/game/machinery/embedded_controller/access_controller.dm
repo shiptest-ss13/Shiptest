@@ -7,8 +7,8 @@
 /obj/machinery/doorButtons
 	power_channel = AREA_USAGE_ENVIRON
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 2
-	active_power_usage = 4
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/idSelf
 
@@ -222,7 +222,7 @@
 		update_appearance()
 	updateUsrDialog()
 
-/obj/machinery/doorButtons/airlock_controller/process()
+/obj/machinery/doorButtons/airlock_controller/process(seconds_per_tick)
 	if(machine_stat & NOPOWER)
 		return
 	if(busy == CYCLE_EXTERIOR)

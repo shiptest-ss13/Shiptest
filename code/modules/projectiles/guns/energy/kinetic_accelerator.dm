@@ -1,26 +1,23 @@
 /obj/item/gun/energy/kinetic_accelerator
 	name = "kinetic accelerator"
-	desc = "A self recharging, ranged self-defense and rock pulverizing tool that does increased damage in low pressure. EXOCON does not condone use of this weapon against other sentient life."
+	desc = "A self recharging, ranged self-defense and rock pulverizing tool that does increased damage in low pressure. EXOCOM does not condone use of this weapon against other sentient life."
 	icon_state = "kineticgun"
 	item_state = "kineticgun"
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic)
-	cell_type = /obj/item/stock_parts/cell/emproof
+	default_ammo_type = /obj/item/stock_parts/cell/emproof
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/emproof,
+	)
 	item_flags = NONE
 	obj_flags = UNIQUE_RENAME
 	weapon_weight = WEAPON_LIGHT
-	can_flashlight = TRUE
-	flight_x_offset = 15
-	flight_y_offset = 9
 	automatic_charge_overlays = FALSE
-	can_bayonet = TRUE
-	knife_x_offset = 20
-	knife_y_offset = 12
-	internal_cell = TRUE
+	internal_magazine = TRUE //prevents you from giving it an OP cell - WS Edit
 	custom_price = 750
 	w_class = WEIGHT_CLASS_BULKY
 
 	muzzleflash_iconstate = "muzzle_flash_light"
-	muzzle_flash_color = COLOR_WHITE
+	light_color = COLOR_WHITE
 
 	var/overheat_time = 16
 	var/holds_charge = FALSE
@@ -28,11 +25,17 @@
 	var/overheat = FALSE
 	var/mob/holder
 
-
 	var/max_mod_capacity = 100
 	var/list/modkits = list()
 
 	var/recharge_timerid
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 13,
+		)
+	)
 
 /obj/item/gun/energy/kinetic_accelerator/shoot_with_empty_chamber(mob/living/user)
 	playsound(src, dry_fire_sound, 30, TRUE) //click sound but no to_chat message to cut on spam
@@ -192,6 +195,8 @@
 	icon_state = null
 	damage = 20
 	damage_type = BRUTE
+	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS
+	wall_damage_override = MINERAL_WALL_INTEGRITY
 	flag = "bomb"
 	range = 3
 	log_override = TRUE
@@ -235,8 +240,6 @@
 		for(var/obj/item/borg/upgrade/modkit/M in mods)
 			M.projectile_strike(src, target_turf, target, kinetic_gun)
 	if(ismineralturf(target_turf))
-		var/turf/closed/mineral/M = target_turf
-		M.gets_drilled(firer, TRUE)
 		if(iscarbon(firer))
 			var/mob/living/carbon/C = firer
 			var/skill_modifier = C?.mind.get_skill_modifier(/datum/skill/mining, SKILL_SPEED_MODIFIER)
@@ -248,6 +251,7 @@
 
 /obj/projectile/kinetic/mech
 	range = 5
+	pressure_decrease = 0.5
 
 /obj/projectile/kinetic/mech/strike_thing(atom/target) //has no skill check for mechs
 	var/turf/target_turf = get_turf(target)

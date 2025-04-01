@@ -97,36 +97,53 @@
 	for(var/obj/item/I in held_items)
 		if(I.IsReflect(def_zone))
 			return TRUE
-	///Granted by prismwine
-	if(HAS_TRAIT(src, TRAIT_REFLECTIVE) && prob(50))
+	if(SEND_SIGNAL(src, COMSIG_CHECK_REFLECT, def_zone))
+		return TRUE
+	if(HAS_TRAIT(src, TRAIT_REFLECTIVE))
 		return TRUE
 	return FALSE
 
 /mob/living/carbon/human/proc/check_shields(atom/AM, damage, attack_text = "the attack", attack_type = MELEE_ATTACK, armour_penetration = 0)
 	var/block_chance_modifier = round(damage / -3)
 
-	for(var/obj/item/I in held_items)
-		if(!istype(I, /obj/item/clothing) || I == get_active_held_item() || istype(I ,/obj/item/shield))
-			var/final_block_chance = I.block_chance - (clamp((armour_penetration-I.armour_penetration)/2,0,100)) + block_chance_modifier //So armour piercing blades can still be parried by other blades, for example
-			if(I.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
-				return TRUE
+	var/obj/item/shield = get_best_shield()
+	if(shield)
+		var/final_block_chance = shield.block_chance - (clamp((armour_penetration - shield.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/shield_result = shield.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type)
+		if(shield_result >= 1)
+			return TRUE
+		if(shield_result == -1)
+			return -1
+
 	if(wear_suit)
-		var/final_block_chance = wear_suit.block_chance - (clamp((armour_penetration-wear_suit.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/final_block_chance = wear_suit.block_chance - (clamp((armour_penetration - wear_suit.armour_penetration)/2,0,100)) + block_chance_modifier
 		if(wear_suit.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 			return TRUE
 	if(w_uniform)
-		var/final_block_chance = w_uniform.block_chance - (clamp((armour_penetration-w_uniform.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/final_block_chance = w_uniform.block_chance - (clamp((armour_penetration - w_uniform.armour_penetration)/2,0,100)) + block_chance_modifier
 		if(w_uniform.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 			return TRUE
 	if(wear_neck)
-		var/final_block_chance = wear_neck.block_chance - (clamp((armour_penetration-wear_neck.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/final_block_chance = wear_neck.block_chance - (clamp((armour_penetration - wear_neck.armour_penetration)/2,0,100)) + block_chance_modifier
 		if(wear_neck.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 			return TRUE
 	if(head)
-		var/final_block_chance = head.block_chance - (clamp((armour_penetration-head.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/final_block_chance = head.block_chance - (clamp((armour_penetration - head.armour_penetration)/2,0,100)) + block_chance_modifier
 		if(head.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 			return TRUE
+
 	return FALSE
+
+
+/mob/living/carbon/human/proc/get_best_shield()
+	var/obj/item/l_hand = held_items[1]
+	var/obj/item/r_hand = held_items[2]
+	if(!(r_hand || l_hand))
+		return r_hand || l_hand
+	else if(r_hand?.block_chance > l_hand?.block_chance)
+		return r_hand
+	else
+		return l_hand
 
 /mob/living/carbon/human/proc/check_block()
 	if(mind)
@@ -284,30 +301,30 @@
 			return TRUE
 		apply_damage(damage, BRUTE, affecting, armor_block)
 
-		if(M.a_intent == INTENT_DISARM) //Always drop item in hand on first go.  If no item exists, try to shove them back.  If you share the tile with the target, slam them directly into the ground to stun them and slightly damage them.
-			var/obj/item/I = get_active_held_item()
-			if(I && dropItemToGround(I))
-				playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
-				visible_message("<span class='danger'>[M] disarms [src]!</span>", \
-								"<span class='userdanger'>[M] disarms you!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", null, M)
-				to_chat(M, "<span class='danger'>You disarm [src]!</span>")
-			else if(get_dist(src, M) != 0)
-				playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
-				var/shovetarget = get_edge_target_turf(M, get_dir(M, get_step_away(src, M)))
-				Knockdown(0.3 SECONDS)
-				throw_at(shovetarget, 4, 2, M, force = MOVE_FORCE_OVERPOWERING)
-				log_combat(M, src, "shoved")
-				visible_message("<span class='danger'>[M] tackles [src] down!</span>", \
-								"<span class='userdanger'>[M] shoves you with great force!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", null, M)
-				to_chat(M, "<span class='danger'>You shove [src] with great force!</span>")
-			else
-				Paralyze(3 SECONDS)
-				adjustBruteLoss(5)
-				playsound(loc, 'sound/weapons/punch3.ogg', 25, TRUE, -1)
-				visible_message("<span class='danger'>[M] slams [src] into the floor!</span>", \
-								"<span class='userdanger'>[M] slams you into the ground!</span>", "<span class='hear'>You hear something slam loudly onto the floor!</span>", null, M)
-				to_chat(M, "<span class='danger'>You slam [src] into the floor beneath you!</span>")
-				log_combat(M, src, "slammed into the ground")
+	if(M.a_intent == INTENT_DISARM) //Always drop item in hand on first go.  If no item exists, try to shove them back.  If you share the tile with the target, slam them directly into the ground to stun them and slightly damage them.
+		var/obj/item/I = get_active_held_item()
+		if(I && dropItemToGround(I) && prob(50))
+			playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
+			visible_message("<span class='danger'>[M] disarms [src]!</span>", \
+							"<span class='userdanger'>[M] disarms you!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", null, M)
+			to_chat(M, "<span class='danger'>You disarm [src]!</span>")
+		else if(get_dist(src, M) != 0)
+			playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
+			var/shovetarget = get_edge_target_turf(M, get_dir(M, get_step_away(src, M)))
+			Knockdown(0.3 SECONDS)
+			throw_at(shovetarget, 4, 2, M, force = MOVE_FORCE_OVERPOWERING)
+			log_combat(M, src, "shoved")
+			visible_message("<span class='danger'>[M] tackles [src] down!</span>", \
+							"<span class='userdanger'>[M] shoves you with great force!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", null, M)
+			to_chat(M, "<span class='danger'>You shove [src] with great force!</span>")
+		else
+			Paralyze(1 SECONDS)
+			adjustBruteLoss(5)
+			playsound(loc, 'sound/weapons/punch3.ogg', 25, TRUE, -1)
+			visible_message("<span class='danger'>[M] slams [src] into the floor!</span>", \
+							"<span class='userdanger'>[M] slams you into the ground!</span>", "<span class='hear'>You hear something slam loudly onto the floor!</span>", null, M)
+			to_chat(M, "<span class='danger'>You slam [src] into the floor beneath you!</span>")
+			log_combat(M, src, "slammed into the ground")
 
 /mob/living/carbon/human/attack_larva(mob/living/carbon/alien/larva/L)
 
@@ -326,13 +343,30 @@
 			apply_damage(damage, BRUTE, affecting, armor_block)
 
 
+/mob/living/carbon/human/attack_basic_mob(mob/living/basic/user, list/modifiers)
+	. = ..()
+	if(!.)
+		return
+	var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)
+	if(check_shields(user, damage, "the [user.name]", MELEE_ATTACK, user.armour_penetration))
+		return FALSE
+	var/dam_zone = dismembering_strike(user, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+	if(!dam_zone) //Dismemberment successful
+		return TRUE
+	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
+	if(!affecting)
+		affecting = get_bodypart(BODY_ZONE_CHEST)
+	var/armor = run_armor_check(affecting, MELEE, armour_penetration = user.armour_penetration)
+	apply_damage(damage, user.melee_damage_type, affecting, armor, sharpness = user.sharpness)
+
+
 /mob/living/carbon/human/attack_animal(mob/living/simple_animal/M)
 	. = ..()
 	if(.)
 		var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
 		if(check_shields(M, damage, "the [M.name]", MELEE_ATTACK, M.armour_penetration))
 			return FALSE
-		var/dam_zone = dismembering_strike(M, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+		var/dam_zone = dismembering_strike(M, pick_weight(list(BODY_ZONE_HEAD = 4, BODY_ZONE_CHEST = 64, BODY_ZONE_L_ARM = 8, BODY_ZONE_R_ARM = 8, BODY_ZONE_L_LEG = 8, BODY_ZONE_R_LEG = 8)))
 		if(!dam_zone) //Dismemberment successful
 			return TRUE
 		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
@@ -473,18 +507,11 @@
 				if(!max_limb_loss)
 					break
 
-
-/mob/living/carbon/human/blob_act(obj/structure/blob/B)
-	if(stat == DEAD)
-		return
-	show_message("<span class='userdanger'>The blob attacks you!</span>")
-	var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
-	apply_damage(5, BRUTE, affecting, run_armor_check(affecting, "melee"))
-
-
 ///Calculates the siemens coeff based on clothing and species, can also restart hearts.
 /mob/living/carbon/human/electrocute_act(shock_damage, source, siemens_coeff = 1, flags = NONE)
+	//If it doesnt have physiology its prob still initializing.
+	if(!physiology)
+		return
 	//Calculates the siemens coeff based on clothing. Completely ignores the arguments
 	if(flags & SHOCK_TESLA) //I hate this entire block. This gets the siemens_coeff for tesla shocks
 		if(gloves && gloves.siemens_coefficient <= 0)
@@ -498,6 +525,10 @@
 	else if(!(flags & SHOCK_NOGLOVES)) //This gets the siemens_coeff for all non tesla shocks
 		if(gloves)
 			siemens_coeff *= gloves.siemens_coefficient
+	//If it doesnt have physiology its prob still initializing.
+	if(!physiology)
+		. = ..()
+		return
 	siemens_coeff *= physiology.siemens_coeff
 	siemens_coeff *= dna.species.siemens_coeff
 	. = ..()
@@ -525,8 +556,8 @@
 	var/informed = FALSE
 	for(var/obj/item/bodypart/L as anything in bodyparts)
 		if(!IS_ORGANIC_LIMB(L))
-			if(!informed)
-				to_chat(src, "<span class='userdanger'>You feel a sharp pain as your robotic limbs overload.</span>")
+			if(!informed && !HAS_TRAIT(src, TRAIT_ANALGESIA))
+				to_chat(src, span_userdanger("You feel a sharp pain as your robotic limbs overload."))
 				informed = TRUE
 			switch(severity)
 				if(1)
@@ -658,7 +689,7 @@
 		if(affecting.name == BODY_ZONE_HEAD)
 			if(prob(min(acidpwr*acid_volume/10, 90))) //Applies disfigurement
 				affecting.receive_damage(acidity, 2*acidity)
-				emote("scream")
+				force_scream()
 				facial_hairstyle = "Shaved"
 				hairstyle = "Bald"
 				update_hair()
@@ -764,9 +795,9 @@
 		if(LB.bodypart_disabled)
 			isdisabled = " is disabled"
 			if(no_damage)
-				isdisabled += " but otherwise "
+				isdisabled += " but otherwise"
 			else
-				isdisabled += " and "
+				isdisabled += " and"
 		combined_msg += "\t <span class='[no_damage ? "notice" : "warning"]'>Your [LB.name][isdisabled][self_aware ? " has " : " is "][status].</span>"
 
 		for(var/obj/item/I in LB.embedded_objects)
@@ -776,10 +807,10 @@
 				combined_msg += "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>"
 
 	for(var/t in missing)
-		combined_msg += "<span class='boldannounce'>Your [parse_zone(t)] is missing!</span>"
+		combined_msg += span_boldannounce("Your [parse_zone(t)] is missing!</span>")
 
-	if(bleed_rate)
-		combined_msg += "<span class='danger'>You are bleeding!</span>"
+	for(var/obj/item/bodypart/BP in get_bleeding_parts(TRUE))
+		combined_msg += span_danger("Your [parse_zone(BP.body_zone)] is bleeding!</span>")
 	if(getStaminaLoss())
 		if(getStaminaLoss() > 30)
 			combined_msg += "<span class='info'>You're completely exhausted.</span>"
@@ -862,7 +893,7 @@
 	if(roundstart_quirks.len)
 		combined_msg += "<span class='notice'>You have these quirks: [get_trait_string()].</span>"
 
-	to_chat(src, examine_block(combined_msg.Join("\n")))
+	to_chat(src, boxed_message(combined_msg.Join("\n")))
 
 /mob/living/carbon/human/damage_clothes(damage_amount, damage_type = BRUTE, damage_flag = 0, def_zone)
 	if(damage_type != BRUTE && damage_type != BURN)

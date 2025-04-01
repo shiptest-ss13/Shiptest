@@ -24,11 +24,8 @@
 		/datum/material/uranium,
 		/datum/material/titanium,
 		/datum/material/diamond,
-		/datum/material/bananium,
-		/datum/material/adamantine,
-		/datum/material/mythril,
 		/datum/material/plastic,
-		/datum/material/runite
+		/datum/material/hellstone,
 	), MINERAL_MATERIAL_AMOUNT * 75, FALSE, /obj/item/stack)
 	chosen = SSmaterials.GetMaterialRef(chosen)
 
@@ -43,7 +40,7 @@
 	if(materials.insert_item(S))
 		qdel(S)
 
-/obj/machinery/mineral/mint/process()
+/obj/machinery/mineral/mint/process(seconds_per_tick)
 	if(processing)
 		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 		var/datum/material/M = chosen

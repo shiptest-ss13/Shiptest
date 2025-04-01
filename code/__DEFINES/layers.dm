@@ -1,5 +1,6 @@
 //Defines for atom layers and planes
 //KEEP THESE IN A NICE ACSCENDING ORDER, PLEASE
+#define LOWEST_EVER_PLANE -100
 
 #define CLICKCATCHER_PLANE -99
 
@@ -20,6 +21,20 @@
 #define GAME_PLANE_RENDER_TARGET "GAME_PLANE"
 #define BLACKNESS_PLANE 0 //To keep from conflicts with SEE_BLACKNESS internals
 #define BLACKNESS_PLANE_RENDER_TARGET "BLACKNESS_PLANE"
+
+#define ABOVE_GAME_PLANE 1
+
+//-------------------- Rendering ---------------------
+#define RENDER_PLANE_GAME 100
+#define RENDER_PLANE_NON_GAME 101
+#define RENDER_PLANE_MASTER 102
+
+// Lummox I swear to god I will find you
+// NOTE! You can only ever have planes greater then -10000, if you add too many with large offsets you will brick multiz
+// Same can be said for large multiz maps. Tread carefully mappers
+#define HIGHEST_EVER_PLANE RENDER_PLANE_MASTER
+/// The range unique planes can be in
+#define PLANE_RANGE (HIGHEST_EVER_PLANE - LOWEST_EVER_PLANE)
 
 #define SPACE_LAYER 1.8
 //#define TURF_LAYER 2 //For easy recordkeeping; this is a byond define
@@ -130,6 +145,9 @@
 #define CAMERA_STATIC_LAYER 19
 #define CAMERA_STATIC_RENDER_TARGET "CAMERA_STATIC_PLANE"
 
+///Wants to be part of the game plane, but also wants to draw above literally everything else
+#define HIGH_GAME_PLANE 30
+
 //HUD layer defines
 
 #define FULLSCREEN_PLANE 31
@@ -152,12 +170,22 @@
 #define HUD_PLANE 42
 #define HUD_LAYER 42
 #define HUD_RENDER_TARGET "HUD_PLANE"
-#define ABOVE_HUD_PLANE 43
-#define ABOVE_HUD_LAYER 43
+#define VOLUMETRIC_STORAGE_BOX_PLANE 44
+#define VOLUMETRIC_STORAGE_BOX_LAYER 44
+#define VOLUMETRIC_STORAGE_BOX_RENDER_TARGET "VOLUME_STORAGE_BOX_PLANE"
+
+#define VOLUMETRIC_STORAGE_ITEM_PLANE 46
+#define VOLUMETRIC_STORAGE_ITEM_LAYER 46
+#define VOLUMETRIC_STORAGE_ACTIVE_ITEM_LAYER 48
+#define VOLUMETRIC_STORAGE_ACTIVE_ITEM_PLANE 48
+#define VOLUMETRIC_STORAGE_ITEM_RENDER_TARGET "VOLUME_STORAGE_ITEM_PLANE"
+
+#define ABOVE_HUD_PLANE 50
+#define ABOVE_HUD_LAYER 50
 #define ABOVE_HUD_RENDER_TARGET "ABOVE_HUD_PLANE"
 
-#define SPLASHSCREEN_LAYER 54
-#define SPLASHSCREEN_PLANE 54
+#define SPLASHSCREEN_LAYER 75
+#define SPLASHSCREEN_PLANE 75
 
 #define ADMIN_POPUP_LAYER 1
 

@@ -33,17 +33,8 @@
 /obj/item/target/alien/anchored
 	anchored = TRUE
 
-/obj/item/target/clown
-	icon_state = "target_c"
-	desc = "A shooting target that looks like a useless clown."
-	hp = 2000
-
 #define DECALTYPE_SCORCH 1
 #define DECALTYPE_BULLET 2
-
-/obj/item/target/clown/bullet_act(obj/projectile/P)
-	. = ..()
-	playsound(src.loc, 'sound/items/bikehorn.ogg', 50, TRUE)
 
 /obj/item/target/bullet_act(obj/projectile/P)
 	if(istype(P, /obj/projectile/bullet/reusable)) // If it's a foam dart, don't bother with any of this other shit

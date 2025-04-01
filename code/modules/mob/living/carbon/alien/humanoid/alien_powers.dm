@@ -224,9 +224,11 @@ Doesn't work on other aliens/AI.*/
 	if(!isturf(U) || !isturf(T))
 		return FALSE
 
+	var/modifiers = params2list(params)
 	user.visible_message("<span class='danger'>[user] spits neurotoxin!</span>", "<span class='alertalien'>You spit neurotoxin.</span>")
 	var/obj/projectile/bullet/neurotoxin/A = new /obj/projectile/bullet/neurotoxin(user.loc)
-	A.preparePixelProjectile(target, user, params)
+
+	A.preparePixelProjectile(target, user, modifiers)
 	A.fire()
 	user.newtonian_move(get_dir(U, T))
 	user.adjustPlasma(-p_cost)
@@ -291,7 +293,7 @@ Doesn't work on other aliens/AI.*/
 
 /obj/effect/proc_holder/alien/sneak/fire(mob/living/carbon/alien/humanoid/user)
 	if(!active)
-		user.alpha = 25
+		user.alpha = 150
 		user.sneaking = TRUE
 		active = TRUE
 		to_chat(user, "<span class='noticealien'>You blend into the shadows...</span>")

@@ -9,7 +9,7 @@
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/fly
 	disliked_food = null
 	liked_food = GORE | RAW // Sure, the raw... the bloody... but I think stuff GROSS, like baseball burgers, are liked
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	species_language_holder = /datum/language_holder/fly
 
 	species_chest = /obj/item/bodypart/chest/fly
@@ -35,7 +35,3 @@
 						"<span class='userdanger'>You throw up on the floor!</span>")
 	return ..()
 
-/datum/species/fly/check_species_weakness(obj/item/weapon, mob/living/attacker)
-	if(istype(weapon, /obj/item/melee/flyswatter))
-		return 29 //Flyswatters deal 30x damage to flypeople.
-	return 0

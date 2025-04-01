@@ -31,28 +31,19 @@
 		return pda.owner
 	return if_no_id
 
-//repurposed proc. Now it combines get_id_name() and get_face_name() to determine a mob's name variable. Made into a separate proc as it'll be useful elsewhere
 /mob/living/carbon/human/get_visible_name()
-	var/face_name = get_face_name("")
-	var/id_name = get_id_name("")
 	if(name_override)
 		return name_override
-	if(face_name)
-		if(id_name && (id_name != face_name))
-			return "[face_name] (as [id_name])"
-		return face_name
-	if(id_name)
-		return id_name
-	return "Unknown"
+	return get_generic_name(TRUE, lowercase = TRUE)
 
 //Returns "Unknown" if facially disfigured and real_name if not. Useful for setting name when Fluacided or when updating a human's name variable
-/mob/living/carbon/human/proc/get_face_name(if_no_face="Unknown")
-	if(wear_mask && (wear_mask.flags_inv&HIDEFACE))	//Wearing a mask which hides our face, use id-name if possible
+/mob/living/carbon/human/proc/get_face_name(if_no_face = get_generic_name(lowercase = TRUE))
+	if(wear_mask && (wear_mask.flags_inv & HIDEFACE)) //Wearing a mask which hides our face, use id-name if possible
 		return if_no_face
-	if(head && (head.flags_inv&HIDEFACE))
-		return if_no_face		//Likewise for hats
+	if(head && (head.flags_inv & HIDEFACE))
+		return if_no_face //Likewise for hats
 	var/obj/item/bodypart/O = get_bodypart(BODY_ZONE_HEAD)
-	if(!O || (HAS_TRAIT(src, TRAIT_DISFIGURED)) || (O.brutestate+O.burnstate)>2 || cloneloss>50 || !real_name)	//disfigured. use id-name if possible
+	if(!O || (HAS_TRAIT(src, TRAIT_DISFIGURED)) || (O.brutestate+O.burnstate)>2 || cloneloss>50 || !real_name) //disfigured. use id-name if possible
 		return if_no_face
 	return real_name
 
@@ -110,6 +101,22 @@
 		if(id_card)
 			return id_card
 
+/mob/living/carbon/human/get_bankcard()
+	//Check hands
+	var/list/items_to_check = list()
+	if(get_active_held_item())
+		items_to_check += get_active_held_item()
+	if(get_inactive_held_item())
+		items_to_check += get_inactive_held_item()
+	if(wear_id)
+		items_to_check += wear_id
+	if(belt)
+		items_to_check += belt
+	for(var/obj/item/i in items_to_check)
+		var/obj/item/card/bank/bank_card = i.GetBankCard()
+		if(bank_card)
+			return bank_card
+
 /mob/living/carbon/human/get_id_in_hand()
 	var/obj/item/held_item = get_active_held_item()
 	if(!held_item)
@@ -146,10 +153,10 @@
 		to_chat(src, "<span class='warning'>You can't bring yourself to use a ranged weapon!</span>")
 		return FALSE
 
-/mob/living/carbon/human/proc/get_bank_account()
+/mob/living/carbon/proc/get_bank_account()
 	RETURN_TYPE(/datum/bank_account)
 	var/datum/bank_account/account
-	var/obj/item/card/id/I = get_idcard()
+	var/obj/item/card/bank/I = get_bankcard()
 
 	if(I && I.registered_account)
 		account = I.registered_account
@@ -181,3 +188,103 @@
 	destination.socks = socks
 	destination.socks_color = socks_color
 	destination.jumpsuit_style = jumpsuit_style
+
+/mob/living/carbon/human/proc/get_age()
+	var/obscured = check_obscured_slots()
+	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	if((obscured & ITEM_SLOT_ICLOTHING) && skipface || isipc(src) || isskeleton(src)) // sorry ladies no middle aged robots
+		return FALSE
+	if(islizard(src))
+		switch(age)
+			if(175 to INFINITY)
+				return "Ancient"
+			if(130 to 175)
+				return "Elderly"
+			if(100 to 130)
+				return "Old"
+			if(65 to 100)
+				return "Middle-Aged"
+			if(40 to 65)
+				return FALSE
+			if(18 to 40)
+				return "Young"
+	else if(isvox(src))
+		switch(age)
+			if(280 to INFINITY)
+				return "Ancient"
+			if(200 to 280)
+				return "Elderly"
+			if(160 to 200)
+				return "Old"
+			if(120 to 160)
+				return "Middle-Aged"
+			if(60 to 120)
+				return FALSE
+			if(18 to 60)
+				return "Young"
+	else if(iselzuose(src))
+		switch(age)
+			if(300 to INFINITY)
+				return "Ancient"
+			if(260 to 300)
+				return "Elderly"
+			if(160 to 260)
+				return "Old"
+			if(100 to 160)
+				return "Middle-Aged"
+			if(40 to 100)
+				return FALSE // most common age range
+			if(18 to 40)
+				return "Young"
+	else
+		switch(age)
+			if(70 to INFINITY)
+				return "Ancient"
+			if(60 to 70)
+				return "Elderly"
+			if(50 to 60)
+				return "Old"
+			if(40 to 50)
+				return "Middle-Aged"
+			if(24 to 40)
+				return FALSE // most common age range
+			if(18 to 24)
+				return "Young"
+		return "Puzzling"
+
+/mob/living/carbon/human/proc/get_generic_name(prefixed = FALSE, lowercase = FALSE)
+	var/final_string = ""
+	var/obscured = check_obscured_slots()
+	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	var/hide_features = (obscured & ITEM_SLOT_ICLOTHING) && skipface
+
+	if(generic_adjective && !hide_features)
+		final_string += "[generic_adjective] "
+
+	var/visible_age = get_age()
+	if(visible_age)
+		final_string += "[visible_age] "
+
+	final_string += "[dna.species.name] "
+
+	final_string += get_gender()
+
+	if(prefixed)
+		final_string = "\improper [final_string]"
+
+	if(lowercase)
+		final_string = lowertext(final_string)
+	return final_string
+
+/mob/living/carbon/human/proc/get_gender()
+	var/visible_gender = p_they()
+	switch(visible_gender)
+		if("he")
+			visible_gender = "Man"
+		if("she")
+			visible_gender = "Woman"
+		if("they")
+			visible_gender = "Person"
+		else
+			visible_gender = "Thing"
+	return visible_gender

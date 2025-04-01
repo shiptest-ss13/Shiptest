@@ -85,7 +85,7 @@
 /proc/attempt_cancel_surgery(datum/surgery/S, obj/item/I, mob/living/M, mob/user)
 	var/selected_zone = user.zone_selected
 	to_chat(user, "<span class='notice'>You begin to cancel \the [S].</span>")
-	if (!do_mob(user, M, 3 SECONDS))
+	if (!do_after(user, 3 SECONDS, M))
 		return
 
 	if(S.status == 1)
@@ -115,7 +115,9 @@
 
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			H.bleed_rate = max((H.bleed_rate - 3), 0)
+			var/obj/item/bodypart/BP = H.get_bodypart(check_zone(S.location))
+			if(BP)
+				BP.adjust_bleeding(-3)
 		M.surgeries -= S
 		user.visible_message("<span class='notice'>[user] closes [M]'s [parse_zone(selected_zone)] with [close_tool] and stops the surgery.</span>", \
 			"<span class='notice'>You close [M]'s [parse_zone(selected_zone)] with [close_tool] and stop the surgery.</span>")

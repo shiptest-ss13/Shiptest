@@ -2,6 +2,10 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 GLOBAL_DATUM_INIT(welding_sparks, /mutable_appearance, mutable_appearance('icons/effects/welding_effect.dmi', "welding_sparks", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
 
+GLOBAL_DATUM_INIT(cutting_effect, /mutable_appearance, mutable_appearance('icons/effects/cutting_effect.dmi', "cutting_effect", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
+
+GLOBAL_DATUM_INIT(advanced_cutting_effect, /mutable_appearance, mutable_appearance('icons/effects/cutting_effect.dmi', "advanced_cutting_effect", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
+
 GLOBAL_DATUM_INIT(cleaning_bubbles, /mutable_appearance, mutable_appearance('icons/effects/effects.dmi', "bubbles", ABOVE_MOB_LAYER, GAME_PLANE))
 
 GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
@@ -13,7 +17,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item
 	name = "item"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
 	///icon state name for inhand overlays
 	var/item_state = null
@@ -22,9 +26,23 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Icon file for right inhand overlays
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
-	var/supports_variations = null //This is a bitfield that defines what variations exist for bodyparts like Digi legs.
+	///If set it will add a world icon using item_state
+	var/world_file
 
-	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
+	///Handled by world_icon element
+	var/world_state
+	///Handled by world_icon element
+	var/inventory_state
+
+	///This is a bitfield that defines what variations exist for bodyparts like Digi legs.
+	var/supports_variations = null
+
+	///If set, kepori wearing this use this instead of their clothing file
+	var/kepori_override_icon
+	///If set, vox wearing this use this instead of their clothing file
+	var/vox_override_icon
+
+	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces green, and three replaces blue in the icon state.
 	var/list/greyscale_colors[3]
 	/// Needs to be a RGB-greyscale format icon state in all species' clothing icon files.
 	var/greyscale_icon_state
@@ -60,17 +78,28 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/usesound
 	///Used when yate into a mob
 	var/mob_throw_hit_sound
-	///Sound used when equipping the item into a valid slot
+	///Sound used when an item has been equipped into a valid slot
 	var/equip_sound
 	///Sound uses when picking the item up (into your hands)
 	var/pickup_sound
 	///Sound uses when dropping the item, or when its thrown.
 	var/drop_sound
+	///Sound used when an item is being equipped with equip_delay
+	var/equipping_sound
+	///Sound used when an item is being unequipped with equip_delay
+	var/unequipping_sound
+
+	///flags used for equip_delay
+	var/equip_self_flags = NONE
+
 	///Whether or not we use stealthy audio levels for this item's attack sounds
 	var/stealthy_audio = FALSE
 
-	///How large is the object, used for stuff like whether it can fit in backpacks or not
+	/// Weight class for how much storage capacity it uses and how big it physically is meaning storages can't hold it if their maximum weight class isn't as high as it.
 	var/w_class = WEIGHT_CLASS_NORMAL
+	/// Volume override for the item, otherwise automatically calculated from w_class.
+	var/w_volume
+
 	///This is used to determine on which slots an item can fit.
 	var/slot_flags = 0
 	pass_flags = PASSTABLE
@@ -125,6 +154,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/strip_delay = 40
 	///How long it takes to resist out of the item (cuffs and such)
 	var/breakouttime = 0
+	///How much power would this item use?
+	var/power_use_amount = POWER_CELL_USE_NORMAL
 
 	/// Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
 	var/list/attack_verb
@@ -152,6 +183,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/tool_behaviour = NONE
 	///How fast does the tool work
 	var/toolspeed = 1
+	/// how much damage does this item do when tearing down walls during deconstruction steps?
+	var/wall_decon_damage = 0
 
 	var/block_chance = 0
 	var/block_cooldown_time = 1 SECONDS
@@ -197,6 +230,17 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	/// What sound do we use when swinging?
 	var/swing_sfx = 'sound/weapons/punchmiss.ogg'
+	var/attack_cooldown = CLICK_CD_MELEE
+
+	/// Has the item been reskinned?
+	var/current_skin
+	/// List of options to reskin.
+	var/list/unique_reskin
+	/// If reskins change base icon state as well
+	var/unique_reskin_changes_base_icon_state = FALSE
+	/// If reskins change inhands as well
+	var/unique_reskin_changes_inhand = FALSE
+	var/unique_reskin_changes_name = FALSE
 
 /obj/item/Initialize()
 
@@ -223,6 +267,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		if(damtype == "brute")
 			hitsound = "swing_hit"
 
+	setup_reskinning()
+
 /obj/item/Destroy()
 	item_flags &= ~DROPDEL	//prevent reqdels
 	if(ismob(loc))
@@ -232,15 +278,56 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		qdel(X)
 	return ..()
 
+/// Called when an action associated with our item is deleted
+/obj/item/proc/on_action_deleted(datum/source)
+	SIGNAL_HANDLER
+
+	if(!(source in actions))
+		CRASH("An action ([source.type]) was deleted that was associated with an item ([src]), but was not found in the item's actions list.")
+
+	LAZYREMOVE(actions, source)
+
+
+/// Adds an item action to our list of item actions.
+/// Item actions are actions linked to our item, that are granted to mobs who equip us.
+/// This also ensures that the actions are properly tracked in the actions list and removed if they're deleted.
+/// Can be be passed a typepath of an action or an instance of an action.
+/obj/item/proc/add_item_action(action_or_action_type)
+
+	var/datum/action/action
+	if(ispath(action_or_action_type, /datum/action))
+		action = new action_or_action_type(src)
+	else if(istype(action_or_action_type, /datum/action))
+		action = action_or_action_type
+	else
+		CRASH("item add_item_action got a type or instance of something that wasn't an action.")
+
+	LAZYADD(actions, action)
+	RegisterSignal(action, COMSIG_PARENT_QDELETING, PROC_REF(on_action_deleted))
+	grant_action_to_bearer(action)
+	return action
+
+/// Grant the action to anyone who has this item equipped to an appropriate slot
+/obj/item/proc/grant_action_to_bearer(datum/action/action)
+	if(!ismob(loc))
+		return
+	var/mob/holder = loc
+	give_item_action(action, holder, holder.get_slot_by_item(src))
+
+/// Removes an instance of an action from our list of item actions.
+/obj/item/proc/remove_item_action(datum/action/action)
+	if(!action)
+		return
+
+	UnregisterSignal(action, COMSIG_PARENT_QDELETING)
+	LAZYREMOVE(actions, action)
+	qdel(action)
+
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
 	if(((src in target) && !target_self) || (!isturf(target.loc) && !isturf(target) && not_inside))
 		return 0
 	else
 		return 1
-
-/obj/item/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		qdel(src)
 
 /obj/item/ComponentInitialize()
 	. = ..()
@@ -254,6 +341,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			name = "sticky [name]"
 
 	updateEmbedding()
+
+	if(world_file)
+		AddElement(/datum/element/world_icon, null, world_file, icon)
 
 	if(GLOB.rpg_loot_items)
 		AddComponent(/datum/component/fantasy)
@@ -278,8 +368,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	abstract_move(null)
 	forceMove(T)
 
-/obj/item/examine(mob/user) //This might be spammy. Remove?
+/obj/item/examine(mob/user)
 	. = ..()
+
+	if(unique_reskin && !current_skin)
+		. += "<span class='notice'>Alt-click it to reskin it.</span>"
 
 	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
 
@@ -350,6 +443,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(anchored)
 		return
 
+	//check if the item is inside another item's storage
+	if(istype(loc, /obj/item/storage))
+		//if so, can we actually access it?
+		var/datum/component/storage/ourstorage = loc.GetComponent(/datum/component/storage)
+		if(!ourstorage.access_check())
+			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_HIDE_FROM, user)//you're not supposed to be in here right now, punk!
+			return
+
 	if(resistance_flags & ON_FIRE)
 		var/mob/living/carbon/C = user
 		var/can_handle_hot = FALSE
@@ -387,7 +488,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(grav > STANDARD_GRAVITY)
 		var/grav_power = min(3,grav - STANDARD_GRAVITY)
 		to_chat(user,"<span class='notice'>You start picking up [src]...</span>")
-		if(!do_mob(user,src,30*grav_power))
+		if(!do_after(user, 30*grav_power, src))
 			return
 
 
@@ -399,7 +500,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(throwing)
 		throwing.finalize(FALSE)
 	if(loc == user)
-		if(!allow_attack_hand_drop(user) || !user.temporarilyRemoveItemFromInventory(src))
+		if(!allow_attack_hand_drop(user) || !user.temporarilyRemoveItemFromInventory(src, use_unequip_delay = TRUE))
 			return
 
 	remove_outline()
@@ -456,14 +557,20 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 // afterattack() and attack() prototypes moved to _onclick/item_attack.dm for consistency
 
 /obj/item/proc/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
+	//Mostly shields
 	if((prob(final_block_chance) && COOLDOWN_FINISHED(src, block_cooldown)) || (prob(final_block_chance) && istype(src, /obj/item/shield)))
 		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
 		playsound(src, 'sound/weapons/effects/deflect.ogg', 100)
 		if(!istype(src, /obj/item/shield))
 			COOLDOWN_START(src, block_cooldown, block_cooldown_time)
-		return 1
-	return 0
+		return TRUE
+
+	var/signal_result = (SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, owner, hitby, damage, attack_type)) + prob(final_block_chance)
+	if(!signal_result)
+		return FALSE
+	if(hit_reaction_chance >= 0)
+		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
+	return signal_result
 
 /obj/item/proc/talk_into(mob/M, input, channel, spans, datum/language/language, list/message_mods)
 	return ITALICS | REDUCE_RANGE
@@ -514,12 +621,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/equipped(mob/user, slot, initial = FALSE)
 	SHOULD_CALL_PARENT(1)
 	visual_equipped(user, slot, initial)
-	SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot)
 	for(var/X in actions)
 		var/datum/action/A = X
 		if(item_action_slot_check(slot, user)) //some items only give their actions buttons when in a specific slot.
 			A.Grant(user)
 	item_flags |= IN_INVENTORY
+	SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot)
 	if(!initial)
 		if(equip_sound && (slot_flags & slot))
 			playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
@@ -527,9 +634,21 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
 	user.update_equipment_speed_mods()
 
-///sometimes we only want to grant the item's action if it's equipped in a specific slot.
-/obj/item/proc/item_action_slot_check(slot, mob/user)
-	if(slot == ITEM_SLOT_BACKPACK || slot == ITEM_SLOT_LEGCUFFED) //these aren't true slots, so avoid granting actions there
+/// Gives one of our item actions to a mob, when equipped to a certain slot
+/obj/item/proc/give_item_action(datum/action/action, mob/to_who, slot)
+	// Some items only give their actions buttons when in a specific slot.
+	if(!item_action_slot_check(slot, to_who))
+		// There is a chance we still have our item action currently,
+		// and are moving it from a "valid slot" to an "invalid slot".
+		// So call Remove() here regardless, even if excessive.
+		action.Remove(to_who)
+		return
+
+	action.Grant(to_who)
+
+/// Sometimes we only want to grant the item's action if it's equipped in a specific slot.
+/obj/item/proc/item_action_slot_check(slot, mob/user, datum/action/action)
+	if(slot & (ITEM_SLOT_BACKPACK|ITEM_SLOT_LEGCUFFED)) //these aren't true slots, so avoid granting actions there
 		return FALSE
 	return TRUE
 
@@ -690,7 +809,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if (callback) //call the original callback
 		. = callback.Invoke()
 	item_flags &= ~IN_INVENTORY
-	if(!pixel_y && !pixel_x)
+	if(!pixel_y && !pixel_x && !(item_flags & NO_PIXEL_RANDOM_DROP))
 		pixel_x = rand(-8,8)
 		pixel_y = rand(-8,8)
 
@@ -704,6 +823,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/get_belt_overlay() //Returns the icon used for overlaying the object on a belt
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state)
+
+/obj/item/proc/get_helmet_overlay() // returns the icon for overlaying on a helmet
+	return mutable_appearance('icons/mob/clothing/helmet_overlays.dmi', icon_state)
 
 /obj/item/proc/update_slot_icon()
 	if(!ismob(loc))
@@ -773,7 +895,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		. = ""
 
 /obj/item/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
-	return
+	return SEND_SIGNAL(src, COMSIG_ATOM_HITBY, AM, skipcatch, hitpush, blocked, throwingdatum)
 
 /obj/item/attack_hulk(mob/living/carbon/human/user)
 	return FALSE
@@ -784,6 +906,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	return 0
 
 /obj/item/mech_melee_attack(obj/mecha/M)
+	return 0
+
+/obj/item/attack_basic_mob(mob/living/basic/user, list/modifiers)
+	if (obj_flags & CAN_BE_HIT)
+		return ..()
 	return 0
 
 /obj/item/burn()
@@ -806,7 +933,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		..()
 
 /obj/item/proc/microwave_act(obj/machinery/microwave/M)
-	SEND_SIGNAL(src, COMSIG_ITEM_MICROWAVE_ACT, M)
+	if(SEND_SIGNAL(src, COMSIG_ITEM_MICROWAVE_ACT, M) & COMPONENT_SUCCESFUL_MICROWAVE)
+		return
 	if(istype(M) && M.dirty < 100)
 		M.dirty++
 
@@ -822,20 +950,25 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/set_force_string()
 	switch(force)
-		if(0 to 4)
+		if(0 to 3)
+			force_string = "pitiful"
+		if(3 to 6)
 			force_string = "very low"
-		if(4 to 7)
+		if(6 to 9)
 			force_string = "low"
-		if(7 to 10)
+		if(10 to 13) //12 is the force of a toolbox
 			force_string = "medium"
-		if(10 to 11)
+		if(13 to 16)
 			force_string = "high"
-		if(11 to 20) //12 is the force of a toolbox
+		if(16 to 20)
 			force_string = "robust"
 		if(20 to 25)
 			force_string = "very robust"
-		else
+		if(25 to 30)
 			force_string = "exceptionally robust"
+		else
+			force_string = "unfair"
+
 	last_force_string_check = force
 
 /obj/item/proc/openTip(location, control, params, user)
@@ -848,6 +981,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/MouseEntered(location, control, params)
 	. = ..()
+	SEND_SIGNAL(src, COMSIG_ITEM_MOUSE_ENTER, location, control, params)
 	if((item_flags & IN_INVENTORY || item_flags & IN_STORAGE) && usr.client.prefs.enable_tips && !QDELETED(src))
 		var/timedelay = usr.client.prefs.tip_delay/100
 		var/user = usr
@@ -862,7 +996,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	. = ..()
 	remove_outline()
 
-/obj/item/MouseExited()
+/obj/item/MouseExited(location,control,params)
+	SEND_SIGNAL(src, COMSIG_ITEM_MOUSE_EXIT, location, control, params)
 	deltimer(tip_timer)//delete any in-progress timer if the mouse is moved off the item before it finishes
 	closeToolTip(usr)
 	remove_outline()
@@ -886,8 +1021,16 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/remove_outline()
 	remove_filter(HOVER_OUTLINE_FILTER)
 
+/// Use the power of an attached component that posesses power handling, will return the signal bitflag.
+/obj/item/proc/item_use_power(use_amount, mob/user, check_only)
+	SHOULD_CALL_PARENT(TRUE)
+	return SEND_SIGNAL(src, COMSIG_ITEM_POWER_USE, use_amount, user, check_only)
+
 /// Called when a mob tries to use the item as a tool.Handles most checks.
 /obj/item/proc/use_tool(atom/target, mob/living/user, delay, amount=0, volume=0, datum/callback/extra_checks)
+	// we have no target, why are we even doing this?
+	if(isnull(target))
+		return
 	// No delay means there is no start message, and no reason to call tool_start_check before use_tool.
 	// Run the start check here so we wouldn't have to call it manually.
 	if(!delay && !tool_start_check(user, amount))
@@ -913,7 +1056,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		var/datum/callback/tool_check = CALLBACK(src, PROC_REF(tool_check_callback), user, amount, extra_checks)
 
 		if(ismob(target))
-			if(!do_mob(user, target, delay, extra_checks=tool_check))
+			if(!do_after(user, delay, target, extra_checks=tool_check))
 				return
 
 		else
@@ -985,6 +1128,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			dropped(M, FALSE)
 	return ..()
 
+/// Get an item's volume that it uses when being stored.
+/obj/item/proc/get_w_volume()
+	// if w_volume is 0 you fucked up.
+	return w_volume || AUTO_SCALE_VOLUME(w_class)
+
 /obj/item/proc/embedded(mob/living/carbon/human/embedded_mob)
 	return
 
@@ -1031,7 +1179,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  * * forced- Do we want this to go through 100%?
  */
 /obj/item/proc/tryEmbed(atom/target, forced=FALSE, silent=FALSE)
-	if(!isbodypart(target) && !iscarbon(target) && !isclosedturf(target))
+	if(!isbodypart(target) && !iscarbon(target))
 		return
 	if(!forced && !LAZYLEN(embedding))
 		return
@@ -1100,11 +1248,138 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 ///Intended for interactions with guns, like racking
 /obj/item/proc/unique_action(mob/living/user)
-	return
+	if(SEND_SIGNAL(src, COMSIG_ITEM_UNIQUE_ACTION, user))
+		return TRUE
 
+///Called before unique action, if any other associated items should do a unique action or override it.
+/obj/item/proc/pre_unique_action(mob/living/user)
+	if(SEND_SIGNAL(src,COMSIG_CLICK_UNIQUE_ACTION,user) & OVERRIDE_UNIQUE_ACTION)
+		return TRUE
+	return FALSE //return true if the proc should end here
+
+///Intended for interactions with guns, like swapping firemodes
+/obj/item/proc/secondary_action(mob/living/user)
+
+///Called before unique action, if any other associated items should do a secondary action or override it.
+/obj/item/proc/pre_secondary_action(mob/living/user)
+	if(SEND_SIGNAL(src,COMSIG_CLICK_SECONDARY_ACTION,user) & OVERRIDE_SECONDARY_ACTION)
+		return TRUE
+	return FALSE //return true if the proc should end here
 /**
  * Returns null if this object cannot be used to interact with physical writing mediums such as paper.
  * Returns a list of key attributes for this object interacting with paper otherwise.
  */
 /obj/item/proc/get_writing_implement_details()
 	return null
+
+/obj/item/proc/can_trigger_gun(mob/living/user)
+	if(!user.can_use_guns(src))
+		return FALSE
+	return TRUE
+
+/// Whether or not this item can be put into a storage item through attackby
+/obj/item/proc/attackby_storage_insert(datum/storage, atom/storage_holder, mob/user)
+	return TRUE
+
+/obj/item/proc/update_weight_class(new_w_class)
+	if(w_class == new_w_class)
+		return FALSE
+
+	var/old_w_class = w_class
+	w_class = new_w_class
+	SEND_SIGNAL(src, COMSIG_ITEM_WEIGHT_CLASS_CHANGED, old_w_class, new_w_class)
+	if(!isnull(loc))
+		SEND_SIGNAL(loc, COMSIG_ATOM_CONTENTS_WEIGHT_CLASS_CHANGED, src, old_w_class, new_w_class)
+	return TRUE
+
+/// How many different types of mats will be counted in a bite?
+#define MAX_MATS_PER_BITE 2
+
+/*
+ * On accidental consumption: when you somehow end up eating an item accidentally (currently, this is used for when items are hidden in food like bread or cake)
+ *
+ * The base proc will check if the item is sharp and has a decent force.
+ * Then, it checks the item's mat datums for the effects it applies afterwards.
+ * Then, it checks tiny items.
+ * After all that, it returns TRUE if the item is set to be discovered. Otherwise, it returns FALSE.
+ *
+ * This works similarily to /suicide_act: if you want an item to have a unique interaction, go to that item
+ * and give it an /on_accidental_consumption proc override. For a simple example of this, check out the nuke disk.
+ *
+ * Arguments
+ * * M - the mob accidentally consuming the item
+ * * user - the mob feeding M the item - usually, it's the same as M
+ * * source_item - the item that held the item being consumed - bread, cake, etc
+ * * discover_after - if the item will be discovered after being chomped (FALSE will usually mean it was swallowed, TRUE will usually mean it was bitten into and discovered)
+ */
+/obj/item/proc/on_accidental_consumption(mob/living/carbon/victim, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
+	if(get_sharpness() && force >= 5) //if we've got something sharp with a decent force (ie, not plastic)
+		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, force_scream))
+		victim.visible_message("<span class='warning'>[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!</span>", \
+							"<span class='boldwarning'>OH GOD! Was that a crunch? That didn't feel good at all!!</span>")
+
+		victim.apply_damage(max(15, force), BRUTE, BODY_ZONE_HEAD)
+		victim.losebreath += 2
+		if(tryEmbed(victim.get_bodypart(BODY_ZONE_CHEST), forced = TRUE)) //and if it embeds successfully in their chest, cause a lot of pain
+			victim.apply_damage(max(25, force*1.5), BRUTE, BODY_ZONE_CHEST)
+			victim.losebreath += 6
+			discover_after = FALSE
+		if(QDELETED(src)) // in case trying to embed it caused its deletion (say, if it's DROPDEL)
+			return
+		source_item?.reagents?.add_reagent(/datum/reagent/blood, 2)
+
+	else if(custom_materials?.len) //if we've got materials, lets see whats in it
+		/// How many mats have we found? You can only be affected by two material datums by default
+		var/found_mats = 0
+		/// How much of each material is in it? Used to determine if the glass should break
+		var/total_material_amount = 0
+
+		for(var/mats in custom_materials)
+			total_material_amount += custom_materials[mats]
+			if(found_mats >= MAX_MATS_PER_BITE)
+				continue //continue instead of break so we can finish adding up all the mats to the total
+
+			var/datum/material/discovered_mat = mats
+			if(discovered_mat.on_accidental_mat_consumption(victim, source_item))
+				found_mats++
+
+		//if there's glass in it and the glass is more than 60% of the item, then we can shatter it
+		if(custom_materials[SSmaterials.GetMaterialRef(/datum/material/glass)] >= total_material_amount * 0.60)
+			if(prob(66)) //66% chance to break it
+				/// The glass shard that is spawned into the source item
+				var/obj/item/shard/broken_glass = new /obj/item/shard(loc)
+				broken_glass.name = "broken [name]"
+				broken_glass.desc = "This used to be \a [name], but it sure isn't anymore."
+				playsound(victim, "shatter", 25, TRUE)
+				qdel(src)
+				if(QDELETED(source_item))
+					broken_glass.on_accidental_consumption(victim, user)
+			else //33% chance to just "crack" it (play a sound) and leave it in the bread
+				playsound(victim, "shatter", 15, TRUE)
+			discover_after = FALSE
+
+		victim.adjust_disgust(33)
+		victim.visible_message(
+			"<span class='warning'>[victim] looks like [victim.p_theyve()] just bitten into something hard.</span>", \
+			"<span class='warning'>Eugh! Did I just bite into something?</span>")
+
+	else if(w_class == WEIGHT_CLASS_TINY) //small items like soap or toys that don't have mat datums
+		/// victim's chest (for cavity implanting the item)
+		var/obj/item/bodypart/chest/victim_cavity = victim.get_bodypart(BODY_ZONE_CHEST)
+		if(victim_cavity.cavity_item)
+			victim.vomit(5, FALSE, FALSE, distance = 0)
+			forceMove(drop_location())
+			to_chat(victim, "<span class='warning'>You vomit up a [name]! [source_item? "Was that in \the [source_item]?" : ""]</span>")
+		else
+			victim.transferItemToLoc(src, victim, TRUE)
+			victim.losebreath += 2
+			victim_cavity.cavity_item = src
+			to_chat(victim, "<span class='warning'>You swallow hard. [source_item? "Something small was in \the [source_item]..." : ""]</span>")
+		discover_after = FALSE
+
+	else
+		to_chat(victim, "<span class='warning'>[source_item? "Something strange was in the \the [source_item]..." : "I just bit something strange..."] </span>")
+
+	return discover_after
+
+#undef MAX_MATS_PER_BITE

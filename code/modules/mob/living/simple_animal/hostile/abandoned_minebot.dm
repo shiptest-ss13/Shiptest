@@ -9,7 +9,7 @@
 	status_flags = CANSTUN|CANKNOCKDOWN|CANPUSH
 	mouse_opacity = MOUSE_OPACITY_ICON
 	a_intent = INTENT_HARM
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	move_to_delay = 10
 	health = 70
@@ -35,14 +35,14 @@
 	minimum_distance = 1
 	icon_state = "mining_drone_offense"
 	faction = list("mining", "turret")
-	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/effect/spawner/lootdrop/minebot)
+	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/effect/spawner/random/minebot)
 	projectiletype = /obj/projectile/kinetic/miner/weak
 
 
 /obj/projectile/kinetic/miner/weak
 	damage = 15
 
-/obj/effect/spawner/lootdrop/minebot
+/obj/effect/spawner/random/minebot
 	loot = list(/obj/item/borg/upgrade/modkit/minebot_passthrough = 15,
 				/obj/item/borg/upgrade/modkit/chassis_mod = 15,
 				/obj/item/borg/upgrade/modkit/tracer = 15,
