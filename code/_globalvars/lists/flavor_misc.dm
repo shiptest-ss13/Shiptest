@@ -198,13 +198,8 @@ GLOBAL_LIST_INIT(uplink_spawn_loc_list, list(UPLINK_PDA, UPLINK_RADIO, UPLINK_PE
 #define PREF_CIG_ROBUSTGOLD "Robust Gold Cigarettes"
 #define PREF_CIG_CARP "Carp Classic Cigarettes"
 #define PREF_CIG_MIDORI "Midori Taboko Rollies"
-#define PREF_CIGAR "Premium Cigars"
-#define PREF_CIGAR_SOLAR "Solarian Cigars"
-#define PREF_CIGAR_COHIBA "Cohiba Cigars"
-#define PREF_VAPE "Vape Pen"
-#define PREF_PIPE "Fancy Pipe"
 
-GLOBAL_LIST_INIT(valid_smoke_types, sortList(list(PREF_CIG_SPACE, PREF_CIG_DROMEDARY, PREF_CIG_UPLIFT, PREF_CIG_ROBUST, PREF_CIG_ROBUSTGOLD, PREF_CIG_CARP, PREF_CIG_MIDORI, PREF_CIGAR, PREF_CIGAR_SOLAR, PREF_CIGAR_COHIBA, PREF_VAPE, PREF_PIPE)))
+GLOBAL_LIST_INIT(valid_smoke_types, sortList(list(PREF_CIG_SPACE, PREF_CIG_DROMEDARY, PREF_CIG_UPLIFT, PREF_CIG_ROBUST, PREF_CIG_ROBUSTGOLD, PREF_CIG_CARP, PREF_CIG_MIDORI)))
 
 	//Female Uniforms
 GLOBAL_LIST_EMPTY(female_clothing_icons)
