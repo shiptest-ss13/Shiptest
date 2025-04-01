@@ -38,6 +38,10 @@
 	bodytemp_cold_damage_limit = (HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 50) // about -50c
 	ass_image = 'icons/ass/assplasma.png'
 
+/datum/species/plasmaman/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	. = ..()
+	C.transform.Scale(0.5, 0.7)
+
 /datum/species/plasmaman/spec_life(mob/living/carbon/human/H)
 	var/datum/gas_mixture/environment = H.loc.return_air()
 	var/atmos_sealed = FALSE
@@ -183,7 +187,6 @@
 	H.equipOutfit(O, visualsOnly)
 	H.internal = H.get_item_for_held_index(2)
 	H.update_internals_hud_icon(1)
-	H.transform.Scale(0.5, 0.7)
 	return 0
 
 /datum/species/plasmaman/random_name(gender,unique,lastname)
