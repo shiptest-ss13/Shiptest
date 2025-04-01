@@ -255,7 +255,7 @@
 		/obj/item/mortal_shell/smoke,
 	)
 
-/obj/machinery/artillery/mortar/MouseDrop(atom/over_object)
+/obj/machinery/artillery/mortar/MouseDrop(atom/over_object, src_location, over_location, src_control, over_control, params)
 	. = ..()
 	var/mob/living/user = usr
 	if(!istype(user) || user.incapacitated() || !Adjacent(user))
