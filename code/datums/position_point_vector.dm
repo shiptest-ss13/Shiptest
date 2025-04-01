@@ -230,7 +230,7 @@
 	last_move = world.time
 	START_PROCESSING(SSprojectiles, src)
 
-/datum/point/vector/processed/process()
+/datum/point/vector/processed/process(seconds_per_tick)
 	if(paused)
 		last_move += world.time - last_process
 		last_process = world.time

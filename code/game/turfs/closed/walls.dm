@@ -1,5 +1,3 @@
-#define MAX_DENT_DECALS 15
-
 /turf/closed/wall
 	name = "wall"
 	desc = "A huge chunk of metal used to separate rooms."
@@ -19,15 +17,20 @@
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
-	///lower numbers are harder. Used to determine the probability of a hulk smashing through.
-	var/hardness = 40
-	var/slicing_duration = 100  //default time taken to slice the wall
+	breakdown_duration = 25
 	var/sheet_type = /obj/item/stack/sheet/metal
 	var/sheet_amount = 2
 	var/obj/girder_type = /obj/structure/girder
-	var/break_sound = 'sound/items/welder.ogg'
 
-	var/list/dent_decals
+	min_dam = 8
+	max_integrity = 400
+	brute_mod = 1
+	burn_mod = 1
+	var/repair_amount = 50
+
+	mob_smash_flags = ENVIRONMENT_SMASH_WALLS
+	proj_bonus_damage_flags = PROJECTILE_BONUS_DAMAGE_WALLS
+
 
 /turf/closed/wall/yesdiag
 	icon_state = "wall-255"
@@ -47,18 +50,6 @@
 		fixed_underlay = string_assoc_list(fixed_underlay)
 		underlays += underlay_appearance
 
-/turf/closed/wall/copyTurf(turf/T, copy_air, flags)
-	. = ..()
-	var/turf/closed/wall/wall_copy = T
-	if(LAZYLEN(dent_decals))
-		wall_copy.dent_decals = dent_decals.Copy()
-		wall_copy.update_appearance()
-
-/turf/closed/wall/update_overlays()
-	. = ..()
-	for(var/decal in dent_decals)
-		. += decal
-
 /turf/closed/wall/examine(mob/user)
 	. += ..()
 	. += deconstruction_hints(user)
@@ -69,7 +60,7 @@
 /turf/closed/wall/attack_tk()
 	return
 
-/turf/closed/wall/proc/dismantle_wall(devastated = FALSE)
+/turf/closed/wall/dismantle_wall(devastated = FALSE)
 	create_sheets()
 	var/obj/newgirder = create_girder()
 	if(devastated)
@@ -81,10 +72,7 @@
 			transfer_fingerprints_to(newgirder)
 		playsound(src, break_sound, 100, TRUE)
 
-	for(var/obj/structure/sign/poster/P in src.contents) //Eject contents!
-		P.roll_and_drop(src)
-
-	ScrapeAway()
+	..()
 
 /turf/closed/wall/proc/create_sheets()
 	if(sheet_type)
@@ -96,117 +84,27 @@
 		return new girder_type(src)
 	return null
 
-/turf/closed/wall/ex_act(severity, target)
-	if(target == src)
-		dismantle_wall(devastated = TRUE)
+/turf/closed/wall/attack_override(obj/item/W, mob/user, turf/loc)
+	if(!iswallturf(src))
 		return
-	switch(severity)
-		if(EXPLODE_DEVASTATE)
-			//SN src = null
-			var/turf/NT = ScrapeAway()
-			NT.contents_explosion(severity, target)
-			return
-		if(EXPLODE_HEAVY)
-			if (prob(50))
-				dismantle_wall(devastated = TRUE)
-			else
-				dismantle_wall(devastated = FALSE)
-		if(EXPLODE_LIGHT)
-			if (prob(hardness))
-				dismantle_wall(devastated = FALSE)
-	if(!density)
-		..()
-
-/turf/closed/wall/mech_melee_attack(obj/mecha/M)
-	M.do_attack_animation(src)
-	switch(M.damtype)
-		if(BRUTE)
-			playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
-			M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
-							"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
-			if(prob(hardness + M.force) && M.force > 20)
-				dismantle_wall(devastated = TRUE)
-				playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-			else
-				add_dent(WALL_DENT_HIT)
-		if(BURN)
-			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
-		if(TOX)
-			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
-
-/turf/closed/wall/attack_paw(mob/living/user)
-	user.changeNext_move(CLICK_CD_MELEE)
-	return attack_hand(user)
-
-
-/turf/closed/wall/attack_animal(mob/living/simple_animal/M)
-	M.changeNext_move(CLICK_CD_MELEE)
-	M.do_attack_animation(src)
-	if((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS))
-		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		dismantle_wall(devastated = TRUE)
+	if(try_clean(W, user, loc) || try_wallmount(W, user, loc) || try_decon(W, user, loc) || try_destroy(W, user, loc))
 		return
-
-/turf/closed/wall/attack_hulk(mob/living/carbon/user)
-	..()
-	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]
-	if(!arm || arm.bodypart_disabled)
-		return
-	if(prob(hardness))
-		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
-		dismantle_wall(devastated = TRUE)
-	else
-		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
-		add_dent(WALL_DENT_HIT)
-		user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-					"<span class='danger'>You smash \the [src]!</span>", \
-					"<span class='hear'>You hear a booming smash!</span>")
-	return TRUE
-
-/turf/closed/wall/attack_hand(mob/user)
-	. = ..()
-	if(.)
-		return
-	user.changeNext_move(CLICK_CD_MELEE)
-	to_chat(user, "<span class='notice'>You push the wall but nothing happens!</span>")
-	playsound(src, 'sound/weapons/genhit.ogg', 25, TRUE)
-	add_fingerprint(user)
-
-/turf/closed/wall/attackby(obj/item/W, mob/user, params)
-	user.changeNext_move(CLICK_CD_MELEE)
-	if (!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
-		return
-
-	//get the user's location
-	if(!isturf(user.loc))
-		return	//can't do this stuff whilst inside objects and such
-
-	add_fingerprint(user)
-
-	var/turf/T = user.loc	//get user's location for delay checks
-
-	//the istype cascade has been spread among various procs for easy overriding
-	if(try_clean(W, user, T) || try_wallmount(W, user, T) || try_decon(W, user, T) || try_destroy(W, user, T))
-		return
-
-	return ..()
 
 /turf/closed/wall/proc/try_clean(obj/item/W, mob/user, turf/T)
-	if((user.a_intent != INTENT_HELP) || !LAZYLEN(dent_decals))
+	if((user.a_intent != INTENT_HELP))
 		return FALSE
 
 	if(W.tool_behaviour == TOOL_WELDER)
-		if(!W.tool_start_check(user, amount=0))
+		if(!W.tool_start_check(user, amount=0) || (integrity >= max_integrity))
 			return FALSE
 
 		to_chat(user, "<span class='notice'>You begin fixing dents on the wall...</span>")
-		if(W.use_tool(src, user, 0, volume=100))
+		if(W.use_tool(src, user, breakdown_duration, volume=100))
 			if(iswallturf(src) && LAZYLEN(dent_decals))
 				to_chat(user, "<span class='notice'>You fix some dents on the wall.</span>")
 				dent_decals = null
 				update_appearance()
+			alter_integrity(repair_amount)
 			return TRUE
 
 	return FALSE
@@ -223,33 +121,6 @@
 		place_poster(W,user)
 		return TRUE
 
-	return FALSE
-
-/turf/closed/wall/proc/try_decon(obj/item/I, mob/user, turf/T)
-	if(I.tool_behaviour == TOOL_WELDER)
-		if(!I.tool_start_check(user, amount=0))
-			return FALSE
-
-		to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
-		if(I.use_tool(src, user, slicing_duration, volume=100))
-			if(iswallturf(src))
-				to_chat(user, "<span class='notice'>You remove the outer plating.</span>")
-				dismantle_wall()
-			return TRUE
-
-	return FALSE
-
-
-/turf/closed/wall/proc/try_destroy(obj/item/I, mob/user, turf/T)
-	if(istype(I, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>You begin to smash though [src]...</span>")
-		if(do_after(user, 50, target = src))
-			if(!iswallturf(src))
-				return TRUE
-			I.play_tool_sound(src)
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
-			dismantle_wall()
-			return TRUE
 	return FALSE
 
 /turf/closed/wall/singularity_pull(S, current_size)
@@ -295,20 +166,5 @@
 			return TRUE
 	return FALSE
 
-/turf/closed/wall/proc/add_dent(denttype, x=rand(-8, 8), y=rand(-8, 8))
-	if(LAZYLEN(dent_decals) >= MAX_DENT_DECALS)
-		return
 
-	var/mutable_appearance/decal = mutable_appearance('icons/effects/effects.dmi', "", BULLET_HOLE_LAYER)
-	switch(denttype)
-		if(WALL_DENT_SHOT)
-			decal.icon_state = "bullet_hole"
-		if(WALL_DENT_HIT)
-			decal.icon_state = "impact[rand(1, 3)]"
 
-	decal.pixel_x = x
-	decal.pixel_y = y
-	LAZYADD(dent_decals, decal)
-	update_appearance()
-
-#undef MAX_DENT_DECALS

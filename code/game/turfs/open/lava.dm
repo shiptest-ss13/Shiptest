@@ -65,8 +65,8 @@
 	if(burn_stuff(AM))
 		START_PROCESSING(SSobj, src)
 
-/turf/open/lava/process()
-	if(!burn_stuff())
+/turf/open/lava/process(seconds_per_tick)
+	if(!burn_stuff(null, seconds_per_tick))
 		STOP_PROCESSING(SSobj, src)
 
 /turf/open/lava/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
@@ -141,7 +141,7 @@
 	return LAZYLEN(found_safeties)
 
 
-/turf/open/lava/proc/burn_stuff(AM)
+/turf/open/lava/proc/burn_stuff(AM, seconds_per_tick = 1)
 	. = 0
 
 	if(is_safe())
@@ -164,12 +164,12 @@
 				O.resistance_flags &= ~FIRE_PROOF
 			if(O.armor.fire > 50) //obj with 100% fire armor still get slowly burned away.
 				O.armor = O.armor.setRating(fire = 50)
-			O.fire_act(10000, 1000)
+			O.fire_act(10000, 1000 * seconds_per_tick)
 
 		else if (isliving(thing))
 			. = 1
 			var/mob/living/L = thing
-			if(L.movement_type & FLYING)
+			if(L.movement_type & FLYING || L.throwing)
 				continue	//YOU'RE FLYING OVER IT
 			var/buckle_check = L.buckling
 			if(!buckle_check)
@@ -197,9 +197,9 @@
 			if("lava" in L.weather_immunities)
 				continue
 
-			L.adjustFireLoss(20)
+			L.adjustFireLoss(20 * seconds_per_tick)
 			if(L) //mobs turning into object corpses could get deleted here.
-				L.adjust_fire_stacks(20)
+				L.adjust_fire_stacks(20 * seconds_per_tick)
 				L.IgniteMob()
 
 /turf/open/lava/smooth

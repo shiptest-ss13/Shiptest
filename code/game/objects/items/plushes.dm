@@ -38,7 +38,7 @@
 	. = ..()
 	if(should_squeak)
 		AddComponent(/datum/component/squeak, squeak_override)
-	AddElement(/datum/element/bed_tuckable, 6, -5, 90)
+	AddElement(/datum/element/bed_tuckable, 6, -5, 90, FALSE, FALSE)
 
 	//have we decided if Pinocchio goes in the blue or pink aisle yet?
 	if(gender == NEUTER)
@@ -564,7 +564,7 @@
 	. = ..()
 	START_PROCESSING(SSprocessing, src)
 
-/obj/item/toy/plush/goatplushie/angry/process()
+/obj/item/toy/plush/goatplushie/angry/process(seconds_per_tick)
 	if (prob(25) && !target)
 		var/list/targets_to_pick_from = list()
 		for(var/mob/living/carbon/C in view(7, src))
@@ -643,7 +643,7 @@
 
 /obj/item/toy/plush/moth/lovers
 	name = "lovers moth plushie"
-	desc = "An adorable mothperson plushy. It's a loveley bug!"
+	desc = "An adorable mothperson plushy. It's a lovely bug!"
 	icon_state = "moffplush_lovers"
 
 /obj/item/toy/plush/moth/whitefly
@@ -864,42 +864,43 @@
 	base_overlay_among.appearance_flags = RESET_COLOR
 	add_overlay(base_overlay_among)
 
-/obj/effect/spawner/lootdrop/plushie
-	loot = list (
-	/obj/item/toy/plush/beeplushie,
-	/obj/item/toy/plush/blahaj,
-	/obj/item/toy/plush/carpplushie,
-	/obj/item/toy/plush/flushed,
-	/obj/item/toy/plush/kari,
-	/obj/item/toy/plush/lizardplushie,
-	/obj/item/toy/plush/mora,
-	/obj/item/toy/plush/realgoat,
-	/obj/item/toy/plush/rilena,
-	/obj/item/toy/plush/sharai,
-	/obj/item/toy/plush/slimeplushie,
-	/obj/item/toy/plush/snakeplushie,
-	/obj/item/toy/plush/spider,
-	/obj/item/toy/plush/tali,
-	/obj/item/toy/plush/xader,
-	/obj/effect/spawner/lootdrop/plushie/moth // fair chances
-	)
+/obj/item/toy/plush/frederick
+	name = "Frederick plushie"
+	desc = "A plushie of Frederick, a lovable dragon head cricket."
+	icon_state = "plushie_frederick"
+	gender = MALE
 
-/obj/effect/spawner/lootdrop/plushie/moth
-	loot = list (
-	/obj/item/toy/plush/moth,
-	/obj/item/toy/plush/moth/monarch,
-	/obj/item/toy/plush/moth/luna,
-	/obj/item/toy/plush/moth/atlas,
-	/obj/item/toy/plush/moth/redish,
-	/obj/item/toy/plush/moth/royal,
-	/obj/item/toy/plush/moth/gothic,
-	/obj/item/toy/plush/moth/lovers,
-	/obj/item/toy/plush/moth/whitefly,
-	/obj/item/toy/plush/moth/punished,
-	/obj/item/toy/plush/moth/firewatch,
-	/obj/item/toy/plush/moth/deadhead,
-	/obj/item/toy/plush/moth/poison,
-	/obj/item/toy/plush/moth/ragged,
-	/obj/item/toy/plush/moth/snow,
-	/obj/item/toy/plush/moth/moonfly
+/obj/item/toy/plush/landmine
+	name = "\improper G-80 Landmine plushie"
+	desc = "A plushie depicting an adorable anti-infantry explosive. Just don't step on it."
+	icon = 'icons/obj/landmine.dmi'
+	icon_state = "mine_armed"
+	should_squeak = FALSE
+
+/obj/item/toy/plush/landmine/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+		COMSIG_ATOM_EXITED = PROC_REF(on_exited),
 	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/item/toy/plush/landmine/proc/on_entered(datum/source, atom/movable/arrived)
+	SIGNAL_HANDLER
+	if(!(arrived.movement_type == GROUND))
+		return
+
+	if(ismob(arrived))
+		var/mob/living/fool = arrived
+		fool.do_alert_animation(fool)
+		fool.Immobilize(15 DECISECONDS, TRUE) // Shorter because it's fake
+		to_chat(fool, span_userdanger("You step on \the [src] and freeze."))
+		visible_message(span_danger("[icon2html(src, viewers(src))] *click*"))
+		playsound(src, 'sound/machines/click.ogg', 100, TRUE)
+
+/obj/item/toy/plush/landmine/proc/on_exited(datum/source, atom/movable/gone)
+	SIGNAL_HANDLER
+	if(!isturf(loc) || iseffect(gone) || istype(gone, /obj/item/mine))
+		return
+	playsound(src, 'sound/items/mine_activate_short.ogg', 80, FALSE)
+

@@ -44,18 +44,6 @@
 	result = /obj/item/reagent_containers/food/snacks/sundae
 	subcategory = CAT_ICE
 
-/datum/crafting_recipe/food/honkdae
-	name ="Honkdae"
-	reqs = list(
-		/datum/reagent/consumable/cream = 5,
-		/obj/item/clothing/mask/gas/clown_hat = 1,
-		/obj/item/reagent_containers/food/snacks/grown/cherries = 1,
-		/obj/item/reagent_containers/food/snacks/grown/banana = 2,
-		/obj/item/reagent_containers/food/snacks/icecream = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/honkdae
-	subcategory = CAT_ICE
-
 /datum/crafting_recipe/food/cornuto
 	name = "Cornuto"
 	reqs = list(
@@ -182,28 +170,8 @@
 	result = /obj/item/reagent_containers/food/snacks/snowcones/fruitsalad
 	subcategory = CAT_ICE
 
-/datum/crafting_recipe/food/mime_sc
-	name = "Mime snowcone"
-	reqs = list(
-		/obj/item/reagent_containers/food/drinks/sillycup = 1,
-		/datum/reagent/consumable/ice = 15,
-		/datum/reagent/consumable/nothing = 5
-	)
-	result = /obj/item/reagent_containers/food/snacks/snowcones/mime
-	subcategory = CAT_ICE
-
-/datum/crafting_recipe/food/clown_sc
-	name = "Clown snowcone"
-	reqs = list(
-		/obj/item/reagent_containers/food/drinks/sillycup = 1,
-		/datum/reagent/consumable/ice = 15,
-		/datum/reagent/consumable/laughter = 5
-	)
-	result = /obj/item/reagent_containers/food/snacks/snowcones/clown
-	subcategory = CAT_ICE
-
 /datum/crafting_recipe/food/soda_sc
-	name = "Space Cola snowcone"
+	name = "Master Cola snowcone"
 	reqs = list(
 		/obj/item/reagent_containers/food/drinks/sillycup = 1,
 		/datum/reagent/consumable/ice = 15,
@@ -213,7 +181,7 @@
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/spacemountainwind_sc
-	name = "Space Mountain Wind snowcone"
+	name = "Comet Trail snowcone"
 	reqs = list(
 		/obj/item/reagent_containers/food/drinks/sillycup = 1,
 		/datum/reagent/consumable/ice = 15,
@@ -223,7 +191,7 @@
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/pwrgame_sc
-	name = "Pwrgame snowcone"
+	name = "Pacfuel snowcone"
 	reqs = list(
 		/obj/item/reagent_containers/food/drinks/sillycup = 1,
 		/datum/reagent/consumable/ice = 15,

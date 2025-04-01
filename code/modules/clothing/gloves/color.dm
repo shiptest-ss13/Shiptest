@@ -83,12 +83,12 @@
 		qdel(src)
 
 
-/obj/item/clothing/gloves/color/fyellow                             //Cheap Chinese Crap
+/obj/item/clothing/gloves/color/fyellow
 	desc = "These gloves are cheap knockoffs of the coveted ones - no way this can end badly."
 	name = "budget insulated gloves"
 	icon_state = "yellow"
 	item_state = "ygloves"
-	siemens_coefficient = 1			//Set to a default of 1, gets overridden in Initialize()
+	siemens_coefficient = 1	//Set to a default of 1, gets overridden in Initialize()
 	permeability_coefficient = 0.05
 	resistance_flags = NONE
 
@@ -190,7 +190,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 
 /obj/item/clothing/gloves/color/captain/nt
-	desc = "Regal blue gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier, and armoured bracers. Swanky."
+	desc = "Regal blue gloves with gold trim and a fire and acid-resistant coating. Swanky."
 	name = "captain's gloves"
 	icon_state = "captainnt"
 
@@ -235,6 +235,11 @@
 	permeability_coefficient = 0.3
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
+/obj/item/clothing/gloves/color/latex/nitrile/inteq
+	name = "green nitrile gloves"
+	desc = "Thick sterile gloves that reach up to the elbows, colored in a pine green shade. Transfers combat medic knowledge into the user via nanochips."
+	icon_state = "nitrile_inteq"
+
 /obj/item/clothing/gloves/color/latex/engineering
 	name = "tinker's gloves"
 	desc = "Overdesigned engineering gloves that have automated construction subrutines dialed in, allowing for faster construction while worn."
@@ -259,26 +264,9 @@
 	item_state = "lgloves"
 	custom_price = 200
 
-/obj/effect/spawner/lootdrop/gloves
-	name = "random gloves"
-	desc = "These gloves are supposed to be a random color..."
-	icon = 'icons/obj/clothing/gloves.dmi'
-	icon_state = "random_gloves"
-	loot = list(
-		/obj/item/clothing/gloves/color/orange = 1,
-		/obj/item/clothing/gloves/color/red = 1,
-		/obj/item/clothing/gloves/color/blue = 1,
-		/obj/item/clothing/gloves/color/purple = 1,
-		/obj/item/clothing/gloves/color/green = 1,
-		/obj/item/clothing/gloves/color/grey = 1,
-		/obj/item/clothing/gloves/color/light_brown = 1,
-		/obj/item/clothing/gloves/color/brown = 1,
-		/obj/item/clothing/gloves/color/white = 1,
-		/obj/item/clothing/gloves/color/rainbow = 1,
-		)
-
 /obj/item/clothing/gloves/maid
 	name = "maid arm covers"
 	desc = "Cylindrical looking tubes that go over your arm, weird."
 	icon_state = "maid_arms"
 	item_state = "lgloves"
+	supports_variations = VOX_VARIATION

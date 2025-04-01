@@ -13,13 +13,13 @@
 	desc = "USE A WEEL GUN"
 	icon_state= "84mm-hedp"
 	damage = 80
-	var/anti_armour_damage = 200
+	var/anti_armour_damage = 120
 	armour_penetration = 100
-	dismemberment = 100
+	dismemberment = 30
 
 /obj/projectile/bullet/a84mm/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(target, 1, 1, 2, 1, 0, flame_range = 4)
+	explosion(target, 0, 1, 2, 1, 0, flame_range = 4)
 
 	if(ismecha(target))
 		var/obj/mecha/M = target
@@ -38,10 +38,7 @@
 
 /obj/projectile/bullet/a84mm_he/on_hit(atom/target, blocked=0)
 	..()
-	if(!isliving(target)) //if the target isn't alive, so is a wall or something
-		explosion(target, 0, 1, 2, 4)
-	else
-		explosion(target, 0, 0, 2, 4)
+	explosion(target, 0, 1, 2, 4)
 	return BULLET_ACT_HIT
 
 /obj/projectile/bullet/a84mm_br

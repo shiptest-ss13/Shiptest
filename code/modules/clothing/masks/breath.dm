@@ -14,6 +14,14 @@
 	visor_flags_cover = MASKCOVERSMOUTH
 	resistance_flags = NONE
 
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_MASK
+	equip_delay_other = EQUIP_DELAY_MASK * 1.5
+	strip_delay = EQUIP_DELAY_MASK * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
+
 /obj/item/clothing/mask/breath/attack_self(mob/user)
 	adjustmask(user)
 
@@ -36,3 +44,8 @@
 	permeability_coefficient = 0.01
 	equip_delay_other = 10
 
+/obj/item/clothing/mask/balaclava/inteq //inteq needs a faction clothing file badly but it's out of scope for this PR -apogee
+	name = "IRMG combat balaclava"
+	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot! This one is a variataion commonly used by the IRMG to protect it's members idenites."
+	icon_state = "inteq_balaclava"
+	item_state = "inteq_balaclava"

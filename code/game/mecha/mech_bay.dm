@@ -49,7 +49,7 @@
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Base recharge rate at <b>[max_charge]J</b> per cycle.</span>"
 
-/obj/machinery/mech_bay_recharge_port/process()
+/obj/machinery/mech_bay_recharge_port/process(seconds_per_tick)
 	if(machine_stat & NOPOWER || !recharge_console)
 		return
 	if(!recharging_mech)
@@ -134,7 +134,7 @@
 		return
 	recharge_port = locate(/obj/machinery/mech_bay_recharge_port) in range(1)
 	if(!recharge_port)
-		for(var/D in GLOB.cardinals)
+		for(var/D in GLOB.alldirs)
 			var/turf/A = get_step(src, D)
 			A = get_step(A, D)
 			recharge_port = locate(/obj/machinery/mech_bay_recharge_port) in A

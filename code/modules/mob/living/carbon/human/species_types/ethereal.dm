@@ -14,22 +14,24 @@
 	mutantstomach = /obj/item/organ/stomach/ethereal
 	mutanttongue = /obj/item/organ/tongue/ethereal
 	siemens_coeff = 0.5 //They thrive on energy
-	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
 	exotic_bloodtype = "E"
-	damage_overlay_type = "" //We are too cool for regular damage overlays
 	species_age_max = 300
 	species_traits = list(DYNCOLORS, EYECOLOR, HAIR, FACEHAIR)
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
 	sexes = FALSE //no fetish content allowed
 	toxic_food = NONE
 	// Body temperature for ethereals is much higher then humans as they like hotter environments
 	bodytemp_normal = (HUMAN_BODYTEMP_NORMAL + 50)
-	bodytemp_heat_damage_limit = FIRE_MINIMUM_TEMPERATURE_TO_SPREAD // about 150C
+	bodytemp_heat_damage_limit = (HUMAN_BODYTEMP_NORMAL + 65)
 	// Cold temperatures hurt faster as it is harder to move with out the heat energy
-	bodytemp_cold_damage_limit = (T20C - 10) // about 10c
+	bodytemp_cold_damage_limit = (HUMAN_BODYTEMP_NORMAL - 20)
+
+	min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 10)
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 55
+
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
 	mutant_bodyparts = list("elzu_horns", "tail_elzu")
@@ -146,7 +148,7 @@
 		_human.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
 		_human.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
 		_human.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
-		_human.emote("scream")
+		_human.force_scream()
 		_human.remove_status_effect(/datum/status_effect/rooted)
 		return
 
@@ -156,8 +158,11 @@
 		var/turf/terrain = get_turf(_human)
 		if(_human.has_status_effect(/datum/status_effect/rooted))
 			return FALSE
-		if(is_type_in_list(terrain,GOOD_SOIL))
+		if(is_type_in_list(terrain, GOOD_SOIL))
 			return TRUE
+		for(var/atom/movable/thing in terrain.contents)
+			if(is_type_in_list(thing, list(/obj/machinery/hydroponics/wooden, /obj/machinery/hydroponics/soil)))
+				return TRUE
 		return FALSE
 
 /datum/species/elzuose/random_name(gender,unique,lastname)
@@ -250,16 +255,12 @@
 				_human.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 2)
 			if(_human.health > 10.5)
 				apply_damage(0.2, TOX, null, null, _human)
-			brutemod = 1.75
 		if(ELZUOSE_CHARGE_LOWPOWER to ELZUOSE_CHARGE_NORMAL)
 			_human.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 1)
-			brutemod = 1.5
 		if(ELZUOSE_CHARGE_FULL to ELZUOSE_CHARGE_OVERLOAD)
 			_human.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 1)
-			brutemod = 1.5
 		if(ELZUOSE_CHARGE_OVERLOAD to ELZUOSE_CHARGE_DANGEROUS)
 			_human.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 2)
-			brutemod = 1.75
 			if(prob(10)) //10% each tick for ethereals to explosively release excess energy if it reaches dangerous levels
 				discharge_process(_human)
 		else

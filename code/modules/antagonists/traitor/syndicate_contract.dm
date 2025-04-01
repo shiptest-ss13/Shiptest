@@ -149,7 +149,7 @@
 					C = H.get_bankcard()
 
 				if(C && C.registered_account)
-					C.registered_account.adjust_money(ransom * 0.35, "syndicate_contract")
+					C.registered_account.adjust_money(ransom * 0.35, CREDIT_LOG_SYNDICATE_CONTRACT)
 
 					C.registered_account.bank_card_talk("We've processed the ransom, agent. Here's your cut - your balance is now \
 					[C.registered_account.account_balance] cr.", TRUE)

@@ -308,7 +308,7 @@
 
 // Charge/Discharge and turn on/off gravity when you reach 0/100 percent.
 // Also emit radiation and handle the overlays.
-/obj/machinery/gravity_generator/main/process()
+/obj/machinery/gravity_generator/main/process(seconds_per_tick)
 	if(machine_stat & BROKEN)
 		return
 	if(charging_state != POWER_IDLE)

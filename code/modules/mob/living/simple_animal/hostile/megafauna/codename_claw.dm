@@ -58,7 +58,7 @@
 	speed = 5
 	move_to_delay = 5
 	speak_emote = list("verbalizes")
-	mob_trophy = /obj/item/nullrod/armblade/tentacle
+	mob_trophy = /obj/item/melee/synthetic_arm_blade
 	loot = list(/obj/effect/spawner/clawloot)
 	health = 2250
 	maxHealth = 2250

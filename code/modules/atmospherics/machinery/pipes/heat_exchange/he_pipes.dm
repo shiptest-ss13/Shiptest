@@ -19,7 +19,7 @@
 		return FALSE
 	. = ..()
 
-/obj/machinery/atmospherics/pipe/heat_exchanging/process_atmos()
+/obj/machinery/atmospherics/pipe/heat_exchanging/process_atmos(seconds_per_tick)
 	var/environment_temperature = 0
 	var/datum/gas_mixture/pipe_air = return_air()
 
@@ -50,7 +50,7 @@
 			L.bodytemperature = avg_temp
 		pipe_air.set_temperature(avg_temp)
 
-/obj/machinery/atmospherics/pipe/heat_exchanging/process()
+/obj/machinery/atmospherics/pipe/heat_exchanging/process(seconds_per_tick)
 	if(!parent)
 		return //machines subsystem fires before atmos is initialized so this prevents race condition runtimes
 
@@ -79,4 +79,4 @@
 		if(pipe_air.return_temperature() > heat_limit + 1)
 			for(var/m in buckled_mobs)
 				var/mob/living/buckled_mob = m
-				buckled_mob.apply_damage(4 * log(pipe_air.return_temperature() - heat_limit), BURN, BODY_ZONE_CHEST)
+				buckled_mob.apply_damage(seconds_per_tick * 2 * log(pipe_air.return_temperature() - heat_limit), BURN, BODY_ZONE_CHEST)

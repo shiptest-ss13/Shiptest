@@ -26,7 +26,7 @@
 		I.color = mix_color_from_reagents(reagents.reagent_list)
 		add_overlay(I)
 
-/obj/structure/geyser/process()
+/obj/structure/geyser/process(seconds_per_tick)
 	if(activated && reagents.total_volume <= reagents.maximum_volume) //this is also evaluated in add_reagent, but from my understanding proc calls are expensive
 		reagents.add_reagent(reagent_id, potency)
 
@@ -45,7 +45,7 @@
 
 /obj/structure/geyser/random/Initialize()
 	. = ..()
-	reagent_id = pickweight(options)
+	reagent_id = pick_weight(options)
 
 /obj/item/plunger
 	name = "plunger"

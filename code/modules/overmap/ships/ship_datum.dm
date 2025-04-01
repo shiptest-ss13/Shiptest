@@ -152,12 +152,12 @@
 	. /= 10 //they're in deciseconds
 	return "[add_leading(num2text((. / 60) % 60), 2, "0")]:[add_leading(num2text(. % 60), 2, "0")]"
 
-/datum/overmap/ship/process(delta_time)
+/datum/overmap/ship/process(seconds_per_tick)
 	if((burn_direction == BURN_STOP && is_still()) || docked_to || docking)
 		change_heading(BURN_NONE)
 		return
 
-	var/added_velocity = calculate_burn(burn_direction, burn_engines(burn_percentage, delta_time))
+	var/added_velocity = calculate_burn(burn_direction, burn_engines(burn_percentage, seconds_per_tick))
 
 	//Slows down the ship just enough to come to a full stop
 	if(burn_direction == BURN_STOP)
@@ -201,13 +201,13 @@
 /**
  * Returns the amount of acceleration to apply to the ship based on the percentage of the engines that are burning, and the time since the last burn tick.
  * * percentage - The percentage of the engines that are burning
- * * deltatime - The time since the last burn tick
+ * * seconds_per_tick - The time since the last burn tick
  */
-/datum/overmap/ship/proc/burn_engines(percentage = 100, deltatime)
+/datum/overmap/ship/proc/burn_engines(percentage = 100, seconds_per_tick)
 	if(docked_to || docking)
 		CRASH("Ship burned engines while docking or docked!")
 
-	return acceleration_speed * (percentage / 100) * deltatime
+	return acceleration_speed * (percentage / 100) * seconds_per_tick
 
 /datum/overmap/ship/proc/change_heading(direction)
 	burn_direction = direction

@@ -50,7 +50,7 @@
 	if(recharge_start_delay)
 		START_PROCESSING(SSdcs, src)
 
-/datum/component/shielded/Destroy(force, silent)
+/datum/component/shielded/Destroy(force)
 	if(wearer)
 		shield_icon = "broken"
 		UnregisterSignal(wearer, COMSIG_ATOM_UPDATE_OVERLAYS)
@@ -78,7 +78,7 @@
 		lost_wearer(src, wearer)
 
 // Handle recharging, if we want to
-/datum/component/shielded/process(delta_time)
+/datum/component/shielded/process(seconds_per_tick)
 	if(current_charges >= max_charges)
 		STOP_PROCESSING(SSdcs, src)
 		return

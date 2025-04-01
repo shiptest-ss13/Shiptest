@@ -58,6 +58,12 @@
 	reagent_id = /datum/reagent/firefighting_foam
 	tank_volume = 500
 
+/obj/structure/reagent_dispensers/foamtank/antirad
+	name = "anti-radiation foam tank"
+	desc = "A tank full of decontamination foam"
+	reagent_id = /datum/reagent/anti_radiation_foam
+	tank_volume = 1000
+
 /obj/structure/reagent_dispensers/fueltank
 	name = "fuel tank"
 	desc = "A tank full of industrial welding fuel. Do not consume."
@@ -181,6 +187,11 @@
 	icon_state = "serving"
 	anchored = TRUE
 	reagent_id = /datum/reagent/consumable/nutraslop
+
+/obj/structure/reagent_dispensers/servingdish/wrench_act(mob/living/user, obj/item/tool)
+	. = ..()
+	default_unfasten_wrench(user, tool)
+	return TRUE
 
 /obj/structure/reagent_dispensers/plumbed
 	name = "stationairy water tank"

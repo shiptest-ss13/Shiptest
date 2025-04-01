@@ -64,3 +64,7 @@
 	fadein = 0.7 SECONDS
 	position = generator(GEN_VECTOR, list(-3, 5, 0), list(3, 6.5, 0), NORMAL_RAND)
 	velocity = generator(GEN_VECTOR, list(-0.1, 0.4, 0), list(0.1, 0.5, 0), NORMAL_RAND)
+
+/particles/fog
+	icon = 'icons/effects/particles/smoke.dmi'
+	icon_state = list("chill_1" = 2, "chill_2" = 2, "chill_3" = 1)

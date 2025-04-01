@@ -82,18 +82,48 @@
 	name = "cargo dump"
 	icon_state = "dk_yellow"
 
-// Bombed Syndicate Starport
-/area/ruin/jungle/starport
-	name = "Bombed Air Base"
+// Abandoned Airbase
+
+/area/ruin/jungle/airbase
+	name = "Abandoned Airbase"
 	icon_state = "green"
 
-/area/ruin/jungle/starport/tower
-	name = "Air Base Control Tower"
+/area/ruin/jungle/airbase/tower
+	name = "Airbase Command Tower"
 	icon_state = "bridge"
 
-/area/ruin/jungle/starport/plasma
-	name = "Air Base Fuel Stores"
+/area/ruin/jungle/airbase/cargo
+	name = "Airbase Warehouse"
+	icon_state = "supply"
+
+/area/ruin/jungle/airbase/hangar
+	name = "Airbase Hangar"
+	icon_state = "hangar"
+
+/area/ruin/jungle/airbase/engineering
+	name = "Airbase Engineering"
+	icon_state = "dk_yellow"
+
+/area/ruin/jungle/airbase/med
+	name = "Airbase Medical"
+	icon_state = "med_office"
+
+/area/ruin/jungle/airbase/dorms
+	name = "Airbase Living Space"
+	icon_state = "crew_quarters"
+
+/area/ruin/jungle/airbase/armory
+	name = "Airbase Armory"
 	icon_state = "red"
+
+/area/ruin/jungle/airbase/shed
+	name = "Airbase Shed"
+	icon_state = "storage"
+
+/area/ruin/jungle/airbase/turrets
+	name = "Abandoned Airbase Guns"
+	icon_state = "green"
+	requires_power = FALSE
 
 // Syndicate fort
 

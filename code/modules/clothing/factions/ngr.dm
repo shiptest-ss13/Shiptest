@@ -7,10 +7,11 @@
 	desc = "A button-up in a tasteful beige with black pants, used as the basic uniform of the New Gorlex Republic."
 	icon_state = "ngr"
 	item_state = "ngr"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/ngr/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/uniforms.dmi'
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/ngr/fatigues
 	name = "\improper NGR fatigues"
@@ -29,6 +30,7 @@
 	desc = "A button-up in a tasteful black with beige pants, used by officers of the New Gorlex Republic."
 	icon_state = "ngr_officer"
 	item_state = "ngr_officer"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/plasmaman/ngr
 	name = "\improper NGR phorid envirosuit"
@@ -56,6 +58,7 @@
 	desc = "A blood-red surgical smock typically worn by field medics of the New Gorlex Republic. It hides red blood really well!"
 	icon_state = "ngr_apron"
 	item_state = "redcloth"
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/suit/hazardvest/ngr
 	name = "blood-red hazard vest"
@@ -65,6 +68,20 @@
 	icon_state = "ngr_hazard"
 	item_state = "redcloth"
 	supports_variations = VOX_VARIATION
+
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr
+	name = "NGR winter coat"
+	desc = "A sleek beige winter coat used by the Second Battlegroup of the New Gorlex Republic, the zipper tab proudly displays the official emblem of the NGR."
+	icon_state = "coatngr"
+	item_state = "coatngr"
+	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/ngr
+
+/obj/item/clothing/head/hooded/winterhood/security/ngr
+	icon_state = "hood_ngr"
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 
 //////////////////
 //Armored suits//
@@ -78,6 +95,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	blood_overlay_type = "armor"
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) // 5. additional. bullet armor.
 
 /obj/item/clothing/suit/armor/ngr/lieutenant
 	name = "\improper 2nd Battlegroup overcoat"
@@ -121,9 +139,9 @@
 	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ngr
-	lightweight = 1
 	jetpack = null
 	greyscale_colors = list("#33353a", "#d9ad82", "#8c1a34")
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/plasmaman/ngr
 	name = "NGR phorid envirosuit helmet"
@@ -180,6 +198,7 @@
 	armor = list("melee" = 40, "bullet" = 60, "laser" = 35, "energy" = 35, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) // The guys who specialize in ballistics would probably have better bullet armor. Maybe.
 	icon_state = "ngr_x11"
 	item_state = "ngr_x11"
+	can_flashlight = TRUE
 
 /obj/item/clothing/head/helmet/ngr/swat
 	name = "\improper NGR pilot helmet"
@@ -187,6 +206,7 @@
 	flash_protect = FLASH_PROTECTION_WELDER
 	icon_state = "ngr_pilot"
 	item_state = "ngr_pilot"
+	can_flashlight = TRUE
 
 ////////////
 //Glasses//
@@ -205,21 +225,22 @@
 //Masks//
 /////////
 
-/obj/item/clothing/mask/gas/sechailer/balaclava/ngr
+/obj/item/clothing/mask/balaclava/ngr
 	name = "NGR combat balaclava"
-	desc = "A surprisingly advanced balaclava. while it doesn't muffle your voice it has a miniature rebreather for internals. Comfy to boot! This version is commonly used by the soldiers of the New Gorlex Republic to protect against sandstorms."
+	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot! This version is commonly used by the soldiers of the New Gorlex Republic to protect against sandstorms."
 	icon_state = "ngr_balaclava"
 	item_state = "ngr_balaclava"
 	icon = 'icons/obj/clothing/faction/ngr/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/mask.dmi'
 
-/obj/item/clothing/mask/gas/syndicate/ngr
+/obj/item/clothing/mask/breath/ngr
 	name = "NGR face mask"
 	desc = "A face mask that covers the nose, mouth and neck of those who wear it. Favored by field medics over the balaclava due to lessened heat while wearing."
 	icon_state = "ngr_facemask"
 	item_state = "ngr_facemask"
 	icon = 'icons/obj/clothing/faction/ngr/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/mask.dmi'
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION
 
 //////////
 //Neck//
@@ -242,5 +263,25 @@
 	desc = "A set of tactical webbing for operators of the New Gorlex Republic, can hold security gear."
 	icon_state = "ngr_webbing"
 	item_state = "ngr_webbing"
+	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
+	supports_variations = KEPORI_VARIATION
+
+/obj/item/storage/belt/security/webbing/ngr/cobra/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m45_cobra(src)
+
+/obj/item/storage/belt/security/webbing/ngr/hydra_grenadier/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
+	new /obj/item/ammo_casing/a40mm(src)
+	new /obj/item/ammo_casing/a40mm(src)
+
+/obj/item/storage/belt/mining/ngr
+	name = "NGR industrial webbing"
+	desc = "A set of industrial webbing used primarily by salvagers of the New Gorlex Republic, capable of holding mining equipment."
+	icon_state = "ngr_webbing_tan"
+	item_state = "ngr_webbing_tan"
 	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'

@@ -33,7 +33,7 @@
 	other_atmosmch.Cut()
 	return ..()
 
-/datum/pipeline/process()
+/datum/pipeline/process(seconds_per_tick)
 	if(!update || building)
 		return
 	reconcile_air()

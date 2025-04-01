@@ -533,7 +533,7 @@
 	num_steps = round(10/speed) //10, 5, or 3 steps, depending on how many wires we have cut
 	START_PROCESSING(SSfastprocess, src)
 
-/mob/living/simple_animal/bot/mulebot/process()
+/mob/living/simple_animal/bot/mulebot/process(seconds_per_tick)
 	if(!on || client || (num_steps <= 0) || !has_power())
 		return PROCESS_KILL
 	num_steps--
@@ -615,7 +615,7 @@
 // calculates a path to the current destination
 // given an optional turf to avoid
 /mob/living/simple_animal/bot/mulebot/calc_path(turf/avoid = null)
-	path = get_path_to(src, target, /turf/proc/Distance_cardinal, 0, 250, id=access_card, exclude=avoid)
+	path = get_path_to(src, target, 250, id=access_card, exclude=avoid)
 
 // sets the current destination
 // signals all beacons matching the delivery code
@@ -657,7 +657,6 @@
 				to_chat(calling_ai, "<span class='notice'>[icon2html(src, calling_ai)] [src] wirelessly plays a chiming sound!</span>")
 				calling_ai.playsound_local(calling_ai, 'sound/machines/chime.ogg', 40, FALSE)
 				calling_ai = null
-				radio_channel = RADIO_CHANNEL_AI_PRIVATE //Report on AI Private instead if the AI is controlling us.
 
 		if(load)		// if loaded, unload at target
 			if(report_delivery)

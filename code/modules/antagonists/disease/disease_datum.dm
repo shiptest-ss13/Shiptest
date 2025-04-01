@@ -86,13 +86,3 @@
 
 /datum/objective/disease_infect_centcom
 	explanation_text = "Ensure that at least one infected host escapes on the shuttle or an escape pod."
-
-/datum/objective/disease_infect_centcom/check_completion()
-	var/mob/camera/disease/D = owner.current
-	if(!istype(D))
-		return FALSE
-	for(var/V in D.hosts)
-		var/mob/living/L = V
-		if(L.onCentCom() || L.onSyndieBase())
-			return TRUE
-	return FALSE

@@ -16,7 +16,7 @@
 		if(bomb.timing)
 			. += "Extreme danger. Arming signal detected. Time remaining: [bomb.get_time_left()]."
 
-/obj/item/pinpointer/nuke/process()
+/obj/item/pinpointer/nuke/process(seconds_per_tick)
 	..()
 	if(active) // If shit's going down
 		for(var/obj/machinery/nuclearbomb/bomb in GLOB.nuke_list)
@@ -32,7 +32,7 @@
 	target = null
 	switch(mode)
 		if(TRACK_NUKE_DISK)
-			var/obj/item/disk/nuclear/N = locate() in GLOB.poi_list
+			var/obj/item/disk/nuclear/N = locate() in SSpoints_of_interest.other_points_of_interest
 			target = N
 		if(TRACK_MALF_AI)
 			for(var/V in GLOB.ai_list)

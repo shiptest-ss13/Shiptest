@@ -10,6 +10,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	move_resist = INFINITY
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
+	//Whether the mining scanner is able to locate this vein.
+	var/detectable = TRUE
 	var/mining_charges = 6
 	//Classification of the quality of possible ores within a vein
 	//Used to determine difficulty & ore amounts
@@ -36,9 +38,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/drop_rate_amount_max = 20
 	//Mob spawning variables
 	var/spawner_attached = FALSE //Probably a drastically less sloppy way of doing this, but it technically works
-	var/spawning_started = FALSE
+	///is the spawner currently spawning mobs?
+	var/currently_spawning = FALSE
 	var/max_mobs = 6
-	var/spawn_time = 150 //15 seconds
+	var/spawn_time = 15 SECONDS
 	var/mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 20,
@@ -51,7 +54,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/spawn_distance_min = 4
 	var/spawn_distance_max = 6
 	var/wave_length = 2 MINUTES
-	var/wave_downtime = 30 SECONDS
+	var/wave_downtime = 1 MINUTES
 
 
 //Generates amount of ore able to be pulled from the vein (mining_charges) and types of ore within it (vein_contents)
@@ -70,23 +73,27 @@ GLOBAL_LIST_EMPTY(ore_veins)
 			else
 				ore_type_amount = 1
 		for(var/ore_count in 1 to ore_type_amount)
-			var/picked = pickweight(ore_list)
+			var/picked = pick_weight(ore_list)
 			vein_contents.Add(picked)
 			ore_list.Remove(picked)
+			if(!LAZYLEN(ore_list))
+				break
 	GLOB.ore_veins += src
 
+/obj/structure/vein/examine(mob/user)
+	. = ..()
+	if(!detectable)
+		. += span_notice("This vein has been marked as a site of no interest, and will not show up on deep core scans.")
+
 /obj/structure/vein/Destroy()
+	destroy_effect()
 	GLOB.ore_veins -= src
 	return ..()
 
-/obj/structure/vein/deconstruct(disassembled)
-	destroy_effect()
-	return..()
-
 /obj/structure/vein/proc/begin_spawning()
-	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime)
+	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime, vein_class)
 	spawner_attached = TRUE
-	spawning_started = TRUE
+	currently_spawning = TRUE
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
@@ -103,7 +110,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	visible_message("<span class='boldannounce'>[src] collapses!</span>")
 
 /obj/structure/vein/proc/toggle_spawning()
-	spawning_started = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, spawning_started)
+	currently_spawning = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, currently_spawning)
+
 
 //
 //	Planetary and Class Subtypes
@@ -124,12 +132,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
 	max_mobs = 6
-	spawn_time = 100
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 1,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 5,
 		)
 
@@ -147,14 +154,17 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
 	max_mobs = 6 //Best not to go past 6 due to balance and lag reasons
-	spawn_time = 80
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 10,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 10,
 		)
+
+/obj/structure/vein/classfour
+	mining_charges = 30
+	vein_class = 4
 
 /obj/structure/vein/ice
 	mob_types = list(
@@ -194,7 +204,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/ice = 8,
 		)
 	max_mobs = 6
-	spawn_time = 100
 
 /obj/structure/vein/ice/classthree
 	mining_charges = 10
@@ -211,7 +220,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/ice = 8,
 		)
 	max_mobs = 6
-	spawn_time = 80
+
+/obj/structure/vein/ice/classfour
+	mining_charges = 30
+	vein_class = 4
 
 // Asteroid veins are the same as the base planetary ones yield wise, but with the asteroid mobs.
 

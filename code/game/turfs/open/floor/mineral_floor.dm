@@ -162,6 +162,10 @@
 /turf/open/floor/mineral/plastitanium/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
+/turf/open/floor/mineral/plastitanium/wasteplanet
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+
+
 /turf/open/floor/mineral/plastitanium/red
 	icon_state = "plastitanium_red"
 	floor_tile = /obj/item/stack/tile/mineral/plastitanium/red
@@ -172,6 +176,8 @@
 /turf/open/floor/mineral/plastitanium/red/brig
 	name = "brig floor"
 
+/turf/open/floor/mineral/plastitanium/red/wasteplanet
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 
 //DIAMOND
 

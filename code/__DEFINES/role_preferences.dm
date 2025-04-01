@@ -17,12 +17,10 @@
 #define ROLE_REV_SUCCESSFUL "Victorious Revolutionary"
 #define ROLE_ALIEN "Xenomorph"
 #define ROLE_PAI "pAI"
-#define ROLE_CULTIST "Cultist"
 #define ROLE_NINJA "Space Ninja"
 #define ROLE_MONKEY "Monkey"
 #define ROLE_ABDUCTOR "Abductor"
 #define ROLE_REVENANT "Revenant"
-#define ROLE_DEVIL "Devil"
 #define ROLE_BROTHER "Blood Brother"
 #define ROLE_BRAINWASHED "Brainwashed Victim"
 #define ROLE_OVERTHROW "Syndicate Mutineer" //Role removed, left here for safety.
@@ -52,13 +50,11 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_MALF,
 	ROLE_ALIEN,
 	ROLE_PAI,
-	ROLE_CULTIST = /datum/game_mode/cult,
 	ROLE_NINJA,
 	ROLE_OBSESSED,
 	ROLE_SPACE_DRAGON,
 	ROLE_REVENANT,
 	ROLE_ABDUCTOR,
-	ROLE_DEVIL = /datum/game_mode/devil,
 	ROLE_INTERNAL_AFFAIRS = /datum/game_mode/traitor/internal_affairs,
 	ROLE_SENTIENCE,
 	ROLE_BORER

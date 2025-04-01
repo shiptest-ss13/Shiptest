@@ -277,6 +277,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	prefs.last_id = computer_id			//these are gonna be used for banning
 	fps = prefs.clientfps == 0 ? 60 : prefs.clientfps //WS Edit - Client FPS Tweak
 
+	donator = GLOB.donators[ckey] || new /datum/donator(src)
+
 	if(fexists(roundend_report_file()))
 		add_verb(src, /client/proc/show_previous_roundend_report)
 
@@ -933,8 +935,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	..()
 
 /client/proc/add_verbs_from_config()
-	if (interviewee)
+	if(interviewee)
 		return
+	if(donator.is_donator)
+		add_verb(src, /client/proc/do_donator_redemption)
+	add_verb(src, /client/proc/do_donator_wcir)
 	if(CONFIG_GET(flag/see_own_notes))
 		add_verb(src, /client/proc/self_notes)
 	if(CONFIG_GET(flag/use_exp_tracking))
@@ -1167,3 +1172,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if("Set-Tab")
 			stat_tab = payload["tab"]
 			SSstatpanels.immediate_send_stat_data(src)
+
+///Gives someone hearted status for OOC, from behavior commendations
+/client/proc/adjust_heart(duration = 24 HOURS)
+	var/new_duration = world.realtime + duration
+	if(prefs.hearted_until > new_duration)
+		return
+	to_chat(src, "<span class='nicegreen'>Someone awarded you a heart!</span>")
+	prefs.hearted_until = new_duration
+	prefs.hearted = TRUE
+	prefs.save_preferences()

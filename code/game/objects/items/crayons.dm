@@ -55,7 +55,7 @@
 
 	var/paint_mode = PAINT_NORMAL
 
-	var/charges = 30 //-1 or less for unlimited uses
+	var/charges = 60 //-1 or less for unlimited uses
 	var/charges_left
 	var/volume_multiplier = 1 // Increases reagent effect
 
@@ -235,7 +235,7 @@
 				. = TRUE
 		if("select_stencil")
 			var/stencil = params["item"]
-			if(stencil in all_drawables + randoms)
+			if(stencil in (all_drawables + randoms))
 				drawtype = stencil
 				. = TRUE
 				text_buffer = ""
@@ -269,14 +269,10 @@
 		return
 
 	var/static/list/punctuation = list("!","?",".",",","/","+","-","=","%","#","&")
-	var/istagger = HAS_TRAIT(user, TRAIT_TAGGER)
 
 	var/cost = 1
 	if(istype(target, /obj/item/canvas))
 		cost = 0
-	if(ishuman(user))
-		if (istagger)
-			cost *= 0.5
 	var/charges_used = use_charges(user, cost)
 	if(!charges_used)
 		return
@@ -320,7 +316,7 @@
 		temp = "symbol"
 	else if(drawing in drawings)
 		temp = "drawing"
-	else if(drawing in graffiti|oriented)
+	else if(drawing in (graffiti|oriented))
 		temp = "graffiti"
 
 	var/graf_rot
@@ -383,10 +379,7 @@
 					to_chat(user, "<span class='warning'>There isn't enough space to paint!</span>")
 					return
 		C.add_hiddenprint(user)
-		if(istagger)
-			C.AddComponent(/datum/component/art, GOOD_ART)
-		else
-			C.AddComponent(/datum/component/art, BAD_ART)
+		C.AddComponent(/datum/component/art, GOOD_ART)
 
 	if(!instant)
 		to_chat(user, "<span class='notice'>You finish drawing \the [temp].</span>")

@@ -8,8 +8,10 @@
 
 	icon_state = "mauler"
 	item_state = "hp_generic"
-	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/m9mm_mauler
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m9mm_mauler,
+	)
 	fire_delay = 0.06 SECONDS
 
 	gun_firemodes = list(FIREMODE_FULLAUTO)
@@ -19,6 +21,8 @@
 	spread_unwielded = 50
 	recoil = 1
 	recoil_unwielded = 4
+	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
+
 	fire_sound = 'sound/weapons/gun/pistol/mauler.ogg'
 
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
@@ -30,6 +34,22 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 44,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 19,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/mauler/ComponentInitialize()
 	. = ..()
@@ -58,7 +78,10 @@
 
 	icon_state = "spitter"
 	item_state = "spitter"
-	mag_type = /obj/item/ammo_box/magazine/spitter_9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/spitter_9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/spitter_9mm,
+	)
 	bolt_type = BOLT_TYPE_OPEN
 	weapon_weight = WEAPON_LIGHT
 	show_magazine_on_sprite = TRUE
@@ -67,9 +90,10 @@
 	spread = 20
 	spread_unwielded = 35
 	dual_wield_spread = 35
-	wield_slowdown = 0.25
+	wield_slowdown = SMG_SLOWDOWN
 	wield_delay = 0.2 SECONDS
 	fire_delay = 0.09 SECONDS
+	safety_multiplier = 2
 
 	fire_sound = 'sound/weapons/gun/smg/spitter.ogg'
 	rack_sound = 'sound/weapons/gun/smg/spitter_cocked.ogg'
@@ -130,10 +154,14 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	w_class = WEIGHT_CLASS_BULKY //this gun is visually larger, so I believe this is good
 
 	icon_state = "pounder"
 	item_state = "pounder"
-	mag_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
+	default_ammo_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/c22lr_pounder_pan,
+	)
 	burst_size = 1
 	fire_delay = 0.05 SECONDS
 	spread = 25
@@ -154,7 +182,26 @@
 	default_firemode = FIREMODE_FULLAUTO
 
 	manufacturer = MANUFACTURER_IMPORT
-	wield_slowdown = 0.5
+	wield_slowdown = SMG_SLOWDOWN
+	safety_multiplier = 2
+
+	refused_attachments = list(/obj/item/attachment/gun)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 46,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 40,
+			"y" = 17,
+		)
+	)
+
 
 /obj/item/ammo_box/magazine/c22lr_pounder_pan
 	name = "pan magazine (.22 LR)"
@@ -180,7 +227,10 @@
 
 	icon_state = "shredder"
 	item_state = "shredder"
-	mag_type = /obj/item/ammo_box/magazine/m12_shredder
+	default_ammo_type = /obj/item/ammo_box/magazine/m12_shredder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m12_shredder,
+	)
 	spread = 15
 	recoil = 2
 	recoil_unwielded = 7
@@ -203,6 +253,10 @@
 
 	manufacturer = MANUFACTURER_IMPORT
 	has_bipod = FALSE
+
+	refused_attachments = list(/obj/item/attachment)
+
+	slot_available = list()
 
 /obj/item/ammo_box/magazine/m12_shredder
 	name = "belt box (12g)"
@@ -227,3 +281,66 @@
 	caliber = "12ga"
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
+
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot
+	name = "\improper Hammer"
+	desc = "A disposable rocket-propelled grenade launcher loaded with a standard HE shell."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	base_icon_state = "rpg"
+	icon_state = "rpg"
+	item_state = "rpg"
+
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot,
+	)
+	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
+	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
+	weapon_weight = WEAPON_HEAVY
+	bolt_type = BOLT_TYPE_NO_BOLT
+
+	cartridge_wording = "rocket"
+	empty_indicator = FALSE
+	sealed_magazine = TRUE
+	manufacturer = MANUFACTURER_IMPORT
+	slot_flags = ITEM_SLOT_BACK
+	has_safety = FALSE
+	safety = FALSE
+
+	safety_multiplier = 0
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
+	name = "\improper Hammer-DP"
+	desc = "A disposable rocket-propelled grenade launcher loaded with an HEDP shell for Direct Penetration of your target."
+
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot/hedp
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot/hedp,
+	)
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/Initialize()
+	. = ..()
+	if(prob(1))
+		name = "\improper Mallet"
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/examine(mob/user)
+	. = ..()
+	if(!chambered)
+		. += span_warning("It has been spent, and is now useless.")
+
+/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot
+	name = "oneshot rocket launcher magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/rocket
+	caliber = "84mm"
+	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/rocketlauncher/oneshot/hedp
+	name = "oneshot rocket launcher magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/rocket/hedp
+	caliber = "84mm"
+	max_ammo = 1

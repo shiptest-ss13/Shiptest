@@ -1,15 +1,15 @@
 #define HYPO_SPRAY 0
 #define HYPO_INJECT 1
 
-#define WAIT_SPRAY 25
-#define WAIT_INJECT 25
-#define SELF_SPRAY 15
-#define SELF_INJECT 15
+#define WAIT_SPRAY 15
+#define WAIT_INJECT 15
+#define SELF_SPRAY 10
+#define SELF_INJECT 10
 
-#define DELUXE_WAIT_SPRAY 20
-#define DELUXE_WAIT_INJECT 20
-#define DELUXE_SELF_SPRAY 10
-#define DELUXE_SELF_INJECT 10
+#define DELUXE_WAIT_SPRAY 7
+#define DELUXE_WAIT_INJECT 7
+#define DELUXE_SELF_SPRAY 4
+#define DELUXE_SELF_INJECT 4
 
 #define COMBAT_WAIT_SPRAY 0
 #define COMBAT_WAIT_INJECT 0
@@ -18,7 +18,7 @@
 
 /obj/item/reagent_containers/hypospray
 	name = "hypospray"
-	desc = "The DeForest Medical Corporation hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
+	desc = "The hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "hypo"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
@@ -103,15 +103,6 @@
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? null : 0]"
 	return ..()
 
-/obj/item/reagent_containers/hypospray/combat/heresypurge
-	name = "holy water piercing injector"
-	desc = "A modified air-needle autoinjector for use in combat situations. Prefilled with 5 doses of a holy water and pacifier mixture. Not for use on your teammates."
-	item_state = "holy_hypo"
-	icon_state = "holy_hypo"
-	volume = 250
-	list_reagents = list(/datum/reagent/water/holywater = 150, /datum/reagent/peaceborg/tire = 50, /datum/reagent/peaceborg/confuse = 50)
-	amount_per_transfer_from_this = 50
-
 //MediPens
 
 /obj/item/reagent_containers/hypospray/medipen
@@ -188,10 +179,14 @@
 /obj/item/reagent_containers/hypospray/medipen/morphine
 	name = "morphine medipen"
 	desc = "A rapid way to get you out of a tight situation and fast! You'll feel rather drowsy, though."
-	icon_state = "morphen"
-	base_icon_state = "morphen"
-	item_state = "morphen"
 	list_reagents = list(/datum/reagent/medicine/morphine = 10)
+	custom_price = 50
+
+/obj/item/reagent_containers/hypospray/medipen/tramal
+	name = "tramal medipen"
+	desc = "A quick way to relieve persistant pain."
+	list_reagents = list(/datum/reagent/medicine/tramal = 10)
+	custom_price = 25
 
 /obj/item/reagent_containers/hypospray/medipen/oxandrolone
 	name = "oxandrolone medipen"
@@ -242,16 +237,6 @@
 		return
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? 1 : 0]"
 
-/* Replaced with variant in whitesands/code/modules/reagents/reagent_containers/hypospray.dm
-/obj/item/reagent_containers/hypospray/medipen/survival
-	name = "survival medipen"
-	desc = "A medipen for surviving in the harshest of environments, heals and protects from environmental hazards. WARNING: Do not inject more than one pen in quick succession."
-	icon_state = "stimpen"
-	item_state = "stimpen"
-	volume = 57
-	amount_per_transfer_from_this = 58
-	list_reagents = list(/datum/reagent/medicine/salbutamol = 10, /datum/reagent/medicine/leporazine = 15, /datum/reagent/medicine/bicaridinep = 8, /datum/reagent/medicine/dermaline = 8, /datum/reagent/medicine/epinephrine = 10, /datum/reagent/medicine/lavaland_extract = 2, /datum/reagent/medicine/omnizine = 5)
-*/
 /obj/item/reagent_containers/hypospray/medipen/atropine
 	name = "atropine autoinjector"
 	desc = "A rapid way to save a person from a critical injury state!"
@@ -259,25 +244,7 @@
 	item_state = "atropen"
 	base_icon_state = "atropen"
 	list_reagents = list(/datum/reagent/medicine/atropine = 10)
-
-/obj/item/reagent_containers/hypospray/medipen/snail
-	name = "snail shot"
-	desc = "All-purpose snail medicine! Do not use on non-snails!"
-	icon_state = "snail"
-	item_state = "snail"
-	base_icon_state = "gorillapen"
-	list_reagents = list(/datum/reagent/snail = 10)
-
-/obj/item/reagent_containers/hypospray/medipen/magillitis
-	name = "experimental autoinjector"
-	desc = "A custom-frame needle injector with a small single-use reservoir, containing an experimental serum. Unlike the more common medipen frame, it cannot pierce through protective armor or hardsuits, nor can the chemical inside be extracted."
-	icon_state = "gorillapen"
-	item_state = "gorillapen"
-	base_icon_state = "gorillapen"
-	volume = 5
-	ignore_flags = 0
-	reagent_flags = NONE
-	list_reagents = list(/datum/reagent/magillitis = 5)
+	custom_price = 100
 
 /obj/item/reagent_containers/hypospray/medipen/pumpup
 	name = "maintenance pump-up"
@@ -294,6 +261,7 @@
 	volume = 15
 	amount_per_transfer_from_this = 15
 	list_reagents = list(/datum/reagent/medicine/anti_rad = 15)
+	custom_price = 25
 
 /obj/item/reagent_containers/hypospray/medipen/bonefixingjuice
 	name = "rejuvenating agent injector"
@@ -304,12 +272,111 @@
 	list_reagents = list(/datum/reagent/medicine/bonefixingjuice = 10)
 	icon_state = "syndipen"
 
+/obj/item/reagent_containers/hypospray/medipen/diphen
+	name = "diphenhydramine injector"
+	desc = "An effective way to stop an allergic reaction."
+	list_reagents = list(/datum/reagent/medicine/diphenhydramine = 10)
+	volume = 10
+	amount_per_transfer_from_this = 10
+
+/obj/item/reagent_containers/hypospray/medipen/psicodine
+	name = "psicodine injector"
+	desc = "An injector filled with psicodine, which rapidly stabilizes the mind."
+	list_reagents = list(/datum/reagent/medicine/psicodine = 10)
+	volume = 10
+	amount_per_transfer_from_this = 10
+	custom_price = 50
+
+/obj/item/reagent_containers/hypospray/medipen/synap
+	name = "synaptizine injector"
+	desc = "A stimulating injector with a shot of synaptizine inside."
+	list_reagents = list(/datum/reagent/medicine/synaptizine = 5)
+	custom_price = 75
+	volume = 5
+	amount_per_transfer_from_this = 5
+	icon_state = "stimpen"
+	item_state = "stimpen"
+
+/obj/item/reagent_containers/hypospray/medipen/antihol
+	name = "antihol injector"
+	desc = "An injector filled with antihol, essential for the binge drinker."
+	list_reagents = list(/datum/reagent/medicine/antihol = 10)
+	volume = 10
+	amount_per_transfer_from_this = 10
+	custom_price = 25
+
+/obj/item/reagent_containers/hypospray/medipen/tricord
+	name = "tricordrazine injector"
+	desc = "An injector filled with tricordrazine, a mildly effective healing agent."
+	list_reagents = list(/datum/reagent/medicine/tricordrazine = 15)
+	volume = 15
+	amount_per_transfer_from_this = 15
+	icon_state = "morphen"
+	base_icon_state = "morphen"
+	item_state = "morphen"
+
+/obj/item/reagent_containers/hypospray/medipen/mannitol
+	name = "mannitol injector"
+	desc = "An injector filled with mannitol, a restorative compound that targets the brain."
+	list_reagents = list(/datum/reagent/medicine/mannitol = 15)
+	volume = 15
+	amount_per_transfer_from_this = 15
+	icon_state = "morphen"
+	base_icon_state = "morphen"
+	item_state = "morphen"
+
+/obj/item/reagent_containers/hypospray/medipen/badstop
+	name = "Stabilizer injector"
+	desc = "A 2-use injector filled with a mix of medical agents, designed to stabilize someone for immediate extraction."
+	list_reagents = list(/datum/reagent/medicine/chitosan = 5, /datum/reagent/medicine/morphine = 10, /datum/reagent/medicine/psicodine = 5, /datum/reagent/medicine/atropine = 10)
+	volume = 30
+	amount_per_transfer_from_this = 15
+	icon_state = "tbpen"
+	item_state = "tbpen"
+	base_icon_state = "tbpen"
+
+/obj/item/reagent_containers/hypospray/medipen/badstop/update_icon_state()
+	. = ..()
+	if(reagents.total_volume > 30)
+		icon_state = base_icon_state
+		return
+	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? 1 : 0]"
+
+/obj/item/reagent_containers/hypospray/medipen/combat_drug
+	name = "combat cocktail"
+	desc = "An injector filled with a potent combat drug mixture. Straight from the Shoal."
+	list_reagents = list(/datum/reagent/drug/combat_drug = 6, /datum/reagent/medicine/bicaridinep = 6, /datum/reagent/medicine/dermaline = 6)
+	volume = 18
+	amount_per_transfer_from_this = 18
+	icon_state = "syndipen"
+	base_icon_state = "syndipen"
+	item_state = "syndipen"
+
+/obj/item/reagent_containers/hypospray/medipen/rabbit
+	name = "rabbit injector"
+	desc = "An injector decorated with a chibi-stylized armored rabbitgirl, wielding what appears to be a Hydra DMR."
+	list_reagents = list(/datum/reagent/drug/stardrop/starlight = 10, /datum/reagent/medicine/carfencadrizine = 6, /datum/reagent/medicine/stimulants = 8)
+	volume = 24
+	amount_per_transfer_from_this = 24
+	icon_state = "stimpen"
+	base_icon_state = "stimpen"
+
+/obj/item/reagent_containers/hypospray/medipen/mammoth
+	name = "mammoth injector"
+	desc = "An injector filled with an ICW-era mixture of aggression-enhancing stimulants."
+	list_reagents = list(/datum/reagent/drug/mammoth = 7, /datum/reagent/medicine/dimorlin = 6, /datum/reagent/medicine/carfencadrizine = 6)
+	volume = 19
+	amount_per_transfer_from_this = 19
+	icon_state = "syndipen"
+	base_icon_state = "syndipen"
+	item_state = "syndipen"
+
 //A vial-loaded hypospray. Cartridge-based!
 /obj/item/hypospray/mkii
 	name = "hypospray mk.II"
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "hypo2"
-	desc = "A new development from DeForest Medical, this hypospray takes 30-unit vials as the drug supply for easy swapping."
+	desc = "A medical product traditionally manufactured by Nanotrasen and Cybersun, this hypospray takes 30-unit vials as the drug supply for easy swapping."
 	w_class = WEIGHT_CLASS_TINY
 	var/list/allowed_containers = list(/obj/item/reagent_containers/glass/bottle/vial/tiny, /obj/item/reagent_containers/glass/bottle/vial/small)
 	var/mode = HYPO_INJECT
@@ -321,7 +388,7 @@
 	var/spray_self = SELF_SPRAY
 	var/inject_self = SELF_INJECT
 	var/quickload = FALSE
-	var/penetrates = FALSE
+	var/penetrates = TRUE
 
 /obj/item/hypospray/mkii/brute
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/bicaridine
@@ -338,11 +405,11 @@
 /obj/item/hypospray/mkii/tricord
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/tricord
 
-/obj/item/hypospray/mkii/CMO
-	name = "hypospray mk.II deluxe"
+/obj/item/hypospray/mkii/mkiii
+	name = "hypospray mk.III"
 	allowed_containers = list(/obj/item/reagent_containers/glass/bottle/vial/tiny, /obj/item/reagent_containers/glass/bottle/vial/small, /obj/item/reagent_containers/glass/bottle/vial/large)
 	icon_state = "cmo2"
-	desc = "The Deluxe Hypospray can take larger-size vials. It also acts faster and delivers more reagents per spray."
+	desc = "The mk.III Hypospray can take larger-size vials. It also acts faster and delivers more reagents per spray."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/CMO
 	inject_wait = DELUXE_WAIT_INJECT
@@ -350,7 +417,7 @@
 	spray_self = DELUXE_SELF_SPRAY
 	inject_self = DELUXE_SELF_INJECT
 
-/obj/item/hypospray/mkii/CMO/combat
+/obj/item/hypospray/mkii/mkiii/combat
 	name = "combat hypospray mk.II"
 	desc = "A combat-ready deluxe hypospray that acts almost instantly. It can be tactically reloaded by using a vial on it."
 	icon_state = "combat2"
@@ -360,7 +427,6 @@
 	spray_self = COMBAT_SELF_SPRAY
 	inject_self = COMBAT_SELF_INJECT
 	quickload = TRUE
-	penetrates = TRUE
 
 /obj/item/hypospray/mkii/Initialize()
 	. = ..()

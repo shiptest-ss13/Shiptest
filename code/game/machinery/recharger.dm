@@ -3,7 +3,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "recharger"
 	base_icon_state = "recharger"
-	desc = "A charging dock for energy based weaponry."
+	desc = "A charging dock for energy based weaponry. However someones modified it to work with most things with cells."
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
 	active_power_usage = ACTIVE_DRAW_LOW
@@ -22,6 +22,7 @@
 		/obj/item/modular_computer,
 		/obj/item/gun/ballistic/automatic/powered,
 		/obj/item/gun/ballistic/automatic/assault/e40,
+		/obj/item/attachment/gun/energy,
 		/obj/item/stock_parts/cell/gun
 		))
 
@@ -74,7 +75,7 @@
 		G.play_tool_sound(src)
 		return
 
-	var/allowed = is_type_in_typecache(G, allowed_devices)
+	var/allowed = G.get_cell()
 
 	if(allowed)
 		if(anchored)
@@ -129,7 +130,7 @@
 		charging.forceMove(drop_location())
 		setCharging(null)
 
-/obj/machinery/recharger/process()
+/obj/machinery/recharger/process(seconds_per_tick)
 	if(machine_stat & (NOPOWER|BROKEN) || !anchored)
 		return PROCESS_KILL
 
@@ -138,8 +139,8 @@
 		var/obj/item/stock_parts/cell/C = charging.get_cell()
 		if(C)
 			if(C.charge < C.maxcharge)
-				C.give(C.chargerate * recharge_coeff)
-				use_power(250 * recharge_coeff)
+				C.give(C.chargerate * recharge_coeff * seconds_per_tick / 2)
+				use_power(125 * recharge_coeff * seconds_per_tick)
 				using_power = TRUE
 			update_appearance()
 
@@ -147,7 +148,7 @@
 			var/obj/item/ammo_box/magazine/recharge/R = charging
 			if(R.stored_ammo.len < R.max_ammo)
 				R.stored_ammo += new R.ammo_type(R)
-				use_power(200 * recharge_coeff)
+				use_power(100 * recharge_coeff * seconds_per_tick)
 				using_power = TRUE
 			update_appearance()
 			return

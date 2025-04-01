@@ -41,7 +41,7 @@
 /datum/overmap/event/meteor
 	name = "asteroid field (moderate)"
 	desc = "An area of space rich with asteroids, going fast through here could prove dangerous"
-	token_icon_state = "meteor1"
+	token_icon_state = "meteor_moderate1"
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
@@ -55,10 +55,20 @@
 
 /datum/overmap/event/meteor/Initialize(position, ...)
 	. = ..()
-	token.icon_state = "meteor[rand(1, 4)]"
+	switch(type) //woop! this picks one of two icon states for the severity of the storm in overmap.dmi
+		if(/datum/overmap/event/meteor/minor)
+			token.icon_state = "meteor_minor[rand(1, 2)]"
+		if(/datum/overmap/event/meteor)
+			token.icon_state = "meteor_moderate[rand(1, 2)]"
+		if(/datum/overmap/event/meteor/major)
+			token.icon_state = "meteor_major[rand(1, 2)]"
+		else
+			token.icon_state = "meteor_moderate1"
 	token.color = "#a08444"
 	token.light_color = "#a08444"
 	token.update_appearance()
+	if(safe_speed)
+		token.desc += " You can safely navigate through this if your ship is travelling under [safe_speed] Gm/s."
 
 /datum/overmap/event/meteor/apply_effect()
 	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
@@ -133,7 +143,7 @@
 /datum/overmap/event/electric
 	name = "electrical storm (moderate)"
 	desc = "A spatial anomaly, an unfortunately common sight on the frontier. Disturbing it tends to lead to intense electrical discharges"
-	token_icon_state = "electrical1"
+	token_icon_state = "electrical_moderate1"
 	chance_to_affect = 15
 	spread_chance = 30
 	chain_rate = 3
@@ -143,7 +153,16 @@
 
 /datum/overmap/event/electric/Initialize(position, ...)
 	. = ..()
-	token.icon_state = "electrical[rand(1, 4)]"
+	switch(type) //woop! this picks one of two icon states for the severity of the storm in overmap.dmi
+		if(/datum/overmap/event/electric/minor)
+			token.icon_state = "electrical_minor[rand(1, 2)]"
+		if(/datum/overmap/event/electric)
+			token.icon_state = "electrical_moderate[rand(1, 2)]"
+		if(/datum/overmap/event/electric/major)
+			token.icon_state = "electrical_major[rand(1, 2)]"
+		else
+			token.icon_state = "electrical_moderate1"
+
 	token.color = "#e8e85c"
 	token.light_color = "#e8e85c"
 	token.update_appearance()
@@ -218,7 +237,7 @@
 /datum/overmap/event/meteor/carp
 	name = "carp migration (moderate)"
 	desc = "A migratory school of space carp. They travel at high speeds, and flying through them may cause them to impact your ship"
-	token_icon_state = "carp1"
+	token_icon_state = "carp_moderate1"
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
@@ -230,7 +249,16 @@
 
 /datum/overmap/event/meteor/carp/Initialize(position, ...)
 	. = ..()
-	token.icon_state = "carp[rand(1, 4)]"
+	switch(type) //woop! this picks one of two icon states for the severity of the storm in overmap.dmi
+		if(/datum/overmap/event/meteor/carp/minor)
+			token.icon_state = "carp_minor[rand(1, 2)]"
+		if(/datum/overmap/event/meteor/carp)
+			token.icon_state = "carp_moderate[rand(1, 2)]"
+		if(/datum/overmap/event/meteor/carp/major)
+			token.icon_state = "carp_major[rand(1, 2)]"
+		else
+			token.icon_state = "carp_moderate1"
+
 	token.color = "#7b1ca8"
 	token.light_color = "#7b1ca8"
 	token.update_icon()
@@ -238,7 +266,7 @@
 
 /datum/overmap/event/meteor/carp/minor
 	name = "carp migration (minor)"
-	token_icon_state = "carp1"
+	token_icon_state = "carp_moderate1"
 	chance_to_affect = 5
 	spread_chance = 25
 	chain_rate = 4
@@ -249,7 +277,7 @@
 
 /datum/overmap/event/meteor/carp/major
 	name = "carp migration (major)"
-	token_icon_state = "carp1"
+	token_icon_state = "carp_moderate1"
 	chance_to_affect = 25
 	spread_chance = 25
 	chain_rate = 4
@@ -263,7 +291,7 @@
 /datum/overmap/event/meteor/dust
 	name = "dust cloud"
 	desc = "A cloud of spaceborne dust. Relatively harmless, unless you're travelling at relative speeds"
-	token_icon_state = "carp1"
+	token_icon_state = "dust1"
 	chance_to_affect = 30
 	spread_chance = 50
 	chain_rate = 4
@@ -297,7 +325,7 @@
 /datum/overmap/event/anomaly/affect_ship(datum/overmap/ship/controlled/S)
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
 	var/source_object = pick(source_area.contents)
-	new /obj/effect/spawner/lootdrop/anomaly/storm(get_turf(source_object))
+	new /obj/effect/spawner/random/anomaly/storm(get_turf(source_object))
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(S.shuttle_port, 'sound/effects/bamf.ogg', 100)

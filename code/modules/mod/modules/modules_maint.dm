@@ -38,7 +38,7 @@
 /obj/item/mod/module/springlock/proc/on_activate_spring_block(datum/source, user)
 	SIGNAL_HANDLER
 
-	balloon_alert(user, "springlocks aren't responding...?")
+	to_chat(user,span_warning("The springlocks aren't responding...?"))
 	return MOD_CANCEL_ACTIVATE
 
 ///Delayed death proc of the suit after the wearer is exposed to reagents
@@ -47,7 +47,7 @@
 	if(!mod.wearer) //while there is a guaranteed user when on_wearer_exposed() fires, that isn't the same case for this proc
 		return
 	mod.wearer.visible_message("[src] inside [mod.wearer]'s [mod.name] snaps shut, mutilating the user inside!", span_userdanger("*SNAP*"))
-	mod.wearer.emote("scream")
+	mod.wearer.force_scream()
 	playsound(mod.wearer, 'sound/effects/snap.ogg', 75, TRUE, frequency = 0.5)
 	playsound(mod.wearer, 'sound/effects/splat.ogg', 50, TRUE, frequency = 0.5)
 	mod.wearer.apply_damage(500, BRUTE, forced = TRUE, spread_damage = TRUE) //boggers, bogchamp, etc
@@ -104,19 +104,11 @@
 
 	var/obj/structure/table/nearby_table = locate() in range(1, mod.wearer)
 	playsound(get_turf(src), 'sound/machines/click.ogg', 50, TRUE)
-	balloon_alert(mod.wearer, "dispensed paper[nearby_table ? " onto table":""]")
+	to_chat(mod.wearer,span_notice("You dispense the paper[nearby_table ? " onto the table.":"."]"))
 
 	mod.wearer.put_in_hands(crisp_paper)
 	if(nearby_table)
 		mod.wearer.transferItemToLoc(crisp_paper, nearby_table.drop_location(), silent = FALSE)
-
-	// Up to a 30% chance to set the sheet on fire, +2% per sheet made
-	if(prob(min(num_sheets_dispensed * 2, 30)))
-		if(crisp_paper in mod.wearer.held_items)
-			mod.wearer.dropItemToGround(crisp_paper, force = TRUE)
-		crisp_paper.balloon_alert(mod.wearer, "pc load letter!")
-		crisp_paper.visible_message(span_warning("[crisp_paper] bursts into flames, it's too crisp!"))
-		crisp_paper.fire_act(1000, 100)
 
 	drain_power(use_power_cost)
 	num_sheets_dispensed++
@@ -145,4 +137,4 @@
 		icon_state = "stamp-deny"
 	else
 		icon_state = "stamp-ok"
-	balloon_alert(user, "switched mode")
+	to_chat(user,span_notice("You switch the stamp mode."))

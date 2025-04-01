@@ -7,7 +7,8 @@
 	icon_state = "sparkler"
 	w_class = WEIGHT_CLASS_TINY
 	heat = 1000
-	var/burntime = 60
+	/// Burn time in seconds
+	var/burntime = 120
 	var/lit = FALSE
 
 /obj/item/sparkler/fire_act(exposed_temperature, exposed_volume)
@@ -37,9 +38,9 @@
 	playsound(src, 'sound/effects/fuse.ogg', 20, TRUE)
 	update_appearance()
 
-/obj/item/sparkler/process()
-	burntime--
-	if(burntime < 1)
+/obj/item/sparkler/process(seconds_per_tick)
+	burntime -= seconds_per_tick
+	if(burntime <= 0)
 		new /obj/item/stack/rods(drop_location())
 		qdel(src)
 	else

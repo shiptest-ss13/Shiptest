@@ -19,7 +19,7 @@
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	unsuitable_atmos_damage = 10
 	stat_attack = HARD_CRIT
 	faction = list("skeleton")
@@ -48,8 +48,7 @@
 	deathmessage = "collapses into a pile of bones, its gear clanging as it hits the ground!"
 	loot = list(/obj/effect/decal/remains/human,
 				/obj/item/clothing/suit/armor/witchhunter,
-				/obj/item/clothing/head/witchunter,
-				/obj/item/claymore/weak{name = "holy sword"})
+				/obj/item/melee/sword/claymore{name = "holy sword"})
 
 /mob/living/simple_animal/hostile/human/skeleton/ice
 	name = "ice skeleton"

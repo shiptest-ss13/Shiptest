@@ -1,6 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -234,9 +236,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "gi" = (
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_x = -2;
-	pixel_y = 9
+/obj/item/storage/case/surgery{
+	pixel_x = 0;
+	pixel_y = 3
 	},
 /obj/structure/table/chem,
 /turf/open/floor/plasteel/mono/dark,

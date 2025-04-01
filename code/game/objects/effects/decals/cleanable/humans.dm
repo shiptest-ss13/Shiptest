@@ -19,7 +19,7 @@
 	else
 		dry()
 
-/obj/effect/decal/cleanable/blood/process()
+/obj/effect/decal/cleanable/blood/process(seconds_per_tick)
 	if(world.time > drytime)
 		dry()
 
@@ -178,6 +178,16 @@
 	var/drips = 1
 	dryname = "drips of blood"
 	drydesc = "It's red."
+	var/move_on_init = TRUE
+
+/obj/effect/decal/cleanable/blood/drip/Initialize(mapload, list/datum/disease/diseases)
+	. = ..()
+	dry()
+	add_blood_DNA(list("Non-human DNA" = random_blood_type()))
+	if(move_on_init)
+		pixel_x = rand(-16,16)
+		pixel_y = rand(-16, 16)
+
 
 /obj/effect/decal/cleanable/blood/drip/can_bloodcrawl_in()
 	return TRUE

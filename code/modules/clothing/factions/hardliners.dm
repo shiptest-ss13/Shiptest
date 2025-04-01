@@ -7,7 +7,7 @@
 	desc = "A crimson combat uniform, reminiscent of the Gorlex Marauders at the height of the Inter-Corporate Wars. It's oddly comfortable, and warm."
 	icon_state = "hardliners"
 	item_state = "hardliners"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/hardliners/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/uniforms.dmi'
@@ -24,17 +24,26 @@
 	icon_state = "hl_officer"
 	item_state = "hl_officer"
 
+/obj/item/clothing/under/plasmaman/hardliners
+	name = "\improper Hardliner phorid envirosuit"
+	desc = "A button-up envirosuit with use intended for phorid Hardliners. Ensures they don't die of combustion."
+	icon_state = "hl_envirosuit"
+	item_state = "hl_envirosuit"
+	icon = 'icons/obj/clothing/faction/hardliners/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/uniforms.dmi'
+
 ////////////////////
 //Unarmored suits//
 ///////////////////
 
-/obj/item/clothing/suit/hardliners
+/obj/item/clothing/suit/hardliners //Ideally, the basic suit model here should be turned into a placeholder model, and this item have "smock" or "apron" added on the end.
 	name = "white smock"
 	desc = "A plain-white surgical smock typically worn by both Hardliners and Cybersun staff. Even mercenaries need medical attention!"
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	icon_state = "hl_apron"
 	item_state = "whitecloth"
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/suit/hazardvest/hardliners
 	name = "blood-red hazard vest"
@@ -43,6 +52,20 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	icon_state = "hl_hazard"
 	item_state = "whitecloth"
+
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners
+	name = "hardliner winter coat"
+	desc = "A stark-white winter coat used by Marauders of the Hardliner movement, the zipper tab displaying the cracked emblem of the Gorlex Marauders."
+	icon_state = "coathl"
+	item_state = "coathl"
+	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/hardliners
+
+/obj/item/clothing/head/hooded/winterhood/security/hardliners
+	icon_state = "hood_hl"
+	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
 
 //////////////////
 //Armored suits//
@@ -56,6 +79,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	blood_overlay_type = "armor"
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //ngr armor reskin - same statline
 
 /obj/item/clothing/suit/armor/hardliners/jacket
 	name = "hardliners armored kutte"
@@ -65,6 +89,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	blood_overlay_type = "armor"
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //its not like they cover your arms.
 
 /obj/item/clothing/suit/armor/hardliners/sergeant
 	name = "hardliners sergeant jacket"
@@ -86,6 +111,10 @@
 	blood_overlay_type = "coat"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	togglename = "buttons"
+
+/obj/item/clothing/suit/toggle/armor/vest/hardliners/Initialize()
+	. = ..()
+	allowed = GLOB.security_vest_allowed
 
 ///////////////
 //Spacesuits//
@@ -111,8 +140,38 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
-	lightweight = 1
 	jetpack = null
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/hl
+	name = "elite white-red hardsuit helmet"
+	desc = "An elite version of the infamous white-red Hardliner hardsuit, with improved armor and fireproofing. It is in EVA mode. Property of Gorlex Marauders."
+	alt_desc = "An elite version of the infamous white-red Hardliner hardsuit, with improved armor and fireproofing. It is in combat mode. Property of Gorlex Marauders."
+	icon_state = "hardsuit0-hlelite"
+	hardsuit_type = "hlelite"
+	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
+
+/obj/item/clothing/suit/space/hardsuit/syndi/elite/hl
+	name = "elite white-red hardsuit"
+	desc = "An elite version of the infamous white-red Hardliner hardsuit, with improved armor and fireproofing. It is in travel mode."
+	alt_desc = "An elite version of the infamous white-red Hardliner hardsuit, with improved armor and fireproofing. It is in combat mode."
+	icon_state = "hardsuit0-hlelite"
+	item_state = "hardsuit0-hlelite"
+	hardsuit_type = "hlelite"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/hl
+	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
+	jetpack = null
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/head/helmet/space/plasmaman/hardliners
+	name = "Hardliner phorid envirosuit helmet"
+	desc = "An envirohelmet designed for phorid Hardliners, with intimidating white stripes."
+	icon_state = "hl_envirohelm"
+	item_state = "hl_envirohelm"
+	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
 
 /////////
 //Hats//
@@ -147,6 +206,7 @@
 	armor = list("melee" = 40, "bullet" = 60, "laser" = 35, "energy" = 35, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) // The guys who specialize in ballistics would probably have better bullet armor. Maybe.
 	icon_state = "hl_x11"
 	item_state = "hl_x11"
+	can_flashlight = TRUE
 
 /obj/item/clothing/head/helmet/hardliners/swat
 	name = "hardliners pilot helmet"
@@ -154,6 +214,7 @@
 	flash_protect = FLASH_PROTECTION_WELDER
 	icon_state = "hl_pilot"
 	item_state = "hl_pilot"
+	can_flashlight = TRUE
 
 ////////////
 //Glasses//
@@ -179,3 +240,10 @@
 	item_state = "hl_webbing"
 	icon = 'icons/obj/clothing/faction/hardliners/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/belt.dmi'
+	supports_variations = KEPORI_VARIATION
+
+/obj/item/storage/belt/security/webbing/hardliners/sidewinder/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
+	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
+	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)

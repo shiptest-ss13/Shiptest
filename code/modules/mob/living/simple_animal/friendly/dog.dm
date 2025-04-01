@@ -16,64 +16,10 @@
 	see_in_dark = 5
 	speak_chance = 1
 	turns_per_move = 10
-	var/turns_since_scan = 0
-	var/obj/movement_target
+	ai_controller = /datum/ai_controller/dog
+	stop_automated_movement = TRUE
 
 	footstep_type = FOOTSTEP_MOB_CLAW
-
-/mob/living/simple_animal/pet/dog/Life()
-	..()
-
-	//Feeding, chasing food, FOOOOODDDD
-	if(!stat && !resting && !buckled)
-		turns_since_scan++
-		if(turns_since_scan > 5)
-			turns_since_scan = 0
-			if((movement_target) && !(isturf(movement_target.loc) || ishuman(movement_target.loc)))
-				movement_target = null
-				stop_automated_movement = 0
-			if(!movement_target || !(movement_target.loc in oview(src, 3)))
-				movement_target = null
-				stop_automated_movement = 0
-				for(var/obj/item/reagent_containers/food/snacks/S in oview(src,3))
-					if(isturf(S.loc) || ishuman(S.loc))
-						movement_target = S
-						break
-			if(movement_target)
-				stop_automated_movement = 1
-				step_to(src,movement_target,1)
-				sleep(3)
-				step_to(src,movement_target,1)
-				sleep(3)
-				step_to(src,movement_target,1)
-
-				if(movement_target)		//Not redundant due to sleeps, Item can be gone in 6 decisecomds
-					var/turf/T = get_turf(movement_target)
-					if(!T)
-						return
-					if (T.x < src.x)
-						setDir(WEST)
-					else if (T.x > src.x)
-						setDir(EAST)
-					else if (T.y < src.y)
-						setDir(SOUTH)
-					else if (T.y > src.y)
-						setDir(NORTH)
-					else
-						setDir(SOUTH)
-
-					if(!Adjacent(movement_target)) //can't reach food through windows.
-						return
-
-					if(isturf(movement_target.loc))
-						movement_target.attack_animal(src)
-					else if(ishuman(movement_target.loc))
-						if(prob(20))
-							manual_emote("stares at [movement_target.loc]'s [movement_target] with a sad puppy-face")
-
-		if(prob(1))
-			manual_emote(pick("dances around.","chases its tail!"))
-			INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(dance_rotate), src)
 
 //Corgis and pugs are now under one dog subtype
 
@@ -88,7 +34,6 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/corgi = 3, /obj/item/stack/sheet/animalhide/corgi = 1)
 	childtype = list(/mob/living/simple_animal/pet/dog/corgi/puppy = 95, /mob/living/simple_animal/pet/dog/corgi/puppy/void = 5)
 	animal_species = /mob/living/simple_animal/pet/dog
-	gold_core_spawnable = FRIENDLY_SPAWN
 	collar_type = "corgi"
 	var/obj/item/inventory_head
 	var/obj/item/inventory_back
@@ -121,7 +66,6 @@
 	icon_living = "pug"
 	icon_dead = "pug_dead"
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/pug = 3)
-	gold_core_spawnable = FRIENDLY_SPAWN
 	collar_type = "pug"
 	held_state = "pug"
 
@@ -167,6 +111,7 @@
 	dat += "<tr><td><B>Head:</B></td><td><A href='?src=[REF(src)];[inventory_head ? "remove_inv=head'>[inventory_head]" : "add_inv=head'><font color=grey>Empty</font>"]</A></td></tr>"
 	dat += "<tr><td><B>Back:</B></td><td><A href='?src=[REF(src)];[inventory_back ? "remove_inv=back'>[inventory_back]" : "add_inv=back'><font color=grey>Empty</font>"]</A></td></tr>"
 	dat += "<tr><td><B>Collar:</B></td><td><A href='?src=[REF(src)];[pcollar ? "remove_inv=collar'>[pcollar]" : "add_inv=collar'><font color=grey>Empty</font>"]</A></td></tr>"
+	dat += "<tr><td><B>ID Card:</B></td><td><A href='?src=[REF(src)];[access_card ? "remove_inv=card'>[access_card]" : "add_inv=card'><font color=grey>Empty</font>"]</A></td></tr>"
 	dat += {"</table>
 	<A href='?src=[REF(user)];mach_close=mob[REF(src)]'>Close</A>
 	"}
@@ -250,6 +195,10 @@
 					pcollar = null
 					update_corgi_fluff()
 					regenerate_icons()
+			if("card")
+				if(access_card)
+					usr.put_in_hands(access_card)
+					access_card = null
 
 		show_inv(usr)
 
@@ -302,9 +251,22 @@
 						return
 
 					item_to_add.forceMove(src)
-					src.inventory_back = item_to_add
+					inventory_back = item_to_add
 					update_corgi_fluff()
 					regenerate_icons()
+			if("card")
+				if(access_card)
+					to_chat(usr, "<span class='warning'>[src] already has \an [access_card] pinned to [p_them()]!</span>")
+					return
+				var/obj/item/item_to_add = usr.get_active_held_item()
+				if(!usr.temporarilyRemoveItemFromInventory(item_to_add))
+					to_chat(usr, "<span class='warning'>\The [item_to_add] is stuck to your hand, you cannot pin it to [src]!</span>")
+					return
+				if(!istype(item_to_add, /obj/item/card/id))
+					to_chat(usr, "<span class='warning'>You can't pin [item_to_add] to [src]!</span>")
+					return
+				item_to_add.forceMove(src)
+				access_card = item_to_add
 
 		show_inv(usr)
 	else
@@ -394,7 +356,6 @@
 	response_disarm_simple = "bop"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	gold_core_spawnable = NO_SPAWN
 	unique_pet = TRUE
 	var/age = 0
 	var/record_age = 1
@@ -480,50 +441,6 @@
 		file_data["saved_head"] = null
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
-
-/mob/living/simple_animal/pet/dog/corgi/Ian/narsie_act()
-	playsound(src, 'sound/magic/demon_dies.ogg', 75, TRUE)
-	var/mob/living/simple_animal/pet/dog/corgi/narsie/N = new(loc)
-	N.setDir(dir)
-	gib()
-
-/mob/living/simple_animal/pet/dog/corgi/narsie
-	name = "Nars-Ian"
-	desc = "Ia! Ia!"
-	icon_state = "narsian"
-	icon_living = "narsian"
-	icon_dead = "narsian_dead"
-	faction = list("neutral", "cult")
-	gold_core_spawnable = NO_SPAWN
-	nofur = TRUE
-	unique_pet = TRUE
-	held_state = "narsian"
-
-/mob/living/simple_animal/pet/dog/corgi/narsie/Life()
-	..()
-	for(var/mob/living/simple_animal/pet/P in range(1, src))
-		if(P != src && !istype(P,/mob/living/simple_animal/pet/dog/corgi/narsie))
-			visible_message("<span class='warning'>[src] devours [P]!</span>", \
-			"<span class='cult big bold'>DELICIOUS SOULS</span>")
-			playsound(src, 'sound/magic/demon_attack1.ogg', 75, TRUE)
-			narsie_act()
-			if(P.mind)
-				if(P.mind.hasSoul)
-					P.mind.hasSoul = FALSE //Nars-Ian ate your soul; you don't have one anymore
-				else
-					visible_message("<span class='cult big bold'>... Aw, someone beat me to this one.</span>")
-			P.gib()
-
-/mob/living/simple_animal/pet/dog/corgi/narsie/update_corgi_fluff()
-	..()
-	speak = list("Tari'karat-pasnar!", "IA! IA!", "BRRUUURGHGHRHR")
-	speak_emote = list("growls", "barks ominously")
-	emote_hear = list("barks echoingly!", "woofs hauntingly!", "yaps in an eldritch manner.", "mutters something unspeakable.")
-	emote_see = list("communes with the unnameable.", "ponders devouring some souls.", "shakes.")
-
-/mob/living/simple_animal/pet/dog/corgi/narsie/narsie_act()
-	adjustBruteLoss(-maxHealth)
-
 
 /mob/living/simple_animal/pet/dog/corgi/regenerate_icons()
 	..()
@@ -613,7 +530,6 @@
 	real_name = "Lisa"
 	gender = FEMALE
 	desc = "She's tearing you apart."
-	gold_core_spawnable = NO_SPAWN
 	unique_pet = TRUE
 	icon_state = "lisa"
 	icon_living = "lisa"

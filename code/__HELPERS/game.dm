@@ -6,7 +6,6 @@ block( \
 )
 
 #define Z_TURFS(ZLEVEL) block(locate(1,1,ZLEVEL), locate(world.maxx, world.maxy, ZLEVEL))
-#define CULT_POLL_WAIT 2400
 
 /proc/get_area_name(atom/X, format_text = FALSE)
 	var/area/A = isarea(X) ? X : get_area(X)
@@ -157,7 +156,7 @@ block( \
 	else
 		outer = circlerangeturfs(center, outer_range)
 		inner = circlerangeturfs(center, inner_range)
-	for(var/turf/possible_spawn in outer)
+	for(var/turf/possible_spawn as anything in outer)
 		if(possible_spawn in inner)
 			continue
 		if(istype(possible_spawn, /turf/closed))

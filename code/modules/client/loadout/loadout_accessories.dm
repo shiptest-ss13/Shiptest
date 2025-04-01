@@ -8,17 +8,9 @@
 /datum/gear/accessory/scarf
 	subtype_path = /datum/gear/accessory/scarf
 
-/datum/gear/accessory/scarf/red
-	display_name = "scarf, red"
-	path = /obj/item/clothing/neck/scarf/red
-
-/datum/gear/accessory/scarf/green
-	display_name = "scarf, green"
-	path = /obj/item/clothing/neck/scarf/green
-
-/datum/gear/accessory/scarf/blue
-	display_name = "scarf, blue"
-	path = /obj/item/clothing/neck/scarf/darkblue
+/datum/gear/accessory/scarf/recolorable
+	display_name = "scarf, recolorable"
+	path = /obj/item/clothing/neck/scarf
 
 /datum/gear/accessory/shemagh
 	display_name = "shemagh"
@@ -97,6 +89,9 @@
 /datum/gear/accessory/mask
 	subtype_path = /datum/gear/accessory/mask
 	slot = ITEM_SLOT_MASK
+
+/datum/gear/accessory/mask/bandana
+	subtype_path = /datum/gear/accessory/mask/bandana
 
 /datum/gear/accessory/mask/bandana/red
 	display_name = "bandana, red"

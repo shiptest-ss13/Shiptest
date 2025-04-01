@@ -213,11 +213,11 @@
 	else
 		stop_flopping()
 
-/obj/item/fish/process(delta_time)
+/obj/item/fish/process(seconds_per_tick)
 	if(in_stasis || status != FISH_ALIVE)
 		return
 
-	process_health(delta_time)
+	process_health(seconds_per_tick)
 	if(ready_to_reproduce())
 		try_to_reproduce()
 
@@ -261,7 +261,7 @@
 		return FALSE
 	return TRUE
 
-/obj/item/fish/proc/process_health(delta_time)
+/obj/item/fish/proc/process_health(seconds_per_tick)
 	var/health_change_per_second = 0
 
 	if(!proper_environment())
@@ -386,6 +386,6 @@
 			if(initial(fish.available_in_random_cases) || !case_fish_only)
 				chance_table[fish] = initial(fish.random_case_rarity)
 		probability_table[argkey] = chance_table
-	return pickweight(probability_table[argkey])
+	return pick_weight(probability_table[argkey])
 
 

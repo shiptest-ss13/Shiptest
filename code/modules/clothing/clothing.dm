@@ -3,6 +3,11 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 200
 	integrity_failure = 0.4
+
+	equip_sound = 'sound/items/equip/cloth_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+
 	var/damaged_clothes = 0 //similar to machine's BROKEN stat and structure's broken var
 	///What level of bright light protection item has.
 	var/flash_protect = FLASH_PROTECTION_NONE
@@ -11,7 +16,8 @@
 	var/visor_flags = 0			//flags that are added/removed when an item is adjusted up/down
 	var/visor_flags_inv = 0		//same as visor_flags, but for flags_inv
 	var/visor_flags_cover = 0	//same as above, but for flags_cover
-//what to toggle when toggled with weldingvisortoggle()
+
+	//what to toggle when toggled with weldingvisortoggle()
 	var/visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT | VISOR_VISIONFLAGS | VISOR_DARKNESSVIEW | VISOR_INVISVIEW
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
@@ -29,9 +35,9 @@
 
 	var/can_be_bloody = TRUE
 
-	//Var modification - PLEASE be careful with this I know who you are and where you live
-	var/list/user_vars_to_edit //VARNAME = VARVALUE eg: "name" = "butts"
-	var/list/user_vars_remembered //Auto built by the above + dropped() + equipped()
+	//set during equip_to_slot, removed when taking off.
+	//here lies some of the most batshit insane reference code I've ever seen. Look it up in the commit history
+	var/datum/weakref/wearer
 
 	var/pocket_storage_component_path
 
@@ -41,6 +47,20 @@
 	var/list/durability_list = list()
 	/// If this can be eaten by a moth
 	var/moth_edible = TRUE
+
+	// Not used yet
+	/// Trait modification, lazylist of traits to add/take away, on equipment/drop in the correct slot
+	var/list/clothing_traits
+
+	///sets the icon path of the onmob blood overlay created by this object. syntax is "[var]blood"
+	var/blood_overlay_type = "uniform"
+
+	var/vision_flags = 0
+	var/darkness_view = 2//Base human is 2
+	var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
+	var/invis_override = 0 //Override to allow glasses to set higher than normal see_invis
+	var/lighting_alpha
+	var/list/icon/current = list() //the current hud icons
 
 /obj/item/clothing/Initialize()
 	if((clothing_flags & VOICEBOX_TOGGLABLE))
@@ -60,7 +80,7 @@
 
 	if(!M.incapacitated() && loc == M && istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
-		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index))
+		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index, FALSE, TRUE))
 			add_fingerprint(usr)
 
 /obj/item/reagent_containers/food/snacks/clothing
@@ -103,31 +123,58 @@
 		return TRUE
 	return ..()
 
-/obj/item/clothing/Destroy()
-	user_vars_remembered = null //Oh god somebody put REFERENCES in here? not to worry, we'll clean it up
-	return ..()
-
 /obj/item/clothing/dropped(mob/user)
 	..()
 	if(!istype(user))
 		return
-	if(LAZYLEN(user_vars_remembered))
-		for(var/variable in user_vars_remembered)
-			if(variable in user.vars)
-				if(user.vars[variable] == user_vars_to_edit[variable]) //Is it still what we set it to? (if not we best not change it)
-					user.vars[variable] = user_vars_remembered[variable]
-		user_vars_remembered = initial(user_vars_remembered) // Effectively this sets it to null.
+	for(var/trait in clothing_traits)
+		REMOVE_CLOTHING_TRAIT(user, trait)
+	if(wearer?.resolve())
+		wearer = null
 
 /obj/item/clothing/equipped(mob/user, slot)
 	..()
 	if (!istype(user))
 		return
 	if(slot_flags & slot) //Was equipped to a valid slot for this item?
-		if (LAZYLEN(user_vars_to_edit))
-			for(var/variable in user_vars_to_edit)
-				if(variable in user.vars)
-					LAZYSET(user_vars_remembered, variable, user.vars[variable])
-					user.vv_edit_var(variable, user_vars_to_edit[variable])
+		for(var/trait in clothing_traits)
+			ADD_CLOTHING_TRAIT(user, trait)
+		if(!wearer?.resolve())
+			wearer = WEAKREF(user)
+
+/**
+ * Inserts a trait (or multiple traits) into the clothing traits list
+ *
+ * If worn, then we will also give the wearer the trait as if equipped
+ *
+ * This is so you can add clothing traits without worrying about needing to equip or unequip them to gain effects
+ */
+/obj/item/clothing/proc/attach_clothing_traits(trait_or_traits)
+	if(!islist(trait_or_traits))
+		trait_or_traits = list(trait_or_traits)
+
+	LAZYOR(clothing_traits, trait_or_traits)
+	var/mob/wearer = loc
+	if(istype(wearer) && (wearer.get_slot_by_item(src) & slot_flags))
+		for(var/new_trait in trait_or_traits)
+			ADD_CLOTHING_TRAIT(wearer, new_trait)
+
+/**
+ * Removes a trait (or multiple traits) from the clothing traits list
+ *
+ * If worn, then we will also remove the trait from the wearer as if unequipped
+ *
+ * This is so you can add clothing traits without worrying about needing to equip or unequip them to gain effects
+ */
+/obj/item/clothing/proc/detach_clothing_traits(trait_or_traits)
+	if(!islist(trait_or_traits))
+		trait_or_traits = list(trait_or_traits)
+
+	LAZYREMOVE(clothing_traits, trait_or_traits)
+	var/mob/wearer = loc
+	if(istype(wearer))
+		for(var/new_trait in trait_or_traits)
+			REMOVE_CLOTHING_TRAIT(wearer, new_trait)
 
 /obj/item/clothing/examine(mob/user)
 	. = ..()
@@ -382,10 +429,18 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	else
-		if(attached_accessory)
-			remove_accessory(user)
+		if(attached_accessory && ispath(attached_accessory.pocket_storage_component_path) && loc == user)
+			attached_accessory.attack_hand(user)
+			return
 		else
 			rolldown()
+
+/obj/item/clothing/under/CtrlClick(mob/user)
+	if(..())
+		return 1
+	if(attached_accessory)
+		remove_accessory(user)
+
 
 /obj/item/clothing/under/verb/jumpsuit_adjust()
 	set name = "Adjust Jumpsuit Style"
@@ -472,3 +527,17 @@
 		deconstruct(FALSE)
 	else
 		..()
+
+///sets up the proper bloody overlay for a clothing object, using species data
+/obj/item/clothing/proc/setup_blood_overlay()
+	var/overlay_file = 'icons/effects/blood.dmi'
+
+	var/mob/living/carbon/human/wearing = wearer?.resolve()
+	var/custom_overlay_icon = wearing?.dna.species.custom_overlay_icon
+	if(custom_overlay_icon)
+		overlay_file = custom_overlay_icon
+
+	var/mutable_appearance/bloody_clothing = mutable_appearance(overlay_file, "[blood_overlay_type]blood")
+	bloody_clothing.color = get_blood_dna_color(return_blood_DNA())
+
+	return bloody_clothing

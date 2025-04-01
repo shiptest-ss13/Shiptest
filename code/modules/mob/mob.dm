@@ -452,8 +452,6 @@
 				else
 					client.eye = client.mob
 					client.perspective = MOB_PERSPECTIVE
-			else
-				//Do nothing
 		else
 			//Reset to common defaults: mob if on turf, otherwise current loc
 			if(isturf(loc))
@@ -462,7 +460,7 @@
 			else
 				client.perspective = EYE_PERSPECTIVE
 				client.eye = loc
-		return 1
+		return TRUE
 
 /// Show the mob's inventory to another mob
 /mob/proc/show_inv(mob/user)
@@ -504,14 +502,17 @@
 			handle_eye_contact(examinify)
 		else
 			result = examinify.examine_more(src)
+
+			if(!LAZYLEN(result))
+				result = list(span_notice("<i>You examine [examinify] closer, but find nothing of interest...</i>"))
 	else
 		result = examinify.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
-	if(result.len)
+	if(length(result))
 		for(var/i in 1 to (length(result) - 1))
 			result[i] += "\n"
 
-	to_chat(src, examine_block("<span class='infoplain'>[result.Join()]</span>"))
+	to_chat(src, boxed_message("<span class='infoplain'>[result.Join()]</span>"))
 
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, examinify)
 
@@ -537,9 +538,9 @@
 	visible_message("<span class='notice'> [name] begins feeling around for \the [examined_thing.name]...</span>")
 
 	/// how long it takes for the blind person to find the thing they're examining
-	var/examine_delay_length = rand(1 SECONDS, 2 SECONDS)
+	var/examine_delay_length = rand(0.5 SECONDS, 1 SECONDS)
 	if(client?.recent_examines && client?.recent_examines[examined_thing]) //easier to find things we just touched
-		examine_delay_length = 0.5 SECONDS
+		examine_delay_length = 0.25 SECONDS
 	else if(isobj(examined_thing))
 		examine_delay_length *= 1.5
 	else if(ismob(examined_thing) && examined_thing != src)
@@ -661,20 +662,65 @@
 		return
 	limb_attack_self()
 
+///proc to call unique action on whatever we're holding.
 /mob/verb/do_unique_action()
 	set name = "Do Unique Action"
 	set category = "Object"
 	set src = usr
 
 	if(ismecha(loc))
-		return
+		var/obj/mecha/mech = loc
+		return mech.handle_unique_action(src)
 
 	if(incapacitated())
 		return
 
 	var/obj/item/I = get_active_held_item()
 	if(I)
+		if(I.pre_unique_action(src))
+			update_inv_hands()
+			return
 		I.unique_action(src)
+		update_inv_hands()
+
+///proc to call zoom on whatever we're holding.
+/mob/verb/do_zoom()
+	set name = "Aim Down Sights"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		var/obj/mecha/mecha = loc
+		if(mecha.zoom_action)
+			mecha.zoom_action.Activate()
+			return
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(istype(I, /obj/item/gun))
+		var/obj/item/gun/our_gun = I
+		if(our_gun.wielded_fully)
+			our_gun.zoom(src, src.dir)
+		update_inv_hands()
+		return
+	return
+
+/mob/verb/do_secondary_action()
+	set name = "Do Secondary Action"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		return
+	if(incapacitated())
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		if(I.pre_secondary_action(src))
+			update_inv_hands()
+			return
+		I.secondary_action(src)
 		update_inv_hands()
 
 /**

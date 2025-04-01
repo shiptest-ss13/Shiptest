@@ -6,7 +6,7 @@
 	density = FALSE
 	anchored = TRUE
 	var/bonespear = FALSE
-	var/obj/item/spear/spear
+	var/obj/item/melee/spear/spear
 	var/obj/item/bodypart/head/victim
 
 /obj/structure/headpike/bone //for bone spears
@@ -24,9 +24,9 @@
 		victim = new(src)
 		victim.real_name = random_unique_name(prob(50))
 
-	spear = locate(bonespear ? /obj/item/spear/bonespear : /obj/item/spear) in parts_list
+	spear = locate(bonespear ? /obj/item/melee/spear/bone : /obj/item/melee/spear) in parts_list
 	if(!spear)
-		spear = bonespear ? new/obj/item/spear/bonespear(src) : new/obj/item/spear(src)
+		spear = bonespear ? new/obj/item/melee/spear/bone(src) : new/obj/item/melee/spear(src)
 
 	update_appearance()
 	return ..()

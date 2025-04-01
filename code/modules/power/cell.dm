@@ -29,13 +29,15 @@
 /obj/item/stock_parts/cell/get_cell()
 	return src
 
-/obj/item/stock_parts/cell/Initialize(mapload, override_maxcharge)
+/obj/item/stock_parts/cell/Initialize(mapload, spawn_empty, override_maxcharge)
 	. = ..()
 	START_PROCESSING(SSobj, src)
 	create_reagents(5, INJECTABLE | DRAINABLE)
 	if (override_maxcharge)
 		maxcharge = override_maxcharge
 	charge = maxcharge
+	if(spawn_empty)
+		charge = 0
 	if(ratingdesc)
 		desc += " This one has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
 	update_appearance()
@@ -53,9 +55,9 @@
 				STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/item/stock_parts/cell/process()
+/obj/item/stock_parts/cell/process(seconds_per_tick)
 	if(self_recharge)
-		give(chargerate * 0.25)
+		give(chargerate * 0.125 * seconds_per_tick)
 	else
 		return PROCESS_KILL
 
@@ -74,14 +76,14 @@
 	return 100*charge/maxcharge
 
 // use power from a cell
-/obj/item/stock_parts/cell/use(amount)
+/obj/item/stock_parts/cell/use(amount, log = TRUE)
 	if(rigged && amount > 0)
 		explode()
 		return 0
 	if(charge < amount)
 		return 0
 	charge = (charge - amount)
-	if(!istype(loc, /obj/machinery/power/apc))
+	if(log)
 		SSblackbox.record_feedback("tally", "cell_used", 1, type)
 	return 1
 
@@ -342,18 +344,6 @@
 	custom_materials = null
 	grown_battery = TRUE //it has the overlays for wires
 
-/obj/item/stock_parts/cell/high/slime
-	name = "charged slime core"
-	desc = "A yellow slime core infused with plasma, it crackles with power."
-	icon = 'icons/mob/slimes.dmi'
-	icon_state = "yellow slime extract"
-	custom_materials = null
-	rating = 5 //self-recharge makes these desirable
-	self_recharge = 1 // Infused slime cores self-recharge, over time
-
-/*Hypercharged slime cell - located in /code/modules/research/xenobiology/crossbreeding/_misc.dm
-/obj/item/stock_parts/cell/high/slime/hypercharged */
-
 /obj/item/stock_parts/cell/emproof
 	name = "\improper EMP-proof cell"
 	desc = "An EMP-proof cell."
@@ -409,6 +399,8 @@
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
 	rating = 0 //Makes it incompatible with RPED
+
+/obj/item/stock_parts/cell/gun/empty
 
 /obj/item/stock_parts/cell/gun/empty/Initialize()
 	. = ..()

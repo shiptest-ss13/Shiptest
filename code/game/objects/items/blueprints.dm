@@ -5,7 +5,7 @@
 
 /obj/item/areaeditor
 	name = "area modification item"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "blueprints"
 	attack_verb = list("attacked", "bapped", "hit")
 	var/fluffnotice = "Nobody's gonna read this stuff!"
@@ -46,7 +46,7 @@
 /obj/item/areaeditor/blueprints
 	name = "station blueprints"
 	desc = "Blueprints of what appear to be an experimental station design, with a large spinal weapon mounted to the front. There is a \"Classified\" stamp and several coffee stains on it."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "blueprints"
 	fluffnotice = "Property of Nanotrasen. For heads of staff only. Store in high-secure storage."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
@@ -150,7 +150,6 @@
 	if(A.outdoors)
 		return AREA_SPACE
 	var/list/SPECIALS = list(
-		/area/shuttle,
 		/area/centcom,
 		/area/asteroid,
 		/area/tdome,
@@ -204,7 +203,7 @@
 /obj/item/areaeditor/blueprints/cyborg
 	name = "construction schematics"
 	desc = "A digital copy of the local blueprints and zoning permits stored in your memory."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "blueprints"
 	fluffnotice = "Intellectual Property of Nanotrasen. For use in engineering cyborgs only. Wipe from memory upon departure from company ownership."
 
@@ -215,27 +214,31 @@
 	sortTim(GLOB.sortedAreas, /proc/cmp_name_asc)
 	return TRUE
 
-/proc/set_area_machinery_title(area/A, title, oldtitle)
+/proc/set_area_machinery_title(area/target, title, oldtitle)
 	if(!oldtitle) // or replacetext goes to infinite loop
 		return
-	for(var/obj/machinery/airalarm/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/power/apc/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/atmospherics/components/unary/vent_scrubber/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/atmospherics/components/unary/vent_pump/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/door/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/fax/M in A)
-		M.fax_name = replacetext(M.fax_name,oldtitle,title)
-	//TODO: much much more. Unnamed airlocks, cameras, etc.
+
+	var/static/typecache = typecacheof(list(
+		/obj/machinery/airalarm,
+		/obj/machinery/power/apc,
+		/obj/machinery/atmospherics/components/unary/vent_scrubber,
+		/obj/machinery/atmospherics/components/unary/vent_pump,
+		/obj/machinery/door,
+		/obj/machinery/fax
+	))
+
+	for(var/obj/machinery/machine as anything in GLOB.machines)
+		if(get_area(machine) != target)
+			continue
+		if(!is_type_in_typecache(machine, typecache))
+			continue
+
+		machine.name = replacetext(machine.name,oldtitle,title)
 
 /obj/item/areaeditor/shuttle
 	name = "shuttle expansion permit"
 	desc = "A set of paperwork which is used to expand flyable shuttles."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "blueprints"
 	color = COLOR_ASSEMBLY_WHITE
 	fluffnotice = "Not to be used for non-sanctioned shuttle construction and maintenance."

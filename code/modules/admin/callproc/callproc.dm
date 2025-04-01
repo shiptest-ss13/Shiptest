@@ -90,6 +90,12 @@ GLOBAL_PROTECT(LastAdminCalledProc)
 		to_chat(usr, "Calling Del() is not allowed", confidential = TRUE)
 		return
 
+	if(findtextEx(trim(lowertext(procname)), "rustg"))
+		var/message = "[key_name(usr)] attempted to call [procname] with arguments: [english_list(arguments)]. Rustg calls are not allowed."
+		log_admin_private(message)
+		message_admins(message)
+		return
+
 	if(target != GLOBAL_PROC && !target.CanProcCall(procname))
 		to_chat(usr, "Proccall on [target.type]/proc/[procname] is disallowed!", confidential = TRUE)
 		return

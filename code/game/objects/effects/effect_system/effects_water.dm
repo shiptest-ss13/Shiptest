@@ -51,3 +51,8 @@
 
 /datum/effect_system/steam_spread
 	effect_type = /obj/effect/particle_effect/steam
+
+/proc/do_steam(amount=0, location = null, direction = null)
+	var/datum/effect_system/steam_spread/steam = new /datum/effect_system/steam_spread()
+	steam.set_up(amount, direction, location)
+	steam.start()

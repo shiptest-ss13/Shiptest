@@ -15,9 +15,6 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	// This shouldn't be modified directly; use the helper procs, as many baseturf lists are shared between turfs.
 	var/list/baseturfs = /turf/baseturf_bottom
 
-	/// How hot the turf is, in kelvin
-	var/initial_temperature = T20C
-
 	/// Used for fire, if a melting temperature was reached, it will be destroyed
 	var/to_be_destroyed = 0
 	var/max_fire_temperature_sustained = 0 //The max temperature of the fire which it was subjected to
@@ -378,7 +375,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 /turf/open/Entered(atom/movable/AM)
 	. =..()
 	//melting
-	if(isobj(AM) && air && air.return_temperature() > T0C)
+	if(isobj(AM) && air?.return_temperature() > T0C)
 		var/obj/O = AM
 		if(O.obj_flags & FROZEN)
 			O.make_unfrozen()
@@ -582,8 +579,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 /turf/proc/acid_melt()
 	return
 
-/turf/handle_fall(mob/faller)
-	if(has_gravity(src))
+/turf/handle_fall(mob/faller, fall_sound_played)
+	if(has_gravity(src) && !fall_sound_played)
 		playsound(src, "bodyfall", 50, TRUE)
 	faller.drop_all_held_items()
 
@@ -676,3 +673,23 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 /turf/bullet_act(obj/projectile/hitting_projectile)
 	. = ..()
 	bullet_hit_sfx(hitting_projectile)
+
+/**
+ * Returns adjacent turfs to this turf that are reachable, in all cardinal directions
+ *
+ * Arguments:
+ * * caller: The movable, if one exists, being used for mobility checks to see what tiles it can reach
+ * * ID: An ID card that decides if we can gain access to doors that would otherwise block a turf
+ * * simulated_only: Do we only worry about turfs with simulated atmos, most notably things that aren't space?
+*/
+/turf/proc/reachableAdjacentTurfs(caller, ID, simulated_only)
+	var/static/space_type_cache = typecacheof(/turf/open/space)
+	. = list()
+
+	for(var/iter_dir in GLOB.cardinals)
+		var/turf/turf_to_check = get_step(src,iter_dir)
+		if(!turf_to_check || (simulated_only && space_type_cache[turf_to_check.type]))
+			continue
+		if(turf_to_check.density || LinkBlockedWithAccess(turf_to_check, caller, ID))
+			continue
+		. += turf_to_check

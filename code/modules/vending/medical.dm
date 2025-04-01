@@ -36,8 +36,8 @@
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/medical
-	default_price = 250
-	extra_price = 500
+	default_price = 150
+	extra_price = 400
 	light_mask = "med-light-mask"
 
 /obj/item/vending_refill/medical
@@ -47,3 +47,10 @@
 /obj/machinery/vending/medical/syndicate_access
 	name = "\improper SyndiMed Plus"
 	req_access = list(ACCESS_SYNDICATE)
+
+/obj/machinery/vending/medical
+	name = "\improper NanoMed Plus"
+	desc = "Medical drug dispenser."
+	icon_state = "med"
+	icon_deny = "med-deny"
+	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"

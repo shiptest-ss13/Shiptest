@@ -17,11 +17,6 @@
 	to_chat(owner, "<span class='boldannounce'>You are Santa! Your objective is to bring joy to the people on this station. You have a magical bag, which generates presents as long as you have it! You can examine the presents to take a peek inside, to make sure that you give the right gift to the right person.</span>")
 
 /datum/antagonist/santa/proc/give_equipment()
-	var/mob/living/carbon/human/H = owner.current
-	if(istype(H))
-		H.equipOutfit(/datum/outfit/santa)
-		H.dna.update_dna_identity()
-
 	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/area_teleport/teleport/santa)
 
 /datum/antagonist/santa/proc/give_objective()

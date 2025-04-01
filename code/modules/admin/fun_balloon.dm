@@ -14,7 +14,7 @@
 	SSobj.processing -= src
 	. = ..()
 
-/obj/effect/fun_balloon/process()
+/obj/effect/fun_balloon/process(seconds_per_tick)
 	if(!popped && check() && !QDELETED(src))
 		popped = TRUE
 		effect()
@@ -136,8 +136,3 @@
 /obj/effect/forcefield/arena_shuttle_entrance/proc/do_bloodbath(mob/living/L)
 	var/obj/item/mine/pressure/pickup/bloodbath/B = new (L)
 	B.mine_effect(L)
-
-/area/shuttle_arena
-	name = "arena"
-	has_gravity = STANDARD_GRAVITY
-	requires_power = FALSE

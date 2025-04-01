@@ -1,0 +1,149 @@
+2024-12-01:
+  Erikafox:
+  - balance: Gun slowdown has been reduced across the board
+  - balance: E-tars are now less bad
+2024-12-04:
+  Burning02:
+  - balance: The Dwayne filing cabinet located in the bridge is no longer dense
+  Cloudbreak:
+  - rscdel: AI Private frequency
+  - balance: Syndicate communications are no longer able to monitor all other factions.
+  - balance: Syndicate communications are no longer unable to be monitored.
+  - balance: Nanotrasen has modernized their handhelds. Possible radio frequencies
+      adjusted from 144.1-148.9 to 144.1-168.9.
+  - rscadd: Reflavored set channels to properly ID their faction.
+  - bugfix: Vox sprite compatibility in a single sprite.
+  Erikafox:
+  - rscadd: the valor now carries an artificer
+  - bugfix: expands subshuttle dock on the Raleigh
+  Gristlebee:
+  - balance: Syndicate esword simplemob block chance down to 25.
+  - bugfix: Syndi space knife enemies dying in space, and having block chance.
+  MarkSuckerberg:
+  - rscadd: You can now set turrets to filter by faction, mob type, and a few more
+      criteria including "dangerous only" as well as the ability to disable retaliation.
+  - rscadd: Turret retaliation is a lot more vengeful. Don't mess with them.
+  - rscadd: Turrets will now spend a short time targetting you, pointing a beam at
+      you to indicate that they're doing so.
+  - rscdel: Turret covers, because they sucked.
+  - bugfix: Turretcode is a LOT less laggy.
+  - tweak: Turrets are now built like normal machines. The boards are currently not
+      available (except through salvaging).
+  - tweak: You can now access full turret settings from the turret control panel.
+  SomeguyManperson:
+  - bugfix: mechs will now immediately fail a channel if they move, turn, or swap
+      equipment. Previously the channel would run to completion before checking if
+      it was valid.
+  - rscadd: The assault belt has been freed from its SWAT suit prison and is now purchasable
+      in cargo
+  firebudgy:
+  - rscadd: Additional cargo magazine and gun orders that were missing from the previous
+      factional cargo PR.
+  - balance: Adjusts the E-SG to hopefully be used more often.
+  generalthrax:
+  - balance: Angle Grinders now take less charge and are much quicker at deconstructing
+      walls
+  - balance: Plasmacutters are now marginally slower, hardly noticeable.
+  - balance: Blast doors and safes are now very slightly faster to cut open.
+  - rscadd: You can now unanchor Serving Dishes
+  rye-rice:
+  - rscadd: Melbert, rye-rice
+  - balance: you will no longer be fine at 100 c, nor 50 c, you should also NOT be
+      fine at -100 c either. clothing helps.
+  - bugfix: should be able to tell slighlty chilly tempertures
+  thgvr:
+  - rscadd: Allows hand radios to be held on your neck slot
+  - balance: 'Adjusted the item size of various guns and misc objects, see pr #3509
+      for more info'
+  - imageadd: Overhauled the look of autoinjectors
+2024-12-05:
+  Gristlebee:
+  - rscadd: Shoulder slings to outpost cargo for 500 credits.
+  MarkSuckerberg & Anticept:
+  - bugfix: auxmos updated with correct feature flags, windows atmos hosts will function
+      correctly again.
+  firebudgy:
+  - rscadd: An intercepted shipment of CM-40 barrels has led to an influx of SKM-24u
+      LMGs to the black market. Report sightings to your nearest CLIP representative.
+  - bugfix: Bipods actually work now.
+2024-12-08:
+  Erikafox:
+  - bugfix: Signallers no longer hit the other signaller when you're copying frequencies
+  - bugfix: hivebots should no longer attack hivebot spawners
+  - rscadd: curtain directions
+  - balance: m13 larker burst fire speed increased
+  SomeguyManperson:
+  - rscadd: Examining overmap hazards now shows their maximum safe speed, if there
+      is one, which there may not be.
+  rye-rice:
+  - bugfix: phoroids should no longer smell plasma, or anything for that matter.
+  thgvr:
+  - rscadd: Added a new electric welder - buy it from the outpost.
+  - rscdel: Removed experimental welder
+2024-12-13:
+  Burning02:
+  - rscadd: Adds the Ion thruster pack for Exosuits to the outpost market, for 2000
+      credits
+  - balance: Ion thrusters can be detached from exosuits now
+  Erikafox:
+  - balance: Girders on wasteplanet walls are no longer more durable than the walls.
+  generalthrax:
+  - balance: Lasers / Eguns are now normal-sized
+  - rscadd: Lasers / Eguns now fit in holsters
+  - bugfix: Sprite issue on Singulo Lab lasercannons
+  - rscadd: Filled subtype of Molotovs
+  - bugfix: Molotovs can no longer be used to craft themselves
+  - bugfix: Mapped in Molotovs are no longer empty
+2024-12-14:
+  meemofcourse:
+  - rscdel: Beluga-class, Box-class, Lagoon-class, Schmiedeberg-class, Tranquility-class
+  - rscdel: Hound-class
+  - rscdel: Gecko-class, Heron-class (also Falcon-class), Mimir-class
+  - rscdel: Jupiter-class
+  - rscdel: Chronicle-class
+  - rscdel: Many ruins, mostly for being old, have been removed
+2024-12-19:
+  Jedi-Toothpaste:
+  - bugfix: surgery cases now hold all the items
+  MemeSnorfer and Moffball:
+  - rscadd: Atoll-Class Hospital Ship
+  - rscadd: Preloaded organ smartfridge
+  - rscdel: Disabled the Box-Class
+2024-12-21:
+  Zevotech:
+  - bugfix: fixed an incorrect spawner on whitesands_surface_camp_combination
+  - tweak: adjusted loot distribution on whitesands_surface_camp_combination
+2024-12-22:
+  Burning02:
+  - rscadd: Adds the exosuit based saw to the Outpost catalogue for 2000 credits
+  - balance: Buffed the speed and deconstruction damage of the exosuit saw
+  - bugfix: Exosuit saw no longer gets stuck on indestructible walls
+  firebudgy:
+  - rscadd: Commissioner, SAW-80, GAR Carbine, and CM-40 to factional cargo
+  - bugfix: Decimal cargo prices
+  - balance: Magazines now come completely empty. As a result of this, they have now
+      been made cheaper.
+2024-12-23:
+  firebudgy:
+  - balance: SAW-80 is more expensive.
+2024-12-29:
+  Aquidu:
+  - rscadd: Added winter coats to the Harrier
+2024-12-30:
+  Erikafox:
+  - balance: burst fire hivebots now have more time between the shots in their bursts
+  Jedi-Toothpaste:
+  - rscadd: new secondary 'slug' mode for the scatter laser (and other scatter lasers
+      sub-types)
+  - rscadd: scatter laser to cargo, for you freaks who want to buy it
+  - rscdel: removed old secondary mode for scatter lasers (and scatter laser sub-types)
+  - balance: laser scatter mode now fires 10 pellets instead of 5
+  - balance: laser scatter pellets now do 5 damage instead of 3
+  - balance: laser scatter mode variance increased from 25 to 40
+  - balance: doubled laser scatter mode energy cost (6 shots with normal cell, 12
+      with upgraded)
+  MarkSuckerberg:
+  - bugfix: Jukeboxes should not leak across virtual Zs anymore
+  - bugfix: Candles can no longer be used like tiki torches
+  - tweak: Ore silos will now only drop materials when dissasembled or destroyed,
+      instead of any deletion

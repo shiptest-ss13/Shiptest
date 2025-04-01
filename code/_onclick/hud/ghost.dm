@@ -5,6 +5,7 @@
 	. = ..()
 	flick(icon_state + "_anim", src)
 
+/*
 /atom/movable/screen/ghost/jumptomob
 	name = "Jump to mob"
 	icon_state = "jumptomob"
@@ -12,6 +13,15 @@
 /atom/movable/screen/ghost/jumptomob/Click()
 	var/mob/dead/observer/G = usr
 	G.jumptomob()
+*/
+
+/atom/movable/screen/ghost/respawn
+	name = "Respawn"
+	icon_state = "respawn"
+
+/atom/movable/screen/ghost/respawn/Click()
+	var/mob/dead/observer/G = usr
+	G.respawn()
 
 /atom/movable/screen/ghost/orbit
 	name = "Orbit"
@@ -58,8 +68,8 @@
 	..()
 	var/atom/movable/screen/using
 
-	using = new /atom/movable/screen/ghost/jumptomob()
-	using.screen_loc = ui_ghost_jumptomob
+	using = new /atom/movable/screen/ghost/respawn()
+	using.screen_loc = ui_ghost_respawn
 	using.hud = src
 	static_inventory += using
 

@@ -29,7 +29,7 @@
 	var/list/allowed_typecache		//Leave as null to allow all.
 	var/charge_amount = 1
 	var/charge_ticks = 1
-	var/charge_tick = 0
+	var/charge_timer = 0
 	var/charge_type
 	var/selfcharge = FALSE
 	var/fire_sound = 'sound/weapons/sonic_jackhammer.ogg'
@@ -45,8 +45,8 @@
 /obj/item/pneumatic_cannon/proc/init_charge()	//wrapper so it can be vv'd easier
 	START_PROCESSING(SSobj, src)
 
-/obj/item/pneumatic_cannon/process()
-	if(++charge_tick >= charge_ticks && charge_type)
+/obj/item/pneumatic_cannon/process(seconds_per_tick)
+	if(++charge_timer >= charge_ticks && charge_type)
 		fill_with_type(charge_type, charge_amount)
 
 /obj/item/pneumatic_cannon/Destroy()
@@ -326,23 +326,3 @@
 /obj/item/pneumatic_cannon/speargun/Initialize()
 	. = ..()
 	allowed_typecache = magspear_typecache
-
-/obj/item/storage/backpack/magspear_quiver
-	name = "quiver"
-	desc = "A quiver for holding magspears."
-	icon_state = "quiver"
-	item_state = "quiver"
-
-/obj/item/storage/backpack/magspear_quiver/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 20
-	STR.max_combined_w_class = 40
-	STR.display_numerical_stacking = TRUE
-	STR.set_holdable(list(
-		/obj/item/throwing_star/magspear
-		))
-
-/obj/item/storage/backpack/magspear_quiver/PopulateContents()
-	for(var/i in 1 to 20)
-		new /obj/item/throwing_star/magspear(src)

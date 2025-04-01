@@ -614,6 +614,9 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			dellog += "<li>Ignored force: [I.no_respect_force]</li>"
 		if (I.no_hint)
 			dellog += "<li>No hint: [I.no_hint]</li>"
+		if(LAZYLEN(I.extra_details))
+			var/details = I.extra_details.Join("</li><li>")
+			dellog += "<li>Extra Info: <ul><li>[details]</li></ul>"
 		dellog += "</ul></li>"
 
 	dellog += "</ol>"
@@ -689,7 +692,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		var/datum/asset/fuckywucky = get_asset_datum(/datum/asset/simple/fuckywucky)
 		fuckywucky.send(m)
 		SEND_SOUND(m, 'sound/misc/fuckywucky.ogg')
-		to_chat(m, span_purple(examine_block("<img src='[SSassets.transport.get_asset_url("fuckywucky.png")]'>")))
+		to_chat(m, span_purple(boxed_message("<img src='[SSassets.transport.get_asset_url("fuckywucky.png")]'>")))
 
 	addtimer(CALLBACK(src, PROC_REF(restore_fucky_wucky)), 600)
 

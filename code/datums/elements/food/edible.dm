@@ -143,7 +143,7 @@ Behavior that's still missing from this component that original food items had t
 	src.after_eat = after_eat
 	src.on_consume = on_consume
 
-/datum/component/edible/Destroy(force, silent)
+/datum/component/edible/Destroy(force)
 	QDEL_NULL(pre_eat)
 	QDEL_NULL(on_compost)
 	QDEL_NULL(after_eat)

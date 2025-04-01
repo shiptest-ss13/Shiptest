@@ -96,20 +96,9 @@
 	if(distance > 2.5)
 		return
 
-	if(target.has_quirk(/datum/quirk/social_anxiety))
-		target.say(pick(message_social_anxiety))
-		if(rand(3) && target.get_ear_protection() == 0)
-			target.drop_all_held_items()
-			target.show_message(span_warning("You cover your ears, the music is just too loud for you."), 2)
-		return
-
 	if(HAS_TRAIT(target, TRAIT_MINDSHIELD))
 		target.show_message(span_warning("You resist your inner urges to break out your best moves."), 2)
 		target.set_drugginess(5)
-		return
-	if(istype(target.get_item_by_slot(ITEM_SLOT_HEAD), /obj/item/clothing/head/foilhat))
-		to_chat(target, span_userdanger("BIG DISCO WON'T CORRUPT ME WITH THEIR POST ICW PSY-OP MUSIC!"))
-		target.emote("scream")
 		return
 
 	target.set_drugginess(10)

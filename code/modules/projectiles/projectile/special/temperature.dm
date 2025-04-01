@@ -5,7 +5,7 @@
 	damage_type = BURN
 	nodamage = FALSE
 	flag = "energy"
-	var/temperature = -50 // reduce the body temperature by 50 points
+	var/temperature = -5 // reduce the body temperature by 5c
 
 /obj/projectile/temp/on_hit(atom/target, blocked = 0)
 	. = ..()
@@ -29,12 +29,12 @@
 
 /obj/projectile/temp/hot
 	name = "heat beam"
-	temperature = 100 // Raise the body temp by 100 points
+	temperature = 10 // Raise the body temp by 10c
 
 /obj/projectile/temp/cryo
 	name = "cryo beam"
 	range = 3
-	temperature = -240 // Single slow shot reduces temp greatly
+	temperature = -20 // Single slow shot reduces temp greatly
 
 /obj/projectile/temp/cryo/on_range()
 	var/turf/T = get_turf(src)

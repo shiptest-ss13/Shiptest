@@ -7,6 +7,7 @@
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
 	opacity = FALSE
+	pass_flags_self = LETPASSTHROW
 	var/table_type = /obj/structure/table
 
 /obj/structure/flippedtable/Initialize()
@@ -53,6 +54,8 @@
 		if(istype(exiter) && (exiter.pass_flags & PASSGLASS))
 			return
 	if(istype(exiter, /obj/projectile))
+		return
+	if(istype(exiter, /obj/item))
 		return
 	if(direction == table_dir)
 		exiter.Bump(src)

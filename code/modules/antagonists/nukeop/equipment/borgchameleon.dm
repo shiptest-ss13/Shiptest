@@ -75,7 +75,7 @@
 		remove_wibbly_filters(user)
 		animation_playing = FALSE
 
-/obj/item/borg_chameleon/process()
+/obj/item/borg_chameleon/process(seconds_per_tick)
 	if (user)
 		if (!user.cell || !user.cell.use(activationUpkeep))
 			disrupt(user)

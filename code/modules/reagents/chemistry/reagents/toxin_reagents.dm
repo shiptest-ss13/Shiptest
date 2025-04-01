@@ -132,7 +132,7 @@
 	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
 		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
 	M.adjustPlasma(20)
-	M.adjust_bodytemperature(-7 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	return ..()
 
 /datum/reagent/toxin/lexorin
@@ -258,11 +258,6 @@
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	toxpwr = 0
 	taste_description = "sourness"
-
-/datum/reagent/toxin/mindbreaker/on_mob_life(mob/living/carbon/M)
-	if(!M.has_quirk(/datum/quirk/insanity))
-		M.hallucination += 5
-	return ..()
 
 /datum/reagent/toxin/plantbgone
 	name = "Plant-B-Gone"

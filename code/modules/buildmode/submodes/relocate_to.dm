@@ -8,7 +8,7 @@
 	return ..()
 
 /datum/buildmode_mode/relocate_to/show_help(client/target_client)
-	to_chat(target_client, span_purple(examine_block(
+	to_chat(target_client, span_purple(boxed_message(
 		"[span_bold("Select")] -> Left Mouse Button on obj/mob\n\
 		[span_bold("Relocate")] -> Right Mouse Button on turf/obj/mob"))
 	)
