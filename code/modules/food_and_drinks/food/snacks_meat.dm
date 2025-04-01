@@ -402,6 +402,42 @@
 	tastes = list("fish" = 1, "pan seared vegtables" = 1)
 	foodtype = MEAT | VEGETABLES | FRIED
 
+/obj/item/reagent_containers/food/snacks/miras_sososi
+	name = "Miras Sososi"
+	desc = "A cut of Miras, stretched out over a Sososi leaf and drizzled in Tiris-Sele."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/sugar = 1)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("sweet meat" = 3, "gentle umami" = 1, "gel" = 1, "satisfying crunch" = 1)
+	foodtype = MEAT | SUGAR | VEGETABLE
+
+/obj/item/reagent_containers/food/snacks/miras_potato
+	name = "Miras Loaded Potato"
+	desc = "A Lanchester classic, Miras is baked over a potato, and then topped with Luna-Town cheese and sour cream."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("potato" = 2, "sweet meat" = 1, "cheese" = 1, "sour cream" = 1)
+	foodtype = MEAT | SUGAR | VEGETABLE
+
+/obj/item/reagent_containers/food/snacks/siti_miras
+	name = "Siti-Miras"
+	desc = "A cut of Miras cooked with a small bed of Siti and a dusting of dried Dote."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/sugar = 1)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("sweet meat" = 3, "dried berries" = 1, "satisfying crunch" = 1)
+	foodtype = MEAT | SUGAR | FRUIT
+
+/obj/item/reagent_containers/food/snacks/siti_miras
+	name = "Miras-doli"
+	desc = "Miras stewed with the juices of a cactus until it has absorbed the flavors. The aroma is very prominent."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/sugar = 1)
+	bonus_reagents = list(/datum/reagent/consumable/vitfro = 2)
+	tastes = list("sweet meat" = 3, "fruity mushroom" = 2)
+	foodtype = MEAT | SUGAR | FRUIT
+
 //////////////////////////////////////////// KEBABS AND OTHER SKEWERS ////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/kebab
