@@ -23,9 +23,9 @@ export const Orbit = (props, context) => {
       data.alive,
       data.ghosts,
       data.dead,
-      data.npcs,
-      data.misc,
       data.ships,
+      data.misc,
+      data.npcs,
     ]
       .flat()
       .filter(searchFor(searchText))

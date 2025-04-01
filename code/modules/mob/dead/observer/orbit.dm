@@ -64,9 +64,9 @@
 	var/list/critical = list()
 	var/list/dead = list()
 	var/list/ghosts = list()
+	var/list/ships = list()
 	var/list/misc = list()
 	var/list/npcs = list()
-	var/list/ships = list()
 
 	for(var/name in new_mob_pois)
 		var/list/serialized = list()
@@ -132,9 +132,9 @@
 		"critical" = critical,
 		"dead" = dead,
 		"ghosts" = ghosts,
+		"ships" = ships,
 		"misc" = misc,
 		"npcs" = npcs,
-		"ships" = ships,
 	)
 
 /datum/orbit_menu/ui_assets()
@@ -264,7 +264,7 @@
 				/mob/living/simple_animal/hostile/megafauna,
 				/mob/living/simple_animal/hostile/boss
 			))
-		if(!is_type_in_typecache(potential_mob_poi, mob_allowed_typecache) && !potential_mob_poi.GetComponent(/datum/component/deadchat_control))
+		if(!is_type_in_typecache(potential_mob_poi, mob_allowed_typecache) && !potential_mob_poi.GetComponent(/datum/component/deadchat_control) && !potential_mob_poi.GetComponent(/datum/component/mission_important))
 			return FALSE
 
 	return potential_poi.validate()
