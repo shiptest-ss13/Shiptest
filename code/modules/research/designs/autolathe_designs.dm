@@ -1241,7 +1241,7 @@
 	name = "Pistol Guncase"
 	id = "guncase-pitol"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 1500)
+	materials = list(/datum/material/plastic = 1500)
 	build_path = /obj/item/storage/guncase/pistol
 	category = list("initial", "Security", "Ammo")
 
